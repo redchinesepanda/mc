@@ -18,7 +18,7 @@ class Billet
 
     public function print()
     {
-		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />' );
+		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
     }
     
 
