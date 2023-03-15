@@ -14,8 +14,6 @@ class Billet
     public function register_script()
     {
 		wp_enqueue_style( 'billet', Template::LEGAL_URL . '/assets/css/billet.css' );
-        
-        echo '<pre>' . 'Billet::register_script' . '</pre>';
     }
 
     public static function get()
