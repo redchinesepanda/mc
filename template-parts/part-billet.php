@@ -6,14 +6,9 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
 <div class="billet">
     <div class="billet-left">
         <a href="/go/boylesports-ie/" rel="nofollow">
-            <img
-                src="https://match.center/wp-content/uploads/boylesports-logo-white-300x75.png"
-                alt="BoyleSports">
+            <img src="<?php echo $args['featured-image'] ?>" alt="<?php echo $args['billet-title'] ?>">
         </a>
-        <a href="https://match.center/ie/boylesports/">
-            <button
-                class="review">REVIEW</button>
-        </a>
+        <a href="<?php echo $args['billet-url'] ?>">Review</a>
     </div>
     <div class="billet-center">
         <a href="https://match.center/ie/boylesports/">
