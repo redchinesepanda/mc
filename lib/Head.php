@@ -17,13 +17,17 @@ class Head
     {
         global $wp_scripts;
 
+        $message['function'] = legal_remove_all_scripts;
+
         foreach( $wp_scripts->queue as $handle ) {
-            echo '$handle: ' . $handle . '<br />';
+            $message[] = '$handle: ' . $handle . '<br />';
 
             wp_dequeue_script( $handle );
 
             wp_deregister_script( $handle );
         }
+
+        echo '<pre>' . print_r( $message, true ) . '</pre>';
 
         // $wp_scripts->queue = [];
     }
