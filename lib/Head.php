@@ -36,7 +36,7 @@ class Head
     {
         global $wp_styles;
 
-        $message['function'] = 'legal_remove_all_scripts';
+        $message['function'] = 'legal_remove_all_styles';
 
         foreach( $wp_styles->queue as $handle ) {
             $message[] = '$handle: ' . $handle;
