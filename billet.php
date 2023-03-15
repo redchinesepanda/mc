@@ -13,7 +13,7 @@ require_once('lib/Template.php');
 
 require_once('lib/Billet.php');
 
-Head::register();
+Head::register(); 
 
 ?>
 <html>
