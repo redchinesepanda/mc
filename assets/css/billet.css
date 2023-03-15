@@ -1,5 +1,6 @@
 .billet {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .billet-left,
