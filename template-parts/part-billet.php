@@ -3,9 +3,9 @@
 echo '<pre>' . print_r( $args, true ) . '</pre>';
 
 ?>
-<div class="bookmakers-card">
-    <div class="bookmakers-card-container">
-        <div class="bookmakers-card-left">
+<div class="billet">
+    <div class="billet-container">
+        <div class="billet-left">
             <a href="/go/boylesports-ie/" rel="nofollow">
                 <img
                     src="https://match.center/wp-content/uploads/boylesports-logo-white-300x75.png"
@@ -16,7 +16,7 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
                     class="review">REVIEW</button>
             </a>
         </div>
-        <div class="bookmakers-card-center">
+        <div class="billet-center">
             <a href="https://match.center/ie/boylesports/">
                 <button class="bookmaker__name-btn">BoyleSports</button>
             </a>
@@ -34,8 +34,8 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
                 </ul>
             </nav>
         </div>
-        <div class="bookmakers-card-right">
-            <p class="bookmakers-card-price">
+        <div class="billet-right">
+            <p class="billet-price">
                 <a href="/go/boylesports-ie/" rel="nofollow">Bet €10 Get €40 In Free Bets</a>
             </p>
             <a href="/go/boylesports-ie/" rel="nofollow">

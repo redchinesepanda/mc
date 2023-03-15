@@ -4,6 +4,18 @@ class Billet
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet.php';
 
+    public static function register()
+    {
+        $handler = new self();
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script'] );
+    }
+
+    public function register_script()
+    {
+		wp_enqueue_style( 'billet', Template::LEGAL_URL . '/assets/css/billet.css' );
+    }
+
     public static function get()
     {
         $args['featured-image'] = get_the_post_thumbnail_url();
