@@ -36,7 +36,7 @@ class Head
             wp_deregister_style( $handle );
         }
 
-        // $wp_styles->queue = [];
+        //  $wp_styles->queue = [];
     }
 }
 
