@@ -20,7 +20,7 @@ class Head
         $message['function'] = 'legal_remove_all_scripts';
 
         foreach( $wp_scripts->queue as $handle ) {
-            $message[] = '$handle: ' . $handle . '<br />';
+            $message[] = '$handle: ' . $handle;
 
             wp_dequeue_script( $handle );
 
@@ -36,11 +36,17 @@ class Head
     {
         global $wp_styles;
 
+        $message['function'] = 'legal_remove_all_scripts';
+
         foreach( $wp_styles->queue as $handle ) {
+            $message[] = '$handle: ' . $handle
+
             wp_dequeue_style( $handle );
 
             wp_deregister_style( $handle );
         }
+
+        echo '<pre>' . print_r( $message, true ) . '</pre>';
 
         // $wp_styles->queue = [];
     }
