@@ -16,13 +16,27 @@ class Head
     public function legal_remove_all_scripts()
     {
         global $wp_scripts;
-        $wp_scripts->queue = [];
+
+        foreach( $wp_scripts->queue as $handle ) {
+            wp_dequeue_script( $handle );
+
+            wp_deregister_script( $handle );
+        }
+
+        // $wp_scripts->queue = [];
     }
     
     public function legal_remove_all_styles()
     {
         global $wp_styles;
-        $wp_styles->queue = [];
+
+        foreach( $wp_styles ->queue as $handle ) {
+            wp_dequeue_style( $handle );
+
+            wp_deregister_style( $handle );
+        }
+
+        // $wp_styles->queue = [];
     }
 }
 
