@@ -19,7 +19,7 @@ Head::register();
 <html>
     <head>
         <title>Billet</title>
-        <?php wp_head(); ?>
+        <?php Head::print(); ?>
     </head>
     <body>
         <h1>Billet</h1>

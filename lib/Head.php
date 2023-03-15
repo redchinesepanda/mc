@@ -13,6 +13,11 @@ class Head
         Billet::register();
 	}
 
+    public function print()
+    {
+        do_action( 'wp_print_scripts' );
+    }
+
     public function legal_remove_all_scripts()
     {
         global $wp_scripts;
