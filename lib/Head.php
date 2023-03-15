@@ -4,13 +4,15 @@ class Head
 {
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 		
-        add_action('wp_print_scripts', [ $handler, 'legal_remove_all_scripts' ], 100);
+        // add_action('wp_print_scripts', [ $handler, 'legal_remove_all_scripts' ], 100);
 
-        add_action('wp_print_styles', [ $handler, 'legal_remove_all_styles' ], 100);
+        // add_action('wp_print_styles', [ $handler, 'legal_remove_all_styles' ], 100);
 
-        Billet::register();
+        // Billet::register();
+        
+        Billet::print();
 	}
 
     public static function print()
@@ -19,46 +21,46 @@ class Head
 
         // do_action( 'wp_print_styles' );
 
-        wp_head();
+        // wp_head();
     }
 
-    public function legal_remove_all_scripts()
-    {
-        global $wp_scripts;
+    // public function legal_remove_all_scripts()
+    // {
+    //     global $wp_scripts;
 
-        $message['function'] = 'legal_remove_all_scripts';
+    //     $message['function'] = 'legal_remove_all_scripts';
 
-        foreach( $wp_scripts->queue as $handle ) {
-            $message[] = '$handle: ' . $handle;
+    //     foreach( $wp_scripts->queue as $handle ) {
+    //         $message[] = '$handle: ' . $handle;
 
-            wp_dequeue_script( $handle );
+    //         wp_dequeue_script( $handle );
 
-            wp_deregister_script( $handle );
-        }
+    //         wp_deregister_script( $handle );
+    //     }
 
-        echo '<pre>' . print_r( $message, true ) . '</pre>';
+    //     echo '<pre>' . print_r( $message, true ) . '</pre>';
 
-        // $wp_scripts->queue = [];
-    }
+    //     // $wp_scripts->queue = [];
+    // }
     
-    public function legal_remove_all_styles()
-    {
-        global $wp_styles;
+    // public function legal_remove_all_styles()
+    // {
+    //     global $wp_styles;
 
-        $message['function'] = 'legal_remove_all_styles';
+    //     $message['function'] = 'legal_remove_all_styles';
 
-        foreach( $wp_styles->queue as $handle ) {
-            $message[] = '$handle: ' . $handle;
+    //     foreach( $wp_styles->queue as $handle ) {
+    //         $message[] = '$handle: ' . $handle;
 
-            wp_dequeue_style( $handle );
+    //         wp_dequeue_style( $handle );
 
-            wp_deregister_style( $handle );
-        }
+    //         wp_deregister_style( $handle );
+    //     }
 
-        echo '<pre>' . print_r( $message, true ) . '</pre>';
+    //     echo '<pre>' . print_r( $message, true ) . '</pre>';
 
-        // $wp_styles->queue = [];
-    }
+    //     // $wp_styles->queue = [];
+    // }
 }
 
 ?>
