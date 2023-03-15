@@ -13,7 +13,7 @@ class Head
         Billet::register();
 	}
 
-    public function print()
+    public static function print()
     {
         do_action( 'wp_print_scripts' );
     }
