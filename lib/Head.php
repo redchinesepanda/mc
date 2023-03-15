@@ -39,7 +39,7 @@ class Head
         $message['function'] = 'legal_remove_all_scripts';
 
         foreach( $wp_styles->queue as $handle ) {
-            $message[] = '$handle: ' . $handle
+            $message[] = '$handle: ' . $handle;
 
             wp_dequeue_style( $handle );
 
