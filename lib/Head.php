@@ -18,6 +18,8 @@ class Head
         global $wp_scripts;
 
         foreach( $wp_scripts->queue as $handle ) {
+            echo '$handle: ' . $handle . '<br />';
+
             wp_dequeue_script( $handle );
 
             wp_deregister_script( $handle );
