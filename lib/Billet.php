@@ -16,7 +16,7 @@ class Billet
 	// 	wp_enqueue_style( 'billet', Template::LEGAL_URL . '/assets/css/billet.css' );
     // }
 
-    public function print()
+    public static function print()
     {
 		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
     }
