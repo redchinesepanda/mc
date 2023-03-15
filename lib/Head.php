@@ -17,7 +17,7 @@ class Head
     {
         global $wp_scripts;
 
-        $message['function'] = legal_remove_all_scripts;
+        $message['function'] = 'legal_remove_all_scripts';
 
         foreach( $wp_scripts->queue as $handle ) {
             $message[] = '$handle: ' . $handle . '<br />';
