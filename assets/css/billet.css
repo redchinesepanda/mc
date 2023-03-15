@@ -3,10 +3,14 @@
     flex-wrap: wrap;
 }
 
-.billet-left,
-.billet-center,
+.billet-left {
+    width: 22%;
+}
+.billet-center {
+    width: 24%;
+}
 .billet-right {
-    width: 33.33%;
+    width: 54%;
 }
 
 .billet-spoiler,
