@@ -4,50 +4,48 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
 
 ?>
 <div class="billet">
-    <div class="billet-container">
-        <div class="billet-left">
-            <a href="/go/boylesports-ie/" rel="nofollow">
-                <img
-                    src="https://match.center/wp-content/uploads/boylesports-logo-white-300x75.png"
-                    alt="BoyleSports">
-            </a>
-            <a href="https://match.center/ie/boylesports/">
-                <button
-                    class="review">REVIEW</button>
-            </a>
-        </div>
-        <div class="billet-center">
-            <a href="https://match.center/ie/boylesports/">
-                <button class="bookmaker__name-btn">BoyleSports</button>
-            </a>
-            <nav>
-                <ul>
-                    <li>
-                        Welcome bonus on sports up to €30
-                    </li>
-                    <li>
-                        Boosted football accumulator bets
-                    </li>
-                    <li>
-                        Bets on group matches and Outrights
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="billet-right">
-            <p class="billet-price">
-                <a href="/go/boylesports-ie/" rel="nofollow">Bet €10 Get €40 In Free Bets</a>
-            </p>
-            <a href="/go/boylesports-ie/" rel="nofollow">
-                <button>
-                    BET NOW
-                </button>
-            </a>
-            <div class="spoiler">
-                <span class="link_spoiler link_spoiler_bookmaker-1 click_me">
-                    Learn More
-                </span>
-            </div>
+    <div class="billet-left">
+        <a href="/go/boylesports-ie/" rel="nofollow">
+            <img
+                src="https://match.center/wp-content/uploads/boylesports-logo-white-300x75.png"
+                alt="BoyleSports">
+        </a>
+        <a href="https://match.center/ie/boylesports/">
+            <button
+                class="review">REVIEW</button>
+        </a>
+    </div>
+    <div class="billet-center">
+        <a href="https://match.center/ie/boylesports/">
+            <button class="bookmaker__name-btn">BoyleSports</button>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    Welcome bonus on sports up to €30
+                </li>
+                <li>
+                    Boosted football accumulator bets
+                </li>
+                <li>
+                    Bets on group matches and Outrights
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="billet-right">
+        <p class="billet-price">
+            <a href="/go/boylesports-ie/" rel="nofollow">Bet €10 Get €40 In Free Bets</a>
+        </p>
+        <a href="/go/boylesports-ie/" rel="nofollow">
+            <button>
+                BET NOW
+            </button>
+        </a>
+        <div class="spoiler">
+            <span class="link_spoiler link_spoiler_bookmaker-1 click_me">
+                Learn More
+            </span>
         </div>
     </div>
     <div class="content_Spoiler content_Spoiler_bookmaker-1" style="display: none;">
