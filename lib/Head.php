@@ -16,6 +16,8 @@ class Head
     public static function print()
     {
         do_action( 'wp_print_scripts' );
+
+        do_action( 'wp_print_styles' );
     }
 
     public function legal_remove_all_scripts()
