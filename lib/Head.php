@@ -30,7 +30,7 @@ class Head
     {
         global $wp_styles;
 
-        foreach( $wp_styles ->queue as $handle ) {
+        foreach( $wp_styles->queue as $handle ) {
             wp_dequeue_style( $handle );
 
             wp_deregister_style( $handle );
