@@ -48,7 +48,7 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
             </span>
         </div>
     </div>
-    <div class="content_Spoiler content_Spoiler_bookmaker-1" style="display: none;">
+    <div class="billet-spoiler">
         <div class="content_Spoiler_conteiner">
             <nav class="info-container-evaluate">
                 <ul class="info-container-nav">
@@ -163,12 +163,12 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
             </div>
         </div>
     </div>
-    <p class="bookmakers-footer">
+    <div class="billet-footer">
         At Boyle, you can get €40 in Free bets as €30 in sports bets and a €10 Casino bonus. 30 days
         to qualify. The minimum free bet stake is €10. Minimum odds applied. The Free bets are
         applied to the first settlement of any qualifying bet. Free bets valid for 7 days. The
         Casino promotion has a separate time limit: you have 14 days to accept the €10 casino bonus,
         which is only valid for 3 days. Casino bonus 5x wagering and maximum redeemable €100. Cashed
         out/free bets won't apply.
-    </p>
+    </div>
 </div>

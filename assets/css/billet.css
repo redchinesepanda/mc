@@ -1,0 +1,14 @@
+.billet {
+    display: flex;
+}
+
+.billet-left,
+.billet-left,
+.billet-left {
+    width: 33.33%;
+}
+
+.billet-spoiler,
+.billet-footer {
+    width: 100%;
+}
