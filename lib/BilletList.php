@@ -27,14 +27,14 @@ class BilletList
     public static function get()
     {
         $args = [];
-        
+
         $parts = get_field( 'billet-list-parts' );
 
         if( $parts ) {
             foreach( $parts as $key => $part ) {
                 $args[$key]['part-icon'] = $part['billet-list-part-icon'];
 
-                $args[$key]['part-derection'] = $part['billet-list-part-derection'];
+                $args[$key]['part-direction'] = $part['billet-list-part-direction'];
 
                 $items = $part['billet-list-part-items'];
 
