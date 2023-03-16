@@ -24,6 +24,8 @@
 }
 
 .billet-center {
+    display: flex;
+    flex-wrap: wrap;
     width: 54%;
 }
 
