@@ -2,6 +2,8 @@
 
 require_once( Template::LEGAL_PATH . '/lib/BilletTitle.php' );
 
+require_once( Template::LEGAL_PATH . '/lib/BilletList.php' );
+
 echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
@@ -19,6 +21,7 @@ echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
     </div>
     <div class="billet-center">
         <?php BilletTitle::render(); ?>
+        <?php BilletList::render(); ?>
     </div>
     <div class="billet-right">
         <span class="billet-price">

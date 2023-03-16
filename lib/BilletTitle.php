@@ -4,6 +4,8 @@ class BilletTitle
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-title.php';
 
+    const STYLE = Template::LEGAL_URL . '/assets/css/billet-title.css';
+
     // public static function register()
     // {
     //     $handler = new self();
@@ -13,12 +15,12 @@ class BilletTitle
 
     // public function register_script()
     // {
-	// 	wp_enqueue_style( 'billet', Template::LEGAL_URL . '/assets/css/billet-title.css' );
+	// 	wp_enqueue_style( 'billet',  BilletTitle::STYLE );
     // }
 
     public static function print()
     {
-		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet-title.css" rel="stylesheet" />';
+		echo '<link id="billet" href="' . BilletTitle::STYLE . '" rel="stylesheet" />';
     }
     
 
