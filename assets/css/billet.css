@@ -35,3 +35,13 @@
 .billet-footer {
     width: 100%;
 }
+
+/* Typography */
+.billet-center h3 {
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 1.2em;
+    text-decoration: rgb( 32, 65, 71 );
+}
