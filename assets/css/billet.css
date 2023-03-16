@@ -3,6 +3,12 @@
     flex-wrap: wrap;
 }
 
+.billet-left,
+.billet-center,
+.billet-right {
+    height: 168px;
+}
+
 .billet-left {
     display: flex;
     flex-direction: column;
