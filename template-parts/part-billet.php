@@ -1,6 +1,8 @@
 <?php
 
-echo '<pre>' . print_r( $args, true ) . '</pre>';
+require_once( 'lib/BilletTitle.php' );
+
+echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
 <style type="text/css">
@@ -16,31 +18,14 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
         <a href="<?php echo $args['billet-url'] ?>">Review</a>
     </div>
     <div class="billet-center">
-        <a href="<?php echo $args['billet-url'] ?>">
-            <h3><?php echo $args['billet-title'] ?></h3>
-        </a>
-        <nav>
-            <ul>
-                <li>
-                    Welcome bonus on sports up to €30
-                </li>
-                <li>
-                    Boosted football accumulator bets
-                </li>
-                <li>
-                    Bets on group matches and Outrights
-                </li>
-            </ul>
-        </nav>
+        <?php BilletTitle::render(); ?>
     </div>
     <div class="billet-right">
-        <p class="billet-price">
+        <span class="billet-price">
             <a href="/go/boylesports-ie/" rel="nofollow">Bet €10 Get €40 In Free Bets</a>
-        </p>
+        </span>
         <a href="/go/boylesports-ie/" rel="nofollow">
-            <button>
-                BET NOW
-            </button>
+            BET NOW
         </a>
         <div class="spoiler">
             <span class="link_spoiler link_spoiler_bookmaker-1 click_me">
