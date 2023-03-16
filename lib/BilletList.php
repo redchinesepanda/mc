@@ -26,7 +26,8 @@ class BilletList
 
     public static function get()
     {
-
+        $args = [];
+        
         $parts = get_field( 'billet-list-parts' );
 
         if( $parts ) {

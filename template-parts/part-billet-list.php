@@ -3,6 +3,16 @@
 echo '<pre>part-billet-list.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
-<div>Welcome bonus on sports up to €30</div>
-<div>Boosted football accumulator bets</div>
-<div>Bets on group matches and Outrights</div>
+
+<?php if ( !empty( $args ) ): ?>
+    <?php foreach( $args as $part ) :?>
+        <?php if ( !empty( $part['part-items'] ) ): ?>
+            <div class="part-items <?php echo $part['part-icon']; ?> <?php echo $part['part-direction']; ?>">
+                <?php foreach( $part['part-items'] as $item ) :?>
+                    <div class=""><?php echo $item; ?></div>
+                <?php endforeach;?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach;?>
+<?php endif; ?>
+
