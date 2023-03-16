@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BilletTitle.php' );
+require_once( Template::LEGAL_PATH . '/lib/BilletTitle.php' );
 
 echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
