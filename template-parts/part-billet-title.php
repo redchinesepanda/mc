@@ -1,6 +1,6 @@
 <?php
 
-echo '<pre>part-billet-title.php:' . print_r( $args, true ) . '</pre>';
+// echo '<pre>part-billet-title.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
 <h3>
