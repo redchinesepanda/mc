@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'lib/BilletTitle.php' );
+require_once( 'BilletTitle.php' );
 
 echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
