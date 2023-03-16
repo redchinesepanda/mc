@@ -5,7 +5,7 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
 ?>
 <div class="billet">
     <div class="billet-left">
-        <a href="/go/boylesports-ie/" rel="nofollow">
+        <a href="<?php echo $args['billet-url'] ?>" rel="nofollow">
             <img src="<?php echo $args['featured-image'] ?>" alt="<?php echo $args['billet-title'] ?>">
         </a>
         <a href="<?php echo $args['billet-url'] ?>">Review</a>

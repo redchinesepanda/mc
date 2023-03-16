@@ -4,11 +4,21 @@
 }
 
 .billet-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 22%;
+    padding-top: 50px;
 }
+.billet-left a {
+    display: block;
+    width: fit-content;
+}
+
 .billet-center {
     width: 54%;
 }
+
 .billet-right {
     width: 24%;
 }
