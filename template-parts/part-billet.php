@@ -3,7 +3,12 @@
 echo '<pre>' . print_r( $args, true ) . '</pre>';
 
 ?>
-<div class="billet">
+<style type="text/css">
+    #<?php echo $args['billet-selector']; ?> .billet-left {
+        background-color: <?php echo $args['billet-color']; ?>;
+    }
+</style>
+<div id="<?php echo $args['billet-selector']; ?>" class="billet">
     <div class="billet-left">
         <a href="<?php echo $args['billet-url'] ?>" rel="nofollow">
             <img src="<?php echo $args['featured-image'] ?>" alt="<?php echo $args['billet-title'] ?>">

@@ -24,6 +24,12 @@ class Billet
 
     public static function get()
     {
+        $post = get_post();
+
+        $args['ID'] = $post->ID;
+
+        $args['billet-selector'] = 'billet-' . $post->ID;
+
         $args['featured-image'] = get_the_post_thumbnail_url();
 
         $args['billet-title'] = get_field( 'billet-title' );
