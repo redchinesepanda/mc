@@ -16,8 +16,8 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
         <a href="<?php echo $args['billet-url'] ?>">Review</a>
     </div>
     <div class="billet-center">
-        <a href="https://match.center/ie/boylesports/">
-            <button class="bookmaker__name-btn">BoyleSports</button>
+        <a href="<?php echo $args['billet-url'] ?>">
+            <h3><?php echo $args['billet-title'] ?></h3>
         </a>
         <nav>
             <ul>
