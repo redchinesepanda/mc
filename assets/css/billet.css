@@ -79,21 +79,24 @@ body {
 /* Billet Center List Item */
 .billet-list-part .billet-list-part-item {
     padding-left: 30px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-.billet-list-part .billet-list-part-item:not( .legal-check ) {
+.billet-list-part.legal-check .billet-list-part-item {
     background-image: url('/wp-content/uploads/billet-list-check.svg');
 }
 
-.billet-list-part .billet-list-part-item:not( .legal-close ) {
+.billet-list-part.legal-close .billet-list-part-item {
     background-image: url('/wp-content/uploads/billet-list-close.svg');
 }
 
-.billet-list-part .billet-list-part-item:not( .legal-plus ) {
+.billet-list-part.legal-plus .billet-list-part-item {
     background-image: url('/wp-content/uploads/billet-list-plus.svg');
 }
 
-.billet-list-part .billet-list-part-item:not( .legal-minus ) {
+.billet-list-part.legal-minus .billet-list-part-item {
     background-image: url('/wp-content/uploads/billet-list-minus.svg');
 }
 
