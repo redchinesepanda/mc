@@ -66,12 +66,19 @@
     margin-left: auto;
 }
 
-/* Billet Center List */
+/* Billet Center List Row */
 
 .billet-list-part.legal-row {
     width: 100%;
     display: flex;
 }
+
+.billet-list-part.legal-row .billet-list-part-item {
+    width: 33.333%;
+    column-gap: 4px;
+}
+
+/* Billet Center List Column */
 
 .billet-list-part.legal-column {
     width: 50%;
