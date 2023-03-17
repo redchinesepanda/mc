@@ -45,7 +45,9 @@
 .billet-center {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
+    align-content: center;
+    row-gap: 22px;
     width: 54%;
 }
 
