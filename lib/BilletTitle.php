@@ -37,9 +37,9 @@ class BilletTitle
 
             $args['achievement-name'] = $term->name;
 
-            $args['achievement-color'] = get_field( 'achievement-color', $term->term_id );
+            $args['achievement-color'] = get_field( 'achievement-color', 'billet_achievement' . '_' . $term->term_id );
 
-            $args['achievement-image'] = get_field( 'achievement-image', $term->term_id );
+            $args['achievement-image'] = get_field( 'achievement-image', 'billet_achievement' . '_' . $term->term_id );
         }
 
         return $args;
