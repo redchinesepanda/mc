@@ -81,7 +81,7 @@ body {
 
 .billet-title .billet-title-rating {
     padding-left: 8px;
-    background-image: url( 'https://test.match.center/wp-content/uploads/billet-rating.svg' );
+    background-image: url( '/wp-content/uploads/billet-rating.svg' );
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
