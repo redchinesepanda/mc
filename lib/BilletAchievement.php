@@ -35,7 +35,7 @@ class BilletAchievement
         $args = self::get();
 
         if ( !empty( $args ) ) {
-            load_template( self::TEMPLATE, false,  );
+            load_template( self::TEMPLATE, false, $args );
         }
     }
 }
