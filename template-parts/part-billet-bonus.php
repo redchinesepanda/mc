@@ -18,6 +18,6 @@
         </a>
     </div>
     <div class="billet-spoiler-button">
-        <?php echo $args['spoiler-button']; ?> 
+        <?php echo $args['spoiler-button']; ?>
     </div>
 </div>
