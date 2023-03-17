@@ -96,6 +96,12 @@ body {
     flex-direction: column;
 }
 
+/* Billet Footer */
+.billet-footer {
+    background-color: #EDEFF4;
+}
+
+
 /* Billet Typography */
 .billet-center h3 {
     font-family: "Source Sans Pro";
