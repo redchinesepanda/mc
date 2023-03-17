@@ -81,7 +81,7 @@ body {
     padding: 6px 0px 0px 30px;
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto;
 }
 
 .billet-list-part.legal-check .billet-list-part-item {
