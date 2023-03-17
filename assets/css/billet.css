@@ -145,6 +145,15 @@ body {
     color: #000000;
 }
 
+.billet-title .billet-title-rating {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+}
+
 /* Billet Center List Typography */
 .billet-list-part .billet-list-part-item {
     font-family: 'Source Sans Pro';
