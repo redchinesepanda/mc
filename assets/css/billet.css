@@ -76,6 +76,27 @@ body {
     margin-left: auto;
 }
 
+/* Billet Center List Item */
+.billet-list-part .billet-list-part-item {
+    padding-left: 30px;
+}
+
+.billet-list-part .billet-list-part-item:not( .legal-check ) {
+    background-image: url('/wp-content/uploads/billet-list-check.svg');
+}
+
+.billet-list-part .billet-list-part-item:not( .legal-close ) {
+    background-image: url('/wp-content/uploads/billet-list-close.svg');
+}
+
+.billet-list-part .billet-list-part-item:not( .legal-plus ) {
+    background-image: url('/wp-content/uploads/billet-list-plus.svg');
+}
+
+.billet-list-part .billet-list-part-item:not( .legal-minus ) {
+    background-image: url('/wp-content/uploads/billet-list-minus.svg');
+}
+
 /* Billet Center List Row */
 
 .billet-list-part.legal-row {
@@ -101,8 +122,8 @@ body {
     background-color: #EDEFF4;
 }
 
+/* Billet Center Title Typography */
 
-/* Billet Typography */
 .billet-center h3 {
     font-family: "Source Sans Pro";
     font-weight: 400;
@@ -110,4 +131,14 @@ body {
     font-style: normal;
     line-height: 1.2em;
     text-decoration: rgb( 32, 65, 71 );
+}
+
+/* Billet Center List Typography */
+.billet-list-part .billet-list-part-item {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
 }
