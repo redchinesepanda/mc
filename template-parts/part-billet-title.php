@@ -1,14 +1,8 @@
 <?php
 
-// echo '<pre>part-billet-title.php:' . print_r( $args, true ) . '</pre>';
+require_once( Template::LEGAL_PATH . '/lib/BilletAchievement.php' );
 
 ?>
-<style type="text/css">
-    .<?php echo $args['billet-achievement']['achievement-selector']; ?> {
-        background-color: <?php echo $args['billet-achievement']['achievement-color']; ?>;
-        background-image: url('<?php echo $args['billet-achievement']['achievement-image']; ?>');
-    }
-</style>
 <div class="billet-title">
     <h3 class="billet-title-text">
         <a href="<?php echo $args['billet-url'] ?>">
@@ -16,7 +10,5 @@
         </a>
     </h3>
     <div class="billet-title-rating"><?php echo $args['billet-title-rating'] ?></div>
-    <div class="billet-title-achivement <?php echo $args['billet-achievement']['achievement-selector']; ?>">
-        <?php echo $args['billet-achievement']['achievement-name']; ?>
-    </div>
+    <?php BilletAchievement::render(); ?>
 </div>
