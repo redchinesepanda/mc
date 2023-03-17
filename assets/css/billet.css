@@ -47,6 +47,10 @@
     display: flex;
 }
 
+.billet-center h3 {
+    margin: 0px;
+}
+
 /* Billet Center List */
 
 .billet-list-part.legal-row {
