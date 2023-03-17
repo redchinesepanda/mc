@@ -72,6 +72,7 @@ body {
 .billet-title {
     width: 100%;
     display: flex;
+    column-gap: 16px;
 }
 
 .billet-center h3 {
@@ -126,11 +127,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-/* Billet Footer */
-/* .billet-footer {
-    background-color: #EDEFF4;
-} */
 
 /* Billet Center Title Typography */
 
