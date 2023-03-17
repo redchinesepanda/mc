@@ -87,8 +87,10 @@ body {
     background-size: auto;
 }
 
-.billet-center .billet-title-best {
+.billet-title .billet-title-achivement {
     margin-left: auto;
+    background-color: #EDEFF4;
+    border-radius: 50px;
 }
 
 /* Billet Center List Item */
@@ -159,6 +161,15 @@ body {
     font-weight: 700;
     font-size: 17px;
     line-height: 29px;
+    color: #000000;
+}
+
+.billet-title .billet-title-achivement {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
     color: #000000;
 }
 

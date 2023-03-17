@@ -10,5 +10,5 @@
         </a>
     </h3>
     <div class="billet-title-rating"><?php echo $args['billet-title-rating'] ?></div>
-    <div class="billet-title-best"><?php echo $args['billet-title-best'] ?></div>
+    <div class="billet-title-achivement"><?php echo $args['billet-title-best'] ?></div>
 </div>
