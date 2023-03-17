@@ -62,6 +62,10 @@
     margin: 0px;
 }
 
+.billet-center .billet-title-best {
+    margin-left: auto;
+}
+
 /* Billet Center List */
 
 .billet-list-part.legal-row {
