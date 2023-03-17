@@ -30,7 +30,7 @@ class BilletTitle
 
         $args['billet-title-rating'] = get_field( 'billet-title-rating' );
 
-        $args['billet-title-best'] = get_field( 'billet-title-best' );
+        $args['billet-title-best'] = __( 'Leader in Hi-Tech Features', 'Thrive' );
 
         return $args;
     }
