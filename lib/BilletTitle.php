@@ -23,14 +23,36 @@ class BilletTitle
 		echo '<link id="billet" href="' . BilletTitle::STYLE . '" rel="stylesheet" />';
     }
     
+    private static function get_achievement() {
+        $args = [];
+
+        $post = get_post();
+
+        $terms = wp_get_post_terms( $post->ID, 'billet_achievement', [ 'term_id', 'name', 'slug' ] );
+
+        if ( !is_wp_error( $terms ) ) {
+            $term = $terms[0];
+            
+            $args['achievement-name'] = $term['name'];
+
+            $args['achievement-color'] = get_field( 'achievement-color', $post->ID );
+
+            $args['achievement-image'] = get_field( 'achievement-image', $post->ID );
+        }
+
+        return $args;
+    }
 
     public static function get()
     {
+        $args['billet-achievement'] = self::get_achievement();
+
         $args['billet-title-text'] = get_field( 'billet-title-text' );
 
         $args['billet-title-rating'] = get_field( 'billet-title-rating' );
 
         $args['billet-title-best'] = __( 'Leader in Hi-Tech Features', 'Thrive' );
+
 
         return $args;
     }
