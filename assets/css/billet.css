@@ -139,9 +139,13 @@ body {
     font-weight: 400;
     font-size: 23px;
     font-style: normal;
-    line-height: 1.2em;
-    text-decoration: rgb( 32, 65, 71 );
+    line-height: 29px;
+    color: #000000;
 }
+
+/* .billet-center h3 a {
+
+} */
 
 /* Billet Center List Typography */
 .billet-list-part .billet-list-part-item {
