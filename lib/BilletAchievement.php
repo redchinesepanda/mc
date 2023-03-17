@@ -25,8 +25,6 @@ class BilletAchievement
             $args['image'] = get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id );
         }
 
-        // echo '<pre>' . print_r( $args, true ) . '</pre>';
-
         return $args;
     }
 
