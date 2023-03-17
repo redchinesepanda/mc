@@ -4,19 +4,14 @@ class BilletAchievement
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-achievement.php';
 
-    // const STYLE = Template::LEGAL_URL . '/assets/css/billet-achievement.css';
-
-    // public static function print()
-    // {
-	// 	echo '<link id="billet" href="' . BilletTitle::STYLE . '" rel="stylesheet" />';
-    // }
+    const TAXONOMY = 'billet_achievement';
     
     private static function get() {
         $args = [];
 
         $post = get_post();
 
-        $terms = wp_get_post_terms( $post->ID, 'billet_achievement', [ 'term_id', 'name', 'slug' ] );
+        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
 
         if ( !is_wp_error( $terms ) ) {
             $term = $terms[0];
@@ -25,10 +20,12 @@ class BilletAchievement
 
             $args['name'] = $term->name;
 
-            $args['color'] = get_field( 'achievement-color', 'billet_achievement' . '_' . $term->term_id );
+            $args['color'] = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
 
-            $args['image'] = get_field( 'achievement-image', 'billet_achievement' . '_' . $term->term_id );
+            $args['image'] = get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id );
         }
+
+        echo '<pre>' . print_r( $args, true ) . '</pre>';
 
         return $args;
     }
