@@ -10,6 +10,7 @@ body {
     flex-wrap: wrap;
     column-gap: 30px;
     background-color: #FFFFFF;
+    border-radius: 20px;
 }
 
 .billet-left,
@@ -26,7 +27,6 @@ body {
     justify-content: center;
     gap: 20px;
     width: calc( 22% - 20px );
-    border-radius: 20px 0px 0px 20px;
 }
 
 .billet-left a {
@@ -39,7 +39,6 @@ body {
 .billet-right {
     width: calc( 24% - 20px );
     background-color: #F6F8FF;
-    border-radius: 0px 2px 20px 0px;
 }
 
 /* Billet Spoiler */
@@ -122,9 +121,9 @@ body {
 }
 
 /* Billet Footer */
-.billet-footer {
+/* .billet-footer {
     background-color: #EDEFF4;
-}
+} */
 
 /* Billet Center Title Typography */
 

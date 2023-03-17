@@ -29,7 +29,7 @@ require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
         <?php BilletBonus::render(); ?>
     </div>
     <?php // BilletSpoiler::render(); ?>
-    <div class="billet-footer">
-        <?php echo $args['billet-description'] ?>
-    </div>
+</div>
+<div class="billet-footer">
+    <?php echo $args['billet-description'] ?>
 </div>
