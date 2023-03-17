@@ -82,7 +82,7 @@ body {
 .billet-title .billet-title-rating {
     padding-left: 30px;
     background-image: url( '/wp-content/uploads/billet-rating.svg' );
-    background-position: 8px left center;
+    background-position: left 8px center;
     background-repeat: no-repeat;
     background-size: auto;
 }
