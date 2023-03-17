@@ -20,14 +20,13 @@ body {
 }
 
 /* Billet Left */
-
 .billet-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: calc( 22% - 24px );
+    width: calc( 22% - 20px );
     border-radius: 20px 0px 0px 20px;
 }
 
@@ -39,7 +38,7 @@ body {
 /* Billet Right */
 
 .billet-right {
-    width: calc( 24% - 24px );
+    width: calc( 24% - 20px );
     background-color: #F6F8FF;
     border-radius: 0px 2px 20px 0px;
 }
@@ -59,7 +58,7 @@ body {
     align-content: center;
     row-gap: 22px;
     column-gap: 8px;
-    width: calc( 54% - 24px );
+    width: calc( 54% - 20px );
     padding: 20px 0px;
 }
 
