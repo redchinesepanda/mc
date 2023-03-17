@@ -55,7 +55,6 @@ body {
 .billet-center {
     display: flex;
     flex-wrap: wrap;
-    /* align-items: center; */
     align-content: center;
     row-gap: 22px;
     width: calc( 54% - 24px );
@@ -78,7 +77,8 @@ body {
 
 /* Billet Center List Item */
 .billet-list-part .billet-list-part-item {
-    padding-left: 30px;
+    min-height: 24px;
+    padding: 30px 6px 0px 0px;
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -105,11 +105,11 @@ body {
 .billet-list-part.legal-row {
     width: 100%;
     display: flex;
+    column-gap: 4px;
 }
 
 .billet-list-part.legal-row .billet-list-part-item {
     width: 33.333%;
-    column-gap: 4px;
 }
 
 /* Billet Center List Column */
