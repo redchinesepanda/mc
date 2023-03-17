@@ -40,8 +40,8 @@ body {
 
 .billet-right {
     width: calc( 24% - 24px );
-
     background-color: #F6F8FF;
+    border-radius: 0px 2px 20px 0px;
 }
 
 /* Billet Spoiler */
