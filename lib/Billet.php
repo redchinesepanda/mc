@@ -32,9 +32,7 @@ class Billet
 
         $args['featured-image'] = get_the_post_thumbnail_url();
 
-        $args['billet-title'] = get_field( 'billet-title' );
-
-        $args['billet-bonus'] = get_field( 'billet-bonus' );
+        $args['billet-description'] = get_field( 'billet-description' );
 
         $args['billet-color'] = get_field( 'billet-color' );
 
