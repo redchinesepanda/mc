@@ -140,12 +140,14 @@ body {
     font-size: 23px;
     font-style: normal;
     line-height: 29px;
-    color: #000000;
 }
 
-/* .billet-center h3 a {
-
-} */
+.billet-center h3 a,
+.billet-center h3 a:hover,
+.billet-center h3 a:active,
+.billet-center h3 a:visited {
+    color: #000000;
+}
 
 /* Billet Center List Typography */
 .billet-list-part .billet-list-part-item {
