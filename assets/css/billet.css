@@ -11,6 +11,8 @@
     height: 168px;
 }
 
+/* Billet Left */
+
 .billet-left {
     display: flex;
     flex-direction: column;
@@ -25,19 +27,26 @@
     width: fit-content;
 }
 
-.billet-center {
-    display: flex;
-    flex-wrap: wrap;
-    width: 54%;
-}
+/* Billet Right */
 
 .billet-right {
     width: 24%;
 }
 
+/* Billet Spoiler */
+
 .billet-spoiler,
 .billet-footer {
     width: 100%;
+}
+
+/* Billet Center */
+
+.billet-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 54%;
 }
 
 /* Billet Center Title */
