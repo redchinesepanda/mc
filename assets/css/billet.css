@@ -1,8 +1,16 @@
+/* Body */
+body {
+    background-color: #EDEFF4;
+}
+
 /* Billet Container */
 
 .billet {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 32px;
+
+    background-color: #FFFFFF;
 }
 
 .billet-left,
@@ -19,7 +27,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 22%;
+    width: calc( 22% - 24px );
 }
 
 .billet-left a {
@@ -30,7 +38,9 @@
 /* Billet Right */
 
 .billet-right {
-    width: 24%;
+    width: calc( 24% - 24px );
+
+    background-color: #F6F8FF;
 }
 
 /* Billet Spoiler */
@@ -48,7 +58,7 @@
     /* align-items: center; */
     align-content: center;
     row-gap: 22px;
-    width: 54%;
+    width: calc( 54% - 24px );
 }
 
 /* Billet Center Title */
