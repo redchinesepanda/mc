@@ -33,7 +33,7 @@ class BilletTitle
         if ( !is_wp_error( $terms ) ) {
             $term = $terms[0];
             
-            $args['achievement-name'] = $term['name'];
+            $args['achievement-name'] = $term->name;
 
             $args['achievement-color'] = get_field( 'achievement-color', $post->ID );
 
