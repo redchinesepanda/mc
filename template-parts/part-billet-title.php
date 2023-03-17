@@ -6,7 +6,7 @@
 <style type="text/css">
     .<?php echo $args['billet-achievement']['achievement-selector']; ?> {
         background-color: <?php echo $args['billet-achievement']['achievement-color']; ?>;
-        background-image: url('<?php echo $args['billet-achievement']['achievement-color']; ?>');
+        background-image: url('<?php echo $args['billet-achievement']['achievement-image']; ?>');
     }
 </style>
 <div class="billet-title">
