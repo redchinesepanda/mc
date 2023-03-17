@@ -10,7 +10,7 @@
         </a>
     </div>
     <div class="bonus-description">
-        <?php echo $args['bonus-title']; ?>
+        <?php echo $args['bonus-description']; ?>
     </div>
     <div class="bonus-button">
         <a href="<?php echo $args['bonus-url']; ?>" rel="nofollow">
