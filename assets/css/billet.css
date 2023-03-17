@@ -16,7 +16,8 @@ body {
 .billet-left,
 .billet-center,
 .billet-right {
-    height: 168px;
+    /* height: 168px; */
+    min-height: 168px;
 }
 
 /* Billet Left */
