@@ -4,7 +4,7 @@
 
 ?>
 <style type="text/css">
-    .<?php echo $args['achievement-selector']; ?> {
+    .<?php echo $args['billet-achievement']['achievement-selector']; ?> {
         background-color: <?php echo $args['billet-achievement']['achievement-color']; ?>;
         background-image: url('<?php echo $args['billet-achievement']['achievement-color']; ?>');
     }
@@ -16,7 +16,7 @@
         </a>
     </h3>
     <div class="billet-title-rating"><?php echo $args['billet-title-rating'] ?></div>
-    <div class="billet-title-achivement <?php echo $args['achievement-selector']; ?>">
+    <div class="billet-title-achivement <?php echo $args['billet-achievement']['achievement-selector']; ?>">
         <?php echo $args['billet-achievement']['achievement-name']; ?>
     </div>
 </div>
