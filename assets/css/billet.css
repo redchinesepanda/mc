@@ -266,3 +266,7 @@ body {
     background-size: auto;
     border-radius: 66px;
 }
+
+.billet-right .legal-play:hover {
+    background-color: rgb(89, 151, 227);
+}
