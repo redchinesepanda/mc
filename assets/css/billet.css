@@ -162,7 +162,8 @@ body {
 }
 .billet-left a {
     display: block;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
 }
 .billet-left a:hover {
     border-bottom: 1px solid #FFFFFF;
