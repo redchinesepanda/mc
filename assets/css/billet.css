@@ -160,9 +160,12 @@ body {
     text-decoration: none;
     color: #FFFFFF;
 }
-
+.billet-left a {
+    display: block;
+    padding-bottom: 10px;
+}
 .billet-left a:hover {
-    text-decoration: underline;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 /* Billet Center Title Typography */
