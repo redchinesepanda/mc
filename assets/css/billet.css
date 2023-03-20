@@ -145,6 +145,21 @@ body {
     flex-direction: column;
 }
 
+/* Billet Left Review Typography */
+
+.billet-left a,
+.billet-left a:hover,
+.billet-left a:active,
+.billet-left a:visited {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-stretch: 100%;
+    font-weight: 700;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
 /* Billet Center Title Typography */
 
 .billet-center h3 {
@@ -181,6 +196,7 @@ body {
 }
 
 /* Billet Center List Typography */
+
 .billet-list-part .billet-list-part-item {
     font-family: 'Source Sans Pro';
     font-style: normal;
