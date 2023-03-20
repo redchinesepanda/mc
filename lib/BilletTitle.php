@@ -47,21 +47,24 @@ class BilletTitle
 
     public static function get()
     {
-        $args['billet-achievement'] = self::get_achievement();
+        $args['achievement'] = self::get_achievement();
 
-        $args['billet-title-text'] = get_field( 'billet-title-text' );
+        $args['title'] = get_field( 'billet-title-text' );
 
-        $args['billet-title-rating'] = get_field( 'billet-title-rating' );
-
-        $args['billet-title-best'] = __( 'Leader in Hi-Tech Features', 'Thrive' );
-
+        $args['rating'] = get_field( 'billet-title-rating' );
 
         return $args;
     }
 
-    public static function render()
-    { 
-        load_template( self::TEMPLATE, false, self::get() );
+    public static function render( $url = [] )
+    {
+        $args = self::get();
+
+        if ( !empty( $url ) ) {
+            $args['url'] = $url;
+        }
+
+        load_template( self::TEMPLATE, false, $args );
     }
 }
 

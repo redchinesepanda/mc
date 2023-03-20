@@ -4,6 +4,10 @@ class Billet
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet.php';
 
+    const DEFAULT_LOGO = Template::LEGAL_PATH . '/assets/img/billet/legal-blank.svg';
+
+    const DEFAULT_COLOR = 'rgb(0,46,90)';
+
     // public static function register()
     // {
     //     $handler = new self();
@@ -20,23 +24,44 @@ class Billet
     {
 		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
     }
-    
 
     public static function get()
     {
         $post = get_post();
 
-        $args['ID'] = $post->ID;
+        $args['selector'] = 'billet-' . $post->ID;
 
-        $args['billet-selector'] = 'billet-' . $post->ID;
+        $args['featured-image'] = get_the_post_thumbnail_url( $post->ID );
 
-        $args['featured-image'] = get_the_post_thumbnail_url();
+        if ( $args['featured-image'] === false ) {
+            $args['featured-image'] = self::DEFAULT_LOGO;
+        }
 
-        $args['billet-description'] = get_field( 'billet-description' );
+        $args['description'] = get_field( 'billet-description' );
 
-        $args['billet-color'] = get_field( 'billet-color' );
+        $args['color'] = get_field( 'billet-color' );
 
-        $args['billet-url'] = get_field( 'billet-url' );
+        if ( empty( $args['color'] ) ) {
+            $args['color'] = self::DEFAULT_COLOR;
+        }
+
+        $referal-url = get_field( 'billet-referal-url' );
+
+        $card_id = get_field( 'billet-card-id' );
+
+        $card-url = get_post_permalink( $card_id );
+
+        $oops = '#oops';
+
+        $args['url']['logo'] = ( $referal-url != '' ? $referal-url : ( $card-url !== false ? $card-url : '' ) );
+
+        $args['url']['review'] = ( $card-url !== false ? $card-url : '' );
+
+        $args['url']['title'] = ( $card-url !== false ? $card-url : ( $referal-url != '' ? $referal-url : '' ) );
+
+        $args['url']['bonus'] = ( $referal-url != '' ? $referal-url : ( $oops != '' ? $oops : '' ) );
+
+        $args['url']['play'] = $args['url']['bonus'];
 
         return $args;
     }

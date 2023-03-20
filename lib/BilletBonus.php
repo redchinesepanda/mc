@@ -26,30 +26,36 @@ class BilletBonus
 
     public static function get()
     {
-        $args['bonus-title'] = get_field( 'billet-play-bonus-title' );
+        $args['bonus']['title'] = get_field( 'billet-play-bonus-title' );
 
-        $args['bonus-url'] = get_field( 'billet-play-bonus-url' );
+        // $args['bonus']['url'] = get_field( 'billet-play-bonus-url' );
 
-        $args['bonus-description'] = get_field( 'billet-play-bonus-description' );
+        $args['bonus']['description'] = get_field( 'billet-play-bonus-description' );
 
-        $args['mobile-iphone'] = get_field( 'billet-play-mobile-iphone' );
+        $args['bonus']['play'] = __( 'Bet now', 'Thrive' );
+
+        $args['mobile']['iphone'] = get_field( 'billet-play-mobile-iphone' );
         
-        $args['mobile-android'] = get_field( 'billet-play-mobile-android' );
+        $args['mobile']['android'] = get_field( 'billet-play-mobile-android' );
 
-        $args['profit-type'] = get_field( 'billet-play-profit-type' );
+        $args['profit']['type'] = get_field( 'billet-play-profit-type' );
 
-        $args['profit-value'] = get_field( 'billet-play-profit-value' );
+        $args['profit']['value'] = get_field( 'billet-play-profit-value' );
 
-        $args['bonus-button'] = __( 'Bet now', 'Thrive' );
-
-        $args['spoiler-button'] = __( 'Spoiler', 'Thrive' );
+        $args['spoiler'] = __( 'Spoiler', 'Thrive' );
 
         return $args;
     }
 
-    public static function render()
+    public static function render( $url = [] )
     { 
-        load_template( self::TEMPLATE, false, self::get() );
+        $args = self::get();
+
+        if ( !empty( $url ) ) {
+            $args['url'] = $url;
+        }
+
+        load_template( self::TEMPLATE, false, $args );
     }
 }
 

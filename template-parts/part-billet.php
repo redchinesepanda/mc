@@ -10,23 +10,23 @@ require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
 
 ?>
 <style type="text/css">
-    #<?php echo $args['billet-selector']; ?> .billet-left {
-        background-color: <?php echo $args['billet-color']; ?>;
+    #<?php echo $args['selector']; ?> .billet-left {
+        background-color: <?php echo $args['color']; ?>;
     }
 </style>
-<div id="<?php echo $args['billet-selector']; ?>" class="billet">
+<div id="<?php echo $args['selector']; ?>" class="billet">
     <div class="billet-left">
-        <a href="<?php echo $args['billet-url'] ?>" rel="nofollow">
-            <img src="<?php echo $args['featured-image'] ?>" alt="<?php echo $args['billet-title'] ?>">
+        <a href="<?php echo $args['url']['logo'] ?>" rel="nofollow">
+            <img src="<?php echo $args['featured-image'] ?>" alt="billet logo" />
         </a>
-        <a href="<?php echo $args['billet-url'] ?>">Review</a>
+        <a href="<?php echo $args['url']['review'] ?>">Review</a>
     </div>
     <div class="billet-center">
-        <?php BilletTitle::render(); ?>
+        <?php BilletTitle::render( $args['url'] ); ?>
         <?php BilletList::render(); ?>
     </div>
     <div class="billet-right">
-        <?php BilletBonus::render(); ?>
+        <?php BilletBonus::render( $args['url'] ); ?>
     </div>
     <?php // BilletSpoiler::render(); ?>
 </div>
