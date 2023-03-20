@@ -31,7 +31,11 @@ class Billet
 
         $card_id = get_field( 'billet-card-id' );
 
-        $card_url = get_post_permalink( $card_id );
+        $card_url = '';
+        
+        if ( !empty( $card_id ) ) {
+            $card_url = get_post_permalink( $card_id );
+        }
 
         $oops = '#oops';
 
