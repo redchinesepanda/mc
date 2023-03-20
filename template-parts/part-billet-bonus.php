@@ -18,7 +18,7 @@
 </div>
 <?php if ( !empty( $args['bonus']['description'] ) ): ?>
     <div class="bonus-description">
-        <?php echo $args['bonus']['description']; ?>
+        <span><?php echo $args['bonus']['description']; ?></span>
     </div>
 <?php endif; ?>
 <div class="bonus-button">
@@ -36,6 +36,6 @@
 </div>
 <?php if ( !empty( $args['spoiler'] ) ): ?>
     <div class="billet-spoiler-button">
-        <?php echo $args['spoiler']; ?>
+        <span><?php echo $args['spoiler']; ?></span>
     </div>
 <?php endif; ?>
