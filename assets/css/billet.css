@@ -233,3 +233,12 @@ body {
 .billet-right .legal-bonus:hover {
     text-decoration: underline;
 }
+
+/* Billet Right Bonus Description */
+.billet-right .bonus-description {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+}

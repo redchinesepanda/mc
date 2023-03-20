@@ -16,9 +16,11 @@
         </span>
     <?php endif; ?>
 </div>
-<div class="bonus-description">
-    <?php echo $args['bonus']['description']; ?>
-</div>
+<?php if ( !empty( $args['bonus']['description'] ) ): ?>
+    <div class="bonus-description">
+        <?php echo $args['bonus']['description']; ?>
+    </div>
+<?php endif; ?>
 <div class="bonus-button">
     <a href="<?php echo $args['url']['play']; ?>" rel="nofollow">
         <?php echo $args['bonus']['play']; ?>
