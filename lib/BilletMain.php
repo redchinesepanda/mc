@@ -43,10 +43,12 @@ class BilletMain
         $post = get_post();
 
         $args['selector'] = 'billet-' . $post->ID;
-        
-        $args['description'] = get_field( 'billet-description' );
+
+        $args['color'] = get_field( 'billet-color' );
 
         $args['url'] = self::get_url();
+
+        $args['description'] = get_field( 'billet-description' );
 
         return $args;
     }
