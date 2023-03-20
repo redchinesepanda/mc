@@ -12,7 +12,7 @@ class BilletLogo
     {
         $post = get_post();
 
-        $args['selector'] = 'billet-' . $post->ID;
+        // $args['selector'] = 'billet-' . $post->ID;
 
         $args['logo'] = get_the_post_thumbnail_url( $post->ID );
 

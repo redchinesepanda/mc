@@ -40,6 +40,10 @@ class BilletMain
 
     public static function get()
     {
+        $post = get_post();
+
+        $args['selector'] = 'billet-' . $post->ID;
+        
         $args['description'] = get_field( 'billet-description' );
 
         $args['url'] = self::get_url();
