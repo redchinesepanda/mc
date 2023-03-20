@@ -4,13 +4,13 @@
 
 ?>
 <div class="bonus-title">
-    <?php if ( !empty( $args['url']['review'] ) ): ?>
+    <?php if ( !empty( $args['url']['bonus'] ) ): ?>
         <a class="legal-bonus" href="<?php echo $args['url']['bonus']; ?>" rel="nofollow">
     <?php else: ?>
         <span class="legal-bonus">
     <?php endif; ?>
             <?php echo $args['bonus']['title']; ?>
-    <?php if ( !empty( $args['url']['review'] ) ): ?>
+    <?php if ( !empty( $args['url']['bonus'] ) ): ?>
         </a>
     <?php else: ?>
         </span>
@@ -22,10 +22,20 @@
     </div>
 <?php endif; ?>
 <div class="bonus-button">
-    <a href="<?php echo $args['url']['play']; ?>" rel="nofollow">
+    <?php if ( !empty( $args['url']['play'] ) ): ?>
+        <a class="legal-play" href="<?php echo $args['url']['play']; ?>" rel="nofollow">
+    <?php else: ?>
+        <span class="legal-bonus">
+    <?php endif; ?>
         <?php echo $args['bonus']['play']; ?>
-    </a>
+    <?php if ( !empty( $args['url']['play'] ) ): ?>
+        </a>
+    <?php else: ?>
+        </span>
+    <?php endif; ?>
 </div>
-<div class="billet-spoiler-button">
-    <?php echo $args['spoiler']; ?>
-</div>
+<?php if ( !empty( $args['spoiler'] ) ): ?>
+    <div class="billet-spoiler-button">
+        <?php echo $args['spoiler']; ?>
+    </div>
+<?php endif; ?>
