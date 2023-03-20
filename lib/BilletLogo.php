@@ -35,9 +35,9 @@ class BilletLogo
             $args['url'] = $url;
         }
 
-        echo '<pre>BilletLogo::render: ' . print_r( $args, true ) . '</pre>';
+        // echo '<pre>BilletLogo::render: ' . print_r( $args, true ) . '</pre>';
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE, false, $args );
     }
 }
 
