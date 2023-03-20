@@ -35,7 +35,7 @@ class BilletMain
 
         $args['play'] = $args['bonus'];
 
-        echo '<pre>Billet::get_url' . print_r( $args, true ) . '</pre>';
+        echo '<pre>Billet::get_url: ' . print_r( $args, true ) . '</pre>';
 
         return $args;
     }
