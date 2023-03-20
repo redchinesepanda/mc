@@ -16,9 +16,13 @@ require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
 </style>
 <div id="<?php echo $args['selector']; ?>" class="billet">
     <div class="billet-left">
-        <a href="<?php echo $args['url']['logo'] ?>" rel="nofollow">
-            <img src="<?php echo $args['featured-image'] ?>" alt="billet logo" />
-        </a>
+        <?php if ( !empty( $args['url']['logo'] ) ): ?>
+            <a href="<?php echo $args['url']['logo'] ?>" rel="nofollow">
+        <?php endif; ?>
+        <img src="<?php echo $args['featured-image'] ?>" alt="billet logo" />
+        <?php if ( !empty( $args['url']['logo'] ) ): ?>
+            </a>
+        <?php endif; ?>
         <a href="<?php echo $args['url']['review'] ?>">Review</a>
     </div>
     <div class="billet-center">
