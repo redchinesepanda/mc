@@ -12,7 +12,7 @@ class AdminBillet
     {
         $handler = new self();
 
-        // add_action( 'wp_insert_post', [ $handler, 'meta_template' ], 10, 3 );
+        add_action( 'wp_insert_post', [ $handler, 'meta_template' ], 10, 3 );
     }
 
     function meta_template( $post_ID, $post, $update ) {
