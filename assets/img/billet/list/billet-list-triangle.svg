@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="billet-list-triangle.svg"
+   id="svg14"
+   xml:space="preserve"
+   viewBox="0 0 18 18"
+   height="18"
+   width="18"
+   version="1.1"><metadata
+   id="metadata18"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+   inkscape:current-layer="svg14"
+   inkscape:window-maximized="1"
+   inkscape:window-y="-9"
+   inkscape:window-x="-9"
+   inkscape:cy="5.3866547"
+   inkscape:cx="-45.840117"
+   inkscape:zoom="3.0740741"
+   showgrid="false"
+   id="namedview16"
+   inkscape:window-height="1001"
+   inkscape:window-width="1920"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0"
+   guidetolerance="10"
+   gridtolerance="10"
+   objecttolerance="10"
+   borderopacity="1"
+   bordercolor="#666666"
+   pagecolor="#ffffff" />
+<desc
+   id="desc2">Created with Fabric.js 5.2.4</desc>
+<defs
+   id="defs4">
+</defs>
+<g
+   id="f29fd424-924f-45ff-a8d9-a0dccaa31581"
+   transform="translate(540,540)">
+<rect
+   id="rect6"
+   height="1080"
+   width="1080"
+   ry="0"
+   rx="0"
+   y="-540"
+   x="-540"
+   vector-effect="non-scaling-stroke"
+   style="visibility:hidden;opacity:1;fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+</g>
+<g
+   id="f44b9f32-881d-4b97-a175-677547bd5a76"
+   transform="translate(540,540)">
+</g>
+<g
+   id="g12"
+   transform="matrix(0.04707654,0,0,0.04707654,8.9999647,8.9999895)">
+<path
+   id="path10"
+   stroke-linecap="round"
+   d="M 0,384.662 V 127.338 C 0,109.52 21.543,100.597 34.142,113.196 l 128.662,128.662 c 7.81,7.81 7.81,20.474 0,28.284 L 34.142,398.804 C 21.543,411.404 0,402.48 0,384.662 Z"
+   transform="translate(-84.33,-256)"
+   style="opacity:1;fill:#000000;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+</g>
+</svg>
