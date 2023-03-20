@@ -4,7 +4,7 @@ class Billet
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet.php';
 
-    const DEFAULT_LOGO = Template::LEGAL_PATH . '/assets/img/billet/legal-blank.svg';
+    const DEFAULT_LOGO = Template::LEGAL_URL . '/assets/img/billet/legal-blank.svg';
 
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
