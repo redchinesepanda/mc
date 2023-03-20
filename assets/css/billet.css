@@ -161,6 +161,10 @@ body {
     color: #FFFFFF;
 }
 
+.billet-left a:active {
+    text-decoration: underline;
+}
+
 /* Billet Center Title Typography */
 
 .billet-center h3 {
