@@ -48,6 +48,10 @@ class BilletMain
 
         $args['color'] = get_field( 'billet-color' );
 
+        if ( empty( $args['color'] ) ) {
+            $args['color'] = self::DEFAULT_COLOR;
+        }
+
         $args['url'] = self::get_url();
 
         $args['description'] = get_field( 'billet-description' );

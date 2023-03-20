@@ -20,9 +20,9 @@ class BilletLogo
 
         // $args['color'] = get_field( 'billet-color' );
 
-        if ( empty( $args['color'] ) ) {
-            $args['color'] = self::DEFAULT_COLOR;
-        }
+        // if ( empty( $args['color'] ) ) {
+        //     $args['color'] = self::DEFAULT_COLOR;
+        // }
 
         return $args;
     }
