@@ -6,8 +6,6 @@ class BilletLogo
 
     const DEFAULT_LOGO = Template::LEGAL_URL . '/assets/img/legal-blank.svg';
 
-    const DEFAULT_COLOR = 'rgb(0,46,90)';
-
     public static function get()
     {
         $post = get_post();

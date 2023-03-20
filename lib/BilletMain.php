@@ -4,6 +4,8 @@ class BilletMain
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-main.php';
 
+    const DEFAULT_COLOR = 'rgb(0,46,90)';
+
     public static function print()
     {
 		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
