@@ -1,9 +1,3 @@
-<?php
-
-// echo '<pre>part-billet-list.php:' . print_r( $args, true ) . '</pre>';
-
-?>
-
 <?php if ( !empty( $args ) ): ?>
     <?php foreach( $args as $part ) :?>
         <?php if ( !empty( $part['part-items'] ) ): ?>

@@ -11,7 +11,7 @@ require_once('lib/Head.php');
 
 require_once('lib/Template.php');
 
-require_once('lib/Billet.php');
+require_once('lib/BilletMain.php');
 
 Head::register();
 
@@ -23,6 +23,6 @@ Head::register();
     </head>
     <body>
         <h1>Billet</h1>
-        <?php Billet::render(); ?>
+        <?php BilletMain::render(); ?>
     </body>
 </html>
