@@ -258,6 +258,7 @@ body {
 .billet-right .legal-play {
     padding: 11px 67px 11px 33px;
     background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
+    background-color: #007BFF;
     background-position: right center;
     background-repeat: no-repeat;
     background-size: auto;
