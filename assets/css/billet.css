@@ -225,6 +225,8 @@ body {
     font-weight: 700;
     font-size: 23px;
     line-height: 29px;
+    text-transform: uppercase;
+    text-decoration: none;
     color: #0C0B2D;
 }
 
