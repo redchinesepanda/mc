@@ -11,11 +11,6 @@ require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
 // echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
-<style type="text/css">
-    #<?php echo $args['selector']; ?> .billet-left {
-        background-color: <?php echo $args['color']; ?>;
-    }
-</style>
 <div id="<?php echo $args['selector']; ?>" class="billet">
     <div class="billet-left">
         <?php BilletLogo::render( $args['url'] ); ?>

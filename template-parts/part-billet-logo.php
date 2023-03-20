@@ -1,3 +1,8 @@
+<style type="text/css">
+    #<?php echo $args['selector']; ?> .billet-left {
+        background-color: <?php echo $args['color']; ?>;
+    }
+</style>
 <?php if ( !empty( $args['url']['logo'] ) ): ?>
     <a href="<?php echo $args['url']['logo'] ?>" rel="nofollow">
 <?php endif; ?>
