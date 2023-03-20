@@ -9,6 +9,8 @@ require_once( Template::LEGAL_PATH . '/lib/BilletAchievement.php' );
             <?php echo $args['title']; ?>
         </a>
     </h3>
-    <div class="billet-title-rating"><?php echo $args['rating']; ?></div>
+    <?php if ( !empty( $args['rating'] ) ): ?>
+        <div class="billet-title-rating"><?php echo $args['rating']; ?></div>
+    <?php endif; ?>
     <?php BilletAchievement::render(); ?>
 </div>
