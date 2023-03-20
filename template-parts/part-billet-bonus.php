@@ -25,7 +25,7 @@
     <?php if ( !empty( $args['url']['play'] ) ): ?>
         <a class="legal-play" href="<?php echo $args['url']['play']; ?>" rel="nofollow">
     <?php else: ?>
-        <span class="legal-bonus">
+        <span class="legal-play">
     <?php endif; ?>
         <?php echo $args['bonus']['play']; ?>
     <?php if ( !empty( $args['url']['play'] ) ): ?>

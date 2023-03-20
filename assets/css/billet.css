@@ -214,7 +214,7 @@ body {
     color: #000000;
 }
 
-/* Billet Right Bonust Typography */
+/* Billet Right Bonus Typography */
 
 .billet-right .legal-bonus,
 .billet-right .legal-bonus:hover,
@@ -234,11 +234,31 @@ body {
     text-decoration: underline;
 }
 
-/* Billet Right Bonus Description */
+/* Billet Right Description Typography */
+
 .billet-right .bonus-description {
     font-family: "Source Sans Pro";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 24.5px;
+}
+
+/* Billet Right Play Typography */
+
+.billet-right .legal-play {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.billet-right .legal-play {
+    padding: 11px 67px 11px 33px;
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
