@@ -12,6 +12,7 @@ class AdminBillet
     {
         $handler = new self();
 
+        // При создании нового поста POST_TYPE будет выбран шаблон TEMPLATE в блоке Post Attributes > Template
         add_action( 'wp_insert_post', [ $handler, 'meta_template' ], 10, 3 );
     }
 
