@@ -42,7 +42,7 @@ class BilletBonus
 
         $args['profit']['value'] = get_field( 'billet-play-profit-value' );
 
-        $args['spoiler'] = __( 'Spoiler', 'Thrive' );
+        $args['spoiler'] = __( 'More Details', 'Thrive' );
 
         return $args;
     }
