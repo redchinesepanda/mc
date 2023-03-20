@@ -271,3 +271,21 @@ body {
 .billet-right .legal-play:hover {
     background-color: rgb(89, 151, 227);
 }
+
+/* Billet Right Spoiler Typography */
+
+.billet-right .legal-spoiler-button {
+    font-family: "Source Sans Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.billet-right .legal-spoiler-button {
+    padding-right: 22px;
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-spoiler-open.svg' );
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}

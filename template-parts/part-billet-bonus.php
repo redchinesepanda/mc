@@ -36,6 +36,6 @@
 </div>
 <?php if ( !empty( $args['spoiler'] ) ): ?>
     <div class="billet-spoiler-button">
-        <span><?php echo $args['spoiler']; ?></span>
+        <span class="legal-spoiler-button"><?php echo $args['spoiler']; ?></span>
     </div>
 <?php endif; ?>
