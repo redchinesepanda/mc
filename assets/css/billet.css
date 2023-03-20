@@ -161,7 +161,7 @@ body {
     color: #FFFFFF;
 }
 
-.billet-left a:active {
+.billet-left a:hover {
     text-decoration: underline;
 }
 
