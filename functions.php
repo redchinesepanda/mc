@@ -12,6 +12,10 @@ add_action( 'wp_enqueue_scripts', function () {
 
 require_once( 'lib/acf/ACFBilletCards.php' );
 
+require_once( 'lib/admin/AdminMain.php' );
+
 ACFBilletCards::register();
+
+AdminMain::register();
 
 ?>
