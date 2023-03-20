@@ -213,3 +213,21 @@ body {
     line-height: 18px;
     color: #000000;
 }
+
+/* Billet Right Bonust Typography */
+
+.billet-right .legal-bonus,
+.billet-right .legal-bonus:hover,
+.billet-right .legal-bonus:active,
+.billet-right .legal-bonus:visited {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 29px;
+    color: #0C0B2D;
+}
+
+.billet-right .legal-bonus:hover {
+    text-decoration: underline;
+}

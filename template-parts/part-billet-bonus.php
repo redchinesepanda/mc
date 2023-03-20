@@ -4,9 +4,17 @@
 
 ?>
 <div class="bonus-title">
-    <a href="<?php echo $args['url']['bonus']; ?>" rel="nofollow">
-        <?php echo $args['bonus']['title']; ?>
-    </a>
+    <?php if ( !empty( $args['url']['review'] ) ): ?>
+        <a class="legal-bonus" href="<?php echo $args['url']['bonus']; ?>" rel="nofollow">
+    <?php else: ?>
+        <span class="legal-bonus">
+    <?php endif; ?>
+            <?php echo $args['bonus']['title']; ?>
+    <?php if ( !empty( $args['url']['review'] ) ): ?>
+        </a>
+    <?php else: ?>
+        </span>
+    <?php endif; ?>
 </div>
 <div class="bonus-description">
     <?php echo $args['bonus']['description']; ?>
