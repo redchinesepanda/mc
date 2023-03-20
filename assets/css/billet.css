@@ -147,10 +147,10 @@ body {
 
 /* Billet Left Review Typography */
 
-.billet-left a,
-.billet-left a:hover,
-.billet-left a:active,
-.billet-left a:visited {
+.billet-left .legal-review,
+.billet-left .legal-review:hover,
+.billet-left .legal-review:active,
+.billet-left .legal-review:visited {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
@@ -160,12 +160,11 @@ body {
     text-decoration: none;
     color: #FFFFFF;
 }
-.billet-left a {
+.billet-left .legal-review {
     display: block;
-    padding-bottom: 5px;
     border-bottom: 1px solid transparent;
 }
-.billet-left a:hover {
+.billet-left .legal-review:hover {
     border-bottom: 1px solid #FFFFFF;
 }
 

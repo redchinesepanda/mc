@@ -6,9 +6,13 @@
     </a>
 <?php endif; ?>
 <?php if ( !empty( $args['url']['review'] ) ): ?>
-    <a href="<?php echo $args['url']['review'] ?>">
+    <a class="legal-review" href="<?php echo $args['url']['review'] ?>">
+<?php else: ?>
+    <span class="legal-review">
 <?php endif; ?>
         Review
 <?php if ( !empty( $args['url']['review'] ) ): ?>
     </a>
+<?php else: ?>
+    </span>
 <?php endif; ?>
