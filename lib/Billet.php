@@ -25,6 +25,29 @@ class Billet
 		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
     }
 
+    private static function get_url()
+    {
+        $referal_url = get_field( 'billet-referal-url' );
+
+        $card_id = get_field( 'billet-card-id' );
+
+        $card_url = get_post_permalink( $card_id );
+
+        $oops = '#oops';
+
+        $args['logo'] = ( $referal_url != '' ? $referal_url : ( $card_url !== false ? $card_url : '' ) );
+
+        $args['review'] = ( $card_url !== false ? $card_url : '' );
+
+        $args['title'] = ( $card_url !== false ? $card_url : ( $referal_url != '' ? $referal_url : '' ) );
+
+        $args['bonus'] = ( $referal_url != '' ? $referal_url : ( $oops != '' ? $oops : '' ) );
+
+        $args['play'] = $args['bonus'];
+
+        return $args;
+    }
+
     public static function get()
     {
         $post = get_post();
@@ -45,23 +68,7 @@ class Billet
             $args['color'] = self::DEFAULT_COLOR;
         }
 
-        $referal-url = get_field( 'billet-referal-url' );
-
-        $card_id = get_field( 'billet-card-id' );
-
-        $card-url = get_post_permalink( $card_id );
-
-        $oops = '#oops';
-
-        $args['url']['logo'] = ( $referal-url != '' ? $referal-url : ( $card-url !== false ? $card-url : '' ) );
-
-        $args['url']['review'] = ( $card-url !== false ? $card-url : '' );
-
-        $args['url']['title'] = ( $card-url !== false ? $card-url : ( $referal-url != '' ? $referal-url : '' ) );
-
-        $args['url']['bonus'] = ( $referal-url != '' ? $referal-url : ( $oops != '' ? $oops : '' ) );
-
-        $args['url']['play'] = $args['url']['bonus'];
+        $args['url'] = self::get_url();
 
         return $args;
     }
