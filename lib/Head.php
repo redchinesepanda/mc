@@ -2,7 +2,7 @@
 
 class Head
 {
-	public static function register()
+	public static function print()
     {
         BilletMain::print();
 	}
