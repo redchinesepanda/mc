@@ -252,6 +252,8 @@ body {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
     color: #FFFFFF;
 }
 
