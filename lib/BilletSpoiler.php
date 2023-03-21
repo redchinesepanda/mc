@@ -30,7 +30,6 @@ class BilletSpoiler
     {
         return $key & 1;
     }
-    }
 
     private static function even( $value, $key )
     {
