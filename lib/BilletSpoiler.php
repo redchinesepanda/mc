@@ -18,7 +18,8 @@ class BilletSpoiler
         if( $repeater ) {
             foreach( $repeater as $key => $item ) {
                 foreach( $item_fields as $field_key => $field_value ) {
-                $args[$key][$field_key] = $item[$field_value];
+                    $args[$key][$field_key] = $item[$field_value];
+                }
             }
         }
 
