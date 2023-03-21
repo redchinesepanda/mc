@@ -38,11 +38,11 @@ class BilletSpoiler
             ]
         );
 
-        // $message['args'] = $args;
+        $message['args'] = $args;
 
-        $fleat_keys = array_keys($args, '.');
+        $float_keys = array_keys($args, '.');
 
-        $message['fleat_keys'] = $fleat_keys;
+        $message['float_keys'] = $float_keys;
 
         // for ( $args as $key => $arg ) {
         //     $message['foreach'][] = $arg;
