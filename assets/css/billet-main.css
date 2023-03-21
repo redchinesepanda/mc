@@ -245,19 +245,13 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-.billet-center h3 {
+.billet-center .legal-title {
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 23px;
     font-style: normal;
     line-height: 29px;
     text-decoration: none;
-}
-
-.billet-center h3 a,
-.billet-center h3 a:hover,
-.billet-center h3 a:active,
-.billet-center h3 a:visited {
     color: #000000;
 }
 
