@@ -26,10 +26,10 @@ class BilletSpoiler
         return $args;
     }
 
-    private static function has_dot( $item )
-    {
-        return ( strpos( $item['value'], '.' ) !== false );
-    }
+    // private static function has_dot( $item )
+    // {
+    //     return ( strpos( $item['value'], '.' ) !== false );
+    // }
 
     private static function get_progress()
     {
@@ -44,11 +44,19 @@ class BilletSpoiler
             ]
         );
 
-        $handler = new self();
+        // $handler = new self();
 
-        $float = array_filter( $args, [ $handler, 'has_dot' ] );
+        // $float = array_filter( $args, [ $handler, 'has_dot' ] );
 
-        $message['float'] = $float;
+        // $message['float'] = $float;
+
+        $length = count( $args );
+
+        for ( $i = 0; $i < $length; $i++ ) {
+            $args[$i]['class'] = str_replace( '.', '-', $args[$i]['value'] );
+
+            $args[$i]['value'] = str_replace( '.', ',', $args[$i]['value'] );
+        }
 
         echo '<pre>' . print_r( $message, true ) . '</pre>';
 
