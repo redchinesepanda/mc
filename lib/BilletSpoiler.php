@@ -11,7 +11,7 @@ class BilletSpoiler
 
     public static function get_repeater( $repeater_field = '', $item_fields = [] )
     {
-        $args = [];
+        $args = []; 
 
         $repeater = get_field( $field );
 
