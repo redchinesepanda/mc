@@ -1,3 +1,9 @@
+/* Billet Spoiler Display */
+
+.billet-spoiler {
+    margin-top: 15px;
+}
+
 .billet-spoiler,
 .billet-spoiler .spoiler-progress {
     display: flex;
@@ -22,4 +28,19 @@
 
 .billet-spoiler .spoiler-progress .progress-item {
     width: 50%;
+}
+
+/* Billet Spoiler Color */
+
+.billet-spoiler {
+    background-color: #EFF5FB;
+    border-radius: 20px;
+}
+
+.billet-spoiler .spoiler-description {
+    background-color: #F6F6F6;
+}
+
+.billet-spoiler .spoiler-progress {
+    background-color: #FFFFFF;
 }
