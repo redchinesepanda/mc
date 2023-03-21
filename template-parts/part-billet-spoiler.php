@@ -15,7 +15,9 @@
         <?php endforeach; ?>
     </div>
     <div class="spoiler-description">
-        <?php echo $args['description']; ?>
+        <div class="spoiler-description-wrapper">
+            <?php echo $args['description']; ?>
+        </div>
     </div>
     <div class="spoiler-progress">
         <?php foreach ( $args['progress'] as $key => $item ) : ?>

@@ -20,7 +20,7 @@
     width: 25%;
 }
 
-.billet-spoiler .spoiler-description {
+.billet-spoiler .spoiler-description-wrapper {
     padding: 20px;
 }
 
@@ -32,10 +32,6 @@
 .billet-spoiler .spoiler-review {
     width: 100%;
 }
-
-/* .billet-spoiler .spoiler-stat {
-    width: 25%;
-} */
 
 .billet-spoiler .spoiler-progress .progress-item {
     width: 50%;
