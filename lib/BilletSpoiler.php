@@ -38,9 +38,13 @@ class BilletSpoiler
             ]
         );
 
-        $message['args'] = $args;
+        // $message['args'] = $args;
 
-        $keys = array_search( '.' , array_column( $args, 'value' ) );
+        $column = array_column( $args, 'value' );
+
+        $message['column'] = $column;
+
+        $keys = array_search( '.' , $column );
 
         $message['keys'] = $keys;
 
