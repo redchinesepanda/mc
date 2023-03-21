@@ -2,10 +2,32 @@
 
 .billet-spoiler,
 .billet-spoiler .spoiler-stats,
+.billet-spoiler .spoiler-description,
 .billet-spoiler .spoiler-progress {
     display: flex;
+}
+
+.billet-spoiler,
+.billet-spoiler .spoiler-stats,
+.billet-spoiler .spoiler-progress {
     flex-wrap: wrap;
 }
+
+.billet-spoiler .spoiler-stats {
+    justify-content: space-around;
+}
+
+.billet-spoiler .spoiler-description {
+    align-items: center;
+}
+
+.billet-spoiler .spoiler-progress {
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+
+/* Spoiler Position */
 
 .billet-spoiler {
     margin-top: 15px;
@@ -13,12 +35,6 @@
 
 .billet-spoiler .spoiler-stats {
     padding: 10px 0px;
-    justify-content: space-around;
-}
-
-.billet-spoiler .spoiler-description {
-    display: flex;
-    align-items: center;
 }
 
 .billet-spoiler .spoiler-description-wrapper {
@@ -26,11 +42,10 @@
 }
 
 .billet-spoiler .spoiler-progress {
-    align-items: center;
-    justify-content: space-evenly;
-    row-gap: 20px;
     padding: 20px 0px;
 }
+
+/* Spoiler Width */
 
 .billet-spoiler .spoiler-description {
     width: 25%;
@@ -49,7 +64,7 @@
     width: calc(50% - 30px);
 }
 
-/* Billet Spoiler Color */
+/* Billet Spoiler Background */
 
 .billet-spoiler {
     background-color: #EFF5FB;
