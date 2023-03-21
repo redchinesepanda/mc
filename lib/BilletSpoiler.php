@@ -42,6 +42,8 @@ class BilletSpoiler
             $args[$key]['class'] = str_replace( '.', '-', $arg['value'] );
         }
 
+        echo '<pre>BilletSpoiler::get_progress: ' . print_r( $args, true ) . '</pre>';
+
         return $arg;
     }
 
