@@ -6,9 +6,16 @@ class BilletMain
 
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
+    const CSS = [
+        'billet-main' => '/assets/css/billet-main.css',
+
+        'billet-spoiler' => '/assets/css/billet-spoiler.css',
+    ];
+
     public static function print()
     {
-		echo '<link id="billet" href="' . Template::LEGAL_URL . '/assets/css/billet.css" rel="stylesheet" />';
+        foreach ( self::CSS as $key => $url ) {}
+		echo '<link id="' . $key . '" href="' . Template::LEGAL_URL . $url . '" rel="stylesheet" />';
     }
 
     private static function get_url()

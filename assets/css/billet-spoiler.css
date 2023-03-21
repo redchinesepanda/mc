@@ -1,0 +1,20 @@
+.billet-spoiler {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.billet-spoiler .spoiler-stat {
+    width: 25%;
+}
+
+.billet-spoiler .spoiler-description {
+    width: 25%;
+}
+
+.billet-spoiler .spoiler-progress {
+    width: 75%;
+}
+
+.billet-spoiler .spoiler-review {
+    width: 100%;
+}
