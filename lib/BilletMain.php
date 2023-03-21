@@ -14,8 +14,9 @@ class BilletMain
 
     public static function print()
     {
-        foreach ( self::CSS as $key => $url ) {}
-		echo '<link id="' . $key . '" href="' . Template::LEGAL_URL . $url . '" rel="stylesheet" />';
+        foreach ( self::CSS as $key => $url ) {
+            echo '<link id="' . $key . '" href="' . Template::LEGAL_URL . $url . '" rel="stylesheet" />';
+        }
     }
 
     private static function get_url()
