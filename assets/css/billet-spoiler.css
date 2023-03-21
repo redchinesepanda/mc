@@ -11,6 +11,11 @@
     flex-wrap: wrap;
 }
 
+.billet-spoiler .spoiler-stats {
+    padding: 10px 0px;
+    justify-content: space-around;
+}
+
 .billet-spoiler .spoiler-description {
     width: 25%;
 }
