@@ -28,6 +28,7 @@ class BilletSpoiler
 
     private static function get_progress()
     {
+        $message['function'] = 'BilletSpoiler::get_progress';
         $args = self::get_repeater(
             'billet-spoiler-progress',
             [
@@ -37,13 +38,17 @@ class BilletSpoiler
             ]
         );
 
-        foreach ( $args as $key => $arg ) {
-            $arg['class'] = str_replace( '.', '-', $arg['value'] );
+        $message['args'] = $args;
 
-            $arg['value'] = str_replace( '.', ',', $arg['value'] );
+        foreach ( $args as $key => $arg ) {
+            $message['foreach'][] = $arg;
+
+            // $arg['class'] = str_replace( '.', '-', $arg['value'] );
+
+            // $arg['value'] = str_replace( '.', ',', $arg['value'] );
         }
 
-        echo '<pre>BilletSpoiler::get_progress: ' . print_r( $args, true ) . '</pre>';
+        echo '<pre>' . print_r( $message, true ) . '</pre>';
 
         return $arg;
     }
