@@ -1,10 +1,3 @@
-<style type="text/css">
-    <?php foreach ( $args['progress'] as $key => $item ) : ?>
-        .<?php echo $args['selector']; ?> .<?php echo $key; ?> {
-            width: <?php echo $item['value']; ?>;
-        }
-    <?php endforeach; ?>
-</style>
 <div class="billet-spoiler <?php echo $args['selector']; ?>">
     <div class="spoiler-stats">
         <?php foreach ( $args['stats'] as $stat ) : ?>
@@ -24,7 +17,7 @@
             <div class="progress-item item-<?php echo $key; ?>">
                 <div class="item-title"><?php echo $item['title']; ?></div>
                 <div class="item-value-wrapper">
-                    <div class="item-value"><?php echo $item['value']; ?>/10</div>
+                    <div class="item-value legal-<?php echo str_replace( '.', '-', $item['value'] ); ?>"><?php echo str_replace( '.', ',', $item['value'] ); ?>/10</div>
                 </div>
             </div>
         <?php endforeach; ?>

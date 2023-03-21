@@ -68,6 +68,18 @@
     width: calc(50% - 30px);
 }
 
+.billet-spoiler .item-value.legal-2 {
+    width: 20%;
+}
+
+.billet-spoiler .item-value.legal-7 {
+    width: 70%;
+}
+
+.billet-spoiler .item-value.legal-7-5 {
+    width: 75%;
+}
+
 /* Billet Spoiler Background */
 
 .billet-spoiler {
