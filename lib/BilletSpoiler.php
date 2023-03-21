@@ -75,8 +75,6 @@ class BilletSpoiler
 
         // $args = self::sort( $args );
 
-        echo '<pre>' . print_r( $args, true ) . '</pre>';
-
         return $args;
     }
 
@@ -99,6 +97,8 @@ class BilletSpoiler
         );
 
         $args['progress'] = self::get_progress();
+
+        echo '<pre>' . print_r( $args, true ) . '</pre>';
 
         return $args;
     }
