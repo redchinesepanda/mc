@@ -58,9 +58,11 @@ class BilletSpoiler
             $args[$i]['value'] = str_replace( '.', ',', $args[$i]['value'] );
         }
 
+        $message['args'] = $args;
+
         echo '<pre>' . print_r( $message, true ) . '</pre>';
 
-        return $arg;
+        return $args;
     }
 
     public static function get() {
