@@ -26,6 +26,23 @@ class BilletSpoiler
         return $args;
     }
 
+    private static function get_progress()
+    {
+        $args = self::get_repeater(
+            'billet-spoiler-progress',
+            [
+                'title' => 'progress-item-title', 
+
+                'value' => 'progress-item-value', 
+            ]
+        );
+
+        foreach ( $args as $key => $arg ) {
+            $arg['value'] = str_replace( '.', ',', $item['value'] );
+            $args[$key]['class'] = str_replace( '.', '-', $item['value'] );
+        }
+    }
+
     public static function get() {
         $post = get_post();
 
@@ -44,14 +61,7 @@ class BilletSpoiler
             ]
         );
 
-        $args['progress'] = self::get_repeater(
-            'billet-spoiler-progress',
-            [
-                'title' => 'progress-item-title', 
-
-                'value' => 'progress-item-value', 
-            ]
-        );
+        $args['progress'] = self::get_progress();
 
         return $args;
     }

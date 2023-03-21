@@ -17,7 +17,7 @@
             <div class="progress-item item-<?php echo $key; ?>">
                 <div class="item-title"><?php echo $item['title']; ?></div>
                 <div class="item-value-wrapper">
-                    <div class="item-value legal-<?php echo str_replace( '.', '-', $item['value'] ); ?>"><?php echo str_replace( '.', ',', $item['value'] ); ?>/10</div>
+                    <div class="item-value legal-<?php $item['class']; ?>"><?php echo $item['value']; ?>/10</div>
                 </div>
             </div>
         <?php endforeach; ?>
