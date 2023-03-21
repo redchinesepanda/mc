@@ -47,7 +47,6 @@
 
 .billet-spoiler .spoiler-review {
     padding: 10px;
-    text-align: center;
 }
 
 /* Billet Spoiler Width */
@@ -137,6 +136,7 @@
 }
 
 .billet-spoiler .item-value {
+    text-align: center;
     color: rgb(255, 255, 255);
 }
 
@@ -147,5 +147,6 @@
     font-weight: 600;
     line-height: 28px;
     text-decoration: none;
+    text-align: center;
     color: #000000;
 }
