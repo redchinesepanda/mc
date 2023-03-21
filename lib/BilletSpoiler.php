@@ -46,7 +46,7 @@ class BilletSpoiler
 
         $handler = new self();
 
-        $float = array_filter( $args, [ $handler, 'is_float' ] );
+        $float = array_filter( $args, [ $handler, 'has_dot' ] );
 
         $message['float'] = $float;
 
