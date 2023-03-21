@@ -44,9 +44,9 @@ class BilletSpoiler
         $handler = new self();
 
         return array_merge(
-            array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH ),
+            array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH ),
 
-            array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH )
+            array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH )
         );
     }
 
