@@ -30,7 +30,7 @@ require_once( Template::LEGAL_PATH . '/lib/BilletSpoiler.php' );
         <?php BilletBonus::render( $args['url'] ); ?>
     </div>
 </div>
-<?php BilletSpoiler::render(); ?>
+<?php BilletSpoiler::render( $args['url'] ); ?>
 <div class="billet-footer">
     <?php echo $args['description'] ?>
 </div>

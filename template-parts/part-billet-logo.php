@@ -1,7 +1,7 @@
 <?php if ( !empty( $args['url']['logo'] ) ): ?>
     <a href="<?php echo $args['url']['logo'] ?>" rel="nofollow">
 <?php endif; ?>
-        <img src="<?php echo $args['logo'] ?>" alt="billet logo" />
+    <img src="<?php echo $args['logo'] ?>" alt="billet logo" />
 <?php if ( !empty( $args['url']['logo'] ) ): ?>
     </a>
 <?php endif; ?>
@@ -10,7 +10,7 @@
 <?php else: ?>
     <span class="legal-review">
 <?php endif; ?>
-        Review
+    Review
 <?php if ( !empty( $args['url']['review'] ) ): ?>
     </a>
 <?php else: ?>
