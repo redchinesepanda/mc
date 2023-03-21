@@ -73,6 +73,8 @@ class BilletSpoiler
             ]
         );
 
+        $message['get_repeater'] = $args;
+
         $args = self::replace( $args );
 
         $message['replace'] = $args;
