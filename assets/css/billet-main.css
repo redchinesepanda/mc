@@ -55,6 +55,10 @@ body {
     flex-direction: column;
 }
 
+.billet-right .legal-play {
+    display: block;
+}
+
 /* Billet Background */
 
 .billet {
@@ -109,6 +113,19 @@ body {
 
 .billet-list-part.legal-triangle .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-triangle.svg');
+}
+
+.billet-right .legal-play {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
+    background-color: #007BFF;
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 66px;
+}
+
+.billet-right .legal-play:hover {
+    background-color: rgb(89, 151, 227);
 }
 
 /* Billet Width and Height */
@@ -190,7 +207,11 @@ body {
     padding: 3px 0px 0px 30px;
 }
 
-/* Billet Left Review Typography */
+.billet-right .legal-play {
+    padding: 11px 67px 11px 33px;
+}
+
+/* Billet Typography */
 
 .billet-left .legal-review,
 .billet-left .legal-review:hover,
@@ -212,8 +233,6 @@ body {
 .billet-left .legal-review:hover {
     border-bottom: 1px solid #FFFFFF;
 }
-
-/* Billet Center Title Typography */
 
 .billet-center h3 {
     font-family: "Source Sans Pro";
@@ -249,8 +268,6 @@ body {
     color: #000000;
 }
 
-/* Billet Center List Typography */
-
 .billet-list-part .billet-list-part-item {
     font-family: 'Source Sans Pro';
     font-style: normal;
@@ -259,8 +276,6 @@ body {
     line-height: 18px;
     color: #000000;
 }
-
-/* Billet Right Bonus Typography */
 
 .billet-right .legal-bonus,
 .billet-right .legal-bonus:hover,
@@ -280,8 +295,6 @@ body {
     text-decoration: underline;
 }
 
-/* Billet Right Description Typography */
-
 .billet-right .bonus-description {
     font-family: "Source Sans Pro";
     font-size: 14px;
@@ -289,8 +302,6 @@ body {
     font-weight: 400;
     line-height: 24.5px;
 }
-
-/* Billet Right Play Typography */
 
 .billet-right .legal-play {
     font-family: 'Source Sans Pro';
@@ -302,23 +313,6 @@ body {
     text-decoration: none;
     color: #FFFFFF;
 }
-
-.billet-right .legal-play {
-    display: block;
-    padding: 11px 67px 11px 33px;
-    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
-    background-color: #007BFF;
-    background-position: right 20px center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    border-radius: 66px;
-}
-
-.billet-right .legal-play:hover {
-    background-color: rgb(89, 151, 227);
-}
-
-/* Billet Right Spoiler Typography */
 
 .billet-right .legal-spoiler-button {
     font-family: "Source Sans Pro";
