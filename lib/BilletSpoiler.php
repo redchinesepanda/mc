@@ -38,8 +38,8 @@ class BilletSpoiler
         );
 
         foreach ( $args as $key => $arg ) {
-            $args[$key]['class'] = str_replace( '.', '-', $arg['value'] );
-            
+            $arg['class'] = str_replace( '.', '-', $arg['value'] );
+
             $arg['value'] = str_replace( '.', ',', $arg['value'] );
         }
 
