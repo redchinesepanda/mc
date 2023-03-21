@@ -112,6 +112,15 @@
     color: rgba(10, 10, 10, 0.85);
 }
 
+.billet-spoiler .item-title {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    color: rgba(10, 10, 10, 0.85);
+}
+
 .billet-spoiler .legal-review {
     font-family: "Source Sans Pro";
     font-size: 16px;
