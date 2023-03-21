@@ -13,7 +13,7 @@ class BilletSpoiler
     {
         $args = [];
 
-        $repeater = get_field( $field );
+        $repeater = get_field( $repeater_field );
 
         if( $repeater ) {
             foreach( $repeater as $key => $item ) {
