@@ -8,6 +8,8 @@ require_once( Template::LEGAL_PATH . '/lib/BilletList.php' );
 
 require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
 
+require_once( Template::LEGAL_PATH . '/lib/BilletSpoiler.php' );
+
 // echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
 
 ?>
@@ -27,7 +29,7 @@ require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
     <div class="billet-right">
         <?php BilletBonus::render( $args['url'] ); ?>
     </div>
-    <?php // BilletSpoiler::render(); ?>
+    <?php BilletSpoiler::render(); ?>
 </div>
 <div class="billet-footer">
     <?php echo $args['description'] ?>
