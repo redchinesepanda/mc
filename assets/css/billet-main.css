@@ -128,6 +128,13 @@ body {
     background-color: rgb(89, 151, 227);
 }
 
+.billet-right .legal-spoiler-button {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-spoiler-open.svg' );
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
 /* Billet Width and Height */
 
 .billet-left,
@@ -209,6 +216,10 @@ body {
 
 .billet-right .legal-play {
     padding: 11px 67px 11px 33px;
+}
+
+.billet-right .legal-spoiler-button {
+    padding-right: 22px;
 }
 
 /* Billet Typography */
@@ -320,12 +331,4 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
-}
-
-.billet-right .legal-spoiler-button {
-    padding-right: 22px;
-    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-spoiler-open.svg' );
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: auto;
 }
