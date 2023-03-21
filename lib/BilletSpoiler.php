@@ -26,6 +26,30 @@ class BilletSpoiler
         return $args;
     }
 
+    private static function replace( $args )
+    {
+        $length = count( $args );
+
+        for ( $i = 0; $i < $length; $i++ ) {
+            $args[$i]['class'] = str_replace( '.', '-', $args[$i]['value'] );
+
+            $args[$i]['value'] = str_replace( '.', ',', $args[$i]['value'] );
+        }
+
+        return $args;
+    }
+
+    private static function sort( $args )
+    {
+        $handler = new self();
+
+        return array_merge(
+            array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH ),
+
+            array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH )
+        );
+    }
+
     private static function odd( $value, $key )
     {
         return $key & 1;
@@ -49,23 +73,13 @@ class BilletSpoiler
             ]
         );
 
-        $length = count( $args );
+        $args = self::replace( $args );
 
-        for ( $i = 0; $i < $length; $i++ ) {
-            $args[$i]['class'] = str_replace( '.', '-', $args[$i]['value'] );
+        $message['replace'] = $args;
 
-            $args[$i]['value'] = str_replace( '.', ',', $args[$i]['value'] );
-        }
+        $args = self::sort( $args );
 
-        $handler = new self();
-
-        $args = array_merge(
-            array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH ),
-
-            array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH )
-        );
-
-        $message['args'] = $args;
+        $message['sort'] = $args;
 
         echo '<pre>' . print_r( $message, true ) . '</pre>';
 
