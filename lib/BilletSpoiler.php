@@ -64,8 +64,6 @@ class BilletSpoiler
 
     private static function get_progress()
     {
-        $message['function'] = 'BilletSpoiler::get_progress';
-
         $args = self::get_repeater(
             'billet-spoiler-progress',
             [
@@ -75,17 +73,9 @@ class BilletSpoiler
             ]
         );
 
-        $message['get_repeater'] = $args;
-
         $args = self::replace( $args );
 
-        $message['replace'] = $args;
-
         $args = self::sort( $args );
-
-        $message['sort'] = $args;
-
-        echo '<pre>' . print_r( $message, true ) . '</pre>';
 
         return $args;
     }
