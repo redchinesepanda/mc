@@ -41,6 +41,8 @@ class BilletSpoiler
             $arg['value'] = str_replace( '.', ',', $item['value'] );
             $args[$key]['class'] = str_replace( '.', '-', $item['value'] );
         }
+
+        return $arg;
     }
 
     public static function get() {
