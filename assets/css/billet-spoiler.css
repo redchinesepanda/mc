@@ -20,6 +20,11 @@
     width: 25%;
 }
 
+.billet-spoiler .spoiler-description {
+    display: flex;
+    align-items: center;
+}
+
 .billet-spoiler .spoiler-description-wrapper {
     padding: 20px;
 }
@@ -28,13 +33,19 @@
     width: 75%;
 }
 
+.billet-spoiler .spoiler-progress {
+    justify-content: space-evenly;
+    row-gap: 20px;
+    padding: 20px 0px;
+}
+
 .billet-spoiler .spoiler-stats,
 .billet-spoiler .spoiler-review {
     width: 100%;
 }
 
-.billet-spoiler .spoiler-progress .progress-item {
-    width: 50%;
+.billet-spoiler .progress-item {
+    width: calc(50% - 30px);
 }
 
 /* Billet Spoiler Color */
