@@ -84,6 +84,17 @@
     background-color: #FFFFFF;
 }
 
+.billet-spoiler .item-value-wrapper {
+    background-color: #F6F6F6;
+    box-shadow: 0 0 2px #e4e4e4;
+    border-radius: 20px;
+}
+
+.billet-spoiler .item-value {
+    background-color: #5997e3;
+    border-radius: 20px;
+}
+
 /* Billet Spoiler Typography */
 
 .billet-spoiler .stat-title,
@@ -112,13 +123,21 @@
     color: rgba(10, 10, 10, 0.85);
 }
 
-.billet-spoiler .item-title {
+.billet-spoiler .item-title,
+.billet-spoiler .item-value {
     font-family: "Source Sans Pro";
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+}
+
+.billet-spoiler .item-title {
     color: rgba(10, 10, 10, 0.85);
+}
+
+.billet-spoiler .item-value {
+    color: rgb(255, 255, 255);
 }
 
 .billet-spoiler .legal-review {
