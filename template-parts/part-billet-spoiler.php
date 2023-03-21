@@ -6,12 +6,14 @@
     <?php endforeach; ?>
 </style>
 <div class="billet-spoiler <?php echo $args['selector']; ?>">
-    <?php foreach ( $args['stats'] as $stat ) : ?>
-        <div class="spoiler-stat">
-            <div class="stat-title"><?php echo $stat['title']; ?>:</div>
-            <div class="stat-description"><?php echo $stat['description']; ?></div>
-        </div>
-    <?php endforeach; ?>
+    <div class="spoiler-stats">
+        <?php foreach ( $args['stats'] as $stat ) : ?>
+            <div class="spoiler-stat">
+                <div class="stat-title"><?php echo $stat['title']; ?>:</div>
+                <div class="stat-description"><?php echo $stat['description']; ?></div>
+            </div>
+        <?php endforeach; ?>
+    </div>
     <div class="spoiler-description">
         <?php echo $args['description']; ?>
     </div>
