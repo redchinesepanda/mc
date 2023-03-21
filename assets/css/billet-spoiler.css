@@ -1,14 +1,14 @@
 /* Billet Spoiler Display */
 
-.billet-spoiler {
-    margin-top: 15px;
-}
-
 .billet-spoiler,
 .billet-spoiler .spoiler-stats,
 .billet-spoiler .spoiler-progress {
     display: flex;
     flex-wrap: wrap;
+}
+
+.billet-spoiler {
+    margin-top: 15px;
 }
 
 .billet-spoiler .spoiler-stats {
@@ -18,6 +18,10 @@
 
 .billet-spoiler .spoiler-description {
     width: 25%;
+}
+
+.billet-spoiler .spoiler-description {
+    padding: 20px;
 }
 
 .billet-spoiler .spoiler-progress {
