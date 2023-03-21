@@ -1,3 +1,8 @@
+<?php 
+
+echo '<pre>' . print_r( $args, true ) . '</pre>';
+
+?>
 <div class="billet-spoiler <?php echo $args['selector']; ?>">
     <div class="spoiler-stats">
         <?php foreach ( $args['stats'] as $stat ) : ?>

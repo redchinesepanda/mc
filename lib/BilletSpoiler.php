@@ -98,8 +98,6 @@ class BilletSpoiler
 
         $args['progress'] = self::get_progress();
 
-        echo '<pre>' . print_r( $args, true ) . '</pre>';
-
         return $args;
     }
 
