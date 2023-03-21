@@ -9,9 +9,9 @@ class BilletSpoiler
         return get_field( 'billet-spoiler-enabled');
     }
 
-    public static function get_repeater( $repeater_field = '', $item_fields = [] )
+    private static function get_repeater( $repeater_field = '', $item_fields = [] )
     {
-        $args = []; 
+        $args = [];
 
         $repeater = get_field( $field );
 
@@ -25,7 +25,7 @@ class BilletSpoiler
         return $args;
     }
 
-    private static function get() {
+    public static function get() {
         $post = get_post();
 
         $args['selector'] = 'spoiler-' . $post->ID;
