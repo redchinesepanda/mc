@@ -29,8 +29,8 @@ require_once( Template::LEGAL_PATH . '/lib/BilletSpoiler.php' );
     <div class="billet-right">
         <?php BilletBonus::render( $args['url'] ); ?>
     </div>
-    <?php BilletSpoiler::render(); ?>
 </div>
+<?php BilletSpoiler::render(); ?>
 <div class="billet-footer">
     <?php echo $args['description'] ?>
 </div>
