@@ -26,9 +26,15 @@ class BilletSpoiler
         return $args;
     }
 
+    private static function is_float( $item )
+    {
+        return is_float( $item['value'] );
+    }
+
     private static function get_progress()
     {
         $message['function'] = 'BilletSpoiler::get_progress';
+
         $args = self::get_repeater(
             'billet-spoiler-progress',
             [
@@ -38,25 +44,11 @@ class BilletSpoiler
             ]
         );
 
-        // $message['args'] = $args;
+        $handler = new self();
 
-        $column = array_column( $args, 'value' );
+        $float = array_filter( $args, [ $handler, 'is_float' ] );
 
-        $message['column'] = $column;
-
-        $keys = array_keys( $column, '.' );
-
-        $message['keys'] = $keys;
-
-        // for ( $args as $key => $arg ) {
-        //     $message['foreach'][] = $arg;
-
-        //     $args[$key]['class'] = str_replace( '.', '-', $arg['value'] );
-
-        //     $arg['value'] = str_replace( '.', ',', $arg['value'] );
-        // }
-
-        // $message['args2'] = $args;
+        $message['float'] = $float;
 
         echo '<pre>' . print_r( $message, true ) . '</pre>';
 
