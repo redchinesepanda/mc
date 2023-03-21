@@ -38,8 +38,9 @@ class BilletSpoiler
         );
 
         foreach ( $args as $key => $arg ) {
-            $arg['value'] = str_replace( '.', ',', $arg['value'] );
             $args[$key]['class'] = str_replace( '.', '-', $arg['value'] );
+            
+            $arg['value'] = str_replace( '.', ',', $arg['value'] );
         }
 
         echo '<pre>BilletSpoiler::get_progress: ' . print_r( $args, true ) . '</pre>';
