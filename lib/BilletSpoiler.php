@@ -40,9 +40,9 @@ class BilletSpoiler
 
         $message['args'] = $args;
 
-        $float_keys = array_keys($args, '.');
+        $keys = array_search( '.' , array_column( $args, 'value' ) );
 
-        $message['float_keys'] = $float_keys;
+        $message['keys'] = $keys;
 
         // for ( $args as $key => $arg ) {
         //     $message['foreach'][] = $arg;
