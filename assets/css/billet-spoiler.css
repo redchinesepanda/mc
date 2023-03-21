@@ -68,8 +68,32 @@
     width: calc(50% - 30px);
 }
 
+.billet-spoiler .item-value.legal-0 {
+    width: 0%;
+}
+
+.billet-spoiler .item-value.legal-1 {
+    width: 10%;
+}
+
 .billet-spoiler .item-value.legal-2 {
     width: 20%;
+}
+
+.billet-spoiler .item-value.legal-3 {
+    width: 30%;
+}
+
+.billet-spoiler .item-value.legal-4 {
+    width: 40%;
+}
+
+.billet-spoiler .item-value.legal-5 {
+    width: 50%;
+}
+
+.billet-spoiler .item-value.legal-6 {
+    width: 60%;
 }
 
 .billet-spoiler .item-value.legal-7 {
@@ -78,6 +102,14 @@
 
 .billet-spoiler .item-value.legal-7-5 {
     width: 75%;
+}
+
+.billet-spoiler .item-value.legal-8 {
+    width: 80%;
+}
+
+.billet-spoiler .item-value.legal-9 {
+    width: 90%;
 }
 
 /* Billet Spoiler Background */
