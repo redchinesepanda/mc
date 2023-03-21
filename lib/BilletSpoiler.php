@@ -26,10 +26,16 @@ class BilletSpoiler
         return $args;
     }
 
-    // private static function has_dot( $item )
-    // {
-    //     return ( strpos( $item['value'], '.' ) !== false );
-    // }
+    private static function odd( $value, $key )
+    {
+        return $key & 1;
+    }
+    }
+
+    private static function even( $value, $key )
+    {
+        return !( $key & 1 );
+    }
 
     private static function get_progress()
     {
@@ -44,12 +50,6 @@ class BilletSpoiler
             ]
         );
 
-        // $handler = new self();
-
-        // $float = array_filter( $args, [ $handler, 'has_dot' ] );
-
-        // $message['float'] = $float;
-
         $length = count( $args );
 
         for ( $i = 0; $i < $length; $i++ ) {
@@ -57,6 +57,14 @@ class BilletSpoiler
 
             $args[$i]['value'] = str_replace( '.', ',', $args[$i]['value'] );
         }
+
+        $handler = new self();
+
+        $args = array_merge(
+            array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH ),
+
+            array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH )
+        )
 
         $message['args'] = $args;
 
