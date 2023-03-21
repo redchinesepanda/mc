@@ -30,8 +30,16 @@
         <?php endforeach; ?>
     </div>
     <div class="spoiler-review">
-        <a href="<?php echo $args['url']['review']; ?>">
+        <?php if ( !empty( $args['url']['review'] ) ): ?>
+            <a class="legal-review" href="<?php echo $args['url']['review']; ?>" rel="nofollow">
+        <?php else: ?>
+            <span class="legal-review">
+        <?php endif; ?>
             <?php echo $args['review']; ?>
-        </a>
+        <?php if ( !empty( $args['url']['review'] ) ): ?>
+            </a>
+        <?php else: ?>
+            </span>
+        <?php endif; ?>
     </div>
 </div>

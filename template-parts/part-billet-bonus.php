@@ -9,7 +9,7 @@
     <?php else: ?>
         <span class="legal-bonus">
     <?php endif; ?>
-            <?php echo $args['bonus']['title']; ?>
+        <?php echo $args['bonus']['title']; ?>
     <?php if ( !empty( $args['url']['bonus'] ) ): ?>
         </a>
     <?php else: ?>
