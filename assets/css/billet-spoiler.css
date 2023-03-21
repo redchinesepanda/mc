@@ -5,6 +5,7 @@
 }
 
 .billet-spoiler,
+.billet-spoiler .spoiler-stat,
 .billet-spoiler .spoiler-progress {
     display: flex;
     flex-wrap: wrap;
