@@ -1,8 +1,3 @@
-<?php 
-
-echo '<pre>' . print_r( $args, true ) . '</pre>';
-
-?>
 <div class="billet-spoiler <?php echo $args['selector']; ?>">
     <div class="spoiler-stats">
         <?php foreach ( $args['stats'] as $stat ) : ?>
@@ -22,7 +17,7 @@ echo '<pre>' . print_r( $args, true ) . '</pre>';
             <div class="progress-item item-<?php echo $key; ?>">
                 <div class="item-title"><?php echo $item['title']; ?></div>
                 <div class="item-value-wrapper">
-                    <div class="item-value legal-<?php $item['class']; ?>"><?php echo $item['value']; ?>/10</div>
+                    <div class="item-value legal-<?php echo $item['class']; ?>"><?php echo $item['value']; ?>/10</div>
                 </div>
             </div>
         <?php endforeach; ?>
