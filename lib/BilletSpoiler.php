@@ -26,9 +26,9 @@ class BilletSpoiler
         return $args;
     }
 
-    private static function is_float( $item )
+    private static function has_dot( $item )
     {
-        return is_float( $item['value'] );
+        return ( strpos( $item['value'], '.' ) !== false );
     }
 
     private static function get_progress()
