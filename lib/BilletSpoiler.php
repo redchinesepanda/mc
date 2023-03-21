@@ -44,7 +44,7 @@ class BilletSpoiler
 
         $message['column'] = $column;
 
-        $keys = array_search( '.' , $column );
+        $keys = array_keys( $column, '.' );
 
         $message['keys'] = $keys;
 
