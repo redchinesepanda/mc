@@ -27,7 +27,7 @@
     row-gap: 20px;
 }
 
-/* Spoiler Position */
+/* Billet Spoiler Position */
 
 .billet-spoiler {
     margin-top: 15px;
@@ -50,7 +50,7 @@
     text-align: center;
 }
 
-/* Spoiler Width */
+/* Billet Spoiler Width */
 
 .billet-spoiler .spoiler-description {
     width: 25%;
@@ -82,4 +82,15 @@
 
 .billet-spoiler .spoiler-progress {
     background-color: #FFFFFF;
+}
+
+/* Billet Spoiler Typography */
+
+.billet-spoiler .legal-review {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    color: #000000;
 }
