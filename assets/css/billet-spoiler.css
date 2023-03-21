@@ -184,6 +184,10 @@
     color: rgb(255, 255, 255);
 }
 
+.billet-spoiler .spoiler-review {
+    text-align: center;
+}
+
 .billet-spoiler .legal-review {
     font-family: "Source Sans Pro";
     font-size: 16px;
@@ -191,6 +195,5 @@
     font-weight: 600;
     line-height: 28px;
     text-decoration: none;
-    text-align: center;
     color: #000000;
 }
