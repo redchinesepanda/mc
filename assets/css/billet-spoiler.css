@@ -45,6 +45,11 @@
     padding: 20px 0px;
 }
 
+.billet-spoiler .spoiler-review {
+    padding: 10px;
+    text-align: center;
+}
+
 /* Spoiler Width */
 
 .billet-spoiler .spoiler-description {
