@@ -55,6 +55,12 @@ body {
     width: 100%;
 }
 
+/* Billet Description */
+
+.billet-footer {
+    margin-top: 5px;
+}
+
 /* Billet Center */
 
 .billet-center {
