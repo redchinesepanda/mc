@@ -3,31 +3,20 @@ body {
     background-color: #EDEFF4;
 }
 
-/* Billet Container */
+/* Billet Display */
 
 .billet {
     display: flex;
     flex-wrap: wrap;
     column-gap: 30px;
-    background-color: #FFFFFF;
-    border-radius: 20px;
 }
 
-.billet-left,
-.billet-center,
-.billet-right {
-    min-height: 168px;
-}
-
-/* Billet Left */
 .billet-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: calc( 22% - 20px );
-    border-radius: 20px 0px 0px 20px;
 }
 
 .billet-left a {
@@ -35,33 +24,13 @@ body {
     width: fit-content;
 }
 
-/* Billet Right */
-
 .billet-right {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     row-gap: 20px;
-    width: calc( 24% - 20px );
-    background-color: #F6F8FF;
-    border-radius: 0px 20px 20px 0px;
 }
-
-/* Billet Spoiler */
-
-.billet-spoiler,
-.billet-footer {
-    width: 100%;
-}
-
-/* Billet Description */
-
-.billet-footer {
-    margin-top: 5px;
-}
-
-/* Billet Center */
 
 .billet-center {
     display: flex;
@@ -69,24 +38,40 @@ body {
     align-content: center;
     row-gap: 22px;
     column-gap: 8px;
-    width: calc( 54% - 20px );
-    padding: 20px 0px;
 }
 
-/* Billet Center Title */
-
 .billet-title {
-    width: 100%;
     display: flex;
     column-gap: 16px;
 }
 
-.billet-title h3 {
-    margin: 0px;
+.billet-list-part.legal-row {
+    display: flex;
+    column-gap: 4px;
+}
+
+.billet-list-part.legal-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Billet Background */
+
+.billet {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.billet-left {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.billet-right {
+    background-color: #F6F8FF;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .billet-title .billet-title-rating {
-    padding-left: 30px;
     background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-rating.svg' );
     background-position: left center;
     background-repeat: no-repeat;
@@ -94,18 +79,13 @@ body {
 }
 
 .billet-title .billet-title-achivement {
-    margin-left: auto;
     background-position: left 8px center;
     background-repeat: no-repeat;
     background-size: auto;
     border-radius: 50px;
-    padding: 5.5px 10px 5.5px 30px;
 }
 
-/* Billet Center List Item */
 .billet-list-part .billet-list-part-item {
-    min-height: 24px;
-    padding: 3px 0px 0px 30px;
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
@@ -131,24 +111,83 @@ body {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-triangle.svg');
 }
 
-/* Billet Center List Row */
+/* Billet Width and Height */
 
-.billet-list-part.legal-row {
+.billet-left,
+.billet-center,
+.billet-right {
+    min-height: 168px;
+}
+
+.billet-left {
+    width: calc( 22% - 20px );
+}
+
+.billet-left a {
+    width: fit-content;
+}
+
+.billet-right {
+    width: calc( 24% - 20px );
+}
+
+.billet-spoiler {
     width: 100%;
-    display: flex;
-    column-gap: 4px;
+}
+
+.billet-footer {
+    width: 100%;
+}
+
+.billet-center {
+    width: calc( 54% - 20px );
+}
+
+.billet-title {
+    width: 100%;
+}
+
+.billet-list-part .billet-list-part-item {
+    min-height: 24px;
 }
 
 .billet-list-part.legal-row .billet-list-part-item {
     width: 33.333%;
 }
 
-/* Billet Center List Column */
+.billet-list-part.legal-row {
+    width: 100%;
+}
 
 .billet-list-part.legal-column {
     width: calc( 50% - 4px );
-    display: flex;
-    flex-direction: column;
+}
+
+/* Billet Position */
+
+.billet-center {
+    padding: 20px 0px;
+}
+
+.billet-footer {
+    margin-top: 5px;
+}
+
+.billet-title h3 {
+    margin: 0px;
+}
+
+.billet-title .billet-title-rating {
+    padding-left: 30px;
+}
+
+.billet-title .billet-title-achivement {
+    margin-left: auto;
+    padding: 5.5px 10px 5.5px 30px;
+}
+
+.billet-list-part .billet-list-part-item {
+    padding: 3px 0px 0px 30px;
 }
 
 /* Billet Left Review Typography */
