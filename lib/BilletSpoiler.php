@@ -39,28 +39,26 @@ class BilletSpoiler
         return $args;
     }
 
-    private static function sort( $args )
-    {
-        // $handler = new self();
+    // private static function sort( $args )
+    // {
+    //     $handler = new self();
 
-        // return array_merge(
-        //     array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH ),
+    //     return array_merge(
+    //         array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH ),
 
-        //     array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH )
-        // );
+    //         array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH )
+    //     );
+    // }
 
-        return $args;
-    }
+    // private static function odd( $value, $key )
+    // {
+    //     return $key & 1;
+    // }
 
-    private static function odd( $value, $key )
-    {
-        return $key & 1;
-    }
-
-    private static function even( $value, $key )
-    {
-        return !( $key & 1 );
-    }
+    // private static function even( $value, $key )
+    // {
+    //     return !( $key & 1 );
+    // }
 
     private static function get_progress()
     {
@@ -75,7 +73,9 @@ class BilletSpoiler
 
         $args = self::replace( $args );
 
-        $args = self::sort( $args );
+        // $args = self::sort( $args );
+
+        echo '<pre>' . print_r( $args, true ) . '</pre>';
 
         return $args;
     }
