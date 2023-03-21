@@ -43,7 +43,7 @@ class BilletSpoiler
         foreach ( $args as $key => $arg ) {
             $message['foreach'][] = $arg;
 
-            $arg['class'] = str_replace( '.', '-', $arg['value'] );
+            $args[$key]['class'] = str_replace( '.', '-', $arg['value'] );
 
             // $arg['value'] = str_replace( '.', ',', $arg['value'] );
         }
