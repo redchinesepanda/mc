@@ -9,9 +9,11 @@ document.addEventListener(
         {
             event.target.classList.toggle( 'legal-active' );
 
-            const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
+            // const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
 
-            spoiler.classList.toggle( 'legal-active' );
+            // spoiler.classList.toggle( 'legal-active' );
+            
+            event.target.nextSibling.classList.toggle( 'legal-active' );
         }
 
         const compilations = document.getElementsByClassName( 'legal-compilation' );
