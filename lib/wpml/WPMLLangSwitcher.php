@@ -49,7 +49,7 @@ class WPMLLangSwitcher
 
         self::debug( $message );
 
-        return self::map( $active[0] );
+        return self::map( array_shift( $active ) );
     }
 
     private static function map( $args )
