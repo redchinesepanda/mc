@@ -15,7 +15,7 @@ class WPMLLangSwitcher
     }
 
     function get_all() {
-        $message['function'] = 'WPMLLangSwitcher::get_all';
+        // $message['function'] = 'WPMLLangSwitcher::get_all';
 
         $languages = apply_filters(
             'wpml_active_languages',
@@ -32,7 +32,7 @@ class WPMLLangSwitcher
             ]
         );
      
-        $message['languages'] = $languages;
+        // $message['languages'] = $languages;
 
         return $languages;
     }
@@ -52,6 +52,8 @@ class WPMLLangSwitcher
         $translations = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
 
         $message['translations'] = $translations;
+
+        $message['languages'] = self::get_all();
 
         self::debug( $message );
     }
