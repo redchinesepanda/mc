@@ -10,7 +10,7 @@ class WPMLLangSwitcher
         add_shortcode( 'legal-lang-switcher', [ $handler, 'get' ] );
     }
 
-    public static function get()
+    public function get()
     {
         $translations = apply_filters( 'wpml_get_element_translations', NULL, 2, 'post_page' );
 
