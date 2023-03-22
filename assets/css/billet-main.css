@@ -59,6 +59,10 @@ body {
     display: block;
 }
 
+.billet-left .legal-review {
+    display: block;
+}
+
 /* Billet Background */
 
 .billet {
@@ -133,6 +137,14 @@ body {
     background-position: right center;
     background-repeat: no-repeat;
     background-size: auto;
+}
+
+.billet-left .legal-review {
+    border-bottom: 1px solid transparent;
+}
+
+.billet-left .legal-review:hover {
+    border-bottom: 1px solid #FFFFFF;
 }
 
 /* Billet Width and Height */
@@ -224,10 +236,7 @@ body {
 
 /* Billet Typography */
 
-.billet-left .legal-review,
-.billet-left .legal-review:hover,
-.billet-left .legal-review:active,
-.billet-left .legal-review:visited {
+.billet-left .legal-review {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
@@ -236,13 +245,6 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #FFFFFF;
-}
-.billet-left .legal-review {
-    display: block;
-    border-bottom: 1px solid transparent;
-}
-.billet-left .legal-review:hover {
-    border-bottom: 1px solid #FFFFFF;
 }
 
 .billet-center .legal-title {
