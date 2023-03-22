@@ -11,6 +11,15 @@
     display: none;
 }
 
+.container__menu-in-futter .lang {
+    display: block;
+}
+
+.container__menu-in-futter .drop-menu_content_Spoiler {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* Language Width and Height */
 
 .container__menu-in-futter .img-before-text-block {
