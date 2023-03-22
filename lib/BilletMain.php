@@ -7,15 +7,15 @@ class BilletMain
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
-        'billet-main' => '/assets/css/billet-main.css',
+        'billet-main' => Template::LEGAL_URL . '/assets/css/billet-main.css',
 
-        'billet-spoiler' => '/assets/css/billet-spoiler.css',
+        'billet-spoiler' => Template::LEGAL_URL . '/assets/css/billet-spoiler.css',
     ];
 
     public static function print()
     {
         foreach ( self::CSS as $key => $url ) {
-            echo '<link id="' . $key . '" href="' . Template::LEGAL_URL . $url . '" rel="stylesheet" />';
+            echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
         }
     }
 
@@ -49,6 +49,8 @@ class BilletMain
     public static function get()
     {
         $post = get_post();
+
+        $args['data']['id'] = $post->ID;
 
         $args['selector'] = 'billet-' . $post->ID;
 

@@ -3,6 +3,17 @@
 class BilletSpoiler
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-spoiler.php';
+
+    const JS = [
+        'billet-spoiler' => Template::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
+    ];
+
+    public static function print()
+    {
+        foreach ( self::JS as $key => $src ) {
+            echo '<script id="' . $key . '" src="' . $src . '"></script>';
+        }
+    }
     
     public static function check()
     {

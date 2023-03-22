@@ -30,7 +30,7 @@
     <?php endif; ?>
 </div>
 <?php if ( BilletSpoiler::check() ): ?>
-    <div class="bonus-spoiler">
+    <div class="bonus-spoiler" data-id="<?php echo $args['data']['id']; ?>">
         <span class="spoiler-open"><?php echo $args['spoiler']; ?></span>
     </div>
 <?php endif; ?>
