@@ -5,6 +5,8 @@ class WPMLLangSwitcher
     public static function register() {
         $handler = new self();
 
+        // [legal-lang-switcher]
+
         add_shortcode( 'legal-lang-switcher', [ $handler, 'get' ] );
     }
 
