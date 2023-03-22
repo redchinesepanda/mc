@@ -4,8 +4,6 @@ class WPMLLangSwitcher
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
 
-    // const TEMPLATE = '/template-parts/wpml/wpml-lang-switcher.php';
-
     public static function register() {
         $handler = new self();
 
@@ -70,10 +68,6 @@ class WPMLLangSwitcher
 
     public static function render()
     {
-        // load_template( self::TEMPLATE, false, self::get() );
-
-        // get_template_part( self::TEMPLATE, null, self::get() );
-
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );
