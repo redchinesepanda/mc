@@ -15,7 +15,7 @@ document.addEventListener(
 
             const billet = document.getElementById( 'billet-' + event.currentTarget.dataset.id );
             
-            billet.nextSibling.classList.toggle( 'legal-active' );
+            billet.nextElementSibling.classList.toggle( 'legal-active' );
         }
 
         const compilations = document.getElementsByClassName( 'legal-compilation' );
