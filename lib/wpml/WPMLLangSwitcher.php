@@ -12,7 +12,7 @@ class WPMLLangSwitcher
         add_shortcode( 'legal-lang-switcher', [ $handler, 'get' ] );
     }
 
-    function get_all() {
+    private static function get_all() {
         $languages = apply_filters(
             'wpml_active_languages',
 
@@ -29,7 +29,7 @@ class WPMLLangSwitcher
         return $languages;
     }
 
-    public static function get_active( &$args )
+    private static function get_active( &$args )
     {
         $args_active = array_column( $args, 'active' );
 
