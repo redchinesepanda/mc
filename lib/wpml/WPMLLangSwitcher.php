@@ -18,7 +18,7 @@ class WPMLLangSwitcher
 
         add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
 
-        add_action('enqueue_scripts', [ $handler, 'register_script' ] );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     private static function get_all() {
