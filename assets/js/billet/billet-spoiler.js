@@ -12,8 +12,10 @@ document.addEventListener(
             // const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
 
             // spoiler.classList.toggle( 'legal-active' );
+
+            const billet = document.getElementById( 'billet-' + event.target.dataset.id );
             
-            event.target.nextSibling.classList.toggle( 'legal-active' );
+            billet.nextSibling.classList.toggle( 'legal-active' );
         }
 
         const compilations = document.getElementsByClassName( 'legal-compilation' );
