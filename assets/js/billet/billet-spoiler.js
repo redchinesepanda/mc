@@ -9,10 +9,6 @@ document.addEventListener(
         {
             event.currentTarget.classList.toggle( 'legal-active' );
 
-            // const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
-
-            // spoiler.classList.toggle( 'legal-active' );
-
             const billet = document.getElementById( 'billet-' + event.currentTarget.dataset.id );
             
             billet.nextElementSibling.classList.toggle( 'legal-active' );

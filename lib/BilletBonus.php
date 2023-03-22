@@ -46,7 +46,11 @@ class BilletBonus
     
     private static function get_spoiler()
     {
-        return __( 'More Details', 'Thrive' );
+        $args['open'] = __( 'More Details', 'Thrive' );
+
+        $args['close'] = __( 'Close Details', 'Thrive' );
+
+        return $args;
     }
 
     public static function get()
