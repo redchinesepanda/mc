@@ -1,11 +1,56 @@
-/* Lang Background */
+/* Language Display */
+
+.container__menu-in-futter .container__img-before-text-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Language Width and Height */
 
 .container__menu-in-futter .img-before-text-block {
-    background-image: url('https://test.match.center/wp-content/uploads/flags/Ireland-flag-mini.png');
+    width: 20px;
+}
+
+.container__menu-in-futter .img-before-text-block .img {
+    width: 20px;
+}
+
+/* Language Position */
+
+.container__menu-in-futter .container__img-before-text-block {
+    padding: 5px 0;
+}
+
+.container__menu-in-futter .img-before-text-block {
+    margin-right: 10px;
+}
+
+.container__menu-in-futter .menu-in-futter__text-block {
+    margin: 0 5px 0 0;
+}
+
+/* Language Background */
+
+.container__menu-in-futter .img-before-text-block {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px 25px;
     height: 20px;
     width: 20px;
     border-radius: 20px;
+}
+
+/* Language Typography */
+
+.container__menu-in-futter .container__img-before-text-block {
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+}
+
+.container__menu-in-futter .tcb-icon {
+    font-size: 24px;
+    color:#fff !important;
 }
