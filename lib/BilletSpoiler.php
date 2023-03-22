@@ -39,27 +39,6 @@ class BilletSpoiler
         return $args;
     }
 
-    // private static function sort( $args )
-    // {
-    //     $handler = new self();
-
-    //     return array_merge(
-    //         array_filter( $args, [ $handler, 'even' ], ARRAY_FILTER_USE_BOTH ),
-
-    //         array_filter( $args, [ $handler, 'odd' ], ARRAY_FILTER_USE_BOTH )
-    //     );
-    // }
-
-    // private static function odd( $value, $key )
-    // {
-    //     return $key & 1;
-    // }
-
-    // private static function even( $value, $key )
-    // {
-    //     return !( $key & 1 );
-    // }
-
     private static function get_progress()
     {
         $args = self::get_repeater(

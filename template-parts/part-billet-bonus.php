@@ -1,8 +1,3 @@
-<?php
-
-// echo '<pre>part-billet-bonus.php:' . print_r( $args, true ) . '</pre>';
-
-?>
 <div class="bonus-title">
     <?php if ( !empty( $args['url']['bonus'] ) ): ?>
         <a class="legal-bonus" href="<?php echo $args['url']['bonus']; ?>" rel="nofollow">
@@ -34,7 +29,7 @@
         </span>
     <?php endif; ?>
 </div>
-<?php if ( !empty( $args['spoiler'] ) ): ?>
+<?php if ( BilletSpoiler::check() ): ?>
     <div class="billet-spoiler-button">
         <span class="legal-spoiler-button"><?php echo $args['spoiler']; ?></span>
     </div>
