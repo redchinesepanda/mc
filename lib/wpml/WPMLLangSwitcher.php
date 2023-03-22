@@ -6,7 +6,7 @@ class WPMLLangSwitcher
 
     const CSS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
 
-    const JS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.js';
+    const JS = Template::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
 
     public static function register_script()
     {
