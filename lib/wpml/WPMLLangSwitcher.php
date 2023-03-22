@@ -14,25 +14,30 @@ class WPMLLangSwitcher
         self::debug( $message );
     }
 
-    function get_all() {
-        // $message['function'] = 'WPMLLangSwitcher::get_all';
+    public static function get_current()
+    {
+        $post = get_post();
 
+        $trid = apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );
+
+        $translations = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
+
+        return $translations;
+    }
+
+    function get_all() {
         $languages = apply_filters(
             'wpml_active_languages',
 
             NULL,
             [
-                'skip_missing' => 1, 
-
-                // 'link_empty_to' => 'http://domain.com/missing-translation-contact-form',
+                'skip_missing' => 1,
 
                 'orderby' => 'id',
 
                 'order' => 'asc',
             ]
         );
-     
-        // $message['languages'] = $languages;
 
         return $languages;
     }
@@ -41,17 +46,7 @@ class WPMLLangSwitcher
     {
         $message['function'] = 'WPMLLangSwitcher::get';
 
-        $post = get_post();
-
-        $message['$post->ID'] = $post->ID;
-
-        $trid = apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );
-
-        $message['$trid'] = $trid;
-
-        $translations = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
-
-        $message['translations'] = $translations;
+        $message['translations'] = self::get_current();
 
         $message['languages'] = self::get_all();
 
