@@ -63,7 +63,7 @@ body {
     display: block;
 }
 
-.billet-right .bonus-spoiler.legal-active .spoiler-open
+.billet-right .bonus-spoiler.legal-active .spoiler-open,
 .billet-right .bonus-spoiler:not( .legal-active ) .spoiler-close {
     display: none;
 }
