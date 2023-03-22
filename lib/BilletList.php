@@ -4,26 +4,6 @@ class BilletList
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-list.php';
 
-    const STYLE = Template::LEGAL_URL . '/assets/css/billet-list.css';
-
-    // public static function register()
-    // {
-    //     $handler = new self();
-
-    //     add_action( 'wp_enqueue_scripts', [ $handler, 'register_script'] );
-    // }
-
-    // public function register_script()
-    // {
-	// 	wp_enqueue_style( 'billet', BilletList::STYLE );
-    // }
-
-    public static function print()
-    {
-		echo '<link id="billet" href="' . BilletList::STYLE . '" rel="stylesheet" />';
-    }
-    
-
     public static function get()
     {
         $args = [];

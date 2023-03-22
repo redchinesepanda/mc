@@ -3,17 +3,6 @@
 class BilletSpoiler
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-spoiler.php';
-
-    const JS = [
-        'billet-spoiler' => Template::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
-    ];
-
-    public static function print()
-    {
-        foreach ( self::JS as $key => $src ) {
-            echo '<script id="' . $key . '" src="' . $src . '"></script>';
-        }
-    }
     
     public static function check()
     {
@@ -63,15 +52,11 @@ class BilletSpoiler
 
         $args = self::replace( $args );
 
-        // $args = self::sort( $args );
-
         return $args;
     }
 
     public static function get() {
         $post = get_post();
-
-        $args['data']['id'] = $post->ID;
 
         $args['selector'] = 'spoiler-' . $post->ID;
 

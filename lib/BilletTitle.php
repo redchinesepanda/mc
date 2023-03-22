@@ -3,17 +3,6 @@
 class BilletTitle
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-title.php';
-
-    const CSS = [
-        'billet-title' => Template::LEGAL_URL . '/assets/css/billet-title.css'
-    ];
-
-    public static function print()
-    {
-        foreach ( self::CSS as $key => $url ) {
-            echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
-        }
-    }
     
     private static function get_achievement() {
         $args = [];

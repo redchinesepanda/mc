@@ -12,10 +12,18 @@ class BilletMain
         'billet-spoiler' => Template::LEGAL_URL . '/assets/css/billet-spoiler.css',
     ];
 
+    const JS = [
+        'billet-spoiler' => Template::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
+    ];
+
     public static function print()
     {
         foreach ( self::CSS as $key => $url ) {
             echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
+        }
+        
+        foreach ( self::JS as $key => $src ) {
+            echo '<script id="' . $key . '" src="' . $src . '"></script>';
         }
     }
 
@@ -49,8 +57,6 @@ class BilletMain
     public static function get()
     {
         $post = get_post();
-
-        // $args['data']['id'] = $post->ID;
 
         $args['selector'] = 'billet-' . $post->ID;
 

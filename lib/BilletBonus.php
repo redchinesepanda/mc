@@ -3,46 +3,63 @@
 class BilletBonus
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-bonus.php';
-
-    const STYLE = Template::LEGAL_URL . '/assets/css/billet-bonus.css';
-
-    // public static function register()
-    // {
-    //     $handler = new self();
-
-    //     add_action( 'wp_enqueue_scripts', [ $handler, 'register_script'] );
-    // }
-
-    // public function register_script()
-    // {
-	// 	wp_enqueue_style( 'billet',  BilletBonus::STYLE );
-    // }
-
-    public static function print()
+    
+    private static function get_data()
     {
-		echo '<link id="billet" href="' . BilletBonus::STYLE . '" rel="stylesheet" />';
+        $post = get_post();
+
+        $args['id'] = $post->ID;
+
+        return $args
     }
     
+    private static function get_bonus()
+    {
+        $args['title'] = get_field( 'billet-play-bonus-title' );
+
+        $args['description'] = get_field( 'billet-play-bonus-description' );
+
+        $args['play'] = __( 'Bet now', 'Thrive' );
+
+        return $args;
+    }
+    
+    private static function get_mobile()
+    {
+        $args['iphone'] = get_field( 'billet-play-mobile-iphone' );
+        
+        $args['android'] = get_field( 'billet-play-mobile-android' );
+
+        $args['site'] = get_field( 'billet-play-mobile-site' );
+
+        return $args;
+    }
+    
+    private static function get_profit()
+    {
+        $args['type'] = get_field( 'billet-play-profit-type' );
+
+        $args['value'] = get_field( 'billet-play-profit-value' );
+
+        return $args;
+    }
+    
+    private static function get_profit()
+    {
+        return __( 'More Details', 'Thrive' );
+    }
 
     public static function get()
     {
-        $args['bonus']['title'] = get_field( 'billet-play-bonus-title' );
+        $args['data'] = self::get_data();
 
-        // $args['bonus']['url'] = get_field( 'billet-play-bonus-url' );
+        $args['bonus'] = self::get_bonus();
 
-        $args['bonus']['description'] = get_field( 'billet-play-bonus-description' );
+        $args['mobile'] = self::get_mobile();
 
-        $args['bonus']['play'] = __( 'Bet now', 'Thrive' );
+        $args['profit'] = self::get_profit();
 
-        $args['mobile']['iphone'] = get_field( 'billet-play-mobile-iphone' );
-        
-        $args['mobile']['android'] = get_field( 'billet-play-mobile-android' );
-
-        $args['profit']['type'] = get_field( 'billet-play-profit-type' );
-
-        $args['profit']['value'] = get_field( 'billet-play-profit-value' );
-
-        $args['spoiler'] = __( 'More Details', 'Thrive' );
+        $args['spoiler'] = self::get_spoiler();
 
         return $args;
     }
