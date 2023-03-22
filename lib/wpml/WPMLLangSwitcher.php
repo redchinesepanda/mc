@@ -9,7 +9,7 @@ class WPMLLangSwitcher
 
         // [legal-lang-switcher]
 
-        add_shortcode( 'legal-lang-switcher', [ $handler, 'get' ] );
+        add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
     }
 
     private static function get_all() {
