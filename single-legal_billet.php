@@ -7,11 +7,11 @@ Template Post Type: legal_billet
 
 */
 
-require_once('lib/Head.php');
+require_once( 'lib/Head.php' );
 
-require_once('lib/Template.php');
+require_once( 'lib/Template.php' );
 
-require_once('lib/BilletMain.php');
+require_once( 'lib/BilletMain.php' );
 
 ?>
 <html>

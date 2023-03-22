@@ -2,6 +2,8 @@
 
 class WPMLLangSwitcher
 {
+    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
+
     public static function register() {
         $message[] = 'WPMLLangSwitcher::register';
 
@@ -33,21 +35,11 @@ class WPMLLangSwitcher
 
     public static function get_active( &$args )
     {
-        $message['function'] = 'WPMLLangSwitcher::get_active';
-
         $args_active = array_column( $args, 'active' );
-
-        $message['args_active'] = $args_active;
 
         $key = array_search( 1, $args_active );
 
-        $message['key'] = $key;
-
         $active = array_splice( $args, $key, 1 );
-
-        $message['active'] = $active;
-
-        self::debug( $message );
 
         return self::map( array_shift( $active ) );
     }
@@ -67,11 +59,7 @@ class WPMLLangSwitcher
 
     public function get()
     {
-        $message['function'] = 'WPMLLangSwitcher::get';
-
         $languages = self::get_all();
-
-        // $message['languages'] = $languages;
 
         $args['active'] = self::get_active( $languages );
 
@@ -79,9 +67,12 @@ class WPMLLangSwitcher
             $args['languages'][] = self::map( $lang );
         }
 
-        $message['args'] = $args;
+        return $args;
+    }
 
-        self::debug( $message );
+    public static function render()
+    {
+        load_template( self::TEMPLATE, false, self::get() );
     }
 
     public static function debug( $message )
