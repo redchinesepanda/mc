@@ -10,7 +10,7 @@ class BilletBonus
 
         $args['id'] = $post->ID;
 
-        return $args
+        return $args;
     }
     
     private static function get_bonus()
