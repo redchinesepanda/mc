@@ -14,6 +14,29 @@ class WPMLLangSwitcher
         self::debug( $message );
     }
 
+    function get_all() {
+        $message['function'] = 'WPMLLangSwitcher::get_all';
+
+        $languages = apply_filters(
+            'wpml_active_languages',
+
+            NULL,
+            [
+                'skip_missing' => 1, 
+
+                // 'link_empty_to' => 'http://domain.com/missing-translation-contact-form',
+
+                'orderby' => 'id',
+
+                'order' => 'asc',
+            ]
+        );
+     
+        $message['languages'] = $languages;
+
+        return $languages;
+    }
+
     public function get()
     {
         $message['function'] = 'WPMLLangSwitcher::get';
