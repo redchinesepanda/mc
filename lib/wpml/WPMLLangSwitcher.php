@@ -5,15 +5,11 @@ class WPMLLangSwitcher
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
 
     public static function register() {
-        $message[] = 'WPMLLangSwitcher::register';
-
         $handler = new self();
 
         // [legal-lang-switcher]
 
         add_shortcode( 'legal-lang-switcher', [ $handler, 'get' ] );
-
-        self::debug( $message );
     }
 
     function get_all() {
