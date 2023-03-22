@@ -7,13 +7,13 @@ document.addEventListener(
     {
         function spoilerToggle( event )
         {
-            event.target.classList.toggle( 'legal-active' );
+            event.currentTarget.classList.toggle( 'legal-active' );
 
             // const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
 
             // spoiler.classList.toggle( 'legal-active' );
 
-            const billet = document.getElementById( 'billet-' + event.target.dataset.id );
+            const billet = document.getElementById( 'billet-' + event.currentTarget.dataset.id );
             
             billet.nextSibling.classList.toggle( 'legal-active' );
         }
