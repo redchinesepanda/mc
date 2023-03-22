@@ -5,11 +5,11 @@ document.addEventListener(
     
     function ()
     {
-        function modifyText( event )
+        function spoilerToggle( event )
         {
             event.target.classList.toggle( 'legal-active' );
 
-            const spoiler = document.getElementById( 'spoiler-' + event.target.dataset.id );
+            const spoiler = compilation.querySelector( '.spoiler-' + event.target.dataset.id );
 
             spoiler.classList.toggle( 'legal-active' );
         }
@@ -20,7 +20,7 @@ document.addEventListener(
             let spoilers = compilation.getElementsByClassName( 'bonus-spoiler' );
 
             for ( let spoiler of spoilers ) {
-                spoiler.addEventListener( 'click', modifyText, false );
+                spoiler.addEventListener( 'click', spoilerToggle, false );
             }
         }
     }
