@@ -4,7 +4,7 @@ class BilletSpoiler
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-spoiler.php';
     
-    private static function check()
+    public static function check()
     {
         return get_field( 'billet-spoiler-enabled');
     }
