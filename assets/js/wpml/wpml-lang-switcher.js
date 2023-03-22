@@ -25,8 +25,6 @@ document.addEventListener(
 
         const button = getElement( 'buttton-country-whis-flag' );
 
-        console.log( 'wpml-lang-switcher-js button: ' + button );
-
         button.addEventListener( 'click', spoilerToggle, false );
     }
 );
