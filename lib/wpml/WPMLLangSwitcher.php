@@ -33,11 +33,21 @@ class WPMLLangSwitcher
 
     public static function get_active( &$args )
     {
+        $message['function'] = 'WPMLLangSwitcher::get_active';
+
         $args_active = array_column( $args, 'active' );
+
+        $message['args_active'] = $args_active;
 
         $key = array_search( 1, $args_active );
 
+        $message['key'] = $key;
+
         $active = array_splice( $args, $key, 1 );
+
+        $message['active'] = $active;
+
+        self::debug( $message );
 
         return self::map( $active[0] );
     }
