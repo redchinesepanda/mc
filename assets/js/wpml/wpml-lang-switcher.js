@@ -5,22 +5,25 @@ document.addEventListener(
     
     function ()
     {
-        function spoilerToggle( event )
+        function getElement( selector )
         {
-            event.currentTarget.classList.toggle( 'legal-active' );
+            const footer = document.getElementById( 'thrive-footer' );
 
-            event.currentTarget.dataset.spoiler.classList.toggle( 'legal-active' );
+            const switcher = footer.getElementsByClassName( 'container__menu-in-futter' ).item( 0 );
+    
+            return switcher.getElementsByClassName( selector ).item( 0 );
         }
 
-        const footer = document.getElementById( 'thrive-footer' );
+        function spoilerToggle( event )
+        {
+            const spoiler = getElement('drop-menu_content_Spoiler');
 
-        const switcher = footer.getElementsByClassName( 'container__menu-in-futter' ).item( 0 );
+            event.currentTarget.classList.toggle( 'legal-active' );
 
-        const spoiler = switcher.getElementsByClassName( 'drop-menu_content_Spoiler' ).item( 0 );
+            spoiler.classList.toggle( 'legal-active' );
+        }
 
-        const button = switcher.getElementsByClassName( 'buttton-country-whis-flag' ).item( 0 );
-
-        button.dataset.spoiler = spoiler;
+        const button = getElement('drop-menu_content_Spoiler');
 
         button.addEventListener( 'click', spoilerToggle, false );
     }
