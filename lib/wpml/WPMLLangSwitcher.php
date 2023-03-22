@@ -16,11 +16,19 @@ class WPMLLangSwitcher
 
     public function get()
     {
-        $message[] = 'WPMLLangSwitcher::get';
+        $message['function'] = 'WPMLLangSwitcher::get';
 
-        $translations = apply_filters( 'wpml_get_element_translations', NULL, 2, 'post_page' );
+        $post = get_post();
 
-        var_dump( $translations );
+        $message['$post->ID'] = $post->ID;
+
+        $trid = apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );
+
+        $message['$trid'] = $trid;
+
+        $translations = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
+
+        $message['translations'] = $translations;
 
         self::debug( $message );
     }
