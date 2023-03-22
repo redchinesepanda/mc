@@ -31,7 +31,7 @@ class WPMLLangSwitcher
 
             NULL,
             [
-                'skip_missing' => 1,
+                'skip_missing' => 0,
 
                 'orderby' => 'id',
 
