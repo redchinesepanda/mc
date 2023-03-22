@@ -23,7 +23,7 @@ document.addEventListener(
             spoiler.classList.toggle( 'legal-active' );
         }
 
-        const button = getElement( 'drop-menu_content_Spoiler' );
+        const button = getElement( 'buttton-country-whis-flag' );
 
         console.log( 'wpml-lang-switcher-js button: ' + button );
 
