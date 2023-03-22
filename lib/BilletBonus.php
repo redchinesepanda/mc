@@ -44,7 +44,7 @@ class BilletBonus
         return $args;
     }
     
-    private static function get_profit()
+    private static function get_spoiler()
     {
         return __( 'More Details', 'Thrive' );
     }
