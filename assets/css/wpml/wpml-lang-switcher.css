@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.container__menu-in-futter .drop-menu_content_Spoiler:not( .legal-active ) {
+    display: none;
+}
+
 /* Language Width and Height */
 
 .container__menu-in-futter .img-before-text-block {

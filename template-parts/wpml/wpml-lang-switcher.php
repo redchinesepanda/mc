@@ -20,7 +20,7 @@
             </div>
         </div>
     </section>
-    <div class="drop-menu_content_Spoiler" style="display: none;">
+    <div class="drop-menu_content_Spoiler">
         <table class="table-left-column">
             <tbody>
                 <?php foreach( $args['languages'] as $lang ) : ?>

@@ -6,7 +6,16 @@ class WPMLLangSwitcher
 
     const CSS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
 
+    const JS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.js';
+
     public static function register_script()
+    {
+        wp_register_script( 'wpml-lang-switcher', self::JS, [], false, true);
+
+        wp_enqueue_script( 'wpml-lang-switcher' );
+    }
+
+    public static function register_style()
     {
         wp_enqueue_style( 'wpml-lang-switcher', self::CSS );
     }
@@ -17,6 +26,8 @@ class WPMLLangSwitcher
         // [legal-lang-switcher]
 
         add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
