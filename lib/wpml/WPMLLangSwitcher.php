@@ -53,7 +53,7 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
-    public function get()
+    public static function get()
     {
         $languages = self::get_all();
 
