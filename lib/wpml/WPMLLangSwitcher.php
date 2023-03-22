@@ -4,12 +4,21 @@ class WPMLLangSwitcher
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
 
+    const CSS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
+
+    public static function register_script()
+    {
+        wp_enqueue_style( 'wpml-lang-switcher', self::CSS );
+    }
+
     public static function register() {
         $handler = new self();
 
         // [legal-lang-switcher]
 
         add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
+
+        add_action('enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     private static function get_all() {
