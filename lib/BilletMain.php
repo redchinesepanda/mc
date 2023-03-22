@@ -50,7 +50,7 @@ class BilletMain
     {
         $post = get_post();
 
-        $args['data']['id'] = $post->ID;
+        // $args['data']['id'] = $post->ID;
 
         $args['selector'] = 'billet-' . $post->ID;
 

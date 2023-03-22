@@ -71,6 +71,8 @@ class BilletSpoiler
     public static function get() {
         $post = get_post();
 
+        $args['data']['id'] = $post->ID;
+
         $args['selector'] = 'spoiler-' . $post->ID;
 
         $args['description'] = get_field( 'billet-spoiler-description');

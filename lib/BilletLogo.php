@@ -10,19 +10,11 @@ class BilletLogo
     {
         $post = get_post();
 
-        // $args['selector'] = 'billet-' . $post->ID;
-
         $args['logo'] = get_the_post_thumbnail_url( $post->ID );
 
         if ( $args['logo'] === false ) {
             $args['logo'] = self::DEFAULT_LOGO;
         }
-
-        // $args['color'] = get_field( 'billet-color' );
-
-        // if ( empty( $args['color'] ) ) {
-        //     $args['color'] = self::DEFAULT_COLOR;
-        // }
 
         return $args;
     }
@@ -34,8 +26,6 @@ class BilletLogo
         if ( !empty( $url ) ) {
             $args['url'] = $url;
         }
-
-        // echo '<pre>BilletLogo::render: ' . print_r( $args, true ) . '</pre>';
 
         load_template( self::TEMPLATE, false, $args );
     }
