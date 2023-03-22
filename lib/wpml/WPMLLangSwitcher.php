@@ -46,7 +46,7 @@ class WPMLLangSwitcher
     {
         $message['function'] = 'WPMLLangSwitcher::get';
 
-        $message['translations'] = self::get_current();
+        // $message['translations'] = self::get_current();
 
         $message['languages'] = self::get_all();
 
