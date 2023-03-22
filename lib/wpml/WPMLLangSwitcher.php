@@ -72,7 +72,15 @@ class WPMLLangSwitcher
     {
         // load_template( self::TEMPLATE, false, self::get() );
 
-        get_template_part( self::TEMPLATE, null, self::get() );
+        // get_template_part( self::TEMPLATE, null, self::get() );
+
+        ob_start();
+
+        load_template( self::TEMPLATE, false, self::get() );
+        
+        $output = ob_get_clean();
+
+        return $output;
     }
 
     public static function debug( $message )
