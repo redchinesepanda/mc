@@ -35,7 +35,7 @@ class WPMLLangSwitcher
     {
         $args_active = array_column( $args, 'active' );
 
-        $key = array_search( true, $args_active );
+        $key = array_search( 1, $args_active );
 
         $active = array_splice( $args, $key, 1 );
 
