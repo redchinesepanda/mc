@@ -51,7 +51,7 @@ class WPMLLangSwitcher
 
     private static function exclude( $args )
     {
-        $default_locale = array_column( $args, 'default_locale' );
+        $default_locale = array_column( $args, 'default_locale', 'code' );
 
         $default_locale_exclude = [
             'pt_GB',
@@ -76,15 +76,15 @@ class WPMLLangSwitcher
             unset( $args[$key] );
         }
 
-        $message['fucntion'] = 'WPMLLangSwitcher::exclude';
+        // $message['fucntion'] = 'WPMLLangSwitcher::exclude';
 
-        $message['default_locale'] = $default_locale;
+        // $message['default_locale'] = $default_locale;
 
-        $message['keys'] = $keys;
+        // $message['keys'] = $keys;
 
-        $message['args'] = $args;
+        // $message['args'] = $args;
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $args;
     }
