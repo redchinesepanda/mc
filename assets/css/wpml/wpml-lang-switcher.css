@@ -1,5 +1,10 @@
 /* Language Display */
 
+.lang-switcher .lang-item {
+    display: flex;
+    align-items: center;
+}
+
 /* .container__menu-in-futter .container__img-before-text-block {
     display: flex;
     align-items: center;
