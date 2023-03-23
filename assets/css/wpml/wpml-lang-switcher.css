@@ -1,6 +1,6 @@
 /* Language Display */
 
-.container__menu-in-futter .container__img-before-text-block {
+/* .container__menu-in-futter .container__img-before-text-block {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,11 +18,11 @@
 .container__menu-in-futter .drop-menu_content_Spoiler {
     display: flex;
     flex-wrap: wrap;
-}
+} */
 
 /* Language Width and Height */
 
-.container__menu-in-futter .img-before-text-block {
+/* .container__menu-in-futter .img-before-text-block {
     width: 20px;
 }
 
@@ -31,11 +31,11 @@
 }
 .container__menu-in-futter .drop-menu_content_Spoiler {
     width: 600px;
-}
+} */
 
 /* Language Position */
 
-.container__menu-in-futter .container__img-before-text-block {
+/* .container__menu-in-futter .container__img-before-text-block {
     padding: 5px 0;
 }
 
@@ -51,11 +51,11 @@
     position: absolute;
     bottom: 100px;
     left: -200px;
-}
+} */
 
 /* Language Background */
 
-.container__menu-in-futter .img-before-text-block {
+.lang-switcher .lang-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px 25px;
@@ -64,13 +64,13 @@
     border-radius: 20px;
 }
 
-.container__menu-in-futter .drop-menu_content_Spoiler {
+/* .container__menu-in-futter .drop-menu_content_Spoiler {
     background-color: #FFFFFF;
-}
+} */
 
 /* Language Typography */
 
-.container__menu-in-futter .container__img-before-text-block {
+/* .container__menu-in-futter .container__img-before-text-block {
     font-weight: 400;
     font-size: 14px;
     color: #fff;
@@ -79,4 +79,4 @@
 .container__menu-in-futter .tcb-icon {
     font-size: 24px;
     color:#fff !important;
-}
+} */
