@@ -9,6 +9,8 @@
 .lang-switcher .menu-avaible {
     display: flex;
     flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 10px;
 }
 
 /* .container__menu-in-futter .container__img-before-text-block {
@@ -34,7 +36,7 @@
 /* Language Width and Height */
 
 .lang-switcher .menu-avaible .lang-item {
-    width: 33.333%;
+    width: calc( 33.333% - 25px );
 }
 
 /* .container__menu-in-futter .img-before-text-block {
@@ -49,6 +51,10 @@
 } */
 
 /* Language Position */
+
+.lang-switcher .menu-avaible {
+    padding: 5px 0px;
+}
 
 .lang-switcher .lang-current .lang-title {
     padding-right: 29px;
