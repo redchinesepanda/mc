@@ -116,7 +116,7 @@
     background-color: #0d0863;
 }
 
-.lang-switcher .lang-current .lang-item:hover {
+.lang-switcher .lang-current {
     background-color: #5997e3;
 }
 
