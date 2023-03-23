@@ -9,7 +9,6 @@
 .lang-switcher .menu-avaible {
     display: flex;
     flex-wrap: wrap;
-    /* column-gap: 50px; */
     row-gap: 10px;
     justify-content: space-evenly;
 }
@@ -20,28 +19,8 @@
     right: 0px;
 }
 
-.lang-switcher .menu-avaible:not(:target) {
+/* .lang-switcher .menu-avaible:not(:target) {
     display: none;
-}
-
-/* .container__menu-in-futter .container__img-before-text-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.container__menu-in-futter .drop-menu_content_Spoiler:not( .legal-active ) {
-    display: none;
-}
-
-.container__menu-in-futter .lang {
-    display: block;
-}
-
-.container__menu-in-futter .drop-menu_content_Spoiler {
-    display: flex;
-    flex-wrap: wrap;
 } */
 
 /* Language Width and Height */
@@ -53,17 +32,6 @@
 .lang-switcher .menu-avaible .lang-item {
     width: 152px;
 }
-
-/* .container__menu-in-futter .img-before-text-block {
-    width: 20px;
-}
-
-.container__menu-in-futter .img-before-text-block .img {
-    width: 20px;
-}
-.container__menu-in-futter .drop-menu_content_Spoiler {
-    width: 600px;
-} */
 
 /* Language Position */
 
@@ -78,24 +46,6 @@
 .lang-switcher .lang-image {
     margin-left: 5px;
 }
-
-/* .container__menu-in-futter .container__img-before-text-block {
-    padding: 5px 0;
-}
-
-.container__menu-in-futter .img-before-text-block {
-    margin-right: 10px;
-}
-
-.container__menu-in-futter .menu-in-futter__text-block {
-    margin: 0 5px 0 0;
-}
-
-.container__menu-in-futter .drop-menu_content_Spoiler {
-    position: absolute;
-    bottom: 100px;
-    left: -200px;
-} */
 
 /* Language Background */
 
@@ -128,10 +78,6 @@
     background-color: #5997e3;
 }
 
-/* .container__menu-in-futter .drop-menu_content_Spoiler {
-    background-color: #FFFFFF;
-} */
-
 /* Language Typography */
 
 .lang-switcher .lang-item {
@@ -143,14 +89,3 @@
     color: #FFFFFF;
     text-transform: uppercase;
 }
-
-/* .container__menu-in-futter .container__img-before-text-block {
-    font-weight: 400;
-    font-size: 14px;
-    color: #fff;
-}
-
-.container__menu-in-futter .tcb-icon {
-    font-size: 24px;
-    color:#fff !important;
-} */

@@ -5,27 +5,19 @@ document.addEventListener(
     
     function ()
     {
-        function getElement( selector )
-        {
-            const footer = document.getElementById( 'thrive-footer' );
-
-            const switcher = footer.getElementsByClassName( 'container__menu-in-futter' ).item( 0 );
-    
-            return switcher.getElementsByClassName( selector ).item( 0 );
-        }
-
         function spoilerToggle( event )
         {
-            const spoiler = getElement( 'drop-menu_content_Spoiler' );
-
-            event.currentTarget.classList.toggle( 'legal-active' );
-
-            spoiler.classList.toggle( 'legal-active' );
+            event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
         }
 
-        const button = getElement( 'buttton-country-whis-flag' );
+        const switchers = document.getElementsByClassName( 'lang-switcher' );
 
-        button.addEventListener( 'click', spoilerToggle, false );
+        for ( let switcher of switchers ) {
+            const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
+
+            button.addEventListener( 'click', spoilerToggle, false );
+        }
+        
     }
 );
 
