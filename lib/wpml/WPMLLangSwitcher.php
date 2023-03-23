@@ -58,7 +58,7 @@ class WPMLLangSwitcher
             'pt_ES',
             'sr_SR',
             'se_SE',
-            'cs_CZ',
+            'cs_CS',
             'en',
             'es',
             'ru',
