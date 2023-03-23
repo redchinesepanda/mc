@@ -36,7 +36,7 @@
 /* Language Width and Height */
 
 .lang-switcher .menu-avaible .lang-item {
-    width: calc( 33.333% - 50px );
+    width: 200px;
 }
 
 /* .container__menu-in-futter .img-before-text-block {
