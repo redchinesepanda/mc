@@ -110,7 +110,7 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        $message['languages'] = $languages;
+        // $message['languages'] = $languages;
 
         $args['active'] = self::get_active( $languages );
 
@@ -120,7 +120,7 @@ class WPMLLangSwitcher
             $args['languages'][] = self::map( $lang );
         }
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $args;
     }
