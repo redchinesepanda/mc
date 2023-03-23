@@ -19,9 +19,9 @@
     right: 0px;
 }
 
-/* .lang-switcher .menu-avaible:not(:target) {
+.lang-switcher .menu-avaible:not(:legal-active) {
     display: none;
-} */
+}
 
 /* Language Width and Height */
 
