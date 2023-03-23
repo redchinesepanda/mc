@@ -41,7 +41,7 @@
 
 /* Language Position */
 
-.lang-switcher .lang-current {
+.lang-switcher .lang-current .lang-title {
     padding-right: 29px;
 }
 
@@ -65,7 +65,7 @@
 
 /* Language Background */
 
-.lang-switcher .lang-current {
+.lang-switcher .lang-current .lang-title {
     background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
     background-position: right center;
