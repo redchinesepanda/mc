@@ -78,6 +78,8 @@ class WPMLLangSwitcher
 
         $message['fucntion'] = 'WPMLLangSwitcher::exclude';
 
+        $message['default_locale'] = $default_locale;
+
         $message['keys'] = $keys;
 
         $message['args'] = $args;
