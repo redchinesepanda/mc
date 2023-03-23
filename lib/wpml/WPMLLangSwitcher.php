@@ -76,6 +76,14 @@ class WPMLLangSwitcher
             unset( $args[$key] );
         }
 
+        $message['fucntion'] = 'WPMLLangSwitcher::exclude';
+
+        $message['keys'] = $keys;
+
+        $message['args'] = $args;
+
+        self::debug( $message );
+
         return $args;
     }
 
