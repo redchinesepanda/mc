@@ -77,16 +77,6 @@ class WPMLLangSwitcher
             unset( $args[$key] );
         }
 
-        // $message['fucntion'] = 'WPMLLangSwitcher::exclude';
-
-        // $message['default_locale'] = $default_locale;
-
-        // $message['keys'] = $keys;
-
-        // $message['args'] = $args;
-
-        // self::debug( $message );
-
         return $args;
     }
 
@@ -120,6 +110,8 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
+        $message['languages'] = $languages;
+
         $args['active'] = self::get_active( $languages );
 
         $languages = self::exclude( $languages );
@@ -127,6 +119,8 @@ class WPMLLangSwitcher
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
         }
+
+        self::debug( $message );
 
         return $args;
     }
