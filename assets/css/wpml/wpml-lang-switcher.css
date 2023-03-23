@@ -71,6 +71,10 @@
     padding-right: 29px;
 }
 
+.lang-switcher .lang-image {
+    margin-left: 5px;
+}
+
 /* .container__menu-in-futter .container__img-before-text-block {
     padding: 5px 0;
 }
@@ -116,7 +120,7 @@
     background-color: #0d0863;
 }
 
-.lang-switcher .lang-current {
+.lang-switcher .lang-current:hover {
     background-color: #5997e3;
 }
 
