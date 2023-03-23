@@ -49,6 +49,36 @@ class WPMLLangSwitcher
         return $languages;
     }
 
+    private static function exclude( $args )
+    {
+        $default_locale = array_column( $args, 'default_locale' );
+
+        $default_locale_exclude = [
+            'pt_GB',
+            'pt_ES',
+            'sr_SR',
+            'en',
+            'es',
+            'ru',
+        ];
+
+        $keys = [];
+
+        foreach ( $default_locale_exclude as $exclude ) {
+            $key = array_search( $exclude, $default_locale );
+
+            if ( $key !== false ) {
+                $keys[] = $key;
+            }
+        }
+
+        foreach ( $keys as $key ) {
+            unset( $args[$key] );
+        }
+
+        return $args;
+    }
+
     private static function get_active( &$args )
     {
         $args_active = array_column( $args, 'active' );
@@ -80,6 +110,8 @@ class WPMLLangSwitcher
         $languages = self::get_all();
 
         $args['active'] = self::get_active( $languages );
+
+        $languages = self::exclude( $languages );
 
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
