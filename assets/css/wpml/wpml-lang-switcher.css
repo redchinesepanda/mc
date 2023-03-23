@@ -19,7 +19,7 @@
     right: 0px;
 }
 
-.lang-switcher .menu-avaible:not(.legal-active) {
+.lang-switcher .menu-avaible:not( .legal-active ) {
     display: none;
 }
 
