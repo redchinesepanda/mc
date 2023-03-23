@@ -6,10 +6,6 @@
     column-gap: 10px;
 }
 
-.lang-switcher .menu-avaible .lang-item {
-    display: flex;
-}
-
 .lang-switcher .menu-avaible {
     display: flex;
     flex-wrap: wrap;
