@@ -20,6 +20,10 @@
     right: 0px;
 }
 
+.lang-switcher .menu-avaible:not(:target) {
+    display: none;
+}
+
 /* .container__menu-in-futter .container__img-before-text-block {
     display: flex;
     align-items: center;
