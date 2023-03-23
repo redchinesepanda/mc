@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     /* column-gap: 50px; */
     row-gap: 10px;
+    justify-content: space-evenly;
 }
 
 .lang-switcher .menu-avaible {
@@ -46,7 +47,7 @@
 }
 
 .lang-switcher .menu-avaible .lang-item {
-    width: 200px;
+    width: 152px;
 }
 
 /* .container__menu-in-futter .img-before-text-block {
