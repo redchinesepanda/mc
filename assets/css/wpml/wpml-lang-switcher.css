@@ -7,7 +7,7 @@
 }
 
 .lang-switcher .menu-avaible .lang-item {
-    display: block;
+    display: flex;
 }
 
 .lang-switcher .menu-avaible {
