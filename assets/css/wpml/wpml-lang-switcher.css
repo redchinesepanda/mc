@@ -3,6 +3,7 @@
 .lang-switcher .lang-item {
     display: flex;
     align-items: center;
+    column-gap: 10px;
 }
 
 /* .container__menu-in-futter .container__img-before-text-block {
@@ -40,6 +41,10 @@
 
 /* Language Position */
 
+.lang-switcher .lang-current {
+    padding-right: 29px;
+}
+
 /* .container__menu-in-futter .container__img-before-text-block {
     padding: 5px 0;
 }
@@ -59,6 +64,13 @@
 } */
 
 /* Language Background */
+
+.lang-switcher .lang-current {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' );
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto;
+}
 
 .lang-switcher .lang-image {
     background-repeat: no-repeat;
