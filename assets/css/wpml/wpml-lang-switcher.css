@@ -6,6 +6,11 @@
     column-gap: 10px;
 }
 
+.lang-switcher .lang-avaible {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* .container__menu-in-futter .container__img-before-text-block {
     display: flex;
     align-items: center;
