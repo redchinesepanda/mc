@@ -33,6 +33,10 @@
 
 /* Language Width and Height */
 
+.lang-switcher .menu-avaible .lang-item {
+    width: 33.333%;
+}
+
 /* .container__menu-in-futter .img-before-text-block {
     width: 20px;
 }
