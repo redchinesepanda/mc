@@ -58,6 +58,7 @@ class WPMLLangSwitcher
             'pt_ES',
             'sr_SR',
             'se_SE',
+            'cs_CZ',
             'en',
             'es',
             'ru',
@@ -110,8 +111,6 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        // $message['languages'] = $languages;
-
         $args['active'] = self::get_active( $languages );
 
         $languages = self::exclude( $languages );
@@ -119,8 +118,6 @@ class WPMLLangSwitcher
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
         }
-
-        // self::debug( $message );
 
         return $args;
     }
