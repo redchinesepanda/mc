@@ -25,6 +25,7 @@
 
 .lang-switcher .lang-current .lang-title {
     display: flex;
+    column-gap: 1px;
 }
 
 .lang-switcher .lang-current .lang-title::after {
@@ -51,10 +52,6 @@
 
 .lang-switcher .menu-avaible {
     padding: 5px 0px;
-}
-
-.lang-switcher .lang-current .lang-title::after {
-    margin-left: 1px;
 }
 
 .lang-switcher .lang-image {
