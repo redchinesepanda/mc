@@ -50,6 +50,7 @@
 /* Language Background */
 
 .lang-switcher .lang-current .lang-title::after {
+    content: '';
     display: block;
     width: 24px;
     height: 24px;
