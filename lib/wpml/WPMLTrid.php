@@ -26,7 +26,7 @@ class WPMLTrid
     {
         global $wpdb;
 
-        $query = 'SELECT `trid` FROM `wp_icl_translations` WHERE 1 LIMIT 10';
+        $query = 'SELECT DISTINCT `trid` FROM `wp_icl_translations` WHERE 1 LIMIT 10';
 
         $posts = $wpdb->get_results( $query );
 
