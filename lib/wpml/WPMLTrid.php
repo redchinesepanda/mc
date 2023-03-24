@@ -34,8 +34,8 @@ class WPMLTrid
             WHERE
                 `element_type` = 'post_page'
                 AND `post_status` = 'publish'
-            /*GROUP BY `trid`*/
-            LIMIT 10";
+            GROUP BY `trid`
+            LIMIT 20";
 
         $posts = $wpdb->get_results( $query );
 
