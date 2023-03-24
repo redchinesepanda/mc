@@ -15,7 +15,7 @@
 
 .lang-switcher .menu-avaible {
     position: absolute;
-    bottom: 29px;
+    bottom: 30px;
     right: 0px;
 }
 
@@ -51,7 +51,7 @@
 /* Language Position */
 
 .lang-switcher .menu-avaible {
-    padding: 5px 0px;
+    padding: 31px 0px;
 }
 
 .lang-switcher .lang-image {
@@ -70,13 +70,6 @@
     background-position: center center;
     background-size: auto;
 }
-
-/* .lang-switcher .lang-current .lang-title {
-    background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto;
-} */
 
 .lang-switcher .lang-image {
     background-repeat: no-repeat;
