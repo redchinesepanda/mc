@@ -9,7 +9,6 @@
 .lang-switcher .menu-avaible {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 10px;
     justify-content: space-evenly;
 }
 
@@ -31,6 +30,18 @@
 .lang-switcher .lang-current .lang-title::after {
     display: block;
     content: '';
+}
+
+@media screen and ( min-width: 1080px ) {
+    .lang-switcher .menu-avaible {
+        row-gap: 10px;
+    }
+}
+
+@media screen and ( max-width: 1079px ) {
+    .lang-switcher .menu-avaible {
+        row-gap: 15px;
+    }
 }
 
 /* Language Width and Height */
@@ -110,12 +121,14 @@
     border: 1px solid rgb(89, 151, 227);
 }
 
-.lang-switcher .menu-avaible .lang-item:hover {
-    background-color: #0d0863;
-}
-
-.lang-switcher .lang-current:hover {
-    background-color: #5997e3;
+@media screen and ( min-width: 1080px ) {
+    .lang-switcher .menu-avaible .lang-item:hover {
+        background-color: #0d0863;
+    }
+    
+    .lang-switcher .lang-current:hover {
+        background-color: #5997e3;
+    }
 }
 
 /* Language Typography */
