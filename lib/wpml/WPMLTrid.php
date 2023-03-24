@@ -29,7 +29,7 @@ class WPMLTrid
         $query = "SELECT
                 DISTINCT `wp_icl_translations`.`trid` AS `legal_trid`,
                 COUNT( `wp_icl_translations`.`element_id` ) AS `legal_elements`,
-                `wp_icl_translations`.`element_id` AS `legal_element_id`
+                `wp_icl_translations`.`element_id` AS `legal_element_id`,
                 `wp_posts`.`post_title` AS `legal_title`
             FROM `wp_icl_translations`
             INNER JOIN `wp_posts` ON `element_id` = `ID`
