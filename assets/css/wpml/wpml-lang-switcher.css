@@ -49,7 +49,7 @@
 
 /* Language Background */
 
-.lang-switcher .lang-current .lang-title:after {
+.lang-switcher .lang-current .lang-title::after {
     display: block;
     width: 24px;
     height: 24px;
