@@ -58,6 +58,7 @@
     background-position: right center;
     background-size: auto;
 }
+
 .lang-switcher .lang-current .lang-title {
     background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
