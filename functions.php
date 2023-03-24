@@ -12,13 +12,13 @@ add_action( 'wp_enqueue_scripts', function () {
 
 require_once( 'lib/Template.php' );
 
-require_once( 'lib/wpml/WPMLLangSwitcher.php' );
+require_once( 'lib/wpml/WPMLMain.php' );
 
 require_once( 'lib/acf/ACFBilletCards.php' );
 
 require_once( 'lib/admin/AdminMain.php' );
 
-WPMLLangSwitcher::register();
+WPMLMain::register();
 
 ACFBilletCards::register();
 
