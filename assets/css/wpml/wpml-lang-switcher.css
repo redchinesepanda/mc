@@ -50,7 +50,8 @@
 /* Language Background */
 
 .lang-switcher .lang-current .lang-title {
-    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' );
+    /* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' ); */
+    background-image: url( './wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto;
