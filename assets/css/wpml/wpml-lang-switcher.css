@@ -44,7 +44,7 @@
 
 .lang-switcher .lang-current .lang-title::after {
     width: 24px;
-    height: 24px;
+    height: 28px;
 }
 
 /* Language Position */
@@ -53,8 +53,8 @@
     padding: 5px 0px;
 }
 
-.lang-switcher .lang-current .lang-title {
-    padding-right: 1px;
+.lang-switcher .lang-current .lang-title::after {
+    margin-left: 1px;
 }
 
 .lang-switcher .lang-image {
