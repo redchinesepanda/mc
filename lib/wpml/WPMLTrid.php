@@ -9,11 +9,20 @@ class WPMLTrid
         add_action( 'edit_form_after_title', [ $handler, 'render' ] );
     }
 
-    function render( $post )
+    public static function render( $post )
     {
-        $message['trid'] = self::get();
+        $trid = self::get();
+
+        $message['trid'] = $trid;
+
+        $message['translation_group'] = self::get_translation_group( $trid );
 
         self::debug( $message );
+    }
+
+    public static function get_translation_group( $trid )
+    {
+        return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
     }
 
     public static function get() {
