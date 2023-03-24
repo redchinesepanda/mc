@@ -11,7 +11,7 @@ class WPMLTrid
 
     function render( $post )
     {
-        $message = self::get();
+        $message['trid'] = self::get();
 
         self::debug( $message );
     }
