@@ -27,7 +27,8 @@ class WPMLTrid
         global $wpdb;
 
         $query = "SELECT
-            DISTINCT `trid`
+                DISTINCT `trid`,
+                COUNT( `element_id` ) AS `elements`
             FROM `wp_icl_translations`
             WHERE `element_type` = 'post_page'
             LIMIT 10";
