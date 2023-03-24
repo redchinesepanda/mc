@@ -49,8 +49,16 @@
 
 /* Language Background */
 
+.lang-switcher .lang-current .lang-title:after {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto;
+}
 .lang-switcher .lang-current .lang-title {
-    /* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/wpml/wpml-lang-switcher-open.svg' ); */
     background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
     background-position: right center;
