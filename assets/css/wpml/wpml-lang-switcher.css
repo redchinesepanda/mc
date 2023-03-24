@@ -35,9 +35,6 @@
 
 /* Language Width and Height */
 
-.lang-switcher .menu-avaible {
-    width: 600px;
-}
 
 .lang-switcher .menu-avaible .lang-item {
     width: 152px;
@@ -52,7 +49,17 @@
     height: 28px;
 }
 
+@media screen and ( min-width: 1080px ) {
+    .lang-switcher .menu-avaible {
+        width: 600px;
+    }
+}
+
 @media screen and ( max-width: 1079px ) {
+    .lang-switcher .menu-avaible {
+        width: 100%;
+    }
+
     .lang-switcher .lang-current {
         margin: 0px auto;
     }
