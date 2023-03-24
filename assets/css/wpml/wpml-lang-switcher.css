@@ -60,7 +60,7 @@
 
 /* Language Background */
 
-.lang-switcher .lang-current:legal-active .lang-title::after {
+.lang-switcher .lang-current.legal-active .lang-title::after {
     transform: rotate( 180deg );
 }
 
