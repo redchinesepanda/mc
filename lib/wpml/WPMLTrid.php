@@ -31,6 +31,7 @@ class WPMLTrid
                 COUNT( `element_id` ) AS `elements`
             FROM `wp_icl_translations`
             WHERE `element_type` = 'post_page'
+            GROUP BY `trid`
             LIMIT 10";
 
         $posts = $wpdb->get_results( $query );
