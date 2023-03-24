@@ -13,11 +13,24 @@ class WPMLTrid
     {
         $trid = self::get();
 
-        $message['trid'] = $trid;
+        // $message['trid'] = $trid;
 
-        $message['translation_group'] = self::get_translation_group( $trid );
+        // $message['translation_group'] = self::get_translation_group( $trid );
+
+        $message['all'] = self::get_all( $trid );
 
         self::debug( $message );
+    }
+
+    public static function get_all()
+    {
+        global $wpdb;
+
+        $query = 'SELECT `trid` FROM `wp_icl_translations` WHERE 1 GROUP BY `trid`';
+
+        $posts = $wpdb->query( $query );
+
+        return $posts;
     }
 
     public static function get_translation_group( $trid )

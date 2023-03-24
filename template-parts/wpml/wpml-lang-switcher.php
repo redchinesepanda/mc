@@ -10,12 +10,10 @@
 </style>
 <div class="lang-switcher">
     <div class="lang-current lang-item">
-    <!-- <a href="#lang-menu-1" class="lang-current lang-item"> -->
         <div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
         <div class="lang-title">
             <?php echo $args['active']['title']; ?>
         </div>
-    <!-- </a> -->
     </div>
     <div id="lang-menu-1" class="menu-avaible">
         <?php foreach( $args['languages'] as $lang ) : ?>

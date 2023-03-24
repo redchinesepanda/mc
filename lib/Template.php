@@ -10,13 +10,6 @@ class Template {
 	const LEGAL_PATH = \LEGAL_PATH;
     
 	const LEGAL_URL = \LEGAL_URL;
-
-	// public static function register()
-    // {
-	// 	idCRMProMailAdmin::register();
-	// }
 }
-
-// Template::register();
 
 ?>
