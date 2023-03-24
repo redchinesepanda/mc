@@ -23,6 +23,10 @@
     display: none;
 }
 
+.lang-switcher .lang-current .lang-title {
+    display: flex;
+}
+
 .lang-switcher .lang-current .lang-title::after {
     display: block;
     content: '';
@@ -50,7 +54,7 @@
 }
 
 .lang-switcher .lang-current .lang-title {
-    padding-right: 29px;
+    padding-right: 1px;
 }
 
 .lang-switcher .lang-image {
@@ -70,12 +74,12 @@
     background-size: auto;
 }
 
-.lang-switcher .lang-current .lang-title {
+/* .lang-switcher .lang-current .lang-title {
     background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto;
-}
+} */
 
 .lang-switcher .lang-image {
     background-repeat: no-repeat;
