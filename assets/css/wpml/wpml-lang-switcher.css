@@ -67,8 +67,16 @@
 
 /* Language Position */
 
-.lang-switcher .menu-avaible {
-    padding: 31px 0px;
+@media screen and ( min-width: 1080px ) {
+    .lang-switcher .menu-avaible {
+        padding: 31px 0px;
+    }
+}
+
+@media screen and ( max-width: 1079px ) {
+    .lang-switcher .menu-avaible {
+        padding: 11px 0px;
+    }
 }
 
 .lang-switcher .lang-image {
