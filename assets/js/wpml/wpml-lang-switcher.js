@@ -7,6 +7,8 @@ document.addEventListener(
     {
         function spoilerToggle( event )
         {
+            event.currentTarget.classList.toggle( 'legal-active' );
+
             event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
         }
 

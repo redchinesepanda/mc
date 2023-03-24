@@ -23,6 +23,11 @@
     display: none;
 }
 
+.lang-switcher .lang-current .lang-title::after {
+    display: block;
+    content: '';
+}
+
 /* Language Width and Height */
 
 .lang-switcher .menu-avaible {
@@ -31,6 +36,11 @@
 
 .lang-switcher .menu-avaible .lang-item {
     width: 152px;
+}
+
+.lang-switcher .lang-current .lang-title::after {
+    width: 24px;
+    height: 24px;
 }
 
 /* Language Position */
@@ -49,14 +59,14 @@
 
 /* Language Background */
 
+.lang-switcher .lang-current:legal-active .lang-title::after {
+    transform: rotate( 180deg );
+}
+
 .lang-switcher .lang-current .lang-title::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 24px;
     background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: center center;
     background-size: auto;
 }
 
