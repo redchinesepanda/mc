@@ -26,9 +26,9 @@ class WPMLTrid
     {
         global $wpdb;
 
-        $query = 'SELECT `trid` FROM `wp_icl_translations` WHERE 1';
+        $query = 'SELECT `trid` FROM `wp_icl_translations` WHERE 1 LIMIT 10';
 
-        $posts = $wpdb->query( $query );
+        $posts = $wpdb->get_results( $query );
 
         return $posts;
     }
