@@ -43,9 +43,19 @@
     width: 152px;
 }
 
+.lang-switcher .lang-current {
+    width: fit-content;
+}
+
 .lang-switcher .lang-current .lang-title::after {
     width: 24px;
     height: 28px;
+}
+
+@media screen and ( max-width: 1079px ) {
+    .lang-switcher .lang-current {
+        margin: 0px auto;
+    }
 }
 
 /* Language Position */
