@@ -30,7 +30,10 @@ class WPMLTrid
                 DISTINCT `trid`,
                 COUNT( `element_id` ) AS `elements`
             FROM `wp_icl_translations`
-            WHERE `element_type` = 'post_page'
+            INNER JOIN `wp_posts` ON `element_id` = `ID`
+            WHERE
+                `element_type` = 'post_page'
+                AND `post_status` = 'publish'
             GROUP BY `trid`
             LIMIT 10";
 
