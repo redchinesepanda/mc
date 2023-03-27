@@ -33,7 +33,7 @@ var ACFPage = ( function( $ )
             
             // var val = ( val = acf.getFields( { name : 'page-translation-group' } ).shift() ) ? val.val() : '';
             
-            let val = ( val = acf.getField( 'page-translation-group' ) ) ? val.val() : '';
+            var val = ( val = acf.getField( 'page-translation-group' ) ) ? val.val() : '';
 
             console.log( 'acf-page-js val: ' + JSON.stringify( val ) );
         }
