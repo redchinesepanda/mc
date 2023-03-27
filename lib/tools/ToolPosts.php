@@ -2,7 +2,9 @@
 
 class ToolPosts
 {
-    const CSV = WP_CONTENT_DIR . '/uploads/csv/posts.csv';
+    // const CSV = WP_CONTENT_DIR . '/uploads/csv/posts.csv';
+    
+    const CSV = wp_upload_dir['path'] . '/uploads/csv/posts.csv';
 
     public static function register()
     {
