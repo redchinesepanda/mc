@@ -38,7 +38,9 @@ var ACFPage = ( function( $ )
 
                 // $select.on('select2:close', function (e) { console.log( 'select2:close ', e); });
                 
-                $select.on('change.select2', function (e) { console.log( 'change.select2 ', e); });
+                // $select.on('change.select2', function (e) { console.log( 'change.select2 ', e); });
+                
+                $select.on('change', function (e) { console.log( 'change.select2 ', e); });
 
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
