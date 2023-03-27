@@ -13,7 +13,11 @@ class ACFPage
 
     function choices( $field )
     {
+        $message['function'] = 'ACFPage::choices';
+
         $items = WPMLLangSwitcher::get();
+
+        $message['items'] = $items;
 
         if ( !empty( $items ) ) {
             foreach( $items as $item ) {
@@ -21,7 +25,14 @@ class ACFPage
             }
         }
 
+        self::debug( $message );
+
         return $field;
+    }
+
+    public static function debug( $message )
+    {
+        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 
