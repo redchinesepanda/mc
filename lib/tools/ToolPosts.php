@@ -2,6 +2,8 @@
 
 class ToolPosts
 {
+    const CSV = '/var/www/mc-wp/test/public_html/wp-content/uploads/csv/posts.csv';
+
     public static function register()
     {
         $handler = new self();
@@ -13,9 +15,10 @@ class ToolPosts
     {
         $fields = self::get_fields();
 
-        $message['path'] = Template::LEGAL_PATH . 'posts.csv';
+
+        $message['path'] = self::CSV;
         
-        // $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
+        $fp = fopen( self::CSV, 'w' );
         
         // foreach ($fields as $field) {
         //     fputcsv($fp, $field);
