@@ -44,7 +44,7 @@ class ToolPosts
             $post->post_name,
 
             get_post_permalink($post->ID)
-        ]
+        ];
     }
     
     public static function get_posts()
