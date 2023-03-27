@@ -53,8 +53,11 @@ var ACFPage = ( function( $ )
 
                 // console.log( 'acf-page-js settings: ' + JSON.stringify( settings ) );
 
-                console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
+                // console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
             });
+
+            $("#acf-field_64213360cf905-input")
+                .on( 'change', function( e ) { log( 'change ' + JSON.stringify( {val:e.val, added:e.added, removed:e.removed} ) ); } )
         }
     }
 } )( jQuery );
