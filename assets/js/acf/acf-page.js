@@ -54,6 +54,9 @@ var ACFPage = ( function( $ )
                 // console.log( 'acf-page-js settings: ' + JSON.stringify( settings ) );
 
                 // console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
+
+                $select
+                    .on( 'change', function( e ) { log( 'change ' + JSON.stringify( {val:e.val, added:e.added, removed:e.removed} ) ); } )
             });
 
             $("#acf-field_64213360cf905-input")
