@@ -44,7 +44,7 @@ var ACFPage = ( function( $ )
 
                 $select.on('select2:clear', function (e) {
                     console.log( 'select2:clear e ', e );
-                }
+                } );
 
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
@@ -52,7 +52,7 @@ var ACFPage = ( function( $ )
                     // console.log( 'select2:select ', e );
                     
                     console.log( 'select2:select data ', data );
-                });
+                } );
             } );
 
             $("#acf-field_64213360cf905-input")
