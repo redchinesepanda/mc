@@ -2,7 +2,7 @@
 
 class ToolPosts
 {
-    const CSV = '/container/var/www/mc-wp/test/public_html/wp-content/uploads/csv/posts.csv';
+    const CSV = WP_CONTENT_DIR . '/uploads/csv/posts.csv';
 
     public static function register()
     {
