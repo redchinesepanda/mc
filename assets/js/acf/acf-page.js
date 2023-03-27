@@ -37,7 +37,7 @@ var ACFPage = ( function( $ )
 
             console.log( 'acf-page-js val: ' + JSON.stringify( val ) );
 
-            $('#acf-field_64213360cf905').select2('data');
+            $( '#acf-field_64213360cf905' ).select2('data');
 
             console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
         }
