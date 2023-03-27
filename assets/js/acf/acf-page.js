@@ -51,7 +51,7 @@ var ACFPage = ( function( $ )
 
                 console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
 
-                console.log( 'acf-page-js settings: ' + JSON.stringify( settings ) );
+                // console.log( 'acf-page-js settings: ' + JSON.stringify( settings ) );
 
                 console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
             });
