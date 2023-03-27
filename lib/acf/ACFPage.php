@@ -15,7 +15,7 @@ class ACFPage
     {
         $message['function'] = 'ACFPage::choices';
 
-        $items = WPMLLangSwitcher::get();
+        $items = WPMLTrid::get();
 
         $message['items'] = $items;
 
