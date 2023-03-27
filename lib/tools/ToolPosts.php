@@ -3,8 +3,6 @@
 class ToolPosts
 {
     // const CSV = WP_CONTENT_DIR . '/uploads/csv/posts.csv';
-    
-    const CSV = wp_upload_dir()['path'] . '/uploads/csv/posts.csv';
 
     public static function register()
     {
@@ -17,10 +15,14 @@ class ToolPosts
     {
         $fields = self::get_fields();
 
-
-        $message['path'] = self::CSV;
+    
+        $upload_dir = wp_upload_dir();
         
-        $fp = fopen( self::CSV, 'w' );
+        $csv = $upload_dir['path'] . '/uploads/csv/posts.csv';
+
+        $message['path'] = $csv;
+        
+        $fp = fopen( $csv, 'w' );
         
         // foreach ($fields as $field) {
         //     fputcsv($fp, $field);
