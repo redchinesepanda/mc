@@ -6,7 +6,7 @@ class ToolPosts
     {
         $handler = new self();
 
-        // add_action( 'admin_init', [ $handler, 'csv' ] );
+        add_action( 'admin_init', [ $handler, 'csv' ] );
     }
 
     public static function csv()
