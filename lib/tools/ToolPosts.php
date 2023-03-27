@@ -12,6 +12,8 @@ class ToolPosts
     public static function csv()
     {
         $fields = self::get_fields();
+
+        $message['path'] = Template::LEGAL_PATH . 'posts.csv';
         
         // $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
         
@@ -20,6 +22,8 @@ class ToolPosts
         // }
         
         // fclose($fp);
+
+        self::debug( $message );
     }
 
     public static function get_fields()
@@ -60,6 +64,11 @@ class ToolPosts
         ];
 
         return get_posts( $args );
+    }
+
+    public static function debug( $message )
+    {
+        echo '<pre>ToolPosts::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 
