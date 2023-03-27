@@ -17,13 +17,17 @@ class WPMLTrid
 
         // $message['translation_group'] = self::get_translation_group( $trid );
 
-        $message['all'] = self::get_all( $trid );
+        $all = self::get_all( $trid );
 
-        self::debug( $message );
+        // $message['all'] = $all;
+
+        // self::debug( $message );
     }
 
     public static function get_all()
     {
+        $message['function'] = 'WPMLTrid::get_all';
+
         global $wpdb;
 
         $query = "SELECT
@@ -40,9 +44,17 @@ class WPMLTrid
                 AND `post_status` = 'publish'
             GROUP BY `trid`";
 
-        $posts = $wpdb->query( $query );
+        $amount = $wpdb->query( $query );
+
+        $message['amount'] = $amount;
+
+        $query .= ' LIMIT 10';
         
-        // $posts = $wpdb->get_results( $query );
+        $posts = $wpdb->get_results( $query );
+
+        $message['posts'] = $posts;
+
+        self::debug( $message );
 
         return $posts;
     }
