@@ -17,13 +17,13 @@ class ToolPosts
 
         $message['path'] = self::CSV;
         
-        $fp = fopen( self::CSV, 'w' );
+        $file = fopen( self::CSV, 'w' );
         
-        // foreach ($fields as $field) {
-        //     fputcsv($fp, $field);
-        // }
+        foreach ($fields as $field) {
+            fputcsv( $file, $field );
+        }
         
-        fclose($fp);
+        fclose( $file );
 
         self::debug( $message );
     }
