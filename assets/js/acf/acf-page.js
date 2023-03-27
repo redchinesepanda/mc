@@ -43,7 +43,11 @@ var ACFPage = ( function( $ )
                 // $select.on('change', function (e) { console.log( 'change.select2 ', e); });
 
                 $select.on('select2:clear', function (e) {
-                    console.log( 'select2:clear e ', e );
+                    var data = e.params.data;
+                    
+                    // console.log( 'select2:clear e ', e );
+
+                    console.log( 'select2:select data ', data );
                 } );
 
                 $select.on('select2:select', function (e) {
