@@ -31,7 +31,7 @@ var ACFPage = ( function( $ )
         {
             const field = acf.getField( 'page-translation-group' );
 
-            field.on( 'change' , function()
+            $( '#acf-field_64213360cf905-input' ).on( 'change' , function()
             {
                 console.log( 'acf-page-js data: ' + field.$el.select2('data') );
             } );
