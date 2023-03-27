@@ -11,7 +11,7 @@ class ToolPosts
 
     public static function csv()
     {
-        $fields = self::get_fields();
+        // $fields = self::get_fields();
         
         // $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
         
