@@ -47,7 +47,7 @@ var ACFPage = ( function( $ )
                 // settings (object) settings given to the acf.select2 function
                 // field (object) field instance 
 
-                console.log( 'acf-page-js $select: ' + JSON.stringify( $select ) );
+                // console.log( 'acf-page-js $select: ' + JSON.stringify( $select ) );
 
                 console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
 
