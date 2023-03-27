@@ -57,11 +57,17 @@ var ACFPage = ( function( $ )
 
                 console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
 
-                $select
-                    .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+                $select.on( 'change', function ( e ) {
+                    var data = e.params.data;
 
-                field
-                    .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+                    console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
+                } );
+
+                // $select
+                //     .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+
+                // field
+                //     .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
             } );
 
             $("#acf-field_64213360cf905-input")
