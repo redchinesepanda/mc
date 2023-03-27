@@ -41,7 +41,7 @@ var ACFPage = ( function( $ )
 
             // console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
 
-            acf.addAction('select2_init', function( $select, args, settings, field ){
+            acf.addAction( 'select2_init', function( $select, args, settings, field ) {
                 // $select (jQuery) select element
                 // args (object) args given to the select2 function
                 // settings (object) settings given to the acf.select2 function
@@ -56,8 +56,11 @@ var ACFPage = ( function( $ )
                 // console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
 
                 $select
-                    .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( {val:e.val, added:e.added, removed:e.removed} ) ); } )
-            });
+                    .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+
+                field
+                    .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+            } );
 
             $("#acf-field_64213360cf905-input")
                 .on( 'change', function( e ) { log( 'change ' + JSON.stringify( {val:e.val, added:e.added, removed:e.removed} ) ); } )
