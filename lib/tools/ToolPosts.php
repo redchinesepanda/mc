@@ -24,7 +24,7 @@ class ToolPosts
 
     public static function get_fields()
     {
-        $post = self::get_posts();
+        $posts = self::get_posts();
 
         $args = [];
 
