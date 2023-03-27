@@ -43,7 +43,7 @@ var ACFPage = ( function( $ )
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
 
-                    // console.log( 'select2:select ', e );
+                    console.log( 'select2:select ', e );
                     
                     console.log( 'select2:select data ', data );
                 });
