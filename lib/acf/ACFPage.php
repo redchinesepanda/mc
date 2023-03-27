@@ -4,11 +4,22 @@ class ACFPage
 {
     const FIELD = 'page-translation-group';
 
+    const JS = Template::LEGAL_URL . '/assets/js/acf/acf-page.js';
+
+    public static function register_script()
+    {
+        wp_register_script( 'acf-page', self::JS, [], false, true);
+
+        wp_enqueue_script( 'acf-page' );
+    }
+
     public static function register()
     {
         $handler = new self();
 
         add_filter( 'acf/load_field/name=' . self::FIELD, [ $handler, 'choices' ] );
+
+        add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     function choices( $field )
