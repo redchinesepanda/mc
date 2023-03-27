@@ -15,9 +15,9 @@ class ToolPosts
         
         $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
         
-        foreach ($fields as $field) {
-            fputcsv($fp, $field);
-        }
+        // foreach ($fields as $field) {
+        //     fputcsv($fp, $field);
+        // }
         
         fclose($fp);
     }
