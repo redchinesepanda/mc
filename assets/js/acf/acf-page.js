@@ -30,9 +30,9 @@ var ACFPage = ( function( $ )
         run: function ()
         {
             acf.addAction( 'select2_init', function( $select, args, settings, field ) {
-                console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
+                // console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
 
-                console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
+                // console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
 
                 // $select.on('select2:open', function (e) { console.log( 'select2:open ', e); });
 
@@ -40,12 +40,16 @@ var ACFPage = ( function( $ )
                 
                 // $select.on('change.select2', function (e) { console.log( 'change.select2 ', e); });
                 
-                $select.on('change', function (e) { console.log( 'change.select2 ', e); });
+                // $select.on('change', function (e) { console.log( 'change.select2 ', e); });
+
+                $select.on('select2:clear', function (e) {
+                    console.log( 'select2:clear e ', e );
+                }
 
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
 
-                    console.log( 'select2:select ', e );
+                    // console.log( 'select2:select ', e );
                     
                     console.log( 'select2:select data ', data );
                 });
