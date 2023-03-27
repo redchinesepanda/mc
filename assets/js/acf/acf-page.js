@@ -36,6 +36,24 @@ var ACFPage = ( function( $ )
             var val = acf.getField( 'page-translation-group' ).val();
 
             console.log( 'acf-page-js val: ' + JSON.stringify( val ) );
+
+            acf.add_filter('select2_args', function( args, $select, settings, a ){
+    
+                var selectId = $select.attr('id');
+            
+                // this is what we need to bind the event to select2:
+
+                var $input = $('input#'+selectId+'-input');
+
+                $input.on( 'select2-selected', function (e) { 
+                  console.log( 'selected', e );
+                });
+            
+                // return
+                
+                return args;
+                    
+              });
         }
     }
 } )( jQuery );
