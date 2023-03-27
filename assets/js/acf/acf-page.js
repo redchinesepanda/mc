@@ -29,31 +29,8 @@ var ACFPage = ( function( $ )
     return {
         run: function ()
         {
-            // const field = acf.getField( 'page-translation-group' );
-            
-            // var val = ( val = acf.getFields( { name : 'page-translation-group' } ).shift() ) ? val.val() : '';
-            
-            // var val = acf.getField( 'page-translation-group' ).val();
-
-            // console.log( 'acf-page-js val: ' + JSON.stringify( val ) );
-
-            // $( '#acf-field_64213360cf905-input' ).select2('data');
-
-            // console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
-
             acf.addAction( 'select2_init', function( $select, args, settings, field ) {
-                // $select (jQuery) select element
-                // args (object) args given to the select2 function
-                // settings (object) settings given to the acf.select2 function
-                // field (object) field instance 
-
-                // console.log( 'acf-page-js $select: ' + JSON.stringify( $select ) );
-
                 console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
-
-                // console.log( 'acf-page-js settings: ' + JSON.stringify( settings ) );
-
-                // console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
 
                 console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
 
@@ -61,17 +38,11 @@ var ACFPage = ( function( $ )
 
                 $select.on("select2:close", function (e) { console.log("select2:close", e); });
 
-                // $select.on( 'change', function ( e ) {
-                //     var data = e.params.data;
-
-                //     console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
-                // } );
-
-                // $select
-                //     .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
-
-                // field
-                //     .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
+                $select.on('select2:select', function (e) {
+                    var data = e.params.data;
+                    
+                    console.log(data);
+                });
             } );
 
             $("#acf-field_64213360cf905-input")
