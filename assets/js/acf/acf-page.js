@@ -30,6 +30,11 @@ var ACFPage = ( function( $ )
         run: function ()
         {
             const field = acf.getField( 'page-translation-group' );
+
+            field.on( 'change' , function()
+            {
+                console.log( 'acf-page-js data: ' + field.$el.select2('data') );
+            } );
             
             console.log( 'acf-page-js data: ' + field.$el.select2('data') );
         }
