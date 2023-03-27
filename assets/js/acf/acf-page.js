@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function()
         console.log( 'acf-page-js text: ' + text );
     }
 
-	const pageTranslationGroups = document.querySelector( '.acf-field-select[data-name="page-translation-group"]' );
+	const pageTranslationGroups = document.querySelector( '.acf-field-select[data-name="page-translation-group"] select' );
 
     console.log( 'acf-page-js pageTranslationGroups: ' + pageTranslationGroups );
 
