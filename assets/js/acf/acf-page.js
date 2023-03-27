@@ -63,7 +63,11 @@ var ACFPage = ( function( $ )
 
                     $( '#post_search' ).val( data.text );
 
+                    console.log( 'select2:select post_search val ', $( '#post_search' ).val() );
+
                     $( '#assign_to_trid' ).val( data.id );
+
+                    console.log( 'select2:select assign_to_trid val ', $( '#assign_to_trid' ).val() );
                 } );
             } );
 
