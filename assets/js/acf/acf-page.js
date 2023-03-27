@@ -55,7 +55,7 @@ var ACFPage = ( function( $ )
 
                 // console.log( 'acf-page-js field: ' + JSON.stringify( field ) );
 
-                console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') );
+                console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
 
                 $select
                     .on( 'change', function( e ) { console.log( 'change ' + JSON.stringify( { val : e.val, added : e.added, removed : e.removed} ) ); } );
