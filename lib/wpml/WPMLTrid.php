@@ -30,7 +30,9 @@ class WPMLTrid
                 DISTINCT `wp_icl_translations`.`trid` AS `legal_trid`,
                 COUNT( `wp_icl_translations`.`element_id` ) AS `legal_elements`,
                 `wp_icl_translations`.`element_id` AS `legal_element_id`,
-                `wp_posts`.`post_title` AS `legal_title`
+                `wp_posts`.`post_title` AS `legal_title`,
+                GROUP_CONCAT( `language_code` ) as 'legal_language_codes',
+                GROUP_CONCAT( `source_language_code` ) as 'legal_source_language_codes'
             FROM `wp_icl_translations`
             INNER JOIN `wp_posts` ON `element_id` = `ID`
             WHERE
