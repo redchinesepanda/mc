@@ -15,10 +15,9 @@ document.addEventListener('DOMContentLoaded', function()
 
 	const pageTranslationGroups = document.querySelector( '.acf-field-select[data-name="page-translation-group"]' );
 
+    console.log( 'acf-page-js pageTranslationGroups: ' + pageTranslationGroups );
+
     pageTranslationGroups.addEventListener('change', option_changed, false );
-
-    
-
 } );
 
 // acf-page-js end
