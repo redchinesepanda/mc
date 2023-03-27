@@ -8,7 +8,7 @@ class ToolPosts
     {
         $handler = new self();
 
-        add_action( 'in_admin_footer', [ $handler, 'csv' ] );
+        // add_action( 'in_admin_footer', [ $handler, 'csv' ] );
     }
 
     public static function csv()
