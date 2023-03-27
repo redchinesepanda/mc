@@ -37,23 +37,9 @@ var ACFPage = ( function( $ )
 
             console.log( 'acf-page-js val: ' + JSON.stringify( val ) );
 
-            acf.add_filter('select2_args', function( args, $select, settings, a ){
-    
-                var selectId = $select.attr('id');
-            
-                // this is what we need to bind the event to select2:
+            $('#acf-field_64213360cf905').select2('data');
 
-                var $input = $('input#'+selectId+'-input');
-
-                $input.on( 'select2-selected', function (e) { 
-                  console.log( 'selected', e );
-                });
-            
-                // return
-                
-                return args;
-                    
-              });
+            console.log( 'acf-page-js data: ' + JSON.stringify( data ) );
         }
     }
 } )( jQuery );
