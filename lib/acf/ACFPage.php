@@ -17,13 +17,15 @@ class ACFPage
 
         $items = WPMLTrid::get();
 
-        $message['items'] = $items;
+        // $message['items'] = $items;
 
         if ( !empty( $items ) ) {
             foreach( $items as $item ) {
                 $field['choices'][$item->legal_trid] = $item->legal_title . ' [' . $item->legal_language_codes . ']'; 
             }
         }
+
+        $message['choices'] = $field['choices'];
 
         self::debug( $message );
 
