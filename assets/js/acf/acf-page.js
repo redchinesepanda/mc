@@ -44,10 +44,14 @@ var ACFPage = ( function( $ )
 
                 $select.on('select2:clear', function (e) {
                     var data = e.params.data;
-                    
+
                     // console.log( 'select2:clear e ', e );
 
                     console.log( 'select2:select data ', data );
+                    
+                    $( '#post_search' ).val( '' );
+
+                    $( '#assign_to_trid' ).val( '' );
                 } );
 
                 $select.on('select2:select', function (e) {
@@ -56,6 +60,10 @@ var ACFPage = ( function( $ )
                     // console.log( 'select2:select ', e );
                     
                     console.log( 'select2:select data ', data );
+
+                    $( '#post_search' ).val( data.text );
+
+                    $( '#assign_to_trid' ).val( data.id );
                 } );
             } );
 
