@@ -31,7 +31,7 @@ var ACFPage = ( function( $ )
         {
             const field = acf.getField( 'page-translation-group' );
             
-            console.log( 'acf-page-js data: ' + JSON.stringify( field.$el.val ) );
+            console.log( 'acf-page-js data: ' + JSON.stringify( field.$el.val() ) );
         }
     }
 } )( jQuery );
