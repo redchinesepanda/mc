@@ -24,7 +24,7 @@ class ToolPosts
         //     fputcsv($fp, $field);
         // }
         
-        // fclose($fp);
+        fclose($fp);
 
         self::debug( $message );
     }
