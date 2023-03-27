@@ -34,9 +34,11 @@ var ACFPage = ( function( $ )
 
                 console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
 
-                // $select.on("select2:open", function (e) { console.log( 'select2:open ', e); });
+                // $select.on('select2:open', function (e) { console.log( 'select2:open ', e); });
 
-                // $select.on("select2:close", function (e) { console.log( 'select2:close ', e); });
+                // $select.on('select2:close', function (e) { console.log( 'select2:close ', e); });
+                
+                $select.on('change.select2', function (e) { console.log( 'change.select2 ', e); });
 
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
