@@ -1,27 +1,5 @@
 // acf-page-js start
 
-// document.addEventListener('DOMContentLoaded', function()
-// {
-//     function option_changed( event )
-//     {
-//         const value = event.currentTarget.value;
-
-//         console.log( 'acf-page-js value: ' + value );
-
-//         const text = event.currentTarget.options[ event.currentTarget.selectedIndex ].text;
-
-//         console.log( 'acf-page-js text: ' + text );
-//     }
-
-//     const field = acf.getField( 'page-translation-group' );
-
-// 	// const pageTranslationGroups = document.querySelector( '.acf-field-select[data-name="page-translation-group"] select' );
-
-//     console.log( 'acf-page-js data: ' + field.select2('data') );
-
-//     // pageTranslationGroups.addEventListener('change', option_changed, false );
-// } );
-
 var ACFPage = ( function( $ )
 {
     'use strict';
@@ -30,18 +8,6 @@ var ACFPage = ( function( $ )
         run: function ()
         {
             acf.addAction( 'select2_init', function( $select, args, settings, field ) {
-                // console.log( 'acf-page-js args: ' + JSON.stringify( args ) );
-
-                // console.log( 'acf-page-js data: ' +  JSON.stringify( $select.select2('data') ) );
-
-                // $select.on('select2:open', function (e) { console.log( 'select2:open ', e); });
-
-                // $select.on('select2:close', function (e) { console.log( 'select2:close ', e); });
-                
-                // $select.on('change.select2', function (e) { console.log( 'change.select2 ', e); });
-                
-                // $select.on('change', function (e) { console.log( 'change.select2 ', e); });
-
                 $select.on('select2:clear', function (e) {
                     var data = e.params.data;
 
@@ -56,23 +22,18 @@ var ACFPage = ( function( $ )
 
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
-
-                    // console.log( 'select2:select ', e );
                     
                     console.log( 'select2:select data ', data );
 
-                    $( '#post_search' ).val( data.text );
-
-                    console.log( 'select2:select post_search val ', $( '#post_search' ).val() );
-
-                    $( '#assign_to_trid' ).val( data.id );
-
-                    console.log( 'select2:select assign_to_trid val ', $( '#assign_to_trid' ).val() );
+                    $( '#icl_document_connect_translations_dropdown' ).on( 'click', { text : data.text, id : data.id }, ACFPage.connect );
                 } );
             } );
+        },
+        
+        connect: function ( event ) {
+            $( '#post_search' ).val( event.data.text );
 
-            $("#acf-field_64213360cf905-input")
-                .on( 'change', function( e ) { log( 'change ' + JSON.stringify( {val:e.val, added:e.added, removed:e.removed} ) ); } )
+            $( '#assign_to_trid' ).val( event.data.id );
         }
     }
 } )( jQuery );
