@@ -6,27 +6,27 @@ class WPMLTrid
     {
         $handler = new self();
 
-        add_action( 'edit_form_after_title', [ $handler, 'render' ] );
+        // add_action( 'edit_form_after_title', [ $handler, 'render' ] );
     }
 
     public static function render( $post )
     {
-        $trid = self::get();
+        // $trid = self::get();
 
         // $message['trid'] = $trid;
 
         // $message['translation_group'] = self::get_translation_group( $trid );
 
-        $all = self::get_all( $trid );
+        $all = self::get( $trid );
 
-        // $message['all'] = $all;
+        $message['all'] = $all;
 
-        // self::debug( $message );
+        self::debug( $message );
     }
 
-    public static function get_all()
+    public static function get()
     {
-        $message['function'] = 'WPMLTrid::get_all';
+        // $message['function'] = 'WPMLTrid::get';
 
         global $wpdb;
 
@@ -43,17 +43,17 @@ class WPMLTrid
                 AND `post_status` = 'publish'
             GROUP BY `trid`";
 
-        $amount = $wpdb->query( $query );
+        // $amount = $wpdb->query( $query );
 
-        $message['amount'] = $amount;
+        // $message['amount'] = $amount;
 
         $query .= ' LIMIT 10';
         
         $posts = $wpdb->get_results( $query );
 
-        $message['posts'] = $posts;
+        // $message['posts'] = $posts;
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $posts;
     }
@@ -63,7 +63,7 @@ class WPMLTrid
         return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
     }
 
-    public static function get() {
+    public static function get_trid() {
         $post = get_post();
 
         return apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );  

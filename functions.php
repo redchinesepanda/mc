@@ -14,13 +14,13 @@ require_once( 'lib/Template.php' );
 
 require_once( 'lib/wpml/WPMLMain.php' );
 
-require_once( 'lib/acf/ACFBilletCards.php' );
+require_once( 'lib/acf/ACFMain.php' );
 
 require_once( 'lib/admin/AdminMain.php' );
 
 WPMLMain::register();
 
-ACFBilletCards::register();
+ACFMain::register();
 
 AdminMain::register();
 
