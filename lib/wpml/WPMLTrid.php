@@ -47,7 +47,7 @@ class WPMLTrid
 
         // $message['amount'] = $amount;
 
-        $query .= ' LIMIT 10';
+        // $query .= ' LIMIT 10';
         
         $posts = $wpdb->get_results( $query );
 

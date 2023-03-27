@@ -13,7 +13,7 @@ class ACFPage
 
     function choices( $field )
     {
-        $message['function'] = 'ACFPage::choices';
+        // $message['function'] = 'ACFPage::choices';
 
         $items = WPMLTrid::get();
 
@@ -25,9 +25,9 @@ class ACFPage
             }
         }
 
-        $message['choices'] = $field['choices'];
+        // $message['choices'] = $field['choices'];
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $field;
     }
