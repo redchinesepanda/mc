@@ -13,13 +13,13 @@ class ToolPosts
     {
         $fields = self::get_fields();
         
-        $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
+        // $fp = fopen( Template::LEGAL_PATH . 'posts.csv', 'w' );
         
         // foreach ($fields as $field) {
         //     fputcsv($fp, $field);
         // }
         
-        fclose($fp);
+        // fclose($fp);
     }
 
     public static function get_fields()
