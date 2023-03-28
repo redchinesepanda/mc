@@ -20,17 +20,17 @@ require_once( Template::LEGAL_PATH . '/lib/BilletSpoiler.php' );
 </style>
 <div id="<?php echo $args['selector']; ?>" class="billet">
     <div class="billet-left">
-        <?php BilletLogo::render( $args['url'] ); ?>
+        <?php BilletLogo::render( $args ); ?>
     </div>
     <div class="billet-center">
-        <?php BilletTitle::render( $args['url'] ); ?>
+        <?php BilletTitle::render( $args ); ?>
         <?php BilletList::render(); ?>
     </div>
     <div class="billet-right">
-        <?php BilletBonus::render( $args['url'] ); ?>
+        <?php BilletBonus::render( $args ); ?>
     </div>
 </div>
-<?php BilletSpoiler::render( $args['url'] ); ?>
+<?php BilletSpoiler::render( $args ); ?>
 <div class="billet-footer">
     <?php echo $args['description'] ?>
 </div>
