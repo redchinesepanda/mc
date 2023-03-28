@@ -80,6 +80,14 @@ body {
     pointer-events: none;
 }
 
+.billet .bonus-mobile {
+    display: flex;
+}
+
+.bonus .bonus-mobile-item {
+    display: block;
+}
+
 /* Billet Background */
 
 .billet {
@@ -174,6 +182,10 @@ body {
 .billet-left .billet-order {
     clip-path: polygon(100% 0%, 100% 100%, 50% 90%, 0% 100%, 0% 0%);
     background-color: rgb(89, 151, 227);
+}
+
+.bonus .bonus-mobile-item {
+    background-color: rgb(230, 230, 230);
 }
 
 /* Billet Width and Height */

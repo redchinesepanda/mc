@@ -18,9 +18,7 @@ require_once( Template::LEGAL_PATH . '/lib/billet/right/BilletMobile.php' );
         <?php echo $args['play']['label']; ?>
     </a>
 </div>
-<div class="bonus-mobile">
-    <?php BilletMobile::render(); ?>
-</div>
+<?php BilletMobile::render(); ?>
 <?php if ( BilletSpoiler::check() ): ?>
     <div class="bonus-spoiler" data-id="<?php echo $args['spoiler']['id']; ?>">
         <span class="spoiler-open"><?php echo $args['spoiler']['open']; ?></span>
