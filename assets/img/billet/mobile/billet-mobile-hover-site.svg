@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="19"
+   height="19"
+   viewBox="0 0 5.0270832 5.0270835"
+   version="1.1"
+   id="svg871"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="billet-mobile-hover-site.svg">
+  <defs
+     id="defs865" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="49.187113"
+     inkscape:cy="-4.2802513"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1895"
+     inkscape:window-height="1030"
+     inkscape:window-x="7"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata868">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path18"
+       stroke-linecap="round"
+       d="M 3.4275568,1.6666666e-8 H 1.5995265 C 1.2202103,1.6666666e-8 0.91401519,0.30619512 0.91401519,0.68551132 V 4.3415719 c 0,0.3793163 0.30619511,0.6855114 0.68551131,0.6855114 h 1.8280303 c 0.3793162,0 0.6855113,-0.3061951 0.6855113,-0.6855114 V 0.68551132 C 4.1130681,0.30619512 3.806873,1.6666666e-8 3.4275568,1.6666666e-8 Z M 2.9705492,4.5700757 H 2.0565342 V 4.3415719 h 0.914015 z M 3.6560605,3.8845643 H 1.3710228 V 0.68551132 h 2.2850377 z"
+       vector-effect="non-scaling-stroke"
+       style="opacity:1;fill:#5997e3;fill-rule:nonzero;stroke:none;stroke-width:0.228503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1" />
+  </g>
+</svg>
