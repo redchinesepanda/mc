@@ -56,21 +56,32 @@ class BilletMain
 
     public static function get()
     {
+        $url = self::get_url();
+        
+        $args['url'] = $url;
+
         $post = get_post();
+
+        $args['id'] = $post->ID;
 
         $args['selector'] = 'billet-' . $post->ID;
 
-        $args['color'] = get_field( 'billet-color' );
-
-        if ( empty( $args['color'] ) ) {
-            $args['color'] = self::DEFAULT_COLOR;
-        }
-
-        $args['url'] = self::get_url();
+        $args['color'] = self::get_color();
 
         $args['description'] = get_field( 'billet-description' );
 
         return $args;
+    }
+
+    public static function get_color()
+    {
+        $color = get_field( 'billet-color' );
+
+        if ( empty( $color ) ) {
+            $color = self::DEFAULT_COLOR;
+        }
+
+        return $color;
     }
 
     public static function render()

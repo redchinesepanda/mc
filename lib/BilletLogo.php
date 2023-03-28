@@ -6,28 +6,40 @@ class BilletLogo
 
     const DEFAULT_LOGO = Template::LEGAL_URL . '/assets/img/legal-blank.svg';
 
-    public static function get()
+    public static function get( $billet )
     {
-        $post = get_post();
+        $args['logo'] = self::href( $billet['url']['logo'] );
 
-        $args['logo'] = get_the_post_thumbnail_url( $post->ID );
+        $args['logo']['src'] = get_the_post_thumbnail_url( $billet['id'] );
 
-        if ( $args['logo'] === false ) {
-            $args['logo'] = self::DEFAULT_LOGO;
+        if ( $args['logo']['src'] === false ) {
+            $args['logo']['src'] = self::DEFAULT_LOGO;
         }
+
+        $args['review'] = self::href( $billet['url']['review'] );
+
+        $args['review']['label'] = get_field( 'billet-button-review' );
 
         return $args;
     }
 
-    public static function render( $url = [] )
+    public static function href( $url )
+    {
+        $args['href'] = url;
+
+        $args['class'] = self::disabled( url );
+
+        return $args;
+    }
+
+    public static function disabled( $url )
+    {
+        return ( $url == '' ? 'legal-disabled' : '' );
+    }
+
+    public static function render( $billet = [] )
     { 
-        $args = self::get();
-
-        if ( !empty( $url ) ) {
-            $args['url'] = $url;
-        }
-
-        load_template( self::TEMPLATE, false, $args );
+        load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
 }
 
