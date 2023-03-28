@@ -287,7 +287,8 @@ body {
     color: #FFFFFF;
 }
 
-.billet-center .legal-title {
+.billet-center .legal-title,
+.billet-center .billet-order {
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 23px;
