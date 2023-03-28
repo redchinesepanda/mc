@@ -4,12 +4,10 @@ class BilletTitle
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-title.php';
     
-    private static function get_achievement() {
+    private static function get_achievement( $billet ) {
         $args = [];
 
-        $post = get_post();
-
-        $terms = wp_get_post_terms( $post->ID, 'billet_achievement', [ 'term_id', 'name', 'slug' ] );
+        $terms = wp_get_post_terms( $billet['id'], 'billet_achievement', [ 'term_id', 'name', 'slug' ] );
 
         if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
             $term = $terms[0];
@@ -26,9 +24,9 @@ class BilletTitle
         return $args;
     }
 
-    public static function get()
+    public static function get( $billet )
     {
-        $args['achievement'] = self::get_achievement();
+        $args['achievement'] = self::get_achievement( $billet );
 
         $args['title'] = get_field( 'billet-title-text' );
 
@@ -37,15 +35,9 @@ class BilletTitle
         return $args;
     }
 
-    public static function render( $url = [] )
+    public static function render( $billet = [] )
     {
-        $args = self::get();
-
-        if ( !empty( $url ) ) {
-            $args['url'] = $url;
-        }
-
-        load_template( self::TEMPLATE, false, $args );
+        load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
 }
 
