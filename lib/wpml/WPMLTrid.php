@@ -2,21 +2,8 @@
 
 class WPMLTrid
 {
-    public static function register()
-    {
-        $handler = new self();
-
-        // add_action( 'edit_form_after_title', [ $handler, 'render' ] );
-    }
-
     public static function render( $post )
     {
-        // $trid = self::get();
-
-        // $message['trid'] = $trid;
-
-        // $message['translation_group'] = self::get_translation_group( $trid );
-
         $all = self::get( $trid );
 
         $message['all'] = $all;
@@ -26,8 +13,6 @@ class WPMLTrid
 
     public static function get()
     {
-        // $message['function'] = 'WPMLTrid::get';
-
         global $wpdb;
 
         $query = "SELECT
@@ -42,18 +27,8 @@ class WPMLTrid
                 `element_type` = 'post_page'
                 AND `post_status` = 'publish'
             GROUP BY `trid`";
-
-        // $amount = $wpdb->query( $query );
-
-        // $message['amount'] = $amount;
-
-        // $query .= ' LIMIT 10';
         
         $posts = $wpdb->get_results( $query );
-
-        // $message['posts'] = $posts;
-
-        // self::debug( $message );
 
         return $posts;
     }

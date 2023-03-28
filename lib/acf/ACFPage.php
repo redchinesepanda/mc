@@ -22,13 +22,9 @@ class ACFPage
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    function choices( $field )
+    public static function choices( $field )
     {
-        // $message['function'] = 'ACFPage::choices';
-
         $items = WPMLTrid::get();
-
-        // $message['items'] = $items;
 
         if ( !empty( $items ) ) {
             foreach( $items as $item ) {
@@ -36,9 +32,7 @@ class ACFPage
             }
         }
 
-        // $message['choices'] = $field['choices'];
-
-        // self::debug( $message );
+        $field['default_value'] = WPMLTrid::get_trid();
 
         return $field;
     }

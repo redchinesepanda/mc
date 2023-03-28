@@ -2,7 +2,7 @@
 
 require_once( 'WPMLLangSwitcher.php' );
 
-require_once( 'WPMLTrid.php' );
+// require_once( 'WPMLTrid.php' );
 
 class WPMLMain
 {
@@ -10,7 +10,7 @@ class WPMLMain
     {
         WPMLLangSwitcher::register();
 
-        WPMLTrid::register();
+        // WPMLTrid::register();
     }
 }
 
