@@ -1,3 +1,8 @@
+<?php
+
+require_once( Template::LEGAL_PATH . '/lib/billet/right/BilletMobile.php' );
+
+?>
 <div class="bonus-title">
     <a class="legal-bonus <?php echo $args['bonus']['class']; ?>" href="<?php echo $args['bonus']['href']; ?>" rel="nofollow">
         <?php echo $args['bonus']['label']; ?>
@@ -12,6 +17,9 @@
     <a class="legal-play <?php echo $args['play']['class']; ?>" href="<?php echo $args['play']['href']; ?>" rel="nofollow">
         <?php echo $args['play']['label']; ?>
     </a>
+</div>
+<div class="bonus-mobile">
+    <?php BilletMobile::render(); ?>
 </div>
 <?php if ( BilletSpoiler::check() ): ?>
     <div class="bonus-spoiler" data-id="<?php echo $args['spoiler']['id']; ?>">

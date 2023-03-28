@@ -89,6 +89,15 @@ class BilletMain
         return ( $url == '' ? 'legal-disabled' : '' );
     }
 
+    public static function href( $url )
+    {
+        $args['href'] = $url;
+
+        $args['class'] = self::disabled( $url );
+
+        return $args;
+    }
+
     public static function render()
     { 
         load_template( self::TEMPLATE, false, self::get() );

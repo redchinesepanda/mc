@@ -16,7 +16,7 @@ class BilletLogo
             $args['logo']['src'] = self::DEFAULT_LOGO;
         }
 
-        $args['review'] = self::href( $billet['url']['review'] );
+        $args['review'] = BilletMain::href( $billet['url']['review'] );
 
         $args['review']['label'] = get_field( 'billet-button-review' );
 
