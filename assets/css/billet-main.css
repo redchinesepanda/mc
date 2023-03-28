@@ -167,8 +167,9 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
-.billet-left {
+.billet-left .billet-order {
     clip-path: polygon(100% 0%, 100% 100%, 50% 90%, 0% 100%, 0% 0%);
+    background-color: rgb(89, 151, 227);
 }
 
 /* Billet Width and Height */
@@ -260,6 +261,10 @@ body {
 
 .billet-right .bonus-title {
     margin: 0px 40px;
+}
+
+.billet-left .billet-order {
+    padding: 8px 5px;
 }
 
 /* Billet Typography */
