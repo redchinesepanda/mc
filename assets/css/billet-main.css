@@ -295,7 +295,8 @@ body {
 
 /* Billet Position */
 
-.billet-center {
+.billet-center,
+.billet-right {
     padding: 20px 0px;
 }
 
