@@ -205,6 +205,18 @@ body {
     background-image: url( '../img/billet/mobile/billet-mobile-site.svg' );
 }
 
+.billet .legal-iphone:not( .legal-disabled ):hover {
+    background-image: url( '../img/billet/mobile/billet-mobile-hover-iphone.svg' );
+}
+
+.billet .legal-android:not( .legal-disabled ):hover {
+    background-image: url( '../img/billet/mobile/billet-mobile-hover-android.svg' );
+}
+
+.billet .legal-site:not( .legal-disabled ):hover {
+    background-image: url( '../img/billet/mobile/billet-mobile-hover-iphone.svg' );
+}
+
 /* Billet Width and Height */
 
 .billet-left,
