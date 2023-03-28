@@ -25,9 +25,9 @@ class BilletLogo
 
     public static function href( $url )
     {
-        $args['href'] = url;
+        $args['href'] = $url;
 
-        $args['class'] = self::disabled( url );
+        $args['class'] = self::disabled( $url );
 
         return $args;
     }
