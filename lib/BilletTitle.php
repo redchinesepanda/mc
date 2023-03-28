@@ -28,11 +28,20 @@ class BilletTitle
     {
         $args['achievement'] = self::get_achievement( $billet );
 
-        $args['title'] = get_field( 'billet-title-text' );
+        $args['title']['href'] = $billet['url']['title'];
+
+        $args['title']['class'] = self::disabled( $billet['url']['title'] );
+
+        $args['title']['label'] = get_field( 'billet-title-text' );
 
         $args['rating'] = get_field( 'billet-title-rating' );
 
         return $args;
+    }
+
+    public static function disabled( $url )
+    {
+        return ( $url == '' ? 'legal-disabled' : '' );
     }
 
     public static function render( $billet = [] )
