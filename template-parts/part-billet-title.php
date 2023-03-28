@@ -7,6 +7,7 @@ require_once( Template::LEGAL_PATH . '/lib/BilletAchievement.php' );
     <?php if ( !empty( $args['url']['title'] ) ): ?>
         <a class="legal-title" href="<?php echo $args['url']['title']; ?>" rel="nofollow">
     <?php endif; ?>
+    <div class="billet-order">#1</div>
     <h3 class="legal-title">
         <?php echo $args['title']; ?>
     </h3>
