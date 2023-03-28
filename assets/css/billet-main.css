@@ -256,6 +256,11 @@ body {
     width: calc( 50% - 4px );
 }
 
+.billet .bonus-mobile-item {
+    width: 39px;
+    height: 39px;
+}
+
 /* Billet Position */
 
 .billet-center {
