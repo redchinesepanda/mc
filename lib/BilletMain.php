@@ -84,6 +84,11 @@ class BilletMain
         return $color;
     }
 
+    public static function disabled( $url )
+    {
+        return ( $url == '' ? 'legal-disabled' : '' );
+    }
+
     public static function render()
     { 
         load_template( self::TEMPLATE, false, self::get() );

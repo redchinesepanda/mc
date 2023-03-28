@@ -27,14 +27,9 @@ class BilletLogo
     {
         $args['href'] = $url;
 
-        $args['class'] = self::disabled( $url );
+        $args['class'] = BilletMain::disabled( $url );
 
         return $args;
-    }
-
-    public static function disabled( $url )
-    {
-        return ( $url == '' ? 'legal-disabled' : '' );
     }
 
     public static function render( $billet = [] )

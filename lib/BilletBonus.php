@@ -3,11 +3,6 @@
 class BilletBonus
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-bonus.php';
-
-    public static function disabled( $url )
-    {
-        return ( $url == '' ? 'legal-disabled' : '' );
-    }
     
     private static function get_play( $billet )
     {
@@ -24,7 +19,7 @@ class BilletBonus
     {
         $args['href'] = $billet['url']['bonus'];
 
-        $args['class'] = self::disabled( $billet['url']['bonus'] );
+        $args['class'] = BilletMain::disabled( $billet['url']['bonus'] );
 
         $args['label'] = get_field( 'billet-play-bonus-title' );
 

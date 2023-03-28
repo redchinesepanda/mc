@@ -55,14 +55,16 @@ class BilletSpoiler
         return $args;
     }
 
-    public static function get() {
-        $post = get_post();
-
-        $args['selector'] = 'spoiler-' . $post->ID;
+    public static function get( $billet ) {
+        $args['selector'] = 'spoiler-' . $billet['id'];
 
         $args['description'] = get_field( 'billet-spoiler-description');
 
-        $args['review'] = __( 'Read more about', 'Thrive' ) . ' ' . get_field( 'billet-title-text');
+        $args['review']['label'] = __( 'Read more about', 'Thrive' ) . ' ' . get_field( 'billet-title-text');
+        
+        $args['review']['href'] = $billet['url']['review'];
+
+        $args['review']['class'] = BilletMain::disabled( $billet['url']['review'] );
 
         $args['stats'] = self::get_repeater(
             'billet-spoiler-stats',
@@ -78,16 +80,10 @@ class BilletSpoiler
         return $args;
     }
 
-    public static function render( $url = [] )
+    public static function render( $billet = [] )
     { 
         if ( self::check() ) {
-            $args = self::get();
-    
-            if ( !empty( $url ) ) {
-                $args['url'] = $url;
-            }
-            
-            load_template( self::TEMPLATE, false, $args );
+            load_template( self::TEMPLATE, false, self::get( $billet ) );
         }
     }
 }
