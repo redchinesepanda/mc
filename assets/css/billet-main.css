@@ -242,6 +242,10 @@ body {
     padding: 5.5px 10px 5.5px 30px;
 }
 
+.billet-title {
+    margin: 0px 40px;
+}
+
 .billet-list-part .billet-list-part-item {
     padding: 3px 0px 0px 30px;
 }
