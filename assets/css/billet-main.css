@@ -259,7 +259,8 @@ body {
     padding-right: 22px;
 }
 
-.billet-right .bonus-title {
+.billet-right .bonus-title,
+.billet-right .bonus-description {
     margin: 0px 40px;
 }
 
