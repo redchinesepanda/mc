@@ -8,7 +8,7 @@ class BilletBonus
     {
         $args['href'] = $billet['url']['play'];
 
-        $args['class'] = self::disabled( $billet['url']['play'] );
+        $args['class'] = BilletMain::disabled( $billet['url']['play'] );
 
         $args['label'] = get_field( 'billet-button-play' );
 
