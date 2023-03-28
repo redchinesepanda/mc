@@ -3,7 +3,7 @@
 class WPMLTrid
 {
     public static function register() {}
-    
+
     public static function render( $post )
     {
         $all = self::get( $trid );
@@ -28,7 +28,8 @@ class WPMLTrid
             WHERE
                 `element_type` = 'post_page'
                 AND `post_status` = 'publish'
-            GROUP BY `trid`";
+            GROUP BY `trid`
+            ORDER BY `legal_title`, `legal_elements`";
         
         $posts = $wpdb->get_results( $query );
 
