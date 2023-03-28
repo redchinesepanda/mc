@@ -264,7 +264,14 @@ body {
 }
 
 .billet-left .billet-order {
+    position: absolute;
+    top: 0px;
+    left: 20px;
     padding: 8px 5px;
+}
+
+.billet-left {
+    position: relative;
 }
 
 /* Billet Typography */
