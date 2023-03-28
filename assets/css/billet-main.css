@@ -223,15 +223,15 @@ body {
     background-size: auto;
 }
 
-.billet .profit-label.lega-green {
+.billet .profit-label.legal-green {
     background-image: url( '../img/billet/profit/billet-profit-green.svg' );
 }
 
-.billet .profit-label.lega-yellow {
+.billet .profit-label.legal-yellow {
     background-image: url( '../img/billet/profit/billet-profit-yellow.svg' );
 }
 
-.billet .profit-label.lega-red {
+.billet .profit-label.legal-red {
     background-image: url( '../img/billet/profit/billet-profit-red.svg' );
 }
 
