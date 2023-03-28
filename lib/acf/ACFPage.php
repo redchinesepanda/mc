@@ -2,7 +2,9 @@
 
 class ACFPage
 {
-    const FIELD = 'page-translation-group';
+    const FIELD_TRID = 'page-translation-group';
+
+    const FIELD_LABEL = 'page-translation-group-label';
 
     const JS = Template::LEGAL_URL . '/assets/js/acf/acf-page.js';
 
@@ -17,7 +19,7 @@ class ACFPage
     {
         $handler = new self();
 
-        add_filter( 'acf/load_field/name=' . self::FIELD, [ $handler, 'choices' ] );
+        add_filter( 'acf/load_field/name=' . self::FIELD_TRID, [ $handler, 'choices' ] );
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
     }
@@ -28,6 +30,12 @@ class ACFPage
 
         if ( !empty( $items ) ) {
             foreach( $items as $item ) {
+                $title = get_post_meta( $item->legal_element_id, self::FIELD_LABEL, true );
+
+                if ( $title ) {
+                    $item->legal_title .= ' ' . $title;
+                }
+
                 $field['choices'][$item->legal_trid] = $item->legal_title . ' [' . $item->legal_language_codes . ']'; 
             }
         }
