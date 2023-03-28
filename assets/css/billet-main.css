@@ -185,22 +185,22 @@ body {
     background-color: rgb(89, 151, 227);
 }
 
-.bonus .bonus-mobile-item {
+.billet .bonus-mobile-item {
     background-color: rgb(230, 230, 230);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.bonus .legal-iphone {
+.billet .legal-iphone {
     background-image: url( '../../img/billet/mobile/billet-mobile-iphone.svg' );
 }
 
-.bonus .legal-android {
+.billet .legal-android {
     background-image: url( '../../img/billet/mobile/billet-mobile-android.svg' );
 }
 
-.bonus .legal-site {
+.billet .legal-site {
     background-image: url( '../../img/billet/mobile/billet-mobile-site.svg' );
 }
 
