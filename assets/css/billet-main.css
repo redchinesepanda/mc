@@ -214,7 +214,7 @@ body {
 }
 
 .billet .legal-site:not( .legal-disabled ):hover {
-    background-image: url( '../img/billet/mobile/billet-mobile-hover-iphone.svg' );
+    background-image: url( '../img/billet/mobile/billet-mobile-hover-site.svg' );
 }
 
 /* Billet Width and Height */
