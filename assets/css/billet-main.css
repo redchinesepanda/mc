@@ -193,15 +193,15 @@ body {
 }
 
 .billet .legal-iphone {
-    background-image: url( '../../img/billet/mobile/billet-mobile-iphone.svg' );
+    background-image: url( '../img/billet/mobile/billet-mobile-iphone.svg' );
 }
 
 .billet .legal-android {
-    background-image: url( '../../img/billet/mobile/billet-mobile-android.svg' );
+    background-image: url( '../img/billet/mobile/billet-mobile-android.svg' );
 }
 
 .billet .legal-site {
-    background-image: url( '../../img/billet/mobile/billet-mobile-site.svg' );
+    background-image: url( '../img/billet/mobile/billet-mobile-site.svg' );
 }
 
 /* Billet Width and Height */
