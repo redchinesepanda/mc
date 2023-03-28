@@ -76,6 +76,10 @@ body {
     display: none;
 }
 
+.billet .legal-disabled {
+    pointer-events: none;
+}
+
 /* Billet Background */
 
 .billet {

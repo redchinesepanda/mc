@@ -4,7 +4,7 @@ class BilletBonus
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-bonus.php';
     
-    private static function get_data()
+    private static function get_data( $billet )
     {
         $post = get_post();
 
@@ -53,7 +53,7 @@ class BilletBonus
         return $args;
     }
 
-    public static function get()
+    public static function get( $billet )
     {
         $args['data'] = self::get_data();
 
@@ -68,15 +68,9 @@ class BilletBonus
         return $args;
     }
 
-    public static function render( $url = [] )
+    public static function render( $billet = [] )
     { 
-        $args = self::get();
-
-        if ( !empty( $url ) ) {
-            $args['url'] = $url;
-        }
-
-        load_template( self::TEMPLATE, false, $args );
+        load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
 }
 
