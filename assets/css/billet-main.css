@@ -167,6 +167,10 @@ body {
     border-bottom: 1px solid #FFFFFF;
 }
 
+.billet-left {
+    clip-path: polygon(100% 0%, 100% 100%, 50% 90%, 0% 100%, 0% 0%);
+}
+
 /* Billet Width and Height */
 
 .billet-left,
