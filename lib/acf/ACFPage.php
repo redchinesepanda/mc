@@ -33,7 +33,7 @@ class ACFPage
                 $title = get_post_meta( $item->legal_element_id, self::FIELD_LABEL, true );
 
                 if ( $title ) {
-                    $item->legal_title .= ' ' . $title;
+                    $item->legal_title .= ' ( ' . $title . ' )';
                 }
 
                 $field['choices'][$item->legal_trid] = $item->legal_title . ' [' . $item->legal_language_codes . ']'; 
