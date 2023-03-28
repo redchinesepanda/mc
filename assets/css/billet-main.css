@@ -217,6 +217,25 @@ body {
     background-image: url( '../img/billet/mobile/billet-mobile-hover-site.svg' );
 }
 
+.billet .profit-label {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.billet .profit-label.lega-green {
+    background-image: url( '../img/billet/profit/billet-profit-green.svg' );
+}
+
+.billet .profit-label.lega-yellow {
+    background-image: url( '../img/billet/profit/billet-profit-yellow.svg' );
+}
+
+.billet .profit-label.lega-red {
+    background-image: url( '../img/billet/profit/billet-profit-red.svg' );
+}
+
+
 /* Billet Width and Height */
 
 .billet-left,
@@ -325,6 +344,10 @@ body {
     position: relative;
 }
 
+.billet .profit-label {
+    padding-left: 33px;
+}
+
 /* Billet Typography */
 
 .billet-left .legal-review {
@@ -428,4 +451,21 @@ body {
     font-weight: 400;
     line-height: 28px;
     color: rgb(255, 255, 255);
+}
+
+.billet .profit-label,
+.billet .profit-value {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    line-height: 28px;
+    color: rgb(59, 59, 59);
+}
+
+.billet .profit-label {
+    font-weight: 400;
+}
+
+.billet .profit-value {
+    font-weight: 600;
 }
