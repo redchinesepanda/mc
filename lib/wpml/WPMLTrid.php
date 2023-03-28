@@ -2,6 +2,8 @@
 
 class WPMLTrid
 {
+    public static function register() {}
+    
     public static function render( $post )
     {
         $all = self::get( $trid );
