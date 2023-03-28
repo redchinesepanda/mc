@@ -3,23 +3,32 @@
 class BilletBonus
 {
     const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-bonus.php';
-    
-    private static function get_data( $billet )
-    {
-        $post = get_post();
 
-        $args['id'] = $post->ID;
+    public static function disabled( $url )
+    {
+        return ( $url == '' ? 'legal-disabled' : '' );
+    }
+    
+    private static function get_play( $billet )
+    {
+        $args['href'] = $billet['url']['play'];
+
+        $args['class'] = self::disabled( $billet['url']['play'] );
+
+        $args['label'] = get_field( 'billet-button-play' );
 
         return $args;
     }
     
-    private static function get_bonus()
+    private static function get_bonus( $billet )
     {
-        $args['title'] = get_field( 'billet-play-bonus-title' );
+        $args['href'] = $billet['url']['bonus'];
+
+        $args['class'] = self::disabled( $billet['url']['bonus'] );
+
+        $args['label'] = get_field( 'billet-play-bonus-title' );
 
         $args['description'] = get_field( 'billet-play-bonus-description' );
-
-        $args['play'] = __( 'Bet now', 'Thrive' );
 
         return $args;
     }
@@ -44,8 +53,10 @@ class BilletBonus
         return $args;
     }
     
-    private static function get_spoiler()
+    private static function get_spoiler( $billet )
     {
+        $args['id'] = $billet['id'];
+
         $args['open'] = __( 'More Details', 'Thrive' );
 
         $args['close'] = __( 'Close Details', 'Thrive' );
@@ -55,15 +66,15 @@ class BilletBonus
 
     public static function get( $billet )
     {
-        $args['data'] = self::get_data();
+        $args['bonus'] = self::get_bonus( $billet );
 
-        $args['bonus'] = self::get_bonus();
+        $args['play'] = self::get_play( $billet );
 
         $args['mobile'] = self::get_mobile();
 
         $args['profit'] = self::get_profit();
 
-        $args['spoiler'] = self::get_spoiler();
+        $args['spoiler'] = self::get_spoiler( $billet );
 
         return $args;
     }
