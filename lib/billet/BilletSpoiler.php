@@ -39,7 +39,7 @@ class BilletSpoiler
         return $args;
     }
 
-    private static function get_progress()
+    private static function get_progress( $id )
     {
         $args = self::get_repeater(
             'billet-spoiler-progress',
@@ -47,7 +47,8 @@ class BilletSpoiler
                 'title' => 'progress-item-title', 
 
                 'value' => 'progress-item-value', 
-            ]
+            ],
+            $id
         );
 
         $args = self::replace( $args );
@@ -76,7 +77,7 @@ class BilletSpoiler
             $billet['id']
         );
 
-        $args['progress'] = self::get_progress();
+        $args['progress'] = self::get_progress( $billet['id'] );
 
         return $args;
     }
