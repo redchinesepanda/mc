@@ -194,27 +194,27 @@ body {
 }
 
 .billet .legal-iphone {
-    background-image: url( '../img/billet/mobile/billet-mobile-iphone.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-iphone.svg' );
 }
 
 .billet .legal-android {
-    background-image: url( '../img/billet/mobile/billet-mobile-android.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-android.svg' );
 }
 
 .billet .legal-site {
-    background-image: url( '../img/billet/mobile/billet-mobile-site.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-site.svg' );
 }
 
 .billet .legal-iphone:not( .legal-disabled ):hover {
-    background-image: url( '../img/billet/mobile/billet-mobile-hover-iphone.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-iphone.svg' );
 }
 
 .billet .legal-android:not( .legal-disabled ):hover {
-    background-image: url( '../img/billet/mobile/billet-mobile-hover-android.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-android.svg' );
 }
 
 .billet .legal-site:not( .legal-disabled ):hover {
-    background-image: url( '../img/billet/mobile/billet-mobile-hover-site.svg' );
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-site.svg' );
 }
 
 .billet .profit-label {
@@ -224,15 +224,15 @@ body {
 }
 
 .billet .profit-label.legal-green {
-    background-image: url( '../img/billet/profit/billet-profit-green.svg' );
+    background-image: url( '../../img/billet/profit/billet-profit-green.svg' );
 }
 
 .billet .profit-label.legal-yellow {
-    background-image: url( '../img/billet/profit/billet-profit-yellow.svg' );
+    background-image: url( '../../img/billet/profit/billet-profit-yellow.svg' );
 }
 
 .billet .profit-label.legal-red {
-    background-image: url( '../img/billet/profit/billet-profit-red.svg' );
+    background-image: url( '../../img/billet/profit/billet-profit-red.svg' );
 }
 
 
