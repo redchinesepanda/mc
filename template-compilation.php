@@ -7,7 +7,7 @@ Template Post Type: page
 
 */
 
-require_once( 'lib/CompilationMain.php' );
+require_once( 'lib/compilation/CompilationMain.php' );
 
 ?>
 <html>
