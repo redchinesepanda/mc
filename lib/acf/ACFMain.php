@@ -17,7 +17,7 @@ class ACFMain
 
     public static function register()
     {
-        $handler = new self(); 
+        $handler = new self();
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
