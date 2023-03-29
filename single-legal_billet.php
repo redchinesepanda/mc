@@ -7,8 +7,6 @@ Template Post Type: legal_billet
 
 */
 
-require_once( 'lib/Head.php' );
-
 require_once( 'lib/LegalMain.php' );
 
 require_once( 'lib/billet/BilletMain.php' );
@@ -17,7 +15,7 @@ require_once( 'lib/billet/BilletMain.php' );
 <html>
     <head>
         <title>Billet</title>
-        <?php Head::print(); ?>
+        <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
         <h1>Billet</h1>
