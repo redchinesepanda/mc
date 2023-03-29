@@ -9,11 +9,11 @@ class BilletSpoiler
         return get_field( 'billet-spoiler-enabled');
     }
 
-    private static function get_repeater( $repeater_field = '', $item_fields = [] )
+    private static function get_repeater( $repeater_field = '', $item_fields = [], $id )
     {
         $args = [];
 
-        $repeater = get_field( $repeater_field );
+        $repeater = get_field( $repeater_field, $id );
 
         if( $repeater ) {
             foreach( $repeater as $key => $item ) {
@@ -58,7 +58,7 @@ class BilletSpoiler
     public static function get( $billet ) {
         $args['selector'] = 'spoiler-' . $billet['id'];
 
-        $args['description'] = get_field( 'billet-spoiler-description');
+        $args['description'] = get_field( 'billet-spoiler-description', $billet['id'] );
 
         $args['review']['label'] = __( 'Read more about', 'Thrive' ) . ' ' . get_field( 'billet-title-text');
         
@@ -72,7 +72,8 @@ class BilletSpoiler
                 'title' => 'stat-title', 
 
                 'description' => 'stat-description', 
-            ]
+            ],
+            $billet['id']
         );
 
         $args['progress'] = self::get_progress();
