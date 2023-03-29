@@ -1,5 +1,5 @@
 <div class="legal-compilation">
     <?php foreach( $args as $arg ) : ?>
-        <?php LegalBillet::render(); ?>
+        <?php BilletMain::render(); ?>
     <?php endforeach; ?>
 </div>
