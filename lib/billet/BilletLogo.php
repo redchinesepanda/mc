@@ -8,7 +8,7 @@ class BilletLogo
 
     public static function get( $billet )
     {
-        $args['logo'] = self::href( $billet['url']['logo'] );
+        $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
         $args['logo']['src'] = get_the_post_thumbnail_url( $billet['id'] );
 
