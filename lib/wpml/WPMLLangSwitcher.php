@@ -2,11 +2,11 @@
 
 class WPMLLangSwitcher
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
 
-    const CSS = Template::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
+    const CSS = LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
 
-    const JS = Template::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
+    const JS = LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
 
     public static function register_script()
     {
@@ -131,11 +131,6 @@ class WPMLLangSwitcher
         $output = ob_get_clean();
 
         return $output;
-    }
-
-    public static function debug( $message )
-    {
-        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 

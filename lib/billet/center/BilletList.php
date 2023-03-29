@@ -2,7 +2,7 @@
 
 class BilletList
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-list.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-list.php';
 
     public static function get()
     {

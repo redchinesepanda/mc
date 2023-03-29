@@ -1,8 +1,3 @@
-<?php
-
-require_once( Template::LEGAL_PATH . '/lib/BilletAchievement.php' );
-
-?>
 <div class="billet-title">
     <div class="billet-order">#1</div>
         <a class="legal-title <?php echo $args['title']['class']; ?>" href="<?php echo $args['title']['href']; ?>" rel="nofollow">

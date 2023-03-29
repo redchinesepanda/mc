@@ -2,7 +2,7 @@
 
 class BilletAchievement
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-achievement.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement.php';
 
     const TAXONOMY = 'billet_achievement';
     

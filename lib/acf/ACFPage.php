@@ -6,7 +6,7 @@ class ACFPage
 
     const FIELD_LABEL = 'page-translation-group-label';
 
-    const JS = Template::LEGAL_URL . '/assets/js/acf/acf-page.js';
+    const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-page.js';
 
     public static function register_script()
     {

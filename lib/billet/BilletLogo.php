@@ -2,9 +2,9 @@
 
 class BilletLogo
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-logo.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-logo.php';
 
-    const DEFAULT_LOGO = Template::LEGAL_URL . '/assets/img/legal-blank.svg';
+    const DEFAULT_LOGO = LegalMain::LEGAL_URL . '/assets/img/legal-blank.svg';
 
     public static function get( $billet )
     {
@@ -19,15 +19,6 @@ class BilletLogo
         $args['review'] = BilletMain::href( $billet['url']['review'] );
 
         $args['review']['label'] = get_field( 'billet-button-review' );
-
-        return $args;
-    }
-
-    public static function href( $url )
-    {
-        $args['href'] = $url;
-
-        $args['class'] = BilletMain::disabled( $url );
 
         return $args;
     }

@@ -1,19 +1,35 @@
 <?php
 
+require_once( 'BilletLogo.php' );
+
+require_once( '/center/BilletTitle.php' );
+
+require_once( '/center/BilletList.php' );
+
+require_once( '/center/BilletAchievement.php' );
+
+require_once( '/right/BilletBonus.php' );
+
+require_once( '/right/BilletSpoiler.php' );
+
+require_once( '/right/BilletMobile.php' );
+
+require_once( '/right/BilletProfit.php' );
+
 class BilletMain
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-main.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php';
 
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
-        'billet-main' => Template::LEGAL_URL . '/assets/css/billet/billet-main.css',
+        'billet-main' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
 
-        'billet-spoiler' => Template::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
+        'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
     const JS = [
-        'billet-spoiler' => Template::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
+        'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
     ];
 
     public static function print()

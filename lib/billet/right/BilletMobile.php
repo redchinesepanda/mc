@@ -2,7 +2,7 @@
 
 class BilletMobile
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/billet/right/part-billet-bonus-mobile.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-mobile.php';
 
     public static function get()
     {

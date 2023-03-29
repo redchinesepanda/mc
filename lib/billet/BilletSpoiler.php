@@ -2,7 +2,7 @@
 
 class BilletSpoiler
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-spoiler.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-spoiler.php';
     
     public static function check()
     {

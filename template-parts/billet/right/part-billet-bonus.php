@@ -1,10 +1,3 @@
-<?php
-
-require_once( Template::LEGAL_PATH . '/lib/billet/right/BilletMobile.php' );
-
-require_once( Template::LEGAL_PATH . '/lib/billet/right/BilletProfit.php' );
-
-?>
 <div class="bonus-title">
     <a class="legal-bonus <?php echo $args['bonus']['class']; ?>" href="<?php echo $args['bonus']['href']; ?>" rel="nofollow">
         <?php echo $args['bonus']['label']; ?>

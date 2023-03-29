@@ -2,7 +2,7 @@
 
 class BilletBonus
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-bonus.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-bonus.php';
     
     private static function get_play( $billet )
     {

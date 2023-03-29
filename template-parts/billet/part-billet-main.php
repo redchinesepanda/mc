@@ -1,18 +1,3 @@
-<?php
-
-require_once( Template::LEGAL_PATH . '/lib/BilletLogo.php' );
-
-require_once( Template::LEGAL_PATH . '/lib/BilletTitle.php' );
-
-require_once( Template::LEGAL_PATH . '/lib/BilletList.php' );
-
-require_once( Template::LEGAL_PATH . '/lib/BilletBonus.php' );
-
-require_once( Template::LEGAL_PATH . '/lib/BilletSpoiler.php' );
-
-// echo '<pre>part-billet.php:' . print_r( $args, true ) . '</pre>';
-
-?>
 <style type="text/css">
     #<?php echo $args['selector']; ?> .billet-left {
         background-color: <?php echo $args['color']; ?>;

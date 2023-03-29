@@ -2,7 +2,7 @@
 
 class BilletTitle
 {
-    const TEMPLATE = Template::LEGAL_PATH . '/template-parts/part-billet-title.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php';
     
     private static function get_achievement( $billet ) {
         $args = [];
