@@ -1,7 +1,5 @@
 <?php
 
-// namespace legal;
-
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
