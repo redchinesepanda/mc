@@ -7,9 +7,9 @@ class BilletMain
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
-        'billet-main' => Template::LEGAL_URL . '/assets/css/billet-main.css',
+        'billet-main' => Template::LEGAL_URL . '/assets/css/billet/billet-main.css',
 
-        'billet-spoiler' => Template::LEGAL_URL . '/assets/css/billet-spoiler.css',
+        'billet-spoiler' => Template::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
     const JS = [
