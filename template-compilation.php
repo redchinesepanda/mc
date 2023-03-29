@@ -7,6 +7,8 @@ Template Post Type: page
 
 */
 
+require_once( 'lib/LegalMain.php' );
+
 require_once( 'lib/compilation/CompilationMain.php' );
 
 ?>

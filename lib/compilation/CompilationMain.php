@@ -1,5 +1,7 @@
 <?php
 
+require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
+
 class CompilationMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php';
