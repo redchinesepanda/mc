@@ -43,11 +43,11 @@ class BilletMain
         }
     }
 
-    private static function get_url()
+    private static function get_url( $id )
     {
-        $referal_url = get_field( 'billet-referal-url' );
+        $referal_url = get_field( 'billet-referal-url', $id );
 
-        $card_id = get_field( 'billet-card-id' );
+        $card_id = get_field( 'billet-card-id', $id );
 
         $card_url = '';
         
@@ -70,28 +70,32 @@ class BilletMain
         return $args;
     }
 
-    public static function get()
+    public static function get( $id = 0 )
     {
-        $url = self::get_url();
+        $url = self::get_url( $id );
         
         $args['url'] = $url;
 
-        $post = get_post();
+        if ( $id == 0 ) {
+            $post = get_post();
+    
+            $id = $post->ID;
+        }
 
-        $args['id'] = $post->ID;
+        $args['id'] = $id;
 
-        $args['selector'] = 'billet-' . $post->ID;
+        $args['selector'] = 'billet-' . $id;
 
-        $args['color'] = self::get_color();
+        $args['color'] = self::get_color( $id );
 
-        $args['description'] = get_field( 'billet-description' );
+        $args['description'] = get_field( 'billet-description', $id );
 
         return $args;
     }
 
-    public static function get_color()
+    public static function get_color( $id )
     {
-        $color = get_field( 'billet-color' );
+        $color = get_field( 'billet-color', $id );
 
         if ( empty( $color ) ) {
             $color = self::DEFAULT_COLOR;
@@ -114,9 +118,9 @@ class BilletMain
         return $args;
     }
 
-    public static function render()
+    public static function render( $id )
     { 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE, false, self::get( $id ) );
     }
 }
 
