@@ -32,9 +32,9 @@ class BilletTitle
 
         $args['title']['class'] = BilletMain::disabled( $billet['url']['title'] );
 
-        $args['title']['label'] = get_field( 'billet-title-text' );
+        $args['title']['label'] = get_field( 'billet-title-text', $billet['id'] );
 
-        $args['rating'] = get_field( 'billet-title-rating' );
+        $args['rating'] = get_field( 'billet-title-rating', $billet['id'] );
 
         return $args;
     }
