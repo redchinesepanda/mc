@@ -70,7 +70,7 @@ class BilletMain
         return $args;
     }
 
-    public static function get( $id = 0 )
+    private static function get( $id )
     {
         $url = self::get_url( $id );
         
@@ -93,7 +93,7 @@ class BilletMain
         return $args;
     }
 
-    public static function get_color( $id )
+    private static function get_color( $id )
     {
         $color = get_field( 'billet-color', $id );
 
@@ -118,7 +118,7 @@ class BilletMain
         return $args;
     }
 
-    public static function render( $id )
+    public static function render( $id = 0 )
     { 
         load_template( self::TEMPLATE, false, self::get( $id ) );
     }
