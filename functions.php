@@ -18,7 +18,7 @@ require_once( 'lib/acf/ACFMain.php' );
 
 require_once( 'lib/admin/AdminMain.php' );
 
-require_once( 'lib/tools/ToolPosts.php' );
+require_once( 'lib/tools/ToolsMain.php' );
 
 WPMLMain::register();
 
@@ -26,6 +26,6 @@ ACFMain::register();
 
 AdminMain::register();
 
-ToolPosts::register();
+ToolsMain::register();
 
 ?>
