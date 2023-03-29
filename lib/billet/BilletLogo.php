@@ -18,7 +18,7 @@ class BilletLogo
 
         $args['review'] = BilletMain::href( $billet['url']['review'] );
 
-        $args['review']['label'] = get_field( 'billet-button-review' );
+        $args['review']['label'] = get_field( 'billet-button-review', $billet['id'] );
 
         return $args;
     }
