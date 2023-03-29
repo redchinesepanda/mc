@@ -6,7 +6,10 @@ class CompilationMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php';
 
-    public static function print() {}
+    public static function print()
+    {
+        BilletMain::print();
+    }
 
     public static function get()
     {
