@@ -21,9 +21,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
         const switchers = document.getElementsByClassName( 'lang-switcher' );
 
         for ( let switcher of switchers ) {
+            let button = switcher.getElementsByClassName( 'menu-avaible' ).item( 0 );
+
             let avaible = switcher.getElementsByClassName( 'menu-avaible' ).item( 0 );
 
-            if ( !avaible.contains( event.target ) ) {
+            if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
                 avaible.classList.remove( 'legal-active' );
             }
         }
