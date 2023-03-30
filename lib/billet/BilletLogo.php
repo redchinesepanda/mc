@@ -8,6 +8,8 @@ class BilletLogo
 
     public static function get( $billet )
     {
+        $args['order'] = $billet['compilation']['order'];
+
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
         $args['logo']['src'] = get_the_post_thumbnail_url( $billet['id'] );
@@ -23,7 +25,7 @@ class BilletLogo
         return $args;
     }
 
-    public static function render( $billet = [] )
+    public static function render( $billet )
     { 
         load_template( self::TEMPLATE, false, self::get( $billet ) );
     }

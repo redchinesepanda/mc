@@ -70,17 +70,23 @@ class BilletMain
         return $args;
     }
 
-    private static function get( $id )
+    private static function get( $billet )
     {
-        $url = self::get_url( $id );
-        
-        $args['url'] = $url;
+        $id = 0;
 
-        if ( $id == 0 ) {
+        if ( !empty( $billet ) ) {
+            $id = $billet['id'];
+        } else {
             $post = get_post();
     
             $id = $post->ID;
         }
+
+        $args['compilation'] = $billet['compilation'];
+
+        $url = self::get_url( $id );
+        
+        $args['url'] = $url;
 
         $args['id'] = $id;
 
@@ -118,9 +124,9 @@ class BilletMain
         return $args;
     }
 
-    public static function render( $id = 0 )
+    public static function render( $billet = [] )
     { 
-        load_template( self::TEMPLATE, false, self::get( $id ) );
+        load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
 }
 
