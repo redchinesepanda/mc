@@ -13,8 +13,8 @@
         <?php echo $args['play']['label']; ?>
     </a>
 </div>
-<?php BilletMobile::render(); ?>
-<?php BilletProfit::render(); ?>
+<?php BilletMobile::render( $args['id'] ); ?>
+<?php BilletProfit::render( $args['id'] ); ?>
 <?php if ( BilletSpoiler::check() ): ?>
     <div class="bonus-spoiler" data-id="<?php echo $args['spoiler']['id']; ?>">
         <span class="spoiler-open"><?php echo $args['spoiler']['open']; ?></span>

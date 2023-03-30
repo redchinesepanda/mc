@@ -6,11 +6,9 @@ class BilletTitle
 
     public static function get( $billet )
     {
+        $args = BilletMain::href( $billet['url']['title'] );
+
         $args['id'] = $billet['id'];
-
-        $args['href'] = $billet['url']['title'];
-
-        $args['class'] = BilletMain::disabled( $billet['url']['title'] );
 
         $args['label'] = get_field( 'billet-title-text', $billet['id'] );
 
