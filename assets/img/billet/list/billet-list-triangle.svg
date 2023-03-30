@@ -7,67 +7,55 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="billet-list-triangle.svg"
-   id="svg14"
-   xml:space="preserve"
-   viewBox="0 0 18 18"
-   height="18"
-   width="18"
-   version="1.1"><metadata
-   id="metadata18"><rdf:RDF><cc:Work
-       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
-   inkscape:current-layer="svg14"
-   inkscape:window-maximized="1"
-   inkscape:window-y="-9"
-   inkscape:window-x="-9"
-   inkscape:cy="5.3866547"
-   inkscape:cx="-45.840117"
-   inkscape:zoom="3.0740741"
-   showgrid="false"
-   id="namedview16"
-   inkscape:window-height="1001"
-   inkscape:window-width="1920"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0"
-   guidetolerance="10"
-   gridtolerance="10"
-   objecttolerance="10"
-   borderopacity="1"
-   bordercolor="#666666"
-   pagecolor="#ffffff" />
-<desc
-   id="desc2">Created with Fabric.js 5.2.4</desc>
-<defs
-   id="defs4">
-</defs>
-<g
-   id="f29fd424-924f-45ff-a8d9-a0dccaa31581"
-   transform="translate(540,540)">
-<rect
-   id="rect6"
-   height="1080"
-   width="1080"
-   ry="0"
-   rx="0"
-   y="-540"
-   x="-540"
-   vector-effect="non-scaling-stroke"
-   style="visibility:hidden;opacity:1;fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
-</g>
-<g
-   id="f44b9f32-881d-4b97-a175-677547bd5a76"
-   transform="translate(540,540)">
-</g>
-<g
-   id="g12"
-   transform="matrix(0.04707654,0,0,0.04707654,8.9999647,8.9999895)">
-<path
-   id="path10"
-   stroke-linecap="round"
-   d="M 0,384.662 V 127.338 C 0,109.52 21.543,100.597 34.142,113.196 l 128.662,128.662 c 7.81,7.81 7.81,20.474 0,28.284 L 34.142,398.804 C 21.543,411.404 0,402.48 0,384.662 Z"
-   transform="translate(-84.33,-256)"
-   style="opacity:1;fill:#000000;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
-</g>
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg868"
+   version="1.1"
+   viewBox="0 0 6.3499998 6.3500002"
+   height="24"
+   width="24">
+  <defs
+     id="defs862" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="7"
+     inkscape:window-height="1030"
+     inkscape:window-width="1895"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="16.030723"
+     inkscape:cx="8.4259527"
+     inkscape:zoom="15.839192"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata865">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <path
+       id="path10"
+       stroke-linecap="round"
+       d="m 2.30472,4.5027786 v -2.65555 c 0,-0.18388 0.22232,-0.27596 0.35234,-0.14595 l 1.32777,1.32779 c 0.0806,0.0806 0.0806,0.21128 0,0.29188 l -1.32777,1.32777 c -0.13002,0.13003 -0.35234,0.0379 -0.35234,-0.14594 z"
+       style="opacity:1;fill:#007bff;fill-rule:nonzero;stroke:none;stroke-width:0.0103199;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1" />
+  </g>
 </svg>
