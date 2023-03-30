@@ -8,7 +8,11 @@ class BilletLogo
 
     public static function get( $billet )
     {
-        $args['order'] = $billet['compilation']['order'];
+        $args['order'] = 'legal-logo';
+
+        if ( array_key_exists( 'compilation', $billet ) ) {
+            $args['order'] = $billet['compilation']['order'];
+        }
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
