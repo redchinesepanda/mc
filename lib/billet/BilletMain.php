@@ -74,8 +74,12 @@ class BilletMain
     {
         $id = 0;
 
+        $args['index'] = 1;
+
         if ( !empty( $billet ) ) {
             $id = $billet['id'];
+
+            $args['index'] = $billet['index'];
 
             if ( array_key_exists( 'compilation', $billet ) ) {
                 $args['compilation'] = $billet['compilation'];

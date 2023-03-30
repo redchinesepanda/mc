@@ -11,11 +11,15 @@ class CompilationMain
         BilletMain::print();
     }
 
-    public static function get_billet( $id, $compilation )
+    public static function get_billet( $posts, $compilation )
     {
-        $data['id'] = $id;
-        
-        $data['compilation'] = $compilation;
+        foreach ( $posts as $index => $post ) {
+            $data['index'] = $index + 1;
+
+            $data['id'] = $id;
+            
+            $data['compilation'] = $compilation;
+        }
 
         return $data;
     }
@@ -49,9 +53,7 @@ class CompilationMain
 
         $posts = get_posts( $args );
 
-        foreach ( $posts as $post ) {
-            $data[] = self::get_billet( $post->ID, $compilation );
-        }
+        $data = self::get_billes( $posts, $compilation );
 
         return $data;
     }
