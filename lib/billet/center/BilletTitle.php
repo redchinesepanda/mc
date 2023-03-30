@@ -6,22 +6,18 @@ class BilletTitle
 
     const ORDER_VALUE = 'legal-title';
 
-    // const ACHIEVEMENT_IMAGE = 'legal-image';
-
-    // const ACHIEVEMENT_BACKGROUND = 'legal-background';
-
     public static function get( $billet )
     {
         $args = BilletMain::href( $billet['url']['title'] );
 
         $args['order'] = self::ORDER_VALUE;
 
-        // $args['achievement'] = self::ACHIEVEMENT_IMAGE;
+        $args['achievement'] = BilletAchievement::TYPE_IMAGE;
 
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
 
-            // $args['achievement'] = $billet['compilation']['achievement'];
+            $args['achievement'] = $billet['compilation']['achievement'];
         }
 
         $args['id'] = $billet['id'];

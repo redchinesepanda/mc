@@ -4,6 +4,6 @@
         background-image: url('<?php echo $args['image']; ?>');
     }
 </style>
-<div class="billet-title-achivement <?php echo $args['selector']; ?>">
+<div class="billet-title-achivement <?php echo $args['selector']; echo $args['class']; ?>">
     <?php echo $args['name']; ?>
 </div>
