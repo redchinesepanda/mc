@@ -1,26 +1,32 @@
 // wpml-lang-switcher-js start
 
-document.addEventListener(
-    'DOMContentLoaded',
-    
-    function ()
+document.addEventListener( 'DOMContentLoaded', function ()
+{
+    function spoilerToggle( event )
     {
-        function spoilerToggle( event )
-        {
-            event.currentTarget.classList.toggle( 'legal-active' );
+        event.currentTarget.classList.toggle( 'legal-active' );
 
-            event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
-        }
-
-        const switchers = document.getElementsByClassName( 'lang-switcher' );
-
-        for ( let switcher of switchers ) {
-            const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
-
-            button.addEventListener( 'click', spoilerToggle, false );
-        }
-        
+        event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
     }
-);
+
+    const switchers = document.getElementsByClassName( 'lang-switcher' );
+
+    for ( let switcher of switchers ) {
+        const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
+
+        button.addEventListener( 'click', spoilerToggle, false );
+    }
+
+    window.addEventListener( 'click', function( event ) {
+        const switchers = document.getElementsByClassName( 'lang-switcher' );
+        
+        for ( let switcher of switchers ) {
+            if ( !switcher.nextElementSibling.contains( event.target ) ) {
+                switcher.nextElementSibling.classList.remove( 'legal-active' );
+            }
+        }
+    } );
+    
+} );
 
 // wpml-lang-switcher-js
