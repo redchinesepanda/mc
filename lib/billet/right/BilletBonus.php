@@ -19,38 +19,38 @@ class BilletBonus
     {
         $args['href'] = $billet['url']['bonus'];
 
-        $args['class'] = BilletMain::disabled( $billet['url']['bonus'] );
-
         $args['label'] = get_field( 'billet-play-bonus-title' );
+
+        $args['class'] = BilletMain::disabled( $billet['url']['bonus'] );
 
         $args['description'] = get_field( 'billet-play-bonus-description' );
 
         return $args;
     }
     
-    private static function get_mobile()
+    private static function get_mobile( $id )
     {
-        $args['iphone'] = get_field( 'billet-play-mobile-iphone' );
+        $args['iphone'] = get_field( 'billet-play-mobile-iphone', $id );
         
-        $args['android'] = get_field( 'billet-play-mobile-android' );
+        $args['android'] = get_field( 'billet-play-mobile-android', $id );
 
-        $args['site'] = get_field( 'billet-play-mobile-site' );
-
-        return $args;
-    }
-    
-    private static function get_profit()
-    {
-        $args['type'] = get_field( 'billet-play-profit-type' );
-
-        $args['value'] = get_field( 'billet-play-profit-value' );
+        $args['site'] = get_field( 'billet-play-mobile-site', $id );
 
         return $args;
     }
     
-    private static function get_spoiler( $billet )
+    private static function get_profit( $id )
     {
-        $args['id'] = $billet['id'];
+        $args['type'] = get_field( 'billet-play-profit-type', $id );
+
+        $args['value'] = get_field( 'billet-play-profit-value', $id );
+
+        return $args;
+    }
+    
+    private static function get_spoiler( $id )
+    {
+        $args['id'] = $id;
 
         $args['open'] = __( 'More Details', 'Thrive' );
 
@@ -65,16 +65,16 @@ class BilletBonus
 
         $args['play'] = self::get_play( $billet );
 
-        $args['mobile'] = self::get_mobile();
+        $args['mobile'] = self::get_mobile( $billet['id'] );
 
-        $args['profit'] = self::get_profit();
+        $args['profit'] = self::get_profit( $billet['id'] );
 
-        $args['spoiler'] = self::get_spoiler( $billet );
+        $args['spoiler'] = self::get_spoiler( $billet['id'] );
 
         return $args;
     }
 
-    public static function render( $billet = [] )
+    public static function render( $billet )
     { 
         load_template( self::TEMPLATE, false, self::get( $billet ) );
     }

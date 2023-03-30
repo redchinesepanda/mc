@@ -26,7 +26,7 @@ class BilletAchievement
         return $args;
     }
 
-    public static function render( $id = 0 )
+    public static function render( $id )
     { 
         $args = self::get( $id );
 

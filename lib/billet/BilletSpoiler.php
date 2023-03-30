@@ -82,7 +82,7 @@ class BilletSpoiler
         return $args;
     }
 
-    public static function render( $billet = [] )
+    public static function render( $billet )
     { 
         if ( self::check() ) {
             load_template( self::TEMPLATE, false, self::get( $billet ) );

@@ -19,7 +19,7 @@ class BilletTitle
         return $args;
     }
 
-    public static function render( $billet = [] )
+    public static function render( $billet )
     {
         load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
