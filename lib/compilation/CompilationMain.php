@@ -36,8 +36,6 @@ class CompilationMain
 
         $data['order'] = get_field( 'billet-order-type', $id );
 
-        $data['achievement'] = get_field( 'billet-achievement-type', $id );
-
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
 
         return $data;
@@ -47,6 +45,8 @@ class CompilationMain
     {
         $compilation = self::get_compilation( $id );
 
+        $data['achievement'] = get_field( 'billet-achievement-type', $id );
+
         $args = [
             'numberposts' => -1,
 
@@ -55,7 +55,7 @@ class CompilationMain
 
         $posts = get_posts( $args );
 
-        $data = self::get_billets( $posts, $compilation );
+        $data['billets'] = self::get_billets( $posts, $compilation );
 
         return $data;
     }
