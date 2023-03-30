@@ -38,6 +38,8 @@ class CompilationMain
 
         $data['achievement'] = get_field( 'billet-achievement-type', $id );
 
+        $data['list'] = get_field( 'billet-list-type', $id );
+
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
 
         return $data;

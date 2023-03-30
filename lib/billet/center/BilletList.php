@@ -4,13 +4,14 @@ class BilletList
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-list.php';
 
-    public static function get( $id )
+    public static function get( $billet )
     {
         $args = [];
 
-        $parts = get_field( 'billet-list-parts', $id );
+        $parts = get_field( 'billet-list-parts', $billet['id'] );
 
         if( $parts ) {
+            echo 'list: ' . $billet['id'] ;
             foreach( $parts as $key => $part ) {
                 $args[$key]['part-icon'] = $part['billet-list-part-icon'];
 
@@ -31,7 +32,7 @@ class BilletList
 
     public static function render( $billet )
     { 
-        load_template( self::TEMPLATE, false, self::get( $billet['id'] ) );
+        load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
 }
 
