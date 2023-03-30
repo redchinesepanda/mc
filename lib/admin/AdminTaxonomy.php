@@ -55,7 +55,7 @@ class AdminTaxonomy
             if ( $pagenow == 'edit.php'
                 && isset( $q_vars['post_type'] )
                 && $q_vars['post_type'] == $post_type
-                && isset( $q_vars[$taxonomy] s)
+                && isset( $q_vars[$taxonomy] )
                 && is_numeric( $q_vars[$taxonomy] )
                 && $q_vars[$taxonomy] != 0
             ) {

@@ -2,7 +2,7 @@
 
 require_once( 'AdminBillet.php' );
 
-require_once( 'AdminPage.php' );
+require_once( 'AdminTaxonomy.php' );
 
 class AdminMain
 {
@@ -12,7 +12,7 @@ class AdminMain
 
         AdminBillet::register();
 
-        AdminPage::register();
+        AdminTaxonomy::register();
     }
 }
 
