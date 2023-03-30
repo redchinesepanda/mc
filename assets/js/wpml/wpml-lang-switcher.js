@@ -19,14 +19,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     window.addEventListener( 'click', function( event ) {
         const switchers = document.getElementsByClassName( 'lang-switcher' );
-        
+
         for ( let switcher of switchers ) {
-            if ( !switcher.nextElementSibling.contains( event.target ) ) {
-                switcher.nextElementSibling.classList.remove( 'legal-active' );
+            let avaible = switcher.getElementsByClassName( 'lang-avaible' ).item( 0 );
+
+            if ( !avaible.contains( event.target ) ) {
+                avaible.classList.remove( 'legal-active' );
             }
         }
     } );
-    
 } );
 
 // wpml-lang-switcher-js
