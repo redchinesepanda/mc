@@ -23,7 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let switcher of switchers ) {
             let button = switcher.getElementsByClassName( 'menu-avaible' ).item( 0 );
 
-            let avaible = switcher.getElementsByClassName( 'menu-avaible' ).item( 0 );
+            let avaible = button.nextElementSibling;
 
             if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
                 avaible.classList.remove( 'legal-active' );
