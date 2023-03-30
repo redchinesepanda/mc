@@ -14,11 +14,11 @@ class CompilationMain
     public static function get_billets( $posts, $compilation )
     {
         foreach ( $posts as $index => $post ) {
-            $data['index'] = $index + 1;
+            $data[$index]['index'] = $index + 1;
 
-            $data['id'] = $post->ID;
+            $data[$index]['id'] = $post->ID;
             
-            $data['compilation'] = $compilation;
+            $data[$index]['compilation'] = $compilation;
         }
 
         return $data;
