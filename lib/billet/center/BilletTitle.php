@@ -3,36 +3,16 @@
 class BilletTitle
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php';
-    
-    private static function get_achievement( $billet ) {
-        $args = [];
-
-        $terms = wp_get_post_terms( $billet['id'], 'billet_achievement', [ 'term_id', 'name', 'slug' ] );
-
-        if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
-            $term = $terms[0];
-            
-            $args['achievement-selector'] = 'achievement-' . $term->term_id;
-
-            $args['achievement-name'] = $term->name;
-
-            $args['achievement-color'] = get_field( 'achievement-color', 'billet_achievement' . '_' . $term->term_id );
-
-            $args['achievement-image'] = get_field( 'achievement-image', 'billet_achievement' . '_' . $term->term_id );
-        }
-
-        return $args;
-    }
 
     public static function get( $billet )
     {
-        $args['achievement'] = self::get_achievement( $billet );
+        $args['id'] = $billet['id'];
 
-        $args['title']['href'] = $billet['url']['title'];
+        $args['href'] = $billet['url']['title'];
 
-        $args['title']['class'] = BilletMain::disabled( $billet['url']['title'] );
+        $args['class'] = BilletMain::disabled( $billet['url']['title'] );
 
-        $args['title']['label'] = get_field( 'billet-title-text', $billet['id'] );
+        $args['label'] = get_field( 'billet-title-text', $billet['id'] );
 
         $args['rating'] = get_field( 'billet-title-rating', $billet['id'] );
 
