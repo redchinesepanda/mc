@@ -76,13 +76,13 @@ class BilletMain
 
         if ( !empty( $billet ) ) {
             $id = $billet['id'];
+
+            $args['compilation'] = $billet['compilation'];
         } else {
             $post = get_post();
     
             $id = $post->ID;
         }
-
-        $args['compilation'] = $billet['compilation'];
 
         $url = self::get_url( $id );
         
