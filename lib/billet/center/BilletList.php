@@ -12,9 +12,9 @@ class BilletList
 
         if( $parts ) {
             if ( array_key_exists( 'compilation', $billet ) ) {
-                echo 'list: ' . $billet['compilation']['list'] ;
+                echo 'list: ' . print_r( $billet['compilation']['list'], true) . '^<br />' ;
             }
-            
+
             foreach( $parts as $key => $part ) {
                 $args[$key]['part-icon'] = $part['billet-list-part-icon'];
 
