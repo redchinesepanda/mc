@@ -112,7 +112,7 @@ body {
     background-size: auto;
 }
 
-.billet-title .billet-title-achivement {
+.billet-title .billet-title-achivement.legal-image {
     background-position: left 8px center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -235,6 +235,12 @@ body {
     background-image: url( '../../img/billet/profit/billet-profit-red.svg' );
 }
 
+.billet .billet-title-achivement.legal-background {
+    background-color: rgb(8, 5, 61);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 
 /* Billet Width and Height */
 
@@ -312,7 +318,11 @@ body {
     padding-left: 30px;
 }
 
-.billet-title .billet-title-achivement {
+.billet-title .billet-title-achivement.legal-background {
+    padding: 3px 10px;
+}
+
+.billet-title .billet-title-achivement.legal-image {
     margin-left: auto;
     padding: 5.5px 10px 5.5px 30px;
 }
@@ -383,9 +393,17 @@ body {
 }
 
 .billet-title .billet-title-achivement {
-    font-family: 'Source Sans Pro';
+    font-family: "Source Sans Pro";
     font-style: normal;
     font-weight: 600;
+}
+
+.billet-title .billet-title-achivement.legal-background {
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+}
+.billet-title .billet-title-achivement.legal-image {
     font-size: 14px;
     line-height: 18px;
     color: #000000;
