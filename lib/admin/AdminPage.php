@@ -1,66 +1,68 @@
 <?php
 
-class AdminPage
+class AdminTaxonomy
 {
+    const TAXONOMY = [
+        'page' => 'page_type',
+
+        'legal_billet' => 'billet_type'
+    ];
+
     public static function register()
     {
         $handler = new self();
 
-        add_action( 'restrict_manage_posts', [ $handler, 'tsm_filter_post_type_by_taxonomy'] );
+        add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
 
-        add_filter( 'parse_query', [ $handler, 'tsm_convert_id_to_term_in_query'] );
+        add_filter( 'parse_query', [ $handler, 'query_term'] );
     }
 
-    public static function tsm_filter_post_type_by_taxonomy() {
+    public static function filter_dropdown() {
         global $typenow;
 
-        $post_type = 'page';
-        
-        $taxonomy  = 'page_type';
-        
-        if ($typenow == $post_type) {
-            $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
-
-            $info_taxonomy = get_taxonomy( $taxonomy );
-
-            wp_dropdown_categories( [
-                'show_option_all' => sprintf( __( 'Show all %s', 'textdomain' ), $info_taxonomy->label ),
-                
-                'taxonomy'        => $taxonomy,
-                
-                'name'            => $taxonomy,
-                
-                'orderby'         => 'name',
-                
-                'selected'        => $selected,
-                
-                'show_count'      => true,
-                
-                'hide_empty'      => true,
-            ] );
-        };
+        foreach ( self::TAXONOMY as $post_type => $taxonomy ) {
+            if ($typenow == $post_type) {
+                $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
+    
+                $info_taxonomy = get_taxonomy( $taxonomy );
+    
+                wp_dropdown_categories( [
+                    'show_option_all' => sprintf( __( 'Show all %s', 'textdomain' ), $info_taxonomy->label ),
+                    
+                    'taxonomy'        => $taxonomy,
+                    
+                    'name'            => $taxonomy,
+                    
+                    'orderby'         => 'name',
+                    
+                    'selected'        => $selected,
+                    
+                    'show_count'      => true,
+                    
+                    'hide_empty'      => true,
+                ] );
+            };
+        } 
     }
 
-    function tsm_convert_id_to_term_in_query($query)
+    function query_term( $query )
     {
         global $pagenow;
 
-        $post_type = 'page';
-        
-        $taxonomy = 'page_type';
-        
-        $q_vars = &$query->query_vars;
+        foreach ( self::TAXONOMY as $post_type => $taxonomy ) {
+            $q_vars = &$query->query_vars;
 
-        if ( $pagenow == 'edit.php'
-            && isset($q_vars['post_type'])
-            && $q_vars['post_type'] == $post_type
-            && isset($q_vars[$taxonomy])
-            && is_numeric($q_vars[$taxonomy])
-            && $q_vars[$taxonomy] != 0
-        ) {
-            $term = get_term_by( 'id', $q_vars[$taxonomy], $taxonomy );
+            if ( $pagenow == 'edit.php'
+                && isset( $q_vars['post_type'] )
+                && $q_vars['post_type'] == $post_type
+                && isset( $q_vars[$taxonomy] s)
+                && is_numeric( $q_vars[$taxonomy] )
+                && $q_vars[$taxonomy] != 0
+            ) {
+                $term = get_term_by( 'id', $q_vars[$taxonomy], $taxonomy );
 
-            $q_vars[$taxonomy] = $term->slug;
+                $q_vars[$taxonomy] = $term->slug;
+            }
         }
     }
 }
