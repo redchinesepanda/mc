@@ -77,7 +77,9 @@ class BilletMain
         if ( !empty( $billet ) ) {
             $id = $billet['id'];
 
-            $args['compilation'] = $billet['compilation'];
+            if ( array_key_exists( 'compilation', $billet ) ) {
+                $args['compilation'] = $billet['compilation'];
+            }
         } else {
             $post = get_post();
     
