@@ -36,6 +36,8 @@ class CompilationMain
 
         $data['order'] = get_field( 'billet-order-type', $id );
 
+        $data['achievement'] = get_field( 'billet-achievement-type', $id );
+
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
 
         return $data;
@@ -44,8 +46,6 @@ class CompilationMain
     public static function get( $id )
     {
         $compilation = self::get_compilation( $id );
-
-        $data['achievement'] = get_field( 'billet-achievement-type', $id );
 
         $args = [
             'numberposts' => -1,
