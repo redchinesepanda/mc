@@ -1,4 +1,4 @@
-<?php if ( $args['order'] == 'legal-logo' ) : ?>
+<?php if ( $args['order'] == BilletLogo::ORDER_VALUE ) : ?>
     <div class="billet-order">#1</div>
 <?php endif; ?>
 <a class="legal-logo <?php echo $args['logo']['class']; ?>" href="<?php echo $args['logo']['href']; ?>" rel="nofollow">

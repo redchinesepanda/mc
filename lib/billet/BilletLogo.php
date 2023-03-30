@@ -6,9 +6,11 @@ class BilletLogo
 
     const DEFAULT_LOGO = LegalMain::LEGAL_URL . '/assets/img/legal-blank.svg';
 
+    const ORDER_VALUE = 'legal-logo';
+
     public static function get( $billet )
     {
-        $args['order'] = 'legal-logo';
+        $args['order'] = self::ORDER_VALUE;
 
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
