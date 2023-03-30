@@ -26,6 +26,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
             let avaible = button.nextElementSibling;
 
             if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
+                button.classList.remove( 'legal-active' );
+                
                 avaible.classList.remove( 'legal-active' );
             }
         }
