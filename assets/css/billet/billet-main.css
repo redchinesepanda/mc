@@ -38,11 +38,18 @@ body {
     align-content: center;
     row-gap: 22px;
     column-gap: 8px;
+    position: relative;
 }
 
 .billet-title {
     display: flex;
     column-gap: 16px;
+}
+
+.billet .billet-title-achivement.legal-background {
+    position: absolute;
+    top: 0px;
+    right: 30px;
 }
 
 .billet-list-part.legal-row {
