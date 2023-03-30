@@ -1,5 +1,5 @@
 <div class="billet-title">
-    <?php if ( $args['order'] == 'legal-title' ) : ?>
+    <?php if ( $args['order'] == BilletTitle::ORDER_VALUE ) : ?>
         <div class="billet-order">#1</div>
     <?php endif; ?>
     <a class="legal-title <?php echo $args['class']; ?>" href="<?php echo $args['href']; ?>" rel="nofollow">

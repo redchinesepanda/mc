@@ -4,11 +4,13 @@ class BilletTitle
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php';
 
+    const ORDER_VALUE = 'legal-title';
+
     public static function get( $billet )
     {
         $args = BilletMain::href( $billet['url']['title'] );
-        
-        $args['order'] = 'legal-title';
+
+        $args['order'] = self::ORDER_VALUE;
 
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
