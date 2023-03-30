@@ -1,4 +1,4 @@
-<?php if ( $args['class'] != BilletAchievement::TYPE_DISABLED ) : ?>
+<?php if ( $args['class'] == BilletAchievement::TYPE_IMAGE ) : ?>
     <style type="text/css">
         .<?php echo $args['selector']; ?> {
             background-color: <?php echo $args['color']; ?>;
