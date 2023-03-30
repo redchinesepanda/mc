@@ -11,20 +11,24 @@ class BilletList
         $parts = get_field( 'billet-list-parts', $billet['id'] );
 
         if( $parts ) {
-            if ( array_key_exists( 'compilation', $billet ) ) {
-                echo 'list: ' . print_r( $billet['compilation']['list'], true) . '^<br />' ;
-            }
-
             foreach( $parts as $key => $part ) {
-                $args[$key]['part-icon'] = $part['billet-list-part-icon'];
+                $display = true;
 
-                $args[$key]['part-direction'] = $part['billet-list-part-direction'];
+                if ( array_key_exists( 'compilation', $billet ) ) {
+                    $display = in_array( $part['billet-list-part-icon'], $billet['compilation']['list'] );
+                }
 
-                $items = $part['billet-list-part-items'];
-
-                if( $items ) {
-                    foreach( $items as $item ) {
-                        $args[$key]['part-items'][] = $item['billet-list-part-item-title'];
+                if ( $display ) {
+                    $args[$key]['part-icon'] = $part['billet-list-part-icon'];
+    
+                    $args[$key]['part-direction'] = $part['billet-list-part-direction'];
+    
+                    $items = $part['billet-list-part-items'];
+    
+                    if( $items ) {
+                        foreach( $items as $item ) {
+                            $args[$key]['part-items'][] = $item['billet-list-part-item-title'];
+                        }
                     }
                 }
             }
