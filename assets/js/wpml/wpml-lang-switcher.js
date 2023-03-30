@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         button.addEventListener( 'click', spoilerToggle, false );
     }
 
-    window.addEventListener( 'click', function( event ) {
+    document.getElementById( 'thrive-footer' ).addEventListener( 'click', function( event ) {
         const switchers = document.getElementsByClassName( 'lang-switcher' );
 
         for ( let switcher of switchers ) {
@@ -27,7 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
             if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
                 button.classList.remove( 'legal-active' );
-                
+
                 avaible.classList.remove( 'legal-active' );
             }
         }
