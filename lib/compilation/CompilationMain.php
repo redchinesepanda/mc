@@ -11,7 +11,7 @@ class CompilationMain
         BilletMain::print();
     }
 
-    public static function get_billet( $posts, $compilation )
+    public static function get_billets( $posts, $compilation )
     {
         foreach ( $posts as $index => $post ) {
             $data['index'] = $index + 1;
@@ -53,7 +53,7 @@ class CompilationMain
 
         $posts = get_posts( $args );
 
-        $data = self::get_billes( $posts, $compilation );
+        $data = self::get_billets( $posts, $compilation );
 
         return $data;
     }
