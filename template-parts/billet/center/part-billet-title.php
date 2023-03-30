@@ -10,5 +10,5 @@
     <?php if ( !empty( $args['rating'] ) ): ?>
         <div class="billet-title-rating"><?php echo $args['rating']; ?></div>
     <?php endif; ?>
-    <?php BilletAchievement::render( $args['id'] ); ?>
+    <?php BilletAchievement::render( $args ); ?>
 </div>

@@ -6,10 +6,12 @@ class BilletAchievement
 
     const TAXONOMY = 'billet_achievement';
     
-    private static function get( $id ) {
+    private static function get( $title ) {
         $args = [];
 
-        $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+        $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+
+        // $args['class'] = $title['achievement'];
 
         if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
             $term = array_shift( $terms );
@@ -26,9 +28,9 @@ class BilletAchievement
         return $args;
     }
 
-    public static function render( $id )
+    public static function render( $title )
     { 
-        $args = self::get( $id );
+        $args = self::get( $title );
 
         if ( !empty( $args ) ) {
             load_template( self::TEMPLATE, false, $args );
