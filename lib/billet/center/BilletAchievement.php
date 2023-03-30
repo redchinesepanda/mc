@@ -17,9 +17,9 @@ class BilletAchievement
 
         $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
 
-        $args['class'] = $title['achievement'];
-
         if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
+            $args['class'] = $title['achievement'];
+
             $term = array_shift( $terms );
             
             $args['selector'] = 'achievement-' . $term->term_id;
