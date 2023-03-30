@@ -21,7 +21,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         const switchers = document.getElementsByClassName( 'lang-switcher' );
 
         for ( let switcher of switchers ) {
-            let button = switcher.getElementsByClassName( 'menu-avaible' ).item( 0 );
+            let button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
 
             let avaible = button.nextElementSibling;
 
