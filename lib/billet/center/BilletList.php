@@ -11,7 +11,7 @@ class BilletList
         $parts = get_field( 'billet-list-parts', $billet['id'] );
 
         if( $parts ) {
-            echo 'list: ' . $billet['list'] ;
+            echo 'list: ' . $billet['compilation']['list'] ;
             foreach( $parts as $key => $part ) {
                 $args[$key]['part-icon'] = $part['billet-list-part-icon'];
 
