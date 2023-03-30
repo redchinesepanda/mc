@@ -16,7 +16,7 @@ class CompilationMain
         foreach ( $posts as $index => $post ) {
             $data['index'] = $index + 1;
 
-            $data['id'] = $id;
+            $data['id'] = $post->ID;
             
             $data['compilation'] = $compilation;
         }
