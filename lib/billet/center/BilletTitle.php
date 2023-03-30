@@ -6,7 +6,11 @@ class BilletTitle
 
     public static function get( $billet )
     {
-        $args['order'] = $billet['compilation']['order'];
+        $args['order'] = 'legal-title';
+
+        if ( array_key_exists( 'compilation', $billet ) ) {
+            $args['order'] = $billet['compilation']['order'];
+        }
 
         $args = BilletMain::href( $billet['url']['title'] );
 
