@@ -9,7 +9,7 @@
     </div>
     <div class="billet-center">
         <?php BilletTitle::render( $args ); ?>
-        <?php BilletList::render(); ?>
+        <?php BilletList::render( $args ); ?>
     </div>
     <div class="billet-right">
         <?php BilletBonus::render( $args ); ?>
