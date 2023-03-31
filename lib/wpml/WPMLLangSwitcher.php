@@ -107,6 +107,21 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
+    public static function choises()
+    {
+        $args = [];
+
+        $languages = self::get_all();
+
+        $languages = self::exclude( $languages );
+
+        foreach ( $languages as $lang ) {
+            $args[] = self::map( $lang );
+        }
+
+        return $args;
+    }
+
     public static function get()
     {
         $languages = self::get_all();
