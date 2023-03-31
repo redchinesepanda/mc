@@ -22,8 +22,8 @@ class ACFLocationRules
     {
         $languages = WPMLLangSwitcher::choises();
 
-        foreach( $languages as $locale => $language ) {
-            $choices[ $locale ] = $language['title'];
+        foreach( $languages as $language ) {
+            $choices[ $language['default_locale'] ] = $language['native_name'] . ' [' . $language['default_locale'] . ']';
         }
 
         return $choices;
