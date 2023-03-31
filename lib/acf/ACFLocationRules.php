@@ -12,7 +12,7 @@ class ACFLocationRules
         
         add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
 
-        add_filter('acf/location/screen', [ $handler, 'acf_location_screen_options' ], 10, 1);
+        // add_filter('acf/location/screen', [ $handler, 'acf_location_screen_options' ], 10, 1);
     }
 
     public static function acf_location_rule_types( $choices )
@@ -57,20 +57,20 @@ class ACFLocationRules
         return $match;
     }
 
-    function acf_location_screen_options( $options )
-    {
-        $message['function'] = 'acf_location_screen_options';
+    // function acf_location_screen_options( $options )
+    // {
+    //     $message['function'] = 'acf_location_screen_options';
 
-        $message['options'] = $options;
+    //     $message['options'] = $options;
 
-        $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
+    //     $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
 
-        $message['current_language'] = $current_language;
+    //     $message['current_language'] = $current_language;
 
-        self::debug( $message );
+    //     self::debug( $message );
 
-        return $options;
-    }
+    //     return $options;
+    // }
 
     public static function debug( $message )
     {
