@@ -8,11 +8,7 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
-require_once( 'right/BilletBonus.php' );
-
-require_once( 'right/BilletMobile.php' );
-
-require_once( 'right/BilletProfit.php' );
+require_once( 'right/BilletRight.php' );
 
 require_once( 'BilletSpoiler.php' );
 

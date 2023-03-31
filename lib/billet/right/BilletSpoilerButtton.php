@@ -1,16 +1,14 @@
 <?php
 
-class BilletProfit
+class BilletSpoilerButtton
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-profit.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-spoiler-button.php';
 
-    public static function get_profit( $id )
+    private static function get_spoiler()
     {
-        $args['class'] = get_field( 'billet-play-profit-type', $id );
+        $args['open'] = __( 'More Details', 'Thrive' );
 
-        $args['label'] = __( 'Margin', 'Thrive' );
-
-        $args['value'] = get_field( 'billet-play-profit-value', $id );
+        $args['close'] = __( 'Close Details', 'Thrive' );
 
         return $args;
     }
@@ -22,11 +20,11 @@ class BilletProfit
         $enabled = true;
 
         if ( array_key_exists( 'compilation', $billet ) ) {
-            $enabled = $billet['compilation']['profit'];
+            $enabled = $billet['compilation']['spoiler'];
         }
 
         if ( $enabled ) {
-            $args['profit'] = self::get_profit( $billet['id'] );
+            $args['spoiler'] = self::get_spoiler( $billet['id'] );
         }
 
         return $args;
