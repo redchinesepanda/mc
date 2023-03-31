@@ -109,13 +109,11 @@ class WPMLLangSwitcher
 
     public static function choises()
     {
-        $args = [];
-
         $languages = self::get_all();
 
         $languages = self::exclude( $languages );
 
-        return $args;
+        return $languages;
     }
 
     public static function get()
