@@ -1,6 +1,6 @@
 <?php
 
-class BilletSpoilerButtton
+class BilletSpoilerButton
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-spoiler-button.php';
 
