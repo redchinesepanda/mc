@@ -76,7 +76,7 @@ class AdminTaxonomy
 
     public static function debug( $message )
     {
-        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
+        echo '<pre>AdminTaxonomy::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 
