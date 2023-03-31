@@ -4,8 +4,6 @@ class ACFLocationRules
 {
     public static function register()
     {
-        $message['function'] = 'register';
-
         $handler = new self();
 
         add_filter( 'acf/location/rule_types', [ $handler,'acf_location_rule_types' ] );
@@ -13,8 +11,6 @@ class ACFLocationRules
         add_filter( 'acf/location/rule_values/current_locale', [ $handler,'acf_location_rule_values_locale' ] );
         
         add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
-
-        self::debug( $message );
     }
 
     public static function acf_location_rule_types( $choices )
