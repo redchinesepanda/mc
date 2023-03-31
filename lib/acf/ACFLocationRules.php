@@ -81,7 +81,7 @@ function acf_location_rule_match_user( $match, $rule, $options, $field_group )
         $match = ( $current_language['locale'] != $selected_language );
     }
 
-    self::debug( $message );
+    ACFLocationRules::debug( $message );
 
     return $match;
 }
