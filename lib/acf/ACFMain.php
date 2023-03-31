@@ -4,6 +4,8 @@ require_once( 'ACFBilletCards.php' );
 
 require_once( 'ACFPage.php' );
 
+require_once( 'ACFLocationRules.php' );
+
 class ACFMain
 {
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
@@ -24,6 +26,8 @@ class ACFMain
         ACFBilletCards::register();
 
         ACFPage::register();
+
+        ACFLocationRules::register();
     }
 }
 
