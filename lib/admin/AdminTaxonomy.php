@@ -20,9 +20,9 @@ class AdminTaxonomy
     public static function filter_dropdown() {
         global $typenow;
 
-        $message['fucntion'] = 'filter_dropdown';
+        // $message['fucntion'] = 'filter_dropdown';
 
-        $message['get_locale'] = get_locale();
+        // $message['get_locale'] = get_locale();
 
         foreach ( self::TAXONOMY as $post_type => $taxonomy ) {
             if ($typenow == $post_type) {
@@ -30,9 +30,9 @@ class AdminTaxonomy
     
                 $info_taxonomy = get_taxonomy( $taxonomy );
     
-                $message['ToolLoco::TEXTDOMAIN'] = ToolLoco::TEXTDOMAIN;
+                // $message['ToolLoco::TEXTDOMAIN'] = ToolLoco::TEXTDOMAIN;
 
-                $message['Show all %s'] = __( 'Show all %s', ToolLoco::TEXTDOMAIN );
+                // $message['Show all %s'] = __( 'Show all %s', ToolLoco::TEXTDOMAIN );
 
                 wp_dropdown_categories( [
                     'show_option_all' => sprintf( __( 'Show all %s', ToolLoco::TEXTDOMAIN ), $info_taxonomy->label ),
@@ -52,7 +52,7 @@ class AdminTaxonomy
             };
         }
 
-        self::debug( $message );
+        // self::debug( $message );
     }
 
     function query_term( $query )
