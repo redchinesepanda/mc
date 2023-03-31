@@ -1,3 +1,4 @@
+!!!
 <?php BilletBonus::render( $args ); ?>
 !!!
 <div class="bonus-button">
