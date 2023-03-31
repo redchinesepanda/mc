@@ -61,6 +61,8 @@ class CompilationMain
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
+
+            'suppress_filters' = 0
         ];
 
         $posts = get_posts( $args );
