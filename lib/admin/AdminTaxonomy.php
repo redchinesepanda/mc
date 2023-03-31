@@ -22,6 +22,8 @@ class AdminTaxonomy
 
         $message['fucntion'] = 'filter_dropdown';
 
+        $message['get_locale'] = get_locale();
+
         foreach ( self::TAXONOMY as $post_type => $taxonomy ) {
             if ($typenow == $post_type) {
                 $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
