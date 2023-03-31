@@ -60,7 +60,7 @@ class ACFLocationRules
 
     public static function debug( $message )
     {
-        wp_die( '<pre>' . self::getClass() . '::debug: ' . print_r( $message, true ) . '</pre>' );
+        wp_die( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
