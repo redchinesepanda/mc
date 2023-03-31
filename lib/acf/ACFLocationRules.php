@@ -48,6 +48,10 @@ class ACFLocationRules
         if ( $rule['operator'] == "==" ) {
             $match = ( $current_language['locale'] == $selected_language );
         }
+        elseif( $rule['operator'] == "!=" )
+        {
+            $match = ( $current_language['locale'] != $selected_language );
+        }
 
         self::debug( $message );
 
