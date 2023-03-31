@@ -36,9 +36,17 @@ class CompilationMain
 
         $data['order'] = get_field( 'billet-order-type', $id );
 
+        $data['rating'] = get_field( 'billet-rating-enabled', $id );
+
         $data['achievement'] = get_field( 'billet-achievement-type', $id );
 
         $data['list'] = get_field( 'billet-list-type', $id );
+
+        $data['bonus'] = get_field( 'billet-bonus-enabled', $id );
+
+        $data['mobile'] = get_field( 'billet-mobile-enabled', $id );
+
+        $data['profit'] = get_field( 'billet-profit-enabled', $id );
 
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
 

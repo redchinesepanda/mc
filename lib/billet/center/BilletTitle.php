@@ -14,17 +14,21 @@ class BilletTitle
 
         $args['achievement'] = BilletAchievement::TYPE_IMAGE;
 
+        $args['rating'] = get_field( 'billet-title-rating', $billet['id'] );
+
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
 
             $args['achievement'] = $billet['compilation']['achievement'];
+
+            if ( !$billet['compilation']['rating'] ) {
+                $args['rating'] = 0;
+            }
         }
 
         $args['id'] = $billet['id'];
 
         $args['label'] = get_field( 'billet-title-text', $billet['id'] );
-
-        $args['rating'] = get_field( 'billet-title-rating', $billet['id'] );
 
         return $args;
     }
