@@ -29,6 +29,8 @@ class BilletRight
 
         $args['id'] = $billet['id'];
 
+        $args['url'] = $billet['url'];
+
         $args['play'] = self::get_play( $billet );
 
         return $args;
