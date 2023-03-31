@@ -11,6 +11,8 @@ class ACFLocationRules
         add_filter( 'acf/location/rule_values/current_locale', [ $handler,'acf_location_rule_values_locale' ] );
         
         add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
+
+        add_filter('acf/location/screen', [ $handler, 'acf_location_screen_options' ], 10, 1);
     }
 
     public static function acf_location_rule_types( $choices )
@@ -45,15 +47,25 @@ class ACFLocationRules
 
         if ( $rule['operator'] == "==" ) {
             $match = ( $current_language['locale'] == $selected_language );
-        }
-        elseif( $rule['operator'] == "!=" )
-        {
+
+        } elseif( $rule['operator'] == "!=" ) {
             $match = ( $current_language['locale'] != $selected_language );
         }
 
         // self::debug( $message );
 
         return $match;
+    }
+
+    function acf_location_screen_options( $options )
+    {
+        $message['function'] = 'acf_location_screen_options';
+
+        $message['options'] = $options;
+
+        self::debug( $message );
+
+        return $options;
     }
 
     public static function debug( $message )
