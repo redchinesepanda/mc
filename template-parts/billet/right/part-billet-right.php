@@ -6,3 +6,4 @@
 </div>
 <?php BilletMobile::render( $args ); ?>
 <?php BilletProfit::render( $args ); ?>
+<?php BilletSpoilerButton::render( $args ); ?>
