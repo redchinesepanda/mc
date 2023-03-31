@@ -2,6 +2,8 @@
 
 class ToolLoco
 {
+    const TEXTDOMAIN = 'thrive-theme-child';
+
     public static function register()
     {
         $handler = new self();
@@ -10,7 +12,7 @@ class ToolLoco
     }
     
     public static function loco() {
-        load_child_theme_textdomain( 'thrive-theme-child', LegalMain::LEGAL_PATH . '/languages' );
+        load_child_theme_textdomain( self::TEXTDOMAIN, LegalMain::LEGAL_PATH . '/languages' );
     }
 }
 
