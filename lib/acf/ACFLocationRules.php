@@ -12,7 +12,7 @@ class ACFLocationRules
         
         // add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
 
-        add_filter('acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_user' ], 10, 4);
+        add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_user' ] );
 
         // add_filter('acf/location/screen', [ $handler, 'acf_location_screen_options' ], 10, 1);
     }
