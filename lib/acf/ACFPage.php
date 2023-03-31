@@ -44,11 +44,6 @@ class ACFPage
 
         return $field;
     }
-
-    public static function debug( $message )
-    {
-        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
-    }
 }
 
 ?>

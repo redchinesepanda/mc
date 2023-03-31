@@ -20,12 +20,18 @@ class AdminTaxonomy
     public static function filter_dropdown() {
         global $typenow;
 
+        $message['fucntion'] = 'filter_dropdown';
+
         foreach ( self::TAXONOMY as $post_type => $taxonomy ) {
             if ($typenow == $post_type) {
                 $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
     
                 $info_taxonomy = get_taxonomy( $taxonomy );
     
+                $message['ToolLoco::TEXTDOMAIN'] = ToolLoco::TEXTDOMAIN;
+
+                $message['Show all %s'] = __( 'Show all %s', ToolLoco::TEXTDOMAIN );
+
                 wp_dropdown_categories( [
                     'show_option_all' => sprintf( __( 'Show all %s', ToolLoco::TEXTDOMAIN ), $info_taxonomy->label ),
                     
@@ -42,7 +48,9 @@ class AdminTaxonomy
                     'hide_empty'      => true,
                 ] );
             };
-        } 
+        }
+
+        self::debug( $message );
     }
 
     function query_term( $query )
@@ -64,6 +72,11 @@ class AdminTaxonomy
                 $q_vars[$taxonomy] = $term->slug;
             }
         }
+    }
+
+    public static function debug( $message )
+    {
+        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 
