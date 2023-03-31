@@ -4,7 +4,7 @@ require_once( 'ACFBilletCards.php' );
 
 require_once( 'ACFPage.php' );
 
-require_once( 'ACFLocationRules.php' );
+// require_once( 'ACFLocationRules.php' );
 
 class ACFMain
 {
@@ -27,7 +27,7 @@ class ACFMain
 
         ACFPage::register();
 
-        ACFLocationRules::register();
+        // ACFLocationRules::register();
     }
 }
 
