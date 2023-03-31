@@ -10,7 +10,9 @@ class ACFLocationRules
 
         add_filter( 'acf/location/rule_values/current_locale', [ $handler,'acf_location_rule_values_locale' ] );
         
-        add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
+        // add_filter( 'acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_locale' ], 10, 4 );
+
+        add_filter('acf/location/rule_match/current_locale', [ $handler, 'acf_location_rule_match_user' ], 10, 4);
 
         // add_filter('acf/location/screen', [ $handler, 'acf_location_screen_options' ], 10, 1);
     }
@@ -33,9 +35,9 @@ class ACFLocationRules
         return $choices;
     }
 
-    public static function acf_location_rule_match_locale( $match, $rule, $options, $field_group )
+    public static function acf_location_rule_match_user( $match, $rule, $options, $field_group )
     {
-        $message['function'] = 'acf_location_rule_match_locale';
+        $message['function'] = 'acf_location_rule_match_user';
 
         $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
 
