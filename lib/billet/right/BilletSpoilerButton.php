@@ -24,7 +24,9 @@ class BilletSpoilerButton
         }
 
         if ( $enabled ) {
-            $args['spoiler'] = self::get_spoiler( $billet['id'] );
+            $args['id'] = $billet['id'];
+
+            $args['spoiler'] = self::get_spoiler();
         }
 
         return $args;
