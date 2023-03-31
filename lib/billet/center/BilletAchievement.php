@@ -24,7 +24,7 @@ class BilletAchievement
             
             $args['selector'] = 'achievement-' . $term->term_id;
 
-            $args['name'] = $term->name;
+            $args['name'] = __( $term->name, ToolLoco::TEXTDOMAIN );
 
             $args['color'] = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
 
