@@ -27,7 +27,7 @@ class AdminTaxonomy
                 $info_taxonomy = get_taxonomy( $taxonomy );
     
                 wp_dropdown_categories( [
-                    'show_option_all' => sprintf( __( 'Show all %s', 'textdomain' ), $info_taxonomy->label ),
+                    'show_option_all' => sprintf( __( 'Show all %s', ToolLoco::TEXTDOMAIN ), $info_taxonomy->label ),
                     
                     'taxonomy'        => $taxonomy,
                     

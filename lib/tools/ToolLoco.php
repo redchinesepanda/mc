@@ -13,7 +13,7 @@ class ToolLoco
     
     public static function loco() {
         load_child_theme_textdomain( self::TEXTDOMAIN, LegalMain::LEGAL_PATH . '/languages' );
-    } 
+    }
 }
 
 ?>

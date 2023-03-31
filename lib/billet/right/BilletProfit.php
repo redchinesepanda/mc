@@ -8,7 +8,7 @@ class BilletProfit
     {
         $args['class'] = get_field( 'billet-play-profit-type', $id );
 
-        $args['label'] = __( 'Margin', 'Thrive' );
+        $args['label'] = __( 'Margin', ToolLoco::TEXTDOMAIN );
 
         $args['value'] = get_field( 'billet-play-profit-value', $id );
 

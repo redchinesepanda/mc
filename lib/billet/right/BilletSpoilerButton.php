@@ -6,9 +6,9 @@ class BilletSpoilerButton
 
     private static function get_spoiler()
     {
-        $args['open'] = __( 'More Details', 'Thrive' );
+        $args['open'] = __( 'More Details', ToolLoco::TEXTDOMAIN );
 
-        $args['close'] = __( 'Close Details', 'Thrive' );
+        $args['close'] = __( 'Close Details', ToolLoco::TEXTDOMAIN );
 
         return $args;
     }
