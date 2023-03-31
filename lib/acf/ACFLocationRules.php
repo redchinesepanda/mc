@@ -63,6 +63,10 @@ class ACFLocationRules
 
         $message['options'] = $options;
 
+        $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
+
+        $message['current_language'] = $current_language;
+
         self::debug( $message );
 
         return $options;
