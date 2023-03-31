@@ -33,15 +33,15 @@ class ACFLocationRules
 
     public static function acf_location_rule_match_locale( $match, $rule, $options, $field_group )
     {
-        $message['function'] = 'acf_location_rule_match_locale';
+        // $message['function'] = 'acf_location_rule_match_locale';
 
         $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
 
-        $message['current_language'] = $current_language;
+        // $message['current_language'] = $current_language;
 
         $selected_language = $rule['value'];
 
-        $message['selected_language'] = $selected_language;
+        // $message['selected_language'] = $selected_language;
 
         if ( $rule['operator'] == "==" ) {
             $match = ( $current_language['locale'] == $selected_language );
@@ -51,7 +51,7 @@ class ACFLocationRules
             $match = ( $current_language['locale'] != $selected_language );
         }
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $match;
     }
