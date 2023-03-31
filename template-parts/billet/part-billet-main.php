@@ -12,7 +12,7 @@
         <?php BilletList::render( $args ); ?>
     </div>
     <div class="billet-right">
-        <?php BilletBonus::render( $args ); ?>
+        <?php BilletRight::render( $args ); ?>
     </div>
 </div>
 <?php BilletSpoiler::render( $args ); ?>
