@@ -35,9 +35,7 @@ class ACFLocationRules
     {
         $message['function'] = 'acf_location_rule_match_locale';
 
-        $post = get_post();
-
-        $current_language = apply_filters( 'wpml_post_language_details', NULL, $post->ID ) ;
+        $current_language = apply_filters( 'wpml_post_language_details', NULL, $options['post_id'] ) ;
 
         $message['current_language'] = $current_language;
 
