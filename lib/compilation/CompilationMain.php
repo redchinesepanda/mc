@@ -13,6 +13,8 @@ class CompilationMain
 
     public static function get_billets( $posts, $compilation )
     {
+        $data = [];
+
         foreach ( $posts as $index => $post ) {
             $data[$index]['index'] = $index + 1;
 
