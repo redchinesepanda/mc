@@ -83,7 +83,9 @@ function acf_location_rule_match_user( $match, $rule, $options, $field_group )
 
     ACFLocationRules::debug( $message );
 
-    self::debug( $message );
+    // self::debug( $message );
+
+    die();
 
     return $match;
 }
