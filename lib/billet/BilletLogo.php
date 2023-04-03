@@ -10,6 +10,8 @@ class BilletLogo
 
     public static function get( $billet )
     {
+        $message['billet'] = $billet;
+
         $args['order'] = self::ORDER_VALUE;
 
         $args['review'] = BilletMain::href( $billet['url']['review'] );
@@ -34,12 +36,19 @@ class BilletLogo
             $args['logo']['src'] = self::DEFAULT_LOGO;
         }
 
+        self::debug( $message );
+
         return $args;
     }
 
     public static function render( $billet )
     { 
         load_template( self::TEMPLATE, false, self::get( $billet ) );
+    }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
