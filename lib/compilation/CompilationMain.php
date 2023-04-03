@@ -87,6 +87,8 @@ class CompilationMain
             ]
         ];
 
+        $message['args'] = $args;
+
         $posts = get_posts( $args );
 
         $message['posts'] = $posts;
