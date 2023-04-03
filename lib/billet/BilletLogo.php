@@ -19,8 +19,10 @@ class BilletLogo
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
 
-            if ( !empty( $billet['review'] ) ) {
-                $args['review']['label'] = $billet['review']['label'];
+            if ( !empty( $billet['compilation']['review'] ) ) {
+                $args['review']['label'] = $billet['compilation']['review']['label'];
+
+                $args['review'] = BilletMain::href( $billet['url']['review'] );
             }
         }
 
