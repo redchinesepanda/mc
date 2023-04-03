@@ -136,6 +136,10 @@ body {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check.svg');
 }
 
+.billet-list-part.legal-check-round .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check-round.svg');
+}
+
 .billet-list-part.legal-close .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-close.svg');
 }
