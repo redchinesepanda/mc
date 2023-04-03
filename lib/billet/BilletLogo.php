@@ -23,8 +23,9 @@ class BilletLogo
 
             if ( !empty( $billet['compilation']['review'] ) ) {
                 $args['review'] = BilletMain::href( $billet['url']['review'] );
-
-                $args['review']['label'] = $billet['compilation']['review']['label'];
+                if ( !empty($billet['compilation']['review']['label']) ) {
+                    $args['review']['label'] = $billet['compilation']['review']['label'];
+                }
             }
         }
 
