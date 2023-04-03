@@ -53,6 +53,8 @@ class BilletMain
 
         $bonus_id = get_field( 'billet-bonus-id', $billet['id'] );
 
+        $message['bonus_id'] = $bonus_id;
+
         $bonus_url = '';
         
         if ( !empty( $bonus_id ) ) {
@@ -77,6 +79,8 @@ class BilletMain
         $args['bonus'] = ( $referal_url != '' ? $referal_url : ( $oops != '' ? $oops : '' ) );
 
         $args['play'] = $args['bonus'];
+
+        self::debug( $message );
 
         return $args;
     }
@@ -144,6 +148,11 @@ class BilletMain
     public static function render( $billet = [] )
     { 
         load_template( self::TEMPLATE, false, self::get( $billet ) );
+    }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
