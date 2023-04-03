@@ -21,11 +21,10 @@ class BilletLogo
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
 
-            if ( !empty( $billet['compilation']['review'] ) ) {
+            if ( !empty( $billet['compilation']['review']['type'] ) ) {
                 $args['review'] = BilletMain::href( $billet['url']['review'] );
-                // if ( !empty($billet['compilation']['review']['label']) ) {
-                    $args['review']['label'] = $billet['compilation']['review']['label'];
-                // }
+                
+                $args['review']['label'] = $billet['compilation']['review']['label'];
             }
         }
 
