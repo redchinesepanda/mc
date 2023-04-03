@@ -53,13 +53,7 @@ class BilletMain
 
         $bonus_url = get_field( 'billet-bonus-id', $billet['id'] );
 
-        $message['bonus_url'] = $bonus_url;
-
-        // $bonus_url = '';
-        
-        // if ( !empty( $bonus_id ) ) {
-        //     $bonus_url = get_post_permalink( $bonus_id );
-        // }
+        // $message['bonus_url'] = $bonus_url;
 
         $review_url = $card_url;
         if ( array_key_exists( 'compilation', $billet ) ) {
@@ -80,7 +74,7 @@ class BilletMain
 
         $args['play'] = $args['bonus'];
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $args;
     }
