@@ -22,9 +22,9 @@ class BilletLogo
             $args['order'] = $billet['compilation']['order'];
 
             if ( !empty( $billet['compilation']['review'] ) ) {
-                $args['review']['label'] = $billet['compilation']['review']['label'];
-
                 $args['review'] = BilletMain::href( $billet['url']['review'] );
+                
+                $args['review']['label'] = $billet['compilation']['review']['label'];
             }
         }
 
