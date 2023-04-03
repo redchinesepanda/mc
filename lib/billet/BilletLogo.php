@@ -10,7 +10,7 @@ class BilletLogo
 
     public static function get( $billet )
     {
-        $message['billet'] = $billet;
+        // $message['billet'] = $billet;
 
         $args['order'] = self::ORDER_VALUE;
 
@@ -23,7 +23,7 @@ class BilletLogo
 
             if ( !empty( $billet['compilation']['review'] ) ) {
                 $args['review'] = BilletMain::href( $billet['url']['review'] );
-                
+
                 $args['review']['label'] = $billet['compilation']['review']['label'];
             }
         }
@@ -36,7 +36,7 @@ class BilletLogo
             $args['logo']['src'] = self::DEFAULT_LOGO;
         }
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $args;
     }
