@@ -61,7 +61,7 @@ class CompilationMain
 
     public static function get( $id )
     {
-        $message['fucntion'] = 'get';
+        // $message['fucntion'] = 'get';
 
         $compilation = self::get_compilation( $id );
 
@@ -87,15 +87,15 @@ class CompilationMain
             ]
         ];
 
-        $message['args'] = $args;
+        // $message['args'] = $args;
 
         $posts = get_posts( $args );
 
-        $message['posts'] = $posts;
+        // $message['posts'] = $posts;
 
         $data['billets'] = self::get_billets( $posts, $compilation );
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return $data;
     }
