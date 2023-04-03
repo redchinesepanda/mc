@@ -61,6 +61,8 @@ class CompilationMain
 
     public static function get( $id )
     {
+        $message['fucntion'] = 'get';
+
         $compilation = self::get_compilation( $id );
 
         $compilation_filter = get_field( 'compilation-filter', $id );
@@ -87,7 +89,11 @@ class CompilationMain
 
         $posts = get_posts( $args );
 
+        $message['posts'] = $posts;
+
         $data['billets'] = self::get_billets( $posts, $compilation );
+
+        self::debug( $message );
 
         return $data;
     }
@@ -95,6 +101,11 @@ class CompilationMain
     public static function render( $id = 0 )
     { 
         load_template( self::TEMPLATE, false, self::get( $id ) );
+    }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
