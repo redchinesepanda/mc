@@ -78,7 +78,7 @@ class AdminTaxonomy
 
     public static function debug( $message )
     {
-        echo '<pre>AdminTaxonomy::debug: ' . print_r( $message, true ) . '</pre>';
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 

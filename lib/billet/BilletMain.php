@@ -39,11 +39,11 @@ class BilletMain
         }
     }
 
-    private static function get_url( $id )
+    private static function get_url( $billet )
     {
-        $referal_url = get_field( 'billet-referal-url', $id );
+        $referal_url = get_field( 'billet-referal-url', $billet['id'] );
 
-        $card_id = get_field( 'billet-card-id', $id );
+        $card_id = get_field( 'billet-card-id', $billet['id'] );
 
         $card_url = '';
         
@@ -51,11 +51,24 @@ class BilletMain
             $card_url = get_post_permalink( $card_id );
         }
 
+        $bonus_id = get_field( 'billet-bonus-id', $billet['id'] );
+
+        $bonus_url = '';
+        
+        if ( !empty( $bonus_id ) ) {
+            $bonus_url = get_post_permalink( $bonus_id );
+        }
+
+        $review_url = $card_url;
+        if ( $billet['compilation']['review']['type'] == 'legal-bonus' ) {
+            $review_url = $bonus_url;
+        }
+
         $oops = '#oops';
 
         $args['logo'] = ( $referal_url != '' ? $referal_url : ( $card_url !== false ? $card_url : '' ) );
 
-        $args['review'] = ( $card_url !== false ? $card_url : '' );
+        $args['review'] = ( $review_url !== false ? $review_url : '' );
 
         $args['title'] = ( $card_url !== false ? $card_url : ( $referal_url != '' ? $referal_url : '' ) );
 
@@ -86,7 +99,7 @@ class BilletMain
             $id = $post->ID;
         }
 
-        $url = self::get_url( $id );
+        $url = self::get_url( $billet );
         
         $args['url'] = $url;
 

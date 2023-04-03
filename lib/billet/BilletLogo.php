@@ -12,8 +12,16 @@ class BilletLogo
     {
         $args['order'] = self::ORDER_VALUE;
 
+        $args['review'] = BilletMain::href( $billet['url']['review'] );
+
+        $args['review']['label'] = get_field( 'billet-button-review', $billet['id'] );
+
         if ( array_key_exists( 'compilation', $billet ) ) {
             $args['order'] = $billet['compilation']['order'];
+
+            if ( !empty( $billet['review'] ) ) {
+                $args['review']['label'] = $billet['review']['label'];
+            }
         }
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
@@ -23,10 +31,6 @@ class BilletLogo
         if ( $args['logo']['src'] === false ) {
             $args['logo']['src'] = self::DEFAULT_LOGO;
         }
-
-        $args['review'] = BilletMain::href( $billet['url']['review'] );
-
-        $args['review']['label'] = get_field( 'billet-button-review', $billet['id'] );
 
         return $args;
     }
