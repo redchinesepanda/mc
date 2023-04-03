@@ -51,15 +51,15 @@ class BilletMain
             $card_url = get_post_permalink( $card_id );
         }
 
-        $bonus_id = get_field( 'billet-bonus-id', $billet['id'] );
+        $bonus_url = get_field( 'billet-bonus-id', $billet['id'] );
 
-        $message['bonus_id'] = $bonus_id;
+        $message['bonus_url'] = $bonus_url;
 
-        $bonus_url = '';
+        // $bonus_url = '';
         
-        if ( !empty( $bonus_id ) ) {
-            $bonus_url = get_post_permalink( $bonus_id );
-        }
+        // if ( !empty( $bonus_id ) ) {
+        //     $bonus_url = get_post_permalink( $bonus_id );
+        // }
 
         $review_url = $card_url;
         if ( array_key_exists( 'compilation', $billet ) ) {
