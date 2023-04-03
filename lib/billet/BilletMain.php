@@ -99,11 +99,11 @@ class BilletMain
             $id = $post->ID;
         }
 
+        $args['id'] = $id;
+
         $url = self::get_url( $billet );
         
         $args['url'] = $url;
-
-        $args['id'] = $id;
 
         $args['selector'] = 'billet-' . $id;
 
