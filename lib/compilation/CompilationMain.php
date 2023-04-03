@@ -63,12 +63,26 @@ class CompilationMain
     {
         $compilation = self::get_compilation( $id );
 
+        $compilation_filter = get_field( 'compilation-filter', $id );
+
         $args = [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
 
-            'suppress_filters' => 0
+            'suppress_filters' => 0,
+
+            'tax_query' => [
+                [
+                    'taxonomy' => 'billet_feature',
+
+                    'field' => 'term_id',
+
+                    'terms' => $compilation_filter,
+
+                    'operator' => 'AND'
+                ]
+            ]
         ];
 
         $posts = get_posts( $args );
