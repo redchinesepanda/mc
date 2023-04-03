@@ -60,8 +60,10 @@ class BilletMain
         }
 
         $review_url = $card_url;
-        if ( $billet['compilation']['review']['type'] == 'legal-bonus' ) {
-            $review_url = $bonus_url;
+        if ( array_key_exists( 'compilation', $billet ) ) {
+            if ( $billet['compilation']['review']['type'] == 'legal-bonus' ) {
+                $review_url = $bonus_url;
+            }
         }
 
         $oops = '#oops';
