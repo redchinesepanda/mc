@@ -101,7 +101,7 @@ class BilletMain
 
         $args['id'] = $id;
 
-        $url = self::get_url( $billet );
+        $url = self::get_url( $args );
         
         $args['url'] = $url;
 
