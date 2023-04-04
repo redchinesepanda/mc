@@ -6,13 +6,23 @@ class BilletBonus
     
     private static function get_bonus( $billet )
     {
-        $args = BilletMain::href( $billet['url']['bonus'] );
+        // $args = BilletMain::href( $billet['url']['bonus'] );
 
-        $args['label'] = get_field( 'billet-play-bonus-title', $billet['id'] );
+        // $args['label'] = get_field( 'billet-play-bonus-title', $billet['id'] );
 
-        $args['description'] = get_field( 'billet-play-bonus-description', $billet['id'] );
+        // $args['description'] = get_field( 'billet-play-bonus-description', $billet['id'] );
 
-        return $args;
+        if ( !empty( $billet['bonus'] ) ) {
+            $args = BilletMain::href( $billet['bonus']['url'] );
+
+            $args['label'] = $billet['bonus']['title'];
+
+            $args['description'] = $billet['bonus']['description'];
+
+            return $args;
+        }
+
+        return [];
     }
 
     public static function get( $billet )
@@ -21,7 +31,7 @@ class BilletBonus
 
         $enabled = true;
 
-        if ( array_key_exists( 'compilation', $billet ) ) {
+        if ( !empty( $billet['compilation'] ) ) {
             $enabled = $billet['compilation']['bonus'];
         }
 

@@ -79,6 +79,34 @@ class BilletMain
         return $args;
     }
 
+    private static function get_field_default( $id, $field, $value )
+    {
+        $result = get_field( $field, $id );
+
+        if ( !empty( $result ) ) {
+            return $result;
+        }
+
+        return $value;
+    }
+
+    private static function get_bonus( $id )
+    {
+        $bonus_id = get_field( 'billet-bonus', $id );
+
+        if ( !empty( $bonus_id ) ) {
+            $args['url'] = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
+
+            $args['title'] = self::get_field_default( $bonus_id, 'billet-bonus-title', __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+
+            $args['description'] = self::get_field_default( $bonus_id, 'billet-bonus-description', __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+
+            return $args;
+        }
+
+        return [];
+    }
+
     private static function get( $billet )
     {
         $id = 0;
@@ -100,10 +128,10 @@ class BilletMain
         }
 
         $args['id'] = $id;
-
-        $url = self::get_url( $args );
         
-        $args['url'] = $url;
+        $args['url'] = self::get_url( $args );
+
+        $args['bonus'] = self::get_bonus( $id );
 
         $args['selector'] = 'billet-' . $id;
 
