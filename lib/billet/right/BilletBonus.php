@@ -6,6 +6,8 @@ class BilletBonus
     
     private static function get_bonus( $billet )
     {
+        $message['function'] = 'get_bonus';
+        
         // $args = BilletMain::href( $billet['url']['bonus'] );
 
         // $args['label'] = get_field( 'billet-play-bonus-title', $billet['id'] );
@@ -18,6 +20,10 @@ class BilletBonus
             $args['label'] = $billet['bonus']['title'];
 
             $args['description'] = $billet['bonus']['description'];
+            
+            $message['args'] = $args;
+
+            self::debug( $message );
 
             return $args;
         }
