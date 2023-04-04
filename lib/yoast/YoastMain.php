@@ -46,7 +46,7 @@ class YoastMain
 
         $output = ob_get_clean();
 
-        return $output;
+        echo $output;
     }
 
     public static function debug( $message )
