@@ -28,7 +28,7 @@ class CompilationMain
     
     public static function get_compilation( $id )
     {
-        $message['function'] = $get_compilation;
+        $message['function'] = 'get_compilation';
 
         if ( $id == 0 ) {
             $post = get_post();
