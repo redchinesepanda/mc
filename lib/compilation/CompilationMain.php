@@ -28,6 +28,8 @@ class CompilationMain
     
     public static function get_compilation( $id )
     {
+        $message['function'] = $get_compilation;
+
         if ( $id == 0 ) {
             $post = get_post();
     
@@ -58,18 +60,16 @@ class CompilationMain
 
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
 
+        $message['data'] = $data;
+
+        self::debug( $message );
+
         return $data;
     }
 
     public static function get( $id )
     {
-        // $message['fucntion'] = 'get';
-
-        $compilation = self::get_compilation( $id );
-
-        $message['compilation'] = $compilation;
-
-        $args = [
+       $args = [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -89,15 +89,11 @@ class CompilationMain
             ]
         ];
 
-        // $message['args'] = $args;
+        return [
+            'billets' => self::get_billets( get_posts( $args ), self::get_compilation( $id ) ),
 
-        $posts = get_posts( $args );
-
-        // $message['posts'] = $posts;
-
-        self::debug( $message );
-
-        return self::get_billets( $posts, $compilation );
+            'achievement' => 'to_do'
+        ];
     }
 
     public static function render( $id = 0 )
