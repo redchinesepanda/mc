@@ -29,13 +29,13 @@ class YoastMain
     {
         // $message['function'] = 'render';
 
-        $args = self::get();
+        // $args = self::get();
 
         // $message['args'] = $args;
 
         // self::debug( $message );
 
-        load_template( self::TEMPLATE, false, $args );
+        load_template( self::TEMPLATE, false, self::get() );
     }
 
     public static function debug( $message )
