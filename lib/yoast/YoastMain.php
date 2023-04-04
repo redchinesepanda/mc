@@ -33,6 +33,8 @@ class YoastMain
 
         $message['args'] = $args;
 
+        self::debug( $message );
+
         load_template( self::TEMPLATE, false, $args );
     }
 
