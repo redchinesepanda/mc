@@ -89,7 +89,7 @@ class CompilationMain
             ]
         ];
 
-        // $message['args'] = $args;
+        $message['args'] = $args;
 
         $posts = get_posts( $args );
 
@@ -97,7 +97,7 @@ class CompilationMain
 
         $data['billets'] = self::get_billets( $posts, $compilation );
 
-        // self::debug( $message );
+        self::debug( $message );
 
         return $data;
     }
