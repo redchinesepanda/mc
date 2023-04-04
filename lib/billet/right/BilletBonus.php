@@ -27,11 +27,17 @@ class BilletBonus
 
     public static function get( $billet )
     {
+        $message['function'] = 'get';
+
         $enabled = true;
 
         if ( !empty( $billet['compilation'] ) ) {
             $enabled = $billet['compilation']['bonus'];
         }
+
+        $message['enabled'] = ( $enabled ? 'true' : 'false' );
+
+        self::debug( $message );
 
         if ( $enabled ) {
             return self::get_bonus( $billet );
