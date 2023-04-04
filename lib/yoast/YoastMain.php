@@ -25,7 +25,7 @@ class YoastMain
         // self::debug( $message );
     }
 
-    public static function render()
+    public static function render2()
     {
         // $message['function'] = 'render';
 
@@ -36,6 +36,17 @@ class YoastMain
         // self::debug( $message );
 
         load_template( self::TEMPLATE, false, self::get() );
+    }
+
+    public static function render()
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE, false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 
     public static function debug( $message )
