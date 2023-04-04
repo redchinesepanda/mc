@@ -2,7 +2,7 @@
 
 class YoastMain
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/yoast-main.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
 
     public static function get()
     {
