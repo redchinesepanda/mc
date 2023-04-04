@@ -143,6 +143,10 @@ class BilletMain
 
         $args['description'] = get_field( 'billet-description', $id );
 
+        self::debug( [
+            'url' => $url,
+        ] );
+
         return $args;
     }
 
