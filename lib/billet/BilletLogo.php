@@ -12,29 +12,17 @@ class BilletLogo
     {
         // $message['billet'] = $billet;
 
-        $args['order'] = self::ORDER_VALUE;
+        $args['order'] = ( !empty( $billet['compilation']['order'] ? $billet['compilation']['order'] : self::ORDER_VALUE );
 
-        $args['review'] = BilletMain::href( $billet['url']['review'] );
+        $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) ? BilletMain::href( $billet['url']['bonus'] ) : BilletMain::href( $billet['url']['review'] ) );
 
-        $args['review']['label'] = get_field( 'billet-button-review', $billet['id'] );
-
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            $args['order'] = $billet['compilation']['order'];
-
-            if ( !empty( $billet['compilation']['review']['type'] ) ) {
-                $args['review'] = BilletMain::href( $billet['url']['review'] );
-                
-                $args['review']['label'] = $billet['compilation']['review']['label'];
-            }
-        }
+        $args['review']['label'] = ( !empty( $billet['compilation']['review']['label'] ? $billet['compilation']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN ) );
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
-        $args['logo']['src'] = get_the_post_thumbnail_url( $billet['id'] );
+        $src = get_the_post_thumbnail_url( $billet['id'] );
 
-        if ( $args['logo']['src'] === false ) {
-            $args['logo']['src'] = self::DEFAULT_LOGO;
-        }
+        $args['logo']['src'] = ( $src !== false ? $src : self::DEFAULT_LOGO );
 
         // self::debug( $message );
 
