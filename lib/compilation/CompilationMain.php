@@ -67,7 +67,7 @@ class CompilationMain
 
         $compilation = self::get_compilation( $id );
 
-        $compilation_filter = get_field( 'compilation-filter', $id );
+        $message['compilation'] = $compilation;
 
         $args = [
             'numberposts' => -1,
@@ -82,24 +82,22 @@ class CompilationMain
 
                     'field' => 'term_id',
 
-                    'terms' => $compilation_filter,
+                    'terms' => get_field( 'compilation-filter', $id ),
 
                     'operator' => 'AND'
                 ]
             ]
         ];
 
-        $message['args'] = $args;
+        // $message['args'] = $args;
 
         $posts = get_posts( $args );
 
         // $message['posts'] = $posts;
 
-        $data['billets'] = self::get_billets( $posts, $compilation );
-
         self::debug( $message );
 
-        return $data;
+        return self::get_billets( $posts, $compilation );
     }
 
     public static function render( $id = 0 )
