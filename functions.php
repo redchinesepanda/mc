@@ -12,6 +12,8 @@ add_action( 'wp_enqueue_scripts', function () {
 
 require_once( 'lib/LegalMain.php' );
 
+require_once( 'lib/oops/OopsMain.php' );
+
 require_once( 'lib/wpml/WPMLMain.php' );
 
 require_once( 'lib/acf/ACFMain.php' );

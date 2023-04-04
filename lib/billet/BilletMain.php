@@ -48,21 +48,22 @@ class BilletMain
         $bonus_url = self::get_post_url( $billet['id'], 'billet-bonus', '' );
 
         $review_url = $card_url;
+
         if ( array_key_exists( 'compilation', $billet ) ) {
             if ( $billet['compilation']['review']['type'] == 'legal-bonus' ) {
                 $review_url = $bonus_url;
             }
         }
 
-        $oops = '#oops';
+        $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
-        $args['logo'] = ( $referal_url != '' ? $referal_url : ( $card_url !== false ? $card_url : '' ) );
+        $args['logo'] = ( !empty( $referal_url ) ? $referal_url : $card_url );
 
-        $args['review'] = ( $review_url !== false ? $review_url : '' );
+        $args['review'] = $review_url;
 
-        $args['title'] = ( $card_url !== false ? $card_url : ( $referal_url != '' ? $referal_url : '' ) );
+        $args['title'] = ( !empty( $card_url ) ? $card_url : $referal_url );
 
-        $args['bonus'] = ( $referal_url != '' ? $referal_url : ( $oops != '' ? $oops : '' ) );
+        $args['bonus'] = ( !empty( $referal_url ) ? $referal_url : $oops );
 
         $args['play'] = $args['bonus'];
 
