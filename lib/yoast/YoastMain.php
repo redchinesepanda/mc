@@ -4,6 +4,17 @@ class YoastMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
 
+    public static function print()
+    {
+        $args = self::get();
+
+        echo '<title>' . $args['title'] . '</title>';
+
+        foreach ( $args['meta'] as $key => $value ) {
+            echo '<meta name="' . $key . '" content="' . $value . '" />';
+        }
+    }
+
     private static function get()
     {
         // $message['function'] = 'get';
@@ -13,11 +24,16 @@ class YoastMain
         return [
             'title' => YoastSEO()->meta->for_post( $post->ID )->title,
 
-            'description' => YoastSEO()->meta->for_post( $post->ID )->description,
+            'meta' =>
+            [
+                'description' => YoastSEO()->meta->for_post( $post->ID )->description,
             
-            'keywords' => 'keywords',
-            
-            'author' => 'author',
+                'keywords' => 'keywords',
+                
+                'author' => 'author',
+
+                'viewport' => 'width=device-width, initial-scale=1.0',
+            ]
         ];
 
         // $message['args'] = $args;
@@ -25,20 +41,12 @@ class YoastMain
         // self::debug( $message );
     }
 
-    public static function render2()
+    public static function render()
     {
-        // $message['function'] = 'render';
-
-        // $args = self::get();
-
-        // $message['args'] = $args;
-
-        // self::debug( $message );
-
         load_template( self::TEMPLATE, false, self::get() );
     }
 
-    public static function render()
+    public static function render_ob()
     {
         ob_start();
 

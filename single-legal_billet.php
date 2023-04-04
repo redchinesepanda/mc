@@ -16,7 +16,7 @@ require_once( 'lib/billet/BilletMain.php' );
 ?>
 <html>
     <head>
-        <?php YoastMain::render(); ?>
+        <?php YoastMain::print(); ?>
         <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
