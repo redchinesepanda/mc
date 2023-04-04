@@ -7,6 +7,8 @@ class BilletBonus
     private static function get_bonus( $billet )
     {
         $message['function'] = 'get_bonus';
+
+        $message['billet'] = $billet;
         
         // $args = BilletMain::href( $billet['url']['bonus'] );
 
@@ -36,8 +38,6 @@ class BilletBonus
     public static function get( $billet )
     {
         $message['function'] = 'get';
-
-        $message['billet'] = $billet;
 
         $enabled = true;
 
