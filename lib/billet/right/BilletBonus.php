@@ -28,6 +28,8 @@ class BilletBonus
             return $args;
         }
 
+        self::debug( $message );
+
         return [];
     }
 
