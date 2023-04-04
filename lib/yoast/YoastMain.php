@@ -18,7 +18,7 @@ class YoastMain
             'keywords' => 'keywords',
             
             'author' => 'author',
-        ]
+        ];
 
         // $message['args'] = $args;
 
