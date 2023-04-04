@@ -13,12 +13,10 @@ require_once( 'lib/yoast/YoastMain.php' );
 
 require_once( 'lib/billet/BilletMain.php' );
 
-YoastMain::get();
-
 ?>
 <html>
     <head>
-        <title><?php echo ''; ?></title>
+        <?php YoastMain::render(); ?>
         <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
