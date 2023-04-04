@@ -56,7 +56,7 @@ class BilletBonus
 
         $args = self::get( $billet );
 
-        $message['args'] = 'args';
+        $message['args'] = $args;
 
         self::debug( $message );
 
