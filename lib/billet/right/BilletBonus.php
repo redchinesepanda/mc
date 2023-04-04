@@ -27,8 +27,6 @@ class BilletBonus
 
     public static function get( $billet )
     {
-        $args = [];
-
         $enabled = true;
 
         if ( !empty( $billet['compilation'] ) ) {
@@ -36,10 +34,10 @@ class BilletBonus
         }
 
         if ( $enabled ) {
-            $args['bonus'] = self::get_bonus( $billet );
+            return self::get_bonus( $billet );
         }
 
-        return $args;
+        return [];
     }
 
     public static function render( $billet )
@@ -49,6 +47,11 @@ class BilletBonus
         if ( !empty( $args ) ) {
             load_template( self::TEMPLATE, false, $args );
         }
+    }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
