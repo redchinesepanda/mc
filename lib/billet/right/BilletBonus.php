@@ -6,9 +6,9 @@ class BilletBonus
     
     private static function get_bonus( $billet )
     {
-        $message['function'] = 'get_bonus';
+        // $message['function'] = 'get_bonus';
 
-        $message['billet'] = $billet;
+        // $message['billet'] = $billet;
 
         if ( !empty( $billet['bonus'] ) ) {
             $args = BilletMain::href( $billet['url']['bonus'] );
@@ -17,21 +17,21 @@ class BilletBonus
 
             $args['description'] = $billet['bonus']['description'];
             
-            $message['args'] = $args;
+            // $message['args'] = $args;
 
-            self::debug( $message );
+            // self::debug( $message );
 
             return $args;
         }
 
-        self::debug( $message );
+        // self::debug( $message );
 
         return [];
     }
 
     public static function get( $billet )
     {
-        $message['function'] = 'get';
+        // $message['function'] = 'get';
 
         $enabled = true;
 
@@ -39,9 +39,9 @@ class BilletBonus
             $enabled = $billet['compilation']['bonus'];
         }
 
-        $message['enabled'] = ( $enabled ? 'true' : 'false' );
+        // $message['enabled'] = ( $enabled ? 'true' : 'false' );
 
-        self::debug( $message );
+        // self::debug( $message );
 
         if ( $enabled ) {
             return self::get_bonus( $billet );
@@ -52,7 +52,13 @@ class BilletBonus
 
     public static function render( $billet )
     {
+        $message['function'] = 'render';
+
         $args = self::get( $billet );
+
+        $message['args'] = 'args';
+
+        self::debug( $message );
 
         if ( !empty( $args ) ) {
             load_template( self::TEMPLATE, false, $args );
