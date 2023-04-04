@@ -6,9 +6,7 @@ class YoastMain
     {
         $message['function'] = 'get';
 
-        $Title_Presenter = new Title_Presenter();
-
-        $message['get_title'] = $Title_Presenter->get_title();
+        $message['get_title'] = YoastSEO()->meta->for_post( POST_ID )->title;
 
         self::debug( $message );
     }
