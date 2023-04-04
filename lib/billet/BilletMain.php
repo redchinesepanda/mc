@@ -51,6 +51,8 @@ class BilletMain
             $card_url = get_post_permalink( $card_id );
         }
 
+        // $card_url = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
+
         $bonus_url = get_field( 'billet-bonus-id', $billet['id'] );
 
         // $message['bonus_url'] = $bonus_url;
@@ -95,7 +97,7 @@ class BilletMain
         $bonus_id = get_field( 'billet-bonus', $id );
 
         if ( !empty( $bonus_id ) ) {
-            $args['url'] = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
+            // $args['url'] = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
 
             $args['title'] = self::get_field_default( $bonus_id, 'billet-bonus-title', __( 'Not set', ToolLoco::TEXTDOMAIN ) );
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'ACFBilletCards.php' );
+// require_once( 'ACFBilletCards.php' );
 
 require_once( 'ACFPage.php' );
 
@@ -23,7 +23,7 @@ class ACFMain
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        ACFBilletCards::register();
+        // ACFBilletCards::register();
 
         ACFPage::register();
 
