@@ -37,6 +37,8 @@ class BilletBonus
     {
         $message['function'] = 'get';
 
+        $message['billet'] = $billet;
+
         $enabled = true;
 
         if ( !empty( $billet['compilation'] ) ) {
