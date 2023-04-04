@@ -9,12 +9,14 @@ Template Post Type: page
 
 require_once( 'lib/LegalMain.php' );
 
+require_once( 'lib/yoast/YoastMain.php' );
+
 require_once( 'lib/compilation/CompilationMain.php' );
 
 ?>
 <html>
     <head>
-        <title>Compilation</title>
+        <?php YoastMain::print(); ?>
         <?php CompilationMain::print(); ?>
     </head>
     <body class="compilation">
