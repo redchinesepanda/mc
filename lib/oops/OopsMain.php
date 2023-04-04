@@ -15,9 +15,9 @@ class OopsMain
                 [
                     'key' => 'billet-referal',
 
-                    'value' => ''
+                    'value' => '',
 
-                    'meta_compare' => '!='
+                    'meta_compare' => '!=',
                 ],
             ]
         ];
