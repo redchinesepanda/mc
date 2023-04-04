@@ -43,19 +43,9 @@ class BilletMain
     {
         $referal_url = get_field( 'billet-referal-url', $billet['id'] );
 
-        $card_id = get_field( 'billet-card-id', $billet['id'] );
+        $card_url = get_field( 'billet-card', $billet['id'] );
 
-        $card_url = '';
-        
-        if ( !empty( $card_id ) ) {
-            $card_url = get_post_permalink( $card_id );
-        }
-
-        // $card_url = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
-
-        $bonus_url = get_field( 'billet-bonus-id', $billet['id'] );
-
-        // $message['bonus_url'] = $bonus_url;
+        $bonus_url = self::get_post_url( $billet['id'], 'billet-bonus', '' );
 
         $review_url = $card_url;
         if ( array_key_exists( 'compilation', $billet ) ) {
@@ -79,6 +69,17 @@ class BilletMain
         // self::debug( $message );
 
         return $args;
+    }
+
+    private static function get_post_url( $id, $field, $value )
+    {
+        $result = get_field( $field, $id );
+
+        if ( !empty( $result ) ) {
+            return get_post_permalink( $result );
+        }
+
+        return $value;
     }
 
     private static function get_field_default( $id, $field, $value )
