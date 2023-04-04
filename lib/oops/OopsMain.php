@@ -2,7 +2,7 @@
 
 class OopsMain
 {
-    private static function check_oops()
+    public static function check_oops()
     {
         $args = [
             'numberposts' => -1,
