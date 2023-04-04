@@ -8,7 +8,11 @@ class YoastMain
 
         $post = get_post();
 
-        $message['get_title'] = YoastSEO()->meta->for_post( $post->ID )->title;
+        $args['title'] = YoastSEO()->meta->for_post( $post->ID )->title;
+
+        $args['description'] = YoastSEO()->meta->for_post( $post->ID )->description;
+
+        $message['args'] = $args;
 
         self::debug( $message );
     }
