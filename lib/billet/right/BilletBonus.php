@@ -52,13 +52,13 @@ class BilletBonus
 
     public static function render( $billet )
     {
-        $message['function'] = 'render';
+        // $message['function'] = 'render';
 
         $args = self::get( $billet );
 
-        $message['args'] = $args;
+        // $message['args'] = $args;
 
-        self::debug( $message );
+        // self::debug( $message );
 
         if ( !empty( $args ) ) {
             load_template( self::TEMPLATE, false, $args );
