@@ -26,8 +26,14 @@ class YoastMain
     }
 
     public static function render()
-    { 
-        load_template( self::TEMPLATE, false, self::get() );
+    {
+        $message['function'] = 'render';
+
+        $args = self::get();
+
+        $message['args'] = $args;
+
+        load_template( self::TEMPLATE, false, $args );
     }
 
     public static function debug( $message )
