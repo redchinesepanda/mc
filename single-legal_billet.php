@@ -9,12 +9,16 @@ Template Post Type: legal_billet
 
 require_once( 'lib/LegalMain.php' );
 
+require_once( 'lib/yoast/YoastMain.php' );
+
 require_once( 'lib/billet/BilletMain.php' );
+
+YoastMain::get();
 
 ?>
 <html>
     <head>
-        <title>Billet</title>
+        <title><?php echo ''; ?></title>
         <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
