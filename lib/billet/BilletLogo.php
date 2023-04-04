@@ -16,7 +16,7 @@ class BilletLogo
 
         $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) ? BilletMain::href( $billet['url']['bonus'] ) : BilletMain::href( $billet['url']['review'] ) );
 
-        $args['review']['label'] = ( !empty( $billet['compilation']['review']['label'] ) ? $billet['compilation']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN );
+        $args['review']['label'] = ( !empty( $billet['compilation']['review']['label'] ) ? $billet['compilation']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN ) );
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
