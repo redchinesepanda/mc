@@ -36,11 +36,13 @@ class CompilationMain
 
         $data['id'] = $id;
 
-        $data['order'] = get_field( 'billet-order-type', $id );
-
         $data['review']['label'] = get_field( 'compilation-review-label', $id );
 
         $data['review']['type'] = get_field( 'compilation-review-type', $id );
+
+        $data['play']['label'] = get_field( 'compilation-play-label', $id );
+
+        $data['order'] = get_field( 'billet-order-type', $id );
 
         $data['rating'] = get_field( 'billet-rating-enabled', $id );
 

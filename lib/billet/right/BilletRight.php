@@ -15,8 +15,12 @@ class BilletRight
     private static function get_play( $billet )
     {
         $args = BilletMain::href( $billet['url']['play'] );
+        
+        $args['label'] = __( 'Bet now', ToolLoco::TEXTDOMAIN );
 
-        $args['label'] = get_field( 'billet-button-play', $billet['id'] );
+        if ( !empty( $billet['compilation']['play']['label'] ) ) {
+            $args['label'] = $billet['compilation']['play']['label'];
+        }
 
         return $args;
     }
