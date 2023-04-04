@@ -31,6 +31,8 @@ class BilletRight
 
         $args['url'] = $billet['url'];
 
+        $args['bonus'] = $billet['bonus'];
+
         $args['play'] = self::get_play( $billet );
 
         return $args;
