@@ -4,7 +4,7 @@ class YoastMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
 
-    public static function get()
+    private static function get()
     {
         // $message['function'] = 'get';
 
