@@ -13,7 +13,7 @@ class BilletBonus
         if ( !empty( $billet['bonus'] ) ) {
             $args = BilletMain::href( $billet['url']['bonus'] );
 
-            $args['label'] = $billet['bonus']['title'];
+            $args['title'] = $billet['bonus']['title'];
 
             $args['description'] = $billet['bonus']['description'];
             
