@@ -9,15 +9,9 @@ class BilletBonus
         $message['function'] = 'get_bonus';
 
         $message['billet'] = $billet;
-        
-        // $args = BilletMain::href( $billet['url']['bonus'] );
-
-        // $args['label'] = get_field( 'billet-play-bonus-title', $billet['id'] );
-
-        // $args['description'] = get_field( 'billet-play-bonus-description', $billet['id'] );
 
         if ( !empty( $billet['bonus'] ) ) {
-            $args = BilletMain::href( $billet['bonus']['url'] );
+            $args = BilletMain::href( $billet['url']['bonus'] );
 
             $args['label'] = $billet['bonus']['title'];
 
