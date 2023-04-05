@@ -10,6 +10,15 @@
 }
 
 /* Tabs Position */
+
+.legal-tabs .legal-tab-menu {
+    padding: 0px 20px;
+}
+
+.legal-tabs .legal-tab-display {
+    padding-top: 0px;
+}
+
 .legal-tabs .legal-tab-title {
     padding: 3px 15px;
 }
@@ -28,6 +37,10 @@
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0 0 10px #e4e4e4;
+}
+
+.legal-tabs .legal-tab-menu {
+    border-bottom: 1px solid #e8e8e8;
 }
 
 /* Tabs Typography */
