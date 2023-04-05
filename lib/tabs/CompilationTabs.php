@@ -38,7 +38,7 @@ class CompilationTabs
 
             return $args;
         } else {
-            return [ 'empty' => __( 'No tabs added yet', ToolLoco::TEXTDOMAIN ) ];
+            return [ 'empty' => __( 'There are no tabs added yet', ToolLoco::TEXTDOMAIN ) ];
         }
 
         return [];
