@@ -53,7 +53,7 @@ class BilletMain
 
         $bonus_url = self::get_post_url( $billet['id'], self::ACF_BONUS, '' );
 
-        $review_url = ( !empty( $billet['compilation']['review']['type'] ) ? $bonus_url : $card_url );
+        $review_url = ( !empty( $billet['compilation']['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url );
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
