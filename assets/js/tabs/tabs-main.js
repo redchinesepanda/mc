@@ -4,9 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function tabToggle( event )
     {
-        let tabs = document.getElementById( '#' + event.currentTarget.dataset.tabs );
-
-        console.log( '#' + event.currentTarget.dataset.tabs );
+        let tabs = document.getElementById( event.currentTarget.dataset.tabs );
 
         tabs.querySelectorAll( '.legal-tab-title' ).forEach( ( title ) => {
             title.classList.remove( 'legal-active' );
