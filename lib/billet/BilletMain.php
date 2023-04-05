@@ -39,13 +39,19 @@ class BilletMain
         }
     }
 
+    const ACF_REFERAL = 'billet-referal';
+
+    const ACF_CARD = 'billet-card';
+
+    const ACF_BONUS = 'billet-bonus';
+
     private static function get_url( $billet )
     {
-        $referal_url = get_field( 'billet-referal-url', $billet['id'] );
+        $referal_url = get_field( self::ACF_REFERAL, $billet['id'] );
 
-        $card_url = get_field( 'billet-card', $billet['id'] );
+        $card_url = get_field( self::ACF_CARD, $billet['id'] );
 
-        $bonus_url = self::get_post_url( $billet['id'], 'billet-bonus', '' );
+        $bonus_url = self::get_post_url( $billet['id'], self::ACF_BONUS, '' );
 
         $review_url = ( !empty( $billet['compilation']['review']['type'] ) ? $bonus_url : $card_url );
 
