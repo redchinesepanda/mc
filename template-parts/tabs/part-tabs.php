@@ -16,7 +16,7 @@
             <?php endforeach;?>
         </div>
     <?php else : ?>
-        <?php echo $arg[ 'empty' ]; ?>
+        <?php echo $args[ 'empty' ]; ?>
     <?php endif; ?>
 </div>
 
