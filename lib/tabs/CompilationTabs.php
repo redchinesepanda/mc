@@ -8,9 +8,13 @@ class CompilationTabs
 
     const CSS = LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css';
 
+    const JS = LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js';
+
     public static function print()
     {
-        echo '<link id="tabs-main" href="' . self::CSS . '" rel="stylesheet" />';
+        echo '<link id="tabs-main-css" href="' . self::CSS . '" rel="stylesheet" />';
+
+        echo '<script id="tabs-main-js" src="' . self:JS . '"></script>';
 
         CompilationMain::print();
     }
