@@ -3,7 +3,7 @@
         <div class="legal-tab-menu">
             <?php foreach( $args as $key => $arg ) : ?>
                 <div class="legal-tab-title legal-title-<?php echo $key; ?>">
-                    <?php echo $arg[ 'title' ]; ?>
+                    <?php echo $arg[ 'label' ]; ?>
                 </div>
             <?php endforeach;?>
         </div>
