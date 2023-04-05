@@ -47,13 +47,7 @@ class BilletMain
 
         $bonus_url = self::get_post_url( $billet['id'], 'billet-bonus', '' );
 
-        $review_url = $card_url;
-
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            if ( $billet['compilation']['review']['type'] == 'legal-bonus' ) {
-                $review_url = $bonus_url;
-            }
-        }
+        $review_url = ( !empty( $billet['compilation']['review']['type'] ) ? $bonus_url : $card_url );
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
@@ -67,7 +61,15 @@ class BilletMain
 
         $args['play'] = $args['bonus'];
 
-        // self::debug( $message );
+        self::debug( [
+            'referal_url' => $referal_url,
+
+            'card_url' => $card_url,
+
+            'bonus_url' => $bonus_url,
+
+            'review_url' => $review_url,
+        ] );
 
         return $args;
     }
