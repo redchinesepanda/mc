@@ -1,6 +1,47 @@
 /* Tabs Display */
 
-.legal-tabs .legal-tab-title:not( .legal-active ),
+.legal-tabs .legal-tab-menu {
+    display: flex;
+    column-gap: 20px;
+}
+
 .legal-tabs .legal-tab-content:not( .legal-active ) {
     display: none;
+}
+
+/* Tabs Position */
+.legal-tabs .legal-tab-title {
+    padding: 3px 15px;
+}
+
+/* Tabs Background */
+
+.legal-tabs .legal-tab-title.legal-active {
+    background-color: #007bff;
+}
+
+.legal-tabs .legal-tab-title:not( .legal-active ) {
+    background-color: #FFFFFF;
+}
+
+.legal-tabs .legal-tab-title {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #e4e4e4;
+}
+
+/* Tabs Typography */
+
+.legal-tabs .legal-tab-title:not( .legal-active ) {
+    color: rgb(100, 99, 99);
+}
+.legal-tabs .legal-tab-title.legal-active {
+    color: #FFFFFF;
+}
+.legal-tabs .legal-tab-title {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
 }
