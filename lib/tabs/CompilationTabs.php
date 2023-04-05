@@ -32,9 +32,9 @@ class CompilationTabs
                 ];
             }
 
-            self::debug( [
-                'args' => $args,
-            ] );
+            // self::debug( [
+            //     'args' => $args,
+            // ] );
 
             return $args;
         } else {

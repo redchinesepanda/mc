@@ -9,7 +9,7 @@
             <?php endforeach;?>
         </div>
         <div class="legal-tab-display">
-            <?php foreach( $args as $key => $arg ) : ?>
+            <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
                 <div class="legal-tab-content legal-content-<?php echo $key; ?>">
                     <?php CompilationMain::render( $arg[ 'compilation' ] ); ?>
                 </div>
