@@ -83,7 +83,7 @@ class BilletMain
 
         // Кнопка играть
 
-        $args['play'] = $args['bonus'];
+        $args['play'] =  ( !empty( $referal_url ) ? $referal_url : $oops );
 
         self::debug( [
             'referal_url' => $referal_url,
