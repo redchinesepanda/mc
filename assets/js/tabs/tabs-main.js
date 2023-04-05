@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         
         event.currentTarget.classList.add( 'legal-active' );
 
-        querySelector( '.legal-content-' + event.currentTarget.dataset.content ).classList.add( 'legal-active' );
+        tabs.querySelector( '.legal-content-' + event.currentTarget.dataset.content ).classList.add( 'legal-active' );
     }
 
     Array.from( document.getElementsByClassName( 'legal-tabs' ) ).forEach( function callback( tabs, index ) {
