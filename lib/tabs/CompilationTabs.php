@@ -17,9 +17,11 @@ class CompilationTabs
         CompilationMain::print();
     }
 
-    public static function get( $page )
+    public static function get()
     {
-        $tabs = get_field( self::ACF_TABS, $page[ 'id' ] );
+        $post = get_post();
+
+        $tabs = get_field( self::ACF_TABS, $post->ID );
 
         if( $tabs ) {
             foreach( $tabs as $tab ) {
@@ -36,9 +38,9 @@ class CompilationTabs
         return [];
     }
 
-    public static function render( $page )
+    public static function render()
     { 
-        load_template( self::TEMPLATE, false, self::get( $page ) );
+        load_template( self::TEMPLATE, false, self::get() );
     }
 }
 
