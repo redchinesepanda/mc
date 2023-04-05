@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
         let tabs = document.getElementById( '#' + event.currentTarget.dataset.tabs );
 
+        console.log( '#' + event.currentTarget.dataset.tabs );
+
         tabs.querySelectorAll( '.legal-tab-title' ).forEach( ( title ) => {
             title.classList.remove( 'legal-active' );
         });
