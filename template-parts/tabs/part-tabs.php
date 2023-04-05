@@ -1,5 +1,5 @@
 <div class="legal-tabs">
-    <?php if ( !empty( $args ) ) : ?>
+    <?php if ( !empty( $args[ 'tabs' ] ) ) : ?>
     
         <div class="legal-tab-menu">
             <?php foreach( $args as $key => $arg ) : ?>

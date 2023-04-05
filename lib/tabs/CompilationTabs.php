@@ -29,7 +29,7 @@ class CompilationTabs
 
         if( $tabs ) {
             foreach( $tabs as $tab ) {
-                $args[] = [
+                $args['tabs'][] = [
                     'label' => $tab[ self::TAB_LABEL ],
 
                     'compilation' => $tab[ self::TAB_COMPILATION ],
