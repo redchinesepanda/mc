@@ -28,8 +28,6 @@ class CompilationMain
     
     public static function get_compilation( $id )
     {
-        $message['function'] = 'get_compilation';
-
         if ( $id == 0 ) {
             $post = get_post();
     
@@ -59,10 +57,6 @@ class CompilationMain
         $data['profit'] = get_field( 'billet-profit-enabled', $id );
 
         $data['spoiler'] = get_field( 'billet-spoiler-enabled', $id );
-
-        $message['data'] = $data;
-
-        self::debug( $message );
 
         return $data;
     }

@@ -85,13 +85,13 @@ class BilletMain
 
         $args['play'] =  ( !empty( $referal_url ) ? $referal_url : $oops );
 
-        self::debug( [
-            'referal_url' => $referal_url,
+        // self::debug( [
+        //     'referal_url' => $referal_url,
 
-            'card_url' => $card_url,
+        //     'card_url' => $card_url,
 
-            'bonus_url' => $bonus_url,
-        ] );
+        //     'bonus_url' => $bonus_url,
+        // ] );
 
         return $args;
     }
