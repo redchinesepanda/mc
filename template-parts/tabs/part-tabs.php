@@ -1,5 +1,6 @@
-<?php if ( !empty( $args ) ) : ?>
-    <div class="legal-tabs">
+<div class="legal-tabs">
+    <?php if ( !empty( $args ) ) : ?>
+    
         <div class="legal-tab-menu">
             <?php foreach( $args as $key => $arg ) : ?>
                 <div class="legal-tab-title legal-title-<?php echo $key; ?>">
@@ -14,6 +15,8 @@
                 </div>
             <?php endforeach;?>
         </div>
-    </div>
-<?php endif; ?>
+    <?php else : ?>
+        <?php echo $arg[ 'empty' ]; ?>
+    <?php endif; ?>
+</div>
 

@@ -23,9 +23,9 @@ class CompilationTabs
 
         $tabs = get_field( self::ACF_TABS, $post->ID );
 
-        self::debug( [
-            'tabs' => $tabs,
-        ] );
+        // self::debug( [
+        //     'tabs' => $tabs,
+        // ] );
 
         if( $tabs ) {
             foreach( $tabs as $tab ) {
@@ -37,6 +37,8 @@ class CompilationTabs
             }
 
             return $args;
+        } else {
+            return [ 'empty' => __( 'No tabs added yet', ToolLoco::TEXTDOMAIN ) ];
         }
 
         return [];
