@@ -30,9 +30,9 @@ class CompilationTabs
         if( $tabs ) {
             foreach( $tabs as $tab ) {
                 $args[] = [
-                    'label' => $part[ self::TAB_LABEL ],
+                    'label' => $tab[ self::TAB_LABEL ],
 
-                    'compilation' => $part[ self::TAB_COMPILATION ],
+                    'compilation' => $tab[ self::TAB_COMPILATION ],
                 ];
             }
 
