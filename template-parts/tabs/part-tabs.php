@@ -2,7 +2,7 @@
     <?php if ( !empty( $args[ 'tabs' ] ) ) : ?>
     
         <div class="legal-tab-menu">
-            <?php foreach( $args as $key => $arg ) : ?>
+            <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
                 <div class="legal-tab-title legal-title-<?php echo $key; ?>">
                     <?php echo $arg[ 'label' ]; ?>
                 </div>
