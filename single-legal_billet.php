@@ -2,7 +2,7 @@
 
 /*
 
-Template Name: Billet
+Template Name: Legal Billet
 Template Post Type: legal_billet
 
 */

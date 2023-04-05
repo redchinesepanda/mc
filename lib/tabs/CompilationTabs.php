@@ -8,40 +8,25 @@ class CompilationTabs
 
     const ACF_TABS = 'compilation-tabs';
 
+    const TAB_LABEL = 'tab-label';
+
+    const TAB_COMPILATION = 'compilation-id';
+
+    public static function print()
+    {
+        CompilationMain::print();
+    }
+
     public static function get( $page )
     {
-        $tabs = get_field( self::ACF_TABS, $page['id'] );
+        $tabs = get_field( self::ACF_TABS, $page[ 'id' ] );
 
         if( $tabs ) {
             foreach( $tabs as $tab ) {
                 $args[] = [
-                    'order' => $part['billet-order-type'],
+                    'label' => $part[ self::TAB_LABEL ],
 
-                    'rating' => $part['billet-rating-enabled'],
-
-                    'achievement' => $part['billet-achievement-type'],
-
-                    'list' => $part['billet-list-type'],
-
-                    'bonus' => $part['billet-bonus-enabled'],
-
-                    'mobile' => $part['billet-mobile-enabled'],
-
-                    'profit' => $part['billet-profit-enabled'],
-
-                    'spoiler' => $part['billet-spoiler-enabled'],
-
-                    'filter' => $part['compilation-filter'],
-
-                    'review' => [
-                        'label' => $part['compilation-review-label'],
-
-                        'type' => $part['compilation-review-type'],
-                    ],
-
-                    'play' => [
-                        'label' => $part['compilation-play-label'],
-                    ],
+                    'compilation' => $part[ self::TAB_COMPILATION ],
                 ]
             }
 

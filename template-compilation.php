@@ -2,8 +2,8 @@
 
 /*
 
-Template Name: Compilation
-Template Post Type: page, legal_compilation
+Template Name: Legal Compilation
+Template Post Type: legal_compilation
 
 */
 
@@ -19,7 +19,7 @@ require_once( 'lib/compilation/CompilationMain.php' );
         <?php YoastMain::print(); ?>
         <?php CompilationMain::print(); ?>
     </head>
-    <body class="compilation">
+    <body class="compilation-single">
         <h1>Compilation</h1>
         <?php CompilationMain::render(); ?>
     </body>
