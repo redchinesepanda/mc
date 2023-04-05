@@ -14,7 +14,9 @@ class BilletLogo
 
         $args['order'] = ( !empty( $billet['compilation']['order'] ) ? $billet['compilation']['order'] : self::ORDER_VALUE );
 
-        $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) ? BilletMain::href( $billet['url']['bonus'] ) : BilletMain::href( $billet['url']['review'] ) );
+        // $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) ? BilletMain::href( $billet['url']['bonus'] ) : BilletMain::href( $billet['url']['review'] ) );
+
+        $args['review'] = BilletMain::href( $billet['url']['review'] );
 
         $args['review']['label'] = ( !empty( $billet['compilation']['review']['label'] ) ? $billet['compilation']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN ) );
 
