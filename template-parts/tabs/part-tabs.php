@@ -3,14 +3,14 @@
     
         <div class="legal-tab-menu">
             <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
-                <div class="legal-tab-title legal-title-<?php echo $key; ?>">
+                <div class="legal-tab-title legal-title-<?php echo $key; ?> <?php echo $arg[ 'class' ]; ?>">
                     <?php echo $arg[ 'label' ]; ?>
                 </div>
             <?php endforeach;?>
         </div>
         <div class="legal-tab-display">
             <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
-                <div class="legal-tab-content legal-content-<?php echo $key; ?>">
+                <div class="legal-tab-content legal-content-<?php echo $key; ?> <?php echo $arg[ 'class' ]; ?>">
                     <?php CompilationMain::render( $arg[ 'compilation' ] ); ?>
                 </div>
             <?php endforeach;?>

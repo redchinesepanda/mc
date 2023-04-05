@@ -6,16 +6,20 @@ class CompilationTabs
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php';
 
+    const CSS = LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css';
+
+    public static function print()
+    {
+        echo '<link id="tabs-main" href="' . self::CSS . '" rel="stylesheet" />';
+
+        CompilationMain::print();
+    }
+
     const ACF_TABS = 'compilation-tabs';
 
     const TAB_LABEL = 'tab-label';
 
     const TAB_COMPILATION = 'compilation-id';
-
-    public static function print()
-    {
-        CompilationMain::print();
-    }
 
     public static function get()
     {
@@ -24,11 +28,13 @@ class CompilationTabs
         $tabs = get_field( self::ACF_TABS, $post->ID );
 
         if( $tabs ) {
-            foreach( $tabs as $tab ) {
+            foreach( $tabs as $key => $tab ) {
                 $args['tabs'][] = [
                     'label' => $tab[ self::TAB_LABEL ],
 
                     'compilation' => $tab[ self::TAB_COMPILATION ],
+
+                    'class' => ( $key == 0 ? 'legal-active' : '' )
                 ];
             }
 

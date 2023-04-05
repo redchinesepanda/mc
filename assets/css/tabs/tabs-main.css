@@ -1,0 +1,6 @@
+/* Tabs Display */
+
+.legal-tabs .legal-tab-title:not( .legal-active ),
+.legal-tabs .legal-tab-content:not( .legal-active ) {
+    display: none;
+}
