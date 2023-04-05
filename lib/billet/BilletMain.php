@@ -47,23 +47,41 @@ class BilletMain
 
     private static function get_url( $billet )
     {
+        // Партнерская БК или ''
+
         $referal_url = get_field( self::ACF_REFERAL, $billet['id'] );
+
+        // Карточка БК или ''
 
         $card_url = get_field( self::ACF_CARD, $billet['id'] );
 
+        // Бонус или ''
+
         $bonus_url = self::get_post_url( $billet['id'], self::ACF_BONUS, '' );
 
-        $review_url = ( !empty( $billet['compilation']['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url );
+        // Oops если есть
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
+        // Логотип
+
         $args['logo'] = ( !empty( $referal_url ) ? $referal_url : $card_url );
 
-        $args['review'] = $review_url;
+        // Кнопка обзор учитывая тип Бонус
+
+        $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url );
+
+        // Название БК
 
         $args['title'] = ( !empty( $card_url ) ? $card_url : $referal_url );
 
-        $args['bonus'] = ( !empty( $referal_url ) ? $referal_url : $oops );
+        // Заголовок бонуса учитывая локаль Казахстан
+
+        $locale = ( !empty( $billet['compilation']['locale'] ) ? $billet['compilation']['locale'] : ( apply_filters( 'wpml_post_language_details', NULL, $billet['id'] ) )['locale'] );
+
+        $args['bonus'] = ( $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops ) );
+
+        // Кнопка играть
 
         $args['play'] = $args['bonus'];
 
