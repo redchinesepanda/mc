@@ -91,8 +91,6 @@ class BilletMain
             'card_url' => $card_url,
 
             'bonus_url' => $bonus_url,
-
-            'review_url' => $review_url,
         ] );
 
         return $args;
