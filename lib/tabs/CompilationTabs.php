@@ -23,6 +23,10 @@ class CompilationTabs
 
         $tabs = get_field( self::ACF_TABS, $post->ID );
 
+        self::debug( [
+            'tabs' => $tabs,
+        ] );
+
         if( $tabs ) {
             foreach( $tabs as $tab ) {
                 $args[] = [
@@ -41,6 +45,11 @@ class CompilationTabs
     public static function render()
     { 
         load_template( self::TEMPLATE, false, self::get() );
+    }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
