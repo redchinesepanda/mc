@@ -3,7 +3,7 @@
 /*
 
 Template Name: Compilation
-Template Post Type: page
+Template Post Type: page, legal_compilation
 
 */
 
