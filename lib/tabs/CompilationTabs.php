@@ -14,7 +14,7 @@ class CompilationTabs
     {
         echo '<link id="tabs-main-css" href="' . self::CSS . '" rel="stylesheet" />';
 
-        echo '<script id="tabs-main-js" src="' . self:JS . '"></script>';
+        echo '<script id="tabs-main-js" src="' . self::JS . '"></script>';
 
         CompilationMain::print();
     }
