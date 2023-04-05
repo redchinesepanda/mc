@@ -19,7 +19,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         querySelector( '.legal-content-' + event.currentTarget.dataset.content ).classList.add( 'legal-active' );
     }
 
-    document.getElementsByClassName( 'legal-tabs' ).forEach( function callback( tabs, index ) {
+    Array.from( document.getElementsByClassName( 'legal-tabs' ) ).forEach( function callback( tabs, index ) {
         tabs.id = "legal-tabs-" + index;
 
         let titles = tabs.getElementsByClassName( 'legal-tab-title' );
