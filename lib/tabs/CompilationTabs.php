@@ -27,7 +27,7 @@ class CompilationTabs
                     'label' => $part[ self::TAB_LABEL ],
 
                     'compilation' => $part[ self::TAB_COMPILATION ],
-                ]
+                ];
             }
 
             return $args;
