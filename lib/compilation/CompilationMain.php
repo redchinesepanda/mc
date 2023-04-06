@@ -6,9 +6,17 @@ class CompilationMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php';
 
+    const CSS = [
+        'compilation-main' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
+    ];
+
     public static function print()
     {
         BilletMain::print();
+
+        foreach ( self::CSS as $key => $url ) {
+            echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
+        }
     }
 
     public static function get_billets( $posts, $compilation )

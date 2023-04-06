@@ -1,16 +1,13 @@
 <?php if ( !empty( $args['settings']['title']['image'] ) ) : ?>
     <style type="text/css">
-        .compilation-<?php echo $args['settings']['id']; ?> .compilation-title-image {
+        .compilation-<?php echo $args['settings']['id']; ?> .compilation-title {
             background-image: url( '<?php echo $args['settings']['title']['image']; ?>' );
         }
     </style>
 <?php endif; ?>
 <div class="legal-compilation <?php echo $args['achievement']; ?> compilation-<?php echo $args['settings']['id']; ?>">
     <?php if ( !empty( $args['settings']['title']['text'] ) ) : ?>
-        <?php if ( !empty( $args['settings']['title']['image'] ) ) : ?>
-            <div class="compilation-title-image"></div>
-        <?php endif; ?>
-        <div class="compilation-title-text">
+        <div class="compilation-title">
             <?php echo $args['settings']['title']['text']; ?>
         </div>
     <?php endif; ?>
