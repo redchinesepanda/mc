@@ -26,27 +26,44 @@ class CompilationMain
         return $data;
     }
     
-    public static function get_compilation( $id )
+    public static function get_settings( $id )
     {
+        return [
+            'id' => $id,
+
+            'title' => [
+                    'image' => get_field( 'compilation-title-image', $id ),
+
+                    'text' => get_field( 'compilation-title-text', $id ),
+            ],
+
+            'attention' => [
+                'text' => get_field( 'compilation-attention-text', $id ),
+
+                'position' => get_field( 'compilation-attention-position', $id ),
+            ],
+
+            'all' => [
+                'text' => get_field( 'compilation-all-text', $id ),
+
+                'url' => get_field( 'compilation-all-url', $id ),
+            ],
+        ];
+    }
+
+    public static function check_id( $id = 0 ) {
         if ( $id == 0 ) {
             $post = get_post();
     
-            $id = $post->ID;
+            return $post->ID;
         }
 
+        return $id;
+    }
+
+    public static function get_compilation( $id )
+    {
         $data['id'] = $id;
-
-        $data['title']['image'] = get_field( 'compilation-title-image', $id );
-
-        $data['title']['text'] = get_field( 'compilation-title-text', $id );
-
-        $data['attention']['text'] = get_field( 'compilation-attention-text', $id );
-
-        $data['attention']['position'] = get_field( 'compilation-attention-position', $id );
-
-        $data['all']['text'] = get_field( 'compilation-all-text', $id );
-
-        $data['all']['url'] = get_field( 'compilation-all-url', $id );
 
         $data['review']['label'] = get_field( 'compilation-review-label', $id );
 
@@ -75,7 +92,9 @@ class CompilationMain
 
     public static function get( $id )
     {
-       $args = [
+        $id = self::check_id( $id );
+
+        $args = [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -98,7 +117,9 @@ class CompilationMain
         return [
             'billets' => self::get_billets( get_posts( $args ), self::get_compilation( $id ) ),
 
-            'achievement' => 'to_do'
+            'settings' => self::get_settings( $id ),
+
+            'achievement' => 'to_do',
         ];
     }
 
