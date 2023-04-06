@@ -6,6 +6,10 @@
     background-size: auto;
 }
 
+.legal-compilation .compilation-all {
+    display: block;
+}
+
 /* Compilation Position */
 .legal-compilation .compilation-title {
     padding-left: 70px;
