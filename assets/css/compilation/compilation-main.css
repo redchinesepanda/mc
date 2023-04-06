@@ -14,6 +14,8 @@
 
 .legal-compilation .compilation-all {
     padding-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 /* Compilation Background */
@@ -24,7 +26,6 @@
     background-repeat: no-repeat;
     background-size: auto;
 }
-
 
 /* Compilation Typography */
 
