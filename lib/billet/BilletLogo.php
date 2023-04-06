@@ -22,9 +22,11 @@ class BilletLogo
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
-        $src = get_the_post_thumbnail_url( $billet['id'] );
+        // $src = get_the_post_thumbnail_url( $billet['id'] );
 
-        $args['logo']['src'] = ( $src !== false ? $src : self::DEFAULT_LOGO );
+        $src = get_field( 'billet-logo-url', $billet['id'] );
+
+        $args['logo']['src'] = ( !empty( $src ) ? $src : self::DEFAULT_LOGO );
 
         // self::debug( $message );
 
