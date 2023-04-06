@@ -36,6 +36,18 @@ class CompilationMain
 
         $data['id'] = $id;
 
+        $data['title']['image'] = get_field( 'compilation-title-image', $id );
+
+        $data['title']['text'] = get_field( 'compilation-title-text', $id );
+
+        $data['attention']['text'] = get_field( 'compilation-attention-text', $id );
+
+        $data['attention']['position'] = get_field( 'compilation-attention-position', $id );
+
+        $data['all']['text'] = get_field( 'compilation-all-text', $id );
+
+        $data['all']['url'] = get_field( 'compilation-all-url', $id );
+
         $data['review']['label'] = get_field( 'compilation-review-label', $id );
 
         $data['review']['type'] = get_field( 'compilation-review-type', $id );
