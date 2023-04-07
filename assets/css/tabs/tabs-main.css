@@ -29,6 +29,7 @@
 
 .legal-tabs .legal-tab-display {
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .legal-tabs .legal-tab-title {
@@ -37,13 +38,11 @@
 }
 
 .legal-tabs .legal-tabs-description {
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .legal-tabs .legal-tabs-link {
     padding-left: 50px;
-    margin-top: 20px;
-    margin-bottom: 50px;
 }
 
 /* Tabs Background */
