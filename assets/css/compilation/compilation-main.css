@@ -18,9 +18,9 @@
     margin: 20px 0px;
 }
 
-/* .legal-compilation .compilation-attention {
-    margin-top: 15px;
-} */
+.legal-compilation .compilation-attention:not( :last-child ) {
+    margin-bottom: 15px;
+}
 
 /* Compilation Background */
 
