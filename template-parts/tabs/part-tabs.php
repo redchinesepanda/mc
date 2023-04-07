@@ -1,7 +1,7 @@
 <div class="legal-tabs">
     <?php if ( !empty( $args[ 'text' ] ) ) : ?>
         <div class="legal-tabs-title">
-            <?php echo $arg[ 'text' ]; ?>
+            <?php echo $args[ 'text' ]; ?>
         </div>
     <?php endif; ?>
     <?php if ( !empty( $args[ 'tabs' ] ) ) : ?>
