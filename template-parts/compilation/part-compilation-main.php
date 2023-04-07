@@ -19,9 +19,4 @@
             <?php echo $args['settings']['attention']['text']; ?>
         </div>
     <?php endif; ?>
-    <?php if ( !empty( $args['settings']['all']['text'] ) ) : ?>
-        <a class="compilation-all" href="<?php echo $args['settings']['all']['url']; ?>">
-            <?php echo $args['settings']['all']['text']; ?>
-        </a>
-    <?php endif; ?>
 </div>

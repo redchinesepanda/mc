@@ -23,6 +23,10 @@ class CompilationTabs
 
     const TABS_ITEMS = 'tabs-items';
 
+    const TABS_LINK_TEXT = 'tabs-link-text';
+
+    const TABS_LINK_URL = 'tabs-link-url';
+
     const TAB_TEXT = 'tab-title-text';
 
     const TAB_IMAGE = 'tab-title-image';
@@ -33,7 +37,15 @@ class CompilationTabs
     {
         $post = get_post();
 
-        $args['text'] = get_field( self::TABS_TEXT, $post->ID );
+        $args = [
+            'text' => get_field( self::TABS_TEXT, $post->ID ),
+            
+            'link' => [
+                'text' => get_field( self::TABS_LINK_TEXT, $id ),
+
+                'url' => get_field( self::TABS_LINK_URL, $id ),
+            ],
+        ];
 
         $tabs = get_field( self::TABS_ITEMS, $post->ID );
 

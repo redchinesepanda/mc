@@ -33,5 +33,10 @@
     <?php else : ?>
         <?php echo $args[ 'empty' ]; ?>
     <?php endif; ?>
+    <?php if ( !empty( $args['link']['text'] ) ) : ?>
+        <a class="compilation-all" href="<?php echo $args['link']['url']; ?>">
+            <?php echo $args['link']['text']; ?>
+        </a>
+    <?php endif; ?>
 </div>
 
