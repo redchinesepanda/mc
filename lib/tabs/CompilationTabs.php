@@ -19,41 +19,41 @@ class CompilationTabs
         CompilationMain::print();
     }
 
-    const ACF_TABS = 'compilation-tabs';
+    const TABS_TEXT = 'tabs-title-text';
 
-    const TAB_LABEL = 'tab-label';
+    const TABS_ITEMS = 'tabs-items';
 
-    const TAB_COMPILATION = 'compilation-id';
+    const TAB_TEXT = 'tab-title-text';
+
+    const TAB_IMAGE = 'tab-title-image';
+
+    const TAB_COMPILATIONS = 'tab-compilations';
 
     public static function get()
     {
         $post = get_post();
 
-        $tabs = get_field( self::ACF_TABS, $post->ID );
+        $args['text'] = get_field( self::TABS_TEXT, $post->ID );
+
+        $tabs = get_field( self::TABS_ITEMS, $post->ID );
 
         if( $tabs ) {
             foreach( $tabs as $key => $tab ) {
                 $args['tabs'][] = [
-                    'label' => $tab[ self::TAB_LABEL ],
+                    'text' => $tab[ self::TAB_TEXT ],
 
-                    'compilation' => $tab[ self::TAB_COMPILATION ],
+                    'image' => $tab[ self::TAB_IMAGE ],
+
+                    'compilations' => $tab[ self::TAB_COMPILATIONS ],
 
                     'class' => ( $key == 0 ? 'legal-active' : '' )
                 ];
             }
-
-            // self::debug( [
-            //     'args' => $args,
-            // ] );
-
-            return $args;
         } else {
-            return [
-                'empty' => __( 'There are no tabs added yet', ToolLoco::TEXTDOMAIN ),
-            ];
+            $args['empty'] = __( 'There are no tabs added yet', ToolLoco::TEXTDOMAIN );
         }
 
-        return [];
+        return $args;
     }
 
     public static function render()
