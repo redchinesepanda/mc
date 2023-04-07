@@ -83,7 +83,7 @@ class CompilationTabs
         if ( count( $args['tabs'] == 1 ) ) {
             $tab = array_shift( $args['tabs'] );
             load_template( CompilationMain::TEMPLATE, false, array_shift( $tab['compilations'] ) );
-        } esle {
+        } else {
             load_template( self::TEMPLATE, false, $args );
         }
     }
