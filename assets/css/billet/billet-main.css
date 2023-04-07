@@ -312,13 +312,17 @@ body {
 
 /* Billet Position */
 
+.billet {
+    margin-bottom: 15px;
+}
+
 .billet-center,
 .billet-right {
     padding: 20px 0px;
 }
 
 .billet-footer {
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .billet-title h3 {
@@ -498,4 +502,13 @@ body {
 
 .billet .profit-value {
     font-weight: 600;
+}
+
+.billet .billet-footer {
+    font-family: "Source Sans Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17.4px;
+    color: rgb(106, 107, 108);
 }
