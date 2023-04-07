@@ -8,9 +8,11 @@
         <div class="legal-tab-menu">
             <style type="text/css">
                 <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
-                    .<?php echo $arg[ 'class' ]; ?> {
-                        background-image: url( '<?php echo $arg['image']; ?>' );
-                    }
+                    <?php if ( !empty( $arg[ 'image' ] ) ) : ?>
+                        .<?php echo $arg[ 'class' ]; ?> {
+                            background-image: url( '<?php echo $arg['image']; ?>' );
+                        }
+                    <?php endif; ?>
                 <?php endforeach;?>
             </style>
             <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
