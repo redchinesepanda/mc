@@ -126,11 +126,11 @@ class CompilationMain
 
         $lang = 'by';
 
-        self::debug( [
-            'query' => $query,
+        // self::debug( [
+        //     'query' => $query,
 
-            'lang' => $lang,
-        ] );
+        //     'lang' => $lang,
+        // ] );
 
         if ( $lang ) {
             // do_action( 'wpml_switch_language', $lang );
