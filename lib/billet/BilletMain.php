@@ -141,7 +141,7 @@ class BilletMain
         //     $filter_description = $args[ 'filter' ][ 'description' ];
         // }
 
-        $filter_description = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ][ 'description' ] : true );
+        $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
