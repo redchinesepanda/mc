@@ -11,6 +11,10 @@
 
 /* Tabs Position */
 
+.legal-tabs .legal-tab-title {
+    margin-top: 20px;
+}
+
 .legal-tabs .legal-tab-menu {
     padding: 20px 0px;
 }
@@ -45,12 +49,23 @@
 
 /* Tabs Typography */
 
+.legal-tabs .legal-tabs-title {
+    font-family: "Source Sans Pro";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    color: rgb(12, 17, 21);
+}
+
 .legal-tabs .legal-tab-title:not( .legal-active ) {
     color: rgb(100, 99, 99);
 }
+
 .legal-tabs .legal-tab-title.legal-active {
     color: #FFFFFF;
 }
+
 .legal-tabs .legal-tab-title {
     font-family: "Source Sans Pro";
     font-size: 16px;
