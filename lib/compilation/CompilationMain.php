@@ -124,6 +124,12 @@ class CompilationMain
 
         $lang = get_field( 'compilation-lang', $id );
 
+        self::debug( [
+            'query' => $query,
+
+            'lang' => $lang,
+        ] );
+
         if ( $lang ) {
             do_action( 'wpml_switch_language', $lang );
         }
