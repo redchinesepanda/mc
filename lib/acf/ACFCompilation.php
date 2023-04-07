@@ -11,19 +11,19 @@ class ACFCompilation
         add_filter( 'acf/load_field/name=' . self::FIELD, [ $handler, 'choices' ] );
     }
 
-    public static function choices( $choices )
+    public static function choices( $field )
     {
         $languages = WPMLLangSwitcher::choises();
 
         foreach( $languages as $language ) {
-            $choices[ $language['language_code'] ] = $language['native_name'] . ' [' . $language['language_code'] . ']';
+            $field['choises'][ $language['language_code'] ] = $language['native_name'] . ' [' . $language['language_code'] . ']';
         }
 
         self::debug( [
-            'choices' => $choices,
+            'field' => $field,
         ] );
 
-        return $choices;
+        return $field;
     }
 
     public static function debug( $message )
