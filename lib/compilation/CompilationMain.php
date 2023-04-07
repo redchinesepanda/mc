@@ -141,13 +141,17 @@ class CompilationMain
     {
         $id = self::check_id( $id );
 
-        global $sitepress;
+        $new_lang = get_field( 'compilation-lang', $id );
 
-        $current_lang = $sitepress->get_current_language();
+        $switch_lang = ( !empty( $new_lang ) );
 
-        $new_lang = 'by';
+        if ( $switch_lang ) {
+            global $sitepress;
 
-        $sitepress->switch_lang( $new_lang );
+            $current_lang = $sitepress->get_current_language();
+
+            $sitepress->switch_lang( $new_lang );
+        }
 
         $args = [
             'numberposts' => -1,
@@ -171,7 +175,9 @@ class CompilationMain
 
         $posts = get_posts( $args );
 
-        $sitepress->switch_lang( $current_lang );
+        if ( $switch_lang ) {
+            $sitepress->switch_lang( $current_lang );
+        }
 
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
