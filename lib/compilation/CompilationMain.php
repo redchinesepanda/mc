@@ -119,7 +119,7 @@ class CompilationMain
 
             'post_type' => 'legal_billet',
 
-            'suppress_filters' => 0,
+            // 'suppress_filters' => 0,
 
             'tax_query' => [
                 [
