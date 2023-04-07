@@ -90,20 +90,13 @@
     color: rgb(12, 17, 21);
 }
 
-.legal-tabs .legal-tab-title:not( .legal-active ) {
-    color: rgb(100, 99, 99);
-}
-
-.legal-tabs .legal-tab-title.legal-active {
-    color: #FFFFFF;
-}
-
 .legal-tabs .legal-tab-title {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
+    color: rgb(100, 99, 99);
 }
 
 .legal-tabs .legal-tabs-description {
