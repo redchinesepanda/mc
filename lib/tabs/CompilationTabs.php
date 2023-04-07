@@ -78,11 +78,11 @@ class CompilationTabs
 
     public static function render()
     {
+        $args = self::get();
+        
         self::debug( [
             'args' => $args,
         ] );
-
-        $args = self::get();
 
         if ( count( $args['tabs'] == 1 ) ) {
             $tab = array_shift( $args['tabs'] );
