@@ -23,9 +23,9 @@ class CompilationMain
 
     public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_action( 'pre_get_posts', [ $handler, 'lang' ] );
+        // add_action( 'pre_get_posts', [ $handler, 'lang' ] );
     }
 
     public static function get_billets( $posts, $filter )
@@ -141,6 +141,14 @@ class CompilationMain
     {
         $id = self::check_id( $id );
 
+        global $sitepress;
+
+        $current_lang = $sitepress->get_current_language();
+
+        $new_lang = 'by';
+
+        $sitepress->switch_lang( $new_lang );
+
         $args = [
             'numberposts' => -1,
 
@@ -161,8 +169,12 @@ class CompilationMain
             ]
         ];
 
+        $posts = get_posts( $args );
+
+        $sitepress->switch_lang( $current_lang );
+
         return [
-            'billets' => self::get_billets( get_posts( $args ), self::get_filter( $id ) ),
+            'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
 
             'settings' => self::get_settings( $id ),
         ];
