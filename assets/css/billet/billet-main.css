@@ -312,7 +312,7 @@ body {
 
 /* Billet Position */
 
-.billet {
+.billet:not( :last-child ) {
     margin-bottom: 15px;
 }
 
@@ -321,7 +321,7 @@ body {
     padding: 20px 0px;
 }
 
-.billet-footer {
+.billet-footer:not( :last-child ) {
     margin-bottom: 15px;
 }
 

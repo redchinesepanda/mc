@@ -20,7 +20,6 @@ require_once( 'lib/billet/BilletMain.php' );
         <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
-        <h1>Billet</h1>
         <?php BilletMain::render(); ?>
     </body>
 </html>

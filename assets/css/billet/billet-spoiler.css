@@ -29,7 +29,7 @@
 
 /* Billet Spoiler Position */
 
-.billet-spoiler {
+.billet-spoiler:not( :last-child ) {
     margin-bottom: 15px;
 }
 
