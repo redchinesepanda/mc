@@ -119,7 +119,7 @@ class CompilationMain
 
             'post_type' => 'legal_billet',
 
-            // 'suppress_filters' => 0,
+            'suppress_filters' => get_field( 'compilation-locale', $id ),
 
             'tax_query' => [
                 [
@@ -129,7 +129,7 @@ class CompilationMain
 
                     'terms' => get_field( 'compilation-filter', $id ),
 
-                    'operator' => 'AND'
+                    'operator' => get_field( 'compilation-operator', $id ),
                 ]
             ]
         ];
