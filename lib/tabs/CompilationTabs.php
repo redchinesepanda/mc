@@ -62,7 +62,7 @@ class CompilationTabs
 
                     'image' => $tab[ self::TAB_IMAGE ],
 
-                    'compilations' => ( !empty( $tab[ self::TAB_COMPILATIONS ) ? $tab[ self::TAB_COMPILATIONS ] : [] ] ),
+                    'compilations' => ( !empty( $tab[ self::TAB_COMPILATIONS ) ? $tab[ self::TAB_COMPILATIONS ] : [] ),
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 
