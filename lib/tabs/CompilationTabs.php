@@ -82,13 +82,8 @@ class CompilationTabs
 
         if ( count( $args['tabs'] ) == 1 ) {
             $tab = array_shift( $args['tabs'] );
-        
-            $compilation = array_shift( $tab['compilations'] );
-
-            self::debug( [
-                'compilation' => $compilation,
-            ] );
-            load_template( CompilationMain::TEMPLATE, false, $compilation );
+            
+            CompilationMain::render( array_shift( $tab['compilations'] ) );
         } else {
             load_template( self::TEMPLATE, false, $args );
         }
