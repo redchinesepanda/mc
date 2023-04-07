@@ -7,9 +7,22 @@
 }
 
 /* Compilation Position */
+
 .legal-compilation .compilation-title {
     padding-left: 70px;
     margin-bottom: 30px;
+}
+
+.legal-compilation .compilation-attention {
+    padding: 10px 20px;
+    margin: 20px 0px;
+}
+
+/* Compilation Background */
+
+.legal-compilation .compilation-attention {
+    background-color: rgb(255, 94, 106);
+    border-radius: 20px;
 }
 
 /* Compilation Typography */
@@ -20,4 +33,13 @@
     font-style: normal;
     font-weight: 600;
     line-height: 40px;
+}
+
+.legal-compilation .compilation-attention {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgb(255, 255, 255);
 }
