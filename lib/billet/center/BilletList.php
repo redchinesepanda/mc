@@ -14,7 +14,7 @@ class BilletList
             foreach( $parts as $key => $part ) {
                 $display = true;
 
-                if ( array_key_exists( 'compilation', $billet ) ) {
+                if ( !empty( $billet['compilation'] ) ) {
                     $display = in_array( $part['billet-list-part-icon'], $billet['compilation']['list'] );
                 }
 
