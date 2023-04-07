@@ -13,6 +13,10 @@
     cursor: pointer;
 }
 
+.legal-tabs .compilation-all {
+    display: block;
+}
+
 /* Tabs Position */
 
 .legal-tabs .legal-tabs-title {
@@ -32,6 +36,12 @@
     padding-right: 20px;
 }
 
+.legal-tabs .compilation-all {
+    padding-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 /* Tabs Background */
 
 .legal-tabs .legal-tab-title.legal-active {
@@ -49,6 +59,13 @@
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0 0 10px #e4e4e4;
+}
+
+.legal-tabs .compilation-all {
+    background-image: url( '../../img/compilation/compilation-all.svg' );
+    background-position: left 15px center;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .legal-tabs .legal-tab-menu {
@@ -80,4 +97,14 @@
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
+}
+
+.legal-tabs .compilation-all {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: none;
+    color: rgb(89, 151, 227);
 }

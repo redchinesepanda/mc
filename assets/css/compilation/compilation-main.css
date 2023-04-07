@@ -6,29 +6,10 @@
     background-size: auto;
 }
 
-.legal-compilation .compilation-all {
-    display: block;
-}
-
 /* Compilation Position */
 .legal-compilation .compilation-title {
     padding-left: 70px;
     margin-bottom: 30px;
-}
-
-.legal-compilation .compilation-all {
-    padding-left: 50px;
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
-
-/* Compilation Background */
-
-.legal-compilation .compilation-all {
-    background-image: url( '../../img/compilation/compilation-all.svg' );
-    background-position: left 15px center;
-    background-repeat: no-repeat;
-    background-size: auto;
 }
 
 /* Compilation Typography */
@@ -39,14 +20,4 @@
     font-style: normal;
     font-weight: 600;
     line-height: 40px;
-}
-
-.legal-compilation .compilation-all {
-    font-family: "Source Sans Pro";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
-    text-decoration: none;
-    color: rgb(89, 151, 227);
 }
