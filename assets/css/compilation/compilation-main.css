@@ -1,19 +1,16 @@
 /* Compilation Display */
 
-.legal-compilation .compilation-title {
-    background-position: left 15px center;
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-
 /* Compilation Position */
 
 .legal-compilation:not( :last-child ) {
     margin-bottom: 30px; 
 }
 
-.legal-compilation .compilation-title {
+.legal-compilation .compilation-title.legal-image {
     padding-left: 70px;
+}
+
+.legal-compilation .compilation-title {
     margin-bottom: 30px;
 }
 
@@ -26,6 +23,12 @@
 }
 
 /* Compilation Background */
+
+.legal-compilation .compilation-title.legal-image {
+    background-position: left 15px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
 
 .legal-compilation .compilation-attention.legal-attention {
     background-color: rgb(255, 94, 106);

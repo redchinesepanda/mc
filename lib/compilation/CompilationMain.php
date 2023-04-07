@@ -52,6 +52,8 @@ class CompilationMain
             'title' => [
                     'image' => get_field( 'compilation-title-image', $id ),
 
+                    'class' => ( !empty( get_field( 'compilation-title-image', $id ) ) ? 'legal-image' : '' ),
+
                     'text' => get_field( 'compilation-title-text', $id ),
             ],
 

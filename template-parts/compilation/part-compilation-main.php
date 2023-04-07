@@ -8,7 +8,7 @@
 <div class="legal-compilation compilation-<?php echo $args['settings']['id']; ?>">
     <?php CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION_ABOVE ); ?>
     <?php if ( !empty( $args['settings']['title']['text'] ) ) : ?>
-        <div class="compilation-title">
+        <div class="compilation-title  <?php echo $args['settings']['title']['class']; ?>">
             <?php echo $args['settings']['title']['text']; ?>
         </div>
     <?php endif; ?>
