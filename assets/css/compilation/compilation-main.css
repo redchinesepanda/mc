@@ -8,6 +8,10 @@
 
 /* Compilation Position */
 
+.legal-compilation {
+    margin-bottom: 15px;
+}
+
 .legal-compilation .compilation-title {
     padding-left: 70px;
     margin-bottom: 30px;
