@@ -45,55 +45,49 @@ class BilletMain
 
     const ACF_BONUS = 'billet-bonus';
 
-    private static function get_url( $billet )
+    private static function get_url( $id, $filter )
     {
         // Партнерская БК или ''
 
-        $referal_url = get_field( self::ACF_REFERAL, $billet['id'] );
+        $referal_url = get_field( self::ACF_REFERAL, $id );
 
         // Карточка БК или ''
 
-        $card_url = get_field( self::ACF_CARD, $billet['id'] );
+        $card_url = get_field( self::ACF_CARD, $id );
 
         // Бонус или ''
 
-        $bonus_url = self::get_post_url( $billet['id'], self::ACF_BONUS, '' );
+        $bonus_url = self::get_post_url( $id, self::ACF_BONUS, '' );
+
+        // Текущая локаль
+
+        $locale = ( apply_filters( 'wpml_post_language_details', NULL, $billet['id'] ) )['locale'];
 
         // Oops если есть
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
-        // Логотип
+        return [
+            // Логотип
 
-        $args['logo'] = ( !empty( $referal_url ) ? $referal_url : $card_url );
+            'logo' => ( !empty( $referal_url ) ? $referal_url : $card_url ),
 
-        // Кнопка обзор учитывая тип Бонус
+            // Кнопка обзор учитывая тип Бонус
 
-        $args['review'] = ( !empty( $billet['compilation']['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url );
+            'review' => ( !empty( $filter['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url ),
 
-        // Название БК
+            // Название БК
 
-        $args['title'] = ( !empty( $card_url ) ? $card_url : $referal_url );
+            'title' => ( !empty( $card_url ) ? $card_url : $referal_url ),
 
-        // Заголовок бонуса учитывая локаль Казахстан
+            // Заголовок бонуса учитывая локаль Казахстан
+        
+            'bonus' => ( $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops ) ),
 
-        $locale = ( !empty( $billet['compilation']['locale'] ) ? $billet['compilation']['locale'] : ( apply_filters( 'wpml_post_language_details', NULL, $billet['id'] ) )['locale'] );
+            // Кнопка играть
 
-        $args['bonus'] = ( $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops ) );
-
-        // Кнопка играть
-
-        $args['play'] =  ( !empty( $referal_url ) ? $referal_url : $oops );
-
-        // self::debug( [
-        //     'referal_url' => $referal_url,
-
-        //     'card_url' => $card_url,
-
-        //     'bonus_url' => $bonus_url,
-        // ] );
-
-        return $args;
+            'play' =>  ( !empty( $referal_url ) ? $referal_url : $oops ),
+        ];
     }
 
     private static function get_post_url( $id, $field, $value )
@@ -135,43 +129,31 @@ class BilletMain
         return [];
     }
 
-    private static function get( $billet )
+    private static function get( $args )
     {
-        $id = 0;
+        $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
-        $args['index'] = 1;
+        $filter = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ] : [] );
 
-        if ( !empty( $billet ) ) {
-            $id = $billet['id'];
+        $filter_description = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ][ 'description' ] : true );
 
-            $args['index'] = $billet['index'];
+        return [
+            'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
 
-            if ( array_key_exists( 'compilation', $billet ) ) {
-                $args['compilation'] = $billet['compilation'];
-            }
-        } else {
-            $post = get_post();
-    
-            $id = $post->ID;
-        }
-
-        $args['id'] = $id;
+            'id' => $id,
         
-        $args['url'] = self::get_url( $args );
+            'url' => self::get_url( $id, $filter ),
 
-        $args['bonus'] = self::get_bonus( $id );
+            'bonus' => self::get_bonus( $id ),
 
-        $args['selector'] = 'billet-' . $id;
+            'selector' => 'billet-' . $id,
 
-        $args['color'] = self::get_color( $id );
+            'color' => self::get_color( $id ),
 
-        $args['description'] = get_field( 'billet-description', $id );
+            'description' => ( $filter_description ? get_field( 'billet-description', $id ) : '' ),
 
-        // self::debug( [
-        //     'url' => $args['url'],
-        // ] );
-
-        return $args;
+            'filter' => $filter,
+        ];
     }
 
     private static function get_color( $id )
@@ -199,9 +181,9 @@ class BilletMain
         return $args;
     }
 
-    public static function render( $billet = [] )
+    public static function render( $args = [] )
     { 
-        load_template( self::TEMPLATE, false, self::get( $billet ) );
+        load_template( self::TEMPLATE, false, self::get( $args ) );
     }
 
     public static function debug( $message )

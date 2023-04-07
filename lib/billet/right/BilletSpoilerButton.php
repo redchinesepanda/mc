@@ -19,8 +19,8 @@ class BilletSpoilerButton
 
         $enabled = true;
 
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            $enabled = $billet['compilation']['spoiler'];
+        if ( array_key_exists( 'filter', $billet ) ) {
+            $enabled = $billet['filter']['spoiler'];
         }
 
         if ( $enabled ) {

@@ -18,8 +18,8 @@ class BilletRight
         
         $args['label'] = __( 'Bet now', ToolLoco::TEXTDOMAIN );
 
-        if ( !empty( $billet['compilation']['play']['label'] ) ) {
-            $args['label'] = $billet['compilation']['play']['label'];
+        if ( !empty( $billet['filter']['play']['label'] ) ) {
+            $args['label'] = $billet['filter']['play']['label'];
         }
 
         return $args;
@@ -27,19 +27,17 @@ class BilletRight
 
     public static function get( $billet )
     {
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            $args['compilation'] = $billet['compilation'];
-        }
+        return [
+            'id' => $billet['id'],
 
-        $args['id'] = $billet['id'];
+            'url' => $billet['url'],
 
-        $args['url'] = $billet['url'];
+            'bonus' => $billet['bonus'],
 
-        $args['bonus'] = $billet['bonus'];
+            'play' => self::get_play( $billet ),
 
-        $args['play'] = self::get_play( $billet );
-
-        return $args;
+            'filter' => ( !empty( $billet['filter'] ) ? $billet['filter'] : [] ),
+        ];
     }
 
     public static function render( $billet )

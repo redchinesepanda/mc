@@ -35,8 +35,8 @@ class BilletBonus
 
         $enabled = true;
 
-        if ( !empty( $billet['compilation'] ) ) {
-            $enabled = $billet['compilation']['bonus'];
+        if ( !empty( $billet['filter'] ) ) {
+            $enabled = $billet['filter']['bonus'];
         }
 
         // $message['enabled'] = ( $enabled ? 'true' : 'false' );

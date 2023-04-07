@@ -21,8 +21,8 @@ class BilletMobile
 
         $enabled = true;
 
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            $enabled = $billet['compilation']['mobile'];
+        if ( array_key_exists( 'filter', $billet ) ) {
+            $enabled = $billet['filter']['mobile'];
         }
 
         if ( $enabled ) {

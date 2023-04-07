@@ -21,8 +21,8 @@ class BilletProfit
 
         $enabled = true;
 
-        if ( array_key_exists( 'compilation', $billet ) ) {
-            $enabled = $billet['compilation']['profit'];
+        if ( array_key_exists( 'filter', $billet ) ) {
+            $enabled = $billet['filter']['profit'];
         }
 
         if ( $enabled ) {

@@ -5,7 +5,7 @@
         }
     </style>
 <?php endif; ?>
-<div class="legal-compilation <?php echo $args['achievement']; ?> compilation-<?php echo $args['settings']['id']; ?>">
+<div class="legal-compilation compilation-<?php echo $args['settings']['id']; ?>">
     <?php CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION_ABOVE ); ?>
     <?php if ( !empty( $args['settings']['title']['text'] ) ) : ?>
         <div class="compilation-title">

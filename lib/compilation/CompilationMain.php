@@ -21,16 +21,18 @@ class CompilationMain
         }
     }
 
-    public static function get_billets( $posts, $compilation )
+    public static function get_billets( $posts, $filter )
     {
         $data = [];
 
         foreach ( $posts as $index => $post ) {
-            $data[$index]['index'] = $index + 1;
+            $data[] = [
+                'index' => ( $index + 1 ),
 
-            $data[$index]['id'] = $post->ID;
+                'id' => $post->ID,
             
-            $data[$index]['compilation'] = $compilation;
+                'filter' => $filter,
+            ];
         }
 
         return $data;
@@ -73,11 +75,9 @@ class CompilationMain
         return $id;
     }
 
-    public static function get_compilation( $id )
+    public static function get_filter( $id )
     {
         return [
-            'id' => $id,
-
             'review' => [
                 'label' => get_field( 'compilation-review-label', $id ),
 
@@ -103,6 +103,8 @@ class CompilationMain
             'profit' => get_field( 'billet-profit-enabled', $id ),
 
             'spoiler' => get_field( 'billet-spoiler-enabled', $id ),
+
+            'description' => get_field( 'billet-description-enabled', $id ),
         ];
     }
 
@@ -131,11 +133,9 @@ class CompilationMain
         ];
 
         return [
-            'billets' => self::get_billets( get_posts( $args ), self::get_compilation( $id ) ),
+            'billets' => self::get_billets( get_posts( $args ), self::get_filter( $id ) ),
 
             'settings' => self::get_settings( $id ),
-
-            'achievement' => 'to_do',
         ];
     }
 

@@ -14,8 +14,8 @@ class BilletList
             foreach( $parts as $key => $part ) {
                 $display = true;
 
-                if ( !empty( $billet['compilation'] ) ) {
-                    $display = in_array( $part['billet-list-part-icon'], $billet['compilation']['list'] );
+                if ( !empty( $billet['filter'] ) ) {
+                    $display = in_array( $part['billet-list-part-icon'], $billet['filter']['list'] );
                 }
 
                 if ( $display ) {
