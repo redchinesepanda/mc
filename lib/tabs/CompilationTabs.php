@@ -77,8 +77,15 @@ class CompilationTabs
     }
 
     public static function render()
-    { 
-        load_template( self::TEMPLATE, false, self::get() );
+    {
+        $args = self::get();
+
+        if ( count( $args['tabs'] == 1 ) ) {
+            $tab = array_shift( $args['tabs'] );
+            load_template( CompilationMain::TEMPLATE, false, array_shift( $tab['compilations'] ) );
+        } esle {
+            load_template( self::TEMPLATE, false, $args );
+        }
     }
 
     public static function debug( $message )
