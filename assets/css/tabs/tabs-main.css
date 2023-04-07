@@ -24,7 +24,7 @@
 }
 
 .legal-tabs .legal-tab-title {
-    padding: 3px 15px;
+    padding: 10px 20px 10px 44px;
 }
 
 /* Tabs Background */
@@ -38,6 +38,9 @@
 }
 
 .legal-tabs .legal-tab-title {
+    background-position: left 36px center;
+    background-repeat: no-repeat;
+    background-size: auto;
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0 0 10px #e4e4e4;
