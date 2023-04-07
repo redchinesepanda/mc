@@ -46,7 +46,9 @@ class CompilationTabs
 
                     'compilations' => $tab[ self::TAB_COMPILATIONS ],
 
-                    'class' => ( $key == 0 ? 'legal-active' : '' )
+                    'active' => ( $key == 0 ? 'legal-active' : '' ),
+
+                    'class' => 'tab-' . $key,
                 ];
             }
         } else {
