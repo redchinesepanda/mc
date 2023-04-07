@@ -61,7 +61,7 @@ class BilletMain
 
         // Текущая локаль
 
-        $locale = ( apply_filters( 'wpml_post_language_details', NULL, $billet['id'] ) )['locale'];
+        $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )['locale'];
 
         // Oops если есть
 
