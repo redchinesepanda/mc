@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-.legal-tabs .compilation-all {
+.legal-tabs .legal-tabs-link {
     display: block;
 }
 
@@ -36,7 +36,7 @@
     padding-right: 20px;
 }
 
-.legal-tabs .compilation-all {
+.legal-tabs .legal-tabs-link {
     padding-left: 50px;
     margin-top: 20px;
     margin-bottom: 50px;
@@ -61,7 +61,7 @@
     box-shadow: 0 0 10px #e4e4e4;
 }
 
-.legal-tabs .compilation-all {
+.legal-tabs .legal-tabs-link {
     background-image: url( '../../img/compilation/compilation-all.svg' );
     background-position: left 15px center;
     background-repeat: no-repeat;
@@ -99,7 +99,7 @@
     line-height: 28px;
 }
 
-.legal-tabs .compilation-all {
+.legal-tabs .legal-tabs-link {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;

@@ -34,7 +34,7 @@
         <?php echo $args[ 'empty' ]; ?>
     <?php endif; ?>
     <?php if ( !empty( $args['link']['text'] ) ) : ?>
-        <a class="compilation-all" href="<?php echo $args['link']['url']; ?>">
+        <a class="legal-tabs-link" href="<?php echo $args['link']['url']; ?>">
             <?php echo $args['link']['text']; ?>
         </a>
     <?php endif; ?>
