@@ -16,7 +16,7 @@ class BilletTitle
 
         $args['achievement'] = ( !empty( $billet['filter']['achievement'] ) ? $billet['filter']['achievement'] : BilletAchievement::TYPE_IMAGE );
 
-        $args['rating'] = ( !$billet['filter']['rating'] ? get_field( 'billet-title-rating', $billet['id'] ) : 0 );
+        $args['rating'] = ( !empty( $billet['filter']['rating'] ) ? get_field( 'billet-title-rating', $billet['id'] ) : 0 );
 
         $args['label'] = get_field( 'billet-title-text', $billet['id'] );
 
