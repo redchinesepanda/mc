@@ -19,6 +19,10 @@ class ACFCompilation
             $choices[ $language['language_code'] ] = $language['native_name'] . ' [' . $language['language_code'] . ']';
         }
 
+        self::debug( [
+            'choices' => $choices,
+        ] );
+
         return $choices;
     }
 
