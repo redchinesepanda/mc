@@ -135,11 +135,13 @@ class BilletMain
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $filter_description = true;
+        // $filter_description = true;
 
-        if ( !empty( $args[ 'filter' ] ) ) {
-            $filter_description = $args[ 'filter' ][ 'description' ];
-        }
+        // if ( !empty( $args[ 'filter' ] ) ) {
+        //     $filter_description = $args[ 'filter' ][ 'description' ];
+        // }
+
+        $filter_description = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ][ 'description' ] : true );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
