@@ -9,6 +9,10 @@
     display: none;
 }
 
+.legal-tabs .legal-tab-title {
+    cursor: pointer;
+}
+
 /* Tabs Position */
 
 .legal-tabs .legal-tabs-title {
