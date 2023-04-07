@@ -78,6 +78,10 @@ class CompilationTabs
 
     public static function render()
     {
+        self::debug( [
+            'args' => $args,
+        ] );
+
         $args = self::get();
 
         if ( count( $args['tabs'] == 1 ) ) {
