@@ -120,9 +120,11 @@ class CompilationMain
 
     public static function lang( $query )
     {
-        $id = self::check_id( 0 );
+        // $id = self::check_id( 0 );
 
-        $lang = get_field( 'compilation-lang', $id );
+        // $lang = get_field( 'compilation-lang', $id );
+
+        $lang = 'by';
 
         self::debug( [
             'query' => $query,
