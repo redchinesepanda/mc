@@ -47,12 +47,16 @@
 
 /* Tabs Background */
 
+.legal-tabs .legal-tab-title {
+    background-color: #FFFFFF;
+}
+
 .legal-tabs .legal-tab-title.legal-active {
-    background-color: #007bff;
+    border: 1px solid #007bff;
 }
 
 .legal-tabs .legal-tab-title:not( .legal-active ) {
-    background-color: #FFFFFF;
+    border: 1px solid transparent;
 }
 
 .legal-tabs .legal-tab-title {
