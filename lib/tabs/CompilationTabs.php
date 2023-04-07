@@ -51,9 +51,9 @@ class CompilationTabs
             ],
         ];
 
-        $tabs = get_field( self::TABS_ITEMS, $post->ID );
-
         $args['tabs'] = [];
+
+        $tabs = get_field( self::TABS_ITEMS, $post->ID );
 
         if( $tabs ) {
             foreach( $tabs as $key => $tab ) {
@@ -62,7 +62,7 @@ class CompilationTabs
 
                     'image' => $tab[ self::TAB_IMAGE ],
 
-                    'compilations' => $tab[ self::TAB_COMPILATIONS ],
+                    'compilations' => ( !empty( $tab[ self::TAB_COMPILATIONS ) ? $tab[ self::TAB_COMPILATIONS ] : [] ] ),
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 
