@@ -20,7 +20,6 @@ require_once( 'lib/tabs/CompilationTabs.php' );
         <?php CompilationTabs::print(); ?>
     </head>
     <body class="legal-tabs">
-        <h1>Tabs</h1>
         <?php CompilationTabs::render(); ?>
     </body>
 </html>
