@@ -22,6 +22,8 @@ require_once( 'lib/admin/AdminMain.php' );
 
 require_once( 'lib/tools/ToolsMain.php' );
 
+require_once( 'lib/compilation/CompilationMain.php' );
+
 WPMLMain::register();
 
 ACFMain::register();
@@ -29,5 +31,7 @@ ACFMain::register();
 AdminMain::register();
 
 ToolsMain::register();
+
+CompilationMain::register();
 
 ?>

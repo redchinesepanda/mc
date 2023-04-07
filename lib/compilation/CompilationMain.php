@@ -21,6 +21,13 @@ class CompilationMain
         }
     }
 
+    public static function register()
+    {
+        $handler = new self();
+
+        add_action( 'pre_get_posts', [ $handler, 'lang' ] );
+    }
+
     public static function get_billets( $posts, $filter )
     {
         $data = [];
@@ -108,6 +115,17 @@ class CompilationMain
 
             'description' => get_field( 'billet-description-enabled', $id ),
         ];
+    }
+
+    public static function lang( $query )
+    {
+        $id = self::check_id( $id );
+
+        $lang = get_field( 'compilation-lang', $id );
+
+        if ( $lang ) {
+            do_action( 'wpml_switch_language', $lang );
+        }
     }
 
     public static function get( $id )
