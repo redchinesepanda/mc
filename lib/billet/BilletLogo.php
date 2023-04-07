@@ -10,13 +10,13 @@ class BilletLogo
 
     public static function get( $billet )
     {
-        // $message['billet'] = $billet;
-
-        $args['order'] = ( !empty( $billet['filter']['order'] ) ? $billet['filter']['order'] : self::ORDER_VALUE );
-
         $args['review'] = BilletMain::href( $billet['url']['review'] );
 
         $args['review']['label'] = ( !empty( $billet['filter']['review']['label'] ) ? $billet['filter']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN ) );
+
+        $args['index'] = $billet['index'];
+
+        $args['order'] = ( !empty( $billet['filter']['order'] ) ? $billet['filter']['order'] : self::ORDER_VALUE );
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 

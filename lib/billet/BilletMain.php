@@ -131,9 +131,9 @@ class BilletMain
 
     private static function get( $args )
     {
-        self::debug( [
-            'args' => $args,
-        ] );
+        // self::debug( [
+        //     'args' => $args,
+        // ] );
 
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 

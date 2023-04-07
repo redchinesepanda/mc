@@ -1,5 +1,5 @@
 <?php if ( $args['order'] == BilletLogo::ORDER_VALUE ) : ?>
-    <div class="billet-order">#1</div>
+    <div class="billet-order"><?php echo $args['index']; ?></div>
 <?php endif; ?>
 <a class="legal-logo <?php echo $args['logo']['class']; ?>" href="<?php echo $args['logo']['href']; ?>" rel="nofollow">
     <img src="<?php echo $args['logo']['src'] ?>" alt="billet logo" />
