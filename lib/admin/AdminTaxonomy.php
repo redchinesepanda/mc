@@ -5,7 +5,9 @@ class AdminTaxonomy
     const TAXONOMY = [
         'page' => 'page_type',
 
-        'legal_billet' => 'billet_type'
+        'legal_billet' => 'billet_type',
+
+        'legal_billet' => 'billet_feature',
     ];
 
     public static function register()
