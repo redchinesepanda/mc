@@ -41,9 +41,9 @@ class CompilationTabs
             'text' => get_field( self::TABS_TEXT, $post->ID ),
             
             'link' => [
-                'text' => get_field( self::TABS_LINK_TEXT, $id ),
+                'text' => get_field( self::TABS_LINK_TEXT, $post->ID ),
 
-                'url' => get_field( self::TABS_LINK_URL, $id ),
+                'url' => get_field( self::TABS_LINK_URL, $post->ID ),
             ],
         ];
 
