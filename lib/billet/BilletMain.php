@@ -133,9 +133,9 @@ class BilletMain
     {
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
-        $filter = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ] : [] ) );
+        $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $filter_description = ( !empty( $args[ 'filter' ] ? $args[ 'filter' ][ 'description' ] : true ) );
+        $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
