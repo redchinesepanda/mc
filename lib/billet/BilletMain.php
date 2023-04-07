@@ -137,7 +137,7 @@ class BilletMain
 
         $filter_description = true;
 
-        if ( !empty( $args[ 'filter' ] ) {
+        if ( !empty( $args[ 'filter' ] ) ) {
             $filter_description = $args[ 'filter' ][ 'description' ];
         }
 
