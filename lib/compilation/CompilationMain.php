@@ -78,7 +78,8 @@ class CompilationMain
         if ( $id == 0 ) {
             $post = get_post();
     
-            return $post->ID;
+            if ( $post )
+                return $post->ID;
         }
 
         return $id;
