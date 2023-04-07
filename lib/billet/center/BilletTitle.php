@@ -20,7 +20,7 @@ class BilletTitle
 
         $args['label'] = get_field( 'billet-title-text', $billet['id'] );
 
-        $args;
+        return $args;
     }
 
     public static function render( $billet )
