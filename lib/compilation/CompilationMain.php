@@ -133,7 +133,7 @@ class CompilationMain
         ] );
 
         if ( $lang ) {
-            do_action( 'wpml_switch_language', $lang );
+            // do_action( 'wpml_switch_language', $lang );
         }
     }
 
