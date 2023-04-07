@@ -23,6 +23,8 @@ class CompilationTabs
 
     const TABS_ITEMS = 'tabs-items';
 
+    const TABS_DESCRIPTION = 'tabs-description-text';
+
     const TABS_LINK_TEXT = 'tabs-link-text';
 
     const TABS_LINK_URL = 'tabs-link-url';
@@ -39,6 +41,8 @@ class CompilationTabs
 
         $args = [
             'text' => get_field( self::TABS_TEXT, $post->ID ),
+
+            'description' => get_field( self::TABS_DESCRIPTION, $post->ID ),
             
             'link' => [
                 'text' => get_field( self::TABS_LINK_TEXT, $post->ID ),
