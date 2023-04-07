@@ -79,14 +79,16 @@ class CompilationTabs
     public static function render()
     {
         $args = self::get();
-        
-        self::debug( [
-            'args' => $args,
-        ] );
 
         if ( count( $args['tabs'] ) == 1 ) {
             $tab = array_shift( $args['tabs'] );
-            load_template( CompilationMain::TEMPLATE, false, array_shift( $tab['compilations'] ) );
+        
+            $compilation = array_shift( $tab['compilations'] );
+
+            self::debug( [
+                'compilation' => $compilation,
+            ] );
+            load_template( CompilationMain::TEMPLATE, false, $compilation );
         } else {
             load_template( self::TEMPLATE, false, $args );
         }
