@@ -16,12 +16,8 @@ class ACFCompilation
         $languages = WPMLLangSwitcher::choises();
 
         foreach( $languages as $language ) {
-            $field['choises'][ $language['language_code'] ] = $language['native_name'] . ' [' . $language['language_code'] . ']';
+            $field['choices'][ $language['language_code'] ] = $language['native_name'] . ' [' . $language['language_code'] . ']';
         }
-
-        self::debug( [
-            'field' => $field,
-        ] );
 
         return $field;
     }
