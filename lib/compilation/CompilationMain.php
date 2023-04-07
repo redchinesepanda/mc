@@ -146,7 +146,7 @@ class CompilationMain
     {
         if ( !empty( $attention['text'] ) )
             if ( $position == $attention['position'] )
-                load_template( self::TEMPLATE_ATTENTION, false, self::get( $id ) );
+                load_template( self::TEMPLATE_ATTENTION, false, $attention );
     }
 
     public static function debug( $message )
