@@ -21,7 +21,7 @@ class BilletProfit
 
         $enabled = true;
 
-        if ( array_key_exists( 'filter', $billet ) ) {
+        if ( !empty( $billet[ 'filter' ] ) ) {
             $enabled = $billet['filter']['profit'];
         }
 
