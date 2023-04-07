@@ -127,7 +127,7 @@ class CompilationMain
 
                     'terms' => get_field( 'compilation-filter', $id ),
 
-                    'operator' => 'IN'
+                    'operator' => 'AND'
                 ]
             ]
         ];
