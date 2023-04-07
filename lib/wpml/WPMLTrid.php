@@ -44,7 +44,10 @@ class WPMLTrid
     public static function get_trid() {
         $post = get_post();
 
-        return apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );  
+        if ( !empty( $post ) )
+            return apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );
+
+        return 0;
     }
 
     public static function debug( $message )
