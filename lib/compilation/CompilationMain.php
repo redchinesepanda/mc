@@ -6,6 +6,8 @@ class CompilationMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php';
 
+    const TEMPLATE_ATTENTION = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php';
+
     const CSS = [
         'compilation-main' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
     ];
@@ -132,6 +134,19 @@ class CompilationMain
     public static function render( $id = 0 )
     { 
         load_template( self::TEMPLATE, false, self::get( $id ) );
+    }
+    
+    const POSITION_ABOVE = 'legal-above-title';
+
+    const POSITION_BELOW = 'legal-below-title';
+
+    const POSITION_BOTTOM = 'legal-below';
+
+    public static function render_attention( $attention, $position )
+    {
+        if ( !empty( $attention['text'] ) )
+            if ( $position == $attention['position'] )
+                load_template( self::TEMPLATE_ATTENTION, false, self::get( $id ) );
     }
 
     public static function debug( $message )
