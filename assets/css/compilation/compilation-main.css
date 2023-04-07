@@ -13,14 +13,18 @@
     margin-bottom: 30px;
 }
 
-.legal-compilation .compilation-attention {
+.legal-compilation .compilation-attention.legal-attention {
     padding: 10px 20px;
     margin: 20px 0px;
 }
 
+.legal-compilation .compilation-attention.legal-text {
+    margin-top: 15px;
+}
+
 /* Compilation Background */
 
-.legal-compilation .compilation-attention {
+.legal-compilation .compilation-attention.legal-attention {
     background-color: rgb(255, 94, 106);
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
@@ -36,12 +40,19 @@
     line-height: 40px;
 }
 
+.legal-compilation .compilation-attention.legal-attention {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.legal-compilation .compilation-attention {
+    color: rgb(59, 59, 59);
+}
+
 .legal-compilation .compilation-attention {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
-    text-align: center;
-    color: rgb(255, 255, 255);
 }
