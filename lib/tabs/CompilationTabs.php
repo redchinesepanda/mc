@@ -53,6 +53,8 @@ class CompilationTabs
 
         $tabs = get_field( self::TABS_ITEMS, $post->ID );
 
+        $args['tabs'] = [];
+
         if( $tabs ) {
             foreach( $tabs as $key => $tab ) {
                 $args['tabs'][] = [
