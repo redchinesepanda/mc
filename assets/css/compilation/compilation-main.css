@@ -8,7 +8,7 @@
 
 /* Compilation Position */
 
-.legal-compilation {
+.legal-compilation:not( :last-child ) {
     margin-bottom: 30px; 
 }
 
@@ -19,7 +19,6 @@
 
 .legal-compilation .compilation-attention.legal-attention {
     padding: 10px 20px;
-    margin: 20px 0px;
 }
 
 .legal-compilation .compilation-attention:not( :last-child ) {
