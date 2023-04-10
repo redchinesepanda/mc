@@ -18,7 +18,7 @@ class BilletProfit extends LegalDebug
         //     }
         // }
 
-        return '';
+        return 0;
     }
 
     public static function get_profit( $billet )
