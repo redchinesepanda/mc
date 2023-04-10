@@ -6,19 +6,19 @@ class BilletProfit extends LegalDebug
 
     public static function get_value( $billet )
     {
-        // $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : '' );
+        $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : '' );
 
-        // $items = get_field( 'billet-margin-items', $billet[ 'id' ] );
+        $items = get_field( 'billet-margin-items', $billet[ 'id' ] );
     
-        // if ( $items ) {
-        //     foreach( $items as $item ) {
-        //         if ( in_array( $item['feature'], $features ) ) {
-        //             return $item['value'];
-        //         }
-        //     }
-        // }
+        if ( $items ) {
+            foreach( $items as $item ) {
+                if ( in_array( $item['feature'], $features ) ) {
+                    return $item['value'];
+                }
+            }
+        }
 
-        return 0;
+        return '';
     }
 
     public static function get_profit( $billet )
