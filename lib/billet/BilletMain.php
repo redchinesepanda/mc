@@ -14,7 +14,7 @@ require_once( 'right/BilletRight.php' );
 
 require_once( 'BilletSpoiler.php' );
 
-class BilletMain
+class BilletMain extends LegalDebug
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php';
 
@@ -206,11 +206,6 @@ class BilletMain
     public static function render( $args = [] )
     { 
         load_template( self::TEMPLATE, false, self::get( $args ) );
-    }
-
-    public static function debug( $message )
-    {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
