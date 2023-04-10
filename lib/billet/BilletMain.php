@@ -67,6 +67,10 @@ class BilletMain
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
+        self::debug( [
+            'referal_url' => $referal_url,
+        ] );
+
         return [
             // Логотип
 
