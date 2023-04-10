@@ -85,6 +85,8 @@ class CompilationMain
         return $id;
     }
 
+    const COMPILATION_FILTER = 'compilation-filter';
+
     public static function get_filter( $id )
     {
         return [
@@ -98,7 +100,7 @@ class CompilationMain
                 'label' => get_field( 'compilation-play-label', $id ),
             ],
 
-            'features' => get_field( 'compilation-filter', $id ),
+            'features' => get_field( self::COMPILATION_FILTER, $id ),
 
             'order' => get_field( 'billet-order-type', $id ),
 
@@ -168,7 +170,7 @@ class CompilationMain
 
                     'field' => 'term_id',
 
-                    'terms' => get_field( 'compilation-filter', $id ),
+                    'terms' => get_field( self::COMPILATION_FILTER, $id ),
 
                     'operator' => get_field( 'compilation-operator', $id ),
                 ]
