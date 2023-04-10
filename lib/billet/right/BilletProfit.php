@@ -30,7 +30,7 @@ class BilletProfit extends LegalDebug
 
             // 'value' => get_field( 'billet-play-profit-value', $billet[ 'id' ] ),
             
-            'value' => get_value( $billet ),
+            'value' => self::get_value( $billet ),
         ];
     }
 
