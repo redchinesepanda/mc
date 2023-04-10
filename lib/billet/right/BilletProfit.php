@@ -12,7 +12,7 @@ class BilletProfit extends LegalDebug
 
     public static function get_value( $billet )
     {
-        $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : '' );
+        $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : [ '', ] );
 
         self::debug( [
             '$features' => $features,
