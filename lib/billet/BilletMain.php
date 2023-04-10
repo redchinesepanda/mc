@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'LegalDebug.php' );
+require_once( LegalMain::LEGAL_PATH . '/lib/LegalDebug.php' );
 
 require_once( 'BilletLogo.php' );
 
