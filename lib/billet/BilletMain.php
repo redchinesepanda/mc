@@ -151,6 +151,10 @@ class BilletMain
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
+        self::debug( [
+            'menu_order' => ( get_post( $id ) )->menu_order,
+        ] );
+
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
 
