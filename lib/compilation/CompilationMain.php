@@ -192,7 +192,7 @@ class CompilationMain
 
             'orderby' => 'meta_value_num',
 
-            'order' => 'DESC',
+            'order' => 'ASC',
 
             // 'meta_query' => [
             //     'relation' => 'OR',
