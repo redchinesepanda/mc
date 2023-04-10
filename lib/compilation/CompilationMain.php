@@ -98,7 +98,7 @@ class CompilationMain
                 'label' => get_field( 'compilation-play-label', $id ),
             ],
 
-            // 'features' => get_field( 'compilation-filter', $id ),
+            'features' => get_field( 'compilation-filter', $id ),
 
             'order' => get_field( 'billet-order-type', $id ),
 
