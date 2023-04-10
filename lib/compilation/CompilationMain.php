@@ -180,7 +180,15 @@ class CompilationMain
 
             // По рейтингу
 
-            'meta_key' => 'billet-title-rating',
+            // 'meta_key' => 'billet-title-rating',
+
+            // 'orderby' => 'meta_value_num',
+
+            // 'order' => 'DESC',
+
+            // По марже
+
+            'meta_key' => 'billet-play-profit-value',
 
             'orderby' => 'meta_value_num',
 
