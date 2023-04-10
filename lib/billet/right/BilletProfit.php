@@ -1,6 +1,6 @@
 <?php
 
-class BilletProfit
+class BilletProfit extends LegalDebug
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-profit.php';
 
@@ -11,10 +11,6 @@ class BilletProfit
         $args['label'] = __( 'Margin', ToolLoco::TEXTDOMAIN );
 
         $args['value'] = get_field( 'billet-play-profit-value', $id );
-
-        self::debug( [
-            'profit' => get_field( 'billet-play-profit-value', $id ),
-        ] );
 
         return $args;
     }
@@ -43,11 +39,6 @@ class BilletProfit
         if ( !empty( $args ) ) {
             load_template( self::TEMPLATE, false, $args );
         }
-    }
-
-    public static function debug( $message )
-    {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 

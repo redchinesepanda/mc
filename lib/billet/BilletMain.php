@@ -155,6 +155,8 @@ class BilletMain
 
         self::debug( [
             'menu_order' => ( get_post( $id ) )->menu_order,
+
+            'profit' => get_field( 'billet-play-profit-value', $id ),
         ] );
 
         return [
