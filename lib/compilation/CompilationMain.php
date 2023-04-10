@@ -170,7 +170,9 @@ class CompilationMain
 
                     'operator' => get_field( 'compilation-operator', $id ),
                 ]
-            ]
+            ],
+            
+            'orderby' => 'menu_order',
         ];
 
         $posts = get_posts( $args );
