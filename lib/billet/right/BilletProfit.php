@@ -12,6 +12,10 @@ class BilletProfit
 
         $args['value'] = get_field( 'billet-play-profit-value', $id );
 
+        self::debug( [
+            'profit' => get_field( 'billet-play-profit-value', $id ),
+        ] );
+
         return $args;
     }
 

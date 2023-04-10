@@ -20,6 +20,10 @@ class BilletTitle
 
         $args['label'] = get_field( 'billet-title-text', $billet['id'] );
 
+        self::debug( [
+            'rating' => get_field( 'billet-title-rating', $billet['id'] ),
+        ] );
+
         return $args;
     }
 
