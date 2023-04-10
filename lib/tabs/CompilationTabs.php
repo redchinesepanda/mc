@@ -66,7 +66,7 @@ class CompilationTabs
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 
-                    'class' => ( !empty( $tab[ self::TAB_IMAGE ] ) ? 'tab-' . $key : '' ),
+                    'class' => ( !empty( $tab[ self::TAB_IMAGE ] ) ? 'tab-image-' . $key : '' ),
                 ];
             }
         } else {
