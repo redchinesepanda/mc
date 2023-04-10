@@ -1,6 +1,6 @@
 <?php
 
-class BilletTitle
+class BilletTitle extends Debug
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php';
 
@@ -30,11 +30,6 @@ class BilletTitle
     public static function render( $billet )
     {
         load_template( self::TEMPLATE, false, self::get( $billet ) );
-    }
-
-    public static function debug( $message )
-    {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 

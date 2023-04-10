@@ -10,6 +10,8 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [ $parent_style ], wp_get_theme()->get( 'Version' ) );
 } );
 
+require_once( 'lib/Debug.php' );
+
 require_once( 'lib/LegalMain.php' );
 
 require_once( 'lib/oops/OopsMain.php' );
