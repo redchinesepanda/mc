@@ -14,10 +14,6 @@ class BilletProfit extends LegalDebug
     {
         $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : [ '', ] );
 
-        self::debug( [
-            '$features' => $features,
-        ] );
-
         $items = get_field( self::PROFIT_ITEMS, $billet[ 'id' ] );
     
         if ( $items ) {
