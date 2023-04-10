@@ -4,15 +4,34 @@ class BilletProfit extends LegalDebug
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-profit.php';
 
-    public static function get_profit( $id )
+    public static function get_value( $billet )
     {
-        $args['class'] = get_field( 'billet-play-profit-type', $id );
+        $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : '' );
 
-        $args['label'] = __( 'Margin', ToolLoco::TEXTDOMAIN );
+        $items = get_field( 'billet-margin-items', $billet[ 'id' ] );
+    
+        if ( $items ) {
+            foreach( $items as $item ) {
+                if ( in_array( $item['feature'], $features ) ) {
+                    return $item['value'];
+                }
+            }
+        }
 
-        $args['value'] = get_field( 'billet-play-profit-value', $id );
+        return '';
+    }
 
-        return $args;
+    public static function get_profit( $billet )
+    {
+        return [
+            'class' => get_field( 'billet-play-profit-type', $billet[ 'id' ] ),
+
+            'label' => __( 'Margin', ToolLoco::TEXTDOMAIN ),
+
+            // 'value' => get_field( 'billet-play-profit-value', $billet[ 'id' ] ),
+            
+            'value' => get_value( $billet ),
+        ];
     }
 
     public static function get( $billet )

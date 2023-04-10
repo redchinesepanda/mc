@@ -98,6 +98,8 @@ class CompilationMain
                 'label' => get_field( 'compilation-play-label', $id ),
             ],
 
+            'features' => get_field( 'compilation-filter', $id ),
+
             'order' => get_field( 'billet-order-type', $id ),
 
             'rating' => get_field( 'billet-rating-enabled', $id ),
@@ -174,9 +176,9 @@ class CompilationMain
 
             // По порядку из гуглдока
 
-            // 'orderby' => 'menu_order',
+            'orderby' => 'menu_order',
 
-            // 'order' => 'ASC',
+            'order' => 'ASC',
 
             // По рейтингу
 
@@ -188,35 +190,11 @@ class CompilationMain
 
             // По марже
 
-            'meta_key' => 'billet-play-profit-value',
+            // 'meta_key' => 'billet-play-profit-value',
 
-            'orderby' => 'meta_value_num',
+            // 'orderby' => 'meta_value_num',
 
-            'order' => 'ASC',
-
-            // 'meta_query' => [
-            //     'relation' => 'OR',
-
-            //     'legal_referal_not_empty' => [
-            //         'key' => 'billet-referal',
-            //         'value' => '',
-            //         'compare' => '!=',
-            //     ],
-
-            //     'legal_referal_empty' => [
-            //         'key' => 'billet-referal',
-            //         'value' => '',
-            //         'compare' => '=',
-            //     ],
-            // ],
-
-            // 'orderby' => [
-            //     'legal_referal_not_empty' => 'DESC',
-
-            //     'legal_referal_empty' => 'DESC',
-
-            //     'menu_order' => 'ASC',
-            // ],
+            // 'order' => 'ASC',
         ];
 
         $posts = get_posts( $args );
