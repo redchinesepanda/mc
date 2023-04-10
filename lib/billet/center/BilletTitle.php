@@ -1,6 +1,6 @@
 <?php
 
-class BilletTitle extends Debug
+class BilletTitle extends LegalDebug
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php';
 
