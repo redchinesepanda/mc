@@ -172,33 +172,33 @@ class CompilationMain
                 ]
             ],
 
-            // 'orderby' => 'menu_order',
+            'orderby' => 'menu_order',
 
-            // 'order' => 'ASC',
+            'order' => 'ASC',
 
-            'meta_query' => [
-                'relation' => 'OR',
-                
-                'legal_referal_not_empty' => [
-                    'key' => 'billet-referal',
-                    'value' => '',
-                    'compare' => '!=',
-                ],
+            // 'meta_query' => [
+            //     'relation' => 'OR',
 
-                'legal_referal_empty' => [
-                    'key' => 'billet-referal',
-                    'value' => '',
-                    'compare' => '=',
-                ],
-            ],
+            //     'legal_referal_not_empty' => [
+            //         'key' => 'billet-referal',
+            //         'value' => '',
+            //         'compare' => '!=',
+            //     ],
 
-            'orderby' => [
-                'legal_referal_not_empty' => 'DESC',
+            //     'legal_referal_empty' => [
+            //         'key' => 'billet-referal',
+            //         'value' => '',
+            //         'compare' => '=',
+            //     ],
+            // ],
 
-                'legal_referal_empty' => 'DESC',
+            // 'orderby' => [
+            //     'legal_referal_not_empty' => 'DESC',
 
-                'menu_order' => 'ASC',
-            ],
+            //     'legal_referal_empty' => 'DESC',
+
+            //     'menu_order' => 'ASC',
+            // ],
         ];
 
         $posts = get_posts( $args );
