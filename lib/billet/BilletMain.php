@@ -150,8 +150,8 @@ class BilletMain extends LegalDebug
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
         self::debug( [
-            'referal_url' => get_field( self::ACF_REFERAL, $id ),
-            
+            'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
+
             'menu_order' => ( get_post( $id ) )->menu_order,
 
             'rating' => get_field( 'billet-title-rating', $id ),
