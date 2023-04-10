@@ -156,6 +156,8 @@ class BilletMain extends LegalDebug
         self::debug( [
             'menu_order' => ( get_post( $id ) )->menu_order,
 
+            'rating' => get_field( 'billet-title-rating', $id ),
+
             'profit' => get_field( 'billet-play-profit-value', $id ),
         ] );
 
