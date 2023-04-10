@@ -45,7 +45,7 @@ class BilletProfit extends LegalDebug
         }
 
         if ( $enabled ) {
-            $args['profit'] = self::get_profit( $billet['id'] );
+            $args['profit'] = self::get_profit( $billet );
         }
 
         return $args;
