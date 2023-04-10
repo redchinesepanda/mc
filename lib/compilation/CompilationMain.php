@@ -177,15 +177,23 @@ class CompilationMain
             // 'order' => 'ASC',
 
             'meta_query' => [
-                'legal_referal' => [
+                'legal_referal_not_empty' => [
                     'key' => 'billet-referal',
-                    
-                    'compare' => 'EXISTS',
+                    'value' => '',
+                    'compare' => '!=',
+                ],
+                'legal_referal_empty' => [
+                    'key' => 'billet-referal',
+                    'value' => '',
+                    'compare' => '=',
                 ],
             ],
 
             'orderby' => [
-                'legal_referal' => 'DESC',
+                'legal_referal_not_empty' => 'DESC',
+
+                'legal_referal_empty' => 'DESC',
+
                 'menu_order' => 'ASC',
             ],
         ];
