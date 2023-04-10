@@ -172,9 +172,19 @@ class CompilationMain
                 ]
             ],
 
-            'orderby' => 'menu_order',
+            // По порядку из гуглдока
 
-            'order' => 'ASC',
+            // 'orderby' => 'menu_order',
+
+            // 'order' => 'ASC',
+
+            // По рейтингу
+
+            'meta_key' => 'billet-title-rating',
+
+            'orderby' => 'meta_value_num',
+
+            'order' => 'DESC',
 
             // 'meta_query' => [
             //     'relation' => 'OR',
