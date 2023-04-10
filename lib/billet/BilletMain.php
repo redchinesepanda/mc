@@ -69,10 +69,6 @@ class BilletMain extends LegalDebug
 
         $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
 
-        self::debug( [
-            'referal_url' => $referal_url,
-        ] );
-
         return [
             // Логотип
 
@@ -154,6 +150,8 @@ class BilletMain extends LegalDebug
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
         self::debug( [
+            'referal_url' => get_field( self::ACF_REFERAL, $id ),
+            
             'menu_order' => ( get_post( $id ) )->menu_order,
 
             'rating' => get_field( 'billet-title-rating', $id ),
