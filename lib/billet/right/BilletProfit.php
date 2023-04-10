@@ -44,6 +44,11 @@ class BilletProfit
             load_template( self::TEMPLATE, false, $args );
         }
     }
+
+    public static function debug( $message )
+    {
+        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
+    }
 }
 
 ?>
