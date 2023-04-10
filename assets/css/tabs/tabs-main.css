@@ -32,8 +32,11 @@
     padding-bottom: 20px;
 }
 
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title[class*="tab"] {
     padding-left: 44px;
+}
+.legal-tabs .legal-tab-title {
+    padding-left: 20px;
     padding-right: 20px;
 }
 
@@ -59,10 +62,13 @@
     border: 1px solid transparent;
 }
 
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title[class*="tab"] {
     background-position: left 20px center;
     background-repeat: no-repeat;
     background-size: auto;
+}
+
+.legal-tabs .legal-tab-title {
     border: 1px solid transparent;
     border-radius: 20px;
     box-shadow: 0 0 10px #e4e4e4;
