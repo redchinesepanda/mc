@@ -172,9 +172,22 @@ class CompilationMain
                 ]
             ],
 
-            'orderby' => 'menu_order',
+            // 'orderby' => 'menu_order',
 
-            'order' => 'ASC',
+            // 'order' => 'ASC',
+
+            'meta_query' => [
+                'legal_referal' => [
+                    'key' => 'billet-referal',
+                    
+                    'compare' => 'EXISTS',
+                ],
+            ],
+
+            'orderby' => [
+                'legal_referal' => 'DESC',
+                'menu_order' => 'ASC',
+            ],
         ];
 
         $posts = get_posts( $args );
