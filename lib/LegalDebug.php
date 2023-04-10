@@ -1,6 +1,6 @@
 <?php
 
-class Debug
+class LegalDebug
 {
     public static function debug( $message )
     {
