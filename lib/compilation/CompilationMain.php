@@ -177,11 +177,14 @@ class CompilationMain
             // 'order' => 'ASC',
 
             'meta_query' => [
+                'relation' => 'OR',
+                
                 'legal_referal_not_empty' => [
                     'key' => 'billet-referal',
                     'value' => '',
                     'compare' => '!=',
                 ],
+
                 'legal_referal_empty' => [
                     'key' => 'billet-referal',
                     'value' => '',
