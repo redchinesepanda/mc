@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'LegalDebug.php' );
+
 require_once( 'BilletLogo.php' );
 
 require_once( 'center/BilletTitle.php' );
