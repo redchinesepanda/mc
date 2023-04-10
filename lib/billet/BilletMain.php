@@ -156,7 +156,7 @@ class BilletMain extends LegalDebug
 
             'rating' => get_field( 'billet-title-rating', $id ),
 
-            'profit' => get_field( 'billet-play-profit-value', $id ),
+            'profit' => get_field( 'billet-profit-items', $id ),
         ] );
 
         return [
