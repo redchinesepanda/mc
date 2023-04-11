@@ -51,7 +51,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $href ) ) {
             $link = [
-                'href' => $link,
+                'href' => $href,
 
                 'itemprop' => 'item',
             ];
