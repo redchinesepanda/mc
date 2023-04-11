@@ -19,7 +19,7 @@ class LegalBreadcrumbsMain
 
         // [legal-breadcrumbs]
 
-        add_shortcode( 'legal-breadcrumbs', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-breadcrumbs', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
