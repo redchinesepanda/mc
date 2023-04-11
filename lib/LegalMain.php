@@ -6,7 +6,7 @@ require_once( 'admin/AdminMain.php' );
 
 require_once( 'breadcrumbs/LegalBreadcrumbsMain.php' );
 
-require_once( 'compilation/CompilationMain.php' );
+// require_once( 'compilation/CompilationMain.php' );
 
 require_once( 'oops/OopsMain.php' );
 
@@ -31,7 +31,7 @@ class LegalMain {
 
 		LegalBreadcrumbsMain::register();
 
-		CompilationMain::register();
+		// CompilationMain::register();
 
 		ToolsMain::register();
 
