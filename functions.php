@@ -12,26 +12,6 @@ add_action( 'wp_enqueue_scripts', function () {
 
 require_once( 'lib/LegalMain.php' );
 
-require_once( 'lib/oops/OopsMain.php' );
-
-require_once( 'lib/wpml/WPMLMain.php' );
-
-require_once( 'lib/acf/ACFMain.php' );
-
-require_once( 'lib/admin/AdminMain.php' );
-
-require_once( 'lib/tools/ToolsMain.php' );
-
-require_once( 'lib/compilation/CompilationMain.php' );
-
-WPMLMain::register();
-
-ACFMain::register();
-
-AdminMain::register();
-
-ToolsMain::register();
-
-CompilationMain::register();
+LegalMain::register();
 
 ?>
