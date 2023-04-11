@@ -81,7 +81,7 @@ class LegalBreadcrumbsMain
         $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
-            if ( $post->post_parent && get_field( self::FIELD, $post->ID ) ) {
+            if ( $post->post_parent && !empty( get_field( self::FIELD, $post->ID ) ) ) {
 				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 
 				foreach ( $ancestors as $id ) {
