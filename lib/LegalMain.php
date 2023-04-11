@@ -1,18 +1,18 @@
 <?php
 
-require_once( 'lib/acf/ACFMain.php' );
+require_once( 'acf/ACFMain.php' );
 
-require_once( 'lib/admin/AdminMain.php' );
+require_once( 'admin/AdminMain.php' );
 
-require_once( 'lib/breadcrumbs/LegalBreadcrumbsMain.php' );
+require_once( 'breadcrumbs/LegalBreadcrumbsMain.php' );
 
-require_once( 'lib/compilation/CompilationMain.php' );
+require_once( 'compilation/CompilationMain.php' );
 
-require_once( 'lib/oops/OopsMain.php' );
+require_once( 'oops/OopsMain.php' );
 
-require_once( 'lib/tools/ToolsMain.php' );
+require_once( 'tools/ToolsMain.php' );
 
-require_once( 'lib/wpml/WPMLMain.php' );
+require_once( 'wpml/WPMLMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
