@@ -1,5 +1,5 @@
 <div class="legal-breadcrumbs">
-    <?php foreach( $args as $arg ) ) : ?>
+    <?php foreach( $args as $arg ) : ?>
         <div class="legal-breadcrumbs-item">
             <?php if( !empty( $arg[ 'link' ] ) ) : ?>
                 <a class="legal-item-title" itemprop="<?php echo $arg[ 'link' ]['itemprop']; ?>" href="<?php echo $arg[ 'href' ]['itemprop']; ?>">
