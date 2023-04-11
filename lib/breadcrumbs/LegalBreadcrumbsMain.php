@@ -1,6 +1,6 @@
 <?php
 
-class LegalBreadcrumbsMain
+class LegalBreadcrumbsMain extends Debug
 {
     const CSS = [
         'legal-breadcrumbs-main' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-main.css',
@@ -91,6 +91,10 @@ class LegalBreadcrumbsMain
 
             $items[] = self::get_item( $post->post_title, '', $index );
         }
+
+        self::debug( [
+            'items' => $items,
+        ] );
 
         return $items;
     }
