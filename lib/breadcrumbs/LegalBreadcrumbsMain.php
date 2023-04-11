@@ -38,6 +38,10 @@ class LegalBreadcrumbsMain extends LegalDebug
 			$homepage_url = get_option( 'home' );
 		}
 
+        self::debug( [
+            'homepage_url' => $homepage_url,
+        ] );
+
         return $homepage_url;
     }
 
