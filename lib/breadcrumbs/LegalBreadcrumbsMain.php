@@ -38,9 +38,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 			$homepage_url = get_option( 'home' );
 		}
 
-        self::debug( [
-            'homepage_url' => $homepage_url,
-        ] );
+        // self::debug( [
+        //     'homepage_url' => $homepage_url,
+        // ] );
 
         return $homepage_url;
     }
@@ -96,9 +96,9 @@ class LegalBreadcrumbsMain extends LegalDebug
             $items[] = self::get_item( $post->post_title, '', $index );
         }
 
-        self::debug( [
-            'items' => $items,
-        ] );
+        // self::debug( [
+        //     'items' => $items,
+        // ] );
 
         return $items;
     }

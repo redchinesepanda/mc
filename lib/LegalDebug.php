@@ -4,7 +4,10 @@ class LegalDebug
 {
     public static function debug( $message )
     {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
+        if( current_user_can( 'administrator' ) ) {
+            echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
+        }
+        
     }
 }
 
