@@ -55,7 +55,7 @@ class LegalBreadcrumbsMain
 
         return [
             'title' => [
-                'text' => get_the_title( $ancestor ),
+                'text' => $text,
 
                 'itemprop' => 'name',
             ],
