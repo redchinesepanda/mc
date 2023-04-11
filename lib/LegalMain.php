@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'Debug.php' );
+require_once( 'LegalDebug.php' );
 
 require_once( 'acf/ACFMain.php' );
 
