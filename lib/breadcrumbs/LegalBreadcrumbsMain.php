@@ -1,6 +1,6 @@
 <?php
 
-class LegalBreadcrumbsMain extends Debug
+class LegalBreadcrumbsMain extends LegalDebug
 {
     const CSS = [
         'legal-breadcrumbs-main' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-main.css',
