@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'Debug.php' );
+
 require_once( 'acf/ACFMain.php' );
 
 require_once( 'admin/AdminMain.php' );
