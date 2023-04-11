@@ -50,7 +50,7 @@ class LegalBreadcrumbsMain
                 'href' => $link,
 
                 'itemprop' => 'item',
-            ],
+            ];
         }
 
         return [
