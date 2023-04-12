@@ -32,9 +32,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $ancestor_id = get_field( self::FIELD_ANCESTOR, $id );
 
-        self::debug( [
-            'ancestor_id' => $ancestor_id,
-        ] );
+        // self::debug( [
+        //     'ancestor_id' => $ancestor_id,
+        // ] );
 
         if ( ! $post || empty( $ancestor_id ) || $ancestor_id == $id ) {
             return [];
@@ -120,20 +120,23 @@ class LegalBreadcrumbsMain extends LegalDebug
         $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
-            if ( $post->post_parent && empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
-				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-
-				foreach ( $ancestors as $id ) {
-                    $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
-				}
-			}
+            if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) {
+                if ( $post->post_parent ) ) {
+                    $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+    
+                    foreach ( $ancestors as $id ) {
+                        $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                    }
+                }
+                $items = array_merge( $items, self::get_ancestors( $post->ID ) );
+            }
 
             $items[] = self::get_item( $post->post_title, '', $index );
         }
 
-        self::debug( [
-            'ancestors' => self::get_ancestors( $post->ID ),
-        ] );
+        // self::debug( [
+        //     'ancestors' => self::get_ancestors( $post->ID ),
+        // ] );
 
         return $items;
     }
