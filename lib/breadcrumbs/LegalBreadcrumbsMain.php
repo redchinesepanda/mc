@@ -24,6 +24,37 @@ class LegalBreadcrumbsMain extends LegalDebug
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+    const FIELD_ANCESTOR = 'breadcrumbs-ancestor'
+
+    public static function get_ancestors( $id )
+    {
+        $post = get_post( $id );
+
+        $ancestor_id = get_field( self::FIELD_ANCESTOR, $id );
+
+        if ( ! $post || empty( $ancestor_id ) || $ancestor_id == $id ) {
+            return [];
+        }
+
+        $ancestors[] = $ancestor_id;
+
+        while ( $ancestor = get_post( $ancestor_id ) ) {
+            // Loop detection: If the ancestor has been seen before, break.
+
+            $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
+
+            if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
+                break;
+            }
+
+            $ancestor_id = $parent_id;
+
+            $ancestors[] = $parent_id;
+        }
+
+        return $ancestors;
+    }
+
     public static function get_home_url()
     {
         if ( get_option( 'show_on_front' ) === 'page' ) {
@@ -74,7 +105,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         ];
     }
 
-    const FIELD = 'breadcrumbs-hide-parent';
+    const FIELD_HIDE = 'breadcrumbs-hide-parent';
 
     public static function get()
     {
@@ -85,7 +116,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
-            if ( $post->post_parent && empty( get_field( self::FIELD, $post->ID ) ) ) {
+            if ( $post->post_parent && empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
 				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 
 				foreach ( $ancestors as $id ) {
@@ -96,9 +127,9 @@ class LegalBreadcrumbsMain extends LegalDebug
             $items[] = self::get_item( $post->post_title, '', $index );
         }
 
-        // self::debug( [
-        //     'items' => $items,
-        // ] );
+        self::debug( [
+            'ancestors' => self::get_ancestors( $post->ID ),
+        ] );
 
         return $items;
     }
