@@ -134,9 +134,9 @@ class LegalBreadcrumbsMain extends LegalDebug
             $items[] = self::get_item( $post->post_title, '', $index );
         }
 
-        // self::debug( [
-        //     'ancestors' => self::get_ancestors( $post->ID ),
-        // ] );
+        self::debug( [
+            'items' => $items,
+        ] );
 
         return $items;
     }
