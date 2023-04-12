@@ -121,7 +121,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
-                if ( $post->post_parent ) ) {
+                if ( $post->post_parent ) {
                     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
     
                     foreach ( $ancestors as $id ) {
