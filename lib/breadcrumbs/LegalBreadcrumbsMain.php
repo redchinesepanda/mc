@@ -120,7 +120,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
-            if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) {
+            if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
                 if ( $post->post_parent ) ) {
                     $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
     
