@@ -121,19 +121,19 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
-                if ( $post->post_parent ) {
-                    $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-    
-                    foreach ( $ancestors as $id ) {
-                        $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
-                    }
-                }
-                
                 $legal_ancestors = self::get_ancestors( $post->ID );
 
                 if ( !empty( $legal_ancestors ) ) {
                     foreach ( $legal_ancestors as $id ) {
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                    }
+                } else {
+                    if ( $post->post_parent ) {
+                        $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+        
+                        foreach ( $ancestors as $id ) {
+                            $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                        }
                     }
                 }
             }
