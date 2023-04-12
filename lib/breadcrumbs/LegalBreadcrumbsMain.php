@@ -24,7 +24,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    const FIELD_ANCESTOR = 'breadcrumbs-ancestor'
+    const FIELD_ANCESTOR = 'breadcrumbs-ancestor';
 
     public static function get_ancestors( $id )
     {
