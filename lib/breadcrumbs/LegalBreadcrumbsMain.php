@@ -128,7 +128,14 @@ class LegalBreadcrumbsMain extends LegalDebug
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                     }
                 }
-                $items = array_merge( $items, self::get_ancestors( $post->ID ) );
+                
+                $legal_ancestors = self::get_ancestors( $post->ID );
+
+                if ( !empty( $legal_ancestors ) ) {
+                    foreach ( $legal_ancestors as $id ) {
+                        $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                    }
+                }
             }
 
             $items[] = self::get_item( $post->post_title, '', $index );
