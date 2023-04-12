@@ -42,19 +42,19 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $ancestors[] = $ancestor_id;
 
-        // while ( $ancestor = get_post( $ancestor_id ) ) {
-        //     // Loop detection: If the ancestor has been seen before, break.
+        while ( $ancestor = get_post( $ancestor_id ) ) {
+            // Loop detection: If the ancestor has been seen before, break.
 
-        //     $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
+            $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
 
-        //     if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
-        //         break;
-        //     }
+            if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
+                break;
+            }
 
-        //     $ancestor_id = $parent_id;
+            $ancestor_id = $parent_id;
 
-        //     $ancestors[] = $parent_id;
-        // }
+            $ancestors[] = $parent_id;
+        }
 
         return $ancestors;
     }
