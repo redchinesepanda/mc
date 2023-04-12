@@ -21,13 +21,6 @@ class CompilationMain
         }
     }
 
-    public static function register()
-    {
-        // $handler = new self();
-
-        // add_action( 'pre_get_posts', [ $handler, 'lang' ] );
-    }
-
     public static function get_billets( $posts, $filter )
     {
         $data = [];
@@ -122,25 +115,6 @@ class CompilationMain
         ];
     }
 
-    public static function lang( $query )
-    {
-        // $id = self::check_id( 0 );
-
-        // $lang = get_field( 'compilation-lang', $id );
-
-        $lang = 'by';
-
-        // self::debug( [
-        //     'query' => $query,
-
-        //     'lang' => $lang,
-        // ] );
-
-        if ( $lang ) {
-            // do_action( 'wpml_switch_language', $lang );
-        }
-    }
-
     public static function get( $id )
     {
         $id = self::check_id( $id );
@@ -176,27 +150,9 @@ class CompilationMain
                 ]
             ],
 
-            // По порядку из гуглдока
-
             'orderby' => 'menu_order',
 
             'order' => 'ASC',
-
-            // По рейтингу
-
-            // 'meta_key' => 'billet-title-rating',
-
-            // 'orderby' => 'meta_value_num',
-
-            // 'order' => 'DESC',
-
-            // По марже
-
-            // 'meta_key' => 'billet-play-profit-value',
-
-            // 'orderby' => 'meta_value_num',
-
-            // 'order' => 'ASC',
         ];
 
         $posts = get_posts( $args );

@@ -8,8 +8,6 @@ require_once( 'admin/AdminMain.php' );
 
 require_once( 'breadcrumbs/LegalBreadcrumbsMain.php' );
 
-// require_once( 'compilation/CompilationMain.php' );
-
 require_once( 'oops/OopsMain.php' );
 
 require_once( 'tools/ToolsMain.php' );
@@ -32,8 +30,6 @@ class LegalMain {
 		AdminMain::register();
 
 		LegalBreadcrumbsMain::register();
-
-		// CompilationMain::register();
 
 		ToolsMain::register();
 
