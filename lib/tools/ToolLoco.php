@@ -7,7 +7,7 @@ class ToolLoco
     public static function register()
     {
         $handler = new self();
-
+        
         add_action( 'after_setup_theme', [ $handler, 'loco' ] );
     }
     
