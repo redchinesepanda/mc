@@ -18,7 +18,7 @@
 /* Review About Width and Height */
 
 .review-about .review-left {
-    width: 20%;
+    width: calc( 100% * 0.2 );
 }
 
 .review-about .review-center {
