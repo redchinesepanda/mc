@@ -22,6 +22,8 @@ class ReviewAbout
         add_shortcode( 'legal-about', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        LegalDebug::debug( [ 'function' => 'ReviewAbout::register' ] );
     }
 
     const FIELD = 'review-about';
