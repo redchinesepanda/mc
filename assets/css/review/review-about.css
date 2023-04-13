@@ -35,6 +35,14 @@
 
 /* Review About Position */
 
+.review-about .about-left {
+    margin-left: auto;
+}
+
+.review-about .about-left {
+    margin-right: auto;
+}
+
 .review-about .about-rating {
     padding-left: 34px;
 }
@@ -116,6 +124,7 @@
     font-weight: 600;
     line-height: 28.8px;
     text-transform: uppercase;
+    text-decoration: none;
     color: rgb(255, 255, 255);
 }
 
