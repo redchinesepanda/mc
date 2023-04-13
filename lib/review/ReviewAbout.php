@@ -42,9 +42,13 @@ class ReviewAbout
 
                 'background' => $group[ 'about-background' ],
                 
-                'rating' => $group[ 'about-rating' ],
+                'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
 
-                'afillate' => $group[ 'about-afillate' ],
+                'afillate' => [
+                    'href' => $group[ 'about-afillate' ],
+
+                    'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+                ],
             ];
         }
 
