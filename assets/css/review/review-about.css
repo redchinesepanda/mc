@@ -14,6 +14,10 @@
     justify-content: center;
 }
 
+.review-about .about-left {
+    align-items: center;
+}
+
 .review-about .legal-afillate {
     display: block;
 }
@@ -24,16 +28,20 @@
     width: calc( 1080px * 0.2 );
 }
 
+.review-about .about-logo {
+    width: 138px;
+    height: 45px;
+}
+
+.review-about .about-rating {
+    width: fit-content;
+}
+
 .review-about .about-center {
     width: calc( 1080px * 0.50 );
 }
 .review-about .about-right {
     width: calc( 1080px * 0.3 );
-}
-
-.review-about .about-logo {
-    width: 138px;
-    height: 45px;
 }
 
 /* Review About Position */
