@@ -88,7 +88,7 @@
 
 .review-about .legal-afillate {
     background-image: url( '../../img/review/review-bet-here.svg' );
-    background-position: right center;
+    background-position: right 22px center;
     background-repeat: no-repeat;
     background-size: auto;
     background-color: rgb(89, 151, 227);
@@ -145,6 +145,7 @@
     line-height: 28.8px;
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
     color: rgb(255, 255, 255);
 }
 
