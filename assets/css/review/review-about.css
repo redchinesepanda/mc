@@ -38,6 +38,10 @@
 
 /* Review About Position */
 
+.review-about {
+    padding: 10px 0px;
+}
+
 .review-about .about-left {
     margin-left: auto;
 }
