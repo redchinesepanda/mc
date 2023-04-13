@@ -17,14 +17,14 @@
 
 /* Review About Width and Height */
 
-.review-about .review-left {
+.review-about .about-left {
     width: calc( 100% * 0.2 );
 }
 
-.review-about .review-center {
+.review-about .about-center {
     width: 50%;
 }
-.review-about .review-right {
+.review-about .about-right {
     width: 30%;
 }
 
