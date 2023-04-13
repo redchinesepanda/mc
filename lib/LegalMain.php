@@ -33,6 +33,8 @@ class LegalMain {
 
 		LegalBreadcrumbsMain::register();
 
+		ReviewMain::register();
+
 		ToolsMain::register();
 
 		WPMLMain::register();
