@@ -39,6 +39,8 @@ class ReviewAbout
                 'description' => $group[ 'about-description' ],
                 
                 'logo' => $group[ 'about-logo' ],
+
+                'background' => $group[ 'about-background' ],
                 
                 'rating' => $group[ 'about-rating' ],
 
