@@ -46,12 +46,17 @@
     margin-left: auto;
 }
 
-.review-about .about-right {
-    margin-right: auto;
-}
-
 .review-about .about-rating {
     padding-left: 34px;
+}
+
+.review-about .about-center h1,
+.review-about .about-center h2 {
+    padding-bottom: 0px;
+}
+
+.review-about .about-right {
+    margin-right: auto;
 }
 
 .review-about .legal-afillate {
