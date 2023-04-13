@@ -1,0 +1,121 @@
+/* Review About Display */
+
+.review-about {
+    display: flex;
+    column-gap: 50px;
+}
+
+.review-about .review-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.review-about .legal-afillate {
+    display: block;
+}
+
+/* Review About Width and Height */
+
+.review-about .review-left {
+    width: 20%;
+}
+
+.review-about .review-center {
+    width: 50%;
+}
+.review-about .review-right {
+    width: 30%;
+}
+
+.review-about .about-logo {
+    width: 138px;
+    height: 45px;
+}
+
+/* Review About Position */
+
+.review-about .about-rating {
+    padding-left: 34px;
+}
+
+.review-about .legal-afillate {
+    padding: 7px 41px 7px 22px;
+}
+
+/* Review About Background */
+
+.review-about .about-logo {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.review-about .about-rating {
+    background-image: url( '../../img/review/review-rating.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.review-about .legal-afillate {
+    background-image: url( '../../img/review/review-bet-here.svg' );
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgb(89, 151, 227);
+    border-radius: 20px;
+    border: 1.6px solid rgb(255, 255, 255);
+}
+
+/* Review About Typography */
+
+.review-about .about-rating {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgb(255, 255, 255);
+}
+
+.review-about .about-center h1 {
+    font-family: "Source Sans Pro";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.4px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.review-about .about-center h3 {
+    font-family: "Source Sans Pro";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.review-about .about-center p {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.review-about .legal-afillate {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
