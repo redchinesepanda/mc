@@ -10,6 +10,8 @@ require_once( 'breadcrumbs/LegalBreadcrumbsMain.php' );
 
 require_once( 'oops/OopsMain.php' );
 
+require_once( 'review/ReviewMain.php' );
+
 require_once( 'tools/ToolsMain.php' );
 
 require_once( 'wpml/WPMLMain.php' );
