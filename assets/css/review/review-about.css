@@ -5,7 +5,9 @@
     column-gap: 50px;
 }
 
-.review-about .about-left {
+.review-about .about-left,
+.review-about .about-center,
+.review-about .about-right {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
