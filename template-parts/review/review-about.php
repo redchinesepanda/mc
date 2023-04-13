@@ -3,6 +3,10 @@
         .review-about {
             background-color: <?php echo $args['background']; ?>;
         }
+
+        .review-about .about-logo {
+            background-image: url( '<?php echo $args['logo']; ?>' );
+        }
     </style>
     <div class="review-about">
         <div class="about-left">
