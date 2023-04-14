@@ -28,9 +28,9 @@ class ReviewGroup
 
     public static function get()
     {
-        LegalDebug::debug( [
-            'YoastSEO' => YoastSEO(),
-        ] );
+        // LegalDebug::debug( [
+        //     'YoastSEO' => YoastSEO(),
+        // ] );
 
         $post = get_post();
 
