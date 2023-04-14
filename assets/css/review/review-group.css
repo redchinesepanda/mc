@@ -29,7 +29,7 @@
 
 /* Group Typography */
 
-.review-group .group-label {
+.review-group .group-item {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
@@ -38,10 +38,10 @@
     text-transform: uppercase;
 }
 
-.review-group span.group-label {
+.review-group span.group-item {
     color: rgb(59, 59, 59);
 }
 
-.review-group a.group-label {
+.review-group a.group-item {
     color: rgb(89, 151, 227);
 }
