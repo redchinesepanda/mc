@@ -40,7 +40,7 @@ class ReviewGroup
 
             'post_type' => 'legal_billet',
 
-            'suppress_filters' => get_field( 'compilation-locale', $id ),
+            'suppress_filters' => 0,
 
             'tax_query' => [
                 [
