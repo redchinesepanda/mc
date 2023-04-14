@@ -24,7 +24,7 @@ class ReviewGroup
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    const TAXONOMY = 'bookmaker-review';
+    const TAXONOMY = 'page_group';
 
     public static function get()
     {
