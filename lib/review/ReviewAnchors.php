@@ -23,17 +23,13 @@ class ReviewAnchors
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_filter( 'the_content', 'content', 1 );
+        add_filter( 'the_content', [ $handler, 'content' ], 1 );
     }
 
     const TERM = 'bookmaker-review';
 
     public static function content( $content )
     {
-        LegalDebug::debug( [
-            'has_term' => has_term( self::TERM, 'page_type' ),
-        ] );
-
         if ( has_term( self::TERM, 'page_type' ) ) {
             return self::target( $content );
         }
