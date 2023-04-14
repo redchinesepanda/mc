@@ -1,8 +1,8 @@
 /* Review Position */
 
 .tcb-post-content h2 {
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 30px !important;
+    margin-bottom: 20px !important;
 }
 
 .tcb-post-content table {
