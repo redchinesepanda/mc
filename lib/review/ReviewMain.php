@@ -2,6 +2,8 @@
 
 require_once( 'ReviewAbout.php' );
 
+require_once( 'ReviewAnchors.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -22,6 +24,8 @@ class ReviewMain
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         ReviewAbout::register();
+
+        ReviewAnchors::register();
     }
 }
 
