@@ -58,6 +58,19 @@ class ReviewAnchors
 
     // const FIELD = 'review-anchors';
 
+    const FIELD = 'review-about';
+
+    public static function title()
+    {
+        $group = get_field( self::FIELD );
+        
+        if( $group ) {
+            return $group[ 'about-title' ];
+        }
+
+        return get_the_title();
+    }
+
     public static function get()
     {
         $dom = new DomDocument();
@@ -66,7 +79,7 @@ class ReviewAnchors
 
         $items = [];
 
-        $title = get_the_title() . ' ';
+        $title = self::title() . ' ';
 
         foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
             $items[] = [
