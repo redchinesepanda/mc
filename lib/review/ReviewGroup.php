@@ -19,7 +19,7 @@ class ReviewGroup
 
         // [legal-group]
 
-        // add_shortcode( 'legal-group', [ $handler, 'render' ] );
+        add_shortcode( 'legal-group', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
@@ -37,45 +37,45 @@ class ReviewGroup
         if ( empty( $post ) )
             return [];
 
-        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
+        // $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
 
-        $posts = get_posts( [
-            'numberposts' => -1,
+        // $posts = get_posts( [
+        //     'numberposts' => -1,
 
-            'post_type' => 'legal_billet',
+        //     'post_type' => 'legal_billet',
 
-            'suppress_filters' => get_field( 'compilation-locale', $id ),
+        //     'suppress_filters' => get_field( 'compilation-locale', $id ),
 
-            'tax_query' => [
-                [
-                    'taxonomy' => self::TAXONOMY,
+        //     'tax_query' => [
+        //         [
+        //             'taxonomy' => self::TAXONOMY,
 
-                    'field' => 'term_id',
+        //             'field' => 'term_id',
 
-                    'terms' => $terms,
+        //             'terms' => $terms,
 
-                    'operator' => 'IN',
-                ]
-            ],
+        //             'operator' => 'IN',
+        //         ]
+        //     ],
 
-            'orderby' => 'menu_order',
+        //     'orderby' => 'menu_order',
 
-            'order' => 'ASC',
-        ] );
+        //     'order' => 'ASC',
+        // ] );
 
-        if ( !empty( $posts ) ) {
-            foreach ( $posts as $post ) {
-                $items[] = [
-                    'label' => $post->post_title,
+        // if ( !empty( $posts ) ) {
+        //     foreach ( $posts as $post ) {
+        //         $items[] = [
+        //             'label' => $post->post_title,
     
-                    'href' => get_post_permalink( $post->ID ),
-                ];
-            }
+        //             'href' => get_post_permalink( $post->ID ),
+        //         ];
+        //     }
 
-            return $items;
-        }
+        //     return $items;
+        // }
 
-        return [];
+        // return [];
     }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php';
