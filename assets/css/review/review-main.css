@@ -1,5 +1,10 @@
 /* Review Position */
 
-/* .thrv_wrapper.tve_wp_shortcode {
-    margin: 0px;
-} */
+/* Review Background */
+
+tr:nth-child( even ) {
+    background: #CCC;
+}
+tr:nth-child( odd ) {
+    background-color: rgb(239, 245, 251);
+}
