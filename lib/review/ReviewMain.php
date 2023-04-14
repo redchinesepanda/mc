@@ -4,6 +4,8 @@ require_once( 'ReviewAbout.php' );
 
 require_once( 'ReviewAnchors.php' );
 
+require_once( 'ReviewGroup.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -26,6 +28,8 @@ class ReviewMain
         ReviewAbout::register();
 
         ReviewAnchors::register();
+
+        ReviewGroup::register();
     }
 }
 
