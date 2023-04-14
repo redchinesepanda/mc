@@ -1,4 +1,15 @@
+/* Review Display */
+
+.tcb-post-content p:empty {
+    display: none;
+}
+
 /* Review Position */
+
+tcb-post-content {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
 .tcb-post-content h2 {
     padding-top: 30px !important;
