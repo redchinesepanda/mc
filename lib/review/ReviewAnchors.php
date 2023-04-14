@@ -43,7 +43,6 @@ class ReviewAnchors
 
         $dom->loadHTML( get_the_content() );
 
-        // foreach ( $dom->getElementsByTagName('a') as $item ) {
         foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
             $link = $dom->createElement( 'a' );
 
@@ -61,31 +60,25 @@ class ReviewAnchors
 
     public static function get()
     {
-        $group = get_field( self::FIELD );
-        
-        if( $group ) {
-            return [
-                'title' => $group[ 'about-title' ],
-                
-                'bonus' => $group[ 'about-bonus' ],
-                
-                'description' => $group[ 'about-description' ],
-                
-                'logo' => $group[ 'about-logo' ],
+        $dom = new DomDocument();
 
-                'background' => $group[ 'about-background' ],
-                
-                'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
+        $dom->loadHTML( get_the_content() );
 
-                'afillate' => [
-                    'href' => $group[ 'about-afillate' ],
+        $items = [];
 
-                    'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
-                ],
+        foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
+            $items[] = [
+                'href' => '#target-' . $key,
+
+                'label' => $item->nodeValue,
             ];
         }
 
-        return [];
+        return [
+            'label' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
+
+            'items' => $items,
+        ];
     }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php';
