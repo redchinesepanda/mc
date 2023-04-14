@@ -1,12 +1,12 @@
 /* Review Display */
 
-.tcb-post-content p {
+.tcb-post-content p:empty {
     display: none;
 }
 
 /* Review Position */
 
-tcb-post-content {
+.tcb-post-content {
     margin-top: 0px;
     margin-bottom: 0px;
 }
