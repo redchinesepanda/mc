@@ -1,5 +1,9 @@
 /* Review Position */
 
+.tcb-post-content table {
+    margin: 0px auto;
+}
+
 /* Review Background */
 
 .tcb-post-content tr:nth-child( odd ) {
