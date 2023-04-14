@@ -6,23 +6,24 @@
     flex-wrap: wrap;
 }
 
+/* Anchors Width and Height */
+.review-anchors {
+    width: 1080px;
+}
+
 /* Anchors Position */
 
 .review-anchors {
     padding: 5px 0px;
 }
 
-.review-anchors .anchors-label {
-    margin-left: auto;
-}
-
-.review-anchors .anchors-item:last-child {
-    margin-right: auto;
+.review-anchors {
+    margin: 0px auto;
 }
 
 /* Anchors Background */
 
-.review-anchors {
+nav.anchors {
     background-color: rgb(239, 245, 251);
 }
 
