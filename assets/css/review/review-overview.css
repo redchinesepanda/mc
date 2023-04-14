@@ -12,7 +12,7 @@
     padding: 30px 40px;
 }
 
-.review-overview .overview-description p {
+.review-overview .overview-description p:not( :last-child ) {
     padding-bottom: 28px;
 }
 
