@@ -1,5 +1,10 @@
 /* Review Position */
 
+.tcb-post-content h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
 .tcb-post-content table {
     margin: 0px auto;
 }
