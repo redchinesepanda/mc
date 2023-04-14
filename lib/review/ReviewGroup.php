@@ -38,7 +38,7 @@ class ReviewGroup
         $posts = get_posts( [
             'numberposts' => -1,
 
-            'post_type' => 'legal_billet',
+            'post_type' => 'page',
 
             'suppress_filters' => 0,
 
