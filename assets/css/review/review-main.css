@@ -1,6 +1,6 @@
 /* Review Display */
 
-.tcb-post-content p:empty {
+.tcb-post-content p:has( > br ) {
     display: none;
 }
 
