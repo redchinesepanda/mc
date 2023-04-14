@@ -4,7 +4,8 @@
 
 /* Overview Position */
 
-.review-overview h2 {
+.review-overview h2,
+.tcb-style-wrap h2 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
