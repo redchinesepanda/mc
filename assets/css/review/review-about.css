@@ -25,7 +25,7 @@
 /* Review About Width and Height */
 
 .review-about .about-left {
-    width: calc( ( 1080px * 0.2 ) - 33px );
+    width: calc( ( 1080px * 0.25 ) - 33px );
 }
 
 .review-about .about-logo {
@@ -41,7 +41,7 @@
     width: calc( ( 1080px * 0.5 ) - 33px );
 }
 .review-about .about-right {
-    width: calc( ( 1080px * 0.3 ) - 33px );
+    width: calc( ( 1080px * 0.25 ) - 33px );
 }
 
 /* Review About Position */
