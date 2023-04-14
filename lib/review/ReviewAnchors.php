@@ -30,6 +30,10 @@ class ReviewAnchors
 
     public static function content( $content )
     {
+        LegalDebug::debug( [
+            'has_term' => has_term( self::TERM, 'page_type' ),
+        ] );
+
         if ( has_term( self::TERM, 'page_type' ) ) {
             return self::target( $content );
         }
