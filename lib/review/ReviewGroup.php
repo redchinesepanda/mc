@@ -63,6 +63,8 @@ class ReviewGroup
 
         $items[ 'current' ] = [
             'label' => $post->post_title,
+
+            'label' => YoastSEO()->meta->for_post( $post->ID )->title,
         ];
 
         $items[ 'other' ] = [];
