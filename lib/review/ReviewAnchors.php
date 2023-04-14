@@ -66,11 +66,13 @@ class ReviewAnchors
 
         $items = [];
 
+        $title = get_the_title() . ' ';
+
         foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
             $items[] = [
                 'href' => '#target-' . $key,
 
-                'label' => $item->nodeValue,
+                'label' => str_replace ( $title, '', $item->nodeValue),
             ];
         }
 
