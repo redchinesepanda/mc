@@ -7,8 +7,8 @@
 /* Review Position */
 
 .tcb-post-content {
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .tcb-post-content h2 {
