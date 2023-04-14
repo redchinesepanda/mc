@@ -1,6 +1,6 @@
 /* Review Display */
 
-.tcb-post-content p:has( br ) {
+.tcb-post-content p:first-child {
     display: none;
 }
 
