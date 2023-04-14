@@ -59,10 +59,6 @@ class ReviewGroup
             'order' => 'ASC',
         ] );
 
-        LegalDebug::debug( [
-            'posts' => $posts,
-        ] );
-
         if ( !empty( $posts ) ) {
             foreach ( $posts as $post ) {
                 $items[] = [
