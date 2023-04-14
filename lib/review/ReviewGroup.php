@@ -19,7 +19,7 @@ class ReviewGroup
 
         // [legal-group]
 
-        add_shortcode( 'legal-group', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-group', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
