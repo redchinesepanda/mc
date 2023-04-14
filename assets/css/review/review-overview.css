@@ -4,6 +4,41 @@
 
 /* Overview Position */
 
+.review-overview h2 {
+    padding: 20px 0px;
+}
+
+.review-overview .overview-description {
+    padding: 30px 40px;
+}
+
+.review-overview .overview-description p {
+    padding-bottom: 28px;
+}
+
 /* Overview Background */
 
+.review-overview .overview-description {
+    background-color: #A7A8D0;
+    border-bottom: 2px solid #A89EC5;
+}
+
 /* Overview Typography */
+
+.review-overview h2 {
+    font-family: "Source Sans Pro";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38.4px;
+    color: rgb(12, 17, 21);
+}
+
+.review-overview .overview-description p {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(10, 10, 10, 0.85);
+}
