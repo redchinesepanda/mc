@@ -1,0 +1,47 @@
+/* Group Display */
+
+.review-group {
+    display: flex;
+    column-gap: 46px;
+    justify-content: center;
+}
+
+/* Group Width and Height */
+.review-group {
+    width: 1080px;
+}
+
+/* Group Position */
+
+.review-group {
+    padding: 20px 0px 5px 0px;
+}
+
+.review-group {
+    margin: 0px auto;
+}
+
+/* Group Background */
+
+.review-group {
+    border-bottom: 0.8px solid rgb(199, 227, 255);
+}
+
+/* Group Typography */
+
+.review-group .group-label {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-transform: uppercase;
+}
+
+.review-group span.group-label {
+    color: rgb(59, 59, 59);
+}
+
+.review-group a.group-label {
+    color: rgb(89, 151, 227);
+}

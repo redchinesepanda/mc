@@ -66,7 +66,7 @@ class ReviewGroup
         if ( !empty( $posts ) ) {
             foreach ( $posts as $post ) {
                 $items[] = [
-                    'title' => $post->post_title,
+                    'label' => $post->post_title,
     
                     'href' => get_post_permalink( $post->ID ),
                 ];
@@ -78,7 +78,7 @@ class ReviewGroup
         return [];
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php';
 
     public static function render()
     {
