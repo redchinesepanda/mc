@@ -1,0 +1,48 @@
+/* Anchors Display */
+
+.review-anchors {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Anchors Position */
+
+.review-anchors {
+    padding: 5px 0px;
+}
+
+.review-anchors .anchors-label {
+    margin-left: auto;
+}
+
+.review-anchors .anchors-item:last-child {
+    margin-right: auto;
+}
+
+/* Anchors Background */
+
+.review-anchors {
+    background-color: rgb(239, 245, 251);
+}
+
+/* Anchors Typography */
+
+.review-anchors .anchors-label {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22.75px;
+    color: rgb(59, 59, 59);
+}
+
+.review-anchors .anchors-item {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    text-decoration: none;
+    color: rgba(10, 10, 10, 0.85);
+}
