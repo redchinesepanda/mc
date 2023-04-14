@@ -34,7 +34,7 @@ class ReviewOverview
             return [
                 'title' => $group[ 'overview-title' ],
 
-                'desctiption' => $group[ 'overview-desctiption' ],
+                'description' => $group[ 'overview-description' ],
             ];
         }
 
