@@ -61,19 +61,23 @@ class ReviewGroup
             'order' => 'ASC',
         ] );
 
+        $items[ 'current' ] = [
+            'label' => $post->post_title,
+        ];
+
+        $items[ 'other' ] = [];
+
         if ( !empty( $posts ) ) {
             foreach ( $posts as $post ) {
-                $items[] = [
+                $items[ 'other' ][] = [
                     'label' => $post->post_title,
     
                     'href' => get_post_permalink( $post->ID ),
                 ];
             }
-
-            return $items;
         }
 
-        return [];
+        return $items;
     }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php';
