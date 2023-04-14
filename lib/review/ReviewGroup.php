@@ -42,6 +42,8 @@ class ReviewGroup
 
             'suppress_filters' => 0,
 
+            'exclude' => $post->ID,
+
             'tax_query' => [
                 [
                     'taxonomy' => self::TAXONOMY,
