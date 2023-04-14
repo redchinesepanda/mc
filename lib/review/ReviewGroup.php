@@ -35,6 +35,10 @@ class ReviewGroup
 
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
 
+        LegalDebug::debug( [
+            'terms' => $terms,
+        ] );
+
         $posts = get_posts( [
             'numberposts' => -1,
 
