@@ -8,7 +8,7 @@ class ToolPosts
     {
         $handler = new self();
 
-        // add_action( 'in_admin_footer', [ $handler, 'csv' ] );
+        add_action( 'in_admin_footer', [ $handler, 'csv' ] );
     }
 
     public static function csv()
@@ -25,7 +25,7 @@ class ToolPosts
         
         fclose( $file );
 
-        self::debug( $message );
+        LegalDebug::debug( $message );
     }
 
     public static function get_fields()
@@ -42,6 +42,8 @@ class ToolPosts
     }
     
     public static function map( $post ) {
+        $permalink = get_post_permalink($post->ID);
+
         return [
             $post->ID,
 
@@ -49,7 +51,9 @@ class ToolPosts
             
             $post->post_name,
 
-            get_post_permalink($post->ID)
+            $permalink,
+
+            strpos( $permalink, $post->post_name ),
         ];
     }
     
@@ -66,11 +70,6 @@ class ToolPosts
         ];
 
         return get_posts( $args );
-    }
-
-    public static function debug( $message )
-    {
-        echo '<pre>ToolPosts::debug: ' . print_r( $message, true ) . '</pre>';
     }
 }
 
