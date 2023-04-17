@@ -8,7 +8,7 @@ class ToolPosts
     {
         $handler = new self();
 
-        // add_action( 'in_admin_footer', [ $handler, 'csv' ] );
+        add_action( 'in_admin_footer', [ $handler, 'csv' ] );
     }
 
     public static function csv()
@@ -42,7 +42,7 @@ class ToolPosts
     }
     
     public static function map( $post ) {
-        $permalink = get_post_permalink( $post->ID );
+        $permalink = get_permalink( $post->ID );
 
         return [
             $post->ID,
