@@ -42,7 +42,7 @@ class ToolPosts
     }
     
     public static function map( $post ) {
-        $permalink = get_post_permalink($post->ID);
+        $permalink = get_post_permalink( $post->ID );
 
         return [
             $post->ID,
@@ -53,14 +53,14 @@ class ToolPosts
 
             $permalink,
 
-            strpos( $permalink, $post->post_name ),
+            ( strpos( $permalink, $post->post_name ) === false ? 'не найдено' : 'найдено'),
         ];
     }
     
     public static function get_posts()
     {
         $args = [
-            'post_type' => [ 'post', 'page' ],
+            'post_type' => [ 'page' ],
 
             'post_status' => 'publish',
 
