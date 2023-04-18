@@ -9,9 +9,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function popupRemove( event )
 	{
-		console.log( 'review-gallery event.target.classList:' +  event.target.classList );
+		// console.log( 'review-gallery event.target.classList:' +  event.target.classList );
 
-		console.log( 'review-gallery event.currentTarget.classList:' +  event.currentTarget.classList );
+		// console.log( 'review-gallery event.currentTarget.classList:' +  event.currentTarget.classList );
 
 		if ( event.target === this ) {
 			event.currentTarget.remove();
