@@ -103,9 +103,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
 			console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
-		} );
 
-		gallery.querySelectorAll( 'img' ).addEventListener( 'click', popup, false );
+			img.addEventListener( 'click', popup, false );
+		} );
 	} );
 
 } );
