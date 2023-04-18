@@ -80,7 +80,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'review-gallery figure.figure.nextSibling.dataset: ' + figure.nextSibling.dataset  );
 
 		if ( figure.nextSibling !== null ) {
-			if ( figure.nextSibling.classList.contains( 'legal-gallery' ) ) {
+			if ( !figure.nextSibling.classList.contains( 'legal-gallery' ) ) {
 				right.dataset.next = figure.nextSibling.dataset.id;
 			}
 		}
