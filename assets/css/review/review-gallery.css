@@ -103,19 +103,19 @@
 }
 
 .legal-gallery .legal-left {
-    background-image: url( '../../img/review/review-left.svg' );
+    background-image: url( '../../img/review/review-gallery-left.svg' );
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
 .legal-gallery .legal-right {
-    background-image: url( '../../img/review/review-right.svg' );
+    background-image: url( '../../img/review/review-gallery-right.svg' );
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
 }
 
 .legal-gallery .legal-close {
-    background-image: url( '../../img/review/review-close.svg' );
+    background-image: url( '../../img/review/review-gallery-close.svg' );
     border-radius: 50%;
 }
 
