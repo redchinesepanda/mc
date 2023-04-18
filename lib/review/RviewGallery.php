@@ -34,8 +34,6 @@ class RviewGallery
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_theme_support( 'post-thumbnails' );
-
         add_image_size( 'legal-bookmaker-review', 354, 489 );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
