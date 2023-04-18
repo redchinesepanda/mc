@@ -1,0 +1,48 @@
+/* Gallery Display */
+
+.tcb-post-content .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 9px;
+    row-gap: 9px;
+}
+
+.gallery .gallery-icon a {
+    display: block;
+}
+  
+/* Gallery Position */
+  
+.gallery .gallery-item {
+    margin: 0px;
+}
+
+.gallery .gallery-item img {
+    padding: 0px;
+}
+  
+/* Gallery Width and Height */
+   
+.gallery .gallery-item {
+    width: calc( ( 100% / 3 ) - 6px );
+}
+
+.gallery .gallery-icon {
+    width: 100%;
+}
+
+.gallery .gallery-icon a {
+    width: 100%;
+}
+
+.gallery .gallery-item img {
+    width: 100%;
+    max-width: unset;
+}
+  
+/* Gallery Background */
+
+
+
+/* Gallery Typography */
+
