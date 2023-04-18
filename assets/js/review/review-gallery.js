@@ -49,7 +49,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			popup.appendChild( right );
 
-			gallery.after( popup );
+			gallery.appendChild( popup );
 		}
 	}
 
@@ -57,11 +57,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let figure = event.currentTarget;
 
-		// popup( figure.dataset.gallery );
-
-		// let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
-		
-		let popup = document.getElementById( figure.dataset.gallery ).nextSibling;
+		let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
