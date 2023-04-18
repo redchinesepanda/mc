@@ -13,9 +13,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'review-gallery event.currentTarget.classList:' +  event.currentTarget.classList );
 
-		if ( event.target !== this ) {}
-
-		event.currentTarget.remove();
+		if ( event.target === this ) {
+			event.currentTarget.remove();
+		}
 	}
 
 	function popup( event )
