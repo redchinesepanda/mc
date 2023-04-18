@@ -10,13 +10,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
 
-		// let left = document.createElement( 'div' );
+		let left = document.createElement( 'div' );
 		
-		// left.classList.add( 'legal-left' );
+		left.classList.add( 'legal-left' );
 
-		// lightroom.appendChild( left );
-
-		lightroom.appendChild( ( document.createElement( 'div' ) ).classList.add( 'legal-left' ) );
+		lightroom.appendChild( left );
 
 		let right = document.createElement( 'div' );
 		
