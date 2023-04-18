@@ -74,11 +74,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let right = popup.querySelector( '.legal-right' );
 
 		right.dataset.gallery = figure.dataset.gallery;
-		
+
 		if ( figure.nextSibling !== null ) {
 			console.log( 'review-gallery figure.nextSibling.classList: ' + figure.nextSibling.classList  );
 
-			if ( !figure.nextSibling.classList.contains( 'legal-gallery' ) ) {
+			if ( figure.nextSibling.tagName == 'figure' ) {
 				right.dataset.next = figure.nextSibling.dataset.id;
 			}
 		}
