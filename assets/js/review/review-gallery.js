@@ -36,7 +36,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.addEventListener( 'click', popupNext, false );
 
-		left.dataset.next = parse_srcset( event.currentTarget.nextElementSibling.getAttribute( 'srcset' ) );
+		console.log( 'review-gallery nextSibling ' + event.currentTarget.nextSibling );
+
+		console.log( 'review-gallery nextElementSibling ' + event.currentTarget.nextElementSibling );
+
+		// left.dataset.next = parse_srcset( event.currentTarget.nextElementSibling.getAttribute( 'srcset' ) );
 
 		lightroom.appendChild( left );
 
@@ -46,7 +50,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.addEventListener( 'click', popupNext, false );
 
-		right.dataset.next = parse_srcset( event.currentTarget.previousElementSibling.getAttribute( 'srcset' ) );
+		// right.dataset.next = parse_srcset( event.currentTarget.previousElementSibling.getAttribute( 'srcset' ) );
 
 		lightroom.appendChild( right );
 
