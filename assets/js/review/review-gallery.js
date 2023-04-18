@@ -82,11 +82,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
     //     }
     // });
 
+	function parse_srcset( srcset )
+    {
+		return srcset.split( ',' )[ 0 ].split( ' ' )[0];
+	}
+
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
 		console.log( 'review-gallery gallery: ' + gallery.id );
 
 		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
-			console.log( 'review-gallery srcset: ' + img.getAttribute( 'srcset' ) );
+			console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
 		} );
 	} );
 
