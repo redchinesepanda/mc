@@ -79,7 +79,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'review-gallery figure.figure.nextSibling.dataset: ' + figure.nextSibling.dataset  );
 
-		if ( figure.previousSibling !== null ) {
+		if ( figure.nextSibling !== null ) {
 			right.dataset.next = figure.nextSibling.dataset.id;
 		}
 	}
