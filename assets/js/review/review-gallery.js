@@ -59,7 +59,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// popup( figure.dataset.gallery );
 
-		let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
+		// let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
+		
+		let popup = figure.dataset.gallery ).nextSibling;
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
