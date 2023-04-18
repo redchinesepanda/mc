@@ -5,8 +5,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function popupNext( event )
 	{
 		// console.log( 'review-gallery classList:' +  event.currentTarget.classList );
+		let gallery = document.getElementById( event.currentTarget.dataset.galleryID );
 
-		event.currentTarget.parentElement.style.backgroundImage = "url( '" + event.currentTarget.dataset.next + "' )"; 
+		let figure = gallery.querySelector( '[data-id="' + event.currentTarget.dataset.id + '"]' );
+
+		figure.click();
 	}
 
 	function popupRemove( event )
@@ -20,41 +23,60 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function popup( event )
+	function popupUpdate( event )
+	{
+		let figure = event.currentTarget;
+
+		popup( figure.dataset.galleryID );
+
+		let popup = document.getElementById( figure.dataset.galleryID ).querySelector( '.legal-gallery' );
+
+		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
+
+		popup.style.backgroundImage = "url( '" + url + "' )"; 
+
+		let left = popup.querySelector( '.legal-left' );
+
+		left.dataset.galleryID = figure.dataset.galleryID;
+
+		left.dataset.next = figure.previousSibling.dataset.id;
+
+		let right = popup.querySelector( '.legal-right' );
+
+		right.dataset.galleryID = figure.dataset.galleryID;
+
+		right.dataset.next = figure.nextSibling.dataset.id;
+	}
+
+	function popup( galleryID )
     {
-		let lightroom = document.createElement( 'div' );
+		if ( document.getElementById( galleryID ).querySelector( '.legal-gallery' ) === null ) {
+			let popup = document.createElement( 'div' );
 		
-		lightroom.classList.add( 'legal-gallery' );
+			popup.classList.add( 'legal-gallery' );
 
-		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
+			// lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
 
-		lightroom.addEventListener( 'click', popupRemove, false );
+			popup.addEventListener( 'click', popupRemove, false );
 
-		let left = document.createElement( 'div' );
-		
-		left.classList.add( 'legal-left' );
+			let left = document.createElement( 'div' );
+			
+			left.classList.add( 'legal-left' );
 
-		left.addEventListener( 'click', popupNext, false );
+			left.addEventListener( 'click', popupNext, false );
 
-		console.log( 'review-gallery nextSibling ' + event.currentTarget.nextSibling );
+			popup.appendChild( left );
 
-		console.log( 'review-gallery nextElementSibling ' + event.currentTarget.nextElementSibling );
+			let right = document.createElement( 'div' );
+			
+			right.classList.add( 'legal-right' );
 
-		// left.dataset.next = parse_srcset( event.currentTarget.nextElementSibling.getAttribute( 'srcset' ) );
+			right.addEventListener( 'click', popupNext, false );
 
-		lightroom.appendChild( left );
+			popup.appendChild( right );
 
-		let right = document.createElement( 'div' );
-		
-		right.classList.add( 'legal-right' );
-
-		right.addEventListener( 'click', popupNext, false );
-
-		// right.dataset.next = parse_srcset( event.currentTarget.previousElementSibling.getAttribute( 'srcset' ) );
-
-		lightroom.appendChild( right );
-
-		document.getElementById( event.currentTarget.dataset.galleryID ).appendChild( lightroom );
+			document.getElementById( galleryID ).appendChild( popup );
+		}
 	}
 
 	function parse_srcset( srcset )
@@ -63,14 +85,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
-		console.log( 'review-gallery gallery: ' + gallery.id );
+		// console.log( 'review-gallery gallery: ' + gallery.id );
 
-		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
-			// console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
+		gallery.querySelectorAll( 'figure' ).forEach( function ( figure, index ) {
+			figure.dataset.galleryID = gallery.id;
 
-			img.dataset.galleryID = gallery.id;
+			figure.dataset.id = index;
 
-			img.addEventListener( 'click', popup, false );
+			figure.addEventListener( 'click', popupUpdate, false );
 		} );
 	} );
 
