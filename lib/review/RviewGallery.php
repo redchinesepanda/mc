@@ -38,7 +38,7 @@ class RviewGallery
 
         add_image_size( 'legal-bookmaker-review', 354, 489 );
 
-        add_filter( 'image_size_names_choose', 'size_label' );
+        add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
 
     public static function size_label( $sizes )
