@@ -4,7 +4,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function popupNext( event )
 	{
-		console.log( 'review-gallery classList:' +  event.currentTarget.classList );
+		// console.log( 'review-gallery classList:' +  event.currentTarget.classList );
+
+		event.currentTarget.parentElement.style.backgroundImage = "url( '" + event.currentTarget.dataset.next + "' )"; 
 	}
 
 	function popupRemove( event )
@@ -34,6 +36,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.addEventListener( 'click', popupNext, false );
 
+		left.dataset.next = parse_srcset( event.currentTarget.nextSibling.getAttribute( 'srcset' ) );
+
 		lightroom.appendChild( left );
 
 		let right = document.createElement( 'div' );
@@ -41,6 +45,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		right.classList.add( 'legal-right' );
 
 		right.addEventListener( 'click', popupNext, false );
+
+		right.dataset.next = parse_srcset( event.currentTarget.previousSibling.getAttribute( 'srcset' ) );
 
 		lightroom.appendChild( right );
 
