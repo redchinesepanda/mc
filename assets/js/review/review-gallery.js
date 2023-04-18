@@ -49,7 +49,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			popup.appendChild( right );
 
-			gallery.appendChild( popup );
+			gallery.after( popup );
 		}
 	}
 
