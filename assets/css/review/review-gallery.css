@@ -10,6 +10,12 @@
 .gallery .gallery-icon a {
     display: block;
 }
+
+.gallery .legal-gallery {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
   
 /* Gallery Position */
   
@@ -43,6 +49,11 @@
     /* width: 100%; */
     max-width: unset !important;
 }
+
+.gallery .legal-gallery {
+    height: 100vh;
+    width: 100%;
+}
   
 /* Gallery Background */
 
@@ -55,6 +66,10 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
+}
+
+.gallery .legal-gallery {
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 /* Gallery Typography */

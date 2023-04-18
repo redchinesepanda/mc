@@ -102,7 +102,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'review-gallery gallery: ' + gallery.id );
 
 		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
-			console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
+			// console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
 
 			img.dataset.galleryID = gallery.id;
 
