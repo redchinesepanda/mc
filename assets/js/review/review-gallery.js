@@ -23,31 +23,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function popupUpdate( event )
-	{
-		let figure = event.currentTarget;
-
-		popup( figure.dataset.galleryID );
-
-		let popup = document.getElementById( figure.dataset.galleryID ).querySelector( '.legal-gallery' );
-
-		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
-
-		popup.style.backgroundImage = "url( '" + url + "' )"; 
-
-		let left = popup.querySelector( '.legal-left' );
-
-		left.dataset.galleryID = figure.dataset.galleryID;
-
-		left.dataset.next = figure.previousSibling.dataset.id;
-
-		let right = popup.querySelector( '.legal-right' );
-
-		right.dataset.galleryID = figure.dataset.galleryID;
-
-		right.dataset.next = figure.nextSibling.dataset.id;
-	}
-
 	function popup( galleryID )
     {
 		if ( document.getElementById( galleryID ).querySelector( '.legal-gallery' ) === null ) {
@@ -77,6 +52,31 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			document.getElementById( galleryID ).appendChild( popup );
 		}
+	}
+
+	function popupUpdate( event )
+	{
+		let figure = event.currentTarget;
+
+		popup( figure.dataset.galleryID );
+
+		let popup = document.getElementById( figure.dataset.galleryID ).querySelector( '.legal-gallery' );
+
+		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
+
+		popup.style.backgroundImage = "url( '" + url + "' )"; 
+
+		let left = popup.querySelector( '.legal-left' );
+
+		left.dataset.galleryID = figure.dataset.galleryID;
+
+		left.dataset.next = figure.previousSibling.dataset.id;
+
+		let right = popup.querySelector( '.legal-right' );
+
+		right.dataset.galleryID = figure.dataset.galleryID;
+
+		right.dataset.next = figure.nextSibling.dataset.id;
 	}
 
 	function parse_srcset( srcset )
