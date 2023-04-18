@@ -51,6 +51,12 @@
     box-shadow: unset !important;
 }
 
+.legal-gallery {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
 /* Gallery Typography */
 
 .gallery figcaption {

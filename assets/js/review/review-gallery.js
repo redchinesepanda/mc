@@ -82,6 +82,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
     //     }
     // });
 
+	function popup( event )
+    {
+		let lightroom = document.createElement( 'div' );
+		
+		lightroom.classList.add( 'legal-gallery' );
+
+		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
+
+		document.appendChild( lightroom );
+	}
+
 	function parse_srcset( srcset )
     {
 		return srcset.split( ',' )[ 0 ].split( ' ' )[0];
@@ -93,6 +104,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
 			console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
 		} );
+
+		gallery.querySelectorAll( 'img' ).addEventListener( 'click', popup, false );
 	} );
 
 } );
