@@ -75,11 +75,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.dataset.gallery = figure.dataset.gallery;
 		
-		console.log( 'review-gallery figure.previousSibling: ' + figure.previousSibling  );
-
-		console.log( 'review-gallery figure.figure.nextSibling.dataset: ' + figure.nextSibling.dataset  );
-
 		if ( figure.nextSibling !== null ) {
+			console.log( 'review-gallery figure.nextSibling.classList: ' + figure.nextSibling.classList  );
+
 			if ( !figure.nextSibling.classList.contains( 'legal-gallery' ) ) {
 				right.dataset.next = figure.nextSibling.dataset.id;
 			}
