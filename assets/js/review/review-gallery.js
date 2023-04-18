@@ -83,7 +83,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     // });
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
-		console.log( 'review-gallery gallery: ' + gallery );
+		console.log( 'review-gallery gallery: ' + gallery.id );
 
 		gallery.childNodes.forEach( function ( figure ) {
 			console.log( 'review-gallery figure: ' + figure );
