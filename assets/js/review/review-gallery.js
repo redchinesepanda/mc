@@ -23,14 +23,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function popup( galleryID )
+	function popup( event )
     {
-		if ( document.getElementById( galleryID ).querySelector( '.legal-gallery' ) === null ) {
+		let figure = event.currentTarget;
+
+		let gallery = document.getElementById( figure.dataset.galleryID );
+
+		if ( gallery.querySelector( '.legal-gallery' ) === null ) {
 			let popup = document.createElement( 'div' );
 		
 			popup.classList.add( 'legal-gallery' );
-
-			// lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
 
 			popup.addEventListener( 'click', popupRemove, false );
 
@@ -50,7 +52,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			popup.appendChild( right );
 
-			document.getElementById( galleryID ).appendChild( popup );
+			gallery.appendChild( popup );
 		}
 	}
 
@@ -58,7 +60,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let figure = event.currentTarget;
 
-		popup( figure.dataset.galleryID );
+		// popup( figure.dataset.galleryID );
 
 		let popup = document.getElementById( figure.dataset.galleryID ).querySelector( '.legal-gallery' );
 
@@ -91,6 +93,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			figure.dataset.galleryID = gallery.id;
 
 			figure.dataset.id = index;
+
+			figure.addEventListener( 'click', popup, false );
 
 			figure.addEventListener( 'click', popupUpdate, false );
 		} );
