@@ -20,6 +20,10 @@
 .gallery .gallery-item img {
     padding: 0px !important;
 }
+
+.gallery figcaption {
+    margin-bottom: 0px !important;
+}
   
 /* Gallery Width and Height */
    
