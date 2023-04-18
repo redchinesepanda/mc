@@ -7,7 +7,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// console.log( 'review-gallery classList:' +  event.currentTarget.classList );
 		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
 
-		let figure = gallery.querySelector( '[data-id="' + event.currentTarget.dataset.id + '"]' );
+		console.log( 'review-gallery event.currentTarget.dataset.id: ' + event.currentTarget.dataset.id  );
+
+		let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.id + '"]' );
 
 		figure.click();
 	}
