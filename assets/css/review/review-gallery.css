@@ -14,7 +14,7 @@
 /* Gallery Position */
   
 .gallery .gallery-item {
-    margin: 0px;
+    margin: 0px !important;
 }
 
 .gallery .gallery-item img {
@@ -24,7 +24,7 @@
 /* Gallery Width and Height */
    
 .gallery .gallery-item {
-    width: calc( ( 100% / 3 ) - 6px );
+    width: calc( ( 100% / 3 ) - 6px ) !important;
 }
 
 .gallery .gallery-icon {
