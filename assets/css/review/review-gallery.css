@@ -42,7 +42,10 @@
   
 /* Gallery Background */
 
-
+.gallery .gallery-item img {
+    border: unset;
+    box-shadow: unset;
+}
 
 /* Gallery Typography */
 
