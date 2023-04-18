@@ -49,3 +49,11 @@
 
 /* Gallery Typography */
 
+.gallery figcaption {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    color: rgb(105, 105, 105);
+}
