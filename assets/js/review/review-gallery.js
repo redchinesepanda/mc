@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( figure.nextSibling !== null ) {
 			console.log( 'review-gallery figure.nextSibling.tagName: ' + figure.nextSibling.tagName );
 
-			if ( typeof figure.nextSibling.tagName != "undefined" ) {
+			if ( figure.nextSibling.tagName !== undefined ) {
 				right.dataset.next = figure.nextSibling.dataset.id;
 			}
 		}
