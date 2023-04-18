@@ -78,9 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( figure.nextSibling !== null ) {
 			console.log( 'review-gallery figure.nextSibling.tagName: ' + figure.nextSibling.tagName );
 
-			if ( figure.nextSibling.hasAttribute( 'dataset' ) ) {
-				right.dataset.next = figure.nextSibling.dataset.id;
-			}
+			right.dataset.next = figure.nextSibling.dataset.id;
 		}
 	}
 
