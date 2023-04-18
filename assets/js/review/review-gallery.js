@@ -2,6 +2,11 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function popupRemove( event )
+	{
+		event.currentTarget.remove();
+	}
+
 	function popup( event )
     {
 		let lightroom = document.createElement( 'div' );
@@ -9,6 +14,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		lightroom.classList.add( 'legal-gallery' );
 
 		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
+
+		lightroom.addEventListener( 'click', popupRemove, false );
 
 		let left = document.createElement( 'div' );
 		
@@ -21,12 +28,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		right.classList.add( 'legal-right' );
 
 		lightroom.appendChild( right );
-
-		let close = document.createElement( 'div' );
-		
-		close.classList.add( 'legal-close' );
-
-		lightroom.appendChild( close );
 
 		document.getElementById( event.currentTarget.dataset.galleryID ).appendChild( lightroom );
 	}

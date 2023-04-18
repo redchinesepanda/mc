@@ -74,11 +74,6 @@
     width: 36px;
     height: 66px;
 }
-
-.legal-gallery .legal-close {
-    width: 32px;
-    height: 32px;
-}
   
 /* Gallery Background */
 
@@ -89,16 +84,14 @@
 
 .legal-gallery,
 .legal-gallery .legal-left,
-.legal-gallery .legal-right,
-.legal-gallery .legal-close {
+.legal-gallery .legal-right {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
 }
 
 .legal-gallery .legal-left,
-.legal-gallery .legal-right,
-.legal-gallery .legal-close {
+.legal-gallery .legal-right {
     background-color: rgba(0,0,0,0.4);
 }
 
@@ -112,11 +105,6 @@
     background-image: url( '../../img/review/review-gallery-right.svg' );
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-}
-
-.legal-gallery .legal-close {
-    background-image: url( '../../img/review/review-gallery-close.svg' );
-    border-radius: 50%;
 }
 
 .gallery .legal-gallery {
