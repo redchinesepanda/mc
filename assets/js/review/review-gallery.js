@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
 
-		document.appendChild( lightroom );
+		getElementByID( event.currentTarget.dataset.galleryID ).appendChild( lightroom );
 	}
 
 	function parse_srcset( srcset )
@@ -103,6 +103,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		gallery.querySelectorAll( 'img' ).forEach( function ( img ) {
 			console.log( 'review-gallery parse_srcset: ' + parse_srcset( img.getAttribute( 'srcset' ) ) );
+
+			img.dataset.galleryID = gallery.id;
 
 			img.addEventListener( 'click', popup, false );
 		} );
