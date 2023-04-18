@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function popupNext( event )
 	{
 		// console.log( 'review-gallery classList:' +  event.currentTarget.classList );
-		let gallery = document.getElementById( event.currentTarget.dataset.galleryID );
+		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
 
 		let figure = gallery.querySelector( '[data-id="' + event.currentTarget.dataset.id + '"]' );
 
@@ -27,7 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
 		let figure = event.currentTarget;
 
-		let gallery = document.getElementById( figure.dataset.galleryID );
+		let gallery = document.getElementById( figure.dataset.gallery );
 
 		if ( gallery.querySelector( '.legal-gallery' ) === null ) {
 			let popup = document.createElement( 'div' );
@@ -60,9 +60,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let figure = event.currentTarget;
 
-		// popup( figure.dataset.galleryID );
+		// popup( figure.dataset.gallery );
 
-		let popup = document.getElementById( figure.dataset.galleryID ).querySelector( '.legal-gallery' );
+		let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
@@ -70,13 +70,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let left = popup.querySelector( '.legal-left' );
 
-		left.dataset.galleryID = figure.dataset.galleryID;
+		left.dataset.gallery = figure.dataset.gallery;
 
 		left.dataset.next = figure.previousSibling.dataset.id;
 
 		let right = popup.querySelector( '.legal-right' );
 
-		right.dataset.galleryID = figure.dataset.galleryID;
+		right.dataset.gallery = figure.dataset.gallery;
 
 		right.dataset.next = figure.nextSibling.dataset.id;
 	}
@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// console.log( 'review-gallery gallery: ' + gallery.id );
 
 		gallery.querySelectorAll( 'figure' ).forEach( function ( figure, index ) {
-			figure.dataset.galleryID = gallery.id;
+			figure.dataset.gallery = gallery.id;
 
 			figure.dataset.id = index;
 
