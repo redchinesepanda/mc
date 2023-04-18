@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		lightroom.style.backgroundImage = "url( '" + parse_srcset( event.currentTarget.getAttribute( 'srcset' ) ) + "' )"; 
 
-		document.getElementByID( event.currentTarget.dataset.galleryID ).appendChild( lightroom );
+		document.getElementById( event.currentTarget.dataset.galleryID ).appendChild( lightroom );
 	}
 
 	function parse_srcset( srcset )
