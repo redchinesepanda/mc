@@ -37,14 +37,14 @@
 
 .gallery .gallery-item img {
     width: 100%;
-    max-width: unset;
+    max-width: unset !important;
 }
   
 /* Gallery Background */
 
 .gallery .gallery-item img {
-    border: unset;
-    box-shadow: unset;
+    border: unset !important;
+    box-shadow: unset !important;
 }
 
 /* Gallery Typography */
