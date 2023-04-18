@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// lightroom.appendChild( left );
 
-		lightroom.appendChild( document.createElement( 'div' ).classList.add( 'legal-left' ) );
+		lightroom.appendChild( ( document.createElement( 'div' ) ).classList.add( 'legal-left' ) );
 
 		let right = document.createElement( 'div' );
 		
