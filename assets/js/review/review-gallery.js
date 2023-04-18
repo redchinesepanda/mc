@@ -84,7 +84,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
 		gallery.childNodes.forEach( function ( figure ) {
-			console.log( 'review-gallery srcset: ' + figure.getAttribute( 'srcset' ) );
+			console.log( 'review-gallery figure: ' + figure );
 		} );
 	} );
 
