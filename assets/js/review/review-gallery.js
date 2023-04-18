@@ -9,9 +9,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'review-gallery event.currentTarget.dataset.id: ' + event.currentTarget.dataset.next  );
 
-		let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
+		if ( event.currentTarget.dataset.next !== null ) {
+			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
 
-		figure.click();
+			figure.click();
+		}
 	}
 
 	function popupRemove( event )
@@ -74,13 +76,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.dataset.gallery = figure.dataset.gallery;
 
-		left.dataset.next = figure.previousSibling.dataset.id;
+		if ( figure.previousSibling !== null ) {
+			left.dataset.next = figure.previousSibling.dataset.id;
+		}
 
 		let right = popup.querySelector( '.legal-right' );
 
 		right.dataset.gallery = figure.dataset.gallery;
 
-		right.dataset.next = figure.nextSibling.dataset.id;
+		if ( figure.previousSibling !== null ) {
+			right.dataset.next = figure.nextSibling.dataset.id;
+		}
 	}
 
 	function parse_srcset( srcset )
