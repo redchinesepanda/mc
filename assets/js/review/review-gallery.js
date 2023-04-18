@@ -4,10 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function popupNext( event )
 	{
-		// console.log( 'review-gallery classList:' +  event.currentTarget.classList );
 		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
-
-		console.log( 'review-gallery event.currentTarget.dataset.id: ' + event.currentTarget.dataset.next  );
 
 		if ( event.currentTarget.dataset.next !== null ) {
 			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
@@ -18,10 +15,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function popupRemove( event )
 	{
-		// console.log( 'review-gallery event.target.classList:' +  event.target.classList );
-
-		// console.log( 'review-gallery event.currentTarget.classList:' +  event.currentTarget.classList );
-
 		if ( event.target === this ) {
 			event.currentTarget.remove();
 		}
@@ -83,6 +76,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let right = popup.querySelector( '.legal-right' );
 
 		right.dataset.gallery = figure.dataset.gallery;
+		
+		console.log( 'review-gallery figure.previousSibling: ' + figure.previousSibling  );
+
+		console.log( 'review-gallery figure.figure.nextSibling.dataset: ' + figure.nextSibling.dataset  );
 
 		if ( figure.previousSibling !== null ) {
 			right.dataset.next = figure.nextSibling.dataset.id;
@@ -95,8 +92,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
-		// console.log( 'review-gallery gallery: ' + gallery.id );
-
 		gallery.querySelectorAll( 'figure' ).forEach( function ( figure, index ) {
 			figure.dataset.gallery = gallery.id;
 
