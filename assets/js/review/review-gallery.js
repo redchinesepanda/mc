@@ -4,6 +4,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function popupRemove( event )
 	{
+		console.log( 'review-gallery classList:' +  event.currentTarget.classList );
+
 		event.currentTarget.remove();
 	}
 
