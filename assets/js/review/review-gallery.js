@@ -2,6 +2,11 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function popupNext( event )
+	{
+		console.log( 'review-gallery classList:' +  event.currentTarget.classList );
+	}
+
 	function popupRemove( event )
 	{
 		console.log( 'review-gallery classList:' +  event.currentTarget.classList );
@@ -23,11 +28,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		left.classList.add( 'legal-left' );
 
+		left.addEventListener( 'click', popupNext, false );
+
 		lightroom.appendChild( left );
 
 		let right = document.createElement( 'div' );
 		
 		right.classList.add( 'legal-right' );
+
+		right.addEventListener( 'click', popupNext, false );
 
 		lightroom.appendChild( right );
 
