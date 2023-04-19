@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( !content.classList.contains( 'legal-active' ) ) {
 			console.log( 'review-faq toggle !content.classList.contains true' );
 
-			content.classList.add('legal-visibility');    
+			content.classList.add('legal-visibile');    
 
 			content.addEventListener( 'transitionend', function( e ) {
 				console.log( 'review-faq toggle transitionend' );
@@ -34,7 +34,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			content.classList.remove( 'legal-active' );
 
 			setTimeout(function () {
-				content.classList.remove( 'legal-visibility' );
+				content.classList.remove( 'legal-visibile' );
 			}, 20);
 		}
     }
