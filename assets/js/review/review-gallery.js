@@ -55,17 +55,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	async function loadImage( url, elem ) {
-		console.log( 'review-gallery loadImage url: ' + url );
+	// async function loadImage( url, elem ) {
+	// 	console.log( 'review-gallery loadImage url: ' + url );
 
-		return new Promise( ( resolve, reject ) => {
-			elem.onload = () => resolve( elem );
+	// 	return new Promise( ( resolve, reject ) => {
+	// 		elem.onload = () => resolve( elem );
 
-			elem.onerror = reject;
+	// 		elem.onerror = reject;
 
-			elem.style.backgroundImage = `url( ${ url } )`;
-		} );
-	}
+	// 		elem.style.backgroundImage = `url( ${ url } )`;
+	// 	} );
+	// }
+
+	function preload_image( url )
+	{
+		let img = new Image();
+	  
+		img.src = url;
+	} 
 
 	async function popupUpdate( event )
 	{
@@ -76,10 +83,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let popup = content.querySelector( '.legal-gallery' );
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
-		
-		// popup.style.backgroundImage = `url( ${ url } )`;
 
-		await loadImage( url, popup );
+		preload_image( url );
+		
+		popup.style.backgroundImage = `url( ${ url } )`;
+
+		// await loadImage( url, popup );
 
 		let left = popup.querySelector( '.legal-left' );
 
