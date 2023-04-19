@@ -112,7 +112,8 @@
     /* transition: background-image 6s; */
     /* transition: background-image 1000ms linear; */
     /* transition: background-image 2s cubic-bezier(1, 1, 1, 1); */
-    transition: background 0.5s linear;
+    /* transition: background 0.5s linear; */
+    transition: opacity 0.5s;
 }
 
 /* Gallery Typography */
