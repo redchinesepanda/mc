@@ -37,7 +37,7 @@
 /* FAQ Background */
 
 .faq .faq-item-title.legal-active:before {
-	transform: rotate( 90deg );
+	transform: rotate( -90deg );
 }
 
 .faq .faq-item-title:before {
