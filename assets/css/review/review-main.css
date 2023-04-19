@@ -51,6 +51,10 @@
     list-style-image: url( '../../img/review/review-ul.svg' );
 }
 
+.tcb-post-content ol li:marker {
+    border: 1px solid #f00;
+}
+
 /* Review Typography */
 
 .tcb-post-content p,
