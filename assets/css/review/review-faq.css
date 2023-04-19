@@ -5,6 +5,7 @@
 }
 
 .faq .faq-item-title:before {
+	display: block;
 	content: '';
 }
 
@@ -36,7 +37,6 @@
 }
 
 .faq .faq-item-title:before {
-	transform: rotate( 90deg );
 	background-image: url( '../../img/review/review-faq.svg' );
 	background-position: left 20px center;
 	background-repeat: no-repeat;
