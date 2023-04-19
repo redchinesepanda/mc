@@ -10,6 +10,8 @@ require_once( 'ReviewOverview.php' );
 
 require_once( 'RviewGallery.php' );
 
+require_once( 'ReviewFAQ.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -38,6 +40,8 @@ class ReviewMain
         ReviewOverview::register();
 
         RviewGallery::register();
+
+        ReviewFAQ::register();
     }
 }
 
