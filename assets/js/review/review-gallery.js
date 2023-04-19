@@ -89,9 +89,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.dataset.gallery = figure.dataset.gallery;
 
-		if ( figure.nextSibling !== null ) {
-			console.log( 'review-gallery figure.nextSibling.tagName: ' + figure.nextSibling.tagName );
+		let dataset = figure.nextSibling.dataset;
 
+		// if ( figure.nextSibling !== null ) {
+		
+		if ( typeof dataset !== 'undefined' ) {
 			right.dataset.next = figure.nextSibling.dataset.id;
 		}
 	}
