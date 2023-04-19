@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
 
+		console.log( 'review-gallery event.currentTarget.dataset.next: ' + event.currentTarget.dataset.next );
+
 		if ( event.currentTarget.dataset.next !== null ) {
 			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
 
