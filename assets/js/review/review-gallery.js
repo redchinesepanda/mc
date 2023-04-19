@@ -75,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// popup.style.backgroundImage = `url( ${ url } )`; 
 
-		console.log( 'review-gallery loadImage' );
+		console.log( 'review-gallery loadImage url: ' + url );
 
 		await loadImage( url, popup );
 
