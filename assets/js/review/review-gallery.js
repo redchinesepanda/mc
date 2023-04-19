@@ -12,6 +12,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
 
 			figure.click();
+
+			console.log( 'review-gallery popupNext figure.click()' );
 		}
 	}
 
