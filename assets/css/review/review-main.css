@@ -47,6 +47,10 @@
     width: 100%;
 }
 
+.tcb-post-content table.legal-check td:last-child {
+    width: 56px;
+}
+
 /* Review Background */
 
 .tcb-post-content tr:nth-child( odd ) {
