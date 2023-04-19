@@ -20,7 +20,9 @@
                 <h1><?php echo $args[ 'title' ]; ?></h1>
             <?php endif; ?>
             <h3><?php echo $args[ 'bonus' ]; ?></h3>
-            <p><?php echo $args[ 'description' ]; ?></p>
+            <?php if( empty( $args['mode'] ) ) : ?>
+                <p><?php echo $args[ 'description' ]; ?></p>
+            <?php endif; ?>
         </div>
         <div class="about-right">
         <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
