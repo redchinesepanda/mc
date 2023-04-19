@@ -63,7 +63,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
-		popup.style.backgroundImage = "url( '" + url + "' )"; 
+		// popup.style.backgroundImage = "url( '" + url + "' )"; 
+		
+		popup.style.backgroundImage = `url( ${ url } )`; 
 
 		let left = popup.querySelector( '.legal-left' );
 
