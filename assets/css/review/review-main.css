@@ -9,7 +9,7 @@
 .tcb-post-content {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
-    padding-top: 30px;
+    padding-top: 30px !important;
 }
 
 .tcb-post-content h2 {
