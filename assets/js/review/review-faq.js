@@ -12,7 +12,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'review-faq event.currentTarget.nextSibling: ' + event.currentTarget.nextSibling );
 
-		event.currentTarget.nextSibling.classList.toggle( 'legal-active' );
+		event.target.nextSibling.classList.toggle( 'legal-active' );
     }
 
 	document.querySelectorAll( '.tcb-post-content > .faq' ).forEach( function ( faq ) {
