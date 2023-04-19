@@ -19,7 +19,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			setTimeout(function () {
 				content.classList.add( 'legal-visibile' );
-			}, 10);
+			}, 0.6);
 		} else {
 			content.classList.remove('legal-visibile');    
 
