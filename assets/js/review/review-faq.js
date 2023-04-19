@@ -10,9 +10,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'review-faq event.currentTarget: ' + event.currentTarget );
 
-		console.log( 'review-faq event.currentTarget.nextSibling: ' + event.currentTarget.nextSibling );
+		console.log( 'review-faq event.currentTarget.nextElementSibling : ' + event.currentTarget.nextElementSibling  );
 
-		event.target.nextSibling.classList.toggle( 'legal-active' );
+		event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
     }
 
 	document.querySelectorAll( '.tcb-post-content > .faq' ).forEach( function ( faq ) {
