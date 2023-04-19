@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggle( event )
     {
-		// event.currentTarget.classList.toggle( 'legal-active' );
+		event.currentTarget.classList.toggle( 'legal-active' );
 
 		// event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
 
