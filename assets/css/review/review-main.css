@@ -51,6 +51,10 @@
     width: 100%;
 }
 
+.tcb-post-content table.legal-check {
+    min-width: 300px;
+}
+
 /* Review Background */
 
 .tcb-post-content tr:nth-child( odd ) {
