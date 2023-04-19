@@ -22,8 +22,14 @@
     margin-bottom: 30px;
 }
 
-.tcb-post-content ul li,
-.tcb-post-content ol li {
+.tcb-post-content ul,
+.tcb-post-content ol {
+    padding-top: 0px;
+    padding-bottom: 30px;
+}
+
+.tcb-post-content ul li:not( :last-child ),
+.tcb-post-content ol li:not( :last-child ) {
     padding-bottom: 15px;
 }
 
