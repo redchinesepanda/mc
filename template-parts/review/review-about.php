@@ -11,10 +11,14 @@
     <div class="review-about">
         <div class="about-left">
             <div class="about-logo"></div>
-            <div class="about-rating"><?php echo $args[ 'rating' ]; ?></div>
+            <?php if( empty( $args['mode'] ) ) : ?>
+                <div class="about-rating"><?php echo $args[ 'rating' ]; ?></div>
+            <?php endif; ?>
         </div>
         <div class="about-center">
-            <h1><?php echo $args[ 'title' ]; ?></h1>
+            <?php if( empty( $args['mode'] ) ) : ?>
+                <h1><?php echo $args[ 'title' ]; ?></h1>
+            <?php endif; ?>
             <h3><?php echo $args[ 'bonus' ]; ?></h3>
             <p><?php echo $args[ 'description' ]; ?></p>
         </div>

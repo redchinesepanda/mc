@@ -26,8 +26,16 @@ class ReviewAbout
 
     const FIELD = 'review-about';
 
-    public static function get()
+    public static function get( $args )
     {
+        $mode = '';
+
+        if ( !empty( $args[ 'mode' ] ) ) {
+            if ( $args[ 'mode' ] == 'footer' ) {
+                $mode = 'footer';
+            }
+        }
+
         $group = get_field( self::FIELD );
         
         if( $group ) {
@@ -49,6 +57,8 @@ class ReviewAbout
 
                     'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
                 ],
+
+                'mode' => $mode,
             ];
         }
 
@@ -57,11 +67,11 @@ class ReviewAbout
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-about.php';
 
-    public static function render()
+    public static function render( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE, false, self::get( $args ) );
 
         $output = ob_get_clean();
 
