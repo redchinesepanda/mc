@@ -4,6 +4,10 @@
 	display: none;
 }
 
+.faq .faq-item-content:not( .legal-visibile ) {
+	opacity: 0;
+}
+
 .faq .faq-item-title {
 	display: flex;
 }
