@@ -54,6 +54,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	async function loadImage( url, elem ) {
+		console.log( 'review-gallery loadImage url: ' + url );
+
 		return new Promise( ( resolve, reject ) => {
 			elem.onload = () => resolve( elem );
 
@@ -73,9 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 		
-		// popup.style.backgroundImage = `url( ${ url } )`; 
-
-		console.log( 'review-gallery loadImage url: ' + url );
+		// popup.style.backgroundImage = `url( ${ url } )`;
 
 		await loadImage( url, popup );
 
