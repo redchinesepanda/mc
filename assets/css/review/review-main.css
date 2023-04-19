@@ -72,7 +72,7 @@ li::before {
     height: 2rem;
     
     line-height: 2rem;
-    color: white;
+    color: rgb(89, 151, 227);
     text-align: center;
 
     /* margin-right: 0.5rem; */
