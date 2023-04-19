@@ -71,11 +71,12 @@ li::before {
     width: 24px;
     height: 24px;
     
+    font-weight: 600;
     line-height: 20px;
     color: rgb(89, 151, 227);
     text-align: center;
 
-    /* margin-right: 0.5rem; */
+    margin-right: 10px;
 }
 
 /* Review Typography */
