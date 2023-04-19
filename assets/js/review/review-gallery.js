@@ -75,6 +75,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// popup.style.backgroundImage = `url( ${ url } )`; 
 
+		console.log( 'review-gallery loadImage' );
+
 		await loadImage( url, popup );
 
 		let left = popup.querySelector( '.legal-left' );
