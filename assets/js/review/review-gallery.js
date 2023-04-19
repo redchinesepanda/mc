@@ -63,7 +63,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} );
 	}
 
-	function popupUpdate( event )
+	async function popupUpdate( event )
 	{
 		let figure = event.currentTarget;
 
