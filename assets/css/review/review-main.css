@@ -72,11 +72,11 @@
 }
 
 .tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
-    background-image: url( '../../img/review/review-teble-check.svg' );
+    background-image: url( '../../img/review/review-table-check.svg' );
 }
 
 .tcb-post-content table.legal-check td.legal-cross:last-child {
-    background-image: url( '../../img/review/review-teble-cross.svg' );
+    background-image: url( '../../img/review/review-table-cross.svg' );
 }
 
 .tcb-post-content table.legal-check td:last-child {
