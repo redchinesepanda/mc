@@ -15,6 +15,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'review-faq toggle content.classList.contains: ' + content.classList.contains( 'legal-active' ) );
 
 		if ( !content.classList.contains( 'legal-active' ) ) {
+			console.log( 'review-faq toggle !content.classList.contains true' );
+
 			content.classList.add('legal-visibility');    
 
 			content.addEventListener( 'transitionend', function( e ) {
@@ -27,6 +29,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				passive: false
 			} );
 		} else {
+			console.log( 'review-faq toggle !content.classList.contains false' );
+
 			content.classList.remove( 'legal-active' );
 
 			setTimeout(function () {
