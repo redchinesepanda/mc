@@ -15,27 +15,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'review-faq toggle content.classList.contains: ' + content.classList.contains( 'legal-active' ) );
 
 		if ( !content.classList.contains( 'legal-active' ) ) {
-			console.log( 'review-faq toggle !content.classList.contains true' );
+			content.classList.add( 'legal-active' );
 
-			content.classList.add('legal-visibile');    
+			setTimeout(function () {
+				content.classList.add( 'legal-visibile' );
+			}, 20);
+		} else {
+			content.classList.remove('legal-visibile');    
 
 			content.addEventListener( 'transitionend', function( e ) {
 				console.log( 'review-faq toggle transitionend' );
 
-				content.classList.add( 'legal-active' );
+				content.classList.remove( 'legal-active' );
 			}, {
 				capture: false,
 				once: true,
 				passive: false
 			} );
-		} else {
-			console.log( 'review-faq toggle !content.classList.contains false' );
-
-			content.classList.remove( 'legal-active' );
-
-			setTimeout(function () {
-				content.classList.remove( 'legal-visibile' );
-			}, 20);
 		}
     }
 
