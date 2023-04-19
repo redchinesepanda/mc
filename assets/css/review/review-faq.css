@@ -22,6 +22,10 @@
 
 /* FAQ Position */
 
+.faq {
+	margin-bottom: 40px;
+}
+
 .faq .faq-item:not( :last-child ) {
 	margin-bottom: 10px;
 }
