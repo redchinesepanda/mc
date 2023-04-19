@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
 		event.currentTarget.classList.toggle( 'legal-active' );
 
+		console.log( 'review-faq event.currentTarget.nextSibling: ' + event.currentTarget.nextSibling );
+
 		event.currentTarget.nextSibling.classList.toggle( 'legal-active' );
     }
 
