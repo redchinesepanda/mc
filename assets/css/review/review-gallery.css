@@ -13,7 +13,7 @@
   
 /* Gallery Position */
 
-.gallery .legal-gallery {
+.tcb-post-content .legal-gallery {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -64,7 +64,7 @@
     max-width: unset !important;
 }
 
-.gallery .legal-gallery {
+.tcb-post-content .legal-gallery {
     height: 100vh;
     width: 100%;
 }
@@ -107,7 +107,7 @@
     border-bottom-left-radius: 6px;
 }
 
-.gallery .legal-gallery {
+.tcb-post-content .legal-gallery {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
