@@ -33,7 +33,7 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content p {
+.tcb-post-content p:not( :last-child ) {
     padding-bottom: 28px !important;
 }
 
