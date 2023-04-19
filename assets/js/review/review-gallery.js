@@ -53,6 +53,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	async function loadImage( url, elem ) {
+		return new Promise( ( resolve, reject ) => {
+			elem.onload = () => resolve( elem );
+
+			elem.onerror = reject;
+
+			elem.style.backgroundImage = `url( ${ url } )`;
+		} );
+	}
+
 	function popupUpdate( event )
 	{
 		let figure = event.currentTarget;
@@ -62,10 +72,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let popup = content.querySelector( '.legal-gallery' );
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
-
-		// popup.style.backgroundImage = "url( '" + url + "' )"; 
 		
-		popup.style.backgroundImage = `url( ${ url } )`; 
+		// popup.style.backgroundImage = `url( ${ url } )`; 
+
+		await loadImage( url, popup );
 
 		let left = popup.querySelector( '.legal-left' );
 
