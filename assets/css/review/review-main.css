@@ -38,7 +38,7 @@
 }
 
 .tcb-post-content h3 {
-    padding-bottom: 20px;
+    padding-bottom: 20px !important;
 }
 
 /* Review Background */
