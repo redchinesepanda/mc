@@ -110,7 +110,8 @@
 .tcb-post-content .legal-gallery {
     background-color: rgba(0, 0, 0, 0.75);
     /* transition: background-image 6s; */
-    transition: background-image 1000ms linear;
+    /* transition: background-image 1000ms linear; */
+    transition: background-image 2s cubic-bezier(1, 1, 1, 1);
 }
 
 /* Gallery Typography */
