@@ -6,9 +6,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
 
-		console.log( 'review-gallery event.currentTarget.dataset.next: ' + event.currentTarget.dataset.next );
+		let next = event.currentTarget.dataset.next;
 
-		if ( event.currentTarget.dataset.next !== null ) {
+		console.log( 'review-gallery next: ' + next );
+
+		// if ( event.currentTarget.dataset.next !== null ) {
+
+		if( typeof next !== 'undefined' ) {
 			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
 
 			figure.click();
