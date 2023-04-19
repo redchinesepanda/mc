@@ -7,6 +7,8 @@ class ToolTinyMCE
         $handler = new self();
 
 		add_filter('tiny_mce_before_init', [ $handler, 'table_classes' ] );
+
+		add_filter('tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
     }
 
 	public static function table_classes( $settings )
@@ -24,9 +26,29 @@ class ToolTinyMCE
 				'title' => 'Ряд',
 				'value' => 'legal-raw',
 			],
+			[
+				'title' => 'Галка',
+				'value' => 'legal-check',
+			],
 		];
 
 		$settings[ 'table_class_list' ] = json_encode( $styles );
+
+		return $settings;
+	}
+
+	public static function table_cell_classes( $settings )
+	{
+		$settings[ 'table_cell_class_list' ] = json_encode( [
+			[
+				'title' => 'По умолчанию',
+				'value' => ''
+			],
+			[
+				'title' => 'Крест',
+				'value' => 'legal-cross',
+			],
+		] );
 
 		return $settings;
 	}
