@@ -41,14 +41,14 @@
     padding-bottom: 20px !important;
 }
 
+.tcb-post-content table.legal-check td:last-child {
+    padding-right: 56px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw {
     width: 100%;
-}
-
-.tcb-post-content table.legal-check td:last-child {
-    width: 56px;
 }
 
 /* Review Background */
@@ -84,7 +84,7 @@
 }
 
 .tcb-post-content table.legal-check td:last-child {
-    background-position: center center;
+    background-position: right 13px center;
     background-repeat: no-repeat;
     background-size: auto;
 }
