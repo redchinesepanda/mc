@@ -18,6 +18,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			content.classList.add('legal-visibility');    
 
 			content.addEventListener( 'transitionend', function( e ) {
+				console.log( 'review-faq toggle transitionend' );
+
 				content.classList.add( 'legal-active' );
 			}, {
 				capture: false,
