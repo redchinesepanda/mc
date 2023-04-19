@@ -37,6 +37,10 @@
     padding-bottom: 28px !important;
 }
 
+.tcb-post-content h3 {
+    padding-bottom: 20px;
+}
+
 /* Review Background */
 
 .tcb-post-content tr:nth-child( odd ) {
@@ -60,7 +64,7 @@
     counter-increment: legal-counter;
 }
 
-li::before {
+.tcb-post-content ol li::before {
     content: counter( legal-counter );
     
     display: inline-block;
@@ -90,4 +94,13 @@ li::before {
     font-weight: 400 !important;
     line-height: 28px;
     color: rgba(10, 10, 10, 0.85);
+}
+
+.tcb-post-content h3 {
+    font-family: "Source Sans Pro";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33.6px;
+    color: rgb(12, 17, 21);
 }
