@@ -124,6 +124,11 @@
     color: rgb(12, 17, 21);
 }
 
+.tcb-post-content table.legal-raw-column tr:first-child,
+.tcb-post-content table.legal-raw-column tr > td:first-child {
+    font-weight: 600;
+}
+
 .tcb-post-content table.legal-raw tr:first-child {
     font-weight: 700;
     color: rgb(255, 255, 255);
