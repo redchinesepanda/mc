@@ -17,9 +17,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( !content.classList.contains( 'legal-active' ) ) {
 			content.classList.add( 'legal-active' );
 
-			setTimeout(function () {
+			setTimeout( function () {
 				content.classList.add( 'legal-visibile' );
-			}, 600);
+			}, 20 );
 		} else {
 			content.classList.remove('legal-visibile');    
 
