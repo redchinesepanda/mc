@@ -29,3 +29,7 @@
 .tcb-post-content tr:nth-child( even ) {
     background-color: transparent;
 }
+
+.tcb-post-content ul li {
+    list-style-image: url( '../../img/review/review-ul.svg' );
+}

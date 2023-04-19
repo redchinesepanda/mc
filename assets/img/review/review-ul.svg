@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="review-ul.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg858"
+   version="1.1"
+   viewBox="0 0 3.9687499 3.9687501"
+   height="15"
+   width="15">
+  <defs
+     id="defs852" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="7"
+     inkscape:window-height="1030"
+     inkscape:window-width="1895"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="1.6341412"
+     inkscape:cx="18.114809"
+     inkscape:zoom="11.2"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata855">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <path
+       style="opacity:1;fill:#5997e3;fill-rule:nonzero;stroke:none;stroke-width:0.0129419;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1"
+       d="M 0.89296862,3.6495126 V 0.31923264 c 0,-0.2306 0.27880898,-0.346081 0.44186498,-0.183025 l 1.66514,1.66513996 c 0.101077,0.101076 0.101077,0.264973 0,0.36605 l -1.66514,1.66514 c -0.163056,0.163069 -0.44186498,0.04757 -0.44186498,-0.183025 z"
+       stroke-linecap="round"
+       id="path10" />
+  </g>
+</svg>
