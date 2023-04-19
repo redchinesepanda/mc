@@ -51,8 +51,31 @@
     list-style-image: url( '../../img/review/review-ul.svg' );
 }
 
-.tcb-post-content ol li::marker {
-    border: 1px solid #f00;
+.tcb-post-content ol {
+    list-style: none;
+    counter-reset: legal-counter;
+}
+
+.tcb-post-content ol li {
+    counter-increment: legal-counter;
+}
+
+li::before {
+    content: counter( legal-counter );
+    
+    display: inline-block;
+
+    border: 1px solid rgb(89, 151, 227);
+    border-radius: 50%;
+
+    width: 2rem;
+    height: 2rem;
+    
+    line-height: 2rem;
+    color: white;
+    text-align: center;
+
+    /* margin-right: 0.5rem; */
 }
 
 /* Review Typography */
