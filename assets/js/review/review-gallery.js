@@ -24,9 +24,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
 		let figure = event.currentTarget;
 
-		let gallery = document.getElementById( figure.dataset.gallery );
+		// let gallery = document.getElementById( figure.dataset.gallery );
 
-		if ( gallery.querySelector( '.legal-gallery' ) === null ) {
+		let content = document.querySelector( '.tcb-post-content' );
+
+		// if ( gallery.querySelector( '.legal-gallery' ) === null ) {
+
+		if ( content.querySelector( '.legal-gallery' ) === null ) {
 			let popup = document.createElement( 'div' );
 		
 			popup.classList.add( 'legal-gallery' );
@@ -49,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			popup.appendChild( right );
 
-			gallery.appendChild( popup );
+			content.appendChild( popup );
 		}
 	}
 
@@ -57,7 +61,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let figure = event.currentTarget;
 
-		let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
+		// let popup = document.getElementById( figure.dataset.gallery ).querySelector( '.legal-gallery' );
+
+		let content = document.querySelector( '.tcb-post-content' );
+		
+		let popup = content.querySelector( '.legal-gallery' );
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
