@@ -4,6 +4,10 @@
 	display: none;
 }
 
+.faq .faq-item-title {
+	display: flex;
+}
+
 .faq .faq-item-title:before {
 	display: block;
 	content: '';
@@ -16,7 +20,7 @@
 }
 
 .faq .faq-item-title {
-	padding: 10px 20px 10px 40px;
+	padding: 10px 20px;
 }
 
 .faq .faq-item-content {
