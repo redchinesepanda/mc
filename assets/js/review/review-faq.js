@@ -10,7 +10,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let content = event.currentTarget.nextElementSibling;
 
-		if ( !content.classList.contains( 'legal-active' )) {
+		console.log( 'review-faq toggle content: ' + content );
+		
+		console.log( 'review-faq toggle content.classList.contains: ' + content.classList.contains( 'legal-active' ) );
+
+		if ( !content.classList.contains( 'legal-active' ) ) {
 			content.classList.add('legal-visibility');    
 
 			content.addEventListener( 'transitionend', function( e ) {
