@@ -71,6 +71,20 @@
     background-color: rgb(239, 245, 251);
 }
 
+.tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
+    background-image: url( '../../img/review/review-teble-check.svg' );
+}
+
+.tcb-post-content table.legal-check td.legal-cross:last-child {
+    background-image: url( '../../img/review/review-teble-cross.svg' );
+}
+
+.tcb-post-content table.legal-check td:last-child {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
 .tcb-post-content ul li {
     list-style-image: url( '../../img/review/review-ul.svg' );
 }
