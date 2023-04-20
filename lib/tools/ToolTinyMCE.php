@@ -6,9 +6,11 @@ class ToolTinyMCE
     {
         $handler = new self();
 
-		add_filter('tiny_mce_before_init', [ $handler, 'table_classes' ] );
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
 
-		add_filter('tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats' ] );
     }
 
 	public static function table_classes( $settings )
@@ -16,7 +18,7 @@ class ToolTinyMCE
 		$styles = [
 			[
 				'title' => 'По умолчанию',
-				'value' => ''
+				'value' => '',
 			],
 			[
 				'title' => 'Ряд и Столбец',
@@ -42,11 +44,26 @@ class ToolTinyMCE
 		$settings[ 'table_cell_class_list' ] = json_encode( [
 			[
 				'title' => 'По умолчанию',
-				'value' => ''
+				'value' => '',
 			],
 			[
 				'title' => 'Крест',
 				'value' => 'legal-cross',
+			],
+		] );
+
+		return $settings;
+	}
+
+	public static function style_formats( $settings )
+	{
+		$settings[ 'style_formats' ] = json_encode( [
+			[
+				'title' => 'Overview',
+
+				'block' => 'p',
+
+				'classes' => 'legal-overview',
 			],
 		] );
 
