@@ -37,7 +37,7 @@
     border-bottom: 2px solid #5997E3;
 }
 
-.legal-overview:last-child {
+.tcb-post-content > .legal-overview:last-child {
     border-bottom: 2px solid #5997E3;
 }
 
