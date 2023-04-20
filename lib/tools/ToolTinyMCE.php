@@ -59,10 +59,6 @@ class ToolTinyMCE
 	{
 		$settings[ 'style_formats' ] = json_encode( [
 			[
-				'title' => 'Overview',
-			],
-
-			[
 				'title' => 'Overview Start',
 				
 				'selector' => 'p',
