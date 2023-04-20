@@ -19,6 +19,7 @@
 }
 
 .tcb-post-content .legal-header-history::before {
+    content: '';
     display: block;
 }
 
