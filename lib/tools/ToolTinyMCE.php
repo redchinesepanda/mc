@@ -59,11 +59,27 @@ class ToolTinyMCE
 	{
 		$settings[ 'style_formats' ] = json_encode( [
 			[
+				'title' => 'Overview Start',
+				
+				'selector' => 'p',
+
+				'classes' => 'legal-overview-start',
+			],
+
+			[
 				'title' => 'Overview',
 				
 				'selector' => 'p',
 
 				'classes' => 'legal-overview',
+			],
+
+			[
+				'title' => 'Overview End',
+				
+				'selector' => 'p',
+
+				'classes' => 'legal-overview-end',
 			],
 		] );
 
