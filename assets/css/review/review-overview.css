@@ -20,7 +20,7 @@
 
 /* .tcb-post-content > .legal-overview:first-child { */
 .tcb-post-content > .legal-overview:first-of-type {
-    padding-top: 30px;
+    padding-top: 30px !important;
 }
 
 .tcb-post-content > .legal-overview:last-child {
