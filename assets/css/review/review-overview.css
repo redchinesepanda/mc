@@ -20,7 +20,8 @@
 }
 
 .tcb-post-content .legal-overview-start {
-    padding-top: 30px !important;
+    /* padding-top: 30px !important; */
+    padding-top: 30px;
 }
 
 .tcb-post-content .legal-overview-end {
