@@ -57,12 +57,10 @@ class ToolTinyMCE
 
 	public static function style_formats( $settings )
 	{
-		$settings[ 'style_formats' ] = json_encode( [
-			[
-				'title' => 'Overview',
+		$settings[ 'style_formats' ][] = json_encode( [
+			'title' => 'Overview',
 
-				'classes' => 'legal-overview',
-			],
+			'classes' => 'legal-overview',
 		] );
 
 		return $settings;
