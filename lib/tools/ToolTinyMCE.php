@@ -10,7 +10,9 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats' ] );
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_overview' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
     }
 
 	public static function table_classes( $settings )
@@ -55,7 +57,7 @@ class ToolTinyMCE
 		return $settings;
 	}
 
-	public static function style_formats( $settings )
+	public static function style_formats_overview( $settings )
 	{
 		$settings[ 'style_formats' ] = json_encode( [
 			[
@@ -80,6 +82,21 @@ class ToolTinyMCE
 				'selector' => 'p',
 
 				'classes' => 'legal-overview-end',
+			],
+		] );
+
+		return $settings;
+	}
+
+	public static function style_formats_header( $settings )
+	{
+		$settings[ 'style_formats' ] = json_encode( [
+			[
+				'title' => 'H3 History',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-history',
 			],
 		] );
 

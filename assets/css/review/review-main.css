@@ -4,6 +4,24 @@
     display: none;
 }
 
+.tcb-post-content ol {
+    list-style: none;
+    counter-reset: legal-counter;
+}
+
+.tcb-post-content ol li {
+    counter-increment: legal-counter;
+}
+
+.tcb-post-content ol li::before {
+    content: counter( legal-counter );
+    display: inline-block;
+}
+
+.tcb-post-content .legal-header-history::before {
+    display: block;
+}
+
 /* Review Position */
 
 .tcb-post-content {
@@ -13,7 +31,6 @@
 }
 
 .tcb-post-content h2 {
-    /* padding-top: 30px !important; */
     padding-bottom: 20px !important;
 }
 
@@ -45,6 +62,14 @@
     padding-right: 56px;
 }
 
+.tcb-post-content ol li::before {
+    margin-right: 10px;
+}
+
+.tcb-post-content .legal-header-3::before {
+    margin-right: 20px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw {
@@ -53,6 +78,16 @@
 
 .tcb-post-content table.legal-check {
     min-width: 300px;
+}
+
+.tcb-post-content ol li::before {
+    width: 24px;
+    height: 24px;
+}
+
+.tcb-post-content .legal-header-history::before {
+    width: 40px;
+    height: 40px;
 }
 
 /* Review Background */
@@ -97,32 +132,20 @@
     list-style-image: url( '../../img/review/review-ul.svg' );
 }
 
-.tcb-post-content ol {
-    list-style: none;
-    counter-reset: legal-counter;
-}
-
-.tcb-post-content ol li {
-    counter-increment: legal-counter;
-}
-
 .tcb-post-content ol li::before {
-    content: counter( legal-counter );
-    
-    display: inline-block;
-
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
+}
 
-    width: 24px;
-    height: 24px;
-    
-    font-weight: 600;
-    line-height: 20px;
-    color: rgb(89, 151, 227);
-    text-align: center;
-
-    margin-right: 10px;
+.tcb-post-content .legal-header-3::before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgb(89, 151, 227);
+    border-radius: 50%;
+}
+.tcb-post-content .legal-header-history::before {
+    background-image: url( '../../img/review/header/review-history.svg' );
 }
 
 /* Review Typography */
@@ -156,4 +179,11 @@
 .tcb-post-content table.legal-raw tr:first-child {
     font-weight: 700;
     color: rgb(255, 255, 255);
+}
+
+.tcb-post-content ol li::before {
+    font-weight: 600;
+    line-height: 20px;
+    color: rgb(89, 151, 227);
+    text-align: center;
 }
