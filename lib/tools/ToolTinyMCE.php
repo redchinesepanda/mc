@@ -57,9 +57,22 @@ class ToolTinyMCE
 		return $settings;
 	}
 
+	public static function style_formats_check( $settings, $style_new )
+	{
+		$style_formats = [];
+
+		if ( !empty( $settings[ 'style_formats' ] ) ) {
+			$style_formats = json_decode( $settings[ 'style_formats' ] );
+		}
+
+		$settings[ 'style_formats' ] = json_encode( array_merge( $style_formats, $style_new ) );
+
+		return $settings;
+	}
+
 	public static function style_formats_overview( $settings )
 	{
-		$settings[ 'style_formats' ] = json_encode( [
+		return self::style_formats_check( $settings, [
 			[
 				'title' => 'Overview Start',
 				
@@ -84,15 +97,11 @@ class ToolTinyMCE
 				'classes' => 'legal-overview-end',
 			],
 		] );
-
-		return $settings;
 	}
 
 	public static function style_formats_header( $settings )
 	{
-		// $settings[ 'style_formats' ] = json_encode( [
-		
-		$style_formats_header = [
+		return self::style_formats_check( $settings, [
 			[
 				'title' => 'H3 History',
 				
@@ -132,19 +141,44 @@ class ToolTinyMCE
 
 				'classes' => 'legal-header-3 legal-header-basketball',
 			],
-		];
 
-		// ] );
+			[
+				'title' => 'H3 Horceracing',
+				
+				'block' => 'h3',
 
-		$style_formats = [];
+				'classes' => 'legal-header-3 legal-header-horceracing',
+			],
 
-		if ( !empty( $settings[ 'style_formats' ] ) ) {
-			$style_formats = json_decode( $settings[ 'style_formats' ] );
-		}
+			[
+				'title' => 'H3 Deposit',
+				
+				'block' => 'h3',
 
-		$settings[ 'style_formats' ] = json_encode( array_merge( $style_formats, $style_formats_header ) );
+				'classes' => 'legal-header-3 legal-header-deposit',
+			],
 
-		return $settings;
+			[
+				'title' => 'H3 Widthdraw',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-widthdraw',
+			],
+		] );
+	}
+
+	public static function style_formats_contextbox( $settings )
+	{
+		return self::style_formats_check( $settings, [
+			[
+				'title' => 'Contextbox',
+				
+				'block' => 'p',
+
+				'classes' => 'legal-contextbox',
+			],
+		] );
 	}
 }
 

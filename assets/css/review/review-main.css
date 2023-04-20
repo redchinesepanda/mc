@@ -76,6 +76,10 @@
     margin-right: 20px;
 }
 
+.tcb-post-content .legal-contextbox {
+    padding-left: 20px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw {
@@ -169,6 +173,22 @@
 
 .tcb-post-content .legal-header-basketball::before {
     background-image: url( '../../img/review/header/review-basketball.svg' );
+}
+
+.tcb-post-content .legal-header-horceracing::before {
+    background-image: url( '../../img/review/header/review-horceracing.svg' );
+}
+
+.tcb-post-content .legal-header-deposit::before {
+    background-image: url( '../../img/review/header/review-deposit.svg' );
+}
+
+.tcb-post-content .legal-header-widthdraw::before {
+    background-image: url( '../../img/review/header/review-widthdraw.svg' );
+}
+
+.tcb-post-content .legal-contextbox {
+    border-left: 2px solid rgb(89, 151, 227);
 }
 
 /* Review Typography */
