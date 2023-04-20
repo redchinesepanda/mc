@@ -56,8 +56,10 @@
     padding-bottom: 15px;
 }
 
-.tcb-style-wrap p {
-    padding-bottom: 28px;
+@media ( min-width: 300px ) {
+    .tcb-style-wrap p {
+        padding-bottom: 28px;
+    }
 }
 
 /* .tcb-post-content p:not( :last-child ) {
