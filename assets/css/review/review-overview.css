@@ -37,13 +37,12 @@
     border-bottom: 2px solid #5997E3;
 }
 
-.tcb-post-content .legal-overview {
-    background-color: rgb(239, 245, 251);
-}
-
 .tcb-post-content .legal-overview:last-child {
     border-bottom: 2px solid #5997E3;
-    background-color: #5997E3;
+}
+
+.tcb-post-content .legal-overview {
+    background-color: rgb(239, 245, 251);
 }
 
 /* Overview Typography */
