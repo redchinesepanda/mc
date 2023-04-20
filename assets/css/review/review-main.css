@@ -18,7 +18,11 @@
     display: inline-block;
 }
 
-.tcb-post-content .legal-header-history::before {
+.tcb-post-content .legal-header-3 {
+    display: flex;
+}
+
+.tcb-post-content .legal-header-3::before {
     content: '';
     display: block;
 }
@@ -86,7 +90,7 @@
     height: 24px;
 }
 
-.tcb-post-content .legal-header-history::before {
+.tcb-post-content .legal-header-3::before {
     width: 40px;
     height: 40px;
 }
@@ -145,8 +149,25 @@
     background-color: rgb(89, 151, 227);
     border-radius: 50%;
 }
+
 .tcb-post-content .legal-header-history::before {
     background-image: url( '../../img/review/header/review-history.svg' );
+}
+
+.tcb-post-content .legal-header-features::before {
+    background-image: url( '../../img/review/header/review-features.svg' );
+}
+
+.tcb-post-content .legal-header-football::before {
+    background-image: url( '../../img/review/header/review-football.svg' );
+}
+
+.tcb-post-content .legal-header-tennis::before {
+    background-image: url( '../../img/review/header/review-tennis.svg' );
+}
+
+.tcb-post-content .legal-header-basketball::before {
+    background-image: url( '../../img/review/header/review-basketball.svg' );
 }
 
 /* Review Typography */

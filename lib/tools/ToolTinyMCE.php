@@ -90,7 +90,9 @@ class ToolTinyMCE
 
 	public static function style_formats_header( $settings )
 	{
-		$settings[ 'style_formats' ] = json_encode( [
+		// $settings[ 'style_formats' ] = json_encode( [
+		
+		$style_formats_header = [
 			[
 				'title' => 'H3 History',
 				
@@ -98,7 +100,49 @@ class ToolTinyMCE
 
 				'classes' => 'legal-header-3 legal-header-history',
 			],
-		] );
+
+			[
+				'title' => 'H3 Features',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-features',
+			],
+
+			[
+				'title' => 'H3 Football',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-football',
+			],
+
+			[
+				'title' => 'H3 Tennis',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-tennis',
+			],
+
+			[
+				'title' => 'H3 Basketball',
+				
+				'block' => 'h3',
+
+				'classes' => 'legal-header-3 legal-header-basketball',
+			],
+		];
+
+		// ] );
+
+		$style_formats = [];
+
+		if ( !empty( $settings[ 'style_formats' ] ) ) {
+			$style_formats = json_decode( $settings[ 'style_formats' ] );
+		}
+
+		$settings[ 'style_formats' ] = json_encode( array_merge( $style_formats, $style_formats_header ) );
 
 		return $settings;
 	}
