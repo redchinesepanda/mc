@@ -13,6 +13,8 @@ class ToolTinyMCE
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_overview' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
     }
 
 	public static function table_classes( $settings )
