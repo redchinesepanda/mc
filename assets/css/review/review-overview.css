@@ -23,7 +23,7 @@
 }
 
 .tcb-post-content .legal-overview-end {
-    padding-bottom: 30px !important;
+    margin-bottom: 30px;
 }
 
 .review-overview .overview-description p:not( :last-child ) {
