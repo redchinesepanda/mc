@@ -57,17 +57,17 @@ class ToolTinyMCE
 
 	public static function style_formats( $settings )
 	{
-		$style_formats = json_decode( $settings[ 'style_formats' ] );
-		
-		$settings[ 'style_formats' ] = json_encode(
-			array_merge( $style_formats, [
-				[
-					'title' => 'Overview',
+		// $style_formats = json_decode( $settings[ 'style_formats' ] );
 
-					'classes' => 'legal-overview',
-				],
-			] )
-		);
+		// $settings[ 'style_formats' ] = json_encode(
+		// 	array_merge( $style_formats, [
+		// 		[
+		// 			'title' => 'Overview',
+
+		// 			'classes' => 'legal-overview',
+		// 		],
+		// 	] )
+		// );
 
 		return $settings;
 	}
