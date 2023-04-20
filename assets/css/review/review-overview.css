@@ -13,16 +13,16 @@
     padding: 30px 40px;
 }
 
-.tcb-post-content .legal-overview {
+.tcb-post-content > .legal-overview {
     padding-left: 40px;
     padding-right: 40px;
 }
 
-.tcb-post-content .legal-overview:first-child {
+.tcb-post-content > .legal-overview:first-child {
     padding-top: 30px;
 }
 
-.tcb-post-content .legal-overview:last-child {
+.tcb-post-content > .legal-overview:last-child {
     padding-bottom: 30px;
 }
 
