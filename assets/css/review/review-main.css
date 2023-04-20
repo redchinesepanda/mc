@@ -60,7 +60,7 @@
     padding-bottom: 28px !important;
 } */
 
-.tcb-post-content p[style]:not( :last-child ) {
+.tcb-post-content p:not( :last-child ):not( [ class ] ) {
     padding-bottom: 28px;
 }
 
