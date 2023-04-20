@@ -13,6 +13,19 @@
     padding: 30px 40px;
 }
 
+.tcb-post-content .legal-overview {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.tcb-post-content .legal-overview:first-child {
+    padding-top: 30px;
+}
+
+.tcb-post-content .legal-overview:last-child {
+    padding-bottom: 30px;
+}
+
 .review-overview .overview-description p:not( :last-child ) {
     padding-bottom: 28px;
 }
@@ -21,6 +34,14 @@
 
 .review-overview .overview-description {
     background-color: rgb(239, 245, 251);
+    border-bottom: 2px solid #5997E3;
+}
+
+.tcb-post-content .legal-overview {
+    background-color: rgb(239, 245, 251);
+}
+
+.tcb-post-content .legal-overview:last-child {
     border-bottom: 2px solid #5997E3;
 }
 
