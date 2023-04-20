@@ -20,6 +20,7 @@
 
 .tcb-post-content .legal-header-3 {
     display: flex;
+    align-items: center;
 }
 
 .tcb-post-content .legal-header-3::before {
@@ -91,8 +92,8 @@
 }
 
 .tcb-post-content .legal-header-3::before {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
 }
 
 /* Review Background */
