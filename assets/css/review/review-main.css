@@ -56,9 +56,13 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content p:not( :last-child ) {
-    padding-bottom: 28px !important;
+.tcb-style-wrap p {
+    padding-bottom: 28px;
 }
+
+/* .tcb-post-content p:not( :last-child ) {
+    padding-bottom: 28px !important;
+} */
 
 .tcb-post-content h3 {
     padding-bottom: 20px !important;
