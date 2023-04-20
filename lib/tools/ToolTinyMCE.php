@@ -61,8 +61,6 @@ class ToolTinyMCE
 			[
 				'title' => 'Overview',
 
-				'block' => 'p',
-
 				'classes' => 'legal-overview',
 			],
 		] );
