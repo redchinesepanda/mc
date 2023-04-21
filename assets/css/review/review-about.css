@@ -40,8 +40,13 @@
 .review-about .about-center {
     width: calc( ( 1080px * 0.5 ) - 33px );
 }
+
 .review-about .about-right {
     width: calc( ( 1080px * 0.25 ) - 33px );
+}
+
+.legal-afillate {
+    max-width: 261px;
 }
 
 /* Review About Position */
