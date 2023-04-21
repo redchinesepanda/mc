@@ -82,7 +82,7 @@ class ReviewAbout
         return $output;
     }
 
-    public static function get( $args )
+    public static function get_button( $args )
     {
         $group = get_field( self::FIELD );
         
