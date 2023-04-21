@@ -9,8 +9,7 @@
 
 /* Profs Cons Width */
 
-.legal-profs-cons .profs-cons-title,
-.legal-profs-cons .profs-cons-description {
+.legal-profs-cons .profs-cons-item {
 	width: calc( 50% - 8px );
 }
 
