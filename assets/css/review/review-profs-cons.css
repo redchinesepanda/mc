@@ -1,0 +1,50 @@
+/* Profs Cons Display */
+
+.legal-profs-cons {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 16px;
+	row-gap: 30px;
+}
+
+/* Profs Cons Width */
+
+.legal-profs-cons .profs-cons-title,
+.legal-profs-cons .profs-cons-description {
+	width: calc( 50% - 8px );
+}
+
+/* Profs Cons Position */
+
+.legal-profs-cons .profs-cons-title {
+	padding: ;
+}
+
+/* Profs Cons Background */
+
+.legal-profs-cons .profs-cons-title {
+	background-color: rgb(244, 247, 251);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-radius: 20px;
+}
+
+.legal-profs-cons .legal-pros {
+	background-image: url( '../../img/review/review-pros.svg' );
+}
+
+.legal-profs-cons .legal-cons {
+	background-image: url( '../../img/review/review-cons.svg' );
+}
+
+/* Profs Cons Typography */
+
+.legal-profs-cons .profs-cons-title {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 31.5px;
+	color: rgb(0, 0, 0);
+}
