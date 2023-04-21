@@ -10,7 +10,7 @@
 }
 
 .tcb-post-content ol[style] {
-    list-style: none;
+    list-style: none !important;
     list-style-type: none;
     counter-reset: legal-counter-alpha;
 }
