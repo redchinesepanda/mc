@@ -51,6 +51,12 @@
     padding-bottom: 30px;
 }
 
+.tcb-post-content li > ul,
+.tcb-post-content li > ol {
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
 .tcb-post-content ul li:not( :last-child ),
 .tcb-post-content ol li:not( :last-child ) {
     padding-bottom: 15px;
