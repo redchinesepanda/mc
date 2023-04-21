@@ -99,7 +99,7 @@ class ReviewAbout
 
     const TEMPLATE_BUTTON = LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php';
 
-    public static function render( $args )
+    public static function render_button( $args )
     {
         ob_start();
 
