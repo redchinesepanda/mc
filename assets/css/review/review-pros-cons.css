@@ -1,27 +1,27 @@
-/* Profs Cons Display */
+/* pros Cons Display */
 
-.legal-profs-cons {
+.legal-pros-cons {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 16px;
 	row-gap: 30px;
 }
 
-/* Profs Cons Width */
+/* pros Cons Width */
 
-.legal-profs-cons .profs-cons-item {
+.legal-pros-cons .pros-cons-item {
 	width: calc( 50% - 8px );
 }
 
-/* Profs Cons Position */
+/* pros Cons Position */
 
-.legal-profs-cons .profs-cons-title {
+.legal-pros-cons .pros-cons-title {
 	padding-left: 60px;
 }
 
-/* Profs Cons Background */
+/* pros Cons Background */
 
-.legal-profs-cons .profs-cons-title {
+.legal-pros-cons .pros-cons-title {
 	background-color: rgb(244, 247, 251);
 	background-position: left center;
 	background-repeat: no-repeat;
@@ -29,17 +29,17 @@
 	border-radius: 20px;
 }
 
-.legal-profs-cons .legal-profs {
-	background-image: url( '../../img/review/review-profs.svg' );
+.legal-pros-cons .legal-pros {
+	background-image: url( '../../img/review/review-pros.svg' );
 }
 
-.legal-profs-cons .legal-cons {
+.legal-pros-cons .legal-cons {
 	background-image: url( '../../img/review/review-cons.svg' );
 }
 
-/* Profs Cons Typography */
+/* pros Cons Typography */
 
-.legal-profs-cons .profs-cons-title {
+.legal-pros-cons .pros-cons-title {
 	font-family: "Source Sans Pro";
 	font-size: 18px;
 	font-style: normal;

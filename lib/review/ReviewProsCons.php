@@ -1,9 +1,9 @@
 <?php
 
-class ReviewProfsCons
+class ReviewProsCons
 {
     const CSS = [
-        'review-profs-cons' => LegalMain::LEGAL_URL . '/assets/css/review/review-profs-cons.css',
+        'review-pros-cons' => LegalMain::LEGAL_URL . '/assets/css/review/review-pros-cons.css',
     ];
 
     public static function register_style()
@@ -17,16 +17,16 @@ class ReviewProfsCons
     {
         $handler = new self();
 
-        // [legal-profs-cons]
+        // [legal-pros-cons]
 
-        add_shortcode( 'legal-profs-cons', [ $handler, 'render' ] );
+        add_shortcode( 'legal-pros-cons', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    const FIELD = 'review-profs-cons';
+    const FIELD = 'review-pros-cons';
 
-    const GROUP = 'profs-cons-item';
+    const GROUP = 'pros-cons-item';
 
     const ITEM_TYPE = 'item-type';
 
@@ -55,7 +55,7 @@ class ReviewProfsCons
         return $args;
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-profs-cons.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-pros-cons.php';
 
     public static function render()
     {
