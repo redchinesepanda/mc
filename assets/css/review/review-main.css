@@ -27,7 +27,7 @@
 }
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li::before {
-    content: counter( legal-counter-alpha, lower-alpha );
+    content: counter( legal-counter-alpha, upper-alpha );
 }
 
 .tcb-post-content .legal-header-3 {
