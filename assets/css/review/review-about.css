@@ -18,7 +18,7 @@
     align-items: center;
 }
 
-.review-about .legal-afillate {
+.legal-afillate {
     display: block;
 }
 
@@ -67,7 +67,7 @@
     margin-right: auto;
 }
 
-.review-about .legal-afillate {
+.legal-afillate {
     padding: 7px 41px 7px 22px;
 }
 
@@ -86,7 +86,7 @@
     background-size: auto;
 }
 
-.review-about .legal-afillate {
+.legal-afillate {
     background-image: url( '../../img/review/review-bet-here.svg' );
     background-position: right 22px center;
     background-repeat: no-repeat;
@@ -137,7 +137,7 @@
     text-align: center;
 }
 
-.review-about .legal-afillate {
+.legal-afillate {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
