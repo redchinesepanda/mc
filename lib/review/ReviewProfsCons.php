@@ -55,7 +55,7 @@ class ReviewProfsCons
         return $args;
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-pros-cons.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-profs-cons.php';
 
     public static function render()
     {
