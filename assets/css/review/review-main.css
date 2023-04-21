@@ -245,3 +245,7 @@
     color: rgb(89, 151, 227);
     text-align: center;
 }
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
+    color: #ffffff;
+}
