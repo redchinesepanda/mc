@@ -45,7 +45,7 @@
     width: calc( ( 1080px * 0.25 ) - 33px );
 }
 
-.legal-afillate {
+.tcb-post-content .legal-afillate {
     max-width: 261px;
 }
 
@@ -74,6 +74,10 @@
 
 .legal-afillate {
     padding: 7px 41px 7px 22px;
+}
+
+.tcb-post-content .legal-afillate {
+    margin: 0px auto;
 }
 
 /* Review About Background */
