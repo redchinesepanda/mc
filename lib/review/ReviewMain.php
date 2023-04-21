@@ -6,7 +6,7 @@ require_once( 'ReviewAnchors.php' );
 
 require_once( 'ReviewGroup.php' );
 
-require_once( 'ReviewOverview.php' );
+require_once( 'ReviewProfsCons.php' );
 
 require_once( 'RviewGallery.php' );
 
@@ -43,7 +43,7 @@ class ReviewMain
 
         ReviewGroup::register();
 
-        ReviewOverview::register();
+        ReviewProfsCons::register();
 
         RviewGallery::register();
 
