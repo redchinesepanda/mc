@@ -11,6 +11,7 @@
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] {
     list-style: none;
+    list-style-type: none;
     counter-reset: legal-counter-alpha;
 }
 
