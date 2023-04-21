@@ -9,13 +9,25 @@
     counter-reset: legal-counter;
 }
 
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] {
+    counter-reset: legal-counter-alpha;
+}
+
 .tcb-post-content ol li {
     counter-increment: legal-counter;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li {
+    counter-increment: legal-counter-alpha;
 }
 
 .tcb-post-content ol li::before {
     content: counter( legal-counter );
     display: inline-block;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li::before {
+    content: counter( legal-counter-alpha, lower-alpha );
 }
 
 .tcb-post-content .legal-header-3 {
