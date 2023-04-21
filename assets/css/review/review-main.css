@@ -9,9 +9,9 @@
     counter-reset: legal-counter;
 }
 
-.tcb-post-content ol[style] {
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] {
     list-style: none !important;
-    list-style-type: none;
+    /* list-style-type: none; */
     counter-reset: legal-counter-alpha;
 }
 
