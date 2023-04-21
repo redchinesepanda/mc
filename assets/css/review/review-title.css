@@ -1,0 +1,66 @@
+/* Review Display */
+
+.tcb-post-content .legal-header-3 {
+    display: flex;
+    align-items: center;
+}
+
+.tcb-post-content .legal-header-3::before {
+    content: '';
+    display: block;
+}
+
+/* Review Position */
+
+.tcb-post-content .legal-header-3::before {
+    margin-right: 20px;
+}
+
+/* Review Width and Height */
+
+.tcb-post-content .legal-header-3::before {
+    width: 55px;
+    height: 55px;
+}
+
+/* Review Background */
+
+.tcb-post-content .legal-header-3::before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgb(89, 151, 227);
+    border-radius: 50%;
+}
+
+.tcb-post-content .legal-header-history::before {
+    background-image: url( '../../img/review/header/review-history.svg' );
+}
+
+.tcb-post-content .legal-header-features::before {
+    background-image: url( '../../img/review/header/review-features.svg' );
+}
+
+.tcb-post-content .legal-header-football::before {
+    background-image: url( '../../img/review/header/review-football.svg' );
+}
+
+.tcb-post-content .legal-header-tennis::before {
+    background-image: url( '../../img/review/header/review-tennis.svg' );
+}
+
+.tcb-post-content .legal-header-basketball::before {
+    background-image: url( '../../img/review/header/review-basketball.svg' );
+}
+
+.tcb-post-content .legal-header-horceracing::before {
+    background-image: url( '../../img/review/header/review-horceracing.svg' );
+}
+
+.tcb-post-content .legal-header-deposit::before {
+    background-image: url( '../../img/review/header/review-deposit.svg' );
+}
+
+.tcb-post-content .legal-header-widthdraw::before {
+    background-image: url( '../../img/review/header/review-widthdraw.svg' );
+}

@@ -20,6 +20,8 @@ class ReviewMain
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
 
         'review-list' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
+
+        'review-title' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
     ];
 
     public static function register_style()
