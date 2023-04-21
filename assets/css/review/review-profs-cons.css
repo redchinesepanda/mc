@@ -29,8 +29,8 @@
 	border-radius: 20px;
 }
 
-.legal-profs-cons .legal-pros {
-	background-image: url( '../../img/review/review-pros.svg' );
+.legal-profs-cons .legal-profs {
+	background-image: url( '../../img/review/review-profs.svg' );
 }
 
 .legal-profs-cons .legal-cons {
@@ -44,6 +44,6 @@
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 31.5px;
+	line-height: 40px;
 	color: rgb(0, 0, 0);
 }
