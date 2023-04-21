@@ -19,9 +19,9 @@ class ReviewOverview
 
         // [legal-overview]
 
-        add_shortcode( 'legal-overview', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-overview', [ $handler, 'render' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
     const FIELD = 'review-overview';

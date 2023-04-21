@@ -16,6 +16,8 @@ class ReviewMain
 {
     const CSS = [
         'review-main' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
+
+        'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
     ];
 
     public static function register_style()
