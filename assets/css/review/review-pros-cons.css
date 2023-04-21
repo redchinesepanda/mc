@@ -30,11 +30,11 @@
 	border-radius: 20px;
 }
 
-.legal-pros-cons .legal-pros {
+.legal-pros-cons .legal-pros .pros-cons-title {
 	background-image: url( '../../img/review/review-pros.svg' );
 }
 
-.legal-pros-cons .legal-cons {
+.legal-pros-cons .legal-cons .pros-cons-title {
 	background-image: url( '../../img/review/review-cons.svg' );
 }
 
