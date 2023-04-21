@@ -158,6 +158,10 @@
     border-radius: 50%;
 }
 
+.tcb-post-content ol[style*="list-style-type:upper-alpha"] {
+    background-color: rgb(89, 151, 227);
+}
+
 .tcb-post-content .legal-header-3::before {
     background-position: center center;
     background-repeat: no-repeat;
