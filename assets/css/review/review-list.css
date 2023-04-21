@@ -7,7 +7,6 @@
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] {
     list-style: none !important;
-    /* list-style-type: none; */
     counter-reset: legal-counter-alpha;
 }
 
@@ -30,7 +29,7 @@
 
 /* Review Position */
 
-.tcb-post-content ul:not( [ style ] ),
+.tcb-post-content ul:not( [ style ] ):not( [ class ] ),
 .tcb-post-content ol:not( [ style ] ) {
     padding-top: 0px;
     padding-bottom: 30px;
