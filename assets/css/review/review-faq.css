@@ -30,7 +30,8 @@
 	margin-bottom: 40px;
 }
 
-.faq .faq-item:not( :last-child ) {
+.faq .faq-item:not( :last-child ),
+.tcb-post-content .legal-faq-title:not( :last-child ) {
 	margin-bottom: 10px;
 }
 
