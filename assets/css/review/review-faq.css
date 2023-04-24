@@ -1,21 +1,25 @@
 /* FAQ Display */
 
-.faq .faq-item-content:not( .legal-active ) {
+.faq .faq-item-content:not( .legal-active ),
+.tcb-post-content .legal-faq-description:not( .legal-active ) {
 	display: none;
 }
 
-.faq .faq-item-content:not( .legal-visibile ) {
+/* .faq .faq-item-content:not( .legal-visibile ) {
 	opacity: 0;
 }
+
 .faq .faq-item-content {
 	transition: all 1s linear;
-}
+} */
 
-.faq .faq-item-title {
+.faq .faq-item-title,
+.tcb-post-content .legal-faq-title {
 	display: flex;
 }
 
-.faq .faq-item-title:before {
+.faq .faq-item-title:before,
+.tcb-post-content .legal-faq-title:before {
 	display: block;
 	content: '';
 }
@@ -30,35 +34,41 @@
 	margin-bottom: 10px;
 }
 
-.faq .faq-item-title {
+.faq .faq-item-title,
+.tcb-post-content .legal-faq-title {
 	padding: 10px 20px;
 }
 
-.faq .faq-item-content {
+.faq .faq-item-content,
+.tcb-post-content .legal-faq-description {
 	padding: 20px;
 }
 
 /* FAQ Width nad Height */
 
-.faq .faq-item-title:before {
+.faq .faq-item-title:before,
+.tcb-post-content .legal-faq-title:before {
 	width: 32px;
 	height: 32px;
 }
 
 /* FAQ Background */
 
-.faq .faq-item-title.legal-active:before {
+.faq .faq-item-title.legal-active:before,
+.tcb-post-content .legal-faq-title.legal-active:before {
 	transform: rotate( -90deg );
 }
 
-.faq .faq-item-title:before {
+.faq .faq-item-title:before,
+.tcb-post-content .legal-faq-title:before {
 	background-image: url( '../../img/review/review-faq.svg' );
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
 
-.faq .faq-item-title {
+.faq .faq-item-title,
+.tcb-post-content .legal-faq-title {
 	background-color: rgb(239, 245, 251);
 	border-radius: 20px;
 }
@@ -69,7 +79,8 @@
 
 /* FAQ Typography */
 
-.faq .faq-item-title {
+.faq .faq-item-title,
+.tcb-post-content .legal-faq-title {
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	font-style: normal;
@@ -78,7 +89,8 @@
 	color: rgb(0, 0, 0);
 }
 
-.faq .faq-item-content {
+.faq .faq-item-content,
+.tcb-post-content .legal-faq-description {
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	font-style: normal;
