@@ -63,9 +63,7 @@
 	border-radius: 20px;
 }
 
-.tcb-post-content .legal-faq-title ~ p,
-.tcb-post-content .legal-faq-title ~ ul,
-.tcb-post-content .legal-faq-title ~ img {
+.tcb-post-content .legal-faq-title ~ .legal-faq-description {
 	background-color: antiquewhite;
 }
 
