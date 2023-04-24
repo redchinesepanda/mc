@@ -78,27 +78,33 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'Overview Start',
-				
-				'selector' => 'p',
-
-				'classes' => 'legal-overview-start',
-			],
-
-			[
 				'title' => 'Overview',
-				
-				'selector' => 'p',
 
-				'classes' => 'legal-overview',
-			],
+				'items' => [
+					[
+						'title' => 'Overview Start',
+						
+						'selector' => 'p',
 
-			[
-				'title' => 'Overview End',
-				
-				'selector' => 'p',
+						'classes' => 'legal-overview-start',
+					],
 
-				'classes' => 'legal-overview-end',
+					[
+						'title' => 'Overview',
+						
+						'selector' => 'p',
+
+						'classes' => 'legal-overview',
+					],
+
+					[
+						'title' => 'Overview End',
+						
+						'selector' => 'p',
+
+						'classes' => 'legal-overview-end',
+					],
+				],
 			],
 		] );
 	}
