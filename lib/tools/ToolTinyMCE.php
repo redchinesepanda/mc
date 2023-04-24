@@ -107,67 +107,73 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'H3 History',
-				
-				'block' => 'h3',
+				'title' => 'Header Image',
 
-				'classes' => 'legal-header-3 legal-header-history',
-			],
+				'items' => [
+					[
+						'title' => 'H3 History',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Features',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-history',
+					],
 
-				'classes' => 'legal-header-3 legal-header-features',
-			],
+					[
+						'title' => 'H3 Features',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Football',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-features',
+					],
 
-				'classes' => 'legal-header-3 legal-header-football',
-			],
+					[
+						'title' => 'H3 Football',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Tennis',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-football',
+					],
 
-				'classes' => 'legal-header-3 legal-header-tennis',
-			],
+					[
+						'title' => 'H3 Tennis',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Basketball',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-tennis',
+					],
 
-				'classes' => 'legal-header-3 legal-header-basketball',
-			],
+					[
+						'title' => 'H3 Basketball',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Horceracing',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-basketball',
+					],
 
-				'classes' => 'legal-header-3 legal-header-horceracing',
-			],
+					[
+						'title' => 'H3 Horceracing',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Deposit',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-horceracing',
+					],
 
-				'classes' => 'legal-header-3 legal-header-deposit',
-			],
+					[
+						'title' => 'H3 Deposit',
+						
+						'block' => 'h3',
 
-			[
-				'title' => 'H3 Widthdraw',
-				
-				'block' => 'h3',
+						'classes' => 'legal-header-3 legal-header-deposit',
+					],
 
-				'classes' => 'legal-header-3 legal-header-widthdraw',
+					[
+						'title' => 'H3 Widthdraw',
+						
+						'block' => 'h3',
+
+						'classes' => 'legal-header-3 legal-header-widthdraw',
+					],
+				],
 			],
 		] );
 	}
