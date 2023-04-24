@@ -188,14 +188,16 @@ class ToolTinyMCE
 	public static function style_formats_faq( $settings )
 	{
 		return self::style_formats_check( $settings, [
-			'title' => 'FAQ',
+			[
+				'title' => 'FAQ',
 
-			'items' => [
-				'title' => 'FAQ Title',
-				
-				'block' => 'h3',
+				'items' => [
+					'title' => 'FAQ Title',
+					
+					'block' => 'h3',
 
-				'classes' => 'legal-faq-title',
+					'classes' => 'legal-faq-title',
+				],
 			],
 		] );
 	}
