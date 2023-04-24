@@ -192,11 +192,13 @@ class ToolTinyMCE
 				'title' => 'FAQ',
 
 				'items' => [
-					'title' => 'FAQ Title',
-					
-					'block' => 'h3',
+					[
+						'title' => 'FAQ Title',
+						
+						'block' => 'h3',
 
-					'classes' => 'legal-faq-title',
+						'classes' => 'legal-faq-title',
+					],
 				],
 			],
 		] );
