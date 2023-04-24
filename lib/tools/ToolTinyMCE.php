@@ -203,9 +203,17 @@ class ToolTinyMCE
 			[
 				'title' => 'FAQ Title',
 				
-				'block' => 'h3',
+				'selector' => 'h3',
 
 				'classes' => 'legal-faq-title',
+			],
+
+			[
+				'title' => 'FAQ Description',
+				
+				'selector' => 'p,ul,ol,img',
+
+				'classes' => 'legal-faq-description',
 			],
 		] );
 	}
