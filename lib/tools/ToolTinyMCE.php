@@ -201,17 +201,11 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'FAQ',
+				'title' => 'FAQ Title',
+				
+				'block' => 'h3',
 
-				'items' => [
-					[
-						'title' => 'FAQ Title',
-						
-						'block' => 'h3',
-
-						'classes' => 'legal-faq-title',
-					],
-				],
+				'classes' => 'legal-faq-title',
 			],
 		] );
 	}
