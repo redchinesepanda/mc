@@ -78,7 +78,7 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'p Overview',
+				'title' => 'Overview',
 
 				'items' => [
 					[
@@ -113,7 +113,7 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'H3 Image',
+				'title' => 'Image Title',
 
 				'items' => [
 					[
@@ -188,7 +188,7 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'p Contextbox',
+				'title' => 'Contextbox',
 				
 				'block' => 'p',
 
@@ -201,7 +201,7 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'H3 FAQ',
+				'title' => 'FAQ Title',
 				
 				'block' => 'h3',
 
