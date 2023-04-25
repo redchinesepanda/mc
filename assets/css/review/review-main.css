@@ -12,7 +12,7 @@
     padding-top: 30px !important;
 }
 
-.tcb-post-content h2 [ style ] {
+.tcb-post-content h2:not( [ style ] ) {
     padding-bottom: 20px;
 }
 
