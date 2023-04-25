@@ -45,7 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		event.currentTarget.classList.toggle( 'legal-active' );
 
-		document.querySelectorAll( '.tcb-post-content > .legal-faq-description[data-titleID=' + event.currentTarget.dataset.id + ']').forEach( function ( element ) {
+		document.querySelectorAll( '.tcb-post-content > .legal-faq-description[data-title*="' + event.currentTarget.dataset.id + '"]').forEach( function ( element ) {
 			element.classList.toggle( 'legal-active' );
 		} );
 	}
@@ -57,7 +57,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			element.dataset.id = titleID;
 			element.addEventListener( 'click', toggleDataset, false );
 		} else {
-			element.dataset.titleID = titleID;
+			element.dataset.title = titleID;
 		}
 
 		console.log( 'review-faq dataset: ' + JSON.stringify( element.dataset ) );
