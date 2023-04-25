@@ -93,14 +93,14 @@
 
 /* Review Typography */
 
-.tcb-post-content p,
-.tcb-post-content ul,
-.tcb-post-content ol,
-.tcb-post-content table {
-    font-family: "Source Sans Pro" !important;
+.tcb-post-content p:not( [ style ] ),
+.tcb-post-content ul:not( [ style ] ),
+.tcb-post-content ol:not( [ style ] ),
+.tcb-post-content table:not( [ style ] ) {
+    font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
-    font-weight: 400 !important;
+    font-weight: 400;
     line-height: 28px;
     color: rgba(10, 10, 10, 0.85);
 }
