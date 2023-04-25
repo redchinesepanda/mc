@@ -111,6 +111,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     const FIELD_HIDE = 'breadcrumbs-hide-parent';
 
+    const FIELD_ANCESTOR_TEXT = 'breadcrumbs-ancestor-text';
+
     public static function get()
     {
         $post = get_post();
@@ -121,11 +123,21 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
+                $ancestor_id = get_field( self::FIELD_ANCESTOR, $post->ID );
+
+                $ancestor_text = get_field( self::FIELD_ANCESTOR_TEXT, $post->ID );
+
                 $legal_ancestors = self::get_ancestors( $post->ID );
 
                 if ( !empty( $legal_ancestors ) ) {
                     foreach ( $legal_ancestors as $id ) {
-                        $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                        $title = get_the_title( $id );
+
+                        if ( !empty( $ancestor_text ) && $id == $ancestor_id ) {
+                            $title = $ancestor_text;
+                        }
+
+                        $items[] = self::get_item( $title, get_page_link( $id ), $index );
                     }
                 } else {
                     if ( $post->post_parent ) {
