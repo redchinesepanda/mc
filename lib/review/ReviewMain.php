@@ -12,6 +12,8 @@ require_once( 'ReviewGallery.php' );
 
 require_once( 'ReviewFAQ.php' );
 
+require_once( 'ReviewStats.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -50,6 +52,8 @@ class ReviewMain
         ReviewGallery::register();
 
         ReviewFAQ::register();
+
+        ReviewStats::register();
     }
 }
 
