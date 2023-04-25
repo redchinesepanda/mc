@@ -45,18 +45,18 @@ class ReviewStats
 
 					'description' => $faq[ self::ITEM_DESCRIPTION ],
 
-					'width' => round( ( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
+					'width' => ( round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
 				];
 
-				LegalDebug::debug( [
-					'float' => ( ( float ) $faq[ self::ITEM_VALUE ] ),
+				// LegalDebug::debug( [
+				// 	'float' => ( ( float ) $faq[ self::ITEM_VALUE ] ),
 	
-					'round' => round( ( float ) $faq[ self::ITEM_VALUE ] ),
+				// 	'round' => round( ( float ) $faq[ self::ITEM_VALUE ] ),
 	
-					'10' => round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10,
+				// 	'10' => round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10,
 	
-					'100' => ( round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
-				] );
+				// 	'100' => ( round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
+				// ] );
 			}
 
 			return $args;
