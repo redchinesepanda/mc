@@ -41,7 +41,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} );
 	} );
 
-	function toggle( event )
+	function toggleDataset( event )
 	{
 		event.currentTarget.classList.toggle( 'legal-active' );
 
