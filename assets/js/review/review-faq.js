@@ -41,33 +41,27 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} );
 	} );
 
-	// document.querySelectorAll( '.tcb-post-content > .legal-faq-title' ).forEach( function ( faqTitle, index ) {
+	function toggle( event )
+	{
+		event.currentTarget.classList.toggle( 'legal-active' );
+
+		document.querySelectorAll( '.tcb-post-content > .legal-faq-description[data-titleID=' + event.currentTarget.dataset.id + ']').forEach( function ( element ) {
+			element.classList.toggle( 'legal-active' );
+		} );
+	}
 
 	let titleID = -1;
 	document.querySelectorAll( '.tcb-post-content > .legal-faq-title, .tcb-post-content > .legal-faq-description').forEach( function ( element ) {
 		if ( element.classList.contains( 'legal-faq-title' ) ) {
 			titleID++;
 			element.dataset.id = titleID;
+			element.addEventListener( 'click', toggleDataset, false );
 		} else {
 			element.dataset.titleID = titleID;
 		}
 
 		console.log( 'review-faq dataset: ' + JSON.stringify( element.dataset ) );
 	} );
-
-	// document.querySelectorAll( '.tcb-post-content > .legal-faq-title ~ .legal-faq-description' ).forEach( function ( faqContent, index ) {
-	// 	faqContent.dataset.id = 'faq-content-' + index;
-
-	// 	if ( faqContent.nextSibling !== null ) {
-	// 		let titleId = faqContent.nextSibling.dataset.id;
-
-	// 		if ( typeof titleId !== 'undefined' ) {
-	// 			document.querySelector( '.tcb-post-content > .legal-faq-title[data-id=' + titleId + ']' ).;
-	// 		}
-	// 	}
-
-	// 	console.log( 'review-faq: ' + faqContent.classList );
-	// } );
 } );
 
 // review-faq-js end
