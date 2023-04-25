@@ -50,7 +50,7 @@ class ReviewStats
 			}
 
 			LegalDebug::debug( [
-				'float' => ( float ) $faq[ self::ITEM_VALUE ],
+				'float' => ( ( float ) $faq[ self::ITEM_VALUE ] ),
 
 				'round' => round( ( float ) $faq[ self::ITEM_VALUE ] ),
 
