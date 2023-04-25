@@ -54,7 +54,7 @@ class ReviewStats
 
 				'round' => round( ( float ) $faq[ self::ITEM_VALUE ] ),
 
-				'10' => ( float ) $faq[ self::ITEM_VALUE ] ) / 10,
+				'10' => ( ( float ) $faq[ self::ITEM_VALUE ] ) / 10,
 
 				'100' => round( ( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
 			] );
