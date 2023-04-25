@@ -45,7 +45,7 @@ class ReviewStats
 
 					'description' => $faq[ self::ITEM_DESCRIPTION ],
 
-					'width' => round( ( float ) $faq[ self::ITEM_VALUE ] * 100 ),
+					'width' => round( ( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
 				];
 			}
 

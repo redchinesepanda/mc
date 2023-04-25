@@ -2,7 +2,7 @@
 	<style type="text/css">
 		<?php foreach ( $args as $id => $item ) : ?>
 			.stats-item-<?php echo $id; ?> .item-value {
-				width: <?php echo $item[ 'width' ]; ?>;
+				width: <?php echo $item[ 'width' ]; ?>%;
 			}
 		<?php endforeach; ?>
     </style>
