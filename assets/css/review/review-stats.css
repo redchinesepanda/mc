@@ -1,0 +1,37 @@
+/* Stats Display */
+
+.review-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+
+/* Stats Position */
+
+.review-stats {
+    padding: 20px 0px;
+}
+
+/* Stats Width */
+
+.review-stats .stats-item {
+    width: calc(50% - 30px);
+}
+
+/* Stats Background */
+
+.review-stats .item-value-wrapper {
+    background-color: #F6F6F6;
+    box-shadow: 0 0 2px #e4e4e4;
+    border-radius: 20px;
+}
+
+.review-stats .item-value {
+    background-color: #5997e3;
+    border-radius: 20px;
+}
+
+/* Stats Typography */
+

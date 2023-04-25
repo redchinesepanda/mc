@@ -1,6 +1,6 @@
 <?php
 
-class RviewGallery
+class ReviewGallery
 {
     const CSS = [
         'review-gallery' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery.css',

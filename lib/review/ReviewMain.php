@@ -8,7 +8,7 @@ require_once( 'ReviewGroup.php' );
 
 require_once( 'ReviewProsCons.php' );
 
-require_once( 'RviewGallery.php' );
+require_once( 'ReviewGallery.php' );
 
 require_once( 'ReviewFAQ.php' );
 
@@ -47,7 +47,7 @@ class ReviewMain
 
         ReviewProsCons::register();
 
-        RviewGallery::register();
+        ReviewGallery::register();
 
         ReviewFAQ::register();
     }
