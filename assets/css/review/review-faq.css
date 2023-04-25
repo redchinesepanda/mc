@@ -35,6 +35,9 @@
 .tcb-post-content .legal-faq-title ~ .legal-faq-title {
 	margin-top: 10px;
 }
+.tcb-post-content .legal-faq-title:legal-active {
+	margin-bottom: 10px;
+}
 
 /* .faq .faq-item-title, */
 .tcb-post-content .legal-faq-title {
