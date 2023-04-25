@@ -12,7 +12,11 @@
 /* Stats Position */
 
 .review-stats {
-    padding: 20px 0px;
+    padding-bottom: 30px;
+}
+
+.review-stats .item-title {
+	padding-bottom: 20px;
 }
 
 /* Stats Width */
@@ -45,3 +49,11 @@
 
 /* Stats Typography */
 
+.review-stats .item-title {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px;
+	color: rgb(59, 59, 59);
+}
