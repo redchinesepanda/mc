@@ -127,7 +127,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                 $ancestor_text = get_field( self::FIELD_ANCESTOR_TEXT, $post->ID );
 
-                $legal_ancestors = self::get_ancestors( $post->ID );
+                $legal_ancestors = array_reverse( self::get_ancestors( $post->ID ) );
 
                 if ( !empty( $legal_ancestors ) ) {
                     foreach ( $legal_ancestors as $id ) {
