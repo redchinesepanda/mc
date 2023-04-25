@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-evenly;
     row-gap: 20px;
+    column-gap: 20px;
 }
 
 /* Stats Position */
@@ -16,8 +17,17 @@
 
 /* Stats Width */
 
+.review-stats .item-value-wrapper,
+.review-stats .item-value {
+	height: 27px;
+}
+
+.review-stats .item-value-wrapper {
+	width: 100%;
+}
+
 .review-stats .stats-item {
-    width: calc(50% - 30px);
+    width: calc(50% - 10px);
 }
 
 /* Stats Background */
