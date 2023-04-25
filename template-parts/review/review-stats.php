@@ -16,7 +16,7 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
-	<table class="legal-raw-column">
+	<table>
 		<tbody>
 			<?php foreach ( $args as $item ) : ?>
 				<tr>
