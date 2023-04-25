@@ -40,6 +40,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			item.addEventListener( 'click', toggle, false );
 		} );
 	} );
+
+	document.querySelectorAll( '.tcb-post-content > .legal-faq-title' ).forEach( function ( faqTitle, index ) {
+		faqTitle.dataset.id = 'faq-title-' + index;
+	} );
+
+	document.querySelectorAll( '.tcb-post-content > .legal-faq-title ~ .legal-faq-description' ).forEach( function ( faqContent, index ) {
+		// faqTitle.dataset.id = 'faq-title-' + index;
+		console.log( 'review-faq: ' + faqContent.classList );
+	} );
 } );
 
 // review-faq-js end
