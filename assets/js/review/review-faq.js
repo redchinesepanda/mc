@@ -59,8 +59,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		} else {
 			element.dataset.title = titleID;
 		}
-
-		console.log( 'review-faq dataset: ' + JSON.stringify( element.dataset ) );
 	} );
 } );
 
