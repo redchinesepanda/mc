@@ -44,10 +44,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// document.querySelectorAll( '.tcb-post-content > .legal-faq-title' ).forEach( function ( faqTitle, index ) {
 
 	let titleID = -1;
-	document.querySelectorAll( '.tcb-post-content > .legal-faq-title, .tcb-post-content > .legal-faq-description').forEach( function ( element, index ) {
+	document.querySelectorAll( '.tcb-post-content > .legal-faq-title, .tcb-post-content > .legal-faq-description').forEach( function ( element ) {
 		if ( element.classList.contains( 'legal-faq-title' ) ) {
-			element.dataset.id = index;
-			titleID = index;
+			titleID++;
+			element.dataset.id = titleID;
 		} else {
 			element.dataset.titleID = titleID;
 		}
