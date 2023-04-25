@@ -31,7 +31,8 @@
 } */
 
 /* .faq .faq-item:not( :last-child ), */
-.tcb-post-content .legal-faq-title:not( :first-of-type ) {
+/* .tcb-post-content .legal-faq-title:not( :first-of-type ) { */
+.tcb-post-content .legal-faq-title ~ .legal-faq-title {
 	margin-top: 10px;
 }
 
