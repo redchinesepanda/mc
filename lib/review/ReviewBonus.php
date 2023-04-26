@@ -6,10 +6,20 @@ class ReviewBonus
 	{
 		$handler = new self();
 
-		add_filter( 'the_content', [ $handler, 'get' ] );	
+		add_filter( 'the_content', [ $handler, 'get' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 	}
 
-	const BONUS_CLASS = 'legal-bonus';
+	const BONUS_CLASS = [
+		'bonus' => 'legal-bonus',
+
+		'title' => 'legal-bonus-title',
+
+		'description' => 'legal-bonus-description',
+
+		'content' => 'legal-bonus-content',
+	];
 
 	public static function get( $content )
 	{
@@ -19,13 +29,48 @@ class ReviewBonus
 
 		$finder = new DomXPath( $dom );
 
-		$nodes = $finder->query( '//*[contains(@class, ' . self::BONUS_CLASS . ')]' );
+		$nodes = $finder->query( '//*[contains(@class, ' . self::BONUS_CLASS[ 'bonus' ] . ')]' );
 
 		LegalDebug::debug( [
 			'$nodes' => $nodes,
 		] );
 
 		return $content;
+	}
+
+	public static function style_formats_bonus( $settings )
+	{
+		return ToolTinyMCE::style_formats_check( $settings, [
+			[
+				'title' => 'Bonus',
+
+				'items' => [
+					[
+						'title' => 'Bonus Title',
+						
+						'selector' => 'p',
+
+						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'title' ],
+					],
+
+					[
+						'title' => 'Bonus Description',
+						
+						'selector' => 'p',
+
+						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'description' ],
+					],
+
+					[
+						'title' => 'Bonus Content',
+						
+						'selector' => 'p,ul,ol,img',
+
+						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'content' ],
+					],
+				],
+			],
+		] );
 	}
 }
 
