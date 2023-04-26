@@ -25,11 +25,9 @@ class ReviewBonus
 	{
 		$dom = new DOMDocument();
 
-		$dom->load( '<html><body>' . $content . '</body></html>' );
+		$dom->loadHTML( $content );
 
 		$xpath = new DOMXPath( $dom );
-
-		// $rawData = $xpath->query('//div[@id=\'products\']/ul/li[contains(@class, \'product\')]');
 
 		$expression = './/*[contains(@class, \'legal-bonus\')]';
 
