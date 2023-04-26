@@ -45,20 +45,51 @@ class ReviewBonus
 			return $content;
 		}
 
-		foreach ( $nodes as $node ) {
-			$bonus = $dom->createElement( 'div' );
-	
-			$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
-	
-			$template = self::render( [
-				'value' => $node->nodeValue,
-			] );
-	
-			self::appendHTML( $bonus, $template );
-	
-			$node->parentNode->replaceChild( $bonus, $node );
+		$bonus = null;
 
-			// $node->parentNode->removeChild( $node );
+		$last = array_key_last( $nodes );
+
+		foreach ( $nodes as $id => $node ) {
+			$class = $node->getAttribute( 'class' );
+
+			$permission_title = ( strpos( $class, self::BONUS_CLASS[ 'title' ] ) !== false );
+
+			$permission_description = ( strpos( $class, self::BONUS_CLASS[ 'description' ] ) !== false );
+
+			$permission_content = ( strpos( $class, self::BONUS_CLASS[ 'content' ] ) !== false );
+
+			$permission_last = ( $id == $last );
+
+			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
+				$template = self::render( $args );
+		
+				self::appendHTML( $bonus, $template );
+
+				$node->parentNode->replaceChild( $bonus, $node );
+			}
+
+			if ( $permission_title ) {
+
+				$bonus = $dom->createElement( 'div' );
+
+				$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
+
+				$args = [];
+
+				$args[ 'title' ] = $node->nodeValue;
+			} 
+
+			if ( $permission_description ) {
+				$args[ 'description' ] = $node->nodeValue;
+			}
+
+			if ( $permission_content ) {
+				$args[ 'content' ][] = $node->nodeValue;
+			}
+
+			if ( $permission_description || $permission_content ) {
+				$node->parentNode->removeChild( $node );
+			}
 		}
 
 		// return $content;
