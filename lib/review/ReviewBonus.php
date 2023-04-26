@@ -33,13 +33,13 @@ class ReviewBonus
 
 		$nodes = $xpath->query( $expression );
 
-		LegalDebug::debug( [
-			'class' => self::BONUS_CLASS[ 'bonus' ],
+		// LegalDebug::debug( [
+		// 	'class' => self::BONUS_CLASS[ 'bonus' ],
 
-			'$expression' => $expression,
+		// 	'$expression' => $expression,
 
-			'$nodes' => $nodes,
-		] );
+		// 	'$nodes' => $nodes,
+		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
