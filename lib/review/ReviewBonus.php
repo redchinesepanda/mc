@@ -37,7 +37,7 @@ class ReviewBonus
 		
 		$expression = './/li[contains(@class, \'' . self::BONUS_CLASS[ 'bonus' ] . '\')]';
 
-		$productPrice = $xpath->query( $expression );
+		$nodes = $xpath->query( $expression );
 
 		// $nodes = $xpath->query( '//*[contains(@class=' . self::BONUS_CLASS[ 'bonus' ] . ')]' );
 
