@@ -25,7 +25,7 @@ class ReviewBonus
 	{
 		$dom = new DOMDocument();
 
-		$dom->loadHTML( $content );
+		$dom->loadHTML( $content, LIBXML_HTML_NODEFDTD, LIBXML_HTML_NOIMPLIED );
 
 		$xpath = new DOMXPath( $dom );
 
