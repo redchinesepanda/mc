@@ -41,8 +41,53 @@ class ReviewBonus
 			'$nodes' => $nodes,
 		] );
 
-		return $content;
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $nodes as $node ) {
+			$bonus = $document->createElement( 'div' );
+	
+			$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
+	
+			$template = self::render( [] );
+	
+			self::appendHTML( $bonus, $template );
+	
+			$node->parentNode->replaceChild( $bonus, $node );
+
+			// $node->parentNode->removeChild( $node );
+		}
+
+		// return $content;
+
+		return $dom->saveHTML();
 	}
+
+	public static function appendHTML(DOMNode $parent, $source) {
+		$tmpDoc = new DOMDocument();
+
+		$tmpDoc->loadHTML( $source );
+
+		foreach ( $tmpDoc->getElementsByTagName('body')->item(0)->childNodes as $node ) {
+			$node = $parent->ownerDocument->importNode($node, true);
+
+			$parent->appendChild( $node );
+		}
+	}
+
+	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php';
+
+    public static function render( $args )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
 
 	public static function style_formats_bonus( $settings )
 	{
