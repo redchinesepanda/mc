@@ -1,1 +1,3 @@
-<div class="legal-bonus">Test Bonus</div>
+<div class="legal-bonus">
+	<?php echo $args[ 'value' ]; ?>
+</div>
