@@ -46,7 +46,7 @@ class ReviewBonus
 		}
 
 		foreach ( $nodes as $node ) {
-			$bonus = $document->createElement( 'div' );
+			$bonus = $dom->createElement( 'div' );
 	
 			$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
 	
