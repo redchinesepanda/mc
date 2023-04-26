@@ -69,6 +69,10 @@ class ReviewBonus
 	public static function appendHTML(DOMNode $parent, $source) {
 		$tmpDoc = new DOMDocument();
 
+		LegalDebug::debug( [
+			'$source' => $source,
+		] );
+
 		$tmpDoc->loadHTML( $source );
 
 		foreach ( $tmpDoc->getElementsByTagName('body')->item(0)->childNodes as $node ) {
