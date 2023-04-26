@@ -35,12 +35,25 @@
 	margin-bottom: 20px;
 }
 
+.legal-bonus .bonus-get-link {
+	padding: 12px 25px 12px 60px;
+}
+
 /* Bonus Background */
 
 .legal-bonus {
 	background-color: rgb(255, 255, 255);
 	border-radius: 20px;
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px;
+}
+
+.legal-bonus .bonus-get-link {
+	background-image: url( '../../img/review/review-get.svg' );
+	background-position: left 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
 }
 
 /* Bonus Typography */
@@ -56,5 +69,24 @@
 	font-weight: 600;
 	line-height: 33.6px;
 	color: rgb(12, 17, 21);
+	text-decoration: none;
+}
+
+.legal-bonus .bonus-name {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 31.5px;
+	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-bonus .bonus-get-link {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 14.4px;
+	color: rgb(255, 255, 255);
 	text-decoration: none;
 }

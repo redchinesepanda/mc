@@ -8,7 +8,7 @@
 	<?php echo $args[ 'name' ]; ?>
 </div>
 <div class="bonus-get">
-	<a href="<?php echo $args['get'][ 'href' ]; ?>">
+	<a class="bonus-get-link" href="<?php echo $args['get'][ 'href' ]; ?>">
 		<?php echo $args['get'][ 'text' ]; ?>
 	</a>
 </div>
