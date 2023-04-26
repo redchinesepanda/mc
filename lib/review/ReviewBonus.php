@@ -45,7 +45,7 @@ class ReviewBonus
 			return $content;
 		}
 
-		$bonus = null;
+		$bonus = $nodes->length - 1;
 
 		$last = array_key_last( $nodes );
 
