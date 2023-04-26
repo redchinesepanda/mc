@@ -1,6 +1,6 @@
 <div class="bonus-title">
 	<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
-	<a href="<?php echo $args['title'][ 'href' ]; ?>">
+	<a class="bonus-title-link" href="<?php echo $args['title'][ 'href' ]; ?>">
 		<?php echo $args['title'][ 'text' ]; ?>
 	</a>
 </div>
