@@ -45,9 +45,9 @@ class ReviewBonus
 			return $content;
 		}
 
-		$bonus = $nodes->length - 1;
+		$bonus = null;
 
-		$last = array_key_last( $nodes );
+		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
 			$class = $node->getAttribute( 'class' );
