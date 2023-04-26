@@ -32,6 +32,8 @@ class ReviewBonus
 		$nodes = $finder->query( '//*[contains(@class, ' . self::BONUS_CLASS[ 'bonus' ] . ')]' );
 
 		LegalDebug::debug( [
+			'class' => self::BONUS_CLASS[ 'bonus' ],
+			
 			'$nodes' => $nodes,
 		] );
 
