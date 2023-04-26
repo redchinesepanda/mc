@@ -33,7 +33,9 @@ class ReviewBonus
 
 		LegalDebug::debug( [
 			'$finder' => $finder,
-			
+
+			'$dom' => $dom,
+
 			'class' => self::BONUS_CLASS[ 'bonus' ],
 
 			'$nodes' => $nodes,
