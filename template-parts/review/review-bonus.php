@@ -1,19 +1,17 @@
-<div class="bonus-review">
-	<img src="<?php echo $args[ 'src' ]; ?>" width="" height="" />
-	<a href="<?php echo $args['review'][ 'href' ]; ?>">
-		<?php echo $args['review'][ 'text' ]; ?>
+<div class="bonus-title">
+	<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
+	<a href="<?php echo $args['title'][ 'href' ]; ?>">
+		<?php echo $args['title'][ 'text' ]; ?>
 	</a>
 </div>
-<?php if ( !empty( $args[ 'title' ] ) ) : ?>
-	<div class="bonus-title">
-		<?php echo $args[ 'title' ]; ?>
-	</div>
-<?php endif; ?>
-<?php if ( !empty( $args[ 'description' ] ) ) : ?>
-	<div class="bonus-description">
-		<?php echo $args[ 'description' ]; ?>
-	</div>
-<?php endif; ?>
+<div class="bonus-name">
+	<?php echo $args[ 'name' ]; ?>
+</div>
+<div class="bonus-get">
+	<a href="<?php echo $args['get'][ 'href' ]; ?>">
+		<?php echo $args['get'][ 'text' ]; ?>
+	</a>
+</div>
 <?php if ( !empty( $args[ 'content' ] ) ) : ?>
 	<div class="bonus-content">
 		<?php foreach ( $args[ 'content' ] as $item ) : ?>
@@ -21,8 +19,3 @@
 		<?php endforeach; ?>
 	</div>
 <?php endif; ?>
-<div class="bonus-get">
-	<a href="<?php echo $args['get'][ 'href' ]; ?>">
-		<?php echo $args['get'][ 'text' ]; ?>
-	</a>
-</div>

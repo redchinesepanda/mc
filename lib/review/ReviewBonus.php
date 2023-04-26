@@ -65,8 +65,14 @@ class ReviewBonus
 			$permission_last = ( $id == $last );
 
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
-				$template = self::render( $args );
-		
+				$template = '';
+
+				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
+					$template = self::render_billet( $args );
+				} else {
+					$template = self::render_bonus( $args );
+				}
+				
 				self::appendHTML( $bonus, $template );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
@@ -132,33 +138,64 @@ class ReviewBonus
 		return $result;
 	}
 
-	public static function get( $args )
+	public static function get_bonus( $args )
 	{
-		$class = self::check( $args[ 'class' ] );
+		// $class = self::check( $args[ 'class' ] );
 
-		$args[ 'src' ] = '';
+		$group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			return [
+				'src' => $group[ 'about-logo-square' ],
 
-		$args[ 'review' ] = [
-			'href' => '',
+				'title' => [
+					'href' => $group[ 'about-afillate' ],
 
-			'text' => '',
-		];
-		$args[ 'get' ] = [
-			'href' => '',
+					'text' => $group[ 'about-title' ],
+				],
 
-			'text' => '',
-		];
+				'name' => $args[ 'title' ],
 
-		return $args;
+				'get' => [
+					'href' => $group[ 'about-afillate' ],
+
+					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
+				],
+
+				'content' => $args[ 'content' ],
+			];
+		}
+
+		return [];
 	}
 
-	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php';
+	const TEMPLATE = [
+		'bonus' => LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php',
 
-    public static function render( $args )
+		'billet' => LegalMain::LEGAL_PATH . '/template-parts/review/review-billet.php',
+	];
+
+    public static function render_bonus( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get( $args ) );
+        load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function get_billet( $args )
+	{
+		return $args;
+	}
+
+    public static function render_billet( $args )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );
 
         $output = ob_get_clean();
 
