@@ -115,6 +115,8 @@ class ReviewBonus
 			if ( $permission_content ) {
 				// $args[ 'content' ][] = $node->nodeValue;
 
+				$node->setAttribute( 'class', '' );
+
 				$args[ 'content' ][] = $dom->saveHTML( $node );
 			}
 
