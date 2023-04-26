@@ -7,6 +7,13 @@
 	row-gap: 10px;
 }
 
+.legal-bonus .bonus-title {
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+	align-items: center;
+}
+
 /* Bonus Width and Height */
 
 .legal-bonus .bonus-title {
@@ -40,4 +47,14 @@
 
 .legal-bonus {
 	text-align: center;
+}
+
+.legal-bonus .bonus-title {
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 33.6px;
+	color: rgb(12, 17, 21);
+	text-decoration: none;
 }
