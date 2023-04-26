@@ -113,7 +113,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_content ) {
-				$args[ 'content' ][] = $node->nodeValue;
+				// $args[ 'content' ][] = $node->nodeValue;
+
+				$dom->saveHTML( $node );
 			}
 
 			if ( $permission_description || $permission_content ) {
