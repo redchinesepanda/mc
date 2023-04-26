@@ -23,45 +23,45 @@ class ReviewBonus
 
 	public static function get( $content )
 	{
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
 
-		$dom->loadHTML( $content, LIBXML_NOERROR );
+		// $dom->loadHTML( $content, LIBXML_NOERROR );
 
-		$xpath = new DOMXPath( $dom );
+		// $xpath = new DOMXPath( $dom );
 
-		$expression = './/*[contains(@class, \'legal-bonus\')]';
+		// $expression = './/*[contains(@class, \'legal-bonus\')]';
 
-		$nodes = $xpath->query( $expression );
+		// $nodes = $xpath->query( $expression );
 
-		LegalDebug::debug( [
-			'class' => self::BONUS_CLASS[ 'bonus' ],
+		// LegalDebug::debug( [
+		// 	'class' => self::BONUS_CLASS[ 'bonus' ],
 
-			'$expression' => $expression,
+		// 	'$expression' => $expression,
 
-			'$nodes' => $nodes,
-		] );
+		// 	'$nodes' => $nodes,
+		// ] );
 
-		if ( $nodes->length == 0 ) {
-			return $content;
-		}
+		// if ( $nodes->length == 0 ) {
+		// 	return $content;
+		// }
 
-		foreach ( $nodes as $node ) {
-			$bonus = $dom->createElement( 'div' );
+		// foreach ( $nodes as $node ) {
+		// 	$bonus = $dom->createElement( 'div' );
 	
-			$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
+		// 	$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
 	
-			$template = self::render( [] );
+		// 	$template = self::render( [] );
 	
-			self::appendHTML( $bonus, $template );
+		// 	self::appendHTML( $bonus, $template );
 	
-			$node->parentNode->replaceChild( $bonus, $node );
+		// 	$node->parentNode->replaceChild( $bonus, $node );
 
-			// $node->parentNode->removeChild( $node );
-		}
+		// 	// $node->parentNode->removeChild( $node );
+		// }
 
-		// return $content;
+		return $content;
 
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
 	}
 
 	public static function appendHTML(DOMNode $parent, $source) {
