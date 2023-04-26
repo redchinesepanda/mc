@@ -29,7 +29,7 @@ class ReviewBonus
 
 		$finder = new DomXPath( $dom );
 
-		$nodes = $finder->query( '//[contains(@class,"' . self::BONUS_CLASS[ 'bonus' ] . '")]' );
+		$nodes = $finder->query( '//*[contains(@class,"' . self::BONUS_CLASS[ 'bonus' ] . '")]' );
 
 		LegalDebug::debug( [
 			'class' => self::BONUS_CLASS[ 'bonus' ],
