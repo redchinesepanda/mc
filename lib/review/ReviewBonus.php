@@ -73,7 +73,7 @@ class ReviewBonus
 			'$source' => $source,
 		] );
 
-		$tmpDoc->loadHTML( $source );
+		$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
 
 		foreach ( $tmpDoc->getElementsByTagName('body')->item(0)->childNodes as $node ) {
 			$node = $parent->ownerDocument->importNode($node, true);
