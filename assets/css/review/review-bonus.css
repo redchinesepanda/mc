@@ -75,6 +75,10 @@
 	text-align: center;
 }
 
+.legal-bonus p.legal-bonus-content-item {
+	text-align: center;
+}
+
 .legal-bonus .bonus-title-link {
 	font-family: "Source Sans Pro";
 	font-size: 28px;
