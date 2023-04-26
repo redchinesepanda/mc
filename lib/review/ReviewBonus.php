@@ -23,15 +23,15 @@ class ReviewBonus
 
 	public static function get( $content )
 	{
-		$dom = new DomDocument();
+		$dom = new DOMDocument();
 
-		$dom->load( $content );
+		$dom->load( '<html><body>' . $content . '</body></html>' );
 
-		$xpath = new DomXPath( $dom );
+		$xpath = new DOMXPath( $dom );
 
 		// $rawData = $xpath->query('//div[@id=\'products\']/ul/li[contains(@class, \'product\')]');
 
-		$expression = '//p[contains(@class, \'legal-bonus\')]';
+		$expression = '//*[contains(@class, \'legal-bonus\')]';
 
 		$nodes = $xpath->query( $expression );
 
