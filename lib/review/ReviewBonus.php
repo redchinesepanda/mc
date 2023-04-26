@@ -47,6 +47,8 @@ class ReviewBonus
 
 		$bonus = null;
 
+		$replace = null;
+
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
@@ -65,7 +67,7 @@ class ReviewBonus
 		
 				self::appendHTML( $bonus, $template );
 
-				$node->parentNode->replaceChild( $bonus, $node );
+				$node->parentNode->replaceChild( $bonus, $replace );
 			}
 
 			if ( $permission_title ) {
@@ -77,7 +79,9 @@ class ReviewBonus
 				$args = [];
 
 				$args[ 'title' ] = $node->nodeValue;
-			} 
+
+				$replace = $node;
+			}
 
 			if ( $permission_description ) {
 				$args[ 'description' ] = $node->nodeValue;
