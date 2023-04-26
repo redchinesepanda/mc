@@ -76,7 +76,7 @@ class ReviewBonus
 
 				$bonus = $dom->createElement( 'div' );
 
-				$bonus->setAttribute( 'class', self::BONUS_CLASS[ 'bonus' ] );
+				$bonus->setAttribute( 'class', self::check( $class ) );
 
 				$args = [];
 
@@ -121,9 +121,35 @@ class ReviewBonus
 		}
 	}
 
-	public static function get_bonus( $args )
+	public static function check( $class )
 	{
+		$result = self::BONUS_CLASS[ 'bonus' ];
 
+		if ( strpos( $class, self::BONUS_CLASS[ 'billet' ] ) !== false ) {
+			$result = self::BONUS_CLASS[ 'billet' ];
+		}
+
+		return $result;
+	}
+
+	public static function get( $args )
+	{
+		$class = self::check( $args[ 'class' ] );
+
+		$args[ 'src' ] = '';
+
+		$args[ 'review' ] = [
+			'href' => '',
+
+			'text' => '',
+		];
+		$args[ 'get' ] = [
+			'href' => '',
+
+			'text' => '',
+		];
+
+		return $args;
 	}
 
 	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php';
@@ -132,7 +158,7 @@ class ReviewBonus
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, $args );
+        load_template( self::TEMPLATE, false, self::get( $args ) );
 
         $output = ob_get_clean();
 
