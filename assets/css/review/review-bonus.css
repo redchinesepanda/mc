@@ -1,0 +1,36 @@
+/* Bonus Display */
+
+.legal-bonus {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Bonus Width and Height */
+
+.legal-bonus .bonus-title {
+	width: 25%;
+}
+
+.legal-bonus .bonus-name {
+	width: 25%;
+}
+
+.legal-bonus .bonus-get {
+	width: 50%;
+}
+
+/* Bonus Position */
+
+.legal-bonus {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 20px;
+}
+
+/* Bonus Background */
+
+.legal-bonus {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px;
+}

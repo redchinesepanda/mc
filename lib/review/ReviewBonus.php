@@ -2,6 +2,19 @@
 
 class ReviewBonus
 {
+	const CSS = [
+        'review-bonus' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
+
+        'review-billet' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
+    ];
+
+    public static function register_style()
+    {
+        foreach ( self::CSS as $name => $path ) {
+            wp_enqueue_style( $name, $path );
+        }
+    }
+
 	public static function register()
 	{
 		$handler = new self();
@@ -9,6 +22,8 @@ class ReviewBonus
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 	}
 
 	const BONUS_CLASS = [
