@@ -29,19 +29,11 @@ class ReviewBonus
 
 		$xpath = new DomXPath( $dom );
 
-		// $productRaw = $data->getElementsByTagName('li');
+		// $rawData = $xpath->query('//div[@id=\'products\']/ul/li[contains(@class, \'product\')]');
 
-		// $productPrice = $productRaw[1]->getElementsByTagName('li');
+		$expression = '//li[contains(@class, \'' . self::BONUS_CLASS[ 'bonus' ] . '\')]';
 
-		// $productPrice = $xpath->query('.//li[contains(@class, \'itemtwo\')]', $productRaw[1])->item(1)->nodeValue;
-		
-		$paragraphs = $data->getElementsByTagName('p');
-
-		$expression = './/li[contains(@class, \'' . self::BONUS_CLASS[ 'bonus' ] . '\')]';
-
-		$nodes = $xpath->query( $expression, $paragraphs[1] );
-
-		// $nodes = $xpath->query( '//*[contains(@class=' . self::BONUS_CLASS[ 'bonus' ] . ')]' );
+		$nodes = $xpath->query( $expression );
 
 		LegalDebug::debug( [
 			'class' => self::BONUS_CLASS[ 'bonus' ],
