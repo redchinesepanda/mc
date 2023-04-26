@@ -6,13 +6,15 @@ class ReviewBonus
 	{
 		$handler = new self();
 
-		add_filter( 'the_content', [ $handler, 'get' ] );
+		add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 	}
 
 	const BONUS_CLASS = [
 		'bonus' => 'legal-bonus',
+
+		'billet' => 'legal-billet',
 
 		'title' => 'legal-bonus-title',
 
@@ -21,7 +23,7 @@ class ReviewBonus
 		'content' => 'legal-bonus-content',
 	];
 
-	public static function get( $content )
+	public static function get_content( $content )
 	{
 		$dom = new DOMDocument();
 
@@ -80,6 +82,8 @@ class ReviewBonus
 
 				$args[ 'title' ] = $node->nodeValue;
 
+				$args[ 'class' ] = $class;
+
 				$replace = $node;
 			}
 
@@ -117,6 +121,11 @@ class ReviewBonus
 		}
 	}
 
+	public static function get_bonus( $args )
+	{
+
+	}
+
 	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php';
 
     public static function render( $args )
@@ -143,6 +152,14 @@ class ReviewBonus
 						'selector' => 'p',
 
 						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'title' ],
+					],
+
+					[
+						'title' => 'Billet Title',
+						
+						'selector' => 'p',
+
+						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'title' ],
 					],
 
 					[
