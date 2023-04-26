@@ -14,6 +14,15 @@
 	align-items: center;
 }
 
+.legal-bonus .bonus-get {
+	display: flex;
+	justify-content: center;
+}
+
+.legal-bonus .bonus-get-link {
+	display: block;
+}
+
 /* Bonus Width and Height */
 
 .legal-bonus .bonus-title {
@@ -26,6 +35,10 @@
 
 .legal-bonus .bonus-get {
 	width: 25%;
+}
+
+.legal-bonus .bonus-get-link {
+	width: fit-content;
 }
 
 /* Bonus Position */
