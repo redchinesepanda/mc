@@ -36,6 +36,8 @@ class ReviewBonus
 		'description' => 'legal-bonus-description',
 
 		'content' => 'legal-bonus-content',
+
+		'item' => 'legal-bonus-content-item',
 	];
 
 	public static function get_content( $content )
@@ -115,7 +117,9 @@ class ReviewBonus
 			if ( $permission_content ) {
 				// $args[ 'content' ][] = $node->nodeValue;
 
-				$node->removeAttribute( 'class' );
+				// $node->removeAttribute( 'class' );
+				
+				$node->setAttribute( 'class', self::BONUS_CLASS[ 'item' ] );
 
 				$args[ 'content' ][] = $dom->saveHTML( $node );
 			}
