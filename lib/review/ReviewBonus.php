@@ -31,7 +31,7 @@ class ReviewBonus
 
 		// $rawData = $xpath->query('//div[@id=\'products\']/ul/li[contains(@class, \'product\')]');
 
-		$expression = '//p[contains(@class, \'' . self::BONUS_CLASS[ 'bonus' ] . '\')]';
+		$expression = '//p[contains(@class, \'legal-bonus\')]';
 
 		$nodes = $xpath->query( $expression );
 
