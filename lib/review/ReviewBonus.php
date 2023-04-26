@@ -35,9 +35,11 @@ class ReviewBonus
 
 		// $productPrice = $xpath->query('.//li[contains(@class, \'itemtwo\')]', $productRaw[1])->item(1)->nodeValue;
 		
+		$paragraphs = $data->getElementsByTagName('p');
+
 		$expression = './/li[contains(@class, \'' . self::BONUS_CLASS[ 'bonus' ] . '\')]';
 
-		$nodes = $xpath->query( $expression );
+		$nodes = $xpath->query( $expression, $paragraphs[1] );
 
 		// $nodes = $xpath->query( '//*[contains(@class=' . self::BONUS_CLASS[ 'bonus' ] . ')]' );
 
