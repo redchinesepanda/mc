@@ -32,3 +32,14 @@
 	border: 0.8px solid rgba(198, 198, 198, 0.2);
 	border-radius: 20px;
 }
+
+.legal-billet .billet-review {
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.legal-billet .billet-get {
+	background-color: rgb(239, 245, 251);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
