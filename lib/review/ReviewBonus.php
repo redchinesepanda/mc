@@ -55,9 +55,9 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		LegalDebug::debug( [
-			'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
-		] );
+		// LegalDebug::debug( [
+		// 	'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
+		// ] );
 
 		$dom = new DOMDocument();
 		
@@ -141,9 +141,9 @@ class ReviewBonus
 				
 				// $args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
-				// LegalDebug::debug( [
-				// 	'title' => $args[ 'title' ],
-				// ] );
+				LegalDebug::debug( [
+					'title' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
+				] );
 
 				$args[ 'class' ] = $class;
 
