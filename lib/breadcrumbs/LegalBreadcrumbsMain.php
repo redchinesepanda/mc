@@ -139,13 +139,13 @@ class LegalBreadcrumbsMain extends LegalDebug
                     foreach( $legal_items as $item ) {
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $id ) );
 
-                        $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ), $index );
+                        $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
                     }
                 }
 
                 if ( empty( $items )) ) {
                     $legal_ancestors = array_reverse( self::get_ancestors( $post->ID ) );
-                    
+
                     if ( !empty( $legal_ancestors ) ) {
                         foreach ( $legal_ancestors as $id ) {
                             $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
