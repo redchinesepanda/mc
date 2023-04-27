@@ -124,9 +124,9 @@ class ReviewBonus
 				
 				$args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
-				LegalDebug::debug( [
-					'title' => $args[ 'title' ],
-				] );
+				// LegalDebug::debug( [
+				// 	'title' => $args[ 'title' ],
+				// ] );
 
 				$args[ 'class' ] = $class;
 
