@@ -4,6 +4,13 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
+	column-gap: 30px;
+}
+
+/* Billet Position */
+
+.legal-billet .billet-body {
+	padding: 10px 0px;
 }
 
 /* Billet Width and Height */
@@ -18,4 +25,11 @@
 
 .legal-billet .billet-get {
 	width: 22%;
+}
+
+/* Billet Background */
+
+.legal-billet {
+	border: 0.8px solid rgba(198, 198, 198, 0.2);
+	border-radius: 20px;
 }
