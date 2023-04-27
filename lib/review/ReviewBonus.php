@@ -59,7 +59,9 @@ class ReviewBonus
 		
 		// $dom = new DOMDocument( '1.0', 'UTF-8' );
 
-		$dom->loadHTML( $content, LIBXML_NOERROR );
+		// $dom->loadHTML( $content, LIBXML_NOERROR );
+
+		$dom->loadHTML( $content );
 		
 		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
@@ -120,9 +122,9 @@ class ReviewBonus
 
 				$args = [];
 
-				// $args[ 'title' ] = $node->nodeValue;
+				$args[ 'title' ] = $node->nodeValue;
 				
-				$args[ 'title' ] = $dom->saveHTML( $node );
+				// $args[ 'title' ] = $dom->saveHTML( $node );
 				
 				// $args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
@@ -136,17 +138,17 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				// $args[ 'description' ] = $node->nodeValue;
+				$args[ 'description' ] = $node->nodeValue;
 				
-				$args[ 'description' ] = $dom->saveHTML( $node );
+				// $args[ 'description' ] = $dom->saveHTML( $node );
 			}
 
 			if ( $permission_content ) {
 				// $args[ 'content' ][] = $node->nodeValue;
 
-				// $node->removeAttribute( 'class' );
+				$node->removeAttribute( 'class' );
 				
-				$node->setAttribute( 'class', self::BONUS_CLASS[ 'item' ] );
+				// $node->setAttribute( 'class', self::BONUS_CLASS[ 'item' ] );
 
 				$args[ 'content' ][] = $dom->saveHTML( $node );
 			}
