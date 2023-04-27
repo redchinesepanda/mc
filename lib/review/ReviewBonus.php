@@ -55,11 +55,13 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		// $dom = new DOMDocument();
+		$dom = new DOMDocument();
 		
-		$dom = new DOMDocument( '1.0', 'UTF-8' );
+		// $dom = new DOMDocument( '1.0', 'UTF-8' );
 
-		$dom->loadHTML( $content, LIBXML_NOERROR );
+		// $dom->loadHTML( $content, LIBXML_NOERROR );
+		
+		$dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
 		$xpath = new DOMXPath( $dom );
 
