@@ -55,7 +55,7 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		$content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
+		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
 
 		$dom = new DOMDocument();
 
@@ -110,17 +110,15 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = $node->nodeValue;
+				// $args[ 'title' ] = $node->nodeValue;
 				
-				// $args[ 'title' ] = $dom->saveHTML( $node );
-				
-				// $args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
+				$args[ 'title' ] = preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue);
 
-				LegalDebug::debug( [
-					'title' => $node->nodeValue,
+				// LegalDebug::debug( [
+				// 	'title' => $node->nodeValue,
 
-					'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
-				] );
+				// 	'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
+				// ] );
 
 				$args[ 'class' ] = $class;
 
@@ -128,9 +126,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				$args[ 'description' ] = $node->nodeValue;
+				// $args[ 'description' ] = $node->nodeValue;
 				
-				// $args[ 'description' ] = $dom->saveHTML( $node );
+				$args[ 'description' ] = preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue);
 			}
 
 			if ( $permission_content ) {
