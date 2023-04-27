@@ -61,18 +61,20 @@ class ReviewBonus
 
 		// $dom->loadHTML( $content, LIBXML_NOERROR );
 
-		$html = '<!DOCTYPE html>
-		<html>
-			<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-			</head>
-			<body>' . $content .
-			'</body>
-			</html>';
+		// $html = '<!DOCTYPE html>
+		// <html>
+		// 	<head>
+		// 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		// 	</head>
+		// 	<body>' . $content .
+		// 	'</body>
+		// 	</html>';
 
-		$dom->loadHTML( $html );
+		// $dom->loadHTML( $html );
 		
 		// $dom->loadHTML( $content );
+		
+		$dom->loadHTML( $content, LIBXML_NOERROR );
 		
 		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
