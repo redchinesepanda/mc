@@ -15,6 +15,17 @@ class ReviewBonus
         }
     }
 
+    public static function register_inline_style()
+    {
+		$name = 'review-inline';
+
+        wp_register_style( $name, false, [], true, true );
+		
+		wp_add_inline_style( $name, self::inline_style() );
+		
+		wp_enqueue_style( $name );
+    }
+
 	public static function register()
 	{
 		$handler = new self();
@@ -24,6 +35,8 @@ class ReviewBonus
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 	}
 
 	const BONUS_CLASS = [
@@ -228,6 +241,26 @@ class ReviewBonus
 
 		'review' => 'about-review',
 	];
+
+    public static function inline_style() {
+		$group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			if ( !empty( $group[ self::GROUP[ 'background' ] ] ) ) {
+				$styles = '
+					.wp-list-table .column-active_blogs {
+						width: 10em;
+						white-space: nowrap
+					}
+					';
+				return '.legal-billet .billet-review {
+					background-color: ' . $group[ self::GROUP[ 'background' ] ] . ';
+				}';
+			}
+		}
+
+		return '';
+	}
 
     public static function check_url_review()
 	{
