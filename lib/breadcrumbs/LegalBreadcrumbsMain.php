@@ -111,7 +111,15 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     const FIELD_HIDE = 'breadcrumbs-hide-parent';
 
-    const FIELD_ANCESTOR_TEXT = 'breadcrumbs-ancestor-text';
+    const FIELD_ITEMS = 'breadcrumbs-items';
+
+    const ITEM = [
+        'id' => 'item-id',
+
+        'item-label' => 'item-label',
+    ];
+
+    // const FIELD_ANCESTOR_TEXT = 'breadcrumbs-ancestor-text';
 
     public static function get()
     {
@@ -119,36 +127,42 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $index = 1;
 
-        $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+        $items = [];
+
+        // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
-                $ancestor_id = get_field( self::FIELD_ANCESTOR, $post->ID );
+                $legal_items = get_field( self::FIELD_ITEMS, $post->ID );
 
-                $ancestor_text = get_field( self::FIELD_ANCESTOR_TEXT, $post->ID );
+                if ( $legal_items ) {
+                    foreach( $legal_items as $item ) {
+                        $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $id ) );
 
-                $legal_ancestors = array_reverse( self::get_ancestors( $post->ID ) );
-
-                if ( !empty( $legal_ancestors ) ) {
-                    foreach ( $legal_ancestors as $id ) {
-                        $title = get_the_title( $id );
-
-                        if ( !empty( $ancestor_text ) && $id == $ancestor_id ) {
-                            $title = $ancestor_text;
-                        }
-
-                        $items[] = self::get_item( $title, get_page_link( $id ), $index );
+                        $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ), $index );
                     }
-                } else {
-                    if ( $post->post_parent ) {
-                        $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-        
-                        foreach ( $ancestors as $id ) {
+                }
+
+                if ( empty( $items )) ) {
+                    $legal_ancestors = array_reverse( self::get_ancestors( $post->ID ) );
+                    
+                    if ( !empty( $legal_ancestors ) ) {
+                        foreach ( $legal_ancestors as $id ) {
                             $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                         }
                     }
                 }
+
+                if ( empty( $items ) && $post->post_parent ) {
+                    $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+    
+                    foreach ( $ancestors as $id ) {
+                        $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
+                    }
+                }
             }
+            
+            array_unshift( $items, self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index ) );
 
             $items[] = self::get_item( $post->post_title, '', $index );
         }
