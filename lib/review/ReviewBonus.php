@@ -116,7 +116,7 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = $node->nodeValue;
+				$args[ 'title' ] = htmlspecialchars( $node->nodeValue );
 
 				$args[ 'class' ] = $class;
 
