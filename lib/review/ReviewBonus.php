@@ -97,7 +97,9 @@ class ReviewBonus
 					$template = self::render_bonus( $args );
 				}
 				
-				self::appendHTML( $bonus, $template );
+				// self::appendHTML( $bonus, $template );
+				
+				self::appendHTML( $bonus, preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $template ) );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
 			}
