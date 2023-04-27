@@ -70,13 +70,15 @@ class ReviewBonus
 		// 	'</body>
 		// 	</html>';
 
-		$html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content;
+		// $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content;
 
 		// $dom->loadHTML( $html );
 		
 		// $dom->loadHTML( $content );
 		
-		$dom->loadHTML( $html, LIBXML_NOERROR );
+		// $dom->loadHTML( $html, LIBXML_NOERROR );
+
+		$dom->loadHTML( $content, LIBXML_NOERROR );
 		
 		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
@@ -86,13 +88,15 @@ class ReviewBonus
 
 		$nodes = $xpath->query( $expression );
 
-		// LegalDebug::debug( [
-		// 	'class' => self::BONUS_CLASS[ 'bonus' ],
+		LegalDebug::debug( [
+			// 'class' => self::BONUS_CLASS[ 'bonus' ],
 
-		// 	'$expression' => $expression,
+			// '$expression' => $expression,
 
-		// 	'$nodes' => $nodes,
-		// ] );
+			// '$nodes' => $nodes,
+
+			'$content' => $content,
+		] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
