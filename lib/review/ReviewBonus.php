@@ -55,36 +55,11 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		// LegalDebug::debug( [
-		// 	'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
-		// ] );
+		$content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
 
 		$dom = new DOMDocument();
-		
-		// $dom = new DOMDocument( '1.0', 'UTF-8' );
-
-		// $dom->loadHTML( $content, LIBXML_NOERROR );
-
-		// $html = '<!DOCTYPE html>
-		// <html>
-		// 	<head>
-		// 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		// 	</head>
-		// 	<body>' . $content .
-		// 	'</body>
-		// 	</html>';
-
-		// $html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content;
-
-		// $dom->loadHTML( $html );
-		
-		// $dom->loadHTML( $content );
-		
-		// $dom->loadHTML( $html, LIBXML_NOERROR );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
-		
-		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
 		$xpath = new DOMXPath( $dom );
 
