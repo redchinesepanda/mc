@@ -65,7 +65,9 @@ class ReviewMain
     function character_replace( $post_id, $post, $update ){
         // 195, 8218, 194
 
-        $post->post_content = str_replace( chr( 195 ).chr( 8218 ).chr( 194 ), '', $post->post_content );
+        // $post->post_content = str_replace( chr( 195 ).chr( 8218 ).chr( 194 ), '', $post->post_content );
+
+        $post->post_content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $post->post_content );
     }
 }
 
