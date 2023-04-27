@@ -59,9 +59,9 @@ class ReviewBonus
 		
 		// $dom = new DOMDocument( '1.0', 'UTF-8' );
 
-		// $dom->loadHTML( $content, LIBXML_NOERROR );
+		$dom->loadHTML( $content, LIBXML_NOERROR );
 		
-		$dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
+		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
 		$xpath = new DOMXPath( $dom );
 
@@ -120,7 +120,9 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = $node->nodeValue;
+				// $args[ 'title' ] = $node->nodeValue;
+				
+				$args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
 				LegalDebug::debug( [
 					'title' => $args[ 'title' ],
