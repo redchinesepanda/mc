@@ -3,7 +3,6 @@
 .legal-billet {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
 	column-gap: 30px;
 }
 
@@ -16,15 +15,15 @@
 /* Billet Width and Height */
 
 .legal-billet .billet-review {
-	width: 22%;
+	width: calc( 22% - 20px );
 }
 
 .legal-billet .billet-body {
-	width: 56%;
+	width: calc( 56%- 20px );
 }
 
 .legal-billet .billet-get {
-	width: 22%;
+	width: calc( 22%- 20px );
 }
 
 /* Billet Background */
