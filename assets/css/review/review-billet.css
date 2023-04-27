@@ -14,10 +14,18 @@
 	row-gap: 10px;
 }
 
+.legal-billet .billet-get-link {
+	display: block;
+}
+
 /* Billet Position */
 
 .legal-billet .billet-body {
 	padding: 10px 0px;
+}
+
+.legal-billet .billet-get-link {
+	padding: 12px 57px 12px 25px;
 }
 
 /* Billet Width and Height */
@@ -32,6 +40,10 @@
 
 .legal-billet .billet-get {
 	width: calc( 22% - 20px );
+}
+
+.legal-billet .billet-get-link {
+	width: fit-content;
 }
 
 /* Billet Background */
@@ -50,4 +62,13 @@
 	background-color: rgb(239, 245, 251);
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
+}
+
+.legal-billet .billet-get-link {
+	background-image: url( '../../img/review/review-billet-get.svg' );
+	background-position: right 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="review-billet-get.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg858"
+   version="1.1"
+   viewBox="0 0 3.1749999 3.1750001"
+   height="12"
+   width="12">
+  <defs
+     id="defs852" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="7"
+     inkscape:window-height="1030"
+     inkscape:window-width="1895"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="7.6254993"
+     inkscape:cx="3.4089642"
+     inkscape:zoom="31.678384"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata855">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Слой 1">
+    <path
+       style="opacity:1;fill:#ffffff;fill-rule:nonzero;stroke:none;stroke-width:0.00620759;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;fill-opacity:1"
+       d="m 2.1458145,1.3391946 h -1.874324 c -0.04114,0 -0.07449,0.03335 -0.07449,0.07449 v 0.347625 c 0,0.04114 0.03335,0.07449 0.07449,0.07449 h 1.874324 v 0.285915 c 0,0.132731 0.160472,0.199202 0.254331,0.105349 l 0.534219,-0.534219 c 0.05818,-0.05818 0.05818,-0.152514 0,-0.210691 L 2.4001455,0.94793462 c -0.09385,-0.09385 -0.254331,-0.02738 -0.254331,0.10534898 z"
+       stroke-linecap="round"
+       id="path10" />
+  </g>
+</svg>
