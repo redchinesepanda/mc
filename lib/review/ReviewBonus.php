@@ -209,9 +209,79 @@ class ReviewBonus
         return $output;
     }
 
+	const GROUP = [
+		'title' => 'about-title',
+
+		'bonus' => 'about-bonus',
+
+		'description' => 'about-description',
+
+		'logo' => 'about-logo',
+
+		'logo-square' => 'about-logo-square',
+
+		'background' => 'about-background',
+
+		'rating' => 'about-rating',
+
+		'afillate' => 'about-afillate',
+
+		'review' => 'about-review',
+	];
+
+    public static function check_url_review()
+	{
+		$group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			if ( !empty( $group[ self::GROUP[ 'review' ] ] ) ) {
+				return $group[ self::GROUP[ 'review' ] ];
+			}
+		}
+
+		return self::check_url_get();
+	}
+
+    public static function check_url_get()
+	{
+		$group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			if ( !empty( $group[ self::GROUP[ 'afillate' ] ] ) ) {
+				return $group[ self::GROUP[ 'afillate' ] ];
+			}
+		}
+
+		return ( OopsMain::check_oops() ? '#oops' : '' );
+	}
+
     public static function get_billet( $args )
 	{
-		return $args;
+		$group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			return [
+				'src' => $group[ self::GROUP[ 'logo' ] ],
+
+				'review' => [
+					'href' => self::check_url_review(),
+
+					'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+				],
+
+				'title' => $args[ 'title' ],
+
+				'description' => $args[ 'description' ],
+
+				'get' => [
+					'href' => self::check_url_get(),
+
+					'text' => __( 'Get Bonus', ToolLoco::TEXTDOMAIN ),
+				],
+			];
+		}
+
+		return [];
 	}
 
     public static function render_billet( $args )
