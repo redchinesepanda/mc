@@ -5,10 +5,10 @@
 	</a>
 </div>
 <div class="billet-body">
-	<div class="bittet-title">
+	<div class="billet-title">
 		<?php echo $args[ 'title' ]; ?>
 	</div>
-	<div class="bittet-description">
+	<div class="billet-description">
 		<?php echo $args[ 'description' ]; ?>
 	</div>
 </div>
