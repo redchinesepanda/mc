@@ -97,9 +97,7 @@ class ReviewBonus
 					$template = self::render_bonus( $args );
 				}
 				
-				// self::appendHTML( $bonus, $template );
-				
-				self::appendHTML( $bonus, preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $template ) );
+				self::appendHTML( $bonus, $template );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
 			}
@@ -116,11 +114,11 @@ class ReviewBonus
 				
 				$args[ 'title' ] = preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue);
 
-				// LegalDebug::debug( [
-				// 	'title' => $node->nodeValue,
+				LegalDebug::debug( [
+					'title' => $node->nodeValue,
 
-				// 	'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
-				// ] );
+					'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
+				] );
 
 				$args[ 'class' ] = $class;
 
@@ -128,17 +126,11 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				// $args[ 'description' ] = $node->nodeValue;
-				
-				$args[ 'description' ] = preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue);
+				$args[ 'description' ] = $node->nodeValue;
 			}
 
 			if ( $permission_content ) {
-				// $args[ 'content' ][] = $node->nodeValue;
-
 				$node->removeAttribute( 'class' );
-				
-				// $node->setAttribute( 'class', self::BONUS_CLASS[ 'item' ] );
 
 				$args[ 'content' ][] = $dom->saveHTML( $node );
 			}
