@@ -118,6 +118,10 @@ class ReviewBonus
 
 				$args[ 'title' ] = htmlspecialchars( $node->nodeValue );
 
+				LegalDebug::debug( [
+					'title' => $args[ 'title' ],
+				] );
+
 				$args[ 'class' ] = $class;
 
 				$replace = $node;
