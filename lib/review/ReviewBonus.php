@@ -142,7 +142,9 @@ class ReviewBonus
 				// $args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
 				LegalDebug::debug( [
-					'title' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
+					'title' => $node->nodeValue,
+
+					'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
 				] );
 
 				$args[ 'class' ] = $class;
