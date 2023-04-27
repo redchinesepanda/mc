@@ -42,6 +42,8 @@ class ReviewMain
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        
+        add_action( 'save_post', [ $handler, 'character_replace' ], 10, 3 );
 
         ReviewAbout::register();
 
@@ -58,6 +60,10 @@ class ReviewMain
         ReviewStats::register();
 
         ReviewBonus::register();
+    }
+
+    function character_replace( $post_id, $post, $update ){
+        $post->post_content = str_replace( chr( 194 ), '', $post->post_content );
     }
 }
 
