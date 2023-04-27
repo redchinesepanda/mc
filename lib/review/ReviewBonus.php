@@ -95,7 +95,7 @@ class ReviewBonus
 
 			// '$nodes' => $nodes,
 
-			'$content' => $content,
+			'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
 		] );
 
 		if ( $nodes->length == 0 ) {
