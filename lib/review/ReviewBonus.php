@@ -122,7 +122,9 @@ class ReviewBonus
 
 				// $args[ 'title' ] = $node->nodeValue;
 				
-				$args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
+				$args[ 'title' ] = $dom->saveHTML( $node );
+				
+				// $args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
 				// LegalDebug::debug( [
 				// 	'title' => $args[ 'title' ],
@@ -134,7 +136,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				$args[ 'description' ] = $node->nodeValue;
+				// $args[ 'description' ] = $node->nodeValue;
+				
+				$args[ 'description' ] = $dom->saveHTML( $node );
 			}
 
 			if ( $permission_content ) {
