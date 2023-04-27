@@ -13,7 +13,7 @@ var ACFPage = ( function( $ )
 
                     // console.log( 'select2:clear e ', e );
 
-                    console.log( 'select2:select data ', data );
+                    // console.log( 'select2:select data ', data );
                     
                     $( '#post_search' ).val( '' );
 
@@ -23,7 +23,7 @@ var ACFPage = ( function( $ )
                 $select.on('select2:select', function (e) {
                     var data = e.params.data;
                     
-                    console.log( 'select2:select data ', data );
+                    // console.log( 'select2:select data ', data );
 
                     $( '#icl_document_connect_translations_dropdown' ).on( 'click', { text : data.text, id : data.id }, ACFPage.connect );
                 } );
@@ -31,7 +31,13 @@ var ACFPage = ( function( $ )
         },
         
         connect: function ( event ) {
-            $( '#post_search' ).val( event.data.text );
+            let title = event.data.text.split('[')[0];
+
+            let lang = event.data.text.split('[')[1].split(',')[0].replace(']', '');
+
+            $( '#post_search' ).val( '[' + lang + '] ' + title );
+            
+            // $( '#post_search' ).val( event.data.text );
 
             $( '#assign_to_trid' ).val( event.data.id );
         }
