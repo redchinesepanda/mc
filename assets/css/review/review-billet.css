@@ -1,0 +1,21 @@
+/* Billet Display */
+
+.legal-billet {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/* Billet Width and Height */
+
+.legal-billet .billet-review {
+	width: 22%;
+}
+
+.legal-billet .billet-body {
+	width: 56%;
+}
+
+.legal-billet .billet-get {
+	width: 22%;
+}
