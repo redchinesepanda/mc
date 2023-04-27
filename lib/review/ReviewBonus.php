@@ -55,6 +55,10 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
+		LegalDebug::debug( [
+			'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
+		] );
+
 		$dom = new DOMDocument();
 		
 		// $dom = new DOMDocument( '1.0', 'UTF-8' );
@@ -87,16 +91,6 @@ class ReviewBonus
 		$expression = './/*[contains(@class, \'legal-bonus\')]';
 
 		$nodes = $xpath->query( $expression );
-
-		LegalDebug::debug( [
-			// 'class' => self::BONUS_CLASS[ 'bonus' ],
-
-			// '$expression' => $expression,
-
-			// '$nodes' => $nodes,
-
-			'$content' => html_entity_decode( $content, ENT_QUOTES, 'UTF-8' ),
-		] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
