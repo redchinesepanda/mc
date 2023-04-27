@@ -70,11 +70,13 @@ class ReviewBonus
 		// 	'</body>
 		// 	</html>';
 
+		$html = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">' . $content;
+
 		// $dom->loadHTML( $html );
 		
 		// $dom->loadHTML( $content );
 		
-		$dom->loadHTML( $content, LIBXML_NOERROR );
+		$dom->loadHTML( $html, LIBXML_NOERROR );
 		
 		// $dom->loadHTML( mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_NOERROR );
 
