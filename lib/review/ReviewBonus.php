@@ -55,7 +55,9 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
+		
+		$dom = new DOMDocument( '1.0', 'UTF-8' );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
@@ -116,7 +118,7 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = htmlspecialchars( $node->nodeValue );
+				$args[ 'title' ] = $node->nodeValue;
 
 				LegalDebug::debug( [
 					'title' => $args[ 'title' ],
