@@ -116,7 +116,7 @@ class LegalBreadcrumbsMain extends LegalDebug
     const ITEM = [
         'id' => 'item-id',
 
-        'item-label' => 'item-label',
+        'label' => 'item-label',
     ];
 
     // const FIELD_ANCESTOR_TEXT = 'breadcrumbs-ancestor-text';
