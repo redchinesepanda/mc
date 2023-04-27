@@ -87,7 +87,7 @@
 
 /* Billet Typography */
 
-.legal-billet .billet-review-link {
+.legal-billet .review-title-link {
 	font-family: "Source Sans Pro";
 	font-size: 15px;
 	font-style: normal;
@@ -111,9 +111,9 @@
 
 .legal-billet .billet-get-link {
 	font-family: "Source Sans Pro";
-	font-size: 12px;
+	font-size: 14px;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 14.4px;
 	color: rgb(255, 255, 255);
 	text-decoration: none;
