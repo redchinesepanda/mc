@@ -118,14 +118,14 @@ class ReviewStats
 
 		// $tbodies = $node->getElementsByTagName( 'tbody ');
 
-		LegalDebug::debug( [
-			'$node' => $node,
-		] );
-
 		// if ( $tbodies->length ) {
 		// 	$tbody = $tbodies[ 0 ];
 
 		$trs = $node->getElementsByTagName( 'tr ');
+
+		LegalDebug::debug( [
+			'$trs' => $trs,
+		] );
 
 		foreach ( $trs as $tr ) {
 			$cells = $tr->getElementsByTagName( 'td' );
