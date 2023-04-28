@@ -52,19 +52,38 @@ class ReviewStats
 
 	public static function inline_style() {
 		$style = [];
-        
-        $style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'width' ] .'%; }';
+
+		$table = self::get_table();
+
+		$items = self::get_stats( $node );
+
+		foreach ( $items as $id => $item ) {
+			$style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'value' ] .'%; }';
+		}
 
 		return implode( ' ', $style );
 	}
 
-	public static function get_content( $content )
+	public static function get_dom( $content )
 	{
 		$dom = new DOMDocument();
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
 		$xpath = new DOMXPath( $dom );
+
+		return $dom;
+	}
+
+	public static function get_content( $content )
+	{
+		$dom = get_dom( $content );
+
+		// $dom = new DOMDocument();
+
+		// $dom->loadHTML( $content, LIBXML_NOERROR );
+
+		// $xpath = new DOMXPath( $dom );
 
 		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
 
@@ -83,6 +102,21 @@ class ReviewStats
 		}
 
 		return $dom->saveHTML();
+	}
+
+	public static function get_table()
+	{
+		$post = get_post();
+
+		$dom = get_dom( $post->post_content );
+
+		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+
+		if ( $nodes->length == 0 ) {
+			return [];
+		}
+
+		return $nodes->item( 0 );
 	}
 
 	public static function get_stats ( $node )
