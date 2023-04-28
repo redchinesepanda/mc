@@ -50,7 +50,7 @@ class ReviewAnchors
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/a[contains(@id)]' );
+		$nodes = $xpath->query( './/a/@id' );
 
 		return $nodes;
 	}
