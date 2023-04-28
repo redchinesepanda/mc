@@ -70,9 +70,16 @@ class ReviewStats
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
+		return $dom;
+	}
+
+	public static function get_nodes( $dom )
+	{
 		$xpath = new DOMXPath( $dom );
 
-		return $dom;
+		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+
+		return $nodes;
 	}
 
 	public static function get_content( $content )
@@ -85,7 +92,9 @@ class ReviewStats
 
 		// $xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+		// $nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+
+		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
@@ -110,7 +119,7 @@ class ReviewStats
 
 		$dom = self::get_dom( $post->post_content );
 
-		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
 			return [];
