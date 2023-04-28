@@ -65,7 +65,7 @@ class ReviewBonus
 
 		// 'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
 
-		// $content = iconv('UTF-8', 'ISO-8859-1', $content );
+		$content = iconv('UTF-8', 'ISO-8859-1', $content );
 		
 		// $content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 
