@@ -30,11 +30,11 @@
 /* .tcb-post-content li {
 	display: flex;
 	align-items: baseline;
-}
-
-.tcb-post-content .li::target-text {
-	width: calc( 100% - 34px );
 } */
+
+.tcb-post-content li *:not( ol ):not( ul ) {
+	width: calc( 100% - 34px );
+}
 
 /* Review Position */
 
