@@ -133,7 +133,7 @@ class ReviewBonus
 
 					'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
 
-					// 'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
+					'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
 
 					// 'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue,'HTML-ENTITIES','UTF-8' ),
 
