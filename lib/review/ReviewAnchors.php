@@ -27,7 +27,11 @@ class ReviewAnchors
     
         // acf/load_value/name={$field_name} - filter for a specific value load based on it's field name
 
-        add_filter('acf/load_value/key=review-anchors', [ $handler, 'set_repeater' ], 10, 3);
+        add_filter( 'acf/load_value/key=review-anchors', [ $handler, 'set_repeater' ], 10, 3 );
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'register',
+        ] );
     }
 
     const TERM = 'bookmaker-review';
