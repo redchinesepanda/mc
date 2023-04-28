@@ -95,18 +95,18 @@ class ReviewStats
 
 		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
 
-		LegalDebug::debug( [
-			'$nodes' => $nodes,
-		] );
+		// LegalDebug::debug( [
+		// 	'$nodes' => $nodes,
+		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
 
 		foreach ( $nodes as $node ) {
-			LegalDebug::debug( [
-				'rows' => $node->getElementsByTagName( 'tr' ),
-			] );
+			// LegalDebug::debug( [
+			// 	'rows' => $node->getElementsByTagName( 'tr' ),
+			// ] );
 
 			$stats = $dom->createElement( 'div' );
 
@@ -129,7 +129,7 @@ class ReviewStats
 		// if ( $tbodies->length ) {
 		// 	$tbody = $tbodies[ 0 ];
 
-		$rows = $node->getElementsByTagName( 'tr ');
+		$rows = $node->getElementsByTagName( 'tr' );
 
 		// LegalDebug::debug( [
 		// 	'$node' => $node,
