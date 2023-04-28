@@ -105,7 +105,7 @@ class ReviewStats
 
 		foreach ( $nodes as $node ) {
 			LegalDebug::debug( [
-				'rows' => $node->getElementsByTagName( 'tr '),
+				'rows' => $node->getElementsByTagName( 'tr'),
 			] );
 
 			$stats = $dom->createElement( 'div' );
