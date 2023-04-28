@@ -68,11 +68,13 @@ class ReviewMain
 
     function encoding( $content ) {
 
-        wp_die( LegalDebug::debug( [
-            '$content1' => $content,
+        $content = mb_convert_encoding( $content, 'HTML-ENTITIES','UTF-8' );
 
-            '$content2' => mb_convert_encoding( $content, 'HTML-ENTITIES','UTF-8' ),
-        ] ) );
+        // wp_die( LegalDebug::debug( [
+        //     '$content1' => $content,
+
+        //     '$content2' => mb_convert_encoding( $content, 'HTML-ENTITIES','UTF-8' ),
+        // ] ) );
     
         return $content;
     
