@@ -95,6 +95,10 @@ class ReviewStats
 
 		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
 
+		LegalDebug::debug( [
+			'$nodes' => $nodes,
+		] );
+
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
@@ -127,11 +131,11 @@ class ReviewStats
 
 		$rows = $node->getElementsByTagName( 'tr ');
 
-		LegalDebug::debug( [
-			'$node' => $node,
+		// LegalDebug::debug( [
+		// 	'$node' => $node,
 
-			'$rows' => $rows,
-		] );
+		// 	'$rows' => $rows,
+		// ] );
 
 		foreach ( $rows as $row ) {
 			$cells = $row->getElementsByTagName( 'td' );
