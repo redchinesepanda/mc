@@ -116,33 +116,34 @@ class ReviewStats
 	{
 		$args = [];
 
-		$tbodies = $node->getElementsByTagName( 'tbody ');
+		// $tbodies = $node->getElementsByTagName( 'tbody ');
 
 		LegalDebug::debug( [
 			'$node' => $node,
-			
-			'$tbodies' => $tbodies,
 		] );
 
-		if ( $tbodies->length ) {
-			$tbody = $tbodies[ 0 ];
+		// if ( $tbodies->length ) {
+		// 	$tbody = $tbodies[ 0 ];
 
-			foreach ( $tbody->getElementsByTagName( 'tr' ) as $tr ) {
-				$cells = $tr->getElementsByTagName( 'td' );
-				
-				if ( $tbodies->length ) {
-					$args[] = [
-						'title' => $cells[ 0 ]->textContent,
+		$trs = $node->getElementsByTagName( 'tr ');
 
-						'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
-		
-						// 'value' => $cells[ 1 ]->textContent,
-		
-						// 'description' => $cells[ 2 ]->textContent,
-					];
-				}
+		foreach ( $trs as $tr ) {
+			$cells = $tr->getElementsByTagName( 'td' );
+			
+			if ( $tbodies->length ) {
+				$args[] = [
+					'title' => $cells[ 0 ]->textContent,
+
+					'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
+	
+					// 'value' => $cells[ 1 ]->textContent,
+	
+					// 'description' => $cells[ 2 ]->textContent,
+				];
 			}
 		}
+		
+		// }
 
 		return $args;
 	}
