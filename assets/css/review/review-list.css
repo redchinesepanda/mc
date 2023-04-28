@@ -22,6 +22,9 @@
     content: counter( legal-counter );
     display: inline-block;
 }
+.tcb-post-content ul li::before {
+    display: inline-block;
+}
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li::before {
     content: counter( legal-counter-alpha, upper-alpha );
@@ -65,7 +68,7 @@
 
 /* Review Width and Height */
 
-.tcb-post-content ol li::before {
+.tcb-post-content li::before {
     width: 24px;
     height: 24px;
 }
@@ -81,6 +84,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
+	list-style-image: none;
 }
 
 .tcb-post-content ol li::before {
