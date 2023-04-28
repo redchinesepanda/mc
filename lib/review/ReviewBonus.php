@@ -55,11 +55,11 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		global $wpdb;
+		// global $wpdb;
 
-		LegalDebug::debug( [
-			'charset' => $wpdb->get_charset_collate(),
-		] );
+		// LegalDebug::debug( [
+		// 	'charset' => $wpdb->get_charset_collate(),
+		// ] );
 
 		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
 
@@ -122,6 +122,8 @@ class ReviewBonus
 
 				LegalDebug::debug( [
 					'title' => $node->nodeValue,
+
+					'mb_convert_encoding' => mb_convert_encoding( $node->nodeValue, 'UTF-8' ),
 
 					'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
 				] );
