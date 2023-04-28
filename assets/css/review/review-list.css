@@ -27,14 +27,14 @@
     content: counter( legal-counter-alpha, upper-alpha );
 }
 
-.tcb-post-content li {
+/* .tcb-post-content li {
 	display: flex;
 	align-items: baseline;
 }
 
 .tcb-post-content .li::target-text {
 	width: calc( 100% - 34px );
-}
+} */
 
 /* Review Position */
 
