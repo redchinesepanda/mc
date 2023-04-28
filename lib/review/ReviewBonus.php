@@ -65,7 +65,9 @@ class ReviewBonus
 
 		$content = iconv('UTF-8', 'ISO-8859-1', $content );
 
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
+		
+		$dom = new DOMDocument( '1.0', 'UTF-8' );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
