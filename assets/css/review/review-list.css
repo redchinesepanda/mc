@@ -49,6 +49,7 @@
 
 .tcb-post-content li {
 	padding-left: 34px;
+	margin-left: 0px;
 }
 
 .tcb-post-content ol li::before {
