@@ -78,17 +78,17 @@ class ReviewBonus
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
-			// LegalDebug::debug( [
-			// 	'title' => $node->nodeValue,
+			LegalDebug::debug( [
+				'title' => $node->nodeValue,
 
-			// 	'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
+				'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
 
-			// 	'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
+				'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
 
-			// 	'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
+				'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
 
-			// 	'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' ),
-			// ] );
+				'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' ),
+			] );
 
 			$class = $node->getAttribute( 'class' );
 
@@ -122,9 +122,9 @@ class ReviewBonus
 
 				$args = [];
 
-				// $args[ 'title' ] = $node->nodeValue;
+				$args[ 'title' ] = $node->nodeValue;
 				
-				$args[ 'title' ] = $dom->saveHTML( $node );
+				// $args[ 'title' ] = $dom->saveHTML( $node );
 
 				$args[ 'class' ] = $class;
 
@@ -132,9 +132,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				// $args[ 'description' ] = $node->nodeValue;
+				$args[ 'description' ] = $node->nodeValue;
 				
-				$args[ 'description' ] = $dom->saveHTML( $node );
+				// $args[ 'description' ] = $dom->saveHTML( $node );
 			}
 
 			if ( $permission_content ) {
