@@ -27,22 +27,13 @@
     content: counter( legal-counter-alpha, upper-alpha );
 }
 
-/* .tcb-post-content li {
-	display: flex;
-	align-items: baseline;
-} */
-
-.tcb-post-content li label {
-	width: calc( 100% - 34px );
-	display: block;
-}
-
 /* Review Position */
 
 .tcb-post-content ul:not( [ style ] ):not( [ class ] ),
 .tcb-post-content ol:not( [ style ] ) {
     padding-top: 0px;
     padding-bottom: 30px;
+	padding-left: 30px;
 }
 
 .tcb-post-content li > ul,
@@ -54,6 +45,10 @@
 .tcb-post-content ul li:not( :last-child ),
 .tcb-post-content ol li:not( :last-child ) {
     padding-bottom: 15px;
+}
+
+.tcb-post-content li {
+	padding-left: 34px;
 }
 
 .tcb-post-content ol li::before {
