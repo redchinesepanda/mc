@@ -23,7 +23,11 @@ class ReviewAnchors
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_filter( 'the_content', [ $handler, 'content' ], 1 );
+        // add_filter( 'the_content', [ $handler, 'content' ], 1 );
+    
+        // acf/load_value/name={$field_name} - filter for a specific value load based on it's field name
+
+        add_filter('acf/load_value/key=review-anchors', 'set_repeater', 10, 3);
     }
 
     const TERM = 'bookmaker-review';
@@ -55,7 +59,41 @@ class ReviewAnchors
 		return $nodes;
 	}
 
-    public static function target()
+    function set_repeater( $value, $post_id, $field ){
+    
+        $value = [];
+        
+        // this one should consists array of the names
+
+        // $settings_values = get_field( 'review-anchors' );
+
+        $nodes = self::get_anchors();
+
+        $items = self::get_data( $nodes );
+        
+        foreach( $items as $item ){
+            $value[] = [
+                'item-id' => $item[ 'id' ],
+
+                'item-label' => $item[ 'label' ],
+            ];
+        }
+    
+        return $value;
+    }
+
+    public static function get_data( $nodes )
+    {
+        foreach ( $nodes as $node ) {
+            $items[] = [
+                'id' => $node->getAttribute( 'id' ),
+
+                'label' => $node->parentNode->textContent,
+            ];
+        }
+    }
+
+    public static function get_anchors()
     {
         // $dom = new DomDocument();
 
@@ -65,9 +103,9 @@ class ReviewAnchors
 
         $nodes = self::get_nodes( $dom );
 
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-        ] );
+        // LegalDebug::debug( [
+        //     '$nodes' => $nodes,
+        // ] );
 
         // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
         //     $link = $dom->createElement( 'a' );
@@ -79,7 +117,9 @@ class ReviewAnchors
         //     $item->appendChild( $link );
         // }
 
-        return $dom->saveHTML();
+        // return $dom->saveHTML();
+
+        return $nodes;
     }
 
     // const FIELD = 'review-anchors';
