@@ -55,6 +55,12 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
+		global $wpdb;
+
+		LegalDebug::debug( [
+			'charset' => $wpdb->get_table_charset( 'wp_posts' ),
+		] );
+
 		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
 
 		$dom = new DOMDocument();
