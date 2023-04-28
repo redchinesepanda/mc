@@ -54,6 +54,9 @@
 .tcb-post-content ol li::before {
     margin-right: 10px;
 }
+.tcb-post-content li::before {
+    margin-left: -34px;
+}
 
 /* Review Width and Height */
 
