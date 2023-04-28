@@ -100,6 +100,10 @@ class ReviewStats
 		}
 
 		foreach ( $nodes as $node ) {
+			LegalDebug::debug( [
+				'rows' => $node->getElementsByTagName( 'tr '),
+			] );
+
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'legal-stats' );
@@ -121,16 +125,16 @@ class ReviewStats
 		// if ( $tbodies->length ) {
 		// 	$tbody = $tbodies[ 0 ];
 
-		$trs = $node->getElementsByTagName( 'tr ');
+		$rows = $node->getElementsByTagName( 'tr ');
 
 		LegalDebug::debug( [
 			'$node' => $node,
 
-			'$trs' => $trs,
+			'$rows' => $rows,
 		] );
 
-		foreach ( $trs as $tr ) {
-			$cells = $tr->getElementsByTagName( 'td' );
+		foreach ( $rows as $row ) {
+			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $tbodies->length ) {
 				$args[] = [
