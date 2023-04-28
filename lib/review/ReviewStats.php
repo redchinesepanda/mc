@@ -57,26 +57,28 @@ class ReviewStats
         return [];
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-stats-table.php';
-
     public static function render()
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE[ 'review-stats-table' ], false, self::get() );
 
         $output = ob_get_clean();
 
         return $output;
     }
 
-	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php';
+	const TEMPLATE = [
+		'review-stats' => LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php',
+
+		'review-stats-table' => LegalMain::LEGAL_PATH . '/template-parts/review/review-stats-table.php',
+	];
 
     public static function render_stats( $node )
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get_stats( $node ) );
+        load_template( self::TEMPLATE[ 'review-stats' ], false, self::get_stats( $node ) );
 
         $output = ob_get_clean();
 
