@@ -64,7 +64,7 @@ class ReviewMain
 
     function encoding( $content )
     {
-        return mb_convert_encoding( $content, 'HTML-ENTITIES','UTF-8' );
+        return ToolEncode::encode( $content );
     }
 }
 

@@ -126,7 +126,7 @@ class ReviewBonus
 				
 				// $args[ 'title' ] = $dom->saveHTML( $node );
 				
-				$args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
+				$args[ 'title' ] = ToolEncode::encode( $node->nodeValue );
 
 				$args[ 'class' ] = $class;
 
@@ -134,15 +134,19 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				$args[ 'description' ] = $node->nodeValue;
+				// $args[ 'description' ] = $node->nodeValue;
 				
 				// $args[ 'description' ] = $dom->saveHTML( $node );
+				
+				$args[ 'description' ] = ToolEncode::encode( $node->nodeValue );
 			}
 
 			if ( $permission_content ) {
 				$node->removeAttribute( 'class' );
 
-				$args[ 'content' ][] = $dom->saveHTML( $node );
+				// $args[ 'content' ][] = $dom->saveHTML( $node );
+
+				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( $permission_description || $permission_content ) {
