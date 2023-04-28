@@ -13,11 +13,24 @@ class ReviewStats
         }
     }
 
+    public static function register_inline_style()
+    {
+		$name = 'review-inline';
+
+        wp_register_style( $name, false, [], true, true );
+		
+		wp_add_inline_style( $name, self::inline_style() );
+		
+		wp_enqueue_style( $name );
+    }
+
     public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
@@ -37,6 +50,14 @@ class ReviewStats
         return $output;
     }
 
+	public static function inline_style() {
+		$style = [];
+        
+        $style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'width' ] .'%; }';
+
+		return implode( ' ', $style );
+	}
+
 	public static function get_content( $content )
 	{
 		$dom = new DOMDocument();
@@ -54,7 +75,7 @@ class ReviewStats
 		foreach ( $nodes as $node ) {
 			$stats = $dom->createElement( 'div' );
 
-			$stats->setAttribute( 'class', 'legal-stats' );
+			$stats->setAttribute( 'class', 'review-stats' );
 
 			ReviewBonus::appendHTML( $stats, self::render_stats( $node ) );
 
