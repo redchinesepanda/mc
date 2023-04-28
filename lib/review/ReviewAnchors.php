@@ -64,6 +64,8 @@ class ReviewAnchors
             '$nodes' => $nodes,
 
             '$node' => $nodes->item( 0 ),
+
+            'id' => $nodes->item( 0 )->getAttribute( 'id' ),
         ] );
 
 		return $nodes;
