@@ -60,14 +60,14 @@ class ReviewAnchors
 
 		$nodes = $xpath->query( './/a/@id' );
 
+        LegalDebug::debug( [
+            '$nodes' => $nodes,
+        ] );
+
 		return $nodes;
 	}
 
     function set_repeater ( $value, $post_id, $field ) {
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'set_repeater',
-        ] );
-    
         $value = [];
         
         // this one should consists array of the names
@@ -114,34 +114,12 @@ class ReviewAnchors
 
     public static function get_anchors()
     {
-        // $dom = new DomDocument();
-
-        // $dom->loadHTML( get_the_content() );
-
         $dom = self::get_dom( get_the_content() );
 
         $nodes = self::get_nodes( $dom );
 
-        // LegalDebug::debug( [
-        //     '$nodes' => $nodes,
-        // ] );
-
-        // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
-        //     $link = $dom->createElement( 'a' );
-
-        //     $link->setAttribute( 'class', 'legal-target' );
-
-        //     $link->setAttribute( 'name', 'target-' . $key );
-
-        //     $item->appendChild( $link );
-        // }
-
-        // return $dom->saveHTML();
-
         return $nodes;
     }
-
-    // const FIELD = 'review-anchors';
 
     const FIELD = 'review-about';
 
