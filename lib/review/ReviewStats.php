@@ -118,6 +118,10 @@ class ReviewStats
 
 		$tbodies = $node->getElementsByTagName( 'tbody ');
 
+		LegalDebug::debug( [
+			'$tbodies' => $tbodies,
+		] );
+
 		if ( $tbodies->length ) {
 			$tbody = $tbodies[ 0 ];
 
