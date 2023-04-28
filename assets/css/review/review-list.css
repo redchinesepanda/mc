@@ -47,7 +47,7 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content li {
+.tcb-post-content li:not( [ class ] ) {
 	padding-left: 34px;
 	margin-left: 0px;
 }
