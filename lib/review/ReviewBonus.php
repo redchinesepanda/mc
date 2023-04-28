@@ -63,9 +63,11 @@ class ReviewBonus
 
 		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
 
+		// 'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
+
 		// $content = iconv('UTF-8', 'ISO-8859-1', $content );
 		
-		$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
+		// $content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 
 		// $dom = new DOMDocument();
 		
