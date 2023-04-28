@@ -129,7 +129,7 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'title' => $node->nodeValue,
 
-					// 'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
+					'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
 
 					'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
 
