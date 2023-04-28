@@ -32,7 +32,7 @@
 	align-items: baseline;
 } */
 
-.tcb-post-content li *:not( ol ):not( ul ) {
+.tcb-post-content li * {
 	width: calc( 100% - 34px );
 }
 
