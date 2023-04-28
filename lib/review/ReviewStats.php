@@ -110,7 +110,7 @@ class ReviewStats
 	{
 		$args = [];
 
-		$tbodies = $container->getElementsByTagName( 'tbody ');
+		$tbodies = $node->getElementsByTagName( 'tbody ');
 
 		if ( $tbodies->length ) {
 			$tbody = $tbodies[ 0 ];
