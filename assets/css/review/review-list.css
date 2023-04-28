@@ -62,10 +62,8 @@
 	margin-left: 0px;
 }
 
-.tcb-post-content ol li::before {
-    margin-right: 10px;
-}
 .tcb-post-content li::before {
+    margin-right: 10px;
     margin-left: -34px;
 }
 
