@@ -77,7 +77,7 @@ class ReviewStats
 
 	public static function get_content( $content )
 	{
-		$dom = get_dom( $content );
+		$dom = self::get_dom( $content );
 
 		// $dom = new DOMDocument();
 
