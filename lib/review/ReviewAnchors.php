@@ -29,9 +29,9 @@ class ReviewAnchors
 
         add_filter( 'acf/load_value/key=review-anchors', [ $handler, 'set_repeater' ], 10, 3 );
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'register',
-        ] );
+        // LegalDebug::debug( [
+        //     'ReviewAnchors' => 'register',
+        // ] );
     }
 
     const TERM = 'bookmaker-review';
@@ -63,7 +63,10 @@ class ReviewAnchors
 		return $nodes;
 	}
 
-    function set_repeater( $value, $post_id, $field ){
+    function set_repeater ( $value, $post_id, $field ) {
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'set_repeater',
+        ] );
     
         $value = [];
         
