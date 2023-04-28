@@ -122,9 +122,11 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = $node->nodeValue;
+				// $args[ 'title' ] = $node->nodeValue;
 				
 				// $args[ 'title' ] = $dom->saveHTML( $node );
+				
+				$args[ 'title' ] = mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' );
 
 				$args[ 'class' ] = $class;
 
