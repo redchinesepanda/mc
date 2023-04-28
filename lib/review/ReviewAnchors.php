@@ -75,14 +75,20 @@ class ReviewAnchors
         $items = self::get_data( $nodes );
         
         foreach( $items as $item ){
-            $value[] = [
+            // $value[] = [
+            //     'item-id' => $item[ 'id' ],
+
+            //     'item-label' => $item[ 'label' ],
+            // ];
+
+            add_row( 'review-anchors', [
                 'item-id' => $item[ 'id' ],
 
                 'item-label' => $item[ 'label' ],
-            ];
+            ] );
         }
     
-        return $value;
+        // return $value;
     }
 
     public static function get_data( $nodes )
