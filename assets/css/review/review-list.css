@@ -46,7 +46,7 @@
 	padding-left: 30px;
 }
 
-.tcb-post-content li > ul,
+.tcb-post-content li > ul:not( [ class ] ),
 .tcb-post-content li > ol {
     padding-top: 15px;
     padding-bottom: 0px;
