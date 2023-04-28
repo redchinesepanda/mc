@@ -43,15 +43,18 @@
 /* Billet Width and Height */
 
 .legal-billet .billet-review {
-	width: calc( 22% - 20px );
+	/* width: calc( 22% - 20px ); */
+	width: 22%;
 }
 
 .legal-billet .billet-body {
-	width: calc( 56% - 20px );
+	/* width: calc( 56% - 20px ); */
+	width: calc( 56% - 60px );
 }
 
 .legal-billet .billet-get {
-	width: calc( 22% - 20px );
+	/* width: calc( 22% - 20px ); */
+	width: 22%;
 }
 
 .legal-billet .billet-get-link {
