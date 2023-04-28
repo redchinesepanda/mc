@@ -39,8 +39,8 @@
 
 /* Review Position */
 
-.tcb-post-content :not( li ) ul:not( [ class ] ),
-.tcb-post-content :not( li ) ol:not( [ class ] ) {
+.tcb-post-content ul:not( [ class ] ),
+.tcb-post-content ol:not( [ class ] ) {
     padding-top: 0px;
     padding-bottom: 30px;
 	padding-left: 30px;
