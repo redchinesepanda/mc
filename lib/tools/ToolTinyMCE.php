@@ -42,6 +42,10 @@ class ToolTinyMCE
 				'title' => 'Колонка',
 				'value' => 'legal-column',
 			],
+			[
+				'title' => 'Статистика',
+				'value' => 'legal-stats',
+			],
 		];
 
 		$settings[ 'table_class_list' ] = json_encode( $styles );

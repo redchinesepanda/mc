@@ -16,4 +16,15 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
+	<table>
+		<tbody>
+			<?php foreach ( $args as $item ) : ?>
+				<tr>
+					<td><?php echo $item[ 'title' ]; ?></td>
+					<td><?php echo $item[ 'value' ]; ?></td>
+					<td><?php echo $item[ 'description' ]; ?></td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
 <?php endif; ?>

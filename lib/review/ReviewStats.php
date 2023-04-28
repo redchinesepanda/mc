@@ -22,6 +22,8 @@ class ReviewStats
 		// [legal-stats]
 
 		add_shortcode( 'legal-stats', [ $handler, 'render' ] );
+
+		add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
     const FIELD = 'review-stats';
@@ -47,16 +49,6 @@ class ReviewStats
 
 					'width' => ( round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
 				];
-
-				// LegalDebug::debug( [
-				// 	'float' => ( ( float ) $faq[ self::ITEM_VALUE ] ),
-	
-				// 	'round' => round( ( float ) $faq[ self::ITEM_VALUE ] ),
-	
-				// 	'10' => round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10,
-	
-				// 	'100' => ( round( ( float ) $faq[ self::ITEM_VALUE ] ) / 10 ) * 100,
-				// ] );
 			}
 
 			return $args;
@@ -65,7 +57,7 @@ class ReviewStats
         return [];
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php';
+    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-stats-table.php';
 
     public static function render()
     {
@@ -77,6 +69,69 @@ class ReviewStats
 
         return $output;
     }
+
+	const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php';
+
+    public static function render_stats( $node )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE, false, self::get_stats( $node ) );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+	public static function get_content( $content )
+	{
+		$dom = new DOMDocument();
+
+		$dom->loadHTML( $content, LIBXML_NOERROR );
+
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( './/*[contains(@class, \'legal-stats\')]' );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $nodes as $node ) {
+			$node->insertBefore( self::render_stats( $node ) );
+		}
+
+		return $dom->saveHTML();
+	}
+
+	public static function get_stats ( $node )
+	{
+		$args = [];
+
+		$tbodies = $container->getElementsByTagName( 'tbody ');
+
+		if ( $tbodies->length ) {
+			$tbody = $tbodies[ 0 ];
+
+			foreach ( $tbody->getElementsByTagName( 'tr' ) as $tr ) {
+				$cells = $tr->getElementsByTagName( 'td' );
+				
+				if ( $tbodies->length ) {
+					$args[] = [
+						'title' => $cells[ 0 ]->textContent,
+
+						'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
+		
+						// 'value' => $cells[ 1 ]->textContent,
+		
+						// 'description' => $cells[ 2 ]->textContent,
+					];
+				}
+			}
+		}
+
+		return $args;
+	}
 }
 
 ?>
