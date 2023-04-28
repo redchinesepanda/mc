@@ -75,17 +75,20 @@ class ReviewAnchors
         $items = self::get_data( $nodes );
         
         foreach( $items as $item ){
+            LegalDebug::debug( [
+                '$item' => $item,
+            ] );
             // $value[] = [
             //     'item-id' => $item[ 'id' ],
 
             //     'item-label' => $item[ 'label' ],
             // ];
 
-            add_row( 'review-anchors', [
-                'item-id' => $item[ 'id' ],
+            // add_row( 'review-anchors', [
+            //     'item-id' => $item[ 'id' ],
 
-                'item-label' => $item[ 'label' ],
-            ] );
+            //     'item-label' => $item[ 'label' ],
+            // ] );
         }
     
         // return $value;
