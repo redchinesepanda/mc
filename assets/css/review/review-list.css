@@ -27,6 +27,10 @@
     content: counter( legal-counter-alpha, upper-alpha );
 }
 
+.tcb-post-content ul li:before {
+	content: '';
+}
+
 /* Review Position */
 
 .tcb-post-content ul:not( [ style ] ):not( [ class ] ),
@@ -68,8 +72,15 @@
 
 /* Review Background */
 
-.tcb-post-content ul li {
+/* .tcb-post-content ul li {
     list-style-image: url( '../../img/review/review-ul.svg' );
+} */
+
+.tcb-post-content ul li:before {
+    background-image: url( '../../img/review/review-ul.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
 .tcb-post-content ol li::before {
