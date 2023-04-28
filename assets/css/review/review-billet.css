@@ -32,6 +32,10 @@
 
 /* Billet Position */
 
+.legal-billet {
+	margin-bottom: 30px;
+}
+
 .legal-billet .billet-body {
 	padding: 10px 0px;
 }
