@@ -115,6 +115,7 @@
 
 .legal-billet .billet-description {
 	color: rgba(10, 10, 10, 0.85);
+	text-align: justify;
 }
 
 .legal-billet .billet-get-link {
