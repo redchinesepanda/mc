@@ -32,8 +32,9 @@
 	align-items: baseline;
 } */
 
-.tcb-post-content li * {
+.tcb-post-content li label {
 	width: calc( 100% - 34px );
+	display: block;
 }
 
 /* Review Position */
