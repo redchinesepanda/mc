@@ -122,7 +122,9 @@ class ReviewBonus
 
 				$args = [];
 
-				$args[ 'title' ] = $node->nodeValue;
+				// $args[ 'title' ] = $node->nodeValue;
+				
+				$args[ 'title' ] = $dom->saveHTML( $node );
 
 				$args[ 'class' ] = $class;
 
@@ -130,7 +132,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				$args[ 'description' ] = $node->nodeValue;
+				// $args[ 'description' ] = $node->nodeValue;
+				
+				$args[ 'description' ] = $dom->saveHTML( $node );
 			}
 
 			if ( $permission_content ) {
