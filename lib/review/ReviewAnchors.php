@@ -78,6 +78,14 @@ class ReviewAnchors
                 'item-label' => $item[ 'label' ],
             ];
         }
+
+        LegalDebug::debug( [
+            '$nodes' => $nodes,
+
+            '$items' => $items,
+
+            '$value' => $value,
+        ] );
     
         return $value;
     }
