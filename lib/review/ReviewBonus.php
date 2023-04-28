@@ -130,7 +130,9 @@ class ReviewBonus
 			}
 		}
 
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
+		
+		return mb_convert_encoding( $dom->saveHTML(), 'HTML-ENTITIES','UTF-8' );
 	}
 
 	public static function appendHTML( DOMNode $parent, $source ) {
