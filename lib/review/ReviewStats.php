@@ -100,7 +100,13 @@ class ReviewStats
 		}
 
 		foreach ( $nodes as $node ) {
-			$node->insertBefore( self::render_stats( $node ) );
+			$stats = $dom->createElement( 'div' );
+
+			$stats->setAttribute( 'class', 'legal-stats' );
+
+			ReviewBonus::appendHTML( $stats, self::render_stats( $node ) );
+
+			$node->insertBefore( $stats );
 		}
 
 		return $dom->saveHTML();
