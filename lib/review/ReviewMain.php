@@ -45,7 +45,9 @@ class ReviewMain
         
         // add_action( 'save_post', [ $handler, 'character_replace' ], 10, 3 );
 
-        add_action( 'pre_post_update', [ $handler, 'pre_post_update' ], 10, 2 );
+        // add_action( 'pre_post_update', [ $handler, 'pre_post_update' ], 10, 2 );
+        
+        add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
         ReviewAbout::register();
 
@@ -64,14 +66,26 @@ class ReviewMain
         ReviewBonus::register();
     }
 
-    function pre_post_update( $post_id, $data )
-    {
-        wp_die( LegalDebug::debug( [
-            '$post_id' => $post_id,
+    function encoding( $content ) {
 
-            '$data' => $data,
+        wp_die( LegalDebug::debug( [
+            '$content1' => $content,
+
+            '$content2' => mb_convert_encoding( $content, 'HTML-ENTITIES','UTF-8' ),
         ] ) );
+    
+        return $content;
+    
     }
+
+    // function pre_post_update( $post_id, $data )
+    // {
+    //     wp_die( LegalDebug::debug( [
+    //         '$post_id' => $post_id,
+
+    //         '$data' => $data,
+    //     ] ) );
+    // }
 
     function character_replace( $post_id, $post, $update )
     {
