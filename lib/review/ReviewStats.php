@@ -108,7 +108,7 @@ class ReviewStats
 	{
 		$post = get_post();
 
-		$dom = get_dom( $post->post_content );
+		$dom = self::get_dom( $post->post_content );
 
 		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
 
