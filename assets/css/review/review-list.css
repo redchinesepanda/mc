@@ -22,6 +22,11 @@
     content: counter( legal-counter );
     display: inline-block;
 }
+
+.tcb-post-content ul {
+	list-style-type: none;
+}
+
 .tcb-post-content ul li::before {
     display: inline-block;
 }
