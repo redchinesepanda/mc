@@ -37,21 +37,47 @@ class ReviewAnchors
         return $content;
     }
 
+    public static function get_dom( $content )
+	{
+		$dom = new DOMDocument();
+
+		$dom->loadHTML( $content, LIBXML_NOERROR );
+
+		return $dom;
+	}
+
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( './/a[contains(@id)]' );
+
+		return $nodes;
+	}
+
     public static function target()
     {
-        $dom = new DomDocument();
+        // $dom = new DomDocument();
 
-        $dom->loadHTML( get_the_content() );
+        // $dom->loadHTML( get_the_content() );
 
-        foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
-            $link = $dom->createElement( 'a' );
+        $dom = self::get_dom( get_the_content() );
 
-            $link->setAttribute( 'class', 'legal-target' );
+        $nodes = self::get_nodes( $dom );
 
-            $link->setAttribute( 'name', 'target-' . $key );
+        LegalDebug::debug( [
+            '$nodes' => $nodes,
+        ] );
 
-            $item->appendChild( $link );
-        }
+        // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
+        //     $link = $dom->createElement( 'a' );
+
+        //     $link->setAttribute( 'class', 'legal-target' );
+
+        //     $link->setAttribute( 'name', 'target-' . $key );
+
+        //     $item->appendChild( $link );
+        // }
 
         return $dom->saveHTML();
     }
