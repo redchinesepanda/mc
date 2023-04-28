@@ -58,7 +58,7 @@ class ReviewBonus
 		global $wpdb;
 
 		LegalDebug::debug( [
-			'charset' => $wpdb->get_table_charset( 'wp_posts' ),
+			'charset' => $wpdb->get_charset_collate(),
 		] );
 
 		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
