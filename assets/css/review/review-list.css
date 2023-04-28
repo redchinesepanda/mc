@@ -23,20 +23,18 @@
     display: inline-block;
 }
 
-.tcb-post-content ul {
-	list-style-type: none;
-}
-
-.tcb-post-content ul li::before {
-    display: inline-block;
-}
-
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li::before {
     content: counter( legal-counter-alpha, upper-alpha );
 }
 
-.tcb-post-content ul li:before {
+.tcb-post-content ul {
+	list-style: none;
+	list-style-type: none;
+}
+
+.tcb-post-content ul li::before {
 	content: '';
+    display: inline-block;
 }
 
 /* Review Position */
