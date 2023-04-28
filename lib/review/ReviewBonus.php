@@ -30,7 +30,7 @@ class ReviewBonus
 	{
 		$handler = new self();
 
-		// add_filter( 'the_content', [ $handler, 'get_content' ] );
+		add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 
@@ -55,23 +55,7 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		// global $wpdb;
-
-		// LegalDebug::debug( [
-		// 	'charset' => $wpdb->get_charset_collate(),
-		// ] );
-
-		// $content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $content );
-
-		// 'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
-
-		$content = iconv('UTF-8', 'ISO-8859-1', $content );
-		
-		// $content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
-
 		$dom = new DOMDocument();
-		
-		// $dom = new DOMDocument( '1.0', 'UTF-8' );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
@@ -124,23 +108,7 @@ class ReviewBonus
 
 				$args = [];
 
-				// $args[ 'title' ] = $node->nodeValue;
-				
-				$args[ 'title' ] = preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue);
-
-				LegalDebug::debug( [
-					'title' => $node->nodeValue,
-
-					'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
-
-					'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
-
-					'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
-
-					'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES','UTF-8' ),
-
-					// 'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
-				] );
+				$args[ 'title' ] = $node->nodeValue;
 
 				$args[ 'class' ] = $class;
 
@@ -162,22 +130,16 @@ class ReviewBonus
 			}
 		}
 
-		// return $content;
-
 		return $dom->saveHTML();
 	}
 
-	public static function appendHTML(DOMNode $parent, $source) {
+	public static function appendHTML( DOMNode $parent, $source ) {
 		$tmpDoc = new DOMDocument();
-
-		// LegalDebug::debug( [
-		// 	'$source' => $source,
-		// ] );
 
 		$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
 
-		foreach ( $tmpDoc->getElementsByTagName('body')->item(0)->childNodes as $node ) {
-			$node = $parent->ownerDocument->importNode($node, true);
+		foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
+			$node = $parent->ownerDocument->importNode( $node, true );
 
 			$parent->appendChild( $node );
 		}
@@ -196,8 +158,6 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
-		// $class = self::check( $args[ 'class' ] );
-
 		$group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
