@@ -123,7 +123,13 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'title' => $node->nodeValue,
 
-					'mb_convert_encoding' => mb_convert_encoding( $node->nodeValue, 'UTF-8' ),
+					'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
+
+					'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
+
+					'mb_convert_encoding' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
+
+					'mb_convert_encode' => mb_convert_encode( $node->nodeValue,'HTML-ENTITIES','UTF-8' ),
 
 					'preg_replace' => preg_replace('/[^a-z0-9$¢£€¥ ]+/ui', '', $node->nodeValue),
 				] );
