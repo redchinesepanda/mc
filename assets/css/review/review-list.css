@@ -67,6 +67,10 @@
     margin-left: -34px;
 }
 
+.tcb-post-content ul li::before {
+	margin-bottom: -6px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content li::before {
