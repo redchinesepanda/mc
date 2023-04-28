@@ -99,11 +99,11 @@ class ReviewAnchors
 
     public static function get_data( $nodes )
     {
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-        ] );
-
         foreach ( $nodes as $node ) {
+            LegalDebug::debug( [
+                '$node' => $node,
+            ] );
+
             $items[] = [
                 'id' => $node->getAttribute( 'id' ),
 
