@@ -140,7 +140,7 @@ class ReviewStats
 		foreach ( $rows as $row ) {
 			$cells = $row->getElementsByTagName( 'td' );
 			
-			if ( $tbodies->length ) {
+			if ( $cells->length ) {
 				$args[] = [
 					'title' => $cells[ 0 ]->textContent,
 
