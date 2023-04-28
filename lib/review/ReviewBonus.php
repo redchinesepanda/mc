@@ -55,7 +55,9 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
+		
+		$dom = new DOMDocument( '1.0', 'UTF-8' );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
@@ -130,9 +132,7 @@ class ReviewBonus
 			}
 		}
 
-		// return $dom->saveHTML();
-		
-		return mb_convert_encoding( $dom->saveHTML(), 'HTML-ENTITIES','UTF-8' );
+		return $dom->saveHTML();
 	}
 
 	public static function appendHTML( DOMNode $parent, $source ) {
