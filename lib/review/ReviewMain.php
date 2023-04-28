@@ -62,14 +62,25 @@ class ReviewMain
         ReviewBonus::register();
     }
 
-    function character_replace( $post_id, $post, $update ){
+    function character_replace( $post_id, $post, $update ) {
         // 195, 8218, 194
 
         // $post->post_content = str_replace( chr( 195 ).chr( 8218 ).chr( 194 ), '', $post->post_content );
 
         // $post->post_content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $post->post_content );
 
+
         $post->post_content = mb_convert_encoding( $post->post_content, 'HTML-ENTITIES','UTF-8' );
+
+        $handler = new self();
+
+        remove_action( 'save_post', [ $handler, 'character_replace' ] );
+
+		// обновляем запись. В это время срабатывает событие save_post
+		wp_update_post( $post );
+
+		// Ставим хук обратно
+		add_action( 'save_post', [ $handler, 'character_replace' ] );
 
         // wp_die( LegalDebug::debug( [
         //     '$post->post_content' => $post->post_content,
