@@ -55,7 +55,7 @@ class ReviewStats
 
 		$table = self::get_table();
 
-		$items = self::get_stats( $node );
+		$items = self::get_stats( $table );
 
 		foreach ( $items as $id => $item ) {
 			$style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'value' ] .'%; }';
