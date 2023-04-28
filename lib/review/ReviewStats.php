@@ -124,6 +124,8 @@ class ReviewStats
 		$trs = $node->getElementsByTagName( 'tr ');
 
 		LegalDebug::debug( [
+			'$node' => $node,
+
 			'$trs' => $trs,
 		] );
 
