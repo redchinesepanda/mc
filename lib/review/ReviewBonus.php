@@ -30,7 +30,7 @@ class ReviewBonus
 	{
 		$handler = new self();
 
-		add_filter( 'the_content', [ $handler, 'get_content' ] );
+		// add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 
