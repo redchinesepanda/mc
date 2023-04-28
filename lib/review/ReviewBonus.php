@@ -55,9 +55,9 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
-		// $dom = new DOMDocument();
+		$dom = new DOMDocument();
 		
-		$dom = new DOMDocument( '1.0', 'UTF-8' );
+		// $dom = new DOMDocument( '1.0', 'UTF-8' );
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );
 
@@ -78,6 +78,18 @@ class ReviewBonus
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
+			LegalDebug::debug( [
+				'title' => $node->nodeValue,
+
+				'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
+
+				'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
+
+				'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
+
+				'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES','UTF-8' ),
+			] );
+
 			$class = $node->getAttribute( 'class' );
 
 			$permission_title = ( strpos( $class, self::BONUS_CLASS[ 'title' ] ) !== false );
