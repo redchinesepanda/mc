@@ -60,14 +60,6 @@ class ReviewAnchors
 
 		$nodes = $xpath->query( './/a[@id]' );
 
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-
-            '$node' => $nodes->item( 0 ),
-
-            'id' => $nodes->item( 0 )->getAttribute( 'id' ),
-        ] );
-
 		return $nodes;
 	}
 
@@ -89,31 +81,23 @@ class ReviewAnchors
                 'item-label' => $item[ 'label' ],
             ];
         }
-
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-
-            '$items' => $items,
-
-            '$value' => $value,
-        ] );
     
         return $value;
     }
 
     public static function get_data( $nodes )
     {
-        foreach ( $nodes as $node ) {
-            LegalDebug::debug( [
-                '$node' => $node,
-            ] );
+        $items = [];
 
+        foreach ( $nodes as $node ) {
             $items[] = [
                 'id' => $node->getAttribute( 'id' ),
 
                 'label' => $node->parentNode->textContent,
             ];
         }
+
+        return $items;
     }
 
     public static function get_anchors()
