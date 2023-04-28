@@ -69,6 +69,8 @@ class ReviewMain
 
         // $post->post_content = preg_replace( '/[^a-z0-9$¢£€¥ ]+/ui', '', $post->post_content );
 
+        $post->post_content = mb_convert_encoding( $post->post_content, 'HTML-ENTITIES','UTF-8' );
+
         // wp_die( LegalDebug::debug( [
         //     '$post->post_content' => $post->post_content,
         // ] ) );
@@ -76,7 +78,7 @@ class ReviewMain
         wp_die( LegalDebug::debug( [
             'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $post->post_content ),
 
-            'iconv2' => iconv('UTF-8', 'ISO-8859-1', $post->post_content ),
+            'iconv2' => iconv( 'UTF-8', 'ISO-8859-1', $post->post_content ),
 
             'mb_convert_encoding1' => mb_convert_encoding( $post->post_content, 'UTF-8', 'ISO-8859-1' ),
 
