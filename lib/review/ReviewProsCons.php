@@ -74,8 +74,6 @@ class ReviewProsCons
 
             if ( $permission_last ) {
                 // $node->parentNode->replaceChild( $container, $node );
-
-                // $node->parentNode->removeChild( $node );
             } else {
                 // $node->parentNode->removeChild( $node );
             }
@@ -98,7 +96,9 @@ class ReviewProsCons
 			}
 		}
 
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
+
+        return $content;
 	}
 
 	public static function appendHTML( DOMNode $parent, $source ) {
