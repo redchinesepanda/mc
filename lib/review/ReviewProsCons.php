@@ -85,19 +85,15 @@ class ReviewProsCons
 
                 $container->appendChild( $item );
 
+                LegalDebug::debug( [
+                    '$item' => $item,
+                ] );
+
                 $item = null;
 			}
 
             if ( $permission_last ) {
                 // $node->parentNode->replaceChild( $container, $node );
-
-                // $node->parentNode->insertBefore( $container );
-
-                // LegalDebug::debug( [
-                //     '$id' => $id,
-
-                //     '$node' => $node,
-                // ] );
             } else {
                 // $node->parentNode->removeChild( $node );
             }
