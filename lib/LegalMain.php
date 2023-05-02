@@ -8,6 +8,8 @@ require_once( 'admin/AdminMain.php' );
 
 require_once( 'breadcrumbs/LegalBreadcrumbsMain.php' );
 
+require_once( 'dom/LegalDOM.php' );
+
 require_once( 'oops/OopsMain.php' );
 
 require_once( 'review/ReviewMain.php' );
