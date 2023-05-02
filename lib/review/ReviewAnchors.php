@@ -100,7 +100,7 @@ class ReviewAnchors
             }
 
             $items[] = [
-                'href' => $node->getAttribute( 'id' ),
+                'href' => '#' . $node->getAttribute( 'id' ),
 
                 'label' => $label,
             ];
