@@ -65,7 +65,7 @@ class ReviewProsCons
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
-				self::appendHTML( $item, self::render( $args ) );
+				LegalDOM::appendHTML( $item, self::render( $args ) );
 
                 $container->appendChild( $item );
 
@@ -97,18 +97,6 @@ class ReviewProsCons
 		}
 
 		return $dom->saveHTML();
-	}
-
-	public static function appendHTML( DOMNode $parent, $source ) {
-		$tmpDoc = new DOMDocument();
-
-		$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
-
-		foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
-			$node = $parent->ownerDocument->importNode( $node, true );
-
-			$parent->appendChild( $node );
-		}
 	}
 
     public static function get_dom( $content )
