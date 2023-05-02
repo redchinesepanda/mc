@@ -91,7 +91,7 @@ class ReviewProsCons
             if ( $permission_last ) {
                 // $node->parentNode->replaceChild( $container, $node );
 
-                $node->parentNode->insertBefore( $container );
+                // $node->parentNode->insertBefore( $container );
 
                 LegalDebug::debug( [
                     '$id' => $id,
