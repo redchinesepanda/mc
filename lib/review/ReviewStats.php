@@ -88,6 +88,10 @@ class ReviewStats
 
 	public static function get_content( $content )
 	{
+		if ( !is_admin() && is_page() ) {
+			return $content;
+		}
+
 		$dom = self::get_dom( $content );
 
 		// $dom = new DOMDocument();
@@ -111,7 +115,7 @@ class ReviewStats
 
 			ReviewBonus::appendHTML( $stats, self::render_stats( $node ) );
 
-			// $node->insertBefore( $stats );
+			$node->insertBefore( $stats );
 		}
 
 		return $dom->saveHTML();
