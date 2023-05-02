@@ -30,7 +30,7 @@ class ReviewProsCons
 			return $content;
 		}
 
-		$dom = self::get_dom( get_the_content() );
+		// $dom = self::get_dom( get_the_content() );
 
         // $nodes = self::get_nodes( $dom );
 
@@ -96,7 +96,7 @@ class ReviewProsCons
 		// 	}
 		// }
 
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
 
         // return $content;
 	}
