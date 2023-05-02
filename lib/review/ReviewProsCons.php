@@ -51,13 +51,7 @@ class ReviewProsCons
         $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 		foreach ( $nodes as $id => $node ) {
-            LegalDebug::debug( [
-                '$id' => $id,
-
-                '$node' => $node,
-            ] );
-
-			$class = $node->getAttribute( 'class' );
+            $class = $node->getAttribute( 'class' );
 
 			$permission_title = (
                 ( strpos( $class, self::CSS_CLASS[ 'pros' ] ) !== false ) ||
@@ -97,7 +91,13 @@ class ReviewProsCons
             if ( $permission_last ) {
                 // $node->parentNode->replaceChild( $container, $node );
 
-                $node->insertBefore( $container );
+                $node->parentNode->insertBefore( $container );
+
+                LegalDebug::debug( [
+                    '$id' => $id,
+
+                    '$node' => $node,
+                ] );
             } else {
                 // $node->parentNode->removeChild( $node );
             }
