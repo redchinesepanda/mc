@@ -151,19 +151,27 @@ class ReviewAnchors
 
         // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
 
-        foreach ( $anchors as $anchor ) {
-            $label = $anchor->parentNode->textContent;
+        LegalDebug( [
+            '$title' => $title,
+            
+            '$nodes' => $nodes,
 
-            if ( !empty( $labels[ $anchor->getAttribute( 'id' ) ] ) ) {
-                $label = $labels[ $anchor->getAttribute( 'id' ) ];
-            }
+            '$anchors' => $anchors,
+        ] );
 
-            $items[] = [
-                'href' => '#' . $anchor->getAttribute( 'id' ),
+        // foreach ( $anchors as $anchor ) {
+        //     $label = $anchor->parentNode->textContent;
 
-                'label' => str_replace ( $title, '', $label),
-            ];
-        }
+        //     if ( !empty( $labels[ $anchor->getAttribute( 'id' ) ] ) ) {
+        //         $label = $labels[ $anchor->getAttribute( 'id' ) ];
+        //     }
+
+        //     $items[] = [
+        //         'href' => '#' . $anchor->getAttribute( 'id' ),
+
+        //         'label' => str_replace ( $title, '', $label),
+        //     ];
+        // }
 
         return [
             'label' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
