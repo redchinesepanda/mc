@@ -30,7 +30,7 @@ class ReviewProsCons
 			return $content;
 		}
 
-		$dom = self::get_dom( $content );
+		$dom = LegalDOM::get_dom( $content );
 
         $nodes = self::get_nodes( $dom );
 
@@ -97,15 +97,6 @@ class ReviewProsCons
 		}
 
 		return $dom->saveHTML();
-	}
-
-    public static function get_dom( $content )
-	{
-		$dom = new DOMDocument();
-
-		$dom->loadHTML( $content, LIBXML_NOERROR );
-
-		return $dom;
 	}
 
 	public static function get_nodes( $dom )

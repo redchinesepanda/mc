@@ -24,26 +24,6 @@ class ReviewAnchors
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    // const TERM = 'bookmaker-review';
-
-    // public static function content( $content )
-    // {
-    //     if ( has_term( self::TERM, 'page_type' ) ) {
-    //         return self::target( $content );
-    //     }
-    
-    //     return $content;
-    // }
-
-    public static function get_dom( $content )
-	{
-		$dom = new DOMDocument();
-
-		$dom->loadHTML( $content, LIBXML_NOERROR );
-
-		return $dom;
-	}
-
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
@@ -109,53 +89,18 @@ class ReviewAnchors
 
     public static function get_anchors()
     {
-        $dom = self::get_dom( get_the_content() );
+        $dom = LegalDOM::get_dom( get_the_content() );
 
         $nodes = self::get_nodes( $dom );
 
         return $nodes;
     }
 
-    // const FIELD = 'review-about';
-
-    // public static function title()
-    // {
-    //     $group = get_field( self::FIELD );
-        
-    //     if( $group ) {
-    //         return $group[ 'about-title' ];
-    //     }
-
-    //     return get_the_title();
-    // }
-
-    // function get_args () {
-    //     $args = [];
-        
-    //     $nodes = self::get_anchors();
-
-    //     $items = self::get_data( $nodes );
-        
-    //     foreach( $items as $item ){
-    //         LegalDebug::debug( [
-    //             '$item' => $item,
-    //         ] );
-    //     }
-    
-    //     return $args;
-    // }
-
     public static function get()
     {
         $nodes = self::get_anchors();
 
         $items = self::get_data( $nodes );
-
-        // LegalDebug::debug( [
-        //     '$nodes' => $nodes,
-
-        //     '$items' => $items,
-        // ] );
 
         return [
             'title' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
