@@ -44,7 +44,7 @@ class ReviewProsCons
 
         $args = [];
 
-        $container = $dom->createElement( 'div' );
+        // $container = $dom->createElement( 'div' );
 
         $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 

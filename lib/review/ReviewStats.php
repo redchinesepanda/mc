@@ -94,14 +94,6 @@ class ReviewStats
 
 		$dom = self::get_dom( $content );
 
-		// $dom = new DOMDocument();
-
-		// $dom->loadHTML( $content, LIBXML_NOERROR );
-
-		// $xpath = new DOMXPath( $dom );
-
-		// $nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
-
 		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
