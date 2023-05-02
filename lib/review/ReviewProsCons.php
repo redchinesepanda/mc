@@ -34,10 +34,6 @@ class ReviewProsCons
 
         $nodes = self::get_nodes( $dom );
 
-        LegalDebug::debug( [
-            '$nodes->length' => $nodes->length,
-        ] );
-
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
@@ -55,6 +51,10 @@ class ReviewProsCons
         $container->setAttribute( 'class', self::CSS_CLASS[ 'pros' ] );
 
 		foreach ( $nodes as $id => $node ) {
+
+            LegalDebug::debug( [
+                'node' => $node,
+            ] );
 
 			$class = $node->getAttribute( 'class' );
 
