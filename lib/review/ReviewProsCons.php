@@ -198,7 +198,7 @@ class ReviewProsCons
 
 		'pros-item' => 'pros-cons-item',
 
-		'pros' => 'legal-title-pros',
+		'pros' => 'legal-pros',
 
 		'title-cons' => 'legal-title-cons',
 
