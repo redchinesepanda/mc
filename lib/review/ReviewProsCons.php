@@ -17,10 +17,6 @@ class ReviewProsCons
     {
         $handler = new self();
 
-        // [legal-pros-cons]
-
-        // add_shortcode( 'legal-pros-cons', [ $handler, 'render' ] );
-
         add_filter( 'the_content', [ $handler, 'get_content' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
@@ -40,8 +36,6 @@ class ReviewProsCons
 
 		$item = null;
 
-		// $replace = null;
-
 		$last = $nodes->length - 1;
 
         $args = [];
@@ -57,30 +51,10 @@ class ReviewProsCons
 
 			$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
 
-			// $permission_first = ( $id == 0 );
-
 			$permission_last = ( $id == $last );
 
-            // LegalDebug::debug( [
-            //     '$id' => $id,
-
-            //     '$node->textContent' => substr( $node->textContent, 0, 30) ,
-
-            //     '$permission_title' => ( $permission_title ? 'true' : 'false' ),
-
-            //     '$permission_content' => ( $permission_content ? 'true' : 'false' ),
-
-            //     '$permission_last' => ( $permission_last ? 'true' : 'false' ),
-            // ] );
-
-			// if ( $permission_first ) {
-            //     $node->insertBefore( $container );
-            // }
-
 			if ( $permission_content ) {
-				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
-
-                $node->removeAttribute( 'class' );
+				$node->removeAttribute( 'class' );
 
                 $args[ 'content' ] = $dom->saveHTML( $node );
 			}
@@ -91,18 +65,11 @@ class ReviewProsCons
 
                 $container->appendChild( $item );
 
-                // LegalDebug::debug( [
-                //     '$item->tagName' => $item->tagName,
-                // ] );
-
                 $item = null;
 			}
 
             if ( $permission_last ) {
                 $node->parentNode->replaceChild( $container, $node );
-                
-                // $node->insertBefore( $container );
-            // }
             } else {
                 $node->parentNode->removeChild( $node );
             }
@@ -122,8 +89,6 @@ class ReviewProsCons
 				$args = [];
 				
 				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-
-				// $replace = $node;
 			}
 		}
 
@@ -159,40 +124,6 @@ class ReviewProsCons
 
 		return $nodes;
 	}
-
-    // public static function get_pros()
-    // {
-    //     $dom = self::get_dom( get_the_content() );
-
-    //     $nodes = self::get_nodes( $dom );
-
-    //     return $nodes;
-    // }
-
-    // public static function get()
-    // {
-    //     // $repeater = get_field( self::FIELD );
-        
-    //     $args = [];
-
-    //     $nodes = self::get_pros();
-
-    //     $items = self::get_data( $nodes );
-
-    //     // if( $repeater ) {
-    //     //     foreach ( $repeater as $item ) {
-    //     //         $args[] = [
-    //     //             'type' => $item[ self::GROUP ][ self::ITEM_TYPE ],
-
-    //     //             'title' => $item[ self::GROUP ][ self::ITEM_TITLE ],
-
-    //     //             'description' => $item[ self::GROUP ][ self::ITEM_DESCRIPTION ],
-    //     //         ];
-    //     //     }
-    //     // }
-
-    //     return $args;
-    // }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-pros-cons.php';
 
