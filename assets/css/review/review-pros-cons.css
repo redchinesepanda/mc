@@ -9,7 +9,7 @@
 
 /* Pros Cons Width */
 
-.legal-pros-cons .legal-pros-cons-item {
+.legal-pros-cons .pros-cons-item {
 	width: calc( 50% - 8px );
 }
 
