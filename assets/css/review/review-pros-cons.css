@@ -38,13 +38,13 @@
 	background-image: url( '../../img/review/review-cons.svg' );
 }
 
-.legal-pros-cons .legal-pros ul li {
+/* .legal-pros-cons .legal-pros ul li {
     list-style-image: url( '../../img/review/review-pros-check.svg' );
-}
+} */
 
-.legal-pros-cons .legal-cons ul li {
+/* .legal-pros-cons .legal-cons ul li {
     list-style-image: url( '../../img/review/review-cons-cross.svg' );
-}
+} */
 
 /* Pros Cons Typography */
 
