@@ -79,10 +79,10 @@ class ReviewProsCons
 			}
 
             if ( $permission_last ) {
-                $node->parentNode->replaceChild( $node, $container );
-            } else {
-                $node->parentNode->removeChild( $node );
+                $node->parentNode->replaceChild( $container, $node );
             }
+                $node->parentNode->removeChild( $node );
+
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
