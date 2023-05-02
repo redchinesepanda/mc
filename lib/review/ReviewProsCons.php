@@ -88,10 +88,6 @@ class ReviewProsCons
 				
 				self::appendHTML( $item, self::render( $args ) );
 
-                LegalDebug::debug( [
-                    '$args' => $args,
-                ] );
-
                 $container->appendChild( $item );
 
                 $item = null;
