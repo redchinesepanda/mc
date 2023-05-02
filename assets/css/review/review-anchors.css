@@ -30,12 +30,12 @@ nav.anchors {
 
 /* Anchors Typography */
 
-.review-anchors .anchors-label {
+.review-anchors .anchors-title {
     font-family: "Source Sans Pro";
     font-size: 13px;
     font-style: normal;
     font-weight: 600;
-    line-height: 22.75px;
+    line-height: 26px;
     color: rgb(59, 59, 59);
 }
 
