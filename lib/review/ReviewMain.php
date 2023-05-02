@@ -66,6 +66,11 @@ class ReviewMain
     {
         return ToolEncode::encode( $content );
     }
+
+    function is_front()
+    {
+        return ( !is_admin() && is_page() );
+    }
 }
 
 ?>

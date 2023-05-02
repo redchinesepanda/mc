@@ -88,7 +88,7 @@ class ReviewStats
 
 	public static function get_content( $content )
 	{
-		if ( !is_admin() && is_page() ) {
+		if ( ReviewMain::is_front() ) {
 			return $content;
 		}
 
