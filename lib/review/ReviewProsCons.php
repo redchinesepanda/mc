@@ -67,6 +67,14 @@ class ReviewProsCons
 
 			$permission_last = ( $id == $last );
 
+            LegalDebug::debug( [
+                '$permission_title' => $permission_title,
+
+                '$permission_content' => $permission_content,
+
+                '$permission_last' => $permission_last,
+            ] );
+
 			// if ( $permission_first ) {
             //     $node->insertBefore( $container );
             // }
@@ -98,7 +106,7 @@ class ReviewProsCons
                 // $node->parentNode->removeChild( $node );
             }
 
-			if ( empty( $item ) && $permission_title ) {
+			if ( $permission_title ) {
 
 				$item = $dom->createElement( 'div' );
 
