@@ -80,12 +80,6 @@ class ReviewProsCons
                 $args[ 'content' ] = $dom->saveHTML( $node );
 			}
 
-            if ( $permission_last ) {
-                $node->parentNode->replaceChild( $container, $node );
-            } else {
-                $node->parentNode->removeChild( $node );
-            }
-
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
 				self::appendHTML( $item, self::render( $args ) );
@@ -94,6 +88,12 @@ class ReviewProsCons
 
                 $item = null;
 			}
+
+            if ( $permission_last ) {
+                $node->parentNode->replaceChild( $container, $node );
+            } else {
+                $node->parentNode->removeChild( $node );
+            }
 
 			if ( $permission_title ) {
 
