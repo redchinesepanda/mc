@@ -62,12 +62,12 @@ class ReviewMain
         ReviewBonus::register();
     }
 
-    function encoding( $content )
+    public static function encoding( $content )
     {
         return ToolEncode::encode( $content );
     }
 
-    function is_front()
+    public static function is_front()
     {
         return ( !is_admin() && is_page() );
     }
