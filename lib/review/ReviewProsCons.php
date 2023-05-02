@@ -77,13 +77,13 @@ class ReviewProsCons
             //     $node->insertBefore( $container );
             // }
 
-			if ( $permission_content ) {
-				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
+			// if ( $permission_content ) {
+			// 	// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
-                $node->removeAttribute( 'class' );
+            //     $node->removeAttribute( 'class' );
 
-                $args[ 'content' ] = $dom->saveHTML( $node );
-			}
+            //     $args[ 'content' ] = $dom->saveHTML( $node );
+			// }
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
