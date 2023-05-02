@@ -75,6 +75,8 @@ class ReviewProsCons
 			if ( $permission_content ) {
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
+                $node->removeAttribute( 'class' );
+
                 $args[ 'content' ] = $dom->saveHTML( $node );
 			}
 
