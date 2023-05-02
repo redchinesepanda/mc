@@ -53,11 +53,9 @@ class ReviewProsCons
 		foreach ( $nodes as $id => $node ) {
             $class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) !== false );
+			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
 
-			$permission_content = (
-                ( strpos( $class, self::CSS_CLASS[ 'content' ] ) !== false )
-            );
+			$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
 
 			// $permission_first = ( $id == 0 );
 
