@@ -151,7 +151,7 @@ class ReviewAnchors
 
         // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
 
-        LegalDebug( [
+        LegalDebug::debug( [
             '$title' => $title,
             
             '$nodes' => $nodes,
