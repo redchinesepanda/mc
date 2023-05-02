@@ -160,7 +160,7 @@ class ReviewAnchors
             
             '$nodes' => $nodes,
 
-            '$anchors' => $anchors,
+            '$anchors' => $items,
         ] );
 
         return [
