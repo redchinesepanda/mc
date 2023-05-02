@@ -65,9 +65,9 @@ class ReviewProsCons
             );
 
 			$permission_list = (
-                ( strpos( $class, self::BONUS_CLASS[ 'list-pros' ] ) !== false ) ||
+                ( strpos( $class, self::CSS_CLASS[ 'list-pros' ] ) !== false ) ||
 
-                ( strpos( $class, self::BONUS_CLASS[ 'list-cons' ] ) !== false )
+                ( strpos( $class, self::CSS_CLASS[ 'list-cons' ] ) !== false )
             );
 
 			$permission_first = ( $id == 0 );
