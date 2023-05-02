@@ -72,19 +72,6 @@ class ReviewProsCons
             //     $node->insertBefore( $container );
             // }
 
-			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
-				
-				self::appendHTML( $item, self::render( $args ) );
-
-                LegalDebug::debug( [
-                    '$args' => $args,
-                ] );
-
-                $container->appendChild( $item );
-
-				// $node->parentNode->replaceChild( $item, $replace );
-			}
-
 			if ( $permission_title ) {
 
 				$item = $dom->createElement( 'div' );
@@ -115,6 +102,19 @@ class ReviewProsCons
             }
 
             $node->parentNode->removeChild( $node );
+
+			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+				
+				self::appendHTML( $item, self::render( $args ) );
+
+                LegalDebug::debug( [
+                    '$args' => $args,
+                ] );
+
+                $container->appendChild( $item );
+
+                $item = null;
+			}
 		}
 
 		return $dom->saveHTML();
