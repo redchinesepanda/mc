@@ -64,23 +64,13 @@ class ReviewProsCons
                 ( strpos( $class, self::CSS_CLASS[ 'content' ] ) !== false )
             );
 
-			$permission_first = ( $id == 0 );
+			// $permission_first = ( $id == 0 );
 
 			$permission_last = ( $id == $last );
 
-            LegalDebug::debug( [
-                '$permission_title' => ( $permission_title ? 'true' : 'false' ),
-
-                '$permission_content' => ( $permission_content ? 'true' : 'false' ),
-
-                '$permission_first' => ( $permission_first ? 'true' : 'false' ),
-                
-                '$permission_last' => ( $permission_last ? 'true' : 'false' ),
-            ] );
-
-			if ( $permission_first ) {
-                $node->insertBefore( $container );
-            }
+			// if ( $permission_first ) {
+            //     $node->insertBefore( $container );
+            // }
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
@@ -115,6 +105,10 @@ class ReviewProsCons
 
                 $args[ 'description' ] = $dom->saveHTML( $node );
 			}
+
+            if ( $permission_last ) {
+                $node->insertAfter( $container );
+            }
 
             $node->parentNode->removeChild( $node );
 		}
