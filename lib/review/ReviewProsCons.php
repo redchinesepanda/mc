@@ -93,11 +93,11 @@ class ReviewProsCons
 
                 // $node->parentNode->insertBefore( $container );
 
-                LegalDebug::debug( [
-                    '$id' => $id,
+                // LegalDebug::debug( [
+                //     '$id' => $id,
 
-                    '$node' => $node,
-                ] );
+                //     '$node' => $node,
+                // ] );
             } else {
                 // $node->parentNode->removeChild( $node );
             }
