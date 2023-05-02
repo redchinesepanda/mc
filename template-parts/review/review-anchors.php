@@ -6,7 +6,7 @@ LegalDebug::debug( [
 
 ?>
 <?php if( !empty( $args ) ) : ?>
-    <nav class="anchors">
+    <!-- <nav class="anchors">
         <div class="review-anchors">
             <div class="anchors-label"><?php echo $args[ 'label' ]; ?></div>
             <?php foreach( $args[ 'items' ] as $item ) : ?>
@@ -15,5 +15,5 @@ LegalDebug::debug( [
                 </a>
             <?php endforeach; ?>
         </div>
-    </nav>
+    </nav> -->
 <?php endif; ?>
