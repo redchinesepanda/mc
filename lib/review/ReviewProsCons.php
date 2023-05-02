@@ -100,7 +100,7 @@ class ReviewProsCons
                 $node->parentNode->removeChild( $node );
             }
 
-			if ( $permission_title ) {
+			if ( empty( $item ) && $permission_title ) {
 
 				$item = $dom->createElement( 'div' );
 
