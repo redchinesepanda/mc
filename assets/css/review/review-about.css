@@ -146,6 +146,11 @@
     text-align: center;
 }
 
+.legal-afillate:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 .legal-afillate {
     font-family: "Source Sans Pro";
     font-size: 16px;
