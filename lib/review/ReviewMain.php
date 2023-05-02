@@ -69,6 +69,10 @@ class ReviewMain
 
     public static function is_front()
     {
+        LegalDebug::debug( [
+            '( !is_admin() && is_page() )' => ( !is_admin() && is_page() ? 'true' : 'false' ), 
+        ] );
+
         return ( !is_admin() && is_page() );
     }
 }
