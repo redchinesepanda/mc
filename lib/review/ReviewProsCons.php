@@ -107,7 +107,7 @@ class ReviewProsCons
 			}
 
             if ( $permission_last ) {
-                $node->insertAfter( $container );
+                $node->insertBefore( $container );
             }
 
             $node->parentNode->removeChild( $node );
