@@ -72,25 +72,6 @@ class ReviewProsCons
             //     $node->insertBefore( $container );
             // }
 
-			if ( $permission_title ) {
-
-				$item = $dom->createElement( 'div' );
-
-                $class = self::CSS_CLASS[ 'title-pros' ];
-
-                if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'title-cons' ] ) !== false ) {
-                    $class = self::CSS_CLASS[ 'title-cons' ];
-                }
-
-				$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
-
-				$args = [];
-				
-				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-
-				// $replace = $node;
-			}
-
 			if ( $permission_content ) {
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
@@ -114,6 +95,25 @@ class ReviewProsCons
                 $container->appendChild( $item );
 
                 $item = null;
+			}
+
+			if ( $permission_title ) {
+
+				$item = $dom->createElement( 'div' );
+
+                $class = self::CSS_CLASS[ 'title-pros' ];
+
+                if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'title-cons' ] ) !== false ) {
+                    $class = self::CSS_CLASS[ 'title-cons' ];
+                }
+
+				$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
+
+				$args = [];
+				
+				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
+
+				// $replace = $node;
 			}
 		}
 
