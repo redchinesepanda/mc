@@ -182,11 +182,11 @@ class ReviewProsCons
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-pros-cons.php';
 
-    public static function render()
+    public static function render( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE, false, $args );
 
         $output = ob_get_clean();
 
