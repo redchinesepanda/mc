@@ -32,17 +32,17 @@ class ReviewProsCons
 
 		$dom = self::get_dom( get_the_content() );
 
-        $nodes = self::get_nodes( $dom );
+        // $nodes = self::get_nodes( $dom );
 
-		if ( $nodes->length == 0 ) {
-			return $content;
-		}
+		// if ( $nodes->length == 0 ) {
+		// 	return $content;
+		// }
 
-		$item = null;
+		// $item = null;
 
-		$last = $nodes->length - 1;
+		// $last = $nodes->length - 1;
 
-        $args = [];
+        // $args = [];
 
         // $container = $dom->createElement( 'div' );
 
