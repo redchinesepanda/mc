@@ -196,7 +196,7 @@ class ReviewProsCons
 	const CSS_CLASS = [
 		'pros' => 'legal-pros-cons',
 
-		'pros-item' => 'legal-pros-cons-item',
+		'pros-item' => 'pros-cons-item',
 
 		'title-pros' => 'legal-title-pros',
 
