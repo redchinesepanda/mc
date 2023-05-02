@@ -57,7 +57,7 @@ class ReviewProsCons
 			$permission_title = (
                 ( strpos( $class, self::CSS_CLASS[ 'pros' ] ) !== false ) ||
 
-                ( strpos( $class, self::CSS_CLASS[ 'title-cons' ] ) !== false )
+                ( strpos( $class, self::CSS_CLASS[ 'cons' ] ) !== false )
             );
 
 			$permission_content = (
@@ -99,8 +99,8 @@ class ReviewProsCons
 
                 $class = self::CSS_CLASS[ 'pros' ];
 
-                if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'title-cons' ] ) !== false ) {
-                    $class = self::CSS_CLASS[ 'title-cons' ];
+                if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'cons' ] ) !== false ) {
+                    $class = self::CSS_CLASS[ 'cons' ];
                 }
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
@@ -200,7 +200,7 @@ class ReviewProsCons
 
 		'pros' => 'legal-pros',
 
-		'title-cons' => 'legal-title-cons',
+		'cons' => 'legal-title-cons',
 
 		'content' => 'legal-pros-cons-content',
 	];
@@ -225,7 +225,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-cons' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'cons' ],
 					],
 
 					[
