@@ -55,6 +55,10 @@ class ReviewStats
 
 		$table = self::get_table();
 
+		if ( $table == null ) {
+			return '';
+		}
+
 		$items = self::get_stats( $table );
 
 		foreach ( $items as $id => $item ) {
@@ -122,7 +126,7 @@ class ReviewStats
 		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
-			return [];
+			return null;
 		}
 
 		return $nodes->item( 0 );
