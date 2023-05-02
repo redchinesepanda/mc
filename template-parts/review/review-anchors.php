@@ -10,6 +10,7 @@ LegalDebug::debug( [
         <div class="review-anchors">
             <div class="anchors-label"><?php echo $args[ 'label' ]; ?></div>
             <?php foreach( $args[ 'items' ] as $item ) : ?>
+                <?php echo $args[ 'label' ]; ?>
                 <!-- <a class="anchors-item" href="<?php echo $item[ 'href' ]; ?>"> -->
                     <?php echo $item[ 'label' ]; ?>
                 <!-- </a> -->
