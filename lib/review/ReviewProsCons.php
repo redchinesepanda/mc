@@ -50,10 +50,6 @@ class ReviewProsCons
 
         $container->setAttribute( 'class', self::CSS_CLASS[ 'pros' ] );
 
-        LegalDebug::debug( [
-            '$container' => $container,
-        ] );
-
 		foreach ( $nodes as $id => $node ) {
 
 			$class = $node->getAttribute( 'class' );
@@ -83,6 +79,10 @@ class ReviewProsCons
                 $container->appendChild( $item );
 
 				// $node->parentNode->replaceChild( $item, $replace );
+
+                LegalDebug::debug( [
+                    '$container' => $container,
+                ] );
 			}
 
 			if ( $permission_title ) {
