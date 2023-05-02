@@ -97,10 +97,6 @@ class ReviewProsCons
 				
 				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
 
-                LegalDebug::debug( [
-                    'ToolEncode::encode( $node->textContent )' => ToolEncode::encode( $node->textContent ),
-                ] );
-
 				// $replace = $node;
 			}
 
@@ -108,6 +104,10 @@ class ReviewProsCons
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
                 $args[ 'content' ] = $dom->saveHTML( $node );
+
+                LegalDebug::debug( [
+                    '$dom->saveHTML( $node )' => $dom->saveHTML( $node ),
+                ] );
 			}
 
             if ( $permission_last ) {
