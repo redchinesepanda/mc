@@ -19,7 +19,9 @@ class ReviewProsCons
 
         // [legal-pros-cons]
 
-        add_shortcode( 'legal-pros-cons', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-pros-cons', [ $handler, 'render' ] );
+
+        add_filter( 'the_content', [ $handler, 'get_content' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -139,30 +141,30 @@ class ReviewProsCons
     //     return $nodes;
     // }
 
-    public static function get()
-    {
-        // $repeater = get_field( self::FIELD );
+    // public static function get()
+    // {
+    //     // $repeater = get_field( self::FIELD );
         
-        $args = [];
+    //     $args = [];
 
-        $nodes = self::get_pros();
+    //     $nodes = self::get_pros();
 
-        $items = self::get_data( $nodes );
+    //     $items = self::get_data( $nodes );
 
-        // if( $repeater ) {
-        //     foreach ( $repeater as $item ) {
-        //         $args[] = [
-        //             'type' => $item[ self::GROUP ][ self::ITEM_TYPE ],
+    //     // if( $repeater ) {
+    //     //     foreach ( $repeater as $item ) {
+    //     //         $args[] = [
+    //     //             'type' => $item[ self::GROUP ][ self::ITEM_TYPE ],
 
-        //             'title' => $item[ self::GROUP ][ self::ITEM_TITLE ],
+    //     //             'title' => $item[ self::GROUP ][ self::ITEM_TITLE ],
 
-        //             'description' => $item[ self::GROUP ][ self::ITEM_DESCRIPTION ],
-        //         ];
-        //     }
-        // }
+    //     //             'description' => $item[ self::GROUP ][ self::ITEM_DESCRIPTION ],
+    //     //         ];
+    //     //     }
+    //     // }
 
-        return $args;
-    }
+    //     return $args;
+    // }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-pros-cons.php';
 
