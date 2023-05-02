@@ -51,6 +51,11 @@ class ReviewProsCons
         $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 		foreach ( $nodes as $id => $node ) {
+            LegalDebug::debug( [
+                '$id' => $id,
+
+                '$node' => $node,
+            ] );
 
 			$class = $node->getAttribute( 'class' );
 
