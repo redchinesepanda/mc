@@ -79,10 +79,6 @@ class ReviewProsCons
                 $container->appendChild( $item );
 
 				// $node->parentNode->replaceChild( $item, $replace );
-
-                LegalDebug::debug( [
-                    '$container' => $container,
-                ] );
 			}
 
 			if ( $permission_title ) {
@@ -112,6 +108,10 @@ class ReviewProsCons
 
             if ( $permission_last ) {
                 $node->insertBefore( $container );
+
+                LegalDebug::debug( [
+                    '$container' => $container,
+                ] );
             }
 
             $node->parentNode->removeChild( $node );
