@@ -219,19 +219,11 @@ class ReviewProsCons
 					],
 
 					[
-						'title' => 'Pros List',
+						'title' => 'Pros & Cons Content',
 						
 						'selector' => 'ul',
 
-						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'list-pros' ],
-					],
-
-					[
-						'title' => 'Cons List',
-						
-						'selector' => 'ul',
-
-						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'list-cons' ],
+						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'content' ],
 					],
 				],
 			],
