@@ -149,19 +149,19 @@ class ReviewAnchors
 
     public static function get()
     {
-        $title = self::title() . ' ';
+        // $title = self::title() . ' ';
 
         $nodes = self::get_anchors();
 
         $items = self::get_data( $nodes );
 
-        // LegalDebug::debug( [
-        //     '$title' => $title,
+        LegalDebug::debug( [
+            '$title' => $title,
             
-        //     '$nodes' => $nodes,
+            '$nodes' => $nodes,
 
-        //     '$anchors' => $anchors,
-        // ] );
+            '$anchors' => $anchors,
+        ] );
 
         return [
             'label' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
