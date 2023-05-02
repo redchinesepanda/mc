@@ -55,7 +55,7 @@ class ReviewProsCons
 			$class = $node->getAttribute( 'class' );
 
 			$permission_title = (
-                ( strpos( $class, self::CSS_CLASS[ 'title-pros' ] ) !== false ) ||
+                ( strpos( $class, self::CSS_CLASS[ 'pros' ] ) !== false ) ||
 
                 ( strpos( $class, self::CSS_CLASS[ 'title-cons' ] ) !== false )
             );
@@ -97,7 +97,7 @@ class ReviewProsCons
 
 				$item = $dom->createElement( 'div' );
 
-                $class = self::CSS_CLASS[ 'title-pros' ];
+                $class = self::CSS_CLASS[ 'pros' ];
 
                 if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'title-cons' ] ) !== false ) {
                     $class = self::CSS_CLASS[ 'title-cons' ];
@@ -198,7 +198,7 @@ class ReviewProsCons
 
 		'pros-item' => 'pros-cons-item',
 
-		'title-pros' => 'legal-title-pros',
+		'pros' => 'legal-title-pros',
 
 		'title-cons' => 'legal-title-cons',
 
@@ -217,7 +217,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'pros' ],
 					],
 
 					[
@@ -225,7 +225,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-cons' ],
 					],
 
 					[
