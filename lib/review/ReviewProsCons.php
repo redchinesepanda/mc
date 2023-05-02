@@ -60,7 +60,7 @@ class ReviewProsCons
 			if ( $permission_content ) {
 				$node->removeAttribute( 'class' );
 
-                $args[ 'content' ] = $dom->saveHTML( $node );
+                $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
