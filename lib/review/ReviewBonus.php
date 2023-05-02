@@ -53,23 +53,24 @@ class ReviewBonus
 		'item' => 'legal-bonus-content-item',
 	];
 
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( './/*[contains(@class, \'legal-bonus\')]' );
+
+		return $nodes;
+	}
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::is_front() ) {
 			return $content;
 		}
 
-		$dom = new DOMDocument();
-		
-		// $dom = new DOMDocument( '1.0', 'UTF-8' );
+		$dom = LegalDOM::get_dom( $content );
 
-		$dom->loadHTML( $content, LIBXML_NOERROR );
-
-		$xpath = new DOMXPath( $dom );
-
-		$expression = './/*[contains(@class, \'legal-bonus\')]';
-
-		$nodes = $xpath->query( $expression );
+		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
