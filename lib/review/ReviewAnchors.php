@@ -55,15 +55,46 @@ class ReviewAnchors
     
     
 
+    public static function get_labels()
+    {
+        return [
+            'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+
+            'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
+
+            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+            'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
+
+            'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
+
+            'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
+
+            'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
+
+            'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
+
+            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+
+            'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
+
+            'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
+
+            'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
     public static function get_data( $nodes )
     {
+        $labels = self::get_labels();
+
         $items = [];
 
         foreach ( $nodes as $node ) {
             $label = '';
 
-            if ( !empty( self::LABELS[ $node->getAttribute( 'id' ) ] ) ) {
-                $label = self::LABELS[ $node->getAttribute( 'id' ) ];
+            if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) ) {
+                $label = $labels[ $node->getAttribute( 'id' ) ];
             } else {
                 $label = $node->parentNode->textContent;
             }
@@ -115,32 +146,6 @@ class ReviewAnchors
     
         return $args;
     }
-
-    const LABELS = [
-        'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
-
-        'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
-
-        'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
-
-        'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
-
-        'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
-
-        'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
-
-        'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
-
-        'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
-
-        'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
-
-        'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
-
-        'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
-
-        'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
-    ];
 
     public static function get()
     {
