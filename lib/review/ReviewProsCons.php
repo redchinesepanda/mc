@@ -99,13 +99,13 @@ class ReviewProsCons
 			}
 
             if ( $permission_last ) {
-                // $node->parentNode->replaceChild( $container, $node );
+                $node->parentNode->replaceChild( $container, $node );
                 
-                $node->insertBefore( $container );
-            }
-            // } else {
-                $node->parentNode->removeChild( $node );
+                // $node->insertBefore( $container );
             // }
+            } else {
+                $node->parentNode->removeChild( $node );
+            }
 
 			if ( $permission_title ) {
 
