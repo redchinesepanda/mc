@@ -76,6 +76,10 @@ class ReviewProsCons
 				
 				self::appendHTML( $item, self::render( $args ) );
 
+                LegalDebug::debug( [
+                    '$args' => $args,
+                ] );
+
                 $container->appendChild( $item );
 
 				// $node->parentNode->replaceChild( $item, $replace );
@@ -104,10 +108,6 @@ class ReviewProsCons
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
                 $args[ 'content' ] = $dom->saveHTML( $node );
-
-                LegalDebug::debug( [
-                    '$dom->saveHTML( $node )' => $dom->saveHTML( $node ),
-                ] );
 			}
 
             if ( $permission_last ) {
