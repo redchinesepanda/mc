@@ -3,6 +3,6 @@
         <?php echo $args[ 'title' ]; ?>
     </div>
     <div class="pros-cons-description">
-        <?php echo $args[ 'description' ]; ?>
+        <?php echo $args[ 'content' ]; ?>
     </div>
 <?php endif; ?>

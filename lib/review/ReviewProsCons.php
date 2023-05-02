@@ -103,7 +103,7 @@ class ReviewProsCons
 			if ( $permission_content ) {
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
-                $args[ 'description' ] = $dom->saveHTML( $node );
+                $args[ 'content' ] = $dom->saveHTML( $node );
 			}
 
             if ( $permission_last ) {
