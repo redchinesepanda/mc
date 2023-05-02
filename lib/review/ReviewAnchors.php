@@ -60,10 +60,18 @@ class ReviewAnchors
         $items = [];
 
         foreach ( $nodes as $node ) {
+            $label = '';
+
+            if ( !empty( self::LABELS[ $node->getAttribute( 'id' ) ] ) ) {
+                $label = self::LABELS[ $node->getAttribute( 'id' ) ];
+            } else {
+                $label = $node->parentNode->textContent;
+            }
+
             $items[] = [
                 'id' => $node->getAttribute( 'id' ),
 
-                'label' => $node->parentNode->textContent,
+                'label' => $label,
             ];
         }
 
@@ -108,70 +116,47 @@ class ReviewAnchors
         return $args;
     }
 
+    const LABELS = [
+        'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+
+        'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
+
+        'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+        'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
+
+        'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
+
+        'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
+
+        'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
+
+        'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
+
+        'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+
+        'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
+
+        'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
+
+        'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
+    ];
+
     public static function get()
     {
-        // $dom = new DomDocument();
-
-        // $dom->loadHTML( get_the_content() );
-
-        // $items = [];
-        
-        $labels = [
-            'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
-
-            'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
-
-            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
-
-            'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
-
-            'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
-
-            'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
-
-            'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
-
-            'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
-
-            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
-
-            'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
-
-            'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
-
-            'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
-        ];
-
-
         $title = self::title() . ' ';
 
         $nodes = self::get_anchors();
 
-        $anchors = self::get_data( $nodes );
+        $items = self::get_data( $nodes );
 
-        // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
-
-        LegalDebug::debug( [
-            '$title' => $title,
+        // LegalDebug::debug( [
+        //     '$title' => $title,
             
-            '$nodes' => $nodes,
+        //     '$nodes' => $nodes,
 
-            '$anchors' => $anchors,
-        ] );
-
-        // foreach ( $anchors as $anchor ) {
-        //     $label = $anchor->parentNode->textContent;
-
-        //     if ( !empty( $labels[ $anchor->getAttribute( 'id' ) ] ) ) {
-        //         $label = $labels[ $anchor->getAttribute( 'id' ) ];
-        //     }
-
-        //     $items[] = [
-        //         'href' => '#' . $anchor->getAttribute( 'id' ),
-
-        //         'label' => str_replace ( $title, '', $label),
-        //     ];
-        // }
+        //     '$anchors' => $anchors,
+        // ] );
 
         return [
             'label' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
