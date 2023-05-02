@@ -86,7 +86,7 @@ class ReviewProsCons
                 $container->appendChild( $item );
 
                 LegalDebug::debug( [
-                    '$item' => $item,
+                    '$item->tagName' => $item->tagName,
                 ] );
 
                 $item = null;
