@@ -26,6 +26,10 @@ class ReviewProsCons
 
 	public static function get_content( $content )
 	{
+        if ( ReviewMain::is_front() ) {
+			return $content;
+		}
+
 		$dom = self::get_dom( get_the_content() );
 
         $nodes = self::get_nodes( $dom );

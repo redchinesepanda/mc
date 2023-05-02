@@ -55,6 +55,10 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
+		if ( ReviewMain::is_front() ) {
+			return $content;
+		}
+		
 		$dom = new DOMDocument();
 		
 		// $dom = new DOMDocument( '1.0', 'UTF-8' );
