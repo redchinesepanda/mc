@@ -33,10 +33,6 @@ class ReviewFAQ
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-		// // [legal-faq]
-
-		// add_shortcode( 'legal-faq', [ $handler, 'render' ] );
     }
 
     const FIELD = 'review-faq';
