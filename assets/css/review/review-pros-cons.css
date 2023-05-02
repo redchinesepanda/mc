@@ -1,6 +1,6 @@
 /* Pros Cons Display */
 
-.legal-pros-cons {
+div.legal-pros-cons {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 16px;
