@@ -64,7 +64,7 @@ class ReviewProsCons
                 ( strpos( $class, self::CSS_CLASS[ 'title-cons' ] ) !== false )
             );
 
-			$permission_list = (
+			$permission_content = (
                 ( strpos( $class, self::CSS_CLASS[ 'content' ] ) !== false )
             );
 
@@ -104,7 +104,7 @@ class ReviewProsCons
 				// $replace = $node;
 			}
 
-			if ( $permission_description ) {
+			if ( $permission_content ) {
 				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
 
                 $args[ 'description' ] = $dom->saveHTML( $node );
