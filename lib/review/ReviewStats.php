@@ -111,7 +111,7 @@ class ReviewStats
 
 			ReviewBonus::appendHTML( $stats, self::render_stats( $node ) );
 
-			$node->insertBefore( $stats );
+			// $node->insertBefore( $stats );
 		}
 
 		return $dom->saveHTML();
