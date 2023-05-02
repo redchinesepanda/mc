@@ -156,8 +156,6 @@ class ReviewAnchors
         $items = self::get_data( $nodes );
 
         LegalDebug::debug( [
-            '$title' => $title,
-            
             '$nodes' => $nodes,
 
             '$anchors' => $items,
