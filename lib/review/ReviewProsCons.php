@@ -44,57 +44,57 @@ class ReviewProsCons
 
         $args = [];
 
-        // $container = $dom->createElement( 'div' );
+        $container = $dom->createElement( 'div' );
 
         $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
-		foreach ( $nodes as $id => $node ) {
-            $class = explode( ' ', $node->getAttribute( 'class' ) );
+		// foreach ( $nodes as $id => $node ) {
+        //     $class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
+		// 	$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
 
-			$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
+		// 	$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
 
-			$permission_last = ( $id == $last );
+		// 	$permission_last = ( $id == $last );
 
-			if ( $permission_content ) {
-				$node->removeAttribute( 'class' );
+		// 	if ( $permission_content ) {
+		// 		$node->removeAttribute( 'class' );
 
-                $args[ 'content' ] = $dom->saveHTML( $node );
-			}
+        //         $args[ 'content' ] = $dom->saveHTML( $node );
+		// 	}
 
-			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+		// 	if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
 				
-				self::appendHTML( $item, self::render( $args ) );
+		// 		self::appendHTML( $item, self::render( $args ) );
 
-                $container->appendChild( $item );
+        //         $container->appendChild( $item );
 
-                $item = null;
-			}
+        //         $item = null;
+		// 	}
 
-            if ( $permission_last ) {
-                // $node->parentNode->replaceChild( $container, $node );
-            } else {
-                // $node->parentNode->removeChild( $node );
-            }
+        //     if ( $permission_last ) {
+        //         // $node->parentNode->replaceChild( $container, $node );
+        //     } else {
+        //         // $node->parentNode->removeChild( $node );
+        //     }
 
-			if ( $permission_title ) {
+		// 	if ( $permission_title ) {
 
-				$item = $dom->createElement( 'div' );
+		// 		$item = $dom->createElement( 'div' );
 
-                $class = self::CSS_CLASS[ 'pros' ];
+        //         $class = self::CSS_CLASS[ 'pros' ];
 
-                if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'cons' ] ) !== false ) {
-                    $class = self::CSS_CLASS[ 'cons' ];
-                }
+        //         if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'cons' ] ) !== false ) {
+        //             $class = self::CSS_CLASS[ 'cons' ];
+        //         }
 
-				$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
+		// 		$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
 
-				$args = [];
+		// 		$args = [];
 				
-				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-			}
-		}
+		// 		$args[ 'title' ] = ToolEncode::encode( $node->textContent );
+		// 	}
+		// }
 
 		return $dom->saveHTML();
 
