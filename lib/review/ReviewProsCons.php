@@ -98,7 +98,7 @@ class ReviewProsCons
 
 		// return $dom->saveHTML();
 
-        // return $content;
+        return $content;
 	}
 
 	public static function appendHTML( DOMNode $parent, $source ) {
