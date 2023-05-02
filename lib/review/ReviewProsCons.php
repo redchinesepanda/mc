@@ -34,6 +34,10 @@ class ReviewProsCons
 
         $nodes = self::get_nodes( $dom );
 
+        LegalDebug::debug( [
+            '$nodes->length' => $nodes->length,
+        ] );
+
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
