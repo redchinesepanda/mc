@@ -24,16 +24,16 @@ class ReviewAnchors
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    const TERM = 'bookmaker-review';
+    // const TERM = 'bookmaker-review';
 
-    public static function content( $content )
-    {
-        if ( has_term( self::TERM, 'page_type' ) ) {
-            return self::target( $content );
-        }
+    // public static function content( $content )
+    // {
+    //     if ( has_term( self::TERM, 'page_type' ) ) {
+    //         return self::target( $content );
+    //     }
     
-        return $content;
-    }
+    //     return $content;
+    // }
 
     public static function get_dom( $content )
 	{
@@ -52,8 +52,6 @@ class ReviewAnchors
 
 		return $nodes;
 	}
-    
-    
 
     public static function get_labels()
     {
@@ -118,34 +116,34 @@ class ReviewAnchors
         return $nodes;
     }
 
-    const FIELD = 'review-about';
+    // const FIELD = 'review-about';
 
-    public static function title()
-    {
-        $group = get_field( self::FIELD );
+    // public static function title()
+    // {
+    //     $group = get_field( self::FIELD );
         
-        if( $group ) {
-            return $group[ 'about-title' ];
-        }
+    //     if( $group ) {
+    //         return $group[ 'about-title' ];
+    //     }
 
-        return get_the_title();
-    }
+    //     return get_the_title();
+    // }
 
-    function get_args () {
-        $args = [];
+    // function get_args () {
+    //     $args = [];
         
-        $nodes = self::get_anchors();
+    //     $nodes = self::get_anchors();
 
-        $items = self::get_data( $nodes );
+    //     $items = self::get_data( $nodes );
         
-        foreach( $items as $item ){
-            LegalDebug::debug( [
-                '$item' => $item,
-            ] );
-        }
+    //     foreach( $items as $item ){
+    //         LegalDebug::debug( [
+    //             '$item' => $item,
+    //         ] );
+    //     }
     
-        return $args;
-    }
+    //     return $args;
+    // }
 
     public static function get()
     {
