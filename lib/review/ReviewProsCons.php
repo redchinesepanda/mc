@@ -70,7 +70,7 @@ class ReviewProsCons
             LegalDebug::debug( [
                 '$id' => $id,
 
-                '$node->textContent' => $node->textContent,
+                '$node->textContent' => substr( $node->textContent, 0, 30) ,
 
                 '$permission_title' => ( $permission_title ? 'true' : 'false' ),
 
