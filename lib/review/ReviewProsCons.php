@@ -200,9 +200,9 @@ class ReviewProsCons
 
 		'pros' => 'legal-pros',
 
-		'cons' => 'legal-title-cons',
+		'cons' => 'legal-cons',
 
-		'content' => 'legal-pros-cons-content',
+		'content' => 'legal-content',
 	];
 
     public static function style_formats_pros( $settings )
