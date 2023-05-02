@@ -96,7 +96,7 @@ class ReviewStats
 
 			$stats->setAttribute( 'class', 'review-stats' );
 
-			ReviewBonus::appendHTML( $stats, self::render_stats( $node ) );
+			LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
 
 			$node->insertBefore( $stats );
 		}

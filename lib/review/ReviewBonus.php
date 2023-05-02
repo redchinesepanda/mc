@@ -82,17 +82,6 @@ class ReviewBonus
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
-			// LegalDebug::debug( [
-			// 	'title' => $node->nodeValue,
-
-			// 	'iconv1' => iconv( 'ISO-8859-1', 'UTF-8', $node->nodeValue ),
-
-			// 	'iconv2' => iconv('UTF-8', 'ISO-8859-1', $node->nodeValue ),
-
-			// 	'mb_convert_encoding1' => mb_convert_encoding( $node->nodeValue, 'UTF-8', 'ISO-8859-1' ),
-
-			// 	'mb_convert_encoding2' => mb_convert_encoding( $node->nodeValue, 'HTML-ENTITIES', 'UTF-8' ),
-			// ] );
 
 			$class = $node->getAttribute( 'class' );
 
@@ -113,7 +102,7 @@ class ReviewBonus
 					$template = self::render_bonus( $args );
 				}
 				
-				self::appendHTML( $bonus, $template );
+				LegalDOM::appendHTML( $bonus, $template );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
 			}
@@ -125,10 +114,6 @@ class ReviewBonus
 				$bonus->setAttribute( 'class', self::check( $class ) );
 
 				$args = [];
-
-				// $args[ 'title' ] = $node->nodeValue;
-				
-				// $args[ 'title' ] = $dom->saveHTML( $node );
 				
 				$args[ 'title' ] = ToolEncode::encode( $node->nodeValue );
 
@@ -138,17 +123,12 @@ class ReviewBonus
 			}
 
 			if ( $permission_description ) {
-				// $args[ 'description' ] = $node->nodeValue;
-				
-				// $args[ 'description' ] = $dom->saveHTML( $node );
 				
 				$args[ 'description' ] = ToolEncode::encode( $node->nodeValue );
 			}
 
 			if ( $permission_content ) {
 				$node->removeAttribute( 'class' );
-
-				// $args[ 'content' ][] = $dom->saveHTML( $node );
 
 				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
@@ -159,20 +139,6 @@ class ReviewBonus
 		}
 
 		return $dom->saveHTML();
-		
-		// return mb_convert_encoding( $dom->saveHTML(), 'HTML-ENTITIES', 'UTF-8' );
-	}
-
-	public static function appendHTML( DOMNode $parent, $source ) {
-		$tmpDoc = new DOMDocument();
-
-		$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
-
-		foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
-			$node = $parent->ownerDocument->importNode( $node, true );
-
-			$parent->appendChild( $node );
-		}
 	}
 
 	public static function check( $class )
