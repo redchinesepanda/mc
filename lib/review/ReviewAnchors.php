@@ -152,7 +152,7 @@ class ReviewAnchors
         // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
 
         foreach ( $anchors as $anchor ) {
-            $label = $anchor->textContent;
+            $label = $anchor->parentNode->textContent;
 
             if ( !empty( $labels[ $anchor->getAttribute( 'id' ) ] ) ) {
                 $label = $labels[ $anchor->getAttribute( 'id' ) ];
