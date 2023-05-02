@@ -160,7 +160,7 @@ class ReviewAnchors
         // ] );
 
         return [
-            'label' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
+            'title' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
 
             'items' => $items,
         ];

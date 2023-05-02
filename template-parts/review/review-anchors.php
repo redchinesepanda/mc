@@ -8,9 +8,9 @@ LegalDebug::debug( [
 <?php if( !empty( $args ) ) : ?>
     <nav class="anchors">
         <div class="review-anchors">
-            <div class="anchors-label"><?php echo $args[ 'label' ]; ?></div>
+            <div class="anchors-label"><?php echo $args[ 'title' ]; ?></div>
             <?php foreach( $args[ 'items' ] as $item ) : ?>
-                <?php echo $args[ 'label' ]; ?>
+                <?php echo $item[ 'href' ]; ?>
                 <!-- <a class="anchors-item" href="<?php echo $item[ 'href' ]; ?>"> -->
                     <?php echo $item[ 'label' ]; ?>
                 <!-- </a> -->
