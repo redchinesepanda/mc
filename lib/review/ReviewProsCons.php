@@ -68,6 +68,10 @@ class ReviewProsCons
 			$permission_last = ( $id == $last );
 
             LegalDebug::debug( [
+                '$id' => $id,
+
+                '$node->textContent' => $node->textContent,
+
                 '$permission_title' => ( $permission_title ? 'true' : 'false' ),
 
                 '$permission_content' => ( $permission_content ? 'true' : 'false' ),
