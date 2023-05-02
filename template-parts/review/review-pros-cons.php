@@ -1,15 +1,8 @@
-<?php
-
-LegalDebug::debug( [
-    '$args' => $args,
-] );
-
-?>
 <?php if( !empty( $args ) ) : ?>
     <div class="pros-cons-title">
-        <?php echo $item[ 'title' ]; ?>
+        <?php echo $args[ 'title' ]; ?>
     </div>
     <div class="pros-cons-description">
-        <?php echo $item[ 'description' ]; ?>
+        <?php echo $args[ 'description' ]; ?>
     </div>
 <?php endif; ?>
