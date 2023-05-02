@@ -22,16 +22,6 @@ class ReviewAnchors
         add_shortcode( 'legal-anchors', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        // add_filter( 'the_content', [ $handler, 'content' ], 1 );
-    
-        // acf/load_value/name={$field_name} - filter for a specific value load based on it's field name
-
-        add_filter( 'acf/load_value/name=review-anchors', [ $handler, 'set_repeater' ], 10, 3 );
-
-        // LegalDebug::debug( [
-        //     'ReviewAnchors' => 'register',
-        // ] );
     }
 
     const TERM = 'bookmaker-review';
@@ -62,37 +52,8 @@ class ReviewAnchors
 
 		return $nodes;
 	}
-
-    function set_repeater ( $value, $post_id, $field ) {
-        $value = [];
-        
-        // this one should consists array of the names
-
-        // $settings_values = get_field( 'review-anchors' );
-
-        $nodes = self::get_anchors();
-
-        $items = self::get_data( $nodes );
-        
-        foreach( $items as $item ){
-            LegalDebug::debug( [
-                '$item' => $item,
-            ] );
-            // $value[] = [
-            //     'item-id' => $item[ 'id' ],
-
-            //     'item-label' => $item[ 'label' ],
-            // ];
-
-            // add_row( 'review-anchors', [
-            //     'item-id' => $item[ 'id' ],
-
-            //     'item-label' => $item[ 'label' ],
-            // ] );
-        }
     
-        // return $value;
-    }
+    
 
     public static function get_data( $nodes )
     {
@@ -131,21 +92,76 @@ class ReviewAnchors
         return get_the_title();
     }
 
+    function get_args () {
+        $args = [];
+        
+        $nodes = self::get_anchors();
+
+        $items = self::get_data( $nodes );
+        
+        foreach( $items as $item ){
+            LegalDebug::debug( [
+                '$item' => $item,
+            ] );
+        }
+    
+        return $args;
+    }
+
     public static function get()
     {
-        $dom = new DomDocument();
+        // $dom = new DomDocument();
 
-        $dom->loadHTML( get_the_content() );
+        // $dom->loadHTML( get_the_content() );
 
-        $items = [];
+        // $items = [];
+        
+        $labels = [
+            'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+
+            'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
+
+            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+            'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
+
+            'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
+
+            'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
+
+            'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
+
+            'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
+
+            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+
+            'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
+
+            'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
+
+            'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
+        ];
+
 
         $title = self::title() . ' ';
 
-        foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
-            $items[] = [
-                'href' => '#target-' . $key,
+        $nodes = self::get_anchors();
 
-                'label' => str_replace ( $title, '', $item->nodeValue),
+        $anchors = self::get_data( $nodes );
+
+        // foreach ( $dom->getElementsByTagName( 'h2' ) as $key => $item ) {
+
+        foreach ( $anchors as $anchor ) {
+            $label = $anchor->textContent;
+
+            if ( !empty( $labels[ $anchor->getAttribute( 'id' ) ] ) ) {
+                $label = $labels[ $anchor->getAttribute( 'id' ) ];
+            }
+
+            $items[] = [
+                'href' => '#' . $anchor->getAttribute( 'id' ),
+
+                'label' => str_replace ( $title, '', $label),
             ];
         }
 
