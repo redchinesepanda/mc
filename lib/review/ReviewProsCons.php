@@ -61,17 +61,17 @@ class ReviewProsCons
 
 			$permission_last = ( $id == $last );
 
-            LegalDebug::debug( [
-                '$id' => $id,
+            // LegalDebug::debug( [
+            //     '$id' => $id,
 
-                '$node->textContent' => substr( $node->textContent, 0, 30) ,
+            //     '$node->textContent' => substr( $node->textContent, 0, 30) ,
 
-                '$permission_title' => ( $permission_title ? 'true' : 'false' ),
+            //     '$permission_title' => ( $permission_title ? 'true' : 'false' ),
 
-                '$permission_content' => ( $permission_content ? 'true' : 'false' ),
+            //     '$permission_content' => ( $permission_content ? 'true' : 'false' ),
 
-                '$permission_last' => ( $permission_last ? 'true' : 'false' ),
-            ] );
+            //     '$permission_last' => ( $permission_last ? 'true' : 'false' ),
+            // ] );
 
 			// if ( $permission_first ) {
             //     $node->insertBefore( $container );
