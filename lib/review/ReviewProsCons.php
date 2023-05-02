@@ -30,7 +30,7 @@ class ReviewProsCons
 			return $content;
 		}
 
-		$dom = self::get_dom( get_the_content() );
+		$dom = self::get_dom( $content );
 
         // $nodes = self::get_nodes( $dom );
 
