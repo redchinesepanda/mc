@@ -73,7 +73,9 @@ class ReviewProsCons
 			}
 
             if ( $permission_last ) {
-                $node->parentNode->replaceChild( $container, $node );
+                // $node->parentNode->replaceChild( $container, $node );
+
+                $node->parentNode->removeChild( $node );
             } else {
                 $node->parentNode->removeChild( $node );
             }
