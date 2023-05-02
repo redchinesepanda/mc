@@ -51,13 +51,9 @@ class ReviewProsCons
         $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 		foreach ( $nodes as $id => $node ) {
-            $class = $node->getAttribute( 'class' );
+            $class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			$permission_title = (
-                ( strpos( $class, self::CSS_CLASS[ 'pros' ] ) !== false ) ||
-
-                ( strpos( $class, self::CSS_CLASS[ 'cons' ] ) !== false )
-            );
+			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) !== false );
 
 			$permission_content = (
                 ( strpos( $class, self::CSS_CLASS[ 'content' ] ) !== false )
@@ -219,6 +215,8 @@ class ReviewProsCons
 
 		'cons' => 'legal-cons',
 
+		'title' => 'legal-title',
+
 		'content' => 'legal-content',
 	];
 
@@ -234,7 +232,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'pros' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title' ] . ' ' . self::CSS_CLASS[ 'pros' ],
 					],
 
 					[
@@ -242,7 +240,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'cons' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title' ] . ' ' . self::CSS_CLASS[ 'cons' ],
 					],
 
 					[
