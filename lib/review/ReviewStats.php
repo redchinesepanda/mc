@@ -68,15 +68,6 @@ class ReviewStats
 		return implode( ' ', $style );
 	}
 
-	// public static function get_dom( $content )
-	// {
-	// 	$dom = new DOMDocument();
-
-	// 	$dom->loadHTML( $content, LIBXML_NOERROR );
-
-	// 	return $dom;
-	// }
-
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
@@ -117,7 +108,7 @@ class ReviewStats
 	{
 		$post = get_post();
 
-		$dom = self::get_dom( $post->post_content );
+		$dom = LegalDOM::get_dom( $post->post_content );
 
 		$nodes = self::get_nodes( $dom );
 
