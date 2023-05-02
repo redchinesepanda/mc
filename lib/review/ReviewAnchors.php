@@ -158,7 +158,7 @@ class ReviewAnchors
         LegalDebug::debug( [
             '$nodes' => $nodes,
 
-            '$anchors' => $items,
+            '$items' => $items,
         ] );
 
         return [
