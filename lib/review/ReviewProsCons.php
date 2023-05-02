@@ -48,7 +48,7 @@ class ReviewProsCons
 
         $container = $dom->createElement( 'div' );
 
-        $container->setAttribute( 'class', self::CSS_CLASS[ 'pros' ] );
+        $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 		foreach ( $nodes as $id => $node ) {
 
@@ -141,7 +141,7 @@ class ReviewProsCons
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'pros' ] . '\')]' );
+		$nodes = $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
 
 		return $nodes;
 	}
@@ -194,7 +194,7 @@ class ReviewProsCons
     }
 
 	const CSS_CLASS = [
-		'pros' => 'legal-pros-cons',
+		'container' => 'legal-pros-cons',
 
 		'pros-item' => 'pros-cons-item',
 
@@ -217,7 +217,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
 					],
 
 					[
@@ -225,7 +225,7 @@ class ReviewProsCons
 						
 						'selector' => 'p',
 
-						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title-pros' ],
 					],
 
 					[
@@ -233,7 +233,7 @@ class ReviewProsCons
 						
 						'selector' => 'ul',
 
-						'classes' => self::CSS_CLASS[ 'pros' ] . ' ' . self::CSS_CLASS[ 'content' ],
+						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'content' ],
 					],
 				],
 			],
