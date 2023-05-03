@@ -262,7 +262,7 @@ class ReviewBonus
 			}
 		}
 
-		return ( OopsMain::check_oops() ? '#oops' : '' );
+		return ( OopsMain::check_oops() ? '#' : '' );
 	}
 
     public static function get_billet( $args )
