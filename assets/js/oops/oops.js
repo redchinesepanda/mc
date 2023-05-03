@@ -6,9 +6,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		event.preventDefault();
 
-		console.log( event.currentTarget.classList );
+		let oops = document.querySelector( '.legal-oops-background');
 
-		document.querySelector( '.legal-oops-background').classList.toggle( 'legal-active' );
+		if ( !oops.contains( event.target )  ) {
+			console.log( event.currentTarget.classList );
+
+			oops.classList.toggle( 'legal-active' );
+		}
 	}
 
     document.querySelectorAll( 'a[href="#"]').forEach( function ( element ) {
