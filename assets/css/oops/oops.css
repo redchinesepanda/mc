@@ -1,0 +1,12 @@
+/* Oops Display */
+
+.legal-oops-background {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+/* Oops Background */
+.legal-oops-background {
+	background-color: #323232;
+}

@@ -2,6 +2,28 @@
 
 class OopsMain
 {
+    const CSS = [
+        'legal-oops' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
+    ];
+
+    public static function register_style()
+    {
+        foreach ( self::CSS as $name => $path ) {
+            wp_enqueue_style( $name, $path );
+        }
+    }
+
+    public static function register()
+    {
+        $handler = new self();
+
+        // [legal-oops]
+
+        add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    }
+
     public static function get_args()
     {
         return [
@@ -80,23 +102,6 @@ class OopsMain
 
         return $output;
     }
-
-    public static function register()
-    {
-        $handler = new self();
-
-        // [legal-oops]
-
-        add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
-
-        // add_action( 'edit_form_before_permalink', [ $handler, 'wp_kama_edit_form_before_permalink_action' ] );
-    }
-
-    // public static function wp_kama_edit_form_before_permalink_action( $post ){
-    //     LegalDebug::debug( [
-    //         'get_post_meta' => get_post_meta( $post->ID ),
-    //     ] );
-    // }
 }
 
 ?>
