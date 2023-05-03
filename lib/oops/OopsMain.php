@@ -35,6 +35,8 @@ class OopsMain
         add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     public static function get_args()
