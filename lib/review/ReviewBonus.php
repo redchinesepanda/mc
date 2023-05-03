@@ -162,7 +162,7 @@ class ReviewBonus
 				'src' => $group[ 'about-logo-square' ],
 
 				'title' => [
-					'href' => self::check_url_get(),
+					'href' => self::check_url_review(),
 
 					'text' => $group[ 'about-title' ],
 				],
