@@ -43,6 +43,10 @@ class ReviewAbout
         $group = get_field( self::FIELD );
         
         if( $group ) {
+            LegalDebug::debug( [
+                'OopsMain::check_oops()' => OopsMain::check_oops(), 
+            ] );
+
             return [
                 'title' => $group[ 'about-title' ],
                 
