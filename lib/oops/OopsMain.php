@@ -70,13 +70,6 @@ class OopsMain
 
     public static function render()
     {
-
-        LegalDebug::debug( [
-            'function' => 'render',
-
-            'self::get()' => self::get(),
-        ] );
-
         ob_start();
 
         load_template( self::TEMPLATE[ 'oops' ], false, self::get() );

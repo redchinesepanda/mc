@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+	'function' => 'render',
+
+	'$args' => $args,
+] );
+
+?>
 <div class="legal-oops">
 	<div class="oops-title"><?php echo $args[ 'title' ]; ?></div>
 	<div class="oops-description"><?php echo $args[ 'description' ]; ?></div>
