@@ -44,7 +44,7 @@ class ReviewAbout
         
         if( $group ) {
             LegalDebug::debug( [
-                'OopsMain::check_oops()' => OopsMain::check_oops(), 
+                'OopsMain::check_oops()' => ( OopsMain::check_oops() ? 'true' : 'false' ), 
             ] );
 
             return [
