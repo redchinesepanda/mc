@@ -67,9 +67,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	} );
 	// }
 
-	function preload_image( url )
+	function preload_image( url, popup )
 	{
 		let img = new Image();
+
+		img.onload = function() {
+			// image.src = this.src;
+
+			popup.style.backgroundImage = 'url( \'' + this.src + '\' )';
+		};
 	  
 		img.src = url;
 	} 
@@ -84,9 +90,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 
-		preload_image( url );
+		preload_image( url, popup );
 		
-		popup.style.backgroundImage = `url( ${ url } )`;
+		// popup.style.backgroundImage = `url( ${ url } )`;
 
 		// await loadImage( url, popup );
 
