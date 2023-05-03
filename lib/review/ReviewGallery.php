@@ -26,6 +26,10 @@ class ReviewGallery
         }
     }
 
+    const SIZE = [
+        'review' => 'legal-bookmaker-review',
+    ];
+
     public static function register()
     {
         $handler = new self();
@@ -34,10 +38,35 @@ class ReviewGallery
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_image_size( 'legal-bookmaker-review', 354, 167 );
+        add_image_size( self::SIZE[ 'review' ], 354, 489 );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
+
+    const FIELD = [
+        'gallery' => '',
+    ];
+
+    // public static function get()
+    // {
+    //     $args = [];
+
+    //     $images = get_field( self::FIELD[ 'gallery' ] );
+        
+    //     if ( $images ) {
+    //         foreach( $images as $image ) {
+    //             $args[] = [
+    //                 'src' => $image[ 'sizes' ][ self::SIZE[ 'review' ] ],
+
+    //                 'alt' => $image[ 'alt' ],
+
+    //                 'caption' => $image[ 'caption' ],
+    //             ];
+    //         }
+    //     }
+
+    //     return $args;
+    // }
 
     public static function size_label( $sizes )
     {
