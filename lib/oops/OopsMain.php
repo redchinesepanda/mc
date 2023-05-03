@@ -87,6 +87,10 @@ class OopsMain
 
         add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
 
+        LegalDebug::debug( [
+            'function' => 'register',
+        ] );
+
         // add_action( 'edit_form_before_permalink', [ $handler, 'wp_kama_edit_form_before_permalink_action' ] );
     }
 
