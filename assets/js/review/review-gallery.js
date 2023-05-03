@@ -124,9 +124,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
 
-			// sizes.push( args[2].replace( 'w', '' ) );
+			let size = args[2];
 
-			console.log( 'args[2]: ' + args[2] );
+			if ( typeof size !== 'undefined' ) {
+				sizes.push( size.replace( 'w', '' ) );
+			}
+
+			console.log( 'size: ' + size );
 		} );
 
 		let max = Math.max(...sizes) + 'w';
