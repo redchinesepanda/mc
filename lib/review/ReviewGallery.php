@@ -77,7 +77,9 @@ class ReviewGallery
     public static function size_label( $sizes )
     {
         return array_merge( $sizes, [
-            'legal-bookmaker-review' => __( 'Bookmaker Review', ToolLoco::TEXTDOMAIN ),
+            self::SIZE[ 'review' ] => __( 'Bookmaker Review', ToolLoco::TEXTDOMAIN ),
+
+            self::SIZE[ 'full' ] => __( 'Bookmaker Full', ToolLoco::TEXTDOMAIN ),
         ] );
     }
 }
