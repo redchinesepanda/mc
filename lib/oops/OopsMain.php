@@ -64,8 +64,10 @@ class OopsMain
     public static function render_check()
     {
         if ( self::check_oops() ) {
-            self::render();
+            return self::render();
         }
+
+        return '';
     }
 
     public static function render()
