@@ -6,11 +6,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		event.preventDefault();
 
+		console.log( event.currentTarget.classList );
+
 		document.querySelector( '.legal-oops-background').classList.toggle( 'legal-active' );
 	}
 
     document.querySelectorAll( 'a[href="#"]').forEach( function ( element ) {
-		console.log( element.classList );
 
 		element.addEventListener( 'click', toggleOops, false );
 	} );
