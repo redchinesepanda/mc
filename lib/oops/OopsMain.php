@@ -4,8 +4,10 @@ class OopsMain
 {
     public static function check_oops()
     {
+        $current_language = WPMLMain::current_language();
+
         LegalDebug::debug( [
-            'current_language' => WPMLMain::current_language(),
+            '$current_language' => $current_language,
         ] );
 
         $args = [
@@ -17,7 +19,7 @@ class OopsMain
 
             'suppress_filters' => 0,
 
-            's' => 'search phrase' ,
+            's' => $current_language,
 
             // 'meta_query' => [
             //     [
