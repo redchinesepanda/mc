@@ -26,7 +26,7 @@
 }
 
 .legal-oops .item-button {
-	padding: 5px 40px 5px 13px;
+	padding: 5px 35px 5px 13px;
 }
 
 /* Oops Width and Height */
@@ -43,9 +43,10 @@
 .legal-oops .item-button {
 	background-color: rgb(89, 151, 227);
 	background-image: url( '../../img/oops/oops-bet-now.svg' );
-    background-position: right 25px center;
+    background-position: right 13px center;
     background-repeat: no-repeat;
     background-size: auto;
+	border-radius: 20px;
 }
 
 /* Oops Background */
@@ -77,4 +78,14 @@
 	line-height: 27.2px;
 	color: rgb(110, 110, 110);
 	text-align: center;
+}
+
+.legal-oops .item-button {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 14.4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
 }
