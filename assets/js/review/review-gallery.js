@@ -124,10 +124,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( 'args[2]: ' + args[2] );
 
+			console.log( 'args[2] == \'1024w\': ' + JSON.stringify( args[2] == '1024w' ) );
+
 			if ( args[2] == '1024w' ) {
 				return args[1];
 			}
 		} );
+
 		return srcset.split( ',' )[ 0 ].split( ' ' )[0];
 	}
 
