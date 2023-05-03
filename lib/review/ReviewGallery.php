@@ -47,6 +47,8 @@ class ReviewGallery
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
+
+        add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
     }
 
     const FIELD = [
@@ -81,6 +83,23 @@ class ReviewGallery
 
             self::SIZE[ 'full' ] => __( 'Bookmaker Full', ToolLoco::TEXTDOMAIN ),
         ] );
+    }
+
+    function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+
+        LegalDebug::debug( [
+            '$sources' => $sources,
+            
+            '$size_array' => $size_array,
+
+            '$image_src' => $image_src,
+
+            '$image_meta' => $image_meta,
+            
+            '$attachment_id' => $attachment_id,
+        ] );
+
+        return $sources;
     }
 }
 
