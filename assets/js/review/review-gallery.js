@@ -138,14 +138,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
 
-			// sizes.push( args[2].replace( 'w', '' ) );
-
 			if ( args[2] == max ) {
 				result = args[1];
 			}
 		} );
-
-		// return result.replace( /-\d+[Xx]\d+\./i, '.' );
 
 		return result;
 	}
