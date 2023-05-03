@@ -133,6 +133,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		} );
 
+		console.log( 'result: ' + result );
+
 		return result;
 	}
 
