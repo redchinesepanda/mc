@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'target.classList: ' + event.target.classList );
 
-		if ( !event.currentTarget.contains( event.target )  ) {
+		if ( !oops.contains( event.target )  ) {
 			oops.classList.toggle( 'legal-active' );
 		}
 	}
