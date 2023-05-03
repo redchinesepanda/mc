@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'oops.contains( event.target ): ' + oops.contains( event.target ) );
 
-		if ( !oops.contains( event.currentTarget )  ) {
+		if ( !oops.contains( event.currentTarget ) || oops == event.currentTarget ) {
 			oops.classList.toggle( 'legal-active' );
 		}
 	}
