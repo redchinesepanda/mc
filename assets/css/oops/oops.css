@@ -20,7 +20,7 @@
 }
 
 .legal-oops-background:not( .legal-active ) {
-	font-display: none;
+	display: none;
 }
 
 /* Oops Position */
