@@ -21,6 +21,8 @@ class OopsMain
 
             's' => $current_language,
 
+            'sentence' => true,
+
             // 'meta_query' => [
             //     [
             //         'key' => 'billet-referal',
