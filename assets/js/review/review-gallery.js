@@ -117,6 +117,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function parse_srcset( srcset )
     {
+		let sizes = [ '354w', '1024w' ];
+
 		let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
 
 		srcset.split( ',' ).forEach( function ( item ) {
@@ -128,7 +130,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( 'args[2] == \'1024w\': ' + JSON.stringify( args[2] == '1024w' ) );
 
-			if ( args[2] == '1024w' ) {
+			if ( sizes.includes( args[2] ) ) {
 				result = args[1];
 			}
 		} );
