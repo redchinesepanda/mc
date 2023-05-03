@@ -129,11 +129,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			if ( typeof size !== 'undefined' ) {
 				sizes.push( size.replace( 'w', '' ) );
 			}
-
-			console.log( 'size: ' + size );
 		} );
 
 		let max = Math.max(...sizes) + 'w';
+
+		console.log( 'max: ' + max );
 
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
