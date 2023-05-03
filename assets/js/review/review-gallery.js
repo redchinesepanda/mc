@@ -124,12 +124,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
 
-			console.log( 'args[1]: ' + args[1] );
-
-			console.log( 'args[2]: ' + args[2] );
-
-			console.log( 'args[2] == \'1024w\': ' + JSON.stringify( args[2] == '1024w' ) );
-
 			if ( sizes.includes( args[2] ) ) {
 				result = args[1];
 			}
