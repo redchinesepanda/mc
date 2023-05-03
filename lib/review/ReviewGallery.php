@@ -87,19 +87,21 @@ class ReviewGallery
 
     function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
 
-        LegalDebug::debug( [
-            'function' => 'wp_kama_calculate_image_srcset_filter',
+        if ( !is_admin() ) {
+            LegalDebug::debug( [
+                'function' => 'wp_kama_calculate_image_srcset_filter',
 
-            '$sources' => $sources,
-            
-            '$size_array' => $size_array,
+                '$sources' => $sources,
+                
+                '$size_array' => $size_array,
 
-            '$image_src' => $image_src,
+                '$image_src' => $image_src,
 
-            // '$image_meta' => $image_meta,
-            
-            '$attachment_id' => $attachment_id,
-        ] );
+                // '$image_meta' => $image_meta,
+                
+                '$attachment_id' => $attachment_id,
+            ] );
+        }
 
         return $sources;
     }
