@@ -57,7 +57,7 @@ class ReviewAbout
                 'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
 
                 'afillate' => [
-                    'href' => $group[ 'about-afillate' ],
+                    'href' => ( !empty( $group[ 'about-afillate' ] ) ? $group[ 'about-afillate' ] : ( OopsMain::check_oops() ? '#' : '' ) ),
 
                     'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
                 ],
