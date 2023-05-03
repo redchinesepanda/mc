@@ -4,11 +4,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleOops( event )
 	{
-		event.preventDefault();
-
 		let oops = document.querySelector( '.legal-oops-background');
 
 		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
+			event.preventDefault();
+
 			oops.classList.toggle( 'legal-active' );
 		}
 	}
