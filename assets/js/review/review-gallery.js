@@ -117,6 +117,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function parse_srcset( srcset )
     {
+		let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
+
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
 
@@ -127,11 +129,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log( 'args[2] == \'1024w\': ' + JSON.stringify( args[2] == '1024w' ) );
 
 			if ( args[2] == '1024w' ) {
-				return args[1];
+				result = args[1];
 			}
 		} );
 
-		return srcset.split( ',' )[ 0 ].split( ' ' )[0];
+		return result;
 	}
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
