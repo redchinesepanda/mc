@@ -33,7 +33,7 @@ class ReviewAbout
         $group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
-			if ( !empty( $group[ 'about-afillate' ] ] ) ) {
+			if ( !empty( $group[ 'about-afillate' ] ) ) {
 				return $group[ 'about-afillate' ];
 			}
 		}
