@@ -13,7 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			figure.click();
 
-			console.log( 'review-gallery popupNext figure.click()' );
+			// console.log( 'review-gallery popupNext figure.click()' );
 		}
 	}
 
@@ -119,6 +119,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
+
+			console.log( 'args: ' + JSON.stringify( args ) );
 
 			if ( args[1] == '1024w' ) {
 				return args[0];
