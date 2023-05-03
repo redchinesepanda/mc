@@ -117,6 +117,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function parse_srcset( srcset )
     {
+		srcset.split( ',' ).forEach( function ( item ) {
+			let args = item.split( ' ' );
+
+			if ( args[1] == '1024w' ) {
+				return args[0];
+			}
+		} );
 		return srcset.split( ',' )[ 0 ].split( ' ' )[0];
 	}
 
