@@ -117,21 +117,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function parse_srcset( srcset )
     {
-		let sizes = [ '354w', '1024w' ];
+		// let sizes = [ '354w', '1024w' ];
 
 		let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
 
-		srcset.split( ',' ).forEach( function ( item ) {
-			let args = item.split( ' ' );
+		// srcset.split( ',' ).forEach( function ( item ) {
+		// 	let args = item.split( ' ' );
 
-			if ( sizes.includes( args[2] ) ) {
-				result = args[1];
-			}
-		} );
+		// 	if ( sizes.includes( args[2] ) ) {
+		// 		result = args[1];
+		// 	}
+		// } );
 
-		console.log( 'result: ' + result );
-
-		return result;
+		return result.replace( /-\d+[Xx]\d+\./i, '.' );
 	}
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
