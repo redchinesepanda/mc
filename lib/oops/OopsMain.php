@@ -66,6 +66,12 @@ class OopsMain
         if ( self::check_oops() ) {
             self::render_button();
         }
+
+        LegalDebug::debug( [
+            'function' => 'register',
+
+            'self::check_oops()' => ( self::check_oops() ? 'true' : 'false' ),
+        ] );
     }
 
     public static function render_button()
@@ -86,10 +92,6 @@ class OopsMain
         // [legal-oops]
 
         add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
-
-        LegalDebug::debug( [
-            'function' => 'register',
-        ] );
 
         // add_action( 'edit_form_before_permalink', [ $handler, 'wp_kama_edit_form_before_permalink_action' ] );
     }
