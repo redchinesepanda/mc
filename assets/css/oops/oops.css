@@ -19,6 +19,10 @@
 	align-items: center;
 }
 
+.legal-oops-background:not( .legal-active ) {
+	font-display: none;
+}
+
 /* Oops Position */
 
 .legal-oops-background {
