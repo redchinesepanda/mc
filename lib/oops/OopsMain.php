@@ -14,7 +14,7 @@ class OopsMain
     }
 
     const JS = [
-        'review-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
+        'legal-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
     ];
 
     public static function register_script()
