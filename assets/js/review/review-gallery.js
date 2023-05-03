@@ -120,11 +120,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		srcset.split( ',' ).forEach( function ( item ) {
 			let args = item.split( ' ' );
 
-			console.log( 'args[0]: ' + args[0] );
-
 			console.log( 'args[1]: ' + args[1] );
 
-			if ( args[1] == '1024w' ) {
+			console.log( 'args[2]: ' + args[2] );
+
+			if ( args[2] == '1024w' ) {
 				return args[0];
 			}
 		} );
