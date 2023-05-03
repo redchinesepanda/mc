@@ -91,6 +91,8 @@ class ReviewGallery
             LegalDebug::debug( [
                 'function' => 'wp_kama_calculate_image_srcset_filter',
 
+                'wp_get_attachment_image' => wp_get_attachment_image( $attachment_id, 'full' ),
+
                 '$sources' => $sources,
                 
                 '$size_array' => $size_array,
