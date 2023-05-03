@@ -13,6 +13,12 @@
 	row-gap: 20px;
 }
 
+.legal-oops .oops-item {
+	display: flex;
+	column-gap: 20px;
+	align-items: center;
+}
+
 /* Oops Position */
 
 .legal-oops-background {
