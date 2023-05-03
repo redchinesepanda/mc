@@ -56,7 +56,7 @@ class OopsMain
 
         foreach ( $posts as $post ) {
             $args['items'][] = [
-                'src' => '',
+                'src' => LegalMain::LEGAL_URL . '/assets/img/oops/mc.png',
 
                 'href' => get_post_permalink( $post->ID ),
             ];
