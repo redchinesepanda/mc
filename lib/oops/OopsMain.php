@@ -4,6 +4,10 @@ class OopsMain
 {
     public static function check_oops()
     {
+        LegalDebug::debug( [
+            'current_language' => WPMLMain::current_language(),
+        ] );
+
         $args = [
             'numberposts' => -1,
 
@@ -13,15 +17,17 @@ class OopsMain
 
             'suppress_filters' => 0,
 
-            'meta_query' => [
-                [
-                    'key' => 'billet-referal',
+            's' => 'search phrase' ,
 
-                    'value' => '',
+            // 'meta_query' => [
+            //     [
+            //         'key' => 'billet-referal',
 
-                    'meta_compare' => '!=',
-                ],
-            ]
+            //         'value' => '',
+
+            //         'meta_compare' => '!=',
+            //     ],
+            // ]
         ];
 
         $posts = new WP_Query( $args );
