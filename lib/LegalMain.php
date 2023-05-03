@@ -33,6 +33,8 @@ class LegalMain {
 
 		AdminMain::register();
 
+		OopsMain::register();
+
 		LegalBreadcrumbsMain::register();
 
 		ReviewMain::register();
