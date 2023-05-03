@@ -34,7 +34,7 @@ class ReviewGallery
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_image_size( 'legal-bookmaker-review', 354, 489 );
+        add_image_size( 'legal-bookmaker-review', 354, 167 );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
