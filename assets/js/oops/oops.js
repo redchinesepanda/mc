@@ -7,9 +7,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.preventDefault();
 
 		let oops = document.querySelector( '.legal-oops-background');
+		
+		console.log( 'currentTarget: ' + event.currentTarget );
+
+		console.log( 'target: ' + event.target );
 
 		if ( !oops.contains( event.target )  ) {
-			console.log( event.currentTarget.classList );
 
 			oops.classList.toggle( 'legal-active' );
 		}
