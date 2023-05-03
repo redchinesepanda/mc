@@ -48,7 +48,7 @@ class ReviewGallery
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
+        // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
     }
 
     const FIELD = [
@@ -85,26 +85,26 @@ class ReviewGallery
         ] );
     }
 
-    function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+    // function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
 
-        if ( !is_admin() ) {
-            LegalDebug::debug( [
-                'function' => 'wp_kama_calculate_image_srcset_filter',
+    //     if ( !is_admin() ) {
+    //         LegalDebug::debug( [
+    //             'function' => 'wp_kama_calculate_image_srcset_filter',
 
-                '$sources' => $sources,
+    //             '$sources' => $sources,
                 
-                '$size_array' => $size_array,
+    //             '$size_array' => $size_array,
 
-                '$image_src' => $image_src,
+    //             '$image_src' => $image_src,
 
-                // '$image_meta' => $image_meta,
+    //             // '$image_meta' => $image_meta,
                 
-                '$attachment_id' => $attachment_id,
-            ] );
-        }
+    //             '$attachment_id' => $attachment_id,
+    //         ] );
+    //     }
 
-        return $sources;
-    }
+    //     return $sources;
+    // }
 }
 
 ?>
