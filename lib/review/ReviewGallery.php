@@ -40,9 +40,9 @@ class ReviewGallery
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_image_size( self::SIZE[ 'review' ], 354, 489 );
+        add_image_size( self::SIZE[ 'review' ], 354, 489, false );
 
-        add_image_size( self::SIZE[ 'full' ], 1024, 768 );
+        add_image_size( self::SIZE[ 'full' ], 1024, 9999, false );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
