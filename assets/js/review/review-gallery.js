@@ -117,17 +117,27 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function parse_srcset( srcset )
     {
-		// let sizes = [ '354w', '1024w' ];
-
 		let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
 
-		// srcset.split( ',' ).forEach( function ( item ) {
-		// 	let args = item.split( ' ' );
+		let sizes = [];
 
-		// 	if ( sizes.includes( args[2] ) ) {
-		// 		result = args[1];
-		// 	}
-		// } );
+		srcset.split( ',' ).forEach( function ( item ) {
+			let args = item.split( ' ' );
+
+			sizes.push( args[2].replace( 'w', '' ) );
+		} );
+
+		let max = Math.max(...array1) + 'w';
+
+		srcset.split( ',' ).forEach( function ( item ) {
+			let args = item.split( ' ' );
+
+			// sizes.push( args[2].replace( 'w', '' ) );
+
+			if ( args[2] == max ) {
+				result = args[1];
+			}
+		} );
 
 		return result.replace( /-\d+[Xx]\d+\./i, '.' );
 	}
