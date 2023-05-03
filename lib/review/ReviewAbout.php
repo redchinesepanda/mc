@@ -105,7 +105,7 @@ class ReviewAbout
         
         if( $group ) {
             return [
-                'href' => $group[ 'about-afillate' ],
+                'href' => self::check_href_afillate(),
 
                 'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
             ];
