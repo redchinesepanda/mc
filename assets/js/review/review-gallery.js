@@ -126,7 +126,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// sizes.push( args[2].replace( 'w', '' ) );
 
-			console.log( 'args[2]: ' + args[2].replace( 'w', '' ) );
+			console.log( 'args[2]: ' + ( args[2] ).replace( 'w', '' ) );
 		} );
 
 		let max = Math.max(...sizes) + 'w';
