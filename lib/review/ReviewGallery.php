@@ -29,7 +29,7 @@ class ReviewGallery
     const SIZE = [
         'review' => 'legal-bookmaker-review',
 
-        'full' => 'legal-bookmaker-review',
+        'full' => 'legal-bookmaker-full',
     ];
 
     public static function register()
