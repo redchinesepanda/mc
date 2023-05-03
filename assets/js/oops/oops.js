@@ -10,7 +10,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		console.log( 'currentTarget: ' + event.currentTarget );
 
+		console.log( 'currentTarget.classList: ' + event.currentTarget.classList );
+
 		console.log( 'target: ' + event.target );
+
+		console.log( 'target.classList: ' + event.target.classList );
 
 		if ( !oops.contains( event.target )  ) {
 
