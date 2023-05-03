@@ -13,6 +13,19 @@ class OopsMain
         }
     }
 
+    const JS = [
+        'review-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
+    ];
+
+    public static function register_script()
+    {
+        foreach ( self::JS as $name => $path ) {
+            wp_register_script( $name, $path, [], false, true );
+
+            wp_enqueue_script( $name );
+        }
+    }
+
     public static function register()
     {
         $handler = new self();
