@@ -145,7 +145,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		} );
 
-		return result.replace( /-\d+[Xx]\d+\./i, '.' );
+		// return result.replace( /-\d+[Xx]\d+\./i, '.' );
+
+		return result;
 	}
 
 	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
