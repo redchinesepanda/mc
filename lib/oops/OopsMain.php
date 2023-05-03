@@ -40,6 +40,12 @@ class OopsMain
             ];
         }
 
+        LegalDebug::debug( [
+            'function' => 'get',
+
+            '$args' => $args,
+        ] );
+
         return $args;
     }
 
@@ -66,12 +72,6 @@ class OopsMain
         if ( self::check_oops() ) {
             self::render_button();
         }
-
-        LegalDebug::debug( [
-            'function' => 'register',
-
-            'self::check_oops()' => ( self::check_oops() ? 'true' : 'false' ),
-        ] );
     }
 
     public static function render_button()
