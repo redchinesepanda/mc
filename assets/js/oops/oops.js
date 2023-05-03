@@ -16,6 +16,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'target.classList: ' + event.target.classList );
 
+		console.log( 'oops.contains( event.currentTarget ): ' + oops.contains( event.currentTarget ) );
+
+		console.log( 'oops.contains( event.target ): ' + oops.contains( event.target ) );
+
 		if ( !oops.contains( event.currentTarget )  ) {
 			oops.classList.toggle( 'legal-active' );
 		}
