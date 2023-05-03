@@ -2,9 +2,26 @@
 
 .legal-oops-background {
 	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.legal-oops {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Oops Position */
+
+.legal-oops-background {
 	position: fixed;
 	top: 0px;
 	left: 0px;
+}
+
+.legal-oops {
+	padding: 25px 15px;
 }
 
 /* Oops Width and Height */
