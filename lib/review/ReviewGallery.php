@@ -42,7 +42,7 @@ class ReviewGallery
 
         add_image_size( self::SIZE[ 'review' ], 354, 489, false );
 
-        add_image_size( self::SIZE[ 'full' ], 9999, 1024, false );
+        // add_image_size( self::SIZE[ 'full' ], 1024, 1024, false );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
@@ -81,7 +81,7 @@ class ReviewGallery
         return array_merge( $sizes, [
             self::SIZE[ 'review' ] => __( 'Bookmaker Review', ToolLoco::TEXTDOMAIN ),
 
-            self::SIZE[ 'full' ] => __( 'Bookmaker Full', ToolLoco::TEXTDOMAIN ),
+            // self::SIZE[ 'full' ] => __( 'Bookmaker Full', ToolLoco::TEXTDOMAIN ),
         ] );
     }
 
