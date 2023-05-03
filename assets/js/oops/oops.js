@@ -5,11 +5,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
     function toggleOops( event )
 	{
 		event.preventDefault();
-		
+
 		document.querySelector( '.legal-oops-background').classList.toggle( 'legal-active' );
 	}
 
     document.querySelectorAll( 'a[href="#"]').forEach( function ( element ) {
+		console.log( element.classList );
+
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
