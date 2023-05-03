@@ -6,9 +6,9 @@ class OopsMain
     {
         $current_language = ' ' . WPMLMain::current_language();
 
-        LegalDebug::debug( [
-            '$current_language' => $current_language,
-        ] );
+        // LegalDebug::debug( [
+        //     '$current_language' => $current_language,
+        // ] );
 
         $args = [
             'numberposts' => -1,

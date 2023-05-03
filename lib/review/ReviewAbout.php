@@ -28,6 +28,19 @@ class ReviewAbout
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+    public static function check_href_afillate()
+	{
+        $group = get_field( ReviewAbout::FIELD );
+        
+        if( $group ) {
+			if ( !empty( $group[ 'about-afillate' ] ] ) ) {
+				return $group[ 'about-afillate' ];
+			}
+		}
+
+		return ( OopsMain::check_oops() ? '#' : '' );
+	}
+
     const FIELD = 'review-about';
 
     public static function get( $args )
@@ -43,9 +56,9 @@ class ReviewAbout
         $group = get_field( self::FIELD );
         
         if( $group ) {
-            LegalDebug::debug( [
-                'OopsMain::check_oops()' => ( OopsMain::check_oops() ? 'true' : 'false' ), 
-            ] );
+            // LegalDebug::debug( [
+            //     'OopsMain::check_oops()' => ( OopsMain::check_oops() ? 'true' : 'false' ), 
+            // ] );
 
             return [
                 'title' => $group[ 'about-title' ],
@@ -61,7 +74,7 @@ class ReviewAbout
                 'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
 
                 'afillate' => [
-                    'href' => ( !empty( $group[ 'about-afillate' ] ) ? $group[ 'about-afillate' ] : ( OopsMain::check_oops() ? '#' : '' ) ),
+                    'href' => self::check_href_afillate(),
 
                     'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
                 ],
