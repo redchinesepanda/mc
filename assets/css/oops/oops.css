@@ -10,6 +10,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	row-gap: 20px;
 }
 
 /* Oops Position */
@@ -43,4 +44,25 @@
 
 .legal-oops {
 	background-color: #ffffff;
+}
+
+/* Oops Typography */
+
+.legal-oops .oops-title {
+	font-family: "Source Sans Pro";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: 35.2px;
+	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-oops .oops-description {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27.2px;
+	color: rgb(110, 110, 110);
+	text-align: center;
 }
