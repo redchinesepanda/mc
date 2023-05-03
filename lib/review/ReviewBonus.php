@@ -162,7 +162,7 @@ class ReviewBonus
 				'src' => $group[ 'about-logo-square' ],
 
 				'title' => [
-					'href' => $group[ 'about-afillate' ],
+					'href' => self::check_url_get(),
 
 					'text' => $group[ 'about-title' ],
 				],
@@ -170,7 +170,7 @@ class ReviewBonus
 				'name' => $args[ 'title' ],
 
 				'get' => [
-					'href' => $group[ 'about-afillate' ],
+					'href' => self::check_url_get(),
 
 					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
 				],
