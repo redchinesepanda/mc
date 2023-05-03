@@ -25,6 +25,10 @@
 	padding: 25px 15px;
 }
 
+.legal-oops .item-button {
+	padding: 5px 40px 5px 13px;
+}
+
 /* Oops Width and Height */
 
 .legal-oops-background {
@@ -34,6 +38,14 @@
 
 .legal-oops {
 	width: 425px;
+}
+
+.legal-oops .item-button {
+	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/oops/oops-bet-now.svg' );
+    background-position: right 25px center;
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 /* Oops Background */
