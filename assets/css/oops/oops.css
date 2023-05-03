@@ -14,7 +14,16 @@
 	height: 100vh;
 }
 
+.legal-oops {
+	width: 425px;
+}
+
 /* Oops Background */
+
 .legal-oops-background {
 	background-color: #323232;
+}
+
+.legal-oops {
+	background-color: #ffffff;
 }
