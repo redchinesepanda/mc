@@ -55,8 +55,10 @@ class OopsMain
         ];
 
         foreach ( $posts as $post ) {
+            $src = get_field( 'affilate-logo', $post->ID );
+
             $args['items'][] = [
-                'src' => LegalMain::LEGAL_URL . '/assets/img/oops/mc.png',
+                'src' => ( !empty( $src ) ? $src : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
 
                 'href' => get_post_permalink( $post->ID ),
             ];
