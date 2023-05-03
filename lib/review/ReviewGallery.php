@@ -41,6 +41,8 @@ class ReviewGallery
         add_image_size( self::SIZE[ 'review' ], 354, 489 );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+
+        add_filter( 'wp_lazy_loading_enabled', '__return_true' );
     }
 
     const FIELD = [
