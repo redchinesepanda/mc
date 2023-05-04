@@ -156,20 +156,8 @@ class ReviewBonus
 	public static function get_bonus( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
-
-		LegalDebug::debug( [
-			'function' => 'get_bonus',
-
-			'$args' => $args,
-
-			'$group' => $group,
-
-			'empty( $group )' => ( empty( $group ) ? 'true' : 'false' ),
-
-			'$group bool' => ( $group ? 'true' : 'false' ),
-		] );
-        
-        if ( $group ) {
+		
+		if ( $group ) {
 			return [
 				'src' => $group[ 'about-logo-square' ],
 
