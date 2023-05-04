@@ -88,13 +88,13 @@ class ReviewMain
     public static function schema()
     {
         return json_encode( [
-            "@context" => "https:\/\/schema.org",
+            "@context" => "https://schema.org",
 
             "@graph" => [
                 [
                     "@type" => "WebPage",
 
-			        "@id" => "https:\/\/match.center\/ng\/betting-sites\/",
+			        "@id" => "https://match.center/ng/betting-sites/",
                 ],
             ]
         ] );
