@@ -79,39 +79,41 @@ class ReviewGallery
         if ( !is_admin() ) {
             $url = wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] );
 
-            $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
+            if ( $url !== false ) {
+                $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
 
-            $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
+                $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
 
-            $item = [
-                'url' => $url,
+                $item = [
+                    'url' => $url,
 
-                'descriptor' => 'w',
+                    'descriptor' => 'w',
 
-                'value' => $value,
-            ];
+                    'value' => $value,
+                ];
 
-            $sources[ $value ] = $item;
+                $sources[ $value ] = $item;
+            }
 
-            LegalDebug::debug( [
-                'function' => 'wp_kama_calculate_image_srcset_filter',
+            // LegalDebug::debug( [
+            //     'function' => 'wp_kama_calculate_image_srcset_filter',
 
-                // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
+            //     // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
 
-                // '$value' => $value,
+            //     // '$value' => $value,
 
-                // '$item' => $item,
+            //     // '$item' => $item,
 
-                '$sources' => $sources,
+            //     '$sources' => $sources,
                 
-                // '$size_array' => $size_array,
+            //     // '$size_array' => $size_array,
 
-                // '$image_src' => $image_src,
+            //     // '$image_src' => $image_src,
 
-                // '$image_meta' => $image_meta,
+            //     // '$image_meta' => $image_meta,
                 
-                // '$attachment_id' => $attachment_id,
-            ] );
+            //     // '$attachment_id' => $attachment_id,
+            // ] );
         }
 
         return $sources;
