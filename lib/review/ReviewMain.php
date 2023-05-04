@@ -49,6 +49,10 @@ class ReviewMain
 
         $post = get_post();
 
+        LegalDebug::debug( [
+            '$post' => $post,
+        ] );
+
         if ( $post ) {
             wp_script_add_data( $name, 'data-schema', $post->ID . '-' . $post->post_type . '-legal' );
         }
