@@ -81,7 +81,7 @@ class ReviewGallery
 
             $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
 
-            $value = str_replace( 'px', '', explode( ',', $sizes )[ 1 ] );
+            $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
 
             $item = [
                 'url' => $url,
