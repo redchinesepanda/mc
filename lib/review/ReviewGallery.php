@@ -82,7 +82,7 @@ class ReviewGallery
 
                 // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
 
-                'wp_get_attachment_image' => wp_get_attachment_image( $attachment_id, self::SIZE[ 'lightbox' ] ),
+                'wp_get_attachment_image_url' => wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] ),
 
                 '$sources' => $sources,
                 
