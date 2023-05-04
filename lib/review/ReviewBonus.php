@@ -97,12 +97,6 @@ class ReviewBonus
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
-				LegalDebug::debug( [
-					'$args' => $args,
-				] );
-				
-				
-
 				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 					$template = self::render_billet( $args );
 				} else {
@@ -161,6 +155,10 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
+		LegalDebug::debug( [
+			'$args' => $args,
+		] );
+		
 		$group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
