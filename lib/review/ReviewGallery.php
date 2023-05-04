@@ -48,43 +48,22 @@ class ReviewGallery
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
+        add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
 
-        add_filter('max_srcset_image_width', function( $max_srcset_image_width, $size_array ){
-            LegalDebug::debug( [
-                '$max_srcset_image_width' => $max_srcset_image_width,
+        // add_filter('max_srcset_image_width', function( $max_srcset_image_width, $size_array ){
+        //     LegalDebug::debug( [
+        //         '$max_srcset_image_width' => $max_srcset_image_width,
 
-                '$size_array' => $size_array,
-            ] );
+        //         '$size_array' => $size_array,
+        //     ] );
 
-            return 2000;
-        }, 10, 2);
+        //     return 2000;
+        // }, 10, 2);
     }
 
     const FIELD = [
         'gallery' => '',
     ];
-
-    // public static function get()
-    // {
-    //     $args = [];
-
-    //     $images = get_field( self::FIELD[ 'gallery' ] );
-        
-    //     if ( $images ) {
-    //         foreach( $images as $image ) {
-    //             $args[] = [
-    //                 'src' => $image[ 'sizes' ][ self::SIZE[ 'review' ] ],
-
-    //                 'alt' => $image[ 'alt' ],
-
-    //                 'caption' => $image[ 'caption' ],
-    //             ];
-    //         }
-    //     }
-
-    //     return $args;
-    // }
 
     public static function size_label( $sizes )
     {
@@ -95,26 +74,26 @@ class ReviewGallery
         ] );
     }
 
-    // function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+    function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
 
-    //     if ( !is_admin() ) {
-    //         LegalDebug::debug( [
-    //             'function' => 'wp_kama_calculate_image_srcset_filter',
+        if ( !is_admin() ) {
+            LegalDebug::debug( [
+                'function' => 'wp_kama_calculate_image_srcset_filter',
 
-    //             '$sources' => $sources,
+                '$sources' => $sources,
                 
-    //             '$size_array' => $size_array,
+                '$size_array' => $size_array,
 
-    //             '$image_src' => $image_src,
+                '$image_src' => $image_src,
 
-    //             // '$image_meta' => $image_meta,
+                // '$image_meta' => $image_meta,
                 
-    //             '$attachment_id' => $attachment_id,
-    //         ] );
-    //     }
+                '$attachment_id' => $attachment_id,
+            ] );
+        }
 
-    //     return $sources;
-    // }
+        return $sources;
+    }
 }
 
 ?>
