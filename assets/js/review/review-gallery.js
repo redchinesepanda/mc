@@ -102,8 +102,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling ); 
 
-		if ( item.previousSibling !== null ) {
-			left.dataset.next = item.previousSibling.dataset.id;
+		if ( item.previousElementSibling !== null ) {
+			left.dataset.next = item.previousElementSibling.dataset.id;
 		}
 
 		let right = popup.querySelector( '.legal-right' );
