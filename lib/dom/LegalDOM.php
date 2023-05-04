@@ -17,7 +17,7 @@ class LegalDOM
 		if ( !empty( $source ) ) {
 			$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
 
-			if ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes ) {
+			if ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes() ) {
 				foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
 					$node = $parent->ownerDocument->importNode( $node, true );
 
