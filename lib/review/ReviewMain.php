@@ -37,11 +37,26 @@ class ReviewMain
         }
     }
 
+    public static function register_inline_script()
+    {
+        $handler = new self();
+
+        $name = 'legal-schema';
+
+        wp_register_script( $name, $path, [], false, true );
+
+        wp_add_inline_script( $name, [ $handler, 'schema' ] );
+
+        wp_enqueue_script( $name );
+    }
+
     public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_script' ] );
         
         add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
@@ -69,11 +84,22 @@ class ReviewMain
 
     public static function is_front()
     {
-        // LegalDebug::debug( [
-        //     '( !is_admin() && is_page() )' => ( !is_admin() && is_page() ? 'true' : 'false' ), 
-        // ] );
-
         return ( !is_admin() && is_page() );
+    }
+
+    public static function schema()
+    {
+        return json_encode( [
+            "@context" => "https:\/\/schema.org",
+
+            "@graph" => [
+                [
+                    "@type" => "WebPage",
+
+			        "@id" => "https:\/\/match.center\/ng\/betting-sites\/",
+                ],
+            ]
+        ] );
     }
 }
 

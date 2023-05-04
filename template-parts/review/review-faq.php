@@ -1,14 +1,18 @@
 <?php if( !empty( $args ) ) : ?>
-    <section class="faq">
+    <div itemscope itemtype="https://schema.org/FAQPage" class="review-faq">
         <?php foreach( $args as $item ) : ?>
-            <div class="faq-item">
-                <div class="faq-item-title">
+            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-item">
+                <div itemprop="name" class="item-title">
                     <?php echo $item[ 'title' ]; ?>
                 </div>
-                <div class="faq-item-content">
-                    <?php echo $item[ 'content' ]; ?>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="item-content">
+                    <?php foreach( $item[ 'content' ] as $part ) : ?>
+                        <div itemprop="text" class="content-part">
+                            <?php echo $part; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endforeach; ?>
-    </section>
+    </div>
 <?php endif; ?>
