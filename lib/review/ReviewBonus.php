@@ -179,11 +179,11 @@ class ReviewBonus
 	{
 		$group = get_field( ReviewAbout::FIELD );
 
-		LegalDebug::debug( [
-			'function' => 'get_bonus',
+		// LegalDebug::debug( [
+		// 	'function' => 'get_bonus',
 
-			'$args' => $args,
-		] );
+		// 	'$args' => $args,
+		// ] );
 		
 		// if ( $group ) {
 			return [
