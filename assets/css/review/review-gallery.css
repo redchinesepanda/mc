@@ -10,6 +10,10 @@
   
 /* Gallery Position */
 
+.tcb-post-content .legal-imageset {
+    padding-bottom: 30px;
+}
+
 .tcb-post-content .legal-gallery {
     position: fixed;
     top: 0px;
