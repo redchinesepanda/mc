@@ -77,6 +77,8 @@ class ReviewGallery
     function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
 
         if ( !is_admin() ) {
+            $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
+
             LegalDebug::debug( [
                 'function' => 'wp_kama_calculate_image_srcset_filter',
 
@@ -85,6 +87,8 @@ class ReviewGallery
                 'wp_get_attachment_image_url' => wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] ),
 
                 'wp_get_attachment_image_sizes' => wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] ),
+
+                'width' => str_replace( 'px', '', explode( ',', $sizes )[ 1 ] ),
 
                 '$sources' => $sources,
                 
