@@ -104,7 +104,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.dataset.imageset = item.dataset.imageset;
 
-		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling ); 
+		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling );
 
 		if ( item.previousElementSibling !== null ) {
 			left.dataset.next = item.previousElementSibling.dataset.id;
@@ -157,7 +157,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
 
-			item.dataset.imageset = imageset.dataset.id;
+			item.dataset.imageset = imageset.id;
 
 			item.dataset.id = index;
 
