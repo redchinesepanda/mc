@@ -84,6 +84,8 @@ class ReviewGallery
 
                 'wp_get_attachment_image_url' => wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] ),
 
+                'wp_getimagesize' => wp_getimagesize( wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] ) ),
+
                 '$sources' => $sources,
                 
                 '$size_array' => $size_array,
