@@ -165,9 +165,11 @@ class ReviewBonus
 			'$group' => $group,
 
 			'empty( $group )' => ( empty( $group ) ? 'true' : 'false' ),
+
+			'$group bool' => ( $group ? 'true' : 'false' ),
 		] );
         
-        if ( !empty( $group ) ) {
+        if ( $group ) {
 			return [
 				'src' => $group[ 'about-logo-square' ],
 
