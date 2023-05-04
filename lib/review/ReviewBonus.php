@@ -95,6 +95,8 @@ class ReviewBonus
 			$permission_last = ( $id == $last );
 
 			legalDebug::debug( [
+				'function' => 'get_content',
+				
 				'$node->textContent' => substr( $node->textContent, 0, 30 ),
 
 				'$class' => $class,
@@ -110,6 +112,12 @@ class ReviewBonus
 
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
+
+				LegalDebug::debug( [
+					'function' => 'get_content',
+		
+					'$args' => $args,
+				] );
 
 				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 					$template = self::render_billet( $args );
@@ -172,6 +180,8 @@ class ReviewBonus
 		$group = get_field( ReviewAbout::FIELD );
 
 		LegalDebug::debug( [
+			'function' => 'get_bonus',
+
 			'$args' => $args,
 		] );
 		
