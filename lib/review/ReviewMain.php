@@ -107,7 +107,7 @@ class ReviewMain
                             "name" => "What's the best betting site in Nigeria in 2022?",
 
                             "acceptedAnswer" => [
-                                "@type" =>: "Answer",
+                                "@type" => "Answer",
 
                                 "text" => "Every bookmaker has advantages compared to the competitors: high odds, a wide range of markets, good bonus offers, e-sports betting, fast withdrawal and so on. On this page we have highlighted the best betting sites and reputable bookies based on the most important criteria. Still it\u2019s up to you to decide which aspects are more important and which bookmaker is the best.",
                             ]
