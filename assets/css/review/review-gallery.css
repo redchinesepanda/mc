@@ -51,18 +51,18 @@
     width: calc( ( 100% / 3 ) - 6px ) !important;
 } */
 
-.tcb-post-content .gallery .gallery-icon {
+/* .tcb-post-content .gallery .gallery-icon {
     width: 100%;
-}
+} */
 
-.tcb-post-content .gallery .gallery-icon a {
+/* .tcb-post-content .gallery .gallery-icon a {
     width: 100%;
-}
+} */
 
-.tcb-post-content .gallery .gallery-item img {
-    /* width: 100%; */
+/* .tcb-post-content .gallery .gallery-item img {
+    width: 100%;
     max-width: unset !important;
-}
+} */
 
 .tcb-post-content .legal-gallery {
     height: 100vh;
@@ -77,10 +77,10 @@
   
 /* Gallery Background */
 
-.tcb-post-content .gallery .gallery-item img {
+/* .tcb-post-content .gallery .gallery-item img {
     border: unset !important;
     box-shadow: unset !important;
-}
+} */
 
 .tcb-post-content .legal-gallery,
 .tcb-post-content .legal-gallery .legal-left,
@@ -109,20 +109,16 @@
 
 .tcb-post-content .legal-gallery {
     background-color: rgba(0, 0, 0, 0.75);
-    /* transition: background-image 6s; */
-    /* transition: background-image 1000ms linear; */
-    /* transition: background-image 2s cubic-bezier(1, 1, 1, 1); */
-    /* transition: background 0.5s linear; */
     transition: opacity 0.5s;
 }
 
 /* Gallery Typography */
 
-.tcb-post-content .gallery figcaption {
+.tcb-post-content .legal-imageset .item-caption {
     font-family: "Source Sans Pro";
-    font-size: 14px !important;
-    font-style: normal !important;
+    font-size: 14px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 24.5px !important;
-    color: rgb(105, 105, 105) !important;
+    line-height: 24px;
+    color: rgb(105, 105, 105);
 }
