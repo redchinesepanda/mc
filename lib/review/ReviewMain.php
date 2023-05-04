@@ -53,7 +53,7 @@ class ReviewMain
             '$post' => $post,
         ] );
 
-        if ( $post ) {
+        if ( !empty( $post ) ) {
             wp_script_add_data( $name, 'data-schema', $post->ID . '-' . $post->post_type . '-legal' );
         }
     }
