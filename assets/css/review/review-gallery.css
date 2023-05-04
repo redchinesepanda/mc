@@ -4,8 +4,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 9px;
-    row-gap: 9px;
+    column-gap: 20px;
+    row-gap: 20px;
 }
   
 /* Gallery Position */
