@@ -88,7 +88,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		let popup = content.querySelector( '.legal-gallery' );
 
-		let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
+		// let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
+		
+		let url = event.currentTarget.dataset.src;
 
 		preload_image( url, popup );
 		
@@ -115,46 +117,48 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function parse_srcset( srcset )
-    {
-		let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
+	// function parse_srcset( srcset )
+    // {
+	// 	let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
 
-		let sizes = [];
+	// 	let sizes = [];
 
-		srcset.split( ',' ).forEach( function ( item ) {
-			let args = item.split( ' ' );
+	// 	srcset.split( ',' ).forEach( function ( item ) {
+	// 		let args = item.split( ' ' );
 
-			let size = args[2];
+	// 		let size = args[2];
 
-			if ( typeof size !== 'undefined' ) {
-				sizes.push( size.replace( 'w', '' ) );
-			}
-		} );
+	// 		if ( typeof size !== 'undefined' ) {
+	// 			sizes.push( size.replace( 'w', '' ) );
+	// 		}
+	// 	} );
 
-		let max = Math.max(...sizes) + 'w';
+	// 	let max = Math.max(...sizes) + 'w';
 
-		console.log( 'max: ' + max );
+	// 	console.log( 'max: ' + max );
 
-		srcset.split( ',' ).forEach( function ( item ) {
-			let args = item.split( ' ' );
+	// 	srcset.split( ',' ).forEach( function ( item ) {
+	// 		let args = item.split( ' ' );
 
-			if ( args[2] == max ) {
-				result = args[1];
-			}
-		} );
+	// 		if ( args[2] == max ) {
+	// 			result = args[1];
+	// 		}
+	// 	} );
 
-		return result;
-	}
+	// 	return result;
+	// }
 
-	document.querySelectorAll( '.tcb-post-content > .gallery' ).forEach( function ( gallery ) {
-		gallery.querySelectorAll( 'figure' ).forEach( function ( figure, index ) {
-			figure.dataset.gallery = gallery.id;
+	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( gallery, index ) {
+		gallery.dataset.id = index;
 
-			figure.dataset.id = index;
+		gallery.querySelectorAll( '.item-image' ).forEach( function ( image, index ) {
+			image.dataset.gallery = gallery.dataset.id;
 
-			figure.addEventListener( 'click', popup, false );
+			image.dataset.id = index;
 
-			figure.addEventListener( 'click', popupUpdate, false );
+			image.addEventListener( 'click', popup, false );
+
+			image.addEventListener( 'click', popupUpdate, false );
 		} );
 	} );
 
