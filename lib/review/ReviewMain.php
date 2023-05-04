@@ -45,9 +45,9 @@ class ReviewMain
 
         wp_register_script( $name, false, [], false, true );
 
-        wp_add_inline_script( $name, [ $handler, 'schema' ] );
-
         wp_enqueue_script( $name );
+
+        wp_add_inline_script( $name, [ $handler, 'schema' ] );
     }
 
     public static function register()
