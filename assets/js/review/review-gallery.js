@@ -10,16 +10,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		console.log( 'item.dataset.imageset: ' + item.dataset.imageset );
 
-		let imageset = document.getElementById( event.currentTarget.dataset.imageset );
+		let imageset = document.getElementById( item.dataset.imageset );
 
-		let next = event.currentTarget.dataset.next;
+		let next = item.dataset.next;
 
 		if( typeof next !== 'undefined' ) {
-			let figure = gallery.querySelector( 'figure[data-id="' + event.currentTarget.dataset.next + '"]' );
+			let figure = imageset.querySelector( 'figure[data-id="' + item.dataset.next + '"]' );
 
 			figure.click();
-
-			// console.log( 'review-gallery popupNext figure.click()' );
 		}
 	}
 
