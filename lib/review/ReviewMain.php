@@ -43,7 +43,7 @@ class ReviewMain
 
         $name = 'legal-schema';
 
-        wp_register_script( $name, $path, [], false, true );
+        wp_register_script( $name, false, [], false, true );
 
         wp_add_inline_script( $name, [ $handler, 'schema' ] );
 
