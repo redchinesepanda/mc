@@ -112,11 +112,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling ); 
 
-		let dataset = item.nextSibling.dataset;
+		// let dataset = item.nextSibling.dataset;
 		
 		// if ( typeof dataset !== 'undefined' ) {
 		if ( item.nextElementSibling !== null ) {
-			right.dataset.next = item.nextSibling.dataset.id;
+			right.dataset.next = item.nextElementSibling.dataset.id;
 		}
 	}
 
