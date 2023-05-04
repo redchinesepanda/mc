@@ -90,7 +90,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 		
-		let url = event.currentTarget.dataset.src;
+		let url = event.currentTarget.querySelector( '.item-image' ).dataset.src;
 
 		preload_image( url, popup );
 		
@@ -151,14 +151,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( gallery, index ) {
 		gallery.dataset.id = index;
 
-		gallery.querySelectorAll( '.item-image' ).forEach( function ( image, index ) {
-			image.dataset.gallery = gallery.dataset.id;
+		gallery.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
+			item.dataset.gallery = gallery.dataset.id;
 
-			image.dataset.id = index;
+			item.dataset.id = index;
 
-			image.addEventListener( 'click', popup, false );
+			item.addEventListener( 'click', popup, false );
 
-			image.addEventListener( 'click', popupUpdate, false );
+			item.addEventListener( 'click', popupUpdate, false );
 		} );
 	} );
 
