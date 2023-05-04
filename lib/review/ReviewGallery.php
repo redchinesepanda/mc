@@ -40,7 +40,7 @@ class ReviewGallery
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_image_size( self::SIZE[ 'review' ], 354, 489, false );
+        add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
 
         add_image_size( self::SIZE[ 'lightbox' ], 9999, 619, false );
 
