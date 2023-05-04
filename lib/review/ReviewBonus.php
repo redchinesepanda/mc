@@ -329,6 +329,14 @@ class ReviewBonus
 					],
 
 					[
+						'title' => 'Bonus Content',
+						
+						'selector' => 'p,ul,ol,img',
+
+						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'content' ],
+					],
+
+					[
 						'title' => 'Billet Title',
 						
 						'selector' => 'p',
@@ -337,19 +345,11 @@ class ReviewBonus
 					],
 
 					[
-						'title' => 'Bonus Description',
+						'title' => 'Billet Description',
 						
 						'selector' => 'p',
 
 						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'description' ],
-					],
-
-					[
-						'title' => 'Bonus Content',
-						
-						'selector' => 'p,ul,ol,img',
-
-						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'content' ],
 					],
 				],
 			],
