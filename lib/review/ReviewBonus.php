@@ -94,6 +94,18 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
+			legalDebug::debug( [
+				'$node->textContent' => substr( $node->textContent, 0, 30 ),
+				
+				'$permission_title' => ( $permission_title ? 'true' : 'false' ),
+				
+				'$permission_description' => ( $permission_description ? 'true' : 'false' ),
+
+				'$permission_content' => ( $permission_content ? 'true' : 'false' ),
+
+				'$permission_last' => ( $permission_last ? 'true' : 'false' ),
+			] );
+
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
@@ -116,7 +128,7 @@ class ReviewBonus
 
 				$args = [];
 				
-				$args[ 'title' ] = ToolEncode::encode( $node->nodeValue );
+				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
 
 				$args[ 'class' ] = $class;
 
@@ -125,7 +137,7 @@ class ReviewBonus
 
 			if ( $permission_description ) {
 				
-				$args[ 'description' ] = ToolEncode::encode( $node->nodeValue );
+				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
 			}
 
 			if ( $permission_content ) {
