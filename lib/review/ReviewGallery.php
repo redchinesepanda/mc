@@ -67,6 +67,12 @@ class ReviewGallery
     }
 
     public static function get( $ids ) {
+        LegalDebug::debug( [
+            'function' => 'get',
+
+            '$ids' => $ids,
+        ] );
+
         $args = [];
 
         foreach ( $ids as $id ) {
