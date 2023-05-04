@@ -196,8 +196,10 @@ class ReviewBonus
     {
 		LegalDebug::debug( [
 			'$args' => $args,
+
+			'self::get_bonus( $args )' => self::get_bonus( $args ),
 		] );
-		
+
 		ob_start();
 
         load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
