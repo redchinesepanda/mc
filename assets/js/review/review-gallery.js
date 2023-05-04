@@ -86,6 +86,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log ( 'item: ' + item );
 
+		console.log ( 'item.dataset.id: ' + item.dataset.id );
+
 		let content = document.querySelector( '.tcb-post-content' );
 		
 		let popup = content.querySelector( '.legal-gallery' );
