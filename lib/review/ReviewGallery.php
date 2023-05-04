@@ -42,7 +42,7 @@ class ReviewGallery
 
         add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
 
-        add_image_size( self::SIZE[ 'lightbox' ], 9999, 619, false );
+        add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
