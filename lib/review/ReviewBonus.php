@@ -163,6 +163,8 @@ class ReviewBonus
 			'$args' => $args,
 
 			'$group' => $group,
+
+			'empty( $group )' => ( empty( $group ) ? 'true' : 'false' ),
 		] );
         
         if( $group ) {
