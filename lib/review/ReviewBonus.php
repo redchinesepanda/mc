@@ -349,7 +349,7 @@ class ReviewBonus
 						
 						'selector' => 'p',
 
-						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'description' ],
+						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'description' ],
 					],
 				],
 			],
