@@ -48,7 +48,7 @@ class ReviewGallery
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        add_filter( 'post_gallery', 'wp_kama_post_gallery_filter', 10, 3 );
+        add_filter( 'post_gallery', [ $handler, 'wp_kama_post_gallery_filter' ], 10, 3 );
 
         // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
     }
