@@ -110,6 +110,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.dataset.gallery = item.dataset.gallery;
 
+		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling ); 
+
 		let dataset = item.nextSibling.dataset;
 		
 		if ( typeof dataset !== 'undefined' ) {
