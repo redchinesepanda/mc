@@ -16,10 +16,12 @@ class LegalDOM
 
 		$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
 
-		foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
-			$node = $parent->ownerDocument->importNode( $node, true );
+		if ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes ) {
+			foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
+				$node = $parent->ownerDocument->importNode( $node, true );
 
-			$parent->appendChild( $node );
+				$parent->appendChild( $node );
+			}
 		}
 	}
 }
