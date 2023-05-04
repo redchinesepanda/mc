@@ -39,15 +39,13 @@ class ReviewMain
 
     public static function register_inline_script()
     {
-        $handler = new self();
-
         $name = 'legal-schema';
 
         wp_register_script( $name, false, [], false, true );
 
         wp_enqueue_script( $name );
 
-        wp_add_inline_script( $name, [ $handler, 'schema' ] );
+        wp_add_inline_script( $name, self::schema() );
     }
 
     public static function register()
