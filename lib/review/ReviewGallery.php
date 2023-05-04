@@ -84,7 +84,7 @@ class ReviewGallery
 
             $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
 
-            $alt = ( !empty( meta_value ) ? meta_value : $caption );
+            $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
 
             $args[] = [
                 'src' => $review[ 0 ],
@@ -117,7 +117,7 @@ class ReviewGallery
         if ( !empty( $attr[ 'ids' ] ) ) {
             $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
         }
-        
+
         return $output;
     }
 
