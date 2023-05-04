@@ -1,11 +1,9 @@
-<?php if( !empty( $args ) ): ?>
-    <div class="legal-gallery">
-        <?php foreach( $args as $image ): ?>
-            <div class="gallery-item">
-                <a href="<?php echo esc_url( $image[ 'url' ] ); ?>">
-                     <img src="<?php echo esc_url( $image[ 'sizes' ][ 'thumbnail' ] ); ?>" alt="<?php echo esc_attr( $image[ 'alt' ] ); ?>" />
-                </a>
-                <p><?php echo esc_html( $image[ 'caption' ] ); ?></p>
+<?php if( !empty( $images ) ): ?>
+    <div class="legal-imageset">
+        <?php foreach( $images as $image ): ?>
+            <div class="imageset-item">
+                <img class="item-image" src="<?php echo $image[ 'src' ]; ?>" alt="<?php echo $image[ 'alt' ]; ?>" width="<?php echo $image[ 'width' ]; ?>" height="<?php echo $image[ 'height' ]; ?>" />
+                <div class="item-caption"><?php echo esc_html( $image[ 'caption' ] ); ?></div>
             </div>
         <?php endforeach; ?>
     </div>

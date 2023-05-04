@@ -66,6 +66,37 @@ class ReviewGallery
         ] );
     }
 
+    public static function get( $ids ) {
+        $args = [];
+
+        foreach ( $ids as $id ) {
+            $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
+
+            $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
+
+            $caption = wp_get_attachment_caption( $id );
+
+            $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
+
+            $alt = ( !empty( meta_value ) ? meta_value : $caption );
+
+            $args[] = [
+                'src' => $review[ 0 ],
+
+                'width' => $review[ 1 ],
+
+                'height' => $review[ 2 ],
+
+                'data-src' => $lightbox[ 0 ],
+
+                'caption' => $caption,
+
+                'alt' => $alt,
+            ];
+        }
+
+        return $args;
+    }
     public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
         LegalDebug::debug( [
             'function' => 'wp_kama_post_gallery_filter',
@@ -77,55 +108,25 @@ class ReviewGallery
             '$instance' => $instance,
         ] );
         
-        $output = '<div class="legal-imageset">test</div>';
+        $output = self::render( self::get( $attr[ 'ids' ] ) );
 
         return $output;
     }
 
-    // function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+    const TEMPLATE = [
+        'gallery' => LegalMain::LEGAL_PATH . '/template-parts/review/review-gallery.php',
+    ];
 
-    //     if ( !is_admin() ) {
-    //         $url = wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] );
+    public static function render( $args )
+    {
+        ob_start();
 
-    //         if ( $url !== false ) {
-    //             $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
+        load_template( self::TEMPLATE[ 'gallery' ], false, $args );
 
-    //             $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
+        $output = ob_get_clean();
 
-    //             $item = [
-    //                 'url' => $url,
-
-    //                 'descriptor' => 'w',
-
-    //                 'value' => $value,
-    //             ];
-
-    //             $sources[ $value ] = $item;
-    //         }
-
-    //         // LegalDebug::debug( [
-    //         //     'function' => 'wp_kama_calculate_image_srcset_filter',
-
-    //         //     // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
-
-    //         //     // '$value' => $value,
-
-    //         //     // '$item' => $item,
-
-    //         //     '$sources' => $sources,
-                
-    //         //     // '$size_array' => $size_array,
-
-    //         //     // '$image_src' => $image_src,
-
-    //         //     // '$image_meta' => $image_meta,
-                
-    //         //     // '$attachment_id' => $attachment_id,
-    //         // ] );
-    //     }
-
-    //     return $sources;
-    // }
+        return $output;
+    }
 }
 
 ?>
