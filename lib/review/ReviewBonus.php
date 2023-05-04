@@ -97,7 +97,7 @@ class ReviewBonus
 			legalDebug::debug( [
 				'function' => 'get_content',
 
-				'$node->textContent' => substr( $node->textContent, 0, 30 ),
+				'$node->textContent' => substr( $node->textContent, 0, 10 ),
 
 				'$class' => $class,
 
@@ -109,7 +109,7 @@ class ReviewBonus
 
 				'$permission_last' => ( $permission_last ? 'true' : 'false' ),
 			] );
-			
+
 			if ( $permission_description ) {
 				
 				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
