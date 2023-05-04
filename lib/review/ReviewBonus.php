@@ -170,6 +170,10 @@ class ReviewBonus
 	public static function get_bonus( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
+
+		LegalDebug::debug( [
+			'$args' => $args,
+		] );
 		
 		// if ( $group ) {
 			return [
