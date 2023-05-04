@@ -4,7 +4,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function popupNext( event )
 	{
-		let gallery = document.getElementById( event.currentTarget.dataset.gallery );
+		let item = event.currentTarget;
+		
+		console.log( 'item: ' + item );
+		
+		console.log( 'item.dataset.imageset: ' + item.dataset.imageset );
+
+		let imageset = document.getElementById( event.currentTarget.dataset.imageset );
 
 		let next = event.currentTarget.dataset.next;
 
@@ -98,7 +104,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let left = popup.querySelector( '.legal-left' );
 
-		left.dataset.gallery = item.dataset.gallery;
+		left.dataset.imageset = item.dataset.imageset;
 
 		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling ); 
 
@@ -108,7 +114,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let right = popup.querySelector( '.legal-right' );
 
-		right.dataset.gallery = item.dataset.gallery;
+		right.dataset.imageset = item.dataset.imageset;
 
 		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling ); 
 
@@ -151,22 +157,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	return result;
 	// }
 
-	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( gallery, index ) {
-		gallery.dataset.id = index;
+	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( imageset, index ) {
+		imageset.id = 'imageset-' + index;
 
-		gallery.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
+		imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
 
-			item.dataset.gallery = gallery.dataset.id;
+			item.dataset.imageset = imageset.dataset.id;
 
 			item.dataset.id = index;
 
 			item.addEventListener( 'click', popup, false );
 
 			item.addEventListener( 'click', popupUpdate, false );
-
-			// console.log( 'item.dataset.gallery: ' + item.dataset.gallery );
-
-			// console.log( 'item.dataset.id: ' + item.dataset.id );
 		} );
 	} );
 
