@@ -157,14 +157,16 @@ class ReviewBonus
 	{
 		$group = get_field( ReviewAbout::FIELD );
 		
-		if ( $group ) {
+		// if ( $group ) {
 			return [
-				'src' => $group[ 'about-logo-square' ],
+				// 'src' => $group[ 'about-logo-square' ],
+				
+				'src' => ( !empty( $group[ 'about-logo-square' ] ) ? $group[ 'about-logo-square' ] : '' ),
 
 				'title' => [
 					'href' => self::check_url_review(),
 
-					'text' => $group[ 'about-title' ],
+					'text' => ( !empty( $group[ 'about-title' ] ? $group[ 'about-title' ] : '' ),
 				],
 
 				'name' => $args[ 'title' ],
@@ -177,7 +179,7 @@ class ReviewBonus
 
 				'content' => $args[ 'content' ],
 			];
-		}
+		// }
 
 		return [];
 	}
