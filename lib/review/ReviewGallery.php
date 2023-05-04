@@ -77,7 +77,7 @@ class ReviewGallery
             '$instance' => $instance,
         ] );
         
-        $output = 'test';
+        $output = '<div>test</div>';
 
         return $output;
     }
