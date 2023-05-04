@@ -49,6 +49,16 @@ class ReviewGallery
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
         // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
+
+        add_filter('max_srcset_image_width', function( $max_srcset_image_width, $size_array ){
+            LegalDebug::debug( [
+                '$max_srcset_image_width' => $max_srcset_image_width,
+
+                '$size_array' => $size_array,
+            ] );
+
+            return 2000;
+        }, 10, 2);
     }
 
     const FIELD = [
