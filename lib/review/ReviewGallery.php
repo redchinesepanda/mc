@@ -67,12 +67,6 @@ class ReviewGallery
     }
 
     public static function get( $ids ) {
-        LegalDebug::debug( [
-            'function' => 'get',
-
-            '$ids' => $ids,
-        ] );
-
         $args = [];
 
         foreach ( $ids as $id ) {
@@ -104,16 +98,6 @@ class ReviewGallery
         return $args;
     }
     public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
-        LegalDebug::debug( [
-            'function' => 'wp_kama_post_gallery_filter',
-
-            '$output' => $output,
-
-            '$attr' => $attr,
-
-            '$instance' => $instance,
-        ] );
-
         if ( !empty( $attr[ 'ids' ] ) ) {
             $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
         }
@@ -127,19 +111,11 @@ class ReviewGallery
 
     public static function render( $args )
     {
-        LegalDebug::debug( [
-            'function' => 'render',
-
-            '$args' => $args,
-        ] );
-
         ob_start();
 
         load_template( self::TEMPLATE[ 'gallery' ], false, $args );
 
-        $output = ob_get_clean();
-
-        return $output;
+        return ob_get_clean();
     }
 }
 
