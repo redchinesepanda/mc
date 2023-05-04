@@ -159,8 +159,6 @@ class ReviewBonus
 		
 		// if ( $group ) {
 			return [
-				// 'src' => $group[ 'about-logo-square' ],
-				
 				'src' => ( !empty( $group[ 'about-logo-square' ] ) ? $group[ 'about-logo-square' ] : '' ),
 
 				'title' => [
@@ -177,7 +175,7 @@ class ReviewBonus
 					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
 				],
 
-				'content' => $args[ 'content' ],
+				'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
 			];
 		// }
 
