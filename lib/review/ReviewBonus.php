@@ -155,11 +155,11 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'get_bonus',
+		LegalDebug::debug( [
+			'function' => 'get_bonus',
 
-		// 	'$args' => $args,
-		// ] );
+			'$args' => $args,
+		] );
 
 		$group = get_field( ReviewAbout::FIELD );
         
@@ -196,13 +196,13 @@ class ReviewBonus
 
     public static function render_bonus( $args )
     {
-		LegalDebug::debug( [
-			'function' => 'render_bonus',
+		// LegalDebug::debug( [
+		// 	'function' => 'render_bonus',
 
-			'$args' => $args,
+		// 	'$args' => $args,
 
-			'self::get_bonus( $args )' => self::get_bonus( $args ),
-		] );
+		// 	'self::get_bonus( $args )' => self::get_bonus( $args ),
+		// ] );
 
 		ob_start();
 
