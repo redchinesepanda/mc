@@ -114,7 +114,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let dataset = item.nextSibling.dataset;
 		
-		if ( typeof dataset !== 'undefined' ) {
+		// if ( typeof dataset !== 'undefined' ) {
+		if ( item.nextElementSibling !== null ) {
 			right.dataset.next = item.nextSibling.dataset.id;
 		}
 	}
