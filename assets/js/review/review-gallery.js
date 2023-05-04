@@ -88,13 +88,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		let popup = content.querySelector( '.legal-gallery' );
 		
-		let url = event.currentTarget.querySelector( '.item-image' ).dataset.src;
+		let url = item.querySelector( '.item-image' ).dataset.src;
 
 		preload_image( url, popup );
 
 		let left = popup.querySelector( '.legal-left' );
 
-		left.dataset.gallery = figure.dataset.gallery;
+		left.dataset.gallery = item.dataset.gallery;
 
 		if ( item.previousSibling !== null ) {
 			left.dataset.next = item.previousSibling.dataset.id;
@@ -155,9 +155,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			item.addEventListener( 'click', popupUpdate, false );
 
-			console.log( 'item.dataset.gallery: ' + item.dataset.gallery );
+			// console.log( 'item.dataset.gallery: ' + item.dataset.gallery );
 
-			console.log( 'item.dataset.id: ' + item.dataset.id );
+			// console.log( 'item.dataset.id: ' + item.dataset.id );
 		} );
 	} );
 
