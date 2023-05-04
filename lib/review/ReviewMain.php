@@ -50,9 +50,9 @@ class ReviewMain
         $post = get_post();
 
         if ( !empty( $post ) ) {
-            LegalDebug::debug( [
-                '$post' => $post,
-            ] );
+            // LegalDebug::debug( [
+            //     '$post' => $post,
+            // ] );
 
             wp_script_add_data( $name, 'data', $post->ID . '-' . $post->post_type . '-legal' );
         }
