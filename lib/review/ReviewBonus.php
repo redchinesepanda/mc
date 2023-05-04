@@ -305,9 +305,9 @@ class ReviewBonus
 	{
 		$group = get_field( ReviewAbout::FIELD );
         
-        if( $group ) {
+        // if( $group ) {
 			return [
-				'src' => $group[ self::GROUP[ 'logo' ] ],
+				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
 				'review' => [
 					'href' => self::check_url_review(),
@@ -317,7 +317,7 @@ class ReviewBonus
 
 				'title' => $args[ 'title' ],
 
-				'description' => $args[ 'description' ],
+				'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
 
 				'get' => [
 					'href' => self::check_url_get(),
@@ -325,9 +325,9 @@ class ReviewBonus
 					'text' => __( 'Get Bonus', ToolLoco::TEXTDOMAIN ),
 				],
 			];
-		}
+		// }
 
-		return [];
+		// return [];
 	}
 
     public static function render_billet( $args )
