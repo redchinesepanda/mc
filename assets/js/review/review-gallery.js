@@ -82,38 +82,32 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	async function popupUpdate( event )
 	{
-		let figure = event.currentTarget;
+		let item = event.currentTarget;
 
 		let content = document.querySelector( '.tcb-post-content' );
 		
 		let popup = content.querySelector( '.legal-gallery' );
-
-		// let url = parse_srcset( figure.querySelector( 'img' ).getAttribute( 'srcset' ) );
 		
 		let url = event.currentTarget.querySelector( '.item-image' ).dataset.src;
 
 		preload_image( url, popup );
-		
-		// popup.style.backgroundImage = `url( ${ url } )`;
-
-		// await loadImage( url, popup );
 
 		let left = popup.querySelector( '.legal-left' );
 
 		left.dataset.gallery = figure.dataset.gallery;
 
-		if ( figure.previousSibling !== null ) {
-			left.dataset.next = figure.previousSibling.dataset.id;
+		if ( item.previousSibling !== null ) {
+			left.dataset.next = item.previousSibling.dataset.id;
 		}
 
 		let right = popup.querySelector( '.legal-right' );
 
-		right.dataset.gallery = figure.dataset.gallery;
+		right.dataset.gallery = item.dataset.gallery;
 
-		let dataset = figure.nextSibling.dataset;
+		let dataset = item.nextSibling.dataset;
 		
 		if ( typeof dataset !== 'undefined' ) {
-			right.dataset.next = figure.nextSibling.dataset.id;
+			right.dataset.next = item.nextSibling.dataset.id;
 		}
 	}
 
@@ -152,6 +146,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		gallery.dataset.id = index;
 
 		gallery.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
+
 			item.dataset.gallery = gallery.dataset.id;
 
 			item.dataset.id = index;
@@ -159,6 +154,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			item.addEventListener( 'click', popup, false );
 
 			item.addEventListener( 'click', popupUpdate, false );
+
+			console.log( 'item.dataset.gallery: ' + item.dataset.gallery );
+
+			console.log( 'item.dataset.id: ' + item.dataset.id );
 		} );
 	} );
 
