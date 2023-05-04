@@ -4,20 +4,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function popupNext( event )
 	{
-		let item = event.currentTarget;
+		let button = event.currentTarget;
 		
-		console.log( 'item: ' + item );
+		console.log( 'button: ' + button );
 		
-		console.log( 'item.dataset.imageset: ' + item.dataset.imageset );
+		console.log( 'button.dataset.imageset: ' + button.dataset.imageset );
 
-		let imageset = document.getElementById( item.dataset.imageset );
+		let imageset = document.getElementById( button.dataset.imageset );
 
-		let next = item.dataset.next;
+		let next = button.dataset.next;
 
 		if( typeof next !== 'undefined' ) {
-			let figure = imageset.querySelector( 'figure[data-id="' + item.dataset.next + '"]' );
+			let item = imageset.querySelector( '.imageset-item[data-id="' + next + '"]' );
 
-			figure.click();
+			item.click();
 		}
 	}
 
@@ -114,11 +114,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.dataset.imageset = item.dataset.imageset;
 
-		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling ); 
+		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling );
 
-		// let dataset = item.nextSibling.dataset;
-		
-		// if ( typeof dataset !== 'undefined' ) {
 		if ( item.nextElementSibling !== null ) {
 			right.dataset.next = item.nextElementSibling.dataset.id;
 		}
