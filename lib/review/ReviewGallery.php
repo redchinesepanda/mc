@@ -48,17 +48,9 @@ class ReviewGallery
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
+        add_filter( 'post_gallery', 'wp_kama_post_gallery_filter', 10, 3 );
 
-        // add_filter('max_srcset_image_width', function( $max_srcset_image_width, $size_array ){
-        //     LegalDebug::debug( [
-        //         '$max_srcset_image_width' => $max_srcset_image_width,
-
-        //         '$size_array' => $size_array,
-        //     ] );
-
-        //     return 2000;
-        // }, 10, 2);
+        // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
     }
 
     const FIELD = [
@@ -74,50 +66,63 @@ class ReviewGallery
         ] );
     }
 
-    function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+    public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
+        LegalDebug::debug( [
+            'function' => 'wp_kama_post_gallery_filter',
 
-        if ( !is_admin() ) {
-            $url = wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] );
+            '$output' => $output,
 
-            if ( $url !== false ) {
-                $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
+            '$attr' => $attr,
 
-                $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
-
-                $item = [
-                    'url' => $url,
-
-                    'descriptor' => 'w',
-
-                    'value' => $value,
-                ];
-
-                $sources[ $value ] = $item;
-            }
-
-            // LegalDebug::debug( [
-            //     'function' => 'wp_kama_calculate_image_srcset_filter',
-
-            //     // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
-
-            //     // '$value' => $value,
-
-            //     // '$item' => $item,
-
-            //     '$sources' => $sources,
-                
-            //     // '$size_array' => $size_array,
-
-            //     // '$image_src' => $image_src,
-
-            //     // '$image_meta' => $image_meta,
-                
-            //     // '$attachment_id' => $attachment_id,
-            // ] );
-        }
-
-        return $sources;
+            '$instance' => $instance,
+        ] );
+        return $output;
     }
+
+    // function wp_kama_calculate_image_srcset_filter( $sources, $size_array, $image_src, $image_meta, $attachment_id ){
+
+    //     if ( !is_admin() ) {
+    //         $url = wp_get_attachment_image_url( $attachment_id, self::SIZE[ 'lightbox' ] );
+
+    //         if ( $url !== false ) {
+    //             $sizes = wp_get_attachment_image_sizes( $attachment_id, self::SIZE[ 'lightbox' ] );
+
+    //             $value = str_replace( 'px', '', explode( ', ', $sizes )[ 1 ] );
+
+    //             $item = [
+    //                 'url' => $url,
+
+    //                 'descriptor' => 'w',
+
+    //                 'value' => $value,
+    //             ];
+
+    //             $sources[ $value ] = $item;
+    //         }
+
+    //         // LegalDebug::debug( [
+    //         //     'function' => 'wp_kama_calculate_image_srcset_filter',
+
+    //         //     // 'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
+
+    //         //     // '$value' => $value,
+
+    //         //     // '$item' => $item,
+
+    //         //     '$sources' => $sources,
+                
+    //         //     // '$size_array' => $size_array,
+
+    //         //     // '$image_src' => $image_src,
+
+    //         //     // '$image_meta' => $image_meta,
+                
+    //         //     // '$attachment_id' => $attachment_id,
+    //         // ] );
+    //     }
+
+    //     return $sources;
+    // }
 }
 
 ?>
