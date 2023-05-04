@@ -190,7 +190,11 @@ class ReviewBonus
 
     public static function render_bonus( $args )
     {
-        ob_start();
+		LegalDebug::debug( [
+			'self::get_bonus( $args )' => self::get_bonus( $args ),
+		] );
+        
+		ob_start();
 
         load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
 
