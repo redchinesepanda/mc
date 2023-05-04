@@ -127,6 +127,12 @@ class ReviewGallery
 
     public static function render( $args )
     {
+        LegalDebug::debug( [
+            'function' => 'render',
+
+            '$args' => $args,
+        ] );
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'gallery' ], false, $args );
