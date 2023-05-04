@@ -113,9 +113,11 @@ class ReviewGallery
 
             '$instance' => $instance,
         ] );
-        
-        $output = self::render( self::get( $attr[ 'ids' ] ) );
 
+        if ( !empty( $attr[ 'ids' ] ) ) {
+            $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
+        }
+        
         return $output;
     }
 
