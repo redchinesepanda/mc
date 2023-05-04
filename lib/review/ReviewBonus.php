@@ -158,7 +158,7 @@ class ReviewBonus
 		LegalDebug::debug( [
 			'$args' => $args,
 		] );
-		
+
 		$group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
@@ -194,6 +194,10 @@ class ReviewBonus
 
     public static function render_bonus( $args )
     {
+		LegalDebug::debug( [
+			'$args' => $args,
+		] );
+		
 		ob_start();
 
         load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
