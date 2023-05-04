@@ -77,7 +77,7 @@ class ReviewGallery
             '$instance' => $instance,
         ] );
         
-        $output = '<div class="legal-gallery">test</div>';
+        $output = '<div class="legal-imageset">test</div>';
 
         return $output;
     }
