@@ -96,7 +96,7 @@ class ReviewBonus
 
 			legalDebug::debug( [
 				'function' => 'get_content',
-				
+
 				'$node->textContent' => substr( $node->textContent, 0, 30 ),
 
 				'$class' => $class,
@@ -109,6 +109,17 @@ class ReviewBonus
 
 				'$permission_last' => ( $permission_last ? 'true' : 'false' ),
 			] );
+			
+			if ( $permission_description ) {
+				
+				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
+			}
+
+			if ( $permission_content ) {
+				$node->removeAttribute( 'class' );
+
+				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
+			}
 
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
@@ -143,17 +154,6 @@ class ReviewBonus
 				$args[ 'class' ] = $class;
 
 				$replace = $node;
-			}
-
-			if ( $permission_description ) {
-				
-				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
-			}
-
-			if ( $permission_content ) {
-				$node->removeAttribute( 'class' );
-
-				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( $permission_description || $permission_content ) {
