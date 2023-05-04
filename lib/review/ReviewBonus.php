@@ -156,6 +156,8 @@ class ReviewBonus
 	public static function get_bonus( $args )
 	{
 		LegalDebug::debug( [
+			'function' => 'get_bonus',
+
 			'$args' => $args,
 		] );
 
@@ -195,6 +197,8 @@ class ReviewBonus
     public static function render_bonus( $args )
     {
 		LegalDebug::debug( [
+			'function' => 'render_bonus',
+
 			'$args' => $args,
 
 			'self::get_bonus( $args )' => self::get_bonus( $args ),
