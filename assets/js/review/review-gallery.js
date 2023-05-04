@@ -84,6 +84,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let item = event.currentTarget;
 
+		console.log ( 'item: ' + item );
+
 		let content = document.querySelector( '.tcb-post-content' );
 		
 		let popup = content.querySelector( '.legal-gallery' );
