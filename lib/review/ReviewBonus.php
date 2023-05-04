@@ -96,7 +96,9 @@ class ReviewBonus
 
 			legalDebug::debug( [
 				'$node->textContent' => substr( $node->textContent, 0, 30 ),
-				
+
+				'$class' => $class,
+
 				'$permission_title' => ( $permission_title ? 'true' : 'false' ),
 				
 				'$permission_description' => ( $permission_description ? 'true' : 'false' ),
