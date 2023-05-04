@@ -80,6 +80,8 @@ class ReviewGallery
             LegalDebug::debug( [
                 'function' => 'wp_kama_calculate_image_srcset_filter',
 
+                'wp_get_registered_image_subsizes()' => wp_get_registered_image_subsizes(),
+
                 '$sources' => $sources,
                 
                 '$size_array' => $size_array,
