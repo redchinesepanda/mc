@@ -54,7 +54,7 @@ class ReviewMain
                 '$post' => $post,
             ] );
 
-            wp_script_add_data( $name, 'data-schema', $post->ID . '-' . $post->post_type . '-legal' );
+            wp_script_add_data( $name, 'data', $post->ID . '-' . $post->post_type . '-legal' );
         }
     }
 
