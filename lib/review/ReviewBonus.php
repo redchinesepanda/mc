@@ -94,21 +94,21 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
-			legalDebug::debug( [
-				'function' => 'get_content',
+			// legalDebug::debug( [
+			// 	'function' => 'get_content',
 
-				'$node->textContent' => substr( $node->textContent, 0, 10 ),
+			// 	'$node->textContent' => substr( $node->textContent, 0, 10 ),
 
-				'$class' => $class,
+			// 	'$class' => $class,
 
-				'$permission_title' => ( $permission_title ? 'true' : 'false' ),
+			// 	'$permission_title' => ( $permission_title ? 'true' : 'false' ),
 				
-				'$permission_description' => ( $permission_description ? 'true' : 'false' ),
+			// 	'$permission_description' => ( $permission_description ? 'true' : 'false' ),
 
-				'$permission_content' => ( $permission_content ? 'true' : 'false' ),
+			// 	'$permission_content' => ( $permission_content ? 'true' : 'false' ),
 
-				'$permission_last' => ( $permission_last ? 'true' : 'false' ),
-			] );
+			// 	'$permission_last' => ( $permission_last ? 'true' : 'false' ),
+			// ] );
 
 			if ( $permission_description ) {
 				
@@ -124,11 +124,11 @@ class ReviewBonus
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
-				LegalDebug::debug( [
-					'function' => 'get_content',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_content',
 		
-					'$args' => $args,
-				] );
+				// 	'$args' => $args,
+				// ] );
 
 				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 					$template = self::render_billet( $args );
