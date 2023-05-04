@@ -5,10 +5,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function popupNext( event )
 	{
 		let button = event.currentTarget;
-		
-		console.log( 'button: ' + button );
-		
-		console.log( 'button.dataset.imageset: ' + button.dataset.imageset );
 
 		let imageset = document.getElementById( button.dataset.imageset );
 
@@ -59,25 +55,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	// async function loadImage( url, elem ) {
-	// 	console.log( 'review-gallery loadImage url: ' + url );
-
-	// 	return new Promise( ( resolve, reject ) => {
-	// 		elem.onload = () => resolve( elem );
-
-	// 		elem.onerror = reject;
-
-	// 		elem.style.backgroundImage = `url( ${ url } )`;
-	// 	} );
-	// }
-
 	function preload_image( url, popup )
 	{
 		let img = new Image();
 
-		img.onload = function() {
-			// image.src = this.src;
-
+		img.onload = function()
+		{
 			popup.style.backgroundImage = 'url( \'' + this.src + '\' )';
 		};
 	  
@@ -87,10 +70,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	async function popupUpdate( event )
 	{
 		let item = event.currentTarget;
-
-		console.log ( 'item: ' + item );
-
-		console.log ( 'item.dataset.id: ' + item.dataset.id );
 
 		let content = document.querySelector( '.tcb-post-content' );
 		
@@ -104,8 +83,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.dataset.imageset = item.dataset.imageset;
 
-		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling );
-
 		if ( item.previousElementSibling !== null ) {
 			left.dataset.next = item.previousElementSibling.dataset.id;
 		}
@@ -114,43 +91,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		right.dataset.imageset = item.dataset.imageset;
 
-		console.log ( 'item.nextElementSibling: ' + item.nextElementSibling );
-
 		if ( item.nextElementSibling !== null ) {
 			right.dataset.next = item.nextElementSibling.dataset.id;
 		}
 	}
-
-	// function parse_srcset( srcset )
-    // {
-	// 	let result = srcset.split( ',' )[ 0 ].split( ' ' )[0];
-
-	// 	let sizes = [];
-
-	// 	srcset.split( ',' ).forEach( function ( item ) {
-	// 		let args = item.split( ' ' );
-
-	// 		let size = args[2];
-
-	// 		if ( typeof size !== 'undefined' ) {
-	// 			sizes.push( size.replace( 'w', '' ) );
-	// 		}
-	// 	} );
-
-	// 	let max = Math.max(...sizes) + 'w';
-
-	// 	console.log( 'max: ' + max );
-
-	// 	srcset.split( ',' ).forEach( function ( item ) {
-	// 		let args = item.split( ' ' );
-
-	// 		if ( args[2] == max ) {
-	// 			result = args[1];
-	// 		}
-	// 	} );
-
-	// 	return result;
-	// }
 
 	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( imageset, index ) {
 		imageset.id = 'imageset-' + index;
