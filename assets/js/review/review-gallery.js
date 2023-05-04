@@ -100,7 +100,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		left.dataset.gallery = item.dataset.gallery;
 
-		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling );
+		console.log ( 'item.previousElementSibling: ' + item.previousElementSibling ); 
 
 		if ( item.previousSibling !== null ) {
 			left.dataset.next = item.previousSibling.dataset.id;
