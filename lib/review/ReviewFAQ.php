@@ -127,10 +127,6 @@ class ReviewFAQ
 
         $nodes = self::get_nodes( $dom );
 
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-        ] );
-
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
@@ -149,25 +145,7 @@ class ReviewFAQ
 			$permission_last = ( $id == $last );
 
 			if ( !empty( $item ) && $permission_description ) {
-                // $item[ 'acceptedAnswer' ][ 'text' ] = [
-                //     // '@type' => 'Answer',
-
-                //     // 'text' =>  preg_replace( '/\s\s+/', '', ToolEncode::encode( $node->textContent ) ),
-                    
-                //     'text' =>  ToolEncode::encode( $dom->saveHTML( $node ) ),
-                // ];
-
-                LegalDebug::debug( [
-                    "text" => $item[ 'acceptedAnswer' ][ 'text' ],
-
-                    'saveHTML' => ToolEncode::encode( $dom->saveHTML( $node ) ),
-                ] );
-
                 $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
-
-                LegalDebug::debug( [
-                    "text" => $item[ 'acceptedAnswer' ][ 'text' ],
-                ] );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
