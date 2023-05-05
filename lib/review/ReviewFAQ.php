@@ -145,6 +145,8 @@ class ReviewFAQ
 			$permission_last = ( $id == $last );
 
 			if ( !empty( $item ) && $permission_description ) {
+                $node->removeAttribute( 'class' );
+                
                 $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
