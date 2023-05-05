@@ -174,9 +174,9 @@ class ReviewMain
     }
 
     public static function add_type_attribute( $tag, $handle, $src ) {
-        // if ( $handle !== self::NAME[ 'schema' ] ) {
-        //     return $tag;
-        // }
+        if ( $handle !== self::NAME[ 'schema' ] ) {
+            return $tag;
+        }
 
         LegalDebug::debug( [
             '$tag' => $tag,
