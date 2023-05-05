@@ -41,6 +41,26 @@ class YoastMain
         // self::debug( $message );
     }
 
+    public static function get_seo_title() {
+        $post = get_post();
+
+        if ( $post ) {
+            return YoastSEO()->meta->for_post( $post->ID )->title;
+        }
+
+        return '';
+    }
+
+    public static function get_seo_description() {
+        $post = get_post();
+
+        if ( $post ) {
+            return YoastSEO()->meta->for_post( $post->ID )->description;
+        }
+
+        return '';
+    }
+
     public static function render()
     {
         load_template( self::TEMPLATE, false, self::get() );

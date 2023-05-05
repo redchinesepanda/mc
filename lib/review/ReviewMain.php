@@ -97,21 +97,38 @@ class ReviewMain
             "@context" => "https://schema.org",
 
             "@graph" => [
-                [
-                    "@type" => "WebPage",
+                // [
+                //     "@type" => "WebPage",
 
-			        "@id" => get_post_permalink(),
+			    //     "@id" => get_post_permalink(),
 
-                    "author" => self::schema_author(),
+                //     "author" => self::schema_author(),
 
-                    "publisher" => self::schema_publisher(),
-                ],
+                //     "publisher" => self::schema_publisher(),
+                // ],
+
+                self::schema_webpage(),
 
                 LegalBreadcrumbsMain::schema(),
 
                 ReviewFAQ::schema(),
             ],
         ] );
+    }
+
+    public static function schema_webpage()
+    {
+        return [
+            "@context" => "https://schema.org",
+
+            "@type" => "WebPage",
+
+            "name" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+            "publisher" => self::schema_publisher(),
+        ];
     }
 
     public static function schema_author()
@@ -142,17 +159,17 @@ class ReviewMain
 
             "name" => "Match.Center",
 
-            "legalName" => "Match.Center",
+            // "legalName" => "Match.Center",
 
-            "logo" => [
-                "@type" => "ImageObject",
+            // "logo" => [
+            //     "@type" => "ImageObject",
 
-                "url" => "https://match.center/wp-content/uploads/match-center.png",
+            //     "url" => "https://match.center/wp-content/uploads/match-center.png",
 
-                "height" => 20,
+            //     "height" => 20,
 
-                "width" => 213,
-            ],
+            //     "width" => 213,
+            // ],
         ];
     }
 }

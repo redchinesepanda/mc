@@ -40,6 +40,8 @@ class ReviewFAQ
     public static function schema()
     {
         return [
+            "@context" => "https://schema.org",
+
             "@type" => "FAQPage",
 
             "mainEntity" => self::get_schema_data(),
