@@ -149,11 +149,15 @@ class ReviewFAQ
 			$permission_last = ( $id == $last );
 
 			if ( !empty( $item ) && $permission_description ) {
-                $item[ 'acceptedAnswer' ][] = [
-                    '@type' => 'Answer',
+                // $item[ 'acceptedAnswer' ][ 'text' ] = [
+                //     // '@type' => 'Answer',
 
-                    'text' =>  preg_replace( '/\s\s+/', '', ToolEncode::encode( $node->textContent ) ),
-                ];
+                //     // 'text' =>  preg_replace( '/\s\s+/', '', ToolEncode::encode( $node->textContent ) ),
+                    
+                //     'text' =>  ToolEncode::encode( $dom->saveHTML( $node ) ),
+                // ];
+
+                $item[ 'acceptedAnswer' ][ 'text' ] += ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
@@ -167,6 +171,10 @@ class ReviewFAQ
                     '@type' => 'Question',
 
                     'name' => ToolEncode::encode( $node->textContent ),
+
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                    ]
                 ];
 			}
 		}
