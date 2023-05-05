@@ -187,7 +187,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         return $output;
     }
 
-    public static function schema()
+    public static function get_schema_data()
     {
         $items = self::get();
 
@@ -206,13 +206,16 @@ class LegalBreadcrumbsMain extends LegalDebug
                 ],
             ];
         }
+    }
 
+    public static function schema()
+    {
         return [
             "@context" => "https://schema.org",
 
             "@type" => "BreadcrumbList",
 
-            "itemListElement" => $itemListElement,
+            "itemListElement" => self::get_schema_data(),
         ];
     }
 }
