@@ -107,7 +107,7 @@ class ReviewMain
                     "publisher" => self::schema_publisher(),
                 ],
 
-                LegalBreadcrumbsMain:schema(),
+                LegalBreadcrumbsMain::schema(),
 
                 ReviewFAQ::schema(),
             ],
