@@ -67,7 +67,7 @@ class ReviewMain
 
         // add_filter( 'script_loader_tag', [ $handler, 'add_type_attribute' ], 10, 3 );
 
-        add_action( 'wp_head', 'print' );
+        add_action( 'wp_head', [ $handler, 'print' ] );
         
         add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
