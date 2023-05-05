@@ -164,6 +164,10 @@ class ReviewFAQ
                 ] );
 
                 $item[ 'acceptedAnswer' ][ 'text' ] += ToolEncode::encode( $dom->saveHTML( $node ) );
+
+                LegalDebug::debug( [
+                    "text" => $item[ 'acceptedAnswer' ][ 'text' ],
+                ] );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
