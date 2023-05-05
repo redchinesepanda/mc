@@ -152,7 +152,7 @@ class ReviewFAQ
                 $item[ 'acceptedAnswer' ][] = [
                     '@type' => 'Answer',
 
-                    'text' =>  ToolEncode::encode( $node->textContent ),
+                    'text' =>  preg_replace( '/\s+/', '', ToolEncode::encode( $node->textContent ) ),
                 ];
 			}
 
