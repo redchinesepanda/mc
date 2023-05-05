@@ -147,6 +147,10 @@ class ReviewFAQ
 			if ( !empty( $item ) && $permission_description ) {
                 $node->removeAttribute( 'class' );
 
+                LegalDebug::debug( [
+                    'saveHTML' => $dom->saveHTML( $node ),
+                ] );
+
                 $node->textContent = preg_replace( '/\r/', ' ', $node->textContent );
 
                 LegalDebug::debug( [
