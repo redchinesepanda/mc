@@ -151,7 +151,9 @@ class ReviewFAQ
                     'saveHTML' => $dom->saveHTML( $node ),
                 ] );
 
-                $node->textContent = preg_replace( '/(\t|\n|\r)/', ' ', $node->textContent );
+                // $node->textContent = preg_replace( '/(\t|\n|\r)/', ' ', $node->textContent );
+                
+                $node->textContent = str_replace( [ '\r', '\n', '\t' ], '', $node->textContent );
 
                 LegalDebug::debug( [
                     'saveHTML' => $dom->saveHTML( $node ),
