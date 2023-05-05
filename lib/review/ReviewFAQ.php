@@ -158,9 +158,9 @@ class ReviewFAQ
                 // ];
 
                 LegalDebug::debug( [
-                    "$item[ 'acceptedAnswer' ][ 'text' ]" => $item[ 'acceptedAnswer' ][ 'text' ],
+                    "text" => $item[ 'acceptedAnswer' ][ 'text' ],
 
-                    'ToolEncode::encode( $dom->saveHTML( $node ) )' => ToolEncode::encode( $dom->saveHTML( $node ) ),
+                    'saveHTML' => ToolEncode::encode( $dom->saveHTML( $node ) ),
                 ] );
 
                 $item[ 'acceptedAnswer' ][ 'text' ] += ToolEncode::encode( $dom->saveHTML( $node ) );
