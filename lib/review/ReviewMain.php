@@ -87,7 +87,7 @@ class ReviewMain
 
     public static function schema()
     {
-        $result = json_encode( [
+        return json_encode( [
             "@context" => "https://schema.org",
 
             "@graph" => [
@@ -100,12 +100,6 @@ class ReviewMain
                 ReviewFAQ::schema(),
             ],
         ] );
-
-        LegalDebug::debug( [
-            '$result' => $result,
-        ] );
-
-        return $result;
     }
 }
 
