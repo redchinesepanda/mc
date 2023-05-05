@@ -163,7 +163,7 @@ class ReviewFAQ
                     'saveHTML' => ToolEncode::encode( $dom->saveHTML( $node ) ),
                 ] );
 
-                $item[ 'acceptedAnswer' ][ 'text' ] += ToolEncode::encode( $dom->saveHTML( $node ) );
+                $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 
                 LegalDebug::debug( [
                     "text" => $item[ 'acceptedAnswer' ][ 'text' ],
