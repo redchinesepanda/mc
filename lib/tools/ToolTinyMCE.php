@@ -15,8 +15,6 @@ class ToolTinyMCE
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_faq' ] );
     }
 
 	public static function table_classes( $settings )
@@ -201,33 +199,6 @@ class ToolTinyMCE
 				'block' => 'p',
 
 				'classes' => 'legal-contextbox',
-			],
-		] );
-	}
-
-	public static function style_formats_faq( $settings )
-	{
-		return self::style_formats_check( $settings, [
-			[
-				'title' => 'FAQ',
-
-				'items' => [
-					[
-						'title' => 'FAQ Title',
-						
-						'selector' => 'h3',
-
-						'classes' => 'legal-faq-title',
-					],
-
-					[
-						'title' => 'FAQ Description',
-						
-						'selector' => 'p,ul,ol,img',
-
-						'classes' => 'legal-faq-description',
-					],
-				],
 			],
 		] );
 	}

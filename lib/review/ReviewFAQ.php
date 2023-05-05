@@ -33,45 +33,9 @@ class ReviewFAQ
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_faq' ] );
     }
-
-    // const FIELD = 'review-faq';
-
-    // const ITEM_TITLE = 'item-title';
-
-    // const ITEM_CONTENT = 'item-content';
-
-    // public static function get()
-    // {
-    //     $faqs = get_field( self::FIELD );
-        
-    //     if ( $faqs ) {
-	// 		foreach( $faqs as $key => $faq ) {
-	// 			$args[] = [
-	// 				'title' => $faq[ self::ITEM_TITLE ],
-
-	// 				'content' => $faq[ self::ITEM_CONTENT ],
-	// 			];
-	// 		}
-
-	// 		return $args;
-	// 	}
-
-    //     return [];
-    // }
-
-    // const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-faq.php';
-
-    // public static function render()
-    // {
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE, false, self::get() );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 
     public static function schema()
     {
@@ -79,20 +43,6 @@ class ReviewFAQ
             "@type" => "FAQPage",
 
             "mainEntity" => self::get_schema_data(),
-
-            // "mainEntity" => [
-            //     [
-            //         "@type" => "Question",
-
-            //         "name" => "What's the best betting site in Nigeria in 2022?",
-
-            //         "acceptedAnswer" => [
-            //             "@type" => "Answer",
-
-            //             "text" => "Every bookmaker has advantages compared to the competitors: high odds, a wide range of markets, good bonus offers, e-sports betting, fast withdrawal and so on. On this page we have highlighted the best betting sites and reputable bookies based on the most important criteria. Still it`s up to you to decide which aspects are more important and which bookmaker is the best.",
-            //         ]
-            //     ],
-            // ],
         ];
     }
     
@@ -104,6 +54,13 @@ class ReviewFAQ
         'description' => 'legal-faq-description',
     ];
 
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
+	}
+
 	public static function clean( &$node )
     {
         if ( $node->hasChildNodes() ) {
@@ -114,13 +71,6 @@ class ReviewFAQ
             $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
         }
     }
-
-	public static function get_nodes( $dom )
-	{
-		$xpath = new DOMXPath( $dom );
-
-		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
-	}
 
     public static function get_schema_data()
 	{
@@ -158,23 +108,7 @@ class ReviewFAQ
 			if ( !empty( $item ) && $permission_description ) {
                 $node->removeAttribute( 'class' );
 
-                LegalDebug::debug( [
-                    'saveHTML' => $dom->saveHTML( $node ),
-                ] );
-
-                // $node->textContent = preg_replace( '/(\t|\n|\r)/', ' ', $node->textContent );
-
-                // if ( $node->hasChildNodes() ) {
-                //     foreach ( $node->childNodes as $child ) {
-                // }
-                
-                // $node->textContent = str_replace( [ '\r', '\n', '\t' ], '', $node->textContent );
-
                 self::clean( $node );
-
-                LegalDebug::debug( [
-                    'saveHTML' => $dom->saveHTML( $node ),
-                ] );
 
                 $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
@@ -203,6 +137,32 @@ class ReviewFAQ
 		return $items;
 	}
 
+	public static function style_formats_faq( $settings )
+	{
+		return ToolTinyMCE::style_formats_check( $settings, [
+			[
+				'title' => 'FAQ',
+
+				'items' => [
+					[
+						'title' => 'FAQ Title',
+						
+						'selector' => 'h3',
+
+						'classes' => self::CSS_CLASS[ 'title' ],
+					],
+
+					[
+						'title' => 'FAQ Description',
+						
+						'selector' => 'p,ul,ol',
+
+						'classes' => self::CSS_CLASS[ 'description' ],
+					],
+				],
+			],
+		] );
+	}
 }
 
 ?>
