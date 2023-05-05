@@ -43,9 +43,11 @@ class ReviewMain
 
     public static function register_inline_script()
     {
-        wp_register_script( self::NAME[ 'schema' ], false, [], false, true );
+        // wp_register_script( self::NAME[ 'schema' ], false, [], false, true );
+        
+        wp_register_script( self::NAME[ 'schema' ], self::schema(), [], false, true );
 
-        wp_add_inline_script( self::NAME[ 'schema' ], self::schema() );
+        // wp_add_inline_script( self::NAME[ 'schema' ], self::schema() );
 
         wp_enqueue_script( self::NAME[ 'schema' ] );
     }
