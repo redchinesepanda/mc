@@ -18,6 +18,8 @@ require_once( 'tools/ToolsMain.php' );
 
 require_once( 'wpml/WPMLMain.php' );
 
+require_once( 'yoast/YoastMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
