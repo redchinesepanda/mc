@@ -128,12 +128,16 @@ class ReviewMain
             "description" => YoastMain::get_seo_description(),
 
             "publisher" => self::schema_publisher(),
+
+            "author" => self::schema_author(),
         ];
     }
 
     public static function schema_author()
     {
         return [
+            "@context" => "https://schema.org",
+
             "@type" => "Person",
 
             "name" => "Andrew Heaford",
@@ -144,17 +148,23 @@ class ReviewMain
 
             "jobTitle" => "Site manager",
 
-            "worksFor" => [
-                "@type" => "Organization",
+            "worksFor" => self::schema_publisher(),
+            
+            // "worksFor" => [
+            //     "@context" => "https://schema.org",
 
-                "name" => "Match.Center",
-            ],
+            //     "@type" => "Organization",
+
+            //     "name" => "Match.Center",
+            // ],
         ];
     }
 
     public static function schema_publisher()
     {
         return [
+            "@context" => "https://schema.org",
+
             "@type" => "Organization",
 
             "name" => "Match.Center",
