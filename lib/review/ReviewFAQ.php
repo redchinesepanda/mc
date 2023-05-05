@@ -147,11 +147,11 @@ class ReviewFAQ
 			if ( !empty( $item ) && $permission_description ) {
                 $node->removeAttribute( 'class' );
 
+                $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
+
                 LegalDebug::debug( [
                     'saveHTML' => $dom->saveHTML( $node ),
                 ] );
-
-                $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
 
                 $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
