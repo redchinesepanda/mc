@@ -174,6 +174,8 @@ class ReviewFAQ
 
                     'acceptedAnswer' => [
                         '@type' => 'Answer',
+
+                        'text' => '',
                     ]
                 ];
 			}
