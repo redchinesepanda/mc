@@ -168,9 +168,9 @@ class ReviewMain
 
                 "contentUrl" => "https://match.center/wp-content/uploads/match-center.png",
 
-                // "height" => 20,
+                "height" => 20,
 
-                // "width" => 213,
+                "width" => 213,
             ],
         ];
     }
