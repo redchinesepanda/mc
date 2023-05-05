@@ -104,6 +104,17 @@ class ReviewFAQ
         'description' => 'legal-faq-description',
     ];
 
+	public static function clean( &$node )
+    {
+        if ( $node->hasChildNodes() ) {
+            foreach ( $node->childNodes as $child ) {
+                self::clean( $child );
+            }
+        } else {
+            $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
+        }
+    }
+
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
@@ -152,8 +163,14 @@ class ReviewFAQ
                 ] );
 
                 // $node->textContent = preg_replace( '/(\t|\n|\r)/', ' ', $node->textContent );
+
+                // if ( $node->hasChildNodes() ) {
+                //     foreach ( $node->childNodes as $child ) {
+                // }
                 
-                $node->textContent = str_replace( [ '\r', '\n', '\t' ], '', $node->textContent );
+                // $node->textContent = str_replace( [ '\r', '\n', '\t' ], '', $node->textContent );
+
+                self::clean( $node );
 
                 LegalDebug::debug( [
                     'saveHTML' => $dom->saveHTML( $node ),
