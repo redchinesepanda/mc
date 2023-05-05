@@ -189,6 +189,24 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function schema()
     {
+        $items = self::get();
+
+        $itemListElement = [];
+
+        foreach ( $items as $item ) {
+            $itemListElement[] = [
+                "@type" => "ListItem",
+
+                "position" => $item[ 'meta' ][ 'content' ],
+
+                "item" => [
+                    "@id" => $item[ 'link' ][ 'href' ],
+
+                    "name" => $item[ 'title' ][ 'text' ],
+                ],
+            ];
+        }
+
         return [
             "@context" => "https://schema.org",
 
