@@ -35,43 +35,43 @@ class ReviewFAQ
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    const FIELD = 'review-faq';
+    // const FIELD = 'review-faq';
 
-    const ITEM_TITLE = 'item-title';
+    // const ITEM_TITLE = 'item-title';
 
-    const ITEM_CONTENT = 'item-content';
+    // const ITEM_CONTENT = 'item-content';
 
-    public static function get()
-    {
-        $faqs = get_field( self::FIELD );
+    // public static function get()
+    // {
+    //     $faqs = get_field( self::FIELD );
         
-        if ( $faqs ) {
-			foreach( $faqs as $key => $faq ) {
-				$args[] = [
-					'title' => $faq[ self::ITEM_TITLE ],
+    //     if ( $faqs ) {
+	// 		foreach( $faqs as $key => $faq ) {
+	// 			$args[] = [
+	// 				'title' => $faq[ self::ITEM_TITLE ],
 
-					'content' => $faq[ self::ITEM_CONTENT ],
-				];
-			}
+	// 				'content' => $faq[ self::ITEM_CONTENT ],
+	// 			];
+	// 		}
 
-			return $args;
-		}
+	// 		return $args;
+	// 	}
 
-        return [];
-    }
+    //     return [];
+    // }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-faq.php';
+    // const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-faq.php';
 
-    public static function render()
-    {
-        ob_start();
+    // public static function render()
+    // {
+    //     ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+    //     load_template( self::TEMPLATE, false, self::get() );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 
     public static function schema()
     {
@@ -114,10 +114,16 @@ class ReviewFAQ
     public static function get_schema_data()
 	{
         if ( !ReviewMain::is_front() ) {
-			return $content;
+			return [];
 		}
 
-		$dom = LegalDOM::get_dom( $content );
+        $post = get_post();
+
+        if ( empty( $post ) ) {
+            return [];
+        }
+
+		$dom = LegalDOM::get_dom( $post->post_content );
 
         $nodes = self::get_nodes( $dom );
 

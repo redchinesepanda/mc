@@ -46,16 +46,6 @@ class ReviewMain
         wp_add_inline_script( $name, self::schema() );
 
         wp_enqueue_script( $name );
-
-        // $post = get_post();
-
-        // if ( !empty( $post ) ) {
-        //     // LegalDebug::debug( [
-        //     //     '$post' => $post,
-        //     // ] );
-
-        //     wp_script_add_data( $name, 'data', $post->ID . '-' . $post->post_type . '-legal' );
-        // }
     }
 
     public static function register()
