@@ -200,7 +200,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                 "position" => $item[ 'meta' ][ 'content' ],
 
                 "item" => [
-                    "@id" => ( !empty( $item[ 'link' ][ 'href' ] ) ? $item[ 'link' ][ 'href' ] : '' ),
+                    "@id" => ( !empty( $item[ 'link' ][ 'href' ] ) ? $item[ 'link' ][ 'href' ] : get_post_permalink() ),
 
                     "name" => $item[ 'title' ][ 'text' ],
                 ],
@@ -212,30 +212,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             "@type" => "BreadcrumbList",
 
-            "itemListElement" => [
-                [
-                    "@type" => "ListItem",
-
-                    "position" => 1,
-
-                    "item" => [
-                        "@id" => "https://example.com/dresses",
-
-                        "name" => "Dresses"
-                    ],
-                ],
-                [
-                    "@type" => "ListItem",
-
-                    "position" => 2,
-
-                    "item" => [
-                        "@id" => "https://example.com/dresses/real",
-
-                        "name" => "Real Dresses"
-                    ]
-                ]
-            ]
+            "itemListElement" => self::schema(),
         ];
     }
 }
