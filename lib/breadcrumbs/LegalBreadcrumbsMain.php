@@ -127,9 +127,11 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $index = 1;
 
-        $items = [];
+        
 
         // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+            
+        $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
@@ -161,15 +163,13 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
             }
-            
-            array_unshift( $items, self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index ) );
 
             $items[] = self::get_item( $post->post_title, '', $index );
         }
 
-        self::debug( [
-            'items' => $items,
-        ] );
+        // self::debug( [
+        //     'items' => $items,
+        // ] );
 
         return $items;
     }
