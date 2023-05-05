@@ -157,9 +157,11 @@ class ReviewFAQ
 			}
 
 			if ( $permission_title ) {
-                $item[ '@type' ] => 'Question',
+                $item = [
+                    '@type' => 'Question',
 
-                $item[ 'name' ] = ToolEncode::encode( $node->textContent );
+                    'name' => ToolEncode::encode( $node->textContent ),
+                ];
 			}
 		}
 
