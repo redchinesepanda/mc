@@ -159,17 +159,19 @@ class ReviewMain
 
             "name" => "Match.Center",
 
-            // "legalName" => "Match.Center",
+            "legalName" => "Match.Center",
 
-            // "logo" => [
-            //     "@type" => "ImageObject",
+            "logo" => [
+                "@context" => "https://schema.org",
 
-            //     "url" => "https://match.center/wp-content/uploads/match-center.png",
+                "@type" => "ImageObject",
 
-            //     "height" => 20,
+                "contentUrl" => "https://match.center/wp-content/uploads/match-center.png",
 
-            //     "width" => 213,
-            // ],
+                // "height" => 20,
+
+                // "width" => 213,
+            ],
         ];
     }
 }
