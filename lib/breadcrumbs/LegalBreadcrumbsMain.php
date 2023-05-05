@@ -200,7 +200,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                 "position" => $item[ 'meta' ][ 'content' ],
 
                 "item" => [
-                    "@id" => $item[ 'link' ][ 'href' ],
+                    "@id" => ( !empty( $item[ 'link' ][ 'href' ] ) ? $item[ 'link' ][ 'href' ] : '' ),
 
                     "name" => $item[ 'title' ][ 'text' ],
                 ],
