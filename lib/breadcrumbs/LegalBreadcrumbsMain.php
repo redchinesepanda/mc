@@ -191,10 +191,10 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         $items = self::get();
 
-        $itemListElement = [];
+        $args = [];
 
         foreach ( $items as $item ) {
-            $itemListElement[] = [
+            $args[] = [
                 "@type" => "ListItem",
 
                 "position" => $item[ 'meta' ][ 'content' ],
@@ -206,6 +206,8 @@ class LegalBreadcrumbsMain extends LegalDebug
                 ],
             ];
         }
+
+        return $args;
     }
 
     public static function schema()
