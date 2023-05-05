@@ -178,13 +178,15 @@ class ReviewMain
             return $tag;
         }
 
-        LegalDebug::debug( [
-            '$tag' => $tag,
+        // LegalDebug::debug( [
+        //     '$tag' => $tag,
             
-            '$handle' => $handle,
+        //     '$handle' => $handle,
 
-            '$src' => $src,
-        ] );
+        //     '$src' => $src,
+        // ] );
+
+        return str_replace( 'text/javascript', 'application/ld+json', $tag );
 
         // $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
 
