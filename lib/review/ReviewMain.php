@@ -87,6 +87,12 @@ class ReviewMain
 
     public static function schema()
     {
+        $post = get_post();
+
+        if ( empty( $post ) ) {
+            return json_encode( [] );
+        }
+
         return json_encode( [
             "@context" => "https://schema.org",
 
@@ -94,12 +100,60 @@ class ReviewMain
                 [
                     "@type" => "WebPage",
 
-			        "@id" => "https://match.center/ng/betting-sites/",
+			        "@id" => get_post_permalink(),
+
+                    "author" => self::schema_author(),
+
+                    "publisher" => self::schema_publisher(),
                 ],
+
+                LegalBreadcrumbsMain:schema(),
 
                 ReviewFAQ::schema(),
             ],
         ] );
+    }
+
+    public static function schema_author()
+    {
+        return [
+            "@type" => "Person",
+
+            "name" => "Andrew Heaford",
+
+            "url" => "https://match.center/ng/about-us/#our-team",
+
+            "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
+
+            "jobTitle" => "Site manager",
+
+            "worksFor" => [
+                "@type" => "Organization",
+
+                "name" => "Match.Center",
+            ],
+        ];
+    }
+
+    public static function schema_publisher()
+    {
+        return [
+            "@type" => "Organization",
+
+            "name" => "Match.Center",
+
+            "legalName" => "Match.Center",
+
+            "logo" => [
+                "@type" => "ImageObject",
+
+                "url" => "https://match.center/wp-content/uploads/match-center.png",
+
+                "height" => 20,
+
+                "width" => 213,
+            ],
+        ];
     }
 }
 
