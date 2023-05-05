@@ -72,6 +72,100 @@ class ReviewFAQ
 
         return $output;
     }
+
+    public static function schema()
+    {
+        return [
+            "@type" => "FAQPage",
+
+            "mainEntity" => self::get_schema_data(),
+
+            // "mainEntity" => [
+            //     [
+            //         "@type" => "Question",
+
+            //         "name" => "What's the best betting site in Nigeria in 2022?",
+
+            //         "acceptedAnswer" => [
+            //             "@type" => "Answer",
+
+            //             "text" => "Every bookmaker has advantages compared to the competitors: high odds, a wide range of markets, good bonus offers, e-sports betting, fast withdrawal and so on. On this page we have highlighted the best betting sites and reputable bookies based on the most important criteria. Still it`s up to you to decide which aspects are more important and which bookmaker is the best.",
+            //         ]
+            //     ],
+            // ],
+        ];
+    }
+    
+    const CSS_CLASS = [
+        'base' => 'legal-faq',
+
+        'title' => 'legal-faq-title',
+
+        'description' => 'legal-faq-description',
+    ];
+
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
+	}
+
+    public static function get_schema_data()
+	{
+        if ( !ReviewMain::is_front() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $nodes = self::get_nodes( $dom );
+
+        LegalDebug::debug( [
+            '$nodes' => $nodes,
+        ] );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		$items = [];
+
+		$last = $nodes->length - 1;
+
+		foreach ( $nodes as $id => $node ) {
+            $class = explode( ' ', $node->getAttribute( 'class' ) );
+
+			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
+
+			$permission_description = ( in_array( self::CSS_CLASS[ 'description' ], $class ) );
+
+			$permission_last = ( $id == $last );
+
+			if ( !empty( $item ) && $permission_description ) {
+                $item[ 'acceptedAnswer' ][] = [
+                    '@type' => 'Answer',
+
+                    'text' =>  ToolEncode::encode( $node->textContent ),
+                ];
+			}
+
+			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+                $items[] = $item;
+
+                $item = null;
+			}
+
+			if ( $permission_title ) {
+                $item[ '@type' ] => 'Question',
+
+                $item[ 'name' ] = ToolEncode::encode( $node->textContent );
+			}
+		}
+
+		return $items;
+	}
+
 }
 
 ?>
