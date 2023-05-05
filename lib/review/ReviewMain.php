@@ -37,15 +37,17 @@ class ReviewMain
         }
     }
 
+    const NAME = [
+        'schema' => 'legal-schema',
+    ];
+
     public static function register_inline_script()
     {
-        $name = 'legal-schema';
+        wp_register_script( self::NAME[ 'schema' ], false, [], false, true );
 
-        wp_register_script( $name, false, [], false, true );
+        wp_add_inline_script( self::NAME[ 'schema' ], self::schema() );
 
-        wp_add_inline_script( $name, self::schema() );
-
-        wp_enqueue_script( $name );
+        wp_enqueue_script( self::NAME[ 'schema' ] );
     }
 
     public static function register()
@@ -55,6 +57,8 @@ class ReviewMain
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_script' ] );
+
+        add_filter( 'script_loader_tag', [ $handler, 'add_type_attribute' ], 10, 3 );
         
         add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
@@ -97,16 +101,6 @@ class ReviewMain
             "@context" => "https://schema.org",
 
             "@graph" => [
-                // [
-                //     "@type" => "WebPage",
-
-			    //     "@id" => get_post_permalink(),
-
-                //     "author" => self::schema_author(),
-
-                //     "publisher" => self::schema_publisher(),
-                // ],
-
                 self::schema_webpage(),
 
                 LegalBreadcrumbsMain::schema(),
@@ -149,14 +143,6 @@ class ReviewMain
             "jobTitle" => "Site manager",
 
             "worksFor" => self::schema_publisher(),
-            
-            // "worksFor" => [
-            //     "@context" => "https://schema.org",
-
-            //     "@type" => "Organization",
-
-            //     "name" => "Match.Center",
-            // ],
         ];
     }
 
@@ -183,6 +169,24 @@ class ReviewMain
                 "width" => '213 px',
             ],
         ];
+    }
+
+    public static function add_type_attribute( $tag, $handle, $src ) {
+        if ( $handle !== self::NAME[ 'schema' ] ) {
+            return $tag;
+        }
+
+        LegalDebug::debug( [
+            '$tag' => $tag,
+            
+            '$handle' => $handle,
+
+            '$src' => $src,
+        ] );
+
+        // $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+
+        return $tag;
     }
 }
 
