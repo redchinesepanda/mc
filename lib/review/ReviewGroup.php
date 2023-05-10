@@ -46,7 +46,7 @@ class ReviewGroup
 
             'tax_query' => [
                 'relation' => 'OR',
-                
+
                 [
                     'taxonomy' => self::TAXONOMY,
 
@@ -63,11 +63,11 @@ class ReviewGroup
             'order' => 'ASC',
         ] );
 
-        LegalDebug::debug( [
-            '$terms' => $terms,
+        // LegalDebug::debug( [
+        //     '$terms' => $terms,
 
-            '$posts' => count( $posts ),
-        ] );
+        //     '$posts' => count( $posts ),
+        // ] );
 
         $items[ 'current' ] = [
             'label' => $post->post_title,
