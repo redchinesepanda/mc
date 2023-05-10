@@ -44,17 +44,17 @@ class ReviewGroup
 
             'exclude' => $post->ID,
 
-            // 'tax_query' => [
-            //     [
-            //         'taxonomy' => self::TAXONOMY,
+            'tax_query' => [
+                [
+                    'taxonomy' => self::TAXONOMY,
 
-            //         'field' => 'term_id',
+                    'field' => 'term_id',
 
-            //         'terms' => $terms,
+                    'terms' => $terms,
 
-            //         'operator' => 'IN',
-            //     ]
-            // ],
+                    'operator' => 'IN',
+                ]
+            ],
 
             'orderby' => 'menu_order',
 
