@@ -108,6 +108,10 @@ class ReviewStats
 	{
 		$post = get_post();
 
+		if ( empty( $post ) ) {
+			return null;
+		}
+
 		$dom = LegalDOM::get_dom( $post->post_content );
 
 		$nodes = self::get_nodes( $dom );
