@@ -6,7 +6,8 @@
 
 /* Review Position */
 
-.tcb-post-content:not( [ style ] ) {
+/* .tcb-post-content:not( [ style ] ) { */
+.tcb-post-content.thrv_wrapper {
     margin-top: 0px;
     margin-bottom: 0px;
     /* padding-top: 30px; */
