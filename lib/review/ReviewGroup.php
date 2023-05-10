@@ -61,6 +61,12 @@ class ReviewGroup
             'order' => 'ASC',
         ] );
 
+        LegalDebug::debug( [
+            '$terms' => $terms,
+
+            '$posts' => $posts,
+        ] );
+
         $items[ 'current' ] = [
             'label' => $post->post_title,
         ];
