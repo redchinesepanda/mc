@@ -45,6 +45,8 @@ class ReviewGroup
             'exclude' => $post->ID,
 
             'tax_query' => [
+                'relation' => 'OR',
+                
                 [
                     'taxonomy' => self::TAXONOMY,
 
