@@ -64,7 +64,7 @@ class ReviewGroup
         LegalDebug::debug( [
             '$terms' => $terms,
 
-            '$posts' => $posts,
+            '$posts' => count( $posts ),
         ] );
 
         $items[ 'current' ] = [
