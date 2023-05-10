@@ -42,7 +42,7 @@ class ReviewGroup
 
             'suppress_filters' => 0,
 
-            'exclude' => $post->ID,
+            // 'exclude' => $post->ID,
 
             'tax_query' => [
                 [
