@@ -29,7 +29,7 @@
 }
 
 .review-about .about-logo {
-    width: 138px;
+    width: inherit;
     height: 45px;
 }
 
@@ -83,7 +83,7 @@
 /* Review About Background */
 
 .review-about .about-logo {
-    background-position: left center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
 }
