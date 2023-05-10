@@ -13,6 +13,10 @@
 
 /* Group Position */
 
+nav.group {
+    padding-bottom: 30px;
+}
+
 .review-group {
     padding: 20px 0px 5px 0px;
 }
