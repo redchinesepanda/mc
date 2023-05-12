@@ -105,7 +105,7 @@ class ReviewHowTo
 			// 			],
 			// 		],
 			// 	],
-			// ],
+			],
 
 			"totalTime" => "P2D",
         ];
