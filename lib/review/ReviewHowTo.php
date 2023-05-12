@@ -12,33 +12,33 @@ class ReviewHowTo
 			"name" => "How to claim the Betfred new customer bonus:",
 
 			"step" => [
-				[
-					"@type" => "HowToStep",
+				// [
+				// 	"@type" => "HowToStep",
 
-					"position" => "1",
+				// 	"position" => "1",
 
-					"itemListElement" => [
-						[
-							"@type" => "HowToDirection",
+				// 	"itemListElement" => [
+				// 		[
+				// 			"@type" => "HowToDirection",
 
-							"text" => "Register for an account with the betting provider",
-						],
-					],
-				],
+				// 			"text" => "Register for an account with the betting provider",
+				// 		],
+				// 	],
+				// ],
 
-				[
-					"@type" => "HowToStep",
+				// [
+				// 	"@type" => "HowToStep",
 
-					"position" => "2",
+				// 	"position" => "2",
 
-					"itemListElement" => [
-						[
-							"@type" => "HowToDirection",
+				// 	"itemListElement" => [
+				// 		[
+				// 			"@type" => "HowToDirection",
 
-							"text" => "Successfully verify your account with the provider",
-						],
-					],
-				],
+				// 			"text" => "Successfully verify your account with the provider",
+				// 		],
+				// 	],
+				// ],
 
 				[
 					"@type" => "HowToSection",
@@ -92,20 +92,20 @@ class ReviewHowTo
 					]
 				],
 
-				[
-					"@type" => "HowToStep",
+			// 	[
+			// 		"@type" => "HowToStep",
 
-					"position" => "4",
+			// 		"position" => "4",
 
-					"itemListElement" => [
-						[
-							"@type" => "HowToDirection",
+			// 		"itemListElement" => [
+			// 			[
+			// 				"@type" => "HowToDirection",
 
-							"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
-						],
-					],
-				],
-			],
+			// 				"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
+			// 			],
+			// 		],
+			// 	],
+			// ],
 
 			"totalTime" => "P2D",
         ];
