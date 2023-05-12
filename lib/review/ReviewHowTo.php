@@ -57,8 +57,6 @@ class ReviewHowTo
 								[
 									"@type" => "HowToDirection",
 
-									"position" => "1",
-
 									"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis"
 								],
 							]
@@ -73,8 +71,6 @@ class ReviewHowTo
 								[
 									"@type" => "HowToDirection",
 
-									"position" => "1",
-
 									"text" => "Nam pellentesque eu nisl id congue."
 								],
 							]
@@ -88,8 +84,6 @@ class ReviewHowTo
 							"itemListElement" => [
 								[
 									"@type" => "HowToDirection",
-
-									"position" => "1",
 
 									"text" => "Maecenas in vulputate ipsum."
 								]
@@ -106,8 +100,6 @@ class ReviewHowTo
 					"itemListElement" => [
 						[
 							"@type" => "HowToDirection",
-
-							"position" => "1",
 
 							"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
 						],
