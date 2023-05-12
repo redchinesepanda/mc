@@ -16,6 +16,8 @@ require_once( 'ReviewStats.php' );
 
 require_once( 'ReviewBonus.php' );
 
+require_once( 'ReviewHowTo.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -117,6 +119,8 @@ class ReviewMain
                 LegalBreadcrumbsMain::schema(),
 
                 ReviewFAQ::schema(),
+
+                ReviewHowTo::schema(),
             ],
         ] );
     }
