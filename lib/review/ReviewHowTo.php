@@ -11,7 +11,7 @@ class ReviewHowTo
 			
 			"name" => "How to claim the Betfred new customer bonus:",
 
-			"step": [
+			"step" => [
 				[
 					"@type" => "HowToStep",
 
