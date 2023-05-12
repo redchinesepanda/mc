@@ -81,13 +81,15 @@ class ReviewHowTo
 
 							"position" => "3",
 
-							"itemListElement" => [
-								[
-									"@type" => "HowToDirection",
+							"name" => "Maecenas in vulputate ipsum.",
 
-									"text" => "Maecenas in vulputate ipsum."
-								]
-							]
+							// "itemListElement" => [
+							// 	[
+							// 		"@type" => "HowToDirection",
+
+							// 		"text" => "Maecenas in vulputate ipsum."
+							// 	]
+							// ]
 						],
 					]
 				],
