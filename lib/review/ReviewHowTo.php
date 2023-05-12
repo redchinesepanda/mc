@@ -81,7 +81,7 @@ class ReviewHowTo
 
 							"position" => "3",
 
-							"name" => "Maecenas in vulputate ipsum.",
+							"text" => "Maecenas in vulputate ipsum.",
 
 							// "itemListElement" => [
 							// 	[
