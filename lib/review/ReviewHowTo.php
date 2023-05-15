@@ -26,19 +26,19 @@ class ReviewHowTo
 				// 	],
 				// ],
 
-				// [
-				// 	"@type" => "HowToStep",
+				[
+					"@type" => "HowToStep",
 
-				// 	"position" => "2",
+					"position" => "2",
 
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToDirection",
+					"itemListElement" => [
+						[
+							"@type" => "HowToDirection",
 
-				// 			"text" => "Successfully verify your account with the provider",
-				// 		],
-				// 	],
-				// ],
+							"text" => "Successfully verify your account with the provider",
+						],
+					],
+				],
 
 				[
 					"@type" => "HowToSection",
