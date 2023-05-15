@@ -73,11 +73,18 @@ class ReviewHowTo
 				[
 					"@type" => "HowToSection",
 
-					"name" => "Successfully verify your account with the provider",
+					// "name" => "Successfully verify your account with the provider",
 
 					"position" => "3",
 
 					"itemListElement" => [
+						[
+							"@type" => "HowToStep",
+
+							"position" => "3",
+
+							"text" => "Successfully verify your account with the provider",
+						],
 					],
 				],
 
