@@ -33,6 +33,10 @@ class ReviewHowTo
 		] );
 
 		foreach ( $nodes as $id => $node ) {
+			if ( $node->hasChildNodes() ) {
+				self::parse( $node->childNodes );
+			}
+
 			LegalDebug::debug( [
 				'function' => 'parse',
 
