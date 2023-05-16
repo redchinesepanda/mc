@@ -35,6 +35,8 @@ class ReviewHowTo
 		foreach ( $nodes as $id => $node ) {
 			LegalDebug::debug( [
 				'function' => 'parse',
+
+				'$id' => $id,
 	
 				'$node' => ToolEncode::encode( $node->textContent ),
 			] );
