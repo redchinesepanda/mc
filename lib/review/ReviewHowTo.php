@@ -32,6 +32,8 @@ class ReviewHowTo
 		// 	'$nodes' => count( $nodes ),
 		// ] );
 
+		$items = [];
+
 		foreach ( $nodes as $id => $node ) {
 
 			if ( $node->hasChildNodes() ) {
@@ -42,6 +44,10 @@ class ReviewHowTo
 				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
 			}
 
+			if ( !empty( $item ) ) {
+				$items[] = $item;
+			}
+
 			// LegalDebug::debug( [
 			// 	'function' => 'parse',
 
@@ -49,9 +55,9 @@ class ReviewHowTo
 	
 			// 	'$node' => ToolEncode::encode( $node->textContent ),
 			// ] );
-
-			return $item;
 		}
+
+		return $items;
 	}
 
 	public static function get_schema_data()
