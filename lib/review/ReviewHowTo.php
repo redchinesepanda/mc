@@ -72,15 +72,18 @@ class ReviewHowTo
 			// ] );
 
 			if ( $node->hasChildNodes() ) {
-				LegalDebug::debug( [
-					'function' => 'parse',
-	
-					'$node->hasChildNodes()' => $node->hasChildNodes(),
-				] );
 
 				// $item[ 'items' ] = self::parse( $node->childNodes );
 
 				$item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
+
+				LegalDebug::debug( [
+					'function' => 'parse',
+
+					'text' => $item[ 'text' ],
+	
+					'$node->hasChildNodes()' => $node->hasChildNodes(),
+				] );
 			}
 
 			$children = $node->getElementsByTagName( 'li' );
