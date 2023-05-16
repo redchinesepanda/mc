@@ -163,7 +163,7 @@ class ReviewHowTo
 				$item = [
 					'name' => ToolEncode::encode( $node->textContent ),
 	
-					// 'items' => [],
+					'items' => [],
 				];
 
 				// LegalDebug::debug( [
