@@ -76,13 +76,13 @@ class ReviewHowTo
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
-			LegalDebug::debug( [
-				'function' => 'get_schema_data',
+			// LegalDebug::debug( [
+			// 	'function' => 'get_schema_data',
 
-				'$id' => $id,
+			// 	'$id' => $id,
 
-				'$node' => ToolEncode::encode( $node->textContent ),
-			] );
+			// 	'$node' => ToolEncode::encode( $node->textContent ),
+			// ] );
 
             $class = explode( ' ', $node->getAttribute( 'class' ) );
 
@@ -133,11 +133,11 @@ class ReviewHowTo
 					'itemListElement' => [],
 				];
 
-				LegalDebug::debug( [
-					'function' => 'get_schema_data',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_schema_data',
 	
-					'$item' => $item,
-				] );
+				// 	'$item' => $item,
+				// ] );
 			}
 		}
 
@@ -147,6 +147,12 @@ class ReviewHowTo
 	public static function schema()
     {
 		$items = self::get_schema_data();
+
+		LegalDebug::debug( [
+			'function' => 'schema',
+
+			'$items' => $items,
+		] );
 
         return [
 			"@context" => "https://schema.org",
