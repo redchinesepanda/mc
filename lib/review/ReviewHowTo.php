@@ -71,19 +71,22 @@ class ReviewHowTo
 				'textContent' => ToolEncode::encode( $node->textContent ),
 			] );
 
-			// // $children = $node->getElementsByTagName( 'li' );
-
 			if ( $node->hasChildNodes() ) {
-			// if ( $children->length != 0 ) {
 				LegalDebug::debug( [
 					'function' => 'parse',
 	
 					'$node->hasChildNodes()' => $node->hasChildNodes(),
 				] );
 
-				$item[ 'items' ] = self::parse( $node->childNodes );
-				
-				// $item[ 'items' ] = self::parse( $children );
+				// $item[ 'items' ] = self::parse( $node->childNodes );
+
+				$item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
+			}
+
+			$children = $node->getElementsByTagName( 'li' );
+			
+			if ( $children->length != 0 ) {	
+				$item[ 'items' ] = self::parse( $children );
 			}
 
 			// if ( !empty( $node->textContent ) ) {
