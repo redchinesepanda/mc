@@ -215,6 +215,17 @@ class ReviewHowTo
 									"position" => "4",
 									"text" => "Maecenas in vulputate ipsum.",
 								],
+								[
+									"@type" => "HowToStep",
+									"position" => "5",
+									"itemListElement" => [
+										[
+											"@type" => "HowToDirection",
+											"position" => "1",
+											"text" => "test",
+										],
+									],
+								],
 							],
 						],
 						[
