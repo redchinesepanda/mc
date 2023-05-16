@@ -67,7 +67,7 @@ class ReviewHowTo
 
 		$item = null;
 
-		$index = 0;
+		$index = 1;
 
 		$last = $nodes->length - 1;
 
@@ -110,11 +110,11 @@ class ReviewHowTo
 				self::parse( $node->childNodes );
 			}
 
-			// if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
-            //     $items[] = $item;
+			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+                $items[] = $item;
 
-            //     $item = null;
-			// }
+                $item = null;
+			}
 
 			if ( $permission_title ) {
 				$item = [
