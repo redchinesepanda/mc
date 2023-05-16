@@ -207,7 +207,7 @@ class ReviewHowTo
 					];
 				}
 
-				if ( !empty ( directions ) ) {
+				if ( !empty ( $directions ) ) {
 					$items[] = [
 						'@type' => 'HowToStep',
 	
@@ -218,7 +218,7 @@ class ReviewHowTo
 				}
 			}
 
-			if ( !empty ( items ) ) {
+			if ( !empty ( $items ) ) {
 				$steps[] = [
 					'@type' => 'HowToSection',
 	
