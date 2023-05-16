@@ -26,64 +26,23 @@ class ReviewHowTo
 
 	public static function parse ( $nodes )
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'parse',
-
-		// 	'$nodes' => count( $nodes ),
-		// ] );
-
 		$items = [];
 
 		$item = [];
 
 		foreach ( $nodes as $id => $node ) {
-			// if ( $node->nodeType === XML_TEXT_NODE ) {
-			// 	LegalDebug::debug( [
-			// 		'function' => 'parse',
-
-			// 		'$node->nodeType' => $node->nodeType,
-					
-			// 		'nodeType' => 'DOMText',
-			// 	] );
-
-			// 	// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
-			// } else {
-			// 	// $children = $node->getElementsByTagName( 'li' );
-				
-			// 	// if ( $children->length != 0 ) {
-			// 	// 	$item[ 'items' ] = self::parse( $children );
-			// 	// }
-
-			// 	LegalDebug::debug( [
-			// 		'function' => 'parse',
-
-			// 		'$node->nodeType' => $node->nodeType,
-					
-			// 		'nodeType' => 'Not DOMText',
-			// 	] );
-			// }
-
-			// LegalDebug::debug( [
-			// 	'function' => 'parse',
-
-			// 	'$id' => $id,
-	
-			// 	'textContent' => ToolEncode::encode( $node->textContent ),
-			// ] );
 
 			if ( $node->hasChildNodes() ) {
 
-				// $item[ 'items' ] = self::parse( $node->childNodes );
-
 				$item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
 
-				LegalDebug::debug( [
-					'function' => 'parse',
+				// LegalDebug::debug( [
+				// 	'function' => 'parse',
 	
-					'$node->hasChildNodes()' => $node->hasChildNodes(),
+				// 	'$node->hasChildNodes()' => $node->hasChildNodes(),
 
-					'text' => $item[ 'text' ],
-				] );
+				// 	'text' => $item[ 'text' ],
+				// ] );
 			}
 
 			$children = $node->getElementsByTagName( 'li' );
@@ -91,24 +50,14 @@ class ReviewHowTo
 			if ( $children->length != 0 ) {
 				$item[ 'items' ] = self::parse( $children );
 
-				LegalDebug::debug( [
-					'function' => 'parse',
+				// LegalDebug::debug( [
+				// 	'function' => 'parse',
 	
-					'$children->length' => $children->length,
+				// 	'$children->length' => $children->length,
 
-					'items' => $item[ 'items' ],
-				] );
+				// 	'items' => $item[ 'items' ],
+				// ] );
 			}
-
-			// if ( !empty( $node->textContent ) ) {
-			// 	// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
-
-			// 	// foreach ( $node->childNodes as $child ) {
-			// 	// 	if ( $child->nodeType === XML_TEXT_NODE ) {
-			// 	// 		$item[ 'text' ] = ToolEncode::encode( $node->textContent );
-			// 	// 	}
-			// 	// }
-			// }
 
 			if ( !empty( $item ) ) {
 				$items[] = $item;
