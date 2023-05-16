@@ -30,7 +30,7 @@ class ReviewHowTo
 			LegalDebug::debug( [
 				'function' => 'parse',
 	
-				'$node' => $node,
+				'$node' => ToolEncode::encode( $node->textContent ),
 			] );
 		}
 	}
