@@ -207,24 +207,28 @@ class ReviewHowTo
 					];
 				}
 
-				$items[] = [
-					'@type' => 'HowToStep',
-
-					'position' => $HowToStepID,
-
-					'itemListElement' => $directions,
-				];
+				if ( !empty ( directions ) ) {
+					$items[] = [
+						'@type' => 'HowToStep',
+	
+						'position' => $HowToStepID,
+	
+						'itemListElement' => $directions,
+					];
+				}
 			}
 
-			$steps[] = [
-				'@type' => 'HowToSection',
-
-				'name' => $HowToSection[ 'name' ],
-
-				'position' => $HowToSectionIDd,
-
-				'itemListElement' => $items,
-			];
+			if ( !empty ( items ) ) {
+				$steps[] = [
+					'@type' => 'HowToSection',
+	
+					'name' => $HowToSection[ 'name' ],
+	
+					'position' => $HowToSectionIDd,
+	
+					'itemListElement' => $items,
+				];
+			}
 		}
 
 		if ( empty( $steps ) ) {
