@@ -181,11 +181,11 @@ class ReviewHowTo
     {
 		$HowToSections = self::get_schema_data();
 
-		LegalDebug::debug( [
-			'function' => 'schema',
+		// LegalDebug::debug( [
+		// 	'function' => 'schema',
 
-			'$HowToSections' => $HowToSections,
-		] );
+		// 	'$HowToSections' => $HowToSections,
+		// ] );
 
 		$steps = [];
 
