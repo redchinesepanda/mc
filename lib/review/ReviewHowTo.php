@@ -150,12 +150,18 @@ class ReviewHowTo
 			}
 
 			if ( $permission_title ) {
+				// $item = [
+				// 	'@type' => 'HowToSection',
+	
+				// 	'name' => ToolEncode::encode( $node->textContent ),
+	
+				// 	'position' => $index,
+	
+				// 	'itemListElement' => [],
+				// ];
+				
 				$item = [
-					'@type' => 'HowToSection',
-	
 					'name' => ToolEncode::encode( $node->textContent ),
-	
-					'position' => $index,
 	
 					'itemListElement' => [],
 				];
