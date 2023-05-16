@@ -184,7 +184,7 @@ class ReviewHowTo
 		LegalDebug::debug( [
 			'function' => 'schema',
 
-			'$items' => $items,
+			'$HowToSections' => $HowToSections,
 		] );
 
 		$steps = [];
