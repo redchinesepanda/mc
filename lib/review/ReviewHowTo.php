@@ -42,21 +42,21 @@ class ReviewHowTo
 					],
 				],
 
-				// [
-				// 	"@type" => "HowToStep",
+				[
+					"@type" => "HowToStep",
 
-				// 	"position" => "2",
+					"position" => "2",
 
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToDirection",
+					"itemListElement" => [
+						[
+							"@type" => "HowToDirection",
 
-				// 			"position" => "1",
+							"position" => "1",
 
-				// 			"text" => "Successfully verify your account with the provider",
-				// 		],
-				// 	],
-				// ],
+							"text" => "Successfully verify your account with the provider",
+						],
+					],
+				],
 
 				// [
 				// 	"@type" => "HowToStep",
