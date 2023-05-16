@@ -44,16 +44,16 @@ class ReviewHowTo
 					$item[ 'items' ] = self::parse( $children );
 				}
 			} else {
-				LegalDebug::debug( [
-					'function' => 'parse',
-	
-					'$id' => $id,
-		
-					'textContent' => ToolEncode::encode( $node->textContent ),
-				] );
-
 				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
 			}
+			
+			LegalDebug::debug( [
+				'function' => 'parse',
+
+				'$id' => $id,
+	
+				'textContent' => ToolEncode::encode( $node->textContent ),
+			] );
 
 			// // $children = $node->getElementsByTagName( 'li' );
 
