@@ -26,6 +26,25 @@ class ReviewHowTo
 				// 	],
 				// ],
 
+				[
+					"@type" => "HowToStep",
+
+					"position" => "1",
+
+					"itemListElement" => [
+						[
+							"@type" => "HowToDirection",
+
+							"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.
+							<ol>
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li>
+							<li>Nam pellentesque eu nisl id congue.</li>
+							<li>Maecenas in vulputate ipsum.</li>
+							</ol>",
+						],
+					],
+				],
+
 				// [
 				// 	"@type" => "HowToStep",
 
@@ -70,99 +89,99 @@ class ReviewHowTo
 				// 	],
 				// ],
 
-				[
-					"@type" => "HowToSection",
+				// [
+				// 	"@type" => "HowToSection",
 
-					"name" => "Register for an account with the betting provider.",
+				// 	"name" => "Register for an account with the betting provider.",
 
-					"position" => "1",
+				// 	"position" => "1",
 
-					"itemListElement" => [
-						[
-							"@type" => "HowToStep",
+				// 	"itemListElement" => [
+				// 		[
+				// 			"@type" => "HowToStep",
 
-							"position" => "1",
+				// 			"position" => "1",
 
-							"text" => "Register for an account with the betting provider.",
-						],
-					],
-				],
+				// 			"text" => "Register for an account with the betting provider.",
+				// 		],
+				// 	],
+				// ],
 
-				[
-					"@type" => "HowToSection",
+				// [
+				// 	"@type" => "HowToSection",
 
-					"name" => "Successfully verify your account with the provider",
+				// 	"name" => "Successfully verify your account with the provider",
 
-					"position" => "1",
+				// 	"position" => "1",
 
-					"itemListElement" => [
-						[
-							"@type" => "HowToStep",
+				// 	"itemListElement" => [
+				// 		[
+				// 			"@type" => "HowToStep",
 
-							"position" => "1",
+				// 			"position" => "1",
 
-							"text" => "Successfully verify your account with the provider",
-						],
-					],
-				],
+				// 			"text" => "Successfully verify your account with the provider",
+				// 		],
+				// 	],
+				// ],
 
-				[
-					"@type" => "HowToSection",
+				// [
+				// 	"@type" => "HowToSection",
 
-					"name" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. ",
+				// 	"name" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. ",
 
-					"position" => "3",
+				// 	"position" => "3",
 
-					"itemListElement" => [
-					  	[
-							"@type" => "HowToStep",
+				// 	"itemListElement" => [
+				// 	  	[
+				// 			"@type" => "HowToStep",
 
-							"position" => "1",
+				// 			"position" => "1",
 
-							"itemListElement" => [
-								[
-									"@type" => "HowToDirection",
+				// 			"itemListElement" => [
+				// 				[
+				// 					"@type" => "HowToDirection",
 
-									"position" => "1",
+				// 					"position" => "1",
 
-									"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis"
-								],
-							]
-						],
+				// 					"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis"
+				// 				],
+				// 			]
+				// 		],
 
-						[
-							"@type" => "HowToStep",
+				// 		[
+				// 			"@type" => "HowToStep",
 
-							"position" => "2",
+				// 			"position" => "2",
 
-							"itemListElement" => [
-								[
-									"@type" => "HowToDirection",
+				// 			"itemListElement" => [
+				// 				[
+				// 					"@type" => "HowToDirection",
 
-									"position" => "1",
+				// 					"position" => "1",
 
-									"text" => "Nam pellentesque eu nisl id congue."
-								],
-							]
-						],
+				// 					"text" => "Nam pellentesque eu nisl id congue."
+				// 				],
+				// 			]
+				// 		],
 
-						[
-							"@type" => "HowToStep",
+				// 		[
+				// 			"@type" => "HowToStep",
 
-							"position" => "3",
+				// 			"position" => "3",
 
-							"text" => "Maecenas in vulputate ipsum.",
+				// 			"text" => "Maecenas in vulputate ipsum.",
 
-							// "itemListElement" => [
-							// 	[
-							// 		"@type" => "HowToDirection",
+				// 			// "itemListElement" => [
+				// 			// 	[
+				// 			// 		"@type" => "HowToDirection",
 
-							// 		"text" => "Maecenas in vulputate ipsum."
-							// 	]
-							// ]
-						],
-					]
-				],
+				// 			// 		"text" => "Maecenas in vulputate ipsum."
+				// 			// 	]
+				// 			// ]
+				// 		],
+				// 	]
+				// ],
 
 			// 	[
 			// 		"@type" => "HowToStep",
