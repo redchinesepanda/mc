@@ -189,7 +189,7 @@ class ReviewHowTo
 
 		$steps = [];
 
-		foreach ( $HowToSections as $HowToSectionIDd => $HowToSection ) {
+		foreach ( $HowToSections as $HowToSectionID => $HowToSection ) {
 			$items = [];
 
 			$HowToSteps = $HowToSection[ 'items' ];
@@ -201,7 +201,7 @@ class ReviewHowTo
 					$directions[] = [
 						'@type' => 'HowToDirection',
 
-						'position' => $HowToDirectionID,
+						'position' => ( $HowToDirectionID + 1 ),
 
 						'text' => $HowToDirection,
 					];
@@ -211,7 +211,7 @@ class ReviewHowTo
 					$items[] = [
 						'@type' => 'HowToStep',
 	
-						'position' => $HowToStepID,
+						'position' => ( $HowToStepID + 1 ),
 	
 						'itemListElement' => $directions,
 					];
@@ -224,7 +224,7 @@ class ReviewHowTo
 	
 					'name' => $HowToSection[ 'name' ],
 	
-					'position' => $HowToSectionIDd,
+					'position' => ( $HowToSectionID + 1 ),
 	
 					'itemListElement' => $items,
 				];
