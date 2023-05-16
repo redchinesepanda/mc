@@ -31,10 +31,11 @@ class ReviewHowTo
 		$item = [];
 
 		foreach ( $nodes as $id => $node ) {
-
 			if ( $node->hasChildNodes() ) {
 
-				$item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
+				// $item[ 'text' ] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
+				
+				$item[] = ToolEncode::encode( $node->childNodes->item( 0 )->textContent );
 
 				// LegalDebug::debug( [
 				// 	'function' => 'parse',
@@ -48,7 +49,9 @@ class ReviewHowTo
 			$children = $node->getElementsByTagName( 'li' );
 			
 			if ( $children->length != 0 ) {
-				$item[ 'items' ] = self::parse( $children );
+				// $item[ 'items' ] = self::parse( $children );
+				
+				$item = array_merge( $item, self::parse( $children ) );
 
 				// LegalDebug::debug( [
 				// 	'function' => 'parse',
@@ -214,17 +217,6 @@ class ReviewHowTo
 									"@type" => "HowToDirection",
 									"position" => "4",
 									"text" => "Maecenas in vulputate ipsum.",
-								],
-								[
-									"@type" => "HowToStep",
-									"position" => "5",
-									"itemListElement" => [
-										[
-											"@type" => "HowToDirection",
-											"position" => "1",
-											"text" => "test",
-										],
-									],
 								],
 							],
 						],
