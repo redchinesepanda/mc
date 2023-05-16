@@ -188,11 +188,11 @@ class ReviewHowTo
 					'itemListElement' => [],
 				];
 
-				// LegalDebug::debug( [
-				// 	'function' => 'get_schema_data',
+				LegalDebug::debug( [
+					'function' => 'get_schema_data',
 	
-				// 	'$item' => $item,
-				// ] );
+					'HowToSection' => ToolEncode::encode( $node->textContent ),
+				] );
 			}
 		}
 
