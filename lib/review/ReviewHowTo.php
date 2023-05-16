@@ -138,7 +138,7 @@ class ReviewHowTo
 
 				// $item[ 'itemListElement' ] = self::parse( $node->childNodes );
 				
-				$item[ 'itemListElement' ] = self::parse( $node->getElementsByTagName( 'li' ) );
+				$item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
@@ -163,7 +163,7 @@ class ReviewHowTo
 				$item = [
 					'name' => ToolEncode::encode( $node->textContent ),
 	
-					'items' => [],
+					// 'items' => [],
 				];
 
 				// LegalDebug::debug( [
