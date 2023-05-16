@@ -37,7 +37,9 @@ class ReviewHowTo
 		foreach ( $nodes as $id => $node ) {
 
 			if ( $node->hasChildNodes() ) {
-				$item[ 'items' ] = self::parse( $node->childNodes );
+				// $item[ 'items' ] = self::parse( $node->childNodes );
+				
+				$item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
 			if ( !empty( $node->textContent ) ) {
