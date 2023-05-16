@@ -26,6 +26,12 @@ class ReviewHowTo
 
 	public static function parse ( $nodes )
 	{
+		LegalDebug::debug( [
+			'function' => 'parse',
+
+			'$nodes' => count( $nodes ),
+		] );
+
 		foreach ( $nodes as $id => $node ) {
 			LegalDebug::debug( [
 				'function' => 'parse',
