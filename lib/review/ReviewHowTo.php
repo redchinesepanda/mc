@@ -63,13 +63,13 @@ class ReviewHowTo
 			// 	] );
 			// }
 
-			LegalDebug::debug( [
-				'function' => 'parse',
+			// LegalDebug::debug( [
+			// 	'function' => 'parse',
 
-				'$id' => $id,
+			// 	'$id' => $id,
 	
-				'textContent' => ToolEncode::encode( $node->textContent ),
-			] );
+			// 	'textContent' => ToolEncode::encode( $node->textContent ),
+			// ] );
 
 			if ( $node->hasChildNodes() ) {
 				LegalDebug::debug( [
