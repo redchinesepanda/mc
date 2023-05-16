@@ -44,6 +44,14 @@ class ReviewHowTo
 					$item[ 'items' ] = self::parse( $children );
 				}
 			} else {
+				LegalDebug::debug( [
+					'function' => 'parse',
+	
+					'$id' => $id,
+		
+					'textContent' => ToolEncode::encode( $node->textContent ),
+				] );
+
 				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
 			}
 
@@ -71,14 +79,6 @@ class ReviewHowTo
 
 				$item = [];
 			}
-
-			LegalDebug::debug( [
-				'function' => 'parse',
-
-				'$id' => $id,
-	
-				'$node' => $node,
-			] );
 		}
 
 		return $items;
