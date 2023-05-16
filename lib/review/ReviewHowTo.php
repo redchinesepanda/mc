@@ -48,13 +48,13 @@ class ReviewHowTo
 				$items[] = $item;
 			}
 
-			// LegalDebug::debug( [
-			// 	'function' => 'parse',
+			LegalDebug::debug( [
+				'function' => 'parse',
 
-			// 	'$id' => $id,
+				'$id' => $id,
 	
-			// 	'$node' => ToolEncode::encode( $node->textContent ),
-			// ] );
+				'$node' => $node,
+			] );
 		}
 
 		return $items;
