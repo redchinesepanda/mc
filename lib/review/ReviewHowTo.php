@@ -75,6 +75,12 @@ class ReviewHowTo
 
 			if ( $node->hasChildNodes() ) {
 			// if ( $children->length != 0 ) {
+				LegalDebug::debug( [
+					'function' => 'parse',
+	
+					'$node->hasChildNodes()' => $node->hasChildNodes(),
+				] );
+
 				$item[ 'items' ] = self::parse( $node->childNodes );
 				
 				// $item[ 'items' ] = self::parse( $children );
