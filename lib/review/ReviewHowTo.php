@@ -73,12 +73,12 @@ class ReviewHowTo
 
 			// // $children = $node->getElementsByTagName( 'li' );
 
-			// if ( $node->hasChildNodes() ) {
-			// // if ( $children->length != 0 ) {
-			// 	$item[ 'items' ] = self::parse( $node->childNodes );
+			if ( $node->hasChildNodes() ) {
+			// if ( $children->length != 0 ) {
+				$item[ 'items' ] = self::parse( $node->childNodes );
 				
-			// 	// $item[ 'items' ] = self::parse( $children );
-			// }
+				// $item[ 'items' ] = self::parse( $children );
+			}
 
 			// if ( !empty( $node->textContent ) ) {
 			// 	// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
