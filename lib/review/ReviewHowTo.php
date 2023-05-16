@@ -79,10 +79,10 @@ class ReviewHowTo
 
 				LegalDebug::debug( [
 					'function' => 'parse',
-
-					'text' => $item[ 'text' ],
 	
 					'$node->hasChildNodes()' => $node->hasChildNodes(),
+
+					'text' => $item[ 'text' ],
 				] );
 			}
 
