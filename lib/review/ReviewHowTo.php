@@ -26,24 +26,31 @@ class ReviewHowTo
 
 	public static function parse ( $nodes )
 	{
-		LegalDebug::debug( [
-			'function' => 'parse',
+		// LegalDebug::debug( [
+		// 	'function' => 'parse',
 
-			'$nodes' => count( $nodes ),
-		] );
+		// 	'$nodes' => count( $nodes ),
+		// ] );
 
 		foreach ( $nodes as $id => $node ) {
+
 			if ( $node->hasChildNodes() ) {
-				self::parse( $node->childNodes );
+				$item[ 'items' ] = self::parse( $node->childNodes );
 			}
 
-			LegalDebug::debug( [
-				'function' => 'parse',
+			if ( !empty( $node->textContent ) ) {
+				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
+			}
 
-				'$id' => $id,
+			// LegalDebug::debug( [
+			// 	'function' => 'parse',
+
+			// 	'$id' => $id,
 	
-				'$node' => ToolEncode::encode( $node->textContent ),
-			] );
+			// 	'$node' => ToolEncode::encode( $node->textContent ),
+			// ] );
+
+			return $item;
 		}
 	}
 
@@ -111,7 +118,7 @@ class ReviewHowTo
 
                 // $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 
-				self::parse( $node->childNodes );
+				$item[ 'itemListElement' ] = self::parse( $node->childNodes );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
