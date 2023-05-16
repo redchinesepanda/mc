@@ -37,7 +37,7 @@ class ReviewHowTo
 		$item = [];
 
 		foreach ( $nodes as $id => $node ) {
-			if ( $child->nodeType !== XML_TEXT_NODE ) {
+			if ( $node->nodeType !== XML_TEXT_NODE ) {
 				$children = $node->getElementsByTagName( 'li' );
 				
 				if ( $children->length != 0 ) {
