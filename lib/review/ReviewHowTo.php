@@ -88,8 +88,16 @@ class ReviewHowTo
 
 			$children = $node->getElementsByTagName( 'li' );
 			
-			if ( $children->length != 0 ) {	
+			if ( $children->length != 0 ) {
 				$item[ 'items' ] = self::parse( $children );
+
+				LegalDebug::debug( [
+					'function' => 'parse',
+	
+					'$children->length' => $children->length,
+
+					'items' => $item[ 'items' ],
+				] );
 			}
 
 			// if ( !empty( $node->textContent ) ) {
