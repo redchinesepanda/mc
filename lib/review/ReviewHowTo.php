@@ -69,7 +69,7 @@ class ReviewHowTo
 
 				'$id' => $id,
 
-				'$node' => $node,
+				'$node' => ToolEncode::encode( $node->textContent ),
 			] );
 
             $class = explode( ' ', $node->getAttribute( 'class' ) );
