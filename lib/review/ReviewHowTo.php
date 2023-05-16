@@ -103,7 +103,7 @@ class ReviewHowTo
 			if ( !empty( $item ) && $permission_content ) {
                 $node->removeAttribute( 'class' );
 
-                LegalDOM::clean( $node );
+                // LegalDOM::clean( $node );
 
                 // $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 
