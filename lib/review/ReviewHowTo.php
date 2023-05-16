@@ -37,23 +37,39 @@ class ReviewHowTo
 		$item = [];
 
 		foreach ( $nodes as $id => $node ) {
-			if ( $node->nodeType !== XML_TEXT_NODE ) {
-				$children = $node->getElementsByTagName( 'li' );
-				
-				if ( $children->length != 0 ) {
-					$item[ 'items' ] = self::parse( $children );
-				}
-			} else {
-				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
-			}
-			
-			LegalDebug::debug( [
-				'function' => 'parse',
+			if ( $node->nodeType === XML_TEXT_NODE ) {
+				LegalDebug::debug( [
+					'function' => 'parse',
 
-				'$id' => $id,
+					'$node->nodeType' => $node->nodeType,
+					
+					'nodeType' => 'DOMText',
+				] );
+
+				// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
+			} else {
+				// $children = $node->getElementsByTagName( 'li' );
+				
+				// if ( $children->length != 0 ) {
+				// 	$item[ 'items' ] = self::parse( $children );
+				// }
+
+				LegalDebug::debug( [
+					'function' => 'parse',
+
+					'$node->nodeType' => $node->nodeType,
+					
+					'nodeType' => 'Not DOMText',
+				] );
+			}
+
+			// LegalDebug::debug( [
+			// 	'function' => 'parse',
+
+			// 	'$id' => $id,
 	
-				'textContent' => ToolEncode::encode( $node->textContent ),
-			] );
+			// 	'textContent' => ToolEncode::encode( $node->textContent ),
+			// ] );
 
 			// // $children = $node->getElementsByTagName( 'li' );
 
