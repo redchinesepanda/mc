@@ -37,24 +37,34 @@ class ReviewHowTo
 		$item = [];
 
 		foreach ( $nodes as $id => $node ) {
-			// $children = $node->getElementsByTagName( 'li' );
-
-			if ( $node->hasChildNodes() ) {
-			// if ( $children->length != 0 ) {
-				$item[ 'items' ] = self::parse( $node->childNodes );
+			if ( $child->nodeType !== XML_TEXT_NODE ) {
+				$children = $node->getElementsByTagName( 'li' );
 				
-				// $item[ 'items' ] = self::parse( $children );
+				if ( $children->length != 0 ) {
+					$item[ 'items' ] = self::parse( $children );
+				}
+			} else {
+				$item[ 'text' ] = ToolEncode::encode( $node->textContent );
 			}
 
-			if ( !empty( $node->textContent ) ) {
-				// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
+			// // $children = $node->getElementsByTagName( 'li' );
 
-				// foreach ( $node->childNodes as $child ) {
-				// 	if ( $child->nodeType === XML_TEXT_NODE ) {
-				// 		$item[ 'text' ] = ToolEncode::encode( $node->textContent );
-				// 	}
-				// }
-			}
+			// if ( $node->hasChildNodes() ) {
+			// // if ( $children->length != 0 ) {
+			// 	$item[ 'items' ] = self::parse( $node->childNodes );
+				
+			// 	// $item[ 'items' ] = self::parse( $children );
+			// }
+
+			// if ( !empty( $node->textContent ) ) {
+			// 	// $item[ 'text' ] = ToolEncode::encode( $node->textContent );
+
+			// 	// foreach ( $node->childNodes as $child ) {
+			// 	// 	if ( $child->nodeType === XML_TEXT_NODE ) {
+			// 	// 		$item[ 'text' ] = ToolEncode::encode( $node->textContent );
+			// 	// 	}
+			// 	// }
+			// }
 
 			if ( !empty( $item ) ) {
 				$items[] = $item;
