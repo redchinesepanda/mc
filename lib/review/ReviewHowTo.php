@@ -34,6 +34,8 @@ class ReviewHowTo
 
 		$items = [];
 
+		$item = [];
+
 		foreach ( $nodes as $id => $node ) {
 			$children = $node->getElementsByTagName( 'li' );
 
@@ -49,6 +51,8 @@ class ReviewHowTo
 
 			if ( !empty( $item ) ) {
 				$items[] = $item;
+
+				$item = [];
 			}
 
 			LegalDebug::debug( [
