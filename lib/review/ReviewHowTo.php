@@ -12,211 +12,55 @@ class ReviewHowTo
 			"name" => "How to claim the Betfred new customer bonus:",
 
 			"step" => [
-				// [
-				// 	"@type" => "HowToStep",
-
-				// 	"position" => "1",
-
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToDirection",
-
-				// 			"text" => "Register for an account with the betting provider",
-				// 		],
-				// 	],
-				// ],
-
 				[
-					"@type" => "HowToStep",
-
+					"@type" => "HowToSection",
+					"name" => "Preparation",
 					"position" => "1",
-
-					"itemListElement" => [
-						// [
-						// 	"@type" => "HowToDirection",
-
-						// 	// "text" => "Register for an account with the betting provider",
-
-						// 	"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.<ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li><li>Nam pellentesque eu nisl id congue.</li><li>Maecenas in vulputate ipsum.</li></ol>",
-						// ],
-
-						[
-							"@type" => "ListItem",
-
-							"position" => 1,
-
-							"item" => [
-							 "@id" => "https://example.com/dresses",
-
-							 "name" => "Dresses",
-							]
-						],
-						
-						[
-							"@type" => "ListItem",
-
-							"position" => 2,
-
-							"item" => [
-							  "@id" => "https://example.com/dresses/real",
-
-							  "name" => "Real Dresses"
-							]
-						],
-					],
-				],
-
-				[
-					"@type" => "HowToStep",
-
-					"position" => "2",
-
 					"itemListElement" => [
 						[
-							"@type" => "HowToDirection",
-
+							"@type" => "HowToStep",
 							"position" => "1",
-
-							"text" => "Successfully verify your account with the provider",
+							"itemListElement" => [
+								[
+									"@type" => "HowToDirection",
+									"position" => "1",
+									"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. "
+								],
+								[
+									"@type" => "HowToDirection",
+									"position" => "2",
+									"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis."
+								],
+								[
+									"@type" => "HowToTip",
+									"position" => "3",
+									"text" => "Nam pellentesque eu nisl id congue."
+								],
+								[
+									"@type" => "HowToTip",
+									"position" => "4",
+									"text" => "Maecenas in vulputate ipsum.",
+								],
+							],
 						],
-					],
+						[
+							"@type" => "HowToStep",
+							"position" => "2",
+							"itemListElement" => [
+								[
+									"@type" => "HowToDirection",
+									"position" => "1",
+									"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
+								],
+								// [
+								// 	"@type" => "HowToTip",
+								// 	"position" => "2",
+								// 	"text" => "You don't want the car to move while you're working on it.",
+								// ],
+							],
+						],
+					]
 				],
-
-				// [
-				// 	"@type" => "HowToStep",
-
-				// 	"name" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. ",
-
-				// 	"position" => "3",
-
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToDirection",
-
-				// 			"position" => "1",
-
-				// 			"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.",
-				// 		],
-				// 	],
-
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToDirection",
-
-				// 			"position" => "2",
-
-				// 			"text" => "Nam pellentesque eu nisl id congue.",
-				// 		],
-				// 	],
-				// ],
-
-				// [
-				// 	"@type" => "HowToSection",
-
-				// 	"name" => "Register for an account with the betting provider.",
-
-				// 	"position" => "1",
-
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToStep",
-
-				// 			"position" => "1",
-
-				// 			"text" => "Register for an account with the betting provider.",
-				// 		],
-				// 	],
-				// ],
-
-				// [
-				// 	"@type" => "HowToSection",
-
-				// 	"name" => "Successfully verify your account with the provider",
-
-				// 	"position" => "1",
-
-				// 	"itemListElement" => [
-				// 		[
-				// 			"@type" => "HowToStep",
-
-				// 			"position" => "1",
-
-				// 			"text" => "Successfully verify your account with the provider",
-				// 		],
-				// 	],
-				// ],
-
-				// [
-				// 	"@type" => "HowToSection",
-
-				// 	"name" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. ",
-
-				// 	"position" => "3",
-
-				// 	"itemListElement" => [
-				// 	  	[
-				// 			"@type" => "HowToStep",
-
-				// 			"position" => "1",
-
-				// 			"itemListElement" => [
-				// 				[
-				// 					"@type" => "HowToDirection",
-
-				// 					"position" => "1",
-
-				// 					"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis"
-				// 				],
-				// 			]
-				// 		],
-
-				// 		[
-				// 			"@type" => "HowToStep",
-
-				// 			"position" => "2",
-
-				// 			"itemListElement" => [
-				// 				[
-				// 					"@type" => "HowToDirection",
-
-				// 					"position" => "1",
-
-				// 					"text" => "Nam pellentesque eu nisl id congue."
-				// 				],
-				// 			]
-				// 		],
-
-				// 		[
-				// 			"@type" => "HowToStep",
-
-				// 			"position" => "3",
-
-				// 			"text" => "Maecenas in vulputate ipsum.",
-
-				// 			// "itemListElement" => [
-				// 			// 	[
-				// 			// 		"@type" => "HowToDirection",
-
-				// 			// 		"text" => "Maecenas in vulputate ipsum."
-				// 			// 	]
-				// 			// ]
-				// 		],
-				// 	]
-				// ],
-
-			// 	[
-			// 		"@type" => "HowToStep",
-
-			// 		"position" => "4",
-
-			// 		"itemListElement" => [
-			// 			[
-			// 				"@type" => "HowToDirection",
-
-			// 				"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
-			// 			],
-			// 		],
-			// 	],
 			],
 
 			"totalTime" => "P2D",
