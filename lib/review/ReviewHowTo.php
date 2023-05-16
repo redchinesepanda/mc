@@ -37,9 +37,9 @@ class ReviewHowTo
 		foreach ( $nodes as $id => $node ) {
 
 			if ( $node->hasChildNodes() ) {
-				// $item[ 'items' ] = self::parse( $node->childNodes );
+				$item[ 'items' ] = self::parse( $node->childNodes );
 				
-				$item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
+				// $item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
 			if ( !empty( $node->textContent ) ) {
@@ -126,7 +126,9 @@ class ReviewHowTo
 
                 // $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 
-				$item[ 'itemListElement' ] = self::parse( $node->childNodes );
+				// $item[ 'itemListElement' ] = self::parse( $node->childNodes );
+				
+				$item[ 'itemListElement' ] = self::parse( $node->getElementsByTagName( 'li' ) );
 			}
 
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
