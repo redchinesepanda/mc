@@ -91,7 +91,7 @@ class ReviewFAQ
         $nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
-			return $post->post_content;
+			return [];
 		}
 
 		$items = [];

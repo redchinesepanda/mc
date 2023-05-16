@@ -2,8 +2,123 @@
 
 class ReviewHowTo
 {
+	const CSS_CLASS = [
+		'base' => 'legal-howto',
+
+        // 'title' => 'legal-faq-title',
+
+        // 'description' => 'legal-faq-description',
+	];
+
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
+	}
+
+	public static function parse ( $nodes )
+	{
+
+	}
+
+	public static function get_schema_data()
+	{
+        if ( !ReviewMain::is_front() ) {
+			return [];
+		}
+
+        $post = get_post();
+
+        if ( empty( $post ) ) {
+            return [];
+        }
+
+		$dom = LegalDOM::get_dom( $post->post_content );
+
+        $nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return [];
+		}
+
+		$items = [];
+
+		$last = $nodes->length - 1;
+
+		foreach ( $nodes as $id => $node ) {
+			LegalDebug::debug( [
+				'$id' => $id,
+
+				'$node' => $node,
+			] );
+
+            // $class = explode( ' ', $node->getAttribute( 'class' ) );
+
+			// $permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
+
+			// $permission_description = ( in_array( self::CSS_CLASS[ 'description' ], $class ) );
+
+			// $permission_last = ( $id == $last );
+
+			// $item = [
+			// 	'@type' => 'HowToSection',
+
+			// 	'name' => 'Preparation',
+
+			// 	'position' => $id,
+
+			// 	'itemListElement' => [],
+			// ];
+
+			// if ( $node->hasChildNodes() ) {
+			// 	$item[ 'itemListElement' ] = self::parse( $node->childNodes );
+			// } else {
+			// 	$item[ 'itemListElement' ][] = [
+			// 		'@type' => 'HowToDirection',
+
+			// 		'position' => $id,
+
+			// 		'text' => ToolEncode::encode( $node->textContent ),
+			// 	];
+			// }
+
+			// if ( !empty( $item ) && $permission_description ) {
+            //     $node->removeAttribute( 'class' );
+
+            //     self::clean( $node );
+
+            //     $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
+			// }
+
+			// if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
+            //     $items[] = $item;
+
+            //     $item = null;
+			// }
+
+			// if ( $permission_title ) {
+            //     $item = [
+            //         '@type' => 'Question',
+
+            //         'name' => ToolEncode::encode( $node->textContent ),
+
+            //         'acceptedAnswer' => [
+            //             '@type' => 'Answer',
+
+            //             'text' => '',
+            //         ]
+            //     ];
+			// }
+		}
+
+		return $items;
+	}
+
 	public static function schema()
     {
+		$items = self::get_schema_data();
+
         return [
 			"@context" => "https://schema.org",
 
