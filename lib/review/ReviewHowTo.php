@@ -35,11 +35,12 @@ class ReviewHowTo
 		$items = [];
 
 		foreach ( $nodes as $id => $node ) {
+			$children = $node->getElementsByTagName( 'li' );
 
-			if ( $node->hasChildNodes() ) {
+			if ( $children ) {
 				// $item[ 'items' ] = self::parse( $node->childNodes );
 				
-				$item[ 'items' ] = self::parse( $node->getElementsByTagName( 'li' ) );
+				$item[ 'items' ] = self::parse( $children );
 			}
 
 			if ( !empty( $node->textContent ) ) {
