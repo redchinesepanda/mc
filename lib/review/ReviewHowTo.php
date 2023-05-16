@@ -35,9 +35,9 @@ class ReviewHowTo
 						[
 							"@type" => "HowToDirection",
 
-							"text" => "Register for an account with the betting provider",
+							// "text" => "Register for an account with the betting provider",
 
-							// "text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.<ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li><li>Nam pellentesque eu nisl id congue.</li><li>Maecenas in vulputate ipsum.</li></ol>",
+							"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.<ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li><li>Nam pellentesque eu nisl id congue.</li><li>Maecenas in vulputate ipsum.</li></ol>",
 						],
 					],
 				],
