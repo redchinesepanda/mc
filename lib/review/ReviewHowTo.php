@@ -26,7 +26,13 @@ class ReviewHowTo
 
 	public static function parse ( $nodes )
 	{
-
+		foreach ( $nodes as $id => $node ) {
+			LegalDebug::debug( [
+				'function' => 'parse',
+	
+				'$node' => $node,
+			] );
+		}
 	}
 
 	public static function get_schema_data()
@@ -51,32 +57,28 @@ class ReviewHowTo
 
 		$items = [];
 
+		$item = null;
+
+		$index = 0;
+
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
 			LegalDebug::debug( [
+				'function' => 'get_schema_data',
+
 				'$id' => $id,
 
 				'$node' => $node,
 			] );
 
-            // $class = explode( ' ', $node->getAttribute( 'class' ) );
+            $class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			// $permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
+			$permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
 
-			// $permission_description = ( in_array( self::CSS_CLASS[ 'description' ], $class ) );
+			$permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
 
-			// $permission_last = ( $id == $last );
-
-			// $item = [
-			// 	'@type' => 'HowToSection',
-
-			// 	'name' => 'Preparation',
-
-			// 	'position' => $id,
-
-			// 	'itemListElement' => [],
-			// ];
+			$permission_last = ( $id == $last );			
 
 			// if ( $node->hasChildNodes() ) {
 			// 	$item[ 'itemListElement' ] = self::parse( $node->childNodes );
@@ -90,13 +92,15 @@ class ReviewHowTo
 			// 	];
 			// }
 
-			// if ( !empty( $item ) && $permission_description ) {
-            //     $node->removeAttribute( 'class' );
+			if ( !empty( $item ) && $permission_content ) {
+                $node->removeAttribute( 'class' );
 
-            //     self::clean( $node );
+                LegalDOM::clean( $node );
 
-            //     $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
-			// }
+                // $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
+
+				self::parse( $node->childNodes );
+			}
 
 			// if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
             //     $items[] = $item;
@@ -104,19 +108,23 @@ class ReviewHowTo
             //     $item = null;
 			// }
 
-			// if ( $permission_title ) {
-            //     $item = [
-            //         '@type' => 'Question',
+			if ( $permission_title ) {
+				$item = [
+					'@type' => 'HowToSection',
+	
+					'name' => ToolEncode::encode( $node->textContent ),
+	
+					'position' => $index,
+	
+					'itemListElement' => [],
+				];
 
-            //         'name' => ToolEncode::encode( $node->textContent ),
-
-            //         'acceptedAnswer' => [
-            //             '@type' => 'Answer',
-
-            //             'text' => '',
-            //         ]
-            //     ];
-			// }
+				LegalDebug::debug( [
+					'function' => 'get_schema_data',
+	
+					'$item' => $item,
+				] );
+			}
 		}
 
 		return $items;

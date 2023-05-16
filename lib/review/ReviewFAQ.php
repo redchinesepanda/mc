@@ -63,16 +63,16 @@ class ReviewFAQ
 		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
 	}
 
-	public static function clean( &$node )
-    {
-        if ( $node->hasChildNodes() ) {
-            foreach ( $node->childNodes as $child ) {
-                self::clean( $child );
-            }
-        } else {
-            $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
-        }
-    }
+	// public static function clean( &$node )
+    // {
+    //     if ( $node->hasChildNodes() ) {
+    //         foreach ( $node->childNodes as $child ) {
+    //             self::clean( $child );
+    //         }
+    //     } else {
+    //         $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
+    //     }
+    // }
 
     public static function get_schema_data()
 	{
@@ -110,7 +110,9 @@ class ReviewFAQ
 			if ( !empty( $item ) && $permission_description ) {
                 $node->removeAttribute( 'class' );
 
-                self::clean( $node );
+                // self::clean( $node );
+                
+                LegalDOM::clean( $node );
 
                 $item[ 'acceptedAnswer' ][ 'text' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 			}

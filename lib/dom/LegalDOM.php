@@ -26,6 +26,17 @@ class LegalDOM
 			}
 		}
 	}
+
+	public static function clean( &$node )
+    {
+        if ( $node->hasChildNodes() ) {
+            foreach ( $node->childNodes as $child ) {
+                self::clean( $child );
+            }
+        } else {
+            $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
+        }
+    }
 }
 
 ?>
