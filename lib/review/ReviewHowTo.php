@@ -32,12 +32,36 @@ class ReviewHowTo
 					"position" => "1",
 
 					"itemListElement" => [
+						// [
+						// 	"@type" => "HowToDirection",
+
+						// 	// "text" => "Register for an account with the betting provider",
+
+						// 	"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.<ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li><li>Nam pellentesque eu nisl id congue.</li><li>Maecenas in vulputate ipsum.</li></ol>",
+						// ],
+
 						[
-							"@type" => "HowToDirection",
+							"@type" => "ListItem",
 
-							// "text" => "Register for an account with the betting provider",
+							"position" => 1,
 
-							"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply.<ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis.</li><li>Nam pellentesque eu nisl id congue.</li><li>Maecenas in vulputate ipsum.</li></ol>",
+							"item" => [
+							 "@id" => "https://example.com/dresses",
+
+							 "name" => "Dresses",
+							]
+						],
+						
+						[
+							"@type" => "ListItem",
+
+							"position" => 2,
+
+							"item" => [
+							  "@id" => "https://example.com/dresses/real",
+
+							  "name" => "Real Dresses"
+							]
 						],
 					],
 				],
