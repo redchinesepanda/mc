@@ -163,14 +163,14 @@ class ReviewHowTo
 				$item = [
 					'name' => ToolEncode::encode( $node->textContent ),
 	
-					'itemListElement' => [],
+					'items' => [],
 				];
 
-				LegalDebug::debug( [
-					'function' => 'get_schema_data',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_schema_data',
 	
-					'HowToSection' => ToolEncode::encode( $node->textContent ),
-				] );
+				// 	'HowToSection' => ToolEncode::encode( $node->textContent ),
+				// ] );
 			}
 		}
 
@@ -179,13 +179,57 @@ class ReviewHowTo
 
 	public static function schema()
     {
-		$items = self::get_schema_data();
+		$HowToSections = self::get_schema_data();
 
-		LegalDebug::debug( [
-			'function' => 'schema',
+		// LegalDebug::debug( [
+		// 	'function' => 'schema',
 
-			'$items' => $items,
-		] );
+		// 	'$items' => $items,
+		// ] );
+
+		$steps = [];
+
+		foreach ( $HowToSections as $HowToSectionIDd => $HowToSection ) {
+			$items = [];
+
+			$HowToSteps = $HowToSection[ 'items' ];
+			
+			foreach ( $HowToSteps as $HowToStepID => $HowToStep ) {
+				$directions = [];
+
+				foreach ( $HowToStep as $HowToDirectionID => $HowToDirection ) {
+					$directions[] = [
+						'@type' => 'HowToDirection',
+
+						'position' => $HowToDirectionID,
+
+						'text' => $HowToDirection,
+					];
+				}
+
+				$items[] = [
+					'@type' => 'HowToStep',
+
+					'position' => $HowToStepID,
+
+					'itemListElement' => $directions,
+				];
+			}
+
+			$steps[] = [
+				'@type' => 'HowToSection',
+
+				'name' => $HowToSection[ 'name' ],
+
+				'position' => $HowToSectionIDd,
+
+				'itemListElement' => $items,
+			];
+		}
+
+		if ( empty( $steps ) ) {
+			return [];
+		}
 
         return [
 			"@context" => "https://schema.org",
@@ -194,52 +238,54 @@ class ReviewHowTo
 			
 			"name" => "How to claim the Betfred new customer bonus:",
 
-			"step" => [
-				[
-					"@type" => "HowToSection",
-					"name" => "Preparation",
-					"position" => "1",
-					"itemListElement" => [
-						[
-							"@type" => "HowToStep",
-							"position" => "1",
-							"itemListElement" => [
-								[
-									"@type" => "HowToDirection",
-									"position" => "1",
-									"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. "
-								],
-								[
-									"@type" => "HowToDirection",
-									"position" => "2",
-									"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis."
-								],
-								[
-									"@type" => "HowToDirection",
-									"position" => "3",
-									"text" => "Nam pellentesque eu nisl id congue."
-								],
-								[
-									"@type" => "HowToDirection",
-									"position" => "4",
-									"text" => "Maecenas in vulputate ipsum.",
-								],
-							],
-						],
-						[
-							"@type" => "HowToStep",
-							"position" => "2",
-							"itemListElement" => [
-								[
-									"@type" => "HowToDirection",
-									"position" => "1",
-									"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
-								],
-							],
-						],
-					]
-				],
-			],
+			"step" => $steps,
+
+			// "step" => [
+			// 	[
+			// 		"@type" => "HowToSection",
+			// 		"name" => "Preparation",
+			// 		"position" => "1",
+			// 		"itemListElement" => [
+			// 			[
+			// 				"@type" => "HowToStep",
+			// 				"position" => "1",
+			// 				"itemListElement" => [
+			// 					[
+			// 						"@type" => "HowToDirection",
+			// 						"position" => "1",
+			// 						"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. "
+			// 					],
+			// 					[
+			// 						"@type" => "HowToDirection",
+			// 						"position" => "2",
+			// 						"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis."
+			// 					],
+			// 					[
+			// 						"@type" => "HowToDirection",
+			// 						"position" => "3",
+			// 						"text" => "Nam pellentesque eu nisl id congue."
+			// 					],
+			// 					[
+			// 						"@type" => "HowToDirection",
+			// 						"position" => "4",
+			// 						"text" => "Maecenas in vulputate ipsum.",
+			// 					],
+			// 				],
+			// 			],
+			// 			[
+			// 				"@type" => "HowToStep",
+			// 				"position" => "2",
+			// 				"itemListElement" => [
+			// 					[
+			// 						"@type" => "HowToDirection",
+			// 						"position" => "1",
+			// 						"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
+			// 					],
+			// 				],
+			// 			],
+			// 		]
+			// 	],
+			// ],
 
 			"totalTime" => "P2D",
         ];
