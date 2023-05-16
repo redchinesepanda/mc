@@ -113,6 +113,8 @@ class ReviewHowTo
 			if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
                 $items[] = $item;
 
+				$index++;
+
                 $item = null;
 			}
 
