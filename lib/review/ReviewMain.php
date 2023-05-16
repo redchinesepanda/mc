@@ -88,6 +88,8 @@ class ReviewMain
         ReviewStats::register();
 
         ReviewBonus::register();
+
+        ReviewHowTo::register();
     }
 
     public static function encoding( $content )

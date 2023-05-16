@@ -2,6 +2,13 @@
 
 class ReviewHowTo
 {
+	public static function register()
+    {
+        $handler = new self();
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_howto' ] );
+    }
+
 	const CSS_CLASS = [
 		'base' => 'legal-howto',
 
