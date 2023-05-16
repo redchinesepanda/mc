@@ -73,15 +73,33 @@ class ReviewHowTo
 				[
 					"@type" => "HowToSection",
 
-					// "name" => "Successfully verify your account with the provider",
+					"name" => "Register for an account with the betting provider.",
 
-					"position" => "3",
+					"position" => "1",
 
 					"itemListElement" => [
 						[
 							"@type" => "HowToStep",
 
-							"position" => "3",
+							"position" => "1",
+
+							"text" => "Register for an account with the betting provider.",
+						],
+					],
+				],
+
+				[
+					"@type" => "HowToSection",
+
+					"name" => "Successfully verify your account with the provider",
+
+					"position" => "1",
+
+					"itemListElement" => [
+						[
+							"@type" => "HowToStep",
+
+							"position" => "1",
 
 							"text" => "Successfully verify your account with the provider",
 						],
@@ -105,6 +123,8 @@ class ReviewHowTo
 								[
 									"@type" => "HowToDirection",
 
+									"position" => "1",
+
 									"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis"
 								],
 							]
@@ -118,6 +138,8 @@ class ReviewHowTo
 							"itemListElement" => [
 								[
 									"@type" => "HowToDirection",
+
+									"position" => "1",
 
 									"text" => "Nam pellentesque eu nisl id congue."
 								],
