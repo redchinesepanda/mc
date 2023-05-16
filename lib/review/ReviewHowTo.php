@@ -5,9 +5,9 @@ class ReviewHowTo
 	const CSS_CLASS = [
 		'base' => 'legal-howto',
 
-        // 'title' => 'legal-faq-title',
+        'title' => 'legal-howto-title',
 
-        // 'description' => 'legal-faq-description',
+        'content' => 'legal-howto-content',
 	];
 
 	public static function get_nodes( $dom )
@@ -176,6 +176,33 @@ class ReviewHowTo
 			"totalTime" => "P2D",
         ];
     }
+
+	public static function style_formats_howto( $settings )
+	{
+		return ToolTinyMCE::style_formats_check( $settings, [
+			[
+				'title' => 'HowTo Schema.org',
+
+				'items' => [
+					[
+						'title' => 'HowTo Title',
+						
+						'selector' => 'p',
+
+						'classes' => self::CSS_CLASS[ 'base' ] . ' ' . self::CSS_CLASS[ 'title' ],
+					],
+
+					[
+						'title' => 'HowTo Content',
+						
+						'selector' => 'ul,ol',
+
+						'classes' => self::CSS_CLASS[ 'base' ] . ' ' . self::CSS_CLASS[ 'content' ],
+					],
+				],
+			],
+		] );
+	}
 }
 
 ?>
