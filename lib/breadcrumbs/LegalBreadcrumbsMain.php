@@ -26,6 +26,17 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     const FIELD_ANCESTOR = 'breadcrumbs-ancestor';
 
+    public static function get_terms( $id )
+    {
+        return wp_get_post_terms(
+            $id,
+
+            'category',
+
+            [ 'ids', 'names ' ]
+        );
+    }
+
     public static function get_ancestors( $id )
     {
         $post = get_post( $id );
@@ -142,6 +153,16 @@ class LegalBreadcrumbsMain extends LegalDebug
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
                         $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
+                    }
+                }
+
+                if ( empty( $items ) ) {
+                    $legal_terms = array_reverse( self::get_terms( $post->ID ) );
+
+                    if ( !empty( $legal_terms ) ) {
+                        foreach ( $legal_terms as $term ) {
+                            $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
+                        }
                     }
                 }
 
