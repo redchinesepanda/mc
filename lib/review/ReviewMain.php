@@ -178,19 +178,19 @@ class ReviewMain
 
             "legalName" => "Match.Center",
 
-            "url" => get_site_url(),
+            // "url" => get_site_url(),
 
-            "logo" => [
-                "@context" => "https://schema.org",
+            // "logo" => [
+            //     "@context" => "https://schema.org",
 
-                "@type" => "ImageObject",
+            //     "@type" => "ImageObject",
 
-                "contentUrl" => "https://match.center/wp-content/uploads/match-center.png",
+            //     "contentUrl" => "https://match.center/wp-content/uploads/match-center.png",
 
-                "height" => '20 px',
+            //     "height" => '20 px',
 
-                "width" => '213 px',
-            ],
+            //     "width" => '213 px',
+            // ],
         ];
     }
 
