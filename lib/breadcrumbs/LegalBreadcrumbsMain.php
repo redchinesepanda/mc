@@ -183,15 +183,15 @@ class LegalBreadcrumbsMain extends LegalDebug
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                     }
                 }
-
-                LegalDebug::debug( [
-                    'items' => $items,
-                ] );
             }
 
             array_unshift( $items, $first );
 
             $items[] = self::get_item( $post->post_title, '', $index );
+
+            LegalDebug::debug( [
+                'items' => $items,
+            ] );
         }
 
         // self::debug( [
