@@ -1,3 +1,23 @@
+@media screen and ( max-width: 767px ) {
+    /* Review About Display */
+
+    .review-about {
+        flex-direction: column;
+    }
+}
+
+@media screen and ( min-width: 768px ) {
+    /* Review About Position */
+
+    .review-about .about-left {
+        margin-left: auto;
+    }
+
+    .review-about .about-right {
+        margin-right: auto;
+    }
+}
+
 /* Review About Display */
 
 .review-about {
@@ -55,10 +75,6 @@
     padding: 10px 0px;
 }
 
-.review-about .about-left {
-    margin-left: auto;
-}
-
 .review-about .about-rating {
     padding-left: 34px;
 }
@@ -66,10 +82,6 @@
 .review-about .about-center h1,
 .review-about .about-center h3 {
     padding-bottom: 0px;
-}
-
-.review-about .about-right {
-    margin-right: auto;
 }
 
 .legal-afillate {
