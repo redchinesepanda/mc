@@ -15,6 +15,12 @@
     .review-about .legal-afillate {
         width: 250px;
     }
+
+    /* Review About Position */
+
+    .review-about {
+        padding: 10px 15px;
+    }
 }
 
 @media screen and ( min-width: 768px ) {
@@ -32,6 +38,10 @@
 
     .review-about .about-right {
         margin-right: auto;
+    }
+
+    .review-about {
+        padding: 10px 0px;
     }
     
     /* Review About Width and Height */
@@ -88,10 +98,6 @@
 }
 
 /* Review About Position */
-
-.review-about {
-    padding: 10px 0px;
-}
 
 .review-about .about-rating {
     padding-left: 34px;
