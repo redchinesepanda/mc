@@ -120,9 +120,9 @@ class ReviewMain
 
                 LegalBreadcrumbsMain::schema(),
 
-                ReviewFAQ::schema(),
-
                 ReviewHowTo::schema(),
+
+                ReviewFAQ::schema(),
             ],
         ] );
     }
@@ -134,13 +134,15 @@ class ReviewMain
 
             "@type" => "WebPage",
 
-            "name" => YoastMain::get_seo_title(),
+            // "name" => YoastMain::get_seo_title(),
 
-            "description" => YoastMain::get_seo_description(),
+            "headline" => YoastMain::get_seo_title(),
+
+            "author" => self::schema_author(),
 
             "publisher" => self::schema_publisher(),
 
-            "author" => self::schema_author(),
+            "description" => YoastMain::get_seo_description(),
         ];
     }
 
