@@ -6,6 +6,10 @@
         row-gap: 20px;
     }
 
+    .review-about .about-right {
+        align-items: center;
+    }
+
     /* Review About Width and Height */
 
     .review-about .legal-afillate {
@@ -58,7 +62,6 @@
     flex-direction: column;
     row-gap: 10px;
     justify-content: center;
-    align-items: center;
 }
 
 .review-about .about-left {
