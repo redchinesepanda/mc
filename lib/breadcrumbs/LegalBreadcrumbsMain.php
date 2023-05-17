@@ -157,7 +157,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                 }
 
                 if ( empty( $items ) ) {
-                    $legal_terms = array_reverse( self::get_terms( $post->ID ) );
+                    $legal_terms = self::get_terms( $post->ID );
 
                     LegalDebug::debug( [
                         '$legal_terms' => $legal_terms,
