@@ -138,11 +138,13 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $index = 1;
 
-        
-
         // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
             
         $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+
+        LegalDebug::debug( [
+            '$post' => $post,
+        ] );
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
