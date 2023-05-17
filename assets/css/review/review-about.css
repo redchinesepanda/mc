@@ -59,7 +59,7 @@
 /* Review About Width and Height */
 
 .review-about .about-logo {
-    width: inherit;
+    width: 100%;
     height: 45px;
 }
 
