@@ -123,6 +123,8 @@ class ReviewMain
                 ReviewHowTo::schema(),
 
                 ReviewFAQ::schema(),
+
+                self::schema_publisher(),
             ],
         ] );
     }
