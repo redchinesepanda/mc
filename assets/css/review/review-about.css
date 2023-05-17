@@ -3,10 +3,17 @@
 
     .review-about {
         flex-direction: column;
+        row-gap: 20px;
     }
 }
 
 @media screen and ( min-width: 768px ) {
+    /* Review About Display */
+
+    .review-about {
+        column-gap: 50px;
+    }
+
     /* Review About Position */
 
     .review-about .about-left {
@@ -36,7 +43,6 @@
 
 .review-about {
     display: flex;
-    column-gap: 50px;
 }
 
 .review-about .about-left,
