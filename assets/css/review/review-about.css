@@ -16,6 +16,20 @@
     .review-about .about-right {
         margin-right: auto;
     }
+    
+    /* Review About Width and Height */
+
+    .review-about .about-left {
+        width: calc( ( 1080px * 0.25 ) - 33px );
+    }
+
+    .review-about .about-center {
+        width: calc( ( 1080px * 0.5 ) - 33px );
+    }
+    
+    .review-about .about-right {
+        width: calc( ( 1080px * 0.25 ) - 33px );
+    }
 }
 
 /* Review About Display */
@@ -44,10 +58,6 @@
 
 /* Review About Width and Height */
 
-.review-about .about-left {
-    width: calc( ( 1080px * 0.25 ) - 33px );
-}
-
 .review-about .about-logo {
     width: inherit;
     height: 45px;
@@ -55,14 +65,6 @@
 
 .review-about .about-rating {
     width: fit-content;
-}
-
-.review-about .about-center {
-    width: calc( ( 1080px * 0.5 ) - 33px );
-}
-
-.review-about .about-right {
-    width: calc( ( 1080px * 0.25 ) - 33px );
 }
 
 .tcb-post-content .legal-afillate {
