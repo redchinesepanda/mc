@@ -44,6 +44,8 @@ class ReviewFAQ
 
             "@type" => "FAQPage",
 
+            "name" => "Legal FAQ",
+
             "mainEntity" => self::get_schema_data(),
         ];
     }
@@ -62,17 +64,6 @@ class ReviewFAQ
 
 		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
 	}
-
-	// public static function clean( &$node )
-    // {
-    //     if ( $node->hasChildNodes() ) {
-    //         foreach ( $node->childNodes as $child ) {
-    //             self::clean( $child );
-    //         }
-    //     } else {
-    //         $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
-    //     }
-    // }
 
     public static function get_schema_data()
 	{
