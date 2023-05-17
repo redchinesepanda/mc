@@ -161,13 +161,6 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                     if ( !empty( $legal_terms ) ) {
                         foreach ( $legal_terms as $term ) {
-
-                            LegalDebug::debug( [
-                                'name' => $term->name,
-
-                                'get_term_link' => get_term_link( $term->term_id ),
-                            ] );
-
                             $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
                         }
                     }
@@ -190,6 +183,10 @@ class LegalBreadcrumbsMain extends LegalDebug
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                     }
                 }
+
+                LegalDebug::debug( [
+                    'items' => $items,
+                ] );
             }
 
             array_unshift( $items, $first );
