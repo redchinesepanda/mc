@@ -5,6 +5,12 @@
         flex-direction: column;
         row-gap: 20px;
     }
+
+    /* Review About Width and Height */
+
+    .review-about .legal-afillate {
+        width: 250px;
+    }
 }
 
 @media screen and ( min-width: 768px ) {
