@@ -150,7 +150,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                     'legal_items' => $legal_items,
                 ] );
 
-                if ( $legal_items ) {
+                if ( !empty( $legal_items ) ) {
                     foreach( $legal_items as $item ) {
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
