@@ -244,54 +244,7 @@ class ReviewHowTo
 
 			"step" => $steps,
 
-			// "step" => [
-			// 	[
-			// 		"@type" => "HowToSection",
-			// 		"name" => "Preparation",
-			// 		"position" => "1",
-			// 		"itemListElement" => [
-			// 			[
-			// 				"@type" => "HowToStep",
-			// 				"position" => "1",
-			// 				"itemListElement" => [
-			// 					[
-			// 						"@type" => "HowToDirection",
-			// 						"position" => "1",
-			// 						"text" => "Before placing your first bet, make a minimum deposit of £10 within 7 days of registering, using a debit card. Note: payment restrictions apply. "
-			// 					],
-			// 					[
-			// 						"@type" => "HowToDirection",
-			// 						"position" => "2",
-			// 						"text" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar nibh id nibh molestie, scelerisque interdum metus venenatis."
-			// 					],
-			// 					[
-			// 						"@type" => "HowToDirection",
-			// 						"position" => "3",
-			// 						"text" => "Nam pellentesque eu nisl id congue."
-			// 					],
-			// 					[
-			// 						"@type" => "HowToDirection",
-			// 						"position" => "4",
-			// 						"text" => "Maecenas in vulputate ipsum.",
-			// 					],
-			// 				],
-			// 			],
-			// 			[
-			// 				"@type" => "HowToStep",
-			// 				"position" => "2",
-			// 				"itemListElement" => [
-			// 					[
-			// 						"@type" => "HowToDirection",
-			// 						"position" => "1",
-			// 						"text" => "Place your first bet. The first bet must be £10 or more on any qualifying sportsbook markets at odds of evens or greater.",
-			// 					],
-			// 				],
-			// 			],
-			// 		]
-			// 	],
-			// ],
-
-			"totalTime" => "P2D",
+			"totalTime" => "PT5M",
         ];
     }
 
