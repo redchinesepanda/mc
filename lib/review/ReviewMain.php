@@ -178,6 +178,8 @@ class ReviewMain
 
             "legalName" => "Match.Center",
 
+            "url" => get_site_url(),
+
             "logo" => [
                 "@context" => "https://schema.org",
 
