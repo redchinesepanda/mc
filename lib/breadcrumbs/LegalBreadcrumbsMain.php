@@ -217,6 +217,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             "@type" => "BreadcrumbList",
 
+            "name" => 'Legal Breadcrumbs',
+
             "itemListElement" => self::get_schema_data(),
         ];
     }
