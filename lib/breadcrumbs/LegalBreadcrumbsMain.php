@@ -189,9 +189,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             $items[] = self::get_item( $post->post_title, '', $index );
 
-            LegalDebug::debug( [
-                'items' => $items,
-            ] );
+            // LegalDebug::debug( [
+            //     'items' => $items,
+            // ] );
         }
 
         // self::debug( [
