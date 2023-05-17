@@ -139,16 +139,14 @@ class LegalBreadcrumbsMain extends LegalDebug
         $index = 1;
 
         // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
-            
-        $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+        
+        $first = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+        
+        // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
                 $legal_items = get_field( self::FIELD_ITEMS, $post->ID );
-
-                LegalDebug::debug( [
-                    'legal_items' => $legal_items,
-                ] );
 
                 if ( !empty( $legal_items ) ) {
                     foreach( $legal_items as $item ) {
@@ -190,6 +188,8 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
             }
+
+            array_unshift( $items, $first );
 
             $items[] = self::get_item( $post->post_title, '', $index );
         }
