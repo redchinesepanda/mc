@@ -13,7 +13,7 @@ class SchemaMain
 	
 	public static function markup( $SchemaMarkup )
 	{
-		LegalDebug( [
+		LegalDebug::debug( [
 			'SchemaMarkup' => $SchemaMarkup,
 			
 			'SchemaMarkupType' => $SchemaMarkupType,
