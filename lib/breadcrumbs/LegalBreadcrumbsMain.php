@@ -43,10 +43,6 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $ancestor_id = get_field( self::FIELD_ANCESTOR, $id );
 
-        // self::debug( [
-        //     'ancestor_id' => $ancestor_id,
-        // ] );
-
         if ( ! $post || empty( $ancestor_id ) || $ancestor_id == $id ) {
             return [];
         }
@@ -54,8 +50,6 @@ class LegalBreadcrumbsMain extends LegalDebug
         $ancestors[] = $ancestor_id;
 
         while ( $ancestor = get_post( $ancestor_id ) ) {
-            // Loop detection: If the ancestor has been seen before, break.
-
             $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
 
             if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
@@ -84,9 +78,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 			$homepage_url = get_option( 'home' );
 		}
 
-        // self::debug( [
-        //     'homepage_url' => $homepage_url,
-        // ] );
+        if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
+            $homepage_url = WPMLMain::locale_permalink( $homepage_url, 'kz' );
+        }
 
         return $homepage_url;
     }
@@ -130,23 +124,49 @@ class LegalBreadcrumbsMain extends LegalDebug
         'label' => 'item-label',
     ];
 
-    // const FIELD_ANCESTOR_TEXT = 'breadcrumbs-ancestor-text';
-
     public static function get()
     {
+        // LegalDebug::debug( [
+        //     'function' => 'get',
+        // ] );
+
+        $id = 0;
+
         $post = get_post();
+
+        if ( !empty( $post ) ) {
+            // LegalDebug::debug( [
+            //     'post_title' => $post->post_title,
+            // ] );
+
+            $post_id = $post->ID;
+        }
+
+        // if ( empty( $post ) ) {
+        //     $term = get_queried_object();
+
+        //     LegalDebug::debug( [
+        //         'name' => $term->name,
+        //     ] );
+
+        //     if ( $term !== null ) {
+        //         $post_id = $term->term_id;
+        //     }
+        // }
+
+        // LegalDebug::debug( [
+        //     '$post_id' => $post_id,
+        // ] );
 
         $index = 1;
 
-        // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+        $items = [];
         
         $first = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
-        
-        // $items[] = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
-        if ( !empty( $post ) ) {
-            if ( empty( get_field( self::FIELD_HIDE, $post->ID ) ) ) {
-                $legal_items = get_field( self::FIELD_ITEMS, $post->ID );
+        if ( !empty( $post_id ) ) {
+            if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) ) {
+                $legal_items = get_field( self::FIELD_ITEMS, $post_id );
 
                 if ( !empty( $legal_items ) ) {
                     foreach( $legal_items as $item ) {
@@ -157,17 +177,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                 }
 
                 if ( empty( $items ) ) {
-                    $legal_terms = array_reverse( self::get_terms( $post->ID ) );
-
-                    if ( !empty( $legal_terms ) ) {
-                        foreach ( $legal_terms as $term ) {
-                            $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
-                        }
-                    }
-                }
-
-                if ( empty( $items ) ) {
-                    $legal_ancestors = array_reverse( self::get_ancestors( $post->ID ) );
+                    $legal_ancestors = array_reverse( self::get_ancestors( $post_id ) );
 
                     if ( !empty( $legal_ancestors ) ) {
                         foreach ( $legal_ancestors as $id ) {
@@ -176,8 +186,18 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
 
+                if ( empty( $items ) ) {
+                    $legal_terms = self::get_terms( $post_id );
+
+                    if ( !empty( $legal_terms ) ) {
+                        foreach ( $legal_terms as $term ) {
+                            $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
+                        }
+                    }
+                }
+
                 if ( empty( $items ) && $post->post_parent ) {
-                    $ancestors = array_reverse( get_post_ancestors( $post->ID ) );
+                    $ancestors = array_reverse( get_post_ancestors( $post_id ) );
     
                     foreach ( $ancestors as $id ) {
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
@@ -185,18 +205,10 @@ class LegalBreadcrumbsMain extends LegalDebug
                 }
             }
 
-            array_unshift( $items, $first );
-
             $items[] = self::get_item( $post->post_title, '', $index );
-
-            // LegalDebug::debug( [
-            //     'items' => $items,
-            // ] );
         }
 
-        // self::debug( [
-        //     'items' => $items,
-        // ] );
+        array_unshift( $items, $first );
 
         return $items;
     }
@@ -205,6 +217,12 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function render()
     {
+        
+
+        // LegalDebug::debug( [
+        //     'function' => 'register',
+        // ] );
+
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );

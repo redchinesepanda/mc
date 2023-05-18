@@ -13,6 +13,11 @@ class WPMLMain
         return apply_filters( 'wpml_current_language', NULL );
     }
 
+    public static function current_language( $url, $;ocale )
+    {
+        return apply_filters( 'wpml_permalink', $url, $;ocale, true );
+    }
+
     public static function register()
     {
         WPMLLangSwitcher::register();
