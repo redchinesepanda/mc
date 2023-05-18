@@ -13,12 +13,6 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		LegalDebug::debug( [
-			'field' => $data->{"@context"},
-
-			'data' => $data,
-		] );
-
 		// $properties = get_object_vars( $data );
 
 		// LegalDebug::debug( [
@@ -27,11 +21,17 @@ class SchemaMain
 		// 	'properties' => $properties,
 		// ] );
 
-		// if ( !empty( $data[ '@graph' ] ) ) {
-		// 	LegalDebug::debug( [
-		// 		'@graph' => $data[ '@graph' ],
-		// 	] );
-		// }
+		if ( property_exists( $data, '@context' ) ) {
+			LegalDebug::debug( [
+				'@graph' => $data[ '@graph' ],
+			] );
+		}
+
+		LegalDebug::debug( [
+			'@graph' => $data->{"@graph"},
+
+			'data' => $data,
+		] );
 
 		return $markup;
 	}
