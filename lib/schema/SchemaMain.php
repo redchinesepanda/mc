@@ -14,7 +14,7 @@ class SchemaMain
 		$data = json_decode( $markup );
 
 		LegalDebug::debug( [
-			'field' => $data->'\@context',
+			'field' => $data->context,
 
 			'data' => $data,
 		] );
