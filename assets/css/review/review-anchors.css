@@ -1,9 +1,25 @@
+@media screen and ( max-width: 767px )
+{
+    /* Anchors Position */
+    
+    .review-anchors {
+        padding: 5px 15px;
+    }
+
+}
+
 @media screen and ( min-width: 768px )
 {
     /* Anchors Width and Height */
 
     .review-anchors {
         width: 1080px;
+    }
+
+    /* Anchors Position */
+    
+    .review-anchors {
+        padding: 5px 0px;
     }
 
 }
@@ -15,12 +31,6 @@
     column-gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-/* Anchors Position */
-
-.review-anchors {
-    padding: 5px 0px;
 }
 
 .review-anchors {
