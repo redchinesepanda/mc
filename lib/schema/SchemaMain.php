@@ -9,21 +9,17 @@ class SchemaMain
         add_filter( 'hunch_schema_markup', [ $handler, 'markup' ] );
     }
 
-	// public static function markup( $SchemaMarkup, $SchemaMarkupType, $post, $PostType )
-	
-	public static function markup( $SchemaMarkup )
+	public static function markup( $markup )
 	{
-		LegalDebug::debug( [
-			'SchemaMarkup' => json_decode( $SchemaMarkup ),
-			
-			// 'SchemaMarkupType' => $SchemaMarkupType,
+		$data = json_decode( $markup );
 
-			// 'post_title' => $post->post_title,
+		if ( !empty( $data[ '@graph' ] ) ) {
+			LegalDebug::debug( [
+				'@graph' => $data[ '@graph' ],
+			] );
+		}
 
-			// 'PostType' => $PostType,
-		] );
-
-		return $SchemaMarkup;
+		return $markup;
 	}
 }
 
