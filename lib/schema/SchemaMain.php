@@ -15,7 +15,7 @@ class SchemaMain
 
 		LegalDebug::debug( [
 			'data' => $data, 
-		] )
+		] );
 
 		// $properties = get_object_vars( $data );
 
