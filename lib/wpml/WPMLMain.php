@@ -13,9 +13,11 @@ class WPMLMain
         return apply_filters( 'wpml_current_language', NULL );
     }
 
-    public static function current_language( $url, $;ocale )
+    public static function locale_permalink( $url, $locale )
     {
-        return apply_filters( 'wpml_permalink', $url, $;ocale, true );
+        // return apply_filters( 'wpml_permalink', $url, $locale, true );
+        
+        return apply_filters( 'wpml_permalink', $url, $locale );
     }
 
     public static function register()
