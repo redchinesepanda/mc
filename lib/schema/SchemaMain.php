@@ -16,11 +16,11 @@ class SchemaMain
 		LegalDebug::debug( [
 			'SchemaMarkup' => $SchemaMarkup,
 			
-			'SchemaMarkupType' => $SchemaMarkupType,
+			// 'SchemaMarkupType' => $SchemaMarkupType,
 
-			'post_title' => $post->post_title,
+			// 'post_title' => $post->post_title,
 
-			'PostType' => $PostType,
+			// 'PostType' => $PostType,
 		] );
 
 		return $SchemaMarkup;
