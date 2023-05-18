@@ -13,13 +13,9 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		// $properties = get_object_vars( $data );
-
-		// LegalDebug::debug( [
-		// 	'data' => $data,
-
-		// 	'properties' => $properties,
-		// ] );
+		LegalDebug::debug( [
+			'@graph' => $data->{"@graph"},
+		] );
 
 		if ( property_exists( $data, '@context' ) ) {
 			foreach( $data->{"@graph"} as $node ) {
