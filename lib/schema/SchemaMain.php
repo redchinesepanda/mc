@@ -23,7 +23,7 @@ class SchemaMain
 
 		if ( property_exists( $data, '@context' ) ) {
 			LegalDebug::debug( [
-				'@graph' => $data[ '@graph' ],
+				'@graph' => $data->{"@graph"},
 			] );
 		}
 
