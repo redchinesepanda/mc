@@ -14,7 +14,7 @@ class SchemaMain
 		$data = json_decode( $markup );
 
 		LegalDebug::debug( [
-			'data' => $data->'@context',
+			'data' => $data->@context,
 		] )
 
 		// $properties = get_object_vars( $data );
