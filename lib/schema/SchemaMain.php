@@ -13,9 +13,9 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		LegalDebug::debug( [
-			'@graph' => $data->{"@graph"},
-		] );
+		// LegalDebug::debug( [
+		// 	'@graph' => $data->{"@graph"},
+		// ] );
 
 		if ( property_exists( $data, '@context' ) ) {
 			foreach( $data->{"@graph"} as $node ) {
@@ -28,12 +28,14 @@ class SchemaMain
 				}
 			}
 
-			LegalDebug::debug( [
-				'@graph' => $data->{"@graph"},
-			] );
+			// LegalDebug::debug( [
+			// 	'@graph' => $data->{"@graph"},
+			// ] );
 		}
 
-		return $markup;
+		// return $markup;
+		
+		return json_encode( $data );
 	}
 }
 
