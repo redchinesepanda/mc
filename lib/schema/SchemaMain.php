@@ -16,7 +16,7 @@ class SchemaMain
 		$properties = get_object_vars( $data );
 
 		LegalDebug::debug( [
-			'graph' => $data->graph,
+			'properties' => $properties,
 		] );
 
 		// if ( !empty( $data[ '@graph' ] ) ) {
