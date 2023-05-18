@@ -37,12 +37,6 @@ class SchemaMain
 			] );
 		}
 
-		LegalDebug::debug( [
-			'@graph' => $data->{"@graph"},
-
-			'data' => $data,
-		] );
-
 		return $markup;
 	}
 }
