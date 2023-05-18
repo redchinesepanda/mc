@@ -22,17 +22,19 @@ class SchemaMain
 		// ] );
 
 		if ( property_exists( $data, '@context' ) ) {
-			// LegalDebug::debug( [
-			// 	'@graph' => $data->{"@graph"},
-			// ] );
-
 			foreach( $data->{"@graph"} as $node ) {
 				if ( property_exists( $node, 'author' ) ) {
-					LegalDebug::debug( [
-						'author' => $node->author,
-					] );
+					unset( $node->author );
+
+					// LegalDebug::debug( [
+					// 	'author' => $node->author,
+					// ] );
 				}
 			}
+
+			LegalDebug::debug( [
+				'@graph' => $data->{"@graph"},
+			] );
 		}
 
 		LegalDebug::debug( [
