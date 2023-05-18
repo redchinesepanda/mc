@@ -14,7 +14,7 @@ class SchemaMain
 	public static function markup( $SchemaMarkup )
 	{
 		LegalDebug::debug( [
-			'SchemaMarkup' => $SchemaMarkup,
+			'SchemaMarkup' => json_decode( $SchemaMarkup ),
 			
 			// 'SchemaMarkupType' => $SchemaMarkupType,
 
