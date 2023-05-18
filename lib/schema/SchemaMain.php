@@ -13,11 +13,15 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		if ( !empty( $data[ '@graph' ] ) ) {
-			LegalDebug::debug( [
-				'@graph' => $data[ '@graph' ],
-			] );
-		}
+		LegalDebug::debug( [
+			'data' => $data,
+		] );
+
+		// if ( !empty( $data[ '@graph' ] ) ) {
+		// 	LegalDebug::debug( [
+		// 		'@graph' => $data[ '@graph' ],
+		// 	] );
+		// }
 
 		return $markup;
 	}
