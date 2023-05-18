@@ -1,4 +1,4 @@
-<?php if( !empty( $args ) ) : ?>
+<?php if( !empty( $args[ 'about-title' ] ) ) : ?>
     <style type="text/css">
         .review-about {
             background-color: <?php echo $args['background']; ?>;
