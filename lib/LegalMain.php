@@ -20,6 +20,8 @@ require_once( 'wpml/WPMLMain.php' );
 
 require_once( 'yoast/YoastMain.php' );
 
+require_once( 'schema/SchemaMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -44,6 +46,8 @@ class LegalMain {
 		ToolsMain::register();
 
 		WPMLMain::register();
+
+		SchemaMain::register();
 	}
 }
 
