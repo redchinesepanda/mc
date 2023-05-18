@@ -1,3 +1,13 @@
+@media screen and ( min-width: 768px )
+{
+    /* Anchors Width and Height */
+
+    .review-anchors {
+        width: 1080px;
+    }
+
+}
+
 /* Anchors Display */
 
 .review-anchors {
@@ -5,11 +15,6 @@
     column-gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-/* Anchors Width and Height */
-.review-anchors {
-    width: 1080px;
 }
 
 /* Anchors Position */
