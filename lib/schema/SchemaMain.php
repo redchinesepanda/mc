@@ -13,13 +13,17 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		$properties = get_object_vars( $data );
-
 		LegalDebug::debug( [
-			'data' => $data,
+			'data' => $data->'@context',
+		] )
 
-			'properties' => $properties,
-		] );
+		// $properties = get_object_vars( $data );
+
+		// LegalDebug::debug( [
+		// 	'data' => $data,
+
+		// 	'properties' => $properties,
+		// ] );
 
 		// if ( !empty( $data[ '@graph' ] ) ) {
 		// 	LegalDebug::debug( [
