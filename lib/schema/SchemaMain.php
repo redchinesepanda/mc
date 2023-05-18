@@ -9,7 +9,9 @@ class SchemaMain
         add_filter( 'hunch_schema_markup', [ $handler, 'markup' ] );
     }
 
-	public static function markup( $SchemaMarkup, $SchemaMarkupType, $post, $PostType )
+	// public static function markup( $SchemaMarkup, $SchemaMarkupType, $post, $PostType )
+	
+	public static function markup( $SchemaMarkup )
 	{
 		LegalDebug( [
 			'SchemaMarkup' => $SchemaMarkup,
