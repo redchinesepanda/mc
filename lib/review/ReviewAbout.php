@@ -54,6 +54,10 @@ class ReviewAbout
         }
 
         $group = get_field( self::FIELD );
+
+        LegalDebug::debug( [
+            'group' => $group, 
+        ] );
         
         if( $group ) {
             // LegalDebug::debug( [
