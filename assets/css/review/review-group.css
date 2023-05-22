@@ -15,8 +15,8 @@
 }
 
 /* Group Width and Height */
-.tve_wp_shortcode:not( [style] ) {
-    width: unset;
+.tve_wp_shortcode:not( [ style ] ) {
+    width: inherit;
 }
 
 /* Group Position */
