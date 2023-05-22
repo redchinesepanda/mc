@@ -1,14 +1,17 @@
+@media screen and ( min-width: 768px )
+{
+    /* Group Width and Height */
+    .review-group {
+        width: 1080px;
+    }
+}
+
 /* Group Display */
 
 .review-group {
     display: flex;
     column-gap: 46px;
     justify-content: center;
-}
-
-/* Group Width and Height */
-.review-group {
-    width: 1080px;
 }
 
 /* Group Position */
