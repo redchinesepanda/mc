@@ -1,7 +1,23 @@
-/* Review Display */
+@media screen and ( min-width: 768px )
+{
+    /* Review Display */
+    
+    .tcb-post-content table.legal-column {
+        float: left;
+    }
 
-.tcb-post-content table.legal-column {
-	float: left;
+    /* Review Position */
+
+    .tcb-post-content table.legal-column + table.legal-column {
+        margin-left: 20px;
+    }
+    
+    /* Review Width and Height */
+
+    .tcb-post-content table.legal-column {
+        width: calc( 50% - 10px );
+    }
+
 }
 
 /* Review Position */
@@ -15,10 +31,6 @@
     padding-right: 56px;
 }
 
-.tcb-post-content table.legal-column + table.legal-column {
-	margin-left: 20px;
-}
-
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw {
@@ -27,10 +39,6 @@
 
 .tcb-post-content table.legal-check {
     min-width: 300px;
-}
-
-.tcb-post-content table.legal-column {
-	width: calc( 50% - 10px );
 }
 
 /* Review Background */
