@@ -14,6 +14,11 @@
     justify-content: center;
 }
 
+/* Group Width and Height */
+.tve_wp_shortcode:not( [style] ) {
+    width: unset;
+}
+
 /* Group Position */
 
 nav.group {
