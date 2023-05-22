@@ -1,3 +1,13 @@
+@media screen and ( max-width: 767px )
+{
+    /* Review Display */
+
+    .tcb-post-content table {
+        overflow: scroll;
+        display: block;
+    }
+}
+
 @media screen and ( min-width: 768px )
 {
     /* Review Display */
@@ -11,7 +21,7 @@
     .tcb-post-content table.legal-column + table.legal-column {
         margin-left: 20px;
     }
-    
+
     /* Review Width and Height */
 
     .tcb-post-content table.legal-column {
