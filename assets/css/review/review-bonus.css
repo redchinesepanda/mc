@@ -1,3 +1,33 @@
+@media screen and ( max-width: 767px )
+{
+	/* Bonus Display */	
+
+	.legal-bonus {
+		flex-direction: column;
+	}
+
+	.legal-bonus .bonus-title {
+		flex-direction: column;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Bonus Width and Height */
+
+	.legal-bonus .bonus-title {
+		width: 25%;
+	}
+
+	.legal-bonus .bonus-name {
+		width: 50%;
+	}
+
+	.legal-bonus .bonus-get {
+		width: 25%;
+	}
+}
+
 /* Bonus Display */
 
 .legal-bonus {
@@ -24,18 +54,6 @@
 }
 
 /* Bonus Width and Height */
-
-.legal-bonus .bonus-title {
-	width: 25%;
-}
-
-.legal-bonus .bonus-name {
-	width: 50%;
-}
-
-.legal-bonus .bonus-get {
-	width: 25%;
-}
 
 .legal-bonus .bonus-get-link {
 	width: fit-content;
