@@ -110,13 +110,9 @@
     padding-bottom: 0px;
 }
 
-.legal-afillate {
-    padding: 7px 41px 7px 22px;
-    margin-bottom: 20px;
-}
-
 .tcb-post-content .legal-afillate {
-    margin: 0px auto;
+    padding: 7px 41px 7px 22px;
+    margin: 0px auto 20px auto;
 }
 
 /* Review About Background */
