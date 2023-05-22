@@ -1,3 +1,12 @@
+@media screen and ( min-width: 768px )
+{
+	/* Pros Cons Width */
+
+	.legal-pros-cons .pros-cons-item {
+		width: calc( 50% - 8px );
+	}
+}
+
 /* Pros Cons Display */
 
 div.legal-pros-cons {
@@ -5,12 +14,6 @@ div.legal-pros-cons {
 	flex-wrap: wrap;
 	column-gap: 16px;
 	row-gap: 30px;
-}
-
-/* Pros Cons Width */
-
-.legal-pros-cons .pros-cons-item {
-	width: calc( 50% - 8px );
 }
 
 /* Pros Cons Position */
