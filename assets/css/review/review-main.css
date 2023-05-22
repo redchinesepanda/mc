@@ -2,8 +2,9 @@
 {
     /* Review Position */
 
-    .tcb-post-content {
-        padding: 0px 15px;
+    .tcb-post-content.thrv_wrapper:not( .legal-off-style ) {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
