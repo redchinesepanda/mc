@@ -116,7 +116,7 @@ class ReviewMain
             "@context" => "https://schema.org",
 
             "@graph" => [
-                self::schema_webpage(),
+                self::schema_organization(),
 
                 LegalBreadcrumbsMain::schema(),
 
@@ -127,6 +127,21 @@ class ReviewMain
                 self::schema_publisher(),
             ],
         ] );
+    }
+
+    public static function schema_organization()
+    {
+        return [
+            "@context" => "https://schema.org",
+            
+            "@type" => "Organization",
+            
+            "name" => "Match.Center",
+            
+            "url" => "https://match.center/",
+
+            "logo" => "https://match.center/wp-content/uploads/match-center.png",
+        ];
     }
 
     public static function schema_webpage()
@@ -193,26 +208,6 @@ class ReviewMain
             // ],
         ];
     }
-
-    // public static function add_type_attribute( $tag, $handle, $src ) {
-    //     if ( $handle !== self::NAME[ 'schema' ] ) {
-    //         return $tag;
-    //     }
-
-    //     // LegalDebug::debug( [
-    //     //     '$tag' => $tag,
-            
-    //     //     '$handle' => $handle,
-
-    //     //     '$src' => $src,
-    //     // ] );
-
-    //     return str_replace( 'text/javascript', 'application/ld+json', $tag );
-
-    //     // $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
-
-    //     return $tag;
-    // }
 }
 
 ?>
