@@ -15,7 +15,7 @@
 }
 
 /* Group Width and Height */
-.tve_wp_shortcode:not( [ style ] ) {
+.tve_wp_shortcode:not( .legal-off ) {
     width: inherit;
 }
 
