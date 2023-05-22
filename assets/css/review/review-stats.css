@@ -1,3 +1,21 @@
+@media screen and ( max-width: 767px )
+{
+    /* Stats Width */
+
+    .review-stats .stats-item {
+        width: 100%;
+    }
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Stats Width */
+
+    .review-stats .stats-item {
+        width: calc(50% - 10px);
+    }
+}
+
 /* Stats Display */
 
 .review-stats {
@@ -28,10 +46,6 @@
 
 .review-stats .item-value-wrapper {
 	width: 100%;
-}
-
-.review-stats .stats-item {
-    width: calc(50% - 10px);
 }
 
 /* Stats Background */
