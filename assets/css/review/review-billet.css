@@ -6,6 +6,16 @@
 		flex-direction: column;
 	}
 
+	/* Billet Width and Height */
+
+	.legal-billet .billet-review {
+		min-height: 150px;
+	}
+
+	.legal-billet .billet-get {
+		min-height: 100px;
+	}
+
 	/* Billet Background */
 	
 	.legal-billet .billet-review {
