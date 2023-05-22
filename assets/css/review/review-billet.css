@@ -1,3 +1,34 @@
+@media screen and ( max-width: 767px )
+{
+	/* Billet Display */
+
+	.legal-billet {
+		flex-direction: column;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Billet Width and Height */
+
+	.legal-billet .billet-review {
+		/* width: calc( 22% - 20px ); */
+		width: 22%;
+	}
+
+	.legal-billet .billet-body {
+		/* width: calc( 56% - 20px ); */
+		width: calc( 56% - 60px );
+	}
+
+	.legal-billet .billet-get {
+		/* width: calc( 22% - 20px ); */
+		width: 22%;
+	}
+
+
+}
+
 /* Billet Display */
 
 .legal-billet {
@@ -45,21 +76,6 @@
 }
 
 /* Billet Width and Height */
-
-.legal-billet .billet-review {
-	/* width: calc( 22% - 20px ); */
-	width: 22%;
-}
-
-.legal-billet .billet-body {
-	/* width: calc( 56% - 20px ); */
-	width: calc( 56% - 60px );
-}
-
-.legal-billet .billet-get {
-	/* width: calc( 22% - 20px ); */
-	width: 22%;
-}
 
 .legal-billet .billet-get-link {
 	width: fit-content;
