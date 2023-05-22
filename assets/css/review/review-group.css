@@ -1,3 +1,21 @@
+@media screen and ( min-width: 768px )
+{
+    /* Group Position */
+
+    .review-group {
+        padding: 20px 0px 5px 0px;
+    }
+}
+
+@media screen and ( max-width: 767px )
+{
+    /* Group Position */
+
+    .review-group {
+        padding: 20px 15px 5px 15px;
+    }
+}
+
 /* Group Display */
 
 .review-group {
@@ -16,10 +34,6 @@
 
 nav.group {
     padding-bottom: 30px;
-}
-
-.review-group {
-    padding: 20px 0px 5px 0px;
 }
 
 .review-group {
