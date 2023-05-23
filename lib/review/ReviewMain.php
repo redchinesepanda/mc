@@ -34,6 +34,10 @@ class ReviewMain
 
     public static function register_style()
     {
+        LegalDebug::debug( [
+            'check' => self::check(),
+        ] );
+
         foreach ( self::CSS as $name => $path ) {
             wp_enqueue_style( $name, $path );
         }
@@ -97,7 +101,7 @@ class ReviewMain
         return ToolEncode::encode( $content );
     }
 
-    public static function is_front()
+    public static function check()
     {
         // return ( !is_admin() && is_page() );
         

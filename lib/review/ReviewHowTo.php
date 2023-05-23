@@ -74,7 +74,7 @@ class ReviewHowTo
 
 	public static function get_schema_data()
 	{
-        if ( !ReviewMain::is_front() ) {
+        if ( !ReviewMain::check() ) {
 			return [];
 		}
 
