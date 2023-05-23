@@ -34,10 +34,10 @@ class ReviewMain
 
     public static function register_style()
     {
-        LegalDebug::debug( [
-            'check' => self::check(),
-        ] );
-
+        // LegalDebug::debug( [
+        //     'check' => self::check(),
+        // ] );
+        
         foreach ( self::CSS as $name => $path ) {
             wp_enqueue_style( $name, $path );
         }
@@ -65,6 +65,10 @@ class ReviewMain
 
     public static function register()
     {
+        LegalDebug::debug( [
+            'check' => self::check(),
+        ] );
+
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
