@@ -60,9 +60,11 @@ class OopsMain
                 ],
             ],
 
+            'meta_key' => 'affilate-order'
+
             // 'orderby' => [ 'oops_clause' => 'ASC', 'title' => 'ASC' ],
             
-            'orderby' => [ 'oops_clause' => 'ASC' ],
+            'orderby' => [ 'meta_value' => 'ASC' ],
         ];
     }
 
