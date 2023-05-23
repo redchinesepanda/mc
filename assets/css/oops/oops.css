@@ -1,3 +1,27 @@
+@media screen and ( max-width: 767px )
+{
+    /* Oops Position */
+
+	.legal-oops-background {
+		padding: 0px 15px;
+	}
+
+	/* Oops Width and Height */
+
+	.legal-oops {
+		width: inherit;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Oops Width and Height */
+
+	.legal-oops {
+		width: 425px;
+	}
+}
+
 /* Oops Display */
 
 .legal-oops-background {
@@ -46,19 +70,6 @@
 	height: 100vh;
 }
 
-.legal-oops {
-	width: 425px;
-}
-
-.legal-oops .item-button {
-	background-color: rgb(89, 151, 227);
-	background-image: url( '../../img/oops/oops-bet-now.svg' );
-    background-position: right 13px center;
-    background-repeat: no-repeat;
-    background-size: auto;
-	border-radius: 20px;
-}
-
 /* Oops Background */
 
 .legal-oops-background {
@@ -68,6 +79,15 @@
 .legal-oops {
 	background-color: #ffffff;
 	border-radius: 6px;
+}
+
+.legal-oops .item-button {
+	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/oops/oops-bet-now.svg' );
+    background-position: right 13px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+	border-radius: 20px;
 }
 
 /* Oops Typography */
