@@ -1,3 +1,13 @@
+@media screen and ( min-width: 768px )
+{
+    /* Review Position */
+
+    .tcb-post-content ul:not( [ class ] ):not( [ style ] ),
+    .tcb-post-content ol:not( [ class ] ) {
+        padding-left: 30px;
+    }
+}
+
 /* Review Display */
 
 .tcb-post-content ol {
@@ -43,7 +53,6 @@
 .tcb-post-content ol:not( [ class ] ) {
     padding-top: 0px;
     padding-bottom: 30px;
-	padding-left: 30px;
 }
 
 .tcb-post-content li > ul:not( [ class ] ):not( [ style ] ),
