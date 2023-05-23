@@ -2,7 +2,7 @@
 {
     /* Review Display */
 
-    .tcb-post-content table {
+    .tcb-post-content table:not( [ class ] ) {
         overflow: scroll;
         display: block;
     }
