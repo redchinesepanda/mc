@@ -25,7 +25,7 @@
             <?php endif; ?>
         </div>
         <div class="about-right">
-        <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
+        <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
         </div>
     </div>
 <?php endif; ?>

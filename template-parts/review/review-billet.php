@@ -1,7 +1,7 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="billet-review">
 		<img class="review-image" src="<?php echo $args[ 'src' ]; ?>" width="138" height="45" />
-		<a class="review-title-link" href="<?php echo $args['review'][ 'href' ]; ?>">
+		<a class="review-title-link check-oops" href="<?php echo $args['review'][ 'href' ]; ?>">
 			<?php echo $args['review'][ 'text' ]; ?>
 		</a>
 	</div>
@@ -14,7 +14,7 @@
 		</div>
 	</div>
 	<div class="billet-get">
-		<a class="billet-get-link" href="<?php echo $args['get'][ 'href' ]; ?>">
+		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>">
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
