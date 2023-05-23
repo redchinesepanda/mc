@@ -10,7 +10,7 @@ class ReviewBonus
 
     public static function register_style()
     {
-		if ( self::check() ) {
+		if ( ReviewMain::check() ) {
 			foreach ( self::CSS as $name => $path ) {
 				wp_enqueue_style( $name, $path );
 			}
@@ -20,7 +20,7 @@ class ReviewBonus
     public static function register_inline_style()
     {
 		LegalDebug::debug( [
-			'check' => ( self::check() ? 'true' : 'false' ),
+			'check' => ( ReviewMain::check() ? 'true' : 'false' ),
 		] );
 
 		$name = 'review-inline';

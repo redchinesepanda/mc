@@ -8,7 +8,7 @@ class ReviewAbout
 
     public static function register_style()
     {
-        if ( self::check() ) {
+        if ( ReviewMain::check() ) {
             foreach ( self::CSS as $name => $path ) {
                 wp_enqueue_style( $name, $path );
             }
