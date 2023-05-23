@@ -60,7 +60,9 @@ class OopsMain
                 ],
             ],
 
-            'orderby' => [ 'oops_clause' => 'ASC', 'title' => 'ASC' ],
+            // 'orderby' => [ 'oops_clause' => 'ASC', 'title' => 'ASC' ],
+            
+            'orderby' => [ 'oops_clause' => 'ASC' ],
         ];
     }
 
