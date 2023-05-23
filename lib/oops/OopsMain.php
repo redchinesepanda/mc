@@ -51,6 +51,14 @@ class OopsMain
             's' => ' ' . WPMLMain::current_language(),
 
             'sentence' => true,
+
+            'meta_query' => [
+                [
+                    'key' => 'affilate-oops',
+
+                    'value' => '1',
+                ],
+            ]
         ];
     }
 
