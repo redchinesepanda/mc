@@ -53,12 +53,14 @@ class OopsMain
             'sentence' => true,
 
             'meta_query' => [
-                [
+                'oops_clause' => [
                     'key' => 'affilate-oops',
 
                     'value' => '1',
                 ],
-            ]
+            ],
+
+            'orderby' => [ 'oops_clause' => 'ASC', 'title' => 'ASC' ],
         ];
     }
 
