@@ -5,7 +5,7 @@ LegalDebug::debug( [
 ] );
 
 ?>
-<?php if( !empty( $args[ 'about-title' ] ) ) : ?>
+<?php if( !empty( $args[ 'title' ] ) ) : ?>
     <style type="text/css">
         .review-about {
             background-color: <?php echo $args['background']; ?>;
