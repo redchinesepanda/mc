@@ -60,7 +60,7 @@ class OopsMain
                 ],
             ],
 
-            'meta_key' => 'affilate-order'
+            'meta_key' => 'affilate-order',
 
             // 'orderby' => [ 'oops_clause' => 'ASC', 'title' => 'ASC' ],
             
