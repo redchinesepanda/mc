@@ -19,17 +19,19 @@ class ReviewBonus
 
     public static function register_inline_style()
     {
-		LegalDebug::debug( [
-			'check' => ( ReviewMain::check() ? 'true' : 'false' ),
-		] );
-
-		$name = 'review-inline';
-
-        wp_register_style( $name, false, [], true, true );
+		// LegalDebug::debug( [
+		// 	'check' => ( ReviewMain::check() ? 'true' : 'false' ),
+		// ] );
 		
-		wp_add_inline_style( $name, self::inline_style() );
-		
-		wp_enqueue_style( $name );
+		if ( ReviewMain::check() ) {
+			$name = 'review-inline';
+
+			wp_register_style( $name, false, [], true, true );
+			
+			wp_add_inline_style( $name, self::inline_style() );
+			
+			wp_enqueue_style( $name );
+		}
     }
 
 	public static function register()

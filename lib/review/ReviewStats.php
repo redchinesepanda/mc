@@ -8,9 +8,11 @@ class ReviewStats
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
-        }
+		if ( ReviewMain::check() ) {
+			foreach ( self::CSS as $name => $path ) {
+				wp_enqueue_style( $name, $path );
+			}
+		}
     }
 
     public static function register_inline_style()

@@ -8,8 +8,10 @@ class ReviewFAQ
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( ReviewMain::check() ) {
+            foreach ( self::CSS as $name => $path ) {
+                wp_enqueue_style( $name, $path );
+            }
         }
     }
 
@@ -19,10 +21,12 @@ class ReviewFAQ
 
     public static function register_script()
     {
-        foreach ( self::JS as $name => $path ) {
-            wp_register_script( $name, $path, [], false, true );
+        if ( ReviewMain::check() ) {
+            foreach ( self::JS as $name => $path ) {
+                wp_register_script( $name, $path, [], false, true );
 
-            wp_enqueue_script( $name );
+                wp_enqueue_script( $name );
+            }
         }
     }
 
