@@ -4,10 +4,18 @@ class LegalDOM
 {
 	public static function get_dom( $content )
 	{
+		LegalDebug::debug( [
+			'content' => ( !empty( $content ) ? 'set' : 'unset' ),
+		] );
+
 		$dom = new DOMDocument();
 
 		if ( !empty( $content ) ) {
 			$dom->loadHTML( $content, LIBXML_NOERROR );
+
+			LegalDebug::debug( [
+				'loadHTML' => 'done',
+			] );
 		}
 
 		// $dom->loadHTML( $content, LIBXML_NOERROR );
