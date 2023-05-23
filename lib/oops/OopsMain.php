@@ -92,9 +92,9 @@ class OopsMain
                 'href' => get_post_permalink( $post->ID ),
             ];
 
-            LegalDebug::debug( [
-                'affilate-order' => get_post_meta( $post->ID, 'affilate-order', true ),
-            ] );
+            // LegalDebug::debug( [
+            //     'affilate-order' => get_post_meta( $post->ID, 'affilate-order', true ),
+            // ] );
         }
 
         return $args;
