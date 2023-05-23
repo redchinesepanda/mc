@@ -68,6 +68,10 @@ class ReviewBonus
 			return $content;
 		}
 
+		LegalDebug::debug( [
+			'content' => ( !empty( $content ) ? 'set' : 'unset' ),
+		] );
+
 		$dom = LegalDOM::get_dom( $content );
 
 		$nodes = self::get_nodes( $dom );
