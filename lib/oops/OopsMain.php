@@ -8,8 +8,10 @@ class OopsMain
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( self::check() ) {
+            foreach ( self::CSS as $name => $path ) {
+                wp_enqueue_style( $name, $path );
+            }
         }
     }
 
@@ -19,10 +21,12 @@ class OopsMain
 
     public static function register_script()
     {
-        foreach ( self::JS as $name => $path ) {
-            wp_register_script( $name, $path, [], false, true );
+        if ( self::check() ) {
+            foreach ( self::JS as $name => $path ) {
+                wp_register_script( $name, $path, [], false, true );
 
-            wp_enqueue_script( $name );
+                wp_enqueue_script( $name );
+            }
         }
     }
 
@@ -136,6 +140,11 @@ class OopsMain
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function check()
+    {
+        return ReviewMain::check();
     }
 }
 
