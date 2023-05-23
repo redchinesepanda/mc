@@ -34,12 +34,10 @@ class ReviewMain
 
     public static function register_style()
     {
-        // LegalDebug::debug( [
-        //     'check' => self::check(),
-        // ] );
-        
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( self::check() ) {
+            foreach ( self::CSS as $name => $path ) {
+                wp_enqueue_style( $name, $path );
+            }
         }
     }
 
@@ -47,35 +45,18 @@ class ReviewMain
         'schema' => 'legal-schema',
     ];
 
-    // public static function register_inline_script()
-    // {
-    //     // wp_register_script( self::NAME[ 'schema' ], false, [], false, true );
-        
-    //     wp_register_script( self::NAME[ 'schema' ], self::schema(), [], false, true );
-
-    //     // wp_add_inline_script( self::NAME[ 'schema' ], self::schema() );
-
-    //     wp_enqueue_script( self::NAME[ 'schema' ] );
-    // }
-
     public static function print()
     {
-        echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
+        if ( self::check() ) {
+            echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
+        }
     }
 
     public static function register()
     {
-        LegalDebug::debug( [
-            'check' => self::check(),
-        ] );
-
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_script' ] );
-
-        // add_filter( 'script_loader_tag', [ $handler, 'add_type_attribute' ], 10, 3 );
 
         add_action( 'wp_head', [ $handler, 'print' ] );
         
@@ -107,8 +88,6 @@ class ReviewMain
 
     public static function check()
     {
-        // return ( !is_admin() && is_page() );
-        
         return ( !is_admin() && is_singular( [ 'legal_bk_review' ] ) );
     }
 
@@ -159,8 +138,6 @@ class ReviewMain
 
             "@type" => "WebPage",
 
-            // "name" => YoastMain::get_seo_title(),
-
             "headline" => YoastMain::get_seo_title(),
 
             "author" => self::schema_author(),
@@ -200,20 +177,6 @@ class ReviewMain
             "name" => "Match.Center",
 
             "legalName" => "Match.Center",
-
-            // "url" => get_site_url(),
-
-            // "logo" => [
-            //     "@context" => "https://schema.org",
-
-            //     "@type" => "ImageObject",
-
-            //     "contentUrl" => "https://match.center/wp-content/uploads/match-center.png",
-
-            //     "height" => '20 px',
-
-            //     "width" => '213 px',
-            // ],
         ];
     }
 }

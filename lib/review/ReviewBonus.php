@@ -10,13 +10,19 @@ class ReviewBonus
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
-        }
+		if ( self::check() ) {
+			foreach ( self::CSS as $name => $path ) {
+				wp_enqueue_style( $name, $path );
+			}
+		}
     }
 
     public static function register_inline_style()
     {
+		LegalDebug::debug( [
+			'check' => ( self::check() ? 'true' : 'false' ),
+		] );
+
 		$name = 'review-inline';
 
         wp_register_style( $name, false, [], true, true );

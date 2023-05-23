@@ -8,8 +8,10 @@ class ReviewAnchors
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( self::check() ) {
+            foreach ( self::CSS as $name => $path ) {
+                wp_enqueue_style( $name, $path );
+            }
         }
     }
 

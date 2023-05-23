@@ -8,8 +8,10 @@ class ReviewAbout
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( self::check() ) {
+            foreach ( self::CSS as $name => $path ) {
+                wp_enqueue_style( $name, $path );
+            }
         }
     }
 
@@ -54,16 +56,8 @@ class ReviewAbout
         }
 
         $group = get_field( self::FIELD );
-
-        // LegalDebug::debug( [
-        //     'group' => $group, 
-        // ] );
         
         if( $group ) {
-            // LegalDebug::debug( [
-            //     'OopsMain::check_oops()' => ( OopsMain::check_oops() ? 'true' : 'false' ), 
-            // ] );
-
             return [
                 'title' => $group[ 'about-title' ],
                 
