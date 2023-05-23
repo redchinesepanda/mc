@@ -6,7 +6,7 @@ class LegalDOM
 	{
 		$dom = new DOMDocument();
 
-		if ( empty( $content ) ) {
+		if ( !empty( $content ) ) {
 			$dom->loadHTML( $content, LIBXML_NOERROR );
 		}
 
