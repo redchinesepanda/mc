@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+    'args' => $args, 
+] );
+
+?>
 <?php if( !empty( $args[ 'about-title' ] ) ) : ?>
     <style type="text/css">
         .review-about {

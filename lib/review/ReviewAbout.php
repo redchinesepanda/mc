@@ -94,10 +94,6 @@ class ReviewAbout
 
     public static function render( $args )
     {
-        LegalDebug::debug( [
-            'function' => 'render', 
-        ] );
-
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get( $args ) );
