@@ -72,9 +72,9 @@ class ReviewBonus
 
 		$nodes = self::get_nodes( $dom );
 
-		LegalDebug::debug( [
-			'length' => $nodes->length,
-		] );
+		// LegalDebug::debug( [
+		// 	'length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
