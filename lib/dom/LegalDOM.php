@@ -2,8 +2,12 @@
 
 class LegalDOM
 {
-	public static function get_dom( $content = '' )
+	public static function get_dom( $content )
 	{
+		if ( empty( $content ) ) {
+			return null;
+		}
+
 		$dom = new DOMDocument();
 
 		$dom->loadHTML( $content, LIBXML_NOERROR );

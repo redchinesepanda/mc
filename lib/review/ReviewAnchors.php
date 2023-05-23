@@ -89,7 +89,13 @@ class ReviewAnchors
 
     public static function get_anchors()
     {
-        $dom = LegalDOM::get_dom( get_the_content() );
+        $post = get_post();
+
+		if ( empty( $post ) ) {
+			return [];
+		}
+
+		$dom = LegalDOM::get_dom( $post->post_content );
 
         $nodes = self::get_nodes( $dom );
 
