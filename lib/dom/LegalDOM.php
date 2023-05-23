@@ -2,7 +2,7 @@
 
 class LegalDOM
 {
-	public static function get_dom( $content )
+	public static function get_dom( $content = '' )
 	{
 		$dom = new DOMDocument();
 

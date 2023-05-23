@@ -101,7 +101,7 @@ class ReviewMain
     {
         // return ( !is_admin() && is_page() );
         
-        return ( !is_admin() && is_singular( [ 'page', 'legal_bk_review' ] ) );
+        return ( !is_admin() && is_singular( [ 'legal_bk_review' ] ) );
     }
 
     public static function schema()
