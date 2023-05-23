@@ -20,6 +20,12 @@
 	.legal-oops {
 		width: 425px;
 	}
+
+	/* Oops Width and Height */
+
+	.legal-oops-background {
+		width: 100%;
+	}
 }
 
 /* Oops Display */
@@ -66,7 +72,6 @@
 /* Oops Width and Height */
 
 .legal-oops-background {
-	width: 100%;
 	height: 100vh;
 }
 
