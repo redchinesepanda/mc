@@ -9,10 +9,22 @@
 	.legal-bonus .bonus-title {
 		flex-direction: column;
 	}
+
+	/* Bonus Position */
+
+	.legal-bonus {
+		padding: 15px 15px;
+	}
 }
 
 @media screen and ( min-width: 768px )
 {
+	/* Bonus Position */
+
+	.legal-bonus {
+		padding: 15px 30px;
+	}
+
 	/* Bonus Width and Height */
 
 	.legal-bonus .bonus-title {
@@ -62,7 +74,6 @@
 /* Bonus Position */
 
 .legal-bonus {
-	padding: 15px 30px;
 	margin-bottom: 20px;
 }
 
