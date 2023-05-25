@@ -24,7 +24,7 @@ class ToolsMain
 
         ToolTinyMCE::register();
 
-        // ToolRewrite::register();
+        ToolRewrite::register();
     }
 }
 
