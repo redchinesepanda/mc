@@ -13,7 +13,7 @@ class WPMLLanguageMismatch
 	{
 		$exceptions = [
 			'sportsbet',
-			'bonos'
+			// 'bonos',
 		];
 
 		foreach ( $exceptions as $exception ) {

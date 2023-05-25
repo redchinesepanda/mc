@@ -18,7 +18,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
-	document.querySelector( '.legal-oops-background').addEventListener( 'click', toggleOops, false );
+	let oops = document.querySelector( '.legal-oops-background');
+
+	if ( oops !== null ) {
+		oops.addEventListener( 'click', toggleOops, false );
+	}
 } );
 
 // oops-js end

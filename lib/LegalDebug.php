@@ -2,7 +2,7 @@
 
 class LegalDebug
 {
-    public static function debug( $message )
+    public static function check()
     {
         $permission = false;
 
@@ -14,9 +14,12 @@ class LegalDebug
             }
         }
 
-        // if( current_user_can( 'administrator' ) ) {
+        return $permission;
+    }
 
-        if( $permission ) {
+    public static function debug( $message )
+    {
+        if ( self::check() ) {
             echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
         }
         

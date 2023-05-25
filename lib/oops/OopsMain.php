@@ -41,9 +41,13 @@ class OopsMain
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_filter( 'wp_query_search_exclusion_prefix', function( $prefix ) {
+            return '!';
+        } );
     }
 
-    public static function get_args()
+    public static function get_args( $prefix = ' ' )
     {
         return [
             'numberposts' => -1,
@@ -52,21 +56,29 @@ class OopsMain
 
             'suppress_filters' => 0,
 
-            's' => ' ' . WPMLMain::current_language(),
+            // 's' => '-' . WPMLMain::current_language(),
 
-            'sentence' => true,
+            // 's' => ' ' . WPMLMain::current_language(),
+            
+            // 's' => '' . WPMLMain::current_language(),
+            
+            // 's' => '" ' . WPMLMain::current_language() . '" "-' . WPMLMain::current_language() . '" ng',
+            
+            's' => '"' . $prefix . WPMLMain::current_language() . '"',
 
-            'meta_query' => [
-                'oops_clause' => [
-                    'key' => 'affilate-oops',
+            // 'sentence' => true,
 
-                    'value' => '1',
-                ],
-            ],
+            // 'meta_query' => [
+            //     'oops_clause' => [
+            //         'key' => 'affilate-oops',
 
-            'meta_key' => 'affilate-order',
+            //         'value' => '1',
+            //     ],
+            // ],
 
-            'orderby' => [ 'meta_value' => 'ASC', 'title' => 'ASC' ],
+            // 'meta_key' => 'affilate-order',
+
+            // 'orderby' => [ 'meta_value' => 'ASC', 'title' => 'ASC' ],
             
             // 'orderby' => [ 'meta_value' => 'ASC' ],
         ];
@@ -74,7 +86,7 @@ class OopsMain
 
     public static function get()
     {
-        $posts = self::get_posts();
+        $posts = array_merge( self::get_posts(), self::get_posts( '-' ) );
 
         $args = [
             'title' => __( 'Ouch', ToolLoco::TEXTDOMAIN ) . '!',
@@ -97,25 +109,41 @@ class OopsMain
             ];
 
             // LegalDebug::debug( [
+            //     'post_title' => $post->post_title,
+
             //     'affilate-order' => get_post_meta( $post->ID, 'affilate-order', true ),
+
+            //     'affilate-oops' => get_post_meta( $post->ID, 'affilate-oops', true ),
             // ] );
         }
 
         return $args;
     }
 
-    public static function get_posts()
+    public static function get_posts( $prefix = ' ' )
     {
-        $query = new WP_Query( self::get_args() );
+        $query = new WP_Query( self::get_args( $prefix ) );
         
         return $query->posts;
     }
 
     public static function check_oops()
     {
-        $query = new WP_Query( self::get_args() );
+        $query1 = new WP_Query( self::get_args() );
+
+        $query2 = new WP_Query( self::get_args( '-' ) );
+
+        // LegalDebug::debug( [
+        //     'found_posts1' => $query1->found_posts,
+
+        //     'found_posts2' => $query2->found_posts,
+
+        //     'result' => ( $query1->found_posts && $query2->found_posts ),
+
+        //     // 'get_args' => self::get_args(),
+        // ] );
         
-        return $query->found_posts;
+        return ( $query1->found_posts && $query2->found_posts );
     }
 
     const TEMPLATE = [
