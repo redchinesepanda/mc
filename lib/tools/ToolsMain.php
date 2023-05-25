@@ -10,6 +10,8 @@ require_once( 'ToolTinyMCE.php' );
 
 require_once( 'ToolEncode.php' );
 
+require_once( 'ToolRewrite.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -21,6 +23,8 @@ class ToolsMain
         ToolPosts::register();
 
         ToolTinyMCE::register();
+
+        ToolRewrite::register();
     }
 }
 
