@@ -19,7 +19,7 @@
 
 /* Position */
 
-.legal-menu > .menu-item:not( .legal-country ) a {
+.legal-menu > .menu-item:not( .legal-country ) > a {
 	padding: 10px;
 }
 
@@ -31,7 +31,7 @@
 	padding: 12px 17px;
 }
 
-.legal-menu .menu-item.legal-country > a {
+.legal-menu .menu-item.legal-country .menu-item a {
 	padding: 12px 17px 12px 50px;
 }
 
@@ -77,13 +77,16 @@
 
 .legal-menu .menu-item.legal-country-uk > a {
 	background-image: url( 'https://test.match.center/wp-content/uploads/flags/default.svg' );
-	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
 
-.legal-menu .sub-menu .menu-item:not( :last-child ) {
-	border-width: 1px 1px 0px 1px;
+.legal-menu .menu-item.legal-country > a {
+	background-position: left 10px center;
+}
+
+.legal-menu .menu-item.legal-country .menu-item a {
+	background-position: left 17px center;
 }
 
 .legal-menu .sub-menu .menu-item:last-child {
