@@ -59,10 +59,16 @@ class BaseHeader
 	function image( $items, $args )
 	{
 		foreach( $items as &$item ) {
-			$value = get_field( self::FIELD[ 'class' ], $item );
+			$item_class = get_field( self::FIELD[ 'class' ], $item );
 			
-			if( $value ) {
-				$item->classes[] = 'legal-country ' . $value;
+			if( $item_class ) {
+				$item->classes[] = 'legal-country ' . $item_class;
+			}
+
+			$item_show = get_field( self::FIELD[ 'class' ], $item );
+
+			if( !empty( item_show ) ) {
+				$item->title = '';
 			}
 		}
 		
