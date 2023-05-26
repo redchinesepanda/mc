@@ -57,6 +57,12 @@ class BaseHeader
 
 				'href' => $menu_item->url,
 
+				'ID' => $menu_item->ID,
+
+				'object_id' => $menu_item->object_id,
+
+				'menu_item_parent' => $menu_item->menu_item_parent,
+
 				'items' => [],
 			];
 
