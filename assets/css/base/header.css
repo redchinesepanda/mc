@@ -19,6 +19,16 @@
 	padding: 12 17px;
 }
 
+.legal-menu > .menu-item {
+	position: relative;
+}
+
+.legal-menu .sub-menu {
+	position: absolute;
+	top: 48px;
+	left: 0px;
+}
+
 /* Background */
 
 /* .legal-menu a:hover {
