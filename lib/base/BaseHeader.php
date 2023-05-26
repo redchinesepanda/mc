@@ -19,6 +19,10 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK', ToolLoco::TEXTDOMAIN ) );
 	}
 
+	public static function top( $menu_item_parent ) {
+		return ( $menu_item_parent == 0 );
+	}
+
 	public static function render() {
 		$locations = get_nav_menu_locations();
 
@@ -30,12 +34,18 @@ class BaseHeader
 
 		$menu_item_parent = array_column( $menu_items, 'menu_item_parent' );
 
+		$handler = new self();
+		
+		$keys = array_filter( $menu_item_parent, [ $handler, 'top' ] );
+
 		LegalDebug::debug( [
 			'locations' => $locations,
 
 			'menu_id' => $menu_id,
 
 			'menu_id_translated' => $menu_id_translated,
+
+			'keys' => $keys,
 
 			'menu_item_parent' => $menu_item_parent,
 
