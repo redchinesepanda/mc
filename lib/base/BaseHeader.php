@@ -23,7 +23,7 @@ class BaseHeader
 		return wp_nav_menu( [
 			'theme_location' => self::LOCATION,
 
-			'echo' => fasle,
+			'echo' => false,
 		] );
 	}
 	
