@@ -16,7 +16,7 @@
 
 /* Typography */
 
-.legal-menu a:not( ..legal-disabled ) {
+.legal-menu a:not( .legal-disabled ) {
 	font-family: "Source Sans Pro";
 	font-size: 14px;
 	font-style: normal;
