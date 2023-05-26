@@ -66,6 +66,11 @@
 	border-color: rgb(89, 151, 227)
 }
 
+.legal-menu .legal-country-uk::before {
+	content: '';
+	background-image: url( 'https://test.match.center/wp-content/uploads/flags/default.svg' );
+}
+
 .legal-menu .sub-menu .menu-item:not( :last-child ) {
 	border-width: 1px 1px 0px 1px;
 }
