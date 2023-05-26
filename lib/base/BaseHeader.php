@@ -54,6 +54,8 @@ class BaseHeader
 
 	const FIELD = [
 		'class' => 'menu-item-class',
+
+		'hide' => 'menu-item-hide',
 	];
 
 	function image( $items, $args )
@@ -65,7 +67,7 @@ class BaseHeader
 				$item->classes[] = 'legal-country ' . $item_class;
 			}
 
-			$item_hide = get_field( self::FIELD[ 'class' ], $item );
+			$item_hide = get_field( self::FIELD[ 'hide' ], $item );
 
 			if( !empty( $item_hide ) ) {
 				$item->title = '';
