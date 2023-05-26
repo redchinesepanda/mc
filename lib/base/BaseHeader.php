@@ -22,6 +22,8 @@ class BaseHeader
         add_shortcode( 'legal-menu', [ $handler, 'render' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_filter('wp_nav_menu_objects', [ $handler, 'image' ], 10, 2);
     }
 	
 	const LOCATION = 'legal-main';
@@ -48,6 +50,25 @@ class BaseHeader
 
 			'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
 		] ) );
+	}
+
+	function image( $items, $args )
+	{
+		foreach( $items as &$item ) {
+			// $icon = get_field('icon', $item);
+			
+			// if( $icon ) {
+			// 	$item->title .= ' <i class="fa fa-'.$icon.'"></i>';
+			// }
+
+			LegalDebug( [
+				'$items' => $items,
+
+				'$args' => $args,
+			] );
+		}
+		
+		return $items;
 	}
 }
 
