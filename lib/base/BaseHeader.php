@@ -3,7 +3,7 @@
 class BaseHeader
 {
 	const CSS = [
-        'legal-oops' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
+        'legal-header' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
     ];
 
     public static function register_style()
