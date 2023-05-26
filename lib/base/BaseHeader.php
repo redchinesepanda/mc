@@ -49,7 +49,7 @@ class BaseHeader
 
 			'menu_id_translated' => $menu_id_translated,
 
-			'keys' => $keys,
+			'items' => $items,
 
 			'menu_item_parent' => $menu_item_parent,
 
