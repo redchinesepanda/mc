@@ -9,10 +9,6 @@ class BaseHeader
     public static function register_style()
     {
         ToolEnqueue::register_style( self::CSS );
-
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::register_style',
-		] );
     }
 
 	public static function register()
