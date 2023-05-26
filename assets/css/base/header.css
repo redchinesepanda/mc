@@ -29,6 +29,12 @@
 	left: 0px;
 }
 
+/* Width and Height */
+
+.legal-menu .sub-menu {
+	width: 245px;
+}
+
 /* Background */
 
 .legal-menu .sub-menu {
