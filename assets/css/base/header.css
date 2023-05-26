@@ -21,7 +21,7 @@
 	background-color: rgb(89, 151, 227);
 } */
 
-.legal-menu .menu-item:hover a {
+.legal-menu .menu-item:hover > a {
 	background-color: rgb(89, 151, 227);
 }
 
