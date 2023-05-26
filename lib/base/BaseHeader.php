@@ -53,7 +53,7 @@ class BaseHeader
 			// 	$parent = $menu_item->ID;
 			// }
 			$item = [
-				'title' => $menu_item->url,
+				'title' => $menu_item->title,
 
 				'href' => $menu_item->url,
 
