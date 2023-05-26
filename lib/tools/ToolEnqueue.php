@@ -8,6 +8,12 @@ class ToolEnqueue
             foreach ( $styles as $name => $path ) {
                 wp_enqueue_style( $name, $path );
             }
+
+			LegalDebug::debug( [
+				'function' => 'ToolEnqueue::register_style',
+
+				'styles' => $styles,
+			] );
         }
     }
 
