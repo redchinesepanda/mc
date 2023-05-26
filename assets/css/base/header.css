@@ -11,8 +11,12 @@
 
 /* Position */
 
-.legal-menu a {
+.legal-menu > .menu-item a {
 	padding: 10px;
+}
+
+.legal-menu .sub-menu .menu-item a {
+	padding: 12 17px;
 }
 
 /* Background */
