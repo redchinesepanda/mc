@@ -23,10 +23,17 @@
 	position: relative;
 }
 
-.legal-menu .sub-menu {
+.legal-menu .menu-item .sub-menu {
 	position: absolute;
-	top: 48px;
 	left: 0px;
+}
+
+.legal-menu .menu-item:not( :last-child ) .sub-menu {
+	left: 0px;
+}
+
+.legal-menu .menu-item:last-child .sub-menu {
+	right: 0px;
 }
 
 /* Width and Height */
