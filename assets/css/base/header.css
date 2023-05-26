@@ -26,6 +26,7 @@
 .legal-menu .menu-item .sub-menu {
 	position: absolute;
 	top: 48px;
+	z-index: 1;
 }
 
 .legal-menu .menu-item:not( :last-child ) .sub-menu {
