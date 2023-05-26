@@ -55,6 +55,8 @@ class BaseHeader
 			$item = [
 				'title' => $menu_item->post_title,
 
+				'href' => $menu_item->url,
+
 				'items' => [],
 			];
 
