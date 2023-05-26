@@ -27,9 +27,7 @@ class BaseHeader
 
 			'container' => false,
 
-			// 'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>'
-			
-			'items_wrap' => '%3$s'
+			'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
 		] );
 	}
 	
