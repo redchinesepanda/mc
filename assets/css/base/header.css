@@ -3,3 +3,14 @@
 .legal-menu {
 	display: flex;
 }
+
+/* Typography */
+
+.legal-menu a {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	text-decoration: none;
+}
