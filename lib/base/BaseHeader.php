@@ -28,12 +28,16 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
+		$menu_item_parent = array_column( $menu_items, 'menu_item_parent' );
+
 		LegalDebug::debug( [
 			'locations' => $locations,
 
 			'menu_id' => $menu_id,
 
 			'menu_id_translated' => $menu_id_translated,
+
+			'menu_item_parent' => $menu_item_parent,
 
 			'menu_items' => $menu_items,
 		] );
