@@ -12,6 +12,8 @@ require_once( 'ToolEncode.php' );
 
 require_once( 'ToolRewrite.php' );
 
+require_once( 'ToolEnqueue.php' );
+
 class ToolsMain
 {
     public static function register()
