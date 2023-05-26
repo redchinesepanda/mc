@@ -83,7 +83,7 @@ class BaseHeader
 		// 	'menu_items' => $menu_items,
 		// ] );
 
-		return str_replace( 'li', 'div', wp_nav_menu( [
+		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
 			'theme_location' => self::LOCATION,
 
 			'echo' => false,
