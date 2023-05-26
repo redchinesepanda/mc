@@ -31,9 +31,9 @@
 
 /* Background */
 
-/* .legal-menu a:hover {
-	background-color: rgb(89, 151, 227);
-} */
+.legal-menu .sub-menu {
+	background-color: rgb(13, 11, 47);
+}
 
 .legal-menu .menu-item:hover > a {
 	background-color: rgb(89, 151, 227);
