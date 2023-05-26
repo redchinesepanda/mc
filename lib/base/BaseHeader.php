@@ -20,6 +20,10 @@ class BaseHeader
 	}
 
 	public static function top( $item ) {
+		LegalDebug::debug( [
+			'menu_item_parent' => $item->menu_item_parent,
+		] );
+
 		return ( $item->menu_item_parent == 0 );
 	}
 
