@@ -52,22 +52,18 @@ class BaseHeader
 		] ) );
 	}
 
+	const FIELD = [
+		'class' => 'menu-item-class',
+	]
+
 	function image( $items, $args )
 	{
 		foreach( $items as &$item ) {
-			// $icon = get_field('icon', $item);
+			$value = get_field( self::FIELD[ 'class' ], $item );
 			
-			// if( $icon ) {
-			// 	$item->title .= ' <i class="fa fa-'.$icon.'"></i>';
-			// }
-
-			$item->classes[] = 'legal-country';
-
-			// LegalDebug::debug( [
-			// 	'$items' => $items,
-
-			// 	'$args' => $args,
-			// ] );
+			if( $value ) {
+				$item->classes[] = $value;
+			}
 		}
 		
 		return $items;
