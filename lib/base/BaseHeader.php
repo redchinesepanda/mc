@@ -20,8 +20,18 @@ class BaseHeader
 	}
 
 	public static function render() {
+		$locations = get_nav_menu_locations();
+
+		$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
+
+		$menu_items = wp_get_nav_menu_items( $menu_id );
+
 		LegalDebug::debug( [
-			'get_nav_menu_locations' => get_nav_menu_locations(),
+			'locations' => $locations,
+
+			'menu_id' => $menu_id,
+
+			'menu_items' => $menu_items,
 		] );
 
 		return wp_nav_menu( [
