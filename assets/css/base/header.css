@@ -4,6 +4,10 @@
 	display: flex;
 }
 
+.legal-menu a {
+	display: block;
+}
+
 /* Position */
 
 .legal-menu a {
