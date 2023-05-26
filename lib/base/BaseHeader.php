@@ -20,9 +20,9 @@ class BaseHeader
 	}
 
 	public static function top( $item ) {
-		LegalDebug::debug( [
-			'menu_item_parent' => $item->menu_item_parent,
-		] );
+		// LegalDebug::debug( [
+		// 	'menu_item_parent' => $item->menu_item_parent,
+		// ] );
 
 		return ( $item->menu_item_parent == 0 );
 	}
@@ -36,24 +36,43 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_item_parent = array_column( $menu_items, 'menu_item_parent' );
+		// $menu_item_parent = array_column( $menu_items, 'menu_item_parent' );
 
-		$handler = new self();
+		// $handler = new self();
 		
-		$items = array_filter( $menu_items, [ $handler, 'top' ] );
+		// $items = array_filter( $menu_items, [ $handler, 'top' ] );
+
+		$items = [];
+
+		// $parent = 0;
+
+		foreach ( $menu_items as $menu_item ) {
+			// if ( $parent == $menu_item->menu_item_parent ) {
+			// 	$items[ $parent ]['children'][] = $menu_item->post_title
+			// } else {
+			// 	$parent = $menu_item->ID;
+			// }
+			$item = [
+				'title' => $menu_item->post_title,
+
+				'items' => [],
+			];
+
+			$items[] = $item;
+		}
 
 		LegalDebug::debug( [
-			'locations' => $locations,
-
-			'menu_id' => $menu_id,
-
-			'menu_id_translated' => $menu_id_translated,
-
 			'items' => $items,
 
-			'menu_item_parent' => $menu_item_parent,
+			// 'menu_id' => $menu_id,
 
-			'menu_items' => $menu_items,
+			// 'menu_id_translated' => $menu_id_translated,
+
+			// 'items' => $items,
+
+			// // 'menu_item_parent' => $menu_item_parent,
+
+			// 'menu_items' => $menu_items,
 		] );
 
 		return wp_nav_menu( [
