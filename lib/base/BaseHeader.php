@@ -61,7 +61,7 @@ class BaseHeader
 			// 	$item->title .= ' <i class="fa fa-'.$icon.'"></i>';
 			// }
 
-			LegalDebug( [
+			LegalDebug::debug( [
 				'$items' => $items,
 
 				'$args' => $args,
