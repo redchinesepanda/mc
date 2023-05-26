@@ -54,7 +54,7 @@ class BaseHeader
 
 	const FIELD = [
 		'class' => 'menu-item-class',
-	]
+	];
 
 	function image( $items, $args )
 	{
