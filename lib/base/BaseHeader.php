@@ -20,6 +20,10 @@ class BaseHeader
 	}
 
 	public static function render() {
+		LegalDebug::debug( [
+			'get_nav_menu_locations' => get_nav_menu_locations(),
+		] );
+
 		return wp_nav_menu( [
 			'theme_location' => self::LOCATION,
 
