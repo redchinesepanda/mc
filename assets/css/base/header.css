@@ -9,6 +9,14 @@
 	display: block;
 }
 
+.legal-menu .menu-item > .sub-menu {
+	display: none;
+}
+
+.legal-menu .menu-item:hover > .sub-menu {
+	display: block;
+}
+
 /* Position */
 
 .legal-menu > .menu-item a {
