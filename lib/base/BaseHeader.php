@@ -42,48 +42,48 @@ class BaseHeader
 		
 		// $items = array_filter( $menu_items, [ $handler, 'top' ] );
 
-		$items = [];
+		// $items = [];
 
 		// $parent = 0;
 
-		foreach ( $menu_items as $menu_item ) {
-			// if ( $parent == $menu_item->menu_item_parent ) {
-			// 	$items[ $parent ]['children'][] = $menu_item->post_title
-			// } else {
-			// 	$parent = $menu_item->ID;
-			// }
-			$item = [
-				'title' => $menu_item->title,
+		// foreach ( $menu_items as $menu_item ) {
+		// 	// if ( $parent == $menu_item->menu_item_parent ) {
+		// 	// 	$items[ $parent ]['children'][] = $menu_item->post_title
+		// 	// } else {
+		// 	// 	$parent = $menu_item->ID;
+		// 	// }
+		// 	$item = [
+		// 		'title' => $menu_item->title,
 
-				'href' => $menu_item->url,
+		// 		'href' => $menu_item->url,
 
-				'ID' => $menu_item->ID,
+		// 		'ID' => $menu_item->ID,
 
-				'object_id' => $menu_item->object_id,
+		// 		// 'object_id' => $menu_item->object_id,
 
-				'menu_item_parent' => $menu_item->menu_item_parent,
+		// 		'menu_item_parent' => $menu_item->menu_item_parent,
 
-				'items' => [],
-			];
+		// 		'items' => [],
+		// 	];
 
-			$items[] = $item;
-		}
+		// 	$items[$menu_item->ID] = $item;
+		// }
 
-		LegalDebug::debug( [
-			'items' => $items,
+		// LegalDebug::debug( [
+		// 	'items' => $items,
 
-			// 'menu_id' => $menu_id,
+		// 	// 'menu_id' => $menu_id,
 
-			// 'menu_id_translated' => $menu_id_translated,
+		// 	// 'menu_id_translated' => $menu_id_translated,
 
-			// 'items' => $items,
+		// 	// 'items' => $items,
 
-			// // 'menu_item_parent' => $menu_item_parent,
+		// 	// // 'menu_item_parent' => $menu_item_parent,
 
-			'menu_items' => $menu_items,
-		] );
+		// 	'menu_items' => $menu_items,
+		// ] );
 
-		return wp_nav_menu( [
+		return str_replace( 'li', 'div', wp_nav_menu( [
 			'theme_location' => self::LOCATION,
 
 			'echo' => false,
