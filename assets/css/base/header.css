@@ -4,6 +4,12 @@
 	display: flex;
 }
 
+/* Position */
+
+.legal-menu a {
+	padding: 10px;
+}
+
 /* Typography */
 
 .legal-menu a {
