@@ -26,6 +26,8 @@ class BaseHeader
 			'echo' => false,
 
 			'container' => false,
+
+			'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>'
 		] );
 	}
 	
