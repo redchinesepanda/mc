@@ -24,6 +24,8 @@ class BaseHeader
 			'theme_location' => self::LOCATION,
 
 			'echo' => false,
+
+			'container' => false,
 		] );
 	}
 	
