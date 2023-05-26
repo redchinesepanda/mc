@@ -2,6 +2,7 @@
 
 .legal-menu {
 	display: flex;
+	column-gap: 15px;
 }
 
 .legal-menu a {
