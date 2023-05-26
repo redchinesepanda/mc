@@ -60,6 +60,11 @@
 	width: 245px;
 }
 
+.legal-menu .menu-item a {
+	min-width: 43px;
+	min-height: 43px;
+}
+
 /* Background */
 
 .legal-menu .sub-menu {
