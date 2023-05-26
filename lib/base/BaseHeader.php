@@ -67,7 +67,7 @@ class BaseHeader
 
 			$item_show = get_field( self::FIELD[ 'class' ], $item );
 
-			if( !empty( item_show ) ) {
+			if( !empty( $item_show ) ) {
 				$item->title = '';
 			}
 		}
