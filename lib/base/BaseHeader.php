@@ -1,6 +1,6 @@
 <?php
 
-class HeaderMain
+class BaseHeader
 {
 	public static function register()
     {
