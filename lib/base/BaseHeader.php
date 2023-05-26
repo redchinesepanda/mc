@@ -61,6 +61,8 @@ class BaseHeader
 			// 	$item->title .= ' <i class="fa fa-'.$icon.'"></i>';
 			// }
 
+			$item->classes[] = 'legal-country';
+
 			LegalDebug::debug( [
 				'$items' => $items,
 
