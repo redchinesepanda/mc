@@ -24,12 +24,16 @@ class BaseHeader
 
 		$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
 
-		$menu_items = wp_get_nav_menu_items( $menu_id );
+		$menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
+
+		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
 		LegalDebug::debug( [
 			'locations' => $locations,
 
 			'menu_id' => $menu_id,
+
+			'menu_id_translated' => $menu_id_translated,
 
 			'menu_items' => $menu_items,
 		] );
