@@ -63,11 +63,11 @@ class BaseHeader
 
 			$item->classes[] = 'legal-country';
 
-			LegalDebug::debug( [
-				'$items' => $items,
+			// LegalDebug::debug( [
+			// 	'$items' => $items,
 
-				'$args' => $args,
-			] );
+			// 	'$args' => $args,
+			// ] );
 		}
 		
 		return $items;
