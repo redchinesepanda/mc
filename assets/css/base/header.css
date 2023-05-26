@@ -72,13 +72,13 @@
 
 .legal-menu .sub-menu .menu-item {
 	border-style: solid;
-	border-color: rgb(89, 151, 227)
+	border-color: rgb(89, 151, 227);
 }
-
-.legal-menu .menu-item.legal-country-uk > a {
-	background-image: url( 'https://test.match.center/wp-content/uploads/flags/default.svg' );
-	background-repeat: no-repeat;
-	background-size: auto;
+.legal-menu .sub-menu .menu-item:not( :last-child ) {
+	border-width: 1px 1px 0px 1px;
+}
+.legal-menu .sub-menu .menu-item:last-child {
+	border-width: 1px;
 }
 
 .legal-menu .menu-item.legal-country > a {
@@ -89,15 +89,10 @@
 	background-position: left 17px center;
 }
 
-.legal-menu .sub-menu .menu-item {
-	border-style: solid;
-	border-color: rgb(89, 151, 227);
-}
-.legal-menu .sub-menu .menu-item:not( :last-child ) {
-	border-width: 1px 1px 0px 1px;
-}
-.legal-menu .sub-menu .menu-item:last-child {
-	border-width: 1px;
+.legal-menu .menu-item.legal-country-uk > a {
+	background-image: url( 'https://test.match.center/wp-content/uploads/flags/default.svg' );
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
 /* Typography */
