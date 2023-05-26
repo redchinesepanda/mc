@@ -72,7 +72,7 @@ class BaseHeader
 
 			// // 'menu_item_parent' => $menu_item_parent,
 
-			// 'menu_items' => $menu_items,
+			'menu_items' => $menu_items,
 		] );
 
 		return wp_nav_menu( [
