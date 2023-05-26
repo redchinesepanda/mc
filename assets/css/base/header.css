@@ -19,12 +19,20 @@
 
 /* Position */
 
-.legal-menu > .menu-item a {
+.legal-menu > .menu-item:not( .legal-country ) a {
 	padding: 10px;
 }
 
-.legal-menu .sub-menu .menu-item a {
-	padding: 12 17px;
+.legal-menu .menu-item.legal-country > a {
+	padding: 10px 10px 10px 43px;
+}
+
+.legal-menu .sub-menu:not( .legal-country ) .menu-item a {
+	padding: 12px 17px;
+}
+
+.legal-menu .menu-item.legal-country > a {
+	padding: 12px 17px 12px 50px;
 }
 
 .legal-menu > .menu-item {
@@ -44,6 +52,7 @@
 .legal-menu .menu-item:last-child .sub-menu {
 	right: 0px;
 }
+
 
 /* Width and Height */
 

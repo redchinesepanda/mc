@@ -62,7 +62,7 @@ class BaseHeader
 			$value = get_field( self::FIELD[ 'class' ], $item );
 			
 			if( $value ) {
-				$item->classes[] = $value;
+				$item->classes[] = 'legal-country ' . $value;
 			}
 		}
 		
