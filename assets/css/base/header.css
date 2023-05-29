@@ -17,6 +17,10 @@
 		cursor: pointer;
 	}
 
+	.legal-menu .menu-item:active > .sub-menu {
+		display: block;
+	}
+
 	/* Width and Height */
 
 	.legal-header-menu::before,
