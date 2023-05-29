@@ -54,6 +54,10 @@
 	display: block;
 }
 
+.legal-menu .menu-item {
+	display: flex;
+}
+
 .legal-menu .menu-item > .sub-menu {
 	display: none;
 }
