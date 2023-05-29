@@ -6,6 +6,7 @@
 		display: none;
 	}
 
+	.legal-header-control,
 	.legal-header-menu::before {
 		display: block;
 		content: '';
@@ -51,6 +52,7 @@
 		width: 100%;
 	}
 
+	.legal-header-control,
 	.legal-header-menu::before {
 		width: 22px;
 		height: 22px;
@@ -62,6 +64,7 @@
 	
 	/* Background */
 
+	.legal-header-control,
 	.legal-header-menu::before {
 		background-image: url( '../../img/base/header/open.svg' );
 	}
