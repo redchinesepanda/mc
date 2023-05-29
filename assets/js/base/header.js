@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleBlock, false );
-	} );
+	} ); 
 } );
 
 // header-js end
