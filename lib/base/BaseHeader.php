@@ -2,6 +2,15 @@
 
 class BaseHeader
 {
+	const JS = [
+        'legal-header' => LegalMain::LEGAL_URL . '/assets/js/base/header.js',
+    ];
+
+    public static function register_script()
+    {
+		register_script( self::JS )
+    }
+
 	const CSS = [
         'legal-header' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
     ];
@@ -13,13 +22,15 @@ class BaseHeader
 
 	public static function register_inline_style()
     {
-		$name = 'base-header';
+		// $name = 'base-header';
 
-        wp_register_style( $name, false, [], true, true );
+        // wp_register_style( $name, false, [], true, true );
 		
-		wp_add_inline_style( $name, self::inline_style() );
+		// wp_add_inline_style( $name, self::inline_style() );
 		
-		wp_enqueue_style( $name );
+		// wp_enqueue_style( $name );
+
+		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() )
     }
 
 	public static function register()
@@ -35,6 +46,8 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_filter('wp_nav_menu_objects', [ $handler, 'image' ], 10, 2);
     }

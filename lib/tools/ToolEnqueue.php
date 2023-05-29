@@ -21,6 +21,15 @@ class ToolEnqueue
             }
         }
     }
+
+	public static function register_inline_style( $name, $data )
+    {
+		wp_register_style( $name, false, [], true, true );
+		
+		wp_add_inline_style( $name, $data );
+		
+		wp_enqueue_style( $name );
+    }
 }
 
 ?>
