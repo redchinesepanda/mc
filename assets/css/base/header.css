@@ -99,6 +99,13 @@
 	border-width: 1px;
 }
 
+.legal-header-menu .toggle-button {
+	background-image: url( '../../img/base/header/open.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
 .legal-menu .menu-item.legal-country > a {
 	background-position: left 10px center;
 }
