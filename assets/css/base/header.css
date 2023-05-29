@@ -38,6 +38,10 @@
 		margin-right: auto;
 	}
 
+	.legal-menu .menu-item:last-child .sub-menu {
+		padding-bottom: 10px;
+	}
+
 	/* Width and Height */
 
 	.legal-menu .menu-item {
@@ -103,10 +107,6 @@
 
 	.legal-menu .menu-item:last-child .sub-menu {
 		right: 0px;
-	}
-
-	.legal-menu .menu-item:last-child .sub-menu {
-		padding-bottom: 10px;
 	}
 
 	/* Background */
