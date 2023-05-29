@@ -145,7 +145,6 @@
 	cursor: pointer;
 }
 
-.legal-menu .menu-item-has-children.hover:after,
 .legal-menu .menu-item-has-children.legal-active:after {
 	transform: rotate(180deg);
 }
@@ -209,6 +208,9 @@
 	border-width: 1px;
 }
 
+.legal-menu .menu-item-has-children:hover:after {
+	transform: rotate(180deg);
+}
 .legal-menu .menu-item-has-children:after {
 	background-image: url( '../../img/base/header/item-open.svg' );
 	background-position: center center;
