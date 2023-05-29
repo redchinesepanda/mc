@@ -145,6 +145,10 @@
 	cursor: pointer;
 }
 
+.legal-menu .menu-item-has-children.legal-active:after {
+	transform: rotate(180deg);
+}
+
 /* Position */
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
