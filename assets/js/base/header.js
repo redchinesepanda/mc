@@ -4,11 +4,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
+		let element = event.currentTarget;
+
 		if ( !element.classList.has.contains( 'legal-active' ) ) {
 			event.preventDefault();
 		}
-
-		let element = event.currentTarget;
 
 		element.classList.toggle( 'legal-active' );
 
