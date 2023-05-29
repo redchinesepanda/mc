@@ -49,7 +49,7 @@ class BaseHeader
 		}
 
 		foreach ( $style_items as $style_item ) {
-			$style[] = '.legal-menu ' . $style_item[ 'class' ] . ' > .a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+			$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > .a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 		}
 
 		return implode( ' ', $style );
