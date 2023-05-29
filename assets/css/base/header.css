@@ -51,6 +51,10 @@
 
 	/* Width and Height */
 
+	.legal-menu {
+		width: 100%;
+	}
+	
 	.legal-menu .menu-item {
 		width: 100%;
 	}
