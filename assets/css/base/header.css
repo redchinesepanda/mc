@@ -35,6 +35,7 @@
 		background-image: url( '../../img/base/header/open.svg' );
 	}
 	
+	.legal-header-menu.legal-active::before,
 	.legal-header-menu #toggle-state:checked ~ .toggle-button {
 		background-image: url( '../../img/base/header/close.svg' );
 	}
