@@ -29,7 +29,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleLink, false );
 	} );
 
-    document.querySelectorAll( '.legal-header-menu' ).forEach( function ( element ) {
+    document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleBlock, false );
 	} );
 } );
