@@ -13,12 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = event.target;
 
-		console.log ( 'element: ' + element );
-
 		if ( element.hasAttribute( 'href' ) ) {
-			console.log ( 'href: ' + element.href );
-
-			console.log ( 'contains: ' + element.parentElement.classList.contains( 'legal-active' ) );
 
 			if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
 				event.preventDefault();
@@ -33,12 +28,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
     document.querySelectorAll( '.legal-menu .menu-item > a').forEach( function ( element ) {
 		element.addEventListener( 'click', toggleLink, false );
 	} );
-
-	// let oops = document.querySelector( '.legal-oops-background');
-
-	// if ( oops !== null ) {
-	// 	oops.addEventListener( 'click', toggleBlock, false );
-	// }
 } );
 
 // header-js end
