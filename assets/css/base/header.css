@@ -54,6 +54,16 @@
 	.legal-header-menu .toggle-button {
 		display: none;
 	}
+
+	.legal-menu .menu-item:hover > .sub-menu {
+		display: block;
+	}
+
+	/* Background */
+
+	.legal-menu .menu-item:hover {
+		background-color: rgb(89, 151, 227);
+	}
 }
 
 /* Display */
@@ -73,11 +83,6 @@
 
 .legal-menu .menu-item > .sub-menu {
 	display: none;
-}
-
-/* .legal-menu .menu-item:hover > .sub-menu, */
-.legal-menu .menu-item:active > .sub-menu {
-	display: block;
 }
 
 .legal-menu .menu-item:not( :active ) > a {
@@ -157,11 +162,6 @@
 
 .legal-menu .sub-menu {
 	background-color: rgb(13, 11, 47);
-}
-
-/* .legal-menu .menu-item:hover > a { */
-.legal-menu .menu-item:hover {
-	background-color: rgb(89, 151, 227);
 }
 
 .legal-menu .sub-menu .menu-item {
