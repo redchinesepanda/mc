@@ -99,8 +99,15 @@
 	border-width: 1px;
 }
 
-.legal-header-menu .toggle-button {
+.legal-header-menu #toggle-state:not( :checked ) ~ .toggle-button {
 	background-image: url( '../../img/base/header/open.svg' );
+}
+
+.legal-header-menu #toggle-state:checked ~ .toggle-button {
+	background-image: url( '../../img/base/header/close.svg' );
+}
+
+.legal-header-menu .toggle-button {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
