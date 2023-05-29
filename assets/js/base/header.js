@@ -13,6 +13,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = event.target;
 
+		console.log ( 'element: ' + element );
+
 		if ( element.hasAttribute( 'href' ) ) {
 			if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
 				event.preventDefault();
