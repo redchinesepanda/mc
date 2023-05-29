@@ -25,6 +25,10 @@
 	display: block;
 }
 
+.legal-header-menu #toggle-state:not( :checked ) ~ .legal-menu {
+	display: none;
+}
+
 /* Position */
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
