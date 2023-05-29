@@ -4,12 +4,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
-		event.preventDefault();
+		if ( !element.classList.has.contains( 'legal-active' ) ) {
+			event.preventDefault();
+		}
 
 		let element = event.currentTarget;
 
 		element.classList.toggle( 'legal-active' );
-		
+
 		// let oops = document.querySelector( '.legal-oops-background');
 
 		// if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
