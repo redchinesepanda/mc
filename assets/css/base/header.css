@@ -171,7 +171,7 @@
 .legal-menu .menu-item.legal-country-uk > a {
 	background-image: url( 'https://test.match.center/wp-content/uploads/flags/default.svg' );
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: 23px 23px;
 }
 
 /* Typography */
