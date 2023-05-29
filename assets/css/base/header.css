@@ -2,6 +2,7 @@
 {
 	/* Display */
 
+	.legal-header-menu::before,
 	.legal-header-menu .toggle-button {
 		display: block;
 	}
@@ -12,6 +13,7 @@
 
 	/* Width and Height */
 
+	.legal-header-menu::before,
 	.legal-header-menu .toggle-button {
 		width: 22px;
 		height: 22px;
@@ -27,6 +29,7 @@
 		display: none;
 	}
 
+	.legal-header-menu::before,
 	.legal-header-menu #toggle-state:not( :checked ) ~ .toggle-button {
 		background-image: url( '../../img/base/header/open.svg' );
 	}
