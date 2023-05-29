@@ -107,6 +107,10 @@
 	right: 0px;
 }
 
+.legal-menu .menu-item-has-children:after {
+	padding: 10px 0px;
+}
+
 /* Width and Height */
 
 .legal-menu .sub-menu {
@@ -120,7 +124,7 @@
 
 .legal-menu .menu-item-has-children:after {
 	width: 28px;
-	height: 28px;
+	height: 48px;
 }
 
 /* Background */
