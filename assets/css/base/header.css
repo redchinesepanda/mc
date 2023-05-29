@@ -2,8 +2,8 @@
 {
 	/* Display */
 
-	.legal-header-control:not( .legal-active ) ~ .legal-header-menu,
-	.legal-header-menu:not( .legal-active ) .legal-menu {
+	.legal-header-control:not( .legal-active ) ~ .legal-header-menu {
+	/* .legal-header-menu:not( .legal-active ) .legal-menu { */
 		display: none;
 	}
 
