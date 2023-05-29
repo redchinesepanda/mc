@@ -67,6 +67,7 @@
 }
 
 .legal-menu .menu-item-has-children:after {
+	display: block;
 	content: '';
 }
 
