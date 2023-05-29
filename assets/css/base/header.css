@@ -6,11 +6,19 @@
 		display: block;
 	}
 
+	.legal-menu {
+		flex-direction: column;
+	}
+
 	/* Width and Height */
 
 	.legal-header-menu .toggle-button {
 		width: 22px;
 		height: 22px;
+	}
+
+	.legal-menu .menu-item > a {
+		width: 100%;
 	}
 	
 	/* Background */
