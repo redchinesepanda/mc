@@ -16,6 +16,22 @@
 		display: block;
 	}
 
+	.legal-menu .menu-item {
+		flex-wrap: wrap;
+	}
+
+	.legal-menu .menu-item > a {
+		order: 1;
+	}
+
+	.legal-menu .menu-item::after {
+		order: 2;
+	}
+
+	.legal-menu .menu-item > .sub-menu {
+		order: 3;
+	}
+
 	/* Position */
 
 	.legal-menu .menu-item > a {
@@ -27,11 +43,15 @@
 	.legal-menu .menu-item {
 		width: 100%;
 	}
-	
+
 	.legal-header-menu::before,
 	.legal-header-menu .toggle-button {
 		width: 22px;
 		height: 22px;
+	}
+
+	.legal-menu .menu-item > .sub-menu {
+		width: 100%;
 	}
 	
 	/* Background */
