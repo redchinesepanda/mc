@@ -12,10 +12,9 @@
 		flex-direction: column;
 	}
 
-	.legal-menu .menu-item:not( :active ) > a {
+	/* .legal-menu .menu-item:not( :active ) > a {
 		pointer-events: none;
-		cursor: pointer;
-	}
+	} */
 
 	.legal-menu .menu-item:active > .sub-menu {
 		display: block;
