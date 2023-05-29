@@ -24,6 +24,10 @@
 
 	/* Width and Height */
 
+	.legal-menu .menu-item {
+		width: 100%;
+	}
+	
 	.legal-header-menu::before,
 	.legal-header-menu .toggle-button {
 		width: 22px;
