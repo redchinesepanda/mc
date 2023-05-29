@@ -139,12 +139,8 @@ class BaseHeader
 			
 			if( $item_class ) {
 				$item->classes[] = 'legal-country';
-				
-				$item->classes[] = $item_class;
 
-				LegalDebug::debug( [
-					'classes' => $item->classes, 
-				] );
+				$item->classes[] = $item_class;
 			}
 
 			$item_hide = get_field( self::FIELD[ 'hide' ], $item );
