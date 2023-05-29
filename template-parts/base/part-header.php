@@ -5,8 +5,6 @@
 		</a>
 		<div class="legal-header-control">
 		</div>
-		<div class="legal-header-menu">
-			<?php echo $args; ?>
-		</div>
+		<?php echo $args; ?>
 	</div>
 <?php endif; ?>
