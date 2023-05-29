@@ -5,6 +5,7 @@
 	.legal-header-menu::before,
 	.legal-header-menu .toggle-button {
 		display: block;
+		content: '';
 	}
 
 	.legal-menu {
