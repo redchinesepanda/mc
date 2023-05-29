@@ -70,7 +70,8 @@
 	display: none;
 }
 
-.legal-menu .menu-item:hover > .sub-menu {
+.legal-menu .menu-item:hover > .sub-menu,
+.legal-menu .menu-item:active > .sub-menu {
 	display: block;
 }
 
