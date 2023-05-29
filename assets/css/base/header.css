@@ -17,7 +17,7 @@
 	display: block;
 }
 
-.legal-header-menu .toggle-state {
+.legal-header-menu #toggle-state {
 	display: none;
 }
 
