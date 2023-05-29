@@ -7,7 +7,7 @@
 	}
 
 	/* Width and Height */
-	
+
 	.legal-header-menu .toggle-button {
 		width: 22px;
 		height: 22px;
@@ -66,6 +66,10 @@
 	display: none;
 }
 
+.legal-menu .menu-item-has-children:after {
+	content: '';
+}
+
 /* Position */
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
@@ -113,6 +117,11 @@
 	min-height: 48px;
 }
 
+.legal-menu .menu-item-has-children:after {
+	width: 28px;
+	height: 28px;
+}
+
 /* Background */
 
 .legal-menu .sub-menu {
@@ -132,6 +141,13 @@
 }
 .legal-menu .sub-menu .menu-item:last-child {
 	border-width: 1px;
+}
+
+.legal-menu .menu-item-has-children:after {
+	background-image: url( '../../img/base/header/item-open.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
 .legal-menu .menu-item.legal-country > a {
