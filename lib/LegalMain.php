@@ -28,10 +28,14 @@ define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
 
+define( 'LEGAL_ROOT', site_url() );
+
 class LegalMain {
 	const LEGAL_PATH = \LEGAL_PATH;
     
 	const LEGAL_URL = \LEGAL_URL;
+
+	const LEGAL_ROOT = \LEGAL_ROOT;
 
 	public static function register()
 	{
