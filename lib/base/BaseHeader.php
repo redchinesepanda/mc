@@ -32,7 +32,7 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function render() {
+	public static function get() {
 		$locations = get_nav_menu_locations();
 
 		$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
@@ -76,6 +76,21 @@ class BaseHeader
 		
 		return $items;
 	}
+
+	const TEMPLATE = [
+        'header-menu' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header.php',
+    ];
+
+    public static function render()
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'header-menu' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
 }
 
 ?>
