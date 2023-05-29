@@ -89,6 +89,22 @@
 		display: block;
 	}
 
+	/* Position */
+
+	.legal-menu .menu-item .sub-menu {
+		position: absolute;
+		top: 48px;
+		z-index: 1;
+	}
+
+	.legal-menu .menu-item:not( :last-child ) .sub-menu {
+		left: 0px;
+	}
+
+	.legal-menu .menu-item:last-child .sub-menu {
+		right: 0px;
+	}
+
 	/* Background */
 
 	.legal-menu .menu-item:hover {
@@ -149,20 +165,6 @@
 
 .legal-menu > .menu-item {
 	position: relative;
-}
-
-.legal-menu .menu-item .sub-menu {
-	position: absolute;
-	top: 48px;
-	z-index: 1;
-}
-
-.legal-menu .menu-item:not( :last-child ) .sub-menu {
-	left: 0px;
-}
-
-.legal-menu .menu-item:last-child .sub-menu {
-	right: 0px;
 }
 
 .legal-menu .menu-item-has-children:after {
