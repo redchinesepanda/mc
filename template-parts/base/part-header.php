@@ -1,9 +1,12 @@
 <?php if ( !empty( $args ) ) : ?>
-	<div class="legal-header-control">
-	</div>
-	<div class="legal-header-menu">
-		<!-- <input id="toggle-state" type="checkbox" />
-		<label class="toggle-button" for="toggle-state"></label> -->
-		<?php echo $args; ?>
+	<div class="legal-header">
+		<a href="/">
+			<img src="https://match.center/wp-content/themes/thrive-theme-child/assets/img/base/header/mc-logo.png" width="53" height="53" alt="Match.Center UK" />
+		</a>
+		<div class="legal-header-control">
+		</div>
+		<div class="legal-header-menu">
+			<?php echo $args; ?>
+		</div>
 	</div>
 <?php endif; ?>
