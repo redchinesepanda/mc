@@ -1,4 +1,6 @@
 <?php if ( !empty( $args ) ) : ?>
+	<div class="legal-header-control">
+	</div>
 	<div class="legal-header-menu">
 		<!-- <input id="toggle-state" type="checkbox" />
 		<label class="toggle-button" for="toggle-state"></label> -->
