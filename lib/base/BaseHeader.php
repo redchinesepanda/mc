@@ -71,13 +71,17 @@ class BaseHeader
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
 			
 			if( $item_class ) {
+				$item_class_elements = explode( '-', $item_class );
+
 				$items[] = [
 					'class' => $item_class,
 
-					'url-part' => end( explode( '-', $item_class ) ),
+					'url-part' => end( $item_class_elements ),
 				];
 			}
 		}
+
+		return $items;
 	}
 	
 	const LOCATION = 'legal-main';
