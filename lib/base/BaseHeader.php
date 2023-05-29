@@ -81,9 +81,9 @@ class BaseHeader
 			}
 		}
 
-		LegalDebug::debug( [
-			'$items' => $items
-		] );
+		// LegalDebug::debug( [
+		// 	'$items' => $items
+		// ] );
 
 		return $items;
 	}
@@ -139,6 +139,10 @@ class BaseHeader
 			
 			if( $item_class ) {
 				$item->classes[] = 'legal-country ' . $item_class;
+
+				LegalDebug::debug( [
+					'classes' => $item->classes,
+				] );
 			}
 
 			$item_hide = get_field( self::FIELD[ 'hide' ], $item );
