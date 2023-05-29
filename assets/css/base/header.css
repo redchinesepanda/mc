@@ -75,6 +75,10 @@
 	display: block;
 }
 
+.legal-menu .menu-item:not( :active ) > a {
+	pointer-events: none;
+}
+
 .legal-header-menu #toggle-state {
 	display: none;
 }
