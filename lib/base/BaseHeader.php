@@ -141,7 +141,7 @@ class BaseHeader
 				$item->classes[] = 'legal-country ' . $item_class;
 
 				LegalDebug::debug( [
-					'classes' => $item->classes,
+					'classes' => $item->classes, 
 				] );
 			}
 
