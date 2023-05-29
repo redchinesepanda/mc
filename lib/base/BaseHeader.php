@@ -138,7 +138,9 @@ class BaseHeader
 			$item_class = get_field( self::FIELD[ 'class' ], $item );
 			
 			if( $item_class ) {
-				$item->classes[] = 'legal-country ' . $item_class;
+				$item->classes[] = 'legal-country';
+				
+				$item->classes[] = $item_class;
 
 				LegalDebug::debug( [
 					'classes' => $item->classes, 
