@@ -8,7 +8,7 @@ class BaseHeader
 
     public static function register_script()
     {
-		register_script( self::JS )
+		register_script( self::JS );
     }
 
 	const CSS = [
