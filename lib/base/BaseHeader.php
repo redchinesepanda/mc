@@ -30,7 +30,7 @@ class BaseHeader
 		
 		// wp_enqueue_style( $name );
 
-		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() )
+		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() );
     }
 
 	public static function register()
