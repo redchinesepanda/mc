@@ -6,21 +6,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = event.currentTarget;
 
-		if ( !element.classList.contains( 'legal-active' ) ) {
-			event.preventDefault();
-		}
-
 		element.classList.toggle( 'legal-active' );
+	}
 
-		// let oops = document.querySelector( '.legal-oops-background');
+    function toggleLink( event )
+	{
+		let element = event.target;
 
-		// if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
-			
-		// }
+		if ( element.hasAttribute( 'href' ) ) {
+			if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
+				event.preventDefault();
+			}
+		}
 	}
 
     document.querySelectorAll( '.legal-menu .menu-item').forEach( function ( element ) {
 		element.addEventListener( 'click', toggleBlock, false );
+	} );
+
+    document.querySelectorAll( '.legal-menu .menu-item > a').forEach( function ( element ) {
+		element.addEventListener( 'click', toggleLink, false );
 	} );
 
 	// let oops = document.querySelector( '.legal-oops-background');
