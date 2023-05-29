@@ -16,7 +16,7 @@
 		pointer-events: none;
 	} */
 
-	.legal-menu .menu-item:active > .sub-menu {
+	.legal-menu .menu-item.legal-active > .sub-menu {
 		display: block;
 	}
 
