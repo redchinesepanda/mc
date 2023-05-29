@@ -21,12 +21,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    document.querySelectorAll( '.legal-menu .menu-item').forEach( function ( element ) {
+    document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleBlock, false );
 	} );
 
-    document.querySelectorAll( '.legal-menu .menu-item > a').forEach( function ( element ) {
+    document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleLink, false );
+	} );
+
+    document.querySelectorAll( '.legal-header-menu' ).forEach( function ( element ) {
+		element.addEventListener( 'click', toggleBlock, false );
 	} );
 } );
 
