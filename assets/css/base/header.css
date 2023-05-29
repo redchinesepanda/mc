@@ -12,12 +12,14 @@
 		flex-direction: column;
 	}
 
-	/* .legal-menu .menu-item:not( :active ) > a {
-		pointer-events: none;
-	} */
-
 	.legal-menu .menu-item.legal-active > .sub-menu {
 		display: block;
+	}
+
+	/* Position */
+
+	.legal-menu .menu-item > a {
+		margin-right: auto;
 	}
 
 	/* Width and Height */
@@ -26,10 +28,6 @@
 	.legal-header-menu .toggle-button {
 		width: 22px;
 		height: 22px;
-	}
-
-	.legal-menu .menu-item > a {
-		width: 100%;
 	}
 	
 	/* Background */
@@ -87,6 +85,7 @@
 
 .legal-menu .menu-item {
 	display: flex;
+	cursor: pointer;
 }
 
 .legal-menu .menu-item > .sub-menu {
