@@ -12,6 +12,11 @@
 		flex-direction: column;
 	}
 
+	.legal-menu .menu-item:not( :active ) > a {
+		pointer-events: none;
+		cursor: pointer;
+	}
+
 	/* Width and Height */
 
 	.legal-header-menu::before,
@@ -83,10 +88,6 @@
 
 .legal-menu .menu-item > .sub-menu {
 	display: none;
-}
-
-.legal-menu .menu-item:not( :active ) > a {
-	pointer-events: none;
 }
 
 .legal-header-menu #toggle-state {
