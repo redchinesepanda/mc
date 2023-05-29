@@ -8,7 +8,7 @@ class BaseHeader
 
     public static function register_script()
     {
-		ToolEnqueue::register_script( self::JS );
+		// ToolEnqueue::register_script( self::JS );
     }
 
 	const CSS = [
