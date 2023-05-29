@@ -105,6 +105,10 @@
 		right: 0px;
 	}
 
+	.legal-menu .menu-item:last-child .sub-menu {
+		padding-bottom: 10px;
+	}
+
 	/* Background */
 
 	.legal-menu .menu-item:hover {
