@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = event.currentTarget;
 
-		if ( !element.classList.has.contains( 'legal-active' ) ) {
+		if ( !element.classList.contains( 'legal-active' ) ) {
 			event.preventDefault();
 		}
 
