@@ -136,10 +136,6 @@
 	display: none;
 }
 
-.legal-header-menu #toggle-state {
-	display: none;
-}
-
 .legal-menu .menu-item-has-children:after {
 	display: block;
 	content: '';
