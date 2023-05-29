@@ -137,7 +137,8 @@
 	background-color: rgb(13, 11, 47);
 }
 
-.legal-menu .menu-item:hover > a {
+/* .legal-menu .menu-item:hover > a { */
+.legal-menu .menu-item:hover {
 	background-color: rgb(89, 151, 227);
 }
 
