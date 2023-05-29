@@ -13,7 +13,7 @@ class BaseHeader
 
 	public static function register_inline_style()
     {
-		$name = 'review-inline';
+		$name = 'header-inline';
 
         wp_register_style( $name, false, [], true, true );
 		
