@@ -16,6 +16,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log ( 'element: ' + element );
 
 		if ( element.hasAttribute( 'href' ) ) {
+			console.log ( 'href: ' + element.href );
+
+			console.log ( 'contains: ' + element.parentElement.classList.contains( 'legal-active' ) );
+
 			if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
 				event.preventDefault();
 			}
