@@ -17,6 +17,14 @@
 	display: block;
 }
 
+.legal-header-menu .toggle-state {
+	display: none;
+}
+
+.legal-header-menu .toggle-button {
+	display: block;
+}
+
 /* Position */
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
@@ -63,6 +71,11 @@
 .legal-menu .menu-item a {
 	min-width: 48px;
 	min-height: 48px;
+}
+
+.legal-header-menu .toggle-button {
+	width: 22px;
+	height: 22px;
 }
 
 /* Background */
