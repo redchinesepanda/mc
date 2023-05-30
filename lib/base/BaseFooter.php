@@ -37,6 +37,21 @@ class BaseFooter
 		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
 	}
 
+	public static function parse( $menu_items, $key )
+	{
+		$post = $menu_items[ $key ];
+
+		$item[ 'title' ] = $post->title;
+
+		$item[ 'url' ] = $post->url;
+
+		$children = self::array_search_values( $post->ID, $menu_items );
+
+		if ( !empty( $children ) ) {
+			$item[ 'children' ] = $children;
+		}
+	}
+
 	public static function get_menu_items()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
@@ -58,7 +73,7 @@ class BaseFooter
 
 			$item[ 'url' ] = $post->url;
 
-			$children = self::array_search_values( $post->ID, $menu_item_parents );
+			$children = self::array_search_values( $post->ID, $menu_items );
 
 			if ( !empty( $children ) ) {
 				$item[ 'children' ] = $children;
