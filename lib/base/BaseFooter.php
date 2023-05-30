@@ -55,12 +55,6 @@ class BaseFooter
 			}
 		}
 
-		LegalDebug::debug( [
-			'function' => 'BaseFooter::parse',
-
-			'title' => $post->title,
-		] );
-
 		return $item;
 	}
 
@@ -88,6 +82,8 @@ class BaseFooter
 		foreach ( $keys as $key ) {
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
+
+		return $items;
 	}
 
 	public static function get()
