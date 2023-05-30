@@ -43,6 +43,22 @@ class BaseFooter
 			'menu_id_translated' => $menu_id_translated,
 		] );
 
+		$args = [
+			'copy' => [
+				'year' => '2021-2023',
+				
+				'company' => 'Match.Center',
+				
+				'reserved' => 'All rights reserved'
+			],
+
+			'text' => [
+				'Match.Center is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.',
+
+				'Always gamble responsibly and never risk money that you can not afford to lose!'
+			],
+		]; 
+
 		return $args;
 	}
 
