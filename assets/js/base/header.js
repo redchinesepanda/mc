@@ -43,7 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			'event' : 'click',
 
-			'function' : 'toggleBlock'
+			'function' : toggleBlock
 		}
 	];
 
@@ -56,7 +56,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					element.addEventListener( arg.event, arg.function, false );
 				} );
 			} );
-			
+
 			// document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 			// 	element.addEventListener( 'click', toggleBlock, false );
 			// } );
