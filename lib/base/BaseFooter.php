@@ -37,8 +37,6 @@ class BaseFooter
 	{
 		$args = [];
 
-		// $menu_id_translated = self::get_menu_id();
-		
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		LegalDebug::debug( [
