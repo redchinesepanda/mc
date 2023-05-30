@@ -90,7 +90,7 @@ class BaseFooter
 	{
 		$items = self::get_menu_items();
 
-		$end = array_slice( $items, -2 );
+		$end = array_splice( $items, -2 );
 
 		return  [
 			'end' => $end,
