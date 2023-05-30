@@ -8,6 +8,10 @@
 	display: block;
 }
 
+.legal-footer .item-title[ href='#' ] {
+	pointer-events: none;
+}
+
 /* Position */
 
 #thrive-footer {
