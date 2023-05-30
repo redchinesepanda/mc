@@ -107,6 +107,12 @@ class BaseFooter
 			// }
 
 			// $items[] = $item;
+
+			LegalDebug::debug( [
+				'function' => 'BaseFooter::get_menu_items',
+	
+				'post' => $menu_items[ $key ],
+			] );
 			
 			$items[] = self::parse( $menu_items, $menu_item_parents, $menu_items[ $key ] );
 		}
