@@ -43,7 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			'event' : 'click',
 
-			'function' : toggleBlock
+			'function' : toggleBlock()
 		}
 	];
 
