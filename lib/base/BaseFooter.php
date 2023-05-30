@@ -37,7 +37,7 @@ class BaseFooter
 		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
 	}
 
-	public static function parse( $items, $post )
+	public static function parse( $items, $parents, $post )
 	{
 		// $post = $items[ $key ];
 
@@ -45,9 +45,9 @@ class BaseFooter
 
 		$item[ 'url' ] = $post->url;
 
-		$menu_item_parents = self::get_parents( $items );
+		// $menu_item_parents = self::get_parents( $items );
 
-		$children = self::array_search_values( $post->ID, $menu_item_parents );
+		$children = self::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
 			foreach ( $children as $child_key => $parent_value ) {
@@ -73,9 +73,9 @@ class BaseFooter
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		// $menu_item_parents = self::get_parents( $menu_items );
+		$menu_item_parents = self::get_parents( $menu_items );
 
-		// $parents_top = self::array_search_values( 0, $menu_item_parents );
+		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
 		LegalDebug::debug( [
 			// 'menu_id_translated' => $menu_id_translated,
@@ -104,7 +104,7 @@ class BaseFooter
 
 			// $items[] = $item;
 			
-			$items[] = self::parse( $menu_items, $menu_items[ $key ] );
+			$items[] = self::parse( $menu_items, $menu_item_parents, $menu_items[ $key ] );
 		}
 
 		LegalDebug::debug( [
