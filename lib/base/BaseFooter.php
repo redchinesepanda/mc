@@ -43,7 +43,7 @@ class BaseFooter
 
 		$item[ 'title' ] = $post->title;
 
-		$item[ 'url' ] = $post->url;
+		$item[ 'href' ] = $post->url;
 
 		$children = self::array_search_values( $post->ID, $parents );
 
@@ -108,7 +108,9 @@ class BaseFooter
 	}
 
 	const TEMPLATE = [
-        'footer' => LegalMain::LEGAL_PATH . '/template-parts/base/part-footer.php',
+        'footer' => LegalMain::LEGAL_PATH . '/template-parts/base/part-footer-main.php',
+
+        'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-footer-item.php',
     ];
 
     public static function render()
@@ -116,6 +118,17 @@ class BaseFooter
         ob_start();
 
         load_template( self::TEMPLATE[ 'footer' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_item( $item )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'item' ], false, $item );
 
         $output = ob_get_clean();
 
