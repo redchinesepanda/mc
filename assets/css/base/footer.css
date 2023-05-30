@@ -61,7 +61,7 @@
 /* Width and Height */
 
 .legal-footer {
-	width: 1080px;
+	max-width: 1080px;
 }
 
 .legal-footer .footer-menu,
