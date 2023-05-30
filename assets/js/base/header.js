@@ -47,7 +47,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	];
 
-	function toggleInit() {
+	function toggleInit()
+	{
 		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( function ( element ) {
