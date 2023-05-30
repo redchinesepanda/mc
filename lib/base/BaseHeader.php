@@ -86,10 +86,6 @@ class BaseHeader
 			}
 		}
 
-		// LegalDebug::debug( [
-		// 	'$items' => $items
-		// ] );
-
 		return $items;
 	}
 	
@@ -100,21 +96,8 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	// public static function get_menu_id()
-	// {
-	// 	$locations = get_nav_menu_locations();
-
-	// 	$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
-
-	// 	$menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
-
-	// 	return $menu_id_translated;
-	// }
-
 	public static function get()
 	{
-		// $menu_id_translated = self::get_menu_id();
-		
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
