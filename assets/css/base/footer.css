@@ -22,16 +22,17 @@
 	margin: 0px auto;
 }
 
-.footer-menu > .menu-item > .item-title,
+/* .footer-menu > .menu-item > .item-title,
 .footer-menu > .menu-item-end > .menu-item > .item-title {
 	padding-bottom: 20px;
-}
+} */
 
 .footer-menu > .menu-item-end > .menu-item:not( :last-child ) {
 	padding-bottom: 20px; 
 }
 
 .legal-footer .item-children .item-title {
+	padding-top: 20px;
 	padding-left: 20px;
 }
 
