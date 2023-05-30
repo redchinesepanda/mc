@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+	'args' => $args,
+] );
+
+?>
 <?php if ( !empty( $args ) ) : ?>
 	<div class="legal-footer">
 		<div class="footer-menu">
