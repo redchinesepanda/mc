@@ -33,10 +33,8 @@ class BaseFooter
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function get()
+	public static function get_menu_items()
 	{
-		$args = [];
-
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
@@ -44,8 +42,13 @@ class BaseFooter
 		LegalDebug::debug( [
 			'menu_items' => $menu_items,
 		] );
+	}
 
-		$args = [
+	public static function get()
+	{
+		return  [
+			'items' => self::get_menu_items(),
+
 			'copy' => [
 				'year' => '2021-2023',
 				
@@ -59,9 +62,7 @@ class BaseFooter
 
 				'Always gamble responsibly and never risk money that you can not afford to lose!'
 			],
-		]; 
-
-		return $args;
+		];
 	}
 
 	const TEMPLATE = [
