@@ -79,17 +79,17 @@ class BaseFooter
 
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
-		LegalDebug::debug( [
-			'function' => 'BaseFooter::get_menu_items',
+		// LegalDebug::debug( [
+		// 	'function' => 'BaseFooter::get_menu_items',
 
-			// 'menu_id_translated' => $menu_id_translated,
+		// 	// 'menu_id_translated' => $menu_id_translated,
 
-			// 'menu_items' => $menu_items,
+		// 	// 'menu_items' => $menu_items,
 
-			// 'menu_item_parents' => $menu_item_parents,
+		// 	// 'menu_item_parents' => $menu_item_parents,
 			
-			// 'parents_top' => $parents_top,
-		] );
+		// 	// 'parents_top' => $parents_top,
+		// ] );
 
 		$items = [];
 
@@ -108,11 +108,11 @@ class BaseFooter
 
 			// $items[] = $item;
 
-			LegalDebug::debug( [
-				'function' => 'BaseFooter::get_menu_items',
+			// LegalDebug::debug( [
+			// 	'function' => 'BaseFooter::get_menu_items',
 	
-				'post' => $menu_items[ $key ],
-			] );
+			// 	'post' => $menu_items[ $key ],
+			// ] );
 			
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
