@@ -49,12 +49,32 @@ class BaseFooter
 
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
+		$items = [];
+
+		foreach ( $parents_top as $key ) {
+			$post = $menu_items[ $key ];
+
+			$item[ 'title' ] = $post->title;
+
+			$item[ 'url' ] = $post->url;
+
+			$children = self::array_search_values( $item->ID, $menu_item_parents );
+
+			if ( !empty( $children ) ) {
+				$item[ 'children' ] = $children;
+			}
+
+			$items[] = $item;
+		}
+
 		LegalDebug::debug( [
-			'parents_top' => $parents_top,
+			'items' => $items,
+			
+			// 'parents_top' => $parents_top,
 
-			'menu_item_parents' => $menu_item_parents,
+			// 'menu_item_parents' => $menu_item_parents,
 
-			'menu_items' => $menu_items,
+			// 'menu_items' => $menu_items,
 		] );
 	}
 
