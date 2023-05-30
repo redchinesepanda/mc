@@ -4,16 +4,25 @@
 	display: flex;
 }
 
-.legal-footer .menu-item,
-.legal-footer .menu-item-end {
-	flex-basis: auto;
-}
-
 /* Position */
 
 #thrive-footer {
 	z-index: 10;
 }
 
+.legal-footer {
+	margin: 0px auto;
+}
+
 /* Width and Height */
+
+.legal-footer {
+	width: 1080px;
+}
+
+.legal-footer .menu-item,
+.legal-footer .menu-item-end {
+	flex-basis: 25%;
+  	flex-grow: 1;
+}
 
