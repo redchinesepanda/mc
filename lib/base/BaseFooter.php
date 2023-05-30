@@ -39,7 +39,7 @@ class BaseFooter
 
 		// $menu_id_translated = self::get_menu_id();
 		
-		$menu_id_translated = BaseMain::get_menu_id();
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		LegalDebug::debug( [
 			'menu_id_translated' => $menu_id_translated,

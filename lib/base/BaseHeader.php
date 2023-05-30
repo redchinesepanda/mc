@@ -62,7 +62,7 @@ class BaseHeader
 
 	public static function get_menu_items()
 	{
-		$menu_id_translated = BaseMain::get_menu_id();
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
@@ -115,7 +115,7 @@ class BaseHeader
 	{
 		// $menu_id_translated = self::get_menu_id();
 		
-		$menu_id_translated = BaseMain::get_menu_id();
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
 			'theme_location' => self::LOCATION,

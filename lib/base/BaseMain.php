@@ -13,11 +13,11 @@ class BaseMain
         BaseFooter::register();
     }
 
-    public static function get_menu_id()
+    public static function get_menu_id( $location )
 	{
 		$locations = get_nav_menu_locations();
 
-		$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
+		$menu_id = ( !empty( $locations[ $location ] ) ? $locations[ $location ] : 0 );
 
 		// $menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
 		
