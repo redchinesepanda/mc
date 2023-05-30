@@ -23,7 +23,7 @@
 	padding-bottom: 20px;
 }
 
-.legal-footer item-children .item-title {
+.legal-footer .item-children .item-title {
 	padding-left: 15px;
 }
 
@@ -41,7 +41,7 @@
 
 /* Background */
 
-.legal-footer item-children .item-title {
+.legal-footer .item-children .item-title {
 	background-image: url( '../../img/base/footer/menu-item.svg' );
 	background-position: left center;
 	background-repeat: no-repeat;
