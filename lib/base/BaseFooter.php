@@ -60,6 +60,8 @@ class BaseFooter
 
 			'title' => $post->title,
 		] );
+
+		return $item;
 	}
 
 	public static function get_parents( $menu_items )
