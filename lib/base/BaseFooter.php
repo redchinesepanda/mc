@@ -37,15 +37,15 @@ class BaseFooter
 		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
 	}
 
-	public static function parse( $menu_items, $key )
+	public static function parse( $items, $key )
 	{
-		$post = $menu_items[ $key ];
+		$post = $items[ $key ];
 
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'url' ] = $post->url;
 
-		$children = self::array_search_values( $post->ID, $menu_items );
+		$children = self::array_search_values( $post->ID, $items );
 
 		if ( !empty( $children ) ) {
 			$item[ 'children' ] = $children;
@@ -73,7 +73,7 @@ class BaseFooter
 
 			$item[ 'url' ] = $post->url;
 
-			$children = self::array_search_values( $post->ID, $menu_items );
+			$children = self::array_search_values( $post->ID, $menu_item_parents );
 
 			if ( !empty( $children ) ) {
 				$item[ 'children' ] = $children;
@@ -87,7 +87,7 @@ class BaseFooter
 			
 			// 'parents_top' => $parents_top,
 
-			// 'menu_item_parents' => $menu_item_parents,
+			'menu_item_parents' => $menu_item_parents,
 
 			// 'menu_items' => $menu_items,
 		] );
