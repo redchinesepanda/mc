@@ -1,5 +1,19 @@
+/* Display */
+
+.legal-footer .footer-menu {
+	display: flex;
+}
+
+.legal-footer .menu-item,
+.legal-footer .menu-item-end {
+	flex-basis: auto;
+}
+
 /* Position */
 
 #thrive-footer {
 	z-index: 10;
 }
+
+/* Width and Height */
+
