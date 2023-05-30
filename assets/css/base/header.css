@@ -156,6 +156,10 @@
 
 /* Position */
 
+#thrive-header {
+	z-index: 10;
+}
+
 .legal-header .legal-logo {
 	margin-right: auto;
 }
