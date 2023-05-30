@@ -36,7 +36,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
 				element.addEventListener( 'click', toggleBlock, false );
 			} );
-		}	
+		} else {
+			document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
+				element.removeEventListener( 'click', toggleBlock, false );
+			} );
+		
+			document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
+				element.removeEventListener( 'click', toggleLink, false );
+			} );
+		
+			document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
+				element.removeEventListener( 'click', toggleBlock, false );
+			} );
+		}
 	}
 
 	toggleInit();
