@@ -12,6 +12,11 @@
 				<?php foreach( $args[ 'items' ] as $item ) : ?>
 					<?php echo BaseFooter::render_item( $item ); ?>
 				<?php endforeach; ?>
+				<div class="menu-item-end">
+					<?php foreach( $args[ 'end' ] as $item ) : ?>
+						<?php echo BaseFooter::render_item( $item ); ?>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		<?php endif; ?>
 		<div class="footer-logo">
