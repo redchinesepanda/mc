@@ -77,9 +77,7 @@ class BaseFooter
 
 			// 'menu_item_parents' => $menu_item_parents,
 			
-			'parents_top' => $parents_top,
-
-			'items' => $items,
+			// 'parents_top' => $parents_top,
 		] );
 
 		$items = [];
@@ -101,6 +99,10 @@ class BaseFooter
 			
 			$items[] = self::parse( $menu_items, $key );
 		}
+
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
 	}
 
 	public static function get()
