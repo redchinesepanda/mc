@@ -70,6 +70,18 @@ class BaseFooter
 
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
+		LegalDebug::debug( [
+			'menu_id_translated' => $menu_id_translated,
+
+			'menu_items' => $menu_items,
+
+			'items' => $items,
+			
+			'parents_top' => $parents_top,
+
+			'menu_item_parents' => $menu_item_parents,
+		] );
+
 		$items = [];
 
 		foreach ( $parents_top as $key => $value ) {
@@ -89,16 +101,6 @@ class BaseFooter
 			
 			$items[] = self::parse( $menu_items, $key );
 		}
-
-		LegalDebug::debug( [
-			'items' => $items,
-			
-			'parents_top' => $parents_top,
-
-			'menu_item_parents' => $menu_item_parents,
-
-			// 'menu_items' => $menu_items,
-		] );
 	}
 
 	public static function get()
