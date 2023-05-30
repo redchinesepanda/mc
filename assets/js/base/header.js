@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	toggleInit();
 
-	document.addEventListener( 'resize', toggleInit, false );
+	window.addEventListener( 'resize', toggleInit, false );
 
     // document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 	// 	element.addEventListener( 'click', toggleBlock, false );
