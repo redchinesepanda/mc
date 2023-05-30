@@ -45,11 +45,15 @@ class BaseFooter
 
 		$item[ 'url' ] = $post->url;
 
-		$children = self::array_search_values( $post->ID, $items );
+		$menu_item_parents = array_map( function( $menu_item ) {
+			return $menu_item->menu_item_parent;
+		}, $items );
+
+		$children = self::array_search_values( $post->ID, $menu_item_parents );
 
 		if ( !empty( $children ) ) {
 			foreach ( $children as $child_key ) {
-				$item[ 'children' ][] = self::parse( $children, $child_key );
+				$item[ 'children' ][] = self::parse( $items, $child_key );
 			}
 		}
 	}
@@ -68,7 +72,7 @@ class BaseFooter
 
 		$items = [];
 
-		foreach ( $parents_top as $key ) {
+		foreach ( $parents_top as $key => $value ) {
 			// $post = $menu_items[ $key ];
 
 			// $item[ 'title' ] = $post->title;
@@ -83,7 +87,7 @@ class BaseFooter
 
 			// $items[] = $item;
 			
-			$items[] = self::parse( $menu_item_parents, $key );
+			$items[] = self::parse( $menu_items, $key );
 		}
 
 		LegalDebug::debug( [
