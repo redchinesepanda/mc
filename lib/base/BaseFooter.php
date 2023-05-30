@@ -39,8 +39,10 @@ class BaseFooter
 
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
+		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
+
 		LegalDebug::debug( [
-			'menu_id_translated' => $menu_id_translated,
+			'menu_items' => $menu_items,
 		] );
 
 		$args = [
