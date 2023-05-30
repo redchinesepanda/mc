@@ -48,7 +48,7 @@ class BaseFooter
 		$children = self::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
-			$child_keys = array_keys( $parents_top );
+			$child_keys = array_keys( $children );
 
 			foreach ( $child_keys as $child_key) {
 				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
