@@ -43,7 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			'event' : 'click',
 
-			'function' : toggleBlock()
+			'action' : toggleBlock
 		}
 	];
 
@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( function ( element ) {
-					element.addEventListener( arg.event, arg.function, false );
+					element.addEventListener( arg.event, arg.action, false );
 				} );
 			} );
 
