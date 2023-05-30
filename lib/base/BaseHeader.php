@@ -62,7 +62,7 @@ class BaseHeader
 
 	public static function get_menu_items()
 	{
-		$menu_id_translated = self::get_menu_id();
+		$menu_id_translated = BaseMain::get_menu_id();
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
