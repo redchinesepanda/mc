@@ -112,8 +112,8 @@
 	color: rgb(89, 151, 227);
 }
 
-.legal-footer footer-copy,
-.legal-footer footer-text p {
+.legal-footer .footer-copy,
+.legal-footer .footer-text p {
 	font-family: "Source Sans Pro";
 	font-size: 15px;
 	font-style: normal;
