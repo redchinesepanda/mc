@@ -160,6 +160,10 @@
 	z-index: 10;
 }
 
+.legal-header {
+	padding: 16px 0px;
+}
+
 .legal-header .legal-logo {
 	margin-right: auto;
 }
