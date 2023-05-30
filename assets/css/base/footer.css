@@ -4,6 +4,10 @@
 	display: flex;
 }
 
+.legal-footer .item-title {
+	display: block;
+}
+
 /* Position */
 
 #thrive-footer {
@@ -19,6 +23,10 @@
 	padding-bottom: 20px;
 }
 
+.item-title {
+	padding-left: 15px;
+}
+
 /* Width and Height */
 
 .legal-footer {
@@ -29,6 +37,15 @@
 .legal-footer .menu-item-end {
 	flex-basis: 25%;
   	flex-grow: 1;
+}
+
+/* Background */
+
+.legal-footer .item-title {
+	background-image: url( '../../img/base/footer/menu-item.svg' );
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
 /* Typography */
@@ -44,3 +61,12 @@
 	color: rgb(255, 255, 255);
 }
 
+.legal-footer .item-title {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	text-decoration: none;
+	line-height: 28.8px
+	color: rgb(89, 151, 227);
+}
