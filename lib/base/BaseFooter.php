@@ -58,7 +58,7 @@ class BaseFooter
 
 			$item[ 'url' ] = $post->url;
 
-			$children = self::array_search_values( $item->ID, $menu_item_parents );
+			$children = self::array_search_values( $post->ID, $menu_item_parents );
 
 			if ( !empty( $children ) ) {
 				$item[ 'children' ] = $children;
