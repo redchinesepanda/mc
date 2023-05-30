@@ -98,7 +98,7 @@ class BaseFooter
 			[
 				'href' => '#',
 				
-				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/18+.png',
+				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/18+.png',
 
 				'width' => '38',
 				
@@ -110,7 +110,7 @@ class BaseFooter
 			[
 				'href' => 'https://www.begambleaware.org/',
 				
-				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/begambleaware.png',
+				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/begambleaware.png',
 
 				'width' => '371',
 				
@@ -122,7 +122,7 @@ class BaseFooter
 			[
 				'href' => 'https://www.gamblingtherapy.org/',
 
-				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
+				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
 
 				'width' => '130',
 				
