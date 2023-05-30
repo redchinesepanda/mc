@@ -84,7 +84,7 @@ class BaseFooter
 
 			// 'menu_items' => $menu_items,
 
-			'menu_item_parents' => $menu_item_parents,
+			// 'menu_item_parents' => $menu_item_parents,
 			
 			// 'parents_top' => $parents_top,
 		] );
