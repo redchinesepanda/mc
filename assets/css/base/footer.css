@@ -19,10 +19,18 @@
 		width: 100%;
 	}
 
+	.legal-footer .lang-switcher {
+		width: 100%;
+	}
+
 	/* Typography */
 
 	.legal-footer .footer-copy {
 		text-align: center;
+	}
+
+	.legal-footer .footer-text {
+		text-align: justify;
 	}
 }
 
