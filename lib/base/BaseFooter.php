@@ -33,6 +33,10 @@ class BaseFooter
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
 	}
 
+	public static function array_search_values( $m_needle, $a_haystack, $b_strict = false){
+		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
+	}
+
 	public static function get_menu_items()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
@@ -43,7 +47,11 @@ class BaseFooter
 			return $menu_item->menu_item_parent;
 		}, $menu_items );
 
+		$parents_top = self::array_search_values( 0, $menu_item_parents );
+
 		LegalDebug::debug( [
+			'parents_top' => $parents_top,
+
 			'menu_item_parents' => $menu_item_parents,
 
 			'menu_items' => $menu_items,
