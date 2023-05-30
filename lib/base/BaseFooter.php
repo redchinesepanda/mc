@@ -56,6 +56,8 @@ class BaseFooter
 		}
 
 		LegalDebug::debug( [
+			'function' => 'BaseFooter::parse',
+
 			'title' => $post->title,
 		] );
 	}
@@ -78,6 +80,8 @@ class BaseFooter
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
 		LegalDebug::debug( [
+			'function' => 'BaseFooter::get_menu_items',
+
 			// 'menu_id_translated' => $menu_id_translated,
 
 			// 'menu_items' => $menu_items,
@@ -108,6 +112,8 @@ class BaseFooter
 		}
 
 		LegalDebug::debug( [
+			'function' => 'BaseFooter::get_menu_items',
+
 			'items' => $items,
 		] );
 	}
