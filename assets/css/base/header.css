@@ -41,6 +41,10 @@
 
 	/* Position */
 
+	.legal-menu {
+		padding-top: 15px;
+	}
+
 	.legal-menu .menu-item > a {
 		margin-right: auto;
 	}
