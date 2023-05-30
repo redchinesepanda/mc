@@ -12,6 +12,11 @@
 	pointer-events: none;
 }
 
+.legal-footer .footer-logo {
+	display: flex;
+	column-gap: 20px;
+}
+
 /* Position */
 
 #thrive-footer {
@@ -21,11 +26,6 @@
 .legal-footer {
 	margin: 0px auto;
 }
-
-/* .footer-menu > .menu-item > .item-title,
-.footer-menu > .menu-item-end > .menu-item > .item-title {
-	padding-bottom: 20px;
-} */
 
 .legal-footer .item-children {
 	padding-top: 20px;
@@ -42,6 +42,10 @@
 .footer-menu {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
+}
+
+.legal-footer .footer-logo {
+	padding: 5px 0px;
 }
 
 /* Width and Height */
