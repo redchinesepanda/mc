@@ -71,15 +71,15 @@ class BaseFooter
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
 		LegalDebug::debug( [
-			'menu_id_translated' => $menu_id_translated,
+			// 'menu_id_translated' => $menu_id_translated,
 
-			'menu_items' => $menu_items,
+			// 'menu_items' => $menu_items,
+
+			'menu_item_parents' => $menu_item_parents,
 
 			'items' => $items,
 			
 			'parents_top' => $parents_top,
-
-			'menu_item_parents' => $menu_item_parents,
 		] );
 
 		$items = [];
