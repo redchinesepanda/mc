@@ -86,6 +86,52 @@ class BaseFooter
 		return $items;
 	}
 
+	const PATH = [
+		'footer' => '/assets/img/base/footer/logo/',
+	];
+
+	public static function get_ke()
+	{
+		$locale = 'ke';
+
+		return [
+			[
+				'href' => '#',
+				
+				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/18+.png',
+
+				'width' => '38',
+				
+				'height' => '38',
+
+				'alt' => '18+',
+			],
+
+			[
+				'href' => 'https://www.begambleaware.org/',
+				
+				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/begambleaware.png',
+
+				'width' => '371',
+				
+				'height' => '38',
+
+				'alt' => 'begambleaware',
+			],
+
+			[
+				'href' => 'https://www.gamblingtherapy.org/',
+
+				'src' => LegalMain::LEGAL_URL . PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
+
+				'width' => '130',
+				
+				'height' => '38',
+
+				'alt' => 'gambling-therapy',
+			],
+		];
+	}
 	public static function get()
 	{
 		$items = self::get_menu_items();
@@ -96,6 +142,8 @@ class BaseFooter
 			'end' => $end,
 
 			'items' => $items,
+
+			'logo' => self::get_ke(),
 
 			'copy' => [
 				'year' => '2021-2023',
