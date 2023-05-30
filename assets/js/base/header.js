@@ -21,21 +21,53 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	const args = [
+		{
+			'selector' : '.legal-menu .menu-item',
+
+			'event' : 'click',
+
+			'function' : 'toggleBlock'
+		},
+
+		{
+			'selector' : '.legal-menu .menu-item > a',
+
+			'event' : 'click',
+
+			'function' : 'toggleLink'
+		},
+
+		{
+			'selector' : '.legal-header-control',
+
+			'event' : 'click',
+
+			'function' : 'toggleBlock'
+		}
+	];
+
 	function toggleInit() {
 		// console.log( 'matchMedia: ' + window.matchMedia( '( max-width: 768px )' ).matches );
-		
+
 		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
-			document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
-				element.addEventListener( 'click', toggleBlock, false );
+			args.forEach( function ( arg ) {
+				document.querySelectorAll( arg.selector ).forEach( function ( element ) {
+					element.addEventListener( arg.event, arg.function, false );
+				} );
 			} );
+			
+			// document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
+			// 	element.addEventListener( 'click', toggleBlock, false );
+			// } );
 		
-			document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
-				element.addEventListener( 'click', toggleLink, false );
-			} );
+			// document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
+			// 	element.addEventListener( 'click', toggleLink, false );
+			// } );
 		
-			document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
-				element.addEventListener( 'click', toggleBlock, false );
-			} );
+			// document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
+			// 	element.addEventListener( 'click', toggleBlock, false );
+			// } );
 		} else {
 			document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 				element.removeEventListener( 'click', toggleBlock, false );
