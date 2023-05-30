@@ -45,12 +45,12 @@ class BaseFooter
 
 		$item[ 'url' ] = $post->url;
 
-		// $menu_item_parents = self::get_parents( $items );
-
 		$children = self::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
-			foreach ( $children as $child_key => $parent_value ) {
+			$child_keys = array_keys( $parents_top );
+
+			foreach ( $child_keys as $child_key) {
 				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
 			}
 		}
@@ -81,49 +81,13 @@ class BaseFooter
 
 		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'BaseFooter::get_menu_items',
-
-		// 	// 'menu_id_translated' => $menu_id_translated,
-
-		// 	// 'menu_items' => $menu_items,
-
-		// 	// 'menu_item_parents' => $menu_item_parents,
-			
-		// 	// 'parents_top' => $parents_top,
-		// ] );
+		$keys = array_keys( $parents_top );
 
 		$items = [];
 
-		foreach ( $parents_top as $key => $value ) {
-			// $post = $menu_items[ $key ];
-
-			// $item[ 'title' ] = $post->title;
-
-			// $item[ 'url' ] = $post->url;
-
-			// $children = self::array_search_values( $post->ID, $menu_item_parents );
-
-			// if ( !empty( $children ) ) {
-			// 	$item[ 'children' ] = $children;
-			// }
-
-			// $items[] = $item;
-
-			// LegalDebug::debug( [
-			// 	'function' => 'BaseFooter::get_menu_items',
-	
-			// 	'post' => $menu_items[ $key ],
-			// ] );
-			
+		foreach ( $keys as $key ) {
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
-
-		LegalDebug::debug( [
-			'function' => 'BaseFooter::get_menu_items',
-
-			'items' => $items,
-		] );
 	}
 
 	public static function get()
