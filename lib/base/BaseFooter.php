@@ -89,7 +89,7 @@ class BaseFooter
 		LegalDebug::debug( [
 			'items' => $items,
 			
-			// 'parents_top' => $parents_top,
+			'parents_top' => $parents_top,
 
 			'menu_item_parents' => $menu_item_parents,
 
