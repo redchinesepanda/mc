@@ -65,9 +65,8 @@
 	width: 100%;
 }
 
-.legal-footer .footer-copy,
-.legal-footer .lang-switcher {
-	width: 50%;
+.legal-footer .footer-copy{
+	margin-right: auto;
 }
 
 .legal-footer .menu-item,
