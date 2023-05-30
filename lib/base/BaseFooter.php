@@ -48,7 +48,9 @@ class BaseFooter
 		$children = self::array_search_values( $post->ID, $items );
 
 		if ( !empty( $children ) ) {
-			$item[ 'children' ] = $children;
+			foreach ( $children as $child_key ) {
+				$item[ 'children' ][] = self::parse( $children, $child_key );
+			}
 		}
 	}
 
@@ -67,19 +69,21 @@ class BaseFooter
 		$items = [];
 
 		foreach ( $parents_top as $key ) {
-			$post = $menu_items[ $key ];
+			// $post = $menu_items[ $key ];
 
-			$item[ 'title' ] = $post->title;
+			// $item[ 'title' ] = $post->title;
 
-			$item[ 'url' ] = $post->url;
+			// $item[ 'url' ] = $post->url;
 
-			$children = self::array_search_values( $post->ID, $menu_item_parents );
+			// $children = self::array_search_values( $post->ID, $menu_item_parents );
 
-			if ( !empty( $children ) ) {
-				$item[ 'children' ] = $children;
-			}
+			// if ( !empty( $children ) ) {
+			// 	$item[ 'children' ] = $children;
+			// }
 
-			$items[] = $item;
+			// $items[] = $item;
+			
+			$items[] = self::parse( $menu_item_parents, $key );
 		}
 
 		LegalDebug::debug( [
