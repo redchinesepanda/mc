@@ -56,7 +56,7 @@ class BaseFooter
 		}
 
 		LegalDebug::debug( [
-			'post' => $post,
+			'title' => $post->title,
 		] );
 	}
 
