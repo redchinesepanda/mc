@@ -39,6 +39,10 @@ class BaseFooter
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
+		$parents = array_map( function( $menu_item ) {
+			return $menu_item->menu_item_parent;
+		}, $menu_items );
+
 		LegalDebug::debug( [
 			'menu_items' => $menu_items,
 		] );
