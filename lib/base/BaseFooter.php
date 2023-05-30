@@ -112,7 +112,7 @@ class BaseFooter
 				
 				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/begambleaware.png',
 
-				'width' => '371',
+				'width' => '126',
 				
 				'height' => '38',
 
