@@ -48,37 +48,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	];
 
 	function toggleInit() {
-		// console.log( 'matchMedia: ' + window.matchMedia( '( max-width: 768px )' ).matches );
-
 		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( function ( element ) {
 					element.addEventListener( arg.event, arg.action, false );
 				} );
 			} );
-
-			// document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
-			// 	element.addEventListener( 'click', toggleBlock, false );
-			// } );
-		
-			// document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
-			// 	element.addEventListener( 'click', toggleLink, false );
-			// } );
-		
-			// document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
-			// 	element.addEventListener( 'click', toggleBlock, false );
-			// } );
 		} else {
-			document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
-				element.removeEventListener( 'click', toggleBlock, false );
-			} );
-		
-			document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
-				element.removeEventListener( 'click', toggleLink, false );
-			} );
-		
-			document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
-				element.removeEventListener( 'click', toggleBlock, false );
+			args.forEach( function ( arg ) {
+				document.querySelectorAll( arg.selector ).forEach( function ( element ) {
+					element.removeEventListener( arg.event, arg.action, false );
+				} );
 			} );
 		}
 	}
@@ -86,18 +66,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	toggleInit();
 
 	window.addEventListener( 'resize', toggleInit, false );
-
-    // document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
-	// 	element.addEventListener( 'click', toggleBlock, false );
-	// } );
-
-    // document.querySelectorAll( '.legal-menu .menu-item > a' ).forEach( function ( element ) {
-	// 	element.addEventListener( 'click', toggleLink, false );
-	// } );
-
-    // document.querySelectorAll( '.legal-header-control' ).forEach( function ( element ) {
-	// 	element.addEventListener( 'click', toggleBlock, false );
-	// } ); 
 } );
 
 // header-js end
