@@ -51,7 +51,7 @@ class BaseFooter
 
 		if ( !empty( $children ) ) {
 			foreach ( $children as $child_key => $parent_value ) {
-				$item[ 'children' ][] = self::parse( $items, $child_key );
+				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
 			}
 		}
 
