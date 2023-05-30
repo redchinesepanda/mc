@@ -39,7 +39,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	toggleInit();
 
-	document.addEventListener( 'DOMContentLoaded', toggleInit, false );
+	document.addEventListener( 'resize', toggleInit, false );
 
     // document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 	// 	element.addEventListener( 'click', toggleBlock, false );
