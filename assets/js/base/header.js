@@ -27,7 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			'event' : 'click',
 
-			'function' : 'toggleBlock'
+			'action' : toggleBlock
 		},
 
 		{
@@ -35,7 +35,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			'event' : 'click',
 
-			'function' : 'toggleLink'
+			'action' : toggleLink
 		},
 
 		{
