@@ -35,6 +35,11 @@
 	padding-left: 20px;
 }
 
+.footer-menu {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
 /* Width and Height */
 
 .legal-footer {
@@ -54,6 +59,10 @@
 	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: auto;
+}
+
+.footer-menu {
+	border-bottom: 1px solid rgb(90,90,90);
 }
 
 /* Typography */
