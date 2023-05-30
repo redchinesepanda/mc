@@ -1,5 +1,10 @@
 /* Display */
 
+.legal-footer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .legal-footer .footer-menu {
 	display: flex;
 }
@@ -54,6 +59,17 @@
 	width: 1080px;
 }
 
+.legal-footer .footer-menu,
+.legal-footer .footer-logo,
+.legal-footer .footer-text {
+	width: 100%;
+}
+
+.legal-footer .footer-copy,
+.legal-footer .lang-switcher {
+	width: 50%;
+}
+
 .legal-footer .menu-item,
 .legal-footer .menu-item-end {
 	flex-basis: 25%;
@@ -94,4 +110,14 @@
 	text-decoration: none;
 	line-height: 28.8px;
 	color: rgb(89, 151, 227);
+}
+
+.legal-footer footer-copy,
+.legal-footer footer-text p {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26.25px;
+	color: rgb(255, 255, 255);
 }
