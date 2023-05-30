@@ -88,8 +88,12 @@ class BaseFooter
 
 	public static function get()
 	{
+		$items = self::get_menu_items();
+
 		return  [
-			'items' => self::get_menu_items(),
+			'end' => array_slice( $items, -2, 2, true ),
+
+			'items' => $items,
 
 			'copy' => [
 				'year' => '2021-2023',

@@ -1,3 +1,9 @@
+<?php
+
+LegalDebug::debug( [
+	'$args' => $args,
+] );
+?>
 <?php if ( !empty( $args ) ) : ?>
 	<div class="legal-footer">
 		<?php if ( !empty( $args[ 'items' ] ) ) : ?>
