@@ -93,7 +93,7 @@ class BaseHeader
 
 	public static function location()
 	{
-		register_nav_menu( self::LOCATION, __( 'Legal Review BK', ToolLoco::TEXTDOMAIN ) );
+		register_nav_menu( self::LOCATION, __( 'Legal Review BK Header', ToolLoco::TEXTDOMAIN ) );
 	}
 
 	public static function get()
