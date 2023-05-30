@@ -78,6 +78,10 @@
 
 /* Language Position */
 
+.lang-switcher {
+    position: relative;
+}
+
 .lang-switcher .lang-image {
     margin-left: 5px;
 }
