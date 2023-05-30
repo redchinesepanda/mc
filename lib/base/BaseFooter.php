@@ -37,9 +37,9 @@ class BaseFooter
 		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
 	}
 
-	public static function parse( $items, $parents, $post )
+	public static function parse( $items, $parents, $key )
 	{
-		// $post = $items[ $key ];
+		$post = $items[ $key ];
 
 		$item[ 'title' ] = $post->title;
 
@@ -114,7 +114,7 @@ class BaseFooter
 				'post' => $menu_items[ $key ],
 			] );
 			
-			$items[] = self::parse( $menu_items, $menu_item_parents, $menu_items[ $key ] );
+			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
 
 		LegalDebug::debug( [
