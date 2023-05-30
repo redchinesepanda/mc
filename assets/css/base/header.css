@@ -166,6 +166,7 @@
 
 .legal-header {
 	padding: 21px 0px;
+	margin: 0px auto;
 }
 
 .legal-header .legal-logo {
@@ -197,6 +198,10 @@
 }
 
 /* Width and Height */
+
+.legal-header {
+	max-width: 1080px;
+}
 
 .legal-menu .sub-menu {
 	width: 245px;
