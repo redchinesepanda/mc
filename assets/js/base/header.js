@@ -22,6 +22,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	function toggleInit() {
+		console.log( 'matchMedia: ' + window.matchMedia( '( max-width: 768px )' ) );
 		if ( window.matchMedia( '( max-width: 768px )' ) ) {
 			document.querySelectorAll( '.legal-menu .menu-item' ).forEach( function ( element ) {
 				element.addEventListener( 'click', toggleBlock, false );
