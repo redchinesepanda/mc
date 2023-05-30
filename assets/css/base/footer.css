@@ -24,7 +24,7 @@
 }
 
 .footer-menu > .menu-item-end > .menu-item:not( :last-child ) {
-	padding-bottom: 20px;
+	padding-bottom: 20px; 
 }
 
 .legal-footer .item-children .item-title {
