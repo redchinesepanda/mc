@@ -8,6 +8,11 @@ require_once( 'WPMLLanguageMismatch.php' );
 
 class WPMLMain
 {
+    public static function translated_menu_id( $menu_id )
+	{
+		return apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
+	}
+
     public static function current_language()
     {
         return apply_filters( 'wpml_current_language', NULL );
@@ -15,8 +20,6 @@ class WPMLMain
 
     public static function locale_permalink( $url, $locale )
     {
-        // return apply_filters( 'wpml_permalink', $url, $locale, true );
-        
         return apply_filters( 'wpml_permalink', $url, $locale );
     }
 

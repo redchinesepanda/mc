@@ -22,14 +22,6 @@ class BaseHeader
 
 	public static function register_inline_style()
     {
-		// $name = 'base-header';
-
-        // wp_register_style( $name, false, [], true, true );
-		
-		// wp_add_inline_style( $name, self::inline_style() );
-		
-		// wp_enqueue_style( $name );
-
 		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() );
     }
 
@@ -108,25 +100,22 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function get_menu_id()
-	{
-		$locations = get_nav_menu_locations();
+	// public static function get_menu_id()
+	// {
+	// 	$locations = get_nav_menu_locations();
 
-		$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
+	// 	$menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
 
-		$menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
+	// 	$menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
 
-		return $menu_id_translated;
-	}
+	// 	return $menu_id_translated;
+	// }
+
 	public static function get()
 	{
-		// $locations = get_nav_menu_locations();
-
-		// $menu_id = ( !empty( $locations[ self::LOCATION ] ) ? $locations[ self::LOCATION ] : 0 );
-
-		// $menu_id_translated = apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
-
-		$menu_id_translated = self::get_menu_id();
+		// $menu_id_translated = self::get_menu_id();
+		
+		$menu_id_translated = BaseMain::get_menu_id();
 
 		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
 			'theme_location' => self::LOCATION,
