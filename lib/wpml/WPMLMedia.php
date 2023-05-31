@@ -7,7 +7,7 @@ class WPMLMedia
 
         // add_action( 'wp_loaded', [ $handler, 'delete_translated_media' ] );
         
-		// add_action( 'wp_loaded', [ $handler, 'check_media' ] );
+		add_action( 'wp_loaded', [ $handler, 'check_media' ] );
     }
 
 	public static function count()
