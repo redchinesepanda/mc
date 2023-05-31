@@ -106,13 +106,13 @@ class WPMLMedia
 		}
 		
 		
-		foreach ( $issues as $issue ) {
-			$notin = implode( ",", $issue[ 'notin' ] );
+		// foreach ( $issues as $issue ) {
+		// 	$notin = implode( ",", $issue[ 'notin' ] );
 
-			$query = "DELETE FROM {$wpdb->prefix}posts WHERE `ID` NOT IN ($notin) AND `post_title` LIKE '" . $issue['post_title'] . "' AND `post_type` LIKE 'attachment'";
+		// 	$query = "DELETE FROM {$wpdb->prefix}posts WHERE `ID` NOT IN ($notin) AND `post_title` LIKE '" . $issue['post_title'] . "' AND `post_type` LIKE 'attachment'";
 			
-			$result = $wpdb->query( $query );
-		}
+		// 	$result = $wpdb->query( $query );
+		// }
 	}
 }
 
