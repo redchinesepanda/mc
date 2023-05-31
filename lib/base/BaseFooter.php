@@ -150,7 +150,7 @@ class BaseFooter
 
 			'meta_key' => self::FIELD[ 'order' ],
 
-			'order' = 'ASC',
+			'order' => 'ASC',
 
 			'orderby' => 'meta_value',
 		];
