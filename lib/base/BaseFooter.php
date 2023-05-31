@@ -90,12 +90,18 @@ class BaseFooter
 		'footer' => '/assets/img/base/footer/logo/',
 	];
 
-	public static function get_ke()
-	{
-		$locale = 'ke';
+	const TAXONOMY = [
+		'media' => 'media_type',
+	];
 
-		return [
-			[
+	public static function get_items()
+	{
+		$posts = get_posts( self::query() );
+
+		$items = [];
+
+		foreach ( $posts as $post ) {
+			$items[] = [
 				'href' => '#',
 				
 				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/18+.png',
@@ -105,33 +111,72 @@ class BaseFooter
 				'height' => '38',
 
 				'alt' => '18+',
-			],
+			];
+		}
+	}
 
-			[
-				'href' => 'https://www.begambleaware.org/',
-				
-				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/begambleaware.png',
+	public static function query()
+	{
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'attachment',
 
-				'width' => '126',
-				
-				'height' => '38',
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'media' ],
 
-				'alt' => 'begambleaware',
-			],
+					'terms' => [ 'footer-' . WPMLMain::current_language() ],
 
-			[
-				'href' => 'https://www.gamblingtherapy.org/',
-
-				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
-
-				'width' => '130',
-				
-				'height' => '38',
-
-				'alt' => 'gambling-therapy',
+					'field' => 'slug',
+				],
 			],
 		];
 	}
+
+	// public static function get_ke()
+	// {
+	// 	$locale = 'ke';
+
+	// 	return [
+	// 		[
+	// 			'href' => '#',
+				
+	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/18+.png',
+
+	// 			'width' => '38',
+				
+	// 			'height' => '38',
+
+	// 			'alt' => '18+',
+	// 		],
+
+	// 		[
+	// 			'href' => 'https://www.begambleaware.org/',
+				
+	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/begambleaware.png',
+
+	// 			'width' => '126',
+				
+	// 			'height' => '38',
+
+	// 			'alt' => 'begambleaware',
+	// 		],
+
+	// 		[
+	// 			'href' => 'https://www.gamblingtherapy.org/',
+
+	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
+
+	// 			'width' => '130',
+				
+	// 			'height' => '38',
+
+	// 			'alt' => 'gambling-therapy',
+	// 		],
+	// 	];
+	// }
+
 	public static function get()
 	{
 		$items = self::get_menu_items();
@@ -143,7 +188,7 @@ class BaseFooter
 
 			'items' => $items,
 
-			'logo' => self::get_ke(),
+			'logo' => self::get_items(),
 
 			'copy' => [
 				'year' => '2021-2023',
