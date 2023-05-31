@@ -58,7 +58,8 @@
 	display: block;
 }
 
-.legal-footer .item-title[ href='#' ] {
+.legal-footer .item-title[ href='#' ],
+.legal-footer .logo-item[ href='#' ] {
 	pointer-events: none;
 }
 
