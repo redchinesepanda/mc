@@ -84,19 +84,21 @@ class ReviewGallery
 
             $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
 
-            $args[] = [
-                'src' => $review[ 0 ],
-
-                'width' => $review[ 1 ],
-
-                'height' => $review[ 2 ],
-
-                'data-src' => $lightbox[ 0 ],
-
-                'caption' => $caption,
-
-                'alt' => $alt,
-            ];
+            if ( $review && $lightbox ) {
+                $args[] = [
+                    'src' => $review[ 0 ],
+    
+                    'width' => $review[ 1 ],
+    
+                    'height' => $review[ 2 ],
+    
+                    'data-src' => $lightbox[ 0 ],
+    
+                    'caption' => $caption,
+    
+                    'alt' => $alt,
+                ];
+            }
         }
 
         return $args;
