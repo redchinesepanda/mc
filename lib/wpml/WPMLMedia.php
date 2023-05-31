@@ -5,13 +5,15 @@ class WPMLMedia
 	public static function register() {
         $handler = new self();
 
-        add_action( 'wp_loaded', [ $handler, 'delete_translated_media' ] );
+        // add_action( 'wp_loaded', [ $handler, 'delete_translated_media' ] );
+        
+		add_action( 'wp_loaded', [ $handler, 'check_media' ] );
     }
 
-	// public static function count()
-	// {
-	// 	return count( apply_filters( 'wpml_active_languages', NULL, '' ) );
-	// }
+	public static function count()
+	{
+		return count( apply_filters( 'wpml_active_languages', NULL, '' ) );
+	}
 
 	public static function delete_translated_media()
 	{
@@ -58,23 +60,23 @@ class WPMLMedia
 		}
 	}
 
-	public static function check()
+	public static function check_media()
 	{
-		// global $wpdb, $sitepress;
+		global $wpdb, $sitepress;
  
 		// set how many languages site has
 
 		// $langs = 3;
 		
-		// $langs = self::count();
+		$langs = self::count();
 		
-		// $query = "SELECT ID, post_title, count(ID) AS cnt FROM {$wpdb->prefix}posts WHERE post_type LIKE 'attachment' GROUP BY post_title HAVING cnt > " .  $langs;
+		$query = "SELECT ID, post_title, count(ID) AS cnt FROM {$wpdb->prefix}posts WHERE post_type LIKE 'attachment' GROUP BY post_title HAVING cnt > " .  $langs;
 
-		// $duplicated = $wpdb->get_results( $query );
+		$duplicated = $wpdb->get_results( $query );
 
-		// LegalDebug::debug( [
-
-		// ] );
+		LegalDebug::debug( [
+			'duplicated' => $duplicated,
+		] );
 		
 		// $issues = [];
 
