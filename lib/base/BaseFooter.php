@@ -94,6 +94,14 @@ class BaseFooter
 		'media' => 'media_type',
 	];
 
+	const SIZE = [
+        'logo' => 'legal-footer-logo',
+    ];
+
+	const FIELD = [
+        'href' => 'media-href',
+    ];
+
 	public static function get_items()
 	{
 		$posts = get_posts( self::query() );
@@ -101,17 +109,23 @@ class BaseFooter
 		$items = [];
 
 		foreach ( $posts as $post ) {
-			$items[] = [
-				'href' => '#',
-				
-				'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/18+.png',
+			$image = wp_get_attachment_image_src( $post->ID, 'full' );
 
-				'width' => '38',
-				
-				'height' => '38',
+			$href = get_field( self::FIELD[ 'href' ], $post->ID );
 
-				'alt' => '18+',
-			];
+			if ( $image ) {
+				$items[] = [
+					'href' => ( $href ? $href : '#' ),
+					
+					'src' => $image[ 0 ],
+	
+					'width' => $image[ 1 ],
+					
+					'height' => $image[ 2 ],
+	
+					'alt' => '18+',
+				];
+			}
 		}
 	}
 
@@ -133,49 +147,6 @@ class BaseFooter
 			],
 		];
 	}
-
-	// public static function get_ke()
-	// {
-	// 	$locale = 'ke';
-
-	// 	return [
-	// 		[
-	// 			'href' => '#',
-				
-	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/18+.png',
-
-	// 			'width' => '38',
-				
-	// 			'height' => '38',
-
-	// 			'alt' => '18+',
-	// 		],
-
-	// 		[
-	// 			'href' => 'https://www.begambleaware.org/',
-				
-	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/begambleaware.png',
-
-	// 			'width' => '126',
-				
-	// 			'height' => '38',
-
-	// 			'alt' => 'begambleaware',
-	// 		],
-
-	// 		[
-	// 			'href' => 'https://www.gamblingtherapy.org/',
-
-	// 			'src' => LegalMain::LEGAL_URL . self::PATH[ 'footer' ] . $locale . '/gambling-therapy.png',
-
-	// 			'width' => '130',
-				
-	// 			'height' => '38',
-
-	// 			'alt' => 'gambling-therapy',
-	// 		],
-	// 	];
-	// }
 
 	public static function get()
 	{
