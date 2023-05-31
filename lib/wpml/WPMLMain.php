@@ -32,6 +32,8 @@ class WPMLMain
         WPMLTrid::register();
 
         WPMLLanguageMismatch::register();
+
+        WPMLMedia::register();
     }
 }
 
