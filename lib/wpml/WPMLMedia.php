@@ -78,41 +78,41 @@ class WPMLMedia
 			'duplicated' => $duplicated,
 		] );
 		
-		// $issues = [];
+		$issues = [];
 
-		// $i = 0;
+		$i = 0;
 
-		// foreach ( $duplicated as $duplicat ) {
+		foreach ( $duplicated as $duplicat ) {
 			
-		// 	$trid = $sitepress->get_element_trid( $duplicat->ID, 'post_attachment' );
+			$trid = $sitepress->get_element_trid( $duplicat->ID, 'post_attachment' );
 			
-		// 	if ( !$trid ) {
-		// 		continue;
-		// 	}
+			if ( !$trid ) {
+				continue;
+			}
 			
-		// 	$translations = $sitepress->get_element_translations( $trid, 'post_attachment' );
+			$translations = $sitepress->get_element_translations( $trid, 'post_attachment' );
 			
-		// 	if ( count( $translations ) < 1 ) {
-		// 		continue;
-		// 	}
+			if ( count( $translations ) < 1 ) {
+				continue;
+			}
 			
-		// 	foreach ( $translations as $lang => $tr ) {
-		// 		$issues[ $i ][ 'notin' ][] = $tr->element_id;
-		// 	}
+			foreach ( $translations as $lang => $tr ) {
+				$issues[ $i ][ 'notin' ][] = $tr->element_id;
+			}
 			
-		// 	$issues[ $i ][ 'post_title' ] = $duplicat->post_title;
+			$issues[ $i ][ 'post_title' ] = $duplicat->post_title;
 		
-		// 	$i++;
-		// }
+			$i++;
+		}
 		
 		
-		// foreach ( $issues as $issue ) {
-		// 	$notin = implode( ",", $issue[ 'notin' ] );
+		foreach ( $issues as $issue ) {
+			$notin = implode( ",", $issue[ 'notin' ] );
 
-		// 	$query = "DELETE FROM {$wpdb->prefix}posts WHERE `ID` NOT IN ($notin) AND `post_title` LIKE '" . $issue['post_title'] . "' AND `post_type` LIKE 'attachment'";
+			$query = "DELETE FROM {$wpdb->prefix}posts WHERE `ID` NOT IN ($notin) AND `post_title` LIKE '" . $issue['post_title'] . "' AND `post_type` LIKE 'attachment'";
 			
-		// 	$result = $wpdb->query( $query );
-		// }
+			$result = $wpdb->query( $query );
+		}
 	}
 }
 
