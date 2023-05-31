@@ -174,12 +174,12 @@ class BaseFooter
 			'copy' => [
 				'year' => '2021-2023',
 				
-				'company' => 'Match.Center',
+				'company' => __( 'Match.Center', ToolLoco::TEXTDOMAIN ),
 				
-				'reserved' => 'All rights reserved'
+				'reserved' => __( 'All rights reserved', ToolLoco::TEXTDOMAIN )
 			],
 
-			'text' => wpautop( __( $text_default, ToolLoco::TEXTDOMAIN ) ),
+			'text' => __( $text_default, ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
