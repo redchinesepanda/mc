@@ -44,13 +44,13 @@ class WPMLMedia
 
 			// use direct query to avoid overhead of wp_update_post
 			 
-			// $wpdb->update(
-			// 	"{$wpdb->prefix}posts",
-			// 	array( 'post_type' => 'for-deletion' ),
-			// 	array( 'ID' => $result->element_id ),
-			// 	array( '%s' ),
-			// 	array( '%d' )
-			// );
+			$wpdb->update(
+				"{$wpdb->prefix}posts",
+				array( 'post_type' => 'for-deletion' ),
+				array( 'ID' => $result->element_id ),
+				array( '%s' ),
+				array( '%d' )
+			);
 
 			// delete safely using wp_delete_post
 
