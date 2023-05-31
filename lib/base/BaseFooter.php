@@ -113,6 +113,8 @@ class BaseFooter
 
 			$href = get_field( self::FIELD[ 'href' ], $post->ID );
 
+			$alt = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
+
 			if ( $image ) {
 				$items[] = [
 					'href' => ( $href ? $href : '#' ),
@@ -123,7 +125,7 @@ class BaseFooter
 					
 					'height' => $image[ 2 ],
 	
-					'alt' => '18+',
+					'alt' => ( $alt ? $alt : 'Match.Center' ),
 				];
 			}
 		}
