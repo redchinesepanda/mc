@@ -86,10 +86,6 @@ class BaseFooter
 		return $items;
 	}
 
-	const PATH = [
-		'footer' => '/assets/img/base/footer/logo/',
-	];
-
 	const TAXONOMY = [
 		'media' => 'media_type',
 	];
@@ -100,6 +96,8 @@ class BaseFooter
 
 	const FIELD = [
         'href' => 'media-href',
+
+        'order' => 'media-order',
     ];
 
 	public static function get_items()
@@ -149,6 +147,12 @@ class BaseFooter
 					'field' => 'slug',
 				],
 			],
+
+			'meta_key' => self::FIELD[ 'order' ],
+
+			'order' = 'ASC',
+
+			'orderby' => 'meta_value',
 		];
 	}
 
