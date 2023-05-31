@@ -1,10 +1,3 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'$args' => $args,
-// ] );
-
-?>
 <?php if ( !empty( $args ) ) : ?>
 	<div class="legal-footer">
 		<?php if ( !empty( $args[ 'items' ] ) ) : ?>
@@ -19,13 +12,15 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		<div class="footer-logo">
-			<?php foreach( $args[ 'logo' ] as $logo ) : ?>
-				<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow">
-					<img src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>" />
-				</a>
-			<?php endforeach; ?>
-		</div>
+		<?php if ( !empty( $args[ 'logo' ] ) ) : ?>
+			<div class="footer-logo">
+				<?php foreach( $args[ 'logo' ] as $logo ) : ?>
+					<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow">
+						<img src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>" />
+					</a>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
 		<div class="footer-copy">
 			<?php echo $args[ 'copy' ][ 'year' ]; ?> <?php echo $args[ 'copy' ][ 'company' ]; ?> © <?php echo $args[ 'copy' ][ 'reserved' ]; ?>.
 		</div>
