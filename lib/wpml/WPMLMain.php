@@ -6,7 +6,7 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
-require_once( 'WPMLMedia.php' );
+// require_once( 'WPMLMedia.php' );
 
 class WPMLMain
 {
@@ -33,7 +33,7 @@ class WPMLMain
 
         WPMLLanguageMismatch::register();
 
-        WPMLMedia::register();
+        // WPMLMedia::register();
     }
 }
 
