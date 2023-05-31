@@ -127,6 +127,8 @@ class BaseFooter
 				];
 			}
 		}
+
+		return $items;
 	}
 
 	public static function query()
