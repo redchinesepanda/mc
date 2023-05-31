@@ -54,7 +54,7 @@ class WPMLMedia
 
 			// delete safely using wp_delete_post
 
-			// wp_delete_post( $result->element_id, true );
+			wp_delete_post( $result->element_id, true );
 		}
 	}
 
