@@ -23,7 +23,7 @@ class WPMLMedia
 
 		// $query = "SELECT element_id FROM {$wpdb->prefix}icl_translations WHERE element_type = 'post_attachment' AND source_language_code IS NOT null";
 		
-		$query = "SELECT element_id FROM {$wpdb->prefix}icl_translations WHERE element_type = 'post_attachment' AND source_language_code IS NOT null LIMIT 10";
+		$query = "SELECT element_id FROM {$wpdb->prefix}icl_translations WHERE element_type = 'post_attachment' AND source_language_code IS NOT null LIMIT 100";
 
 		$results = $wpdb->get_results( $query, OBJECT );
 
