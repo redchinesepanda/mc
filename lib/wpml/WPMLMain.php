@@ -6,6 +6,8 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
+require_once( 'WPMLMedia.php' );
+
 class WPMLMain
 {
     public static function translated_menu_id( $menu_id )
