@@ -26,9 +26,7 @@
 		</div>
 		<?php echo WPMLLangSwitcher::render(); ?>
 		<div class="footer-text">
-			<?php foreach( $args[ 'text' ] as $text ) : ?>
-				<p><?php echo $text; ?></p>
-			<?php endforeach; ?>
+			<?php echo $args[ 'text' ]; ?>
 		</div>
 	</div>
 <?php endif; ?>
