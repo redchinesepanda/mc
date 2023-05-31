@@ -181,13 +181,7 @@ class BaseFooter
 				'reserved' => 'All rights reserved'
 			],
 
-			'text' => __( $text_default, ToolLoco::TEXTDOMAIN ),
-
-			// 'text' => [
-			// 	'Match.Center is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.',
-
-			// 	'Always gamble responsibly and never risk money that you can not afford to lose!'
-			// ],
+			'text' => wpautop( __( $text_default, ToolLoco::TEXTDOMAIN ) ),
 		];
 	}
 
