@@ -8,15 +8,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let current = event.currentTarget;
 
+		let element = event.target;
+
 		console.log( 'toggleBlock ' + 'current.id: ' + current.id );
 
 		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
 		
-		current.classList.toggle( 'legal-active' );
+		if ( current == element ) {
+			current.classList.toggle( 'legal-active' );
+		}
 		
 		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
-
-		let element = event.target;
 
 		console.log( 'toggleBlock ' + 'element.id: ' + element.id );
 
