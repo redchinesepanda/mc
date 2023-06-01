@@ -47,7 +47,7 @@
 
 	.legal-menu .menu-item:last-child .sub-menu {
 		/* padding-bottom: 10px; */
-		padding: 10px;
+		padding: 0px 10px 10px 10px;
 	}
 
 	.legal-menu .menu-item > a {
