@@ -19,6 +19,12 @@ class ACFMenu
 
         $field[ 'choices' ][ 'legal-country-all' ] = '[ all ] Choose your country';
 
+        $field[ 'choices' ][ 'legal-country-football' ] = '[ football ] Sports';
+
+        $field[ 'choices' ][ 'legal-country-bonus' ] = '[ bonus ] Bonuses';
+
+        $field[ 'choices' ][ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
+
         if ( !empty( $langs ) ) {
             foreach( $langs as $lang ) {
                 $field[ 'choices' ][ 'legal-country-' . $lang[ 'code' ] ] = '[ ' . $lang[ 'code' ] . ' ] ' . $lang[ 'native_name' ]; 
