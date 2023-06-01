@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'event.currentTarget: ' + event.currentTarget );
 
-		console.log( 'event.Target: ' + event.Target );
+		console.log( 'event.target: ' + event.target );
 
 		let element = event.currentTarget;
 
