@@ -17,13 +17,13 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
-        $field[ 'choices' ][ 'legal-country-all' ] = '[ all ] Choose your country';
+        $field[ 'choices' ][ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
 
         $field[ 'choices' ][ 'legal-country-football' ] = '[ football ] Sports';
 
         $field[ 'choices' ][ 'legal-country-bonus' ] = '[ bonus ] Bonuses';
 
-        $field[ 'choices' ][ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
+        $field[ 'choices' ][ 'legal-country-all' ] = '[ all ] Choose your country';
 
         if ( !empty( $langs ) ) {
             foreach( $langs as $lang ) {
