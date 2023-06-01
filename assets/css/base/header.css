@@ -45,7 +45,7 @@
 		padding-top: 15px;
 	}
 
-	.legal-menu .menu-item:last-child .sub-menu {
+	.legal-menu .sub-menu .sub-menu {
 		padding: 0px 10px 10px 10px;
 	}
 
