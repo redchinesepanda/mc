@@ -49,6 +49,10 @@
 		padding-bottom: 10px;
 	}
 
+	.legal-menu .menu-item > a {
+		flex-grow: 1;
+	}
+
 	/* Width and Height */
 
 	.legal-menu {
@@ -128,6 +132,10 @@
 
 	.legal-menu .menu-item-has-children {
 		position: relative;
+	}
+
+	.legal-menu .menu-item > a {
+		margin-right: auto;
 	}
 
 	/* Background */
@@ -212,10 +220,6 @@
 
 .legal-menu .menu-item-has-children:after {
 	padding: 10px 0px;
-}
-
-.legal-menu .menu-item > a {
-	margin-right: auto;
 }
 
 /* Width and Height */
