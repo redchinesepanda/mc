@@ -15,6 +15,10 @@ class WPMLMenu
 
 	public static function wpml_custom_query( $query )
 	{
+		LegalDebug::debug( [
+			'function' => 'WPMLMenu::wpml_custom_query',
+		] );
+
 		if( is_search() ) {
 			$query->query_vars['suppress_filters'] = true;
 
