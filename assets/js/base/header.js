@@ -11,7 +11,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
 		
-		// current.classList.toggle( 'legal-active' );
+		current.classList.toggle( 'legal-active' );
 		
 		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
 
