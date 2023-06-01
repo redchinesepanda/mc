@@ -4,6 +4,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
+		event.preventDefault();
+		
 		let current = event.currentTarget;
 
 		// let element = event.target;
