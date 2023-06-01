@@ -15,20 +15,24 @@ class WPMLMenu
 
 	public static function wpml_custom_query( $query )
 	{
-		LegalDebug::debug( [
-			'function' => 'WPMLMenu::wpml_custom_query',
+		// LegalDebug::debug( [
+		// 	'function' => 'WPMLMenu::wpml_custom_query',
 
-			'action' => $_POST[ 'action' ],
-		] );
+		// 	'action' => $_POST[ 'action' ],
+		// ] );
 
-		if( is_search() ) {
-			$query->query_vars['suppress_filters'] = true;
+		// if( is_search() ) {
+		
+		if( !empty( $_POST[ 'action' ] ) ) {
+			if( $_POST[ 'action' ] == 'menu-quick-search' ) {
+				$query->query_vars['suppress_filters'] = true;
 
-			LegalDebug::debug( [
-				'function' => 'WPMLMenu::wpml_custom_query',
+				LegalDebug::debug( [
+					'function' => 'WPMLMenu::wpml_custom_query',
 
-				'suppress_filters' => $query->query_vars['suppress_filters'],
-			] );
+					'suppress_filters' => $query->query_vars['suppress_filters'],
+				] );
+			}
 		}
 	}
 }
