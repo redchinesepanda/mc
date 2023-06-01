@@ -12,7 +12,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'event.target.classList: ' + event.target.classList );
 
-		let element = event.currentTarget;
+		// let element = event.currentTarget;
+		
+		let element = event.target;
 
 		element.classList.toggle( 'legal-active' );
 	}
