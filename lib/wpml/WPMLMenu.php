@@ -31,6 +31,8 @@ class WPMLMenu
 					'function' => 'WPMLMenu::wpml_custom_query',
 
 					'suppress_filters' => $query->query_vars['suppress_filters'],
+
+					'query_vars' => $query->query_vars,
 				] );
 			}
 		}
