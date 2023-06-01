@@ -25,7 +25,7 @@ class ACFMenu
 
         if ( !empty( $langs ) ) {
             foreach( $langs as $lang ) {
-                $field[ 'choices' ][ $lang->code ] = '[ ' . $lang->code . ' ] ' . $lang->native_name; 
+                $field[ 'choices' ][ $lang[ 'code' ] ] = '[ ' . $lang[ 'code' ] . ' ] ' . $lang[ 'native_name' ]; 
             }
         }
 
