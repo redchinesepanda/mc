@@ -8,6 +8,8 @@ require_once( 'WPMLLanguageMismatch.php' );
 
 require_once( 'WPMLMedia.php' );
 
+require_once( 'WPMLMenu.php' );
+
 class WPMLMain
 {
     public static function translated_menu_id( $menu_id )
@@ -34,6 +36,8 @@ class WPMLMain
         WPMLLanguageMismatch::register();
 
         WPMLMedia::register();
+
+        WPMLMenu::register();
     }
 }
 
