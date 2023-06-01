@@ -45,10 +45,6 @@
 		padding-top: 15px;
 	}
 
-	.legal-menu .menu-item > a {
-		margin-right: auto;
-	}
-
 	.legal-menu .menu-item:last-child .sub-menu {
 		padding-bottom: 10px;
 	}
@@ -216,6 +212,10 @@
 
 .legal-menu .menu-item-has-children:after {
 	padding: 10px 0px;
+}
+
+.legal-menu .menu-item > a {
+	margin-right: auto;
 }
 
 /* Width and Height */
