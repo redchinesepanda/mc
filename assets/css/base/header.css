@@ -252,6 +252,9 @@
 	background-position: left 17px center;
 }
 
+.legal-menu > .menu-item:not( :last-child ).legal-country > a {
+	background-size: 20px 20px;
+}
 .legal-menu .menu-item.legal-country > a {
 	background-repeat: no-repeat;
 	background-size: 23px 23px;
