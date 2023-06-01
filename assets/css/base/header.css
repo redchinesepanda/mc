@@ -50,7 +50,7 @@
 	}
 
 	.legal-menu .menu-item > a {
-		flex-grow: 1;
+		margin-right: auto;
 	}
 
 	/* Width and Height */
@@ -135,7 +135,7 @@
 	}
 
 	.legal-menu .menu-item > a {
-		margin-right: auto;
+		flex-grow: 1;
 	}
 
 	/* Background */
