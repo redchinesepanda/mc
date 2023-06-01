@@ -15,7 +15,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
 
-		// let element = event.target;
+		let element = event.target;
+
+		console.log( 'toggleBlock ' + 'element.id: ' + element.id );
 
 		// console.log( 'element.id: ' + element.id + ' | element.classList: ' + element.classList );
 
