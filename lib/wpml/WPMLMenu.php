@@ -8,15 +8,17 @@ class WPMLMenu
 
 		add_action( 'pre_get_posts', [ $handler, 'wpml_custom_query' ] );
 
-		LegalDebug::debug( [
-			'function' => 'WPMLMenu::register',
-		] );
+		// LegalDebug::debug( [
+		// 	'function' => 'WPMLMenu::register',
+		// ] );
     }
 
 	public static function wpml_custom_query( $query )
 	{
 		LegalDebug::debug( [
 			'function' => 'WPMLMenu::wpml_custom_query',
+
+			'action' => $_POST[ 'action' ],
 		] );
 
 		if( is_search() ) {
