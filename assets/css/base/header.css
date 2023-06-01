@@ -112,12 +112,20 @@
 		top: 0px;
 	}
 
-	.legal-menu .menu-item:not( :last-child ) .sub-menu {
+	.legal-menu > .menu-item:not( :last-child ) .sub-menu {
 		left: 0px;
 	}
 
-	.legal-menu .menu-item:last-child .sub-menu {
+	.legal-menu > .menu-item:not( :last-child ) .sub-menu .sub-menu {
+		left: 250px;
+	}
+
+	.legal-menu > .menu-item:last-child .sub-menu {
 		right: 0px;
+	}
+
+	.legal-menu > .menu-item:last-child .sub-menu .sub-menu {
+		right: 250px;
 	}
 
 	.legal-menu .menu-item-has-children {
