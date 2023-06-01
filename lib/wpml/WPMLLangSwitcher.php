@@ -32,7 +32,9 @@ class WPMLLangSwitcher
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    private static function get_all() {
+    // private static function get_all() {
+    
+    public static function get_all() {
         $languages = apply_filters(
             'wpml_active_languages',
 
