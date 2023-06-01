@@ -16,7 +16,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		let element = event.target;
 
+		console.log( 'element.classList: ' + element.classList );
+
 		element.classList.toggle( 'legal-active' );
+
+		console.log( 'element.classList: ' + element.classList );
 	}
 
     function toggleLink( event )
