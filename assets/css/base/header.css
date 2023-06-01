@@ -127,7 +127,7 @@
 
 	.legal-menu > .menu-item:last-child .sub-menu .sub-menu,
 	.legal-menu > .menu-item:nth-last-child(2) .sub-menu .sub-menu {
-		right: 250px;
+		right: 249px;
 	}
 
 	.legal-menu .menu-item-has-children {
@@ -212,10 +212,6 @@
 
 .legal-menu .menu-item.legal-country > a {
 	padding: 12px 17px 12px 50px;
-}
-
-.legal-menu > .menu-item {
-	position: relative;
 }
 
 .legal-menu .menu-item-has-children:after {
