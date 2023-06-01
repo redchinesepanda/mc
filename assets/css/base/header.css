@@ -217,6 +217,10 @@
 	height: 48px;
 }
 
+.legal-menu .menu-item-has-children > a {
+	width: 100%;
+}
+
 /* Background */
 
 .legal-menu .sub-menu {
