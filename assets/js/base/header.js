@@ -33,7 +33,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const args = [
 		{
-			'selector' : '.legal-menu .menu-item',
+			// 'selector' : '.legal-menu .menu-item',
+			
+			'selector' : '.legal-menu .menu-item-has-children',
 
 			'event' : 'click',
 
@@ -41,7 +43,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'selector' : '.legal-menu .menu-item > a',
+			// 'selector' : '.legal-menu .menu-item > a',
+			
+			'selector' : '.legal-menu .menu-item-has-children > a',
 
 			'event' : 'click',
 
