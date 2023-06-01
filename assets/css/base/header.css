@@ -198,7 +198,7 @@
 	padding: 10px 10px 10px 43px;
 }
 
-.legal-menu .sub-menu:not( .legal-country ) .menu-item a {
+.legal-menu .menu-item:not( .legal-country ) > a {
 	padding: 12px 17px;
 }
 
