@@ -113,6 +113,10 @@
 		right: 0px;
 	}
 
+	.legal-menu .menu-item-has-children {
+		position: relative;
+	}
+
 	/* Background */
 
 	.legal-menu .menu-item:hover {
