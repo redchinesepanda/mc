@@ -17,29 +17,17 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
-        LegalDebug::debug( [
-            'function' => 'ACFMenu::choices',
+        // LegalDebug::debug( [
+        //     'function' => 'ACFMenu::choices',
 
-            'langs' => $langs,
-        ] );
+        //     'langs' => $langs,
+        // ] );
 
-        // $post = get_post();
-
-        // $post_id = $post->ID;
-
-        // $args = [
-        //     'post_type' => 'page',
-
-        //     'page_type' => 'bookmaker-card'
-        // ];
-
-        // $posts = get_posts( $args );
-
-        // if ( !empty( $posts ) ) {
-        //     foreach( $posts as $post ) {
-        //         $field['choices'][$post->ID] = $post->post_title; 
-        //     }
-        // }
+        if ( !empty( $langs ) ) {
+            foreach( $langs as $lang ) {
+                $field[ 'choices' ][ $lang->code ] = '[ ' . $lang->code . ' ] ' . $lang->native_name; 
+            }
+        }
 
         return $field;
     }
