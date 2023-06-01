@@ -12,6 +12,23 @@ require_once( 'WPMLMenu.php' );
 
 class WPMLMain
 {
+    public static function get_all_languages() {
+        $languages = apply_filters(
+            'wpml_active_languages',
+
+            NULL,
+            [
+                'skip_missing' => 0,
+
+                'orderby' => 'id',
+
+                'order' => 'asc',
+            ]
+        );
+
+        return $languages;
+    }
+
     public static function translated_menu_id( $menu_id )
 	{
 		return apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );

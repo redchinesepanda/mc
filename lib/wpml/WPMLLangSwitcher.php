@@ -32,23 +32,25 @@ class WPMLLangSwitcher
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    // private static function get_all() {
+    private static function get_all() {
     
-    public static function get_all() {
-        $languages = apply_filters(
-            'wpml_active_languages',
+    // public static function get_all() {
+        // $languages = apply_filters(
+        //     'wpml_active_languages',
 
-            NULL,
-            [
-                'skip_missing' => 0,
+        //     NULL,
+        //     [
+        //         'skip_missing' => 0,
 
-                'orderby' => 'id',
+        //         'orderby' => 'id',
 
-                'order' => 'asc',
-            ]
-        );
+        //         'order' => 'asc',
+        //     ]
+        // );
 
-        return $languages;
+        // return $languages;
+        
+        return WPMLMain::get_all_languages();
     }
 
     private static function exclude( $args )
