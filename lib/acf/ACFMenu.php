@@ -15,7 +15,7 @@ class ACFMenu
 
     function choices( $field )
     {
-        $langs = WPMLLangSwitcher::get_all();
+        $langs = WPMLMain::get_all_languages();
 
         LegalDebug::debug( [
             'function' => 'ACFMenu::choices',
