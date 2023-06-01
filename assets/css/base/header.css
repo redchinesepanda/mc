@@ -101,8 +101,15 @@
 
 	.legal-menu .menu-item .sub-menu {
 		position: absolute;
-		top: 48px;
 		z-index: 1;
+	}
+
+	.legal-menu > .menu-item .sub-menu {
+		top: 48px;
+	}
+
+	.legal-menu .sub-menu .sub-menu {
+		top: 0px;
 	}
 
 	.legal-menu .menu-item:not( :last-child ) .sub-menu {
