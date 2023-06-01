@@ -17,11 +17,11 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
-        LegalDebug::debug( [
-            'function' => 'ACFMenu::choices',
+        // LegalDebug::debug( [
+        //     'function' => 'ACFMenu::choices',
 
-            'langs' => $langs,
-        ] );
+        //     'langs' => $langs,
+        // ] );
 
         if ( !empty( $langs ) ) {
             foreach( $langs as $lang ) {
