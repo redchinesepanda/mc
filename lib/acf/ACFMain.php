@@ -6,6 +6,8 @@ require_once( 'ACFPage.php' );
 
 require_once( 'ACFCompilation.php' );
 
+require_once( 'ACFMenu.php' );
+
 class ACFMain
 {
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
@@ -28,6 +30,8 @@ class ACFMain
         ACFPage::register();
 
         ACFCompilation::register();
+
+        ACFMenu::register();
     }
 }
 
