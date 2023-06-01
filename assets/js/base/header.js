@@ -4,31 +4,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
-		console.log( 'toggleBlock start' );
-
 		let current = event.currentTarget;
 
 		let element = event.target;
-
-		console.log( 'toggleBlock ' + 'current.id: ' + current.id );
-
-		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
 		
 		if ( current == element ) {
 			current.classList.toggle( 'legal-active' );
 		}
-		
-		// console.log( 'current.id: ' + current.id + ' | current.classList: ' + current.classList );
-
-		console.log( 'toggleBlock ' + 'element.id: ' + element.id );
-
-		// console.log( 'element.id: ' + element.id + ' | element.classList: ' + element.classList );
-
-		// element.classList.toggle( 'legal-active' );
-
-		// console.log( 'element.id: ' + element.id + ' | element.classList: ' + element.classList );
-
-		console.log( 'toggleBlock end' );
 	}
 
     function toggleLink( event )
