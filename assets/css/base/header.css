@@ -109,7 +109,7 @@
 	}
 
 	.legal-menu .sub-menu .sub-menu {
-		top: 0px;
+		top: -1px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu {
@@ -117,12 +117,12 @@
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu .sub-menu {
-		left: 250px;
+		left: 249px;
 	}
 
 	.legal-menu > .menu-item:last-child .sub-menu,
 	.legal-menu > .menu-item:nth-last-child(2) .sub-menu {
-		right: 0px;
+		right: -1px;
 	}
 
 	.legal-menu > .menu-item:last-child .sub-menu .sub-menu,
