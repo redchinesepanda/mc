@@ -17,11 +17,7 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
-        // LegalDebug::debug( [
-        //     'function' => 'ACFMenu::choices',
-
-        //     'langs' => $langs,
-        // ] );
+        $field[ 'choices' ][ 'legal-country-all' ] = '[ all ] Choose your country';
 
         if ( !empty( $langs ) ) {
             foreach( $langs as $lang ) {

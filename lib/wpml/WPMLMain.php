@@ -8,7 +8,7 @@ require_once( 'WPMLLanguageMismatch.php' );
 
 require_once( 'WPMLMedia.php' );
 
-require_once( 'WPMLMenu.php' );
+// require_once( 'WPMLMenu.php' );
 
 class WPMLMain
 {
@@ -54,7 +54,7 @@ class WPMLMain
 
         WPMLMedia::register();
 
-        WPMLMenu::register();
+        // WPMLMenu::register();
     }
 }
 

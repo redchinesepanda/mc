@@ -33,23 +33,6 @@ class WPMLLangSwitcher
     }
 
     private static function get_all() {
-    
-    // public static function get_all() {
-        // $languages = apply_filters(
-        //     'wpml_active_languages',
-
-        //     NULL,
-        //     [
-        //         'skip_missing' => 0,
-
-        //         'orderby' => 'id',
-
-        //         'order' => 'asc',
-        //     ]
-        // );
-
-        // return $languages;
-        
         return WPMLMain::get_all_languages();
     }
 
