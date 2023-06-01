@@ -25,7 +25,9 @@ class WPMLMenu
 		
 		if( !empty( $_POST[ 'action' ] ) ) {
 			if( $_POST[ 'action' ] == 'menu-quick-search' ) {
-				$query->query_vars['suppress_filters'] = true;
+				$query->query_vars[ 'suppress_filters' ] = true;
+
+				$query->query_vars[ 'posts_per_page' ] = -1;
 
 				LegalDebug::debug( [
 					'function' => 'WPMLMenu::wpml_custom_query',
