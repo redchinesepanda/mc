@@ -6,7 +6,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'event.currentTarget: ' + event.currentTarget );
 
+		console.log( 'event.currentTarget.classList: ' + event.currentTarget.classList );
+
 		console.log( 'event.target: ' + event.target );
+
+		console.log( 'event.target.classList: ' + event.target.classList );
 
 		let element = event.currentTarget;
 
