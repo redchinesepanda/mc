@@ -4,6 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
+		console.log( 'toggleBlock start' );
 
 		let current = event.currentTarget;
 
@@ -24,6 +25,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// element.classList.toggle( 'legal-active' );
 
 		// console.log( 'element.id: ' + element.id + ' | element.classList: ' + element.classList );
+
+		console.log( 'toggleBlock end' );
 	}
 
     function toggleLink( event )
