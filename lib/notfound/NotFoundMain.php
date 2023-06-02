@@ -31,13 +31,11 @@ class NotFoundMain
 
 	public static function get()
 	{
-		return  [
+		return  array_merge( [
 			'title' => __( "Oops! Page Not Found", ToolLoco::TEXTDOMAIN ),
 			
 			'description' => __( "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.", ToolLoco::TEXTDOMAIN ),
-
-			'languages' => WPMLLangSwitcher::get(),
-		];
+		], WPMLLangSwitcher::get() );
 	}
 
 	const TEMPLATE = [
