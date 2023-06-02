@@ -34,6 +34,8 @@ class NotFoundMain
         add_shortcode( 'legal-notfound', [ $handler, 'render' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
 
 	public static function inline_style() {
