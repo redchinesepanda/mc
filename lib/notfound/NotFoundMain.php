@@ -50,12 +50,6 @@ class NotFoundMain
 		$style_items = array_merge( $args[ 'languages' ], [ $args[ 'active' ] ] );
 
 		foreach ( $style_items as $style_item ) {
-			LegalDebug::debug( [
-				'function' => 'NotFoundMain::inline_style',
-
-				'$style_item' => $style_item,
-			] );
-
 			$style[] = '.locale-' . $style_item[ 'id' ] . ' {
 				background-image: url(' . $style_item[ 'src' ] . ');
 			}';
