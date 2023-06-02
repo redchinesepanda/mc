@@ -36,6 +36,10 @@
 	}
 }
 
+.lang-current {
+	pointer-events: none;
+}
+
 .menu-avaible-404 {
 	width: 900px;
 	display: flex;
