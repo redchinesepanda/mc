@@ -13,6 +13,7 @@
 				</div>
 			</a>
 		<?php endforeach; ?>
+		!!!
 		<a class='lang-current lang-item' href="#" target="_blank">
 			<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
 				<div class="lang-title">
