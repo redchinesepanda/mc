@@ -15,6 +15,14 @@ LegalDebug::debug( [
 	<p><?php echo $args[ 'description' ]; ?></p>
 </div>
 <div class="menu-avaible-404">
+	<?php foreach( $args['languages'] as $lang ) : ?>
+		<a class='lang-avaible lang-item' href="<?php echo $lang['href']; ?>" target="_blank">
+			<div class="lang-image locale-<?php echo $lang['id']; ?>"></div>
+			<div class="lang-title">
+				<?php echo $lang['title']; ?>
+			</div>
+		</a>
+	<?php endforeach; ?>
 	<a class="lang-item" href="https://match.center/se/" target="_blank">
 		<div class="lang-image locale-88"></div>
 		<div class="lang-title">
