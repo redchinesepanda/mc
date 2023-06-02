@@ -9,7 +9,7 @@ class ToolEnqueue
         }
     }
 
-    public static function register_script( $scripts )
+    public static function register_script( $scripts = [] )
     {
         foreach ( $scripts as $name => $path ) {
             wp_register_script( $name, $path, [], false, true );
