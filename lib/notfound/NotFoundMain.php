@@ -16,7 +16,7 @@ class NotFoundMain
 	public static function register_inline_style()
     {
 		if ( self::check() ) {
-			ToolEnqueue::register_inline_style( 'base-notfound', self::inline_style() );
+			ToolEnqueue::register_inline_style( 'legal-notfound', self::inline_style() );
 		}
     }
 
