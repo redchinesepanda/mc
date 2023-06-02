@@ -8,7 +8,7 @@ class BaseHeader
 
     public static function register_script()
     {
-		ToolEnqueue::register_script( self::JS );
+		BaseMain::register_script( self::JS );
     }
 
 	const CSS = [
@@ -17,7 +17,7 @@ class BaseHeader
 
     public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+        BaseMain::register_style( self::CSS );
     }
 
 	public static function register_inline_style()

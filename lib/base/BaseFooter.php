@@ -8,7 +8,7 @@ class BaseFooter
 
     public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+        BaseMain::register_style( self::CSS );
     }
 
 	public static function register()

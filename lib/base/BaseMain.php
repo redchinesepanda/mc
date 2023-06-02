@@ -6,6 +6,36 @@ require_once( 'BaseFooter.php' );
 
 class BaseMain
 {
+	public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            ToolEnqueue::register_style( $styles );
+        }
+    }
+
+    public static function register_script( $scripts = [] )
+    {
+        if ( self::check() ) {
+            ToolEnqueue::register_script( $scripts );
+        }
+    }
+
+	public static function register_inline_style( $name = '', $data = '' )
+    {
+		if ( self::check() ) {
+            ToolEnqueue::register_inline_style( $name, $data );
+        }
+    }
+
+	public static function check()
+    {
+        $lang = WPMLMain::current_language();
+
+        $permission_lang = in_array( $lang, [ 'ke' ] );
+        
+        return $permission_lang;
+    }
+
 	public static function register()
     {
         BaseHeader::register();
