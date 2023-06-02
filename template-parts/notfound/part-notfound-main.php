@@ -1,6 +1,6 @@
 <div class="container__svg-before-text-block page404">
 	<div class="svg-before-text-block">
-		<div class="svg-oops-face-icon"></div>
+		<div class="svg-oops-smile"></div>
 		<h1 class="block-groups_title">Oops! Page Not Found</h1>
 	</div>
 	<p>You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.</p>
