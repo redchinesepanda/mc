@@ -13,7 +13,7 @@
 				</div>
 			</a>
 		<?php endforeach; ?>
-		<div class='lang-avaible lang-item'>
+		<div class='lang-current lang-item'>
 			<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
 				<div class="lang-title">
 					<?php echo $args['active']['title']; ?>
