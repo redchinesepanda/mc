@@ -31,15 +31,22 @@ class ReviewMain
 
         'review-table' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
     ];
-
-    public static function register_style()
+    
+    public static function register_style( $styles = self::CSS )
     {
         if ( self::check() ) {
-            foreach ( self::CSS as $name => $path ) {
-                wp_enqueue_style( $name, $path );
-            }
+            ToolEnqueue::register_style( $styles );
         }
     }
+
+    // public static function register_style()
+    // {
+    //     if ( self::check() ) {
+    //         foreach ( self::CSS as $name => $path ) {
+    //             wp_enqueue_style( $name, $path );
+    //         }
+    //     }
+    // }
 
     const JS = [
         'schema' => 'legal-schema',
@@ -88,7 +95,17 @@ class ReviewMain
 
     public static function check()
     {
-        return ( !is_admin() && is_singular( [ 'legal_bk_review' ] ) );
+        // $lang = WPMLMain::current_language();
+
+        // $permission_lang = in_array( $lang, [ 'ke' ] );
+
+        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+
+        $permission_admin = !is_admin();
+
+        // return ( $permission_admin && ( $permission_post_type || $permission_lang ) );
+        
+        return ( $permission_admin && $permission_post_type );
     }
 
     public static function schema()

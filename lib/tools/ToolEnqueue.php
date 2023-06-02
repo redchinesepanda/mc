@@ -4,11 +4,11 @@ class ToolEnqueue
 {
     public static function register_style( $styles )
     {
-        if ( ReviewMain::check() ) {
+        // if ( ReviewMain::check() ) {
             foreach ( $styles as $name => $path ) {
                 wp_enqueue_style( $name, $path );
             }
-        }
+        // }
     }
 
     public static function register_script( $scripts )
