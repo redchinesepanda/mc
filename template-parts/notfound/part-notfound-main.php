@@ -13,5 +13,10 @@
 				</div>
 			</a>
 		<?php endforeach; ?>
+		<div class="lang-image locale-<?php echo $args['active']['id']; ?>">!!!3</div>
+			<div class="lang-title">!!!4
+				<?php echo $args['active']['title']; ?>
+			</div>
+		</div>
 	</div>
 </div>
