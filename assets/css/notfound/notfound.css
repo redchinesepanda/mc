@@ -1,4 +1,4 @@
-.page404 .container__svg-before-text-block {
+.page404 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -8,7 +8,7 @@
 	row-gap: 1.5rem;
 }
 
-.page404 .container__svg-before-text-block .svg-before-text-block {
+.page404 .svg-before-text-block {
 	display: flex;
 	align-items: center;
 }
@@ -24,14 +24,14 @@
 	color: #000;
 }
 
-.page404 .container__svg-before-text-block h1 {
+.page404 h1 {
 	size: 32px;;
 	font-weight: 700;
 	color: #0A0A0A;
 }
 
 @media (max-width: 576px) {
-	.page404 .container__svg-before-text-block h1 {
+	.page404 h1 {
 		size: 24px;
 	}
 }
