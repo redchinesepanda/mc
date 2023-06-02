@@ -29,6 +29,15 @@ class NotFoundMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+	public static function get()
+	{
+		return  [
+			'title' => __( "Oops! Page Not Found", ToolLoco::TEXTDOMAIN ),
+			
+			'description' => __( "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.", ToolLoco::TEXTDOMAIN ),
+		];
+	}
+
 	const TEMPLATE = [
         'notfound' => LegalMain::LEGAL_PATH . '/template-parts/notfound/part-notfound-main.php',
     ];
