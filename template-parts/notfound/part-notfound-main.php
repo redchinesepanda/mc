@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-	'template' => 'part-notfound-main.php',
+// LegalDebug::debug( [
+// 	'template' => 'part-notfound-main.php',
 
-	'args' => $args,
-] );
+// 	'args' => $args,
+// ] );
 
 ?>
 <div class="container__svg-before-text-block page404">
@@ -23,7 +23,12 @@ LegalDebug::debug( [
 			</div>
 		</a>
 	<?php endforeach; ?>
-	<a class="lang-item" href="https://match.center/se/" target="_blank">
+	<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
+        <div class="lang-title">
+            <?php echo $args['active']['title']; ?>
+        </div>
+	</div>
+	<!-- <a class="lang-item" href="https://match.center/se/" target="_blank">
 		<div class="lang-image locale-88"></div>
 		<div class="lang-title">
 			Sverige </div>
@@ -167,5 +172,5 @@ LegalDebug::debug( [
 		<div class="lang-image locale-1"></div>
 		<div class="lang-title">
 			United Kingdom </div>
-	</a>
+	</a> -->
 </div>
