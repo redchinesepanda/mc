@@ -85,7 +85,7 @@
 	border: #b8b8b8 solid 1.5px;
 }
 
-.locale-1 {
+/* .locale-1 {
 	background-image: url(https://match.center/wp-content/uploads/flags/default.svg);
 }
 
@@ -195,7 +195,7 @@
 
 .locale-90 {
 	background-image: url(https://match.center/wp-content/uploads/flags/rs.svg);
-}
+} */
 
 @media screen and (max-width: 1079px) {
 	.menu-avaible-404 {
