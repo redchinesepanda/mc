@@ -1,4 +1,4 @@
-<div class="container__svg-before-text-block page404">
+<div class="page404">
 	<div class="svg-before-text-block">
 		<div class="svg-oops-smile"></div>
 		<h1 class="block-groups_title"><?php echo $args[ 'title' ]; ?></h1>
