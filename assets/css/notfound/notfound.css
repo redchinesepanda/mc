@@ -1,0 +1,177 @@
+/*--------------style for block svg with text-block------------*/
+
+.container__svg-before-text-block.page404 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+	padding-bottom: 0;
+	row-gap: 1.5rem;
+}
+.container__svg-before-text-block.page404 .svg-before-text-block {
+	display: flex;
+	align-items: center;
+}
+.svg-oops-smile {
+	background-image: url( '../../img/notfound/notfound.svg' );
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 55px;
+	height: 55px;
+	margin-right: 20px;
+	color: #000;
+}
+.container__svg-before-text-block.page404 h1 {
+	size: 32px;;
+	font-weight: 700;
+	color: #0A0A0A;
+}
+@media (max-width: 576px) {
+	.container__svg-before-text-block.page404 h1 {
+		size: 24px;
+	}
+}
+
+
+
+/*-------style for block choose country------*/
+.menu-avaible-404 {
+	width: 900px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0 auto;
+	row-gap: 0.7rem;
+	column-gap: 0.77rem;
+}
+.menu-avaible-404 .lang-item {
+	width: 170px;
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	font-family: "source sans pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 650;
+	line-height: 28px;
+	color: #3b3b3b;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding-left: 10px;
+}
+.menu-avaible-404 .lang-item:hover {
+	background-color: #5997e3;
+	transition: 0.5s;
+	color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #e4e4e4;
+}
+.menu-avaible-404 .lang-item .lang-image {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	border: #b8b8b8 solid 1.5px;
+}
+
+.locale-1 {
+background-image: url(https://match.center/wp-content/uploads/flags/default.svg);
+}
+.locale-2 {
+background-image: url(https://match.center/wp-content/uploads/flags/es.svg);
+}
+.locale-3 {
+	background-image: url(https://match.center/wp-content/uploads/flags/de.svg);
+}
+.locale-8 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ca.svg);
+}
+.locale-22 {
+	background-image: url(https://match.center/wp-content/uploads/flags/hr.svg);
+}
+.locale-34 {
+	background-image: url(https://match.center/wp-content/uploads/flags/mt.svg);
+}
+.locale-40 {
+	background-image: url(https://match.center/wp-content/uploads/flags/pl.svg);
+}
+.locale-44 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ro.svg);
+}
+.locale-66 {
+	background-image: url(https://match.center/wp-content/uploads/flags/kz.svg);
+}
+.locale-67 {
+	background-image: url(https://match.center/wp-content/uploads/flags/by.svg);
+}
+.locale-69 {
+	background-image: url(https://match.center/wp-content/uploads/flags/mx.svg);
+}
+.locale-70 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ng.svg);
+}
+.locale-71 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ie.svg);
+}
+.locale-72 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ua.svg);
+}
+.locale-74 {
+	background-image: url(https://match.center/wp-content/uploads/flags/au.svg);
+}
+.locale-75 {
+	background-image: url(https://match.center/wp-content/uploads/flags/za.svg);
+}
+.locale-77 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ke.svg);
+}
+.locale-78 {
+	background-image: url(https://match.center/wp-content/uploads/flags/nz.svg);
+}
+.locale-79 {
+	background-image: url(https://match.center/wp-content/uploads/flags/pe.svg);
+}
+.locale-80 {
+	background-image: url(https://match.center/wp-content/uploads/flags/co.svg);
+}
+.locale-83 {
+	background-image: url(https://match.center/wp-content/uploads/flags/py.svg);
+}
+.locale-84 {
+	background-image: url(https://match.center/wp-content/uploads/flags/ph.svg);
+}
+.locale-85 {
+	background-image: url(https://match.center/wp-content/uploads/flags/br.svg);
+}
+.locale-86 {
+	background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
+}
+.locale-87 {
+	background-image: url(https://match.center/wp-content/uploads/flags/at.svg);
+}
+.locale-88 {
+	background-image: url(https://match.center/wp-content/uploads/flags/se.svg);
+}
+.locale-89 {
+	background-image: url(https://match.center/wp-content/uploads/flags/cz.svg);
+}
+.locale-90 {
+	background-image: url(https://match.center/wp-content/uploads/flags/rs.svg);
+}
+
+
+@media screen and (max-width: 1079px) {
+	.menu-avaible-404 {
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.menu-avaible-404 .lang-item {
+		width: 158px;
+		font-weight: 600;
+	}
+}
