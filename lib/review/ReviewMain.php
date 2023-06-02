@@ -34,6 +34,12 @@ class ReviewMain
     
     public static function register_style( $styles = self::CSS )
     {
+        LegalDebug::debug( [
+            'function' => 'ReviewMain::register_style',
+
+            '$styles' => $styles,
+        ] );
+
         if ( self::check() ) {
             ToolEnqueue::register_style( $styles );
         }
