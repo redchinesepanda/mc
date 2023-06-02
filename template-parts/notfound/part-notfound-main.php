@@ -23,11 +23,13 @@
 			</div>
 		</a>
 	<?php endforeach; ?>
-	<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
-        <div class="lang-title">
-            <?php echo $args['active']['title']; ?>
-        </div>
-	</div>
+	<a class='lang-current lang-item' href="#" target="_blank">
+		<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
+			<div class="lang-title">
+				<?php echo $args['active']['title']; ?>
+			</div>
+		</div>
+	</a>
 	<!-- <a class="lang-item" href="https://match.center/se/" target="_blank">
 		<div class="lang-image locale-88"></div>
 		<div class="lang-title">
