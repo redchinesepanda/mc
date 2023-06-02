@@ -13,6 +13,13 @@ class NotFoundMain
 		}
     }
 
+	public static function register_inline_style()
+    {
+		if ( self::check() ) {
+			ToolEnqueue::register_inline_style( 'base-notfound', self::inline_style() );
+		}
+    }
+
 	public static function check()
     {
         return is_404();
@@ -28,6 +35,32 @@ class NotFoundMain
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
+
+	public static function inline_style() {
+		$style = [];
+
+		$args = WPMLLangSwitcher::get();
+
+		if ( empty( $args[ 'languages' ] ) || empty( $args[ 'active' ] ) ) {
+			return '';
+		}
+
+		$style_items = array_merge( $args[ 'languages' ], $args[ 'active' ] );
+
+		LegalDebug::debug( [
+			'$style_items' => $style_items,
+		] );
+
+		// .locale-1 {
+		// 	background-image: url(https://match.center/wp-content/uploads/flags/default.svg);
+		// }
+
+		// foreach ( $style_items as $style_item ) {
+		// 	$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+		// }
+
+		return implode( ' ', $style );
+	}
 
 	public static function get()
 	{
