@@ -3,7 +3,7 @@
 		<div class="svg-oops-smile"></div>
 		<h1 class="block-groups_title"><?php echo $args[ 'title' ]; ?></h1>
 	</div>
-	<p>You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.</p>
+	<p><?php echo $args[ 'description' ]; ?></p>
 </div>
 <div class="menu-avaible-404">
 	<a class="lang-item" href="https://match.center/se/" target="_blank">
