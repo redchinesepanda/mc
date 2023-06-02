@@ -34,22 +34,22 @@ class ReviewMain
     
     public static function register_style( $styles = [] )
     {
-        if ( empty( $styles ) ) {
-            $styles = self::CSS;
-        }
-
         if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                $styles = self::CSS;
+            }
+
             ToolEnqueue::register_style( $styles );
         }
     }
 
     public static function register_script( $scripts = [] )
     {
-        if ( empty( $scripts ) ) {
-            $styles = self::JS;
-        }
-
         if ( self::check() ) {
+            if ( empty( $scripts ) ) {
+                $styles = self::JS;
+            }
+
             ToolEnqueue::register_script( $scripts );
         }
     }
