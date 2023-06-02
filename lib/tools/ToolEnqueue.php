@@ -2,7 +2,7 @@
 
 class ToolEnqueue
 {
-    public static function register_style( $styles )
+    public static function register_style( $styles = [] )
     {
         // if ( ReviewMain::check() ) {
             foreach ( $styles as $name => $path ) {
