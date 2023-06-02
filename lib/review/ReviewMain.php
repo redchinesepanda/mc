@@ -43,6 +43,17 @@ class ReviewMain
         }
     }
 
+    public static function register_script( $scripts = [] )
+    {
+        if ( empty( $scripts ) ) {
+            $styles = self::JS;
+        }
+
+        if ( self::check() ) {
+            ToolEnqueue::register_script( $scripts );
+        }
+    }
+
     // public static function register_style()
     // {
     //     if ( self::check() ) {

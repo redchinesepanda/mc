@@ -17,13 +17,7 @@ class ReviewGallery
 
     public static function register_script()
     {
-        if ( ReviewMain::check() ) {
-            foreach ( self::JS as $name => $path ) {
-                wp_register_script( $name, $path, [], false, true );
-
-                wp_enqueue_script( $name );
-            }
-        }
+        ReviewMain::register_script( self::JS );
     }
 
     const SIZE = [
