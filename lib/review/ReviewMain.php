@@ -32,8 +32,12 @@ class ReviewMain
         'review-table' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
     ];
     
-    public static function register_style( $styles = self::CSS )
+    public static function register_style( $styles = [] )
     {
+        if ( empty( $styles ) ) {
+            $styles = self::CSS;
+        }
+
         LegalDebug::debug( [
             'function' => 'ReviewMain::register_style',
 
