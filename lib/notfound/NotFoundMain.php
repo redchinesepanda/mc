@@ -49,9 +49,9 @@ class NotFoundMain
 
 		$style_items = array_merge( $args[ 'languages' ], $args[ 'active' ] );
 
-		LegalDebug::debug( [
-			'$style_items' => $style_items,
-		] );
+		// LegalDebug::debug( [
+		// 	'$style_items' => $style_items,
+		// ] );
 
 		foreach ( $style_items as $style_item ) {
 			$style[] = '.locale-' . $style_item[ 'id' ] . ' {
