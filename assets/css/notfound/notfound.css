@@ -5,6 +5,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 40px;
+	padding-top: 50px;
 	padding-bottom: 0;
 	row-gap: 1.5rem;
 }
@@ -42,6 +43,7 @@
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	margin: 0 auto;
+	padding-bottom: 100px;
 	row-gap: 0.7rem;
 	column-gap: 0.77rem;
 }
