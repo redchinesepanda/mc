@@ -47,7 +47,7 @@ class NotFoundMain
 			return '';
 		}
 
-		$style_items = array_merge( $args[ 'languages' ], $args[ 'active' ] );
+		$style_items = array_merge( $args[ 'languages' ], [ $args[ 'active' ] ] );
 
 		foreach ( $style_items as $style_item ) {
 			LegalDebug::debug( [
