@@ -1,12 +1,3 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'template' => 'part-notfound-main.php',
-
-// 	'args' => $args,
-// ] );
-
-?>
 <div class="container__svg-before-text-block page404">
 	<div class="svg-before-text-block">
 		<div class="svg-oops-smile"></div>
