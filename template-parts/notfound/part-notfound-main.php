@@ -13,14 +13,14 @@
 				</div>
 			</a>
 		<?php endforeach; ?>
-		!!!
-		<a class='lang-current lang-item' href="#" target="_blank">
+		!!!1
+		<a class='lang-current lang-item' href="#" target="_blank">!!!2
 			<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
 				<div class="lang-title">
 					<?php echo $args['active']['title']; ?>
 				</div>
 			</div>
 		</a>
-		!!!
+		!!!3
 	</div>
 </div>
