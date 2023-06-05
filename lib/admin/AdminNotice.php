@@ -18,7 +18,7 @@ class AdminNotice
 	public static function get()
     {
         return  [
-            'message' => __( 'Это тестовый сайт: ', ToolLoco::TEXTDOMAIN ) . get_site_url(),
+            'message' => __( 'This is test tite: ', ToolLoco::TEXTDOMAIN ) . get_site_url(),
         ];
     }
 	
@@ -30,7 +30,7 @@ class AdminNotice
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'notfound' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'notice' ], false, self::get() );
 
         $output = ob_get_clean();
 
