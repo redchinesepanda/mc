@@ -27,15 +27,15 @@ class MetrikaMain
 
         $permission_loggedin = !is_user_logged_in();
 
-		// LegalDebug::debug( [
-		// 	'is_admin' => ( is_admin() ? 'true' : 'false' ),
+		LegalDebug::debug( [
+			'is_admin' => ( is_admin() ? 'true' : 'false' ),
 
-		// 	'permission_admin' => ( $permission_admin ? 'true' : 'false' ),
+			'permission_admin' => ( $permission_admin ? 'true' : 'false' ),
 
-		// 	'is_user_logged_in' => ( is_user_logged_in() ? 'true' : 'false' ),
+			'is_user_logged_in' => ( is_user_logged_in() ? 'true' : 'false' ),
 
-		// 	'permission_loggedin' => ( $permission_loggedin ? 'true' : 'false' ),
-		// ] );
+			'permission_loggedin' => ( $permission_loggedin ? 'true' : 'false' ),
+		] );
         
         return ( $permission_admin && $permission_loggedin );
     }
