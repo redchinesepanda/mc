@@ -6,9 +6,29 @@ class MetrikaMain
         'legal-metrika' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika.js',
     ];
 
-    public static function register_script()
+    // public static function register_script()
+    // {
+	// 	ToolEnqueue::register_script( self::JS );
+    // }
+
+	public static function register_script( $scripts = [] )
     {
-		ToolEnqueue::register_script( self::JS );
+		if ( empty( $scripts ) ) {
+			$scripts = self::JS;
+		}
+
+        if ( self::check() ) {
+            ToolEnqueue::register_script( $scripts );
+        }
+    }
+
+	public static function check()
+    {
+        $permission_admin = !is_admin();
+
+        $permission_loggedin = !is_user_logged_in();
+        
+        return ( $permission_admin && $permission_loggedin );
     }
 
 	public static function register()
