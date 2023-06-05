@@ -174,7 +174,7 @@ class LegalBreadcrumbsMain extends LegalDebug
                             $exclude = get_field( self::FIELD_ITEMS, $term->term_id );
 
                             LegalDebug::debug( [
-                                'exclude' => $exclude,
+                                'exclude' => ( $exclude ? 'true' : 'false' ),
                             ] );
 
                             if ( !$exclude ) {
