@@ -4,6 +4,8 @@ require_once( 'AdminBillet.php' );
 
 require_once( 'AdminTaxonomy.php' );
 
+require_once( 'AdminNotice.php' );
+
 class AdminMain
 {
     public static function register()
@@ -13,6 +15,8 @@ class AdminMain
         AdminBillet::register();
 
         AdminTaxonomy::register();
+
+        AdminNotice::register();
     }
 }
 
