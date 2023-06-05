@@ -31,6 +31,12 @@ class MetrikaMain
         $permission_admin = !is_admin();
 
         $permission_loggedin = !is_user_logged_in();
+
+		LegalDebug::debug( [
+			'permission_admin' => ( $permission_admin ? 'true' : 'false' ),
+
+			'permission_loggedin' => ( $permission_loggedin ? 'true' : 'false' ),
+		] );
         
         return ( $permission_admin && $permission_loggedin );
     }
