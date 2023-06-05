@@ -68,7 +68,7 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         LegalDebug::debug( [
             'function' => 'LegalBreadcrumbsMain::get_home_url',
-            
+
             'show_on_front' => get_option( 'show_on_front' ),
         ] );
 
@@ -94,12 +94,14 @@ class LegalBreadcrumbsMain extends LegalDebug
             ] );
 		}
 
+        LegalDebug::debug( [
+            'current_language' => WPMLMain::current_language(),
+        ] );
+
         if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
             $homepage_url = WPMLMain::locale_permalink( $homepage_url, 'kz' );
 
             LegalDebug::debug( [
-                'current_language' => WPMLMain::current_language(),
-                
                 'homepage_url' => $homepage_url,
             ] );
         }
