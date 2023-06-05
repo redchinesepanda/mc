@@ -66,6 +66,12 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_home_url()
     {
+        LegalDebug::debug( [
+            'function' => 'LegalBreadcrumbsMain::get_home_url',
+            
+            'show_on_front' => get_option( 'show_on_front' ),
+        ] );
+
         if ( get_option( 'show_on_front' ) === 'page' ) {
 			$homepage_id = get_option( 'page_on_front' );
 
