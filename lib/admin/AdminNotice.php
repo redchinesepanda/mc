@@ -10,9 +10,7 @@ class AdminNotice
     }
 
 	public static function wpb_admin_notice_warn() {
-	echo '<div class="notice notice-warning is-dismissible">
-		  <p>Important: we will not be publishing any new articles during holidays. Please save your articles as drafts for the time being.</p>
-		  </div>'; 
+		echo self::render(); 
 	}
 
 	public static function get()
