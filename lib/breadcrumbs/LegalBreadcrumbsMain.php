@@ -171,7 +171,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                     if ( !empty( $legal_terms ) ) {
                         foreach ( $legal_terms as $term ) {
-                            $exclude = get_field( self::FIELD_CATEGORY[ 'exclude' ], 'category_' . $term->term_id );
+                            // $exclude = get_field( self::FIELD_CATEGORY[ 'exclude' ], 'category_' . $term->term_id );
+                            
+                            $exclude = get_field( self::FIELD_CATEGORY[ 'exclude' ], $term );
 
                             if ( !$exclude ) {
                                 $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
