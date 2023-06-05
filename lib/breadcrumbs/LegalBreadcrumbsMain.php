@@ -114,6 +114,10 @@ class LegalBreadcrumbsMain extends LegalDebug
         ];
     }
 
+    const FIELD_CATEGORY = [
+        'exclude' => 'category-breadcrumbs-exclude',
+    ];
+
     const FIELD_HIDE = 'breadcrumbs-hide-parent';
 
     const FIELD_ITEMS = 'breadcrumbs-items';
@@ -126,37 +130,13 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get()
     {
-        // LegalDebug::debug( [
-        //     'function' => 'get',
-        // ] );
-
         $id = 0;
 
         $post = get_post();
 
         if ( !empty( $post ) ) {
-            // LegalDebug::debug( [
-            //     'post_title' => $post->post_title,
-            // ] );
-
             $post_id = $post->ID;
         }
-
-        // if ( empty( $post ) ) {
-        //     $term = get_queried_object();
-
-        //     LegalDebug::debug( [
-        //         'name' => $term->name,
-        //     ] );
-
-        //     if ( $term !== null ) {
-        //         $post_id = $term->term_id;
-        //     }
-        // }
-
-        // LegalDebug::debug( [
-        //     '$post_id' => $post_id,
-        // ] );
 
         $index = 1;
 
@@ -191,7 +171,11 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                     if ( !empty( $legal_terms ) ) {
                         foreach ( $legal_terms as $term ) {
-                            $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
+                            $exclude = get_field( self::FIELD_ITEMS, $term->term_id );
+
+                            if ( !$exclude ) {
+                                $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
+                            }
                         }
                     }
                 }
@@ -217,12 +201,6 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function render()
     {
-        
-
-        // LegalDebug::debug( [
-        //     'function' => 'register',
-        // ] );
-
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );
