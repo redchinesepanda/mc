@@ -15,8 +15,6 @@ class MetrikaMain
     {
         $handler = new self();
 
-        add_action( 'init', [ $handler, 'location' ] );
-
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 }
