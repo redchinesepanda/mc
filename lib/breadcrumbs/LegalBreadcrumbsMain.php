@@ -175,6 +175,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                             LegalDebug::debug( [
                                 'exclude' => ( $exclude ? 'true' : 'false' ),
+
+                                '!$exclude' => ( !$exclude ? 'true' : 'false' ),
                             ] );
 
                             if ( !$exclude ) {
