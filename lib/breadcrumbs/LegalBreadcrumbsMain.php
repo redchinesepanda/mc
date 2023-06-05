@@ -64,14 +64,16 @@ class LegalBreadcrumbsMain extends LegalDebug
         return $ancestors;
     }
 
+    const HOME = [
+        'ru' => 'kz',
+
+        'esp' => 'es',
+
+        'eng' => 'en',
+    ];
+
     public static function get_home_url()
     {
-        LegalDebug::debug( [
-            'function' => 'LegalBreadcrumbsMain::get_home_url',
-
-            'show_on_front' => get_option( 'show_on_front' ),
-        ] );
-
         if ( get_option( 'show_on_front' ) === 'page' ) {
 			$homepage_id = get_option( 'page_on_front' );
 
@@ -80,42 +82,14 @@ class LegalBreadcrumbsMain extends LegalDebug
 			} else {
 				$homepage_url = get_page_link( $homepage_id );
 			}
-
-            LegalDebug::debug( [
-                'homepage_id' => $homepage_id,
-
-                'homepage_url' => $homepage_url,
-            ] );
 		} else {
 			$homepage_url = get_option( 'home' );
-
-            LegalDebug::debug( [
-                'homepage_url' => $homepage_url,
-            ] );
 		}
-
-        LegalDebug::debug( [
-            'current_language' => WPMLMain::current_language(),
-        ] );
-
-        $homepages = [
-            'ru' => 'kz',
-
-            'esp' => 'es',
-
-            'eng' => 'en',
-        ];
-
-        // if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
 
         $lang = WPMLMain::current_language();
         
-        if ( array_key_exists( $lang, $homepages ) ) {
-            $homepage_url = WPMLMain::locale_permalink( $homepage_url, $homepages[ $lang ] );
-
-            LegalDebug::debug( [
-                'homepage_url' => $homepage_url,
-            ] );
+        if ( array_key_exists( $lang, self::HOME ) ) {
+            $homepage_url = WPMLMain::locale_permalink( $homepage_url, self::HOME[ $lang ] );
         }
 
         return $homepage_url;
