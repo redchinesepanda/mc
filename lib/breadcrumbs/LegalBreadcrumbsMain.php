@@ -19,7 +19,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         // [legal-breadcrumbs]
 
-        add_shortcode( 'legal-breadcrumbs', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-breadcrumbs', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
@@ -75,27 +75,27 @@ class LegalBreadcrumbsMain extends LegalDebug
 				$homepage_url = get_page_link( $homepage_id );
 			}
 
-            // LegalDebug::debug( [
-            //     'homepage_id' => $homepage_id,
+            LegalDebug::debug( [
+                'homepage_id' => $homepage_id,
 
-            //     'homepage_url' => $homepage_url,
-            // ] );
+                'homepage_url' => $homepage_url,
+            ] );
 		} else {
 			$homepage_url = get_option( 'home' );
 
-            // LegalDebug::debug( [
-            //     'homepage_url' => $homepage_url,
-            // ] );
+            LegalDebug::debug( [
+                'homepage_url' => $homepage_url,
+            ] );
 		}
 
         if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
             $homepage_url = WPMLMain::locale_permalink( $homepage_url, 'kz' );
 
-            // LegalDebug::debug( [
-            //     'current_language' => WPMLMain::current_language(),
+            LegalDebug::debug( [
+                'current_language' => WPMLMain::current_language(),
                 
-            //     'homepage_url' => $homepage_url,
-            // ] );
+                'homepage_url' => $homepage_url,
+            ] );
         }
 
         return $homepage_url;
