@@ -98,8 +98,20 @@ class LegalBreadcrumbsMain extends LegalDebug
             'current_language' => WPMLMain::current_language(),
         ] );
 
-        if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
-            $homepage_url = WPMLMain::locale_permalink( $homepage_url, 'kz' );
+        $homepages = [
+            'ru' => 'kz',
+
+            'esp' => 'es',
+
+            'eng' => 'en',
+        ];
+
+        // if ( in_array( WPMLMain::current_language(), [ 'ru' ] ) ) {
+
+        $lang = WPMLMain::current_language();
+        
+        if ( array_key_exists( $lang, $homepages ) ) {
+            $homepage_url = WPMLMain::locale_permalink( $homepage_url, $homepages[ $lang ] );
 
             LegalDebug::debug( [
                 'homepage_url' => $homepage_url,
