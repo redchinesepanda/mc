@@ -26,6 +26,8 @@ require_once( 'base/BaseMain.php' );
 
 require_once( 'notfound/NotFoundMain.php' );
 
+require_once( 'metrika/MetrikaMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -60,6 +62,8 @@ class LegalMain {
 		BaseMain::register();
 
 		NotFoundMain::register();
+
+		MetrikaMain::register();
 	}
 }
 
