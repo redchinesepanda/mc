@@ -18,7 +18,7 @@ class MetrikaMain
 		}
 
 		LegalDebug::debug( [
-			'check' => self::check(),
+			'check' => ( self::check() ? 'true' : 'false' ),
 		] );
 
         if ( self::check() ) {
