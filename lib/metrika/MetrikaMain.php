@@ -17,9 +17,9 @@ class MetrikaMain
 			$scripts = self::JS;
 		}
 
-		LegalDebug::debug(
+		LegalDebug::debug( [
 			'check' => self::check(),
-		);
+		] );
 
         if ( self::check() ) {
             ToolEnqueue::register_script( $scripts );
