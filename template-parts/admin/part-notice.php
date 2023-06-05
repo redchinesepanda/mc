@@ -1,3 +1,3 @@
 <div class="notice notice-info">
-	<p><?php echo $args[ 'message' ] ?></p>
+	<p><b><?php echo $args[ 'message' ] ?></b></p>
 </div>
