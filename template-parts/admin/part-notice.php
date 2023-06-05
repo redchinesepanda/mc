@@ -1,3 +1,3 @@
-<div class="notice notice-warning is-dismissible">
+<div class="notice notice-info">
 	<p><?php echo $args[ 'message' ] ?></p>
 </div>
