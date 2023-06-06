@@ -15,7 +15,18 @@ class ToolTinyMCE
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
+
+		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
     }
+
+	const CSS = [
+        'legal-tinymce' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce.css',
+    ];
+
+	public static function editor_styles() {
+
+		add_editor_style( self::CSS[ 'legal-tinymce' ] );
+	}
 
 	public static function table_classes( $settings )
 	{
