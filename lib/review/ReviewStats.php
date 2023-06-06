@@ -131,7 +131,7 @@ class ReviewStats
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				if ( is_int( $cells[ 1 ]->textContent ) ) {
+				if ( is_float( $cells[ 1 ]->textContent ) ) {
 					$args[] = [
 						'title' => $cells[ 0 ]->textContent,
 	
