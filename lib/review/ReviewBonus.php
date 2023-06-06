@@ -131,31 +131,6 @@ class ReviewBonus
 				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
-			if ( $permission_title ) {
-
-				$bonus = $dom->createElement( 'div' );
-
-				$bonus->setAttribute( 'class', self::check( $class ) );
-
-				$args = [];
-				
-				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-
-				$args[ 'class' ] = $class;
-
-				$replace = $node;
-
-				LegalDebug::debug( [
-					'condition' => 'permission_title',
-
-					'action' => 'new replace item',
-
-					'replace->tagName' => $replace->tagName,
-
-					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
-				] );
-			}
-
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
@@ -192,6 +167,31 @@ class ReviewBonus
 				] );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
+			}
+
+			if ( $permission_title ) {
+
+				$bonus = $dom->createElement( 'div' );
+
+				$bonus->setAttribute( 'class', self::check( $class ) );
+
+				$args = [];
+				
+				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
+
+				$args[ 'class' ] = $class;
+
+				$replace = $node;
+
+				LegalDebug::debug( [
+					'condition' => 'permission_title',
+
+					'action' => 'new replace item',
+
+					'replace->tagName' => $replace->tagName,
+
+					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
+				] );
 			}
 
 			if ( $permission_description || $permission_content ) {
