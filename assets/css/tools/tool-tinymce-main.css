@@ -51,8 +51,14 @@
 /* Bonus */
 
 #tinymce .legal-bonus.legal-bonus-title {
+	border-left: 2px 2px 0px 2px solid rgba(0, 0, 0, 0.05);
+
 	font-weight: 600;
 	line-height: 31.5px;
+}
+
+#tinymce .legal-bonus.legal-bonus-content + .legal-bonus.legal-bonus-title {
+	margin-top: 20px;
 }
 
 #tinymce .legal-bonus.legal-bonus-content {
@@ -63,6 +69,10 @@
 #tinymce .legal-bonus.legal-bonus-title {
 	padding: 15px 30px;
 
+	margin: 0px 20px;
+
 	/* box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px; */
-	box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.05), 0px 9px 19px -1px rgba(0, 0, 0, 0.05);
+	/* box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.05), 0px 9px 19px -1px rgba(0, 0, 0, 0.05); */
+
+	border-left: 0px 2px 0px 2px solid rgba(0, 0, 0, 0.05);
 }
