@@ -182,6 +182,16 @@ class ReviewBonus
 				$args[ 'class' ] = $class;
 
 				$replace = $node;
+
+				LegalDebug::debug( [
+					'condition' => 'permission_title',
+
+					'action' => 'new replace item',
+
+					'replace->tagName' => $replace->tagName,
+
+					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
+				] );
 			}
 
 			if ( $permission_description || $permission_content ) {
