@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+	'args' => $args,
+] );
+
+?>
 <?php if ( !empty( $args ) ) : ?>
 	<div class="menu-item">
 		<a class="item-title" href="<?php echo $args[ 'href' ]; ?>">
