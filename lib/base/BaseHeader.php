@@ -62,18 +62,25 @@ class BaseHeader
 
 	public static function get_menu_language_items()
 	{
+		$lang = WPMLMain::current_language();
+
 		$languages = WPMLMain::get_all_languages();
 
-		$items = $languages;
+		// $items = $languages;
 
-		return $items;
+		LegalDebug::debug( [
+			'lang' => $lang,
+
+			'languages' => $languages,
+		] );
+
+		// return $items;
 	}
 
 	public static function get_menu_items()
 	{
-		LegalDebug::debug( [
-			'get_menu_language_items' => self::get_menu_language_items(),
-		] );
+
+		self::get_menu_language_items()
 
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
