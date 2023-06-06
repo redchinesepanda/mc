@@ -106,23 +106,23 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
-			legalDebug::debug( [
-				'function' => 'ReviewBonus::get_content',
+			// legalDebug::debug( [
+			// 	'function' => 'ReviewBonus::get_content',
 
-				'node->tagName' => $node->tagName,
+			// 	'node->tagName' => $node->tagName,
 
-				'node->textContent' => substr( $node->textContent, 0, 40 ),
+			// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
 
-				'node->class' => $class,
+			// 	'node->class' => $class,
 
-				'$permission_title' => ( $permission_title ? 'true' : 'false' ),
+			// 	'$permission_title' => ( $permission_title ? 'true' : 'false' ),
 				
-				'$permission_description' => ( $permission_description ? 'true' : 'false' ),
+			// 	'$permission_description' => ( $permission_description ? 'true' : 'false' ),
 
-				'$permission_content' => ( $permission_content ? 'true' : 'false' ),
+			// 	'$permission_content' => ( $permission_content ? 'true' : 'false' ),
 
-				'$permission_last' => ( $permission_last ? 'true' : 'false' ),
-			] );
+			// 	'$permission_last' => ( $permission_last ? 'true' : 'false' ),
+			// ] );
 
 			if ( $permission_description ) {
 				
@@ -152,27 +152,23 @@ class ReviewBonus
 				
 				LegalDOM::appendHTML( $bonus, $template );
 
-				LegalDebug::debug( [
-					'condition' => 'bonus not empty, permission_title or permission_last ',
+				// LegalDebug::debug( [
+				// 	'condition' => 'bonus not empty, permission_title or permission_last ',
 
-					'action' => 'replaceChild',
-
-					// 'bonus->tagName' => $bonus->tagName,
-
-					// 'bonus->textContent' => substr( $bonus->textContent, 0, 40 ),
+				// 	'action' => 'replaceChild',
 					
-					'node->tagName' => $node->tagName,
+				// 	'node->tagName' => $node->tagName,
 
-					'node->textContent' => substr( $node->textContent, 0, 40 ),
+				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
 					
-					'node->parentNode->tagName' => $node->parentNode->tagName,
+				// 	'node->parentNode->tagName' => $node->parentNode->tagName,
 
-					'node->parentNode->textContent' => substr( $node->parentNode->textContent, 0, 40 ),
+				// 	'node->parentNode->textContent' => substr( $node->parentNode->textContent, 0, 40 ),
 
-					'replace->tagName' => $replace->tagName,
+				// 	'replace->tagName' => $replace->tagName,
 
-					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
-				] );
+				// 	'replace->textContent' => substr( $replace->textContent, 0, 40 ),
+				// ] );
 
 				// $node->parentNode->replaceChild( $bonus, $replace );
 				
@@ -193,35 +189,35 @@ class ReviewBonus
 
 				$replace = $node;
 
-				LegalDebug::debug( [
-					'condition' => 'permission_title',
+				// LegalDebug::debug( [
+				// 	'condition' => 'permission_title',
 
-					'action' => 'new replace item',
+				// 	'action' => 'new replace item',
 
-					'replace->tagName' => $replace->tagName,
+				// 	'replace->tagName' => $replace->tagName,
 
-					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
+				// 	'replace->textContent' => substr( $replace->textContent, 0, 40 ),
 
-					'node->tagName' => $node->tagName,
+				// 	'node->tagName' => $node->tagName,
 
-					'node->textContent' => substr( $node->textContent, 0, 40 ),
-				] );
+				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
+				// ] );
 			}
 
 			if ( $permission_description || $permission_content ) {
-				LegalDebug::debug( [
-					'condition' => 'permission_description or permission_last ',
+				// LegalDebug::debug( [
+				// 	'condition' => 'permission_description or permission_last ',
 
-					'action' => 'removeChild',
+				// 	'action' => 'removeChild',
 
-					'body->tagName' => $body->tagName,
+				// 	'body->tagName' => $body->tagName,
 
-					'body->textContent' => substr( $body->textContent, 0, 40 ),
+				// 	'body->textContent' => substr( $body->textContent, 0, 40 ),
 
-					'node->tagName' => $node->tagName,
+				// 	'node->tagName' => $node->tagName,
 
-					'node->textContent' => substr( $node->textContent, 0, 40 ),
-				] );
+				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
+				// ] );
 
 				// $node->parentNode->removeChild( $node );
 				
