@@ -131,11 +131,13 @@ class ReviewStats
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				$args[] = [
-					'title' => $cells[ 0 ]->textContent,
-
-					'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
-				];
+				if ( is_int( $cells[ 1 ]->textContent ) ) {
+					$args[] = [
+						'title' => $cells[ 0 ]->textContent,
+	
+						'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
+					];
+				}
 			}
 		}
 
