@@ -21,6 +21,8 @@
 	background-repeat: no-repeat;
 	background-size: auto;
 	border-radius: 20px;
+
+	line-height: 40px;
 }
 
 #tinymce .legal-pros {
