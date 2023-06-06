@@ -79,8 +79,7 @@ class BaseHeader
 
 	public static function get_menu_items()
 	{
-
-		self::get_menu_language_items()
+		self::get_menu_language_items();
 
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
