@@ -10,6 +10,13 @@
 	padding-right: 40px;
 }
 
+#tinymce .legal-overview,
+#tinymce .legal-overview-start {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+}
+
 #tinymce .legal-overview {
 	padding-bottom: 30px;
 }
