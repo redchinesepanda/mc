@@ -99,21 +99,9 @@ class BaseHeader
 
 	public static function get_menu_language_items()
 	{
-		// $lang = WPMLMain::current_language();
-		
 		$lang = self::get_group_language();
 
-		// $details = WPMLMain::get_post_language_details();
-
 		$languages = WPMLMain::get_all_languages();
-
-		LegalDebug::debug( [
-			'lang' => $lang,
-
-			// 'details' => $details,
-
-			'languages' => $languages,
-		] );
 
 		return self::parse_languages( self::search_language( $languages, $lang ) );
 	}
@@ -206,10 +194,6 @@ class BaseHeader
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
 
-		// LegalDebug::debug( [
-		// 	'get_menu_language_items' => self::get_menu_language_items(),
-		// ] );
-
 		$items = array_merge( $items, self::get_menu_language_items() );
 
 		return $items;
@@ -219,9 +203,9 @@ class BaseHeader
 	{
 		$items = self::get_menu_items();
 
-		// LegalDebug::debug( [
-		// 	'items' => $items,
-		// ] );
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
 
 		return  $items;
 	}
