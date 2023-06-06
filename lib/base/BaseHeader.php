@@ -85,20 +85,20 @@ class BaseHeader
 		];
 
 		foreach ( $languages as $language ) {
-			$items[ 'children' ][] = [
+			$item[ 'children' ][] = [
 				'title' => $language[ 'native_name' ],
 
 				'href' => $language[ 'url' ],
 			];
 		}
 
-		$items[ 'children' ][] = [
+		$item[ 'children' ][] = [
 			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
 
 			'href' => '/choose-your-country/',
 		];
 
-		return $items;
+		return $item;
 	}
 
 	public static function get_group_language()
