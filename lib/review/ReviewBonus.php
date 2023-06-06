@@ -84,6 +84,8 @@ class ReviewBonus
 			return $content;
 		}
 
+		$body = $dom->getElementsByTagName( 'body' );
+
 		$bonus = null;
 
 		$replace = null;
@@ -170,7 +172,9 @@ class ReviewBonus
 					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
 				] );
 
-				$node->parentNode->replaceChild( $bonus, $replace );
+				// $node->parentNode->replaceChild( $bonus, $replace );
+				
+				$body->replaceChild( $bonus, $replace );
 			}
 
 			if ( $permission_title ) {
@@ -203,7 +207,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description || $permission_content ) {
-				$node->parentNode->removeChild( $node );
+				// $node->parentNode->removeChild( $node );
+				
+				$body->removeChild( $node );
 
 				LegalDebug::debug( [
 					'condition' => 'permission_description or permission_last ',
