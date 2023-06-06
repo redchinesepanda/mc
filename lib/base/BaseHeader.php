@@ -96,7 +96,7 @@ class BaseHeader
 
 		$post = get_post();
 
-		$details = WPMLMain::get_post_language_details();
+		$details = WPMLMain::get_post_language_details( $post->ID );
 
 		$languages = WPMLMain::get_all_languages();
 
