@@ -131,17 +131,7 @@ class ReviewStats
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				LegalDebug::debug( [
-					'textContent' => $cells[ 1 ]->textContent,
-
-					'is_numeric' => ( is_numeric( $cells[ 1 ]->textContent ) ? 'true' : 'false' ),
-
-					'is_int' => ( is_int( $cells[ 1 ]->textContent ) ? 'true' : 'false' ),
-
-					'is_float' => ( is_float( $cells[ 1 ]->textContent ) ? 'true' : 'false' ),
-				] );
-
-				if ( is_float( $cells[ 1 ]->textContent ) ) {
+				if ( is_numeric( $cells[ 1 ]->textContent ) ) {
 					$args[] = [
 						'title' => $cells[ 0 ]->textContent,
 	
