@@ -105,7 +105,7 @@ class ReviewBonus
 			legalDebug::debug( [
 				'function' => 'ReviewBonus::get_content',
 
-				'$node->textContent' => substr( $node->textContent, 0, 10 ),
+				'$node->textContent' => substr( $node->textContent, 0, 40 ),
 
 				'$class' => $class,
 
