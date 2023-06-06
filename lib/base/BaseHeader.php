@@ -76,17 +76,17 @@ class BaseHeader
 
 		$languages = WPMLMain::get_all_languages();
 
-		$countries = self::search_language( $languages, $lang );
+		// $countries = self::search_language( $languages, $lang );
 
-		LegalDebug::debug( [
-			'lang' => $lang,
+		// LegalDebug::debug( [
+		// 	'lang' => $lang,
 
-			// 'languages' => $languages,
+		// 	// 'languages' => $languages,
 
-			'countries' => $countries,
-		] );
+		// 	'countries' => $countries,
+		// ] );
 
-		// return $items;
+		return self::search_language( $languages, $lang );
 	}
 
 	public static function get_menu_items()
