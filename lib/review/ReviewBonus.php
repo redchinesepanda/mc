@@ -154,6 +154,10 @@ class ReviewBonus
 					// 'bonus->tagName' => $bonus->tagName,
 
 					// 'bonus->textContent' => substr( $bonus->textContent, 0, 40 ),
+					
+					'node->tagName' => $node->tagName,
+
+					'node->textContent' => substr( $node->textContent, 0, 40 ),
 
 					'replace->tagName' => $replace->tagName,
 
