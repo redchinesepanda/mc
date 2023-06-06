@@ -94,9 +94,7 @@ class BaseHeader
 	{
 		$lang = WPMLMain::current_language();
 
-		$post = get_post();
-
-		$details = WPMLMain::get_post_language_details( $post->ID );
+		$details = WPMLMain::get_post_language_details();
 
 		$languages = WPMLMain::get_all_languages();
 
