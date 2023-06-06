@@ -8,38 +8,3 @@
 
 	border-left: 2px solid rgb(89, 151, 227);
 }
-
-/* legal-header-3 */
-
-#tinymce .legal-header-3 {
-	display: flex;
-	align-items: center;
-}
-
-#tinymce .legal-header-3::before {
-	content: '';
-	display: block;
-
-	margin-right: 20px;
-
-	width: 55px;
-	height: 55px;
-
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-color: rgb(89, 151, 227);
-	border-radius: 50%;
-}
-
-#tinymce .legal-header-history::before {
-	background-image: url( '../../img/review/header/review-history.svg' );
-}
-
-#tinymce .legal-header-basketball::before {
-	background-image: url( '../../img/review/header/review-basketball.svg' );
-}
-
-#tinymce .legal-header-deposit::before {
-	background-image: url( '../../img/review/header/review-deposit.svg' );
-}
