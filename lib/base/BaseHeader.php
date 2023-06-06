@@ -60,18 +60,27 @@ class BaseHeader
 		return implode( ' ', $style );
 	}
 
+	public static function search_language( $items, $value )
+	{
+		return array_filter( $items, function( $el ) use ( $value ) {
+			return ( strpos( $el[ 'default_locale' ], $value ) !== false );
+		});
+	}
+
 	public static function get_menu_language_items()
 	{
 		$lang = WPMLMain::current_language();
 
 		$languages = WPMLMain::get_all_languages();
 
-		// $items = $languages;
+		$countries = self::search_language( $languages, $lang );
 
 		LegalDebug::debug( [
 			'lang' => $lang,
 
-			'languages' => $languages,
+			// 'languages' => $languages,
+
+			'countries' => $countries,
 		] );
 
 		// return $items;
