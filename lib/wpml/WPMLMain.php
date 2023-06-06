@@ -29,11 +29,9 @@ class WPMLMain
         return $languages;
     }
 
-    public static function get_post_language_details( $post_id )
+    public static function get_post_language_details()
 	{
-		// return apply_filters( 'wpml_post_language_details', NULL, $post_id ) ;
-		
-        return apply_filters( 'wpml_post_language_details', NULL ) ;
+		return apply_filters( 'wpml_post_language_details', NULL ) ;
 	}
 
     public static function translated_menu_id( $menu_id )
