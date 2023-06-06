@@ -42,11 +42,18 @@
 #tinymce p.legal-pros + ul.legal-content::before,
 #tinymce .legal-pros + .legal-content li::before,
 #tinymce .legal-cons + .legal-content li::before {
+	content: '';
+	display: inline-block;
+
+	margin-right: 10px;
+	margin-left: -34px;
+	margin-bottom: -6px;
+
+	width: 24px;
+	height: 24px;
+
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
 	list-style-image: none;
-	margin-bottom: -6px;
-	content: '';
-	display: inline-block;
 }
