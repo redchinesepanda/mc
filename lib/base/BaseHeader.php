@@ -266,14 +266,27 @@ class BaseHeader
 	}
 
 	const TEMPLATE = [
-        'header-menu' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header.php',
+        'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header.php',
+
+		'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
     ];
 
     public static function render()
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'header-menu' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'header' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_item( $item )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'item' ], false, $item );
 
         $output = ob_get_clean();
 
