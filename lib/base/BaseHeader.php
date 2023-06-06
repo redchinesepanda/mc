@@ -72,6 +72,10 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
+		LegalDebug::debug( [
+			'languages' => $languages,
+		] );
+
 		$items = [];
 
 		foreach ( $languages as $language ) {
@@ -81,6 +85,7 @@ class BaseHeader
 				'href' => $language[ 'url' ],
 			];
 		}
+		
 
 		return $items;
 	}
@@ -182,9 +187,9 @@ class BaseHeader
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
 
-		LegalDebug::debug( [
-			'get_menu_language_items' => self::get_menu_language_items(),
-		] );
+		// LegalDebug::debug( [
+		// 	'get_menu_language_items' => self::get_menu_language_items(),
+		// ] );
 
 		$items = array_merge( $items, self::get_menu_language_items() );
 
