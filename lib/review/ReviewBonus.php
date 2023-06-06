@@ -84,7 +84,7 @@ class ReviewBonus
 			return $content;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' );
+		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		$bonus = null;
 
@@ -207,9 +207,9 @@ class ReviewBonus
 			}
 
 			if ( $permission_description || $permission_content ) {
-				$node->parentNode->removeChild( $node );
+				// $node->parentNode->removeChild( $node );
 				
-				// $body->removeChild( $node );
+				$body->removeChild( $node );
 
 				LegalDebug::debug( [
 					'condition' => 'permission_description or permission_last ',
