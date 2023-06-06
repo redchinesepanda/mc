@@ -1,5 +1,7 @@
 /* Pros and Cons */
 
+/* Title */
+
 #tinymce .legal-pros,
 #tinymce .legal-cons {
 	padding-left: 60px;
@@ -20,6 +22,12 @@
 
 #tinymce .legal-cons {
 	background-image: url( '../../img/review/review-cons.svg' );
+}
+
+/* List */
+
+#tinymce .legal-pros-cons.legal-content ul {
+	list-style: none;
 }
 
 #tinymce .legal-pros + .legal-content li::before {
