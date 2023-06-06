@@ -90,11 +90,20 @@ class BaseHeader
 		return $items;
 	}
 
+	public static function get_group_language()
+	{
+		$details = WPMLMain::get_post_language_details();
+
+		return substr( $details[ 'locale' ], 0, 2 );
+	}
+
 	public static function get_menu_language_items()
 	{
-		$lang = WPMLMain::current_language();
+		// $lang = WPMLMain::current_language();
+		
+		$lang = self::get_group_language();
 
-		$details = WPMLMain::get_post_language_details();
+		// $details = WPMLMain::get_post_language_details();
 
 		$languages = WPMLMain::get_all_languages();
 
