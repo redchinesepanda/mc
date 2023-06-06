@@ -52,6 +52,8 @@
 
 #tinymce .legal-bonus.legal-bonus-title {
 	border-width: 2px 2px 0px 2px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 
 	font-weight: 600;
 	line-height: 31.5px;
