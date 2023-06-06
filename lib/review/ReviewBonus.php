@@ -105,6 +105,8 @@ class ReviewBonus
 			legalDebug::debug( [
 				'function' => 'ReviewBonus::get_content',
 
+				'tagName' => $node->tagName,
+
 				'$node->textContent' => substr( $node->textContent, 0, 40 ),
 
 				'$class' => $class,
