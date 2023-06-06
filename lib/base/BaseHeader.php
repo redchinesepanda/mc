@@ -213,7 +213,7 @@ class BaseHeader
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
 
-		$items = array_merge( $items, self::get_menu_language_items() );
+		$items = array_merge( $items, [ self::get_menu_language_items() ] );
 
 		return $items;
 	}
@@ -222,9 +222,9 @@ class BaseHeader
 	{
 		$items = self::get_menu_items();
 
-		LegalDebug::debug( [
-			'items' => $items,
-		] );
+		// LegalDebug::debug( [
+		// 	'items' => $items,
+		// ] );
 
 		return [
 			'items' => $items,
