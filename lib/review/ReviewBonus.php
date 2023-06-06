@@ -105,11 +105,11 @@ class ReviewBonus
 			legalDebug::debug( [
 				'function' => 'ReviewBonus::get_content',
 
-				'tagName' => $node->tagName,
+				'node->tagName' => $node->tagName,
 
-				'$node->textContent' => substr( $node->textContent, 0, 40 ),
+				'node->textContent' => substr( $node->textContent, 0, 40 ),
 
-				'$class' => $class,
+				'node->class' => $class,
 
 				'$permission_title' => ( $permission_title ? 'true' : 'false' ),
 				
@@ -151,9 +151,13 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'condition' => 'bonus not empty, permission_title or permission_last ',
 
-					'tagName' => $replace->tagName,
+					'bonus->tagName' => $bonus->tagName,
 
-					'$node->textContent' => substr( $replace->textContent, 0, 40 ),
+					'bonus->textContent' => substr( $bonus->textContent, 0, 40 ),
+
+					'replace->tagName' => $replace->tagName,
+
+					'replace->textContent' => substr( $replace->textContent, 0, 40 ),
 				] );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
@@ -179,10 +183,10 @@ class ReviewBonus
 
 				LegalDebug::debug( [
 					'condition' => 'permission_description or permission_last ',
-					
-					'tagName' => $node->tagName,
 
-					'$node->textContent' => substr( $node->textContent, 0, 40 ),
+					'node->tagName' => $node->tagName,
+
+					'node->textContent' => substr( $node->textContent, 0, 40 ),
 				] );
 			}
 		}
