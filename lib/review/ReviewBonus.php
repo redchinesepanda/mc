@@ -160,6 +160,10 @@ class ReviewBonus
 					'node->tagName' => $node->tagName,
 
 					'node->textContent' => substr( $node->textContent, 0, 40 ),
+					
+					'node->parentNode->tagName' => $node->parentNode->tagName,
+
+					'node->parentNode->textContent' => substr( $node->parentNode->textContent, 0, 40 ),
 
 					'replace->tagName' => $replace->tagName,
 
