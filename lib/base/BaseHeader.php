@@ -218,7 +218,9 @@ class BaseHeader
 		// 	'items' => $items,
 		// ] );
 
-		return  $items;
+		return [
+			'items' => $items,
+		];
 	}
 
 	// public static function get()
