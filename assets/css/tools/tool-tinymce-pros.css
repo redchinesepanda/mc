@@ -1,0 +1,39 @@
+/* Pros and Cons */
+
+#tinymce .legal-pros,
+#tinymce .legal-cons {
+	padding-left: 60px;
+	margin-bottom: 20px;
+
+	background-color: rgb(244, 247, 251);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-radius: 20px;
+
+	line-height: 40px;
+}
+
+#tinymce .legal-pros {
+	background-image: url( '../../img/review/review-pros.svg' );
+}
+
+#tinymce .legal-cons {
+	background-image: url( '../../img/review/review-cons.svg' );
+}
+
+#tinymce .legal-pros + .legal-content li::before {
+	background-image: url( '../../img/review/review-pros-check.svg' );
+}
+
+#tinymce .legal-cons + .legal-content li::before {
+	background-image: url( '../../img/review/review-cons-cross.svg' );
+}
+
+#tinymce .legal-pros + .legal-content li::before,
+#tinymce .legal-cons + .legal-content li::before {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	list-style-image: none;
+}
