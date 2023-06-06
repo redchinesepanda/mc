@@ -207,19 +207,23 @@ class ReviewBonus
 			}
 
 			if ( $permission_description || $permission_content ) {
-				// $node->parentNode->removeChild( $node );
-				
-				$body->removeChild( $node );
-
 				LegalDebug::debug( [
 					'condition' => 'permission_description or permission_last ',
 
 					'action' => 'removeChild',
 
+					'body->tagName' => $body->tagName,
+
+					'body->textContent' => substr( $body->textContent, 0, 40 ),
+
 					'node->tagName' => $node->tagName,
 
 					'node->textContent' => substr( $node->textContent, 0, 40 ),
 				] );
+
+				// $node->parentNode->removeChild( $node );
+				
+				$body->removeChild( $node );
 			}
 		}
 
