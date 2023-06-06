@@ -8,11 +8,11 @@
 	background-color: rgb(239, 245, 251);
 	padding-left: 40px;
 	padding-right: 40px;
+	margin-top: 0px;
 }
 
 #tinymce .legal-overview,
 #tinymce .legal-overview-start {
-	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 10px;
 }
