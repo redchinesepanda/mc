@@ -1,0 +1,9 @@
+/* Main */
+
+/* legal-contextbox */
+
+#tinymce .legal-contextbox {
+	border-left: 2px solid rgb(89, 151, 227);
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
