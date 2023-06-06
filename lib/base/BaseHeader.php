@@ -75,9 +75,11 @@ class BaseHeader
 		$items = [];
 
 		foreach ( $languages as $language ) {
-			$item[ 'title' ] = $language[ 'code' ];
+			$items[] = [
+				'title' => $language[ 'code' ],
 
-			$item[ 'href' ] = $language[ 'url' ];
+				'href' => $language[ 'url' ],
+			];
 		}
 
 		return $items;
