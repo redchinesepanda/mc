@@ -2,10 +2,15 @@
 
 /* Overview End */
 
-#tinymce .legal-overview {
+#tinymce .legal-overview,
+#tinymce .legal-overview-start,
+#tinymce .legal-overview-end {
 	background-color: rgb(239, 245, 251);
 	padding-left: 40px;
 	padding-right: 40px;
+}
+
+#tinymce .legal-overview {
 	padding-bottom: 30px;
 }
 
