@@ -47,3 +47,22 @@
 
 	background-color: rgb(239, 245, 251);
 }
+
+/* Bonus */
+
+#tinymce .legal-bonus.legal-bonus-title {
+	font-weight: 600;
+	line-height: 31.5px;
+}
+
+#tinymce .legal-bonus.legal-bonus-content {
+	text-align: justify;
+}
+
+#tinymce .legal-bonus.legal-bonus-content,
+#tinymce .legal-bonus.legal-bonus-title {
+	padding: 15px 30px;
+
+	/* box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px; */
+	box-shadow: -60px 0px 100px -90px rgba(0, 0, 0, 0.05), 60px 0px 100px -90px rgba(0, 0, 0, 0.05);
+}
