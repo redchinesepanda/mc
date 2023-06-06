@@ -62,9 +62,12 @@ class BaseHeader
 
 	public static function search_language( $items, $value )
 	{
-		return array_filter( $items, function( $el ) use ( $value ) {
-			return ( strpos( $el[ 'default_locale' ], $value ) !== false );
-		});
+		return array_filter( $items, function( $item ) use ( $value ) {
+			return (
+				strpos( $item[ 'default_locale' ], $value ) !== false
+				&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
+			);
+		} );
 	}
 
 	public static function get_menu_language_items()
