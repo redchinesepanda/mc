@@ -9,26 +9,37 @@
 	border-left: 2px solid rgb(89, 151, 227);
 }
 
-/* legal-pros-cons */
+/* legal-header-3 */
 
-#tinymce .legal-pros,
-#tinymce .legal-cons {
-	padding-left: 60px;
-	margin-bottom: 20px;
+#tinymce .legal-header-3 {
+	display: flex;
+	align-items: center;
+}
 
-	background-color: rgb(244, 247, 251);
-	background-position: left center;
+#tinymce .legal-header-3::before {
+	content: '';
+	display: block;
+
+	margin-right: 20px;
+
+	width: 55px;
+	height: 55px;
+
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
-	border-radius: 20px;
-
-	line-height: 40px;
+	background-color: rgb(89, 151, 227);
+	border-radius: 50%;
 }
 
-#tinymce .legal-pros {
-	background-image: url( '../../img/review/review-pros.svg' );
+#tinymce .legal-header-history::before {
+	background-image: url( '../../img/review/header/review-history.svg' );
 }
 
-#tinymce .legal-cons {
-	background-image: url( '../../img/review/review-cons.svg' );
+#tinymce .legal-header-basketball::before {
+	background-image: url( '../../img/review/header/review-basketball.svg' );
+}
+
+#tinymce .legal-header-deposit::before {
+	background-image: url( '../../img/review/header/review-deposit.svg' );
 }
