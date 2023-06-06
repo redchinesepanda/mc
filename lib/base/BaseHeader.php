@@ -276,7 +276,7 @@ class BaseHeader
 	}
 
 	const TEMPLATE = [
-        'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main-backup.php',
+        'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-backup.php',
 
         'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
