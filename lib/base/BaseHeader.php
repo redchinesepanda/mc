@@ -47,15 +47,15 @@ class BaseHeader
 	public static function inline_style() {
 		$style = [];
 
-		$style_items = self::get_menu_items();
+		// $style_items = self::get_menu_items();
 
-		if ( $style_items == null ) {
-			return '';
-		}
+		// if ( $style_items == null ) {
+		// 	return '';
+		// }
 
-		foreach ( $style_items as $style_item ) {
-			$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
-		}
+		// foreach ( $style_items as $style_item ) {
+		// 	$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+		// }
 
 		return implode( ' ', $style );
 	}
