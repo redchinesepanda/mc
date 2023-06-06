@@ -72,9 +72,7 @@ class ReviewAnchors
             if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) ) {
                 $label = $labels[ $node->getAttribute( 'id' ) ];
             } else {
-                // $label = $node->parentNode->textContent;
-                
-                $label = $node->textContent;
+                $label = $node->parentNode->textContent;
             }
 
             $items[] = [
