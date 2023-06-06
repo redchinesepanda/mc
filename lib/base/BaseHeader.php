@@ -266,7 +266,7 @@ class BaseHeader
 	}
 
 	const TEMPLATE = [
-        'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header.php',
+        'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
 		'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
     ];
