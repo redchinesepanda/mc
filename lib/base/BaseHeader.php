@@ -233,20 +233,20 @@ class BaseHeader
 		];
 	}
 
-	// public static function get()
-	// {
-	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+	public static function get_backup()
+	{
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-	// 	return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
-	// 		'theme_location' => self::LOCATION,
+		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
+			'theme_location' => self::LOCATION,
 
-	// 		'echo' => false,
+			'echo' => false,
 
-	// 		'container' => false,
+			'container' => false,
 
-	// 		'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
-	// 	] ) );
-	// }
+			'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
+		] ) );
+	}
 
 	const FIELD = [
 		'class' => 'menu-item-class',
@@ -276,6 +276,8 @@ class BaseHeader
 	}
 
 	const TEMPLATE = [
+        'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main-backup.php',
+
         'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
 		'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
@@ -284,6 +286,8 @@ class BaseHeader
     public static function render()
     {
         ob_start();
+
+        load_template( self::TEMPLATE[ 'header-backup' ], false, self::get_backup() );
 
         load_template( self::TEMPLATE[ 'header' ], false, self::get() );
 
