@@ -146,6 +146,12 @@ class ReviewBonus
 				
 				LegalDOM::appendHTML( $bonus, $template );
 
+				LegalDebug::debug( [
+					'bonus' => $bonus,
+
+					'replace' => $replace,
+				] );
+
 				$node->parentNode->replaceChild( $bonus, $replace );
 			}
 
