@@ -72,9 +72,9 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		LegalDebug::debug( [
-			'languages' => $languages,
-		] );
+		// LegalDebug::debug( [
+		// 	'languages' => $languages,
+		// ] );
 
 		$items = [];
 
@@ -95,6 +95,10 @@ class BaseHeader
 		$lang = WPMLMain::current_language();
 
 		$languages = WPMLMain::get_all_languages();
+
+		LegalDebug::debug( [
+			'search_language' => self::search_language( $languages, $lang ),
+		] );
 
 		return self::parse_languages( self::search_language( $languages, $lang ) );
 	}
