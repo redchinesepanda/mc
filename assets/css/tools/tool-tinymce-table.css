@@ -1,0 +1,13 @@
+/* Table */
+
+/* All */
+
+#tinymce table{
+	border-width: 0;
+}
+
+/* No class */
+
+#tinymce table[class="mce-item-table"] tr:nth-child(2n+1) {
+	background-color: rgb(239, 245, 251);
+}
