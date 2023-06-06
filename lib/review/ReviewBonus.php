@@ -146,11 +146,13 @@ class ReviewBonus
 				
 				LegalDOM::appendHTML( $bonus, $template );
 
-				// LegalDebug::debug( [
-				// 	'bonus' => $bonus,
+				LegalDebug::debug( [
+					'condition' => 'bonus not empty, permission_title or permission_last ',
 
-				// 	'replace' => $replace,
-				// ] );
+					'bonus' => $bonus,
+
+					'replace' => $replace,
+				] );
 
 				$node->parentNode->replaceChild( $bonus, $replace );
 			}
