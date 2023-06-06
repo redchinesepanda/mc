@@ -98,6 +98,8 @@ class BaseHeader
 
 		LegalDebug::debug( [
 			'lang' => $lang,
+
+			'languages' => $languages,
 		] );
 
 		return self::parse_languages( self::search_language( $languages, $lang ) );
