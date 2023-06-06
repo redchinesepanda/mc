@@ -174,6 +174,14 @@ class ReviewBonus
 
 			if ( $permission_description || $permission_content ) {
 				$node->parentNode->removeChild( $node );
+
+				LegalDebug::debug( [
+					'condition' => 'permission_description or permission_last ',
+
+					// 'bonus' => $bonus,
+
+					'node' => $node,
+				] );
 			}
 		}
 
