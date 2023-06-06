@@ -118,9 +118,9 @@ class BaseHeader
 
 		$parse = self::parse_languages( $search );
 
-		LegalDebug::debug( [
-			'parse' => $parse,
-		] );
+		// LegalDebug::debug( [
+		// 	'parse' => $parse,
+		// ] );
 
 		return $parse;
 	}
@@ -222,9 +222,9 @@ class BaseHeader
 	{
 		$items = self::get_menu_items();
 
-		// LegalDebug::debug( [
-		// 	'items' => $items,
-		// ] );
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
 
 		return [
 			'items' => $items,
