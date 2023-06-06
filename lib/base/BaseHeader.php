@@ -214,9 +214,9 @@ class BaseHeader
 	{
 		$items = self::get_menu_items();
 
-		LegalDebug::debug( [
-			'items' => $items,
-		] );
+		// LegalDebug::debug( [
+		// 	'items' => $items,
+		// ] );
 
 		return  $items;
 	}
