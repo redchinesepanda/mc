@@ -3,7 +3,30 @@
 /* legal-contextbox */
 
 #tinymce .legal-contextbox {
-	border-left: 2px solid rgb(89, 151, 227);
 	padding-left: 20px;
 	margin-bottom: 20px;
+
+	border-left: 2px solid rgb(89, 151, 227);
+}
+
+/* legal-pros-cons */
+
+#tinymce .legal-pros,
+#tinymce .legal-cons {
+	padding-left: 60px;
+	margin-bottom: 20px;
+
+	background-color: rgb(244, 247, 251);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-radius: 20px;
+}
+
+#tinymce .legal-pros {
+	background-image: url( '../../img/review/review-pros.svg' );
+}
+
+#tinymce .legal-cons {
+	background-image: url( '../../img/review/review-cons.svg' );
 }
