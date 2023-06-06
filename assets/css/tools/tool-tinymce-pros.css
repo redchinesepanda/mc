@@ -30,7 +30,6 @@
 	list-style: none;
 }
 
-#tinymce p.legal-pros + ul.legal-content::before,
 #tinymce p.legal-pros + ul.legal-content > li::before {
 	background-image: url( '../../img/review/review-pros-check.svg' );
 }
@@ -39,7 +38,6 @@
 	background-image: url( '../../img/review/review-cons-cross.svg' );
 }
 
-#tinymce p.legal-pros + ul.legal-content::before,
 #tinymce .legal-pros + .legal-content li::before,
 #tinymce .legal-cons + .legal-content li::before {
 	content: '';
