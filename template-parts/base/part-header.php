@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+	'args' => $args,
+] );
+
+?>
 <!-- <?php if ( !empty( $args ) ) : ?>
 	<div class="legal-header">
 		<a class="legal-logo" href="/">
