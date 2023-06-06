@@ -151,9 +151,9 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'condition' => 'bonus not empty, permission_title or permission_last ',
 
-					'bonus->tagName' => $bonus->tagName,
+					// 'bonus->tagName' => $bonus->tagName,
 
-					'bonus->textContent' => substr( $bonus->textContent, 0, 40 ),
+					// 'bonus->textContent' => substr( $bonus->textContent, 0, 40 ),
 
 					'replace->tagName' => $replace->tagName,
 
