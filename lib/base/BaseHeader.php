@@ -72,9 +72,9 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		// LegalDebug::debug( [
-		// 	'languages' => $languages,
-		// ] );
+		LegalDebug::debug( [
+			'languages' => $languages,
+		] );
 
 		$item = [
 			'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
