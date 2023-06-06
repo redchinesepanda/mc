@@ -1,3 +1,19 @@
-body#tinymce.wp-editor {
-	color: #4CA6CF;
+/* Overview */
+
+/* Overview End */
+
+#tinymce .legal-overview {
+	background-color: rgb(239, 245, 251);
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 30px;
+}
+
+#tinymce .legal-overview-start {
+	padding-top: 30px;
+}
+
+#tinymce .legal-overview-end {
+	border-bottom: 2px solid #5997E3;
+	padding-bottom: 30px;
 }
