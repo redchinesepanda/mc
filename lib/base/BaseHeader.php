@@ -107,13 +107,13 @@ class BaseHeader
 
 		$languages = WPMLMain::get_all_languages();
 
-		// LegalDebug::debug( [
-		// 	'lang' => $lang,
+		LegalDebug::debug( [
+			'lang' => $lang,
 
-		// 	'details' => $details,
+			// 'details' => $details,
 
-		// 	'languages' => $languages,
-		// ] );
+			'languages' => $languages,
+		] );
 
 		return self::parse_languages( self::search_language( $languages, $lang ) );
 	}
