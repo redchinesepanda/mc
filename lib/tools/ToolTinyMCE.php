@@ -20,12 +20,15 @@ class ToolTinyMCE
     }
 
 	const CSS = [
-        'legal-tinymce' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce.css',
+        'legal-tinymce-overview' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-overview.css',
+
+        'legal-tinymce-table' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-table.css',
     ];
 
 	public static function editor_styles() {
-
-		add_editor_style( self::CSS[ 'legal-tinymce' ] );
+		foreach ( self::CSS as $style ) {
+			add_editor_style( $style );
+		}
 	}
 
 	public static function table_classes( $settings )
