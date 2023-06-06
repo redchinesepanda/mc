@@ -149,7 +149,7 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'condition' => 'bonus not empty, permission_title or permission_last ',
 
-					'bonus' => $bonus,
+					// 'bonus' => $bonus,
 
 					'replace' => $replace,
 				] );
