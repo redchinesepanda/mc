@@ -103,6 +103,8 @@ class BaseHeader
 		LegalDebug::debug( [
 			'lang' => $lang,
 
+			'details' => $details,
+
 			'languages' => $languages,
 		] );
 
