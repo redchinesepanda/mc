@@ -8,3 +8,12 @@
 
 	border-left: 2px solid rgb(89, 151, 227);
 }
+
+/* FAQ */
+
+#tinymce .legal-faq-title {
+	padding: 10px 20px;
+	
+	background-color: rgb(239, 245, 251);
+	border-radius: 20px;
+}
