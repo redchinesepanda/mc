@@ -24,3 +24,20 @@
 #tinymce .legal-faq-description {
 	border: 2px solid rgb(239, 245, 251);
 }
+
+/* Billet */
+
+#tinymce .legal-billet.legal-bonus-title {
+	font-weight: 600;
+	line-height: 27.6px;
+}
+
+#tinymce .legal-billet.legal-bonus-description {
+	text-align: justify;
+}
+
+#tinymce .legal-billet.legal-bonus-title,
+#tinymce .legal-billet.legal-bonus-description {
+	padding: 20px;
+	background-color: rgb(239, 245, 251);
+}
