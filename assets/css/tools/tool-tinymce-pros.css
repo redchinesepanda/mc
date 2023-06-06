@@ -39,10 +39,14 @@
 	background-image: url( '../../img/review/review-cons-cross.svg' );
 }
 
+#tinymce p.legal-pros + ul.legal-content::before,
 #tinymce .legal-pros + .legal-content li::before,
 #tinymce .legal-cons + .legal-content li::before {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
 	list-style-image: none;
+	margin-bottom: -6px;
+	content: '';
+	display: inline-block;
 }
