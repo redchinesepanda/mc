@@ -30,7 +30,7 @@
 	list-style: none;
 }
 
-#tinymce .legal-pros + .legal-content li::before {
+#tinymce p.legal-pros + ul.legal-content li::before {
 	background-image: url( '../../img/review/review-pros-check.svg' );
 }
 
