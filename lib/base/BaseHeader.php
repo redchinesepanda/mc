@@ -70,13 +70,26 @@ class BaseHeader
 		} );
 	}
 
+	public static function parse_languages( $languages )
+	{
+		$items = [];
+
+		foreach ( $languages as $language ) {
+			$item[ 'title' ] = $language[ 'code' ];
+
+			$item[ 'href' ] = $language[ 'url' ];
+		}
+
+		return $items;
+	}
+
 	public static function get_menu_language_items()
 	{
 		$lang = WPMLMain::current_language();
 
 		$languages = WPMLMain::get_all_languages();
 
-		return self::search_language( $languages, $lang );
+		return self::parse_languages( self::search_language( $languages, $lang ) );
 	}
 
 	// public static function get_menu_items()
@@ -166,6 +179,8 @@ class BaseHeader
 		foreach ( $keys as $key ) {
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
+
+		$items = array_merge( $items, self::get_menu_language_items() );
 
 		return $items;
 	}
