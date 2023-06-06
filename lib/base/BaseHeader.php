@@ -76,49 +76,39 @@ class BaseHeader
 
 		$languages = WPMLMain::get_all_languages();
 
-		// $countries = self::search_language( $languages, $lang );
-
-		// LegalDebug::debug( [
-		// 	'lang' => $lang,
-
-		// 	// 'languages' => $languages,
-
-		// 	'countries' => $countries,
-		// ] );
-
 		return self::search_language( $languages, $lang );
 	}
 
-	public static function get_menu_items()
-	{
-		self::get_menu_language_items();
+	// public static function get_menu_items()
+	// {
+	// 	self::get_menu_language_items();
 
-		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
+	// 	$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		if ( empty( $menu_items ) ) {
-			return null;
-		}
+	// 	if ( empty( $menu_items ) ) {
+	// 		return null;
+	// 	}
 
-		$items = [];
+	// 	$items = [];
 
-		foreach ( $menu_items as $menu_item ) {
-			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
+	// 	foreach ( $menu_items as $menu_item ) {
+	// 		$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
 			
-			if( $item_class ) {
-				$item_class_elements = explode( '-', $item_class );
+	// 		if( $item_class ) {
+	// 			$item_class_elements = explode( '-', $item_class );
 
-				$items[] = [
-					'class' => $item_class,
+	// 			$items[] = [
+	// 				'class' => $item_class,
 
-					'url-part' => end( $item_class_elements ),
-				];
-			}
-		}
+	// 				'url-part' => end( $item_class_elements ),
+	// 			];
+	// 		}
+	// 	}
 
-		return $items;
-	}
+	// 	return $items;
+	// }
 	
 	const LOCATION = 'legal-main';
 
