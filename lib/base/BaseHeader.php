@@ -60,10 +60,19 @@ class BaseHeader
 		return implode( ' ', $style );
 	}
 
+	public static function get_menu_language_items()
+	{
+		$languages = WPMLMain::get_all_languages();
+
+		$items = $languages;
+
+		return $items;
+	}
+
 	public static function get_menu_items()
 	{
 		LegalDebug::debug( [
-			'get_all_languages' => WPMLMain::get_all_languages(),
+			'get_menu_language_items' => self::get_menu_language_items(),
 		] );
 
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
