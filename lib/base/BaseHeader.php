@@ -72,9 +72,9 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		LegalDebug::debug( [
-			'languages' => $languages,
-		] );
+		// LegalDebug::debug( [
+		// 	'languages' => $languages,
+		// ] );
 
 		$item = [
 			'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
@@ -114,7 +114,15 @@ class BaseHeader
 
 		$languages = WPMLMain::get_all_languages();
 
-		return self::parse_languages( self::search_language( $languages, $lang ) );
+		$search = self::search_language( $languages, $lang );
+
+		$parse = self::parse_languages( $search );
+
+		LegalDebug::debug( [
+			'parse' => $parse,
+		] );
+
+		return $parse;
 	}
 
 	// public static function get_menu_items()
