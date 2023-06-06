@@ -72,20 +72,31 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		// LegalDebug::debug( [
-		// 	'languages' => $languages,
-		// ] );
+		LegalDebug::debug( [
+			'languages' => $languages,
+		] );
 
-		$items = [];
+		$item = [
+			'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
+
+			'href' => '#',
+
+			'children' => [],
+		];
 
 		foreach ( $languages as $language ) {
-			$items[] = [
+			$items[ 'children' ][] = [
 				'title' => $language[ 'code' ],
 
 				'href' => $language[ 'url' ],
 			];
 		}
-		
+
+		$items[ 'children' ][] = [
+			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
+
+			'href' => '/choose-your-country/',
+		];
 
 		return $items;
 	}
