@@ -1,10 +1,3 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-?>
 <?php if ( !empty( $args ) ) : ?>
 	<div class="legal-header">
 		<a class="legal-logo" href="/">
@@ -12,12 +5,6 @@
 		</a>
 		<div class="legal-header-control">
 		</div>
-		<?php if ( !empty( $args[ 'items' ] ) ) : ?>
-			<div class="header-menu">
-				<?php foreach( $args[ 'items' ] as $item ) : ?>
-					<?php echo BaseHeader::render_item( $item ); ?>
-				<?php endforeach; ?>
-			</div>
-		<?php endif; ?>
+		<?php echo $args; ?>
 	</div>
 <?php endif; ?>
