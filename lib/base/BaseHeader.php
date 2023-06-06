@@ -62,6 +62,10 @@ class BaseHeader
 
 	public static function get_menu_items()
 	{
+		LegalDebug::debug( [
+			'get_all_languages' => WPMLMain::get_all_languages(),
+		] );
+
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
