@@ -127,20 +127,84 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Header', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function get()
+	public static function parse( $items, $parents, $key )
+	{
+		$post = $items[ $key ];
+
+		$item[ 'title' ] = $post->title;
+
+		$item[ 'href' ] = $post->url;
+
+		$children = self::array_search_values( $post->ID, $parents );
+
+		if ( !empty( $children ) ) {
+			$child_keys = array_keys( $children );
+
+			foreach ( $child_keys as $child_key) {
+				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
+			}
+		}
+
+		return $item;
+	}
+
+	public static function array_search_values( $m_needle, $a_haystack, $b_strict = false){
+		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
+	}
+
+	public static function get_parents( $menu_items )
+	{
+		return array_map( function( $menu_item ) {
+			return $menu_item->menu_item_parent;
+		}, $menu_items );
+	}
+
+	public static function get_menu_items()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
-			'theme_location' => self::LOCATION,
+		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-			'echo' => false,
+		$menu_item_parents = self::get_parents( $menu_items );
 
-			'container' => false,
+		$parents_top = self::array_search_values( 0, $menu_item_parents );
 
-			'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
-		] ) );
+		$keys = array_keys( $parents_top );
+
+		$items = [];
+
+		foreach ( $keys as $key ) {
+			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
+		}
+
+		return $items;
 	}
+
+	public static function get()
+	{
+		$items = self::get_menu_items();
+
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
+
+		return  $items;
+	}
+
+	// public static function get()
+	// {
+	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+
+	// 	return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
+	// 		'theme_location' => self::LOCATION,
+
+	// 		'echo' => false,
+
+	// 		'container' => false,
+
+	// 		'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
+	// 	] ) );
+	// }
 
 	const FIELD = [
 		'class' => 'menu-item-class',
