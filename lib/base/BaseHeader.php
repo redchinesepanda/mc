@@ -47,15 +47,15 @@ class BaseHeader
 	public static function inline_style() {
 		$style = [];
 
-		// $style_items = self::get_menu_items();
+		$style_items = self::get_menu_items_backup();
 
-		// if ( $style_items == null ) {
-		// 	return '';
-		// }
+		if ( $style_items == null ) {
+			return '';
+		}
 
-		// foreach ( $style_items as $style_item ) {
-		// 	$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
-		// }
+		foreach ( $style_items as $style_item ) {
+			$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+		}
 
 		return implode( ' ', $style );
 	}
@@ -125,36 +125,36 @@ class BaseHeader
 		return $parse;
 	}
 
-	// public static function get_menu_items()
-	// {
-	// 	self::get_menu_language_items();
+	public static function get_menu_items_backup()
+	{
+		self::get_menu_language_items();
 
-	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-	// 	$menu_items = wp_get_nav_menu_items( $menu_id_translated );
+		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-	// 	if ( empty( $menu_items ) ) {
-	// 		return null;
-	// 	}
+		if ( empty( $menu_items ) ) {
+			return null;
+		}
 
-	// 	$items = [];
+		$items = [];
 
-	// 	foreach ( $menu_items as $menu_item ) {
-	// 		$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
+		foreach ( $menu_items as $menu_item ) {
+			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
 			
-	// 		if( $item_class ) {
-	// 			$item_class_elements = explode( '-', $item_class );
+			if( $item_class ) {
+				$item_class_elements = explode( '-', $item_class );
 
-	// 			$items[] = [
-	// 				'class' => $item_class,
+				$items[] = [
+					'class' => $item_class,
 
-	// 				'url-part' => end( $item_class_elements ),
-	// 			];
-	// 		}
-	// 	}
+					'url-part' => end( $item_class_elements ),
+				];
+			}
+		}
 
-	// 	return $items;
-	// }
+		return $items;
+	}
 	
 	const LOCATION = 'legal-main';
 
