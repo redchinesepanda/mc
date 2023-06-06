@@ -51,7 +51,7 @@
 /* Bonus */
 
 #tinymce .legal-bonus.legal-bonus-title {
-	border: 2px 2px 0px 2px solid rgba(0, 0, 0, 0.05);
+	border-width: 2px 2px 0px 2px;
 
 	font-weight: 600;
 	line-height: 31.5px;
@@ -63,6 +63,7 @@
 
 #tinymce .legal-bonus.legal-bonus-content {
 	text-align: justify;
+	border-width: 0px 2px 0px 2px;
 }
 
 #tinymce .legal-bonus.legal-bonus-content,
@@ -70,5 +71,6 @@
 	padding: 15px 30px;
 	margin: 0px 20px;
 
-	border: 0px 2px 0px 2px solid rgba(0, 0, 0, 0.05);
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0.05);
 }
