@@ -93,31 +93,20 @@ class BaseHeader
 		return $item;
 	}
 
-	// public static function get_group_language()
+	// public static function search_language()
 	// {
-	// 	$details = WPMLMain::get_post_language_details();
-		
-	// 	if ( is_wp_error( $details ) ) {
-	// 		return 'en';
-	// 	}
-
-	// 	return substr( $details[ 'locale' ], 0, 2 );
-	// }
-
-	public static function search_language()
-	{
-		$lang = WPMLMain::get_group_language();
+	// 	$lang = WPMLMain::get_group_language();
  
-		$languages = WPMLMain::get_all_languages();
+	// 	$languages = WPMLMain::get_all_languages();
 
-		return WPMLMain::filter_language( $languages, $lang );
-	}
+	// 	return WPMLMain::filter_language( $languages, $lang );
+	// }
 
 	public static function get_menu_language_items()
 	{
 		$code = WPMLMain::current_language();
 		
-		$search[ 'avaible' ] = self::search_language();
+		$search[ 'avaible' ] = WPMLMain::search_language();
 
 		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 

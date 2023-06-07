@@ -29,9 +29,18 @@ class WPMLMain
         return $languages;
     }
 
+    public static function search_language()
+	{
+		$lang = self::get_group_language();
+ 
+		$languages = self::get_all_languages();
+
+		return self::filter_language( $languages, $lang );
+	}
+
     public static function get_group_language()
 	{
-		$details = WPMLMain::get_post_language_details();
+		$details = self::get_post_language_details();
 		
 		if ( is_wp_error( $details ) ) {
 			return 'en';
