@@ -152,7 +152,7 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_items = array_merge( self::search_language() );
+		$menu_items = array_merge( $menu_items, self::search_language() );
 
 		if ( empty( $menu_items ) ) {
 			return null;
