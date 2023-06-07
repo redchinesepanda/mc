@@ -69,7 +69,7 @@ class BaseFooter
 
 		$menu_item_parents = self::get_parents( $menu_items );
 
-		$parents_top = self::array_search_values( 0, $menu_item_parents );
+		$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
 
 		$keys = array_keys( $parents_top );
 
