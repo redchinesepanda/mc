@@ -178,7 +178,7 @@ class BaseHeader
 
 			'href' => $post->url,
 
-			'class' = '',
+			'class' => '',
 		];
 
 		$children = self::array_search_values( $post->ID, $parents );
