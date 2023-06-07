@@ -82,6 +82,8 @@ class BaseHeader
 			'href' => '#',
 
 			'children' => [],
+
+			'class' => 'menu-item-has-children',
 		];
 
 		foreach ( $languages as $language ) {
@@ -89,6 +91,8 @@ class BaseHeader
 				'title' => $language[ 'native_name' ],
 
 				'href' => $language[ 'url' ],
+
+				'class' => '',
 			];
 		}
 
@@ -96,6 +100,8 @@ class BaseHeader
 			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
 
 			'href' => '/choose-your-country/',
+
+			'class' => '',
 		];
 
 		return $item;
@@ -167,9 +173,13 @@ class BaseHeader
 	{
 		$post = $items[ $key ];
 
-		$item[ 'title' ] = $post->title;
+		$item = [
+			'title' => $post->title,
 
-		$item[ 'href' ] = $post->url;
+			'href' => $post->url,
+
+			'class' = '',
+		];
 
 		$children = self::array_search_values( $post->ID, $parents );
 
@@ -179,6 +189,8 @@ class BaseHeader
 			foreach ( $child_keys as $child_key) {
 				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
 			}
+
+			$item[ 'class' ] = 'menu-item-has-children';
 		}
 
 		return $item;
