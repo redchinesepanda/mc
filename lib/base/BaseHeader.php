@@ -147,6 +147,10 @@ class BaseHeader
 			return null;
 		}
 
+		LegalDebug::debug( [
+			'menu_items' => $menu_items,
+		] );
+
 		$items = [];
 
 		foreach ( $menu_items as $menu_item ) {
@@ -164,7 +168,7 @@ class BaseHeader
 		}
 
 		LegalDebug::debug( [
-			'menu_items' => $menu_items,
+			'items' => $items,
 		] );
 
 		return $items;
