@@ -167,7 +167,7 @@ class BaseHeader
 		foreach ( $menu_items as $menu_item ) {
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
 
-			$item_class = ( $item_class ? $item_class : 'legal-country-' . $menu_item[  ] )
+			$item_class = ( $item_class ? $item_class : 'legal-country-' . $menu_item[ 'code' ] );
 			
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
