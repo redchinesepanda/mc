@@ -41,7 +41,7 @@ class BaseHeader
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter('wp_nav_menu_objects', [ $handler, 'image' ], 10, 2);
+		// add_filter('wp_nav_menu_objects', [ $handler, 'image_backup' ], 10, 2);
     }
 
 	public static function inline_style() {
@@ -137,11 +137,11 @@ class BaseHeader
 
 	public static function get_menu_items_backup()
 	{
-		self::get_menu_language_items();
-
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
+
+		$menu_items[] = self::get_menu_language_items();
 
 		if ( empty( $menu_items ) ) {
 			return null;
@@ -162,6 +162,10 @@ class BaseHeader
 				];
 			}
 		}
+
+		LegalDebug::debug(
+			'menu_items' => $menu_items,
+		);
 
 		return $items;
 	}
@@ -263,20 +267,20 @@ class BaseHeader
 		];
 	}
 
-	public static function get_backup()
-	{
-		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+	// public static function get_backup()
+	// {
+	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-		return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
-			'theme_location' => self::LOCATION,
+	// 	return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
+	// 		'theme_location' => self::LOCATION,
 
-			'echo' => false,
+	// 		'echo' => false,
 
-			'container' => false,
+	// 		'container' => false,
 
-			'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
-		] ) );
-	}
+	// 		'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
+	// 	] ) );
+	// }
 
 	const FIELD = [
 		'class' => 'menu-item-class',
@@ -284,29 +288,29 @@ class BaseHeader
 		'hide' => 'menu-item-hide',
 	];
 
-	function image( $items, $args )
-	{
-		foreach( $items as &$item ) {
-			$item_class = get_field( self::FIELD[ 'class' ], $item );
+	// function image_backup( $items, $args )
+	// {
+	// 	foreach( $items as &$item ) {
+	// 		$item_class = get_field( self::FIELD[ 'class' ], $item );
 			
-			if( $item_class ) {
-				$item->classes[] = 'legal-country';
+	// 		if( $item_class ) {
+	// 			$item->classes[] = 'legal-country';
 
-				$item->classes[] = $item_class;
-			}
+	// 			$item->classes[] = $item_class;
+	// 		}
 
-			$item_hide = get_field( self::FIELD[ 'hide' ], $item );
+	// 		$item_hide = get_field( self::FIELD[ 'hide' ], $item );
 
-			if( !empty( $item_hide ) ) {
-				$item->title = '';
-			}
-		}
+	// 		if( !empty( $item_hide ) ) {
+	// 			$item->title = '';
+	// 		}
+	// 	}
 		
-		return $items;
-	}
+	// 	return $items;
+	// }
 
 	const TEMPLATE = [
-        'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-backup.php',
+        // 'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-backup.php',
 
         'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
@@ -317,7 +321,7 @@ class BaseHeader
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'header-backup' ], false, self::get_backup() );
+        // load_template( self::TEMPLATE[ 'header-backup' ], false, self::get_backup() );
 
         load_template( self::TEMPLATE[ 'header' ], false, self::get() );
 
