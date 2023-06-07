@@ -45,7 +45,7 @@ class BaseHeader
 	public static function inline_style() {
 		$style = [];
 
-		$style_items = self::get_menu_items_all();
+		$style_items = self::get_menu_all();
 
 		if ( $style_items == null ) {
 			return '';
@@ -154,7 +154,7 @@ class BaseHeader
 		return $items;
 	}
 
-	public static function get_menu_items_all()
+	public static function get_menu_all()
 	{
 		return array_merge( self::parse_items(), self::menu_language_parse() );
 	}
