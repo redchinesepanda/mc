@@ -29,6 +29,16 @@ class WPMLMain
         return $languages;
     }
 
+    public static function filter_language( $items, $value )
+	{
+		return array_filter( $items, function( $item ) use ( $value ) {
+			return (
+				strpos( $item[ 'default_locale' ], $value ) !== false
+				&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
+			);
+		} );
+	}
+
 	public static function get_group_language()
 	{
 		$details = WPMLMain::get_post_language_details();

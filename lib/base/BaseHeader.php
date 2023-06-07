@@ -58,16 +58,6 @@ class BaseHeader
 		return implode( ' ', $style );
 	}
 
-	public static function filter_language( $items, $value )
-	{
-		return array_filter( $items, function( $item ) use ( $value ) {
-			return (
-				strpos( $item[ 'default_locale' ], $value ) !== false
-				&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
-			);
-		} );
-	}
-
 	public static function parse_languages( $languages )
 	{
 		$item = [
@@ -103,20 +93,13 @@ class BaseHeader
 		return $item;
 	}
 
-	// public static function get_group_language()
-	// {
-	// 	$details = WPMLMain::get_post_language_details();
-
-	// 	return substr( $details[ 'locale' ], 0, 2 );
-	// }
-
 	public static function search_language()
 	{
 		$lang = WPMLMain::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
 
-		return self::filter_language( $languages, $lang );
+		return WPMLMain::filter_language( $languages, $lang );
 	}
 
 	public static function get_menu_language_items()
