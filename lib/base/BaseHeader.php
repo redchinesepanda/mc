@@ -83,8 +83,10 @@ class BaseHeader
 		];
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
+			$title = ( $language[ 'code' ] == 'en' ? __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . $language[ 'native_name' ] : 'UK' )
+
 			$item[ 'children' ][] = [
-				'title' => __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . $language[ 'native_name' ],
+				'title' => $title,
 
 				'href' => $language[ 'url' ],
 
