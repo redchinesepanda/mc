@@ -31,7 +31,7 @@ class BaseMain
     {
         $lang = WPMLMain::current_language();
 
-        $permission_lang = in_array( $lang, [ 'ke', 'ro', 'en', 'ng' ] );
+        $permission_lang = in_array( $lang, [ 'ke', 'ro', 'en', 'ng', 'mx' ] );
         
         return $permission_lang;
     }
