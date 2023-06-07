@@ -233,20 +233,13 @@ class BaseHeader
 		return $item;
 	}
 
-	public static function get_parents( $menu_items )
-	{
-		return array_map( function( $menu_item ) {
-			return $menu_item->menu_item_parent;
-		}, $menu_items );
-	}
-
 	public static function get_menu_items()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_item_parents = self::get_parents( $menu_items );
+		$menu_item_parents = ToolMenu::get_parents( $menu_items );
 
 		$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
 
