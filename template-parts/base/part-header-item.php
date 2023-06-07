@@ -6,7 +6,7 @@
 		<?php if ( !empty( $args[ 'children' ] ) ) : ?>
 			<div class="sub-menu">
 				<?php foreach( $args[ 'children' ] as $item ) : ?>
-					<?php echo BaseFooter::render_item( $item ); ?>
+					<?php echo BaseHeader::render_item( $item ); ?>
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
