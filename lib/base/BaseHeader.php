@@ -99,7 +99,7 @@ class BaseHeader
 
 		try {
 			$details = WPMLMain::get_post_language_details();
-		} catch ( e ) {
+		} catch ( $e ) {
 			LegalDebug::debug( [
 				'action' => 'catch',
 			] );
