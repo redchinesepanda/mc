@@ -79,7 +79,7 @@ class BaseHeader
 
 			'children' => [],
 
-			'class' => 'menu-item-has-children legal-country legal-country-' . $language[ 'current' ][ 'code' ],
+			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 		];
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
