@@ -1,7 +1,7 @@
 /* FAQ Display */
 
 /* .faq .faq-item-content:not( .legal-active ), */
-.tcb-post-content .legal-faq-description:not( .legal-active ) {
+.tcb-post-content .legal-faq-description.legal-active {
 	display: none;
 }
 
