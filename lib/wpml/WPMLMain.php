@@ -41,7 +41,11 @@ class WPMLMain
 
 	public static function get_group_language()
 	{
-		$details = self::get_post_language_details();
+		$details = WPMLMain::get_post_language_details();
+
+        LegalDebug::debug( [
+            'details' => $details,
+        ] );
 
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
