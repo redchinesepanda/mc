@@ -114,7 +114,7 @@ class BaseHeader
 
 	public static function search_language()
 	{
-		lang = self::get_group_language();
+		$lang = self::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
 
