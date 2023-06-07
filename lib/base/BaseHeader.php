@@ -99,7 +99,7 @@ class BaseHeader
 
 				'url-part' => $language[ 'code' ],
 			];
-		}
+		} 
 
 		$items[] = [
 			'class' => 'legal-country-all',
