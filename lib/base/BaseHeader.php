@@ -37,7 +37,7 @@ class BaseHeader
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
@@ -97,7 +97,13 @@ class BaseHeader
 	{
 		// $post = get_post();
 
-        $details = WPMLMain::get_post_language_details();
+		try {
+			$details = WPMLMain::get_post_language_details();
+		} catch () {
+
+		}
+
+        
 
 		global $post;
 
@@ -112,6 +118,8 @@ class BaseHeader
 
 			'details' => $details,
 		] );
+
+		$group_language = 
 
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
