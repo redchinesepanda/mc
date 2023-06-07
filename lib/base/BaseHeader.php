@@ -95,19 +95,11 @@ class BaseHeader
 
 	public static function get_group_language()
 	{
-		// $post = get_post();
-
-		try {
-			$details = WPMLMain::get_post_language_details();
-
-			return substr( $details[ 'locale' ], 0, 2 );
-		} catch ( Exception $e ) {
-			LegalDebug::debug( [
-				'action' => 'catch',
-			] );
-
+		if ( is_wp_error() ) {
 			return 'en';
 		}
+
+		$details = WPMLMain::get_post_language_details();
 
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
