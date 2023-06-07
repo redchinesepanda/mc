@@ -84,7 +84,7 @@ class BaseHeader
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$item[ 'children' ][] = [
-				'title' => __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . $language[ 'native_name' ],
+				'title' => __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . $language[ 'native_name' ],
 
 				'href' => $language[ 'url' ],
 
@@ -126,11 +126,9 @@ class BaseHeader
 
 		$parse = self::parse_languages( $search );
 
-		// LegalDebug::debug( [
-		// 	'current' => $current,
-
-		// 	'search' => $search,
-		// ] );
+		LegalDebug::debug( [
+			'search' => $search,
+		] );
 
 		return $parse;
 	}
