@@ -101,6 +101,12 @@ class BaseHeader
 			];
 		}
 
+		$items[] = [
+			'class' => 'legal-country-all',
+
+			'url-part' => 'all',
+		];
+
 		return $items;
 	}
 
