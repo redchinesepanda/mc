@@ -84,6 +84,10 @@ class BaseHeader
 			}
 		}
 
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
+
 		return $items;
 	}
 
