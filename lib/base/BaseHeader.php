@@ -123,7 +123,7 @@ class BaseHeader
 		] );
 
 		$lang = self::get_group_language();
-
+ 
 		$languages = WPMLMain::get_all_languages();
 
 		return WPMLMain::filter_language( $languages, $lang );
