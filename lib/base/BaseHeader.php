@@ -40,8 +40,6 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-		// add_filter('wp_nav_menu_objects', [ $handler, 'image_backup' ], 10, 2);
     }
 
 	public static function inline_style() {
@@ -124,12 +122,6 @@ class BaseHeader
 	public static function get_menu_language_items()
 	{
 		$code = WPMLMain::current_language();
-
-		// $lang = self::get_group_language();
-
-		// $languages = WPMLMain::get_all_languages();
-
-		// $search[ 'avaible' ] = self::filter_language( $languages, $lang );
 		
 		$search[ 'avaible' ] = self::search_language();
 
@@ -138,10 +130,6 @@ class BaseHeader
 		unset( $search[ 'avaible' ][ $code ] );
 
 		$parse = self::parse_languages( $search );
-
-		// LegalDebug::debug( [
-		// 	'search' => $search,
-		// ] );
 
 		return $parse;
 	}
@@ -285,29 +273,10 @@ class BaseHeader
 	{
 		$items = self::get_menu_items();
 
-		// LegalDebug::debug( [
-		// 	'items' => $items,
-		// ] );
-
 		return [
 			'items' => $items,
 		];
 	}
-
-	// public static function get_backup()
-	// {
-	// 	$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
-
-	// 	return str_replace( [ 'li', 'ul' ], 'div', wp_nav_menu( [
-	// 		'theme_location' => self::LOCATION,
-
-	// 		'echo' => false,
-
-	// 		'container' => false,
-
-	// 		'items_wrap' => '<div id="%1$s" class="legal-menu">%3$s</div>',
-	// 	] ) );
-	// }
 
 	const FIELD = [
 		'class' => 'menu-item-class',
@@ -315,30 +284,7 @@ class BaseHeader
 		'hide' => 'menu-item-hide',
 	];
 
-	// function image_backup( $items, $args )
-	// {
-	// 	foreach( $items as &$item ) {
-	// 		$item_class = get_field( self::FIELD[ 'class' ], $item );
-			
-	// 		if( $item_class ) {
-	// 			$item->classes[] = 'legal-country';
-
-	// 			$item->classes[] = $item_class;
-	// 		}
-
-	// 		$item_hide = get_field( self::FIELD[ 'hide' ], $item );
-
-	// 		if( !empty( $item_hide ) ) {
-	// 			$item->title = '';
-	// 		}
-	// 	}
-		
-	// 	return $items;
-	// }
-
 	const TEMPLATE = [
-        // 'header-backup' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-backup.php',
-
         'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
 		'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
@@ -347,8 +293,6 @@ class BaseHeader
     public static function render()
     {
         ob_start();
-
-        // load_template( self::TEMPLATE[ 'header-backup' ], false, self::get_backup() );
 
         load_template( self::TEMPLATE[ 'header' ], false, self::get() );
 
