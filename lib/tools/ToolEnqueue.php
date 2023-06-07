@@ -14,7 +14,7 @@ class ToolEnqueue
 
                 $ver = $item[ 'ver' ];
             }
-            wp_enqueue_style( $name, $path, [], false );
+            wp_enqueue_style( $name, $path, [], $ver );
         }
     }
 
