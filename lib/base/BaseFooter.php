@@ -33,10 +33,6 @@ class BaseFooter
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function array_search_values( $m_needle, $a_haystack, $b_strict = false){
-		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
-	}
-
 	public static function parse( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
@@ -44,8 +40,8 @@ class BaseFooter
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
-
-		$children = self::array_search_values( $post->ID, $parents );
+		
+		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
 			$child_keys = array_keys( $children );

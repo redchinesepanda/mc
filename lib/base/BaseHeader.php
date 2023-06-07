@@ -103,16 +103,16 @@ class BaseHeader
 		return $item;
 	}
 
-	public static function get_group_language()
-	{
-		$details = WPMLMain::get_post_language_details();
+	// public static function get_group_language()
+	// {
+	// 	$details = WPMLMain::get_post_language_details();
 
-		return substr( $details[ 'locale' ], 0, 2 );
-	}
+	// 	return substr( $details[ 'locale' ], 0, 2 );
+	// }
 
 	public static function search_language()
 	{
-		$lang = self::get_group_language();
+		$lang = WPMLMain::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
 
@@ -218,7 +218,7 @@ class BaseHeader
 			$item[ 'title' ] = '';
 		}
 
-		$children = self::array_search_values( $post->ID, $parents );
+		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
 			$child_keys = array_keys( $children );
@@ -231,10 +231,6 @@ class BaseHeader
 		}
 
 		return $item;
-	}
-
-	public static function array_search_values( $m_needle, $a_haystack, $b_strict = false){
-		return array_intersect_key( $a_haystack, array_flip( array_keys( $a_haystack, $m_needle, $b_strict)));
 	}
 
 	public static function get_parents( $menu_items )
@@ -252,7 +248,7 @@ class BaseHeader
 
 		$menu_item_parents = self::get_parents( $menu_items );
 
-		$parents_top = self::array_search_values( 0, $menu_item_parents );
+		$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
 
 		$keys = array_keys( $parents_top );
 
