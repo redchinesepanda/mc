@@ -99,29 +99,15 @@ class BaseHeader
 
 		try {
 			$details = WPMLMain::get_post_language_details();
+
+			return substr( $details[ 'locale' ], 0, 2 );
 		} catch ( Exception $e ) {
 			LegalDebug::debug( [
 				'action' => 'catch',
 			] );
+
+			return 'en';
 		}
-
-        
-
-		global $post;
-
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::get_group_language',
-
-			'post' => ( !empty( $post ) ? $post->ID : 'null' ),
-
-			'get_the_ID' => get_the_ID(),
-
-			'get_queried_object_id' => get_queried_object_id(),
-
-			'details' => $details,
-		] );
-
-		$group_language = 
 
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
