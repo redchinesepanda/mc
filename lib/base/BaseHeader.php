@@ -104,7 +104,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'function' => 'BaseHeader::get_group_language',
 
-			'post' => ( !empty( $post ) ? $post : 'null' ),
+			'post' => ( !empty( $post ) ? $post->ID : 'null' ),
 
 			'get_the_ID' => get_the_ID(),
 
