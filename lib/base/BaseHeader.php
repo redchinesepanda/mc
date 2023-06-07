@@ -181,6 +181,20 @@ class BaseHeader
 			'class' => '',
 		];
 
+		$post_class = get_field( self::FIELD[ 'class' ], $post );
+			
+		if( $post_class ) {
+			$item[ 'class' ] .= ' legal-country';
+
+			$item[ 'class' ] .= ' ' . $item_class;
+		}
+
+		$post_hide = get_field( self::FIELD[ 'hide' ], $post );
+
+		if( !empty( $post_hide ) ) {
+			$item[ 'title' ] = '';
+		}
+
 		$children = self::array_search_values( $post->ID, $parents );
 
 		if ( !empty( $children ) ) {
@@ -190,7 +204,7 @@ class BaseHeader
 				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
 			}
 
-			$item[ 'class' ] = 'menu-item-has-children';
+			$item[ 'class' ] .= ' menu-item-has-children';
 		}
 
 		return $item;
