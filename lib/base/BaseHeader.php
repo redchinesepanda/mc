@@ -93,9 +93,16 @@ class BaseHeader
 		return $item;
 	}
 
+	public static function get_group_language()
+	{
+        $details = WPMLMain::get_post_language_details();
+
+		return substr( $details[ 'locale' ], 0, 2 );
+	}
+
 	public static function search_language()
 	{
-		$lang = WPMLMain::get_group_language();
+		$lang = self::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
 
