@@ -163,9 +163,9 @@ class BaseHeader
 			}
 		}
 
-		LegalDebug::debug(
+		LegalDebug::debug( [
 			'menu_items' => $menu_items,
-		);
+		] );
 
 		return $items;
 	}
