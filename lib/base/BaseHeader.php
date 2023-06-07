@@ -95,26 +95,26 @@ class BaseHeader
 
 	public static function get_group_language()
 	{
+        $details = WPMLMain::get_post_language_details();
+
 		LegalDebug::debug( [
 			'function' => 'BaseHeader::get_group_language',
-		] );
 
-        $details = WPMLMain::get_post_language_details();
+			'details' => $details,
+		] );
 
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
 
 	public static function search_language()
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::search_language',
+		] );
+
 		$lang = self::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
-
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::search_language',
-
-			'lang' => $lang,
-		] );
 
 		return WPMLMain::filter_language( $languages, $lang );
 	}
