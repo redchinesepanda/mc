@@ -148,7 +148,7 @@ class BaseHeader
 
 	public static function menu_language_parse()
 	{
-		$languages = self::search_language();
+		$languages = WPMLMain::search_language();
 
 		$items = [];
 
