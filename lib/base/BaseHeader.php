@@ -95,6 +95,10 @@ class BaseHeader
 
 	public static function get_group_language()
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::get_group_language',
+		] );
+
         $details = WPMLMain::get_post_language_details();
 
 		return substr( $details[ 'locale' ], 0, 2 );
