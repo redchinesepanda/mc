@@ -194,13 +194,7 @@ class BaseHeader
 
 	public static function get_menu_items_all()
 	{
-		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
-
-		$menu_items = self::menu_items_parse();
-
-		$items = array_merge( $items, self::menu_language_parse() );
-
-		return $items;
+		return array_merge( self::menu_items_parse(), self::menu_language_parse() );
 	}
 	
 	const LOCATION = 'legal-main';
