@@ -219,6 +219,10 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
+		if ( !$menu_items ) {
+			return [];
+		}
+
 		$menu_item_parents = ToolMenu::get_parents( $menu_items );
 
 		$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
