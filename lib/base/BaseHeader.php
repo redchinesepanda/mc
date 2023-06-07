@@ -93,16 +93,7 @@ class BaseHeader
 		return $item;
 	}
 
-	// public static function search_language()
-	// {
-	// 	$lang = WPMLMain::get_group_language();
- 
-	// 	$languages = WPMLMain::get_all_languages();
-
-	// 	return WPMLMain::filter_language( $languages, $lang );
-	// }
-
-	public static function get_menu_language_items()
+	public static function get_menu_languages()
 	{
 		$code = WPMLMain::current_language();
 		
@@ -233,10 +224,8 @@ class BaseHeader
 		foreach ( $keys as $key ) {
 			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
 		}
-
-		// $items = array_merge( $items, [ self::get_menu_language_items() ] );
 		
-		$items[] = self::get_menu_language_items();
+		$items[] = self::get_menu_languages();
 
 		return $items;
 	}
