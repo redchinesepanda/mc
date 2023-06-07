@@ -45,7 +45,7 @@ class BaseHeader
 	public static function inline_style() {
 		$style = [];
 
-		$style_items = self::get_menu_all();
+		$style_items = self::parse_all_inline();
 
 		if ( $style_items == null ) {
 			return '';
@@ -108,7 +108,7 @@ class BaseHeader
 		return $parse;
 	}
 
-	public static function parse_items()
+	public static function parse_items_inline()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
@@ -137,7 +137,7 @@ class BaseHeader
 		return $items;
 	}
 
-	public static function menu_language_parse()
+	public static function parse_languages_inline()
 	{
 		$languages = WPMLMain::search_language();
 
@@ -154,9 +154,9 @@ class BaseHeader
 		return $items;
 	}
 
-	public static function get_menu_all()
+	public static function parse_all_inline()
 	{
-		return array_merge( self::parse_items(), self::menu_language_parse() );
+		return array_merge( self::parse_items_inline(), self::parse_languages_inline() );
 	}
 	
 	const LOCATION = 'legal-main';
