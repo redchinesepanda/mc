@@ -64,6 +64,10 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
+		if ( empty( $menu_items ) ) {
+			return [];
+		}
+
 		$items = [];
 
 		foreach ( $menu_items as $menu_item ) {
