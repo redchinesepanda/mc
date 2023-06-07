@@ -72,23 +72,17 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		// LegalDebug::debug( [
-		// 	'languages' => $languages,
-		// ] );
-
 		$item = [
-			// 'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
-			
 			'title' => '',
 
 			'href' => '#',
 
 			'children' => [],
 
-			'class' => 'menu-item-has-children legal-country legal-country-' . 'ke',
+			'class' => 'menu-item-has-children legal-country legal-country-' . $language[ 'current' ][ 'code' ],
 		];
 
-		foreach ( $languages as $language ) {
+		foreach ( $languages[ 'avaible' ] as $language ) {
 			$item[ 'children' ][] = [
 				'title' => $language[ 'native_name' ],
 
@@ -124,19 +118,19 @@ class BaseHeader
 
 		$languages = WPMLMain::get_all_languages();
 
-		$current = $languages[ $code ];
+		$search[ 'avaible' ] = self::search_language( $languages, $lang );
 
-		$avaible = array_diff( $languages, [ $current ] );
+		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
-		$search = self::search_language( $languages, $lang );
+		unset( $search[ 'avaible' ][ $code ] );
 
 		$parse = self::parse_languages( $search );
 
-		LegalDebug::debug( [
-			'current' => $current,
+		// LegalDebug::debug( [
+		// 	'current' => $current,
 
-			'search' => $search,
-		] );
+		// 	'search' => $search,
+		// ] );
 
 		return $parse;
 	}
