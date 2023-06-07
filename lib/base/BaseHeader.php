@@ -186,7 +186,7 @@ class BaseHeader
 		if( $post_class ) {
 			$item[ 'class' ] .= ' legal-country';
 
-			$item[ 'class' ] .= ' ' . $item_class;
+			$item[ 'class' ] .= ' ' . $post_class;
 		}
 
 		$post_hide = get_field( self::FIELD[ 'hide' ], $post );
