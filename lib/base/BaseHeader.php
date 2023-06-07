@@ -85,7 +85,7 @@ class BaseHeader
 
 			'children' => [],
 
-			'class' => 'menu-item-has-children legal-country-' . 'ke',
+			'class' => 'menu-item-has-children legal-country legal-country-' . 'ke',
 		];
 
 		foreach ( $languages as $language ) {
@@ -94,7 +94,7 @@ class BaseHeader
 
 				'href' => $language[ 'url' ],
 
-				'class' => 'legal-country-' . $language[ 'code' ],
+				'class' => 'legal-country legal-country-' . $language[ 'code' ],
 			];
 		}
 
@@ -103,7 +103,7 @@ class BaseHeader
 
 			'href' => '/choose-your-country/',
 
-			'class' => 'legal-country-all',
+			'class' => 'legal-country legal-country-all',
 		];
 
 		return $item;
