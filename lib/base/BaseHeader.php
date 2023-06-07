@@ -77,13 +77,15 @@ class BaseHeader
 		// ] );
 
 		$item = [
-			'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
+			// 'title' => __( 'Language Switcher', ToolLoco::TEXTDOMAIN ),
+			
+			'title' => '',
 
 			'href' => '#',
 
 			'children' => [],
 
-			'class' => 'menu-item-has-children',
+			'class' => 'menu-item-has-children legal-country-' . 'ke',
 		];
 
 		foreach ( $languages as $language ) {
@@ -92,7 +94,7 @@ class BaseHeader
 
 				'href' => $language[ 'url' ],
 
-				'class' => '',
+				'class' => 'legal-country-' . $language[ 'code' ],
 			];
 		}
 
@@ -101,7 +103,7 @@ class BaseHeader
 
 			'href' => '/choose-your-country/',
 
-			'class' => '',
+			'class' => 'legal-country-all',
 		];
 
 		return $item;
