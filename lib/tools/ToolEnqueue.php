@@ -4,8 +4,17 @@ class ToolEnqueue
 {
     public static function register_style( $styles = [] )
     {
-        foreach ( $styles as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        foreach ( $styles as $name => $item ) {
+            $path = $item;
+
+            $ver = false;
+
+            if ( is_array( $item ) ) {
+                $path = $item[ 'path' ];
+
+                $ver = $item[ 'ver' ];
+            }
+            wp_enqueue_style( $name, $path, [], false );
         }
     }
 

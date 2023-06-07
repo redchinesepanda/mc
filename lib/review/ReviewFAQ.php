@@ -3,7 +3,11 @@
 class ReviewFAQ
 {
     const CSS = [
-        'review-faq' => LegalMain::LEGAL_URL . '/assets/css/review/review-faq.css',
+        'review-faq' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-faq.css',
+            
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style()
