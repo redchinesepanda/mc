@@ -47,7 +47,7 @@ class BaseHeader
 	public static function inline_style() {
 		$style = [];
 
-		$style_items = self::get_menu_items_backup();
+		$style_items = self::get_menu_items_all();
 
 		if ( $style_items == null ) {
 			return '';
@@ -146,34 +146,20 @@ class BaseHeader
 		return $parse;
 	}
 
-	public static function get_menu_items_backup()
+	public static function menu_items_parse()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_items = array_merge( $menu_items, self::search_language() );
-
 		if ( empty( $menu_items ) ) {
 			return null;
 		}
-
-		// LegalDebug::debug( [
-		// 	'menu_items' => $menu_items,
-		// ] );
 
 		$items = [];
 
 		foreach ( $menu_items as $menu_item ) {
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
-
-			if ( is_array( $menu_item ) && !$item_class ) {
-				$item_class = 'legal-country-' . $menu_item[ 'code' ];
-			}
-
-			LegalDebug::debug( [
-				'item_class' => $item_class,
-			] );
 			
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
@@ -186,9 +172,33 @@ class BaseHeader
 			}
 		}
 
-		LegalDebug::debug( [
-			'items' => $items,
-		] );
+		return $items;
+	}
+
+	public static function menu_language_parse()
+	{
+		$languages = self::search_language();
+
+		$items = [];
+
+		foreach ( $languages as $language ) {
+			$items[] = [
+				'class' => 'legal-country-' . $language[ 'code' ],
+
+				'url-part' => $language[ 'code' ],
+			];
+		}
+
+		return $items;
+	}
+
+	public static function get_menu_items_all()
+	{
+		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
+
+		$menu_items = self::menu_items_parse();
+
+		$items = array_merge( $items, self::menu_language_parse() );
 
 		return $items;
 	}
