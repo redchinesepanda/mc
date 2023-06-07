@@ -33,7 +33,7 @@ class BaseFooter
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function parse( $items, $parents, $key )
+	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
 
@@ -47,7 +47,7 @@ class BaseFooter
 			$child_keys = array_keys( $children );
 
 			foreach ( $child_keys as $child_key) {
-				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
+				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
 			}
 		}
 
@@ -69,7 +69,7 @@ class BaseFooter
 		$items = [];
 
 		foreach ( $keys as $key ) {
-			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
+			$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 		}
 
 		return $items;
