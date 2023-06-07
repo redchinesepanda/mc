@@ -128,9 +128,9 @@ class BaseHeader
 
 		$parse = self::parse_languages( $search );
 
-		LegalDebug::debug( [
-			'search' => $search,
-		] );
+		// LegalDebug::debug( [
+		// 	'search' => $search,
+		// ] );
 
 		return $parse;
 	}
