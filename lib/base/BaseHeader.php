@@ -158,14 +158,18 @@ class BaseHeader
 			return null;
 		}
 
-		LegalDebug::debug( [
-			'menu_items' => $menu_items,
-		] );
+		// LegalDebug::debug( [
+		// 	'menu_items' => $menu_items,
+		// ] );
 
 		$items = [];
 
 		foreach ( $menu_items as $menu_item ) {
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
+
+			LegalDebug::debug( [
+				'item_class' => $item_class,
+			] );
 
 			$item_class = ( $item_class ? $item_class : 'legal-country-' . $menu_item[ 'code' ] );
 			
