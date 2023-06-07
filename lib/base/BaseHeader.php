@@ -106,7 +106,7 @@ class BaseHeader
 
 			'get_the_ID' => get_the_ID(),
 
-			'POST_ID' => POST_ID,
+			'get_queried_object_id' => get_queried_object_id(),
 
 			'details' => $details,
 		] );
