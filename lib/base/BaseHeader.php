@@ -118,16 +118,22 @@ class BaseHeader
 
 	public static function get_menu_language_items()
 	{
+		$code = WPMLMain::current_language();
+
 		$lang = self::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
+
+		$current = $languages[ $code ];
+
+		$avaible = array_diff( $languages, [ $current ] );
 
 		$search = self::search_language( $languages, $lang );
 
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
-			'languages' => $languages,
+			'search' => $search,
 		] );
 
 		return $parse;
