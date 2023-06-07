@@ -29,6 +29,17 @@ class WPMLMain
         return $languages;
     }
 
+    public static function get_group_language()
+	{
+		$details = WPMLMain::get_post_language_details();
+		
+		if ( is_wp_error( $details ) ) {
+			return 'en';
+		}
+
+		return substr( $details[ 'locale' ], 0, 2 );
+	}
+
     public static function filter_language( $items, $value )
 	{
 		return array_filter( $items, function( $item ) use ( $value ) {

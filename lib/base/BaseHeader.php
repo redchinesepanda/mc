@@ -93,20 +93,20 @@ class BaseHeader
 		return $item;
 	}
 
-	public static function get_group_language()
-	{
-		$details = WPMLMain::get_post_language_details();
+	// public static function get_group_language()
+	// {
+	// 	$details = WPMLMain::get_post_language_details();
 		
-		if ( is_wp_error( $details ) ) {
-			return 'en';
-		}
+	// 	if ( is_wp_error( $details ) ) {
+	// 		return 'en';
+	// 	}
 
-		return substr( $details[ 'locale' ], 0, 2 );
-	}
+	// 	return substr( $details[ 'locale' ], 0, 2 );
+	// }
 
 	public static function search_language()
 	{
-		$lang = self::get_group_language();
+		$lang = WPMLMain::get_group_language();
  
 		$languages = WPMLMain::get_all_languages();
 
