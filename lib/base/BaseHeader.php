@@ -60,7 +60,7 @@ class BaseHeader
 		return implode( ' ', $style );
 	}
 
-	public static function search_language( $items, $value )
+	public static function filter_language( $items, $value )
 	{
 		return array_filter( $items, function( $item ) use ( $value ) {
 			return (
@@ -112,15 +112,26 @@ class BaseHeader
 		return substr( $details[ 'locale' ], 0, 2 );
 	}
 
+	public static function search_language()
+	{
+		lang = self::get_group_language();
+
+		$languages = WPMLMain::get_all_languages();
+
+		return self::filter_language( $languages, $lang );
+	}
+
 	public static function get_menu_language_items()
 	{
 		$code = WPMLMain::current_language();
 
-		$lang = self::get_group_language();
+		// $lang = self::get_group_language();
 
-		$languages = WPMLMain::get_all_languages();
+		// $languages = WPMLMain::get_all_languages();
 
-		$search[ 'avaible' ] = self::search_language( $languages, $lang );
+		// $search[ 'avaible' ] = self::filter_language( $languages, $lang );
+		
+		$search[ 'avaible' ] = self::search_language();
 
 		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
@@ -141,7 +152,7 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_items[] = self::get_menu_language_items();
+		$menu_items[] = self::self::search_language();
 
 		if ( empty( $menu_items ) ) {
 			return null;
@@ -155,6 +166,8 @@ class BaseHeader
 
 		foreach ( $menu_items as $menu_item ) {
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
+
+			$item_class = ( $item_class ? $item_class : 'legal-country-' . $menu_item[  ] )
 			
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
