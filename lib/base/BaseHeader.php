@@ -133,6 +133,8 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
+			'current' => $current,
+
 			'search' => $search,
 		] );
 
