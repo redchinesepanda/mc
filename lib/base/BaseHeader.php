@@ -102,6 +102,10 @@ class BaseHeader
 
 	public static function search_language()
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::search_language',
+		] );
+
 		$lang = self::get_group_language();
 
 		$languages = WPMLMain::get_all_languages();
