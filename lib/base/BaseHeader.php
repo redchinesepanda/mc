@@ -84,7 +84,7 @@ class BaseHeader
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$item[ 'children' ][] = [
-				'title' => $language[ 'native_name' ],
+				'title' => __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . $language[ 'native_name' ],
 
 				'href' => $language[ 'url' ],
 
