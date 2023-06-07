@@ -102,7 +102,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'function' => 'BaseHeader::get_group_language',
 
-			'ID' => $post->ID,
+			'post' => $post,
 
 			'details' => $details,
 		] );
