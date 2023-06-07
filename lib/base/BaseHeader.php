@@ -104,6 +104,8 @@ class BaseHeader
 
 			'post' => ( !empty( $post ) ? $post : 'null' ),
 
+			'get_the_ID' => get_the_ID(),
+
 			'details' => $details,
 		] );
 
