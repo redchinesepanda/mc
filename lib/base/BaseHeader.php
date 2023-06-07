@@ -58,56 +58,6 @@ class BaseHeader
 		return implode( ' ', $style );
 	}
 
-	public static function parse_languages( $languages )
-	{
-		$item = [
-			'title' => '',
-
-			'href' => '#',
-
-			'children' => [],
-
-			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
-		];
-
-		foreach ( $languages[ 'avaible' ] as $language ) {
-			$title = __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
-
-			$item[ 'children' ][] = [
-				'title' => $title,
-
-				'href' => $language[ 'url' ],
-
-				'class' => 'legal-country legal-country-' . $language[ 'code' ],
-			];
-		}
-
-		$item[ 'children' ][] = [
-			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
-
-			'href' => '/choose-your-country/',
-
-			'class' => 'legal-country legal-country-all',
-		];
-
-		return $item;
-	}
-
-	public static function get_menu_languages()
-	{
-		$code = WPMLMain::current_language();
-		
-		$search[ 'avaible' ] = WPMLMain::search_language();
-
-		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
-
-		unset( $search[ 'avaible' ][ $code ] );
-
-		$parse = self::parse_languages( $search );
-
-		return $parse;
-	}
-
 	public static function parse_items_inline()
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
@@ -158,6 +108,56 @@ class BaseHeader
 	{
 		return array_merge( self::parse_items_inline(), self::parse_languages_inline() );
 	}
+
+	public static function parse_languages( $languages )
+	{
+		$item = [
+			'title' => '',
+
+			'href' => '#',
+
+			'children' => [],
+
+			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
+		];
+
+		foreach ( $languages[ 'avaible' ] as $language ) {
+			$title = __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
+
+			$item[ 'children' ][] = [
+				'title' => $title,
+
+				'href' => $language[ 'url' ],
+
+				'class' => 'legal-country legal-country-' . $language[ 'code' ],
+			];
+		}
+
+		$item[ 'children' ][] = [
+			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
+
+			'href' => '/choose-your-country/',
+
+			'class' => 'legal-country legal-country-all',
+		];
+
+		return $item;
+	}
+
+	public static function get_menu_languages()
+	{
+		$code = WPMLMain::current_language();
+		
+		$search[ 'avaible' ] = WPMLMain::search_language();
+
+		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
+
+		unset( $search[ 'avaible' ][ $code ] );
+
+		$parse = self::parse_languages( $search );
+
+		return $parse;
+	}
 	
 	const LOCATION = 'legal-main';
 
@@ -166,7 +166,7 @@ class BaseHeader
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Header', ToolLoco::TEXTDOMAIN ) );
 	}
 
-	public static function parse( $items, $parents, $key )
+	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
 
@@ -198,7 +198,7 @@ class BaseHeader
 			$child_keys = array_keys( $children );
 
 			foreach ( $child_keys as $child_key) {
-				$item[ 'children' ][] = self::parse( $items, $parents, $child_key );
+				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
 			}
 
 			$item[ 'class' ] .= ' menu-item-has-children';
@@ -222,7 +222,7 @@ class BaseHeader
 		$items = [];
 
 		foreach ( $keys as $key ) {
-			$items[] = self::parse( $menu_items, $menu_item_parents, $key );
+			$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 		}
 		
 		$items[] = self::get_menu_languages();
