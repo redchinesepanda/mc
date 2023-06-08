@@ -16,11 +16,11 @@ class AdminNotice
 	public static function get()
     {
         return  [
-            'message' => __( 'This is test tite: ', ToolLoco::TEXTDOMAIN ) . get_site_url(),
+            'message' => __( 'This is test tite', ToolLoco::TEXTDOMAIN ) . ': ' . get_site_url(),
 
-            'name' => DB_NAME,
+            'name' => __( 'DB_NAME', ToolLoco::TEXTDOMAIN ) . ': ' . DB_NAME,
 
-            'user' => DB_USER,
+            'user' => __( 'DB_USER', ToolLoco::TEXTDOMAIN ) . ': ' . DB_USER,
         ];
     }
 	
