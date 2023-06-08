@@ -84,6 +84,10 @@ class ReviewAnchors
             }
         }
 
+        LegalDebug::debug( [
+            'items' => $items,
+        ] );
+
         return $items;
     }
 
