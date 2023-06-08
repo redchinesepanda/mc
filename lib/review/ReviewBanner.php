@@ -102,9 +102,9 @@ class ReviewBanner
 
 				$parent = $node->parentNode;
 
-				$parent->parentNode->replaceChild( $item, $parent );
+				// $parent->parentNode->replaceChild( $item, $parent );
 
-				// $body->replaceChild( $item, $node->parentNode );
+				$body->replaceChild( $item, $parent );
 			}
 		}
 
