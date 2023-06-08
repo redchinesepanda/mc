@@ -82,6 +82,10 @@ class ReviewAnchors
             $labels = array_merge( $labels, $custom);
         }
 
+        LegalDebug::debug( [
+            'labels' => $labels,
+        ] );
+
         $items = [];
 
         foreach ( $nodes as $node ) {
