@@ -3,7 +3,11 @@
 class ReviewGallery
 {
     const CSS = [
-        'review-gallery' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery.css',
+        'review-gallery' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery.css',
+
+            'ver' => '1.0.1'
+        ],
     ];
 
     public static function register_style()
