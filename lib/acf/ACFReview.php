@@ -25,15 +25,39 @@ class ACFReview
     {
 		$anchors = ReviewAnchors::get_labels();
 
-		$items[] = __( 'Existing anchors:', ToolLoco::TEXTDOMAIN );
+		$args[ 
+			'title' => __( 'Existing anchors', ToolLoco::TEXTDOMAIN ),
+
+			'id' => __( 'ID', ToolLoco::TEXTDOMAIN ),
+
+			'label' => __( 'Label', ToolLoco::TEXTDOMAIN ),
+		];
 
 		foreach( $anchors as $id => $label ) {
-			$items[] = $id . ' ' . $label;
+			$args[ 'items' ][] = [
+				'id' => $id,
+				'label' => $label,
+			];
 		}
 
-		$field[ 'instructions' ] = implode( '<br />', $items );;
+		$field[ 'instructions' ] = self::render( $args );
 
         return $field;
+    }
+
+	const TEMPLATE = [
+        'anchors' => LegalMain::LEGAL_PATH . '/template-parts/acf/part-anchors.php',
+    ];
+
+    public static function render()
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'anchors' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
