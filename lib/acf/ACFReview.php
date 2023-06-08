@@ -49,10 +49,12 @@ class ACFReview
 		$args = [];
 		
 		foreach( $anchors as $id => $label ) {
-			$args[] = [
-				'id' => $id,
-				'label' => $label,
-			];
+			// $args[] = [
+			// 	'id' => $id,
+			// 	'label' => $label,
+			// ];
+			
+			$args[] = $id . ' ( ' . $label . ')';
 		}
 
 		return $args;
