@@ -32,7 +32,7 @@ class ReviewBanner
 			[
 				'title' => 'Banner',
 				
-				'block' => 'p',
+				'block' => 'p,figure',
 
 				'classes' => self::CSS_CLASS[ 'container' ],
 			],
