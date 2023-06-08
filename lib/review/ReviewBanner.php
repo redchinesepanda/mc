@@ -70,6 +70,10 @@ class ReviewBanner
 			return $content;
 		}
 
+		LegalDebug::debug( [
+			'length' => $nodes->length,
+		] );
+
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
