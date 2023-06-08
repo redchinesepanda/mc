@@ -43,8 +43,6 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		// $nodes = $xpath->query( './/p[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
-		
 		$nodes = $xpath->query( '//body/p[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]/img' );
 
 		return $nodes;
@@ -72,15 +70,7 @@ class ReviewBanner
 			return $content;
 		}
 
-		// $item = null;
-
-		// $last = $nodes->length - 1;
-
-        // $args = [];
-
-        // $container = $dom->createElement( 'div' );
-
-        // $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
+		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $id => $node ) {
 			$src = $node->getAttribute( 'src' );
@@ -88,9 +78,11 @@ class ReviewBanner
 			$attachment_id = attachment_url_to_postid( $src );
 
 			if ( $attachment_id != 0 ) {
-				LegalDebug::debug( [
-					'attachment_id' => $attachment_id,
+				$item = $dom->createElement( 'div' );
 
+				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
+
+				LegalDOM::appendHTML( $item, self::render( [
 					'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
 					
 					'description' => get_field( self::FIELD[ 'description' ], $attachment_id ),
@@ -98,54 +90,10 @@ class ReviewBanner
 					'referal' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
 
 					'src' => $src,
-				] );
+				] ) );
+
+				$body->replaceChild( $item, $node->parentNode );
 			}
-
-            // $class = explode( ' ', $node->getAttribute( 'class' ) );
-
-			// $permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
-
-			// $permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
-
-			// $permission_last = ( $id == $last );
-
-			// if ( $permission_content ) {
-			// 	$node->removeAttribute( 'class' );
-
-            //     $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
-			// }
-
-			// if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
-				
-			// 	LegalDOM::appendHTML( $item, self::render( $args ) );
-
-            //     $container->appendChild( $item );
-
-            //     $item = null;
-			// }
-
-            // if ( $permission_last ) {
-            //     $node->parentNode->replaceChild( $container, $node );
-            // } else {
-            //     $node->parentNode->removeChild( $node );
-            // }
-
-			// if ( $permission_title ) {
-
-			// 	$item = $dom->createElement( 'div' );
-
-            //     $class = self::CSS_CLASS[ 'pros' ];
-
-            //     if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'cons' ] ) !== false ) {
-            //         $class = self::CSS_CLASS[ 'cons' ];
-            //     }
-
-			// 	$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
-
-			// 	$args = [];
-				
-			// 	$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-			// }
 		}
 
 		return $dom->saveHTML();
@@ -155,11 +103,11 @@ class ReviewBanner
 		'review-banner' => LegalMain::LEGAL_PATH . '/template-parts/review/review-banner.php',
 	];
 
-    public static function render()
+    public static function render( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-banner' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'review-banner' ], false, $args );
 
         $output = ob_get_clean();
 
