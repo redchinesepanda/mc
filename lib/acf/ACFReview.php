@@ -23,7 +23,7 @@ class ACFReview
 
     public static function supply_field( $field )
     {
-		$field[ 'instructions' ] = self::render();
+		$field[ 'description' ] = self::render();
 
         return $field;
     }
