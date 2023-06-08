@@ -1,9 +1,17 @@
+@media screen and ( min-width: 768px )
+{
+	/* Display */
+
+	.legal-banner {
+		justify-content: center;
+	}
+}
+
 /* Display */
 
 .legal-banner {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
 	overflow-x: auto;
 }
 
