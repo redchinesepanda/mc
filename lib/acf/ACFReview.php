@@ -25,7 +25,13 @@ class ACFReview
     {
 		$anchors = ReviewAnchors::get_labels();
 
-		$field[ 'instructions' ] = implode( '<br />', $anchors );;
+		$items[] = __( 'Existing anchors:', ToolLoco::TEXTDOMAIN );
+
+		foreach( $anchors as $id => $label ) {
+			$items[] = $id . ' ' . $label;
+		}
+
+		$field[ 'instructions' ] = implode( '<br />', $items );;
 
         return $field;
     }
