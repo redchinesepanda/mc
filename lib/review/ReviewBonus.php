@@ -11,7 +11,7 @@ class ReviewBonus
             'ver' => '1.0.1',
         ],
     ];
-
+ 
     public static function register_style()
     {
 		ReviewMain::register_style( self::CSS );
