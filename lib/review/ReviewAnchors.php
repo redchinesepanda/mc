@@ -72,14 +72,29 @@ class ReviewAnchors
         'label' => 'anchor-label',
     ];
 
+    public static function get_custom()
+    {
+        $custom = get_field( self::FIELD[ 'anchors' ] );
+
+        $items = [];
+
+        if ( $custom ) {
+            foreach ( $custom as $id => $label ) {
+                $items[ $id ] = $label;
+            }
+        }
+
+        return $items;
+    }
+
     public static function get_data( $nodes )
     {
         $labels = self::get_labels();
 
-        $custom = get_field( self::FIELD[ 'anchors' ] );
+        $custom = self::get_custom();
 
-        if ( $custom ) {
-            $labels = array_merge( $labels, $custom);
+        if ( !empty( $custom ) ) {
+            $labels = array_merge( $labels, $custom );
         }
 
         LegalDebug::debug( [
