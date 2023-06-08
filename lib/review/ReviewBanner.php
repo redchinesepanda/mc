@@ -45,7 +45,7 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' ); 
+		$nodes = $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' ); 
 		
 		// $nodes = $xpath->query( '//body/figure[contains(@class, \'wp-caption\')]/img' ); 
 
