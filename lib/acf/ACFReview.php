@@ -18,7 +18,7 @@ class ACFReview
     {
         $handler = new self();
 
-        add_filter( 'acf/load_field/name=' . self::FIELD[ 'anchors' ], [ $handler, 'supply_field' ] );
+        // add_filter( 'acf/load_field/name=' . self::FIELD[ 'anchors' ], [ $handler, 'supply_field' ] );
     }
 
     public static function supply_field( $field )
