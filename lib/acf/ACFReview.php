@@ -29,7 +29,7 @@ class ACFReview
 
 		// $field[ 'instructions' ] = self::render();
 		
-		$field[ 'instructions' ] = implode( '<br />', self::render() );
+		$field[ 'instructions' ] = implode( '<br />', self::get() );
 
         return $field;
     }
