@@ -86,6 +86,10 @@ class ReviewBanner
 
 				$caption = wp_get_attachment_caption( $attachment_id );
 
+				LegalDebug::debug( [
+					'caption' => $caption,
+				] );
+
 				$item = $dom->createElement( 'div' );
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
