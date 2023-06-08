@@ -94,15 +94,15 @@ class ReviewBanner
 
 				$caption = wp_get_attachment_caption( $attachment_id );
 
-				LegalDebug::debug( [
-					'attachment_id' => $attachment_id,
+				// LegalDebug::debug( [
+				// 	'attachment_id' => $attachment_id,
 
-					'caption' => $caption,
+				// 	'caption' => $caption,
 
-					'nodeName' => $node->nodeName,
+				// 	'nodeName' => $node->nodeName,
 
-					'parentNode_nodeName' => $node->parentNode->nodeName,
-				] );
+				// 	'parentNode_nodeName' => $node->parentNode->nodeName,
+				// ] );
 
 				$item = $dom->createElement( 'div' );
 
