@@ -60,9 +60,27 @@ class ReviewAnchors
         ];
     }
 
+    const FIELD = [
+        'about' => 'review-about',
+
+        'anchors' => 'review-anchors',
+    ];
+    
+    const ANCHORS = [
+        'id' => 'anchor-id',
+
+        'label' => 'anchor-label',
+    ];
+
     public static function get_data( $nodes )
     {
         $labels = self::get_labels();
+
+        $custom = get_field( self::FIELD[ 'anchors' ] );
+
+        if ( $custom ) {
+            $labels = array_merge( $labels, $custom);
+        }
 
         $items = [];
 
