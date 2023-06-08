@@ -106,7 +106,11 @@ class ReviewBanner
 
 				$parent = $node->parentNode;
 
-				$body->replaceChild( $item, $parent );
+				try {
+					$body->replaceChild( $item, $parent );
+				} catch ( DOMException $e ) {
+					
+				}
 			}
 		}
 
