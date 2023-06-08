@@ -57,10 +57,10 @@
     background-size: auto;
 }
 
-.tcb-post-content .legal-gallery .legal-left,
+/* .tcb-post-content .legal-gallery .legal-left,
 .tcb-post-content .legal-gallery .legal-right {
     background-color: rgba(0,0,0,0.4);
-}
+} */
 
 .tcb-post-content .legal-gallery .legal-left {
     background-image: url( '../../img/review/review-gallery-left.svg' );
