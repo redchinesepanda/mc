@@ -1,13 +1,6 @@
 /* Display */
 
 .legal-banner {
-	overflow: hidden;
-	width: 100%;
-}
-
-.legal-banner .banner-image {
-	/* display: flex;
-	column-gap: 20px; */
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -16,10 +9,16 @@
 	overflow-x: auto;
 }
 
-.legal-banner .banner-image img {
+.legal-banner .banner-image {
+	/* display: flex;
+	column-gap: 20px; */
 	flex: 0 0 auto;
+}
+
+.legal-banner .banner-image img {
+	
 	/* width: 150px; */
-	height: 150px;
+	/* height: 150px; */
 }
 
 /* Width and height */
