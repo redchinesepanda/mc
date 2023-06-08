@@ -77,23 +77,23 @@ class ReviewBanner
 
 			$attachment_id = attachment_url_to_postid( $src );
 
-			// LegalDebug::debug( [
-			// 	'attachment_id' => $attachment_id,
-			// ] );
-
 			if ( $attachment_id != 0 ) {
 				$item = $dom->createElement( 'div' );
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 				LegalDOM::appendHTML( $item, self::render( [
+					'src' => $src,
+					
 					'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
 					
 					'description' => get_field( self::FIELD[ 'description' ], $attachment_id ),
-					
-					'referal' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
 
-					'src' => $src,
+					'terms' => [
+						'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
+
+						'text' => __( 'Terms and Conditions', ToolLoco::TEXTDOMAIN ),
+					]
 				] ) );
 
 				$parent = $node->parentNode;
