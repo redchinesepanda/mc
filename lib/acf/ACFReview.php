@@ -2,18 +2,6 @@
 
 class ACFReview
 {
-    // const FIELD = [
-	// 	'about' => 'review-about',
-
-	// 	'anchors' => 'review-anchors',
-	// ];
-
-    // const ANCHORS = [
-	// 	'id' => 'anchor-id',
-
-	// 	'label' => 'anchor-label',
-	// ];
-
     public static function register()
     {
         $handler = new self();

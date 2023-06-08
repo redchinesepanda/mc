@@ -43,6 +43,10 @@
 
 /* Review Background */
 
+.tcb-post-content {
+    background-color: #FAFCFE;
+}
+
 .tcb-post-content .legal-contextbox {
     border-left: 2px solid rgb(89, 151, 227);
 }
