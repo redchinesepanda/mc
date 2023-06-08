@@ -23,6 +23,10 @@ class ACFReview
 
     public static function supply_field( $field )
     {
+		LegalDebug::debug( [
+			'$field' => $field,
+		] );
+
 		$field[ 'description' ] = self::render();
 
         return $field;
