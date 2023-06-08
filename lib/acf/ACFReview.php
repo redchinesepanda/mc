@@ -54,7 +54,7 @@ class ACFReview
 			// 	'label' => $label,
 			// ];
 			
-			$args[] = $id . ' ( ' . $label . ')';
+			$args[] = $id . ' ( ' . $label . ' )';
 		}
 
 		return $args;
