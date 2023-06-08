@@ -90,6 +90,8 @@ class ReviewBanner
 					'attachment_id' => $attachment_id,
 
 					'caption' => $caption,
+
+					'nodeName' => $node->nodeName;
 				] );
 
 				$item = $dom->createElement( 'div' );
