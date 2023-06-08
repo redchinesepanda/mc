@@ -94,16 +94,6 @@ class ReviewBanner
 
 				$caption = wp_get_attachment_caption( $attachment_id );
 
-				// LegalDebug::debug( [
-				// 	'attachment_id' => $attachment_id,
-
-				// 	'caption' => $caption,
-
-				// 	'nodeName' => $node->nodeName,
-
-				// 	'parentNode_nodeName' => $node->parentNode->nodeName,
-				// ] );
-
 				$item = $dom->createElement( 'div' );
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
@@ -129,12 +119,8 @@ class ReviewBanner
 						'text' => __( 'Terms and Conditions', ToolLoco::TEXTDOMAIN ),
 					]
 				] ) );
-
-				// $replace = $node;
-
-				// if ( $node->parentNode->nodeName == 'p' ) {
-					$replace = $node->parentNode;
-				// }
+				
+				$replace = $node->parentNode;
 
 				try {
 					$body->replaceChild( $item, $replace );
