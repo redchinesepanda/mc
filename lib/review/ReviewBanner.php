@@ -70,10 +70,6 @@ class ReviewBanner
 			return $content;
 		}
 
-		LegalDebug::debug( [
-			'length' => $nodes->length,
-		] );
-
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
@@ -81,9 +77,9 @@ class ReviewBanner
 
 			$attachment_id = attachment_url_to_postid( $src );
 
-			LegalDebug::debug( [
-				'attachment_id' => $attachment_id,
-			] );
+			// LegalDebug::debug( [
+			// 	'attachment_id' => $attachment_id,
+			// ] );
 
 			if ( $attachment_id != 0 ) {
 				$item = $dom->createElement( 'div' );
@@ -101,8 +97,6 @@ class ReviewBanner
 				] ) );
 
 				$parent = $node->parentNode;
-
-				// $parent->parentNode->replaceChild( $item, $parent );
 
 				$body->replaceChild( $item, $parent );
 			}
