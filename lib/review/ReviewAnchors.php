@@ -74,13 +74,13 @@ class ReviewAnchors
 
     public static function get_custom()
     {
-        $custom = get_field( self::FIELD[ 'anchors' ] );
+        $customs = get_field( self::FIELD[ 'anchors' ] );
 
         $items = [];
 
-        if ( $custom ) {
-            foreach ( $custom as $id => $label ) {
-                $items[ $id ] = $label;
+        if ( $customs ) {
+            foreach ( $customs as $custom ) {
+                $items[ $custom[ self::ANCHORS[ 'id' ] ] ] = $custom[ self::ANCHORS[ 'label' ];
             }
         }
 
