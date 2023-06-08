@@ -87,6 +87,8 @@ class ReviewBanner
 				$caption = wp_get_attachment_caption( $attachment_id );
 
 				LegalDebug::debug( [
+					'attachment_id' => $attachment_id,
+
 					'caption' => $caption,
 				] );
 
