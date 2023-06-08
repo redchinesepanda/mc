@@ -34,7 +34,7 @@ class ReviewBanner
 				
 				// 'block' => 'p',
 
-				'selector' => 'p,figure',
+				'selector' => 'p',
 
 				'classes' => self::CSS_CLASS[ 'container' ],
 			],
@@ -45,7 +45,9 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( '//body/figure[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]/img' ); 
+		// $nodes = $xpath->query( '//body/p[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]/img' ); 
+		
+		$nodes = $xpath->query( '//body/figure[contains(@class, \'wp-caption\')]/img' ); 
 
 		return $nodes;
 	}
