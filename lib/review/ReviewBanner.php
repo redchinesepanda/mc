@@ -72,10 +72,14 @@ class ReviewBanner
 
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
-		foreach ( $nodes as $id => $node ) {
+		foreach ( $nodes as $node ) {
 			$src = $node->getAttribute( 'src' );
 
 			$attachment_id = attachment_url_to_postid( $src );
+
+			LegalDebug::debug( [
+				'attachment_id' => $attachment_id,
+			] );
 
 			if ( $attachment_id != 0 ) {
 				$item = $dom->createElement( 'div' );
