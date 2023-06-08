@@ -17,6 +17,10 @@ class AdminNotice
     {
         return  [
             'message' => __( 'This is test tite: ', ToolLoco::TEXTDOMAIN ) . get_site_url(),
+
+            'name' => DB_NAME,
+
+            'user' => DB_USER,
         ];
     }
 	
