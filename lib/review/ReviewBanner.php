@@ -34,7 +34,7 @@ class ReviewBanner
 				
 				// 'block' => 'p',
 
-				'selector' => 'p,img',
+				'selector' => 'img',
 
 				'classes' => self::CSS_CLASS[ 'container' ],
 			],
