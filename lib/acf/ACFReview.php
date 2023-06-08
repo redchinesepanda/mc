@@ -23,6 +23,13 @@ class ACFReview
 
     public static function supply_field( $field )
     {
+		$field[ 'instructions' ] = self::render();
+
+        return $field;
+    }
+
+	public static function get()
+	{
 		$anchors = ReviewAnchors::get_labels();
 
 		$args = [ 
@@ -40,10 +47,8 @@ class ACFReview
 			];
 		}
 
-		$field[ 'instructions' ] = self::render( $args );
-
-        return $field;
-    }
+		return $args;
+	}
 
 	const TEMPLATE = [
         'anchors' => LegalMain::LEGAL_PATH . '/template-parts/acf/part-anchors.php',
