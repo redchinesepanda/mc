@@ -80,7 +80,8 @@ class ReviewAnchors
 
         if ( $customs ) {
             foreach ( $customs as $custom ) {
-                $items[] = $custom;
+                $items[] = $custom[ self::ANCHORS[ 'id' ] ];
+                
                 // $items[ $custom[ self::ANCHORS[ 'id' ] ] ] = $custom[ self::ANCHORS[ 'label' ];
             }
         }
