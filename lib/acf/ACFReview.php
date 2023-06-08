@@ -25,7 +25,7 @@ class ACFReview
     {
 		$anchors = ReviewAnchors::get_labels();
 
-		$args[ 
+		$args = [ 
 			'title' => __( 'Existing anchors', ToolLoco::TEXTDOMAIN ),
 
 			'id' => __( 'ID', ToolLoco::TEXTDOMAIN ),
