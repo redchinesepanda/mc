@@ -1,0 +1,18 @@
+/* Display */
+
+.legal-banner {
+	display: flex;
+	column-gap: 20px;
+}
+
+/* Width and height */
+
+.legal-banner .banner-info {
+	width: 50%;
+}
+
+/* Position */
+
+.legal-banner {
+	margin-bottom: 20px;
+}

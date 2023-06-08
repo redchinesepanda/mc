@@ -78,12 +78,20 @@ class ReviewBanner
 			$attachment_id = attachment_url_to_postid( $src );
 
 			if ( $attachment_id != 0 ) {
+				$data = wp_get_attachment_image_src( $attachment_id, 'full' );
+
 				$item = $dom->createElement( 'div' );
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 				LegalDOM::appendHTML( $item, self::render( [
-					'src' => $src,
+					'image' => [
+						'src' => $src,
+
+						'width' => $data[ 1 ],
+    
+                    	'height' => $data[ 2 ],
+					],
 
 					'title' => ToolEncode::encode( get_field( self::FIELD[ 'title' ], $attachment_id ) ),
 					

@@ -1,12 +1,5 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-?>
 <div class="banner-image">
-	<img src="<?php echo $args[ 'src' ]; ?>" width="auto" height="auto" />
+	<img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" />
 </div>
 <div class="banner-info">
 	<div class="banner-title">
