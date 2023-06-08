@@ -23,9 +23,11 @@ class ACFReview
 
     public static function choices( $field )
     {
-		LegalDebug::debug( [
-			'field' => $field,
-		] );
+		$field[ 'instructions' ] = 'test';
+
+		// LegalDebug::debug( [
+		// 	'field' => $field,
+		// ] );
 
         // $items = WPMLTrid::get();
 
