@@ -23,9 +23,9 @@ class ACFReview
 
     public static function supply_field( $field )
     {
-		LegalDebug::debug( [
-			'$field' => $field,
-		] );
+		// LegalDebug::debug( [
+		// 	'$field' => $field,
+		// ] );
 
 		// $field[ 'instructions' ] = self::render();
 		
