@@ -66,7 +66,9 @@ class ReviewBanner
 			return $content;
 		}
 
-		$dom = LegalDOM::get_dom(  do_shortcode( $content ) );
+		// $dom = LegalDOM::get_dom(  do_shortcode( $content ) );
+		
+		$dom = LegalDOM::get_dom( $content );
 
         $nodes = self::get_nodes( $dom );
 
@@ -122,10 +124,10 @@ class ReviewBanner
 					]
 				] ) );
 
-				$parent = $node->parentNode;
+				$replace = $node->parentNode;
 
 				try {
-					$body->replaceChild( $item, $parent );
+					$body->replaceChild( $item, $replace );
 				} catch ( DOMException $e ) {
 
 				}
