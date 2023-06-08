@@ -5,7 +5,11 @@ class ReviewBonus
 	const CSS = [
         'review-bonus' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
 
-        'review-billet' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
+        'review-billet' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     public static function register_style()

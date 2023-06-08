@@ -35,7 +35,11 @@ class ReviewMain
 
         'review-title' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
 
-        'review-table' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
+        'review-table' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
+
+            'ver' => '1.0.1',
+        ],
     ];
     
     public static function register_style( $styles = [] )
