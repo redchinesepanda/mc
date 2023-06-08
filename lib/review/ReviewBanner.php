@@ -43,7 +43,9 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
+		// $nodes = $xpath->query( './/p[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
+		
+		$nodes = $xpath->query( '//body/p[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]/img' );
 
 		return $nodes;
 	}
@@ -87,6 +89,8 @@ class ReviewBanner
 
 			if ( $attachment_id != 0 ) {
 				LegalDebug::debug( [
+					'attachment_id' => $attachment_id,
+
 					'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
 					
 					'description' => get_field( self::FIELD[ 'description' ], $attachment_id ),
