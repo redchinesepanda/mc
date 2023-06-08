@@ -27,7 +27,7 @@ class ACFReview
 			'$field' => $field,
 		] );
 
-		// $field[ 'description' ] = self::render();
+		$field[ 'instructions' ] = self::render();
 
         return $field;
     }
