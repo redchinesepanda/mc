@@ -70,10 +70,6 @@ class ReviewBanner
 
         $nodes = self::get_nodes( $dom );
 
-		LegalDebug::debug( [
-			'length' => $nodes->length,
-		] );
-
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
@@ -84,6 +80,10 @@ class ReviewBanner
 			$src = $node->getAttribute( 'src' );
 
 			$attachment_id = attachment_url_to_postid( $src );
+
+			LegalDebug::debug( [
+				'attachment_id' => $attachment_id,
+			] );
 
 			if ( $attachment_id != 0 ) {
 				$data = wp_get_attachment_image_src( $attachment_id, 'full' );
