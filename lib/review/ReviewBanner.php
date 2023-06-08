@@ -81,10 +81,6 @@ class ReviewBanner
 
 			$attachment_id = attachment_url_to_postid( $src );
 
-			LegalDebug::debug( [
-				'attachment_id' => $attachment_id,
-			] );
-
 			if ( $attachment_id != 0 ) {
 				$data = wp_get_attachment_image_src( $attachment_id, 'full' );
 
