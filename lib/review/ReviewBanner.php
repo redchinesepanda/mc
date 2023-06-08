@@ -124,7 +124,7 @@ class ReviewBanner
 					]
 				] ) );
 
-				// $replace = $node;
+				$replace = $node;
 
 				if ( $node->parentNode->nodeName == 'p' ) {
 					$replace = $node->parentNode;
