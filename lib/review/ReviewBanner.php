@@ -91,7 +91,7 @@ class ReviewBanner
 
 					'caption' => $caption,
 
-					'nodeName' => $node->nodeName;
+					'nodeName' => $node->nodeName,
 				] );
 
 				$item = $dom->createElement( 'div' );
