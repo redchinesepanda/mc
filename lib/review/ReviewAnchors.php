@@ -80,15 +80,9 @@ class ReviewAnchors
 
         if ( $customs ) {
             foreach ( $customs as $custom ) {
-                $items[] = $custom[ self::ANCHORS[ 'id' ] ];
-                
-                // $items[ $custom[ self::ANCHORS[ 'id' ] ] ] = $custom[ self::ANCHORS[ 'label' ];
+                $items[ $custom[ self::ANCHORS[ 'id' ] ] ] = $custom[ self::ANCHORS[ 'label' ] ];
             }
         }
-
-        LegalDebug::debug( [
-            'items' => $items,
-        ] );
 
         return $items;
     }
