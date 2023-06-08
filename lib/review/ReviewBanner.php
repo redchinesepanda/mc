@@ -126,9 +126,9 @@ class ReviewBanner
 
 				// $replace = $node;
 
-				// if ( $node->parentNode->nodeName != 'body' ) {
+				if ( $node->parentNode->nodeName == 'p' ) {
 					$replace = $node->parentNode;
-				// }
+				}
 
 				try {
 					$body->replaceChild( $item, $replace );
