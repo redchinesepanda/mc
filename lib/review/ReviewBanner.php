@@ -100,6 +100,10 @@ class ReviewBanner
 					'src' => $src,
 				] ) );
 
+				$parent = $node->parentNode;
+
+				$parent->parentNode->replaceChild( $item, $parent );
+
 				// $body->replaceChild( $item, $node->parentNode );
 			}
 		}
