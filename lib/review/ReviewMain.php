@@ -23,7 +23,11 @@ require_once( 'ReviewBanner.php' );
 class ReviewMain
 {
     const CSS = [
-        'review-main' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
+        'review-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
+
+            'ver' => '1.0.1',
+        ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
 
