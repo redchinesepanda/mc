@@ -66,7 +66,7 @@ class ReviewBanner
 			return $content;
 		}
 
-		$dom = LegalDOM::get_dom( $content );
+		$dom = LegalDOM::get_dom(  do_shortcode( $content ) );
 
         $nodes = self::get_nodes( $dom );
 
