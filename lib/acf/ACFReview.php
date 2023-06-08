@@ -18,7 +18,7 @@ class ACFReview
     {
         $handler = new self();
 
-        add_filter( 'acf/load_field/name=' . self::FIELD_TRID, [ $handler, 'choices' ] );
+        add_filter( 'acf/load_field/name=' . self::FIELD[ 'anchors' ], [ $handler, 'choices' ] );
     }
 
     public static function choices( $field )
