@@ -85,7 +85,7 @@ class ReviewBanner
 				LegalDOM::appendHTML( $item, self::render( [
 					'src' => $src,
 
-					'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
+					'title' => ToolEncode::encode( get_field( self::FIELD[ 'title' ], $attachment_id ) ),
 					
 					'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
 
