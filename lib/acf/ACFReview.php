@@ -27,7 +27,9 @@ class ACFReview
 			'$field' => $field,
 		] );
 
-		$field[ 'instructions' ] = self::render();
+		// $field[ 'instructions' ] = self::render();
+		
+		$field[ 'instructions' ] = implode( '<br />', self::render() );
 
         return $field;
     }
@@ -36,16 +38,18 @@ class ACFReview
 	{
 		$anchors = ReviewAnchors::get_labels();
 
-		$args = [ 
-			'title' => __( 'Existing anchors', ToolLoco::TEXTDOMAIN ),
+		// $args = [ 
+		// 	'title' => __( 'Existing anchors', ToolLoco::TEXTDOMAIN ),
 
-			'id' => __( 'ID', ToolLoco::TEXTDOMAIN ),
+		// 	'id' => __( 'ID', ToolLoco::TEXTDOMAIN ),
 
-			'label' => __( 'Label', ToolLoco::TEXTDOMAIN ),
-		];
+		// 	'label' => __( 'Label', ToolLoco::TEXTDOMAIN ),
+		// ];
 
+		$args = [];
+		
 		foreach( $anchors as $id => $label ) {
-			$args[ 'items' ][] = [
+			$args[] = [
 				'id' => $id,
 				'label' => $label,
 			];
