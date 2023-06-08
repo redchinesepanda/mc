@@ -85,23 +85,23 @@ class ReviewBanner
 				'attachment_id' => $attachment_id,
 			] );
 
-			if ( $attachment_id != 0 ) {
-				$item = $dom->createElement( 'div' );
+			// if ( $attachment_id != 0 ) {
+			// 	$item = $dom->createElement( 'div' );
 
-				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
+			// 	$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
-				LegalDOM::appendHTML( $item, self::render( [
-					'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
+			// 	LegalDOM::appendHTML( $item, self::render( [
+			// 		'title' => get_field( self::FIELD[ 'title' ], $attachment_id ),
 					
-					'description' => get_field( self::FIELD[ 'description' ], $attachment_id ),
+			// 		'description' => get_field( self::FIELD[ 'description' ], $attachment_id ),
 					
-					'referal' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
+			// 		'referal' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
 
-					'src' => $src,
-				] ) );
+			// 		'src' => $src,
+			// 	] ) );
 
-				$body->replaceChild( $item, $node->parentNode );
-			}
+			// 	$body->replaceChild( $item, $node->parentNode );
+			// }
 		}
 
 		return $dom->saveHTML();
