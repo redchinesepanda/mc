@@ -20,7 +20,13 @@ class ReviewBanner
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_banner' ] );
+
+		add_filter( 'disable_captions', [ $handler, 'disable_captions' ] );
     }
+
+	public static function disable_captions( $bool ){
+		return true;
+	}
 
 	const CSS_CLASS = [
 		'container' => 'legal-banner',
