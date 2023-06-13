@@ -14,13 +14,24 @@ class ToolEnqueue
 
                 $ver = $item[ 'ver' ];
             }
+
             wp_enqueue_style( $name, $path, [], $ver );
         }
     }
 
     public static function register_script( $scripts = [] )
     {
-        foreach ( $scripts as $name => $path ) {
+        foreach ( $scripts as $name => $item ) {
+            $path = $item;
+
+            $ver = false;
+
+            if ( is_array( $item ) ) {
+                $path = $item[ 'path' ];
+
+                $ver = $item[ 'ver' ];
+            }
+
             wp_register_script( $name, $path, [], false, true );
 
             wp_enqueue_script( $name );
