@@ -64,6 +64,19 @@ class ReviewBanner
 		'referal' => 'media-banner-referal',
     ];
 
+	public static function get_img_id( $node )
+	{
+		$classes = explode( ' ', $node->getAttribute( 'class' ) );
+
+		foreach ( $classes as $class ) {
+			if ( strpos( $class, 'wp-image-' ) !== false ) {
+				return end( explode( '-', $class ) );
+			}
+		}
+
+		return 0;
+	}
+
 	public static function get_content( $content )
 	{
         if ( !ReviewMain::check() ) {
@@ -81,15 +94,14 @@ class ReviewBanner
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
-			LegalDebug::debug( [
-				'class' => $node->getAttribute( 'class' ),
-			] );
 
 			// $src = $node->getAttribute( 'src' );
 
 			// $attachment_id = attachment_url_to_postid( $src );
+			
+			$attachment_id = self::get_img_id( $node );
 
-			// if ( $attachment_id != 0 ) {
+			if ( $attachment_id != 0 ) {
 				// $data = wp_get_attachment_image_src( $attachment_id, 'full' );
 
 				// $caption = wp_get_attachment_caption( $attachment_id );
@@ -129,7 +141,7 @@ class ReviewBanner
 				} catch ( DOMException $e ) {
 
 				}
-			// }
+			}
 		}
 
 		return $dom->saveHTML();
