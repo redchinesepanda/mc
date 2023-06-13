@@ -81,6 +81,10 @@ class ReviewBanner
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
+			LegalDebug::debug( [
+				'class' => $node->getAttribute( 'class' ),
+			] );
+
 			// $src = $node->getAttribute( 'src' );
 
 			// $attachment_id = attachment_url_to_postid( $src );
