@@ -131,7 +131,7 @@ class ReviewStats
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				$value = 0;
+				$value = -1;
 
 				if ( is_numeric( $cells[ 1 ]->textContent ) ) {
 					$value = $cells[ 1 ]->textContent;
@@ -139,16 +139,19 @@ class ReviewStats
 
 				if ( strpos( $cells[ 1 ]->textContent, '/' ) ) {
 					$part = explode( '/', $cells[ 1 ]->textContent )[ 0 ];
+
 					if ( is_numeric( $part ) ) {
 						$value = $part;
 					}
 				}
 
-				$args[] = [
-					'title' => $cells[ 0 ]->textContent,
-
-					'width' => ( round( ( float ) $value ) / 10 ) * 100,
-				];
+				if ( $value != -1 ) {
+					$args[] = [
+						'title' => $cells[ 0 ]->textContent,
+	
+						'width' => ( round( ( float ) $value ) / 10 ) * 100,
+					];
+				}
 			}
 		}
 
