@@ -53,6 +53,11 @@
 	display: none;
 }
 
+.legal-oops .item-image-wrapper {
+	display: flex;
+	justify-content: right;
+}
+
 /* Oops Position */
 
 .legal-oops-background {
@@ -73,6 +78,15 @@
 
 .legal-oops-background {
 	height: 100vh;
+}
+
+.legal-oops .oops-item {
+	width: 100%;
+}
+
+.legal-oops .item-image-wrapper,
+.legal-oops .item-button-wrapper {
+	width: 50%;
 }
 
 /* Oops Background */

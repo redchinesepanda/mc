@@ -3,7 +3,11 @@
 class OopsMain
 {
     const CSS = [
-        'legal-oops' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
+        'legal-oops' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
+
+            'ver' => '1.0.1'
+        ],
     ];
 
     public static function register_style()
