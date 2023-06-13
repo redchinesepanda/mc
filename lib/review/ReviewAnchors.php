@@ -15,6 +15,19 @@ class ReviewAnchors
         ReviewMain::register_style( self::CSS );
     }
 
+    const JS = [
+        'review-anchors' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors.js',
+
+            'ver' => '1.0.1',
+        ],
+    ];
+
+    public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -24,6 +37,8 @@ class ReviewAnchors
         add_shortcode( 'legal-anchors', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	public static function get_nodes( $dom )
