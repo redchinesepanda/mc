@@ -1,13 +1,15 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
-    <style type="text/css">
-        .review-about {
-            background-color: <?php echo $args['background']; ?>;
-        }
+    <?php if( empty( $args['mode'] ) ) : ?>
+        <style type="text/css">
+            .review-about {
+                background-color: <?php echo $args['background']; ?>;
+            }
 
-        .review-about .about-logo {
-            background-image: url( '<?php echo $args['logo']; ?>' );
-        }
-    </style>
+            .review-about .about-logo {
+                background-image: url( '<?php echo $args['logo']; ?>' );
+            }
+        </style>
+    <?php endif; ?>
     <div class="review-about">
         <div class="about-left">
             <div class="about-logo"></div>
