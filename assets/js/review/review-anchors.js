@@ -7,12 +7,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.parentElement.classList.toggle( 'legal-active' );
 	}
 
+	const args = [
+		{
+			'selector' : '.anchors-title',
+
+			'event' : 'click',
+
+			'action' : toggleItems
+		},
+	];
+
 	function toggleInit()
 	{
 		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
-			document.querySelector( '.anchors-title' ).addEventListener( 'click', toggleItems, false );
+			document.querySelector( arg.selector ).addEventListener( arg.event, arg.action, false );
 		} else {
-			document.querySelector( '.anchors-title' ).removeEventListener( 'click', toggleItems, false );
+			document.querySelector( arg.selector ).removeEventListener( arg.event, arg.action, false );
 		}
 	}
 
