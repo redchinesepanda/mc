@@ -133,12 +133,14 @@ class ReviewStats
 			if ( $cells->length ) {
 				$value = -1;
 
-				if ( is_numeric( $cells[ 1 ]->textContent ) ) {
-					$value = $cells[ 1 ]->textContent;
+				$text = $cells[ 1 ]->textContent;
+
+				if ( is_numeric( $text ) ) {
+					$value = $text;
 				}
 
-				if ( strpos( $cells[ 1 ]->textContent, '/' ) ) {
-					$part = explode( '/', $cells[ 1 ]->textContent )[ 0 ];
+				if ( strpos( $text, '/' ) ) {
+					$part = explode( '/', $text )[ 0 ];
 
 					if ( is_numeric( $part ) ) {
 						$value = $part;
