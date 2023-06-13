@@ -109,9 +109,9 @@ class OopsMain
 
                 'href' => get_post_permalink( $post->ID ),
 	
-                'width' => $image[ 1 ],
+                'width' => ( $image ? $image[ 1 ] : '88' ),
                 
-                'height' => $image[ 2 ],
+                'height' => ( $image ? $image[ 2 ] : '29' ),
             ];
 
             // LegalDebug::debug( [
