@@ -2,6 +2,10 @@
 {
     /* Display */
 
+    .review-anchors {
+        row-gap: 20px;
+    }
+
     .review-anchors .anchors-title {
         cursor: pointer;
     }
@@ -28,11 +32,11 @@
 
     /* Background */
 
-    .review-anchors .anchors-title:not( .legal-active ) {
+    .review-anchors:not( .legal-active ) .anchors-title {
         background-image: url( '../../img/review/review-anchors-open.svg' );
     }
 
-    .review-anchors .anchors-title.legal-active {
+    .review-anchors.legal-active .anchors-title {
         background-image: url( '../../img/review/review-anchors-close.svg' );
     }
 
