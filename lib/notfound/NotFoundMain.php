@@ -3,7 +3,11 @@
 class NotFoundMain
 {
 	const CSS = [
-        'legal-notfound' => LegalMain::LEGAL_URL . '/assets/css/notfound/notfound.css',
+        'legal-notfound' => [
+			'path' =>  LegalMain::LEGAL_URL . '/assets/css/notfound/notfound.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
     public static function register_style()

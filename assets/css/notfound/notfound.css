@@ -14,7 +14,7 @@
 }
 
 .page404 .svg-oops-smile {
-	background-image: url( '../../img/notfound/notfound.svg' );
+	background-image: url('../../img/notfound/notfound.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -25,7 +25,8 @@
 }
 
 .page404 h1 {
-	size: 32px;;
+	size: 32px;
+	;
 	font-weight: 700;
 	color: #0A0A0A;
 }
@@ -61,18 +62,18 @@
 	font-style: normal;
 	font-weight: 650;
 	line-height: 28px;
-	color: #3b3b3b;
+	color: #3B3B3B;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding-left: 10px;
 }
 
 .page404 .menu-avaible-404 .lang-item:hover {
-	background-color: #5997e3;
+	background-color: #5997E3;
 	transition: 0.5s;
 	color: #fff;
 	border-radius: 10px;
-	box-shadow: 0 0 10px #e4e4e4;
+	box-shadow: 0 0 10px #E4E4E4;
 }
 
 .page404 .menu-avaible-404 .lang-item .lang-image {
@@ -82,7 +83,7 @@
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
-	border: #b8b8b8 solid 1.5px;
+	border: #B8B8B8 solid 1.5px;
 }
 
 @media screen and (max-width: 1079px) {
@@ -92,6 +93,18 @@
 }
 
 @media (max-width: 576px) {
+	.page404 {
+		padding: 50px 20px 0 20px;
+	}
+
+	.page404 .svg-before-text-block {
+		padding: 0 10px;
+	}
+
+	.page404 p {
+		padding: 0 10px;
+	}
+
 	.page404 .menu-avaible-404 .lang-item {
 		width: 158px;
 		font-weight: 600;
