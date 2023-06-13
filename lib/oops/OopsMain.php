@@ -102,24 +102,24 @@ class OopsMain
         foreach ( $posts as $post ) {
             $src = get_field( 'affilate-logo', $post->ID );
 
-            $image = wp_get_attachment_image_src( $post->ID, 'full' );
+            // $image = wp_get_attachment_image_src( $post->ID, 'full' );
 
-            LegalDebug::debug( [
-                'src' => $src,
-                
-                'ID' => $post->ID,
+            // LegalDebug::debug( [
+            //     'src' => $src,
 
-                'image' => $image,
-            ] );
+            //     'ID' => $post->ID,
+
+            //     'image' => $image,
+            // ] );
 
             $args['items'][] = [
-                'src' => ( !empty( $src ) ? $src : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
+                'src' => ( $src ? $src[ 'url' ] : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
 
                 'href' => get_post_permalink( $post->ID ),
 	
-                'width' => ( $image ? $image[ 1 ] : '88' ),
+                'width' => ( $src ? $src[ 'width' ] : '88' ),
                 
-                'height' => ( $image ? $image[ 2 ] : '29' ),
+                'height' => ( $src ? $src[ 'height' ] : '29' ),
             ];
 
             // LegalDebug::debug( [
