@@ -138,7 +138,10 @@ class ReviewStats
 				}
 
 				if ( strpos( $cells[ 1 ]->textContent, '/' ) ) {
-					$value = explode( '/', $cells[ 1 ]->textContent )[ 0 ];
+					$part = explode( '/', $cells[ 1 ]->textContent )[ 0 ];
+					if ( is_numeric( $part ) ) {
+						$value = $part;
+					}
 				}
 
 				$args[] = [
