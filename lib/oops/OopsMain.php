@@ -138,12 +138,12 @@ class OopsMain
 
         //     'found_posts2' => $query2->found_posts,
 
-        //     'result' => ( $query1->found_posts && $query2->found_posts ),
+        //     'result' => ( $query1->found_posts || $query2->found_posts ? 'true' : 'false' ),
 
         //     // 'get_args' => self::get_args(),
         // ] );
         
-        return ( $query1->found_posts && $query2->found_posts );
+        return ( $query1->found_posts || $query2->found_posts );
     }
 
     const TEMPLATE = [
