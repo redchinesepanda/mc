@@ -102,10 +102,16 @@ class OopsMain
         foreach ( $posts as $post ) {
             $src = get_field( 'affilate-logo', $post->ID );
 
+            $image = wp_get_attachment_image_src( $post->ID, 'full' );
+
             $args['items'][] = [
                 'src' => ( !empty( $src ) ? $src : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
 
                 'href' => get_post_permalink( $post->ID ),
+	
+                'width' => $image[ 1 ],
+                
+                'height' => $image[ 2 ],
             ];
 
             // LegalDebug::debug( [

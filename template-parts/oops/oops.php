@@ -4,7 +4,7 @@
 		<div class="oops-description"><?php echo $args[ 'description' ]; ?></div>
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<div class="oops-item">
-				<img class="item-image" src="<?php echo $item[ 'src' ]; ?>" width="88" height="29" />
+				<img class="item-image" src="<?php echo $item[ 'src' ]; ?>" width="<?php echo $item[ 'width' ]; ?>" height="<?php echo $item[ 'height' ]; ?>" />
 				<a class="item-button" href="<?php echo $item[ 'href' ]; ?>">
 					<?php echo $args[ 'label' ]; ?>
 				</a>
