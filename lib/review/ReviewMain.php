@@ -85,6 +85,8 @@ class ReviewMain
         
         add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_faq' ] );
+
         ReviewAbout::register();
 
         ReviewAnchors::register();
