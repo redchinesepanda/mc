@@ -20,7 +20,11 @@ class ToolTinyMCE
     }
 
 	const CSS = [
-        'legal-tinymce-main' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-main.css',
+        'legal-tinymce-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-main.css',
+
+			'ver' => '1.0.1',
+		],
 
         'legal-tinymce-overview' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-overview.css',
 
