@@ -76,3 +76,14 @@
 	border-style: solid;
 	border-color: rgba(0, 0, 0, 0.05);
 }
+
+/* List */
+
+#tinymce .legal-list-3 {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#tinymce .legal-list-3 li {
+	width: 33.333%;
+}
