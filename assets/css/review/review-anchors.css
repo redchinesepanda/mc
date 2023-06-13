@@ -12,6 +12,9 @@
 
     .review-anchors:not( .legal-active ) .anchors-item {
         display: none;
+    }
+
+    .review-anchors .anchors-item {
         flex-grow: 1;
     }
 
