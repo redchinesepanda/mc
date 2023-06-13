@@ -1,15 +1,50 @@
 @media screen and ( max-width: 767px )
 {
+    /* Display */
+
+    .review-anchors .anchors-control {
+        cursor: pointer;
+    }
+
     /* Anchors Position */
     
     .review-anchors {
         padding: 5px 15px;
     }
 
+    /* Width and Height */
+
+    .review-anchors .anchors-control {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Background */
+
+    .review-anchors .anchors-control:not( .legal-active ) {
+        background-image: url( '../../img/review/review-anchors-open.svg' );
+    }
+
+    .review-anchors .anchors-control.legal-active {
+        background-image: url( '../../img/review/review-anchors-close.svg' );
+    }
+
+    .review-anchors .anchors-control {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
 }
 
 @media screen and ( min-width: 768px )
 {
+    /* Anchors Display */
+
+    .review-anchors .anchors-control {
+        display: none;
+    }
+
     /* Anchors Width and Height */
 
     .review-anchors {

@@ -3,7 +3,11 @@
 class ReviewAnchors
 {
     const CSS = [
-        'review-anchors' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors.css',
+        'review-anchors' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors.css',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     public static function register_style()
