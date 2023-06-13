@@ -51,9 +51,7 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' ); 
-		
-		// $nodes = $xpath->query( '//body/figure[contains(@class, \'wp-caption\')]/img' ); 
+		$nodes = $xpath->query( './/img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
 
 		return $nodes;
 	}
@@ -72,8 +70,6 @@ class ReviewBanner
 			return $content;
 		}
 
-		// $dom = LegalDOM::get_dom(  do_shortcode( $content ) );
-		
 		$dom = LegalDOM::get_dom( $content );
 
         $nodes = self::get_nodes( $dom );
@@ -85,11 +81,11 @@ class ReviewBanner
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
-			$src = $node->getAttribute( 'src' );
+			// $src = $node->getAttribute( 'src' );
 
-			$attachment_id = attachment_url_to_postid( $src );
+			// $attachment_id = attachment_url_to_postid( $src );
 
-			if ( $attachment_id != 0 ) {
+			// if ( $attachment_id != 0 ) {
 				$data = wp_get_attachment_image_src( $attachment_id, 'full' );
 
 				$caption = wp_get_attachment_caption( $attachment_id );
@@ -99,25 +95,27 @@ class ReviewBanner
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
 				LegalDOM::appendHTML( $item, self::render( [
-					'image' => [
-						'src' => $src,
+					// 'image' => [
+					// 	'src' => $src,
 
-						'width' => $data[ 1 ],
+					// 	'width' => $data[ 1 ],
     
-                    	'height' => $data[ 2 ],
-					],
+                    // 	'height' => $data[ 2 ],
+					// ],
 
-					'title' => ToolEncode::encode( get_field( self::FIELD[ 'title' ], $attachment_id ) ),
+					'image' => $dom->saveHTML( $node ),
+
+					// 'title' => ToolEncode::encode( get_field( self::FIELD[ 'title' ], $attachment_id ) ),
 					
-					'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
+					// 'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
 
 					'caption' => ( $caption ? $caption : '' ),
 
-					'terms' => [
-						'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
+					// 'terms' => [
+					// 	'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
 
-						'text' => __( 'Terms and Conditions', ToolLoco::TEXTDOMAIN ),
-					]
+					// 	'text' => __( 'Terms and Conditions', ToolLoco::TEXTDOMAIN ),
+					// ],
 				] ) );
 				
 				$replace = $node->parentNode;
@@ -127,7 +125,7 @@ class ReviewBanner
 				} catch ( DOMException $e ) {
 
 				}
-			}
+			// }
 		}
 
 		return $dom->saveHTML();
