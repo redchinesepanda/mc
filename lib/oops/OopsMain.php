@@ -104,6 +104,10 @@ class OopsMain
 
             $image = wp_get_attachment_image_src( $post->ID, 'full' );
 
+            LegalDebug::debug( [
+                'image' => $image,
+            ] );
+
             $args['items'][] = [
                 'src' => ( !empty( $src ) ? $src : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
 
