@@ -3,7 +3,11 @@
 class ReviewBonus
 {
 	const CSS = [
-        'review-bonus' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
+        'review-bonus' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
+
+			'ver' => '1.0.1',
+		],
 
         'review-billet' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
