@@ -131,13 +131,21 @@ class ReviewStats
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
+				$value = 0;
+
 				if ( is_numeric( $cells[ 1 ]->textContent ) ) {
-					$args[] = [
-						'title' => $cells[ 0 ]->textContent,
-	
-						'width' => ( round( ( float ) $cells[ 1 ]->textContent ) / 10 ) * 100,
-					];
+					$value = $cells[ 1 ]->textContent;
 				}
+
+				if ( strpos( $cells[ 1 ]->textContent, '/' ) ) {
+					$value = explode( '/', $cells[ 1 ]->textContent )[ 0 ];
+				}
+
+				$args[] = [
+					'title' => $cells[ 0 ]->textContent,
+
+					'width' => ( round( ( float ) $value ) / 10 ) * 100,
+				];
 			}
 		}
 
