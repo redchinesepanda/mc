@@ -109,7 +109,7 @@ class ReviewBanner
 					
 					// 'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
 
-					'caption' => ( $caption ? $caption : '' ),
+					// 'caption' => ( $caption ? $caption : '' ),
 
 					// 'terms' => [
 					// 	'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
