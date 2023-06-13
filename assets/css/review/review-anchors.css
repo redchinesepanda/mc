@@ -10,6 +10,10 @@
         cursor: pointer;
     }
 
+    .review-anchors:not( .legal-active ) .anchors-item {
+        display: none;
+    }
+
     /* Anchors Position */
     
     .review-anchors {
