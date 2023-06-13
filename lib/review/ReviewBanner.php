@@ -86,9 +86,9 @@ class ReviewBanner
 			// $attachment_id = attachment_url_to_postid( $src );
 
 			// if ( $attachment_id != 0 ) {
-				$data = wp_get_attachment_image_src( $attachment_id, 'full' );
+				// $data = wp_get_attachment_image_src( $attachment_id, 'full' );
 
-				$caption = wp_get_attachment_caption( $attachment_id );
+				// $caption = wp_get_attachment_caption( $attachment_id );
 
 				$item = $dom->createElement( 'div' );
 
