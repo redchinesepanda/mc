@@ -19,11 +19,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleInit()
 	{
-		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
-			document.querySelector( arg.selector ).addEventListener( arg.event, arg.action, false );
-		} else {
-			document.querySelector( arg.selector ).removeEventListener( arg.event, arg.action, false );
-		}
+		args.forEach( function ( arg ) {
+			if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
+				document.querySelector( arg.selector ).addEventListener( arg.event, arg.action, false );
+			} else {
+				document.querySelector( arg.selector ).removeEventListener( arg.event, arg.action, false );
+			}
+		} );
 	}
 
 	toggleInit();
