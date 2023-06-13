@@ -29,7 +29,7 @@
     /* Review About Display */
 
     .review-about {
-        column-gap: 50px;
+        column-gap: 20px;
     }
 
     /* Review About Position */
@@ -84,7 +84,7 @@
     display: block;
 }
 
-.legal-afillate[ href = "" ] {
+.legal-afillate[href=""] {
     pointer-events: none;
 }
 

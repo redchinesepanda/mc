@@ -95,10 +95,6 @@ class ReviewBanner
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
-
-			// $src = $node->getAttribute( 'src' );
-
-			// $attachment_id = attachment_url_to_postid( $src );
 			
 			$attachment_id = self::get_img_id( $node );
 

@@ -3,7 +3,11 @@
 class ReviewAbout
 {
     const CSS = [
-        'review-about' => LegalMain::LEGAL_URL . '/assets/css/review/review-about.css',
+        'review-about' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about.css',
+
+            'ver'=> '1.0.1',
+        ],
     ];
 
     public static function register_style()
