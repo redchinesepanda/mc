@@ -41,7 +41,7 @@ class ReviewMain
             'ver' => '1.0.1',
         ],
     ];
-    
+
     public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
@@ -63,15 +63,6 @@ class ReviewMain
             ToolEnqueue::register_script( $scripts );
         }
     }
-
-    // public static function register_style()
-    // {
-    //     if ( self::check() ) {
-    //         foreach ( self::CSS as $name => $path ) {
-    //             wp_enqueue_style( $name, $path );
-    //         }
-    //     }
-    // }
 
     const JS = [
         'schema' => 'legal-schema',
@@ -134,6 +125,29 @@ class ReviewMain
         
         return ( $permission_admin && $permission_post_type );
     }
+
+    const CSS_CLASS = [
+        'list-3' => 'legal-list-3',
+    ];
+
+    public static function style_formats_list( $settings )
+	{
+		return ToolTinyMCE::style_formats_check( $settings, [
+			[
+				'title' => 'List',
+
+				'items' => [
+					[
+						'title' => 'List 3 columns',
+						
+						'selector' => 'ul,ol',
+
+						'classes' => self::CSS_CLASS[ 'list-3' ],
+					],
+				],
+			],
+		] );
+	}
 
     public static function schema()
     {

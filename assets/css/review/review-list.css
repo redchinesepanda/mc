@@ -1,10 +1,23 @@
 @media screen and ( min-width: 768px )
 {
+    /* Display */
+
+    .tcb-post-content .legal-list-3 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     /* Review Position */
 
     .tcb-post-content ul:not( [ class ] ):not( [ style ] ),
     .tcb-post-content ol:not( [ class ] ) {
         padding-left: 30px;
+    }
+
+    /* Width and Height */
+
+    .tcb-post-content.legal-list-3 li {
+        width: 33.333%;
     }
 }
 
