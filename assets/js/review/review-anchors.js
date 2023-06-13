@@ -7,7 +7,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.parentElement.classList.toggle( 'legal-active' );
 	}
 
-    document.querySelector( '.anchors-title' ).addEventListener( 'click', toggleItems, false );
+	function toggleInit()
+	{
+		if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
+			document.querySelector( '.anchors-title' ).addEventListener( 'click', toggleItems, false );
+		} else {
+			document.querySelector( '.anchors-title' ).removeEventListener( 'click', toggleItems, false );
+		}
+	}
+
+	toggleInit();
+
+	window.addEventListener( 'resize', toggleInit, false );
 } );
 
 // review-anchors-js end
