@@ -105,6 +105,8 @@ class OopsMain
             $image = wp_get_attachment_image_src( $post->ID, 'full' );
 
             LegalDebug::debug( [
+                'ID' => $post->ID,
+                
                 'image' => $image,
             ] );
 
