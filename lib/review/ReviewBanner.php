@@ -70,7 +70,8 @@ class ReviewBanner
 
 		foreach ( $classes as $class ) {
 			if ( strpos( $class, 'wp-image-' ) !== false ) {
-				return end( explode( '-', $class ) );
+				$parts = explode( '-', $class );
+				return end( $parts );
 			}
 		}
 
