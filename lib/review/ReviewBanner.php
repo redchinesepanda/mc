@@ -105,7 +105,7 @@ class ReviewBanner
 			if ( $attachment_id != 0 ) {
 				// $data = wp_get_attachment_image_src( $attachment_id, 'full' );
 
-				// $caption = wp_get_attachment_caption( $attachment_id );
+				$caption = wp_get_attachment_caption( $attachment_id );
 
 				$item = $dom->createElement( 'div' );
 
@@ -126,7 +126,7 @@ class ReviewBanner
 					
 					// 'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
 
-					// 'caption' => ( $caption ? $caption : '' ),
+					'caption' => ( $caption ? $caption : '' ),
 
 					// 'terms' => [
 					// 	'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
