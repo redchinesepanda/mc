@@ -29,9 +29,9 @@ class OopsMain
     {
         if ( self::check() ) {
             if ( empty( $scripts ) ) {
-                $styles = self::JS;
+                $scripts = self::JS;
             }
-            
+
             ToolEnqueue::register_script( $scripts );
         }
     }
