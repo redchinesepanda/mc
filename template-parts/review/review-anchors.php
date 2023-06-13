@@ -2,6 +2,7 @@
     <nav class="anchors">
         <div class="review-anchors">
             <div class="anchors-title"><?php echo $args[ 'title' ]; ?></div>
+            <div class="anchors-control"></div>
             <?php foreach( $args[ 'items' ] as $item ) : ?>
                 <a class="anchors-item" href="<?php echo $item[ 'href' ]; ?>">
                     <?php echo $item[ 'label' ]; ?>
