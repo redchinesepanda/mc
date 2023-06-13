@@ -6,16 +6,14 @@ class OopsMain
         'legal-oops' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
 
-            'ver' => '1.0.1'
+            'ver' => '1.0.1',
         ],
     ];
 
-    public static function register_style()
+    public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
-            foreach ( self::CSS as $name => $path ) {
-                wp_enqueue_style( $name, $path );
-            }
+            ToolEnqueue::register_style( $styles );
         }
     }
 
@@ -23,14 +21,10 @@ class OopsMain
         'legal-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
     ];
 
-    public static function register_script()
+    public static function register_script( $scripts = [] )
     {
         if ( self::check() ) {
-            foreach ( self::JS as $name => $path ) {
-                wp_register_script( $name, $path, [], false, true );
-
-                wp_enqueue_script( $name );
-            }
+            ToolEnqueue::register_script( $scripts );
         }
     }
 
