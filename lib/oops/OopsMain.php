@@ -13,6 +13,10 @@ class OopsMain
     public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                $styles = self::CSS;
+            }
+
             ToolEnqueue::register_style( $styles );
         }
     }
@@ -24,6 +28,10 @@ class OopsMain
     public static function register_script( $scripts = [] )
     {
         if ( self::check() ) {
+            if ( empty( $scripts ) ) {
+                $styles = self::JS;
+            }
+            
             ToolEnqueue::register_script( $scripts );
         }
     }
