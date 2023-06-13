@@ -15,8 +15,14 @@
     /* Width and Height */
 
     .review-anchors .anchors-control {
-        width: 26px;
+        /* width: 26px; */
         height: 26px;
+    }
+
+    .review-anchors .anchors-title,
+    .review-anchors .anchors-control,
+    .review-anchors .anchors-item {
+        width: calc( 50% - 10px );
     }
 
     /* Background */
@@ -30,7 +36,7 @@
     }
 
     .review-anchors .anchors-control {
-        background-position: center center;
+        background-position: left center;
         background-repeat: no-repeat;
         background-size: auto;
     }
