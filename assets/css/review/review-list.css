@@ -16,7 +16,7 @@
 
     /* Width and Height */
 
-    .tcb-post-content.legal-list-3 li {
+    .tcb-post-content .legal-list-3 li {
         width: 33.333%;
     }
 }
