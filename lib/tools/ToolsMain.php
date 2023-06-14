@@ -16,6 +16,8 @@ require_once( 'ToolEnqueue.php' );
 
 require_once( 'ToolMenu.php' );
 
+require_once( 'ToolSitemap.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -29,6 +31,8 @@ class ToolsMain
         ToolTinyMCE::register();
 
         // ToolRewrite::register();
+        
+        ToolSitemap::register();
     }
 }
 
