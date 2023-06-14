@@ -15,9 +15,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 					console.log( 'children: ' + added_node.children );
 
-					for ( let child of added_node.children ) {
-						console.log( 'tagName: ' + child.tagName );
-					}
+					Array.from( added_node.children ).forEach( function( item ) {
+						console.log( 'id: ' + item.id );
+					} );
 
 					observer.disconnect();
 				}
