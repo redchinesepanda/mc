@@ -13,6 +13,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 					console.log( 'added_node: ' + added_node );
 
+					console.log( 'added_node.classlist: ' + added_node.classlist );
+
 					observer.disconnect();
 				}
 			});
