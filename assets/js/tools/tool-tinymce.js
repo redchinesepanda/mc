@@ -3,7 +3,7 @@
 document.addEventListener( 'DOMContentLoaded', function () {
 	const callback = ( mutationList ) => {
 		for (const mutation of mutationList) {
-			console.log( 'mutation: ' + mutation );
+			console.log( 'mutation: ' + JSON.stringify( mutation ) );
 
 			if (mutation.type === "attributes") {
 				output.textContent = `The ${mutation.attributeName} attribute was modified from "${mutation.oldValue}".`;
