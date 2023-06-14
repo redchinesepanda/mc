@@ -37,7 +37,11 @@ class ReviewMain
             'ver' => '1.0.2'
         ],
 
-        'review-title' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
+        'review-title' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
+
+            'ver' => '1.0.1',
+        ],
 
         'review-table' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',

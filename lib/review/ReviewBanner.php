@@ -107,6 +107,10 @@ class ReviewBanner
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
+				$node->removeAttribute( 'srcset' );
+
+				$node->removeAttribute( 'sizes' );
+
 				LegalDOM::appendHTML( $item, self::render( [
 					// 'image' => [
 					// 	'src' => $src,
