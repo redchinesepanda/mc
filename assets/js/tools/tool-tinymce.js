@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			console.log( 'mutation: ' + mutation );
 
 			if (mutation.type === "childList") {
-				output.textContent = `The ${mutation.attributeName} attribute was modified from "${mutation.oldValue}".`;
+				console.log( `The ${mutation.attributeName} attribute was modified from "${mutation.oldValue}".` );
 			}
 		}
 	};
