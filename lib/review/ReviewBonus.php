@@ -303,9 +303,17 @@ class ReviewBonus
     public static function check_url_afillate()
 	{
 		$group = get_field( ReviewAbout::FIELD );
+
+		LegalDebug::debug( [
+			'group' => $group,
+		] );
         
         if( $group ) {
 			$afillate = $group[ self::GROUP[ 'afillate' ] ];
+
+			LegalDebug::debug( [
+				'afillate' => ( $afillate ? $afillate : 'false' ),
+			] );
 			
 			if ( $afillate ) {
 				return $afillate;
