@@ -32,7 +32,8 @@
     padding-bottom: 20px;
 }
 
-.tcb-post-content p:not( :last-child ):not( [ class ] ) {
+.tcb-post-content p:not( :last-child ):not( [ class ] ),
+.tcb-post-content p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 28px;
 }
 
