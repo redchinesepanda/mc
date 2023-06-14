@@ -13,6 +13,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 					console.log( 'added_node: ' + added_node );
 
+					console.log( 'children: ' + added_node.children );
+
 					for ( const child of added_node.children ) {
 						console.log( child.tagName );
 					}
