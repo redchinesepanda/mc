@@ -38,7 +38,7 @@
     padding-bottom: 20px;
 }
 
-.tcb-post-content .legal-contextbox {
+.tcb-post-content .legal-contextbox:not( [style] ) {
     padding-left: 20px;
     padding-bottom: 0px;
     margin-bottom: 20px;
