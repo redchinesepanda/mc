@@ -11,12 +11,12 @@ class ToolSitemap
 		add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
     }
 
-	public static function get_args()
+	public static function get_args( $post_type )
     {
         return [
             'numberposts' => -1,
             
-            'post_type' => 'legal_bk_review',
+            'post_type' => $post_type,
 
 			'suppress_filters' => 0,
             
@@ -24,16 +24,16 @@ class ToolSitemap
         ];
     }
 
-	public static function get_posts()
+	public static function get_posts( $post_type )
     {
-        return get_posts( self::get_args() );
+        return get_posts( self::get_args( $post_type ) );
     }
 
-	public static function parse_posts()
+	public static function parse_posts( $post_type )
     {
 		$items = [];
 
-		$posts = self::get_posts();
+		$posts = self::get_posts( $post_type );
 
 		if ( !empty( $posts ) ) {
 			foreach ( $posts as $post ) {
@@ -58,20 +58,26 @@ class ToolSitemap
         return $items;
     }
 
-	public static function get()
+	public static function get( $atts )
 	{
-		return self::parse_posts();
+		$post_type = 'legal_bk_review';
+
+		if ( !empty( $atts[ 'post_type' ] ) ) {
+			$post_type = $atts[ 'post_type' ];
+		}
+
+		return self::parse_posts( $post_type );
 	}
 	
 	const TEMPLATE = [
         'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap.php',
     ];
 
-    public static function render()
+    public static function render( $atts )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'sitemap' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'sitemap' ], false, self::get( $atts ) );
 
         $output = ob_get_clean();
 
