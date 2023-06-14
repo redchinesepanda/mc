@@ -276,21 +276,9 @@ class ReviewBonus
     public static function check_url_review()
 	{
 		$group = get_field( ReviewAbout::FIELD );
-
-		LegalDebug::debug( [
-			'FIELD' => ReviewAbout::FIELD,
-
-			'review' => self::GROUP[ 'review' ],
-
-			'group' => $group,
-		] );
         
         if( $group ) {
 			$review = $group[ self::GROUP[ 'review' ] ];
-
-			LegalDebug::debug( [
-				'review' => ( $review ? $review : 'false' ),
-			] );
 
 			if ( $review ) {
 				return $review;
@@ -303,17 +291,9 @@ class ReviewBonus
     public static function check_url_afillate()
 	{
 		$group = get_field( ReviewAbout::FIELD );
-
-		LegalDebug::debug( [
-			'group' => $group,
-		] );
         
         if( $group ) {
 			$afillate = $group[ self::GROUP[ 'afillate' ] ];
-
-			LegalDebug::debug( [
-				'afillate' => ( $afillate ? $afillate : 'false' ),
-			] );
 			
 			if ( $afillate ) {
 				return $afillate;
@@ -326,10 +306,6 @@ class ReviewBonus
     public static function get_billet( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
-
-		LegalDebug::debug( [
-			'check_url_review' => ( self::check_url_review() ? self::check_url_review() : 'false' ),
-		] );
         
         // if( $group ) {
 			return [
