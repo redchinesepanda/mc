@@ -8,8 +8,12 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			if (mutation.type === "childList") {
 				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
 					console.log( `${added_node}, ${index}, ${this}` );
-					
-					console.log( 'added_node.id: ' + added_node.id )
+
+					console.log( 'added_node.id: ' + added_node.id );
+
+					added_node.querySelectorAll( 'label' ).forEach( function ( element ) {
+						console.log( 'textContent: ' + element.textContent );
+					} );
 				}, 'myThisArg' );
 			}
 		}
