@@ -2,6 +2,15 @@
 
 class ToolTinyMCE
 {
+	const JS = [
+        'tool-tinymce' => LegalMain::LEGAL_URL . '/assets/js/tools/tool-tinymce.js',
+    ];
+
+    public static function register_script()
+    {
+		ToolEnqueue::register_script( self::JS );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -17,6 +26,8 @@ class ToolTinyMCE
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
 
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
+
+		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	const CSS = [
