@@ -30,7 +30,7 @@
     padding-bottom: 20px;
 }
 
-.tcb-post-content p:not( :last-child ):not( .legal-override ) {
+.tcb-post-content p:not( :last-child ):not( .legal-override ):not( .legal-contextbox ) {
     padding-bottom: 28px;
 }
 
