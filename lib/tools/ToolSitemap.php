@@ -37,15 +37,15 @@ class ToolSitemap
 
 		if ( !empty( $posts ) ) {
 			foreach ( $posts as $post ) {
-				LegalDebug::debug( [
-					'ID' => $post->ID,
+				// LegalDebug::debug( [
+				// 	'ID' => $post->ID,
 
-					'post_title' => $post->post_title,
+				// 	'post_title' => $post->post_title,
 
-					'get_post_permalink' => get_post_permalink( $post->ID ),
+				// 	'get_post_permalink' => get_post_permalink( $post->ID ),
 
-					'wpml_post_language_details' => apply_filters( 'wpml_post_language_details', NULL, $post->ID ),
-				] );
+				// 	'wpml_post_language_details' => apply_filters( 'wpml_post_language_details', NULL, $post->ID ),
+				// ] );
 
 				$items[] = [
 					'label' => $post->post_title,
