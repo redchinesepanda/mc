@@ -13,7 +13,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 					console.log( 'added_node: ' + added_node );
 
-					console.log( 'added_node.classlist: ' + added_node.classlist );
+					for ( const child of added_node.children ) {
+						console.log( child.tagName );
+					}
 
 					observer.disconnect();
 				}
