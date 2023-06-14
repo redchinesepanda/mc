@@ -243,6 +243,8 @@ class BaseHeader
 		$items = self::get_menu_items();
 
 		return [
+			'href' => LegalBreadcrumbsMain::get_home_url(),
+			
 			'items' => $items,
 		];
 	}
