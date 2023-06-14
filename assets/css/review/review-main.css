@@ -26,7 +26,6 @@
     padding-bottom: 30px;
 }
 
-.tcb-post-content h2:not( [ style ] ),
 .tcb-post-content h2:not( .legal-override ) {
     padding-bottom: 20px;
 }
@@ -35,7 +34,7 @@
     padding-bottom: 28px;
 }
 
-.tcb-post-content h3[ style ] {
+.tcb-post-content h3:not( .legal-override ) {
     padding-bottom: 20px;
 }
 
