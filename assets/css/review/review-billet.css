@@ -105,6 +105,10 @@
 	display: block;
 }
 
+.legal-billet .check-oops[href=""] {
+    pointer-events: none;
+}
+
 /* Billet Position */
 
 .legal-billet {

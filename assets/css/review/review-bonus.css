@@ -65,6 +65,10 @@
 	display: block;
 }
 
+.legal-bonus .check-oops[href=""] {
+    pointer-events: none;
+}
+
 /* Bonus Width and Height */
 
 .legal-bonus .bonus-get-link {
