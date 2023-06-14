@@ -286,8 +286,9 @@ class ReviewBonus
 		] );
         
         if( $group ) {
-			if ( !empty( $group[ self::GROUP[ 'review' ] ] ) ) {
-				return $group[ self::GROUP[ 'review' ] ];
+			$review = $group[ self::GROUP[ 'review' ] ];
+			if ( $review ) {
+				return $review;
 			}
 		}
 
