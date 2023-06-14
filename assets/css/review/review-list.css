@@ -64,7 +64,8 @@
 /* Review Position */
 
 .tcb-post-content ul:not( [ class ] ):not( [ style ] ),
-.tcb-post-content ol:not( [ class ] ) {
+.tcb-post-content ol:not( [ class ] ),
+.tcb-post-content ol:not( .legal-override ) {
     padding-top: 0px;
     padding-bottom: 30px;
 }
