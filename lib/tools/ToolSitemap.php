@@ -41,6 +41,8 @@ class ToolSitemap
 					'post_title' => $post->post_title,
 
 					'get_post_permalink' => get_post_permalink( $post->ID ),
+
+					'wpml_post_language_details' => apply_filters( 'wpml_post_language_details', NULL, $post->ID ),
 				] );
 
 				$items[] = [
