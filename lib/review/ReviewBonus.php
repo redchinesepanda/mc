@@ -114,24 +114,6 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
-			// legalDebug::debug( [
-			// 	'function' => 'ReviewBonus::get_content',
-
-			// 	'node->tagName' => $node->tagName,
-
-			// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
-
-			// 	'node->class' => $class,
-
-			// 	'$permission_title' => ( $permission_title ? 'true' : 'false' ),
-				
-			// 	'$permission_description' => ( $permission_description ? 'true' : 'false' ),
-
-			// 	'$permission_content' => ( $permission_content ? 'true' : 'false' ),
-
-			// 	'$permission_last' => ( $permission_last ? 'true' : 'false' ),
-			// ] );
-
 			if ( $permission_description ) {
 				
 				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
@@ -146,12 +128,6 @@ class ReviewBonus
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
-				// LegalDebug::debug( [
-				// 	'function' => 'get_content',
-		
-				// 	'$args' => $args,
-				// ] );
-
 				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 					$template = self::render_billet( $args );
 				} else {
@@ -159,26 +135,6 @@ class ReviewBonus
 				}
 				
 				LegalDOM::appendHTML( $bonus, $template );
-
-				// LegalDebug::debug( [
-				// 	'condition' => 'bonus not empty, permission_title or permission_last ',
-
-				// 	'action' => 'replaceChild',
-					
-				// 	'node->tagName' => $node->tagName,
-
-				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
-					
-				// 	'node->parentNode->tagName' => $node->parentNode->tagName,
-
-				// 	'node->parentNode->textContent' => substr( $node->parentNode->textContent, 0, 40 ),
-
-				// 	'replace->tagName' => $replace->tagName,
-
-				// 	'replace->textContent' => substr( $replace->textContent, 0, 40 ),
-				// ] );
-
-				// $node->parentNode->replaceChild( $bonus, $replace );
 				
 				$body->replaceChild( $bonus, $replace );
 			}
@@ -196,39 +152,9 @@ class ReviewBonus
 				$args[ 'class' ] = $class;
 
 				$replace = $node;
-
-				// LegalDebug::debug( [
-				// 	'condition' => 'permission_title',
-
-				// 	'action' => 'new replace item',
-
-				// 	'replace->tagName' => $replace->tagName,
-
-				// 	'replace->textContent' => substr( $replace->textContent, 0, 40 ),
-
-				// 	'node->tagName' => $node->tagName,
-
-				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
-				// ] );
 			}
 
 			if ( $permission_description || $permission_content ) {
-				// LegalDebug::debug( [
-				// 	'condition' => 'permission_description or permission_last ',
-
-				// 	'action' => 'removeChild',
-
-				// 	'body->tagName' => $body->tagName,
-
-				// 	'body->textContent' => substr( $body->textContent, 0, 40 ),
-
-				// 	'node->tagName' => $node->tagName,
-
-				// 	'node->textContent' => substr( $node->textContent, 0, 40 ),
-				// ] );
-
-				// $node->parentNode->removeChild( $node );
-				
 				$body->removeChild( $node );
 			}
 		}
@@ -270,7 +196,7 @@ class ReviewBonus
 				'name' => $args[ 'title' ],
 
 				'get' => [
-					'href' => self::check_url_get(),
+					'href' => self::check_url_afillate(),
 
 					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
 				],
@@ -357,10 +283,10 @@ class ReviewBonus
 			}
 		}
 
-		return self::check_url_get();
+		return self::check_url_afillate();
 	}
 
-    public static function check_url_get()
+    public static function check_url_afillate()
 	{
 		$group = get_field( ReviewAbout::FIELD );
         
@@ -376,6 +302,10 @@ class ReviewBonus
     public static function get_billet( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
+
+		LegalDebug::debug( [
+			'check_url_review' => self::check_url_review(),
+		] );
         
         // if( $group ) {
 			return [
@@ -392,7 +322,7 @@ class ReviewBonus
 				'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
 
 				'get' => [
-					'href' => self::check_url_get(),
+					'href' => self::check_url_afillate(),
 
 					'text' => __( 'Get Bonus', ToolLoco::TEXTDOMAIN ),
 				],
