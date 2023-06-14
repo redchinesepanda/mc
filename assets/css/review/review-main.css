@@ -30,7 +30,7 @@
     padding-bottom: 20px;
 }
 
-.tcb-post-content p:not( :last-child ):not( .legal-override ):not( .legal-contextbox ) {
+.tcb-post-content p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 28px;
 }
 
@@ -40,6 +40,7 @@
 
 .tcb-post-content .legal-contextbox {
     padding-left: 20px;
+    padding-bottom: 0px;
     margin-bottom: 20px;
 }
 
