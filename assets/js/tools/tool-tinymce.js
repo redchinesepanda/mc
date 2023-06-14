@@ -6,7 +6,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			console.log( 'mutation: ' + mutation );
 
 			if (mutation.type === "childList") {
-				console.log( `The ${mutation.attributeName} attribute was modified from "${mutation.oldValue}".` );
+				mutation.addedNodes.forEach( function ( currentValue, currentIndex, listObj ) {
+					console.log( `${currentValue}, ${currentIndex}, ${this}` );
+				  }, 'myThisArg' );
 			}
 		}
 	};
