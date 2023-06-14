@@ -9,7 +9,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				if( added_node.id == 'mce-modal-block' ) {
 					console.log( 'child has been added' );
 
-					console.log( 'added_node: ' + JSON.stringify( added_node ) );
+					console.log( 'added_node.id: ' + added_node.id );
+
+					console.log( 'added_node: ' + added_node );
 
 					observer.disconnect();
 				}
