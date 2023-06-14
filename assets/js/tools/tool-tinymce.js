@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		for (const mutation of mutationList) {
 			console.log( 'mutation: ' + mutation );
 
-			if (mutation.type === "attributes") {
+			if (mutation.type === "childList") {
 				output.textContent = `The ${mutation.attributeName} attribute was modified from "${mutation.oldValue}".`;
 			}
 		}
