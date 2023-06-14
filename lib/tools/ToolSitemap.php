@@ -24,16 +24,9 @@ class ToolSitemap
         ];
     }
 
-	public static function get_posts( $post_type )
-    {
-        return get_posts( self::get_args( $post_type ) );
-    }
-
-	public static function parse_posts( $post_type )
+	public static function parse_posts( $posts )
     {
 		$items = [];
-
-		$posts = self::get_posts( $post_type );
 
 		if ( !empty( $posts ) ) {
 			foreach ( $posts as $post ) {
@@ -66,7 +59,11 @@ class ToolSitemap
 			$post_type = $atts[ 'post_type' ];
 		}
 
-		return self::parse_posts( $post_type );
+		$args = self::get_args( $post_type );
+
+		$posts = get_posts( $args );
+
+		return self::parse_posts( $posts );
 	}
 	
 	const TEMPLATE = [
