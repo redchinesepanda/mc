@@ -9,8 +9,7 @@
 
     /* Review Position */
 
-    .tcb-post-content ul:not( [ class ] ):not( [ style ] ),
-    .tcb-post-content ol:not( [ class ] ),
+    .tcb-post-content ul:not( .legal-override )
     .tcb-post-content ol:not( .legal-override ) {
         padding-left: 30px;
     }
@@ -63,16 +62,14 @@
 
 /* Review Position */
 
-.tcb-post-content ul:not( [ class ] ):not( [ style ] ),
-.tcb-post-content ol:not( [ class ] ),
 .tcb-post-content ul:not( .legal-override ),
 .tcb-post-content ol:not( .legal-override ) {
     padding-top: 0px;
     padding-bottom: 30px;
 }
 
-.tcb-post-content li > ul:not( [ class ] ):not( [ style ] ),
-.tcb-post-content li > ol:not( [ class ] ) {
+.tcb-post-content li > ul:not( .legal-override ),
+.tcb-post-content li > ol:not( .legal-override ) {
     padding-top: 15px;
     padding-bottom: 0px;
 }
@@ -82,7 +79,7 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content li:not( [ class ] ) {
+.tcb-post-content li:not( .legal-override ) {
 	padding-left: 34px;
 	margin-left: 0px;
 }
