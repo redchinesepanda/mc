@@ -10,7 +10,9 @@
 			<?php echo $args[ 'title' ]; ?>
 		</div>
 		<div class="billet-description">
-			<?php echo $args[ 'description' ]; ?>
+			<?php foreach ( $args[ 'description' ] as $item ) : ?>
+				<?php echo $item; ?>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<div class="billet-get">

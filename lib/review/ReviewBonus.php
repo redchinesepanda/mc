@@ -115,8 +115,11 @@ class ReviewBonus
 			$permission_last = ( $id == $last );
 
 			if ( $permission_description ) {
+				$node->removeAttribute( 'class' );
 				
-				$args[ 'description' ] = ToolEncode::encode( $node->textContent );
+				// $args[ 'description' ] = ToolEncode::encode( $node->textContent );
+				
+				$args[ 'description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( $permission_content ) {
