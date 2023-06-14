@@ -192,10 +192,10 @@ class OopsMain
         return $output;
     }
 
-    // public static function check()
-    // {
-    //     return ReviewMain::check();
-    // }
+    public static function check()
+    {
+        return ReviewMain::check();
+    }
 }
 
 ?>
