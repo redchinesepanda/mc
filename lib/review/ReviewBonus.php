@@ -304,7 +304,7 @@ class ReviewBonus
 		$group = get_field( ReviewAbout::FIELD );
 
 		LegalDebug::debug( [
-			'check_url_review' => self::check_url_review(),
+			'check_url_review' => ( self::check_url_review() ? self::check_url_review() : 'false' ),
 		] );
         
         // if( $group ) {
