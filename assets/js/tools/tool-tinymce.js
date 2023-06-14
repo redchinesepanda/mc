@@ -6,9 +6,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			mutation.addedNodes.forEach( function( added_node ) {
 				console.log( 'added_node.id: ' + added_node.id );
 
-				if( added_node.id == 'child' ) {
+				if( added_node.id == 'mce-modal-block' ) {
 					console.log( 'child has been added' );
-					
+
 					observer.disconnect();
 				}
 			});
