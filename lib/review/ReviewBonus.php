@@ -289,7 +289,7 @@ class ReviewBonus
 			$review = $group[ self::GROUP[ 'review' ] ];
 
 			LegalDebug::debug( [
-				'review' => $review,
+				'review' => ( $review ? $review : 'false' ),
 			] );
 
 			if ( $review ) {
