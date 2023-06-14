@@ -276,6 +276,14 @@ class ReviewBonus
     public static function check_url_review()
 	{
 		$group = get_field( ReviewAbout::FIELD );
+
+		LegalDebug::debug( [
+			'FIELD' => ReviewAbout::FIELD,
+
+			'review' => self::GROUP[ 'review' ],
+
+			'group' => $group,
+		] );
         
         if( $group ) {
 			if ( !empty( $group[ self::GROUP[ 'review' ] ] ) ) {
