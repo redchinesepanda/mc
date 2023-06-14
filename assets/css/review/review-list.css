@@ -10,7 +10,8 @@
     /* Review Position */
 
     .tcb-post-content ul:not( [ class ] ):not( [ style ] ),
-    .tcb-post-content ol:not( [ class ] ) {
+    .tcb-post-content ol:not( [ class ] ),
+    .tcb-post-content ol:not( .legal-override ) {
         padding-left: 30px;
     }
 
