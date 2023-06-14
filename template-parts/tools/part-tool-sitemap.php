@@ -1,4 +1,4 @@
-<ul class="htmlmap_pages">
+<ul class="legal-sitemap">
 	<?php foreach( $args as $item ) : ?>
 		<li>
 			<a href="<?php echo $item[ 'href' ]; ?>">
