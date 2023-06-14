@@ -6,9 +6,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			console.log( 'mutation: ' + mutation );
 
 			if (mutation.type === "childList") {
-				mutation.addedNodes.forEach( function ( currentValue, currentIndex, listObj ) {
-					console.log( `${currentValue}, ${currentIndex}, ${this}` );
-				  }, 'myThisArg' );
+				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
+					console.log( `${added_node}, ${index}, ${this}` );
+				}, 'myThisArg' );
 			}
 		}
 	};
