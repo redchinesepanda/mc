@@ -10,10 +10,6 @@ class ToolSitemap
 
 		add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
     }
-	
-	const TEMPLATE = [
-        'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tool/part-tool-sitemap.php',
-    ];
 
 	public static function get_args()
     {
@@ -46,6 +42,12 @@ class ToolSitemap
 
 					'get_post_permalink' => get_post_permalink( $post->ID ),
 				] );
+
+				$items[] = [
+					'label' => $post->post_title,
+
+					'href' => get_post_permalink( $post->ID ),
+				];
 			}
 		}
 
@@ -56,6 +58,10 @@ class ToolSitemap
 	{
 		return self::parse_posts();
 	}
+	
+	const TEMPLATE = [
+        'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap.php',
+    ];
 
     public static function render()
     {
