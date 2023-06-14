@@ -305,8 +305,10 @@ class ReviewBonus
 		$group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
-			if ( !empty( $group[ self::GROUP[ 'afillate' ] ] ) ) {
-				return $group[ self::GROUP[ 'afillate' ] ];
+			$afillate = $group[ self::GROUP[ 'afillate' ] ];
+			
+			if ( $afillate ) {
+				return $afillate;
 			}
 		}
 
