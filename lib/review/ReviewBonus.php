@@ -12,7 +12,7 @@ class ReviewBonus
         'review-billet' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
 
-            'ver' => '1.0.2',
+            'ver' => '1.0.3',
         ],
     ];
  
@@ -377,7 +377,7 @@ class ReviewBonus
 					[
 						'title' => 'Billet Description',
 						
-						'selector' => 'p',
+						'selector' => 'p,ul,ol',
 
 						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'description' ],
 					],
