@@ -11,12 +11,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 					console.log( 'added_node.id: ' + added_node.id );
 
-					console.log( 'added_node: ' + added_node );
-
-					console.log( 'children: ' + added_node.children );
-
-					Array.from( added_node.children ).forEach( function( item ) {
-						console.log( 'id: ' + item.id );
+					added_node.querySelectorAll( '.mce-abs-end' ).forEach( function ( element ) {
+						console.log( 'element.id: ' + element.id );
 					} );
 
 					observer.disconnect();
