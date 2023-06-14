@@ -26,12 +26,16 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.0.2',
+            'ver' => '1.0.3',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
 
-        'review-list' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
+        'review-list' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
+
+            'ver' => '1.0.1'
+        ],
 
         'review-title' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
 
