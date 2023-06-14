@@ -172,7 +172,9 @@ class OopsMain
 
     public static function render_check()
     {
-        if ( self::check_oops() ) {
+        // if ( self::check_oops() ) {
+        
+        if ( self::check() ) {
             return self::render();
         }
 
@@ -190,10 +192,10 @@ class OopsMain
         return $output;
     }
 
-    public static function check()
-    {
-        return ReviewMain::check();
-    }
+    // public static function check()
+    // {
+    //     return ReviewMain::check();
+    // }
 }
 
 ?>
