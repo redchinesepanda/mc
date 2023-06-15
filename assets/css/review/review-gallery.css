@@ -4,8 +4,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 9px;
-    row-gap: 9px;
+    column-gap: 15px;
+    row-gap: 15px;
 }
   
 /* Gallery Position */
@@ -39,6 +39,10 @@
 }
   
 /* Gallery Width and Height */
+
+.legal-imageset .imageset-item {
+    width: calc( 33.333% - 7.5px );
+}
 
 .tcb-post-content .legal-gallery {
     height: 100vh;
