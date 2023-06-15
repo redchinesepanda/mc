@@ -57,6 +57,8 @@ class LegalMain {
 
 		WPMLMain::register();
 
+		YoastMain::register();
+
 		SchemaMain::register();
 
 		BaseMain::register();
