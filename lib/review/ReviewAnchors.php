@@ -60,7 +60,9 @@ class ReviewAnchors
 
         $keys = array_keys( $labels );
 
-		return sort( $keys );
+        sort( $keys );
+
+		return $keys;
 	}
 
 	public static function get_nodes( $dom )
