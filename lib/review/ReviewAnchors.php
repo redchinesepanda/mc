@@ -58,11 +58,7 @@ class ReviewAnchors
             $labels = array_merge( $labels, $custom );
         }
 
-        LegalDebug::debug( [
-            '$labels' => $labels,
-        ] );
-
-		return [];
+		return array_keys( $labels );
 	}
 
 	public static function get_nodes( $dom )
