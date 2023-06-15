@@ -15,7 +15,9 @@ class SchemaMain
 
 		LegalDebug::debug( [
 			'markup' => $markup,
-			
+
+			'markup_empty' => ( !empty( $markup ) ? $markup : 'false' ),
+
 			'$data' => $data,
 		] );
 		
