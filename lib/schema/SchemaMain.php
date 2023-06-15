@@ -14,6 +14,8 @@ class SchemaMain
 		$data = json_decode( $markup );
 
 		LegalDebug::debug( [
+			'markup' => $markup,
+			
 			'$data' => $data,
 		] );
 		
