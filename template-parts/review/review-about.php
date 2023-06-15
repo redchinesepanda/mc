@@ -10,7 +10,7 @@
             }
         </style>
     <?php endif; ?>
-    <div class="review-about">
+    <div class="review-about <?php echo $args[ 'font' ]; ?>">
         <div class="about-left">
             <div class="about-logo"></div>
             <?php if( empty( $args['mode'] ) ) : ?>

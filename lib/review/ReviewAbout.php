@@ -68,6 +68,8 @@ class ReviewAbout
                 'logo' => $group[ 'about-logo' ],
 
                 'background' => $group[ 'about-background' ],
+
+                'font' => $group[ 'about-font' ],
                 
                 'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
 
