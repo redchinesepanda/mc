@@ -58,7 +58,9 @@ class ReviewAnchors
             $labels = array_merge( $labels, $custom );
         }
 
-		return sort( array_keys( $labels ) );
+        $keys = array_keys( $labels );
+
+		return sort( $keys );
 	}
 
 	public static function get_nodes( $dom )
