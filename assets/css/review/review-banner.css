@@ -26,6 +26,10 @@
 	padding: 0px;
 }
 
+.legal-banner .image-caption {
+	padding-top: 5px;
+}
+
 /* Width and Height */
 
 .legal-banner {
