@@ -7,13 +7,21 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
 					added_node.querySelectorAll( 'label' ).forEach( function ( element ) {
 						if ( element.textContent == 'ID' ) {
-							console.log( 'mutation: ' + mutation );
+							// console.log( 'mutation: ' + mutation );
 
-							console.log( `${added_node}, ${index}, ${this}` );
+							// console.log( `${added_node}, ${index}, ${this}` );
 
-							console.log( 'added_node.id: ' + added_node.id );
+							// console.log( 'added_node.id: ' + added_node.id );
 
-							console.log( 'textContent: ' + element.textContent );
+							// console.log( 'textContent: ' + element.textContent );
+
+							element.setAttribute( 'list', 'legal-anchor-choices' );
+
+							let datalist = document.createElement( 'DATALIST' );
+
+							datalist.setAttribute( 'id', 'legal-anchor-choices' );
+
+							element.parent.appendChild( datalist );
 						}
 					} );
 				}, 'myThisArg' );

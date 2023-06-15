@@ -3,7 +3,11 @@
 class ToolTinyMCE
 {
 	const JS = [
-        'tool-tinymce' => LegalMain::LEGAL_URL . '/assets/js/tools/tool-tinymce.js',
+        'tool-tinymce' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/tools/tool-tinymce.js',
+
+			'ver' => '1.0.1',
+		],
     ];
 
     public static function register_script()
