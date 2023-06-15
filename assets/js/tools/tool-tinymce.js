@@ -3,16 +3,18 @@
 document.addEventListener( 'DOMContentLoaded', function () {
 	const callback = ( mutationList ) => {
 		for (const mutation of mutationList) {
-			console.log( 'mutation: ' + mutation );
-
 			if (mutation.type === "childList") {
 				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
-					console.log( `${added_node}, ${index}, ${this}` );
-
-					console.log( 'added_node.id: ' + added_node.id );
-
 					added_node.querySelectorAll( 'label' ).forEach( function ( element ) {
-						console.log( 'textContent: ' + element.textContent );
+						if ( element.textContent == 'ID' ) {
+							console.log( 'mutation: ' + mutation );
+
+							console.log( `${added_node}, ${index}, ${this}` );
+
+							console.log( 'added_node.id: ' + added_node.id );
+
+							console.log( 'textContent: ' + element.textContent );
+						}
 					} );
 				}, 'myThisArg' );
 			}
