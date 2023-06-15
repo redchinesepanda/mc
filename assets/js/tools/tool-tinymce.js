@@ -7,19 +7,21 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
 					added_node.querySelectorAll( 'label' ).forEach( function ( element ) {
 						if ( element.textContent == 'ID' ) {
-							// console.log( 'mutation: ' + mutation );
-
-							// console.log( `${added_node}, ${index}, ${this}` );
-
-							// console.log( 'added_node.id: ' + added_node.id );
-
-							// console.log( 'textContent: ' + element.textContent );
-
 							element.nextSibling.setAttribute( 'list', 'legal-anchor-choices' );
 
-							let datalist = document.createElement( 'DATALIST' );
+							let datalist = document.createElement( 'datalist' );
 
 							datalist.setAttribute( 'id', 'legal-anchor-choices' );
+							
+							let legal_anchors = [ 'Herr', 'Frau' ];
+
+							legal_anchors.forEach( function( item ){
+								var option = document.createElement( 'option' );
+
+								option.value = item;
+
+								datalist.appendChild( option );
+							});
 
 							element.parentElement.appendChild( datalist );
 						}
