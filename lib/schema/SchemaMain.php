@@ -11,7 +11,11 @@ class SchemaMain
 
 	public static function markup( $markup )
 	{
-		$data = json_decode( $markup );
+		$data = [];
+
+		if ( !empty( $markup ) ) {
+			$data = json_decode( $markup );
+		}
 
 		LegalDebug::debug( [
 			'markup' => $markup,
