@@ -24,16 +24,8 @@ class ReviewGroup
 
     const TAXONOMY = 'page_group';
 
-    public static function get()
-    {
-        $post = get_post();
-
-        if ( empty( $post ) )
-            return [];
-
-        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
-
-        $posts = get_posts( [
+    public static function get_group_args( $terms = [] ) {
+        return [
             'numberposts' => -1,
 
             'post_type' => [ 'legal_bk_review', 'page' ],
@@ -57,30 +49,43 @@ class ReviewGroup
             'orderby' => 'menu_order',
 
             'order' => 'ASC',
-        ] );
+        ];
+    }
 
-        // LegalDebug::debug( [
-        //     '$terms' => $terms,
+    public static function get_item_label( $post )
+    {
+        $label = $post->post_title;
 
-        //     '$posts' => count( $posts ),
-        // ] );
+        if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
+            $label .= ' ' . __( 'Review', ToolLoco::TEXTDOMAIN );
+        }
+
+        return $label;
+    }
+
+    public static function get()
+    {
+        $post = get_post();
+
+        if ( empty( $post ) ) {
+            return [];
+        }
 
         $items[ 'current' ] = [
-            'label' => $post->post_title,
+            'label' => self::get_item_label( $post ),
         ];
+
+        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
+
+        $posts = get_posts( self::get_group_args( $terms ) );
 
         $items[ 'other' ] = [];
 
         if ( !empty( $posts ) ) {
             foreach ( $posts as $post ) {
-                $label = $post->post_title;
-
-                if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
-                    $label .= ' ' . __( 'Review', ToolLoco::TEXTDOMAIN );
-                }
 
                 $items[ 'other' ][] = [
-                    'label' => $label,
+                    'label' => self::get_item_label( $post ),
     
                     'href' => get_post_permalink( $post->ID ),
                 ];
