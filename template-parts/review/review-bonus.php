@@ -1,7 +1,7 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-title">
 		<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
-		<h4>
+		<h4 class="bonus-title-wrapper">
 			<a class="bonus-title-link check-oops" href="<?php echo $args['title'][ 'href' ]; ?>">
 				<?php echo $args['title'][ 'text' ]; ?>
 			</a>
