@@ -24,7 +24,7 @@ class ReviewGroup
 
     const TAXONOMY = 'page_group';
 
-    public static function get_group_args( $terms = [] ) {
+    public static function get_group_args( $post, $terms = [] ) {
         return [
             'numberposts' => -1,
 
@@ -77,7 +77,7 @@ class ReviewGroup
 
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
 
-        $posts = get_posts( self::get_group_args( $terms ) );
+        $posts = get_posts( self::get_group_args( $post, $terms ) );
 
         $items[ 'other' ] = [];
 
