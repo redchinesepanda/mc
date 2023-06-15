@@ -10,6 +10,10 @@
   
 /* Gallery Position */
 
+.tcb-post-content .legal-imageset .item-caption {
+    padding-top: 5px;
+}
+
 .tcb-post-content .legal-imageset {
     padding-bottom: 30px;
 }
@@ -86,7 +90,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 24.5px;
     color: rgb(105, 105, 105);
     text-align: left;
 }

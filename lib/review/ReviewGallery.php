@@ -6,7 +6,7 @@ class ReviewGallery
         'review-gallery' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery.css',
 
-            'ver' => '1.0.2'
+            'ver' => '1.0.3'
         ],
     ];
 
