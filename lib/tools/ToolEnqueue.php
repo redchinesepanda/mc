@@ -51,7 +51,7 @@ class ToolEnqueue
     {
         wp_register_script( $name, false, [], true, true );
         
-        wp_localize_script( $name, 'wp_ajax_comment_data', $data );
+        wp_localize_script( $name, $name, $data );
         
         wp_enqueue_script( $name );
     }
