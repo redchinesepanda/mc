@@ -1,7 +1,18 @@
 <?php
 
+require_once( 'YoastOG.php' );
+
 class YoastMain
 {
+    public static function register()
+    {
+        // $handler = new self();
+
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        YoastOG::register();
+    }
+
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
 
     public static function print()

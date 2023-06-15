@@ -17,13 +17,13 @@ class SchemaMain
 			$data = json_decode( $markup );
 		}
 
-		LegalDebug::debug( [
-			'markup' => $markup,
+		// LegalDebug::debug( [
+		// 	'markup' => $markup,
 
-			'markup_empty' => ( !empty( $markup ) ? $markup : 'false' ),
+		// 	'markup_empty' => ( !empty( $markup ) ? $markup : 'false' ),
 
-			'$data' => $data,
-		] );
+		// 	'$data' => $data,
+		// ] );
 		
 		if ( !empty( $data ) ) {
 			if ( property_exists( $data, '@context' ) ) {
