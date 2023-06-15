@@ -7,6 +7,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				mutation.addedNodes.forEach( function ( added_node, index, listObj ) {
 					added_node.querySelectorAll( 'label' ).forEach( function ( element ) {
 						if ( element.textContent == 'ID' ) {
+							observer.disconnect();
+
 							element.nextSibling.setAttribute( 'list', 'legal-anchor-choices' );
 
 							let datalist = document.createElement( 'datalist' );
