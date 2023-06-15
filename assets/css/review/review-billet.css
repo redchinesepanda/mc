@@ -149,13 +149,20 @@
 
 /* Billet Typography */
 
+.legal-billet.legal-default .review-title-link {
+	color: #ffffff;
+}
+
+.legal-billet:not( .legal-default ) .review-title-link {
+	color: #000000;
+}
+
 .legal-billet .review-title-link {
 	font-family: "Source Sans Pro";
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 27px;
-	color: rgb(255, 255, 255);
 	text-decoration: none;
 	text-transform: uppercase;
 }
