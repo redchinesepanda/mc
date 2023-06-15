@@ -54,7 +54,11 @@ class ReviewGroup
 
     public static function get_item_label( $post )
     {
-        $label = $post->post_title;
+        $group = get_field( ReviewAbout::FIELD );
+
+        // $label = $post->post_title;
+        
+        $label = $group[ 'about-title' ];
 
         if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
             $label .= ' ' . __( 'Review', ToolLoco::TEXTDOMAIN );
