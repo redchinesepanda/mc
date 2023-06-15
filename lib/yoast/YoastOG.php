@@ -13,15 +13,15 @@ class YoastOG
 
 	function current_image()
 	{
+		LegalDebug::debug( [
+			'current_image' => LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . WPMLMain::current_language() . '.webp',
+		] );
+
 		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . WPMLMain::current_language() . '.webp';
 	}
 
 	function default_opengraph_images( $object )
 	{
-		LegalDebug::debug( [
-			'current_image' => self::current_image(),
-		] );
-
 		$object->add_image( self::current_image() );
 	}
 }
