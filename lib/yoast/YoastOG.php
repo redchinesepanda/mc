@@ -22,7 +22,7 @@ class YoastOG
 		$language = WPMLMain::current_language();
 
 		if ( !file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) ) {
-			$language = 'en';
+			$language = 'default';
 		}
 
 		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';

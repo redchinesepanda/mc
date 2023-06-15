@@ -6,10 +6,6 @@ class YoastMain
 {
     public static function register()
     {
-        // $handler = new self();
-
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
         YoastOG::register();
     }
 
