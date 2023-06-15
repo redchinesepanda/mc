@@ -21,7 +21,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 							datalist.setAttribute( 'id', 'legal-anchor-choices' );
 
-							element.parent.appendChild( datalist );
+							element.parentElement.appendChild( datalist );
 						}
 					} );
 				}, 'myThisArg' );
