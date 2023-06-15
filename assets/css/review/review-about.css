@@ -150,17 +150,17 @@
 
 /* Review About Typography */
 
-.review-about:not( .legal-dark ) .about-rating,
-.review-about:not( .legal-dark ) .about-center h1,
-.review-about:not( .legal-dark ) .about-center h3,
-.review-about:not( .legal-dark ) .about-center p {
+.review-about:not( .legal-black ) .about-rating,
+.review-about:not( .legal-black ) .about-center h1,
+.review-about:not( .legal-black ) .about-center h3,
+.review-about:not( .legal-black ) .about-center p {
     color: #ffffff;
 }
 
-.review-about.legal-dark .about-rating,
-.review-about.legal-dark .about-center h1,
-.review-about.legal-dark .about-center h3,
-.review-about.legal-dark .about-center p {
+.review-about.legal-black .about-rating,
+.review-about.legal-black .about-center h1,
+.review-about.legal-black .about-center h3,
+.review-about.legal-black .about-center p {
     color: #000000;
 }
 
