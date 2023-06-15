@@ -5,9 +5,9 @@
 			<?php echo $args['title'][ 'text' ]; ?>
 		</a>
 	</div>
-	<div class="bonus-name">
+	<h3 class="bonus-name">
 		<?php echo $args[ 'name' ]; ?>
-	</div>
+	</h3>
 	<div class="bonus-get">
 		<a class="bonus-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>">
 			<?php echo $args['get'][ 'text' ]; ?>
