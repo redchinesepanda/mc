@@ -73,8 +73,14 @@ class ReviewGroup
 
         if ( !empty( $posts ) ) {
             foreach ( $posts as $post ) {
+                $label = $post->post_title;
+
+                if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
+                    $label .= ' ' . __( 'Review', ToolLoco::TEXTDOMAIN );
+                }
+
                 $items[ 'other' ][] = [
-                    'label' => $post->post_title,
+                    'label' => $label,
     
                     'href' => get_post_permalink( $post->ID ),
                 ];
