@@ -19,7 +19,13 @@ class YoastOG
 		// 	'current_image' => LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . WPMLMain::current_language() . '.webp',
 		// ] );
 
-		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . WPMLMain::current_language() . '.webp';
+		$language = WPMLMain::current_language();
+
+		if ( !file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) ) {
+			$language = 'en';
+		}
+
+		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
 	}
 
 	// function default_opengraph_images( $object )
