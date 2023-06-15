@@ -131,6 +131,10 @@
 	text-align: center;
 }
 
+.legal-bonus .bonus-title-wrapper {
+	text-align: center;
+}
+
 .legal-bonus .bonus-name {
 	font-family: "Source Sans Pro";
 	font-size: 18px;
