@@ -107,32 +107,16 @@ class ReviewBanner
 
 				$item->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
 
+				$node->removeAttribute( 'class' );
+
 				$node->removeAttribute( 'srcset' );
 
 				$node->removeAttribute( 'sizes' );
 
 				LegalDOM::appendHTML( $item, self::render( [
-					// 'image' => [
-					// 	'src' => $src,
-
-					// 	'width' => $data[ 1 ],
-    
-                    // 	'height' => $data[ 2 ],
-					// ],
-
 					'image' => $dom->saveHTML( $node ),
 
-					// 'title' => ToolEncode::encode( get_field( self::FIELD[ 'title' ], $attachment_id ) ),
-					
-					// 'description' => ToolEncode::encode( get_field( self::FIELD[ 'description' ], $attachment_id ) ),
-
 					'caption' => ( $caption ? $caption : '' ),
-
-					// 'terms' => [
-					// 	'href' => get_field( self::FIELD[ 'referal' ], $attachment_id ),
-
-					// 	'text' => __( 'Terms and Conditions', ToolLoco::TEXTDOMAIN ),
-					// ],
 				] ) );
 				
 				$replace = $node->parentNode;
