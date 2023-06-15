@@ -15,9 +15,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 							datalist.setAttribute( 'id', 'legal-anchor-choices' );
 							
-							let legal_anchors = [ 'Herr', 'Frau' ];
+							// let legal_anchors = [ 'Herr', 'Frau' ];
 
-							legal_anchors.forEach( function( item ){
+							legal_anchors_data.forEach( function( item ){
 								var option = document.createElement( 'option' );
 
 								option.value = item;
