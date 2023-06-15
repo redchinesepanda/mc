@@ -46,6 +46,15 @@ class ToolEnqueue
 		
 		wp_enqueue_style( $name );
     }
+
+	public static function register_inline_script( $name, $data )
+    {
+        wp_register_script( $name, false, [], true, true );
+        
+        wp_localize_script( $name, 'wp_ajax_comment_data', $data );
+        
+        wp_enqueue_script( $name );
+    }
 }
 
 ?>

@@ -28,6 +28,11 @@ class ReviewAnchors
         ReviewMain::register_script( self::JS );
     }
 
+    public static function register_admin_script()
+    {
+        ToolEnqueue::register_inline_script( 'legal-anchors-data', self::anchors_data() );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -39,7 +44,26 @@ class ReviewAnchors
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
     }
+
+	public static function anchors_data()
+	{
+		$labels = self::get_labels();
+
+        $custom = self::get_custom();
+
+        if ( !empty( $custom ) ) {
+            $labels = array_merge( $labels, $custom );
+        }
+
+        LegalDebug::debug( [
+            '$labels' => $labels,
+        ] );
+
+		return [];
+	}
 
 	public static function get_nodes( $dom )
 	{
