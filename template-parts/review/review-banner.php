@@ -1,6 +1,6 @@
 <div class="banner-image">
 	<?php echo $args[ 'image' ]; ?>
 	<?php if( !empty( $args[ 'caption' ] ) ) : ?>
-		<p><?php echo $args[ 'caption' ]; ?></p>
+		<div class="image-caption"><?php echo $args[ 'caption' ]; ?></div>
 	<?php endif; ?>
 </div>
