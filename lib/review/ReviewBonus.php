@@ -188,6 +188,8 @@ class ReviewBonus
 		
 		// if ( $group ) {
 			return [
+				'class' => ( !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default' ),
+
 				'src' => ( !empty( $group[ 'about-logo-square' ] ) ? $group[ 'about-logo-square' ] : '' ),
 
 				'title' => [
@@ -248,6 +250,8 @@ class ReviewBonus
 		'logo-square' => 'about-logo-square',
 
 		'background' => 'about-background',
+
+		'font' => 'about-font',
 
 		'rating' => 'about-rating',
 
