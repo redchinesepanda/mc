@@ -89,7 +89,7 @@
 	padding-top: 30px;
 }
 
-.legal-bonus .bonus-title {
+.legal-bonus h3.bonus-title:not( .legal-override ) {
 	padding-bottom: 0px;
 }
 
