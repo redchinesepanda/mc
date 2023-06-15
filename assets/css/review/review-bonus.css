@@ -89,6 +89,10 @@
 	padding-top: 30px;
 }
 
+.legal-bonus .bonus-title {
+	padding-bottom: 0px;
+}
+
 /* Bonus Background */
 
 .legal-bonus {
