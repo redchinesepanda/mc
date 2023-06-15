@@ -41,7 +41,7 @@
 /* Gallery Width and Height */
 
 .legal-imageset .imageset-item {
-    width: calc( 33.333% - 7.5px );
+    width: calc( 33.333% - 10px );
 }
 
 .tcb-post-content .legal-gallery {
