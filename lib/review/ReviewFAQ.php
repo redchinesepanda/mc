@@ -140,7 +140,7 @@ class ReviewFAQ
 					[
 						'title' => 'FAQ Title',
 						
-						'selector' => 'h3',
+						'selector' => 'h3,p',
 
 						'classes' => self::CSS_CLASS[ 'title' ],
 					],
