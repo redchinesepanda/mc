@@ -20,6 +20,10 @@ class YoastOG
 
 	function default_opengraph_images( $object )
 	{
+		LegalDebug::debug( [
+			'current_image' => self::current_image(),
+		] );
+
 		$object->add_image( self::current_image() );
 	}
 }
