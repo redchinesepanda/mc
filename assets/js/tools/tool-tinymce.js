@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 							// console.log( 'textContent: ' + element.textContent );
 
-							element.setAttribute( 'list', 'legal-anchor-choices' );
+							element.nextSibling.setAttribute( 'list', 'legal-anchor-choices' );
 
 							let datalist = document.createElement( 'DATALIST' );
 
