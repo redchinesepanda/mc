@@ -56,7 +56,7 @@ class ReviewGroup
     {
         $label = $post->post_title;
 
-        $group = get_field( ReviewAbout::FIELD );
+        $group = get_field( ReviewAbout::FIELD, $post );
 
         if ( $group ) {
             $label = $group[ 'about-title' ];
