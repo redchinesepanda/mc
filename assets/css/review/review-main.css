@@ -34,7 +34,7 @@
     padding-bottom: 30px;
 }
 
-.tcb-post-content h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
+.tcb-post-content h3:not( .legal-override ):not( .legal-faq-title ) {
     padding-bottom: 20px;
 }
 
