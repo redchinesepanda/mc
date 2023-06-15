@@ -11,7 +11,7 @@ class SchemaMain
 
 	public static function markup( $markup )
 	{
-		$data = [];
+		$data = '';
 
 		if ( !empty( $markup ) ) {
 			$data = json_decode( $markup );
