@@ -9,6 +9,8 @@ class YoastOG
 		add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
 
 		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image' ] );
+
+		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
     }
 
 	function current_image()
