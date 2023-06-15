@@ -13,9 +13,9 @@ class SchemaMain
 	{
 		$data = json_decode( $markup );
 
-		// LegalDebug::debug( [
-		// 	'$data' => $data,
-		// ] );
+		LegalDebug::debug( [
+			'$data' => $data,
+		] );
 		
 		if ( !empty( $data ) ) {
 			if ( property_exists( $data, '@context' ) ) {
