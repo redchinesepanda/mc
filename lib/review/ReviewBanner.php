@@ -3,7 +3,11 @@
 class ReviewBanner
 {
 	const CSS = [
-        'review-banner' => LegalMain::LEGAL_URL . '/assets/css/review/review-banner.css',
+        'review-banner' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-banner.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
     public static function register_style()
