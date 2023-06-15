@@ -89,10 +89,6 @@
 	padding-top: 30px;
 }
 
-.legal-bonus .bonus-title-wrapper {
-	padding-bottom: 0px;
-}
-
 /* Bonus Background */
 
 .legal-bonus {
@@ -128,10 +124,6 @@
 	line-height: 33.6px;
 	color: rgb(12, 17, 21);
 	text-decoration: none;
-	text-align: center;
-}
-
-.legal-bonus .bonus-title-wrapper {
 	text-align: center;
 }
 
