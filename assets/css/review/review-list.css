@@ -1,5 +1,18 @@
 @media screen and ( min-width: 768px )
 {
+    /* Review Position */
+
+    .tcb-post-content li:not( .legal-override ) {
+        padding-left: 24px;
+    }
+    
+    .tcb-post-content li::before {
+        margin-left: -24px;
+    }
+}
+
+@media screen and ( min-width: 768px )
+{
     /* Display */
 
     .tcb-post-content .legal-list-3 {
@@ -12,6 +25,14 @@
     .tcb-post-content ul:not( .legal-override )
     .tcb-post-content ol:not( .legal-override ) {
         padding-left: 30px;
+    }
+
+    .tcb-post-content li:not( .legal-override ) {
+        padding-left: 34px;
+    }
+    
+    .tcb-post-content li::before {
+        margin-left: -34px;
     }
 
     /* Width and Height */
@@ -80,13 +101,11 @@
 }
 
 .tcb-post-content li:not( .legal-override ) {
-	padding-left: 34px;
 	margin-left: 0px;
 }
 
 .tcb-post-content li::before {
     margin-right: 10px;
-    margin-left: -34px;
 }
 
 .tcb-post-content ul li::before {
