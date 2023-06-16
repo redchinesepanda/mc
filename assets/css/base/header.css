@@ -202,7 +202,7 @@
 	padding: 10px;
 }
 
-.legal-menu .menu-item.legal-country:not( .menu-item-has-children ) > a {
+.legal-menu .menu-item.legal-country > a {
 	padding: 10px 10px 10px 43px;
 }
 
