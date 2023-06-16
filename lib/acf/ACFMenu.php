@@ -23,6 +23,8 @@ class ACFMenu
 
         $field[ 'choices' ][ 'legal-country-bonus' ] = '[ bonus ] Bonuses';
 
+        $field[ 'choices' ][ 'legal-country-casino' ] = '[ casino ] Casino';
+
         $field[ 'choices' ][ 'legal-country-all' ] = '[ all ] Choose your country';
 
         if ( !empty( $langs ) ) {
