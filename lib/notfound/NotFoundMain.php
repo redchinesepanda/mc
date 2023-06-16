@@ -6,7 +6,7 @@ class NotFoundMain
         'legal-notfound' => [
 			'path' =>  LegalMain::LEGAL_URL . '/assets/css/notfound/notfound.css',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		],
     ];
 
