@@ -210,9 +210,9 @@
 	padding: 12px 17px;
 }
 
-/* .legal-menu .legal-country > .sub-menu > .legal-country > a {
-	padding: 12px 17px 12px 50px;
-} */
+.legal-menu .sub-menu > .legal-country > a {
+	padding: 10px 10px 10px 50px;
+}
 
 .legal-menu .menu-item-has-children:after {
 	padding: 10px 0px;
