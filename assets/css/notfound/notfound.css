@@ -65,6 +65,7 @@
 	color: #3B3B3B;
 	text-transform: uppercase;
 	text-decoration: none;
+	padding-left: 10px;
 }
 
 .page404 .menu-avaible-404 .lang-item:hover {
@@ -73,6 +74,10 @@
 	color: #fff;
 	border-radius: 10px;
 	box-shadow: 0 0 10px #E4E4E4;
+}
+
+.page404 .menu-avaible-404 .lang-item .lang-title {
+	width: fit-content;
 }
 
 .page404 .menu-avaible-404 .lang-item .lang-image {
