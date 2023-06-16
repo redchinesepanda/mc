@@ -27,6 +27,11 @@
         padding-left: 30px;
     }
 
+    .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
+    .tcb-post-content ol:not( .legal-override ) ol {
+        padding-left: 0px;
+    }
+
     .tcb-post-content li:not( .legal-override ) {
         padding-left: 34px;
     }
