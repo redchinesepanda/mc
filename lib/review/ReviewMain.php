@@ -34,7 +34,7 @@ class ReviewMain
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.0.2'
+            'ver' => '1.0.3'
         ],
 
         'review-title' => [

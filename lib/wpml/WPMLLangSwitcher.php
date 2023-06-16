@@ -109,9 +109,9 @@ class WPMLLangSwitcher
 
         $args['active'] = self::get_active( $languages );
 
-        LegalDebug::debug( [
-            $args['active'],
-        ] );
+        // LegalDebug::debug( [
+        //     $args['active'],
+        // ] );
 
         $languages = self::exclude( $languages );
 
