@@ -12,7 +12,11 @@ class BaseHeader
     }
 
 	const CSS = [
-        'legal-header' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
+        'legal-header' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
     public static function register_style()
