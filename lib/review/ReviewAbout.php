@@ -86,13 +86,17 @@ class ReviewAbout
         return [];
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-about.php';
+    const TEMPLATE = [
+        'review-about' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about.php',
+
+        'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
+    ];
 
     public static function render( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get( $args ) );
+        load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
 
         $output = ob_get_clean();
 
@@ -114,13 +118,11 @@ class ReviewAbout
         return [];
     }
 
-    const TEMPLATE_BUTTON = LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php';
-
     public static function render_button( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE_BUTTON, false, self::get_button( $args ) );
+        load_template( self::TEMPLATE[ 'review-button' ], false, self::get_button( $args ) );
 
         $output = ob_get_clean();
 
