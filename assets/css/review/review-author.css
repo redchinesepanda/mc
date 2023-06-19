@@ -9,9 +9,14 @@
 
 .legal-author {
 	padding: 20px 70px;
+	margin: 0px auto;
 }
 
 /* Width and Height */
+
+.legal-author {
+	max-width: 1080px;
+}
 
 .legal-author .author-photo {
 	width: 100px;
@@ -26,5 +31,5 @@
 	background-size: auto;
 
 	border-radius: 50%;
-	border: 2px solid #fafcfe;
+	border: 2px solid #3E66AC;
 }
