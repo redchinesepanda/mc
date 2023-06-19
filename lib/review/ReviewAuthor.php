@@ -22,6 +22,8 @@ class ReviewAuthor
         // [legal-author]
 
         add_shortcode( 'legal-author', [ $handler, 'render' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
     public static function get()
