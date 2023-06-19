@@ -20,6 +20,8 @@ require_once( 'ReviewHowTo.php' );
 
 require_once( 'ReviewBanner.php' );
 
+require_once( 'ReviewAuthor.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -114,6 +116,8 @@ class ReviewMain
         ReviewHowTo::register();
 
         ReviewBanner::register();
+
+        ReviewAuthor::register();
     }
 
     public static function encoding( $content )
