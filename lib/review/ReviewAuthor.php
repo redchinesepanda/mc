@@ -28,12 +28,16 @@ class ReviewAuthor
 
     public static function get()
     {
+		$href = WPMLMain::locale_permalink( '/about-us/', WPMLMain::current_language() ) . '#our-team';
+
         return [
 			'name' => __( 'Valentin Axani', ToolLoco::TEXTDOMAIN ),
 
 			'duty' => __( 'Website Manager', ToolLoco::TEXTDOMAIN ),
 
 			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+
+			'href' => $href,
 		];
     }
 
