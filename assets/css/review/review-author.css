@@ -11,6 +11,13 @@
 	padding: 20px 70px;
 }
 
+/* Width and Height */
+
+.legal-author .author-photo {
+	width: 100px;
+	height: 100px;
+}
+
 /* Background */
 
 .legal-author .author-photo {

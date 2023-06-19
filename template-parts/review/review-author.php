@@ -1,6 +1,6 @@
 <style type="text/css">
 	.legal-author .author-photo {
-		background-image: url( '../../review/author/<?php echo $args[ 'file' ]; ?>' );
+		background-image: url( '../../img/review/author/<?php echo $args[ 'file' ]; ?>' );
 	}
 </style>
 <div class="legal-author">
