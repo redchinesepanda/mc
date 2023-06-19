@@ -183,7 +183,7 @@
 	transform: rotate(180deg);
 }
 
-.legal-menu .menu-item a[href=""] {
+.legal-menu .menu-item a[href="#"] {
     pointer-events: none;
 }
 
