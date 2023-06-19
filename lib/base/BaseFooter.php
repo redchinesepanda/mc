@@ -60,16 +60,18 @@ class BaseFooter
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		$menu_item_parents = ToolMenu::get_parents( $menu_items );
-
-		$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
-
-		$keys = array_keys( $parents_top );
-
 		$items = [];
 
-		foreach ( $keys as $key ) {
-			$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
+		if ( $menu_items) {
+			$menu_item_parents = ToolMenu::get_parents( $menu_items );
+
+			$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
+
+			$keys = array_keys( $parents_top );
+
+			foreach ( $keys as $key ) {
+				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
+			}
 		}
 
 		return $items;
