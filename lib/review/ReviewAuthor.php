@@ -33,7 +33,7 @@ class ReviewAuthor
 
 			'duty' => __( 'Website Manager', ToolLoco::TEXTDOMAIN ),
 
-			'file' => 'valentin-axani.webp',
+			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
 		];
     }
 

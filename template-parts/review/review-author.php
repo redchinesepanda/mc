@@ -1,6 +1,7 @@
 <style type="text/css">
 	.legal-author .author-photo {
-		background-image: url( '../../img/review/author/<?php echo $args[ 'file' ]; ?>' );
+		assets\img\review\author\valentin-axani.webp
+		background-image: url( '<?php echo $args[ 'file' ]; ?>' );
 	}
 </style>
 <div class="legal-author">
