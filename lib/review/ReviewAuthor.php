@@ -43,7 +43,7 @@ class ReviewAuthor
     {
         ob_start();
 
-        load_template( self::TEMPLATE_BUTTON, false, self::get() );
+        load_template( self::TEMPLATE[ 'review-author' ], false, self::get() );
 
         $output = ob_get_clean();
 
