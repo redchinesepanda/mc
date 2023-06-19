@@ -36,7 +36,7 @@ class ReviewAuthor
     }
 
     const TEMPLATE = [
-		'review-author' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
+		'review-author' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author.php',
 	];
 
     public static function render( $args )
