@@ -1,0 +1,23 @@
+/* Display */
+
+.legal-author {
+	display: flex;
+	column-gap: 20px;
+}
+
+/* Position */
+
+.legal-author {
+	padding: 20px 70px;
+}
+
+/* Background */
+
+.legal-author .author-photo {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+
+	border-radius: 50%;
+	border: 2px solid #fafcfe;
+}
