@@ -24,7 +24,7 @@ class ReviewAuthor
         add_shortcode( 'legal-author', [ $handler, 'render' ] );
     }
 
-    public static function get( $args )
+    public static function get()
     {
         return [
 			'name' => __( 'Valentin Axani', ToolLoco::TEXTDOMAIN ),
