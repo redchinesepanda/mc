@@ -5,6 +5,12 @@
 	column-gap: 20px;
 }
 
+.legal-author .author-data {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 /* Position */
 
 .legal-author {
