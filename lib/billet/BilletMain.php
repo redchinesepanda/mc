@@ -154,6 +154,8 @@ class BilletMain
         }
 
         LegalDebug::debug( [
+            'terms_id' => $terms_id,
+
             'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
             'menu_order' => ( get_post( $id ) )->menu_order,
@@ -161,8 +163,6 @@ class BilletMain
             'rating' => get_field( 'billet-title-rating', $id ),
 
             'profit' => get_field( 'billet-profit-items', $id ),
-
-            'terms_id' => $terms_id,
         ] );
 
         return [
