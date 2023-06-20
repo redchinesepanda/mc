@@ -162,7 +162,7 @@ class BilletMain
 
             'rating' => get_field( 'billet-title-rating', $id ),
 
-            'profit' => get_field( 'billet-profit-items', $id ),
+            // 'profit' => get_field( 'billet-profit-items', $id ),
         ] );
 
         return [
