@@ -6,9 +6,9 @@ class CompilationMain
 {
     const TEMPLATE = [
         'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+        
+        'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
-
-    const TEMPLATE_ATTENTION = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php';
 
     const CSS = [
         'compilation-main' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
@@ -188,7 +188,7 @@ class CompilationMain
     {
         if ( !empty( $attention['text'] ) )
             if ( $position == $attention['position'] )
-                load_template( self::TEMPLATE_ATTENTION, false, $attention );
+                load_template( self::TEMPLATE[ 'legal-attention' ], false, $attention );
     }
 }
 
