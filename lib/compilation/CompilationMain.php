@@ -84,6 +84,10 @@ class CompilationMain
 
     const COMPILATION = [
         'filter' => 'compilation-filter',
+
+        'locale' => 'compilation-locale',
+
+        'operator' => 'compilation-operator',
     ];
 
     public static function get_filter( $id )
@@ -128,7 +132,7 @@ class CompilationMain
 
             'post_type' => 'legal_billet',
 
-            'suppress_filters' => get_field( 'compilation-locale', $id ),
+            'suppress_filters' => get_field( self::COMPILATION[ 'locale' ], $id ),
 
             'tax_query' => [
                 [
@@ -138,7 +142,7 @@ class CompilationMain
 
                     'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
-                    'operator' => get_field( 'compilation-operator', $id ),
+                    'operator' => get_field( self::COMPILATION[ 'operator' ], $id ),
                 ]
             ],
 
