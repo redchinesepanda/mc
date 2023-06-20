@@ -39,7 +39,7 @@ class CompilationMain
 
         return $data;
     }
-
+    
     const ATTENTION = [
         'text' => 'compilation-attention-text',
 
@@ -54,11 +54,11 @@ class CompilationMain
             'id' => $id,
 
             'title' => [
-                    'image' => get_field( 'compilation-title-image', $id ),
+                    'image' => get_field( self::COMPILATION[ 'title-image' ], $id ),
 
-                    'class' => ( !empty( get_field( 'compilation-title-image', $id ) ) ? 'legal-image' : '' ),
+                    'class' => ( !empty( get_field( self::COMPILATION[ 'title-image' ], $id ) ) ? 'legal-image' : '' ),
 
-                    'text' => get_field( 'compilation-title-text', $id ),
+                    'text' => get_field( self::COMPILATION[ 'title-text' ], $id ),
             ],
 
             'attention' => [
@@ -83,6 +83,10 @@ class CompilationMain
     }
 
     const COMPILATION = [
+        'title-image' => 'compilation-title-image',
+
+        'title-text' => 'compilation-title-text',
+
         'filter' => 'compilation-filter',
 
         'locale' => 'compilation-locale',
