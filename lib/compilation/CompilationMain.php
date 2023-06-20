@@ -142,9 +142,9 @@ class CompilationMain
         ];
 
         
-        LegalDebug::debug( [
-            'args' => $args,
-        ] );
+        // LegalDebug::debug( [
+        //     'args' => $args,
+        // ] );
 
         return $args;
     }
