@@ -4,7 +4,13 @@ require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
 
 class CompilationMain
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php';
+    const TEMPLATE = [
+        'legal-compilation' => [
+            'path' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+
+            'ver' => '1.0.0',
+        ],
+    ];
 
     const TEMPLATE_ATTENTION = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php';
 
@@ -117,7 +123,7 @@ class CompilationMain
 
     public static function get_args( $id )
     {
-        $args = [
+        return [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -140,13 +146,6 @@ class CompilationMain
 
             'order' => 'ASC',
         ];
-
-        
-        // LegalDebug::debug( [
-        //     'args' => $args,
-        // ] );
-
-        return $args;
     }
 
     public static function get( $id )
@@ -180,7 +179,7 @@ class CompilationMain
 
     public static function render( $id = 0 )
     { 
-        load_template( self::TEMPLATE, false, self::get( $id ) );
+        load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
     }
     
     const POSITION_ABOVE = 'legal-above-title';
