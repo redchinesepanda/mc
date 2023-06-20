@@ -137,15 +137,15 @@ class BilletMain
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
-        LegalDebug::debug( [
-            'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
+        // LegalDebug::debug( [
+        //     'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
-            'menu_order' => ( get_post( $id ) )->menu_order,
+        //     'menu_order' => ( get_post( $id ) )->menu_order,
 
-            'rating' => get_field( 'billet-title-rating', $id ),
+        //     'rating' => get_field( 'billet-title-rating', $id ),
 
-            'profit' => get_field( 'billet-profit-items', $id ),
-        ] );
+        //     'profit' => get_field( 'billet-profit-items', $id ),
+        // ] );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
