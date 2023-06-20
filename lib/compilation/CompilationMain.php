@@ -5,11 +5,7 @@ require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
 class CompilationMain
 {
     const TEMPLATE = [
-        'legal-compilation' => [
-            'path' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
-
-            'ver' => '1.0.0',
-        ],
+        'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
     ];
 
     const TEMPLATE_ATTENTION = LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php';
