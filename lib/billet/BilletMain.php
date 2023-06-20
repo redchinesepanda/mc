@@ -135,31 +135,9 @@ class BilletMain
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        // $filter_description = true;
-
-        // if ( !empty( $args[ 'filter' ] ) ) {
-        //     $filter_description = $args[ 'filter' ][ 'description' ];
-        // }
-
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
-        $filter_margin = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'margin' ] : '' );
-
-        $terms = get_the_terms( $id, 'billet_feature' );
-
-        $terms_id = [];
-
-        if ( is_array( $terms ) ) {
-            foreach ( $terms as $term ) {
-                $terms_id[] = $term->term_id;
-            }
-        }
-
         LegalDebug::debug( [
-            'terms_id' => $terms_id,
-
-            'filter_margin' => $filter_margin,
-
             'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
             'menu_order' => ( get_post( $id ) )->menu_order,

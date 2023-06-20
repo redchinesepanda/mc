@@ -113,7 +113,7 @@ class CompilationMain
 
             'description' => get_field( 'billet-description-enabled', $id ),
 
-            'margin' => get_field( self::COMPILATION_FILTER, $id ),
+            'profit' => get_field( self::COMPILATION_FILTER, $id ),
         ];
     }
 
