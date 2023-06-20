@@ -40,11 +40,19 @@ class CompilationMain
         return $data;
     }
     
-    const ATTENTION_TEXT = 'compilation-attention-text';
+    // const ATTENTION_TEXT = 'compilation-attention-text';
 
-    const ATTENTION_POSITION = 'compilation-attention-position';
+    // const ATTENTION_POSITION = 'compilation-attention-position';
 
-    const ATTENTION_TYPE = 'compilation-attention-type';
+    // const ATTENTION_TYPE = 'compilation-attention-type';
+
+    const ATTENTION = [
+        'text' => 'compilation-attention-text',
+
+        'position' => 'compilation-attention-position',
+
+        'type' => 'compilation-attention-type',
+    ];
 
     public static function get_settings( $id )
     {
@@ -60,11 +68,11 @@ class CompilationMain
             ],
 
             'attention' => [
-                'text' => get_field( self::ATTENTION_TEXT, $id ),
+                'text' => get_field( self::ATTENTION[ 'text' ], $id ),
 
-                'position' => get_field( self::ATTENTION_POSITION, $id ),
+                'position' => get_field( self::ATTENTION[ 'position' ], $id ),
 
-                'type' => get_field( self::ATTENTION_TYPE, $id ),
+                'type' => get_field( self::ATTENTION[ 'type' ], $id ),
             ],
         ];
     }
