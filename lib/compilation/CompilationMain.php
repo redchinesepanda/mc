@@ -39,12 +39,6 @@ class CompilationMain
 
         return $data;
     }
-    
-    // const ATTENTION_TEXT = 'compilation-attention-text';
-
-    // const ATTENTION_POSITION = 'compilation-attention-position';
-
-    // const ATTENTION_TYPE = 'compilation-attention-type';
 
     const ATTENTION = [
         'text' => 'compilation-attention-text',
@@ -88,7 +82,9 @@ class CompilationMain
         return $id;
     }
 
-    const COMPILATION_FILTER = 'compilation-filter';
+    const COMPILATION = [
+        'filter' => 'compilation-filter',
+    ];
 
     public static function get_filter( $id )
     {
@@ -103,7 +99,7 @@ class CompilationMain
                 'label' => get_field( 'compilation-play-label', $id ),
             ],
 
-            'features' => get_field( self::COMPILATION_FILTER, $id ),
+            'features' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
             'order' => get_field( 'billet-order-type', $id ),
 
@@ -140,7 +136,7 @@ class CompilationMain
 
                     'field' => 'term_id',
 
-                    'terms' => get_field( self::COMPILATION_FILTER, $id ),
+                    'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
                     'operator' => get_field( 'compilation-operator', $id ),
                 ]
@@ -186,11 +182,13 @@ class CompilationMain
         load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
     }
     
-    const POSITION_ABOVE = 'legal-above-title';
+    const POSITION = [
+        'above' => 'legal-above-title',
 
-    const POSITION_BELOW = 'legal-below-title';
+        'below' => 'legal-below-title',
 
-    const POSITION_BOTTOM = 'legal-below';
+        'bottom' => 'legal-below'
+    ];
 
     public static function render_attention( $attention, $position )
     {
