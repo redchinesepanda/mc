@@ -104,6 +104,18 @@ class CompilationMain
         'rating-enabled' => 'billet-rating-enabled',
 
         'achievement-type' => 'billet-achievement-type',
+
+        'list-type' => 'billet-list-type',
+
+        'bonus-enabled' => 'billet-bonus-enabled',
+
+        'mobile-enabled' => 'billet-mobile-enabled',
+
+        'profit-enabled' => 'billet-profit-enabled',
+
+        'spoiler-enabled' => 'billet-spoiler-enabled',
+
+        'description-enabled' => 'billet-description-enabled',
     ];
 
     public static function get_filter( $id )
@@ -127,17 +139,17 @@ class CompilationMain
 
             'achievement' => get_field( self::BILLET[ 'achievement-type' ], $id ),
 
-            'list' => get_field( 'billet-list-type', $id ),
+            'list' => get_field( self::BILLET[ 'list-type' ], $id ),
 
-            'bonus' => get_field( 'billet-bonus-enabled', $id ),
+            'bonus' => get_field( self::BILLET[ 'bonus-enabled' ], $id ),
 
-            'mobile' => get_field( 'billet-mobile-enabled', $id ),
+            'mobile' => get_field( self::BILLET[ 'mobile-enabled' ], $id ),
 
-            'profit' => get_field( 'billet-profit-enabled', $id ),
+            'profit' => get_field( self::BILLET[ 'profit-enabled' ], $id ),
 
-            'spoiler' => get_field( 'billet-spoiler-enabled', $id ),
+            'spoiler' => get_field( self::BILLET[ 'spoiler-enabled' ], $id ),
 
-            'description' => get_field( 'billet-description-enabled', $id ),
+            'description' => get_field( self::BILLET[ 'description-enabled' ], $id ),
         ];
     }
 
