@@ -14,6 +14,10 @@ class BilletProfit extends LegalDebug
     {
         $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : [ '', ] );
 
+        LegalDebug::debug( [
+            'features' => $features,
+        ] );
+
         $items = get_field( self::PROFIT_ITEMS, $billet[ 'id' ] );
     
         if ( $items ) {
@@ -33,8 +37,6 @@ class BilletProfit extends LegalDebug
             'class' => get_field( 'billet-play-profit-type', $billet[ 'id' ] ),
 
             'label' => __( 'Margin', ToolLoco::TEXTDOMAIN ),
-
-            // 'value' => get_field( 'billet-play-profit-value', $billet[ 'id' ] ),
             
             'value' => self::get_value( $billet ),
         ];

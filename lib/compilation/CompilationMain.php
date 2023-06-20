@@ -112,8 +112,6 @@ class CompilationMain
             'spoiler' => get_field( 'billet-spoiler-enabled', $id ),
 
             'description' => get_field( 'billet-description-enabled', $id ),
-
-            'profit' => get_field( self::COMPILATION_FILTER, $id ),
         ];
     }
 
