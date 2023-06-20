@@ -115,23 +115,9 @@ class CompilationMain
         ];
     }
 
-    public static function get( $id )
+    public static function get_args( $id )
     {
-        $id = self::check_id( $id );
-
-        $new_lang = get_field( 'compilation-lang', $id );
-
-        $switch_lang = ( !empty( $new_lang ) );
-
-        if ( $switch_lang ) {
-            global $sitepress;
-
-            $current_lang = $sitepress->get_current_language();
-
-            $sitepress->switch_lang( $new_lang );
-        }
-
-        $args = [
+        return [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -154,8 +140,25 @@ class CompilationMain
 
             'order' => 'ASC',
         ];
+    }
 
-        $posts = get_posts( $args );
+    public static function get( $id )
+    {
+        $id = self::check_id( $id );
+
+        $new_lang = get_field( 'compilation-lang', $id );
+
+        $switch_lang = ( !empty( $new_lang ) );
+
+        if ( $switch_lang ) {
+            global $sitepress;
+
+            $current_lang = $sitepress->get_current_language();
+
+            $sitepress->switch_lang( $new_lang );
+        }
+
+        $posts = get_posts( self::get_args( $id ) );
 
         if ( $switch_lang ) {
             $sitepress->switch_lang( $current_lang );
@@ -184,11 +187,6 @@ class CompilationMain
         if ( !empty( $attention['text'] ) )
             if ( $position == $attention['position'] )
                 load_template( self::TEMPLATE_ATTENTION, false, $attention );
-    }
-
-    public static function debug( $message )
-    {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
     }
 }
 
