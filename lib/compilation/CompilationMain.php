@@ -88,28 +88,44 @@ class CompilationMain
         'locale' => 'compilation-locale',
 
         'operator' => 'compilation-operator',
+
+        'lang' => 'compilation-lang',
+
+        'review-label' => 'compilation-review-label',
+
+        'review-type' => 'compilation-review-type',
+
+        'play-label' => 'compilation-play-label',
+    ];
+
+    const BILLET = [
+        'order-type' => 'billet-order-type',
+
+        'rating-enabled' => 'billet-rating-enabled',
+
+        'achievement-type' => 'billet-achievement-type',
     ];
 
     public static function get_filter( $id )
     {
         return [
             'review' => [
-                'label' => get_field( 'compilation-review-label', $id ),
+                'label' => get_field( self::COMPILATION[ 'review-label' ], $id ),
 
-                'type' => get_field( 'compilation-review-type', $id ),
+                'type' => get_field( self::COMPILATION[ 'review-type' ], $id ),
             ],
 
             'play' => [
-                'label' => get_field( 'compilation-play-label', $id ),
+                'label' => get_field( self::COMPILATION[ 'play-label' ], $id ),
             ],
 
             'features' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
-            'order' => get_field( 'billet-order-type', $id ),
+            'order' => get_field( self::BILLET[ 'order-type' ], $id ),
 
-            'rating' => get_field( 'billet-rating-enabled', $id ),
+            'rating' => get_field( self::BILLET[ 'rating-enabled' ], $id ),
 
-            'achievement' => get_field( 'billet-achievement-type', $id ),
+            'achievement' => get_field( self::BILLET[ 'achievement-type' ], $id ),
 
             'list' => get_field( 'billet-list-type', $id ),
 
@@ -156,7 +172,7 @@ class CompilationMain
     {
         $id = self::check_id( $id );
 
-        $new_lang = get_field( 'compilation-lang', $id );
+        $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
         $switch_lang = ( !empty( $new_lang ) );
 
