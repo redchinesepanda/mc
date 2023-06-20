@@ -143,6 +143,8 @@ class BilletMain
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
+        $filter_margin = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'margin' ] : '' );
+
         $terms = get_the_terms( $id, 'billet_feature' );
 
         $terms_id = [];
@@ -155,6 +157,8 @@ class BilletMain
 
         LegalDebug::debug( [
             'terms_id' => $terms_id,
+
+            'filter_margin' => $filter_margin,
 
             'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
