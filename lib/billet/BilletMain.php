@@ -143,6 +143,16 @@ class BilletMain
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
+        $terms = get_the_terms( $id, 'billet_feature' );
+
+        $terms_id = [];
+
+        if ( is_array( $terms ) ) {
+            foreach ( $terms as $term ) {
+                $terms_id[] = $term->term_id;
+            }
+        }
+
         LegalDebug::debug( [
             'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
@@ -152,7 +162,7 @@ class BilletMain
 
             'profit' => get_field( 'billet-profit-items', $id ),
 
-            'billet_feature' => get_the_terms( $id, 'billet_feature' ),
+            'terms_id' => $terms_id,
         ] );
 
         return [
