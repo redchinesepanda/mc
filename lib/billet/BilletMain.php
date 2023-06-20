@@ -1,7 +1,5 @@
 <?php
 
-require_once( LegalMain::LEGAL_PATH . '/lib/LegalDebug.php' );
-
 require_once( 'BilletLogo.php' );
 
 require_once( 'center/BilletTitle.php' );
@@ -14,7 +12,7 @@ require_once( 'right/BilletRight.php' );
 
 require_once( 'BilletSpoiler.php' );
 
-class BilletMain extends LegalDebug
+class BilletMain
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php';
 
@@ -133,10 +131,6 @@ class BilletMain extends LegalDebug
 
     private static function get( $args )
     {
-        // self::debug( [
-        //     'args' => $args,
-        // ] );
-
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
@@ -149,7 +143,7 @@ class BilletMain extends LegalDebug
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
 
-        self::debug( [
+        LegalDebug::debug( [
             'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
 
             'menu_order' => ( get_post( $id ) )->menu_order,
