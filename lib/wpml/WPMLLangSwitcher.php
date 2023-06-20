@@ -4,7 +4,11 @@ class WPMLLangSwitcher
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
 
-    const CSS = LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css';
+    const CSS = [
+        'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css',
+
+        'ver' => '1.0.0',
+    ];
 
     const JS = LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
 
@@ -15,9 +19,14 @@ class WPMLLangSwitcher
         wp_enqueue_script( 'wpml-lang-switcher' );
     }
 
+    // public static function register_style()
+    // {
+    //     wp_enqueue_style( 'wpml-lang-switcher', self::CSS );
+    // }
+
     public static function register_style()
     {
-        wp_enqueue_style( 'wpml-lang-switcher', self::CSS );
+        ToolEnqueue::register_style( self::CSS );
     }
 
     public static function register() {
@@ -108,10 +117,6 @@ class WPMLLangSwitcher
         $languages = self::get_all();
 
         $args['active'] = self::get_active( $languages );
-
-        // LegalDebug::debug( [
-        //     $args['active'],
-        // ] );
 
         $languages = self::exclude( $languages );
 
