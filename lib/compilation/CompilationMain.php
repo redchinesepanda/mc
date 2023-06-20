@@ -117,11 +117,7 @@ class CompilationMain
 
     public static function get_args( $id )
     {
-        LegalDebug::debug( [
-            self::COMPILATION_FILTER => get_field( self::COMPILATION_FILTER, $id ),
-        ] );
-
-        return [
+        $args = [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -144,6 +140,13 @@ class CompilationMain
 
             'order' => 'ASC',
         ];
+
+        
+        LegalDebug::debug( [
+            'args' => $args,
+        ] );
+
+        return $args;
     }
 
     public static function get( $id )
