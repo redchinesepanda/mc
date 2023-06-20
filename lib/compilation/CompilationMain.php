@@ -117,6 +117,10 @@ class CompilationMain
 
     public static function get_args( $id )
     {
+        LegalDebug::debug( [
+            self::COMPILATION_FILTER => get_field( self::COMPILATION_FILTER, $id ),
+        ] );
+
         return [
             'numberposts' => -1,
 
