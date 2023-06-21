@@ -45,6 +45,8 @@ class LegalMain {
 
 	public static function register()
 	{
+		LegalComponents::register();
+
 		ACFMain::register();
 
 		AdminMain::register();
