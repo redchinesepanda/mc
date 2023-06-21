@@ -9,9 +9,9 @@ Template Post Type: legal_billet
 
 require_once( 'lib/LegalMain.php' );
 
-require_once( 'lib/yoast/YoastMain.php' );
+// require_once( 'lib/yoast/YoastMain.php' );
 
-require_once( 'lib/billet/BilletMain.php' );
+// require_once( 'lib/billet/BilletMain.php' );
 
 ?>
 <html>

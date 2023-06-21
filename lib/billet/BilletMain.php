@@ -2,6 +2,8 @@
 
 require_once( 'BilletLogo.php' );
 
+require_once( 'BilletSpoiler.php' );
+
 require_once( 'center/BilletTitle.php' );
 
 require_once( 'center/BilletList.php' );
@@ -9,8 +11,6 @@ require_once( 'center/BilletList.php' );
 require_once( 'center/BilletAchievement.php' );
 
 require_once( 'right/BilletRight.php' );
-
-require_once( 'BilletSpoiler.php' );
 
 class BilletMain
 {
