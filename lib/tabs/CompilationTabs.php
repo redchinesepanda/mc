@@ -1,6 +1,6 @@
 <?php
 
-require_once( LegalMain::LEGAL_PATH . '/lib/compilation/CompilationMain.php' );
+// require_once( LegalMain::LEGAL_PATH . '/lib/compilation/CompilationMain.php' );
 
 class CompilationTabs
 {

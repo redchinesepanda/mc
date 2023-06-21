@@ -9,9 +9,9 @@ Template Post Type: page
 
 require_once( 'lib/LegalMain.php' );
 
-require_once( 'lib/yoast/YoastMain.php' );
+// require_once( 'lib/yoast/YoastMain.php' );
 
-require_once( 'lib/tabs/CompilationTabs.php' );
+// require_once( 'lib/tabs/CompilationTabs.php' );
 
 ?>
 <html>
