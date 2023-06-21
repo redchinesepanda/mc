@@ -14,10 +14,6 @@ class CompilationTabs
 
     public static function print()
     {
-        // echo '<link id="tabs-main-css" href="' . self::CSS . '" rel="stylesheet" />';
-
-        // echo '<script id="tabs-main-js" src="' . self::JS . '"></script>';
-
         ToolPrint::print_style( self::CSS );
 
         ToolPrint::print_script( self::JS );
@@ -25,54 +21,72 @@ class CompilationTabs
         CompilationMain::print();
     }
 
-    const TABS_TEXT = 'tabs-title-text';
+    const TABS = [
+        'text' => 'tabs-title-text',
 
-    const TABS_ITEMS = 'tabs-items';
+        'items' => 'tabs-items',
+        
+        'description' => 'tabs-description-text',
 
-    const TABS_DESCRIPTION = 'tabs-description-text';
+        'link-text' => 'tabs-link-text',
 
-    const TABS_LINK_TEXT = 'tabs-link-text';
+        'link-url' => 'tabs-link-url',
+    ];
 
-    const TABS_LINK_URL = 'tabs-link-url';
+    // const TABS_ITEMS = 'tabs-items';
 
-    const TAB_TEXT = 'tab-title-text';
+    // const TABS_DESCRIPTION = 'tabs-description-text';
 
-    const TAB_IMAGE = 'tab-title-image';
+    // const TABS_LINK_TEXT = 'tabs-link-text';
 
-    const TAB_COMPILATIONS = 'tab-compilations';
+    // const TABS_LINK_URL = 'tabs-link-url';
+
+    const TAB = [
+        'text' => 'tab-title-text',
+
+        'image' => 'tab-title-image',
+
+        'compilations' => 'tab-compilations',
+    ];
+
+    // const TAB_TEXT = 'tab-title-text';
+
+    // const TAB_IMAGE = 'tab-title-image';
+
+    // const TAB_COMPILATIONS = 'tab-compilations';
 
     public static function get()
     {
         $post = get_post();
 
         $args = [
-            'text' => get_field( self::TABS_TEXT, $post->ID ),
+            'text' => get_field( self::TABS[ 'text' ], $post->ID ),
 
-            'description' => get_field( self::TABS_DESCRIPTION, $post->ID ),
+            'description' => get_field( self::TABS[ 'description' ], $post->ID ),
             
             'link' => [
-                'text' => get_field( self::TABS_LINK_TEXT, $post->ID ),
+                'text' => get_field( self::TABS[ 'link-text' ], $post->ID ),
 
-                'url' => get_field( self::TABS_LINK_URL, $post->ID ),
+                'url' => get_field( self::TABS[ 'link-url' ], $post->ID ),
             ],
         ];
 
         $args['tabs'] = [];
 
-        $tabs = get_field( self::TABS_ITEMS, $post->ID );
+        $tabs = get_field( self::TABS[ 'items' ], $post->ID );
 
         if( $tabs ) {
             foreach( $tabs as $key => $tab ) {
                 $args['tabs'][] = [
-                    'text' => $tab[ self::TAB_TEXT ],
+                    'text' => $tab[ self::TAB[ 'text' ] ],
 
-                    'image' => $tab[ self::TAB_IMAGE ],
+                    'image' => $tab[ self::TAB[ 'image' ] ],
 
-                    'compilations' => ( !empty( $tab[ self::TAB_COMPILATIONS ] ) ? $tab[ self::TAB_COMPILATIONS ] : [] ),
+                    'compilations' => ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] ),
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 
-                    'class' => ( !empty( $tab[ self::TAB_IMAGE ] ) ? 'tab-image-' . $key : '' ),
+                    'class' => ( !empty( $tab[ self::TAB[ 'image' ] ] ) ? 'tab-image-' . $key : '' ),
                 ];
             }
         } else {
