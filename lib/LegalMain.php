@@ -2,6 +2,8 @@
 
 require_once( 'LegalDebug.php' );
 
+require_once( 'LegalComponents.php' );
+
 require_once( 'acf/ACFMain.php' );
 
 require_once( 'admin/AdminMain.php' );

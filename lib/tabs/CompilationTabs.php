@@ -21,6 +21,48 @@ class CompilationTabs
         CompilationMain::print();
     }
 
+    public static function register_script( $scripts = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $scripts ) ) {
+                $scripts = self::JS;
+            }
+
+            ToolEnqueue::register_script( $scripts );
+        }
+    }
+
+	public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                $styles = self::CSS;
+            }
+
+            ToolEnqueue::register_style( $styles );
+        }
+    }
+
+	public static function check()
+    {   
+        $permission = true;
+        
+        return $permission;
+    }
+
+    public static function register()
+    {
+        $handler = new self();
+
+		// [legal-tabs]
+
+        add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+    }
+
     const TABS = [
         'text' => 'tabs-title-text',
 
