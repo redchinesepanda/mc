@@ -14,7 +14,7 @@ require_once( 'right/BilletRight.php' );
 
 class BilletMain
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php';
+    
 
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
@@ -191,9 +191,13 @@ class BilletMain
         return $args;
     }
 
+    const TEMPLATE = [
+        'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
+    ];
+
     public static function render( $args = [] )
     { 
-        load_template( self::TEMPLATE, false, self::get( $args ) );
+        load_template( self::TEMPLATE[ 'billet-main' ], false, self::get( $args ) );
     }
 }
 
