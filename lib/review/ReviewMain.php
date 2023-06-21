@@ -127,17 +127,13 @@ class ReviewMain
 
     public static function check()
     {
-        // $lang = WPMLMain::current_language();
-
-        // $permission_lang = in_array( $lang, [ 'ke' ] );
-
         $permission_post_type = is_singular( [ 'legal_bk_review' ] );
 
         $permission_admin = !is_admin();
 
-        // return ( $permission_admin && ( $permission_post_type || $permission_lang ) );
+        $permission_tax = has_term( 'compilation', 'page_type' ); 
         
-        return ( $permission_admin && $permission_post_type );
+        return ( $permission_admin && ( $permission_post_type || $permission_tax ) );
     }
 
     const CSS_CLASS = [
