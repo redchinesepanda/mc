@@ -4,15 +4,23 @@ require_once( LegalMain::LEGAL_PATH . '/lib/compilation/CompilationMain.php' );
 
 class CompilationTabs
 {
-    const CSS = LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css';
+    const CSS = [
+        'tabs-main' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
+    ];
 
-    const JS = LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js';
+    const JS = [
+        'tabs-main' => LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js',
+    ];
 
     public static function print()
     {
-        echo '<link id="tabs-main-css" href="' . self::CSS . '" rel="stylesheet" />';
+        // echo '<link id="tabs-main-css" href="' . self::CSS . '" rel="stylesheet" />';
 
-        echo '<script id="tabs-main-js" src="' . self::JS . '"></script>';
+        // echo '<script id="tabs-main-js" src="' . self::JS . '"></script>';
+
+        ToolPrint::print_style( self::CSS );
+
+        ToolPrint::print_script( self::JS );
 
         CompilationMain::print();
     }
@@ -91,8 +99,6 @@ class CompilationTabs
                 $output[] = CompilationMain::render( $compilation );
             }
         } else {
-            // load_template( self::TEMPLATE[ 'tabs' ], false, $args );
-
             $output[] = self::render_tabs( $args );
         }
 

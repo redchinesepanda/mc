@@ -16,7 +16,7 @@ class CompilationMain
     {
         BilletMain::print();
 
-        ToolPrint::print( self::CSS );
+        ToolPrint::print_style( self::CSS );
     }
 
     public static function get_billets( $posts, $filter )
@@ -214,11 +214,6 @@ class CompilationMain
         
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
-
-    // public static function render( $id = 0 )
-    // { 
-    //     load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
-    // }
 
     public static function render(  $id = 0  )
     {
