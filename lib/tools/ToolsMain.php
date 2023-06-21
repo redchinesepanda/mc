@@ -18,6 +18,8 @@ require_once( 'ToolMenu.php' );
 
 require_once( 'ToolSitemap.php' );
 
+require_once( 'ToolPrint.php' );
+
 class ToolsMain
 {
     public static function register()

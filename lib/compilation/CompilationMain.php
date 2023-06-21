@@ -4,23 +4,23 @@ require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
 
 class CompilationMain
 {
-    const TEMPLATE = [
-        'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
-        
-        'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
-    ];
-
     const CSS = [
-        'compilation-main' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
+        'compilation-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function print()
     {
         BilletMain::print();
 
-        foreach ( self::CSS as $key => $url ) {
-            echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
-        }
+        // foreach ( self::CSS as $key => $url ) {
+        //     echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
+        // }
+
+        ToolPrint::print( self::CSS );
     }
 
     public static function get_billets( $posts, $filter )
@@ -213,6 +213,12 @@ class CompilationMain
         ];
     }
 
+    const TEMPLATE = [
+        'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+        
+        'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
+    ];
+
     public static function render( $id = 0 )
     { 
         load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
@@ -223,13 +229,13 @@ class CompilationMain
 
         'below' => 'legal-below-title',
 
-        'bottom' => 'legal-below'
+        'bottom' => 'legal-below',
     ];
 
     public static function render_attention( $attention, $position )
     {
-        if ( !empty( $attention['text'] ) )
-            if ( $position == $attention['position'] )
+        if ( !empty( $attention[ 'text' ] ) )
+            if ( $position == $attention[ 'position' ] )
                 load_template( self::TEMPLATE[ 'legal-attention' ], false, $attention );
     }
 }
