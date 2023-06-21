@@ -12,24 +12,11 @@ class CompilationMain
         ],
     ];
 
-    self::JS = [];
-
     public static function print()
     {
         BilletMain::print();
 
         ToolPrint::print_style( self::CSS );
-    }
-
-    public static function register_script( $scripts = [] )
-    {
-        if ( self::check() ) {
-            if ( empty( $scripts ) ) {
-                $scripts = self::JS;
-            }
-
-            ToolEnqueue::register_script( $scripts );
-        }
     }
 
 	public static function register_style( $styles = [] )
@@ -59,8 +46,6 @@ class CompilationMain
         add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     public static function get_billets( $posts, $filter )
