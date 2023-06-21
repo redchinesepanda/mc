@@ -16,10 +16,6 @@ class CompilationMain
     {
         BilletMain::print();
 
-        // foreach ( self::CSS as $key => $url ) {
-        //     echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
-        // }
-
         ToolPrint::print( self::CSS );
     }
 

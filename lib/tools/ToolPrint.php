@@ -7,15 +7,15 @@ class ToolPrint
         foreach ( $styles as $name => $item ) {
             $path = $item;
 
-            $ver = false;
+            $ver = '';
 
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
-                $ver = $item[ 'ver' ];
+                $ver = '?ver=' . $item[ 'ver' ];
             }
 
-            echo '<link id="' . $name . '" href="' . $path . '" rel="stylesheet" />';
+            echo '<link id="' . $name . '" href="' . $path . $ver . '" rel="stylesheet" />';
         }
     }
 }
