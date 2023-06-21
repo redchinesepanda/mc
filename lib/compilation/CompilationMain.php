@@ -12,6 +12,8 @@ class CompilationMain
         ],
     ];
 
+    self::JS = [];
+
     public static function print()
     {
         BilletMain::print();
