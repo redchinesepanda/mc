@@ -10,6 +10,10 @@ class LegalComponents
 {
 	public static function register()
 	{
+		BilletMain::register();
+
+		CompilationMain::register();
+
 		CompilationTabs::register();
 	}
 }
