@@ -14,8 +14,6 @@ require_once( 'right/BilletRight.php' );
 
 class BilletMain
 {
-    
-
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
@@ -30,13 +28,17 @@ class BilletMain
 
     public static function print()
     {
-        foreach ( self::CSS as $key => $url ) {
-            echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
-        }
+        // foreach ( self::CSS as $key => $url ) {
+        //     echo '<link id="' . $key . '" href="' . $url . '" rel="stylesheet" />';
+        // }
         
-        foreach ( self::JS as $key => $src ) {
-            echo '<script id="' . $key . '" src="' . $src . '"></script>';
-        }
+        // foreach ( self::JS as $key => $src ) {
+        //     echo '<script id="' . $key . '" src="' . $src . '"></script>';
+        // }
+
+        ToolPrint::print_style( self::CSS );
+
+        ToolPrint::print_script( self::JS );
     }
 
     const ACF_REFERAL = 'billet-referal';
