@@ -33,14 +33,6 @@ class CompilationTabs
         'link-url' => 'tabs-link-url',
     ];
 
-    // const TABS_ITEMS = 'tabs-items';
-
-    // const TABS_DESCRIPTION = 'tabs-description-text';
-
-    // const TABS_LINK_TEXT = 'tabs-link-text';
-
-    // const TABS_LINK_URL = 'tabs-link-url';
-
     const TAB = [
         'text' => 'tab-title-text',
 
@@ -48,12 +40,6 @@ class CompilationTabs
 
         'compilations' => 'tab-compilations',
     ];
-
-    // const TAB_TEXT = 'tab-title-text';
-
-    // const TAB_IMAGE = 'tab-title-image';
-
-    // const TAB_COMPILATIONS = 'tab-compilations';
 
     public static function get()
     {
