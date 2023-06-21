@@ -1,6 +1,6 @@
 <?php
 
-require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
+// require_once( LegalMain::LEGAL_PATH . '/lib/billet/BilletMain.php' );
 
 class CompilationMain
 {
