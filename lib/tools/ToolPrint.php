@@ -15,7 +15,7 @@ class ToolPrint
                 $ver = '?ver=' . $item[ 'ver' ];
             }
 
-            echo '<script id="' . name . '" src="' . $path . $ver . '"></script>';
+            echo '<script id="' . $name . '" src="' . $path . $ver . '"></script>';
         }
     }
 
