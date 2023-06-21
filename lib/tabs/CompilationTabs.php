@@ -4,8 +4,6 @@ require_once( LegalMain::LEGAL_PATH . '/lib/compilation/CompilationMain.php' );
 
 class CompilationTabs
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php';
-
     const CSS = LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css';
 
     const JS = LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js';
@@ -76,24 +74,40 @@ class CompilationTabs
         return $args;
     }
 
+    const TEMPLATE = [
+        'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
+    ];
+
     public static function render()
     {
         $args = self::get();
+
+        $output = [];
 
         if ( count( $args['tabs'] ) == 1 ) {
             $tab = array_shift( $args['tabs'] );
 
             foreach ( $tab['compilations'] as $compilation) {
-                CompilationMain::render( $compilation );
+                $output[] = CompilationMain::render( $compilation );
             }
         } else {
-            load_template( self::TEMPLATE, false, $args );
+            // load_template( self::TEMPLATE[ 'tabs' ], false, $args );
+
+            $output[] = self::render_tabs( $args );
         }
+
+        return implode( '', $output );
     }
 
-    public static function debug( $message )
+    public static function render_tabs( $args )
     {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'tabs' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 

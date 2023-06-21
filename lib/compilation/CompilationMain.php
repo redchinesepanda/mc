@@ -215,9 +215,20 @@ class CompilationMain
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
 
-    public static function render( $id = 0 )
-    { 
+    // public static function render( $id = 0 )
+    // { 
+    //     load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
+    // }
+
+    public static function render(  $id = 0  )
+    {
+        ob_start();
+
         load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
     
     const POSITION = [

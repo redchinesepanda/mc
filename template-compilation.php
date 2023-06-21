@@ -20,6 +20,6 @@ require_once( 'lib/compilation/CompilationMain.php' );
         <?php CompilationMain::print(); ?>
     </head>
     <body class="compilation-single">
-        <?php CompilationMain::render(); ?>
+        <?php echo CompilationMain::render(); ?>
     </body>
 </html>
