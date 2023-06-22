@@ -112,6 +112,8 @@ class CompilationMain
 
         'title-text' => 'compilation-title-text',
 
+        'type' => 'compilation-type',
+
         'filter' => 'compilation-filter',
 
         'locale' => 'compilation-locale',
@@ -160,6 +162,8 @@ class CompilationMain
                 'label' => get_field( self::COMPILATION[ 'play-label' ], $id ),
             ],
 
+            // 'type' => get_field( self::COMPILATION[ 'type' ], $id ),
+
             'features' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
             'order' => get_field( self::BILLET[ 'order-type' ], $id ),
@@ -192,6 +196,7 @@ class CompilationMain
             'suppress_filters' => get_field( self::COMPILATION[ 'locale' ], $id ),
 
             'tax_query' => [
+                'relation' => 'AND',
                 [
                     'taxonomy' => 'billet_feature',
 
@@ -200,6 +205,13 @@ class CompilationMain
                     'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
                     'operator' => get_field( self::COMPILATION[ 'operator' ], $id ),
+                ],
+                [
+                    'taxonomy' => 'billet_type',
+
+                    'field' => 'term_id',
+
+                    'terms' => get_field( self::COMPILATION[ 'type' ], $id ),
                 ]
             ],
 
