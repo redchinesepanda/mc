@@ -157,10 +157,6 @@ class BaseHeader
 	public static function get_menu_languages()
 	{
 		$code = WPMLMain::current_language();
-
-		LegalDebug::debug( [
-			'$code' => $code,
-		] );
 		
 		$search[ 'avaible' ] = WPMLMain::search_language();
 
@@ -169,6 +165,12 @@ class BaseHeader
 		unset( $search[ 'avaible' ][ $code ] );
 
 		$parse = self::parse_languages( $search );
+
+		LegalDebug::debug( [
+			'$code' => $code,
+
+			'avaible' => $search[ 'avaible' ],
+		] );
 
 		return $parse;
 	}
