@@ -38,7 +38,7 @@ class WPMLMain
         LegalDebug::debug( [
 			'$lang' => $lang,
 
-			// '$languages' => $languages,
+			'$languages' => $languages,
 		] );
 
 		return self::filter_language( $languages, $lang );
