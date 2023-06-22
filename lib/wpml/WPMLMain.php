@@ -8,8 +8,6 @@ require_once( 'WPMLLanguageMismatch.php' );
 
 require_once( 'WPMLMedia.php' );
 
-// require_once( 'WPMLMenu.php' );
-
 class WPMLMain
 {
     public static function get_all_languages() {
@@ -35,32 +33,12 @@ class WPMLMain
  
 		$languages = self::get_all_languages();
 
-        LegalDebug::debug( [
-			'$lang' => $lang,
-
-			// '$languages' => $languages,
-		] );
-
 		return self::filter_language( $languages, $lang );
 	}
 
     public static function get_group_language()
 	{
-		// $details = self::get_post_language_details();
-		
-        $locale = self::get_locale();
-
-        // LegalDebug::debug( [
-		// 	'$details' => $details,
-		// ] );
-		
-		// if ( is_wp_error( $details ) ) {
-		// 	return 'en';
-
-		// 	// return self::current_language();
-		// }
-
-		// return substr( $details[ 'locale' ], 0, 2 );
+		$locale = self::get_locale();
 		
         return substr( $locale, 0, 2 );
 	}
@@ -82,16 +60,6 @@ class WPMLMain
 
     public static function get_locale()
 	{
-        // $lang = self::current_language();
-
-		// $languages = self::get_all_languages();
-
-        // $filter = self::filter_language( $languages, $lang );
-
-        // $language = array_shift( $filter );
-        
-        // return $language[ 'default_locale' ];
-
         return get_locale();
 	}
 
@@ -119,8 +87,6 @@ class WPMLMain
         WPMLLanguageMismatch::register();
 
         WPMLMedia::register();
-
-        // WPMLMenu::register();
     }
 }
 
