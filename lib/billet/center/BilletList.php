@@ -46,26 +46,8 @@ class BilletList
         $parts = get_field( self::FIELD[ 'parts' ], $billet[ 'id' ] );
 
         if ( $parts ) {
-            LegalDebug::debug( [
-                'filter-features' => $billet[ 'filter' ][ 'features' ],
-            ] );
-
             foreach ( $parts as $key => $part ) {
                 $display = self::check_list( $billet, $part );
-
-                // $display = true;
-
-                // if ( !empty( $billet[ 'filter' ] ) ) {
-                //     $permission_filter = false;
-
-                //     $permission_empty = ( empty( $part[ self::PART[ 'feature' ] ] ) );
-
-                //     if ( !$permission_empty ) {
-                //         $permission_filter = in_array( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] );
-                //     }
-
-                //     $display = ( $permission_filter || $permission_empty );
-                // }
 
                 LegalDebug::debug( [
                     '$display' => ( $display ? 'true' : 'false' ),
