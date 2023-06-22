@@ -35,7 +35,7 @@ class BilletList
                 $display = true;
 
                 if ( !empty( $billet[ 'filter' ] ) ) {
-                    $display = in_array( $part[ self::PART[ 'icon' ] ], $billet[ 'filter' ][ 'list' ] );
+                    $display = in_array( $part[ self::PART[ 'icon' ] ], $billet[ 'filter' ][ 'features' ] );
                 }
 
                 LegalDebug::debug( [
