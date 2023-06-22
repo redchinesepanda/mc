@@ -47,7 +47,11 @@ class ToolTinyMCE
 
         'legal-tinymce-pros' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-pros.css',
 
-        'legal-tinymce-header' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-header.css',
+        'legal-tinymce-header' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-header.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
 	public static function editor_styles() {

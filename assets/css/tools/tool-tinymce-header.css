@@ -53,3 +53,7 @@
 #tinymce .legal-header-widthdraw::before {
 	background-image: url( '../../img/review/header/review-widthdraw.svg' );
 }
+
+#tinymce .legal-header-esports::before {
+	background-image: url( '../../img/review/header/review-esports.svg' );
+}
