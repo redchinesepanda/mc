@@ -20,6 +20,25 @@ class BilletList
         'title' => 'billet-list-part-item-title',
     ];
 
+    public static function check_list( $billet, $part )
+    {
+        $display = true;
+
+        if ( !empty( $billet[ 'filter' ] ) ) {
+            $permission_filter = false;
+
+            $permission_empty = ( empty( $part[ self::PART[ 'feature' ] ] ) );
+
+            if ( !$permission_empty ) {
+                $permission_filter = in_array( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] );
+            }
+
+            $display = ( $permission_filter || $permission_empty );
+        }
+
+        return $display;
+    }
+
     public static function get( $billet )
     {
         $args = [];
@@ -32,11 +51,21 @@ class BilletList
             ] );
 
             foreach ( $parts as $key => $part ) {
-                $display = true;
+                $display = self::check_list( $billet, $part );
 
-                if ( !empty( $billet[ 'filter' ] ) ) {
-                    $display = in_array( $part[ self::PART[ 'icon' ] ], $billet[ 'filter' ][ 'features' ] );
-                }
+                // $display = true;
+
+                // if ( !empty( $billet[ 'filter' ] ) ) {
+                //     $permission_filter = false;
+
+                //     $permission_empty = ( empty( $part[ self::PART[ 'feature' ] ] ) );
+
+                //     if ( !$permission_empty ) {
+                //         $permission_filter = in_array( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] );
+                //     }
+
+                //     $display = ( $permission_filter || $permission_empty );
+                // }
 
                 LegalDebug::debug( [
                     '$display' => ( $display ? 'true' : 'false' ),
