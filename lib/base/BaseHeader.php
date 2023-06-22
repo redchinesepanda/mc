@@ -169,7 +169,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'$code' => $code,
 
-			'avaible' => $search[ 'avaible' ],
+			// 'avaible' => $search[ 'avaible' ],
 		] );
 
 		return $parse;
