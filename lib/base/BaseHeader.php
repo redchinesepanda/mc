@@ -160,11 +160,11 @@ class BaseHeader
 		
 		$search[ 'avaible' ] = WPMLMain::search_language();
 
-		if ( !empty( $search[ 'avaible' ][ $code ] ) ) {
+		// if ( !empty( $search[ 'avaible' ][ $code ] ) ) {
 			$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
 			unset( $search[ 'avaible' ][ $code ] );
-		}
+		// }
 
 		$parse = self::parse_languages( $search );
 
