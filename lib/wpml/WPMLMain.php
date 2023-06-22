@@ -38,7 +38,7 @@ class WPMLMain
         LegalDebug::debug( [
 			'$lang' => $lang,
 
-			'$languages' => $languages,
+			// '$languages' => $languages,
 		] );
 
 		return self::filter_language( $languages, $lang );
@@ -47,10 +47,15 @@ class WPMLMain
     public static function get_group_language()
 	{
 		$details = self::get_post_language_details();
+
+        LegalDebug::debug( [
+			'$details' => $details,
+		] );
 		
 		if ( is_wp_error( $details ) ) {
-			// return 'en';
-			return self::current_language();
+			return 'en';
+
+			// return self::current_language();
 		}
 
 		return substr( $details[ 'locale' ], 0, 2 );
