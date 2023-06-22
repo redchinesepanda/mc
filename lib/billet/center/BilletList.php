@@ -39,6 +39,8 @@ class BilletList
                 }
 
                 LegalDebug::debug( [
+                    '$display' => $display,
+                    
                     'part-feature' => $part[ self::PART[ 'feature' ] ],
                 ] );
 
