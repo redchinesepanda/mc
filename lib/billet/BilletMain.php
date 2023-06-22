@@ -91,7 +91,7 @@ class BilletMain
 
         // Oops если есть
 
-        $oops = ( OopsMain::check_oops() > 0 ? '#oops' : '' );
+        $oops = ( OopsMain::check_oops() > 0 ? '#' : '' );
 
         return [
             // Логотип
