@@ -49,12 +49,6 @@ class BilletList
             foreach ( $parts as $key => $part ) {
                 $display = self::check_list( $billet, $part );
 
-                LegalDebug::debug( [
-                    '$display' => ( $display ? 'true' : 'false' ),
-                    
-                    'part-feature' => $part[ self::PART[ 'feature' ] ],
-                ] );
-
                 if ( $display ) {
                     $args[ $key ][ 'part-icon' ] = $part[ self::PART[ 'icon' ] ];
     
