@@ -38,7 +38,7 @@ class ACFBillet
         return $field;
     }
 
-    function choices_icon( $field )
+    function choices_direction( $field )
     {
         $choices[ 'legal-row' ] = 'Строка';
 
