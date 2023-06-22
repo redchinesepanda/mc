@@ -133,9 +133,11 @@ class BaseFooter
 				[
 					'taxonomy' => self::TAXONOMY[ 'media' ],
 
-					'terms' => [ 'footer-' . WPMLMain::current_language() ],
+					'terms' => [ 'footer', 'footer-' . WPMLMain::current_language() ],
 
 					'field' => 'slug',
+
+					'operator' => 'IN',
 				],
 			],
 
