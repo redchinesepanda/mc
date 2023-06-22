@@ -46,19 +46,23 @@ class WPMLMain
 
     public static function get_group_language()
 	{
-		$details = self::get_post_language_details();
-
-        LegalDebug::debug( [
-			'$details' => $details,
-		] );
+		// $details = self::get_post_language_details();
 		
-		if ( is_wp_error( $details ) ) {
-			return 'en';
+        $locale = self::get_locale();
 
-			// return self::current_language();
-		}
+        // LegalDebug::debug( [
+		// 	'$details' => $details,
+		// ] );
+		
+		// if ( is_wp_error( $details ) ) {
+		// 	return 'en';
 
-		return substr( $details[ 'locale' ], 0, 2 );
+		// 	// return self::current_language();
+		// }
+
+		// return substr( $details[ 'locale' ], 0, 2 );
+		
+        return substr( $locale, 0, 2 );
 	}
 
     public static function filter_language( $items, $value )
@@ -74,6 +78,21 @@ class WPMLMain
     public static function get_post_language_details()
 	{
 		return apply_filters( 'wpml_post_language_details', NULL ) ;
+	}
+
+    public static function get_locale()
+	{
+        // $lang = self::current_language();
+
+		// $languages = self::get_all_languages();
+
+        // $filter = self::filter_language( $languages, $lang );
+
+        // $language = array_shift( $filter );
+        
+        // return $language[ 'default_locale' ];
+
+        return get_locale();
 	}
 
     public static function translated_menu_id( $menu_id )
