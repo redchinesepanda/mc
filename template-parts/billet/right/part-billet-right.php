@@ -1,5 +1,5 @@
 <?php BilletBonus::render( $args ); ?>
-<div class="bonus-button check-oops">
+<div class="bonus-button">
         <?php echo $args['play']['label']; ?>
     </a>
 </div>
