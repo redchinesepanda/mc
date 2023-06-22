@@ -166,12 +166,6 @@ class BaseHeader
 
 		$parse = self::parse_languages( $search );
 
-		LegalDebug::debug( [
-			'$code' => $code,
-
-			// 'avaible' => $search[ 'avaible' ],
-		] );
-
 		return $parse;
 	}
 	
