@@ -27,6 +27,10 @@ class BilletList
         $parts = get_field( self::FIELD[ 'parts' ], $billet[ 'id' ] );
 
         if ( $parts ) {
+            LegalDebug::debug( [
+                'filter-features' => $billet[ 'filter' ][ 'features' ],
+            ] );
+
             foreach ( $parts as $key => $part ) {
                 $display = true;
 
@@ -36,8 +40,6 @@ class BilletList
 
                 LegalDebug::debug( [
                     'part-feature' => $part[ self::PART[ 'feature' ] ],
-
-                    'filter-features' => $billet[ 'filter' ][ 'features' ],
                 ] );
 
                 if ( $display ) {
