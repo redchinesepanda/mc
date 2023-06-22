@@ -71,14 +71,6 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    const SETTINGS = [
-        'referal' => 'billet-referal',
-
-        'card' => 'billet-card',
-
-        'bonus' => 'billet-bonus',
-    ];
-
     private static function get_url( $id, $filter )
     {
         // Партнерская БК или ''
@@ -146,21 +138,41 @@ class BilletMain
         return $value;
     }
 
+    const SETTINGS = [
+        'referal' => 'billet-referal',
+
+        'card' => 'billet-card',
+
+        'bonus' => 'billet-bonus',
+
+        'bonus-title' => 'billet-bonus-title',
+
+        'bonus-description' => 'billet-bonus-description',
+    ];
+
+    const BONUS = [
+        'title' => 'billet-bonus-title',
+
+        'description' => 'billet-bonus-description',
+    ];
+
     private static function get_bonus( $id )
     {
         $bonus_id = get_field( 'billet-bonus', $id );
 
-        if ( !empty( $bonus_id ) ) {
-            // $args['url'] = self::get_field_default( $bonus_id, 'billet-afillate-link', '/#oops' );
+        $args = [];
 
-            $args['title'] = self::get_field_default( $bonus_id, 'billet-bonus-title', __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+        if ( $bonus_id ) {
+            $args['title'] = self::get_field_default( $bonus_id, self::BONUS[ 'title' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
 
-            $args['description'] = self::get_field_default( $bonus_id, 'billet-bonus-description', __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+            $args['description'] = self::get_field_default( $bonus_id, self::BONUS[ 'description' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+        } else {
+            $args['title'] = get_field( self::SETTINGS[ 'bonus-title' ], $id );
 
-            return $args;
+            $args['description'] = get_field( self::SETTINGS[ 'bonus-description' ], $id );
         }
 
-        return [];
+        return $args;
     }
 
     private static function get( $args )
