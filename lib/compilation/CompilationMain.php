@@ -136,7 +136,7 @@ class CompilationMain
 
         'achievement-type' => 'billet-achievement-type',
 
-        'list-type' => 'billet-list-type',
+        // 'list-type' => 'billet-list-type',
 
         'bonus-enabled' => 'billet-bonus-enabled',
 
@@ -172,7 +172,7 @@ class CompilationMain
 
             'achievement' => get_field( self::BILLET[ 'achievement-type' ], $id ),
 
-            'list' => get_field( self::BILLET[ 'list-type' ], $id ),
+            // 'list' => get_field( self::BILLET[ 'list-type' ], $id ),
 
             'bonus' => get_field( self::BILLET[ 'bonus-enabled' ], $id ),
 
