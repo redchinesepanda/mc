@@ -15,19 +15,21 @@ class ACFBillet
 
     function choices( $field )
     {
-        $field[ 'choices' ][ 'legal-default' ] = 'Без маркера';
+        $choices[ 'legal-default' ] = 'Без маркера';
 
-        $field[ 'choices' ][ 'legal-check' ] = 'Галка';
+        $choices[ 'legal-check' ] = 'Галка';
 
-        $field[ 'choices' ][ 'legal-check-round' ] = 'Галска в круге';
+        $choices[ 'legal-check-round' ] = 'Галска в круге';
 
-        $field[ 'choices' ][ 'legal-close' ] = 'Крест';
+        $choices[ 'legal-close' ] = 'Крест';
 
-        $field[ 'choices' ][ 'legal-plus' ] = 'Плюс';
+        $choices[ 'legal-plus' ] = 'Плюс';
 
-        $field[ 'choices' ][ 'legal-minus' ] = 'Минус';
+        $choices[ 'legal-minus' ] = 'Минус';
 
-        $field[ 'choices' ][ 'legal-triangle' ] = 'Треугольник';
+        $choices[ 'legal-triangle' ] = 'Треугольник';
+
+        $field[ 'choices' ] = $choices;
 
         return $field;
     }
