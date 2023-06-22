@@ -1,5 +1,5 @@
 <div class="bonus-title">
-    <a class="legal-bonus <?php echo $args['class']; ?>" href="<?php echo $args['href']; ?>" rel="nofollow">
+    <a class="legal-bonus <?php echo $args['class']; ?> check-oops" href="<?php echo $args['href']; ?>" rel="nofollow">
         <?php echo $args['title']; ?>
     </a>
 </div>

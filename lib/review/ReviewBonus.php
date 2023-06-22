@@ -6,7 +6,7 @@ class ReviewBonus
         'review-bonus' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
 
-			'ver' => '1.0.9',
+			'ver' => '1.1.0',
 		],
 
         'review-billet' => [
