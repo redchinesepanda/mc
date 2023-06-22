@@ -158,13 +158,13 @@ class ToolTinyMCE
 	{
 		return self::style_formats_check( $settings, [
 			[
-				'title' => 'Image Title',
+				'title' => 'Title with Image',
 
 				'items' => [
 					[
 						'title' => 'H3 History',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-history',
 					],
@@ -172,7 +172,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Features',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-features',
 					],
@@ -180,7 +180,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Football',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-football',
 					],
@@ -188,7 +188,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Tennis',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-tennis',
 					],
@@ -196,7 +196,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Basketball',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-basketball',
 					],
@@ -204,7 +204,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Horceracing',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-horceracing',
 					],
@@ -212,7 +212,7 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Deposit',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-deposit',
 					],
@@ -220,9 +220,17 @@ class ToolTinyMCE
 					[
 						'title' => 'H3 Widthdraw',
 						
-						'block' => 'h3',
+						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-widthdraw',
+					],
+
+					[
+						'title' => 'H3 E-Sports',
+						
+						'selector' => 'h3',
+
+						'classes' => 'legal-header-3 legal-header-esports',
 					],
 				],
 			],

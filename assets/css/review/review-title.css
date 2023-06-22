@@ -65,3 +65,7 @@
 .tcb-post-content .legal-header-widthdraw::before {
     background-image: url( '../../img/review/header/review-widthdraw.svg' );
 }
+
+.tcb-post-content .legal-header-esports::before {
+    background-image: url( '../../img/review/header/review-esports.svg' );
+}

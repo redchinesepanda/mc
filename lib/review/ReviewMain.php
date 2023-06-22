@@ -42,7 +42,7 @@ class ReviewMain
         'review-title' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.2',
         ],
 
         'review-table' => [
