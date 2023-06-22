@@ -71,25 +71,27 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    const ACF_REFERAL = 'billet-referal';
+    const SETTINGS = [
+        'referal' => 'billet-referal',
 
-    const ACF_CARD = 'billet-card';
+        'card' => 'billet-card',
 
-    const ACF_BONUS = 'billet-bonus';
+        'bonus' => 'billet-bonus',
+    ];
 
     private static function get_url( $id, $filter )
     {
         // Партнерская БК или ''
 
-        $referal_url = get_field( self::ACF_REFERAL, $id );
+        $referal_url = get_field( self::SETTINGS[ 'referal' ], $id );
 
         // Карточка БК или ''
 
-        $card_url = get_field( self::ACF_CARD, $id );
+        $card_url = get_field( self::SETTINGS[ 'card' ], $id );
 
         // Бонус или ''
 
-        $bonus_url = self::get_post_url( $id, self::ACF_BONUS, '' );
+        $bonus_url = self::get_post_url( $id, self::SETTINGS[ 'bonus' ], '' );
 
         // Текущая локаль
 
@@ -168,16 +170,6 @@ class BilletMain
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
         $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
-
-        // LegalDebug::debug( [
-        //     'referal_url' => get_post_meta( $id, self::ACF_REFERAL, true ),
-
-        //     'menu_order' => ( get_post( $id ) )->menu_order,
-
-        //     'rating' => get_field( 'billet-title-rating', $id ),
-
-        //     'profit' => get_field( 'billet-profit-items', $id ),
-        // ] );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),

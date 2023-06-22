@@ -10,9 +10,9 @@
 
 /* Review Display */
 
-.tcb-post-content > p:first-child {
+/* .tcb-post-content > p:first-child {
     display: none;
-}
+} */
 
 #content .main-content-background {
     display: none;
