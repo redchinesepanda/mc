@@ -153,15 +153,13 @@ class OopsMain
 
         $query2 = new WP_Query( self::get_args( '-' ) );
 
-        // LegalDebug::debug( [
-        //     'found_posts1' => $query1->found_posts,
+        LegalDebug::debug( [
+            'found_posts1' => $query1->found_posts,
 
-        //     'found_posts2' => $query2->found_posts,
+            'found_posts2' => $query2->found_posts,
 
-        //     'result' => ( $query1->found_posts || $query2->found_posts ? 'true' : 'false' ),
-
-        //     // 'get_args' => self::get_args(),
-        // ] );
+            'result' => ( $query1->found_posts || $query2->found_posts ? 'true' : 'false' ),
+        ] );
         
         return ( $query1->found_posts || $query2->found_posts );
     }
