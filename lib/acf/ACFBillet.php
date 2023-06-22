@@ -15,6 +15,8 @@ class ACFBillet
 
     function choices( $field )
     {
+        $field[ 'choices' ][ 'legal-default' ] = 'Без маркера';
+
         $field[ 'choices' ][ 'legal-check' ] = 'Галка';
 
         $field[ 'choices' ][ 'legal-check-round' ] = 'Галска в круге';
