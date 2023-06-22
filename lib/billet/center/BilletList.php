@@ -2,32 +2,54 @@
 
 class BilletList
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-list.php';
+    const FIELD = [
+        'parts' => 'billet-list-parts',
+    ];
+
+    const PART = [
+        'icon' => 'billet-list-part-icon',
+
+        'direction' => 'billet-list-part-direction',
+
+        'feature' => 'billet-list-part-feature',
+
+        'items' => 'billet-list-part-items',
+    ];
+
+    const ITEM = [
+        'title' => 'billet-list-part-item-title',
+    ];
 
     public static function get( $billet )
     {
         $args = [];
 
-        $parts = get_field( 'billet-list-parts', $billet['id'] );
+        $parts = get_field( self::FIELD[ 'parts' ], $billet[ 'id' ] );
 
-        if( $parts ) {
-            foreach( $parts as $key => $part ) {
+        if ( $parts ) {
+            foreach ( $parts as $key => $part ) {
                 $display = true;
 
-                if ( !empty( $billet['filter'] ) ) {
-                    $display = in_array( $part['billet-list-part-icon'], $billet['filter']['list'] );
+                if ( !empty( $billet[ 'filter' ] ) ) {
+                    $display = in_array( $part[ self::PART[ 'icon' ] ], $billet[ 'filter' ][ 'list' ] );
                 }
 
+                LegalDebug::debug( [
+                    'part-feature' => $part[ self::PART[ 'feature' ] ],
+
+                    'filter-features' => $billet[ 'filter' ][ 'features' ],
+                ] );
+
                 if ( $display ) {
-                    $args[$key]['part-icon'] = $part['billet-list-part-icon'];
+                    $args[ $key ][ 'part-icon' ] = $part[ self::PART[ 'icon' ] ];
     
-                    $args[$key]['part-direction'] = $part['billet-list-part-direction'];
+                    $args[ $key ]['part-direction' ] = $part[ self::PART[ 'direction' ] ];
     
-                    $items = $part['billet-list-part-items'];
+                    $items = $part[ self::PART[ 'items' ] ];
     
-                    if( $items ) {
-                        foreach( $items as $item ) {
-                            $args[$key]['part-items'][] = $item['billet-list-part-item-title'];
+                    if ( $items ) {
+                        foreach ( $items as $item ) {
+                            $args[ $key ][ 'part-items' ][] = $item[ self::ITEM[ 'title' ] ];
                         }
                     }
                 }
@@ -37,9 +59,13 @@ class BilletList
         return $args;
     }
 
+    const TEMPLATE = [
+        'list' => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-list.php',
+    ];
+
     public static function render( $billet )
     { 
-        load_template( self::TEMPLATE, false, self::get( $billet ) );
+        load_template( self::TEMPLATE[ 'list' ], false, self::get( $billet ) );
     }
 }
 
