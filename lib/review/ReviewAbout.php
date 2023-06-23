@@ -58,8 +58,10 @@ class ReviewAbout
         $group = get_field( self::FIELD );
         
         if( $group ) {
+            $title = $group[ 'about-title' ];
+
             return [
-                'title' => $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
+                'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
                 'bonus' => $group[ 'about-bonus' ],
                 
