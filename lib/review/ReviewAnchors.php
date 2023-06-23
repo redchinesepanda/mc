@@ -76,8 +76,12 @@ class ReviewAnchors
 
     public static function get_labels()
     {
+        $locale = WPMLMain::current_language();
+
         return [
-            __( 'basic-information', ToolLoco::TEXTDOMAIN ) => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+            // __( 'basic-information', ToolLoco::TEXTDOMAIN ) => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+            
+            ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
 
             'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
 
