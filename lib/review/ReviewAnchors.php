@@ -83,6 +83,8 @@ class ReviewAnchors
 
             WPMLMain::get_locale(),
 
+            WPMLMain::get_post_language_details(),
+
             ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ),
 
             ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
