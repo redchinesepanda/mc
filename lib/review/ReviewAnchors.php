@@ -76,8 +76,6 @@ class ReviewAnchors
 
     public static function get_labels()
     {
-        // $locale = WPMLMain::current_language();
-        
         $locale = WPMLMain::get_locale();
 
         $details = WPMLMain::get_post_language_details();
@@ -86,44 +84,30 @@ class ReviewAnchors
             $locale = $details[ 'locale' ];
         }
 
-        LegalDebug::debug( [
-            '$locale' => $locale,
-
-            // WPMLMain::get_locale(),
-
-            // WPMLMain::get_post_language_details(),
-
-            ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ),
-
-            ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
-        ] );
-
         return [
-            // __( 'basic-information', ToolLoco::TEXTDOMAIN ) => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
-            
             ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'pros-and-cons', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Pros & cons', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'review', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Review', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'offers' => __( 'Offers', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'offers', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Offers', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'odds' => __( 'Odds', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'odds', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Odds', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'sports-and-markets' => __( 'Sports & Markets', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'sports-and-markets', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Sports & Markets', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'in-play-betting' => __( 'In play betting', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'in-play-betting', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'In play betting', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'payment-methods' => __( 'Payment', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'payment-methods', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Payment', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'app', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'App', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'how-to-sign-up' => __( 'Sign up', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'how-to-sign-up', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Sign up', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'how-to-bet' => __( 'How to bet', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'how-to-bet', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'How to bet', ToolLoco::TEXTDOMAIN, $locale ),
 
-            'faqs' => __( 'FAQs', ToolLoco::TEXTDOMAIN ),
+            ToolLoco::__( 'faqs', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'FAQs', ToolLoco::TEXTDOMAIN, $locale ),
         ];
     }
 
