@@ -81,6 +81,8 @@ class ReviewAnchors
         LegalDebug::debug( [
             '$locale' => $locale,
 
+            WPMLMain::get_locale(),
+
             ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ),
 
             ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
