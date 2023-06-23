@@ -24,7 +24,7 @@ class ToolLoco
         load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
 
         $translation = __( $string, $textdomain );
-        if ( isset( $bkup ) ) $l10n[ $textdomain ] = $backup;
+        if ( isset( $backup ) ) $l10n[ $textdomain ] = $backup;
 
         return $translation;
       }
