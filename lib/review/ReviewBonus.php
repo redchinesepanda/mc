@@ -195,7 +195,9 @@ class ReviewBonus
 				'title' => [
 					'href' => self::check_url_review(),
 
-					'text' => ( !empty( $group[ 'about-title' ] ) ? $group[ 'about-title' ] : '' ),
+					// 'text' => ( !empty( $group[ 'about-title' ] ) ? $group[ 'about-title' ] : '' ),
+
+					'text' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
 				],
 
 				'name' => $args[ 'title' ],
