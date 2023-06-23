@@ -59,17 +59,19 @@ class ToolSitemap
 	{
 		$post_type = 'legal_bk_review';
 
-		$term = '';
+		$tax_query = [];
 
 		if ( !empty( $atts[ 'post_type' ] ) ) {
 			$post_type = $atts[ 'post_type' ];
 		}
 
-		if ( !empty( $atts[ 'term' ] ) ) {
-			$term = $atts[ 'term' ];
+		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
+			$tax_query[ 'taxonomy' ] = $atts[ 'taxonomy' ];
+
+			$tax_query[ 'terms' ] = $atts[ 'terms' ];
 		}
 
-		$args = self::get_args( $post_type, $term );
+		$args = self::get_args( $post_type, $tax_query );
 
 		$posts = get_posts( $args );
 
