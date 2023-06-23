@@ -360,7 +360,7 @@ class ReviewBonus
 					[
 						'title' => 'Bonus Title',
 						
-						'selector' => 'p',
+						'selector' => 'h3,p',
 
 						'classes' => self::BONUS_CLASS[ 'bonus' ] . ' ' . self::BONUS_CLASS[ 'title' ],
 					],
@@ -376,7 +376,7 @@ class ReviewBonus
 					[
 						'title' => 'Billet Title',
 						
-						'selector' => 'p',
+						'selector' => 'h3,p',
 
 						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'title' ],
 					],

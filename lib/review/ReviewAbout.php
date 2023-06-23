@@ -59,7 +59,7 @@ class ReviewAbout
         
         if( $group ) {
             return [
-                'title' => $group[ 'about-title' ],
+                'title' => $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
                 'bonus' => $group[ 'about-bonus' ],
                 
