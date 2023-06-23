@@ -76,14 +76,22 @@ class ReviewAnchors
 
     public static function get_labels()
     {
-        $locale = WPMLMain::current_language();
+        // $locale = WPMLMain::current_language();
+        
+        $locale = WPMLMain::get_locale();
+
+        $details = WPMLMain::get_post_language_details();
+
+        if ( !empty( $details ) && !is_wp_error( $details ) ) {
+            $locale = $details[ 'locale' ];
+        }
 
         LegalDebug::debug( [
             '$locale' => $locale,
 
-            WPMLMain::get_locale(),
+            // WPMLMain::get_locale(),
 
-            WPMLMain::get_post_language_details(),
+            // WPMLMain::get_post_language_details(),
 
             ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale ),
 
