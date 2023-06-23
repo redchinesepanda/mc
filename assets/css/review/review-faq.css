@@ -60,7 +60,7 @@
 /* FAQ Background */
 
 /* .faq .faq-item-title.legal-active:before, */
-.tcb-post-content .legal-faq-title.legal-active:before {
+.tcb-post-content .legal-faq-title:not( .legal-active ):before {
 	transform: rotate( -90deg );
 }
 
