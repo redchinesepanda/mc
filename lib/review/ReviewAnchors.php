@@ -77,7 +77,7 @@ class ReviewAnchors
     public static function get_labels()
     {
         return [
-            'basic-information' => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
+            __( 'basic-information', ToolLoco::TEXTDOMAIN ) => __( 'Basic facts', ToolLoco::TEXTDOMAIN ),
 
             'pros-and-cons' => __( 'Pros & cons', ToolLoco::TEXTDOMAIN ),
 

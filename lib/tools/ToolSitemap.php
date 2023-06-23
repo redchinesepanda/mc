@@ -7,6 +7,8 @@ class ToolSitemap
         $handler = new self();
 
         // [legal-sitemap]
+		
+		// [legal-sitemap post_type='legal_billet' taxonomy='billet_type' terms='billet_casino']
 
 		add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
     }
@@ -54,7 +56,7 @@ class ToolSitemap
 
         return $items;
     }
-
+	
 	public static function get( $atts )
 	{
 		$post_type = 'legal_bk_review';

@@ -35,11 +35,7 @@ class ToolTinyMCE
     }
 
 	const CSS = [
-        'legal-tinymce-main' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-main.css',
-
-			'ver' => '1.0.1',
-		],
+        'legal-tinymce-main' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-main.css',
 
         'legal-tinymce-overview' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-overview.css',
 
@@ -47,11 +43,7 @@ class ToolTinyMCE
 
         'legal-tinymce-pros' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-pros.css',
 
-        'legal-tinymce-header' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-header.css',
-
-			'ver' => '1.0.1',
-		],
+        'legal-tinymce-header' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-header.css',
     ];
 
 	public static function editor_styles() {
