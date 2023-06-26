@@ -24,6 +24,16 @@
         width: calc( 54% - 20px );
     }
 
+    /* Billet Background */
+
+    .billet-left {
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .billet-right {
+        border-radius: 0px 20px 20px 0px;
+    }
+
 }
 
 /* Body */
@@ -131,13 +141,8 @@ body {
     border-radius: 20px;
 }
 
-.billet-left {
-    border-radius: 20px 0px 0px 20px;
-}
-
 .billet-right {
     background-color: #F6F8FF;
-    border-radius: 0px 20px 20px 0px;
 }
 
 .billet-title .billet-title-rating {
