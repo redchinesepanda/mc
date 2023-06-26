@@ -137,7 +137,7 @@ class ReviewBonus
 					$template = self::render_bonus( $args );
 				}
 				
-				LegalDOM::appendHTML( $bonus, $template );
+				LegalDOM::appendHTML( $bonus, ToolEncode::encode( $template ) );
 				
 				$body->replaceChild( $bonus, $replace );
 			}
