@@ -17,7 +17,11 @@ class BilletMain
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
-        'billet-main' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
+        'billet-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
+
+            'ver' => '1.0.0',
+        ],
 
         'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
