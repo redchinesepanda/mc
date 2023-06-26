@@ -6,6 +6,16 @@
         flex-direction: column;
     }
 
+    /* Billet Background */
+
+    .billet-left {
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .billet-right {
+        border-radius: 0px 0px 20px 20px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
