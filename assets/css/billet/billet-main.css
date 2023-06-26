@@ -1,3 +1,27 @@
+@media screen and ( max-width: 767px ) {
+
+    /* Billet Display */
+
+    .billet {
+        flex-direction: column;
+    }
+
+    /* Billet Width and Height */
+
+    .billet-left {
+        width: calc( 22% - 20px );
+    }
+
+    .billet-right {
+        width: calc( 24% - 20px );
+    }
+
+    .billet-center {
+        width: calc( 54% - 20px );
+    }
+
+}
+
 /* Body */
 body {
     background-color: #EDEFF4;
@@ -261,16 +285,8 @@ body {
     min-height: 168px;
 }
 
-.billet-left {
-    width: calc( 22% - 20px );
-}
-
 .billet-left a {
     width: fit-content;
-}
-
-.billet-right {
-    width: calc( 24% - 20px );
 }
 
 .billet-spoiler {
@@ -279,10 +295,6 @@ body {
 
 .billet-footer {
     width: 100%;
-}
-
-.billet-center {
-    width: calc( 54% - 20px );
 }
 
 .billet-title {
