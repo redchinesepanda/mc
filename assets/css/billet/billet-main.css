@@ -434,6 +434,10 @@ body {
     color: #000000;
 }
 
+.billet-right .bonus-title {
+    text-align: center;
+}
+
 .billet-right .legal-bonus,
 .billet-right .legal-bonus:hover,
 .billet-right .legal-bonus:active,
@@ -445,7 +449,6 @@ body {
     line-height: 29px;
     text-transform: capitalize;
     text-decoration: none;
-    text-align: center;
     color: #0C0B2D;
 }
 
