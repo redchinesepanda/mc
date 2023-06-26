@@ -108,6 +108,10 @@ class ReviewAnchors
             ToolLoco::__( 'how-to-bet', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'How to bet', ToolLoco::TEXTDOMAIN, $locale ),
 
             ToolLoco::__( 'faqs', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'FAQs', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolLoco::__( 'security', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Security', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolLoco::__( 'registration', ToolLoco::TEXTDOMAIN, $locale ) => ToolLoco::__( 'Registration', ToolLoco::TEXTDOMAIN, $locale ),
         ];
     }
 

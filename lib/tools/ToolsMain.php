@@ -20,6 +20,8 @@ require_once( 'ToolSitemap.php' );
 
 require_once( 'ToolPrint.php' );
 
+require_once( 'ToolTransiterate.php' );
+
 class ToolsMain
 {
     public static function register()
