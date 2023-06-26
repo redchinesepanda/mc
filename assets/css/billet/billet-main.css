@@ -6,6 +6,13 @@
         flex-direction: column;
     }
 
+    /* Billet Position */
+
+    .billet-center {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     /* Billet Background */
 
     .billet-left {
@@ -349,7 +356,8 @@ body {
 
 .billet-center,
 .billet-right {
-    padding: 20px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .billet-footer:not( :last-child ) {
