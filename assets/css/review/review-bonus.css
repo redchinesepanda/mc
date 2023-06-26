@@ -42,7 +42,7 @@
 
 /* Bonus Display */
 
-.legal-bonus {
+.tcb-post-content > .legal-bonus {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
