@@ -41,6 +41,10 @@
         width: calc( 54% - 20px );
     }
 
+    .billet-list-part.legal-column {
+        width: calc( 50% - 4px );
+    }
+
     /* Billet Background */
 
     .billet-left {
@@ -337,10 +341,6 @@ body {
 
 .billet-list-part.legal-row {
     width: 100%;
-}
-
-.billet-list-part.legal-column {
-    width: calc( 50% - 4px );
 }
 
 .billet .bonus-mobile-item {
