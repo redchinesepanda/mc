@@ -356,7 +356,8 @@ body {
 
 .billet-right .bonus-title,
 .billet-right .bonus-description {
-    margin: 0px 40px;
+    /* margin: 0px 40px; */
+    padding: 0px 15px;
 }
 
 .billet-left .billet-order {
@@ -442,14 +443,14 @@ body {
     font-weight: 700;
     font-size: 23px;
     line-height: 29px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-decoration: none;
     color: #0C0B2D;
 }
 
-.billet-right .legal-bonus:hover {
+/* .billet-right .legal-bonus:hover {
     text-decoration: underline;
-}
+} */
 
 .billet-right .bonus-description {
     font-family: "Source Sans Pro";
