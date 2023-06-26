@@ -464,10 +464,18 @@ body {
     color: #000000;
 }
 
+.billet-list-part:not( .legal-default ) .billet-list-part-item {
+    font-weight: 400;
+}
+
+.billet-list-part.legal-default .billet-list-part-item {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .billet-list-part .billet-list-part-item {
     font-family: 'Source Sans Pro';
     font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     color: #000000;
