@@ -21,7 +21,7 @@
 {
 	/* Bonus Position */
 
-	.tcb-post-content .legal-bonus {
+	.tcb-post-content > .legal-bonus {
 		padding: 15px 30px;
 	}
 
