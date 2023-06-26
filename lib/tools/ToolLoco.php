@@ -26,7 +26,7 @@ class ToolLoco
         $translation = __( $string, $textdomain );
         if ( isset( $backup ) ) $l10n[ $textdomain ] = $backup;
 
-        return ToolTransiterate::replace( $translation );
+        return $translation;
       }
 }
 
