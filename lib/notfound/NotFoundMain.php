@@ -40,7 +40,19 @@ class NotFoundMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+		add_action( 'template_redirect', [ $handler, 'custom_post_type_404' ] );
     }
+
+	function custom_post_type_404()
+	{
+		if ( !is_user_logged_in() && is_singular( [ 'legal_billet', 'legal_compilation' ] ) )
+		{
+			global $wp_query;
+
+			$wp_query->set_404();
+		}
+	}
 
 	public static function inline_style() {
 		$style = [];
