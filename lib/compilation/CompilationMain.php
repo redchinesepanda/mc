@@ -196,6 +196,8 @@ class CompilationMain
 
     const PROFIT_ITEM = [
         'feature' => 'profit-item-feature',
+
+        'value' => 'profit-item-value',
     ];
 
     function compilation_posts_where( $where )
@@ -241,7 +243,7 @@ class CompilationMain
                 'legal_profit' => [
                     // locations_$_city
 
-                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
+                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'value' ],
                 ],
             ];
 
