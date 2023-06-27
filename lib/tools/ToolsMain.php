@@ -40,7 +40,7 @@ class ToolsMain
         
         ToolSitemap::register();
 
-        ToolNotFound::register();
+        // ToolNotFound::register();
     }
 }
 
