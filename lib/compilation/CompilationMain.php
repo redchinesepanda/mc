@@ -204,12 +204,12 @@ class CompilationMain
 
         if ( $rating_enabled ) {
             // $meta_query = [
-                'relation' => 'AND',
+            //     'relation' => 'AND',
     
-                'legal_rating' => [
-                    'key' => self::META_KEY[ 'rating' ],
-                ],
-            ];
+            //     'legal_rating' => [
+            //         'key' => self::META_KEY[ 'rating' ],
+            //     ],
+            // ];
 
             // $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
         }
