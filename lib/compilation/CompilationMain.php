@@ -189,7 +189,7 @@ class CompilationMain
     const META_KEY = [
         'rating' => 'billet-title-rating',
 
-        'rating' => 'billet-profit-items',
+        'profit' => 'billet-profit-items',
     ];
 
     public static function get_args( $id )
