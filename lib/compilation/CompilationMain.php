@@ -200,9 +200,10 @@ class CompilationMain
 
     function compilation_posts_where( $where )
     {
-        $where = str_replace("meta_key = '" . self::META_KEY[ 'profit' ] . "_$", "meta_key LIKE '" . self::META_KEY[ 'profit' ] . "_%", $where);
-        
-        // $where = str_replace("meta_key = 'locations_$", "meta_key LIKE 'locations_%", $where);
+        if ( strpos( $where, self::META_KEY[ 'profit' ] . '_$' ) )
+        {
+            $where = str_replace("meta_key = '" . self::META_KEY[ 'profit' ] . "_$", "meta_key LIKE '" . self::META_KEY[ 'profit' ] . "_%", $where);
+        }
     
         return $where;
     }
@@ -237,12 +238,14 @@ class CompilationMain
             $meta_query = [
                 'relation' => 'AND',
     
-                'legal_rating' => [
+                'legal_profit' => [
                     // locations_$_city
 
                     'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
                 ],
             ];
+
+            $orderby = [ 'legal_profit' => 'ASC' ] + $orderby;
         }
 
         $args = [
