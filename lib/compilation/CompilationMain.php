@@ -223,15 +223,7 @@ class CompilationMain
 
     public static function get( $id )
     {
-        LegalDebug::debug( [
-            'id' => $id,
-        ] );
-        
         $id = self::check_id( $id );
-
-        LegalDebug::debug( [
-            'id' => $id,
-        ] );
 
         $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
