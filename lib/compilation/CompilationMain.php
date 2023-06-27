@@ -203,13 +203,15 @@ class CompilationMain
         $rating_enabled = get_field( self::BILLET[ 'rating-enabled' ], $id );
 
         if ( $rating_enabled ) {
-            // $meta_query = [
-            //     'relation' => 'AND',
+            $meta_query = [
+                'relation' => 'AND',
     
-            //     'legal_rating' => [
-            //         'key' => self::META_KEY[ 'rating' ],
-            //     ],
-            // ];
+                'legal_rating' => [
+                    'key' => self::META_KEY[ 'rating' ],
+
+                    'compare' => 'EXISTS',
+                ],
+            ];
 
             // $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
         }
