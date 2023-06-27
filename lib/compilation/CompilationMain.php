@@ -186,8 +186,38 @@ class CompilationMain
         ];
     }
 
+    const META_KEY = [
+        'rating' => 'billet-title-rating',
+    ];
+
     public static function get_args( $id )
     {
+        $meta_query = [];
+
+        $rating_enabled = get_field( self::BILLET[ 'rating-enabled' ], $id );
+
+        if ( $rating_enabled ) {
+            $meta_query = [
+                'relation' => 'OR',
+    
+                'legal_rating' => [
+                    'key' => self::META_KEY[ 'rating' ],
+                ],
+            ];
+        }
+
+        $profit_enabled = get_field( self::BILLET[ 'profit-enabled' ], $id );
+
+        if ( $profit_enabled ) {
+            $meta_query = [
+                'relation' => 'OR',
+    
+                'legal_rating' => [
+                    'key' => self::META_KEY[ 'rating' ],
+                ],
+            ];
+        }
+
         return [
             'numberposts' => -1,
 
@@ -215,9 +245,15 @@ class CompilationMain
                 ]
             ],
 
-            'orderby' => 'menu_order',
+            'meta_query' => $meta_query,
 
-            'order' => 'ASC',
+            'orderby' => [
+                'menu_order' => 'ASC',
+            ],
+
+            // 'orderby' => 'menu_order',
+
+            // 'order' => 'ASC',
         ];
     }
 
