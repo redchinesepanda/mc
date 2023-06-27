@@ -203,7 +203,7 @@ class CompilationMain
         $rating_enabled = get_field( self::BILLET[ 'rating-enabled' ], $id );
 
         if ( $rating_enabled ) {
-            $meta_query = [
+            // $meta_query = [
                 'relation' => 'AND',
     
                 'legal_rating' => [
