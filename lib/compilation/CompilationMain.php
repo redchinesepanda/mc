@@ -211,7 +211,7 @@ class CompilationMain
                 ],
             ];
 
-            $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
+            // $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
         }
 
         $profit_enabled = get_field( self::BILLET[ 'profit-enabled' ], $id );
