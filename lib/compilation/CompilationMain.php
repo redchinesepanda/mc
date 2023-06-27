@@ -188,11 +188,17 @@ class CompilationMain
 
     const META_KEY = [
         'rating' => 'billet-title-rating',
+
+        'rating' => 'billet-profit-items',
     ];
 
     public static function get_args( $id )
     {
         $meta_query = [];
+
+        $orderby = [
+            'menu_order' => 'ASC',
+        ];
 
         $rating_enabled = get_field( self::BILLET[ 'rating-enabled' ], $id );
 
@@ -204,6 +210,12 @@ class CompilationMain
                     'key' => self::META_KEY[ 'rating' ],
                 ],
             ];
+
+            $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
+
+            LegalDebug::debug( [
+                'orderby' => $orderby,
+            ] );
         }
 
         $profit_enabled = get_field( self::BILLET[ 'profit-enabled' ], $id );
@@ -247,9 +259,7 @@ class CompilationMain
 
             'meta_query' => $meta_query,
 
-            'orderby' => [
-                'menu_order' => 'ASC',
-            ],
+            'orderby' => $orderby,
 
             // 'orderby' => 'menu_order',
 
