@@ -22,6 +22,8 @@ require_once( 'ToolPrint.php' );
 
 require_once( 'ToolTransiterate.php' );
 
+require_once( 'ToolNotFound.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -37,6 +39,8 @@ class ToolsMain
         // ToolRewrite::register();
         
         ToolSitemap::register();
+
+        ToolNotFound::register();
     }
 }
 
