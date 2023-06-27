@@ -204,7 +204,7 @@ class CompilationMain
 
         if ( $rating_enabled ) {
             $meta_query = [
-                'relation' => 'OR',
+                'relation' => 'AND',
     
                 'legal_rating' => [
                     'key' => self::META_KEY[ 'rating' ],
@@ -218,7 +218,7 @@ class CompilationMain
 
         if ( $profit_enabled ) {
             $meta_query = [
-                'relation' => 'OR',
+                'relation' => 'AND',
     
                 'legal_rating' => [
                     'key' => self::META_KEY[ 'rating' ],
