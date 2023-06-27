@@ -263,6 +263,8 @@ class CompilationMain
         ];
 
         LegalDebug::debug( [
+            'rating_enabled' => ( $rating_enabled ? 'true' : 'false' ),
+            
             'args' => $args,
         ] );
 
