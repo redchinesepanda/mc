@@ -264,11 +264,11 @@ class CompilationMain
             // 'order' => 'ASC',
         ];
 
-        LegalDebug::debug( [
-            'rating_enabled' => ( $rating_enabled ? 'true' : 'false' ),
+        // LegalDebug::debug( [
+        //     'rating_enabled' => ( $rating_enabled ? 'true' : 'false' ),
             
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
         return $args;
     }
