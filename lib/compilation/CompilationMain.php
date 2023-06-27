@@ -212,10 +212,6 @@ class CompilationMain
             ];
 
             $orderby = [ 'legal_rating' => 'DESC' ] + $orderby;
-
-            LegalDebug::debug( [
-                'orderby' => $orderby,
-            ] );
         }
 
         $profit_enabled = get_field( self::BILLET[ 'profit-enabled' ], $id );
@@ -230,7 +226,7 @@ class CompilationMain
             ];
         }
 
-        return [
+        $args = [
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -265,6 +261,12 @@ class CompilationMain
 
             // 'order' => 'ASC',
         ];
+
+        LegalDebug::debug( [
+            'args' => $args,
+        ] );
+
+        return $args;
     }
 
     public static function get( $id )
