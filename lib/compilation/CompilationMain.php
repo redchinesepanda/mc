@@ -46,6 +46,8 @@ class CompilationMain
         add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    
+        add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
     }
 
     public static function get_billets( $posts, $filter )
@@ -192,6 +194,19 @@ class CompilationMain
         'profit' => 'billet-profit-items',
     ];
 
+    const PROFIT_ITEM = [
+        'feature' => 'profit-item-feature',
+    ];
+
+    function compilation_posts_where( $where )
+    {
+        $where = str_replace("meta_key = '" . self::META_KEY[ 'profit' ] . "_$", "meta_key LIKE '" . self::META_KEY[ 'profit' ] . "_%", $where);
+        
+        // $where = str_replace("meta_key = 'locations_$", "meta_key LIKE 'locations_%", $where);
+    
+        return $where;
+    }
+
     public static function get_args( $id )
     {
         $meta_query = [];
@@ -223,7 +238,9 @@ class CompilationMain
                 'relation' => 'AND',
     
                 'legal_rating' => [
-                    'key' => self::META_KEY[ 'rating' ],
+                    // locations_$_city
+
+                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
                 ],
             ];
         }
