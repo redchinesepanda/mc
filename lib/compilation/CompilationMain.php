@@ -209,7 +209,7 @@ class CompilationMain
                 'legal_rating' => [
                     'key' => self::META_KEY[ 'rating' ],
 
-                    'compare' => 'EXISTS',
+                    // 'compare' => 'EXISTS',
                 ],
             ];
 
