@@ -2,16 +2,12 @@
 
 /*
 
-Template Name: Legal Compilation
+Template Name: Template Legal Compilation
 Template Post Type: legal_compilation
 
 */
 
 require_once( 'lib/LegalMain.php' );
-
-// require_once( 'lib/yoast/YoastMain.php' );
-
-// require_once( 'lib/compilation/CompilationMain.php' );
 
 ?>
 <html>

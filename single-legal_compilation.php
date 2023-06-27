@@ -2,8 +2,8 @@
 
 /*
 
-Template Name: Single Legal Billet
-Template Post Type: legal_billet
+Template Name: Single Legal Compilation
+Template Post Type: legal_compilation
 
 */
 
@@ -13,9 +13,9 @@ require_once( 'lib/LegalMain.php' );
 <html>
     <head>
         <?php YoastMain::print(); ?>
-        <?php BilletMain::print(); ?>
+        <?php CompilationMain::print(); ?>
     </head>
     <body class="legal-compilation">
-        <?php BilletMain::render(); ?>
+        <?php CompilationMain::render(); ?>
     </body>
 </html>

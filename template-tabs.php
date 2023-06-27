@@ -2,16 +2,12 @@
 
 /*
 
-Template Name: Legal Page
+Template Name: Template Legal Tabs
 Template Post Type: page
 
 */
 
 require_once( 'lib/LegalMain.php' );
-
-// require_once( 'lib/yoast/YoastMain.php' );
-
-// require_once( 'lib/tabs/CompilationTabs.php' );
 
 ?>
 <html>
