@@ -10,6 +10,14 @@ class ACFBillet
         'profit' => 'billet-profit-items',
     ];
 
+    const PROFIT = [
+        'feature' => 'profit-item-feature',
+
+        'value' => 'profit-item-value',
+
+        'pair' => 'profit-item-pair',
+    ];
+
     public static function register()
     {
         $handler = new self();
@@ -24,18 +32,31 @@ class ACFBillet
     public static function my_acf_save_post( $post_id ) {
 
 		// Get newly saved values.
-		$values = get_fields( $post_id );
+		// $values = get_fields( $post_id );
 
 		// Check the new value of a specific field.
 		$profit = get_field( self::FIELD[ 'profit' ] , $post_id );
 
 		if ( $profit )
         {
-			LegalDebug::debug( [
-                'values' => $values,
+			// LegalDebug::debug( [
+            //     // 'values' => $values,
 
-                'profit' => $profit,
-            ] );
+            //     'profit' => $profit,
+            // ] );
+
+            foreach ( $profit as $id => $row )
+            {
+                $value = [
+                    self::PROFIT[ 'feature' ] => $row[ self::PROFIT[ 'feature' ] ],
+
+                    self::PROFIT[ 'value' ] => $row[ self::PROFIT[ 'value' ] ],
+
+                    self::PROFIT[ 'pair' ] => 'pair-order' . $row[ self::PROFIT[ 'feature' ] ] . '-' . $row[ self::PROFIT[ 'value' ] ],
+                ];
+
+                update_row( self::FIELD[ 'profit' ], $id, $value, [ $post_id ] )
+            }
 		}
 	}
 
