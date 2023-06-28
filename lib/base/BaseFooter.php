@@ -104,6 +104,10 @@ class BaseFooter
 
 			$alt = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
 
+			// LegalDebug::debug( [
+			// 	'ID' => $post->ID,
+			// ] );
+
 			if ( $image ) {
 				$items[] = [
 					'href' => ( $href ? $href : '#' ),
@@ -115,6 +119,8 @@ class BaseFooter
 					'height' => $image[ 2 ],
 	
 					'alt' => ( $alt ? $alt : 'Match.Center' ),
+
+					'class' => 'legal-image-' . $post->ID,
 				];
 			}
 		}

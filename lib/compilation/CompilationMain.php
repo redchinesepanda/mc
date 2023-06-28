@@ -202,10 +202,10 @@ class CompilationMain
 
     function compilation_posts_where( $where )
     {
-        if ( strpos( $where, self::META_KEY[ 'profit' ] . '_$' ) )
-        {
-            $where = str_replace("meta_key = '" . self::META_KEY[ 'profit' ] . "_$", "meta_key LIKE '" . self::META_KEY[ 'profit' ] . "_%", $where);
-        }
+        // if ( strpos( $where, self::META_KEY[ 'profit' ] . '_$' ) )
+        // {
+        //     $where = str_replace("meta_key = '" . self::META_KEY[ 'profit' ] . "_$", "meta_key LIKE '" . self::META_KEY[ 'profit' ] . "_%", $where);
+        // }
     
         return $where;
     }
