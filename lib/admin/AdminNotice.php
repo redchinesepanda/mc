@@ -21,7 +21,7 @@ class AdminNotice
     {
         if ( self::check_affilate( $post ) )
         {
-            echo self::render_rectangle( '<b>Внимание!</b> Не используйте слог <b>go</b> в Slug или Permalink партнерской ссылки. Это баг плагина!' );
+            echo self::render_rectangle( '<b>Внимание!</b> Не используйте слог <b>go</b> в Slug или Permalink партнерской ссылки - ссылка будет сформирована неправильно. Это баг плагина!' );
         }
     }
 

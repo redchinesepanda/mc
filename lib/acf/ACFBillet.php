@@ -6,6 +6,8 @@ class ACFBillet
         'icon' => 'billet-list-part-icon',
 
         'direction' => 'billet-list-part-direction',
+
+        'profit' => 'billet-profit-items',
     ];
 
     public static function register()
@@ -15,7 +17,27 @@ class ACFBillet
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'icon' ], [ $handler, 'choices_icon' ] );
 
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'direction' ], [ $handler, 'choices_direction' ] );
+
+        add_action('acf/save_post', [ $handler, 'my_acf_save_post' ]);
     }
+
+    public static function my_acf_save_post( $post_id ) {
+
+		// Get newly saved values.
+		$values = get_fields( $post_id );
+
+		// Check the new value of a specific field.
+		$profit = get_field( self::FIELD[ 'profit' ] , $post_id );
+
+		if ( $profit )
+        {
+			LegalDebug::debug( [
+                'values' => $values,
+
+                'profit' => $profit,
+            ] );
+		}
+	}
 
     function choices_icon( $field )
     {
