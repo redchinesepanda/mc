@@ -260,6 +260,10 @@ class CompilationMain
             ];
 
             $orderby = [ 'legal_profit' => 'ASC' ] + $orderby;
+
+            LegalDebug::debug( [
+                'meta_query' => $meta_query,
+            ] );
         }
 
         $args = [
