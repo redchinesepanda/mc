@@ -244,6 +244,8 @@ class CompilationMain
         {
             $filter = get_field( self::COMPILATION[ 'filter' ], $id );
 
+            $feature = array_shift( $filter );
+
             $meta_query = [
 
                 'relation' => 'AND',
@@ -258,6 +260,9 @@ class CompilationMain
 
                     'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'pair' ],
 
+                    'compare' => 'LIKE',
+
+                    'value' => 'pair-order-' . $feature,
                 ],
             ];
 
