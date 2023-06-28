@@ -39,11 +39,11 @@ class ACFBillet
 
 		if ( $profit )
         {
-			LegalDebug::debug( [
-                // 'values' => $values,
+			// LegalDebug::debug( [
+            //     // 'values' => $values,
 
-                'profit' => $profit,
-            ] );
+            //     'profit' => $profit,
+            // ] );
 
             foreach ( $profit as $id => $row )
             {
@@ -60,11 +60,11 @@ class ACFBillet
 
             $profit = get_field( self::FIELD[ 'profit' ] , $post_id );
 
-            LegalDebug::die( [
-                // 'values' => $values,
+            // LegalDebug::die( [
+            //     // 'values' => $values,
 
-                'profit' => $profit,
-            ] );
+            //     'profit' => $profit,
+            // ] );
 		}
 	}
 
