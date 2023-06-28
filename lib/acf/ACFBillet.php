@@ -28,7 +28,7 @@ class ACFBillet
 
         add_action( 'acf/save_post', [ $handler, 'my_acf_save_post' ] );
 
-        add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], 'legal_hidden' );
+        add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
     }
 
     public static function legal_hidden( $field )
