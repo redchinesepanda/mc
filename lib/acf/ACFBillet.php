@@ -52,7 +52,7 @@ class ACFBillet
 
                     self::PROFIT[ 'value' ] => $row[ self::PROFIT[ 'value' ] ],
 
-                    self::PROFIT[ 'pair' ] => 'pair-order' . $row[ self::PROFIT[ 'feature' ] ] . '-' . $row[ self::PROFIT[ 'value' ] ],
+                    self::PROFIT[ 'pair' ] => 'pair-order-' . $row[ self::PROFIT[ 'feature' ] ] . '-' . $row[ self::PROFIT[ 'value' ] ],
                 ];
 
                 update_row( self::FIELD[ 'profit' ], $id, $value, [ $post_id ] );
