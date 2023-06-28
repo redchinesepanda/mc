@@ -29,22 +29,12 @@ class ACFBillet
         add_action('acf/save_post', [ $handler, 'my_acf_save_post' ]);
     }
 
-    public static function my_acf_save_post( $post_id ) {
-
-		// Get newly saved values.
-		// $values = get_fields( $post_id );
-
-		// Check the new value of a specific field.
+    public static function my_acf_save_post( $post_id )
+    {
 		$profit = get_field( self::FIELD[ 'profit' ] , $post_id );
 
 		if ( $profit )
         {
-			// LegalDebug::debug( [
-            //     // 'values' => $values,
-
-            //     'profit' => $profit,
-            // ] );
-
             foreach ( $profit as $id => $row )
             {
                 $value = [
@@ -59,12 +49,6 @@ class ACFBillet
             }
 
             $profit = get_field( self::FIELD[ 'profit' ] , $post_id );
-
-            // LegalDebug::die( [
-            //     // 'values' => $values,
-
-            //     'profit' => $profit,
-            // ] );
 		}
 	}
 

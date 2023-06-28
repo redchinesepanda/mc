@@ -249,12 +249,6 @@ class CompilationMain
             $meta_query = [
 
                 'relation' => 'AND',
-    
-                // [
-                //     'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
-
-                //     'value' => $filter,
-                // ],
 
                 'legal_profit' => [
 
@@ -267,10 +261,6 @@ class CompilationMain
             ];
 
             $orderby = [ 'legal_profit' => 'ASC' ] + $orderby;
-
-            LegalDebug::debug( [
-                'filter' => $filter,
-            ] );
         }
 
         $args = [
