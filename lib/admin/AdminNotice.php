@@ -7,10 +7,26 @@ class AdminNotice
         $handler = new self();
 
 		add_action( 'admin_notices', [ $handler, 'wpb_admin_notice_warn' ] );
+
+        add_action( 'edit_form_after_title', [ $handler, 'legal_affilate_edit' ] );
+    }
+    
+
+    function check_affilate( $post )
+    {
+        return ( $post->post_type =='affiliate-links' );
+    }
+
+    function legal_affilate_edit( $post )
+    {
+        if ( self::check_affilate( $post ) )
+        {
+            echo self::render();
+        }
     }
 
 	public static function wpb_admin_notice_warn() {
-		echo self::render(); 
+		echo self::render();
 	}
 
 	public static function get()
