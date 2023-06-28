@@ -220,14 +220,16 @@ class CompilationMain
 
         $rating_enabled = get_field( self::BILLET[ 'rating-enabled' ], $id );
 
-        if ( $rating_enabled ) {
+        if ( $rating_enabled )
+        {
             $meta_query = [
+
                 'relation' => 'AND',
     
                 'legal_rating' => [
+
                     'key' => self::META_KEY[ 'rating' ],
 
-                    // 'compare' => 'EXISTS',
                 ],
             ];
 
@@ -236,14 +238,24 @@ class CompilationMain
 
         $profit_enabled = get_field( self::BILLET[ 'profit-enabled' ], $id );
 
-        if ( $profit_enabled ) {
+        if ( $profit_enabled )
+        {
+            $filter = get_field( self::COMPILATION[ 'filter' ], $id );
+
             $meta_query = [
+
                 'relation' => 'AND',
     
+                [
+                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
+
+                    'value' => $filter,
+                ],
+
                 'legal_profit' => [
-                    // locations_$_city
 
                     'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'value' ],
+
                 ],
             ];
 
@@ -251,6 +263,7 @@ class CompilationMain
         }
 
         $args = [
+
             'numberposts' => -1,
 
             'post_type' => 'legal_billet',
@@ -258,7 +271,9 @@ class CompilationMain
             'suppress_filters' => get_field( self::COMPILATION[ 'locale' ], $id ),
 
             'tax_query' => [
+
                 'relation' => 'AND',
+
                 [
                     'taxonomy' => 'billet_feature',
 
@@ -268,6 +283,7 @@ class CompilationMain
 
                     'operator' => get_field( self::COMPILATION[ 'operator' ], $id ),
                 ],
+
                 [
                     'taxonomy' => 'billet_type',
 
@@ -275,6 +291,7 @@ class CompilationMain
 
                     'terms' => get_field( self::COMPILATION[ 'type' ], $id ),
                 ]
+
             ],
 
             'meta_query' => $meta_query,
