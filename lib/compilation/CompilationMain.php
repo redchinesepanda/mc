@@ -198,6 +198,8 @@ class CompilationMain
         'feature' => 'profit-item-feature',
 
         'value' => 'profit-item-value',
+
+        'pair' => 'profit-item-pair',
     ];
 
     function compilation_posts_where( $where )
@@ -246,15 +248,15 @@ class CompilationMain
 
                 'relation' => 'AND',
     
-                [
-                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
+                // [
+                //     'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'feature' ],
 
-                    'value' => $filter,
-                ],
+                //     'value' => $filter,
+                // ],
 
                 'legal_profit' => [
 
-                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'value' ],
+                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'pair' ],
 
                 ],
             ];
