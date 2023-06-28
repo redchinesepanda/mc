@@ -152,6 +152,10 @@
 	align-items: center;
 }
 
+.legal-logo {
+	display: flex;
+}
+
 .legal-menu {
 	display: flex;
 	column-gap: 15px;
