@@ -19,9 +19,17 @@ class LegalDebug
 
     public static function debug( $message )
     {
-        // if ( self::check() ) {
-            // echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
-            
+        // if ( self::check() )
+        // {
+            echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
+        // }
+        
+    }
+
+    public static function die( $message )
+    {
+        // if ( self::check() )
+        // {
             wp_die ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
         // }
         
