@@ -21,9 +21,7 @@ class AdminNotice
     {
         if ( self::check_affilate( $post ) )
         {
-            // echo '<div style="margin-top: 10px;padding: 15px;background: #f4ecd5;border: 1px solid #0085ba;">Не используйте слог <b>go</b> в slug партнерской ссылки</div>';
-
-            echo self::render_rectangle( 'Не используйте слог <b>go</b> в slug партнерской ссылки' );
+            echo self::render_rectangle( 'Не используйте слог <b>go</b> в slug партнерской ссылки. Это баг плагина!' );
         }
     }
 
