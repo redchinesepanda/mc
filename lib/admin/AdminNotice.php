@@ -8,7 +8,7 @@ class AdminNotice
 
 		add_action( 'admin_notices', [ $handler, 'wpb_admin_notice_warn' ] );
 
-        add_action( 'edit_form_after_title', [ $handler, 'legal_affilate_edit' ] );
+        add_action( 'edit_form_after_title', [ $handler, 'legal_affilate_edit' ], 5 );
     }
     
 
