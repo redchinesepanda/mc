@@ -1,0 +1,1 @@
+<div style="margin-top: 10px; padding: 15px; background: #f4ecd5; border: 1px solid #0085ba;"><?php echo $args; ?></div>

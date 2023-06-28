@@ -21,7 +21,9 @@ class AdminNotice
     {
         if ( self::check_affilate( $post ) )
         {
-            echo '<div style="margin-top: 10px;padding: 15px;background: #f4ecd5;border: 1px solid #0085ba;">Не используйте слог <b>go</b> в slug партнерской ссылки</div>';
+            // echo '<div style="margin-top: 10px;padding: 15px;background: #f4ecd5;border: 1px solid #0085ba;">Не используйте слог <b>go</b> в slug партнерской ссылки</div>';
+
+            echo self::render_rectangle( 'Не используйте слог <b>go</b> в slug партнерской ссылки' );
         }
     }
 
@@ -42,6 +44,8 @@ class AdminNotice
 	
 	const TEMPLATE = [
         'notice' => LegalMain::LEGAL_PATH . '/template-parts/admin/part-notice.php',
+
+        'rectangle' => LegalMain::LEGAL_PATH . '/template-parts/admin/part-rectangle.php',
     ];
 
     public static function render()
@@ -49,6 +53,17 @@ class AdminNotice
         ob_start();
 
         load_template( self::TEMPLATE[ 'notice' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_rectangle( $args = '' )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'rectangle' ], false, $args );
 
         $output = ob_get_clean();
 
