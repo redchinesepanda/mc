@@ -80,17 +80,6 @@ class BaseHeader
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
 
-				if ( !empty( $menu_item->classes ) )
-				{
-					$item_class .= ' ' . implode( ' ', $menu_item->classes );
-				}
-
-				LegalDebug::debug( [
-					'item_class' => $item_class,
-
-					'classes' => $menu_item->classes,
-				] );
-
 				$items[] = [
 					'class' => $item_class,
 
@@ -212,6 +201,18 @@ class BaseHeader
 		if( !empty( $post_hide ) ) {
 			$item[ 'title' ] = '';
 		}
+
+		
+		if ( !empty( $post->classes ) )
+		{
+			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
+		}
+
+		LegalDebug::debug( [
+			'class' => $item[ 'class' ],
+
+			'classes' => $post->classes,
+		] );
 
 		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
