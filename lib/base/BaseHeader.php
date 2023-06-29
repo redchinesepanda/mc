@@ -87,9 +87,9 @@ class BaseHeader
 				];
 			}
 
-			// LegalDebug::debug( [
-			// 	'menu_item' => $menu_item,
-			// ] );
+			LegalDebug::debug( [
+				'menu_item' => $menu_item,
+			] );
 		}
 
 		return $items;
