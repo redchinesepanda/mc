@@ -27,12 +27,6 @@ class WPMLLanguageMismatch
 			],
 		];
 
-		LegalDebug::debug( [
-			'item_id' => $item_id,
-
-			'uri_parts' => $uri_parts,
-		] );
-
 		foreach ( $exceptions as $lang => $items )
 		{
 			if ( strpos( $lang, $uri_parts[ 'lang' ] ) !== false )
