@@ -17,8 +17,6 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
-        $choices[ 'legal-country-wide' ] = '[ wide ] 320px';
-
         $choices[ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
 
         $choices[ 'legal-country-football' ] = '[ football ] Sports';
