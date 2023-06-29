@@ -122,13 +122,13 @@
   	flex-grow: 1;
 }
 
-.legal-footer .menu-item.legal-default,
-.legal-footer .menu-item-end.legal-default {
+.legal-footer .footer-menu > .menu-item.legal-default,
+.legal-footer .footer-menu > .menu-item-end.legal-default {
 	flex-basis: 25%;
 }
 
-.legal-footer .menu-item.legal-tiny,
-.legal-footer .menu-item.legal-tiny ~ .menu-item-end {
+.legal-footer .footer-menu > .menu-item.legal-tiny,
+.legal-footer .footer-menu > .menu-item.legal-tiny ~ .menu-item-end {
 	flex-basis: 15%;
 }
 
