@@ -81,15 +81,15 @@ class BaseHeader
 				$item_class_elements = explode( '-', $item_class );
 
 				$items[] = [
-					'class' => $item_class,
+					'class' => $item_class . ' ' . implode( ' ', $menu_item[ 'classes' ] ),
 
 					'url-part' => end( $item_class_elements ),
 				];
 			}
 
-			LegalDebug::debug( [
-				'menu_item' => $menu_item,
-			] );
+			// LegalDebug::debug( [
+			// 	'menu_item' => $menu_item,
+			// ] );
 		}
 
 		return $items;
