@@ -127,12 +127,12 @@
 	flex-basis: 25%;
 }
 
-.legal-footer.footer-ke .footer-menu > div.menu-item:not( :last-of-type ) {
+.legal-footer.footer-ke .footer-menu div.menu-item:not( :last-of-type ) {
 	flex-basis: 25%;
 }
 
-.legal-footer.footer-ke .footer-menu > div.menu-item:last-of-type,
-.legal-footer.footer-ke .footer-menu > div.menu-item-end {
+.legal-footer.footer-ke .footer-menu div.menu-item:last-of-type,
+.legal-footer.footer-ke .footer-menu div.menu-item-end {
 	flex-basis: 15%;
 }
 
