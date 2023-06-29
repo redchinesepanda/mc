@@ -1,6 +1,6 @@
 <?php if ( !empty( $args ) ) : ?>
-	<div class="menu-item">
-		<a class="item-title <?php echo $args[ 'class' ]; ?>" href="<?php echo $args[ 'href' ]; ?>">
+	<div class="menu-item <?php echo $args[ 'class' ]; ?>">
+		<a class="item-title" href="<?php echo $args[ 'href' ]; ?>">
 			<?php echo $args[ 'title' ]; ?>
 		</a>
 		<?php if ( !empty( $args[ 'children' ] ) ) : ?>
