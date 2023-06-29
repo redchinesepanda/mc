@@ -37,6 +37,10 @@ class BaseFooter
 		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
 	}
 
+	const FIELD = [
+		'width' => 'menu-item-width',
+	];
+
 	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
@@ -44,6 +48,10 @@ class BaseFooter
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
+
+		$class = get_field( self::FIELD[ 'width' ] );
+
+		$item[ 'class' ] = ( $class ? $class : '' );
 		
 		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
