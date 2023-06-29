@@ -232,11 +232,11 @@
 	max-width: 1080px;
 }
 
-.legal-menu .menu-item:not( .legal-country-wide ) .sub-menu {
+.legal-menu .menu-item:not( .legal-country-wide ) > .sub-menu {
 	width: 250px;
 }
 
-.legal-menu .menu-item.legal-country-wide .sub-menu {
+.legal-menu .menu-item.legal-country-wide > .sub-menu {
 	width: 320px;
 }
 
