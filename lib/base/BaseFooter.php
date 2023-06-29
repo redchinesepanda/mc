@@ -49,7 +49,7 @@ class BaseFooter
 
 		$item[ 'href' ] = $post->url;
 
-		$class = get_field( self::ITEM[ 'width' ] );
+		$class = get_field( self::ITEM[ 'width' ], $post->ID );
 
 		$item[ 'class' ] = ( $class ? $class : '' );
 		
