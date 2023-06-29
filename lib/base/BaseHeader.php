@@ -82,7 +82,7 @@ class BaseHeader
 
 				if ( !empty( $menu_item->classes ) )
 				{
-					$item_class .= ' ' . implode( ' ', $menu_item->classes )
+					$item_class .= ' ' . implode( ' ', $menu_item->classes );
 				}
 
 				LegalDebug::debug( [
