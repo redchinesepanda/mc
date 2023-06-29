@@ -80,16 +80,18 @@ class BaseHeader
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
 
+				LegalDebug::debug( [
+					'item_class' => item_class,
+					
+					'classes' => $menu_item->classes,
+				] );
+
 				$items[] = [
-					'class' => $item_class . ' ' . implode( ' ', $menu_item->classes ),
+					'class' => $item_class,
 
 					'url-part' => end( $item_class_elements ),
 				];
 			}
-
-			LegalDebug::debug( [
-				'classes' => $menu_item->classes,
-			] );
 		}
 
 		return $items;
