@@ -140,6 +140,10 @@
 	background-color: antiquewhite;
 }
 
+.legal-footer .footer-menu .menu-item:last-child {
+	border: 1px solid rosybrown;
+}
+
 /* Background */
 
 .legal-footer .item-children .item-title {
