@@ -81,8 +81,8 @@ class BaseHeader
 				$item_class_elements = explode( '-', $item_class );
 
 				LegalDebug::debug( [
-					'item_class' => item_class,
-					
+					'item_class' => $item_class,
+
 					'classes' => $menu_item->classes,
 				] );
 
