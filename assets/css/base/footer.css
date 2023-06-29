@@ -140,7 +140,7 @@
 	background-color: antiquewhite;
 }
 
-.legal-footer .footer-menu > div.menu-item:last-child {
+.legal-footer .footer-menu .menu-item:last-child {
 	border: 5px solid rosybrown;
 }
 
