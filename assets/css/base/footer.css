@@ -116,17 +116,23 @@
 .legal-footer .footer-text {
 	width: 100%;
 }
+
 .legal-footer .footer-menu .menu-item,
 .legal-footer .footer-menu .menu-item-end {
   	flex-grow: 1;
 }
 
-.legal-footer .footer-menu .menu-item:not( :last-of-type ) {
+.legal-footer:not( .footer-ke ) .menu-item,
+.legal-footer:not( .footer-ke ) .menu-item-end {
 	flex-basis: 25%;
 }
 
-.legal-footer .footer-menu .menu-item:last-of-type,
-.legal-footer .footer-menu .menu-item-end {
+.legal-footer.footer-ke .footer-menu .menu-item:not( :last-of-type ) {
+	flex-basis: 25%;
+}
+
+.legal-footer.footer-ke .footer-menu .menu-item:last-of-type,
+.legal-footer.footer-ke .footer-menu .menu-item-end {
 	flex-basis: 15%;
 }
 
