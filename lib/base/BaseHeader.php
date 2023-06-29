@@ -190,7 +190,8 @@ class BaseHeader
 
 		$post_class = get_field( self::FIELD[ 'class' ], $post );
 			
-		if( $post_class ) {
+		if ( $post_class )
+		{
 			$item[ 'class' ] .= ' legal-country';
 
 			$item[ 'class' ] .= ' ' . $post_class;
@@ -198,21 +199,15 @@ class BaseHeader
 
 		$post_hide = get_field( self::FIELD[ 'hide' ], $post );
 
-		if( !empty( $post_hide ) ) {
+		if ( !empty( $post_hide ) )
+		{
 			$item[ 'title' ] = '';
 		}
 
-		
 		if ( !empty( $post->classes ) )
 		{
 			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
 		}
-
-		LegalDebug::debug( [
-			'class' => $item[ 'class' ],
-
-			'classes' => $post->classes,
-		] );
 
 		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
