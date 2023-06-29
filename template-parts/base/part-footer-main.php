@@ -1,5 +1,5 @@
 <?php if ( !empty( $args ) ) : ?>
-	<div class="legal-footer">
+	<div class="legal-footer <?php echo $args[ 'class' ]; ?>">
 		<?php if ( !empty( $args[ 'items' ] ) ) : ?>
 			<div class="footer-menu">
 				<?php foreach( $args[ 'items' ] as $item ) : ?>
