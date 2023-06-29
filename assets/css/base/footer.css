@@ -128,7 +128,7 @@
 }
 
 .legal-footer .menu-item.legal-tiny,
-.legal-footer .menu-item-end.legal-tiny {
+.legal-footer .menu-item.legal-tiny ~ .menu-item-end {
 	flex-basis: 15%;
 }
 
