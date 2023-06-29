@@ -27,11 +27,43 @@ class WPMLMain
         return $languages;
     }
 
+    public static function exclude( $args )
+    {
+        $default_locale = array_column( $args, 'default_locale', 'code' );
+
+        $default_locale_exclude = [
+            'pt_GB',
+            'pt_ES',
+            'sr_SR',
+            'se_SE',
+            'cs_CS',
+            'en',
+            'es',
+            'ru',
+        ];
+
+        $keys = [];
+
+        foreach ( $default_locale_exclude as $exclude ) {
+            $key = array_search( $exclude, $default_locale );
+
+            if ( $key !== false ) {
+                $keys[] = $key;
+            }
+        }
+
+        foreach ( $keys as $key ) {
+            unset( $args[$key] );
+        }
+
+        return $args;
+    }
+
     public static function search_language()
 	{
 		$lang = self::get_group_language();
- 
-		$languages = self::get_all_languages();
+		
+        $languages = self::exclude( self::get_all_languages() );
 
 		return self::filter_language( $languages, $lang );
 	}

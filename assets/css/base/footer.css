@@ -52,6 +52,7 @@
 
 .legal-footer .footer-menu {
 	display: flex;
+	column-gap: 15px;
 }
 
 .legal-footer .item-title {
@@ -118,8 +119,16 @@
 
 .legal-footer .menu-item,
 .legal-footer .menu-item-end {
-	flex-basis: 25%;
   	flex-grow: 1;
+}
+
+.legal-footer .menu-item:not( :last-of-type ) {
+	flex-basis: 25%;
+}
+
+.legal-footer .menu-item:last-of-type,
+.legal-footer .menu-item-end {
+	flex-basis: 15%;
 }
 
 /* Background */
