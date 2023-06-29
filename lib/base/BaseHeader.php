@@ -80,6 +80,11 @@ class BaseHeader
 			if( $item_class ) {
 				$item_class_elements = explode( '-', $item_class );
 
+				if ( !empty( $menu_item->classes ) )
+				{
+					$item_class .= ' ' . implode( ' ', $menu_item->classes )
+				}
+
 				LegalDebug::debug( [
 					'item_class' => $item_class,
 
