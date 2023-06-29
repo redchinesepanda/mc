@@ -12,15 +12,38 @@ class WPMLLanguageMismatch
 	function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
 	{
 		$exceptions = [
-			'sportsbet',
-			// 'bonos',
+			'mx' => [
+				'bonos',
+			],
+
+			'ro' => [
+				'sportsbet',
+
+				'hollywoodbets',
+	
+				'world-sports-betting',
+
+				'888sport',
+			],
 		];
 
-		foreach ( $exceptions as $exception ) {
-			if ( strpos( $exception, $uri_parts[ 'uri' ] ) !== false ) {
-				return 0;
-			}
+		LegalDebug::debug( [
+			'item_id' => $item_id,
 
+			'uri_parts' => $uri_parts,
+		] );
+
+		foreach ( $exceptions as $lang => $items )
+		{
+			if ( strpos( $lang, $uri_parts[ 'lang' ] ) !== false )
+			{
+				foreach ( $items as $item )
+				{
+					if ( strpos( $item, $uri_parts[ 'uri' ] ) !== false ) {
+						return 0;
+					}
+				}
+			}
 		}
 
 		return $item_id;
