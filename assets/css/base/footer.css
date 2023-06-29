@@ -127,8 +127,8 @@
 	flex-basis: 25%;
 }
 
-.legal-footer .footer-menu > .menu-item.legal-tiny,
-.legal-footer .footer-menu > .menu-item.legal-tiny ~ .menu-item-end {
+.legal-footer .footer-menu > .menu-item.legal-15,
+.legal-footer .footer-menu > .menu-item.legal-15 ~ .menu-item-end {
 	flex-basis: 15%;
 }
 

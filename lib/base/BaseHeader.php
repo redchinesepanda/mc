@@ -15,7 +15,7 @@ class BaseHeader
         'legal-header' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
 
-			'ver' => '1.0.4',
+			'ver' => '1.0.5',
 		],
     ];
 
