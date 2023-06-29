@@ -81,7 +81,7 @@ class BaseHeader
 				$item_class_elements = explode( '-', $item_class );
 
 				$items[] = [
-					'class' => $item_class . ' ' . implode( ' ', $menu_item[ 'classes' ] ),
+					'class' => $item_class . ' ' . implode( ' ', $menu_item->classes ),
 
 					'url-part' => end( $item_class_elements ),
 				];
