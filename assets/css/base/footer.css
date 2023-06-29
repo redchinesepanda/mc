@@ -136,6 +136,10 @@
 	flex-basis: 15%;
 }
 
+.legal-footer .footer-menu > .menu-item:last-of-type {
+	background-color: antiquewhite;
+}
+
 /* Background */
 
 .legal-footer .item-children .item-title {
