@@ -52,6 +52,11 @@ class BaseFooter
 		$class = get_field( self::ITEM[ 'width' ], $post->ID );
 
 		$item[ 'class' ] = ( $class ? $class : '' );
+
+		if ( !empty( $post->classes ) )
+		{
+			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
+		}
 		
 		$children = ToolMenu::array_search_values( $post->ID, $parents );
 
