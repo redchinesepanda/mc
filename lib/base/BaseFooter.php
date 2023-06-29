@@ -6,7 +6,7 @@ class BaseFooter
         'legal-footer' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer.css',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.4',
 		],
     ];
 
