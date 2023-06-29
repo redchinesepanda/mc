@@ -136,7 +136,7 @@
 	flex-basis: 15%;
 }
 
-.legal-footer .footer-menu > .menu-item:last-of-type {
+.legal-footer .footer-menu .menu-item:last-of-type {
 	background-color: antiquewhite;
 }
 
