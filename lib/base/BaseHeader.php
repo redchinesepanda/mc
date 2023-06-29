@@ -88,7 +88,7 @@ class BaseHeader
 			}
 
 			LegalDebug::debug( [
-				'menu_item' => $menu_item,
+				'classes' => $menu_item->classes,
 			] );
 		}
 
