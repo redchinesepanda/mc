@@ -86,6 +86,10 @@ class BaseHeader
 					'url-part' => end( $item_class_elements ),
 				];
 			}
+
+			LegalDebug::debug( [
+				'menu_item' => $menu_item,
+			] );
 		}
 
 		return $items;
