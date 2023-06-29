@@ -122,11 +122,11 @@
   	flex-grow: 1;
 }
 
-.legal-footer .menu-item:not( :last-child ) {
+.legal-footer .menu-item:not( :nth-last-of-type() ) {
 	flex-basis: 25%;
 }
 
-.legal-footer .menu-item:last-child,
+.legal-footer .menu-item:nth-last-of-type(),
 .legal-footer .menu-item-end {
 	flex-basis: 15%;
 }
