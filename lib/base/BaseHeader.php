@@ -154,8 +154,54 @@ class BaseHeader
 		return $item;
 	}
 
+	const TAXONOMY = [
+		'type' => 'page_type',
+	];
+
+	const TERM = [
+		'cross' => 'legal-cross',
+	];
+
+	public static function get_cross_id()
+	{
+		$posts =  get_posts( [
+			'post_type' => 'page',
+
+			'numberposts' => -1,
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'type' ],
+
+					'field' => 'slug',
+
+					'terms' => self::TERM[ 'cross' ],
+
+					'include_children' => false,
+				],
+			],
+		] );
+
+		if ( !empty( $posts ) )
+		{
+			return array_shift( $posts )->ID;
+		}
+
+		return 0;
+	}
+
 	public static function get_menu_languages()
 	{
+		$cross_id = self::get_cross_id();
+
+		$trid = WPMLTrid::get_trid( $cross_id );
+
+		$translation_group = WPMLTrid::get_translation_group( $trid );
+
+		LegalDebug::debug( [
+			'translation_group' => $translation_group,
+		] );
+
 		$code = WPMLMain::current_language();
 		
 		$search[ 'avaible' ] = WPMLMain::search_language();

@@ -41,11 +41,20 @@ class WPMLTrid
         return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
     }
 
-    public static function get_trid() {
-        $post = get_post();
+    public static function get_trid( $id = 0 )
+    {
+        if ( $id == 0 )
+        {
+            $post = get_post();
 
-        if ( !empty( $post ) )
-            return apply_filters( 'wpml_element_trid', NULL, $post->ID, 'post_page' );
+            if ( !empty( $post ) )
+            {
+                $id = $post->ID;
+            }
+        }
+        
+        if ( $id != 0 )
+            return apply_filters( 'wpml_element_trid', NULL, $id, 'post_page' );
 
         return 0;
     }
