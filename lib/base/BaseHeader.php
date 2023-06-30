@@ -204,7 +204,7 @@ class BaseHeader
 		return $urls;
 	}
 
-	public static function replace_urls( $urls = [], $cross_urls = [] )
+	public static function replace_urls( $urls = [] )
 	{
 		$cross = self::get_cross();
 
@@ -231,14 +231,6 @@ class BaseHeader
 
 	public static function get_menu_languages()
 	{
-		// $cross = self::get_cross();
-
-		// $cross_trid = WPMLTrid::get_trid( $cross->ID );
-
-		// $cross_group = WPMLTrid::get_translation_group( $cross_trid );
-
-		// $cross_urls = self::get_cross_urls( $cross_group );
-
 		$code = WPMLMain::current_language();
 		
 		$search[ 'avaible' ] = WPMLMain::search_language();
@@ -246,8 +238,6 @@ class BaseHeader
 		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
 		unset( $search[ 'avaible' ][ $code ] );
-
-		// $search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ], $cross_urls );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
