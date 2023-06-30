@@ -55,7 +55,7 @@
 	animation: 1s ease-out turn_in reverse;
 }
 
-.legal-review-counter .set-item::after {
+.legal-review-counter .set-item-info {
 	content: attr(data-progress);
 	display: flex;
 	justify-content: center;
