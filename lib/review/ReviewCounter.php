@@ -163,6 +163,8 @@ class ReviewCounter
 							'title' => $cell_text->textContent,
 		
 							'value' => $value,
+
+							'width' => ( $value * 10 ) . '%',
 						];
 					}
 
