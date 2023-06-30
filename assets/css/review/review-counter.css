@@ -8,6 +8,10 @@
 		row-gap: 20px;
 	}
 
+	.legal-review-counter .review-counter-set {
+		align-items: center;
+	}
+
 	/* Width and Height */
 
 	.legal-review-counter .info-logo {
