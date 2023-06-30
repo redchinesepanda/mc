@@ -18,6 +18,10 @@
 	column-gap: 40px;
 }
 
+.legal-review-counter .set-item {
+	display: flex;
+}
+
 /* Position */
 
 .legal-review-counter {
@@ -45,19 +49,14 @@
 	--legal-counter-second: #5997e300;
 }
 
-/* Typography */
-
 .legal-review-counter .set-item {
-	/* --legal-counter-color: #5997E3;
-	--legal-counter-second: #5997e300; */
-	display: flex;
-	width: 160px;
-	height: 160px;
 	border-radius: 50%;
 	/* background: conic-gradient( red var(--progress ), var( --legal-counter-second ) 0deg ); */
 	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .4s ease-out turn_in reverse;
 }
+
+/* Typography */
 
 .legal-review-counter .set-item-info {
 	display: flex;
