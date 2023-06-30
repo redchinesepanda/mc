@@ -46,13 +46,14 @@
 /* Typography */
 
 .legal-review-counter .set-item {
-	--color: #5997E3;
+	--legal-counter-color: #5997E3;
+	--legal-counter-second: #5997e300;
 	display: flex;
 	width: 160px;
 	height: 160px;
 	border-radius: 50%;
-	/* background: conic-gradient( red var(--progress ), gray 0deg ); */
-	background: conic-gradient( var( --color ) var(--progress ), gray 0deg );
+	/* background: conic-gradient( red var(--progress ), var( --legal-counter-second ) 0deg ); */
+	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .4s ease-out turn_in reverse;
 }
 
@@ -70,82 +71,82 @@
 
 @keyframes turn_in {
 	5% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .95 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .95 ), var( --legal-counter-second ) 0deg );
 	}
 
 	10% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .9 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .9 ), var( --legal-counter-second ) 0deg );
 	}
 
 	15% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .85 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .85 ), var( --legal-counter-second ) 0deg );
 	}
 
 	20% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .8 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .8 ), var( --legal-counter-second ) 0deg );
 	}
 
 	25% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .75 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .75 ), var( --legal-counter-second ) 0deg );
 	}
 
 	30% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .7 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .7 ), var( --legal-counter-second ) 0deg );
 	}
 
 	35% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .65 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .65 ), var( --legal-counter-second ) 0deg );
 	}
 
 	40% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .6 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .6 ), var( --legal-counter-second ) 0deg );
 	}
 
 	45% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .55 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .55 ), var( --legal-counter-second ) 0deg );
 	}
 
 	50% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .5 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .5 ), var( --legal-counter-second ) 0deg );
 	}
 
 	55% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .45 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .45 ), var( --legal-counter-second ) 0deg );
 	}
 
 	60% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .4 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .4 ), var( --legal-counter-second ) 0deg );
 	}
 
 	65% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .35 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .35 ), var( --legal-counter-second ) 0deg );
 	}
 
 	70% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * 0.3 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * 0.3 ), var( --legal-counter-second ) 0deg );
 	}
 
 	75% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * 0.25 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * 0.25 ), var( --legal-counter-second ) 0deg );
 	}
 
 	80% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .2 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .2 ), var( --legal-counter-second ) 0deg );
 	}
 
 	85% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .15 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .15 ), var( --legal-counter-second ) 0deg );
 	}
 
 	90% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .1 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .1 ), var( --legal-counter-second ) 0deg );
 	}
 
 	95% {
-		background: conic-gradient( var( --color ) calc( var( --progress ) * .05 ), gray 0deg );
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .05 ), var( --legal-counter-second ) 0deg );
 	}
 
 	100% {
-		background: conic-gradient(gray 0deg );
+		background: conic-gradient(var( --legal-counter-second ) 0deg );
 	}
 }
