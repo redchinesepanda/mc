@@ -214,11 +214,11 @@ class BaseHeader
 
 		$cross_urls = self::get_cross_urls( $cross_group );
 
-		LegalDebug::debug( [
-			'cross-post_name' => $cross->post_name,
+		// LegalDebug::debug( [
+		// 	'cross-post_name' => $cross->post_name,
 
-			'cross_urls' => $cross_urls,
-		] );
+		// 	'cross_urls' => $cross_urls,
+		// ] );
 
 		$code = WPMLMain::current_language();
 		
@@ -227,6 +227,10 @@ class BaseHeader
 		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
 		unset( $search[ 'avaible' ][ $code ] );
+
+		if ( !empty( $cross_urls ) ) {
+			$search[ 'avaible' ] = array_replace_recursive( $search[ 'avaible' ], $cross_urls );
+		}
 
 		$parse = self::parse_languages( $search );
 
