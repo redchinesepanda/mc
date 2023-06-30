@@ -13,7 +13,7 @@ class ReviewCounter
 
     public static function register_inline_style()
     {
-		$name = self::CLASSES[ 'base' ] . '-inline';
+		$name = self::CLASSES[ 'base' ];
 
         wp_register_style( $name, false, [], true, true );
 		
