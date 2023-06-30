@@ -229,6 +229,14 @@ class BaseHeader
 		unset( $search[ 'avaible' ][ $code ] );
 
 		if ( !empty( $cross_urls ) ) {
+			$keys = array_keys( $search[ 'avaible' ] );
+
+			$cross_urls = array_intersect_key(
+				$cross_urls, 
+
+				array_flip( $keys )
+			);
+
 			$search[ 'avaible' ] = array_replace_recursive( $search[ 'avaible' ], $cross_urls );
 		}
 
