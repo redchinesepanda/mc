@@ -206,6 +206,14 @@ class BaseHeader
 
 	public static function replace_urls( $urls = [], $cross_urls = [] )
 	{
+		$cross = self::get_cross();
+
+		$cross_trid = WPMLTrid::get_trid( $cross->ID );
+
+		$cross_group = WPMLTrid::get_translation_group( $cross_trid );
+
+		$cross_urls = self::get_cross_urls( $cross_group );
+
 		if ( !empty( $cross_urls ) ) {
 			$keys = array_keys( $urls );
 
@@ -223,13 +231,13 @@ class BaseHeader
 
 	public static function get_menu_languages()
 	{
-		$cross = self::get_cross();
+		// $cross = self::get_cross();
 
-		$cross_trid = WPMLTrid::get_trid( $cross->ID );
+		// $cross_trid = WPMLTrid::get_trid( $cross->ID );
 
-		$cross_group = WPMLTrid::get_translation_group( $cross_trid );
+		// $cross_group = WPMLTrid::get_translation_group( $cross_trid );
 
-		$cross_urls = self::get_cross_urls( $cross_group );
+		// $cross_urls = self::get_cross_urls( $cross_group );
 
 		$code = WPMLMain::current_language();
 		
@@ -239,25 +247,11 @@ class BaseHeader
 
 		unset( $search[ 'avaible' ][ $code ] );
 
-		// if ( !empty( $cross_urls ) ) {
-		// 	$keys = array_keys( $search[ 'avaible' ] );
-
-		// 	$cross_urls = array_intersect_key(
-		// 		$cross_urls, 
-
-		// 		array_flip( $keys )
-		// 	);
-
-		// 	$search[ 'avaible' ] = array_replace_recursive( $search[ 'avaible' ], $cross_urls );
-		// }
-
-		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ], $cross_urls );
+		// $search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ], $cross_urls );
+		
+		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
 		$parse = self::parse_languages( $search );
-
-		// LegalDebug::debug( [
-		// 	'search' => $search,
-		// ] );
 
 		return $parse;
 	}

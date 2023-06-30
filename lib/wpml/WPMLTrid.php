@@ -58,11 +58,6 @@ class WPMLTrid
 
         return 0;
     }
-
-    public static function debug( $message )
-    {
-        echo '<pre>WPMLLangSwitcher::debug: ' . print_r( $message, true ) . '</pre>';
-    }
 }
 
 ?>
