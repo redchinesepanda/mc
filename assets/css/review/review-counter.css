@@ -39,6 +39,10 @@
 	margin: 10px;
 }
 
+.legal-review-counter .info-logo {
+	padding-left: 25px;
+}
+
 /* Width and Height */
 
 .legal-review-counter {
