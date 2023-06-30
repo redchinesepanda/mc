@@ -22,11 +22,21 @@
 	display: flex;
 }
 
+.legal-review-counter .set-item-info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
 /* Position */
 
 .legal-review-counter {
 	padding: 20px 0;
 	margin-bottom: 15px;
+}
+
+.legal-review-counter .set-item-info {
+	margin: 10px;
 }
 
 /* Width and Height */
@@ -38,6 +48,23 @@
 .legal-review-counter .set-item {
 	width: 160px;
 	height: 160px;
+}
+
+.legal-review-counter .set-item-info {
+	width: 100%;
+}
+
+.legal-review-counter .set-item-info {
+	border-radius: 50%;
+	background: white;
+}
+
+/* Typography */
+
+
+.legal-review-counter .set-item-info {
+	font-size: 1rem;
+	text-align: center;
 }
 
 /* Background */
@@ -54,20 +81,6 @@
 	/* background: conic-gradient( red var(--progress ), var( --legal-counter-second ) 0deg ); */
 	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .4s ease-out turn_in reverse;
-}
-
-/* Typography */
-
-.legal-review-counter .set-item-info {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	width: 100%;
-	margin: 10px;
-	border-radius: 50%;
-	background: white;
-	font-size: 1rem;
-	text-align: center;
 }
 
 @keyframes turn_in {
