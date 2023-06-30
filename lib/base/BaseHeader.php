@@ -220,7 +220,7 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
-			'cross' => $cross,
+			'cross' => $cross->post_name,
 
 			'search' => $search,
 		] );
