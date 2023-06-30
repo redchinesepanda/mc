@@ -12,6 +12,11 @@
 	align-items: center;
 }
 
+.legal-review-counter .review-counter-set {
+	display: flex;
+	justify-content: center;
+}
+
 /* Position */
 
 .legal-review-counter {
