@@ -45,6 +45,12 @@ class ReviewAbout
 
     const FIELD = 'review-about';
 
+    const ABOUT = [
+        'background' => 'about-background',
+
+        'logo' => 'about-logo',
+    ];
+
     public static function get( $args )
     {
         $mode = '';
@@ -67,9 +73,9 @@ class ReviewAbout
                 
                 'description' => $group[ 'about-description' ],
                 
-                'logo' => $group[ 'about-logo' ],
+                'logo' => $group[ self::ABOUT[ 'logo' ] ],
 
-                'background' => $group[ 'about-background' ],
+                'background' => $group[ self::ABOUT[ 'background' ] ],
 
                 'font' => $group[ 'about-font' ],
                 
