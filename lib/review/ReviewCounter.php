@@ -57,10 +57,14 @@ class ReviewCounter
 			return '';
 		}
 
+		$group = get_field( ReviewAbout::FIELD );
+
+		$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ 'about-background' ] . ' };';
+
 		$items = self::get_counter( $table );
 
 		foreach ( $items as $id => $item ) {
-			$style[] = '.counter-item-' . $id . ' .item-value { width: ' . $item[ 'width' ] .'%; }';
+			$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
 		}
 
 		return implode( ' ', $style );
@@ -164,10 +168,9 @@ class ReviewCounter
 		
 							'value' => $value,
 
-							'width' => ( $value * 10 ) . '%',
+							'progress' => ( $value * 10 ) . '%',
 						];
 					}
-
 				}
 				
 				LegalDebug::debug( [
