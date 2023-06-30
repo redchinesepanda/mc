@@ -45,6 +45,10 @@
 	min-height: 255px;
 }
 
+.legal-review-counter .info-logo {
+	min-height: 45px;
+}
+
 .legal-review-counter .set-item {
 	width: 160px;
 	height: 160px;
