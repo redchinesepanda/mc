@@ -65,9 +65,9 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $table );
 
-		LegalDebug::debug( [
-			'items' => $items,
-		] );
+		// LegalDebug::debug( [
+		// 	'items' => $items,
+		// ] );
 
 		foreach ( $items as $id => $item ) {
 			$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
