@@ -190,39 +190,35 @@ class BaseHeader
 		return null;
 	}
 
+	public static function get_cross_urls( $items = [] )
+	{
+		$urls = [];
+
+		foreach ( $items as $lang => $item )
+		{
+			$urls[ $lang ] = [
+				'url' => get_post_permalink( $item->element_id ),
+			];
+		}
+
+		return $urls;
+	}
+
 	public static function get_menu_languages()
 	{
 		$cross = self::get_cross();
 
-		$trid = WPMLTrid::get_trid( $cross->ID );
+		$cross_trid = WPMLTrid::get_trid( $cross->ID );
 
-		$translation_group = WPMLTrid::get_translation_group( $trid );
+		$cross_group = WPMLTrid::get_translation_group( $cross_trid );
+
+		$cross_urls = self::get_cross_urls( $cross_group );
 
 		LegalDebug::debug( [
 			'cross-post_name' => $cross->post_name,
 
-			'cross-ID' => $cross->ID,
-
-			// 'current-page_id' => get_query_var( 'page_id' ),
-
-			'trid' => $trid,
-
-			'translation_group' => $translation_group,
-
-
+			'cross_urls' => $cross_urls,
 		] );
-
-		foreach ( $translation_group as $item )
-		{
-			LegalDebug::debug( [
-				'get_post_permalink' => get_post_permalink( $item->element_id ),
-			] );
-		}
-
-		// if ( !empty( $cross ) )
-		// {
-		// 	set_query_var( 'page_id', $cross->ID );
-		// }
 
 		$code = WPMLMain::current_language();
 		
@@ -235,8 +231,6 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
-			// 'page_id' => get_query_var( 'page_id' ),
-
 			'search' => $search,
 		] );
 
