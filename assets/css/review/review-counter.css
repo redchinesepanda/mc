@@ -68,13 +68,13 @@
 	text-align: center;
 }
 
-@keyframes turn_in {
+/* @keyframes turn_in {
 	85% {
 		background: conic-gradient( red calc( var( --progress ) * .15 ), gray 0deg );
 	}
-}
+} */
 
-/* @keyframes turn_in {
+@keyframes turn_in {
 	5% {
 		background: conic-gradient(red calc(var(--progress) * .95), gray 0deg);
 	}
@@ -154,4 +154,4 @@
 	100% {
 		background: conic-gradient(gray 0deg);
 	}
-} */
+}
