@@ -190,7 +190,7 @@ class ReviewCounter
 
 						if ( $value != -1 )
 						{
-							$args[ 'items' ][] = [
+							$args[] = [
 								'label' => $cell_text->textContent,
 			
 								'value' => $value,
