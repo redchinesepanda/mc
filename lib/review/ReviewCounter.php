@@ -159,6 +159,10 @@ class ReviewCounter
 					];
 				}
 			}
+
+			LegalDebug::debug( [
+				'cells' => $cells,
+			] );
 		}
 
 		return $args;
