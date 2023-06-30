@@ -3,6 +3,13 @@
 .legal-review-counter {
 	display: flex;
 	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-review-counter .review-counter-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /* Position */
