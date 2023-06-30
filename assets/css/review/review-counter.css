@@ -92,15 +92,18 @@
 
 .legal-review-counter .info-rating {
 	font-size: 16px;
+	text-transform: uppercase;
 }
 
 .legal-review-counter .item-value {
 	font-size: 35px;
 	font-weight: 600;
+	color: rgb(89, 151, 227);
 }
 
 .legal-review-counter .item-label {
 	font-size: 14px;
+	color: rgb(59, 59, 59)
 }
 
 /* Background */
