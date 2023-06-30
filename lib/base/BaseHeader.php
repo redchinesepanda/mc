@@ -206,13 +206,16 @@ class BaseHeader
 
 		if ( !empty( $cross ) )
 		{
-			global $post;
+			// global $post;
 
-			$post = $cross;
+			// $post = $cross;
 
-			setup_postdata( $cross );
+			// setup_postdata( $cross );
 
+			set_query_var( 'page_id', $cross->ID );
 		}
+
+		
 
 		$code = WPMLMain::current_language();
 		
