@@ -78,7 +78,6 @@
 
 .legal-review-counter .set-item {
 	border-radius: 50%;
-	/* background: conic-gradient( red var(--progress ), var( --legal-counter-second ) 0deg ); */
 	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .4s ease-out turn_in reverse;
 }
