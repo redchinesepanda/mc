@@ -135,9 +135,9 @@ class ReviewCounter
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				$cell_text = $cells->item( 1 );
+				$cell_text = $cells->item( 0 );
 
-				$cell_value = $cells->item( 2 );
+				$cell_value = $cells->item( 1 );
 
 				if ( !empty( $cell_text ) && !empty( $cell_value ) )
 				{
