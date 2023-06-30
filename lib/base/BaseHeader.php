@@ -194,18 +194,28 @@ class BaseHeader
 	{
 		$cross = self::get_cross();
 
+		$trid = WPMLTrid::get_trid( $cross->ID );
+
+		$translation_group = WPMLTrid::get_translation_group( $trid );
+
 		LegalDebug::debug( [
-			'post_name' => $cross->post_name,
+			'cross-post_name' => $cross->post_name,
 
-			'ID' => $cross->ID,
+			'cross-ID' => $cross->ID,
 
-			'page_id' => get_query_var( 'page_id' ),
+			// 'current-page_id' => get_query_var( 'page_id' ),
+
+			'trid' => $trid,
+
+			'translation_group' => $translation_group,
+
+
 		] );
 
-		if ( !empty( $cross ) )
-		{
-			set_query_var( 'page_id', $cross->ID );
-		}
+		// if ( !empty( $cross ) )
+		// {
+		// 	set_query_var( 'page_id', $cross->ID );
+		// }
 
 		$code = WPMLMain::current_language();
 		
@@ -218,7 +228,7 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
-			'page_id' => get_query_var( 'page_id' ),
+			// 'page_id' => get_query_var( 'page_id' ),
 
 			'search' => $search,
 		] );
