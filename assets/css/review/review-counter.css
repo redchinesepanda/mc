@@ -29,6 +29,11 @@
 	row-gap: 5px;
 }
 
+.legal-review-counter .info-logo {
+	flex-basis: 25%;
+	flex-grow: 1;
+}
+
 /* Position */
 
 .legal-review-counter {
@@ -38,10 +43,6 @@
 
 .legal-review-counter .set-item-info {
 	margin: 10px;
-}
-
-.legal-review-counter .info-logo {
-	padding-left: 25px;
 }
 
 .legal-review-counter .info-rating {
@@ -111,6 +112,12 @@
 
 .legal-review-counter .info-rating {
 	background-color: rgba(175, 177, 179, 0.3);
+}
+
+.legal-review-counter .info-logo {
+	background-position: left 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
 .legal-review-counter {
