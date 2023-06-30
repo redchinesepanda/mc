@@ -79,6 +79,10 @@ class ToolTinyMCE
 				'title' => 'Статистика',
 				'value' => 'legal-stats',
 			],
+			[
+				'title' => 'Счетчик',
+				'value' => ReviewCounter::CLASSES[ 'base' ],
+			],
 		];
 
 		$settings[ 'table_class_list' ] = json_encode( $styles );
