@@ -135,34 +135,45 @@ class ReviewCounter
 			$cells = $row->getElementsByTagName( 'td' );
 			
 			if ( $cells->length ) {
-				$value = -1;
+				$cell_text = $cells->item( 1 );
 
-				$text = $cells[ 1 ]->textContent;
+				$cell_value = $cells->item( 2 );
 
-				if ( is_numeric( $text ) ) {
-					$value = $text;
-				}
+				if ( !empty( $cell_text ) && !empty( $cell_value ) )
+				{
+					$value = -1
 
-				if ( strpos( $text, '/' ) ) {
-					$part = explode( '/', $text )[ 0 ];
-
-					if ( is_numeric( $part ) ) {
-						$value = $part;
-					}
-				}
-
-				if ( $value != -1 ) {
-					$args[] = [
-						'title' => $cells[ 0 ]->textContent,
+					if ( strpos( $cell_value->textContent, '/' ) )
+					{
+						$part = explode( '/', $cell_value->textContent )[ 0 ];
 	
-						'width' => ( round( ( float ) $value ) / 10 ) * 100,
-					];
-				}
-			}
+						if ( is_numeric( $part ) )
+						{
+							$value = $part;
+						}
+					}
 
-			LegalDebug::debug( [
-				'cells' => $cells,
-			] );
+					if ( is_numeric( $cell_value->textContent ) ) {
+						$value = $cell_value->textContent;
+					}
+
+					if ( $value != -1 )
+					{
+						$args[] = [
+							'title' => $cell_text->textContent,
+		
+							'value' => $value,
+						];
+					}
+
+				}
+
+				
+				
+				LegalDebug::debug( [
+					'args' => $args,
+				] );
+			}
 		}
 
 		return $args;
