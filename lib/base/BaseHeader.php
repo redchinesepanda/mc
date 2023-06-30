@@ -218,6 +218,8 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
+			'page_id' => get_query_var( 'page_id' ),
+
 			'search' => $search,
 		] );
 
