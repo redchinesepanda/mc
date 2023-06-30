@@ -206,7 +206,12 @@ class BaseHeader
 
 		if ( !empty( $cross ) )
 		{
+			global $post;
+
+			$post = $cross;
+
 			setup_postdata( $cross );
+
 		}
 
 		$code = WPMLMain::current_language();
