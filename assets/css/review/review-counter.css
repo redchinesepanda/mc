@@ -43,6 +43,10 @@
 	padding-left: 25px;
 }
 
+.legal-review-counter .info-rating {
+	padding: 15px 25px;
+}
+
 /* Width and Height */
 
 .legal-review-counter {
@@ -69,6 +73,10 @@
 
 /* Typography */
 
+.legal-review-counter .info-rating {
+	color: #fff;
+	letter-spacing: 3px;
+}
 
 .legal-review-counter .set-item-info {
 	font-size: 1rem;
@@ -76,6 +84,10 @@
 }
 
 /* Background */
+
+.legal-review-counter .info-rating {
+	background-color: rgba(175, 177, 179, 0.3);
+}
 
 .legal-review-counter {
 	background-color: #262d35;
