@@ -131,52 +131,63 @@ class ReviewCounter
 
 	public static function get_counter( $node )
 	{
-		$args = [];
+		$args = [
+			'title' => __( 'Overall Rating', ToolLoco::TEXTDOMAIN ),
+
+			'items' => [],
+
+			'rating' => 0,
+		];
 
 		$rows = $node->getElementsByTagName( 'tr' );
 
-		foreach ( $rows as $row ) {
-			$cells = $row->getElementsByTagName( 'td' );
+		if ( $rows->length )
+		{
+			$rating = 0;
 			
-			if ( $cells->length ) {
-				$cell_text = $cells->item( 0 );
+			foreach ( $rows as $row ) {
+				$cells = $row->getElementsByTagName( 'td' );
+				
+				if ( $cells->length ) {
+					$cell_text = $cells->item( 0 );
 
-				$cell_value = $cells->item( 1 );
+					$cell_value = $cells->item( 1 );
 
-				if ( !empty( $cell_text ) && !empty( $cell_value ) )
-				{
-					$value = -1;
-
-					if ( strpos( $cell_value->textContent, '/' ) )
+					if ( !empty( $cell_text ) && !empty( $cell_value ) )
 					{
-						$part = explode( '/', $cell_value->textContent )[ 0 ];
-	
-						if ( is_numeric( $part ) )
+						$value = -1;
+
+						if ( strpos( $cell_value->textContent, '/' ) )
 						{
-							$value = $part;
+							$part = explode( '/', $cell_value->textContent )[ 0 ];
+		
+							if ( is_numeric( $part ) )
+							{
+								$value = $part;
+							}
+						}
+
+						if ( is_numeric( $cell_value->textContent ) ) {
+							$value = $cell_value->textContent;
+						}
+
+						if ( $value != -1 )
+						{
+							$args[ 'items' ][] = [
+								'label' => $cell_text->textContent,
+			
+								'value' => $value,
+
+								'progress' => ( $value * 10 ) . '%',
+							];
+
+							$rating += $value;
 						}
 					}
-
-					if ( is_numeric( $cell_value->textContent ) ) {
-						$value = $cell_value->textContent;
-					}
-
-					if ( $value != -1 )
-					{
-						$args[] = [
-							'title' => $cell_text->textContent,
-		
-							'value' => $value,
-
-							'progress' => ( $value * 10 ) . '%',
-						];
-					}
 				}
-				
-				LegalDebug::debug( [
-					'args' => $args,
-				] );
 			}
+
+			$args[ 'rating' ] = $rating / count( $args[ 'items' ] );
 		}
 
 		return $args;
