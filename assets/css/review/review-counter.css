@@ -1,33 +1,33 @@
 /* Display */
 
-.review-counter {
+.legal-review-counter {
 	display: flex;
 	flex-direction: column;
 }
 
 /* Position */
 
-.review-counter {
+.legal-review-counter {
 	padding: 20px 0;
 	margin-bottom: 15px;
 }
 
 /* Width and Height */
 
-.review-counter {
+.legal-review-counter {
 	min-height: 255px;
 }
 
 /* Background */
 
-.review-counter {
+.legal-review-counter {
 	background-color: #262d35;
 	border-radius: 20px;
 }
 
 /* Typography */
 
-div {
+/* div {
 	display: flex;
 	width: 100px;
 	height: 100px;
@@ -130,4 +130,4 @@ div::after {
 	100% {
 		background: conic-gradient(gray 0deg);
 	}
-}
+} */

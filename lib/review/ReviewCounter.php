@@ -67,7 +67,7 @@ class ReviewCounter
 	}
 
 	const CLASSES = [
-		'base' => 'review-counter',
+		'base' => 'legal-review-counter',
 	];
 
 	public static function get_nodes( $dom )
