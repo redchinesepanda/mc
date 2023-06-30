@@ -212,6 +212,13 @@ class BaseHeader
 
 		] );
 
+		foreach ( $translation_group as $item )
+		{
+			LegalDebug::debug( [
+				'get_post_permalink' => get_post_permalink( $item->element_id );
+			] );
+		}
+
 		// if ( !empty( $cross ) )
 		// {
 		// 	set_query_var( 'page_id', $cross->ID );
