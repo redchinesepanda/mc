@@ -208,22 +208,25 @@ class BaseHeader
 	{
 		$cross = self::get_cross();
 
-		$cross_trid = WPMLTrid::get_trid( $cross->ID );
+		if ( !empty( $cross ) )
+		{
+			$cross_trid = WPMLTrid::get_trid( $cross->ID );
 
-		$cross_group = WPMLTrid::get_translation_group( $cross_trid );
+			$cross_group = WPMLTrid::get_translation_group( $cross_trid );
 
-		$cross_urls = self::get_cross_urls( $cross_group );
+			$cross_urls = self::get_cross_urls( $cross_group );
 
-		if ( !empty( $cross_urls ) ) {
-			$keys = array_keys( $urls );
+			if ( !empty( $cross_urls ) ) {
+				$keys = array_keys( $urls );
 
-			$cross_urls = array_intersect_key(
-				$cross_urls, 
+				$cross_urls = array_intersect_key(
+					$cross_urls, 
 
-				array_flip( $keys )
-			);
+					array_flip( $keys )
+				);
 
-			return array_replace_recursive( $urls, $cross_urls );
+				return array_replace_recursive( $urls, $cross_urls );
+			}
 		}
 
 		return $urls;
