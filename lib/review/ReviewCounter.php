@@ -3,7 +3,11 @@
 class ReviewCounter
 {
     const CSS = [
-        self::CLASSES[ 'base' ] => LegalMain::LEGAL_URL . '/assets/css/review/review-counter.css',
+        self::CLASSES[ 'base' ] => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-counter.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()
