@@ -41,19 +41,23 @@ class WPMLLanguageMismatch
 
 		foreach ( $exceptions as $lang => $items )
 		{
-			if ( strpos( $lang, $uri_parts[ 'lang' ] ) !== false )
+			if ( is_string( $uri_parts[ 'lang' ] ) )
 			{
-				foreach ( $items as $item )
+				if ( strpos( $lang, $uri_parts[ 'lang' ] ) !== false )
 				{
-					if ( is_string( $uri_parts[ 'uri' ] ) )
+					foreach ( $items as $item )
 					{
-						if ( strpos( $item, $uri_parts[ 'uri' ] ) !== false )
+						if ( is_string( $uri_parts[ 'uri' ] ) )
 						{
-							return 0;
+							if ( strpos( $item, $uri_parts[ 'uri' ] ) !== false )
+							{
+								return 0;
+							}
 						}
 					}
 				}
 			}
+			
 		}
 
 		return $item_id;
