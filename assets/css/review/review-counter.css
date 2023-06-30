@@ -30,6 +30,11 @@
 	min-height: 255px;
 }
 
+.legal-review-counter .set-item {
+	width: 160px;
+	height: 160px;
+}
+
 /* Background */
 
 .legal-review-counter {
@@ -39,17 +44,17 @@
 
 /* Typography */
 
-/* div {
+.legal-review-counter .set-item {
 	display: flex;
-	width: 100px;
-	height: 100px;
+	width: 160px;
+	height: 160px;
 	border-radius: 50%;
-	background: conic-gradient(red var(--progress), gray 0deg);
+	background: conic-gradient( red var(--progress), gray 0deg );
 	font-size: 0;
 	animation: .4s ease-out turn_in reverse;
 }
 
-div::after {
+/* div::after {
 	content: attr(data-progress);
 	display: flex;
 	justify-content: center;
@@ -60,9 +65,15 @@ div::after {
 	background: white;
 	font-size: 1rem;
 	text-align: center;
-}
+} */
 
 @keyframes turn_in {
+	85% {
+		background: conic-gradient( red calc( var( --progress ) * .15 ), gray 0deg );
+	}
+}
+
+/* @keyframes turn_in {
 	5% {
 		background: conic-gradient(red calc(var(--progress) * .95), gray 0deg);
 	}
