@@ -46,11 +46,13 @@
 /* Typography */
 
 .legal-review-counter .set-item {
+	--color: #5997E3;
 	display: flex;
 	width: 160px;
 	height: 160px;
 	border-radius: 50%;
-	background: conic-gradient( red var(--progress), gray 0deg );
+	/* background: conic-gradient( red var(--progress), gray 0deg ); */
+	background: conic-gradient( var(--color) var(--progress), gray 0deg );
 	animation: .4s ease-out turn_in reverse;
 }
 
