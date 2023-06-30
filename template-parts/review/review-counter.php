@@ -1,10 +1,10 @@
-<div class="counters-info">
+<div class="review-counter-info">
 	<div class="info-logo">
 		<img src="/wp-content/uploads/betvictor-logo-white-e1651661939629-300x49.png" alt="BetVictor" width="" height="" />
 	</div>
 	<div class="info-rating">Overall Rating - 5.0</div>
 </div>
-<div class="counters-set">
+<div class="review-counter-set">
 	<div class="set-item" data-progress="85%" style="--progress: 85%;">
 		<div class="item-value">5.0</div>
 		<div class="item-label">Payout Speed</div>
