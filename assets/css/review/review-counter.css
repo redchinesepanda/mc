@@ -1,3 +1,11 @@
+@media screen and ( max-width: 767px ) {
+	/* Display */
+
+	.legal-review-counter {
+		flex-direction: column;
+	}
+}
+
 /* Display */
 
 .legal-review-counter {
