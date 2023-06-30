@@ -5,6 +5,7 @@
 	.legal-review-counter .review-counter-info,
 	.legal-review-counter .review-counter-set {
 		flex-direction: column;
+		row-gap: 20px;
 	}
 
 	/* Width and Height */
