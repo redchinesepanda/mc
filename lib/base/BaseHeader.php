@@ -192,30 +192,20 @@ class BaseHeader
 
 	public static function get_menu_languages()
 	{
-		// $cross_id = self::get_cross_id();
-		
 		$cross = self::get_cross();
 
-		// $trid = WPMLTrid::get_trid( $cross_id );
+		LegalDebug::debug( [
+			'post_name' => $cross->post_name,
 
-		// $translation_group = WPMLTrid::get_translation_group( $trid );
+			'ID' => $cross->ID,
 
-		// LegalDebug::debug( [
-		// 	'translation_group' => $translation_group,
-		// ] );
+			'page_id' => get_query_var( 'page_id' ),
+		] );
 
 		if ( !empty( $cross ) )
 		{
-			// global $post;
-
-			// $post = $cross;
-
-			// setup_postdata( $cross );
-
 			set_query_var( 'page_id', $cross->ID );
 		}
-
-		
 
 		$code = WPMLMain::current_language();
 		
@@ -228,8 +218,6 @@ class BaseHeader
 		$parse = self::parse_languages( $search );
 
 		LegalDebug::debug( [
-			'cross' => $cross->post_name,
-
 			'search' => $search,
 		] );
 
