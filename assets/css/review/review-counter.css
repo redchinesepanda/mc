@@ -6,6 +6,28 @@
 	.legal-review-counter .review-counter-set {
 		flex-direction: column;
 	}
+
+	/* Width and Height */
+
+	.legal-review-counter .info-logo {
+		width: 100%;
+	}
+
+	/* Background */
+
+	.legal-review-counter .info-logo {
+		background-position: top center;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Background */
+
+	.legal-review-counter .info-logo {
+		background-position: left 25px center;
+	}
+
 }
 
 /* Display */
@@ -125,7 +147,6 @@
 }
 
 .legal-review-counter .info-logo {
-	background-position: left 25px center;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
