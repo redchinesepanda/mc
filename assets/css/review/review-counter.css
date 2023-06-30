@@ -51,12 +51,10 @@
 	height: 160px;
 	border-radius: 50%;
 	background: conic-gradient( red var(--progress), gray 0deg );
-	/* font-size: 0; */
-	animation: 1s ease-out turn_in reverse;
+	animation: .4s ease-out turn_in reverse;
 }
 
 .legal-review-counter .set-item-info {
-	content: attr(data-progress);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -67,12 +65,6 @@
 	font-size: 1rem;
 	text-align: center;
 }
-
-/* @keyframes turn_in {
-	85% {
-		background: conic-gradient( red calc( var( --progress ) * .15 ), gray 0deg );
-	}
-} */
 
 @keyframes turn_in {
 	5% {

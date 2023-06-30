@@ -5,25 +5,25 @@
 	<div class="info-rating">Overall Rating - 5.0</div>
 </div>
 <div class="review-counter-set">
-	<div class="set-item" data-progress="85%" style="--progress: 85%;">
+	<div class="set-item" style="--progress: 85%;">
 		<div class="set-item-info">
 			<div class="item-value">5.0</div>
 			<div class="item-label">Payout Speed</div>
 		</div>
 	</div>
-	<div class="set-item" data-progress="85%" style="--progress: 85%;">
+	<div class="set-item" style="--progress: 85%;">
 		<div class="set-item-info">
 			<div class="item-value">7.0</div>
 			<div class="item-label">Bonuses Offers</div>
 		</div>
 	</div>
-	<div class="set-item" data-progress="85%" style="--progress: 85%;">
+	<div class="set-item" style="--progress: 85%;">
 		<div class="set-item-info">
 			<div class="item-value">7.0</div>
 			<div class="item-label">Bonuses Offers</div>
 		</div>
 	</div>
-	<div class="set-item" data-progress="85%" style="--progress: 85%;">
+	<div class="set-item" style="--progress: 85%;">
 		<div class="set-item-info">
 			<div class="item-value">7.0</div>
 			<div class="item-label">Bonuses Offers</div>
