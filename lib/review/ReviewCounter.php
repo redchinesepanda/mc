@@ -113,7 +113,9 @@ class ReviewCounter
 			try {
 				$body->replaceChild( $item, $node );
 			} catch ( DOMException $e ) {
-
+				LegalDebug::debug( [
+					'ReviewCounter::get_content > replaceChild',
+				] );
 			}
 		}
 
