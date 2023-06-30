@@ -15,6 +15,7 @@
 .legal-review-counter .review-counter-set {
 	display: flex;
 	justify-content: center;
+	column-gap: 40px;
 }
 
 /* Position */
