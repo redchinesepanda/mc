@@ -41,26 +41,15 @@ class WPMLLanguageMismatch
 
 		foreach ( $exceptions as $lang => $items )
 		{
-			LegalDebug::debug( [
-				'uri_parts-lang' => $uri_parts[ 'lang' ],
-			] );
-
-			if ( is_string( $uri_parts[ 'lang' ] ) )
+			if ( !empty( $uri_parts[ 'lang' ] ) )
 			{
 				if ( strpos( $lang, $uri_parts[ 'lang' ] ) !== false )
 				{
 					foreach ( $items as $item )
 					{
-						LegalDebug::debug( [
-							'uri_parts-uri' => $uri_parts[ 'uri' ],
-						] );
-
-						if ( is_string( $uri_parts[ 'uri' ] ) )
+						if ( strpos( $item, $uri_parts[ 'uri' ] ) !== false )
 						{
-							if ( strpos( $item, $uri_parts[ 'uri' ] ) !== false )
-							{
-								return 0;
-							}
+							return 0;
 						}
 					}
 				}
