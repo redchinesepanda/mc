@@ -215,7 +215,7 @@ class BaseHeader
 		foreach ( $translation_group as $item )
 		{
 			LegalDebug::debug( [
-				'get_post_permalink' => get_post_permalink( $item->element_id );
+				'get_post_permalink' => get_post_permalink( $item->element_id ),
 			] );
 		}
 
