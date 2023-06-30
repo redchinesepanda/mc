@@ -141,7 +141,7 @@ class ReviewCounter
 
 				if ( !empty( $cell_text ) && !empty( $cell_value ) )
 				{
-					$value = -1
+					$value = -1;
 
 					if ( strpos( $cell_value->textContent, '/' ) )
 					{
@@ -167,8 +167,6 @@ class ReviewCounter
 					}
 
 				}
-
-				
 				
 				LegalDebug::debug( [
 					'args' => $args,
