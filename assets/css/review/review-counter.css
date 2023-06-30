@@ -1,0 +1,133 @@
+/* Display */
+
+.review-counter {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Position */
+
+.review-counter {
+	padding: 20px 0;
+	margin-bottom: 15px;
+}
+
+/* Width and Height */
+
+.review-counter {
+	min-height: 255px;
+}
+
+/* Background */
+
+.review-counter {
+	background-color: #262d35;
+	border-radius: 20px;
+}
+
+/* Typography */
+
+div {
+	display: flex;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: conic-gradient(red var(--progress), gray 0deg);
+	font-size: 0;
+	animation: .4s ease-out turn_in reverse;
+}
+
+div::after {
+	content: attr(data-progress);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	margin: 10px;
+	border-radius: 50%;
+	background: white;
+	font-size: 1rem;
+	text-align: center;
+}
+
+@keyframes turn_in {
+	5% {
+		background: conic-gradient(red calc(var(--progress) * .95), gray 0deg);
+	}
+
+	10% {
+		background: conic-gradient(red calc(var(--progress) * .9), gray 0deg);
+	}
+
+	15% {
+		background: conic-gradient(red calc(var(--progress) * .85), gray 0deg);
+	}
+
+	20% {
+		background: conic-gradient(red calc(var(--progress) * .8), gray 0deg);
+	}
+
+	25% {
+		background: conic-gradient(red calc(var(--progress) * .75), gray 0deg);
+	}
+
+	30% {
+		background: conic-gradient(red calc(var(--progress) * .7), gray 0deg);
+	}
+
+	35% {
+		background: conic-gradient(red calc(var(--progress) * .65), gray 0deg);
+	}
+
+	40% {
+		background: conic-gradient(red calc(var(--progress) * .6), gray 0deg);
+	}
+
+	45% {
+		background: conic-gradient(red calc(var(--progress) * .55), gray 0deg);
+	}
+
+	50% {
+		background: conic-gradient(red calc(var(--progress) * .5), gray 0deg);
+	}
+
+	55% {
+		background: conic-gradient(red calc(var(--progress) * .45), gray 0deg);
+	}
+
+	60% {
+		background: conic-gradient(red calc(var(--progress) * .4), gray 0deg);
+	}
+
+	65% {
+		background: conic-gradient(red calc(var(--progress) * .35), gray 0deg);
+	}
+
+	70% {
+		background: conic-gradient(red calc(var(--progress) * 0.3), gray 0deg);
+	}
+
+	75% {
+		background: conic-gradient(red calc(var(--progress) * 0.25), gray 0deg);
+	}
+
+	80% {
+		background: conic-gradient(red calc(var(--progress) * .2), gray 0deg);
+	}
+
+	85% {
+		background: conic-gradient(red calc(var(--progress) * .15), gray 0deg);
+	}
+
+	90% {
+		background: conic-gradient(red calc(var(--progress) * .1), gray 0deg);
+	}
+
+	95% {
+		background: conic-gradient(red calc(var(--progress) * .05), gray 0deg);
+	}
+
+	100% {
+		background: conic-gradient(gray 0deg);
+	}
+}
