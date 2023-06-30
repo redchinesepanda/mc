@@ -41,7 +41,7 @@ class ReviewCounter
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, self::get_counter( $node ) );
+        load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, self::get_counter_data( $node ) );
 
         $output = ob_get_clean();
 
@@ -61,7 +61,7 @@ class ReviewCounter
 
 		$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ 'about-background' ] . ' };';
 
-		$items = self::get_counter( $table );
+		$items = self::get_counter_items( $table );
 
 		LegalDebug::debug( [
 			'items' => $items,
@@ -133,16 +133,29 @@ class ReviewCounter
 		return $nodes->item( 0 );
 	}
 
-	public static function get_counter( $node )
+	public static function get_counter_data( $node )
 	{
+		$items = self::get_counter_items( $node );
+
+		$rating = 0;
+
+		foreach ( $items as $item )
+		{
+			$rating += $item[ 'value' ];
+		}
+
 		$args = [
 			'title' => __( 'Overall Rating', ToolLoco::TEXTDOMAIN ),
 
-			'items' => [],
+			'items' => $items,
 
-			'rating' => 0,
+			'rating' => ( $rating != 0 ? $rating / count( $items ) : $rating ),
 		];
 
+		return $args;
+	}
+	public static function get_counter_items( $node )
+	{
 		$rows = $node->getElementsByTagName( 'tr' );
 
 		if ( $rows->length )
@@ -184,14 +197,10 @@ class ReviewCounter
 
 								'progress' => ( $value * 10 ) . '%',
 							];
-
-							$rating += $value;
 						}
 					}
 				}
 			}
-
-			$args[ 'rating' ] = $rating / count( $args[ 'items' ] );
 		}
 
 		return $args;
