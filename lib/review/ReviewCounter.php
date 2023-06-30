@@ -65,10 +65,6 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $table );
 
-		// LegalDebug::debug( [
-		// 	'items' => $items,
-		// ] );
-
 		foreach ( $items as $id => $item ) {
 			$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
 		}
@@ -97,6 +93,8 @@ class ReviewCounter
 
 		$dom = LegalDOM::get_dom( $content );
 
+		$body = $dom->getElementsByTagName( 'body' )->item(0);
+
 		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
@@ -110,7 +108,13 @@ class ReviewCounter
 
 			LegalDOM::appendHTML( $item, self::render_counter( $node ) );
 
-			$node->insertBefore( $item );
+			// $node->insertBefore( $item );
+
+			try {
+				$body->replaceChild( $item, $node );
+			} catch ( DOMException $e ) {
+
+			}
 		}
 
 		return $dom->saveHTML();
