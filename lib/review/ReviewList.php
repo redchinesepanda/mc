@@ -18,7 +18,7 @@ class ReviewList
     public static function register_inline_style()
     {
 		if ( ReviewMain::check() ) {
-			ToolEnqueue::register_inline_style( 'legal-notfound', self::inline_style() );
+			ToolEnqueue::register_inline_style( self::CLASSES[ 'base' ], self::inline_style() );
 		}
     }
 
