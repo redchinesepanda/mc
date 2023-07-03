@@ -71,7 +71,7 @@ class ReviewList
             foreach ( $node->childNodes as $item )
             {
                 $items[] = [
-                    'label' => $node->textContent
+                    'label' => $item->textContent
                 ];
             }
         }
