@@ -15,7 +15,8 @@
 {
     /* Display */
 
-    .tcb-post-content .legal-list-3 {
+    .tcb-post-content .legal-list-3,
+    .tcb-post-content .legal-list-4 {
         display: flex;
         flex-wrap: wrap;
     }
@@ -44,6 +45,10 @@
 
     .tcb-post-content .legal-list-3 li {
         width: 33.333%;
+    }
+
+    .tcb-post-content .legal-list-4 li {
+        width: 25%;
     }
 }
 
