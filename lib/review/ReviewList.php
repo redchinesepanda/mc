@@ -46,7 +46,7 @@ class ReviewList
         //     'nodes' => $nodes,
         // ] );
 
-		foreach ( $nodes as $arg )
+		foreach ( $nodes as $node )
         {
             $items = self::get_data( $node );
 
