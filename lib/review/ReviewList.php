@@ -78,7 +78,9 @@ class ReviewList
                 // ] );
 
                 $items[] = [
-                    'label' => $element->textContent
+                    // 'label' => $element->textContent
+                    
+                    'label' => ToolLoco::__( strtolower( $element->textContent ), ToolLoco::TEXTDOMAIN, 'en' ),
                 ];
             }
         }
