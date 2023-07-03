@@ -66,19 +66,19 @@ class ReviewList
     {
         $items = [];
 
-        $items = $node->getElementsByTagName( 'li' );
+        $elements = $node->getElementsByTagName( 'li' );
         
-        if ( $items->length != 0 )
+        if ( $elements->length != 0 )
         // if ( $node->hasChildNodes() )
         {
-            foreach ( $items as $item )
+            foreach ( $elements as $element )
             {
                 LegalDebug::debug( [
-                    'items' => $items,
+                    'element' => $element,
                 ] );
 
                 $items[] = [
-                    'label' => $item->textContent
+                    'label' => $element->textContent
                 ];
             }
         }
