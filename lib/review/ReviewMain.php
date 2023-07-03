@@ -24,6 +24,8 @@ require_once( 'ReviewAuthor.php' );
 
 require_once( 'ReviewCounter.php' );
 
+require_once( 'ReviewList.php' );
+
 class ReviewMain
 {
     const CSS = [
@@ -122,6 +124,8 @@ class ReviewMain
         ReviewAuthor::register();
 
         ReviewCounter::register();
+
+        ReviewList::register();
     }
 
     public static function encoding( $content )
