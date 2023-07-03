@@ -68,7 +68,7 @@ class ReviewList
 
         $items = $node->getElementsByTagName( 'li' );
         
-        if ( $items->length != 0 ) {
+        if ( $items->length != 0 )
         // if ( $node->hasChildNodes() )
         {
             foreach ( $items as $item )
