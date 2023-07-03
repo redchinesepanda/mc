@@ -31,29 +31,53 @@ class ReviewList
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
 
-    public static function inline_style() {
+    public static function inline_style()
+    {
 		$style = [];
 
-		$args = self::get_lists();
+		$nodes = self::get_lists();
 
-		if ( empty( $args ) ) {
+		if ( empty( $nodes ) )
+        {
 			return '';
 		}
 
-        LegalDebug::debug( [
-            'args' => $args,
-        ] );
+        // LegalDebug::debug( [
+        //     'nodes' => $nodes,
+        // ] );
 
-		// $style_items = array_merge( $args[ 'languages' ], [ $args[ 'active' ] ] );
+		foreach ( $nodes as $arg )
+        {
+            $items = self::get_data( $node );
 
-		// foreach ( $style_items as $style_item ) {
-		// 	$style[] = '.locale-' . $style_item[ 'id' ] . ' {
-		// 		background-image: url(' . $style_item[ 'src' ] . ');
-		// 	}';
-		// }
+            LegalDebug::debug( [
+                'items' => $items,
+            ] );
+
+			// $style[] = '.locale-' . $style_item[ 'id' ] . ' {
+			// 	background-image: url(' . $style_item[ 'src' ] . ');
+			// }';
+		}
 
 		return implode( ' ', $style );
 	}
+
+    public static function get_data( $node )
+    {
+        $items = [];
+        
+        if ( $node->hasChildNodes() )
+        {
+            foreach ( $node->childNodes as $item )
+            {
+                $items[] = [
+                    'label' => $node->textContent
+                ];
+            }
+        }
+
+        return $items;
+    }
 
 	public static function get_nodes( $dom )
 	{
