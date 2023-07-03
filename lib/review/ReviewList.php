@@ -65,11 +65,18 @@ class ReviewList
     public static function get_data( $node )
     {
         $items = [];
+
+        $items = $node->getElementsByTagName( 'li' );
         
-        if ( $node->hasChildNodes() )
+        if ( $items->length != 0 ) {
+        // if ( $node->hasChildNodes() )
         {
-            foreach ( $node->childNodes as $item )
+            foreach ( $items as $item )
             {
+                LegalDebug::debug( [
+                    'items' => $items,
+                ] );
+
                 $items[] = [
                     'label' => $item->textContent
                 ];
