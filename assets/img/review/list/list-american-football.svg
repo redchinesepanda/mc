@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-american-football.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="0 8 24 24">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="248"
+     inkscape:cx="248"
+     inkscape:zoom="2.0322581"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:0.0483871;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="M 23.298387,10.530645 C 23.066129,9.65 22.374194,8.9580645 21.493548,8.7209677 20.337097,8.4112903 18.532258,8.0435484 16.422581,8 L 24,15.587097 c -0.03871,-2.104839 -0.396774,-3.9 -0.701613,-5.056452 z M 0.7016129,29.469355 C 0.93387097,30.35 1.6258065,31.041935 2.5064516,31.279032 3.6629032,31.58871 5.4677419,31.956452 7.5774194,32 L 0,24.412903 c 0.03870968,2.104839 0.39677419,3.9 0.7016129,5.056452 z M 0.20322581,21.325806 10.664516,31.806452 c 6.41129,-0.93871 12.03871,-5.743549 13.137097,-13.132258 L 13.335484,8.1935484 C 6.9241935,9.1322581 1.2967742,13.937097 0.20322581,21.325806 Z M 15.556452,15.345161 c 0.15,-0.15 0.396774,-0.15 0.546774,0 L 16.65,15.891935 c 0.15,0.15 0.15,0.396775 0,0.546775 L 15.280645,17.808065 16.65,19.177419 c 0.15,0.15 0.15,0.396775 0,0.546775 l -0.546774,0.546774 c -0.15,0.15 -0.396774,0.15 -0.546774,0 L 14.187097,18.901613 13.093548,20 l 1.369355,1.369355 c 0.15,0.15 0.15,0.396774 0,0.546774 l -0.546774,0.546774 c -0.15,0.15 -0.396774,0.15 -0.546774,0 L 12,21.093548 l -1.093548,1.093549 1.369354,1.369355 c 0.15,0.15 0.15,0.396774 0,0.546774 L 11.729032,24.65 c -0.15,0.15 -0.396774,0.15 -0.546774,0 L 9.8129032,23.280645 8.4435484,24.65 c -0.15,0.15 -0.3967742,0.15 -0.5467742,0 L 7.35,24.103226 c -0.15,-0.15 -0.15,-0.396774 0,-0.546774 L 8.7193548,22.187097 7.35,20.822581 c -0.15,-0.15 -0.15,-0.396775 0,-0.546775 l 0.5467742,-0.546774 c 0.15,-0.15 0.3967742,-0.15 0.5467742,0 l 1.3693548,1.369355 1.0935488,-1.093548 -1.3693552,-1.369355 c -0.15,-0.15 -0.15,-0.396774 0,-0.546774 l 0.5467742,-0.546775 c 0.15,-0.15 0.396774,-0.15 0.546774,0 L 12,18.91129 13.093548,17.817742 11.724194,16.448387 c -0.15,-0.15 -0.15,-0.396774 0,-0.546774 l 0.546774,-0.546774 c 0.15,-0.15 0.396774,-0.15 0.546774,0 l 1.369355,1.369355 z" />
+</svg>
