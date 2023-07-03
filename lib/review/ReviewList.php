@@ -77,10 +77,14 @@ class ReviewList
                 //     'element' => $element,
                 // ] );
 
+                $label = strtolower( $element->textContent );
+
+                $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
+
+                $label = str_replace( ' ', '-', $label );
+
                 $items[] = [
-                    // 'label' => $element->textContent
-                    
-                    'label' => ToolLoco::__( strtolower( $element->textContent ), ToolLoco::TEXTDOMAIN, 'en' ),
+                    'label' => $label,
                 ];
             }
         }
