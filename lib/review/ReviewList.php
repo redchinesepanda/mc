@@ -36,7 +36,7 @@ class ReviewList
 
 		$args = self::get_lists();
 
-		if ( empty( $args ) ) ) {
+		if ( empty( $args ) ) {
 			return '';
 		}
 
