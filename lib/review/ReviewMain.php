@@ -35,11 +35,11 @@ class ReviewMain
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
 
-        'review-list' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
+        // 'review-list' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.0.3'
-        ],
+        //     'ver' => '1.0.4',
+        // ],
 
         'review-title' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
@@ -140,46 +140,46 @@ class ReviewMain
         return ( $permission_admin && ( $permission_post_type || $permission_tax ) );
     }
 
-    const CSS_CLASS = [
-        'list-3' => 'legal-list-3',
+    // const CSS_CLASS = [
+    //     'list-3' => 'legal-list-3',
 
-        'list-4' => 'legal-list-4',
+    //     'list-4' => 'legal-list-4',
 
-        'base' => 'legal-list-image',
-    ];
+    //     'base' => 'legal-list-image',
+    // ];
 
-    public static function style_formats_list( $settings )
-	{
-		return ToolTinyMCE::style_formats_check( $settings, [
-			[
-				'title' => 'List',
+    // public static function style_formats_list( $settings )
+	// {
+	// 	return ToolTinyMCE::style_formats_check( $settings, [
+	// 		[
+	// 			'title' => 'List',
 
-				'items' => [
-					[
-						'title' => 'List 3 Columns',
+	// 			'items' => [
+	// 				[
+	// 					'title' => 'List 3 Columns',
 						
-						'selector' => 'ul,ol',
+	// 					'selector' => 'ul,ol',
 
-						'classes' => self::CSS_CLASS[ 'list-3' ],
-					],
-					[
-						'title' => 'List 4 Columns',
+	// 					'classes' => self::CSS_CLASS[ 'list-3' ],
+	// 				],
+	// 				[
+	// 					'title' => 'List 4 Columns',
 						
-						'selector' => 'ul,ol',
+	// 					'selector' => 'ul,ol',
 
-						'classes' => self::CSS_CLASS[ 'list-4' ],
-					],
-					[
-						'title' => 'List With Image',
+	// 					'classes' => self::CSS_CLASS[ 'list-4' ],
+	// 				],
+	// 				[
+	// 					'title' => 'List With Image',
 						
-						'selector' => 'ul,ol',
+	// 					'selector' => 'ul,ol',
 
-						'classes' => self::CSS_CLASS[ 'base' ],
-					],
-				],
-			],
-		] );
-	}
+	// 					'classes' => self::CSS_CLASS[ 'base' ],
+	// 				],
+	// 			],
+	// 		],
+	// 	] );
+	// }
 
     public static function schema()
     {
