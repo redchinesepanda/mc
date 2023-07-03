@@ -142,6 +142,10 @@ class ReviewMain
 
     const CSS_CLASS = [
         'list-3' => 'legal-list-3',
+
+        'list-4' => 'legal-list-4',
+
+        'base' => 'legal-list-image',
     ];
 
     public static function style_formats_list( $settings )
@@ -152,11 +156,25 @@ class ReviewMain
 
 				'items' => [
 					[
-						'title' => 'List 3 columns',
+						'title' => 'List 3 Columns',
 						
 						'selector' => 'ul,ol',
 
 						'classes' => self::CSS_CLASS[ 'list-3' ],
+					],
+					[
+						'title' => 'List 4 Columns',
+						
+						'selector' => 'ul,ol',
+
+						'classes' => self::CSS_CLASS[ 'list-4' ],
+					],
+					[
+						'title' => 'List With Image',
+						
+						'selector' => 'ul,ol',
+
+						'classes' => self::CSS_CLASS[ 'base' ],
 					],
 				],
 			],
