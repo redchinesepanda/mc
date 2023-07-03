@@ -73,9 +73,9 @@ class ReviewList
         {
             foreach ( $elements as $element )
             {
-                LegalDebug::debug( [
-                    'element' => $element,
-                ] );
+                // LegalDebug::debug( [
+                //     'element' => $element,
+                // ] );
 
                 $items[] = [
                     'label' => $element->textContent
