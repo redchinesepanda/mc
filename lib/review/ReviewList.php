@@ -46,10 +46,6 @@ class ReviewList
         {
             $items = self::get_data( $node );
 
-            LegalDebug::debug( [
-                'items' => $items,
-            ] );
-
             foreach ( $items as $id => $item )
             {
                 $style[] = '.' . self::CLASSES[ 'base' ] . ' li:nth-child( ' . ( $id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
