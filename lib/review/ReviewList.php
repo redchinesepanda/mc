@@ -42,10 +42,6 @@ class ReviewList
 			return '';
 		}
 
-        // LegalDebug::debug( [
-        //     'nodes' => $nodes,
-        // ] );
-
 		foreach ( $nodes as $node )
         {
             $items = self::get_data( $node );
@@ -56,7 +52,6 @@ class ReviewList
 
             foreach ( $items as $id => $item )
             {
-                // url( '../../img/review/review-ul.svg' )
                 $style[] = '.' . self::CLASSES[ 'base' ] . ' li:nth-child( ' . ( $id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
             }
 		}
@@ -71,14 +66,9 @@ class ReviewList
         $elements = $node->getElementsByTagName( 'li' );
         
         if ( $elements->length != 0 )
-        // if ( $node->hasChildNodes() )
         {
             foreach ( $elements as $element )
             {
-                // LegalDebug::debug( [
-                //     'element' => $element,
-                // ] );
-
                 $label = strtolower( $element->textContent );
 
                 $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
