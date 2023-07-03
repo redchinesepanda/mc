@@ -57,7 +57,7 @@ class ReviewList
             foreach ( $items as $id => $item )
             {
                 // url( '../../img/review/review-ul.svg' )
-                $style[] = '.' . self::CLASSES[ 'base' ] . ' li:nth-child( ' . $id . ' ) { background-image: url( \'../../img/review/list/list-' . $item[ 'label' ] . '\' ); }';
+                $style[] = '.' . self::CLASSES[ 'base' ] . ' li:nth-child( ' . $id . ' ) { background-image: url( \'../../img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
             }
 		}
 
