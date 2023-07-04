@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-handball.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="5.5 1 24 24">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="11.465"
+     inkscape:cx="6.4949999"
+     inkscape:zoom="43.959877"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.04666;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 21.513682,10.870039 a 7.2533799,7.2533799 0 0 1 2.679459,4.636721 6.9498474,6.9498474 0 0 1 -0.931531,4.85652 l -1.800262,-1.046664 a 5.2333188,5.2333188 0 0 0 0.690799,-2.61666 5.4635848,5.4635848 0 0 0 -1.025731,-3.077191 L 14.553368,25 12.732173,23.97427 15.872164,18.531618 14.061436,17.495421 12.49144,20.195813 10.701645,19.170083 16.07103,9.8443088 a 7.3266463,7.3266463 0 0 1 -1.915394,-4.1761884 7.2324466,7.2324466 0 0 1 0.93153,-4.563454 L 16.908361,2.18273 a 5.0658526,5.0658526 0 0 0 -0.544265,3.9459224 4.9611862,4.9611862 0 0 0 2.407327,3.1713912 M 21.691614,5.186655 A 2.0933275,2.0933275 0 1 0 23.784942,7.2799826 2.0933275,2.0933275 0 0 0 21.691614,5.186655 M 19.074955,1 A 1.5699956,1.5699956 0 1 0 20.644951,2.5699956 1.5699956,1.5699956 0 0 0 19.074955,1 Z" />
+</svg>
