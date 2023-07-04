@@ -64,7 +64,7 @@
 
 /* Review Typography */
 
-.tcb-post-content p:not( .legal-override ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ),
 .tcb-post-content ul:not( .legal-override ),
 .tcb-post-content ol:not( .legal-override ),
 .tcb-post-content table:not( .legal-override ) {
