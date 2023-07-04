@@ -135,8 +135,11 @@
     list-style-image: url( '../../img/review/review-ul.svg' );
 } */
 
-.tcb-post-content ul li:before {
+.tcb-post-content ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
+}
+
+.tcb-post-content ul li:before {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
