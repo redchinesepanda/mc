@@ -29,6 +29,8 @@ class ReviewList
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list' ] );
     }
 
     public static function inline_style()
