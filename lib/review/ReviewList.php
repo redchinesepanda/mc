@@ -50,7 +50,7 @@ class ReviewList
 
             foreach ( $items as $item_id => $item )
             {
-                $style[] = 'ul.' . self::CLASSES[ 'base' ] . ':nth-child( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
+                $style[] = '.' . self::CLASSES[ 'base' ] . ':nth-of-type( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
             }
 		}
 
