@@ -239,16 +239,6 @@ class ToolTinyMCE
 
 	public static function style_formats_contextbox( $settings )
 	{
-		// return self::style_formats_check( $settings, [
-		// 	[
-		// 		'title' => 'Contextbox',
-				
-		// 		'block' => 'p',
-
-		// 		'classes' => 'legal-contextbox',
-		// 	],
-		// ] );
-		
 		return self::style_formats_check( $settings, [
 			[
 				'title' => 'Contextboxes',

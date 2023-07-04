@@ -9,6 +9,15 @@
 	border-left: 2px solid rgb(89, 151, 227);
 }
 
+/* legal-contextbox */
+
+#tinymce .legal-attention {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+
+	background-color: rgb(255, 94, 106);
+}
+
 /* FAQ */
 
 #tinymce .legal-faq-title,
