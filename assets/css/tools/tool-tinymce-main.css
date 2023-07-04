@@ -16,6 +16,10 @@
 	margin-bottom: 20px;
 
 	background-color: rgb(255, 94, 106);
+	border-radius: 20px;
+
+	text-align: center;
+    color: rgb(255, 255, 255);
 }
 
 /* FAQ */
