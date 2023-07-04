@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-indy-racing.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="2.16653 3.96639 24 23.999999">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="-8"
+     inkscape:cy="10.712573"
+     inkscape:cx="12.049956"
+     inkscape:zoom="32.002494"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1351"
+     inkscape:window-width="1718"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.20404;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 2.2065512,15.023399 c -0.2408066,2.889679 0.6020166,5.297746 2.4080662,7.465005 1.8060497,2.16726 4.2141158,3.130486 7.1037956,3.130486 h 12.04033 c 0.602017,0 1.204034,-0.240807 1.685647,-0.72242 0.481613,-0.481613 0.72242,-1.083629 0.72242,-1.685646 v -0.963226 c 0,-0.72242 -0.120403,-1.565243 -0.240807,-2.648873 h -9.873071 c -1.204033,0 -2.16726,-0.481613 -3.010082,-1.324436 -0.842824,-0.842824 -1.324437,-1.926453 -1.324437,-3.010083 0,-1.926453 0.842823,-3.250889 2.648872,-3.973309 L 20.146644,8.7624273 C 18.099789,7.3175876 15.691722,6.4747645 12.922446,6.3543611 10.273573,6.1135545 7.8655068,6.9563777 5.6982473,8.642024 3.5309876,10.32767 2.4473579,12.374526 2.2065512,15.023399 m 11.9199278,0.240807 c 0,0.481613 0.240806,0.963226 0.602017,1.324437 0.361209,0.361209 0.842823,0.602016 1.324436,0.602016 H 25.44439 C 24.72197,14.541786 23.638341,12.374526 22.073097,10.68888 l -6.742585,2.769277 c -0.842823,0.240806 -1.204033,0.842822 -1.204033,1.806049 z" />
+</svg>

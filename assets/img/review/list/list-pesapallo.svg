@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-pesapallo.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="2 2 24 23.999999">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="-8"
+     inkscape:cy="11.881657"
+     inkscape:cx="14.844954"
+     inkscape:zoom="25.624375"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1351"
+     inkscape:window-width="1718"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.19894;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 23.590016,1.9999998 c -0.335703,0 -0.59947,0.1318833 -0.851247,0.3476924 L 11.348845,13.737617 c -0.04796,0.04796 -0.08393,0.09591 -3.0692846,4.268224 L 4.406986,21.890405 4.0592936,21.530723 C 3.8075163,21.302924 3.5197708,21.18303 3.2080466,21.18303 c -0.6714061,0 -1.1989394,0.527534 -1.1989394,1.19894 0,0.311724 0.1198939,0.599469 0.3476924,0.851247 l 2.3978788,2.397879 c 0.4675864,0.479575 1.2229183,0.491565 1.702494,0.03597 0.4795757,-0.467587 0.4915651,-1.222918 0,-1.738462 L 6.0974906,23.580909 9.9700649,19.708335 14.250278,16.63905 25.640203,5.2491256 c 0.467586,-0.4675864 0.467586,-1.2349076 0,-1.702494 L 24.441263,2.3476922 C 24.189486,2.1198937 23.90174,1.9999998 23.590016,1.9999998 M 21.791607,15.188333 a 2.9973485,2.9973485 0 0 0 -2.997348,2.997349 2.9973485,2.9973485 0 0 0 2.997348,2.997348 2.9973485,2.9973485 0 0 0 2.997349,-2.997348 2.9973485,2.9973485 0 0 0 -2.997349,-2.997349 z" />
+</svg>
