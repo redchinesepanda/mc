@@ -44,13 +44,13 @@ class ReviewList
 			return '';
 		}
 
-		foreach ( $nodes as $node )
+		foreach ( $nodes as $node_id => $node )
         {
             $items = self::get_data( $node );
 
-            foreach ( $items as $id => $item )
+            foreach ( $items as $item_id => $item )
             {
-                $style[] = '.' . self::CLASSES[ 'base' ] . ' li:nth-child( ' . ( $id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
+                $style[] = '.' . self::CLASSES[ 'base' ] . ':nth-child( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
             }
 		}
 
