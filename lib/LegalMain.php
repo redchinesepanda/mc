@@ -45,32 +45,49 @@ class LegalMain {
 
 	public static function register()
 	{
-		LegalComponents::register();
-
-		ACFMain::register();
-
-		AdminMain::register();
-
-		OopsMain::register();
-
-		LegalBreadcrumbsMain::register();
-
-		ReviewMain::register();
-
-		ToolsMain::register();
-
-		WPMLMain::register();
-
-		YoastMain::register();
-
-		SchemaMain::register();
-
-		BaseMain::register();
-
-		NotFoundMain::register();
-
-		MetrikaMain::register();
+		if ( self::check() )
+		{
+			LegalComponents::register();
+	
+			ACFMain::register();
+	
+			AdminMain::register();
+	
+			OopsMain::register();
+	
+			LegalBreadcrumbsMain::register();
+	
+			ReviewMain::register();
+	
+			ToolsMain::register();
+	
+			WPMLMain::register();
+	
+			YoastMain::register();
+	
+			SchemaMain::register();
+	
+			BaseMain::register();
+	
+			NotFoundMain::register();
+	
+			MetrikaMain::register();
+		}
 	}
+
+	function check_acf()
+	{
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	
+		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+	}
+
+	function check()
+	{
+		return ( self::check_acf() );
+	}
+	
+	// add_filter('body_class', 'wp76641_active_plugins_body_classes');
 }
 
 ?>
