@@ -86,8 +86,6 @@ class LegalMain {
 	{
 		return ( self::check_acf() );
 	}
-	
-	// add_filter('body_class', 'wp76641_active_plugins_body_classes');
 }
 
 ?>
