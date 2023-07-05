@@ -31,11 +31,6 @@ class BilletLogo
     { 
         load_template( self::TEMPLATE, false, self::get( $billet ) );
     }
-
-    public static function debug( $message )
-    {
-        echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' );
-    }
 }
 
 ?>

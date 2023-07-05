@@ -10,7 +10,7 @@ require_once( 'ToolTinyMCE.php' );
 
 require_once( 'ToolEncode.php' );
 
-require_once( 'ToolRewrite.php' );
+// require_once( 'ToolRewrite.php' );
 
 require_once( 'ToolEnqueue.php' );
 
@@ -22,7 +22,7 @@ require_once( 'ToolPrint.php' );
 
 require_once( 'ToolTransiterate.php' );
 
-require_once( 'ToolNotFound.php' );
+// require_once( 'ToolNotFound.php' );
 
 class ToolsMain
 {
