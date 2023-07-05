@@ -1,4 +1,4 @@
-<?php if( !empty( $args ) ) : ?>
+<?php if( !empty( $args[ 'items' ] ) ) : ?>
     <nav class="anchors">
         <div class="review-anchors">
             <div class="anchors-title"><?php echo $args[ 'title' ]; ?></div>

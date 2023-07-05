@@ -44,7 +44,8 @@ class CompilationTabs
     }
 
 	public static function check()
-    {   
+    {
+        
         $permission = true;
         
         return $permission;
