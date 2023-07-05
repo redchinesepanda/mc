@@ -75,14 +75,14 @@ class LegalMain {
 		}
 	}
 
-	function check_acf()
+	public static function check_acf()
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	
 		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
 	}
 
-	function check()
+	public static function check()
 	{
 		return ( self::check_acf() );
 	}
