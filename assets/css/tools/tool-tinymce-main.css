@@ -22,6 +22,18 @@
     color: rgb(255, 255, 255);
 }
 
+/* legal-highlight */
+
+#tinymce .legal-highlight {
+	padding: 10px 20px;
+	margin-bottom: 20px;
+
+	background-color: rgba(250, 98, 0, 0.85);
+	border-radius: 20px;
+
+    color: rgb(255, 255, 255);
+}
+
 /* FAQ */
 
 #tinymce .legal-faq-title,
