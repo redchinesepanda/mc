@@ -318,6 +318,8 @@ class ReviewBonus
         
         // if( $group ) {
 			return [
+				'class' => ( !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default' ),
+				
 				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
 				'review' => [
