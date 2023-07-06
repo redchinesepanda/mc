@@ -135,7 +135,7 @@
     list-style-image: url( '../../img/review/review-ul.svg' );
 } */
 
-.tcb-post-content > ul:not( .legal-list-image ) li:before {
+.tcb-post-content ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
 }
 

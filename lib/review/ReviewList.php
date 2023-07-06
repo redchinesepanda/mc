@@ -6,7 +6,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.0.5',
+            'ver' => '1.0.6',
         ],
     ];
 
