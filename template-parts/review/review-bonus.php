@@ -14,7 +14,7 @@
 		</a>
 	</div>
 	<?php if ( !empty( $args[ 'content' ] ) ) : ?>
-		<div class="bonus-content">
+		<div class="bonus-content <?php echo $args[ 'class' ]; ?>">
 			<?php foreach ( $args[ 'content' ] as $item ) : ?>
 				<?php echo $item; ?>
 			<?php endforeach; ?>
