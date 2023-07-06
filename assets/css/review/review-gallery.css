@@ -1,3 +1,12 @@
+@media screen and ( min-width: 768px ) {
+    /* Gallery Width and Height */
+
+    .legal-imageset .imageset-item {
+        width: calc( 33.333% - 10px );
+    }
+
+}
+
 /* Gallery Display */
 
 .tcb-post-content .legal-imageset {
@@ -39,10 +48,6 @@
 }
   
 /* Gallery Width and Height */
-
-.legal-imageset .imageset-item {
-    width: calc( 33.333% - 10px );
-}
 
 .tcb-post-content .legal-gallery {
     height: 100vh;
