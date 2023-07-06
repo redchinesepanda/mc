@@ -132,7 +132,7 @@ class ReviewList
         {
             $node_class = self::CLASSES[ 'base' ] . '-' . $node_id;
 
-            $element->setAttribute( 'class', $node_class );
+            $node->setAttribute( 'class', $node_class );
 
             $elements = $node->getElementsByTagName( 'li' );
         
