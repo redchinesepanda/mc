@@ -123,7 +123,7 @@ class ReviewBonus
 			}
 
 			if ( $permission_content ) {
-				$node->removeAttribute( 'class' );
+				// $node->removeAttribute( 'class' );
 
 				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
