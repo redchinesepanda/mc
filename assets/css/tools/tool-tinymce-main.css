@@ -9,7 +9,7 @@
 	border-left: 2px solid rgb(89, 151, 227);
 }
 
-/* legal-contextbox */
+/* legal-attention */
 
 #tinymce .legal-attention {
 	padding: 10px 20px;
@@ -104,4 +104,8 @@
 
 #tinymce .legal-list-4 li {
 	width: 25%;
+}
+
+#tinymce .legal-list-image li::marker {
+	color: rgb(89, 151, 227);
 }
