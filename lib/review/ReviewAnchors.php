@@ -140,6 +140,22 @@ class ReviewAnchors
             ToolTransiterate::replace(
                 ToolLoco::__( 'registration', ToolLoco::TEXTDOMAIN, $locale )
             ) => ToolLoco::__( 'Registration', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'tips-and-tricks', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Tips and tricks', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'bonuses', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Bonuses', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'promotions', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Promotions', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'sports', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Sports', ToolLoco::TEXTDOMAIN, $locale ),
         ];
     }
 
