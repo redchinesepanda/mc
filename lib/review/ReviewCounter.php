@@ -167,7 +167,7 @@ class ReviewCounter
 				$rating += $item[ 'value' ];
 			}
 
-			$rating = $rating / $amount;
+			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
 		}
 
 		$args = [
