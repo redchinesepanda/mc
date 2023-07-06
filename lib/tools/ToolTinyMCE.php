@@ -261,7 +261,7 @@ class ToolTinyMCE
 					[
 						'title' => 'Highlight',
 						
-						'selector' => 'p',
+						'selector' => 'p,ul',
 		
 						'classes' => 'legal-highlight',
 					],
