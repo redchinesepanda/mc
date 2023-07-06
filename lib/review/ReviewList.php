@@ -58,7 +58,7 @@ class ReviewList
 
             foreach ( $elements as $element_id => $element )
             {
-                $element_class = '.list-item-' . $element_id;
+                $element_class = '.list-image-item-' . $element_id;
 
                 // $style[] = '.' . self::CLASSES[ 'base' ] . ':nth-of-type( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
                 
@@ -130,7 +130,7 @@ class ReviewList
 
 		foreach ( $nodes as $node_id => $node )
         {
-            $node_class = self::CLASSES[ 'base' ] . '-' . $node_id;
+            $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
 
             $node->setAttribute( 'class', $node_class );
 
@@ -140,7 +140,7 @@ class ReviewList
             {
                 foreach ( $elements as $element_id => $element )
                 {
-                    $element_class = self::CLASSES[ 'base' ] . '-' . $node_id . '-' . $element_id . ' list-item-' . $element_id;
+                    $element_class = self::CLASSES[ 'base' ] . '-' . $node_id . '-' . $element_id . ' list-image-item-' . $element_id;
 
                     $element->setAttribute( 'class', $element_class );
                 }
