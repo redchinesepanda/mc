@@ -52,11 +52,17 @@ class ReviewList
 
 		foreach ( $nodes as $node_id => $node )
         {
-            $items = self::get_data( $node );
+            $node_class = '.' . self::CLASSES[ 'base' ] . '-' . $node_id;
 
-            foreach ( $items as $item_id => $item )
+            $elements = self::get_data( $node );
+
+            foreach ( $elements as $element_id => $element )
             {
-                $style[] = '.' . self::CLASSES[ 'base' ] . ':nth-of-type( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
+                $element_class = '.list-item-' . $element_id;
+
+                // $style[] = '.' . self::CLASSES[ 'base' ] . ':nth-of-type( ' . ( $node_id + 1 ) . ' ) li:nth-child( ' . ( $item_id + 1 ) . ' )::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $item[ 'label' ] . '.svg\' ); }';
+                
+                $style[] = $node_class . ' ' . $element_class . '::before { background-image: url( \'' . LegalMain::LEGAL_URL . '/assets/img/review/list/list-' . $element[ 'label' ] . '.svg\' ); }';
             }
 		}
 
@@ -122,85 +128,23 @@ class ReviewList
 			return $content;
 		}
 
-		// $item = null;
-
-		// $last = $nodes->length - 1;
-
-        // $args = [];
-
-        // $container = $dom->createElement( 'div' );
-
-        // $container->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
-
 		foreach ( $nodes as $node_id => $node )
         {
+            $node_class = self::CLASSES[ 'base' ] . '-' . $node_id;
+
+            $element->setAttribute( 'class', $node_class );
+
             $elements = $node->getElementsByTagName( 'li' );
         
             if ( $elements->length != 0 )
             {
                 foreach ( $elements as $element_id => $element )
                 {
-                    $class = self::CLASSES[ 'base' ] . '-' . $node_id . '-' . $element_id;
+                    $element_class = self::CLASSES[ 'base' ] . '-' . $node_id . '-' . $element_id . ' list-item-' . $element_id;
 
-                    $element->setAttribute( 'class', $class );
-
-                    // $label = strtolower( $element->textContent );
-    
-                    // $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
-    
-                    // $label = str_replace( ' ', '-', $label );
-    
-                    // $items[] = [
-                    //     'label' => $label,
-                    // ];
+                    $element->setAttribute( 'class', $element_class );
                 }
             }
-
-            // $class = explode( ' ', $node->getAttribute( 'class' ) );
-
-			// $permission_title = ( in_array( self::CSS_CLASS[ 'title' ], $class ) );
-
-			// $permission_content = ( in_array( self::CSS_CLASS[ 'content' ], $class ) );
-
-			// $permission_last = ( $id == $last );
-
-			// if ( $permission_content ) {
-			// 	$node->removeAttribute( 'class' );
-
-            //     $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
-			// }
-
-			// if ( !empty( $item ) && ( $permission_title || $permission_last ) ) {
-				
-			// 	LegalDOM::appendHTML( $item, self::render( $args ) );
-
-            //     $container->appendChild( $item );
-
-            //     $item = null;
-			// }
-
-            // if ( $permission_last ) {
-            //     $node->parentNode->replaceChild( $container, $node );
-            // } else {
-            //     $node->parentNode->removeChild( $node );
-            // }
-
-			// if ( $permission_title ) {
-
-			// 	$item = $dom->createElement( 'div' );
-
-            //     $class = self::CSS_CLASS[ 'pros' ];
-
-            //     if ( strpos( $node->getAttribute( 'class' ), self::CSS_CLASS[ 'cons' ] ) !== false ) {
-            //         $class = self::CSS_CLASS[ 'cons' ];
-            //     }
-
-			// 	$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $class );
-
-			// 	$args = [];
-				
-			// 	$args[ 'title' ] = ToolEncode::encode( $node->textContent );
-			// }
 		}
 
 		return $dom->saveHTML();
