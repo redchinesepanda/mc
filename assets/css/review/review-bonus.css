@@ -112,6 +112,14 @@
 
 /* Bonus Typography */
 
+.legal-bonus .bonus-content.legal-default .legal-highlight {
+	color: #ffffff;
+}
+
+.legal-bonus .bonus-content:not( .legal-default ) .legal-highlight {
+	color: #000000;
+}
+
 .legal-bonus .bonus-name {
 	text-align: center;
 }
