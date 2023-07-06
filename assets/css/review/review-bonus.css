@@ -112,7 +112,8 @@
 
 /* Bonus Typography */
 
-.legal-bonus .bonus-content.legal-default .legal-highlight {
+.legal-bonus .bonus-content.legal-default .legal-highlight li,
+.legal-bonus .bonus-content.legal-default .legal-highlight p {
 	color: #ffffff;
 }
 
