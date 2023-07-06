@@ -40,7 +40,8 @@
     margin-bottom: 20px;
 }
 
-.tcb-post-content .legal-attention {
+.tcb-post-content .legal-attention,
+.tcb-post-content .legal-highlight {
     padding: 10px 20px;
     margin-bottom: 20px;
 }
@@ -53,6 +54,10 @@
 
 .tcb-post-content .legal-contextbox {
     border-left: 2px solid rgb(89, 151, 227);
+}
+
+.tcb-post-content .legal-highlight {
+    border-radius: 20px;
 }
 
 .tcb-post-content .legal-attention {

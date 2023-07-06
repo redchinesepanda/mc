@@ -258,6 +258,13 @@ class ToolTinyMCE
 		
 						'classes' => 'legal-attention',
 					],
+					[
+						'title' => 'Highlight',
+						
+						'selector' => 'p',
+		
+						'classes' => 'legal-highlight',
+					],
 				],
 			],
 		] );

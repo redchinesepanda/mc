@@ -1,7 +1,8 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <?php if( empty( $args['mode'] ) ) : ?>
         <style type="text/css">
-            .review-about {
+            .review-about,
+            .legal-highlight {
                 background-color: <?php echo $args['background']; ?>;
             }
 
