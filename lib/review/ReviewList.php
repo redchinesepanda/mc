@@ -44,6 +44,10 @@ class ReviewList
 			return '';
 		}
 
+        LegalDebug::debug( [
+            '$nodes' => $nodes,
+        ] );
+
 		foreach ( $nodes as $node_id => $node )
         {
             $items = self::get_data( $node );
