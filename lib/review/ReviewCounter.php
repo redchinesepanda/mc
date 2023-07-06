@@ -147,13 +147,27 @@ class ReviewCounter
 
 	public static function get_counter_data( $node )
 	{
+		$ovarall = null;
+
 		$items = self::get_counter_items( $node );
 
 		$rating = 0;
 
-		foreach ( $items as $item )
+		$amount = count( $items );
+
+		if ( $amount > 4 )
 		{
-			$rating += $item[ 'value' ];
+			$ovarall = array_shift( $items );
+
+			$rating = $ovarall[ 'value' ];
+		} else
+		{
+			foreach ( $items as $item )
+			{
+				$rating += $item[ 'value' ];
+			}
+
+			$rating = $rating / $amount;
 		}
 
 		$args = [
@@ -161,7 +175,7 @@ class ReviewCounter
 
 			'items' => $items,
 
-			'rating' => ( $rating != 0 ? $rating / count( $items ) : $rating ),
+			'rating' => $rating,
 		];
 
 		return $args;
