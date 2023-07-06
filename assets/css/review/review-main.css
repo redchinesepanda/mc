@@ -41,7 +41,7 @@
 }
 
 .tcb-post-content .legal-attention,
-.tcb-post-content .legal-highlight {
+.tcb-post-content .legal-highlight:not( .legal-override ) {
     padding: 10px 20px;
     margin-bottom: 20px;
 }

@@ -32,7 +32,7 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.0.8',
+            'ver' => '1.0.9',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
