@@ -46,10 +46,6 @@ class ReviewList
 			return '';
 		}
 
-        LegalDebug::debug( [
-            '$nodes' => $nodes,
-        ] );
-
 		foreach ( $nodes as $node_id => $node )
         {
             $node_class = '.' . self::CLASSES[ 'base' ] . '-' . $node_id;
