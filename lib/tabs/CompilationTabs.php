@@ -1,7 +1,5 @@
 <?php
 
-// require_once( LegalMain::LEGAL_PATH . '/lib/compilation/CompilationMain.php' );
-
 class CompilationTabs
 {
     const CSS = [
@@ -45,10 +43,7 @@ class CompilationTabs
 
 	public static function check()
     {
-        
-        $permission = true;
-        
-        return $permission;
+        return LegalComponents::check();
     }
 
     public static function register()

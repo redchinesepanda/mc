@@ -28,6 +28,8 @@ class ACFPage
     {
         $items = WPMLTrid::get();
 
+        $choices = [];
+
         if ( !empty( $items ) ) {
             foreach( $items as $item ) {
                 $title = get_post_meta( $item->legal_element_id, self::FIELD_LABEL, true );
@@ -36,9 +38,11 @@ class ACFPage
                     $item->legal_title .= ' ( ' . $title . ' )';
                 }
 
-                $field['choices'][$item->legal_trid] = $item->legal_title . ' [' . $item->legal_language_codes . ']'; 
+                $choices[$item->legal_trid] = $item->legal_title . ' [' . $item->legal_language_codes . ']'; 
             }
         }
+
+        $field['choices'] = $choices;
 
         $field['default_value'] = WPMLTrid::get_trid();
 

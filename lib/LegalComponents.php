@@ -16,6 +16,15 @@ class LegalComponents
 
 		CompilationTabs::register();
 	}
+	
+	public static function check()
+    {
+        $single = is_singular( 'page' );
+
+        $term = has_term( 'compilation', 'page_type' );
+        
+        return ( $single && $term );
+    }
 }
 
 ?>

@@ -25,11 +25,15 @@ class ACFBilletCards
 
         $posts = get_posts( $args );
 
+        $choices = [];
+
         if ( !empty( $posts ) ) {
             foreach( $posts as $post ) {
-                $field['choices'][$post->ID] = $post->post_title; 
+                $choices[$post->ID] = $post->post_title; 
             }
         }
+
+        $field['choices'] = $choices;
 
         return $field;
     }

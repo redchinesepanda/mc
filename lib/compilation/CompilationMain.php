@@ -29,10 +29,8 @@ class CompilationMain
     }
 
 	public static function check()
-    {   
-        $permission = true;
-        
-        return $permission;
+    {
+        return LegalComponents::check();
     }
 
     public static function register()
