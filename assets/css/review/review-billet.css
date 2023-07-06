@@ -149,11 +149,11 @@
 
 /* Billet Typography */
 
-.legal-billet.legal-default .review-title-link {
+.legal-billet .billet-review.legal-default .review-title-link {
 	color: #ffffff;
 }
 
-.legal-billet:not( .legal-default ) .review-title-link {
+.legal-billet .billet-review:not( .legal-default ) .review-title-link {
 	color: #000000;
 }
 

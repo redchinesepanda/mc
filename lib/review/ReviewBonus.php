@@ -12,7 +12,7 @@ class ReviewBonus
         'review-billet' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
 
-            'ver' => '1.0.5',
+            'ver' => '1.0.6',
         ],
     ];
  
@@ -267,12 +267,13 @@ class ReviewBonus
         
         if( $group ) {
 			if ( !empty( $group[ self::GROUP[ 'background' ] ] ) ) {
-				$styles = '
-					.wp-list-table .column-active_blogs {
-						width: 10em;
-						white-space: nowrap
-					}
-					';
+				// $styles = '
+				// 	.wp-list-table .column-active_blogs {
+				// 		width: 10em;
+				// 		white-space: nowrap
+				// 	}
+				// 	';
+
 				return '.legal-billet .billet-review {
 					background-color: ' . $group[ self::GROUP[ 'background' ] ] . ';
 				}';
@@ -319,7 +320,7 @@ class ReviewBonus
         // if( $group ) {
 			return [
 				'class' => ( !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default' ),
-				
+
 				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
 				'review' => [
