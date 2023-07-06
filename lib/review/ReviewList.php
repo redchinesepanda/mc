@@ -140,7 +140,7 @@ class ReviewList
             {
                 foreach ( $elements as $element_id => $element )
                 {
-                    $class = self::CSS_CLASS[ 'base' ] . '-' . $node_id . '-' . $element_id;
+                    $class = self::CLASSES[ 'base' ] . '-' . $node_id . '-' . $element_id;
 
                     $element->setAttribute( 'class', $class );
 
