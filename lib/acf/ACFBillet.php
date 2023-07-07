@@ -8,6 +8,8 @@ class ACFBillet
         'direction' => 'billet-list-part-direction',
 
         'profit' => 'billet-profit-items',
+
+        'font' => 'billet-font',
     ];
 
     const PROFIT = [
@@ -25,6 +27,8 @@ class ACFBillet
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'icon' ], [ $handler, 'choices_icon' ] );
 
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'direction' ], [ $handler, 'choices_direction' ] );
+
+        add_filter( 'acf/load_field/name=' . self::FIELD[ 'font' ], [ $handler, 'choices_font' ] );
 
         add_action( 'acf/save_post', [ $handler, 'my_acf_save_post' ] );
 
@@ -87,6 +91,19 @@ class ACFBillet
         $choices[ 'legal-column' ] = 'Столбец';
 
         $field[ 'choices' ] = $choices;
+
+        return $field;
+    }
+
+    function choices_font( $field )
+    {
+        $choices[ 'legal-default' ] = 'Белый';
+
+        $choices[ 'legal-black' ] = 'Черный';
+
+        $field[ 'choices' ] = $choices;
+
+        $field[ 'default_value' ] = 'legal-default';
 
         return $field;
     }
