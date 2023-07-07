@@ -30,6 +30,11 @@
     padding-bottom: 30px;
 }
 
+.bonus-content p,
+.billet-description p {
+    padding-bottom: 15px;
+}
+
 .tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
     padding-bottom: 20px;
 }
