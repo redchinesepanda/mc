@@ -99,12 +99,25 @@
     padding-bottom: 30px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
-.billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.bonus-content > ul:not( .legal-override ):not( [style] ),
+.billet-description > ul:not( .legal-override ):not( [style] ),
 .bonus-content > ol:not( .legal-override ),
 .billet-description > ol:not( .legal-override ) {
     padding-top: 0px;
+}
+
+.bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.bonus-content > ol:not( .legal-override ):not( :last-child ),
+.billet-description > ol:not( .legal-override ):not( :last-child ) {
     padding-bottom: 15px;
+}
+
+.bonus-content > ul:not( .legal-override ):not( [style] ):last-child,
+.billet-description > ul:not( .legal-override ):not( [style] ):last-child,
+.bonus-content > ol:not( .legal-override ):last-child,
+.billet-description > ol:not( .legal-override ):last-child {
+    padding-top: 0px;
 }
 
 .tcb-post-content li > ul:not( .legal-override ),
