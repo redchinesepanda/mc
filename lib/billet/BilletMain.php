@@ -20,7 +20,7 @@ class BilletMain
         'billet-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
 
         'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
