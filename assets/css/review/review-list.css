@@ -117,7 +117,7 @@
 .billet-description > ul:not( .legal-override ):not( [style] ):last-child,
 .bonus-content > ol:not( .legal-override ):last-child,
 .billet-description > ol:not( .legal-override ):last-child {
-    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .tcb-post-content li > ul:not( .legal-override ),
