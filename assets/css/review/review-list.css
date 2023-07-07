@@ -99,8 +99,8 @@
     padding-bottom: 30px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( [style] ),
-.billet-description > ul:not( .legal-override ):not( [style] ),
+.bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .bonus-content > ol:not( .legal-override ),
 .billet-description > ol:not( .legal-override ) {
     padding-top: 0px;
