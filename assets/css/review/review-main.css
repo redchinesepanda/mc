@@ -30,8 +30,8 @@
     padding-bottom: 30px;
 }
 
-.bonus-content p,
-.billet-description p {
+.bonus-content > p:not( :last-child ):not( .legal-override ),
+.billet-description > p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 15px;
 }
 
