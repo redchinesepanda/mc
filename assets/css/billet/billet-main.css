@@ -417,6 +417,14 @@ body {
 
 /* Billet Typography */
 
+.billet-left .legal-review.legal-black {
+    color: #000000;
+}
+
+.billet-left .legal-review:not( .legal-black ) {
+    color: #FFFFFF;
+}
+
 .billet-left .legal-review {
     font-family: "Source Sans Pro";
     font-size: 16px;
@@ -425,7 +433,6 @@ body {
     line-height: 28px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FFFFFF;
 }
 
 .billet-center .legal-title,
