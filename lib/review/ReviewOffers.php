@@ -133,10 +133,6 @@ class ReviewOffers
 			
 		}
 
-		LegalDebug::debug( [
-			'items' => $items,
-		] );
-
 		return $items;
 	}
 
@@ -155,16 +151,6 @@ class ReviewOffers
 				$items = self::parse_offers( $offers );
 			}
 		}
-
-		LegalDebug::debug( [
-			'id' => $post->ID,
-
-			// 'query' => self::offer_query( $post ),
-
-			'offers' => count( $offers ),
-
-			'items' => count( $items ),
-		] );
 
 		return $items;
 	}
