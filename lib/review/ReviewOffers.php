@@ -163,8 +163,6 @@ class ReviewOffers
 
 	public static function get_offers()
 	{
-		// $args = [];
-		
 		$items = [];
 
 		$post = get_post();
@@ -176,14 +174,8 @@ class ReviewOffers
 			if ( !empty( $offers ) )
 			{
 				$items = self::parse_offers( $offers );
-
-				// $args[ 'items' ] = self::parse_offers( $offers );
-
-				// $args[ 'class' ] = ( count( $args[ 'items' ] ) > 3 ? 'legal-carousel' )
 			}
 		}
-
-		// return $args;
 		
 		return $items;
 	}
