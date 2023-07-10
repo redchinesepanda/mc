@@ -194,7 +194,7 @@ class ReviewOffers
 
 		$item->setAttribute( 'class', 'legal-other-offers' );
 
-		LegalDOM::appendHTML( $item, self::render_offers() )
+		LegalDOM::appendHTML( $item, self::render_offers() );
 
 		$nodes->item( $nodes->length - 1 )->insertBefore( $item );
 
