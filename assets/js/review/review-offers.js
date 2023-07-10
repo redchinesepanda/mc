@@ -4,29 +4,68 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	// const slidesContainer = document.getElementById( 'legal-other-offers' );
 
-	const slidesContainer = document.querySelector( '.legal-other-offers' );
+	document.querySelectorAll( '.legal-other-offers-wrapper' ).forEach( function ( wrapper, index ) {
+		const slidesContainer = wrapper.querySelector( '.legal-other-offers' );
 
-	console.log( 'review-offers slidesContainer: ' + slidesContainer.classList );
+		console.log( 'review-offers slidesContainer: ' + slidesContainer.classList );
+
+		const slide = slidesContainer.querySelector( '.offers-item' );
+
+		const prevButton = wrapper.querySelector( '.offers-arrow-prev' );
+
+		const nextButton = wrapper.querySelector( '.offers-arrow-next' );
+
+		const offset = 20;
+
+		nextButton.addEventListener( "click", () => {
+			const slideWidth = slide.clientWidth;
 	
-	const slide = document.querySelector( ".slide" );
+			slidesContainer.scrollLeft += slideWidth + offset;
+		} );
+	
+		prevButton.addEventListener( "click", () => {
+			const slideWidth = slide.clientWidth;
+	
+			slidesContainer.scrollLeft -= slideWidth + offset;
+		} );
 
-	const prevButton = document.getElementById( "slide-arrow-prev" );
+		// imageset.id = 'imageset-' + index;
 
-	const nextButton = document.getElementById( "slide-arrow-next" );
+		// imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
 
-	const offset = 20;
+		// 	item.dataset.imageset = imageset.id;
 
-	nextButton.addEventListener( "click", () => {
-		const slideWidth = slide.clientWidth;
+		// 	item.dataset.id = index;
 
-		slidesContainer.scrollLeft += slideWidth + offset;
+		// 	item.addEventListener( 'click', popup, false );
+
+		// 	item.addEventListener( 'click', popupUpdate, false );
+		// } );
 	} );
 
-	prevButton.addEventListener( "click", () => {
-		const slideWidth = slide.clientWidth;
+	
 
-		slidesContainer.scrollLeft -= slideWidth + offset;
-	} );
+	// console.log( 'review-offers slidesContainer: ' + slidesContainer.classList );
+	
+	// const slide = document.querySelector( ".slide" );
+
+	// const prevButton = document.getElementById( "slide-arrow-prev" );
+
+	// const nextButton = document.getElementById( "slide-arrow-next" );
+
+	// const offset = 20;
+
+	// nextButton.addEventListener( "click", () => {
+	// 	const slideWidth = slide.clientWidth;
+
+	// 	slidesContainer.scrollLeft += slideWidth + offset;
+	// } );
+
+	// prevButton.addEventListener( "click", () => {
+	// 	const slideWidth = slide.clientWidth;
+
+	// 	slidesContainer.scrollLeft -= slideWidth + offset;
+	// } );
 } );
 
 // review-offers-js end
