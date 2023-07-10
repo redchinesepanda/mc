@@ -1,0 +1,25 @@
+/* Display */
+
+.legal-other-offers {
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+	row-gap: 20px;
+	flex-wrap: wrap;
+}
+
+.legal-other-offers .offers-item {
+	flex-basis: 33.333%;
+}
+
+/* Position */
+
+.legal-other-offers .offers-item {
+	padding: 20px;
+}
+
+/* Background */
+
+.legal-other-offers .offers-item {
+	border-radius: 25px;
+}
