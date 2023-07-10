@@ -69,6 +69,8 @@ class ReviewOffers
 
 		'background' => 'about-background',
 
+		'font' => 'about-font',
+
 		'afillate' => 'about-afillate',
 	];
 
@@ -129,6 +131,8 @@ class ReviewOffers
 				'logo' => $group[ self::FIELD[ 'logo' ] ],
 
 				'background' => $group[ self::FIELD[ 'background' ] ],
+
+				'font' => $group[ self::FIELD[ 'font' ] ],
 
 				'afillate' => [
                     'href' => $group[ self::FIELD[ 'afillate' ] ],

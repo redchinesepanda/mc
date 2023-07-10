@@ -53,3 +53,11 @@
 	font-weight: 600;
 	line-height: 31.5px;
 }
+
+.legal-other-offers .item-bonus:not( .legal-black ) {
+    color: #ffffff;
+}
+
+.legal-other-offers .item-bonus.legal-black {
+    color: #000000;
+}
