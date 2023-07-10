@@ -33,7 +33,7 @@ class ReviewOffers
     {
         $handler = new self();
 
-        add_action( 'init', [ $handler, 'location' ] );
+        add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -154,7 +154,7 @@ class ReviewOffers
 		'offers' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers.php',
 	];
 
-    public static function render_stats()
+    public static function render_offers()
     {
         ob_start();
 
@@ -164,6 +164,31 @@ class ReviewOffers
 
         return $output;
     }
+
+	public static function get_content( $content )
+	{
+        if ( !ReviewMain::check() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+		$nodes = ReviewFAQ::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		$item = $dom->createElement( 'div' );
+
+		$item->setAttribute( 'class', 'legal-other-offers' );
+
+		LegalDOM::appendHTML( $item, self::render_offers() )
+
+		$nodes->item( 0 )->insertBefore( $item );
+
+		return $dom->saveHTML();
+	}
 }
 
 ?>
