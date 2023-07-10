@@ -134,7 +134,9 @@
 	background-position: center center;
     background-repeat: no-repeat;
 	background-size: auto;
-	background-color: rgba(0, 0, 0, 0.75);
+	/* background-color: rgba(0, 0, 0, 0.75); */
+	background-color: unset;
+	border: unset;
 	opacity: 0.5;
 	transition: opacity 100ms;
 }
