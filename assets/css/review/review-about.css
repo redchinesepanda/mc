@@ -110,7 +110,7 @@
 }
 
 .review-about .about-center h1,
-.review-about .about-center h3 {
+.review-about .about-center .review-bonus-title {
     padding-bottom: 0px;
 }
 
@@ -152,14 +152,14 @@
 
 .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
-.review-about:not( .legal-black ) .about-center h3,
+.review-about:not( .legal-black ) .about-center .review-bonus-title,
 .review-about:not( .legal-black ) .about-center p {
     color: #ffffff;
 }
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
-.review-about.legal-black .about-center h3,
+.review-about.legal-black .about-center .review-bonus-title,
 .review-about.legal-black .about-center p {
     color: #000000;
 }
@@ -181,7 +181,7 @@
     text-align: center;
 }
 
-.review-about .about-center h3 {
+.review-about .about-center .review-bonus-title {
     font-family: "Source Sans Pro";
     font-size: 20px;
     font-style: normal;

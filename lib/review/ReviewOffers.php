@@ -3,7 +3,15 @@
 class ReviewOffers
 {
 	const FIELD = [
+		'about' => 'review-about',
+
 		'afillate' => 'about-afillate',
+
+		'title' => 'about-title',
+
+		'bonus' => 'about-bonus',
+
+		// 'description' => 'about-description',
 	];
 
 	const TAXONOMY = [
@@ -47,7 +55,18 @@ class ReviewOffers
 
 	public static function parse_offers( $offers )
 	{
-		
+		$items = [];
+
+		foreach ( $offers as $offer )
+		{
+			$group = get_field( self::FIELD[ 'about' ], $offer->ID );
+
+			$items[] = [
+				'title' => $group[ self::FIELD[ 'title' ] ],
+			];
+		}
+
+		return $items;
 	}
 
 	public static function get_offers()
