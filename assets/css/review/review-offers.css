@@ -109,6 +109,8 @@
 	text-transform: uppercase;
 }
 
+/* Slider */
+
 .slider-wrapper {
 	margin: 1rem;
 	position: relative;
@@ -116,14 +118,14 @@
   }
   
   .slides-container {
-	height: calc(100vh - 2rem);
+	height: 300px;
 	width: 100%;
 	display: flex;
 	overflow: scroll;
 	scroll-behavior: smooth;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 0 !important;
   }
   
   .slide-arrow {
