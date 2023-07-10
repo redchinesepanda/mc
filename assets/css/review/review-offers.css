@@ -29,6 +29,10 @@
 	padding: 20px;
 }
 
+.legal-other-offers .item-logo {
+	margin-top: auto;
+}
+
 .legal-other-offers .item-afillate {
 	padding: 12px 25px 12px 60px;
 }
