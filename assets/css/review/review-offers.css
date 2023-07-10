@@ -182,4 +182,23 @@
   .slide:nth-child(4) {
 	background-color: #da6f2b;
   }
+
+  .slides-container {
+
+    scrollbar-width: none; /* Firefox */
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+}
+
+/* WebKit */
+
+.slides-container::-webkit-scrollbar { 
+
+    width: 0;
+
+    height: 0;
+
+}
+
   
