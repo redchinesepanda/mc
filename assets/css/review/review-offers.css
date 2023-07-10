@@ -30,11 +30,6 @@
 	-ms-overflow-style: none;
 }
 
-.legal-other-offers::-webkit-scrollbar { 
-	width: 0;
-	height: 0;
-}
-
 .legal-other-offers .offers-item {
 	display: flex;
 	flex-direction: column;
@@ -42,11 +37,6 @@
 	row-gap: 20px;
 	flex-shrink: 0;
 }
-
-/* .legal-other-offers div:first-child:nth-last-child(4),
-.legal-other-offers div:first-child:nth-last-child(4) ~ div {
-	flex-grow: 1;
-} */
 
 .legal-other-offers .item-bonus {
 	display: flex;
@@ -100,6 +90,14 @@
 	right: 0;
 }
 
+.legal-other-offers .offers-item:first-of-type {
+	margin-left: auto;
+}
+
+.legal-other-offers .offers-item:last-of-type {
+	margin-right: auto;
+}
+
 /* Width and Height */
 
 .legal-other-offers .item-bonus {
@@ -118,6 +116,11 @@
 .legal-other-offers-wrapper .offers-arrow {
 	width: 30px;
 	height: 60px;
+}
+
+.legal-other-offers::-webkit-scrollbar { 
+	width: 0;
+	height: 0;
 }
 
 /* Background */
