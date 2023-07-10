@@ -19,10 +19,18 @@
 	flex-basis: 33.333%;
 }
 
+.legal-other-offers .item-afillate {
+	display: block;
+}
+
 /* Position */
 
 .legal-other-offers .offers-item {
 	padding: 20px;
+}
+
+.legal-other-offers .item-afillate {
+	padding: 12px 25px 12px 60px;
 }
 
 /* Width and Height */
@@ -30,6 +38,10 @@
 .legal-other-offers .item-logo {
 	width: 100%;
 	height: 45px;
+}
+
+.legal-other-offers .item-afillate {
+	width: fit-content;
 }
 
 /* Background */
@@ -42,6 +54,15 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
+}
+
+.legal-other-offers .item-afillate {
+	background-image: url( '../../img/review/review-get.svg' );
+	background-position: left 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
 }
 
 /* Typography */
@@ -60,4 +81,15 @@
 
 .legal-other-offers .item-bonus.legal-black {
     color: #000000;
+}
+
+.legal-other-offers .item-afillate {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 14.4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	text-transform: uppercase;
 }
