@@ -1,10 +1,3 @@
-<?php
-
-LegalDebug::debug( [
-	'args' => $args,
-] );
-
-?>
 <?php if( !empty( $args ) ) : ?>
 	<div class="legal-other-offers">
 		<?php foreach ( $args as $item_id => $item ) : ?>
