@@ -78,6 +78,7 @@
 	font-style: normal;
 	font-weight: 600;
 	line-height: 31.5px;
+	text-align: center;
 }
 
 .legal-other-offers .item-bonus:not( .legal-black ) {
