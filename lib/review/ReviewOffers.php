@@ -93,15 +93,15 @@ class ReviewOffers
                 ],
             ],
 
-            // 'tax_query' => [
-            //     [
-            //         'taxonomy' => self::TAXONOMY[ 'group' ],
+            'tax_query' => [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'group' ],
 
-            //         'field' => 'slug',
+                    'field' => 'slug',
 
-            //         'terms' => self::TERM[ 'offers' ],
-			// 	],
-            // ],
+                    'terms' => self::TERM[ 'offers' ],
+				],
+            ],
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
@@ -152,7 +152,7 @@ class ReviewOffers
 
 			// 'query' => self::offer_query( $post ),
 
-			'offers' => $offers,
+			'offers' => count( $offers ),
 
 			'items' => $items,
 		] );
