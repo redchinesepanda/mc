@@ -43,3 +43,13 @@
 	background-repeat: no-repeat;
 	background-size: auto;
 }
+
+/* Typography */
+
+.legal-other-offers .item-bonus {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 31.5px;
+}
