@@ -205,9 +205,9 @@ class ReviewOffers
 
 		$item = $dom->createElement( 'div' );
 
-		// $item->setAttribute( 'id', 'slides-container' ); 
+		// $item->setAttribute( 'class', 'legal-other-offers' ); 
 
-		$item->setAttribute( 'class', 'legal-other-offers' ); 
+		$item->setAttribute( 'class', 'legal-other-offers-wrapper' ); 
 
 		LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
 
