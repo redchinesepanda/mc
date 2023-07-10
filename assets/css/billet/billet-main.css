@@ -360,9 +360,9 @@ body {
     padding-bottom: 20px;
 }
 
-/* .billet-footer:not( :last-child ) {
-    margin-bottom: 15px;
-} */
+.billet-footer {
+    margin-top: 5px;
+}
 
 .billet-title h3 {
     margin: 0px;
