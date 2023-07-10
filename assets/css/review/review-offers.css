@@ -48,7 +48,7 @@
 }
 
 .legal-other-offers .offers-item {
-	padding: 20px;
+	/* padding: 20px; */
 }
 
 .legal-other-offers .item-afillate {
@@ -59,7 +59,8 @@
 
 .legal-other-offers .offers-item {
 	/* flex-basis: calc( 33.333% - 60px ); */
-	flex: 1 0 33.333%;
+	/* flex: 1 0 33.333%; */
+	flex: 1 0 calc( 33.333% - 40px );
 }
 
 .legal-other-offers .item-bonus {
