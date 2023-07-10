@@ -26,6 +26,11 @@
 
 /* Position */
 
+.legal-other-offers-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
 .legal-other-offers {
 	margin-bottom: 20px;
 }
@@ -120,7 +125,7 @@
   .slides-container {
 	display: flex;
 	column-gap: 20px;
-	
+
 	height: 300px;
 	width: 100%;
 
