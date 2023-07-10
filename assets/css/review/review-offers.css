@@ -15,6 +15,16 @@
 
 @media screen and ( max-width: 767px ) {
 
+	/* Position */
+
+	.legal-other-offers .offers-item:first-of-type {
+		margin-left: auto;
+	}
+
+	.legal-other-offers .offers-item:last-of-type {
+		margin-right: auto;
+	}
+
 	/* Width and Height */
 
 	.legal-other-offers .offers-item {
@@ -88,14 +98,6 @@
 
 .legal-other-offers-wrapper .offers-arrow-next {
 	right: 0;
-}
-
-.legal-other-offers .offers-item:first-of-type {
-	margin-left: auto;
-}
-
-.legal-other-offers .offers-item:last-of-type {
-	margin-right: auto;
 }
 
 /* Width and Height */
