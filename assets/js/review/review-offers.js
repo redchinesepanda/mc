@@ -2,8 +2,10 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	const slidesContainer = document.getElementById( 'legal-other-offers' );
+	// const slidesContainer = document.getElementById( 'legal-other-offers' );
 
+	const slidesContainer = document.querySelector( '.legal-other-offers' );
+	
 	const slide = document.querySelector( ".slide" );
 
 	const prevButton = document.getElementById( "slide-arrow-prev" );
