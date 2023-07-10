@@ -97,13 +97,13 @@
 	border: 1.6px solid #ffffff;
 }
 
-.legal-other-offers .offers-arrow-prev {
+.legal-other-offers-wrapper .offers-arrow-prev {
 	left: 0;
 	padding-left: 0.25rem;
 	border-radius: 0 2rem 2rem 0;
 }
 
-.legal-other-offers .offers-arrow-next {
+.legal-other-offers-wrapper .offers-arrow-next {
 	right: 0;
 	padding-left: 0.75rem;
 	border-radius: 2rem 0 0 2rem;
