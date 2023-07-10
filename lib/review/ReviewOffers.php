@@ -180,6 +180,8 @@ class ReviewOffers
 
 		$dom = LegalDOM::get_dom( $content );
 
+		$body = $dom->getElementsByTagName( 'body' )->item(0);
+
 		$nodes = self::get_nodes( $dom );
 
 		LegalDebug::debug( [
@@ -196,7 +198,7 @@ class ReviewOffers
 
 		LegalDOM::appendHTML( $item, self::render_offers() );
 
-		$nodes->item( $nodes->length - 1 )->insertBefore( $item );
+		$body->insertBefore( $item, $nodes->item( $nodes->length - 1 ) );
 
 		return $dom->saveHTML();
 	}
