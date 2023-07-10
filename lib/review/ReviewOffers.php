@@ -147,6 +147,10 @@ class ReviewOffers
 			}
 		}
 
+		LegalDebug::debug( [
+			'items' => $items,
+		] );
+
 		return $items;
 	}
 
@@ -183,10 +187,6 @@ class ReviewOffers
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		$nodes = self::get_nodes( $dom );
-
-		LegalDebug::debug( [
-			'$nodes' => $nodes,
-		] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
