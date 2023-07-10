@@ -156,7 +156,7 @@
 
 
   
-.slide-arrow {
+/* .slide-arrow {
 	display: flex;
 
 	position: absolute;
@@ -178,7 +178,7 @@
 
 	opacity: 0.5;
 	transition: opacity 100ms;
-  }
+  } */
 
 /* .slider-wrapper {
 	margin-bottom: 30px;
