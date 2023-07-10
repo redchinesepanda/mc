@@ -150,6 +150,8 @@ class ReviewOffers
 		LegalDebug::debug( [
 			'id' => $post->ID,
 
+			'query' => self::offer_query( $post ),
+
 			'offers' => $offers,
 
 			'items' => $items,
