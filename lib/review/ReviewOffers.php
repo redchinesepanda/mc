@@ -2,16 +2,70 @@
 
 class ReviewOffers
 {
+	const JS = [
+        'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
+    ];
+
+    public static function register_script()
+    {
+		BaseMain::register_script( self::JS );
+    }
+
+	const CSS = [
+        'review-offers' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+    public static function register_style()
+    {
+        BaseMain::register_style( self::CSS );
+    }
+
+	public static function register_inline_style()
+    {
+		ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+    }
+
+	public static function register()
+    {
+        $handler = new self();
+
+        add_action( 'init', [ $handler, 'location' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+    }
+
+	public static function inline_style() {
+		$style = [];
+
+		$style_items = self::get_offers();
+
+		if ( !empty( $style_items ) ) {
+			foreach ( $style_items as $style_item_id => $style_item ) {
+				$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' .item-logo { background-image: url(\'' . $style_item[ 'logo' ] .'\'); }';
+			}
+		}
+
+		return implode( ' ', $style );
+	}
+
 	const FIELD = [
 		'about' => 'review-about',
 
 		'afillate' => 'about-afillate',
 
-		'title' => 'about-title',
-
 		'bonus' => 'about-bonus',
 
-		// 'description' => 'about-description',
+		'logo' => 'about-logo',
+
+		'afillate' => 'about-afillate',
 	];
 
 	const TAXONOMY = [
@@ -62,7 +116,15 @@ class ReviewOffers
 			$group = get_field( self::FIELD[ 'about' ], $offer->ID );
 
 			$items[] = [
-				'title' => $group[ self::FIELD[ 'title' ] ],
+				'bonus' => $group[ self::FIELD[ 'bonus' ] ],
+
+				'logo' => $group[ self::FIELD[ 'logo' ] ],
+
+				'afillate' => [
+                    'href' => $group[ self::FIELD[ 'afillate' ] ],
+
+                    'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+                ],
 			];
 		}
 
@@ -81,7 +143,7 @@ class ReviewOffers
 
 			if ( !empty( $offers ) )
 			{
-
+				$items = self::parse_offers( $offers );
 			}
 		}
 
