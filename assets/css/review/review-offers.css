@@ -62,7 +62,8 @@
 /* Width and Height */
 
 .legal-other-offers .offers-item {
-	flex: 1 0 calc( 33.333% - 12px );
+	/* flex: 1 0 calc( 33.333% - 12px ); */
+	flex: 1 0 calc( 100% / 3 - 12px );
 }
 
 .legal-other-offers .item-bonus {
