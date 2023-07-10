@@ -8,7 +8,7 @@ class ReviewOffers
 
     public static function register_script()
     {
-		BaseMain::register_script( self::JS );
+		ReviewMain::register_script( self::JS );
     }
 
 	const CSS = [
@@ -21,7 +21,7 @@ class ReviewOffers
 
     public static function register_style()
     {
-        BaseMain::register_style( self::CSS );
+        ReviewMain::register_style( self::CSS );
     }
 
 	public static function register_inline_style()
@@ -103,15 +103,15 @@ class ReviewOffers
                 ],
             ],
 
-            // 'tax_query' => [
-            //     [
-            //         'taxonomy' => self::TAXONOMY[ 'group' ],
+            'tax_query' => [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'group' ],
 
-            //         'field' => 'slug',
+                    'field' => 'slug',
 
-            //         'terms' => self::TERM[ 'offers' ],
-			// 	],
-            // ],
+                    'terms' => self::TERM[ 'offers' ],
+				],
+            ],
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
