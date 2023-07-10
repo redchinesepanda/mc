@@ -91,7 +91,7 @@ class ReviewOffers
                 [
                     'key' => self::FIELD[ 'afillate' ],
                 ],
-            ]
+            ],
 
             'tax_query' => [
                 [
