@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const slidesContainer = document.querySelector( '.legal-other-offers' );
 
-	console.log( 'review-offers slidesContainer: ' + slidesContainer );
+	console.log( 'review-offers slidesContainer: ' + slidesContainer.classList );
 	
 	const slide = document.querySelector( ".slide" );
 
