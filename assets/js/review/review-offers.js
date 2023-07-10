@@ -11,7 +11,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		const prevButton = wrapper.querySelector( '.offers-arrow-prev' );
 
-		const offset = 18;
+		let offset = 0;
+
+		if ( window.matchMedia( '( min-width: 768px )' ).matches ) {
+			offset = 18;
+		}
 
 		nextButton.addEventListener( "click", () => {
 			const slideWidth = slide.clientWidth;
