@@ -9,6 +9,13 @@
 }
 
 .legal-other-offers .offers-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+}
+
+.legal-other-offers .offers-item {
 	flex-basis: 33.333%;
 }
 
