@@ -87,21 +87,21 @@ class ReviewOffers
 
             'exclude' => $post->ID,
 
-			'meta_query' => [
-                [
-                    'key' => self::FIELD[ 'afillate' ],
-                ],
-            ],
+			// 'meta_query' => [
+            //     [
+            //         'key' => self::FIELD[ 'afillate' ],
+            //     ],
+            // ],
 
-            'tax_query' => [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'group' ],
+            // 'tax_query' => [
+            //     [
+            //         'taxonomy' => self::TAXONOMY[ 'group' ],
 
-                    'field' => 'slug',
+            //         'field' => 'slug',
 
-                    'terms' => self::TERM[ 'offers' ],
-				],
-            ],
+            //         'terms' => self::TERM[ 'offers' ],
+			// 	],
+            // ],
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
@@ -150,7 +150,7 @@ class ReviewOffers
 		LegalDebug::debug( [
 			'id' => $post->ID,
 
-			'query' => self::offer_query( $post ),
+			// 'query' => self::offer_query( $post ),
 
 			'offers' => $offers,
 
