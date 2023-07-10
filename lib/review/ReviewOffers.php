@@ -175,7 +175,7 @@ class ReviewOffers
 
 			if ( !empty( $offers ) )
 			{
-				;items = self::parse_offers( $offers );
+				$items = self::parse_offers( $offers );
 
 				// $args[ 'items' ] = self::parse_offers( $offers );
 
