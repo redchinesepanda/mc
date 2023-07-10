@@ -2,7 +2,7 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	const slidesContainer = document.getElementById( "slides-container" );
+	const slidesContainer = document.getElementById( 'legal-other-offers' );
 
 	const slide = document.querySelector( ".slide" );
 
