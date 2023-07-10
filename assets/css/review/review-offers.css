@@ -18,8 +18,21 @@
 	padding: 20px;
 }
 
+/* Width and Height */
+
+.legal-other-offers .item-logo {
+	width: 138px;
+	height: 45px;
+}
+
 /* Background */
 
 .legal-other-offers .offers-item {
 	border-radius: 25px;
+}
+
+.legal-other-offers .item-logo {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
