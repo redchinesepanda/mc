@@ -87,11 +87,11 @@ class ReviewOffers
 
             'exclude' => $post->ID,
 
-			// 'meta_query' => [
-            //     [
-            //         'key' => self::FIELD[ 'afillate' ],
-            //     ],
-            // ],
+			'meta_query' => [
+                [
+                    'key' => self::FIELD[ 'afillate' ],
+                ],
+            ],
 
             // 'tax_query' => [
             //     [
