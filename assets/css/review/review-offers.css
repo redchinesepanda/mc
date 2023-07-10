@@ -58,7 +58,8 @@
 /* Width and Height */
 
 .legal-other-offers .offers-item {
-	flex-basis: calc( 33.333% - 60px );
+	/* flex-basis: calc( 33.333% - 60px ); */
+	flex: 1 0 33.333%;
 }
 
 .legal-other-offers .item-bonus {
