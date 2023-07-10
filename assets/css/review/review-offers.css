@@ -40,8 +40,12 @@
 	flex-direction: column;
 	align-items: center;
 	row-gap: 20px;
-	flex-grow: 1;
 	flex-shrink: 0;
+}
+
+.legal-other-offers div:first-child:nth-last-child(4),
+.legal-other-offers div:first-child:nth-last-child(4) ~ div {
+	flex-grow: 1;
 }
 
 .legal-other-offers .item-bonus {
