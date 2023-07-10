@@ -89,7 +89,7 @@ class ReviewOffers
 
 			'meta_query' => [
                 [
-                    'key' => self::FIELD[ 'afillate' ],
+                    'key' => self::FIELD[ 'about' ] . '_' . self::FIELD[ 'afillate' ],
                 ],
             ],
 
