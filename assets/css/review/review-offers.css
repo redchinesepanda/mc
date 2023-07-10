@@ -19,7 +19,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	row-gap: 20px;
+	row-gap: 18px;
 }
 
 .legal-other-offers .item-bonus {
@@ -60,7 +60,7 @@
 .legal-other-offers .offers-item {
 	/* flex-basis: calc( 33.333% - 60px ); */
 	/* flex: 1 0 33.333%; */
-	flex: 1 0 calc( 33.333% - 40px );
+	flex: 1 0 calc( 33.333% - 12px );
 }
 
 .legal-other-offers .item-bonus {
