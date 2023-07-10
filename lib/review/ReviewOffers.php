@@ -182,6 +182,10 @@ class ReviewOffers
 
 		$nodes = ReviewFAQ::get_nodes( $dom );
 
+		LegalDebug::debug( [
+			'$nodes' => $nodes,
+		] );
+
 		if ( $nodes->length == 0 ) {
 			return $content;
 		}
