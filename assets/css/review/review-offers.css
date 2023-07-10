@@ -103,14 +103,18 @@
 
 .legal-other-offers-wrapper .offers-arrow-prev {
 	left: 0;
-	padding-left: 0.25rem;
-	border-radius: 0 2rem 2rem 0;
+	border-radius: 0px 50px 50px 0px;
 }
 
 .legal-other-offers-wrapper .offers-arrow-next {
 	right: 0;
-	padding-left: 0.75rem;
-	border-radius: 2rem 0 0 2rem;
+	border-radius: 50px 0px 0px 0px 50px;
+}
+
+.legal-other-offers-wrapper .offers-arrow-prev,
+.legal-other-offers-wrapper .offers-arrow-next {
+	width: 30px;
+	height: 60px;
 }
 
 /* Typography */
