@@ -2,25 +2,25 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	const slidesContainer = document.getElementById("slides-container");
+	const slidesContainer = document.getElementById( "slides-container" );
 
-	const slide = document.querySelector(".slide");
+	const slide = document.querySelector( ".slide" );
 
-	const prevButton = document.getElementById("slide-arrow-prev");
+	const prevButton = document.getElementById( "slide-arrow-prev" );
 
-	const nextButton = document.getElementById("slide-arrow-next");
+	const nextButton = document.getElementById( "slide-arrow-next" );
 
-	nextButton.addEventListener("click", () => {
+	nextButton.addEventListener( "click", () => {
 		const slideWidth = slide.clientWidth;
 
 		slidesContainer.scrollLeft += slideWidth;
-	});
+	} );
 
-	prevButton.addEventListener("click", () => {
+	prevButton.addEventListener( "click", () => {
 		const slideWidth = slide.clientWidth;
-		
+
 		slidesContainer.scrollLeft -= slideWidth;
-	});
+	} );
 } );
 
 // review-offers-js end
