@@ -178,7 +178,7 @@ class ReviewOffers
 			return $content;
 		}
 
-		$dom = self::get_dom( $content );
+		$dom = LegalDOM::get_dom( $content );
 
 		$nodes = self::get_nodes( $dom );
 
