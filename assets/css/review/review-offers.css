@@ -34,6 +34,10 @@
 	padding: 20px;
 }
 
+.legal-other-offers .item-bonus {
+	margin-bottom: 10px;
+}
+
 .legal-other-offers .item-logo {
 	/* margin-top: auto; */
 	margin-bottom: 20px;
@@ -50,7 +54,7 @@
 }
 
 .legal-other-offers .item-bonus {
-	height: 64px;
+	height: 40px;
 }
 
 .legal-other-offers .item-logo {
@@ -91,7 +95,7 @@
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 31.5px;
+	line-height: 20px;
 	text-align: center;
 }
 
