@@ -3,8 +3,8 @@
 .legal-other-offers {
 	display: flex;
 	/* justify-content: center; */
-	column-gap: 20px;
-	row-gap: 18px;
+	column-gap: 18px;
+	/* row-gap: 20px; */
 	/* flex-wrap: wrap; */
 	scrollbar-width: none;
 	-ms-overflow-style: none;
