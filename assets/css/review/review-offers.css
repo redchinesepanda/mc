@@ -12,7 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* row-gap: 20px; */
+	row-gap: 20px;
 }
 
 .legal-other-offers .item-bonus {
@@ -34,14 +34,13 @@
 	padding: 20px;
 }
 
-.legal-other-offers .item-bonus {
-	margin-bottom: 10px;
-}
-
-.legal-other-offers .item-logo {
-	/* margin-top: auto; */
+/* .legal-other-offers .item-bonus {
 	margin-bottom: 20px;
-}
+} */
+
+/* .legal-other-offers .item-logo {
+	margin-bottom: 20px;
+} */
 
 .legal-other-offers .item-afillate {
 	padding: 12px 25px 12px 60px;
