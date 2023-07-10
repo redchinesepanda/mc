@@ -153,14 +153,14 @@
 .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
 .review-about:not( .legal-black ) .about-center .review-bonus-title,
-.review-about:not( .legal-black ) .about-center p {
+.review-about:not( .legal-black ) .about-center .review-bonus-description {
     color: #ffffff;
 }
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
 .review-about.legal-black .about-center .review-bonus-title,
-.review-about.legal-black .about-center p {
+.review-about.legal-black .about-center .review-bonus-description {
     color: #000000;
 }
 
@@ -190,7 +190,7 @@
     text-align: center;
 }
 
-.review-about .about-center p {
+.review-about .about-center .review-bonus-description {
     font-family: "Source Sans Pro";
     font-size: 13px;
     font-style: normal;
