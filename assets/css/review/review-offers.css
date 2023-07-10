@@ -15,15 +15,15 @@
 	row-gap: 20px;
 }
 
-.legal-other-offers .offers-item {
-	flex-basis: 33.333%;
-}
-
 .legal-other-offers .item-afillate {
 	display: block;
 }
 
 /* Position */
+
+.legal-other-offers {
+	margin-bottom: 20px;
+}
 
 .legal-other-offers .offers-item {
 	padding: 20px;
@@ -34,6 +34,10 @@
 }
 
 /* Width and Height */
+
+.legal-other-offers .offers-item {
+	flex-basis: calc( 33.333% - 60px );
+}
 
 .legal-other-offers .item-logo {
 	width: 100%;
