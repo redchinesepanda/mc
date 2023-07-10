@@ -24,7 +24,7 @@
             <?php endif; ?>
             <div class="review-bonus-title"><?php echo $args[ 'bonus' ]; ?></div>
             <?php if( empty( $args['mode'] ) ) : ?>
-                <p><?php echo $args[ 'description' ]; ?></p>
+                <p class="review-bonus-description"><?php echo $args[ 'description' ]; ?></p>
             <?php endif; ?>
         </div>
         <div class="about-right">
