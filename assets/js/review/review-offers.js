@@ -11,9 +11,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		const slide = slidesContainer.querySelector( '.offers-item' );
 
-		const prevButton = wrapper.querySelector( '.offers-arrow-prev' );
-
 		const nextButton = wrapper.querySelector( '.offers-arrow-next' );
+
+		const prevButton = wrapper.querySelector( '.offers-arrow-prev' );
 
 		const offset = 20;
 
