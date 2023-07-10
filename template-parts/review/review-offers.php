@@ -1,5 +1,6 @@
 <?php if( !empty( $args ) ) : ?>
 	<button class="slide-arrow offers-arrow-prev">&#8249;</button>
+  	<button class="slide-arrow offers-arrow-next">&#8250;</button>
   	<div class="legal-other-offers" id="legal-other-offers">
 		<?php foreach ( $args as $item_id => $item ) : ?>
 			<div class="offers-item offers-item-<?php echo $item_id; ?>">
@@ -9,5 +10,4 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
-  	<button class="slide-arrow offers-arrow-next">&#8250;</button>
 <?php endif; ?>
