@@ -14,11 +14,11 @@
 }
 
 @media screen and ( max-width: 767px ) {
-	
+
 	/* Width and Height */
 
 	.legal-other-offers .offers-item {
-		flex: 1 0 calc( 100% - 12px );
+		flex: 1 0 100%;
 	}
 }
 
