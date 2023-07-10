@@ -115,6 +115,10 @@ class ReviewOffers
 		{
 			$group = get_field( self::FIELD[ 'about' ], $offer->ID );
 
+			LegalDebug::debug( [
+				'afillate' => ( $group[ self::FIELD[ 'afillate' ] ] ? $group[ self::FIELD[ 'afillate' ] ] : 'false' ),
+			] );
+
 			$items[] = [
 				'bonus' => $group[ self::FIELD[ 'bonus' ] ],
 
@@ -154,7 +158,7 @@ class ReviewOffers
 
 			'offers' => count( $offers ),
 
-			'items' => $items,
+			'items' => count( $items ),
 		] );
 
 		return $items;
