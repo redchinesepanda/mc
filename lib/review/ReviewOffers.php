@@ -165,6 +165,13 @@ class ReviewOffers
         return $output;
     }
 
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( './/h2' );
+	}
+
 	public static function get_content( $content )
 	{
         if ( !ReviewMain::check() ) {
@@ -185,7 +192,7 @@ class ReviewOffers
 
 		LegalDOM::appendHTML( $item, self::render_offers() )
 
-		$nodes->item( 0 )->insertBefore( $item );
+		$nodes->item( $nodes->length - 1 )->insertBefore( $item );
 
 		return $dom->saveHTML();
 	}
