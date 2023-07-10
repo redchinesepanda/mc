@@ -4,7 +4,7 @@
 			<div class="offers-item offers-item-<?php echo $item_id; ?>">
 				<div class="item-bonus"><?php echo $item[ 'bonus' ]; ?></div>
 				<div class="item-logo"></div>
-				<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="item-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
+				<a href="<?php echo $item[ 'afillate' ][ 'href' ]; ?>" class="item-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $item[ 'afillate' ][ 'text' ]; ?></a>
 			</div>
 		<?php endforeach; ?>
 	</div>
