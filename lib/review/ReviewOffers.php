@@ -2,13 +2,24 @@
 
 class ReviewOffers
 {
+	public static function check()
+    {
+        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+
+        $permission_admin = !is_admin();
+        
+        return ( $permission_post_type && $permission_admin );
+    }
+
 	const JS = [
         'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
     ];
 
     public static function register_script()
     {
-		ReviewMain::register_script( self::JS );
+		if ( self::check() ) {
+			ReviewMain::register_script( self::JS );
+		}
     }
 
 	const CSS = [
@@ -21,12 +32,16 @@ class ReviewOffers
 
     public static function register_style()
     {
-        ReviewMain::register_style( self::CSS );
+		if ( self::check() ) {
+        	ReviewMain::register_style( self::CSS );
+		}
     }
 
 	public static function register_inline_style()
     {
-		ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+		if ( self::check() ) {
+			ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+		}
     }
 
 	public static function register()
@@ -189,7 +204,7 @@ class ReviewOffers
 
 	public static function get_content( $content )
 	{
-        if ( !ReviewMain::check() ) {
+        if ( !self::check() ) {
 			return $content;
 		}
 
