@@ -93,15 +93,15 @@ class ReviewOffers
                 ],
             ],
 
-            'tax_query' => [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'group' ],
+            // 'tax_query' => [
+            //     [
+            //         'taxonomy' => self::TAXONOMY[ 'group' ],
 
-                    'field' => 'slug',
+            //         'field' => 'slug',
 
-                    'terms' => self::TERM[ 'offers' ],
-				],
-            ],
+            //         'terms' => self::TERM[ 'offers' ],
+			// 	],
+            // ],
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
@@ -117,7 +117,7 @@ class ReviewOffers
 
 			LegalDebug::debug( [
 				'bonus' => $group[ self::FIELD[ 'bonus' ] ],
-				
+
 				'afillate' => ( $group[ self::FIELD[ 'afillate' ] ] ? $group[ self::FIELD[ 'afillate' ] ] : 'false' ),
 			] );
 
