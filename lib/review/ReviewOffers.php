@@ -148,8 +148,8 @@ class ReviewOffers
 		}
 
 		LegalDebug::debug( [
-			'post' => $post,
-			
+			'id' => $post->ID,
+
 			'items' => $items,
 		] );
 
