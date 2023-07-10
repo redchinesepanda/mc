@@ -10,16 +10,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const nextButton = document.getElementById( "slide-arrow-next" );
 
+	const offset = 20;
+
 	nextButton.addEventListener( "click", () => {
 		const slideWidth = slide.clientWidth;
 
-		slidesContainer.scrollLeft += slideWidth;
+		slidesContainer.scrollLeft += slideWidth + offset;
 	} );
 
 	prevButton.addEventListener( "click", () => {
 		const slideWidth = slide.clientWidth;
 
-		slidesContainer.scrollLeft -= slideWidth;
+		slidesContainer.scrollLeft -= slideWidth + offset;
 	} );
 } );
 
