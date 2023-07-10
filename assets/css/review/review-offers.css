@@ -112,7 +112,7 @@
 /* Slider */
 
 .slider-wrapper {
-	margin: 1rem;
+	margin-bottom: 30px;
 	position: relative;
 	overflow: hidden;
   }
