@@ -50,6 +50,8 @@ class ReviewOffers
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
 				$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' .item-logo { background-image: url(\'' . $style_item[ 'logo' ] .'\'); }';
+
+				$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' { background-color: url(\'' . $style_item[ 'background' ] .'\'); }';
 			}
 		}
 
@@ -64,6 +66,8 @@ class ReviewOffers
 		'bonus' => 'about-bonus',
 
 		'logo' => 'about-logo',
+
+		'background' => 'about-background',
 
 		'afillate' => 'about-afillate',
 	];
@@ -123,6 +127,8 @@ class ReviewOffers
 				'bonus' => $group[ self::FIELD[ 'bonus' ] ],
 
 				'logo' => $group[ self::FIELD[ 'logo' ] ],
+
+				'background' => $group[ self::FIELD[ 'background' ] ],
 
 				'afillate' => [
                     'href' => $group[ self::FIELD[ 'afillate' ] ],
