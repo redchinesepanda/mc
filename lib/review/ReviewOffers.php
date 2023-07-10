@@ -90,6 +90,10 @@ class ReviewOffers
 			'meta_query' => [
                 [
                     'key' => self::FIELD[ 'about' ] . '_' . self::FIELD[ 'afillate' ],
+
+					'value'   => [ '' ],
+        			
+					'compare' => 'NOT IN',
                 ],
             ],
 
