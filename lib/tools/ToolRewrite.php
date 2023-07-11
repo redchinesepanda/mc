@@ -25,9 +25,9 @@ class ToolRewrite
 			
 			'post' => $post->ID,
 
-			'leavename' => $leavename,
+			'leavename' => ( $leavename ? 'true' : 'false' ),
 
-			'sample' => $sample,
+			'sample' => ( $sample ? 'true' : 'false' ),
 		] );
 		// if ( false !== strpos( $post_link, '%projectscategory%') )
 		// {
