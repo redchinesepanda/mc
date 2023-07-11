@@ -73,18 +73,23 @@ class ReviewGroup
         return $label;
     }
 
-    public static function filter_terms( $terms )
+    public static function get_terms_ids( $terms )
     {
-        LegalDebug::debug( [
-            '$terms' => $terms,
-        ] );
+        // LegalDebug::debug( [
+        //     '$terms' => $terms,
+        // ] );
+
+        $items = [];
 
         foreach ( $terms as $term )
         {
-
+            if ( !in_array( $term->slug, [ 'other-offers' ] ) )
+            {
+                $items[] = $term->term_id;
+            }
         }
 
-        return $terms;
+        return $items;
     }
 
     public static function get()
@@ -103,9 +108,9 @@ class ReviewGroup
         
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
-        $terms = self::filter_terms( $terms );
+        $ids = self::get_terms_ids( $terms );
 
-        $posts = get_posts( self::get_group_args( $post, $terms ) );
+        $posts = get_posts( self::get_group_args( $post, $ids ) );
 
         $items[ 'other' ] = [];
 
