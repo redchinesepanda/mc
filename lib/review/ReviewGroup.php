@@ -71,33 +71,35 @@ class ReviewGroup
 
     public static function get_item_label( $post )
     {
-        $label = [ $post->post_title ];
+        $label = [
+            'title' => $post->post_title,
+
+            'type' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+        ];
 
         $group = get_field( ReviewAbout::FIELD, $post );
 
         if ( $group ) {
-            $label = [ $group[ 'about-title' ] ];
+            $label[ 'title' ] = $group[ 'about-title' ];
         }
 
-        if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
+        if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
+        {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ] );
-
-            LegalDebug::debug( [
-                'ID' => $post->ID,
-
-                'tax' => self::TAXONOMY[ 'type' ],
-
-                'terms' => $terms,
-
-                'column' => self::get_term_field( $terms, 'slug' ),
-            ] );
 
             if ( !empty( $terms ) )
             {
-                $term = array_pop( $terms );
-            }
+                $slugs = self::get_term_field( $terms, 'slug' );
 
-            $label[] = __( 'Review', ToolLoco::TEXTDOMAIN );
+                if ( in_array( 'promo-codes', $slugs ) ) {
+                    $label[ 'type' ] = __( 'Promo Code', ToolLoco::TEXTDOMAIN );
+                }
+            } 
+        }
+
+        if ( in_array( WPMLMain::current_language(), [ 'ng' ] ) )
+        {
+            $label = array_reverse( $label );
         }
 
         return implode( ' ', $label );
