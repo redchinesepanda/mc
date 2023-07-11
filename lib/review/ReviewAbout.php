@@ -15,6 +15,11 @@ class ReviewAbout
         ReviewMain::register_style( self::CSS );
     }
 
+    public static function register_inline_style()
+    {
+		ReviewMain::register_inline_style( 'review-about', self::inline_style() );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -28,7 +33,25 @@ class ReviewAbout
         add_shortcode( 'legal-button', [ $handler, 'render_button' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
+
+    public static function inline_style() {
+		$style = [];
+
+		$style_items = self::get( [] );
+
+		if ( !empty( $style_items ) ) {
+			foreach ( $style_items as $style_item_id => $style_item ) {
+				$style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'\; }';
+
+				$style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
+			}
+		}
+
+		return implode( ' ', $style );
+	}
 
     public static function check_href_afillate()
 	{
