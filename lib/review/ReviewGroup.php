@@ -69,6 +69,18 @@ class ReviewGroup
         return $label;
     }
 
+    public static function filter_terms( $terms )
+    {
+        LegalDebug::debug( [
+            '$terms' => $terms,
+        ] );
+
+        foreach ( $terms as $term )
+        {
+
+        }
+    }
+
     public static function get()
     {
         $post = get_post();
