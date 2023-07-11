@@ -15,7 +15,7 @@ class ToolRewrite
 
 		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 
-		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 	}
 
 	const TAXONOMY = 'page_group';
