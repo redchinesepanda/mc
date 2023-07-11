@@ -14,9 +14,39 @@ class ToolRewrite
 		add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
 
 		add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
+
+		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 	}
 
-	public static  function debug_404_rewrite_dump( &$wp ) {
+	public static function review_link( $post_link, $post, $leavename, $sample )
+	{
+		LegalDebug::debug( [
+			'post_link' => $post_link,
+			
+			'post' => $post->ID,
+
+			'leavename' => $leavename,
+
+			'sample' => $sample,
+		] );
+		// if ( false !== strpos( $post_link, '%projectscategory%') )
+		// {
+		// 	$projectscategory_type_term = get_the_terms( $post->ID, 'projectscategory' );
+
+		// 	if ( !empty( $projectscategory_type_term ) )
+		// 	{
+		// 		$post_link = str_replace( '%projectscategory%', array_pop( $projectscategory_type_term )->
+		// 		slug, $post_link );
+		// 	} else
+		// 	{
+		// 		$post_link = str_replace( '%projectscategory%', 'uncategorized', $post_link );
+		// 	}
+		// }
+
+		return $post_link;
+	}
+
+	public static function debug_404_rewrite_dump( &$wp ) {
 		global $wp_rewrite;
 
 		global $wp_the_query;

@@ -75,10 +75,6 @@ class ReviewGroup
 
     public static function get_terms_ids( $terms )
     {
-        // LegalDebug::debug( [
-        //     '$terms' => $terms,
-        // ] );
-
         $items = [];
 
         foreach ( $terms as $term )
@@ -103,8 +99,6 @@ class ReviewGroup
         $items[ 'current' ] = [
             'label' => self::get_item_label( $post ),
         ];
-
-        // $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
         
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
