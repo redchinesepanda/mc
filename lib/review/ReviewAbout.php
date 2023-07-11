@@ -82,7 +82,7 @@ class ReviewAbout
                 'rating' => [
                     'label' => __( 'Rating', ToolLoco::TEXTDOMAIN ),
 
-                    'value' => $group[ 'about-rating' ],
+                    'value' => ( $group[ 'about-rating' ] ? $group[ 'about-rating' ] : '' ),
                 ],
 
                 'afillate' => [
