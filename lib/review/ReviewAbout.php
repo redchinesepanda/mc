@@ -79,7 +79,11 @@ class ReviewAbout
 
                 'font' => $group[ 'about-font' ],
                 
-                'rating' => __( 'Rating', ToolLoco::TEXTDOMAIN ) . ' - ' . $group[ 'about-rating' ],
+                'rating' => [
+                    'label' => __( 'Rating', ToolLoco::TEXTDOMAIN ),
+
+                    'value' => $group[ 'about-rating' ],
+                ],
 
                 'afillate' => [
                     'href' => self::check_href_afillate(),
