@@ -62,9 +62,11 @@ class ReviewGroup
         ];
     }
 
-    public static function get_term_field( $array )
+    public static function get_term_field( $items, $field )
     {
-        return array_combine( array_map( function ( $o ) { return $o->id; }, $array ), $array );
+        return array_map( function( $e ) use ( $field ) {
+            return is_object( $e ) ? $e->{$field} : $e[ $field ];
+        }, $items);
     }
 
     public static function get_item_label( $post )
