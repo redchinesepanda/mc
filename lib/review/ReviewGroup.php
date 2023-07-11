@@ -75,11 +75,13 @@ class ReviewGroup
         if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ], [ 'fields' => 'names ' ] );
 
+            LegalDebug::debug( [
+                'terms' => $terms,  
+            ] );
+
             if ( !empty( $terms ) )
             {
-                LegalDebug::debug( [
-                    'terms' => $terms,  
-                ] );
+                
             }
 
             $label[] = __( 'Review', ToolLoco::TEXTDOMAIN );
