@@ -23,7 +23,11 @@ class ToolRewrite
 		LegalDebug::debug( [
 			'post_link' => $post_link,
 			
-			'post' => $post->ID,
+			'ID' => $post->ID,
+
+			'post_title' => $post->post_title,
+
+			'post_type' => $post->post_type,
 
 			'leavename' => ( $leavename ? 'true' : 'false' ),
 
