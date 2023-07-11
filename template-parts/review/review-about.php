@@ -1,10 +1,3 @@
-<?php
-
-LegalDebug::debug( [
-    'args' => $args,
-] );
-
-?>
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <?php if( empty( $args['mode'] ) ) : ?>
         <style type="text/css">
