@@ -76,6 +76,8 @@ class ReviewGroup
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ], [ 'fields' => 'names ' ] );
 
             LegalDebug::debug( [
+                'ID' => $post->ID,
+                
                 'tax' => self::TAXONOMY[ 'type' ],
 
                 'terms' => $terms,  
