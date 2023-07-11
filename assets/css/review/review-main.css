@@ -23,7 +23,7 @@
 }
 
 .tcb-post-content h1:not( .legal-override ) {
-    padding: 30px 0px;
+    padding-bottom: 30px;
 }
 
 .tcb-post-content h2:not( .legal-override ) {

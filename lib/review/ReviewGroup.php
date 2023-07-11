@@ -3,7 +3,11 @@
 class ReviewGroup
 {
     const CSS = [
-        'review-group' => LegalMain::LEGAL_URL . '/assets/css/review/review-group.css',
+        'review-group' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-group.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style()
