@@ -95,7 +95,9 @@ class ReviewGroup
             'label' => self::get_item_label( $post ),
         ];
 
-        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
+        // $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
+        
+        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
         $terms = self::filter_terms( $terms );
 
