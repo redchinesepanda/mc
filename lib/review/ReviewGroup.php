@@ -96,25 +96,11 @@ class ReviewGroup
                 }
             } 
         }
-        
-        LegalDebug::debug( [
-            'stage' => 'before',
 
-            '$label' => $label,
-
-            'current_language' => WPMLMain::current_language(),
-        ] );
-
-        if ( in_array( WPMLMain::current_language(), [ 'ke' ] ) )
+        if ( in_array( WPMLMain::current_language(), [ 'ng' ] ) )
         {
             $label = array_reverse( $label );
         }
-
-        LegalDebug::debug( [
-            'stage' => 'after',
-
-            '$label' => $label,
-        ] );
 
         return implode( ' ', $label );
     }
