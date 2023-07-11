@@ -61,32 +61,22 @@ class OopsMain
             'post_type' => 'affiliate-links',
 
             'suppress_filters' => 0,
-
-            // 's' => '-' . WPMLMain::current_language(),
-
-            // 's' => ' ' . WPMLMain::current_language(),
-            
-            // 's' => '' . WPMLMain::current_language(),
-            
-            // 's' => '" ' . WPMLMain::current_language() . '" "-' . WPMLMain::current_language() . '" ng',
             
             's' => '"' . $prefix . WPMLMain::current_language() . '"',
 
-            // 'sentence' => true,
+            'meta_query' => [
+                'oops_participate' => [
+                    'key' => 'affilate-oops',
 
-            // 'meta_query' => [
-            //     'oops_clause' => [
-            //         'key' => 'affilate-oops',
+                    'value' => '1',
+                ],
 
-            //         'value' => '1',
-            //     ],
-            // ],
-
-            // 'meta_key' => 'affilate-order',
-
-            // 'orderby' => [ 'meta_value' => 'ASC', 'title' => 'ASC' ],
+                'oops_order' => [
+                    'key' => 'affilate-order',
+                ],
+            ],
             
-            // 'orderby' => [ 'meta_value' => 'ASC' ],
+            'orderby' => [ 'oops_order' => 'ASC', 'modify' => 'DESC' ],
         ];
     }
 
@@ -159,6 +149,8 @@ class OopsMain
         //     'found_posts2' => $query2->found_posts,
 
         //     'result' => ( $query1->found_posts || $query2->found_posts ? 'true' : 'false' ),
+
+        //     // 'get_args' => self::get_args(),
         // ] );
         
         return ( $query1->found_posts || $query2->found_posts );
