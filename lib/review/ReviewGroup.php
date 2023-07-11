@@ -73,7 +73,7 @@ class ReviewGroup
         }
 
         if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
-            $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'group' ], [ 'fields' => 'names ' ] );
+            $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ], [ 'fields' => 'names ' ] );
 
             LegalDebug::debug( [
                 'tax' => self::TAXONOMY[ 'type' ],
