@@ -1,16 +1,4 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
-    <?php if( empty( $args['mode'] ) ) : ?>
-        <!-- <style type="text/css">
-            .review-about,
-            .legal-highlight {
-                background-color: <?php echo $args['background']; ?>;
-            }
-
-            .review-about .about-logo {
-                background-image: url( '<?php echo $args['logo']; ?>' );
-            }
-        </style> -->
-    <?php endif; ?>
     <div class="review-about <?php echo $args[ 'font' ]; ?>">
         <div class="about-left">
             <div class="about-logo"></div>
