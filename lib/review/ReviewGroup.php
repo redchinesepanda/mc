@@ -89,7 +89,7 @@ class ReviewGroup
 
                 'terms' => $terms,
 
-                'column' => self::get_term_field( $terms ),
+                'column' => self::get_term_field( $terms, 'slug' ),
             ] );
 
             if ( !empty( $terms ) )
