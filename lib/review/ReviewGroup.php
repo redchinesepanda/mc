@@ -69,7 +69,7 @@ class ReviewGroup
         $group = get_field( ReviewAbout::FIELD, $post );
 
         if ( $group ) {
-            $label = $group[ 'about-title' ];
+            $label = [ $group[ 'about-title' ] ];
         }
 
         if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
