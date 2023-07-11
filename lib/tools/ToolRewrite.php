@@ -60,11 +60,11 @@ class ToolRewrite
 				
 				$slug = get_term( $term_id )->slug;
 
-				LegalDebug::debug( [
-					'post_name' => $post->post_name,
+				// LegalDebug::debug( [
+				// 	'post_name' => $post->post_name,
 
-					'slug' => $slug,
-				] );
+				// 	'slug' => $slug,
+				// ] );
 
 				if ( $slug != $post->post_name ) {
 					$page_group = $slug . '/' . $post->post_name;
