@@ -98,6 +98,8 @@ class ReviewGroup
         }
         
         LegalDebug::debug( [
+            'stage' => 'before',
+
             '$label' => $label,
 
             'current_language' => WPMLMain::current_language(),
@@ -109,6 +111,8 @@ class ReviewGroup
         }
 
         LegalDebug::debug( [
+            'stage' => 'after',
+
             '$label' => $label,
         ] );
 
