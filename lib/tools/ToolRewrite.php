@@ -18,6 +18,8 @@ class ToolRewrite
 		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 	}
 
+	const TAXONOMY = 'page_group';
+
 	public static function review_link( $post_link, $post, $leavename, $sample )
 	{
 		LegalDebug::debug( [
@@ -38,7 +40,9 @@ class ToolRewrite
 		
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
 		{
-			$terms = get_the_terms( $post->ID, 'page_group' );
+			// $terms = get_the_terms( $post->ID, 'page_group' );
+
+			$terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
 			LegalDebug::debug( [
 				'terms' => $terms,
