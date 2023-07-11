@@ -22,22 +22,6 @@ class ToolRewrite
 
 	public static function review_link( $post_link, $post, $leavename, $sample )
 	{
-		// LegalDebug::debug( [
-		// 	'post_link' => $post_link,
-			
-		// 	'ID' => $post->ID,
-
-		// 	'post_title' => $post->post_title,
-
-		// 	'post_type' => $post->post_type,
-			
-		// 	'post_name' => $post->post_name,
-
-		// 	'leavename' => ( $leavename ? 'true' : 'false' ),
-
-		// 	'sample' => ( $sample ? 'true' : 'false' ),
-		// ] );
-		
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
 		{
 			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY, true );
@@ -52,12 +36,8 @@ class ToolRewrite
 
 			$page_group = '';
 
-			// if ( !empty( $terms ) )
-			
 			if ( !empty( $term_id ) )
 			{
-				// $slug = array_pop( $terms )->slug;
-				
 				$slug = get_term( $term_id )->slug;
 
 				LegalDebug::debug( [
@@ -71,15 +51,15 @@ class ToolRewrite
 				if ( $slug != $post->post_name ) {
 					// $page_group = $slug . '/' . $post->post_name;
 					
-					$page_group = '/' . $slug;
+					// $page_group = '/' . $slug;
 				}
 			}
 
-			// if ( !empty( $page_group ) ) {
-				// $post_link = str_replace( $post->post_name, $page_group, $post_link );
+			if ( !empty( $page_group ) ) {
+				$post_link = str_replace( $post->post_name, $page_group, $post_link );
 				
-				$post_link = str_replace( '/%taxonomy_name%', $page_group, $post_link );
-			// }
+				// $post_link = str_replace( '/%taxonomy_name%', $page_group, $post_link );
+			}
 		}
 
 		return $post_link;
