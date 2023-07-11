@@ -44,7 +44,7 @@ class ToolRewrite
 
 			// $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
-			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_category', true );
+			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY, true );
 
 			LegalDebug::debug( [
 				'term_id' => $term_id,
