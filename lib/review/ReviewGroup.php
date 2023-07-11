@@ -79,6 +79,8 @@ class ReviewGroup
         {
 
         }
+
+        return $terms;
     }
 
     public static function get()
@@ -94,6 +96,8 @@ class ReviewGroup
         ];
 
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY, [ 'fields' => 'ids' ] );
+
+        $terms = self::filter_terms( $terms );
 
         $posts = get_posts( self::get_group_args( $post, $terms ) );
 
