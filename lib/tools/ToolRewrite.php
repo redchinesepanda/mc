@@ -42,7 +42,9 @@ class ToolRewrite
 		{
 			// $terms = get_the_terms( $post->ID, 'page_group' );
 
-			$terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
+			// $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
+
+			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_category', true );
 
 			// LegalDebug::debug( [
 			// 	'terms' => $terms,
@@ -50,9 +52,13 @@ class ToolRewrite
 
 			$page_group = '';
 
-			if ( !empty( $terms ) )
+			// if ( !empty( $terms ) )
+			
+			if ( !empty( $term_id ) )
 			{
-				$slug = array_pop( $terms )->slug;
+				// $slug = array_pop( $terms )->slug;
+				
+				$slug = get_term( $term_id )->slug;
 
 				if ( $slug != $post->post_name ) {
 					$page_group = $slug . '/' . $post->post_name;
