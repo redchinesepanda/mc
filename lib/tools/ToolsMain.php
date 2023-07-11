@@ -10,7 +10,7 @@ require_once( 'ToolTinyMCE.php' );
 
 require_once( 'ToolEncode.php' );
 
-require_once( 'ToolRewrite.php' );
+// require_once( 'ToolRewrite.php' );
 
 require_once( 'ToolEnqueue.php' );
 
@@ -36,7 +36,7 @@ class ToolsMain
 
         ToolTinyMCE::register();
 
-        ToolRewrite::register();
+        // ToolRewrite::register();
         
         ToolSitemap::register();
 
