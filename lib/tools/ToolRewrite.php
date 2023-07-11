@@ -62,20 +62,24 @@ class ToolRewrite
 
 				LegalDebug::debug( [
 					'post_link' => $post_link,
-					
+
 					'post_name' => $post->post_name,
 
 					'slug' => $slug,
 				] );
 
 				if ( $slug != $post->post_name ) {
-					$page_group = $slug . '/' . $post->post_name;
+					// $page_group = $slug . '/' . $post->post_name;
+					
+					$page_group = '/' . $slug . '/' . $post->post_name;
 				}
 			}
 
-			if ( !empty( $page_group ) ) {
-				$post_link = str_replace( $post->post_name, $page_group, $post_link );
-			}
+			// if ( !empty( $page_group ) ) {
+				// $post_link = str_replace( $post->post_name, $page_group, $post_link );
+				
+				$post_link = str_replace( '/%taxonomy_name%', $page_group, $post_link );
+			// }
 		}
 
 		return $post_link;
