@@ -32,13 +32,17 @@ class ToolRewrite
 		
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
 		{
-			$projectscategory_type_term = get_the_terms( $post->ID, 'page_group' );
+			$terms = get_the_terms( $post->ID, 'page_group' );
+
+			LegalDebug::debug( [
+				'terms' => $terms,
+			] );
 
 			$page_group = '';
 
-			if ( !empty( $projectscategory_type_term ) )
+			if ( !empty( $terms ) )
 			{
-				$slug = array_pop( $projectscategory_type_term )->slug;
+				$slug = array_pop( $terms )->slug;
 
 				if ( $slug != $post->post_name ) {
 					$page_group = $slug . '/' . $post->post_name;
