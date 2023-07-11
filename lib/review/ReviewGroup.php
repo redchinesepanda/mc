@@ -62,6 +62,11 @@ class ReviewGroup
         ];
     }
 
+    public static function get_term_field( $array )
+    {
+        return array_combine( array_map( function ( $o ) { return $o->id; }, $array ), $array );
+    }
+
     public static function get_item_label( $post )
     {
         $label = [ $post->post_title ];
@@ -80,7 +85,9 @@ class ReviewGroup
 
                 'tax' => self::TAXONOMY[ 'type' ],
 
-                'terms' => $terms,  
+                'terms' => $terms,
+
+                'column' => self::get_term_field( $terms ),
             ] );
 
             if ( !empty( $terms ) )
