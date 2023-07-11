@@ -15,28 +15,28 @@ class ToolRewrite
 
 		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 
-		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 	}
 
 	const TAXONOMY = 'page_group';
 
 	public static function review_link( $post_link, $post, $leavename, $sample )
 	{
-		LegalDebug::debug( [
-			'post_link' => $post_link,
+		// LegalDebug::debug( [
+		// 	'post_link' => $post_link,
 			
-			'ID' => $post->ID,
+		// 	'ID' => $post->ID,
 
-			'post_title' => $post->post_title,
+		// 	'post_title' => $post->post_title,
 
-			'post_type' => $post->post_type,
+		// 	'post_type' => $post->post_type,
 			
-			'post_name' => $post->post_name,
+		// 	'post_name' => $post->post_name,
 
-			'leavename' => ( $leavename ? 'true' : 'false' ),
+		// 	'leavename' => ( $leavename ? 'true' : 'false' ),
 
-			'sample' => ( $sample ? 'true' : 'false' ),
-		] );
+		// 	'sample' => ( $sample ? 'true' : 'false' ),
+		// ] );
 		
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
 		{
@@ -44,9 +44,9 @@ class ToolRewrite
 
 			$terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
 
-			LegalDebug::debug( [
-				'terms' => $terms,
-			] );
+			// LegalDebug::debug( [
+			// 	'terms' => $terms,
+			// ] );
 
 			$page_group = '';
 
