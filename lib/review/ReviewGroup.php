@@ -105,7 +105,7 @@ class ReviewGroup
             'current_language' => WPMLMain::current_language(),
         ] );
 
-        if ( in_array( WPMLMain::current_language(), [ 'ng' ] ) )
+        if ( in_array( WPMLMain::current_language(), [ 'ke' ] ) )
         {
             $label = array_reverse( $label );
         }
