@@ -85,6 +85,13 @@ class ReviewMain
         }
     }
 
+    public static function register_inline_style( $name = '', $data = '' )
+    {
+		if ( self::check() ) {
+            ToolEnqueue::register_inline_style( $name, $data );
+        }
+    }
+
     public static function register()
     {
         $handler = new self();
