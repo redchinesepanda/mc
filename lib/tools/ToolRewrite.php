@@ -40,13 +40,13 @@ class ToolRewrite
 			{
 				$slug = array_pop( $projectscategory_type_term )->slug;
 
-				if ( $slug != $post_post_name ) {
-					$page_group = $slug;
+				if ( $slug != $post->post_name ) {
+					$page_group = $slug . '/' . $post->post_name;
 				}
 			}
 
 			if ( !empty( $page_group ) ) {
-				$post_link = str_replace( '%projectscategory%', $page_group, $post_link );
+				$post_link = str_replace( $post->post_name, $page_group, $post_link );
 			}
 		}
 
