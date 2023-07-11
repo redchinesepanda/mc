@@ -26,7 +26,13 @@ class ReviewGroup
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    const TAXONOMY = 'page_group';
+    // const TAXONOMY = 'page_group';
+    
+    const TAXONOMY = [
+        'group' => 'page_group',
+
+        'type' => 'page_type',
+    ];
 
     public static function get_group_args( $post, $terms = [] ) {
         return [
@@ -40,7 +46,7 @@ class ReviewGroup
 
             'tax_query' => [
                 [
-                    'taxonomy' => self::TAXONOMY,
+                    'taxonomy' => self::TAXONOMY[ 'group' ],
 
                     'field' => 'term_id',
 
@@ -58,7 +64,7 @@ class ReviewGroup
 
     public static function get_item_label( $post )
     {
-        $label = $post->post_title;
+        $label = [ $post->post_title ];
 
         $group = get_field( ReviewAbout::FIELD, $post );
 
@@ -67,10 +73,19 @@ class ReviewGroup
         }
 
         if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) ) {
-            $label .= ' ' . __( 'Review', ToolLoco::TEXTDOMAIN );
+            $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ], [ 'fields' => 'names ' ] );
+
+            if ( !empty( $terms ) )
+            {
+                LegalDebug::debug( [
+                    'terms' => $terms,  
+                ] );
+            }
+
+            $label[] = __( 'Review', ToolLoco::TEXTDOMAIN );
         }
 
-        return $label;
+        return implode( ' ', $label );
     }
 
     public static function get_terms_ids( $terms )
@@ -100,7 +115,7 @@ class ReviewGroup
             'label' => self::get_item_label( $post ),
         ];
         
-        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY );
+        $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'group' ] );
 
         $ids = self::get_terms_ids( $terms );
 
