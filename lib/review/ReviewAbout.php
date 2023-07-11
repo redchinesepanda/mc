@@ -42,6 +42,10 @@ class ReviewAbout
 
 		$style_items = self::get( [] );
 
+        LegalDebug::debug( [
+            'style_items' => $style_items,
+        ] );
+
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
 				$style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'\; }';
