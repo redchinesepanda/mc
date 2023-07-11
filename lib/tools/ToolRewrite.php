@@ -39,16 +39,16 @@ class ToolRewrite
 		// ] );
 		
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
-
+		{
 			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY, true );
 
 			// $wpseo_primary_term = new WPSEO_Primary_Term( self::TAXONOMY, $post->ID );
         	
 			// $term_id = $wpseo_primary_term->get_primary_term();
 
-			// LegalDebug::debug( [
-			// 	'term_id' => $term_id,
-			// ] );
+			LegalDebug::debug( [
+				'term_id' => $term_id,
+			] );
 
 			$page_group = '';
 
