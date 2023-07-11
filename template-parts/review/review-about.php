@@ -14,7 +14,7 @@
     <div class="review-about <?php echo $args[ 'font' ]; ?>">
         <div class="about-left">
             <div class="about-logo"></div>
-            <?php if( empty( $args['mode'] ) ) : ?>
+            <?php if( empty( $args['mode'] && !empty( $args[ 'rating' ] ) ) ) : ?>
                 <div class="about-rating"><?php echo $args[ 'rating' ]; ?></div>
             <?php endif; ?>
         </div>
