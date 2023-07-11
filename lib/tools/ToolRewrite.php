@@ -29,19 +29,26 @@ class ToolRewrite
 
 			'sample' => ( $sample ? 'true' : 'false' ),
 		] );
-		// if ( false !== strpos( $post_link, '%projectscategory%') )
-		// {
-		// 	$projectscategory_type_term = get_the_terms( $post->ID, 'projectscategory' );
+		
+		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
+		{
+			$projectscategory_type_term = get_the_terms( $post->ID, 'page_group' );
 
-		// 	if ( !empty( $projectscategory_type_term ) )
-		// 	{
-		// 		$post_link = str_replace( '%projectscategory%', array_pop( $projectscategory_type_term )->
-		// 		slug, $post_link );
-		// 	} else
-		// 	{
-		// 		$post_link = str_replace( '%projectscategory%', 'uncategorized', $post_link );
-		// 	}
-		// }
+			$page_group = '';
+
+			if ( !empty( $projectscategory_type_term ) )
+			{
+				$slug = array_pop( $projectscategory_type_term )->slug;
+
+				if ( $slug != $post_post_name ) {
+					$page_group = $slug;
+				}
+			}
+
+			if ( !empty( $page_group ) ) {
+				$post_link = str_replace( '%projectscategory%', $page_group, $post_link );
+			}
+		}
 
 		return $post_link;
 	}
