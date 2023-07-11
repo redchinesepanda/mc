@@ -71,7 +71,7 @@ class ToolRewrite
 				if ( $slug != $post->post_name ) {
 					// $page_group = $slug . '/' . $post->post_name;
 					
-					$page_group = '/' . $slug . '/' . $post->post_name;
+					$page_group = '/' . $slug;
 				}
 			}
 
