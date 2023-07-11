@@ -46,9 +46,9 @@ class ToolRewrite
 
 			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_category', true );
 
-			// LegalDebug::debug( [
-			// 	'terms' => $terms,
-			// ] );
+			LegalDebug::debug( [
+				'term_id' => $term_id,
+			] );
 
 			$page_group = '';
 
@@ -59,6 +59,12 @@ class ToolRewrite
 				// $slug = array_pop( $terms )->slug;
 				
 				$slug = get_term( $term_id )->slug;
+
+				LegalDebug::debug( [
+					'post_name' => $post->post_name,
+
+					'slug' => $slug,
+				] );
 
 				if ( $slug != $post->post_name ) {
 					$page_group = $slug . '/' . $post->post_name;
