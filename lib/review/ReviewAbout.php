@@ -40,19 +40,11 @@ class ReviewAbout
     public static function inline_style() {
 		$style = [];
 
-		$style_items = self::get( [] );
+		$style_item = self::get( [] );
 
-        LegalDebug::debug( [
-            'style_items' => $style_items,
-        ] );
+        $style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'\; }';
 
-		if ( !empty( $style_items ) ) {
-			foreach ( $style_items as $style_item_id => $style_item ) {
-				$style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'\; }';
-
-				$style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
-			}
-		}
+        $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
 
 		return implode( ' ', $style );
 	}
