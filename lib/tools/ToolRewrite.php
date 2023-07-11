@@ -28,6 +28,8 @@ class ToolRewrite
 			'post_title' => $post->post_title,
 
 			'post_type' => $post->post_type,
+			
+			'post_name' => $post->post_name,
 
 			'leavename' => ( $leavename ? 'true' : 'false' ),
 
