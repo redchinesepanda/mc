@@ -148,7 +148,7 @@ class ToolRewrite
 
 		if ( $cats = get_the_terms( $post->ID, self::TAXONOMY[ 'group' ] ) )
 		{
-			$slug = array_pop( $cats )->slug
+			$slug = array_pop( $cats )->slug;
 
 			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY[ 'group' ], true );
 
