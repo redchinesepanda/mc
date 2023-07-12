@@ -48,9 +48,9 @@ class ToolRewrite
         	
 			// $term_id = $wpseo_primary_term->get_primary_term();
 
-			// LegalDebug::debug( [
-			// 	'term_id' => $term_id,
-			// ] );
+			LegalDebug::debug( [
+				'term_id' => $term_id,
+			] );
 
 			$page_group = '';
 
@@ -58,13 +58,13 @@ class ToolRewrite
 			{
 				$slug = get_term( $term_id )->slug;
 
-				// LegalDebug::debug( [
-				// 	'post_link' => $post_link,
+				LegalDebug::debug( [
+					// 'post_link' => $post_link,
 
-				// 	'post_name' => $post->post_name,
+					// 'post_name' => $post->post_name,
 
-				// 	'slug' => $slug,
-				// ] );
+					'slug' => $slug,
+				] );
 
 				if ( $slug != $post->post_name ) {
 					$name = str_replace( $slug . '-', '', $post->post_name );
