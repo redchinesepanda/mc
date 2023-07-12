@@ -80,23 +80,23 @@ class ToolRewrite
 				
 				$start = strpos( $post_link, $post->post_name );
 
-				LegalDebug::debug( [
-					'haystack-1' =>  self::POST_TYPE[ 'review' ],
+				// LegalDebug::debug( [
+				// 	'haystack-1' =>  self::POST_TYPE[ 'review' ],
 
-					'haystack-2' =>  $post->post_name,
+				// 	'haystack-2' =>  $post->post_name,
 
-					'needle' => $post_link,
+				// 	'needle' => $post_link,
 
-					'start' => ( $start !== false ? $start : 'false' ),
-				] );
+				// 	'start' => ( $start !== false ? $start : 'false' ),
+				// ] );
 
 				if ( $start !== false )
 				{
-					LegalDebug::debug( [
-						'post_link' => $post_link,
+					// LegalDebug::debug( [
+					// 	'post_link' => $post_link,
 	
-						'start' => $start,
-					] );
+					// 	'start' => $start,
+					// ] );
 	
 					$post_link = substr_replace( $post_link, $page_group, $start );
 				}
@@ -106,9 +106,9 @@ class ToolRewrite
 				// $post_link = str_replace( '/%taxonomy_name%', $page_group, $post_link );
 			}
 
-			LegalDebug::debug( [
-				'post_link' => $post_link,
-			] );
+			// LegalDebug::debug( [
+			// 	'post_link' => $post_link,
+			// ] );
 		}
 
 		return $post_link;
