@@ -109,6 +109,7 @@ class ToolRewrite
 			}
 
 			LegalDebug::debug( [
+				'ID' => $post->ID,
 
 				'term_id' => $term_id,
 
