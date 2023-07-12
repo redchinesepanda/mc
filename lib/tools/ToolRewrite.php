@@ -53,12 +53,12 @@ class ToolRewrite
 				
 				'original_slug' => $original_slug,
 			] );
-			
+
 			// Perform category conflict, permalink structure
 			//     and other necessary checks.
 			// Don't just use it as it is.
 
-			return $original_slug;
+			$slug = $original_slug;
 		}
 
 		return $slug;
