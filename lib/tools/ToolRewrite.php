@@ -138,7 +138,7 @@ class ToolRewrite
 
 		// $newRules[ 'basename/(.+)/?$' ] = 'index.php?taxonomy_name=$matches[1]';
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'newRules' => $newRules,
 		] );
 
