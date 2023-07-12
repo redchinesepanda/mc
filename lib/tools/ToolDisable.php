@@ -8,7 +8,7 @@ class ToolDisable
 
         // Stop WordPress from reserving slugs for media items?
 
-        add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
+        // add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', '__return_true' );
 
         // add_filter( 'wp_unique_post_slug_is_bad_attachment_slug', [ $handler, 'legal_attachment_slug' ], 10, 2 );
 
