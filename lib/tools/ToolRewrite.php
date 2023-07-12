@@ -77,6 +77,10 @@ class ToolRewrite
 				$start = strpos( self::POST_TYPE[ 'review' ], $post_link );
 
 				LegalDebug::debug( [
+					'haystack' =>  self::POST_TYPE[ 'review' ],
+
+					'needle' => $post_link,
+
 					'start' => ( $start !== false ? $start : 'false' ),
 				] );
 
