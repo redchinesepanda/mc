@@ -51,6 +51,8 @@ class ToolRewrite
 
 			'self::POST_TYPE' => self::POST_TYPE[ 'review' ],
 
+			'post_type-compare' => ( $post_type == self::POST_TYPE[ 'review' ] ? 'true' : 'false" ),
+
 			'post_parent' => $post_parent,
 			
 			'original_slug' => $original_slug,
@@ -58,7 +60,7 @@ class ToolRewrite
 			'in_array' => ( in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
 		] );
 
-		if ( $post_type === self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
+		if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
 		{
 			// Perform category conflict, permalink structure
 			//     and other necessary checks.
