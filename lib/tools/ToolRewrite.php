@@ -136,7 +136,11 @@ class ToolRewrite
 		
 		// my custom structure will always have the post name as the 5th uri segment
 
-		// $newRules[ 'basename/(.+)/?$' ] = 'index.php?taxonomy_name=$matches[1]'; 
+		// $newRules[ 'basename/(.+)/?$' ] = 'index.php?taxonomy_name=$matches[1]';
+
+		LegalDebug::debug( [
+			'newRules' => $newRules,
+		] );
 
 		return array_merge( $newRules, $rules );
 	}
