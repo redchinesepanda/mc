@@ -58,15 +58,15 @@ class ToolRewrite
 			{
 				$slug = get_term( $term_id )->slug;
 
-				LegalDebug::debug( [
-					// 'post_link' => $post_link,
+				// LegalDebug::debug( [
+				// 	// 'post_link' => $post_link,
 
-					// 'post_name' => $post->post_name,
+				// 	// 'post_name' => $post->post_name,
 
-					'term_id' => $term_id,
+				// 	'term_id' => $term_id,
 
-					'slug' => $slug,
-				] );
+				// 	'slug' => $slug,
+				// ] );
 
 				if ( $slug != $post->post_name ) {
 					$name = str_replace( $slug . '-', '', $post->post_name );
@@ -108,9 +108,14 @@ class ToolRewrite
 				// $post_link = str_replace( '/%taxonomy_name%', $page_group, $post_link );
 			}
 
-			// LegalDebug::debug( [
-			// 	'post_link' => $post_link,
-			// ] );
+			LegalDebug::debug( [
+
+				'term_id' => $term_id,
+
+				'slug' => $slug,
+
+				'post_link' => $post_link,
+			] );
 		}
 
 		return $post_link;
