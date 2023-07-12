@@ -29,11 +29,11 @@ class ToolRewrite
 
 		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 
-		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 
-		// add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
+		add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
 
-		// add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
+		add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
 
 		// add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
 	}
@@ -124,6 +124,10 @@ class ToolRewrite
 
 	public static function mmp_rewrite_rules( $rules )
 	{
+		// the custom post type it should be basename/%taxonomy_name%
+
+		// the slug for your taxonomy should be just basename
+
 		$newRules = [];
 
 		$newRules[ 'basename/(.+)/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[4]';
@@ -144,11 +148,7 @@ class ToolRewrite
 
 		if ( $cats = get_the_terms( $post->ID, self::TAXONOMY[ 'group' ] ) )
 		{
-			$start = strpos( self::POST_TYPE[ 'review' ], $link );
-
-			// $link = str_replace( '%taxonomy_name%', array_pop( $cats )->slug, $link );
-			
-			$link = substr_replace( $link, $page_group, $start );
+			$link = str_replace( '%taxonomy_name%', array_pop( $cats )->slug, $link );
 		}
 
 		return $link;
