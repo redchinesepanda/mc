@@ -61,6 +61,10 @@ class ToolRewrite
 			$slug = $original_slug;
 		}
 
+		LegalDebug::debug( [
+			'slug' => $slug,
+		] );
+
 		return $slug;
 	}
 
