@@ -48,9 +48,9 @@ class ToolRewrite
         	
 			// $term_id = $wpseo_primary_term->get_primary_term();
 
-			LegalDebug::debug( [
-				'term_id' => $term_id,
-			] );
+			// LegalDebug::debug( [
+			// 	'term_id' => $term_id,
+			// ] );
 
 			$page_group = '';
 
@@ -62,6 +62,8 @@ class ToolRewrite
 					// 'post_link' => $post_link,
 
 					// 'post_name' => $post->post_name,
+
+					'term_id' => $term_id,
 
 					'slug' => $slug,
 				] );
