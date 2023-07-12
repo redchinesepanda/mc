@@ -74,7 +74,7 @@ class ToolRewrite
 			}
 
 			if ( !empty( $page_group ) ) {
-				$start = strpos( self::POST_TYPE[ 'review' ], $post_link );
+				$start = strpos(  $post_link, self::POST_TYPE[ 'review' ] );
 
 				LegalDebug::debug( [
 					'haystack' =>  self::POST_TYPE[ 'review' ],
