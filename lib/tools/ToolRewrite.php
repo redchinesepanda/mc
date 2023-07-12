@@ -76,6 +76,12 @@ class ToolRewrite
 			if ( !empty( $page_group ) ) {
 				$start = strpos( self::POST_TYPE[ 'review' ], $link );
 
+				LegalDebug::debug( [
+					'post_link' => $post_link,
+
+					'start' => $start,
+				] );
+
 				$post_link = substr_replace( $post_link, $page_group, $start );
 
 				// $post_link = str_replace( $post->post_name, $page_group, $post_link );
