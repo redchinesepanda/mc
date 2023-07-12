@@ -40,27 +40,27 @@ class ToolRewrite
 
 	public static function wpse313422_non_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug )
 	{
-		LegalDebug::debug( [
-			'slug' => $slug,
+		// LegalDebug::debug( [
+		// 	'slug' => $slug,
 
-			'post_ID' => $post_ID,
+		// 	'post_ID' => $post_ID,
 
-			'post_status' => $post_status,
+		// 	'post_status' => $post_status,
 
-			'post_type' => $post_type,
+		// 	'post_type' => $post_type,
 
-			'self::POST_TYPE' => self::POST_TYPE[ 'review' ],
+		// 	'self::POST_TYPE' => self::POST_TYPE[ 'review' ],
 
-			'post_type-compare' => ( $post_type == self::POST_TYPE[ 'review' ] ? 'true' : 'false' ),
+		// 	'post_type-compare' => ( $post_type == self::POST_TYPE[ 'review' ] ? 'true' : 'false' ),
 
-			'post_parent' => $post_parent,
+		// 	'post_parent' => $post_parent,
 			
-			'original_slug' => $original_slug,
+		// 	'original_slug' => $original_slug,
 
-			'in_array' => ( in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
+		// 	'in_array' => ( in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
 
-			'if' => ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
-		] );
+		// 	'if' => ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
+		// ] );
 
 		if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
 		{
