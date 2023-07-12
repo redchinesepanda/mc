@@ -148,7 +148,16 @@ class ToolRewrite
 
 		if ( $cats = get_the_terms( $post->ID, self::TAXONOMY[ 'group' ] ) )
 		{
-			$link = str_replace( '%taxonomy_name%', array_pop( $cats )->slug, $link );
+			$slug = array_pop( $cats )->slug
+
+			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY[ 'group' ], true );
+
+			if ( !empty( $term_id ) )
+			{
+				$slug = get_term( $term_id )->slug;
+			}
+
+			$link = str_replace( '%taxonomy_name%', $slug, $link );
 		}
 
 		return $link;
