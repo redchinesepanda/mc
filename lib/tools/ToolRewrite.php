@@ -58,6 +58,8 @@ class ToolRewrite
 			'original_slug' => $original_slug,
 
 			'in_array' => ( in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
+
+			'if' => ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) ? 'true' : 'false' ),
 		] );
 
 		if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
