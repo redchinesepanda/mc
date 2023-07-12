@@ -83,13 +83,9 @@ class ReviewGroup
             $label[ 'title' ] = $group[ 'about-title' ];
         }
 
-        if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
+        if ( in_array( $post->post_type, [ 'legal_bk_review', 'page' ] ) )
         {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ] );
-
-            // LegalDebug::debug( [
-            //     'terms' => $terms,
-            // ] );
 
             if ( !empty( $terms ) )
             {

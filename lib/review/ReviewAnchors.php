@@ -156,6 +156,34 @@ class ReviewAnchors
             ToolTransiterate::replace(
                 ToolLoco::__( 'sports', ToolLoco::TEXTDOMAIN, $locale )
             ) => ToolLoco::__( 'Sports', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'how-to-get', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'How to get', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'how-to-use', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'How to use', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'betting', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Betting', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'casino', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Casino', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'common-problems', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Common problems', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'other-bonuses', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Other bonuses', ToolLoco::TEXTDOMAIN, $locale ),
+
+            ToolTransiterate::replace(
+                ToolLoco::__( 'compare', ToolLoco::TEXTDOMAIN, $locale )
+            ) => ToolLoco::__( 'Compare', ToolLoco::TEXTDOMAIN, $locale ),
         ];
     }
 
