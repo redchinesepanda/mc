@@ -13,6 +13,12 @@ class ToolRewrite
 		'review' => 'legal_bk_review',
 	];
 
+	const SLUG = [
+		'bonus',
+
+		'promo-codes',
+	];
+
 	public static function register()
 	{
 		$handler = new self();
@@ -48,7 +54,7 @@ class ToolRewrite
 			'original_slug' => $original_slug,
 		] );
 
-		if( $post_type === self::POST_TYPE[ 'review' ] && $original_slug === 'email' )
+		if( $post_type === self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
 		{
 			// Perform category conflict, permalink structure
 			//     and other necessary checks.
