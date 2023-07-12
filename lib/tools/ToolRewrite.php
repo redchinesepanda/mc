@@ -5,6 +5,14 @@
 
 class ToolRewrite
 {
+	const TAXONOMY = [
+		'group' => 'page_group',
+	];
+
+	const POST_TYPE = [
+		'review' => 'legal_bk_review',
+	];
+
 	public static function register()
 	{
 		$handler = new self();
@@ -15,18 +23,50 @@ class ToolRewrite
 
 		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 
-		add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+
+		add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
+
+		add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
 	}
 
-	const TAXONOMY = 'page_group';
+	function mmp_rewrite_rules( $rules )
+	{
+		$newRules = [];
+
+		$newRules[ 'basename/(.+)/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[4]';
+		
+		// my custom structure will always have the post name as the 5th uri segment
+
+		$newRules[ 'basename/(.+)/?$' ] = 'index.php?taxonomy_name=$matches[1]'; 
+
+		return array_merge( $newRules, $rules );
+	}
+
+	function filter_post_type_link( $link, $post )
+	{
+		if ( $post->post_type != self::POST_TYPE[ 'review' ] )
+		{
+			return $link;
+		}
+
+		if ( $cats = get_the_terms( $post->ID, self::TAXONOMY[ 'group' ] ) )
+		{
+			$link = str_replace( '%taxonomy_name%', array_pop( $cats )->slug, $link );
+			
+			// see custom function defined below
+		}
+
+		return $link;
+	}
 
 	public static function review_link( $post_link, $post, $leavename, $sample )
 	{
 		if ( in_array( $post->post_type, [ 'legal_bk_review' ] ) )
 		{
-			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY, true );
+			$term_id = get_post_meta( $post->ID, '_yoast_wpseo_primary_' . self::TAXONOMY[ 'group' ], true );
 
-			// $wpseo_primary_term = new WPSEO_Primary_Term( self::TAXONOMY, $post->ID );
+			// $wpseo_primary_term = new WPSEO_Primary_Term( self::TAXONOMY[ 'group' ], $post->ID );
         	
 			// $term_id = $wpseo_primary_term->get_primary_term();
 

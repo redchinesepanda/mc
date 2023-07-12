@@ -265,15 +265,10 @@ class ReviewBonus
     public static function inline_style() {
 		$group = get_field( ReviewAbout::FIELD );
         
-        if( $group ) {
-			if ( !empty( $group[ self::GROUP[ 'background' ] ] ) ) {
-				// $styles = '
-				// 	.wp-list-table .column-active_blogs {
-				// 		width: 10em;
-				// 		white-space: nowrap
-				// 	}
-				// 	';
-
+        if( $group )
+		{
+			if ( !empty( $group[ self::GROUP[ 'background' ] ] ) )
+			{
 				return '.legal-billet .billet-review {
 					background-color: ' . $group[ self::GROUP[ 'background' ] ] . ';
 				}';
