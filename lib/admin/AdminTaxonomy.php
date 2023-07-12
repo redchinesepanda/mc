@@ -36,9 +36,9 @@ class AdminTaxonomy
 
         foreach ( self::TAXONOMY as $post_type => $taxonomies ) {
             foreach ( $taxonomies as $taxonomy ) {
-                LegalDebug::debug( [
-                    'post_type' => $post_type,
-                ] );
+                // LegalDebug::debug( [
+                //     'post_type' => $post_type,
+                // ] );
 
                 if ($typenow == $post_type) {
                     $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
@@ -63,11 +63,11 @@ class AdminTaxonomy
                 };
             }
 
-            LegalDebug::debug( [
-                'typenow' => $typenow,
+            // LegalDebug::debug( [
+            //     'typenow' => $typenow,
 
-                'taxonomies' => $taxonomies,
-            ] );
+            //     'taxonomies' => $taxonomies,
+            // ] );
         }
     }
 
