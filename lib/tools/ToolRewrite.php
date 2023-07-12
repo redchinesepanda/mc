@@ -67,6 +67,8 @@ class ToolRewrite
 				// ] );
 
 				if ( $slug != $post->post_name ) {
+					$name = str_replace( $slug . '-', '', $post->post_name )
+
 					$page_group = $slug . '/' . $post->post_name;
 					
 					// $page_group = '/' . $slug;
@@ -76,7 +78,7 @@ class ToolRewrite
 			if ( !empty( $page_group ) ) {
 				// $start = strpos(  $post_link, self::POST_TYPE[ 'review' ] );
 				
-				$start = strpos(  $post_link, $post->post_name );
+				$start = strpos( $post_link, $post->post_name );
 
 				LegalDebug::debug( [
 					'haystack-1' =>  self::POST_TYPE[ 'review' ],
