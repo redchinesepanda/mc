@@ -76,6 +76,10 @@ class ToolRewrite
 			if ( !empty( $page_group ) ) {
 				$start = strpos( self::POST_TYPE[ 'review' ], $post_link );
 
+				LegalDebug::debug( [
+					'start' => ( $start !== false ? $start : 'false' ),
+				] );
+
 				if ( $start !== false )
 				{
 					LegalDebug::debug( [
