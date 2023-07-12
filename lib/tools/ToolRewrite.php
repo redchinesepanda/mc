@@ -40,19 +40,20 @@ class ToolRewrite
 
 	public static function wpse313422_non_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug )
 	{
+		LegalDebug::debug( [
+			'slug' => $slug,
+
+			'post_ID' => $post_ID,
+
+			'post_status' => $post_status,
+
+			'post_parent' => $post_parent,
+			
+			'original_slug' => $original_slug,
+		] );
+		
 		if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
 		{
-			LegalDebug::debug( [
-				'slug' => $slug,
-	
-				'post_ID' => $post_ID,
-	
-				'post_status' => $post_status,
-	
-				'post_parent' => $post_parent,
-				
-				'original_slug' => $original_slug,
-			] );
 
 			// Perform category conflict, permalink structure
 			//     and other necessary checks.
