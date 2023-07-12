@@ -87,6 +87,10 @@ class ReviewGroup
         {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ] );
 
+            // LegalDebug::debug( [
+            //     'terms' => $terms,
+            // ] );
+
             if ( !empty( $terms ) )
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
