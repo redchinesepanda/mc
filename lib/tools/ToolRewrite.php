@@ -67,7 +67,7 @@ class ToolRewrite
 				// ] );
 
 				if ( $slug != $post->post_name ) {
-					$name = str_replace( $slug . '-', '', $post->post_name )
+					$name = str_replace( $slug . '-', '', $post->post_name );
 
 					$page_group = $slug . '/' . $post->post_name;
 					
