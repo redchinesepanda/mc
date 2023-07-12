@@ -51,16 +51,16 @@ class ToolRewrite
 			
 			'original_slug' => $original_slug,
 		] );
-		
-		if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
-		{
+
+		// if ( $post_type == self::POST_TYPE[ 'review' ] && in_array( $original_slug, self::SLUG ) )
+		// {
 
 			// Perform category conflict, permalink structure
 			//     and other necessary checks.
 			// Don't just use it as it is.
 
 			$slug = $original_slug;
-		}
+		// }
 
 		LegalDebug::debug( [
 			'slug' => $slug,
