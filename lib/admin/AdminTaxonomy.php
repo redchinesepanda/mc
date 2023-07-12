@@ -5,6 +5,8 @@ class AdminTaxonomy
     const TAXONOMY = [
         'page' => [
             'page_type',
+
+            'page_group',
         ],
 
         'legal_billet' => [
