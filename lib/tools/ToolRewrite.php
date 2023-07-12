@@ -35,7 +35,7 @@ class ToolRewrite
 
 		// add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
 
-		add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
+		// add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
 	}
 
 	public static function wpse313422_non_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug )
