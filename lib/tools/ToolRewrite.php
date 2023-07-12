@@ -31,9 +31,9 @@ class ToolRewrite
 
 		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 
-		add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
+		// add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
 
-		add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
+		// add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
 
 		add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
 	}
