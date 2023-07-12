@@ -130,7 +130,9 @@ class ToolRewrite
 
 		$newRules = [];
 
-		$newRules[ 'basename/(.+)/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[4]';
+		// $newRules[ 'basename/(.+)/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[4]';
+		
+		$newRules[ 'basename/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[3]';
 		
 		// my custom structure will always have the post name as the 5th uri segment
 
