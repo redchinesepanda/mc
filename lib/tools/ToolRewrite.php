@@ -51,7 +51,7 @@ class ToolRewrite
 
 			'self::POST_TYPE' => self::POST_TYPE[ 'review' ],
 
-			'post_type-compare' => ( $post_type == self::POST_TYPE[ 'review' ] ? 'true' : 'false" ),
+			'post_type-compare' => ( $post_type == self::POST_TYPE[ 'review' ] ? 'true' : 'false' ),
 
 			'post_parent' => $post_parent,
 			
