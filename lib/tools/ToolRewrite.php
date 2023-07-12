@@ -28,9 +28,39 @@ class ToolRewrite
 		add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
 
 		add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
+
+		add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
 	}
 
-	function mmp_rewrite_rules( $rules )
+	public static function wpse313422_non_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug )
+	{
+		LegalDebug::debug( [
+			'slug' => $slug,
+
+			'post_ID' => $post_ID,
+
+			'post_status' => $post_status,
+
+			'post_type' => $post_type,
+
+			'post_parent' => $post_parent,
+			
+			'original_slug' => $original_slug,
+		] );
+
+		if( $post_type === self::POST_TYPE[ 'review' ] && $original_slug === 'email' )
+		{
+			// Perform category conflict, permalink structure
+			//     and other necessary checks.
+			// Don't just use it as it is.
+
+			return $original_slug;
+		}
+
+		return $slug;
+	}
+
+	public static function mmp_rewrite_rules( $rules )
 	{
 		$newRules = [];
 
@@ -43,7 +73,7 @@ class ToolRewrite
 		return array_merge( $newRules, $rules );
 	}
 
-	function filter_post_type_link( $link, $post )
+	public static function filter_post_type_link( $link, $post )
 	{
 		if ( $post->post_type != self::POST_TYPE[ 'review' ] )
 		{
