@@ -132,13 +132,13 @@ class ToolRewrite
 
 		// $newRules[ 'basename/(.+)/(.+)/(.+)/(.+)/?$' ] = 'index.php?custom_post_type_name=$matches[4]';
 		
-		$newRules[ 'basename/(.+)/?$' ] = 'index.php?' . self::POST_TYPE[ 'review' ] . '=$matches[1]';
+		$newRules[ 'basename/(.+)/(.+)/?$' ] = 'index.php?' . self::POST_TYPE[ 'review' ] . '=$matches[3]';
 		
 		// my custom structure will always have the post name as the 5th uri segment
 
 		// $newRules[ 'basename/(.+)/?$' ] = 'index.php?taxonomy_name=$matches[1]';
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'newRules' => $newRules,
 		] );
 
