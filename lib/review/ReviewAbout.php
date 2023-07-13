@@ -72,6 +72,8 @@ class ReviewAbout
         'logo' => 'about-logo',
     ];
 
+    const BONUS_EXCEPTION = [ 'es' ];
+
     public static function get( $args )
     {
         $mode = '';
@@ -87,10 +89,17 @@ class ReviewAbout
         if( $group ) {
             $title = $group[ 'about-title' ];
 
+            $bonus = $group[ 'about-bonus' ];
+
+            if ( $mode == 'footer' )
+            {
+                $bonus = $group[ 'about-title' ];
+            }
+
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
-                'bonus' => $group[ 'about-bonus' ],
+                'bonus' => $bonus,
                 
                 'description' => $group[ 'about-description' ],
                 
