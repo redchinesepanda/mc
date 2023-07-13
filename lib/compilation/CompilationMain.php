@@ -215,7 +215,7 @@ class CompilationMain
     }
 
     const DATE_EXCEPTION = [
-        'br',
+        // 'br',
     ];
 
     public static function calculate_date( $id )
