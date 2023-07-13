@@ -76,7 +76,11 @@ class CompilationMain
         return [
             'id' => $id,
 
-            'date' => self::get_date( $id ),
+            'date' => [
+                'label' => __( 'Last updated', ToolLoco::TEXTDOMAIN ),
+
+                'value' => self::get_date( $id ),
+            ],
 
             'title' => [
                     'image' => get_field( self::COMPILATION[ 'title-image' ], $id ),

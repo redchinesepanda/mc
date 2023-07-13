@@ -10,8 +10,8 @@
     <?php if ( !empty( $args['settings']['title']['text'] ) ) : ?>
         <div class="compilation-title  <?php echo $args['settings']['title']['class']; ?>"><?php echo $args['settings']['title']['text']; ?></div>
     <?php endif; ?>
-    <?php if ( !empty( $args['settings']['date'] ) ) : ?>
-        <div class="compilation-date"><?php echo $args['settings']['date']; ?></div>
+    <?php if ( !empty( $args[ 'settings' ][ 'date' ][ 'value' ] ) ) : ?>
+        <div class="compilation-date"><?php echo $args[ 'settings' ][ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'settings' ][ 'date' ][ 'value' ]; ?></div>
     <?php endif; ?>
     <?php CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'below' ] ); ?>
     <?php foreach( $args['billets'] as $billet ) : ?>
