@@ -48,15 +48,15 @@
     
     /* Review About Width and Height */
 
-    .review-about .about-left {
+    .review-about:not( .legal-mode-mini ) .about-left {
         width: calc( ( 1080px * 0.25 ) - 33px );
     }
 
-    .review-about .about-center {
+    .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( ( 1080px * 0.5 ) - 33px );
     }
     
-    .review-about .about-right {
+    .review-about:not( .legal-mode-mini ) .about-right {
         width: calc( ( 1080px * 0.25 ) - 33px );
     }
 }
