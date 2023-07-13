@@ -24,6 +24,13 @@
 
 .legal-compilation .compilation-date {
     padding-left: 25px;
+    margin-left: auto;
+}
+
+/* Width and Height */
+
+.legal-compilation .compilation-date {
+    width: fit-content;
 }
 
 /* Compilation Background */
