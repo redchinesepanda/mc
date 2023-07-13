@@ -238,7 +238,7 @@ class CompilationMain
     {
         $date = '';
 
-        if ( !empty( get_field( 'compilation-updated', $id ) ) )
+        if ( empty( get_field( 'compilation-updated', $id ) ) )
         {
             $locale = WPMLMain::current_language();
     
