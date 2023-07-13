@@ -79,8 +79,14 @@ class ReviewAbout
         $mode = '';
 
         if ( !empty( $args[ 'mode' ] ) ) {
-            if ( $args[ 'mode' ] == 'footer' ) {
+            if ( $args[ 'mode' ] == 'footer' )
+            {
                 $mode = 'footer';
+            }
+
+            if ( $args[ 'mode' ] == 'mini' )
+            {
+                $mode = 'mini';
             }
         }
 
@@ -93,7 +99,7 @@ class ReviewAbout
 
             $locale = WPMLMain::get_locale();
 
-            if ( $mode == 'footer' && in_array( $locale, self::BONUS_EXCEPTION ) )
+            if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
             {
                 $bonus = $group[ 'about-title' ];
             }
