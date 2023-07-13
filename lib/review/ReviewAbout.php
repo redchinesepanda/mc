@@ -91,7 +91,9 @@ class ReviewAbout
 
             $bonus = $group[ 'about-bonus' ];
 
-            if ( $mode == 'footer' )
+            $locale = WPMLMain::get_locale();
+
+            if ( $mode == 'footer' && in_array( $locale, self::BONUS_EXCEPTION ) )
             {
                 $bonus = $group[ 'about-title' ];
             }
