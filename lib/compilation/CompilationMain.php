@@ -247,11 +247,9 @@ class CompilationMain
         {
             $start = new DateTime('first day of this month');
 
-            $middle = new DateTime( 'Y-m-15' );
-            
-            // $start = date_create( 'Y-m-01' );
+            $middle = new DateTime( 'last day of previous month' );
 
-            // $middle = date_create( 'Y-m-15' );
+            $middle->modify('+15 day');
 
             LegalDebug::debug( [
                 'start' => $start->format( 'd.m.Y' ),
