@@ -247,7 +247,7 @@ class CompilationMain
         {
             $start = new DateTime('first day of this month');
 
-            $middle = new DateTime('15 day of this month');
+            $middle = new DateTime( 'Y-m-15' );
             
             // $start = date_create( 'Y-m-01' );
 
