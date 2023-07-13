@@ -87,10 +87,6 @@ class CompilationTabs
             $date[] = CompilationMain::get_date( $compilation );
         }
 
-        LegalDebug::debug( [
-            'date' => $date,
-        ] );
-
         return implode( ' ', $date );
     }
 

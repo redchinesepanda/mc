@@ -250,22 +250,12 @@ class CompilationMain
         } else
         {
             $current = new DateTime();
-
-            $current->modify('+10 day');
             
             $start = new DateTime('first day of this month');
 
             $middle = new DateTime( 'last day of previous month' );
 
             $middle->modify('+15 day');
-
-            LegalDebug::debug( [
-                'current' => $current->format( self::FORMAT[ 'updated' ] ),
-
-                'start' => $start->format( self::FORMAT[ 'updated' ] ),
-
-                'middle' => $middle->format( self::FORMAT[ 'updated' ] ),
-            ] );
 
             $date = $start->format( self::FORMAT[ 'updated' ] );
 
