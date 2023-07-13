@@ -245,14 +245,17 @@ class CompilationMain
             $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
         } else
         {
-            $start = date_create( 'Y-m-01' );
+            $start = new DateTime('first day of this month');
+            
+            
+            // $start = date_create( 'Y-m-01' );
 
-            $middle = date_create( 'Y-m-15' );
+            // $middle = date_create( 'Y-m-15' );
 
             LegalDebug::debug( [
-                'start' => $start,
+                'start' => $start->format('jS, F Y');,
 
-                'middle' => $middle,
+                // 'middle' => $middle,
             ] );
         }
 
