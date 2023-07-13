@@ -222,7 +222,9 @@ class CompilationMain
 
         if ( !empty( $posts ) )
         {
-            $date = array_shift( $posts )->post_modified;
+            $post_modified = date_create( array_shift( $posts )->post_modified );
+
+            $date = date_format( $post_modified,'d.m.Y' );
         }
 
         return $date;
