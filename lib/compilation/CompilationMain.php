@@ -238,28 +238,31 @@ class CompilationMain
     {
         $date = '';
 
-        $locale = WPMLMain::current_language();
-
-        if ( in_array( $locale, self::DATE_EXCEPTION ) )
+        if ( !empty( get_field( 'compilation-updated', $id ) )
         {
-            $modified = new DateTime( self::calculate_date( $id ) );
-
-            $date = $modified->format( self::FORMAT[ 'updated' ] );
-        } else
-        {
-            $current = new DateTime();
-            
-            $start = new DateTime('first day of this month');
-
-            $middle = new DateTime( 'last day of previous month' );
-
-            $middle->modify('+15 day');
-
-            $date = $start->format( self::FORMAT[ 'updated' ] );
-
-            if ( $current > $middle )
+            $locale = WPMLMain::current_language();
+    
+            if ( in_array( $locale, self::DATE_EXCEPTION ) )
             {
-                $date = $middle->format( self::FORMAT[ 'updated' ] );
+                $modified = new DateTime( self::calculate_date( $id ) );
+    
+                $date = $modified->format( self::FORMAT[ 'updated' ] );
+            } else
+            {
+                $current = new DateTime();
+                
+                $start = new DateTime('first day of this month');
+    
+                $middle = new DateTime( 'last day of previous month' );
+    
+                $middle->modify('+15 day');
+    
+                $date = $start->format( self::FORMAT[ 'updated' ] );
+    
+                if ( $current > $middle )
+                {
+                    $date = $middle->format( self::FORMAT[ 'updated' ] );
+                }
             }
         }
 
