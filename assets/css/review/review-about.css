@@ -105,6 +105,10 @@
 
 /* Review About Position */
 
+.tcb-post-content > .review-about {
+    margin-bottom: 30px;
+}
+
 .review-about .about-rating {
     padding-left: 34px;
 }
