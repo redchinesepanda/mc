@@ -245,7 +245,7 @@ class CompilationMain
             // $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
             $modified = new DateTime( self::calculate_date( $id ) );
 
-            $date = $modified->format( 'd.m.Y' )
+            $date = $modified->format( 'd.m.Y' );
         } else
         {
             $start = new DateTime('first day of this month');
