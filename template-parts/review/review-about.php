@@ -11,7 +11,7 @@
                 <h1><?php echo $args[ 'title' ]; ?></h1>
             <?php endif; ?>
             <div class="review-bonus-title"><?php echo $args[ 'bonus' ]; ?></div>
-            <?php if( empty( $args['mode'] ) ) : ?>
+            <?php if( empty( $args['mode'] ) && !empty( $args[ 'description' ] ) ) : ?>
                 <div class="review-bonus-description"><?php echo $args[ 'description' ]; ?></div>
             <?php endif; ?>
         </div>
