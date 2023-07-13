@@ -79,6 +79,21 @@ class CompilationTabs
         'compilations' => 'tab-compilations',
     ];
 
+    public static function get_date( $compilations )
+    {
+        $date = [];
+        foreach( $compilations as $compilation )
+        {
+            $date[] = CompilationMain::get_date( $compilation );
+        }
+
+        LegalDebug::debug( [
+            'date' => $date,
+        ] );
+
+        return implode( ' ', $date );
+    }
+
     public static function get()
     {
         $post = get_post();
@@ -101,12 +116,18 @@ class CompilationTabs
 
         if( $tabs ) {
             foreach( $tabs as $key => $tab ) {
+                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+
+                $date = self::get_date( $compilations );
+
                 $args['tabs'][] = [
                     'text' => $tab[ self::TAB[ 'text' ] ],
 
                     'image' => $tab[ self::TAB[ 'image' ] ],
 
-                    'compilations' => ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] ),
+                    'compilations' => $compilations,
+
+                    'date' => $date,
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 

@@ -208,6 +208,29 @@ class CompilationMain
         return $where;
     }
 
+    public static function get_date( $id )
+    {
+        $date = '';
+
+        $posts = get_posts( self::get_args_date( $id ) );
+
+        if ( !empty( $posts ) )
+        {
+            $date = array_shift( $posts )->post_modified;
+        }
+
+        return $date;
+    }
+
+    public static function get_args_date( $id )
+    {
+        $args = self::get_args( $id );
+
+        $args[ 'orderby' ] = [ 'modified' => 'DESC' ];
+
+        return $args;
+    }
+
     public static function get_args( $id )
     {
         $meta_query = [];
