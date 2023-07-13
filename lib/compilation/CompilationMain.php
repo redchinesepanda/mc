@@ -253,7 +253,7 @@ class CompilationMain
             // $middle = date_create( 'Y-m-15' );
 
             LegalDebug::debug( [
-                'start' => $start->format('jS, F Y');,
+                'start' => $start->format('jS, F Y'),
 
                 // 'middle' => $middle,
             ] );
