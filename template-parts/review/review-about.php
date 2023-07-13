@@ -1,5 +1,5 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
-    <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'mode' ]; ?>">
+    <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'class' ]; ?>">
         <div class="about-left">
             <div class="about-logo"></div>
             <?php if( empty( $args['mode'] ) && !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
