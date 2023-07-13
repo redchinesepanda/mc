@@ -105,7 +105,7 @@
 
 /* Review About Position */
 
-.tcb-post-content > .review-about {
+.review-about.legal-mode-mini {
     margin-bottom: 30px;
 }
 
@@ -129,7 +129,7 @@
 
 /* Review About Background */
 
-.tcb-post-content > .review-about {
+.review-about.legal-mode-mini {
     border-radius: 20px;
 }
 
