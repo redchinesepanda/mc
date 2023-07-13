@@ -214,17 +214,46 @@ class CompilationMain
         return $where;
     }
 
-    public static function get_date( $id )
+    self DATE_EXCEPTION = [
+        'br',
+    ];
+
+    public static function calculate_date( $id )
     {
-        $date = '';
+        $post_modified = '';
 
         $posts = get_posts( self::get_args_date( $id ) );
 
         if ( !empty( $posts ) )
         {
-            $post_modified = date_create( array_shift( $posts )->post_modified );
+            $post_modified = array_shift( $posts )->post_modified;
+        }
 
-            $date = date_format( $post_modified,'d.m.Y' );
+        return $post_modified;
+    }
+
+    public static function get_date( $id )
+    {
+        $date = '';
+
+        $locale = 
+
+        if ( in_array( $locale, self::DATE_EXCEPTION ) )
+        {
+            $post_modified = self::calculate_date( $id );
+
+            $date = date_format( $post_modified, 'd.m.Y' );
+        } else
+        {
+            $start = date_create( 'Y-m-1' );
+
+            $middle = date_create( 'Y-m-15' );
+
+            LegalDebug::debug( [
+                'start' => $start,
+
+                'middle' => $middle,
+            ] );
         }
 
         return $date;
