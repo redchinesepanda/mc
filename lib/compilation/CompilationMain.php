@@ -236,7 +236,7 @@ class CompilationMain
     {
         $date = '';
 
-        $locale = 
+        $locale = WPMLMain::current_language();
 
         if ( in_array( $locale, self::DATE_EXCEPTION ) )
         {
