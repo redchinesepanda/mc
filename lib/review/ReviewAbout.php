@@ -125,7 +125,7 @@ class ReviewAbout
 
                 'mode' => $mode,
 
-                'class' => ( !empty( $mode ) ? 'legal-mode' . $mode : 'legal-mode-default' ),
+                'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
             ];
         }
 
