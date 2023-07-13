@@ -6,7 +6,7 @@ class ReviewAbout
         'review-about' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about.css',
 
-            'ver'=> '1.0.7',
+            'ver'=> '1.0.8',
         ],
     ];
 
@@ -25,6 +25,8 @@ class ReviewAbout
         $handler = new self();
 
         // [legal-about]
+
+        // [legal-about mode="footer"]
 
         add_shortcode( 'legal-about', [ $handler, 'render' ] );
 

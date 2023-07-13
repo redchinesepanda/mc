@@ -119,7 +119,7 @@
     padding: 5px 40px 5px 20px;
 }
 
-.tcb-post-content .legal-afillate {
+.tcb-post-content > .legal-afillate {
     margin: 0px auto 30px auto;
 }
 
