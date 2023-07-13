@@ -214,7 +214,7 @@ class CompilationMain
         return $where;
     }
 
-    self DATE_EXCEPTION = [
+    const DATE_EXCEPTION = [
         'br',
     ];
 
