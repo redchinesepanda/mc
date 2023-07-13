@@ -250,6 +250,8 @@ class CompilationMain
         } else
         {
             $current = new DateTime();
+
+            $current->modify('+10 day');
             
             $start = new DateTime('first day of this month');
 
