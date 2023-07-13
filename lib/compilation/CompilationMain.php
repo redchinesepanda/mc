@@ -240,9 +240,12 @@ class CompilationMain
 
         if ( in_array( $locale, self::DATE_EXCEPTION ) )
         {
-            $post_modified = self::calculate_date( $id );
+            // $post_modified = self::calculate_date( $id );
 
-            $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
+            // $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
+            $modified = new DateTime( self::calculate_date( $id ) );
+
+            $date = $modified->format( 'd.m.Y' )
         } else
         {
             $start = new DateTime('first day of this month');
