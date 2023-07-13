@@ -242,7 +242,7 @@ class CompilationMain
         {
             $post_modified = self::calculate_date( $id );
 
-            $date = date_format( $post_modified, 'd.m.Y' );
+            $date = !empty( $post_modified ) ? date_format( $post_modified, 'd.m.Y' ) : '';
         } else
         {
             $start = date_create( 'Y-m-1' );
