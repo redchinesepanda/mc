@@ -246,16 +246,17 @@ class CompilationMain
         } else
         {
             $start = new DateTime('first day of this month');
-            
+
+            $middle = new DateTime('15 day of this month');
             
             // $start = date_create( 'Y-m-01' );
 
             // $middle = date_create( 'Y-m-15' );
 
             LegalDebug::debug( [
-                'start' => $start->format('jS, F Y'),
+                'start' => $start->format( 'd.m.Y' ),
 
-                // 'middle' => $middle,
+                'middle' => $middle->format( 'd.m.Y' ),
             ] );
         }
 
