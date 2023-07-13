@@ -129,6 +129,10 @@
 
 /* Review About Background */
 
+.tcb-post-content > .review-about {
+    border-radius: 20px;
+}
+
 .review-about .about-logo {
     background-position: center center;
     background-repeat: no-repeat;
