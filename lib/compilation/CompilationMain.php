@@ -245,7 +245,7 @@ class CompilationMain
             $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
         } else
         {
-            $start = date_create( 'Y-m-1' );
+            $start = date_create( 'Y-m-01' );
 
             $middle = date_create( 'Y-m-15' );
 
