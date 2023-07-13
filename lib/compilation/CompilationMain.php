@@ -232,6 +232,10 @@ class CompilationMain
         return $post_modified;
     }
 
+    const FORMAT = [
+        'updated' => 'd.m.Y',
+    ];
+
     public static function get_date( $id )
     {
         $date = '';
@@ -242,7 +246,7 @@ class CompilationMain
         {
             $modified = new DateTime( self::calculate_date( $id ) );
 
-            $date = $modified->format( 'd.m.Y' );
+            $date = $modified->format( self::FORMAT[ 'updated' ] );
         } else
         {
             $current = new DateTime();
@@ -254,12 +258,19 @@ class CompilationMain
             $middle->modify('+15 day');
 
             LegalDebug::debug( [
-                'current' => $current->format( 'd.m.Y' ),
+                'current' => $current->format( self::FORMAT[ 'updated' ] ),
 
-                'start' => $start->format( 'd.m.Y' ),
+                'start' => $start->format( self::FORMAT[ 'updated' ] ),
 
-                'middle' => $middle->format( 'd.m.Y' ),
+                'middle' => $middle->format( self::FORMAT[ 'updated' ] ),
             ] );
+
+            $date = $start->format( self::FORMAT[ 'updated' ] );
+
+            if ( $current > $middle )
+            {
+                $date = $middle->format( self::FORMAT[ 'updated' ] );
+            }
         }
 
         return $date;
