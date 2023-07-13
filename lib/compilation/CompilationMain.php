@@ -214,9 +214,7 @@ class CompilationMain
         return $where;
     }
 
-    const DATE_EXCEPTION = [
-        // 'br',
-    ];
+    const DATE_EXCEPTION = [ 'kz', 'by', 'es', 'uk', 'za', 'br', 'ng', 'ie', 'pt' ];
 
     public static function calculate_date( $id )
     {
