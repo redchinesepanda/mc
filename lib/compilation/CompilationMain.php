@@ -240,14 +240,13 @@ class CompilationMain
 
         if ( in_array( $locale, self::DATE_EXCEPTION ) )
         {
-            // $post_modified = self::calculate_date( $id );
-
-            // $date = !empty( $post_modified ) ? date_format( date_create( $post_modified ), 'd.m.Y' ) : '';
             $modified = new DateTime( self::calculate_date( $id ) );
 
             $date = $modified->format( 'd.m.Y' );
         } else
         {
+            $current = new DateTime();
+            
             $start = new DateTime('first day of this month');
 
             $middle = new DateTime( 'last day of previous month' );
@@ -255,6 +254,8 @@ class CompilationMain
             $middle->modify('+15 day');
 
             LegalDebug::debug( [
+                'current' => $current->format( 'd.m.Y' ),
+
                 'start' => $start->format( 'd.m.Y' ),
 
                 'middle' => $middle->format( 'd.m.Y' ),
