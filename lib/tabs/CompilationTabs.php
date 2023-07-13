@@ -114,7 +114,7 @@ class CompilationTabs
             foreach( $tabs as $key => $tab ) {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                $date = self::get_date( $compilations );
+                // $date = self::get_date( $compilations );
 
                 $args['tabs'][] = [
                     'text' => $tab[ self::TAB[ 'text' ] ],
@@ -123,7 +123,7 @@ class CompilationTabs
 
                     'compilations' => $compilations,
 
-                    'date' => $date,
+                    // 'date' => $date,
 
                     'active' => ( $key == 0 ? 'legal-active' : '' ),
 
