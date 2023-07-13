@@ -123,7 +123,7 @@ class ReviewAbout
                     'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
                 ],
 
-                'mode' => $mode,
+                'mode' => ( !empty( $mode ) ? 'legal-' . $mode : 'legal-default' ),
             ];
         }
 
