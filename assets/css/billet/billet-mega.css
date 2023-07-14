@@ -24,6 +24,10 @@
 	align-items: center;
 }
 
+.legal-billet-mega .mega-about-afillate {
+	display: block;
+}
+
 /* Position */
 
 .legal-billet-mega {
@@ -32,6 +36,10 @@
 
 .legal-billet-mega .billet-mega-about {
 	padding: 40px 0px;
+}
+
+.legal-billet-mega .mega-about-afillate {
+	padding: 5px 40px 5px 20px;
 }
 
 /* Width and Height */
@@ -52,4 +60,28 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
+}
+
+.legal-billet-mega .mega-about-afillate {
+	background-image: url( '../../img/review/review-bet-here.svg' );
+	background-position: right 22px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
+	border: 1.6px solid rgb(255, 255, 255);
+}
+
+/* Typography */
+
+.legal-billet-mega .mega-about-afillate {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28.8px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: rgb(255, 255, 255);
 }

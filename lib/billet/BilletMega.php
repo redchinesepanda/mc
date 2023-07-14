@@ -48,7 +48,7 @@ class BilletMega
 			'afillate' => [
 				'href' => $url[ 'play' ],
 
-				'text' => __( 'Afillate', ToolLoco::TEXTDOMAIN ),
+				'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
 			],
 
 			'review' => [
