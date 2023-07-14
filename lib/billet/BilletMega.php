@@ -25,11 +25,11 @@ class BilletMega
 			'content' => $content,
 		] );
 
-		$args = [
-			'id' => $atts[ 'id' ],
+		// $args = [
+		// 	'id' => $atts[ 'id' ],
 
-			'content' => $content,
-		];
+		// 	'content' => $content,
+		// ];
 
         return self::render( $args );
     }
