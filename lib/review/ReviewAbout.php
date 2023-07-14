@@ -28,6 +28,8 @@ class ReviewAbout
 
         // [legal-about mode="footer"]
 
+        // [legal-about mode="mini"]
+
         add_shortcode( 'legal-about', [ $handler, 'render' ] );
 
         // [legal-button]
