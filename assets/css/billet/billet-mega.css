@@ -1,3 +1,15 @@
+@media screen and ( min-width: 768px ) {
+	/* Width and Height */
+
+	.legal-billet-mega .billet-mega-about {
+		width: calc( 25% - 15px );
+	}
+
+	.legal-billet-mega .billet-mega-content {
+		width: calc( 75% - 15px );
+	}
+}
+
 /* Display */
 
 .legal-billet-mega {
@@ -14,9 +26,9 @@
 
 /* Width and Height */
 
-.legal-billet-mega .billet-mega-footer {
+/* .legal-billet-mega .billet-mega-footer {
 	width: 100%;
-}
+} */
 
 /* Background */
 
