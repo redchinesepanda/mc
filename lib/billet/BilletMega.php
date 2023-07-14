@@ -21,32 +21,32 @@ class BilletMega
 
         // [billet-mega id="12345"][/billet-mega]
 
-        // add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+        add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
-		add_shortcode( 'billet-mega', '__return_false' );
+		// add_shortcode( 'billet-mega', '__return_false' );
 
-		add_filter( 'the_content', [ $handler, 'run_shortcode' ], 7 );
+		// add_filter( 'the_content', [ $handler, 'run_shortcode' ], 7 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-	function run_shortcode( $content ) {
-		$handler = new self();
+	// function run_shortcode( $content ) {
+	// 	$handler = new self();
 
-		global $shortcode_tags;
+	// 	global $shortcode_tags;
 	 
-		$orig_shortcode_tags = $shortcode_tags;
+	// 	$orig_shortcode_tags = $shortcode_tags;
 
-		remove_all_shortcodes();
+	// 	remove_all_shortcodes();
 	 
-		add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+	// 	add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 	 
-		$content = do_shortcode( $content );
+	// 	$content = do_shortcode( $content );
 	 
-		$shortcode_tags = $orig_shortcode_tags;
+	// 	$shortcode_tags = $orig_shortcode_tags;
 	 
-		return $content;
-	}
+	// 	return $content;
+	// }
 
 	public static function prepare( $atts, $content = '' )
     {
