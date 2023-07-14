@@ -77,7 +77,7 @@ class BilletMain
         BilletMega::register();
     }
 
-    private static function get_url( $id, $filter )
+    private static function get_url( $id, $filter = [] )
     {
         // Партнерская БК или ''
 

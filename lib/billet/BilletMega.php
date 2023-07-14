@@ -25,10 +25,26 @@ class BilletMega
 		// 	'content' => $content,
 		// ] );
 
+		$url = BilletMain::get_url( $id );
+
 		$args = [
 			'id' => $atts[ 'id' ],
 
+			'afillate' => [
+				'href' => $url[ 'play' ],
+
+				'text' => __( 'Afillate', ToolLoco::TEXTDOMAIN ),
+			],
+
+			'review' => [
+				'href' => $url[ 'review' ],
+
+				'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+			],
+
 			'content' => $content,
+
+			'footer' => '',
 		];
 
         return self::render( $args );
