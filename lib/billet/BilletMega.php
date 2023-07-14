@@ -12,7 +12,7 @@ class BilletMega
 
     public static function register_style()
     {
-        BilletMain::register_style( self::CSS );
+        ToolEnqueue::register_style( self::CSS );
     }
 
 	public static function register()
