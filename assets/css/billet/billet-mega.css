@@ -2,11 +2,11 @@
 	/* Width and Height */
 
 	.legal-billet-mega .billet-mega-about {
-		width: calc( 25% - 15px );
+		width: calc( 20% - 15px );
 	}
 
 	.legal-billet-mega .billet-mega-content {
-		width: calc( 75% - 15px );
+		width: calc( 80% - 15px );
 	}
 }
 
