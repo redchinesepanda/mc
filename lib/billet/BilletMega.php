@@ -25,12 +25,12 @@ class BilletMega
 
 		add_shortcode( 'billet-mega', '__return_false' );
 
-		add_filter( 'the_content', 'foobar_run_shortcode', 7 );
+		add_filter( 'the_content', [ $handler, 'run_shortcode' ], 7 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-	function foobar_run_shortcode( $content ) {
+	function run_shortcode( $content ) {
 		$handler = new self();
 
 		global $shortcode_tags;
