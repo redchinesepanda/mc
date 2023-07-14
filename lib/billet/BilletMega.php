@@ -21,7 +21,7 @@ class BilletMega
 
         // [billet-mega id="12345"][/billet-mega]
 
-        add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+        add_shortcode( 'billet-mega', [ $handler, 'prepare' ], 9, 2 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
