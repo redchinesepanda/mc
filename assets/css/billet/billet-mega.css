@@ -1,2 +1,26 @@
 /* Display */
 
+.legal-billet-mega {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+/* Position */
+
+.legal-billet-mega {
+	padding: 30px;
+}
+
+/* Width and Height */
+
+.legal-billet-mega .billet-mega-footer {
+	width: 100%;
+}
+
+/* Background */
+
+.legal-billet-mega {
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
+	border-radius: 20px;
+}
