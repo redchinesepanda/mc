@@ -49,6 +49,10 @@
 	height: 45px;
 }
 
+.legal-billet-mega .mega-about-afillate {
+	width: 100%;
+}
+
 /* Background */
 
 .legal-billet-mega {
@@ -69,7 +73,6 @@
 	background-size: auto;
 	background-color: rgb(89, 151, 227);
 	border-radius: 20px;
-	border: 1.6px solid rgb(255, 255, 255);
 }
 
 /* Typography */
