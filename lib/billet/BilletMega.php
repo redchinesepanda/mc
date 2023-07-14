@@ -2,6 +2,19 @@
 
 class BilletMega
 {
+	const CSS = [
+        'billet-mega' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/billet-mega.css',
+
+            'ver'=> '1.0.9',
+        ],
+    ];
+
+    public static function register_style()
+    {
+        ReviewMain::register_style( self::CSS );
+    }
+
 	public static function register()
     {
         $handler = new self();
@@ -9,6 +22,8 @@ class BilletMega
         // [billet-mega id="12345"][/billet-mega]
 
         add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	public static function prepare( $atts, $content = '' )
