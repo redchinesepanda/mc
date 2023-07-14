@@ -1,4 +1,10 @@
+<style type="text/css">
+	legal-billet-mega item-<?php echo $args[ 'id' ] ?> .mega-about-logo {
+		background-image: url( '<?php echo $args['logo']; ?>' );
+	}
+</style>
 <div class="legal-billet-mega item-<?php echo $args[ 'id' ] ?>">
+	
 	<div class="billet-mega-about">
 		<div class="mega-about-logo"></div>
 		<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
