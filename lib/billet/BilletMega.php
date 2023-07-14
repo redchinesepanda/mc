@@ -25,12 +25,28 @@ class BilletMega
 
 		add_shortcode( 'billet-mega', '__return_false' );
 
-		add_filter( 'the_content', 'prepare', 7 );
-
-		// add_filter( 'the_content', 'do_shortcode', 9 );
+		add_filter( 'the_content', 'foobar_run_shortcode', 7 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
+
+	function foobar_run_shortcode( $content ) {
+		$handler = new self();
+
+		global $shortcode_tags;
+	 
+		$orig_shortcode_tags = $shortcode_tags;
+
+		remove_all_shortcodes();
+	 
+		add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+	 
+		$content = do_shortcode( $content );
+	 
+		$shortcode_tags = $orig_shortcode_tags;
+	 
+		return $content;
+	}
 
 	public static function prepare( $atts, $content = '' )
     {
