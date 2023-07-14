@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'BilletMega.php' );
+
 require_once( 'BilletLogo.php' );
 
 require_once( 'BilletSpoiler.php' );
@@ -71,6 +73,8 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        BilletMega::register();
     }
 
     private static function get_url( $id, $filter )
