@@ -12,7 +12,7 @@ class BilletMega
 
     public static function register_style()
     {
-        ReviewMain::register_style( self::CSS );
+        BilletMain::register_style( self::CSS );
     }
 
 	public static function register()
