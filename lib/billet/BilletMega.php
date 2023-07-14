@@ -4,7 +4,7 @@ class BilletMega
 {
 	const CSS = [
         'billet-mega' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/billet-mega.css',
+            'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-mega.css',
 
             'ver'=> '1.0.0',
         ],
