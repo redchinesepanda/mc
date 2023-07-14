@@ -19,17 +19,17 @@ class BilletMega
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
 
-		LegalDebug::debug( [
-			'atts' => $atts,
-
-			'content' => $content,
-		] );
-
-		// $args = [
-		// 	'id' => $atts[ 'id' ],
+		// LegalDebug::debug( [
+		// 	'atts' => $atts,
 
 		// 	'content' => $content,
-		// ];
+		// ] );
+
+		$args = [
+			'id' => $atts[ 'id' ],
+
+			'content' => $content,
+		];
 
         return self::render( $args );
     }
