@@ -18,6 +18,11 @@
 	gap: 30px;
 }
 
+.legal-billet-mega .billet-mega-about {
+	display: flex;
+	flex-direction: column;
+}
+
 /* Position */
 
 .legal-billet-mega {
