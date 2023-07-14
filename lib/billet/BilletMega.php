@@ -47,6 +47,8 @@ class BilletMega
 
 			'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
 
+			'title' => get_field( 'billet-bonus-title', $atts[ 'id' ] ),
+
 			'afillate' => [
 				'href' => $url[ 'play' ],
 
