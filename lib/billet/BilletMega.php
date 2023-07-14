@@ -42,7 +42,7 @@ class BilletMega
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'billet-mega' ], false, self::get( $args ) );
+        load_template( self::TEMPLATE[ 'billet-mega' ], false, $args );
 
         $output = ob_get_clean();
 
