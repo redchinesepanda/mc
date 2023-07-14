@@ -25,7 +25,7 @@ class BilletMega
 		// 	'content' => $content,
 		// ] );
 
-		$url = BilletMain::get_url( $id );
+		$url = BilletMain::get_url( $atts[ 'id' ] );
 
 		$args = [
 			'id' => $atts[ 'id' ],
