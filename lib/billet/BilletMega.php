@@ -21,9 +21,13 @@ class BilletMega
 
         // [billet-mega id="12345"][/billet-mega]
 
-        add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+        // add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
-		add_filter( 'the_content', 'do_shortcode', 9 );
+		add_shortcode( 'billet-mega', '__return_false' );
+
+		add_filter( 'the_content', 'prepare', 7 );
+
+		// add_filter( 'the_content', 'do_shortcode', 9 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
