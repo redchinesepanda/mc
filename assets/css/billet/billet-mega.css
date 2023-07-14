@@ -25,12 +25,12 @@
 	row-gap: 20px;
 }
 
-.legal-billet-mega .mega-about-afillate {
+.legal-billet-mega .mega-about-afillate[href=""] {
 	display: block;
 	pointer-events: none;
 }
 
-.legal-billet-mega .mega-about-review {
+.legal-billet-mega .mega-about-review[href=""] {
 	pointer-events: none;
 }
 
