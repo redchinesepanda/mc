@@ -27,6 +27,11 @@
 
 .legal-billet-mega .mega-about-afillate {
 	display: block;
+	pointer-events: none;
+}
+
+.legal-billet-mega .mega-about-review {
+	pointer-events: none;
 }
 
 /* Position */
