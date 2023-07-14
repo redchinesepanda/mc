@@ -1,6 +1,6 @@
 <div class="legal-billet-mega item-<?php echo $args[ 'id' ] ?>">
 	<style type="text/css">
-		.legal-billet-mega item-<?php echo $args[ 'id' ] ?> .mega-about-logo {
+		.legal-billet-mega.item-<?php echo $args[ 'id' ] ?> .mega-about-logo {
 			background-image: url( '<?php echo $args['logo']; ?>' );
 		}
 	</style>
