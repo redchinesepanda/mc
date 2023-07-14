@@ -28,6 +28,12 @@ class BilletMega
 		// add_filter( 'the_content', [ $handler, 'run_shortcode' ], 7 );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		remove_filter( 'the_content', 'wpautop' );
+
+		add_filter( 'the_content', 'wpautop' , 99 );
+
+		add_filter( 'the_content', 'shortcode_unautop', 100 );
     }
 
 	// function run_shortcode( $content ) {
