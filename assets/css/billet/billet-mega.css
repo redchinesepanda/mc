@@ -21,12 +21,17 @@
 .legal-billet-mega .billet-mega-about {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 /* Position */
 
 .legal-billet-mega {
 	padding: 30px;
+}
+
+.legal-billet-mega .billet-mega-about {
+	padding: 40px 0px;
 }
 
 /* Width and Height */
