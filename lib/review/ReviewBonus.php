@@ -63,6 +63,8 @@ class ReviewBonus
 		'content' => 'legal-bonus-content',
 
 		'item' => 'legal-bonus-content-item',
+
+		'review' => 'no-review',
 	];
 
 	public static function get_nodes( $dom )
@@ -114,8 +116,10 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
+			$no_review = self::check_no_review( $class );
+
 			LegalDebug::debug( [
-				'class' => $class,
+				'no_review' => ( $no_review ? 'true' : 'false' ),
 			] );
 
 			if ( $permission_description ) {
@@ -178,6 +182,11 @@ class ReviewBonus
 		}
 
 		return $result;
+	}
+
+	public static function check_no_review( $class )
+	{
+		return ( strpos( $class, self::BONUS_CLASS[ 'review' ] ) !== false ? true : false );
 	}
 
 	public static function get_bonus( $args )
