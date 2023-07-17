@@ -43,7 +43,8 @@
 
 /* Bonus Display */
 
-.tcb-post-content > .legal-bonus {
+.tcb-post-content > .legal-bonus,
+.legal-billet-mega .legal-bonus {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
