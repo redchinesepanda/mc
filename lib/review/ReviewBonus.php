@@ -158,11 +158,15 @@ class ReviewBonus
 
 				$bonus = $dom->createElement( 'div' );
 
-				$bonus->setAttribute( 'class', self::check( $class ) );
+				$class_bonus = self::check( $class );
 
-				// if ( $no_review ) {
+				if ( $no_review ) {
+					$class_bonus .= ' ' . self::BONUS_CLASS[ 'review' ];
+				}
 
-				// }
+				$bonus->setAttribute( 'class', $class_bonus );
+
+				
 
 				$args = [];
 				
