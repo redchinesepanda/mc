@@ -165,15 +165,15 @@ class ReviewBonus
 				$args[ 'no-review' ] = $no_review;
 
 				$replace = $node;
+			
+				LegalDebug::debug( [
+					'class' => $class,
+				] );
 			}
 
 			if ( $permission_description || $permission_content ) {
 				$body->removeChild( $node );
 			}
-			
-			LegalDebug::debug( [
-				'class' => $class,
-			] );
 		}
 
 		return $dom->saveHTML();
