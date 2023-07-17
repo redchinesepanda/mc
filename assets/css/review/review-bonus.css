@@ -21,7 +21,8 @@
 {
 	/* Bonus Position */
 
-	.tcb-post-content > .legal-bonus {
+	.tcb-post-content > .legal-bonus,
+	.legal-billet-mega .legal-bonus {
 		padding: 15px 30px;
 	}
 
@@ -77,7 +78,8 @@
 
 /* Bonus Position */
 
-.tcb-post-content > .legal-bonus {
+.tcb-post-content > .legal-bonus,
+.legal-billet-mega .legal-bonus {
 	margin-bottom: 20px;
 }
 
