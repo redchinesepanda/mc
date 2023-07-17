@@ -173,12 +173,6 @@ class ReviewBonus
 				$args[ 'no-review' ] = $no_review;
 
 				$replace = $node;
-			
-				LegalDebug::debug( [
-					'class' => $class,
-
-					'no_review' => ( $no_review ? 'true' : 'false' ),
-				] );
 			}
 
 			if ( $permission_description || $permission_content ) {
