@@ -118,9 +118,9 @@ class ReviewBonus
 
 			$no_review = self::check_no_review( $class );
 
-			// LegalDebug::debug( [
-			// 	'no_review' => ( $no_review ? 'true' : 'false' ),
-			// ] );
+			LegalDebug::debug( [
+				'class' => $class,
+			] );
 
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
@@ -155,6 +155,10 @@ class ReviewBonus
 				$bonus = $dom->createElement( 'div' );
 
 				$bonus->setAttribute( 'class', self::check( $class ) );
+
+				if ( $no_review ) {
+
+				}
 
 				$args = [];
 				
