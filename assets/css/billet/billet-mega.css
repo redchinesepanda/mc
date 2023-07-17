@@ -107,7 +107,8 @@
 	text-transform: uppercase;
 }
 
-.legal-billet-mega .mega-content-title {
+.legal-billet-mega .mega-content-title,
+.legal-billet-mega .content-title-link {
 	font-family: "Source Sans Pro";
 	font-size: 28px;
 	font-style: normal;
