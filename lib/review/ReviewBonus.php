@@ -135,9 +135,15 @@ class ReviewBonus
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
-				// if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
+				LegalDebug::debug( [
+					'function' => 'get_content',
+					
+					'args' => $args,
+				] );
+
+				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 				
-				if ( strpos( $bonus->getAttribute( 'class' ), self::BONUS_CLASS[ 'billet' ] ) !== false ) {
+				// if ( strpos( $bonus->getAttribute( 'class' ), self::BONUS_CLASS[ 'billet' ] ) !== false ) {
 					$template = self::render_billet( $args );
 				} else {
 					$template = self::render_bonus( $args );
