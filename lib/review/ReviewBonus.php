@@ -162,6 +162,8 @@ class ReviewBonus
 
 				$args[ 'class' ] = $class;
 
+				$args[ 'no-review' ] = $no_review;
+
 				$replace = $node;
 			}
 
