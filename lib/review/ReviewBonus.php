@@ -135,11 +135,11 @@ class ReviewBonus
 			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
 				$template = '';
 
-				LegalDebug::debug( [
-					'function' => 'get_content',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_content',
 					
-					'args' => $args,
-				] );
+				// 	'args' => $args,
+				// ] );
 
 				if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
 				
@@ -160,9 +160,9 @@ class ReviewBonus
 
 				$bonus->setAttribute( 'class', self::check( $class ) );
 
-				if ( $no_review ) {
+				// if ( $no_review ) {
 
-				}
+				// }
 
 				$args = [];
 				
@@ -340,6 +340,12 @@ class ReviewBonus
     public static function get_billet( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
+
+		LegalDebug::debug( [
+			'function' => 'get_billet',
+
+			'$args' => $args,
+		] );
         
         // if( $group ) {
 			return [
