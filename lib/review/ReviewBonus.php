@@ -168,6 +168,8 @@ class ReviewBonus
 			
 				LegalDebug::debug( [
 					'class' => $class,
+
+					'no_review' => ( $no_review ? 'true' : 'false' ),
 				] );
 			}
 
