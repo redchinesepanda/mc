@@ -35,7 +35,7 @@ class BilletMega
 
 			'title-tag' => 'h3',
 
-			'button-label' => __( 'Bet here', ToolLoco::TEXTDOMAIN )
+			'button-label' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
 
 			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
