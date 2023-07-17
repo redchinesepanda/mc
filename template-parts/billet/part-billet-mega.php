@@ -10,7 +10,7 @@
 		<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops" rel="nofollow"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
 	</div>
 	<div class="billet-mega-content">
-		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title"><?php echo $args[ 'title' ][ 'text' ] ?></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title"><a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link"><?php echo $args[ 'title' ][ 'text' ] ?></a></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 		<?php echo $args[ 'content' ] ?>
 	</div>
 	<?php if( !empty( $args[ 'footer' ] ) ) : ?>
