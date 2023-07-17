@@ -25,11 +25,13 @@ class ToolSitemap
 
 		$atts = shortcode_atts( $pairs, $atts, 'legal-sitemap' );
 
-		$posts = self::get_args( $atts );
+		$args = self::get_args( $atts );
 
-		$args = self::parse_posts( $posts );
+		$posts = get_posts( $args );
 
-        return self::render( $args );
+		$parsed = self::parse_posts( $posts );
+
+        return self::render( $parsed );
     }
 
 	public static function get_args( $atts )
