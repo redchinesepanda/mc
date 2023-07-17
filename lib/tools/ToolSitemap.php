@@ -8,7 +8,7 @@ class ToolSitemap
 
         // [legal-sitemap]
 		
-		// [legal-sitemap post_type='legal_billet' taxonomy='page_type' terms='billet_casino']
+		// [legal-sitemap post_type='page' taxonomy='page_type' terms='compilation']
 
 		add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
     }
@@ -26,6 +26,10 @@ class ToolSitemap
 				'terms' => $tax_query[ 'terms' ],
 			];
 		}
+
+		LegalDebug::debug( [
+			'tax_query' => $tax_query,
+		] );
 
         return [
             'numberposts' => -1,
