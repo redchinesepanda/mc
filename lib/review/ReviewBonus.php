@@ -426,6 +426,22 @@ class ReviewBonus
 
 						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'description' ],
 					],
+
+					[
+						'title' => 'No Review',
+						
+						'selector' => 'h3,p',
+
+						'classes' => self::BONUS_CLASS[ 'review' ],
+					],
+
+					[
+						'title' => 'No Height',
+						
+						'selector' => 'h3,p',
+
+						'classes' => self::BONUS_CLASS[ 'height' ],
+					],
 				],
 			],
 		] );
