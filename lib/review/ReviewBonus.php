@@ -118,10 +118,6 @@ class ReviewBonus
 
 			$no_review = self::check_no_review( $class );
 
-			LegalDebug::debug( [
-				'class' => $class,
-			] );
-
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
 				
@@ -174,6 +170,10 @@ class ReviewBonus
 			if ( $permission_description || $permission_content ) {
 				$body->removeChild( $node );
 			}
+			
+			LegalDebug::debug( [
+				'class' => $class,
+			] );
 		}
 
 		return $dom->saveHTML();
