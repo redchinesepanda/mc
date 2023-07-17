@@ -48,10 +48,6 @@ class ToolSitemap
 			];
 		}
 
-		LegalDebug::debug( [
-			'tax_query' => $tax_query,
-		] );
-
         return [
             'numberposts' => -1,
             
@@ -81,29 +77,6 @@ class ToolSitemap
 
         return $items;
     }
-	
-	// public static function get( $atts )
-	// {
-	// 	$post_type = 'legal_bk_review';
-
-	// 	$tax_query = [];
-
-	// 	if ( !empty( $atts[ 'post_type' ] ) ) {
-	// 		$post_type = $atts[ 'post_type' ];
-	// 	}
-
-	// 	if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
-	// 		$tax_query[ 'taxonomy' ] = $atts[ 'taxonomy' ];
-
-	// 		$tax_query[ 'terms' ] = $atts[ 'terms' ];
-	// 	}
-
-	// 	$args = self::get_args( $post_type, $tax_query );
-
-	// 	$posts = get_posts( $args );
-
-	// 	return self::parse_posts( $posts );
-	// }
 	
 	const TEMPLATE = [
         'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap.php',

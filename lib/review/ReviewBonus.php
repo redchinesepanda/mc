@@ -114,6 +114,10 @@ class ReviewBonus
 
 			$permission_last = ( $id == $last );
 
+			LegalDebug::debug( [
+				'class' => $class,
+			] );
+
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
 				
