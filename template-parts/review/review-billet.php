@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+	'$args' => $args,
+] );
+
+?>
 <?php if( !empty( $args ) ) : ?>
 	<div class="billet-review <?php echo $args[ 'class' ]; ?>">
 		<img class="review-image" src="<?php echo $args[ 'src' ]; ?>" width="138" height="45" />
