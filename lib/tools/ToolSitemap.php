@@ -6,24 +6,43 @@ class ToolSitemap
     {
         $handler = new self();
 
-        // [legal-sitemap]
-		
-		// [legal-sitemap post_type='page' taxonomy='page_type' terms='compilation']
+        // [legal-sitemap post_type='legal_bk_review' taxonomy='page_type' terms='review']
 
-		add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
+		// add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
+
+		add_shortcode( 'legal-sitemap', [ $handler, 'prepare' ] );
     }
 
-	public static function get_args( $post_type, $tax_query )
+	public static function prepare( $atts )
+    {
+		$pairs = [
+			'post_type' => 'legal_bk_review',
+
+			'taxonomy' => '',
+
+			'terms' => '',
+		];
+
+		$atts = shortcode_atts( $pairs, $atts, 'legal-sitemap' );
+
+		$posts = self::get_args( $atts );
+
+		$args = self::parse_posts( $posts );
+
+        return self::render( $args );
+    }
+
+	public static function get_args( $atts )
     {
 		$tax_query = [];
 
-		if ( !empty( $term ) ) {
+		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
 			$tax_query[] = [
-				'taxonomy' => $tax_query[ 'taxonomy' ],
+				'taxonomy' => $atts[ 'taxonomy' ],
 
 				'field' => 'slug',
 
-				'terms' => $tax_query[ 'terms' ],
+				'terms' => $atts[ 'terms' ],
 			];
 		}
 
@@ -34,7 +53,7 @@ class ToolSitemap
         return [
             'numberposts' => -1,
             
-            'post_type' => $post_type,
+            'post_type' => $atts[ 'post_type' ],
 
 			'suppress_filters' => 0,
             
@@ -61,38 +80,38 @@ class ToolSitemap
         return $items;
     }
 	
-	public static function get( $atts )
-	{
-		$post_type = 'legal_bk_review';
+	// public static function get( $atts )
+	// {
+	// 	$post_type = 'legal_bk_review';
 
-		$tax_query = [];
+	// 	$tax_query = [];
 
-		if ( !empty( $atts[ 'post_type' ] ) ) {
-			$post_type = $atts[ 'post_type' ];
-		}
+	// 	if ( !empty( $atts[ 'post_type' ] ) ) {
+	// 		$post_type = $atts[ 'post_type' ];
+	// 	}
 
-		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
-			$tax_query[ 'taxonomy' ] = $atts[ 'taxonomy' ];
+	// 	if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
+	// 		$tax_query[ 'taxonomy' ] = $atts[ 'taxonomy' ];
 
-			$tax_query[ 'terms' ] = $atts[ 'terms' ];
-		}
+	// 		$tax_query[ 'terms' ] = $atts[ 'terms' ];
+	// 	}
 
-		$args = self::get_args( $post_type, $tax_query );
+	// 	$args = self::get_args( $post_type, $tax_query );
 
-		$posts = get_posts( $args );
+	// 	$posts = get_posts( $args );
 
-		return self::parse_posts( $posts );
-	}
+	// 	return self::parse_posts( $posts );
+	// }
 	
 	const TEMPLATE = [
         'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap.php',
     ];
 
-    public static function render( $atts )
+    public static function render( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'sitemap' ], false, self::get( $atts ) );
+        load_template( self::TEMPLATE[ 'sitemap' ], false, $args );
 
         $output = ob_get_clean();
 
