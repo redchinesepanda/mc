@@ -334,14 +334,10 @@ class ReviewBonus
     public static function get_billet( $args )
 	{
 		$group = get_field( ReviewAbout::FIELD );
-
-		$css_font = !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default';
-
-		$css_no_review = !empty( $args[ 'no-review' ] ) ? self::BONUS_CLASS[ 'review' ] : '';
         
         // if( $group ) {
 			return [
-				'class' => $css_font . ' ' . $css_no_review,
+				'class' => !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default',
 
 				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
