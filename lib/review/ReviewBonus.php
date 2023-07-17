@@ -160,9 +160,9 @@ class ReviewBonus
 
 				$class_bonus = self::check( $class );
 
-				// if ( $no_review ) {
-				// 	$class_bonus .= ' ' . self::BONUS_CLASS[ 'review' ];
-				// }
+				if ( $no_review ) {
+					$class_bonus .= ' ' . self::BONUS_CLASS[ 'review' ];
+				}
 
 				$bonus->setAttribute( 'class', $class_bonus );
 
