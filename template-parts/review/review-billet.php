@@ -11,11 +11,13 @@
 		<div class="billet-title">
 			<?php echo $args[ 'title' ]; ?>
 		</div>
-		<div class="billet-description">
-			<?php foreach ( $args[ 'description' ] as $item ) : ?>
-				<?php echo $item; ?>
-			<?php endforeach; ?>
-		</div>
+		<?php if( !empty( $args[ 'description' ] ) ) : ?>
+			<div class="billet-description">
+				<?php foreach ( $args[ 'description' ] as $item ) : ?>
+					<?php echo $item; ?>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
 	</div>
 	<div class="billet-get">
 		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>">
