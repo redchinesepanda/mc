@@ -41,7 +41,7 @@
 }
 
 .tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ),
-.legal-billet-mega h3 {
+.legal-billet-mega h3:not( .legal-override ) {
     padding-bottom: 20px;
 }
 
