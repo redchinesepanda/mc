@@ -95,7 +95,8 @@
 
 /* Bonus Background */
 
-.tcb-post-content > .legal-bonus {
+.tcb-post-content > .legal-bonus,
+.legal-billet-mega .legal-bonus {
 	background-color: rgb(255, 255, 255);
 	border-radius: 20px;
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px;
