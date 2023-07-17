@@ -40,7 +40,8 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
+.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ),
+.legal-billet-mega h3 {
     padding-bottom: 20px;
 }
 
