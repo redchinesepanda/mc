@@ -1,6 +1,6 @@
 <div class="billet-title">
     <?php if ( $args['order'] == BilletTitle::ORDER_TYPE ) : ?>
-        <div class="billet-order">#1</div>
+        <div class="billet-order">#<?php echo $args['index']; ?></div>
     <?php endif; ?>
     <a class="legal-title <?php echo $args['class']; ?>" href="<?php echo $args['href']; ?>"><?php echo $args['label']; ?></a>
     <?php if ( !empty( $args['rating'] ) ): ?>

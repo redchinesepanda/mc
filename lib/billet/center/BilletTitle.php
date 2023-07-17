@@ -12,6 +12,8 @@ class BilletTitle extends LegalDebug
 
         $args['id'] = $billet['id'];
 
+        $args['index'] = $billet['index'];
+
         $args['order'] = ( !empty( $billet['filter']['order'] ) ? $billet['filter']['order'] : self::ORDER_TYPE );
 
         $args['achievement'] = ( !empty( $billet['filter']['achievement'] ) ? $billet['filter']['achievement'] : BilletAchievement::TYPE_IMAGE );
