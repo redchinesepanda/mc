@@ -19,45 +19,27 @@ class BilletMega
     {
         $handler = new self();
 
-        // [billet-mega id="12345"][/billet-mega]
+        // [billet-mega id="269185" title-suffix="Greyhound Betting" title-tag="h4" review-label="Bonus" review-url="bonus" button-label="Play now"][/billet-mega]
 
         add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
-		// add_shortcode( 'billet-mega', '__return_false' );
-
-		// add_filter( 'the_content', [ $handler, 'run_shortcode' ], 7 );
-
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		// remove_filter( 'the_content', 'wpautop' );
-
-		// add_filter( 'the_content', 'wpautop' , 99 );
-
-		// add_filter( 'the_content', 'shortcode_unautop', 100 );
     }
-
-	// function run_shortcode( $content ) {
-	// 	$handler = new self();
-
-	// 	global $shortcode_tags;
-	 
-	// 	$orig_shortcode_tags = $shortcode_tags;
-
-	// 	remove_all_shortcodes();
-	 
-	// 	add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
-	 
-	// 	$content = do_shortcode( $content );
-	 
-	// 	$shortcode_tags = $orig_shortcode_tags;
-	 
-	// 	return $content;
-	// }
 
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
 			'id' => 0,
+
+			'title-suffix' => '',
+
+			'title-tag' => 'h3',
+
+			'button-label' => __( 'Bet here', ToolLoco::TEXTDOMAIN )
+
+			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+			'review-url' => '',
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
@@ -75,18 +57,22 @@ class BilletMega
 
 			'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
 
-			'title' => get_field( 'billet-title-text', $atts[ 'id' ] ),
+			'title' => [
+				'text' => get_field( 'billet-title-text', $atts[ 'id' ] ),
+
+				'tag' => $atts[ 'title-tag' ],
+			],
 
 			'afillate' => [
 				'href' => $url[ 'play' ],
 
-				'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+				'text' => $atts[ 'button-label' ],
 			],
 
 			'review' => [
 				'href' => $url[ 'review' ],
 
-				'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+				'text' => $atts[ 'review-label' ],
 			],
 
 			'content' => $content,
