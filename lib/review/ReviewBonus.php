@@ -65,6 +65,8 @@ class ReviewBonus
 		'item' => 'legal-bonus-content-item',
 
 		'review' => 'no-review',
+
+		'height' => 'no-height',
 	];
 
 	public static function get_nodes( $dom )
@@ -117,6 +119,8 @@ class ReviewBonus
 			$permission_last = ( $id == $last );
 
 			$no_review = self::check_no_review( $class );
+			
+			$no_height = self::check_no_height( $class );
 
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
@@ -160,8 +164,8 @@ class ReviewBonus
 
 				$class_bonus = self::check( $class );
 
-				if ( $no_review ) {
-					$class_bonus .= ' ' . self::BONUS_CLASS[ 'review' ];
+				if ( $no_height ) {
+					$class_bonus .= ' ' . self::BONUS_CLASS[ 'height' ];
 				}
 
 				$bonus->setAttribute( 'class', $class_bonus );
@@ -201,6 +205,11 @@ class ReviewBonus
 	public static function check_no_review( $class )
 	{
 		return ( strpos( $class, self::BONUS_CLASS[ 'review' ] ) !== false ? true : false );
+	}
+
+	public static function check_no_height( $class )
+	{
+		return ( strpos( $class, self::BONUS_CLASS[ 'height' ] ) !== false ? true : false );
 	}
 
 	public static function get_bonus( $args )

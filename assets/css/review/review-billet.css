@@ -39,7 +39,7 @@
 {
 	/* Billet Position */
 
-	.legal-billet:not( .no-review ) {
+	.legal-billet:not( .no-height ) {
 		min-height: 210px;
 	}
 
