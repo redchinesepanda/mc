@@ -355,6 +355,8 @@ class ReviewBonus
 					'href' => self::check_url_review(),
 
 					'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+					'disabled' => $args[ 'no-review' ],
 				],
 
 				'title' => $args[ 'title' ],
