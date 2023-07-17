@@ -340,10 +340,14 @@ class ReviewBonus
 
 			'$args' => $args,
 		] );
+
+		$css_font = !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default';
+
+		$css_no_review = empty( $args[ 'no-review' ] ) ? self::BONUS_CLASS[ 'review' ] : '';
         
         // if( $group ) {
 			return [
-				'class' => ( !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default' ),
+				'class' => $css_font . ' ' . $css_no_review,
 
 				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
