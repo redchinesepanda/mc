@@ -22,7 +22,7 @@
 	/* Bonus Position */
 
 	.tcb-post-content > .legal-bonus,
-	.legal-billet-mega .legal-bonus {
+	.legal-billet-mega .billet-mega-content > .legal-bonus {
 		padding: 15px 30px;
 	}
 
@@ -44,7 +44,7 @@
 /* Bonus Display */
 
 .tcb-post-content > .legal-bonus,
-.legal-billet-mega .legal-bonus {
+.legal-billet-mega .billet-mega-content > .legal-bonus {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -80,7 +80,7 @@
 /* Bonus Position */
 
 .tcb-post-content > .legal-bonus,
-.legal-billet-mega .legal-bonus {
+.legal-billet-mega .billet-mega-content > .legal-bonus {
 	margin-bottom: 20px;
 }
 
@@ -99,7 +99,7 @@
 /* Bonus Background */
 
 .tcb-post-content > .legal-bonus,
-.legal-billet-mega .legal-bonus {
+.legal-billet-mega .billet-mega-content > .legal-bonus {
 	background-color: rgb(255, 255, 255);
 	border-radius: 20px;
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px;
