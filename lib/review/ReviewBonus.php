@@ -335,12 +335,6 @@ class ReviewBonus
 	{
 		$group = get_field( ReviewAbout::FIELD );
 
-		LegalDebug::debug( [
-			'function' => 'get_billet',
-
-			'$args' => $args,
-		] );
-
 		$css_font = !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default';
 
 		$css_no_review = !empty( $args[ 'no-review' ] ) ? self::BONUS_CLASS[ 'review' ] : '';
