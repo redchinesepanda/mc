@@ -106,3 +106,12 @@
 	text-decoration: none;
 	text-transform: uppercase;
 }
+
+.legal-billet-mega .mega-content-title {
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 33.6px;
+	color: rgb(12, 17, 21);
+}
