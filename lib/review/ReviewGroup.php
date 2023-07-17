@@ -74,7 +74,7 @@ class ReviewGroup
         $label = [
             'title' => $post->post_title,
 
-            'type' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+            'type' => '',
         ];
 
         $group = get_field( ReviewAbout::FIELD, $post );
@@ -90,6 +90,10 @@ class ReviewGroup
             if ( !empty( $terms ) )
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
+
+                if ( in_array( 'review', $slugs ) ) {
+                    $label[ 'type' ] = __( 'Review', ToolLoco::TEXTDOMAIN );
+                }
 
                 if ( in_array( 'promo-codes', $slugs ) ) {
                     $label[ 'type' ] = __( 'Promo Code', ToolLoco::TEXTDOMAIN );
