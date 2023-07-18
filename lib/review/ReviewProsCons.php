@@ -28,7 +28,12 @@ class ReviewProsCons
 
 	public static function get_node_permission( $node )
 	{
-		$class = explode( ' ', $node->getAttribute( 'class' ) );
+		$class = [];
+
+		if ( !empty( $node ) )
+		{
+			$class = explode( ' ', $node->getAttribute( 'class' ) );
+		}
 
 		return [
 			'title' => ( in_array( self::CSS_CLASS[ 'title' ], $class ) ),
@@ -59,6 +64,10 @@ class ReviewProsCons
 		{
 			$permission_node = self::get_node_permission( $node );
 
+			$permission_previousSibling = self::get_node_permission( $node->previousSibling );
+
+			$permission_nextSibling = self::get_node_permission( $node->nextSibling );
+
 			if ( $permission_node[ 'pros_title' ] )
 			{
 				$type = 'pros';
@@ -77,6 +86,16 @@ class ReviewProsCons
 			{
 				$container[ $type ][ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
+
+			LegalDebug::debug( [
+				'textContent' => substr( $node->textContent, 0, 30 ),
+
+				'permission_node' => $permission_node,
+
+				'permission_previousSibling' => $permission_previousSibling,
+
+				'permission_nextSibling' => $permission_nextSibling,
+			] );
 		}
 
 		LegalDebug::debug( [
