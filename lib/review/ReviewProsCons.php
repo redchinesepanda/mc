@@ -59,6 +59,16 @@ class ReviewProsCons
 
 			$permission_last = ( $id == $last || !empty( $node->nextSibling ) );
 
+			LegalDebug::debug( [
+				'permission_title' => $permission_title,
+
+				'permission_pros_title' => $permission_pros_title,
+
+				'permission_content' => $permission_content,
+
+				'permission_last' => $permission_last,
+			] );
+
 			if ( $permission_content ) {
 				$node->removeAttribute( 'class' );
 
