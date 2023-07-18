@@ -97,6 +97,8 @@ class ReviewProsCons
 			return $content;
 		}
 
+		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+
 		$containers = [];
 
 		foreach ( $nodes as $id => $node )
@@ -107,21 +109,19 @@ class ReviewProsCons
 
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
-			// $permission_replace = $permission_previous[ 'cons_title' ] && $permission_node[ 'content' ] && $permission_next[ 'pros_title' ];
-
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
 
-			LegalDebug::debug( [
-				'textContent' => substr( $node->textContent, 0, 30 ),
+			// LegalDebug::debug( [
+			// 	'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
+			// 	'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
 
-				// 'permission_previous' => self::permission_debug( $permission_previous ),
+			// 	// 'permission_previous' => self::permission_debug( $permission_previous ),
 
-				// 'permission_node' => self::permission_debug( $permission_node ),
+			// 	// 'permission_node' => self::permission_debug( $permission_node ),
 
-				// 'permission_next' => self::permission_debug( $permission_next ),
-			] );
+			// 	// 'permission_next' => self::permission_debug( $permission_next ),
+			// ] );
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
@@ -139,6 +139,8 @@ class ReviewProsCons
 
 			if ( $permission_node[ 'content' ] )
 			{
+				$node->removeAttribute( 'class' );
+
 				$container[ $type ][ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
@@ -147,12 +149,33 @@ class ReviewProsCons
 				$containers[] = $container;
 
 				$container = [];
+
+				$element = $dom->createElement( 'div' );
+
+        		$element->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
+
+				foreach ( $container as $type => $args )
+				{
+					$item = $dom->createElement( 'div' );
+
+					$item_class = $type == 'pros' ? self::CSS_CLASS[ 'pros' ] : self::CSS_CLASS[ 'cons' ];
+					
+					$item->setAttribute( 'class', self::CSS_CLASS[ 'pros-item' ] . ' ' . $item_class );
+
+					LegalDOM::appendHTML( $item, self::render( $args ) );
+
+					$element->appendChild( $item );
+				}
+
+				$body->replaceChild( $element, $node );
+			} else {
+				$body->removeChild( $node );
 			}
 		}
 
-		LegalDebug::debug( [
-			'containers' => $containers,
-		] );
+		// LegalDebug::debug( [
+		// 	'containers' => $containers,
+		// ] );
 
 		return $dom->saveHTML();
 	}
