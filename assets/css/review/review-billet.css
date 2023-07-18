@@ -120,6 +120,10 @@
 	padding: 12px 55px 12px 22px;
 }
 
+.legal-billet h3:not( .legal-override ) {
+    padding-bottom: 0px;
+}
+
 /* Billet Width and Height */
 
 .legal-billet .billet-get-link {
