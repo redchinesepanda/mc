@@ -69,21 +69,24 @@ class ReviewGroup
         }, $items);
     }
 
-    const LABELS = [
-        'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
-
-        'promo-codes' => __( 'Promo Code', ToolLoco::TEXTDOMAIN ),
-
-        'bonus' => __( 'Bonus', ToolLoco::TEXTDOMAIN ),
-        
-        'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
-
-        'registration' => __( 'Registration', ToolLoco::TEXTDOMAIN ),
-
-        'how-to-play' => __( 'How to play', ToolLoco::TEXTDOMAIN ),
-
-        'withdrawal' => __( 'Withdrawal', ToolLoco::TEXTDOMAIN ),
-    ];
+    public static function get_item_labels()
+    {
+        return [
+            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+    
+            'promo-codes' => __( 'Promo Code', ToolLoco::TEXTDOMAIN ),
+    
+            'bonus' => __( 'Bonus', ToolLoco::TEXTDOMAIN ),
+            
+            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+    
+            'registration' => __( 'Registration', ToolLoco::TEXTDOMAIN ),
+    
+            'how-to-play' => __( 'How to play', ToolLoco::TEXTDOMAIN ),
+    
+            'withdrawal' => __( 'Withdrawal', ToolLoco::TEXTDOMAIN ),
+        ];
+    }
 
     public static function get_item_label( $post )
     {
@@ -107,7 +110,7 @@ class ReviewGroup
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
 
-                foreach ( self::LABELS as $type => $label )
+                foreach ( self::get_item_labels() as $type => $label )
                 {
                     if ( in_array( $type, $slugs ) )
                     {
