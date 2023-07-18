@@ -106,9 +106,9 @@ class ReviewProsCons
 			LegalDebug::debug( [
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'permission_node' => self::permission_debug( $permission_node ),
-
 				'permission_previous' => self::permission_debug( $permission_previous ),
+
+				'permission_node' => self::permission_debug( $permission_node ),
 
 				'permission_next' => self::permission_debug( $permission_next ),
 			] );
