@@ -22,9 +22,25 @@ class ReviewProsCons
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_pros' ] );
     }
 
-	// replace:
-	// last node
-	// 
+	
+
+	public static function permission_debug( $permissions )
+	{
+		$text = [];
+
+		foreach ( $permissions as $key => $value )
+		{
+			if ( $value )
+			{
+				$text[ $key ] = 'true';
+			} else
+			{
+				$text[ $key ] = 'false';
+			}
+		}
+
+		return $text;
+	}
 
 	public static function get_node_permission( $node )
 	{
@@ -90,11 +106,11 @@ class ReviewProsCons
 			LegalDebug::debug( [
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'permission_node' => $permission_node,
+				'permission_node' => self::permission_debug( $permission_node ),
 
-				'permission_previous' => $permission_previous,
+				'permission_previous' => self::permission_debug( $permission_previous ),
 
-				'permission_next' => $permission_next,
+				'permission_next' => self::permission_debug( $permission_next ),
 			] );
 		}
 
