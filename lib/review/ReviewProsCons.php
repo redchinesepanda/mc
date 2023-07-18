@@ -92,9 +92,9 @@ class ReviewProsCons
 
 				'permission_node' => $permission_node,
 
-				'permission_previousSibling' => $permission_previousSibling,
+				'permission_previous' => $permission_previous,
 
-				'permission_nextSibling' => $permission_nextSibling,
+				'permission_next' => $permission_next,
 			] );
 		}
 
