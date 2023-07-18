@@ -119,7 +119,7 @@ class ReviewProsCons
 				// 'permission_next' => self::permission_debug( $permission_next ),
 			] );
 
-			$permission_replace = get_permission_replace( $permission_node, $permission_previous, $permission_next );
+			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
