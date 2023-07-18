@@ -70,15 +70,15 @@ class ReviewProsCons
 
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
-		LegalDebug::debug( [
-			'get_permission_replace' => self::permission_debug( [
-				'default' => $default,
+		// LegalDebug::debug( [
+		// 	'get_permission_replace' => self::permission_debug( [
+		// 		'default' => $default,
 
-				'half_pros' => $half_pros,
+		// 		'half_pros' => $half_pros,
 
-				'last' => $last,
-			] ),
-		] );
+		// 		'last' => $last,
+		// 	] ),
+		// ] );
 
 		return $default || $half_pros || $last;
 	}
@@ -116,11 +116,11 @@ class ReviewProsCons
 
 				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
 
-				// 'permission_previous' => self::permission_debug( $permission_previous ),
+				'permission_previous' => self::permission_debug( $permission_previous ),
 
-				// 'permission_node' => self::permission_debug( $permission_node ),
+				'permission_node' => self::permission_debug( $permission_node ),
 
-				// 'permission_next' => self::permission_debug( $permission_next ),
+				'permission_next' => self::permission_debug( $permission_next ),
 			] );
 
 			if ( $permission_node[ 'pros_title' ] )
@@ -148,8 +148,6 @@ class ReviewProsCons
 
 				$container = [];
 			}
-
-			
 		}
 
 		LegalDebug::debug( [
@@ -199,6 +197,14 @@ class ReviewProsCons
 			// LegalDebug::debug( [
 			// 	'class' => $class,
 
+			// 	'permission' => self::permission_debug( [
+			// 		'permission_title' => $permission_title,
+	
+			// 		'permission_pros_title' => $permission_pros_title,
+	
+			// 		'permission_content' => $permission_content,
+			// 	] ),
+
 			// 	'permission_title' => $permission_title ? 'true' : 'false',
 
 			// 	'permission_pros_title' => $permission_pros_title ? 'true' : 'false',
@@ -207,7 +213,7 @@ class ReviewProsCons
 
 			// 	'permission_last' => $permission_last ? 'true' : 'false',
 
-			// 	'container' => $container,
+			// 	// 'container' => $container,
 			// ] );
 
 			if ( $permission_content ) {
