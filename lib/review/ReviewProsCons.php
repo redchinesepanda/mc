@@ -61,7 +61,7 @@ class ReviewProsCons
 
 			LegalDebug::debug( [
 				'class' => $class,
-				
+
 				'permission_title' => $permission_title ? 'true' : 'false',
 
 				'permission_pros_title' => $permission_pros_title ? 'true' : 'false',
@@ -69,6 +69,8 @@ class ReviewProsCons
 				'permission_content' => $permission_content ? 'true' : 'false',
 
 				'permission_last' => $permission_last ? 'true' : 'false',
+
+				'container' => $container,
 			] );
 
 			if ( $permission_content ) {
