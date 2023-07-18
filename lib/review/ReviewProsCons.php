@@ -62,6 +62,27 @@ class ReviewProsCons
 		];
 	}
 
+	public static function get_permission_replace( $current, $previous, $next )
+	{
+		$default = $previous[ 'cons_title' ] && $current[ 'content' ] && $next[ 'pros_title' ];
+
+		$half_pros = $previous[ 'pros_title' ] && $current[ 'content' ] && $next[ 'pros_title' ];
+
+		$last = !$next[ 'title' ] && !$next[ 'content' ];
+
+		LegalDebug::debug( [
+			'permission_previous' => self::permission_debug( [
+				'default' => $default,
+
+				'half_pros' => $half_pros,
+
+				'last' => $last,
+			] ),
+		] );
+
+		return $default && $half_pros && $last;
+	}
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -86,7 +107,19 @@ class ReviewProsCons
 
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
-			$permission_replace = $permission_previous[ 'cons_title' ] && $permission_node[ 'content' ] && $permission_next[ 'pros_title' ];
+			// $permission_replace = $permission_previous[ 'cons_title' ] && $permission_node[ 'content' ] && $permission_next[ 'pros_title' ];
+
+			LegalDebug::debug( [
+				'textContent' => substr( $node->textContent, 0, 30 ),
+
+				// 'permission_previous' => self::permission_debug( $permission_previous ),
+
+				// 'permission_node' => self::permission_debug( $permission_node ),
+
+				// 'permission_next' => self::permission_debug( $permission_next ),
+			] );
+
+			$permission_replace = get_permission_replace( $permission_node, $permission_previous, $permission_next );
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
@@ -114,15 +147,7 @@ class ReviewProsCons
 				$container = [];
 			}
 
-			LegalDebug::debug( [
-				'textContent' => substr( $node->textContent, 0, 30 ),
-
-				'permission_previous' => self::permission_debug( $permission_previous ),
-
-				'permission_node' => self::permission_debug( $permission_node ),
-
-				'permission_next' => self::permission_debug( $permission_next ),
-			] );
+			
 		}
 
 		LegalDebug::debug( [
