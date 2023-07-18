@@ -70,15 +70,15 @@ class ReviewProsCons
 
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
-		// LegalDebug::debug( [
-		// 	'get_permission_replace' => self::permission_debug( [
-		// 		'default' => $default,
+		LegalDebug::debug( [
+			'get_permission_replace' => self::permission_debug( [
+				'default' => $default,
 
-		// 		'half_pros' => $half_pros,
+				'half_pros' => $half_pros,
 
-		// 		'last' => $last,
-		// 	] ),
-		// ] );
+				'last' => $last,
+			] ),
+		] );
 
 		return $default || $half_pros || $last;
 	}
