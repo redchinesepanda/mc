@@ -72,17 +72,17 @@ class ReviewProsCons
 
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
-		LegalDebug::debug( [
-			'get_permission_replace' => self::permission_debug( [
-				'default' => $default,
+		// LegalDebug::debug( [
+		// 	'get_permission_replace' => self::permission_debug( [
+		// 		'default' => $default,
 
-				'half_pros' => $half_pros,
+		// 		'half_pros' => $half_pros,
 
-				'half_cons' => $half_cons,
+		// 		'half_cons' => $half_cons,
 
-				'last' => $last,
-			] ),
-		] );
+		// 		'last' => $last,
+		// 	] ),
+		// ] );
 
 		return $default || $half_pros || $half_cons || $last; 
 	}
@@ -120,11 +120,11 @@ class ReviewProsCons
 
 				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
 
-				'permission_previous' => self::permission_debug( $permission_previous ),
+				// 'permission_previous' => self::permission_debug( $permission_previous ),
 
-				'permission_node' => self::permission_debug( $permission_node ),
+				// 'permission_node' => self::permission_debug( $permission_node ),
 
-				'permission_next' => self::permission_debug( $permission_next ),
+				// 'permission_next' => self::permission_debug( $permission_next ),
 			] );
 
 			if ( $permission_node[ 'pros_title' ] )
