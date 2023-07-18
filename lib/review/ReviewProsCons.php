@@ -30,6 +30,10 @@ class ReviewProsCons
 	{
 		$class = [];
 
+		LegalDebug::debug( [
+			'node' => $node,
+		] );
+
 		if ( !empty( $node ) )
 		{
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
