@@ -148,9 +148,9 @@ class ReviewProsCons
 			{
 				$containers[] = $container;
 
-				LegalDebug::debug( [
-					'container' => $container,
-				] );
+				// LegalDebug::debug( [
+				// 	'container' => $container,
+				// ] );
 
 				$element = $dom->createElement( 'div' );
 
