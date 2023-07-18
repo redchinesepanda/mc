@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+	'name' => $args[ 'name' ],
+] );
+
+?>
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-title">
 		<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
