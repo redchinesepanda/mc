@@ -150,6 +150,10 @@ class ReviewProsCons
 
 				$container = [];
 
+				LegalDebug::debug( [
+					'container' => $container,
+				] );
+
 				$element = $dom->createElement( 'div' );
 
         		$element->setAttribute( 'class', self::CSS_CLASS[ 'container' ] );
