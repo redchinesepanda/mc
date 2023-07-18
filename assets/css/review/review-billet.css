@@ -120,7 +120,8 @@
 	padding: 12px 55px 12px 22px;
 }
 
-.legal-billet h3:not( .legal-override ) {
+.legal-billet h3:not( .legal-override ),
+.legal-billet h4:not( .legal-override ) {
     padding-bottom: 0px;
 }
 
