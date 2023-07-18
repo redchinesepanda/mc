@@ -117,18 +117,6 @@ class ReviewGroup
                         $label[ 'type' ] = $text;
                     }
                 }
-
-                // if ( in_array( 'review', $slugs ) ) {
-                //     $label[ 'type' ] = __( 'Review', ToolLoco::TEXTDOMAIN );
-                // }
-
-                // if ( in_array( 'promo-codes', $slugs ) ) {
-                //     $label[ 'type' ] = __( 'Promo Code', ToolLoco::TEXTDOMAIN );
-                // }
-
-                // if ( in_array( 'bonus', $slugs ) ) {
-                //     $label[ 'type' ] = __( 'Bonus', ToolLoco::TEXTDOMAIN );
-                // }
             } 
         }
 

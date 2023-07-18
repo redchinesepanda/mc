@@ -80,7 +80,7 @@ class ReviewProsCons
 		}
 
 		LegalDebug::debug( [
-			
+			'container' => $container,
 		] );
 
 		return $dom->saveHTML();
