@@ -148,8 +148,6 @@ class ReviewProsCons
 			{
 				$containers[] = $container;
 
-				$container = [];
-
 				LegalDebug::debug( [
 					'container' => $container,
 				] );
@@ -172,6 +170,8 @@ class ReviewProsCons
 				}
 
 				$body->replaceChild( $element, $node );
+
+				$container = [];
 			} else {
 				$body->removeChild( $node );
 			}
