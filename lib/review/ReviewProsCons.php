@@ -76,6 +76,8 @@ class ReviewProsCons
 			return $content;
 		}
 
+		$containers = [];
+
 		foreach ( $nodes as $id => $node )
 		{
 			$permission_node = self::get_node_permission( $node );
@@ -83,6 +85,8 @@ class ReviewProsCons
 			$permission_previous = self::get_node_permission( $nodes->item( $id - 1 ) );
 
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
+
+			$permission_replace = $permission_previous[ 'cons_title' ] && $permission_node[ 'content' ] && $permission_next[ 'pros_title' ];
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
@@ -103,6 +107,13 @@ class ReviewProsCons
 				$container[ $type ][ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
+			if ( $permission_replace )
+			{
+				$containers[] = $container;
+
+				$container = [];
+			}
+
 			LegalDebug::debug( [
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
@@ -115,7 +126,7 @@ class ReviewProsCons
 		}
 
 		LegalDebug::debug( [
-			'container' => $container,
+			'containers' => $containers,
 		] );
 
 		return $dom->saveHTML();
