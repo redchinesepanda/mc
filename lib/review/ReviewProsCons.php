@@ -89,8 +89,16 @@ class ReviewProsCons
 			}
 
             if ( !empty( $container ) && $permission_last ) {
+				LegalDebug::debug( [
+					'action' => 'replace',
+				] );
+
                 $node->parentNode->replaceChild( $container, $node );
             } else {
+				LegalDebug::debug( [
+					'action' => 'remove',
+				] );
+
                 $node->parentNode->removeChild( $node );
             }
 
