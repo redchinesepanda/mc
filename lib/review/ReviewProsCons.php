@@ -60,6 +60,8 @@ class ReviewProsCons
 			$permission_last = ( $id == $last || !empty( $node->nextSibling ) );
 
 			LegalDebug::debug( [
+				'class' => $class,
+				
 				'permission_title' => $permission_title ? 'true' : 'false',
 
 				'permission_pros_title' => $permission_pros_title ? 'true' : 'false',
