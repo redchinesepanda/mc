@@ -71,7 +71,7 @@ class ReviewProsCons
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
 		LegalDebug::debug( [
-			'permission_previous' => self::permission_debug( [
+			'get_permission_replace' => self::permission_debug( [
 				'default' => $default,
 
 				'half_pros' => $half_pros,
