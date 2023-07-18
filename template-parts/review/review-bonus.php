@@ -13,7 +13,7 @@ LegalDebug::debug( [
 		</a>
 	</div>
 	<h3 class="bonus-name">
-		<?php echo $args[ 'name' ]; ?>
+		<?php echo $args[ 'name' ][ 'text' ]; ?>
 	</h3>
 	<div class="bonus-get">
 		<a class="bonus-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>">
