@@ -69,7 +69,7 @@ class ReviewGroup
         }, $items);
     }
 
-    const TYPE = [
+    const LABELS = [
         'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
         'promo-codes' => __( 'Promo Code', ToolLoco::TEXTDOMAIN ),
@@ -107,7 +107,7 @@ class ReviewGroup
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
 
-                foreach ( self::TYPE as $type => $label )
+                foreach ( self::LABELS as $type => $label )
                 {
                     if ( in_array( $type, $slugs ) )
                     {
