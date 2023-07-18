@@ -110,11 +110,11 @@ class ReviewGroup
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
 
-                foreach ( self::get_item_labels() as $type => $label )
+                foreach ( self::get_item_labels() as $type => $text )
                 {
                     if ( in_array( $type, $slugs ) )
                     {
-                        $label[ 'type' ] = $label;
+                        $label[ 'type' ] = $text;
                     }
                 }
 
