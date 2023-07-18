@@ -1,10 +1,3 @@
-<?php
-
-LegalDebug::debug( [
-    'args' => $args,
-] );
-
-?>
 <?php if( !empty( $args ) ) : ?>
     <div class="pros-cons-title">
         <?php echo $args[ 'title' ]; ?>
