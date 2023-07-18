@@ -69,6 +69,22 @@ class ReviewGroup
         }, $items);
     }
 
+    const TYPE = [
+        'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+
+        'promo-codes' => __( 'Promo Code', ToolLoco::TEXTDOMAIN ),
+
+        'bonus' => __( 'Bonus', ToolLoco::TEXTDOMAIN ),
+        
+        'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+
+        'registration' => __( 'Registration', ToolLoco::TEXTDOMAIN ),
+
+        'how-to-play' => __( 'How to play', ToolLoco::TEXTDOMAIN ),
+
+        'withdrawal' => __( 'Withdrawal', ToolLoco::TEXTDOMAIN ),
+    ];
+
     public static function get_item_label( $post )
     {
         $label = [
@@ -91,17 +107,25 @@ class ReviewGroup
             {
                 $slugs = self::get_term_field( $terms, 'slug' );
 
-                if ( in_array( 'review', $slugs ) ) {
-                    $label[ 'type' ] = __( 'Review', ToolLoco::TEXTDOMAIN );
+                foreach ( self::TYPE as $type => $label )
+                {
+                    if ( in_array( $type, $slugs ) )
+                    {
+                        $label[ 'type' ] = $label;
+                    }
                 }
 
-                if ( in_array( 'promo-codes', $slugs ) ) {
-                    $label[ 'type' ] = __( 'Promo Code', ToolLoco::TEXTDOMAIN );
-                }
+                // if ( in_array( 'review', $slugs ) ) {
+                //     $label[ 'type' ] = __( 'Review', ToolLoco::TEXTDOMAIN );
+                // }
 
-                if ( in_array( 'bonus', $slugs ) ) {
-                    $label[ 'type' ] = __( 'Bonus', ToolLoco::TEXTDOMAIN );
-                }
+                // if ( in_array( 'promo-codes', $slugs ) ) {
+                //     $label[ 'type' ] = __( 'Promo Code', ToolLoco::TEXTDOMAIN );
+                // }
+
+                // if ( in_array( 'bonus', $slugs ) ) {
+                //     $label[ 'type' ] = __( 'Bonus', ToolLoco::TEXTDOMAIN );
+                // }
             } 
         }
 

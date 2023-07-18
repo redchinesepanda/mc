@@ -22,7 +22,71 @@ class ReviewProsCons
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_pros' ] );
     }
 
+	// replace:
+	// last node
+	// 
+
+	public static function get_node_permission( $node )
+	{
+		$class = explode( ' ', $node->getAttribute( 'class' ) );
+
+		return [
+			'title' => ( in_array( self::CSS_CLASS[ 'title' ], $class ) ),
+
+			'pros_title' => ( in_array( self::CSS_CLASS[ 'pros' ], $class ) ),
+
+			'cons_title' => ( in_array( self::CSS_CLASS[ 'cons' ], $class ) ),
+
+			'content' => ( in_array( self::CSS_CLASS[ 'content' ], $class ) ),
+		];
+	}
+
 	public static function get_content( $content )
+	{
+		if ( !ReviewMain::check() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $nodes as $id => $node )
+		{
+			$permission_node = self::get_node_permission( $node );
+
+			if ( $permission_node[ 'pros_title' ] )
+			{
+				$type = 'pros';
+
+				$container[ $type ][ 'title' ] = ToolEncode::encode( $node->textContent );
+			}
+
+			if ( $permission_node[ 'cons_title' ] )
+			{
+				$type = 'cons';
+
+				$container[ $type ][ 'title' ] = ToolEncode::encode( $node->textContent );
+			}
+
+			if ( $permission_node[ 'content' ] )
+			{
+				$container[ $type ][ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
+			}
+		}
+
+		LegalDebug::debug( [
+			
+		] );
+
+		return $dom->saveHTML();
+	}
+
+	public static function get_content_2( $content )
 	{
         if ( !ReviewMain::check() ) {
 			return $content;
@@ -89,15 +153,15 @@ class ReviewProsCons
 			}
 
             if ( !empty( $container ) && $permission_last ) {
-				LegalDebug::debug( [
-					'action' => 'replace',
-				] );
+				// LegalDebug::debug( [
+				// 	'action' => 'replace',
+				// ] );
 
                 $node->parentNode->replaceChild( $container, $node );
             } else {
-				LegalDebug::debug( [
-					'action' => 'remove',
-				] );
+				// LegalDebug::debug( [
+				// 	'action' => 'remove',
+				// ] );
 
                 $node->parentNode->removeChild( $node );
             }
