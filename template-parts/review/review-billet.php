@@ -8,9 +8,9 @@
 		<?php endif; ?>
 	</div>
 	<div class="billet-body">
-		<div class="billet-title">
-			<?php echo $args[ 'title' ]; ?>
-		</div>
+		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="billet-title">
+			<?php echo $args[ 'title' ][ 'text' ]; ?>
+		</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 		<?php if( !empty( $args[ 'description' ] ) ) : ?>
 			<div class="billet-description">
 				<?php foreach ( $args[ 'description' ] as $item ) : ?>

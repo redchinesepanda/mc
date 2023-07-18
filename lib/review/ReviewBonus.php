@@ -174,17 +174,17 @@ class ReviewBonus
 
 				$args = [];
 				
-				$args[ 'title' ] = ToolEncode::encode( $node->textContent );
+				$args[ 'title' ] = [
+					'text' => ToolEncode::encode( $node->textContent ),
+					
+					'tag' => in_array( $node->nodeName, [ 'p' ] ) ? 'div' : $node->nodeName,
+				];
 
 				$args[ 'class' ] = $class;
 
 				$args[ 'no-review' ] = $no_review;
 
 				$replace = $node;
-
-				LegalDebug::debug( [
-					'nodeName' => $node->nodeName,
-				] );
 			}
 
 			if ( $permission_description || $permission_content ) {
@@ -366,7 +366,11 @@ class ReviewBonus
 					'disabled' => $args[ 'no-review' ],
 				],
 
-				'title' => $args[ 'title' ],
+				'title' => [
+					'text' => $args[ 'title' ][ 'text' ],
+
+					'tag' => $args[ 'title' ][ 'tag' ],
+				],
 
 				'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
 
