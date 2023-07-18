@@ -30,10 +30,6 @@ class ReviewProsCons
 	{
 		$class = [];
 
-		LegalDebug::debug( [
-			'node' => $node,
-		] );
-
 		if ( !empty( $node ) )
 		{
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
@@ -68,9 +64,9 @@ class ReviewProsCons
 		{
 			$permission_node = self::get_node_permission( $node );
 
-			$permission_previousSibling = self::get_node_permission( $node->previousSibling );
+			$permission_previous = self::get_node_permission( $nodes->item( $id - 1 ) );
 
-			$permission_nextSibling = self::get_node_permission( $node->nextSibling );
+			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
