@@ -68,6 +68,8 @@ class ReviewProsCons
 
 		$half_pros = $previous[ 'pros_title' ] && $current[ 'content' ] && $next[ 'pros_title' ];
 
+		$half_cons = $previous[ 'cons_title' ] && $current[ 'content' ] && $next[ 'cons_title' ];
+
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
 		LegalDebug::debug( [
@@ -76,11 +78,13 @@ class ReviewProsCons
 
 				'half_pros' => $half_pros,
 
+				'half_cons' => $half_cons,
+
 				'last' => $last,
 			] ),
 		] );
 
-		return $default || $half_pros || $last;
+		return $default || $half_pros || $half_cons || $last;
 	}
 
 	public static function get_content( $content )
