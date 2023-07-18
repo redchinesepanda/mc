@@ -80,7 +80,7 @@ class ReviewProsCons
 			] ),
 		] );
 
-		return $default && $half_pros && $last;
+		return $default || $half_pros || $last;
 	}
 
 	public static function get_content( $content )
