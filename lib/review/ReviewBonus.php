@@ -80,6 +80,22 @@ class ReviewBonus
 		return $nodes;
 	}
 
+	public static function get_shortcode( $node )
+	{
+		$previousSibling = $node->previousSibling;
+
+		if ( !empty( $previousSibling ) )
+		{
+			self::get_shortcode( $previousSibling );
+
+			LegalDebug::debug( [
+				'function' => 'get_shortcode',
+	
+				'previousSibling' => $previousSibling,
+			] );
+		}
+	}
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
