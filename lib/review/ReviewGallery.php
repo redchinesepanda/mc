@@ -72,6 +72,8 @@ class ReviewGallery
 
         if ( !empty( $attr[ 'ids' ] ) )
         {
+            $ids =  explode( ',', $attr[ 'ids' ] );
+
             $args[ 'class' ] = 'columns-3';
 
             if ( !empty( $attr[ 'columns' ] ) )
@@ -79,7 +81,7 @@ class ReviewGallery
                 $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
             }
 
-            foreach ( $attr[ 'ids' ] as $id ) {
+            foreach ( $ids as $id ) {
                 // $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
                 
                 $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
