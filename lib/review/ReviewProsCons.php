@@ -144,11 +144,11 @@ class ReviewProsCons
 
 				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
 
-				// 'permission_previous' => self::permission_debug( $permission_previous ),
+				'permission_previous' => self::permission_debug( $permission_previous ),
 
-				// 'permission_node' => self::permission_debug( $permission_node ),
+				'permission_node' => self::permission_debug( $permission_node ),
 
-				// 'permission_next' => self::permission_debug( $permission_next ),
+				'permission_next' => self::permission_debug( $permission_next ),
 			] );
 
 			if ( $permission_node[ 'pros_title' ] )
