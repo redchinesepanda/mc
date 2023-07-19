@@ -46,18 +46,22 @@ class ReviewProsCons
 	{
 		$class = [];
 
+		$not_empty = false;
+
 		if ( !empty( $node ) )
 		{
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
+
+			$not_empty = !empty( $node->textContent );
+
+			LegalDebug::debug( [
+				'textContent' => substr( $node->textContent, 0, 30 ),
+	
+				'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
+	
+				'node' => $node,
+			] );
 		}
-
-		LegalDebug::debug( [
-			'textContent' => substr( $node->textContent, 0, 30 ),
-
-			'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
-
-			'node' => $node,
-		] );
 
 		return [
 			'title' => in_array( self::CSS_CLASS[ 'title' ], $class ),
@@ -68,7 +72,7 @@ class ReviewProsCons
 
 			'content' => in_array( self::CSS_CLASS[ 'content' ], $class ),
 
-			'not_empty' => !empty( $node->textContent ),
+			'not_empty' => $not_empty,
 		];
 	}
 
