@@ -86,17 +86,25 @@ class ReviewBonus
 
 		if ( !empty( $previousSibling ) )
 		{
-			self::get_shortcode( $previousSibling );
-
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
+
+				$regex = '/(\w+)\s*=\s*"(.*?)"/';
+
+				preg_match_all($regex, $node->textContent, $matches);
+
 				LegalDebug::debug( [
 					'function' => 'get_shortcode',
 
 					'textContent' => substr( $node->textContent, 0, 10 ),
 		
-					'previousSibling' => $previousSibling,
+					'matches' => $matches,
 				] );
+
+
+			} else 
+			{
+				self::get_shortcode( $previousSibling );
 			}
 		}
 	}
