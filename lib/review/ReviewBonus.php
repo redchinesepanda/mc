@@ -332,7 +332,7 @@ class ReviewBonus
 				'name' => $args[ 'title' ],
 
 				'get' => [
-					'href' => self::check_url_afillate(),
+					'href' => self::check_url_afillate( $id ),
 
 					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
 				],
@@ -476,7 +476,7 @@ class ReviewBonus
 				'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
 
 				'get' => [
-					'href' => self::check_url_afillate(),
+					'href' => self::check_url_afillate( $id ),
 
 					'text' => __( 'Get Bonus', ToolLoco::TEXTDOMAIN ),
 				],
