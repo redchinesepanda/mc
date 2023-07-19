@@ -64,34 +64,44 @@ class ReviewGallery
         ] );
     }
 
-    public static function get( $ids ) {
+    // public static function get( $ids )
+    
+    public static function get( $attr )
+    {
         $args = [];
 
-        foreach ( $ids as $id ) {
-            $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
+        if ( !empty( $attr[ 'ids' ] ) )
+        {
+            $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
 
-            $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
+            foreach ( $ids as $id ) {
+                // $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
+                
+                $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
 
-            $caption = wp_get_attachment_caption( $id );
+                $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
 
-            $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
+                $caption = wp_get_attachment_caption( $id );
 
-            $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
+                $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
 
-            if ( $review && $lightbox ) {
-                $args[] = [
-                    'src' => $review[ 0 ],
-    
-                    'width' => $review[ 1 ],
-    
-                    'height' => $review[ 2 ],
-    
-                    'data-src' => $lightbox[ 0 ],
-    
-                    'caption' => $caption,
-    
-                    'alt' => $alt,
-                ];
+                $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
+
+                if ( $review && $lightbox ) {
+                    $args[ 'items' ][] = [
+                        'src' => $review[ 0 ],
+        
+                        'width' => $review[ 1 ],
+        
+                        'height' => $review[ 2 ],
+        
+                        'data-src' => $lightbox[ 0 ],
+        
+                        'caption' => $caption,
+        
+                        'alt' => $alt,
+                    ];
+                }
             }
         }
 
@@ -100,15 +110,17 @@ class ReviewGallery
     public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
         LegalDebug::debug( [
             'function' => 'wp_kama_post_gallery_filter',
-            
+
             'attr' => $attr,
         ] );
 
-        if ( !empty( $attr[ 'ids' ] ) ) {
-            $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
-        }
+        // if ( !empty( $attr[ 'ids' ] ) ) {
+        //     $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
+        // }
 
-        return $output;
+        // return $output;
+
+        return self::render( self::get( $attr ) );
     }
 
     const TEMPLATE = [
