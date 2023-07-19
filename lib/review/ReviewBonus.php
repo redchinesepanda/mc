@@ -108,7 +108,7 @@ class ReviewBonus
 
 		foreach ( $nodes as $id => $node ) {
 			LegalDebug::debug( [
-				'parentNode' => $node->parentNode,
+				// 'parentNode' => $node->parentNode,
 
 				'previousSibling' => $node->previousSibling,
 			] );
