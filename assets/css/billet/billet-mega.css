@@ -49,6 +49,10 @@
 	padding: 5px 40px 5px 20px;
 }
 
+.legal-billet-mega .billet-mega-content {
+	padding-top: 10px;
+}
+
 .legal-billet-mega p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 30px;
 }
