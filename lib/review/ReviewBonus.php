@@ -154,6 +154,12 @@ class ReviewBonus
 
 		self::get_shortcode( $test_node );
 
+		LegalDebug::debug( [
+			'textContent' => substr( $test_node->textContent, 0, 30 ),
+
+			'get_shortcode' => self::get_shortcode( $test_node ),
+		] );
+
 		foreach ( $nodes as $id => $node ) {
 			// LegalDebug::debug( [
 			// 	'textContent' => substr( $node->textContent, 0, 30 ),
