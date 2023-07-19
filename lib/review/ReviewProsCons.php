@@ -92,19 +92,19 @@ class ReviewProsCons
 
 		// $not_empty = $current[ 'not_empty' ];
 
-		// LegalDebug::debug( [
-		// 	'get_permission_replace' => self::permission_debug( [
-		// 		'default' => $default,
+		LegalDebug::debug( [
+			'get_permission_replace' => self::permission_debug( [
+				'default' => $default,
 
-		// 		'half_pros' => $half_pros,
+				'half_pros' => $half_pros,
 
-		// 		'half_cons' => $half_cons,
+				'half_cons' => $half_cons,
 
-		// 		'last' => $last,
+				'last' => $last,
 
-		// 		'not_empty' => $not_empty,
-		// 	] ),
-		// ] );
+				'case_content' => $case_content,
+			] ),
+		] );
 
 		// return ( $default || $half_pros || $half_cons || $last ) && $not_empty; 
 		
