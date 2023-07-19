@@ -44,9 +44,7 @@
     padding-bottom: 15px;
 }
 
-.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ),
-.legal-billet-mega h3:not( .legal-override ),
-.legal-billet-mega h4:not( .legal-override ) {
+.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
     padding-bottom: 20px;
 }
 

@@ -49,6 +49,15 @@
 	padding: 5px 40px 5px 20px;
 }
 
+.legal-billet-mega p:not( :last-child ):not( .legal-override ) {
+    padding-bottom: 30px;
+}
+
+.legal-billet-mega h3:not( .legal-override ),
+.legal-billet-mega h4:not( .legal-override ) {
+    padding-bottom: 30px;
+}
+
 /* Width and Height */
 
 .legal-billet-mega .mega-about-logo {
