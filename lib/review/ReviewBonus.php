@@ -104,21 +104,21 @@ class ReviewBonus
 
 		if ( !empty( $previousSibling ) )
 		{
-			LegalDebug::debug( [
-				'function' => 'get_shortcode',
+			// LegalDebug::debug( [
+			// 	'function' => 'get_shortcode',
 
-				'textContent' => substr( $node->textContent, 0, 10 ),
-			] );
+			// 	'textContent' => substr( $node->textContent, 0, 10 ),
+			// ] );
 
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
 				$args = self::get_shortcode_args( $node->textContent );
 
-				LegalDebug::debug( [
-					'function' => 'get_shortcode',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_shortcode',
 		
-					'args' => $args,
-				] );
+				// 	'args' => $args,
+				// ] );
 			} else 
 			{
 				$args = self::get_shortcode( $previousSibling );
