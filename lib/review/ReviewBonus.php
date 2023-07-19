@@ -305,7 +305,7 @@ class ReviewBonus
 
 		if ( !empty( $args[ 'id' ] ) )
 		{
-			$id = $args[ 'id' ]
+			$id = $args[ 'id' ];
 		} else 
 		{
 			$post = get_post();
