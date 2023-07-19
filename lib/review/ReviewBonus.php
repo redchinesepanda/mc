@@ -110,19 +110,24 @@ class ReviewBonus
 			// 	'textContent' => substr( $node->textContent, 0, 10 ),
 			// ] );
 
-			if ( strpos( $node->textContent, 'billet-mega' ) !== false && strpos( $node->textContent, '/billet-mega' ) === false )
+			if ( strpos( $node->textContent, '/billet-mega' ) === false )
 			{
-				$args = self::get_shortcode_args( $node->textContent );
-
-				// LegalDebug::debug( [
-				// 	'function' => 'get_shortcode',
-		
-				// 	'args' => $args,
-				// ] );
-			} else 
-			{
-				$args = self::get_shortcode( $previousSibling );
+				if ( strpos( $node->textContent, 'billet-mega' ) !== false )
+				{
+					$args = self::get_shortcode_args( $node->textContent );
+	
+					// LegalDebug::debug( [
+					// 	'function' => 'get_shortcode',
+			
+					// 	'args' => $args,
+					// ] );
+				} else 
+				{
+					$args = self::get_shortcode( $previousSibling );
+				}
 			}
+
+			
 		}
 
 		return $args;
