@@ -51,9 +51,9 @@ class ReviewProsCons
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
 		}
 
-		LegalDebug::debug( [
-			'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
-		] );
+		// LegalDebug::debug( [
+		// 	'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
+		// ] );
 
 		return [
 			'title' => in_array( self::CSS_CLASS[ 'title' ], $class ),
@@ -80,17 +80,19 @@ class ReviewProsCons
 
 		$not_empty = $current[ 'not_empty' ];
 
-		// LegalDebug::debug( [
-		// 	'get_permission_replace' => self::permission_debug( [
-		// 		'default' => $default,
+		LegalDebug::debug( [
+			'get_permission_replace' => self::permission_debug( [
+				'default' => $default,
 
-		// 		'half_pros' => $half_pros,
+				'half_pros' => $half_pros,
 
-		// 		'half_cons' => $half_cons,
+				'half_cons' => $half_cons,
 
-		// 		'last' => $last,
-		// 	] ),
-		// ] );
+				'last' => $last,
+
+				'not_empty' => $not_empty,
+			] ),
+		] );
 
 		return ( $default || $half_pros || $half_cons || $last ) && $not_empty; 
 	}
