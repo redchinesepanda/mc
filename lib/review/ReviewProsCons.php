@@ -102,7 +102,7 @@ class ReviewProsCons
 
 				'last' => $last,
 
-				'case_content' => $case_content,
+				'case_content' => $case_content, 
 			] ),
 		] );
 
