@@ -126,8 +126,6 @@ class ReviewBonus
 					$args = self::get_shortcode( $previousSibling );
 				}
 			}
-
-			
 		}
 
 		return $args;
