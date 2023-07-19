@@ -88,6 +88,8 @@ class ReviewProsCons
 
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
+		$case_content = $current[ 'content' ] && $next[ 'content' ];
+
 		// $not_empty = $current[ 'not_empty' ];
 
 		// LegalDebug::debug( [
@@ -106,7 +108,7 @@ class ReviewProsCons
 
 		// return ( $default || $half_pros || $half_cons || $last ) && $not_empty; 
 		
-		return $default || $half_pros || $half_cons || $last; 
+		return $default || $half_pros || $half_cons || $last || $case_content; 
 	}
 
 	public static function get_content( $content )
