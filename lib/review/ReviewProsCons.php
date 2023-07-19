@@ -54,7 +54,7 @@ class ReviewProsCons
 		LegalDebug::debug( [
 			'textContent' => substr( $node->textContent, 0, 30 ),
 
-			'empty' => !empty( $node->textContent ) ? 'true' : 'false',
+			'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
 		] );
 
 		return [
