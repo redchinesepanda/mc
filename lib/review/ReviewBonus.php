@@ -80,6 +80,22 @@ class ReviewBonus
 		return $nodes;
 	}
 
+	public static function get_shortcode_args( $text )
+	{
+		$regex = '/(\w+)\s*=\s*"(.*?)"/';
+
+		preg_match_all($regex, $text, $matches);
+
+		$args = [];
+
+		foreach ( $matches[1] as $key => $value )
+		{
+			$args[ $value ] = $matches[2][ $key ];
+		}
+
+		return $args;
+	}
+
 	public static function get_shortcode( $node )
 	{
 		$previousSibling = $node->previousSibling;
@@ -88,20 +104,13 @@ class ReviewBonus
 		{
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
-
-				$regex = '/(\w+)\s*=\s*"(.*?)"/';
-
-				preg_match_all($regex, $node->textContent, $matches);
-
 				LegalDebug::debug( [
 					'function' => 'get_shortcode',
 
 					'textContent' => substr( $node->textContent, 0, 10 ),
 		
-					'matches' => $matches,
+					'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
 				] );
-
-
 			} else 
 			{
 				self::get_shortcode( $previousSibling );
