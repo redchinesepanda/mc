@@ -24,7 +24,18 @@ class BilletMega
         add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_filter( 'the_content', [ $handler, 'tg_remove_empty_paragraph_tags_from_shortcodes_wordpress' ] );
     }
+
+	public static function tg_remove_empty_paragraph_tags_from_shortcodes_wordpress( $content ) {
+		$toFix = array( 
+			'<p>['    => '[', 
+			']</p>'   => ']', 
+			']<br />' => ']'
+		); 
+		return strtr( $content, $toFix );
+	}
 
 	public static function get_nodes( $dom )
 	{
@@ -65,8 +76,6 @@ class BilletMega
 	
 	public static function prepare( $atts, $content = '' )
     {
-		remove_filter( 'the_content', 'wpautop' );
-
 		$pairs = [
 			'id' => 0,
 
@@ -123,9 +132,7 @@ class BilletMega
 			'footer' => $parts[ 'footer' ],
 		];
 
-		add_filter( 'the_content', 'wpautop' );
-
-        return self::render( $args );
+		return self::render( $args );
     }
 
 	const TEMPLATE = [
