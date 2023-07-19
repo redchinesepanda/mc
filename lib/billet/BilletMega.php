@@ -26,6 +26,43 @@ class BilletMega
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( '//body/*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
+	}
+
+	public static function get_parts( $content )
+	{
+		$args = [
+			'content' => $content,
+
+			'footer' => '',
+		];
+
+		$dom = LegalDOM::get_dom( $content );
+
+		$nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		$body = $dom->getElementsByTagName( 'body' )->item(0);
+
+		foreach ( $nodes as $id => $node )
+		{
+			$args[ 'footer' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
+
+			$body->removeChild( $node );
+		}
+
+		$args[ 'content' ] = $dom->saveHTML();
+
+		return $args;
+	}
+	
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
@@ -52,6 +89,8 @@ class BilletMega
 
 		$url = BilletMain::get_url( $atts[ 'id' ] );
 
+		$parts = self::get_parts( $content );
+
 		$args = [
 			'id' => $atts[ 'id' ],
 
@@ -77,9 +116,9 @@ class BilletMega
 				'text' => $atts[ 'review-label' ],
 			],
 
-			'content' => $content,
+			'content' => $parts[ 'content' ],
 
-			'footer' => '',
+			'footer' => $parts[ 'footer' ],
 		];
 
         return self::render( $args );
