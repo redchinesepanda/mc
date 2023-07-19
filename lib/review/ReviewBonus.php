@@ -88,11 +88,14 @@ class ReviewBonus
 		{
 			self::get_shortcode( $previousSibling );
 
-			LegalDebug::debug( [
-				'function' => 'get_shortcode',
-	
-				'previousSibling' => $previousSibling,
-			] );
+			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
+			{
+				LegalDebug::debug( [
+					'function' => 'get_shortcode',
+		
+					'previousSibling' => $previousSibling,
+				] );
+			}
 		}
 	}
 
