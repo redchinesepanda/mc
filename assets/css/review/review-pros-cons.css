@@ -23,6 +23,12 @@ div.legal-pros-cons {
 	margin-bottom: 20px;
 }
 
+/* Width and Height */
+
+.legal-pros-cons {
+	width: 100%;
+}
+
 /* Pros Cons Background */
 
 .legal-pros-cons .pros-cons-title {
