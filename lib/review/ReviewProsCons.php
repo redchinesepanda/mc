@@ -55,6 +55,8 @@ class ReviewProsCons
 			'textContent' => substr( $node->textContent, 0, 30 ),
 
 			'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
+
+			'node' => $node,
 		] );
 
 		return [
