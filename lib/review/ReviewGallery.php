@@ -79,7 +79,7 @@ class ReviewGallery
                 $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
             }
 
-            foreach ( $ids as $id ) {
+            foreach ( $attr[ 'ids' ] as $id ) {
                 // $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
                 
                 $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
