@@ -98,24 +98,30 @@ class ReviewBonus
 
 	public static function get_shortcode( $node )
 	{
+		$args = [];
+
 		$previousSibling = $node->previousSibling;
 
 		if ( !empty( $previousSibling ) )
 		{
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
-				LegalDebug::debug( [
-					'function' => 'get_shortcode',
+				// LegalDebug::debug( [
+				// 	'function' => 'get_shortcode',
 
-					'textContent' => substr( $node->textContent, 0, 10 ),
+				// 	'textContent' => substr( $node->textContent, 0, 10 ),
 		
-					'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
-				] );
+				// 	'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
+				// ] );
+
+				$args = self::get_shortcode_args( $node->textContent );
 			} else 
 			{
 				self::get_shortcode( $previousSibling );
 			}
 		}
+
+		return $args;
 	}
 
 	public static function get_content( $content )
@@ -149,13 +155,11 @@ class ReviewBonus
 		self::get_shortcode( $test_node );
 
 		foreach ( $nodes as $id => $node ) {
-			// LegalDebug::debug( [
-			// 	'textContent' => substr( $node->textContent, 0, 30 ), 
+			LegalDebug::debug( [
+				'textContent' => substr( $node->textContent, 0, 30 ),
 
-			// 	// 'parentNode' => $node->parentNode,
-
-			// 	'previousSibling' => $node->previousSibling,
-			// ] );
+				'get_shortcode' => self::get_shortcode( $node ),
+			] );
 
 			$class = $node->getAttribute( 'class' );
 
