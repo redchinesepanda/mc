@@ -322,7 +322,7 @@ class ReviewBonus
 				'src' => ( !empty( $group[ 'about-logo-square' ] ) ? $group[ 'about-logo-square' ] : '' ),
 
 				'title' => [
-					'href' => self::check_url_review(),
+					'href' => self::check_url_review( $id ),
 
 					'text' => ( !empty( $group[ 'about-title' ] ) ? $group[ 'about-title' ] : '' ),
 
@@ -407,9 +407,9 @@ class ReviewBonus
 		return '';
 	}
 
-    public static function check_url_review()
+    public static function check_url_review( $id )
 	{
-		$group = get_field( ReviewAbout::FIELD );
+		$group = get_field( ReviewAbout::FIELD, $id );
         
         if( $group ) {
 			$review = $group[ self::GROUP[ 'review' ] ];
@@ -419,12 +419,12 @@ class ReviewBonus
 			}
 		}
 
-		return self::check_url_afillate();
+		return self::check_url_afillate( $id );
 	}
 
-    public static function check_url_afillate()
+    public static function check_url_afillate( $id )
 	{
-		$group = get_field( ReviewAbout::FIELD );
+		$group = get_field( ReviewAbout::FIELD, $id );
         
         if( $group ) {
 			$afillate = $group[ self::GROUP[ 'afillate' ] ];
