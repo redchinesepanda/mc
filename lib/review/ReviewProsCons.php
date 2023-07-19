@@ -53,7 +53,7 @@ class ReviewProsCons
 
 		LegalDebug::debug( [
 			'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
-		] )
+		] );
 
 		return [
 			'title' => in_array( self::CSS_CLASS[ 'title' ], $class ),
