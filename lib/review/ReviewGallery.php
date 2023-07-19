@@ -16,7 +16,11 @@ class ReviewGallery
     }
 
     const JS = [
-        'review-gallery' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery.js',
+        'review-gallery' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery.js',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_script()

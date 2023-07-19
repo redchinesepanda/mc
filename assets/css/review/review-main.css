@@ -14,6 +14,10 @@
     display: none;
 }
 
+.tcb-post-content hr {
+    clear: both;
+}
+
 /* Review Position */
 
 .tcb-post-content.thrv_wrapper:not( .legal-override ) {
@@ -77,6 +81,11 @@
     background-image: linear-gradient( rgb(255,94,106) 0%, rgb(236,70,82) 99% );
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
+}
+
+.tcb-post-content hr {
+    background-color: rgb(89, 151, 227);
+    border: unset;
 }
 
 /* Review Typography */
