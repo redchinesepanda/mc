@@ -18,6 +18,10 @@ div.legal-pros-cons {
 
 /* Pros Cons Position */
 
+.tcb-post-content .legal-pros-cons {
+	margin-bottom: 30px;
+}
+
 .legal-pros-cons .pros-cons-title {
 	padding-left: 60px;
 	margin-bottom: 20px;
