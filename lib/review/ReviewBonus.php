@@ -107,11 +107,11 @@ class ReviewBonus
 		$last = $nodes->length - 1;
 
 		foreach ( $nodes as $id => $node ) {
-			LegalDebug::debug(
+			LegalDebug::debug( [
 				'parentNode' => $node->parentNode,
 
 				'previousSibling' => $node->previousSibling,
-			);
+			] );
 
 			$class = $node->getAttribute( 'class' );
 
