@@ -121,7 +121,7 @@ class ReviewBonus
 			}
 		}
 
-		// return $args;
+		return $args;
 	}
 
 	public static function get_content( $content )
