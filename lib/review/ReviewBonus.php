@@ -106,13 +106,13 @@ class ReviewBonus
 		{
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
-				// LegalDebug::debug( [
-				// 	'function' => 'get_shortcode',
+				LegalDebug::debug( [
+					'function' => 'get_shortcode',
 
-				// 	'textContent' => substr( $node->textContent, 0, 10 ),
+					'textContent' => substr( $node->textContent, 0, 10 ),
 		
-				// 	'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
-				// ] );
+					'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
+				] );
 
 				$args = self::get_shortcode_args( $node->textContent );
 			} else 
