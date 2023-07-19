@@ -150,9 +150,9 @@ class ReviewBonus
 
 		$last = $nodes->length - 1;
 
-		$test_node = $nodes->item( 0 );
+		// $test_node = $nodes->item( 0 );
 
-		self::get_shortcode( $test_node );
+		// self::get_shortcode( $test_node );
 
 		foreach ( $nodes as $id => $node ) {
 			LegalDebug::debug( [
