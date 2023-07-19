@@ -51,6 +51,10 @@ class ReviewProsCons
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
 		}
 
+		LegalDebug::debug( [
+			'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
+		] )
+
 		return [
 			'title' => in_array( self::CSS_CLASS[ 'title' ], $class ),
 
@@ -119,17 +123,17 @@ class ReviewProsCons
 
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
 
-			LegalDebug::debug( [
-				'textContent' => substr( $node->textContent, 0, 30 ),
+			// LegalDebug::debug( [
+			// 	'textContent' => substr( $node->textContent, 0, 30 ),
 
-				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
+			// 	'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
 
-				// 'permission_previous' => self::permission_debug( $permission_previous ),
+			// 	// 'permission_previous' => self::permission_debug( $permission_previous ),
 
-				// 'permission_node' => self::permission_debug( $permission_node ),
+			// 	// 'permission_node' => self::permission_debug( $permission_node ),
 
-				// 'permission_next' => self::permission_debug( $permission_next ),
-			] );
+			// 	// 'permission_next' => self::permission_debug( $permission_next ),
+			// ] );
 
 			if ( $permission_node[ 'pros_title' ] )
 			{
