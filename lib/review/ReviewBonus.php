@@ -104,12 +104,16 @@ class ReviewBonus
 
 		if ( !empty( $previousSibling ) )
 		{
+			LegalDebug::debug( [
+				'function' => 'get_shortcode',
+
+				'textContent' => substr( $node->textContent, 0, 10 ),
+			] );
+
 			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
 			{
 				LegalDebug::debug( [
 					'function' => 'get_shortcode',
-
-					'textContent' => substr( $node->textContent, 0, 10 ),
 		
 					'get_shortcode_args' => self::get_shortcode_args( $node->textContent ),
 				] );
