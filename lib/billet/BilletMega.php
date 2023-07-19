@@ -6,7 +6,7 @@ class BilletMega
         'billet-mega' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-mega.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 
