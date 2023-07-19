@@ -1,7 +1,15 @@
 @media screen and ( min-width: 768px ) {
     /* Gallery Width and Height */
 
-    .legal-imageset .imageset-item {
+    .legal-imageset.columns-1 .imageset-item {
+        width: 100%;
+    }
+
+    .legal-imageset.columns-2 .imageset-item {
+        width: calc( 50% - 10px );
+    }
+
+    .legal-imageset.columns-3 .imageset-item {
         width: calc( 33.333% - 10px );
     }
 
