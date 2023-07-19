@@ -60,7 +60,7 @@ class BilletMega
 		$nodes = self::get_nodes( $dom );
 
 		if ( $nodes->length == 0 ) {
-			return $content;
+			return $args;
 		}
 
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
