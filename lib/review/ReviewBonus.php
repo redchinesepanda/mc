@@ -93,7 +93,7 @@ class ReviewBonus
 				LegalDebug::debug( [
 					'function' => 'get_shortcode',
 
-					'textContent' => $node->textContent,
+					'textContent' => substr( $node->textContent, 0, 10 ),
 		
 					'previousSibling' => $previousSibling,
 				] );
