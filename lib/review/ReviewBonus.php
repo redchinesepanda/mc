@@ -122,6 +122,10 @@ class ReviewBonus
 
 		$last = $nodes->length - 1;
 
+		$test_node = $nodes->item( 0 );
+
+		self::get_shortcode( $test_node );
+
 		foreach ( $nodes as $id => $node ) {
 			// LegalDebug::debug( [
 			// 	'textContent' => substr( $node->textContent, 0, 30 ), 
@@ -130,8 +134,6 @@ class ReviewBonus
 
 			// 	'previousSibling' => $node->previousSibling,
 			// ] );
-
-			self::get_shortcode( $node );
 
 			$class = $node->getAttribute( 'class' );
 
