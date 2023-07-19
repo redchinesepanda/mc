@@ -136,6 +136,8 @@ class ReviewProsCons
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
 
 			LegalDebug::debug( [
+				'function' => 'get_content',
+				
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
 				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
