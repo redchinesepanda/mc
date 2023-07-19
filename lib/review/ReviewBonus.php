@@ -439,7 +439,19 @@ class ReviewBonus
 
     public static function get_billet( $args )
 	{
-		$group = get_field( ReviewAbout::FIELD );
+		$id = 0;
+
+		if ( !empty( $args[ 'id' ] ) )
+		{
+			$id = $args[ 'id' ];
+		} else 
+		{
+			$post = get_post();
+
+			$id = $post->ID;
+		}
+
+		$group = get_field( ReviewAbout::FIELD, $id );
         
         // if( $group ) {
 			return [
@@ -448,7 +460,7 @@ class ReviewBonus
 				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
 				'review' => [
-					'href' => self::check_url_review(),
+					'href' => self::check_url_review( $id ),
 
 					'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
