@@ -254,11 +254,11 @@ class ReviewBonus
 	
 				if ( !empty( $shortcode_args[ 'id' ] ) )
 				{
-					LegalDebug::debug( [
-						'textContent' => substr( $node->textContent, 0, 30 ),
+					// LegalDebug::debug( [
+					// 	'textContent' => substr( $node->textContent, 0, 30 ),
 	
-						'shortcode_args' => $shortcode_args,
-					] );
+					// 	'shortcode_args' => $shortcode_args,
+					// ] );
 
 					$args[ 'id' ] = $shortcode_args[ 'id' ];
 				}
@@ -297,11 +297,11 @@ class ReviewBonus
 	{
 		$group = get_field( ReviewAbout::FIELD );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'get_bonus',
+		LegalDebug::debug( [
+			'function' => 'get_bonus',
 
-		// 	'$args' => $args,
-		// ] );
+			'$args' => $args,
+		] );
 		
 		// if ( $group ) {
 			return [
