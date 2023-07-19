@@ -98,6 +98,12 @@ class ReviewGallery
         return $args;
     }
     public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
+        LegalDebug::debug( [
+            'function' => 'wp_kama_post_gallery_filter',
+            
+            'attr' => $attr,
+        ] );
+
         if ( !empty( $attr[ 'ids' ] ) ) {
             $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
         }
