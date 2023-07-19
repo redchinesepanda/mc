@@ -152,7 +152,7 @@ class ReviewBonus
 
 		$test_node = $nodes->item( 0 );
 
-		self::get_shortcode( $test_node );
+		// self::get_shortcode( $test_node );
 
 		LegalDebug::debug( [
 			'textContent' => substr( $test_node->textContent, 0, 30 ),
