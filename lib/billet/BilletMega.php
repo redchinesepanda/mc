@@ -25,16 +25,17 @@ class BilletMega
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_filter( 'the_content', [ $handler, 'tg_remove_empty_paragraph_tags_from_shortcodes_wordpress' ] );
+		add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
     }
 
-	public static function tg_remove_empty_paragraph_tags_from_shortcodes_wordpress( $content ) {
-		$toFix = array( 
+	public static function remove_empty_paragraph_shortcode( $content ) {
+		return strtr( $content, [
 			'<p>['    => '[', 
+
 			']</p>'   => ']', 
-			']<br />' => ']'
-		); 
-		return strtr( $content, $toFix );
+
+			']<br />' => ']',
+		] );
 	}
 
 	public static function get_nodes( $dom )
