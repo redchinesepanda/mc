@@ -295,13 +295,25 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
-		$group = get_field( ReviewAbout::FIELD );
+		// LegalDebug::debug( [
+		// 	'function' => 'get_bonus',
 
-		LegalDebug::debug( [
-			'function' => 'get_bonus',
+		// 	'$args' => $args,
+		// ] );
 
-			'$args' => $args,
-		] );
+		$id = 0;
+
+		if ( !empty( $args[ 'id' ] ) )
+		{
+			$id = $args[ 'id' ]
+		} else 
+		{
+			$post = get_post();
+
+			$id = $post->ID;
+		}
+
+		$group = get_field( ReviewAbout::FIELD, $id );
 		
 		// if ( $group ) {
 			return [
