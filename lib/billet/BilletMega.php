@@ -27,7 +27,7 @@ class BilletMega
 
 		add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
 
-		add_filter( 'the_content', 'do_shortcode', 9 );
+		// add_filter( 'the_content', 'do_shortcode', 9 );
     }
 
 	public static function remove_empty_paragraph_shortcode( $content ) {
