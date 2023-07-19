@@ -47,8 +47,6 @@ class ReviewGallery
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
         add_filter( 'post_gallery', [ $handler, 'wp_kama_post_gallery_filter' ], 10, 3 );
-
-        // add_filter( 'wp_calculate_image_srcset', [ $handler, 'wp_kama_calculate_image_srcset_filter' ], 10, 5 );
     }
 
     const FIELD = [
@@ -64,8 +62,6 @@ class ReviewGallery
         ] );
     }
 
-    // public static function get( $ids )
-    
     public static function get( $attr )
     {
         $args = [];
@@ -82,8 +78,6 @@ class ReviewGallery
             }
 
             foreach ( $ids as $id ) {
-                // $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
-                
                 $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
 
                 $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
@@ -115,17 +109,6 @@ class ReviewGallery
         return $args;
     }
     public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
-        LegalDebug::debug( [
-            'function' => 'wp_kama_post_gallery_filter',
-
-            'attr' => $attr,
-        ] );
-
-        // if ( !empty( $attr[ 'ids' ] ) ) {
-        //     $output = self::render( self::get( explode( ',', $attr[ 'ids' ] ) ) );
-        // }
-
-        // return $output;
 
         return self::render( self::get( $attr ) );
     }

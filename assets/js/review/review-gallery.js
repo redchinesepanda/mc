@@ -96,7 +96,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	document.querySelectorAll( '.tcb-post-content > .legal-imageset' ).forEach( function ( imageset, index ) {
+	document.querySelectorAll( '.tcb-post-content .legal-imageset' ).forEach( function ( imageset, index ) {
 		imageset.id = 'imageset-' + index;
 
 		imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
