@@ -54,13 +54,13 @@ class ReviewProsCons
 
 			$not_empty = !empty( $node->textContent );
 
-			LegalDebug::debug( [
-				'textContent' => substr( $node->textContent, 0, 30 ),
+			// LegalDebug::debug( [
+			// 	'textContent' => substr( $node->textContent, 0, 30 ),
 	
-				'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
+			// 	'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
 	
-				'node' => $node,
-			] );
+			// 	'node' => $node,
+			// ] );
 		}
 
 		return [
