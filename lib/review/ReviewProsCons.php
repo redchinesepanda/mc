@@ -48,13 +48,13 @@ class ReviewProsCons
 	{
 		$class = [];
 
-		$not_empty = false;
+		// $not_empty = false;
 
 		if ( !empty( $node ) )
 		{
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
 
-			$not_empty = !empty( $node->textContent );
+			// $not_empty = !empty( $node->textContent );
 
 			// LegalDebug::debug( [
 			// 	'textContent' => substr( $node->textContent, 0, 30 ),
@@ -74,7 +74,7 @@ class ReviewProsCons
 
 			'content' => in_array( self::CSS_CLASS[ 'content' ], $class ),
 
-			'not_empty' => $not_empty,
+			// 'not_empty' => $not_empty,
 		];
 	}
 
@@ -88,7 +88,7 @@ class ReviewProsCons
 
 		$last = !$next[ 'title' ] && !$next[ 'content' ];
 
-		$not_empty = $current[ 'not_empty' ];
+		// $not_empty = $current[ 'not_empty' ];
 
 		// LegalDebug::debug( [
 		// 	'get_permission_replace' => self::permission_debug( [
@@ -104,7 +104,9 @@ class ReviewProsCons
 		// 	] ),
 		// ] );
 
-		return ( $default || $half_pros || $half_cons || $last ) && $not_empty; 
+		// return ( $default || $half_pros || $half_cons || $last ) && $not_empty; 
+		
+		return $default || $half_pros || $half_cons || $last; 
 	}
 
 	public static function get_content( $content )
@@ -137,7 +139,7 @@ class ReviewProsCons
 
 			LegalDebug::debug( [
 				'function' => 'get_content',
-				
+
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
 				'permission_replace' => self::permission_debug( [ 'permission_replace' => $permission_replace ] ),
