@@ -110,7 +110,7 @@ class ReviewBonus
 			// 	'textContent' => substr( $node->textContent, 0, 10 ),
 			// ] );
 
-			if ( strpos( $node->textContent, 'billet-mega' ) !== false )
+			if ( strpos( $node->textContent, 'billet-mega' ) !== false && strpos( $node->textContent, '/billet-mega' ) === false )
 			{
 				$args = self::get_shortcode_args( $node->textContent );
 
