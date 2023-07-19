@@ -92,6 +92,8 @@ class ReviewBonus
 			{
 				LegalDebug::debug( [
 					'function' => 'get_shortcode',
+
+					'textContent' => $node->textContent,
 		
 					'previousSibling' => $previousSibling,
 				] );
