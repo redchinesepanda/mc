@@ -51,9 +51,9 @@ class ReviewProsCons
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
 		}
 
-		// LegalDebug::debug( [
-		// 	'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
-		// ] );
+		LegalDebug::debug( [
+			'textContent' => !empty( $node->textContent ) ? 'true' : 'false',
+		] );
 
 		return [
 			'title' => in_array( self::CSS_CLASS[ 'title' ], $class ),
