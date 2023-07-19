@@ -49,7 +49,7 @@
 	padding: 5px 40px 5px 20px;
 }
 
-.legal-billet-mega p:not( :last-child ):not( .legal-override ) {
+.legal-billet-mega p:not( :last-of-type ):not( .legal-override ) {
     padding-bottom: 30px;
 }
 
