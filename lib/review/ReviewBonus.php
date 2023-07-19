@@ -183,20 +183,6 @@ class ReviewBonus
 			
 			$no_height = self::check_no_height( $class );
 
-			if ( $permission_title )
-			{
-				$shortcode_args = self::get_shortcode( $node );
-	
-				if ( !empty( $shortcode_args[ 'id' ] ) )
-				{
-					LegalDebug::debug( [
-						'textContent' => substr( $node->textContent, 0, 30 ),
-	
-						'shortcode_args' => $shortcode_args,
-					] );
-				}
-			}
-
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
 				
@@ -260,6 +246,22 @@ class ReviewBonus
 				$args[ 'no-review' ] = $no_review;
 
 				$replace = $node;
+			}
+
+			if ( $permission_title )
+			{
+				$shortcode_args = self::get_shortcode( $node );
+	
+				if ( !empty( $shortcode_args[ 'id' ] ) )
+				{
+					LegalDebug::debug( [
+						'textContent' => substr( $node->textContent, 0, 30 ),
+	
+						'shortcode_args' => $shortcode_args,
+					] );
+
+					$args[ 'id' ] = $shortcode_args[ 'id' ];
+				}
 			}
 
 			if ( $permission_description || $permission_content ) {
