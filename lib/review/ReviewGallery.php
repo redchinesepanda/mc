@@ -72,7 +72,12 @@ class ReviewGallery
 
         if ( !empty( $attr[ 'ids' ] ) )
         {
-            $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
+            $args[ 'class' ] = 'columns-3';
+
+            if ( !empty( $attr[ 'columns' ] ) )
+            {
+                $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
+            }
 
             foreach ( $ids as $id ) {
                 // $review = wp_get_attachment_image_src( $id, self::SIZE[ 'review' ] );
