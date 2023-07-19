@@ -26,6 +26,8 @@ class BilletMega
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
+
+		add_filter( 'the_content', 'do_shortcode', 9 );
     }
 
 	public static function remove_empty_paragraph_shortcode( $content ) {
