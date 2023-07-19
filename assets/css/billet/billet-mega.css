@@ -2,7 +2,7 @@
 	/* Width and Height */
 
 	.legal-billet-mega .billet-mega-about {
-		width: calc( 20% - 15px );
+		width: calc( 20% - 36px );
 	}
 
 	.legal-billet-mega .billet-mega-content {
@@ -42,7 +42,7 @@
 }
 
 .legal-billet-mega .billet-mega-about {
-	padding: 40px 0px;
+	padding: 40px 20px 40px 0px;
 }
 
 .legal-billet-mega .mega-about-afillate {
@@ -78,6 +78,10 @@
 .legal-billet-mega {
 	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
 	border-radius: 20px;
+}
+
+.legal-billet-mega .billet-mega-about {
+	border-right: 1px solid rgb(237, 237, 237);
 }
 
 .legal-billet-mega .mega-about-logo {
