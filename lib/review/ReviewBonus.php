@@ -121,7 +121,7 @@ class ReviewBonus
 				] );
 			} else 
 			{
-				self::get_shortcode( $previousSibling );
+				$args = self::get_shortcode( $previousSibling );
 			}
 		}
 
