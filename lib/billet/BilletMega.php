@@ -65,6 +65,8 @@ class BilletMega
 	
 	public static function prepare( $atts, $content = '' )
     {
+		remove_filter( 'the_content', 'wpautop' );
+
 		$pairs = [
 			'id' => 0,
 
@@ -120,6 +122,8 @@ class BilletMega
 
 			'footer' => $parts[ 'footer' ],
 		];
+
+		add_filter( 'the_content', 'wpautop' );
 
         return self::render( $args );
     }
