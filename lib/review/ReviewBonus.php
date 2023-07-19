@@ -154,24 +154,27 @@ class ReviewBonus
 
 		$last = $nodes->length - 1;
 
-		$test_node = $nodes->item( 0 );
+		// $test_node = $nodes->item( 0 );
 
-		// self::get_shortcode( $test_node );
+		// LegalDebug::debug( [
+		// 	'function' => 'get_content',
 
-		LegalDebug::debug( [
-			'function' => 'get_content',
+		// 	'textContent' => substr( $test_node->textContent, 0, 30 ),
 
-			'textContent' => substr( $test_node->textContent, 0, 30 ),
-
-			'get_shortcode' => self::get_shortcode( $test_node ),
-		] );
+		// 	'get_shortcode' => self::get_shortcode( $test_node ),
+		// ] );
 
 		foreach ( $nodes as $id => $node ) {
-			// LegalDebug::debug( [
-			// 	'textContent' => substr( $node->textContent, 0, 30 ),
+			$shortcode_args = self::get_shortcode( $node );
 
-			// 	'get_shortcode' => self::get_shortcode( $node ),
-			// ] );
+			if ( !empty( $shortcode_args[ 'id' ] ) )
+			{
+				LegalDebug::debug( [
+					'textContent' => substr( $node->textContent, 0, 30 ),
+
+					'shortcode_args' => $shortcode_args,
+				] );
+			}
 
 			$class = $node->getAttribute( 'class' );
 
