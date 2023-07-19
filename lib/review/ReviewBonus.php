@@ -131,6 +131,8 @@ class ReviewBonus
 			// 	'previousSibling' => $node->previousSibling,
 			// ] );
 
+			self::get_shortcode( $node );
+
 			$class = $node->getAttribute( 'class' );
 
 			$permission_title = ( strpos( $class, self::BONUS_CLASS[ 'title' ] ) !== false );
