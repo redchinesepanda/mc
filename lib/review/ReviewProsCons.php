@@ -83,8 +83,6 @@ class ReviewProsCons
 		$not_empty = $current[ 'not_empty' ];
 
 		LegalDebug::debug( [
-			'textContent' => substr( $node->textContent, 0, 30 ),
-			
 			'get_permission_replace' => self::permission_debug( [
 				'default' => $default,
 
