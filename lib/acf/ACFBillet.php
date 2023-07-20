@@ -143,9 +143,9 @@ class ACFBillet
                 $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
-            // LegalDebug::die( [
-            //     'group' => $group,
-            // ] );
+            LegalDebug::die( [
+                'group' => $group,
+            ] );
 
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
