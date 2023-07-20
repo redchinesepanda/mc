@@ -207,7 +207,7 @@ class BilletMain
 
         $description = '';
 
-        $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
+        $group = get_field( self::FIELD[ 'about' ], $id );
 
         if ( $group )
         {
