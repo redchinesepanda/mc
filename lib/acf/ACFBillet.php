@@ -33,6 +33,20 @@ class ACFBillet
         add_action( 'acf/save_post', [ $handler, 'my_acf_save_post' ] );
 
         add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
+
+        add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
+    }
+
+    public static function billet_to_review( $post_id )
+    {
+        $group = get_field( self::FIELD[ 'about' ], $post_id );
+
+        if ( $group )
+        {
+            LegalDebug::debug( [
+                'group' => $group,
+            ] );
+        }
     }
 
     public static function legal_hidden( $field )
