@@ -82,6 +82,8 @@ class ACFBillet
             if ( $title )
             {
                 $args[ BilletTitle::ABOUT[ 'title' ] ] = $title;
+
+                delete_field( self::FIELD[ 'title-text' ], $post_id );
             }
 
             $rating = get_field( self::FIELD[ 'title-rating' ], $post_id );
@@ -89,6 +91,8 @@ class ACFBillet
             if ( $rating )
             {
                 $args[ BilletTitle::ABOUT[ 'rating' ] ] = $rating;
+
+                delete_field( self::FIELD[ 'title-rating' ], $post_id );
             }
 
             $logo = get_field( self::FIELD[ 'logo' ], $post_id, false );
@@ -96,6 +100,8 @@ class ACFBillet
             if ( $logo )
             {
                 $args[ BilletLogo::ABOUT[ 'logo' ] ] = $logo;
+
+                delete_field( self::FIELD[ 'logo' ], $post_id );
             }
 
             $font = get_field( self::FIELD[ 'font' ], $post_id );
@@ -103,6 +109,8 @@ class ACFBillet
             if ( $font )
             {
                 $args[ BilletLogo::ABOUT[ 'font' ] ] = $font;
+
+                delete_field( self::FIELD[ 'font' ], $post_id );
             }
 
             $afillate = get_field( self::FIELD[ 'referal' ], $post_id, false );
@@ -110,6 +118,8 @@ class ACFBillet
             if ( $afillate )
             {
                 $args[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
+
+                delete_field( self::FIELD[ 'referal' ], $post_id );
             }
 
             $review = get_field( self::FIELD[ 'card' ], $post_id, false );
@@ -117,6 +127,8 @@ class ACFBillet
             if ( $review )
             {
                 $args[ BilletMain::ABOUT[ 'review' ] ] = $review;
+
+                delete_field( self::FIELD[ 'card' ], $post_id );
             }
 
             $bonus_id = get_field( self::FIELD[ 'bonus-id' ], $post_id );
@@ -124,6 +136,8 @@ class ACFBillet
             if ( $bonus_id )
             {
                 $args[ BilletMain::ABOUT[ 'bonus-id' ] ] = $bonus_id;
+
+                delete_field( self::FIELD[ 'bonus-id' ], $post_id );
             }
 
             $bonus_title = get_field( self::FIELD[ 'bonus-title' ], $post_id );
@@ -131,6 +145,8 @@ class ACFBillet
             if ( $bonus_title )
             {
                 $args[ BilletMain::ABOUT[ 'bonus-title' ] ] = $bonus_title;
+
+                delete_field( self::FIELD[ 'bonus-title' ], $post_id );
             }
 
             $bonus_description = get_field( self::FIELD[ 'bonus-description' ], $post_id );
@@ -138,6 +154,8 @@ class ACFBillet
             if ( $bonus_description )
             {
                 $args[ BilletMain::ABOUT[ 'bonus-description' ] ] = $bonus_description;
+
+                delete_field( self::FIELD[ 'bonus-description' ], $post_id );
             }
 
             $background = get_field( self::FIELD[ 'color' ], $post_id );
@@ -145,10 +163,17 @@ class ACFBillet
             if ( $background )
             {
                 $args[ BilletMain::ABOUT[ 'background' ] ] = $background;
+
+                delete_field( self::FIELD[ 'color' ], $post_id );
             }
 
-            update_field( BilletMain::FIELD[ 'about' ], $args, $post_id );
-        }}
+            if ( !empty( $args ) )
+            {
+                update_field( BilletMain::FIELD[ 'about' ], $args, $post_id );
+            }
+
+        }
+    }
 
     public static function legal_hidden( $field )
     {
