@@ -82,8 +82,8 @@ class ACFBillet
             $group = [];
         }
 
-        if ( $group )
-        {
+        // if ( $group )
+        // {
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
             if ( $title )
@@ -161,7 +161,7 @@ class ACFBillet
             }
 
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
-        }
+        // }
 
         // LegalDebug::die( [
         //     'group' => $group,
