@@ -83,7 +83,7 @@ class ACFBillet
                 $group[ BilletTitle::ABOUT[ 'rating' ] ] = $rating;
             }
 
-            $logo = get_field( self::FIELD[ 'logo' ], $post_id );
+            $logo = get_field( self::FIELD[ 'logo' ], $post_id, false );
 
             if ( $logo )
             {
