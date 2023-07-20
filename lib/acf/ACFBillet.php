@@ -110,7 +110,7 @@ class ACFBillet
             //     'afillate-get_field' => get_field( self::FIELD[ 'referal' ], $post_id, false )
             // ] );
 
-            $review = get_field( self::FIELD[ 'card' ], $post_id );
+            $review = get_field( self::FIELD[ 'card' ], $post_id, false );
 
             if ( $review )
             {
