@@ -37,15 +37,29 @@ class ACFBillet
         add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
     }
 
+    const FIELD = [
+        'title-text' => 'billet-title-text',
+    ];
+
     public static function billet_to_review( $post_id )
     {
-        $group = get_field( self::FIELD[ 'about' ], $post_id );
+        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
         if ( $group )
         {
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
+            // LegalDebug::debug( [
+            //     'group' => $group,
+            // ] );
+
+            $title = get_field( self::FIELD[ 'title-text' ], $post_id );
+
+            if ( $title_text )
+            {
+                $group[ BilletTitle::ABOUT[ 'title' ] ] = $title;
+
+                update_field( $group, BilletTitle::ABOUT[ 'title' ], $post_id );
+            }
+
         }
     }
 
