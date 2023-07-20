@@ -41,7 +41,7 @@ class ACFBillet
 
     public static function billet_to_review( $post_id )
     {
-        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id, false );
+        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
         if ( $group )
         {
