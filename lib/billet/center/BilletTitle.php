@@ -20,7 +20,7 @@ class BilletTitle extends LegalDebug
 
         $label = '';
 
-        $group = get_field( self::FIELD, $billet['id'] );
+        $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
 
         if ( $group )
         {
