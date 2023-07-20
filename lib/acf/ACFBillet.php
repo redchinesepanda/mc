@@ -49,11 +49,13 @@ class ACFBillet
                 'group' => $group,
             ] );
 
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
-
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
+
+            LegalDebug::debug( [
+                'group' => $group,
+
+                'title' => $title,
+            ] );
 
             if ( $title_text )
             {
@@ -61,6 +63,10 @@ class ACFBillet
 
                 update_field( $group, BilletTitle::ABOUT[ 'title' ], $post_id );
             }
+
+            LegalDebug::die( [
+                'group' => $group,
+            ] );
 
         }
     }
