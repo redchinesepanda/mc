@@ -77,6 +77,11 @@ class ACFBillet
             'get_field' => get_field( BilletMain::FIELD[ 'about' ], $post ),
         ] );
 
+        if ( !$group )
+        {
+            $group = [];
+        }
+
         if ( $group )
         {
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
