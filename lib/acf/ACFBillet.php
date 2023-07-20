@@ -63,14 +63,14 @@ class ACFBillet
     {
         $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
+        LegalDebug::debug( [
+            'post_id' => $post_id,
+
+            'group' => $group,
+        ] );
+
         if ( $group )
         {
-            // LegalDebug::debug( [
-            //     'post_id' => $post_id,
-
-            //     'group' => $group,
-            // ] );
-
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
             if ( $title )
