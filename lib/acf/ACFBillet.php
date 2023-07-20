@@ -63,6 +63,13 @@ class ACFBillet
     {
         $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
+        if ( !$group )
+        {
+            update_field( BilletMain::FIELD[ 'about' ], [], $post_id );
+
+            $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
+        }
+
         LegalDebug::debug( [
             'post_id' => $post_id,
 
