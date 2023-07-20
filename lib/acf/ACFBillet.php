@@ -46,6 +46,8 @@ class ACFBillet
         if ( $group )
         {
             LegalDebug::debug( [
+                'post_id' => $post_id,
+
                 'group' => $group,
             ] );
 
