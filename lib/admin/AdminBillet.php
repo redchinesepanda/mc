@@ -19,9 +19,24 @@ class AdminBillet
         $handler = new self();
 
         // add_action( 'wp_insert_post', [ $handler, 'meta_template' ], 10, 3 );
+
+        // add_action( 'acf/save_post', [ $handler, 'my_acf_save_post' ] );
     }
 
-    function meta_template( $post_ID, $post, $update )
+    public static function my_acf_save_post( $post_id )
+    {
+        // Get newly saved values.
+        $values = get_fields( $post_id );
+
+        // Check the new value of a specific field.
+        $hero_image = get_field('hero_image', $post_id);
+
+        if( $hero_image ) {
+            // Do something...
+        }
+    }
+
+    public static function meta_template( $post_ID, $post, $update )
     {
         if ( !empty( self::META_VALUE[ $post->post_type ] ) ) {
             update_post_meta( $post_ID, self::META_KEY[ 'page-template' ], self::META_VALUE[ $post->post_type ] );
