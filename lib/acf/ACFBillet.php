@@ -61,13 +61,11 @@ class ACFBillet
 
         if ( $group )
         {
-            // LegalDebug::debug( [
-            //     'post_id' => $post_id,
+            LegalDebug::debug( [
+                'post_id' => $post_id,
 
-            //     'group' => $group,
-
-            //     'title' => $title,
-            // ] );
+                'group' => $group,
+            ] );
 
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
