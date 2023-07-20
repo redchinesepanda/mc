@@ -10,6 +10,8 @@ class ACFBillet
         'profit' => 'billet-profit-items',
 
         'font' => 'billet-font',
+        
+        'title-text' => 'billet-title-text',
     ];
 
     const PROFIT = [
@@ -36,10 +38,6 @@ class ACFBillet
 
         add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
     }
-
-    const FIELD = [
-        'title-text' => 'billet-title-text',
-    ];
 
     public static function billet_to_review( $post_id )
     {
