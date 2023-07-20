@@ -97,18 +97,18 @@ class ACFBillet
                 $group[ BilletLogo::ABOUT[ 'font' ] ] = $font;
             }
 
-            $afillate = get_field( self::FIELD[ 'referal' ], $post_id );
+            $afillate = get_field( self::FIELD[ 'referal' ], $post_id, false );
 
             if ( $afillate )
             {
                 $group[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
             }
 
-            LegalDebug::debug( [
-                'afillate_meta' => get_post_meta( $post_id, BilletMain::FIELD[ 'about' ]. '_' . BilletMain::ABOUT[ 'afillate' ] , true ),
+            // LegalDebug::debug( [
+            //     'afillate_meta' => get_post_meta( $post_id, BilletMain::FIELD[ 'about' ]. '_' . BilletMain::ABOUT[ 'afillate' ] , true ),
 
-                'afillate-get_field' => get_field( self::FIELD[ 'referal' ], $post_id, false )
-            ] );
+            //     'afillate-get_field' => get_field( self::FIELD[ 'referal' ], $post_id, false )
+            // ] );
 
             $review = get_field( self::FIELD[ 'card' ], $post_id );
 
@@ -145,9 +145,9 @@ class ACFBillet
                 $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
+            // LegalDebug::die( [
+            //     'group' => $group,
+            // ] );
 
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
