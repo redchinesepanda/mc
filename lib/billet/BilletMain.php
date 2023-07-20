@@ -66,6 +66,18 @@ class BilletMain
         return LegalComponents::check();
     }
 
+    const FIELD = [
+        'about' => 'review-about',
+    ];
+
+    const ABOUT = [
+        'afillate' => 'about-afillate',
+
+        'review' => 'about-review',
+
+        'bonus' => 'about-bonus-url',
+    ];
+
     public static function register()
     {
         $handler = new self();
@@ -79,21 +91,40 @@ class BilletMain
 
     public static function get_url( $id, $filter = [] )
     {
+        $referal_url = '';
+
+        $card_url = '';
+
+        $bonus_url = '';
+
+        $group = get_field( self::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            $referal_url = $group[ self::ABOUT[ 'afillate' ] ];
+
+            $card_url = $group[ self::ABOUT[ 'review' ] ];
+
+            $bonus_url = $group[ self::ABOUT[ 'bonus' ] ];
+        }
+
         // Партнерская БК или ''
 
-        $referal_url = get_field( self::SETTINGS[ 'referal' ], $id );
+        // $referal_url = get_field( self::SETTINGS[ 'referal' ], $id );
 
         // Карточка БК или ''
 
-        $card_url = get_field( self::SETTINGS[ 'card' ], $id );
+        // $card_url = get_field( self::SETTINGS[ 'card' ], $id );
 
         // Бонус или ''
 
-        $bonus_url = self::get_post_url( $id, self::SETTINGS[ 'bonus' ], '' );
+        // $bonus_url = self::get_post_url( $id, self::SETTINGS[ 'bonus' ], '' );
 
         // Текущая локаль
 
-        $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )['locale'];
+        // $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )[ 'locale' ];
+        
+        $locale = WPMLMain::get_post_language_details( $id )[ 'locale' ];
 
         // Oops если есть
 

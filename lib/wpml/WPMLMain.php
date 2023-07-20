@@ -85,9 +85,14 @@ class WPMLMain
 		} );
 	}
 
-    public static function get_post_language_details()
+    public static function get_post_language_details( $id = null )
 	{
-		return apply_filters( 'wpml_post_language_details', NULL ) ;
+        if ( !empty( $id ) )
+        {
+            return apply_filters( 'wpml_post_language_details', NULL, $id );
+        }
+        
+        return apply_filters( 'wpml_post_language_details', NULL );
 	}
 
     public static function get_locale()
