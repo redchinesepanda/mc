@@ -60,113 +60,95 @@ class ACFBillet
     ];
 
     // public static function billet_to_review( $post_id )
+
+    const POST_TYPE = [
+        'legal_billet',
+    ];
     
     public static function billet_to_review( $post_id, $post )
     {
-        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
+        if ( in_array( $post->post_type, self::POST_TYPE ) ) {
+            // $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
+    
+            // if ( !$group )
+            // {
+            //     $group = [];
+            // }
 
-        // LegalDebug::debug( [
-        //     'post_id' => $post_id,
+            $args = [];
 
-        //     'post' => $post,
-
-        //     'about' => BilletMain::FIELD[ 'about' ],
-
-        //     'group' => $group,
-
-        //     'get_field' => get_field( BilletMain::FIELD[ 'about' ], $post ),
-        // ] );
-
-        if ( !$group )
-        {
-            $group = [];
-        }
-
-        // if ( $group )
-        // {
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
             if ( $title )
             {
-                $group[ BilletTitle::ABOUT[ 'title' ] ] = $title;
+                $args[ BilletTitle::ABOUT[ 'title' ] ] = $title;
             }
 
             $rating = get_field( self::FIELD[ 'title-rating' ], $post_id );
 
             if ( $rating )
             {
-                $group[ BilletTitle::ABOUT[ 'rating' ] ] = $rating;
+                $args[ BilletTitle::ABOUT[ 'rating' ] ] = $rating;
             }
 
             $logo = get_field( self::FIELD[ 'logo' ], $post_id, false );
 
             if ( $logo )
             {
-                $group[ BilletLogo::ABOUT[ 'logo' ] ] = $logo;
+                $args[ BilletLogo::ABOUT[ 'logo' ] ] = $logo;
             }
 
             $font = get_field( self::FIELD[ 'font' ], $post_id );
 
             if ( $font )
             {
-                $group[ BilletLogo::ABOUT[ 'font' ] ] = $font;
+                $args[ BilletLogo::ABOUT[ 'font' ] ] = $font;
             }
 
             $afillate = get_field( self::FIELD[ 'referal' ], $post_id, false );
 
             if ( $afillate )
             {
-                $group[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
+                $args[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
             }
-
-            // LegalDebug::debug( [
-            //     'afillate_meta' => get_post_meta( $post_id, BilletMain::FIELD[ 'about' ]. '_' . BilletMain::ABOUT[ 'afillate' ] , true ),
-
-            //     'afillate-get_field' => get_field( self::FIELD[ 'referal' ], $post_id, false )
-            // ] );
 
             $review = get_field( self::FIELD[ 'card' ], $post_id, false );
 
             if ( $review )
             {
-                $group[ BilletMain::ABOUT[ 'review' ] ] = $review;
+                $args[ BilletMain::ABOUT[ 'review' ] ] = $review;
             }
 
             $bonus_id = get_field( self::FIELD[ 'bonus-id' ], $post_id );
 
             if ( $bonus_id )
             {
-                $group[ BilletMain::ABOUT[ 'bonus-id' ] ] = $bonus_id;
+                $args[ BilletMain::ABOUT[ 'bonus-id' ] ] = $bonus_id;
             }
 
             $bonus_title = get_field( self::FIELD[ 'bonus-title' ], $post_id );
 
             if ( $bonus_title )
             {
-                $group[ BilletMain::ABOUT[ 'bonus-title' ] ] = $bonus_title;
+                $args[ BilletMain::ABOUT[ 'bonus-title' ] ] = $bonus_title;
             }
 
             $bonus_description = get_field( self::FIELD[ 'bonus-description' ], $post_id );
 
             if ( $bonus_description )
             {
-                $group[ BilletMain::ABOUT[ 'bonus-description' ] ] = $bonus_description;
+                $args[ BilletMain::ABOUT[ 'bonus-description' ] ] = $bonus_description;
             }
 
             $background = get_field( self::FIELD[ 'color' ], $post_id );
 
             if ( $background )
             {
-                $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
+                $args[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
-            update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
-        // }
-
-        // LegalDebug::die( [
-        //     'group' => $group,
-        // ] );
-    }
+            update_field( BilletMain::FIELD[ 'about' ], $args, $post_id );
+        }}
 
     public static function legal_hidden( $field )
     {
