@@ -104,6 +104,10 @@ class ACFBillet
                 $group[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
             }
 
+            LegalDebug::debug( [
+                'afillate_meta' => get_post_meta( $post_id, BilletMain::FIELD[ 'about' ]. '_' . BilletMain::ABOUT[ 'afillate' ] , true ),
+            ] );
+
             $review = get_field( self::FIELD[ 'card' ], $post_id );
 
             if ( $review )
