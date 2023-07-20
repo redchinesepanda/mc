@@ -24,7 +24,9 @@ class ACFBillet
 
         add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
 
-        add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
+        // add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
+        
+        add_action( 'save_post', [ $handler, 'billet_to_review' ] );
     }
 
 	const FIELD = [
