@@ -53,8 +53,6 @@ class ACFBillet
                 'group' => $group,
             ] );
 
-            wp_die( 'wp_die' );
-
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
             if ( $title_text )
