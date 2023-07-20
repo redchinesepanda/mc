@@ -63,7 +63,7 @@ class ACFBillet
             {
                 $group[ BilletTitle::ABOUT[ 'title' ] ] = $title;
 
-                update_field( $group, BilletTitle::ABOUT[ 'title' ], $post_id );
+                update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
             }
 
             LegalDebug::die( [
