@@ -10,7 +10,7 @@ class ACFBillet
         'profit' => 'billet-profit-items',
 
         'font' => 'billet-font',
-        
+
         'title-text' => 'billet-title-text',
     ];
 
@@ -45,9 +45,11 @@ class ACFBillet
 
         if ( $group )
         {
-            // LegalDebug::debug( [
-            //     'group' => $group,
-            // ] );
+            LegalDebug::debug( [
+                'group' => $group,
+            ] );
+
+            wp_die();
 
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
