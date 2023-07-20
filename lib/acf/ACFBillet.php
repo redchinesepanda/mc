@@ -63,11 +63,11 @@ class ACFBillet
 
         if ( $group )
         {
-            LegalDebug::debug( [
-                'post_id' => $post_id,
+            // LegalDebug::debug( [
+            //     'post_id' => $post_id,
 
-                'group' => $group,
-            ] );
+            //     'group' => $group,
+            // ] );
 
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
@@ -139,9 +139,9 @@ class ACFBillet
                 $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
+            // LegalDebug::die( [
+            //     'group' => $group,
+            // ] );
 
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
