@@ -62,9 +62,9 @@ class ACFBillet
                 update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
             }
 
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
+            // LegalDebug::die( [
+            //     'group' => $group,
+            // ] );
 
         }
     }
