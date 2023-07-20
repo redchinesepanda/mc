@@ -63,18 +63,11 @@ class ACFBillet
     {
         $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
-        if ( !$group )
-        {
-            update_field( BilletMain::FIELD[ 'about' ], [], $post_id );
+        // LegalDebug::debug( [
+        //     'post_id' => $post_id,
 
-            $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
-        }
-
-        LegalDebug::debug( [
-            'post_id' => $post_id,
-
-            'group' => $group,
-        ] );
+        //     'group' => $group,
+        // ] );
 
         if ( $group )
         {
@@ -157,9 +150,9 @@ class ACFBillet
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
 
-        LegalDebug::die( [
-            'group' => $group,
-        ] );
+        // LegalDebug::die( [
+        //     'group' => $group,
+        // ] );
     }
 
     public static function legal_hidden( $field )
