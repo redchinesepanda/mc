@@ -43,7 +43,7 @@ class ACFBillet
 
         if ( $group )
         {
-            LegalDebug::debug( [
+            LegalDebug::die( [
                 'group' => $group,
             ] );
         }
