@@ -70,6 +70,8 @@ class ACFBillet
 
             'post' => $post,
 
+            'about' => BilletMain::FIELD[ 'about' ],
+
             'group' => $group,
 
             'get_field' => get_field( BilletMain::FIELD[ 'about' ], $post ),
