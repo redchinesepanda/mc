@@ -32,6 +32,14 @@ class BilletTitle extends LegalDebug
             $label = $group[ self::ABOUT[ 'title' ] ];
         }
 
+        LegalDebug::debug( [
+            'rating' => $rating,
+
+            'label' => $label,
+
+            'group' => $group,
+        ] );
+
         $args = BilletMain::href( $billet['url']['title'] );
 
         $args['id'] = $billet['id'];
