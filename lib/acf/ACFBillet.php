@@ -2,18 +2,6 @@
 
 class ACFBillet
 {
-	const FIELD = [
-        'icon' => 'billet-list-part-icon',
-
-        'direction' => 'billet-list-part-direction',
-
-        'profit' => 'billet-profit-items',
-
-        'font' => 'billet-font',
-
-        'title-text' => 'billet-title-text',
-    ];
-
     const PROFIT = [
         'feature' => 'profit-item-feature',
 
@@ -39,33 +27,116 @@ class ACFBillet
         add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
     }
 
+	const FIELD = [
+        'icon' => 'billet-list-part-icon',
+
+        'direction' => 'billet-list-part-direction',
+
+        'profit' => 'billet-profit-items',
+
+        'font' => 'billet-font',
+
+        'title-text' => 'billet-title-text',
+
+        'title-rating' => 'billet-title-rating',
+
+        'logo' => 'billet-logo-url',
+
+        'font' => 'billet-font',
+
+        'referal' => 'billet-referal',
+
+        'card' => 'billet-card',
+
+        'bonus-id' => 'billet-bonus',
+
+        'bonus-title' => 'billet-bonus-title',
+
+        'bonus-description' => 'billet-bonus-description',
+    ];
+
     public static function billet_to_review( $post_id )
     {
         $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
         if ( $group )
         {
+            // LegalDebug::debug( [
+            //     'post_id' => $post_id,
+
+            //     'group' => $group,
+
+            //     'title' => $title,
+            // ] );
+
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
-
-            LegalDebug::debug( [
-                    'post_id' => $post_id,
-
-                'group' => $group,
-
-                'title' => $title,
-            ] );
 
             if ( $title )
             {
                 $group[ BilletTitle::ABOUT[ 'title' ] ] = $title;
-
-                update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
             }
 
-            // LegalDebug::die( [
-            //     'group' => $group,
-            // ] );
+            $rating = get_field( self::FIELD[ 'title-rating' ], $post_id );
 
+            if ( $rating )
+            {
+                $group[ BilletTitle::ABOUT[ 'rating' ] ] = $rating;
+            }
+
+            $logo = get_field( self::FIELD[ 'logo' ], $post_id );
+
+            if ( $logo )
+            {
+                $group[ BilletLogo::ABOUT[ 'logo' ] ] = $logo;
+            }
+
+            $font = get_field( self::FIELD[ 'font' ], $post_id );
+
+            if ( $font )
+            {
+                $group[ BilletLogo::ABOUT[ 'font' ] ] = $font;
+            }
+
+            $afillate = get_field( self::FIELD[ 'referal' ], $post_id );
+
+            if ( $afillate )
+            {
+                $group[ BilletMain::ABOUT[ 'afillate' ] ] = $afillate;
+            }
+
+            $review = get_field( self::FIELD[ 'card' ], $post_id );
+
+            if ( $review )
+            {
+                $group[ BilletMain::ABOUT[ 'review' ] ] = $review;
+            }
+
+            $bonus_id = get_field( self::FIELD[ 'bonus-id' ], $post_id );
+
+            if ( $bonus_id )
+            {
+                $group[ BilletMain::ABOUT[ 'bonus-id' ] ] = $bonus_id;
+            }
+
+            $bonus_title = get_field( self::FIELD[ 'bonus-title' ], $post_id );
+
+            if ( $bonus_title )
+            {
+                $group[ BilletMain::ABOUT[ 'bonus-title' ] ] = $bonus_title;
+            }
+
+            $bonus_description = get_field( self::FIELD[ 'bonus-description' ], $post_id );
+
+            if ( $bonus_description )
+            {
+                $group[ BilletMain::ABOUT[ 'bonus-description' ] ] = $bonus_description;
+            }
+
+            LegalDebug::die( [
+                'group' => $group,
+            ] );
+
+            update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
     }
 
