@@ -80,6 +80,8 @@ class BilletMain
         'bonus-title' => 'about-bonus',
 
         'bonus-description' => 'about-description',
+
+        'background' => 'about-background',
     ];
 
     public static function register()
@@ -275,11 +277,20 @@ class BilletMain
 
     private static function get_color( $id )
     {
-        $color = get_field( 'billet-color', $id );
+        $color = self::DEFAULT_COLOR;
 
-        if ( empty( $color ) ) {
-            $color = self::DEFAULT_COLOR;
+        $group = get_field( self::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            $color = $group[ self::ABOUT[ 'background' ] ];
         }
+
+        // $color = get_field( 'billet-color', $id );
+
+        // if ( empty( $color ) ) {
+        //     $color = self::DEFAULT_COLOR;
+        // }
 
         return $color;
     }

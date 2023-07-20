@@ -53,6 +53,8 @@ class ACFBillet
         'bonus-title' => 'billet-bonus-title',
 
         'bonus-description' => 'billet-bonus-description',
+
+        'color' => 'billet-color',
     ];
 
     public static function billet_to_review( $post_id )
@@ -128,6 +130,13 @@ class ACFBillet
             if ( $bonus_description )
             {
                 $group[ BilletMain::ABOUT[ 'bonus-description' ] ] = $bonus_description;
+            }
+
+            $background = get_field( self::FIELD[ 'color' ], $post_id );
+
+            if ( $background )
+            {
+                $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
             LegalDebug::die( [
