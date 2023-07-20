@@ -75,7 +75,11 @@ class BilletMain
 
         'review' => 'about-review',
 
-        'bonus' => 'about-bonus-url',
+        'bonus-id' => 'about-bonus-id',
+
+        'bonus-title' => 'about-bonus',
+
+        'bonus-description' => 'about-description',
     ];
 
     public static function register()
@@ -105,7 +109,7 @@ class BilletMain
 
             $card_url = $group[ self::ABOUT[ 'review' ] ];
 
-            $bonus_url = $group[ self::ABOUT[ 'bonus' ] ];
+            $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
         }
 
         // Партнерская БК или ''
@@ -195,21 +199,51 @@ class BilletMain
 
     private static function get_bonus( $id )
     {
-        $bonus_id = get_field( 'billet-bonus', $id );
-
         $args = [];
 
-        if ( $bonus_id ) {
-            $args['title'] = self::get_field_default( $bonus_id, self::BONUS[ 'title' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+        $bonus_id = 0;
 
-            $args['description'] = self::get_field_default( $bonus_id, self::BONUS[ 'description' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
-        } else {
-            $args['title'] = get_field( self::SETTINGS[ 'bonus-title' ], $id );
+        $title = '';
 
-            $args['description'] = get_field( self::SETTINGS[ 'bonus-description' ], $id );
+        $description = '';
+
+        $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
+
+        if ( $group )
+        {
+            $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
+
+            $title = $group[ self::ABOUT[ 'bonus-title' ] ];
+
+            $description = $group[ self::ABOUT[ 'bonus-description' ] ];
         }
 
-        return $args;
+        if ( $bonus_id )
+        {
+            $title = get_field( self::BONUS[ 'title' ], $bonus_id );
+
+            $description = get_field( self::BONUS[ 'description' ], $bonus_id );
+        }
+
+        // $bonus_id = get_field( 'billet-bonus', $id );
+
+        // if ( $bonus_id ) {
+        //     $args['title'] = self::get_field_default( $bonus_id, self::BONUS[ 'title' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+
+        //     $args['description'] = self::get_field_default( $bonus_id, self::BONUS[ 'description' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
+        // } else {
+        //     $args['title'] = get_field( self::SETTINGS[ 'bonus-title' ], $id );
+
+        //     $args['description'] = get_field( self::SETTINGS[ 'bonus-description' ], $id );
+        // }
+
+        // return $args;
+
+        return [
+            'title' => $title,
+
+            'description' => $description,
+        ];
     }
 
     private static function get( $args )
