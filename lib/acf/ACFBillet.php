@@ -24,7 +24,9 @@ class ACFBillet
 
         add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
 
-        add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
+        // add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
+
+        add_filter( 'save_post', [ $handler, 'billet_to_review' ], 10, 2 );
     }
 
 	const FIELD = [
@@ -57,15 +59,21 @@ class ACFBillet
         'color' => 'billet-color',
     ];
 
-    public static function billet_to_review( $post_id )
+    // public static function billet_to_review( $post_id )
+    
+    public static function billet_to_review( $post_id, $post )
     {
         $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
 
-        // LegalDebug::debug( [
-        //     'post_id' => $post_id,
+        LegalDebug::debug( [
+            'post_id' => $post_id,
 
-        //     'group' => $group,
-        // ] );
+            'post' => $post,
+
+            'group' => $group,
+
+            'get_field' => get_field( BilletMain::FIELD[ 'about' ], $post ),
+        ] );
 
         if ( $group )
         {
@@ -148,9 +156,9 @@ class ACFBillet
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
 
-        // LegalDebug::die( [
-        //     'group' => $group,
-        // ] );
+        LegalDebug::die( [
+            'group' => $group,
+        ] );
     }
 
     public static function legal_hidden( $field )
