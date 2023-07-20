@@ -45,19 +45,19 @@ class ACFBillet
 
         if ( $group )
         {
-            LegalDebug::debug( [
-                'post_id' => $post_id,
+            // LegalDebug::debug( [
+            //     'post_id' => $post_id,
 
-                'group' => $group,
-            ] );
+            //     'group' => $group,
+            // ] );
 
             $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
-            LegalDebug::debug( [
-                'group' => $group,
+            // LegalDebug::debug( [
+            //     'group' => $group,
 
-                'title' => $title,
-            ] );
+            //     'title' => $title,
+            // ] );
 
             if ( $title )
             {
@@ -66,9 +66,9 @@ class ACFBillet
                 update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
             }
 
-            LegalDebug::die( [
-                'group' => $group,
-            ] );
+            // LegalDebug::die( [
+            //     'group' => $group,
+            // ] );
 
         }
     }
