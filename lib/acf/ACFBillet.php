@@ -41,11 +41,11 @@ class ACFBillet
 
     public static function billet_to_review( $post_id )
     {
-        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
+        $group = get_field( BilletMain::FIELD[ 'about' ], $post_id, false );
 
         if ( $group )
         {
-            $title = get_field( self::FIELD[ 'title-text' ], $post_id, false );
+            $title = get_field( self::FIELD[ 'title-text' ], $post_id );
 
             LegalDebug::debug( [
                     'post_id' => $post_id,
