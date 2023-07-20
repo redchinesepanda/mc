@@ -145,12 +145,12 @@ class ACFBillet
                 $group[ BilletMain::ABOUT[ 'background' ] ] = $background;
             }
 
-            // LegalDebug::die( [
-            //     'group' => $group,
-            // ] );
-
             update_field( BilletMain::FIELD[ 'about' ], $group, $post_id );
         }
+
+        LegalDebug::die( [
+            'group' => $group,
+        ] );
     }
 
     public static function legal_hidden( $field )
