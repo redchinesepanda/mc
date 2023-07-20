@@ -57,7 +57,7 @@ class ACFBillet
                 'title' => $title,
             ] );
 
-            if ( $title_text )
+            if ( $title )
             {
                 $group[ BilletTitle::ABOUT[ 'title' ] ] = $title;
 
