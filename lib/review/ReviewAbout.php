@@ -12,12 +12,25 @@ class ReviewAbout
 
     public static function register_style()
     {
-        ReviewMain::register_style( self::CSS );
+        if ( self::check() ) {
+            ToolEnqueue::register_style( self::CSS );
+        }
     }
 
     public static function register_inline_style()
     {
-		ReviewMain::register_inline_style( 'review-about', self::inline_style() );
+        if ( self::check() ) {
+            ToolEnqueue::register_inline_style( 'review-about', self::inline_style() );
+        }
+    }
+
+    public static function check()
+    {
+        $permission_admin = !is_admin();
+
+        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+        
+        return $permission_admin && $permission_post_type;
     }
 
     public static function register()
