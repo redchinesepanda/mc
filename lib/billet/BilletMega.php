@@ -95,11 +95,11 @@ class BilletMega
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
 
-		// LegalDebug::debug( [
-		// 	'atts' => $atts,
+		LegalDebug::debug( [
+			'atts' => $atts,
 
-		// 	'content' => $content,
-		// ] );
+			// 'content' => $content,
+		] );
 
 		$url = BilletMain::get_url( $atts[ 'id' ] );
 
