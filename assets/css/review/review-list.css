@@ -148,6 +148,10 @@
 	margin-bottom: -8px;
 }
 
+.tcb-post-content .legal-highlight {
+    padding-top: 15px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content li::before {
