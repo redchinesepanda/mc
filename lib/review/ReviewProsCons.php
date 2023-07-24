@@ -127,6 +127,14 @@ class ReviewProsCons
 
 		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
+		LegalDebug::debug( [
+			'class' => 'ReviewProsCons',
+
+			'function' => 'get_content',
+			
+			'body' => substr( $body->textContent, 0, 30 )
+		] );
+
 		$containers = [];
 
 		foreach ( $nodes as $id => $node )
