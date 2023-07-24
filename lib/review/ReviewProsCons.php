@@ -127,13 +127,13 @@ class ReviewProsCons
 
 		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
-		LegalDebug::debug( [
-			'class' => 'ReviewProsCons',
+		// LegalDebug::debug( [
+		// 	'class' => 'ReviewProsCons',
 
-			'function' => 'get_content',
+		// 	'function' => 'get_content',
 			
-			'body' => substr( $body->textContent, 0, 30 ),
-		] );
+		// 	'body' => substr( $body->textContent, 0, 30 ),
+		// ] );
 
 		$containers = [];
 
