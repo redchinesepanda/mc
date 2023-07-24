@@ -165,7 +165,7 @@ class ReviewAbout
 
             if ( has_term( 'app', 'page_type' ) )
             {
-                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN ) 
+                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
             }
     
             $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
