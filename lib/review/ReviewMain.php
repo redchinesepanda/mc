@@ -138,19 +138,17 @@ class ReviewMain
 
     public static function check()
     {
-        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
-
-        $term = has_term( 'compilation', 'page_type' );
-
         $permission_admin = !is_admin();
 
-        $permission_tax = has_term( 'compilation', 'page_type' );
+        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+
+        $permission_term = has_term( 'compilation', 'page_type' );
 
         // LegalDebug::debug( [
         //     'term' => $term ? 'true' : 'false',
         // ] );
         
-        return ( $permission_admin && ( $permission_post_type || $permission_tax || $term ) );
+        return ( $permission_admin && ( $permission_post_type || $permission_term) );
     }
 
     public static function schema()
