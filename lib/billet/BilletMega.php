@@ -109,7 +109,7 @@ class BilletMega
 
 		$title_text = '';
 
-		$group = get_field( BilletMain::FIELD[ 'about' ], $id );
+		$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
 
         if ( $group )
         {
