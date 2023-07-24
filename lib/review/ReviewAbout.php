@@ -128,7 +128,7 @@ class ReviewAbout
                 'afillate' => [
                     'href' => self::check_href_afillate(),
 
-                    'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+                    'text' => self::get_text(),
                 ],
 
                 'mode' => $mode,
@@ -157,33 +157,34 @@ class ReviewAbout
         return $output;
     }
 
+    public static function get_text()
+    {
+        $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
+
+        if ( has_term( 'app', 'page_type' ) )
+        {
+            $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
+        }
+
+        LegalDebug::debug( [
+            'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
+
+            'text' => $text,
+        ] );
+
+        return $text;
+    }
+    
     public static function get_button( $args )
     {
         $group = get_field( self::FIELD );
 
-        LegalDebug::debug( [
-            'group' => $group,
-        ] );
-        
         if( $group )
         {
-            $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
-
-            if ( has_term( 'app', 'page_type' ) )
-            {
-                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
-            }
-
-            LegalDebug::debug( [
-                'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
-
-                'text' => $text,
-            ] );
-
             return [
                 'href' => self::check_href_afillate(),
 
-                'text' => $text,
+                'text' => self::get_text(),
             ];
         }
 
