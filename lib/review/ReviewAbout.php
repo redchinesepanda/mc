@@ -170,6 +170,12 @@ class ReviewAbout
                 $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
             }
 
+            LegalDebug::debug( [
+                'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
+
+                'text' => $text,
+            ] );
+
             return [
                 'href' => self::check_href_afillate(),
 
