@@ -6,7 +6,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.0.7',
+            'ver' => '1.0.8',
         ],
     ];
 
@@ -145,6 +145,8 @@ class ReviewList
 	}
 
     const CLASSES = [
+        'list-2' => 'legal-list-2',
+
         'list-3' => 'legal-list-3',
 
         'list-4' => 'legal-list-4',
@@ -161,6 +163,13 @@ class ReviewList
 				'title' => 'List',
 
 				'items' => [
+					[
+						'title' => 'List 2 Columns',
+						
+						'selector' => 'ul,ol',
+
+						'classes' => self::CLASSES[ 'list-2' ],
+					],
 					[
 						'title' => 'List 3 Columns',
 						
