@@ -15,6 +15,7 @@
 {
     /* Display */
 
+    .tcb-post-content .legal-list-2,
     .tcb-post-content .legal-list-3,
     .tcb-post-content .legal-list-4 {
         display: flex;
