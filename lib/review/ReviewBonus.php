@@ -133,6 +133,12 @@ class ReviewBonus
 
 	public static function get_content( $content )
 	{
+		LegalDebug::debug( [
+			'function' => 'get_content',
+
+			'check' => ReviewMain::check() ? 'true' : 'false',
+		] );
+
 		if ( !ReviewMain::check() ) {
 			return $content;
 		}

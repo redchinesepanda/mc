@@ -146,9 +146,9 @@ class ReviewMain
 
         $permission_tax = has_term( 'compilation', 'page_type' );
 
-        LegalDebug::debug( [
-            'term' => $term ? 'true' : 'false',
-        ] );
+        // LegalDebug::debug( [
+        //     'term' => $term ? 'true' : 'false',
+        // ] );
         
         return ( $permission_admin && ( $permission_post_type || $permission_tax || $term ) );
     }
