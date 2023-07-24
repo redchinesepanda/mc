@@ -24,9 +24,7 @@ class ACFBillet
 
         add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
 
-        // add_action( 'acf/save_post', [ $handler, 'billet_to_review' ] );
-
-        add_filter( 'save_post', [ $handler, 'billet_to_review' ], 10, 2 );
+        // add_filter( 'save_post', [ $handler, 'billet_to_review' ], 10, 2 );
     }
 
 	const FIELD = [
@@ -121,7 +119,7 @@ class ACFBillet
             {
                 $args[ BilletMain::ABOUT[ 'description' ] ] = $description;
 
-                // delete_field( self::FIELD[ 'description' ], $post_id );
+                delete_field( self::FIELD[ 'description' ], $post_id );
             }
 
             $afillate = get_field( self::FIELD[ 'referal' ], $post_id, false );

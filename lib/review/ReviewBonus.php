@@ -6,13 +6,13 @@ class ReviewBonus
         'review-bonus' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
 
-			'ver' => '1.1.4',
+			'ver' => '1.1.5',
 		],
 
         'review-billet' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet.css',
 
-            'ver' => '1.0.9',
+            'ver' => '1.1.0',
         ],
     ];
  

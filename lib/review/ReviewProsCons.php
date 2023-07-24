@@ -199,11 +199,25 @@ class ReviewProsCons
 					$element->appendChild( $item );
 				}
 
-				$body->replaceChild( $element, $node );
+				try {
+					$body->replaceChild( $element, $node );
+				} catch ( DOMException $e ) {
+					LegalDebug::debug( [
+						'element' => substr( $element->textContent, 0, 30 ),
+
+						'node' => substr( $node->textContent, 0, 30 ),
+					] );
+				}
 
 				$container = [];
 			} else {
-				$body->removeChild( $node );
+				try {
+					$body->removeChild( $node );
+				} catch ( DOMException $e ) {
+					LegalDebug::debug( [
+						'node' => substr( $node->textContent, 0, 30 ),
+					] );
+				}
 			}
 		}
 

@@ -105,15 +105,32 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
+		$logo = '';
+
+		$title_text = '';
+
+		$group = get_field( BilletMain::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+
+            $title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+        }
+
 		$args = [
 			'id' => $atts[ 'id' ],
 
-			'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
+			// 'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
+			
+			'logo' => $logo,
 
 			'title' => [
 				'href' => $url[ 'play' ],
 				
-				'text' => get_field( 'billet-title-text', $atts[ 'id' ] ),
+				// 'text' => get_field( 'billet-title-text', $atts[ 'id' ] ),
+				
+				'text' => $title_text,
 
 				'tag' => $atts[ 'title-tag' ],
 			],
