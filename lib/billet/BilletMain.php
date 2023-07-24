@@ -256,7 +256,19 @@ class BilletMain
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
+        $description = '';
+
+        $group = get_field( self::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
+
+            if ( $filter_description )
+            {
+                $description = $group[ self::ABOUT[ 'description' ] ];
+            }
+        }
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
@@ -271,7 +283,7 @@ class BilletMain
 
             'color' => self::get_color( $id ),
 
-            'description' => ( $filter_description ? get_field( 'billet-description', $id ) : '' ),
+            'description' => $description,
 
             'filter' => $filter,
         ];
