@@ -140,11 +140,13 @@ class ReviewMain
     {
         $permission_post_type = is_singular( [ 'legal_bk_review' ] );
 
+        $term = has_term( 'compilation', 'page_type' );
+
         $permission_admin = !is_admin();
 
         $permission_tax = has_term( 'compilation', 'page_type' ); 
         
-        return ( $permission_admin && ( $permission_post_type || $permission_tax ) );
+        return ( $permission_admin && ( $permission_post_type || $permission_tax || $term ) );
     }
 
     public static function schema()
