@@ -160,6 +160,10 @@ class ReviewAbout
     public static function get_button( $args )
     {
         $group = get_field( self::FIELD );
+
+        LegalDebug::debug( [
+            'group' => $group,
+        ] );
         
         if( $group )
         {
