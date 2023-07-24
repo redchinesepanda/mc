@@ -138,19 +138,19 @@ class ReviewMain
 
     public static function check()
     {
-        // $permission_admin = !is_admin();
+        $permission_admin = !is_admin();
 
-        // $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
 
-        // $permission_term = has_term( 'compilation', 'page_type' );
+        $permission_term = has_term( 'compilation', 'page_type' );
 
-        // // LegalDebug::debug( [
-        // //     'term' => $term ? 'true' : 'false',
-        // // ] );
+        // LegalDebug::debug( [
+        //     'term' => $term ? 'true' : 'false',
+        // ] );
         
-        // return ( $permission_admin && ( $permission_post_type || $permission_term) );
+        return ( $permission_admin && ( $permission_post_type || $permission_term) );
 
-        return true;
+        // return true;
     }
 
     public static function schema()
