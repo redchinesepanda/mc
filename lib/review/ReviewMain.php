@@ -146,7 +146,7 @@ class ReviewMain
 
         $permission_tax = has_term( 'compilation', 'page_type' ); 
         
-        return ( $permission_admin && ( $permission_post_type || $permission_tax || $term ) ); 
+        return ( $permission_admin && ( $permission_post_type || $permission_tax || $term ) );
     }
 
     public static function schema()
