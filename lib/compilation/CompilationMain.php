@@ -6,7 +6,7 @@ class CompilationMain
         'compilation-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.2',
         ],
     ];
 

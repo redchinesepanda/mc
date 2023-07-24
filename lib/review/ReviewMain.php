@@ -145,10 +145,16 @@ class ReviewMain
         $permission_term = has_term( 'compilation', 'page_type' );
 
         // LegalDebug::debug( [
-        //     'term' => $term ? 'true' : 'false',
+        //     'permission_admin' => $permission_admin ? 'true' : 'false',
+
+        //     'permission_post_type' => $permission_post_type ? 'true' : 'false',
+
+        //     'permission_term' => $permission_term ? 'true' : 'false',
+
+        //     'check' => $permission_admin && ( $permission_post_type || $permission_term ) ? 'true' : 'false',
         // ] );
         
-        return ( $permission_admin && ( $permission_post_type || $permission_term) );
+        return ( $permission_admin && ( $permission_post_type || $permission_term ) );
 
         // return true;
     }

@@ -306,7 +306,6 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-
 /* Billet Width and Height */
 
 .billet-left,
@@ -350,7 +349,7 @@ body {
 
 /* Billet Position */
 
-.billet-item:not( :last-child ) {
+.billet-item {
     margin-bottom: 15px;
 }
 
