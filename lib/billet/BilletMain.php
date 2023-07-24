@@ -82,6 +82,8 @@ class BilletMain
         'bonus-description' => 'about-description',
 
         'background' => 'about-background',
+
+        'description' => 'about-main-description',
     ];
 
     public static function register()

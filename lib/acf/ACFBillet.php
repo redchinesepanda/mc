@@ -57,6 +57,8 @@ class ACFBillet
         'bonus-description' => 'billet-bonus-description',
 
         'color' => 'billet-color',
+
+        'description' => 'billet-description',
     ];
 
     // public static function billet_to_review( $post_id )
@@ -111,6 +113,15 @@ class ACFBillet
                 $args[ BilletLogo::ABOUT[ 'font' ] ] = $font;
 
                 delete_field( self::FIELD[ 'font' ], $post_id );
+            }
+
+            $description = get_field( self::FIELD[ 'description' ], $post_id );
+
+            if ( $description )
+            {
+                $args[ BilletMain::ABOUT[ 'description' ] ] = $description;
+
+                // delete_field( self::FIELD[ 'description' ], $post_id );
             }
 
             $afillate = get_field( self::FIELD[ 'referal' ], $post_id, false );
