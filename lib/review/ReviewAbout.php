@@ -159,18 +159,23 @@ class ReviewAbout
 
     public static function get_text()
     {
+        $group = get_field( self::FIELD );
+
         $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
 
-        if ( has_term( 'app', 'page_type' ) )
+        if( $group )
         {
-            $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
+            if ( has_term( 'app', 'page_type' ) )
+            {
+                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
+            }
+
+            LegalDebug::debug( [
+                'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
+
+                'text' => $text,
+            ] );
         }
-
-        LegalDebug::debug( [
-            'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
-
-            'text' => $text,
-        ] );
 
         return $text;
     }
