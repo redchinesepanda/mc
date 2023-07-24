@@ -116,7 +116,7 @@
 }
 
 .tcb-post-content > .legal-highlight {
-    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
