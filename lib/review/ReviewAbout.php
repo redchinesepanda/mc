@@ -32,7 +32,7 @@ class ReviewAbout
 
         add_shortcode( 'legal-about', [ $handler, 'render' ] );
 
-        // [legal-button]
+        // [legal-button suffix="ios"]
 
         add_shortcode( 'legal-button', [ $handler, 'render_button' ] );
 
@@ -157,7 +157,7 @@ class ReviewAbout
         return $output;
     }
 
-    public static function get_text()
+    public static function get_text( $suffix = '' )
     {
         $group = get_field( self::FIELD );
 
@@ -167,7 +167,7 @@ class ReviewAbout
         {
             if ( has_term( 'app', 'page_type' ) )
             {
-                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
+                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
             }
 
             LegalDebug::debug( [
@@ -186,10 +186,17 @@ class ReviewAbout
 
         if( $group )
         {
+            $suffix = '';
+
+            if ( !empty( $args[ 'suffix' ] ) )
+            {
+                $suffix = $args[ 'suffix' ];
+            }
+
             return [
                 'href' => self::check_href_afillate(),
 
-                'text' => self::get_text(),
+                'text' => self::get_text( $suffix ),
             ];
         }
 
