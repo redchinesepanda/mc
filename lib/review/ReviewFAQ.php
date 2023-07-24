@@ -37,6 +37,13 @@ class ReviewFAQ
 
     public static function schema()
     {
+        $items = self::get_schema_data();
+
+        if ( empty( $items ) )
+        {
+            return [];
+        }
+
         return [
             "@context" => "https://schema.org",
 

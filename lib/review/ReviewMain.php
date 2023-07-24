@@ -155,20 +155,44 @@ class ReviewMain
             return json_encode( [] );
         }
 
+        $graph = [
+            self::schema_organization(),
+
+            LegalBreadcrumbsMain::schema(),
+
+            self::schema_publisher(),
+        ];
+
+        $faq = ReviewFAQ::schema();
+
+        if ( !empty( $faq ) )
+        {
+            $graph[] = $faq;
+        }
+
+        $hwto = ReviewHowTo::schema();
+
+        if ( !empty( $hwto ) )
+        {
+            $graph[] = $hwto;
+        }
+
         return json_encode( [
             "@context" => "https://schema.org",
 
-            "@graph" => [
-                self::schema_organization(),
+            // "@graph" => [
+            //     self::schema_organization(),
 
-                LegalBreadcrumbsMain::schema(),
+            //     LegalBreadcrumbsMain::schema(),
 
-                ReviewHowTo::schema(),
+            //     ReviewHowTo::schema(),
 
-                ReviewFAQ::schema(),
+            //     ReviewFAQ::schema(),
 
-                self::schema_publisher(),
-            ],
+            //     self::schema_publisher(),
+            // ],
+
+            "@graph" => $graph,
         ] );
     }
 
