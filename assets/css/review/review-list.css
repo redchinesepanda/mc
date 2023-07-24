@@ -98,7 +98,7 @@
 
 /* Review Position */
 
-.tcb-post-content > ul:not( .legal-override ):not( [style] ),
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .tcb-post-content > ol:not( .legal-override ) {
     padding-top: 0px;
     padding-bottom: 30px;
@@ -111,15 +111,15 @@
     padding-top: 0px;
 }
 
+.tcb-post-content .legal-highlight {
+    padding-top: 15px;
+}
+
 .bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .bonus-content > ol:not( .legal-override ):not( :last-child ),
 .billet-description > ol:not( .legal-override ):not( :last-child ) {
     padding-bottom: 15px;
-}
-
-.tcb-post-content .legal-highlight {
-    padding-top: 15px;
 }
 
 .bonus-content > ul:not( .legal-override ):not( [style] ):last-child,
