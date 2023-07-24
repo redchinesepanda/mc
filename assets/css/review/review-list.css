@@ -118,11 +118,15 @@
     padding-bottom: 15px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( [style] ):last-child,
+.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):last-child,
 .billet-description > ul:not( .legal-override ):not( [style] ):last-child,
 .bonus-content > ol:not( .legal-override ):last-child,
 .billet-description > ol:not( .legal-override ):last-child {
     padding-bottom: 0px;
+}
+
+.tcb-post-content .legal-highlight {
+    padding-top: 15px;
 }
 
 .tcb-post-content li > ul:not( .legal-override ),
@@ -146,10 +150,6 @@
 
 .tcb-post-content ul li::before {
 	margin-bottom: -8px;
-}
-
-.tcb-post-content .legal-highlight {
-    padding-top: 15px;
 }
 
 /* Review Width and Height */
