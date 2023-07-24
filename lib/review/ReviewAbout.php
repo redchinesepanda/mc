@@ -59,13 +59,13 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        LegalDebug::debug( [
-            'class' => 'ReviewAbout',
+        // LegalDebug::debug( [
+        //     'class' => 'ReviewAbout',
 
-            'function' => 'inline_style',
+        //     'function' => 'inline_style',
 
-            'style_item' => $style_item,
-        ] );
+        //     'style_item' => $style_item,
+        // ] );
 
         $style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
 
