@@ -162,10 +162,18 @@ class ReviewAbout
         $group = get_field( self::FIELD );
         
         if( $group ) {
+
+            if ( has_term( 'app', 'page_type' ) )
+            {
+                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . __( 'App', ToolLoco::TEXTDOMAIN ) 
+            }
+    
+            $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
+
             return [
                 'href' => self::check_href_afillate(),
 
-                'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+                'text' => $text,
             ];
         }
 
