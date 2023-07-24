@@ -218,6 +218,8 @@ class ReviewProsCons
 						'element' => substr( $element->textContent, 0, 30 ),
 
 						'node' => substr( $node->textContent, 0, 30 ),
+
+						'message' => $e->getMessage(),
 					] );
 				}
 
@@ -232,6 +234,8 @@ class ReviewProsCons
 						'function' => 'get_content',
 
 						'node' => substr( $node->textContent, 0, 30 ),
+
+						'message' => $e->getMessage(),
 					] );
 				}
 			}
