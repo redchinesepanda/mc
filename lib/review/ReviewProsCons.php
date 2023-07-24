@@ -203,6 +203,10 @@ class ReviewProsCons
 					$body->replaceChild( $element, $node );
 				} catch ( DOMException $e ) {
 					LegalDebug::debug( [
+						'class' => 'ReviewProsCons',
+
+						'function' => 'get_content',
+
 						'element' => substr( $element->textContent, 0, 30 ),
 
 						'node' => substr( $node->textContent, 0, 30 ),
@@ -215,6 +219,10 @@ class ReviewProsCons
 					$body->removeChild( $node );
 				} catch ( DOMException $e ) {
 					LegalDebug::debug( [
+						'class' => 'ReviewProsCons',
+
+						'function' => 'get_content',
+
 						'node' => substr( $node->textContent, 0, 30 ),
 					] );
 				}

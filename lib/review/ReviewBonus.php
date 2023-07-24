@@ -134,6 +134,8 @@ class ReviewBonus
 	public static function get_content( $content )
 	{
 		LegalDebug::debug( [
+			'class' => 'ReviewBonus',
+			
 			'function' => 'get_content',
 
 			'check' => ReviewMain::check() ? 'true' : 'false',
