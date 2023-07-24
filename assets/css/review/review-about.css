@@ -119,7 +119,8 @@
 }
 
 .tcb-post-content .legal-afillate {
-    max-width: 261px;
+    /* max-width: 261px; */
+    width: fit-content;
 }
 
 /* Review About Position */
