@@ -132,7 +132,7 @@ class ReviewProsCons
 
 			'function' => 'get_content',
 			
-			'body' => substr( $body->textContent, 0, 30 )
+			'body' => substr( $body->textContent, 0, 30 ),
 		] );
 
 		$containers = [];
