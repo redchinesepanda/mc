@@ -169,12 +169,6 @@ class ReviewAbout
             {
                 $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
             }
-
-            LegalDebug::debug( [
-                'has_term' => has_term( 'app', 'page_type' ) ? 'true' : 'false',
-
-                'text' => $text,
-            ] );
         }
 
         return $text;
