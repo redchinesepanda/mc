@@ -104,10 +104,15 @@
 
 /* List */
 
+#tinymce .legal-list-2,
 #tinymce .legal-list-3,
 #tinymce .legal-list-4 {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+#tinymce .legal-list-3 li {
+	width: 50%;
 }
 
 #tinymce .legal-list-3 li {
