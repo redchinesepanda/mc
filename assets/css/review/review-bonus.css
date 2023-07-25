@@ -125,6 +125,7 @@
 
 .legal-bonus:not( .no-image ) .bonus-get-link {
 	background-image: url( '../../img/review/review-get.svg' );
+	background-color: rgb(89, 151, 227);
 }
 
 .legal-bonus.no-image .bonus-get-link {
@@ -135,7 +136,6 @@
 	background-position: left 25px center;
 	background-repeat: no-repeat;
 	background-size: auto;
-	background-color: rgb(89, 151, 227);
 	border-radius: 20px;
 }
 
@@ -192,13 +192,28 @@
 	text-align: center;
 }
 
+.legal-bonus:not( .no-image ) .bonus-name {
+	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-bonus.no-image .bonus-name {
+	color: #fff;
+}
+
 .legal-bonus .bonus-name {
 	font-family: "Source Sans Pro";
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 31.5px;
-	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-bonus:not( .no-image ) .bonus-get-link {
+	color: rgb(255, 255, 255);
+}
+
+.legal-bonus.no-image .bonus-get-link {
+	color: #5997e3;
 }
 
 .legal-bonus .bonus-get-link {
@@ -207,19 +222,10 @@
 	font-style: normal;
 	font-weight: 600;
 	line-height: 14.4px;
-	color: rgb(255, 255, 255);
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
 .legal-bonus .bonus-content p {
 	text-align: justify;
-}
-
-.legal-bonus.no-image .bonus-name {
-	color: #fff;
-}
-
-.legal-bonus.no-image .bonus-get-link {
-	color: #5997e3;
 }
