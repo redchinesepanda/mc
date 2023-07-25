@@ -372,7 +372,7 @@ class ReviewBonus
 				$title_text = $group[ 'about-title' ];
 			}
 
-			$details = get_image_size( $image_src );
+			$details = self::get_image_size( $image_src );
 
 			$image_width = $details[ 'width' ];
 
