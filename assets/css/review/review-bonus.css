@@ -10,10 +10,34 @@
 		flex-direction: column;
 	}
 
+	/* Width and Height */
+
+	.legal-bonus.no-image .bonus-get {
+		width: 100%;
+	}
+
 	/* Bonus Position */
 
 	.legal-bonus {
 		padding: 15px 15px;
+	}
+
+	.legal-bonus .bonus-title {
+		padding-bottom: 10px;
+	}
+
+	.legal-bonus.no-image .bonus-name {
+		padding: 0px 10px;
+	}
+
+	/* Background */
+
+	.legal-bonus.no-image .bonus-name {
+		border-radius: 20px 20px 0px 0px;
+	}
+
+	.legal-bonus.no-image .bonus-get {
+		border-radius: 0px 0px 20px 20px;
 	}
 }
 
@@ -48,7 +72,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	row-gap: 10px;
+	/* row-gap: 10px; */
 }
 
 .legal-bonus .bonus-title {
