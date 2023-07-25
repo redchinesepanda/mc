@@ -37,9 +37,9 @@ class ToolLoco
         {
             $custom = new Loco_gettext_String( 'Legal Review BK Footer' );
 
-            // $custom->addExtractedComment( 'This is a foo' );
+            $custom->addExtractedComment( 'This is a footer menu location name' );
 
-            // $custom->addFileReferences( 'custom.yml:1' );
+            $custom->addFileReferences( 'custom.yml:1' );
 
             $extraction->addString( $custom, $domain );
         }
