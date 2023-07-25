@@ -107,6 +107,8 @@ class BilletMega
 
 		$logo = '';
 
+		$background = BilletMain::DEFAULT_COLOR;
+
 		$title_text = '';
 
 		$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
@@ -116,6 +118,8 @@ class BilletMega
             $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
 
             $title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+
+			$background = $group[ BilletMain::ABOUT[ 'background' ] ];
         }
 
 		$args = [
@@ -124,6 +128,8 @@ class BilletMega
 			// 'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
 			
 			'logo' => $logo,
+
+			'background' => $background,
 
 			'title' => [
 				'href' => $url[ 'play' ],
