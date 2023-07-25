@@ -1,7 +1,7 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-title">
 		<style type="text/css">
-			.legal-bonus item-<?php echo $args[ 'index' ]; ?> .bonus-title-image {
+			.legal-bonus.item-<?php echo $args[ 'index' ]; ?> .bonus-title-image {
 				background-image: url( '<?php echo $args[ 'src' ]; ?>' );
 			}
 		</style>
