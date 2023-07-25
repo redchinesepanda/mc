@@ -123,8 +123,15 @@
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 9px 19px -1px;
 }
 
-.legal-bonus .bonus-get-link {
+.legal-bonus:not( .no-image ) .bonus-get-link {
 	background-image: url( '../../img/review/review-get.svg' );
+}
+
+.legal-bonus.no-image .bonus-get-link {
+	background-image: url( '../../img/review/review-get-b.svg' );
+}
+
+.legal-bonus .bonus-get-link {
 	background-position: left 25px center;
 	background-repeat: no-repeat;
 	background-size: auto;
