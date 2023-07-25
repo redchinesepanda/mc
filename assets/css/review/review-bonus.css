@@ -145,7 +145,7 @@
 }
 
 .legal-bonus .bonus-name:not( .legal-override ) {
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 }
 
 /* Bonus Background */
