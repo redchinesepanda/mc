@@ -72,7 +72,7 @@ class BilletMega
 			$body->removeChild( $node );
 		}
 
-		$args[ 'content' ] = $dom->saveHTML();
+		$args[ 'content' ] = ToolEncode::encode( $dom->saveHTML() );
 
 		return $args;
 	}
