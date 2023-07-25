@@ -67,6 +67,8 @@ class ReviewBonus
 		'review' => 'no-review',
 
 		'height' => 'no-height',
+
+		'large' => 'logo-large',
 	];
 
 	public static function get_nodes( $dom )
@@ -191,6 +193,8 @@ class ReviewBonus
 			
 			$no_height = self::check_no_height( $class );
 
+			$logo_large = self::check_logo_large( $class );
+
 			if ( $permission_description ) {
 				$node->removeAttribute( 'class' );
 				
@@ -253,6 +257,8 @@ class ReviewBonus
 
 				$args[ 'no-review' ] = $no_review;
 
+				$args[ 'logo-large' ] = $logo_large;
+
 				$replace = $node;
 			}
 
@@ -301,6 +307,22 @@ class ReviewBonus
 		return ( strpos( $class, self::BONUS_CLASS[ 'height' ] ) !== false ? true : false );
 	}
 
+	public static function check_logo_large( $class )
+	{
+		return ( strpos( $class, self::BONUS_CLASS[ 'large' ] ) !== false ? true : false );
+	}
+
+	public static function get_image_size( $url )
+	{
+		$result = getimagesize( $url );
+
+		return [
+			'width' => $result[ 0 ],
+
+			'height' => $result[ 1 ],
+		];
+	}
+
 	public static function get_bonus( $args )
 	{
 		// LegalDebug::debug( [
@@ -321,33 +343,69 @@ class ReviewBonus
 			$id = $post->ID;
 		}
 
+		$class = 'legal-default';
+
+		$image_src = '';
+
+		$image_width = '';
+
+		$image_height = '';
+
+		$title_text = '';
+
 		$group = get_field( ReviewAbout::FIELD, $id );
 		
-		// if ( $group ) {
-			return [
-				'class' => ( !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default' ),
+		if ( $group )
+		{
+			$class = $group[ 'about-font' ];
 
-				'src' => ( !empty( $group[ 'about-logo-square' ] ) ? $group[ 'about-logo-square' ] : '' ),
+			if ( $args[ 'logo-large' ] )
+			{
+				// $src = $group[ 'about-logo' ];
 
-				'title' => [
-					'href' => self::check_url_review( $id ),
+				$image_src = $group[ 'about-logo' ];
+			}
+			else
+			{
+				$image_src = $group[ 'about-logo-square' ];
 
-					'text' => ( !empty( $group[ 'about-title' ] ) ? $group[ 'about-title' ] : '' ),
+				$title_text = $group[ 'about-title' ];
+			}
 
-					// 'text' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
-				],
+			$details = get_image_size( $image_src );
 
-				'name' => $args[ 'title' ],
+			$image_width = $details[ 'width' ];
 
-				'get' => [
-					'href' => self::check_url_afillate( $id ),
+			$image_height = $details[ 'height' ];
+		}
 
-					'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
-				],
+		return [
+			'class' => $class,
 
-				'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
-			];
-		// }
+			'image' => [
+				'src' => $image_src,
+
+				'width' => $image_width,
+
+				'height' => $image_height,
+			],
+
+			'title' => [
+				'href' => self::check_url_review( $id ),
+
+				'text' => $title_text,
+			],
+
+			'name' => $args[ 'title' ],
+
+			'get' => [
+				'href' => self::check_url_afillate( $id ),
+
+				'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
+			],
+
+			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
+		];
 
 		return [];
 	}
@@ -558,6 +616,14 @@ class ReviewBonus
 						'selector' => 'h3,p',
 
 						'classes' => self::BONUS_CLASS[ 'height' ],
+					],
+
+					[
+						'title' => 'Logo Large',
+						
+						'selector' => 'h3,p',
+
+						'classes' => self::BONUS_CLASS[ 'large' ],
 					],
 				],
 			],

@@ -1,9 +1,9 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-title">
-		<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
-		<a class="bonus-title-link check-oops" href="<?php echo $args['title'][ 'href' ]; ?>">
-			<?php echo $args['title'][ 'text' ]; ?>
-		</a>
+		<img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" />
+		<?php if( !empty( $args['title'][ 'text' ] ) ) : ?>
+			<a class="bonus-title-link check-oops" href="<?php echo $args['title'][ 'href' ]; ?>"><?php echo $args['title'][ 'text' ]; ?></a>
+		<?php endif; ?>
 	</div>
 	<h3 class="bonus-name">
 		<?php echo $args[ 'name' ][ 'text' ]; ?>
