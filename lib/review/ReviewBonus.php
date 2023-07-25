@@ -177,6 +177,8 @@ class ReviewBonus
 		// 	'get_shortcode' => self::get_shortcode( $test_node ),
 		// ] );
 
+		$index = 0;
+
 		foreach ( $nodes as $id => $node )
 		{
 			$class = $node->getAttribute( 'class' );
@@ -237,6 +239,8 @@ class ReviewBonus
 
 				$class_bonus = self::check( $class );
 
+				$class_bonus .= ' item-' . $index;
+
 				if ( $no_height ) {
 					$class_bonus .= ' ' . self::BONUS_CLASS[ 'height' ];
 				}
@@ -259,7 +263,11 @@ class ReviewBonus
 
 				$args[ 'logo-large' ] = $logo_large;
 
+				$args[ 'index' ] = $index;
+
 				$replace = $node;
+				
+				$index++;
 			}
 
 			if ( $permission_title )
@@ -345,11 +353,7 @@ class ReviewBonus
 
 		$class = 'legal-default';
 
-		$image_src = '';
-
-		$image_width = '';
-
-		$image_height = '';
+		$src = '';
 
 		$title_text = '';
 
@@ -361,34 +365,22 @@ class ReviewBonus
 
 			if ( $args[ 'logo-large' ] )
 			{
-				// $src = $group[ 'about-logo' ];
-
-				$image_src = $group[ 'about-logo' ];
+				$src = $group[ 'about-logo' ];
 			}
 			else
 			{
-				$image_src = $group[ 'about-logo-square' ];
+				$src = $group[ 'about-logo-square' ];
 
 				$title_text = $group[ 'about-title' ];
 			}
-
-			$details = self::get_image_size( $image_src );
-
-			$image_width = $details[ 'width' ];
-
-			$image_height = $details[ 'height' ];
 		}
 
 		return [
+			'index' => $args[ 'index' ],
+
 			'class' => $class,
 
-			'image' => [
-				'src' => $image_src,
-
-				'width' => $image_width,
-
-				'height' => $image_height,
-			],
+			'srv' => $image_src,
 
 			'title' => [
 				'href' => self::check_url_review( $id ),
