@@ -380,7 +380,7 @@ class ReviewBonus
 
 			'class' => $class,
 
-			'srv' => $src,
+			'src' => $src,
 
 			'title' => [
 				'href' => self::check_url_review( $id ),
