@@ -64,6 +64,10 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
+        LegalDebug::debug( [
+            'style_item' => $style_item,
+        ] );
+
         $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
 
         return implode( ' ', $style ); 
