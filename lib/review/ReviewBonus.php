@@ -68,6 +68,8 @@ class ReviewBonus
 
 		'height' => 'no-height',
 
+		'image' => 'no-image',
+
 		'large' => 'logo-large',
 	];
 
@@ -195,6 +197,8 @@ class ReviewBonus
 			
 			$no_height = self::check_no_height( $class );
 
+			$no_image = self::check_no_image( $class );
+
 			$logo_large = self::check_logo_large( $class );
 
 			if ( $permission_description ) {
@@ -245,6 +249,10 @@ class ReviewBonus
 					$class_bonus .= ' ' . self::BONUS_CLASS[ 'height' ];
 				}
 
+				if ( $no_image ) {
+					$class_bonus .= ' ' . self::BONUS_CLASS[ 'image' ];
+				}
+
 				$bonus->setAttribute( 'class', $class_bonus );
 
 				// $bonus->setAttribute( 'class', self::check( $class ) );
@@ -260,6 +268,8 @@ class ReviewBonus
 				$args[ 'class' ] = $class;
 
 				$args[ 'no-review' ] = $no_review;
+
+				$args[ 'no-image' ] = $no_image;
 
 				$args[ 'logo-large' ] = $logo_large;
 
@@ -319,6 +329,12 @@ class ReviewBonus
 	{
 		return ( strpos( $class, self::BONUS_CLASS[ 'large' ] ) !== false ? true : false );
 	}
+	}
+
+	public static function check_no_image( $class )
+	{
+		return ( strpos( $class, self::BONUS_CLASS[ 'image' ] ) !== false ? true : false );
+	}
 
 	public static function get_image_size( $url )
 	{
@@ -363,14 +379,20 @@ class ReviewBonus
 		{
 			$class = $group[ 'about-font' ];
 
-			if ( $args[ 'logo-large' ] )
+			if ( !$args[ 'no-image' ] )
 			{
-				$src = $group[ 'about-logo' ];
+				if ( $args[ 'logo-large' ] )
+				{
+					$src = $group[ 'about-logo' ];
+				}
+				else
+				{
+					$src = $group[ 'about-logo-square' ];
+				}
 			}
-			else
-			{
-				$src = $group[ 'about-logo-square' ];
 
+			if ( !$args[ 'logo-large' ] )
+			{
 				$title_text = $group[ 'about-title' ];
 			}
 		}
@@ -608,6 +630,14 @@ class ReviewBonus
 						'selector' => 'h3,p',
 
 						'classes' => self::BONUS_CLASS[ 'height' ],
+					],
+
+					[
+						'title' => 'No Image',
+						
+						'selector' => 'h3,p',
+
+						'classes' => self::BONUS_CLASS[ 'image' ],
 					],
 
 					[
