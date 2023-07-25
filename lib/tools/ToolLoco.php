@@ -9,6 +9,8 @@ class ToolLoco
         $handler = new self();
         
         add_action( 'after_setup_theme', [ $handler, 'loco' ] );
+
+        add_filter( 'loco_extracted_template', [ $handler, 'add_custom_string'] , 10, 2 );
     }
     
     public static function loco() {
@@ -27,7 +29,21 @@ class ToolLoco
         if ( isset( $backup ) ) $l10n[ $textdomain ] = $backup;
 
         return $translation;
-      }
+    }
+
+    public static function add_custom_string( Loco_gettext_Extraction $extraction, $domain )
+    {
+        if ( self::TEXTDOMAIN === $domain )
+        {
+            $custom = new Loco_gettext_String( 'Legal Review BK Footer' );
+
+            // $custom->addExtractedComment( 'This is a foo' );
+
+            // $custom->addFileReferences( 'custom.yml:1' );
+
+            $extraction->addString( $custom, $domain );
+        }
+    }
 }
 
 ?>
