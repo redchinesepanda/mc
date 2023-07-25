@@ -20,7 +20,11 @@ class ReviewAbout
     public static function register_inline_style()
     {
         if ( self::check() ) {
-            ToolEnqueue::register_inline_style( 'review-about', self::inline_style() );
+            ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
+        }
+
+        if ( ReviewMain::check() ) {
+            ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
         }
     }
 
@@ -54,20 +58,24 @@ class ReviewAbout
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
 
-    public static function inline_style() {
+    public static function inline_style_highlight()
+    {
+        $style = [];
+
+		$style_item = self::get( [] );
+
+        $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
+
+        return implode( ' ', $style );
+    }
+
+    public static function inline_style_about()
+    {
 		$style = [];
 
 		$style_item = self::get( [] );
 
-        // LegalDebug::debug( [
-        //     'class' => 'ReviewAbout',
-
-        //     'function' => 'inline_style',
-
-        //     'style_item' => $style_item,
-        // ] );
-
-        $style[] = '.review-about, .legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
+        $style[] = '.review-about { background-color: ' . $style_item[ 'background' ] .'; }';
 
         $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
 
