@@ -42,6 +42,14 @@ class ToolLoco
             $custom->addFileReferences( 'custom.yml:1' );
 
             $extraction->addString( $custom, $domain );
+
+            LegalDebug::debug( [
+                'domain' => $domain,
+
+                'custom' => $custom,
+
+                'extraction' => $extraction,
+            ] );
         }
     }
 }
