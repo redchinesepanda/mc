@@ -329,7 +329,6 @@ class ReviewBonus
 	{
 		return ( strpos( $class, self::BONUS_CLASS[ 'large' ] ) !== false ? true : false );
 	}
-	}
 
 	public static function check_no_image( $class )
 	{
