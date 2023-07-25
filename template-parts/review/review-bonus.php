@@ -5,7 +5,7 @@
 		}
 	</style>
 	<div class="bonus-title">
-		<!--<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />-->
+		<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
 		<div class="bonus-title-image"></div>
 		<?php if( !empty( $args['title'][ 'text' ] ) ) : ?>
 			<a class="bonus-title-link check-oops" href="<?php echo $args['title'][ 'href' ]; ?>"><?php echo $args['title'][ 'text' ]; ?></a>
