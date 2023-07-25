@@ -10,11 +10,15 @@
 	</style>
 	<div class="billet-mega-about">
 		<div class="mega-about-logo"></div>
-		<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
-		<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops" rel="nofollow"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+		<?php if( !$args[ 'no-controls' ] ) : ?>
+			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
+			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops" rel="nofollow"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+		<?php endif; ?>
 	</div>
 	<div class="billet-mega-content">
-		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title"><a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link"><?php echo $args[ 'title' ][ 'text' ] ?></a></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+		<?php if( !$args[ 'no-controls' ] ) : ?>
+			<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title"><a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link"><?php echo $args[ 'title' ][ 'text' ] ?></a></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+		<?php endif; ?>
 		<?php echo $args[ 'content' ] ?>
 	</div>
 	<?php if( !empty( $args[ 'footer' ] ) ) : ?>

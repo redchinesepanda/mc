@@ -19,7 +19,7 @@ class BilletMega
     {
         $handler = new self();
 
-        // [billet-mega id="269185" title-suffix="Greyhound Betting" title-tag="h4" review-label="Bonus" review-url="bonus" button-label="Play now"][/billet-mega]
+        // [billet-mega id="269185" title-suffix="Greyhound Betting" title-tag="h4" review-label="Bonus" review-url="bonus" button-label="Play now" no-controls="1"][/billet-mega]
 
         add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
@@ -88,9 +88,11 @@ class BilletMega
 
 			'button-label' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
 
+			'review-url' => '',
+
 			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
-			'review-url' => '',
+			'no-controls' => false,
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
@@ -156,6 +158,8 @@ class BilletMega
 			'content' => $parts[ 'content' ],
 
 			'footer' => $parts[ 'footer' ],
+
+			'no-controls' => $parts[ 'no-controls' ],
 		];
 
 		return self::render( $args );
