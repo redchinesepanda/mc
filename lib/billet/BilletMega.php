@@ -92,10 +92,12 @@ class BilletMega
 
 			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
-			'no-controls' => false,
+			'mode' => 'default',
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
+
+		$no_controls = $atts[ 'mode' ] == 'no-controls' || $atts[ 'mode' ] == 'image' ? true : false;
 
 		// LegalDebug::debug( [
 		// 	'atts' => $atts,
@@ -155,7 +157,7 @@ class BilletMega
 
 			'footer' => $parts[ 'footer' ],
 
-			'no-controls' => $atts[ 'no-controls' ],
+			'no-controls' => $no_controls,
 		];
 
 		return self::render( $args );
