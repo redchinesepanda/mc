@@ -66,7 +66,7 @@ class ReviewAbout
 
         $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
 
-        return implode( ' ', $style );
+        return implode( ' ', $style ); 
     }
 
     public static function inline_style_about()
