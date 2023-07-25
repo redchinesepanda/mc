@@ -126,8 +126,6 @@ class BilletMega
 
 		$args = [
 			'id' => $atts[ 'id' ],
-
-			// 'logo' => get_field( 'billet-logo-url', $atts[ 'id' ] ),
 			
 			'logo' => $logo,
 
@@ -135,8 +133,6 @@ class BilletMega
 
 			'title' => [
 				'href' => $url[ 'play' ],
-				
-				// 'text' => get_field( 'billet-title-text', $atts[ 'id' ] ),
 				
 				'text' => $title_text,
 
@@ -161,6 +157,10 @@ class BilletMega
 
 			'no-controls' => $parts[ 'no-controls' ],
 		];
+
+		LegalDebug::debug( [
+			'args' => $args,
+		] );
 
 		return self::render( $args );
     }
