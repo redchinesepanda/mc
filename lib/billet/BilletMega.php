@@ -155,12 +155,8 @@ class BilletMega
 
 			'footer' => $parts[ 'footer' ],
 
-			'no-controls' => $parts[ 'no-controls' ],
+			'no-controls' => $atts[ 'no-controls' ],
 		];
-
-		LegalDebug::debug( [
-			'args' => $args,
-		] );
 
 		return self::render( $args );
     }
