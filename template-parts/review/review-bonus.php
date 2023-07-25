@@ -1,10 +1,10 @@
 <?php if( !empty( $args ) ) : ?>
-	<div class="bonus-title">
 		<style type="text/css">
 			.legal-bonus.item-<?php echo $args[ 'index' ]; ?> .bonus-title-image {
 				background-image: url( '<?php echo $args[ 'src' ]; ?>' );
 			}
 		</style>
+	<div class="bonus-title">
 		<img src="<?php echo $args[ 'src' ]; ?>" width="53" height="53" />
 		<div class="bonus-title-image"></div>
 		<?php if( !empty( $args['title'][ 'text' ] ) ) : ?>
