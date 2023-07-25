@@ -64,9 +64,9 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        LegalDebug::debug( [
-            'style_item' => $style_item,
-        ] );
+        // LegalDebug::debug( [
+        //     'style_item' => $style_item,
+        // ] );
 
         $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
 
@@ -127,9 +127,9 @@ class ReviewAbout
 
         $group = get_field( self::FIELD );
 
-        LegalDebug::debug( [
-            'group' => $group,
-        ] );
+        // LegalDebug::debug( [
+        //     'group' => $group,
+        // ] );
         
         if( $group ) {
             $title = $group[ 'about-title' ];
