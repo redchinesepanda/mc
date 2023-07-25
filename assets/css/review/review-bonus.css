@@ -63,6 +63,16 @@
 	.legal-bonus .bonus-get {
 		width: 30%;
 	}
+
+	/* Background */
+	
+	.legal-bonus.no-image .bonus-name {
+		border-radius: 20px 0px 0px 20px;
+	}
+
+	.legal-bonus.no-image .bonus-get {
+		border-radius: 0px 20px 20px 0px;
+	}
 }
 
 /* Bonus Display */
@@ -172,14 +182,6 @@
 .legal-bonus.no-image .bonus-name,
 .legal-bonus.no-image .bonus-get {
 	background-color: #5997e3;
-}
-
-.legal-bonus.no-image .bonus-name {
-	border-radius: 20px 0px 0px 20px;
-}
-
-.legal-bonus.no-image .bonus-get {
-	border-radius: 0px 20px 20px 0px;
 }
 
 .legal-bonus.no-image .bonus-get-link {
