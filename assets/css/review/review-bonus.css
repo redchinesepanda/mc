@@ -29,6 +29,10 @@
 	.legal-bonus.no-image .bonus-name {
 		padding: 0px 10px;
 	}
+	
+	.legal-bonus .bonus-name:not( .legal-override ) {
+		padding-bottom: 10px;
+	}
 
 	/* Background */
 
@@ -48,6 +52,10 @@
 	.tcb-post-content > .legal-bonus,
 	.legal-billet-mega .billet-mega-content > .legal-bonus {
 		padding: 15px 30px;
+	}
+
+	.legal-bonus .bonus-name:not( .legal-override ) {
+		padding-bottom: 0px;
 	}
 
 	/* Bonus Width and Height */
@@ -142,10 +150,6 @@
 
 .legal-bonus .bonus-content {
 	padding-top: 30px;
-}
-
-.legal-bonus .bonus-name:not( .legal-override ) {
-	padding-bottom: 10px;
 }
 
 /* Bonus Background */
