@@ -31,6 +31,8 @@ class ReviewAuthor
     public static function get()
     {
         $url = LegalMain::LEGAL_ROOT . '/about-us/';
+
+        $page = get_page_by_path( '/about-us/' );
         
         $locale = WPMLMain::current_language();
 
@@ -38,6 +40,8 @@ class ReviewAuthor
 
         LegalDebug::debug( [
             'url' => $url,
+
+            'page' => $page,
 
             'locale' => $locale,
 
