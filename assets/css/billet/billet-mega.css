@@ -239,3 +239,13 @@
 	color: rgb(106, 107, 108);
 	text-transform: uppercase;
 }
+
+.legal-billet-mega .mega-about-prefix {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: normal;
+	line-height: 28px;
+	color: rgba(10, 10, 10, 0.85);
+}
