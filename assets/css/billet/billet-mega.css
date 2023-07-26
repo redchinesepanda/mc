@@ -139,7 +139,7 @@
 }
 
 .legal-billet-mega .billet-mega-content p a:hover:not( .legal-override ) {
-	background-image: unset;
+	background: unset;
 }
 
 .legal-billet-mega .billet-mega-content p a {
