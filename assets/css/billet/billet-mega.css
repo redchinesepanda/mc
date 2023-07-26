@@ -125,6 +125,10 @@
 	border-radius: 20px;
 }
 
+.legal-billet-mega.legal-image {
+	background-image: linear-gradient(to left, #eff5fb, #fdfdfd);
+}
+
 /* Typography */
 
 .legal-billet-mega .mega-about-afillate {
