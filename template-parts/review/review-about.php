@@ -19,6 +19,9 @@
         </div>
         <div class="about-right">
             <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
+            <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
+                <div class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></div>
+            <?php endif; ?>
         </div>
     </div>
 <?php endif; ?>

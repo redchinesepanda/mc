@@ -143,6 +143,13 @@ class ReviewAbout
                 $bonus = $group[ 'about-title' ];
             }
 
+            $afillate_description = '';
+
+            if ( in_array( $locale, self::BONUS_EXCEPTION ) )
+            {
+                $afillate_description = 'Publicidad | Juego Responsable | +18';
+            }
+
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
@@ -166,6 +173,8 @@ class ReviewAbout
                     'href' => self::check_href_afillate(),
 
                     'text' => self::get_text(),
+
+                    'description' => $afillate_description,
                 ],
 
                 'mode' => $mode,
