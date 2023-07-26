@@ -34,6 +34,8 @@ class ReviewAuthor
 
         $page = get_page_by_path( '/about-us/' );
         
+        $page_link = WPMLMain::locale_permalink( $page->ID );
+        
         $locale = WPMLMain::current_language();
 
 		$href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
@@ -41,7 +43,9 @@ class ReviewAuthor
         LegalDebug::debug( [
             'url' => $url,
 
-            'page' => $page,
+            'page' => $page->ID,
+
+            'page_link' => $page_link,
 
             'locale' => $locale,
 
