@@ -31,34 +31,10 @@ class ReviewAuthor
     public static function get()
     {
         $page = get_page_by_path( '/about-us/' );
-        
-        // $page_link = WPMLMain::element_link( $page->ID );
 
         $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
 
         $href = get_page_link( $translated_id ) . '#our-team';
-
-        // $url = LegalMain::LEGAL_ROOT . '/about-us/';
-        
-        $locale = WPMLMain::current_language();
-
-		// $href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
-
-        LegalDebug::debug( [
-            'page' => $page->ID,
-
-            // 'page_link' => $page_link,
-
-            'translated_id' => $translated_id,
-
-            // 'translated_link' => $translated_link,
-
-            // 'url' => $url,
-
-            'locale' => $locale,
-
-            'href' => $href,
-        ] );
 
         return [
 			'name' => __( 'Valentin Axani', ToolLoco::TEXTDOMAIN ),
