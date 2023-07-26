@@ -136,8 +136,6 @@ class ReviewAbout
 
             $bonus = $group[ 'about-bonus' ];
 
-            // $locale = WPMLMain::get_locale();
-
             $locale = WPMLMain::current_language();
 
             if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
@@ -151,14 +149,6 @@ class ReviewAbout
             {
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
-
-            LegalDebug::debug( [
-                'locale' => $locale,
-
-                'BONUS_EXCEPTION' => self::BONUS_EXCEPTION,
-
-                'afillate_description' => $afillate_description,
-            ] );
 
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
