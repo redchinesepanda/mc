@@ -99,7 +99,8 @@
 /* Review Position */
 
 .tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
-.tcb-post-content > ol:not( .legal-override ) {
+.tcb-post-content > ol:not( .legal-override ),
+.billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ), {
     padding-top: 0px;
     padding-bottom: 30px;
 }
