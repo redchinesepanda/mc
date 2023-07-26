@@ -83,6 +83,8 @@ class BilletMega
 		'image' => 'image',
 
 		'no-controls' => 'no-controls',
+
+		'author' => 'author',
 	];
 	
 	public static function get_iamge( $id )
@@ -157,7 +159,7 @@ class BilletMega
 			}
 		}
 
-		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] ) )
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ], self::MODE[ 'author' ] ] ) )
 		{
 			if ( !empty( $image = self::get_iamge( $atts[ 'id' ] ) ) )
 			{
