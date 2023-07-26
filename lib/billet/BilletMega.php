@@ -167,6 +167,20 @@ class BilletMega
 			}
 		}
 
+		if ( in_array( $atts[ 'mode' ], self::MODE[ 'author' ] ] ) )
+		{
+			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
+	
+			if ( $group )
+			{
+				$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+	
+				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+	
+				$background = $group[ BilletMain::ABOUT[ 'background' ] ];
+			}
+		}
+
 		$args = [
 			'id' => $atts[ 'id' ],
 			

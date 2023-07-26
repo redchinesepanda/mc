@@ -16,7 +16,7 @@ class ACFReview
 
         add_filter( 'acf/load_field/name=' . ReviewAnchors::FIELD[ 'anchors' ], [ $handler, 'supply_field' ] );
 
-		add_filter( 'acf/load_field/name=' . self::LINK[ 'image' ], [ $handler, 'choices_image' ] );
+		add_filter( 'acf/load_field/name=' . ReviewAuthor::LINK_ITEM[ 'image' ], [ $handler, 'choices_image' ] );
     }
 
 	function choices_image( $field )

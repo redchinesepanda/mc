@@ -10,6 +10,24 @@ class ReviewAuthor
         ],
     ];
 
+    const FIELD = [
+        'author' => 'media-author',
+    ];
+
+    const AUTHOR = [
+        'name' => 'author-name',
+
+        'post' => 'author-post',
+
+        'items' => 'author-link-items',
+    ];
+
+    const LINK_ITEM = [
+        'url' => 'link-item-url',
+
+        'image' => 'link-item-image',
+    ];
+
     public static function register_style()
     {
         // ReviewMain::register_style( self::CSS );
