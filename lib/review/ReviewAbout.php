@@ -150,6 +150,14 @@ class ReviewAbout
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
 
+            LegalDebug::debug( [
+                'locale' => $locale,
+
+                'BONUS_EXCEPTION' => self::BONUS_EXCEPTION,
+
+                'afillate_description' => $afillate_description,
+            ] );
+
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
