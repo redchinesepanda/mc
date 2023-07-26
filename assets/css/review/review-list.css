@@ -164,7 +164,8 @@
 
 .tcb-post-content > ul:not( .legal-list-image ) li:before,
 .legal-billet ul:not( .legal-list-image ) li:before,
-.legal-bonus ul:not( .legal-list-image ) li:before {
+.legal-bonus ul:not( .legal-list-image ) li:before,
+.billet-mega-content > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
 }
 
