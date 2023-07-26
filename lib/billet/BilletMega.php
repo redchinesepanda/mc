@@ -143,7 +143,7 @@ class BilletMega
 
 		$title_text = '';
 
-		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ] ] )
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ] ] ) )
 		{
 			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
 	
