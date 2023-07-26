@@ -30,22 +30,22 @@ class ReviewAuthor
 
     public static function get()
     {
-        $url = LegalMain::LEGAL_ROOT . '/about-us/';
-
         $page = get_page_by_path( '/about-us/' );
         
         $page_link = WPMLMain::element_link( $page->ID );
+
+        $url = LegalMain::LEGAL_ROOT . '/about-us/';
         
         $locale = WPMLMain::current_language();
 
 		$href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
 
         LegalDebug::debug( [
-            'url' => $url,
-
             'page' => $page->ID,
 
             'page_link' => $page_link,
+
+            'url' => $url,
 
             'locale' => $locale,
 
