@@ -167,7 +167,7 @@ class BilletMega
 			}
 		}
 
-		if ( in_array( $atts[ 'mode' ], self::MODE[ 'author' ] ] ) )
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'author' ] ] ) )
 		{
 			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
 	
