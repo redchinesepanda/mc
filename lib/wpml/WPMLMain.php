@@ -115,7 +115,7 @@ class WPMLMain
         return apply_filters( 'wpml_permalink', $url, $locale );
     }
 
-    public static function locale_permalink( $id )
+    public static function element_link( $id )
     {
         return apply_filters( 'wpml_element_link', $id );
     }

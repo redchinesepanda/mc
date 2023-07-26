@@ -34,7 +34,7 @@ class ReviewAuthor
 
         $page = get_page_by_path( '/about-us/' );
         
-        $page_link = WPMLMain::locale_permalink( $page->ID );
+        $page_link = WPMLMain::element_link( $page->ID );
         
         $locale = WPMLMain::current_language();
 
