@@ -208,3 +208,14 @@
 	text-align: center;
 	color: #646363;
 }
+
+.legal-billet-mega .mega-about-name {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 19.2px;
+	color: rgb(12, 17, 21);
+	text-transform: uppercase;
+}

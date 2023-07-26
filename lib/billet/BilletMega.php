@@ -6,7 +6,7 @@ class BilletMega
         'billet-mega' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-mega.css',
 
-            'ver'=> '1.0.7',
+            'ver'=> '1.0.8',
         ],
     ];
 
@@ -203,10 +203,6 @@ class BilletMega
 
 					'items' => self::prepare_links( $group[ ReviewAuthor::AUTHOR[ 'items' ] ] ),
 				];
-
-				LegalDebug::debug( [
-					'author' => $author,
-				] );
 			}
 		}
 
