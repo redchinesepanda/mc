@@ -30,7 +30,19 @@ class ReviewAuthor
 
     public static function get()
     {
-		$href = WPMLMain::locale_permalink( LegalMain::LEGAL_ROOT . '/about-us/', WPMLMain::current_language() ) . '#our-team';
+        $url = LegalMain::LEGAL_ROOT . '/about-us/';
+        
+        $locale = WPMLMain::current_language();
+
+		$href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
+
+        LegalDebug::debug( [
+            'url' => $url,
+
+            'locale' => $locale,
+
+            'href' => $href,
+        ] );
 
         return [
 			'name' => __( 'Valentin Axani', ToolLoco::TEXTDOMAIN ),
