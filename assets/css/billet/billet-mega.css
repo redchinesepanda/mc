@@ -81,6 +81,16 @@
 	display: inline-block;
 }
 
+.legal-billet-mega .mega-about-links {
+	display: flex;
+	column-gap: 10px;
+}
+
+.legal-billet-mega .link-item {
+	display: flex;
+	align-items: center;
+}
+
 /* Position */
 
 .legal-billet-mega {
