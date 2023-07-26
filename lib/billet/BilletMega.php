@@ -107,6 +107,25 @@ class BilletMega
 		];
 	}
 
+	public static function prepare_links( $links )
+	{
+		$items = [];
+
+		if ( !empty( $links ) )
+		{
+			foreach ( $links as $link )
+			{
+				$items[] = [
+					'url' => $link[ ReviewAuthor::LINK_ITEM[ 'url' ] ],
+	
+					'image' => $link[ ReviewAuthor::LINK_ITEM[ 'image' ] ],
+				];
+			}
+		}
+
+		return $items;
+	}
+
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
@@ -180,7 +199,7 @@ class BilletMega
 
 					'post' => $group[ ReviewAuthor::AUTHOR[ 'post' ] ],
 
-					'items' => $group[ ReviewAuthor::AUTHOR[ 'items' ] ],
+					'items' => self::prepare_links( $group[ ReviewAuthor::AUTHOR[ 'items' ] ] ),
 				];
 
 				LegalDebug::debug( [
