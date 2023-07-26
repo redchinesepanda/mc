@@ -169,15 +169,23 @@ class BilletMega
 
 		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'author' ] ] ) )
 		{
-			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
+			$group = get_field( ReviewAuthor::FIELD[ 'author' ], $atts[ 'id' ] );
 	
 			if ( $group )
 			{
-				$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+				$name = $group[ ReviewAuthor::AUTHOR[ 'name' ] ];
 	
-				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+				$post = $group[ ReviewAuthor::AUTHOR[ 'post' ] ];
 	
-				$background = $group[ BilletMain::ABOUT[ 'background' ] ];
+				$items = $group[ ReviewAuthor::AUTHOR[ 'items' ] ];
+
+				LegalDebug::debug( [
+					'name' => $name,
+
+					'post' => $post,
+
+					'items' => $items,
+				] );
 			}
 		}
 
