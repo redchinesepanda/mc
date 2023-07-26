@@ -6,6 +6,12 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+
+    /* Width and Height */
+
+    .tcb-post-content iframe {
+        width: 100%;
+    }
 }
 
 /* Review Display */
@@ -16,6 +22,10 @@
 
 .tcb-post-content hr {
     clear: both;
+}
+
+.tcb-post-content iframe {
+    display: block;
 }
 
 /* Review Position */
@@ -58,6 +68,10 @@
 .tcb-post-content .legal-highlight:not( .legal-override ) {
     padding: 10px 20px;
     margin-bottom: 20px;
+}
+
+.tcb-post-content iframe {
+    margin: 0px auto;
 }
 
 /* Review Background */
