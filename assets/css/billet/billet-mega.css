@@ -17,7 +17,8 @@
 	/* Width and Height */
 
 	.legal-billet-mega.legal-default .billet-mega-about,
-	.legal-billet-mega.legal-no-image .billet-mega-about {
+	.legal-billet-mega.legal-image .billet-mega-about,
+	.legal-billet-mega.legal-no-controls .billet-mega-about {
 		width: calc( 20% - 36px );
 	}
 
@@ -26,7 +27,8 @@
 	}
 
 	.legal-billet-mega.legal-default .billet-mega-content,
-	.legal-billet-mega.legal-no-image .billet-mega-content {
+	.legal-billet-mega.legal-image .billet-mega-content,
+	.legal-billet-mega.legal-no-controls .billet-mega-content {
 		width: calc( 80% - 15px );
 	}
 
