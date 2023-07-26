@@ -32,32 +32,32 @@ class ReviewAuthor
     {
         $page = get_page_by_path( '/about-us/' );
         
-        $page_link = WPMLMain::element_link( $page->ID );
+        // $page_link = WPMLMain::element_link( $page->ID );
 
         $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
 
-        $translated_link = get_page_link( $translated_id );
+        $translated_link = get_page_link( $translated_id ) . '#our-team';
 
-        $url = LegalMain::LEGAL_ROOT . '/about-us/';
+        // $url = LegalMain::LEGAL_ROOT . '/about-us/';
         
         $locale = WPMLMain::current_language();
 
-		$href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
+		// $href = WPMLMain::locale_permalink( $url, $locale ) . '#our-team';
 
         LegalDebug::debug( [
             'page' => $page->ID,
 
-            'page_link' => $page_link,
+            // 'page_link' => $page_link,
 
             'translated_id' => $translated_id,
 
             'translated_link' => $translated_link,
 
-            'url' => $url,
+            // 'url' => $url,
 
             'locale' => $locale,
 
-            'href' => $href,
+            // 'href' => $href,
         ] );
 
         return [
