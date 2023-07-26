@@ -100,9 +100,9 @@ class WPMLMain
         return get_locale();
 	}
 
-    public static function translated_menu_id( $menu_id )
+    public static function translated_menu_id( $id, $type = 'nav_menu' )
 	{
-		return apply_filters( 'wpml_object_id', $menu_id, 'nav_menu' );
+		return apply_filters( 'wpml_object_id', $id, $type );
 	}
 
     public static function current_language()

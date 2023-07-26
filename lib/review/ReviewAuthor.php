@@ -34,6 +34,10 @@ class ReviewAuthor
         
         $page_link = WPMLMain::element_link( $page->ID );
 
+        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        $translated_link = get_page_link( $translated_id );
+
         $url = LegalMain::LEGAL_ROOT . '/about-us/';
         
         $locale = WPMLMain::current_language();
@@ -44,6 +48,10 @@ class ReviewAuthor
             'page' => $page->ID,
 
             'page_link' => $page_link,
+
+            'translated_id' => $translated_id,
+
+            'translated_link' => $translated_link,
 
             'url' => $url,
 
