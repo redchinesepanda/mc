@@ -76,7 +76,35 @@ class BilletMega
 
 		return $args;
 	}
+
+	const MODE = [
+		'default' => 'default',
+
+		'image' => 'image',
+
+		'no-controls' => 'no-controls',
+	];
 	
+	public static function get_iamge( $id )
+	{
+		$image = wp_get_attachment_image_src( $id, 'full' );
+
+		if ( !$image )
+		{
+			return [];
+		}
+		
+		return [
+			'src' => $image[ 0 ],
+
+			'width' => $image[ 1 ],
+			
+			'height' => $image[ 2 ],
+
+			'class' => 'legal-image-' . $post->ID,
+		];
+	}
+
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
@@ -92,12 +120,12 @@ class BilletMega
 
 			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
 
-			'mode' => 'default',
+			'mode' => self::MODE[ 'default' ],
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
 
-		$no_controls = $atts[ 'mode' ] == 'no-controls' || $atts[ 'mode' ] == 'image' ? true : false;
+		$no_controls = $atts[ 'mode' ] == self::MODE[ 'no-controls' ] || $atts[ 'mode' ] == self::MODE[ 'image' ] ? true : false;
 
 		// LegalDebug::debug( [
 		// 	'atts' => $atts,
@@ -115,16 +143,27 @@ class BilletMega
 
 		$title_text = '';
 
-		$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ] ] )
+		{
+			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
+	
+			if ( $group )
+			{
+				$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+	
+				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
+	
+				$background = $group[ BilletMain::ABOUT[ 'background' ] ];
+			}
+		}
 
-        if ( $group )
-        {
-            $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
-
-            $title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
-
-			$background = $group[ BilletMain::ABOUT[ 'background' ] ];
-        }
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] )
+		{
+			if ( !empty( $image = self::get_iamge( $atts[ 'id' ] ) )
+			{
+				$logo = $image[ 'src' ];
+			}
+		}
 
 		$args = [
 			'id' => $atts[ 'id' ],
@@ -158,6 +197,8 @@ class BilletMega
 			'footer' => $parts[ 'footer' ],
 
 			'no-controls' => $no_controls,
+
+			'mode' =>  $atts[ 'mode' ],
 		];
 
 		return self::render( $args );
