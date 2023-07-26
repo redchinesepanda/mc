@@ -157,9 +157,9 @@ class BilletMega
 			}
 		}
 
-		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] )
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] ) )
 		{
-			if ( !empty( $image = self::get_iamge( $atts[ 'id' ] ) )
+			if ( !empty( $image = self::get_iamge( $atts[ 'id' ] ) ) )
 			{
 				$logo = $image[ 'src' ];
 			}
