@@ -145,6 +145,8 @@ class BilletMega
 
 		$title_text = '';
 
+		$author = [];
+
 		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ] ] ) )
 		{
 			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
@@ -173,18 +175,16 @@ class BilletMega
 	
 			if ( $group )
 			{
-				$name = $group[ ReviewAuthor::AUTHOR[ 'name' ] ];
-	
-				$post = $group[ ReviewAuthor::AUTHOR[ 'post' ] ];
-	
-				$items = $group[ ReviewAuthor::AUTHOR[ 'items' ] ];
+				$author = [
+					'name' => $group[ ReviewAuthor::AUTHOR[ 'name' ] ],
+
+					'post' => $group[ ReviewAuthor::AUTHOR[ 'post' ] ],
+
+					'items' => $group[ ReviewAuthor::AUTHOR[ 'items' ] ],
+				];
 
 				LegalDebug::debug( [
-					'name' => $name,
-
-					'post' => $post,
-
-					'items' => $items,
+					'author' => $author,
 				] );
 			}
 		}
@@ -223,6 +223,8 @@ class BilletMega
 			'no-controls' => $no_controls,
 
 			'mode' =>  $atts[ 'mode' ],
+
+			'author' => $author,
 		];
 
 		return self::render( $args );
