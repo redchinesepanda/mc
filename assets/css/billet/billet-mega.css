@@ -228,3 +228,14 @@
 	color: rgb(12, 17, 21);
 	text-transform: uppercase;
 }
+
+.legal-billet-mega .mega-about-post {
+	font-family: "Source Sans Pro";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 2px;
+	line-height: 19.2px;
+	color: rgb(106, 107, 108);
+	text-transform: uppercase;
+}
