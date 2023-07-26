@@ -101,7 +101,7 @@ class BilletMega
 			
 			'height' => $image[ 2 ],
 
-			'class' => 'legal-image-' . $post->ID,
+			'class' => 'legal-image-' . $id,
 		];
 	}
 
