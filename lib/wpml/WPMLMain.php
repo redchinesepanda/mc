@@ -117,7 +117,7 @@ class WPMLMain
 
     public static function element_link( $id )
     {
-        return apply_filters( 'wpml_element_link', $id );
+        return apply_filters( 'wpml_element_link', $id, 'page', '', [], '', false );
     }
 
     public static function register()
