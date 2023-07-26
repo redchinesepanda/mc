@@ -1,11 +1,11 @@
 /* Display */
 
-.legal-author {
+#theme-bottom-section .legal-author {
 	display: flex;
 	column-gap: 20px;
 }
 
-.legal-author .author-data {
+#theme-bottom-section .legal-author .author-data {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -13,25 +13,25 @@
 
 /* Position */
 
-.legal-author {
+#theme-bottom-section .legal-author {
 	padding: 20px 70px;
 	margin: 0px auto;
 }
 
 /* Width and Height */
 
-.legal-author {
+#theme-bottom-section .legal-author {
 	max-width: 1080px;
 }
 
-.legal-author .author-photo {
+#theme-bottom-section .legal-author .author-photo {
 	width: 100px;
 	height: 100px;
 }
 
 /* Background */
 
-.legal-author .author-photo {
+#theme-bottom-section .legal-author .author-photo {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
@@ -42,7 +42,7 @@
 
 /* Typography */
 
-.legal-author .author-name {
+#theme-bottom-section .legal-author .author-name {
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	font-style: normal;
@@ -53,7 +53,7 @@
 	text-transform: uppercase;
 }
 
-.legal-author .author-duty {
+#theme-bottom-section .legal-author .author-duty {
 	font-family: "Source Sans Pro";
 	font-size: 12px;
 	font-style: normal;
