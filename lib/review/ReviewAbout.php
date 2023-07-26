@@ -136,7 +136,9 @@ class ReviewAbout
 
             $bonus = $group[ 'about-bonus' ];
 
-            $locale = WPMLMain::get_locale();
+            // $locale = WPMLMain::get_locale();
+
+            $locale = WPMLMain::current_language();
 
             if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
             {
