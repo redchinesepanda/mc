@@ -91,17 +91,20 @@
 
 /* Width and Height */
 
-.legal-billet-mega .mega-about-logo {
-	width: 100%;
-}
-
 .legal-billet-mega.legal-default .mega-about-logo,
-.legal-billet-mega.legal-no-controls .billet-mega-about {
+.legal-billet-mega.legal-no-controls .mega-about-logo {
+	width: 100%;
 	height: 45px;
 }
 
 .legal-billet-mega.legal-image .mega-about-logo {
+	width: 100%;
 	height: 80px;
+}
+
+.legal-billet-mega.legal-author .mega-about-logo {
+	width: 200px;
+	height: 200px;
 }
 
 .legal-billet-mega .mega-about-afillate {
