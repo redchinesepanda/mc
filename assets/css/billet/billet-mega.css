@@ -56,7 +56,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.legal-billet-mega.legal-default .billet-mega-about,
+.legal-billet-mega.legal-image .billet-mega-about,
+.legal-billet-mega.legal-no-controls .billet-mega-about {
 	row-gap: 20px;
+}
+
+.legal-billet-mega.legal-authir .billet-mega-about {
+	row-gap: 10px;
 }
 
 .legal-billet-mega .mega-about-afillate[href=""] {
