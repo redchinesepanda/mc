@@ -83,7 +83,14 @@
 
 .legal-billet-mega .mega-about-logo {
 	width: 100%;
+}
+
+.legal-billet-mega.legal-default .mega-about-logo {
 	height: 45px;
+}
+
+.legal-billet-mega.legal-image .mega-about-logo {
+	height: 80px;
 }
 
 .legal-billet-mega .mega-about-afillate {
