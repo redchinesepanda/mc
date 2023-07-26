@@ -118,7 +118,7 @@ class BilletMega
 				$items[] = [
 					'url' => $link[ ReviewAuthor::LINK_ITEM[ 'url' ] ],
 	
-					'image' => $link[ ReviewAuthor::LINK_ITEM[ 'image' ] ],
+					'image' => LegalMain::LEGAL_URL . '/assets/img/review/author/' . $link[ ReviewAuthor::LINK_ITEM[ 'image' ] ] . '.svg',
 				];
 			}
 		}
@@ -198,6 +198,8 @@ class BilletMega
 					'name' => $group[ ReviewAuthor::AUTHOR[ 'name' ] ],
 
 					'post' => $group[ ReviewAuthor::AUTHOR[ 'post' ] ],
+
+					'prefix' => __( 'Get in touch', 'thrive-theme-child' ),
 
 					'items' => self::prepare_links( $group[ ReviewAuthor::AUTHOR[ 'items' ] ] ),
 				];
