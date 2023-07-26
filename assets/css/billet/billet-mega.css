@@ -26,7 +26,8 @@
 
 	/* Background */
 
-	.legal-billet-mega .billet-mega-about {
+	.legal-billet-mega.legal-default .billet-mega-about,
+	.legal-billet-mega.legal-no-controls .billet-mega-about {
 		border-right: 1px solid rgb(237, 237, 237);
 	}
 }
@@ -85,7 +86,8 @@
 	width: 100%;
 }
 
-.legal-billet-mega.legal-default .mega-about-logo {
+.legal-billet-mega.legal-default .mega-about-logo,
+.legal-billet-mega.legal-no-controls .billet-mega-about {
 	height: 45px;
 }
 
