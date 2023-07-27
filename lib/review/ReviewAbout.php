@@ -95,7 +95,9 @@ class ReviewAbout
             {
                 $lang = WPMLMain::current_language();
 
-				return str_replace( $lang . '/', '', $group[ 'about-afillate' ] );
+				// return str_replace( $lang . '/', '', $group[ 'about-afillate' ] );
+				
+                return $group[ 'about-afillate' ];
 			}
 		}
 
