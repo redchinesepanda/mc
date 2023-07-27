@@ -92,7 +92,7 @@ class ReviewAbout
         
         if( $group ) {
 			if ( !empty( $group[ 'about-afillate' ] ) ) {
-                $meta = get_post_meta( $group[ 'about-afillate' ] );
+                // $meta = get_post_meta( $group[ 'about-afillate' ] );
 
                 // $post = get_post( $group[ 'about-afillate' ] );
 
@@ -101,19 +101,19 @@ class ReviewAbout
                 LegalDebug::debug( [
                     // 'post' => $post,
 
-                    'the_permalink' => the_permalink( $group[ 'about-afillate' ] ),
+                    // 'the_permalink' => the_permalink( $group[ 'about-afillate' ] ),
 
-                    'get_permalink' => get_permalink( $group[ 'about-afillate' ] ),
+                    // 'get_permalink' => get_permalink( $group[ 'about-afillate' ] ),
 
-                    'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
+                    // 'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
 
                     // 'get_sample_permalink' => get_sample_permalink( $group[ 'about-afillate' ] ),
 
-                    'do_shortcode' => do_shortcode( '[af_link id="21387"]Click here![/af_link]' ),
+                    // 'do_shortcode' => do_shortcode( '[af_link id="21387"]Click here![/af_link]' ),
 
                     'about-afillate' => $group[ 'about-afillate' ],
 
-                    'meta' => $meta,
+                    // 'meta' => $meta,
                 ] );
 
 				return $group[ 'about-afillate' ];
