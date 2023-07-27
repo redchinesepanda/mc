@@ -99,6 +99,8 @@ class ReviewAbout
                 LegalDebug::debug( [
                     'post' => $post,
 
+                    'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
+
                     'about-afillate' => $group[ 'about-afillate' ],
 
                     'meta' => $meta,
