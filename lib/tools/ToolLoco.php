@@ -33,29 +33,22 @@ class ToolLoco
 
     public static function add_custom_string( Loco_gettext_Extraction $extraction, $domain )
     {
-        LegalDebug::debug( [
-            'domain' => $domain,
-
-            'extraction' => $extraction,
-        ] );
-
         if ( self::TEXTDOMAIN === $domain )
         {
-            $custom = new Loco_gettext_String( 'Legal Review BK Footer' );
+            $lines = array_merge(
+                BilletMega::TEXT,
+            );
 
-            // $custom->addExtractedComment( 'This is a footer menu location name' );
-
-            // $custom->addFileReferences( 'custom.yml:1' );
-
-            $extraction->addString( $custom, $domain );
-
-            // LegalDebug::debug( [
-            //     'domain' => $domain,
-
-            //     'custom' => $custom,
-
-            //     'extraction' => $extraction,
-            // ] );
+            foreach ( $lines as $line )
+            {
+                $custom = new Loco_gettext_String( $line );
+    
+                // $custom->addExtractedComment( 'This is a footer menu location name' );
+    
+                // $custom->addFileReferences( 'custom.yml:1' );
+    
+                $extraction->addString( $custom, $domain );
+            }
         }
     }
 }

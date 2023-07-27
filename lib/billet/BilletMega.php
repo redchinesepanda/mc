@@ -126,6 +126,14 @@ class BilletMega
 		return $items;
 	}
 
+	const TEXT = [
+		'bet-here' => 'Bet here',
+
+		'review' 'Review',
+
+		'get-in-touch' => 'Get in touch',
+	];
+
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
@@ -135,11 +143,11 @@ class BilletMega
 
 			'title-tag' => 'h3',
 
-			'button-label' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+			'button-label' => __( self::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
 
 			'review-url' => '',
 
-			'review-label' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+			'review-label' => __( self::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
 
 			'mode' => self::MODE[ 'default' ],
 		];
@@ -204,7 +212,7 @@ class BilletMega
 
 					'post' => $group[ ReviewAuthor::AUTHOR[ 'post' ] ],
 
-					'prefix' => __( 'Get in touch', 'thrive-theme-child' ),
+					'prefix' => __( self::TEXT[ 'get-in-touch' ], ToolLoco::TEXTDOMAIN ),
 
 					'items' => self::prepare_links( $group[ ReviewAuthor::AUTHOR[ 'items' ] ] ),
 				];
