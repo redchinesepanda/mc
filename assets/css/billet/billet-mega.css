@@ -98,7 +98,7 @@
 	padding: 5px 40px 5px 20px;
 }
 
-.legal-billet-mega .billet-mega-content {
+.legal-billet-mega:not( .legal-image ) .billet-mega-content {
 	padding-top: 10px;
 }
 
