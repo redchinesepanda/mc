@@ -42,9 +42,9 @@ class ToolLoco
 
                 ReviewMain::TEXT,
 
-                array_keys( ReviewAnchors::TEXT ),
+                array_keys( ReviewAnchors::TEXT_ANCHORS ),
                 
-                ReviewAnchors::TEXT
+                ReviewAnchors::TEXT_ANCHORS
             );
 
             foreach ( $lines as $line )

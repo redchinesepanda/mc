@@ -74,7 +74,7 @@ class ReviewAnchors
 		return $nodes;
 	}
 
-    const ANCHORS = [
+    const TEXT_ANCHORS = [
         'app' => 'App',
 
         'basic-information' => 'Basic facts',
@@ -138,7 +138,7 @@ class ReviewAnchors
 
         $anchors = [];
 
-        foreach ( self::ANCHORS as $id => $label )
+        foreach ( self::TEXT_ANCHORS as $id => $label )
         {
             $anchors[ ToolTransiterate::replace(
                 ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
