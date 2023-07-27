@@ -55,9 +55,9 @@ class ReviewAuthor
         $href = get_page_link( $translated_id ) . '#our-team';
 
         return [
-			'name' => __( 'Valentin Axani', ToolLoco::TEXTDOMAIN ),
+			'name' => __( ReviewMain::TEXT[ 'valentin-axani' ], ToolLoco::TEXTDOMAIN ),
 
-			'duty' => __( 'Website Manager', ToolLoco::TEXTDOMAIN ),
+			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
 
 			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
 

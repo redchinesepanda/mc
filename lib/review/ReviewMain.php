@@ -38,6 +38,10 @@ class ReviewMain
 		'download' => 'Download',
 
 		'app' => 'App',
+        
+		'valentin-axani' => 'Valentin Axani',
+
+		'website-manager' => 'Website Manager',
 	];
 
     const CSS = [
