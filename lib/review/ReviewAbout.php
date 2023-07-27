@@ -101,6 +101,8 @@ class ReviewAbout
 
                     'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
 
+                    'get_sample_permalink' => get_sample_permalink( $group[ 'about-afillate' ] ),
+
                     'about-afillate' => $group[ 'about-afillate' ],
 
                     'meta' => $meta,
