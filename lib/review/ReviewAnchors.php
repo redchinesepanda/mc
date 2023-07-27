@@ -74,6 +74,58 @@ class ReviewAnchors
 		return $nodes;
 	}
 
+    const ANCHORS = [
+        'app' => 'App',
+
+        'basic-information' => 'Basic facts',
+
+        'betting' => 'Betting',
+
+        'bonuses' => 'Bonuses',
+
+        'casino' => 'Casino',
+        
+        'common-problems' => 'Common problems',
+        
+        'compare' => 'Compare',
+        
+        'faqs' => 'FAQs',
+        
+        'how-to-bet' => 'How to bet',
+        
+        'how-to-get' => 'How to get',
+        
+        'how-to-sign-up' => 'Sign up',
+        
+        'how-to-use' => 'How to use',
+        
+        'in-play-betting' => 'In play betting',
+        
+        'odds' => 'Odds',
+        
+        'offers' => 'Offers',
+        
+        'other-bonuses' => 'Other bonuses',
+        
+        'payment-methods' => 'Payment',
+        
+        'promotions' => 'Promotions',
+        
+        'pros-and-cons' => 'Pros & cons',
+        
+        'registration' => 'Registration',
+        
+        'review' => 'Review',
+        
+        'sports' => 'Sports',
+        
+        'sports-and-markets' => 'Sports & Markets',
+        
+        'security' => 'Security',
+        
+        'tips-and-tricks' => 'Tips and tricks',
+    ];
+
     public static function get_labels()
     {
         $locale = WPMLMain::get_locale();
@@ -84,107 +136,118 @@ class ReviewAnchors
             $locale = $details[ 'locale' ];
         }
 
-        return [
-            ToolTransiterate::replace(
-                ToolLoco::__( 'app', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'App', ToolLoco::TEXTDOMAIN, $locale ),
+        $anchors = [];
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
+        foreach ( self::ANCHORS as $id => $label )
+        {
+            $anchors[ ToolTransiterate::replace(
+                ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
+            ) ]  => ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
+        }
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'betting', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Betting', ToolLoco::TEXTDOMAIN, $locale ),
+        return $anchors;
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'bonuses', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Bonuses', ToolLoco::TEXTDOMAIN, $locale ),
+        // return [
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'app', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'App', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'casino', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Casino', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'basic-information', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Basic facts', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'common-problems', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Common problems', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'betting', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Betting', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'compare', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Compare', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'bonuses', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Bonuses', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'faqs', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'FAQs', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'casino', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Casino', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'how-to-bet', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'How to bet', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'common-problems', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Common problems', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'how-to-get', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'How to get', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'compare', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Compare', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'how-to-sign-up', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Sign up', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'faqs', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'FAQs', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'how-to-use', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'How to use', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'how-to-bet', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'How to bet', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'in-play-betting', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'In play betting', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'how-to-get', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'How to get', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace( 
-                ToolLoco::__( 'odds', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Odds', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'how-to-sign-up', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Sign up', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'offers', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Offers', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'how-to-use', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'How to use', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'other-bonuses', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Other bonuses', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'in-play-betting', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'In play betting', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'payment-methods', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Payment', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace( 
+        //         ToolLoco::__( 'odds', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Odds', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'promotions', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Promotions', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'offers', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Offers', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace( 
-                ToolLoco::__( 'pros-and-cons', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Pros & cons', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'other-bonuses', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Other bonuses', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'registration', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Registration', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'payment-methods', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Payment', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace( 
-                ToolLoco::__( 'review', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Review', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'promotions', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Promotions', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'sports', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Sports', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace( 
+        //         ToolLoco::__( 'pros-and-cons', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Pros & cons', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'sports-and-markets', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Sports & Markets', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'registration', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Registration', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'security', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Security', ToolLoco::TEXTDOMAIN, $locale ),
+        //     ToolTransiterate::replace( 
+        //         ToolLoco::__( 'review', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Review', ToolLoco::TEXTDOMAIN, $locale ),
 
-            ToolTransiterate::replace(
-                ToolLoco::__( 'tips-and-tricks', ToolLoco::TEXTDOMAIN, $locale )
-            ) => ToolLoco::__( 'Tips and tricks', ToolLoco::TEXTDOMAIN, $locale ),
-        ];
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'sports', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Sports', ToolLoco::TEXTDOMAIN, $locale ),
+
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'sports-and-markets', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Sports & Markets', ToolLoco::TEXTDOMAIN, $locale ),
+
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'security', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Security', ToolLoco::TEXTDOMAIN, $locale ),
+
+        //     ToolTransiterate::replace(
+        //         ToolLoco::__( 'tips-and-tricks', ToolLoco::TEXTDOMAIN, $locale )
+        //     ) => ToolLoco::__( 'Tips and tricks', ToolLoco::TEXTDOMAIN, $locale ),
+        // ];
     }
 
     const FIELD = [

@@ -37,8 +37,14 @@ class ToolLoco
         {
             $lines = array_merge(
                 BilletMain::TEXT,
+
+                BaseMain::TEXT,
+
+                ReviewMain::TEXT,
+
+                array_keys( ReviewAnchors::TEXT ),
                 
-                BaseMain::TEXT
+                ReviewAnchors::TEXT
             );
 
             foreach ( $lines as $line )
