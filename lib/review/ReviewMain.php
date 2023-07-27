@@ -30,6 +30,16 @@ require_once( 'ReviewOffers.php' );
 
 class ReviewMain
 {
+	const TEXT = [
+		'rating' => 'Rating',
+
+		'bet-here' => 'Bet here',
+
+		'download' => 'Download',
+
+		'app' => 'App',
+	];
+
     const CSS = [
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',

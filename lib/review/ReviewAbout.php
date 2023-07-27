@@ -165,7 +165,7 @@ class ReviewAbout
                 'font' => $group[ 'about-font' ],
                 
                 'rating' => [
-                    'label' => __( 'Rating', ToolLoco::TEXTDOMAIN ),
+                    'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
 
                     'value' => $group[ 'about-rating' ],
                 ],
@@ -208,13 +208,13 @@ class ReviewAbout
     {
         $group = get_field( self::FIELD );
 
-        $text = __( 'Bet here', ToolLoco::TEXTDOMAIN );
+        $text = __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN );
 
         if( $group )
         {
             if ( has_term( 'app', 'page_type' ) )
             {
-                $text = __( 'Download', ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( 'App', ToolLoco::TEXTDOMAIN );
+                $text = __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN );
             }
         }
 
