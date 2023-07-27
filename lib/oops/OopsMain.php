@@ -85,13 +85,13 @@ class OopsMain
         $posts = array_merge( self::get_posts(), self::get_posts( '-' ) );
 
         $args = [
-            'title' => __( 'Ouch', ToolLoco::TEXTDOMAIN ) . '!',
+            'title' => __( BaseMain::TEXT[ 'ouch' ], ToolLoco::TEXTDOMAIN ) . '!',
 
-            'description' => __( "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners", ToolLoco::TEXTDOMAIN ) . ':',
+            'description' => __( BaseMain::TEXT[ 'this-bookie' ], ToolLoco::TEXTDOMAIN ) . ':',
 
             'items' => [],
             
-            'label' => __( 'Bet Now', ToolLoco::TEXTDOMAIN ),
+            'label' => __( BaseMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN ),
 
         ];
 

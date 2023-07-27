@@ -152,7 +152,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $items = [];
         
-        $first = self::get_item( __( 'Match.Center', ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
+        $first = self::get_item( __( BaseMain::TEXT[ 'match-center' ], ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
         if ( !empty( $post_id ) ) {
             if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) ) {

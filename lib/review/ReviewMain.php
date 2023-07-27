@@ -31,37 +31,39 @@ require_once( 'ReviewOffers.php' );
 class ReviewMain
 {
 	const TEXT = [
-		'rating' => 'Rating',
+		'app' => 'App',
 
 		'bet-here' => 'Bet here',
 
-		'download' => 'Download',
-
-		'app' => 'App',
-        
-		'valentin-axani' => 'Valentin Axani',
-
-		'website-manager' => 'Website Manager',
-
-		'claim-bonus' => 'Claim Bonus',
-
-		'review' => 'Review',
-
-		'get-bonus' => 'Get Bonus',
-
-		'overall-rating' => 'Overall Rating',
+		'bonus' => 'Bonus',
 
 		'bookmaker-review' => 'Bookmaker Review',
 
 		'bookmaker-lightbox' => 'Bookmaker Lightbox',
 
+		'claim-bonus' => 'Claim Bonus',
+
+		'download' => 'Download',
+
+		'get-bonus' => 'Get Bonus',
+
+		'how-to-play' => 'How to play',
+
+		'overall-rating' => 'Overall Rating',
+
+		'page-contents' => 'Page contents',
+
 		'promo-code' => 'Promo Code',
 
-		'bonus' => 'Bonus',
+		'rating' => 'Rating',
 
 		'registration' => 'Registration',
 
-		'how-to-play' => 'How to play',
+		'review' => 'Review',
+        
+		'valentin-axani' => 'Valentin Axani',
+
+		'website-manager' => 'Website Manager',
 
 		'withdrawal' => 'Withdrawal',
 	];

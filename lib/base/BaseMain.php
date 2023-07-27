@@ -7,19 +7,29 @@ require_once( 'BaseFooter.php' );
 class BaseMain
 {
 	const TEXT = [
-		'legal-review-bk-header' => 'Legal Review BK Header',
+		'all-rights-reserved' => 'All rights reserved',
+
+        'bet-now' => 'Bet now',
 
 		'betting-sites' => 'Betting Sites',
 
 		'choose-your-country' => 'Choose your country',
 
+		'legal-review-bk-header' => 'Legal Review BK Header',
+
 		'legal-review-bk-footer' => 'Legal Review BK Footer',
 
 		'match-center' => 'Match.Center',
 
-		'all-rights-reserved' => 'All rights reserved',
-
         'match-center-is-not' => '<p>Match.Center is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.</p><p>Always gamble responsibly and never risk money that you can not afford to lose!</p>',
+
+		'oops-page-not-found' => 'Oops! Page Not Found',
+
+        'ouch' => 'Ouch',
+
+        'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
+
+		'you-must-have' => "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.",
 	];
 
 	public static function register_style( $styles = [] )

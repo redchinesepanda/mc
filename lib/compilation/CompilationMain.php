@@ -77,7 +77,7 @@ class CompilationMain
             'id' => $id,
 
             'date' => [
-                'label' => __( 'Last updated', ToolLoco::TEXTDOMAIN ),
+                'label' => __( BilletMain::TEXT[ 'last-updated' ], ToolLoco::TEXTDOMAIN ),
 
                 'value' => self::get_date( $id ),
             ],

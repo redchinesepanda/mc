@@ -228,7 +228,7 @@ class ReviewAnchors
         $items = self::get_data( $nodes );
 
         return [
-            'title' => __( 'Page contents', ToolLoco::TEXTDOMAIN ) . ':',
+            'title' => __( ReviewMain::TEXT[ 'page-contents' ], ToolLoco::TEXTDOMAIN ) . ':',
 
             'items' => $items,
         ];

@@ -61,7 +61,7 @@ class BilletSpoiler
 
         $args['description'] = get_field( 'billet-spoiler-description', $billet['id'] );
 
-        $args['review']['label'] = __( 'Read more about', ToolLoco::TEXTDOMAIN ) . ' ' . get_field( 'billet-title-text', $billet['id'] );
+        $args['review']['label'] = __( BilletMain::TEXT[ 'read-more-about' ], ToolLoco::TEXTDOMAIN ) . ' ' . get_field( 'billet-title-text', $billet['id'] );
         
         $args['review']['href'] = $billet['url']['review'];
 

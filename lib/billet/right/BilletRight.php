@@ -16,7 +16,7 @@ class BilletRight
     {
         $args = BilletMain::href( $billet['url']['play'] );
         
-        $args['label'] = __( 'Bet now', ToolLoco::TEXTDOMAIN );
+        $args['label'] = __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN );
 
         if ( !empty( $billet['filter']['play']['label'] ) ) {
             $args['label'] = $billet['filter']['play']['label'];

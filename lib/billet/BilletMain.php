@@ -19,11 +19,23 @@ class BilletMain
 	const TEXT = [
 		'bet-here' => 'Bet here',
 
-		'review' => 'Review',
+		'bet-now' => 'Bet now',
+
+		'close-details' => 'Close Details',
 
 		'get-in-touch' => 'Get in touch',
 
+		'last-updated' => 'Last updated',
+
 		'margin' => 'Margin',
+
+		'more-details' => 'More Details',
+
+		'read-more-about' => 'Read more about',
+
+		'review' => 'Review',
+
+        'there-are-no-tabs' => 'There are no tabs added yet',
 	];
     
     const DEFAULT_COLOR = 'rgb(0,46,90)';
@@ -238,20 +250,6 @@ class BilletMain
 
             $description = get_field( self::BONUS[ 'description' ], $bonus_id );
         }
-
-        // $bonus_id = get_field( 'billet-bonus', $id );
-
-        // if ( $bonus_id ) {
-        //     $args['title'] = self::get_field_default( $bonus_id, self::BONUS[ 'title' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
-
-        //     $args['description'] = self::get_field_default( $bonus_id, self::BONUS[ 'description' ], __( 'Not set', ToolLoco::TEXTDOMAIN ) );
-        // } else {
-        //     $args['title'] = get_field( self::SETTINGS[ 'bonus-title' ], $id );
-
-        //     $args['description'] = get_field( self::SETTINGS[ 'bonus-description' ], $id );
-        // }
-
-        // return $args;
 
         return [
             'title' => $title,

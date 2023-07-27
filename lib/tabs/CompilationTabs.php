@@ -131,7 +131,7 @@ class CompilationTabs
                 ];
             }
         } else {
-            $args['empty'] = __( 'There are no tabs added yet', ToolLoco::TEXTDOMAIN );
+            $args['empty'] = __( BilletMain::TEXT[ 'there-are-no-tabs' ], ToolLoco::TEXTDOMAIN );
         }
 
         return $args;

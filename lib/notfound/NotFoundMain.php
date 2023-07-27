@@ -65,9 +65,9 @@ class NotFoundMain
 	public static function get()
 	{
 		return  array_merge( [
-			'title' => __( "Oops! Page Not Found", ToolLoco::TEXTDOMAIN ),
+			'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
 			
-			'description' => __( "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.", ToolLoco::TEXTDOMAIN ),
+			'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
 		], WPMLLangSwitcher::get() );
 	}
 
