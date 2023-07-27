@@ -116,7 +116,7 @@
     padding-top: 15px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( :last-child ),
 .billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .bonus-content > ol:not( .legal-override ):not( :last-child ),
 .billet-description > ol:not( .legal-override ):not( :last-child ) {
