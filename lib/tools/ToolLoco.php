@@ -36,7 +36,7 @@ class ToolLoco
         if ( self::TEXTDOMAIN === $domain )
         {
             $lines = array_merge(
-                BilletMega::TEXT
+                BilletMain::TEXT
             );
 
             foreach ( $lines as $line )

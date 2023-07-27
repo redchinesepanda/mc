@@ -16,6 +16,16 @@ require_once( 'right/BilletRight.php' );
 
 class BilletMain
 {
+	const TEXT = [
+		'bet-here' => 'Bet here',
+
+		'review' => 'Review',
+
+		'get-in-touch' => 'Get in touch',
+
+		'margin' => 'Margin',
+	];
+    
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [

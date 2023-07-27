@@ -32,7 +32,7 @@ class BilletProfit extends LegalDebug
         return [
             'class' => get_field( 'billet-play-profit-type', $billet[ 'id' ] ),
 
-            'label' => __( 'Margin', ToolLoco::TEXTDOMAIN ),
+            'label' => __( BilletMain::TEXT[ 'margin' ], ToolLoco::TEXTDOMAIN ),
             
             'value' => self::get_value( $billet ),
         ];

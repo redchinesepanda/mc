@@ -38,7 +38,7 @@ class BilletLogo
 
         $args['review'] = BilletMain::href( $billet['url']['review'] );
 
-        $args['review']['label'] = ( !empty( $billet['filter']['review']['label'] ) ? $billet['filter']['review']['label'] : __( 'Review', ToolLoco::TEXTDOMAIN ) );
+        $args['review']['label'] = ( !empty( $billet['filter']['review']['label'] ) ? $billet['filter']['review']['label'] : __( BilletMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ) );
 
         // $args['review'][ 'font' ] = get_field( 'billet-font', $billet['id'] );
 
