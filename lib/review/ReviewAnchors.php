@@ -142,7 +142,7 @@ class ReviewAnchors
         {
             $anchors[ ToolTransiterate::replace(
                 ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
-            ) ]  => ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
+            ) ] = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
         }
 
         return $anchors;
