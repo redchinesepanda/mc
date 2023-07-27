@@ -105,6 +105,8 @@ class ReviewAbout
 
                     'get_sample_permalink' => get_sample_permalink( $group[ 'about-afillate' ] ),
 
+                    'do_shortcode' => do_shortcode( '[af_link id="21387"]Click here![/af_link]' ),
+
                     'about-afillate' => $group[ 'about-afillate' ],
 
                     'meta' => $meta,
