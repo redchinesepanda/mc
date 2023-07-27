@@ -14,6 +14,8 @@ class BilletLogo
         'font' => 'about-font',
 
         'logo' => 'about-logo',
+
+        'mega' => 'about-logo-mega',
     ];
 
     public static function get( $billet )

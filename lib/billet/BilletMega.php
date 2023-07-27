@@ -173,6 +173,11 @@ class BilletMega
 			if ( $group )
 			{
 				$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+
+				if ( !empty( $group[ BilletLogo::ABOUT[ 'mega' ] ] ) )
+				{
+					$logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
+				}
 	
 				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
 	
