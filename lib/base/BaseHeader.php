@@ -132,7 +132,7 @@ class BaseHeader
 		];
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
-			$title = __( 'Betting Sites', ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
+			$title = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
 
 			$item[ 'children' ][] = [
 				'title' => $title,
@@ -144,7 +144,7 @@ class BaseHeader
 		}
 
 		$item[ 'children' ][] = [
-			'title' => __( 'Choose your country', ToolLoco::TEXTDOMAIN ),
+			'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 
 			'href' => '/choose-your-country/',
 
@@ -253,7 +253,7 @@ class BaseHeader
 
 	public static function location()
 	{
-		register_nav_menu( self::LOCATION, __( 'Legal Review BK Header', ToolLoco::TEXTDOMAIN ) );
+		register_nav_menu( self::LOCATION, __( BaseMain::TEXT[ 'legal-review-bk-header' ], ToolLoco::TEXTDOMAIN ) );
 	}
 
 	public static function parse_items( $items, $parents, $key )

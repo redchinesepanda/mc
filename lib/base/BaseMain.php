@@ -6,6 +6,14 @@ require_once( 'BaseFooter.php' );
 
 class BaseMain
 {
+	const TEXT = [
+		'legal-review-bk-header' => 'Legal Review BK Header',
+
+		'betting-sites' => 'Betting Sites',
+
+		'choose-your-country' => 'Choose your country',
+	];
+
 	public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
