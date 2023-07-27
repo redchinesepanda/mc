@@ -95,6 +95,8 @@ class ReviewAbout
                 $meta = get_post_meta( $group[ 'about-afillate' ] );
 
                 LegalDebug::debug( [
+                    'about-afillate' => $group[ 'about-afillate' ],
+
                     'meta' => $meta,
                 ] );
 
