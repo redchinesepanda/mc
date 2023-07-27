@@ -96,6 +96,8 @@ class ReviewAbout
 
                 $post = get_post( $group[ 'about-afillate' ] );
 
+                require_once ( ABSPATH . '/wp-admin/includes/post.php' );
+
                 LegalDebug::debug( [
                     'post' => $post,
 
