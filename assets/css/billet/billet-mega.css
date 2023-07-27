@@ -58,7 +58,7 @@
 	align-items: center;
 }
 
-.legal-billet-mega:not( .legal-image ) .billet-mega-content {
+.legal-billet-mega.legal-image .billet-mega-content {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
