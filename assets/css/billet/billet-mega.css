@@ -103,7 +103,7 @@
 }
 
 .legal-billet-mega p:not( :last-child ):not( .legal-override ) {
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .legal-billet-mega h3:not( .legal-override ),
