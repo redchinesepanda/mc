@@ -94,7 +94,11 @@ class ReviewAbout
 			if ( !empty( $group[ 'about-afillate' ] ) ) {
                 $meta = get_post_meta( $group[ 'about-afillate' ] );
 
+                $post = get_post( $group[ 'about-afillate' ] );
+
                 LegalDebug::debug( [
+                    'post' => $post,
+
                     'about-afillate' => $group[ 'about-afillate' ],
 
                     'meta' => $meta,
