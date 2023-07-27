@@ -12,6 +12,14 @@ class BaseMain
 		'betting-sites' => 'Betting Sites',
 
 		'choose-your-country' => 'Choose your country',
+
+		'legal-review-bk-footer' => 'Legal Review BK Footer',
+
+		'match-center' => 'Match.Center',
+
+		'all-rights-reserved' => 'All rights reserved',
+
+        'match-center-is-not' => '<p>Match.Center is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.</p><p>Always gamble responsibly and never risk money that you can not afford to lose!</p>',
 	];
 
 	public static function register_style( $styles = [] )

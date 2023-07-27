@@ -34,7 +34,7 @@ class BaseFooter
 
 	public static function location()
 	{
-		register_nav_menu( self::LOCATION, __( 'Legal Review BK Footer', ToolLoco::TEXTDOMAIN ) );
+		register_nav_menu( self::LOCATION, __( BaseMain::TEXT[ 'legal-review-bk-footer' ], ToolLoco::TEXTDOMAIN ) );
 	}
 
 	const ITEM = [
@@ -178,8 +178,6 @@ class BaseFooter
 
 		$end = array_splice( $items, -2 );
 
-		$text_default = "<p>Match.Center is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.</p><p>Always gamble responsibly and never risk money that you can not afford to lose!</p>"; 
-
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
 
@@ -192,12 +190,12 @@ class BaseFooter
 			'copy' => [
 				'year' => '2021-2023',
 				
-				'company' => __( 'Match.Center', ToolLoco::TEXTDOMAIN ),
+				'company' => __( BaseMain::TEXT[ 'match-center' ], ToolLoco::TEXTDOMAIN ),
 				
-				'reserved' => __( 'All rights reserved', ToolLoco::TEXTDOMAIN )
+				'reserved' => __( BaseMain::TEXT[ 'all-rights-reserved' ], ToolLoco::TEXTDOMAIN )
 			],
 
-			'text' => __( $text_default, ToolLoco::TEXTDOMAIN ),
+			'text' => __( BaseMain::TEXT[ 'match-center-is-not' ], ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
