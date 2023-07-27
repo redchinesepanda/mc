@@ -20,6 +20,7 @@
     .tcb-post-content .legal-list-4 {
         display: flex;
         flex-wrap: wrap;
+        row-gap: 15px;
     }
 
     /* Review Position */
@@ -136,9 +137,12 @@
 }
 
 .tcb-post-content ul:not( .legal-highlight ) li:not( :last-child ),
-.tcb-post-content ul.legal-highlight li,
 .tcb-post-content ol li:not( :last-child ) {
     padding-bottom: 15px;
+}
+
+.tcb-post-content ul.legal-highlight li {
+    padding-bottom: 0px;
 }
 
 .tcb-post-content li:not( .legal-override ) {
