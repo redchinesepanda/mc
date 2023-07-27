@@ -43,19 +43,19 @@ class ToolLoco
         {
             $custom = new Loco_gettext_String( 'Legal Review BK Footer' );
 
-            $custom->addExtractedComment( 'This is a footer menu location name' );
+            // $custom->addExtractedComment( 'This is a footer menu location name' );
 
-            $custom->addFileReferences( 'custom.yml:1' );
+            // $custom->addFileReferences( 'custom.yml:1' );
 
             $extraction->addString( $custom, $domain );
 
-            LegalDebug::debug( [
-                'domain' => $domain,
+            // LegalDebug::debug( [
+            //     'domain' => $domain,
 
-                'custom' => $custom,
+            //     'custom' => $custom,
 
-                'extraction' => $extraction,
-            ] );
+            //     'extraction' => $extraction,
+            // ] );
         }
     }
 }
