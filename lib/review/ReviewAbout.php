@@ -92,35 +92,11 @@ class ReviewAbout
         
         if( $group ) {
 			if ( !empty( $group[ 'about-afillate' ] ) ) {
-                // $meta = get_post_meta( $group[ 'about-afillate' ] );
-
-                // $post = get_post( $group[ 'about-afillate' ] );
-
-                // require_once ( ABSPATH . '/wp-admin/includes/post.php' );
-
                 $lang = WPMLMain::current_language();
 
-                LegalDebug::debug( [
-                    // 'post' => $post,
+				// return $group[ 'about-afillate' ];
 
-                    // 'the_permalink' => the_permalink( $group[ 'about-afillate' ] ),
-
-                    // 'get_permalink' => get_permalink( $group[ 'about-afillate' ] ),
-
-                    // 'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
-
-                    // 'get_sample_permalink' => get_sample_permalink( $group[ 'about-afillate' ] ),
-
-                    // 'do_shortcode' => do_shortcode( '[af_link id="21387"]Click here![/af_link]' ),
-
-                    'about-afillate' => $group[ 'about-afillate' ],
-
-                    'filter' => str_replace( $lang . '/', '', $group[ 'about-afillate' ] ),
-
-                    // 'meta' => $meta,
-                ] );
-
-				return $group[ 'about-afillate' ];
+				return str_replace( $lang . '/', '', $group[ 'about-afillate' ] );
 			}
 		}
 
