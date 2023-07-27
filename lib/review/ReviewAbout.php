@@ -98,6 +98,8 @@ class ReviewAbout
 
                 // require_once ( ABSPATH . '/wp-admin/includes/post.php' );
 
+                $lang = WPMLMain::current_language();
+
                 LegalDebug::debug( [
                     // 'post' => $post,
 
@@ -112,6 +114,8 @@ class ReviewAbout
                     // 'do_shortcode' => do_shortcode( '[af_link id="21387"]Click here![/af_link]' ),
 
                     'about-afillate' => $group[ 'about-afillate' ],
+
+                    'filter' => str_replace( $lang . '/', '', $group[ 'about-afillate' ] ),
 
                     // 'meta' => $meta,
                 ] );
