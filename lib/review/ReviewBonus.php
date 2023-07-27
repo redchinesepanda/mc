@@ -414,7 +414,7 @@ class ReviewBonus
 			'get' => [
 				'href' => self::check_url_afillate( $id ),
 
-				'text' => __( 'Claim Bonus', ToolLoco::TEXTDOMAIN ),
+				'text' => __( ReviewMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
 			],
 
 			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
@@ -541,7 +541,7 @@ class ReviewBonus
 				'review' => [
 					'href' => self::check_url_review( $id ),
 
-					'text' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+					'text' => __( ReviewMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
 
 					'disabled' => $args[ 'no-review' ],
 				],
@@ -557,7 +557,7 @@ class ReviewBonus
 				'get' => [
 					'href' => self::check_url_afillate( $id ),
 
-					'text' => __( 'Get Bonus', ToolLoco::TEXTDOMAIN ),
+					'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
 				],
 			];
 		// }

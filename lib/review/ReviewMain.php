@@ -42,6 +42,12 @@ class ReviewMain
 		'valentin-axani' => 'Valentin Axani',
 
 		'website-manager' => 'Website Manager',
+
+		'claim-bonus' => 'Claim Bonus',
+
+		'review' => 'Review',
+
+		'get-bonus' => 'Get Bonus',
 	];
 
     const CSS = [
