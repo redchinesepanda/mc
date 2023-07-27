@@ -29,16 +29,6 @@ class ACFReview
 
     public static function format_afillate( $value, $post_id, $field )
     {
-        LegalDebug::debug( [
-            'value'=> $value,
-
-            'post_id'=> $post_id,
-
-            'field'=> $field,
-        ] );
-        
-        // return $value;
-        
         $lang = WPMLMain::current_language();
 
         return str_replace( $lang . '/', '', $value );

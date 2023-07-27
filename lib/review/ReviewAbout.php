@@ -93,10 +93,6 @@ class ReviewAbout
         if( $group ) {
 			if ( !empty( $group[ 'about-afillate' ] ) )
             {
-                // $lang = WPMLMain::current_language();
-
-				// return str_replace( $lang . '/', '', $group[ 'about-afillate' ] );
-				
                 return $group[ 'about-afillate' ];
 			}
 		}
