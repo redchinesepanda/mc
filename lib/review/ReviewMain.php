@@ -50,6 +50,20 @@ class ReviewMain
 		'get-bonus' => 'Get Bonus',
 
 		'overall-rating' => 'Overall Rating',
+
+		'bookmaker-review' => 'Bookmaker Review',
+
+		'bookmaker-lightbox' => 'Bookmaker Lightbox',
+
+		'promo-code' => 'Promo Code',
+
+		'bonus' => 'Bonus',
+
+		'registration' => 'Registration',
+
+		'how-to-play' => 'How to play',
+
+		'withdrawal' => 'Withdrawal',
 	];
 
     const CSS = [

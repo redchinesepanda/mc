@@ -72,19 +72,19 @@ class ReviewGroup
     public static function get_item_labels()
     {
         return [
-            'review' => __( 'Review', ToolLoco::TEXTDOMAIN ),
+            'review' => __( ReviewMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
     
-            'promo-codes' => __( 'Promo Code', ToolLoco::TEXTDOMAIN ),
+            'promo-codes' => __( ReviewMain::TEXT[ 'promo-code' ], ToolLoco::TEXTDOMAIN ),
     
-            'bonus' => __( 'Bonus', ToolLoco::TEXTDOMAIN ),
+            'bonus' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
             
-            'app' => __( 'App', ToolLoco::TEXTDOMAIN ),
+            'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
     
-            'registration' => __( 'Registration', ToolLoco::TEXTDOMAIN ),
+            'registration' => __( ReviewMain::TEXT[ 'registration' ], ToolLoco::TEXTDOMAIN ),
     
-            'how-to-play' => __( 'How to play', ToolLoco::TEXTDOMAIN ),
+            'how-to-play' => __( ReviewMain::TEXT[ 'how-to-play' ], ToolLoco::TEXTDOMAIN ),
     
-            'withdrawal' => __( 'Withdrawal', ToolLoco::TEXTDOMAIN ),
+            'withdrawal' => __( ReviewMain::TEXT[ 'withdrawal' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 

@@ -60,9 +60,9 @@ class ReviewGallery
     public static function size_label( $sizes )
     {
         return array_merge( $sizes, [
-            self::SIZE[ 'review' ] => __( 'Bookmaker Review', ToolLoco::TEXTDOMAIN ),
+            self::SIZE[ 'review' ] => __( ReviewMain::TEXT[ 'bookmaker-review' ], ToolLoco::TEXTDOMAIN ),
 
-            self::SIZE[ 'lightbox' ] => __( 'Bookmaker Lightbox', ToolLoco::TEXTDOMAIN ),
+            self::SIZE[ 'lightbox' ] => __( ReviewMain::TEXT[ 'bookmaker-lightbox' ], ToolLoco::TEXTDOMAIN ),
         ] );
     }
 
