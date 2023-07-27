@@ -58,6 +58,12 @@
 	align-items: center;
 }
 
+.legal-billet-mega:not( .legal-image ) .billet-mega-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .legal-billet-mega.legal-default .billet-mega-about,
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-no-controls .billet-mega-about {
