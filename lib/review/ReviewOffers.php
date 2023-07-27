@@ -152,7 +152,7 @@ class ReviewOffers
 				'afillate' => [
                     'href' => $group[ self::FIELD[ 'afillate' ] ],
 
-                    'text' => __( 'Bet here', ToolLoco::TEXTDOMAIN ),
+                    'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
                 ],
 			];
 			
