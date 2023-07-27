@@ -37,7 +37,11 @@ class ACFReview
             'field'=> $field,
         ] );
         
-        return $value;
+        // return $value;
+        
+        $lang = WPMLMain::current_language();
+
+        return str_replace( $lang . '/', '', $value );
     }
 
 	function choices_image( $field )
