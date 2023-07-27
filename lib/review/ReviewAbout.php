@@ -101,6 +101,8 @@ class ReviewAbout
                 LegalDebug::debug( [
                     // 'post' => $post,
 
+                    'the_permalink' => the_permalink( $group[ 'about-afillate' ] ),
+
                     'get_permalink' => get_permalink( $group[ 'about-afillate' ] ),
 
                     'get_post_permalink' => get_post_permalink( $group[ 'about-afillate' ] ),
