@@ -111,6 +111,11 @@
     padding-bottom: 30px;
 }
 
+.legal-billet-mega .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
+	padding-top: 0px;
+    padding-bottom: 15px;
+}
+
 /* Width and Height */
 
 .legal-billet-mega.legal-default .mega-about-logo,
