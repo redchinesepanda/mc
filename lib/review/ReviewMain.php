@@ -48,6 +48,8 @@ class ReviewMain
 		'review' => 'Review',
 
 		'get-bonus' => 'Get Bonus',
+
+		'overall-rating' => 'Overall Rating',
 	];
 
     const CSS = [

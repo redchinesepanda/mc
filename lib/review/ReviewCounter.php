@@ -171,7 +171,7 @@ class ReviewCounter
 		}
 
 		$args = [
-			'title' => __( 'Overall Rating', ToolLoco::TEXTDOMAIN ),
+			'title' => __( ReviewMain::TEXT[ 'overall-rating' ], ToolLoco::TEXTDOMAIN ),
 
 			'items' => $items,
 
