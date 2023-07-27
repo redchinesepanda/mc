@@ -129,7 +129,7 @@ class BilletMega
 	const TEXT = [
 		'bet-here' => 'Bet here',
 
-		'review' 'Review',
+		'review' => 'Review',
 
 		'get-in-touch' => 'Get in touch',
 	];
