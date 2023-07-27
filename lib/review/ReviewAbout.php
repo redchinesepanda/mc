@@ -91,10 +91,9 @@ class ReviewAbout
         $group = get_field( ReviewAbout::FIELD );
         
         if( $group ) {
-			if ( !empty( $group[ 'about-afillate' ] ) ) {
+			if ( !empty( $group[ 'about-afillate' ] ) )
+            {
                 $lang = WPMLMain::current_language();
-
-				// return $group[ 'about-afillate' ];
 
 				return str_replace( $lang . '/', '', $group[ 'about-afillate' ] );
 			}
