@@ -85,6 +85,7 @@
 .review-about {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .review-about .about-left,
