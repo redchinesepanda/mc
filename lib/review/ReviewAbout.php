@@ -112,7 +112,11 @@ class ReviewAbout
 
     public static function get_achievement( $id )
     {
-        return BilletAchievement::get( [ $id, BilletAchievement::TYPE[ 'about' ] ] );
+        return BilletAchievement::get( [
+            'id' => $id,
+            
+            'achievement' => BilletAchievement::TYPE[ 'about' ]
+        ] );
     }
 
     public static function get( $args )
