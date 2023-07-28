@@ -55,6 +55,10 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .review-about .about-achievement {
+        padding: 30px 0px;
+    }
     
     /* Review About Width and Height */
 
@@ -73,6 +77,10 @@
 
     .review-about.legal-mode-mini {
         width: 800px;
+    }
+
+    .review-about .about-achievement div {
+        width: 270px;
     }
     
 }
@@ -136,10 +144,6 @@
     width: 100%;
 }
 
-.review-about .about-achievement div {
-    width: 270px;
-}
-
 .review-about .achievement-bonus-link {
     height: 28px;
 }
@@ -166,10 +170,6 @@
 
 .tcb-post-content > .legal-afillate {
     margin: 0px auto 30px auto;
-}
-
-.review-about .about-achievement {
-    padding: 30px 0px;
 }
 
 .review-about .achievement-bonus .achievement-bonus-link {
