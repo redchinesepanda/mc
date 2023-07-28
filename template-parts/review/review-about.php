@@ -29,7 +29,9 @@
                     <div class="achievement-bonus">
                         <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'bonus' ]; ?></a>
                     </div>
-                    <div class="achievement-name"><?php echo $args[ 'achievement' ][ 'term' ]; ?></div>
+                    <div class="achievement-name">
+                        <span class="achievement-bonus-link"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
+                    </div>
                     <div class="achievement-app">
                         <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'app' ]; ?></a>
                     </div>

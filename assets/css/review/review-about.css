@@ -276,3 +276,11 @@
     text-align: center;
 }
 
+.review-about .about-achievement .achievement-bonus-link {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22.4px;
+    color: rgb(255, 255, 255);
+}
