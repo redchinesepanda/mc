@@ -34,12 +34,8 @@
 
     /* Review About Position */
 
-    .review-about .about-left {
-        margin-left: auto;
-    }
-
-    .review-about .about-right {
-        margin-right: auto;
+    .review-about-wrapper {
+        margin-left: 0px auto;
     }
 
     .review-about {
@@ -53,16 +49,20 @@
     
     /* Review About Width and Height */
 
+    .review-about {
+        width: 1080px;
+    }
+
     .review-about:not( .legal-mode-mini ) .about-left {
-        width: calc( ( 1080px * 0.25 ) - 33px );
+        width: calc( 25% - 33px );
     }
 
     .review-about:not( .legal-mode-mini ) .about-center {
-        width: calc( ( 1080px * 0.5 ) - 33px );
+        width: calc( 50% - 33px );
     }
     
     .review-about:not( .legal-mode-mini ) .about-right {
-        width: calc( ( 1080px * 0.25 ) - 33px );
+        width: calc( 25% - 33px );
     }
 
     .review-about.legal-mode-mini {
@@ -84,6 +84,7 @@
 
 .review-about {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .review-about .about-left,
