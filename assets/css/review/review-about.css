@@ -38,8 +38,12 @@
         margin: 0px auto;
     }
 
-    .review-about {
+    .review-about:not( .legal-mode-mini ) {
         padding: 10px 0px;
+    }
+
+    .review-about.legal-mode-mini {
+        padding: 10px 20px;
     }
 
     .review-about.legal-mode-mini {
@@ -62,27 +66,9 @@
         width: calc( 50% - 20px );
     }
 
-    /* .review-about:not( .legal-mode-mini ) .about-left,
-    .review-about:not( .legal-mode-mini ) .about-right {
-        width: calc( 25% - 20px );
-    }
-
-    .review-about:not( .legal-mode-mini ) .about-center {
-        width: calc( 50% - 20px );
-    } */
-
     .review-about.legal-mode-mini {
         width: 800px;
     }
-
-    /* .review-about.legal-mode-mini .about-left,
-    .review-about.legal-mode-mini .about-right {
-        width: calc(25% - 20px);
-    }
-
-    .review-about.legal-mode-mini .about-center {
-        width: calc(50% - 20px);
-    } */
     
 }
 
