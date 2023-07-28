@@ -172,7 +172,7 @@ class ReviewAbout
 
             if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
             {
-                $bonus = $group[ 'about-title' ];
+                $bonus['name'] = $group[ 'about-title' ];
             }
 
             $afillate_description = '';
