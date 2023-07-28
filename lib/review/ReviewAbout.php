@@ -115,7 +115,7 @@ class ReviewAbout
         return BilletAchievement::get( [
             'id' => $id,
 
-            'achievement' => BilletAchievement::TYPE[ 'about' ]
+            'achievement' => BilletAchievement::TYPE[ 'about' ],
         ] );
     }
 
