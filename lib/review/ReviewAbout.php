@@ -114,13 +114,22 @@ class ReviewAbout
     {
         return BilletAchievement::get( [
             'id' => $id,
-            
+
             'achievement' => BilletAchievement::TYPE[ 'about' ]
         ] );
     }
 
     public static function get( $args )
     {
+        $id = 0;
+
+        $post = get_post();
+
+        if ( !empty( $post ) )
+        {
+            $id = $post->ID;
+        }
+
         $mode = '';
 
         if ( !empty( $args[ 'mode' ] ) ) {
@@ -135,7 +144,7 @@ class ReviewAbout
             }
         }
 
-        $group = get_field( self::FIELD );
+        $group = get_field( self::FIELD, $id );
 
         // LegalDebug::debug( [
         //     'group' => $group,
