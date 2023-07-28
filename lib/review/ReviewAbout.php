@@ -205,7 +205,7 @@ class ReviewAbout
                     'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
 
                     'value' => $group[ 'about-rating' ],
-                ],
+                ];
             }
 
             LegalDebug::debug( [
