@@ -6,7 +6,7 @@ class ReviewAbout
         'review-about' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about.css',
 
-            'ver'=> '1.1.3',
+            'ver'=> '1.1.4',
         ],
     ];
 
@@ -79,7 +79,7 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        $style[] = '.review-about { background-color: ' . $style_item[ 'background' ] .'; }';
+        $style[] = '.review-about-wrapper { background-color: ' . $style_item[ 'background' ] .'; }';
 
         $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
 
@@ -207,10 +207,6 @@ class ReviewAbout
                     'value' => $group[ 'about-rating' ],
                 ];
             }
-
-            LegalDebug::debug( [
-                'achievement' => $achievement,
-            ] );
 
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
