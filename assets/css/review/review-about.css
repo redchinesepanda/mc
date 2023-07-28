@@ -220,12 +220,12 @@
 }
 
 .review-about.legal-default .achievement-app {
-    background: url( '../../img/review/about/ios-white.svg' ),
+    background-image: url( '../../img/review/about/ios-white.svg' ),
     url( '../../img/review/about/android-white.svg' );
 }
 
 .review-about.legal-white .achievement-app {
-    background: url( '../../img/review/about/ios-black.svg' ),
+    background-image: url( '../../img/review/about/ios-black.svg' ),
     url( '../../img/review/about/android-black.svg' );
 }
 
