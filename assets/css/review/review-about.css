@@ -192,19 +192,19 @@
 }
 
 .review-about.legal-default .achievement-bonus {
-    background-image: url( '../img/review/about/bonus-white.svg' );
+    background-image: url( '../../img/review/about/bonus-white.svg' );
 }
 
 .review-about.legal-white .achievement-bonus {
-    background-image: url( '../img/review/about/bonus-black.svg' );
+    background-image: url( '../../img/review/about/bonus-black.svg' );
 }
 
 .review-about.legal-default .achievement-name {
-    background-image: url( '../img/review/about/achievement-white.svg' );
+    background-image: url( '../../img/review/about/achievement-white.svg' );
 }
 
 .review-about.legal-white .achievement-name {
-    background-image: url( '../img/review/about/achievement-black.svg' );
+    background-image: url( '../../img/review/about/achievement-black.svg' );
 }
 
 .review-about.legal-default .achievement-bonus,
@@ -220,13 +220,13 @@
 }
 
 .review-about.legal-default .achievement-app {
-    background-image: url( '../img/review/about/ios-white.svg' ) left center,
-    url( '../img/review/about/android-white.svg' ) left 32px center;
+    background-image: url( '../../img/review/about/ios-white.svg' ) left center,
+    url( '../../img/review/about/android-white.svg' ) left 32px center;
 }
 
 .review-about.legal-white .achievement-app {
-    background-image: url( '../img/review/about/ios-black.svg' ) left center,
-    url( '../img/review/about/android-black.svg' ) left 32px center;
+    background-image: url( '../../img/review/about/ios-black.svg' ) left center,
+    url( '../../img/review/about/android-black.svg' ) left 32px center;
 }
 
 /* Review About Typography */
