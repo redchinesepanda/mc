@@ -7,6 +7,11 @@
         row-gap: 20px;
     }
 
+    .review-about .about-achievement {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
     .review-about .about-right {
         align-items: center;
     }
