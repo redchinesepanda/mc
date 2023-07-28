@@ -170,7 +170,10 @@
     margin: 0px auto 30px auto;
 }
 
-.review-about .achievement-bonus .achievement-bonus-link,
+.review-about .achievement-bonus .achievement-bonus-link {
+    padding-left: 37px;
+}
+
 .review-about .achievement-name .achievement-bonus-link {
     padding-left: 32px;
 }
