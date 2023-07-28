@@ -184,10 +184,6 @@ class ReviewAbout
 
             $term = self::get_achievement( $id );
 
-            LegalDebug::debug( [
-                'term' => $term,
-            ] );
-
             $achievement = [];
 
             if ( !empty( $term ) )
@@ -202,6 +198,10 @@ class ReviewAbout
                     'href' => self::check_href_afillate( $id ),
                 ];
             }
+
+            LegalDebug::debug( [
+                'achievement' => $achievement,
+            ] );
 
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
