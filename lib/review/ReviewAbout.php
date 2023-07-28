@@ -86,9 +86,9 @@ class ReviewAbout
 		return implode( ' ', $style );
 	}
 
-    public static function check_href_afillate()
+    public static function check_href_afillate( $id )
 	{
-        $group = get_field( ReviewAbout::FIELD );
+        $group = get_field( ReviewAbout::FIELD, $id );
         
         if( $group ) {
 			if ( !empty( $group[ 'about-afillate' ] ) )
@@ -119,7 +119,7 @@ class ReviewAbout
         ] );
     }
 
-    public static function get( $args )
+    public static function get_id()
     {
         $id = 0;
 
@@ -129,6 +129,13 @@ class ReviewAbout
         {
             $id = $post->ID;
         }
+
+        return $id;
+    }
+
+    public static function get( $args )
+    {
+        $id = self::get_id();
 
         $mode = '';
 
@@ -153,7 +160,13 @@ class ReviewAbout
         if( $group ) {
             $title = $group[ 'about-title' ];
 
-            $bonus = $group[ 'about-bonus' ];
+            // $bonus = $group[ 'about-bonus' ];
+            
+            $bonus = [
+                'name' => $group[ 'about-bonus' ],
+
+                'description' => $group[ 'about-description' ],
+            ];
 
             $locale = WPMLMain::current_language();
 
@@ -169,18 +182,33 @@ class ReviewAbout
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
 
-            $achievement = self::get_achievement( $id );
+            $term = self::get_achievement( $id );
 
             LegalDebug::debug( [
-                'achievement' => $achievement,
+                'term' => $term,
             ] );
+
+            $achievement = [];
+
+            if ( !empty( $term ) )
+            {
+                $achievement = [
+                    'bonus' => $group[ 'about-bonus' ],
+
+                    'term' => $term[ 'name' ],
+
+                    'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+
+                    'href' => self::check_href_afillate( $id ),
+                ];
+            }
 
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
                 
                 'bonus' => $bonus,
                 
-                'description' => $group[ 'about-description' ],
+                // 'description' => $group[ 'about-description' ],
                 
                 'logo' => $group[ self::ABOUT[ 'logo' ] ],
 
@@ -195,7 +223,7 @@ class ReviewAbout
                 ],
 
                 'afillate' => [
-                    'href' => self::check_href_afillate(),
+                    'href' => self::check_href_afillate( $id ),
 
                     'text' => self::get_text(),
 
@@ -205,6 +233,8 @@ class ReviewAbout
                 'mode' => $mode,
 
                 'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
+
+                'achievement' => $achievement,
             ];
         }
 
@@ -230,7 +260,7 @@ class ReviewAbout
 
     public static function get_text( $suffix = '' )
     {
-        $group = get_field( self::FIELD );
+        $group = get_field( self::FIELD, self::get_id() );
 
         $text = __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN );
 
@@ -247,7 +277,9 @@ class ReviewAbout
     
     public static function get_button( $args )
     {
-        $group = get_field( self::FIELD );
+        $id = self::get_id();
+
+        $group = get_field( self::FIELD, $id );
 
         if( $group )
         {
@@ -259,7 +291,7 @@ class ReviewAbout
             }
 
             return [
-                'href' => self::check_href_afillate(),
+                'href' => self::check_href_afillate( $id ),
 
                 'text' => self::get_text( $suffix ),
             ];
