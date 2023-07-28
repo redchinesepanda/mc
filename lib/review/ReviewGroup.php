@@ -114,7 +114,7 @@ class ReviewGroup
         {
             $label[ 'title' ] = $group[ self::ABOUT[ 'title' ] ];
 
-            if ( !empty( $group[ self::ABOUT[ 'title-group' ] ) )
+            if ( !empty( $group[ self::ABOUT[ 'title-group' ] ] ) )
             {
                 $label[ 'title' ] = $group[ self::ABOUT[ 'title-group' ] ];
 
