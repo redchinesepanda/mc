@@ -23,5 +23,16 @@
                 <div class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></div>
             <?php endif; ?>
         </div>
+        <?php if( empty( $args['achievement'] ) ) : ?>
+            <div class="about-achievement">
+                <div class="achievement-bonus">
+                    <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'bonus' ]; ?></a>
+                </div>
+                <div class="achievement-name"><?php echo $args[ 'achievement' ][ 'term' ]; ?></div>
+                <div class="achievement-app">
+                    <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'app' ]; ?></a>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 <?php endif; ?>
