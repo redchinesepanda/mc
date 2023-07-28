@@ -24,7 +24,7 @@
                     <div class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></div>
                 <?php endif; ?>
             </div>
-            <?php if( !empty( $args['achievement'] ) ) : ?>
+            <?php if( !empty( $args['achievement'] ) && empty( $args['mode'] ) ) : ?>
                 <div class="about-achievement">
                     <div class="achievement-bonus">
                         <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'bonus' ]; ?></a>
