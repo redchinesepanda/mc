@@ -109,6 +109,11 @@
     pointer-events: none;
 }
 
+.review-about .about-achievement {
+    display: flex;
+    justify-content: center;
+}
+
 /* Review About Width and Height */
 
 .review-about .about-logo {
@@ -123,6 +128,10 @@
 .tcb-post-content .legal-afillate {
     /* max-width: 261px; */
     width: fit-content;
+}
+
+.review-about .about-achievement {
+    width: 100%;
 }
 
 /* Review About Position */
