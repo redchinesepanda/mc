@@ -126,8 +126,8 @@
 
 /* Review About Position */
 
-.review-about.legal-mode-mini {
-    margin-bottom: 30px;
+.review-about-wrapper.legal-mode-mini {
+    padding-bottom: 30px;
 }
 
 .review-about .about-rating {
