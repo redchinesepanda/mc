@@ -220,15 +220,17 @@
 }
 
 .review-about.legal-default .achievement-app {
-    background: url( '../../img/review/about/ios-white.svg' ) left center,
-    url( '../../img/review/about/android-white.svg' ) left 32px center;
-    background-repeat: no-repeat;
-    background-size: auto;
+    background: url( '../../img/review/about/ios-white.svg' ),
+    url( '../../img/review/about/android-white.svg' );
 }
 
 .review-about.legal-white .achievement-app {
-    background: url( '../../img/review/about/ios-black.svg' ) left center,
-    url( '../../img/review/about/android-black.svg' ) left 32px center;
+    background: url( '../../img/review/about/ios-black.svg' ),
+    url( '../../img/review/about/android-black.svg' );
+}
+
+.review-about .achievement-app {
+    background-position: left center, left 32px center;
     background-repeat: no-repeat;
     background-size: auto;
 }
