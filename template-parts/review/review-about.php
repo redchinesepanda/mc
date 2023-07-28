@@ -10,11 +10,11 @@
             <?php if( empty( $args['mode'] ) ) : ?>
                 <h1><?php echo $args[ 'title' ]; ?></h1>
             <?php endif; ?>
-            <?php if( !empty( $args['bonus'] ) ) : ?>
-                <div class="review-bonus-title"><?php echo $args[ 'bonus' ]; ?></div>
+            <?php if( !empty( $args['bonus'][ 'name' ] ) ) : ?>
+                <div class="review-bonus-title"><?php echo $args[ 'bonus' ][ 'name' ]; ?></div>
             <?php endif; ?>
-            <?php if( empty( $args['mode'] ) && !empty( $args[ 'description' ] ) ) : ?>
-                <div class="review-bonus-description"><?php echo $args[ 'description' ]; ?></div>
+            <?php if( empty( $args['mode'] ) && !empty( $args[ 'bonus' ][ 'description' ] ) ) : ?>
+                <div class="review-bonus-description"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
             <?php endif; ?>
         </div>
         <div class="about-right">
