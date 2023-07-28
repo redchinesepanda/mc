@@ -79,7 +79,7 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        $style[] = '.review-about-wrapper { background-color: ' . $style_item[ 'background' ] .'; }';
+        $style[] = '.review-about-wrapper:not( .legal-mode-mini ), .review-about.legal-mode-mini { background-color: ' . $style_item[ 'background' ] .'; }';
 
         $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
 
