@@ -13,8 +13,8 @@ class BilletAchievement
     const TYPE_BACKGROUND = 'legal-background';
 
     const TYPE = [
-        'legal' => 'legal-about',
-    ];
+        'about' => 'legal-about',
+    ]; 
     
     public static function get( $title ) {
         $args = [];
