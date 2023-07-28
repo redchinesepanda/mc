@@ -114,6 +114,10 @@
     justify-content: center;
 }
 
+.review-about .achievement-bonus-link {
+    display: inline-block;
+}
+
 /* Review About Width and Height */
 
 .review-about .about-logo {
@@ -136,6 +140,10 @@
 
 .review-about .about-achievement div {
     width: calc( 100% / 3 );
+}
+
+.review-about .achievement-bonus-link {
+    height: 28px;
 }
 
 /* Review About Position */
