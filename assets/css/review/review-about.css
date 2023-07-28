@@ -134,6 +134,10 @@
     width: 100%;
 }
 
+.review-about .about-achievement div {
+    width: calc( 100% / 3 );
+}
+
 /* Review About Position */
 
 .review-about-wrapper.legal-mode-mini {
