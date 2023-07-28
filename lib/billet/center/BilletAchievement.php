@@ -11,8 +11,12 @@ class BilletAchievement
     const TYPE_IMAGE = 'legal-image';
 
     const TYPE_BACKGROUND = 'legal-background';
+
+    const TYPE = [
+        'legal' => 'legal-about',
+    ];
     
-    private static function get( $title ) {
+    public static function get( $title ) {
         $args = [];
 
         $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );

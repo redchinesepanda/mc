@@ -110,6 +110,11 @@ class ReviewAbout
 
     const BONUS_EXCEPTION = [ 'es' ];
 
+    public static function get_achievement( $id )
+    {
+        return BilletAchievement::get( [ $id, BilletAchievement::TYPE[ 'about' ] ] );
+    }
+
     public static function get( $args )
     {
         $mode = '';
@@ -150,6 +155,12 @@ class ReviewAbout
             {
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
+
+            $achievement = get_achievement( $id );
+
+            LegalDebug::debug( [
+                'achievement' => $achievement,
+            ] );
 
             return [
                 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
