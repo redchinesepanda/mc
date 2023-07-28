@@ -285,3 +285,7 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
+.review-about .about-achievement div {
+    text-align: center;
+}
