@@ -53,14 +53,23 @@
         width: 1080px;
     }
 
-    .review-about:not( .legal-mode-mini ) .about-left,
+    .review-about .about-left,
+    .review-about .about-right {
+        width: calc( 25% - 20px );
+    }
+
+    .review-about .about-center {
+        width: calc( 50% - 20px );
+    }
+
+    /* .review-about:not( .legal-mode-mini ) .about-left,
     .review-about:not( .legal-mode-mini ) .about-right {
         width: calc( 25% - 20px );
     }
 
     .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 50% - 20px );
-    }
+    } */
 
     .review-about.legal-mode-mini {
         width: 800px;
