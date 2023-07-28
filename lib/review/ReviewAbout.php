@@ -156,7 +156,7 @@ class ReviewAbout
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
 
-            $achievement = get_achievement( $id );
+            $achievement = self::get_achievement( $id );
 
             LegalDebug::debug( [
                 'achievement' => $achievement,
