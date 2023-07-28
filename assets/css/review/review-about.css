@@ -191,45 +191,45 @@
     border: 1.6px solid rgb(255, 255, 255);
 }
 
-.review-about.legal-default .achievement-bonus {
+.review-about.legal-default .achievement-bonus .achievement-bonus-link {
     background-image: url( '../../img/review/about/bonus-white.svg' );
 }
 
-.review-about.legal-white .achievement-bonus {
+.review-about.legal-white .achievement-bonus .achievement-bonus-link {
     background-image: url( '../../img/review/about/bonus-black.svg' );
 }
 
-.review-about.legal-default .achievement-name {
+.review-about.legal-default .achievement-name .achievement-bonus-link {
     background-image: url( '../../img/review/about/achievement-white.svg' );
 }
 
-.review-about.legal-white .achievement-name {
+.review-about.legal-white .achievement-name .achievement-bonus-link {
     background-image: url( '../../img/review/about/achievement-black.svg' );
 }
 
-.review-about.legal-default .achievement-bonus,
-.review-about.legal-default .achievement-name {
+.review-about.legal-default .achievement-bonus .achievement-bonus-link,
+.review-about.legal-default .achievement-name .achievement-bonus-link {
     background-position: left center;
 }
 
-.review-about.legal-default .achievement-bonus,
-.review-about.legal-default .achievement-name,
-.review-about.legal-default .achievement-app {
+.review-about.legal-default .achievement-bonus .achievement-bonus-link,
+.review-about.legal-default .achievement-name .achievement-bonus-link,
+.review-about.legal-default .achievement-app .achievement-bonus-link {
     background-repeat: no-repeat;
     background-size: auto;
 }
 
-.review-about.legal-default .achievement-app {
+.review-about.legal-default .achievement-app .achievement-bonus-link {
     background-image: url( '../../img/review/about/ios-white.svg' ),
     url( '../../img/review/about/android-white.svg' );
 }
 
-.review-about.legal-white .achievement-app {
+.review-about.legal-white .achievement-app .achievement-bonus-link {
     background-image: url( '../../img/review/about/ios-black.svg' ),
     url( '../../img/review/about/android-black.svg' );
 }
 
-.review-about .achievement-app {
+.review-about .achievement-app .achievement-bonus-link {
     background-position: left center, left 32px center;
     background-repeat: no-repeat;
     background-size: auto;
