@@ -112,6 +112,7 @@
 .review-about .about-achievement {
     display: flex;
     justify-content: center;
+    column-gap: 30px;
 }
 
 .review-about .achievement-bonus-link {
@@ -130,7 +131,6 @@
 }
 
 .tcb-post-content .legal-afillate {
-    /* max-width: 261px; */
     width: fit-content;
 }
 
@@ -139,7 +139,8 @@
 }
 
 .review-about .about-achievement div {
-    width: calc( 100% / 3 );
+    /* width: calc( 100% / 3 ); */
+    width: 270px;
 }
 
 .review-about .achievement-bonus-link {
