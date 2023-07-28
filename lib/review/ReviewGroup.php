@@ -2,6 +2,16 @@
 
 class ReviewGroup
 {
+    const FIELD = [
+        'about' => 'review-about',
+    ];
+
+    const ABOUT = [
+        'title' => 'about-title',
+        
+        'title-group' => 'about-title-group',
+    ];
+
     const CSS = [
         'review-group' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-group.css',
@@ -96,13 +106,23 @@ class ReviewGroup
             'type' => '',
         ];
 
+        $type = true;
+
         $group = get_field( ReviewAbout::FIELD, $post );
 
-        if ( $group ) {
-            $label[ 'title' ] = $group[ 'about-title' ];
+        if ( $group )
+        {
+            $label[ 'title' ] = $group[ self::ABOUT[ 'title' ] ];
+
+            if ( !empty( $group[ self::ABOUT[ 'title-group' ] ) )
+            {
+                $label[ 'title' ] = $group[ self::ABOUT[ 'title-group' ] ];
+
+                $type = false;
+            }
         }
 
-        if ( in_array( $post->post_type, [ 'legal_bk_review', 'page' ] ) )
+        if ( in_array( $post->post_type, [ 'legal_bk_review', 'page' ] ) && $type )
         {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ] );
 
