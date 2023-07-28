@@ -186,6 +186,8 @@ class ReviewAbout
 
             $achievement = [];
 
+            $rating = [];
+
             if ( !empty( $term ) )
             {
                 $achievement = [
@@ -197,6 +199,13 @@ class ReviewAbout
 
                     'href' => self::check_href_afillate( $id ),
                 ];
+            } else 
+            {
+                $rating = [
+                    'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+
+                    'value' => $group[ 'about-rating' ],
+                ],
             }
 
             LegalDebug::debug( [
@@ -216,11 +225,13 @@ class ReviewAbout
 
                 'font' => $group[ 'about-font' ],
                 
-                'rating' => [
-                    'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+                'rating' => $rating,
 
-                    'value' => $group[ 'about-rating' ],
-                ],
+                // 'rating' => [
+                //     'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+
+                //     'value' => $group[ 'about-rating' ],
+                // ],
 
                 'afillate' => [
                     'href' => self::check_href_afillate( $id ),
