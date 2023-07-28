@@ -14,7 +14,7 @@ class BilletAchievement
 
     const TYPE = [
         'about' => 'legal-about',
-    ]; 
+    ];
     
     public static function get( $title ) {
         $args = [];

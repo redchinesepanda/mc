@@ -21,6 +21,8 @@ class ACFMenu
 
         $choices[ 'legal-country-football' ] = '[ football ] Sports';
 
+        $choices[ 'legal-country-payment' ] = '[ payment ] Payment';
+
         $choices[ 'legal-country-bonus' ] = '[ bonus ] Bonuses';
 
         $choices[ 'legal-country-casino' ] = '[ casino ] Casino';
