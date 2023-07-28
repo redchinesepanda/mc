@@ -177,7 +177,7 @@ class ReviewAbout
 
             $afillate_description = '';
 
-            if ( in_array( $locale, self::BONUS_EXCEPTION ) )
+            if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
             {
                 $afillate_description = 'Publicidad | Juego Responsable | +18';
             }
