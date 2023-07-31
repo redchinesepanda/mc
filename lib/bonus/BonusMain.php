@@ -149,7 +149,7 @@ class BonusMain
 			{
 				$post_url = get_post_permalink( $post->ID );
 
-				$preview = self::get_thumbnail_src( $post->ID ),
+				$preview = self::get_thumbnail_src( $post->ID );
 
 				$preview[ 'href' ] = $post_url;
 
