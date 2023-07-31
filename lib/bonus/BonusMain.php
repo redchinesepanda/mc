@@ -230,7 +230,7 @@ class BonusMain
 
 		// $posts = get_posts( self::get_args( $atts ) );
 		
-		$duration = get_posts( self::get_args( $atts, 'duration' ) );
+		$posts = get_posts( self::get_args( $atts, 'duration' ) );
 
 		// $duration = self::get_posts_date( $atts );
 
