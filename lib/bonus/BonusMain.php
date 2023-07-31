@@ -78,7 +78,7 @@ class BonusMain
 		'duration' => 'data-okonchaniya',
 	];
 
-	public static function get_args_date( $atts )
+	public static function get_posts_date( $atts )
 	{
 		$query_filter = new DateFieldQueryFilter (
 			// 'expiration_date', // meta key
