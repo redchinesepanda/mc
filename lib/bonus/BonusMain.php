@@ -6,7 +6,9 @@ class BonusMain
     {
         $handler = new self();
 
-        // [legal-bonus post_type='legal_bk_review' taxonomy='page_type' terms='review']
+        // [legal-bonus]
+
+        // [legal-bonus post_type='post' taxonomy='category' terms='bonusy-kz']
 
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
     }
