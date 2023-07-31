@@ -49,13 +49,16 @@ class BonusMain
 		{
 			$details = wp_get_attachment_image_src( $thumbnail_id, 'full' );
 
-			return [
-				'url' => $details[ 0 ],
-
-				'width' => $details[ 1 ],
-
-				'height' => $details[ 2 ],
-			];
+			if ( $details )
+			{
+				return [
+					'url' => $details[ 0 ],
+	
+					'width' => $details[ 1 ],
+	
+					'height' => $details[ 2 ],
+				];
+			}
 		}
 		
 		return '';
