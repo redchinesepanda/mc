@@ -2,6 +2,14 @@
 
 class BonusMain
 {
+	const TEXT = [
+		'bonus-preview' => 'Bonus Preview',
+	];
+
+	const SIZE = [
+		'preview' => 'legal-bonus-preview',
+	];
+
 	public static function register()
     {
         $handler = new self();
@@ -11,6 +19,17 @@ class BonusMain
         // [legal-bonus post_type='post' taxonomy='category' terms='bonusy-kz']
 
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
+
+		add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
+
+		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+    }
+
+	public static function size_label( $sizes )
+    {
+        return array_merge( $sizes, [
+            self::SIZE[ 'preview' ] => __( ReviewMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+        ] );
     }
 
 	const PAIRS = [
@@ -52,7 +71,7 @@ class BonusMain
 			if ( $details )
 			{
 				return [
-					'url' => $details[ 0 ],
+					'src' => $details[ 0 ],
 	
 					'width' => $details[ 1 ],
 	

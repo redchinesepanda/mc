@@ -44,7 +44,9 @@ class ToolLoco
 
                 array_keys( ReviewAnchors::TEXT_ANCHORS ),
                 
-                ReviewAnchors::TEXT_ANCHORS
+                ReviewAnchors::TEXT_ANCHORS,
+
+                BonusMain::TEXT,
             );
 
             foreach ( $lines as $line )
