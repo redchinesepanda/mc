@@ -100,11 +100,13 @@ class BonusMain
 
 		return $query->posts;
 	}
-	public static function get_args( $atts, $mode = 'default' )
+	// public static function get_args( $atts, $mode = 'partner' )
+	
+	public static function get_args( $atts, $mode )
     {
 		$meta_query = [];
 
-		if ( in_array( $mode, [ 'default' ] ) )
+		if ( in_array( $mode, [ 'partner' ] ) )
 		{
 			$meta_query = [
 				[
@@ -224,11 +226,13 @@ class BonusMain
 	{
 		$items = [];
 
-		// $posts = get_posts( self::get_args( $atts ) );
+		$posts = get_posts( self::get_args( $atts ) );
 		
+		// $posts = get_posts( self::get_args( $atts, 'partner' ) );
+
 		// $posts = get_posts( self::get_args( $atts, 'duration' ) );
 
-		$posts = self::get_posts_date( $atts );
+		// $posts = self::get_posts_date( $atts );
 
 		LegalDebug::debug( [
 			'count' => count( $posts ),
