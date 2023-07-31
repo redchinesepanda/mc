@@ -25,6 +25,7 @@
 .legal-bonus-list .list-item-about {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 20px;
 }
 
 /* Position */
@@ -57,9 +58,12 @@
 	min-height: 210px;
 }
 
-.legal-bonus-list .item-about-title,
+.legal-bonus-list .item-about-title {
+	flex-basis: calc( 70% - 10px );
+}
+
 .legal-bonus-list .item-about-size {
-	width: 50%;
+	flex-basis: calc( 30% - 10px );
 }
 
 .legal-bonus-list .item-about-get {
