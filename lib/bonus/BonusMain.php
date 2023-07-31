@@ -100,9 +100,9 @@ class BonusMain
 				[
 					'key' => self::FIELD[ 'afillate' ],
 					
-					'value' => '',
+					'value' => [ '', '#' ],
         			
-					'compare' => '!=',
+					'compare' => 'NOT IN,',
 				],
 			],
         ];
