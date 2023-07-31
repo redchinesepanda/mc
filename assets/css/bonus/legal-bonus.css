@@ -19,6 +19,6 @@
 /* Background */
 
 .legal-bonus-list .bonus-list-item {
-	border-color: 0.8px solid rgba(0, 0, 0, 0.12);
+	border-color: solid 0.8px rgba(0, 0, 0, 0.12);
 	border-radius: 7px;
 }
