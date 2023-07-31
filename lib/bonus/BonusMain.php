@@ -109,7 +109,7 @@ class BonusMain
 		}
 		
 		return [
-			'src' => LegalMain::LEGAL_URL . 'assets/img/bonus/bonus-preview-default.webp',
+			'src' => LegalMain::LEGAL_URL . '/assets/img/bonus/bonus-preview-default.webp',
 	
 			'width' => '330',
 
@@ -132,7 +132,13 @@ class BonusMain
 			];
 		}
 		
-		return [];
+		return [
+			'src' => LegalMain::LEGAL_URL . '/assets/img/bonus/bonus-logo-default.webp',
+	
+			'width' => '50',
+
+			'height' => '50',
+		];;
 	}
 
 	const FIELD = [
