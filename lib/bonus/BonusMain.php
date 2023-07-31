@@ -80,7 +80,7 @@ class BonusMain
 
 	public static function get_posts_date( $atts )
 	{
-		$query_filter = new DateFieldQueryFilter (
+		$query_filter = new ToolDate (
 			// 'expiration_date', // meta key
 			
 			self::FIELD[ 'duration' ],
