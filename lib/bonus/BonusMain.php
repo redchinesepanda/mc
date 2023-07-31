@@ -117,11 +117,13 @@ class BonusMain
 			$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 		}
 
-		// LegalDebug::debug( [
-		// 	'mode' => $mode,
+		LegalDebug::debug( [
+			'mode' => $mode,
 
-		// 	'compare' => $compare,
-		// ] );
+			'compare' => $compare,
+
+			'query_filter' => $query_filter,
+		] );
 
 		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
