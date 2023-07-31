@@ -85,6 +85,8 @@ class BilletMega
 		'no-controls' => 'no-controls',
 
 		'author' => 'author',
+
+		'horizontal' => 'horizontal',
 	];
 	
 	public static function get_iamge( $id )
@@ -146,7 +148,7 @@ class BilletMega
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
 
-		$no_controls = in_array( $atts[ 'mode' ], [ self::MODE[ 'no-controls' ], self::MODE[ 'image' ], self::MODE[ 'author' ] ] ) ? true : false;
+		$no_controls = in_array( $atts[ 'mode' ], [ self::MODE[ 'no-controls' ], self::MODE[ 'image' ], self::MODE[ 'author' ] ], self::MODE[ 'horizontal' ] ] ) ? true : false;
 
 		// LegalDebug::debug( [
 		// 	'atts' => $atts,
@@ -166,7 +168,7 @@ class BilletMega
 
 		$author = [];
 
-		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ] ] ) )
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'default' ], self::MODE[ 'no-controls' ], self::MODE[ 'horizontal' ] ] ) )
 		{
 			$group = get_field( BilletMain::FIELD[ 'about' ], $atts[ 'id' ] );
 	
