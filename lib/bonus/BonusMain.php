@@ -134,18 +134,20 @@ class BonusMain
 			];
 		}
 
-		// if ( in_array( $mode, [ 'duration' ] ) )
-		// {
-		// 	$meta_query = [
-		// 		[
-		// 			'key' => self::FIELD[ 'duration' ],
+		if ( in_array( $mode, [ 'duration' ] ) )
+		{
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'duration' ],
 					
-		// 			'value' => [ '', '#' ],
+					'value' => date( 'd/m/Y' ),
 					
-		// 			'compare' => 'IN',
-		// 		],
-		// 	];
-		// }
+					'compare' => '<',
+
+					'type' => 'date',
+				],
+			];
+		}
 
 		return [
             'numberposts' => -1,
@@ -226,7 +228,7 @@ class BonusMain
 
 		$posts = get_posts( self::get_args( $atts ) );
 
-		$duration = self::get_posts_date( $atts );
+		// $duration = self::get_posts_date( $atts );
 
 		if ( !empty( $posts ) )
 		{
