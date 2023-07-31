@@ -127,7 +127,8 @@
 /* Width and Height */
 
 .legal-billet-mega.legal-default .mega-about-logo,
-.legal-billet-mega.legal-no-controls .mega-about-logo {
+.legal-billet-mega.legal-no-controls .mega-about-logo,
+.legal-billet-mega.legal-horizontal .mega-about-logo {
 	width: 100%;
 	height: 45px;
 }
