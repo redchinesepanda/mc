@@ -52,6 +52,10 @@ class ToolDate {
         $action === 'add'
             ? add_filter('posts_where', $filter)
             : remove_filter('posts_where', $filter);
+
+		LegalDebug::debug( [
+			'this->compare' => $this->compare,
+		] );
     }
 
     private function orderByFilter(string $action) {
