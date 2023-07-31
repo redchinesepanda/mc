@@ -137,6 +137,8 @@ class BonusMain
 
 			'duration' => $duration,
 
+			'compare' => $compare,
+
 			'query_filter' => $query_filter,
 
 			'args' => $args,
