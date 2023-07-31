@@ -74,10 +74,53 @@ class BonusMain
 		'bonus-size' => 'summa',
 		
 		'afillate' => 'ref-ssylka',
+
+		'duration' => 'data-okonchaniya',
 	];
 
-	public static function get_args( $atts )
+	public static function get_args( $atts, $mode = 'default' )
     {
+		$meta_query = [];
+
+		if ( in_array( $mode, [ 'default' ] ) )
+		{
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'NOT IN',
+				],
+			];
+		}
+
+		if ( in_array( $mode, [ 'no-partner' ] ) )
+		{
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'IN',
+				],
+			];
+		}
+
+		if ( in_array( $mode, [ 'duration' ] ) )
+		{
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'duration' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'IN',
+				],
+			];
+		}
+
 		return [
             'numberposts' => -1,
             
@@ -96,15 +139,7 @@ class BonusMain
 				'terms' => $atts[ 'terms' ],
 			],
 
-			'meta_query' => [
-				[
-					'key' => self::FIELD[ 'afillate' ],
-					
-					'value' => [ '', '#' ],
-        			
-					'compare' => 'NOT IN',
-				],
-			],
+			'meta_query' => $meta_query,
         ];
     }
 

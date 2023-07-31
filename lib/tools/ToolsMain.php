@@ -22,6 +22,8 @@ require_once( 'ToolPrint.php' );
 
 require_once( 'ToolTransiterate.php' );
 
+require_once( 'ToolDate.php' );
+
 // require_once( 'ToolNotFound.php' );
 
 class ToolsMain
@@ -40,7 +42,7 @@ class ToolsMain
         
         ToolSitemap::register();
 
-        // ToolNotFound::register();
+        ToolDate::register();
     }
 }
 
