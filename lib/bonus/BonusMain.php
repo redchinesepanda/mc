@@ -172,6 +172,14 @@ class BonusMain
 			],
 
 			'meta_query' => $meta_query,
+
+			'orderby' => [
+				'menu_order' => 'ASC',
+
+				'modified' => 'DESC',
+
+				'title' => 'ASC',
+			],
         ];
     }
 
