@@ -38,10 +38,11 @@
 
 /* Background */
 
-.legal-bonus-list .bonus-list-item {
-	border-radius: 7px;
+.legal-bonus-list .item-image {
+	border-radius: 7px 7px 0px 0px;
 }
 
 .legal-bonus-list .list-item-about {
 	border: 0.8px solid rgba(0, 0, 0, 0.12);
+	border-radius: 0px 0px 7px 7px;
 }
