@@ -120,7 +120,7 @@ class BonusMain
 		LegalDebug::debug( [
 			'mode' => $mode,
 
-			// 'compare' => $compare,
+			'duration' => $duration,
 
 			'query_filter' => $query_filter,
 		] );
