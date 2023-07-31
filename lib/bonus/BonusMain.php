@@ -132,9 +132,9 @@ class BonusMain
 		// 	'args' => $args,
 		// ] );
 		
-		// $query = $query_filter->createWpQuery( $args );
+		$query = $query_filter->createWpQuery( $args );
 		
-		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
