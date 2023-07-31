@@ -22,6 +22,11 @@
 	justify-content: end;
 }
 
+.legal-bonus-list .list-item-about {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 /* Position */
 
 .legal-bonus-list .list-item-about {
@@ -50,6 +55,15 @@
 
 .legal-bonus-list .list-item-about {
 	min-height: 210px;
+}
+
+.legal-bonus-list .item-about-title,
+.legal-bonus-list .item-about-size {
+	width: 50%;
+}
+
+.legal-bonus-list .item-about-get {
+	width: 100%;
 }
 
 /* Background */
