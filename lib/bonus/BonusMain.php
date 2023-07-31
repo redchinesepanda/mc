@@ -161,6 +161,8 @@ class BonusMain
 		// }
 
 		return [
+			'posts_per_page' => -1,
+
             'numberposts' => -1,
             
             'post_type' => $atts[ 'post_type' ],
