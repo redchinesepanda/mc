@@ -51,7 +51,14 @@ class BonusMain
 		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
     }
+
+	public static function legal_posts_order() 
+	{
+		add_post_type_support( 'post', 'page-attributes' );
+	}
 
 	public static function size_label( $sizes )
     {
