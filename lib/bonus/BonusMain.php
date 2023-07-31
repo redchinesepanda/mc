@@ -85,9 +85,9 @@ class BonusMain
 			
 			self::FIELD[ 'duration' ],
 
-			// date('M j, Y'),    // meta value
+			date('M j, Y'),    // meta value
 
-			date( 'd/m/Y' ),
+			// date( 'd/m/Y' ),
 
 			// '%b %e, %Y',       // date format using MySQL placeholders
 
