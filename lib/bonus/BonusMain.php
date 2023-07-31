@@ -228,9 +228,9 @@ class BonusMain
 
 		// $posts = get_posts( self::get_args( $atts ) );
 		
-		$posts = get_posts( self::get_args( $atts, 'partner' ) );
+		// $posts = get_posts( self::get_args( $atts, 'partner' ) );
 
-		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
+		$posts = get_posts( self::get_args( $atts, 'no-partner' ) );
 
 		// $posts = self::get_posts_date( $atts );
 
