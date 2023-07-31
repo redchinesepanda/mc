@@ -29,12 +29,24 @@ class ToolDate {
     }
 
     public function createWpQuery(array $args = []): \WP_Query {
+
+		LegalDebug::debug( [
+			'this->compare' => $this->compare,
+		] );
         $args['meta_key'] = $this->date_key;
         $this->whereFilter('add');
+
+		LegalDebug::debug( [
+			'this->compare' => $this->compare,
+		] );
         $this->order_by_meta and $this->orderByFilter('add');
         $query = new \WP_Query($args);
         $this->whereFilter('remove');
         $this->order_by_meta and $this->orderByFilter('remove');
+
+		LegalDebug::debug( [
+			'this->compare' => $this->compare,
+		] );
         return $query;
     }
 
@@ -52,10 +64,6 @@ class ToolDate {
         $action === 'add'
             ? add_filter('posts_where', $filter)
             : remove_filter('posts_where', $filter);
-
-		LegalDebug::debug( [
-			'this->compare' => $this->compare,
-		] );
     }
 
     private function orderByFilter(string $action) {
