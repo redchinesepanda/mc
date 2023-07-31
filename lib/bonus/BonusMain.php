@@ -31,7 +31,7 @@ class BonusMain
     {
         $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'post' ] );
+        $permission_post_type = is_singular( [ 'page' ] );
         
         return $permission_admin && $permission_post_type;
     }
