@@ -81,28 +81,22 @@ class BonusMain
 	public static function get_posts_date( $atts )
 	{
 		$query_filter = new ToolDate (
-			// 'expiration_date', // meta key
-			
 			self::FIELD[ 'duration' ],
-
-			// date('M j, Y'),    // meta value
-
-			// date( 'd/m/Y' ),
 
 			date( 'Y-m-d' ),
 
-			// '%b %e, %Y',       // date format using MySQL placeholders
-
 			'%d/%m/%Y',
 
-			'<'                // comparison to use
+			'<'
 		);
 		
 		$query = $query_filter->orderByMeta( 'DESC' )->createWpQuery( self::get_args( $atts, 'duration' ) );
 
-		LegalDebug::debug( [
-			'query' => $query,
-		] );
+		// LegalDebug::debug( [
+		// 	'query' => $query,
+		// ] );
+
+		return $query->posts;
 	}
 	public static function get_args( $atts, $mode = 'default' )
     {
