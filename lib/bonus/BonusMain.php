@@ -96,7 +96,7 @@ class BonusMain
 			'<'                // comparison to use
 		);
 		
-		$query = $query_filter->orderByMeta( 'DESC' )->createWpQuery( get_args( $atts, 'duration' ) );
+		$query = $query_filter->orderByMeta( 'DESC' )->createWpQuery( self::get_args( $atts, 'duration' ) );
 
 		LegalDebug::debug( [
 			'query' => $query,
