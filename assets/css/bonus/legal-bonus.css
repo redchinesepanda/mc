@@ -1,10 +1,6 @@
 @media screen and ( min-width: 768px ) {
 	
-	/* Width and Height */
-
-	.legal-bonus-list .bonus-list-item {
-		flex-basis: 330px;
-	}
+	
 
 }
 
@@ -13,4 +9,10 @@
 .legal-bonus-list {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+/* Width and Height */
+
+.legal-bonus-list .bonus-list-item {
+	flex-basis: 330px;
 }
