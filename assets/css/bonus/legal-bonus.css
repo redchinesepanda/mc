@@ -49,6 +49,10 @@
 	margin-top: auto;
 }
 
+.legal-bonus-list .about-get-button {
+	padding: 50px 15px 22px 15px;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
@@ -91,14 +95,16 @@
 	border-radius: 50%
 }
 
-.legal-bonus-list .item-about-get {
-	background-color: rgb(89, 151, 227);
-	border: 1.6px solid rgb(255, 255, 255);
-	border-radius: 20px;
+.legal-bonus-list .about-get-button {
 	background-image: url( '../../img/bonus/bonus-get.svg' );
 	background-position: left 25px center;
 	background-repeat: no-repeat;
 	background-size: auto;
+}
+
+.legal-bonus-list .about-get-button {
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
 }
 
 /* Typography */
