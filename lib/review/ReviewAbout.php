@@ -68,7 +68,10 @@ class ReviewAbout
         //     'style_item' => $style_item,
         // ] );
 
-        $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
+        if ( !empty( $style_item[ 'background' ] ) )
+        {
+            $style[] = '.legal-highlight { background-color: ' . $style_item[ 'background' ] .'; }';
+        }
 
         return implode( ' ', $style ); 
     }
