@@ -147,16 +147,26 @@ class BonusMain
 		{
 			foreach ( $posts as $post )
 			{
+				$post_url = get_post_permalink( $post->ID );
+
+				$preview = self::get_thumbnail_src( $post->ID ),
+
+				$preview[ 'href' ] = $post_url;
+
 				$items[] = [
 					'id' => $post->ID,
 
-					'preview' => self::get_thumbnail_src( $post->ID ),
+					'preview' => $preview,
 
 					// 'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
 					
 					'logo' => self::get_logo( $post->ID ),
 
-					'title' => $post->post_title,
+					'title' => [
+						'label' => $post->post_title,
+
+						'href' => $post_url,
+					],
 
 					'size' => get_field( self::FIELD[ 'bonus-size' ], $post->ID ),
 
