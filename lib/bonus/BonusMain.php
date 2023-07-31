@@ -108,6 +108,10 @@ class BonusMain
 			$compare = '<';
 		}
 
+		LegalDebug::debug( [
+			'compare' => $compare,
+		] );
+
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
 		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
