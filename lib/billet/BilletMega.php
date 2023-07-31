@@ -148,7 +148,7 @@ class BilletMega
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
 
-		$no_controls = in_array( $atts[ 'mode' ], [ self::MODE[ 'no-controls' ], self::MODE[ 'image' ], self::MODE[ 'author' ] ], self::MODE[ 'horizontal' ] ] ) ? true : false;
+		$no_controls = in_array( $atts[ 'mode' ], [ self::MODE[ 'no-controls' ], self::MODE[ 'image' ], self::MODE[ 'author' ], self::MODE[ 'horizontal' ] ] ) ? true : false;
 
 		// LegalDebug::debug( [
 		// 	'atts' => $atts,
