@@ -39,7 +39,10 @@ class ToolDate {
     }
 
     private function whereFilter(string $action) {
-        static $filter;
+        // static $filter;
+
+		$filter = '';
+
         if (! $filter && $action === 'add') {
             $filter = function ($where) {
                 global $wpdb;
