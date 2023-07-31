@@ -262,6 +262,10 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
+.legal-billet-mega.legal-horizontal .billet-mega-content p {
+	text-align: center;
+}
+
 .legal-billet-mega.legal-horizontal .billet-mega-content a {
 	font-family: "Source Sans Pro";
 	font-size: 16px;
