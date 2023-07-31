@@ -102,7 +102,7 @@ class BonusMain
 	}
 	// public static function get_args( $atts, $mode = 'partner' )
 	
-	public static function get_args( $atts, $mode )
+	public static function get_args( $atts, $mode = '' )
     {
 		$meta_query = [];
 
