@@ -113,6 +113,12 @@ class BonusMain
 		] );
 
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+
+		$args = self::get_args( $atts, $mode );
+
+		LegalDebug::debug( [
+			'args' => $args,
+		] );
 		
 		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
 
@@ -168,7 +174,7 @@ class BonusMain
 
 			'suppress_filters' => 0,
             
-            'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
+            // 'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
 			'tax_query' => [
 
