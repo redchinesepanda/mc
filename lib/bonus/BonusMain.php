@@ -99,6 +99,10 @@ class BonusMain
 			'meta_query' => [
 				[
 					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => '',
+        			
+					'compare' => '=!',
 				],
 			],
         ];
