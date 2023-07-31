@@ -287,7 +287,7 @@ class BilletMega
 						
 						'selector' => 'p',
 
-						'classes' => self::BONUS_CLASS[ 'license' ],
+						'classes' => self::CLASSES[ 'license' ],
 					],
 
 					[
@@ -295,7 +295,7 @@ class BilletMega
 						
 						'selector' => 'a',
 
-						'classes' => self::BONUS_CLASS[ 'button' ],
+						'classes' => self::CLASSES[ 'button' ],
 					],
 				],
 			],
