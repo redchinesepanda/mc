@@ -99,9 +99,9 @@ class BonusMain
 			'>'
 		);
 		
-		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
+		$query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
 
