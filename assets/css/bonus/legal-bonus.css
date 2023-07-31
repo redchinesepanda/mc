@@ -29,6 +29,10 @@
 	align-items: center;
 }
 
+.legal-bonus-list .about-get-button {
+	display: inline-block;
+}
+
 /* Position */
 
 .legal-bonus-list .list-item-about {
@@ -50,7 +54,7 @@
 }
 
 .legal-bonus-list .about-get-button {
-	padding: 50px 15px 22px 15px;
+	padding: 15px 22px 15px 50px;
 }
 
 /* Width and Height */
@@ -77,6 +81,10 @@
 
 .legal-bonus-list .item-about-get {
 	width: 100%;
+}
+
+.legal-bonus-list .about-get-button {
+	width: fit-content;
 }
 
 /* Background */
