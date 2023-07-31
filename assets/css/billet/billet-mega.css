@@ -194,6 +194,10 @@
 	background-image: linear-gradient(to left, #eff5fb, #fdfdfd);
 }
 
+.legal-billet-mega.legal-horizontal .billet-mega-content a {
+	background: unset;
+}
+
 /* Typography */
 
 .legal-billet-mega .mega-about-afillate {
