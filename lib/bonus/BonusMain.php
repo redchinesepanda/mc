@@ -99,9 +99,9 @@ class BonusMain
 			'>'
 		);
 		
-		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
-		$query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
 
@@ -249,9 +249,9 @@ class BonusMain
 		
 		// $posts = get_posts( self::get_args( $atts, 'partner' ) );
 
-		$posts = get_posts( self::get_args( $atts, 'no-partner' ) );
+		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
 
-		// $posts = self::get_posts_date( $atts );
+		$posts = self::get_posts_date( $atts );
 
 		LegalDebug::debug( [
 			'count' => count( $posts ),
