@@ -89,7 +89,7 @@ class BonusMain
 
 			// date( 'd/m/Y' ),
 
-			date(),
+			date( 'd-m-Y' ),
 
 			// '%b %e, %Y',       // date format using MySQL placeholders
 
@@ -134,22 +134,22 @@ class BonusMain
 			];
 		}
 
-		if ( in_array( $mode, [ 'duration' ] ) )
-		{
-			$meta_query = [
-				[
-					'key' => self::FIELD[ 'duration' ],
+		// if ( in_array( $mode, [ 'duration' ] ) )
+		// {
+		// 	$meta_query = [
+		// 		[
+		// 			'key' => self::FIELD[ 'duration' ],
 					
-					'value' => date( 'd/m/Y' ),
+		// 			'value' => date( 'd/m/Y' ),
 					
-					'compare' => '<',
+		// 			'compare' => '<',
 					
-					// 'compare' => '>',
+		// 			// 'compare' => '>',
 
-					'type' => 'date',
-				],
-			];
-		}
+		// 			'type' => 'date',
+		// 		],
+		// 	];
+		// }
 
 		return [
             'numberposts' => -1,
