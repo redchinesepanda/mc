@@ -102,7 +102,7 @@ class BonusMain
 					
 					'value' => [ '', '#' ],
         			
-					'compare' => 'NOT IN,',
+					'compare' => 'NOT IN',
 				],
 			],
         ];
