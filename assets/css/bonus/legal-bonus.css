@@ -16,6 +16,12 @@
 	gap: 30px;
 }
 
+.legal-bonus-list .bonus-list-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
@@ -24,6 +30,10 @@
 
 .legal-bonus-list .item-image {
 	min-height: 190px;
+}
+
+.legal-bonus-list .list-item-about {
+	min-height: 210px;
 }
 
 /* Background */
