@@ -100,7 +100,7 @@ class BonusMain
 				[
 					'key' => self::FIELD[ 'afillate' ],
 				],
-			];
+			],
         ];
     }
 
