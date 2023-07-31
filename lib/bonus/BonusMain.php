@@ -89,7 +89,7 @@ class BonusMain
 
 			// date( 'd/m/Y' ),
 
-			date( 'd-m-Y' ),
+			date( 'Y-m-d' ),
 
 			// '%b %e, %Y',       // date format using MySQL placeholders
 
