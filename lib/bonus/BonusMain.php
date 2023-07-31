@@ -55,7 +55,7 @@ class BonusMain
 				'width' => $details[ 1 ],
 
 				'height' => $details[ 2 ],
-			]
+			];
 		}
 		
 		return '';
