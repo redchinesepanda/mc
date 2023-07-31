@@ -41,8 +41,6 @@ class ToolsMain
         ToolRewrite::register();
         
         ToolSitemap::register();
-
-        ToolDate::register();
     }
 }
 
