@@ -112,17 +112,19 @@ class BonusMain
 			'compare' => $compare,
 		] );
 
-		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
-
-		$args = self::get_args( $atts, $mode );
-
-		LegalDebug::debug( [
-			'args' => $args,
-		] );
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
-		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
-		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		// $args = self::get_args( $atts, $mode );
+
+		// LegalDebug::debug( [
+		// 	'args' => $args,
+		// ] );
+		
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+
+		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
