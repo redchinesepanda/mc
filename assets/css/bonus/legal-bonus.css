@@ -22,6 +22,18 @@
 	justify-content: end;
 }
 
+/* Position */
+
+.legal-bonus-list .list-item-about {
+	position: relative;
+}
+
+.legal-bonus-list .item-logo {
+	position: absolute;
+	left: 0px;
+	top: -25px;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
