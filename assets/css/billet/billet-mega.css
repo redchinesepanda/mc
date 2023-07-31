@@ -130,9 +130,14 @@
     padding-bottom: 30px;
 }
 
-.legal-billet-mega .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
 	padding-top: 0px;
     padding-bottom: 15px;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
+	padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Width and Height */
