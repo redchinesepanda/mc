@@ -101,11 +101,20 @@ class BonusMain
 
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
-		$compare = '>';
+		$query_filter = null;
+
+		// $compare = '>';
+
+		if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
+		{
+			$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
+		}
 
 		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
 		{
-			$compare = '<';
+			// $compare = '<';
+
+			$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 		}
 
 		// LegalDebug::debug( [
@@ -114,9 +123,9 @@ class BonusMain
 		// 	'compare' => $compare,
 		// ] );
 
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
-		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
 		// $args = self::get_args( $atts, $mode );
 
