@@ -138,6 +138,7 @@
 .legal-billet-mega.legal-horizontal .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
 	padding-top: 0px;
     padding-bottom: 0px;
+	padding-left: 0px;
 }
 
 /* Width and Height */
