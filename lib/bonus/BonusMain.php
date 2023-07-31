@@ -45,9 +45,11 @@ class BonusMain
 
 	public static function get_thumbnail_src( $id )
 	{
-		if ( has_post_thumbnail( $id ) )
+		$thumbnail_id = get_post_thumbnail_id( $id );
+
+		if ( $thumbnail_id )
 		{
-			return wp_get_attachment_image_src( get_post_thumbnail_id( $id ) );
+			return wp_get_attachment_image_src( $thumbnail_id );
 		}
 		
 		return '';
