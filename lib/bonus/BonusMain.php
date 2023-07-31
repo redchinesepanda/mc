@@ -142,7 +142,9 @@ class BonusMain
 					
 					'value' => date( 'd/m/Y' ),
 					
-					'compare' => '<',
+					// 'compare' => '<',
+					
+					'compare' => '>',
 
 					'type' => 'date',
 				],
