@@ -38,9 +38,39 @@ class ToolDate {
         return $query;
     }
 
+    // private function whereFilter(string $action) {
+    //     static $filter;
+    //     if (! $filter && $action === 'add') {
+    //         $filter = function ($where) {
+    //             global $wpdb;
+    //             $where and $where .= ' AND ';
+    //             $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+    //             $sql .= "{$this->compare} %s";
+    //             return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
+    //         };
+    //     }
+    //     $action === 'add'
+    //         ? add_filter('posts_where', $filter)
+    //         : remove_filter('posts_where', $filter);
+
+	// 	LegalDebug::debug( [
+	// 		'filter' => $filter,
+	// 	] );
+    // }
+
+	// public static function ( $where )
+	// {
+	// 	global $wpdb;
+	// 	$where and $where .= ' AND ';
+	// 	$sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+	// 	$sql .= "{$this->compare} %s";
+	// 	return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
+	// }
+
     private function whereFilter(string $action) {
         static $filter;
-        if (! $filter && $action === 'add') {
+        // if (! $filter && $action === 'add') {
+        if ( $action === 'add' ) {
             $filter = function ($where) {
                 global $wpdb;
                 $where and $where .= ' AND ';
