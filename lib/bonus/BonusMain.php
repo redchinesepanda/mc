@@ -148,19 +148,19 @@ class BonusMain
 
 		$posts = $query->posts;
 
-		LegalDebug::debug( [
-			'mode' => $mode,
+		// LegalDebug::debug( [
+		// 	'mode' => $mode,
 
-			'duration' => $duration,
+		// 	'duration' => $duration,
 
-			'compare' => $compare,
+		// 	'compare' => $compare,
 
-			'query_filter' => $query_filter,
+		// 	'query_filter' => $query_filter,
 
-			'args' => $args,
+		// 	'args' => $args,
 
-			'count' => count( $posts ),
-		] );
+		// 	'count' => count( $posts ),
+		// ] );
 
 		return $posts;
 	}
