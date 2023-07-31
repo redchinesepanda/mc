@@ -252,11 +252,11 @@ class BonusMain
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
-		// $active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
-		
-		$posts = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
 
-		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+		// $expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+		
+		$posts = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
 		// $posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
