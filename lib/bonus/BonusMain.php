@@ -230,6 +230,10 @@ class BonusMain
 
 		$posts = self::get_posts_date( $atts );
 
+		LegalDebug::debug( [
+			'count' => count( $posts ),
+		] )
+
 		if ( !empty( $posts ) )
 		{
 			foreach ( $posts as $post )
