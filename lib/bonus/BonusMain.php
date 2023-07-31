@@ -131,18 +131,6 @@ class BonusMain
 		// LegalDebug::debug( [
 		// 	'args' => $args,
 		// ] );
-
-		LegalDebug::debug( [
-			'mode' => $mode,
-
-			'duration' => $duration,
-
-			'compare' => $compare,
-
-			'query_filter' => $query_filter,
-
-			'args' => $args,
-		] );
 		
 		$query = $query_filter->createWpQuery( $args );
 		
@@ -158,7 +146,23 @@ class BonusMain
 		// 	'query' => $query,
 		// ] );
 
-		return $query->posts;
+		$posts = $query->posts;
+
+		LegalDebug::debug( [
+			'mode' => $mode,
+
+			'duration' => $duration,
+
+			'compare' => $compare,
+
+			'query_filter' => $query_filter,
+
+			'args' => $args,
+
+			'count' => count( $posts ),
+		] );
+
+		return $posts;
 	}
 	
 	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
