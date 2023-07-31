@@ -34,6 +34,10 @@
 	top: -25px;
 }
 
+.legal-bonus-list .list-item-about {
+	padding: 30px 15px 15px 15px;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
