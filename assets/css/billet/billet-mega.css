@@ -198,6 +198,13 @@
 	background: unset;
 }
 
+.legal-billet-mega .legal-license {
+	background-image: url( '../../img/billet/mega/mega-license.svg' );
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
 /* Typography */
 
 .legal-billet-mega .mega-about-afillate {
