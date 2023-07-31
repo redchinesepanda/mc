@@ -109,6 +109,8 @@ class BonusMain
 		}
 
 		LegalDebug::debug( [
+			'mode' => $mode,
+			
 			'compare' => $compare,
 		] );
 
