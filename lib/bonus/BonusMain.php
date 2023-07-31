@@ -245,9 +245,9 @@ class BonusMain
 	{
 		$items = [];
 
-		$posts = get_posts( self::get_args( $atts ) );
+		// $posts = get_posts( self::get_args( $atts ) );
 		
-		// $posts = get_posts( self::get_args( $atts, 'partner' ) );
+		$posts = get_posts( self::get_args( $atts, 'partner' ) );
 
 		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
 
