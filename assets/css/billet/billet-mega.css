@@ -18,7 +18,8 @@
 
 	.legal-billet-mega.legal-default .billet-mega-about,
 	.legal-billet-mega.legal-image .billet-mega-about,
-	.legal-billet-mega.legal-no-controls .billet-mega-about {
+	.legal-billet-mega.legal-no-controls .billet-mega-about,
+	.legal-billet-mega.legal-horizontal .billet-mega-about {
 		width: calc( 20% - 36px );
 	}
 
@@ -28,7 +29,8 @@
 
 	.legal-billet-mega.legal-default .billet-mega-content,
 	.legal-billet-mega.legal-image .billet-mega-content,
-	.legal-billet-mega.legal-no-controls .billet-mega-content {
+	.legal-billet-mega.legal-no-controls .billet-mega-content,
+	.legal-billet-mega.legal-horizontal .billet-mega-about {
 		width: calc( 80% - 15px );
 	}
 
