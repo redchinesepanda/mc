@@ -101,21 +101,31 @@ class BonusMain
 
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
-		$query_filter = null;
+		// $query_filter = null;
 
 		// $compare = '>';
 
-		if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
-		{
-			$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
-		}
+		// if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
+		// {
+		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
+		// }
 
-		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-		{
-			// $compare = '<';
+		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		// {
+		// 	// $compare = '<';
 
-			$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
-		}
+		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
+		// }
+
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+		
+		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
+
+		// $args = self::get_args( $atts, $mode );
+
+		// LegalDebug::debug( [
+		// 	'args' => $args,
+		// ] );
 
 		LegalDebug::debug( [
 			'mode' => $mode,
@@ -124,16 +134,6 @@ class BonusMain
 
 			'query_filter' => $query_filter,
 		] );
-
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
-		
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
-
-		// $args = self::get_args( $atts, $mode );
-
-		// LegalDebug::debug( [
-		// 	'args' => $args,
-		// ] );
 		
 		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
 
