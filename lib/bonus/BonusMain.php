@@ -87,16 +87,16 @@ class BonusMain
 
 			'%d/%m/%Y',
 
-			'<'
+			// '<'
 			
-			// '>'
+			'>'
 		);
 		
-		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
-		$query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
 
 		// LegalDebug::debug( [
 		// 	'query' => $query,
