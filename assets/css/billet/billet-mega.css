@@ -145,6 +145,10 @@
 	padding-left: 0px;
 }
 
+.legal-billet-mega .legal-license {
+	padding-right: 21px;
+}
+
 /* Width and Height */
 
 .legal-billet-mega.legal-default .mega-about-logo,
