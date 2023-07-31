@@ -85,21 +85,34 @@ class BonusMain
 		'duration' => 'data-okonchaniya',
 	];
 
-	public static function get_posts_date( $atts )
+	const MODE = [
+		'all' => 'all',
+
+		'partner' => 'partner',
+
+		'no-partner' => 'no-partner',
+	];
+
+	const DURATION = [
+		'actual' => 'actual',
+
+		'expired' => 'expired',
+	];
+
+	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
-		$query_filter = new ToolDate (
-			self::FIELD[ 'duration' ],
+		$compare = '>';
 
-			date( 'Y-m-d' ),
+		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		{
+			$compare = '<';
+		}
 
-			'%d/%m/%Y',
-
-			'<'
-			
-			// '>'
-		);
+		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
-		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+
+		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
@@ -111,13 +124,12 @@ class BonusMain
 
 		return $query->posts;
 	}
-	// public static function get_args( $atts, $mode = 'partner' )
 	
-	public static function get_args( $atts, $mode = 'all' )
+	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
     {
 		$meta_query = [];
 
-		if ( in_array( $mode, [ 'partner' ] ) )
+		if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
 		{
 			$meta_query = [
 				[
@@ -130,7 +142,7 @@ class BonusMain
 			];
 		}
 
-		if ( in_array( $mode, [ 'no-partner' ] ) )
+		if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
 		{
 			$meta_query = [
 				[
@@ -143,27 +155,10 @@ class BonusMain
 			];
 		}
 
-		// if ( in_array( $mode, [ 'duration' ] ) )
-		// {
-		// 	$meta_query = [
-		// 		[
-		// 			'key' => self::FIELD[ 'duration' ],
-					
-		// 			'value' => date( 'd/m/Y' ),
-					
-		// 			'compare' => '<',
-					
-		// 			// 'compare' => '>',
-
-		// 			'type' => 'date',
-		// 		],
-		// 	];
-		// }
-
 		return [
 			'posts_per_page' => -1,
 
-            'numberposts' => -1,
+            // 'numberposts' => -1,
             
             'post_type' => $atts[ 'post_type' ],
 
@@ -253,7 +248,15 @@ class BonusMain
 
 		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
 
-		$posts = self::get_posts_date( $atts );
+		// $posts = self::get_posts_date( $atts );
+		
+		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+
+		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+
+		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+
+		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
 		LegalDebug::debug( [
 			'count' => count( $posts ),
