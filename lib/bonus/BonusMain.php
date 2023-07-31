@@ -82,7 +82,25 @@ class BonusMain
 			}
 		}
 		
-		return '';
+		return [];
+	}
+
+	public static function get_logo( $id )
+	{
+		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
+
+		if ( $logo )
+		{
+			return [
+				'src' => $logo[ 'url' ],
+
+				'width' => $logo[ 'width' ],
+
+				'height' => $logo[ 'height' ],
+			];
+		}
+		
+		return [];
 	}
 
 	const FIELD = [
@@ -108,7 +126,9 @@ class BonusMain
 
 					'preview' => self::get_thumbnail_src( $post->ID ),
 
-					'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
+					// 'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
+					
+					'logo' => self::get_logo( $post->ID ),
 
 					'title' => $post->post_title,
 
