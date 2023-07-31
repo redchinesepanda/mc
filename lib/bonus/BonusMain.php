@@ -66,7 +66,7 @@ class BonusMain
 	{
 		if ( $thumbnail_id = get_post_thumbnail_id( $id ) )
 		{
-			$details = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+			$details = wp_get_attachment_image_src( $thumbnail_id, self::SIZE[ 'preview' ] );
 
 			if ( $details )
 			{
