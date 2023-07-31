@@ -57,7 +57,7 @@
 .legal-billet-mega .billet-mega-about {
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
+	align-items: center;
 }
 
 .legal-billet-mega.legal-image .billet-mega-about,
