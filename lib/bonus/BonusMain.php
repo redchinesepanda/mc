@@ -108,7 +108,13 @@ class BonusMain
 			}
 		}
 		
-		return [];
+		return [
+			'src' => LegalMain::LEGAL_URL . 'assets/img/bonus/bonus-preview-default.webp',
+	
+			'width' => '330',
+
+			'height' => '190',
+		];
 	}
 
 	public static function get_logo( $id )
