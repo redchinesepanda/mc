@@ -64,6 +64,12 @@ class BonusMain
 		return '';
 	}
 
+	const FIELD = [
+		'logo-preview' => 'logo_bk_mini',
+
+		'bonus-size' => 'summa',
+	];
+
 	public static function get_items( $atts )
 	{
 		$items = [];
@@ -79,7 +85,11 @@ class BonusMain
 
 					'title' => $post->post_title,
 
-					'url' => self::get_thumbnail_src( $post->ID ),
+					'preview' => self::get_thumbnail_src( $post->ID ),
+
+					'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
+
+					'size' => get_field( self::FIELD[ 'bonus-size' ], $post->ID ),
 				];
 			}
 		}
