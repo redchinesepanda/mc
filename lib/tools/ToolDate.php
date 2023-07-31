@@ -69,7 +69,7 @@ class ToolDate {
 
     private function whereFilter(string $action) {
         static $filter;
-        // if (! $filter && $action === 'add') {
+
         if ( $action === 'add' ) {
             $filter = function ($where) {
                 global $wpdb;
@@ -82,10 +82,6 @@ class ToolDate {
         $action === 'add'
             ? add_filter('posts_where', $filter)
             : remove_filter('posts_where', $filter);
-
-		LegalDebug::debug( [
-			'filter' => $filter,
-		] );
     }
 
     private function orderByFilter(string $action) {
