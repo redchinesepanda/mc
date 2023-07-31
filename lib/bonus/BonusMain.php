@@ -12,6 +12,30 @@ class BonusMain
 		'preview' => 'legal-bonus-preview',
 	];
 
+	const CSS = [
+        'legal-bonus' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+	public static function register_style()
+    {
+        if ( self::check() ) {
+            ToolEnqueue::register_style( self::CSS );
+        }
+    }
+
+	public static function check()
+    {
+        $permission_admin = !is_admin();
+
+        $permission_post_type = is_singular( [ 'post' ] );
+        
+        return $permission_admin && $permission_post_type;
+    }
+
 	public static function register()
     {
         $handler = new self();
