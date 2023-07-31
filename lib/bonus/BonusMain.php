@@ -4,6 +4,8 @@ class BonusMain
 {
 	const TEXT = [
 		'bonus-preview' => 'Bonus Preview',
+
+		'get-bonus' => 'Get Bonus',
 	];
 
 	const SIZE = [
@@ -87,6 +89,8 @@ class BonusMain
 		'logo-preview' => 'logo_bk_mini',
 
 		'bonus-size' => 'summa',
+		
+		'afillate' => 'ref-ssylka',
 	];
 
 	public static function get_items( $atts )
@@ -102,13 +106,19 @@ class BonusMain
 				$items[] = [
 					'id' => $post->ID,
 
-					'title' => $post->post_title,
-
 					'preview' => self::get_thumbnail_src( $post->ID ),
 
 					'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
 
+					'title' => $post->post_title,
+
 					'size' => get_field( self::FIELD[ 'bonus-size' ], $post->ID ),
+
+					'get' => [
+						'label' => __( ReviewMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+
+						'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+					],
 				];
 			}
 		}
