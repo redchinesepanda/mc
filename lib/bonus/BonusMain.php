@@ -49,6 +49,8 @@ class BonusMain
 		add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
 
 		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	public static function size_label( $sizes )
