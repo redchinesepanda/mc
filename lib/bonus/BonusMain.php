@@ -108,15 +108,15 @@ class BonusMain
 			$compare = '<';
 		}
 
-		LegalDebug::debug( [
-			'mode' => $mode,
+		// LegalDebug::debug( [
+		// 	'mode' => $mode,
 
-			'compare' => $compare,
-		] );
+		// 	'compare' => $compare,
+		// ] );
 
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 		
-		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
 		// $args = self::get_args( $atts, $mode );
 
