@@ -1,8 +1,8 @@
 <?php
 
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
+LegalDebug::debug( [
+	'args' => $args,
+] );
 
 ?>
 <?php if ( !empty( $args[ 'items' ] ) ) : ?>
@@ -13,6 +13,7 @@
 					<img class="item-image" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
 				<?php endif; ?>
 				<div class="list-item-about">
+					<img class="item-logo" src="<?php echo $item[ 'logo' ][ 'src' ]; ?>" width="<?php echo $item[ 'logo' ][ 'width' ]; ?>" height="<?php echo $item[ 'logo' ][ 'height' ]; ?>" />
 					<div class="item-about-title"><?php echo $item[ 'title' ]; ?></div>
 					<div class="item-about-size"><?php echo $item[ 'size' ]; ?></div>
 					<div class="item-about-get">
