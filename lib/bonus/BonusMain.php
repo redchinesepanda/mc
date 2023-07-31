@@ -30,7 +30,7 @@ class BonusMain
 	public static function size_label( $sizes )
     {
         return array_merge( $sizes, [
-            self::SIZE[ 'preview' ] => __( ReviewMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+            self::SIZE[ 'preview' ] => __( self::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
         ] );
     }
 
@@ -115,7 +115,7 @@ class BonusMain
 					'size' => get_field( self::FIELD[ 'bonus-size' ], $post->ID ),
 
 					'get' => [
-						'label' => __( ReviewMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+						'label' => __( self::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
 
 						'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
 					],
