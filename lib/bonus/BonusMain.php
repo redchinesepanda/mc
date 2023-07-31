@@ -232,7 +232,7 @@ class BonusMain
 
 		LegalDebug::debug( [
 			'count' => count( $posts ),
-		] )
+		] );
 
 		if ( !empty( $posts ) )
 		{
