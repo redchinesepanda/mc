@@ -87,7 +87,9 @@ class BonusMain
 
 			'%d/%m/%Y',
 
-			'<'
+			// '<'
+			
+			'>'
 		);
 		
 		$query = $query_filter->orderByMeta( 'DESC' )->createWpQuery( self::get_args( $atts, 'duration' ) );
