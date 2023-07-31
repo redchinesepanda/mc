@@ -90,7 +90,7 @@ class BonusMain
         ];
     }
 
-	public static function get_thumbnail_src( $id )
+	public static function get_thumbnail( $id )
 	{
 		if ( $thumbnail_id = get_post_thumbnail_id( $id ) )
 		{
@@ -149,9 +149,12 @@ class BonusMain
 			{
 				$post_url = get_post_permalink( $post->ID );
 
-				$preview = self::get_thumbnail_src( $post->ID );
+				$preview = self::get_thumbnail( $post->ID );
 
-				$preview[ 'href' ] = $post_url;
+				if ( !empty( $preview ) )
+				{
+					$preview[ 'href' ] = $post_url;
+				}
 
 				$items[] = [
 					'id' => $post->ID,
