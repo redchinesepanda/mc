@@ -121,7 +121,7 @@ class BonusMain
 		
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
-		// $args = self::get_args( $atts, $mode );
+		$args = self::get_args( $atts, $mode );
 
 		// LegalDebug::debug( [
 		// 	'args' => $args,
@@ -133,9 +133,13 @@ class BonusMain
 			'duration' => $duration,
 
 			'query_filter' => $query_filter,
+
+			'args' => $args,
 		] );
 		
-		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+		$query = $query_filter->createWpQuery( $args );
+		
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
