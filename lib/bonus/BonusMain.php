@@ -110,7 +110,7 @@ class BonusMain
 
 		LegalDebug::debug( [
 			'mode' => $mode,
-			
+
 			'compare' => $compare,
 		] );
 
@@ -124,9 +124,9 @@ class BonusMain
 		// 	'args' => $args,
 		// ] );
 		
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+		$query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
 
-		$query = $query_filter->createWpQuery( self::get_args( $atts ) );
+		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
 
 		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
 
