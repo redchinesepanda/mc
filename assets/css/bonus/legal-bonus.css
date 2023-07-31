@@ -45,6 +45,10 @@
 	padding: 30px 15px 15px 15px;
 }
 
+.legal-bonus-list .item-about-get {
+	margin-top: auto;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
