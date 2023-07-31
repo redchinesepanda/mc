@@ -202,6 +202,10 @@
 	background-image: linear-gradient(to left, #eff5fb, #fdfdfd);
 }
 
+.legal-billet-mega.legal-horizontal {
+	background-color: #fff;
+}
+
 .legal-billet-mega.legal-horizontal .billet-mega-content a {
 	background: unset;
 }
