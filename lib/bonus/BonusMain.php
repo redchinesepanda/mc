@@ -218,7 +218,7 @@ class BonusMain
 			'meta_query' => $meta_query,
 
 			'orderby' => [
-				'menu_order' => 'ASC',
+				'menu_order' => 'DESC',
 
 				'modified' => 'DESC',
 
