@@ -40,9 +40,6 @@ class ToolDate {
 
     private function whereFilter(string $action) {
         static $filter;
-
-		$filter = '';
-
         if (! $filter && $action === 'add') {
             $filter = function ($where) {
                 global $wpdb;
@@ -52,10 +49,6 @@ class ToolDate {
                 return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
             };
         }
-		// else {
-		// 	$filter = '';
-		// }
-
         $action === 'add'
             ? add_filter('posts_where', $filter)
             : remove_filter('posts_where', $filter);
