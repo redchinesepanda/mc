@@ -15,18 +15,10 @@ class ToolDate {
         string $mysql_format,
         string $compare = '='
     ) {
-		LegalDebug::debug( [
-			'compare' => $compare,
-		] );
-
-        $this->date_key   = $date_key;
+		$this->date_key   = $date_key;
         $this->date_value = $date_value;
         $this->format     = $mysql_format;
         in_array($compare, self::COMPARE_TYPES, TRUE) and $this->compare = $compare;
-
-		LegalDebug::debug( [
-			'this->compare' => $this->compare,
-		] );
     }
 
     public function orderByMeta(string $direction = 'DESC'): ToolDate {
