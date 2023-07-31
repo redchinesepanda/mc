@@ -30,7 +30,7 @@
 
 .legal-bonus-list .item-logo {
 	position: absolute;
-	left: 0px;
+	left: 24px;
 	top: -25px;
 }
 
@@ -57,4 +57,9 @@
 .legal-bonus-list .list-item-about {
 	border: 0.8px solid rgba(0, 0, 0, 0.12);
 	border-radius: 0px 0px 7px 7px;
+}
+
+.legal-bonus-list .item-logo {
+	border: 1.6px solid rgb(255, 255, 255);
+	border-radius: 50%
 }
