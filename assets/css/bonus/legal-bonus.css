@@ -22,6 +22,10 @@
 	min-height: 400px;
 }
 
+.legal-bonus-list .item-image {
+	min-height: 190px;
+}
+
 /* Background */
 
 .legal-bonus-list .bonus-list-item {
