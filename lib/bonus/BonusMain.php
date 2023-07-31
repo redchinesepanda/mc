@@ -78,6 +78,30 @@ class BonusMain
 		'duration' => 'data-okonchaniya',
 	];
 
+	public static function get_args_date( $atts )
+	{
+		$query_filter = new DateFieldQueryFilter (
+			// 'expiration_date', // meta key
+			
+			self::FIELD[ 'duration' ],
+
+			// date('M j, Y'),    // meta value
+
+			date( 'd/m/Y' ),
+
+			// '%b %e, %Y',       // date format using MySQL placeholders
+
+			'%d/%m/%Y',
+
+			'<'                // comparison to use
+		);
+		
+		$query = $query_filter->orderByMeta( 'DESC' )->createWpQuery( get_args( $atts, 'duration' ) );
+
+		LegalDebug::debug( [
+			'query' => $query,
+		] );
+	}
 	public static function get_args( $atts, $mode = 'default' )
     {
 		$meta_query = [];
@@ -108,18 +132,18 @@ class BonusMain
 			];
 		}
 
-		if ( in_array( $mode, [ 'duration' ] ) )
-		{
-			$meta_query = [
-				[
-					'key' => self::FIELD[ 'duration' ],
+		// if ( in_array( $mode, [ 'duration' ] ) )
+		// {
+		// 	$meta_query = [
+		// 		[
+		// 			'key' => self::FIELD[ 'duration' ],
 					
-					'value' => [ '', '#' ],
+		// 			'value' => [ '', '#' ],
 					
-					'compare' => 'IN',
-				],
-			];
-		}
+		// 			'compare' => 'IN',
+		// 		],
+		// 	];
+		// }
 
 		return [
             'numberposts' => -1,
@@ -199,6 +223,8 @@ class BonusMain
 		$items = [];
 
 		$posts = get_posts( self::get_args( $atts ) );
+
+		$duration = self::get_posts_date( $atts );
 
 		if ( !empty( $posts ) )
 		{
