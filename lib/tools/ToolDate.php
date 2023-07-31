@@ -15,6 +15,10 @@ class ToolDate {
         string $mysql_format,
         string $compare = '='
     ) {
+		LegalDebug::debug( [
+			'compare' => $compare,
+		] );
+
         $this->date_key   = $date_key;
         $this->date_value = $date_value;
         $this->format     = $mysql_format;
