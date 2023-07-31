@@ -16,6 +16,12 @@
 	gap: 30px;
 }
 
+/* Width and Height */
+
+.legal-bonus-list .bonus-list-item {
+	min-height: 400px;
+}
+
 /* Background */
 
 .legal-bonus-list .bonus-list-item {
