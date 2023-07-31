@@ -68,6 +68,14 @@ class BonusMain
 		'terms' => [ 'bonusy-kz' ],
 	];
 
+	const FIELD = [
+		'logo-preview' => 'logo_bk_mini',
+
+		'bonus-size' => 'summa',
+		
+		'afillate' => 'ref-ssylka',
+	];
+
 	public static function get_args( $atts )
     {
 		return [
@@ -87,6 +95,12 @@ class BonusMain
 
 				'terms' => $atts[ 'terms' ],
 			],
+
+			'meta_query' => [
+				[
+					'key' => self::FIELD[ 'afillate' ],
+				],
+			];
         ];
     }
 
@@ -138,16 +152,8 @@ class BonusMain
 			'width' => '50',
 
 			'height' => '50',
-		];;
+		];
 	}
-
-	const FIELD = [
-		'logo-preview' => 'logo_bk_mini',
-
-		'bonus-size' => 'summa',
-		
-		'afillate' => 'ref-ssylka',
-	];
 
 	public static function get_items( $atts )
 	{
