@@ -115,10 +115,10 @@ class BonusMain
 
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
-		// if ( $atts[ 'limit' ] <= 0 )
-		// {
-		// 	return [];
-		// }
+		if ( $atts[ 'limit' ] == 0 )
+		{
+			return [];
+		}
 
 		// $query_filter = null;
 
@@ -371,6 +371,10 @@ class BonusMain
 		{
 			$rest = $atts[ 'limit' ] - count( $expired_all );
 
+			LegalDebug::debug( [
+				'rest' => $rest,
+			] );
+
 			if ( $rest > 0 )
 			{
 				$atts[ 'limit' ] = $rest;
@@ -384,6 +388,10 @@ class BonusMain
 			// $atts[ 'limit' ] -= count( $active_partners );
 
 			$rest = $atts[ 'limit' ] - count( $active_partners );
+
+			LegalDebug::debug( [
+				'rest' => $rest,
+			] );
 
 			if ( $rest > 0 )
 			{
