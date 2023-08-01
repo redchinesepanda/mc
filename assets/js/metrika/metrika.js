@@ -2,6 +2,8 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	console.log( 'ym 86785715 start' );
+
 	if ( !document.body.classList.contains( 'logged-in' ) )
 	{
 		function sendMetric( href ) {
