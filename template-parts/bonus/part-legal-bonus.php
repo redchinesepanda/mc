@@ -10,8 +10,8 @@
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
-					<a class="item-image-link image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
-						<img class="item-image" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
+					<a class="item-image-link" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
+						<img class="item-image  image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
 					</a>
 				<?php endif; ?>
 				<div class="list-item-about">
