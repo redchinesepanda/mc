@@ -10,10 +10,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		function sendMetric( href ) {
 			console.log( 'ym 86785715 sendMetric href: ' + href );
-			
+
 			let prefix = 'goal-';
 
-			if ( this.href.indexOf( '/ca/' ) !== -1 ) {
+			if ( href.indexOf( '/ca/' ) !== -1 ) {
 				prefix += 'casino-';
 			}
 
