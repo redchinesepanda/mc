@@ -81,6 +81,7 @@
 
 .legal-bonus-list .item-about-size {
 	flex-basis: calc( 30% - 25px );
+	flex-grow: 1;
 }
 
 .legal-bonus-list .item-about-get {
