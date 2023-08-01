@@ -300,9 +300,9 @@ class BonusMain
 
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
-		LegalDebug::debug( [
-			'count' => count( $posts ),
-		] );
+		// LegalDebug::debug( [
+		// 	'count' => count( $posts ),
+		// ] );
 
 		if ( !empty( $posts ) )
 		{
