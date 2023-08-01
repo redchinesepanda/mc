@@ -349,21 +349,7 @@ class BonusMain
 	{
 		$items = [];
 
-		// $posts = get_posts( self::get_args( $atts ) );
-		
-		// $posts = get_posts( self::get_args( $atts, 'partner' ) );
-
-		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
-
-		// $posts = self::get_posts_date( $atts );
-
-		LegalDebug::debug( [
-			'limit' => $atts[ 'limit' ],
-		] );
-
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
-
-		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] );
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
@@ -394,14 +380,8 @@ class BonusMain
 		}
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
-		
-		// $posts = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
-
-		// LegalDebug::debug( [
-		// 	'count' => count( $posts ),
-		// ] );
 
 		if ( !empty( $posts ) )
 		{
@@ -420,12 +400,8 @@ class BonusMain
 					'id' => $post->ID,
 
 					'preview' => $preview,
-
-					// 'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
 					
 					'logo' => self::get_logo( $post->ID ),
-					
-					// 'logo' => self::get_thumbnail( $post->ID, self::SIZE[ 'logo' ] ),
 
 					'title' => [
 						'label' => $post->post_title,
