@@ -377,14 +377,6 @@ class BonusMain
 			{
 				$atts[ 'limit' ] = $rest;
 			}
-
-			LegalDebug::debug( [
-				'amount' => $amount,
-
-				'rest' => $rest,
-
-				'limit' => $atts[ 'limit' ],
-			] );
 		}
 
 		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
@@ -399,14 +391,6 @@ class BonusMain
 			{
 				$atts[ 'limit' ] = $rest;
 			}
-
-			LegalDebug::debug( [
-				'amount' => $amount,
-
-				'rest' => $rest,
-
-				'limit' => $atts[ 'limit' ],
-			] );
 		}
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
