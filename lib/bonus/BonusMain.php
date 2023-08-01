@@ -44,9 +44,9 @@ class BonusMain
     {
         $handler = new self();
 
-        // [legal-bonus post_type='post' taxonomy='category' terms='fribety' exclude="fribety-1xbet"]
+        // [legal-bonus post_type='post' taxonomy='category' terms='fribety' exclude="fribety-1xbet" limit=6]
 
-        // [legal-bonus terms='fribety' exclude="fribety-1xbet"]
+        // [legal-bonus terms='fribety' exclude="fribety-1xbet" limit=6]
         
 		// [legal-bonus terms='bonusy-kz']
 
@@ -356,6 +356,10 @@ class BonusMain
 		// $posts = get_posts( self::get_args( $atts, 'no-partner' ) );
 
 		// $posts = self::get_posts_date( $atts );
+
+		LegalDebug::debug( [
+			'limit' => $atts[ 'limit' ],
+		] );
 
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
