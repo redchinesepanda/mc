@@ -115,6 +115,11 @@ class BonusMain
 
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
+		if ( $atts[ 'limit' ] <= 0 )
+		{
+			return [];
+		}
+
 		// $query_filter = null;
 
 		$compare = '>';
@@ -235,9 +240,9 @@ class BonusMain
 		}
 
 		return [
-			'posts_per_page' => -1,
+			'posts_per_page' => $atts[ 'limit' ],
 
-            // 'numberposts' => -1,
+            // 'numberposts' => $atts[ 'limit' ],
             
             'post_type' => $atts[ 'post_type' ],
 
@@ -352,9 +357,21 @@ class BonusMain
 
 		// $posts = self::get_posts_date( $atts );
 
+		$limit = $atts[ 'limit' ] != -1;
+
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+
+		if ( $limit )
+		{
+			$atts[ 'limit' ] -= count( $expired_all );
+		}
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+
+		if ( $limit )
+		{
+			$atts[ 'limit' ] -= count( $active_partners );
+		}
 
 		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
 		
