@@ -58,45 +58,73 @@ class ToolDate {
 	// 	] );
     // }
 
-	// public static function ( $where )
-	// {
-	// 	global $wpdb;
-	// 	$where and $where .= ' AND ';
-	// 	$sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-	// 	$sql .= "{$this->compare} %s";
-	// 	return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
-	// }
+	public function prepare_filter_where( $where )
+	{
+		global $wpdb;
 
-    private function whereFilter(string $action) {
-        static $filter;
+		$where and $where .= ' AND ';
 
-        if ( $action === 'add' ) {
-            $filter = function ($where) {
-                global $wpdb;
-                $where and $where .= ' AND ';
-                $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-                $sql .= "{$this->compare} %s";
-                return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
-            };
-        }
+		$sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+
+		$sql .= "{$this->compare} %s";
+
+		return $where . $wpdb->prepare( $sql, $this->format, $this->date_value );
+	}
+
+    private function whereFilter( string $action )
+    {
+        // static $filter;
+
+        // if ( $action === 'add' ) {
+        //     $filter = function ($where) {
+        //         global $wpdb;
+        //         $where and $where .= ' AND ';
+        //         $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+        //         $sql .= "{$this->compare} %s";
+        //         return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
+        //     };
+        // }
+
+        // $action === 'add'
+        //     ? add_filter('posts_where', $filter)
+        //     : remove_filter('posts_where', $filter);
+        
         $action === 'add'
-            ? add_filter('posts_where', $filter)
-            : remove_filter('posts_where', $filter);
+            ? add_filter( 'posts_where', [ $this, 'prepare_filter_where' ] )
+            : remove_filter( 'posts_where', [ $this, 'prepare_filter_where' ] );
     }
 
-    private function orderByFilter(string $action) {
-        static $filter;
-        if (! $filter && $action === 'add') {
-            $filter = function () {
-                global $wpdb;
-                $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-                $sql .= $this->order_by_meta;
-                return $wpdb->prepare($sql, $this->format);
-            };
-        }
+    public function prepare_filter_order()
+    {
+        global $wpdb;
+
+        $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+
+        $sql .= $this->order_by_meta;
+
+        return $wpdb->prepare( $sql, $this->format );
+    };
+
+    private function orderByFilter( string $action )
+    {
+        // static $filter;
+
+        // if (! $filter && $action === 'add') {
+        //     $filter = function () {
+        //         global $wpdb;
+        //         $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+        //         $sql .= $this->order_by_meta;
+        //         return $wpdb->prepare($sql, $this->format);
+        //     };
+        // }
+        
+        // $action === 'add'
+        //     ? add_filter('posts_orderby', $filter)
+        //     : remove_filter('posts_orderby', $filter);
+        
         $action === 'add'
-            ? add_filter('posts_orderby', $filter)
-            : remove_filter('posts_orderby', $filter);
+            ? add_filter( 'posts_orderby', [ $this, 'prepare_filter_order' ] )
+            : remove_filter( 'posts_orderby', [ $this, 'prepare_filter_order' ] );
     }
 }
 

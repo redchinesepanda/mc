@@ -153,8 +153,15 @@ class BilletMain
         // Текущая локаль
 
         // $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )[ 'locale' ];
-        
-        $locale = WPMLMain::get_post_language_details( $id )[ 'locale' ];
+
+        $locale = 'en';
+
+        $details = WPMLMain::get_post_language_details( $id );
+
+        if ( !empty( $details ) && !is_wp_error( $details ) )
+        {
+            $locale = $details[ 'locale' ];
+        }
 
         // Oops если есть
 
