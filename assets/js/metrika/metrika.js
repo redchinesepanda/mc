@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	if ( !document.body.classList.contains( 'logged-in' ) )
 	{
+		console.log( 'ym 86785715 not logged-in' );
+
 		function sendMetric( href ) {
 			var parts = href.replace( /\/$/, '' ).match( /\go\/(.+)/i )[ 1 ].split( '/' ),
 				goalName = prefix + parts.slice( -1 ),
