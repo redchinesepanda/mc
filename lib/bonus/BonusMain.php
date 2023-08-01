@@ -85,6 +85,8 @@ class BonusMain
 		'terms' => [ 'bonusy-kz' ],
 
 		'exclude' => [],
+
+		'limit' => -1,
 	];
 
 	const FIELD = [
@@ -233,9 +235,9 @@ class BonusMain
 		}
 
 		return [
-			'posts_per_page' => -1,
+			'posts_per_page' => $atts[ 'limit' ],
 
-            // 'numberposts' => -1,
+            // 'numberposts' => $atts[ 'limit' ],
             
             'post_type' => $atts[ 'post_type' ],
 
