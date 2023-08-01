@@ -235,9 +235,9 @@ class BonusMain
 		}
 
 		return [
-			'posts_per_page' => $atts[ 'limit' ],
+			'posts_per_page' => -1,
 
-            // 'numberposts' => $atts[ 'limit' ],
+            // 'numberposts' => -1,
             
             'post_type' => $atts[ 'post_type' ],
 
