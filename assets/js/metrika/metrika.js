@@ -51,9 +51,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			ref.addEventListener( 'click', function ( e ) {
 				const regExp = /-\d+$/;
+
+				console.log( 'ym 86785715 regExp.test: ' + regExp.test( this.href ) );
 				
 				if ( regExp.test( this.href ) )
 				{
+					console.log( 'ym 86785715 ref: ' + ref );
+
 					sendMetric( this.href.replace( regExp, '' ) );
 				}
 
