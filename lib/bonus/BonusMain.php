@@ -262,7 +262,7 @@ class BonusMain
 		];
 	}
 
-	public static function get_logo( $id )
+	public static function get_logo( $id, $size = self::SIZE[ 'logo' ] )
 	{
 		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
 
@@ -272,13 +272,26 @@ class BonusMain
 
 		if ( $logo )
 		{
-			return [
-				'src' => $logo[ 'url' ],
+			$details = wp_get_attachment_image_src( $logo[ $id ], $size );
 
-				'width' => $logo[ 'width' ],
+			if ( $details )
+			{
+				return [
+					'src' => $details[ 0 ],
+	
+					'width' => $details[ 1 ],
+	
+					'height' => $details[ 2 ],
+				];
+			}
 
-				'height' => $logo[ 'height' ],
-			];
+			// return [
+			// 	'src' => $logo[ 'url' ],
+
+			// 	'width' => $logo[ 'width' ],
+
+			// 	'height' => $logo[ 'height' ],
+			// ];
 		}
 		
 		return [
