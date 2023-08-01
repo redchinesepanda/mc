@@ -30,6 +30,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			refs = document.querySelectorAll( 'a[href^="/go/"' );
 
 		for ( var ref of refs ) {
+
+			console.log( 'ym 86785715 ref.href: ' + ref.href );
+
 			ref.addEventListener( 'click', function ( e ) {
 				let prefix = 'goal-';
 
