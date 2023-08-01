@@ -3,7 +3,11 @@
 class MetrikaMain
 {
 	const JS = [
-        'legal-metrika' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika.js',
+        'legal-metrika' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika.js',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
 	public static function register_script( $scripts = [] )
