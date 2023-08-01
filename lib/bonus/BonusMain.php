@@ -44,9 +44,11 @@ class BonusMain
     {
         $handler = new self();
 
-        // [legal-bonus]
+        // [legal-bonus post_type='post' taxonomy='category' terms='fribety' exclude="fribety-1xbet"]
 
-        // [legal-bonus post_type='post' taxonomy='category' terms='bonusy-kz']
+        // [legal-bonus terms='fribety' exclude="fribety-1xbet"]
+        
+		// [legal-bonus terms='bonusy-kz']
 
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
 
@@ -81,6 +83,8 @@ class BonusMain
 		'taxonomy' => 'category',
 
 		'terms' => [ 'bonusy-kz' ],
+
+		'exclude' => [],
 	];
 
 	const FIELD = [
@@ -200,6 +204,31 @@ class BonusMain
 					
 					'compare' => 'IN',
 				],
+			];
+		}
+
+		$tax_query = [
+			[
+				'taxonomy' => $atts[ 'taxonomy' ],
+
+				'field' => 'slug',
+
+				'terms' => $atts[ 'terms' ],
+			]
+		];
+
+		if ( !empty( $atts[ 'exclude' ] ) )
+		{
+			$tax_query[] = [
+				[
+					'taxonomy' => $atts[ 'taxonomy' ],
+
+					'field' => 'slug',
+
+					'terms' => $atts[ 'exclude' ],
+
+					'operator' => 'NOT IN',
+				]
 			];
 		}
 
