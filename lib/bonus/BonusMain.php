@@ -243,14 +243,16 @@ class BonusMain
             
             // 'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
-			'tax_query' => [
+			'tax_query' => $tax_query,
 
-				'taxonomy' => $atts[ 'taxonomy' ],
+			// 'tax_query' => [
 
-				'field' => 'slug',
+			// 	'taxonomy' => $atts[ 'taxonomy' ],
 
-				'terms' => $atts[ 'terms' ],
-			],
+			// 	'field' => 'slug',
+
+			// 	'terms' => $atts[ 'terms' ],
+			// ],
 
 			'meta_query' => $meta_query,
 
