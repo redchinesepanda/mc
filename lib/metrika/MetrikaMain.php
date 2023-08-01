@@ -8,7 +8,7 @@ class MetrikaMain
 
             'ver' => '1.0.0',
         ],
-    ];
+    ]; 
 
 	public static function register_script( $scripts = [] )
     {
