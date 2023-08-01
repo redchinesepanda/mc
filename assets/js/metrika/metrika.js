@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		var YandexMetrikaId = 86785715,
-			refs = document.querySelectorAll( 'a[href^="/go/"]' );
+			refs = document.querySelectorAll( 'a[href*="/go/"]' );
 
 		console.log( 'ym 86785715 refs' + refs );
 
