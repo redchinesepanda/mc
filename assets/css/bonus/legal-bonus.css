@@ -14,6 +14,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
+	justify-content: center;
 }
 
 .legal-bonus-list .bonus-list-item {
@@ -64,6 +65,7 @@
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-item {
+	width: 330px;
 	min-height: 400px;
 }
 
