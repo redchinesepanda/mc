@@ -369,9 +369,7 @@ class BonusMain
 
 		if ( $limit )
 		{
-			// $atts[ 'limit' ] -= count( $active_no_partners );
-
-			$amount = count( $active_no_partners );
+			$amount = count( $active_partners );
 
 			$rest = $atts[ 'limit' ] - $amount;
 
@@ -393,7 +391,7 @@ class BonusMain
 
 		if ( $limit )
 		{
-			$amount = count( $expired_all );
+			$amount = count( $active_no_partners );
 
 			$rest = $atts[ 'limit' ] - $amount;
 
