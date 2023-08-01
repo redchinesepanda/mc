@@ -266,9 +266,9 @@ class BonusMain
 	{
 		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
 
-		LegalDebug::debug( [
-			'logo' => $logo,
-		] );
+		// LegalDebug::debug( [
+		// 	'logo' => $logo,
+		// ] );
 
 		if ( $logo )
 		{
