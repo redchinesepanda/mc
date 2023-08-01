@@ -357,7 +357,7 @@ class BonusMain
 
 		// $posts = self::get_posts_date( $atts );
 
-		$limit = $atts[ 'limit' ] != -1;
+		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
 		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] ); 
 
