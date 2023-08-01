@@ -9,7 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// console.log( 'ym 86785715 not logged-in' );
 
 		function sendMetric( href ) {
-			console.log( 'ym 86785715 sendMetric href: ' + href );
+			// console.log( 'ym 86785715 sendMetric href: ' + href );
 
 			let prefix = 'goal-';
 
@@ -56,11 +56,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				
 				// const regExp = /-\d+\/$/;
 
-				console.log( 'ym 86785715 regExp.test: ' + regExp.test( this.href ) );
+				// console.log( 'ym 86785715 regExp.test: ' + regExp.test( this.href ) );
 				
 				if ( regExp.test( this.href ) )
 				{
-					console.log( 'ym 86785715 ref: ' + ref );
+					// console.log( 'ym 86785715 ref: ' + ref );
 
 					sendMetric( this.href.replace( regExp, '' ) );
 				}
