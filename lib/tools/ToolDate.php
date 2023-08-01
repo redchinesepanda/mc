@@ -103,7 +103,7 @@ class ToolDate {
         $sql .= $this->order_by_meta;
 
         return $wpdb->prepare( $sql, $this->format );
-    };
+    }
 
     private function orderByFilter( string $action )
     {
