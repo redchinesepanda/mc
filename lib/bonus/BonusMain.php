@@ -359,7 +359,7 @@ class BonusMain
 
 		$limit = $atts[ 'limit' ] != -1;
 
-		$atts[ 'limit' ] = ( int ) $atts[ 'limit' ];
+		$atts[ 'limit' ] = ( int ) $atts[ 'limit' ]; 
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
