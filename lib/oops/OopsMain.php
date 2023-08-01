@@ -55,29 +55,46 @@ class OopsMain
 
     const TAXONOMY = [
         'category' => 'affiliate-links-cat',
+
+        'type' => 'page_type',
+    ];
+
+    const CATEGORY = [
+        'casino' => 'ca',
+    ];
+
+    const TYPE = [
+        'casino' => 'casino',
     ];
 
     public static function get_args( $prefix = ' ' )
     {
-        // $taxonomies = get_object_taxonomies( 'affiliate-links' );
-
-        // LegalDebug::debug( [
-        //     'taxonomies' => $taxonomies,
-        // ] );
-
         $tax_query = [
             [
                 'taxonomy' => self::TAXONOMY[ 'category' ],
                 
-                'key' => 'affilate-oops',
+                'field' => 'slug',
 
-                'value' => '1',
-            ],
-
-            [
-                'key' => 'affilate-order',
+                'operator' => 'NOT EXISTS',
             ],
         ];
+
+        $term = has_term( self::TYPE[ 'casino' ], self::TAXONOMY[ 'type' ] );
+
+        if ( $term )
+        {
+            $tax_query = [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'category' ],
+                    
+                    'field' => 'slug',
+    
+                    'terms' => self::CATEGORY[ 'casino' ],
+    
+                    'operator' => 'IN',
+                ],
+            ];
+        }
 
         return [
             'numberposts' => -1,
@@ -99,6 +116,8 @@ class OopsMain
                     'key' => 'affilate-order',
                 ],
             ],
+
+            'tax_query' => $tax_query,
             
             'orderby' => [ 'oops_order' => 'ASC', 'modify' => 'DESC' ],
         ];
