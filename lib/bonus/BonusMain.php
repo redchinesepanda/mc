@@ -20,7 +20,7 @@ class BonusMain
         'legal-bonus' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 

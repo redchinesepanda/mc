@@ -76,11 +76,11 @@
 }
 
 .legal-bonus-list .item-about-title {
-	flex-basis: calc( 70% - 10px );
+	flex-basis: calc( 70% - 25px );
 }
 
 .legal-bonus-list .item-about-size {
-	flex-basis: calc( 30% - 10px );
+	flex-basis: calc( 30% - 25px );
 }
 
 .legal-bonus-list .item-about-get {
