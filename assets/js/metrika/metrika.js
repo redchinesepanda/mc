@@ -37,6 +37,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		for ( var ref of refs ) {
 
+			console.log( 'ym 86785715 ref: ' + ref );
+
 			console.log( 'ym 86785715 ref.href: ' + ref.href );
 
 			ref.addEventListener( 'click', function ( e ) {
