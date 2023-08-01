@@ -235,6 +235,16 @@ class BonusMain
         ];
     }
 
+	public static public function regenerate( $id )
+	{
+        $path = wp_get_original_image_path( $id );
+
+        if ( $path && file_exists( $path ) )
+		{
+            wp_generate_attachment_metadata( $id, $path );
+        }
+    }
+
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
 	{
 		if ( $thumbnail_id = get_post_thumbnail_id( $id ) )
@@ -244,6 +254,8 @@ class BonusMain
 			if ( $details )
 			{
 				return [
+					'id' => $thumbnail_id,
+
 					'src' => $details[ 0 ],
 	
 					'width' => $details[ 1 ],
@@ -277,6 +289,8 @@ class BonusMain
 			if ( $details )
 			{
 				return [
+					'id' => $logo[ 'id' ],
+
 					'src' => $details[ 0 ],
 	
 					'width' => $details[ 1 ],
