@@ -41,6 +41,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		var YandexMetrikaId = 86785715,
 			refs = document.querySelectorAll( 'a[href*="/go/"]' );
 
+		const regExp = /-\d+\/$/;
+
 		// console.log( 'ym 86785715 refs' + refs );
 
 		for ( var ref of refs ) {
@@ -50,7 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// console.log( 'ym 86785715 ref.href: ' + ref.href );
 
 			ref.addEventListener( 'click', function ( e ) {
-				const regExp = /-\d+$/;
+				// const regExp = /-\d+$/;
+				
+				// const regExp = /-\d+\/$/;
 
 				console.log( 'ym 86785715 regExp.test: ' + regExp.test( this.href ) );
 				
