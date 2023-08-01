@@ -357,10 +357,6 @@ class BonusMain
 
 		// $posts = self::get_posts_date( $atts );
 
-		LegalDebug::debug( [
-			'limit' => $atts[ 'limit' ],
-		] );
-
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
 		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] ); 
@@ -369,18 +365,7 @@ class BonusMain
 
 		if ( $limit )
 		{
-
-			LegalDebug::debug( [
-				'limit' => $atts[ 'limit' ],
-
-				'count' => count( $expired_all ),
-			] );
-
 			$atts[ 'limit' ] -= count( $expired_all );
-
-			LegalDebug::debug( [
-				'limit' => $atts[ 'limit' ],
-			] );
 		}
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
