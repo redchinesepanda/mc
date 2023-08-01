@@ -266,6 +266,10 @@ class BonusMain
 	{
 		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
 
+		LegalDebug::debug( [
+			'logo' => $logo,
+		] );
+
 		if ( $logo )
 		{
 			return [
@@ -332,9 +336,9 @@ class BonusMain
 
 					// 'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
 					
-					// 'logo' => self::get_logo( $post->ID ),
+					'logo' => self::get_logo( $post->ID ),
 					
-					'logo' => self::get_thumbnail( $post->ID, self::SIZE[ 'logo' ] ),
+					// 'logo' => self::get_thumbnail( $post->ID, self::SIZE[ 'logo' ] ),
 
 					'title' => [
 						'label' => $post->post_title,
