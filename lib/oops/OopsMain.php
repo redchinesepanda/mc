@@ -54,20 +54,20 @@ class OopsMain
     }
 
     const TAXONOMY = [
-
+        'category' => 'affiliate-links-cat',
     ];
 
     public static function get_args( $prefix = ' ' )
     {
-        $taxonomies = get_object_taxonomies( 'affiliate-links' );
+        // $taxonomies = get_object_taxonomies( 'affiliate-links' );
 
-        LegalDebug::debug( [
-            'taxonomies' => $taxonomies,
-        ] );
+        // LegalDebug::debug( [
+        //     'taxonomies' => $taxonomies,
+        // ] );
 
         $tax_query = [
             [
-                'taxonomy' => '',
+                'taxonomy' => self::TAXONOMY[ 'category' ],
                 
                 'key' => 'affilate-oops',
 
