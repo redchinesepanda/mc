@@ -2,13 +2,15 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	console.log( 'ym 86785715 start' );
+	// console.log( 'ym 86785715 start' );
 
 	if ( !document.body.classList.contains( 'logged-in' ) )
 	{
-		console.log( 'ym 86785715 not logged-in' );
+		// console.log( 'ym 86785715 not logged-in' );
 
 		function sendMetric( href ) {
+			console.log( 'ym 86785715 sendMetric href: ' + href );
+
 			var parts = href.replace( /\/$/, '' ).match( /\go\/(.+)/i )[ 1 ].split( '/' ),
 				goalName = prefix + parts.slice( -1 ),
 				goalParams = { page: window.location.toString(), label: parts[ 1 ] };
@@ -33,13 +35,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		var YandexMetrikaId = 86785715,
 			refs = document.querySelectorAll( 'a[href*="/go/"]' );
 
-		console.log( 'ym 86785715 refs' + refs );
+		// console.log( 'ym 86785715 refs' + refs );
 
 		for ( var ref of refs ) {
 
-			console.log( 'ym 86785715 ref: ' + ref );
+			// console.log( 'ym 86785715 ref: ' + ref );
 
-			console.log( 'ym 86785715 ref.href: ' + ref.href );
+			// console.log( 'ym 86785715 ref.href: ' + ref.href );
 
 			ref.addEventListener( 'click', function ( e ) {
 				let prefix = 'goal-';
