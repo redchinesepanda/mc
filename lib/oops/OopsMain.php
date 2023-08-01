@@ -67,7 +67,7 @@ class OopsMain
 
         $tax_query = [
             [
-                'taxonomy' =>
+                'taxonomy' => '',
                 
                 'key' => 'affilate-oops',
 
