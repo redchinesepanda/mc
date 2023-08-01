@@ -137,8 +137,9 @@
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 16.8px;
+	line-height: 24px;
 	color: rgb(89, 151, 227);
+	text-align: center;
 }
 
 .legal-bonus-list .about-get-button {
