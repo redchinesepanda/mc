@@ -363,13 +363,41 @@ class BonusMain
 
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
-		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] ); 
+		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] );
+		
+		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+
+		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+
+		if ( $limit )
+		{
+			// $atts[ 'limit' ] -= count( $active_no_partners );
+
+			$amount = count( $active_no_partners );
+
+			$rest = $atts[ 'limit' ] - $amount;
+
+			if ( $rest >= 0 )
+			{
+				$atts[ 'limit' ] = $rest;
+			}
+
+			LegalDebug::debug( [
+				'amount' => $amount,
+
+				'rest' => $rest,
+
+				'limit' => $atts[ 'limit' ],
+			] );
+		}
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
 		if ( $limit )
 		{
-			$rest = $atts[ 'limit' ] - count( $expired_all );
+			$amount = count( $expired_all );
+
+			$rest = $atts[ 'limit' ] - $amount;
 
 			if ( $rest >= 0 )
 			{
@@ -377,33 +405,13 @@ class BonusMain
 			}
 
 			LegalDebug::debug( [
+				'amount' => $amount,
+
 				'rest' => $rest,
 
 				'limit' => $atts[ 'limit' ],
 			] );
 		}
-		
-		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
-
-		if ( $limit )
-		{
-			// $atts[ 'limit' ] -= count( $active_partners );
-
-			$rest = $atts[ 'limit' ] - count( $active_partners );
-
-			if ( $rest >= 0 )
-			{
-				$atts[ 'limit' ] = $rest;
-			}
-
-			LegalDebug::debug( [
-				'rest' => $rest,
-
-				'limit' => $atts[ 'limit' ],
-			] );
-		}
-
-		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
 		
 		// $posts = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
