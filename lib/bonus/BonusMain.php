@@ -375,7 +375,7 @@ class BonusMain
 				'rest' => $rest,
 			] );
 
-			if ( $rest > 0 )
+			if ( $rest >= 0 )
 			{
 				$atts[ 'limit' ] = $rest;
 			}
@@ -393,7 +393,7 @@ class BonusMain
 				'rest' => $rest,
 			] );
 
-			if ( $rest > 0 )
+			if ( $rest >= 0 )
 			{
 				$atts[ 'limit' ] = $rest;
 			}
