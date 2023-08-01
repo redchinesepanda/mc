@@ -357,6 +357,10 @@ class BonusMain
 
 		// $posts = self::get_posts_date( $atts );
 
+		LegalDebug::debug( [
+			'limit' => $atts[ 'limit' ],
+		] );
+
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
 		// $atts[ 'limit' ] = intval( $atts[ 'limit' ] ); 
