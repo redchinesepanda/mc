@@ -10,6 +10,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		function sendMetric( href ) {
 			console.log( 'ym 86785715 sendMetric href: ' + href );
+			
+			let prefix = 'goal-';
+
+			if ( this.href.indexOf( '/ca/' ) !== -1 ) {
+				prefix += 'casino-';
+			}
 
 			var parts = href.replace( /\/$/, '' ).match( /\go\/(.+)/i )[ 1 ].split( '/' ),
 				goalName = prefix + parts.slice( -1 ),
@@ -44,12 +50,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// console.log( 'ym 86785715 ref.href: ' + ref.href );
 
 			ref.addEventListener( 'click', function ( e ) {
-				let prefix = 'goal-';
-
-				if ( this.href.indexOf( '/ca/' ) !== -1 ) {
-					prefix += 'casino-';
-				}
-
 				const regExp = /-\d+$/;
 				
 				if ( regExp.test( this.href ) )
