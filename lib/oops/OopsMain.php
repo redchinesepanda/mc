@@ -53,8 +53,32 @@ class OopsMain
         } );
     }
 
+    const TAXONOMY = [
+
+    ];
+
     public static function get_args( $prefix = ' ' )
     {
+        $taxonomies = get_object_taxonomies( 'affiliate-links' );
+
+        LegalDebug::debug( [
+            'taxonomies' => $taxonomies,
+        ] );
+
+        $tax_query = [
+            [
+                'taxonomy' =>
+                
+                'key' => 'affilate-oops',
+
+                'value' => '1',
+            ],
+
+            [
+                'key' => 'affilate-order',
+            ],
+        ];
+
         return [
             'numberposts' => -1,
             
