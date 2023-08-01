@@ -5,11 +5,15 @@ class BonusMain
 	const TEXT = [
 		'bonus-preview' => 'Bonus Preview',
 
+		'bonus-logo' => 'Bonus Logo',
+
 		'get-bonus' => 'Get Bonus',
 	];
 
 	const SIZE = [
 		'preview' => 'legal-bonus-preview',
+
+		'logo' => 'legal-bonus-logo',
 	];
 
 	const CSS = [
@@ -48,6 +52,8 @@ class BonusMain
 
 		add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
 
+		add_image_size( self::SIZE[ 'logo' ], 50, 50, [ 'center', 'center' ] );
+
 		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
@@ -64,6 +70,8 @@ class BonusMain
     {
         return array_merge( $sizes, [
             self::SIZE[ 'preview' ] => __( self::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+
+            self::SIZE[ 'logo' ] => __( self::TEXT[ 'bonus-logo' ], ToolLoco::TEXTDOMAIN ),
         ] );
     }
 
@@ -227,11 +235,11 @@ class BonusMain
         ];
     }
 
-	public static function get_thumbnail( $id )
+	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
 	{
 		if ( $thumbnail_id = get_post_thumbnail_id( $id ) )
 		{
-			$details = wp_get_attachment_image_src( $thumbnail_id, self::SIZE[ 'preview' ] );
+			$details = wp_get_attachment_image_src( $thumbnail_id, $size );
 
 			if ( $details )
 			{
@@ -324,7 +332,9 @@ class BonusMain
 
 					// 'logo' => get_field( self::FIELD[ 'logo-preview' ], $post->ID ),
 					
-					'logo' => self::get_logo( $post->ID ),
+					// 'logo' => self::get_logo( $post->ID ),
+					
+					'logo' => self::get_thumbnail( $post->ID, self::SIZE[ 'logo' ] ),
 
 					'title' => [
 						'label' => $post->post_title,

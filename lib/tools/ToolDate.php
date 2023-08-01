@@ -23,18 +23,18 @@ class ToolDate
 
         string $compare = '='
     ) {
-		$this->date_key   = $date_key;
+		$this->date_key = $date_key;
 
         $this->date_value = $date_value;
 
-        $this->format     = $mysql_format;
+        $this->format = $mysql_format;
 
         in_array( $compare, self::COMPARE_TYPES, TRUE ) and $this->compare = $compare;
     }
 
     public function orderByMeta( string $direction = 'DESC' ): ToolDate
     {
-        if ( in_array( strtoupper( $direction ), ['ASC', 'DESC'], TRUE ) )
+        if ( in_array( strtoupper( $direction ), [ 'ASC', 'DESC' ], TRUE ) )
         {
             $this->order_by_meta = $direction;
         }
@@ -42,19 +42,19 @@ class ToolDate
         return $this;
     }
 
-    public function createWpQuery(array $args = []): \WP_Query
+    public function createWpQuery( array $args = [] ): \WP_Query
     {
-        $args['meta_key'] = $this->date_key;
+        $args[ 'meta_key' ] = $this->date_key;
 
-        $this->whereFilter('add');
+        $this->whereFilter( 'add' );
 
-        $this->order_by_meta and $this->orderByFilter('add');
+        $this->order_by_meta and $this->orderByFilter( 'add' );
 
-        $query = new \WP_Query($args);
+        $query = new \WP_Query( $args );
 
-        $this->whereFilter('remove');
+        $this->whereFilter( 'remove' );
 
-        $this->order_by_meta and $this->orderByFilter('remove');
+        $this->order_by_meta and $this->orderByFilter( 'remove' );
 
         return $query;
     }

@@ -10,8 +10,6 @@ require_once( 'ToolTinyMCE.php' );
 
 require_once( 'ToolEncode.php' );
 
-require_once( 'ToolRewrite.php' );
-
 require_once( 'ToolEnqueue.php' );
 
 require_once( 'ToolMenu.php' );
@@ -24,8 +22,6 @@ require_once( 'ToolTransiterate.php' );
 
 require_once( 'ToolDate.php' );
 
-// require_once( 'ToolNotFound.php' );
-
 class ToolsMain
 {
     public static function register()
@@ -37,8 +33,6 @@ class ToolsMain
         ToolPosts::register();
 
         ToolTinyMCE::register();
-
-        ToolRewrite::register();
         
         ToolSitemap::register();
     }
