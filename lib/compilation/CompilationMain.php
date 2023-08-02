@@ -204,7 +204,7 @@ class CompilationMain
         'pair' => 'profit-item-pair',
     ];
 
-    function compilation_posts_where( $where )
+    public static function compilation_posts_where( $where )
     {
         if ( strpos( $where, self::META_KEY[ 'profit' ] . '_$' ) )
         {

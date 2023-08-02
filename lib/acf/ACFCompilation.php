@@ -12,6 +12,10 @@ class ACFCompilation
         'operator' => 'compilation-operator',
         
         'review-type' => 'compilation-review-type',
+
+        'attention-position' => 'compilation-attention-position',
+
+        'attention-type' => 'compilation-attention-type',
     ];
 
     public static function register()
@@ -27,6 +31,10 @@ class ACFCompilation
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'operator' ], [ $handler, 'choices_operator' ] );
 
         add_filter( 'acf/load_field/name=' . self::FIELD[ 'review-type' ], [ $handler, 'choices_review_type' ] );
+
+        add_filter( 'acf/load_field/name=' . self::FIELD[ 'attention-position' ], [ $handler, 'choices_attention_position' ] );
+
+        add_filter( 'acf/load_field/name=' . self::FIELD[ 'attention-type' ], [ $handler, 'choices_attention_type' ] );
     }
 
     public static function choices_lang( $field )
@@ -87,6 +95,30 @@ class ACFCompilation
     function choices_review_type( $field )
     {
         $choices[ 'legal-bonus' ] = 'Бонус';
+
+        $field[ 'choices' ] = $choices;
+
+        return $field;
+    }
+
+    function choices_attention_position( $field )
+    {
+        $choices[ CompilationMain::POSITION[ 'above' ] ] = 'Над заголовком';
+
+        $choices[ CompilationMain::POSITION[ 'below' ] ] = 'Под заголовоком';
+
+        $choices[ CompilationMain::POSITION[ 'bottom' ] ] = 'После подборки';
+
+        $field[ 'choices' ] = $choices;
+
+        return $field;
+    }
+
+    function choices_attention_type( $field )
+    {
+        $choices[ 'legal-default' ] = 'Текст';
+
+        $choices[ 'legal-attention' ] = 'Блок Внимание';
 
         $field[ 'choices' ] = $choices;
 
