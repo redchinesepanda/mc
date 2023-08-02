@@ -125,7 +125,7 @@ class CompilationTabs
 
                 foreach ( $compilations as $compilation )
                 {
-                    $billets = CompilationMain::get( $compilation );
+                    $billets = CompilationMain::get_ids( $compilation );
 
                     LegalDebug::debug( [
                         'billets' => $billets,
