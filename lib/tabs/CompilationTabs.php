@@ -127,9 +127,9 @@ class CompilationTabs
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                // LegalDebug::debug( [
-                //     'compilations' => $compilations,
-                // ] );
+                LegalDebug::debug( [
+                    'compilations' => $compilations,
+                ] );
 
                 foreach ( $compilations as $compilation )
                 {
