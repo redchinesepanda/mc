@@ -12,7 +12,7 @@ class BilletProfit extends LegalDebug
 
     public static function get_average( $id )
     {
-        $items = get_field( self::PROFIT_ITEMS, $billet[ 'id' ] );
+        $items = get_field( self::PROFIT_ITEMS, $id );
     
         if ( $items )
         {
