@@ -46,6 +46,18 @@ class CompilationMain
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
     }
 
+    public static function get_billets_ids( $posts )
+    {
+        $data = [];
+
+        foreach ( $posts as $post )
+        {
+            $data[] = $post->ID;
+        }
+
+        return $data;
+    }
+
     public static function get_billets( $posts, $filter )
     {
         $data = [];
@@ -377,6 +389,15 @@ class CompilationMain
         // ] );
 
         return $args;
+    }
+
+    public static function get_ids( $id )
+    {
+        $id = self::check_id( $id );
+
+        $posts = get_posts( self::get_args( $id ) );
+
+        return self::get_billets_ids( $posts );
     }
 
     public static function get( $id )
