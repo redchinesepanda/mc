@@ -170,9 +170,9 @@ class CompilationTabs
 
             $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
 
-            // LegalDebug::debug( [
-            //     'billets' => $billets,
-            // ] );
+            LegalDebug::debug( [
+                'billets' => $billets,
+            ] );
 
             foreach ( $billets as $billet )
             {
