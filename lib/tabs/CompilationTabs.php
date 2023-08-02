@@ -146,9 +146,9 @@ class CompilationTabs
 
                     $sets[] = $ids;
 
-                    // LegalDebug::debug( [
-                    //     'sets' => $sets,
-                    // ] );
+                    LegalDebug::debug( [
+                        'ids' => $ids,
+                    ] );
                 }
             }
 
