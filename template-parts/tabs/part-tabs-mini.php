@@ -1,8 +1,8 @@
 <?php
 
-LegalDebug::debug( [
-	'args' => $args,
-] );
+// LegalDebug::debug( [
+// 	'args' => $args,
+// ] );
 
 ?>
 <div class="legal-tabs-mini item-<?php echo $args[ 'id' ]; ?>">
