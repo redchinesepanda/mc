@@ -280,7 +280,7 @@ class BilletMain
     public static function get_mini( $id, $profit = false, $filter = [] )
     {
         return [
-            'href' => self::get_url( $id, $filter ),
+            'href' => self::get_url( $id, $filter )[ 'play' ],
 
             'logo' => BilletLogo::get_logo( $id ),
 
