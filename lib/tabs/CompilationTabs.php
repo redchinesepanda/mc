@@ -123,14 +123,20 @@ class CompilationTabs
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                foreach ( $compilations as $compilation )
-                {
-                    $billets = CompilationMain::get_ids( $compilation );
+                // foreach ( $compilations as $compilation )
+                // {
+                //     $billets = CompilationMain::get_ids( $compilation );
 
-                    LegalDebug::debug( [
-                        'billets' => $billets,
-                    ] );
-                }
+                //     LegalDebug::debug( [
+                //         'billets' => $billets,
+                //     ] );
+                // }
+
+                $billets = array_unique( call_user_func_array( 'array_merge' , $compilations ) );
+
+                LegalDebug::debug( [
+                    'billets' => $billets,
+                ] );
             }
         }
     }
