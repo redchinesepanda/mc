@@ -22,7 +22,7 @@ class BilletLogo
     {
         $src = self::DEFAULT_LOGO;
 
-        $group = get_field( self::FIELD[ 'about' ], $id , false );
+        $group = get_field( self::FIELD[ 'about' ], $id );
 
         LegalDebug::debug( [
             'group' => $group,
