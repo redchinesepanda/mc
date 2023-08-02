@@ -75,10 +75,8 @@ class CompilationTabs
 
         $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
 
-		$items = self::get_items_mini( $atts );
-
 		$args = [
-			'items' => $items,
+			'items' => self::get_items_mini( $atts ),
 		];
 
 		return self::render_tabs_mini( $args );
