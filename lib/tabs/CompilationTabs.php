@@ -57,7 +57,30 @@ class CompilationTabs
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        // [legal-tabs-mini id='269090']
+
+        add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
     }
+
+    const PAIRS = [
+		'id' => 0,
+	];
+
+    public static function prepare( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
+
+		$items = self::get_average( $atts );
+
+		$args = [
+			'items' => $items,
+		];
+
+		// return self::render( $args );
+
+        return 'legal-tabs-mini';
+	}
 
     const TABS = [
         'text' => 'tabs-title-text',
@@ -88,6 +111,28 @@ class CompilationTabs
         }
 
         return implode( ' ', $date );
+    }
+
+    public static function get_average( $atts )
+    {
+        $tabs = get_field( self::TABS[ 'items' ], $atts[ 'id' ] );
+
+        if ( $tabs )
+        {
+            foreach ( $tabs as $tab )
+            {
+                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+
+                foreach ( $compilations as $compilation )
+                {
+                    $billets = CompilationMain::get( $compilation );
+
+                    LegalDebug::debug( [
+                        'billets' => $billets,
+                    ] );
+                }
+            }
+        }
     }
 
     public static function get()
