@@ -127,16 +127,18 @@ class CompilationTabs
                     'compilations' => $compilations,
                 ] );
 
-                // foreach ( $compilations as $compilation )
-                // {
-                //     $billets = CompilationMain::get_ids( $compilation );
+                $sets = [];
 
-                //     LegalDebug::debug( [
-                //         'billets' => $billets,
-                //     ] );
-                // }
+                foreach ( $compilations as $compilation )
+                {
+                    $sets[] = CompilationMain::get_ids( $compilation );
 
-                $billets = array_unique( call_user_func_array( 'array_merge' , $compilations ) );
+                    // LegalDebug::debug( [
+                    //     'sets' => $sets,
+                    // ] );
+                }
+
+                $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
 
                 LegalDebug::debug( [
                     'billets' => $billets,
