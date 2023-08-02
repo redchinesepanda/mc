@@ -31,7 +31,9 @@ class ACFReview
     {
         $lang = WPMLMain::current_language();
 
-        return str_replace( $lang . '/', '', $value );
+        $count = 1;
+
+        return str_replace( $lang . '/', '', $value, $count );
     }
 
 	function choices_image( $field )
