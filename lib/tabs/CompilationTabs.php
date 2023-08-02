@@ -149,6 +149,11 @@ class CompilationTabs
                     LegalDebug::debug( [
                         'ids' => $ids,
                     ] );
+
+                    if ( $limit == 0 )
+                    {
+                        break;
+                    }
                 }
             }
 
