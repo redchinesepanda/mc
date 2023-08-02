@@ -277,7 +277,7 @@ class BilletMain
         ];
     }
 
-    private static function get_mini( $id, $profit = false, $filter = [] )
+    public static function get_mini( $id, $profit = false, $filter = [] )
     {
         return [
             'href' => self::get_url( $id, $filter ),
