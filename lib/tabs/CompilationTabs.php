@@ -119,6 +119,8 @@ class CompilationTabs
 
         if ( $tabs )
         {
+            $sets = [];
+
             foreach ( $tabs as $tab )
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
@@ -126,8 +128,6 @@ class CompilationTabs
                 LegalDebug::debug( [
                     'compilations' => $compilations,
                 ] );
-
-                $sets = [];
 
                 foreach ( $compilations as $compilation )
                 {
@@ -137,13 +137,13 @@ class CompilationTabs
                     //     'sets' => $sets,
                     // ] );
                 }
-
-                $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
-
-                LegalDebug::debug( [
-                    'billets' => $billets,
-                ] );
             }
+
+            $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
+
+            LegalDebug::debug( [
+                'billets' => $billets,
+            ] );
         }
     }
 
