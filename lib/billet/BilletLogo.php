@@ -24,6 +24,10 @@ class BilletLogo
 
         $group = get_field( self::FIELD[ 'about' ], $id , false );
 
+        LegalDebug::debug( [
+            'group' => $group,
+        ] );
+
         if ( $group )
         {
             if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
