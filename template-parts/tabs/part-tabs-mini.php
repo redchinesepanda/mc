@@ -31,7 +31,7 @@
 					<div class="mini-item-profit"><?php echo $item[ 'profit' ]; ?></div>
 				<?php endif; ?>
 				<div class="mini-item-button">
-					<a href="<?php echo $item[ 'href' ]; ?>" class="mini-item-button-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
+					<a href="<?php echo $item[ 'href' ]; ?>" class="mini-item-button-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $item[ 'button' ][ 'label' ]; ?></a>
 				</div>
 			</div>
 		<?php endforeach; ?>
