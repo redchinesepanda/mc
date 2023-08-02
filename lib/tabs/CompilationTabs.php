@@ -69,6 +69,16 @@ class CompilationTabs
 		'profit' => false,
 	];
 
+    const FIELD = [
+        'title' => 'tabs-mini-title',
+
+        'image' => 'tabs-mini-image',
+
+        'description' => 'tabs-mini-description',
+
+        'label' => 'tabs-mini-label',
+    ];
+
     public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
@@ -76,7 +86,22 @@ class CompilationTabs
         $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
 
 		$args = [
+            'id' => $atts[ 'id' ],
+
+            'title' => get_field( self::FIELD[ 'title' ], $atts[ 'id' ] ),
+
+            'url' => get_field( self::FIELD[ 'image' ], $atts[ 'id' ] ),
+
+            'description' => get_field( self::FIELD[ 'description' ], $atts[ 'id' ] ),
+
 			'items' => self::get_items_mini( $atts ),
+
+            'button' => [
+                'label' => get_field( self::FIELD[ 'label' ], $atts[ 'id' ] ),
+
+                'href' => get_post_permalink( $atts[ 'id' ] ),
+            ],
+
 		];
 
 		return self::render_tabs_mini( $args );
