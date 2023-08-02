@@ -18,6 +18,21 @@ class BilletLogo
         'mega' => 'about-logo-mega',
     ];
 
+    public static function get_logo( $id )
+    {
+        $src = self::DEFAULT_LOGO;
+
+        $group = get_field( self::FIELD[ 'about' ], $id , false );
+
+        if ( $group )
+        {
+            if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
+            {
+                $src = $group[ self::ABOUT[ 'logo' ] ];
+            }
+        }
+    }
+
     public static function get( $billet )
     {
         $font = '';

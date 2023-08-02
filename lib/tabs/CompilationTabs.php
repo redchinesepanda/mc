@@ -65,21 +65,25 @@ class CompilationTabs
 
     const PAIRS = [
 		'id' => 0,
+
+		'profit' => false,
 	];
 
     public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
 
-		$items = self::get_average( $atts );
+        $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
+
+		$items = self::get_items_mini( $atts );
 
 		$args = [
 			'items' => $items,
 		];
 
-		// return self::render( $args );
+		return self::render_tabs_mini( $args );
 
-        return 'legal-tabs-mini';
+        // return 'legal-tabs-mini';
 	}
 
     const TABS = [
@@ -113,8 +117,10 @@ class CompilationTabs
         return implode( ' ', $date );
     }
 
-    public static function get_average( $atts )
+    public static function get_items_mini( $atts )
     {
+        $items = [];
+
         $tabs = get_field( self::TABS[ 'items' ], $atts[ 'id' ] );
 
         if ( $tabs )
@@ -127,9 +133,9 @@ class CompilationTabs
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                LegalDebug::debug( [
-                    'compilations' => $compilations,
-                ] );
+                // LegalDebug::debug( [
+                //     'compilations' => $compilations,
+                // ] );
 
                 foreach ( $compilations as $compilation )
                 {
@@ -146,9 +152,9 @@ class CompilationTabs
 
                     $sets[] = $ids;
 
-                    LegalDebug::debug( [
-                        'ids' => $ids,
-                    ] );
+                    // LegalDebug::debug( [
+                    //     'ids' => $ids,
+                    // ] );
 
                     if ( $limit == 0 )
                     {
@@ -170,9 +176,13 @@ class CompilationTabs
 
             foreach ( $billets as $billet )
             {
-                $profit = BilletProfit::get_average( $billet );
+                // $profit = BilletProfit::get_average( $billet );
+
+                $items[] = BilletMain::get_mini( $billet, $atts[ 'profit' ] );
             }
         }
+
+        return $items;
     }
 
     public static function get()
@@ -224,6 +234,8 @@ class CompilationTabs
 
     const TEMPLATE = [
         'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
+
+        'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
     ];
 
     public static function render()
@@ -250,6 +262,17 @@ class CompilationTabs
         ob_start();
 
         load_template( self::TEMPLATE[ 'tabs' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_tabs_mini( $args )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'mini' ], false, $args );
 
         $output = ob_get_clean();
 

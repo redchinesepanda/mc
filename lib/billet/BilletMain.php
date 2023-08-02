@@ -230,6 +230,18 @@ class BilletMain
         'description' => 'billet-bonus-description',
     ];
 
+    private static function get_bonus_title( $id )
+    {
+        $group = get_field( self::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            return $group[ self::ABOUT[ 'bonus-title' ] ];
+        }
+
+        return '';
+    }
+
     private static function get_bonus( $id )
     {
         $args = [];
@@ -262,6 +274,19 @@ class BilletMain
             'title' => $title,
 
             'description' => $description,
+        ];
+    }
+
+    private static function get_mini( $id, $profit = false, $filter = [] )
+    {
+        return [
+            'href' => self::get_url( $id, $filter ),
+
+            'logo' => BilletLogo::get_logo( $id ),
+
+            'bonus' => !$profit ? self::get_bonus_title( $id ) : '',
+
+            'profit' => $profit ? BilletProfit::get_average( $id ) : 0,
         ];
     }
 
