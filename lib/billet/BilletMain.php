@@ -279,14 +279,25 @@ class BilletMain
 
     public static function get_mini( $id, $profit = false, $filter = [] )
     {
+        $href = self::get_url( $id, $filter )[ 'play' ];
         return [
-            'href' => self::get_url( $id, $filter )[ 'play' ],
+            'id' => $id,
 
-            'logo' => BilletLogo::get_logo( $id ),
+            'logo' => [
+                'href' => $href,
+
+                'url' => BilletLogo::get_logo( $id ),
+            ],
 
             'bonus' => !$profit ? self::get_bonus_title( $id ) : '',
 
             'profit' => $profit ? BilletProfit::get_average( $id ) : 0,
+
+            'button' => [
+                'href' => $href,
+
+                'label' => __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN ),
+            ],   
         ];
     }
 
