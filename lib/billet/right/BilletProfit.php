@@ -10,6 +10,25 @@ class BilletProfit extends LegalDebug
 
     const PROFIT_ITEM_VALUE = 'profit-item-value';
 
+    public static function get_average( $id )
+    {
+        $items = get_field( self::PROFIT_ITEMS, $billet[ 'id' ] );
+    
+        if ( $items )
+        {
+            $value = 0;
+
+            foreach ( $items as $item )
+            {
+                $value += $item[ self::PROFIT_ITEM_VALUE ];
+            }
+
+            return $value / count( $items );
+        }
+
+        return 0;
+    }
+
     public static function get_value( $billet )
     {
         $features = ( !empty( $billet['filter']['features'] ) ? $billet['filter']['features'] : [ '', ] );
