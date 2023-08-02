@@ -24,9 +24,9 @@ class BilletLogo
 
         $group = get_field( self::FIELD[ 'about' ], $id );
 
-        LegalDebug::debug( [
-            'group' => $group,
-        ] );
+        // LegalDebug::debug( [
+        //     'group' => $group,
+        // ] );
 
         if ( $group )
         {
