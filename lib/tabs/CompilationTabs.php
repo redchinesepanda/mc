@@ -152,8 +152,13 @@ class CompilationTabs
 
                     if ( $limit == 0 )
                     {
-                        break;
+                        break 2;
                     }
+                }
+
+                if ( $limit == 0 )
+                {
+                    break;
                 }
             }
 
