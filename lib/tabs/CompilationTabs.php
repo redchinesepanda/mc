@@ -121,17 +121,30 @@ class CompilationTabs
         {
             $sets = [];
 
+            $limit = 3;
+
             foreach ( $tabs as $tab )
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                LegalDebug::debug( [
-                    'compilations' => $compilations,
-                ] );
+                // LegalDebug::debug( [
+                //     'compilations' => $compilations,
+                // ] );
 
                 foreach ( $compilations as $compilation )
                 {
-                    $sets[] = CompilationMain::get_ids( $compilation );
+                    $ids = CompilationMain::get_ids( $compilation, $limit );
+
+                    $amount = count( $ids );
+
+                    $rest = $limit - $amount;
+
+                    if ( $rest >= 0 )
+                    {
+                        $limit = $rest;
+                    }
+
+                    $sets[] = $ids;
 
                     // LegalDebug::debug( [
                     //     'sets' => $sets,
@@ -141,9 +154,14 @@ class CompilationTabs
 
             $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
 
-            LegalDebug::debug( [
-                'billets' => $billets,
-            ] );
+            // LegalDebug::debug( [
+            //     'billets' => $billets,
+            // ] );
+
+            foreach ( $billets as $billet )
+            {
+                $profit = BilletProfit::get_average( $billet );
+            }
         }
     }
 

@@ -290,7 +290,7 @@ class CompilationMain
         return $args;
     }
 
-    public static function get_args( $id )
+    public static function get_args( $id, $limit = -1 )
     {
         $meta_query = [];
 
@@ -343,7 +343,9 @@ class CompilationMain
 
         $args = [
 
-            'numberposts' => -1,
+            // 'numberposts' => -1,
+            
+            'numberposts' => $limit,
 
             'post_type' => 'legal_billet',
 
@@ -391,11 +393,11 @@ class CompilationMain
         return $args;
     }
 
-    public static function get_ids( $id )
+    public static function get_ids( $id, $limit )
     {
         $id = self::check_id( $id );
 
-        $posts = get_posts( self::get_args( $id ) );
+        $posts = get_posts( self::get_args( $id, $limit ) );
 
         return self::get_billets_ids( $posts );
     }
