@@ -20,8 +20,6 @@ class BilletLogo
 
     public static function get_logo( $id )
     {
-        $src = self::DEFAULT_LOGO;
-
         $group = get_field( self::FIELD[ 'about' ], $id );
 
         // LegalDebug::debug( [
@@ -32,9 +30,11 @@ class BilletLogo
         {
             if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
             {
-                $src = $group[ self::ABOUT[ 'logo' ] ];
+                return $group[ self::ABOUT[ 'logo' ] ];
             }
         }
+
+        return self::DEFAULT_LOGO;
     }
 
     public static function get( $billet )
