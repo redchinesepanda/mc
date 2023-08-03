@@ -208,7 +208,9 @@ class CompilationTabs
         {
             $sets = [];
 
-            $limit = 3;
+            // $limit = 3;
+            
+            $limit = $profit ? -1 : 3;
 
             foreach ( $tabs as $tab )
             {
