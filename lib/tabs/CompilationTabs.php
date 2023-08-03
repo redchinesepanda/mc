@@ -230,19 +230,9 @@ class CompilationTabs
 
                 foreach ( $compilations as $compilation )
                 {
-                    // $ids = CompilationMain::get_ids( $compilation, $limit );
-
                     $compilation_profit = CompilationMain::get_filter_profit( $compilation );
 
                     $profit = $profit && $compilation_profit;
-
-                    LegalDebug::debug( [
-                        'compilation' => $compilation,
-
-                        'compilation_profit' => $compilation_profit ? 'true' : 'false',
-
-                        'profit' => $profit ? 'true' : 'false',
-                    ] );
                 }
             }
         }
