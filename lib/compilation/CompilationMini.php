@@ -13,7 +13,7 @@ class CompilationMini
 
         return $data;
     }
-	
+
 	public static function get_ids( $id, $limit )
     {
         if ( $limit == 0 )
@@ -21,7 +21,7 @@ class CompilationMini
             return [];
         }
 
-        $id = self::check_id( $id );
+        $id = CompilationMain::check_id( $id );
 
         $posts = get_posts( CompilationMain::get_args( $id, $limit ) );
 
