@@ -1,6 +1,6 @@
 <?php
 
-require_once ( 'CompilationMini.php' )
+require_once ( 'CompilationMini.php' );
 
 class CompilationMain
 {
