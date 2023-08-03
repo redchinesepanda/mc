@@ -81,45 +81,9 @@ class CompilationTabs
         'label' => 'tabs-mini-label',
     ];
 
-    // public static function prepare( $atts )
-    // {
-	// 	$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
-
-    //     $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
-
-	// 	$args = [
-    //         'id' => $atts[ 'id' ],
-
-    //         'title' => get_field( self::FIELD[ 'title' ], $atts[ 'id' ] ),
-
-    //         'url' => get_field( self::FIELD[ 'image' ], $atts[ 'id' ] ),
-
-    //         'description' => get_field( self::FIELD[ 'description' ], $atts[ 'id' ] ),
-
-	// 		'items' => self::get_items_mini( $atts ),
-
-    //         'button' => [
-    //             'label' => get_field( self::FIELD[ 'label' ], $atts[ 'id' ] ),
-
-    //             'href' => get_post_permalink( $atts[ 'id' ] ),
-    //         ],
-
-	// 	];
-
-	// 	return self::render_tabs_mini( $args );
-
-    //     // return 'legal-tabs-mini';
-	// }
-
     public static function prepare_tab_mini( $id )
     {
-		// $atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
-
-        // $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
-
-		// $args = [
-
-        $profit = self::get_filter_profit( $id );
+		$profit = self::get_filter_profit( $id );
 
         $class = $profit ? 'legal-profit' : 'legal-default';
 
@@ -142,10 +106,6 @@ class CompilationTabs
 
             'class' => $class,
 		];
-
-		// return self::render_tabs_mini( $args );
-
-        // return 'legal-tabs-mini';
 	}
 
     public static function filter_space( $string )
@@ -207,8 +167,6 @@ class CompilationTabs
 
         return implode( ' ', $date );
     }
-
-    // public static function get_items_mini( $atts )
     
     public static function get_filter_profit( $id )
     {
@@ -243,8 +201,6 @@ class CompilationTabs
     public static function get_items_mini( $id, $profit = false )
     {
         $items = [];
-
-        // $tabs = get_field( self::TABS[ 'items' ], $atts[ 'id' ] );
         
         $tabs = get_field( self::TABS[ 'items' ], $id );
 
@@ -257,10 +213,6 @@ class CompilationTabs
             foreach ( $tabs as $tab )
             {
                 $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
-
-                // LegalDebug::debug( [
-                //     'compilations' => $compilations,
-                // ] );
 
                 foreach ( $compilations as $compilation )
                 {
@@ -277,10 +229,6 @@ class CompilationTabs
 
                     $sets[] = $ids;
 
-                    // LegalDebug::debug( [
-                    //     'ids' => $ids,
-                    // ] );
-
                     if ( $limit == 0 )
                     {
                         break 2;
@@ -295,14 +243,8 @@ class CompilationTabs
 
             $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
 
-            // LegalDebug::debug( [
-            //     'billets' => $billets,
-            // ] );
-
             foreach ( $billets as $billet )
             {
-                // $items[] = BilletMain::get_mini( $billet, $atts[ 'profit' ] );
-                
                 $items[] = BilletMain::get_mini( $billet, $profit );
             }
         }
@@ -361,8 +303,6 @@ class CompilationTabs
         'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
 
         'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
-
-        // 'container' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini-container.php',
     ];
 
     public static function render()
@@ -405,17 +345,6 @@ class CompilationTabs
 
         return $output;
     }
-
-    // public static function render_tabs_mini_container( $args )
-    // {
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'container' ], false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 }
 
 ?>
