@@ -6,6 +6,8 @@ require_once( 'BilletLogo.php' );
 
 require_once( 'BilletSpoiler.php' );
 
+require_once( 'BilletMini.php' );
+
 require_once( 'center/BilletTitle.php' );
 
 require_once( 'center/BilletList.php' );
@@ -230,17 +232,17 @@ class BilletMain
         'description' => 'billet-bonus-description',
     ];
 
-    private static function get_bonus_title( $id )
-    {
-        $group = get_field( self::FIELD[ 'about' ], $id );
+    // private static function get_bonus_title( $id )
+    // {
+    //     $group = get_field( self::FIELD[ 'about' ], $id );
 
-        if ( $group )
-        {
-            return $group[ self::ABOUT[ 'bonus-title' ] ];
-        }
+    //     if ( $group )
+    //     {
+    //         return $group[ self::ABOUT[ 'bonus-title' ] ];
+    //     }
 
-        return '';
-    }
+    //     return '';
+    // }
 
     private static function get_bonus( $id )
     {
@@ -277,29 +279,29 @@ class BilletMain
         ];
     }
 
-    public static function get_mini( $id, $profit = false, $filter = [] )
-    {
-        $href = self::get_url( $id, $filter )[ 'play' ];
-        return [
-            'id' => $id,
+    // public static function get_mini( $id, $profit = false, $filter = [] )
+    // {
+    //     $href = self::get_url( $id, $filter )[ 'play' ];
+    //     return [
+    //         'id' => $id,
 
-            'logo' => [
-                'href' => $href,
+    //         'logo' => [
+    //             'href' => $href,
 
-                'url' => BilletLogo::get_logo( $id ),
-            ],
+    //             'url' => BilletLogo::get_logo( $id ),
+    //         ],
 
-            'bonus' => !$profit ? self::get_bonus_title( $id ) : '',
+    //         'bonus' => !$profit ? self::get_bonus_title( $id ) : '',
 
-            'profit' => $profit ? BilletProfit::get_average( $id ) : 0,
+    //         'profit' => $profit ? BilletProfit::get_average( $id ) : 0,
 
-            'button' => [
-                'href' => $href,
+    //         'button' => [
+    //             'href' => $href,
 
-                'label' => __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN ),
-            ],   
-        ];
-    }
+    //             'label' => __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN ),
+    //         ],   
+    //     ];
+    // }
 
     private static function get( $args )
     {

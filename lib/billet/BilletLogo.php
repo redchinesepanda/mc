@@ -18,24 +18,24 @@ class BilletLogo
         'mega' => 'about-logo-mega',
     ];
 
-    public static function get_logo( $id )
-    {
-        $group = get_field( self::FIELD[ 'about' ], $id );
+    // public static function get_logo( $id )
+    // {
+    //     $group = get_field( self::FIELD[ 'about' ], $id );
 
-        // LegalDebug::debug( [
-        //     'group' => $group,
-        // ] );
+    //     // LegalDebug::debug( [
+    //     //     'group' => $group,
+    //     // ] );
 
-        if ( $group )
-        {
-            if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
-            {
-                return $group[ self::ABOUT[ 'logo' ] ];
-            }
-        }
+    //     if ( $group )
+    //     {
+    //         if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
+    //         {
+    //             return $group[ self::ABOUT[ 'logo' ] ];
+    //         }
+    //     }
 
-        return self::DEFAULT_LOGO;
-    }
+    //     return self::DEFAULT_LOGO;
+    // }
 
     public static function get( $billet )
     {

@@ -100,26 +100,6 @@ class CompilationTabsMini
         return 0;
     }
 
-	// const TABS = [
-    //     'text' => 'tabs-title-text',
-
-    //     'items' => 'tabs-items',
-        
-    //     'description' => 'tabs-description-text',
-
-    //     'link-text' => 'tabs-link-text',
-
-    //     'link-url' => 'tabs-link-url',
-    // ];
-
-    // const TAB = [
-    //     'text' => 'tab-title-text',
-
-    //     'image' => 'tab-title-image',
-
-    //     'compilations' => 'tab-compilations',
-    // ];
-
 	public static function get_items_mini( $id, $profit = false )
     {
         $items = [];
