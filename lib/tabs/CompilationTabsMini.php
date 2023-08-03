@@ -37,6 +37,16 @@ class CompilationTabsMini
 		'profit' => false,
 	];
 
+    const FIELD = [
+        'title' => 'tabs-mini-title',
+
+        'image' => 'tabs-mini-image',
+
+        'description' => 'tabs-mini-description',
+
+        'label' => 'tabs-mini-label',
+    ];
+
 	public static function prepare_tab_mini( $id )
     {
 		$profit = self::get_filter_profit( $id );
