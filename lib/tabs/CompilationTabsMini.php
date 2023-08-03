@@ -124,7 +124,7 @@ class CompilationTabsMini
     {
         $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+        $tabs = get_field(self::TABS[ 'items' ], $id );
 
         if ( $tabs )
         {
