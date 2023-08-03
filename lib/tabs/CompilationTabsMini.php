@@ -149,7 +149,7 @@ class CompilationTabsMini
 
             foreach ( $billets as $billet )
             {
-                $items[] = BilletMain::get_mini( $billet, $profit );
+                $items[] = BilletMini::get_mini( $billet, $profit );
             }
 
             if ( $profit )
