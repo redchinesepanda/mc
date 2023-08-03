@@ -136,7 +136,7 @@ class CompilationTabsMini
 
             foreach ( $tabs as $tab )
             {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::self[ 'compilations' ] ] : [] );
+                $compilations = ( !empty( $tab[self::TAB[ 'compilations' ] ] ) ? $tab[ self::self[ 'compilations' ] ] : [] );
 
                 foreach ( $compilations as $compilation )
                 {
