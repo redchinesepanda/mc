@@ -1,11 +1,13 @@
 <?php
 
+require_once ( 'CompilationTabsMini.php' );
+
 class CompilationTabs
 {
     const CSS = [
         'tabs-main' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
 
-        'tabs-mini' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
+        // 'tabs-mini' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
     ];
 
     const JS = [
@@ -62,14 +64,16 @@ class CompilationTabs
 
         // [legal-tabs-mini id='269090' profit="true"]
 
-        add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
+        // add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
+
+        CompilationTabsMini::register();
     }
 
-    const PAIRS = [
-		'id' => 0,
+    // const PAIRS = [
+	// 	'id' => 0,
 
-		'profit' => false,
-	];
+	// 	'profit' => false,
+	// ];
 
     const FIELD = [
         'title' => 'tabs-mini-title',
@@ -81,61 +85,61 @@ class CompilationTabs
         'label' => 'tabs-mini-label',
     ];
 
-    public static function prepare_tab_mini( $id )
-    {
-		$profit = self::get_filter_profit( $id );
+    // public static function prepare_tab_mini( $id )
+    // {
+	// 	$profit = self::get_filter_profit( $id );
 
-        $class = $profit ? 'legal-profit' : 'legal-default';
+    //     $class = $profit ? 'legal-profit' : 'legal-default';
 
-        return [
-            'id' => $id,
+    //     return [
+    //         'id' => $id,
 
-            'title' => get_field( self::FIELD[ 'title' ], $id ),
+    //         'title' => get_field( self::FIELD[ 'title' ], $id ),
 
-            'url' => get_field( self::FIELD[ 'image' ], $id ),
+    //         'url' => get_field( self::FIELD[ 'image' ], $id ),
 
-            'description' => get_field( self::FIELD[ 'description' ], $id ),
+    //         'description' => get_field( self::FIELD[ 'description' ], $id ),
 
-			'items' => self::get_items_mini( $id, $profit ),
+	// 		'items' => self::get_items_mini( $id, $profit ),
 
-            'button' => [
-                'label' => get_field( self::FIELD[ 'label' ], $id ),
+    //         'button' => [
+    //             'label' => get_field( self::FIELD[ 'label' ], $id ),
 
-                'href' => get_post_permalink( $id ),
-            ],
+    //             'href' => get_post_permalink( $id ),
+    //         ],
 
-            'class' => $class,
-		];
-	}
+    //         'class' => $class,
+	// 	];
+	// }
 
-    public static function filter_space( $string )
-    {
-        return preg_replace(
-            '/\s*,\s*/',
+    // public static function filter_space( $string )
+    // {
+    //     return preg_replace(
+    //         '/\s*,\s*/',
             
-            ',',
+    //         ',',
             
-            filter_var( $string, FILTER_SANITIZE_STRING )
-        );
-    }
+    //         filter_var( $string, FILTER_SANITIZE_STRING )
+    //     );
+    // }
 
-    public static function prepare( $atts )
-    {
-		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
+    // public static function prepare( $atts )
+    // {
+	// 	$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
 
-        $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
+    //     $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
 
-        $pages = explode( ',', self::filter_space( $atts[ 'id' ] ) );
+    //     $pages = explode( ',', self::filter_space( $atts[ 'id' ] ) );
 
-        $args = [];
+    //     $args = [];
 
-        foreach ( $pages as $page )
-        {
-            $args[] = self::prepare_tab_mini( $page );
-        }
+    //     foreach ( $pages as $page )
+    //     {
+    //         $args[] = self::prepare_tab_mini( $page );
+    //     }
 
-		return self::render_tabs_mini( $args );
-	}
+	// 	return self::render_tabs_mini( $args );
+	// }
 
     const TABS = [
         'text' => 'tabs-title-text',
@@ -168,115 +172,115 @@ class CompilationTabs
         return implode( ' ', $date );
     }
     
-    public static function get_filter_profit( $id )
-    {
-        $items = [];
+    // public static function get_filter_profit( $id )
+    // {
+    //     $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+    //     $tabs = get_field( self::TABS[ 'items' ], $id );
 
-        $profit = true;
+    //     $profit = true;
 
-        if ( $tabs )
-        {
-            $sets = [];
+    //     if ( $tabs )
+    //     {
+    //         $sets = [];
 
-            $limit = 3;
+    //         $limit = 3;
 
-            foreach ( $tabs as $tab )
-            {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+    //         foreach ( $tabs as $tab )
+    //         {
+    //             $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                foreach ( $compilations as $compilation )
-                {
-                    $compilation_profit = CompilationMain::get_filter_profit( $compilation );
+    //             foreach ( $compilations as $compilation )
+    //             {
+    //                 $compilation_profit = CompilationMain::get_filter_profit( $compilation );
 
-                    $profit = $profit && $compilation_profit;
-                }
-            }
-        }
+    //                 $profit = $profit && $compilation_profit;
+    //             }
+    //         }
+    //     }
 
-        return $profit;
-    }
+    //     return $profit;
+    // }
 
-    public static function get_items_mini( $id, $profit = false )
-    {
-        $items = [];
+    // public static function get_items_mini( $id, $profit = false )
+    // {
+    //     $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+    //     $tabs = get_field( self::TABS[ 'items' ], $id );
 
-        if ( $tabs )
-        {
-            $sets = [];
+    //     if ( $tabs )
+    //     {
+    //         $sets = [];
 
-            // $limit = 3;
+    //         // $limit = 3;
             
-            $limit = $profit ? -1 : 3;
+    //         $limit = $profit ? -1 : 3;
 
-            foreach ( $tabs as $tab )
-            {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+    //         foreach ( $tabs as $tab )
+    //         {
+    //             $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
 
-                foreach ( $compilations as $compilation )
-                {
-                    $ids = CompilationMain::get_ids( $compilation, $limit );
+    //             foreach ( $compilations as $compilation )
+    //             {
+    //                 $ids = CompilationMain::get_ids( $compilation, $limit );
 
-                    $amount = count( $ids );
+    //                 $amount = count( $ids );
 
-                    $rest = $limit - $amount;
+    //                 $rest = $limit - $amount;
 
-                    if ( $rest >= 0 )
-                    {
-                        $limit = $rest;
-                    }
+    //                 if ( $rest >= 0 )
+    //                 {
+    //                     $limit = $rest;
+    //                 }
 
-                    $sets[] = $ids;
+    //                 $sets[] = $ids;
 
-                    if ( $limit == 0 )
-                    {
-                        break 2;
-                    }
-                }
+    //                 if ( $limit == 0 )
+    //                 {
+    //                     break 2;
+    //                 }
+    //             }
 
-                if ( $limit == 0 )
-                {
-                    break;
-                }
-            }
+    //             if ( $limit == 0 )
+    //             {
+    //                 break;
+    //             }
+    //         }
 
-            $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
+    //         $billets = array_unique( call_user_func_array( 'array_merge' , $sets ) );
 
-            foreach ( $billets as $billet )
-            {
-                $items[] = BilletMain::get_mini( $billet, $profit );
-            }
+    //         foreach ( $billets as $billet )
+    //         {
+    //             $items[] = BilletMain::get_mini( $billet, $profit );
+    //         }
 
-            if ( $profit )
-            {
-                $handler = new self();
+    //         if ( $profit )
+    //         {
+    //             $handler = new self();
 
-                usort( $items, [ $handler, 'sort_profit' ] );
+    //             usort( $items, [ $handler, 'sort_profit' ] );
 
-                $items = array_slice( $items, 0, 3 );
-            }
-        }
+    //             $items = array_slice( $items, 0, 3 );
+    //         }
+    //     }
 
-        return $items;
-    }
+    //     return $items;
+    // }
 
-    public static function sort_profit( $a, $b )
-    {
-        if ( $a[ 'profit' ] > $b[ 'profit' ] )
-        {
-            return 1;
-        }
+    // public static function sort_profit( $a, $b )
+    // {
+    //     if ( $a[ 'profit' ] > $b[ 'profit' ] )
+    //     {
+    //         return 1;
+    //     }
         
-        if ( $a[ 'profit' ] < $b[ 'profit' ] )
-        {
-            return -1;
-        }
+    //     if ( $a[ 'profit' ] < $b[ 'profit' ] )
+    //     {
+    //         return -1;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
     public static function get()
     {
@@ -328,7 +332,7 @@ class CompilationTabs
     const TEMPLATE = [
         'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
 
-        'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
+        // 'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
     ];
 
     public static function render()
@@ -361,16 +365,16 @@ class CompilationTabs
         return $output;
     }
 
-    public static function render_tabs_mini( $args )
-    {
-        ob_start();
+    // public static function render_tabs_mini( $args )
+    // {
+    //     ob_start();
 
-        load_template( self::TEMPLATE[ 'mini' ], false, $args );
+    //     load_template( self::TEMPLATE[ 'mini' ], false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 }
 
 ?>
