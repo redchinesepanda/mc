@@ -1,12 +1,12 @@
 <div class="legal-tabs-mini-container">
-	<?php foreach ( $args as $page ) : ?>
-		<div class="legal-tabs-mini item-<?php echo $page[ 'id' ]; ?>">
+	<?php foreach ( $args as $id => $page ) : ?>
+		<div class="legal-tabs-mini item-<?php echo $id; ?>">
 			<style type="text/css">
-				.legal-tabs-mini.item-<?php echo $page[ 'id' ]; ?> .tabs-mini-title {
+				.legal-tabs-mini.item-<?php echo $id; ?> .tabs-mini-title {
 					background-image: url( '<?php echo $page['url']; ?>' );
 				}
 				<?php foreach ( $page[ 'items' ] as $item ) : ?>
-					.legal-tabs-mini.item-<?php echo $page[ 'id' ]; ?> .tabs-mini-item.item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
+					.legal-tabs-mini.item-<?php echo $id; ?> .tabs-mini-item.item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
 						background-image: url( '<?php echo $item[ 'logo' ][ 'url' ]; ?>' );
 					}
 				<?php endforeach; ?>
