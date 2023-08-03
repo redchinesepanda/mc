@@ -205,6 +205,36 @@ class CompilationTabs
 
     // public static function get_items_mini( $atts )
     
+    public static function get_filter_profit( $id )
+    {
+        $items = [];
+        
+        $tabs = get_field( self::TABS[ 'items' ], $id );
+
+        $profit = true;
+
+        if ( $tabs )
+        {
+            $sets = [];
+
+            $limit = 3;
+
+            foreach ( $tabs as $tab )
+            {
+                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+
+                foreach ( $compilations as $compilation )
+                {
+                    // $ids = CompilationMain::get_ids( $compilation, $limit );
+
+                    $profit &&= CompilationMain::get_filter_profit( $compilation );
+                }
+            }
+        }
+
+        return $profit;
+    }
+
     public static function get_items_mini( $id, $profit = false )
     {
         $items = [];

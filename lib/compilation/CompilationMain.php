@@ -165,6 +165,11 @@ class CompilationMain
         'description-enabled' => 'billet-description-enabled',
     ];
 
+    public static function get_filter_profit( $id )
+    {
+        return get_field( self::BILLET[ 'profit-enabled' ], $id );
+    }
+
     public static function get_filter( $id )
     {
         return [
