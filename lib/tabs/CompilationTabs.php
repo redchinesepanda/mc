@@ -119,6 +119,8 @@ class CompilationTabs
 
 		// $args = [
 
+        $profit =  self::get_filter_profit( $id );
+
         return [
             'id' => $id,
 
@@ -135,6 +137,7 @@ class CompilationTabs
 
                 'href' => get_post_permalink( $id ),
             ],
+
 
 		];
 
