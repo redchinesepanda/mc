@@ -100,31 +100,31 @@ class CompilationTabsMini
         return 0;
     }
 
-	const TABS = [
-        'text' => 'tabs-title-text',
+	// const TABS = [
+    //     'text' => 'tabs-title-text',
 
-        'items' => 'tabs-items',
+    //     'items' => 'tabs-items',
         
-        'description' => 'tabs-description-text',
+    //     'description' => 'tabs-description-text',
 
-        'link-text' => 'tabs-link-text',
+    //     'link-text' => 'tabs-link-text',
 
-        'link-url' => 'tabs-link-url',
-    ];
+    //     'link-url' => 'tabs-link-url',
+    // ];
 
-    const TAB = [
-        'text' => 'tab-title-text',
+    // const TAB = [
+    //     'text' => 'tab-title-text',
 
-        'image' => 'tab-title-image',
+    //     'image' => 'tab-title-image',
 
-        'compilations' => 'tab-compilations',
-    ];
+    //     'compilations' => 'tab-compilations',
+    // ];
 
 	public static function get_items_mini( $id, $profit = false )
     {
         $items = [];
         
-        $tabs = get_field(self::TABS[ 'items' ], $id );
+        $tabs = get_field(CompilationTabs::TABS[ 'items' ], $id );
 
         if ( $tabs )
         {
@@ -136,7 +136,7 @@ class CompilationTabsMini
 
             foreach ( $tabs as $tab )
             {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+                $compilations = ( !empty( $tab[ CompilationTabs::TAB[ 'compilations' ] ] ) ? $tab[ CompilationTabs::TAB[ 'compilations' ] ] : [] );
 
                 foreach ( $compilations as $compilation )
                 {
@@ -207,7 +207,7 @@ class CompilationTabsMini
     {
         $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+        $tabs = get_field( CompilationTabs::TABS[ 'items' ], $id );
 
         $profit = true;
 
@@ -219,7 +219,7 @@ class CompilationTabsMini
 
             foreach ( $tabs as $tab )
             {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+                $compilations = ( !empty( $tab[ CompilationTabs::TAB[ 'compilations' ] ] ) ? $tab[ CompilationTabs::TAB[ 'compilations' ] ] : [] );
 
                 foreach ( $compilations as $compilation )
                 {
