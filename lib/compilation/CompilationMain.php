@@ -48,18 +48,6 @@ class CompilationMain
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
     }
 
-    // public static function get_billets_ids( $posts )
-    // {
-    //     $data = [];
-
-    //     foreach ( $posts as $post )
-    //     {
-    //         $data[] = $post->ID;
-    //     }
-
-    //     return $data;
-    // }
-
     public static function get_billets( $posts, $filter )
     {
         $data = [];
@@ -166,11 +154,6 @@ class CompilationMain
 
         'description-enabled' => 'billet-description-enabled',
     ];
-
-    // public static function get_filter_profit( $id )
-    // {
-    //     return get_field( self::BILLET[ 'profit-enabled' ], $id );
-    // }
 
     public static function get_filter( $id )
     {
@@ -399,20 +382,6 @@ class CompilationMain
 
         return $args;
     }
-
-    // public static function get_ids( $id, $limit )
-    // {
-    //     if ( $limit == 0 )
-    //     {
-    //         return [];
-    //     }
-
-    //     $id = self::check_id( $id );
-
-    //     $posts = get_posts( self::get_args( $id, $limit ) );
-
-    //     return self::get_billets_ids( $posts );
-    // }
 
     public static function get( $id )
     {
