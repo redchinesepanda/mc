@@ -6,7 +6,7 @@
 					background-image: url( '<?php echo $page['url']; ?>' );
 				}
 				<?php foreach ( $page[ 'items' ] as $item ) : ?>
-					.legal-tabs-mini.item-<?php echo $id; ?> .tabs-mini-item.item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
+					.legal-tabs-mini.item-<?php echo $id; ?> .tabs-mini-item.item-<?php echo $item[ 'id' ]; ?> .mini-item-logo-afillate {
 						background-image: url( '<?php echo $item[ 'logo' ][ 'url' ]; ?>' );
 					}
 				<?php endforeach; ?>
