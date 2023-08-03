@@ -120,7 +120,7 @@ class CompilationTabs
 		// $args = [
 
         return [
-            'id' => $atts[ 'id' ],
+            'id' => $id,
 
             'title' => get_field( self::FIELD[ 'title' ], $id ),
 
