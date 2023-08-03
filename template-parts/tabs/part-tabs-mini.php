@@ -11,7 +11,7 @@
 			background-image: url( '<?php echo $args['url']; ?>' );
 		}
 		<?php foreach ( $args[ 'items' ] as $item ) : ?>
-			.legal-tabs-mini.item-<?php echo $args[ 'id' ]; ?> .tabs-mini-item .item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
+			.legal-tabs-mini.item-<?php echo $args[ 'id' ]; ?> .tabs-mini-item.item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
 				background-image: url( '<?php echo $item[ 'logo' ][ 'url' ]; ?>' );
 			}
 		<?php endforeach; ?>
