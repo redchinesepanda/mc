@@ -26,7 +26,7 @@ class CompilationTabsMini
     {
         $handler = new self();
 
-        // [legal-tabs-mini id='269090' profit="true"]
+        // [legal-tabs-mini id='269090']
 
         add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
     }
