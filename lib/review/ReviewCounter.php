@@ -69,6 +69,13 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $table );
 
+		$amount = count( $items );
+
+		if ( $amount > 4 )
+		{
+			$ovarall = array_shift( $items );
+		}
+
 		foreach ( $items as $id => $item ) {
 			$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
 		}
