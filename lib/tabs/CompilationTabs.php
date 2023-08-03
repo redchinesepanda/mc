@@ -119,7 +119,9 @@ class CompilationTabs
 
 		// $args = [
 
-        $profit =  self::get_filter_profit( $id );
+        $profit = self::get_filter_profit( $id );
+
+        $class = $profit ? 'legal-profit' : 'legal-default';
 
         return [
             'id' => $id,
@@ -130,7 +132,7 @@ class CompilationTabs
 
             'description' => get_field( self::FIELD[ 'description' ], $id ),
 
-			'items' => self::get_items_mini( $id ),
+			'items' => self::get_items_mini( $id, $profit ),
 
             'button' => [
                 'label' => get_field( self::FIELD[ 'label' ], $id ),
@@ -138,7 +140,7 @@ class CompilationTabs
                 'href' => get_post_permalink( $id ),
             ],
 
-
+            'class' => $class,
 		];
 
 		// return self::render_tabs_mini( $args );
