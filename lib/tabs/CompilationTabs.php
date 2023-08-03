@@ -4,6 +4,8 @@ class CompilationTabs
 {
     const CSS = [
         'tabs-main' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
+
+        'tabs-mini' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
     ];
 
     const JS = [
@@ -58,7 +60,7 @@ class CompilationTabs
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        // [legal-tabs-mini id='269090']
+        // [legal-tabs-mini id='269090' profit="true"]
 
         add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
     }
