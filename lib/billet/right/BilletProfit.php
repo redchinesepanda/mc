@@ -25,11 +25,14 @@ class BilletProfit extends LegalDebug
     //     return floor( $number * $precision ) / $precision * $negative;
     // }
 
-    public static function cutNum($num, $precision = 2)
+    public static function cut_numeric( $value, $precision = 2 )
     {
-        $integerPart = floor($num);
-        $decimalPart = str_replace($integerPart, '', $num);
-        $trimmedDecimal = substr($decimalPart, 0, $precision + 1);
+        $integerPart = floor( $value );
+
+        $decimalPart = str_replace( $integerPart, '', $value );
+
+        $trimmedDecimal = substr( $decimalPart, 0, $precision + 1 );
+
         return $integerPart . $trimmedDecimal;
     }
 
@@ -65,7 +68,7 @@ class BilletProfit extends LegalDebug
 
             //    'truncate_number' => self::truncate_number( $value ),
 
-                'cutNum' => self::cutNum( $value ),
+                'cut_numeric' => self::cut_numeric( $value ),
             ] );
 
             return ( float ) number_format( $value / count( $items ), 2, '.', '');
