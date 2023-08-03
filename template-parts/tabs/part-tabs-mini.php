@@ -1,6 +1,6 @@
 <div class="legal-tabs-mini-set">
 	<?php foreach ( $args as $id => $page ) : ?>
-		<div class="legal-tabs-mini item-<?php echo $id; ?>">
+		<div class="legal-tabs-mini item-<?php echo $id; ?> <?php echo $page[ 'class' ]; ?>">
 			<style type="text/css">
 				.legal-tabs-mini.item-<?php echo $id; ?> .tabs-mini-title {
 					background-image: url( '<?php echo $page['url']; ?>' );
