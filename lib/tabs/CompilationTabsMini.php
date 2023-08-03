@@ -120,7 +120,7 @@ class CompilationTabsMini
 
                 foreach ( $compilations as $compilation )
                 {
-                    $ids = CompilationMain::get_ids( $compilation, $limit );
+                    $ids = CompilationMini::get_ids( $compilation, $limit );
 
                     $amount = count( $ids );
 
@@ -203,7 +203,7 @@ class CompilationTabsMini
 
                 foreach ( $compilations as $compilation )
                 {
-                    $compilation_profit = CompilationMain::get_filter_profit( $compilation );
+                    $compilation_profit = CompilationMini::get_filter_profit( $compilation );
 
                     $profit = $profit && $compilation_profit;
                 }
