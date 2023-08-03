@@ -227,7 +227,17 @@ class CompilationTabs
                 {
                     // $ids = CompilationMain::get_ids( $compilation, $limit );
 
-                    $profit = $profit && CompilationMain::get_filter_profit( $compilation );
+                    $compilation_profit = CompilationMain::get_filter_profit( $compilation );
+
+                    $profit = $profit && $compilation_profit;
+
+                    LegalDebug::debug( [
+                        'compilation' => $compilation,
+
+                        'compilation_profit' => $compilation_profit ? 'true' : 'false',
+
+                        'profit' => $profit ? 'true' : 'false',
+                    ] );
                 }
             }
         }
