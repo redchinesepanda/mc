@@ -255,6 +255,8 @@ class CompilationTabs
                 $handler = new self();
 
                 usort( $items, [ $handler, 'sort_profit' ] );
+
+                $items = array_slice( $items, 0, 3 );
             }
         }
 
