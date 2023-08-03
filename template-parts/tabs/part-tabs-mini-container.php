@@ -1,4 +1,4 @@
-<div class="legal-tabs-mini-container">
+<div class="legal-tabs-mini-set">
 	<?php foreach ( $args as $id => $page ) : ?>
 		<div class="legal-tabs-mini item-<?php echo $id; ?>">
 			<style type="text/css">

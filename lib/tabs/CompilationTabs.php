@@ -362,7 +362,7 @@ class CompilationTabs
 
         'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
 
-        'container' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini-container.php',
+        // 'container' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini-container.php',
     ];
 
     public static function render()
@@ -406,16 +406,16 @@ class CompilationTabs
         return $output;
     }
 
-    public static function render_tabs_mini_container( $args )
-    {
-        ob_start();
+    // public static function render_tabs_mini_container( $args )
+    // {
+    //     ob_start();
 
-        load_template( self::TEMPLATE[ 'container' ], false, $args );
+    //     load_template( self::TEMPLATE[ 'container' ], false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 }
 
 ?>
