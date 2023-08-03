@@ -23,6 +23,20 @@ class BilletProfit extends LegalDebug
                 $value += $item[ self::PROFIT_ITEM_VALUE ];
             }
 
+            $value = $value / count( $items );
+
+            LegalDebug( [
+               'value' => $value,
+
+               'float' => ( float ) $value,
+
+               'number_format' => number_format( $value, 2, '.', ''),
+
+               'number_format-float-value' => number_format( ( float ) $value, 2, '.', ''),
+
+               'number_format-float-all' => ( float ) number_format( $value, 2, '.', ''),
+            ] );
+
             return ( float ) number_format( $value / count( $items ), 2, '.', '');
         }
 
