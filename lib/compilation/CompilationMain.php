@@ -48,17 +48,17 @@ class CompilationMain
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
     }
 
-    public static function get_billets_ids( $posts )
-    {
-        $data = [];
+    // public static function get_billets_ids( $posts )
+    // {
+    //     $data = [];
 
-        foreach ( $posts as $post )
-        {
-            $data[] = $post->ID;
-        }
+    //     foreach ( $posts as $post )
+    //     {
+    //         $data[] = $post->ID;
+    //     }
 
-        return $data;
-    }
+    //     return $data;
+    // }
 
     public static function get_billets( $posts, $filter )
     {
