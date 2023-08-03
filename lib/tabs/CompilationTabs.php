@@ -174,7 +174,7 @@ class CompilationTabs
             $args[] = self::prepare_tab_mini( $page );
         }
 
-		return self::render_tabs_mini_container( $args );
+		return self::render_tabs_mini( $args );
 	}
 
     const TABS = [
