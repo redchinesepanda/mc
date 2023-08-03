@@ -19,7 +19,7 @@ class LegalComponents
 		// CompilationTabs::register();
 		
 		CompilationTabsMain::register();
-	}
+	} 
 	
 	public static function check()
     {
