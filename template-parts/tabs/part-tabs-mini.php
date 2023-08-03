@@ -7,11 +7,11 @@
 ?>
 <div class="legal-tabs-mini item-<?php echo $args[ 'id' ]; ?>">
 	<style type="text/css">
-		legal-tabs-mini item-<?php echo $args[ 'id' ]; ?> .tabs-mini-title {
+		.legal-tabs-mini.item-<?php echo $args[ 'id' ]; ?> .tabs-mini-title {
 			background-image: url( '<?php echo $args['url']; ?>' );
 		}
 		<?php foreach ( $args[ 'items' ] as $item ) : ?>
-			legal-tabs-mini item-<?php echo $args[ 'id' ]; ?> .mini-item-logo {
+			.legal-tabs-mini.item-<?php echo $args[ 'id' ]; ?> .tabs-mini-item .item-<?php echo $item[ 'id' ]; ?> .mini-item-logo {
 				background-image: url( '<?php echo $args['url']; ?>' );
 			}
 		<?php endforeach; ?>
@@ -39,5 +39,4 @@
 	<div class="tabs-mini-button">
 		<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" class="tabs-mini-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 	</div>
-	
 </div>
