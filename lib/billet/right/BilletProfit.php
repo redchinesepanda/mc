@@ -23,7 +23,7 @@ class BilletProfit extends LegalDebug
                 $value += $item[ self::PROFIT_ITEM_VALUE ];
             }
 
-            return $value / count( $items );
+            return number_format( ( float ) ( $value / count( $items ) ), 2, '.', '');
         }
 
         return 0;
