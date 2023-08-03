@@ -10,21 +10,6 @@ class BilletProfit extends LegalDebug
 
     const PROFIT_ITEM_VALUE = 'profit-item-value';
 
-    // public static function truncate_number( $number, $precision = 2) {
-    //     // Zero causes issues, and no need to truncate
-    //     if ( 0 == (int)$number ) {
-    //         return $number;
-    //     }
-    //     // Are we negative?
-    //     $negative = $number / abs($number);
-    //     // Cast the number to a positive to solve rounding
-    //     $number = abs($number);
-    //     // Calculate precision number for dividing / multiplying
-    //     $precision = pow(10, $precision);
-    //     // Run the math, re-applying the negative value to ensure returns correctly negative / positive
-    //     return floor( $number * $precision ) / $precision * $negative;
-    // }
-
     public static function cut_numeric( $value, $precision = 2 )
     {
         $integerPart = floor( $value );
@@ -51,27 +36,7 @@ class BilletProfit extends LegalDebug
 
             $value = $value / count( $items );
 
-            LegalDebug::debug( [
-               'value' => $value,
-
-               'float' => ( float ) $value,
-
-            //    'number_format' => number_format( $value, 2, '.', ''),
-
-            //    'number_format-float-value' => number_format( ( float ) $value, 2, '.', ''),
-
-            //    'number_format-float-all' => ( float ) number_format( $value, 2, '.', ''),
-
-            //    'floor' => floor( $value * 100 ) / 100,
-
-            //    'intval' => intval(($value*100))/100,
-
-            //    'truncate_number' => self::truncate_number( $value ),
-
-                'cut_numeric' => self::cut_numeric( $value ),
-            ] );
-
-            return ( float ) number_format( $value / count( $items ), 2, '.', '');
+            return self::cut_numeric( $value );
         }
 
         return 0;
