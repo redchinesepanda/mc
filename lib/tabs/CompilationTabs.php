@@ -227,7 +227,7 @@ class CompilationTabs
                 {
                     // $ids = CompilationMain::get_ids( $compilation, $limit );
 
-                    $profit &&= CompilationMain::get_filter_profit( $compilation );
+                    $profit = $profit && CompilationMain::get_filter_profit( $compilation );
                 }
             }
         }
