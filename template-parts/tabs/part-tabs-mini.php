@@ -1,10 +1,6 @@
-<?php
+<div class="legal-tabs-mini-container">
+	<?php foreach ( $args as $page ) : ?>
 
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-?>
 <div class="legal-tabs-mini item-<?php echo $args[ 'id' ]; ?>">
 	<style type="text/css">
 		.legal-tabs-mini.item-<?php echo $args[ 'id' ]; ?> .tabs-mini-title {
@@ -39,4 +35,7 @@
 	<div class="tabs-mini-button">
 		<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" class="tabs-mini-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 	</div>
+</div>
+
+<?php endforeach; ?>
 </div>

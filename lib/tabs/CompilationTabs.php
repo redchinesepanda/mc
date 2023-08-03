@@ -81,34 +81,95 @@ class CompilationTabs
         'label' => 'tabs-mini-label',
     ];
 
+    // public static function prepare( $atts )
+    // {
+	// 	$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
+
+    //     $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
+
+	// 	$args = [
+    //         'id' => $atts[ 'id' ],
+
+    //         'title' => get_field( self::FIELD[ 'title' ], $atts[ 'id' ] ),
+
+    //         'url' => get_field( self::FIELD[ 'image' ], $atts[ 'id' ] ),
+
+    //         'description' => get_field( self::FIELD[ 'description' ], $atts[ 'id' ] ),
+
+	// 		'items' => self::get_items_mini( $atts ),
+
+    //         'button' => [
+    //             'label' => get_field( self::FIELD[ 'label' ], $atts[ 'id' ] ),
+
+    //             'href' => get_post_permalink( $atts[ 'id' ] ),
+    //         ],
+
+	// 	];
+
+	// 	return self::render_tabs_mini( $args );
+
+    //     // return 'legal-tabs-mini';
+	// }
+
+    public static function prepare_tab_mini( $id )
+    {
+		// $atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
+
+        // $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
+
+		// $args = [
+
+        return [
+            'id' => $atts[ 'id' ],
+
+            'title' => get_field( self::FIELD[ 'title' ], $id ),
+
+            'url' => get_field( self::FIELD[ 'image' ], $id ),
+
+            'description' => get_field( self::FIELD[ 'description' ], $id ),
+
+			'items' => self::get_items_mini( $id ),
+
+            'button' => [
+                'label' => get_field( self::FIELD[ 'label' ], $id ),
+
+                'href' => get_post_permalink( $id ),
+            ],
+
+		];
+
+		// return self::render_tabs_mini( $args );
+
+        // return 'legal-tabs-mini';
+	}
+
+    public static function filter_space( $string )
+    {
+        return preg_replace(
+            '/\s*,\s*/',
+            
+            ',',
+            
+            filter_var( $string, FILTER_SANITIZE_STRING )
+        );
+    }
+
     public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-tabs-mini' );
 
         $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
 
-		$args = [
-            'id' => $atts[ 'id' ],
+        $pages = explode( ',', self::filter_space( $atts[ 'id' ] ) );
 
-            'title' => get_field( self::FIELD[ 'title' ], $atts[ 'id' ] ),
+        $args = [];
 
-            'url' => get_field( self::FIELD[ 'image' ], $atts[ 'id' ] ),
+        foreach ( $pages as $page )
+        {
+            $args[] = self::prepare_tab_mini( $page );
+        }
 
-            'description' => get_field( self::FIELD[ 'description' ], $atts[ 'id' ] ),
-
-			'items' => self::get_items_mini( $atts ),
-
-            'button' => [
-                'label' => get_field( self::FIELD[ 'label' ], $atts[ 'id' ] ),
-
-                'href' => get_post_permalink( $atts[ 'id' ] ),
-            ],
-
-		];
-
-		return self::render_tabs_mini( $args );
-
-        // return 'legal-tabs-mini';
+		return self::render_tabs_mini_container( $args );
 	}
 
     const TABS = [
@@ -142,11 +203,15 @@ class CompilationTabs
         return implode( ' ', $date );
     }
 
-    public static function get_items_mini( $atts )
+    // public static function get_items_mini( $atts )
+    
+    public static function get_items_mini( $id, $profit = false )
     {
         $items = [];
 
-        $tabs = get_field( self::TABS[ 'items' ], $atts[ 'id' ] );
+        // $tabs = get_field( self::TABS[ 'items' ], $atts[ 'id' ] );
+        
+        $tabs = get_field( self::TABS[ 'items' ], $id );
 
         if ( $tabs )
         {
@@ -201,9 +266,9 @@ class CompilationTabs
 
             foreach ( $billets as $billet )
             {
-                // $profit = BilletProfit::get_average( $billet );
-
-                $items[] = BilletMain::get_mini( $billet, $atts[ 'profit' ] );
+                // $items[] = BilletMain::get_mini( $billet, $atts[ 'profit' ] );
+                
+                $items[] = BilletMain::get_mini( $billet, $profit );
             }
         }
 
@@ -261,6 +326,8 @@ class CompilationTabs
         'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
 
         'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
+
+        'container' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini-container.php',
     ];
 
     public static function render()
@@ -298,6 +365,17 @@ class CompilationTabs
         ob_start();
 
         load_template( self::TEMPLATE[ 'mini' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_tabs_mini_container( $args )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'container' ], false, $args );
 
         $output = ob_get_clean();
 
