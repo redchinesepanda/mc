@@ -36,7 +36,7 @@ class BilletProfit extends LegalDebug
 
                'number_format-float-all' => ( float ) number_format( $value, 2, '.', ''),
 
-               'bcdiv' => bcdiv( $value, 1, 2 ),
+               'floor' => floor( $value * 100 ) / 100,
             ] );
 
             return ( float ) number_format( $value / count( $items ), 2, '.', '');
