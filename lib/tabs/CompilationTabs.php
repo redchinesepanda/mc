@@ -250,7 +250,7 @@ class CompilationTabs
                 $items[] = BilletMain::get_mini( $billet, $profit );
             }
 
-            if (  )
+            if ( $profit )
             {
                 $handler = new self();
 
