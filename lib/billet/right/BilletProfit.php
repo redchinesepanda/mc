@@ -35,6 +35,8 @@ class BilletProfit extends LegalDebug
                'number_format-float-value' => number_format( ( float ) $value, 2, '.', ''),
 
                'number_format-float-all' => ( float ) number_format( $value, 2, '.', ''),
+
+               'truncate_number' => truncate_number( $value ),
             ] );
 
             return ( float ) number_format( $value / count( $items ), 2, '.', '');
