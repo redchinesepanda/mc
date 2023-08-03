@@ -25,7 +25,7 @@ class BilletProfit extends LegalDebug
 
             $value = $value / count( $items );
 
-            LegalDebug( [
+            LegalDebug::debug( [
                'value' => $value,
 
                'float' => ( float ) $value,
