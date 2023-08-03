@@ -94,7 +94,7 @@ class CompilationTabsMini
     {
         $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+        $tabs = get_field( CompilationTabs::TABS[ 'items' ], $id );
 
         if ( $tabs )
         {
@@ -106,7 +106,7 @@ class CompilationTabsMini
 
             foreach ( $tabs as $tab )
             {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+                $compilations = ( !empty( $tab[ CompilationTabs::TAB[ 'compilations' ] ] ) ? $tab[ self::CompilationTabs[ 'compilations' ] ] : [] );
 
                 foreach ( $compilations as $compilation )
                 {
@@ -177,7 +177,7 @@ class CompilationTabsMini
     {
         $items = [];
         
-        $tabs = get_field( self::TABS[ 'items' ], $id );
+        $tabs = get_field( CompilationTabs::TABS[ 'items' ], $id );
 
         $profit = true;
 
@@ -189,7 +189,7 @@ class CompilationTabsMini
 
             foreach ( $tabs as $tab )
             {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+                $compilations = ( !empty( $tab[ CompilationTabs::TAB[ 'compilations' ] ] ) ? $tab[ CompilationTabs::TAB[ 'compilations' ] ] : [] );
 
                 foreach ( $compilations as $compilation )
                 {
