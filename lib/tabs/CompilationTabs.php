@@ -1,7 +1,5 @@
 <?php
 
-require_once ( 'CompilationTabsMini.php' );
-
 class CompilationTabs
 {
     const CSS = [
@@ -65,8 +63,6 @@ class CompilationTabs
         // [legal-tabs-mini id='269090' profit="true"]
 
         // add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
-
-        CompilationTabsMini::register();
     }
 
     // const PAIRS = [
@@ -74,16 +70,6 @@ class CompilationTabs
 
 	// 	'profit' => false,
 	// ];
-
-    const FIELD = [
-        'title' => 'tabs-mini-title',
-
-        'image' => 'tabs-mini-image',
-
-        'description' => 'tabs-mini-description',
-
-        'label' => 'tabs-mini-label',
-    ];
 
     // public static function prepare_tab_mini( $id )
     // {
