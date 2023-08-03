@@ -249,9 +249,31 @@ class CompilationTabs
             {
                 $items[] = BilletMain::get_mini( $billet, $profit );
             }
+
+            if (  )
+            {
+                $handler = new self();
+
+                usort( $items, [ $handler, 'sort_profit' ] );
+            }
         }
 
         return $items;
+    }
+
+    public static function sort_profit( $a, $b )
+    {
+        if ( $a[ 'profit' ] > $b[ 'profit' ] )
+        {
+            return 1;
+        }
+        
+        if ( $a[ 'profit' ] < $b[ 'profit' ] )
+        {
+            return -1;
+        }
+
+        return 0;
     }
 
     public static function get()
