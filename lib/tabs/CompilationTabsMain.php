@@ -12,6 +12,6 @@ class CompilationTabsMain
 
         CompilationTabsMini::register();
     }
-}
+} 
 
 ?>
