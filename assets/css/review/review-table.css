@@ -75,11 +75,11 @@
     background-color: transparent;
 }
 
-.tcb-post-content table:not( [ class ] ) thead + tbody tr:nth-child( 2n ) {
+.tcb-post-content table:not( [ class ] ) thead + tbody tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
 }
 
-.tcb-post-content table:not( [ class ] ) thead + tbody tr:nth-child( 2n+1 ) {
+.tcb-post-content table:not( [ class ] ) thead + tbody tr:nth-child( 2n ) {
     background-color: transparent;
 }
 
