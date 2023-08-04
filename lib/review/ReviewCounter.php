@@ -210,16 +210,20 @@ class ReviewCounter
 			foreach ( $rows as $row ) {
 				$cells = $row->getElementsByTagName( 'td' );
 				
+				LegalDebug::debug( [
+					'cells->length' => $cells->length,
+				] );
+				
 				if ( $cells->length ) {
 					$cell_text = $cells->item( 0 );
 
 					$cell_value = $cells->item( 1 );
 
-					LegalDebug::debug( [
-						'cell_text' => $cell_text->textContent,
+					// LegalDebug::debug( [
+					// 	'cell_text' => $cell_text->textContent,
 
-						'cell_value' => $cell_value->textContent,
-					] );
+					// 	'cell_value' => $cell_value->textContent,
+					// ] );
 
 					if ( !empty( $cell_text ) && !empty( $cell_value ) )
 					{
