@@ -129,7 +129,7 @@ class ReviewAnchors
         
         'security' => 'Security',
 
-        'sign-up-offer' => 'Sign up offer'
+        'sign-up-offer' => 'Sign up offer',
         
         'sports' => 'Sports',
         
