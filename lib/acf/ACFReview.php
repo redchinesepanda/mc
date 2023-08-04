@@ -6,6 +6,8 @@ class ACFReview
         'link' => 'author-link-items',
 
         'about' => 'review-about',
+
+        'post-type' => 'legal_post_type',
 	];
 
 	const LINK = [
@@ -24,6 +26,8 @@ class ACFReview
 
 		add_filter( 'acf/load_field/name=' . ReviewAuthor::LINK_ITEM[ 'image' ], [ $handler, 'choices_image' ] );
 
+		add_filter( 'acf/load_field/name=' . ReviewAuthor::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
+
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
     }
 
@@ -32,6 +36,22 @@ class ACFReview
         $lang = WPMLMain::current_language();
 
         return str_replace(  '/' . $lang . '/', '/', $value );
+    }
+
+	function choices_post_type( $field )
+    {
+        $choices[ 'page' ] = 'Страница';
+
+        $choices[ 'legal_bk_review' ] = 'Обзор БК';
+
+        $field[ 'choices' ] = $choices;
+
+        if ( $post = get_post() )
+        {
+            $field[ 'value' ] = $post->post_type;
+        }
+
+        return $field;
     }
 
 	function choices_image( $field )
