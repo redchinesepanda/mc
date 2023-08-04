@@ -69,9 +69,9 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $table );
 
-		LegalDebug::debug( [
-			'count' => count( $items ),
-		] );
+		// LegalDebug::debug( [
+		// 	'count' => count( $items ),
+		// ] );
 
 		$amount = count( $items );
 
@@ -165,6 +165,10 @@ class ReviewCounter
 		$rating = 0;
 
 		$amount = count( $items );
+
+		LegalDebug::debug( [
+			'amount' => $amount,
+		] );
 
 		if ( $amount > 4 )
 		{
