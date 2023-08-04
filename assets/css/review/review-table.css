@@ -88,17 +88,27 @@
 
 /* Table legal-raw with Tbody only */
 
-.tcb-post-content table.legal-raw tbody:first-child tr:first-child,
+.tcb-post-content table.legal-raw tbody:first-child tr:first-child {
+    background-color: rgb(8, 5, 61);
+}
+
+.tcb-post-content table.legal-raw tbody:first-child tr:nth-child( 2n+1 ) {
+    background-color: transparent;
+}
+
+.tcb-post-content table.legal-raw tr:nth-child( 2n ):not( :first-child ) {
+    background-color: rgb(239, 245, 251);
+}
+
 .tcb-post-content table.legal-raw thead tr:first-child {
     background-color: rgb(8, 5, 61);
 }
 
-.tcb-post-content table.legal-raw tr:nth-child( 2n ) {
+.tcb-post-content table.legal-raw thead + tbody tr:nth-child( 2n+1 ) {
     background-color: transparent;
 }
 
-.tcb-post-content table.legal-raw tr:nth-child( 2n+1 ):not( :first-child ),
-.tcb-post-content table.legal-raw thead + tbody tr:nth-child( 2n+1 ):first-child {
+.tcb-post-content table.legal-raw thead + tbody tr:nth-child( 2n ) {
     background-color: rgb(239, 245, 251);
 }
 
