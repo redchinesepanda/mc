@@ -199,9 +199,9 @@ class ReviewCounter
 	{
 		$rows = $node->getElementsByTagName( 'tr' );
 
-		// LegalDebug::debug( [
-		// 	'$rows->length' => $rows->length,
-		// ] );
+		LegalDebug::debug( [
+			'$rows->length' => $rows->length,
+		] );
 
 		if ( $rows->length )
 		{
