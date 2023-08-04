@@ -77,6 +77,8 @@ class ReviewAnchors
     const TEXT_ANCHORS = [
         'app' => 'App',
 
+        'android' => 'Android',
+
         'basic-information' => 'Basic facts',
 
         'betting' => 'Betting',
@@ -88,6 +90,8 @@ class ReviewAnchors
         'common-problems' => 'Common problems',
         
         'compare' => 'Compare',
+
+        'deposit' => 'Deposit',
         
         'faqs' => 'FAQs',
         
@@ -100,6 +104,10 @@ class ReviewAnchors
         'how-to-use' => 'How to use',
         
         'in-play-betting' => 'In play betting',
+
+        'ios' => 'iOS',
+
+        'key-features' => 'Key features',
         
         'odds' => 'Odds',
         
@@ -108,6 +116,8 @@ class ReviewAnchors
         'other-bonuses' => 'Other bonuses',
         
         'payment-methods' => 'Payment',
+
+        'place-a-bet' => 'Place a bet',
         
         'promotions' => 'Promotions',
         
@@ -117,11 +127,13 @@ class ReviewAnchors
         
         'review' => 'Review',
         
+        'security' => 'Security',
+
+        'sign-up-offer' => 'Sign up offer'
+        
         'sports' => 'Sports',
         
         'sports-and-markets' => 'Sports & Markets',
-        
-        'security' => 'Security',
         
         'tips-and-tricks' => 'Tips and tricks',
     ];
