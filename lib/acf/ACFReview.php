@@ -29,7 +29,24 @@ class ACFReview
 		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
 
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
+
+        add_action( 'acf/save_post', [ $handler, 'change_post_type' ] );
     }
+
+    public static function change_post_type( $post_id )
+    {
+		$post_type = get_field( self::FIELD[ 'post-type' ], $post_id );
+
+		if ( $post_type )
+        {
+            $post = get_post( $post_id );
+
+            if ( $post_type != $post->post_type )
+            {
+                set_post_type( $post_id, $post_type );
+            }
+		}
+	}
 
     public static function format_afillate( $value, $post_id, $field )
     {
