@@ -26,7 +26,7 @@ class ACFReview
 
 		add_filter( 'acf/load_field/name=' . ReviewAuthor::LINK_ITEM[ 'image' ], [ $handler, 'choices_image' ] );
 
-		add_filter( 'acf/load_field/name=' . ReviewAuthor::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
+		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
 
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
     }
