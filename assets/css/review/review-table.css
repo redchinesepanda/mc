@@ -88,7 +88,8 @@
 
 /* Table legal-raw with Tbody only */
 
-.tcb-post-content table.legal-raw tbody:first-child  tr:first-child {
+.tcb-post-content table.legal-raw tbody:first-child tr:first-child,
+.tcb-post-content table.legal-raw thead tr:first-child {
     background-color: rgb(8, 5, 61);
 }
 

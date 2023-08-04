@@ -86,7 +86,7 @@ class ReviewMain
         'review-table' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
 
-            'ver' => '1.0.2',
+            'ver' => '1.0.3',
         ],
     ];
 
