@@ -196,10 +196,13 @@ class CompilationMain
         'about' => 'review-about',
     ];
 
-    const META_KEY = [
-        // 'rating' => 'billet-title-rating',
-        
+
+    const ABOUT = [
         'rating' => 'about-rating',
+    ];
+
+    const META_KEY = [
+        'rating' => 'billet-title-rating',
 
         'profit' => 'billet-profit-items',
     ];
@@ -304,7 +307,7 @@ class CompilationMain
     
                 'legal_rating' =>
                 [
-                    'key' => self::FIELD[ 'about' ] . '_' . self::META_KEY[ 'rating' ],
+                    'key' => self::FIELD[ 'about' ] . '_' . self::ABOUT[ 'rating' ],
 
                     'value'   => [ '' ],
         			
