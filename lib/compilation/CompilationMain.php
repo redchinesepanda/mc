@@ -343,8 +343,6 @@ class CompilationMain
             $orderby = [ 'legal_profit' => 'ASC' ] + $orderby;
         }
 
-        get_field( self::COMPILATION[ 'filter' ], $id )
-
         $terms = get_field( self::COMPILATION[ 'filter' ], $id );
 
         $terms = $terms ? $terms : [];
