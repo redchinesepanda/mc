@@ -65,14 +65,24 @@
     background-color: transparent;
 } */
 
+/* Table with Thead and Tbody */
+
 .tcb-post-content table thead tr,
-.tcb-post-content table thead + tbody tr:nth-child( 2n ),
-.tcb-post-content table tbody tr:nth-child( 2n+1 ) {
+.tcb-post-content table thead + tbody tr:nth-child( 2n ) {
     background-color: rgb(239, 245, 251);
 }
 
-.tcb-post-content table thead + tbody tr:nth-child( 2n+1 ),
-.tcb-post-content table tbody tr:nth-child( 2n ) {
+.tcb-post-content table thead + tbody tr:nth-child( 2n+1 ) {
+    background-color: transparent;
+}
+
+/* Table with Tbody only */
+
+.tcb-post-content table tbody:first-child tr:nth-child( 2n+1 ) {
+    background-color: rgb(239, 245, 251);
+}
+
+.tcb-post-content table tbody:first-child tr:nth-child( 2n ) {
     background-color: transparent;
 }
 
