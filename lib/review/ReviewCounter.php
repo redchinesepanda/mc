@@ -215,6 +215,12 @@ class ReviewCounter
 
 					$cell_value = $cells->item( 1 );
 
+					LegalDebug::debug( [
+						'cell_text' => $cell_text,
+
+						'cell_value' => $cell_value,
+					] );
+
 					if ( !empty( $cell_text ) && !empty( $cell_value ) )
 					{
 						$value = -1;
