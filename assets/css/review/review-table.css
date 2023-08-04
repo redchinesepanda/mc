@@ -92,19 +92,23 @@
     background-color: rgb(8, 5, 61);
 }
 
-.tcb-post-content table.legal-raw tr:nth-child( odd ):not( :first-child ),
-.tcb-post-content table.legal-raw-column tr:nth-child( odd ) {
+.tcb-post-content table.legal-raw tr:nth-child( 2n+1 ):not( :first-child ) {
     background-color: transparent;
 }
 
-.tcb-post-content table.legal-raw tr:nth-child( even ),
-.tcb-post-content table.legal-raw-column tr:nth-child( even ) {
+.tcb-post-content table.legal-raw tr:nth-child( 2n ) {
     background-color: rgb(239, 245, 251);
 }
 
-/* Table legal-raw with Thead and Tbody */
+/* Table legal-raw-column with Thead and Tbody */
 
+.tcb-post-content table.legal-raw-column tr:nth-child( 2n+1 ) {
+    background-color: rgb(239, 245, 251);
+}
 
+.tcb-post-content table.legal-raw-column tr:nth-child( 2n ) {
+    background-color: transparent;
+}
 
 .tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
     background-image: url( '../../img/review/review-table-check.svg' );
