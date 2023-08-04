@@ -117,7 +117,7 @@ class ReviewCounter
 
 			$item->setAttribute( 'class', self::CLASSES[ 'base' ] );
 
-			LegalDOM::appendHTML( $item, self::render_counter( $node ) );
+			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $node ) ) );
 
 			// $node->insertBefore( $item );
 
