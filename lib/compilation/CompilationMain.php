@@ -343,6 +343,12 @@ class CompilationMain
             $orderby = [ 'legal_profit' => 'ASC' ] + $orderby;
         }
 
+        get_field( self::COMPILATION[ 'filter' ], $id )
+
+        $terms = get_field( self::COMPILATION[ 'filter' ], $id );
+
+        $terms = $terms ? $terms : [];
+
         $args = [
 
             // 'numberposts' => -1,
@@ -362,7 +368,9 @@ class CompilationMain
 
                     'field' => 'term_id',
 
-                    'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
+                    // 'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
+                    
+                    'terms' => $terms,
 
                     'operator' => get_field( self::COMPILATION[ 'operator' ], $id ),
                 ],
