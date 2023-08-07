@@ -200,13 +200,13 @@ class ReviewCounter
 	
 	public static function get_cells( $node )
 	{
-		$doc = new DOMDocument();
+		$dom = new DOMDocument();
 
 		// $doc->loadXml( $xml );
 		
-		$doc->loadXml( $dom->saveHTML( $node ) );
+		$dom->loadXml( $dom->saveHTML( $node ) );
 
-		$row = new DOMXPath( $doc );
+		$row = new DOMXPath( $dom );
 
 		return $selector->query( '//th | //td' );
 	}
