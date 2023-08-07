@@ -22,6 +22,8 @@ require_once( 'ToolTransiterate.php' );
 
 require_once( 'ToolDate.php' );
 
+require_once( 'ToolNotFound.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -35,6 +37,8 @@ class ToolsMain
         ToolTinyMCE::register();
         
         ToolSitemap::register();
+
+        ToolNotFound::register();
     }
 }
 

@@ -5,20 +5,20 @@ ini_set( 'display_errors', 'On' );
 
 class ToolNotFound
 {
-	public static function check()
-    {
-		$not_logged_in = !is_user_logged_in();
+	// public static function check()
+    // {
+	// 	$not_logged_in = !is_user_logged_in();
 
-		$singilar_custom = is_singular( [ 'legal_billet', 'legal_compilation' ] );
+	// 	$singilar_custom = is_singular( [ 'legal_billet', 'legal_compilation' ] );
 
-        return ( $not_logged_in && $singilar_custom );
-    }
+    //     return ( $not_logged_in && $singilar_custom );
+    // }
 
 	public static function register()
     {
         $handler = new self();
 
-		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
@@ -27,15 +27,15 @@ class ToolNotFound
 		add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
     }
 
-	public static function set_not_found()
-	{
-		if ( self::check() )
-		{
-			global $wp_query;
+	// public static function set_not_found()
+	// {
+	// 	if ( self::check() )
+	// 	{
+	// 		global $wp_query;
 
-			$wp_query->set_404();
-		}
-	}
+	// 		$wp_query->set_404();
+	// 	}
+	// }
 
 	function debug_404_rewrite_dump( &$wp )
 	{
