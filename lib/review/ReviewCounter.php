@@ -191,7 +191,7 @@ class ReviewCounter
 			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
 		}
 
-		if ( $amount >= 5 )
+		if ( $amount == 5 )
 		{
 			$ovarall = array_shift( $items );
 
@@ -205,7 +205,7 @@ class ReviewCounter
 			$items_overall = array_slice( $items, -2 );
 
 			$items = $items_rest;
-			
+
 			$title = ReviewAbout::get_title() . ' ' . __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN );
 		}
 
