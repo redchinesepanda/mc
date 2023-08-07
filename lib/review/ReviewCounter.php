@@ -126,7 +126,9 @@ class ReviewCounter
 			// $node->insertBefore( $item );
 
 			try {
-				$body->replaceChild( $item, $node );
+				// $body->replaceChild( $item, $node );
+				
+				$body->insertBefore( $item, $node );
 			} catch ( DOMException $e ) {
 				LegalDebug::debug( [
 					'ReviewCounter::get_content > replaceChild DOMException',
