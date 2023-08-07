@@ -41,7 +41,13 @@ class ToolNotFound
 
 	function get_trash( &$wp )
 	{
-		$posts = get_posts( [ 'post_status' => 'trash' ] );
+		$posts = get_posts( [
+			'posts_per_page' => -1,
+
+			'post_type' => [ 'post', 'page', 'legal_bk_review' ],
+
+			'post_status' => 'trash'
+		] );
 
 		LegalDebug::debug( [
 			'posts' => $posts,
