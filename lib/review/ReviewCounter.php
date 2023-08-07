@@ -198,6 +198,11 @@ class ReviewCounter
 			$rating = $ovarall[ 'value' ];
 		}
 
+		if ( $amount <= 5 )
+		{
+			$title .= ' ' . $rating;
+		}
+
 		if ( $amount > 5 )
 		{
 			$items_rest = array_slice( $items, 0, -2 );
@@ -216,7 +221,7 @@ class ReviewCounter
 
 			'items_overall' => $items_overall,
 
-			'rating' => $rating,
+			// 'rating' => $rating,
 		];
 
 		return $args;

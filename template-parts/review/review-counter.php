@@ -1,6 +1,6 @@
 <div class="review-counter-info">
 	<div class="info-logo"></div>
-	<div class="info-rating"><?php echo $args[ 'title' ]; ?> - <?php echo $args[ 'rating' ]; ?></div>
+	<div class="info-rating"><?php echo $args[ 'title' ]; ?></div>
 </div>
 <div class="review-counter-set">
 	<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
