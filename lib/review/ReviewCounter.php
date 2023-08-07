@@ -212,6 +212,8 @@ class ReviewCounter
 				
 				LegalDebug::debug( [
 					'cells->length' => $cells->length,
+
+					'row->textContent' => $row->textContent,
 				] );
 				
 				if ( $cells->length ) {
