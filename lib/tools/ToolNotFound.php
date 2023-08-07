@@ -26,7 +26,7 @@ class ToolNotFound
 
 		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 
-		add_action ( 'wp_head', [ $handler, 'get_trash' ] );
+		add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
 	// public static function set_not_found()
