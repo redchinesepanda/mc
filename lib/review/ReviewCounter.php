@@ -179,23 +179,6 @@ class ReviewCounter
 
 		$title = __( ReviewMain::TEXT[ 'overall-rating' ], ToolLoco::TEXTDOMAIN );
 
-		if ( $amount > 5 )
-		{
-			$items_rest = array_slice( $items, 0, -2 );
-
-			$items_overall = array_slice( $items, -2 );
-
-			$items = $items_rest;
-		}
-
-		// LegalDebug::debug( [
-		// 	'items' => $items,
-
-		// 	'items_rest' => $items_rest,
-
-		// 	'items_overall' => $items_overall,
-		// ] );
-
 		$rating = 0;
 
 		if ( $amount <= 4 )
@@ -217,6 +200,12 @@ class ReviewCounter
 
 		if ( $amount > 5 )
 		{
+			$items_rest = array_slice( $items, 0, -2 );
+
+			$items_overall = array_slice( $items, -2 );
+
+			$items = $items_rest;
+			
 			$title = ReviewAbout::get_title() . ' ' . __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN );
 		}
 
