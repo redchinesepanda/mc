@@ -6,7 +6,7 @@ class ReviewCounter
         self::CLASSES[ 'base' ] => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-counter.css',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		],
     ];
 
