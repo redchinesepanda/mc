@@ -198,17 +198,64 @@ class ReviewCounter
 		return $args;
 	}
 	
-	public static function get_cells( $node )
-	{
-		$dom = new DOMDocument();
+	// public static function get_cells( $node )
+	// {
+	// 	$dom = new DOMDocument();
 
-		// $doc->loadXml( $xml );
+	// 	// $doc->loadXml( $xml );
 		
-		$dom->loadHTML( $dom->saveHTML( $node ) );
+	// 	$dom->loadHTML( $dom->saveHTML( $node ) );
 
-		$row = new DOMXPath( $dom );
+	// 	$row = new DOMXPath( $dom );
 
-		return $selector->query( '//th | //td' );
+	// 	return $selector->query( '//th | //td' );
+	// }
+
+	public static function get_item( $cells )
+	{
+		$cell_text = $cells->item( 0 );
+
+		$cell_value = $cells->item( 1 );
+
+		// LegalDebug::debug( [
+		// 	'cell_text' => $cell_text->textContent,
+
+		// 	'cell_value' => $cell_value->textContent,
+		// ] );
+
+		if ( !empty( $cell_text ) && !empty( $cell_value ) )
+		{
+			$value = -1;
+
+			if ( strpos( $cell_value->textContent, '/' ) )
+			{
+				$part = explode( '/', $cell_value->textContent )[ 0 ];
+
+				if ( is_numeric( $part ) )
+				{
+					$value = $part;
+				}
+			}
+
+			if ( is_numeric( $cell_value->textContent ) ) {
+				$value = $cell_value->textContent;
+			}
+
+			if ( $value != -1 )
+			{
+				// $args[] = [
+				
+				return [
+					'label' => $cell_text->textContent,
+
+					'value' => $value,
+
+					'progress' => ( $value * 10 ) . '%',
+				];
+			}
+		}
+
+		return null;
 	}
 
 	public static function get_counter_items( $node )
@@ -224,57 +271,75 @@ class ReviewCounter
 			$rating = 0;
 			
 			foreach ( $rows as $row ) {
-				// $cells = $row->getElementsByTagName( 'td' );
+				$cells_th = $row->getElementsByTagName( 'th' );
+
+				$cells_td = $row->getElementsByTagName( 'td' );
 				
-				$cells = self::get_cells( $node );
+				// $cells = self::get_cells( $node );
 				
 				LegalDebug::debug( [
-					'cells->length' => $cells->length,
+					'cells_th->length' => $cells_th->length,
+
+					'cells_td->length' => $cells_td->length,
 
 					'row->textContent' => $row->textContent,
-
-					'cells' => $cells,
 				] );
 				
-				if ( $cells->length ) {
-					$cell_text = $cells->item( 0 );
+				if ( $cells_th->length ) {
+					$item = self::get_item( $cells_th );
 
-					$cell_value = $cells->item( 1 );
-
-					// LegalDebug::debug( [
-					// 	'cell_text' => $cell_text->textContent,
-
-					// 	'cell_value' => $cell_value->textContent,
-					// ] );
-
-					if ( !empty( $cell_text ) && !empty( $cell_value ) )
+					if ( !empty( $item ) )
 					{
-						$value = -1;
+						$args[] = $item;
+					}
 
-						if ( strpos( $cell_value->textContent, '/' ) )
-						{
-							$part = explode( '/', $cell_value->textContent )[ 0 ];
+					// $cell_text = $cells->item( 0 );
+
+					// $cell_value = $cells->item( 1 );
+
+					// // LegalDebug::debug( [
+					// // 	'cell_text' => $cell_text->textContent,
+
+					// // 	'cell_value' => $cell_value->textContent,
+					// // ] );
+
+					// if ( !empty( $cell_text ) && !empty( $cell_value ) )
+					// {
+					// 	$value = -1;
+
+					// 	if ( strpos( $cell_value->textContent, '/' ) )
+					// 	{
+					// 		$part = explode( '/', $cell_value->textContent )[ 0 ];
 		
-							if ( is_numeric( $part ) )
-							{
-								$value = $part;
-							}
-						}
+					// 		if ( is_numeric( $part ) )
+					// 		{
+					// 			$value = $part;
+					// 		}
+					// 	}
 
-						if ( is_numeric( $cell_value->textContent ) ) {
-							$value = $cell_value->textContent;
-						}
+					// 	if ( is_numeric( $cell_value->textContent ) ) {
+					// 		$value = $cell_value->textContent;
+					// 	}
 
-						if ( $value != -1 )
-						{
-							$args[] = [
-								'label' => $cell_text->textContent,
+					// 	if ( $value != -1 )
+					// 	{
+					// 		$args[] = [
+					// 			'label' => $cell_text->textContent,
 			
-								'value' => $value,
+					// 			'value' => $value,
 
-								'progress' => ( $value * 10 ) . '%',
-							];
-						}
+					// 			'progress' => ( $value * 10 ) . '%',
+					// 		];
+					// 	}
+					// }
+				}
+
+				if ( $cells_td->length ) {
+					$item = self::get_item( $cells_td );
+
+					if ( !empty( $item ) )
+					{
+						$args[] = $item;
 					}
 				}
 			}
