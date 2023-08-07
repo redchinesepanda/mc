@@ -41,11 +41,11 @@ class ReviewCounter
 		self::CLASSES[ 'base' ] => LegalMain::LEGAL_PATH . '/template-parts/review/review-counter.php',
 	];
 
-    public static function render_counter( $node )
+    public static function render_counter( $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, self::get_counter_data( $node ) );
+        load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, $args );
 
         $output = ob_get_clean();
 
@@ -124,9 +124,22 @@ class ReviewCounter
 		foreach ( $nodes as $node_id => $node ) {
 			$item = $dom->createElement( 'div' );
 
-			$item->setAttribute( 'class', self::CLASSES[ 'base' ] . ' counter-item-' . $node_id );
+			$class[ 'base' ] = self::CLASSES[ 'base' ];
 
-			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $node ) ) );
+			$class[ 'id' ] = 'counter-item-' . $node_id;
+
+			$class[ 'amount' ] = 'legal-defult';
+
+			$args = self::get_counter_data( $node );
+
+			if ( !empty( $args[ 'items_overall' ] ) )
+			{
+				$class[ 'amount' ] = 'legal-overall';
+			}
+
+			$item->setAttribute( 'class', implode( ' ', $class ) );
+
+			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $args ) ) );
 
 			// $node->insertBefore( $item );
 
