@@ -197,31 +197,12 @@ class ReviewCounter
 
 		return $args;
 	}
-	
-	// public static function get_cells( $node )
-	// {
-	// 	$dom = new DOMDocument();
-
-	// 	// $doc->loadXml( $xml );
-		
-	// 	$dom->loadHTML( $dom->saveHTML( $node ) );
-
-	// 	$row = new DOMXPath( $dom );
-
-	// 	return $selector->query( '//th | //td' );
-	// }
 
 	public static function get_item( $cells )
 	{
 		$cell_text = $cells->item( 0 );
 
 		$cell_value = $cells->item( 1 );
-
-		// LegalDebug::debug( [
-		// 	'cell_text' => $cell_text->textContent,
-
-		// 	'cell_value' => $cell_value->textContent,
-		// ] );
 
 		if ( !empty( $cell_text ) && !empty( $cell_value ) )
 		{
@@ -243,8 +224,6 @@ class ReviewCounter
 
 			if ( $value != -1 )
 			{
-				// $args[] = [
-				
 				return [
 					'label' => $cell_text->textContent,
 
@@ -275,15 +254,13 @@ class ReviewCounter
 
 				$cells_td = $row->getElementsByTagName( 'td' );
 				
-				// $cells = self::get_cells( $node );
-				
-				LegalDebug::debug( [
-					'cells_th->length' => $cells_th->length,
+				// LegalDebug::debug( [
+				// 	'cells_th->length' => $cells_th->length,
 
-					'cells_td->length' => $cells_td->length,
+				// 	'cells_td->length' => $cells_td->length,
 
-					'row->textContent' => $row->textContent,
-				] );
+				// 	'row->textContent' => $row->textContent,
+				// ] );
 				
 				if ( $cells_th->length ) {
 					$item = self::get_item( $cells_th );
@@ -292,46 +269,6 @@ class ReviewCounter
 					{
 						$args[] = $item;
 					}
-
-					// $cell_text = $cells->item( 0 );
-
-					// $cell_value = $cells->item( 1 );
-
-					// // LegalDebug::debug( [
-					// // 	'cell_text' => $cell_text->textContent,
-
-					// // 	'cell_value' => $cell_value->textContent,
-					// // ] );
-
-					// if ( !empty( $cell_text ) && !empty( $cell_value ) )
-					// {
-					// 	$value = -1;
-
-					// 	if ( strpos( $cell_value->textContent, '/' ) )
-					// 	{
-					// 		$part = explode( '/', $cell_value->textContent )[ 0 ];
-		
-					// 		if ( is_numeric( $part ) )
-					// 		{
-					// 			$value = $part;
-					// 		}
-					// 	}
-
-					// 	if ( is_numeric( $cell_value->textContent ) ) {
-					// 		$value = $cell_value->textContent;
-					// 	}
-
-					// 	if ( $value != -1 )
-					// 	{
-					// 		$args[] = [
-					// 			'label' => $cell_text->textContent,
-			
-					// 			'value' => $value,
-
-					// 			'progress' => ( $value * 10 ) . '%',
-					// 		];
-					// 	}
-					// }
 				}
 
 				if ( $cells_td->length ) {
