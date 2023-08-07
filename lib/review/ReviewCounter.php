@@ -173,21 +173,28 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $node );
 
-		$items_rest = array_slice( $items, 0, -2 );
+		$amount = count( $items );
 
-		$items_overall = array_slice( $items, -2 );
+		$items_overall = [];
 
-		LegalDebug::debug( [
-			'items' => $items,
+		if ( $amount > 5 )
+		{
+			$items_rest = array_slice( $items, 0, -2 );
 
-			'items_rest' => $items_rest,
+			$items_overall = array_slice( $items, -2 );
 
-			'items_overall' => $items_overall,
-		] );
+			$items = $items_rest;
+		}
+
+		// LegalDebug::debug( [
+		// 	'items' => $items,
+
+		// 	'items_rest' => $items_rest,
+
+		// 	'items_overall' => $items_overall,
+		// ] );
 
 		$rating = 0;
-
-		$amount = count( $items );
 
 		if ( $amount > 4 )
 		{
@@ -208,6 +215,8 @@ class ReviewCounter
 			'title' => __( ReviewMain::TEXT[ 'overall-rating' ], ToolLoco::TEXTDOMAIN ),
 
 			'items' => $items,
+
+			'items_overall' => $items_overall,
 
 			'rating' => $rating,
 		];
