@@ -55,33 +55,38 @@ class ReviewCounter
 	public static function inline_style() {
 		$style = [];
 
-		$table = self::get_table();
-
-		if ( $table == null ) {
-			return '';
-		}
-
 		$group = get_field( ReviewAbout::FIELD );
 
-		$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
-
-		$style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
-
-		$items = self::get_counter_items( $table );
-
-		// LegalDebug::debug( [
-		// 	'count' => count( $items ),
-		// ] );
-
-		$amount = count( $items );
-
-		if ( $amount > 4 )
+		if ( $group )
 		{
-			$ovarall = array_shift( $items );
+			$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
+
+			$style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
 		}
 
-		foreach ( $items as $id => $item ) {
-			$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
+		$tables = self::get_tables();
+
+		if ( $tables->length != 0 )
+		{
+			foreach ( $tables as $table )
+			{
+				$items = self::get_counter_items( $table );
+
+				// LegalDebug::debug( [
+				// 	'count' => count( $items ),
+				// ] );
+	
+				$amount = count( $items );
+	
+				if ( $amount > 4 )
+				{
+					$ovarall = array_shift( $items );
+				}
+	
+				foreach ( $items as $id => $item ) {
+					$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
+				}
+			}
 		}
 
 		return implode( ' ', $style );
@@ -108,7 +113,7 @@ class ReviewCounter
 
 		$dom = LegalDOM::get_dom( $content );
 
-		$body = $dom->getElementsByTagName( 'body' )->item(0);
+		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
 		$nodes = self::get_nodes( $dom );
 
@@ -126,9 +131,9 @@ class ReviewCounter
 			// $node->insertBefore( $item );
 
 			try {
-				// $body->replaceChild( $item, $node );
+				$body->replaceChild( $item, $node );
 				
-				$body->insertBefore( $item, $node );
+				// $body->insertBefore( $item, $node );
 			} catch ( DOMException $e ) {
 				LegalDebug::debug( [
 					'ReviewCounter::get_content > replaceChild DOMException',
@@ -139,7 +144,9 @@ class ReviewCounter
 		return $dom->saveHTML();
 	}
 
-	public static function get_table()
+	// public static function get_table()
+	
+	public static function get_tables()
 	{
 		$post = get_post();
 
@@ -155,7 +162,9 @@ class ReviewCounter
 			return null;
 		}
 
-		return $nodes->item( 0 );
+		// return $nodes->item( 0 );
+		
+		return $nodes;
 	}
 
 	public static function get_counter_data( $node )
