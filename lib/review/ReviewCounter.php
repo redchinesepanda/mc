@@ -78,7 +78,7 @@ class ReviewCounter
 	
 				$amount = count( $items );
 	
-				if ( $amount > 4 )
+				if ( $amount == 5 )
 				{
 					$ovarall = array_shift( $items );
 				}
