@@ -68,7 +68,7 @@ class ReviewCounter
 
 		if ( $tables->length != 0 )
 		{
-			foreach ( $tables as $table )
+			foreach ( $tables as $table_id => $table )
 			{
 				$items = self::get_counter_items( $table );
 
@@ -83,8 +83,8 @@ class ReviewCounter
 					$ovarall = array_shift( $items );
 				}
 	
-				foreach ( $items as $id => $item ) {
-					$style[] = '.' . self::CLASSES[ 'base' ] . ' .set-item-' . $id . ' { --progress: ' . $item[ 'progress' ] .'; }';
+				foreach ( $items as $item_id => $item ) {
+					$style[] = '.' . self::CLASSES[ 'base' ] . '.counter-item-' . $table_id  . ' .set-item-' . $item_id . ' { --progress: ' . $item[ 'progress' ] .'; }';
 				}
 			}
 		}
@@ -121,10 +121,10 @@ class ReviewCounter
 			return $content;
 		}
 
-		foreach ( $nodes as $node ) {
+		foreach ( $nodes as $node_id => $node ) {
 			$item = $dom->createElement( 'div' );
 
-			$item->setAttribute( 'class', self::CLASSES[ 'base' ] );
+			$item->setAttribute( 'class', self::CLASSES[ 'base' ] . ' countre-item-' . $node_id );
 
 			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $node ) ) );
 
