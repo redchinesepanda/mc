@@ -173,13 +173,17 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $node );
 
+		$items_overall = array_slice( $items, -2 );
+
+		LegalDebug::debug( [
+			'items' => $items,
+
+			'items_overall' => $items_overall,
+		] );
+
 		$rating = 0;
 
 		$amount = count( $items );
-
-		// LegalDebug::debug( [
-		// 	'amount' => $amount,
-		// ] );
 
 		if ( $amount > 4 )
 		{
@@ -250,10 +254,6 @@ class ReviewCounter
 	{
 		$rows = $node->getElementsByTagName( 'tr' );
 
-		// LegalDebug::debug( [
-		// 	'$rows->length' => $rows->length,
-		// ] );
-
 		if ( $rows->length )
 		{
 			$rating = 0;
@@ -262,14 +262,6 @@ class ReviewCounter
 				$cells_th = $row->getElementsByTagName( 'th' );
 
 				$cells_td = $row->getElementsByTagName( 'td' );
-				
-				// LegalDebug::debug( [
-				// 	'cells_th->length' => $cells_th->length,
-
-				// 	'cells_td->length' => $cells_td->length,
-
-				// 	'row->textContent' => $row->textContent,
-				// ] );
 				
 				if ( $cells_th->length ) {
 					$item = self::get_item( $cells_th );
