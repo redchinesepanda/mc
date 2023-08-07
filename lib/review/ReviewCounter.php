@@ -204,7 +204,7 @@ class ReviewCounter
 
 		// $doc->loadXml( $xml );
 		
-		$dom->loadXml( $dom->saveHTML( $node ) );
+		$dom->loadHTML( $dom->saveHTML( $node ) );
 
 		$row = new DOMXPath( $dom );
 
