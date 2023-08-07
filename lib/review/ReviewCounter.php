@@ -177,6 +177,8 @@ class ReviewCounter
 
 		$items_overall = [];
 
+		$title = __( ReviewMain::TEXT[ 'overall-rating' ], ToolLoco::TEXTDOMAIN );
+
 		if ( $amount > 5 )
 		{
 			$items_rest = array_slice( $items, 0, -2 );
@@ -196,12 +198,7 @@ class ReviewCounter
 
 		$rating = 0;
 
-		if ( $amount > 4 )
-		{
-			$ovarall = array_shift( $items );
-
-			$rating = $ovarall[ 'value' ];
-		} else
+		if ( $amount <= 4 )
 		{
 			foreach ( $items as $item )
 			{
@@ -211,8 +208,20 @@ class ReviewCounter
 			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
 		}
 
+		if ( $amount == 5 )
+		{
+			$ovarall = array_shift( $items );
+
+			$rating = $ovarall[ 'value' ];
+		}
+
+		if ( $amount > 5 )
+		{
+			$title = ReviewAbout::get_title() . ' ' . __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN );
+		}
+
 		$args = [
-			'title' => __( ReviewMain::TEXT[ 'overall-rating' ], ToolLoco::TEXTDOMAIN ),
+			'title' => $title,
 
 			'items' => $items,
 

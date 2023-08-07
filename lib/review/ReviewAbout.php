@@ -136,6 +136,18 @@ class ReviewAbout
         return $id;
     }
 
+    public static function get_title()
+    {
+        $group = get_field( self::FIELD );
+
+        if ( $group )
+        {
+            return $group[ 'about-title' ];
+        }
+
+        return '';
+    }
+
     public static function get( $args )
     {
         $id = self::get_id();
