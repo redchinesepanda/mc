@@ -20,11 +20,13 @@ class ToolNotFound
 
 		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
-		add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
+		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
-		add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
+		// add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
 
-		add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
+		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
+
+		add_filter ( 'init', [ $handler, 'get_trash' ] );
     }
 
 	// public static function set_not_found()
@@ -36,6 +38,15 @@ class ToolNotFound
 	// 		$wp_query->set_404();
 	// 	}
 	// }
+
+	function get_trash( &$wp )
+	{
+		$posts = get_posts( [ 'post_status' => 'trash' ] );
+
+		LegalDebug::debug( [
+			'posts' => $posts,
+		] );
+	}
 
 	function debug_404_rewrite_dump( &$wp )
 	{
