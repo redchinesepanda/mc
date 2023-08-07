@@ -173,6 +173,8 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $node );
 
+		$items_rest = array_slice( $items, 0, -2 );
+
 		$items_overall = array_slice( $items, -2 );
 
 		LegalDebug::debug( [
