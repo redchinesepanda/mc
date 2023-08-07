@@ -180,6 +180,8 @@ class ReviewCounter
 		LegalDebug::debug( [
 			'items' => $items,
 
+			'items_rest' => $items_rest,
+
 			'items_overall' => $items_overall,
 		] );
 
