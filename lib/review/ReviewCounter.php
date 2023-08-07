@@ -216,6 +216,8 @@ class ReviewCounter
 					'cells->length' => $cells->length,
 
 					'row->textContent' => $row->textContent,
+
+					'cells' => $cells,
 				] );
 				
 				if ( $cells->length ) {
