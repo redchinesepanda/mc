@@ -12,7 +12,7 @@
 		</div>
 	<?php endforeach; ?>
 </div>
-<?php if ( !empty( $args[ 'items_overall' ] ) ) ?>
+<?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
 	<div class="review-counter-overall">
 		<?php foreach( $args[ 'items_overall' ] as $overall_id => $overall_item ) : ?>
 			<div class="set-item set-item-<?php echo $id + 1 + $overall_id; ?>" >
