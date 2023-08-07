@@ -177,9 +177,9 @@ class ReviewCounter
 
 		$amount = count( $items );
 
-		LegalDebug::debug( [
-			'amount' => $amount,
-		] );
+		// LegalDebug::debug( [
+		// 	'amount' => $amount,
+		// ] );
 
 		if ( $amount > 4 )
 		{
@@ -250,9 +250,9 @@ class ReviewCounter
 	{
 		$rows = $node->getElementsByTagName( 'tr' );
 
-		LegalDebug::debug( [
-			'$rows->length' => $rows->length,
-		] );
+		// LegalDebug::debug( [
+		// 	'$rows->length' => $rows->length,
+		// ] );
 
 		if ( $rows->length )
 		{
