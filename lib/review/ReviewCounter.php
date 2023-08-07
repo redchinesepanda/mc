@@ -197,6 +197,20 @@ class ReviewCounter
 
 		return $args;
 	}
+	
+	public static function get_cells( $node )
+	{
+		$doc = new DOMDocument();
+
+		// $doc->loadXml( $xml );
+		
+		$doc->loadXml( $dom->saveHTML( $node ) );
+
+		$row = new DOMXPath( $doc );
+
+		return $selector->query( '//th | //td' );
+	}
+
 	public static function get_counter_items( $node )
 	{
 		$rows = $node->getElementsByTagName( 'tr' );
@@ -210,7 +224,9 @@ class ReviewCounter
 			$rating = 0;
 			
 			foreach ( $rows as $row ) {
-				$cells = $row->getElementsByTagName( 'td' );
+				// $cells = $row->getElementsByTagName( 'td' );
+				
+				$cells = self::get_cells( $node );
 				
 				LegalDebug::debug( [
 					'cells->length' => $cells->length,
