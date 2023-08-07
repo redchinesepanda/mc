@@ -207,6 +207,8 @@ class ReviewCounter
 		{
 			$items_rest = array_slice( $items, 0, -2 );
 
+			$amount = count( $items_rest );
+
 			$items_overall = array_slice( $items, -2 );
 
 			$items = $items_rest;
@@ -219,9 +221,9 @@ class ReviewCounter
 
 			'items' => $items,
 
-			'items_overall' => $items_overall,
+			'amount' => $amount,
 
-			// 'rating' => $rating,
+			'items_overall' => $items_overall,
 		];
 
 		return $args;
