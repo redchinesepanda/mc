@@ -124,7 +124,7 @@ class ReviewCounter
 		foreach ( $nodes as $node_id => $node ) {
 			$item = $dom->createElement( 'div' );
 
-			$item->setAttribute( 'class', self::CLASSES[ 'base' ] . ' countre-item-' . $node_id );
+			$item->setAttribute( 'class', self::CLASSES[ 'base' ] . ' counter-item-' . $node_id );
 
 			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $node ) ) );
 
