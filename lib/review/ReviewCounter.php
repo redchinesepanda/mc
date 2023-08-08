@@ -128,7 +128,7 @@ class ReviewCounter
 
 			$class[ 'id' ] = 'counter-item-' . $node_id;
 
-			$class[ 'amount' ] = 'legal-defult';
+			$class[ 'amount' ] = 'legal-default';
 
 			$args = self::get_counter_data( $node );
 
