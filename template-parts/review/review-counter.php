@@ -21,15 +21,15 @@
 </div>
 <?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
 	<div class="review-counter-overall">
-		<div class="set-item-wrapper">
-			<?php foreach( $args[ 'items_overall' ] as $overall_id => $overall_item ) : ?>
+		<?php foreach( $args[ 'items_overall' ] as $overall_id => $overall_item ) : ?>
+			<div class="set-item-wrapper">
 				<div class="set-item set-item-<?php echo $args[ 'amount' ] + $overall_id; ?>" >
 					<div class="set-item-info">
 						<div class="item-value"><?php echo $overall_item[ 'value' ]; ?></div>
 					</div>
 				</div>
 				<div class="item-label"><?php echo $overall_item[ 'label' ]; ?></div>
-			<?php endforeach; ?>
-		</div>
+			</div>
+		<?php endforeach; ?>
 	</div>
 <?php endif; ?>
