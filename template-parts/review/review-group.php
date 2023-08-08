@@ -1,4 +1,4 @@
-<?php if( !empty( $args ) ) : ?>
+<?php if( !empty( $args[ 'other' ] ) ) : ?>
     <nav class="group">
         <div class="review-group">
             <span class="group-item">
