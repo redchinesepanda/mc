@@ -1,6 +1,6 @@
 <nav class="group">
-    <div class="review-group">
-        <?php if( !empty( $args[ 'other' ] ) ) : ?>
+    <?php if( !empty( $args[ 'other' ] ) ) : ?>
+        <div class="review-group">
             <span class="group-item">
                 <?php echo $args[ 'current' ][ 'label' ]; ?>
             </span>
@@ -9,6 +9,6 @@
                     <?php echo $item[ 'label' ]; ?>
                 </a>
             <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?>
 </nav>
