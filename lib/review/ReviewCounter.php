@@ -251,6 +251,8 @@ class ReviewCounter
 			'amount' => $amount,
 
 			'items_overall' => $items_overall,
+
+			'button' => ReviewAbout::get_button(),
 		];
 
 		return $args;

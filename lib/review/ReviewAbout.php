@@ -304,7 +304,7 @@ class ReviewAbout
         return $text;
     }
     
-    public static function get_button( $args )
+    public static function get_button( $args = [] )
     {
         $id = self::get_id();
 
