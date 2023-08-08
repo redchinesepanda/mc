@@ -131,7 +131,7 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
-	flex-basis: calc( 33% - 20px );
+	flex-basis: calc( 33% - 30px );
 }
 
 .legal-review-counter.legal-default .set-item {
