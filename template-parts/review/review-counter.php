@@ -32,4 +32,7 @@
 			</div>
 		<?php endforeach; ?>
 	</div>
+	<div class="review-counter-footer">
+		<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" class="review-counter-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'button' ][ 'text' ]; ?></a>
+	</div>
 <?php endif; ?>
