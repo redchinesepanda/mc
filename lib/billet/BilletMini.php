@@ -103,14 +103,14 @@ class BilletMini
 
         if ( $group )
         {
-            $logo = get_field( BilletLogo::ABOUT[ 'mega' ], $id);
+            $logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
 
             LegalDebug::debug( [
                 'logo' => $logo,
             ] );
 
             if ( !$logo ) {
-                $logo = get_field( BilletLogo::ABOUT[ 'logo' ], $id);
+                $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
 
                 LegalDebug::debug( [
                     'logo' => $logo,
