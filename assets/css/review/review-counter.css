@@ -127,12 +127,12 @@
 }
 
 .legal-review-counter.legal-default .set-item {
-	width: 160px;
+	flex-basis: 160px;
 	height: 160px;
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item {
-	width: 60px;
+	flex-basis: 60px;
 	height: 60px;
 }
 
@@ -142,7 +142,7 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-overall .set-item {
-	width: 80px;
+	flex-basis: 80px;
 	height: 80px;
 }
 
