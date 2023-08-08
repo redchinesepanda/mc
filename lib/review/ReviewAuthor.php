@@ -30,9 +30,9 @@ class ReviewAuthor
 
     public static function register_style()
     {
-        // ReviewMain::register_style( self::CSS );
+        ReviewMain::register_style( self::CSS );
         
-        ToolEnqueue::register_style( self::CSS );
+        // ToolEnqueue::register_style( self::CSS );
     }
 
     public static function register()
@@ -71,6 +71,11 @@ class ReviewAuthor
 
     public static function render( $args )
     {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+        
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-author' ], false, self::get() );
