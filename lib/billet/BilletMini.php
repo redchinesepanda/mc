@@ -105,8 +105,16 @@ class BilletMini
         {
             $logo = get_field( BilletLogo::ABOUT[ 'mega' ], $id, false );
 
+            LegalDebug::debug( [
+                'logo' => $logo,
+            ] );
+
             if ( !$logo ) {
                 $logo = get_field( BilletLogo::ABOUT[ 'logo' ], $id, false );
+
+                LegalDebug::debug( [
+                    'logo' => $logo,
+                ] );
             }
 
             if ( $logo )
