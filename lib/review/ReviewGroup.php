@@ -44,6 +44,17 @@ class ReviewGroup
         'type' => 'page_type',
     ];
 
+    // const TERMS = [
+    //     'compilation',
+    // ];
+
+    // public static function check()
+    // {
+    //     $permission_term = !has_term( self::TERMS, self::TAXONOMY[ 'type' ] );
+
+    //     return ReviewMain::check() && $permission_term;
+    // }
+
     public static function get_group_args( $post, $terms = [] ) {
         return [
             'numberposts' => -1,
@@ -205,7 +216,7 @@ class ReviewGroup
         {
             return '';
         }
-        
+
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );
