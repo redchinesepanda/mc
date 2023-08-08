@@ -19,10 +19,12 @@ class SchemaMain
 		
 		if ( !empty( $data ) ) {
 			if ( property_exists( $data, '@context' ) ) {
-				if ( !empty( $data->{"@graph"} ) ) {
-					foreach( $data->{"@graph"} as $node ) {
-						if ( property_exists( $node, 'author' ) ) {
-							unset( $node->author );
+				if ( property_exists( $data, '@graph' ) ) {
+					if ( !empty( $data->{"@graph"} ) ) {
+						foreach( $data->{"@graph"} as $node ) {
+							if ( property_exists( $node, 'author' ) ) {
+								unset( $node->author );
+							}
 						}
 					}
 				}

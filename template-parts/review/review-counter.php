@@ -7,7 +7,9 @@
 		<div class="set-item set-item-<?php echo $id; ?>" >
 			<div class="set-item-info">
 				<div class="item-value"><?php echo $item[ 'value' ]; ?></div>
-				<div class="item-label"><?php echo $item[ 'label' ]; ?></div>
+				<?php if ( empty( $args[ 'items_overall' ] ) ) : ?>
+					<div class="item-label"><?php echo $item[ 'label' ]; ?></div>
+				<?php endif; ?>
 			</div>
 		</div>
 	<?php endforeach; ?>

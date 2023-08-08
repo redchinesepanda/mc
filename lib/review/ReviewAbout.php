@@ -32,7 +32,7 @@ class ReviewAbout
     {
         $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+        $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
         
         return $permission_admin && $permission_post_type;
     }
@@ -82,9 +82,15 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        $style[] = '.review-about-wrapper:not( .legal-mode-mini ), .review-about.legal-mode-mini { background-color: ' . $style_item[ 'background' ] .'; }';
+        if ( !empty( $style_item[ 'background' ] ) )
+        {
+            $style[] = '.review-about-wrapper:not( .legal-mode-mini ), .review-about.legal-mode-mini { background-color: ' . $style_item[ 'background' ] .'; }';
+        }
 
-        $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
+        if ( !empty( $style_item[ 'logo' ] ) )
+        {
+            $style[] = '.review-about .about-logo { background-image: url( \'' . $style_item[ 'logo' ] .'\' ); }';
+        }
 
 		return implode( ' ', $style );
 	}

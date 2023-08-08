@@ -44,23 +44,30 @@ class ToolNotFound
 		$posts = get_posts( [
 			'posts_per_page' => -1,
 
-			'post_type' => [ 'legal_bk_review' ],
+			'post_type' => [ 'page' ],
 
-			'post_status' => 'trash',
+			'post_status' => 'draft',
 		] );
 
 		foreach ( $posts as $post )
 		{
-			// $post->post_status = 'draft';
+			// if ( $post->ID == 2470508 && $post->post_type != 'page' )
+			
+			if ( $post->post_status == 'draft' && $post->post_author == 10 )
+			{
+				$post->post_status = 'publish';
 
-			// wp_update_post( $post );
+				// $post->post_type = 'page';
 
+				wp_update_post( $post );
+
+				LegalDebug::debug( [
+					'posts' => count( $posts ),
+				] );
+			}
+			
 			// wp_delete_post( $post->ID );
 		}
-
-		LegalDebug::debug( [
-			'posts' => count( $posts ),
-		] );
 	}
 
 	function debug_404_rewrite_dump( &$wp )

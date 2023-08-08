@@ -72,7 +72,7 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.1.8',
+            'ver' => '1.1.9',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
@@ -178,7 +178,7 @@ class ReviewMain
     {
         $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+        $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
 
         $permission_term = has_term( 'compilation', 'page_type' );
 
