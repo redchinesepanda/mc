@@ -4,17 +4,19 @@
 </div>
 <div class="review-counter-set">
 	<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
-		<div class="set-item set-item-<?php echo $id; ?>" >
-			<div class="set-item-info">
-				<div class="item-value"><?php echo $item[ 'value' ]; ?></div>
-				<?php if ( empty( $args[ 'items_overall' ] ) ) : ?>
-					<div class="item-label"><?php echo $item[ 'label' ]; ?></div>
-				<?php endif; ?>
+		<div class="set-item-wrapper" >
+			<div class="set-item set-item-<?php echo $id; ?>" >
+				<div class="set-item-info">
+					<div class="item-value"><?php echo $item[ 'value' ]; ?></div>
+					<?php if ( empty( $args[ 'items_overall' ] ) ) : ?>
+						<div class="item-label"><?php echo $item[ 'label' ]; ?></div>
+					<?php endif; ?>
+				</div>
 			</div>
+			<?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
+				<div class="item-label set-item-<?php echo $id; ?>"><?php echo $item[ 'label' ]; ?></div>
+			<?php endif; ?>
 		</div>
-		<?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
-			<div class="item-label set-item-<?php echo $id; ?>"><?php echo $item[ 'label' ]; ?></div>
-		<?php endif; ?>
 	<?php endforeach; ?>
 </div>
 <?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
