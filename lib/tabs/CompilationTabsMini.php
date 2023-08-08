@@ -86,7 +86,7 @@ class CompilationTabsMini
 
     public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
 	{
-		$logo = get_field( self::FIELD[ 'image' ], $id );
+		$logo = get_field( self::FIELD[ 'image' ], $id, false );
 
 		// LegalDebug::debug( [
 		// 	'logo' => $logo,
