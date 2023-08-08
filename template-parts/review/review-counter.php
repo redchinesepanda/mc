@@ -12,6 +12,9 @@
 				<?php endif; ?>
 			</div>
 		</div>
+		<?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
+			<div class="item-label set-item-<?php echo $id; ?>"><?php echo $item[ 'label' ]; ?></div>
+		<?php endif; ?>
 	<?php endforeach; ?>
 </div>
 <?php if ( !empty( $args[ 'items_overall' ] ) ) : ?>
