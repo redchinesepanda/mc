@@ -142,7 +142,7 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-overall .set-item {
-	flex-basis: 80px;
+	width: 80px;
 	height: 80px;
 }
 
