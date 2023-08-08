@@ -91,8 +91,12 @@
 	margin-bottom: 15px;
 }
 
-.legal-review-counter .set-item-info {
+.legal-review-counter.legal-default .set-item-info {
 	margin: 10px;
+}
+
+.legal-review-counter.legal-overall .set-item-info {
+	margin: 5px;
 }
 
 .legal-review-counter .info-rating {
