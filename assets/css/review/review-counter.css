@@ -156,6 +156,7 @@
 
 .legal-review-counter .review-counter-set {
 	flex-basis: calc( 75% - 50px );
+	flex-grow: 1;
 }
 
 .legal-review-counter .review-counter-overall {
