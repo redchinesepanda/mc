@@ -132,6 +132,11 @@ class ReviewMain
 
     public static function register()
     {
+        if ( !self::check() )
+        {
+            return null;
+        }
+
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
