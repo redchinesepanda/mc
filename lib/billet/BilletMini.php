@@ -89,6 +89,10 @@ class BilletMini
         ];
     }
 
+    const FIELD = [
+        'image' => 'tabs-mini-image',
+    ];
+
     const SIZE = [
         'logo-mini' => 'tabs-logo-mini',
     ];
