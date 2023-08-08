@@ -29,6 +29,8 @@ class CompilationTabsMini
         // [legal-tabs-mini id='269090']
 
         add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	const PAIRS = [
