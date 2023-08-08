@@ -132,43 +132,41 @@ class ReviewMain
 
     public static function register()
     {
-        if ( self::check() ) {
-            $handler = new self();
+        $handler = new self();
 
-            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-            add_action( 'wp_head', [ $handler, 'print' ] );
-            
-            add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
+        add_action( 'wp_head', [ $handler, 'print' ] );
+        
+        add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
-            ReviewAbout::register();
+        ReviewAbout::register();
 
-            ReviewAnchors::register();
+        ReviewAnchors::register();
 
-            ReviewGroup::register();
+        ReviewGroup::register();
 
-            ReviewProsCons::register();
+        ReviewProsCons::register();
 
-            ReviewGallery::register();
+        ReviewGallery::register();
 
-            ReviewFAQ::register();
+        ReviewFAQ::register();
 
-            ReviewStats::register();
+        ReviewStats::register();
 
-            ReviewBonus::register();
+        ReviewBonus::register();
 
-            ReviewHowTo::register();
+        ReviewHowTo::register();
 
-            ReviewBanner::register();
+        ReviewBanner::register();
 
-            ReviewAuthor::register();
+        ReviewAuthor::register();
 
-            ReviewCounter::register();
+        ReviewCounter::register();
 
-            ReviewList::register();
+        ReviewList::register();
 
-            ReviewOffers::register();
-        }
+        ReviewOffers::register();
     }
 
     public static function encoding( $content )
@@ -209,8 +207,6 @@ class ReviewMain
         $permission_admin = !is_admin();
 
         $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
-
-        // $permission_term = has_term( 'compilation', 'page_type' );
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
@@ -227,12 +223,15 @@ class ReviewMain
         ] );
         
         return $result;
-
-        // return true;
     }
 
     public static function schema()
     {
+        if ( !self::check() )
+        {
+            return json_encode( [] );
+        }
+
         $post = get_post();
 
         if ( empty( $post ) ) {
@@ -263,18 +262,6 @@ class ReviewMain
 
         return json_encode( [
             "@context" => "https://schema.org",
-
-            // "@graph" => [
-            //     self::schema_organization(),
-
-            //     LegalBreadcrumbsMain::schema(),
-
-            //     ReviewHowTo::schema(),
-
-            //     ReviewFAQ::schema(),
-
-            //     self::schema_publisher(),
-            // ],
 
             "@graph" => $graph,
         ] );
