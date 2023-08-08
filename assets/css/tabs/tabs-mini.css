@@ -5,29 +5,39 @@
 	flex-wrap: wrap;
     gap: 1rem;
 }
+
+.legal-tabs-mini-set {
+	padding-bottom: 30px;
+}
+
 @media (max-width: 768px) {
     .legal-tabs-mini-set {
         flex-direction: column;
     }
     
 }
+
 .legal-tabs-mini {
     max-width: 28.5%;
 }
+
 .legal-tabs-mini {
     background-color: #fff;
     box-shadow: 0 0 10px #e4e4e4;
     border-radius: 20px;
 }
+
 .legal-tabs-mini {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1rem;
 }
+
 .legal-tabs-mini {
     padding: 20px;
 }
+
 @media (max-width: 768px) {
     .legal-tabs-mini {
         max-width: none;
@@ -35,6 +45,7 @@
     }
     
 }
+
 .tabs-mini-title {
     background-position: left center;
     background-repeat: no-repeat;
@@ -43,48 +54,63 @@
     font-size: 23px;
     font-weight: 600;
 }
+
 .tabs-mini-title {
     padding-left: 40px;
 }
+
 .tabs-mini-title {
     font-size: 23px;
     font-weight: 600;
 }
+
+.tabs-mini-description {
+	margin-bottom: auto;
+}
+
 .tabs-mini-description {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.7;
     color: #3b3b3b
 }
+
 .tabs-mini-items {
     display: flex;
     flex-direction: column;
     row-gap: 0.7rem;
 }
+
 .tabs-mini-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .tabs-mini-items .tabs-mini-item:nth-of-type(2) {
     border-bottom: 1px solid #EDEDED;
     border-top: 1px solid #EDEDED;
 }
+
 .tabs-mini-items .tabs-mini-item:nth-of-type(2) {
     padding: 0.5rem 0;
 }
+
 .mini-item-logo .mini-item-logo-afillate {
     display: block;
 }
+
 .mini-item-logo .mini-item-logo-afillate {
     width: 74px;
     height: 25px;
 }
+
 .mini-item-logo .mini-item-logo-afillate {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .mini-item-profit, .mini-item-bonus {
     background-position: left center;
     background-repeat: no-repeat;
@@ -93,25 +119,31 @@
     font-size: 15px;
     font-weight: 600;
 }
+
 .mini-item-profit, .mini-item-bonus {
     padding-left: 30px;
 }
+
 .mini-item-profit, .mini-item-bonus {
     font-size: 15px;
     font-weight: 600;
 }
+
 .legal-profit .mini-item-profit {
-    background-image: url(https://match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/mini-item-profit.svg);
+    background-image: url( 'https://match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/mini-item-profit.svg' );
 }
+
 .legal-default .mini-item-bonus {
-    background-image: url(https://match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/mini-item-bonus.svg);
+    background-image: url( 'https://match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/mini-item-bonus.svg' );
 }
+
 .mini-item-button .mini-item-button-afillate {
     background-color: #5997e3;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 }
+
 .mini-item-button .mini-item-button-afillate {
     color: #fff;
     font-weight: 600;
@@ -119,12 +151,15 @@
     text-align: center;
     text-decoration: none;
 }
+
 .mini-item-button .mini-item-button-afillate {
     display: inline-block;
 }
+
 .mini-item-button .mini-item-button-afillate {
     padding: 0.5rem 1rem;
 }
+
 .mini-item-button .mini-item-button-afillate:hover {
     background-color: #2990ff;
 }
@@ -135,6 +170,7 @@
     border-radius: 3px;
     cursor: pointer;
 }
+
 .tabs-mini-afillate {
     color: #000;
     font-weight: 600;
@@ -142,12 +178,15 @@
     text-decoration: none;
     text-align: center;
 }
+
 .tabs-mini-afillate {
     padding: 0.5rem 1rem;
 }
+
 .tabs-mini-afillate {
     display: block;
 }
+
 .tabs-mini-afillate:hover {
     background-color: #5997e3;
     color: #fff;
