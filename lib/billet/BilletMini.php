@@ -108,7 +108,7 @@ class BilletMini
 
         if ( $logo )
         {
-            $details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
+            $details = wp_get_attachment_image_src( $logo, $size );
 
             if ( $details )
             {
