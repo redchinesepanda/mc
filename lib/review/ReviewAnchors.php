@@ -250,6 +250,11 @@ class ReviewAnchors
 
     public static function render()
     {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+        
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );
