@@ -47,6 +47,11 @@
 }
 
 .tabs-mini-title {
+    display: flex;
+	align-items: center;
+}
+
+.tabs-mini-title {
     padding-left: 40px;
 }
 
