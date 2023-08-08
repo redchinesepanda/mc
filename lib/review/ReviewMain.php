@@ -132,41 +132,43 @@ class ReviewMain
 
     public static function register()
     {
-        $handler = new self();
+        if ( self::check() ) {
+            $handler = new self();
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_head', [ $handler, 'print' ] );
-        
-        add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
+            add_action( 'wp_head', [ $handler, 'print' ] );
+            
+            add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
-        ReviewAbout::register();
+            ReviewAbout::register();
 
-        ReviewAnchors::register();
+            ReviewAnchors::register();
 
-        ReviewGroup::register();
+            ReviewGroup::register();
 
-        ReviewProsCons::register();
+            ReviewProsCons::register();
 
-        ReviewGallery::register();
+            ReviewGallery::register();
 
-        ReviewFAQ::register();
+            ReviewFAQ::register();
 
-        ReviewStats::register();
+            ReviewStats::register();
 
-        ReviewBonus::register();
+            ReviewBonus::register();
 
-        ReviewHowTo::register();
+            ReviewHowTo::register();
 
-        ReviewBanner::register();
+            ReviewBanner::register();
 
-        ReviewAuthor::register();
+            ReviewAuthor::register();
 
-        ReviewCounter::register();
+            ReviewCounter::register();
 
-        ReviewList::register();
+            ReviewList::register();
 
-        ReviewOffers::register();
+            ReviewOffers::register();
+        }
     }
 
     public static function encoding( $content )
@@ -174,13 +176,43 @@ class ReviewMain
         return ToolEncode::encode( $content );
     }
 
+    const TAXONOMY = [
+        'page_type' => 'page_type',
+    ];
+
+    const TERMS = [
+        'promo-codes',
+
+        'bonus',
+
+        'review',
+
+        'app',
+
+        'registration',
+
+        'how-to-play',
+
+        'withdrawal',
+
+        'obzor-bk',
+
+        'obzor-bk-betera',
+
+        'obzor-bk-1xbet',
+
+        'compilation',
+    ];
+
     public static function check()
     {
         $permission_admin = !is_admin();
 
         $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
 
-        $permission_term = has_term( 'compilation', 'page_type' );
+        // $permission_term = has_term( 'compilation', 'page_type' );
+        
+        $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
         // LegalDebug::debug( [
         //     'permission_admin' => $permission_admin ? 'true' : 'false',
