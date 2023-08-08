@@ -105,7 +105,7 @@ class BilletMini
         {
             // $logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
 
-            $logo = get_field( "{BilletLogo::FIELD[ 'about' ]}_{BilletLogo::ABOUT[ 'mega' ]}", $id, false );
+            $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
 
             LegalDebug::debug( [
                 'logo' => $logo,
@@ -114,7 +114,7 @@ class BilletMini
             if ( !$logo ) {
                 // $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
 
-                $logo = get_field( "{BilletLogo::FIELD[ 'about' ]}_{BilletLogo::ABOUT[ 'logo' ]}", $id, false );
+                $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'logo' ], $id, false );
 
                 LegalDebug::debug( [
                     'logo' => $logo,
