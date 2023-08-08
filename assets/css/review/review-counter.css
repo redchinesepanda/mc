@@ -197,6 +197,16 @@
 	color: rgb(59, 59, 59)
 }
 
+.legal-review-counter.legal-overall .review-counter-set .item-label {
+	font-family: "Source Sans Pro";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 15.6px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+
 /* Background */
 
 .legal-review-counter .info-rating {
