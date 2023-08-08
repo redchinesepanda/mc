@@ -71,6 +71,9 @@
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 20px;
 }
 
 .legal-review-counter .set-item {
