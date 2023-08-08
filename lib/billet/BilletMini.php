@@ -99,37 +99,21 @@ class BilletMini
 
     public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
 	{
-        $group = get_field( BilletLogo::FIELD[ 'about' ], $id );
+        $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
 
-        if ( $group )
+        if ( !$logo )
         {
-            // $logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
+            $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'logo' ], $id, false );
+        }
 
-            $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
+        if ( $logo )
+        {
+            $details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
 
-            LegalDebug::debug( [
-                'logo' => $logo,
-            ] );
-
-            if ( !$logo ) {
-                // $logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
-
-                $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'logo' ], $id, false );
-
-                LegalDebug::debug( [
-                    'logo' => $logo,
-                ] );
-            }
-
-            if ( $logo )
+            if ( $details )
             {
-                $details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
 
-                if ( $details )
-                {
-
-                    return $details[ 0 ];
-                }
+                return $details[ 0 ];
             }
         }
 
