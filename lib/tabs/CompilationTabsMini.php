@@ -66,9 +66,7 @@ class CompilationTabsMini
 
             'title' => get_field( self::FIELD[ 'title' ], $id ),
 
-            // 'url' => get_field( self::FIELD[ 'image' ], $id ),
-            
-            'url' => self::get_logo( $id ),
+            'url' => get_field( self::FIELD[ 'image' ], $id ),
 
             'description' => get_field( self::FIELD[ 'description' ], $id ),
 
@@ -82,45 +80,6 @@ class CompilationTabsMini
 
             'class' => $class,
 		];
-	}
-
-    public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
-	{
-		$logo = get_field( self::FIELD[ 'image' ], $id, false );
-
-		// LegalDebug::debug( [
-		// 	'logo' => $logo,
-		// ] );
-
-		if ( $logo )
-		{
-			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
-
-			if ( $details )
-			{
-				// return [
-				// 	'id' => $logo[ 'id' ],
-
-				// 	'src' => $details[ 0 ],
-	
-				// 	'width' => $details[ 1 ],
-	
-				// 	'height' => $details[ 2 ],
-				// ];
-
-                return $details[ 0 ];
-			}
-		}
-		
-		// return [
-		// 	'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
-	
-		// 	'width' => '74',
-
-		// 	'height' => '25',
-		// ];
-
-        return LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp';
 	}
 
 	public static function filter_space( $string )
