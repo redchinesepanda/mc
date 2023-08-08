@@ -35,7 +35,8 @@
         padding-left: 0px;
     }
 
-    .tcb-post-content li:not( .legal-override ) {
+    .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
+    .tcb-post-content ol:not( .legal-override ):not( [ class ] ) li:not( .legal-override ) {
         padding-left: 34px;
     }
     
@@ -145,7 +146,8 @@
     padding-bottom: 0px;
 }
 
-.tcb-post-content li:not( .legal-override ) {
+.tcb-post-content ul:not( .legal-override ):not( [style] ) li:not( .legal-override ),
+.tcb-post-content ol:not( [ class ] ) li:not( .legal-override ) {
 	margin-left: 0px;
 }
 

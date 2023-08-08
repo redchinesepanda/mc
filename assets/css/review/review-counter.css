@@ -56,6 +56,10 @@
 	flex-wrap: wrap;
 }
 
+.legal-review-counter.legal-overall {
+	justify-content: center;
+}
+
 .legal-review-counter .review-counter-info {
 	display: flex;
 	justify-content: space-between;
@@ -139,12 +143,12 @@
 }
 
 .legal-review-counter .review-counter-set {
-	flex-basis: calc( 75% - 10px );
+	flex-basis: calc( 75% - 50px );
 	flex-grow: 1;
 }
 
 .legal-review-counter .review-counter-overall {
-	flex-basis: calc( 25% - 10px );
+	flex-basis: calc( 25% - 50px );
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
