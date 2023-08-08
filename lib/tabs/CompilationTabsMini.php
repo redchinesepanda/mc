@@ -22,6 +22,10 @@ class CompilationTabsMini
         return LegalComponents::check();
     }
 
+    const SIZE = [
+        'logo-mini' => 'tabs-logo-mini',
+    ];
+
 	public static function register()
     {
         $handler = new self();
@@ -31,6 +35,8 @@ class CompilationTabsMini
         add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_image_size( self::SIZE[ 'logo-mini' ], 74, 25, [ 'center', 'center' ] );
     }
 
 	const PAIRS = [
@@ -60,7 +66,9 @@ class CompilationTabsMini
 
             'title' => get_field( self::FIELD[ 'title' ], $id ),
 
-            'url' => get_field( self::FIELD[ 'image' ], $id ),
+            // 'url' => get_field( self::FIELD[ 'image' ], $id ),
+            
+            'url' => get_logo( $id ),
 
             'description' => get_field( self::FIELD[ 'description' ], $id ),
 
@@ -73,6 +81,41 @@ class CompilationTabsMini
             ],
 
             'class' => $class,
+		];
+	}
+
+    public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
+	{
+		$logo = get_field( self::FIELD[ 'image' ], $id );
+
+		// LegalDebug::debug( [
+		// 	'logo' => $logo,
+		// ] );
+
+		if ( $logo )
+		{
+			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
+
+			if ( $details )
+			{
+				return [
+					'id' => $logo[ 'id' ],
+
+					'src' => $details[ 0 ],
+	
+					'width' => $details[ 1 ],
+	
+					'height' => $details[ 2 ],
+				];
+			}
+		}
+		
+		return [
+			'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
+	
+			'width' => '74',
+
+			'height' => '25',
 		];
 	}
 
