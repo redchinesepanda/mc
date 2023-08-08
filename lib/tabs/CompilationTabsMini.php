@@ -68,7 +68,7 @@ class CompilationTabsMini
 
             // 'url' => get_field( self::FIELD[ 'image' ], $id ),
             
-            'url' => get_logo( $id ),
+            'url' => self::get_logo( $id ),
 
             'description' => get_field( self::FIELD[ 'description' ], $id ),
 
