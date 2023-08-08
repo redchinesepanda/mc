@@ -240,7 +240,7 @@ class ReviewCounter
 
 			$items = $items_rest;
 
-			$title = ReviewAbout::get_title() . ' - ' . __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN );
+			$title = ReviewAbout::get_title() . ' ' . __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN );
 		}
 
 		$args = [
