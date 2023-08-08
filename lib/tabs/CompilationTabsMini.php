@@ -98,25 +98,29 @@ class CompilationTabsMini
 
 			if ( $details )
 			{
-				return [
-					'id' => $logo[ 'id' ],
+				// return [
+				// 	'id' => $logo[ 'id' ],
 
-					'src' => $details[ 0 ],
+				// 	'src' => $details[ 0 ],
 	
-					'width' => $details[ 1 ],
+				// 	'width' => $details[ 1 ],
 	
-					'height' => $details[ 2 ],
-				];
+				// 	'height' => $details[ 2 ],
+				// ];
+
+                return $details[ 0 ];
 			}
 		}
 		
-		return [
-			'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
+		// return [
+		// 	'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
 	
-			'width' => '74',
+		// 	'width' => '74',
 
-			'height' => '25',
-		];
+		// 	'height' => '25',
+		// ];
+
+        return LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp';
 	}
 
 	public static function filter_space( $string )
