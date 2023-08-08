@@ -99,39 +99,27 @@ class BilletMini
 
     public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
 	{
-		$logo = get_field( self::FIELD[ 'image' ], $id, false );
+        $group = get_field( BilletLogo::FIELD[ 'about' ], $id );
 
-		// LegalDebug::debug( [
-		// 	'logo' => $logo,
-		// ] );
+        if ( $group )
+        {
+            $logo = get_field( BilletLogo::ABOUT[ 'mega' ], $id, false );
 
-		if ( $logo )
-		{
-			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
+            if ( !$logo ) {
+                $logo = get_field( BilletLogo::ABOUT[ 'logo' ], $id, false );
+            }
 
-			if ( $details )
-			{
-				// return [
-				// 	'id' => $logo[ 'id' ],
+            if ( $logo )
+            {
+                $details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
 
-				// 	'src' => $details[ 0 ],
-	
-				// 	'width' => $details[ 1 ],
-	
-				// 	'height' => $details[ 2 ],
-				// ];
+                if ( $details )
+                {
 
-                return $details[ 0 ];
-			}
-		}
-		
-		// return [
-		// 	'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
-	
-		// 	'width' => '74',
-
-		// 	'height' => '25',
-		// ];
+                    return $details[ 0 ];
+                }
+            }
+        }
 
         return LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp';
 	}
