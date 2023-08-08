@@ -37,6 +37,11 @@ class ReviewFAQ
 
     public static function schema()
     {
+        if ( !ReviewMain::check() )
+        {
+            return [];
+        }
+        
         $items = self::get_schema_data();
 
         if ( empty( $items ) )

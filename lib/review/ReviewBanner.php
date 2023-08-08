@@ -142,6 +142,11 @@ class ReviewBanner
 
     public static function render( $args )
     {
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+		
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-banner' ], false, $args );

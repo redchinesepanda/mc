@@ -66,7 +66,7 @@ class ReviewCounter
 
 		$tables = self::get_tables();
 
-		if ( $tables->length != 0 )
+		if ( !empty( $tables ) && $tables->length != 0 )
 		{
 			foreach ( $tables as $table_id => $table )
 			{

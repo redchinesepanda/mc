@@ -23,11 +23,8 @@ class ReviewBonus
 
     public static function register_inline_style()
     {
-		// LegalDebug::debug( [
-		// 	'check' => ( ReviewMain::check() ? 'true' : 'false' ),
-		// ] );
-		
-		if ( ReviewMain::check() ) {
+		if ( ReviewMain::check() )
+		{
 			$name = 'review-inline';
 
 			wp_register_style( $name, false, [], true, true );
@@ -431,13 +428,10 @@ class ReviewBonus
 
     public static function render_bonus( $args )
     {
-		// LegalDebug::debug( [
-		// 	'function' => 'render_bonus',
-
-		// 	'$args' => $args,
-
-		// 	'self::get_bonus( $args )' => self::get_bonus( $args ),
-		// ] );
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
 
 		ob_start();
 
@@ -567,6 +561,11 @@ class ReviewBonus
 
     public static function render_billet( $args )
     {
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+		
         ob_start();
 
         load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );

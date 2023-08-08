@@ -112,7 +112,12 @@ class ReviewGallery
 
         return $args;
     }
-    public static function wp_kama_post_gallery_filter( $output, $attr, $instance ) {
+    public static function wp_kama_post_gallery_filter( $output, $attr, $instance )
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
 
         return self::render( self::get( $attr ) );
     }
@@ -123,6 +128,11 @@ class ReviewGallery
 
     public static function render( $args )
     {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'gallery' ], false, $args );

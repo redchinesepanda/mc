@@ -85,7 +85,7 @@ class ReviewAbout
         if ( !self::check() ) {
             return '';
         }
-        
+
 		$style = [];
 
 		$style_item = self::get( [] );
@@ -182,10 +182,6 @@ class ReviewAbout
 
         $group = get_field( self::FIELD, $id );
 
-        // LegalDebug::debug( [
-        //     'group' => $group,
-        // ] );
-        
         if( $group ) {
             $title = $group[ 'about-title' ];
 
@@ -242,8 +238,6 @@ class ReviewAbout
                 
                 'bonus' => $bonus,
                 
-                // 'description' => $group[ 'about-description' ],
-                
                 'logo' => $group[ self::ABOUT[ 'logo' ] ],
 
                 'background' => $group[ self::ABOUT[ 'background' ] ],
@@ -251,12 +245,6 @@ class ReviewAbout
                 'font' => $group[ 'about-font' ],
                 
                 'rating' => $rating,
-
-                // 'rating' => [
-                //     'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
-
-                //     'value' => $group[ 'about-rating' ],
-                // ],
 
                 'afillate' => [
                     'href' => self::check_href_afillate( $id ),
@@ -285,6 +273,11 @@ class ReviewAbout
 
     public static function render( $args )
     {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
@@ -338,6 +331,11 @@ class ReviewAbout
 
     public static function render_button( $args )
     {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-button' ], false, self::get_button( $args ) );
