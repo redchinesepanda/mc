@@ -110,6 +110,14 @@
 	flex-grow: 1;
 }
 
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	display: block;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate[href=""] {
+	pointer-events: none;
+}
+
 /* Position */
 
 .legal-review-counter {
@@ -126,6 +134,10 @@
 
 .legal-review-counter .info-rating {
 	padding: 15px 25px;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	padding: 5px 45px 5px 20px;
 }
 
 /* Width and Height */
@@ -244,6 +256,18 @@
 	text-align: center;
 }
 
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28.8px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+
 /* Background */
 
 .legal-review-counter .info-rating {
@@ -265,6 +289,16 @@
 	border-radius: 50%;
 	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .4s ease-out turn_in reverse;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	background-image: url( '../../img/review/review-bet-here.svg' );
+	background-position: right 22px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
+	border: 1.6px solid rgb(255, 255, 255);
 }
 
 @keyframes turn_in {
