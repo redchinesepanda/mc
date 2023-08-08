@@ -154,9 +154,12 @@
 	min-height: 45px;
 }
 
-.legal-review-counter .review-counter-set {
+.legal-review-counter.legal-default .review-counter-set {
+	flex-basis: 100%;
+}
+
+.legal-review-counter.legal-overall .review-counter-set {
 	flex-basis: calc( 75% - 50px );
-	flex-grow: 1;
 }
 
 .legal-review-counter .review-counter-overall {
