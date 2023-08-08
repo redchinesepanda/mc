@@ -70,6 +70,12 @@
 	flex-wrap: wrap;
 }
 
+.legal-review-counter.legal-overall .review-counter-overall {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 	display: flex;
 	justify-content: center;
