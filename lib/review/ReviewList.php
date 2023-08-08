@@ -37,6 +37,10 @@ class ReviewList
 
     public static function inline_style()
     {
+        if ( !ReviewMain::check() ) {
+            return '';
+        }
+
 		$style = [];
 
 		$nodes = self::get_lists();

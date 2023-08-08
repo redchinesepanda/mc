@@ -25,13 +25,15 @@ class ReviewBonus
     {
 		if ( ReviewMain::check() )
 		{
-			$name = 'review-inline';
+			// $name = 'review-inline';
 
-			wp_register_style( $name, false, [], true, true );
+			// wp_register_style( $name, false, [], true, true );
 			
-			wp_add_inline_style( $name, self::inline_style() );
+			// wp_add_inline_style( $name, self::inline_style() );
 			
-			wp_enqueue_style( $name );
+			// wp_enqueue_style( $name );
+			
+			ToolEnqueue::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
 		}
     }
 
@@ -565,7 +567,7 @@ class ReviewBonus
         {
             return '';
         }
-		
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );

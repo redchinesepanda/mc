@@ -4,11 +4,13 @@ class ReviewOffers
 {
 	public static function check()
     {
-        $permission_post_type = is_singular( [ 'legal_bk_review' ] );
+        // $permission_post_type = is_singular( [ 'legal_bk_review' ] );
 
-        $permission_admin = !is_admin();
+        // $permission_admin = !is_admin();
         
-        return ( $permission_post_type && $permission_admin );
+        // return ( $permission_post_type && $permission_admin );
+
+		return ReviewMain::check();
     }
 
 	const JS = [
@@ -57,7 +59,12 @@ class ReviewOffers
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-	public static function inline_style() {
+	public static function inline_style()
+	{
+		if ( !self::check() ) {
+            return '';
+        }
+
 		$style = [];
 
 		$style_items = self::get_offers();
@@ -186,6 +193,10 @@ class ReviewOffers
 
     public static function render_offers()
     {
+		if ( !self::check() ) {
+            return '';
+        }
+		
         ob_start();
 
         load_template( self::TEMPLATE[ 'offers' ], false, self::get_offers() );

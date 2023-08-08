@@ -179,6 +179,11 @@ class ReviewHowTo
 
 	public static function schema()
     {
+		if ( !ReviewMain::check() )
+        {
+            return [];
+        }
+
 		$HowToSections = self::get_schema_data();
 
 		// LegalDebug::debug( [

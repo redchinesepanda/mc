@@ -17,13 +17,16 @@ class ReviewCounter
 
     public static function register_inline_style()
     {
-		$name = self::CLASSES[ 'base' ];
+		if ( ReviewMain::check() )
+        {
+            $name = self::CLASSES[ 'base' ];
 
-        wp_register_style( $name, false, [], true, true );
-		
-		wp_add_inline_style( $name, self::inline_style() );
-		
-		wp_enqueue_style( $name );
+			wp_register_style( $name, false, [], true, true );
+			
+			wp_add_inline_style( $name, self::inline_style() );
+			
+			wp_enqueue_style( $name );
+        }
     }
 
     public static function register()
@@ -43,6 +46,11 @@ class ReviewCounter
 
     public static function render_counter( $args )
     {
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, $args );
@@ -52,7 +60,13 @@ class ReviewCounter
         return $output;
     }
 
-	public static function inline_style() {
+	public static function inline_style()
+	{
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
 		$style = [];
 
 		$group = get_field( ReviewAbout::FIELD );

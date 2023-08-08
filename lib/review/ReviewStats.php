@@ -13,13 +13,15 @@ class ReviewStats
 
     public static function register_inline_style()
     {
-		$name = 'review-inline';
+		// $name = 'review-inline';
 
-        wp_register_style( $name, false, [], true, true );
+        // wp_register_style( $name, false, [], true, true );
 		
-		wp_add_inline_style( $name, self::inline_style() );
+		// wp_add_inline_style( $name, self::inline_style() );
 		
-		wp_enqueue_style( $name );
+		// wp_enqueue_style( $name );
+
+		ReviewMain::register_inline_style( 'review-stats', self::inline_style() );
     }
 
     public static function register()
@@ -39,6 +41,10 @@ class ReviewStats
 
     public static function render_stats( $node )
     {
+		if ( !ReviewMain::check() ) {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-stats' ], false, self::get_stats( $node ) );
@@ -48,7 +54,12 @@ class ReviewStats
         return $output;
     }
 
-	public static function inline_style() {
+	public static function inline_style()
+	{
+		if ( !ReviewMain::check() ) {
+            return '';
+        }
+
 		$style = [];
 
 		$table = self::get_table();

@@ -27,7 +27,7 @@ class LegalComponents
 
         $term = has_term( 'compilation', 'page_type' );
         
-        return ( $single && $term );
+        return $single && $term;
     }
 }
 
