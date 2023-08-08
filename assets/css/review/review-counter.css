@@ -171,9 +171,16 @@
 }
 
 .legal-review-counter .item-value {
-	font-size: 35px;
 	font-weight: 600;
 	color: rgb(89, 151, 227);
+}
+
+.legal-review-counter.legal-default .item-value {
+	font-size: 35px;
+}
+
+.legal-review-counter.legal-overall .item-value {
+	font-size: 35px;
 }
 
 .legal-review-counter .item-label {
