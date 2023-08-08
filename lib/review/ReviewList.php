@@ -6,7 +6,7 @@ class ReviewList
         'review-list' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list.css',
 
-            'ver' => '1.1.7',
+            'ver' => '1.1.9',
         ],
     ];
 
@@ -17,9 +17,7 @@ class ReviewList
 
     public static function register_inline_style()
     {
-		if ( ReviewMain::check() ) {
-			ToolEnqueue::register_inline_style( self::CLASSES[ 'base' ], self::inline_style() );
-		}
+        ReviewMain::register_inline_style( self::CLASSES[ 'base' ], self::inline_style() );
     }
 
     public static function register()

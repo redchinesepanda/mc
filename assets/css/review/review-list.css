@@ -31,7 +31,7 @@
     }
 
     .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
-    .tcb-post-content ol:not( .legal-override ) ol {
+    .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ol {
         padding-left: 0px;
     }
 
@@ -60,7 +60,7 @@
 
 /* Review Display */
 
-.tcb-post-content ol {
+.tcb-post-content ol:not( [ class ] ) {
     list-style: none;
     counter-reset: legal-counter;
 }
@@ -70,7 +70,7 @@
     counter-reset: legal-counter-alpha;
 }
 
-.tcb-post-content ol li {
+.tcb-post-content ol:not( [ class ] ) li {
     counter-increment: legal-counter;
 }
 
@@ -78,7 +78,7 @@
     counter-increment: legal-counter-alpha;
 }
 
-.tcb-post-content ol li::before {
+.tcb-post-content ol:not( [ class ] ) li::before {
     content: counter( legal-counter );
     display: inline-block;
 }
@@ -137,7 +137,7 @@
 }
 
 .tcb-post-content ul:not( .legal-highlight ) li:not( :last-child ),
-.tcb-post-content ol li:not( :last-child ) {
+.tcb-post-content ol:not( [ class ] ) li:not( :last-child ) {
     padding-bottom: 15px;
 }
 
@@ -180,7 +180,7 @@
 	list-style-image: none;
 }
 
-.tcb-post-content ol li::before {
+.tcb-post-content ol:not( [ class ] ) li::before {
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
 }
@@ -191,7 +191,7 @@
 
 /* Review Typography */
 
-.tcb-post-content ol li::before {
+.tcb-post-content ol:not( [ class ] ) li::before {
     font-weight: 600;
     line-height: 20px;
     color: rgb(89, 151, 227);
