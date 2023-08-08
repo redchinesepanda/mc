@@ -214,17 +214,19 @@ class ReviewMain
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
-        // LegalDebug::debug( [
-        //     'permission_admin' => $permission_admin ? 'true' : 'false',
+        $result = $permission_admin && $permission_post_type && $permission_term;
 
-        //     'permission_post_type' => $permission_post_type ? 'true' : 'false',
+        LegalDebug::debug( [
+            'permission_admin' => $permission_admin ? 'true' : 'false',
 
-        //     'permission_term' => $permission_term ? 'true' : 'false',
+            'permission_post_type' => $permission_post_type ? 'true' : 'false',
 
-        //     'check' => $permission_admin && ( $permission_post_type || $permission_term ) ? 'true' : 'false',
-        // ] );
+            'permission_term' => $permission_term ? 'true' : 'false',
+
+            'result' => $result ? 'true' : 'false',
+        ] );
         
-        return ( $permission_admin && ( $permission_post_type || $permission_term ) );
+        return $result;
 
         // return true;
     }
