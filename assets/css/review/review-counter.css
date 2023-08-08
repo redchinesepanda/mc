@@ -69,6 +69,10 @@
 	flex-wrap: wrap;
 }
 
+.legal-review-counter .review-counter-set .set-item-wrapper {
+	display: flex;
+}
+
 .legal-review-counter .set-item {
 	display: flex;
 }
@@ -124,6 +128,10 @@
 
 .legal-review-counter .review-counter-overall {
 	flex-basis: calc( 25% - 10px );
+}
+
+.legal-review-counter .review-counter-set .set-item-wrapper {
+	flex-basis: calc( 33% - 10px );
 }
 
 .legal-review-counter.legal-default .set-item {
