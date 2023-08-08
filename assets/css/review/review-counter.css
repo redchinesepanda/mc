@@ -96,7 +96,7 @@
 }
 
 .legal-review-counter.legal-overall .set-item-info {
-	margin: 5px;
+	margin: 3px;
 }
 
 .legal-review-counter .info-rating {
@@ -134,6 +134,11 @@
 .legal-review-counter.legal-overall .review-counter-set .set-item {
 	width: 60px;
 	height: 60px;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .item-label {
+	flex-basis: 80px;
+	flex-grow: 1;
 }
 
 .legal-review-counter.legal-overall .review-counter-overall .set-item {
