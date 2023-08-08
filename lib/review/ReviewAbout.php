@@ -21,20 +21,20 @@ class ReviewAbout
     {
         if ( self::check() ) {
             ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
-        }
 
-        if ( ReviewMain::check() ) {
             ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
         }
     }
 
     public static function check()
     {
-        $permission_admin = !is_admin();
+        // $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
+        // $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
         
-        return $permission_admin && $permission_post_type;
+        // return $permission_admin && $permission_post_type;
+
+        return ReviewMain::check();
     }
 
     public static function register()
@@ -60,6 +60,10 @@ class ReviewAbout
 
     public static function inline_style_highlight()
     {
+        if ( !self::check() ) {
+            return '';
+        }
+
         $style = [];
 
 		$style_item = self::get( [] );
@@ -78,6 +82,10 @@ class ReviewAbout
 
     public static function inline_style_about()
     {
+        if ( !self::check() ) {
+            return '';
+        }
+        
 		$style = [];
 
 		$style_item = self::get( [] );
