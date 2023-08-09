@@ -545,9 +545,9 @@ class ReviewBonus
 		{
 			$class = $group[ 'about-font' ];
 
-			if ( !$args[ 'no-image' ] )
+			if ( !$args[ 'atts' ][ 'image' ] )
 			{
-				if ( $args[ 'logo-large' ] )
+				if ( $args[ 'atts' ][ 'large' ] )
 				{
 					$src = $group[ 'about-logo' ];
 				}
@@ -557,7 +557,7 @@ class ReviewBonus
 				}
 			}
 
-			if ( !$args[ 'logo-large' ] )
+			if ( !$args[ 'atts' ][ 'large' ] )
 			{
 				$title_text = $group[ 'about-title' ];
 			}
