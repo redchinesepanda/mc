@@ -181,14 +181,6 @@ class ReviewBonus
 		if ( !empty( $node ) )
 		{
 			$class = explode( ' ', $node->getAttribute( 'class' ) );
-
-			// LegalDebug::debug( [
-			// 	'textContent' => substr( $node->textContent, 0, 30 ),
-	
-			// 	'not_empty' => !empty( $node->textContent ) ? 'true' : 'false',
-	
-			// 	'node' => $node,
-			// ] );
 		}
 
 		return [
@@ -280,6 +272,18 @@ class ReviewBonus
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
+
+			LegalDebug::debug( [
+				'ReviewBonus' => 'get_content',
+	
+				'permission_node' => $permission_node,
+				
+				'permission_previous' => $permission_previous,
+
+				'permission_next' => $permission_next,
+
+				'permission_replace' => $permission_replace,
+			] );
 
 			// $no_review = self::check_no_review( $class );
 			
