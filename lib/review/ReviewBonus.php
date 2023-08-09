@@ -279,6 +279,8 @@ class ReviewBonus
 
 			LegalDebug::debug( [
 				'ReviewBonus' => 'get_content',
+
+				'$node->textContent' => substr( $node->textContent, 0, 30 ),
 	
 				'permission_node' => $permission_node,
 				
