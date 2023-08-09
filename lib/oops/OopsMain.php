@@ -42,7 +42,7 @@ class OopsMain
 
         // [legal-oops]
 
-        add_shortcode( 'legal-oops', [ $handler, 'render_check' ] );
+        add_shortcode( 'legal-oops', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -203,18 +203,18 @@ class OopsMain
         'oops' => LegalMain::LEGAL_PATH . '/template-parts/oops/oops.php',
     ];
 
-    public static function render_check()
-    {
-        if ( !self::check() ) {
-            return '';
-        }
+    // public static function render_check()
+    // {
+    //     if ( !self::check() ) {
+    //         return '';
+    //     }
 
-        return self::render();
-    }
+    //     return self::render();
+    // }
 
     public static function render()
     {
-        if ( self::check() ) {
+        if ( !self::check() ) {
             return '';
         }
 

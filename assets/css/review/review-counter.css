@@ -78,7 +78,7 @@
 .legal-review-counter .review-counter-set {
 	display: flex;
 	justify-content: center;
-	column-gap: 40px;
+	column-gap: 39px;
 	row-gap: 20px;
 	flex-wrap: wrap;
 }
@@ -176,7 +176,7 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
-	flex-basis: calc( 33% - 30px );
+	flex-basis: calc( 100% / 3 - 26px );
 }
 
 .legal-review-counter.legal-default .set-item {
