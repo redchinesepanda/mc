@@ -348,7 +348,7 @@ class ReviewBonus
 					$item_class[] = self::BONUS_CLASS[ 'image' ];
 				}
 
-				$item->setAttribute( 'class', implode( ' ', item_class ) );
+				$item->setAttribute( 'class', implode( ' ', $item_class ) );
 
 				// $bonus->setAttribute( 'class', self::check( $class ) );
 
