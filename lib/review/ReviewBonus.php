@@ -206,17 +206,17 @@ class ReviewBonus
 
 		$last = !$next[ 'title' ] && !$next[ 'description' ] && !$next[ 'content' ];
 
-		LegalDebug::debug( [
-			'ReviewBonus' => 'get_permission_replace',
+		// LegalDebug::debug( [
+		// 	'ReviewBonus' => 'get_permission_replace',
 
-			'title_title' => $title_title,
+		// 	'title_title' => $title_title,
 
-			'description_title' => $description_title,
+		// 	'description_title' => $description_title,
 
-			'content_title' => $content_title,
+		// 	'content_title' => $content_title,
 
-			'last' => $last,
-		] );
+		// 	'last' => $last,
+		// ] );
 		
 		return $title_title || $description_title || $content_title || $last; 
 	}
@@ -227,19 +227,19 @@ class ReviewBonus
 			return $content;
 		}
 
-		LegalDebug::debug( [
-			'ReviewBonus' => 'get_content start',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewBonus' => 'get_content start',
+		// ] );
 
 		$dom = LegalDOM::get_dom( $content );
 
 		$nodes = self::get_nodes( $dom );
 
-		LegalDebug::debug( [
-			'ReviewBonus' => 'get_content',
+		// LegalDebug::debug( [
+		// 	'ReviewBonus' => 'get_content',
 
-			'$nodes->length' => $nodes->length,
-		] );
+		// 	'$nodes->length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
@@ -261,11 +261,11 @@ class ReviewBonus
 
 		foreach ( $nodes as $id => $node )
 		{
-			LegalDebug::debug( [
-				'ReviewBonus' => 'get_content',
+			// LegalDebug::debug( [
+			// 	'ReviewBonus' => 'get_content',
 
-				'$node->textContent' => substr( $node->textContent, 0, 30 ),
-			] );
+			// 	'$node->textContent' => substr( $node->textContent, 0, 30 ),
+			// ] );
 
 			$class = $node->getAttribute( 'class' );
 
@@ -484,9 +484,9 @@ class ReviewBonus
 			// }
 		}
 
-		LegalDebug::debug( [
-			'ReviewBonus' => 'get_content end',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewBonus' => 'get_content end',
+		// ] );
 
 		return $dom->saveHTML();
 	}
