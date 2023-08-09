@@ -112,8 +112,6 @@ class ReviewProsCons
 	}
 
 	const TAG_TITLE = [
-		'p',
-
 		'h3',
 	];
 
@@ -187,7 +185,14 @@ class ReviewProsCons
 				// 	'nodeName' => $node->nodeName,
 				// ] );
 
-				$container[ $type ][ 'title' ][ 'tag' ] = $node->nodeName;
+				$tag = $node->nodeName;
+
+				$container[ $type ][ 'title' ][ 'tag' ] = 'div';
+
+				if ( in_array( $tag, self::TAG_TITLE ) )
+				{
+					$container[ $type ][ 'title' ][ 'tag' ] = $tag;
+				}
 			}
 
 			if ( $permission_node[ 'content' ] )
