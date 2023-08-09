@@ -124,7 +124,7 @@ class ReviewAbout
 
         'logo' => 'about-logo',
 
-        'about' => 'about-font',
+        'font' => 'about-font',
     ];
 
     const BONUS_EXCEPTION = [ 'es' ];
