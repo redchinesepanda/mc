@@ -64,8 +64,6 @@ class ReviewBonus
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		// $nodes = $xpath->query( './/*[contains(@class, \'legal-bonus\')]' );
 		
 		$nodes = $xpath->query( '//body/*[contains(@class, \'legal-bonus\')]' );
 
@@ -96,23 +94,11 @@ class ReviewBonus
 
 		if ( !empty( $previousSibling ) )
 		{
-			// LegalDebug::debug( [
-			// 	'function' => 'get_shortcode',
-
-			// 	'textContent' => substr( $node->textContent, 0, 10 ),
-			// ] );
-
 			if ( strpos( $node->textContent, '[/billet-mega' ) === false )
 			{
 				if ( strpos( $node->textContent, '[billet-mega' ) !== false )
 				{
 					$args = self::get_shortcode_args( $node->textContent );
-	
-					// LegalDebug::debug( [
-					// 	'function' => 'get_shortcode',
-			
-					// 	'args' => $args,
-					// ] );
 				} else 
 				{
 					$args = self::get_shortcode( $previousSibling );
@@ -122,26 +108,6 @@ class ReviewBonus
 
 		return $args;
 	}
-
-	// public static function check_no_review( $class )
-	// {
-	// 	return ( strpos( $class, self::BONUS_CLASS[ 'review' ] ) !== false ? true : false );
-	// }
-
-	// public static function check_no_height( $class )
-	// {
-	// 	return ( strpos( $class, self::BONUS_CLASS[ 'height' ] ) !== false ? true : false );
-	// }
-
-	// public static function check_logo_large( $class )
-	// {
-	// 	return ( strpos( $class, self::BONUS_CLASS[ 'large' ] ) !== false ? true : false );
-	// }
-
-	// public static function check_no_image( $class )
-	// {
-	// 	return ( strpos( $class, self::BONUS_CLASS[ 'large' ] ) !== false ? true : false );
-	// }
 
 	public static function get_node_atts( $node )
 	{
@@ -182,8 +148,6 @@ class ReviewBonus
 			'billet' => in_array( self::BONUS_CLASS[ 'billet' ], $class ),
 		];
 	}
-
-	// public static function get_permission_replace( $current, $previous, $next )
 	
 	public static function get_permission_replace( $current, $next )
 	{
@@ -194,18 +158,6 @@ class ReviewBonus
 		$content_title = $current[ 'content' ] && $next[ 'title' ];
 
 		$last = !$next[ 'title' ] && !$next[ 'description' ] && !$next[ 'content' ];
-
-		// LegalDebug::debug( [
-		// 	'ReviewBonus' => 'get_permission_replace',
-
-		// 	'title_title' => $title_title,
-
-		// 	'description_title' => $description_title,
-
-		// 	'content_title' => $content_title,
-
-		// 	'last' => $last,
-		// ] );
 		
 		return $title_title || $description_title || $content_title || $last; 
 	}
@@ -216,19 +168,9 @@ class ReviewBonus
 			return $content;
 		}
 
-		// LegalDebug::debug( [
-		// 	'ReviewBonus' => 'get_content start',
-		// ] );
-
 		$dom = LegalDOM::get_dom( $content );
 
 		$nodes = self::get_nodes( $dom );
-
-		// LegalDebug::debug( [
-		// 	'ReviewBonus' => 'get_content',
-
-		// 	'$nodes->length' => $nodes->length,
-		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
@@ -250,53 +192,13 @@ class ReviewBonus
 
 		foreach ( $nodes as $id => $node )
 		{
-			// LegalDebug::debug( [
-			// 	'ReviewBonus' => 'get_content',
-
-			// 	'$node->textContent' => substr( $node->textContent, 0, 30 ),
-			// ] );
-
 			$class = $node->getAttribute( 'class' );
-
-			// $permission_title = ( strpos( $class, self::BONUS_CLASS[ 'title' ] ) !== false );
-
-			// $permission_description = ( strpos( $class, self::BONUS_CLASS[ 'description' ] ) !== false );
-
-			// $permission_content = ( strpos( $class, self::BONUS_CLASS[ 'content' ] ) !== false );
-
-			// $permission_last = ( $id == $last );
 
 			$permission_node = self::get_node_permission( $node );
 
-			// $permission_previous = self::get_node_permission( $nodes->item( $id - 1 ) );
-
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
-			// $permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
-			
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_next );
-
-			// LegalDebug::debug( [
-			// 	'ReviewBonus' => 'get_content',
-
-			// 	'$node->textContent' => substr( $node->textContent, 0, 30 ),
-	
-			// 	// 'permission_node' => $permission_node,
-				
-			// 	// 'permission_previous' => $permission_previous,
-
-			// 	// 'permission_next' => $permission_next,
-
-			// 	// 'permission_replace' => $permission_replace,
-			// ] );
-
-			// $no_review = self::check_no_review( $class );
-			
-			// $no_height = self::check_no_height( $class );
-
-			// $no_image = self::check_no_image( $class );
-
-			// $logo_large = self::check_logo_large( $class );
 
 			$atts = self::get_node_atts( $node );
 
@@ -365,30 +267,6 @@ class ReviewBonus
 
 				$item->setAttribute( 'class', implode( ' ', $item_class ) );
 
-				// $bonus->setAttribute( 'class', self::check( $class ) );
-
-				// $args = [];
-				
-				// $args[ 'title' ] = [
-				// 	'text' => ToolEncode::encode( $node->textContent ),
-					
-				// 	'tag' => in_array( $node->nodeName, [ 'p' ] ) ? 'div' : $node->nodeName,
-				// ];
-
-				// $args[ 'class' ] = $class;
-
-				// $args[ 'no-review' ] = $no_review;
-
-				// $args[ 'no-image' ] = $no_image;
-
-				// $args[ 'logo-large' ] = $logo_large;
-
-				// $args[ 'index' ] = $index;
-
-				// $replace = $node;
-				
-				// $index++;
-
 				$item_html = '';
 				
 				if ( $permission_node[ 'billet' ] ) {
@@ -422,76 +300,10 @@ class ReviewBonus
 					] );
 				}
 			}
-
-			// if ( $permission_title )
-			// {
-			// 	$shortcode_args = self::get_shortcode( $node );
-	
-			// 	if ( !empty( $shortcode_args[ 'id' ] ) )
-			// 	{
-			// 		// LegalDebug::debug( [
-			// 		// 	'textContent' => substr( $node->textContent, 0, 30 ),
-	
-			// 		// 	'shortcode_args' => $shortcode_args,
-			// 		// ] );
-
-			// 		$args[ 'id' ] = $shortcode_args[ 'id' ];
-			// 	}
-			// }
-
-			// if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
-			// 	$template = '';
-				
-			// 	if ( strpos( $bonus->getAttribute( 'class' ), self::BONUS_CLASS[ 'billet' ] ) !== false ) {
-			// 		$template = self::render_billet( $args );
-			// 	} else {
-			// 		$template = self::render_bonus( $args );
-			// 	}
-				
-			// 	LegalDOM::appendHTML( $bonus, ToolEncode::encode( $template ) );
-				
-			// 	try
-			// 	{
-			// 		$body->replaceChild( $bonus, $replace );
-			// 	} catch ( DOMException $e )
-			// 	{
-			// 		LegalDebug::debug( [
-			// 			'ReviewCounter::get_content > replaceChild DOMException',
-			// 		] );
-			// 	}
-			// }
-
-			// if ( $permission_description || $permission_content )
-			// {	
-			// 	try
-			// 	{
-			// 		$body->removeChild( $node );
-			// 	} catch ( DOMException $e )
-			// 	{
-			// 		LegalDebug::debug( [
-			// 			'ReviewCounter::get_content > removeChild DOMException',
-			// 		] );
-			// 	}
-			// }
 		}
-
-		// LegalDebug::debug( [
-		// 	'ReviewBonus' => 'get_content end',
-		// ] );
 
 		return $dom->saveHTML();
 	}
-
-	// public static function check( $class )
-	// {
-	// 	$result = self::BONUS_CLASS[ 'bonus' ];
-
-	// 	if ( strpos( $class, self::BONUS_CLASS[ 'billet' ] ) !== false ) {
-	// 		$result = self::BONUS_CLASS[ 'billet' ];
-	// 	}
-
-	// 	return $result;
-	// }
 
 	public static function get_image_size( $url )
 	{
@@ -680,37 +492,33 @@ class ReviewBonus
 
 		$group = get_field( ReviewAbout::FIELD, $id );
         
-        // if( $group ) {
-			return [
-				'class' => !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default',
+		return [
+			'class' => !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default',
 
-				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
+			'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
-				'review' => [
-					'href' => self::check_url_review( $id ),
+			'review' => [
+				'href' => self::check_url_review( $id ),
 
-					'text' => __( ReviewMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
+				'text' => __( ReviewMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
 
-					'disabled' => $args[ 'atts' ][ 'review' ],
-				],
+				'disabled' => $args[ 'atts' ][ 'review' ],
+			],
 
-				'title' => [
-					'text' => $args[ 'title' ][ 'text' ],
+			'title' => [
+				'text' => $args[ 'title' ][ 'text' ],
 
-					'tag' => $args[ 'title' ][ 'tag' ],
-				],
+				'tag' => $args[ 'title' ][ 'tag' ],
+			],
 
-				'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
+			'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
 
-				'get' => [
-					'href' => self::check_url_afillate( $id ),
+			'get' => [
+				'href' => self::check_url_afillate( $id ),
 
-					'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
-				],
-			];
-		// }
-
-		// return [];
+				'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
+			],
+		];
 	}
 
     public static function render_billet( $args )
