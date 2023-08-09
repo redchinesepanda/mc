@@ -111,6 +111,12 @@ class ReviewProsCons
 		return $default || $half_pros || $half_cons || $last || $case_content; 
 	}
 
+	const TAG_TITLE = [
+		'p',
+
+		'h3',
+	];
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -165,18 +171,23 @@ class ReviewProsCons
 			{
 				$type = 'pros';
 
-				$container[ $type ][ 'title' ] = ToolEncode::encode( $node->textContent );
-
-				LegalDebug::debug( [
-					'nodeName' => $node->nodeName,
-				] );
+				$container[ $type ][ 'title' ][ 'text' ] = ToolEncode::encode( $node->textContent );
 			}
 
 			if ( $permission_node[ 'cons_title' ] )
 			{
 				$type = 'cons';
 
-				$container[ $type ][ 'title' ] = ToolEncode::encode( $node->textContent );
+				$container[ $type ][ 'title' ][ 'text' ] = ToolEncode::encode( $node->textContent );
+			}
+
+			if ( $permission_node[ 'pros_title' ] || $permission_node[ 'cons_title' ] )
+			{
+				// LegalDebug::debug( [
+				// 	'nodeName' => $node->nodeName,
+				// ] );
+
+				$container[ $type ][ 'title' ][ 'tag' ] = $node->nodeName;
 			}
 
 			if ( $permission_node[ 'content' ] )
