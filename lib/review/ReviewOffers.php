@@ -208,13 +208,6 @@ class ReviewOffers
         return $output;
     }
 
-	// public static function get_nodes( $dom )
-	// {
-	// 	$xpath = new DOMXPath( $dom );
-
-	// 	return $xpath->query( './/h2' );
-	// }
-
 	public static function get_content( $content )
 	{
         if ( !self::check() ) {
@@ -223,13 +216,11 @@ class ReviewOffers
 
 		$dom = LegalDOM::get_dom( $content );
 
-		$body = $dom->getElementsByTagName( 'body' )->item(0);
+		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
-		// $nodes = self::get_nodes( $dom );
-
-		// if ( $nodes->length == 0 ) {
-		// 	return $content;
-		// }
+		if ( empty( $body ) ) {
+			return $content;
+		}
 
 		$item = $dom->createElement( 'div' );
 
@@ -237,15 +228,12 @@ class ReviewOffers
 
 		LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
 
-		try {
-			// $body->insertBefore( $item, $nodes->item( $nodes->length - 1 ) );
-			
+		try
+		{
 			$body->appendChild( $item );
 		} catch ( DOMException $e )
 		{
 			LegalDebug::debug( [
-				// 'ReviewOffers::get_content > insertBefore DOMException',
-				
 				'ReviewOffers::get_content > appendChild DOMException',
 			] );
 		}
