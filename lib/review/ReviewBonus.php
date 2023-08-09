@@ -206,17 +206,17 @@ class ReviewBonus
 
 		$last = empty( $next );
 
-		// LegalDebug::debug( [
-		// 	'get_permission_replace' => self::permission_debug( [
-		// 		'title_title' => $default,
+		LegalDebug::debug( [
+			'get_permission_replace' => self::permission_debug( [
+				'title_title' => $default,
 
-		// 		'description_title' => $half_pros,
+				'description_title' => $half_pros,
 
-		// 		'content_title' => $half_cons,
+				'content_title' => $half_cons,
 
-		// 		'last' => $last,
-		// 	] ),
-		// ] );
+				'last' => $last,
+			] ),
+		] );
 		
 		return $title_title || $description_title || $content_title || $last; 
 	}
@@ -277,19 +277,19 @@ class ReviewBonus
 			
 			$permission_replace = self::get_permission_replace( $permission_node, $permission_next );
 
-			LegalDebug::debug( [
-				'ReviewBonus' => 'get_content',
+			// LegalDebug::debug( [
+			// 	'ReviewBonus' => 'get_content',
 
-				'$node->textContent' => substr( $node->textContent, 0, 30 ),
+			// 	'$node->textContent' => substr( $node->textContent, 0, 30 ),
 	
-				'permission_node' => $permission_node,
+			// 	'permission_node' => $permission_node,
 				
-				// 'permission_previous' => $permission_previous,
+			// 	// 'permission_previous' => $permission_previous,
 
-				'permission_next' => $permission_next,
+			// 	'permission_next' => $permission_next,
 
-				'permission_replace' => $permission_replace,
-			] );
+			// 	'permission_replace' => $permission_replace,
+			// ] );
 
 			// $no_review = self::check_no_review( $class );
 			
