@@ -376,7 +376,7 @@ class ReviewBonus
 
 				$item_html = '';
 				
-				if ( $args[ 'atts' ][ 'billet' ] ) {
+				if ( $permission_node[ 'billet' ] ) {
 					$item_html = self::render_billet( $args );
 				} else {
 					$item_html = self::render_bonus( $args );
