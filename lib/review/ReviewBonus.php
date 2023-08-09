@@ -515,12 +515,6 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
-		LegalDebug::debug( [
-			'function' => 'get_bonus',
-
-			'$args' => $args,
-		] );
-
 		$id = 0;
 
 		if ( !empty( $args[ 'id' ] ) )
@@ -545,14 +539,6 @@ class ReviewBonus
 		{
 			$class = $group[ 'about-font' ];
 
-			LegalDebug::debug( [
-				'function' => 'get_bonus',
-	
-				'image' => $args[ 'atts' ][ 'image' ],
-
-				'large' => $args[ 'atts' ][ 'large' ],
-			] );
-
 			if ( !$args[ 'atts' ][ 'image' ] )
 			{
 				if ( $args[ 'atts' ][ 'large' ] )
@@ -563,12 +549,6 @@ class ReviewBonus
 					$src = $group[ 'about-logo-square' ];
 				}
 			}
-
-			LegalDebug::debug( [
-				'function' => 'get_bonus',
-	
-				'src' => $src,
-			] );
 
 			if ( !$args[ 'atts' ][ 'large' ] )
 			{
