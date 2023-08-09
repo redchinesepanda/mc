@@ -23,18 +23,7 @@ class ReviewBonus
 
     public static function register_inline_style()
     {
-		if ( ReviewMain::check() )
-		{
-			// $name = 'review-inline';
-
-			// wp_register_style( $name, false, [], true, true );
-			
-			// wp_add_inline_style( $name, self::inline_style() );
-			
-			// wp_enqueue_style( $name );
-			
-			ToolEnqueue::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
-		}
+		ReviewMain::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
     }
 
 	public static function register()
