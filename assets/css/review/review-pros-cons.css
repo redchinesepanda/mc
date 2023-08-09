@@ -24,6 +24,7 @@ div.legal-pros-cons {
 
 .legal-pros-cons .pros-cons-title {
 	padding-left: 60px;
+	padding-bottom: 0px;
 	margin-bottom: 20px;
 }
 
@@ -65,14 +66,6 @@ div.legal-pros-cons {
 .legal-pros-cons .legal-cons ul li:before {
 	background-image: url( '../../img/review/review-cons-cross.svg' );
 }
-
-/* .legal-pros-cons .legal-pros ul li {
-    list-style-image: url( '../../img/review/review-pros-check.svg' );
-} */
-
-/* .legal-pros-cons .legal-cons ul li {
-    list-style-image: url( '../../img/review/review-cons-cross.svg' );
-} */
 
 /* Pros Cons Typography */
 
