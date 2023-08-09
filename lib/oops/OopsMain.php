@@ -205,17 +205,19 @@ class OopsMain
 
     public static function render_check()
     {
-        // if ( self::check_oops() ) {
-        
-        if ( self::check() ) {
-            return self::render();
+        if ( !self::check() ) {
+            return '';
         }
 
-        return '';
+        return self::render();
     }
 
     public static function render()
     {
+        if ( self::check() ) {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'oops' ], false, self::get() );

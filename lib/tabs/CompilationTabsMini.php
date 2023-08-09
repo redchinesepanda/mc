@@ -3,7 +3,11 @@
 class CompilationTabsMini
 {
 	const CSS = [
-        'tabs-mini' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
+        'tabs-mini' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
 	public static function register_style( $styles = [] )
@@ -22,10 +26,6 @@ class CompilationTabsMini
         return LegalComponents::check();
     }
 
-    const SIZE = [
-        'logo-mini' => 'tabs-logo-mini',
-    ];
-
 	public static function register()
     {
         $handler = new self();
@@ -36,7 +36,7 @@ class CompilationTabsMini
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_image_size( self::SIZE[ 'logo-mini' ], 74, 25, [ 'center', 'center' ] );
+        add_image_size( BilletMini::SIZE[ 'logo-mini' ], 74, 25, [ 'center', 'center' ] );
     }
 
 	const PAIRS = [

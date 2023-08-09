@@ -46,25 +46,6 @@ class BilletMini
         return '';
     }
 
-	// public static function get_logo( $id )
-    // {
-    //     $group = get_field( BilletLogo::FIELD[ 'about' ], $id );
-
-    //     // LegalDebug::debug( [
-    //     //     'group' => $group,
-    //     // ] );
-
-    //     if ( $group )
-    //     {
-    //         if ( !empty( $group[ BilletLogo::ABOUT[ 'logo' ] ] ) )
-    //         {
-    //             return $group[ BilletLogo::ABOUT[ 'logo' ] ];
-    //         }
-    //     }
-
-    //     return BilletLogo::DEFAULT_LOGO;
-    // }
-
 	public static function get_mini( $id, $profit = false, $filter = [] )
     {
         $href = BilletMain::get_url( $id, $filter )[ 'play' ];
@@ -112,7 +93,6 @@ class BilletMini
 
             if ( $details )
             {
-
                 return $details[ 0 ];
             }
         }

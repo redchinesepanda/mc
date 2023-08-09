@@ -61,7 +61,7 @@
 
 /* Review Display */
 
-.tcb-post-content ol:not( [ class ] ) {
+.tcb-post-content ol:not( .menu__box ) {
     list-style: none;
     counter-reset: legal-counter;
 }
@@ -71,7 +71,7 @@
     counter-reset: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( [ class ] ) li {
+.tcb-post-content ol:not( .menu__box ) li {
     counter-increment: legal-counter;
 }
 
@@ -79,7 +79,7 @@
     counter-increment: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( [ class ] ) li::before {
+.tcb-post-content ol:not( .menu__box ) li::before {
     content: counter( legal-counter );
     display: inline-block;
 }
@@ -138,7 +138,7 @@
 }
 
 .tcb-post-content ul:not( .legal-highlight ) li:not( :last-child ),
-.tcb-post-content ol:not( [ class ] ) li:not( :last-child ) {
+.tcb-post-content ol:not( .menu__box ) li:not( :last-child ) {
     padding-bottom: 15px;
 }
 
@@ -147,7 +147,7 @@
 }
 
 .tcb-post-content ul:not( .legal-override ):not( [style] ) li:not( .legal-override ),
-.tcb-post-content ol:not( [ class ] ) li:not( .legal-override ) {
+.tcb-post-content ol:not( .menu__box ) li:not( .legal-override ) {
 	margin-left: 0px;
 }
 
@@ -182,7 +182,7 @@
 	list-style-image: none;
 }
 
-.tcb-post-content ol:not( [ class ] ) li::before {
+.tcb-post-content ol:not( .menu__box ) li::before {
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
 }
@@ -193,7 +193,7 @@
 
 /* Review Typography */
 
-.tcb-post-content ol:not( [ class ] ) li::before {
+.tcb-post-content ol:not( .menu__box ) li::before {
     font-weight: 600;
     line-height: 20px;
     color: rgb(89, 151, 227);

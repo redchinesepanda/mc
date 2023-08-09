@@ -213,7 +213,7 @@ class ReviewProsCons
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
 
-						'function' => 'get_content',
+						'function' => 'get_content,replaceChild',
 
 						'element' => substr( $element->textContent, 0, 30 ),
 
@@ -231,7 +231,7 @@ class ReviewProsCons
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
 
-						'function' => 'get_content',
+						'function' => 'get_content,removeChild',
 
 						'node' => substr( $node->textContent, 0, 30 ),
 

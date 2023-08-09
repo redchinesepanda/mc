@@ -92,6 +92,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+	column-gap: 10px;
 }
 
 .tabs-mini-items .tabs-mini-item:nth-of-type(2) {
@@ -119,12 +120,15 @@
 }
 
 .mini-item-profit, .mini-item-bonus {
+	padding-left: 30px;
+
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
-    padding-left: 30px;
+
     font-size: 15px;
     font-weight: 600;
+	line-height: 18px;
 }
 
 .mini-item-profit, .mini-item-bonus {
