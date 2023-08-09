@@ -210,28 +210,6 @@ class ReviewBonus
 				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
-			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
-				$template = '';
-
-				// LegalDebug::debug( [
-				// 	'function' => 'get_content',
-					
-				// 	'args' => $args,
-				// ] );
-
-				// if ( $bonus->getAttribute( 'class' ) == self::BONUS_CLASS[ 'billet' ] ) {
-				
-				if ( strpos( $bonus->getAttribute( 'class' ), self::BONUS_CLASS[ 'billet' ] ) !== false ) {
-					$template = self::render_billet( $args );
-				} else {
-					$template = self::render_bonus( $args );
-				}
-				
-				LegalDOM::appendHTML( $bonus, ToolEncode::encode( $template ) );
-				
-				$body->replaceChild( $bonus, $replace );
-			}
-
 			if ( $permission_title ) {
 
 				$bonus = $dom->createElement( 'div' );
@@ -295,6 +273,20 @@ class ReviewBonus
 
 					$args[ 'id' ] = $shortcode_args[ 'id' ];
 				}
+			}
+
+			if ( !empty( $bonus ) && ( $permission_title || $permission_last ) ) {
+				$template = '';
+				
+				if ( strpos( $bonus->getAttribute( 'class' ), self::BONUS_CLASS[ 'billet' ] ) !== false ) {
+					$template = self::render_billet( $args );
+				} else {
+					$template = self::render_bonus( $args );
+				}
+				
+				LegalDOM::appendHTML( $bonus, ToolEncode::encode( $template ) );
+				
+				$body->replaceChild( $bonus, $replace );
 			}
 
 			if ( $permission_description || $permission_content ) {
