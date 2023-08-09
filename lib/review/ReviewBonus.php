@@ -677,7 +677,7 @@ class ReviewBonus
 
 					'text' => __( ReviewMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
 
-					'disabled' => $args[ 'no-review' ],
+					'disabled' => $args[ 'atts' ][ 'review' ],
 				],
 
 				'title' => [
