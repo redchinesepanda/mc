@@ -204,7 +204,7 @@ class ReviewBonus
 
 		$content_title = $current[ 'content' ] && $next[ 'title' ];
 
-		$last = empty( $next );
+		$last = !$next[ 'title' ] && !$next[ 'description' ] && !$next[ 'content' ];
 
 		LegalDebug::debug( [
 			'ReviewBonus' => 'get_permission_replace',
