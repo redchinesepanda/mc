@@ -166,11 +166,11 @@ class ReviewBonus
 		return [
 			'review' => in_array( self::BONUS_CLASS[ 'review' ], $class ),
 
-			'height' => in_array( self::CSS_CLASS[ 'height' ], $class ),
+			'height' => in_array( self::BONUS_CLASS[ 'height' ], $class ),
 
-			'image' => in_array( self::CSS_CLASS[ 'image' ], $class ),
+			'image' => in_array( self::BONUS_CLASS[ 'image' ], $class ),
 
-			'large' => in_array( self::CSS_CLASS[ 'large' ], $class ),
+			'large' => in_array( self::BONUS_CLASS[ 'large' ], $class ),
 		];
 	}
 
