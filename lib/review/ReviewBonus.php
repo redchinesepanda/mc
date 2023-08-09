@@ -209,11 +209,11 @@ class ReviewBonus
 		LegalDebug::debug( [
 			'ReviewBonus' => 'get_permission_replace',
 
-			'title_title' => $default,
+			'title_title' => $title_title,
 
-			'description_title' => $half_pros,
+			'description_title' => $description_title,
 
-			'content_title' => $half_cons,
+			'content_title' => $content_title,
 
 			'last' => $last,
 		] );
