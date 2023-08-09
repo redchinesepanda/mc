@@ -128,7 +128,9 @@ class ReviewBanner
 				try {
 					$body->replaceChild( $item, $replace );
 				} catch ( DOMException $e ) {
-
+					LegalDebug::debug( [
+						'ReviewBanner::get_content > replaceChild DOMException',
+					] );
 				}
 			}
 		}
@@ -146,7 +148,7 @@ class ReviewBanner
         {
             return '';
         }
-		
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'review-banner' ], false, $args );

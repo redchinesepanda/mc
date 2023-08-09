@@ -274,11 +274,28 @@ class ReviewBonus
 				
 				LegalDOM::appendHTML( $bonus, ToolEncode::encode( $template ) );
 				
-				$body->replaceChild( $bonus, $replace );
+				try
+				{
+					$body->replaceChild( $bonus, $replace );
+				} catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'ReviewCounter::get_content > replaceChild DOMException',
+					] );
+				}
 			}
 
-			if ( $permission_description || $permission_content ) {
-				$body->removeChild( $node );
+			if ( $permission_description || $permission_content )
+			{	
+				try
+				{
+					$body->removeChild( $node );
+				} catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'ReviewCounter::get_content > removeChild DOMException',
+					] );
+				}
 			}
 		}
 
