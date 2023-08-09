@@ -168,12 +168,6 @@ class ReviewBonus
 
 		$last = $nodes->length - 1;
 
-		LegalDebug::debug( [
-			'function' => 'get_content',
-
-			'length' => $nodes->length,
-		] );
-
 		$index = 0;
 
 		foreach ( $nodes as $id => $node )
@@ -249,12 +243,6 @@ class ReviewBonus
 				$args[ 'index' ] = $index;
 
 				$replace = $node;
-
-				LegalDebug::debug( [
-					'function' => 'get_content',
-		
-					'index' => $index,
-				] );
 				
 				$index++;
 			}
