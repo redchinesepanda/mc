@@ -558,12 +558,17 @@ class ReviewBonus
 				if ( $args[ 'atts' ][ 'large' ] )
 				{
 					$src = $group[ 'about-logo' ];
-				}
-				else
+				} else
 				{
 					$src = $group[ 'about-logo-square' ];
 				}
 			}
+
+			LegalDebug::debug( [
+				'function' => 'get_bonus',
+	
+				'src' => $src,
+			] );
 
 			if ( !$args[ 'atts' ][ 'large' ] )
 			{
