@@ -254,12 +254,12 @@
 	font-size: 20px;
 }
 
-.legal-review-counter .item-label {
+.legal-review-counter.legal-default .item-label {
 	font-size: 14px;
-	color: rgb(59, 59, 59)
+	color: rgb(59, 59, 59);
 }
 
-.legal-review-counter.legal-overall.legal-default .review-counter-set .item-label {
+.legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
 	color: rgb(255, 255, 255);
 }
 
