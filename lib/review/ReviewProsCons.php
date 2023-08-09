@@ -318,7 +318,7 @@ class ReviewProsCons
 					[
 						'title' => 'Pros Title',
 						
-						'selector' => 'p',
+						'selector' => 'p,h3',
 
 						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title' ] . ' ' . self::CSS_CLASS[ 'pros' ],
 					],
@@ -326,7 +326,7 @@ class ReviewProsCons
 					[
 						'title' => 'Cons Title',
 						
-						'selector' => 'p',
+						'selector' => 'p,h3',
 
 						'classes' => self::CSS_CLASS[ 'container' ] . ' ' . self::CSS_CLASS[ 'title' ] . ' ' . self::CSS_CLASS[ 'cons' ],
 					],
