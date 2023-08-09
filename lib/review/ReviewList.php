@@ -156,6 +156,10 @@ class ReviewList
         'base' => 'legal-list-image',
 
         'item' => 'list-image-item',
+
+        'pros' => 'legal-list-pros',
+
+        'cons' => 'legal-list-cons',
     ];
 
     public static function style_formats_list( $settings )
@@ -172,6 +176,7 @@ class ReviewList
 
 						'classes' => self::CLASSES[ 'list-2' ],
 					],
+
 					[
 						'title' => 'List 3 Columns',
 						
@@ -179,6 +184,7 @@ class ReviewList
 
 						'classes' => self::CLASSES[ 'list-3' ],
 					],
+
 					[
 						'title' => 'List 4 Columns',
 						
@@ -186,12 +192,29 @@ class ReviewList
 
 						'classes' => self::CLASSES[ 'list-4' ],
 					],
+
 					[
 						'title' => 'List With Image',
 						
 						'selector' => 'ul',
 
 						'classes' => self::CLASSES[ 'base' ],
+					],
+
+					[
+						'title' => 'List Pros',
+						
+						'selector' => 'ul',
+
+						'classes' => self::CLASSES[ 'pros' ],
+					],
+
+					[
+						'title' => 'List Cons',
+						
+						'selector' => 'ul',
+
+						'classes' => self::CLASSES[ 'cons' ],
 					],
 				],
 			],
