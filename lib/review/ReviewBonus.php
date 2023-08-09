@@ -194,7 +194,9 @@ class ReviewBonus
 		];
 	}
 
-	public static function get_permission_replace( $current, $previous, $next )
+	// public static function get_permission_replace( $current, $previous, $next )
+	
+	public static function get_permission_replace( $current, $next )
 	{
 		$title_title = $current[ 'title' ] && $next[ 'title' ];
 
@@ -267,7 +269,7 @@ class ReviewBonus
 
 			$permission_node = self::get_node_permission( $node );
 
-			$permission_previous = self::get_node_permission( $nodes->item( $id - 1 ) );
+			// $permission_previous = self::get_node_permission( $nodes->item( $id - 1 ) );
 
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
@@ -278,7 +280,7 @@ class ReviewBonus
 	
 				'permission_node' => $permission_node,
 				
-				'permission_previous' => $permission_previous,
+				// 'permission_previous' => $permission_previous,
 
 				'permission_next' => $permission_next,
 
