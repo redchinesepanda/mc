@@ -6,7 +6,7 @@ class ReviewCounter
         self::CLASSES[ 'base' ] => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-counter.css',
 
-			'ver' => '1.0.6',
+			'ver' => '1.0.7',
 		],
     ];
 
@@ -17,16 +17,7 @@ class ReviewCounter
 
     public static function register_inline_style()
     {
-		if ( ReviewMain::check() )
-        {
-            $name = self::CLASSES[ 'base' ];
-
-			wp_register_style( $name, false, [], true, true );
-			
-			wp_add_inline_style( $name, self::inline_style() );
-			
-			wp_enqueue_style( $name );
-        }
+		ReviewMain::register_inline_style( self::CLASSES[ 'base' ], self::inline_style() );
     }
 
     public static function register()
@@ -244,6 +235,8 @@ class ReviewCounter
 		}
 
 		$args = [
+			'font' => ReviewAbout::get_font(),
+
 			'title' => $title,
 
 			'items' => $items,

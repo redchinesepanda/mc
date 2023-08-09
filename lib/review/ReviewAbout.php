@@ -123,6 +123,8 @@ class ReviewAbout
         'background' => 'about-background',
 
         'logo' => 'about-logo',
+
+        'about' => 'about-font',
     ];
 
     const BONUS_EXCEPTION = [ 'es' ];
@@ -157,6 +159,18 @@ class ReviewAbout
         if ( $group )
         {
             return $group[ 'about-title' ];
+        }
+
+        return '';
+    }
+
+    public static function get_font()
+    {
+        $group = get_field( self::FIELD );
+
+        if ( $group )
+        {
+            return $group[ self::ABOUT[ 'font' ] ];
         }
 
         return '';
@@ -242,7 +256,7 @@ class ReviewAbout
 
                 'background' => $group[ self::ABOUT[ 'background' ] ],
 
-                'font' => $group[ 'about-font' ],
+                'font' => $group[ self::ABOUT[ 'font' ] ],
                 
                 'rating' => $rating,
 
