@@ -271,6 +271,12 @@ class ReviewBonus
 				$args[ 'index' ] = $index;
 
 				$replace = $node;
+
+				LegalDebug::debug( [
+					'function' => 'get_content',
+		
+					'index' => $index,
+				] );
 				
 				$index++;
 			}
@@ -295,12 +301,6 @@ class ReviewBonus
 				$body->removeChild( $node );
 			}
 		}
-
-		LegalDebug::debug( [
-			'function' => 'get_content',
-
-			'index' => $index,
-		] );
 
 		return $dom->saveHTML();
 	}
