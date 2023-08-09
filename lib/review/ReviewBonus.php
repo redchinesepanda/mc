@@ -419,6 +419,8 @@ class ReviewBonus
 						'ReviewCounter::get_content > replaceChild DOMException',
 					] );
 				}
+
+				$index++;
 			} else
 			{
 				try
