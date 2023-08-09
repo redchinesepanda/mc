@@ -333,7 +333,7 @@
 }
 
 .legal-review-counter.legal-overall.legal-black .review-counter-footer .review-counter-afillate {
-	border: 1.6px solid #000000;
+	border: 1.6px solid transparent;
 }
 
 .legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
