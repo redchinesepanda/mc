@@ -207,15 +207,15 @@ class ReviewBonus
 		$last = empty( $next );
 
 		LegalDebug::debug( [
-			'get_permission_replace' => self::permission_debug( [
-				'title_title' => $default,
+			'ReviewBonus' => 'get_permission_replace',
 
-				'description_title' => $half_pros,
+			'title_title' => $default,
 
-				'content_title' => $half_cons,
+			'description_title' => $half_pros,
 
-				'last' => $last,
-			] ),
+			'content_title' => $half_cons,
+
+			'last' => $last,
 		] );
 		
 		return $title_title || $description_title || $content_title || $last; 
