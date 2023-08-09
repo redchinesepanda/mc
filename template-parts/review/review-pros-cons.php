@@ -1,9 +1,9 @@
 <?php if( !empty( $args ) ) : ?>
-    <div class="pros-cons-title">
+    <<?php echo $args[ 'title' ][ 'tag' ]; ?> class="pros-cons-title">
         <?php if( !empty( $args[ 'title' ] ) ) : ?>
-            <<?php echo $args[ 'title' ][ 'tag' ]; ?>><?php echo $args[ 'title' ][ 'text' ]; ?></<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+            <?php echo $args[ 'title' ][ 'text' ]; ?>
         <?php endif; ?>
-    </div>
+    </<?php echo $args[ 'title' ][ 'tag' ]; ?>>
     <div class="pros-cons-description">
         <?php if( !empty( $args[ 'content' ] ) ) : ?>
             <?php echo $args[ 'content' ]; ?>
