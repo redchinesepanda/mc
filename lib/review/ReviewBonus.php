@@ -228,7 +228,7 @@ class ReviewBonus
 		}
 
 		LegalDebug::debug( [
-			'ReviewBonus' => 'get_permission_replace start',
+			'ReviewBonus' => 'get_content start',
 		] );
 
 		$dom = LegalDOM::get_dom( $content );
@@ -485,7 +485,7 @@ class ReviewBonus
 		}
 
 		LegalDebug::debug( [
-			'ReviewBonus' => 'get_permission_replace end',
+			'ReviewBonus' => 'get_content end',
 		] );
 
 		return $dom->saveHTML();
