@@ -168,15 +168,11 @@ class ReviewBonus
 
 		$last = $nodes->length - 1;
 
-		// $test_node = $nodes->item( 0 );
+		LegalDebug::debug( [
+			'function' => 'get_content',
 
-		// LegalDebug::debug( [
-		// 	'function' => 'get_content',
-
-		// 	'textContent' => substr( $test_node->textContent, 0, 30 ),
-
-		// 	'get_shortcode' => self::get_shortcode( $test_node ),
-		// ] );
+			'length' => $nodes->length,
+		] );
 
 		$index = 0;
 
@@ -299,6 +295,12 @@ class ReviewBonus
 				$body->removeChild( $node );
 			}
 		}
+
+		LegalDebug::debug( [
+			'function' => 'get_content',
+
+			'index' => $index,
+		] );
 
 		return $dom->saveHTML();
 	}
