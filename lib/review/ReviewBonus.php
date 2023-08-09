@@ -227,6 +227,10 @@ class ReviewBonus
 			return $content;
 		}
 
+		LegalDebug::debug( [
+			'ReviewBonus' => 'get_permission_replace start',
+		] );
+
 		$dom = LegalDOM::get_dom( $content );
 
 		$nodes = self::get_nodes( $dom );
@@ -473,6 +477,10 @@ class ReviewBonus
 			// 	}
 			// }
 		}
+
+		LegalDebug::debug( [
+			'ReviewBonus' => 'get_permission_replace end',
+		] );
 
 		return $dom->saveHTML();
 	}
