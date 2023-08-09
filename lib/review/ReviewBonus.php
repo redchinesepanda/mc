@@ -276,13 +276,13 @@ class ReviewBonus
 			LegalDebug::debug( [
 				'ReviewBonus' => 'get_content',
 	
-				'permission_node' => $permission_node,
+				'permission_node' => ReviewProsCons::permission_debug( [ $permission_node ] ),
 				
-				'permission_previous' => $permission_previous,
+				'permission_previous' => ReviewProsCons::permission_debug( [ $permission_previous ] ),
 
-				'permission_next' => $permission_next,
+				'permission_next' => ReviewProsCons::permission_debug( [ $permission_next ] ),
 
-				'permission_replace' => $permission_replace,
+				'permission_replace' => ReviewProsCons::permission_debug( [ $permission_replace ] ),
 			] );
 
 			// $no_review = self::check_no_review( $class );
