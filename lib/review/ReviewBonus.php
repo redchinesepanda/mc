@@ -335,7 +335,7 @@ class ReviewBonus
 				$item = $dom->createElement( 'div' );
 
 				$item_class = [
-					$args[ 'atts' ][ 'billet' ] ? self::BONUS_CLASS[ 'billet' ] : self::BONUS_CLASS[ 'bonus' ],
+					$permission_node[ 'billet' ] ? self::BONUS_CLASS[ 'billet' ] : self::BONUS_CLASS[ 'bonus' ],
 
 					'item-' . $index,
 				];
