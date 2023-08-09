@@ -168,11 +168,19 @@
 
 /* Review Background */
 
-.tcb-post-content > ul:not( .legal-list-image ) li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
 .legal-billet ul:not( .legal-list-image ) li:before,
 .legal-bonus ul:not( .legal-list-image ) li:before,
 .billet-mega-content > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
+}
+
+.tcb-post-content > ul.legal-list-pros li:before {
+    background-image: url( '../../img/review/review-pros-check.svg' );
+}
+
+.tcb-post-content > ul.legal-list-cons li:before {
+    background-image: url( '../../img/review/review-cons-cross.svg' );
 }
 
 .tcb-post-content ul li:before {
