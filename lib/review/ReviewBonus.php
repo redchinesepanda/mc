@@ -515,11 +515,11 @@ class ReviewBonus
 
 	public static function get_bonus( $args )
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'get_bonus',
+		LegalDebug::debug( [
+			'function' => 'get_bonus',
 
-		// 	'$args' => $args,
-		// ] );
+			'$args' => $args,
+		] );
 
 		$id = 0;
 
