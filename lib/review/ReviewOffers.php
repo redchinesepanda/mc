@@ -4,13 +4,7 @@ class ReviewOffers
 {
 	public static function check()
     {
-        // $permission_post_type = is_singular( [ 'legal_bk_review' ] );
-
-        // $permission_admin = !is_admin();
-        
-        // return ( $permission_post_type && $permission_admin );
-
-		return ReviewMain::check();
+        return ReviewMain::check();
     }
 
 	const JS = [
@@ -196,7 +190,7 @@ class ReviewOffers
 		if ( !self::check() ) {
             return '';
         }
-		
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'offers' ], false, self::get_offers() );
@@ -206,12 +200,12 @@ class ReviewOffers
         return $output;
     }
 
-	public static function get_nodes( $dom )
-	{
-		$xpath = new DOMXPath( $dom );
+	// public static function get_nodes( $dom )
+	// {
+	// 	$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( './/h2' );
-	}
+	// 	return $xpath->query( './/h2' );
+	// }
 
 	public static function get_content( $content )
 	{
@@ -223,11 +217,11 @@ class ReviewOffers
 
 		$body = $dom->getElementsByTagName( 'body' )->item(0);
 
-		$nodes = self::get_nodes( $dom );
+		// $nodes = self::get_nodes( $dom );
 
-		if ( $nodes->length == 0 ) {
-			return $content;
-		}
+		// if ( $nodes->length == 0 ) {
+		// 	return $content;
+		// }
 
 		$item = $dom->createElement( 'div' );
 
@@ -236,10 +230,15 @@ class ReviewOffers
 		LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
 
 		try {
-			$body->insertBefore( $item, $nodes->item( $nodes->length - 1 ) );
-		} catch ( DOMException $e ) {
+			// $body->insertBefore( $item, $nodes->item( $nodes->length - 1 ) );
+			
+			$body->appendChild( $item );
+		} catch ( DOMException $e )
+		{
 			LegalDebug::debug( [
-				'ReviewOffers::get_content > insertBefore DOMException',
+				// 'ReviewOffers::get_content > insertBefore DOMException',
+				
+				'ReviewOffers::get_content > appendChild DOMException',
 			] );
 		}
 
