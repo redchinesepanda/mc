@@ -273,7 +273,9 @@ class ReviewBonus
 
 			$permission_next = self::get_node_permission( $nodes->item( $id + 1 ) );
 
-			$permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
+			// $permission_replace = self::get_permission_replace( $permission_node, $permission_previous, $permission_next );
+			
+			$permission_replace = self::get_permission_replace( $permission_node, $permission_next );
 
 			LegalDebug::debug( [
 				'ReviewBonus' => 'get_content',
