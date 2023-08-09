@@ -142,7 +142,7 @@ class ReviewCounter
 				$class[ 'amount' ] = 'legal-overall';
 			}
 
-			$class[ 'font' ] = $args[ 'font' ];
+			$class[ 'font' ] = 'font-' . $args[ 'font' ];
 
 			$item->setAttribute( 'class', implode( ' ', $class ) );
 

@@ -259,11 +259,11 @@
 	color: rgb(59, 59, 59)
 }
 
-.legal-review-counter.legal-overall.legal-default .review-counter-set .item-label {
+.legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
 	color: rgb(255, 255, 255);
 }
 
-.legal-review-counter.legal-overall.legal-black .review-counter-set .item-label {
+.legal-review-counter.legal-overall.font-legal-black .review-counter-set .item-label {
 	color: #000000;
 }
 
@@ -276,11 +276,11 @@
 	text-align: center;
 }
 
-.legal-review-counter.legal-overall.legal-default .review-counter-overall .item-label {
+.legal-review-counter.legal-overall.font-legal-default .review-counter-overall .item-label {
 	color: rgb(255, 255, 255);
 }
 
-.legal-review-counter.legal-overall.legal-black .review-counter-overall .item-label {
+.legal-review-counter.legal-overall.font-legal-black .review-counter-overall .item-label {
 	color: #000000;
 }
 
@@ -328,11 +328,11 @@
 	animation: .4s ease-out turn_in reverse;
 }
 
-.legal-review-counter.legal-overall.legal-default .review-counter-footer .review-counter-afillate {
+.legal-review-counter.legal-overall.font-legal-default .review-counter-footer .review-counter-afillate {
 	border: 1.6px solid rgb(255, 255, 255);
 }
 
-.legal-review-counter.legal-overall.legal-black .review-counter-footer .review-counter-afillate {
+.legal-review-counter.legal-overall.font-legal-black .review-counter-footer .review-counter-afillate {
 	border: 1.6px solid transparent;
 }
 
