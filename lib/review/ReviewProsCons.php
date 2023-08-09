@@ -166,6 +166,10 @@ class ReviewProsCons
 				$type = 'pros';
 
 				$container[ $type ][ 'title' ] = ToolEncode::encode( $node->textContent );
+
+				LegalDebug::debug( [
+					'nodeName' => $node->nodeName,
+				] );
 			}
 
 			if ( $permission_node[ 'cons_title' ] )
