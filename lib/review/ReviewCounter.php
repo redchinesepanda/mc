@@ -142,6 +142,8 @@ class ReviewCounter
 				$class[ 'amount' ] = 'legal-overall';
 			}
 
+			$class[ 'font' ] = $args[ 'font' ];
+
 			$item->setAttribute( 'class', implode( ' ', $class ) );
 
 			LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_counter( $args ) ) );
