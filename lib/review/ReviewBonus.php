@@ -545,6 +545,14 @@ class ReviewBonus
 		{
 			$class = $group[ 'about-font' ];
 
+			LegalDebug::debug( [
+				'function' => 'get_bonus',
+	
+				'image' => $args[ 'atts' ][ 'image' ],
+
+				'large' => $args[ 'atts' ][ 'large' ],
+			] );
+
 			if ( !$args[ 'atts' ][ 'image' ] )
 			{
 				if ( $args[ 'atts' ][ 'large' ] )
