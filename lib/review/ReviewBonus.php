@@ -276,7 +276,7 @@ class ReviewBonus
 			LegalDebug::debug( [
 				'ReviewBonus' => 'get_content',
 	
-				'permission_node' => ReviewProsCons::permission_debug( [ $permission_node ] ),
+				'permission_node' => ReviewProsCons::permission_debug( [ 'permission_node' => $permission_node ] ),
 				
 				'permission_previous' => ReviewProsCons::permission_debug( [ $permission_previous ] ),
 
