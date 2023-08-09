@@ -283,53 +283,6 @@ class ReviewBonus
 
 			$atts = self::get_node_atts( $node );
 
-			if ( $permission_node[ 'description' ] )
-			{
-				$node->removeAttribute( 'class' );
-				
-				$args[ 'description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
-			}
-
-			if ( $permission_node[ 'content' ] )
-			{
-				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
-			}
-
-			if ( $permission_node[ 'title' ] )
-			{
-				$tag = 'div';
-
-				if ( in_array( $node->nodeName, [ 'p' ] ) )
-				{
-					$tag = 'p';
-				}
-
-				$id = 0;
-
-				$shortcode_args = self::get_shortcode( $node );
-	
-				if ( !empty( $shortcode_args[ 'id' ] ) )
-				{
-					$id = $shortcode_args[ 'id' ];
-				}
-
-				$args = [
-					'title' => [
-						'text' => ToolEncode::encode( $node->textContent ),
-					
-						'tag' => $tag,
-					],
-
-					'atts' => $atts,
-
-					'class' => $class,
-
-					'index' => $index,
-
-					'id' => $id,
-				];
-			}
-
 			if ( $permission_replace )
 			{
 				$item = $dom->createElement( 'div' );
@@ -404,6 +357,53 @@ class ReviewBonus
 						'ReviewCounter::get_content > removeChild DOMException',
 					] );
 				}
+			}
+
+			if ( $permission_node[ 'title' ] )
+			{
+				$tag = 'div';
+
+				if ( in_array( $node->nodeName, [ 'p' ] ) )
+				{
+					$tag = 'p';
+				}
+
+				$id = 0;
+
+				$shortcode_args = self::get_shortcode( $node );
+	
+				if ( !empty( $shortcode_args[ 'id' ] ) )
+				{
+					$id = $shortcode_args[ 'id' ];
+				}
+
+				$args = [
+					'title' => [
+						'text' => ToolEncode::encode( $node->textContent ),
+					
+						'tag' => $tag,
+					],
+
+					'atts' => $atts,
+
+					'class' => $class,
+
+					'index' => $index,
+
+					'id' => $id,
+				];
+			}
+
+			if ( $permission_node[ 'description' ] )
+			{
+				$node->removeAttribute( 'class' );
+				
+				$args[ 'description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
+			}
+
+			if ( $permission_node[ 'content' ] )
+			{
+				$args[ 'content' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			// if ( $permission_title )
