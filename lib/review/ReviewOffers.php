@@ -2,9 +2,19 @@
 
 class ReviewOffers
 {
+	const TAXONOMY = [
+        'page_type' => 'page_type',
+    ];
+	
+	const TERMS = [
+        'compilation',
+    ];
+
 	public static function check()
     {
-        return ReviewMain::check();
+		$permission_term = !has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+
+        return ReviewMain::check() && $permission_term;
     }
 
 	const JS = [
