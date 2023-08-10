@@ -49,7 +49,7 @@ class ReviewAbout
 
         add_shortcode( 'legal-about', [ $handler, 'render' ] );
 
-        // [legal-button suffix="ios"]
+        // [legal-button suffix="ios" label="costom button label"]
 
         add_shortcode( 'legal-button', [ $handler, 'render_button' ] );
 
@@ -317,26 +317,36 @@ class ReviewAbout
 
         return $text;
     }
+
+    const PAIRS = [
+        'suffix' => '',
+
+        'suffix' => '',
+    ];
     
     public static function get_button( $args = [] )
     {
+        $atts = shortcode_atts( self::PAIRS, $atts, 'legal-button' );
+
         $id = self::get_id();
 
         $group = get_field( self::FIELD, $id );
 
         if( $group )
         {
-            $suffix = '';
+            $text = $atts[ 'suffix' ];
 
-            if ( !empty( $args[ 'suffix' ] ) )
+            if ( !$text )
             {
-                $suffix = $args[ 'suffix' ];
+                $suffix = $atts[ 'suffix' ];
+
+                $text = self::get_text( $suffix );
             }
 
             return [
                 'href' => self::check_href_afillate( $id ),
 
-                'text' => self::get_text( $suffix ),
+                'text' => $text,
             ];
         }
 
