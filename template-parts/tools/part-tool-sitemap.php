@@ -1,4 +1,4 @@
-<?php if ( !$args[ 'url' ] ) ) : ?>
+<?php if ( !$args[ 'url' ] ) : ?>
 	<ul class="legal-sitemap">
 		<?php foreach( $args as $item ) : ?>
 			<li>
