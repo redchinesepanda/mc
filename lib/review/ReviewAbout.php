@@ -326,7 +326,7 @@ class ReviewAbout
     
     public static function get_button( $args = [] )
     {
-        $atts = shortcode_atts( self::PAIRS, $atts, 'legal-button' );
+        $atts = shortcode_atts( self::PAIRS, $args, 'legal-button' );
 
         $id = self::get_id();
 
