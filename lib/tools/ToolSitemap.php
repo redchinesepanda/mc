@@ -63,7 +63,11 @@ class ToolSitemap
 		}
 
         return [
-            'numberposts' => -1,
+            // 'numberposts' => -1,
+            
+			'numberposts' => 100,
+
+			'offset' => 0,
             
             'post_type' => $atts[ 'post_type' ],
 
