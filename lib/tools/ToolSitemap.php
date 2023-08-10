@@ -73,7 +73,9 @@ class ToolSitemap
 
 			'suppress_filters' => $suppress_filters,
             
-            'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
+            // 'orderby' => [ 'date' => 'DESC', 'title' => 'ASC' ],
+            
+			'orderby' => [ 'name' => 'ASC' ],
 
 			'tax_query' => $tax_query,
         ];
