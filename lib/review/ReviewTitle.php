@@ -70,7 +70,7 @@ class ReviewTitle
 
 		$format = self::FORMAT_INTLDATEFORMATTER[ 'h2' ];
 
-		if ( array_key_exists( $node->nodeName, self::FORMAT ) )
+		if ( array_key_exists( $node->nodeName, self::FORMAT_INTLDATEFORMATTER ) )
 		{
 			$format = self::FORMAT_INTLDATEFORMATTER[ $node->nodeName ];
 		}
