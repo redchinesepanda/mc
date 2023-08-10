@@ -1,6 +1,6 @@
 <?php if ( !$args[ 'url' ] ) : ?>
 	<ul class="legal-sitemap">
-		<?php foreach( $args as $item ) : ?>
+		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<li>
 				<a href="<?php echo $item[ 'href' ]; ?>">
 					<?php echo $item[ 'label' ]; ?>
@@ -10,7 +10,7 @@
 	</ul>
 <?php else : ?>
 	<pre class="legal-sitemap">
-		<?php foreach( $args as $item ) : ?>
+		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<?php echo $item[ 'href' ]; ?>
 		<?php endforeach; ?>
 	</pre>

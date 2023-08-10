@@ -31,7 +31,12 @@ class ToolSitemap
 
 		$posts = get_posts( $args );
 
-		$parsed = self::parse_posts( $posts );
+		$args_render = [
+			'items' => self::parse_posts( $posts ),
+
+			'url' => $atts[ 'url' ],
+		];
+		
 
         return self::render( $parsed );
     }
