@@ -11,7 +11,7 @@
 <?php else : ?>
 	<pre class="legal-sitemap">
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
-			<?php echo $item[ 'href' ]; ?>
+			<?php echo $item[ 'href' ]; ?><br />
 		<?php endforeach; ?>
 	</pre>
 <?php endif; ?>
