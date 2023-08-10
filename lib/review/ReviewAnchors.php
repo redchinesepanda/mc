@@ -68,8 +68,6 @@ class ReviewAnchors
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		// $nodes = $xpath->query( './/a[@id]' );
 		
         $nodes = $xpath->query( ".//a[@id and not(contains(@id, 'legal-'))]" );
 
@@ -231,10 +229,6 @@ class ReviewAnchors
 		$dom = LegalDOM::get_dom( $post->post_content );
 
         $nodes = self::get_nodes( $dom );
-
-        LegalDebug::debug( [
-            'nodes' => $nodes,
-        ] );
 
         return $nodes;
     }
