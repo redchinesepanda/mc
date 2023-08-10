@@ -28,7 +28,7 @@ class ReviewTitle
 
 	public static function style_formats_header( $settings )
 	{
-		return self::style_formats_check( $settings, [
+		return ToolTinyMCE::style_formats_check( $settings, [
 			[
 				'title' => 'Title with Image',
 
@@ -110,7 +110,7 @@ class ReviewTitle
 	}
 	public static function style_formats_header_date( $settings )
 	{
-		return self::style_formats_check( $settings, [
+		return ToolTinyMCE::style_formats_check( $settings, [
 			[
 				'title' => 'Title other',
 
