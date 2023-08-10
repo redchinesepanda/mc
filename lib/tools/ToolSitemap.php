@@ -23,6 +23,8 @@ class ToolSitemap
 			'terms' => '',
 
 			'url' => false,
+
+			'lang' => false,
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'legal-sitemap' );
@@ -58,12 +60,18 @@ class ToolSitemap
 			];
 		}
 
+		$suppress_filters = 0;
+
+		if ( $atts[ 'url' ] ) {
+			$suppress_filters = 1;
+		}
+
         return [
             'numberposts' => -1,
             
             'post_type' => $atts[ 'post_type' ],
 
-			'suppress_filters' => 0,
+			'suppress_filters' => $suppress_filters,
             
             'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
