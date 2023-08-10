@@ -40,7 +40,7 @@ class ToolSitemap
     {
 		$tax_query = [];
 
-		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) ) {
+		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) && $atts[ 'url' ] ) {
 			$tax_query[] = [
 				'taxonomy' => $atts[ 'taxonomy' ],
 
