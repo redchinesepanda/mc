@@ -26,6 +26,81 @@ class ReviewTitle
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
     }
 
+	const CLASSES = [
+		'date' => 'legal-header-date',
+
+		'h3' => 'legal-header-3',
+
+		'history' => 'legal-header-history',
+
+		'features' => 'legal-header-features',
+
+		'football' => 'legal-header-football',
+
+		'tennis' => 'legal-header-tennis',
+
+		'basketball' => 'legal-header-basketball',
+
+		'horceracing' => 'legal-header-horceracing',
+
+		'deposit' => 'legal-header-deposit',
+
+		'widthdraw' => 'legal-header-widthdraw',
+
+		'esports' => 'legal-header-esports',
+	];
+
+	const FORMAT = [
+        'h1' => 'Y',
+
+        'h2' => 'F Y',
+    ];
+
+    public static function get_date( $node )
+    {
+		$current = new DateTime();
+
+		$format = self::FORMAT[ 'h2' ];
+
+		if ( array_key_exists( $node->nodeName, self::FORMAT ) )
+		{
+			$format = self::FORMAT[ $node->nodeName ];
+		}
+
+		return $current->format( $format );
+    }
+
+	public static function get_nodes( $dom )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		return $xpath->query( '//body/h*[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')]' );
+	}
+
+	public static function modify_titles_date( $content )
+	{
+		if ( !ReviewMain::check() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $nodes as $id => $node )
+		{
+			$date = self::get_date( $node );
+
+			$node->textContent = $node->textContent . ' ' . $date;
+		}
+
+		return $dom->saveHTML();
+	}
+
 	public static function style_formats_header( $settings )
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
@@ -38,7 +113,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-history',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'history' ],
 					],
 
 					[
@@ -46,7 +121,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-features',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'features' ],
 					],
 
 					[
@@ -54,7 +129,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-football',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'football' ],
 					],
 
 					[
@@ -62,7 +137,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-tennis',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'tennis' ],
 					],
 
 					[
@@ -70,7 +145,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-basketball',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'basketball' ],
 					],
 
 					[
@@ -78,7 +153,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-horceracing',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'horceracing' ],
 					],
 
 					[
@@ -86,7 +161,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-deposit',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'deposit' ],
 					],
 
 					[
@@ -94,7 +169,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-widthdraw',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'widthdraw' ],
 					],
 
 					[
@@ -102,7 +177,7 @@ class ReviewTitle
 						
 						'selector' => 'h3',
 
-						'classes' => 'legal-header-3 legal-header-esports',
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'esports' ],
 					],
 				],
 			],
@@ -120,7 +195,7 @@ class ReviewTitle
 						
 						'selector' => 'h1,h2',
 
-						'classes' => 'legal-header-date',
+						'classes' => self::CLASSES[ 'date' ],
 					],
 				],
 			],
