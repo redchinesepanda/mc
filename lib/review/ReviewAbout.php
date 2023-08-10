@@ -324,7 +324,7 @@ class ReviewAbout
             }
         }
 
-        return $text;
+        return implode( ' ', $text );
     }
 
     const PAIRS = [
@@ -336,12 +336,6 @@ class ReviewAbout
     public static function get_button( $args = [] )
     {
         $atts = shortcode_atts( self::PAIRS, $args, 'legal-button' );
-
-        LegalDebug::debug( [
-            'args' => $args,
-
-            'atts' => $atts,
-        ] );
 
         $id = self::get_id();
 
