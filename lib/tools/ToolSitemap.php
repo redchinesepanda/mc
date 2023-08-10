@@ -21,6 +21,8 @@ class ToolSitemap
 			'taxonomy' => '',
 
 			'terms' => '',
+
+			'url' => false,
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'legal-sitemap' );
