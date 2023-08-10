@@ -24,6 +24,8 @@ class ReviewTitle
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
+
+		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
 	const CLASSES = [
@@ -74,10 +76,10 @@ class ReviewTitle
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( '//body/h1[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')]' );
+		return $xpath->query( '//body/h*[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')]' );
 	}
 
-	public static function modify_titles_date( $content )
+	public static function modify_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
 			return $content;
