@@ -232,6 +232,10 @@ class ReviewAnchors
 
         $nodes = self::get_nodes( $dom );
 
+        LegalDebug::debug( [
+            'nodes' => $nodes,
+        ] );
+
         return $nodes;
     }
 
