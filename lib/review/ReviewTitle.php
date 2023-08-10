@@ -76,7 +76,7 @@ class ReviewTitle
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( '//body/h1[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')]' );
+		return $xpath->query( '//body/h1[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')] | //body/h2[contains(@class, \'' . self::CLASSES[ 'date' ] . '\')]' );
 	}
 
 	public static function modify_content( $content )
