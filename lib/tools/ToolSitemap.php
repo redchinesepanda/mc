@@ -73,7 +73,7 @@ class ToolSitemap
 
 		$offset = 0;
 
-		if ( !empty( $_GET[ 'offset' ] ) )
+		if ( $atts[ 'lang' ] && !empty( $_GET[ 'offset' ] ) )
 		{
 			$offset = $_GET[ 'offset' ];
 		}
