@@ -164,7 +164,7 @@ class ReviewMain
 
         ReviewOffers::register();
 
-        ReviewTitle::register();
+        // ReviewTitle::register();
     }
 
     public static function encoding( $content )
