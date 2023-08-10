@@ -52,21 +52,27 @@ class ReviewTitle
 		'esports' => 'legal-header-esports',
 	];
 
-	const FORMAT = [
+	const FORMAT_DATE_TIME = [
         'h1' => 'Y',
 
         'h2' => 'F Y',
+    ];
+
+	const FORMAT_INTLDATEFORMATTER = [
+        'h1' => 'yyyy',
+
+        'h2' => 'LLLL yyyy',
     ];
 
     public static function get_date( $node )
     {
 		$current = new DateTime();
 
-		$format = self::FORMAT[ 'h2' ];
+		$format = self::FORMAT_INTLDATEFORMATTER[ 'h2' ];
 
 		if ( array_key_exists( $node->nodeName, self::FORMAT ) )
 		{
-			$format = self::FORMAT[ $node->nodeName ];
+			$format = self::FORMAT_INTLDATEFORMATTER[ $node->nodeName ];
 		}
 		
 		$locale = WPMLMain::get_locale();
