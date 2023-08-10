@@ -65,7 +65,7 @@ class ToolSitemap
         return [
             // 'numberposts' => -1,
             
-			'numberposts' => 100,
+			'numberposts' => 90,
 
 			'offset' => 0,
             
