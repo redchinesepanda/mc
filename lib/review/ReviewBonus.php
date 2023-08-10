@@ -346,7 +346,12 @@ class ReviewBonus
 			{
 				if ( $args[ 'atts' ][ 'large' ] )
 				{
-					$src = $group[ 'about-logo' ];
+					$src = $group[ 'about-logo-mega' ];
+
+					if ( !$src )
+					{
+						$src = $group[ 'about-logo' ];
+					}
 				} else
 				{
 					$src = $group[ 'about-logo-square' ];
