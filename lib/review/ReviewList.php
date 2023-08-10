@@ -79,7 +79,7 @@ class ReviewList
 
                 $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
 
-                $label = str_replace( ' ', '-', $label );
+                $label = str_replace( [ ' ', '/' ], '-', $label );
 
                 $items[] = [
                     'label' => $label,
