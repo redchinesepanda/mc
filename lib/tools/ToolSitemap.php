@@ -29,6 +29,10 @@ class ToolSitemap
 
 		$args = self::get_args( $atts );
 
+		LegalDebug::debug( [
+			'args' => $args,
+		] );
+
 		$posts = get_posts( $args );
 
 		$args_render = [
