@@ -68,8 +68,16 @@ class ReviewTitle
 		{
 			$format = self::FORMAT[ $node->nodeName ];
 		}
+		
+		$locale = WPMLMain::get_locale();
 
-		return $current->format( $format );
+		$formatter = new IntlDateFormatter( $locale, IntlDateFormatter::FULL, IntlDateFormatter::SHORT);
+
+		$formatter->setPattern( $format );
+		
+		return $formatter->format( $current );
+
+		// return $current->format( $format );
     }
 
 	public static function get_nodes( $dom )
