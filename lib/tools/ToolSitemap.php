@@ -87,6 +87,8 @@ class ToolSitemap
             
             'post_type' => $atts[ 'post_type' ],
 
+			'post_status' => 'publish',
+
 			'suppress_filters' => $suppress_filters,
             
 			'orderby' => $orderby,
