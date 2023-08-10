@@ -305,7 +305,9 @@ class ReviewAbout
     {
         $group = get_field( self::FIELD, self::get_id() );
 
-        $text[] = __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN );
+        $text = [
+            __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN )
+        ];
 
         if ( $suffix )
         {
@@ -318,9 +320,15 @@ class ReviewAbout
             {
                 // $text = __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN );
 
-                array_unshift( $text, __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ) );
+                $text = [
+                    __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ),
 
-                $text[] = __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN );
+                    $group[ 'about-title' ],
+
+                    $suffix,
+
+                    __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+                ];
             }
         }
 
