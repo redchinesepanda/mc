@@ -60,19 +60,30 @@ class ToolSitemap
 
 		$orderby = [ 'date' => 'DESC', 'title' => 'ASC' ];
 
+		$numberposts = -1;
+
 		if ( $atts[ 'lang' ] )
 		{
+			$numberposts = 60;
+
 			$suppress_filters = 1;
 
 			$orderby = [ 'name' => 'ASC' ];
 		}
 
+		$offset = 0;
+
+		if ( !empty( $_GET[ 'offset' ] ) )
+		{
+			$offset = $_GET[ 'offset' ];
+		}
+
         return [
             // 'numberposts' => -1,
             
-			'numberposts' => 60,
+			'numberposts' => $numberposts,
 
-			'offset' => 0,
+			'offset' => $offset,
             
             'post_type' => $atts[ 'post_type' ],
 
