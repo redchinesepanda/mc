@@ -28,6 +28,8 @@ require_once( 'ReviewList.php' );
 
 require_once( 'ReviewOffers.php' );
 
+require_once( 'ReviewTitle.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -76,12 +78,6 @@ class ReviewMain
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
-
-        'review-title' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
-
-            'ver' => '1.0.2',
-        ],
 
         'review-table' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
