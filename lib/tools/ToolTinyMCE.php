@@ -27,6 +27,8 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
 
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
+
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
 
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
@@ -231,6 +233,24 @@ class ToolTinyMCE
 						'selector' => 'h3',
 
 						'classes' => 'legal-header-3 legal-header-esports',
+					],
+				],
+			],
+		] );
+	}
+	public static function style_formats_header_date( $settings )
+	{
+		return self::style_formats_check( $settings, [
+			[
+				'title' => 'Title other',
+
+				'items' => [
+					[
+						'title' => 'H1-H2 Date',
+						
+						'selector' => 'h1,h2',
+
+						'classes' => 'legal-header-date',
 					],
 				],
 			],
