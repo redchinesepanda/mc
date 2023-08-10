@@ -58,9 +58,9 @@ class ToolSitemap
 
 		$suppress_filters = 0;
 
-		if ( $atts[ 'url' ] ) {
-			$suppress_filters = 1;
-		}
+		// if ( $atts[ 'lang' ] ) {
+		// 	$suppress_filters = 1;
+		// }
 
         return [
             'numberposts' => -1,
