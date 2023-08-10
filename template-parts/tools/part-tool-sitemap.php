@@ -1,10 +1,3 @@
-<?php 
-
-LegalDebug::debug( [
-	'args' => $args,
-] );
-
-?>
 <?php if ( !$args[ 'url' ] ) : ?>
 	<ul class="legal-sitemap">
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
