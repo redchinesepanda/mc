@@ -36,7 +36,6 @@ class ToolSitemap
 
 			'url' => $atts[ 'url' ],
 		];
-		
 
         return self::render( $parsed );
     }
