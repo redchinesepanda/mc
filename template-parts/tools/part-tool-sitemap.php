@@ -9,9 +9,9 @@
 		<?php endforeach; ?>
 	</ul>
 <?php else : ?>
-	<pre class="legal-sitemap">
+	<div class="legal-sitemap">
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<span><?php echo $item[ 'href' ]; ?></span><br />
 		<?php endforeach; ?>
-	</pre>
+	</div>
 <?php endif; ?>
