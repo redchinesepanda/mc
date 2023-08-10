@@ -37,7 +37,7 @@ class ToolSitemap
 			'url' => $atts[ 'url' ],
 		];
 
-        return self::render( $parsed );
+        return self::render( $args_render );
     }
 
 	public static function get_args( $atts )
