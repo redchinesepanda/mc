@@ -52,27 +52,21 @@ class ReviewTitle
 		'esports' => 'legal-header-esports',
 	];
 
-	const FORMAT_DATE_TIME = [
-        'h1' => 'Y',
+	const FORMAT = [
+        'h1' => 'y',
 
-        'h2' => 'F Y',
-    ];
-
-	const FORMAT_INTLDATEFORMATTER = [
-        'h1' => 'yyyy',
-
-        'h2' => 'MMMM yyyy',
+        'h2' => 'MMMM y',
     ];
 
     public static function get_date( $node )
     {
 		$current = new DateTime();
 
-		$format = self::FORMAT_INTLDATEFORMATTER[ 'h2' ];
+		$format = self::FORMAT[ 'h2' ];
 
-		if ( array_key_exists( $node->nodeName, self::FORMAT_INTLDATEFORMATTER ) )
+		if ( array_key_exists( $node->nodeName, self::FORMAT ) )
 		{
-			$format = self::FORMAT_INTLDATEFORMATTER[ $node->nodeName ];
+			$format = self::FORMAT[ $node->nodeName ];
 		}
 		
 		$locale = WPMLMain::get_locale();
@@ -82,8 +76,6 @@ class ReviewTitle
 		$formatter->setPattern( $format );
 		
 		return $formatter->format( $current );
-
-		// return $current->format( $format );
     }
 
 	public static function get_nodes( $dom )
