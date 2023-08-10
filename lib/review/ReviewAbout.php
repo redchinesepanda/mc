@@ -328,6 +328,12 @@ class ReviewAbout
     {
         $atts = shortcode_atts( self::PAIRS, $args, 'legal-button' );
 
+        LegalDebug::debug( [
+            'args' => $args,
+
+            'atts' => $atts,
+        ] );
+
         $id = self::get_id();
 
         $group = get_field( self::FIELD, $id );
