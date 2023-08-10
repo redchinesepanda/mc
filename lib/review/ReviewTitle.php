@@ -61,7 +61,7 @@ class ReviewTitle
 	const FORMAT_INTLDATEFORMATTER = [
         'h1' => 'yyyy',
 
-        'h2' => 'LLLL yyyy',
+        'h2' => 'MMMM yyyy',
     ];
 
     public static function get_date( $node )
