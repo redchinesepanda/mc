@@ -16,7 +16,7 @@ class ToolSitemap
 	public static function prepare( $atts )
     {
 		$pairs = [
-			'post_type' => 'legal_bk_review',
+			'post_type' => 'page',
 
 			'taxonomy' => '',
 
