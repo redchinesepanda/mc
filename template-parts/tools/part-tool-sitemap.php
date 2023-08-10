@@ -8,7 +8,7 @@
 			</li>
 		<?php endforeach; ?>
 	</ul>
-<?php elseif : ?>
+<?php else : ?>
 	<pre class="legal-sitemap">
 		<?php foreach( $args as $item ) : ?>
 			<?php echo $item[ 'href' ]; ?>
