@@ -58,8 +58,13 @@ class ToolSitemap
 
 		$suppress_filters = 0;
 
-		if ( $atts[ 'lang' ] ) {
+		$orderby = [ 'date' => 'DESC', 'title' => 'ASC' ];
+
+		if ( $atts[ 'lang' ] )
+		{
 			$suppress_filters = 1;
+
+			$orderby = [ 'name' => 'ASC' ];
 		}
 
         return [
@@ -73,9 +78,7 @@ class ToolSitemap
 
 			'suppress_filters' => $suppress_filters,
             
-            // 'orderby' => [ 'date' => 'DESC', 'title' => 'ASC' ],
-            
-			'orderby' => [ 'name' => 'ASC' ],
+			'orderby' => $orderby,
 
 			'tax_query' => $tax_query,
         ];
