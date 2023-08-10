@@ -321,7 +321,7 @@ class ReviewAbout
     const PAIRS = [
         'suffix' => '',
 
-        'suffix' => '',
+        'label' => '',
     ];
     
     public static function get_button( $args = [] )
@@ -334,13 +334,11 @@ class ReviewAbout
 
         if( $group )
         {
-            $text = $atts[ 'suffix' ];
+            $text = $atts[ 'label' ];
 
             if ( !$text )
             {
-                $suffix = $atts[ 'suffix' ];
-
-                $text = self::get_text( $suffix );
+                $text = self::get_text( $atts[ 'suffix' ] );
             }
 
             return [
