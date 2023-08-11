@@ -5,20 +5,11 @@
 
 class ToolNotFound
 {
-	public static function check()
-    {
-		$not_logged_in = !is_user_logged_in();
-
-		$singilar_custom = is_singular( [ 'legal_billet', 'legal_compilation' ] );
-
-        return ( $not_logged_in && $singilar_custom );
-    }
-
 	public static function register()
     {
         $handler = new self();
 
-		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
@@ -29,9 +20,30 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	const LOCALE = [
+		'kz',
+
+		'by',
+	];
+
+	public static function check_not_found()
+    {
+		$locale_page = WPMLMain::current_language();
+
+		$locale_user = $_SERVER[ 'HTTP_CF_IPCOUNTRY' ];
+
+		LegalDebug::debug( [
+			'locale_page'=> $locale_page,
+
+			'locale_user'=> $locale_user,
+		] );
+
+		return in_array( $locale_user, self::LOCALE ) && !in_array( $locale_page, self::LOCALE );
+    }
+
 	public static function set_not_found()
 	{
-		if ( self::check() )
+		if ( self::check_not_found() )
 		{
 			global $wp_query;
 
