@@ -66,13 +66,15 @@ class NotFoundMain
 	{
 		$languages = WPMLLangSwitcher::get();
 
+		$languages = WPMLLangSwitcher::exclude( $languages );
+
 		return  array_merge(
 			[
 				'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
 				
 				'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
 			],
-			
+
 			$languages
 		);
 	}
