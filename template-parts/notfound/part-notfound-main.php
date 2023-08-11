@@ -13,11 +13,13 @@
 				</div>
 			</a>
 		<?php endforeach; ?>
-		<a class='lang-current lang-item' href="<?php echo $args['active']['href']; ?>" target="_blank">
-			<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
-			<div class="lang-title">
-				<?php echo $args['active']['title']; ?>
-			</div>
-		</a>
+		<?php if( !empty( $args['active'] ) ) : ?>
+			<a class='lang-current lang-item' href="<?php echo $args['active']['href']; ?>" target="_blank">
+				<div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>
+				<div class="lang-title">
+					<?php echo $args['active']['title']; ?>
+				</div>
+			</a>
+		<?php endif; ?>
 	</div>
 </div>
