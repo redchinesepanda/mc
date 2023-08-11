@@ -29,12 +29,19 @@ class WPMLMain
 
     const EXCLUDE = [
         'pt_GB',
+
         'pt_ES',
+
         'sr_SR',
+
         'se_SE',
+
         'cs_CS',
+
         'en',
+
         'es',
+        
         'ru',
     ];
 

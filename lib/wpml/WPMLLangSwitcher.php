@@ -86,11 +86,12 @@ class WPMLLangSwitcher
 
     public static function choises()
     {
-        $languages = self::get_all();
+        return self::get_all();
+    }
 
-        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
-
-        return $languages;
+    public static function exclude( $languages )
+    {
+        return WPMLMain::exclude( $languages, self::EXCLUDE );
     }
 
     public static function get()
@@ -101,7 +102,7 @@ class WPMLLangSwitcher
 
         // $languages = WPMLMain::exclude( $languages );
 
-        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
+        $languages = self::exclude( $languages );
 
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
