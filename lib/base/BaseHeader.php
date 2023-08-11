@@ -91,18 +91,64 @@ class BaseHeader
 		return $items;
 	}
 
+	public static function search_languages()
+	{
+		$languages_all = WPMLMain::get_all_languages();
+
+		$code = WPMLMain::current_language();
+
+		// LegalDebug::debug( [
+		// 	'code' => $code,
+		// ] );
+
+		$search[ 'current' ] = $languages_all[ $code ];
+
+		// LegalDebug::debug( [
+		// 	'current' => $search[ 'current' ],
+		// ] );
+
+		unset( $languages_all[ $code ] );
+
+		$languages_all = WPMLMain::exclude( $languages_all );
+
+		// LegalDebug::debug( [
+		// 	'languages_all' => $languages_all,
+		// ] );
+
+		$lang = WPMLMain::get_group_language();
+
+		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+
+		return $search;
+	}
+
+	public static function get_inline_item( $language )
+	{
+		return [
+			'class' => 'legal-country-' . $language[ 'code' ],
+
+			'url-part' => $language[ 'code' ],
+		];
+	}
+
 	public static function parse_languages_inline()
 	{
-		$languages = WPMLMain::search_language();
+		// $languages = WPMLMain::search_language();
+		
+		$languages = self::search_languages();
 
-		$items = [];
+		// $items = [];
+		
+		$items[] = self::get_inline_item( $languages[ 'current' ] );
 
-		foreach ( $languages as $language ) {
-			$items[] = [
-				'class' => 'legal-country-' . $language[ 'code' ],
+		foreach ( $languages[ 'avaible' ] as $language ) {
+			// $items[] = [
+			// 	'class' => 'legal-country-' . $language[ 'code' ],
 
-				'url-part' => $language[ 'code' ],
-			];
+			// 	'url-part' => $language[ 'code' ],
+			// ];
+
+			$items[] = self::get_inline_item( $language );
 		} 
 
 		$items[] = [
