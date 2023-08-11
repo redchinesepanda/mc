@@ -307,31 +307,33 @@ class BaseHeader
 
 	public static function get_menu_languages()
 	{
-		$languages_all = WPMLMain::get_all_languages();
+		// $languages_all = WPMLMain::get_all_languages();
 
-		$code = WPMLMain::current_language();
+		// $code = WPMLMain::current_language();
 
 		// LegalDebug::debug( [
 		// 	'code' => $code,
 		// ] );
 
-		$search[ 'current' ] = $languages_all[ $code ];
+		// $search[ 'current' ] = $languages_all[ $code ];
 
 		// LegalDebug::debug( [
 		// 	'current' => $search[ 'current' ],
 		// ] );
 
-		unset( $languages_all[ $code ] );
+		// unset( $languages_all[ $code ] );
 
-		$languages_all = WPMLMain::exclude( $languages_all );
+		// $languages_all = WPMLMain::exclude( $languages_all );
 
 		// LegalDebug::debug( [
 		// 	'languages_all' => $languages_all,
 		// ] );
 
-		$lang = WPMLMain::get_group_language();
+		// $lang = WPMLMain::get_group_language();
 
-		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+		// $search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+
+		$search = self::search_languages();
 
 		// LegalDebug::debug( [
 		// 	'lang' => $lang,
