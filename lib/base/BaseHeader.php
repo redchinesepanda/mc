@@ -287,11 +287,11 @@ class BaseHeader
 
 		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
 
-		LegalDebug::debug( [
-			'lang' => $lang,
+		// LegalDebug::debug( [
+		// 	'lang' => $lang,
 
-			'avaible' => $search[ 'avaible' ],
-		] );
+		// 	'avaible' => $search[ 'avaible' ],
+		// ] );
 		
 		// $search[ 'avaible' ] = WPMLMain::search_language();
 
