@@ -83,18 +83,18 @@ class WPMLMain
 
     public static function filter_language( $items, $value )
 	{
-        LegalDebug::debug( [
-            'HOME' => LegalBreadcrumbsMain::HOME,
-        ] );
+        // LegalDebug::debug( [
+        //     'HOME' => LegalBreadcrumbsMain::HOME,
+        // ] );
 
 		return array_filter( $items, function( $item ) use ( $value ) {
-            LegalDebug::debug( [
-                'default_locale' => $item[ 'default_locale' ],
+            // LegalDebug::debug( [
+            //     'default_locale' => $item[ 'default_locale' ],
 
-                'value' => $value,
+            //     'value' => $value,
 
-                'code' => $item[ 'code' ],
-            ] );
+            //     'code' => $item[ 'code' ],
+            // ] );
 
 			return (
 				strpos( $item[ 'default_locale' ], $value ) !== false
