@@ -35,7 +35,7 @@ class WPMLMain
         'cs_CS',
         'en',
         'es',
-        // 'ru',
+        'ru',
     ];
 
     public static function exclude( $args , $exclude = [] )

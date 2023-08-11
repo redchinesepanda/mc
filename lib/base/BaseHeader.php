@@ -238,19 +238,50 @@ class BaseHeader
         'eng',
 	];
 
+	// public static function get_menu_languages()
+	// {
+	// 	$code = WPMLMain::current_language();
+		
+	// 	$search[ 'avaible' ] = WPMLMain::search_language();
+
+	// 	// LegalDebug::debug( [
+	// 	// 	'avaible' => $search[ 'avaible' ],
+	// 	// ] );
+
+	// 	$search[ 'current' ] = $search[ 'avaible' ][ $code ];
+
+	// 	unset( $search[ 'avaible' ][ $code ] );
+		
+	// 	$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
+
+	// 	$parse = self::parse_languages( $search );
+
+	// 	return $parse;
+	// }
+
 	public static function get_menu_languages()
 	{
+		$languages_all = self::get_all_languages();
+
 		$code = WPMLMain::current_language();
+
+		$search[ 'current' ] = $languages_all[ $code ];
+
+		unset( $languages_all[ $code ] );
+
+		$languages_all = self::exclude( $languages_all );
+
+		$search[ 'avaible' ] = self::filter_language( $languages, $lang );
 		
-		$search[ 'avaible' ] = WPMLMain::search_language();
+		// $search[ 'avaible' ] = WPMLMain::search_language();
 
 		// LegalDebug::debug( [
 		// 	'avaible' => $search[ 'avaible' ],
 		// ] );
 
-		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
+		// $search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
-		unset( $search[ 'avaible' ][ $code ] );
+		// unset( $search[ 'avaible' ][ $code ] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
