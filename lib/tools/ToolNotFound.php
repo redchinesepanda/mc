@@ -26,11 +26,13 @@ class ToolNotFound
 		'by',
 	];
 
+	// FI
+
 	public static function check_not_found()
     {
 		$locale_page = WPMLMain::current_language();
 
-		$locale_user = $_SERVER[ 'HTTP_CF_IPCOUNTRY' ];
+		$locale_user = strtolower( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] );
 
 		LegalDebug::debug( [
 			'locale_page'=> $locale_page,
