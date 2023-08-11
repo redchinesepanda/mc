@@ -266,7 +266,7 @@ class BaseHeader
 		$code = WPMLMain::current_language();
 
 		LegalDebug::debug( [
-			'code' => $search[ 'code' ],
+			'code' => $code,
 		] );
 
 		$search[ 'current' ] = $languages_all[ $code ];
