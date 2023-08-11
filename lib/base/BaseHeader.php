@@ -261,7 +261,7 @@ class BaseHeader
 
 	public static function get_menu_languages()
 	{
-		$languages_all = self::get_all_languages();
+		$languages_all = WPMLMain::get_all_languages();
 
 		$code = WPMLMain::current_language();
 
@@ -269,9 +269,9 @@ class BaseHeader
 
 		unset( $languages_all[ $code ] );
 
-		$languages_all = self::exclude( $languages_all );
+		$languages_all = WPMLMain::exclude( $languages_all );
 
-		$search[ 'avaible' ] = self::filter_language( $languages, $lang );
+		$search[ 'avaible' ] = WPMLMain::filter_language( $languages, $lang );
 		
 		// $search[ 'avaible' ] = WPMLMain::search_language();
 
