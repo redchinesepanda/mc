@@ -97,6 +97,8 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
+        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
+
         $args['active'] = self::get_active( $languages );
 
         $languages = WPMLMain::exclude( $languages );
