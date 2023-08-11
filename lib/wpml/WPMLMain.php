@@ -65,11 +65,11 @@ class WPMLMain
 		
         $languages = self::exclude( self::get_all_languages() );
 
-        LegalDebug::debug( [
-			'lang' => $lang,
+        // LegalDebug::debug( [
+		// 	'lang' => $lang,
 
-			'languages' => $languages,
-		] );
+		// 	'languages' => $languages,
+		// ] );
 
 		return self::filter_language( $languages, $lang );
 	}
@@ -83,7 +83,19 @@ class WPMLMain
 
     public static function filter_language( $items, $value )
 	{
+        LegalDebug::debug( [
+            'HOME' => LegalBreadcrumbsMain::HOME,
+        ] );
+
 		return array_filter( $items, function( $item ) use ( $value ) {
+            LegalDebug::debug( [
+                'default_locale' => $item[ 'default_locale' ],
+
+                'value' => $value,
+
+                'code' => $item[ 'code' ],
+            ] );
+
 			return (
 				strpos( $item[ 'default_locale' ], $value ) !== false
 				&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )

@@ -238,9 +238,9 @@ class BaseHeader
 		
 		$search[ 'avaible' ] = WPMLMain::search_language();
 
-		LegalDebug::debug( [
-			'avaible' => $search[ 'avaible' ],
-		] );
+		// LegalDebug::debug( [
+		// 	'avaible' => $search[ 'avaible' ],
+		// ] );
 
 		$search[ 'current' ] = $search[ 'avaible' ][ $code ];
 
