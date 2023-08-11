@@ -276,7 +276,7 @@ class BaseHeader
 		$languages_all = WPMLMain::exclude( $languages_all );
 
 		LegalDebug::debug( [
-			'current' => $search[ 'current' ],
+			'languages_all' => $languages_all,
 		] );
 
 		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $code );
