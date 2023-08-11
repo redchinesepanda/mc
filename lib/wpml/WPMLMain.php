@@ -65,6 +65,12 @@ class WPMLMain
 		
         $languages = self::exclude( self::get_all_languages() );
 
+        LegalDebug::debug( [
+			'lang' => $lang,
+
+			'languages' => $languages,
+		] );
+
 		return self::filter_language( $languages, $lang );
 	}
 
