@@ -97,11 +97,11 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
-
         $args['active'] = self::get_active( $languages );
 
-        $languages = WPMLMain::exclude( $languages );
+        // $languages = WPMLMain::exclude( $languages );
+
+        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
 
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
