@@ -64,9 +64,7 @@ class NotFoundMain
 
 	public static function get()
 	{
-		$languages = WPMLLangSwitcher::get();
-
-		$languages = WPMLLangSwitcher::exclude( $languages );
+		$languages = WPMLLangSwitcher::get_not_found();
 
 		return  array_merge(
 			[
