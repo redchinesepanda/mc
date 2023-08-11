@@ -72,7 +72,7 @@ class CompilationTabsMini
 
         if ( !$url )
         {
-            $url = LegalMain::LEGAL_URL . '/assets/img/tabs/mini-item-bonus.svg';
+            $url = LegalMain::LEGAL_URL . '/assets/img/tabs/mini-bonus.svg';
         }
 
         $description = get_field( self::FIELD[ 'description' ], $id );
