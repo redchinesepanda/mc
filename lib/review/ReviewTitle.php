@@ -73,6 +73,8 @@ class ReviewTitle
 			if ( array_key_exists( $class, self::FORMAT ) )
 			{
 				$format = self::FORMAT[ $class ];
+
+				break;
 			}
 		}
 		
