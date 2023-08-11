@@ -94,6 +94,23 @@ class WPMLLangSwitcher
         return WPMLMain::exclude( $languages, self::EXCLUDE );
     }
 
+    public static function get_not_found()
+    {
+        $languages = self::get_all();
+
+        $languages = self::exclude( $languages );
+
+        // $args['active'] = self::get_active( $languages );
+
+        // $languages = WPMLMain::exclude( $languages );
+
+        foreach ( $languages as $lang ) {
+            $args[] = self::map( $lang );
+        }
+
+        return $args;
+    }
+
     public static function get()
     {
         $languages = self::get_all();
