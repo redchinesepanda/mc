@@ -61,19 +61,47 @@ class CompilationTabsMini
 
         $class = $profit ? 'legal-profit' : 'legal-default';
 
+        $title = get_field( self::FIELD[ 'title' ], $id );
+
+        if ( !$title )
+        {
+            $title = 'Коэффициенты';
+        }
+
+        $url = get_field( self::FIELD[ 'image' ], $id );
+
+        if ( !$url )
+        {
+            $url = LegalMain::LEGAL_URL . '/assets/img/tabs/mini-item-profit.svg';
+        }
+
+        $description = get_field( self::FIELD[ 'description' ], $id );
+
+        if ( !$description )
+        {
+            $description = 'В рейтинге на высоких позициях лицензионные букмекерские конторы КЗ с наименьшей средней маржой по четырём основным видам спорта: футбол, хоккей, теннис и баскетбол.';
+        }
+
+        $button_label = get_field( self::FIELD[ 'label' ], $id );
+
+        if ( !$button_label )
+        {
+            $button_label = 'Рейтинг БК с высокими коэффициентами';
+        }
+
         return [
             'id' => $id,
 
-            'title' => get_field( self::FIELD[ 'title' ], $id ),
+            'title' => $title,
 
-            'url' => get_field( self::FIELD[ 'image' ], $id ),
+            'url' => $url,
 
-            'description' => get_field( self::FIELD[ 'description' ], $id ),
+            'description' => $description,
 
 			'items' => self::get_items_mini( $id, $profit ),
 
             'button' => [
-                'label' => get_field( self::FIELD[ 'label' ], $id ),
+                'label' => $button_label,
 
                 'href' => get_post_permalink( $id ),
             ],
