@@ -64,11 +64,17 @@ class NotFoundMain
 
 	public static function get()
 	{
-		return  array_merge( [
-			'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
+		$languages = WPMLLangSwitcher::get();
+
+		return  array_merge(
+			[
+				'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
+				
+				'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
+			],
 			
-			'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
-		], WPMLLangSwitcher::get() );
+			$languages
+		);
 	}
 
 	const TEMPLATE = [
