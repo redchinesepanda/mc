@@ -36,7 +36,7 @@ class CompilationTabsMini
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_image_size( BilletMini::SIZE[ 'logo-mini' ], 74, 25, [ 'center', 'center' ] );
+        add_image_size( BilletMini::SIZE[ 'logo-mini' ], 74, 25, false );
     }
 
 	const PAIRS = [

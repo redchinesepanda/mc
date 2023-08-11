@@ -49,6 +49,7 @@ class BilletMini
 	public static function get_mini( $id, $profit = false, $filter = [] )
     {
         $href = BilletMain::get_url( $id, $filter )[ 'play' ];
+        
         return [
             'id' => $id,
 
