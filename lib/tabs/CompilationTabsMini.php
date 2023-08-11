@@ -65,28 +65,28 @@ class CompilationTabsMini
 
         if ( !$title )
         {
-            $title = 'Коэффициенты';
+            $title = 'Бонусы';
         }
 
         $url = get_field( self::FIELD[ 'image' ], $id );
 
         if ( !$url )
         {
-            $url = LegalMain::LEGAL_URL . '/assets/img/tabs/mini-item-profit.svg';
+            $url = LegalMain::LEGAL_URL . '/assets/img/tabs/mini-item-bonus.svg';
         }
 
         $description = get_field( self::FIELD[ 'description' ], $id );
 
         if ( !$description )
         {
-            $description = 'В рейтинге на высоких позициях лицензионные букмекерские конторы КЗ с наименьшей средней маржой по четырём основным видам спорта: футбол, хоккей, теннис и баскетбол.';
+            $description = 'В списке вы найдёте лучшие БК, если оценивать с позиции выбора бонусных акций: в обзоре учитывались предложения для новых клиентов и действующих игроков.';
         }
 
         $button_label = get_field( self::FIELD[ 'label' ], $id );
 
         if ( !$button_label )
         {
-            $button_label = 'Рейтинг БК с высокими коэффициентами';
+            $button_label = 'Рейтинг БК с бонусами';
         }
 
         return [
