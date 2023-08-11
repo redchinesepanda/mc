@@ -232,6 +232,12 @@ class BaseHeader
 		return $urls;
 	}
 
+	const EXCLUDE = [
+		'esp',
+
+        'eng',
+	];
+
 	public static function get_menu_languages()
 	{
 		$code = WPMLMain::current_language();

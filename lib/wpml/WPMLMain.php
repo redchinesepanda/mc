@@ -27,20 +27,38 @@ class WPMLMain
         return $languages;
     }
 
-    public static function exclude( $args )
+    const EXCLUDE = [
+        'pt_GB',
+        'pt_ES',
+        'sr_SR',
+        'se_SE',
+        'cs_CS',
+        'en',
+        'es',
+        // 'ru',
+    ];
+
+    public static function exclude( $args , $exclude = [] )
     {
         $default_locale = array_column( $args, 'default_locale', 'code' );
 
-        $default_locale_exclude = [
-            'pt_GB',
-            'pt_ES',
-            'sr_SR',
-            'se_SE',
-            'cs_CS',
-            'en',
-            'es',
-            // 'ru',
-        ];
+        $default_locale_exclude = self::EXCLUDE;
+
+        if ( !empty( $exclude ) )
+        {
+            $default_locale_exclude = $exclude;
+        }
+
+        // $default_locale_exclude = [
+        //     'pt_GB',
+        //     'pt_ES',
+        //     'sr_SR',
+        //     'se_SE',
+        //     'cs_CS',
+        //     'en',
+        //     'es',
+        //     // 'ru',
+        // ];
 
         $keys = [];
 
@@ -96,10 +114,15 @@ class WPMLMain
             //     'code' => $item[ 'code' ],
             // ] );
 
-			return (
-				strpos( $item[ 'default_locale' ], $value ) !== false
-				&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
-			);
+			// return (
+			// 	strpos( $item[ 'default_locale' ], $value ) !== false
+			// 	&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
+			// );
+
+			// return strpos( $item[ 'default_locale' ], $value ) !== false;
+
+            return strpos( $item[ 'default_locale' ], $value ) !== false
+                && !in_array( $item[ 'code' ], BaseHeader::EXCLUDE );
 		} );
 	}
 

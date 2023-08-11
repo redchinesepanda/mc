@@ -66,11 +66,29 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
+    const EXCLUDE = [
+        'pt_GB',
+
+        'pt_ES',
+
+        'sr_SR',
+
+        'se_SE',
+
+        'cs_CS',
+
+        'en',
+
+        'es',
+
+        'ru',
+    ];
+
     public static function choises()
     {
         $languages = self::get_all();
 
-        $languages = WPMLMain::exclude( $languages );
+        $languages = WPMLMain::exclude( $languages, self::EXCLUDE );
 
         return $languages;
     }

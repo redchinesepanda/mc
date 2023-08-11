@@ -65,7 +65,7 @@ class LegalBreadcrumbsMain extends LegalDebug
     }
 
     const HOME = [
-        // 'ru' => 'kz',
+        'ru' => 'kz',
 
         'esp' => 'es',
 
@@ -87,10 +87,28 @@ class LegalBreadcrumbsMain extends LegalDebug
 		}
 
         $lang = WPMLMain::current_language();
+
+        // LegalDebug::debug( [
+        //     'homepage_url' => $homepage_url,
+
+        //     'lang' => $lang,
+
+        //     'lang-new' => self::HOME[ $lang ],
+
+        //     'array_key_exists' => array_key_exists( $lang, self::HOME ) ? 'true' : 'false',
+        // ] );
         
         if ( array_key_exists( $lang, self::HOME ) ) {
+            $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ] .'/';
+
             $homepage_url = WPMLMain::locale_permalink( $homepage_url, self::HOME[ $lang ] );
         }
+
+        // LegalDebug::debug( [
+        //     'homepage_url' => $homepage_url,
+
+        //     'HOME' => self::HOME,
+        // ] );
 
         return $homepage_url;
     }
