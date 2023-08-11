@@ -119,10 +119,10 @@ class WPMLMain
 			// 	&& !array_key_exists( $item[ 'code' ], LegalBreadcrumbsMain::HOME )
 			// );
 
-			// return strpos( $item[ 'default_locale' ], $value ) !== false;
+			return strpos( $item[ 'default_locale' ], $value ) !== false;
 
-            return strpos( $item[ 'default_locale' ], $value ) !== false
-                && !in_array( $item[ 'code' ], BaseHeader::EXCLUDE );
+            // return strpos( $item[ 'default_locale' ], $value ) !== false
+            //     && !in_array( $item[ 'code' ], BaseHeader::EXCLUDE );
 		} );
 	}
 
