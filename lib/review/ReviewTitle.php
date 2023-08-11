@@ -29,7 +29,9 @@ class ReviewTitle
     }
 
 	const CLASSES = [
-		'date' => 'legal-header-date',
+		'date-year' => 'legal-header-year',
+
+		'date-month-year' => 'legal-header-month-year',
 
 		'h3' => 'legal-header-3',
 
@@ -53,20 +55,25 @@ class ReviewTitle
 	];
 
 	const FORMAT = [
-        'h1' => 'y',
+        self::CLASSES[ self::CLASSES[ 'date-year' ] ] => 'y',
 
-        'h2' => 'MMMM y',
+        self::CLASSES[ self::CLASSES[ 'date-month-year' ] ] => 'MMMM y',
     ];
 
     public static function get_date( $node )
     {
 		$current = new DateTime();
 
-		$format = self::FORMAT[ 'h2' ];
+		$format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
 
-		if ( array_key_exists( $node->nodeName, self::FORMAT ) )
+		$classes = explode( ' ', $node->getAttribute( 'class' ) );
+
+		foreach ( $classes as $class )
 		{
-			$format = self::FORMAT[ $node->nodeName ];
+			if ( array_key_exists( $class, self::FORMAT ) )
+			{
+				$format = self::FORMAT[ $class ];
+			}
 		}
 		
 		$locale = WPMLMain::get_locale();
@@ -191,6 +198,7 @@ class ReviewTitle
 			],
 		] );
 	}
+
 	public static function style_formats_header_date( $settings )
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
@@ -199,11 +207,19 @@ class ReviewTitle
 
 				'items' => [
 					[
-						'title' => 'H1-H2 Date',
+						'title' => 'H1-H2 Year',
 						
 						'selector' => 'h1,h2',
 
-						'classes' => self::CLASSES[ 'date' ],
+						'classes' => self::CLASSES[ 'date-year' ],
+					],
+
+					[
+						'title' => 'H1-H2 Month Year',
+						
+						'selector' => 'h1,h2',
+
+						'classes' => self::CLASSES[ 'date-month-year' ],
 					],
 				],
 			],
