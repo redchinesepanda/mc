@@ -271,7 +271,7 @@ class BaseHeader
 
 		$languages_all = WPMLMain::exclude( $languages_all );
 
-		$search[ 'avaible' ] = WPMLMain::filter_language( $languages, $lang );
+		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
 		
 		// $search[ 'avaible' ] = WPMLMain::search_language();
 
