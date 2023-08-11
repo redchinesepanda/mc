@@ -55,9 +55,9 @@ class ReviewTitle
 	];
 
 	const FORMAT = [
-        self::CLASSES[ self::CLASSES[ 'date-year' ] ] => 'y',
+        self::CLASSES[ 'date-year' ] => 'y',
 
-        self::CLASSES[ self::CLASSES[ 'date-month-year' ] ] => 'MMMM y',
+        self::CLASSES[ 'date-month-year' ] => 'MMMM y',
     ];
 
     public static function get_date( $node )
