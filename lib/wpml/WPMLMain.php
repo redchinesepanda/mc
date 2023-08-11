@@ -39,7 +39,7 @@ class WPMLMain
             'cs_CS',
             'en',
             'es',
-            'ru',
+            // 'ru',
         ];
 
         $keys = [];
