@@ -70,6 +70,10 @@
 	padding: 25px 15px;
 }
 
+.legal-oops .item-bonus-wrapper {
+	padding-left: 30px;
+}
+
 .legal-oops .item-button {
 	padding: 5px 35px 5px 13px;
 }
@@ -116,6 +120,13 @@
 	border-radius: 10px;
 }
 
+.legal-oops .item-bonus-wrapper {
+	background-image: url( '../../img/oops/oops-bonus.svg' );
+	background-position: left center;
+	background-repeat: no-repeat;
+    background-size: auto;
+}
+
 /* Oops Typography */
 
 .legal-oops .oops-title {
@@ -135,6 +146,16 @@
 	line-height: 27.2px;
 	color: rgb(110, 110, 110);
 	text-align: center;
+}
+
+.legal-oops .item-bonus {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 32.4px;
+	text-decoration: none;
+	color: rgb(89, 151, 227);
 }
 
 .legal-oops .item-button {
