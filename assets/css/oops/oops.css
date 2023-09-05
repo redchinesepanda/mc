@@ -58,6 +58,10 @@
 	justify-content: right;
 }
 
+.legal-oops .item-bonus {
+	display: inline-block;
+}
+
 /* Oops Position */
 
 .legal-oops-background {
@@ -159,6 +163,10 @@
 	line-height: 32.4px;
 	text-decoration: none;
 	color: rgb(89, 151, 227);
+}
+
+.legal-oops .item-bonus-wrapper {
+	text-align: center;
 }
 
 .legal-oops .item-button {
