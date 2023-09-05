@@ -46,7 +46,31 @@ class ReviewAuthor
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+    const CIS = [
+        'ru',
+
+        'kz',
+
+        'by',
+
+        'ua',
+
+        'ua-ru',
+    ];
+
     public static function get()
+    {
+        $language = WPMLMain::current_language();
+
+        if ( in_array( $language, self::CIS ) )
+        {
+            return self::get_cis();
+        }
+
+        return self::get_default();
+    }
+
+    public static function get_default()
     {
         $page = get_page_by_path( '/about-us/' );
 
@@ -60,6 +84,25 @@ class ReviewAuthor
 			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
 
 			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+
+			'href' => $href,
+		];
+    }
+
+    public static function get_cis()
+    {
+        $page = get_page_by_path( '/o-nas/' );
+
+        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        $href = get_page_link( $translated_id ) . '#nasha-komanda';
+
+        return [
+			'name' => __( ReviewMain::TEXT[ 'alexander-kachalov' ], ToolLoco::TEXTDOMAIN ),
+
+			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
+
+			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
 
 			'href' => $href,
 		];

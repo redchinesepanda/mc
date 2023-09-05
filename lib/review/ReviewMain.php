@@ -33,6 +33,8 @@ require_once( 'ReviewTitle.php' );
 class ReviewMain
 {
 	const TEXT = [
+		'alexander-kachalov' => 'Alexander Kachalov',
+
 		'app' => 'App',
 
 		'bet-here' => 'Bet here',
@@ -66,6 +68,8 @@ class ReviewMain
 		'valentin-axani' => 'Valentin Axani',
 
 		'website-manager' => 'Website Manager',
+
+		'website-administrator' => 'Website Administrator',
 
 		'withdrawal' => 'Withdrawal',
 	];
