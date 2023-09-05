@@ -81,7 +81,9 @@ class WPMLLangSwitcher
 
         'es',
 
-        'ru',
+        'ru_RU',
+
+        'dk_DA',
     ];
 
     public static function choises()
@@ -98,11 +100,19 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
+        // LegalDebug::debug( [
+        //     'function' => 'WPMLLangSwitcher::get_not_found',
+
+        //     'languages' => $languages,
+        // ] );
+
         $languages = self::exclude( $languages );
 
-        // $args['active'] = self::get_active( $languages );
+        // LegalDebug::debug( [
+        //     'function' => 'WPMLLangSwitcher::get_not_found',
 
-        // $languages = WPMLMain::exclude( $languages );
+		// 	'languages' => $languages,
+		// ] );
 
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );

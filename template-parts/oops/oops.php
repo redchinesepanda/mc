@@ -7,10 +7,11 @@
 				<div class="item-image-wrapper">
 					<img class="item-image" src="<?php echo $item[ 'src' ]; ?>" width="<?php echo $item[ 'width' ]; ?>" height="<?php echo $item[ 'height' ]; ?>" />
 				</div>
+				<?php if( !empty( $item[ 'bonus-label' ] ) ) : ?>
+					<div class="item-bonus-wrapper"><?php echo $item[ 'bonus-label' ]; ?></div>
+				<?php endif; ?>
 				<div class="item-button-wrapper">
-					<a class="item-button" href="<?php echo $item[ 'href' ]; ?>">
-						<?php echo $args[ 'label' ]; ?>
-					</a>
+					<a class="item-button" href="<?php echo $item[ 'href' ]; ?>"><?php echo $args[ 'label' ]; ?></a>
 				</div>
 			</div>
 		<?php endforeach; ?>

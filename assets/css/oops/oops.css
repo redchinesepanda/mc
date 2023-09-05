@@ -84,9 +84,11 @@
 	width: 100%;
 }
 
+.legal-oops .item-bonus-wrapper,
 .legal-oops .item-image-wrapper,
 .legal-oops .item-button-wrapper {
-	width: 50%;
+	width: calc( 100% / 3 );
+	flex-grow: 1;
 }
 
 /* Oops Background */

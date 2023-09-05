@@ -6,7 +6,7 @@ class OopsMain
         'legal-oops' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.2',
         ],
     ];
 
@@ -101,27 +101,62 @@ class OopsMain
             
             'post_type' => 'affiliate-links',
 
+            'post_status' => 'publish',
+
             'suppress_filters' => 0,
             
             's' => '"' . $prefix . WPMLMain::current_language() . '"',
+            
+            // 's' => '" ' . WPMLMain::current_language() . '"' . ' "-' . WPMLMain::current_language() . '"',
 
-            'meta_query' => [
-                'oops_participate' => [
-                    'key' => 'affilate-oops',
+            // 'search_columns' =>
+            // [
+            //     'post_name',
+            // ],
+
+            'meta_query' =>
+            [
+                'oops_participate' =>
+                [
+                    'key' => self::FIELD[ 'oops' ],
 
                     'value' => '1',
                 ],
 
-                'oops_order' => [
-                    'key' => 'affilate-order',
+                'oops_order' =>
+                [
+                    'key' => self::FIELD[ 'order' ],
+
+                    // 'type' => 'UNSIGNED',
+
+                    // 'compare' => 'EXISTS',
+
+                    // 'value' => '',
+                    
+                    // 'compare' => '!=',
                 ],
             ],
 
             'tax_query' => $tax_query,
             
-            'orderby' => [ 'oops_order' => 'ASC', 'modify' => 'DESC' ],
+            'orderby' =>
+            [
+                'oops_order' => 'ASC',
+                
+                'modified' => 'DESC'
+            ],
         ];
     }
+
+    const FIELD = [
+        'logo' => 'affilate-logo',
+
+        'oops' => 'affilate-oops',
+
+        'order' => 'affilate-order',
+
+        'bonus-label' => 'affilate-bonus-label',
+    ];
 
     public static function get()
     {
@@ -138,8 +173,19 @@ class OopsMain
 
         ];
 
-        foreach ( $posts as $post ) {
-            $src = get_field( 'affilate-logo', $post->ID );
+        foreach ( $posts as $post )
+        {
+            // LegalDebug::debug( [
+            //     'function' => 'OopsMain::get',
+
+            //     'post_title' => $post->post_title,
+
+            //     'affilate-order' => get_field( self::FIELD[ 'order' ], $post->ID ),
+            // ] );
+
+            $src = get_field( self::FIELD[ 'logo' ], $post->ID );
+
+            $bonus_label = get_field( self::FIELD[ 'bonus-label' ], $post->ID );
 
             // $image = wp_get_attachment_image_src( $post->ID, 'full' );
 
@@ -151,14 +197,20 @@ class OopsMain
             //     'image' => $image,
             // ] );
 
+            $href = get_post_permalink( $post->ID );
+
+            $href = ACFReview::format_afillate( $href, 0, '' );
+
             $args['items'][] = [
                 'src' => ( $src ? $src[ 'url' ] : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
 
-                'href' => get_post_permalink( $post->ID ),
+                'href' => $href,
 	
                 'width' => ( $src ? $src[ 'width' ] : '88' ),
                 
                 'height' => ( $src ? $src[ 'height' ] : '29' ),
+
+                'bonus-label' => $bonus_label,
             ];
 
             // LegalDebug::debug( [
@@ -176,6 +228,12 @@ class OopsMain
     public static function get_posts( $prefix = ' ' )
     {
         $query = new WP_Query( self::get_args( $prefix ) );
+
+        // LegalDebug::debug( [
+        //     'function' => 'OopsMain::get_posts',
+
+        //     'request' => $query->request,
+        // ] );
         
         return $query->posts;
     }

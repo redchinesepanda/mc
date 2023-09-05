@@ -217,7 +217,7 @@
     background-image: url( '../../img/review/about/bonus-white.svg' );
 }
 
-.review-about.legal-white .achievement-bonus .achievement-bonus-link {
+.review-about.legal-black .achievement-bonus .achievement-bonus-link {
     background-image: url( '../../img/review/about/bonus-black.svg' );
 }
 
@@ -225,18 +225,18 @@
     background-image: url( '../../img/review/about/achievement-white.svg' );
 }
 
-.review-about.legal-white .achievement-name .achievement-bonus-link {
+.review-about.legal-black .achievement-name .achievement-bonus-link {
     background-image: url( '../../img/review/about/achievement-black.svg' );
 }
 
-.review-about.legal-default .achievement-bonus .achievement-bonus-link,
-.review-about.legal-default .achievement-name .achievement-bonus-link {
+.review-about .achievement-bonus .achievement-bonus-link,
+.review-about .achievement-name .achievement-bonus-link {
     background-position: left center;
 }
 
-.review-about.legal-default .achievement-bonus .achievement-bonus-link,
-.review-about.legal-default .achievement-name .achievement-bonus-link,
-.review-about.legal-default .achievement-app .achievement-bonus-link {
+.review-about .achievement-bonus .achievement-bonus-link,
+.review-about .achievement-name .achievement-bonus-link,
+.review-about .achievement-app .achievement-bonus-link {
     background-repeat: no-repeat;
     background-size: auto;
 }
@@ -246,7 +246,7 @@
     url( '../../img/review/about/android-white.svg' );
 }
 
-.review-about.legal-white .achievement-app .achievement-bonus-link {
+.review-about.legal-black .achievement-app .achievement-bonus-link {
     background-image: url( '../../img/review/about/ios-black.svg' ),
     url( '../../img/review/about/android-black.svg' );
 }
@@ -342,13 +342,20 @@
     text-align: center;
 }
 
+.review-about.legal-default .about-achievement .achievement-bonus-link {
+    color: rgb(255, 255, 255);
+}
+
+.review-about.legal-black .about-achievement .achievement-bonus-link {
+    color: #000000;
+}
+
 .review-about .about-achievement .achievement-bonus-link {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
-    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 

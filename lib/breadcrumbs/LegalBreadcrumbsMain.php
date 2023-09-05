@@ -69,7 +69,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         'esp' => 'es',
 
-        'eng' => 'en',
+        'eng' => '',
     ];
 
     public static function get_home_url()
@@ -99,7 +99,11 @@ class LegalBreadcrumbsMain extends LegalDebug
         // ] );
         
         if ( array_key_exists( $lang, self::HOME ) ) {
-            $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ] .'/';
+            $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ];
+
+            if ( !empty( self::HOME[ $lang ] ) ) {
+                $homepage_url .= '/';
+            }
 
             $homepage_url = WPMLMain::locale_permalink( $homepage_url, self::HOME[ $lang ] );
         }

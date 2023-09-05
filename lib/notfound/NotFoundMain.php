@@ -66,6 +66,12 @@ class NotFoundMain
 	{
 		$languages = WPMLLangSwitcher::get_not_found();
 
+		// LegalDebug::debug( [
+		// 	'function' => 'NotFoundMain::get',
+		// 
+		// 	'languages' => $languages,
+		// ] );
+
 		return  array_merge(
 			[
 				'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),

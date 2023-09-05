@@ -42,7 +42,9 @@ class WPMLMain
 
         'es',
         
-        'ru',
+        'ru_RU',
+        
+        'dk_DA',
     ];
 
     public static function exclude( $args , $exclude = [] )
@@ -56,21 +58,26 @@ class WPMLMain
             $default_locale_exclude = $exclude;
         }
 
-        // $default_locale_exclude = [
-        //     'pt_GB',
-        //     'pt_ES',
-        //     'sr_SR',
-        //     'se_SE',
-        //     'cs_CS',
-        //     'en',
-        //     'es',
-        //     // 'ru',
-        // ];
+        // LegalDebug::debug( [
+        //     'function' => 'WPMLMain::exclude',
+
+		// 	'default_locale' => $default_locale,
+
+		// 	'default_locale_exclude' => $default_locale_exclude,
+		// ] );
 
         $keys = [];
 
-        foreach ( $default_locale_exclude as $exclude ) {
-            $key = array_search( $exclude, $default_locale );
+        foreach ( $default_locale_exclude as $exclude_item ) {
+            $key = array_search( $exclude_item, $default_locale );
+
+            // LegalDebug::debug( [
+            //     'function' => 'WPMLMain::exclude',
+    
+            //     'exclude_item' => $exclude_item,
+    
+            //     'key' => $key,
+            // ] );
 
             if ( $key !== false ) {
                 $keys[] = $key;
@@ -80,6 +87,14 @@ class WPMLMain
         foreach ( $keys as $key ) {
             unset( $args[$key] );
         }
+
+        // LegalDebug::debug( [
+        //     'function' => 'WPMLMain::exclude',
+
+		// 	'default_locale' => $default_locale,
+
+		// 	'default_locale_exclude' => $default_locale_exclude,
+		// ] );
 
         return $args;
     }
