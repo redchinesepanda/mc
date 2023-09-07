@@ -251,14 +251,19 @@ class ReviewProsCons
 				}
 
 				$container = [];
-			} else {
-				try {
+			}
+			else
+			{
+				try
+				{
 					// $body->removeChild( $node );
 					
 					$node->parentNode->removeChild( $node );
 					
 					// $dom->removeChild( $node );
-				} catch ( DOMException $e ) {
+				}
+				catch ( DOMException $e )
+				{
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
 

@@ -63,13 +63,30 @@ class BilletMega
 			return $args;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' )->item(0);
+		// $body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $id => $node )
 		{
 			$args[ 'footer' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
 
-			$body->removeChild( $node );
+			// $body->removeChild( $node );
+
+			try
+			{
+				$node->parentNode->removeChild( $node );
+			}
+			catch ( DOMException $e )
+			{
+				LegalDebug::debug( [
+					'class' => 'BilletMega',
+
+					'function' => 'get_parts,removeChild',
+
+					'node' => substr( $node->textContent, 0, 30 ),
+
+					'message' => $e->getMessage(),
+				] );
+			}
 		}
 
 		$args[ 'content' ] = ToolEncode::encode( $dom->saveHTML() );
