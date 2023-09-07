@@ -145,15 +145,25 @@ class BaseHeader
 
 	public static function check_root_url( $url )
 	{
+		$path = trim( parse_url( $url, PHP_URL_PATH );
+
+		$path_array = explode( '/', $path );
+
+		$path_count = count( $path_array );
+
+		$result = $path_count <= 1;
+
 		LegalDebug::debug( [
-			parse_url( $url, PHP_URL_PATH ),
+			'path' => $path,
 
-			explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ),
+			'path_array' => $path_array,
 
-			count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ),
+			'path_count' => $path_count,
+
+			'result' => $result,
 		] );
 
-		return count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ) <= 1;
+		return $result;
 	}
 
 	public static function parse_languages( $languages )
