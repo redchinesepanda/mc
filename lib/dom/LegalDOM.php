@@ -21,7 +21,7 @@ class LegalDOM
 
 		foreach( $body->childNodes as $node )
 		{
-			$items[] = $body->ownerdocument->saveHTML( $node );
+			$items[] = $body->saveHTML( $node );
 		}
 
 		return implode( '', $items );
