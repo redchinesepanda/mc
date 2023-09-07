@@ -65,7 +65,9 @@ class ReviewBonus
 	{
 		$xpath = new DOMXPath( $dom );
 		
-		$nodes = $xpath->query( '//body/*[contains(@class, \'legal-bonus\')]' );
+		// $nodes = $xpath->query( '//body/*[contains(@class, \'legal-bonus\')]' );
+		
+		$nodes = $xpath->query( '//*[contains(@class, \'legal-bonus\')]' );
 
 		return $nodes;
 	}
