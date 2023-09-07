@@ -143,6 +143,11 @@ class BaseHeader
 		return array_merge( self::parse_items_inline(), self::parse_languages_inline() );
 	}
 
+	public static function check_root_url( $url )
+	{
+		return count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ) > 2;
+	}
+
 	public static function parse_languages( $languages )
 	{
 		$item = [
@@ -155,8 +160,24 @@ class BaseHeader
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 		];
 
+		$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
+
+		if ( self::get_casino_permission() )
+		{
+			$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
+		}
+
 		foreach ( $languages[ 'avaible' ] as $language ) {
-			$title = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
+			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
+
+			// $title = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
+
+			if ( self::check_root_url( $language[ 'url' ] ) )
+			{
+				$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
+			}
+
+			$title = $prefix . ' ' . $label;
 
 			$item[ 'children' ][] = [
 				'title' => $title,

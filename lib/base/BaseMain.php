@@ -13,7 +13,11 @@ class BaseMain
 
 		'betting-sites' => 'Betting Sites',
 
+		'casino-sites' => 'Casino Sites',
+
 		'choose-your-country' => 'Choose your country',
+
+		'gamebling-sites' => 'Gamebling Sites',
 
 		'legal-review-bk-header' => 'Legal Review BK Header',
 
