@@ -206,10 +206,19 @@ class BaseHeader
 
 	const TERM = [
 		'cross' => 'legal-cross',
+
+		'cross-casino' => 'legal-cross-casino',
+
+		'casino' => 'casino',
 	];
 
-	public static function get_cross()
+	public static function get_cross( $terms = '' )
 	{
+		if ( empty( $terms ) )
+		{
+			$terms = self::TERM[ 'cross' ];
+		}
+
 		$posts =  get_posts( [
 			'post_type' => 'page',
 
@@ -221,7 +230,7 @@ class BaseHeader
 
 					'field' => 'slug',
 
-					'terms' => self::TERM[ 'cross' ],
+					'terms' => $terms,
 
 					'include_children' => false,
 				],
@@ -252,7 +261,17 @@ class BaseHeader
 
 	public static function replace_urls( $urls = [] )
 	{
-		$cross = self::get_cross();
+		$cross = null;
+
+		if ( has_term( self::TERM[ 'casino' ], self::TAXONOMY[ 'type' ] ) )
+		{
+			$cross = self::get_cross( self::TERM[ 'cross-casino' ] );
+		}
+
+		if ( empty( $cross ) )
+		{
+			$cross = self::get_cross();
+		}
 
 		if ( !empty( $cross ) )
 		{
