@@ -120,7 +120,7 @@ class ReviewCounter
 
 		$dom = LegalDOM::get_dom( $content );
 
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+		// $body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
 		$nodes = self::get_nodes( $dom );
 
@@ -152,13 +152,32 @@ class ReviewCounter
 
 			// $node->insertBefore( $item );
 
-			try {
-				$body->replaceChild( $item, $node );
+			// try {
+			// 	$body->replaceChild( $item, $node );
 				
-				// $body->insertBefore( $item, $node );
-			} catch ( DOMException $e ) {
+			// 	// $body->insertBefore( $item, $node );
+			// } catch ( DOMException $e ) {
+			// 	LegalDebug::debug( [
+			// 		'ReviewCounter::get_content > replaceChild DOMException',
+			// 	] );
+			// }
+
+			try
+			{
+				$node->parentNode->replaceChild( $item, $node );
+			}
+			catch ( DOMException $e )
+			{
 				LegalDebug::debug( [
-					'ReviewCounter::get_content > replaceChild DOMException',
+					'class' => 'ReviewCounter',
+
+					'function' => 'get_content,replaceChild',
+
+					'item' => substr( $item->textContent, 0, 30 ),
+
+					'node' => substr( $node->textContent, 0, 30 ),
+
+					'message' => $e->getMessage(),
 				] );
 			}
 		}
