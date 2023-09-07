@@ -145,7 +145,7 @@ class BaseHeader
 
 	public static function check_root_url( $url )
 	{
-		$path = trim( parse_url( $url, PHP_URL_PATH ) );
+		$path = trim( parse_url( $url, PHP_URL_PATH ), '/' );
 
 		$path_array = explode( '/', $path );
 
@@ -153,17 +153,34 @@ class BaseHeader
 
 		$result = $path_count <= 1;
 
-		LegalDebug::debug( [
-			'path' => $path,
+		// LegalDebug::debug( [
+		// 	'path' => $path,
 
-			'path_array' => $path_array,
+		// 	'path_array' => $path_array,
 
-			'path_count' => $path_count,
+		// 	'path_count' => $path_count,
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		return $result;
+	}
+
+	public static function get_title_prefix( $language )
+	{
+		$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
+
+		if ( self::get_casino_permission() )
+		{
+			$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
+		}
+
+		if ( self::check_root_url( $language[ 'url' ] ) )
+		{
+			$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
+		}
+
+		return $prefix;
 	}
 
 	public static function parse_languages( $languages )
@@ -178,22 +195,24 @@ class BaseHeader
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 		];
 
-		$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
+		// $prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
 
-		if ( self::get_casino_permission() )
-		{
-			$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
-		}
+		// if ( self::get_casino_permission() )
+		// {
+		// 	$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
+		// }
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
 
 			// $title = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
 
-			if ( self::check_root_url( $language[ 'url' ] ) )
-			{
-				$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
-			}
+			// if ( self::check_root_url( $language[ 'url' ] ) )
+			// {
+			// 	$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
+			// }
+
+			$prefix = get_title_prefix( $language );
 
 			$title = $prefix . ' ' . $label;
 
