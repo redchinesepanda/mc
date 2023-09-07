@@ -19,7 +19,7 @@ class BilletMega
     {
         $handler = new self();
 
-        // [billet-mega id="269185" title-label="Custom title label" title-suffix="Greyhound Betting" title-tag="h4" review-label="Bonus" review-url="bonus" button-label="Play now" no-controls="1"][/billet-mega]
+        // [billet-mega id="269185" title-label="Custom Title Label" title-suffix="Custom Title Sufix" title-tag="h4" review-label="Custom Review Label" review-url="bonus" button-label="Custom Button Label" no-controls="1"][/billet-mega]
 
         add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
 
@@ -188,6 +188,11 @@ class BilletMega
 				if ( !empty( $atts[ 'title-label' ] ) )
 				{
 					$title_text = $atts[ 'title-label' ];
+				}
+
+				if ( !empty( $atts[ 'title-suffix' ] ) )
+				{
+					$title_text .= ' ' . $atts[ 'title-suffix' ];
 				}
 	
 				$background = $group[ BilletMain::ABOUT[ 'background' ] ];
