@@ -313,7 +313,7 @@ class BaseHeader
 
 	public static function replace_urls( $urls = [] )
 	{
-		$home = self::get_homepage();
+		$home = self::get_home_page();
 
 		if ( !empty( $home ) )
 		{
