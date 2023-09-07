@@ -231,7 +231,9 @@ class ReviewProsCons
 				{
 					// $body->replaceChild( $element, $node );
 					
-					$dom->replaceChild( $element, $node );
+					$node->parentNode->replaceChild( $element, $node );
+					
+					// $dom->replaceChild( $element, $node );
 				}
 				catch ( DOMException $e )
 				{
@@ -253,7 +255,9 @@ class ReviewProsCons
 				try {
 					// $body->removeChild( $node );
 					
-					$dom->removeChild( $node );
+					$node->parentNode->removeChild( $node );
+					
+					// $dom->removeChild( $node );
 				} catch ( DOMException $e ) {
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
