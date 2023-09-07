@@ -15,13 +15,13 @@ class LegalDOM
 		return $dom;
 	}
 
-	public static function saveHTML( $body )
+	public static function saveHTML( $dom, $body )
 	{
 		$items = [];
 
 		foreach( $body->childNodes as $node )
 		{
-			$items[] = $body->saveHTML( $node );
+			$items[] = $dom->saveHTML( $node );
 		}
 
 		return implode( '', $items );

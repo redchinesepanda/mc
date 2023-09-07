@@ -278,7 +278,7 @@ class ReviewProsCons
 
 		// return $dom->saveHTML();
 		
-		return LegalDOM::saveHTML( $body );
+		return LegalDOM::saveHTML( $dom, $body );
 	}
 
 	public static function get_nodes( $dom )
