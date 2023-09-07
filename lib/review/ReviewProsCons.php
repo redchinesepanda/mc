@@ -129,7 +129,7 @@ class ReviewProsCons
 			return $content;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+		// $body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
 		// LegalDebug::debug( [
 		// 	'class' => 'ReviewProsCons',
@@ -229,9 +229,9 @@ class ReviewProsCons
 
 				try
 				{
-					$body->replaceChild( $element, $node );
+					// $body->replaceChild( $element, $node );
 					
-					// $node->parentNode->replaceChild( $element, $node );
+					$node->parentNode->replaceChild( $element, $node );
 					
 					// $dom->replaceChild( $element, $node );
 				}
@@ -253,9 +253,9 @@ class ReviewProsCons
 				$container = [];
 			} else {
 				try {
-					$body->removeChild( $node );
+					// $body->removeChild( $node );
 					
-					// $node->parentNode->removeChild( $node );
+					$node->parentNode->removeChild( $node );
 					
 					// $dom->removeChild( $node );
 				} catch ( DOMException $e ) {
@@ -276,9 +276,7 @@ class ReviewProsCons
 		// 	'containers' => $containers,
 		// ] );
 
-		// return $dom->saveHTML();
-		
-		return LegalDOM::saveHTML( $dom, $body );
+		return $dom->saveHTML();
 	}
 
 	public static function get_nodes( $dom )
