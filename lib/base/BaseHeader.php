@@ -253,14 +253,6 @@ class BaseHeader
 
 	public static function get_home_page()
 	{
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::get_home_page',
-
-			'page_on_front' => get_option( 'page_on_front' ),
-
-			'home' => get_option( 'home' ),
-		] );
-
 		return get_post( get_option( 'page_on_front' ) );
 	}
 
