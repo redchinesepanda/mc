@@ -69,7 +69,9 @@ class ReviewAnchors
 	{
 		$xpath = new DOMXPath( $dom );
 		
-        $nodes = $xpath->query( ".//a[@id and not(contains(@id, 'legal-'))]" ); 
+        // $nodes = $xpath->query( ".//a[@id and not(contains(@id, 'legal-'))]" ); 
+        
+        $nodes = $xpath->query( "//a[@id and not(contains(@id, 'legal-'))]" ); 
 
 		return $nodes;
 	}
