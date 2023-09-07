@@ -129,7 +129,9 @@ class ReviewProsCons
 			return $content;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+		// $body = $dom->getElementsByTagName( 'body' )->item( 0 );
+		
+		$body = $dom->firstChild->parentNode;
 
 		// LegalDebug::debug( [
 		// 	'class' => 'ReviewProsCons',
