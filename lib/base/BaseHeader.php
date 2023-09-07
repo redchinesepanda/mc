@@ -145,7 +145,7 @@ class BaseHeader
 
 	public static function check_root_url( $url )
 	{
-		$path = trim( parse_url( $url, PHP_URL_PATH );
+		$path = trim( parse_url( $url, PHP_URL_PATH ) );
 
 		$path_array = explode( '/', $path );
 
