@@ -296,16 +296,16 @@ class BaseHeader
 
 	public static function replace_urls_iteration( $urls, $replace_urls = [] )
 	{
-		if ( !empty( $cross_urls ) ) {
+		if ( !empty( $replace_urls ) ) {
 			$keys = array_keys( $urls );
 
-			$cross_urls = array_intersect_key(
-				$cross_urls, 
+			$replace_urls = array_intersect_key(
+				$replace_urls, 
 
 				array_flip( $keys )
 			);
 
-			return array_replace_recursive( $urls, $cross_urls );
+			return array_replace_recursive( $urls, $replace_urls );
 		}
 
 		return $urls;
