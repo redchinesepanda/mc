@@ -251,7 +251,9 @@ class ReviewProsCons
 				$container = [];
 			} else {
 				try {
-					$body->removeChild( $node );
+					// $body->removeChild( $node );
+					
+					$dom->removeChild( $node );
 				} catch ( DOMException $e ) {
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
