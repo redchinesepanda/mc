@@ -329,7 +329,7 @@ class BaseHeader
 
 			'urls' => $urls,
 
-			'cross->post_title' => $cross->post_title,
+			'home->post_title' => $home->post_title,
 		] );
 
 		$cross = self::get_cross_page();
