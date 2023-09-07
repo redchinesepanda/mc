@@ -145,7 +145,15 @@ class BaseHeader
 
 	public static function check_root_url( $url )
 	{
-		return count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ) > 2;
+		LegalDebug::debug( [
+			parse_url( $url, PHP_URL_PATH ),
+
+			explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ),
+
+			count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ),
+		] );
+
+		return count( explode( '/', ( parse_url( $url, PHP_URL_PATH ) ) ) ) <= 1;
 	}
 
 	public static function parse_languages( $languages )
