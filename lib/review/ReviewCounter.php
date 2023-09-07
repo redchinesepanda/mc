@@ -105,7 +105,9 @@ class ReviewCounter
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/table[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
+		// $nodes = $xpath->query( './/table[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
+		
+		$nodes = $xpath->query( '//table[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
 
 		return $nodes;
 	}
