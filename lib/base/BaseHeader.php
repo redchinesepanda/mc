@@ -97,23 +97,11 @@ class BaseHeader
 
 		$code = WPMLMain::current_language();
 
-		// LegalDebug::debug( [
-		// 	'code' => $code,
-		// ] );
-
 		$search[ 'current' ] = $languages_all[ $code ];
-
-		// LegalDebug::debug( [
-		// 	'current' => $search[ 'current' ],
-		// ] );
 
 		unset( $languages_all[ $code ] );
 
 		$languages_all = WPMLMain::exclude( $languages_all );
-
-		// LegalDebug::debug( [
-		// 	'languages_all' => $languages_all,
-		// ] );
 
 		$lang = WPMLMain::get_group_language();
 
@@ -133,21 +121,11 @@ class BaseHeader
 
 	public static function parse_languages_inline()
 	{
-		// $languages = WPMLMain::search_language();
-		
 		$languages = self::search_languages();
-
-		// $items = [];
 		
 		$items[] = self::get_inline_item( $languages[ 'current' ] );
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
-			// $items[] = [
-			// 	'class' => 'legal-country-' . $language[ 'code' ],
-
-			// 	'url-part' => $language[ 'code' ],
-			// ];
-
 			$items[] = self::get_inline_item( $language );
 		} 
 
@@ -252,11 +230,7 @@ class BaseHeader
 		foreach ( $items as $lang => $item )
 		{
 			$urls[ $lang ] = [
-				// 'url' => get_post_permalink( $item->element_id ),
-				
 				'url' => strtok( get_post_permalink( $item->element_id ), '?' ),
-				
-				// 'url' => get_permalink( $item->element_id ),
 			];
 		}
 
@@ -325,14 +299,6 @@ class BaseHeader
 
 	public static function replace_urls( $urls = [] )
 	{
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
-
-			'count' => count( $urls ),
-
-			'urls' => $urls,
-		] );
-
 		$home = self::get_home_page();
 
 		if ( !empty( $home ) )
@@ -342,95 +308,14 @@ class BaseHeader
 			$urls = self::replace_urls_iteration( $urls, $home_urls );
 		}
 
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
-
-			'count' => count( $urls ),
-
-			'urls' => $urls,
-
-			'home->post_title' => $home->post_title,
-		] );
-
 		$cross = self::get_cross_page();
-		
-		// $cross = null;
-
-		// $permission_casino = self::get_casino_permission();
-
-		// if ( $permission_casino )
-		// {
-		// 	$cross = self::get_cross( self::TERM[ 'cross-casino' ] );
-		// }
-		// else
-		// {
-		// 	$cross = self::get_cross();
-		// }
-
-		// LegalDebug::debug( [
-		// 	'function' => 'BaseHeader::replace_urls',
-
-		// 	'count' => count( $urls ),
-
-		// 	'urls' => $urls,
-
-		// 	'cross->post_title' => $cross->post_title,
-		// ] );
 
 		if ( !empty( $cross ) )
 		{
-			// $cross_trid = WPMLTrid::get_trid( $cross->ID );
-
-			// $cross_group = WPMLTrid::get_translation_group( $cross_trid );
-
-			// $cross_urls = self::get_cross_urls( $cross_group );
-			
 			$cross_urls = self::get_page_urls( $cross );
 
 			$urls = self::replace_urls_iteration( $urls, $cross_urls );
-
-			// LegalDebug::debug( [
-			// 	'function' => 'BaseHeader::replace_urls',
-
-			// 	'count' => count( $cross_urls ),
-
-			// 	'cross_urls' => $cross_urls,
-			// ] );
-
-			// if ( !empty( $cross_urls ) ) {
-			// 	$keys = array_keys( $urls );
-
-			// 	$cross_urls = array_intersect_key(
-			// 		$cross_urls, 
-
-			// 		array_flip( $keys )
-			// 	);
-
-			// 	// LegalDebug::debug( [
-			// 	// 	'function' => 'BaseHeader::replace_urls',
-
-			// 	// 	'count_keys' => count( $keys ),
-		
-			// 	// 	'keys' => $keys,
-
-			// 	// 	'count_cross_urls' => count( $cross_urls ),
-
-			// 	// 	'cross_urls' => $cross_urls,
-			// 	// ] );
-
-			// 	return array_replace_recursive( $urls, $cross_urls );
-			// }
 		}
-
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
-
-			'count' => count( $urls ),
-
-			'urls' => $urls,
-
-			'cross->post_title' => $cross->post_title,
-		] );
 
 		return $urls;
 	}
@@ -441,72 +326,9 @@ class BaseHeader
         'eng',
 	];
 
-	// public static function get_menu_languages()
-	// {
-	// 	$code = WPMLMain::current_language();
-		
-	// 	$search[ 'avaible' ] = WPMLMain::search_language();
-
-	// 	// LegalDebug::debug( [
-	// 	// 	'avaible' => $search[ 'avaible' ],
-	// 	// ] );
-
-	// 	$search[ 'current' ] = $search[ 'avaible' ][ $code ];
-
-	// 	unset( $search[ 'avaible' ][ $code ] );
-		
-	// 	$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
-
-	// 	$parse = self::parse_languages( $search );
-
-	// 	return $parse;
-	// }
-
 	public static function get_menu_languages()
 	{
-		// $languages_all = WPMLMain::get_all_languages();
-
-		// $code = WPMLMain::current_language();
-
-		// LegalDebug::debug( [
-		// 	'code' => $code,
-		// ] );
-
-		// $search[ 'current' ] = $languages_all[ $code ];
-
-		// LegalDebug::debug( [
-		// 	'current' => $search[ 'current' ],
-		// ] );
-
-		// unset( $languages_all[ $code ] );
-
-		// $languages_all = WPMLMain::exclude( $languages_all );
-
-		// LegalDebug::debug( [
-		// 	'languages_all' => $languages_all,
-		// ] );
-
-		// $lang = WPMLMain::get_group_language();
-
-		// $search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
-
 		$search = self::search_languages();
-
-		// LegalDebug::debug( [
-		// 	'lang' => $lang,
-
-		// 	'avaible' => $search[ 'avaible' ],
-		// ] );
-		
-		// $search[ 'avaible' ] = WPMLMain::search_language();
-
-		// LegalDebug::debug( [
-		// 	'avaible' => $search[ 'avaible' ],
-		// ] );
-
-		// $search[ 'current' ] = $search[ 'avaible' ][ $code ];
-
-		// unset( $search[ 'avaible' ][ $code ] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
