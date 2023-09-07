@@ -15,18 +15,6 @@ class LegalDOM
 		return $dom;
 	}
 
-	// public static function saveHTML( $body )
-	// {
-	// 	$items = [];
-
-	// 	foreach( $body->childNodes as $node )
-	// 	{
-	// 		$items[] = $body->ownerdocument->saveHTML( $node );
-	// 	}
-
-	// 	return implode( '', $items );
-	// }
-
 	public static function appendHTML( DOMNode $parent, $source ) {
 		$tmpDoc = new DOMDocument();
 

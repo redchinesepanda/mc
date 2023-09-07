@@ -259,40 +259,158 @@ class BaseHeader
 		return $urls;
 	}
 
+	public static function get_casino_permission()
+	{
+		return has_term( [ self::TERM[ 'casino' ], self::TERM[ 'cross-casino' ] ], self::TAXONOMY[ 'type' ] );
+	}
+
+	public static function get_page_urls( $post )
+	{
+		$trid = WPMLTrid::get_trid( $post->ID );
+
+		$group = WPMLTrid::get_translation_group( $trid );
+
+		return self::get_cross_urls( $group );
+	}
+
+	public static function get_home_page()
+	{
+		return get_post( get_option( 'page_on_front' ) );
+	}
+
+	public static function get_cross_page()
+	{
+		$permission_casino = self::get_casino_permission();
+
+		if ( $permission_casino )
+		{
+			return self::get_cross( self::TERM[ 'cross-casino' ] );
+		}
+		else
+		{
+			return self::get_cross();
+		}
+
+		return null;
+	}
+
+	public static function replace_urls_iteration( $urls, $replace_urls = [] )
+	{
+		if ( !empty( $cross_urls ) ) {
+			$keys = array_keys( $urls );
+
+			$cross_urls = array_intersect_key(
+				$cross_urls, 
+
+				array_flip( $keys )
+			);
+
+			return array_replace_recursive( $urls, $cross_urls );
+		}
+
+		return $urls;
+	}
+
 	public static function replace_urls( $urls = [] )
 	{
-		$cross = null;
+		$home = self::get_homepage();
 
-		if ( has_term( self::TERM[ 'casino' ], self::TAXONOMY[ 'type' ] ) )
+		if ( !empty( $home ) )
 		{
-			$cross = self::get_cross( self::TERM[ 'cross-casino' ] );
+			$home_urls = self::get_page_urls( $home );
+
+			$urls = self::replace_urls_iteration( $urls, $home_urls );
 		}
 
-		if ( empty( $cross ) )
-		{
-			$cross = self::get_cross();
-		}
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			'count' => count( $urls ),
+
+			'urls' => $urls,
+
+			'cross->post_title' => $cross->post_title,
+		] );
+
+		$cross = self::get_cross_page();
+		
+		// $cross = null;
+
+		// $permission_casino = self::get_casino_permission();
+
+		// if ( $permission_casino )
+		// {
+		// 	$cross = self::get_cross( self::TERM[ 'cross-casino' ] );
+		// }
+		// else
+		// {
+		// 	$cross = self::get_cross();
+		// }
+
+		// LegalDebug::debug( [
+		// 	'function' => 'BaseHeader::replace_urls',
+
+		// 	'count' => count( $urls ),
+
+		// 	'urls' => $urls,
+
+		// 	'cross->post_title' => $cross->post_title,
+		// ] );
 
 		if ( !empty( $cross ) )
 		{
-			$cross_trid = WPMLTrid::get_trid( $cross->ID );
+			// $cross_trid = WPMLTrid::get_trid( $cross->ID );
 
-			$cross_group = WPMLTrid::get_translation_group( $cross_trid );
+			// $cross_group = WPMLTrid::get_translation_group( $cross_trid );
 
-			$cross_urls = self::get_cross_urls( $cross_group );
+			// $cross_urls = self::get_cross_urls( $cross_group );
+			
+			$cross_urls = self::get_page_urls( $cross );
 
-			if ( !empty( $cross_urls ) ) {
-				$keys = array_keys( $urls );
+			$urls = self::replace_urls_iteration( $urls, $cross_urls );
 
-				$cross_urls = array_intersect_key(
-					$cross_urls, 
+			// LegalDebug::debug( [
+			// 	'function' => 'BaseHeader::replace_urls',
 
-					array_flip( $keys )
-				);
+			// 	'count' => count( $cross_urls ),
 
-				return array_replace_recursive( $urls, $cross_urls );
-			}
+			// 	'cross_urls' => $cross_urls,
+			// ] );
+
+			// if ( !empty( $cross_urls ) ) {
+			// 	$keys = array_keys( $urls );
+
+			// 	$cross_urls = array_intersect_key(
+			// 		$cross_urls, 
+
+			// 		array_flip( $keys )
+			// 	);
+
+			// 	// LegalDebug::debug( [
+			// 	// 	'function' => 'BaseHeader::replace_urls',
+
+			// 	// 	'count_keys' => count( $keys ),
+		
+			// 	// 	'keys' => $keys,
+
+			// 	// 	'count_cross_urls' => count( $cross_urls ),
+
+			// 	// 	'cross_urls' => $cross_urls,
+			// 	// ] );
+
+			// 	return array_replace_recursive( $urls, $cross_urls );
+			// }
 		}
+
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			'count' => count( $urls ),
+
+			'urls' => $urls,
+
+			'cross->post_title' => $cross->post_title,
+		] );
 
 		return $urls;
 	}
