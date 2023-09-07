@@ -178,7 +178,7 @@ class ReviewBonus
 			return $content;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+		// $body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
 		$bonus = null;
 
@@ -279,26 +279,61 @@ class ReviewBonus
 				
 				LegalDOM::appendHTML( $item, ToolEncode::encode( $item_html ) );
 
+				// try
+				// {
+				// 	$body->replaceChild( $item, $node );
+				// } catch ( DOMException $e )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'ReviewCounter::get_content > replaceChild DOMException',
+				// 	] );
+				// }
+
 				try
 				{
-					$body->replaceChild( $item, $node );
-				} catch ( DOMException $e )
+					$node->parentNode->replaceChild( $item, $node );
+				}
+				catch ( DOMException $e )
 				{
 					LegalDebug::debug( [
-						'ReviewCounter::get_content > replaceChild DOMException',
+						'class' => 'ReviewBonus',
+
+						'function' => 'get_content,replaceChild',
+
+						'node' => substr( $node->textContent, 0, 30 ),
+
+						'message' => $e->getMessage(),
 					] );
 				}
 
 				$index++;
-			} else
+			}
+			else
 			{
+				// try
+				// {
+				// 	$body->removeChild( $node );
+				// } catch ( DOMException $e )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'ReviewCounter::get_content > removeChild DOMException',
+				// 	] );
+				// }
+
 				try
 				{
-					$body->removeChild( $node );
-				} catch ( DOMException $e )
+					$node->parentNode->removeChild( $node );
+				}
+				catch ( DOMException $e )
 				{
 					LegalDebug::debug( [
-						'ReviewCounter::get_content > removeChild DOMException',
+						'class' => 'ReviewBonus',
+
+						'function' => 'get_content,removeChild',
+
+						'node' => substr( $node->textContent, 0, 30 ),
+
+						'message' => $e->getMessage(),
 					] );
 				}
 			}
