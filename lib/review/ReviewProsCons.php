@@ -227,9 +227,14 @@ class ReviewProsCons
 					$element->appendChild( $item );
 				}
 
-				try {
-					$body->replaceChild( $element, $node );
-				} catch ( DOMException $e ) {
+				try
+				{
+					// $body->replaceChild( $element, $node );
+					
+					$dom->replaceChild( $element, $node );
+				}
+				catch ( DOMException $e )
+				{
 					LegalDebug::debug( [
 						'class' => 'ReviewProsCons',
 
