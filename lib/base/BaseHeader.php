@@ -212,7 +212,7 @@ class BaseHeader
 			// 	$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
 			// }
 
-			$prefix = get_title_prefix( $language );
+			$prefix = self::get_title_prefix( $language );
 
 			$title = $prefix . ' ' . $label;
 
