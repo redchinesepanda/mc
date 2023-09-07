@@ -252,7 +252,11 @@ class BaseHeader
 		foreach ( $items as $lang => $item )
 		{
 			$urls[ $lang ] = [
-				'url' => get_post_permalink( $item->element_id ),
+				// 'url' => get_post_permalink( $item->element_id ),
+				
+				'url' => strtok( get_post_permalink( $item->element_id ), '?' ),
+				
+				// 'url' => get_permalink( $item->element_id ),
 			];
 		}
 
@@ -275,6 +279,14 @@ class BaseHeader
 
 	public static function get_home_page()
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::get_home_page',
+
+			'page_on_front' => get_option( 'page_on_front' ),
+
+			'home' => get_option( 'home' ),
+		] );
+
 		return get_post( get_option( 'page_on_front' ) );
 	}
 
@@ -313,6 +325,14 @@ class BaseHeader
 
 	public static function replace_urls( $urls = [] )
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			'count' => count( $urls ),
+
+			'urls' => $urls,
+		] );
+
 		$home = self::get_home_page();
 
 		if ( !empty( $home ) )
