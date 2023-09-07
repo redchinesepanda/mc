@@ -44,7 +44,9 @@ class BilletMega
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( '//body/*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
+		// return $xpath->query( '//body/*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
+		
+		return $xpath->query( '//*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
 	}
 
 	public static function get_parts( $content )
