@@ -229,9 +229,9 @@ class ReviewProsCons
 
 				try
 				{
-					// $body->replaceChild( $element, $node );
+					$body->replaceChild( $element, $node );
 					
-					$node->parentNode->replaceChild( $element, $node );
+					// $node->parentNode->replaceChild( $element, $node );
 					
 					// $dom->replaceChild( $element, $node );
 				}
@@ -253,9 +253,9 @@ class ReviewProsCons
 				$container = [];
 			} else {
 				try {
-					// $body->removeChild( $node );
+					$body->removeChild( $node );
 					
-					$node->parentNode->removeChild( $node );
+					// $node->parentNode->removeChild( $node );
 					
 					// $dom->removeChild( $node );
 				} catch ( DOMException $e ) {

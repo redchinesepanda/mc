@@ -7,9 +7,9 @@ class LegalDOM
 		$dom = new DOMDocument();
 
 		if ( !empty( $content ) ) {
-			// $dom->loadHTML( $content, LIBXML_NOERROR );
+			$dom->loadHTML( $content, LIBXML_NOERROR );
 			
-			$dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 		}
 
 		return $dom;
