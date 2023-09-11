@@ -71,8 +71,8 @@ class LegalDOM
 					] );
 
 					// $node = $parent->ownerDocument->importNode( $node, true );
-					
-					$imported_node = $dom->importNode( $node, true );
+
+					$imported_node = $parent->ownerDocument->importNode( $node, true );
 
 					$parent->appendChild( $imported_node );
 				}
