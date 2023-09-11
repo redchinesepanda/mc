@@ -131,7 +131,7 @@ class ReviewList
 
             'check' => ReviewMain::check() ? 'true' : 'false',
 
-            'length' => $nodes->length,
+            // 'length' => $nodes->length,
         ] );
 
 		// foreach ( $nodes as $node_id => $node )
