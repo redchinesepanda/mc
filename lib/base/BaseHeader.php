@@ -153,16 +153,6 @@ class BaseHeader
 
 		$result = $path_count <= 1;
 
-		// LegalDebug::debug( [
-		// 	'path' => $path,
-
-		// 	'path_array' => $path_array,
-
-		// 	'path_count' => $path_count,
-
-		// 	'result' => $result,
-		// ] );
-
 		return $result;
 	}
 
@@ -195,22 +185,8 @@ class BaseHeader
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 		];
 
-		// $prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
-
-		// if ( self::get_casino_permission() )
-		// {
-		// 	$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
-		// }
-
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
-
-			// $title = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN ) . ' ' . ( $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK' );
-
-			// if ( self::check_root_url( $language[ 'url' ] ) )
-			// {
-			// 	$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
-			// }
 
 			$prefix = self::get_title_prefix( $language );
 

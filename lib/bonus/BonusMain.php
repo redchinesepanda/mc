@@ -36,6 +36,14 @@ class BonusMain
         $permission_admin = !is_admin();
 
         $permission_post_type = is_singular( [ 'page' ] );
+
+		LegalDebug::debug( [
+			'permission_admin' => $permission_admin ? 'true' : 'false',
+
+			'permission_post_type' => $permission_post_type ? 'true' : 'false',
+
+			'result' => $permission_admin && $permission_post_type ? 'true' : 'false',
+		] );
         
         return $permission_admin && $permission_post_type;
     }
