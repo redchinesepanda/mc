@@ -16,13 +16,19 @@ class LegalDOM
 	}
 
 	public static function appendHTML( DOMNode $parent, $source ) {
-		$tmpDoc = new DOMDocument();
+		$dom = new DOMDocument();
 
 		if ( !empty( $source ) ) {
-			$tmpDoc->loadHTML( $source, LIBXML_NOERROR );
+			// $dom->loadHTML( $source, LIBXML_NOERROR );
+			
+			$dom->loadHTML( $source, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED  );
 
-			if ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes() ) {
-				foreach ( $tmpDoc->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
+			// if ( $dom->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes() ) {
+			
+			if ( $dom->hasChildNodes() ) {
+				// foreach ( $dom->getElementsByTagName( 'body' )->item( 0 )->childNodes as $node ) {
+				
+				foreach ( $dom->childNodes as $node ) {
 					$node = $parent->ownerDocument->importNode( $node, true );
 
 					$parent->appendChild( $node );
