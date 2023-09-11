@@ -32,15 +32,17 @@ class LegalDOM
 		return $dom;
 	}
 
-	public static function appendHTML( DOMNode $parent, $source )
+	public static function appendHTML( DOMNode $parent, $content )
 	{
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
 
-		if ( !empty( $source ) )
+		if ( !empty( $content ) )
 		{
-			// $dom->loadHTML( $source, LIBXML_NOERROR );
+			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
-			$dom->loadHTML( $source, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED  );
+			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED  );
+
+			$dom = get_dom( $content );
 
 			// if ( $dom->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes() ) {
 			
