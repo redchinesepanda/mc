@@ -70,7 +70,7 @@ class LegalDOM
 						'$node' => $node,
 					] );
 
-					$node = $parent->ownerDocument->importNode( $node, true );
+					// $node = $parent->ownerDocument->importNode( $node, true );
 
 					$parent->appendChild( $node );
 				}
