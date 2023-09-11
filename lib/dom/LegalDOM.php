@@ -50,7 +50,7 @@ class LegalDOM
 	{
 		// $dom = new DOMDocument();
 
-		if ( !empty( $parent ) && !empty( $content ) )
+		if ( !empty( $content ) )
 		{
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
@@ -66,6 +66,10 @@ class LegalDOM
 				
 				foreach ( $dom->childNodes as $node )
 				{
+					LegalDebug::debug( [
+						'$node' => $node,
+					] );
+
 					$node = $parent->ownerDocument->importNode( $node, true );
 
 					$parent->appendChild( $node );
