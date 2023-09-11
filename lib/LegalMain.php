@@ -47,9 +47,9 @@ class LegalMain {
 	{
 		if ( self::check() )
 		{
-			// LegalComponents::register();
+			LegalComponents::register();
 	
-			// ACFMain::register();
+			ACFMain::register();
 	
 			AdminMain::register();
 	
@@ -57,7 +57,7 @@ class LegalMain {
 	
 			LegalBreadcrumbsMain::register();
 	
-			// ReviewMain::register();
+			ReviewMain::register();
 	
 			ToolsMain::register();
 	
