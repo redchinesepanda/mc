@@ -166,7 +166,7 @@ class ReviewMain
 
         // ReviewList::register();
 
-        // ReviewOffers::register();
+        ReviewOffers::register();
 
         ReviewTitle::register();
     }
