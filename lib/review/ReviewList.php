@@ -126,24 +126,24 @@ class ReviewList
 			return $content;
 		}
 
-		foreach ( $nodes as $node_id => $node )
-        {
-            $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
+		// foreach ( $nodes as $node_id => $node )
+        // {
+        //     $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
 
-            $node->setAttribute( 'class', $node_class );
+        //     $node->setAttribute( 'class', $node_class );
 
-            $elements = $node->getElementsByTagName( 'li' );
+        //     $elements = $node->getElementsByTagName( 'li' );
         
-            if ( $elements->length != 0 )
-            {
-                foreach ( $elements as $element_id => $element )
-                {
-                    $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
+        //     if ( $elements->length != 0 )
+        //     {
+        //         foreach ( $elements as $element_id => $element )
+        //         {
+        //             $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
 
-                    $element->setAttribute( 'class', $element_class );
-                }
-            }
-		}
+        //             $element->setAttribute( 'class', $element_class );
+        //         }
+        //     }
+		// }
 
 		return $dom->saveHTML();
 	}
