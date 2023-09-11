@@ -120,6 +120,18 @@ class ReviewList
 
 		$dom = LegalDOM::get_dom( $content );
 
+        if ( $dom->hasChildNodes() )
+        {
+            foreach ( $dom->childNodes as $node )
+            {
+                LegalDebug::debug( [
+                    'function' => 'ReviewList::get_content',
+
+                    'textContent' => $node->textContent,
+                ] );
+            }
+        }
+
         // $nodes = self::get_nodes( $dom );
 
 		// if ( $nodes->length == 0 ) {
