@@ -76,7 +76,10 @@ class LegalDOM
 						'$imported_node' => $imported_node ? $imported_node : 'false',
 					] );
 
-					$parent->appendChild( $imported_node );
+					if ( !empty( $imported_node ) )
+					{
+						$parent->appendChild( $imported_node );
+					}
 				}
 			}
 		}
