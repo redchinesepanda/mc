@@ -30,7 +30,7 @@ class ReviewList
 
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list' ] );
 
-        // add_filter( 'the_content', [ $handler, 'get_content' ] );
+        add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
     public static function inline_style()
