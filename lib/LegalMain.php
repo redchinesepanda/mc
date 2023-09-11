@@ -49,7 +49,7 @@ class LegalMain {
 		{
 			// LegalComponents::register();
 	
-			ACFMain::register();
+			// ACFMain::register();
 	
 			AdminMain::register();
 	
