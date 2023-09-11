@@ -177,6 +177,8 @@ class ReviewList
             'function' => 'ReviewList::get_content',
 
             'saveHTML' => $dom->saveHTML(),
+
+            'saveXML' => $dom->saveXML(),
         ] );
 
 		return $dom->saveHTML();
