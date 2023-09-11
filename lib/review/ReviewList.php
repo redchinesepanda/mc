@@ -173,6 +173,12 @@ class ReviewList
         //     }
 		// }
 
+        LegalDebug::debug( [
+            'function' => 'ReviewList::get_content',
+
+            'saveHTML' => $dom->saveHTML(),
+        ] );
+
 		return $dom->saveHTML();
 
         // return $content;
