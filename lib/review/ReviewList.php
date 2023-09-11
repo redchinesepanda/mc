@@ -116,76 +116,36 @@ class ReviewList
 	{
         if ( !ReviewMain::check() ) {
 			return $content;
+		};
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 ) {
+			return $content;
 		}
 
-        // LegalDebug::debug( [
-        //     'function' => 'ReviewList::get_content',
-
-        //     'content' => $content,
-        // ] );
-
-		$dom = LegalDOM::get_dom( $content ); 
-		
-        // $dom = LegalDOM::get_dom( '<div>' . $content . '</div>' ); 
-
-        if ( $dom->hasChildNodes() )
+		foreach ( $nodes as $node_id => $node )
         {
-            foreach ( $dom->childNodes as $node )
-            {
-                // LegalDebug::debug( [
-                //     'function' => 'ReviewList::get_content',
+            $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
 
-                //     'nodeName' => $node->nodeName,
+            $node->setAttribute( 'class', $node_class );
 
-                //     'nodeValue' => $node->nodeValue,
-                // ] );
-            }
-        }
-
-        // $nodes = self::get_nodes( $dom );
-
-		// if ( $nodes->length == 0 ) {
-		// 	return $content;
-		// }
-
-        // LegalDebug::debug( [
-        //     'function' => 'ReviewList::get_content',
-
-        //     'check' => ReviewMain::check() ? 'true' : 'false',
-
-        //     // 'length' => $nodes->length,
-        // ] );
-
-		// foreach ( $nodes as $node_id => $node )
-        // {
-        //     $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
-
-        //     $node->setAttribute( 'class', $node_class );
-
-        //     $elements = $node->getElementsByTagName( 'li' );
+            $elements = $node->getElementsByTagName( 'li' );
         
-        //     if ( $elements->length != 0 )
-        //     {
-        //         foreach ( $elements as $element_id => $element )
-        //         {
-        //             $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
+            if ( $elements->length != 0 )
+            {
+                foreach ( $elements as $element_id => $element )
+                {
+                    $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
 
-        //             $element->setAttribute( 'class', $element_class );
-        //         }
-        //     }
-		// }
-
-        // LegalDebug::debug( [
-        //     'function' => 'ReviewList::get_content',
-
-        //     'saveHTML' => $dom->saveHTML(),
-
-        //     'saveXML' => $dom->saveXML(),
-        // ] );
+                    $element->setAttribute( 'class', $element_class );
+                }
+            }
+		}
 
 		return $dom->saveHTML();
-
-        // return $content;
 	}
 
     const CLASSES = [
