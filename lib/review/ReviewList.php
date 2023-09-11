@@ -94,9 +94,9 @@ class ReviewList
 	{
 		$xpath = new DOMXPath( $dom );
 
-        return $xpath->query( './/ul[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
+        // return $xpath->query( './/ul[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
         
-        // return $xpath->query( '//ul[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
+        return $xpath->query( '//ul[contains(@class, \'' . self::CLASSES[ 'base' ] . '\')]' );
 	}
 
     public static function get_lists()
