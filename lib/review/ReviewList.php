@@ -124,9 +124,9 @@ class ReviewList
         //     'content' => $content,
         // ] );
 
-		// $dom = LegalDOM::get_dom( $content ); 
+		$dom = LegalDOM::get_dom( $content ); 
 		
-        $dom = LegalDOM::get_dom( '<div>' . $content . '</div>' ); 
+        // $dom = LegalDOM::get_dom( '<div>' . $content . '</div>' ); 
 
         if ( $dom->hasChildNodes() )
         {

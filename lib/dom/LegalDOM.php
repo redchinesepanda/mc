@@ -10,7 +10,23 @@ class LegalDOM
 		{
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
-			$dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+			
+			$dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+
+			$container = $dom->getElementsByTagName( 'div' )->item( 0 );
+
+			$container = $container->parentNode->removeChild( $container );
+
+			while ( $dom->firstChild )
+			{
+				$dom->removeChild( $dom->firstChild );
+			}
+
+			while ( $container->firstChild )
+			{
+				$dom->appendChild( $container->firstChild );
+			}
 		}
 
 		return $dom;
