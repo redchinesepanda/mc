@@ -118,11 +118,11 @@ class ReviewList
 			return $content;
 		}
 
-        LegalDebug::debug( [
-            'function' => 'ReviewList::get_content',
+        // LegalDebug::debug( [
+        //     'function' => 'ReviewList::get_content',
 
-            'content' => $content,
-        ] );
+        //     'content' => $content,
+        // ] );
 
 		// $dom = LegalDOM::get_dom( $content ); 
 		
@@ -132,13 +132,13 @@ class ReviewList
         {
             foreach ( $dom->childNodes as $node )
             {
-                LegalDebug::debug( [
-                    'function' => 'ReviewList::get_content',
+                // LegalDebug::debug( [
+                //     'function' => 'ReviewList::get_content',
 
-                    'nodeName' => $node->nodeName,
+                //     'nodeName' => $node->nodeName,
 
-                    'nodeValue' => $node->nodeValue,
-                ] );
+                //     'nodeValue' => $node->nodeValue,
+                // ] );
             }
         }
 
@@ -148,13 +148,13 @@ class ReviewList
 		// 	return $content;
 		// }
 
-        LegalDebug::debug( [
-            'function' => 'ReviewList::get_content',
+        // LegalDebug::debug( [
+        //     'function' => 'ReviewList::get_content',
 
-            'check' => ReviewMain::check() ? 'true' : 'false',
+        //     'check' => ReviewMain::check() ? 'true' : 'false',
 
-            // 'length' => $nodes->length,
-        ] );
+        //     // 'length' => $nodes->length,
+        // ] );
 
 		// foreach ( $nodes as $node_id => $node )
         // {
@@ -175,13 +175,13 @@ class ReviewList
         //     }
 		// }
 
-        LegalDebug::debug( [
-            'function' => 'ReviewList::get_content',
+        // LegalDebug::debug( [
+        //     'function' => 'ReviewList::get_content',
 
-            'saveHTML' => $dom->saveHTML(),
+        //     'saveHTML' => $dom->saveHTML(),
 
-            'saveXML' => $dom->saveXML(),
-        ] );
+        //     'saveXML' => $dom->saveXML(),
+        // ] );
 
 		return $dom->saveHTML();
 
