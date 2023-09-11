@@ -47,7 +47,7 @@ class LegalMain {
 	{
 		if ( self::check() )
 		{
-			LegalComponents::register();
+			// LegalComponents::register();
 	
 			ACFMain::register();
 	
