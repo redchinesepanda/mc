@@ -145,7 +145,9 @@ class ReviewList
         //     }
 		// }
 
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
+
+        return $content;
 	}
 
     const CLASSES = [
