@@ -126,6 +126,14 @@ class ReviewList
 			return $content;
 		}
 
+        LegalDebug::debug( [
+            'function' => 'ReviewList::get_content',
+
+            'check' => ReviewMain::check() ? 'true' : 'false';
+
+            'length' => $nodes->length,
+        ] );
+
 		// foreach ( $nodes as $node_id => $node )
         // {
         //     $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
