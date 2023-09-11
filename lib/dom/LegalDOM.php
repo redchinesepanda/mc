@@ -73,7 +73,7 @@ class LegalDOM
 					LegalDebug::debug( [
 						'$node' => $node,
 
-						'$imported_node' => $imported_node,
+						'$imported_node' => $imported_node ? $imported_node : 'false',
 					] );
 
 					$parent->appendChild( $imported_node );
