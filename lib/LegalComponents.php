@@ -20,7 +20,7 @@ class LegalComponents
 
 		// CompilationTabs::register();
 		
-		CompilationTabsMain::register();
+		// CompilationTabsMain::register();
 
 		BonusMain::register();
 	} 
