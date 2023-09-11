@@ -66,13 +66,15 @@ class LegalDOM
 				
 				foreach ( $dom->childNodes as $node )
 				{
-					LegalDebug::debug( [
-						'$node' => $node,
-					] );
-
 					// $node = $parent->ownerDocument->importNode( $node, true );
 
 					$imported_node = $parent->ownerDocument->importNode( $node, true );
+
+					LegalDebug::debug( [
+						'$node' => $node,
+
+						'$imported_node' => $imported_node,
+					] );
 
 					$parent->appendChild( $imported_node );
 				}
