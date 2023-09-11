@@ -42,7 +42,7 @@ class LegalDOM
 			
 			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED  );
 
-			$dom = get_dom( $content );
+			$dom = self::get_dom( $content );
 
 			// if ( $dom->getElementsByTagName( 'body' )->item( 0 )->hasChildNodes() ) {
 			
