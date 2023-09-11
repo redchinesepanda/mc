@@ -50,7 +50,7 @@ class LegalDOM
 	{
 		// $dom = new DOMDocument();
 
-		if ( !empty( $content ) )
+		if ( !empty( $parent ) && !empty( $content ) )
 		{
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
