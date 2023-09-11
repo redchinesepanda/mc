@@ -118,7 +118,13 @@ class ReviewList
 			return $content;
 		}
 
-		$dom = LegalDOM::get_dom( $content );
+        LegalDebug::debug( [
+            'function' => 'ReviewList::get_content',
+
+            'content' => $content,
+        ] );
+
+		$dom = LegalDOM::get_dom( $content ); 
 
         if ( $dom->hasChildNodes() )
         {
