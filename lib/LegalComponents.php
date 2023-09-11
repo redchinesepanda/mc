@@ -22,7 +22,7 @@ class LegalComponents
 		
 		CompilationTabsMain::register();
 
-		// BonusMain::register();
+		BonusMain::register();
 	} 
 	
 	public static function check()
