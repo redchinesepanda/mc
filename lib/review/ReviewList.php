@@ -135,7 +135,7 @@ class ReviewList
 
                     'nodeName' => $node->nodeName,
 
-                    'textContent' => $node->textContent,
+                    'nodeValue' => $node->nodeValue,
                 ] );
             }
         }
