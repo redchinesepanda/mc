@@ -127,6 +127,8 @@ class ReviewList
                 LegalDebug::debug( [
                     'function' => 'ReviewList::get_content',
 
+                    'nodeName' => $node->nodeName,
+
                     'textContent' => $node->textContent,
                 ] );
             }
