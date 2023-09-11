@@ -288,7 +288,7 @@ class ReviewProsCons
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
+		$nodes = $xpath->query( '//*[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
 
 		return $nodes;
 	}
