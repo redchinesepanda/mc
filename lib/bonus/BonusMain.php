@@ -20,7 +20,7 @@ class BonusMain
         'legal-bonus' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus.css',
 
-            'ver'=> '1.0.2',
+            'ver'=> '1.0.3',
         ],
     ];
 
@@ -28,6 +28,10 @@ class BonusMain
     {
         if ( self::check() ) {
             ToolEnqueue::register_style( self::CSS );
+
+			// LegalDebug::debug( [
+			// 	'function' => 'BonusMain::register_style',
+			// ] );
         }
     }
 
@@ -37,13 +41,13 @@ class BonusMain
 
         $permission_post_type = is_singular( [ 'page' ] );
 
-		LegalDebug::debug( [
-			'permission_admin' => $permission_admin ? 'true' : 'false',
+		// LegalDebug::debug( [
+		// 	'permission_admin' => $permission_admin ? 'true' : 'false',
 
-			'permission_post_type' => $permission_post_type ? 'true' : 'false',
+		// 	'permission_post_type' => $permission_post_type ? 'true' : 'false',
 
-			'result' => $permission_admin && $permission_post_type ? 'true' : 'false',
-		] );
+		// 	'result' => $permission_admin && $permission_post_type ? 'true' : 'false',
+		// ] );
         
         return $permission_admin && $permission_post_type;
     }

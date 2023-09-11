@@ -3,7 +3,7 @@
 class WPMLLangSwitcher
 {
     const CSS = [
-        [
+        'legal-wpml-lang-switcher' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css',
     
             'ver' => '1.0.1',
