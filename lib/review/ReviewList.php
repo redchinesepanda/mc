@@ -129,7 +129,7 @@ class ReviewList
         LegalDebug::debug( [
             'function' => 'ReviewList::get_content',
 
-            'check' => ReviewMain::check() ? 'true' : 'false';
+            'check' => ReviewMain::check() ? 'true' : 'false',
 
             'length' => $nodes->length,
         ] );
