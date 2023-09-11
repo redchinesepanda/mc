@@ -70,11 +70,11 @@ class LegalDOM
 
 					$imported_node = $parent->ownerDocument->importNode( $node, true );
 
-					LegalDebug::debug( [
-						'$node' => $node,
+					// LegalDebug::debug( [
+					// 	'$node' => $node,
 
-						'$imported_node' => $imported_node ? $imported_node : 'false',
-					] );
+					// 	'$imported_node' => $imported_node ? $imported_node : 'false',
+					// ] );
 
 					if ( !empty( $imported_node ) )
 					{
