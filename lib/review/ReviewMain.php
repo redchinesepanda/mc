@@ -156,15 +156,15 @@ class ReviewMain
 
         ReviewBonus::register();
 
-        // ReviewHowTo::register();
+        ReviewHowTo::register();
 
-        // ReviewBanner::register();
+        ReviewBanner::register();
 
-        // ReviewAuthor::register();
+        ReviewAuthor::register();
 
-        // ReviewCounter::register();
+        ReviewCounter::register();
 
-        ReviewList::register();
+        // ReviewList::register();
 
         ReviewOffers::register();
 
