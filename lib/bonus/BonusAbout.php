@@ -90,6 +90,10 @@ class BonusAbout
 
     public static function render()
     {
+		LegalDebug::debug( [
+			'function' => 'BonusAbout::render',
+		] );
+
         if ( !BonusMain::check() )
         {
             return '';
