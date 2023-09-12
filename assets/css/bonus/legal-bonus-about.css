@@ -47,6 +47,10 @@
 	border-radius: 20px;
 }
 
+.legal-bonus-about .about-action-get {
+	background-color: rgb(89, 151, 227);
+}
+
 /* Typography */
 
 .legal-bonus-about .about-data-title {
@@ -66,4 +70,14 @@
 	letter-spacing: normal;
 	line-height: 28px;
 	color: rgb(255, 255, 255);
+}
+
+.legal-bonus-about .about-action-get {
+	color: rgb(255, 255, 255);
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 1px;
+	line-height: 14.4px;
 }
