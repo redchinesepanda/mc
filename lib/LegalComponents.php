@@ -10,6 +10,8 @@ require_once( 'tabs/CompilationTabsMain.php' );
 
 require_once( 'bonus/BonusMain.php' );
 
+require_once( 'template/TemplateMain.php' );
+
 class LegalComponents
 {
 	public static function register()
@@ -23,6 +25,8 @@ class LegalComponents
 		CompilationTabsMain::register();
 
 		BonusMain::register();
+
+		TemplateMain::register();
 	} 
 	
 	public static function check()
