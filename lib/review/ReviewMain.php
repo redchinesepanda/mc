@@ -208,7 +208,7 @@ class ReviewMain
     {
         $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
+        $permission_post_type = is_singular( [ 'page', 'post', 'legal_bk_review' ] );
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
