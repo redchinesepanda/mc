@@ -16,7 +16,14 @@
 
 /* Background */
 
-.legal-section-header,
+.legal-section-header {
+	background-color: rgb(13, 11, 47);
+}
+
+.legal-section-breadcrumbs {
+	background-color: rgb(89, 151, 227);
+}
+
 .legal-section-footer {
 	background-color: rgb(13, 11, 47);
 }
