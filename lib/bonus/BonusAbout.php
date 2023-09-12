@@ -24,6 +24,57 @@ class BonusAbout
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+	public static function get_id()
+    {
+        if ( !empty( $post = get_post() ) )
+        {
+            return $post->ID;
+        }
+
+        return 0;
+    }
+
+	const FIELD = [
+		'bonus-title' => 'h1',
+
+		'bonus-description' => 'pod-h1',
+
+		'bonus-src' => 'img-bk',
+
+		'bonus-bookmaker-name' => 'name-bk',
+
+		'bonus-affilate-primary' => 'ref-ssylka',
+
+		'bonus-affilate-secondary' => 'ref-perelinkovka',
+	];
+
+	public static function get()
+    {
+        $id = self::get_id();
+        
+		if ( empty( $id ) )
+		{
+			return [];
+        }
+
+		return [
+			'title' => get_field( self::FIELD[ 'bonus-title' ], $id ),
+			
+			'description' => get_field( self::FIELD[ 'bonus-description' ], $id ),
+
+			'logo' => [
+				'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),
+
+				'alt' => get_field( self::FIELD[ 'bonus-bookmaker-name' ], $id ),
+			],
+
+			'button' => [
+				'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
+
+				'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
+			],
+		];
+    }
 
 	const TEMPLATE = [
         'bonus-about' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about.php',

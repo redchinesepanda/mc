@@ -11,6 +11,8 @@ class BonusMain
 
 		'bonus-logo' => 'Bonus Logo',
 
+		'claim-bonus' => 'Claim Bonus',
+
 		'get-bonus' => 'Get Bonus',
 	];
 
