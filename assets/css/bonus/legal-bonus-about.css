@@ -27,7 +27,7 @@
 }
 
 .legal-bonus-about .about-action-get {
-	padding: 12px 25px;
+	padding: 39px 25px;
 }
 
 /* Width and Height */
@@ -53,6 +53,10 @@
 
 .legal-bonus-about .about-action-get {
 	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/bonus/bonus-get.svg' );
+	background-position: left 12px center;
+	background-repeat: no-repeat;
+	background-size: auto;
 	border-radius: 20px;
 }
 
