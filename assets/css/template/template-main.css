@@ -1,0 +1,18 @@
+/* Position */
+
+legal-section-content {
+	margin: 0px auto;
+}
+
+/* Width and Height */
+
+legal-section-content {
+	width: 1080px;
+}
+
+/* Background */
+
+.legal-section-header,
+.legal-section-footer {
+	background-color: rgb(13, 11, 47);
+}
