@@ -26,6 +26,10 @@
 	padding: 40px 0px;
 }
 
+.legal-bonus-about .about-action-get {
+	padding: 12px 25px;
+}
+
 /* Width and Height */
 
 .legal-bonus-about {
@@ -49,6 +53,7 @@
 
 .legal-bonus-about .about-action-get {
 	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
 }
 
 /* Typography */
@@ -80,4 +85,5 @@
 	font-weight: 600;
 	letter-spacing: 1px;
 	line-height: 14.4px;
+	text-decoration: none;
 }
