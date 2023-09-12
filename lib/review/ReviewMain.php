@@ -214,7 +214,7 @@ class ReviewMain
 
         $permission_post_single = is_singular( [ 'post' ] );
 
-        $result = $permission_admin && $permission_post_type && $permission_term || $permission_post_single;
+        $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
 
         // LegalDebug::debug( [
         //     'permission_admin' => $permission_admin ? 'true' : 'false',
