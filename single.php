@@ -9,11 +9,17 @@ Template Post Type: post
 
 get_header();
 
-echo BaseHeader::render();
-
-echo BonusTemplateSingle::render();
-
-echo BaseFooter::render();
+?>
+<section class="legal-header">
+	<?php echo BaseHeader::render(); ?>
+</section>
+<section class="legal-content">
+	<?php echo BonusTemplateSingle::render(); ?>
+</section>
+<section class="legal-footer">
+	<?php echo BaseFooter::render(); ?>
+</section>
+<?php
 
 get_footer();
 
