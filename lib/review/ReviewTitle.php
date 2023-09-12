@@ -91,7 +91,9 @@ class ReviewTitle
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( '//body/*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //body/*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
+		// return $xpath->query( '//body/*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //body/*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
+		
+		return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
 	}
 
 	public static function modify_content( $content )

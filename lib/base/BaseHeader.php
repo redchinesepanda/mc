@@ -162,12 +162,12 @@ class BaseHeader
 
 		if ( self::get_casino_permission() )
 		{
-			$prefix = __( BaseMain::TEXT[ 'casino-sites' ], ToolLoco::TEXTDOMAIN );
+			$prefix = __( BaseMain::TEXT[ 'online-casinos' ], ToolLoco::TEXTDOMAIN );
 		}
 
 		if ( self::check_root_url( $language[ 'url' ] ) )
 		{
-			$prefix = __( BaseMain::TEXT[ 'gamebling-sites' ], ToolLoco::TEXTDOMAIN );
+			$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
 		}
 
 		return $prefix;
