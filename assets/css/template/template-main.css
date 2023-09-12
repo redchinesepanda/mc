@@ -1,6 +1,6 @@
 /* Position */
 
-legal-section-content {
+.legal-section-content {
 	margin: 0px auto;
 }
 
@@ -10,7 +10,7 @@ legal-section-content {
 
 /* Width and Height */
 
-legal-section-content {
+.legal-section-content {
 	width: 1080px;
 }
 
