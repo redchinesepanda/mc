@@ -9,7 +9,7 @@ Template Post Type: post
 
 get_header();
 
-BonusTemplateSingle::render();
+echo BonusTemplateSingle::render();
 
 get_footer();
 
