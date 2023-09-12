@@ -16,6 +16,9 @@ get_header();
 <section class="legal-section-breadcrumbs">
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
+<section class="legal-section-about">
+	<?php echo ReviewAbout::render(); ?>
+</section>
 <section class="legal-section-content">
 	<?php echo BonusTemplateSingle::render(); ?>
 </section>
