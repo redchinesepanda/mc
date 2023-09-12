@@ -53,12 +53,6 @@ class BonusAbout
 	public static function get()
     {
         $id = self::get_id();
-
-		LegalDebug::debug( [
-			'function' => 'BonusAbout::get',
-
-			'id' => $id,
-		] );
         
 		if ( empty( $id ) )
 		{
@@ -90,13 +84,7 @@ class BonusAbout
 
     public static function render()
     {
-		LegalDebug::debug( [
-			'function' => 'BonusAbout::render',
-
-			'check' => BonusMain::check() ? 'true' : 'false',
-		] );
-
-        if ( !BonusMain::check() )
+		if ( !BonusMain::check() )
         {
             return '';
         }
