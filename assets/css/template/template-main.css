@@ -35,3 +35,11 @@
 .legal-section-footer {
 	background-color: rgb(13, 11, 47);
 }
+
+.legal-section-about {
+	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/bonus/bonus-overlay.svg' );
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
