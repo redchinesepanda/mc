@@ -30,12 +30,12 @@ class ReviewAuthor
 
     public static function register_style()
     {
-        // ReviewMain::register_style( self::CSS );
+        ReviewMain::register_style( self::CSS );
 
-        if ( self::check() )
-        {
-            ToolEnqueue::register_style( self::CSS );
-        }
+        // if ( self::check() )
+        // {
+        //     ToolEnqueue::register_style( self::CSS );
+        // }
     }
 
     public static function register()
@@ -49,14 +49,14 @@ class ReviewAuthor
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    public static function check()
-    {
-        $permisiion_review_main = ReviewMain::check();
+    // public static function check()
+    // {
+    //     $permisiion_review_main = ReviewMain::check();
 
-        $permission_post_type = is_singular( [ 'post' ] );
+    //     $permission_post_type = is_singular( [ 'post' ] );
 
-        return $permisiion_review_main || $permission_post_type;
-    }
+    //     return $permisiion_review_main || $permission_post_type;
+    // }
 
     const CIS = [
         'ru',
@@ -126,7 +126,9 @@ class ReviewAuthor
 
     public static function render( $args = [] )
     {
-        if ( !self::check() )
+        // if ( !self::check() )
+        
+        if ( !ReviewMain::check() )
         {
             return '';
         }

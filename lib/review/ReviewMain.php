@@ -212,7 +212,9 @@ class ReviewMain
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
-        $result = $permission_admin && $permission_post_type && $permission_term;
+        $permission_post_single = is_singular( [ 'post' ] );
+
+        $result = $permission_admin && $permission_post_type && $permission_term || $permission_post_single;
 
         // LegalDebug::debug( [
         //     'permission_admin' => $permission_admin ? 'true' : 'false',
