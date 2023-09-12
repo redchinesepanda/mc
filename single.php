@@ -10,9 +10,10 @@ Template Post Type: post
 ?>
  
 <?php
-// get_header();
 
-wp_head();
+get_header();
+
+// wp_head();
 
 ?>
 
