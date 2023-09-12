@@ -32,6 +32,14 @@
 	width: 1080px;
 }
 
+.legal-bonus-about .bonus-about-data {
+	flex-basis: calc( 75% - 25px );
+}
+
+.legal-bonus-about .bonus-about-action {
+	flex-basis: calc( 25% - 25px );
+}
+
 /* Background */
 
 .legal-bonus-about .bonus-about-action {
