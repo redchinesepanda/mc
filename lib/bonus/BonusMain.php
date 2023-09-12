@@ -2,6 +2,8 @@
 
 require_once( 'BonusTemplateSingle.php' );
 
+require_once( 'BonusAbout.php' );
+
 class BonusMain
 {
 	const TEXT = [
@@ -75,6 +77,8 @@ class BonusMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
+
+		BonusAbout::register();
     }
 
 	public static function legal_posts_order() 
