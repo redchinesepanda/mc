@@ -92,6 +92,8 @@ class BonusAbout
     {
 		LegalDebug::debug( [
 			'function' => 'BonusAbout::render',
+
+			'check' => BonusMain::check() ? 'true' : 'false';
 		] );
 
         if ( !BonusMain::check() )
