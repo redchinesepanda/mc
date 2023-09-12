@@ -26,7 +26,9 @@ class BonusAbout
 
 	public static function get_id()
     {
-        if ( !empty( $post = get_post() ) )
+		$post = get_post();
+
+        if ( !empty( $post ) )
         {
             return $post->ID;
         }
