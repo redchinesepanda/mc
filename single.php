@@ -19,7 +19,7 @@ get_header();
 <section class="legal-section-author">
 	<?php echo ReviewAuthor::render(); ?>
 </section>
-<section class="legal-section-footer">
+<section id="theme-bottom-section" class="legal-section-footer">
 	<?php echo BaseFooter::render(); ?>
 </section>
 <?php
