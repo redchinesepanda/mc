@@ -9,7 +9,12 @@ Template Post Type: post
 
 ?>
  
-<?php get_header(); ?>
+<?php
+// get_header();
+
+wp_head();
+
+?>
 
 <h1>single.php</h1>
  
