@@ -32,6 +32,13 @@
 	width: 1080px;
 }
 
+/* Background */
+
+.legal-bonus-about .bonus-about-action {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
 /* Typography */
 
 .legal-bonus-about .about-data-title {
