@@ -112,7 +112,7 @@ class ReviewAuthor
 		'review-author' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author.php',
 	];
 
-    public static function render( $args )
+    public static function render( $args = [] )
     {
         if ( !ReviewMain::check() )
         {
