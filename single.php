@@ -7,16 +7,10 @@ Template Post Type: post
 
 */
 
-?>
- 
-<?php
-
 get_header();
 
-// wp_head();
+BonusTemplateSingle::render();
+
+get_footer();
 
 ?>
-
-<h1>single.php</h1>
- 
-<?php get_footer(); ?>
