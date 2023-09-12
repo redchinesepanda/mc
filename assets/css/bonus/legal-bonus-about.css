@@ -5,6 +5,18 @@
   	column-gap: 50px;
 }
 
+.legal-bonus-about .bonus-about-data {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-bonus-about .bonus-about-action {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
 /* Position */
 
 .legal-bonus-about {
@@ -26,5 +38,15 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 50.4px;
+	color: rgb(255, 255, 255);
+}
+
+.legal-bonus-about .about-data-description {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 28px;
 	color: rgb(255, 255, 255);
 }
