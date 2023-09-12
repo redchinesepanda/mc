@@ -1,5 +1,9 @@
 /* Position */
 
+.legal-section-breadcrumbs:first-child {
+	margin: 0px auto;
+}
+
 .legal-section-content {
 	margin: 0px auto;
 }
@@ -9,6 +13,10 @@
 }
 
 /* Width and Height */
+
+.legal-section-breadcrumbs:first-child {
+	width: 1080px;
+}
 
 .legal-section-content {
 	width: 1080px;
