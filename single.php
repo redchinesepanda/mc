@@ -9,7 +9,11 @@ Template Post Type: post
 
 get_header();
 
+echo BaseHeader::render();
+
 echo BonusTemplateSingle::render();
+
+echo BaseFooter::render();
 
 get_footer();
 
