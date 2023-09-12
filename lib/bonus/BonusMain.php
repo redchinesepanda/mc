@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'BonusTemplateSingle.php' );
+
 class BonusMain
 {
 	const TEXT = [
