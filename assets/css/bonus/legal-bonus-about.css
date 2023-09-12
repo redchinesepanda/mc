@@ -26,6 +26,10 @@
 	padding: 40px 0px;
 }
 
+.legal-bonus-about .about-data-title {
+	margin-bottom: 0px;
+}
+
 .legal-bonus-about .about-action-get {
 	padding: 12px 25px 12px 52px;
 }
