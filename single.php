@@ -10,13 +10,13 @@ Template Post Type: post
 get_header();
 
 ?>
-<section class="legal-header">
+<section class="legal-section-header">
 	<?php echo BaseHeader::render(); ?>
 </section>
-<section class="legal-content">
+<section class="legal-section-content">
 	<?php echo BonusTemplateSingle::render(); ?>
 </section>
-<section class="legal-footer">
+<section class="legal-section-footer">
 	<?php echo BaseFooter::render(); ?>
 </section>
 <?php
