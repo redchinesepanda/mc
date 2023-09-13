@@ -83,6 +83,17 @@
 .legal-bonus-about-overlay2,
 .legal-bonus-about-overlay3 {
 	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.legal-bonus-about-overlay1 {
+	opacity: 0.2;
+}
+
+.legal-bonus-about-overlay2 {
+	opacity: 0.2;
+}
+
+.legal-bonus-about-overlay3 {
 	opacity: 0.2;
 }
 
