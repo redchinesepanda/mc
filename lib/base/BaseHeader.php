@@ -395,7 +395,7 @@ class BaseHeader
 
 		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
 
-		$urls_udiff = array_udiff( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
+		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
 
 		LegalDebug::debug( [
 			'function' => 'BaseHeader::replace_urls',
