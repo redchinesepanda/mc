@@ -96,6 +96,8 @@ class ReviewStats
 	{
 		LegalDebug::debug( [
 			'function' => 'ReviewStats::get_content',
+
+			'check' => ReviewMain::check() ? 'true' : 'false',
 		] );
 
 		if ( !ReviewMain::check() ) {
