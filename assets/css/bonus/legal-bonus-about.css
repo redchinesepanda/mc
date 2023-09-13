@@ -94,7 +94,7 @@
 }
 
 .legal-bonus-about-overlay3 {
-	opacity: 0.2;
+	opacity: unset;
 }
 
 .legal-bonus-about-overlay1 {
