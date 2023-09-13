@@ -96,7 +96,10 @@ class ReviewTitle
 			'result' => $result,
 		] );
 
-		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+		if ( ctype_alpha( $result[ 0 ] ) )
+		{
+			$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+		}
 
 		LegalDebug::debug( [
 			'function' => 'ReviewTitle::get_date',
