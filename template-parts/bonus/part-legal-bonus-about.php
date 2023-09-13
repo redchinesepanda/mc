@@ -8,3 +8,6 @@
 		<a class="about-action-get" href="<?php echo $args[ 'button' ][ 'href' ] ?>" class="" target="_blank" rel="nofollow"><?php echo $args[ 'button' ][ 'label' ] ?></a>
 	</div>
 </div>
+<div class="legal-bonus-about-overlay1"></div>
+<div class="legal-bonus-about-overlay2"></div>
+<div class="legal-bonus-about-overlay3"></div>
