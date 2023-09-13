@@ -88,7 +88,7 @@ class ReviewTitle
 		
 		// return $formatter->format( $current );
 
-		$result = str_split( $formatter->format( $current ) );
+		$result = mb_str_split( $formatter->format( $current ) );
 
 		LegalDebug::debug( [
 			'function' => 'ReviewTitle::get_date',
