@@ -164,7 +164,7 @@ class ReviewStats
 
 				// $text = $cells[ 1 ]->textContent;
 
-				$text = ToolEncode::encode( $cells[ 1 ]->textContent )
+				$text = ToolEncode::encode( $cells[ 1 ]->textContent );
 
 				if ( is_numeric( $text ) ) {
 					$value = $text;
