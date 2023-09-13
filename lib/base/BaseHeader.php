@@ -365,6 +365,35 @@ class BaseHeader
 		return strcmp( $language_a[ 'url' ], $language_b[ 'url' ] );
 	}
 
+	public static function replace_urls( $urls_home, $urls_cross )
+	{
+		$handler = new self();
+
+		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
+
+		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
+
+		$urls = array_merge( $urls_udiff, $urls_uintersect );
+
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			// 'urls_default' => $urls_default,
+
+			'urls_home' => $urls_home,
+
+			'urls_cross' => $urls_cross,
+
+			'urls_uintersect' => $urls_uintersect,
+
+			'urls_udiff' => $urls_udiff,
+
+			'urls' => $urls,
+		] );
+
+		return $urls;
+	}
+	
 	public static function replace_urls( $urls = [] )
 	{
 		$urls_default = $urls;
@@ -391,29 +420,7 @@ class BaseHeader
 
 		$urls_cross = $urls;
 
-		$handler = new self();
-
-		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
-
-		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
-
-		$urls = array_merge( $urls_udiff, $urls_uintersect );
-
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
-
-			'urls_default' => $urls_default,
-
-			'urls_home' => $urls_home,
-
-			'urls_cross' => $urls_cross,
-
-			'urls_uintersect' => $urls_uintersect,
-
-			'urls_udiff' => $urls_udiff,
-
-			'urls' => $urls,
-		] );
+		$urls = self::replace_urls( $urls_home, $urls_cross );
 
 		return $urls;
 	}
