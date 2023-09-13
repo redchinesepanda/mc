@@ -375,21 +375,21 @@ class BaseHeader
 
 		$urls = array_merge( $urls_udiff, $urls_uintersect );
 
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
+		// LegalDebug::debug( [
+		// 	'function' => 'BaseHeader::replace_urls',
 
-			// 'urls_default' => $urls_default,
+		// 	// 'urls_default' => $urls_default,
 
-			'urls_home' => $urls_home,
+		// 	'urls_home' => $urls_home,
 
-			'urls_cross' => $urls_cross,
+		// 	'urls_cross' => $urls_cross,
 
-			'urls_uintersect' => $urls_uintersect,
+		// 	'urls_uintersect' => $urls_uintersect,
 
-			'urls_udiff' => $urls_udiff,
+		// 	'urls_udiff' => $urls_udiff,
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		return $urls;
 	}
