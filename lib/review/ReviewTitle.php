@@ -57,7 +57,9 @@ class ReviewTitle
 	const FORMAT = [
         self::CLASSES[ 'date-year' ] => 'y',
 
-        self::CLASSES[ 'date-month-year' ] => 'MMMM y',
+        // self::CLASSES[ 'date-month-year' ] => 'MMMM y',
+        
+		self::CLASSES[ 'date-month-year' ] => 'LLLL y',
     ];
 
     public static function get_date( $node )
@@ -90,8 +92,6 @@ class ReviewTitle
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		// return $xpath->query( '//body/*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //body/*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
 		
 		return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
 	}
