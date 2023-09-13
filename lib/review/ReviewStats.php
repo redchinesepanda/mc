@@ -94,6 +94,10 @@ class ReviewStats
 
 	public static function get_content( $content )
 	{
+		LegalDebug::debug( [
+			'function' => 'ReviewStats::get_content',
+		] );
+
 		if ( !ReviewMain::check() ) {
 			return $content;
 		}
@@ -103,6 +107,8 @@ class ReviewStats
 		$nodes = self::get_nodes( $dom );
 
 		LegalDebug::debug( [
+			'function' => 'ReviewStats::get_content',
+
 			'length' => $nodes->length,
 		] );
 
