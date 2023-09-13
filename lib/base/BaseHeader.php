@@ -389,6 +389,8 @@ class BaseHeader
 
 		$urls_cross = $urls;
 
+		$handler = new self();
+
 		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_value_compare' ] );
 
 		LegalDebug::debug( [
