@@ -175,11 +175,12 @@ class BaseHeader
 
 	public static function get_title_prefix( $language )
 	{
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::get_title_prefix',
+		// LegalDebug::debug( [
+		// 	'function' => 'BaseHeader::get_title_prefix',
 
-			'language' => $language,
-		] );
+		// 	'language' => $language,
+		// ] );
+
 		$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
 
 		if ( self::get_casino_permission() )
