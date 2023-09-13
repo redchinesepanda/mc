@@ -90,22 +90,7 @@ class ReviewTitle
 
 		$result = mb_str_split( $formatter->format( $current ) );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewTitle::get_date',
-
-			'result' => $result,
-		] );
-
-		if ( ctype_alpha( $result[ 0 ] ) )
-		{
-			$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
-		}
-
-		LegalDebug::debug( [
-			'function' => 'ReviewTitle::get_date',
-
-			'result' => $result,
-		] );
+		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
 
 		return implode( '', $result );
     }
