@@ -1,3 +1,10 @@
+/* Display */
+
+.legal-section-breadcrumbs {
+	display: flex;
+  	align-items: center;
+}
+
 /* Position */
 
 .legal-section-breadcrumbs nav {
@@ -17,6 +24,10 @@
 }
 
 /* Width and Height */
+
+.legal-section-breadcrumbs {
+	height: 40px;
+}
 
 .legal-section-breadcrumbs nav {
 	width: 1080px;
