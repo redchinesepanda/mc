@@ -398,29 +398,27 @@ class BaseHeader
 	{
 		$home = self::get_home_page();
 
-		$urls_home = [];
+		$home_urls_replaced = [];
 
 		if ( !empty( $home ) )
 		{
-			$home_urls = self::get_page_urls( $home );
+			$home_urls_all = self::get_page_urls( $home );
 			
-			$urls_home = self::replace_urls_iteration( $urls, $home_urls );
+			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
-
-		$urls_home = $urls;
 
 		$cross = self::get_cross_page();
 
-		$urls_cross = [];
+		$cross_urls_replaced = [];
 
 		if ( !empty( $cross ) )
 		{
-			$cross_urls = self::get_page_urls( $cross );
+			$cross_urls_all = self::get_page_urls( $cross );
 
-			$urls_cross = self::replace_urls_iteration( $urls, $cross_urls );
+			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls );
 		}		
 
-		$urls = self::replace_urls_group( $urls_home, $urls_cross );
+		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
 
 		return $urls;
 	}
