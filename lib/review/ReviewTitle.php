@@ -86,13 +86,13 @@ class ReviewTitle
 
 		$formatter->setPattern( $format );
 		
-		return $formatter->format( $current );
+		// return $formatter->format( $current );
 
-		// $result = $formatter->format( $current );
+		$result = $formatter->format( $current );
 
-		// $result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
 
-		// return $result;
+		return $result;
     }
 
 	public static function get_nodes( $dom )
