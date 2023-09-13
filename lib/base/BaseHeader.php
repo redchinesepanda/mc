@@ -348,24 +348,25 @@ class BaseHeader
 		return $urls;
 	}
 
-	// public static function replace_urls( $language, $item2 )
-	// {
-	// 	if ($v1 == $v2)
-    // 	{
-	// 		return 0;
-	// 	}
-		
-	// 	return 1;
-	// }
+	public static function replace_urls_value_compare( $language_a, $language_b )
+	{
+		if ( $language_a[ 'url' ] == $language_a[ 'url' ] )
+		{
+			return 0;
+		}
+
+		if ( $language_a[ 'url' ] > $language_a[ 'url' ] )
+		{
+			return 1;
+		}
+
+		return -1;
+	}
 
 	public static function replace_urls( $urls = [] )
 	{
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::replace_urls',
+		$urls_default = $urls;
 
-			'urls' => $urls,
-		] );
-		
 		$home = self::get_home_page();
 
 		if ( !empty( $home ) )
@@ -375,6 +376,8 @@ class BaseHeader
 			$urls = self::replace_urls_iteration( $urls, $home_urls );
 		}
 
+		$urls_home = $urls;
+
 		$cross = self::get_cross_page();
 
 		if ( !empty( $cross ) )
@@ -383,6 +386,22 @@ class BaseHeader
 
 			$urls = self::replace_urls_iteration( $urls, $cross_urls );
 		}
+
+		$urls_cross = $urls;
+
+		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_value_compare' ] );
+
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			'urls_default' => $urls_default,
+
+			'urls_home' => $urls_home,
+
+			'urls_cross' => $urls_cross,
+
+			'urls_uintersect' => $urls_uintersect,
+		] );
 
 		return $urls;
 	}
