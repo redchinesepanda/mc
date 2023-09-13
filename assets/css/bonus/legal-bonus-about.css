@@ -3,6 +3,7 @@
 .legal-bonus-about {
 	display: flex;
   	column-gap: 50px;
+	align-items: center;
 }
 
 .legal-bonus-about .bonus-about-data {
@@ -24,6 +25,14 @@
 .legal-bonus-about {
 	margin: 0px auto;
 	padding: 40px 0px;
+}
+
+.legal-bonus-about .bonus-about-data {
+	padding: 15px 0px;
+}
+
+.legal-bonus-about .bonus-about-action {
+	padding: 30px 0px;
 }
 
 .legal-bonus-about .about-data-title {
