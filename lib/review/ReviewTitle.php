@@ -88,7 +88,7 @@ class ReviewTitle
 		
 		// return $formatter->format( $current );
 
-		$result = $formatter->format( $current );
+		$result = str_split( $formatter->format( $current ) );
 
 		LegalDebug::debug( [
 			'function' => 'ReviewTitle::get_date',
@@ -104,7 +104,7 @@ class ReviewTitle
 			'result' => $result,
 		] );
 
-		return $result;
+		return implode( '', $result );
     }
 
 	public static function get_nodes( $dom )
