@@ -90,7 +90,19 @@ class ReviewTitle
 
 		$result = $formatter->format( $current );
 
+		LegalDebug::debug( [
+			'function' => 'ReviewTitle::get_date',
+
+			'result' => $result,
+		] );
+
 		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+
+		LegalDebug::debug( [
+			'function' => 'ReviewTitle::get_date',
+
+			'result' => $result,
+		] );
 
 		return $result;
     }
