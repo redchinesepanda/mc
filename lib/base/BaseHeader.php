@@ -396,29 +396,29 @@ class BaseHeader
 	
 	public static function replace_urls( $urls = [] )
 	{
-		$urls_default = $urls;
-
 		$home = self::get_home_page();
+
+		$urls_home = [];
 
 		if ( !empty( $home ) )
 		{
 			$home_urls = self::get_page_urls( $home );
-
-			$urls = self::replace_urls_iteration( $urls, $home_urls );
+			
+			$urls_home = self::replace_urls_iteration( $urls, $home_urls );
 		}
 
 		$urls_home = $urls;
 
 		$cross = self::get_cross_page();
 
+		$urls_cross = [];
+
 		if ( !empty( $cross ) )
 		{
 			$cross_urls = self::get_page_urls( $cross );
 
-			$urls = self::replace_urls_iteration( $urls, $cross_urls );
-		}
-
-		$urls_cross = $urls;
+			$urls_cross = self::replace_urls_iteration( $urls, $cross_urls );
+		}		
 
 		$urls = self::replace_urls_group( $urls_home, $urls_cross );
 
