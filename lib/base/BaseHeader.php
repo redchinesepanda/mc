@@ -415,7 +415,7 @@ class BaseHeader
 		{
 			$cross_urls_all = self::get_page_urls( $cross );
 
-			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls );
+			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
 		}		
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
