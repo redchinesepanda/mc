@@ -81,7 +81,9 @@ class ReviewStats
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+		// $nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+		
+		$nodes = $xpath->query( '//table[contains(@class, \'legal-stats\')]' );
 
 		return $nodes;
 	}
