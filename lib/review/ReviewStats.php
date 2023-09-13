@@ -77,13 +77,17 @@ class ReviewStats
 		return implode( ' ', $style );
 	}
 
+	const CSS_CLASS = [
+		'base' => 'legal-stats',
+	];
+
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
 
 		// $nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
 		
-		$nodes = $xpath->query( '//table[contains(@class, \'legal-stats\')]' );
+		$nodes = $xpath->query( "//table[contains(@class, '" . self::CSS_CLASS[ 'base' ] . "')]" );
 
 		return $nodes;
 	}
