@@ -72,10 +72,10 @@
 
 .legal-bonus-about .about-action-get {
 	background-color: rgb(89, 151, 227);
-	background-image: url( '../../img/bonus/bonus-get.svg' );
+	/* background-image: url( '../../img/bonus/bonus-get.svg' );
 	background-position: left 25px center;
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: auto; */
 	border-radius: 20px;
 }
 
