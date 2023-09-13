@@ -365,7 +365,7 @@ class BaseHeader
 		return strcmp( $language_a[ 'url' ], $language_b[ 'url' ] );
 	}
 
-	public static function replace_urls( $urls_home, $urls_cross )
+	public static function replace_urls_group( $urls_home, $urls_cross )
 	{
 		$handler = new self();
 
@@ -420,7 +420,7 @@ class BaseHeader
 
 		$urls_cross = $urls;
 
-		$urls = self::replace_urls( $urls_home, $urls_cross );
+		$urls = self::replace_urls_group( $urls_home, $urls_cross );
 
 		return $urls;
 	}
