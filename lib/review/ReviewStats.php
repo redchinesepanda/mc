@@ -3,7 +3,11 @@
 class ReviewStats
 {
     const CSS = [
-        'review-stats' => LegalMain::LEGAL_URL . '/assets/css/review/review-stats.css',
+        'review-stats' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-stats.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()
