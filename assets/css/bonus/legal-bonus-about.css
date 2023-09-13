@@ -48,6 +48,12 @@
 	flex-basis: calc( 25% - 25px );
 }
 
+.legal-bonus-about-overlay1,
+.legal-bonus-about-overlay2,
+.legal-bonus-about-overlay3 {
+	height: 56px;
+}
+
 /* Background */
 
 .legal-bonus-about .bonus-about-action {
@@ -62,6 +68,25 @@
 	background-repeat: no-repeat;
 	background-size: auto;
 	border-radius: 20px;
+}
+.legal-bonus-about-overlay1,
+.legal-bonus-about-overlay2,
+.legal-bonus-about-overlay3 {
+	height: 56px;
+	background-color: rgba(255, 255, 255, 0.2);
+	opacity: 0.2;
+}
+
+.legal-bonus-about-overlay1 {
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+}
+
+.legal-bonus-about-overlay2 {
+	clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
+}
+
+.legal-bonus-about-overlay3 {
+	clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
 }
 
 /* Typography */
