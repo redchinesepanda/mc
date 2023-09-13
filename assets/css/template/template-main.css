@@ -42,6 +42,7 @@
 
 .legal-section-about {
 	background-color: rgb(89, 151, 227);
+	border-top: 1.6px solid #fff;
 	/* background-image: url( '../../img/bonus/bonus-overlay.svg' );
 	background-position: center bottom;
 	background-size: contain;
