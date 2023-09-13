@@ -94,11 +94,11 @@ class ReviewStats
 
 	public static function get_content( $content )
 	{
-		LegalDebug::debug( [
-			'function' => 'ReviewStats::get_content',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewStats::get_content',
 
-			'check' => ReviewMain::check() ? 'true' : 'false',
-		] );
+		// 	'check' => ReviewMain::check() ? 'true' : 'false',
+		// ] );
 
 		if ( !ReviewMain::check() ) {
 			return $content;
@@ -108,11 +108,11 @@ class ReviewStats
 
 		$nodes = self::get_nodes( $dom );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewStats::get_content',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewStats::get_content',
 
-			'length' => $nodes->length,
-		] );
+		// 	'length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length == 0 ) {
 			return $content;
@@ -162,7 +162,9 @@ class ReviewStats
 			if ( $cells->length ) {
 				$value = -1;
 
-				$text = $cells[ 1 ]->textContent;
+				// $text = $cells[ 1 ]->textContent;
+
+				$text = ToolEncode::encode( $cells[ 1 ]->textContent )
 
 				if ( is_numeric( $text ) ) {
 					$value = $text;
@@ -178,7 +180,9 @@ class ReviewStats
 
 				if ( $value != -1 ) {
 					$args[] = [
-						'title' => $cells[ 0 ]->textContent,
+						// 'title' => $cells[ 0 ]->textContent,
+						
+						'title' => ToolEncode::encode( $cells[ 0 ]->textContent ),
 	
 						'width' => ( round( ( float ) $value ) / 10 ) * 100,
 					];
