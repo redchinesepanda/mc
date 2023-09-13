@@ -348,8 +348,24 @@ class BaseHeader
 		return $urls;
 	}
 
+	// public static function replace_urls( $language, $item2 )
+	// {
+	// 	if ($v1 == $v2)
+    // 	{
+	// 		return 0;
+	// 	}
+		
+	// 	return 1;
+	// }
+
 	public static function replace_urls( $urls = [] )
 	{
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::replace_urls',
+
+			'urls' => $urls,
+		] );
+		
 		$home = self::get_home_page();
 
 		if ( !empty( $home ) )
