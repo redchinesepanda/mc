@@ -143,15 +143,32 @@ class BaseHeader
 		return array_merge( self::parse_items_inline(), self::parse_languages_inline() );
 	}
 
-	public static function check_root_url( $url )
+	// public static function check_root_url( $url )
+
+	const ROOT_URL_EXCEPTIONS = [
+		'en',
+	];
+	
+	public static function check_root_url( $language )
 	{
+		$url = $language[ 'url' ];
+
 		$path = trim( parse_url( $url, PHP_URL_PATH ), '/' );
 
 		$path_array = explode( '/', $path );
 
 		$path_count = count( $path_array );
 
-		$result = $path_count <= 1;
+		$amount = 1;
+
+		if ( in_array( $language[ 'code' ], self::ROOT_URL_EXCEPTIONS ) )
+		{
+			$amount = 0;
+		}
+
+		// $result = $path_count <= 1;
+		
+		$result = $path_count <= $amount;
 
 		return $result;
 	}
@@ -170,7 +187,9 @@ class BaseHeader
 			$prefix = __( BaseMain::TEXT[ 'online-casinos' ], ToolLoco::TEXTDOMAIN );
 		}
 
-		if ( self::check_root_url( $language[ 'url' ] ) )
+		// if ( self::check_root_url( $language[ 'url' ] ) )
+		
+		if ( self::check_root_url( $language ) )
 		{
 			$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
 		}
