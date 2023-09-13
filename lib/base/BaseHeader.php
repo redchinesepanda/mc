@@ -348,7 +348,7 @@ class BaseHeader
 		return $urls;
 	}
 
-	public static function replace_url_compare( $language_a, $language_b )
+	public static function replace_urls_compare( $language_a, $language_b )
 	{
 		// if ( $language_a[ 'url' ] == $language_a[ 'url' ] )
 		// {
@@ -393,10 +393,9 @@ class BaseHeader
 
 		$handler = new self();
 
-		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_url_compare' ] );
+		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
 
-		
-		$result = call_user_func_array( 'array_intersect', $data );
+		$urls_udiff = array_udiff( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
 
 		LegalDebug::debug( [
 			'function' => 'BaseHeader::replace_urls',
@@ -408,6 +407,8 @@ class BaseHeader
 			'urls_cross' => $urls_cross,
 
 			'urls_uintersect' => $urls_uintersect,
+
+			'urls_udiff' => $urls_udiff,
 		] );
 
 		return $urls;
