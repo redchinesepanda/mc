@@ -82,11 +82,11 @@
 }
 
 .legal-bonus-about-overlay2 {
-	clip-path: polygon(100% 100%, 0% 100%, 0% 0%);
+	clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
 }
 
 .legal-bonus-about-overlay3 {
-	clip-path: polygon(100% 50%, 0% 100%, 0% 0%);
+	clip-path: polygon(100% 100%, 0% 100%, 100% 50%);
 }
 
 /* Typography */
