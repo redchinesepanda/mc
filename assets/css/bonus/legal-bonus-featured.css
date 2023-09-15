@@ -1,0 +1,6 @@
+/* Display */
+
+.bonus-full-main .full-main-featured {
+	display: flex;
+  	justify-content: center;
+}

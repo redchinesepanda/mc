@@ -2,6 +2,21 @@
 
 class BonusFeatured
 {
+	const CSS = [
+        'bonus-featured' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-featured.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+    public static function register_style()
+    {
+        if ( BonusMain::check() ) {
+            ToolEnqueue::register_style( self::CSS );
+        }
+    }
+
 	public static function register()
     {
         $handler = new self();
