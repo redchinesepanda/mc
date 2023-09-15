@@ -53,7 +53,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             self::TAXONOMY[ 'category' ],
 
-            [ 'ids', 'names ' ]
+            [ 'ids', 'names' ]
         );
     }
 

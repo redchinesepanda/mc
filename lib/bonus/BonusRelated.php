@@ -39,17 +39,19 @@ class BonusRelated
 
             self::TAXONOMY[ 'tag' ],
 
-            [ 'ids' ]
+            [ 'names' ]
         );
 
 		return BonusMain::get_items( [
 			'post_type' => self::TYPE[ 'post' ],
 
-			'limit' => 6,
-
 			'taxonomy' => self::TAXONOMY[ 'tag' ],
 
 			'terms' => $terms,
+
+			'exclude' => [],
+
+			'limit' => 6,
 		] );
 	}
 
