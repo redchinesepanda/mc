@@ -35,7 +35,7 @@ class BonusRelated
 	public static function get_items()
 	{
 		$terms = wp_get_post_terms(
-            $id,
+            0,
 
             self::TAXONOMY[ 'tag' ],
 
