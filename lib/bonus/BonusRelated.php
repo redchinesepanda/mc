@@ -44,7 +44,7 @@ class BonusRelated
         return 0;
     }
 
-	public static function get_items()
+	public static function group_posts()
 	{
 		$tags = wp_get_post_tags(
             self::get_id(),
@@ -73,12 +73,54 @@ class BonusRelated
 		] );
 	}
 
+	const SIZE = [
+		'thumbnail' => 'thumbnail',
+	];
+
+	public static function get_items()
+	{
+		$posts = self::group_posts();
+
+		$items = [];
+
+		if ( !empty( $posts ) )
+		{
+			foreach ( $posts as $post )
+			{
+				$post_url = get_post_permalink( $post->ID );
+
+				$preview = BonusMain::get_thumbnail( $post->ID, self::SIZE[ 'thumbnail' ] );
+
+				if ( !empty( $preview ) )
+				{
+					$preview[ 'href' ] = $post_url;
+				}
+
+				$items[] = [
+					// 'id' => $post->ID,
+
+					'preview' => $preview,
+					
+					// 'logo' => self::get_logo( $post->ID ),
+
+					'title' => [
+						'label' => $post->post_title,
+
+						'href' => $post_url,
+					],
+				];
+			}
+		}
+
+		return $items;
+	}
+
 	public static function get()
     {
 		return [
 			'title' => __( BonusMain::TEXT[ 'best-bookmaker-bonuses' ], ToolLoco::TEXTDOMAIN ),
 
-			'items' => self::get_items(),
+			'items' => self::get_items( self::group_posts() ),
 		];
 	}
 
