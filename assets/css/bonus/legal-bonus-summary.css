@@ -1,3 +1,16 @@
+/* Display */
+
+.legal-bonus-summary {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	row-gap: 25px;
+}
+
+.legal-bonus-summary .bonus-summary-item {
+	flex-basis: calc( 100% / 5 - 8px );
+}
+
 /* Position */
 
 .legal-bonus-summary {
