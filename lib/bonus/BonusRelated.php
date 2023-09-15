@@ -32,12 +32,22 @@ class BonusRelated
 		'tag' => 'post_tag',
 	];
 
+	public static function get_id()
+    {
+		$post = get_post();
+
+        if ( !empty( $post ) )
+        {
+            return $post->ID;
+        }
+
+        return 0;
+    }
+
 	public static function get_items()
 	{
-		$terms = wp_get_post_terms(
-            0,
-
-            self::TAXONOMY[ 'tag' ],
+		$tags = wp_get_post_tags(
+            self::get_id(),
 
             [ 'names' ]
         );
