@@ -31,7 +31,9 @@ class BonusFeatured
 	{
 		$post_id = self::get_id();
 
-		return BonusMain::get_thumbnail( $post_id, self::SIZE[ 'featured' ] );
+		return [
+			'preview' => BonusMain::get_thumbnail( $post_id, self::SIZE[ 'featured' ] ),
+		];
 	}
 
 	const TEMPLATE = [
