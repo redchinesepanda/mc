@@ -55,7 +55,7 @@ class BonusRelated
 		LegalDebug::debug( [
 			'function' => 'BonusRelated::get_items',
 
-			'terms' => $terms,
+			'tags' => $tags,
 		] );
 
 		return BonusMain::get_items( [
