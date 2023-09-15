@@ -26,6 +26,32 @@
 	border-radius: 20px;
 }
 
+.legal-bonus-summary .item-label {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.legal-bonus-summary .item-label-bookmaker {
+	background-image: url( '../../img/bonus/bonus-summary-bookmaker.svg' );
+}
+
+.legal-bonus-summary .item-label-bonus-amount {
+	background-image: url( '../../img/bonus/bonus-summary-bonus-amount.svg' );
+}
+
+.legal-bonus-summary .item-label-min-deposit {
+	background-image: url( '../../img/bonus/bonus-summary-min-deposit.svg' );
+}
+
+.legal-bonus-summary .item-label-wagering {
+	background-image: url( '../../img/bonus/bonus-summary-wagering.svg' );
+}
+
+.legal-bonus-summary .item-label-published {
+	background-image: url( '../../img/bonus/bonus-summary-published.svg' );
+}
+
 /* Typography */
 
 .legal-bonus-summary .item-label {
