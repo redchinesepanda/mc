@@ -7,13 +7,23 @@ require_once( 'BonusAbout.php' );
 class BonusMain
 {
 	const TEXT = [
+		'bonus-amount' => 'Bonus amount',
+
 		'bonus-preview' => 'Bonus Preview',
 
 		'bonus-logo' => 'Bonus Logo',
+		
+		'bookmaker' => 'Bookmaker',
 
 		'claim-bonus' => 'Claim Bonus',
 
 		'get-bonus' => 'Get Bonus',
+
+		'min-deposit' => 'Min. deposit',
+
+		'published' => 'Published',
+
+		'wagering' => 'Wagering',
 	];
 
 	const SIZE = [

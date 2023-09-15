@@ -36,18 +36,6 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_terms( $id )
     {
-        // return wp_get_post_terms(
-        //     $id,
-
-        //     'category',
-
-        //     [ 'ids', 'names ' ]
-        // );
-
-        // $taxonomy = 'product_cat'; 
-
-        // $primary_cat_id = get_post_meta( $product->id,'_yoast_wpseo_primary_' . $taxonomy, true );
-        
         $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
         if ( $primary_id )
@@ -59,8 +47,6 @@ class LegalBreadcrumbsMain extends LegalDebug
                 return [ $primary ];
             }
         }
-
-        // return [];
 
         return wp_get_post_terms(
             $id,
