@@ -9,6 +9,8 @@ require_once( 'BonusSummary.php' );
 class BonusMain
 {
 	const TEXT = [
+		'best-bookmaker-bonuses' => 'Best Bookmaker Bonuses',
+
 		'bonus-amount' => 'Bonus amount',
 
 		'bonus-preview' => 'Bonus Preview',
