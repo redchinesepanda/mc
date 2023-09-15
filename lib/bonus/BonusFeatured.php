@@ -35,9 +35,9 @@ class BonusFeatured
 
 	public static function get()
 	{
-		$post_id = self::get_id();
+		$id = self::get_id();
 
-		$preview = BonusMain::get_thumbnail( $post_id, self::SIZE[ 'featured' ] );
+		$preview = BonusMain::get_thumbnail( $id, self::SIZE[ 'featured' ] );
 
 		$preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
