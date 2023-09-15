@@ -37,7 +37,7 @@ class BonusRelated
 		$terms = wp_get_post_terms(
             $id,
 
-            self::TAXONOMY[ 'category' ],
+            self::TAXONOMY[ 'tag' ],
 
             [ 'ids' ]
         );
