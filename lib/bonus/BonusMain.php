@@ -160,8 +160,6 @@ class BonusMain
 			return [];
 		}
 
-		// $query_filter = null;
-
 		$compare = '>';
 
 		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
@@ -169,41 +167,17 @@ class BonusMain
 			$compare = '<';
 		}
 
-		// if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
-		// {
-		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
-		// }
-
-		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-		// {
-		// 	// $compare = '<';
-
-		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
-		// }
-
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
-		
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
 		$args = self::get_args( $atts, $mode );
 
-		// LegalDebug::debug( [
-		// 	'args' => $args,
-		// ] );
+		LegalDebug::debug( [
+			'function' => 'BonusMain::get_posts_date',
+
+			'args' => $args,
+		] );
 		
 		$query = $query_filter->createWpQuery( $args );
-		
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
-
-		// LegalDebug::debug( [
-		// 	'query' => $query,
-		// ] );
 
 		$posts = $query->posts;
 
