@@ -2,6 +2,28 @@
 
 class BonusTemplateSingle
 {
+    const CSS = [
+        'bonus-single' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-single.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+    public static function register_style()
+    {
+        if ( BonusMain::check() ) {
+            ToolEnqueue::register_style( self::CSS );
+        }
+    }
+
+	public static function register()
+    {
+        $handler = new self();
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    }
+
 	const TEMPLATE = [
         'legal-bonus-single' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-single.php',
     ];
