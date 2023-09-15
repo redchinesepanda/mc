@@ -48,7 +48,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         // $primary_cat_id = get_post_meta( $product->id,'_yoast_wpseo_primary_' . $taxonomy, true );
         
-        $primary_id = get_post_meta( $product->id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+        $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
         if ( $primary_id )
         {
