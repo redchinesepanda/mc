@@ -22,6 +22,8 @@ class BonusRelated
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_image_size( self::SIZE[ 'related' ], 214, 130, false );
     }
 
 	const TYPE = [
@@ -77,6 +79,8 @@ class BonusRelated
 
 	const SIZE = [
 		'thumbnail' => 'thumbnail',
+
+		'related' => 'legal-bonus-related',
 	];
 
 	public static function get_items()
@@ -91,7 +95,7 @@ class BonusRelated
 			{
 				$post_url = get_post_permalink( $post->ID );
 
-				$preview = BonusMain::get_thumbnail( $post->ID, self::SIZE[ 'thumbnail' ] );
+				$preview = BonusMain::get_thumbnail( $post->ID, self::SIZE[ 'related' ] );
 
 				if ( !empty( $preview ) )
 				{
