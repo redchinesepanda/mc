@@ -393,6 +393,12 @@ class BonusMain
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
+		LegalDebug::debug( [
+			'function' => 'BonusMain::get_items',
+
+			'active_partners' => $active_partners,
+		] );
+
 		if ( $limit )
 		{
 			$amount = count( $active_partners );
