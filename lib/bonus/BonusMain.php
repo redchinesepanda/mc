@@ -10,6 +10,8 @@ require_once( 'BonusRelated.php' );
 
 require_once( 'BonusTemplateSingle.php' );
 
+require_once( 'BonusFeatured.php' );
+
 class BonusMain
 {
 	const TEXT = [
@@ -105,6 +107,8 @@ class BonusMain
 		BonusRelated::register();
 
 		BonusTemplateSingle::register();
+
+		BonusFeatured::register();
     }
 
 	public static function legal_posts_order() 
