@@ -27,7 +27,7 @@ class BonusFeatured
 		'featured' => 'legal-bonus-featured',
 	];
 
-	public static function get_items()
+	public static function get()
 	{
 		$post_id = self::get_id();
 
