@@ -58,7 +58,7 @@ class BonusRelated
 			'tags' => $tags,
 		] );
 
-		return BonusMain::get_items( [
+		return BonusMain::group_posts( [
 			'post_type' => self::TYPE[ 'post' ],
 
 			// 'taxonomy' => self::TAXONOMY[ 'tag' ],

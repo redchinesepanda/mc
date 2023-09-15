@@ -170,12 +170,6 @@ class BonusMain
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 
 		$args = self::get_args( $atts, $mode );
-
-		LegalDebug::debug( [
-			'function' => 'BonusMain::get_posts_date',
-
-			'args' => $args,
-		] );
 		
 		$query = $query_filter->createWpQuery( $args );
 
@@ -364,12 +358,6 @@ class BonusMain
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
-		LegalDebug::debug( [
-			'function' => 'BonusMain::get_items',
-
-			'active_partners' => $active_partners,
-		] );
-
 		if ( $limit )
 		{
 			$amount = count( $active_partners );
@@ -403,46 +391,6 @@ class BonusMain
 
 	public static function get_items( $atts )
 	{
-		// $limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
-		
-		// $active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
-
-		// LegalDebug::debug( [
-		// 	'function' => 'BonusMain::get_items',
-
-		// 	'active_partners' => $active_partners,
-		// ] );
-
-		// if ( $limit )
-		// {
-		// 	$amount = count( $active_partners );
-
-		// 	$rest = $atts[ 'limit' ] - $amount;
-
-		// 	if ( $rest >= 0 )
-		// 	{
-		// 		$atts[ 'limit' ] = $rest;
-		// 	}
-		// }
-
-		// $active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
-
-		// if ( $limit )
-		// {
-		// 	$amount = count( $active_no_partners );
-
-		// 	$rest = $atts[ 'limit' ] - $amount;
-
-		// 	if ( $rest >= 0 )
-		// 	{
-		// 		$atts[ 'limit' ] = $rest;
-		// 	}
-		// }
-
-		// $expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
-
-		// $posts = array_merge( $active_partners, $active_no_partners, $expired_all );
-
 		$posts = self::group_posts( $atts );
 
 		$items = [];
