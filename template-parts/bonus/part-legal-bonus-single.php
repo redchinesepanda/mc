@@ -4,6 +4,7 @@
 		<span>bonus-full-main</span>
 	</div>
 	<div class="bonus-full-sidebar">
+		<?php echo BonusRelated::render(); ?>
 		<span>bonus-full-sidebar</span>
 	</div>
 </div>
