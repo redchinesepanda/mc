@@ -228,6 +228,8 @@ class BonusMain
 			];
 		}
 
+		$tax_query = [];
+
 		if ( !empty( $atts[ 'taxonomy' ] ) )
 		{
 			$tax_query = [
