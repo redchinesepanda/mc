@@ -228,15 +228,18 @@ class BonusMain
 			];
 		}
 
-		$tax_query = [
-			[
-				'taxonomy' => $atts[ 'taxonomy' ],
-
-				'field' => 'slug',
-
-				'terms' => $atts[ 'terms' ],
-			]
-		];
+		if ( !empty( $atts[ 'taxonomy' ] ) )
+		{
+			$tax_query = [
+				[
+					'taxonomy' => $atts[ 'taxonomy' ],
+	
+					'field' => 'slug',
+	
+					'terms' => $atts[ 'terms' ],
+				]
+			];
+		}
 
 		if ( !empty( $atts[ 'exclude' ] ) )
 		{
@@ -276,7 +279,7 @@ class BonusMain
 		if ( !empty( $atts[ 'tags' ] ) )
 		{
 			$args[ 'tax_query' ] = [];
-			
+
 			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
 		}
 
