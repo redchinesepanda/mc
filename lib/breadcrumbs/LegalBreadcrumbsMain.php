@@ -60,7 +60,15 @@ class LegalBreadcrumbsMain extends LegalDebug
             }
         }
 
-        return [];
+        // return [];
+
+        return wp_get_post_terms(
+            $id,
+
+            self::TAXONOMY[ 'category' ],
+
+            [ 'ids', 'names ' ]
+        );
     }
 
     public static function get_ancestors( $id )
