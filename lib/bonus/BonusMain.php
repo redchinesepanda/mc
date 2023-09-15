@@ -273,10 +273,10 @@ class BonusMain
 			],
         ];
 
-		if ( !empty( $atts[ 'tags' ] ) )
-		{
-			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
-		}
+		// if ( !empty( $atts[ 'tags' ] ) )
+		// {
+		// 	$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+		// }
 
 		return $args;
     }

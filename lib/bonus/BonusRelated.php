@@ -61,9 +61,9 @@ class BonusRelated
 		return BonusMain::get_items( [
 			'post_type' => self::TYPE[ 'post' ],
 
-			// 'taxonomy' => self::TAXONOMY[ 'tag' ],
+			'taxonomy' => self::TAXONOMY[ 'tag' ],
 
-			// 'terms' => $terms,
+			'terms' => $terms,
 
 			'exclude' => [],
 
