@@ -4,6 +4,8 @@ require_once( 'BonusTemplateSingle.php' );
 
 require_once( 'BonusAbout.php' );
 
+require_once( 'BonusSummary.php' );
+
 class BonusMain
 {
 	const TEXT = [
@@ -91,6 +93,8 @@ class BonusMain
 		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
 
 		BonusAbout::register();
+
+		BonusSummary::register();
     }
 
 	public static function legal_posts_order() 
