@@ -281,6 +281,11 @@ class BonusMain
 			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
 		}
 
+		if ( !empty( $atts[ 'current_not_in' ] ) )
+		{
+			$args[ 'post__not_in' ] = get_post()->ID;
+		}
+
 		return $args;
     }
 

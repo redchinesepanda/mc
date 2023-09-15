@@ -70,6 +70,8 @@ class BonusRelated
 			'limit' => 6,
 
 			'tags' => $tags,
+
+			'current_not_in' => true,
 		] );
 	}
 
