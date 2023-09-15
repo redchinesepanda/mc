@@ -4,3 +4,25 @@
 	position: sticky;
   	top: 0;
 }
+
+.legal-bonus-related {
+	padding: 10px;
+}
+
+/* Background */
+
+.legal-bonus-related {
+	background-color: rgba(239, 245, 251, 0.5);
+	border-radius: 20px;
+}
+
+/* Typography */
+
+.legal-bonus-related .bonus-related-title {
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 35px;
+	color: rgba(10, 10, 10, 0.85);
+}
