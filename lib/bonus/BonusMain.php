@@ -283,7 +283,7 @@ class BonusMain
 
 		if ( !empty( $atts[ 'current_not_in' ] ) )
 		{
-			$args[ 'post__not_in' ] = get_post()->ID;
+			$args[ 'post__not_in' ] = self::get_id();
 		}
 
 		return $args;
