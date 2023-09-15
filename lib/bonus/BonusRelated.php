@@ -49,7 +49,7 @@ class BonusRelated
 		$tags = wp_get_post_tags(
             self::get_id(),
 
-            [ 'names' ]
+            [ 'fields' => 'names' ]
         );
 
 		LegalDebug::debug( [
