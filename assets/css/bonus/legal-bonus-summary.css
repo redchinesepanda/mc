@@ -1,0 +1,12 @@
+/* Position */
+
+.legal-bonus-summary {
+	padding: 15px 25px;
+}
+
+/* Background */
+
+.legal-bonus-summary {
+	background-color: rgb(239, 245, 251);
+	border-radius: 20px;
+}
