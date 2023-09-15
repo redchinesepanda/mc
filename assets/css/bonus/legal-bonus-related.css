@@ -12,6 +12,12 @@
 	row-gap: 20px;
 }
 
+.legal-bonus-related .related-container-item {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
 /* Position */
 
 .legal-bonus-related {
