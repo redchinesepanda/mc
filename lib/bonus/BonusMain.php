@@ -278,8 +278,6 @@ class BonusMain
 
 		if ( !empty( $atts[ 'tags' ] ) )
 		{
-			$args[ 'tax_query' ] = [];
-
 			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
 		}
 
