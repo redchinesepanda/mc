@@ -195,6 +195,18 @@ class BonusMain
 
 		return $posts;
 	}
+
+	public static function get_id()
+    {
+		$post = get_post();
+
+        if ( !empty( $post ) )
+        {
+            return $post->ID;
+        }
+
+        return 0;
+    }
 	
 	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
     {
