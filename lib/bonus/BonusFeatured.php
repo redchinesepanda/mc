@@ -27,12 +27,22 @@ class BonusFeatured
 		'featured' => 'legal-bonus-featured',
 	];
 
+	const FIELD = [
+		'bonus-affilate-primary' => 'ref-ssylka',
+
+		'bonus-affilate-secondary' => 'ref-perelinkovka',
+	];
+
 	public static function get()
 	{
 		$post_id = self::get_id();
 
+		$preview = BonusMain::get_thumbnail( $post_id, self::SIZE[ 'featured' ] );
+
+		$preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+
 		return [
-			'preview' => BonusMain::get_thumbnail( $post_id, self::SIZE[ 'featured' ] ),
+			'preview' => $preview,
 		];
 	}
 
