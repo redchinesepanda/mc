@@ -1,0 +1,16 @@
+/* Display */
+
+.legal-bonus-full {
+	display: flex;
+	column-gap: 50px;
+}
+
+/* Width and Height */
+
+.legal-bonus-full .bonus-full-main {
+	flex-basis: calc( 75% - 25px );
+}
+
+.legal-bonus-full .bonus-full-sidebar {
+	flex-basis: calc( 25% - 25px );
+}
