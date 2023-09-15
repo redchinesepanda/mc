@@ -45,6 +45,8 @@ class WPMLMain
         'ru_RU',
         
         'dk_DA',
+
+        'pt_BP',
     ];
 
     public static function exclude( $args , $exclude = [] )

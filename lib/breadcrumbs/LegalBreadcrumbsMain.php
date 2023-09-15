@@ -26,15 +26,41 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     const FIELD_ANCESTOR = 'breadcrumbs-ancestor';
 
+    const TAXONOMY = [
+        'category' => 'category',
+    ];
+
+    const FIELD = [
+        'primary' => '_yoast_wpseo_primary_',
+    ];
+
     public static function get_terms( $id )
     {
-        return wp_get_post_terms(
-            $id,
+        // return wp_get_post_terms(
+        //     $id,
 
-            'category',
+        //     'category',
 
-            [ 'ids', 'names ' ]
-        );
+        //     [ 'ids', 'names ' ]
+        // );
+
+        // $taxonomy = 'product_cat'; 
+
+        // $primary_cat_id = get_post_meta( $product->id,'_yoast_wpseo_primary_' . $taxonomy, true );
+        
+        $primary_id = get_post_meta( $product->id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+
+        if ( $primary_id )
+        {
+            $primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
+
+            if( !empty( $primary ) )
+            {
+                return [ $primary ];
+            }
+        }
+
+        return [];
     }
 
     public static function get_ancestors( $id )
@@ -70,6 +96,8 @@ class LegalBreadcrumbsMain extends LegalDebug
         'esp' => 'es',
 
         'eng' => '',
+
+        'bp' => 'br',
     ];
 
     public static function get_home_url()
