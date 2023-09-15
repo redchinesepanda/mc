@@ -1,3 +1,17 @@
+/* Display */
+
+.legal-bonus-related {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-bonus-related .bonus-related-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
 /* Position */
 
 .legal-bonus-related {
