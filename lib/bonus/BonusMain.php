@@ -358,10 +358,8 @@ class BonusMain
 		];
 	}
 
-	public static function get_items( $atts )
+	public static function group_posts( $atts )
 	{
-		$items = [];
-
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
@@ -400,7 +398,54 @@ class BonusMain
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
-		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
+		return array_merge( $active_partners, $active_no_partners, $expired_all );
+	}
+
+	public static function get_items( $atts )
+	{
+		// $limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
+		
+		// $active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusMain::get_items',
+
+		// 	'active_partners' => $active_partners,
+		// ] );
+
+		// if ( $limit )
+		// {
+		// 	$amount = count( $active_partners );
+
+		// 	$rest = $atts[ 'limit' ] - $amount;
+
+		// 	if ( $rest >= 0 )
+		// 	{
+		// 		$atts[ 'limit' ] = $rest;
+		// 	}
+		// }
+
+		// $active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+
+		// if ( $limit )
+		// {
+		// 	$amount = count( $active_no_partners );
+
+		// 	$rest = $atts[ 'limit' ] - $amount;
+
+		// 	if ( $rest >= 0 )
+		// 	{
+		// 		$atts[ 'limit' ] = $rest;
+		// 	}
+		// }
+
+		// $expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+
+		// $posts = array_merge( $active_partners, $active_no_partners, $expired_all );
+
+		$posts = self::group_posts( $atts );
+
+		$items = [];
 
 		if ( !empty( $posts ) )
 		{
