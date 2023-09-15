@@ -4,3 +4,9 @@
 	display: flex;
   	justify-content: center;
 }
+
+/* Position */
+
+.bonus-full-main .full-main-featured {
+	padding-bottom: 20px;
+}
