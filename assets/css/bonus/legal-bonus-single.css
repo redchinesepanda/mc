@@ -14,3 +14,9 @@
 .legal-bonus-full .bonus-full-sidebar {
 	flex-basis: calc( 25% - 25px );
 }
+
+/* Position */
+
+.legal-bonus-full .bonus-full-sidebar {
+	position: relative;
+}
