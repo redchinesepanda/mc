@@ -52,11 +52,11 @@ class BonusRelated
             [ 'fields' => 'names' ]
         );
 
-		LegalDebug::debug( [
-			'function' => 'BonusRelated::get_items',
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusRelated::get_items',
 
-			'tags' => $tags,
-		] );
+		// 	'tags' => $tags,
+		// ] );
 
 		return BonusMain::group_posts( [
 			'post_type' => self::TYPE[ 'post' ],
