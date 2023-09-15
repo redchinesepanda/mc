@@ -253,27 +253,14 @@ class BonusMain
 			];
 		}
 
-		return [
+		$args = [
 			'posts_per_page' => $atts[ 'limit' ],
-
-            // 'numberposts' => $atts[ 'limit' ],
             
             'post_type' => $atts[ 'post_type' ],
 
 			'suppress_filters' => 0,
-            
-            // 'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
 			'tax_query' => $tax_query,
-
-			// 'tax_query' => [
-
-			// 	'taxonomy' => $atts[ 'taxonomy' ],
-
-			// 	'field' => 'slug',
-
-			// 	'terms' => $atts[ 'terms' ],
-			// ],
 
 			'meta_query' => $meta_query,
 
@@ -285,6 +272,13 @@ class BonusMain
 				'title' => 'ASC',
 			],
         ];
+
+		if ( !empty( $atts[ 'tags' ] ) )
+		{
+			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+		}
+
+		return $args;
     }
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
