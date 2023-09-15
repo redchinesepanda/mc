@@ -68,6 +68,8 @@ class BonusRelated
 			'exclude' => [],
 
 			'limit' => 6,
+
+			'tags' => $tags,
 		] );
 	}
 
