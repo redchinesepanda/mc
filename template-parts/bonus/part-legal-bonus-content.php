@@ -1,3 +1,3 @@
 <div class="full-main-content">
-	<?php echo BonusContent::render(); ?>
+	<?php echo $args[ 'content' ]; ?>
 </div>
