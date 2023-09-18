@@ -5,3 +5,10 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
 }
+
+/* Typography */
+
+.legal-bonus-duration.legal-bonus-duration-expired {
+	text-align: center;
+    color: rgb(255, 255, 255);
+}
