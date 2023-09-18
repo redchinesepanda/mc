@@ -1,6 +1,6 @@
 /* Display */
 
-.full-main-summary {
+.legal-bonus-summary {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 10px;
@@ -9,58 +9,58 @@
 
 /* Width and Height */
 
-.full-main-summary .bonus-summary-item {
+.legal-bonus-summary .bonus-summary-item {
 	flex-basis: calc( 100% / 5 - 8px );
 }
 
 /* Position */
 
-.full-main-summary {
+.legal-bonus-summary {
 	padding: 15px 25px;
 	margin-bottom: 20px;
 }
 
-.full-main-summary .item-label,
-.full-main-summary .item-value {
+.legal-bonus-summary .item-label,
+.legal-bonus-summary .item-value {
 	padding-left: 25px;
 }
 
 /* Background */
 
-.full-main-summary {
+.legal-bonus-summary {
 	background-color: rgb(239, 245, 251);
 	border-radius: 20px;
 }
 
-.full-main-summary .item-label {
+.legal-bonus-summary .item-label {
 	background-position: left top 9.75px;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
 
-.full-main-summary .item-label-bookmaker {
+.legal-bonus-summary .item-label-bookmaker {
 	background-image: url( '../../img/bonus/bonus-summary-bookmaker.svg' );
 }
 
-.full-main-summary .item-label-bonus-amount {
+.legal-bonus-summary .item-label-bonus-amount {
 	background-image: url( '../../img/bonus/bonus-summary-bonus-amount.svg' );
 }
 
-.full-main-summary .item-label-min-deposit {
+.legal-bonus-summary .item-label-min-deposit {
 	background-image: url( '../../img/bonus/bonus-summary-min-deposit.svg' );
 }
 
-.full-main-summary .item-label-wagering {
+.legal-bonus-summary .item-label-wagering {
 	background-image: url( '../../img/bonus/bonus-summary-wagering.svg' );
 }
 
-.full-main-summary .item-label-published {
+.legal-bonus-summary .item-label-published {
 	background-image: url( '../../img/bonus/bonus-summary-published.svg' );
 }
 
 /* Typography */
 
-.full-main-summary .item-label {
+.legal-bonus-summary .item-label {
 	font-family: "Source Sans Pro";
 	font-size: 15px;
 	font-style: normal;
@@ -69,7 +69,7 @@
 	color: rgb(59, 59, 59);
 }
 
-.full-main-summary .item-value {
+.legal-bonus-summary .item-value {
 	font-family: "Source Sans Pro";
 	font-size: 15px;
 	font-style: normal;
