@@ -22,6 +22,10 @@ class BonusAbout
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        // [legal-bonus-button]
+
+        add_shortcode( 'legal-bonus-button', [ $handler, 'render_button' ] );
     }
 
 	public static function get_id()
@@ -120,7 +124,7 @@ class BonusAbout
         return $output;
     }
 
-    public static function render_button()
+    public static function render_button( $args = [] )
     {
 		if ( !BonusMain::check() )
         {
