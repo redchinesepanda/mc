@@ -75,6 +75,8 @@ class BonusDuration
 
 	const FORMAT = [
 		'bonus' => 'd/m/Y',
+
+		'compare' => 'Y-m-d',
 	];
 
 	public static function check_expired( $id )
@@ -82,8 +84,12 @@ class BonusDuration
 		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
 
 		$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
+
+		$bonus->format( self::FORMAT[ 'compare' ] );
 		
 		$current = new DateTime();
+
+		$current->format( self::FORMAT[ 'compare' ] );
 
 		$expired = $bonus < $current;
 
