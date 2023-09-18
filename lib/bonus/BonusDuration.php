@@ -77,6 +77,17 @@ class BonusDuration
 		'bonus' => 'd/m/Y',
 	];
 
+	public static function check_expired( $id )
+	{
+		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
+
+		$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
+		
+		$current = new DateTime();
+
+		return $bonus < $current;
+	}
+
 	public static function get()
 	{
 		$id = self::get_id();
@@ -86,37 +97,34 @@ class BonusDuration
 			return [];
         }
 
-		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
+		$expired = self::check_expired( $id );
 
-		// $bonus = new DateTime( $bonus_duration );
-		// $bonus = new DateTime();
+		// $bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
 
-		$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
+		// $bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
 		
-		// $current = new DateTime( '2008-01-03 11:11:10' );
-		
-		$current = new DateTime();
-		
-		// $current = new date( 'Y-m-d' );
+		// $current = new DateTime();
 
 		LegalDebug::debug( [
 			'function' => 'BonusDuration::get',
 
-			'format' => self::FORMAT[ 'bonus' ],
+			'expired' => $expired,
 
-			'bonus_duration' => $bonus_duration,
+			// 'format' => self::FORMAT[ 'bonus' ],
 
-			'bonus' => $bonus,
+			// 'bonus_duration' => $bonus_duration,
 
-			'bonus_format' => $bonus->format('Y-m-d'),
+			// 'bonus' => $bonus,
 
-			'current' => $current,
+			// 'bonus_format' => $bonus->format('Y-m-d'),
 
-			'eq' => $bonus == $current ? 'true' : 'false',
+			// 'current' => $current,
+
+			// 'eq' => $bonus == $current ? 'true' : 'false',
 	
-			'bonus_lager' => $bonus > $current ? 'true' : 'false',
+			// 'bonus_lager' => $bonus > $current ? 'true' : 'false',
 
-			'bonus_smaller' => $bonus < $current ? 'true' : 'false',
+			// 'bonus_smaller' => $bonus < $current ? 'true' : 'false',
 		] );
 	}
 
