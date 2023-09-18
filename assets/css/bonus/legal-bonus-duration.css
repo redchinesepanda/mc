@@ -25,10 +25,10 @@
     color: rgb(255, 255, 255);
 }
 
-.legal-bonus-duration {
+.legal-bonus-duration .duration-label-title {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 28px;
 }
