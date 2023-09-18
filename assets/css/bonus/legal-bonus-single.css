@@ -2,6 +2,7 @@
 
 .legal-bonus-single {
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: 50px;
 }
 
