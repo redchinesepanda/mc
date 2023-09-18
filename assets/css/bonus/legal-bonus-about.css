@@ -20,6 +20,10 @@
   	justify-content: center;
 }
 
+.full-main-content .about-action-get {
+	display: block;
+}
+
 /* Position */
 
 .legal-bonus-about {
@@ -52,6 +56,10 @@
 	left: 0px;
 }
 
+.full-main-content .about-action-get {
+	margin: 25px auto;
+}
+
 /* Width and Height */
 
 .legal-bonus-about {
@@ -71,6 +79,10 @@
 .legal-bonus-about-overlay3 {
 	height: 56px;
 	width: 100%;
+}
+
+.full-main-content .about-action-get {
+	width: fit-content;
 }
 
 /* Background */
