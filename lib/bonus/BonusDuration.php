@@ -102,7 +102,7 @@ class BonusDuration
 		LegalDebug::debug( [
 			'function' => 'BonusDuration::get',
 
-			'bonus_format' => self::FORMAT[ 'bonus' ],
+			'format' => self::FORMAT[ 'bonus' ],
 
 			'bonus_duration' => $bonus_duration,
 
