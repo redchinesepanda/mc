@@ -98,6 +98,8 @@ class BonusDuration
 		LegalDebug::debug( [
 			'function' => 'BonusDuration::get',
 
+			'bonus_duration' => $bonus_duration,
+
 			'bonus' => $bonus,
 
 			'current' => $current,
