@@ -85,7 +85,19 @@ class BonusDuration
 		
 		$current = new DateTime();
 
-		return $bonus < $current;
+		$expired = $bonus < $current;
+
+		LegalDebug::debug( [
+			'function' => 'BonusDuration::check_expired',
+
+			'bonus' => $bonus,
+
+			'current' => $current,
+
+			'expired' => $expired ? 'true' : 'false',
+		] );
+
+		return $expired;
 	}
 
 	public static function get()
