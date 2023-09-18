@@ -7,16 +7,16 @@
 
 /* Width and Height */
 
-.legal-bonus-single .bonus-full-main {
+.legal-bonus-single .legal-bonus-main {
 	flex-basis: calc( 75% - 25px );
 }
 
-.legal-bonus-single .bonus-full-sidebar {
+.legal-bonus-single .legal-bonus-sidebar {
 	flex-basis: calc( 25% - 25px );
 }
 
 /* Position */
 
-.legal-bonus-single .bonus-full-sidebar {
+.legal-bonus-single .legal-bonus-sidebar {
 	position: relative;
 }

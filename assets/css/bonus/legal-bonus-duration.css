@@ -4,6 +4,12 @@
 	margin-bottom: 20px;
 }
 
+/* Width and Height */
+
+.legal-bonus-duration {
+	flex-basis: 100%;
+}
+
 /* Background */
 
 .legal-bonus-duration {
