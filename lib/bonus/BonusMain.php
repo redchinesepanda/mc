@@ -12,6 +12,8 @@ require_once( 'BonusTemplateSingle.php' );
 
 require_once( 'BonusFeatured.php' );
 
+require_once( 'BonusDuration.php' );
+
 class BonusMain
 {
 	const TEXT = [
@@ -31,7 +33,13 @@ class BonusMain
 
 		'min-deposit' => 'Min. deposit',
 
+		'promotion-expired' => 'Promotion Expired',
+
+		'promotion-period' => 'Promotion period',
+
 		'published' => 'Published',
+
+		'till' => 'till',
 
 		'wagering' => 'Wagering',
 	];
@@ -109,6 +117,8 @@ class BonusMain
 		BonusTemplateSingle::register();
 
 		BonusFeatured::register();
+
+		BonusDuration::register();
     }
 
 	public static function legal_posts_order() 
