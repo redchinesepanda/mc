@@ -3,3 +3,8 @@
 .full-main-content h2 {
 	margin-bottom: 0px;
 }
+
+.full-main-content p {
+	padding-top: 0px;
+	margin-bottom: 0px;
+}
