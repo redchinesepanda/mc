@@ -14,7 +14,7 @@ require_once( 'BonusFeatured.php' );
 
 require_once( 'BonusDuration.php' );
 
-require_once( 'BonusContent.php' );
+// require_once( 'BonusContent.php' );
 
 class BonusMain
 {
