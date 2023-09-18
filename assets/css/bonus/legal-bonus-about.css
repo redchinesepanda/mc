@@ -39,7 +39,8 @@
 	margin-bottom: 0px;
 }
 
-.legal-bonus-about .about-action-get {
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
 	padding: 12px 25px 12px 52px;
 }
 
@@ -79,7 +80,8 @@
 	border-radius: 20px;
 }
 
-.legal-bonus-about .about-action-get {
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
 	background-color: rgb(89, 151, 227);
 	background-image: url( '../../img/bonus/bonus-get.svg' );
 	background-position: left 25px center;
@@ -139,7 +141,8 @@
 	color: rgb(255, 255, 255);
 }
 
-.legal-bonus-about .about-action-get {
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
 	color: rgb(255, 255, 255);
 	font-family: "Source Sans Pro";
 	font-size: 14px;
