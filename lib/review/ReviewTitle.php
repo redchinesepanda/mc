@@ -62,10 +62,14 @@ class ReviewTitle
 		// self::CLASSES[ 'date-month-year' ] => 'LLLL y',
     ];
 
-    public static function get_date( $node )
-    {
-		$current = new DateTime();
+	const PLACEHOLDER = [
+		'{YEAR}' => self::CLASSES[ 'date-year' ],
 
+		'{MONTH_YEAR}' => self::CLASSES[ 'date-month-year' ],
+	];
+
+    public static function get_format( $node )
+	{
 		$format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
 
 		$classes = explode( ' ', $node->getAttribute( 'class' ) );
@@ -79,20 +83,60 @@ class ReviewTitle
 				break;
 			}
 		}
-		
+
+		return $format;
+	}
+
+	public static function format_date( $format )
+	{
 		$locale = WPMLMain::get_locale();
+
+		$current = new DateTime();
 
 		$formatter = new IntlDateFormatter( $locale, IntlDateFormatter::FULL, IntlDateFormatter::SHORT);
 
 		$formatter->setPattern( $format );
-		
-		// return $formatter->format( $current );
 
 		$result = mb_str_split( $formatter->format( $current ) );
 
 		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
 
 		return implode( '', $result );
+	}
+
+    public static function get_date( $node )
+    {
+		// $format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
+
+		// $classes = explode( ' ', $node->getAttribute( 'class' ) );
+
+		// foreach ( $classes as $class )
+		// {
+		// 	if ( array_key_exists( $class, self::FORMAT ) )
+		// 	{
+		// 		$format = self::FORMAT[ $class ];
+
+		// 		break;
+		// 	}
+		// }
+
+		$format = self::get_format( $node );
+		
+		// $locale = WPMLMain::get_locale();
+
+		// $current = new DateTime();
+
+		// $formatter = new IntlDateFormatter( $locale, IntlDateFormatter::FULL, IntlDateFormatter::SHORT);
+
+		// $formatter->setPattern( $format );
+
+		// $result = mb_str_split( $formatter->format( $current ) );
+
+		// $result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+
+		// return implode( '', $result );
+
+		return self::format_date( $format );
     }
 
 	public static function get_nodes( $dom )
