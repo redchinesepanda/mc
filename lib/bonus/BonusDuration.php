@@ -56,7 +56,7 @@ class BonusDuration
 	public static function get_duration( $id )
     {
         return [
-			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ),
+			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ) . ':',
 			
 			'prefix' => __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN ),
 
