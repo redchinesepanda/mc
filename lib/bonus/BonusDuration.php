@@ -102,6 +102,8 @@ class BonusDuration
 
 			'bonus' => $bonus,
 
+			'bonus_format' => $bonus->format('Y-m-d'),
+
 			'current' => $current,
 
 			'eq' => $bonus == $current ? 'true' : 'false',
