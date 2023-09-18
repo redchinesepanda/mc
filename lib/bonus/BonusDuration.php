@@ -32,15 +32,6 @@ class BonusDuration
 		'bonus-duration' => 'data-okonchaniya',
 	];
 
-	public static function get_expired()
-	{
-		return [
-			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ),
-
-			'class' => 'legal-bonus-duration-expired',
-		];
-	}
-
 	public static function get_id()
     {
 		$post = get_post();
@@ -52,6 +43,15 @@ class BonusDuration
 
         return 0;
     }
+
+	public static function get_expired()
+	{
+		return [
+			'title' => __( BonusMain::TEXT[ 'promotion-expired' ], ToolLoco::TEXTDOMAIN ),
+
+			'class' => 'legal-bonus-duration-expired',
+		];
+	}
 
 	public static function get_duration( $id )
     {
