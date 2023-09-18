@@ -74,19 +74,38 @@ class ReviewTitle
 
 		$current_placeholder = '';
 
-		foreach ( self::PLACEHOLDER as $placeholder => $format )
+		LegalDebug::debug( [
+			'function' => 'ReviewTitle::replace_placeholder',
+
+			'title' => $title,
+		] );
+
+		foreach ( self::PLACEHOLDER as $placeholder => $format_key )
 		{
+			LegalDebug::debug( [
+				'function' => 'ReviewTitle::replace_placeholder',
+
+				'placeholder' => $placeholder,
+
+				'strpos' => strpos( $title, $placeholder ),
+			] );
+
 			if ( strpos( $title, $placeholder ) !== false )
 			{
-				$current_date = format_date( $format );
+				$current_date = self::format_date( self::FORMAT[ $format_key ] );
 
 				$current_placeholder = $placeholder;
-			}
-		}
 
-		if ( !empty( $date ) )
-		{
-			return str_replace( $current_placeholder, $current_date, $title );
+				LegalDebug::debug( [
+					'function' => 'ReviewTitle::replace_placeholder',
+	
+					'current_date' => $current_date,
+	
+					'current_placeholder' => $current_placeholder,
+				] );
+
+				return str_replace( $current_placeholder, $current_date, $title );
+			}
 		}
 
 		return $title;
