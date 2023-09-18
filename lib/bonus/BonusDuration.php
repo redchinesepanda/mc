@@ -73,6 +73,10 @@ class BonusDuration
 		];
     }
 
+	const FORMAT = [
+		'bonus' => 'd/m/Y',
+	];
+
 	public static function get()
 	{
 		$id = self::get_id();
@@ -87,7 +91,7 @@ class BonusDuration
 		// $bonus = new DateTime( $bonus_duration );
 		$bonus = new DateTime();
 
-		$bonus->createFromFormat( 'd/m/Y', $bonus_duration );
+		$bonus->createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
 		
 		// $current = new DateTime( '2008-01-03 11:11:10' );
 		
@@ -97,6 +101,8 @@ class BonusDuration
 
 		LegalDebug::debug( [
 			'function' => 'BonusDuration::get',
+
+			'bonus_format' => self::FORMAT[ 'bonus' ],
 
 			'bonus_duration' => $bonus_duration,
 
