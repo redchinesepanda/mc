@@ -122,7 +122,7 @@ class BonusMain
 
 		BonusDuration::register();
 
-		BonusContent::register();
+		// BonusContent::register();
     }
 
 	public static function legal_posts_order() 
