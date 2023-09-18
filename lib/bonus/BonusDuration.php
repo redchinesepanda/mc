@@ -84,7 +84,10 @@ class BonusDuration
 
 		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
 
-		$bonus = new DateTime( $bonus_duration );
+		// $bonus = new DateTime( $bonus_duration );
+		$bonus = new DateTime();
+
+		$bonus->createFromFormat( 'dd/mm/YY', $bonus_duration );
 		
 		// $current = new DateTime( '2008-01-03 11:11:10' );
 		
