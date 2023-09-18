@@ -85,7 +85,7 @@ class BonusDuration
 		
 		$current = new DateTime();
 
-		return $bonus >= $current;
+		return $bonus < $current;
 	}
 
 	public static function get()
