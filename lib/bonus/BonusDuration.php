@@ -37,7 +37,7 @@ class BonusDuration
 		return [
 			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ),
 
-			'class' => 'legal-bonus-expired',
+			'class' => 'legal-bonus-duration-expired',
 		];
 	}
 
@@ -53,23 +53,16 @@ class BonusDuration
         return 0;
     }
 
-	public static function get_till()
+	public static function get_duration( $id )
     {
-        $id = self::get_id();
-        
-		if ( empty( $id ) )
-		{
-			return [];
-        }
-
-		return [
+        return [
 			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ),
 			
 			'prefix' => __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN ),
 
 			'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
 
-			'class' => 'legal-bonus-default',
+			'class' => 'legal-bonus-duration-default',
 		];
     }
 
@@ -87,19 +80,7 @@ class BonusDuration
 		
 		$current = new DateTime();
 
-		$expired = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
-
-		LegalDebug::debug( [
-			'function' => 'BonusDuration::check_expired',
-
-			'bonus' => $bonus,
-
-			'current' => $current,
-
-			'expired' => $expired ? 'true' : 'false',
-		] );
-
-		return $expired;
+		return $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
 	}
 
 	public static function get()
@@ -111,35 +92,14 @@ class BonusDuration
 			return [];
         }
 
-		$expired = self::check_expired( $id );
-
-		// $bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
-
-		// $bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
-		
-		// $current = new DateTime();
-
-		LegalDebug::debug( [
-			'function' => 'BonusDuration::get',
-
-			'expired' => $expired ? 'true' : 'false',
-
-			// 'format' => self::FORMAT[ 'bonus' ],
-
-			// 'bonus_duration' => $bonus_duration,
-
-			// 'bonus' => $bonus,
-
-			// 'bonus_format' => $bonus->format('Y-m-d'),
-
-			// 'current' => $current,
-
-			// 'eq' => $bonus == $current ? 'true' : 'false',
-	
-			// 'bonus_lager' => $bonus > $current ? 'true' : 'false',
-
-			// 'bonus_smaller' => $bonus < $current ? 'true' : 'false',
-		] );
+		if ( self::check_expired( $id ) )
+		{
+			return self::get_expired();
+		}
+		else
+		{
+			return self::get_duration( $id );
+		}
 	}
 
     public static function render()
