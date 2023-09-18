@@ -1,4 +1,4 @@
-<div class="legal-bonus-full">
+<div class="legal-bonus-single">
 	<?php echo BonusDuration::render(); ?>
 	<div class="bonus-full-main">
 		<?php echo BonusSummary::render(); ?>

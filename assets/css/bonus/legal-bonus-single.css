@@ -1,22 +1,22 @@
 /* Display */
 
-.legal-bonus-full {
+.legal-bonus-single {
 	display: flex;
 	column-gap: 50px;
 }
 
 /* Width and Height */
 
-.legal-bonus-full .bonus-full-main {
+.legal-bonus-single .bonus-full-main {
 	flex-basis: calc( 75% - 25px );
 }
 
-.legal-bonus-full .bonus-full-sidebar {
+.legal-bonus-single .bonus-full-sidebar {
 	flex-basis: calc( 25% - 25px );
 }
 
 /* Position */
 
-.legal-bonus-full .bonus-full-sidebar {
+.legal-bonus-single .bonus-full-sidebar {
 	position: relative;
 }
