@@ -35,17 +35,17 @@
 
 .legal-bonus-duration .duration-label-title {
     font-family: "Source Sans Pro";
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 26.5px;
 }
 
 .legal-bonus-duration .duration-label-prefix,
 .legal-bonus-duration .duration-label-value {
     font-family: "Source Sans Pro";
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 26.5px;
 }
