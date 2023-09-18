@@ -108,7 +108,7 @@ class BonusDuration
 		LegalDebug::debug( [
 			'function' => 'BonusDuration::get',
 
-			'expired' => $expired,
+			'expired' => $expired ? 'true' : 'false',
 
 			// 'format' => self::FORMAT[ 'bonus' ],
 
