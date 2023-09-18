@@ -197,7 +197,7 @@ class ReviewAbout
         $group = get_field( self::FIELD, $id );
 
         if( $group ) {
-            $title = $group[ 'about-title' ];
+            $title = ReviewTitle::replace_placeholder( $group[ 'about-title' ] );
 
             // $bonus = $group[ 'about-bonus' ];
             

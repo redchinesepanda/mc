@@ -68,6 +68,30 @@ class ReviewTitle
 		'{MONTH_YEAR}' => self::CLASSES[ 'date-month-year' ],
 	];
 
+    public static function replace_placeholder( $title )
+	{
+		$current_date = '';
+
+		$current_placeholder = '';
+
+		foreach ( self::PLACEHOLDER as $placeholder => $format )
+		{
+			if ( strpos( $title, $placeholder ) !== false )
+			{
+				$current_date = format_date( $format );
+
+				$current_placeholder = $placeholder;
+			}
+		}
+
+		if ( !empty( $date ) )
+		{
+			return str_replace( $current_placeholder, $current_date, $title );
+		}
+
+		return $title;
+	}
+
     public static function get_format( $node )
 	{
 		$format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
@@ -106,35 +130,7 @@ class ReviewTitle
 
     public static function get_date( $node )
     {
-		// $format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
-
-		// $classes = explode( ' ', $node->getAttribute( 'class' ) );
-
-		// foreach ( $classes as $class )
-		// {
-		// 	if ( array_key_exists( $class, self::FORMAT ) )
-		// 	{
-		// 		$format = self::FORMAT[ $class ];
-
-		// 		break;
-		// 	}
-		// }
-
 		$format = self::get_format( $node );
-		
-		// $locale = WPMLMain::get_locale();
-
-		// $current = new DateTime();
-
-		// $formatter = new IntlDateFormatter( $locale, IntlDateFormatter::FULL, IntlDateFormatter::SHORT);
-
-		// $formatter->setPattern( $format );
-
-		// $result = mb_str_split( $formatter->format( $current ) );
-
-		// $result[ 0 ] = mb_strtoupper( $result[ 0 ] );
-
-		// return implode( '', $result );
 
 		return self::format_date( $format );
     }
