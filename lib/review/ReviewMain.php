@@ -45,6 +45,8 @@ class ReviewMain
 
 		'bookmaker-lightbox' => 'Bookmaker Lightbox',
 
+		'borja-imbergamo' => 'Borja Imbergamo',
+
 		'claim-bonus' => 'Claim Bonus',
 
 		'download' => 'Download',

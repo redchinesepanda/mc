@@ -70,6 +70,22 @@ class ReviewAuthor
         'ua-ru',
     ];
 
+    const ES = [
+        'es',
+
+        'mx',
+
+        'pe',
+
+        'cl',
+
+        'py',
+
+        'co',
+
+        'ar',
+    ];
+
     public static function get()
     {
         $language = WPMLMain::current_language();
@@ -77,6 +93,11 @@ class ReviewAuthor
         if ( in_array( $language, self::CIS ) )
         {
             return self::get_cis();
+        }
+
+        if ( in_array( $language, self::ES ) )
+        {
+            return self::get_es();
         }
 
         return self::get_default();
@@ -115,6 +136,25 @@ class ReviewAuthor
 			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
 
 			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/alexander-kachalov.webp',
+
+			'href' => $href,
+		];
+    }
+
+    public static function get_es()
+    {
+        $page = get_page_by_path( '/sobre-nosotros/' );
+
+        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        $href = get_page_link( $translated_id ) . '#nuestro-equipo';
+
+        return [
+			'name' => __( ReviewMain::TEXT[ 'borja-imbergamo' ], ToolLoco::TEXTDOMAIN ),
+
+			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
+
+			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
 
 			'href' => $href,
 		];
