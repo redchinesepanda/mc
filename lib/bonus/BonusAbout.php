@@ -50,6 +50,22 @@ class BonusAbout
 		'bonus-affilate-secondary' => 'ref-perelinkovka',
 	];
 
+	public static function get_button()
+    {
+        $id = self::get_id();
+        
+		if ( empty( $id ) )
+		{
+			return [];
+        }
+
+        return [
+            'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
+
+            'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
+        ];
+    }
+
 	public static function get()
     {
         $id = self::get_id();
@@ -58,6 +74,8 @@ class BonusAbout
 		{
 			return [];
         }
+
+        // $button = self::get_button();
 
 		return [
 			'title' => get_field( self::FIELD[ 'bonus-title' ], $id ),
@@ -70,16 +88,20 @@ class BonusAbout
 				'alt' => get_field( self::FIELD[ 'bonus-bookmaker-name' ], $id ),
 			],
 
-			'button' => [
-				'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
+			// 'button' => [
+			// 	'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
 
-				'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
-			],
+			// 	'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
+			// ],
+
+            // 'button' => $button,
 		];
     }
 
 	const TEMPLATE = [
         'bonus-about' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about.php',
+
+        'bonus-about-button' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-button.php',
     ];
 
     public static function render()
@@ -92,6 +114,22 @@ class BonusAbout
         ob_start();
 
         load_template( self::TEMPLATE[ 'bonus-about' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_button()
+    {
+		if ( !BonusMain::check() )
+        {
+            return '';
+        }
+
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'bonus-about-button' ], false, self::get_button() );
 
         $output = ob_get_clean();
 
