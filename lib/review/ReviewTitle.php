@@ -74,21 +74,21 @@ class ReviewTitle
 
 		$current_placeholder = '';
 
-		LegalDebug::debug( [
-			'function' => 'ReviewTitle::replace_placeholder',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewTitle::replace_placeholder',
 
-			'title' => $title,
-		] );
+		// 	'title' => $title,
+		// ] );
 
 		foreach ( self::PLACEHOLDER as $placeholder => $format_key )
 		{
-			LegalDebug::debug( [
-				'function' => 'ReviewTitle::replace_placeholder',
+			// LegalDebug::debug( [
+			// 	'function' => 'ReviewTitle::replace_placeholder',
 
-				'placeholder' => $placeholder,
+			// 	'placeholder' => $placeholder,
 
-				'strpos' => strpos( $title, $placeholder ),
-			] );
+			// 	'strpos' => strpos( $title, $placeholder ),
+			// ] );
 
 			if ( strpos( $title, $placeholder ) !== false )
 			{
@@ -96,15 +96,15 @@ class ReviewTitle
 
 				$current_placeholder = $placeholder;
 
-				LegalDebug::debug( [
-					'function' => 'ReviewTitle::replace_placeholder',
+				// LegalDebug::debug( [
+				// 	'function' => 'ReviewTitle::replace_placeholder',
 	
-					'current_date' => $current_date,
+				// 	'current_date' => $current_date,
 	
-					'current_placeholder' => $current_placeholder,
-				] );
+				// 	'current_placeholder' => $current_placeholder,
+				// ] );
 
-				return str_replace( $current_placeholder, $current_date, $title );
+				$title = str_replace( $current_placeholder, $current_date, $title );
 			}
 		}
 

@@ -46,7 +46,34 @@ class BonusRelated
         return 0;
     }
 
-	public static function group_posts()
+	public static function group_posts_categories()
+	{
+		$categories = wp_get_post_categories(
+            self::get_id(),
+
+            [ 'fields' => 'ids' ]
+        );
+
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusRelated::group_posts_categories',
+
+		// 	'categories' => $categories,
+		// ] );
+
+		return BonusMain::group_posts( [
+			'post_type' => self::TYPE[ 'post' ],
+
+			'exclude' => [],
+
+			'limit' => 6,
+
+			'categories' => $categories,
+
+			'current_not_in' => true,
+		] );
+	}
+
+	public static function group_posts_tags()
 	{
 		$tags = wp_get_post_tags(
             self::get_id(),
@@ -55,7 +82,7 @@ class BonusRelated
         );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'BonusRelated::get_items',
+		// 	'function' => 'BonusRelated::group_posts_tags',
 
 		// 	'tags' => $tags,
 		// ] );
@@ -83,9 +110,9 @@ class BonusRelated
 		'related' => 'legal-bonus-related',
 	];
 
-	public static function get_items()
+	public static function get_items( $posts = [] )
 	{
-		$posts = self::group_posts();
+		// $posts = self::group_posts_tags();
 
 		$items = [];
 
@@ -121,12 +148,21 @@ class BonusRelated
 		return $items;
 	}
 
-	public static function get()
+	public static function get_tags()
     {
 		return [
 			'title' => __( BonusMain::TEXT[ 'best-bookmaker-bonuses' ], ToolLoco::TEXTDOMAIN ),
 
-			'items' => self::get_items( self::group_posts() ),
+			'items' => self::get_items( self::group_posts_tags() ),
+		];
+	}
+
+	public static function get_categories()
+    {
+		return [
+			'title' => __( BonusMain::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
+
+			'items' => self::get_items( self::group_posts_categories() ),
 		];
 	}
 
@@ -134,7 +170,17 @@ class BonusRelated
         'bonus-related' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-related.php',
     ];
 
-    public static function render()
+    public static function render_tags()
+	{
+		return self::render( self::get_tags() );
+	}
+
+    public static function render_categories()
+	{
+		return self::render( self::get_categories() );
+	}
+
+    public static function render( $args )
     {
 		if ( !BonusMain::check() )
         {
@@ -143,7 +189,7 @@ class BonusRelated
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus-related' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'bonus-related' ], false, $args );
 
         $output = ob_get_clean();
 

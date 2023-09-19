@@ -197,7 +197,7 @@ class ReviewAbout
         $group = get_field( self::FIELD, $id );
 
         if( $group ) {
-            $title = ReviewTitle::replace_placeholder( $group[ 'about-title' ] );
+            // $title = ReviewTitle::replace_placeholder( $group[ 'about-title' ] );
 
             // $bonus = $group[ 'about-bonus' ];
             
@@ -247,8 +247,12 @@ class ReviewAbout
                 ];
             }
 
+            $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
+
             return [
-                'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
+                // 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
+                
+                'title' => $title,
                 
                 'bonus' => $bonus,
                 

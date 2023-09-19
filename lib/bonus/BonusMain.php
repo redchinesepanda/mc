@@ -41,6 +41,8 @@ class BonusMain
 
 		'published' => 'Published',
 
+		'similar-bonuses' => 'Similar Bonuses',
+
 		'till' => 'till',
 
 		'wagering' => 'Wagering',
@@ -309,6 +311,11 @@ class BonusMain
 		if ( !empty( $atts[ 'tags' ] ) )
 		{
 			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+		}
+
+		if ( !empty( $atts[ 'categories' ] ) )
+		{
+			$args[ 'category__in' ] = $atts[ 'categories' ];
 		}
 
 		if ( !empty( $atts[ 'current_not_in' ] ) )
