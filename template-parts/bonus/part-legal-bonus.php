@@ -1,12 +1,8 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-?>
 <?php if ( !empty( $args[ 'items' ] ) ) : ?>
 	<div class="legal-bonus-list">
+		<?php if ( !empty( $args[ 'title' ] ) ) : ?>
+			<h2><?php echo $args[ 'title' ]; ?></h2>
+		<?php endif; ?>
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
