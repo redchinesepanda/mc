@@ -41,6 +41,11 @@ class ACFReview
     {
 		$post_type = get_field( self::FIELD[ 'post-type' ], $post_id );
 
+		if ( !$post_type )
+        {
+            $post_type = get_field( self::FIELD[ 'post-type-wiki' ], $post_id );
+        }
+
 		if ( $post_type )
         {
             $post = get_post( $post_id );
