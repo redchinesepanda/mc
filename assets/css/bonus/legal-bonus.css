@@ -36,7 +36,7 @@
 
 /* Position */
 
-:not( .legal-bonus-main ) .legal-bonus-list {
+:not( .legal-bonus-main ) > .legal-bonus-list {
 	padding-bottom: 30px;
 }
 
