@@ -112,24 +112,16 @@ class BonusRelated
 				}
 
 				$items[] = [
-					'id' => $post->ID,
+					// 'id' => $post->ID,
 
 					'preview' => $preview,
 					
-					'logo' => BonusMain::get_logo( $post->ID ),
+					// 'logo' => self::get_logo( $post->ID ),
 
 					'title' => [
 						'label' => $post->post_title,
 
 						'href' => $post_url,
-					],
-
-					'size' => get_field( BonusMain::FIELD[ 'bonus-size' ], $post->ID ),
-
-					'get' => [
-						'label' => __( BonusMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
-
-						'href' => get_field( BonusMain::FIELD[ 'afillate' ], $post->ID ),
 					],
 				];
 			}

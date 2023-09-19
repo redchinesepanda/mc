@@ -397,9 +397,16 @@ class BonusMain
 		return array_merge( $active_partners, $active_no_partners, $expired_all );
 	}
 
-	public static function get_items( $atts )
+	public static function get_items_shortcode( $atts )
 	{
-		$posts = self::group_posts( $atts );
+		return self::get_items( self::group_posts( $atts ) );
+	}
+
+	// public static function get_items( $atts )
+	
+	public static function get_items( $posts )
+	{
+		// $posts = self::group_posts( $atts );
 
 		$items = [];
 
@@ -447,7 +454,9 @@ class BonusMain
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-bonus' );
 
-		$items = self::get_items( $atts );
+		// $items = self::get_items( $atts );
+		
+		$items = self::get_items_shortcode( $atts );
 
 		$args = [
 			'items' => $items,
