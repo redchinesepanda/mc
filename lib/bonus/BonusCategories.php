@@ -26,16 +26,8 @@ class BonusCategories
 
     public static function get_categories( $id )
     {
-        LegalDebug::debug( [
-            'function' => 'BonusCategories::get_categories',
-
-            'id' => $id,
-        ] );
-
         return wp_get_post_categories(
             $id,
-
-            // [ 'fields' => 'all' ]
             
             [ 'fields' => 'id=>name' ]
         );
@@ -44,12 +36,6 @@ class BonusCategories
     public static function get_items( $categories )
     {
         $items = [];
-
-        LegalDebug::debug( [
-            'function' => 'BonusCategories::get_items',
-
-            'categories' => $categories,
-        ] );
 
         if ( !empty( $categories ) )
         {
