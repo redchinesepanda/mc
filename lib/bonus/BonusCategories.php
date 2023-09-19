@@ -43,7 +43,7 @@ class BonusCategories
 
     public static function get_items( $categories )
     {
-        $items = 0;
+        $items = [];
 
         LegalDebug::debug( [
             'function' => 'BonusCategories::get_items',
