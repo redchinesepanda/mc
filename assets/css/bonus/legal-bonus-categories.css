@@ -11,3 +11,14 @@
 .legal-bonus-categories {
 	padding-bottom: 20px;
 }
+
+.legal-bonus-categories .bonus-categories-item {
+	padding: 10px;
+}
+
+/* Background */
+
+.legal-bonus-categories .bonus-categories-item {
+	border: 0.8px solid rgb(89, 151, 227);
+	border-radius: 20px;
+}
