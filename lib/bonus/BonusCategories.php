@@ -53,14 +53,14 @@ class BonusCategories
 
         if ( !empty( $categories ) )
         {
-            foreach ( $categories as $category )
+            foreach ( $categories as $id => $name )
             {
                 $items[] = [
-                    'id' => $category->term_id,
+                    'id' => $id,
 
-                    'href' => get_category_link( $category->term_id ),
+                    'href' => get_category_link( $id ),
     
-                    'label' => $category->name,
+                    'label' => $name,
                 ];
             }
         }
