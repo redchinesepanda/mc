@@ -144,7 +144,7 @@ class BonusRelated
 		return [
 			'title' => __( BonusMain::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
 
-			'items' => self::get_items( self::group_posts_categories() ),
+			'items' => BonusMain::get_items( self::group_posts_categories() ),
 		];
 	}
 
