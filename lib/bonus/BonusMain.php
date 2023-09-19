@@ -16,6 +16,8 @@ require_once( 'BonusDuration.php' );
 
 require_once( 'BonusContent.php' );
 
+require_once( 'BonusCategories.php' );
+
 class BonusMain
 {
 	const TEXT = [
@@ -113,6 +115,8 @@ class BonusMain
 		BonusDuration::register();
 
 		BonusContent::register();
+
+		BonusCategories::register();
     }
 
 	public static function legal_posts_order() 
