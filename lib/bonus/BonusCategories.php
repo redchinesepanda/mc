@@ -37,13 +37,19 @@ class BonusCategories
     {
         $items = 0;
 
+        LegalDebug::debug( [
+            'function' => 'BonusCategories::get_items',
+
+            'categories' => $categories,
+        ] );
+
         if ( !empty( $categories ) )
         {
             foreach ( $categories as $category )
             {
                 $items[] = [
                     'id' => $category->term_id,
-                    
+
                     'href' => get_category_link( $category->term_id ),
     
                     'label' => $category->name,
