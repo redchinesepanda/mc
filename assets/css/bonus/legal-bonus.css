@@ -40,6 +40,10 @@
 	padding-bottom: 30px;
 }
 
+.legal-bonus-list .bonus-list-title {
+	margin-bottom: 0px;
+}
+
 .legal-bonus-list .list-item-about {
 	position: relative;
 }
