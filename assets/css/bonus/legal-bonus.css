@@ -69,7 +69,7 @@
 }
 
 .legal-bonus-list .bonus-list-item {
-	width: 330px;
+	flex-basis: 330px;
 	min-height: 400px;
 }
 
@@ -127,6 +127,15 @@
 }
 
 /* Typography */
+
+.legal-bonus-list .bonus-list-title {
+	font-family: "Source Sans Pro";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 38.4px;
+	color: rgb(12, 17, 21);
+}
 
 .legal-bonus-list .item-image-link {
 	font-family: "Source Sans Pro";
