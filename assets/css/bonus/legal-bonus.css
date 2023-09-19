@@ -64,6 +64,10 @@
 
 /* Width and Height */
 
+.legal-bonus-list .bonus-list-title {
+	flex-basis: 100%;
+}
+
 .legal-bonus-list .bonus-list-item {
 	width: 330px;
 	min-height: 400px;
