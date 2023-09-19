@@ -1,0 +1,13 @@
+/* Display */
+
+.legal-bonus-categories {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+/* Position */
+
+.legal-bonus-categories {
+	padding-bottom: 20px;
+}
