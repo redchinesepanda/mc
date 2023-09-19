@@ -35,7 +35,7 @@ class BonusCategories
         return wp_get_post_categories(
             $id,
 
-            [ 'fields' => 'ids,names' ]
+            [ 'fields' => 'all' ]
         );
     }
 
