@@ -116,7 +116,7 @@ class BonusRelated
 
 					'preview' => $preview,
 					
-					'logo' => self::get_logo( $post->ID ),
+					'logo' => BonusMain::get_logo( $post->ID ),
 
 					'title' => [
 						'label' => $post->post_title,
