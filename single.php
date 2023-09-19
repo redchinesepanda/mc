@@ -9,6 +9,8 @@ Template Post Type: post
 
 get_header();
 
+thrive_template()->render();
+
 ?>
 <section class="legal-section-header">
 	<?php echo BaseHeader::render(); ?>
