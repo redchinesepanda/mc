@@ -54,12 +54,6 @@ class BonusRelated
             [ 'fields' => 'ids' ]
         );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'BonusRelated::group_posts_categories',
-
-		// 	'categories' => $categories,
-		// ] );
-
 		return BonusMain::group_posts( [
 			'post_type' => self::TYPE[ 'post' ],
 
@@ -81,18 +75,8 @@ class BonusRelated
             [ 'fields' => 'names' ]
         );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'BonusRelated::group_posts_tags',
-
-		// 	'tags' => $tags,
-		// ] );
-
 		return BonusMain::group_posts( [
 			'post_type' => self::TYPE[ 'post' ],
-
-			// 'taxonomy' => self::TAXONOMY[ 'tag' ],
-
-			// 'terms' => $terms,
 
 			'exclude' => [],
 
@@ -112,8 +96,6 @@ class BonusRelated
 
 	public static function get_items( $posts = [] )
 	{
-		// $posts = self::group_posts_tags();
-
 		$items = [];
 
 		if ( !empty( $posts ) )
@@ -130,11 +112,11 @@ class BonusRelated
 				}
 
 				$items[] = [
-					// 'id' => $post->ID,
+					'id' => $post->ID,
 
 					'preview' => $preview,
 					
-					// 'logo' => self::get_logo( $post->ID ),
+					'logo' => self::get_logo( $post->ID ),
 
 					'title' => [
 						'label' => $post->post_title,
@@ -177,7 +159,7 @@ class BonusRelated
 
     public static function render_categories()
 	{
-		return self::render( self::get_categories() );
+		return BonusMain::render( self::get_categories() );
 	}
 
     public static function render( $args )

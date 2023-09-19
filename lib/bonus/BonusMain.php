@@ -66,10 +66,6 @@ class BonusMain
     {
         if ( self::check() ) {
             ToolEnqueue::register_style( self::CSS );
-
-			// LegalDebug::debug( [
-			// 	'function' => 'BonusMain::register_style',
-			// ] );
         }
     }
 
@@ -78,14 +74,6 @@ class BonusMain
         $permission_admin = !is_admin();
 
         $permission_post_type = is_singular( [ 'page', 'post' ] );
-
-		// LegalDebug::debug( [
-		// 	'permission_admin' => $permission_admin ? 'true' : 'false',
-
-		// 	'permission_post_type' => $permission_post_type ? 'true' : 'false',
-
-		// 	'result' => $permission_admin && $permission_post_type ? 'true' : 'false',
-		// ] );
         
         return $permission_admin && $permission_post_type;
     }
@@ -198,20 +186,6 @@ class BonusMain
 		$query = $query_filter->createWpQuery( $args );
 
 		$posts = $query->posts;
-
-		// LegalDebug::debug( [
-		// 	'mode' => $mode,
-
-		// 	'duration' => $duration,
-
-		// 	'compare' => $compare,
-
-		// 	'query_filter' => $query_filter,
-
-		// 	'args' => $args,
-
-		// 	'count' => count( $posts ),
-		// ] );
 
 		return $posts;
 	}
@@ -359,10 +333,6 @@ class BonusMain
 	{
 		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
 
-		// LegalDebug::debug( [
-		// 	'logo' => $logo,
-		// ] );
-
 		if ( $logo )
 		{
 			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
@@ -379,14 +349,6 @@ class BonusMain
 					'height' => $details[ 2 ],
 				];
 			}
-
-			// return [
-			// 	'src' => $logo[ 'url' ],
-
-			// 	'width' => $logo[ 'width' ],
-
-			// 	'height' => $logo[ 'height' ],
-			// ];
 		}
 		
 		return [
@@ -481,6 +443,40 @@ class BonusMain
 		return $items;
 	}
 
+	// const TYPE = [
+	// 	'post' => 'post',
+	// ];
+
+	// public static function group_posts_categories()
+	// {
+	// 	$categories = wp_get_post_categories(
+    //         self::get_id(),
+
+    //         [ 'fields' => 'ids' ]
+    //     );
+
+	// 	return self::group_posts( [
+	// 		'post_type' => self::TYPE[ 'post' ],
+
+	// 		'exclude' => [],
+
+	// 		'limit' => 6,
+
+	// 		'categories' => $categories,
+
+	// 		'current_not_in' => true,
+	// 	] );
+	// }
+
+	// public static function get_categories()
+    // {
+	// 	return [
+	// 		'title' => __( self::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
+
+	// 		'items' => self::get_items( self::group_posts_categories() ),
+	// 	];
+	// }
+
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-bonus' );
@@ -508,6 +504,11 @@ class BonusMain
 
         return $output;
     }
+
+	// public static function render_categories()
+	// {
+	// 	return self::render( self::get_categories() );
+	// }
 }
 
 ?>
