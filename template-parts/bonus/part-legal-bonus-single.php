@@ -6,8 +6,10 @@
 		<?php echo BonusFeatured::render(); ?>
 
 		<?php echo BonusContent::render(); ?>
+
+		<?php echo BonusRelated::render_categories(); ?>
 	</div>
 	<div class="legal-bonus-sidebar">
-		<?php echo BonusRelated::render(); ?>
+		<?php echo BonusRelated::render_tags(); ?>
 	</div>
 </div>
