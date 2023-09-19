@@ -443,40 +443,6 @@ class BonusMain
 		return $items;
 	}
 
-	// const TYPE = [
-	// 	'post' => 'post',
-	// ];
-
-	// public static function group_posts_categories()
-	// {
-	// 	$categories = wp_get_post_categories(
-    //         self::get_id(),
-
-    //         [ 'fields' => 'ids' ]
-    //     );
-
-	// 	return self::group_posts( [
-	// 		'post_type' => self::TYPE[ 'post' ],
-
-	// 		'exclude' => [],
-
-	// 		'limit' => 6,
-
-	// 		'categories' => $categories,
-
-	// 		'current_not_in' => true,
-	// 	] );
-	// }
-
-	// public static function get_categories()
-    // {
-	// 	return [
-	// 		'title' => __( self::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
-
-	// 		'items' => self::get_items( self::group_posts_categories() ),
-	// 	];
-	// }
-
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-bonus' );
@@ -504,11 +470,6 @@ class BonusMain
 
         return $output;
     }
-
-	// public static function render_categories()
-	// {
-	// 	return self::render( self::get_categories() );
-	// }
 }
 
 ?>
