@@ -39,12 +39,7 @@ class TemplateMain
 
     public static function render()
     {
-		if ( !BonusMain::check() )
-        {
-            return '';
-        }
-
-        ob_start();
+		ob_start();
 
         if ( self::check_wiki() )
         {
