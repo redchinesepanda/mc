@@ -124,12 +124,12 @@ class BonusRelated
 						'href' => $post_url,
 					],
 
-					'size' => get_field( self::FIELD[ 'bonus-size' ], $post->ID ),
+					'size' => get_field( BonusMain::FIELD[ 'bonus-size' ], $post->ID ),
 
 					'get' => [
-						'label' => __( self::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
+						'label' => __( BonusMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
 
-						'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+						'href' => get_field( BonusMain::FIELD[ 'afillate' ], $post->ID ),
 					],
 				];
 			}
