@@ -7,6 +7,6 @@ Template Post Type: post
 
 */
 
-TemplateMain::render();
+echo TemplateMain::render();
 
 ?>
