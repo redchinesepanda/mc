@@ -61,11 +61,11 @@ class BonusAbout
 
         $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        $lang = WPMLMain::current_language();
+        // $lang = WPMLMain::current_language();
 
-        $domain = 'match.center';
+        // $domain = 'match.center';
 
-        $href = str_replace( $domain, $domain . '/' . $lang, $href );
+        // $href = str_replace( $domain, $domain . '/' . $lang, $href );
 
         $affilate_link_id = url_to_postid( $href );
 
