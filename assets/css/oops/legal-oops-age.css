@@ -25,7 +25,7 @@
 }
 
 .legal-oops-age .age-button-yes-link,
-.legal-oops-age age-button-no-link {
+.legal-oops-age .age-button-no-link {
 	padding: 20px 50px;
 }
 
@@ -81,12 +81,12 @@
 }
 
 .legal-oops-age .age-button-yes-link,
-.legal-oops-age age-button-no-link {
+.legal-oops-age .age-button-no-link {
 	border-radius: 20px;
 }
 
 .legal-oops-age .age-button-yes-link:hover,
-.legal-oops-age age-button-no-link:hover {
+.legal-oops-age .age-button-no-link:hover {
 	box-shadow: rgba(124, 173, 238, 0.12) 0px 4px 16px 0px;
 }
 
