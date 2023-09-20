@@ -12,12 +12,9 @@ class OopsAge
 
     public static function register_style( $styles = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $styles ) ) {
-                $styles = self::CSS;
-            }
-
-            ToolEnqueue::register_style( $styles );
+        if ( self::check() )
+		{
+            ToolEnqueue::register_style( self::CSS );
         }
     }
 
@@ -39,13 +36,19 @@ class OopsAge
 
 	public static function register_script( $scripts = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $scripts ) ) {
-                $scripts = self::JS;
-            }
-
-            ToolEnqueue::register_script( $scripts );
+        if ( self::check() )
+		{
+            ToolEnqueue::register_script( self::JS );
         }
+    }
+
+	public static function register()
+    {
+        $handler = new self();
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	const AGE = [
