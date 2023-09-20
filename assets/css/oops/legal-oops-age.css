@@ -6,12 +6,21 @@
 	justify-content: center;
 }
 
+.legal-oops-age {
+	display: flex;
+	gap: 20px;
+}
+
 /* Position */
 
 .legal-oops-age-wrapper {
 	position: fixed;
 	top: 0px;
 	left: 0px;
+}
+
+.legal-oops-age {
+	padding: 30px;
 }
 
 /* Width and Height */
@@ -21,8 +30,33 @@
 	width: 100%;
 }
 
+.legal-oops-age .oops-age-title {
+	flex-basis: 100%;
+}
+
+.legal-oops-age .oops-age-description {
+	flex-basis: 100%;
+}
+
+.legal-oops-age .oops-age-button-yes {
+	flex-basis: calc( 50% - 10px );
+}
+
+.legal-oops-age .oops-age-button-no {
+	flex-basis: calc( 50% - 10px );
+}
+
+.legal-oops-age .oops-age-after {
+	flex-basis: 100%;
+}
+
 /* Background */
 
 .legal-oops-age-wrapper {
 	background-color: #323232CC;
+}
+
+.legal-oops-age {
+	background-color: #ffffff;
+	border-radius: 20px;
 }
