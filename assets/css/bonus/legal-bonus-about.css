@@ -24,6 +24,10 @@
 	display: block;
 }
 
+.full-main-content .about-action-get[ href='' ] {
+	pointer-events: none;
+}
+
 /* Position */
 
 .legal-bonus-about {
