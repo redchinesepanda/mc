@@ -27,4 +27,6 @@ get_footer();
 
 echo OopsMain::render();
 
+echo OopsCookie::render();
+
 ?>
