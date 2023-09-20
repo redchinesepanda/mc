@@ -80,6 +80,8 @@ class BonusAbout
 
             'affilate_link_id' => $affilate_link_id,
 
+            'path' => $path,
+
             'affilate_link' => $affilate_link,
         ] );
 
