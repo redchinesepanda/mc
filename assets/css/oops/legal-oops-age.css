@@ -30,7 +30,7 @@
 }
 
 .legal-oops-age {
-	padding: 30px;
+	padding:  145px 30px 30px 30px;
 }
 
 .legal-oops-age .age-button-yes-link,
@@ -81,6 +81,10 @@
 }
 
 .legal-oops-age {
+	background-image: url( '../../img/oops/legal-oops-age.webp' );
+	background-position: top 30px center;
+	background-repeat: no-repeat;
+	background-size: auto;
 	background-color: #ffffff;
 	border-radius: 20px;
 }
