@@ -6,6 +6,10 @@
 	justify-content: center;
 }
 
+.legal-oops-age-wrapper:not( .legal-active ) {
+	display: none;
+}
+
 .legal-oops-age {
 	display: flex;
 	flex-wrap: wrap;
