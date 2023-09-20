@@ -24,6 +24,11 @@
 	padding: 30px;
 }
 
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age age-button-no-link {
+	padding: 20px 50px;
+}
+
 /* Width and Height */
 
 .legal-oops-age-wrapper {
@@ -73,6 +78,11 @@
 
 .legal-oops-age .age-button-no-link {
 	border: 0.8px solid rgb(220, 209, 209);
+}
+
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age age-button-no-link {
+	border-radius: 20px;
 }
 
 .legal-oops-age .age-button-yes-link:hover,
