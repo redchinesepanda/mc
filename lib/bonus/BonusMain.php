@@ -295,10 +295,10 @@ class BonusMain
 			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
 		}
 
-		if ( !empty( $atts[ 'categories' ] ) )
-		{
-			$args[ 'category__in' ] = $atts[ 'categories' ];
-		}
+		// if ( !empty( $atts[ 'categories' ] ) )
+		// {
+		// 	$args[ 'category__in' ] = $atts[ 'categories' ];
+		// }
 
 		if ( !empty( $atts[ 'current_not_in' ] ) )
 		{
