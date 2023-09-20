@@ -61,14 +61,6 @@ class BonusAbout
 
         $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        // $lang = WPMLMain::current_language();
-
-        // $domain = 'match.center';
-
-        // $href = str_replace( $domain, $domain . '/' . $lang, $href );
-
-        $affilate_link_id = url_to_postid( $href );
-
         $path = parse_url( $href, PHP_URL_PATH );
 
         $path = trim( $path, '/' );
@@ -77,16 +69,18 @@ class BonusAbout
 
         $affilate_link = get_page_by_path( end( $path_array ), OBJECT, 'affiliate-links' );
 
+        $affilate_link_meta = get_post_meta( $affilate_link->ID );
+
         LegalDebug::debug( [
             'function' => 'onusAbout::get_button',
 
             'href' => $href,
 
-            'affilate_link_id' => $affilate_link_id,
-
             'path' => $path,
 
             'affilate_link' => $affilate_link,
+
+            'affilate_link_meta' => $affilate_link_meta,
         ] );
 
         return [
