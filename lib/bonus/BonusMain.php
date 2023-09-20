@@ -190,6 +190,8 @@ class BonusMain
 		LegalDebug::debug( [
 			'function' => 'BonusMain::get_posts_date',
 
+			'mode' => $mode,
+
 			'args' => $args,
 		] );
 		
