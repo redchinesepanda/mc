@@ -427,6 +427,13 @@ class BonusMain
 					$preview[ 'href' ] = $post_url;
 				}
 
+				$expired = '';
+
+				if ( BonusDuration::check_expired( $post->ID ) )
+				{
+					$expired = __( BonusMain::TEXT[ 'promotion-expired' ], ToolLoco::TEXTDOMAIN );
+				}
+
 				$items[] = [
 					'id' => $post->ID,
 
@@ -447,6 +454,8 @@ class BonusMain
 
 						'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
 					],
+
+					'expired' => $expired,
 				];
 			}
 		}

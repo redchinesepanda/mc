@@ -16,6 +16,9 @@
 						<a class="item-image-link" href="<?php echo $item[ 'title' ][ 'href' ]; ?>"><?php echo $item[ 'title' ][ 'label' ]; ?></a>
 					</div>
 					<div class="item-about-size"><?php echo $item[ 'size' ]; ?></div>
+					<?php if ( !empty( $item[ 'expired' ] ) ) : ?>
+						<div class="item-about-expired"><?php echo $item[ 'expired' ]; ?></div>
+					<?php endif; ?>
 					<div class="item-about-get">
 						<a class="about-get-button" href="<?php echo $item[ 'get' ][ 'href' ]; ?>"><?php echo $item[ 'get' ][ 'label' ]; ?></a>
 					</div>
