@@ -5,6 +5,10 @@
 	justify-content: center;
 }
 
+.legal-oops-cookie-wrapper:not( .legal-active ) {
+	display: none;
+}
+
 .legal-oops-cookie {
 	display: flex;
 	column-gap: 50px;
