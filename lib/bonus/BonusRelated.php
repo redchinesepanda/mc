@@ -116,11 +116,7 @@ class BonusRelated
 				}
 
 				$items[] = [
-					// 'id' => $post->ID,
-
 					'preview' => $preview,
-					
-					// 'logo' => self::get_logo( $post->ID ),
 
 					'title' => [
 						'label' => $post->post_title,
