@@ -186,18 +186,20 @@ class BonusMain
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 
 		$args = self::get_args( $atts, $mode );
+		
+		$query = $query_filter->createWpQuery( $args );
 
+		$posts = $query->posts;
+		
 		LegalDebug::debug( [
 			'function' => 'BonusMain::get_posts_date',
 
 			'mode' => $mode,
 
 			'args' => $args,
-		] );
-		
-		$query = $query_filter->createWpQuery( $args );
 
-		$posts = $query->posts;
+			'posts' => $posts,
+		] );
 
 		return $posts;
 	}
