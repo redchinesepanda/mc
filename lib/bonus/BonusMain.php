@@ -216,6 +216,104 @@ class BonusMain
         return 0;
     }
 	
+	// public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
+    // {
+	// 	$meta_query = [];
+
+	// 	if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
+	// 	{
+	// 		$meta_query = [
+	// 			[
+	// 				'key' => self::FIELD[ 'afillate' ],
+					
+	// 				'value' => [ '', '#' ],
+					
+	// 				'compare' => 'NOT IN',
+	// 			],
+	// 		];
+	// 	}
+
+	// 	if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
+	// 	{
+	// 		$meta_query = [
+	// 			[
+	// 				'key' => self::FIELD[ 'afillate' ],
+					
+	// 				'value' => [ '', '#' ],
+					
+	// 				'compare' => 'IN',
+	// 			],
+	// 		];
+	// 	}
+
+	// 	$tax_query = [];
+
+	// 	if ( !empty( $atts[ 'taxonomy' ] ) )
+	// 	{
+	// 		$tax_query = [
+	// 			[
+	// 				'taxonomy' => $atts[ 'taxonomy' ],
+	
+	// 				'field' => 'slug',
+	
+	// 				'terms' => $atts[ 'terms' ],
+	// 			]
+	// 		];
+	// 	}
+
+	// 	if ( !empty( $atts[ 'exclude' ] ) )
+	// 	{
+	// 		$tax_query[] = [
+	// 			[
+	// 				'taxonomy' => $atts[ 'taxonomy' ],
+
+	// 				'field' => 'slug',
+
+	// 				'terms' => $atts[ 'exclude' ],
+
+	// 				'operator' => 'NOT IN',
+	// 			]
+	// 		];
+	// 	}
+
+	// 	$args = [
+	// 		'posts_per_page' => $atts[ 'limit' ],
+            
+    //         'post_type' => $atts[ 'post_type' ],
+
+	// 		'suppress_filters' => 0,
+
+	// 		'tax_query' => $tax_query,
+
+	// 		'meta_query' => $meta_query,
+
+	// 		'orderby' => [
+	// 			'menu_order' => 'DESC',
+
+	// 			'modified' => 'DESC',
+
+	// 			'title' => 'ASC',
+	// 		],
+    //     ];
+
+	// 	if ( !empty( $atts[ 'tags' ] ) )
+	// 	{
+	// 		$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+	// 	}
+
+	// 	if ( !empty( $atts[ 'categories' ] ) )
+	// 	{
+	// 		$args[ 'category__in' ] = $atts[ 'categories' ];
+	// 	}
+
+	// 	if ( !empty( $atts[ 'current_not_in' ] ) )
+	// 	{
+	// 		$args[ 'post__not_in' ] = [ self::get_id() ];
+	// 	}
+
+	// 	return $args;
+    // }
+
 	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
     {
 		$meta_query = [];
@@ -246,20 +344,15 @@ class BonusMain
 			];
 		}
 
-		$tax_query = [];
+		$tax_query = [
+			[
+				'taxonomy' => $atts[ 'taxonomy' ],
 
-		if ( !empty( $atts[ 'taxonomy' ] ) )
-		{
-			$tax_query = [
-				[
-					'taxonomy' => $atts[ 'taxonomy' ],
-	
-					'field' => 'slug',
-	
-					'terms' => $atts[ 'terms' ],
-				]
-			];
-		}
+				'field' => 'slug',
+
+				'terms' => $atts[ 'terms' ],
+			]
+		];
 
 		if ( !empty( $atts[ 'exclude' ] ) )
 		{
@@ -276,14 +369,27 @@ class BonusMain
 			];
 		}
 
-		$args = [
+		return [
 			'posts_per_page' => $atts[ 'limit' ],
+
+            // 'numberposts' => $atts[ 'limit' ],
             
             'post_type' => $atts[ 'post_type' ],
 
 			'suppress_filters' => 0,
+            
+            // 'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
 			'tax_query' => $tax_query,
+
+			// 'tax_query' => [
+
+			// 	'taxonomy' => $atts[ 'taxonomy' ],
+
+			// 	'field' => 'slug',
+
+			// 	'terms' => $atts[ 'terms' ],
+			// ],
 
 			'meta_query' => $meta_query,
 
@@ -295,23 +401,6 @@ class BonusMain
 				'title' => 'ASC',
 			],
         ];
-
-		if ( !empty( $atts[ 'tags' ] ) )
-		{
-			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
-		}
-
-		if ( !empty( $atts[ 'categories' ] ) )
-		{
-			$args[ 'category__in' ] = $atts[ 'categories' ];
-		}
-
-		if ( !empty( $atts[ 'current_not_in' ] ) )
-		{
-			$args[ 'post__not_in' ] = [ self::get_id() ];
-		}
-
-		return $args;
     }
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
