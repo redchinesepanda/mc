@@ -1,1 +1,1 @@
-<a class="about-action-get" href="<?php echo $args[ 'href' ] ?>" class="" target="_blank" rel="nofollow"><?php echo $args[ 'label' ] ?></a>
+<a class="about-action-get check-oops" href="<?php echo $args[ 'href' ] ?>" class="" target="_blank" rel="nofollow"><?php echo $args[ 'label' ] ?></a>
