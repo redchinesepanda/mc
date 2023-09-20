@@ -73,7 +73,7 @@ class BonusAbout
 
         $count_data_json = get_post_meta( $affilate_link->ID, 'wpil_links_inbound_internal_count_data', true );
 
-        $count_data = json_decode( $count_data_json );
+        // $count_data = json_decode( $count_data_json );
 
         LegalDebug::debug( [
             'function' => 'onusAbout::get_button',
@@ -84,7 +84,7 @@ class BonusAbout
 
             // 'affilate_link' => $affilate_link,
 
-            'count_data' => $count_data,
+            'count_data_json' => $count_data_json,
         ] );
 
         return [
