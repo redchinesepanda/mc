@@ -61,35 +61,40 @@ class BonusAbout
 
         $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        $path = parse_url( $href, PHP_URL_PATH );
+        if ( empty( $href ) )
+        {
+            $href = OopsMain::check_oops() ? '#' : '';
+        }
 
-        $path = trim( $path, '/' );
+        // $path = parse_url( $href, PHP_URL_PATH );
 
-        $path_array = explode( '/', $path );
+        // $path = trim( $path, '/' );
 
-        $affilate_link = get_page_by_path( end( $path_array ), OBJECT, 'affiliate-links' );
+        // $path_array = explode( '/', $path );
 
-        $affilate_link_meta = get_post_meta( $affilate_link->ID );
+        // $affilate_link = get_page_by_path( end( $path_array ), OBJECT, 'affiliate-links' );
 
-        $count_data_json = get_post_meta( $affilate_link->ID, 'wpil_links_inbound_internal_count_data', true );
+        // $affilate_link_meta = get_post_meta( $affilate_link->ID );
 
-        $amount = count( $count_data_json ); 
+        // $count_data_json = get_post_meta( $affilate_link->ID, 'wpil_links_inbound_internal_count_data', true );
+
+        // $amount = count( $count_data_json ); 
 
         // $count_data = json_decode( $count_data_json );
 
-        LegalDebug::debug( [
-            'function' => 'onusAbout::get_button',
+        // LegalDebug::debug( [
+        //     'function' => 'onusAbout::get_button',
 
-            // 'href' => $href,
+        //     // 'href' => $href,
 
-            // 'path' => $path,
+        //     // 'path' => $path,
 
-            // 'affilate_link' => $affilate_link,
+        //     // 'affilate_link' => $affilate_link,
 
-            'amount' => $amount,
+        //     'amount' => $amount,
 
-            'count_data_json' => $count_data_json,
-        ] );
+        //     'count_data_json' => $count_data_json,
+        // ] );
 
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),

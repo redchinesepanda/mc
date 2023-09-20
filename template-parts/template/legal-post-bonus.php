@@ -25,4 +25,6 @@ get_header();
 
 get_footer();
 
+echo OopsMain::render();
+
 ?>
