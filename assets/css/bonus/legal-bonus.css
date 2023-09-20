@@ -28,6 +28,7 @@
 	flex-wrap: wrap;
 	gap: 20px;
 	align-items: center;
+	justify-content: center;
 }
 
 .legal-bonus-list .about-get-button {
@@ -64,6 +65,10 @@
 
 .legal-bonus-list .about-get-button {
 	padding: 15px 22px 15px 50px;
+}
+
+.legal-bonus-list .item-about-expired {
+	padding: 0px 15px;
 }
 
 /* Width and Height */
@@ -130,6 +135,12 @@
 	border-radius: 20px;
 }
 
+.legal-bonus-list .item-about-expired {
+	background-color: rgb(255, 94, 106);
+  	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
+  	border-radius: 20px;
+}
+
 /* Typography */
 
 .legal-bonus-list .bonus-list-title {
@@ -175,4 +186,13 @@
 
 .legal-bonus-list .item-about-get {
 	text-align: center;
+}
+
+.legal-bonus-list .item-about-expired {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 26.5px;
+	color: rgb(255, 255, 255);
 }
