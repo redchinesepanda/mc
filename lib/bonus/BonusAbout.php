@@ -71,16 +71,20 @@ class BonusAbout
 
         $affilate_link_meta = get_post_meta( $affilate_link->ID );
 
+        $count_data_json = get_post_meta( $affilate_link->ID, 'wpil_links_inbound_internal_count_data', true );
+
+        $count_data = json_decode( $count_data_json );
+
         LegalDebug::debug( [
             'function' => 'onusAbout::get_button',
 
-            'href' => $href,
+            // 'href' => $href,
 
-            'path' => $path,
+            // 'path' => $path,
 
-            'affilate_link' => $affilate_link,
+            // 'affilate_link' => $affilate_link,
 
-            'affilate_link_meta' => $affilate_link_meta,
+            'count_data' => $count_data,
         ] );
 
         return [
