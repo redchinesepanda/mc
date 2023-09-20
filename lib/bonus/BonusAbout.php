@@ -99,7 +99,7 @@ class BonusAbout
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
 
-            'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
+            'href' => $href,
         ];
     }
 
