@@ -8,14 +8,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		setCookie( oopsCookieName, 'accepted' );
+		LegalCookie.setCookie( oopsCookieName, 'accepted' );
 
 		event.currentTarget.parentElement.parentElement.classList.remove( oopsCookieClass );
 	}
 
 	document.querySelectorAll( '.legal-oops-cookie-wrapper' ).forEach( function ( wrapper )
 	{
-		if ( getCookie( oopsCookieName ) === undefined )
+		if ( LegalCookie.getCookie( oopsCookieName ) === undefined )
 		{
 			wrapper.querySelectorAll( '.oops-cookie-button' ).forEach( function ( button )
 			{
