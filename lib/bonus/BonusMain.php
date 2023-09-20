@@ -466,6 +466,12 @@ class BonusMain
 			'items' => $items,
 		];
 
+		LegalDebug::debug( [
+			'function' => 'BonusMain::prepare',
+
+			'args' => $args,
+		] );
+
 		return self::render( $args );
 	}
 
