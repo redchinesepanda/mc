@@ -5,8 +5,8 @@ require_once( 'OopsCookie.php' );
 class OopsMain
 {
     const CSS = [
-        'legal-oops' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
+        'legal-oops-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-main.css',
 
             'ver' => '1.0.2',
         ],
@@ -24,7 +24,7 @@ class OopsMain
     }
 
     const JS = [
-        'legal-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
+        'legal-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-main.js',
     ];
 
     public static function register_script( $scripts = [] )
