@@ -78,7 +78,7 @@ class BonusRelated
 		$atts = [
 			'taxonomy' => '',
 
-			'terms' = [],
+			'terms' => [],
 
 			'limit' => 6,
 
