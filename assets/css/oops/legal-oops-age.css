@@ -66,6 +66,15 @@
 	border-radius: 20px;
 }
 
+.legal-oops-age .age-button-yes-link {
+	background-color: rgb(89, 151, 227);
+	border: 0.8px solid transparent;
+}
+
+.legal-oops-age .age-button-no-link {
+	border: 0.8px solid rgb(220, 209, 209);
+}
+
 .legal-oops-age .age-button-yes-link:hover,
 .legal-oops-age age-button-no-link:hover {
 	box-shadow: rgba(124, 173, 238, 0.12) 0px 4px 16px 0px;
