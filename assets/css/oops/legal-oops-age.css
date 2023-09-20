@@ -138,6 +138,7 @@
 	letter-spacing: 2px;
 	line-height: 14.4px;
 	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .legal-oops-age .age-button-no-link {
@@ -151,6 +152,7 @@
 	letter-spacing: 2px;
 	line-height: 14.4px;
 	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .legal-oops-age .oops-age-after {
