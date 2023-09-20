@@ -24,7 +24,7 @@ class OopsMain
     }
 
     const JS = [
-        'legal-oops' => [
+        'legal-oops-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-main.js',
 
             'ver' => '1.0.0',
