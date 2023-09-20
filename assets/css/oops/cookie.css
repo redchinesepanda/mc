@@ -19,7 +19,7 @@
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	padding: 10px 20px;
+	padding: 10px 50px;
 }
 
 /* Width and height */
@@ -32,13 +32,13 @@
 	flex-basis: 1080px;
 }
 
-.legal-oops-cookie .oops-cookie-description {
+/* .legal-oops-cookie .oops-cookie-description {
 	flex-basis: calc( 75% - 25px );
 }
 
 .legal-oops-cookie .oops-cookie-button {
 	flex-basis: calc( 25% - 25px );
-}
+} */
 
 /* Background */
 
