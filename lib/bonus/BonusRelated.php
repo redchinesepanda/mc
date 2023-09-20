@@ -60,7 +60,7 @@ class BonusRelated
 			'limit' => 6,
 
 			'current_not_in' => true,
-		]
+		];
 
 		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
 		
