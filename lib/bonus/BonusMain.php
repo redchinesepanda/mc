@@ -169,12 +169,49 @@ class BonusMain
 		'expired' => 'expired',
 	];
 
+	// public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
+	// {
+	// 	if ( $atts[ 'limit' ] == 0 )
+	// 	{
+	// 		return [];
+	// 	}
+
+	// 	$compare = '>';
+
+	// 	if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+	// 	{
+	// 		$compare = '<';
+	// 	}
+
+	// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+
+	// 	$args = self::get_args( $atts, $mode );
+		
+	// 	$query = $query_filter->createWpQuery( $args );
+
+	// 	$posts = $query->posts;
+		
+	// 	LegalDebug::debug( [
+	// 		'function' => 'BonusMain::get_posts_date',
+
+	// 		'mode' => $mode,
+
+	// 		'args' => $args,
+
+	// 		'posts' => $posts,
+	// 	] );
+
+	// 	return $posts;
+	// }
+
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
 		if ( $atts[ 'limit' ] == 0 )
 		{
 			return [];
 		}
+
+		// $query_filter = null;
 
 		$compare = '>';
 
@@ -183,23 +220,57 @@ class BonusMain
 			$compare = '<';
 		}
 
+		// if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
+		// {
+		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
+		// }
+
+		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		// {
+		// 	// $compare = '<';
+
+		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
+		// }
+
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+		
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
 		$args = self::get_args( $atts, $mode );
+
+		// LegalDebug::debug( [
+		// 	'args' => $args,
+		// ] );
 		
 		$query = $query_filter->createWpQuery( $args );
+		
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
+
+		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
+
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
+
+		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
+
+		// LegalDebug::debug( [
+		// 	'query' => $query,
+		// ] );
 
 		$posts = $query->posts;
-		
-		LegalDebug::debug( [
-			'function' => 'BonusMain::get_posts_date',
 
-			'mode' => $mode,
+		// LegalDebug::debug( [
+		// 	'mode' => $mode,
 
-			'args' => $args,
+		// 	'duration' => $duration,
 
-			'posts' => $posts,
-		] );
+		// 	'compare' => $compare,
+
+		// 	'query_filter' => $query_filter,
+
+		// 	'args' => $args,
+
+		// 	'count' => count( $posts ),
+		// ] );
 
 		return $posts;
 	}
