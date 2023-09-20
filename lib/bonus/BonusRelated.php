@@ -75,17 +75,33 @@ class BonusRelated
             [ 'fields' => 'names' ]
         );
 
-		return BonusMain::group_posts( [
-			'post_type' => self::TYPE[ 'post' ],
+		$atts = [
+			'taxonomy' => '',
 
-			'exclude' => [],
+			'terms' = [],
 
 			'limit' => 6,
 
 			'tags' => $tags,
 
 			'current_not_in' => true,
-		] );
+		];
+
+		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
+
+		// return BonusMain::group_posts( [
+		// 	'post_type' => self::TYPE[ 'post' ],
+
+		// 	'exclude' => [],
+
+		// 	'limit' => 6,
+
+		// 	'tags' => $tags,
+
+		// 	'current_not_in' => true,
+		// ] );
+		
+		return BonusMain::group_posts( $atts );
 	}
 
 	const SIZE = [
