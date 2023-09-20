@@ -1,13 +1,53 @@
 <?php
 
+require_once( 'BonusTemplateSingle.php' );
+
+require_once( 'BonusAbout.php' );
+
+require_once( 'BonusSummary.php' );
+
+require_once( 'BonusRelated.php' );
+
+require_once( 'BonusTemplateSingle.php' );
+
+require_once( 'BonusFeatured.php' );
+
+require_once( 'BonusDuration.php' );
+
+require_once( 'BonusContent.php' );
+
+require_once( 'BonusCategories.php' );
+
 class BonusMain
 {
 	const TEXT = [
+		'best-bookmaker-bonuses' => 'Best Bookmaker Bonuses',
+
+		'bonus-amount' => 'Bonus amount',
+
 		'bonus-preview' => 'Bonus Preview',
 
 		'bonus-logo' => 'Bonus Logo',
+		
+		'bookmaker' => 'Bookmaker',
+
+		'claim-bonus' => 'Claim Bonus',
 
 		'get-bonus' => 'Get Bonus',
+
+		'min-deposit' => 'Min. deposit',
+
+		'promotion-expired' => 'Promotion Expired',
+
+		'promotion-period' => 'Promotion period',
+
+		'published' => 'Published',
+
+		'similar-bonuses' => 'Similar Bonuses',
+
+		'till' => 'till',
+
+		'wagering' => 'Wagering',
 	];
 
 	const SIZE = [
@@ -20,7 +60,7 @@ class BonusMain
         'legal-bonus' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus.css',
 
-            'ver'=> '1.0.4',
+            'ver'=> '1.0.3',
         ],
     ];
 
@@ -28,10 +68,6 @@ class BonusMain
     {
         if ( self::check() ) {
             ToolEnqueue::register_style( self::CSS );
-
-			// LegalDebug::debug( [
-			// 	'function' => 'BonusMain::register_style',
-			// ] );
         }
     }
 
@@ -39,15 +75,7 @@ class BonusMain
     {
         $permission_admin = !is_admin();
 
-        $permission_post_type = is_singular( [ 'page' ] );
-
-		// LegalDebug::debug( [
-		// 	'permission_admin' => $permission_admin ? 'true' : 'false',
-
-		// 	'permission_post_type' => $permission_post_type ? 'true' : 'false',
-
-		// 	'result' => $permission_admin && $permission_post_type ? 'true' : 'false',
-		// ] );
+        $permission_post_type = is_singular( [ 'page', 'post' ] );
         
         return $permission_admin && $permission_post_type;
     }
@@ -73,6 +101,22 @@ class BonusMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
+
+		BonusAbout::register();
+
+		BonusSummary::register();
+
+		BonusRelated::register();
+
+		BonusTemplateSingle::register();
+
+		BonusFeatured::register();
+
+		BonusDuration::register();
+
+		BonusContent::register();
+
+		BonusCategories::register();
     }
 
 	public static function legal_posts_order() 
@@ -132,8 +176,6 @@ class BonusMain
 			return [];
 		}
 
-		// $query_filter = null;
-
 		$compare = '>';
 
 		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
@@ -141,60 +183,38 @@ class BonusMain
 			$compare = '<';
 		}
 
-		// if ( in_array( $duration, [ self::DURATION[ 'actual' ] ] ) )
-		// {
-		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '>' );
-		// }
-
-		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-		// {
-		// 	// $compare = '<';
-
-		// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
-		// }
-
 		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
-		
-		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', '<' );
 
 		$args = self::get_args( $atts, $mode );
-
-		// LegalDebug::debug( [
-		// 	'args' => $args,
-		// ] );
 		
 		$query = $query_filter->createWpQuery( $args );
-		
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, $mode ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'partner' ) );
-
-		// $query = $query_filter->createWpQuery( self::get_args( $atts, 'no-partner' ) );
-
-		// LegalDebug::debug( [
-		// 	'query' => $query,
-		// ] );
 
 		$posts = $query->posts;
+		
+		LegalDebug::debug( [
+			'function' => 'BonusMain::get_posts_date',
 
-		// LegalDebug::debug( [
-		// 	'mode' => $mode,
+			'mode' => $mode,
 
-		// 	'duration' => $duration,
+			'args' => $args,
 
-		// 	'compare' => $compare,
-
-		// 	'query_filter' => $query_filter,
-
-		// 	'args' => $args,
-
-		// 	'count' => count( $posts ),
-		// ] );
+			'posts' => $posts,
+		] );
 
 		return $posts;
 	}
+
+	public static function get_id()
+    {
+		$post = get_post();
+
+        if ( !empty( $post ) )
+        {
+            return $post->ID;
+        }
+
+        return 0;
+    }
 	
 	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
     {
@@ -226,15 +246,20 @@ class BonusMain
 			];
 		}
 
-		$tax_query = [
-			[
-				'taxonomy' => $atts[ 'taxonomy' ],
+		$tax_query = [];
 
-				'field' => 'slug',
-
-				'terms' => $atts[ 'terms' ],
-			]
-		];
+		if ( !empty( $atts[ 'taxonomy' ] ) )
+		{
+			$tax_query = [
+				[
+					'taxonomy' => $atts[ 'taxonomy' ],
+	
+					'field' => 'slug',
+	
+					'terms' => $atts[ 'terms' ],
+				]
+			];
+		}
 
 		if ( !empty( $atts[ 'exclude' ] ) )
 		{
@@ -251,27 +276,14 @@ class BonusMain
 			];
 		}
 
-		return [
+		$args = [
 			'posts_per_page' => $atts[ 'limit' ],
-
-            // 'numberposts' => $atts[ 'limit' ],
             
             'post_type' => $atts[ 'post_type' ],
 
 			'suppress_filters' => 0,
-            
-            // 'orderby' => [ 'date ' => 'DESC', 'title' => 'ASC' ],
 
 			'tax_query' => $tax_query,
-
-			// 'tax_query' => [
-
-			// 	'taxonomy' => $atts[ 'taxonomy' ],
-
-			// 	'field' => 'slug',
-
-			// 	'terms' => $atts[ 'terms' ],
-			// ],
 
 			'meta_query' => $meta_query,
 
@@ -283,6 +295,23 @@ class BonusMain
 				'title' => 'ASC',
 			],
         ];
+
+		if ( !empty( $atts[ 'tags' ] ) )
+		{
+			$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+		}
+
+		if ( !empty( $atts[ 'categories' ] ) )
+		{
+			$args[ 'category__in' ] = $atts[ 'categories' ];
+		}
+
+		if ( !empty( $atts[ 'current_not_in' ] ) )
+		{
+			$args[ 'post__not_in' ] = [ self::get_id() ];
+		}
+
+		return $args;
     }
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
@@ -318,10 +347,6 @@ class BonusMain
 	{
 		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
 
-		// LegalDebug::debug( [
-		// 	'logo' => $logo,
-		// ] );
-
 		if ( $logo )
 		{
 			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
@@ -338,14 +363,6 @@ class BonusMain
 					'height' => $details[ 2 ],
 				];
 			}
-
-			// return [
-			// 	'src' => $logo[ 'url' ],
-
-			// 	'width' => $logo[ 'width' ],
-
-			// 	'height' => $logo[ 'height' ],
-			// ];
 		}
 		
 		return [
@@ -357,10 +374,8 @@ class BonusMain
 		];
 	}
 
-	public static function get_items( $atts )
+	public static function group_posts( $atts )
 	{
-		$items = [];
-
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
@@ -393,7 +408,33 @@ class BonusMain
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
-		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
+		LegalDebug::debug( [
+			'function' => 'BonusMain::group_posts',
+
+			'atts' => $atts,
+
+			'active_partners' => $active_partners,
+
+			'active_no_partners' => $active_no_partners,
+
+			'expired_all' => $expired_all,
+		] );
+
+		return array_merge( $active_partners, $active_no_partners, $expired_all );
+	}
+
+	public static function get_items_shortcode( $atts )
+	{
+		return self::get_items( self::group_posts( $atts ) );
+	}
+
+	// public static function get_items( $atts )
+	
+	public static function get_items( $posts )
+	{
+		// $posts = self::group_posts( $atts );
+
+		$items = [];
 
 		if ( !empty( $posts ) )
 		{
@@ -439,11 +480,19 @@ class BonusMain
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-bonus' );
 
-		$items = self::get_items( $atts );
+		// $items = self::get_items( $atts );
+		
+		$items = self::get_items_shortcode( $atts );
 
 		$args = [
 			'items' => $items,
 		];
+
+		LegalDebug::debug( [
+			'function' => 'BonusMain::prepare',
+
+			'args' => $args,
+		] );
 
 		return self::render( $args );
 	}
