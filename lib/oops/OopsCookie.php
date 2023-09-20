@@ -27,7 +27,7 @@ class OopsCookie
 
 			'ver' => '1.0.0',
 
-            'deps' => [ 'legal-cookie-lib' ],
+            'deps' => [ 'legal-lib-cookie' ],
 		],
 
         'legal-lib-cookie' => [
