@@ -5,6 +5,11 @@
 	justify-content: center;
 }
 
+.legal-oops-cookie {
+	display: flex;
+	column-gap: 50px;
+}
+
 /* Position */
 
 .legal-oops-cookie-wrapper {
@@ -21,4 +26,12 @@
 
 .legal-oops-cookie {
 	flex-basis: 1080px;
+}
+
+.legal-oops-cookie .oops-cookie-description {
+	flex-basis: calc( 75% - 25px );
+}
+
+.legal-oops-cookie .oops-cookie-button {
+	flex-basis: calc( 25% - 25px );
 }
