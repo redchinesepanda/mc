@@ -31,7 +31,7 @@ class OopsCookie
 		],
 
         'legal-cookie-lib' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/lib-cookie.css',
+            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/lib-cookie.css',
 
             'ver' => '1.0.0',
         ],
