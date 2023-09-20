@@ -12,6 +12,14 @@
 	gap: 20px;
 }
 
+.legal-oops-age .oops-age-button-yes {
+	display: flex;
+}
+
+.legal-oops-age .oops-age-button-no {
+	display: flex;
+}
+
 /* Position */
 
 .legal-oops-age-wrapper {
@@ -26,7 +34,7 @@
 
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
-	padding: 20px 50px;
+	padding: 20px 80px;
 }
 
 /* Width and Height */
@@ -54,6 +62,11 @@
 
 .legal-oops-age .oops-age-button-no {
 	flex-basis: calc( 50% - 10px );
+}
+
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age .age-button-no-link {
+	flex-basis: fit-content;
 }
 
 .legal-oops-age .oops-age-after {
