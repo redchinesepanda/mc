@@ -26,9 +26,9 @@ class OopsCookie
 			'path' => LegalMain::LEGAL_URL . '/assets/js/oops/cookie.js',
 
 			'ver' => '1.0.0',
-			
+
             'deps' => [ 'legal-cookie-lib' ],
-		]
+		],
 
         'legal-cookie-lib' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/lib-cookie.css',
