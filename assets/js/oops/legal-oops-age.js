@@ -1,0 +1,30 @@
+// oops-age start
+
+document.addEventListener( 'DOMContentLoaded', function ()
+{
+	let oopsCookieName = 'legal-oops-age';
+
+	let oopsCookieClass = 'legal-active';
+
+	function acceptCookie( event )
+	{
+		LegalCookie.setCookie( oopsCookieName, 'accepted' );
+
+		event.currentTarget.parentElement.parentElement.parentElement.parentElementclassList.remove( oopsCookieClass );
+	}
+
+	document.querySelectorAll( '.legal-oops-age-wrapper' ).forEach( function ( wrapper )
+	{
+		if ( LegalCookie.getCookie( oopsCookieName ) === undefined )
+		{
+			wrapper.querySelectorAll( '.age-button-yes-link' ).forEach( function ( button )
+			{
+				button.addEventListener( 'click', acceptCookie, false );
+			} );
+
+			wrapper.classList.add( oopsCookieClass );
+		}
+	} );
+} );
+
+// oops-cookie age
