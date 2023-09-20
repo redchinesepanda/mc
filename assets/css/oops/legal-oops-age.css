@@ -94,7 +94,7 @@
 	text-align: center;
 }
 
-.legal-oops-age .oops-age-button-yes {
+.legal-oops-age .age-button-yes-link {
 	color: rgb(255, 255, 255);
 	cursor: pointer;
 	display: block;
@@ -107,7 +107,7 @@
 	text-transform: uppercase;
 }
 
-.legal-oops-age .oops-age-button-no {
+.legal-oops-age .age-button-no-link {
 	color: rgb(89, 151, 227);
 	cursor: pointer;
 	display: block;
