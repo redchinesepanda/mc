@@ -14,6 +14,7 @@
 
 .legal-oops-age .oops-age-button-yes {
 	display: flex;
+	justify-content: right;
 }
 
 .legal-oops-age .oops-age-button-no {
