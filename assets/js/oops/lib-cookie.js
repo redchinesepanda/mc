@@ -1,6 +1,6 @@
 // lib-cookie start
 
-var LegalCookie = ( function()
+let LegalCookie = ( function()
 {
 	"use strict";
 
