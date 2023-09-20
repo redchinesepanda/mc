@@ -3,16 +3,18 @@
 class OopsCookie
 {
 	const CSS = [
+		'legal-cookie' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/cookie.css',
+
+            'ver' => '1.0.2',
+        ],
+
         'legal-cookie-lib' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/lib-cookie.css',
 
             'ver' => '1.0.0',
-        ],
 
-        'legal-cookie' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/cookie.css',
-
-            'ver' => '1.0.2',
+            'deps' => [ 'legal-cookie' ],
         ],
     ];
 

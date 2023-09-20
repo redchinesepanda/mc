@@ -36,13 +36,20 @@ class ToolEnqueue
 
             $ver = false;
 
+            $deps = [];
+
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
                 $ver = $item[ 'ver' ];
+
+                if ( !empty( $item[ 'deps' ] ) )
+                {
+                    $deps = $item[ 'deps' ];
+                }
             }
 
-            wp_register_script( $name, $path, [], false, true );
+            wp_register_script( $name, $path, $deps, false, true );
 
             wp_enqueue_script( $name );
         }
