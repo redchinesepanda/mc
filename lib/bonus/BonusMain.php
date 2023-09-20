@@ -402,7 +402,7 @@ class BonusMain
 			}
 		}
 
-		$expired_all = []
+		$expired_all = [];
 
 		if ( !in_array( $atts[ 'duration' ], [ self::DURATION[ 'actual' ] ] ) )
 		{
