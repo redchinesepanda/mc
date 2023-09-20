@@ -88,3 +88,14 @@
 	line-height: 31.5px;
 	text-align: center;
 }
+
+.legal-oops-age .oops-age-after {
+	color: rgb(105, 105, 105);
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 26.25px;
+	text-align: center;
+}
