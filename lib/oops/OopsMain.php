@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'OopsCookie.php' );
+
 class OopsMain
 {
     const CSS = [
@@ -51,6 +53,8 @@ class OopsMain
         add_filter( 'wp_query_search_exclusion_prefix', function( $prefix ) {
             return '!';
         } );
+
+        OopsCookie::register();
     }
 
     const TAXONOMY = [

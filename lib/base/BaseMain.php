@@ -17,6 +17,8 @@ class BaseMain
 
 		'gambling-sites' => 'Gambling Sites',
 
+        'i-accept' => 'I Accept',
+
 		'legal-review-bk-header' => 'Legal Review BK Header',
 
 		'legal-review-bk-footer' => 'Legal Review BK Footer',
@@ -32,6 +34,8 @@ class BaseMain
         'ouch' => 'Ouch',
 
         'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
+
+        'to-give' => 'To give you the best possible experience, this site uses cookies and by continuing to use the site you agree that we can save them on your device. By clicking "I Accept" you consent to the use of cookies unless you have disabled them.',
 
 		'you-must-have' => "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.",
 	];
