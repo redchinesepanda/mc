@@ -20,13 +20,13 @@ get_header();
 </section>
 <section class="legal-section-footer">
 	<?php echo BaseFooter::render(); ?>
+
+	<?php echo OopsMain::render(); ?>
+
+	<?php echo OopsCookie::render(); ?>
 </section>
 <?php
 
 get_footer();
-
-echo OopsMain::render();
-
-echo OopsCookie::render();
 
 ?>
