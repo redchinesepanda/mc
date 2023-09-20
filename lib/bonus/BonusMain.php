@@ -143,6 +143,10 @@ class BonusMain
 		'exclude' => [],
 
 		'limit' => -1,
+
+		'tags' => [],
+
+		'current_not_in' => false,
 	];
 
 	const FIELD = [
@@ -428,12 +432,8 @@ class BonusMain
 		return self::get_items( self::group_posts( $atts ) );
 	}
 
-	// public static function get_items( $atts )
-	
 	public static function get_items( $posts )
 	{
-		// $posts = self::group_posts( $atts );
-
 		$items = [];
 
 		if ( !empty( $posts ) )
@@ -480,8 +480,6 @@ class BonusMain
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, 'legal-bonus' );
 
-		// $items = self::get_items( $atts );
-		
 		$items = self::get_items_shortcode( $atts );
 
 		$args = [

@@ -48,20 +48,42 @@ class BonusRelated
 
 	public static function group_posts_categories()
 	{
+		// $categories = wp_get_post_categories(
+        //     self::get_id(),
+
+        //     [ 'fields' => 'ids' ]
+        // );
+		
 		$categories = wp_get_post_categories(
             self::get_id(),
 
-            [ 'fields' => 'ids' ]
+            [ 'fields' => 'slugs' ]
         );
 
-		return BonusMain::group_posts( [
-			'post_type' => self::TYPE[ 'post' ],
+		// return BonusMain::group_posts( [
+		// 	'post_type' => self::TYPE[ 'post' ],
 
-			'exclude' => [],
+		// 	'exclude' => [],
+
+		// 	'limit' => 6,
+
+		// 	'categories' => $categories,
+
+		// 	'current_not_in' => true,
+		// ] );
+		
+		return BonusMain::group_posts( [
+			// 'post_type' => self::TYPE[ 'post' ],
+
+			// 'taxonomy' => 'category',
+
+			'terms' => $categories,
+
+			// 'exclude' => [],
 
 			'limit' => 6,
 
-			'categories' => $categories,
+			// 'categories' => $categories,
 
 			'current_not_in' => true,
 		] );
