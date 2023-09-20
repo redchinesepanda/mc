@@ -66,6 +66,11 @@
 	border-radius: 20px;
 }
 
+.legal-oops-age .age-button-yes-link:hover,
+.legal-oops-age age-button-no-link:hover {
+	box-shadow: rgba(124, 173, 238, 0.12) 0px 4px 16px 0px;
+}
+
 /* Typography */
 
 .legal-oops-age .oops-age-title {
@@ -87,6 +92,32 @@
 	letter-spacing: normal;
 	line-height: 31.5px;
 	text-align: center;
+}
+
+.legal-oops-age .oops-age-button-yes {
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+}
+
+.legal-oops-age .oops-age-button-no {
+	color: rgb(89, 151, 227);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
 }
 
 .legal-oops-age .oops-age-after {
