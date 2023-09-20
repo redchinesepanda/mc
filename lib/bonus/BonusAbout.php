@@ -71,7 +71,7 @@ class BonusAbout
 
         $path = parse_url( $href, PHP_URL_PATH );
 
-        $affilate_link = get_page_by_path( $path, OBJECT, 'post' );
+        $affilate_link = get_page_by_path( $path, OBJECT, 'affiliate-links' );
 
         LegalDebug::debug( [
             'function' => 'onusAbout::get_button',
