@@ -398,6 +398,18 @@ class BonusMain
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
+		LegalDebug::debug( [
+			'function' => 'BonusMain::group_posts',
+
+			'atts' => $atts,
+
+			'active_partners' => $active_partners,
+
+			'active_no_partners' => $active_no_partners,
+
+			'expired_all' => $expired_all,
+		] );
+
 		return array_merge( $active_partners, $active_no_partners, $expired_all );
 	}
 
