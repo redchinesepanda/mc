@@ -24,7 +24,8 @@
 	display: block;
 }
 
-.full-main-content .about-action-get[ href='' ] {
+.full-main-content .about-action-get[ href='' ],
+.legal-bonus-about .about-action-get[ href='' ] {
 	pointer-events: none;
 }
 
