@@ -24,6 +24,8 @@ get_header();
 	<?php echo OopsMain::render(); ?>
 
 	<?php echo OopsCookie::render(); ?>
+
+	<?php echo OopsAge::render(); ?>
 </section>
 <?php
 

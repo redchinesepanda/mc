@@ -2,6 +2,8 @@
 
 require_once( 'OopsCookie.php' );
 
+require_once( 'OopsAge.php' );
+
 class OopsMain
 {
     const CSS = [
@@ -59,6 +61,8 @@ class OopsMain
         } );
 
         OopsCookie::register();
+
+        OopsAge::register();
     }
 
     const TAXONOMY = [
@@ -209,7 +213,7 @@ class OopsMain
     }
 
     const TEMPLATE = [
-        'oops' => LegalMain::LEGAL_PATH . '/template-parts/oops/oops.php',
+        'legal-oops-main' => LegalMain::LEGAL_PATH . '/template-parts/oops/legal-oops-main.php',
     ];
 
     public static function render()
@@ -220,7 +224,7 @@ class OopsMain
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'oops' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'legal-oops-main' ], false, self::get() );
 
         $output = ob_get_clean();
 

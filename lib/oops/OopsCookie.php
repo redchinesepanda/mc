@@ -76,7 +76,7 @@ class OopsCookie
     }
 
 	const TEMPLATE = [
-        'legal-cookie' => LegalMain::LEGAL_PATH . '/template-parts/oops/cookie.php',
+        'legal-oops-cookie' => LegalMain::LEGAL_PATH . '/template-parts/oops/legal-oops-cookie.php',
     ];
 
     public static function render()
@@ -87,7 +87,7 @@ class OopsCookie
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-cookie' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'legal-oops-cookie' ], false, self::get() );
 
         $output = ob_get_clean();
 
