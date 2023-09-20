@@ -31,6 +31,10 @@
 	width: 100%;
 }
 
+.legal-oops-age {
+	flex-basis: 600px;
+}
+
 .legal-oops-age .oops-age-title {
 	flex-basis: 100%;
 }
