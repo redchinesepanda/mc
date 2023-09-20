@@ -147,6 +147,8 @@ class BonusMain
 		'tags' => [],
 
 		'current_not_in' => false,
+
+		'duration' => '',
 	];
 
 	const FIELD = [
@@ -400,7 +402,12 @@ class BonusMain
 			}
 		}
 
-		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+		$expired_all = []
+
+		if ( !in_array( $atts[ 'duration' ], [ self::DURATION[ 'actual' ] ] ) )
+		{
+			$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
+		}
 
 		return array_merge( $active_partners, $active_no_partners, $expired_all );
 	}

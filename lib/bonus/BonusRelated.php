@@ -60,6 +60,8 @@ class BonusRelated
 			'limit' => 6,
 
 			'current_not_in' => true,
+
+			'duration' => BonusMain::DURATION[ 'actual' ],
 		];
 
 		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
@@ -85,6 +87,8 @@ class BonusRelated
 			'tags' => $tags,
 
 			'current_not_in' => true,
+
+			'duration' => BonusMain::DURATION[ 'actual' ],
 		];
 
 		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
