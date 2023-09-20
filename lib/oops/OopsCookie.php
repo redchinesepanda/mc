@@ -3,8 +3,8 @@
 class OopsCookie
 {
 	const CSS = [
-		'legal-cookie' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/cookie.css',
+		'legal-oops-cookie' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-cookie.css',
 
             'ver' => '1.0.2',
         ],
@@ -22,16 +22,16 @@ class OopsCookie
     }
 
     const JS = [
-        'legal-cookie' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/oops/cookie.js',
+        'legal-oops-cookie' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-cookie.js',
 
 			'ver' => '1.0.0',
 
             'deps' => [ 'legal-cookie-lib' ],
 		],
 
-        'legal-cookie-lib' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/lib-cookie.js',
+        'legal-lib-cookie' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-lib-cookie.js',
 
             'ver' => '1.0.0',
         ],
