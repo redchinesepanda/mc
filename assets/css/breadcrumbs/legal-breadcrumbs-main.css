@@ -7,6 +7,10 @@
 
 /* Breadcrumbs Position */
 
+.legal-breadcrumbs {
+    padding: 5px 0px;
+}
+
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     padding-left: 20px;
 }

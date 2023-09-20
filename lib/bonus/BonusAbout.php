@@ -59,6 +59,18 @@ class BonusAbout
 			return [];
         }
 
+        $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+
+        $affilate_link_id = url_to_postid( $href );
+
+        LegalDebug::debug( [
+            'function' => 'onusAbout::get_button',
+
+            'href' => $href,
+
+            'affilate_link_id' => $affilate_link_id,
+        ] );
+
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
 

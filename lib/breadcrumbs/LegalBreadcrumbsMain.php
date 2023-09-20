@@ -3,13 +3,17 @@
 class LegalBreadcrumbsMain extends LegalDebug
 {
     const CSS = [
-        'legal-breadcrumbs-main' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-main.css',
+        'legal-breadcrumbs-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-main.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style()
     {
-        foreach ( self::CSS as $name => $path ) {
-            wp_enqueue_style( $name, $path );
+        if ( self::check() ) {
+            ToolEnqueue::register_style( self::CSS );
         }
     }
 
@@ -251,10 +255,21 @@ class LegalBreadcrumbsMain extends LegalDebug
         return $items;
     }
 
+    public static function check()
+    {
+        $not_front_page = !is_front_page();
+        return $not_front_page;
+    }
+
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/breadcrumbs/part-breadcrumbs-main.php';
 
     public static function render()
     {
+        if ( !self::check() )
+        {
+            return '';
+        }
+
         ob_start();
 
         load_template( self::TEMPLATE, false, self::get() );
