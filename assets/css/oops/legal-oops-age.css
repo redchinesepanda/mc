@@ -1,0 +1,28 @@
+/* Display */
+
+.legal-oops-age-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Position */
+
+.legal-oops-age-wrapper {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+/* Width and Height */
+
+.legal-oops-age-wrapper {
+	height: 100vh;
+	width: 100%;
+}
+
+/* Background */
+
+.legal-oops-age-wrapper {
+	background-color: #323232CC;
+}
