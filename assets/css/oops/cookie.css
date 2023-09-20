@@ -1,0 +1,24 @@
+/* Display */
+
+.legal-oops-cookie-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+/* Position */
+
+.legal-oops-cookie-wrapper {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+/* Width and height */
+
+.legal-oops-cookie-wrapper {
+	width: 100%;
+}
+
+.legal-oops-cookie {
+	flex-basis: 1080px;
+}
