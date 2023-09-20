@@ -32,13 +32,13 @@
 	flex-basis: 1080px;
 }
 
-/* .legal-oops-cookie .oops-cookie-description {
-	flex-basis: calc( 75% - 25px );
+.legal-oops-cookie .oops-cookie-description {
+	flex-basis: calc( 75% - 50px );
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	flex-basis: calc( 25% - 25px );
-} */
+	flex-basis: fit-content;
+}
 
 /* Background */
 
