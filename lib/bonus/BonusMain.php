@@ -194,16 +194,6 @@ class BonusMain
 		$query = $query_filter->createWpQuery( $args );
 
 		$posts = $query->posts;
-		
-		LegalDebug::debug( [
-			'function' => 'BonusMain::get_posts_date',
-
-			'mode' => $mode,
-
-			'args' => $args,
-
-			'posts' => $posts,
-		] );
 
 		return $posts;
 	}
@@ -412,18 +402,6 @@ class BonusMain
 
 		$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 
-		LegalDebug::debug( [
-			'function' => 'BonusMain::group_posts',
-
-			'atts' => $atts,
-
-			'active_partners' => $active_partners,
-
-			'active_no_partners' => $active_no_partners,
-
-			'expired_all' => $expired_all,
-		] );
-
 		return array_merge( $active_partners, $active_no_partners, $expired_all );
 	}
 
@@ -485,12 +463,6 @@ class BonusMain
 		$args = [
 			'items' => $items,
 		];
-
-		LegalDebug::debug( [
-			'function' => 'BonusMain::prepare',
-
-			'args' => $args,
-		] );
 
 		return self::render( $args );
 	}
