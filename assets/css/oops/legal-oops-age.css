@@ -77,3 +77,14 @@
 	line-height: 49px;
 	text-align: center;
 }
+
+.legal-oops-age .oops-age-description {
+	color: rgba(106, 107, 108, 0.9);
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: normal;
+	line-height: 31.5px;
+	text-align: center;
+}
