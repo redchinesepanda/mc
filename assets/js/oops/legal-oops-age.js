@@ -10,7 +10,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		LegalCookie.setCookie( oopsCookieName, 'accepted' );
 
-		event.currentTarget.parentElement.parentElement.parentElement.parentElementclassList.remove( oopsCookieClass );
+		event.currentTarget.closest( '.legal-oops-age-wrapper' ).classList.remove( oopsCookieClass );
 	}
 
 	document.querySelectorAll( '.legal-oops-age-wrapper' ).forEach( function ( wrapper )
