@@ -8,6 +8,12 @@ class OopsCookie
 
             'ver' => '1.0.2',
         ],
+
+        'legal-cookie-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/lib-cookie.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style( $styles = [] )
