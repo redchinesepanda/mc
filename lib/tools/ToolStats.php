@@ -24,7 +24,7 @@ class ToolStats
 		// $user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
 
 		$values = [
-			'url_path' => $_SERVER[ 'HTTP_REFERER' ];
+			'url_path' => $_SERVER[ 'HTTP_REFERER' ],
 
 			'url_ref_click' => get_post_permalink( $post_id ),
 
