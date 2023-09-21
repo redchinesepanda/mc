@@ -13,7 +13,7 @@ class ToolStats
 	{
 		$url_path = get_post_permalink( $post_id );
 
-		$url_ref_click = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post_id );
+		$url_ref_click = get_field( BonusMain::FIELD[ 'bonus-affilate-primary' ], $post_id );
 
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
