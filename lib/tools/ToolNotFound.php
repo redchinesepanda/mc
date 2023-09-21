@@ -41,10 +41,10 @@ class ToolNotFound
 
 		$permission_page = false;
 
+		$locale_page = WPMLMain::current_language();
+
 		if ( $permission_country )
 		{
-			$locale_page = WPMLMain::current_language();
-
 			$permission_page = !in_array( $locale_page, self::LOCALE[ $locale_user ] );
 		}
 
