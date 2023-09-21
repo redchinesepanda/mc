@@ -11,36 +11,34 @@ class ToolStats
 
 	public static function af_redirect( $post_id, $target_url, $redirect_type )
 	{
-		$url_path = $_SERVER[ 'HTTP_REFERER' ];
+		// $url_path = $_SERVER[ 'HTTP_REFERER' ];
 
-		$url_ref_click = get_post_permalink( $post_id );
+		// $url_ref_click = get_post_permalink( $post_id );
 
 		$current = new DateTime();
 
-		$date = $current->format('Y-m-d H:i:s');
+		// $date = $current->format('Y-m-d H:i:s');
 
-		$user_ip = $_SERVER[ 'HTTP_CF_CONNECTING_IP' ];
+		// $user_ip = $_SERVER[ 'HTTP_CF_CONNECTING_IP' ];
 
-		$user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
+		// $user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
+
+		$values = [
+			'url_path' => $_SERVER[ 'HTTP_REFERER' ];
+
+			'url_ref_click' => get_post_permalink( $post_id ),
+
+			'date' => $current->format('Y-m-d H:i:s'),
+
+			'user_ip' => $_SERVER[ 'HTTP_CF_CONNECTING_IP' ],
+
+			'user_agent' => $_SERVER[ 'HTTP_USER_AGENT' ],
+		];
 
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
 
-			// 'post_id' => $post_id,
-
-			'url_path' => $url_path,
-
-			'url_ref_click' => $url_ref_click,
-
-			'date' => $date,
-
-			'user_ip' => $user_ip,
-
-			'user_agent' => $user_agent,
-
-			// 'target_url' => $target_url,
-
-			// 'redirect_type' => $redirect_type,
+			'values' => $values,
 		] );
 	}
 
