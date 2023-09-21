@@ -24,6 +24,8 @@ require_once( 'ToolDate.php' );
 
 require_once( 'ToolNotFound.php' );
 
+require_once( 'ToolStats.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -39,6 +41,8 @@ class ToolsMain
         ToolSitemap::register();
 
         ToolNotFound::register();
+
+        ToolStats::register();
     }
 }
 
