@@ -1,9 +1,9 @@
 <?php
 
-get_header();
+// get_header();
 
 thrive_template()->render();
 
-get_footer();
+// get_footer();
 
 ?>
