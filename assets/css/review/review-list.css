@@ -79,7 +79,7 @@
     counter-increment: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( .menu__box ) li::before {
+.tcb-post-content ol:not( .menu__box ) > li::before {
     content: counter( legal-counter );
     display: inline-block;
 }
@@ -93,7 +93,7 @@
 	list-style-type: none;
 }
 
-.tcb-post-content ul > li::before {
+.tcb-post-content ul li::before {
 	content: '';
     display: inline-block;
 }
