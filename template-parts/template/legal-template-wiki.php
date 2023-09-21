@@ -1,6 +1,6 @@
 <?php
 
-// get_header();
+//  get_header();
 
 thrive_template()->render();
 
