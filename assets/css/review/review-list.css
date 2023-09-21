@@ -71,7 +71,7 @@
     counter-reset: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( .menu__box ) li {
+.tcb-post-content ol:not( .menu__box ) ol > li {
     counter-increment: legal-counter;
 }
 
