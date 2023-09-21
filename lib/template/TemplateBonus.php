@@ -24,7 +24,11 @@ class TemplateBonus
 
 	public static function check()
     {
-        return BonusMain::check();
+		$post_bonus = BonusMain::check();
+
+		$post_not_wiki = !TemplateWiki::check();
+
+        return $post_bonus && $post_not_wiki;
     }
 
 	const TEMPLATE = [
