@@ -201,7 +201,7 @@
 
 /* Review Typography */
 
-.tcb-post-content ol:not( .menu__box ) li::before {
+.tcb-post-content ol:not( .menu__box ) > li::before {
     font-weight: 600;
     line-height: 20px;
     color: rgb(89, 151, 227);
