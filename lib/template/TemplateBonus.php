@@ -32,7 +32,7 @@ class TemplateBonus
     }
 
 	const TEMPLATE = [
-        'post-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-bonus.php',
+        'legal-template-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-bonus.php',
     ];
 
 	public static function render()
@@ -44,7 +44,7 @@ class TemplateBonus
 
         ob_start();
 		
-		load_template( self::TEMPLATE[ 'post-bonus' ], false, [] );
+		load_template( self::TEMPLATE[ 'legal-template-bonus' ], false, [] );
 
         $output = ob_get_clean();
 

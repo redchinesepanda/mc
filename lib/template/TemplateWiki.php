@@ -12,7 +12,7 @@ class TemplateWiki
     }
 
 	const TEMPLATE = [
-        'post-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-post-wiki.php',
+        'legal-template-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
     ];
 
 	public static function render()
@@ -24,7 +24,7 @@ class TemplateWiki
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'post-wiki' ], false, [] );
+        load_template( self::TEMPLATE[ 'legal-template-wiki' ], false, [] );
 
         $output = ob_get_clean();
 
