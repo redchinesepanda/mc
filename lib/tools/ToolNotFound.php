@@ -48,18 +48,18 @@ class ToolNotFound
 			$permission_page = !in_array( $locale_page, self::LOCALE[ $locale_user ] );
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ToolNotFound::check_not_found',
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::check_not_found',
 			
-			'locale_user' => $locale_user,
+		// 	'locale_user' => $locale_user,
 			
-			'permission_country' => $permission_country,
+		// 	'permission_country' => $permission_country,
 
-			'locale_page' => $locale_page,
+		// 	'locale_page' => $locale_page,
 
-			'permission_page' => $permission_page,
+		// 	'permission_page' => $permission_page,
 
-		] );
+		// ] );
 
 		return $permission_country && $permission_page;
     }
