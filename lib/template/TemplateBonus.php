@@ -32,7 +32,7 @@ class TemplateBonus
     }
 
 	const TEMPLATE = [
-        'post-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-post-bonus.php',
+        'post-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-bonus.php',
     ];
 
 	public static function render()
