@@ -30,7 +30,12 @@ class ToolNotFound
 
 	public static function check_not_found()
     {
-		$locale_user = strtolower( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] );
+		$locale_user = 'en';
+
+		if ( !empty( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] ) )
+		{
+			$locale_user = strtolower( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] );
+		}
 
 		$permission_country = array_key_exists( $locale_user, self::LOCALE );
 
