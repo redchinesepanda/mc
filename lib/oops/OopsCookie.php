@@ -61,7 +61,7 @@ class OopsCookie
     {
 		$permission_post_type = is_singular( [ 'post' ] );
 
-		$permission_not_wiki = !TemplateMain::check_wiki();
+		$permission_not_wiki = !TemplateWiki::check();
 
         return $permission_post_type && $permission_not_wiki;
     }
