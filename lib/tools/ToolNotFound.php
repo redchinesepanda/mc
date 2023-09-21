@@ -45,7 +45,7 @@ class ToolNotFound
 		{
 			$locale_page = WPMLMain::current_language();
 
-			$permission_page = in_array( $locale_page, self::LOCALE[ $locale_user ] );
+			$permission_page = !in_array( $locale_page, self::LOCALE[ $locale_user ] );
 		}
 
 		LegalDebug::debug( [
