@@ -168,7 +168,8 @@
 
 /* Review Background */
 
-.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) > li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) ul li:before,
 .tcb-post-content > ol ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
 .legal-billet ul:not( .legal-list-image ) li:before,
 .legal-bonus ul:not( .legal-list-image ) li:before,
