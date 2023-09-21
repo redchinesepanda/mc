@@ -11,10 +11,18 @@ class ToolStats
 
 	public static function af_redirect( $post_id, $target_url, $redirect_type )
 	{
+		$url_path = get_post_permalink( $post->ID );
+
+		$url_ref_click = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
 
 			'post_id' => $post_id,
+
+			'url_path' => $url_path,
+
+			'url_ref_click' => $url_ref_click,
 
 			'target_url' => $target_url,
 
