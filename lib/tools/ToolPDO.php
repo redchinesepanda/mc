@@ -91,7 +91,9 @@ class ToolPDO
 
         $statement->execute();
 
-		return $statement->fetchAll( PDO::FETCH_COLUMN );
+		// return $statement->fetchAll( PDO::FETCH_COLUMN );
+		
+		return $statement->fetchAll();
     }
 
 	public static function insert( $data )
