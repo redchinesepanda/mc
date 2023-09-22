@@ -48,7 +48,7 @@ class ToolStats
 			] );
 		}
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
 
 			'data' => $data,
