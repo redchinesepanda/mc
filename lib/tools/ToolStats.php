@@ -31,7 +31,7 @@ class ToolStats
 
 			// $result_select = ToolPDO::select();
 
-			LegalDebug::debug( [
+			LegalDebug::die( [
 				'function' => 'ToolStats::af_redirect',
 
 				// 'result_insert' => $result_insert,
