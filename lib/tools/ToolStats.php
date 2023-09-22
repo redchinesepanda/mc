@@ -36,7 +36,7 @@ class ToolStats
 		{
 			// $pdo = ToolPDO::get();
 
-			$result_insert = ToolPDO::insert( $data );
+			// $result_insert = ToolPDO::insert( $data );
 
 			$result_select = ToolPDO::select();
 
