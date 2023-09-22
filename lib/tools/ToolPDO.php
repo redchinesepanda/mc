@@ -117,7 +117,7 @@ class ToolPDO
 		LegalDebug::debug( [
 			'function' => 'ToolPDO::insert',
 
-			'query' => $query,
+			// 'query' => $query,
 
 			'statement' => $statement,
 
