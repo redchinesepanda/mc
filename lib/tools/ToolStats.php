@@ -11,7 +11,9 @@ class ToolStats
 
 	public static function af_redirect( $post_id, $target_url, $redirect_type )
 	{
-		$current = new DateTime();
+		// $current = new DateTime();
+		
+		$current = new DateTime( 'now', new DateTimeZone( 'Europe/Moscow' ) );
 
 		$url_path = 'direct';
 
