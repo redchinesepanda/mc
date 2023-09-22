@@ -27,7 +27,7 @@ class ToolStats
 
 		try
 		{
-			// $pdo = ToolPDO::get();
+			$pdo = ToolPDO::get();
 
 			$result = ToolPDO::select();
 
