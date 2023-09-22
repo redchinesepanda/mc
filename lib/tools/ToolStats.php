@@ -25,7 +25,26 @@ class ToolStats
 			'user_agent' => $_SERVER[ 'HTTP_USER_AGENT' ],
 		];
 
-		self::select();
+		try
+		{
+			$pdo = ToolPDO::get();
+
+			LegalDebug::die( [
+				'function' => 'ToolStats::af_redirect',
+
+				'pdo' => $pdo,
+	
+				'message' => 'A connection to the PostgreSQL database sever has been established successfully.',
+			] );
+		}
+		catch ( \PDOException $e )
+		{
+			LegalDebug::die( [
+				'function' => 'ToolStats::af_redirect',
+	
+				'getMessage' => $e->getMessage(),
+			] );
+		}
 
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',

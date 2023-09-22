@@ -26,6 +26,8 @@ require_once( 'ToolNotFound.php' );
 
 require_once( 'ToolStats.php' );
 
+require_once( 'ToolPDO.php' );
+
 class ToolsMain
 {
     public static function register()
