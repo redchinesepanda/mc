@@ -93,6 +93,31 @@ class ToolPDO
 
 		return $statement->fetchAll();
     }
+
+	public static function insert( $data )
+    {
+		$data = shortcode_atts( self::STATS, $data );
+
+		$replacements[] = self::TABLES[ 'stats' ];
+
+		$fields = array_keys( self::STATS );
+
+		$removed = array_shift( $fields );
+
+		$replacements = array_merge( $replacements, $fields, $fields );
+
+		$query = vsprintf(
+			'INSERT INTO %s ( %s, %s, %s, %s, %s ) VALUES ( :%s, :%s, :%s, :%s, :%s )'
+
+			$replacements
+		);
+
+		$statement = self::get()->prepare( $query );
+
+        $statement->execute( $data );
+
+		return $statement->fetchAll();
+    }
 }
 
 ?>

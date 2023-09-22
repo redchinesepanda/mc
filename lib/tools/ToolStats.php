@@ -13,7 +13,7 @@ class ToolStats
 	{
 		$current = new DateTime();
 
-		$values = [
+		$data = [
 			'url_path' => $_SERVER[ 'HTTP_REFERER' ],
 
 			'url_ref_click' => get_post_permalink( $post_id ),
@@ -29,14 +29,18 @@ class ToolStats
 		{
 			$pdo = ToolPDO::get();
 
-			$result = ToolPDO::select();
+			$result_insert = ToolPDO::insert( $data );
+
+			$result_select = ToolPDO::select();
 
 			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 
 				'pdo' => $pdo,
 
-				'result' => $result,
+				'result_insert' => $result_insert,
+
+				'result_select' => $result_select,
 	
 				'message' => 'A connection to the PostgreSQL database sever has been established successfully.',
 			] );
@@ -53,7 +57,7 @@ class ToolStats
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
 
-			'values' => $values,
+			'data' => $data,
 		] );
 	}
 
