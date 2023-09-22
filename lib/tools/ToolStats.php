@@ -11,17 +11,7 @@ class ToolStats
 
 	public static function af_redirect( $post_id, $target_url, $redirect_type )
 	{
-		// $url_path = $_SERVER[ 'HTTP_REFERER' ];
-
-		// $url_ref_click = get_post_permalink( $post_id );
-
 		$current = new DateTime();
-
-		// $date = $current->format('Y-m-d H:i:s');
-
-		// $user_ip = $_SERVER[ 'HTTP_CF_CONNECTING_IP' ];
-
-		// $user_agent = $_SERVER[ 'HTTP_USER_AGENT' ];
 
 		$values = [
 			'url_path' => $_SERVER[ 'HTTP_REFERER' ],
@@ -35,6 +25,8 @@ class ToolStats
 			'user_agent' => $_SERVER[ 'HTTP_USER_AGENT' ],
 		];
 
+		self::select();
+
 		LegalDebug::die( [
 			'function' => 'ToolStats::af_redirect',
 
@@ -43,15 +35,15 @@ class ToolStats
 	}
 
 	const SETTINGS = [
-		'host' => '',
+		'host' => '46.101.248.55',
 
-		'port' => '',
+		'port' => '5432',
 
 		'dbname' => 'mc_analytics',
 
-		'user' => '',
+		'user' => 'match_center',
 
-		'password' => '',
+		'password' => 'qak7qda6ZPG_hmr!veh',
 	];
 
 	const TABLES = [
@@ -96,7 +88,7 @@ class ToolStats
 			LegalDebug::die( [
 				'function' => 'ToolStats::insert',
 
-				'pg_last_error' => pg_last_error( $connection ),
+				'message' => 'connection errors',
 			] );
 		}
 
@@ -114,6 +106,36 @@ class ToolStats
 				] );
 			}
 		}
+	}
+
+	public static function select()
+	{
+		$connection = self::get_connection();
+
+		if ( empty( $connection ) )
+		{
+			LegalDebug::die( [
+				'function' => 'ToolStats::select',
+
+				'message' => 'connection errors',
+			] );
+		}
+		
+		$result = pg_select( $connection, self::TABLES[ 'stats' ], [], PG_DML_ESCAPE);
+	
+		if ( !$result ) {
+			LegalDebug::die( [
+				'function' => 'ToolStats::insert',
+
+				'pg_last_error' => pg_last_error( $connection ),
+			] );
+		}
+
+		LegalDebug::die( [
+			'function' => 'ToolStats::insert',
+
+			'result' => $result,
+		] );
 	}
 }
 
