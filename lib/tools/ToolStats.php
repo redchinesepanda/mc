@@ -27,8 +27,6 @@ class ToolStats
 
 		try
 		{
-			$pdo = ToolPDO::get();
-
 			$result_insert = ToolPDO::insert( $data );
 
 			$result_select = ToolPDO::select();
@@ -36,13 +34,9 @@ class ToolStats
 			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 
-				'pdo' => $pdo,
-
 				'result_insert' => $result_insert,
 
 				'result_select' => $result_select,
-	
-				'message' => 'A connection to the PostgreSQL database sever has been established successfully.',
 			] );
 		}
 		catch ( \PDOException $e )
@@ -53,116 +47,6 @@ class ToolStats
 				'getMessage' => $e->getMessage(),
 			] );
 		}
-
-		LegalDebug::die( [
-			'function' => 'ToolStats::af_redirect',
-
-			'data' => $data,
-		] );
-	}
-
-	const SETTINGS = [
-		'host' => '46.101.248.55',
-
-		'port' => '5432',
-
-		'dbname' => 'mc_analytics',
-
-		'user' => 'match_center',
-
-		'password' => 'qak7qda6ZPG_hmr!veh',
-	];
-
-	const TABLES = [
-		'stats' => 'ref_clicks',
-	];
-
-	const STATS =  [
-		// SERIAL PRIMARY KEY
-		// 'id' => 0,
-
-		// text
-		'url_path' => '/',
-
-		// text
-		'url_ref_click' => '/',
-
-		// timestamp
-		'date' => 0,
-
-		// inet
-		'user_ip' => '0.0.0.0',
-
-		// text
-		'user_agent' => '-',
-	];
-
-	public static function get_connection()
-	{
-		$connection_string = http_build_query( self::SETTINGS, '', ' ' );
-
-		$flags = PGSQL_CONNECT_ASYNC;
-
-		return pg_connect( $connection_string, $flags );
-	}
-
-	public static function insert( $values = [] )
-	{
-		$connection = self::get_connection();
-
-		if ( empty( $connection ) )
-		{
-			LegalDebug::die( [
-				'function' => 'ToolStats::insert',
-
-				'message' => 'connection errors',
-			] );
-		}
-
-		$values = shortcode_atts( self::STATS, $values );
-
-		if ( !empty( $values ) )
-		{
-			$result = pg_insert( $connection, self::TABLES[ 'stats' ], $values, PGSQL_DML_ESCAPE );
-	
-			if ( !$result ) {
-				LegalDebug::die( [
-					'function' => 'ToolStats::insert',
-
-					'pg_last_error' => pg_last_error( $connection ),
-				] );
-			}
-		}
-	}
-
-	public static function select()
-	{
-		$connection = self::get_connection();
-
-		if ( empty( $connection ) )
-		{
-			LegalDebug::die( [
-				'function' => 'ToolStats::select',
-
-				'message' => 'connection errors',
-			] );
-		}
-		
-		$result = pg_select( $connection, self::TABLES[ 'stats' ], [], PG_DML_ESCAPE);
-	
-		if ( !$result ) {
-			LegalDebug::die( [
-				'function' => 'ToolStats::insert',
-
-				'pg_last_error' => pg_last_error( $connection ),
-			] );
-		}
-
-		LegalDebug::die( [
-			'function' => 'ToolStats::insert',
-
-			'result' => $result,
-		] );
 	}
 }
 
