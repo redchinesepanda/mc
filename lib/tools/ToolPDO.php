@@ -92,8 +92,6 @@ class ToolPDO
         $statement->execute();
 
 		return $statement->fetchAll( \PDO::FETCH_ASSOC );
-		
-		// return $statement->fetchAll();
     }
 
 	public static function insert( $data )
@@ -120,7 +118,7 @@ class ToolPDO
 
         $statement->execute( $data );
 
-		return $statement->fetchAll();
+		return $statement->fetchAll( \PDO::FETCH_ASSOC );
     }
 }
 
