@@ -91,7 +91,7 @@ class ToolPDO
 
         $statement->execute();
 
-		return $statement->fetchAll( PDO::FETCH_COLUMN );
+		return $statement->fetchAll( \PDO::FETCH_ASSOC );
 		
 		// return $statement->fetchAll();
     }
