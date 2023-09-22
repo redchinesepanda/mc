@@ -16,7 +16,7 @@ class ToolPDO
 
 	public static $pdo;
 
-	public function connect()
+	public static function connect()
     {
         $connection_string = sprintf(
             "pgsql:host=%s;port=%d;dbname=%s;user=%s;password=%s",
