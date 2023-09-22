@@ -107,7 +107,7 @@ class ToolPDO
 		$replacements = array_merge( $replacements, $fields, $fields );
 
 		$query = vsprintf(
-			'INSERT INTO %s ( %s, %s, %s, %s, %s ) VALUES ( :%s, :%s, :%s, :%s, :%s )'
+			'INSERT INTO %s ( %s, %s, %s, %s, %s ) VALUES ( :%s, :%s, :%s, :%s, :%s )',
 
 			$replacements
 		);
