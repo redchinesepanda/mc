@@ -96,13 +96,15 @@ class ToolPDO
 
 	public static function insert( $data )
     {
-		$data = shortcode_atts( self::STATS, $data );
+		$stats = self::STATS;
+
+		$removed = array_shift( $stats );
+
+		$data = shortcode_atts( $stats, $data );
 
 		$replacements[] = self::TABLES[ 'stats' ];
 
-		$fields = array_keys( self::STATS );
-
-		$removed = array_shift( $fields );
+		$fields = array_keys( $stats );
 
 		$replacements = array_merge( $replacements, $fields, $fields );
 
