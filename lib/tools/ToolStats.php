@@ -13,10 +13,15 @@ class ToolStats
 	{
 		$current = new DateTime();
 
+		$url_path = 'not set';
 
+		if ( !empty( $_SERVER[ 'HTTP_REFERER' ] ) )
+		{
+			$url_path = $_SERVER[ 'HTTP_REFERER' ];
+		}
 
 		$data = [
-			'url_path' => $_SERVER[ 'HTTP_REFERER' ],
+			'url_path' => $url_path,
 
 			'url_ref_click' => get_post_permalink( $post_id ),
 
