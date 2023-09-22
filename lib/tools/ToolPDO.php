@@ -112,15 +112,17 @@ class ToolPDO
 			$replacements
 		);
 
+		$statement = self::get()->prepare( $query );
+
+        $statement->execute( $data );
+
 		LegalDebug::debug( [
 			'function' => 'ToolPDO::insert',
 
 			'query' => $query,
+
+			'statement' => $statement,
 		] );
-
-		$statement = self::get()->prepare( $query );
-
-        $statement->execute( $data );
 
 		return $statement->fetchAll();
     }
