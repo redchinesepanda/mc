@@ -47,6 +47,12 @@ class ToolStats
 				'getMessage' => $e->getMessage(),
 			] );
 		}
+
+		LegalDebug::debug( [
+			'function' => 'ToolStats::af_redirect',
+
+			'data' => $data,
+		] );
 	}
 }
 
