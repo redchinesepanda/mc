@@ -13,7 +13,7 @@ class ToolStats
 	{
 		$current = new DateTime();
 
-		$url_path = 'not set';
+		$url_path = 'direct';
 
 		if ( !empty( $_SERVER[ 'HTTP_REFERER' ] ) )
 		{
