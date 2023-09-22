@@ -27,19 +27,23 @@ class ToolStats
 
 		try
 		{
-			$pdo = ToolPDO::get();
+			// $pdo = ToolPDO::get();
 
-			LegalDebug::die( [
+			$result = ToolPDO::select();
+
+			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 
 				'pdo' => $pdo,
+
+				'result' => $result,
 	
 				'message' => 'A connection to the PostgreSQL database sever has been established successfully.',
 			] );
 		}
 		catch ( \PDOException $e )
 		{
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 	
 				'getMessage' => $e->getMessage(),

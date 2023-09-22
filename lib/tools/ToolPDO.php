@@ -50,6 +50,49 @@ class ToolPDO
 
         return static::$pdo;
     }
+
+	const TABLES = [
+		'stats' => 'ref_clicks',
+	];
+
+	const STATS =  [
+		// SERIAL PRIMARY KEY
+		'id' => 0,
+
+		// text
+		'url_path' => '/',
+
+		// text
+		'url_ref_click' => '/',
+
+		// timestamp
+		'date' => 0,
+
+		// inet
+		'user_ip' => '0.0.0.0',
+
+		// text
+		'user_agent' => '-',
+	];
+
+	public static function select()
+    {
+		$values = array_keys( self::STATS );
+
+		$values[] = self::TABLES[ 'stats' ];
+
+		$query = vsprintf(
+			"SELECT %s, %s, %s, %s, %s, %s FROM %s",
+
+			$values
+		);
+
+        $statement = self::get()->prepare( $query );
+
+        $statement->execute();
+
+		return $statement->fetchAll();
+    }
 }
 
 ?>
