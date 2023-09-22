@@ -27,14 +27,14 @@ class ToolStats
 
 		try
 		{
-			$result_insert = ToolPDO::insert( $data );
+			// $result_insert = ToolPDO::insert( $data );
 
 			$result_select = ToolPDO::select();
 
 			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 
-				'result_insert' => $result_insert,
+				// 'result_insert' => $result_insert,
 
 				'result_select' => $result_select,
 			] );
