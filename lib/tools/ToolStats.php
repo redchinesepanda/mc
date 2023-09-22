@@ -34,8 +34,6 @@ class ToolStats
 
 		try
 		{
-			// $pdo = ToolPDO::get();
-
 			// $result_insert = ToolPDO::insert( $data );
 
 			$result_select = ToolPDO::select();
@@ -43,13 +41,9 @@ class ToolStats
 			LegalDebug::debug( [
 				'function' => 'ToolStats::af_redirect',
 
-				// 'pdo' => $pdo,
-
 				// 'result_insert' => $result_insert,
 
 				'result_select' => $result_select,
-	
-				// 'message' => 'A connection to the PostgreSQL database sever has been established successfully.',
 			] );
 		}
 		catch ( \PDOException $e )
