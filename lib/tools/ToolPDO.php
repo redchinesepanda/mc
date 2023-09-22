@@ -3,7 +3,9 @@
 class ToolPDO
 {
 	const SETTINGS = [
-		'host' => '46.101.248.55',
+		// 'host' => '46.101.248.55',
+		
+		'host' => '10.135.239.72',
 
 		'port' => '5432',
 
