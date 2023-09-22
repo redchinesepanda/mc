@@ -25,6 +25,12 @@ class ToolStats
 			'user_agent' => $_SERVER[ 'HTTP_USER_AGENT' ],
 		];
 
+		LegalDebug::die( [
+			'function' => 'ToolStats::af_redirect',
+
+			'data' => $data,
+		] );
+
 		try
 		{
 			// $result_insert = ToolPDO::insert( $data );
@@ -41,7 +47,7 @@ class ToolStats
 		}
 		catch ( \PDOException $e )
 		{
-			LegalDebug::debug( [
+			LegalDebug::die( [
 				'function' => 'ToolStats::af_redirect',
 	
 				'getMessage' => $e->getMessage(),
