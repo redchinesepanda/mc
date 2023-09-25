@@ -1,19 +1,35 @@
+@media screen and ( max-width: 767px )
+{
+	/* Width and Height */
+
+	.legal-bonus-single .legal-bonus-main {
+		flex-basis: calc( 75% - 25px );
+	}
+
+	.legal-bonus-single .legal-bonus-sidebar {
+		flex-basis: calc( 25% - 25px );
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Width and Height */
+
+	/* .legal-bonus-single .legal-bonus-main {
+		flex-basis: calc( 75% - 25px );
+	}
+
+	.legal-bonus-single .legal-bonus-sidebar {
+		flex-basis: calc( 25% - 25px );
+	}	 */
+}
+
 /* Display */
 
 .legal-bonus-single {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 50px;
-}
-
-/* Width and Height */
-
-.legal-bonus-single .legal-bonus-main {
-	flex-basis: calc( 75% - 25px );
-}
-
-.legal-bonus-single .legal-bonus-sidebar {
-	flex-basis: calc( 25% - 25px );
 }
 
 /* Position */
