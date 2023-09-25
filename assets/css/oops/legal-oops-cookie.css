@@ -101,3 +101,13 @@
 	line-height: 14.4px;
 	text-transform: uppercase;
 }
+
+.legal-oops-cookie .oops-cookie-privacy {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 25.2px;
+	text-transform: uppercase;
+	color: rgb(255, 255, 255);
+}
