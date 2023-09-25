@@ -71,6 +71,10 @@
 	padding: 0px 15px;
 }
 
+.legal-bonus-list:not( :last-of-type ) {
+	padding-bottom: 30px;
+}
+
 /* Width and Height */
 
 .legal-bonus-list .bonus-list-title {
@@ -139,10 +143,6 @@
 	background-color: rgb(255, 94, 106);
   	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
   	border-radius: 20px;
-}
-
-.legal-bonus-list:not( :last-of-type ) {
-	padding-bottom: 20px;
 }
 
 /* Typography */
