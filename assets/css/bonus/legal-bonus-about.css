@@ -1,3 +1,17 @@
+@media screen and ( max-width: 767px )
+{
+	/* Width and Height */
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Width and Height */
+
+	.legal-bonus-about {
+		width: 1080px;
+	}
+}
+
 /* Display */
 
 .legal-bonus-about {
@@ -66,10 +80,6 @@
 }
 
 /* Width and Height */
-
-.legal-bonus-about {
-	width: 1080px;
-}
 
 .legal-bonus-about .bonus-about-data {
 	flex-basis: calc( 75% - 25px );
