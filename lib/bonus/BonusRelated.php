@@ -120,7 +120,7 @@ class BonusRelated
 		return $items;
 	}
 
-	public static function get_tags()
+	public static function get_related_tags()
     {
 		return [
 			'title' => __( BonusMain::TEXT[ 'best-bookmaker-bonuses' ], ToolLoco::TEXTDOMAIN ),
@@ -138,7 +138,7 @@ class BonusRelated
 		];
 	}
 
-	public static function get_categories()
+	public static function get_preview_categories()
     {
 		return [
 			'title' => __( BonusMain::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
@@ -153,7 +153,7 @@ class BonusRelated
 
     public static function render_related_tags()
 	{
-		return self::render( self::get_tags() );
+		return self::render( self::get_related_tags() );
 	}
 
     public static function render_preview_tags()
@@ -163,7 +163,7 @@ class BonusRelated
 
     public static function render_preview_categories()
 	{
-		return BonusPreview::render( self::get_categories() );
+		return BonusPreview::render( self::get_preview_categories() );
 	}
 
     public static function render( $args )
