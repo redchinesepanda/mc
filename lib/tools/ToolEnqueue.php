@@ -16,16 +16,6 @@ class ToolEnqueue
             }
 
             wp_enqueue_style( $name, $path, [], $ver );
-
-            // LegalDebug::debug( [
-			// 	'function' => 'BonusMain::register_style',
-
-            //     'name' => $name,
-
-            //     'path' => $path,
-
-            //     'ver' => $ver,
-			// ] );
         }
     }
 

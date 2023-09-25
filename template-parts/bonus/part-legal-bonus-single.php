@@ -10,6 +10,8 @@
 		<?php echo BonusCategories::render(); ?>
 
 		<?php echo BonusRelated::render_categories(); ?>
+
+		<?php echo BonusRelated::render_preview_tags(); ?>
 	</div>
 	<div class="legal-bonus-sidebar">
 		<?php echo BonusRelated::render_tags(); ?>

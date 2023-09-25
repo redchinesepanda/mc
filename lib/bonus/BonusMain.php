@@ -52,7 +52,7 @@ class BonusMain
 		'wagering' => 'Wagering',
 	];
 
-	public static function register_style(  $styles = [] )
+	public static function register_style( $styles = [] )
     {
         if ( self::check() )
 		{

@@ -147,6 +147,11 @@ class BonusRelated
 		return self::render( self::get_tags() );
 	}
 
+    public static function render_preview_tags()
+	{
+		return BonusPreview::render( self::get_tags() );
+	}
+
     public static function render_categories()
 	{
 		return BonusPreview::render( self::get_categories() );
