@@ -49,7 +49,11 @@ class CompilationMain
 
         add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_tabs' ] );
 
-		// [legal-compilation id=""]
+		// [legal-compilation-bonus id="1027225"]
+
+        LegalDebug::debug( [
+            self::SHORTCODES[ 'bonus' ],
+        ] );
 
         add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_compilation' ] );
 
