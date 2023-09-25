@@ -1,3 +1,10 @@
+@media screen and ( max-width: 767px )
+{
+	.legal-section-breadcrumbs {
+		padding: 0px 20px;
+	}
+}
+
 /* Display */
 
 .legal-section-breadcrumbs {
