@@ -68,8 +68,20 @@ class OopsCookie
 
 	public static function get()
     {
+        $page = get_page_by_path( '/privacy-policy/' );
+
+        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        $href = get_page_link( $translated_id );
+
         return  [
             'description' => __( BaseMain::TEXT[ 'to-give' ], ToolLoco::TEXTDOMAIN ),
+
+            'privacy' => [
+                'href' => $href,
+
+                'label' => __( BaseMain::TEXT[ 'more-information' ], ToolLoco::TEXTDOMAIN ),,
+            ],
 
 			'label' => __( BaseMain::TEXT[ 'i-accept' ], ToolLoco::TEXTDOMAIN ),
         ];

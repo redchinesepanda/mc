@@ -39,6 +39,8 @@ class BonusMain
 
 		'min-deposit' => 'Min. deposit',
 
+		'more-information' => 'More Information',
+
 		'other-bonuses' => 'Other bonuses',
 
 		'promotion-expired' => 'Promotion Expired',
