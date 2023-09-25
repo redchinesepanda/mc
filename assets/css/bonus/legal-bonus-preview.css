@@ -142,7 +142,7 @@
 }
 
 .legal-bonus-list:not( :last-of-type ) {
-	background-color: antiquewhite;
+	padding-bottom: 20px;
 }
 
 /* Typography */
