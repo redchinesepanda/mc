@@ -7,6 +7,19 @@
 	.legal-section-about {
 		padding: 0px 20px;
 	}
+
+	.legal-section-content {
+		padding: 20px 0px;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Position */
+
+	.legal-section-content {
+		padding: 40px 0px;
+	}
 }
 
 /* Display */
@@ -28,7 +41,6 @@
 
 .legal-section-content {
 	margin: 0px auto;
-	padding: 40px 0px;
 }
 
 .legal-section-footer {
