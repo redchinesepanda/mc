@@ -26,17 +26,17 @@ class BonusFeatured
 		add_image_size( self::SIZE[ 'featured' ], 700, 400, false );
     }
 
-	public static function get_id()
-    {
-		$post = get_post();
+	// public static function get_id()
+    // {
+	// 	$post = get_post();
 
-        if ( !empty( $post ) )
-        {
-            return $post->ID;
-        }
+    //     if ( !empty( $post ) )
+    //     {
+    //         return $post->ID;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
 	const SIZE = [
 		'featured' => 'legal-bonus-featured',
@@ -50,9 +50,9 @@ class BonusFeatured
 
 	public static function get()
 	{
-		$id = self::get_id();
+		$id = BonusMain::get_id();
 
-		$preview = BonusMain::get_thumbnail( $id, self::SIZE[ 'featured' ] );
+		$preview = BonusPreview::get_thumbnail( $id, self::SIZE[ 'featured' ] );
 
 		$preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 

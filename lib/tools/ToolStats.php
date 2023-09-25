@@ -9,9 +9,19 @@ class ToolStats
 		add_action( 'af_link_before_redirect', [ $handler, 'af_redirect' ], 10, 3 );
 	}
 
+	public static function check()
+    {
+        $permission_admin = !is_admin();
+
+        $permission_not_logged_in = !is_user_logged_in();
+        
+        return $permission_admin && $permission_not_logged_in;
+    }
+
 	public static function af_redirect( $post_id, $target_url, $redirect_type )
 	{
-		// $current = new DateTime();
+		// if ( self::check() )
+		// {
 		
 		$current = new DateTime( 'now', new DateTimeZone( 'Europe/Moscow' ) );
 
@@ -62,6 +72,8 @@ class ToolStats
 
 		// 	'data' => $data,
 		// ] );
+
+		// }
 	}
 }
 

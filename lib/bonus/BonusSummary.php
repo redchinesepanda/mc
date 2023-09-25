@@ -10,11 +10,16 @@ class BonusSummary
         ],
     ];
 
-    public static function register_style()
+    // public static function register_style()
+    // {
+    //     if ( BonusMain::check() ) {
+    //         ToolEnqueue::register_style( self::CSS );
+    //     }
+    // }
+
+	public static function register_style()
     {
-        if ( BonusMain::check() ) {
-            ToolEnqueue::register_style( self::CSS );
-        }
+        BonusMain::register_style( self::CSS );
     }
 
 	public static function register()
@@ -24,17 +29,17 @@ class BonusSummary
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-	public static function get_id()
-    {
-		$post = get_post();
+	// public static function get_id()
+    // {
+	// 	$post = get_post();
 
-        if ( !empty( $post ) )
-        {
-            return $post->ID;
-        }
+    //     if ( !empty( $post ) )
+    //     {
+    //         return $post->ID;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
 	const FIELD = [
 		'bonus-name' => 'name-bk',
@@ -48,7 +53,7 @@ class BonusSummary
 
 	public static function get()
     {
-        $id = self::get_id();
+        $id = BonusMain::get_id();
         
 		if ( empty( $id ) )
 		{

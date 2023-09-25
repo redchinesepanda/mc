@@ -138,19 +138,19 @@ class ReviewAbout
         ] );
     }
 
-    public static function get_id()
-    {
-        $id = 0;
+    // public static function get_id()
+    // {
+    //     $id = 0;
 
-        $post = get_post();
+    //     $post = get_post();
 
-        if ( !empty( $post ) )
-        {
-            $id = $post->ID;
-        }
+    //     if ( !empty( $post ) )
+    //     {
+    //         $id = $post->ID;
+    //     }
 
-        return $id;
-    }
+    //     return $id;
+    // }
 
     public static function get_title()
     {
@@ -178,7 +178,7 @@ class ReviewAbout
 
     public static function get( $args )
     {
-        $id = self::get_id();
+        $id = BonusMain::get_id();
 
         $mode = '';
 
@@ -307,7 +307,7 @@ class ReviewAbout
 
     public static function get_text( $suffix = '' )
     {
-        $group = get_field( self::FIELD, self::get_id() );
+        $group = get_field( self::FIELD, BonusMain::get_id() );
 
         $text = [
             __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN )
@@ -349,7 +349,7 @@ class ReviewAbout
     {
         $atts = shortcode_atts( self::PAIRS, $args, 'legal-button' );
 
-        $id = self::get_id();
+        $id = BonusMain::get_id();
 
         $group = get_field( self::FIELD, $id );
 

@@ -10,11 +10,16 @@ class BonusRelated
         ],
     ];
 
-    public static function register_style()
+    // public static function register_style()
+    // {
+    //     if ( BonusMain::check() ) {
+    //         ToolEnqueue::register_style( self::CSS );
+    //     }
+    // }
+
+	public static function register_style()
     {
-        if ( BonusMain::check() ) {
-            ToolEnqueue::register_style( self::CSS );
-        }
+        BonusMain::register_style( self::CSS );
     }
 
 	public static function register()
@@ -34,22 +39,22 @@ class BonusRelated
 		'tag' => 'post_tag',
 	];
 
-	public static function get_id()
-    {
-		$post = get_post();
+	// public static function get_id()
+    // {
+	// 	$post = get_post();
 
-        if ( !empty( $post ) )
-        {
-            return $post->ID;
-        }
+    //     if ( !empty( $post ) )
+    //     {
+    //         return $post->ID;
+    //     }
 
-        return 0;
-    }
+    //     return 0;
+    // }
 
 	public static function group_posts_categories()
 	{
 		$categories = wp_get_post_categories(
-            self::get_id(),
+            BonusMain::get_id(),
 
             [ 'fields' => 'slugs' ]
         );
@@ -61,18 +66,18 @@ class BonusRelated
 
 			'current_not_in' => true,
 
-			'duration' => BonusMain::DURATION[ 'actual' ],
+			'duration' => BonusPreview::DURATION[ 'actual' ],
 		];
 
-		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
+		$atts = shortcode_atts( BonusPreview::PAIRS, $atts, 'legal-bonus' );
 		
-		return BonusMain::group_posts( $atts );
+		return BonusPreview::group_posts( $atts );
 	}
 
 	public static function group_posts_tags()
 	{
 		$tags = wp_get_post_tags(
-            self::get_id(),
+            BonusMain::get_id(),
 
             [ 'fields' => 'names' ]
         );
@@ -88,12 +93,12 @@ class BonusRelated
 
 			'current_not_in' => true,
 
-			'duration' => BonusMain::DURATION[ 'actual' ],
+			'duration' => BonusPreview::DURATION[ 'actual' ],
 		];
 
-		$atts = shortcode_atts( BonusMain::PAIRS, $atts, 'legal-bonus' );
+		$atts = shortcode_atts( BonusPreview::PAIRS, $atts, 'legal-bonus' );
 		
-		return BonusMain::group_posts( $atts );
+		return BonusPreview::group_posts( $atts );
 	}
 
 	const SIZE = [
@@ -112,7 +117,7 @@ class BonusRelated
 			{
 				$post_url = get_post_permalink( $post->ID );
 
-				$preview = BonusMain::get_thumbnail( $post->ID, self::SIZE[ 'related' ] );
+				$preview = BonusPreview::get_thumbnail( $post->ID, self::SIZE[ 'related' ] );
 
 				if ( !empty( $preview ) )
 				{
@@ -148,7 +153,7 @@ class BonusRelated
 		return [
 			'title' => __( BonusMain::TEXT[ 'similar-bonuses' ], ToolLoco::TEXTDOMAIN ),
 
-			'items' => BonusMain::get_items( self::group_posts_categories() ),
+			'items' => BonusPreview::get_items( self::group_posts_categories() ),
 		];
 	}
 
@@ -163,7 +168,7 @@ class BonusRelated
 
     public static function render_categories()
 	{
-		return BonusMain::render( self::get_categories() );
+		return BonusPreview::render( self::get_categories() );
 	}
 
     public static function render( $args )
