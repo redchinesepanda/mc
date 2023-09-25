@@ -14,6 +14,6 @@
 		<?php echo BonusRelated::render_preview_tags(); ?>
 	</div>
 	<div class="legal-bonus-sidebar">
-		<?php echo BonusRelated::render_tags(); ?>
+		<?php echo BonusRelated::render_related_tags(); ?>
 	</div>
 </div>

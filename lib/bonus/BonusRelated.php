@@ -151,7 +151,7 @@ class BonusRelated
         'bonus-related' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-related.php',
     ];
 
-    public static function render_tags()
+    public static function render_related_tags()
 	{
 		return self::render( self::get_tags() );
 	}
