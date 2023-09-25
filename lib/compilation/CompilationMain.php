@@ -10,6 +10,12 @@ class CompilationMain
 
             'ver' => '1.0.2',
         ],
+
+        'compilation-bonus' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-bonus.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function print()
@@ -41,7 +47,11 @@ class CompilationMain
 
 		// [legal-tabs]
 
-        add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
+        add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_tabs' ] );
+
+		// [legal-compilation]
+
+        add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     
@@ -430,13 +440,47 @@ class CompilationMain
         ];
     }
 
+    const SHORTCODES = [
+        'tabs' => 'legal-tabs',
+
+        'bonus' => 'legal-compilation-bonus',
+    ];
+
+    const PAIRS = [
+        'compilation' => [
+            'id' => 0,
+        ],
+	];
+
+    public static function prepare_compilation_bonus( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
+
+		$args = self::get( $atts[ 'id' ] );
+
+		return self::render_compilation( $args );
+	}
+
     const TEMPLATE = [
         'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
         
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
+
+        'legal-compilation-bonus' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-bonus.php',
     ];
 
-    public static function render(  $id = 0  )
+    public static function render_compilation(  $args = []  )
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'legal-compilation-bonus' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_tabs(  $id = 0  )
     {
         ob_start();
 
