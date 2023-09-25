@@ -80,7 +80,7 @@ class OopsCookie
             'privacy' => [
                 'href' => $href,
 
-                'label' => __( BaseMain::TEXT[ 'more-information' ], ToolLoco::TEXTDOMAIN ),,
+                'label' => __( BaseMain::TEXT[ 'more-information' ], ToolLoco::TEXTDOMAIN ),
             ],
 
 			'label' => __( BaseMain::TEXT[ 'i-accept' ], ToolLoco::TEXTDOMAIN ),
