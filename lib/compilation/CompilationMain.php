@@ -49,7 +49,7 @@ class CompilationMain
 
         add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_tabs' ] );
 
-		// [legal-compilation]
+		// [legal-compilation id=""]
 
         add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_compilation' ] );
 
@@ -458,7 +458,7 @@ class CompilationMain
 
 		$args = self::get( $atts[ 'id' ] );
 
-		return self::render_compilation( $args );
+		return self::render_bonus( $args );
 	}
 
     const TEMPLATE = [
@@ -469,7 +469,7 @@ class CompilationMain
         'legal-compilation-bonus' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-bonus.php',
     ];
 
-    public static function render_compilation(  $args = []  )
+    public static function render_bonus(  $args = []  )
     {
         ob_start();
 
@@ -480,7 +480,12 @@ class CompilationMain
         return $output;
     }
 
-    public static function render_tabs(  $id = 0  )
+    public static function render(  $id = 0  )
+    {
+        return self::render_compilation(  $id  );
+    }
+
+    public static function render_compilation(  $id = 0  )
     {
         ob_start();
 
