@@ -6,7 +6,7 @@ class OopsCookie
 		'legal-oops-cookie' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-cookie.css',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.4',
         ],
     ];
 
