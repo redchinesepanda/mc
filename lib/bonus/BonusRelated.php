@@ -10,13 +10,6 @@ class BonusRelated
         ],
     ];
 
-    // public static function register_style()
-    // {
-    //     if ( BonusMain::check() ) {
-    //         ToolEnqueue::register_style( self::CSS );
-    //     }
-    // }
-
 	public static function register_style()
     {
         BonusMain::register_style( self::CSS );
@@ -38,18 +31,6 @@ class BonusRelated
 	const TAXONOMY = [
 		'tag' => 'post_tag',
 	];
-
-	// public static function get_id()
-    // {
-	// 	$post = get_post();
-
-    //     if ( !empty( $post ) )
-    //     {
-    //         return $post->ID;
-    //     }
-
-    //     return 0;
-    // }
 
 	public static function group_posts_categories()
 	{

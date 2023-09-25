@@ -26,18 +26,6 @@ class BonusFeatured
 		add_image_size( self::SIZE[ 'featured' ], 700, 400, false );
     }
 
-	// public static function get_id()
-    // {
-	// 	$post = get_post();
-
-    //     if ( !empty( $post ) )
-    //     {
-    //         return $post->ID;
-    //     }
-
-    //     return 0;
-    // }
-
 	const SIZE = [
 		'featured' => 'legal-bonus-featured',
 	];

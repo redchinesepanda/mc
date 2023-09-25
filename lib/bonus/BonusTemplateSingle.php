@@ -10,13 +10,6 @@ class BonusTemplateSingle
         ],
     ];
 
-    // public static function register_style()
-    // {
-    //     if ( BonusMain::check() ) {
-    //         ToolEnqueue::register_style( self::CSS );
-    //     }
-    // }
-
     public static function register_style()
     {
         BonusMain::register_style( self::CSS );
@@ -39,7 +32,7 @@ class BonusTemplateSingle
         {
             return '';
         }
-        
+
         ob_start();
 
         load_template( self::TEMPLATE[ 'legal-bonus-single' ], false, [] );

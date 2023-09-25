@@ -10,13 +10,6 @@ class BonusDuration
         ],
     ];
 
-    // public static function register_style()
-    // {
-    //     if ( BonusMain::check() ) {
-    //         ToolEnqueue::register_style( self::CSS );
-    //     }
-    // }
-
 	public static function register_style()
     {
         BonusMain::register_style( self::CSS );
@@ -36,18 +29,6 @@ class BonusDuration
 	const FIELD = [
 		'bonus-duration' => 'data-okonchaniya',
 	];
-
-	// public static function get_id()
-    // {
-	// 	$post = get_post();
-
-    //     if ( !empty( $post ) )
-    //     {
-    //         return $post->ID;
-    //     }
-
-    //     return 0;
-    // }
 
 	public static function get_expired()
 	{

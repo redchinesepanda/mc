@@ -9,13 +9,6 @@ class BonusAbout
             'ver'=> '1.0.0',
         ],
     ];
-
-    // public static function register_style()
-    // {
-    //     if ( BonusMain::check() ) {
-    //         ToolEnqueue::register_style( self::CSS );
-    //     }
-    // }
     
     public static function register_style()
     {
@@ -28,18 +21,6 @@ class BonusAbout
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
-
-	// public static function get_id()
-    // {
-	// 	$post = get_post();
-
-    //     if ( !empty( $post ) )
-    //     {
-    //         return $post->ID;
-    //     }
-
-    //     return 0;
-    // }
 
 	const FIELD = [
 		'bonus-title' => 'h1',
@@ -71,36 +52,6 @@ class BonusAbout
             $href = OopsMain::check_oops() ? '#' : '';
         }
 
-        // $path = parse_url( $href, PHP_URL_PATH );
-
-        // $path = trim( $path, '/' );
-
-        // $path_array = explode( '/', $path );
-
-        // $affilate_link = get_page_by_path( end( $path_array ), OBJECT, 'affiliate-links' );
-
-        // $affilate_link_meta = get_post_meta( $affilate_link->ID );
-
-        // $count_data_json = get_post_meta( $affilate_link->ID, 'wpil_links_inbound_internal_count_data', true );
-
-        // $amount = count( $count_data_json ); 
-
-        // $count_data = json_decode( $count_data_json );
-
-        // LegalDebug::debug( [
-        //     'function' => 'onusAbout::get_button',
-
-        //     // 'href' => $href,
-
-        //     // 'path' => $path,
-
-        //     // 'affilate_link' => $affilate_link,
-
-        //     'amount' => $amount,
-
-        //     'count_data_json' => $count_data_json,
-        // ] );
-
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
 
@@ -117,8 +68,6 @@ class BonusAbout
 			return [];
         }
 
-        // $button = self::get_button();
-
 		return [
 			'title' => get_field( self::FIELD[ 'bonus-title' ], $id ),
 			
@@ -129,14 +78,6 @@ class BonusAbout
 
 				'alt' => get_field( self::FIELD[ 'bonus-bookmaker-name' ], $id ),
 			],
-
-			// 'button' => [
-			// 	'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
-
-			// 	'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
-			// ],
-
-            // 'button' => $button,
 		];
     }
 

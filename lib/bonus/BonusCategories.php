@@ -10,13 +10,6 @@ class BonusCategories
         ],
     ];
 
-    // public static function register_style()
-    // {
-    //     if ( BonusMain::check() ) {
-    //         ToolEnqueue::register_style( self::CSS );
-    //     }
-    // }
-
     public static function register_style()
     {
         BonusMain::register_style( self::CSS );
