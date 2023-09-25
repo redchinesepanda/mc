@@ -336,11 +336,24 @@ class BilletMain
 
     const TEMPLATE = [
         'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
+
+        'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-bonus.php',
     ];
 
     public static function render( $args = [] )
     { 
         load_template( self::TEMPLATE[ 'billet-main' ], false, self::get( $args ) );
+    }
+
+    public static function render_bonus( $args = [] )
+    {
+		ob_start();
+
+        load_template( self::TEMPLATE[ 'billet-bonus' ], false, self::get( $args ) );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
