@@ -6,7 +6,7 @@ class LegalBreadcrumbsMain extends LegalDebug
         'legal-breadcrumbs-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-main.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
     ];
 
