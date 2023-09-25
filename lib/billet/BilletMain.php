@@ -337,7 +337,7 @@ class BilletMain
     const TEMPLATE = [
         'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
 
-        'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-bonus.php',
+        'billet-bonus' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-bonus.php',
     ];
 
     public static function render( $args = [] )
