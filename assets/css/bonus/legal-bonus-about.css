@@ -19,6 +19,13 @@
 	.legal-bonus-about .bonus-about-action {
 		width: 100%;
 	}
+
+	/* Typography */
+
+	.legal-bonus-about .about-data-title {
+		font-size: 30px;
+		line-height: 36px;
+	}
 }
 
 @media screen and ( min-width: 768px )
@@ -35,6 +42,13 @@
 	
 	.legal-bonus-about .bonus-about-action {
 		flex-basis: calc( 25% - 25px );
+	}
+
+	/* Typography */
+
+	.legal-bonus-about .about-data-title {
+		font-size: 42px;
+		line-height: 50.4px;
 	}
 }
 
@@ -169,10 +183,8 @@
 
 .legal-bonus-about .about-data-title {
 	font-family: "Source Sans Pro";
-	font-size: 42px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 50.4px;
 	color: rgb(255, 255, 255);
 }
 
