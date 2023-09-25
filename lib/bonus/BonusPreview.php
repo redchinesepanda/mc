@@ -9,8 +9,8 @@ class BonusPreview
 	];
 
 	const CSS = [
-        'legal-bonus' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus.css',
+        'legal-bonus-preview' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-preview.css',
 
             'ver'=> '1.0.4',
         ],
