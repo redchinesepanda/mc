@@ -1,5 +1,9 @@
 @media screen and ( max-width: 767px )
 {
+}
+
+@media screen and ( min-width: 768px )
+{
 	/* Width and Height */
 
 	.legal-bonus-single .legal-bonus-main {
@@ -9,11 +13,6 @@
 	.legal-bonus-single .legal-bonus-sidebar {
 		flex-basis: calc( 25% - 25px );
 	}
-}
-
-@media screen and ( min-width: 768px )
-{
-	/* Width and Height */
 }
 
 /* Display */
