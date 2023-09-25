@@ -12,6 +12,12 @@
 	.legal-oops-cookie {
 		padding: 0px 20px;
 	}
+
+	/* Typography */
+
+	.legal-oops-cookie .oops-cookie-button {
+		text-align: center;
+	}
 }
 
 /* Display */
