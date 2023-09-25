@@ -51,10 +51,6 @@ class CompilationMain
 
 		// [legal-compilation-bonus id="1027225"]
 
-        LegalDebug::debug( [
-            self::SHORTCODES[ 'bonus' ],
-        ] );
-
         add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
