@@ -1,4 +1,11 @@
 @media screen and ( min-width: 768px ) {
+	
+	/* Display */
+
+	.legal-bonus-list {
+		gap: 30px;
+		justify-content: center;
+	}
 		
 	/* Width and Height */
 
@@ -13,8 +20,8 @@
 .legal-bonus-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 30px;
-	justify-content: center;
+	gap: 45px;
+	justify-content: flex-start;
 }
 
 .legal-bonus-list .bonus-list-item {
@@ -28,7 +35,6 @@
 	flex-wrap: wrap;
 	gap: 20px;
 	align-items: center;
-	justify-content: center;
 }
 
 .legal-bonus-list .about-get-button {
@@ -138,11 +144,26 @@
 	background-color: rgb(89, 151, 227);
 	border-radius: 20px;
 }
+.legal-bonus-list .about-get-button:hover {
+	background-color: #81b1ec;
+}
 
 .legal-bonus-list .item-about-expired {
 	background-color: rgb(255, 94, 106);
   	box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
   	border-radius: 20px;
+}
+
+.legal-bonus-list .item-image-link {
+	background-image: linear-gradient(#cbcbcb, #cbcbcb);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+}
+
+.legal-bonus-list .item-image-link:hover {
+    background-size: 100% 2px;
 }
 
 /* Typography */
