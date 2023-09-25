@@ -141,6 +141,10 @@
   	border-radius: 20px;
 }
 
+.legal-bonus-list:not( :last-of-type ) {
+	background-color: antiquewhite;
+}
+
 /* Typography */
 
 .legal-bonus-list .bonus-list-title {
