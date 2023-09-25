@@ -1,3 +1,13 @@
+@media screen and ( max-width: 768px )
+{
+	/* Display */
+
+	.legal-bonus-summary {
+		flex-direction: column;
+	}
+	
+}
+
 /* Display */
 
 .legal-bonus-summary {
