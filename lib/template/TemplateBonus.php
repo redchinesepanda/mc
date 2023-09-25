@@ -6,7 +6,7 @@ class TemplateBonus
         'legal-template-bonus' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-bonus.css',
 
-			'ver' => '1.0.5',
+			'ver' => '1.0.6',
 		],
     ];
 
