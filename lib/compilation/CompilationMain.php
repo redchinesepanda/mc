@@ -456,7 +456,7 @@ class CompilationMain
         ],
 	];
 
-    public static function prepare_compilation_bonus( $atts )
+    public static function prepare_bonus( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
 
