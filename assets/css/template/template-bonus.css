@@ -28,7 +28,7 @@
 /* Width and Height */
 
 .legal-section-breadcrumbs {
-	height: 40px;
+	min-height: 40px;
 }
 
 .legal-section-breadcrumbs nav {
