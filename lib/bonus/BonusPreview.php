@@ -404,7 +404,7 @@ class BonusPreview
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-bonus' ], false, $args );
+        load_template( self::TEMPLATE[ 'legal-bonus-preview' ], false, $args );
 
         $output = ob_get_clean();
 
