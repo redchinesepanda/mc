@@ -392,7 +392,7 @@ class BonusPreview
 	}
 
 	const TEMPLATE = [
-        'legal-bonus' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus.php',
+        'legal-bonus-preview' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-preview.php',
     ];
 
     public static function render( $args )
