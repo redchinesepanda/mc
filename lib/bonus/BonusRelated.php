@@ -129,6 +129,15 @@ class BonusRelated
 		];
 	}
 
+	public static function get_preview_tags()
+    {
+		return [
+			'title' => __( BonusMain::TEXT[ 'other-bonuses' ], ToolLoco::TEXTDOMAIN ),
+
+			'items' => BonusPreview::get_items( self::group_posts_tags() ),
+		];
+	}
+
 	public static function get_categories()
     {
 		return [
@@ -149,7 +158,7 @@ class BonusRelated
 
     public static function render_preview_tags()
 	{
-		return BonusPreview::render( self::get_tags() );
+		return BonusPreview::render( self::get_preview_tags() );
 	}
 
     public static function render_categories()
