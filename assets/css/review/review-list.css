@@ -3,7 +3,7 @@
     /* Review Position */
 
     .tcb-post-content li:not( .legal-override ) {
-        padding-left: 24px;
+        padding-left: 34px;
     }
     
     .tcb-post-content li::before {
