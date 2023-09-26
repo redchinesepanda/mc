@@ -25,6 +25,12 @@
 
 @media screen and ( min-width: 768px )
 {
+	/* Display */
+
+	.legal-oops-age .oops-age-button-yes {
+		justify-content: right;
+	}
+
 	/* Position */
 
 	.legal-oops-age .oops-age-button-yes {
@@ -56,7 +62,6 @@
 
 .legal-oops-age .oops-age-button-yes {
 	display: flex;
-	justify-content: right;
 }
 
 .legal-oops-age .oops-age-button-no {
