@@ -46,6 +46,10 @@
 	border-radius: 20px;
 }
 
+.legal-bonus-related .container-item-image {
+	border-radius: 15px;
+}
+
 /* Typography */
 
 .legal-bonus-related .bonus-related-title {
