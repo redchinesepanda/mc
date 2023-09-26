@@ -1,10 +1,23 @@
-@media screen and ( min-width: 768px ) {
-	
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+
+	.legal-bonus-list {
+		gap: 20px;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{	
 	/* Display */
 
 	.legal-bonus-list {
 		gap: 30px;
 		justify-content: center;
+	}
+
+	.legal-bonus-list {
+		gap: 45px;
 	}
 		
 	/* Width and Height */
@@ -12,7 +25,6 @@
 	.legal-bonus-list .bonus-list-item {
 		flex-basis: 330px;
 	}
-
 }
 
 /* Display */
@@ -20,7 +32,6 @@
 .legal-bonus-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 45px;
 	justify-content: flex-start;
 }
 
