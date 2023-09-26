@@ -6,7 +6,7 @@ class BonusContent
         'bonus-content' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-content.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 

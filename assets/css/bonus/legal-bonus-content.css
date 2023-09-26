@@ -1,5 +1,9 @@
 /* Position */
 
+.full-main-content {
+	margin: 0px;
+}
+
 .full-main-content h2 {
 	margin-bottom: 0px;
 }
