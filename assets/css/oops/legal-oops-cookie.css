@@ -63,6 +63,7 @@
 
 .legal-oops-cookie .oops-cookie-description {
 	flex-basis: calc( 60% - 50px );
+	flex-grow: 1;
 }
 
 .legal-oops-cookie .oops-cookie-privacy,
