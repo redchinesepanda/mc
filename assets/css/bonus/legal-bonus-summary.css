@@ -1,11 +1,30 @@
-@media screen and ( max-width: 768px )
+@media screen and ( max-width: 767px )
 {
 	/* Display */
 
 	.legal-bonus-summary {
 		flex-direction: column;
 	}
+
+	.legal-bonus-summary .bonus-summary-item {
+		display: flex;
+	}
 	
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Display */
+
+	.legal-bonus-summary {
+		row-gap: 25px;
+	}
+
+	/* Width and Height */
+
+	.legal-bonus-summary .bonus-summary-item {
+		flex-basis: calc( 100% / 5 - 8px );
+	}
 }
 
 /* Display */
@@ -14,13 +33,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 10px;
-	row-gap: 25px;
-}
-
-/* Width and Height */
-
-.legal-bonus-summary .bonus-summary-item {
-	flex-basis: calc( 100% / 5 - 8px );
 }
 
 /* Position */
