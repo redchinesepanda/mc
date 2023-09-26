@@ -12,7 +12,7 @@ class BonusPreview
         'legal-bonus-preview' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-preview.css',
 
-            'ver'=> '1.0.4',
+            'ver'=> '1.0.5',
         ],
     ];
 	
