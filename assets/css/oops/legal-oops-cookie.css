@@ -15,6 +15,10 @@
 
 	/* Typography */
 
+	.legal-oops-cookie .oops-cookie-description {
+		text-align: justify;
+	}
+
 	.legal-oops-cookie .oops-cookie-privacy,
 	.legal-oops-cookie .oops-cookie-button {
 		text-align: center;
