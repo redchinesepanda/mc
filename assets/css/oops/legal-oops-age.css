@@ -1,3 +1,41 @@
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+
+	.legal-oops-age .oops-age-button-yes,
+	.legal-oops-age .oops-age-button-no {
+		justify-content: center;
+	}
+
+	/* Position */
+
+	.legal-oops-age-wrapper {
+		padding: 20px;
+	}
+
+	.legal-oops-age .oops-age-button-yes {
+		flex-basis: 100%;
+	}
+
+	.legal-oops-age .oops-age-button-no {
+		flex-basis: 100%;
+	}
+	
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Position */
+
+	.legal-oops-age .oops-age-button-yes {
+		flex-basis: calc( 50% - 10px );
+	}
+
+	.legal-oops-age .oops-age-button-no {
+		flex-basis: calc( 50% - 10px );
+	}
+}
+
 /* Display */
 
 .legal-oops-age-wrapper {
@@ -59,14 +97,6 @@
 
 .legal-oops-age .oops-age-description {
 	flex-basis: 100%;
-}
-
-.legal-oops-age .oops-age-button-yes {
-	flex-basis: calc( 50% - 10px );
-}
-
-.legal-oops-age .oops-age-button-no {
-	flex-basis: calc( 50% - 10px );
 }
 
 .legal-oops-age .age-button-yes-link,
