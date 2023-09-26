@@ -8,6 +8,7 @@
 
 	.legal-bonus-summary .bonus-summary-item {
 		display: flex;
+		column-gap: 5px;
 	}
 	
 }
