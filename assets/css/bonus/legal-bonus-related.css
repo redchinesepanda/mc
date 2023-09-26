@@ -59,6 +59,7 @@
 	font-weight: 600;
 	line-height: 25px; 
 	color: rgba(10, 10, 10, 0.85);
+	text-transform: uppercase;
 }
 
 .legal-bonus-related .container-item-title {

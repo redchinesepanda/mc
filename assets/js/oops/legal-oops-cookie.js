@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		LegalCookie.setCookie( oopsCookieName, 'accepted' );
+		LegalCookie.setCookie( oopsCookieName, 'accepted', LegalCookie.options );
 
 		event.currentTarget.closest( '.legal-oops-cookie-wrapper' ).classList.remove( oopsCookieClass );
 	}

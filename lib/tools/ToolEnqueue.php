@@ -28,6 +28,12 @@ class ToolEnqueue
 
             $deps = [];
 
+            $args = [
+                'in_footer' => false,
+
+                'strategy'  => 'async',
+            ];
+
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
@@ -39,7 +45,7 @@ class ToolEnqueue
                 }
             }
 
-            wp_register_script( $name, $path, $deps, false, true );
+            wp_register_script( $name, $path, $deps, $ver, $args );
 
             wp_enqueue_script( $name );
         }

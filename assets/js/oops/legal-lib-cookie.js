@@ -5,6 +5,14 @@ let LegalCookie = ( function()
 	"use strict";
 
 	return {
+		options: {
+			domain: '.match.center',
+
+			path: '/',
+
+			expires: 90*86400
+		},
+
 		setCookie: function ( name, value, options )
 		{
 			options = options || {};

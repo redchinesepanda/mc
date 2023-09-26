@@ -233,11 +233,11 @@
 }
 
 .legal-menu .menu-item:not( .legal-country-wide ) > .sub-menu {
-	width: 250px;
+	width: 260px;
 }
 
 .legal-menu .menu-item.legal-country-wide > .sub-menu {
-	width: 320px;
+	width: 330px;
 }
 
 .legal-menu .menu-item a {

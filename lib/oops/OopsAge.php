@@ -22,16 +22,10 @@ class OopsAge
         'legal-oops-age' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-age.js',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 
             'deps' => [ 'legal-lib-cookie' ],
 		],
-
-        'legal-lib-cookie' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-lib-cookie.js',
-
-            'ver' => '1.0.0',
-        ],
     ];
 
 	public static function register_script( $scripts = [] )
@@ -65,7 +59,7 @@ class OopsAge
 
 		$lang = WPMLMain::current_language();
 
-		$permission_age = !in_array( $lang, self::AGE );
+		$permission_age = in_array( $lang, self::AGE );
 
         return $permission_post_type && $permission_not_wiki && $permission_age;
     }

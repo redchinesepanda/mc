@@ -31,6 +31,12 @@ class OopsMain
 
             'ver' => '1.0.0',
         ],
+
+        'legal-lib-cookie' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-lib-cookie.js',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     public static function register_script( $scripts = [] )

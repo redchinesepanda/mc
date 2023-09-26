@@ -10,7 +10,7 @@
 
 	.legal-bonus-list:not( :last-of-type ) {
 		padding-bottom: 20px;
-	}
+	} 
 }
 
 @media screen and ( min-width: 768px )
@@ -19,12 +19,7 @@
 
 	.legal-bonus-list {
 		gap: 30px;
-		justify-content: center;
-	}
-
-	.legal-bonus-list {
-		gap: 45px;
-	}
+	} 
 	
 	/* Position */
 
@@ -116,7 +111,7 @@
 }
 
 .legal-bonus-list .list-item-about {
-	min-height: 210px;
+	min-height: 230px;
 }
 
 .legal-bonus-list .item-about-title {
