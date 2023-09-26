@@ -25,6 +25,12 @@
 	.legal-bonus-summary .bonus-summary-item {
 		flex-basis: calc( 100% / 5 - 8px );
 	}
+
+	/* Position */
+	
+	.legal-bonus-summary .item-value {
+		padding-left: 25px;
+	}
 }
 
 /* Display */
@@ -42,8 +48,7 @@
 	margin-bottom: 20px;
 }
 
-.legal-bonus-summary .item-label,
-.legal-bonus-summary .item-value {
+.legal-bonus-summary .item-label {
 	padding-left: 25px;
 }
 
