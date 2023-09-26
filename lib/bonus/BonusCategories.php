@@ -6,7 +6,7 @@ class BonusCategories
         'bonus-categories' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-categories.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 
