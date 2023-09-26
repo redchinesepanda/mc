@@ -6,7 +6,7 @@ class BonusSummary
         'bonus-summary' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-summary.css',
 
-            'ver'=> '1.0.1',
+            'ver'=> '1.0.2',
         ],
     ];
 
