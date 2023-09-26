@@ -1,3 +1,13 @@
+@media screen and ( max-width: 767px )
+{
+	/* Typography */
+
+	.legal-bonus-related .container-item-image-link,
+	.legal-bonus-related .container-item-title {
+		text-align: center;
+	}
+}
+
 /* Display */
 
 .legal-bonus-related {

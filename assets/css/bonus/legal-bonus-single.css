@@ -1,3 +1,12 @@
+@media screen and ( max-width: 768px )
+{
+	/* Position */
+
+	.legal-bonus-main .legal-bonus-sidebar {
+		padding-top: 20px;
+	}
+}
+
 @media screen and ( min-width: 768px )
 {
 	/* Width and Height */
