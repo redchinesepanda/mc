@@ -13,6 +13,12 @@
 		align-items: center;
 	}
 
+	/* Position */
+
+	.legal-footer {
+		padding: 0px 20px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-copy {
