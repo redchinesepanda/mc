@@ -6,7 +6,7 @@ class OopsAge
 		'legal-oops-age' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-age.css',
 
-            'ver' => '1.0.2',
+            'ver' => '1.0.3',
         ],
     ];
 
