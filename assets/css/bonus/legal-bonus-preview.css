@@ -8,7 +8,7 @@
 
 	/* Position */
 
-	:not( .legal-bonus-main ) > .legal-bonus-list {
+	.legal-bonus-list:not( :last-of-type ) {
 		padding-bottom: 20px;
 	}
 }
@@ -28,7 +28,7 @@
 	
 	/* Position */
 
-	:not( .legal-bonus-main ) > .legal-bonus-list {
+	.legal-bonus-list:not( :last-of-type ) {
 		padding-bottom: 30px;
 	}
 		
@@ -66,6 +66,10 @@
 
 /* Position */
 
+:not( .legal-bonus-main ) > .legal-bonus-list {
+	padding-bottom: 30px;
+}
+
 .legal-bonus-list .bonus-list-title {
 	margin-bottom: 0px;
 }
@@ -94,10 +98,6 @@
 
 .legal-bonus-list .item-about-expired {
 	padding: 0px 15px;
-}
-
-.legal-bonus-list:not( :last-of-type ) {
-	padding-bottom: 30px;
 }
 
 /* Width and Height */
