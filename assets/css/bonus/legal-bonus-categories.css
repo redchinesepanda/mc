@@ -1,4 +1,7 @@
-@media screen and ( max-width: 767px ) {
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+	
 	.legal-bonus-categories {
 		justify-content: center;
 	}
