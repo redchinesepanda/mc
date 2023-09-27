@@ -80,7 +80,7 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.2.1',
+            'ver' => '1.2.2',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
