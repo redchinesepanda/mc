@@ -26,9 +26,9 @@ class MetrikaMain
 			$scripts = self::JS;
 		}
 
-        if ( self::check() ) {
+        // if ( self::check() ) {
             ToolEnqueue::register_script( $scripts );
-        }
+        // }
     }
 
 	public static function check()
