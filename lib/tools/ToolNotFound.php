@@ -50,15 +50,14 @@ class ToolNotFound
 
 		// LegalDebug::debug( [
 		// 	'function' => 'ToolNotFound::check_not_found',
-			
+
 		// 	'locale_user' => $locale_user,
-			
-		// 	'permission_country' => $permission_country,
 
 		// 	'locale_page' => $locale_page,
 
-		// 	'permission_page' => $permission_page,
+		// 	'permission_country' => $permission_country ? 'true' : 'false',
 
+		// 	'permission_page' => $permission_page ? 'true' : 'false',
 		// ] );
 
 		return $permission_country && $permission_page;

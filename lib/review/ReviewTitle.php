@@ -130,9 +130,18 @@ class ReviewTitle
 		return $format;
 	}
 
+	const LOCALE = [
+		'sr_RS' => 'sr_Latn',
+	];
+
 	public static function format_date( $format )
 	{
 		$locale = WPMLMain::get_locale();
+
+		if ( array_key_exists( $locale, self::LOCALE ) )
+		{
+			$locale = self::LOCALE[ $locale ];
+		}
 
 		$current = new DateTime();
 

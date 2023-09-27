@@ -9,13 +9,15 @@ class ToolEnqueue
 
             $ver = false;
 
+            $deps = [];
+
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
                 $ver = $item[ 'ver' ];
             }
 
-            wp_enqueue_style( $name, $path, [], $ver );
+            wp_enqueue_style( $name, $path, $deps, $ver );
         }
     }
 
@@ -28,11 +30,13 @@ class ToolEnqueue
 
             $deps = [];
 
-            $args = [
-                'in_footer' => false,
+            // $args = [
+            //     'in_footer' => false,
 
-                'strategy'  => 'async',
-            ];
+            //     'strategy' => 'async',
+            // ];
+
+            $args = false;
 
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
