@@ -109,7 +109,9 @@
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet-description > ul:not( .legal-override ):not( [style] ),
 .bonus-content > ol:not( .legal-override ),
-.billet-description > ol:not( .legal-override ) {
+.billet-description > ol:not( .legal-override ),
+.billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet .billet-description-full > ol:not( .legal-override ) {
     padding-top: 0px;
 }
 
