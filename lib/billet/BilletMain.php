@@ -10,6 +10,8 @@ require_once( 'BilletMini.php' );
 
 require_once( 'center/BilletTitle.php' );
 
+require_once( 'center/BilletDescription.php' );
+
 require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
