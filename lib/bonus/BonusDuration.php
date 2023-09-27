@@ -60,13 +60,23 @@ class BonusDuration
 
 	public static function check_expired( $id )
 	{
+		$result = false;
+
 		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
 
-		$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
-		
-		$current = new DateTime();
+		if ( $bonus_duration )
+		{
+			$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
 
-		return $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
+			if ( $bonus )
+			{
+				$current = new DateTime();
+	
+				$result = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
+			}
+		}
+
+		return $result;
 	}
 
 	public static function get()
