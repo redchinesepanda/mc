@@ -173,6 +173,7 @@
 .tcb-post-content > ol ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
 .legal-billet ul:not( .legal-list-image ) li:before,
 .legal-bonus ul:not( .legal-list-image ) li:before,
+.billet ul:not( .legal-list-image ) li:before,
 .billet-mega-content > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
 }
