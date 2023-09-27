@@ -10,6 +10,9 @@
         </div>
         <div class="billet-center">
             <?php BilletTitle::render( $args ); ?>
+
+            <?php echo BilletDescription::render( $args ); ?>
+
             <?php BilletList::render( $args ); ?>
         </div>
         <div class="billet-right">
