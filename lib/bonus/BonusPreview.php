@@ -371,7 +371,7 @@ class BonusPreview
 					],
 
 					'expired' => $expired,
-				];
+				]; 
 			}
 		}
 
