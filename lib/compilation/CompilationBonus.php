@@ -21,9 +21,11 @@ class CompilationBonus
         {
             $item = BilletMain::get( $billet );
 
-            LegalDebug::debug( [
-                'BilletLogo' => BilletLogo::get( $item ),
-            ] );
+			$item[ 'billet-logo' ] = BilletLogo::get( $item );
+
+            // LegalDebug::debug( [
+            //     'BilletLogo' => BilletLogo::get( $item ),
+            // ] );
 
             $items[] = $item;
         }
