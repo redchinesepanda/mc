@@ -90,6 +90,14 @@ class ToolEnqueue
 			$html
 		);
 
+		$html = str_replace(
+			"/>",
+
+			">",
+
+			$html
+		);
+
 		return $html;
 	}
 }
