@@ -12,7 +12,7 @@ class YoastOG
 
 		// add_filter( 'wpseo_og_article:published_time' , [ $handler, 'opengraph_html' ] );
 		
-		add_filter( 'wpseo_og_article_publisher' , [ $handler, 'opengraph_html' ] );
+		add_filter( 'wpseo_og_title' , [ $handler, 'opengraph_html' ] );
 		
 		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
     }
@@ -32,15 +32,13 @@ class YoastOG
 		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
 	}
 
-	public static function opengraph_html( $article_publisher = 'article_publisher', $presentation = 'presentation' )
+	public static function opengraph_html( $content = 'empty' )
 	{
 		LegalDebug::debug( [
-			'article_publisher' => $article_publisher,
-
-			'presentation' => $presentation,
+			'content' => $content,
 		] );
 
-		return $article_publisher;
+		return $content;
 	}
 
 	// function default_opengraph_images( $object )
