@@ -36,7 +36,7 @@ class ToolEnqueue
             //     'strategy' => 'async',
             // ];
 
-            $args = false;
+            $args = true;
 
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];

@@ -3,19 +3,45 @@
 class MetrikaMain
 {
 	const JS = [
-        'legal-metrika-counter' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-counter.js',
+        'metrika-ya-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-lib.js',
 
             'ver' => '1.0.0',
         ],
 
-        'legal-metrika' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika.js',
+        'legal-metrika-ya-go' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-go',
 
             'ver' => '1.0.0',
 
             'deps' => [
-                'legal-metrika-counter',
+                'metrika-ya-lib',
+            ],
+        ],
+
+        'legal-gtag-lib' => [
+            'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
+
+            'ver' => '1.0.0',
+        ],
+
+        'legal-gtag-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-main.js',
+
+            'ver' => '1.0.0',
+            
+            'deps' => [
+                'legal-gtag-lib',
+            ],
+        ],
+
+        'legal-gtag-launch' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-launch.js',
+
+            'ver' => '1.0.0',
+
+            'deps' => [
+                'legal-gtag-lib',
             ],
         ],
     ]; 
@@ -26,9 +52,9 @@ class MetrikaMain
 			$scripts = self::JS;
 		}
 
-        // if ( self::check() ) {
+        if ( self::check() ) {
             ToolEnqueue::register_script( $scripts );
-        // }
+        }
     }
 
 	public static function check()
