@@ -13,11 +13,12 @@
 
 	.legal-bonus-single .legal-bonus-main {
 		flex-basis: calc( 75% - 25px );
-	}
+		flex-grow: 1;
+	} 
 
-	.legal-bonus-single .legal-bonus-sidebar {
+	/* .legal-bonus-single .legal-bonus-sidebar {
 		flex-basis: calc( 25% - 25px );
-	}
+	} */
 }
 
 /* Display */

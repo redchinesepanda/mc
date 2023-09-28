@@ -35,8 +35,12 @@ class BonusContent
 			return [];
         }
 
+        $content = get_field( self::FIELD[ 'bonus-content' ], $id );
+
+        $content = preg_replace('/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content);
+
 		return [
-			'content' => get_field( self::FIELD[ 'bonus-content' ], $id ),
+			'content' => $content,
 		];
     }
 
