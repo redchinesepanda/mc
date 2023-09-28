@@ -2,6 +2,8 @@
 
 require_once ( 'CompilationMini.php' );
 
+require_once ( 'CompilationBonus.php' );
+
 class CompilationMain
 {
     const CSS = [
@@ -51,11 +53,13 @@ class CompilationMain
 
 		// [legal-compilation-bonus id="1027225"]
 
-        add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
+        // add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
+
+        CompilationBonus::register();
     }
 
     public static function get_billets( $posts, $filter )
@@ -75,25 +79,25 @@ class CompilationMain
         return $data;
     }
 
-    public static function get_billets_bonus( $posts, $filter )
-    {
-        $billets = self::get_billets( $posts, $filter );
+    // public static function get_billets_bonus( $posts, $filter )
+    // {
+    //     $billets = self::get_billets( $posts, $filter );
 
-        $items = [];
+    //     $items = [];
 
-        foreach ( $billets as $index => $billet )
-        {
-            $item = BilletMain::get( $billet );
+    //     foreach ( $billets as $index => $billet )
+    //     {
+    //         $item = BilletMain::get( $billet );
 
-            LegalDebug::debug( [
-                'BilletLogo' => BilletLogo::get( $item ),
-            ] );
+    //         LegalDebug::debug( [
+    //             'BilletLogo' => BilletLogo::get( $item ),
+    //         ] );
 
-            $items[] = $item;
-        }
+    //         $items[] = $item;
+    //     }
 
-        return $items;
-    }
+    //     return $items;
+    // }
     
     const ATTENTION = [
         'text' => 'compilation-attention-text',
@@ -485,60 +489,60 @@ class CompilationMain
         ];
     }
 
-    public static function get_bonus( $id )
-    {
-        $id = self::check_id( $id );
+    // public static function get_bonus( $id )
+    // {
+    //     $id = self::check_id( $id );
 
-        $posts = self::get_posts( $id );
+    //     $posts = self::get_posts( $id );
 
-        return [
-            'billets' => self::get_billets_bonus( $posts, self::get_filter( $id ) ),
+    //     return [
+    //         'billets' => self::get_billets_bonus( $posts, self::get_filter( $id ) ),
 
-            'settings' => self::get_settings( $id ),
-        ];
-    }
+    //         'settings' => self::get_settings( $id ),
+    //     ];
+    // }
 
     const SHORTCODES = [
         'tabs' => 'legal-tabs',
 
-        'bonus' => 'legal-compilation-bonus',
+        // 'bonus' => 'legal-compilation-bonus',
     ];
 
-    const PAIRS = [
-        'compilation' => [
-            'id' => 0,
-        ],
-	];
+    // const PAIRS = [
+    //     'compilation' => [
+    //         'id' => 0,
+    //     ],
+	// ];
 
-    public static function prepare_bonus( $atts )
-    {
-		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
+    // public static function prepare_bonus( $atts )
+    // {
+	// 	$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
 
-		// $args = self::get( $atts[ 'id' ] );
+	// 	// $args = self::get( $atts[ 'id' ] );
 		
-        $args = self::get_bonus( $atts[ 'id' ] );
+    //     $args = self::get_bonus( $atts[ 'id' ] );
 
-		return self::render_bonus( $args );
-	}
+	// 	return self::render_bonus( $args );
+	// }
 
     const TEMPLATE = [
         'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
         
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
 
-        'legal-compilation-bonus' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-bonus.php',
+        // 'legal-compilation-bonus' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-bonus.php',
     ];
 
-    public static function render_bonus(  $args = []  )
-    {
-        ob_start();
+    // public static function render_bonus(  $args = []  )
+    // {
+    //     ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-compilation-bonus' ], false, $args );
+    //     load_template( self::TEMPLATE[ 'legal-compilation-bonus' ], false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 
     public static function render(  $id = 0  )
     {
