@@ -220,7 +220,9 @@ class BonusPreview
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
 	{
-		if ( $thumbnail_id = get_post_thumbnail_id( $id ) )
+		$thumbnail_id = get_post_thumbnail_id( $id );
+
+		if ( $thumbnail_id )
 		{
 			$details = wp_get_attachment_image_src( $thumbnail_id, $size );
 
