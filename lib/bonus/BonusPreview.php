@@ -241,6 +241,8 @@ class BonusPreview
 		}
 		
 		return [
+			'id' => 0,
+
 			'src' => LegalMain::LEGAL_URL . '/assets/img/bonus/bonus-preview-default.webp',
 	
 			'width' => '330',
