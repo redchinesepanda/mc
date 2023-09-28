@@ -85,7 +85,9 @@ class CompilationMain
         {
             $item = $billet;
 
-            $item[ 'logo' ] = BilletLogo::get( $billet );
+            LegalDebug::debug( [
+                'BilletLogo' => BilletLogo::get( $billet ),
+            ] );
 
             $items[] = $item;
         }
