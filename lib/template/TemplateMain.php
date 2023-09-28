@@ -36,6 +36,14 @@ class TemplateMain
 			$output
 		);
 
+        $output = str_replace(
+			" type='text/css'",
+
+			"",
+
+			$output
+		);
+
         return $output;
     }
 }
