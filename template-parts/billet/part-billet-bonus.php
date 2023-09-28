@@ -5,9 +5,9 @@ LegalDebug::debug( [
 ] );
 
 ?>
-<div class="legal-compilation-bonus legal-compilation-bonus-">
+<div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?>">
 	<div class="legal-compilation-logo">
-		<a href="/go/william-hill-uk/" rel="nofollow" target="_blank" draggable="false">
+		<a href="<?php echo $args[ 'url' ][ 'logo' ]; ?>" rel="nofollow" target="_blank" draggable="false">
 			<img src="https://match.center/wp-content/uploads/image-64c7f7d930f0e-image-64c7.png" alt="William Hill" draggable="false">
 		</a>
 	</div>
