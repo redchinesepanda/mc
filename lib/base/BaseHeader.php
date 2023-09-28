@@ -17,6 +17,14 @@ class BaseHeader
 
 			'ver' => '1.0.5',
 		],
+
+        'other-bootstrap' => [
+			// 'path' => LegalMain::LEGAL_URL . '/assets/css/base/bootstrap.min.css',
+			
+			'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()

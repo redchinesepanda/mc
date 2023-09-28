@@ -69,10 +69,6 @@ class BonusContent
 
         $content = str_replace( '&nbsp;', '', $content );
 
-        // $content = preg_replace( "/> +/", ">", $content );
-
-        // $content = preg_replace( "/ +</", "<", $content );
-
 		return [
 			'content' => $content,
 		];
