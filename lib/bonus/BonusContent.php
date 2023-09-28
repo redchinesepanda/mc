@@ -67,7 +67,7 @@ class BonusContent
 
         $content = preg_replace( '/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content );
 
-        $content = preg_replace( "/^\s+/", '', $content );
+        $content = preg_replace ("/> +/", ">", $content);
 
 		return [
 			'content' => $content,
