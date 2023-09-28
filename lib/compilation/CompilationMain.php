@@ -74,6 +74,18 @@ class CompilationMain
 
         return $data;
     }
+
+    public static function get_billets_bonus( $posts, $filter )
+    {
+        $billets = self::get_billets( $posts, $filter );
+
+        foreach ( $billets as $index => $billet )
+        {
+            $billet[logo] = BilletLogo::get( $billet );
+        }
+
+        return $data;
+    }
     
     const ATTENTION = [
         'text' => 'compilation-attention-text',
@@ -411,10 +423,8 @@ class CompilationMain
         return $args;
     }
 
-    public static function get( $id )
+    public static function get_posts( $id )
     {
-        $id = self::check_id( $id );
-
         $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
         $switch_lang = ( !empty( $new_lang ) );
@@ -433,8 +443,48 @@ class CompilationMain
             $sitepress->switch_lang( $current_lang );
         }
 
+        return $posts;
+    }
+
+    public static function get( $id )
+    {
+        $id = self::check_id( $id );
+
+        // $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
+
+        // $switch_lang = ( !empty( $new_lang ) );
+
+        // if ( $switch_lang ) {
+        //     global $sitepress;
+
+        //     $current_lang = $sitepress->get_current_language();
+
+        //     $sitepress->switch_lang( $new_lang );
+        // }
+
+        // $posts = get_posts( self::get_args( $id ) );
+
+        // if ( $switch_lang ) {
+        //     $sitepress->switch_lang( $current_lang );
+        // }
+
+        $posts = self::get_posts( $id );
+
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
+
+            'settings' => self::get_settings( $id ),
+        ];
+    }
+
+    public static function get_bonus( $id )
+    {
+        $id = self::check_id( $id );
+
+        $posts = self::get_posts( $id );
+
+        return [
+            'billets' => self::get_billets_bonus( $posts, self::get_filter( $id ) ),
 
             'settings' => self::get_settings( $id ),
         ];
@@ -456,7 +506,9 @@ class CompilationMain
     {
 		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
 
-		$args = self::get( $atts[ 'id' ] );
+		// $args = self::get( $atts[ 'id' ] );
+		
+        $args = self::get_bonus( $atts[ 'id' ] );
 
 		return self::render_bonus( $args );
 	}
