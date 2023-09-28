@@ -91,7 +91,7 @@ class ToolEnqueue
 		);
 
 		$html = str_replace(
-			"/>",
+			" />",
 
 			">",
 
