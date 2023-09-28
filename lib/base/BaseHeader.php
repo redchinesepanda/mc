@@ -19,11 +19,9 @@ class BaseHeader
 		],
 
         'other-bootstrap' => [
-			// 'path' => LegalMain::LEGAL_URL . '/assets/css/base/bootstrap.min.css',
-			
 			'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.5',
 		],
     ];
 
@@ -52,7 +50,33 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		add_filter( 'style_loader_tag', [ $handler, 'tag_other_bootstrap' ], 10, 2 );
     }
+
+	public static function tag_other_bootstrap( $html, $handle )
+	{
+		if ( $handle === 'other-bootstrap' )
+		{
+			LegalDebug::debug( [
+				'function' => 'tag_other_bootstrap',
+				
+				'html' => $html,
+	
+				'handle' => $handle,
+			] );
+
+			return str_replace(
+				"media='all'",
+
+				'integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"',
+
+				$html
+			);
+		}
+
+		return $html;
+	}
 
 	public static function inline_style() {
 		$style = [];
