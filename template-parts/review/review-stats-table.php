@@ -1,5 +1,5 @@
 <?php if( !empty( $args ) ) : ?>
-	<style type="text/css">
+	<style id="review-stats" type="text/css">
 		<?php foreach ( $args as $id => $item ) : ?>
 			.stats-item-<?php echo $id; ?> .item-value {
 				width: <?php echo $item[ 'width' ]; ?>%;

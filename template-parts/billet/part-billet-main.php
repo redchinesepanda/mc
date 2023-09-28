@@ -1,5 +1,5 @@
 <div class="billet-item">
-    <style type="text/css">
+    <style id="<?php echo $args['selector']; ?>" type="text/css">
         #<?php echo $args['selector']; ?> .billet-left {
             background-color: <?php echo $args['color']; ?>;
         }

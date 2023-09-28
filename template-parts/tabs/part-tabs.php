@@ -6,7 +6,7 @@
     <?php endif; ?>
     <?php if ( !empty( $args[ 'tabs' ] ) ) : ?>
         <div class="legal-tab-menu">
-            <style type="text/css">
+            <style id="legal-tab-menu" type="text/css">
                 <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
                     <?php if ( !empty( $arg[ 'image' ] ) ) : ?>
                         .<?php echo $arg[ 'class' ]; ?> {

@@ -1,4 +1,4 @@
-<style type="text/css">
+<style id="legal-author" type="text/css">
 	.legal-author .author-photo {
 		background-image: url( '<?php echo $args[ 'file' ]; ?>' );
 	}
