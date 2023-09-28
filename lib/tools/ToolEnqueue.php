@@ -72,6 +72,26 @@ class ToolEnqueue
         
         wp_enqueue_script( $name );
     }
+
+    public static function register()
+    {
+        $handler = new self();
+
+		add_filter( 'style_loader_tag', [ $handler, 'link_type' ], 10, 2 );
+    }
+
+    public static function link_type( $html, $handle )
+	{
+		$html = str_replace(
+			"type='text/css'",
+
+			"",
+
+			$html
+		);
+
+		return $html;
+	}
 }
 
 ?>

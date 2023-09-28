@@ -18,11 +18,11 @@ class BaseHeader
 			'ver' => '1.0.5',
 		],
 
-        'other-bootstrap' => [
-			'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
+        // 'other-bootstrap' => [
+		// 	'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
 
-			'ver' => '1.0.5',
-		],
+		// 	// 'ver' => '1.0.5',
+		// ],
     ];
 
     public static function register_style()
@@ -51,32 +51,32 @@ class BaseHeader
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter( 'style_loader_tag', [ $handler, 'tag_other_bootstrap' ], 10, 2 );
+		// add_filter( 'style_loader_tag', [ $handler, 'tag_other_bootstrap' ], 10, 2 );
     }
 
-	public static function tag_other_bootstrap( $html, $handle )
-	{
-		if ( $handle === 'other-bootstrap' )
-		{
-			LegalDebug::debug( [
-				'function' => 'tag_other_bootstrap',
-				
-				'html' => $html,
-	
-				'handle' => $handle,
-			] );
+	// public static function tag_other_bootstrap( $html, $handle )
+	// {
+	// 	// $html = str_replace(
+	// 	// 	"type='text/css'",
 
-			return str_replace(
-				"media='all'",
+	// 	// 	"",
 
-				"integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'",
+	// 	// 	$html
+	// 	// );
 
-				$html
-			);
-		}
+	// 	if ( $handle === 'other-bootstrap' )
+	// 	{
+	// 		$html = str_replace(
+	// 			"media='all'",
 
-		return $html;
-	}
+	// 			"integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'",
+
+	// 			$html
+	// 		);
+	// 	}
+
+	// 	return $html;
+	// }
 
 	public static function inline_style() {
 		$style = [];
