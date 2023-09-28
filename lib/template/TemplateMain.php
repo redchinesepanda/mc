@@ -19,6 +19,25 @@ class TemplateMain
 
         return implode( '', $output );
     }
+
+    public static function wp_head()
+    {
+		ob_start();
+		
+		wp_head();
+
+        $output = ob_get_clean();
+
+        $output = str_replace(
+			" />",
+
+			">",
+
+			$output
+		);
+
+        return $output;
+    }
 }
 
 ?>

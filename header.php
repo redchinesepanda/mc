@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="yandex-verification" content="079ad3c653c7c146">
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
-		<?php wp_head(); ?>
+		<?php echo TemplateMain::wp_head(); ?>
 		<?php thrive_amp_permalink(); ?>	
 	</head>
 	<body <?php body_class( '' ); ?>>
