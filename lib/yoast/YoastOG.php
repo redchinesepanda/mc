@@ -40,7 +40,7 @@ class YoastOG
 			'presentation' => $presentation,
 		] );
 
-		return $content;
+		return $article_publisher;
 	}
 
 	// function default_opengraph_images( $object )
