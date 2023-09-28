@@ -65,7 +65,7 @@ class BonusContent
 
         // $content = preg_replace('/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content);
 
-        $content = strip_tags( $input, self::ALLOWED );
+        $content = strip_tags( $content, self::ALLOWED );
 
 		return [
 			'content' => $content,
