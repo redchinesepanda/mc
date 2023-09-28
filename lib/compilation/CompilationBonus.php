@@ -38,9 +38,9 @@ class CompilationBonus
         $posts = CompilationMain::get_posts( $id );
 
         return [
-            'billets' => self::get_billets_bonus( $posts, self::get_filter( $id ) ),
+            'billets' => self::get_billets_bonus( $posts, CompilationMain::get_filter( $id ) ),
 
-            'settings' => self::get_settings( $id ),
+            'settings' => CompilationMain::get_settings( $id ),
         ];
     }
 
