@@ -14,11 +14,13 @@ class YoastOG
 		
 		add_filter( 'wpseo_og_locale' , [ $handler, 'opengraph_html' ] );
 
-		add_filter( 'wpseo_og_type' , [ $handler, 'opengraph_html' ] );
+		add_filter( 'wpseo_og_og_type' , [ $handler, 'opengraph_html' ] );
 
 		add_filter( 'wpseo_og_title' , [ $handler, 'opengraph_html' ] );
 
 		add_filter( 'wpseo_og_description' , [ $handler, 'opengraph_html' ] );
+
+		add_filter( 'wpseo_article_' , [ $handler, 'opengraph_html' ] );
 		
 		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
     }
