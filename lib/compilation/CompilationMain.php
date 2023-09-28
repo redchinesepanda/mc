@@ -83,10 +83,10 @@ class CompilationMain
 
         foreach ( $billets as $index => $billet )
         {
-            $item = $billet;
+            $item = BilletMain::get( $billet );
 
             LegalDebug::debug( [
-                'BilletLogo' => BilletLogo::get( $billet ),
+                'BilletLogo' => BilletLogo::get( $item ),
             ] );
 
             $items[] = $item;
