@@ -63,9 +63,9 @@ class BonusContent
 
         $content = get_field( self::FIELD[ 'bonus-content' ], $id );
 
-        // $content = preg_replace('/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content);
-
         $content = strip_tags( $content, self::ALLOWED );
+
+        $content = preg_replace( '/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content );
 
 		return [
 			'content' => $content,
