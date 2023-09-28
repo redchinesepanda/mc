@@ -84,13 +84,7 @@ class ToolEnqueue
 
     public static function link_type( $html, $handle )
 	{
-        LegalDebug::debug( [
-            'html' => $html,
-
-            'handle' => $handle,
-        ] );
-
-		$html = str_replace(
+        $html = str_replace(
 			" type='text/css'",
 
 			"",
