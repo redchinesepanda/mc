@@ -32,10 +32,12 @@ class YoastOG
 		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
 	}
 
-	public static function opengraph_html( $content )
+	public static function opengraph_html( $article_publisher, $presentation )
 	{
 		LegalDebug::debug( [
-			'content' => $content,
+			'article_publisher' => $article_publisher,
+
+			'presentation' => $presentation,
 		] );
 
 		return $content;
