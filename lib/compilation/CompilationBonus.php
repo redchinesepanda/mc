@@ -13,7 +13,7 @@ class CompilationBonus
 
     public static function get_billets_bonus( $posts, $filter )
     {
-        $billets = self::get_billets( $posts, $filter );
+        $billets = CompilationMain::get_billets( $posts, $filter );
 
         $items = [];
 
