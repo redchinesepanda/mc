@@ -192,32 +192,29 @@ class WPMLMain
 
         // WPMLMedia::register();
 
-        add_filter('wpml_hreflangs', [ $handler, 'legal_hreflang' ] );
+        add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
     }
-
-    public static function legal_hreflang( $hreflang_items )
+  
+    public static function change_page_hreflang( $hreflang_items )
     {
-        LegalDebug::debug( [
-            'hreflang_items' => $hreflang_items,
-        ] );
-        // if (empty($hreflang_items['x-default']) && is_singular()) {
-        //     $post_type = 'post_' . get_post_type();
-        //     $translations = apply_filters('wpml_get_element_translations', [], apply_filters('wpml_element_trid', false, get_the_ID(), $post_type), $post_type);
-        //     if (!empty($translations)) {
-        //         foreach ($translations as $lang => $item) {
-        //             if (empty($item->source_language_code)) {
-        //                 $x_default = $lang;
-        //                 break;
-        //             }
-        //         }
-        //     }
-      
-        //     if (isset($x_default, $hreflang_items[$x_default])) {
-        //         $hreflang_items['x-default'] = $hreflang_items[$x_default];
-        //     }
-        // }
-      
-        return $hreflang_items;
+        // Remove x-default  and set to some other langauge , SQ is the language code which to which the x-default will be set instead of the site default
+
+        // $hreflang_items[ 'x-default' ] = $hreflang_items['sq'];
+        
+        // Exclude the language from hreflang Replace EN with the language code to be removed
+
+        // unset( $hreflang_items[ 'en' ] );
+
+        $hreflang = [];
+        
+        foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+        {
+            $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
+        }
+
+        echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
+            
+        return false;
     }
 }
 
