@@ -39,12 +39,16 @@ class YoastOG
 	{
 		// $presenters[] = new My_Custom_Presenter();
 
-		foreach ( $presenters as $presenter )
-		{
-			LegalDebug::debug( [
-				$presenter->present(),
-			] );
-		}
+		LegalDebug::debug( [
+			$presenters,
+		] );
+
+		// foreach ( $presenters as $presenter )
+		// {
+		// 	LegalDebug::debug( [
+		// 		$presenter->present(),
+		// 	] );
+		// }
 	
 		return $presenters;
 	}
