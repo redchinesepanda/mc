@@ -1,6 +1,6 @@
 <?php
 
-// LegalDebug::debug( $args );
+ LegalDebug::debug( $args );
 
 ?>
 <div class="legal-compilation-bonus-set compilation-<?php echo $args['settings']['id']; ?>">
