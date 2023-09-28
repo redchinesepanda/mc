@@ -44,6 +44,14 @@ class TemplateMain
 			$output
 		);
 
+        $output = str_replace(
+			" type='text/javascript'",
+
+			"",
+
+			$output
+		);
+
         return $output;
     }
 }
