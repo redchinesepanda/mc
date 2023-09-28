@@ -5,7 +5,7 @@ LegalDebug::debug( [
 ] );
 
 ?>
-<div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?>">
+<div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?>" style="background-color: <?php echo $args[ 'color' ]; ?>;">
 	<div class="legal-compilation-logo">
 		<a class="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'href' ]; ?>" rel="nofollow" target="_blank" draggable="false">
 			<img src="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'src' ]; ?>" alt="William Hill" draggable="false">
