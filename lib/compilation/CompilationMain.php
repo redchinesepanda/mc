@@ -81,7 +81,7 @@ class CompilationMain
 
         foreach ( $billets as $index => $billet )
         {
-            $billet[logo] = BilletLogo::get( $billet );
+            $billet[ 'logo' ] = BilletLogo::get( $billet );
         }
 
         return $data;
