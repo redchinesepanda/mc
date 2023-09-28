@@ -1,8 +1,3 @@
-<?php
-
- LegalDebug::debug( $args );
-
-?>
 <div class="legal-compilation-bonus-set compilation-<?php echo $args['settings']['id']; ?>">
 	<?php foreach( $args['billets'] as $billet ) : ?>
 		<?php echo BilletMain::render_bonus( $billet ); ?>
