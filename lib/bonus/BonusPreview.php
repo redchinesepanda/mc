@@ -274,6 +274,8 @@ class BonusPreview
 		}
 		
 		return [
+			'id' => 0,
+
 			'src' => LegalMain::LEGAL_URL . '/assets/img/bonus/bonus-logo-default.webp',
 	
 			'width' => '50',
