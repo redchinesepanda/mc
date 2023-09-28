@@ -79,12 +79,18 @@ class CompilationMain
     {
         $billets = self::get_billets( $posts, $filter );
 
+        $items = [];
+
         foreach ( $billets as $index => $billet )
         {
-            $billet[ 'logo' ] = BilletLogo::get( $billet );
+            $item = $billet;
+
+            $item[ 'logo' ] = BilletLogo::get( $billet );
+
+            $items[] = $item;
         }
 
-        return $data;
+        return $items;
     }
     
     const ATTENTION = [
