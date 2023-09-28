@@ -106,7 +106,7 @@ class ToolEnqueue
     function script_type( $tag, $handle, $src = 'unset' )
     {
         $tag = str_replace(
-			"type='text/javascript'",
+			" type='text/javascript'",
 
 			"",
 
