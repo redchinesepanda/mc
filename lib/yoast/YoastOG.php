@@ -11,6 +11,8 @@ class YoastOG
 		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
 		
 		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
+
+		add_filter( 'wpseo_frontend_presenters', [ $handler, 'add_my_custom_presenter' ] );
     }
 
 	public static function current_image()
@@ -32,6 +34,20 @@ class YoastOG
 	// {
 	// 	$object->add_image( self::current_image() );
 	// }
+
+	function add_my_custom_presenter( $presenters )
+	{
+		// $presenters[] = new My_Custom_Presenter();
+
+		foreach ( $presenters as $presenter )
+		{
+			LegalDebug::debug( [
+				$presenter->present(),
+			] );
+		}
+	
+		return $presenters;
+	}
 }
 
 ?>
