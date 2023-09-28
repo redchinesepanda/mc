@@ -26,6 +26,32 @@ class BonusContent
 		'bonus-content' => 'text-bonus',
 	];
 
+    const ALLOWED = [
+        'h2',
+
+        'h3',
+
+        'h4',
+
+        'p',
+
+        'div',
+
+        'ul',
+
+        'ol',
+
+        'li',
+
+        'table',
+
+        'th',
+
+        'tr',
+
+        'td',
+    ];
+
 	public static function get()
     {
         $id = BonusMain::get_id();
@@ -37,7 +63,9 @@ class BonusContent
 
         $content = get_field( self::FIELD[ 'bonus-content' ], $id );
 
-        $content = preg_replace('/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content);
+        // $content = preg_replace('/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content);
+
+        $content = strip_tags( $input, self::ALLOWED );
 
 		return [
 			'content' => $content,
