@@ -269,7 +269,7 @@ class BilletMain
         ];
     }
 
-    private static function get( $args )
+    public static function get( $args )
     {
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
