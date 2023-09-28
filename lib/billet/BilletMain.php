@@ -351,7 +351,7 @@ class BilletMain
     {
 		ob_start();
 
-        load_template( self::TEMPLATE[ 'billet-bonus' ], false, self::get( $args ) );
+        load_template( self::TEMPLATE[ 'billet-bonus' ], false, $args );
 
         $output = ob_get_clean();
 
