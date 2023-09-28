@@ -198,13 +198,16 @@ class WPMLMain
     public static function change_page_hreflang( $hreflang_items )
     {
         $hreflang = [];
-        
-        foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
-        {
-            $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
-        }
 
-        echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
+        if ( !empty( $hreflang_items ) )
+        {
+            foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+            {
+                $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
+            }
+    
+            echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
+        }
             
         return false;
     }
