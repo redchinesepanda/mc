@@ -3,7 +3,17 @@
 class BaseHeader
 {
 	const JS = [
-        'legal-header' => LegalMain::LEGAL_URL . '/assets/js/base/header.js',
+        'legal-header' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header.js',
+
+			'ver' => '1.0.0',
+		],
+
+        'legal-header-nofollow' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-nofollow.js',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_script()
@@ -17,12 +27,6 @@ class BaseHeader
 
 			'ver' => '1.0.5',
 		],
-
-        // 'other-bootstrap' => [
-		// 	'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
-
-		// 	// 'ver' => '1.0.5',
-		// ],
     ];
 
     public static function register_style()
