@@ -85,7 +85,7 @@ class ToolEnqueue
     public static function link_type( $html, $handle )
 	{
 		$html = str_replace(
-			"type='text/css'",
+			" type='text/css'",
 
 			"",
 
