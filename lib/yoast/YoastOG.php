@@ -12,7 +12,7 @@ class YoastOG
 
 		// add_filter( 'wpseo_og_article:published_time' , [ $handler, 'opengraph_html' ] );
 		
-		add_filter( 'wpseo_og_article:publisher' , [ $handler, 'opengraph_html' ] );
+		add_filter( 'wpseo_og_article_publisher' , [ $handler, 'opengraph_html' ] );
 		
 		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
     }
