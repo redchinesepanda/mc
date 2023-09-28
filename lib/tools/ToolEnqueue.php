@@ -78,6 +78,8 @@ class ToolEnqueue
         $handler = new self();
 
 		add_filter( 'style_loader_tag', [ $handler, 'link_type' ], 10, 2 );
+
+        add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
     }
 
     public static function link_type( $html, $handle )
@@ -100,6 +102,26 @@ class ToolEnqueue
 
 		return $html;
 	}
+  
+    public static function change_page_hreflang( $hreflang_items )
+    {
+        // Remove x-default  and set to some other langauge , SQ is the language code which to which the x-default will be set instead of the site default
+
+        // $hreflang_items[ 'x-default' ] = $hreflang_items['sq'];
+        
+        // Exclude the language from hreflang Replace EN with the language code to be removed
+
+        // unset( $hreflang_items[ 'en' ] );
+        
+        foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+        {
+            $hreflang .= '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
+        }
+
+        echo apply_filters( 'wpml_hreflangs_html', $hreflang );
+            
+        return false;
+    }
 }
 
 ?>
