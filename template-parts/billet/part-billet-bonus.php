@@ -7,8 +7,8 @@ LegalDebug::debug( [
 ?>
 <div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?>">
 	<div class="legal-compilation-logo">
-		<a href="<?php echo $args[ 'url' ][ 'logo' ]; ?>" rel="nofollow" target="_blank" draggable="false">
-			<img src="https://match.center/wp-content/uploads/image-64c7f7d930f0e-image-64c7.png" alt="William Hill" draggable="false">
+		<a class="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'href' ]; ?>" rel="nofollow" target="_blank" draggable="false">
+			<img src="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'src' ]; ?>" alt="William Hill" draggable="false">
 		</a>
 	</div>
 	<div class="legal-compilation-peculiarity">
