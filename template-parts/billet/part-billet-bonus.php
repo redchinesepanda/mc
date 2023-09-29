@@ -12,9 +12,9 @@ LegalDebug::debug( [
 		</a>
 	</div>
 	<div class="legal-compilation-peculiarity">
-		<!-- <div class="legal-compilation-peculiarity-bonys"> -->
-			<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" rel="nofollow" target="_blank" class="legal-compilation-peculiarity-bonys underline" draggable="false"><?php echo $args[ 'title' ][ 'label' ]; ?></a>
-		<!-- </div> -->
+		<div class="legal-compilation-peculiarity-bonys">
+			<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" rel="nofollow" target="_blank" class="legal-compilation-peculiarity-bonys underline peculiarity-bonys-link" draggable="false"><?php echo $args[ 'title' ][ 'label' ]; ?></a>
+		</div>
 		<div class="legal-compilation-peculiarity-text"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
 	</div>
 	<div class="legal-compilation-review">

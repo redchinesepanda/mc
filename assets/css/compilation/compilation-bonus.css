@@ -78,13 +78,21 @@
 
 .legal-compilation-bonus-set .legal-compilation-peculiarity-bonys a {
 	text-decoration: none;
-	color: #3b3b3b;
+	/* color: #3b3b3b; */
 	font-weight: 650;
 	font-size: 22px;
 }
 
 .legal-compilation-bonus-set .legal-compilation-peculiarity-bonys a:hover {
 	color: #81b1ec;
+}
+
+.legal-compilation-bonus.font-legal-default .peculiarity-bonys-link {
+	color: #ffffff;
+}
+
+.legal-compilation-bonus.font-legal-black .peculiarity-bonys-link {
+	color: #3b3b3b;
 }
 
 .legal-compilation-bonus-set .legal-compilation-peculiarity-text {
