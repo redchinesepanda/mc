@@ -23,6 +23,10 @@ class CompilationBonus
 
 			$item[ 'billet-logo' ] = BilletLogo::get( $item );
 
+			$item[ 'billet-title' ] = BilletTitle::get( $item );
+
+			$item[ 'billet-right' ] = BilletRight::get( $item );
+
             // LegalDebug::debug( [
             //     'BilletLogo' => BilletLogo::get( $item ),
             // ] );
