@@ -8,7 +8,7 @@
 <div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?> font-<?php echo $args[ 'billet-logo' ][ 'review' ][ 'font' ]; ?>" style="background-color: <?php echo $args[ 'color' ]; ?>;">
 	<div class="legal-compilation-logo">
 		<a class="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'href' ]; ?>" rel="nofollow" target="_blank" draggable="false">
-			<img src="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'src' ]; ?>" alt="William Hill" draggable="false">
+			<img src="<?php echo $args[ 'billet-logo' ][ 'logo' ][ 'src' ]; ?>" alt="William Hill" draggable="false" width="138" height="45">
 		</a>
 	</div>
 	<div class="legal-compilation-peculiarity">
