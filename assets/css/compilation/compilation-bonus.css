@@ -87,11 +87,15 @@
 	color: #81b1ec;
 }
 
-.legal-compilation-bonus.font-legal-default .peculiarity-bonys-link {
+.legal-compilation-bonus.font-legal-default .peculiarity-bonys-link,
+.legal-compilation-bonus.font-legal-default .legal-compilation-peculiarity-text,
+.legal-compilation-bonus.font-legal-default .compilation-review-link {
 	color: #ffffff;
 }
 
-.legal-compilation-bonus.font-legal-black .peculiarity-bonys-link {
+.legal-compilation-bonus.font-legal-black .peculiarity-bonys-link,
+.legal-compilation-bonus.font-legal-black .legal-compilation-peculiarity-text,
+.legal-compilation-bonus.font-legal-black .compilation-review-link {
 	color: #3b3b3b;
 }
 
