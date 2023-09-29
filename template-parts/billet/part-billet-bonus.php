@@ -19,8 +19,10 @@ LegalDebug::debug( [
 			<div class="legal-compilation-peculiarity-text"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
 		<?php endif; ?>
 	</div>
-	<div class="legal-compilation-review">
-		<a href="<?php echo $args[ 'billet-logo' ][ 'review' ][ 'href' ]; ?>" draggable="false" class="underline compilation-review-link"><?php echo $args[ 'billet-logo' ][ 'review' ][ 'label' ]; ?></a>
-	</div>
+	<?php if ( !empty( $args[ 'billet-logo' ][ 'review' ][ 'href' ] ) ) : ?>
+		<div class="legal-compilation-review">
+			<a href="<?php echo $args[ 'billet-logo' ][ 'review' ][ 'href' ]; ?>" draggable="false" class="underline compilation-review-link"><?php echo $args[ 'billet-logo' ][ 'review' ][ 'label' ]; ?></a>
+		</div>
+	<?php endif; ?>
 	<a href="<?php echo $args[ 'billet-right' ][ 'play' ][ 'href' ]; ?>" rel="nofollow" target="_blank" class="legal-compilation-button" draggable="false"><?php echo $args[ 'billet-right' ][ 'play' ][ 'label' ]; ?></a>
 </div>
