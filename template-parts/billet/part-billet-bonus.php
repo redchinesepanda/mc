@@ -19,6 +19,8 @@ LegalDebug::debug( [
 			18+ To receive 2 x £10 free bets a new user must make a bet of at least £10 qualifying bet on any sport at odds of 1/2 or greater. Only the first single or accumulator bets count.
 		</div>
 	</div>
-	<div class="legal-compilation-review"><a href="https://match.center/william-hill/" draggable="false" class="underline">READ REVIEW</a></div>
-	<a href="/go/william-hill-uk/" rel="nofollow" target="_blank" class="legal-compilation-button" draggable="false">VISIT SITE</a>
+	<div class="legal-compilation-review">
+		<a href="<?php echo $args[ 'billet-logo' ][ 'review' ][ 'href' ]; ?>" draggable="false" class="underline"><?php echo $args[ 'billet-logo' ][ 'review' ][ 'label' ]; ?></a>
+	</div>
+	<a href="<?php echo $args[ 'billet-right' ][ 'play' ][ 'href' ]; ?>" rel="nofollow" target="_blank" class="legal-compilation-button" draggable="false"><?php echo $args[ 'billet-right' ][ 'play' ][ 'label' ]; ?></a>
 </div>

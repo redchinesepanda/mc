@@ -27,6 +27,12 @@ class CompilationBonus
 
 			$item[ 'billet-right' ] = BilletRight::get( $item );
 
+			$item[ 'title' ] = $item[ 'billet-title' ][ 'label' ];
+
+			if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
+				$item[ 'title' ] = $item[ 'bonus' ][ 'title' ];
+			}
+
             // LegalDebug::debug( [
             //     'BilletLogo' => BilletLogo::get( $item ),
             // ] );
