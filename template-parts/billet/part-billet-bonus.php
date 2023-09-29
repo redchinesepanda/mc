@@ -1,8 +1,8 @@
 <?php
 
-LegalDebug::debug( [
-	'args' => $args,
-] );
+// LegalDebug::debug( [
+// 	'args' => $args,
+// ] );
 
 ?>
 <div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?> font-<?php echo $args[ 'billet-logo' ][ 'review' ][ 'font' ]; ?>" style="background-color: <?php echo $args[ 'color' ]; ?>;">
