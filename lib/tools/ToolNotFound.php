@@ -9,7 +9,7 @@ class ToolNotFound
     {
         $handler = new self();
 
-		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
@@ -20,58 +20,58 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
-	const LOCALE = [
-		'kz' => [
-			'kz',
+	// const LOCALE = [
+	// 	'kz' => [
+	// 		'kz',
 
-			'ru',
-		],
-	];
+	// 		'ru',
+	// 	],
+	// ];
 
-	public static function check_not_found()
-    {
-		$locale_user = 'en';
+	// public static function check_not_found()
+    // {
+	// 	$locale_user = 'en';
 
-		if ( !empty( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] ) )
-		{
-			$locale_user = strtolower( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] );
-		}
+	// 	if ( !empty( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] ) )
+	// 	{
+	// 		$locale_user = strtolower( $_SERVER[ 'HTTP_CF_IPCOUNTRY' ] );
+	// 	}
 
-		$permission_country = array_key_exists( $locale_user, self::LOCALE );
+	// 	$permission_country = array_key_exists( $locale_user, self::LOCALE );
 
-		$permission_page = false;
+	// 	$permission_page = false;
 
-		$locale_page = WPMLMain::current_language();
+	// 	$locale_page = WPMLMain::current_language();
 
-		if ( $permission_country )
-		{
-			$permission_page = !in_array( $locale_page, self::LOCALE[ $locale_user ] );
-		}
+	// 	if ( $permission_country )
+	// 	{
+	// 		$permission_page = !in_array( $locale_page, self::LOCALE[ $locale_user ] );
+	// 	}
 
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::check_not_found',
+	// 	LegalDebug::debug( [
+	// 		'function' => 'ToolNotFound::check_not_found',
 
-		// 	'locale_user' => $locale_user,
+	// 		'locale_user' => $locale_user,
 
-		// 	'locale_page' => $locale_page,
+	// 		'locale_page' => $locale_page,
 
-		// 	'permission_country' => $permission_country ? 'true' : 'false',
+	// 		'permission_country' => $permission_country ? 'true' : 'false',
 
-		// 	'permission_page' => $permission_page ? 'true' : 'false',
-		// ] );
+	// 		'permission_page' => $permission_page ? 'true' : 'false',
+	// 	] );
 
-		return $permission_country && $permission_page;
-    }
+	// 	return $permission_country && $permission_page;
+    // }
 
-	public static function set_not_found()
-	{
-		if ( self::check_not_found() )
-		{
-			global $wp_query;
+	// public static function set_not_found()
+	// {
+	// 	if ( self::check_not_found() )
+	// 	{
+	// 		global $wp_query;
 
-			$wp_query->set_404();
-		}
-	}
+	// 		$wp_query->set_404();
+	// 	}
+	// }
 
 	// public static function get_trash()
 	// {
