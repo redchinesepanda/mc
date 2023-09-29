@@ -37,12 +37,12 @@
 }
 
 .legal-compilation-bonus-set .legal-compilation-bonus {
-	padding: 20px;
+	padding: 20px 40px;
 	margin-bottom: 15px;
 }
 
 .legal-compilation-bonus-set .legal-compilation-logo {
-	width: fit-content;
+	flex-basis: fit-content;
 }
 
 .legal-compilation-bonus-set .legal-compilation-logo {
@@ -63,7 +63,8 @@
 }
 
 .legal-compilation-bonus-set .legal-compilation-peculiarity {
-	width: 55%;
+	flex-basis: 55%;
+	flex-grow: 1;
 }
 
 @media (max-width: 768px) {
