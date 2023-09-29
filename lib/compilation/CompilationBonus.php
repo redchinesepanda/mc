@@ -27,10 +27,14 @@ class CompilationBonus
 
 			$item[ 'billet-right' ] = BilletRight::get( $item );
 
-			$item[ 'title' ] = $item[ 'billet-title' ][ 'label' ];
+			$item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
+
+			$item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 
 			if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
-				$item[ 'title' ] = $item[ 'bonus' ][ 'title' ];
+				$item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
+
+				// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 			}
 
             // LegalDebug::debug( [
