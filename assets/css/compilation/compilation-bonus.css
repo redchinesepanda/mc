@@ -45,6 +45,10 @@
 	flex-basis: fit-content;
 }
 
+.legal-compilation-bonus-set .legal-compilation-logo a img {
+	object-fit: contain;
+}
+
 .legal-compilation-bonus-set .legal-compilation-logo {
 	display: flex;
 	justify-content: center;
@@ -52,7 +56,7 @@
 }
 
 .legal-compilation-bonus-set .legal-compilation-logo img {
-	width: 100%;
+	width: 135px;
 	height: 45px;
 }
 
