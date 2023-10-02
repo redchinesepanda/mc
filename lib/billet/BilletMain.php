@@ -134,7 +134,7 @@ class BilletMain
             $bonus_url = get_post_permalink( $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ] );
         }
 
-        if ( !empty( $bonus_url ) )
+        if ( empty( $bonus_url ) )
         {
             $group = get_field( self::FIELD[ 'about' ], $id );
 
