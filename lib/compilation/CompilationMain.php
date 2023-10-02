@@ -278,7 +278,9 @@ class CompilationMain
     }
 
     const FORMAT = [
-        'updated' => 'd.m.Y',
+        // 'updated' => 'd.m.Y',
+        
+        'updated' => 'd.m.Y G:i:s',
     ];
 
     public static function get_date( $id )
