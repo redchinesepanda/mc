@@ -41,18 +41,18 @@ class BilletBonus
             }
         }
 
-        if ( empty( $args ) && !empty( $billet[ 'bonus' ] ) )
+        if ( empty( $args ) )
         {
-            $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+            if ( !empty( $billet[ 'bonus' ] ) )
+            {
+                $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
-            $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
+                $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
 
-            $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
+                $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
+            }
         }
-
-        LegalDebug::debug( [
-            'args' => $args,
-        ] );
+        
 
         return $args;
     }
