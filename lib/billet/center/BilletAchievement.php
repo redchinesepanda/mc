@@ -28,11 +28,11 @@ class BilletAchievement
     
     public static function get( $title )
     {
-        LegalDebug::debug( [
-            'function' => 'BilletAchievement::get',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletAchievement::get',
 
-            'title' => $title,
-        ] );
+        //     'title' => $title,
+        // ] );
 
         $args = [];
 
