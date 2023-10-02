@@ -80,6 +80,7 @@ class BilletAchievement
                 'color' => $color,
 
                 'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
+            ];
         }
 
         return $args;
