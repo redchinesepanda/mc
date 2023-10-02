@@ -77,7 +77,7 @@ class BilletAchievement
 
                 'name' => __( $term->name, ToolLoco::TEXTDOMAIN ),
 
-                'color' => ,
+                'color' => $color,
 
                 'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
         }
