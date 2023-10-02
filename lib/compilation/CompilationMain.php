@@ -505,13 +505,13 @@ class CompilationMain
 
 		$args = self::get( $atts[ 'id' ] );
 
-        // LegalDebug::debug( [
-        //     'prepare_compilation',
+        LegalDebug::debug( [
+            'prepare_compilation',
 
-        //     'atts' => $atts,
+            'atts' => $atts,
 
-        //     'args' => $args,
-        // ] );
+            'args' => $args,
+        ] );
 
 		return self::render_compilation( $args );
 	}
