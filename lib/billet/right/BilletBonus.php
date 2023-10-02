@@ -50,6 +50,10 @@ class BilletBonus
             $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
         }
 
+        LegalDebug::debug( [
+            'args' => $args,
+        ] );
+
         return $args;
     }
 
