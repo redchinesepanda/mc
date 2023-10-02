@@ -63,15 +63,23 @@ class BilletAchievement
 
         if ( !empty( $term ) )
         {
-            $args['class'] = $title['achievement'];
+            $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
+
+            if ( epmty( $color ) )
+            {
+                $color = 'rgba(237, 239, 244, 1)';
+            }
+
+            $args = [
+                'class' => $title['achievement'],
             
-            $args['selector'] = 'achievement-' . $term->term_id;
+                'selector' => 'achievement-' . $term->term_id,
 
-            $args['name'] = __( $term->name, ToolLoco::TEXTDOMAIN );
+                'name' => __( $term->name, ToolLoco::TEXTDOMAIN ),
 
-            $args['color'] = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
+                'color' => ,
 
-            $args['image'] = get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id );
+                'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
         }
 
         return $args;
