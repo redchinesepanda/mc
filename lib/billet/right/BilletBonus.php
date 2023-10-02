@@ -16,17 +16,17 @@ class BilletBonus
         'bonus-description' => 'billet-bonus-description',
     ];
 
-    public static function get_feture_bonus( $billet )
+    public static function get_feture_bonus( $id, $filter = [] )
     {
         $result = null;
 
-        $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $billet[ 'id' ] );
+        $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $id );
 
         if ( $feature_bonus )
         {
             foreach ( $feature_bonus as $feature_bonus_item )
             {
-                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
+                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter ) )
                 {
                     $result = null;
                 }
@@ -65,7 +65,7 @@ class BilletBonus
         //     }
         // }
 
-        $feature_bonus_item = self::get_feture_bonus( $billet );
+        $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ][ 'features' ] );
 
         if ( !empty( $feature_bonus_item ) )
         {

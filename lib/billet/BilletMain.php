@@ -165,7 +165,7 @@ class BilletMain
 
             // $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
 
-            $bonus_url = self::get_bonus_url( $id );
+            $bonus_url = self::get_bonus_url( $id, $filter );
         }
 
         // Партнерская БК или ''
