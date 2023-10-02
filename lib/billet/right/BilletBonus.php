@@ -30,7 +30,7 @@ class BilletBonus
             {
                 if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter[ 'features' ] ) )
                 {
-                    $result = null;
+                    $result = $feature_bonus_item;
                 }
             }
         }
