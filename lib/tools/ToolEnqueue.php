@@ -80,6 +80,20 @@ class ToolEnqueue
 		add_filter( 'style_loader_tag', [ $handler, 'link_type' ], 10, 2 );
 
         add_filter( 'script_loader_tag', [ $handler, 'script_type' ], 10, 2 );
+
+        add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ] );
+    }
+
+    public static function inspect_scripts()
+    {
+        global $wp_scripts;
+
+        LegalDebug::debug( [
+            'function' => 'ToolEnqueue::inspect_scripts',
+            
+            'queue' => $wp_scripts->queue,
+        ] );
+        
     }
 
     public static function link_type( $html, $handle )
