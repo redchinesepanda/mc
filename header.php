@@ -27,5 +27,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</head>
 	<body <?php body_class( '' ); ?>>
 	<?php LegalDebug::debug( [
-		crunchify_print_scripts_styles(),
+		ToolEnqueue::crunchify_print_scripts_styles(),
 	] ); ?>
