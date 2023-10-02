@@ -28,8 +28,6 @@ class BilletBonus
             {
                 if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
                 {
-                    $term = get_term( $feature_bonus_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
-
                     $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
 
                     $args = BilletMain::href( $href );
