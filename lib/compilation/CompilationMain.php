@@ -51,7 +51,7 @@ class CompilationMain
 
         add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_compilation' ] );
 
-		// [legal-compilation id="1027225"]
+		// [legal-compilation id="1027562"]
 
         add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
@@ -137,11 +137,14 @@ class CompilationMain
     }
 
     public static function check_id( $id = 0 ) {
-        if ( $id == 0 ) {
+        if ( $id == 0 )
+        {
             $post = get_post();
     
             if ( $post )
+            {
                 return $post->ID;
+            }
         }
 
         return $id;
@@ -229,7 +232,6 @@ class CompilationMain
     const FIELD = [
         'about' => 'review-about',
     ];
-
 
     const ABOUT = [
         'rating' => 'about-rating',
@@ -462,24 +464,6 @@ class CompilationMain
     {
         $id = self::check_id( $id );
 
-        // $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
-
-        // $switch_lang = ( !empty( $new_lang ) );
-
-        // if ( $switch_lang ) {
-        //     global $sitepress;
-
-        //     $current_lang = $sitepress->get_current_language();
-
-        //     $sitepress->switch_lang( $new_lang );
-        // }
-
-        // $posts = get_posts( self::get_args( $id ) );
-
-        // if ( $switch_lang ) {
-        //     $sitepress->switch_lang( $current_lang );
-        // }
-
         $posts = self::get_posts( $id );
 
         return [
@@ -488,19 +472,6 @@ class CompilationMain
             'settings' => self::get_settings( $id ),
         ];
     }
-
-    // public static function get_bonus( $id )
-    // {
-    //     $id = self::check_id( $id );
-
-    //     $posts = self::get_posts( $id );
-
-    //     return [
-    //         'billets' => self::get_billets_bonus( $posts, self::get_filter( $id ) ),
-
-    //         'settings' => self::get_settings( $id ),
-    //     ];
-    // }
 
     const SHORTCODES = [
         'tabs' => 'legal-tabs',
@@ -514,41 +485,25 @@ class CompilationMain
         ],
 	];
 
-    // public static function prepare_bonus( $atts )
-    // {
-	// 	$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'bonus' ] );
-
-	// 	// $args = self::get( $atts[ 'id' ] );
-		
-    //     $args = self::get_bonus( $atts[ 'id' ] );
-
-	// 	return self::render_bonus( $args );
-	// }
-
     const TEMPLATE = [
         'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
         
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
-
-        // 'legal-compilation-bonus' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-bonus.php',
     ];
-
-    // public static function render_bonus(  $args = []  )
-    // {
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'legal-compilation-bonus' ], false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 
     public static function prepare_compilation( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'compilation' ] );
 
 		$args = self::get( $atts[ 'id' ] );
+
+        LegalDebug::debug( [
+            'prepare_compilation',
+
+            'atts' => $atts,
+
+            'args' => $args,
+        ] );
 
 		return self::render_compilation( $args );
 	}
