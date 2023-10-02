@@ -131,7 +131,12 @@ class BilletMain
 
         if ( !empty( $feature_bonus_item ) )
         {
-            $bonus_url = get_post_permalink( $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ] );
+            $bonus_id = $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ];
+
+            if ( $bonus_id )
+            {
+                $bonus_url = get_post_permalink( $bonus_id );
+            }
         }
 
         if ( empty( $bonus_url ) )
