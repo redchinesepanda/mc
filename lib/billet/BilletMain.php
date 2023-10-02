@@ -123,11 +123,11 @@ class BilletMain
         BilletMega::register();
     }
 
-    public static function get_bonus_url( $id )
+    public static function get_bonus_url( $id, $filter = [] )
     {
         $bonus_url = '';
 
-        $feature_bonus_item = BilletBonus::get_feture_bonus( $billet );
+        $feature_bonus_item = BilletBonus::get_feture_bonus( $id, $filter );
 
         if ( !empty( $feature_bonus_item ) )
         {
