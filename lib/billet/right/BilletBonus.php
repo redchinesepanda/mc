@@ -2,9 +2,47 @@
 
 class BilletBonus
 {
+    const FIELD = [
+        'feture-bonus' => 'billet-feture-bonus',
+    ];
+
+    const FETURE_BONUS = [
+        'feture-id' => 'billet-feture-id',
+
+        'bonus-id' => 'billet-bonus-id',
+
+        'bonus-title' => 'billet-bonus-title',
+
+        'bonus-description' => 'billet-bonus-description',
+    ];
+
     private static function get_bonus( $billet )
     {
-        if ( !empty( $billet[ 'bonus' ] ) ) {
+        $args = [];
+
+        $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $billet[ 'id' ] );
+
+        if ( $feature_bonus )
+        {
+            foreach ( $feature_bonus as $feature_bonus_item )
+            {
+                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $title[ 'filter' ][ 'features' ] ) )
+                {
+                    $term = get_term( $feature_bonus_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
+
+                    $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
+
+                    $args = BilletMain::href( $href );
+
+                    $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+
+                    $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+                }
+            }
+        }
+
+        if ( !empty( $args ) && !empty( $billet[ 'bonus' ] ) )
+        {
             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
             $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
@@ -14,16 +52,16 @@ class BilletBonus
             return $args;
         }
 
-        return [];
+        return $args;
     }
 
     public static function get( $billet )
     {
-        LegalDebug::debug( [
-            'function' => 'BilletBonus::get',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletBonus::get',
 
-            'billet' => $billet,
-        ] );
+        //     'billet' => $billet,
+        // ] );
 
         $enabled = true;
 
