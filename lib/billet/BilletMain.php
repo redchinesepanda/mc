@@ -149,7 +149,7 @@ class BilletMain
 
             'feature_bonus_item' => $feature_bonus_item,
 
-            'args' => $args,
+            'bonus_url' => $bonus_url,
 
             'id' => $id,
 
