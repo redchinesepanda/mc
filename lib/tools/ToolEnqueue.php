@@ -96,7 +96,7 @@ class ToolEnqueue
         
     // }
 
-    function crunchify_print_scripts_styles()
+    public static function crunchify_print_scripts_styles()
     {
         $result = [];
 
