@@ -15,8 +15,19 @@ class BilletAchievement
     const TYPE = [
         'about' => 'legal-about',
     ];
+
+    const FIELD = [
+        'feture-achievement' => 'billet-feture-achievement',
+    ];
     
-    public static function get( $title ) {
+    public static function get( $title )
+    {
+        LegalDebug::debug( [
+            'function' => 'BilletAchievement::get',
+
+            'title' => $title,
+        ] );
+
         $args = [];
 
         $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
