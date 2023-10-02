@@ -81,19 +81,45 @@ class ToolEnqueue
 
         add_filter( 'script_loader_tag', [ $handler, 'script_type' ], 10, 2 );
 
-        add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ] );
+        // add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ] );
     }
 
-    public static function inspect_scripts()
+    // public static function inspect_scripts()
+    // {
+    //     global $wp_scripts;
+
+    //     LegalDebug::debug( [
+    //         'function' => 'ToolEnqueue::inspect_scripts',
+
+    //         'queue' => $wp_scripts->queue,
+    //     ] );
+        
+    // }
+
+    function crunchify_print_scripts_styles()
     {
+        $result = [];
+
+        $result['scripts'] = [];
+
+        $result['styles'] = [];
+    
+        // Print all loaded Scripts
         global $wp_scripts;
 
-        LegalDebug::debug( [
-            'function' => 'ToolEnqueue::inspect_scripts',
-            
-            'queue' => $wp_scripts->queue,
-        ] );
+        foreach( $wp_scripts->queue as $script ) :
+           $result['scripts'][] =  $wp_scripts->registered[$script]->src . ";";
+        endforeach;
+    
+        // Print all loaded Styles (CSS)
+
+        global $wp_styles;
         
+        foreach( $wp_styles->queue as $style ) :
+           $result['styles'][] =  $wp_styles->registered[$style]->src . ";";
+        endforeach;
+    
+        return $result;
     }
 
     public static function link_type( $html, $handle )

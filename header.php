@@ -26,3 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php thrive_amp_permalink(); ?>	
 	</head>
 	<body <?php body_class( '' ); ?>>
+	<?php LegalDebug::debug( [
+		crunchify_print_scripts_styles(),
+	] ); ?>
