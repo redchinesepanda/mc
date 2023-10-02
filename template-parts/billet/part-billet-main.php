@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+    'part' => 'part-billet-main.php',
+
+    'args' => $args,
+] );
+
+?>
 <div class="billet-item">
     <style id="<?php echo $args['selector']; ?>" type="text/css">
         #<?php echo $args['selector']; ?> .billet-left {
