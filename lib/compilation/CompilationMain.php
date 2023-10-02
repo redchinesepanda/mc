@@ -466,6 +466,14 @@ class CompilationMain
 
         $posts = self::get_posts( $id );
 
+        LegalDebug::debug( [
+            'get',
+
+            'id' => $id,
+
+            'posts' => $posts,
+        ] );
+
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
 
@@ -497,20 +505,20 @@ class CompilationMain
 
 		$args = self::get( $atts[ 'id' ] );
 
-        LegalDebug::debug( [
-            'prepare_compilation',
+        // LegalDebug::debug( [
+        //     'prepare_compilation',
 
-            'atts' => $atts,
+        //     'atts' => $atts,
 
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
 		return self::render_compilation( $args );
 	}
 
-    public static function render(  $id = 0  )
+    public static function render( $id = 0 )
     {
-        return self::render_compilation(  $id  );
+        return self::render_compilation( $id );
     }
 
     public static function render_compilation(  $id = 0  )
