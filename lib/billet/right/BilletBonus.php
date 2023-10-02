@@ -21,14 +21,14 @@ class BilletBonus
         $result = null;
 
         $feature_bonus_item = null;
-        
+
         $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $id );
 
         if ( $feature_bonus )
         {
             foreach ( $feature_bonus as $feature_bonus_item )
             {
-                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter ) )
+                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter[ 'features' ] ) )
                 {
                     $result = null;
                 }
@@ -41,6 +41,10 @@ class BilletBonus
             'feature_bonus_item' => $feature_bonus_item,
 
             'result' => $result,
+
+            'id' => $id,
+
+            'filter' => $filter,
         ] );
 
         return $result;
