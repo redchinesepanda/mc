@@ -51,9 +51,9 @@ class CompilationMain
 
         add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_compilation' ] );
 
-		// [legal-compilation-bonus id="1027225"]
+		// [legal-compilation id="1027225"]
 
-        // add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
+        add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     
@@ -505,14 +505,14 @@ class CompilationMain
     const SHORTCODES = [
         'tabs' => 'legal-tabs',
 
-        // 'bonus' => 'legal-compilation-bonus',
+        'compilation' => 'legal-compilation',
     ];
 
-    // const PAIRS = [
-    //     'compilation' => [
-    //         'id' => 0,
-    //     ],
-	// ];
+    const PAIRS = [
+        'compilation' => [
+            'id' => 0,
+        ],
+	];
 
     // public static function prepare_bonus( $atts )
     // {
@@ -543,6 +543,15 @@ class CompilationMain
 
     //     return $output;
     // }
+
+    public static function prepare_compilation( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'compilation' ] );
+
+		$args = self::get( $atts[ 'id' ] );
+
+		return self::render_compilation( $args );
+	}
 
     public static function render(  $id = 0  )
     {
