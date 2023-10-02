@@ -26,7 +26,7 @@ class BilletBonus
         {
             foreach ( $feature_bonus as $feature_bonus_item )
             {
-                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $title[ 'filter' ][ 'features' ] ) )
+                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
                 {
                     $term = get_term( $feature_bonus_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
 
