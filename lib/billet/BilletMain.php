@@ -134,7 +134,7 @@ class BilletMain
             $bonus_url = get_post_permalink( $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ] );
         }
 
-        if ( !empty( $url ) )
+        if ( !empty( $bonus_url ) )
         {
             $group = get_field( self::FIELD[ 'about' ], $id );
 
@@ -143,6 +143,18 @@ class BilletMain
                 $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
             }
         }
+
+        LegalDebug::debug( [
+            'function' => 'BilletMain::get_bonus_url',
+
+            'feature_bonus_item' => $feature_bonus_item,
+
+            'args' => $args,
+
+            'id' => $id,
+
+            'filter' => $filter,
+        ] );
         
         return $bonus_url;
     }
