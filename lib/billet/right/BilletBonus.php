@@ -20,6 +20,8 @@ class BilletBonus
     {
         $result = null;
 
+        $feature_bonus_item = null;
+        
         $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $id );
 
         if ( $feature_bonus )
@@ -32,6 +34,14 @@ class BilletBonus
                 }
             }
         }
+
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get_feture_bonus',
+
+            'feature_bonus_item' => $feature_bonus_item,
+
+            'result' => $result,
+        ] );
 
         return $result;
     }
