@@ -19,6 +19,12 @@ class BilletAchievement
     const FIELD = [
         'feture-achievement' => 'billet-feture-achievement',
     ];
+
+    const FETURE_ACHIEVEMENT = [
+        'feture-id' => 'billet-feture-id',
+
+        'achievement-id' => 'billet-achievement-id',
+    ];
     
     public static function get( $title )
     {
@@ -30,12 +36,34 @@ class BilletAchievement
 
         $args = [];
 
-        $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+        $term = null;
 
-        if ( !is_wp_error( $terms ) && !empty( $terms ) ) {
+        $feature_achievement = get_field( self::FIELD[ 'feture-achievement' ], $title[ 'id' ] );
+
+        if ( $feature_achievement )
+        {
+            foreach ( $feature_achievement as $feature_achievement_item )
+            {
+                if ( in_array( $feature_achievement_item[ 'feture-id' ], $title[ 'filter' ][ 'features' ] ) )
+                {
+                    $term = get_term( $feature_achievement_item[ 'achievement-id' ] );
+                }
+            }
+        }
+
+        if ( empty( $term ) )
+        {
+            $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+
+            if ( !empty( $terms ) && !is_wp_error( $terms ) )
+            {
+                $term = array_shift( $terms );
+            }
+        }
+
+        if ( !empty( $term ) )
+        {
             $args['class'] = $title['achievement'];
-
-            $term = array_shift( $terms );
             
             $args['selector'] = 'achievement-' . $term->term_id;
 
