@@ -65,7 +65,7 @@ class BilletAchievement
         {
             $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
 
-            if ( epmty( $color ) )
+            if ( empty( $color ) )
             {
                 $color = 'rgba(237, 239, 244, 1)';
             }
