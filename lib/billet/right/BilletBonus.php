@@ -41,7 +41,7 @@ class BilletBonus
             }
         }
 
-        if ( !empty( $args ) && !empty( $billet[ 'bonus' ] ) )
+        if ( empty( $args ) && !empty( $billet[ 'bonus' ] ) )
         {
             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
