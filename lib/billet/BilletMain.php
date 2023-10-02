@@ -145,7 +145,12 @@ class BilletMain
 
             if ( $group )
             {
-                $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+                $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
+                
+                if ( $bonus_id )
+                {
+                    $bonus_url = get_post_permalink( $bonus_id );
+                }
             }
         }
 
