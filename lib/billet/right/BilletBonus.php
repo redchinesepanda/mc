@@ -19,6 +19,12 @@ class BilletBonus
 
     public static function get( $billet )
     {
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get',
+
+            'billet' => $billet,
+        ] );
+
         $enabled = true;
 
         if ( !empty( $billet[ 'filter' ] ) ) {
