@@ -44,9 +44,9 @@ class BilletAchievement
         {
             foreach ( $feature_achievement as $feature_achievement_item )
             {
-                if ( in_array( $feature_achievement_item[ 'feture-id' ], $title[ 'filter' ][ 'features' ] ) )
+                if ( in_array( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $title[ 'filter' ][ 'features' ] ) )
                 {
-                    $term = get_term( $feature_achievement_item[ 'achievement-id' ] );
+                    $term = get_term( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
                 }
             }
         }
