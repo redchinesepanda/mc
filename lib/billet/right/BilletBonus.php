@@ -16,7 +16,7 @@ class BilletBonus
         'bonus-description' => 'billet-bonus-description',
     ];
 
-    private static function get_feture_bonus( $billet )
+    public static function get_feture_bonus( $billet )
     {
         $result = null;
 
