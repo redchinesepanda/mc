@@ -96,31 +96,31 @@ class ToolEnqueue
         
     // }
 
-    public static function crunchify_print_scripts_styles()
-    {
-        $result = [];
+    // public static function crunchify_print_scripts_styles()
+    // {
+    //     $result = [];
 
-        $result['scripts'] = [];
+    //     $result['scripts'] = [];
 
-        $result['styles'] = [];
+    //     $result['styles'] = [];
     
-        // Print all loaded Scripts
-        global $wp_scripts;
+    //     // Print all loaded Scripts
+    //     global $wp_scripts;
 
-        foreach( $wp_scripts->queue as $script ) :
-           $result['scripts'][ $script ] =  $wp_scripts->registered[$script]->src . ";";
-        endforeach;
+    //     foreach( $wp_scripts->queue as $script ) :
+    //        $result['scripts'][ $script ] =  $wp_scripts->registered[$script]->src . ";";
+    //     endforeach;
     
-        // Print all loaded Styles (CSS)
+    //     // Print all loaded Styles (CSS)
 
-        global $wp_styles;
+    //     global $wp_styles;
 
-        foreach( $wp_styles->queue as $style ) :
-           $result['styles'][ $style ] =  $wp_styles->registered[$style]->src . ";";
-        endforeach;
+    //     foreach( $wp_styles->queue as $style ) :
+    //        $result['styles'][ $style ] =  $wp_styles->registered[$style]->src . ";";
+    //     endforeach;
     
-        return $result;
-    }
+    //     return $result;
+    // }
 
     public static function link_type( $html, $handle )
 	{
