@@ -57,11 +57,11 @@ class BilletBonus
 
     public static function get( $billet )
     {
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get',
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get',
 
-        //     'billet' => $billet,
-        // ] );
+            'billet' => $billet,
+        ] );
 
         $enabled = true;
 
