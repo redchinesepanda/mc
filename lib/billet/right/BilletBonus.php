@@ -79,7 +79,7 @@ class BilletBonus
         //     }
         // }
 
-        $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ][ 'features' ] );
+        $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ] );
 
         if ( !empty( $feature_bonus_item ) )
         {
