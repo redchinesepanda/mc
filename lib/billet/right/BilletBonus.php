@@ -30,6 +30,10 @@ class BilletBonus
                 {
                     $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
 
+                    LegalDebug::debug( [
+                        'href' => $href,
+                    ] );
+
                     $args = BilletMain::href( $href );
 
                     $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
