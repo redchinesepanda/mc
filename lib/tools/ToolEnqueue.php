@@ -116,7 +116,7 @@ class ToolEnqueue
         global $wp_styles;
 
         foreach( $wp_styles->queue as $style ) :
-           $result['styles'][] =  $wp_styles->registered[$style]->src . ";";
+           $result['styles'][ $style ] =  $wp_styles->registered[$style]->src . ";";
         endforeach;
     
         return $result;
