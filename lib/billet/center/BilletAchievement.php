@@ -51,6 +51,12 @@ class BilletAchievement
 
     public static function render( $title )
     {
+        LegalDebug::debug( [
+            'function' => 'BilletAchievement::render',
+
+            'title' => $title,
+        ] );
+
         if ( $title['achievement'] != self::TYPE_DISABLED ) {
             $args = self::get( $title );
     
