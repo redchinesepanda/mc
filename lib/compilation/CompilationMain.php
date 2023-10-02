@@ -466,13 +466,13 @@ class CompilationMain
 
         $posts = self::get_posts( $id );
 
-        LegalDebug::debug( [
-            'get',
+        // LegalDebug::debug( [
+        //     'get',
 
-            'id' => $id,
+        //     'id' => $id,
 
-            'posts' => $posts,
-        ] );
+        //     'posts' => $posts,
+        // ] );
 
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
@@ -503,17 +503,19 @@ class CompilationMain
     {
 		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'compilation' ] );
 
-		$args = self::get( $atts[ 'id' ] );
+		// $args = self::get( $atts[ 'id' ] );
 
-        LegalDebug::debug( [
-            'prepare_compilation',
+        // LegalDebug::debug( [
+        //     'prepare_compilation',
 
-            'atts' => $atts,
+        //     'atts' => $atts,
 
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
-		return self::render_compilation( $args );
+		// return self::render_compilation( $args );
+		
+        return self::render_compilation( $atts[ 'id' ] );
 	}
 
     public static function render( $id = 0 )
