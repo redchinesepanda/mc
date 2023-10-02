@@ -123,6 +123,30 @@ class BilletMain
         BilletMega::register();
     }
 
+    public static function get_bonus_url( $id )
+    {
+        $bonus_url = '';
+
+        $feature_bonus_item = BilletBonus::get_feture_bonus( $billet );
+
+        if ( !empty( $feature_bonus_item ) )
+        {
+            $bonus_url = get_post_permalink( $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ] );
+        }
+
+        if ( !empty( $url ) )
+        {
+            $group = get_field( self::FIELD[ 'about' ], $id );
+
+            if ( $group )
+            {
+                $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+            }
+        }
+        
+        return $bonus_url;
+    }
+
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
@@ -139,7 +163,9 @@ class BilletMain
 
             $card_url = $group[ self::ABOUT[ 'review' ] ];
 
-            $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+            // $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+
+            $bonus_url = self::get_bonus_url( $id );
         }
 
         // Партнерская БК или ''

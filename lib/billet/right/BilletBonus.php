@@ -16,9 +16,9 @@ class BilletBonus
         'bonus-description' => 'billet-bonus-description',
     ];
 
-    private static function get_bonus( $billet )
+    private static function get_feture_bonus( $billet )
     {
-        $args = [];
+        $result = null;
 
         $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $billet[ 'id' ] );
 
@@ -28,19 +28,52 @@ class BilletBonus
             {
                 if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
                 {
-                    $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
-
-                    LegalDebug::debug( [
-                        'href' => $href,
-                    ] );
-
-                    $args = BilletMain::href( $href );
-
-                    $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
-
-                    $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+                    $result = null;
                 }
             }
+        }
+
+        return $result;
+    }
+
+    private static function get_bonus( $billet )
+    {
+        $args = [];
+
+        // $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $billet[ 'id' ] );
+
+        // if ( $feature_bonus )
+        // {
+        //     foreach ( $feature_bonus as $feature_bonus_item )
+        //     {
+        //         if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
+        //         {
+        //             // $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
+
+        //             // LegalDebug::debug( [
+        //             //     'href' => $href,
+        //             // ] );
+
+        //             // $args = BilletMain::href( $href );
+
+        //             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+        //             $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+
+        //             $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+        //         }
+        //     }
+        // }
+
+        $feature_bonus_item = self::get_feture_bonus( $billet );
+
+        if ( !empty( $feature_bonus_item ) )
+        {
+            $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+            $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+
+            $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
         }
 
         if ( empty( $args ) )
