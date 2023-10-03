@@ -100,20 +100,13 @@ class ReviewStats
 			return $content;
 		}
 
-		foreach ( $nodes as $node ) {
-			// LegalDebug::debug( [
-			// 	'function' => 'ReviewStats::get_content',
-
-			// 	'node' => $node,
-			// ] );
-
+		foreach ( $nodes as $node )
+		{
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'review-stats' );
 
 			LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
-
-			// $node->insertBefore( $stats );
 
 			$node->parentNode->insertBefore( $stats, $node );
 		}

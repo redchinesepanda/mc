@@ -15,6 +15,11 @@ class WPMLLangSwitcher
         ToolEnqueue::register_style( self::CSS );
     }
 
+    public static function register_inline_style()
+    {
+		ToolEnqueue::register_inline_style( 'legal-wpml-lang-switcher', self::render_style() );
+    }
+
     const JS = LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
 
     public static function register_script()
@@ -32,6 +37,8 @@ class WPMLLangSwitcher
         add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
@@ -140,13 +147,28 @@ class WPMLLangSwitcher
         return $args;
     }
     
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
+    const TEMPLATE = [
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-main.php',
+
+        'style' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-style.php',
+    ];
 
     public static function render()
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_style()
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
 
         $output = ob_get_clean();
 
