@@ -21,7 +21,11 @@ class WPMLLangSwitcher
     }
 
     const JS = [
-        'legal-wpml-lang-switcher' => LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js',
+        'legal-wpml-lang-switcher' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_script()
