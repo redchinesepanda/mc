@@ -20,7 +20,9 @@ class WPMLLangSwitcher
 		ToolEnqueue::register_inline_style( 'legal-wpml-lang-switcher', self::render_style() );
     }
 
-    const JS = LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
+    const JS = [
+        'legal-wpml-lang-switcher' => LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js',
+    ];
 
     public static function register_script()
     {
