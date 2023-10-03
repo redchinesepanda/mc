@@ -101,6 +101,11 @@ class ReviewStats
 		}
 
 		foreach ( $nodes as $node ) {
+			LegalDebug::debug( [
+				'function' => 'ReviewStats::get_content',
+
+				'node' => $node,
+			] );
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'review-stats' );
