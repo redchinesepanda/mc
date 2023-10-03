@@ -31,11 +31,11 @@ class ReviewAuthor
     public static function register_style()
     {
         ReviewMain::register_style( self::CSS );
+    }
 
-        // if ( self::check() )
-        // {
-        //     ToolEnqueue::register_style( self::CSS );
-        // }
+    public static function register_inline_style()
+    {
+		ReviewMain::register_inline_style( 'review-author', self::render_style() );
     }
 
     public static function register()
@@ -161,13 +161,13 @@ class ReviewAuthor
     }
 
     const TEMPLATE = [
-		'review-author' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author.php',
+		'main' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-main.php',
+
+		'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
 	];
 
-    public static function render( $args = [] )
+    public static function render()
     {
-        // if ( !self::check() )
-        
         if ( !ReviewMain::check() )
         {
             return '';
@@ -175,7 +175,23 @@ class ReviewAuthor
         
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-author' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_style()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+        
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
 
         $output = ob_get_clean();
 

@@ -6,7 +6,7 @@ class BaseHeader
         'legal-header' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header.js',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         'legal-header-nofollow' => [
@@ -25,7 +25,7 @@ class BaseHeader
         'legal-header' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
 
-			'ver' => '1.0.5',
+			'ver' => '1.0.6',
 		],
     ];
 
