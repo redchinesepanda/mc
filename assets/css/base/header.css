@@ -310,3 +310,24 @@
 	text-transform: uppercase;
 	color: rgb(255, 255, 255);
 }
+
+/* Other */
+
+#content {
+	/* z-index: 1 !important; */
+	z-index: 1;
+}
+
+.bottom-section {
+	/* z-index: 0 !important; */
+	z-index: 0;
+}
+
+.thrv_footer {
+	/* z-index: 0 !important; */
+	z-index: 0;
+}
+
+.drop-menu_content_Spoiler {
+	display: none;
+}

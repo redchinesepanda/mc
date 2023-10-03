@@ -16,7 +16,7 @@
 			<div class="footer-logo">
 				<?php foreach( $args[ 'logo' ] as $logo ) : ?>
 					<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow">
-						<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>" />
+						<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>">
 					</a>
 				<?php endforeach; ?>
 			</div>

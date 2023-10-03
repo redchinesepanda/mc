@@ -42,7 +42,7 @@ class WPMLMain
 
         'es',
         
-        'ru_RU',
+        'ru',
         
         'dk_DA',
 
