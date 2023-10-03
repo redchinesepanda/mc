@@ -154,17 +154,17 @@ class BilletMain
             }
         }
 
-        LegalDebug::debug( [
-            'function' => 'BilletMain::get_bonus_url',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletMain::get_bonus_url',
 
-            'feature_bonus_item' => $feature_bonus_item,
+        //     'feature_bonus_item' => $feature_bonus_item,
 
-            'bonus_url' => $bonus_url,
+        //     'bonus_url' => $bonus_url,
 
-            'id' => $id,
+        //     'id' => $id,
 
-            'filter' => $filter,
-        ] );
+        //     'filter' => $filter,
+        // ] );
         
         return $bonus_url;
     }
