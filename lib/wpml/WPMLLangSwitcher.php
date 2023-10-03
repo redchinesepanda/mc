@@ -26,9 +26,7 @@ class WPMLLangSwitcher
 
     public static function register_script()
     {
-        wp_register_script( 'wpml-lang-switcher', self::JS, [], false, true);
-
-        wp_enqueue_script( 'wpml-lang-switcher' );
+        ToolEnqueue::register_script( self::JS );
     }
 
     public static function register() {
