@@ -537,8 +537,11 @@ class ReviewBonus
 		return [
 			'class' => !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default',
 
-			'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
+			'image' => [
+				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
 
+				'alt' => $group[ self::GROUP[ 'title' ] ],
+			],
 			'review' => [
 				'href' => self::check_url_review( $id ),
 
