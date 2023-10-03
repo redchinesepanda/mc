@@ -109,6 +109,12 @@ class CompilationMain
 
     public static function get_settings( $id )
     {
+        LegalDebug::debug(
+            [
+                get_field( self::COMPILATION[ 'title-image' ], $id ),
+            ]
+        );
+
         return [
             'id' => $id,
 
@@ -278,9 +284,9 @@ class CompilationMain
     }
 
     const FORMAT = [
-        // 'updated' => 'd.m.Y',
+        'updated' => 'd.m.Y',
         
-        'updated' => 'd.m.Y G:i:s',
+        // 'updated' => 'd.m.Y G:i:s',
     ];
 
     public static function get_date( $id )
