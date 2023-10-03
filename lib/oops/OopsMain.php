@@ -161,8 +161,10 @@ class OopsMain
         'bonus-label' => 'affilate-bonus-label',
     ];
 
-    public static function get_alt( $alt = '' )
+    public static function get_alt( $post )
     {
+        $alt = $post->post_title
+
         $alt_words = preg_split( "/[ ,-]/", $alt );
 
         array_pop( alt_words );
@@ -204,7 +206,7 @@ class OopsMain
                 
                 'height' => ( $src ? $src[ 'height' ] : '29' ),
 
-                'alt' => self::get_alt( $post->post_title ),
+                'alt' => self::get_alt( $post ),
 
                 'bonus-label' => $bonus_label,
             ];
