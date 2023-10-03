@@ -163,7 +163,7 @@ class OopsMain
 
     public static function get_alt( $post )
     {
-        $alt = $post->post_title
+        $alt = $post->post_title;
 
         $alt_words = preg_split( "/[ ,-]/", $alt );
 
