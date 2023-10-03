@@ -109,12 +109,6 @@ class CompilationMain
 
     public static function get_settings( $id )
     {
-        LegalDebug::debug(
-            [
-                get_field( self::COMPILATION[ 'title-image' ], $id ),
-            ]
-        );
-
         return [
             'id' => $id,
 

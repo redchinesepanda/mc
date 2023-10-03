@@ -195,6 +195,8 @@ class OopsMain
                 
                 'height' => ( $src ? $src[ 'height' ] : '29' ),
 
+                'alt' => $post->post_title,
+
                 'bonus-label' => $bonus_label,
             ];
         }
