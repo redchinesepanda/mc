@@ -313,18 +313,15 @@
 
 /* Other */
 
-#content {
-	/* z-index: 1 !important; */
+#content:not(.legal-override) {
 	z-index: 1;
 }
 
-.bottom-section {
-	/* z-index: 0 !important; */
+.bottom-section:not(.legal-override) {
 	z-index: 0;
 }
 
-.thrv_footer {
-	/* z-index: 0 !important; */
+.thrv_footer:not(.legal-override) {
 	z-index: 0;
 }
 
