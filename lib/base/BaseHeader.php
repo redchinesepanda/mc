@@ -2,6 +2,24 @@
 
 class BaseHeader
 {
+	const CSS = [
+        'legal-header' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
+
+			'ver' => '1.0.7',
+		],
+    ];
+
+    public static function register_style()
+    {
+        BaseMain::register_style( self::CSS );
+    }
+
+	public static function register_inline_style()
+    {
+		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() );
+    }
+
 	const JS = [
         'legal-header' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header.js',
@@ -19,24 +37,6 @@ class BaseHeader
     public static function register_script()
     {
 		BaseMain::register_script( self::JS );
-    }
-
-	const CSS = [
-        'legal-header' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
-
-			'ver' => '1.0.6',
-		],
-    ];
-
-    public static function register_style()
-    {
-        BaseMain::register_style( self::CSS );
-    }
-
-	public static function register_inline_style()
-    {
-		ToolEnqueue::register_inline_style( 'base-header', self::inline_style() );
     }
 
 	public static function register()

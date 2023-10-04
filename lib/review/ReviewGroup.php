@@ -16,7 +16,7 @@ class ReviewGroup
         'review-group' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-group.css',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.4',
         ],
     ];
 

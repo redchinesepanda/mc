@@ -48,7 +48,8 @@ nav.group {
 
 /* Group Typography */
 
-.review-group .group-item {
+.review-group .group-item,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).group-item {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;

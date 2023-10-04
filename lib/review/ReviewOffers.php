@@ -46,6 +46,10 @@ class ReviewOffers
 		}
     }
 
+	const SHORTCODE = [
+		'offers' => 'legal-offers',
+	];
+
 	public static function register()
     {
         $handler = new self();
@@ -57,6 +61,10 @@ class ReviewOffers
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		// [legal-offers terms=""]
+
+		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
 
 	public static function inline_style()
@@ -97,45 +105,69 @@ class ReviewOffers
 	];
 
 	const TAXONOMY = [
-		'group' => 'page_group',
+		// 'group' => 'page_group',
 
 		'page_type' => 'page_type',
+
+		'offer' => 'offer_group',
 	];
 
-	const TERM = [
-		'offers' => 'other-offers',
-	];
+	// const TERM = [
+	// 	'offers' => 'other-offers',
+	// ];
 
-	public static function offer_query( $post )
+	public static function get_terms( $id )
 	{
-		return [
-			'numberposts' => -1,
+		$terms = self::get_terms( $id );
 
-            'post_type' => [ 'legal_bk_review', 'page' ],
+		if ( !is_wp_error( $terms ) )
+		{
+			return $terms;
+		}
 
-            'suppress_filters' => 0,
+		return [];
+	}
 
-            'exclude' => $post->ID,
+	public static function offer_query( $id, $terms = [] )
+	{
+		$tax_query = [
+			[
+				'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-			'meta_query' => [
+				'operator' => 'EXISTS',
+			],
+		];
+
+		if ( empty( $terms ) )
+		{
+			$terms = self::get_terms( $id );
+		}
+
+		if ( !empty( $terms ) )
+		{
+			$tax_query = [
                 [
-                    'key' => self::FIELD[ 'about' ] . '_' . self::FIELD[ 'afillate' ],
-
-					'value'   => [ '' ],
-        			
-					'compare' => 'NOT IN',
-                ],
-            ],
-
-            'tax_query' => [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'group' ],
+                    'taxonomy' => self::TAXONOMY[ 'offer' ],
 
                     'field' => 'slug',
 
-                    'terms' => self::TERM[ 'offers' ],
+                    'terms' => $terms,
+
+					'operator' => 'IN',
 				],
-            ],
+            ];
+		}
+
+		return [
+			'numberposts' => -1,
+
+            'post_type' => [ 'page' ],
+
+            'suppress_filters' => 0,
+
+            'exclude' => $id,
+
+            'tax_query' => $tax_query,
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
@@ -170,7 +202,7 @@ class ReviewOffers
 		return $items;
 	}
 
-	public static function get_offers()
+	public static function get_offers( $atts = [] )
 	{
 		$items = [];
 
@@ -178,7 +210,9 @@ class ReviewOffers
 
 		if ( !empty( $post ) )
 		{
-			$offers = get_posts( self::offer_query( $post ) );
+			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
+
+			$offers = get_posts(  );
 
 			if ( !empty( $offers ) )
 			{
@@ -189,11 +223,38 @@ class ReviewOffers
 		return $items;
 	}
 
+	const PAIRS = [
+		'terms' => '',
+	];
+
+	public static function prepare_array( $items )
+	{
+		if ( !is_array( $items ) )
+		{
+			$items = preg_replace( '/\s*,\s*/', ',', filter_var( $items, FILTER_SANITIZE_STRING ) );
+	
+			return explode( ',', $items );
+		}
+
+		return $items;
+	}
+
+	public static function prepare( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
+
+		$atts[ 'terms' ] = self::prepare_array( $atts[ 'terms' ] );
+
+		$args = self::get_offers( $atts );
+
+		return self::render( $args );
+	}
+
 	const TEMPLATE = [
 		'offers' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers.php',
 	];
 
-    public static function render_offers()
+    public static function render_offers( $args )
     {
 		if ( !self::check() ) {
             return '';
@@ -201,7 +262,7 @@ class ReviewOffers
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'offers' ], false, self::get_offers() );
+        load_template( self::TEMPLATE[ 'offers' ], false, $args );
 
         $output = ob_get_clean();
 

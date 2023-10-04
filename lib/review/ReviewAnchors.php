@@ -6,7 +6,7 @@ class ReviewAnchors
         'review-anchors' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors.css',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.4',
         ],
     ];
 
