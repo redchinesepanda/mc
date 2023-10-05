@@ -26,7 +26,7 @@ require_once( 'ReviewCounter.php' );
 
 require_once( 'ReviewList.php' );
 
-require_once( 'ReviewOffers.php' );
+// require_once( 'ReviewOffers.php' );
 
 require_once( 'ReviewTitle.php' );
 
@@ -168,7 +168,7 @@ class ReviewMain
 
         ReviewList::register();
 
-        ReviewOffers::register();
+        // ReviewOffers::register();
 
         ReviewTitle::register();
     }
