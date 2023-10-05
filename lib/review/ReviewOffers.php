@@ -257,8 +257,15 @@ class ReviewOffers
 
 		foreach ( $offers as $offer )
 		{
+			$label = get_field( self::FIELD[ 'offer' ], $offer->ID );
+
+			if ( empty( $label ) )
+			{
+				$label = $offer->post_title;
+			}
+
 			$items[] = [
-				'label' => get_field( self::FIELD[ 'offer' ], $offer->ID ),
+				'label' => $label,
 
 				'href' => get_post_permalink( $offer->ID ),
 			];
