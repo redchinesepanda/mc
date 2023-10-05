@@ -8,9 +8,9 @@ class ReviewOffers
 
     public static function register_script()
     {
-		if ( self::check() ) {
+		// if ( self::check() ) {
 			ReviewMain::register_script( self::JS );
-		}
+		// }
     }
 
 	const CSS = [
@@ -23,16 +23,17 @@ class ReviewOffers
 
     public static function register_style()
     {
-		if ( self::check() ) {
+		// if ( self::check() ) {
         	ReviewMain::register_style( self::CSS );
-		}
+		// }
     }
 
 	public static function register_inline_style()
     {
-		if ( self::check() ) {
-			ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
-		}
+		// if ( self::check() ) {
+			// ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+			ReviewMain::register_inline_style( 'review-offers', self::inline_style() );
+		// }
     }
 
 	const SHORTCODE = [
@@ -45,9 +46,11 @@ class ReviewOffers
 
 	public static function check()
     {
-		$permission_term = !has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
+		// $permission_term = !has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
 
-        return ReviewMain::check() && $permission_term;
+        // return ReviewMain::check() && $permission_term;
+        
+		return ReviewMain::check();
     }
 
 	public static function register()
@@ -69,7 +72,7 @@ class ReviewOffers
 
 	public static function inline_style()
 	{
-		if ( !self::check() ) {
+		if ( !ReviewMain::check() ) {
             return '';
         }
 
@@ -325,7 +328,7 @@ class ReviewOffers
 
     public static function render_offers( $args )
     {
-		if ( !self::check() ) {
+		if ( !ReviewMain::check() ) {
             return '';
         }
 
