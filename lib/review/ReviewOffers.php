@@ -251,7 +251,7 @@ class ReviewOffers
 	}
 
 	const PAIRS = [
-		'terms' => '',
+		'terms' => [],
 	];
 
 	public static function prepare_array( $items )
