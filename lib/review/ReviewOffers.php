@@ -216,7 +216,7 @@ class ReviewOffers
 		{
 			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
 
-			$offers = get_posts(  );
+			$offers = get_posts( $query );
 
 			if ( !empty( $offers ) )
 			{
