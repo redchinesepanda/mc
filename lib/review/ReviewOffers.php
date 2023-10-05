@@ -208,8 +208,8 @@ class ReviewOffers
 
 		$post = get_post();
 
-		// if ( !empty( $post ) )
-		// {
+		if ( !empty( $post ) )
+		{
 		// 	$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
 
 		// 	$offers = get_posts(  );
@@ -217,8 +217,8 @@ class ReviewOffers
 		// 	if ( !empty( $offers ) )
 		// 	{
 		// 		$items = self::parse_offers( $offers );
-		// 	}
-		// }
+			}
+		}
 		
 		return $items;
 	}
