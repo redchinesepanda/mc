@@ -54,7 +54,7 @@ class ReviewOffers
     {
         $handler = new self();
 
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
+        // add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -64,7 +64,7 @@ class ReviewOffers
 
 		// [legal-offers terms=""]
 
-		// add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
+		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
 
 	public static function inline_style()
