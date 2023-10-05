@@ -206,7 +206,7 @@ class ReviewOffers
 	{
 		$items = [];
 
-		// $post = get_post();
+		$post = get_post();
 
 		// if ( !empty( $post ) )
 		// {
