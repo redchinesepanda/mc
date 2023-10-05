@@ -113,9 +113,9 @@ class ReviewOffers
 	];
 
 	const OFFER = [
-		'term_id',
+		// 'term_id',
 
-		'name',
+		// 'name',
 
 		'slug',
 	];
