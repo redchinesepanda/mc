@@ -173,7 +173,7 @@ class ReviewOffers
                 [
                     'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-                    // 'field' => 'slug',
+                    'field' => 'slug',
 
                     // 'terms' => $selected_term,
 
