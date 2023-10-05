@@ -118,14 +118,14 @@ class ReviewOffers
 
 	public static function get_terms( $id )
 	{
-		$terms = self::get_terms( $id );
+		// $terms = self::get_terms( $id );
 
-		if ( !is_wp_error( $terms ) )
-		{
-			$terms = [];
-		}
+		// if ( !is_wp_error( $terms ) )
+		// {
+		// 	$terms = [];
+		// }
 
-		return $terms;
+		// return $terms;
 	}
 
 	public static function offer_query( $id, $terms = [] )
