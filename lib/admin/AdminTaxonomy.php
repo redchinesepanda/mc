@@ -33,17 +33,20 @@ class AdminTaxonomy
         add_filter( 'parse_query', [ $handler, 'query_term'] );
     }
 
-    public static function filter_dropdown() {
+    public static function filter_dropdown()
+    {
         global $typenow;
 
-        foreach ( self::TAXONOMY as $post_type => $taxonomies ) {
-            foreach ( $taxonomies as $taxonomy ) {
+        foreach ( self::TAXONOMY as $post_type => $taxonomies )
+        {
+            foreach ( $taxonomies as $taxonomy )
+            {
                 // LegalDebug::debug( [
                 //     'post_type' => $post_type,
                 // ] );
 
-                if ($typenow == $post_type) {
-                    $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
+                if ( $typenow == $post_type ) {
+                    $selected = isset( $_GET[ $taxonomy ] ) ? $_GET[ $taxonomy ] : '';
         
                     $info_taxonomy = get_taxonomy( $taxonomy );
 
