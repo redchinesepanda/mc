@@ -217,7 +217,7 @@ class ReviewOffers
 		// 	if ( !empty( $offers ) )
 		// 	{
 		// 		$items = self::parse_offers( $offers );
-			}
+			// }
 		}
 		
 		return $items;
