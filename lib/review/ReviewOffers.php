@@ -122,10 +122,10 @@ class ReviewOffers
 
 		if ( !is_wp_error( $terms ) )
 		{
-			return $terms;
+			$terms = [];
 		}
 
-		return [];
+		return $terms;
 	}
 
 	public static function offer_query( $id, $terms = [] )
