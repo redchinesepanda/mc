@@ -80,20 +80,28 @@ class AdminTaxonomy
     {
         global $pagenow;
 
-        foreach ( self::TAXONOMY as $post_type => $taxonomies ) {
-            foreach ( $taxonomies as $taxonomy ) {
+        foreach ( self::TAXONOMY as $post_type => $taxonomies )
+        {
+            foreach ( $taxonomies as $taxonomy )
+            {
                 $q_vars = &$query->query_vars;
 
                 if ( $pagenow == 'edit.php'
-                    && isset( $q_vars['post_type'] )
-                    && $q_vars['post_type'] == $post_type
-                    && isset( $q_vars[$taxonomy] )
-                    && is_numeric( $q_vars[$taxonomy] )
-                    && $q_vars[$taxonomy] != 0
-                ) {
-                    $term = get_term_by( 'id', $q_vars[$taxonomy], $taxonomy );
 
-                    $q_vars[$taxonomy] = $term->slug;
+                    && isset( $q_vars['post_type'] )
+
+                    && $q_vars['post_type'] == $post_type
+
+                    && isset( $q_vars[$taxonomy] )
+
+                    && is_numeric( $q_vars[$taxonomy] )
+
+                    && $q_vars[$taxonomy] != 0
+                )
+                {
+                    $term = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
+
+                    $q_vars[ $taxonomy ] = $term->slug;
                 }
             }
         }
