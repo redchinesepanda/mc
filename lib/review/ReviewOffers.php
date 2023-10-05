@@ -102,6 +102,8 @@ class ReviewOffers
 		'font' => 'about-font',
 
 		'afillate' => 'about-afillate',
+
+		'offer' => 'tabs-title-offer',
 	];
 
 	const TAXONOMY = [
@@ -227,6 +229,23 @@ class ReviewOffers
 
                     'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
                 ],
+			];
+			
+		}
+
+		return $items;
+	}
+
+	public static function parse_offers_compilation( $offers )
+	{
+		$items = [];
+
+		foreach ( $offers as $offer )
+		{
+			$items[] = [
+				'label' => get_field( self::FIELD[ 'offer' ], $offer->ID ),
+
+				'href' => get_post_permalink( $offer->ID ),
 			];
 			
 		}
