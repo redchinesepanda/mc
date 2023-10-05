@@ -54,7 +54,7 @@ class ReviewOffers
     {
         $handler = new self();
 
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
+        // add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -269,38 +269,38 @@ class ReviewOffers
         return $output;
     }
 
-	public static function get_content( $content )
-	{
-        if ( !self::check() ) {
-			return $content;
-		}
+	// public static function get_content( $content )
+	// {
+    //     if ( !self::check() ) {
+	// 		return $content;
+	// 	}
 
-		$dom = LegalDOM::get_dom( $content );
+	// 	$dom = LegalDOM::get_dom( $content );
 
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
+	// 	$body = $dom->getElementsByTagName( 'body' )->item( 0 );
 
-		if ( empty( $body ) ) {
-			return $content;
-		}
+	// 	if ( empty( $body ) ) {
+	// 		return $content;
+	// 	}
 
-		$item = $dom->createElement( 'div' );
+	// 	$item = $dom->createElement( 'div' );
 
-		$item->setAttribute( 'class', 'legal-other-offers-wrapper' ); 
+	// 	$item->setAttribute( 'class', 'legal-other-offers-wrapper' ); 
 
-		LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
+	// 	LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
 
-		try
-		{
-			$body->appendChild( $item );
-		} catch ( DOMException $e )
-		{
-			LegalDebug::debug( [
-				'ReviewOffers::get_content > appendChild DOMException',
-			] );
-		}
+	// 	try
+	// 	{
+	// 		$body->appendChild( $item );
+	// 	} catch ( DOMException $e )
+	// 	{
+	// 		LegalDebug::debug( [
+	// 			'ReviewOffers::get_content > appendChild DOMException',
+	// 		] );
+	// 	}
 
-		return $dom->saveHTML();
-	}
+	// 	return $dom->saveHTML();
+	// }
 }
 
 ?>
