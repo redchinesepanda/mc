@@ -251,7 +251,7 @@ class ReviewOffers
 
 		$args = self::get_offers( $atts );
 
-		return self::render( $args );
+		return self::render_offers( $args );
 	}
 
 	const TEMPLATE = [
