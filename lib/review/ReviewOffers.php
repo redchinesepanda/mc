@@ -130,13 +130,13 @@ class ReviewOffers
 
 	public static function offer_query( $id, $terms = [] )
 	{
-		// $tax_query = [
-		// 	[
-		// 		'taxonomy' => self::TAXONOMY[ 'offer' ],
+		$tax_query = [
+			[
+				'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-		// 		'operator' => 'EXISTS',
-		// 	],
-		// ];
+				'operator' => 'EXISTS',
+			],
+		];
 
 		// if ( empty( $terms ) )
 		// {
