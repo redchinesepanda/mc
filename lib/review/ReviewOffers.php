@@ -134,15 +134,15 @@ class ReviewOffers
 			}
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::get_terms',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::get_terms',
 
-			'id' => $id,
+		// 	'id' => $id,
 
-			'terms' => $terms,
+		// 	'terms' => $terms,
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 
 		return $items;
 	}
@@ -182,13 +182,13 @@ class ReviewOffers
             ];
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::offer_query',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::offer_query',
 
-			'id' => $id,
+		// 	'id' => $id,
 
-			'selected_term' => $selected_term,
-		] );
+		// 	'selected_term' => $selected_term,
+		// ] );
 
 		return [
 			'numberposts' => -1,
@@ -252,13 +252,13 @@ class ReviewOffers
 			}
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::get_offers',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::get_offers',
 
-			'atts' => $atts,
+		// 	'atts' => $atts,
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 		
 		return $items;
 	}
@@ -287,13 +287,13 @@ class ReviewOffers
 
 		$args = self::get_offers( $atts );
 		
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::prepare',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::prepare',
 
-			'atts' => $atts,
+		// 	'atts' => $atts,
 
-			'args' => $args,
-		] );
+		// 	'args' => $args,
+		// ] );
 
 		return self::render_offers( $args );
 	}
