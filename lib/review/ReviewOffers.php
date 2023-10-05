@@ -56,7 +56,7 @@ class ReviewOffers
 
         // add_filter( 'the_content', [ $handler, 'get_content' ] );
 
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
