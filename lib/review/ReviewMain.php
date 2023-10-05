@@ -214,7 +214,7 @@ class ReviewMain
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
-        $permission_post_single = is_singular( [ 'post' ] );
+        $permission_post_single = is_singular( [ 'post', 'page' ] );
 
         $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
 
