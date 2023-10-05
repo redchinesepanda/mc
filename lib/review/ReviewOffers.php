@@ -124,11 +124,11 @@ class ReviewOffers
 	{
 		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::get_terms',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::get_terms',
 
-			'terms' => $terms,
-		] );
+		// 	'terms' => $terms,
+		// ] );
 
 		$items = [];
 
@@ -136,7 +136,7 @@ class ReviewOffers
 		{
 			foreach ( $terms as $term )
 			{
-				$items[] = $term->slug,
+				$items[] = $term->slug;
 			}
 		}
 
