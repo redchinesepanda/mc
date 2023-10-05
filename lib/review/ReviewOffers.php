@@ -72,7 +72,13 @@ class ReviewOffers
 
 	public static function inline_style()
 	{
-		if ( !ReviewMain::check() ) {
+		if ( !ReviewMain::check() )
+		{
+            return '';
+        }
+
+		if ( self::check_compilation() )
+		{
             return '';
         }
 
