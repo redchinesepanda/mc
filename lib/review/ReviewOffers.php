@@ -162,12 +162,6 @@ class ReviewOffers
 			$terms = self::get_terms( $id );
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::offer_query',
-
-			'terms' => $terms,
-		] );
-
 		if ( !empty( $terms ) )
 		{
 			$tax_query = [
@@ -182,6 +176,14 @@ class ReviewOffers
 				],
             ];
 		}
+
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::offer_query',
+
+			'id' => $id,
+
+			'terms' => $terms,
+		] );
 
 		return [
 			'numberposts' => -1,
