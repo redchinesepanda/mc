@@ -175,7 +175,7 @@ class ReviewOffers
 
                     'field' => 'slug',
 
-                    'terms' => $selected_term,
+                    'terms' => [ $selected_term ],
 
 					'operator' => 'IN',
 				],
