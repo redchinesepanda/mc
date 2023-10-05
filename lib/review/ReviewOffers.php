@@ -274,15 +274,15 @@ class ReviewOffers
 			}
 		}
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::get_offers',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::get_offers',
 
-			'atts' => $atts,
+		// 	'atts' => $atts,
 
-			'query' => $query,
+		// 	'query' => $query,
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 		
 		return $items;
 	}
@@ -303,6 +303,11 @@ class ReviewOffers
 	// 	return $items;
 	// }
 
+	public static function check_compilation()
+	{
+		return has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
+	}
+
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
@@ -319,14 +324,21 @@ class ReviewOffers
 		// 	'args' => $args,
 		// ] );
 
+		if ( self::check_compilation() )
+		{
+			return self::render_offers_compilation( $args );
+		}
+
 		return self::render_offers( $args );
 	}
 
 	const TEMPLATE = [
-		'offers' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers.php',
+		'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-main.php',
+
+		'compilation' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-compilation.php',
 	];
 
-    public static function render_offers( $args )
+    public static function render( $template, $args )
     {
 		if ( !ReviewMain::check() ) {
             return '';
@@ -334,11 +346,21 @@ class ReviewOffers
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'offers' ], false, $args );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function render_offers( $args )
+    {
+		return self::render( self::TEMPLATE[ 'main' ], $args );
+    }
+
+    public static function render_offers_compilation( $args )
+    {
+		return self::render( self::TEMPLATE[ 'compilation' ], $args );
     }
 
 	// public static function get_content( $content )
