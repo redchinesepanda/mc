@@ -210,7 +210,7 @@ class ReviewOffers
 
 		if ( !empty( $post ) )
 		{
-		// 	$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
+			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
 
 		// 	$offers = get_posts(  );
 
