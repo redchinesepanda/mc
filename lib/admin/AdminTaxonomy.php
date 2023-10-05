@@ -11,11 +11,11 @@ class AdminTaxonomy
             'offer_group',
         ],
 
-        'legal_bk_review' => [
-            'page_type',
+        // 'legal_bk_review' => [
+        //     'page_type',
 
-            'page_group',
-        ],
+        //     'page_group',
+        // ],
 
         'legal_billet' => [
             'billet_type',
