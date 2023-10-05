@@ -7,6 +7,8 @@ class AdminTaxonomy
             'page_type',
 
             'page_group',
+
+            'offer_group',
         ],
 
         'legal_bk_review' => [
