@@ -218,15 +218,15 @@ class ReviewMain
 
         $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
 
-        LegalDebug::debug( [
-            'permission_admin' => $permission_admin ? 'true' : 'false',
+        // LegalDebug::debug( [
+        //     'permission_admin' => $permission_admin ? 'true' : 'false',
 
-            'permission_post_type' => $permission_post_type ? 'true' : 'false',
+        //     'permission_post_type' => $permission_post_type ? 'true' : 'false',
 
-            'permission_term' => $permission_term ? 'true' : 'false',
+        //     'permission_term' => $permission_term ? 'true' : 'false',
 
-            'result' => $result ? 'true' : 'false',
-        ] );
+        //     'result' => $result ? 'true' : 'false',
+        // ] );
         
         return $result;
     }
