@@ -64,7 +64,7 @@ class ReviewOffers
 
 		// [legal-offers terms=""]
 
-		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
+		// add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
 
 	public static function inline_style()

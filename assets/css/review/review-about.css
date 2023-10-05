@@ -204,7 +204,8 @@
 }
 
 .legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate {
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
     background-image: url( '../../img/review/review-bet-here.svg' );
     background-position: right 22px center;
     background-repeat: no-repeat;
@@ -315,7 +316,8 @@
 }
 
 .legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate {
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
