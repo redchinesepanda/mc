@@ -122,9 +122,9 @@ class ReviewOffers
 
 	public static function get_terms( $id )
 	{
-		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
-
 		$items = [];
+
+		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
 
 		if ( !is_wp_error( $terms ) )
 		{
@@ -136,6 +136,8 @@ class ReviewOffers
 
 		LegalDebug::debug( [
 			'function' => 'ReviewOffers::get_terms',
+
+			'id' => $id,
 
 			'terms' => $terms,
 
