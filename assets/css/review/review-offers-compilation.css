@@ -9,6 +9,10 @@
 
 /* Position */
 
+.legal-offers-compilation {
+	padding-bottom: 30px;
+}
+
 .legal-offers-compilation .offers-compilation-item {
 	padding: 2px 28px;
 }
