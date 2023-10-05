@@ -147,7 +147,7 @@ class ReviewOffers
 		return $items;
 	}
 
-	public static function offer_query( $id, $terms = [] )
+	public static function offer_query( $id, $selected_term = '' )
 	{
 		$tax_query = [
 			[
@@ -157,12 +157,17 @@ class ReviewOffers
 			],
 		];
 
-		if ( empty( $terms ) )
+		if ( empty( $selected_term ) )
 		{
 			$terms = self::get_terms( $id );
-		}
 
-		if ( !empty( $terms ) )
+			if ( !empty( $terms ) )
+			{
+				$selected_term = array_shift( $terms );
+			}
+		} 
+
+		if ( !empty( $selected_term ) )
 		{
 			$tax_query = [
                 [
@@ -237,7 +242,7 @@ class ReviewOffers
 
 		if ( !empty( $post ) )
 		{
-			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
+			$query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
 			$offers = get_posts( $query );
 
@@ -259,26 +264,26 @@ class ReviewOffers
 	}
 
 	const PAIRS = [
-		'terms' => [],
+		'selected-term' => '',
 	];
 
-	public static function prepare_array( $items )
-	{
-		if ( !is_array( $items ) )
-		{
-			$items = preg_replace( '/\s*,\s*/', ',', filter_var( $items, FILTER_SANITIZE_STRING ) );
+	// public static function prepare_array( $items )
+	// {
+	// 	if ( !is_array( $items ) )
+	// 	{
+	// 		$items = preg_replace( '/\s*,\s*/', ',', filter_var( $items, FILTER_SANITIZE_STRING ) );
 	
-			return explode( ',', $items );
-		}
+	// 		return explode( ',', $items );
+	// 	}
 
-		return $items;
-	}
+	// 	return $items;
+	// }
 
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
 
-		$atts[ 'terms' ] = self::prepare_array( $atts[ 'terms' ] );
+		// $atts[ 'terms' ] = self::prepare_array( $atts[ 'terms' ] );
 
 		$args = self::get_offers( $atts );
 		
