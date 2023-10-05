@@ -2,17 +2,6 @@
 
 class ReviewOffers
 {
-	const PAGE_TYPE = [
-        'compilation' => 'compilation',
-    ];
-
-	public static function check()
-    {
-		$permission_term = !has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
-
-        return ReviewMain::check() && $permission_term;
-    }
-
 	const JS = [
         'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
     ];
@@ -42,13 +31,24 @@ class ReviewOffers
 	public static function register_inline_style()
     {
 		if ( self::check() ) {
-			// ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+			ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
 		}
     }
 
 	const SHORTCODE = [
 		'offers' => 'legal-offers',
 	];
+
+	const PAGE_TYPE = [
+        'compilation' => 'compilation',
+    ];
+
+	public static function check()
+    {
+		$permission_term = !has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
+
+        return ReviewMain::check() && $permission_term;
+    }
 
 	public static function register()
     {
@@ -75,7 +75,7 @@ class ReviewOffers
 
 		$style = [];
 
-		$style_items = self::get_offers();
+		// $style_items = self::get_offers();
 
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
