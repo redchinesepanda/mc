@@ -167,20 +167,20 @@ class ReviewOffers
 			}
 		} 
 
-		if ( !empty( $selected_term ) )
-		{
-			$tax_query = [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'offer' ],
+		// if ( !empty( $selected_term ) )
+		// {
+		// 	$tax_query = [
+        //         [
+        //             'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-                    'field' => 'slug',
+        //             'field' => 'slug',
 
-                    'terms' => [ $selected_term ],
+        //             'terms' => [ $selected_term ],
 
-					'operator' => 'IN',
-				],
-            ];
-		}
+		// 			'operator' => 'IN',
+		// 		],
+        //     ];
+		// }
 
 		// LegalDebug::debug( [
 		// 	'function' => 'ReviewOffers::offer_query',
