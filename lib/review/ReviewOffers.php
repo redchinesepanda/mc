@@ -257,6 +257,8 @@ class ReviewOffers
 
 			'atts' => $atts,
 
+			'query' => $query,
+
 			'items' => $items,
 		] );
 		
