@@ -112,17 +112,17 @@ class ReviewOffers
 		'offer' => 'offer_group',
 	];
 
-	const OFFER = [
-		// 'term_id',
+	// const OFFER = [
+	// 	// 'term_id',
 
-		// 'name',
+	// 	// 'name',
 
-		'slug',
-	];
+	// 	'slug',
+	// ];
 
 	public static function get_terms( $id )
 	{
-		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ], self::OFFER );
+		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
 
 		LegalDebug::debug( [
 			'function' => 'ReviewOffers::get_terms',
@@ -130,12 +130,17 @@ class ReviewOffers
 			'terms' => $terms,
 		] );
 
+		$items = [];
+
 		if ( !is_wp_error( $terms ) )
 		{
-			return $terms;
+			foreach ( $terms as $term )
+			{
+				$items[] = $term->slug,
+			}
 		}
 
-		return [];
+		return $items;
 	}
 
 	public static function offer_query( $id, $terms = [] )
