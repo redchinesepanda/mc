@@ -3,12 +3,12 @@
 class ReviewOffers
 {
 	const PAGE_TYPE = [
-        'compilation',
+        'compilation' => 'compilation',
     ];
 
 	public static function check()
     {
-		$permission_term = !has_term( self::PAGE_TYPE, self::TAXONOMY[ 'page_type' ] );
+		$permission_term = !has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
 
         return ReviewMain::check() && $permission_term;
     }
