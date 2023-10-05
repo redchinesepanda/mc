@@ -16,7 +16,8 @@
 
 .legal-offers-compilation .offers-compilation-item {
 	border-radius: 20px;
-	border: 1px solid rgba(10, 10, 10, 0.85);
+	/* border: 1px solid rgba(10, 10, 10, 0.85); */
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px;
 }
 
 .legal-offers-compilation .offers-compilation-item:hover{
