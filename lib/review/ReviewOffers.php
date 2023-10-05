@@ -54,7 +54,7 @@ class ReviewOffers
     {
         $handler = new self();
 
-        // add_filter( 'the_content', [ $handler, 'get_content' ] );
+        add_filter( 'the_content', [ $handler, 'get_content' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
@@ -147,20 +147,20 @@ class ReviewOffers
 			$terms = self::get_terms( $id );
 		}
 
-		// if ( !empty( $terms ) )
-		// {
-		// 	$tax_query = [
-        //         [
-        //             'taxonomy' => self::TAXONOMY[ 'offer' ],
+		if ( !empty( $terms ) )
+		{
+			$tax_query = [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-        //             'field' => 'slug',
+                    'field' => 'slug',
 
-        //             'terms' => $terms,
+                    'terms' => $terms,
 
-		// 			'operator' => 'IN',
-		// 		],
-        //     ];
-		// }
+					'operator' => 'IN',
+				],
+            ];
+		}
 
 		return [
 			'numberposts' => -1,
@@ -216,12 +216,12 @@ class ReviewOffers
 		{
 			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
 
-		// 	$offers = get_posts(  );
+			$offers = get_posts(  );
 
-		// 	if ( !empty( $offers ) )
-		// 	{
-		// 		$items = self::parse_offers( $offers );
-			// }
+			if ( !empty( $offers ) )
+			{
+				$items = self::parse_offers( $offers );
+			}
 		}
 		
 		return $items;
