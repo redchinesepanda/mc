@@ -75,7 +75,7 @@ class ReviewOffers
 
 		$style = [];
 
-		// $style_items = self::get_offers();
+		$style_items = self::get_offers();
 
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
@@ -206,19 +206,19 @@ class ReviewOffers
 	{
 		$items = [];
 
-		$post = get_post();
+		// $post = get_post();
 
-		if ( !empty( $post ) )
-		{
-			$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
+		// if ( !empty( $post ) )
+		// {
+		// 	$query = self::offer_query( $post->ID, $atts[ 'terms' ] );
 
-			$offers = get_posts(  );
+		// 	$offers = get_posts(  );
 
-			if ( !empty( $offers ) )
-			{
-				$items = self::parse_offers( $offers );
-			}
-		}
+		// 	if ( !empty( $offers ) )
+		// 	{
+		// 		$items = self::parse_offers( $offers );
+		// 	}
+		// }
 		
 		return $items;
 	}
