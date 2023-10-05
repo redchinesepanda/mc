@@ -138,10 +138,10 @@ class ReviewOffers
 			],
 		];
 
-		// if ( empty( $terms ) )
-		// {
-		// 	$terms = self::get_terms( $id );
-		// }
+		if ( empty( $terms ) )
+		{
+			$terms = self::get_terms( $id );
+		}
 
 		// if ( !empty( $terms ) )
 		// {
