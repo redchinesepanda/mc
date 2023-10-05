@@ -266,11 +266,18 @@ class ReviewOffers
 		{
 			$query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
-			$offers = get_posts( $query );
+			$posts = get_posts( $query );
 
-			if ( !empty( $offers ) )
+			if ( !empty( $posts ) )
 			{
-				$items = self::parse_offers( $offers );
+				if ( self::check_compilation() )
+				{
+					$items = self::parse_offers_compilation( $posts );
+				}
+				else
+				{
+					$items = self::parse_offers( $posts );
+				}
 			}
 		}
 
