@@ -273,6 +273,14 @@ class ReviewOffers
 		$atts[ 'terms' ] = self::prepare_array( $atts[ 'terms' ] );
 
 		$args = self::get_offers( $atts );
+		
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::prepare',
+
+			'atts' => $atts,
+
+			'args' => $args,
+		] );
 
 		return self::render_offers( $args );
 	}
