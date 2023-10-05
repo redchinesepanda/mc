@@ -42,7 +42,7 @@ class ReviewOffers
 	public static function register_inline_style()
     {
 		if ( self::check() ) {
-			ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
+			// ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
 		}
     }
 
