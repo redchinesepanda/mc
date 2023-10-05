@@ -177,7 +177,7 @@ class ReviewOffers
 
                     'terms' => $selected_term,
 
-					// 'operator' => 'IN',
+					'operator' => 'IN',
 				],
             ];
 		}
