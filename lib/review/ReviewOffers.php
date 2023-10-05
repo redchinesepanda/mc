@@ -2,20 +2,15 @@
 
 class ReviewOffers
 {
-	const JS = [
-        'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
-    ];
-
-    public static function register_script()
-    {
-		// if ( self::check() ) {
-			ReviewMain::register_script( self::JS );
-		// }
-    }
-
 	const CSS = [
-        'review-offers' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers.css',
+        'review-offers-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
+
+			'ver' => '1.0.0',
+		],
+
+        'review-offers-compilation' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-compilation.css',
 
 			'ver' => '1.0.0',
 		],
@@ -25,6 +20,17 @@ class ReviewOffers
     {
 		// if ( self::check() ) {
         	ReviewMain::register_style( self::CSS );
+		// }
+    }
+
+	const JS = [
+        'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
+    ];
+
+    public static function register_script()
+    {
+		// if ( self::check() ) {
+			ReviewMain::register_script( self::JS );
 		// }
     }
 
