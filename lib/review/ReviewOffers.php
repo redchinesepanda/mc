@@ -246,6 +246,14 @@ class ReviewOffers
 				$items = self::parse_offers( $offers );
 			}
 		}
+
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::get_offers',
+
+			'atts' => $atts,
+
+			'items' => $items,
+		] );
 		
 		return $items;
 	}
