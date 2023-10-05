@@ -124,12 +124,6 @@ class ReviewOffers
 	{
 		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'ReviewOffers::get_terms',
-
-		// 	'terms' => $terms,
-		// ] );
-
 		$items = [];
 
 		if ( !is_wp_error( $terms ) )
@@ -139,6 +133,14 @@ class ReviewOffers
 				$items[] = $term->slug;
 			}
 		}
+
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::get_terms',
+
+			'terms' => $terms,
+
+			'items' => $items,
+		] );
 
 		return $items;
 	}
