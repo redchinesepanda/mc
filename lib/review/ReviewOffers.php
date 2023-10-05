@@ -130,33 +130,33 @@ class ReviewOffers
 
 	public static function offer_query( $id, $terms = [] )
 	{
-		$tax_query = [
-			[
-				'taxonomy' => self::TAXONOMY[ 'offer' ],
+		// $tax_query = [
+		// 	[
+		// 		'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-				'operator' => 'EXISTS',
-			],
-		];
+		// 		'operator' => 'EXISTS',
+		// 	],
+		// ];
 
-		if ( empty( $terms ) )
-		{
-			$terms = self::get_terms( $id );
-		}
+		// if ( empty( $terms ) )
+		// {
+		// 	$terms = self::get_terms( $id );
+		// }
 
-		if ( !empty( $terms ) )
-		{
-			$tax_query = [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'offer' ],
+		// if ( !empty( $terms ) )
+		// {
+		// 	$tax_query = [
+        //         [
+        //             'taxonomy' => self::TAXONOMY[ 'offer' ],
 
-                    'field' => 'slug',
+        //             'field' => 'slug',
 
-                    'terms' => $terms,
+        //             'terms' => $terms,
 
-					'operator' => 'IN',
-				],
-            ];
-		}
+		// 			'operator' => 'IN',
+		// 		],
+        //     ];
+		// }
 
 		return [
 			'numberposts' => -1,
