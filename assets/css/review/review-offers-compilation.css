@@ -32,6 +32,7 @@
 	font-weight: 400;
 	letter-spacing: normal;
 	line-height: 28px;
+	text-decoration: none;
 }
 
 .legal-offers-compilation .offers-compilation-item:not( :hover ) {
