@@ -75,7 +75,7 @@ class ReviewOffers
 
 		$style = [];
 
-		// $style_items = self::get_offers();
+		$style_items = self::get_offers();
 
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
