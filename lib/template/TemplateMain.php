@@ -24,6 +24,10 @@ class TemplateMain
 
     public static function render_notfound()
     {
+		LegalDebug::debug( [
+			'function' => 'TemplateMain::render_notfound',
+		] );
+		
 		return TemplateNotFound::render();
     }
 
