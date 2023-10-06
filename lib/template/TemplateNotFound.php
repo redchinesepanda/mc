@@ -22,12 +22,12 @@ class TemplateNotFound
 	// 	add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     // }
 
-	public static function check()
-    {
-		$permission_category = ToolNotFound::check();
+	// public static function check()
+    // {
+	// 	$permission_category = ToolNotFound::check();
 
-		return $permission_category;
-    }
+	// 	return $permission_category;
+    // }
 
 	const TEMPLATE = [
         'legal-template-notfound' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-notfound.php',
@@ -35,10 +35,10 @@ class TemplateNotFound
 
 	public static function render()
     {
-		if ( !self::check() )
-        {
-            return '';
-        }
+		// if ( !self::check() )
+        // {
+        //     return '';
+        // }
 
         ob_start();
 		
