@@ -92,7 +92,7 @@ class ToolNotFound
 			LegalDebug::debug( [
 				'function' => 'ToolNotFound::check',
 	
-				'permission_category' => $permission_category ? 'true' : 'false',
+				'permissionwp_query_category' => $wp_query,
 			] );
 		}
 	}
