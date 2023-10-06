@@ -82,15 +82,15 @@ class CompilationBonus
                 'description' => $bonus[ 'description' ],
 
                 'review' => [
-                    'href' => $logo[ 'href' ],
+                    'href' => $logo[ 'review' ][ 'href' ],
 
-                    'label' => $logo[ 'label' ],
+                    'label' => $logo[ 'review' ][ 'label' ],
                 ],
 
                 'button' => [
-                    'href' => $play[ 'href' ],
+                    'href' => $play[ 'play' ][ 'href' ],
 
-                    'label' => $play[ 'label' ],
+                    'label' => $play[ 'play' ][ 'label' ],
                 ],
             ];
 
