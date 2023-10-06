@@ -32,11 +32,11 @@ class ToolNotFound
 	{
 		$permission_category = self::check_category();
 
-		LegalDebug::debug( [
-			'function' => 'ToolNotFound::check',
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::check',
 
-			'permission_category' => $permission_category ? 'true' : 'false',
-		] );
+		// 	'permission_category' => $permission_category ? 'true' : 'false',
+		// ] );
 
 		return $permission_category;
 	}
@@ -44,6 +44,22 @@ class ToolNotFound
 	public static function check_category()
 	{
 		return is_category();
+	}
+
+	public static function set_not_found()
+	{
+		if ( self::check() )
+		{
+			global $wp_query;
+
+			$wp_query->set_404();
+			
+			// LegalDebug::debug( [
+			// 	'function' => 'ToolNotFound::check',
+	
+			// 	'permissionwp_query_category' => $wp_query,
+			// ] );
+		}
 	}
 
 	// public static function check_not_found()
@@ -80,22 +96,6 @@ class ToolNotFound
 
 	// 	return $permission_country && $permission_page;
     // }
-
-	public static function set_not_found()
-	{
-		if ( self::check() )
-		{
-			global $wp_query;
-
-			$wp_query->set_404();
-			
-			LegalDebug::debug( [
-				'function' => 'ToolNotFound::check',
-	
-				'permissionwp_query_category' => $wp_query,
-			] );
-		}
-	}
 
 	// public static function get_trash()
 	// {
