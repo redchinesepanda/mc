@@ -191,7 +191,7 @@ class ReviewTitle
 			$node->textContent = $node->textContent . ' ' . $date;
 		}
 
-		return $dom->saveHTML();
+		return ReviewTitle::replace_placeholder( $dom->saveHTML() );
 	}
 
 	public static function style_formats_header( $settings )
