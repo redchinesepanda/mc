@@ -35,17 +35,17 @@ class BilletBonus
             }
         }
 
-        LegalDebug::debug( [
-            'function' => 'BilletBonus::get_feture_bonus',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletBonus::get_feture_bonus',
 
-            'feature_bonus_item' => $feature_bonus_item,
+        //     'feature_bonus_item' => $feature_bonus_item,
 
-            'result' => $result,
+        //     'result' => $result,
 
-            'id' => $id,
+        //     'id' => $id,
 
-            'filter' => $filter,
-        ] );
+        //     'filter' => $filter,
+        // ] );
 
         return $result;
     }
@@ -104,6 +104,8 @@ class BilletBonus
         
         LegalDebug::debug( [
             'function' => 'BilletBonus::get_bonus',
+
+            'billet' => $billet,
 
             'feature_bonus_item' => $feature_bonus_item,
 
