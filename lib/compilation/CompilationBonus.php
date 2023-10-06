@@ -27,6 +27,8 @@ class CompilationBonus
 
 			$item[ 'billet-right' ] = BilletRight::get( $item );
 
+			$item[ 'billet-bonus' ] = BilletBonus::get( $item );
+
 			$item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
 
 			$item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];

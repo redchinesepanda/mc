@@ -68,6 +68,13 @@ class ReviewTitle
 		'{MONTH_YEAR}' => self::CLASSES[ 'date-month-year' ],
 	];
 
+	public static function check_placeholder( $content )
+	{
+		$needles = array_keys( self::PLACEHOLDER );
+
+		return array_reduce( $needles , fn( $a, $n ) => $a || str_contains( $content, $n ), false );
+	}
+
     public static function replace_placeholder( $title )
 	{
 		$current_date = '';
@@ -180,7 +187,14 @@ class ReviewTitle
 
         $nodes = self::get_nodes( $dom );
 
-		if ( $nodes->length == 0 ) {
+		$permission_nodes = $nodes->length == 0;
+
+		$permission_placeholders = !self::check_placeholder( $content );
+
+		// if ( $nodes->length == 0 )
+		
+		if ( $permission_nodes && $permission_placeholders )
+		{
 			return $content;
 		}
 
@@ -191,7 +205,7 @@ class ReviewTitle
 			$node->textContent = $node->textContent . ' ' . $date;
 		}
 
-		return ReviewTitle::replace_placeholder( $dom->saveHTML() );
+		return self::replace_placeholder( $dom->saveHTML() );
 	}
 
 	public static function style_formats_header( $settings )

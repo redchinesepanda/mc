@@ -225,6 +225,8 @@ class ReviewMain
 
         //     'permission_term' => $permission_term ? 'true' : 'false',
 
+        //     'permission_post_single' => $permission_post_single ? 'true' : 'false',
+
         //     'result' => $result ? 'true' : 'false',
         // ] );
         
