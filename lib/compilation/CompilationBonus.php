@@ -86,6 +86,12 @@ class CompilationBonus
 
                     'label' => $logo[ 'label' ],
                 ],
+
+                'button' => [
+                    'href' => $play[ 'href' ],
+
+                    'label' => $play[ 'label' ],
+                ],
             ];
 
             LegalDebug::debug( [

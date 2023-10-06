@@ -21,8 +21,8 @@
 	</div>
 	<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
 		<div class="legal-compilation-review">
-			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" draggable="false" class="underline compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
+			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="underline compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
 		</div>
 	<?php endif; ?>
-	<a href="<?php echo $args[ 'billet-right' ][ 'play' ][ 'href' ]; ?>" rel="nofollow" target="_blank" class="legal-compilation-button" draggable="false"><?php echo $args[ 'billet-right' ][ 'play' ][ 'label' ]; ?></a>
+	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" rel="nofollow" class="legal-compilation-button" draggable="false"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 </div>
