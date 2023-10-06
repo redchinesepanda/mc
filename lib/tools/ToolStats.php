@@ -67,11 +67,11 @@ class ToolStats
 			] );
 		}
 
-		// LegalDebug::die( [
-		// 	'function' => 'ToolStats::af_redirect',
+		LegalDebug::die( [
+			'function' => 'ToolStats::af_redirect',
 
-		// 	'data' => $data,
-		// ] );
+			'data' => $data,
+		] );
 
 		// }
 	}
