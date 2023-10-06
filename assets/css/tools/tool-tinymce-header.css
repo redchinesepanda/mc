@@ -26,9 +26,9 @@
 
 #tinymce .legal-header-month-year,
 #tinymce .legal-header-year {
-	padding-right: 34px;
+	padding-left: 34px;
 
-	background-position: right center;
+	background-position: left center;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
