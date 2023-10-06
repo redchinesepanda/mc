@@ -74,9 +74,9 @@ class CompilationBonus
                 ],
 
                 'title' => [
-                    'href' => $title_label,
+                    'href' => $title[ 'href' ],
 
-                    'label' => $title[ 'label' ],
+                    'label' => $title_label,
                 ],
 
                 'description' => $bonus[ 'description' ],
