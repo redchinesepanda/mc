@@ -27,7 +27,7 @@ class CompilationBonus
             
             $bonus = BilletBonus::get( $args );
 
-            $play = BilletRight::get( $item );
+            $play = BilletRight::get( $args );
 
 			// $item[ 'billet-logo' ] = BilletLogo::get( $item );
 
