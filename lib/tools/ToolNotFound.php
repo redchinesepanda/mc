@@ -30,7 +30,15 @@ class ToolNotFound
 
 	public static function check()
 	{
-		return self::check_category();
+		$permission_category = self::check_category();
+
+		LegalDebug::debug( [
+			'function' => 'ToolNotFound::check',
+
+			'permission_category' => $permission_category ? 'true' : 'false',
+		] );
+
+		return $permission_category;
 	}
 
 	public static function check_category()
