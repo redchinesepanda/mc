@@ -50,7 +50,7 @@ class BilletBonus
         return $result;
     }
 
-    private static function get_bonus( $billet )
+    public static function get_bonus( $billet )
     {
         $args = [];
 
