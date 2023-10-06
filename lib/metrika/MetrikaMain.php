@@ -10,7 +10,7 @@ class MetrikaMain
         ],
 
         'legal-metrika-ya-go' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-go',
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-go.js',
 
             'ver' => '1.0.0',
 
