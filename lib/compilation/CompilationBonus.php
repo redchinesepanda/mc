@@ -99,13 +99,13 @@ class CompilationBonus
 
                 // 'args' => $args,
 
-                'logo' => $logo,
+                // 'logo' => $logo,
 
                 // 'title' => $title,
 
-                // 'bonus' => $bonus,
+                'bonus' => $bonus,
 
-                'play' => $play,
+                // 'play' => $play,
             ] );
 
             $items[] = $item;
