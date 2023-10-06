@@ -71,7 +71,7 @@ class CompilationBonus
                     'src' => $logo[ 'logo' ][ 'src' ],
 
                     'alt' => $title[ 'label' ],
-                ]
+                ],
 
                 'title' => [
                     'href' => $title_label,
