@@ -88,6 +88,12 @@ class ToolNotFound
 			global $wp_query;
 
 			$wp_query->set_404();
+			
+			LegalDebug::debug( [
+				'function' => 'ToolNotFound::check',
+	
+				'permission_category' => $permission_category ? 'true' : 'false',
+			] );
 		}
 	}
 
