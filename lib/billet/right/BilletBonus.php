@@ -102,13 +102,13 @@ class BilletBonus
             }
         }
         
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get_bonus',
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get_bonus',
 
-        //     'feature_bonus_item' => $feature_bonus_item,
+            'feature_bonus_item' => $feature_bonus_item,
 
-        //     'args' => $args,
-        // ] );
+            'args' => $args,
+        ] );
 
         return $args;
     }
