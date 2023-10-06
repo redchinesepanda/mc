@@ -19,34 +19,52 @@ class CompilationBonus
 
         foreach ( $billets as $index => $billet )
         {
-            $bonus = BilletBonus::get( $item );
+            $args = BilletMain::get( $billet );
 
-            $item = BilletMain::get( $billet );
+            $logo = BilletLogo::get( $args );
 
-			$item[ 'billet-logo' ] = BilletLogo::get( $item );
+            $title = BilletTitle::get( $args );
+            
+            $bonus = BilletBonus::get( $args );
 
-			$item[ 'billet-title' ] = BilletTitle::get( $item );
+			// $item[ 'billet-logo' ] = BilletLogo::get( $item );
 
-			$item[ 'billet-right' ] = BilletRight::get( $item );
+			// $item[ 'billet-title' ] = BilletTitle::get( $item );
 
-			$item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
+			// $item[ 'billet-right' ] = BilletRight::get( $item );
 
-			$item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
+			// $item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
 
-			if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
-				// $item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
+			// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
+
+			// if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
+			// 	// $item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
 				
-                $item[ 'title' ][ 'label' ] = $bonus[ 'title' ];
+            //     $item[ 'title' ][ 'label' ] = $bonus[ 'title' ];
 
-				// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
-			}
+            //     $item[ 'description' ] = $bonus[ 'description' ];
+
+			// 	// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
+			// }
+
+            $item = [
+                'selector' => $args[ 'selector' ],
+
+                'logo' => [
+                    'href' => $args[ 'selector' ],
+                ]
+            ];
 
             LegalDebug::debug( [
                 'function' => 'CompilationBonus::get_billets_bonus',
 
-                'get-bonus' => $item[ 'get-bonus' ],
+                'args' => $args,
 
-                'item' => $item,
+                'title' => $title,
+
+                'bonus' => $bonus,
+
+                'logo' => $logo,
             ] );
 
             $items[] = $item;
