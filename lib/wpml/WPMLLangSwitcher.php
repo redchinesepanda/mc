@@ -77,27 +77,27 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
-    const EXCLUDE = [
-        'pt_GB',
+    // const EXCLUDE = [
+    //     'pt_GB',
 
-        'pt_ES',
+    //     'pt_ES',
 
-        'sr_SR',
+    //     'sr_SR',
 
-        'se_SE',
+    //     'se_SE',
 
-        'cs_CS',
+    //     'cs_CS',
 
-        'en',
+    //     'en',
 
-        'es',
+    //     'es',
 
-        'ru',
+    //     'ru',
 
-        'dk_DA',
+    //     'dk_DA',
 
-        'pt_BP',
-    ];
+    //     'pt_BP',
+    // ];
 
     public static function choises()
     {
@@ -106,7 +106,9 @@ class WPMLLangSwitcher
 
     public static function exclude( $languages )
     {
-        return WPMLMain::exclude( $languages, self::EXCLUDE );
+        // return WPMLMain::exclude( $languages, self::EXCLUDE );
+        
+        return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
     }
 
     public static function get_not_found()

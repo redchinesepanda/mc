@@ -287,7 +287,7 @@ class ReviewTitle
 					[
 						'title' => 'H1-H2 Year',
 						
-						'selector' => 'h1,h2',
+						'selector' => 'h1,h2,h3,h4,p',
 
 						'classes' => self::CLASSES[ 'date-year' ],
 					],
@@ -295,7 +295,7 @@ class ReviewTitle
 					[
 						'title' => 'H1-H2 Month Year',
 						
-						'selector' => 'h1,h2',
+						'selector' => 'h1,h2,h3,h4,p',
 
 						'classes' => self::CLASSES[ 'date-month-year' ],
 					],
