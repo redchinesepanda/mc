@@ -19,6 +19,8 @@ class CompilationBonus
 
         foreach ( $billets as $index => $billet )
         {
+            $bonus = BilletBonus::get( $item );
+
             $item = BilletMain::get( $billet );
 
 			$item[ 'billet-logo' ] = BilletLogo::get( $item );
@@ -27,16 +29,14 @@ class CompilationBonus
 
 			$item[ 'billet-right' ] = BilletRight::get( $item );
 
-			// $item[ 'get-bonus' ] = BilletBonus::get_bonus( $item );
-			
-            $item[ 'get-bonus' ] = BilletBonus::get( $item );
-
 			$item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
 
 			$item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 
 			if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
-				$item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
+				// $item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
+				
+                $item[ 'title' ][ 'label' ] = $bonus[ 'title' ];
 
 				// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 			}
@@ -45,6 +45,8 @@ class CompilationBonus
                 'function' => 'CompilationBonus::get_billets_bonus',
 
                 'get-bonus' => $item[ 'get-bonus' ],
+
+                'item' => $item,
             ] );
 
             $items[] = $item;
