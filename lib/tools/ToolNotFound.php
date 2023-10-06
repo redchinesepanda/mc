@@ -50,9 +50,9 @@ class ToolNotFound
 	{
 		if ( self::check() )
 		{
-			// global $wp_query;
+			global $wp_query;
 
-			// $wp_query->set_404();
+			$wp_query->set_404();
 			
 			// LegalDebug::debug( [
 			// 	'function' => 'ToolNotFound::check',
