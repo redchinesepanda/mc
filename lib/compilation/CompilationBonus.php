@@ -37,9 +37,11 @@ class CompilationBonus
 				// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 			}
 
-            // LegalDebug::debug( [
-            //     'BilletLogo' => BilletLogo::get( $item ),
-            // ] );
+            LegalDebug::debug( [
+                'function' => 'CompilationBonus::get_billets_bonus',
+
+                'item' => $item,
+            ] );
 
             $items[] = $item;
         }
