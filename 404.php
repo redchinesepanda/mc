@@ -6,6 +6,6 @@ Template Name: 404 Not Found
 
 */
 
-echo TemplateMain::render();
+echo TemplateMain::render_notfound();
 
 ?>
