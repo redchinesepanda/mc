@@ -9,7 +9,7 @@ class ToolNotFound
     {
         $handler = new self();
 
-		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
@@ -27,6 +27,16 @@ class ToolNotFound
 	// 		'ru',
 	// 	],
 	// ];
+
+	public static function check()
+	{
+		return self::check_category();
+	}
+
+	public static function check_category()
+	{
+		return is_category();
+	}
 
 	// public static function check_not_found()
     // {
@@ -63,15 +73,15 @@ class ToolNotFound
 	// 	return $permission_country && $permission_page;
     // }
 
-	// public static function set_not_found()
-	// {
-	// 	if ( self::check_not_found() )
-	// 	{
-	// 		global $wp_query;
+	public static function set_not_found()
+	{
+		if ( self::check() )
+		{
+			global $wp_query;
 
-	// 		$wp_query->set_404();
-	// 	}
-	// }
+			$wp_query->set_404();
+		}
+	}
 
 	// public static function get_trash()
 	// {
