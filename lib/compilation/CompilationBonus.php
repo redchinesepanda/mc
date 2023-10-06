@@ -97,13 +97,13 @@ class CompilationBonus
             LegalDebug::debug( [
                 'function' => 'CompilationBonus::get_billets_bonus',
 
-                'args' => $args,
+                // 'args' => $args,
 
                 'logo' => $logo,
 
-                'title' => $title,
+                // 'title' => $title,
 
-                'bonus' => $bonus,
+                // 'bonus' => $bonus,
 
                 'play' => $play,
             ] );
