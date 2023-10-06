@@ -27,6 +27,8 @@ class CompilationBonus
             
             $bonus = BilletBonus::get( $args );
 
+            $play = BilletRight::get( $item );
+
 			// $item[ 'billet-logo' ] = BilletLogo::get( $item );
 
 			// $item[ 'billet-title' ] = BilletTitle::get( $item );
@@ -47,12 +49,43 @@ class CompilationBonus
 			// 	// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
 			// }
 
+            $title_label = $title[ 'label' ];
+
+            if ( !empty( $bonus[ 'title' ] ) )
+            {
+                $title_label = $bonus[ 'title' ];
+            }
+
             $item = [
                 'selector' => $args[ 'selector' ],
 
+                'font' => $logo[ 'review' ][ 'font' ],
+
+                'color' => $args[ 'color' ],
+
                 'logo' => [
-                    'href' => $args[ 'selector' ],
+                    'class' => $logo[ 'logo' ][ 'class' ],
+
+                    'href' => $logo[ 'logo' ][ 'href' ],
+
+                    'src' => $logo[ 'logo' ][ 'src' ],
+
+                    'alt' => $title[ 'label' ],
                 ]
+
+                'title' => [
+                    'href' => $title_label,
+
+                    'label' => $title[ 'href' ],
+                ],
+
+                'description' => $bonus[ 'description' ],
+
+                'review' => [
+                    'href' => $logo[ 'href' ],
+
+                    'label' => $logo[ 'label' ],
+                ],
             ];
 
             LegalDebug::debug( [
@@ -60,11 +93,13 @@ class CompilationBonus
 
                 'args' => $args,
 
+                'logo' => $logo,
+
                 'title' => $title,
 
                 'bonus' => $bonus,
 
-                'logo' => $logo,
+                'play' => $play,
             ] );
 
             $items[] = $item;
