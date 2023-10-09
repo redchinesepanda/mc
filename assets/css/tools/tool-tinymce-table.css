@@ -21,6 +21,14 @@
 	margin-left: 20px;
 }
 
+/* legal-column-3 */
+
+#tinymce table.legal-column {
+	display: inline-block;
+	margin: 0px;
+	width: calc(100%/3 - 3px);
+}
+
 /* legal-raw */
 
 #tinymce table.legal-raw tr:first-child {
