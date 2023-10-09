@@ -20,11 +20,11 @@
 	width: calc(50% - 10px);
 }
 
-#tinymce table.legal-column:nth-child( n+1 ) {
+#tinymce table.legal-column:nth-child( 2n ) {
 	margin-right: 10px;
 }
 
-#tinymce table.legal-column:nth-child( n ) {
+#tinymce table.legal-column:nth-child( 2n+1 ) {
 	margin-left: 10px;
 }
 
