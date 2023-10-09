@@ -6,7 +6,7 @@ class ReviewOffers
         'review-offers-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         'review-offers-compilation' => [
