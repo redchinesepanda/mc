@@ -16,10 +16,18 @@
         float: left;
     }
 
+    .tcb-post-content .legal-column-3 {
+        display: inline-block;
+    }
+
     /* Review Position */
 
     .tcb-post-content table.legal-column + table.legal-column {
         margin-left: 20px;
+    }
+
+    .tcb-post-content .legal-column-3 {
+        margin: 0px;
     }
 
     /* Review Width and Height */
@@ -28,6 +36,9 @@
         width: calc( 50% - 10px );
     }
 
+    .tcb-post-content .legal-column-3 {
+        width: calc(100%/3 - 5px);
+    }
 }
 
 /* Review Position */

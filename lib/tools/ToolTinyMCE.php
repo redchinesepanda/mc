@@ -57,26 +57,37 @@ class ToolTinyMCE
 				'title' => 'По умолчанию',
 				'value' => '',
 			],
+
 			[
 				'title' => 'Ряд и Столбец',
 				'value' => 'legal-raw-column',
 			],
+
 			[
 				'title' => 'Ряд',
 				'value' => 'legal-raw',
 			],
+
 			[
 				'title' => 'Галка',
 				'value' => 'legal-check',
 			],
+
 			[
-				'title' => 'Колонка',
+				'title' => 'Колонка 50%',
 				'value' => 'legal-column',
 			],
+
+			[
+				'title' => 'Колонка 33.333%',
+				'value' => 'legal-column-3',
+			],
+
 			[
 				'title' => 'Статистика',
 				'value' => 'legal-stats',
 			],
+
 			[
 				'title' => 'Счетчик',
 				'value' => ReviewCounter::CLASSES[ 'base' ],
@@ -95,6 +106,7 @@ class ToolTinyMCE
 				'title' => 'По умолчанию',
 				'value' => '',
 			],
+
 			[
 				'title' => 'Крест',
 				'value' => 'legal-cross',
