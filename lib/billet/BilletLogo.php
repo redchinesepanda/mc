@@ -58,7 +58,7 @@ class BilletLogo
 
         $args['logo']['src'] = $src;
 
-        $args['logo']['alt'] = $src;
+        $args['logo']['alt'] = $alt;
 
         return $args;
     }
