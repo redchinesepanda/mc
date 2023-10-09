@@ -94,6 +94,8 @@ class BilletMain
 
     const FIELD = [
         'about' => 'review-about',
+
+        'main-description' => 'billet-feture-main-description',
     ];
 
     const ABOUT = [
@@ -317,25 +319,68 @@ class BilletMain
         ];
     }
 
+    const FETURE_MAIN_DESCRIPTION = [
+        'id' => 'billet-feture-id',
+
+        'description' => 'billet-main-description'
+    ];
+
+    public static function get_main_description( $id, $filter = [] )
+    {
+        $main_description = '';
+
+        $permission_main_description = ( !empty( $filter ) ? $filter[ 'description' ] : true );
+
+        if ( $permission_main_description )
+        {
+            $feature_main_description = get_field( self::FIELD[ 'main-description' ], $id );
+
+            if ( $feature_main_description )
+            {
+                foreach ( $feature_main_description as $feature_main_description_item )
+                {
+                    if ( in_array( $feature_main_description_item[ self::FETURE_MAIN_DESCRIPTION[ 'id' ] ], $filter[ 'features' ] ) )
+                    {
+                        $main_description = $feature_main_description_item[ self::FETURE_MAIN_DESCRIPTION[ 'description' ] ];
+                    }
+                }
+            }
+
+            if ( empty( $main_description ) )
+            {
+                $group = get_field( self::FIELD[ 'about' ], $id );
+
+                if ( $group )
+                {
+                    $main_description = $group[ self::ABOUT[ 'description' ] ];
+                }
+            } 
+        }
+
+        return $main_description;
+    }
+
     public static function get( $args )
     {
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $description = '';
+        $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
-        $group = get_field( self::FIELD[ 'about' ], $id );
+        // $description = '';
 
-        if ( $group )
-        {
-            $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
+        // $group = get_field( self::FIELD[ 'about' ], $id );
 
-            if ( $filter_description )
-            {
-                $description = $group[ self::ABOUT[ 'description' ] ];
-            }
-        }
+        // if ( $group )
+        // {
+        //     $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
+
+        //     if ( $filter_description )
+        //     {
+        //         $description = $group[ self::ABOUT[ 'description' ] ];
+        //     }
+        // }
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
