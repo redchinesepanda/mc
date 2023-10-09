@@ -105,6 +105,10 @@
     background-color: #ffffff;
 }
 
+.tcb-post-content table caption {
+    background-color: #FAFCFE;
+}
+
 /* Table with Thead and Tbody */
 
 .tcb-post-content table:not( [ class ] ) thead tr:nth-child( 2n+1 ) {
