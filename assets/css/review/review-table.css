@@ -62,6 +62,13 @@
     }
 }
 
+/* Display */
+
+.tcb-post-content table.legal-raw.legal-column tbody,
+.tcb-post-content table.legal-raw.legal-column-3 tbody {
+    display: table;
+}
+
 /* Review Position */
 
 .tcb-post-content table {
@@ -76,6 +83,11 @@
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 ) {
+    width: 100%;
+}
+
+.tcb-post-content table.legal-raw.legal-column tbody,
+.tcb-post-content table.legal-raw.legal-column-3 tbody {
     width: 100%;
 }
 
