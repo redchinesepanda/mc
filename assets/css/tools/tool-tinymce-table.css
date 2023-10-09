@@ -16,7 +16,6 @@
 
 #tinymce table.legal-column {
 	display: inline-block;
-	margin: 0px;
 	width: calc(50% - 10px);
 }
 
@@ -28,20 +27,10 @@
 	margin-left: 10px;
 }
 
-/* #tinymce table.legal-column {
-	width: calc( 50% - 10px );
-	float: left;
-} */
-
-/* #tinymce table.legal-column + table.legal-column {
-	margin-left: 20px;
-} */
-
 /* legal-column-3 */
 
 #tinymce table.legal-column-3 {
 	display: inline-block;
-	margin: 0px;
 	width: calc(100% / 3 - 12px);
 }
 
