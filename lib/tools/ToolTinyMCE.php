@@ -221,6 +221,7 @@ class ToolTinyMCE
 		
 						'classes' => 'legal-column-3',
 					],
+				],
 			],
 		] );
 	}
