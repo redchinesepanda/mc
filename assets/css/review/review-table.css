@@ -39,16 +39,16 @@
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n ) {
-        margin-right: 12px;
+        margin-left: 12px;
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n+1 ) {
-        margin-right: 6px;
-        margin-left: 6px;
+        margin-right: 12px;
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n+2 ) {
-        margin-left: 12px;
+        margin-right: 6px;
+        margin-left: 6px;
     }
 
     /* Review Width and Height */
