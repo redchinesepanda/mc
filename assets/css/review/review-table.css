@@ -37,7 +37,7 @@
     }
 
     .tcb-post-content .legal-column-3 {
-        width: calc(100%/3 - 3px);
+        width: calc(100% / 3 - 3px);
     }
 }
 
