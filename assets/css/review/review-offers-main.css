@@ -57,7 +57,7 @@
 	display: block;
 }
 
-.legal-footer .item-afillate[ href='' ] {
+.legal-other-offers .item-afillate[ href='' ] {
 	pointer-events: none;
 }
 
