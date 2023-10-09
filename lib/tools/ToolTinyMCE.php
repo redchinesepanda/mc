@@ -27,8 +27,6 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_column' ] );
-
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
@@ -75,15 +73,15 @@ class ToolTinyMCE
 				'value' => 'legal-check',
 			],
 
-			// [
-			// 	'title' => 'Колонка 50%',
-			// 	'value' => 'legal-column',
-			// ],
+			[
+				'title' => 'Колонка 50%',
+				'value' => 'legal-column',
+			],
 
-			// [
-			// 	'title' => 'Колонка 33.333%',
-			// 	'value' => 'legal-column-3',
-			// ],
+			[
+				'title' => 'Колонка 33.333%',
+				'value' => 'legal-column-3',
+			],
 
 			[
 				'title' => 'Статистика',
@@ -193,33 +191,6 @@ class ToolTinyMCE
 						'selector' => 'p,ul',
 		
 						'classes' => 'legal-highlight',
-					],
-				],
-			],
-		] );
-	}
-
-	public static function style_formats_column( $settings )
-	{
-		return self::style_formats_check( $settings, [
-			[
-				'title' => 'Column',
-
-				'items' => [
-					[
-						'title' => 'Колонка 50%',
-						
-						'selector' => 'table',
-		
-						'classes' => 'legal-column',
-					],
-
-					[
-						'title' => 'Колонка 33.333%',
-						
-						'selector' => 'table',
-		
-						'classes' => 'legal-column-3',
 					],
 				],
 			],
