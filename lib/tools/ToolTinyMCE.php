@@ -131,7 +131,7 @@ class ToolTinyMCE
 		return $settings;
 	}
 
-	public static function style_formats_column( $settings )
+	public static function style_formats_overview( $settings )
 	{
 		return self::style_formats_check( $settings, [
 			[
@@ -139,19 +139,27 @@ class ToolTinyMCE
 
 				'items' => [
 					[
-						'title' => 'Колонка 50%',
+						'title' => 'Overview Start',
 						
-						'selector' => 'table',
+						'selector' => 'p',
 
-						'classes' => 'legal-column',
+						'classes' => 'legal-overview-start',
 					],
 
 					[
-						'title' => 'Колонка 33.333%',
+						'title' => 'Overview',
 						
-						'selector' => 'table',
+						'selector' => 'p',
 
-						'classes' => 'legal-column-3',
+						'classes' => 'legal-overview',
+					],
+
+					[
+						'title' => 'Overview End',
+						
+						'selector' => 'p',
+
+						'classes' => 'legal-overview-end',
 					],
 				],
 			],
@@ -191,7 +199,7 @@ class ToolTinyMCE
 		] );
 	}
 
-	public static function style_formats_contextbox( $settings )
+	public static function style_formats_column( $settings )
 	{
 		return self::style_formats_check( $settings, [
 			[
@@ -199,27 +207,20 @@ class ToolTinyMCE
 
 				'items' => [
 					[
-						'title' => 'Contextbox',
+						'title' => 'Колонка 50%',
 						
-						'selector' => 'p',
+						'selector' => 'table',
 		
-						'classes' => 'legal-contextbox',
+						'classes' => 'legal-column',
 					],
+
 					[
-						'title' => 'Attention',
+						'title' => 'Колонка 33.333%',
 						
-						'selector' => 'p',
+						'selector' => 'table',
 		
-						'classes' => 'legal-attention',
+						'classes' => 'legal-column-3',
 					],
-					[
-						'title' => 'Highlight',
-						
-						'selector' => 'p,ul',
-		
-						'classes' => 'legal-highlight',
-					],
-				],
 			],
 		] );
 	}
