@@ -57,7 +57,7 @@
 	display: block;
 }
 
-.legal-footer .logo-afillate[ href='' ] {
+.legal-footer .item-afillate[ href='' ] {
 	pointer-events: none;
 }
 
