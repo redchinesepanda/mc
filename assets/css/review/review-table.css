@@ -31,11 +31,11 @@
     } */
 
     .tcb-post-content table.legal-column:nth-child( 2n ) {
-        margin-left: 10px;
+        margin-left: 8px;
     }
 
     .tcb-post-content table.legal-column:nth-child( 2n + 1 ) {
-        margin-right: 10px;
+        margin-right: 8px;
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n ) {
@@ -54,11 +54,11 @@
     /* Review Width and Height */
 
     .tcb-post-content table.legal-column {
-        width: calc( 50% - 12px );
+        width: calc( 50% - 10px );
     }
 
     .tcb-post-content .legal-column-3 {
-        width: calc(100% / 3 - 14px);
+        width: calc(100% / 3 - 12px);
     }
 }
 
