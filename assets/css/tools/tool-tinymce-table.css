@@ -45,7 +45,7 @@
 	width: calc(100% / 3 - 12px);
 }
 
-#tinymce table.legal-column-3:nth-child( 2n ) {
+#tinymce table.legal-column-3:nth-child( 2n ):not( :nth-child( 3n+3 ) ) {
 	margin-right: 12px;
 }
 
