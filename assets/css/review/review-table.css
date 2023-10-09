@@ -69,6 +69,10 @@
     display: table;
 }
 
+.tcb-post-content table {
+    caption-side: unset;
+}
+
 /* Review Position */
 
 .tcb-post-content table {
