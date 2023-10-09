@@ -39,11 +39,13 @@
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n ) {
-        margin-left: 12px;
+        /* margin-left: 12px; */
+        margin-left: auto;
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n+1 ) {
-        margin-right: 12px;
+        /* margin-right: 12px; */
+        margin-left: auto;
     }
 
     .tcb-post-content .legal-column-3:nth-child( 3n+2 ) {
