@@ -54,11 +54,11 @@
     /* Review Width and Height */
 
     .tcb-post-content table.legal-column {
-        width: calc( 50% - 10px );
+        width: calc( 50% - 12px );
     }
 
     .tcb-post-content .legal-column-3 {
-        width: calc(100% / 3 - 12px);
+        width: calc(100% / 3 - 14px);
     }
 }
 
