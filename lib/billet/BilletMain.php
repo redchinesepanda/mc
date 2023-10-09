@@ -368,20 +368,6 @@ class BilletMain
 
         $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
-        // $description = '';
-
-        // $group = get_field( self::FIELD[ 'about' ], $id );
-
-        // if ( $group )
-        // {
-        //     $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
-
-        //     if ( $filter_description )
-        //     {
-        //         $description = $group[ self::ABOUT[ 'description' ] ];
-        //     }
-        // }
-
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
 

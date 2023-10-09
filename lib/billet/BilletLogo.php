@@ -16,6 +16,8 @@ class BilletLogo
         'logo' => 'about-logo',
 
         'mega' => 'about-logo-mega',
+
+        'title' => 'about-title',
     ];
 
     public static function get( $billet )
@@ -23,6 +25,8 @@ class BilletLogo
         $font = '';
 
         $src = self::DEFAULT_LOGO;
+
+        $alt = 'bookmaker logo';
 
         $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
 
@@ -33,6 +37,8 @@ class BilletLogo
             if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
             {
                 $src = $group[ self::ABOUT[ 'logo' ] ];
+
+                $alt = $group[ self::ABOUT[ 'title' ] ] . ' logo';
             }
         }
 
@@ -50,11 +56,9 @@ class BilletLogo
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
-        // $src = get_field( 'billet-logo-url', $billet['id'] );
-
-        // $args['logo']['src'] = ( !empty( $src ) ? $src : self::DEFAULT_LOGO );
-
         $args['logo']['src'] = $src;
+
+        $args['logo']['alt'] = $src;
 
         return $args;
     }
