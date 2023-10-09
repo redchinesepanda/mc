@@ -2,11 +2,11 @@
 
 /* all */
 
-#tinymce table[class="mce-item-table"] tr:nth-child(2n+1),
-#tinymce table.legal-stats tr:nth-child(2n+1),
-#tinymce table.legal-column tr:nth-child(2n+1),
-#tinymce table.legal-column-3 tr:nth-child(2n+1),
-#tinymce table.legal-check tr:nth-child(2n+1) {
+#tinymce table[class="mce-item-table"] tr:nth-child( 2n + 1 ),
+#tinymce table.legal-stats tr:nth-child( 2n + 1 ),
+#tinymce table.legal-column tr:nth-child( 2n + 1 ),
+/* #tinymce table.legal-column-3 tr:nth-child( 2n + 1 ), */
+#tinymce table.legal-check tr:nth-child( 2n + 1 ) {
 	background-color: rgb(239, 245, 251);
 }
 
@@ -16,14 +16,14 @@
 
 #tinymce table.legal-column {
 	display: inline-block;
-	width: calc(50% - 10px);
+	width: calc( 50% - 10px );
 }
 
 #tinymce table.legal-column:nth-child( 2n ) {
 	margin-right: 10px;
 }
 
-#tinymce table.legal-column:nth-child( 2n+1 ) {
+#tinymce table.legal-column:nth-child( 2n + 1 ) {
 	margin-left: 10px;
 }
 
@@ -31,7 +31,7 @@
 
 #tinymce table.legal-column-3 {
 	display: inline-block;
-	width: calc(100% / 3 - 12px);
+	width: calc( 100% / 3 - 12px );
 }
 
 #tinymce table.legal-column-3:nth-child( 3n ) {

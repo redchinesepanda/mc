@@ -27,6 +27,8 @@ class ToolTinyMCE
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
 
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_column' ] );
+
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
@@ -73,15 +75,15 @@ class ToolTinyMCE
 				'value' => 'legal-check',
 			],
 
-			[
-				'title' => 'Колонка 50%',
-				'value' => 'legal-column',
-			],
+			// [
+			// 	'title' => 'Колонка 50%',
+			// 	'value' => 'legal-column',
+			// ],
 
-			[
-				'title' => 'Колонка 33.333%',
-				'value' => 'legal-column-3',
-			],
+			// [
+			// 	'title' => 'Колонка 33.333%',
+			// 	'value' => 'legal-column-3',
+			// ],
 
 			[
 				'title' => 'Статистика',
@@ -129,7 +131,7 @@ class ToolTinyMCE
 		return $settings;
 	}
 
-	public static function style_formats_overview( $settings )
+	public static function style_formats_column( $settings )
 	{
 		return self::style_formats_check( $settings, [
 			[
@@ -137,27 +139,19 @@ class ToolTinyMCE
 
 				'items' => [
 					[
-						'title' => 'Overview Start',
+						'title' => 'Колонка 50%',
 						
-						'selector' => 'p',
+						'selector' => 'table',
 
-						'classes' => 'legal-overview-start',
+						'classes' => 'legal-column',
 					],
 
 					[
-						'title' => 'Overview',
+						'title' => 'Колонка 33.333%',
 						
-						'selector' => 'p',
+						'selector' => 'table',
 
-						'classes' => 'legal-overview',
-					],
-
-					[
-						'title' => 'Overview End',
-						
-						'selector' => 'p',
-
-						'classes' => 'legal-overview-end',
+						'classes' => 'legal-column-3',
 					],
 				],
 			],
@@ -169,6 +163,39 @@ class ToolTinyMCE
 		return self::style_formats_check( $settings, [
 			[
 				'title' => 'Contextboxes',
+
+				'items' => [
+					[
+						'title' => 'Contextbox',
+						
+						'selector' => 'p',
+		
+						'classes' => 'legal-contextbox',
+					],
+					[
+						'title' => 'Attention',
+						
+						'selector' => 'p',
+		
+						'classes' => 'legal-attention',
+					],
+					[
+						'title' => 'Highlight',
+						
+						'selector' => 'p,ul',
+		
+						'classes' => 'legal-highlight',
+					],
+				],
+			],
+		] );
+	}
+
+	public static function style_formats_contextbox( $settings )
+	{
+		return self::style_formats_check( $settings, [
+			[
+				'title' => 'Column',
 
 				'items' => [
 					[
