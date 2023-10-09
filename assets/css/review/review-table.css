@@ -232,6 +232,16 @@
     color: rgb(255, 255, 255);
 }
 
+.tcb-post-content table caption {
+    color: rgba(10, 10, 10, 0.85);
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+}
+
 /* Other */
 
 .table-custom1 table  {
