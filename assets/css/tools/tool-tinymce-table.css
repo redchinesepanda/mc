@@ -45,16 +45,16 @@
 	width: calc(100% / 3 - 12px);
 }
 
-#tinymce table.legal-column-3:nth-child( 2n ):not( :nth-child( 3n+3 ) ) {
+#tinymce table.legal-column-3:nth-child( 3n ) {
 	margin-right: 12px;
 }
 
-#tinymce table.legal-column-3:nth-child( 2n+1 ) {
+#tinymce table.legal-column-3:nth-child( 3n+1 ) {
 	margin-right: 6px;
 	margin-left: 6px;
 }
 
-#tinymce table.legal-column-3:nth-child( 3n+3 ) {
+#tinymce table.legal-column-3:nth-child( 3n+2 ) {
 	margin-left: 12px;
 }
 
