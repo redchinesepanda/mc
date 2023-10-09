@@ -95,6 +95,10 @@
     width: 100%;
 }
 
+.tcb-post-content table caption {
+    width: 100%;
+}
+
 .tcb-post-content table.legal-check {
     min-width: 300px;
 }
