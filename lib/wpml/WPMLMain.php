@@ -208,7 +208,7 @@ class WPMLMain
     //     ] );
 
     //     return $output;
-    // }
+    // } 
   
     public static function change_page_hreflang( $hreflang_items )
     {
