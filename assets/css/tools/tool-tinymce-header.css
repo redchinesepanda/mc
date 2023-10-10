@@ -78,3 +78,7 @@
 #tinymce .legal-header-esports::before {
 	background-image: url( '../../img/review/header/review-esports.svg' );
 }
+
+#tinymce .legal-header-mma::before {
+	background-image: url( '../../img/review/header/review-mma.svg' );
+}
