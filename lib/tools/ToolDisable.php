@@ -15,7 +15,20 @@ class ToolDisable
         // Attachment name prefix and transliterate in wp_handle_upload_prefilter filter
 
         add_filter( 'wp_handle_upload_prefilter', [ $handler, 'legal_upload_prefilter' ] );
+
+        add_filter( 'rest_authentication_errors', [ $handler, 'disable_rest_api' ] );
     }
+
+    function disable_rest_api( $access )
+    {
+        return new WP_Error(
+            'rest_disabled',
+
+            __('The WordPress REST API has been disabled.'),
+
+            [ 'status' => rest_authorization_required_code() ]
+        );
+    } 
 
     // public static function legal_attachment_slug( $bad_slug, $slug ) {
     //     return true;

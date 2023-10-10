@@ -3,10 +3,46 @@
 class MetrikaMain
 {
 	const JS = [
-        'legal-metrika' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika.js',
+        'metrika-ya-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-lib.js',
 
             'ver' => '1.0.0',
+        ],
+
+        'legal-metrika-ya-go' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-go.js',
+
+            'ver' => '1.0.0',
+
+            'deps' => [
+                'metrika-ya-lib',
+            ],
+        ],
+
+        'legal-gtag-lib' => [
+            'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
+
+            'ver' => '1.0.0',
+        ],
+
+        'legal-gtag-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-main.js',
+
+            'ver' => '1.0.0',
+            
+            'deps' => [
+                'legal-gtag-lib',
+            ],
+        ],
+
+        'legal-gtag-launch' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-launch.js',
+
+            'ver' => '1.0.0',
+
+            'deps' => [
+                'legal-gtag-lib',
+            ],
         ],
     ]; 
 
@@ -35,6 +71,28 @@ class MetrikaMain
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_action( 'wp_body_open', [ $handler, 'body_open_counter' ] );
+    }
+
+    public static function body_open_counter()
+    {
+        echo self::render_counter();
+    }
+
+    const TEMPLATE = [
+        'counter' => LegalMain::LEGAL_PATH . '/template-parts/metrika/legal-metrika-counter.php',
+    ];
+
+    public static function render_counter()
+    {
+		ob_start();
+
+        load_template( self::TEMPLATE[ 'counter' ], false, [] );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 

@@ -50,6 +50,8 @@ class BilletTitle extends LegalDebug
 
         $args['label'] = $label;
 
+        $args[ 'filter' ] = $billet['filter'];
+
         return $args;
     }
 

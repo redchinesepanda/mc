@@ -7,13 +7,15 @@ class AdminTaxonomy
             'page_type',
 
             'page_group',
+
+            'offer_group',
         ],
 
-        'legal_bk_review' => [
-            'page_type',
+        // 'legal_bk_review' => [
+        //     'page_type',
 
-            'page_group',
-        ],
+        //     'page_group',
+        // ],
 
         'legal_billet' => [
             'billet_type',
@@ -31,17 +33,20 @@ class AdminTaxonomy
         add_filter( 'parse_query', [ $handler, 'query_term'] );
     }
 
-    public static function filter_dropdown() {
+    public static function filter_dropdown()
+    {
         global $typenow;
 
-        foreach ( self::TAXONOMY as $post_type => $taxonomies ) {
-            foreach ( $taxonomies as $taxonomy ) {
+        foreach ( self::TAXONOMY as $post_type => $taxonomies )
+        {
+            foreach ( $taxonomies as $taxonomy )
+            {
                 // LegalDebug::debug( [
                 //     'post_type' => $post_type,
                 // ] );
 
-                if ($typenow == $post_type) {
-                    $selected = isset( $_GET[$taxonomy] ) ? $_GET[$taxonomy] : '';
+                if ( $typenow == $post_type ) {
+                    $selected = isset( $_GET[ $taxonomy ] ) ? $_GET[ $taxonomy ] : '';
         
                     $info_taxonomy = get_taxonomy( $taxonomy );
 
@@ -75,20 +80,28 @@ class AdminTaxonomy
     {
         global $pagenow;
 
-        foreach ( self::TAXONOMY as $post_type => $taxonomies ) {
-            foreach ( $taxonomies as $taxonomy ) {
+        foreach ( self::TAXONOMY as $post_type => $taxonomies )
+        {
+            foreach ( $taxonomies as $taxonomy )
+            {
                 $q_vars = &$query->query_vars;
 
                 if ( $pagenow == 'edit.php'
-                    && isset( $q_vars['post_type'] )
-                    && $q_vars['post_type'] == $post_type
-                    && isset( $q_vars[$taxonomy] )
-                    && is_numeric( $q_vars[$taxonomy] )
-                    && $q_vars[$taxonomy] != 0
-                ) {
-                    $term = get_term_by( 'id', $q_vars[$taxonomy], $taxonomy );
 
-                    $q_vars[$taxonomy] = $term->slug;
+                    && isset( $q_vars['post_type'] )
+
+                    && $q_vars['post_type'] == $post_type
+
+                    && isset( $q_vars[$taxonomy] )
+
+                    && is_numeric( $q_vars[$taxonomy] )
+
+                    && $q_vars[$taxonomy] != 0
+                )
+                {
+                    $term = get_term_by( 'id', $q_vars[ $taxonomy ], $taxonomy );
+
+                    $q_vars[ $taxonomy ] = $term->slug;
                 }
             }
         }

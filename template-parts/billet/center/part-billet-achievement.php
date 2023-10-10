@@ -1,5 +1,5 @@
 <?php if ( $args['class'] == BilletAchievement::TYPE_IMAGE ) : ?>
-    <style type="text/css">
+    <style id="<?php echo $args['selector']; ?>" type="text/css">
         .<?php echo $args['selector']; ?> {
             background-color: <?php echo $args['color']; ?>;
             background-image: url('<?php echo $args['image']; ?>');

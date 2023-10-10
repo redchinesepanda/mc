@@ -1,14 +1,211 @@
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+
+	.legal-bonus-about {
+		flex-direction: column;
+	}
+
+	.legal-bonus-about .bonus-about-action {
+		order: 1;
+	}
+
+	.legal-bonus-about .bonus-about-data {
+		order: 2;
+	}
+
+	/* Width and Height */
+
+	.legal-bonus-about .bonus-about-action {
+		width: 100%;
+	}
+
+	/* Typography */
+
+	.legal-bonus-about .about-data-title {
+		font-size: 30px;
+		line-height: 36px;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Width and Height */
+
+	.legal-bonus-about {
+		width: 1080px;
+	}
+
+	.legal-bonus-about .bonus-about-data {
+		flex-basis: calc( 75% - 25px );
+	}
+	
+	.legal-bonus-about .bonus-about-action {
+		flex-basis: calc( 25% - 25px );
+	}
+
+	/* Typography */
+
+	.legal-bonus-about .about-data-title {
+		font-size: 42px;
+		line-height: 50.4px;
+	}
+}
+
 /* Display */
 
+.legal-bonus-about {
+	display: flex;
+  	column-gap: 50px;
+	align-items: center;
+}
+
+.legal-bonus-about .bonus-about-data {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-bonus-about .bonus-about-action {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	align-items: center;
+  	justify-content: center;
+}
+
+.full-main-content .about-action-get {
+	display: block;
+}
+
+.full-main-content .about-action-get[ href='' ],
+.legal-bonus-about .about-action-get[ href='' ] {
+	pointer-events: none;
+}
 
 /* Position */
 
 .legal-bonus-about {
 	margin: 0px auto;
+	padding: 40px 0px;
+}
+
+.legal-bonus-about .bonus-about-data {
+	padding: 15px 0px;
+}
+
+.legal-bonus-about .bonus-about-action {
+	padding: 30px 0px;
+}
+
+.legal-bonus-about .about-data-title {
+	margin-bottom: 0px;
+}
+
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
+	padding: 12px 25px 12px 52px;
+}
+
+.legal-bonus-about-overlay1,
+.legal-bonus-about-overlay2,
+.legal-bonus-about-overlay3 {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.full-main-content .about-action-get {
+	margin: 0px auto 30px auto;
 }
 
 /* Width and Height */
 
-.legal-bonus-about {
-	width: 1080px;
+.legal-bonus-about-overlay1,
+.legal-bonus-about-overlay2,
+.legal-bonus-about-overlay3 {
+	height: 56px;
+	width: 100%;
+}
+
+.full-main-content .about-action-get {
+	width: fit-content;
+}
+
+/* Background */
+
+.legal-bonus-about .bonus-about-action {
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
+}
+
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
+	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/bonus/bonus-get.svg' );
+	background-position: left 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-radius: 20px;
+}
+
+.legal-bonus-about-overlay1,
+.legal-bonus-about-overlay2,
+.legal-bonus-about-overlay3 {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.legal-bonus-about-overlay1 {
+	opacity: 0.4;
+}
+
+.legal-bonus-about-overlay2 {
+	opacity: 0.2;
+}
+
+.legal-bonus-about-overlay3 {
+	opacity: unset;
+}
+
+.legal-bonus-about-overlay1 {
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+}
+
+.legal-bonus-about-overlay2 {
+	clip-path: polygon(100% 100%, 0% 100%, 100% 0%);
+}
+
+.legal-bonus-about-overlay3 {
+	clip-path: polygon(100% 100%, 0% 100%, 100% 50%);
+}
+
+/* Typography */
+
+.legal-bonus-about .about-data-title {
+	font-family: "Source Sans Pro";
+	font-style: normal;
+	font-weight: 400;
+	color: rgb(255, 255, 255);
+}
+
+.legal-bonus-about .about-data-description {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 28px;
+	color: rgb(255, 255, 255);
+}
+
+.legal-bonus-about .about-action-get,
+.full-main-content .about-action-get {
+	color: rgb(255, 255, 255);
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 1px;
+	line-height: 14.4px;
+	text-decoration: none;
 }

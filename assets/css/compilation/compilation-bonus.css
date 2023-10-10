@@ -1,0 +1,158 @@
+.legal-compilation-bonus-set * {
+	box-sizing: border-box;
+	font-family: "Source Sans Pro";
+}
+
+.legal-compilation-bonus-set a.underline {
+	background-image: linear-gradient(#cbcbcb, #cbcbcb);
+	background-position: 50% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size .2s;
+	text-decoration: none;
+}
+
+.legal-compilation-bonus-set a.underline:hover {
+	background-size: 100% 2px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-bonus {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	column-gap: 30px;
+}
+
+@media (max-width: 768px) {
+	.legal-compilation-bonus-set .legal-compilation-bonus {
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+}
+
+.legal-compilation-bonus-set .legal-compilation-bonus {
+	background-color: #fff;
+	box-shadow: 0 0 10px #e4e4e4;
+	border-radius: 20px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-bonus {
+	padding: 20px 40px;
+	margin-bottom: 15px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-logo {
+	flex-basis: fit-content;
+}
+
+.legal-compilation-bonus-set .legal-compilation-logo a img {
+	object-fit: contain;
+}
+
+.legal-compilation-bonus-set .legal-compilation-logo {
+	display: flex;
+	justify-content: center;
+	column-gap: 1rem;
+}
+
+.legal-compilation-bonus-set .legal-compilation-logo img {
+	width: 135px;
+	height: 45px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-peculiarity {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5rem;
+}
+
+.legal-compilation-bonus-set .legal-compilation-peculiarity {
+	flex-basis: 55%;
+	flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+	.legal-compilation-bonus-set .legal-compilation-peculiarity {
+		 width: auto;
+	}
+}
+
+.legal-compilation-bonus-set .legal-compilation-peculiarity-bonys {
+	text-align: center;
+}
+
+.legal-compilation-bonus-set .legal-compilation-peculiarity-bonys a {
+	text-decoration: none;
+	/* color: #3b3b3b; */
+	font-weight: 650;
+	font-size: 22px;
+}
+
+/* .legal-compilation-bonus-set .legal-compilation-peculiarity-bonys a:hover {
+	color: #81b1ec;
+} */
+
+.legal-compilation-bonus.font-legal-default .peculiarity-bonys-link,
+.legal-compilation-bonus.font-legal-default .legal-compilation-peculiarity-text,
+.legal-compilation-bonus.font-legal-default .compilation-review-link {
+	color: #ffffff;
+}
+
+.legal-compilation-bonus.font-legal-black .peculiarity-bonys-link,
+.legal-compilation-bonus.font-legal-black .legal-compilation-peculiarity-text,
+.legal-compilation-bonus.font-legal-black .compilation-review-link {
+	color: #3b3b3b;
+}
+
+.legal-compilation-bonus-set .legal-compilation-peculiarity-text {
+	font-size: 16px;
+	color: #6a6b6c;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.legal-compilation-bonus-set .legal-compilation-review a {
+	font-size: 16px;
+	text-transform: uppercase;
+	white-space: nowrap;
+	color: #3b3b3b;
+	font-weight: 600;
+}
+
+.legal-compilation-bonus-set .legal-compilation-review a {
+	margin: 0 !important;
+}
+
+.legal-compilation-bonus-set .legal-compilation-button {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28.8px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	white-space: nowrap;
+}
+
+.legal-compilation-bonus-set .legal-compilation-button {
+	background-image: url( 'https://match.center/wp-content/themes/thrive-theme-child/assets/img/review/review-bet-here.svg' );
+	background-position: right 25px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: #5997e3;
+	border-radius: 20px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-button {
+	padding: 5px 60px 5px 30px;
+}
+
+.legal-compilation-bonus-set .legal-compilation-button {
+	height: min-content;
+}
+
+.legal-compilation-bonus-set .legal-compilation-button:hover {
+	background-color: #81b1ec;
+	color: rgb(255, 255, 255);
+}

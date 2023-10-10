@@ -1,13 +1,3 @@
-<style type="text/css">
-    .lang-switcher .locale-<?php echo $args['active']['id']; ?> {
-        background-image: url('<?php echo $args['active']['src']; ?>');
-    }
-    <?php foreach( $args['languages'] as $lang ) : ?>
-        .lang-switcher .locale-<?php echo $lang['id']; ?> {
-            background-image: url('<?php echo $lang['src']; ?>');
-        }
-    <?php endforeach; ?>
-</style>
 <div class="lang-switcher">
     <div class="lang-current lang-item">
         <div class="lang-image locale-<?php echo $args['active']['id']; ?>"></div>

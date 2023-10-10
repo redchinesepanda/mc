@@ -1,0 +1,50 @@
+/* Display */
+
+.legal-offers-compilation {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* Position */
+
+.legal-offers-compilation {
+	padding-bottom: 30px;
+}
+
+.legal-offers-compilation .offers-compilation-item {
+	padding: 2px 28px;
+}
+
+/* Background */
+
+.legal-offers-compilation .offers-compilation-item {
+	border-radius: 20px;
+	/* border: 1px solid rgba(10, 10, 10, 0.85); */
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px;
+}
+
+.legal-offers-compilation .offers-compilation-item:hover{
+	background-color: rgb(89, 151, 227);
+}
+
+/* Typography */
+
+.legal-offers-compilation .offers-compilation-item {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 28px;
+	text-decoration: none;
+}
+
+.legal-offers-compilation .offers-compilation-item:not( :hover ) {
+	color: rgb(59, 59, 59);
+}
+
+.legal-offers-compilation .offers-compilation-item:hover {
+	color: #ffffff;
+}

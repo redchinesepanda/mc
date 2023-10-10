@@ -2,6 +2,8 @@
 
 require_once ( 'CompilationMini.php' );
 
+require_once ( 'CompilationBonus.php' );
+
 class CompilationMain
 {
     const CSS = [
@@ -9,6 +11,12 @@ class CompilationMain
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
 
             'ver' => '1.0.2',
+        ],
+
+        'compilation-bonus' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-bonus.css',
+
+            'ver' => '1.0.0',
         ],
     ];
 
@@ -41,11 +49,17 @@ class CompilationMain
 
 		// [legal-tabs]
 
-        add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
+        add_shortcode( self::SHORTCODES[ 'tabs' ], [ $handler, 'render_compilation' ] );
+
+		// [legal-compilation id="1027562"]
+
+        add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
+
+        CompilationBonus::register();
     }
 
     public static function get_billets( $posts, $filter )
@@ -64,6 +78,26 @@ class CompilationMain
 
         return $data;
     }
+
+    // public static function get_billets_bonus( $posts, $filter )
+    // {
+    //     $billets = self::get_billets( $posts, $filter );
+
+    //     $items = [];
+
+    //     foreach ( $billets as $index => $billet )
+    //     {
+    //         $item = BilletMain::get( $billet );
+
+    //         LegalDebug::debug( [
+    //             'BilletLogo' => BilletLogo::get( $item ),
+    //         ] );
+
+    //         $items[] = $item;
+    //     }
+
+    //     return $items;
+    // }
     
     const ATTENTION = [
         'text' => 'compilation-attention-text',
@@ -103,11 +137,14 @@ class CompilationMain
     }
 
     public static function check_id( $id = 0 ) {
-        if ( $id == 0 ) {
+        if ( $id == 0 )
+        {
             $post = get_post();
     
             if ( $post )
+            {
                 return $post->ID;
+            }
         }
 
         return $id;
@@ -196,7 +233,6 @@ class CompilationMain
         'about' => 'review-about',
     ];
 
-
     const ABOUT = [
         'rating' => 'about-rating',
     ];
@@ -243,6 +279,8 @@ class CompilationMain
 
     const FORMAT = [
         'updated' => 'd.m.Y',
+        
+        // 'updated' => 'd.m.Y G:i:s',
     ];
 
     public static function get_date( $id )
@@ -401,10 +439,8 @@ class CompilationMain
         return $args;
     }
 
-    public static function get( $id )
+    public static function get_posts( $id )
     {
-        $id = self::check_id( $id );
-
         $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
         $switch_lang = ( !empty( $new_lang ) );
@@ -423,6 +459,23 @@ class CompilationMain
             $sitepress->switch_lang( $current_lang );
         }
 
+        return $posts;
+    }
+
+    public static function get( $id )
+    {
+        $id = self::check_id( $id );
+
+        $posts = self::get_posts( $id );
+
+        // LegalDebug::debug( [
+        //     'get',
+
+        //     'id' => $id,
+
+        //     'posts' => $posts,
+        // ] );
+
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
 
@@ -430,13 +483,49 @@ class CompilationMain
         ];
     }
 
+    const SHORTCODES = [
+        'tabs' => 'legal-tabs',
+
+        'compilation' => 'legal-compilation',
+    ];
+
+    const PAIRS = [
+        'compilation' => [
+            'id' => 0,
+        ],
+	];
+
     const TEMPLATE = [
         'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
         
         'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
 
-    public static function render(  $id = 0  )
+    public static function prepare_compilation( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'compilation' ] );
+
+		// $args = self::get( $atts[ 'id' ] );
+
+        // LegalDebug::debug( [
+        //     'prepare_compilation',
+
+        //     'atts' => $atts,
+
+        //     'args' => $args,
+        // ] );
+
+		// return self::render_compilation( $args );
+		
+        return self::render_compilation( $atts[ 'id' ] );
+	}
+
+    public static function render( $id = 0 )
+    {
+        return self::render_compilation( $id );
+    }
+
+    public static function render_compilation(  $id = 0  )
     {
         ob_start();
 

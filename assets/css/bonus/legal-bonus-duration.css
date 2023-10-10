@@ -1,0 +1,57 @@
+/* Position */
+
+.legal-bonus-duration {
+	margin-bottom: 20px;
+}
+
+/* Width and Height */
+
+.legal-bonus-duration {
+	flex-basis: 100%;
+}
+
+/* Background */
+
+.legal-bonus-duration {
+    border-radius: 20px;
+}
+
+.legal-bonus-duration.legal-bonus-duration-expired {
+	background-color: rgb(255, 94, 106);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
+}
+
+.legal-bonus-duration.legal-bonus-duration-default {
+	background-color: rgba(255, 241, 228, 0.5);
+}
+
+/* Typography */
+
+.legal-bonus-duration {
+	text-align: center;
+}
+
+.legal-bonus-duration.legal-bonus-duration-expired {
+    color: rgb(255, 255, 255);
+}
+
+.legal-bonus-duration.legal-bonus-duration-default {
+	color: rgb(59, 59, 59);
+}
+
+.legal-bonus-duration .duration-label-title {
+    font-family: "Source Sans Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26.5px;
+}
+
+.legal-bonus-duration .duration-label-prefix,
+.legal-bonus-duration .duration-label-value {
+    font-family: "Source Sans Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26.5px;
+}

@@ -2,15 +2,23 @@
 
 class ReviewOffers
 {
-	const PAGE_TYPE = [
-        'compilation',
+	const CSS = [
+        'review-offers-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
+
+			'ver' => '1.0.1',
+		],
+
+        'review-offers-compilation' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-compilation.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
-	public static function check()
+    public static function register_style()
     {
-		$permission_term = !has_term( self::PAGE_TYPE, self::TAXONOMY[ 'page_type' ] );
-
-        return ReviewMain::check() && $permission_term;
+		ReviewMain::register_style( self::CSS );
     }
 
 	const JS = [
@@ -19,55 +27,55 @@ class ReviewOffers
 
     public static function register_script()
     {
-		if ( self::check() ) {
-			ReviewMain::register_script( self::JS );
-		}
-    }
-
-	const CSS = [
-        'review-offers' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers.css',
-
-			'ver' => '1.0.0',
-		],
-    ];
-
-    public static function register_style()
-    {
-		if ( self::check() ) {
-        	ReviewMain::register_style( self::CSS );
-		}
+		ReviewMain::register_script( self::JS );
     }
 
 	public static function register_inline_style()
     {
-		if ( self::check() ) {
-			ToolEnqueue::register_inline_style( 'review-offers', self::inline_style() );
-		}
+		ReviewMain::register_inline_style( 'review-offers', self::inline_style() );
+    }
+
+	const SHORTCODE = [
+		'offers' => 'legal-offers',
+	];
+
+	const PAGE_TYPE = [
+        'compilation' => 'compilation',
+    ];
+
+	public static function check()
+    {
+		return ReviewMain::check();
     }
 
 	public static function register()
     {
         $handler = new self();
 
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
-
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+		// [legal-offers terms=""]
+
+		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
 
 	public static function inline_style()
 	{
-		if ( !self::check() ) {
+		if ( !ReviewMain::check() )
+		{
+            return '';
+        }
+
+		if ( self::check_compilation() )
+		{
             return '';
         }
 
 		$style = [];
 
-		$style_items = self::get_offers();
+		$style_items = self::get_offers( self::PAIRS );
 
 		if ( !empty( $style_items ) ) {
 			foreach ( $style_items as $style_item_id => $style_item ) {
@@ -94,51 +102,91 @@ class ReviewOffers
 		'font' => 'about-font',
 
 		'afillate' => 'about-afillate',
+
+		'offer' => 'tabs-title-offer',
 	];
 
 	const TAXONOMY = [
-		'group' => 'page_group',
-
 		'page_type' => 'page_type',
+
+		'offer' => 'offer_group',
 	];
 
-	const TERM = [
-		'offers' => 'other-offers',
-	];
-
-	public static function offer_query( $post )
+	public static function get_terms( $id )
 	{
-		return [
-			'numberposts' => -1,
+		$items = [];
 
-            'post_type' => [ 'legal_bk_review', 'page' ],
+		$terms = wp_get_post_terms( $id, self::TAXONOMY[ 'offer' ] );
 
-            'suppress_filters' => 0,
+		if ( !is_wp_error( $terms ) )
+		{
+			foreach ( $terms as $term )
+			{
+				$items[] = $term->slug;
+			}
+		}
 
-            'exclude' => $post->ID,
+		return $items;
+	}
 
-			'meta_query' => [
+	public static function offer_query( $id, $selected_term = '' )
+	{
+		$tax_query = [
+			[
+				'taxonomy' => self::TAXONOMY[ 'offer' ],
+
+				'operator' => 'EXISTS',
+			],
+		];
+
+		if ( empty( $selected_term ) )
+		{
+			$terms = self::get_terms( $id );
+
+			if ( !empty( $terms ) )
+			{
+				$selected_term = array_shift( $terms );
+			}
+		} 
+
+		if ( !empty( $selected_term ) )
+		{
+			$tax_query = [
                 [
-                    'key' => self::FIELD[ 'about' ] . '_' . self::FIELD[ 'afillate' ],
-
-					'value'   => [ '' ],
-        			
-					'compare' => 'NOT IN',
-                ],
-            ],
-
-            'tax_query' => [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'group' ],
+                    'taxonomy' => self::TAXONOMY[ 'offer' ],
 
                     'field' => 'slug',
 
-                    'terms' => self::TERM[ 'offers' ],
+                    'terms' => [ $selected_term ],
+
+					'operator' => 'IN',
 				],
-            ],
+            ];
+		}
+
+		return [
+			'numberposts' => -1,
+
+            'post_type' => [ 'page' ],
+
+            'suppress_filters' => 0,
+
+            'exclude' => $id,
+
+            'tax_query' => $tax_query,
 
             'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
 		];
+	}
+
+	public static function check_url_afillate( $href = '' )
+	{
+		if ( !empty( $href ) )
+		{
+			return $href;
+		}
+
+		return ( OopsMain::check_oops() ? '#' : '' );
 	}
 
 	public static function parse_offers( $offers )
@@ -159,7 +207,7 @@ class ReviewOffers
 				'font' => $group[ self::FIELD[ 'font' ] ],
 
 				'afillate' => [
-                    'href' => $group[ self::FIELD[ 'afillate' ] ],
+                    'href' => self::check_url_afillate( $group[ self::FIELD[ 'afillate' ] ] ),
 
                     'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
                 ],
@@ -170,7 +218,31 @@ class ReviewOffers
 		return $items;
 	}
 
-	public static function get_offers()
+	public static function parse_offers_compilation( $offers )
+	{
+		$items = [];
+
+		foreach ( $offers as $offer )
+		{
+			$label = get_field( self::FIELD[ 'offer' ], $offer->ID );
+
+			if ( empty( $label ) )
+			{
+				$label = $offer->post_title;
+			}
+
+			$items[] = [
+				'label' => $label,
+
+				'href' => get_post_permalink( $offer->ID ),
+			];
+			
+		}
+
+		return $items;
+	}
+
+	public static function get_offers( $atts = [] )
 	{
 		$items = [];
 
@@ -178,68 +250,79 @@ class ReviewOffers
 
 		if ( !empty( $post ) )
 		{
-			$offers = get_posts( self::offer_query( $post ) );
+			$query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
-			if ( !empty( $offers ) )
+			$posts = get_posts( $query );
+
+			if ( !empty( $posts ) )
 			{
-				$items = self::parse_offers( $offers );
+				if ( self::check_compilation() )
+				{
+					$items = self::parse_offers_compilation( $posts );
+				}
+				else
+				{
+					$items = self::parse_offers( $posts );
+				}
 			}
 		}
 		
 		return $items;
 	}
 
-	const TEMPLATE = [
-		'offers' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers.php',
+	const PAIRS = [
+		'selected-term' => '',
 	];
 
-    public static function render_offers()
+	public static function check_compilation()
+	{
+		return has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
+	}
+
+	public static function prepare( $atts )
     {
-		if ( !self::check() ) {
+		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
+
+		$args = self::get_offers( $atts );
+
+		if ( self::check_compilation() )
+		{
+			return self::render_offers_compilation( $args );
+		}
+
+		return self::render_offers( $args );
+	}
+
+	const TEMPLATE = [
+		'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-main.php',
+
+		'compilation' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-compilation.php',
+	];
+
+    public static function render( $template, $args )
+    {
+		if ( !ReviewMain::check() ) {
             return '';
         }
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'offers' ], false, self::get_offers() );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
         return $output;
     }
 
-	public static function get_content( $content )
-	{
-        if ( !self::check() ) {
-			return $content;
-		}
+    public static function render_offers( $args )
+    {
+		return self::render( self::TEMPLATE[ 'main' ], $args );
+    }
 
-		$dom = LegalDOM::get_dom( $content );
-
-		$body = $dom->getElementsByTagName( 'body' )->item( 0 );
-
-		if ( empty( $body ) ) {
-			return $content;
-		}
-
-		$item = $dom->createElement( 'div' );
-
-		$item->setAttribute( 'class', 'legal-other-offers-wrapper' ); 
-
-		LegalDOM::appendHTML( $item, ToolEncode::encode( self::render_offers() ) );
-
-		try
-		{
-			$body->appendChild( $item );
-		} catch ( DOMException $e )
-		{
-			LegalDebug::debug( [
-				'ReviewOffers::get_content > appendChild DOMException',
-			] );
-		}
-
-		return $dom->saveHTML();
-	}
+    public static function render_offers_compilation( $args )
+    {
+		return self::render( self::TEMPLATE[ 'compilation' ], $args );
+    }
 }
 
 ?>

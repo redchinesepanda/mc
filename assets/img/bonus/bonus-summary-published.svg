@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="15"
+   width="15"
+   sodipodi:docname="bonus-summary-published.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="3 1 15 15">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="14.176392"
+     inkscape:cx="7.3690609"
+     inkscape:zoom="25.65"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:0.75;fill:#0a0a0a;fill-opacity:0.8509804"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 8.25,7.75 v 1.5 h -1.5 v -1.5 h 1.5 m 3,0 v 1.5 h -1.5 v -1.5 h 1.5 m 3,0 v 1.5 h -1.5 v -1.5 h 1.5 M 15.75,2.5 A 1.5,1.5 0 0 1 17.25,4 V 14.5 A 1.5,1.5 0 0 1 15.75,16 H 5.25 C 4.4175,16 3.75,15.325 3.75,14.5 V 4 A 1.5,1.5 0 0 1 5.25,2.5 H 6 V 1 h 1.5 v 1.5 h 6 V 1 H 15 v 1.5 h 0.75 m 0,12 V 6.25 H 5.25 v 8.25 h 10.5 m -7.5,-3.75 v 1.5 h -1.5 v -1.5 h 1.5 m 3,0 v 1.5 h -1.5 v -1.5 h 1.5 m 3,0 v 1.5 h -1.5 v -1.5 z" />
+</svg>

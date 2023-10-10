@@ -1,0 +1,73 @@
+@media screen and ( max-width: 767px )
+{
+	/* Typography */
+
+	.legal-bonus-related .container-item-image-link,
+	.legal-bonus-related .container-item-title {
+		text-align: center;
+	}
+}
+
+/* Display */
+
+.legal-bonus-related {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-bonus-related .bonus-related-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-bonus-related .related-container-item {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+}
+
+/* Position */
+
+.legal-bonus-related {
+	position: sticky;
+  	top: 0;
+}
+
+.legal-bonus-related {
+	padding: 10px 15px;
+}
+
+/* Background */
+
+.legal-bonus-related {
+	background-color: rgba(239, 245, 251, 0.5);
+	border-radius: 20px;
+}
+
+.legal-bonus-related .container-item-image {
+	border-radius: 15px;
+}
+
+/* Typography */
+
+.legal-bonus-related .bonus-related-title {
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 25px; 
+	color: rgba(10, 10, 10, 0.85);
+	text-transform: uppercase;
+}
+
+.legal-bonus-related .container-item-title {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px;
+	color: rgb(12, 17, 21);
+	text-decoration: none;
+}

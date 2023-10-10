@@ -3,7 +3,11 @@
 class ReviewStats
 {
     const CSS = [
-        'review-stats' => LegalMain::LEGAL_URL . '/assets/css/review/review-stats.css',
+        'review-stats' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-stats.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()
@@ -13,14 +17,6 @@ class ReviewStats
 
     public static function register_inline_style()
     {
-		// $name = 'review-inline';
-
-        // wp_register_style( $name, false, [], true, true );
-		
-		// wp_add_inline_style( $name, self::inline_style() );
-		
-		// wp_enqueue_style( $name );
-
 		ReviewMain::register_inline_style( 'review-stats', self::inline_style() );
     }
 
@@ -77,11 +73,15 @@ class ReviewStats
 		return implode( ' ', $style );
 	}
 
+	const CSS_CLASS = [
+		'base' => 'legal-stats',
+	];
+
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		$nodes = $xpath->query( './/table[contains(@class, \'legal-stats\')]' );
+		
+		$nodes = $xpath->query( "//table[contains(@class, '" . self::CSS_CLASS[ 'base' ] . "')]" );
 
 		return $nodes;
 	}
@@ -100,14 +100,15 @@ class ReviewStats
 			return $content;
 		}
 
-		foreach ( $nodes as $node ) {
+		foreach ( $nodes as $node )
+		{
 			$stats = $dom->createElement( 'div' );
 
 			$stats->setAttribute( 'class', 'review-stats' );
 
 			LegalDOM::appendHTML( $stats, self::render_stats( $node ) );
 
-			$node->insertBefore( $stats );
+			$node->parentNode->insertBefore( $stats, $node );
 		}
 
 		return $dom->saveHTML();
@@ -144,7 +145,7 @@ class ReviewStats
 			if ( $cells->length ) {
 				$value = -1;
 
-				$text = $cells[ 1 ]->textContent;
+				$text = ToolEncode::encode( $cells[ 1 ]->textContent );
 
 				if ( is_numeric( $text ) ) {
 					$value = $text;
@@ -160,7 +161,7 @@ class ReviewStats
 
 				if ( $value != -1 ) {
 					$args[] = [
-						'title' => $cells[ 0 ]->textContent,
+						'title' => ToolEncode::encode( $cells[ 0 ]->textContent ),
 	
 						'width' => ( round( ( float ) $value ) / 10 ) * 100,
 					];

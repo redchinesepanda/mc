@@ -55,7 +55,9 @@ class ReviewBanner
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( './/img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
+		// $nodes = $xpath->query( './/img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
+		
+		$nodes = $xpath->query( '//img[contains(@class, \'' . self::CSS_CLASS[ 'container' ] . '\')]' );
 
 		return $nodes;
 	}
@@ -96,7 +98,7 @@ class ReviewBanner
 			return $content;
 		}
 
-		$body = $dom->getElementsByTagName( 'body' )->item(0);
+		// $body = $dom->getElementsByTagName( 'body' )->item(0);
 
 		foreach ( $nodes as $node ) {
 			
@@ -125,11 +127,28 @@ class ReviewBanner
 				
 				$replace = $node->parentNode;
 
-				try {
-					$body->replaceChild( $item, $replace );
-				} catch ( DOMException $e ) {
+				// try {
+				// 	$body->replaceChild( $item, $replace );
+				// } catch ( DOMException $e ) {
+				// 	LegalDebug::debug( [
+				// 		'ReviewBanner::get_content > replaceChild DOMException',
+				// 	] );
+				// }
+
+				try
+				{
+					$replace->parentNode->replaceChild( $item, $replace );
+				}
+				catch ( DOMException $e )
+				{
 					LegalDebug::debug( [
-						'ReviewBanner::get_content > replaceChild DOMException',
+						'class' => 'ReviewBanner',
+
+						'function' => 'get_content,replaceChild',
+
+						'node' => substr( $node->textContent, 0, 30 ),
+
+						'message' => $e->getMessage(),
 					] );
 				}
 			}

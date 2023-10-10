@@ -45,6 +45,8 @@ class ReviewMain
 
 		'bookmaker-lightbox' => 'Bookmaker Lightbox',
 
+		'borja-imbergamo' => 'Borja Imbergamo',
+
 		'claim-bonus' => 'Claim Bonus',
 
 		'download' => 'Download',
@@ -78,7 +80,7 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.2.1',
+            'ver' => '1.2.2',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
@@ -86,7 +88,7 @@ class ReviewMain
         'review-table' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
 
-            'ver' => '1.0.5',
+            'ver' => '1.0.8',
         ],
     ];
 
@@ -137,8 +139,8 @@ class ReviewMain
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_head', [ $handler, 'print' ] );
-        
-        add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
+
+        // add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
         ReviewAbout::register();
 
@@ -212,6 +214,8 @@ class ReviewMain
         
         $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 
+        // $permission_post_single = is_singular( [ 'post', 'page' ] );
+        
         $permission_post_single = is_singular( [ 'post' ] );
 
         $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
@@ -222,6 +226,8 @@ class ReviewMain
         //     'permission_post_type' => $permission_post_type ? 'true' : 'false',
 
         //     'permission_term' => $permission_term ? 'true' : 'false',
+
+        //     'permission_post_single' => $permission_post_single ? 'true' : 'false',
 
         //     'result' => $result ? 'true' : 'false',
         // ] );

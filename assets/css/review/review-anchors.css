@@ -108,7 +108,8 @@ nav.anchors {
     color: rgb(59, 59, 59);
 }
 
-.review-anchors .anchors-item {
+.review-anchors .anchors-item,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).anchors-item {
     font-family: "Source Sans Pro";
     font-size: 13px;
     font-style: normal;

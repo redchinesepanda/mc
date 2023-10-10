@@ -194,7 +194,7 @@
 /* Position */
 
 #thrive-header {
-	z-index: 10;
+	z-index: 15;
 }
 
 .legal-header {
@@ -233,11 +233,11 @@
 }
 
 .legal-menu .menu-item:not( .legal-country-wide ) > .sub-menu {
-	width: 250px;
+	width: 260px;
 }
 
 .legal-menu .menu-item.legal-country-wide > .sub-menu {
-	width: 320px;
+	width: 330px;
 }
 
 .legal-menu .menu-item a {
@@ -309,4 +309,22 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	color: rgb(255, 255, 255);
+}
+
+/* Other */
+
+#content:not(.legal-override) {
+	z-index: 1;
+}
+
+.bottom-section:not(.legal-override) {
+	z-index: 0;
+}
+
+.thrv_footer:not(.legal-override) {
+	z-index: 0;
+}
+
+.drop-menu_content_Spoiler {
+	display: none;
 }

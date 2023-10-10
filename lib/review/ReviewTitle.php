@@ -58,12 +58,68 @@ class ReviewTitle
         self::CLASSES[ 'date-year' ] => 'y',
 
         self::CLASSES[ 'date-month-year' ] => 'MMMM y',
+        
+		// self::CLASSES[ 'date-month-year' ] => 'LLLL y',
     ];
 
-    public static function get_date( $node )
-    {
-		$current = new DateTime();
+	const PLACEHOLDER = [
+		'{YEAR}' => self::CLASSES[ 'date-year' ],
 
+		'{MONTH_YEAR}' => self::CLASSES[ 'date-month-year' ],
+	];
+
+	public static function check_placeholder( $content )
+	{
+		$needles = array_keys( self::PLACEHOLDER );
+
+		return array_reduce( $needles , fn( $a, $n ) => $a || str_contains( $content, $n ), false );
+	}
+
+    public static function replace_placeholder( $title )
+	{
+		$current_date = '';
+
+		$current_placeholder = '';
+
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewTitle::replace_placeholder',
+
+		// 	'title' => $title,
+		// ] );
+
+		foreach ( self::PLACEHOLDER as $placeholder => $format_key )
+		{
+			// LegalDebug::debug( [
+			// 	'function' => 'ReviewTitle::replace_placeholder',
+
+			// 	'placeholder' => $placeholder,
+
+			// 	'strpos' => strpos( $title, $placeholder ),
+			// ] );
+
+			if ( strpos( $title, $placeholder ) !== false )
+			{
+				$current_date = self::format_date( self::FORMAT[ $format_key ] );
+
+				$current_placeholder = $placeholder;
+
+				// LegalDebug::debug( [
+				// 	'function' => 'ReviewTitle::replace_placeholder',
+	
+				// 	'current_date' => $current_date,
+	
+				// 	'current_placeholder' => $current_placeholder,
+				// ] );
+
+				$title = str_replace( $current_placeholder, $current_date, $title );
+			}
+		}
+
+		return $title;
+	}
+
+    public static function get_format( $node )
+	{
 		$format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
 
 		$classes = explode( ' ', $node->getAttribute( 'class' ) );
@@ -77,21 +133,46 @@ class ReviewTitle
 				break;
 			}
 		}
-		
+
+		return $format;
+	}
+
+	const LOCALE = [
+		'sr_RS' => 'sr_Latn',
+	];
+
+	public static function format_date( $format )
+	{
 		$locale = WPMLMain::get_locale();
+
+		if ( array_key_exists( $locale, self::LOCALE ) )
+		{
+			$locale = self::LOCALE[ $locale ];
+		}
+
+		$current = new DateTime();
 
 		$formatter = new IntlDateFormatter( $locale, IntlDateFormatter::FULL, IntlDateFormatter::SHORT);
 
 		$formatter->setPattern( $format );
-		
-		return $formatter->format( $current );
+
+		$result = mb_str_split( $formatter->format( $current ) );
+
+		$result[ 0 ] = mb_strtoupper( $result[ 0 ] );
+
+		return implode( '', $result );
+	}
+
+    public static function get_date( $node )
+    {
+		$format = self::get_format( $node );
+
+		return self::format_date( $format );
     }
 
 	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		// return $xpath->query( '//body/*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //body/*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
 		
 		return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
 	}
@@ -106,7 +187,14 @@ class ReviewTitle
 
         $nodes = self::get_nodes( $dom );
 
-		if ( $nodes->length == 0 ) {
+		$permission_nodes = $nodes->length == 0;
+
+		$permission_placeholders = !self::check_placeholder( $content );
+
+		// if ( $nodes->length == 0 )
+		
+		if ( $permission_nodes && $permission_placeholders )
+		{
 			return $content;
 		}
 
@@ -117,7 +205,7 @@ class ReviewTitle
 			$node->textContent = $node->textContent . ' ' . $date;
 		}
 
-		return $dom->saveHTML();
+		return self::replace_placeholder( $dom->saveHTML() );
 	}
 
 	public static function style_formats_header( $settings )
@@ -213,7 +301,7 @@ class ReviewTitle
 					[
 						'title' => 'H1-H2 Year',
 						
-						'selector' => 'h1,h2',
+						'selector' => 'h1,h2,h3,h4,p',
 
 						'classes' => self::CLASSES[ 'date-year' ],
 					],
@@ -221,7 +309,7 @@ class ReviewTitle
 					[
 						'title' => 'H1-H2 Month Year',
 						
-						'selector' => 'h1,h2',
+						'selector' => 'h1,h2,h3,h4,p',
 
 						'classes' => self::CLASSES[ 'date-month-year' ],
 					],

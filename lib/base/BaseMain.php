@@ -17,6 +17,8 @@ class BaseMain
 
 		'gambling-sites' => 'Gambling Sites',
 
+        'i-accept' => 'I Accept',
+
 		'legal-review-bk-header' => 'Legal Review BK Header',
 
 		'legal-review-bk-footer' => 'Legal Review BK Footer',
@@ -24,6 +26,10 @@ class BaseMain
 		'match-center' => 'Match.Center',
 
         'match-center-is-not' => '<p>Match.Cener is not a gambling operator (we do not accept any bets). The content of this website is strictly for information purposes and does not constitute advice. We only review gambling operators who are licenced by their respective local and international regulators. We only claim information to be correct at the time of posting.</p><p>Always gamble responsibly and never risk money that you can not afford to lose!</p>',
+
+		'more-information' => 'More Information',
+
+        'no' => 'No',
 
 		'online-casinos' => 'Online Casinos',
 
@@ -33,7 +39,17 @@ class BaseMain
 
         'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
 
+        'this-website' => 'This website is only for adults.',
+
+        'to-give' => 'To give you the best possible experience, this site uses cookies and by continuing to use the site you agree that we can save them on your device. By clicking "I Accept" you consent to the use of cookies unless you have disabled them.',
+
+        'yes' => 'Yes',
+        
+        'you-must-be' => 'You must be 18 years or older to access this website. It is part of our commitment to responsible gaming.',
+
 		'you-must-have' => "You must have picked the wrong door because I haven't been able to lay my eye on the page you've been searching for.",
+
+        'you-re-of' => "You're of age",
 	];
 
 	public static function register_style( $styles = [] )

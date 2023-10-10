@@ -13,6 +13,12 @@
 		align-items: center;
 	}
 
+	/* Position */
+
+	.legal-footer {
+		padding: 0px 20px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-copy {
@@ -140,6 +146,10 @@
 	flex-basis: 33.333%;
 }
 
+.legal-footer .item-title {
+	width: fit-content;
+}
+
 /* Background */
 
 .legal-footer .item-children .item-title {
@@ -152,6 +162,10 @@
 .footer-menu,
 .legal-footer .footer-logo {
 	border-bottom: 1px solid rgba(90,90,90,0.25); 
+}
+
+.legal-footer .lang-switcher {
+	cursor: pointer;
 }
 
 /* Typography */

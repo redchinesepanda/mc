@@ -57,6 +57,10 @@
 	display: block;
 }
 
+.legal-other-offers .item-afillate[ href='' ] {
+	pointer-events: none;
+}
+
 /* Position */
 
 .legal-other-offers-wrapper {

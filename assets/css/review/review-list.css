@@ -3,11 +3,11 @@
     /* Review Position */
 
     .tcb-post-content li:not( .legal-override ) {
-        padding-left: 24px;
+        padding-left: 34px;
     }
     
     .tcb-post-content li::before {
-        margin-left: -24px;
+        margin-left: -34px;
     }
 }
 
@@ -71,7 +71,7 @@
     counter-reset: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( .menu__box ) li {
+.tcb-post-content ol:not( .menu__box ) > li {
     counter-increment: legal-counter;
 }
 
@@ -79,7 +79,7 @@
     counter-increment: legal-counter-alpha;
 }
 
-.tcb-post-content ol:not( .menu__box ) li::before {
+.tcb-post-content ol:not( .menu__box ) > li::before {
     content: counter( legal-counter );
     display: inline-block;
 }
@@ -109,7 +109,9 @@
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet-description > ul:not( .legal-override ):not( [style] ),
 .bonus-content > ol:not( .legal-override ),
-.billet-description > ol:not( .legal-override ) {
+.billet-description > ol:not( .legal-override ),
+.billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet .billet-description-full > ol:not( .legal-override ) {
     padding-top: 0px;
 }
 
@@ -120,7 +122,9 @@
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( :last-child ),
 .billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .bonus-content > ol:not( .legal-override ):not( :last-child ),
-.billet-description > ol:not( .legal-override ):not( :last-child ) {
+.billet-description > ol:not( .legal-override ):not( :last-child ),
+.billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet .billet-description-full > ol:not( .legal-override ) {
     padding-bottom: 15px;
 }
 
@@ -168,9 +172,12 @@
 
 /* Review Background */
 
-.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) > li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) ul > li:before,
+.tcb-post-content > ol ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
 .legal-billet ul:not( .legal-list-image ) li:before,
 .legal-bonus ul:not( .legal-list-image ) li:before,
+.billet ul:not( .legal-list-image ) li:before,
 .billet-mega-content > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/review/review-ul.svg' );
 }
@@ -190,7 +197,7 @@
 	list-style-image: none;
 }
 
-.tcb-post-content ol:not( .menu__box ) li::before {
+.tcb-post-content ol:not( .menu__box ) > li::before {
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
 }
@@ -201,7 +208,7 @@
 
 /* Review Typography */
 
-.tcb-post-content ol:not( .menu__box ) li::before {
+.tcb-post-content ol:not( .menu__box ) > li::before {
     font-weight: 600;
     line-height: 20px;
     color: rgb(89, 151, 227);

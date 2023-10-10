@@ -1,10 +1,14 @@
 <?php
 
+require_once( 'OopsCookie.php' );
+
+require_once( 'OopsAge.php' );
+
 class OopsMain
 {
     const CSS = [
-        'legal-oops' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/oops.css',
+        'legal-oops-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-main.css',
 
             'ver' => '1.0.2',
         ],
@@ -22,7 +26,17 @@ class OopsMain
     }
 
     const JS = [
-        'legal-oops' => LegalMain::LEGAL_URL . '/assets/js/oops/oops.js',
+        'legal-oops-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-main.js',
+
+            'ver' => '1.0.0',
+        ],
+
+        'legal-lib-cookie' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-lib-cookie.js',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     public static function register_script( $scripts = [] )
@@ -51,6 +65,10 @@ class OopsMain
         add_filter( 'wp_query_search_exclusion_prefix', function( $prefix ) {
             return '!';
         } );
+
+        OopsCookie::register();
+
+        OopsAge::register();
     }
 
     const TAXONOMY = [
@@ -106,13 +124,6 @@ class OopsMain
             'suppress_filters' => 0,
             
             's' => '"' . $prefix . WPMLMain::current_language() . '"',
-            
-            // 's' => '" ' . WPMLMain::current_language() . '"' . ' "-' . WPMLMain::current_language() . '"',
-
-            // 'search_columns' =>
-            // [
-            //     'post_name',
-            // ],
 
             'meta_query' =>
             [
@@ -126,14 +137,6 @@ class OopsMain
                 'oops_order' =>
                 [
                     'key' => self::FIELD[ 'order' ],
-
-                    // 'type' => 'UNSIGNED',
-
-                    // 'compare' => 'EXISTS',
-
-                    // 'value' => '',
-                    
-                    // 'compare' => '!=',
                 ],
             ],
 
@@ -158,6 +161,15 @@ class OopsMain
         'bonus-label' => 'affilate-bonus-label',
     ];
 
+    public static function get_alt( $alt = '' )
+    {
+        $alt_words = preg_split( "/[ ,-]/", $alt );
+
+        array_pop( $alt_words );
+
+        return implode( ' ', $alt_words );
+    }
+
     public static function get()
     {
         $posts = array_merge( self::get_posts(), self::get_posts( '-' ) );
@@ -175,27 +187,9 @@ class OopsMain
 
         foreach ( $posts as $post )
         {
-            // LegalDebug::debug( [
-            //     'function' => 'OopsMain::get',
-
-            //     'post_title' => $post->post_title,
-
-            //     'affilate-order' => get_field( self::FIELD[ 'order' ], $post->ID ),
-            // ] );
-
             $src = get_field( self::FIELD[ 'logo' ], $post->ID );
 
             $bonus_label = get_field( self::FIELD[ 'bonus-label' ], $post->ID );
-
-            // $image = wp_get_attachment_image_src( $post->ID, 'full' );
-
-            // LegalDebug::debug( [
-            //     'src' => $src,
-
-            //     'ID' => $post->ID,
-
-            //     'image' => $image,
-            // ] );
 
             $href = get_post_permalink( $post->ID );
 
@@ -210,16 +204,10 @@ class OopsMain
                 
                 'height' => ( $src ? $src[ 'height' ] : '29' ),
 
+                'alt' => self::get_alt( $post->post_title ),
+
                 'bonus-label' => $bonus_label,
             ];
-
-            // LegalDebug::debug( [
-            //     'post_title' => $post->post_title,
-
-            //     'affilate-order' => get_post_meta( $post->ID, 'affilate-order', true ),
-
-            //     'affilate-oops' => get_post_meta( $post->ID, 'affilate-oops', true ),
-            // ] );
         }
 
         return $args;
@@ -228,12 +216,6 @@ class OopsMain
     public static function get_posts( $prefix = ' ' )
     {
         $query = new WP_Query( self::get_args( $prefix ) );
-
-        // LegalDebug::debug( [
-        //     'function' => 'OopsMain::get_posts',
-
-        //     'request' => $query->request,
-        // ] );
         
         return $query->posts;
     }
@@ -243,32 +225,13 @@ class OopsMain
         $query1 = new WP_Query( self::get_args() );
 
         $query2 = new WP_Query( self::get_args( '-' ) );
-
-        // LegalDebug::debug( [
-        //     'found_posts1' => $query1->found_posts,
-
-        //     'found_posts2' => $query2->found_posts,
-
-        //     'result' => ( $query1->found_posts || $query2->found_posts ? 'true' : 'false' ),
-
-        //     // 'get_args' => self::get_args(),
-        // ] );
         
         return ( $query1->found_posts || $query2->found_posts );
     }
 
     const TEMPLATE = [
-        'oops' => LegalMain::LEGAL_PATH . '/template-parts/oops/oops.php',
+        'legal-oops-main' => LegalMain::LEGAL_PATH . '/template-parts/oops/legal-oops-main.php',
     ];
-
-    // public static function render_check()
-    // {
-    //     if ( !self::check() ) {
-    //         return '';
-    //     }
-
-    //     return self::render();
-    // }
 
     public static function render()
     {
@@ -278,7 +241,7 @@ class OopsMain
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'oops' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'legal-oops-main' ], false, self::get() );
 
         $output = ob_get_clean();
 

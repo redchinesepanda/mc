@@ -6,14 +6,16 @@ class YoastOG
     {
         $handler = new self();
 
-		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
-
 		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image' ] );
 
 		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
+		
+		// add_action( 'wpseo_add_opengraph_images', [ $handler, 'default_opengraph_images' ] );
+
+		// add_filter( 'wpseo_frontend_presenters', [ $handler, 'add_my_custom_presenter' ] );
     }
 
-	function current_image()
+	public static function current_image()
 	{
 		// LegalDebug::debug( [
 		// 	'current_image' => LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . WPMLMain::current_language() . '.webp',
@@ -31,6 +33,24 @@ class YoastOG
 	// function default_opengraph_images( $object )
 	// {
 	// 	$object->add_image( self::current_image() );
+	// }
+
+	// function add_my_custom_presenter( $presenters )
+	// {
+	// 	// $presenters[] = new My_Custom_Presenter();
+
+	// 	// LegalDebug::debug( [
+	// 	// 	$presenters,
+	// 	// ] );
+
+	// 	foreach ( $presenters as $presenter )
+	// 	{
+	// 		LegalDebug::debug( [
+	// 			$presenter->present(),
+	// 		] );
+	// 	}
+	
+	// 	return $presenters;
 	// }
 }
 

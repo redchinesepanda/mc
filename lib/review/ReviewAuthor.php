@@ -6,9 +6,32 @@ class ReviewAuthor
         'review-author' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-author.css',
 
-            'ver'=> '1.0.1',
+            'ver'=> '1.0.2',
         ],
     ];
+
+    public static function register_style()
+    {
+        ReviewMain::register_style( self::CSS );
+    }
+
+    public static function register_inline_style()
+    {
+		ReviewMain::register_inline_style( 'review-author', self::render_style() );
+    }
+
+    public static function register()
+    {
+        $handler = new self();
+
+        // [legal-author]
+
+        add_shortcode( 'legal-author', [ $handler, 'render' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+    }
 
     const FIELD = [
         'author' => 'media-author',
@@ -27,27 +50,6 @@ class ReviewAuthor
 
         'image' => 'link-item-image',
     ];
-
-    public static function register_style()
-    {
-        ReviewMain::register_style( self::CSS );
-
-        // if ( self::check() )
-        // {
-        //     ToolEnqueue::register_style( self::CSS );
-        // }
-    }
-
-    public static function register()
-    {
-        $handler = new self();
-
-        // [legal-author]
-
-        add_shortcode( 'legal-author', [ $handler, 'render' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-    }
 
     // public static function check()
     // {
@@ -70,6 +72,22 @@ class ReviewAuthor
         'ua-ru',
     ];
 
+    const ES = [
+        'es',
+
+        'mx',
+
+        'pe',
+
+        'cl',
+
+        'py',
+
+        'co',
+
+        'ar',
+    ];
+
     public static function get()
     {
         $language = WPMLMain::current_language();
@@ -77,6 +95,11 @@ class ReviewAuthor
         if ( in_array( $language, self::CIS ) )
         {
             return self::get_cis();
+        }
+
+        if ( in_array( $language, self::ES ) )
+        {
+            return self::get_es();
         }
 
         return self::get_default();
@@ -120,14 +143,33 @@ class ReviewAuthor
 		];
     }
 
+    public static function get_es()
+    {
+        $page = get_page_by_path( '/sobre-nosotros/' );
+
+        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        $href = get_page_link( $translated_id ) . '#nuestro-equipo';
+
+        return [
+			'name' => __( ReviewMain::TEXT[ 'borja-imbergamo' ], ToolLoco::TEXTDOMAIN ),
+
+			'duty' => __( ReviewMain::TEXT[ 'website-administrator' ], ToolLoco::TEXTDOMAIN ),
+
+			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/borja-imbergamo.webp',
+
+			'href' => $href,
+		];
+    }
+
     const TEMPLATE = [
-		'review-author' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author.php',
+		'main' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-main.php',
+
+		'style' =>  LegalMain::LEGAL_PATH . '/template-parts/review/review-author-style.php',
 	];
 
-    public static function render( $args = [] )
+    public static function render()
     {
-        // if ( !self::check() )
-        
         if ( !ReviewMain::check() )
         {
             return '';
@@ -135,7 +177,23 @@ class ReviewAuthor
         
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-author' ], false, self::get() );
+        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_style()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+        
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
 
         $output = ob_get_clean();
 

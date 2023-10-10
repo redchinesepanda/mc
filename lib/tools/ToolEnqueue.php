@@ -9,23 +9,15 @@ class ToolEnqueue
 
             $ver = false;
 
+            $deps = [];
+
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
                 $ver = $item[ 'ver' ];
             }
 
-            wp_enqueue_style( $name, $path, [], $ver );
-
-            // LegalDebug::debug( [
-			// 	'function' => 'BonusMain::register_style',
-
-            //     'name' => $name,
-
-            //     'path' => $path,
-
-            //     'ver' => $ver,
-			// ] );
+            wp_enqueue_style( $name, $path, $deps, $ver );
         }
     }
 
@@ -36,13 +28,28 @@ class ToolEnqueue
 
             $ver = false;
 
+            $deps = [];
+
+            // $args = [
+            //     'in_footer' => false,
+
+            //     'strategy' => 'async',
+            // ];
+
+            $args = true;
+
             if ( is_array( $item ) ) {
                 $path = $item[ 'path' ];
 
                 $ver = $item[ 'ver' ];
+
+                if ( !empty( $item[ 'deps' ] ) )
+                {
+                    $deps = $item[ 'deps' ];
+                }
             }
 
-            wp_register_script( $name, $path, [], false, true );
+            wp_register_script( $name, $path, $deps, $ver, $args );
 
             wp_enqueue_script( $name );
         }
@@ -64,6 +71,89 @@ class ToolEnqueue
         wp_localize_script( $name, str_replace( '-', '_', $name ), $data );
         
         wp_enqueue_script( $name );
+    }
+
+    public static function register()
+    {
+        $handler = new self();
+
+		add_filter( 'style_loader_tag', [ $handler, 'link_type' ], 10, 2 );
+
+        add_filter( 'script_loader_tag', [ $handler, 'script_type' ], 10, 2 );
+
+        // add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ] );
+    }
+
+    // public static function inspect_scripts()
+    // {
+    //     global $wp_scripts;
+
+    //     LegalDebug::debug( [
+    //         'function' => 'ToolEnqueue::inspect_scripts',
+
+    //         'queue' => $wp_scripts->queue,
+    //     ] );
+        
+    // }
+
+    // public static function crunchify_print_scripts_styles()
+    // {
+    //     $result = [];
+
+    //     $result['scripts'] = [];
+
+    //     $result['styles'] = [];
+    
+    //     // Print all loaded Scripts
+    //     global $wp_scripts;
+
+    //     foreach( $wp_scripts->queue as $script ) :
+    //        $result['scripts'][ $script ] =  $wp_scripts->registered[$script]->src . ";";
+    //     endforeach;
+    
+    //     // Print all loaded Styles (CSS)
+
+    //     global $wp_styles;
+
+    //     foreach( $wp_styles->queue as $style ) :
+    //        $result['styles'][ $style ] =  $wp_styles->registered[$style]->src . ";";
+    //     endforeach;
+    
+    //     return $result;
+    // }
+
+    public static function link_type( $html, $handle )
+	{
+        $html = str_replace(
+			" type='text/css'",
+
+			"",
+
+			$html
+		);
+
+		$html = str_replace(
+			" />",
+
+			">",
+
+			$html
+		);
+
+		return $html;
+	}
+
+    function script_type( $tag, $handle, $src = 'unset' )
+    {
+        $tag = str_replace(
+			" type='text/javascript'",
+
+			"",
+
+			$tag
+		);
+                
+        return $tag;
     }
 }
 

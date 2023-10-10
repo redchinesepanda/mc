@@ -15,13 +15,22 @@ class WPMLLangSwitcher
         ToolEnqueue::register_style( self::CSS );
     }
 
-    const JS = LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js';
+    public static function register_inline_style()
+    {
+		ToolEnqueue::register_inline_style( 'legal-wpml-lang-switcher', self::render_style() );
+    }
+
+    const JS = [
+        'legal-wpml-lang-switcher' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/wpml/wpml-lang-switcher.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
 
     public static function register_script()
     {
-        wp_register_script( 'wpml-lang-switcher', self::JS, [], false, true);
-
-        wp_enqueue_script( 'wpml-lang-switcher' );
+        ToolEnqueue::register_script( self::JS );
     }
 
     public static function register() {
@@ -32,6 +41,8 @@ class WPMLLangSwitcher
         add_shortcode( 'legal-lang-switcher', [ $handler, 'render' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
@@ -66,25 +77,27 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
-    const EXCLUDE = [
-        'pt_GB',
+    // const EXCLUDE = [
+    //     'pt_GB',
 
-        'pt_ES',
+    //     'pt_ES',
 
-        'sr_SR',
+    //     'sr_SR',
 
-        'se_SE',
+    //     'se_SE',
 
-        'cs_CS',
+    //     'cs_CS',
 
-        'en',
+    //     'en',
 
-        'es',
+    //     'es',
 
-        'ru_RU',
+    //     'ru',
 
-        'dk_DA',
-    ];
+    //     'dk_DA',
+
+    //     'pt_BP',
+    // ];
 
     public static function choises()
     {
@@ -93,7 +106,9 @@ class WPMLLangSwitcher
 
     public static function exclude( $languages )
     {
-        return WPMLMain::exclude( $languages, self::EXCLUDE );
+        // return WPMLMain::exclude( $languages, self::EXCLUDE );
+        
+        return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
     }
 
     public static function get_not_found()
@@ -138,13 +153,28 @@ class WPMLLangSwitcher
         return $args;
     }
     
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher.php';
+    const TEMPLATE = [
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-main.php',
+
+        'style' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-style.php',
+    ];
 
     public static function render()
     {
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+    public static function render_style()
+    {
+        ob_start();
+
+        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
 
         $output = ob_get_clean();
 

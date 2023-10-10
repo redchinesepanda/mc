@@ -1,3 +1,12 @@
+<?php
+
+// LegalDebug::debug( [
+//     'part' => 'part-billet-title.php',
+
+//     'args' => $args,
+// ] );
+
+?>
 <div class="billet-title">
     <?php if ( $args['order'] == BilletTitle::ORDER_TYPE ) : ?>
         <div class="billet-order">#<?php echo $args['index']; ?></div>

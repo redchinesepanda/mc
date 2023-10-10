@@ -1,0 +1,121 @@
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+
+	.legal-oops-cookie {
+		flex-direction: column;
+		row-gap: 20px;
+	}
+
+	/* Position */
+
+	.legal-oops-cookie {
+		padding: 0px 20px;
+	}
+
+	/* Typography */
+
+	.legal-oops-cookie .oops-cookie-description {
+		text-align: justify;
+	}
+
+	.legal-oops-cookie .oops-cookie-privacy,
+	.legal-oops-cookie .oops-cookie-button {
+		text-align: center;
+	}
+}
+
+/* Display */
+
+.legal-oops-cookie-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.legal-oops-cookie-wrapper:not( .legal-active ) {
+	display: none;
+}
+
+.legal-oops-cookie {
+	align-items: center;
+	column-gap: 50px;
+	display: flex;
+}
+
+/* Position */
+
+.legal-oops-cookie-wrapper {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	padding: 25px 0px;
+}
+
+.legal-oops-cookie .oops-cookie-button {
+	padding: 10px 50px;
+}
+
+/* Width and height */
+
+.legal-oops-cookie-wrapper {
+	width: 100%;
+}
+
+.legal-oops-cookie {
+	flex-basis: 1080px;
+}
+
+.legal-oops-cookie .oops-cookie-description {
+	flex-basis: calc( 60% - 50px );
+	flex-grow: 1;
+}
+
+.legal-oops-cookie .oops-cookie-privacy,
+.legal-oops-cookie .oops-cookie-button {
+	flex-basis: fit-content;
+}
+
+/* Background */
+
+.legal-oops-cookie-wrapper {
+	background-color: rgba(0, 0, 0, 0.85);
+}
+
+.legal-oops-cookie .oops-cookie-button {
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
+}
+
+/* Typography */
+
+.legal-oops-cookie .oops-cookie-description {
+	color: rgb(255, 255, 255);
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 16.8px;
+}
+
+.legal-oops-cookie .oops-cookie-button {
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+}
+
+.legal-oops-cookie .oops-cookie-privacy {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 25.2px;
+	text-transform: uppercase;
+	color: rgb(255, 255, 255);
+}

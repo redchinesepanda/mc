@@ -22,6 +22,27 @@
 	border-radius: 50%;
 }
 
+/* Year and Month-Year */
+
+#tinymce .legal-header-month-year,
+#tinymce .legal-header-year {
+	padding-left: 34px;
+
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+#tinymce .legal-header-month-year {
+	background-image: url( '../../img/tools/tool-tinymce-header-month-year.svg' );
+}
+
+#tinymce .legal-header-year {
+	background-image: url( '../../img/tools/tool-tinymce-header-year.svg' );
+}
+
+/* Title with image */
+
 #tinymce .legal-header-basketball::before {
 	background-image: url( '../../img/review/header/review-basketball.svg' );
 }

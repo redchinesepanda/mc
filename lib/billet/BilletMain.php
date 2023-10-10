@@ -10,6 +10,8 @@ require_once( 'BilletMini.php' );
 
 require_once( 'center/BilletTitle.php' );
 
+require_once( 'center/BilletDescription.php' );
+
 require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
@@ -92,6 +94,8 @@ class BilletMain
 
     const FIELD = [
         'about' => 'review-about',
+
+        'main-description' => 'billet-feture-main-description',
     ];
 
     const ABOUT = [
@@ -121,6 +125,52 @@ class BilletMain
         BilletMega::register();
     }
 
+    public static function get_bonus_url( $id, $filter = [] )
+    {
+        $bonus_url = '';
+
+        $feature_bonus_item = BilletBonus::get_feture_bonus( $id, $filter );
+
+        if ( !empty( $feature_bonus_item ) )
+        {
+            $bonus_id = $feature_bonus_item[ BilletBonus::FETURE_BONUS[ 'bonus-id' ] ];
+
+            if ( $bonus_id )
+            {
+                $bonus_url = get_post_permalink( $bonus_id );
+            }
+        }
+
+        if ( empty( $bonus_url ) )
+        {
+            $group = get_field( self::FIELD[ 'about' ], $id );
+
+            if ( $group )
+            {
+                $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
+                
+                if ( $bonus_id )
+                {
+                    $bonus_url = get_post_permalink( $bonus_id );
+                }
+            }
+        }
+
+        // LegalDebug::debug( [
+        //     'function' => 'BilletMain::get_bonus_url',
+
+        //     'feature_bonus_item' => $feature_bonus_item,
+
+        //     'bonus_url' => $bonus_url,
+
+        //     'id' => $id,
+
+        //     'filter' => $filter,
+        // ] );
+        
+        return $bonus_url;
+    }
+
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
@@ -137,7 +187,9 @@ class BilletMain
 
             $card_url = $group[ self::ABOUT[ 'review' ] ];
 
-            $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+            // $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
+
+            $bonus_url = self::get_bonus_url( $id, $filter );
         }
 
         // Партнерская БК или ''
@@ -267,25 +319,54 @@ class BilletMain
         ];
     }
 
-    private static function get( $args )
+    const FETURE_MAIN_DESCRIPTION = [
+        'id' => 'billet-feture-id',
+
+        'description' => 'billet-main-description'
+    ];
+
+    public static function get_main_description( $id, $filter = [] )
+    {
+        $main_description = '';
+
+        $permission_main_description = ( !empty( $filter ) ? $filter[ 'description' ] : true );
+
+        if ( $permission_main_description )
+        {
+            $feature_main_description = get_field( self::FIELD[ 'main-description' ], $id );
+
+            if ( $feature_main_description )
+            {
+                foreach ( $feature_main_description as $feature_main_description_item )
+                {
+                    if ( in_array( $feature_main_description_item[ self::FETURE_MAIN_DESCRIPTION[ 'id' ] ], $filter[ 'features' ] ) )
+                    {
+                        $main_description = $feature_main_description_item[ self::FETURE_MAIN_DESCRIPTION[ 'description' ] ];
+                    }
+                }
+            }
+
+            if ( empty( $main_description ) )
+            {
+                $group = get_field( self::FIELD[ 'about' ], $id );
+
+                if ( $group )
+                {
+                    $main_description = $group[ self::ABOUT[ 'description' ] ];
+                }
+            } 
+        }
+
+        return $main_description;
+    }
+
+    public static function get( $args )
     {
         $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $description = '';
-
-        $group = get_field( self::FIELD[ 'about' ], $id );
-
-        if ( $group )
-        {
-            $filter_description = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ][ 'description' ] : true );
-
-            if ( $filter_description )
-            {
-                $description = $group[ self::ABOUT[ 'description' ] ];
-            }
-        }
+        $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
@@ -336,11 +417,24 @@ class BilletMain
 
     const TEMPLATE = [
         'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
+
+        'billet-bonus' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
     ];
 
     public static function render( $args = [] )
     { 
         load_template( self::TEMPLATE[ 'billet-main' ], false, self::get( $args ) );
+    }
+
+    public static function render_bonus( $args = [] )
+    {
+		ob_start();
+
+        load_template( self::TEMPLATE[ 'billet-bonus' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 

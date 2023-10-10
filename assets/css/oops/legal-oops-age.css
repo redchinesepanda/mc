@@ -1,0 +1,210 @@
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+
+	.legal-oops-age .oops-age-button-yes,
+	.legal-oops-age .oops-age-button-no {
+		justify-content: center;
+	}
+
+	/* Position */
+
+	.legal-oops-age-wrapper {
+		padding: 20px;
+	}
+
+	.legal-oops-age .oops-age-button-yes {
+		flex-basis: 100%;
+	}
+
+	.legal-oops-age .oops-age-button-no {
+		flex-basis: 100%;
+	}
+	
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Display */
+
+	.legal-oops-age .oops-age-button-yes {
+		justify-content: right;
+	}
+
+	/* Position */
+
+	.legal-oops-age .oops-age-button-yes {
+		flex-basis: calc( 50% - 10px );
+	}
+
+	.legal-oops-age .oops-age-button-no {
+		flex-basis: calc( 50% - 10px );
+	}
+}
+
+/* Display */
+
+.legal-oops-age-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.legal-oops-age-wrapper:not( .legal-active ) {
+	display: none;
+}
+
+.legal-oops-age {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.legal-oops-age .oops-age-button-yes {
+	display: flex;
+}
+
+.legal-oops-age .oops-age-button-no {
+	display: flex;
+}
+
+/* Position */
+
+.legal-oops-age-wrapper {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+.legal-oops-age {
+	padding:  165px 30px 30px 30px;
+}
+
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age .age-button-no-link {
+	padding: 20px 80px;
+}
+
+/* Width and Height */
+
+.legal-oops-age-wrapper {
+	height: 100vh;
+	width: 100%;
+}
+
+.legal-oops-age {
+	flex-basis: 600px;
+}
+
+.legal-oops-age .oops-age-title {
+	flex-basis: 100%;
+}
+
+.legal-oops-age .oops-age-description {
+	flex-basis: 100%;
+}
+
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age .age-button-no-link {
+	flex-basis: fit-content;
+}
+
+.legal-oops-age .oops-age-after {
+	flex-basis: 100%;
+}
+
+/* Background */
+
+.legal-oops-age-wrapper {
+	background-color: #323232CC;
+}
+
+.legal-oops-age {
+	background-image: url( '../../img/oops/legal-oops-age.webp' );
+	background-position: top 30px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: #ffffff;
+	border-radius: 20px;
+}
+
+.legal-oops-age .age-button-yes-link {
+	background-color: rgb(89, 151, 227);
+	border: 0.8px solid transparent;
+}
+
+.legal-oops-age .age-button-no-link {
+	border: 0.8px solid rgb(220, 209, 209);
+}
+
+.legal-oops-age .age-button-yes-link,
+.legal-oops-age .age-button-no-link {
+	border-radius: 20px;
+}
+
+.legal-oops-age .age-button-yes-link:hover,
+.legal-oops-age .age-button-no-link:hover {
+	box-shadow: rgba(124, 173, 238, 0.12) 0px 4px 16px 0px;
+}
+
+/* Typography */
+
+.legal-oops-age .oops-age-title {
+	color: rgb(12, 17, 21);
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 49px;
+	text-align: center;
+}
+
+.legal-oops-age .oops-age-description {
+	color: rgba(106, 107, 108, 0.9);
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: normal;
+	line-height: 31.5px;
+	text-align: center;
+}
+
+.legal-oops-age .age-button-yes-link {
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.legal-oops-age .age-button-no-link {
+	color: rgb(89, 151, 227);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.legal-oops-age .oops-age-after {
+	color: rgb(105, 105, 105);
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 26.25px;
+	text-align: center;
+}

@@ -1,0 +1,36 @@
+@media screen and ( max-width: 768px )
+{
+	/* Position */
+
+	.legal-bonus-main .legal-bonus-sidebar {
+		padding-top: 20px;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Width and Height */
+
+	.legal-bonus-single .legal-bonus-main {
+		flex-basis: calc( 75% - 25px );
+		flex-grow: 1;
+	} 
+
+	/* .legal-bonus-single .legal-bonus-sidebar {
+		flex-basis: calc( 25% - 25px );
+	} */
+}
+
+/* Display */
+
+.legal-bonus-single {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 50px;
+}
+
+/* Position */
+
+.legal-bonus-single .legal-bonus-sidebar {
+	position: relative;
+}

@@ -8,6 +8,8 @@ class ACFReview
         'about' => 'review-about',
 
         'post-type' => 'legal_post_type',
+
+        'post-type-wiki' => 'legal_post_type_wiki',
 	];
 
 	const LINK = [
@@ -28,6 +30,8 @@ class ACFReview
 
 		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
 
+		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type-wiki' ], [ $handler, 'choices_post_type_wiki' ] );
+
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
 
         add_action( 'acf/save_post', [ $handler, 'change_post_type' ] );
@@ -36,6 +40,11 @@ class ACFReview
     public static function change_post_type( $post_id )
     {
 		$post_type = get_field( self::FIELD[ 'post-type' ], $post_id );
+
+		if ( !$post_type )
+        {
+            $post_type = get_field( self::FIELD[ 'post-type-wiki' ], $post_id );
+        }
 
 		if ( $post_type )
         {
@@ -60,6 +69,22 @@ class ACFReview
         $choices[ 'page' ] = 'Страница';
 
         $choices[ 'legal_bk_review' ] = 'Обзор БК';
+
+        $field[ 'choices' ] = $choices;
+
+        if ( $post = get_post() )
+        {
+            $field[ 'value' ] = $post->post_type;
+        }
+
+        return $field;
+    }
+
+	function choices_post_type_wiki( $field )
+    {
+        $choices[ 'post' ] = 'Пост';
+
+        $choices[ 'legal_wiki' ] = 'Пост Вики';
 
         $field[ 'choices' ] = $choices;
 

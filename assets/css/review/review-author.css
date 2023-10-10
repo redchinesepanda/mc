@@ -1,3 +1,21 @@
+@media screen and ( max-width: 767px )
+{
+	/* Position */
+	
+	#theme-bottom-section .legal-author {
+		padding: 20px;
+	}	
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Position */
+
+	#theme-bottom-section .legal-author {
+		padding: 20px 70px;
+	}
+}
+
 /* Display */
 
 #theme-bottom-section .legal-author {
@@ -14,7 +32,6 @@
 /* Position */
 
 #theme-bottom-section .legal-author {
-	padding: 20px 70px;
 	margin: 0px auto;
 }
 
