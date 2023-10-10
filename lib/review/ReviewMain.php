@@ -162,7 +162,7 @@ class ReviewMain
 
         ReviewBanner::register();
 
-        // ReviewAuthor::register();
+        ReviewAuthor::register();
 
         // ReviewCounter::register();
 
