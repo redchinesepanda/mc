@@ -185,23 +185,23 @@ class ReviewTitle
 
 		$dom = LegalDOM::get_dom( $content );
 
-        // $nodes = self::get_nodes( $dom );
+        $nodes = self::get_nodes( $dom );
 
-		// $permission_nodes = $nodes->length == 0;
+		$permission_nodes = $nodes->length == 0;
 
-		// $permission_placeholders = !self::check_placeholder( $content );
+		$permission_placeholders = !self::check_placeholder( $content );
 		
-		// if ( $permission_nodes && $permission_placeholders )
-		// {
-		// 	return $content;
-		// }
+		if ( $permission_nodes && $permission_placeholders )
+		{
+			return $content;
+		}
 
-		// foreach ( $nodes as $id => $node )
-		// {
-		// 	$date = self::get_date( $node );
+		foreach ( $nodes as $id => $node )
+		{
+			$date = self::get_date( $node );
 
-		// 	$node->textContent = $node->textContent . ' ' . $date;
-		// }
+			$node->textContent = $node->textContent . ' ' . $date;
+		}
 
 		// return self::replace_placeholder( $dom->saveHTML() );
 		
