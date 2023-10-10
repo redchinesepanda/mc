@@ -209,7 +209,11 @@ class ReviewTitle
 
 		// return $content;
 
+		// Работает1 начало
+
 		return html_entity_decode( $dom->saveHTML() );
+
+		// Работает1 конец
 	}
 
 	public static function style_formats_header( $settings )
