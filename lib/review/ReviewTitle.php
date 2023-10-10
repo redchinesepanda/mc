@@ -25,7 +25,7 @@ class ReviewTitle
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
 
-		// add_filter( 'the_content', [ $handler, 'modify_content' ] );
+		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
 	const CLASSES = [
