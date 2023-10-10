@@ -91,7 +91,7 @@ class BilletMega
 			}
 		}
 
-		$args[ 'content' ] = ToolEncode::encode( $dom->saveHTML() );
+		$args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $dom ) );
 
 		return $args;
 	}
