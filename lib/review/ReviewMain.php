@@ -144,7 +144,7 @@ class ReviewMain
 
         ReviewAbout::register();
 
-        // ReviewAnchors::register();
+        ReviewAnchors::register();
 
         // ReviewGroup::register();
 
