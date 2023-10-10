@@ -25,7 +25,7 @@ class ReviewTitle
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
 
-		// add_filter( 'the_content', [ $handler, 'modify_content' ] );
+		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
 	const CLASSES = [
@@ -205,7 +205,9 @@ class ReviewTitle
 			$node->textContent = $node->textContent . ' ' . $date;
 		}
 
-		return self::replace_placeholder( $dom->saveHTML() );
+		// return self::replace_placeholder( $dom->saveHTML() );
+		
+		return $dom->saveHTML();
 	}
 
 	public static function style_formats_header( $settings )
