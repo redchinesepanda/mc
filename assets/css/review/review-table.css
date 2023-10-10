@@ -2,7 +2,9 @@
 {
     /* Review Display */
 
-    .tcb-post-content table.legal-raw {
+    .tcb-post-content table.legal-raw,
+    .tcb-post-content table.legal-raw-column,
+    .tcb-post-content table {
         overflow: scroll;
         display: block;
     }
