@@ -166,7 +166,7 @@ class ReviewMain
 
         ReviewCounter::register();
 
-        // ReviewList::register();
+        ReviewList::register();
 
         // ReviewOffers::register();
 
