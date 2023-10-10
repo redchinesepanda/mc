@@ -32,21 +32,21 @@ class LegalDOM
 
 			// Работает 1 начало
 
-			// $dom->loadHTML(
-			// 	"\<\?xml encoding=\"utf-8\"\?\>"
+			$dom->loadHTML(
+				"\<\?xml encoding=\"utf-8\"\?\>"
 				
-			// 	. '<div>' . $content . '</div>',
+				. '<div>' . $content . '</div>',
 				
-			// 	LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED
-			// );
+				LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED
+			);
 
 			// Работает 1 конец
 
 			// Работает 2 начало
 
-			$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
+			// $content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 
-			$dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+			// $dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 
 			// Работает 2 конец
 
