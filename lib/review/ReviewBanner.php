@@ -154,7 +154,7 @@ class ReviewBanner
 			}
 		}
 
-		return $dom->saveHTML();
+		return $dom->saveHTML( $dom );
 	}
 
 	const TEMPLATE = [

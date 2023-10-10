@@ -111,7 +111,7 @@ class ReviewStats
 			$node->parentNode->insertBefore( $stats, $node );
 		}
 
-		return $dom->saveHTML();
+		return $dom->saveHTML( $dom );
 	}
 
 	public static function get_table()

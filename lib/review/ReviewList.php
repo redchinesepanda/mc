@@ -145,7 +145,7 @@ class ReviewList
             }
 		}
 
-		return $dom->saveHTML();
+		return $dom->saveHTML( $dom );
 	}
 
     const CLASSES = [
