@@ -205,13 +205,13 @@ class ReviewTitle
 
 		// return self::replace_placeholder( $dom->saveHTML() );
 		
-		// return $dom->saveHTML();
+		return $dom->saveHTML();
 
 		// return $content;
 
 		// Работает1 начало
 
-		return html_entity_decode( $dom->saveHTML() );
+		// return html_entity_decode( $dom->saveHTML() );
 
 		// Работает1 конец
 	}

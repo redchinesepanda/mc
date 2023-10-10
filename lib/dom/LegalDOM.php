@@ -44,7 +44,7 @@ class LegalDOM
 
 			// converts all special characters to utf-8
 
-			$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
+			// $content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 
 			$dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 
