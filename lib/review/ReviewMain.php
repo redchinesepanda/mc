@@ -160,7 +160,7 @@ class ReviewMain
 
         ReviewHowTo::register();
 
-        // ReviewBanner::register();
+        ReviewBanner::register();
 
         // ReviewAuthor::register();
 
