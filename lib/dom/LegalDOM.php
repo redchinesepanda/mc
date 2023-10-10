@@ -18,7 +18,9 @@ class LegalDOM
 
 	public static function get_dom( $content )
 	{
-		$dom = new DOMDocument();
+		// $dom = new DOMDocument();
+
+		$dom = new DOMDocument( '1.0', 'utf-8' );
 
 		if ( !empty( $content ) )
 		{
@@ -40,11 +42,11 @@ class LegalDOM
 
 			// Работает 1 конец
 
-			// $dom->encoding = 'utf-8';
+			// converts all special characters to utf-8
 
-			// $dom->loadHTML( utf8_decode( '<div>' . $content . '</div>' ), LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
-			
-			// $dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+			$content = mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
+
+			$dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 
 			$container = $dom->getElementsByTagName( 'div' )->item( 0 );
 
