@@ -215,7 +215,11 @@ class ReviewTitle
 
 		// Работает1 конец
 
+		// Работает 2 начало
+
 		return $dom->saveHTML( $dom->documentElement );
+
+		// Работает 2 конец
 	}
 
 	public static function style_formats_header( $settings )
