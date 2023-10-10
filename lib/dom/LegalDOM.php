@@ -18,9 +18,9 @@ class LegalDOM
 
 	public static function get_dom( $content )
 	{
-		// $dom = new DOMDocument();
+		$dom = new DOMDocument();
 
-		$dom = new DOMDocument( '1.0', 'utf-8' );
+		// $dom = new DOMDocument( '1.0', 'utf-8' );
 
 		if ( !empty( $content ) )
 		{
