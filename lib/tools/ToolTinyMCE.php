@@ -61,6 +61,16 @@ class ToolTinyMCE
 			],
 
 			[
+				'title' => 'По умолчанию 50%',
+				'value' => 'legal-column',
+			],
+
+			[
+				'title' => 'По умолчанию 33.333%',
+				'value' => 'legal-column-3',
+			],
+
+			[
 				'title' => 'Ряд и Столбец',
 				'value' => 'legal-raw-column',
 			],
@@ -71,18 +81,13 @@ class ToolTinyMCE
 			],
 
 			[
+				'title' => 'Ряд 33.333%',
+				'value' => 'legal-raw slegal-column-3',
+			],
+
+			[
 				'title' => 'Галка',
 				'value' => 'legal-check',
-			],
-
-			[
-				'title' => 'Колонка 50%',
-				'value' => 'legal-column',
-			],
-
-			[
-				'title' => 'Колонка 33.333%',
-				'value' => 'legal-column-3',
 			],
 
 			[
