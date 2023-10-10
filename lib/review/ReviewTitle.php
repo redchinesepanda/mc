@@ -207,7 +207,9 @@ class ReviewTitle
 
 		// return self::replace_placeholder( $dom->saveHTML() );
 		
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
+
+		return $content;
 	}
 
 	public static function style_formats_header( $settings )
