@@ -158,7 +158,7 @@ class ReviewMain
 
         ReviewBonus::register();
 
-        // ReviewHowTo::register();
+        ReviewHowTo::register();
 
         // ReviewBanner::register();
 
