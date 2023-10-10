@@ -28,13 +28,17 @@ class LegalDOM
 
 			// $dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 
-			$dom->loadHTML(
-				'<?xml encoding="utf-8"?>'
+			// Работает 1 начало
+
+			// $dom->loadHTML(
+			// 	"\<\?xml encoding=\"utf-8\"\?\>"
 				
-				. '<div>' . $content . '</div>',
+			// 	. '<div>' . $content . '</div>',
 				
-				LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED
-			);
+			// 	LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED
+			// );
+
+			// Работает 1 конец
 
 			// $dom->encoding = 'utf-8';
 
