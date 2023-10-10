@@ -154,7 +154,7 @@ class ReviewMain
 
         ReviewFAQ::register();
 
-        // ReviewStats::register();
+        ReviewStats::register();
 
         // ReviewBonus::register();
 
