@@ -6,9 +6,9 @@ class ToolEncode
 	{
 		// return mb_convert_encoding( $content, 'HTML-ENTITIES', 'UTF-8' );
 		
-		return mb_convert_encoding( $content, 'UTF-8', 'HTML-ENTITIES' );
+		// return mb_convert_encoding( $content, 'UTF-8', 'HTML-ENTITIES' );
 
-		// return $content;
+		return $content;
 	}
 }
 
