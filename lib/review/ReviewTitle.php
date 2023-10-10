@@ -205,7 +205,7 @@ class ReviewTitle
 
 		// return self::replace_placeholder( $dom->saveHTML() );
 		
-		return $dom->saveHTML();
+		// return $dom->saveHTML();
 
 		// return $content;
 
@@ -214,6 +214,8 @@ class ReviewTitle
 		// return html_entity_decode( $dom->saveHTML() );
 
 		// Работает1 конец
+
+		return $dom->saveHTML( $dom->documentElement );
 	}
 
 	public static function style_formats_header( $settings )
