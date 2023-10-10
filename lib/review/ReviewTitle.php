@@ -207,7 +207,7 @@ class ReviewTitle
 		
 		// return $dom->saveHTML();
 
-		// return $content;
+		return $content;
 
 		// Работает1 начало
 
@@ -217,7 +217,7 @@ class ReviewTitle
 
 		// Работает 2 начало
 
-		return $dom->saveHTML( $dom->documentElement );
+		// return $dom->saveHTML( $dom->documentElement );
 
 		// Работает 2 конец
 	}
