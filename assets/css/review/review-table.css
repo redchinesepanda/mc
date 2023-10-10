@@ -245,6 +245,7 @@
 }
 
 .tcb-post-content table.legal-raw tbody:first-child tr:first-child,
+.tcb-post-content table.legal-raw caption ~ tbody tr:first-child,
 .tcb-post-content table.legal-raw thead tr:first-child {
     font-weight: 700;
     color: rgb(255, 255, 255);
