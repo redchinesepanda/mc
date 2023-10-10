@@ -82,7 +82,7 @@ class ToolTinyMCE
 
 			[
 				'title' => 'Ряд 33.333%',
-				'value' => 'legal-raw slegal-column-3',
+				'value' => 'legal-raw legal-column-3',
 			],
 
 			[
