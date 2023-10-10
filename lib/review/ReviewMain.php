@@ -148,9 +148,9 @@ class ReviewMain
 
         ReviewGroup::register();
 
-        ReviewProsCons::register();
+        // ReviewProsCons::register();
 
-        // ReviewGallery::register();
+        ReviewGallery::register();
 
         // ReviewFAQ::register();
 
