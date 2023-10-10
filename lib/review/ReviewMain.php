@@ -152,7 +152,7 @@ class ReviewMain
 
         ReviewGallery::register();
 
-        // ReviewFAQ::register();
+        ReviewFAQ::register();
 
         // ReviewStats::register();
 
