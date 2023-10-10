@@ -205,9 +205,9 @@ class ReviewTitle
 
 		// return self::replace_placeholder( $dom->saveHTML() );
 		
-		// return $dom->saveHTML();
+		return $dom->saveHTML();
 
-		return $content;
+		// return $content;
 
 		// Работает1 начало
 
