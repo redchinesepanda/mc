@@ -142,35 +142,35 @@ class ReviewMain
 
         // add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
-        ReviewAbout::register();
+        // ReviewAbout::register();
 
-        ReviewAnchors::register();
+        // ReviewAnchors::register();
 
-        ReviewGroup::register();
+        // ReviewGroup::register();
 
-        ReviewProsCons::register();
+        // ReviewProsCons::register();
 
-        ReviewGallery::register();
+        // ReviewGallery::register();
 
-        ReviewFAQ::register();
+        // ReviewFAQ::register();
 
-        ReviewStats::register();
+        // ReviewStats::register();
 
-        ReviewBonus::register();
+        // ReviewBonus::register();
 
-        ReviewHowTo::register();
+        // ReviewHowTo::register();
 
-        ReviewBanner::register();
+        // ReviewBanner::register();
 
-        ReviewAuthor::register();
+        // ReviewAuthor::register();
 
-        ReviewCounter::register();
+        // ReviewCounter::register();
 
-        ReviewList::register();
+        // ReviewList::register();
 
-        ReviewOffers::register();
+        // ReviewOffers::register();
 
-        ReviewTitle::register();
+        // ReviewTitle::register();
     }
 
     public static function encoding( $content )
