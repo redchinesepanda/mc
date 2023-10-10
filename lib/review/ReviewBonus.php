@@ -339,7 +339,7 @@ class ReviewBonus
 			}
 		}
 
-		return $dom->saveHTML();
+		return $dom->saveHTML( $dom );
 	}
 
 	public static function get_image_size( $url )

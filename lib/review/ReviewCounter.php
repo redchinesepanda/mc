@@ -182,7 +182,7 @@ class ReviewCounter
 			}
 		}
 
-		return $dom->saveHTML();
+		return $dom->saveHTML( $dom );
 	}
 
 	// public static function get_table()
