@@ -164,7 +164,7 @@ class ReviewMain
 
         ReviewAuthor::register();
 
-        // ReviewCounter::register();
+        ReviewCounter::register();
 
         // ReviewList::register();
 
