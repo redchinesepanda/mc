@@ -217,7 +217,9 @@ class ReviewTitle
 
 		// Работает 2 начало
 
-		return $dom->saveHTML( $dom->documentElement );
+		// return $dom->saveHTML( $dom->documentElement );
+		
+		return $dom->saveHTML( $dom );
 
 		// Работает 2 конец
 	}
