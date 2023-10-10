@@ -25,8 +25,12 @@ class LegalDOM
 			// $dom->loadHTML( $content, LIBXML_NOERROR );
 			
 			// $dom->loadHTML( $content, LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
-			
-			$dom->loadHTML( '<?xml encoding="utf-8" ?>' . '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+
+			// $dom->loadHTML( '<div>' . $content . '</div>', LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
+
+			$dom->encoding = 'utf-8';
+
+			$dom->loadHTML( utf8_decode( '<div>' . $content . '</div>' ), LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED );
 
 			$container = $dom->getElementsByTagName( 'div' )->item( 0 );
 
