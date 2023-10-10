@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Child Thrive Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-02 09:27+0000\n"
+"PO-Revision-Date: 2023-06-26 11:13+0000\n"
+"Last-Translator: Dmitriy Grechishkin\n"
+"Language-Team: Portuguese (Brazil)\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-5.9.2\n"
+"X-Domain: thrive-theme-child"
+
+#. Author of the theme
+msgid "<a href=\"http://www.thrivethemes.com\">Thrive Themes</a>"
+msgstr ""
+
+msgid ""
+"<p>Match.Center is not a gambling operator (we do not accept any bets). The "
+"content of this website is strictly for information purposes and does not "
+"constitute advice. We only review gambling operators who are licenced by "
+"their respective local and international regulators. We only claim "
+"information to be correct at the time of posting.</p><p>Always gamble "
+"responsibly and never risk money that you can not afford to lose!</p>"
+msgstr ""
+
+msgid "All rights reserved"
+msgstr ""
+
+msgid "Basic facts"
+msgstr "Informații generale"
+
+msgid "basic-information"
+msgstr "informații-generale"
+
+msgid "Bet now"
+msgstr ""
+
+#. Name of the template
+msgid "Billet"
+msgstr ""
+
+#. Name of the theme
+msgid "Child Thrive Theme"
+msgstr ""
+
+msgid "Claim Bonus"
+msgstr "Pariază acum"
+
+msgid "Close Details"
+msgstr ""
+
+#. Name of the template
+msgid "Compilation"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Fully customizable, front end theme and template editing for WordPress has "
+"arrived!"
+msgstr ""
+
+#. URI of the theme
+msgid "http://thrivethemes.com/"
+msgstr ""
+
+msgid "Leader in UK"
+msgstr ""
+
+msgid "Margin"
+msgstr ""
+
+msgid "Match.Center"
+msgstr ""
+
+msgid "More Details"
+msgstr ""
+
+msgid "Not set"
+msgstr ""
+
+msgid "Oops! Page Not Found"
+msgstr ""
+
+msgid "Ranked 1rd for Service Quality"
+msgstr ""
+
+msgid "Ranked 2rd for Service Quality"
+msgstr ""
+
+msgid "Ranked 2rd for Technology"
+msgstr ""
+
+msgid "Ranked 3rd for Service Quality"
+msgstr ""
+
+msgid "Read more about"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "Show all %s"
+msgstr ""
+
+msgid "There are no tabs added yet"
+msgstr ""
+
+msgid ""
+"You must have picked the wrong door because I haven't been able to lay my "
+"eye on the page you've been searching for."
+msgstr ""
