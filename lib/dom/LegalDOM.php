@@ -33,7 +33,7 @@ class LegalDOM
 			// Работает 1 начало
 
 			$dom->loadHTML(
-				"\<\?xml encoding=\"utf-8\"\?\>"
+				'<?xml encoding="utf-8"?>'
 				
 				. '<div>' . $content . '</div>',
 				
