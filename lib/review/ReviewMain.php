@@ -142,7 +142,7 @@ class ReviewMain
 
         // add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
-        // ReviewAbout::register();
+        ReviewAbout::register();
 
         // ReviewAnchors::register();
 
