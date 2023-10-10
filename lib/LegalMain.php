@@ -57,7 +57,7 @@ class LegalMain {
 	
 			LegalBreadcrumbsMain::register();
 	
-			ReviewMain::register();
+			// ReviewMain::register();
 	
 			ToolsMain::register();
 	
