@@ -20,11 +20,9 @@ class CompilationMain
         ],
     ];
 
-    public static function print()
+    public static function register_inline_style()
     {
-        BilletMain::print();
-
-        ToolPrint::print_style( self::CSS );
+		ReviewMain::register_inline_style( 'review-author', self::render_style() );
     }
 
 	public static function register_style( $styles = [] )
@@ -36,6 +34,13 @@ class CompilationMain
 
             ToolEnqueue::register_style( $styles );
         }
+    }
+
+    public static function print()
+    {
+        BilletMain::print();
+
+        ToolPrint::print_style( self::CSS );
     }
 
 	public static function check()
@@ -518,6 +523,10 @@ class CompilationMain
         // ] );
 
 		// return self::render_compilation( $args );
+
+        $handler = new self();
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 		
         return self::render_compilation( $atts[ 'id' ] );
 	}
