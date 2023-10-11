@@ -3,9 +3,9 @@
 class BilletAchievement
 {
     const HANDLE = [
-        'main' => 'billet-main',
+        'main' => 'achievement-main',
 
-        'style' => 'billet-style',
+        'style' => 'achievement-style',
     ];
 
     const TAXONOMY = 'billet_achievement';
@@ -91,7 +91,9 @@ class BilletAchievement
     }
 
     const TEMPLATE = [
-        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement.php',
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement-main.php',
+
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement-style.php',
     ];
 
     // public static function render( $title )
