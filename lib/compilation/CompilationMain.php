@@ -30,13 +30,6 @@ class CompilationMain
         ],
     ];
 
-    public static function register_inline_style()
-    {
-		// ToolEnqueue::register_inline_base( self::HANDLE[ 'style' ] );
-		
-        // ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], 'test' );
-    }
-
 	public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
@@ -73,8 +66,6 @@ class CompilationMain
         add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
@@ -97,26 +88,6 @@ class CompilationMain
 
         return $data;
     }
-
-    // public static function get_billets_bonus( $posts, $filter )
-    // {
-    //     $billets = self::get_billets( $posts, $filter );
-
-    //     $items = [];
-
-    //     foreach ( $billets as $index => $billet )
-    //     {
-    //         $item = BilletMain::get( $billet );
-
-    //         LegalDebug::debug( [
-    //             'BilletLogo' => BilletLogo::get( $item ),
-    //         ] );
-
-    //         $items[] = $item;
-    //     }
-
-    //     return $items;
-    // }
     
     const ATTENTION = [
         'text' => 'compilation-attention-text',
@@ -198,8 +169,6 @@ class CompilationMain
 
         'achievement-type' => 'billet-achievement-type',
 
-        // 'list-type' => 'billet-list-type',
-
         'bonus-enabled' => 'billet-bonus-enabled',
 
         'mobile-enabled' => 'billet-mobile-enabled',
@@ -224,8 +193,6 @@ class CompilationMain
                 'label' => get_field( self::COMPILATION[ 'play-label' ], $id ),
             ],
 
-            // 'type' => get_field( self::COMPILATION[ 'type' ], $id ),
-
             'features' => get_field( self::COMPILATION[ 'filter' ], $id ),
 
             'order' => get_field( self::BILLET[ 'order-type' ], $id ),
@@ -233,8 +200,6 @@ class CompilationMain
             'rating' => get_field( self::BILLET[ 'rating-enabled' ], $id ),
 
             'achievement' => get_field( self::BILLET[ 'achievement-type' ], $id ),
-
-            // 'list' => get_field( self::BILLET[ 'list-type' ], $id ),
 
             'bonus' => get_field( self::BILLET[ 'bonus-enabled' ], $id ),
 
@@ -298,8 +263,6 @@ class CompilationMain
 
     const FORMAT = [
         'updated' => 'd.m.Y',
-        
-        // 'updated' => 'd.m.Y G:i:s',
     ];
 
     public static function get_date( $id )
@@ -406,8 +369,6 @@ class CompilationMain
 
         $args = [
 
-            // 'numberposts' => -1,
-            
             'numberposts' => $limit,
 
             'post_type' => 'legal_billet',
@@ -422,8 +383,6 @@ class CompilationMain
                     'taxonomy' => 'billet_feature',
 
                     'field' => 'term_id',
-
-                    // 'terms' => get_field( self::COMPILATION[ 'filter' ], $id ),
                     
                     'terms' => $terms,
 
@@ -443,17 +402,7 @@ class CompilationMain
             'meta_query' => $meta_query,
 
             'orderby' => $orderby,
-
-            // 'orderby' => 'menu_order',
-
-            // 'order' => 'ASC',
         ];
-
-        // LegalDebug::debug( [
-        //     'rating_enabled' => ( $rating_enabled ? 'true' : 'false' ),
-            
-        //     'args' => $args,
-        // ] );
 
         return $args;
     }
@@ -487,14 +436,6 @@ class CompilationMain
 
         $posts = self::get_posts( $id );
 
-        // LegalDebug::debug( [
-        //     'get',
-
-        //     'id' => $id,
-
-        //     'posts' => $posts,
-        // ] );
-
         return [
             'billets' => self::get_billets( $posts, self::get_filter( $id ) ),
 
@@ -526,18 +467,6 @@ class CompilationMain
     {
 		$atts = shortcode_atts( self::PAIRS[ 'compilation' ], $atts, self::SHORTCODES[ 'compilation' ] );
 
-		// $args = self::get( $atts[ 'id' ] );
-
-        // LegalDebug::debug( [
-        //     'prepare_compilation',
-
-        //     'atts' => $atts,
-
-        //     'args' => $args,
-        // ] );
-
-		// return self::render_compilation( $args );
-
         $handler = new self();
 
         ToolEnqueue::enqueue_inline_style( self::HANDLE[ 'style' ], self::render_style( $atts[ 'id' ] ) );
@@ -545,28 +474,10 @@ class CompilationMain
         return self::render_compilation( $atts[ 'id' ] );
 	}
 
-    // public static function render( $id = 0 )
-    // {
-    //     // return self::render_compilation( $id );
-        
-    //     return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
-    // }
-
     public static function render_style( $id = 0 )
     {
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $id ) );
     }
-
-    // public static function render_compilation(  $id = 0  )
-    // {
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'compilation-main' ], false, self::get( $id ) );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 
     public static function render_compilation(  $id = 0  )
     {
@@ -594,16 +505,10 @@ class CompilationMain
 
     public static function render_attention( $attention, $position )
     {
-        // if ( !empty( $attention[ 'text' ] ) )
-        //     if ( $position == $attention[ 'position' ] )
-        //         load_template( self::TEMPLATE[ 'compilation-attention' ], false, $attention );
-        
         if ( !empty( $attention[ 'text' ] ) )
         {
             if ( $position == $attention[ 'position' ] )
             {
-                // load_template( self::TEMPLATE[ 'compilation-attention' ], false, $attention );
-
                 return self::render_main( self::TEMPLATE[ self::HANDLE[ 'attention' ] ], $attention );
             }
         }
