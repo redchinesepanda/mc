@@ -128,9 +128,11 @@ class BilletAchievement
 
     public static function render_style( $billet )
     {
-        $title = self::get( BilletTitle::get( $billet ) );
+        $title = BilletTitle::get( $billet );
 
         LegalDebug::debug( [
+            'function' => 'BilletAchievement::render_style';
+
             'title' => $title,
         ] );
 
