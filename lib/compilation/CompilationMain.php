@@ -34,7 +34,7 @@ class CompilationMain
     {
 		// ToolEnqueue::register_inline_base( self::HANDLE[ 'style' ] );
 		
-        ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], 'test' );
+        // ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], 'test' );
     }
 
 	public static function register_style( $styles = [] )

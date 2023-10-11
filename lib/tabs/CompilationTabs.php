@@ -3,13 +3,11 @@
 class CompilationTabs
 {
     const CSS = [
-        'tabs-main' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
-
-        // 'tabs-mini' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini.css',
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
     ];
 
     const JS = [
-        'tabs-main' => LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js',
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js',
     ];
 
     public static function print()
@@ -57,6 +55,8 @@ class CompilationTabs
         add_shortcode( 'legal-tabs', [ $handler, 'render' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
@@ -140,10 +140,39 @@ class CompilationTabs
     }
 
     const TEMPLATE = [
-        'tabs' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
-
-        // 'mini' => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs-mini.php',
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
     ];
+
+    const HANDLE = [
+        'tabs' => 'tabs-main',
+
+        'style' => 'tabs-style',
+    ];
+
+    public static function register_inline_style()
+    {
+        ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
+    }
+
+    public static function get_inline_style()
+    {
+        $output = [];
+
+        $args = self::get();
+
+        if ( !empty( $args['tabs'] ) )
+        {
+            foreach ( $args['tabs'] ) as $tab )
+            {
+                foreach ( $tab['compilations'] as $compilation )
+                {
+                    $output[] = CompilationMain::render_style( $compilation );
+                }
+            }
+        }
+
+        return implode( '', $output );
+    }
 
     public static function render()
     {
@@ -168,7 +197,7 @@ class CompilationTabs
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'tabs' ], false, $args );
+        load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, $args );
 
         $output = ob_get_clean();
 
