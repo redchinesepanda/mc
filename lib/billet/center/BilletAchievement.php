@@ -134,16 +134,6 @@ class BilletAchievement
 
         $title = BilletTitle::get( $billet );
 
-        LegalDebug::debug( [
-            'function' => 'BilletAchievement::render_style',
-
-            'args' => $args,
-
-            'billet' => $billet,
-
-            'title' => $title,
-        ] );
-
         if ( self::check_disabled( $title ) )
         {
             return '';
