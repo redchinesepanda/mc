@@ -22,7 +22,7 @@ class CompilationMain
 
     public static function register_inline_style()
     {
-		ReviewMain::register_inline_style( 'review-author', self::render_style() );
+		ReviewMain::register_inline_style( 'compilation-main', self::render_style() );
     }
 
 	public static function register_style( $styles = [] )
