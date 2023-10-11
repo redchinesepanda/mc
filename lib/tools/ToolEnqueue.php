@@ -64,7 +64,7 @@ class ToolEnqueue
 		wp_enqueue_style( $name );
     }
 
-	public static function register_inline_base( $name, $data )
+	public static function register_inline_base( $name )
     {
 		wp_register_style( $name, false, [], true, true );
     }
