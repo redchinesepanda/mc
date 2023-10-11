@@ -20,6 +20,16 @@ require_once( 'right/BilletRight.php' );
 
 class BilletMain
 {
+    const HANDLE = [
+        'main' => 'billet-main',
+
+        'style' => 'billet-style',
+
+        'spoiler' => 'billet-spoiler',
+
+        'bonus' => 'billet-bonus',
+    ];
+
 	const TEXT = [
 		'bet-here' => 'Bet here',
 
@@ -45,17 +55,13 @@ class BilletMain
     const DEFAULT_COLOR = 'rgb(0,46,90)';
 
     const CSS = [
-        'billet-main' => [
+        self::HANDLE[ 'main' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
 
             'ver' => '1.0.5',
         ],
 
-        'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
-    ];
-
-    const JS = [
-        'billet-spoiler' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
+        self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
     public static function print()
@@ -63,17 +69,6 @@ class BilletMain
         ToolPrint::print_style( self::CSS );
 
         ToolPrint::print_script( self::JS );
-    }
-
-    public static function register_script( $scripts = [] )
-    {
-        if ( self::check() ) {
-            if ( empty( $scripts ) ) {
-                $scripts = self::JS;
-            }
-
-            ToolEnqueue::register_script( $scripts );
-        }
     }
 
 	public static function register_style( $styles = [] )
@@ -84,6 +79,21 @@ class BilletMain
             }
 
             ToolEnqueue::register_style( $styles );
+        }
+    }
+
+    const JS = [
+        self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js'
+    ];
+
+    public static function register_script( $scripts = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $scripts ) ) {
+                $scripts = self::JS;
+            }
+
+            ToolEnqueue::register_script( $scripts );
         }
     }
 
@@ -416,21 +426,50 @@ class BilletMain
     }
 
     const TEMPLATE = [
-        'billet-main' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
 
-        'billet-bonus' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
+        self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-style.php',
+
+        self::HANDLE[ 'bonus' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
     ];
 
-    public static function render( $args = [] )
+    // public static function render( $args = [] )
+    // { 
+    //     load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
+    // }
+
+    public static function render_billet( $args = [] )
     { 
-        load_template( self::TEMPLATE[ 'billet-main' ], false, self::get( $args ) );
+        // load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
+
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $args ) );
+    }
+
+    public static function render_style( $args = [] )
+    { 
+        // load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
+
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $args ) );
     }
 
     public static function render_bonus( $args = [] )
     {
+		// ob_start();
+
+        // load_template( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], false, $args );
+
+        // $output = ob_get_clean();
+
+        // return $output;
+
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], $args );
+    }
+
+    public static function render_main( $template, $args )
+    {
 		ob_start();
 
-        load_template( self::TEMPLATE[ 'billet-bonus' ], false, $args );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 

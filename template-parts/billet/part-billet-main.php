@@ -1,18 +1,4 @@
-<?php
-
-// LegalDebug::debug( [
-//     'part' => 'part-billet-main.php',
-
-//     'args' => $args,
-// ] );
-
-?>
 <div class="billet-item">
-    <style id="<?php echo $args['selector']; ?>" type="text/css">
-        #<?php echo $args['selector']; ?> .billet-left {
-            background-color: <?php echo $args['color']; ?>;
-        }
-    </style>
     <div id="<?php echo $args['selector']; ?>" class="billet">
         <div class="billet-left">
             <?php BilletLogo::render( $args ); ?>
