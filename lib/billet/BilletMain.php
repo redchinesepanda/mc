@@ -165,18 +165,6 @@ class BilletMain
                 }
             }
         }
-
-        // LegalDebug::debug( [
-        //     'function' => 'BilletMain::get_bonus_url',
-
-        //     'feature_bonus_item' => $feature_bonus_item,
-
-        //     'bonus_url' => $bonus_url,
-
-        //     'id' => $id,
-
-        //     'filter' => $filter,
-        // ] );
         
         return $bonus_url;
     }
@@ -433,36 +421,19 @@ class BilletMain
         self::HANDLE[ 'bonus' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
     ];
 
-    // public static function render( $args = [] )
-    // { 
-    //     load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
-    // }
-
     public static function render_billet( $args = [] )
     { 
-        // load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
-
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $args ) );
     }
 
     public static function render_style( $args = [] )
     { 
-        // load_template( self::TEMPLATE[ self::HANDLE[ 'main' ] ], false, self::get( $args ) );
-
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $args ) );
     }
 
     public static function render_bonus( $args = [] )
     {
-		// ob_start();
-
-        // load_template( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], false, $args );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], $args );
+		return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], $args );
     }
 
     public static function render_main( $template, $args )
