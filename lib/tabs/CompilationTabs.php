@@ -14,8 +14,10 @@ class CompilationTabs
 
 	public static function register_style( $styles = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $styles ) ) {
+        if ( self::check() )
+        {
+            if ( empty( $styles ) )
+            {
                 $styles = self::CSS;
             }
 
@@ -25,7 +27,10 @@ class CompilationTabs
 
     public static function register_inline_style()
     {
-        ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
+        if ( self::check() )
+        {
+            ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
+        }
     }
 
     public static function get_inline_style()
@@ -63,8 +68,10 @@ class CompilationTabs
 
     public static function register_script( $scripts = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $scripts ) ) {
+        if ( self::check() )
+        {
+            if ( empty( $scripts ) )
+            {
                 $scripts = self::JS;
             }
 

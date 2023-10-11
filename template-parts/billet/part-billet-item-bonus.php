@@ -1,10 +1,3 @@
-<?php
-
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-?>
 <div class="legal-compilation-bonus <?php echo $args[ 'selector' ]; ?> font-<?php echo $args[ 'font' ]; ?>" style="background-color: <?php echo $args[ 'color' ]; ?>;">
 	<div class="legal-compilation-logo">
 		<a class="<?php echo $args[ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'logo' ][ 'href' ]; ?>" rel="nofollow">
@@ -24,5 +17,5 @@
 			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="underline compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
 		</div>
 	<?php endif; ?>
-	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?> check-oops" rel="nofollow" class="legal-compilation-button" draggable="false"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
+	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" rel="nofollow" class="legal-compilation-button check-oops" draggable="false"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 </div>
