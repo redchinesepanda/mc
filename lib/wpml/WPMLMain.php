@@ -196,7 +196,7 @@ class WPMLMain
 
         // add_filter( 'language_attributes', [ $handler, 'wp_kama_language_attributes_filter' ], 10, 2 ); 
 
-        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ] );
+        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
     }
 
     public static function legal_language_attributes ( $output, $doctype )
