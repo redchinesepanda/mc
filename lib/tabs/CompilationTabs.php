@@ -38,9 +38,9 @@ class CompilationTabs
         {
             foreach ( $args['tabs'] as $tab )
             {
-                foreach ( $tab['compilations'] as $compilation )
+                foreach ( $tab['compilations'] as $compilation_id )
                 {
-                    $output[] = CompilationMain::render_style( $compilation );
+                    $output[] = CompilationMain::render_style( $compilation_id );
                 }
             }
         }
