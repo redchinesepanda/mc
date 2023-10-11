@@ -53,7 +53,7 @@ class CompilationTabs
             'output' => $output,
         ] );
 
-        return implode( '', $output );
+        return implode( PHP_EOL, $output );
     }
 
     const JS = [
