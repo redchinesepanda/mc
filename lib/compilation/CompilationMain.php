@@ -496,9 +496,11 @@ class CompilationMain
 	];
 
     const TEMPLATE = [
-        'legal-compilation' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+        'compilation-main' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+
+        'compilation-style' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
         
-        'legal-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
+        'compilation-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
 
     public static function prepare_compilation( $atts )
@@ -522,14 +524,32 @@ class CompilationMain
 
     public static function render( $id = 0 )
     {
-        return self::render_compilation( $id );
+        // return self::render_compilation( $id );
+        
+        return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
     }
 
-    public static function render_compilation(  $id = 0  )
+    public static function render_style( $id = 0 )
+    {
+        return self::render_main( self::TEMPLATE[ 'compilation-style' ], self::get( $id ) );
+    }
+
+    // public static function render_compilation(  $id = 0  )
+    // {
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'compilation-main' ], false, self::get( $id ) );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
+
+    public static function render_main( $template, $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-compilation' ], false, self::get( $id ) );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
@@ -546,9 +566,19 @@ class CompilationMain
 
     public static function render_attention( $attention, $position )
     {
+        // if ( !empty( $attention[ 'text' ] ) )
+        //     if ( $position == $attention[ 'position' ] )
+        //         load_template( self::TEMPLATE[ 'compilation-attention' ], false, $attention );
+        
         if ( !empty( $attention[ 'text' ] ) )
+        {
             if ( $position == $attention[ 'position' ] )
-                load_template( self::TEMPLATE[ 'legal-attention' ], false, $attention );
+            {
+                // load_template( self::TEMPLATE[ 'compilation-attention' ], false, $attention );
+
+                return self::render_main( self::TEMPLATE[ 'compilation-attention' ], $attention );
+            }
+        }
     }
 }
 
