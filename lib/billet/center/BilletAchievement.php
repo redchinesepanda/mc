@@ -126,14 +126,16 @@ class BilletAchievement
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $title ) );
     }
 
-    public static function render_style( $title )
-    { 
+    public static function render_style( $billet )
+    {
+        $title = self::get( BilletAchievemnt::get( $billet ) );
+
         if ( self::check_disabled( $title ) )
         {
             return '';
         }
 
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( BilletAchievemnt::get( $title ) ) );
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $title ) );
     }
 
     public static function render_main( $template, $args )
