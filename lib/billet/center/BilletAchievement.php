@@ -126,12 +126,16 @@ class BilletAchievement
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $title ) );
     }
 
-    public static function render_style( $billet )
+    public static function render_style( $args )
     {
+        $billet = BilletMain::get( $args );
+
         $title = BilletTitle::get( $billet );
 
         LegalDebug::debug( [
             'function' => 'BilletAchievement::render_style',
+
+            'args' => $args,
 
             'billet' => $billet,
 
