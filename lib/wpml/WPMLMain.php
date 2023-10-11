@@ -199,7 +199,7 @@ class WPMLMain
         add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ] );
     }
 
-    public static function legal_language_attributes ( $output )
+    public static function legal_language_attributes ( $output, $doctype )
     {
         // global $wpdb;
 
@@ -211,6 +211,8 @@ class WPMLMain
             'function' => 'legal_language_attributes',
 
             'output' => $output,
+
+            'doctype' => $doctype,
         ] );
 
         return $output;
