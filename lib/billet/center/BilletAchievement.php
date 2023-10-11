@@ -93,7 +93,7 @@ class BilletAchievement
     const TEMPLATE = [
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement-main.php',
 
-        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement-style.php',
+        self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement-style.php',
     ];
 
     // public static function render( $title )
