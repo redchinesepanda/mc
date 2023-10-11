@@ -25,7 +25,7 @@
             <?php foreach( $args[ 'tabs' ] as $key => $arg ) : ?>
                 <div class="legal-tab-content legal-content-<?php echo $key; ?> <?php echo $arg[ 'active' ]; ?>">
                     <?php foreach( $arg[ 'compilations' ] as $compilation ) : ?>
-                        <?php echo CompilationMain::render( $compilation ); ?>
+                        <?php echo CompilationMain::render_compilation( $compilation ); ?>
                     <?php endforeach;?>
                 </div>
             <?php endforeach;?>

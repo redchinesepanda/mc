@@ -16,6 +16,6 @@ require_once( 'lib/LegalMain.php' );
         <?php CompilationMain::print(); ?>
     </head>
     <body class="legal-compilation">
-        <?php echo CompilationMain::render(); ?>
+        <?php echo CompilationMain::render_compilation(); ?>
     </body>
 </html>
