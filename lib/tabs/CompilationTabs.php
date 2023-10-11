@@ -155,7 +155,7 @@ class CompilationTabs
             $tab = array_shift( $args['tabs'] );
 
             foreach ( $tab['compilations'] as $compilation) {
-                $output[] = CompilationMain::render( $compilation );
+                $output[] = CompilationMain::render_compilation( $compilation );
             }
         } else {
             $output[] = self::render_tabs( $args );

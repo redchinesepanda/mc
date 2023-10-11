@@ -522,12 +522,12 @@ class CompilationMain
         return self::render_compilation( $atts[ 'id' ] );
 	}
 
-    public static function render( $id = 0 )
-    {
-        // return self::render_compilation( $id );
+    // public static function render( $id = 0 )
+    // {
+    //     // return self::render_compilation( $id );
         
-        return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
-    }
+    //     return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
+    // }
 
     public static function render_style( $id = 0 )
     {
@@ -544,6 +544,11 @@ class CompilationMain
 
     //     return $output;
     // }
+
+    public static function render_compilation(  $id = 0  )
+    {
+        return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
+    }
 
     public static function render_main( $template, $args )
     {
