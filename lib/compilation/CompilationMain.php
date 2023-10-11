@@ -6,14 +6,22 @@ require_once ( 'CompilationBonus.php' );
 
 class CompilationMain
 {
+    const HANDLE = [
+        'main' => 'compilation-main',
+
+        'style' => 'compilation-style',
+
+        'bonus' => 'compilation-bonus',
+    ];
+
     const CSS = [
-        'compilation-main' => [
+        self::HANDLE[ 'main' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-main.css',
 
             'ver' => '1.0.2',
         ],
 
-        'compilation-bonus' => [
+        self::HANDLE[ 'bonus' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-bonus.css',
 
             'ver' => '1.0.0',
