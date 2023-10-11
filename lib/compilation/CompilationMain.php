@@ -20,9 +20,9 @@ class CompilationMain
         ],
     ];
 
-    public static function register_inline_style()
+    public static function register_inline_base()
     {
-		ReviewMain::register_inline_style( 'compilation-main', self::render_style() );
+		ToolEnqueue::register_inline_base( 'compilation-main', self::render_style() );
     }
 
 	public static function register_style( $styles = [] )
@@ -526,7 +526,7 @@ class CompilationMain
 
         $handler = new self();
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        ToolEnqueue::enqueue_inline_style( 'compilation-main', self::render_style( $atts[ 'id' ] ) );
 		
         return self::render_compilation( $atts[ 'id' ] );
 	}
