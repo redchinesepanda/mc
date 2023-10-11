@@ -2,7 +2,11 @@
 
 class BilletAchievement
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement.php';
+    const HANDLE = [
+        'main' => 'billet-main',
+
+        'style' => 'billet-style',
+    ];
 
     const TAXONOMY = 'billet_achievement';
 
@@ -86,21 +90,61 @@ class BilletAchievement
         return $args;
     }
 
-    public static function render( $title )
-    {
-        // LegalDebug::debug( [
-        //     'function' => 'BilletAchievement::render',
+    const TEMPLATE = [
+        self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-achievement.php',
+    ];
 
-        //     'title' => $title,
-        // ] );
+    // public static function render( $title )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'function' => 'BilletAchievement::render',
 
-        if ( $title['achievement'] != self::TYPE_DISABLED ) {
-            $args = self::get( $title );
+    //     //     'title' => $title,
+    //     // ] );
+
+    //     if ( $title['achievement'] != self::TYPE_DISABLED ) {
+    //         $args = self::get( $title );
     
-            if ( !empty( $args ) ) {
-                load_template( self::TEMPLATE, false, $args );
-            }
+    //         if ( !empty( $args ) ) {
+    //             load_template( self::TEMPLATE, false, $args );
+    //         }
+    //     }
+    // }
+
+    public static function check_disabled( $title )
+    {
+        return $title[ 'achievement' ] == self::TYPE_DISABLED;
+    }
+
+    public static function render_achievement( $title )
+    {
+        if ( self::check_disabled( $title ) )
+        {
+            return '';
         }
+        
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $title ) );
+    }
+
+    public static function render_style( $title )
+    { 
+        if ( self::check_disabled( $title ) )
+        {
+            return '';
+        }
+
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( BilletAchievemnt::get( $title ) ) );
+    }
+
+    public static function render_main( $template, $args )
+    {
+		ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
