@@ -197,6 +197,25 @@ class WPMLMain
         // add_filter( 'language_attributes', [ $handler, 'wp_kama_language_attributes_filter' ], 10, 2 ); 
     }
 
+    add_filter( 'language_attributes', );
+
+    public static function legal_language_attributes ( $output )
+    {
+        // global $wpdb;
+
+        // $code = ICL_LANGUAGE_CODE;
+
+        // return preg_replace('/lang="(.*?)"/i', 'lang="'.$wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$code}'").'"', $output);
+
+        LegalDebug::debug( [
+            'function' => 'legal_language_attributes',
+
+            'output' => $output,
+        ] );
+
+        return $output;
+    }
+
     // public static function wp_kama_language_attributes_filter( $output, $doctype )
     // {
     //     LegalDebug::debug( [
