@@ -26,10 +26,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php thrive_amp_permalink(); ?>	
 	</head>
 	<body <?php body_class( '' ); ?>>
-	<?php 
-	
-	// LegalDebug::debug( [
-	// 	ToolEnqueue::crunchify_print_scripts_styles(),
-	// ] );
-	
-	?>

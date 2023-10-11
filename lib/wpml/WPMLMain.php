@@ -196,27 +196,40 @@ class WPMLMain
 
         // add_filter( 'language_attributes', [ $handler, 'wp_kama_language_attributes_filter' ], 10, 2 ); 
 
-        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+
+        // add_filter( 'locale', [ $handler, 'legal_locale' ] );
     }
 
-    public static function legal_language_attributes ( $output, $doctype )
+    public static function legal_locale ( $locale )
     {
-        // global $wpdb;
-
-        // $code = ICL_LANGUAGE_CODE;
-
-        // return preg_replace('/lang="(.*?)"/i', 'lang="'.$wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$code}'").'"', $output);
-
         LegalDebug::debug( [
-            'function' => 'legal_language_attributes',
+            'function' => 'change_page_hreflang',
 
-            'output' => $output,
-
-            'doctype' => $doctype,
+            'locale' => $locale,
         ] );
-
-        return $output;
+        
+        return $locale;
     }
+
+    // public static function legal_language_attributes ( $output, $doctype )
+    // {
+    //     // global $wpdb;
+
+    //     // $code = ICL_LANGUAGE_CODE;
+
+    //     // return preg_replace('/lang="(.*?)"/i', 'lang="'.$wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$code}'").'"', $output);
+
+    //     LegalDebug::debug( [
+    //         'function' => 'WPMLMain::legal_language_attributes',
+
+    //         'output' => $output,
+
+    //         'doctype' => $doctype,
+    //     ] );
+
+    //     return $output;
+    // }
 
     // public static function wp_kama_language_attributes_filter( $output, $doctype )
     // {
@@ -233,6 +246,39 @@ class WPMLMain
   
     public static function change_page_hreflang( $hreflang_items )
     {
+        // $output = __( 'html_lang_attribute' );
+
+        // LegalDebug::debug(
+        //     [
+        //         'function' => 'change_page_hreflang',
+
+        //         '__(output' => $output,
+
+        //         'html_lang_attribute' => 'html_lang_attribute' === $output ? 'true' : 'false',
+
+        //         'preg_match' => preg_match( '/[^a-zA-Z0-9-]/', $output ) ? 'true' : 'false',
+
+        //         'determine_locale' => determine_locale(),
+        //     ]
+        // );
+
+        // if ( 'html_lang_attribute' === $output || preg_match( '/[^a-zA-Z0-9-]/', $output ) )
+        // {
+        //     $output = determine_locale();
+
+        //     $output = str_replace( '_', '-', $output );
+        // }
+
+        // LegalDebug::debug(
+        //     [
+        //         'function' => 'change_page_hreflang',
+
+        //         'get_bloginfo' => get_bloginfo( 'language' ),
+
+        //         'output' => $output,
+        //     ]
+        // );
+
         $hreflang = [];
 
         if ( !empty( $hreflang_items ) )
