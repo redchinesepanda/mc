@@ -195,9 +195,9 @@ class WPMLMain
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
         // add_filter( 'language_attributes', [ $handler, 'wp_kama_language_attributes_filter' ], 10, 2 ); 
-    }
 
-    add_filter( 'language_attributes', );
+        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ] );
+    }
 
     public static function legal_language_attributes ( $output )
     {
