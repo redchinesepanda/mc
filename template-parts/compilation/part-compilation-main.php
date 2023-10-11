@@ -8,7 +8,7 @@
     <?php endif; ?>
     <?php echo CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'below' ] ); ?>
     <?php foreach( $args['billets'] as $billet ) : ?>
-        <?php BilletMain::render( $billet ); ?>
+        <?php BilletMain::render_billet( $billet ); ?>
     <?php endforeach; ?>
     <?php echo CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'bottom' ] ); ?>
 </div>
