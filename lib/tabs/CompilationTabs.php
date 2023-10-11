@@ -162,7 +162,7 @@ class CompilationTabs
 
         if ( !empty( $args['tabs'] ) )
         {
-            foreach ( $args['tabs'] ) as $tab )
+            foreach ( $args['tabs'] as $tab )
             {
                 foreach ( $tab['compilations'] as $compilation )
                 {
