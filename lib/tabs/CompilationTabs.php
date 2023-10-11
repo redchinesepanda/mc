@@ -144,7 +144,7 @@ class CompilationTabs
     ];
 
     const HANDLE = [
-        'tabs' => 'tabs-main',
+        'main' => 'tabs-main',
 
         'style' => 'tabs-style',
     ];
