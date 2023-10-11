@@ -505,7 +505,7 @@ class CompilationMain
     const TEMPLATE = [
         'compilation-main' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
 
-        'compilation-style' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
+        'compilation-style' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-style.php',
         
         'compilation-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
