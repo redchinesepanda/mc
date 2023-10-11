@@ -130,6 +130,10 @@ class BilletAchievement
     {
         $title = self::get( BilletTitle::get( $billet ) );
 
+        LegalDebug::debug( [
+            'title' => $title,
+        ] );
+
         if ( self::check_disabled( $title ) )
         {
             return '';
