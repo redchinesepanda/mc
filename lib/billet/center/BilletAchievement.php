@@ -131,7 +131,7 @@ class BilletAchievement
         $title = BilletTitle::get( $billet );
 
         LegalDebug::debug( [
-            'function' => 'BilletAchievement::render_style';
+            'function' => 'BilletAchievement::render_style',
 
             'title' => $title,
         ] );
