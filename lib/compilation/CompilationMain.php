@@ -74,7 +74,7 @@ class CompilationMain
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
