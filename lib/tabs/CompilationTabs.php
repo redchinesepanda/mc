@@ -2,9 +2,57 @@
 
 class CompilationTabs
 {
+    const HANDLE = [
+        'main' => 'tabs-main',
+
+        'style' => 'tabs-style',
+    ];
+
     const CSS = [
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
     ];
+
+	public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                $styles = self::CSS;
+            }
+
+            ToolEnqueue::register_style( $styles );
+        }
+    }
+
+    public static function register_inline_style()
+    {
+        ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
+    }
+
+    public static function get_inline_style()
+    {
+        $output = [];
+
+        $args = self::get();
+
+        LegalDebug::debug( [
+            'function' => 'get_inline_style',
+            
+            'args' => $args,
+        ] );
+
+        if ( !empty( $args['tabs'] ) )
+        {
+            foreach ( $args['tabs'] as $tab )
+            {
+                foreach ( $tab['compilations'] as $compilation )
+                {
+                    $output[] = CompilationMain::render_style( $compilation );
+                }
+            }
+        }
+
+        return implode( '', $output );
+    }
 
     const JS = [
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js',
@@ -27,17 +75,6 @@ class CompilationTabs
             }
 
             ToolEnqueue::register_script( $scripts );
-        }
-    }
-
-	public static function register_style( $styles = [] )
-    {
-        if ( self::check() ) {
-            if ( empty( $styles ) ) {
-                $styles = self::CSS;
-            }
-
-            ToolEnqueue::register_style( $styles );
         }
     }
 
@@ -142,37 +179,6 @@ class CompilationTabs
     const TEMPLATE = [
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/tabs/part-tabs.php',
     ];
-
-    const HANDLE = [
-        'main' => 'tabs-main',
-
-        'style' => 'tabs-style',
-    ];
-
-    public static function register_inline_style()
-    {
-        ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
-    }
-
-    public static function get_inline_style()
-    {
-        $output = [];
-
-        $args = self::get();
-
-        if ( !empty( $args['tabs'] ) )
-        {
-            foreach ( $args['tabs'] as $tab )
-            {
-                foreach ( $tab['compilations'] as $compilation )
-                {
-                    $output[] = CompilationMain::render_style( $compilation );
-                }
-            }
-        }
-
-        return implode( '', $output );
-    }
 
     public static function render()
     {
