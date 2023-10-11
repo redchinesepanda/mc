@@ -12,6 +12,8 @@ class CompilationMain
         'style' => 'compilation-style',
 
         'bonus' => 'compilation-bonus',
+
+        'attention' => 'compilation-attention',
     ];
 
     const CSS = [
@@ -30,7 +32,7 @@ class CompilationMain
 
     public static function register_inline_style()
     {
-		ToolEnqueue::register_inline_base( 'compilation-main' );
+		ToolEnqueue::register_inline_base( self::HANDLE[ 'style' ] );
     }
 
 	public static function register_style( $styles = [] )
@@ -513,7 +515,7 @@ class CompilationMain
     const TEMPLATE = [
         'compilation-main' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-main.php',
 
-        'compilation-style' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-style.php',
+        self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-style.php',
         
         'compilation-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
     ];
@@ -536,7 +538,7 @@ class CompilationMain
 
         $handler = new self();
 
-        ToolEnqueue::enqueue_inline_style( 'compilation-main', self::render_style( $atts[ 'id' ] ) );
+        ToolEnqueue::enqueue_inline_style( self::HANDLE[ 'style' ], self::render_style( $atts[ 'id' ] ) );
 		
         return self::render_compilation( $atts[ 'id' ] );
 	}
@@ -550,7 +552,7 @@ class CompilationMain
 
     public static function render_style( $id = 0 )
     {
-        return self::render_main( self::TEMPLATE[ 'compilation-style' ], self::get( $id ) );
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $id ) );
     }
 
     // public static function render_compilation(  $id = 0  )
@@ -566,7 +568,7 @@ class CompilationMain
 
     public static function render_compilation(  $id = 0  )
     {
-        return self::render_main( self::TEMPLATE[ 'compilation-main' ], self::get( $id ) );
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $id ) );
     }
 
     public static function render_main( $template, $args )
@@ -600,7 +602,7 @@ class CompilationMain
             {
                 // load_template( self::TEMPLATE[ 'compilation-attention' ], false, $attention );
 
-                return self::render_main( self::TEMPLATE[ 'compilation-attention' ], $attention );
+                return self::render_main( self::TEMPLATE[ self::HANDLE[ 'attention' ] ], $attention );
             }
         }
     }
