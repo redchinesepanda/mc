@@ -24,5 +24,5 @@
 			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="underline compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
 		</div>
 	<?php endif; ?>
-	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" rel="nofollow" class="legal-compilation-button" draggable="false"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
+	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?> check-oops" rel="nofollow" class="legal-compilation-button" draggable="false"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 </div>
