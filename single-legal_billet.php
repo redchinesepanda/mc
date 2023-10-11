@@ -16,6 +16,6 @@ require_once( 'lib/LegalMain.php' );
         <?php BilletMain::print(); ?>
     </head>
     <body class="legal-compilation">
-        <?php BilletMain::render_billet(); ?>
+        <?php echo BilletMain::render_billet(); ?>
     </body>
 </html>
