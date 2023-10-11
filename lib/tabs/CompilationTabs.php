@@ -34,12 +34,6 @@ class CompilationTabs
 
         $args = self::get();
 
-        LegalDebug::debug( [
-            'function' => 'get_inline_style',
-            
-            'args' => $args,
-        ] );
-
         if ( !empty( $args['tabs'] ) )
         {
             foreach ( $args['tabs'] as $tab )
@@ -50,6 +44,14 @@ class CompilationTabs
                 }
             }
         }
+
+        LegalDebug::debug( [
+            'function' => 'get_inline_style',
+            
+            'args' => $args,
+
+            'output' => $output,
+        ] );
 
         return implode( '', $output );
     }
