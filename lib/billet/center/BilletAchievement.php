@@ -128,7 +128,7 @@ class BilletAchievement
 
     public static function render_style( $billet )
     {
-        $title = self::get( BilletAchievemnt::get( $billet ) );
+        $title = self::get( BilletTitle::get( $billet ) );
 
         if ( self::check_disabled( $title ) )
         {
