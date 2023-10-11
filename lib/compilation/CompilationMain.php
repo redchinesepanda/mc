@@ -20,9 +20,9 @@ class CompilationMain
         ],
     ];
 
-    public static function register_inline_base()
+    public static function register_inline_style()
     {
-		ToolEnqueue::register_inline_base( 'compilation-main', self::render_style() );
+		ToolEnqueue::register_inline_base( 'compilation-main' );
     }
 
 	public static function register_style( $styles = [] )
@@ -61,6 +61,8 @@ class CompilationMain
         add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
