@@ -133,6 +133,8 @@ class BilletAchievement
         LegalDebug::debug( [
             'function' => 'BilletAchievement::render_style',
 
+            'billet' => $billet,
+
             'title' => $title,
         ] );
 
