@@ -5,7 +5,7 @@
             <?php echo $args[ 'play' ][ 'label' ]; ?>
         </a>
     </div>
-<?php elseif : ?>
+<?php else : ?>
     <div class="billet-license">
         <span class="billet-license-label"><?php echo $args[ 'label' ]; ?></span> 
     </div>
