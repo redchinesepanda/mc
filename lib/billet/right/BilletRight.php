@@ -27,12 +27,12 @@ class BilletRight
 
     private static function get_license( $billet )
     {
-        LegalDebug::debug( [
-            'function' => 'BilletRight::get_license',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletRight::get_license',
 
-            $billet[ 'filter' ],
-        ] );
-        
+        //     $billet[ 'filter' ],
+        // ] );
+
         if ( !empty( $billet[ 'filter' ][ 'license' ] ) )
         {
             return [

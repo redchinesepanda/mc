@@ -74,11 +74,11 @@ class CompilationMain
 
     public static function get_billets( $posts, $filter )
     {
-        LegalDebug::debug( [
-            'function' => 'CompilationMain::get_billets',
+        // LegalDebug::debug( [
+        //     'function' => 'CompilationMain::get_billets',
 
-            'filter' => $filter,
-        ] );
+        //     'filter' => $filter,
+        // ] );
 
         $data = [];
 
