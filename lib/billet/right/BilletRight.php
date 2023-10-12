@@ -25,6 +25,18 @@ class BilletRight
         return $args;
     }
 
+    private static function get_license( $billet )
+    {
+        if ( !empty( $billet[ 'filter' ][ 'license' ] ) )
+        {
+            return [
+                'label' => __( BilletMain::TEXT[ 'no-license' ], ToolLoco::TEXTDOMAIN ),
+            ];
+        }
+
+        return [];
+    }
+
     public static function get( $billet )
     {
         return [
@@ -35,6 +47,8 @@ class BilletRight
             'bonus' => $billet['bonus'],
 
             'play' => self::get_play( $billet ),
+
+            'license' => self::get_license( $billet ),
 
             'filter' => ( !empty( $billet['filter'] ) ? $billet['filter'] : [] ),
         ];
