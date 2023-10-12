@@ -33,7 +33,7 @@ class BilletRight
             $billet[ 'filter' ],
         ] );
 
-        if ( !empty( $billet[ 'filter' ][ 'license' ] ) )
+        if ( !empty( $billet[ 'filter' ][ 'no-license' ] ) )
         {
             return [
                 'label' => __( BilletMain::TEXT[ 'no-license' ], ToolLoco::TEXTDOMAIN ),
