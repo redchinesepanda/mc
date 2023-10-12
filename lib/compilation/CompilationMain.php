@@ -74,6 +74,12 @@ class CompilationMain
 
     public static function get_billets( $posts, $filter )
     {
+        LegalDebug::debug( [
+            'function' => 'CompilationMain::get_billets',
+
+            'filter' => $filter,
+        ] );
+
         $data = [];
 
         foreach ( $posts as $index => $post ) {
