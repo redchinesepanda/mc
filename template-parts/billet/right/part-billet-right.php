@@ -7,7 +7,7 @@
     </div>
 <?php else : ?>
     <div class="billet-license">
-        <span class="billet-license-label"><?php echo $args[ 'label' ]; ?></span> 
+        <span class="billet-license-label"><?php echo $args[ 'license' ][ 'label' ]; ?></span> 
     </div>
 <?php endif; ?>
 <?php BilletMobile::render( $args ); ?>
