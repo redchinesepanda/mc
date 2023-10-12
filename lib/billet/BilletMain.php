@@ -60,7 +60,7 @@ class BilletMain
         self::HANDLE[ 'main' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main.css',
 
-            'ver' => '1.0.5',
+            'ver' => '1.0.6',
         ],
 
         self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
