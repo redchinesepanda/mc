@@ -368,11 +368,11 @@ class BilletMain
 
         $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
-        LegalDebug::debug( [
-            'function' => 'BilletMain::get',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletMain::get',
 
-            $filter,
-        ] );
+        //     $filter,
+        // ] );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
