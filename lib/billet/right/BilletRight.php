@@ -32,6 +32,7 @@ class BilletRight
 
             $billet[ 'filter' ],
         ] );
+        
         if ( !empty( $billet[ 'filter' ][ 'license' ] ) )
         {
             return [
