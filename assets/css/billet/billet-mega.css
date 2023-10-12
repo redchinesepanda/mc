@@ -151,6 +151,10 @@
 
 /* Width and Height */
 
+.legal-billet-mega .billet-mega-content {
+	width: 100%;
+}
+
 .legal-billet-mega.legal-horizontal .legal-license {
 	flex-basis: 15%;
 }
