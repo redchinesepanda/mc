@@ -45,6 +45,8 @@ class BilletMain
 
 		'more-details' => 'More Details',
 
+		'no-license' => 'No license in UK',
+
 		'read-more-about' => 'Read more about',
 
 		'review' => 'Review',

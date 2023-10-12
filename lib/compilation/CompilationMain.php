@@ -178,6 +178,8 @@ class CompilationMain
         'spoiler-enabled' => 'billet-spoiler-enabled',
 
         'description-enabled' => 'billet-description-enabled',
+
+        'license-enabled' => 'billet-license-enabled',
     ];
 
     public static function get_filter( $id )
@@ -210,6 +212,8 @@ class CompilationMain
             'spoiler' => get_field( self::BILLET[ 'spoiler-enabled' ], $id ),
 
             'description' => get_field( self::BILLET[ 'description-enabled' ], $id ),
+
+            'license' => get_field( self::BILLET[ 'license-enabled' ], $id ),
         ];
     }
 
