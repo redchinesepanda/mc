@@ -179,7 +179,7 @@ class CompilationMain
 
         'description-enabled' => 'billet-description-enabled',
 
-        'license-enabled' => 'billet-license-enabled',
+        'no-license-enabled' => 'billet-no-license-enabled',
     ];
 
     public static function get_filter( $id )
@@ -213,7 +213,7 @@ class CompilationMain
 
             'description' => get_field( self::BILLET[ 'description-enabled' ], $id ),
 
-            'license' => get_field( self::BILLET[ 'license-enabled' ], $id ),
+            'license' => get_field( self::BILLET[ 'no-license-enabled' ], $id ),
         ];
     }
 
