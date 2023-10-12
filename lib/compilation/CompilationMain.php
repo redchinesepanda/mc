@@ -213,7 +213,7 @@ class CompilationMain
 
             'description' => get_field( self::BILLET[ 'description-enabled' ], $id ),
 
-            'license' => get_field( self::BILLET[ 'no-license-enabled' ], $id ),
+            'no-license' => get_field( self::BILLET[ 'no-license-enabled' ], $id ),
         ];
     }
 
