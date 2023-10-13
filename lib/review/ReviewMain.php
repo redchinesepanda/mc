@@ -30,6 +30,8 @@ require_once( 'ReviewOffers.php' );
 
 require_once( 'ReviewTitle.php' );
 
+require_once( 'ReviewTable.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -85,11 +87,11 @@ class ReviewMain
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
 
-        'review-table' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
+        // 'review-table' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
 
-            'ver' => '1.1.2',
-        ],
+        //     'ver' => '1.1.2',
+        // ],
     ];
 
     public static function register_style( $styles = [] )
@@ -171,6 +173,8 @@ class ReviewMain
         ReviewOffers::register();
 
         ReviewTitle::register();
+
+        ReviewTable::register();
     }
 
     public static function encoding( $content )
