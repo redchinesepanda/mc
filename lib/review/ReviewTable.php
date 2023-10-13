@@ -63,7 +63,7 @@ class ReviewTable
 			{
 				$row_first = $rows->item( 0 );
 
-				$row_first_cells = $row->getElementsByTagName( 'td' );
+				$row_first_cells = $row_first->getElementsByTagName( 'td' );
 	
 				foreach ( $rows as $row )
 				{
