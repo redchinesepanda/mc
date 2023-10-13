@@ -57,11 +57,26 @@ class ReviewTable
 
 		foreach ( $nodes as $id => $node )
 		{
-			LegalDebug::debug( [
-				'function' => 'ReviewTable::get_content',
+			$rows = $node->getElementsByTagName( 'tr' );
 
-				'textContent' => substr( $node->textContent, 0, 30 ),
-			] );
+			foreach ( $rows as $row )
+			{
+				$cells = $row->getElementsByTagName( 'td' );
+
+				if ( $cells->length )
+				{
+					$call = $cells->itrm( 0 );
+
+					if ( $call->hasAttribute( 'rowspan' ) )
+					{
+						LegalDebug::debug( [
+							'function' => 'ReviewTable::get_content',
+			
+							'rowspan' => $node->getAttribute( 'rowspan' ),
+						] );
+					}
+				}
+			}
 		}
 
 		return $dom->saveHTML( $dom );
