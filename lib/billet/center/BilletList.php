@@ -33,6 +33,14 @@ class BilletList
                 // $permission_filter = in_array( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] );
                 
                 $permission_filter = !empty( array_intersect( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] ) );
+
+                LegalDebug::debug( [
+                    $part[ self::PART[ 'feature' ] ],
+
+                    $billet[ 'filter' ][ 'features' ],
+
+                    array_intersect( $part[ self::PART[ 'feature' ] ], $billet[ 'filter' ][ 'features' ] )
+                ] );
             }
 
             $display = ( $permission_filter || $permission_empty );
