@@ -78,8 +78,12 @@ class LegalMain {
 	public static function check_acf()
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		$permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+
+		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 	
-		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+		return $permission_acf && $permission_wpml;
 	}
 
 	public static function check()
