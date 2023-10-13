@@ -77,6 +77,13 @@
 	column-gap: 50px;
 }
 
+@media (max-width: 768px) {
+    .legal-billet-mega.legal-horizontal .billet-mega-content {
+        flex-direction: column;
+		row-gap: 1rem;
+    } 
+}
+
 .legal-billet-mega.legal-default .billet-mega-about,
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-no-controls .billet-mega-about {

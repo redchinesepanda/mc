@@ -75,7 +75,7 @@ class LegalMain {
 		}
 	}
 
-	public static function check_acf()
+	public static function check()
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -86,10 +86,10 @@ class LegalMain {
 		return $permission_acf && $permission_wpml;
 	}
 
-	public static function check()
-	{
-		return ( self::check_acf() );
-	}
+	// public static function check()
+	// {
+	// 	return ( self::check_acf() );
+	// }
 }
 
 ?>
