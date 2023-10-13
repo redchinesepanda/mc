@@ -195,6 +195,7 @@
 .legal-billet-mega {
 	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
 	border-radius: 20px;
+	background-color: #fff;
 }
 
 .legal-billet-mega .mega-about-logo {
