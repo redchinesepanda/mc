@@ -28,7 +28,7 @@ class ReviewTable
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
-	self CLASSES = [
+	const CLASSES = [
 		'container' => 'legal-rawspan',
 	];
 
