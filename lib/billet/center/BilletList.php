@@ -24,6 +24,10 @@ class BilletList
     {
         $display = true;
 
+        LegalDebug::debug( [
+            'function' => 'check_list',
+        ] );
+
         if ( !empty( $billet[ 'filter' ] ) ) {
             $permission_filter = false;
 
