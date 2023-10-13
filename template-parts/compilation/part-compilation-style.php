@@ -6,6 +6,7 @@
 <?php if ( !empty( $args[ 'billets' ] ) ) : ?>
 	<?php foreach( $args[ 'billets' ] as $billet ) : ?>
 		<?php echo BilletMain::render_style( $billet ); ?>
+		
 		<?php echo BilletAchievement::render_style( $billet ); ?>
 	<?php endforeach; ?>
 <?php endif; ?>
