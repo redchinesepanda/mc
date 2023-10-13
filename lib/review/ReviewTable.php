@@ -72,9 +72,9 @@ class ReviewTable
 						LegalDebug::debug( [
 							'function' => 'ReviewTable::get_content',
 			
-							'rowspan' => $node->getAttribute( 'rowspan' ),
+							'rowspan' => $call->getAttribute( 'rowspan' ),
 
-							'textContent' => substr( $node->textContent, 0, 30 ),
+							'textContent' => substr( $call->textContent, 0, 30 ),
 						] );
 					}
 				}
