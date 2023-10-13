@@ -73,6 +73,8 @@ class ReviewTable
 							'function' => 'ReviewTable::get_content',
 			
 							'rowspan' => $node->getAttribute( 'rowspan' ),
+
+							'textContent' => substr( $node->textContent, 0, 30 ),
 						] );
 					}
 				}
