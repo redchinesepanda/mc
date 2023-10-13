@@ -65,7 +65,7 @@ class ReviewTable
 
 				if ( $cells->length )
 				{
-					$call = $cells->itrm( 0 );
+					$call = $cells->item( 0 );
 
 					if ( $call->hasAttribute( 'rowspan' ) )
 					{
