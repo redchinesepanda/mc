@@ -116,6 +116,12 @@ body {
     column-gap: 4px;
 }
 
+@media (max-width: 768px) {
+    .billet-list-part.legal-row {
+        flex-direction: column;
+    } 
+}
+
 .billet-list-part.legal-column {
     display: flex;
     flex-direction: column;
@@ -221,13 +227,6 @@ body {
 
 .billet-right .legal-play:hover {
     background-color: rgb(89, 151, 227);
-}
-
-.billet-right .billet-license {
-    background-image: url( '../../img/billet/billet-license-no.svg' );
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: auto;
 }
 
 .billet-right .bonus-spoiler {
@@ -345,6 +344,12 @@ body {
     width: 33.333%;
 }
 
+@media (max-width: 768px) {
+    .billet-list-part.legal-row .billet-list-part-item {
+        width: auto;
+    }
+}
+
 .billet-list-part.legal-row {
     width: 100%;
 }
@@ -419,10 +424,6 @@ body {
 
 .billet .profit-label {
     padding-left: 33px;
-}
-
-.billet-right .billet-license {
-    padding-top: 45px;
 }
 
 /* Billet Typography */
@@ -582,14 +583,4 @@ body {
     font-weight: 400;
     line-height: 17.4px;
     color: rgb(106, 107, 108);
-}
-
-.billet-right .billet-license-label {
-    color: rgb(59, 59, 59);
-    font-family: "Source Sans Pro";
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: normal;
-    line-height: 22.5px;
 }
