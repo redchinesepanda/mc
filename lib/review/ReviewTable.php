@@ -59,26 +59,34 @@ class ReviewTable
 		{
 			$rows = $node->getElementsByTagName( 'tr' );
 
-			foreach ( $rows as $row )
+			if ( $rows->length )
 			{
-				$cells = $row->getElementsByTagName( 'td' );
+				$row_first = $rows->item( 0 );
 
-				if ( $cells->length )
+				$row_first_cells = $row->getElementsByTagName( 'td' );
+	
+				foreach ( $rows as $row )
 				{
-					$call = $cells->item( 0 );
-
-					if ( $call->hasAttribute( 'rowspan' ) )
+					$cells = $row->getElementsByTagName( 'td' );
+	
+					if ( $cells->length == $row_first_cells->length )
 					{
-						LegalDebug::debug( [
-							'function' => 'ReviewTable::get_content',
-			
-							'rowspan' => $call->getAttribute( 'rowspan' ),
-
-							'textContent' => substr( $call->textContent, 0, 30 ),
-						] );
+						$call = $cells->item( 0 );
+	
+						if ( $call->hasAttribute( 'rowspan' ) )
+						{
+							LegalDebug::debug( [
+								'function' => 'ReviewTable::get_content',
+				
+								'rowspan' => $call->getAttribute( 'rowspan' ),
+	
+								'textContent' => substr( $call->textContent, 0, 30 ),
+							] );
+						}
 					}
 				}
 			}
+
 		}
 
 		return $dom->saveHTML( $dom );
