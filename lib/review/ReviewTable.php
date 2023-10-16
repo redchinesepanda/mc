@@ -83,13 +83,15 @@ class ReviewTable
 
 						// $tbody_amount = 1;
 
+						LegalDebug::debug( [
+							'function' => 'ReviewTable::get_content',
+
+							'textContent' => substr( $call->textContent, 0, 30 ),
+
+							'tbody_id' => $tbody_id,
+						] );
+
 						$call = $cells->item( 0 );
-
-						// LegalDebug::debug( [
-						// 	'function' => 'ReviewTable::get_content',
-
-						// 	'textContent' => substr( $call->textContent, 0, 30 ),
-						// ] );
 	
 						if ( $call->hasAttribute( 'rowspan' ) )
 						{
@@ -107,23 +109,23 @@ class ReviewTable
 				}
 			}
 
-			foreach ( $tbodies as $id => $tbody )
-			{
-				LegalDebug::debug( [
-					'function' => 'ReviewTable::get_content',
+			// foreach ( $tbodies as $id => $tbody )
+			// {
+			// 	LegalDebug::debug( [
+			// 		'function' => 'ReviewTable::get_content',
 	
-					'id' => $id,
-				] );
+			// 		'id' => $id,
+			// 	] );
 
-				foreach ( $tbody as $row )
-				{
-					LegalDebug::debug( [
-						'function' => 'ReviewTable::get_content',
+			// 	foreach ( $tbody as $row )
+			// 	{
+			// 		LegalDebug::debug( [
+			// 			'function' => 'ReviewTable::get_content',
 		
-						'textContent' => substr( $row->textContent, 0, 30 ),
-					] );
-				}
-			}
+			// 			'textContent' => substr( $row->textContent, 0, 30 ),
+			// 		] );
+			// 	}
+			// }
 		}
 
 		return $dom->saveHTML( $dom );
