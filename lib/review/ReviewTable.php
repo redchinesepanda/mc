@@ -49,28 +49,28 @@ class ReviewTable
 
 			foreach ( $tbody as $row )
 			{
-				LegalDebug::debug( [
-					'function' => 'ReviewTable::tbody_replace',
+				// LegalDebug::debug( [
+				// 	'function' => 'ReviewTable::tbody_replace',
 
-					'row' => substr( $row->textContent, 0, 30 ),
-				] );
+				// 	'row' => substr( $row->textContent, 0, 30 ),
+				// ] );
 
 				$tbody_new->appendChild( $row );
 
-				// try
-				// {
-				// 	$table->removeChild( $row );
-				// }
-				// catch ( DOMException $e )
-				// {
-				// 	LegalDebug::debug( [
-				// 		'function' => 'ReviewTable::tbody_replace',
+				try
+				{
+					$row->parentNode->removeChild( $row ); 
+				}
+				catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'function' => 'ReviewTable::get_content',
 
-				// 		'row' => substr( $row->textContent, 0, 30 ),
+						'row' => substr( $row->textContent, 0, 30 ),
 
-				// 		'message' => $e->getMessage(),
-				// 	] );
-				// }
+						'message' => $e->getMessage(),
+					] );
+				}
 			}
 
 			$table->appendChild( $tbody_new );
@@ -118,20 +118,7 @@ class ReviewTable
 
 					$tbodies[ $tbody_id ][] = $row;
 
-					try
-					{
-						$row->parentNode->removeChild( $row ); 
-					}
-					catch ( DOMException $e )
-					{
-						LegalDebug::debug( [
-							'function' => 'ReviewTable::get_content',
-
-							'row' => substr( $row->textContent, 0, 30 ),
-
-							'message' => $e->getMessage(),
-						] );
-					}
+					
 				}
 			}
 
