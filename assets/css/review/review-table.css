@@ -95,7 +95,7 @@
 }
 
 .tcb-post-content table.legal-raw.legal-column tbody,
-.tcb-post-content table.legal-raw-rawspan.legal-column tbody,
+.tcb-post-content table.legal-raw-rawspan tbody,
 .tcb-post-content table.legal-raw.legal-column-3 tbody {
     width: 100%;
 }
