@@ -49,13 +49,15 @@
 
 /* legal-raw */
 
-#tinymce table.legal-raw tr:first-child {
+#tinymce table.legal-raw tr:first-child,
+#tinymce table.legal-raw-rawspan tbody:first-child {
 	background-color: rgb(8, 5, 61);
 	font-weight: 700;
 	color: rgb(255, 255, 255);
 }
 
-#tinymce table.legal-raw tr:nth-child(2n) {
+#tinymce table.legal-raw tr:nth-child(2n),
+#tinymce table.legal-raw-rawspan tbody:nth-child(2n) {
 	background-color: rgb(239, 245, 251);
 }
 
