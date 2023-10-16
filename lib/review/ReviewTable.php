@@ -120,7 +120,7 @@ class ReviewTable
 
 					try
 					{
-						$row->parentNode->removeChild( $row );
+						$row->parentNode->removeChild( $row ); 
 					}
 					catch ( DOMException $e )
 					{
