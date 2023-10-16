@@ -55,8 +55,6 @@ class ReviewTable
 				// 	'row' => substr( $row->textContent, 0, 30 ),
 				// ] );
 
-				
-
 				try
 				{
 					$tbody_new->appendChild( $row );
@@ -118,9 +116,10 @@ class ReviewTable
 						$tbody_id = $row_id;
 					}
 
-					$tbodies[ $tbody_id ][] = $row;
-
-					
+					if ( $tbody_id > 0 )
+					{
+						$tbodies[ $tbody_id ][] = $row;
+					}
 				}
 			}
 
