@@ -64,14 +64,22 @@ class ReviewTable
 				$row_first = $rows->item( 0 );
 
 				$row_first_cells = $row_first->getElementsByTagName( 'td' );
+
+				$amount = $row_first_cells->length;
 	
 				foreach ( $rows as $row )
 				{
 					$cells = $row->getElementsByTagName( 'td' );
 	
-					if ( $cells->length == $row_first_cells->length )
+					if ( $cells->length == $amount )
 					{
 						$call = $cells->item( 0 );
+
+						LegalDebug::debug( [
+							'function' => 'ReviewTable::get_content',
+
+							'textContent' => substr( $call->textContent, 0, 30 ),
+						] );
 	
 						if ( $call->hasAttribute( 'rowspan' ) )
 						{
@@ -79,8 +87,6 @@ class ReviewTable
 								'function' => 'ReviewTable::get_content',
 				
 								'rowspan' => $call->getAttribute( 'rowspan' ),
-	
-								'textContent' => substr( $call->textContent, 0, 30 ),
 							] );
 						}
 					}
