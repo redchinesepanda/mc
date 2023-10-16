@@ -55,6 +55,12 @@ class ReviewTable
 			return $content;
 		}
 
+		$items = [];
+
+		$tbody_id = 0;
+
+		// $tbody_amount = 1;
+
 		foreach ( $nodes as $id => $node )
 		{
 			$rows = $node->getElementsByTagName( 'tr' );
@@ -73,26 +79,39 @@ class ReviewTable
 	
 					if ( $cells->length == $amount )
 					{
+						$tbody_id = $id;
+
+						// $tbody_amount = 1;
+
 						$call = $cells->item( 0 );
 
-						LegalDebug::debug( [
-							'function' => 'ReviewTable::get_content',
+						// LegalDebug::debug( [
+						// 	'function' => 'ReviewTable::get_content',
 
-							'textContent' => substr( $call->textContent, 0, 30 ),
-						] );
+						// 	'textContent' => substr( $call->textContent, 0, 30 ),
+						// ] );
 	
 						if ( $call->hasAttribute( 'rowspan' ) )
 						{
-							LegalDebug::debug( [
-								'function' => 'ReviewTable::get_content',
+							// LegalDebug::debug( [
+							// 	'function' => 'ReviewTable::get_content',
 				
-								'rowspan' => $call->getAttribute( 'rowspan' ),
-							] );
+							// 	'rowspan' => $call->getAttribute( 'rowspan' ),
+							// ] );
+
+							// $tbody_amount = $call->getAttribute( 'rowspan' );
 						}
 					}
+
+					$items[ $tbody_id ][] = $row;
 				}
 			}
 
+			LegalDebug::debug( [
+				'function' => 'ReviewTable::get_content',
+
+				'items' => $items,
+			] );
 		}
 
 		return $dom->saveHTML( $dom );
