@@ -479,7 +479,7 @@ class CompilationMain
 
         $handler = new self();
 
-        ToolEnqueue::enqueue_inline_style( self::HANDLE[ 'style' ], self::render_style( $atts[ 'id' ] ) );
+        // ToolEnqueue::enqueue_inline_style( self::HANDLE[ 'style' ], self::render_style( $atts[ 'id' ] ) );
 		
         return self::render_compilation( $atts[ 'id' ] );
 	}
