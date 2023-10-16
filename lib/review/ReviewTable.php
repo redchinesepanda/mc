@@ -26,6 +26,10 @@ class ReviewTable
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
 	}
 
 	const CLASSES = [
@@ -127,6 +131,77 @@ class ReviewTable
 		}
 
 		return $dom->saveHTML( $dom );
+	}
+
+	public static function table_classes( $settings )
+	{
+		$styles = [
+			[
+				'title' => 'По умолчанию',
+				'value' => '',
+			],
+
+			[
+				'title' => 'По умолчанию 50%',
+				'value' => 'legal-column',
+			],
+
+			[
+				'title' => 'По умолчанию 33.333%',
+				'value' => 'legal-column-3',
+			],
+
+			[
+				'title' => 'Ряд и Столбец',
+				'value' => 'legal-raw-column',
+			],
+
+			[
+				'title' => 'Ряд',
+				'value' => 'legal-raw',
+			],
+
+			[
+				'title' => 'Ряд 33.333%',
+				'value' => 'legal-raw legal-column-3',
+			],
+
+			[
+				'title' => 'Галка',
+				'value' => 'legal-check',
+			],
+
+			[
+				'title' => 'Статистика',
+				'value' => 'legal-stats',
+			],
+
+			[
+				'title' => 'Счетчик',
+				'value' => ReviewCounter::CLASSES[ 'base' ],
+			],
+		];
+
+		$settings[ 'table_class_list' ] = json_encode( $styles );
+
+		return $settings;
+	}
+
+	public static function table_cell_classes( $settings )
+	{
+		$settings[ 'table_cell_class_list' ] = json_encode( [
+			[
+				'title' => 'По умолчанию',
+				'value' => '',
+			],
+
+			[
+				'title' => 'Крест',
+				'value' => 'legal-cross',
+			],
+		] );
+
+		return $settings;
 	}
 }
 
