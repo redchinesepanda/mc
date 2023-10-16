@@ -86,14 +86,14 @@ class ReviewTable
 						LegalDebug::debug( [
 							'function' => 'ReviewTable::get_content',
 
-							'textContent' => substr( $call->textContent, 0, 30 ),
+							'textContent' => substr( $row->textContent, 0, 30 ),
 
 							'tbody_id' => $tbody_id,
 						] );
 
-						$call = $cells->item( 0 );
+						$cell_first = $cells->item( 0 );
 	
-						if ( $call->hasAttribute( 'rowspan' ) )
+						if ( $cell_first->hasAttribute( 'rowspan' ) )
 						{
 							// LegalDebug::debug( [
 							// 	'function' => 'ReviewTable::get_content',
