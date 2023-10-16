@@ -123,18 +123,20 @@ class ReviewTable
 					'function' => 'ReviewTable::get_content',
 	
 					'id' => $id,
+
+					'count' => count( $tbody )
 				] );
 
-				foreach ( $tbody as $row )
-				{
-					LegalDebug::debug( [
-						'function' => 'ReviewTable::get_content',
+				// foreach ( $tbody as $row )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'function' => 'ReviewTable::get_content',
 
-						'count' => $row->childNodes->count,
+				// 		'count' => $row->childNodes->count,
 		
-						// 'textContent' => substr( $row->textContent, 0, 30 ),
-					] );
-				}
+				// 		// 'textContent' => substr( $row->textContent, 0, 30 ),
+				// 	] );
+				// }
 			}
 		}
 
