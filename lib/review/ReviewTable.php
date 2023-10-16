@@ -49,6 +49,12 @@ class ReviewTable
 
 			foreach ( $tbody as $row )
 			{
+				LegalDebug::debug( [
+					'function' => 'ReviewTable::tbody_replace',
+
+					'row' => substr( $row->textContent, 0, 30 ),
+				] );
+
 				try
 				{
 					$table->removeChild( $row );
