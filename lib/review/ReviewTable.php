@@ -120,7 +120,7 @@ class ReviewTable
 					LegalDebug::debug( [
 						'function' => 'ReviewTable::get_content',
 		
-						'textContent' => substr( $call->textContent, 0, 30 ),
+						'textContent' => substr( $row->textContent, 0, 30 ),
 					] );
 				}
 			}
