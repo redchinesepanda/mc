@@ -41,7 +41,7 @@ class ReviewTable
 		return $nodes;
 	}
 
-	public static function tbody_replace( $dom, &$table, $tbodies )
+	public static function tbody_replace( $dom, $table, $tbodies )
 	{
 		foreach ( $tbodies as $tbody )
 		{
@@ -61,7 +61,7 @@ class ReviewTable
 				{
 					$tbody_new->appendChild( $row );
 
-					$row->parentNode->removeChild( $row ); 
+					// $row->parentNode->removeChild( $row ); 
 				}
 				catch ( DOMException $e )
 				{
