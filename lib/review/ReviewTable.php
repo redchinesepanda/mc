@@ -55,10 +55,12 @@ class ReviewTable
 				// 	'row' => substr( $row->textContent, 0, 30 ),
 				// ] );
 
-				$tbody_new->appendChild( $row );
+				
 
 				try
 				{
+					$tbody_new->appendChild( $row );
+					
 					$row->parentNode->removeChild( $row ); 
 				}
 				catch ( DOMException $e )
