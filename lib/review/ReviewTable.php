@@ -49,9 +49,9 @@ class ReviewTable
 
 		$dom = LegalDOM::get_dom( $content );
 
-        $nodes = self::get_nodes( $dom );
+        $tables = self::get_nodes( $dom );
 
-		if ( $nodes->length == 0 ) {
+		if ( $tables->length == 0 ) {
 			return $content;
 		}
 
@@ -61,9 +61,9 @@ class ReviewTable
 
 		// $tbody_amount = 1;
 
-		foreach ( $nodes as $id => $node )
+		foreach ( $tables as $table )
 		{
-			$rows = $node->getElementsByTagName( 'tr' );
+			$rows = $table->getElementsByTagName( 'tr' );
 
 			if ( $rows->length )
 			{
@@ -73,7 +73,7 @@ class ReviewTable
 
 				$amount = $row_first_cells->length;
 	
-				foreach ( $rows as $row )
+				foreach ( $rows as $row_id => $row )
 				{
 					$cells = $row->getElementsByTagName( 'td' );
 
@@ -87,7 +87,7 @@ class ReviewTable
 	
 					if ( $cells->length == $amount )
 					{
-						$tbody_id = $id;
+						$tbody_id = $row_id;
 
 						// $tbody_amount = 1;
 
