@@ -33,7 +33,7 @@ class ReviewTable
 	}
 
 	const CLASSES = [
-		'container' => 'legal-rawspan',
+		'container' => 'legal-raw-rawspan',
 	];
 
 	public static function get_nodes( $dom )
@@ -164,6 +164,11 @@ class ReviewTable
 			[
 				'title' => 'Ряд 33.333%',
 				'value' => 'legal-raw legal-column-3',
+			],
+
+			[
+				'title' => 'Ряд Rowspan',
+				'value' => self::CLASSES[ 'container' ],
 			],
 
 			[
