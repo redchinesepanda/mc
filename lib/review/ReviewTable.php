@@ -76,6 +76,14 @@ class ReviewTable
 				foreach ( $rows as $row )
 				{
 					$cells = $row->getElementsByTagName( 'td' );
+
+					LegalDebug::debug( [
+						'function' => 'ReviewTable::get_content',
+
+						'cells->length' => $cells->length,
+
+						'amount' => $amount,
+					] );
 	
 					if ( $cells->length == $amount )
 					{
