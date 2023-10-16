@@ -75,7 +75,14 @@ class LegalMain {
 		}
 	}
 
-	public static function check()
+	public static function check_permissions()
+	{
+		$permission_not_ajax = !wp_doing_ajax();
+
+		return $permission_not_ajax;
+	}
+	
+	public static function check_plugins()
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -86,10 +93,10 @@ class LegalMain {
 		return $permission_acf && $permission_wpml;
 	}
 
-	// public static function check()
-	// {
-	// 	return ( self::check_acf() );
-	// }
+	public static function check()
+	{
+		return self::check_plugins() && self::check_permissions();
+	}
 }
 
 ?>
