@@ -79,9 +79,11 @@ class LegalMain {
 	{
 		$permission_not_ajax = !wp_doing_ajax();
 
-		return $permission_not_ajax;
+		$permission_not_admin = !is_admin();
+
+		return $permission_not_ajax && $permission_not_admin;
 	}
-	
+
 	public static function check_plugins()
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
