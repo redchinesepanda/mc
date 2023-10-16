@@ -57,20 +57,20 @@ class ReviewTable
 
 				$tbody_new->appendChild( $row );
 
-				try
-				{
-					$table->removeChild( $row );
-				}
-				catch ( DOMException $e )
-				{
-					LegalDebug::debug( [
-						'function' => 'ReviewTable::tbody_replace',
+				// try
+				// {
+				// 	$table->removeChild( $row );
+				// }
+				// catch ( DOMException $e )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'function' => 'ReviewTable::tbody_replace',
 
-						'row' => substr( $row->textContent, 0, 30 ),
+				// 		'row' => substr( $row->textContent, 0, 30 ),
 
-						'message' => $e->getMessage(),
-					] );
-				}
+				// 		'message' => $e->getMessage(),
+				// 	] );
+				// }
 			}
 
 			$table->appendChild( $tbody_new );
@@ -117,6 +117,21 @@ class ReviewTable
 					}
 
 					$tbodies[ $tbody_id ][] = $row;
+
+					try
+					{
+						$table->removeChild( $row );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'function' => 'ReviewTable::tbody_replace',
+
+							'row' => substr( $row->textContent, 0, 30 ),
+
+							'message' => $e->getMessage(),
+						] );
+					}
 				}
 			}
 
