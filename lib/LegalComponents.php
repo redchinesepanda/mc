@@ -4,8 +4,6 @@ require_once( 'billet/BilletMain.php' );
 
 require_once( 'compilation/CompilationMain.php' );
 
-// require_once( 'tabs/CompilationTabs.php' );
-
 require_once( 'tabs/CompilationTabsMain.php' );
 
 require_once( 'bonus/BonusMain.php' );
@@ -16,26 +14,29 @@ class LegalComponents
 {
 	public static function register()
 	{
-		BilletMain::register();
-
-		CompilationMain::register();
-
-		// CompilationTabs::register();
-		
-		CompilationTabsMain::register();
-
-		BonusMain::register();
-
-		TemplateMain::register();
+		if ( self::check() )
+		{
+			BilletMain::register();
+	
+			CompilationMain::register();
+			
+			CompilationTabsMain::register();
+	
+			BonusMain::register();
+	
+			TemplateMain::register();
+		}
 	} 
 	
 	public static function check()
     {
-        $single = is_singular( 'page' );
+        $permission_single = is_singular( 'page' );
 
-        $term = has_term( 'compilation', 'page_type' );
+        $permission_term = has_term( 'compilation', 'page_type' );
+
+		$permission_main = LegalMain::check();
         
-        return $single && $term;
+        return $singpermission_singlele && $permission_term && $permission_main;
     }
 }
 
