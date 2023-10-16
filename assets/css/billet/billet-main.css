@@ -312,6 +312,13 @@ body {
     border-bottom-right-radius: 10px;
 }
 
+.billet .billet-license {
+    background-image: url( '../../img/billet/billet-license-no.svg' );
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
 /* Billet Width and Height */
 
 .billet-left,
@@ -424,6 +431,10 @@ body {
 
 .billet .profit-label {
     padding-left: 33px;
+}
+
+.billet .billet-license {
+    padding-top: 45px;
 }
 
 /* Billet Typography */
@@ -583,4 +594,14 @@ body {
     font-weight: 400;
     line-height: 17.4px;
     color: rgb(106, 107, 108);
+}
+
+.billet .billet-license .billet-license-label {
+    color: rgb(59, 59, 59);
+    font-family: "Source Sans Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 22.5px;
 }
