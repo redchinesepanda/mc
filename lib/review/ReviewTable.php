@@ -55,6 +55,8 @@ class ReviewTable
 					'row' => substr( $row->textContent, 0, 30 ),
 				] );
 
+				$tbody_new->appendChild( $row );
+
 				try
 				{
 					$table->removeChild( $row );
@@ -69,8 +71,6 @@ class ReviewTable
 						'message' => $e->getMessage(),
 					] );
 				}
-
-				$tbody_new->appendChild( $row );
 			}
 
 			$table->appendChild( $tbody_new );
