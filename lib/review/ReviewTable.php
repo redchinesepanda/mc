@@ -41,7 +41,7 @@ class ReviewTable
 		return $nodes;
 	}
 
-	public static function tbody_replace( $table, $tbodies )
+	public static function tbody_replace( $dom, $table, $tbodies )
 	{
 		foreach ( $tbodies as $tbody )
 		{
@@ -114,7 +114,7 @@ class ReviewTable
 				}
 			}
 
-			self::tbody_replace( $table, $tbodies );
+			self::tbody_replace( $dom, $table, $tbodies );
 		}
 
 		return $dom->saveHTML( $dom );
