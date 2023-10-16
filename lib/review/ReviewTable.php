@@ -55,7 +55,7 @@ class ReviewTable
 			return $content;
 		}
 
-		$items = [];
+		$tbodies = [];
 
 		$tbody_id = 0;
 
@@ -103,15 +103,27 @@ class ReviewTable
 						}
 					}
 
-					$items[ $tbody_id ][] = $row;
+					$tbodies[ $tbody_id ][] = $row;
 				}
 			}
 
-			LegalDebug::debug( [
-				'function' => 'ReviewTable::get_content',
+			foreach ( $tbodies as $id => $tbody )
+			{
+				LegalDebug::debug( [
+					'function' => 'ReviewTable::get_content',
+	
+					'id' => $id,
+				] );
 
-				'items' => $items,
-			] );
+				foreach ( $tbody as $row )
+				{
+					LegalDebug::debug( [
+						'function' => 'ReviewTable::get_content',
+		
+						'textContent' => substr( $call->textContent, 0, 30 ),
+					] );
+				}
+			}
 		}
 
 		return $dom->saveHTML( $dom );
