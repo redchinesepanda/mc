@@ -120,12 +120,12 @@ class ReviewTable
 
 					try
 					{
-						$table->removeChild( $row );
+						$row->parentNode->removeChild( $row );
 					}
 					catch ( DOMException $e )
 					{
 						LegalDebug::debug( [
-							'function' => 'ReviewTable::tbody_replace',
+							'function' => 'ReviewTable::get_content',
 
 							'row' => substr( $row->textContent, 0, 30 ),
 
