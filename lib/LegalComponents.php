@@ -43,15 +43,15 @@ class LegalComponents
 
 		$permission_main = LegalMain::check();
 
-		LegalDebug::debug( [
-			'function' => 'check_plugins',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_plugins',
 
-			'permission_single' => $permission_single,
+		// 	'permission_single' => $permission_single,
 
-			'permission_term' => $permission_term,
+		// 	'permission_term' => $permission_term,
 
-			'permission_main' => $permission_main,
-		] );
+		// 	'permission_main' => $permission_main,
+		// ] );
         
         return $permission_single && $permission_term && $permission_main;
     }
