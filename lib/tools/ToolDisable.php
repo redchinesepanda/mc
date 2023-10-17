@@ -31,31 +31,49 @@ class ToolDisable
 
     public static function check_rest_api()
 	{
-		return self::check_admin();
+		return self::is_user_logged_in();
 	}
 
     function disable_rest_api( $access )
     {
-        // if ( self::check_logged_in() )
-        // {
-        //     return $access;
-        // }
+        if ( self::check_rest_api() )
+        {
+            return $access;
+        }
 
+        return self::rest_api_error_not_logged_in();
+    }
+    
+    function rest_api_error_not_logged_in()
+    {
+        return new WP_Error(
+            'rest_not_logged_in',
+
+            __('The WordPress REST API has been disabled. You are not currently logged in.'),
+
+            [ 'status' => rest_authorization_required_code() ]
+        );
+    }
+
+    function rest_api_error_disabled()
+    {
         return new WP_Error(
             'rest_disabled',
 
             __('The WordPress REST API has been disabled.'),
 
-            // [ 'status' => rest_authorization_required_code() ]
-            [
-                'status' => rest_authorization_required_code(),
+            [ 'status' => rest_authorization_required_code() ]
 
-                'check_admin' => self::check_admin(),
+            // [
+            //     'status' => rest_authorization_required_code(),
 
-                'check_logged_in' => self::check_logged_in(),
-            ]
+            //     'check_admin' => self::check_admin(),
+
+            //     'check_logged_in' => self::check_logged_in(),
+            // ]
         );
-    } 
+    }
+    
 
     // public static function legal_attachment_slug( $bad_slug, $slug ) {
     //     return true;
