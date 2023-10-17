@@ -105,53 +105,64 @@ class CompilationMain
         CompilationBonus::SHORTCODES[ 'bonus' ],
     ];
 
-    public static function get_compilations_shortcode_id()
+    public static function get_attr_id( $matches )
     {
         $compilations_ids = [];
+
+        if ( !empty( $matches ) )
+        {
+            foreach ( $matches as $match )
+            {
+                $atts = shortcode_parse_atts( $match[ 3 ] );
+
+                if ( !empty( $atts[ 'id' ] ) )
+                {
+                    $compilations_ids[] = $atts[ 'id' ];
+                }
+            }
+        }
+
+        return $compilations_ids;
+    }
+    public static function get_compilations_shortcode_id()
+    {
+        // $compilations_ids = [];
+
+        $matches = [];
 
         $post = get_post();
 
         if ( $post )
         {
-            // $shortcodes = [
-            //     self::SHORTCODES[ 'compilation' ],
-
-            //     CompilationBonus::SHORTCODES[ 'bonus' ],
-            // ];
-
-            // $regex = get_shortcode_regex( $shortcodes );
-            
             $regex = get_shortcode_regex( self::SHORTCODES_INLINE );
-
-            $content = $post->post_content;
-
-            $matches = [];
 
             $amount = preg_match_all( 
                 '/' . $regex . '/', 
     
-                $content,
+                $post->post_content,
     
                 $matches,
     
                 PREG_SET_ORDER
             );
 
-            if ( $amount )
-            {
-                foreach ( $matches as $match )
-                {
-                    $atts = shortcode_parse_atts( $match[ 3 ] );
+            // if ( $amount )
+            // {
+            //     foreach ( $matches as $match )
+            //     {
+            //         $atts = shortcode_parse_atts( $match[ 3 ] );
 
-                    if ( !empty( $atts[ 'id' ] ) )
-                    {
-                        $compilations_ids[] = $atts[ 'id' ];
-                    }
-                }
-            }
+            //         if ( !empty( $atts[ 'id' ] ) )
+            //         {
+            //             $compilations_ids[] = $atts[ 'id' ];
+            //         }
+            //     }
+            // }
         }
 
-        return $compilations_ids;
+        // return $compilations_ids;
+
+        return self::get_attr_id( $matches );
     }
 
     public static function get_billets( $posts, $filter )
