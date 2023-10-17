@@ -50,7 +50,7 @@ class ToolDisable
             [
                 'status' => rest_authorization_required_code(),
 
-                'check_rest_api' => self::check_rest_api(),
+                'check_admin' => self::check_admin(),
 
                 'check_logged_in' => self::check_logged_in(),
             ]
