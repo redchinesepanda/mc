@@ -101,6 +101,8 @@ class CompilationMain
 
     public static function get_compilations_shortcode_id()
     {
+        $compilations_ids = [];
+
         $post = get_post();
 
         if ( $post )
@@ -145,14 +147,21 @@ class CompilationMain
                 {
                     $atts = shortcode_parse_atts( $match[ 3 ] );
     
-                    LegalDebug::debug( [
-                        'function' => 'get_shortcodes',
+                    // LegalDebug::debug( [
+                    //     'function' => 'get_shortcodes',
             
-                        'atts' => $atts,
-                    ] );
+                    //     'atts' => $atts,
+                    // ] );
+
+                    if ( !empty( $atts[ 'id' ] ) )
+                    {
+                        $compilations_ids[] = $atts[ 'id' ];
+                    }
                 }
             }
         }
+
+        return $compilations_ids;
     }
 
     public static function get_billets( $posts, $filter )
