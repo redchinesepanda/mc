@@ -99,6 +99,12 @@ class CompilationMain
         CompilationBonus::register();
     }
 
+    const SHORTCODES = [
+        self::SHORTCODES[ 'compilation' ],
+
+        CompilationBonus::SHORTCODES[ 'bonus' ],
+    ];
+
     public static function get_compilations_shortcode_id()
     {
         $compilations_ids = [];
@@ -107,13 +113,15 @@ class CompilationMain
 
         if ( $post )
         {
-            $shortcodes = [
-                self::SHORTCODES[ 'compilation' ],
+            // $shortcodes = [
+            //     self::SHORTCODES[ 'compilation' ],
 
-                CompilationBonus::SHORTCODES[ 'bonus' ],
-            ];
+            //     CompilationBonus::SHORTCODES[ 'bonus' ],
+            // ];
 
-            $regex = get_shortcode_regex( $shortcodes );
+            // $regex = get_shortcode_regex( $shortcodes );
+            
+            $regex = get_shortcode_regex( self::SHORTCODES );
 
             $content = $post->post_content;
 
@@ -128,30 +136,12 @@ class CompilationMain
     
                 PREG_SET_ORDER
             );
-    
-            // LegalDebug::debug( [
-            //     'function' => 'get_shortcodes',
-    
-            //     'shortcodes' => $shortcodes,
-
-            //     'regex' => $regex,
-
-            //     'matches' => $matches,
-
-            //     'amount' => $amount,
-            // ] );
 
             if ( $amount )
             {
                 foreach ( $matches as $match )
                 {
                     $atts = shortcode_parse_atts( $match[ 3 ] );
-    
-                    // LegalDebug::debug( [
-                    //     'function' => 'get_shortcodes',
-            
-                    //     'atts' => $atts,
-                    // ] );
 
                     if ( !empty( $atts[ 'id' ] ) )
                     {
