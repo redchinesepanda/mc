@@ -108,7 +108,7 @@ class LegalMain
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
 		LegalDebug::debug( [
-			'function' => 'check_permissions',
+			'function' => 'check_plugins',
 
 			'permission_acf' => $permission_acf,
 
@@ -120,6 +120,14 @@ class LegalMain
 
 	public static function check()
 	{
+		LegalDebug::debug( [
+			'function' => 'check_plugins',
+
+			'check_plugins' => self::check_plugins(),
+
+			'check_permissions' => self::check_permissions(),
+		] );
+
 		return self::check_plugins() && self::check_permissions();
 	}
 }
