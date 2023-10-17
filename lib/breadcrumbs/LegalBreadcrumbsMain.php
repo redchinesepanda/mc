@@ -258,6 +258,7 @@ class LegalBreadcrumbsMain extends LegalDebug
     public static function check()
     {
         $not_front_page = !is_front_page();
+
         return $not_front_page;
     }
 
@@ -304,6 +305,11 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function schema()
     {
+        if ( !self::check() )
+        {
+            return [];
+        }
+
         return [
             "@context" => "https://schema.org",
 
