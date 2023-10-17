@@ -107,7 +107,7 @@ class CompilationMain
 
             $matches = [];
 
-            $shortcodes = preg_match_all( 
+            $amount = preg_match_all( 
                 '/' . $regex . '/', 
     
                 $content,
@@ -126,18 +126,21 @@ class CompilationMain
 
                 'matches' => $matches,
 
-                'shortcodes' => $shortcodes,
+                'amount' => $amount,
             ] );
 
-            foreach ( $matches as $match )
+            if ( $amount )
             {
-                $atts = shortcode_parse_atts( $match[ 3 ] );
-
-                LegalDebug::debug( [
-                    'function' => 'get_shortcodes',
-        
-                    'atts' => $atts,
-                ] );
+                foreach ( $matches as $match )
+                {
+                    $atts = shortcode_parse_atts( $match[ 3 ] );
+    
+                    LegalDebug::debug( [
+                        'function' => 'get_shortcodes',
+            
+                        'atts' => $atts,
+                    ] );
+                }
             }
         }
     }
