@@ -120,6 +120,17 @@ class CompilationMain
 
                 'shortcodes' => $shortcodes,
             ] );
+
+            foreach ( $matches as $match )
+            {
+                $atts = shortcode_parse_atts( $match[ 3 ] );
+
+                LegalDebug::debug( [
+                    'function' => 'get_shortcodes',
+        
+                    'atts' => $atts,
+                ] );
+            }
         }
     }
 
