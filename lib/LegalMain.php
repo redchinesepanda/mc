@@ -52,13 +52,16 @@ class LegalMain
 		// 	'check' => self::check(),
 		// ] );
 
-		if ( self::check() )
+		if ( self::check_admin() )
 		{
-			LegalComponents::register();
-	
 			ACFMain::register();
 	
 			AdminMain::register();
+		}
+
+		if ( self::check() )
+		{
+			LegalComponents::register();
 	
 			OopsMain::register();
 	
@@ -82,11 +85,31 @@ class LegalMain
 		}
 	}
 
+	public static function check_admin()
+	{
+		return is_admin();
+	}
+
+	public static function check_permissions_admin()
+	{
+		return self::check_admin();
+	}
+
+	public static function check_not_admin()
+	{
+		return !is_admin();
+	}
+
+	public static function check_not_ajax()
+	{
+		return !wp_doing_ajax();
+	}
+
 	public static function check_permissions()
 	{
-		$permission_not_ajax = !wp_doing_ajax();
+		// $permission_not_ajax = !wp_doing_ajax();
 
-		$permission_not_admin = !is_admin();
+		// $permission_not_admin = !is_admin();
 
 		// LegalDebug::debug( [
 		// 	'function' => 'check_permissions',
@@ -96,7 +119,7 @@ class LegalMain
 		// 	'permission_not_admin' => $permission_not_admin,
 		// ] );
 
-		return $permission_not_ajax && $permission_not_admin;
+		return self::check_not_ajax() && self::check_not_admin();
 	}
 
 	public static function check_plugins()
