@@ -14,6 +14,13 @@ class LegalComponents
 {
 	public static function register()
 	{
+		$handler = new self();
+
+		add_action( 'wp_head', [ $handler, 'register_components' ] );
+	}
+
+	public static function register_components()
+	{
 		if ( self::check() )
 		{
 			BilletMain::register();
@@ -31,7 +38,7 @@ class LegalComponents
 	public static function check()
     {
 		global $post;
-		
+
 		$post = get_post();
 
 		LegalDebug::debug( [
