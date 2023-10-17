@@ -32,6 +32,12 @@ class LegalComponents
     {
 		$post = get_post();
 
+		LegalDebug::debug( [
+			'function' => 'check_plugins',
+
+			'post' => $post,
+		] );
+
 		if ( $post )
 		{
 			LegalDebug::debug( [
