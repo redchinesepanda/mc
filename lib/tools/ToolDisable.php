@@ -26,7 +26,7 @@ class ToolDisable
 
     public static function check_logged_in()
 	{
-		return !is_user_logged_in();
+		return is_user_logged_in();
 	}
 
     public static function check_rest_api()
