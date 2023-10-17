@@ -49,7 +49,7 @@ class LegalMain
 		LegalDebug::debug( [
 			'function' => 'register',
 
-			'check' => $check,
+			'check' => self::check(),
 		] );
 
 		if ( self::check() )
