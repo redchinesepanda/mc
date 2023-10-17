@@ -95,7 +95,13 @@ class CompilationMain
 
         if ( $post )
         {
-            $regex = get_shortcode_regex();
+            $shortcodes = [
+                self::SHORTCODES[ 'compilation' ],
+
+                CompilationBonus::SHORTCODES[ 'bonus' ],
+            ];
+
+            $regex = get_shortcode_regex( $shortcodes );
 
             $content = $post->post_content;
 
@@ -114,6 +120,8 @@ class CompilationMain
             LegalDebug::debug( [
                 'function' => 'get_shortcodes',
     
+                'shortcodes' => $shortcodes,
+
                 'regex' => $regex,
 
                 'matches' => $matches,
