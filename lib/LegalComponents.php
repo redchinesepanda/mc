@@ -30,6 +30,8 @@ class LegalComponents
 	
 	public static function check()
     {
+		global $post;
+		
 		$post = get_post();
 
 		LegalDebug::debug( [
