@@ -82,6 +82,10 @@ class LegalMain
 
 		$permission_not_admin = !is_admin();
 
+		LegalDebug::debug( [
+			'permission_not_admin' => $permission_not_admin
+		] );
+
 		return $permission_not_ajax && $permission_not_admin;
 	}
 
