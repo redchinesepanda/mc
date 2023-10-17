@@ -41,6 +41,21 @@ class CompilationMain
         }
     }
 
+    public static function register_inline_style()
+    {
+        if ( self::check() )
+        {
+            ToolEnqueue::register_inline_style( self::HANDLE[ 'style' ], self::get_inline_style() );
+        }
+    }
+
+    public static function get_inline_style()
+    {
+        self::get_shortcodes();
+
+        return '';
+    }
+
     public static function print()
     {
         BilletMain::print();
@@ -66,6 +81,8 @@ class CompilationMain
         add_shortcode( self::SHORTCODES[ 'compilation' ], [ $handler, 'prepare_compilation' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
