@@ -99,7 +99,7 @@ class CompilationMain
         CompilationBonus::register();
     }
 
-    const SHORTCODES = [
+    const SHORTCODES_INLINE = [
         self::SHORTCODES[ 'compilation' ],
 
         CompilationBonus::SHORTCODES[ 'bonus' ],
@@ -121,7 +121,7 @@ class CompilationMain
 
             // $regex = get_shortcode_regex( $shortcodes );
             
-            $regex = get_shortcode_regex( self::SHORTCODES );
+            $regex = get_shortcode_regex( self::SHORTCODES_INLINE );
 
             $content = $post->post_content;
 
