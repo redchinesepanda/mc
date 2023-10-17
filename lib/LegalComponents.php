@@ -36,7 +36,7 @@ class LegalComponents
 
 		$permission_main = LegalMain::check();
         
-        return $singpermission_singlele && $permission_term && $permission_main;
+        return $permission_single && $permission_term && $permission_main;
     }
 }
 
