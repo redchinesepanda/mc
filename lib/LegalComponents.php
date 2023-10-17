@@ -35,6 +35,16 @@ class LegalComponents
         $permission_term = has_term( 'compilation', 'page_type' );
 
 		$permission_main = LegalMain::check();
+
+		LegalDebug::debug( [
+			'function' => 'check_plugins',
+
+			'permission_single' => $permission_single,
+
+			'permission_term' => $permission_term,
+
+			'permission_main' => $permission_main,
+		] );
         
         return $permission_single && $permission_term && $permission_main;
     }

@@ -46,11 +46,11 @@ class LegalMain
 
 	public static function register()
 	{
-		LegalDebug::debug( [
-			'function' => 'register',
+		// LegalDebug::debug( [
+		// 	'function' => 'register',
 
-			'check' => self::check(),
-		] );
+		// 	'check' => self::check(),
+		// ] );
 
 		if ( self::check() )
 		{
@@ -88,13 +88,13 @@ class LegalMain
 
 		$permission_not_admin = !is_admin();
 
-		LegalDebug::debug( [
-			'function' => 'check_permissions',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_permissions',
 
-			'permission_not_ajax' => $permission_not_ajax,
+		// 	'permission_not_ajax' => $permission_not_ajax,
 
-			'permission_not_admin' => $permission_not_admin,
-		] );
+		// 	'permission_not_admin' => $permission_not_admin,
+		// ] );
 
 		return $permission_not_ajax && $permission_not_admin;
 	}
@@ -107,26 +107,26 @@ class LegalMain
 
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
-		LegalDebug::debug( [
-			'function' => 'check_plugins',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_plugins',
 
-			'permission_acf' => $permission_acf,
+		// 	'permission_acf' => $permission_acf,
 
-			'permission_wpml' => $permission_wpml,
-		] );
+		// 	'permission_wpml' => $permission_wpml,
+		// ] );
 	
 		return $permission_acf && $permission_wpml;
 	}
 
 	public static function check()
 	{
-		LegalDebug::debug( [
-			'function' => 'check_plugins',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_plugins',
 
-			'check_plugins' => self::check_plugins(),
+		// 	'check_plugins' => self::check_plugins(),
 
-			'check_permissions' => self::check_permissions(),
-		] );
+		// 	'check_permissions' => self::check_permissions(),
+		// ] );
 
 		return self::check_plugins() && self::check_permissions();
 	}
