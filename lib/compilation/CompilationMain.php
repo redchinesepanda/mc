@@ -51,9 +51,19 @@ class CompilationMain
 
     public static function get_inline_style()
     {
-        self::get_shortcodes();
+        $output = [];
 
-        return '';
+        $compilations_ids = self::get_compilations_shortcode_id();
+
+        if ( !empty( $compilations_ids ) )
+        {
+            foreach ( $compilations_ids as $compilation_id )
+            {
+                $output[] = CompilationMain::render_style( $compilation_id );
+            }
+        }
+
+        return implode( PHP_EOL, $output );
     }
 
     public static function print()
@@ -89,7 +99,7 @@ class CompilationMain
         CompilationBonus::register();
     }
 
-    public static function get_shortcodes()
+    public static function get_compilations_shortcode_id()
     {
         $post = get_post();
 
@@ -117,17 +127,17 @@ class CompilationMain
                 PREG_SET_ORDER
             );
     
-            LegalDebug::debug( [
-                'function' => 'get_shortcodes',
+            // LegalDebug::debug( [
+            //     'function' => 'get_shortcodes',
     
-                'shortcodes' => $shortcodes,
+            //     'shortcodes' => $shortcodes,
 
-                'regex' => $regex,
+            //     'regex' => $regex,
 
-                'matches' => $matches,
+            //     'matches' => $matches,
 
-                'amount' => $amount,
-            ] );
+            //     'amount' => $amount,
+            // ] );
 
             if ( $amount )
             {
