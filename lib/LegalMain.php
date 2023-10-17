@@ -49,6 +49,8 @@ class LegalMain
 		$handler = new self();
 		
 		add_action( 'wp', [ $handler, 'register_components' ] );
+		
+		LegalComponents::register();	
 	}
 
 	public static function register_components()
@@ -68,8 +70,6 @@ class LegalMain
 
 		if ( self::check() )
 		{
-			LegalComponents::register();
-	
 			OopsMain::register();
 	
 			LegalBreadcrumbsMain::register();
