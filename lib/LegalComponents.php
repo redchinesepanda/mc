@@ -30,6 +30,17 @@ class LegalComponents
 	
 	public static function check()
     {
+		$post = get_post();
+
+		if ( $post )
+		{
+			LegalDebug::debug( [
+				'function' => 'check_plugins',
+	
+				'post_type' => $post->post_type,
+			] );
+		}
+
         $permission_single = is_singular( 'page' );
 
         $permission_term = has_term( 'compilation', 'page_type' );
