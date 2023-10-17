@@ -36,10 +36,10 @@ class ToolDisable
 
     function disable_rest_api( $access )
     {
-        if ( self::check_logged_in() )
-        {
-            return $access;
-        }
+        // if ( self::check_logged_in() )
+        // {
+        //     return $access;
+        // }
 
         return new WP_Error(
             'rest_disabled',
