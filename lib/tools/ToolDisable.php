@@ -93,8 +93,6 @@ class ToolDisable
             $message['function'] = 'legal_upload_prefilter';
     
             $message['file'] = $file;
-    
-            // echo( '<pre>' . print_r( $message, true ) . '</pre>' );
         }
     
         return $file;

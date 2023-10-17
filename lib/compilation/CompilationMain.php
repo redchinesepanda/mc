@@ -72,6 +72,25 @@ class CompilationMain
         CompilationBonus::register();
     }
 
+    public static function get_shortcodes()
+    {
+        $shortcodes = preg_match_all( 
+            '/' . get_shortcode_regex() . '/', 
+
+            $content,
+
+            $matches,
+
+            PREG_SET_ORDER
+        );
+
+        LegalDebug::debug( [
+            'function' => 'get_shortcodes',
+
+            'shortcodes' => $shortcodes,
+        ] );
+    }
+
     public static function get_billets( $posts, $filter )
     {
         // LegalDebug::debug( [
