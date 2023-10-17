@@ -31,7 +31,7 @@ class ToolDisable
 
     public static function check_rest_api()
 	{
-		return self::is_user_logged_in();
+		return self::check_logged_in();
 	}
 
     function disable_rest_api( $access )
