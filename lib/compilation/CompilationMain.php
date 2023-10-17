@@ -102,7 +102,7 @@ class CompilationMain
     const SHORTCODES_INLINE = [
         self::SHORTCODES[ 'compilation' ],
 
-        CompilationBonus::SHORTCODES[ 'bonus' ],
+        // CompilationBonus::SHORTCODES[ 'bonus' ],
     ];
 
     public static function get_attr_id( $matches )
