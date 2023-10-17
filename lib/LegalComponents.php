@@ -37,24 +37,24 @@ class LegalComponents
 	
 	public static function check()
     {
-		global $post;
+		// global $post;
 
-		$post = get_post();
+		// $post = get_post();
 
-		LegalDebug::debug( [
-			'function' => 'check_plugins',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_plugins',
 
-			'post' => $post,
-		] );
+		// 	'post' => $post,
+		// ] );
 
-		if ( $post )
-		{
-			LegalDebug::debug( [
-				'function' => 'check_plugins',
+		// if ( $post )
+		// {
+		// 	LegalDebug::debug( [
+		// 		'function' => 'check_plugins',
 	
-				'post_type' => $post->post_type,
-			] );
-		}
+		// 		'post_type' => $post->post_type,
+		// 	] );
+		// }
 
         $permission_single = is_singular( 'page' );
 
