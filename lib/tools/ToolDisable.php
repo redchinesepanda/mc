@@ -24,6 +24,11 @@ class ToolDisable
 		return is_admin();
 	}
 
+    public static function check_logged_in()
+	{
+		return !is_user_logged_in();
+	}
+
     public static function check_rest_api()
 	{
 		return self::check_admin();
@@ -31,7 +36,7 @@ class ToolDisable
 
     function disable_rest_api( $access )
     {
-        if ( self::check_rest_api() )
+        if ( self::check_logged_in() )
         {
             return $access;
         }
@@ -45,7 +50,9 @@ class ToolDisable
             [
                 'status' => rest_authorization_required_code(),
 
-                'check_rest_api' => self::check_rest_api()
+                'check_rest_api' => self::check_rest_api(),
+
+                'check_logged_in' => self::check_logged_in(),
             ]
         );
     } 
