@@ -258,7 +258,7 @@ class ReviewMain
             self::schema_publisher(),
         ];
 
-        $breadcrumbs = LegalBreadcrumbsMain::schema(),
+        $breadcrumbs = LegalBreadcrumbsMain::schema();
 
         if ( !empty( $breadcrumbs ) )
         {
