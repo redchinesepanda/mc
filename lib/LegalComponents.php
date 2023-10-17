@@ -18,7 +18,7 @@ class LegalComponents
 
 		// add_action( 'wp_head', [ $handler, 'register_components' ] );
 		
-		add_action( 'wp_loaded', [ $handler, 'register_components' ] );
+		add_action( 'wp', [ $handler, 'register_components' ] );
 	}
 
 	public static function register_components()
