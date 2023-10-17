@@ -255,10 +255,15 @@ class ReviewMain
         $graph = [
             self::schema_organization(),
 
-            LegalBreadcrumbsMain::schema(),
-
             self::schema_publisher(),
         ];
+
+        $breadcrumbs = LegalBreadcrumbsMain::schema(),
+
+        if ( !empty( $breadcrumbs ) )
+        {
+            $graph[] = $breadcrumbs;
+        }
 
         $faq = ReviewFAQ::schema();
 
