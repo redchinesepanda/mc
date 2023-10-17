@@ -46,6 +46,13 @@ class LegalMain
 
 	public static function register()
 	{
+		$handler = new self();
+		
+		add_action( 'wp', [ $handler, 'register_components' ] );
+	}
+
+	public static function register_components()
+	{
 		// LegalDebug::debug( [
 		// 	'function' => 'register',
 
