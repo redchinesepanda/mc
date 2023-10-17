@@ -16,11 +16,26 @@ class ToolDisable
 
         add_filter( 'wp_handle_upload_prefilter', [ $handler, 'legal_upload_prefilter' ] );
 
-        // add_filter( 'rest_authentication_errors', [ $handler, 'disable_rest_api' ] );
+        add_filter( 'rest_authentication_errors', [ $handler, 'disable_rest_api' ] );
     }
+
+    public static function check_admin()
+	{
+		return is_admin();
+	}
+
+    public static function check_rest_api()
+	{
+		return self::check_admin();
+	}
 
     function disable_rest_api( $access )
     {
+        if ( self::check_rest_api() )
+        {
+            return $access;
+        }
+
         return new WP_Error(
             'rest_disabled',
 
