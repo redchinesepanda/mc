@@ -41,7 +41,12 @@ class ToolDisable
 
             __('The WordPress REST API has been disabled.'),
 
-            [ 'status' => rest_authorization_required_code() ]
+            // [ 'status' => rest_authorization_required_code() ]
+            [
+                'status' => rest_authorization_required_code(),
+
+                'check_rest_api' => self::check_rest_api()
+            ]
         );
     } 
 
