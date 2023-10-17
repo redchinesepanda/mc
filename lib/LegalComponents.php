@@ -15,8 +15,6 @@ class LegalComponents
 	public static function register()
 	{
 		$handler = new self();
-
-		// add_action( 'wp_head', [ $handler, 'register_components' ] );
 		
 		add_action( 'wp', [ $handler, 'register_components' ] );
 	}
