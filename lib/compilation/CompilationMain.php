@@ -98,7 +98,7 @@ class CompilationMain
             $shortcodes = preg_match_all( 
                 '/' . get_shortcode_regex() . '/', 
     
-                $content,
+                $post->post_content,
     
                 $matches,
     
