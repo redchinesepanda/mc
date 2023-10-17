@@ -126,8 +126,6 @@ class CompilationMain
     }
     public static function get_compilations_shortcode_id()
     {
-        // $compilations_ids = [];
-
         $matches = [];
 
         $post = get_post();
@@ -145,22 +143,7 @@ class CompilationMain
     
                 PREG_SET_ORDER
             );
-
-            // if ( $amount )
-            // {
-            //     foreach ( $matches as $match )
-            //     {
-            //         $atts = shortcode_parse_atts( $match[ 3 ] );
-
-            //         if ( !empty( $atts[ 'id' ] ) )
-            //         {
-            //             $compilations_ids[] = $atts[ 'id' ];
-            //         }
-            //     }
-            // }
         }
-
-        // return $compilations_ids;
 
         return self::get_attr_id( $matches );
     }
