@@ -95,10 +95,16 @@ class CompilationMain
 
         if ( $post )
         {
+            $regex = get_shortcode_regex();
+
+            $content = $post->post_content;
+
+            $matches = [];
+
             $shortcodes = preg_match_all( 
-                '/' . get_shortcode_regex() . '/', 
+                '/' . $regex . '/', 
     
-                $post->post_content,
+                $content,
     
                 $matches,
     
@@ -108,6 +114,10 @@ class CompilationMain
             LegalDebug::debug( [
                 'function' => 'get_shortcodes',
     
+                'regex' => $regex,
+
+                'matches' => $matches,
+
                 'shortcodes' => $shortcodes,
             ] );
         }
