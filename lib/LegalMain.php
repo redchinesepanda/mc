@@ -91,6 +91,8 @@ class LegalMain
 		LegalDebug::debug( [
 			'function' => 'check_permissions',
 
+			'permission_not_ajax' => $permission_not_ajax,
+
 			'permission_not_admin' => $permission_not_admin,
 		] );
 
@@ -104,6 +106,14 @@ class LegalMain
 		$permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
 
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+
+		LegalDebug::debug( [
+			'function' => 'check_permissions',
+
+			'permission_acf' => $permission_acf,
+
+			'permission_wpml' => $permission_wpml,
+		] );
 	
 		return $permission_acf && $permission_wpml;
 	}
