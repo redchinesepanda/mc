@@ -75,7 +75,7 @@ class BaseMain
 
 	public static function check()
     {
-        $lang = WPMLMain::current_language();
+        // $lang = WPMLMain::current_language();
 
         // $permission_lang = in_array( $lang, [ 'ke', 'ro', 'en', 'ng', 'mx' ] );
         

@@ -232,20 +232,6 @@ class ReviewMain
 
     public static function check()
     {
-        // $permission_admin = ;
-
-        // $permission_post_type = ;
-        
-        // $permission_term = ;
-
-        // $permission_post_single = is_singular( [ 'post', 'page' ] );
-        
-        // $permission_post_single = ;
-
-        // $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
-        
-        // return $result;
-
         LegalDebug::debug( [
             'function' => 'ReviewMain::check',
             
