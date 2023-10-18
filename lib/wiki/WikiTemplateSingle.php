@@ -1,6 +1,6 @@
 <?php
 
-class BonusTemplateSingle
+class WikiTemplateSingle
 {
     const CSS = [
         'bonus-single' => [
