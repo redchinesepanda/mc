@@ -38,7 +38,7 @@ class TemplateBonus
 
 	public static function render()
     {
-		if ( !self::check() )
+		if ( !BonusMain::check() )
         {
             return '';
         }
