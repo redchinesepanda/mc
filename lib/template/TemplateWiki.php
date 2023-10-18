@@ -49,7 +49,7 @@ class TemplateWiki
 
         'legal-template-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
     ];
-    
+
 	public static function render_wiki()
     {
 		if ( !self::check() )
@@ -57,7 +57,7 @@ class TemplateWiki
             return '';
         }
 
-        return render_main( self::TEMPLATE[ 'legal-template-wiki' ] )
+        return render_main( self::TEMPLATE[ 'legal-template-wiki' ] );
     }
 
 	public static function render_wiki_thrive()
