@@ -31,12 +31,6 @@ class WikiContent
 			return [];
         }
 
-        LegalDebug::debug( [
-            'function' => 'WikiContent::get',
-
-            'post_content' => $post->post_content,
-        ] );
-
 		return [
 			'content' => $post->post_content,
 		];
@@ -48,11 +42,7 @@ class WikiContent
 
     public static function render()
     {
-        LegalDebug::debug( [
-            'function' => 'WikiContent::render',
-        ] );
-
-		if ( !WikiMain::check() )
+        if ( !WikiMain::check() )
         {
             return '';
         }
