@@ -243,20 +243,20 @@ class ReviewMain
         // $permission_post_single = ;
 
         // $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
-
-        // LegalDebug::debug( [
-        //     'permission_admin' => $permission_admin ? 'true' : 'false',
-
-        //     'permission_post_type' => $permission_post_type ? 'true' : 'false',
-
-        //     'permission_term' => $permission_term ? 'true' : 'false',
-
-        //     'permission_post_single' => $permission_post_single ? 'true' : 'false',
-
-        //     'result' => $result ? 'true' : 'false',
-        // ] );
         
         // return $result;
+
+        LegalDebug::debug( [
+            'function' => 'ReviewMain::check',
+            
+            'check_not_admin' => self::check_not_admin(),
+
+            'check_post_type_page' => self::check_post_type_page(),
+
+            'check_taxonomy' => self::check_taxonomy(),
+
+            'check_post_type_post' => self::check_post_type_post(),
+        ] );
 
         return (
             self::check_not_admin()
@@ -265,7 +265,7 @@ class ReviewMain
 
             && self::check_taxonomy()
         )
-        
+
         || self::check_post_type_post();
     }
 
