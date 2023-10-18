@@ -22,48 +22,6 @@ class TemplateWiki
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-	// const CATEGORY = [
-    //     'wiki-tag',
-    // ];
-
-	// const TAXONOMY = [
-    //     'type' => 'page_type',
-    // ];
-
-	// const PAGE_TYPE = [
-    //     'wiki' => 'legal-wiki',
-    // ];
-
-	// public static function check_post_type()
-    // {
-    //     return is_singular( 'post' );
-    // }
-
-	// public static function check_page_type()
-    // {
-    //     return has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
-    // }
-
-	// public static function check_not_page_type()
-    // {
-    //     return !has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
-    // }
-
-	// public static function check_category()
-    // {
-    //     return has_category( self::CATEGORY );
-    // }
-
-	// public static function check_thrive()
-    // {
-    //     return self::check_post_type() && self::check_category() && self::check_not_page_type();
-    // }
-
-    // public static function check()
-    // {
-    //     return self::check_post_type() && self::check_category() && self::check_page_type();
-    // }
-
 	const TEMPLATE = [
         'legal-template-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
 

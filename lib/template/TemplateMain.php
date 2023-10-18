@@ -17,13 +17,19 @@ class TemplateMain
 
     public static function render()
     {
-		return implode( '', [
-            TemplateBonus::render(),
+        $result = TemplateWiki::render_wiki_thrive();
 
-            TemplateWiki::render_wiki_thrive(),
+        if ( empty( $result ) )
+        {
+            $result = TemplateBonus::render();
+        }
 
-            TemplateWiki::render_wiki(),
-        ] );
+        if ( empty( $result ) )
+        {
+            $result = TemplateWiki::render_wiki();
+        }
+
+		return $result;
     }
 
     public static function render_notfound()
