@@ -65,9 +65,9 @@ class TemplateWiki
     // }
 
 	const TEMPLATE = [
-        'legal-template-wiki-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki-thrive.php',
-
         'legal-template-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
+
+        'legal-template-wiki-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki-thrive.php',
     ];
 
 	public static function render_wiki()
