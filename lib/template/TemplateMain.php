@@ -17,7 +17,9 @@ class TemplateMain
     {
 		$output[] = TemplateBonus::render();
 
-        $output[] = TemplateWiki::render();
+        $output[] = TemplateWiki::render_wiki_thrive();
+
+        $output[] = TemplateWiki::render_wiki();
 
         return implode( '', $output );
     }
