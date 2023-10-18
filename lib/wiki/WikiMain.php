@@ -74,17 +74,17 @@ class WikiMain
 
 	public static function check_thrive()
     {
-		LegalDebug::debug( [
-			'function' => 'WikiMain::check_thrive',
+		// LegalDebug::debug( [
+		// 	'function' => 'WikiMain::check_thrive',
 
-			'check_not_admin' => self::check_not_admin(),
+		// 	'check_not_admin' => self::check_not_admin(),
 
-			'check_post_type' => self::check_post_type(),
+		// 	'check_post_type' => self::check_post_type(),
 
-			'check_category' => self::check_category(),
+		// 	'check_category' => self::check_category(),
 
-			'check_not_page_type' => self::check_not_page_type(),
-		] );
+		// 	'check_not_page_type' => self::check_not_page_type(),
+		// ] );
 
         return self::check_not_admin()
 
@@ -97,17 +97,17 @@ class WikiMain
 
     public static function check()
     {
-		LegalDebug::debug( [
-			'function' => 'WikiMain::check',
+		// LegalDebug::debug( [
+		// 	'function' => 'WikiMain::check',
 
-			'check_not_admin' => self::check_not_admin(),
+		// 	'check_not_admin' => self::check_not_admin(),
 
-			'check_post_type' => self::check_post_type(),
+		// 	'check_post_type' => self::check_post_type(),
 
-			'check_category' => self::check_category(),
+		// 	'check_category' => self::check_category(),
 
-			'check_page_type' => self::check_page_type(),
-		] );
+		// 	'check_page_type' => self::check_page_type(),
+		// ] );
 
         return self::check_not_admin()
 
