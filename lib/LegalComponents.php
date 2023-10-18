@@ -60,7 +60,7 @@ class LegalComponents
 
         // $permission_term = ;
 
-		$permission_main = ;
+		// $permission_main = ;
 
 		// LegalDebug::debug( [
 		// 	'function' => 'check_plugins',
