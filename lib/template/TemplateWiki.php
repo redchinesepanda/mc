@@ -67,7 +67,7 @@ class TemplateWiki
             return '';
         }
 
-        return render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] )
+        return render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] );
     }
 
 	public static function render_main( $template, $args = [] )
