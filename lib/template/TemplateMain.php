@@ -18,9 +18,9 @@ class TemplateMain
     public static function render()
     {
 		return implode( '', [
-            TemplateBonus::render(),
+            // TemplateBonus::render(),
 
-            // TemplateWiki::render_wiki_thrive(),
+            TemplateWiki::render_wiki_thrive(),
 
             // TemplateWiki::render_wiki(),
         ] );
