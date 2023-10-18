@@ -2,6 +2,26 @@
 
 class TemplateWiki
 {
+    const CSS = [
+        'legal-template-wiki' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-wiki.css',
+
+			'ver' => '1.0.7',
+		],
+    ];
+
+	public static function register_style()
+    {
+        ToolEnqueue::register_style( self::CSS );
+    }
+
+	public static function register()
+    {
+        $handler = new self();
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    }
+
 	// const CATEGORY = [
     //     'wiki-tag',
     // ];
