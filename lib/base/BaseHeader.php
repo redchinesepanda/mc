@@ -54,33 +54,7 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-		// add_filter( 'style_loader_tag', [ $handler, 'tag_other_bootstrap' ], 10, 2 );
     }
-
-	// public static function tag_other_bootstrap( $html, $handle )
-	// {
-	// 	// $html = str_replace(
-	// 	// 	"type='text/css'",
-
-	// 	// 	"",
-
-	// 	// 	$html
-	// 	// );
-
-	// 	if ( $handle === 'other-bootstrap' )
-	// 	{
-	// 		$html = str_replace(
-	// 			"media='all'",
-
-	// 			"integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'",
-
-	// 			$html
-	// 		);
-	// 	}
-
-	// 	return $html;
-	// }
 
 	public static function inline_style() {
 		$style = [];
@@ -178,8 +152,6 @@ class BaseHeader
 	{
 		return array_merge( self::parse_items_inline(), self::parse_languages_inline() );
 	}
-
-	// public static function check_root_url( $url )
 
 	const ROOT_URL_EXCEPTIONS = [
 		'en',
@@ -386,18 +358,6 @@ class BaseHeader
 
 	public static function replace_urls_compare( $language_a, $language_b )
 	{
-		// if ( $language_a[ 'url' ] == $language_a[ 'url' ] )
-		// {
-		// 	return 0;
-		// }
-
-		// if ( $language_a[ 'url' ] > $language_a[ 'url' ] )
-		// {
-		// 	return 1;
-		// }
-
-		// return -1;
-
 		return strcmp( $language_a[ 'url' ], $language_b[ 'url' ] );
 	}
 
@@ -410,22 +370,6 @@ class BaseHeader
 		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
 
 		$urls = array_merge( $urls_udiff, $urls_uintersect );
-
-		// LegalDebug::debug( [
-		// 	'function' => 'BaseHeader::replace_urls',
-
-		// 	// 'urls_default' => $urls_default,
-
-		// 	'urls_home' => $urls_home,
-
-		// 	'urls_cross' => $urls_cross,
-
-		// 	'urls_uintersect' => $urls_uintersect,
-
-		// 	'urls_udiff' => $urls_udiff,
-
-		// 	'urls' => $urls,
-		// ] );
 
 		return $urls;
 	}
