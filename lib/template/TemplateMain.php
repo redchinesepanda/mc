@@ -22,7 +22,7 @@ class TemplateMain
 
             TemplateWiki::render_wiki_thrive(),
 
-            TemplateWiki::render_wiki()
+            TemplateWiki::render_wiki(),
         ] );
     }
 

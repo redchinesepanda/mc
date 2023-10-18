@@ -23,7 +23,7 @@ class WikiTemplateSingle
     }
 
 	const TEMPLATE = [
-        'legal-bonus-single' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-single.php',
+        'legal-wiki-single' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single.php',
     ];
 
     public static function render()
@@ -35,7 +35,7 @@ class WikiTemplateSingle
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-bonus-single' ], false, [] );
+        load_template( self::TEMPLATE[ 'legal-wiki-single' ], false, [] );
 
         $output = ob_get_clean();
 
