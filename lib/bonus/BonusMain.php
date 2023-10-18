@@ -95,6 +95,16 @@ class BonusMain
 
 	public static function check()
     {
+		LegalDebug::debug( [
+			'function' => 'BonusMain::check',
+
+			'check_not_admin' => self::check_not_admin(),
+
+			'check_post_type' => self::check_post_type(),
+
+			'check_bonus' => self::check_bonus(),
+		] );
+
         return self::check_not_admin() && self::check_post_type() && self::check_bonus();
     }
 
