@@ -57,7 +57,7 @@ class TemplateWiki
             return '';
         }
 
-        return render_main( self::TEMPLATE[ 'legal-template-wiki' ] );
+        return self::render_main( self::TEMPLATE[ 'legal-template-wiki' ] );
     }
 
 	public static function render_wiki_thrive()
@@ -67,7 +67,7 @@ class TemplateWiki
             return '';
         }
 
-        return render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] );
+        return self::render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] );
     }
 
 	public static function render_main( $template, $args = [] )
