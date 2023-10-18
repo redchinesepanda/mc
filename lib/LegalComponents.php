@@ -10,7 +10,7 @@ require_once( 'bonus/BonusMain.php' );
 
 require_once( 'template/TemplateMain.php' );
 
-require_once( 'wikis/WikiMainMain.php' );
+require_once( 'wiki/WikiMainMain.php' );
 
 class LegalComponents
 {
