@@ -23,6 +23,25 @@ class WikiMain
         }
     }
 
+	public static function register()
+    {
+        WikiTemplateSingle::register();
+
+		WikiContent::register();
+    }
+
+	const CATEGORY = [
+        'wiki-tag',
+    ];
+
+	const TAXONOMY = [
+        'type' => 'page_type',
+    ];
+
+	const PAGE_TYPE = [
+        'wiki' => 'legal-wiki',
+    ];
+
 	public static function check_not_admin()
 	{
 		return !is_admin();
@@ -33,16 +52,46 @@ class WikiMain
 		return is_singular( [ 'post' ] );
 	}
 
-	public static function check()
+	public static function check_page_type()
     {
-        return self::check_not_admin() && self::check_post_type();
+        return has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
     }
 
-	public static function register()
+	public static function check_not_page_type()
     {
-        WikiTemplateSingle::register();
+        return !has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
+    }
 
-		WikiContent::register();
+	public static function check_category()
+    {
+        return has_category( self::CATEGORY );
+    }
+
+	// public static function check()
+    // {
+    //     return self::check_not_admin() && self::check_post_type();
+    // }
+
+	public static function check_thrive()
+    {
+        return self::check_not_admin()
+
+			&& self::check_post_type()
+
+			&& self::check_category()
+
+			&& self::check_not_page_type();
+    }
+
+    public static function check()
+    {
+        return self::check_not_admin()
+
+			&& self::check_post_type()
+
+			&& self::check_category()
+
+			&& self::check_page_type();
     }
 
 	public static function get_id()
