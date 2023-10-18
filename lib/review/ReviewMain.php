@@ -232,17 +232,17 @@ class ReviewMain
 
     public static function check()
     {
-        LegalDebug::debug( [
-            'function' => 'ReviewMain::check',
+        // LegalDebug::debug( [
+        //     'function' => 'ReviewMain::check',
             
-            'check_not_admin' => self::check_not_admin(),
+        //     'check_not_admin' => self::check_not_admin(),
 
-            'check_post_type_page' => self::check_post_type_page(),
+        //     'check_post_type_page' => self::check_post_type_page(),
 
-            'check_taxonomy' => self::check_taxonomy(),
+        //     'check_taxonomy' => self::check_taxonomy(),
 
-            'check_post_type_post' => self::check_post_type_post(),
-        ] );
+        //     'check_post_type_post' => self::check_post_type_post(),
+        // ] );
 
         return (
             self::check_not_admin()
