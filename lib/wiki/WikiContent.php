@@ -31,6 +31,12 @@ class WikiContent
 			return [];
         }
 
+        LegalDebug::debug( [
+            'function' => 'WikiContent::get',
+
+            'post_content' => $post->post_content,
+        ] );
+
 		return [
 			'content' => $post->post_content,
 		];
