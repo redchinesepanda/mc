@@ -98,7 +98,7 @@ class WikiMain
     public static function check()
     {
 		LegalDebug::debug( [
-			'function' => 'WikiMain::check_thrive',
+			'function' => 'WikiMain::check',
 
 			'check_not_admin' => self::check_not_admin(),
 
