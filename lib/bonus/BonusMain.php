@@ -79,11 +79,6 @@ class BonusMain
 		return is_singular( [ 'post' ] );
     }
 
-	// public static function check_not_wiki()
-    // {
-	// 	return !WikiMain::check() && !WikiMain::check_thrive();
-    // }
-
 	const CATEGORY = [
 		'bonusy-kz',
 	];
