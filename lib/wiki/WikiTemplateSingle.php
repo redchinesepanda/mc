@@ -28,7 +28,7 @@ class WikiTemplateSingle
 
     public static function render()
     {
-        if ( !WikiMainMain::check() )
+        if ( !WikiMain::check() )
         {
             return '';
         }
