@@ -48,6 +48,10 @@ class WikiContent
 
     public static function render()
     {
+        LegalDebug::debug( [
+            'function' => 'WikiContent::render',
+        ] );
+
 		if ( !WikiMain::check() )
         {
             return '';
