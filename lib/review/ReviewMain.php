@@ -210,19 +210,39 @@ class ReviewMain
         'compilation',
     ];
 
+    public static function check_not_admin()
+    {
+        return !is_admin();
+    }
+
+    public static function check_post_type_page()
+    {
+        return is_singular( [ 'page', 'legal_bk_review' ] );
+    }
+
+    public static function check_post_type_post()
+    {
+        return is_singular( [ 'post' ] );
+    }
+
+    public static function check_taxonomy()
+    {
+        return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+    }
+
     public static function check()
     {
-        $permission_admin = !is_admin();
+        // $permission_admin = ;
 
-        $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
+        // $permission_post_type = ;
         
-        $permission_term = has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+        // $permission_term = ;
 
         // $permission_post_single = is_singular( [ 'post', 'page' ] );
         
-        $permission_post_single = is_singular( [ 'post' ] );
+        // $permission_post_single = ;
 
-        $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
+        // $result = ( $permission_admin && $permission_post_type && $permission_term ) || $permission_post_single;
 
         // LegalDebug::debug( [
         //     'permission_admin' => $permission_admin ? 'true' : 'false',
@@ -236,7 +256,17 @@ class ReviewMain
         //     'result' => $result ? 'true' : 'false',
         // ] );
         
-        return $result;
+        // return $result;
+
+        return (
+            self::check_not_admin()
+
+            && self::check_post_type_page()
+
+            && self::check_taxonomy()
+        )
+        
+        || self::check_post_type_post();
     }
 
     public static function schema()
