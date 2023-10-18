@@ -88,7 +88,7 @@ class BonusMain
 		'bonusy-kz',
 	];
 
-	public static function check_bonus()
+	public static function check_category()
     {
 		return has_category( self::CATEGORY );
     }
@@ -102,10 +102,10 @@ class BonusMain
 
 			'check_post_type' => self::check_post_type(),
 
-			'check_bonus' => self::check_bonus(),
+			'check_category' => self::check_category(),
 		] );
 
-        return self::check_not_admin() && self::check_post_type() && self::check_bonus();
+        return self::check_not_admin() && self::check_post_type() && self::check_category();
     }
 
 	public static function register()
