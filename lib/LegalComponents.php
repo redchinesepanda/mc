@@ -10,6 +10,8 @@ require_once( 'bonus/BonusMain.php' );
 
 require_once( 'template/TemplateMain.php' );
 
+require_once( 'wikis/WikiMainMain.php' );
+
 class LegalComponents
 {
 	public static function register()
@@ -32,6 +34,8 @@ class LegalComponents
 			BonusMain::register();
 	
 			TemplateMain::register();
+
+			WikiMain::register();
 		}
 	} 
 	
