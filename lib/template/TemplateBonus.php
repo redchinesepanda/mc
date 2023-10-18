@@ -26,7 +26,7 @@ class TemplateBonus
     {
 		$post_bonus = BonusMain::check();
 
-		$post_not_wiki = !TemplateWiki::check();
+		$post_not_wiki = !TemplateWiki::check_thrive();
 
         return $post_bonus && $post_not_wiki;
     }

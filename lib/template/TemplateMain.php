@@ -15,13 +15,13 @@ class TemplateMain
 
     public static function render()
     {
-		$output[] = TemplateBonus::render();
+		return implode( '', [
+            TemplateBonus::render(),
 
-        $output[] = TemplateWiki::render_wiki_thrive();
+            TemplateWiki::render_wiki_thrive(),
 
-        $output[] = TemplateWiki::render_wiki();
-
-        return implode( '', $output );
+            TemplateWiki::render_wiki()
+        ] );
     }
 
     public static function render_notfound()
