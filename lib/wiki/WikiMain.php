@@ -34,6 +34,16 @@ class WikiMain
         'wiki-tag',
     ];
 
+	public static function check_not_admin()
+	{
+		return !is_admin();
+	}
+
+	public static function check_post_type_post()
+	{
+		return is_singular( [ 'post' ] );
+	}
+
 	const TAXONOMY = [
         'type' => 'page_type',
     ];
@@ -42,22 +52,12 @@ class WikiMain
         'wiki' => 'legal-wiki',
     ];
 
-	public static function check_not_admin()
-	{
-		return !is_admin();
-	}
-
-	public static function check_post_type()
-	{
-		return is_singular( [ 'post' ] );
-	}
-
-	public static function check_page_type()
+	public static function check_taxonomy()
     {
         return has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
     }
 
-	public static function check_not_page_type()
+	public static function check_not_taxonomy()
     {
         return !has_term( self::PAGE_TYPE[ 'wiki' ], self::TAXONOMY[ 'type' ] );
     }
@@ -67,11 +67,6 @@ class WikiMain
         return has_category( self::CATEGORY );
     }
 
-	// public static function check()
-    // {
-    //     return self::check_not_admin() && self::check_post_type();
-    // }
-
 	public static function check_thrive()
     {
 		// LegalDebug::debug( [
@@ -79,20 +74,20 @@ class WikiMain
 
 		// 	'check_not_admin' => self::check_not_admin(),
 
-		// 	'check_post_type' => self::check_post_type(),
+		// 	'check_taxonomy' => self::check_taxonomy(),
 
 		// 	'check_category' => self::check_category(),
 
-		// 	'check_not_page_type' => self::check_not_page_type(),
+		// 	'check_not_taxonomy' => self::check_not_taxonomy(),
 		// ] );
 
         return self::check_not_admin()
 
-			&& self::check_post_type()
+			&& self::check_post_type_post()
 
 			// && self::check_category()
 
-			&& self::check_not_page_type();
+			&& self::check_not_taxonomy();
     }
 
     public static function check()
@@ -102,20 +97,20 @@ class WikiMain
 
 		// 	'check_not_admin' => self::check_not_admin(),
 
-		// 	'check_post_type' => self::check_post_type(),
+		// 	'check_post_type_post' => self::check_post_type_post(),
 
 		// 	'check_category' => self::check_category(),
 
-		// 	'check_page_type' => self::check_page_type(),
+		// 	'check_taxonomy' => self::check_taxonomy(),
 		// ] );
 
         return self::check_not_admin()
 
-			&& self::check_post_type()
+			&& self::check_post_type_post()
 
 			&& self::check_category()
 
-			&& self::check_page_type();
+			&& self::check_taxonomy();
     }
 
 	public static function get_id()
