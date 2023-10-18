@@ -83,7 +83,7 @@ class WikiMain
 
 			'check_category' => self::check_category(),
 
-			'check_not_page_type' => self::check_not_page_type()
+			'check_not_page_type' => self::check_not_page_type(),
 		] );
 
         return self::check_not_admin()
@@ -106,7 +106,7 @@ class WikiMain
 
 			'check_category' => self::check_category(),
 
-			'check_page_type' => self::check_page_type()
+			'check_page_type' => self::check_page_type(),
 		] );
 
         return self::check_not_admin()
