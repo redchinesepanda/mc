@@ -22,13 +22,14 @@ class TemplateBonus
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+	public static function check_not_wiki()
+    {
+		return !WikiMain::check() && !WikiMain::check_thrive();
+    }
+
 	public static function check()
     {
-		$post_bonus = BonusMain::check();
-
-		$post_not_wiki = !TemplateWiki::check_thrive();
-
-        return $post_bonus && $post_not_wiki;
+		return BonusMain::check() && self::check_not_wiki();
     }
 
 	const TEMPLATE = [
