@@ -68,14 +68,34 @@ class BonusMain
             ToolEnqueue::register_style( $styles );
         }
     }
+	
+	public static function check_not_admin()
+    {
+		return !is_admin();
+    }
+
+	public static function check_post_type()
+    {
+		return is_singular( [ 'post' ] );
+    }
+
+	// public static function check_not_wiki()
+    // {
+	// 	return !WikiMain::check() && !WikiMain::check_thrive();
+    // }
+
+	const CATEGORY = [
+		'bonusy-kz',
+	];
+
+	public static function check_bonus()
+    {
+		return has_category( self::CATEGORY );
+    }
 
 	public static function check()
     {
-        $permission_admin = !is_admin();
-
-        $permission_post_type = is_singular( [ 'post' ] );
-        
-        return $permission_admin && $permission_post_type;
+        return self::check_not_admin() && self::check_post_type() && self::check_bonus();
     }
 
 	public static function register()
