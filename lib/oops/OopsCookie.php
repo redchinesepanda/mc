@@ -51,19 +51,19 @@ class OopsCookie
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-	public static function check_post_type()
-    {
-        return is_singular( [ 'post' ] );
-    }
+	// public static function check_post_type()
+    // {
+    //     return is_singular( [ 'post' ] );
+    // }
 
-	public static function check_not_wiki_thrive()
-    {
-        return !WikiMain::check_thrive();
-    }
+	// public static function check_not_wiki_thrive()
+    // {
+    //     return !WikiMain::check_thrive();
+    // }
 
 	public static function check()
     {
-		return self::check_post_type() && self::check_not_wiki_thrive();
+		return OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
     }
 
 	public static function get()

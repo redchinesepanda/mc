@@ -51,17 +51,22 @@ class OopsAge
 		'hr',
 	];
 
+	public static function check_locale()
+    {
+        return in_array( WPMLMain::current_language(), self::AGE );
+    }
+    
 	public static function check()
     {
-		$permission_post_type = is_singular( [ 'post' ] );
+		// $permission_post_type = is_singular( [ 'post' ] );
 
-		$permission_not_wiki = !TemplateWiki::check();
+		// $permission_not_wiki = !TemplateWiki::check();
 
-		$lang = WPMLMain::current_language();
+		// $lang = WPMLMain::current_language();
 
-		$permission_age = in_array( $lang, self::AGE );
+		// $permission_age = in_array( $lang, self::AGE );
 
-        return $permission_post_type && $permission_not_wiki && $permission_age;
+        return self::check_locale() && OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
     }
 
 	public static function get()

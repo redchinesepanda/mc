@@ -252,6 +252,16 @@ class OopsMain
     {
         return ReviewMain::check();
     }
+
+    public static function check_post_type()
+    {
+        return is_singular( [ 'post' ] );
+    }
+
+	public static function check_not_wiki_thrive()
+    {
+        return !WikiMain::check_thrive();
+    }
 }
 
 ?>
