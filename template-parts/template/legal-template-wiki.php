@@ -29,3 +29,4 @@ get_header();
 get_footer();
 
 ?>
+<!-- Leglal Wiki -->
