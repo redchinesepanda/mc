@@ -90,7 +90,7 @@ class WikiMain
 
 			&& self::check_post_type()
 
-			&& self::check_category()
+			// && self::check_category()
 
 			&& self::check_not_page_type();
     }
