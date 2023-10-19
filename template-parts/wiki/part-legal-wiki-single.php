@@ -3,6 +3,6 @@
 		<?php echo WikiContent::render(); ?>
 	</div>
 	<div class="legal-wiki-sidebar">
-		<?php echo WikiContent::render(); ?>
+		<?php echo WikiRecent::render(); ?>
 	</div>
 </div>
