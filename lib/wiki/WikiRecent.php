@@ -67,8 +67,6 @@ class WikiRecent
 		{
 			foreach ( $posts as $post )
 			{
-				$group = get_field( self::FIELD[ 'about' ], $post->ID );
-
 				$items[] = [
 					'href' => get_post_permalink( $post->ID ),
 
