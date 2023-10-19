@@ -15,11 +15,11 @@ class BonusFeatured
         BonusMain::register_style( self::CSS );
     }
 
-	public static function register_always()
+	public static function register_functions()
     {
-        LegalDebug::debug( [
-            'function' => 'register_always',
-        ] );
+        // LegalDebug::debug( [
+        //     'function' => 'register_always',
+        // ] );
 
         add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
     }
@@ -31,8 +31,6 @@ class BonusFeatured
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		// add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
-
-        self::register_always();
     }
 
 	const SIZE = [
