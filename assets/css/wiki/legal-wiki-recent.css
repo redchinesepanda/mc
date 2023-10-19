@@ -11,9 +11,9 @@
 /* Position */
 
 .legal-sidebar-wiki.fixed {
-	position: fixed;
+	position: sticky;
+	top: 0px;
 	/* bottom: auto;
-	top: 20px;
 	right: 0;
 	z-index: 10; */
 }
