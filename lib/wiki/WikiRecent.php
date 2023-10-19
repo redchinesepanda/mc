@@ -12,10 +12,7 @@ class WikiRecent
 
 	public static function register_style()
     {
-		if ( WikiMain::check() )
-		{
-			ToolEnqueue::register_style( self::CSS );
-		}
+		WikiMain::register_style( self::CSS );
     }
 
 	public static function register()
