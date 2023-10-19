@@ -16,13 +16,13 @@ class LegalComponents
 {
 	public static function register()
 	{
-		$handler = new self();
+	// 	$handler = new self();
 		
-		add_action( 'wp', [ $handler, 'register_components' ] );
-	}
+	// 	add_action( 'wp', [ $handler, 'register_components' ] );
+	// }
 
-	public static function register_components()
-	{
+	// public static function register_components()
+	// {
 		if ( LegalMain::check_admin() )
 		{
 			BonusMain::register_always();
