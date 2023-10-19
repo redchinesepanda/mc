@@ -32,6 +32,19 @@ class WikiFeatured
 		}
     }
 
+	public static function get()
+	{
+		$id = BonusMain::get_id();
+
+		$preview = BonusPreview::get_thumbnail( $id, BonusFeatured::SIZE[ 'featured' ] );
+
+		// $preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+
+		return [
+			'preview' => $preview,
+		];
+	}
+
 	const TEMPLATE = [
         'wiki-featured' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-featured.php',
     ];
