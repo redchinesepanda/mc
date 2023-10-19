@@ -96,7 +96,7 @@ class WikiRecent
 
 				'query' => $query,
 
-				'posts' => $posts,
+				'posts' => count( $posts ),
 			] );
 
 			return self::parse_posts_recent( $posts );
