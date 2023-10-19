@@ -41,7 +41,7 @@ class WikiRecent
 
             'suppress_filters' => 0,
 
-            'exclude' => $id,
+            // 'exclude' => $id,
 
             'tax_query' => [
                 [
