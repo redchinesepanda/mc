@@ -16,16 +16,9 @@ class LegalComponents
 {
 	public static function register()
 	{
-		$handler = new self();
-		
-		add_action( 'wp', [ $handler, 'register_components' ] );
-	}
-
-	public static function register_components()
-	{
 		if ( LegalMain::check_admin() )
 		{
-			BonusMain::register();
+			BonusMain::register_admin();
 		}
 
 		if ( self::check() )

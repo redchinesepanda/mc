@@ -15,13 +15,22 @@ class BonusFeatured
         BonusMain::register_style( self::CSS );
     }
 
+	public static function register_always()
+    {
+        $handler = new self();
+
+		add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+    }
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+		// add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+
+        self::register_always();
     }
 
 	const SIZE = [
