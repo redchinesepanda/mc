@@ -31,7 +31,7 @@ class WikiMain
 
 		WikiContent::register();
 
-		WikiRecent::register();
+		// WikiRecent::register();
     }
 
 	const CATEGORY = [
