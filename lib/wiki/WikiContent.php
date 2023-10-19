@@ -12,7 +12,10 @@ class WikiContent
 
     public static function register_style()
     {
-        BonusMain::register_style( self::CSS );
+        if ( WikiMain::check() )
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
     }
 
 	public static function register()

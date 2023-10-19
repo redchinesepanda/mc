@@ -1,0 +1,87 @@
+.legal-sidebar-wiki * {
+	box-sizing: border-box;
+	font-family: "Source Sans Pro";
+}
+
+.legal-sidebar-wiki a {
+	text-decoration: none;
+	color:#3b3b3b;	
+}
+
+/* Position */
+
+.legal-sidebar-wiki.fixed {
+	position: fixed;
+	bottom: auto;
+	top: 20px;
+	right: 0;
+	z-index: 10;
+}
+
+.legal-sidebar-wiki {
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.legal-sidebar-wiki .legal-sidebar-articles {
+	padding: 10px;
+}
+
+/* Width and Height */
+
+.legal-sidebar-wiki {
+	width: 287px;
+}
+
+@media (max-width: 576px) {
+	.legal-sidebar-wiki {
+		width: auto;
+	}
+}
+
+/* Display */
+
+.legal-sidebar-wiki {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.legal-sidebar-wiki .block-with-articles {
+	display:flex;
+	flex-direction: column;
+	row-gap: 0.3rem;
+}
+
+/* Background */
+
+.legal-sidebar-wiki {
+	background-color: #f7f7f7;
+	border-radius: 7px;
+}
+
+.legal-sidebar-wiki .legal-sidebar-articles {
+	background-color: #fff;
+	box-shadow: 0 0 10px #f5eaea;
+	border-radius: 3px;
+	border: #fff 0.5px solid;
+}
+
+/* Typography */
+
+.legal-sidebar-wiki .title-of-sidebar {
+	color: #969696;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.legal-sidebar-wiki .legal-sidebar-articles {
+	line-height: 1.5;
+}
+
+.legal-sidebar-wiki .legal-sidebar-articles:hover {
+	border-left: #5997e3 1px solid;
+	color: #5997e3;
+}
