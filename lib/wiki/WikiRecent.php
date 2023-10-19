@@ -43,7 +43,7 @@ class WikiRecent
 
             // 'post_status' => 'publish',
 
-            'suppress_filters' => 0,
+            // 'suppress_filters' => 0,
 
             // 'exclude' => $id,
 
