@@ -12,7 +12,7 @@ class WikiTemplateSingle
 
     public static function register_style()
     {
-        BonusMain::register_style( self::CSS );
+        WikiMain::register_style( self::CSS );
     }
 
 	public static function register()
