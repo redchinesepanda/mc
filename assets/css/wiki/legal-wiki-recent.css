@@ -1,16 +1,16 @@
-.legal-sidebar-wiki * {
+.legal-wiki-recent * {
 	box-sizing: border-box;
 	font-family: "Source Sans Pro";
 }
 
-.legal-sidebar-wiki a {
+.legal-wiki-recent a {
 	text-decoration: none;
 	color:#3b3b3b;	
 }
 
 /* Position */
 
-.legal-sidebar-wiki.fixed {
+.legal-wiki-recent.fixed {
 	position: sticky;
 	top: 0px;
 	/* bottom: auto;
@@ -18,37 +18,37 @@
 	z-index: 10; */
 }
 
-.legal-sidebar-wiki {
+.legal-wiki-recent {
 	padding: 0px 20px;
 	margin-top: 20px;
 }
 
-.legal-sidebar-wiki .legal-sidebar-articles {
+.legal-wiki-recent .legal-sidebar-articles {
 	padding: 10px;
 }
 
 /* Width and Height */
 
-.legal-sidebar-wiki {
+.legal-wiki-recent {
 	width: 287px;
 }
 
 @media (max-width: 576px) {
-	.legal-sidebar-wiki {
+	.legal-wiki-recent {
 		width: auto;
 	}
 }
 
 /* Display */
 
-.legal-sidebar-wiki {
+.legal-wiki-recent {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	row-gap: 1rem;
 }
 
-.legal-sidebar-wiki .block-with-articles {
+.legal-wiki-recent .block-with-articles {
 	display:flex;
 	flex-direction: column;
 	row-gap: 10px;
@@ -56,12 +56,12 @@
 
 /* Background */
 
-/* .legal-sidebar-wiki {
+/* .legal-wiki-recent {
 	background-color: #f7f7f7;
 	border-radius: 7px;
 } */
 
-.legal-sidebar-wiki .legal-sidebar-articles {
+.legal-wiki-recent .legal-sidebar-articles {
 	background-color: #fff;
 	box-shadow: 0 0 10px #f5eaea;
 	border-radius: 3px;
@@ -70,18 +70,18 @@
 
 /* Typography */
 
-.legal-sidebar-wiki .title-of-sidebar {
+.legal-wiki-recent .title-of-sidebar {
 	color: #969696;
 	font-size: 16px;
 	font-weight: 400;
 	text-align: left;
 }
 
-.legal-sidebar-wiki .legal-sidebar-articles {
+.legal-wiki-recent .legal-sidebar-articles {
 	line-height: 1.5;
 }
 
-.legal-sidebar-wiki .legal-sidebar-articles:hover {
+.legal-wiki-recent .legal-sidebar-articles:hover {
 	border-left: #5997e3 1px solid;
 	color: #5997e3;
 }
