@@ -6,6 +6,8 @@ require_once( 'WikiContent.php' );
 
 require_once( 'WikiRecent.php' );
 
+require_once( 'WikiFeatured.php' );
+
 class WikiMain
 {
 	const TEXT = [
@@ -32,6 +34,8 @@ class WikiMain
 		WikiContent::register();
 
 		WikiRecent::register();
+
+		WikiFeatured::register();
     }
 
 	const CATEGORY = [

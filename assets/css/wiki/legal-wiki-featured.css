@@ -1,0 +1,12 @@
+/* Display */
+
+.legal-wiki-main .legal-wiki-featured {
+	display: flex;
+  	justify-content: center;
+}
+
+/* Position */
+
+.legal-wiki-main .legal-wiki-featured {
+	padding-bottom: 20px;
+}
