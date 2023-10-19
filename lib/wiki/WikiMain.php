@@ -8,6 +8,8 @@ require_once( 'WikiRecent.php' );
 
 require_once( 'WikiFeatured.php' );
 
+require_once( 'WikiTitle.php' );
+
 class WikiMain
 {
 	const TEXT = [
@@ -38,6 +40,8 @@ class WikiMain
 		WikiRecent::register();
 
 		WikiFeatured::register();
+
+		WikiTitle::register();
     }
 
 	const CATEGORY = [
