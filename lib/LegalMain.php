@@ -109,17 +109,17 @@ class LegalMain
 
 	public static function check_permissions()
 	{
-		// $permission_not_ajax = !wp_doing_ajax();
+		$permission_not_ajax = !wp_doing_ajax();
 
-		// $permission_not_admin = !is_admin();
+		$permission_not_admin = !is_admin();
 
-		// LegalDebug::debug( [
-		// 	'function' => 'check_permissions',
+		LegalDebug::debug( [
+			'function' => 'check_permissions',
 
-		// 	'permission_not_ajax' => $permission_not_ajax,
+			'permission_not_ajax' => $permission_not_ajax,
 
-		// 	'permission_not_admin' => $permission_not_admin,
-		// ] );
+			'permission_not_admin' => $permission_not_admin,
+		] );
 
 		return self::check_not_ajax() && self::check_not_admin();
 	}
