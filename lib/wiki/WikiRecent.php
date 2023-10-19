@@ -27,7 +27,11 @@ class WikiRecent
 	];
 
 	const CATEGORY = [
-		'wiki-tag'
+		'wiki-tag',
+
+		'wiki-tag-en',
+
+		'wiki-tag-es',
 	];
 
 	public static function query_recent( $id = 0 )
