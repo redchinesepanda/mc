@@ -18,7 +18,7 @@ class LegalComponents
 	{
 		if ( LegalMain::check_admin() )
 		{
-			BonusMain::register_admin();
+			BonusMain::register_always();
 		}
 
 		if ( self::check() )
