@@ -50,11 +50,13 @@ class LegalMain
 		
 		add_action( 'wp', [ $handler, 'register_components' ] );
 
-		add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+		// add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
 	}
 
 	public static function register_components()
 	{
+		add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+
 		LegalComponents::register();
 
 		// LegalDebug::debug( [
