@@ -21,7 +21,7 @@ class BonusFeatured
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_image_size( self::SIZE[ 'featured' ], 700, 400, false );
+		add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
     }
 
 	const SIZE = [
