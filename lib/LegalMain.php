@@ -54,7 +54,7 @@ class LegalMain
 	public static function register_components()
 	{
 		LegalComponents::register();
-		
+
 		// LegalDebug::debug( [
 		// 	'function' => 'register',
 
@@ -63,32 +63,32 @@ class LegalMain
 
 		if ( self::check_admin() )
 		{
-			// ACFMain::register();
+			ACFMain::register();
 	
-			// AdminMain::register();
+			AdminMain::register();
 		}
 
 		if ( self::check() )
 		{
-			// OopsMain::register();
+			OopsMain::register();
 	
-			// LegalBreadcrumbsMain::register();
+			LegalBreadcrumbsMain::register();
 	
-			// ReviewMain::register();
+			ReviewMain::register();
 	
-			// ToolsMain::register();
+			ToolsMain::register();
 	
-			// WPMLMain::register();
+			WPMLMain::register();
 	
-			// YoastMain::register();
+			YoastMain::register();
 	
-			// SchemaMain::register();
+			SchemaMain::register();
 	
-			// BaseMain::register();
+			BaseMain::register();
 	
-			// NotFoundMain::register();
+			NotFoundMain::register();
 	
-			// MetrikaMain::register();
+			MetrikaMain::register();
 		}
 	}
 
