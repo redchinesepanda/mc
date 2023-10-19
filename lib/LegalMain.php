@@ -97,10 +97,10 @@ class LegalMain
 		return is_admin();
 	}
 
-	public static function check_permissions_admin()
-	{
-		return self::check_admin();
-	}
+	// public static function check_permissions_admin()
+	// {
+	// 	return self::check_admin();
+	// }
 
 	public static function check_not_admin()
 	{

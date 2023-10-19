@@ -23,6 +23,11 @@ class LegalComponents
 
 	public static function register_components()
 	{
+		if ( LegalMain::check_admin() )
+		{
+			BonusMain::register();
+		}
+
 		if ( self::check() )
 		{
 			BilletMain::register();
