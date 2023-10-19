@@ -41,11 +41,11 @@ class WikiRecent
 
             'post_type' => [ 'post' ],
 
-            // 'post_status' => 'publish',
+            'post_status' => 'publish',
 
             // 'suppress_filters' => 0,
 
-            // 'exclude' => $id,
+            'exclude' => $id,
 
             'tax_query' => [
                 [
