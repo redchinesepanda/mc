@@ -20,10 +20,8 @@ class BonusFeatured
         LegalDebug::debug( [
             'function' => 'register_always',
         ] );
-        
-        $handler = new self();
 
-		add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
+        add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
     }
 
 	public static function register()
