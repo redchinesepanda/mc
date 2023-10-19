@@ -12,6 +12,8 @@ class WikiMain
 {
 	const TEXT = [
 		'recent-articles' => 'Recent Articles',
+		
+		'publication-date' => 'Publication date',
 	];
 
 	public static function register_style( $styles = [] )
