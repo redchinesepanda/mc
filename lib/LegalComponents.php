@@ -23,10 +23,10 @@ class LegalComponents
 
 	public static function register_components()
 	{
-		// if ( LegalMain::check_admin() )
-		// {
-		// 	BonusMain::register_always();
-		// }
+		if ( LegalMain::check_admin() )
+		{
+			BonusMain::register_always();
+		}
 
 		if ( self::check() )
 		{
