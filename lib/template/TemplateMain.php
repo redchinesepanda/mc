@@ -17,11 +17,11 @@ class TemplateMain
 
     public static function render()
     {
-        $result = TemplateWiki::render_wiki_thrive();
+        $result = TemplateBonus::render();
 
         if ( empty( $result ) )
         {
-            $result = TemplateBonus::render();
+            $result = TemplateWiki::render_wiki_thrive();
         }
 
         if ( empty( $result ) )
