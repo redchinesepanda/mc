@@ -8,9 +8,9 @@ require_once( 'WikiRecent.php' );
 
 class WikiMain
 {
-	// const TEXT = [
-	// 	'best-bookmaker-bonuses' => 'Best Bookmaker Bonuses',
-	// ];
+	const TEXT = [
+		'recent-articles' => 'Recent Articles',
+	];
 
 	public static function register_style( $styles = [] )
     {

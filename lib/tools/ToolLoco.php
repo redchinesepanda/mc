@@ -47,6 +47,8 @@ class ToolLoco
                 ReviewAnchors::TEXT_ANCHORS,
 
                 BonusMain::TEXT,
+
+                WikiMain::TEXT,
             );
 
             foreach ( $lines as $line )
