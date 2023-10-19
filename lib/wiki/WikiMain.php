@@ -4,6 +4,8 @@ require_once( 'WikiTemplateSingle.php' );
 
 require_once( 'WikiContent.php' );
 
+require_once( 'WikiRecent.php' );
+
 class WikiMain
 {
 	const TEXT = [
@@ -28,6 +30,8 @@ class WikiMain
         WikiTemplateSingle::register();
 
 		WikiContent::register();
+
+		WikiRecent::register();
     }
 
 	const CATEGORY = [
