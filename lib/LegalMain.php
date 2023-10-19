@@ -49,6 +49,8 @@ class LegalMain
 		$handler = new self();
 		
 		add_action( 'wp', [ $handler, 'register_components' ] );
+
+		add_image_size( self::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
 	}
 
 	public static function register_components()
