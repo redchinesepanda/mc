@@ -38,7 +38,7 @@ class WikiRecent
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus-related' ], false, $args );
+        load_template( self::TEMPLATE[ 'legal-wiki-recent' ], false, $args );
 
         $output = ob_get_clean();
 
