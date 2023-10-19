@@ -3,11 +3,8 @@
 .legal-wiki-title {
 	display: flex;
   	gap: 20px;
+	align-items: center;
 }
-
-/* Position */
-
-
 
 /* Width and Height */
 
