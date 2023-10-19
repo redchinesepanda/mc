@@ -89,6 +89,14 @@ class WikiRecent
 
 			$posts = get_posts( $query );
 
+			LegalDebug::debug( [
+				'function' => 'get_recent_items',
+
+				'query' => $query,
+
+				'posts' => $posts,
+			] );
+
 			return self::parse_posts_recent( $posts );
 		}
 		
