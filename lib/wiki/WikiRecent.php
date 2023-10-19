@@ -69,7 +69,7 @@ class WikiRecent
 
 				$items[] = [
 					'href' => get_post_permalink( $post->ID ),
-					
+
 					'title' => $post->post_title,
 				];
 				
@@ -117,7 +117,7 @@ class WikiRecent
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-wiki-recent' ], false, self::get_recent() );
+        load_template( self::TEMPLATE[ 'legal-wiki-recent' ], false, self::get_recent_args() );
 
         $output = ob_get_clean();
 
