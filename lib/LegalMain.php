@@ -70,25 +70,25 @@ class LegalMain
 
 		if ( self::check() )
 		{
-			OopsMain::register();
+			// OopsMain::register();
 	
-			LegalBreadcrumbsMain::register();
+			// LegalBreadcrumbsMain::register();
 	
-			ReviewMain::register();
+			// ReviewMain::register();
 	
-			ToolsMain::register();
+			// ToolsMain::register();
 	
-			WPMLMain::register();
+			// WPMLMain::register();
 	
-			YoastMain::register();
+			// YoastMain::register();
 	
-			SchemaMain::register();
+			// SchemaMain::register();
 	
-			BaseMain::register();
+			// BaseMain::register();
 	
-			NotFoundMain::register();
+			// NotFoundMain::register();
 	
-			MetrikaMain::register();
+			// MetrikaMain::register();
 		}
 	}
 
@@ -109,13 +109,13 @@ class LegalMain
 
 	public static function check_permissions()
 	{
-		LegalDebug::debug( [
-			'function' => 'check_permissions',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_permissions',
 
-			'check_not_ajax' => $check_not_ajax,
+		// 	'check_not_ajax' => $check_not_ajax,
 
-			'check_not_admin' => $check_not_admin,
-		] );
+		// 	'check_not_admin' => $check_not_admin,
+		// ] );
 
 		return self::check_not_ajax() && self::check_not_admin();
 	}
