@@ -1,7 +1,7 @@
 <div class="legal-sidebar-wiki fixed">
-    <p class="title-of-sidebar">
+    <span class="title-of-sidebar">
         Recent Articles
-    </p>
+    </span>
     <div class="block-with-articles">
         <a href="#" class="legal-sidebar-articles">
             5 Out of 22: The World Cups Won by Brazil
