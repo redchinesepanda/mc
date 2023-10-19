@@ -51,7 +51,7 @@ class WikiFeatured
 
     public static function render()
     {
-		if ( !BonusMain::check() )
+		if ( !WikiMain::check() )
         {
             return '';
         }
