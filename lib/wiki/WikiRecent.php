@@ -29,7 +29,7 @@ class WikiRecent
         'legal-wiki-recent' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-recent.php',
     ];
 
-	public static function render( $args )
+	public static function render( $args = [] )
     {
 		if ( !WikiMain::check() )
         {
