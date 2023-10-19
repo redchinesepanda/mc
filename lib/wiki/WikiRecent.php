@@ -37,7 +37,9 @@ class WikiRecent
 
             'post_type' => [ 'post' ],
 
-            // 'suppress_filters' => 0,
+            'post_status' => 'publish',
+
+            'suppress_filters' => 0,
 
             'exclude' => $id,
 
