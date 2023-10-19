@@ -14,6 +14,11 @@ require_once( 'wiki/WikiMain.php' );
 
 class LegalComponents
 {
+	public static function register_functions()
+    {
+		BonusMain::register_functions();
+	}
+
 	public static function register()
 	{
 	// 	$handler = new self();

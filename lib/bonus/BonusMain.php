@@ -103,9 +103,9 @@ class BonusMain
         return self::check_not_admin() && self::check_post_type() && self::check_category();
     }
 
-	public static function register_always()
+	public static function register_functions()
     {
-		BonusFeatured::register_always();
+		BonusFeatured::register_functions();
 	}
 
 	public static function register()
