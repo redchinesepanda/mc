@@ -33,7 +33,7 @@ class WikiTitle
 			return [
 				'title' => $post->post_title,
 	
-				'date' => __( WikiMain::TEXT[ 'publication-date' ], ToolLoco::TEXTDOMAIN ) . $published_datetime->format( 'd/m/Y' ),
+				'date' => __( WikiMain::TEXT[ 'publication-date' ], ToolLoco::TEXTDOMAIN ) . ': ' . $published_datetime->format( 'd/m/Y' ),
 			];
 		}
 

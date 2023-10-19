@@ -1,18 +1,39 @@
 /* Display */
 
-.legal-wiki-main .legal-wiki-featured {
+.legal-wiki-title {
 	display: flex;
-  	justify-content: center;
+  	gap: 20px;
 }
 
 /* Position */
 
-.legal-wiki-main .legal-wiki-featured {
-	padding-bottom: 20px;
+
+
+/* Width and Height */
+
+.legal-wiki-title h1 {
+	flex-grow: 1;
 }
 
-/* Background */
+/* Typography */
 
-.legal-wiki-main .wiki-featured-image {
-	border-radius: 10px;
+.legal-wiki-title h1 {
+	color: rgb(12, 17, 21);
+	font-family: "Source Sans Pro";
+	font-size: 42px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 50.4px;
+	overflow-wrap: break-word;
+	text-transform: capitalize;
+}
+
+.legal-wiki-title span {
+	color: rgb(106, 107, 108);
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26.25px;
 }
