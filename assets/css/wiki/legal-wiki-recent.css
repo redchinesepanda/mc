@@ -12,10 +12,10 @@
 
 .legal-sidebar-wiki.fixed {
 	position: fixed;
-	bottom: auto;
+	/* bottom: auto;
 	top: 20px;
 	right: 0;
-	z-index: 10;
+	z-index: 10; */
 }
 
 .legal-sidebar-wiki {

@@ -1,0 +1,22 @@
+/* Display */
+
+.legal-wiki-single {
+	display: flex;
+	gap: 20px;
+}
+
+/* Position */
+
+.legal-wiki-single .legal-wiki-sidebar {
+	position: relative;
+}
+
+/* Width and Height */
+
+.legal-wiki-single .legal-wiki-main {
+	flex-basis: calc( 75% - 10px );
+}
+
+.legal-wiki-single .legal-wiki-sidebar {
+	flex-basis: calc( 25% - 10px );
+}

@@ -3,8 +3,8 @@
 class WikiTemplateSingle
 {
     const CSS = [
-        'bonus-single' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-single.css',
+        'wiki-single' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-single.css',
 
             'ver'=> '1.0.2',
         ],
