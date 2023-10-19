@@ -1,4 +1,3 @@
-<!-- <div class="legal-sidebar-wiki fixed"> -->
 <div class="legal-wiki-recent fixed">
     <span class="title-of-sidebar">
         Recent Articles

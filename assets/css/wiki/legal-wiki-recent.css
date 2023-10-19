@@ -13,9 +13,6 @@
 .legal-wiki-recent.fixed {
 	position: sticky;
 	top: 0px;
-	/* bottom: auto;
-	right: 0;
-	z-index: 10; */
 }
 
 .legal-wiki-recent {
@@ -56,11 +53,6 @@
 
 /* Background */
 
-/* .legal-wiki-recent {
-	background-color: #f7f7f7;
-	border-radius: 7px;
-} */
-
 .legal-wiki-recent .legal-sidebar-articles {
 	background-color: #fff;
 	box-shadow: 0 0 10px #f5eaea;
@@ -79,6 +71,7 @@
 
 .legal-wiki-recent .legal-sidebar-articles {
 	line-height: 1.5;
+	text-decoration: none;
 }
 
 .legal-wiki-recent .legal-sidebar-articles:hover {
