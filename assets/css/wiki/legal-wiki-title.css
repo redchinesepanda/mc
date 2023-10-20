@@ -8,6 +8,10 @@
 
 /* Position */
 
+.legal-wiki-title {
+	padding-bottom: 20px;
+}
+
 .legal-wiki-title h1 {
 	margin-bottom: 0px;
 }
