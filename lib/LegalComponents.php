@@ -103,15 +103,17 @@ class LegalComponents
 
 	public static function check()
     {
-		// LegalDebug::debug( [
-		// 	'function' => 'check_plugins',
+		LegalDebug::debug( [
+			'function' => 'check_plugins',
 
-		// 	'permission_single' => $permission_single,
+			'permission_single' => $permission_single,
 
-		// 	'permission_term' => $permission_term,
+			'permission_term' => $permission_term,
 
-		// 	'permission_main' => $permission_main,
-		// ] );
+			'permission_main' => $permission_main,
+
+			'check_not_found' => $check_not_found,
+		] );
         
         return (
 			self::check_post_type_page()
