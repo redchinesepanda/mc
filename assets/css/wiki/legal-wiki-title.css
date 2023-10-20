@@ -12,6 +12,10 @@
 	flex-grow: 1;
 }
 
+.legal-wiki-title span {
+	flex-basis: fit-content;
+}
+
 /* Typography */
 
 .legal-wiki-title h1 {
