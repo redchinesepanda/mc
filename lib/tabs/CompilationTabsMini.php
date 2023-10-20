@@ -26,6 +26,11 @@ class CompilationTabsMini
         return LegalComponents::check();
     }
 
+	public static function register_functions()
+    {
+        add_image_size( BilletMini::SIZE[ 'logo-mini' ], 74, 25, false );
+    }
+
 	public static function register()
     {
         $handler = new self();
@@ -35,8 +40,6 @@ class CompilationTabsMini
         add_shortcode( 'legal-tabs-mini', [ $handler, 'prepare' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        add_image_size( BilletMini::SIZE[ 'logo-mini' ], 74, 25, false );
     }
 
 	const PAIRS = [

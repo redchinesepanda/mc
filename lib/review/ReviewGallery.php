@@ -34,6 +34,13 @@ class ReviewGallery
         'lightbox' => 'legal-bookmaker-review-lightbox',
     ];
 
+	public static function register_functions()
+    {
+        add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
+
+        add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -41,10 +48,6 @@ class ReviewGallery
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-        add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
-
-        add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 

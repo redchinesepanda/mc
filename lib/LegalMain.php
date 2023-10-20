@@ -52,8 +52,6 @@ class LegalMain
 
 		add_action( 'plugin_loaded', [ $handler, 'register_always' ] );
 
-		// add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, [ 'center', 'center' ] );
-
 		LegalComponents::register_functions();
 	}
 
