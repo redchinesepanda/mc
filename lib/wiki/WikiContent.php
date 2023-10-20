@@ -4,7 +4,7 @@ class WikiContent
 {
 	const CSS = [
         'wiki-content' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-wiki-content.css',
+            'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-content.css',
 
             'ver'=> '1.0.0',
         ],
