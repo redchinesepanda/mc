@@ -1,0 +1,19 @@
+/* Position */
+
+.full-main-content {
+	margin: 0px;
+}
+
+.full-main-content h2 {
+	margin-bottom: 0px;
+}
+
+.full-main-content p {
+	padding-top: 0px;
+	margin-bottom: 0px;
+}
+
+.full-main-content ol,
+.full-main-content ul {
+	margin-bottom: 0px;
+}
