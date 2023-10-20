@@ -58,11 +58,6 @@ class LegalMain
 	public static function register_functions()
     {
 		LegalComponents::register_functions();
-	}
-
-	public static function register_components()
-	{
-		LegalComponents::register();
 
 		LegalDebug::debug( [
 			'function' => 'register',
@@ -76,6 +71,11 @@ class LegalMain
 	
 			AdminMain::register();
 		}
+	}
+
+	public static function register_components()
+	{
+		LegalComponents::register();
 
 		if ( self::check() )
 		{
