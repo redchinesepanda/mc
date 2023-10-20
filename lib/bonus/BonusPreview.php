@@ -18,7 +18,7 @@ class BonusPreview
 	
 	public static function register_style()
     {
-        BonusMain::register_style( self::CSS );
+		ReviewMain::register_style( self::CSS );
     }
 
 	public static function register_functions()
@@ -406,7 +406,7 @@ class BonusPreview
 
     public static function render( $args )
     {
-		if ( !BonusMain::check() )
+		if ( !ReviewMain::check() )
         {
             return '';
         }
