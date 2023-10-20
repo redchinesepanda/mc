@@ -22,18 +22,7 @@ class WikiContent
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
-    public static function get_content()
-    {
-        ob_start();
-
-        the_content();
-
-        $output = ob_get_clean();
-
-        return $output;
-    }
-
-	public static function get()
+    public static function get()
     {
         $post = get_post();
         
@@ -43,9 +32,7 @@ class WikiContent
         }
 
 		return [
-			// 'content' => apply_filters( 'the_content', $post->post_content ),
-			
-            'content' => self::get_content(),
+			'content' => apply_filters( 'the_content', $post->post_content ),
 		];
     }
 
