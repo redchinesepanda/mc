@@ -6,10 +6,15 @@
 	align-items: center;
 }
 
+/* Position */
+
+.legal-wiki-title h1 {
+	margin-bottom: 0px;
+}
+
 /* Width and Height */
 
 .legal-wiki-title h1 {
-	/* flex-grow: 1; */
 	flex-basis: calc( 75% - 10px );
 }
 
