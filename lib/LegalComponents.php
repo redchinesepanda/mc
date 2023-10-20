@@ -106,11 +106,13 @@ class LegalComponents
 		LegalDebug::debug( [
 			'function' => 'check_plugins',
 
-			'permission_single' => $permission_single,
+			'check_post_type_page' => $check_post_type_page,
 
-			'permission_term' => $permission_term,
+			'check_taxonomy' => $check_taxonomy,
 
-			'permission_main' => $permission_main,
+			'LegalMain::check' => $LegalMain::check,
+
+			'check_post_type_post' => $check_post_type_post,
 
 			'check_not_found' => $check_not_found,
 		] );
