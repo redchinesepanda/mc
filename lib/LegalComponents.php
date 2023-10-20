@@ -52,7 +52,7 @@ class LegalComponents
 			WikiMain::register();
 		}
 	}
-	
+
 	public static function check_post_type_post()
 	{
 		return is_singular( 'post' );
@@ -95,6 +95,11 @@ class LegalComponents
 	{
 		return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 	}
+	
+	public static function check_not_found()
+	{
+		return is_404();
+	}
 
 	public static function check()
     {
@@ -116,7 +121,9 @@ class LegalComponents
 			&& LegalMain::check()
 		)
 		
-		|| self::check_post_type_post();
+		|| self::check_post_type_post()
+
+		|| self::check_not_found();
     }
 }
 

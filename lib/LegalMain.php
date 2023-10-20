@@ -100,6 +100,11 @@ class LegalMain
 			MetrikaMain::register();
 		}
 	}
+	
+	public static function check_not_found()
+	{
+		return is_404();
+	}
 
 	public static function check_admin()
 	{
@@ -126,7 +131,9 @@ class LegalMain
 		// 	'check_not_admin' => $check_not_admin,
 		// ] );
 
-		return self::check_not_ajax() && self::check_not_admin();
+		return self::check_not_ajax()
+		
+			&& self::check_not_admin();
 	}
 
 	public static function check_plugins()
