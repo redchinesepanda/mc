@@ -106,15 +106,15 @@ class LegalComponents
 		LegalDebug::debug( [
 			'function' => 'check_plugins',
 
-			'check_post_type_page' => $check_post_type_page,
+			'check_post_type_page' => self::check_post_type_page(),
 
-			'check_taxonomy' => $check_taxonomy,
+			'check_taxonomy' => self::check_taxonomy(),
 
-			'LegalMain::check' => $LegalMain::check,
+			'LegalMain::check' => LegalMain::check(),
 
-			'check_post_type_post' => $check_post_type_post,
+			'check_post_type_post' => self::check_post_type_post(),
 
-			'check_not_found' => $check_not_found,
+			'check_not_found' => self::check_not_found(),
 		] );
         
         return (
