@@ -53,19 +53,11 @@ class LegalMain
 		add_action( 'plugin_loaded', [ $handler, 'register_always' ] );
 
 		self::register_functions();
-
-		LegalComponents::register_functions();
 	}
 
 	public static function register_functions()
     {
 		LegalComponents::register_functions();
-
-		LegalDebug::debug( [
-			'function' => 'register',
-
-			'check_admin' => self::check_admin(),
-		] );
 
 		if ( self::check_admin() )
 		{
@@ -105,12 +97,6 @@ class LegalMain
 
 	public static function check_admin()
 	{
-		LegalDebug::debug( [
-			'function' => 'register',
-
-			'is_admin' => is_admin(),
-		] );
-
 		return is_admin();
 	}
 
