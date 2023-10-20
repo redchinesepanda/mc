@@ -64,7 +64,7 @@ class LegalMain
 		LegalDebug::debug( [
 			'function' => 'register',
 
-			'check_admin' => check_admin(),
+			'check_admin' => self::check_admin(),
 		] );
 
 		if ( self::check_admin() )
