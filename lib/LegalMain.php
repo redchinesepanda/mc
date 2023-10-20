@@ -100,14 +100,15 @@ class LegalMain
 			MetrikaMain::register();
 		}
 	}
-	
-	public static function check_not_found()
-	{
-		return is_404();
-	}
 
 	public static function check_admin()
 	{
+		LegalDebug::debug( [
+			'function' => 'register',
+
+			'is_admin' => is_admin(),
+		] );
+
 		return is_admin();
 	}
 
@@ -132,7 +133,7 @@ class LegalMain
 		// ] );
 
 		return self::check_not_ajax()
-		
+
 			&& self::check_not_admin();
 	}
 
