@@ -134,44 +134,49 @@ class CompilationTabs
     {
         $post = get_post();
 
-        $args = [
-            'text' => get_field( self::TABS[ 'text' ], $post->ID ),
+        $args = [];
 
-            'description' => get_field( self::TABS[ 'description' ], $post->ID ),
-            
-            'link' => [
-                'text' => get_field( self::TABS[ 'link-text' ], $post->ID ),
-
-                'url' => get_field( self::TABS[ 'link-url' ], $post->ID ),
-            ],
-        ];
-
-        $args['tabs'] = [];
-
-        $tabs = get_field( self::TABS[ 'items' ], $post->ID );
-
-        if( $tabs ) {
-            foreach( $tabs as $key => $tab ) {
-                $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
-
-                // $date = self::get_date( $compilations );
-
-                $args['tabs'][] = [
-                    'text' => $tab[ self::TAB[ 'text' ] ],
-
-                    'image' => $tab[ self::TAB[ 'image' ] ],
-
-                    'compilations' => $compilations,
-
-                    // 'date' => $date,
-
-                    'active' => ( $key == 0 ? 'legal-active' : '' ),
-
-                    'class' => ( !empty( $tab[ self::TAB[ 'image' ] ] ) ? 'tab-image-' . $key : '' ),
-                ];
+        if ( $post )
+        {
+            $args = [
+                'text' => get_field( self::TABS[ 'text' ], $post->ID ),
+    
+                'description' => get_field( self::TABS[ 'description' ], $post->ID ),
+                
+                'link' => [
+                    'text' => get_field( self::TABS[ 'link-text' ], $post->ID ),
+    
+                    'url' => get_field( self::TABS[ 'link-url' ], $post->ID ),
+                ],
+            ];
+    
+            $args['tabs'] = [];
+    
+            $tabs = get_field( self::TABS[ 'items' ], $post->ID );
+    
+            if( $tabs ) {
+                foreach( $tabs as $key => $tab ) {
+                    $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+    
+                    // $date = self::get_date( $compilations );
+    
+                    $args['tabs'][] = [
+                        'text' => $tab[ self::TAB[ 'text' ] ],
+    
+                        'image' => $tab[ self::TAB[ 'image' ] ],
+    
+                        'compilations' => $compilations,
+    
+                        // 'date' => $date,
+    
+                        'active' => ( $key == 0 ? 'legal-active' : '' ),
+    
+                        'class' => ( !empty( $tab[ self::TAB[ 'image' ] ] ) ? 'tab-image-' . $key : '' ),
+                    ];
+                }
+            } else {
+                $args['empty'] = __( BilletMain::TEXT[ 'there-are-no-tabs' ], ToolLoco::TEXTDOMAIN );
             }
-        } else {
-            $args['empty'] = __( BilletMain::TEXT[ 'there-are-no-tabs' ], ToolLoco::TEXTDOMAIN );
         }
 
         return $args;
