@@ -17,6 +17,10 @@ class LegalComponents
 	public static function register_functions()
     {
 		BonusMain::register_functions();
+
+		CompilationTabsMain::register_functions();
+
+		WikiMain::register_functions();
 	}
 
 	public static function register()

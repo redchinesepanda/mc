@@ -20,16 +20,19 @@ class WikiFeatured
 		return !has_image_size( BonusFeatured::SIZE[ 'featured' ] );
 	}
 
+    public static function register_functions()
+    {
+		if ( self::check_no_image_size() )
+		{
+			add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, false );
+		}
+	}
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		if ( self::check_no_image_size() )
-		{
-			add_image_size( BonusFeatured::SIZE[ 'featured' ], 700, 400, false );
-		}
     }
 
 	public static function get()

@@ -21,6 +21,13 @@ class BonusPreview
         BonusMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+    {
+        add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
+
+		add_image_size( self::SIZE[ 'logo' ], 50, 50, [ 'center', 'center' ] );
+    }
+
 	public static function register()
     {
         $handler = new self();
@@ -32,10 +39,6 @@ class BonusPreview
 		// [legal-bonus terms='bonusy-kz']
 
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
-
-		add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
-
-		add_image_size( self::SIZE[ 'logo' ], 50, 50, [ 'center', 'center' ] );
 
 		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 

@@ -106,6 +106,12 @@ class BonusMain
 	public static function register_functions()
     {
 		BonusFeatured::register_functions();
+
+		BonusPreview::register_functions();
+
+		BonusRelated::register_functions();
+
+		ReviewGallery::register_functions();
 	}
 
 	public static function register()

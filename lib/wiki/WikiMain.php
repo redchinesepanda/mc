@@ -30,6 +30,11 @@ class WikiMain
             ToolEnqueue::register_style( $styles );
         }
     }
+	
+	public static function register_functions()
+    {
+		WikiFeatured::register_functions();
+	}
 
 	public static function register()
     {

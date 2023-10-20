@@ -15,13 +15,16 @@ class BonusRelated
         BonusMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+    {
+        add_image_size( self::SIZE[ 'related' ], 214, 130, false );
+    }
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_image_size( self::SIZE[ 'related' ], 214, 130, false );
     }
 
 	const TYPE = [
