@@ -52,6 +52,8 @@ class LegalMain
 
 		add_action( 'plugin_loaded', [ $handler, 'register_always' ] );
 
+		self::register_functions();
+
 		LegalComponents::register_functions();
 	}
 
