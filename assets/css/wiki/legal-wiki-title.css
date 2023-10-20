@@ -10,11 +10,11 @@
 
 .legal-wiki-title h1 {
 	/* flex-grow: 1; */
-	flex-basis: 75%;
+	flex-basis: calc( 75% - 10px );
 }
 
 .legal-wiki-title span {
-	flex-basis: 25%;
+	flex-basis: calc( 25% - 10px );
 }
 
 /* Typography */
