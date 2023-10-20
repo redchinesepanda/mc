@@ -32,6 +32,11 @@ class LegalComponents
 
 	// public static function register_components()
 	// {
+		// if ( LegalMain::check_admin() )
+		// {
+		// 	BonusMain::register_always();
+		// }
+
 		if ( self::check() )
 		{
 			BilletMain::register();
@@ -58,19 +63,41 @@ class LegalComponents
 		return is_singular( 'page' );
 	}
 
+	const TAXONOMY = [
+        'page_type' => 'page_type',
+    ];
+
+	const TERMS = [
+        'promo-codes',
+
+        'bonus',
+
+        'review',
+
+        'app',
+
+        'registration',
+
+        'how-to-play',
+
+        'withdrawal',
+
+        'obzor-bk',
+
+        'obzor-bk-betera',
+
+        'obzor-bk-1xbet',
+
+        'compilation',
+    ];
+
 	public static function check_taxonomy()
 	{
-		return has_term( 'compilation', 'page_type' );
+		return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
 	}
 
 	public static function check()
     {
-		// $permission_single = ;
-
-        // $permission_term = ;
-
-		// $permission_main = ;
-
 		// LegalDebug::debug( [
 		// 	'function' => 'check_plugins',
 

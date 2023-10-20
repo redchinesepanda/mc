@@ -182,33 +182,33 @@ class ReviewMain
         return ToolEncode::encode( $content );
     }
 
-    const TAXONOMY = [
-        'page_type' => 'page_type',
-    ];
+    // const TAXONOMY = [
+    //     'page_type' => 'page_type',
+    // ];
 
-    const TERMS = [
-        'promo-codes',
+    // const TERMS = [
+    //     'promo-codes',
 
-        'bonus',
+    //     'bonus',
 
-        'review',
+    //     'review',
 
-        'app',
+    //     'app',
 
-        'registration',
+    //     'registration',
 
-        'how-to-play',
+    //     'how-to-play',
 
-        'withdrawal',
+    //     'withdrawal',
 
-        'obzor-bk',
+    //     'obzor-bk',
 
-        'obzor-bk-betera',
+    //     'obzor-bk-betera',
 
-        'obzor-bk-1xbet',
+    //     'obzor-bk-1xbet',
 
-        'compilation',
-    ];
+    //     'compilation',
+    // ];
 
     public static function check_not_admin()
     {
@@ -227,7 +227,7 @@ class ReviewMain
 
     public static function check_taxonomy()
     {
-        return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+        return has_term( LegalComponents::TERMS, LegalComponents::TAXONOMY[ 'page_type' ] );
     }
 
     public static function check()
