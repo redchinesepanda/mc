@@ -127,7 +127,7 @@ class WikiMain
 
 			&& self::check_post_type_post()
 
-			&& self::check_category()
+			// && self::check_category()
 
 			&& self::check_taxonomy();
     }
