@@ -64,11 +64,11 @@ class LegalMain
 	{
 		LegalComponents::register();
 
-		// LegalDebug::debug( [
-		// 	'function' => 'register',
+		LegalDebug::debug( [
+			'function' => 'register',
 
-		// 	'check' => self::check(),
-		// ] );
+			'check_admin' => check_admin(),
+		] );
 
 		if ( self::check_admin() )
 		{
