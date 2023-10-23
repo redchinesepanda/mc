@@ -134,6 +134,11 @@ class ReviewMain
         }
     }
 
+    public static function register_functions()
+	{
+		ReviewBanner::register_functions();
+	}
+
     public static function register()
     {
         $handler = new self();
