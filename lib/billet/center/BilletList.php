@@ -68,6 +68,8 @@ class BilletList
                     'function' => 'BilletList::get',
 
                     'parts' => $parts,
+
+                    'parts_json_encode' => json_encode( $parts ),
                 ] );
 
                 $display = self::check_list( $billet, $part );
