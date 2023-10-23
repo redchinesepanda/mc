@@ -65,6 +65,10 @@ class LegalMain
 	
 			AdminMain::register();
 
+			LegalDebug::debug( [
+				'function' => 'LegalMain::register_functions',
+			] );
+
 			ReviewMain::register_functions();
 		}
 	}
