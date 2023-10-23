@@ -63,6 +63,13 @@ class BilletList
 
         if ( $parts ) {
             foreach ( $parts as $key => $part ) {
+
+                LegalDebug::debug( [
+                    'function' => 'BilletList::get',
+
+                    'parts' => $parts,
+                ] );
+
                 $display = self::check_list( $billet, $part );
 
                 if ( $display ) {
