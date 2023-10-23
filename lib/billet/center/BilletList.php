@@ -61,16 +61,17 @@ class BilletList
 
         $parts = get_field( self::FIELD[ 'parts' ], $billet[ 'id' ] );
 
-        if ( $parts ) {
-            foreach ( $parts as $key => $part ) {
+        if ( $parts )
+        {
+            foreach ( $parts as $key => $part )
+            {
+                // LegalDebug::debug( [
+                //     'function' => 'BilletList::get',
 
-                LegalDebug::debug( [
-                    'function' => 'BilletList::get',
+                //     'parts' => $parts,
 
-                    'parts' => $parts,
-
-                    'parts_json_encode' => json_encode( $parts ),
-                ] );
+                //     'parts_json_encode' => json_encode( $parts ),
+                // ] );
 
                 $display = self::check_list( $billet, $part );
 
