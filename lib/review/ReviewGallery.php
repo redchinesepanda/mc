@@ -36,9 +36,13 @@ class ReviewGallery
 
 	public static function register_functions()
     {
+        $handler = new self();
+        
         add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
 
         add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
+
+        add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
 
     public static function register()
@@ -48,8 +52,6 @@ class ReviewGallery
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-        add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
