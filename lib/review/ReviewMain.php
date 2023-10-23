@@ -137,6 +137,18 @@ class ReviewMain
     public static function register_functions()
 	{
 		ReviewBanner::register_functions();
+
+		ReviewBonus::register_functions();
+
+		ReviewFAQ::register_functions();
+
+		ReviewHowTo::register_functions();
+
+		ReviewList::register_functions();
+
+		ReviewProsCons::register_functions();
+
+		ReviewTitle::register_functions();
 	}
 
     public static function register()
