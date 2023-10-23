@@ -125,6 +125,11 @@ class BilletMain
 
         'description' => 'about-main-description',
     ];
+    
+    public static function register_functions()
+	{
+		BilletMega::register_functions();
+	}
 
     public static function register()
     {

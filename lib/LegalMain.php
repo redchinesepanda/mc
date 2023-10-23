@@ -64,6 +64,8 @@ class LegalMain
 			ACFMain::register();
 	
 			AdminMain::register();
+
+			BilletMain::register_functions();
 		}
 	}
 
