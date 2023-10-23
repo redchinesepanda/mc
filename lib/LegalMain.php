@@ -52,7 +52,7 @@ class LegalMain
 		
 		// add_action( 'plugin_loaded', [ $handler, 'register_components' ] );
 		
-		add_action( 'after_setup_theme', [ $handler, 'register_components' ] );
+		add_action( 'wp_loaded', [ $handler, 'register_components' ] );
 
 		self::register_functions();
 
