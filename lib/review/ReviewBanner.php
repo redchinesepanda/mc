@@ -15,6 +15,13 @@ class ReviewBanner
 		ReviewMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_banner' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
@@ -22,8 +29,6 @@ class ReviewBanner
         add_filter( 'the_content', [ $handler, 'get_content' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_banner' ] );
 
 		add_filter( 'disable_captions', [ $handler, 'disable_captions' ] );
     }
