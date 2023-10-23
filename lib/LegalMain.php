@@ -52,11 +52,11 @@ class LegalMain
 		
 		// add_action( 'plugin_loaded', [ $handler, 'register_components' ] );
 		
-		add_action( 'muplugins_loaded', [ $handler, 'register_components' ] );
+		// add_action( 'muplugins_loaded', [ $handler, 'register_components' ] );
 
 		self::register_functions();
 
-		// self::register_components();
+		self::register_components();
 	}
 
 	public static function register_functions()
