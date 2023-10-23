@@ -17,6 +17,8 @@ class BilletMega
 
 	public static function register_functions()
 	{
+		$handler = new self();
+		
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
 	}
 
