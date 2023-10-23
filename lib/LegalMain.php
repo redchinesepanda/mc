@@ -48,7 +48,7 @@ class LegalMain
 	{
 		$handler = new self();
 		
-		// add_action( 'wp', [ $handler, 'register_components' ] );
+		add_action( 'wp', [ $handler, 'register_components' ] );
 		
 		// add_action( 'plugin_loaded', [ $handler, 'register_components' ] );
 		
@@ -56,7 +56,9 @@ class LegalMain
 
 		self::register_functions();
 
-		self::register_components();
+		// self::register_components();
+	
+		ToolsMain::register();
 	}
 
 	public static function register_functions()
@@ -68,8 +70,6 @@ class LegalMain
 			ACFMain::register();
 	
 			AdminMain::register();
-	
-			ToolsMain::register();
 		}
 	}
 
