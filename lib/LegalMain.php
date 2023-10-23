@@ -65,8 +65,6 @@ class LegalMain
 	
 			AdminMain::register();
 
-			BilletMain::register_functions();
-
 			ReviewMain::register_functions();
 		}
 	}

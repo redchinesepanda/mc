@@ -21,6 +21,8 @@ class LegalComponents
 		CompilationTabsMain::register_functions();
 
 		WikiMain::register_functions();
+
+		BilletMain::register_functions();
 	}
 
 	public static function register()

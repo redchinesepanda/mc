@@ -151,6 +151,8 @@ class ReviewMain
 		ReviewTitle::register_functions();
 
 		ReviewTable::register_functions();
+
+        ReviewGallery::register_functions();
 	}
 
     public static function register()
