@@ -33,13 +33,13 @@ class ReviewAnchors
         ToolEnqueue::register_inline_script( 'legal-anchors-data', self::anchors_data() );
     }
 
-    public static function register()
+    public static function register_functions()
     {
         $handler = new self();
 
         add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
     }
-    
+
     public static function register()
     {
         $handler = new self();
