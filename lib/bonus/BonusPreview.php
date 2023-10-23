@@ -23,9 +23,13 @@ class BonusPreview
 
 	public static function register_functions()
     {
+		$handler = new self();
+		
         add_image_size( self::SIZE[ 'preview' ], 330, 190, [ 'center', 'center' ] );
 
 		add_image_size( self::SIZE[ 'logo' ], 50, 50, [ 'center', 'center' ] );
+
+		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
 
 	public static function register()
@@ -39,8 +43,6 @@ class BonusPreview
 		// [legal-bonus terms='bonusy-kz']
 
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
-
-		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
