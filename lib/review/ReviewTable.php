@@ -19,6 +19,15 @@ class ReviewTable
         ReviewMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
@@ -26,10 +35,6 @@ class ReviewTable
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
 	}
 
 	const CLASSES = [
