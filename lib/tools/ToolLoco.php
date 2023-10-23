@@ -8,7 +8,9 @@ class ToolLoco
     {
         $handler = new self();
         
-        add_action( 'after_setup_theme', [ $handler, 'loco' ] );
+        // add_action( 'after_setup_theme', [ $handler, 'loco' ] );
+        
+        add_action( 'wp', [ $handler, 'loco' ] );
 
         add_filter( 'loco_extracted_template', [ $handler, 'add_custom_string'] , 10, 2 );
     }
