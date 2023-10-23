@@ -15,6 +15,11 @@ class BilletMega
         ToolEnqueue::register_style( self::CSS );
     }
 
+	public static function register_functions()
+	{
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
@@ -26,8 +31,6 @@ class BilletMega
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
     }
 
 	public static function remove_empty_paragraph_shortcode( $content ) {
