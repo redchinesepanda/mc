@@ -48,11 +48,11 @@ class LegalMain
 	{
 		$handler = new self();
 		
-		// add_action( 'wp', [ $handler, 'register_components' ] );
+		add_action( 'wp', [ $handler, 'register_components' ] );
 		
 		// add_action( 'plugin_loaded', [ $handler, 'register_components' ] );
 		
-		add_action( 'after_setup_theme', [ $handler, 'register_components' ] );
+		// add_action( 'after_setup_theme', [ $handler, 'register_components' ] );
 
 		self::register_functions();
 
@@ -68,6 +68,8 @@ class LegalMain
 			ACFMain::register();
 	
 			AdminMain::register();
+	
+			ToolsMain::register();
 		}
 	}
 
@@ -82,8 +84,6 @@ class LegalMain
 			LegalBreadcrumbsMain::register();
 	
 			ReviewMain::register();
-	
-			ToolsMain::register();
 	
 			WPMLMain::register();
 	
