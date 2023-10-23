@@ -20,6 +20,13 @@ class ReviewList
         ReviewMain::register_inline_style( self::CLASSES[ 'base' ], self::inline_style() );
     }
 
+    public static function register_functions()
+	{
+		$handler = new self();
+
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list' ] );
+	}
+
     public static function register()
     {
         $handler = new self();
@@ -27,8 +34,6 @@ class ReviewList
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
-        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_list' ] );
 
         add_filter( 'the_content', [ $handler, 'get_content' ] );
     }

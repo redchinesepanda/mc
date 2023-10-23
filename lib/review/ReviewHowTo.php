@@ -2,11 +2,16 @@
 
 class ReviewHowTo
 {
-	public static function register()
-    {
-        $handler = new self();
+	public static function register_functions()
+	{
+		$handler = new self();
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_howto' ] );
+	}
+
+	public static function register()
+    {
+        // $handler = new self();
     }
 
 	const CSS_CLASS = [

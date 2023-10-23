@@ -15,15 +15,20 @@ class ReviewTitle
         ReviewMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
 
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }

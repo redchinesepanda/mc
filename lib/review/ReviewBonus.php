@@ -26,13 +26,18 @@ class ReviewBonus
 		ReviewMain::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
+	}
+
 	public static function register()
 	{
 		$handler = new self();
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
-
-		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_bonus' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
