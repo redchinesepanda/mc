@@ -49,21 +49,15 @@ class LegalMain
 		$handler = new self();
 		
 		add_action( 'wp', [ $handler, 'register_components' ] );
-		
-		// add_action( 'plugin_loaded', [ $handler, 'register_components' ] );
-		
-		// add_action( 'after_setup_theme', [ $handler, 'register_components' ] );
 
 		self::register_functions();
-
-		// self::register_components();
-	
-		ToolsMain::register();
 	}
 
 	public static function register_functions()
     {
 		LegalComponents::register_functions();
+	
+		ToolsMain::register();
 
 		if ( self::check_admin() )
 		{
