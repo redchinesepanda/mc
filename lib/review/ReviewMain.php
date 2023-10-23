@@ -149,6 +149,8 @@ class ReviewMain
 		ReviewProsCons::register_functions();
 
 		ReviewTitle::register_functions();
+
+		ReviewTable::register_functions();
 	}
 
     public static function register()
