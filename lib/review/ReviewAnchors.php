@@ -37,6 +37,13 @@ class ReviewAnchors
     {
         $handler = new self();
 
+        add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
+    }
+    
+    public static function register()
+    {
+        $handler = new self();
+
         // [legal-anchors]
 
         add_shortcode( 'legal-anchors', [ $handler, 'render' ] );
@@ -44,8 +51,6 @@ class ReviewAnchors
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-        add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
     }
 
 	public static function anchors_data()
