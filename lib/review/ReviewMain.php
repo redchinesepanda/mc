@@ -153,6 +153,8 @@ class ReviewMain
 		ReviewTable::register_functions();
 
         ReviewGallery::register_functions();
+
+        ReviewAnchors::register_functions();
 	}
 
     public static function register()
