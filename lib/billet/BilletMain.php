@@ -239,7 +239,7 @@ class BilletMain
 
             'logo' => $logo_href,
 
-            'logo-nofollow' => get_nofollow( $logo_href ),
+            'logo-nofollow' => self::get_nofollow( $logo_href ),
 
             // Кнопка обзор учитывая тип Бонус
 
