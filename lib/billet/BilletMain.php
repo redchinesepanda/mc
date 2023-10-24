@@ -472,6 +472,12 @@ class BilletMain
 
     public static function render_nofollow( $permission )
     {
+        LegalDebug::debug( [
+            'function' => 'BillletMain::render_nofollow',
+
+            'permission' => $permission,
+        ] );
+
 		if ( $permission )
         {
             return 'rel="nofollow"';
