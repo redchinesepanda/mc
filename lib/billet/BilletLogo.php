@@ -64,6 +64,8 @@ class BilletLogo
             'function' => 'BilletLogo::get',
 
             'billet' => $billet,
+
+            'args' => $args,
         ] );
 
         return $args;
