@@ -318,11 +318,15 @@ class ReviewMain
             $graph[] = $hwto;
         }
 
-        return json_encode( [
-            "@context" => "https://schema.org",
+        return json_encode(
+            [
+                "@context" => "https://schema.org",
 
-            "@graph" => $graph,
-        ] );
+                "@graph" => $graph,
+            ],
+
+            JSON_UNESCAPED_UNICODE
+        );
     }
 
     public static function schema_organization()
