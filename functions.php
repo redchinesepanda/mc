@@ -12,6 +12,6 @@ add_action( 'wp_enqueue_scripts', function () {
 
 require_once( 'lib/LegalMain.php' );
 
-LegalMain::register();
+// LegalMain::register();
 
 ?>
