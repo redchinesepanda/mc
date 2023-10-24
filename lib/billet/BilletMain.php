@@ -472,11 +472,11 @@ class BilletMain
 
     public static function render_nofollow( $permission )
     {
-        LegalDebug::debug( [
-            'function' => 'BillletMain::render_nofollow',
+        // LegalDebug::debug( [
+        //     'function' => 'BillletMain::render_nofollow',
 
-            'permission' => $permission,
-        ] );
+        //     'permission' => $permission,
+        // ] );
 
 		if ( $permission )
         {

@@ -60,13 +60,13 @@ class BilletLogo
 
         $args['logo']['alt'] = $alt;
 
-        LegalDebug::debug( [
-            'function' => 'BilletLogo::get',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletLogo::get',
 
-            'billet' => $billet,
+        //     'billet' => $billet,
 
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
         return $args;
     }
