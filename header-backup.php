@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="yandex-verification" content="079ad3c653c7c146">
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
 		<?php //echo TemplateMain::wp_head(); ?>
-
 		<?php wp_head(); ?>
-		<?php thrive_amp_permalink(); ?>	
+		<?php thrive_amp_permalink(); ?>
+		<!-- Legal Header -->
 	</head>
 	<body <?php body_class( '' ); ?>>
