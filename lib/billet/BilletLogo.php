@@ -54,6 +54,8 @@ class BilletLogo
 
         $args['logo'] = BilletMain::href( $billet['url']['logo'] );
 
+        $args[ 'logo' ][ 'nofollow' ] = $billet[ 'url' ][ 'logo-nofollow' ];
+
         $args['logo']['src'] = $src;
 
         $args['logo']['alt'] = $alt;

@@ -176,6 +176,11 @@ class BilletMain
         return $bonus_url;
     }
 
+    public static function get_nofollow( $url )
+    {
+        return str_contains( $url, '/go/' );
+    }
+
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
@@ -226,10 +231,15 @@ class BilletMain
 
         $oops = ( OopsMain::check_oops() > 0 ? '#' : '' );
 
-        return [
-            // Логотип
+        // Логотип
 
-            'logo' => ( !empty( $referal_url ) ? $referal_url : $card_url ),
+        $logo_href = !empty( $referal_url ) ? $referal_url : $card_url;
+
+        return [
+
+            'logo' => $logo_href,
+
+            'logo-nofollow' => get_nofollow( $logo_href ),
 
             // Кнопка обзор учитывая тип Бонус
 
@@ -458,6 +468,16 @@ class BilletMain
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function render_nofollow( $permission )
+    {
+		if ( $permission )
+        {
+            return 'rel="nofollow"';
+        }
+
+        return '';
     }
 }
 
