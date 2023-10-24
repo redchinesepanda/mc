@@ -235,27 +235,41 @@ class BilletMain
 
         $logo_href = !empty( $referal_url ) ? $referal_url : $card_url;
 
+        // Кнопка обзор учитывая тип Бонус
+
+        $review_href = !empty( $filter['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url;
+
+        // Название БК
+
+        $title_href = !empty( $card_url ) ? $card_url : $referal_url;
+
+        // Заголовок бонуса учитывая локаль Казахстан
+
+        $bonus_href = $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops );
+
+        // Кнопка играть
+
+        $play_href = !empty( $referal_url ) ? $referal_url : $oops;
+
         return [
 
             'logo' => $logo_href,
 
             'logo-nofollow' => self::get_nofollow( $logo_href ),
 
-            // Кнопка обзор учитывая тип Бонус
+            'review' => $review_href,
 
-            'review' => ( !empty( $filter['review']['type'] ) && !empty( $bonus_url ) ? $bonus_url : $card_url ),
+            'title' => $title_href,
 
-            // Название БК
-
-            'title' => ( !empty( $card_url ) ? $card_url : $referal_url ),
-
-            // Заголовок бонуса учитывая локаль Казахстан
+            'title-nofollow' => self::get_nofollow( $title_href ),
         
-            'bonus' => ( $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops ) ),
+            'bonus' => $bonus_href,
 
-            // Кнопка играть
+            'bonus-nofollow' => self::get_nofollow( $bonus_href ),
 
-            'play' =>  ( !empty( $referal_url ) ? $referal_url : $oops ),
+            'play' => $play_href,
+
+            'play-nofollow' => self::get_nofollow( $play_href ),
         ];
     }
 
