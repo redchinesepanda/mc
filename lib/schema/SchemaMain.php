@@ -30,6 +30,10 @@ class SchemaMain
 				}
 			}
 		}
+
+		LegalDebug::debug( [
+			'data' => $data,
+		] );
 		
 		return json_encode( $data );
 	}
