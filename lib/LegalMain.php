@@ -58,6 +58,8 @@ class LegalMain
 		LegalComponents::register_functions();
 	
 		ToolsMain::register();
+	
+		SchemaMain::register();
 
 		if ( self::check_admin() )
 		{
@@ -84,8 +86,6 @@ class LegalMain
 			WPMLMain::register();
 	
 			YoastMain::register();
-	
-			SchemaMain::register();
 	
 			BaseMain::register();
 	
