@@ -32,7 +32,7 @@ class SchemaMain
 		}
 
 		LegalDebug::debug( [
-			'data' => $data,
+			'markup' => $markup,
 		] );
 		
 		return json_encode( $data );
