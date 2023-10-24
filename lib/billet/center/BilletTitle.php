@@ -34,6 +34,8 @@ class BilletTitle extends LegalDebug
 
         $args = BilletMain::href( $billet['url']['title'] );
 
+        $args['nofollow'] = $billet['url']['title-nofollow'];
+
         $args['id'] = $billet['id'];
 
         $args['index'] = $billet['index'];
