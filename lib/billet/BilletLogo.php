@@ -63,7 +63,7 @@ class BilletLogo
         LegalDebug::debug( [
             'function' => 'BilletLogo::get',
 
-            'args' => $args,
+            'billet' => $billet,
         ] );
 
         return $args;
