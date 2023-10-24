@@ -42,10 +42,6 @@ class SchemaMain
 				}
 			}
 		}
-
-		LegalDebug::debug( [
-			'markup' => $markup,
-		] );
 		
 		return json_encode( $data );
 	}
