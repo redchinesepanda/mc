@@ -96,6 +96,8 @@ class BilletBonus
             {
                 $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
+                $args[ 'nofollow' ] = $billet[ 'url' ][ 'title-nofollow' ];
+
                 $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
 
                 $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
