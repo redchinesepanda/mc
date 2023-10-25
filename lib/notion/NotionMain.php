@@ -20,13 +20,13 @@ class NotionMain
 			LegalDebug::die( [
 				'function' => 'NotionMain::billet_list',
 
-				'meta_id' => $meta_id,
+				// 'meta_id' => $meta_id,
 
-				'post_id' => $post_id,
+				// 'post_id' => $post_id,
 
-				'meta_key' => $meta_key,
+				// 'meta_key' => $meta_key,
 
-				'meta_value' => $meta_value,
+				'meta_value_json_decode' => json_decode( $meta_value ),
 			] );
 		}
 	}
