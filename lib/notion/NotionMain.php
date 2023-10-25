@@ -7,6 +7,8 @@ class NotionMain
 		$handler = new self();
 
 		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
+
+		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 	}
 
 	const ACF_KEY = [
@@ -104,6 +106,17 @@ class NotionMain
 		}
 
 		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
+	}
+
+	public static function billet_list_show( $post )
+	{
+		$field = get_field( self::ACF_FIELD[ 'parts' ], $post->ID );
+			
+		LegalDebug::die( [
+			'function' => 'NotionMain::billet_list_show',
+
+			'field' => $field,
+		] );
 	}
 }
 
