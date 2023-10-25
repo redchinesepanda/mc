@@ -112,7 +112,7 @@ class NotionMain
 	{
 		$field = get_field( self::ACF_FIELD[ 'parts' ], $post->ID );
 			
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
 			'field' => $field,
