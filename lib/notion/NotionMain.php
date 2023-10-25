@@ -99,9 +99,9 @@ class NotionMain
 
 			self::BILLET_LIST_PARTS_KEY[ 'feature' ] => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 			
-			// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
+			self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
 
-			self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
+			// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
 		];
 	}
 
