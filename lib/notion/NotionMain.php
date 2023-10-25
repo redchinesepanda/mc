@@ -19,6 +19,16 @@ class NotionMain
 		'parts' => 'billet-list-parts',
 	];
 
+	const BILLET_LIST_PARTS_KEY = [
+		'icon' => 'field_6412f81a9499e',
+
+		'direction' => 'field_6412f8a49499f',
+
+		'feature' => 'field_6492f753cfa1c',
+
+		'items' => 'field_6412f9254d88b',
+	];
+
 	const BILLET_LIST_PARTS = [
 		'icon' => 'billet-list-part-icon',
 
@@ -74,11 +84,11 @@ class NotionMain
 			foreach ( $lists as $list )
 			{
 				$row = [
-					self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+					self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS_KEY[ 'icon' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+					self::BILLET_LIST_PARTS_KEY[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS_KEY[ 'direction' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+					self::BILLET_LIST_PARTS_KEY[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS_KEY[ 'feature' ] ],
 					
 					// self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
