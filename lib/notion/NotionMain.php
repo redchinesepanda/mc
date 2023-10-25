@@ -90,7 +90,7 @@ class NotionMain
 	
 					self::BILLET_LIST_PARTS_KEY[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 					
-					// self::BILLET_LIST_PARTS[ 'items' ]  => [],
+					self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
 				];
 				
 				$result = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
