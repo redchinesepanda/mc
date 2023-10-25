@@ -52,13 +52,13 @@ class NotionMain
 			foreach ( $notion_lists as $notion_list )
 			{
 				$row = [
-					const::BILLET_LIST_PARTS[ 'icon' ] => $notion_list[ const::BILLET_LIST_PARTS[ 'icon' ] ],
+					self::BILLET_LIST_PARTS[ 'icon' ] => $notion_list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
 	
-					const::BILLET_LIST_PARTS[ 'direction' ]   => $notion_list[ const::BILLET_LIST_PARTS[ 'direction' ] ],
+					self::BILLET_LIST_PARTS[ 'direction' ]   => $notion_list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 	
-					const::BILLET_LIST_PARTS[ 'feature' ]  => $notion_list[ const::BILLET_LIST_PARTS[ 'feature' ] ],
+					self::BILLET_LIST_PARTS[ 'feature' ]  => $notion_list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 					
-					const::BILLET_LIST_PARTS[ 'items' ]  => [],
+					self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
 				
 				add_row( self::ACF_FIELD[ 'parts' ], $row );
