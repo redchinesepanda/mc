@@ -17,7 +17,7 @@ class NotionMain
 	{
 		if ( self::META_FIELD[ 'list' ] == $meta_key )
 		{
-			LegalDebug::debug( [
+			LegalDebug::die( [
 				'function' => 'NotionMain::billet_list',
 
 				'meta_id' => $meta_id,
