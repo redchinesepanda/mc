@@ -85,6 +85,8 @@ class BilletBonus
         {
             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
+            $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
+
             $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
 
             $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
@@ -96,7 +98,7 @@ class BilletBonus
             {
                 $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
 
-                $args[ 'nofollow' ] = $billet[ 'url' ][ 'title-nofollow' ];
+                $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
 
                 $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
 
