@@ -109,17 +109,17 @@ class NotionMain
 
 	public static function update_value_parts( $value, $post_id, $field, $original )
 	{
-		LegalDebug::die( [
-			'function' => 'NotionMain::update_value_parts',
+		// LegalDebug::die( [
+		// 	'function' => 'NotionMain::update_value_parts',
 
-			'value' => $value,
+		// 	'value' => $value,
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'field' => $field,
+		// 	'field' => $field,
 
-			'original' => $original,
-		] );
+		// 	'original' => $original,
+		// ] );
 
 		return $value;
 	}
