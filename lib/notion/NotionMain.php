@@ -10,7 +10,7 @@ class NotionMain
 
 		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
-		add_filter('acf/update_value/key=' . self::ACF_KEY[ 'parts' ], 'update_value_parts', 10, 4);
+		// add_filter('acf/update_value/key=' . self::ACF_KEY[ 'parts' ], 'update_value_parts', 10, 4);
 	}
 
 	const ACF_KEY = [
