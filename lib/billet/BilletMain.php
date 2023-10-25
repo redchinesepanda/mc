@@ -181,6 +181,10 @@ class BilletMain
         return str_contains( $url, '/go/' );
     }
 
+    const LOCALE_BONUS = [
+        'ru_KZ',
+    ];
+
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
@@ -218,14 +222,20 @@ class BilletMain
 
         // $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )[ 'locale' ];
 
-        $locale = 'en';
+        $locale = WPMLMain::get_locale();
 
-        $details = WPMLMain::get_post_language_details( $id );
+        LegalDebug::debug( [
+            'locale' => $locale,
+        ] );
+        
+        // $locale = 'en';
 
-        if ( !empty( $details ) && !is_wp_error( $details ) )
-        {
-            $locale = $details[ 'locale' ];
-        }
+        // $details = WPMLMain::get_post_language_details( $id );
+
+        // if ( !empty( $details ) && !is_wp_error( $details ) )
+        // {
+        //     $locale = $details[ 'locale' ];
+        // }
 
         // Oops если есть
 
@@ -245,7 +255,20 @@ class BilletMain
 
         // Заголовок бонуса учитывая локаль Казахстан
 
-        $bonus_href = $locale == 'ru_KZ' ? $bonus_url : ( !empty( $referal_url ) ? $referal_url : $oops );
+        $bonus_href = '';
+
+        if ( in_array( $locale, self::LOCALE_BONUS ) )
+        {
+            if ( !empty ( $bonus_url ) )
+            {
+                $bonus_href = $bonus_url;
+            }
+        }
+
+        if ( empty( $bonus_href ) )
+        {
+            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
+        }
 
         // Кнопка играть
 
