@@ -121,11 +121,11 @@ class NotionMain
 
 				$result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
 
-				// LegalDebug::debug( [
-				// 	'parts' => self::ACF_KEY[ 'parts' ],
+				LegalDebug::debug( [
+					'parts' => self::ACF_KEY[ 'parts' ],
 
-				// 	'row' => $row,
-				// ] );
+					'row' => $row,
+				] );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
