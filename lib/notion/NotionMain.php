@@ -11,7 +11,7 @@ class NotionMain
 
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
-	]
+	];
 
 	const BILLET_LIST_PARTS = [
 		'icon' => 'billet-list-part-icon',
@@ -21,11 +21,11 @@ class NotionMain
 		'feature' => 'billet-list-part-feature',
 
 		'items' => 'billet-list-part-items',
-	]
+	];
 
 	const BILLET_LIST_PART_ITEMS = [
 		'title' => 'billet-list-part-item-title',
-	]
+	];
 
 	const META_FIELD = [
 		'list' => 'notion_billet_list',
