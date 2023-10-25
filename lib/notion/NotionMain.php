@@ -119,15 +119,9 @@ class NotionMain
 
 			foreach ( $lists as $list )
 			{
-				$row = self::get_row( $list );
+				$rows[] = self::get_row( $list );
 
 				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
-
-				LegalDebug::debug( [
-					'parts' => self::ACF_KEY[ 'parts' ],
-
-					'row' => $row,
-				] );
 			}
 
 			if ( !empty( $rows ) )
@@ -147,6 +141,8 @@ class NotionMain
 				'meta_key' => $meta_key,
 
 				'lists' => $lists,
+
+				'rows' => $rows,
 
 				'field' => $field,
 
