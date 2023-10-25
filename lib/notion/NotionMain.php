@@ -126,7 +126,7 @@ class NotionMain
 				// ] );
 			}
 
-			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
+			// $field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
 			
 			// LegalDebug::die( [
 			// 	'function' => 'NotionMain::billet_list',
