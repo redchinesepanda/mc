@@ -120,6 +120,8 @@ class NotionMain
 
 			'original' => $original,
 		] );
+
+		return $value;
 	}
 
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
