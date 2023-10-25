@@ -9,6 +9,8 @@ class NotionMain
 		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
 
 		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+
+		add_filter('acf/update_value/key=' . self::ACF_KEY[ 'parts' ], 'update_value_parts', 10, 4);
 	}
 
 	const ACF_KEY = [
@@ -103,6 +105,21 @@ class NotionMain
 
 			// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
 		];
+	}
+
+	public static function update_value_parts( $value, $post_id, $field, $original )
+	{
+		LegalDebug::die( [
+			'function' => 'NotionMain::update_value_parts',
+
+			'value' => $value,
+
+			'post_id' => $post_id,
+
+			'field' => $field,
+
+			'original' => $original,
+		] );
 	}
 
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
