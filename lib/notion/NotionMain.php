@@ -37,18 +37,6 @@ class NotionMain
 		{
 			$notion_lists = (array) json_decode( $meta_value, true );
 
-			LegalDebug::die( [
-				'function' => 'NotionMain::billet_list',
-
-				// 'meta_id' => $meta_id,
-
-				// 'post_id' => $post_id,
-
-				// 'meta_key' => $meta_key,
-
-				'notion_lists' => $notion_lists,
-			] );
-
 			foreach ( $notion_lists as $notion_list )
 			{
 				$row = [
@@ -63,6 +51,22 @@ class NotionMain
 				
 				add_row( self::ACF_FIELD[ 'parts' ], $row );
 			}
+
+			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
+			
+			LegalDebug::die( [
+				'function' => 'NotionMain::billet_list',
+
+				// 'meta_id' => $meta_id,
+
+				// 'post_id' => $post_id,
+
+				// 'meta_key' => $meta_key,
+
+				'notion_lists' => $notion_lists,
+
+				'field' => $field,
+			] );
 		}
 	}
 }
