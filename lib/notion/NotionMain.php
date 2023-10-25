@@ -33,7 +33,7 @@ class NotionMain
 
 	public static function get_lists( $item )
 	{
-		if ( array_is_list( $item ) )
+		if ( self::array_is_list( $item ) )
 		{
 			return $item;
 		}
@@ -80,6 +80,16 @@ class NotionMain
 				'field' => $field,
 			] );
 		}
+	}
+
+	public static function array_is_list( array $arr )
+	{
+		if ( $arr === [] )
+		{
+			return true;
+		}
+
+		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
 	}
 }
 
