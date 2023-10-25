@@ -61,7 +61,7 @@ class NotionMain
 					self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
 				
-				add_row( self::ACF_FIELD[ 'parts' ], $row );
+				add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
