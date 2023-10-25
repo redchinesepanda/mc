@@ -49,6 +49,8 @@ class NotionMain
 
 			$lists = self::get_lists( $notion_lists );
 
+			$result = [];
+
 			foreach ( $lists as $list )
 			{
 				$row = [
@@ -61,7 +63,7 @@ class NotionMain
 					self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
 				
-				add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
+				$result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
@@ -78,6 +80,8 @@ class NotionMain
 				'notion_lists' => $notion_lists,
 
 				'field' => $field,
+
+				'result' => $result,
 			] );
 		}
 	}
