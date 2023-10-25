@@ -31,20 +31,32 @@ class NotionMain
 		'list' => 'notion_billet_list',
 	];
 
+	public static function get_lists( $item )
+	{
+		if ( array_is_list( $item ) )
+		{
+			return $item;
+		}
+
+		return [ $item ];
+	}
+
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
 	{
 		if ( self::META_FIELD[ 'list' ] == $meta_key )
 		{
-			$notion_lists = array_merge( (array) json_decode( $meta_value, true ) );
+			$notion_lists = json_decode( $meta_value, true );
 
-			foreach ( $notion_lists as $notion_list )
+			$lists = self::get_lists( $notion_lists );
+
+			foreach ( $lists as $list )
 			{
 				$row = [
-					self::BILLET_LIST_PARTS[ 'icon' ] => $notion_list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+					self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'direction' ]   => $notion_list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+					self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'feature' ]  => $notion_list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+					self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 					
 					self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
