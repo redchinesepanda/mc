@@ -223,10 +223,6 @@ class BilletMain
         // $locale = ( apply_filters( 'wpml_post_language_details', NULL, $id ) )[ 'locale' ];
 
         $locale = WPMLMain::get_locale();
-
-        LegalDebug::debug( [
-            'locale' => $locale,
-        ] );
         
         // $locale = 'en';
 
