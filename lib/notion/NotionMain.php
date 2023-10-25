@@ -110,7 +110,7 @@ class NotionMain
 
 	public static function billet_list_show( $post )
 	{
-		$field = get_field( self::ACF_FIELD[ 'parts' ], $post->ID );
+		$field = get_field( self::ACF_KEY[ 'parts' ], $post->ID );
 			
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
