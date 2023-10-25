@@ -35,7 +35,7 @@ class NotionMain
 	{
 		if ( self::META_FIELD[ 'list' ] == $meta_key )
 		{
-			$notion_lists = (array) json_decode( $meta_value, true );
+			$notion_lists = array_merge( (array) json_decode( $meta_value, true ) );
 
 			foreach ( $notion_lists as $notion_list )
 			{
