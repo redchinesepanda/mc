@@ -53,17 +53,19 @@ class NotionMain
 
 			foreach ( $lists as $list )
 			{
-				$row = [
-					self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+				// $row = [
+				// 	self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+				// 	self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 	
-					self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+				// 	self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 					
-					self::BILLET_LIST_PARTS[ 'items' ]  => [],
-				];
+				// 	self::BILLET_LIST_PARTS[ 'items' ]  => [],
+				// ];
 				
-				$result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
+				// $result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
+				
+				$result[] = add_row( self::ACF_FIELD[ 'parts' ], $list, $post_id );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
