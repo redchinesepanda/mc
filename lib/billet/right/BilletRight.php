@@ -15,6 +15,8 @@ class BilletRight
     private static function get_play( $billet )
     {
         $args = BilletMain::href( $billet['url']['play'] );
+
+        $args[ 'nofollow' ] = $billet[ 'url' ][ 'play-nofollow' ];
         
         $args['label'] = __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN );
 
