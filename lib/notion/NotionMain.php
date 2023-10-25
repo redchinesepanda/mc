@@ -7,7 +7,6 @@ class NotionMain
 		$handler = new self();
 
 		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
-
 	}
 
 	const META_FIELD = [
@@ -26,7 +25,7 @@ class NotionMain
 				'post_id' => $post_id,
 
 				'meta_key' => $meta_key,
-				
+
 				'meta_value' => $meta_value,
 			] );
 		}
