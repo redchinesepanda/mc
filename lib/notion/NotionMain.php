@@ -124,10 +124,12 @@ class NotionMain
 				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
 			}
 
-			if ( !empty( $rows ) )
-			{
-				$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
-			}
+			// if ( !empty( $rows ) )
+			// {
+			// 	$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
+			// }
+
+			update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
 
 			// $field = get_field( self::ACF_KEY[ 'parts' ], $post_id );
 			
