@@ -57,22 +57,24 @@ class NotionMain
 
 			$result = [];
 
-			foreach ( $lists as $list )
-			{
-				// $row = [
-				// 	self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+			$result[] = update_field( self::ACF_KEY[ 'parts' ], $lists, $post_id )
+
+			// foreach ( $lists as $list )
+			// {
+			// 	// $row = [
+			// 	// 	self::BILLET_LIST_PARTS[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
 	
-				// 	self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+			// 	// 	self::BILLET_LIST_PARTS[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 	
-				// 	self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+			// 	// 	self::BILLET_LIST_PARTS[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 					
-				// 	self::BILLET_LIST_PARTS[ 'items' ]  => [],
-				// ];
+			// 	// 	self::BILLET_LIST_PARTS[ 'items' ]  => [],
+			// 	// ];
 				
-				// $result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
+			// 	// $result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
 				
-				$result[] = add_row( self::ACF_KEY[ 'parts' ], $list, $post_id );
-			}
+			// 	$result[] = add_row( self::ACF_KEY[ 'parts' ], $list, $post_id );
+			// }
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
 			
@@ -91,28 +93,6 @@ class NotionMain
 
 			// 	'result' => $result,
 			// ] );
-
-			update_post_meta(
-				76,
-				
-				self::META_FIELD[ 'list-debug' ],
-
-				[
-					'function' => 'NotionMain::billet_list',
-	
-					'meta_id' => $meta_id,
-	
-					'post_id' => $post_id,
-	
-					'meta_key' => $meta_key,
-	
-					'lists' => $lists,
-	
-					'field' => $field,
-	
-					'result' => $result,
-				]
-			);
 		}
 	}
 
