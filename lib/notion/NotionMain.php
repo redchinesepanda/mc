@@ -33,6 +33,8 @@ class NotionMain
 
 	const META_FIELD = [
 		'list' => 'notion_billet_list',
+
+		'list-debug' => 'notion_billet_list_debug',
 	];
 
 	public static function get_lists( $item )
@@ -89,6 +91,28 @@ class NotionMain
 
 			// 	'result' => $result,
 			// ] );
+
+			update_post_meta(
+				76,
+				
+				self::META_FIELD[ 'list-debug' ],
+
+				[
+					'function' => 'NotionMain::billet_list',
+	
+					'meta_id' => $meta_id,
+	
+					'post_id' => $post_id,
+	
+					'meta_key' => $meta_key,
+	
+					'lists' => $lists,
+	
+					'field' => $field,
+	
+					'result' => $result,
+				]
+			);
 		}
 	}
 
