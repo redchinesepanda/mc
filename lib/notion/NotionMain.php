@@ -39,6 +39,10 @@ class NotionMain
 		'items' => 'billet-list-part-items',
 	];
 
+	const BILLET_LIST_PART_ITEMS_KEY = [
+		'title' => 'field_6412f96d4d88c',
+	];
+
 	const BILLET_LIST_PART_ITEMS = [
 		'title' => 'billet-list-part-item-title',
 	];
@@ -69,6 +73,36 @@ class NotionMain
 		return [ $item ];
 	}
 
+	public static function get_row_items( $list )
+	{
+		$row_items = [];
+
+		if ( !empty( $list[ self::BILLET_LIST_PARTS[ 'items' ] ] ) )
+		{
+			foreach (  $list[ self::BILLET_LIST_PARTS[ 'items' ] ] as $item )
+			{
+				$row_items[] = [
+					self::BILLET_LIST_PART_ITEMS_KEY[ 'title' ] => $item[ self::BILLET_LIST_PART_ITEMS[ 'title' ] ],
+				];
+			}
+		}
+
+		return $row_items;
+	}
+
+	public static function get_row( $list )
+	{
+		return [
+			self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+
+			self::BILLET_LIST_PARTS_KEY[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+
+			self::BILLET_LIST_PARTS_KEY[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+			
+			self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
+		];
+	}
+
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
 	{
 		if ( self::META_FIELD[ 'list' ] == $meta_key )
@@ -77,30 +111,12 @@ class NotionMain
 
 			$lists = self::get_lists( $notion_lists );
 
-			$results = [];
-
-			// $result[] = update_field( self::ACF_KEY[ 'parts' ], $lists, $post_id );
-
 			foreach ( $lists as $list )
 			{
-				$row = [
-					self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
-	
-					self::BILLET_LIST_PARTS_KEY[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
-	
-					self::BILLET_LIST_PARTS_KEY[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
-					
-					self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
-				];
-				
-				$result = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
-
-				$results[] = $result;
-				
-				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $list, $post_id );
+				add_row( self::ACF_KEY[ 'parts' ], self::get_row( $list ), $post_id );
 			}
 
-			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
+			// $field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
 			
 			// LegalDebug::die( [
 			// 	'function' => 'NotionMain::billet_list',
@@ -114,8 +130,6 @@ class NotionMain
 			// 	'lists' => $lists,
 
 			// 	'field' => $field,
-
-			// 	'results' => $results,
 			// ] );
 		}
 	}
