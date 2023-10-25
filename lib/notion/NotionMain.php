@@ -115,17 +115,24 @@ class NotionMain
 
 			$lists = self::get_lists( $notion_lists );
 
+			$rows = [];
+
 			foreach ( $lists as $list )
 			{
 				$row = self::get_row( $list );
 
-				$result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
+				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
 
 				LegalDebug::debug( [
 					'parts' => self::ACF_KEY[ 'parts' ],
 
 					'row' => $row,
 				] );
+			}
+
+			if ( !empty( $rows ) )
+			{
+				$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
