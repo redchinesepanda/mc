@@ -9,6 +9,10 @@ class NotionMain
 		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
 	}
 
+	const ACF_KEY = [
+		'parts' => 'field_6412f442f2c53',
+	];
+
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
 	];
@@ -65,7 +69,7 @@ class NotionMain
 				
 				// $result[] = add_row( self::ACF_FIELD[ 'parts' ], $row, $post_id );
 				
-				$result[] = add_row( self::ACF_FIELD[ 'parts' ], $list, $post_id );
+				$result[] = add_row( self::ACF_KEY[ 'parts' ], $list, $post_id );
 			}
 
 			$field = get_field( self::ACF_FIELD[ 'parts' ], $post_id );
