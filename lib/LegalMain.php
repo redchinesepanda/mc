@@ -68,6 +68,8 @@ class LegalMain
 			AdminMain::register();
 
 			ReviewMain::register_functions();
+
+			NotionMain::register_functions();
 		}
 	}
 

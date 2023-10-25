@@ -318,14 +318,22 @@ class ReviewMain
             $graph[] = $hwto;
         }
 
+        // return json_encode(
+        //     [
+        //         "@context" => "https://schema.org",
+
+        //         "@graph" => $graph,
+        //     ],
+
+        //     JSON_UNESCAPED_UNICODE
+        // );
+        
         return json_encode(
             [
                 "@context" => "https://schema.org",
 
                 "@graph" => $graph,
-            ],
-
-            JSON_UNESCAPED_UNICODE
+            ]
         );
     }
 
