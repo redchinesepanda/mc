@@ -79,7 +79,7 @@ class NotionMain
 
 				// 'meta_key' => $meta_key,
 
-				'notion_lists' => $notion_lists,
+				'lists' => $lists,
 
 				'field' => $field,
 
