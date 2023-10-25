@@ -15,7 +15,9 @@ class SchemaMain
 
 		if ( LegalComponents::check() )
 		{
-			return json_encode( $data, JSON_UNESCAPED_UNICODE );
+			// return json_encode( $data, JSON_UNESCAPED_UNICODE );
+			
+			return json_encode( $data );
 		}
 
 		if ( !empty( $markup ) )
@@ -43,7 +45,9 @@ class SchemaMain
 			}
 		}
 		
-		return json_encode( $data, JSON_UNESCAPED_UNICODE );
+		// return json_encode( $data, JSON_UNESCAPED_UNICODE );
+		
+		return json_encode( $data );
 	}
 }
 
