@@ -129,25 +129,25 @@ class NotionMain
 				$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
 			}
 
-			$field = get_field( self::ACF_KEY[ 'parts' ], $post_id );
+			// $field = get_field( self::ACF_KEY[ 'parts' ], $post_id );
 			
-			LegalDebug::die( [
-				'function' => 'NotionMain::billet_list',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionMain::billet_list',
 
-				'meta_id' => $meta_id,
+			// 	'meta_id' => $meta_id,
 
-				'post_id' => $post_id,
+			// 	'post_id' => $post_id,
 
-				'meta_key' => $meta_key,
+			// 	'meta_key' => $meta_key,
 
-				'lists' => $lists,
+			// 	'lists' => $lists,
 
-				'rows' => $rows,
+			// 	'rows' => $rows,
 
-				'field' => $field,
+			// 	'field' => $field,
 
-				'result' => $result,
-			] );
+			// 	'result' => $result,
+			// ] );
 		}
 	}
 
