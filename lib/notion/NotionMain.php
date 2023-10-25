@@ -39,6 +39,16 @@ class NotionMain
 		'list-debug' => 'notion_billet_list_debug',
 	];
 
+	public static function array_is_list( array $arr )
+	{
+		if ( $arr === [] )
+		{
+			return true;
+		}
+
+		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
+	}
+
 	public static function get_lists( $item )
 	{
 		if ( self::array_is_list( $item ) )
@@ -57,7 +67,7 @@ class NotionMain
 
 			$lists = self::get_lists( $notion_lists );
 
-			$result = [];
+			$results = [];
 
 			// $result[] = update_field( self::ACF_KEY[ 'parts' ], $lists, $post_id );
 
@@ -73,7 +83,9 @@ class NotionMain
 					// self::BILLET_LIST_PARTS[ 'items' ]  => [],
 				];
 				
-				$result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
+				$result = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
+
+				$results[] = $result;
 				
 				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $list, $post_id );
 			}
@@ -93,19 +105,9 @@ class NotionMain
 
 				'field' => $field,
 
-				'result' => $result,
+				'results' => $results,
 			] );
 		}
-	}
-
-	public static function array_is_list( array $arr )
-	{
-		if ( $arr === [] )
-		{
-			return true;
-		}
-
-		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
 	}
 
 	public static function billet_list_show( $post )
