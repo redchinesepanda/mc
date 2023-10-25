@@ -95,9 +95,9 @@ class NotionMain
 		return [
 			self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
 
-			self::BILLET_LIST_PARTS_KEY[ 'direction' ]   => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+			self::BILLET_LIST_PARTS_KEY[ 'direction' ] => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 
-			self::BILLET_LIST_PARTS_KEY[ 'feature' ]  => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+			self::BILLET_LIST_PARTS_KEY[ 'feature' ] => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 			
 			// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
 
