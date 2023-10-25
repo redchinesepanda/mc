@@ -6,7 +6,7 @@ class NotionMain
 	{
 		$handler = new self();
 
-		// add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
+		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 10, 4 );
 
 		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
