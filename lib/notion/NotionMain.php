@@ -55,9 +55,9 @@ class NotionMain
 
 			$lists = self::get_lists( $notion_lists );
 
-			$result = [];
+			// $result = [];
 
-			$result[] = update_field( self::ACF_KEY[ 'parts' ], $lists, $post_id )
+			$result[] = update_field( self::ACF_KEY[ 'parts' ], $lists, $post_id );
 
 			// foreach ( $lists as $list )
 			// {
