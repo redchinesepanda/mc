@@ -26,7 +26,7 @@ class NotionMain
 
 				// 'meta_key' => $meta_key,
 
-				'meta_value_json_decode' => json_decode( $meta_value ),
+				'meta_value_json_decode' => json_decode( $meta_value, true ),
 			] );
 		}
 	}
