@@ -8,10 +8,18 @@ class NotionMain
 	{
 		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
 	}
+
+	const META_FIELD = [
+		'list' => 'notion_billet_list',
+
+		'list-debug' => 'notion_billet_list_debug',
+
+		'about-logo' => 'notion_about_logo',
+	];
 
 	const ACF_KEY = [
 		'parts' => 'field_6412f442f2c53',
@@ -31,16 +39,20 @@ class NotionMain
 		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
 	}
 
-	// public static function billet_list_show( $post )
-	// {
-	// 	$field = get_field( self::ACF_KEY[ 'parts' ], $post->ID );
-			
-	// 	LegalDebug::debug( [
-	// 		'function' => 'NotionMain::billet_list_show',
+	public static function billet_list_show( $post )
+	{
+		$field = get_field( self::META_FIELD[ 'about-logo' ], $post->ID );
 
-	// 		'field' => $field,
-	// 	] );
-	// }
+		$meta_value = get_post_meta( $post->ID, self::META_FIELD[ 'about-logo' ], true );
+			
+		LegalDebug::debug( [
+			'function' => 'NotionMain::billet_list_show',
+
+			'field' => $field,
+
+			'meta_value' => $meta_value,
+		] );
+	}
 
 	// const BILLET_LIST_PARTS_KEY = [
 	// 	'icon' => 'field_6412f81a9499e',
