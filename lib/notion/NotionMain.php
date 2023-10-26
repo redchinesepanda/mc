@@ -6,13 +6,9 @@ class NotionMain
 	{
 		$handler = new self();
 
-		add_action( 'added_post_meta', [ $handler, 'billet_list' ], 11, 4 );
-
-		add_action( 'updated_post_meta', [ $handler, 'billet_list' ], 11, 4 );
-
 		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
-		// add_filter('acf/update_value/key=' . self::ACF_KEY[ 'parts' ], 'update_value_parts', 10, 4);
+		NotionList::register_functions();
 	}
 
 	const ACF_KEY = [
@@ -21,40 +17,6 @@ class NotionMain
 
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
-	];
-
-	const BILLET_LIST_PARTS_KEY = [
-		'icon' => 'field_6412f81a9499e',
-
-		'direction' => 'field_6412f8a49499f',
-
-		'feature' => 'field_6492f753cfa1c',
-
-		'items' => 'field_6412f9254d88b',
-	];
-
-	const BILLET_LIST_PARTS = [
-		'icon' => 'billet-list-part-icon',
-
-		'direction' => 'billet-list-part-direction',
-
-		'feature' => 'billet-list-part-feature',
-
-		'items' => 'billet-list-part-items',
-	];
-
-	const BILLET_LIST_PART_ITEMS_KEY = [
-		'title' => 'field_6412f96d4d88c',
-	];
-
-	const BILLET_LIST_PART_ITEMS = [
-		'title' => 'billet-list-part-item-title',
-	];
-
-	const META_FIELD = [
-		'list' => 'notion_billet_list',
-
-		'list-debug' => 'notion_billet_list_debug',
 	];
 
 	public static function array_is_list( array $arr )
@@ -67,123 +29,140 @@ class NotionMain
 		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
 	}
 
-	public static function get_lists( $item )
-	{
-		if ( self::array_is_list( $item ) )
-		{
-			return $item;
-		}
-
-		return [ $item ];
-	}
-
-	public static function get_row_items( $list )
-	{
-		$row_items = [];
-
-		if ( !empty( $list[ self::BILLET_LIST_PARTS[ 'items' ] ] ) )
-		{
-			foreach (  $list[ self::BILLET_LIST_PARTS[ 'items' ] ] as $item )
-			{
-				$row_items[] = [
-					self::BILLET_LIST_PART_ITEMS_KEY[ 'title' ] => $item[ self::BILLET_LIST_PART_ITEMS[ 'title' ] ],
-				];
-			}
-		}
-
-		return $row_items;
-	}
-
-	public static function get_row( $list )
-	{
-		return [
-			self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
-
-			self::BILLET_LIST_PARTS_KEY[ 'direction' ] => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
-
-			self::BILLET_LIST_PARTS_KEY[ 'feature' ] => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+	// public static function billet_list_show( $post )
+	// {
+	// 	$field = get_field( self::ACF_KEY[ 'parts' ], $post->ID );
 			
-			self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
+	// 	LegalDebug::debug( [
+	// 		'function' => 'NotionMain::billet_list_show',
 
-			// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
-		];
-	}
+	// 		'field' => $field,
+	// 	] );
+	// }
 
-	public static function update_value_parts( $value, $post_id, $field, $original )
-	{
-		// LegalDebug::die( [
-		// 	'function' => 'NotionMain::update_value_parts',
+	// const BILLET_LIST_PARTS_KEY = [
+	// 	'icon' => 'field_6412f81a9499e',
 
-		// 	'value' => $value,
+	// 	'direction' => 'field_6412f8a49499f',
 
-		// 	'post_id' => $post_id,
+	// 	'feature' => 'field_6492f753cfa1c',
 
-		// 	'field' => $field,
+	// 	'items' => 'field_6412f9254d88b',
+	// ];
 
-		// 	'original' => $original,
-		// ] );
+	// const BILLET_LIST_PARTS = [
+	// 	'icon' => 'billet-list-part-icon',
 
-		return $value;
-	}
+	// 	'direction' => 'billet-list-part-direction',
 
-	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
-	{
-		if ( self::META_FIELD[ 'list' ] == $meta_key )
-		{
-			$result = [];
+	// 	'feature' => 'billet-list-part-feature',
+
+	// 	'items' => 'billet-list-part-items',
+	// ];
+
+	// const BILLET_LIST_PART_ITEMS_KEY = [
+	// 	'title' => 'field_6412f96d4d88c',
+	// ];
+
+	// const BILLET_LIST_PART_ITEMS = [
+	// 	'title' => 'billet-list-part-item-title',
+	// ];
+
+	// const META_FIELD = [
+	// 	'list' => 'notion_billet_list',
+
+	// 	'list-debug' => 'notion_billet_list_debug',
+	// ];
+
+	// public static function get_lists( $item )
+	// {
+	// 	if ( self::array_is_list( $item ) )
+	// 	{
+	// 		return $item;
+	// 	}
+
+	// 	return [ $item ];
+	// }
+
+	// public static function get_row_items( $list )
+	// {
+	// 	$row_items = [];
+
+	// 	if ( !empty( $list[ self::BILLET_LIST_PARTS[ 'items' ] ] ) )
+	// 	{
+	// 		foreach (  $list[ self::BILLET_LIST_PARTS[ 'items' ] ] as $item )
+	// 		{
+	// 			$row_items[] = [
+	// 				self::BILLET_LIST_PART_ITEMS_KEY[ 'title' ] => $item[ self::BILLET_LIST_PART_ITEMS[ 'title' ] ],
+	// 			];
+	// 		}
+	// 	}
+
+	// 	return $row_items;
+	// }
+
+	// public static function get_row( $list )
+	// {
+	// 	return [
+	// 		self::BILLET_LIST_PARTS_KEY[ 'icon' ] => $list[ self::BILLET_LIST_PARTS[ 'icon' ] ],
+
+	// 		self::BILLET_LIST_PARTS_KEY[ 'direction' ] => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
+
+	// 		self::BILLET_LIST_PARTS_KEY[ 'feature' ] => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
 			
-			$notion_lists = json_decode( $meta_value, true );
+	// 		self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
 
-			$lists = self::get_lists( $notion_lists );
+	// 		// self::BILLET_LIST_PARTS_KEY[ 'items' ]  => [],
+	// 	];
+	// }
 
-			$rows = [];
-
-			foreach ( $lists as $list )
-			{
-				$rows[] = self::get_row( $list );
-
-				// $result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
-			}
-
-			// if ( !empty( $rows ) )
-			// {
-			// 	$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
-			// }
-
-			update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
-
-			// $field = get_field( self::ACF_KEY[ 'parts' ], $post_id );
+	// public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
+	// {
+	// 	if ( self::META_FIELD[ 'list' ] == $meta_key )
+	// 	{
+	// 		$result = [];
 			
-			// LegalDebug::die( [
-			// 	'function' => 'NotionMain::billet_list',
+	// 		$notion_lists = json_decode( $meta_value, true );
 
-			// 	'meta_id' => $meta_id,
+	// 		$lists = self::get_lists( $notion_lists );
 
-			// 	'post_id' => $post_id,
+	// 		$rows = [];
 
-			// 	'meta_key' => $meta_key,
+	// 		foreach ( $lists as $list )
+	// 		{
+	// 			$rows[] = self::get_row( $list );
 
-			// 	'lists' => $lists,
+	// 			// $result[] = add_row( self::ACF_KEY[ 'parts' ], $row, $post_id );
+	// 		}
 
-			// 	'rows' => $rows,
+	// 		// if ( !empty( $rows ) )
+	// 		// {
+	// 		// 	$result[] = update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
+	// 		// }
 
-			// 	'field' => $field,
+	// 		update_field( self::ACF_KEY[ 'parts' ], $rows, $post_id );
 
-			// 	'result' => $result,
-			// ] );
-		}
-	}
-
-	public static function billet_list_show( $post )
-	{
-		$field = get_field( self::ACF_KEY[ 'parts' ], $post->ID );
+	// 		// $field = get_field( self::ACF_KEY[ 'parts' ], $post_id );
 			
-		LegalDebug::debug( [
-			'function' => 'NotionMain::billet_list_show',
+	// 		// LegalDebug::die( [
+	// 		// 	'function' => 'NotionMain::billet_list',
 
-			'field' => $field,
-		] );
-	}
+	// 		// 	'meta_id' => $meta_id,
+
+	// 		// 	'post_id' => $post_id,
+
+	// 		// 	'meta_key' => $meta_key,
+
+	// 		// 	'lists' => $lists,
+
+	// 		// 	'rows' => $rows,
+
+	// 		// 	'field' => $field,
+
+	// 		// 	'result' => $result,
+	// 		// ] );
+	// 	}
+	// }
 }
 
 ?>
