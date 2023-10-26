@@ -41,12 +41,17 @@ class NotionList
 
 	public static function get_lists( $item )
 	{
-		if ( NotionMain::array_is_list( $item ) )
+		if ( is_array( $notion_lists ) )
 		{
-			return $item;
+			if ( NotionMain::array_is_list( $item ) )
+			{
+				return $item;
+			}
+
+			return [ $item ];
 		}
 
-		return [ $item ];
+		return [];
 	}
 
 	public static function get_row_items( $list )
@@ -87,10 +92,10 @@ class NotionList
 			
 			$notion_lists = json_decode( $meta_value, true );
 			
-			if ( is_array( $notion_lists ) )
+			$lists = self::get_lists( $notion_lists );
+
+			if ( !empty( $lists ) )
 			{
-				$lists = self::get_lists( $notion_lists );
-	
 				$rows = [];
 	
 				foreach ( $lists as $list )
@@ -101,13 +106,13 @@ class NotionList
 				update_field( NotionMain::ACF_KEY[ 'parts' ], $rows, $post_id );
 			}
 
-			LegalDebug::die( [
-				'function' => 'NotionList::billet_list',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionList::billet_list',
 
-				'meta_value' => $meta_value,
+			// 	'meta_value' => $meta_value,
 
-				'notion_lists' => $notion_lists,
-			] );
+			// 	'notion_lists' => $notion_lists,
+			// ] );
 		}
 	}
 }
