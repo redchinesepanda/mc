@@ -23,7 +23,7 @@ class NotionImage
 	{
 		if ( is_array( $data ) )
 		{
-			return array_shift( $data )
+			return array_shift( $data );
 		}
 
 		return $data;
