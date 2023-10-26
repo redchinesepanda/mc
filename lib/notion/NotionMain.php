@@ -12,7 +12,7 @@ class NotionMain
 
 		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
-		// NotionList::register_functions();
+		NotionList::register_functions();
 
 		NotionImage::register_functions();
 	}
