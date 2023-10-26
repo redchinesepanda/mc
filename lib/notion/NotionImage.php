@@ -23,7 +23,7 @@ class NotionImage
 	{
 		if ( NotionMain::META_FIELD[ 'about-logo' ] == $meta_key )
 		{
-			$field = get_field( self::ACF_FIELD[ 'settings' ], $post->ID );
+			$field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post->ID );
 
 			$field[ self::SETTINGS_FIELD[ 'logo' ] ] = array_shift( $meta_value );
 
