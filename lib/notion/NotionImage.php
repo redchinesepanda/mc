@@ -33,15 +33,11 @@ class NotionImage
 	{
 		if ( NotionMain::META_FIELD[ 'about-logo' ] == $meta_key )
 		{
-			// $field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post->ID );
+			$field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post->ID );
 
-			// $field[ self::SETTINGS_FIELD[ 'logo' ] ] = self::get_image_id( $meta_value );
+			$field[ self::SETTINGS_FIELD[ 'logo' ] ] = self::get_image_id( $meta_value );
 
-			// $field = get_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::SETTINGS_FIELD[ 'logo' ], $post->ID );
-
-			// update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
-			
-			update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::SETTINGS_FIELD[ 'logo' ], self::get_image_id( $meta_value ), $post_id );
+			update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
 		}
 	}
 }
