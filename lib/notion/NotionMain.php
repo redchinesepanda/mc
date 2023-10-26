@@ -29,12 +29,16 @@ class NotionMain
 		'parts' => 'field_6412f442f2c53',
 
 		'about-logo' => 'field_6437de4fa65c9_field_6437df25a65cd',
+
+		'group' => 'field_6437de4fa65c9',
 	];
 
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
 
 		'about-logo' => 'review-about_about-logo',
+
+		'group' => 'review-about',
 	];
 
 	public static function array_is_list( array $arr )
@@ -49,24 +53,26 @@ class NotionMain
 
 	public static function billet_list_show( $post )
 	{
-		$field_about_logo_acf_field = self::ACF_FIELD[ 'about-logo' ];
+		// $field_about_logo_acf_field = self::ACF_FIELD[ 'about-logo' ];
 
-		$field_about_logo = get_field( $field_about_logo_acf_field, $post->ID );
+		// $field_about_logo = get_field( $field_about_logo_acf_field, $post->ID );
 
-		$meta_value_meta_field = self::META_FIELD[ 'about-logo' ];
+		// $meta_value_meta_field = self::META_FIELD[ 'about-logo' ];
 
-		$meta_value = get_post_meta( $post->ID, $meta_value_meta_field, true );
+		// $meta_value = get_post_meta( $post->ID, $meta_value_meta_field, true );
 			
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
-			'field_about_logo_acf_field' => $field_about_logo_acf_field,
+			// 'field_about_logo_acf_field' => $field_about_logo_acf_field,
 
-			'field_about_logo' => $field_about_logo,
+			// 'field_about_logo' => $field_about_logo,
 
-			'meta_value_meta_field' => $meta_value_meta_field,
+			// 'meta_value_meta_field' => $meta_value_meta_field,
 
-			'meta_value' => $meta_value,
+			// 'meta_value' => $meta_value,
+
+			'group' => get_field( self::ACF_FIELD[ 'group' ], $post->ID ),
 		] );
 	}
 
