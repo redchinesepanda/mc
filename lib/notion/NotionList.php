@@ -88,7 +88,7 @@ class NotionList
 	{
 		if ( NotionMain::META_FIELD[ 'list' ] == $meta_key )
 		{
-			$result = [];
+			$rows = [];
 			
 			$notion_lists = json_decode( $meta_value, true );
 			
@@ -96,7 +96,6 @@ class NotionList
 
 			if ( !empty( $lists ) )
 			{
-				$rows = [];
 	
 				foreach ( $lists as $list )
 				{
