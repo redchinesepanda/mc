@@ -59,26 +59,18 @@ class NotionMain
 	{
 		// $field_about_logo_acf_field = self::ACF_FIELD[ 'about-logo' ];
 
-		// $field_about_logo = get_field( $field_about_logo_acf_field, $post->ID );
+		// $field_about_logo = g;
 
 		// $meta_value_meta_field = self::META_FIELD[ 'about-logo' ];
 
-		// $meta_value = get_post_meta( $post->ID, $meta_value_meta_field, true );
+		// $meta_value = ;
 			
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
-			// 'field_about_logo_acf_field' => $field_about_logo_acf_field,
+			self::ACF_FIELD[ 'settings' ] => get_field( self::ACF_FIELD[ 'settings' ], $post->ID ),
 
-			// 'field_about_logo' => $field_about_logo,
-
-			// 'meta_value_meta_field' => $meta_value_meta_field,
-
-			// 'meta_value' => $meta_value,
-
-			'parts_array' => get_field( self::ACF_FIELD[ 'parts' ], $post->ID ),
-
-			'parts_json' => json_encode( get_field( self::ACF_FIELD[ 'parts' ], $post->ID ) ),
+			self::META_FIELD[ 'about-logo' ] => get_post_meta( $post->ID, self::META_FIELD[ 'about-logo' ], true ),
 		] );
 	}
 
