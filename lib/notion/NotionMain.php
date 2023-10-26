@@ -10,7 +10,7 @@ class NotionMain
 	{
 		$handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
 
@@ -28,8 +28,6 @@ class NotionMain
 	const ACF_KEY = [
 		'parts' => 'field_6412f442f2c53',
 
-		'about-logo' => 'field_6437de4fa65c9_field_6437df25a65cd',
-
 		'settings' => 'field_6437de4fa65c9',
 
 		'bonus' => 'field_651ab4be3b28d',
@@ -37,8 +35,6 @@ class NotionMain
 
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
-
-		'about-logo' => 'review-about_about-logo',
 
 		'settings' => 'review-about',
 
