@@ -71,6 +71,21 @@ class NotionList
 		return $row_items;
 	}
 
+	const TAXONOMY = [
+		'billet_feature',
+	];
+
+	public static function get_feature( $features )
+	{
+		return get_terms( [
+			'taxonomy' => self::TAXONOMY,
+
+			'slug' => $features,
+
+			'fields' => 'ids',
+		] );
+	}
+
 	public static function get_row( $list )
 	{
 		return [
@@ -78,7 +93,7 @@ class NotionList
 
 			self::BILLET_LIST_PARTS_KEY[ 'direction' ] => $list[ self::BILLET_LIST_PARTS[ 'direction' ] ],
 
-			self::BILLET_LIST_PARTS_KEY[ 'feature' ] => $list[ self::BILLET_LIST_PARTS[ 'feature' ] ],
+			self::BILLET_LIST_PARTS_KEY[ 'feature' ] => get_feature( $list[ self::BILLET_LIST_PARTS[ 'feature' ] ] ),
 			
 			self::BILLET_LIST_PARTS_KEY[ 'items' ]  => self::get_row_items( $list ),
 		];
