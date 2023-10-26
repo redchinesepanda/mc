@@ -39,12 +39,6 @@ class NotionList
 		'title' => 'billet-list-part-item-title',
 	];
 
-	const META_FIELD = [
-		'list' => 'notion_billet_list',
-
-		'list-debug' => 'notion_billet_list_debug',
-	];
-
 	public static function get_lists( $item )
 	{
 		if ( NotionMain::array_is_list( $item ) )
@@ -87,7 +81,7 @@ class NotionList
 
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
 	{
-		if ( self::META_FIELD[ 'list' ] == $meta_key )
+		if ( NotionMain::META_FIELD[ 'list' ] == $meta_key )
 		{
 			$result = [];
 			
