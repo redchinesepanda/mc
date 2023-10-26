@@ -28,7 +28,7 @@ class NotionMain
 	const ACF_KEY = [
 		'parts' => 'field_6412f442f2c53',
 
-		'about-logo' => 'field_6437df25a65cd',
+		'about-logo' => 'field_6437de4fa65c9_field_6437df25a65cd',
 	];
 
 	const ACF_FIELD = [
