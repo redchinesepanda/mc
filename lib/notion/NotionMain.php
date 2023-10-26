@@ -2,6 +2,8 @@
 
 require_once( 'NotionList.php' );
 
+require_once( 'NotionImage.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -11,6 +13,8 @@ class NotionMain
 		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
+
+		NotionImage::register_functions();
 	}
 
 	const META_FIELD = [
@@ -23,6 +27,8 @@ class NotionMain
 
 	const ACF_KEY = [
 		'parts' => 'field_6412f442f2c53',
+
+		'about-logo' => 'field_6437df25a65cd',
 	];
 
 	const ACF_FIELD = [
