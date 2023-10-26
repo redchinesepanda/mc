@@ -30,7 +30,9 @@ class NotionMain
 
 		'about-logo' => 'field_6437de4fa65c9_field_6437df25a65cd',
 
-		'group' => 'field_6437de4fa65c9',
+		'settings' => 'field_6437de4fa65c9',
+
+		'bonus' => 'field_651ab4be3b28d',
 	];
 
 	const ACF_FIELD = [
@@ -38,7 +40,9 @@ class NotionMain
 
 		'about-logo' => 'review-about_about-logo',
 
-		'group' => 'review-about',
+		'settings' => 'review-about',
+
+		'bonus' => 'billet-feture-bonus',
 	];
 
 	public static function array_is_list( array $arr )
@@ -72,7 +76,7 @@ class NotionMain
 
 			// 'meta_value' => $meta_value,
 
-			'group' => get_field( self::ACF_FIELD[ 'group' ], $post->ID ),
+			'group' => get_field( self::ACF_FIELD[ 'bonus' ], $post->ID ),
 		] );
 	}
 
