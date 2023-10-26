@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'NotionList.php' );
+
 class NotionMain
 {
 	public static function register_functions()
