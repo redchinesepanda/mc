@@ -112,6 +112,10 @@ class NotionList
 				'meta_value' => $meta_value,
 
 				'notion_lists' => $notion_lists,
+
+				'lists' => $lists,
+
+				'rows' => $rows,
 			] );
 		}
 	}
