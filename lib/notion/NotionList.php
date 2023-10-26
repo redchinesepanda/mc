@@ -106,13 +106,13 @@ class NotionList
 				update_field( NotionMain::ACF_KEY[ 'parts' ], $rows, $post_id );
 			}
 
-			LegalDebug::die( [
-				'function' => 'NotionList::billet_list',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionList::billet_list',
 
-				'meta_value' => $meta_value,
+			// 	'meta_value' => $meta_value,
 
-				'notion_lists' => $notion_lists,
-			] );
+			// 	'notion_lists' => $notion_lists,
+			// ] );
 		}
 	}
 }
