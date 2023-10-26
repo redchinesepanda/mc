@@ -76,9 +76,9 @@ class NotionMain
 
 			// 'meta_value' => $meta_value,
 
-			'bonus_array' => get_field( self::ACF_FIELD[ 'bonus' ], $post->ID ),
+			'parts_array' => get_field( self::ACF_FIELD[ 'parts' ], $post->ID ),
 
-			'bonus_json' => json_encode( get_field( self::ACF_FIELD[ 'bonus' ], $post->ID ) ),
+			'parts_json' => json_encode( get_field( self::ACF_FIELD[ 'parts' ], $post->ID ) ),
 		] );
 	}
 
