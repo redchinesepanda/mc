@@ -27,6 +27,8 @@ class NotionMain
 
 	const ACF_FIELD = [
 		'parts' => 'billet-list-parts',
+
+		'about-logo' => 'review-about_about-logo',
 	];
 
 	public static function array_is_list( array $arr )
@@ -41,14 +43,14 @@ class NotionMain
 
 	public static function billet_list_show( $post )
 	{
-		$field = get_field( self::META_FIELD[ 'about-logo' ], $post->ID );
+		$field_about_logo = get_field( self::ACF_FIELD[ 'about-logo' ], $post->ID );
 
 		$meta_value = get_post_meta( $post->ID, self::META_FIELD[ 'about-logo' ], true );
 			
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
-			'field' => $field,
+			'field_about_logo' => $field_about_logo,
 
 			'meta_value' => $meta_value,
 		] );
