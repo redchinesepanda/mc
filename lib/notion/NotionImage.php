@@ -2,6 +2,14 @@
 
 class NotionImage
 {
+	const SETTINGS_FIELD = [
+		'logo' => 'about-logo',
+	];
+
+	const SETTINGS_KEY = [
+		'logo' => 'field_6437df25a65cd',
+	];
+
 	public static function register_functions()
 	{
 		$handler = new self();
@@ -15,7 +23,11 @@ class NotionImage
 	{
 		if ( NotionMain::META_FIELD[ 'about-logo' ] == $meta_key )
 		{
-			update_field( NotionMain::ACF_KEY[ 'about-logo' ], $meta_value, $post_id );
+			$field = get_field( self::ACF_FIELD[ 'settings' ], $post->ID );
+
+			$field[ self::SETTINGS_FIELD[ 'logo' ] ] = $meta_value;
+
+			update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
 		}
 	}
 }
