@@ -43,14 +43,22 @@ class NotionMain
 
 	public static function billet_list_show( $post )
 	{
-		$field_about_logo = get_field( self::ACF_FIELD[ 'about-logo' ], $post->ID );
+		$field_about_logo_acf_field = self::ACF_FIELD[ 'about-logo' ];
 
-		$meta_value = get_post_meta( $post->ID, self::META_FIELD[ 'about-logo' ], true );
+		$field_about_logo = get_field( $field_about_logo_acf_field, $post->ID );
+
+		$meta_value_meta_field = self::META_FIELD[ 'about-logo' ];
+
+		$meta_value = get_post_meta( $post->ID, $meta_value_meta_field, true );
 			
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
+			'field_about_logo_acf_field' => $field_about_logo_acf_field,
+
 			'field_about_logo' => $field_about_logo,
+
+			'meta_value_meta_field' => $meta_value_meta_field,
 
 			'meta_value' => $meta_value,
 		] );
