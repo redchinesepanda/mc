@@ -41,7 +41,7 @@ class NotionList
 
 	public static function get_lists( $item )
 	{
-		if ( is_array( $notion_lists ) )
+		if ( is_array( $item ) )
 		{
 			if ( NotionMain::array_is_list( $item ) )
 			{
