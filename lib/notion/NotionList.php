@@ -86,17 +86,20 @@ class NotionList
 			$result = [];
 			
 			$notion_lists = json_decode( $meta_value, true );
-
-			$lists = self::get_lists( $notion_lists );
-
-			$rows = [];
-
-			foreach ( $lists as $list )
+			
+			if ( is_array( $notion_lists ) )
 			{
-				$rows[] = self::get_row( $list );
+				$lists = self::get_lists( $notion_lists );
+	
+				$rows = [];
+	
+				foreach ( $lists as $list )
+				{
+					$rows[] = self::get_row( $list );
+				}
+	
+				update_field( NotionMain::ACF_KEY[ 'parts' ], $rows, $post_id );
 			}
-
-			update_field( NotionMain::ACF_KEY[ 'parts' ], $rows, $post_id );
 
 			LegalDebug::die( [
 				'function' => 'NotionList::billet_list',
