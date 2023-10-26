@@ -104,6 +104,8 @@ class NotionList
 			LegalDebug::die( [
 				'function' => 'NotionList::billet_list',
 
+				'meta_value' => $meta_value,
+
 				'notion_lists' => $notion_lists,
 			] );
 		}
