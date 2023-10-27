@@ -34,12 +34,6 @@ class CompilationBonus
 
             $play = BilletRight::get( $args );
 
-			LegalDebug::debug( [
-                'function' => 'CompilationBonus::get_billets_bonus',
-
-                'bonus' => $bonus,
-            ] );
-
             $title_label = $title[ 'label' ];
 
             if ( !empty( $bonus[ 'title' ] ) )
