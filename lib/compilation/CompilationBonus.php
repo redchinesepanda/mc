@@ -86,6 +86,8 @@ class CompilationBonus
                     'href' => $play[ 'play' ][ 'href' ],
 
                     'label' => $play[ 'play' ][ 'label' ],
+
+                    'nofollow' => $play[ 'play' ][ 'nofollow' ],
                 ],
             ];
 
