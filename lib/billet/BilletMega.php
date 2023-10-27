@@ -186,11 +186,11 @@ class BilletMega
 
 		$url = BilletMain::get_url( $atts[ 'id' ] );
 
-		LegalDebug::debug( [
-			'function' => 'BilletMega::prepare',
+		// LegalDebug::debug( [
+		// 	'function' => 'BilletMega::prepare',
 
-			'url' => $url,
-		] );
+		// 	'url' => $url,
+		// ] );
 
 		$parts = self::get_parts( $content );
 
@@ -266,6 +266,8 @@ class BilletMega
 
 			'title' => [
 				'href' => $url[ 'play' ],
+
+				'nofollow' => $url[ 'play-nofollow' ],
 				
 				'text' => $title_text,
 
@@ -274,6 +276,8 @@ class BilletMega
 
 			'afillate' => [
 				'href' => $url[ 'play' ],
+
+				'nofollow' => $url[ 'play-nofollow' ],
 
 				'text' => $atts[ 'button-label' ],
 			],
