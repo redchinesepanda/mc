@@ -37,7 +37,7 @@ class CompilationBonus
 			LegalDebug::debug( [
                 'function' => 'CompilationBonus::get_billets_bonus',
 
-                'title' => $title,
+                'bonus' => $bonus,
             ] );
 
             $title_label = $title[ 'label' ];
