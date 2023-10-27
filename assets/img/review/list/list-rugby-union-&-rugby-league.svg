@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-rugby-league.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="2.50005 2.53 24 23.999999">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="9.4700003"
+     inkscape:cx="9.5"
+     inkscape:zoom="53.220695"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.26316;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 19.830602,19.860552 c 2.564223,-2.564223 3.92844,-5.962135 4.08002,-10.1305755 -1.376849,3.0442245 -3.334753,5.8231855 -5.861081,8.3495135 -2.526328,2.526328 -5.305289,4.484234 -8.3495142,5.861081 4.1684412,-0.113684 7.5284572,-1.477902 10.1305752,-4.080019 M 9.1694979,9.1994477 C 6.605275,11.763671 5.2410578,15.161581 5.0894781,19.330023 5.6579019,18.066859 6.5421168,16.614221 7.691596,14.972108 8.815812,13.329995 9.9273964,12.003671 10.950559,10.980508 13.476887,8.4541809 16.255848,6.4962766 19.300073,5.1194278 15.131632,5.2331126 11.771616,6.5973298 9.1694979,9.1994477 M 25.236944,3.7931056 c 0.631582,0.6947402 1.061058,2.0336941 1.225269,4.0421249 0.15158,2.0210624 -0.151579,4.3705475 -0.922109,7.0737195 -0.77053,2.715802 -2.058958,4.964234 -3.877914,6.78319 -1.654745,1.680009 -3.625281,2.880013 -5.898976,3.637912 -2.261063,0.770531 -4.496864,1.162112 -6.7074008,1.162112 -2.6905394,0 -4.4463374,-0.416845 -5.2926573,-1.22527 C 3.1315739,24.572153 2.7020981,23.233201 2.5378868,21.224769 2.3863071,19.203707 2.6894665,16.854222 3.4599965,14.15105 4.2305266,11.435247 5.5189539,9.186816 7.3379101,7.3678598 8.992655,5.6878517 10.963191,4.4878458 13.236886,3.7299474 15.49795,2.9594173 17.73375,2.5678365 19.944287,2.5678365 c 2.690539,0 4.446337,0.4168441 5.292657,1.2252691 z" />
+</svg>
