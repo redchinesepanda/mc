@@ -34,25 +34,11 @@ class CompilationBonus
 
             $play = BilletRight::get( $args );
 
-			// $item[ 'billet-logo' ] = BilletLogo::get( $item );
+			LegalDebug::debug( [
+                'function' => 'CompilationBonus::get_billets_bonus',
 
-			// $item[ 'billet-title' ] = BilletTitle::get( $item );
-
-			// $item[ 'billet-right' ] = BilletRight::get( $item );
-
-			// $item[ 'title' ][ 'label' ] = $item[ 'billet-title' ][ 'label' ];
-
-			// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
-
-			// if ( !empty( $item[ 'bonus' ][ 'title' ] ) ) {
-			// 	// $item[ 'title' ][ 'label' ] = $item[ 'bonus' ][ 'title' ];
-				
-            //     $item[ 'title' ][ 'label' ] = $bonus[ 'title' ];
-
-            //     $item[ 'description' ] = $bonus[ 'description' ];
-
-			// 	// $item[ 'title' ][ 'href' ] = $item[ 'billet-title' ][ 'href' ];
-			// }
+                'logo' => $logo,
+            ] );
 
             $title_label = $title[ 'label' ];
 

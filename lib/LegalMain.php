@@ -58,6 +58,8 @@ class LegalMain
 	public static function register_functions()
     {
 		LegalComponents::register_functions();
+
+		ACFMain::register_functions();
 	
 		ToolsMain::register();
 	

@@ -1,39 +1,19 @@
-[
-	{
-		"billet-list-part-icon": "legal-plus",
-		"billet-list-part-direction": "legal-column",
-		"billet-list-part-feature": [
-			"feature-tennis-good"
-		],
-		"billet-list-part-items": [
-			{
-				"billet-list-part-item-title": "Amplia cobertura de eventos en Vivo"
-			},
-			{
-				"billet-list-part-item-title": "Pago rápido con tarjeta AstroPay"
-			},
-			{
-				"billet-list-part-item-title": "Preguntas frecuentes muy detalladas"
-			}
-		]
-	},
-	{
-		"billet-list-part-icon": "legal-minus",
-		"billet-list-part-direction": "legal-column",
-		"billet-list-part-feature": [
-			"feature-tennis-good",
-			"billet-bonus-test"
-		],
-		"billet-list-part-items": [
-			{
-				"billet-list-part-item-title": "Sin bono de bienvenida!!!"
-			},
-			{
-				"billet-list-part-item-title": "Pocas acciones"
-			},
-			{
-				"billet-list-part-item-title": "Menos de 15 deportes para apostar"
-			}
-		]
-	}
-]
+{
+    "billet-list-part-icon": "legal-minus",
+    "billet-list-part-direction": "legal-column",
+    "billet-list-part-feature": [
+        "feature-tennis-good",
+        "billet-bonus-test"
+    ],
+    "billet-list-part-items": [
+        {
+            "billet-list-part-item-title": "Sin bono de bienvenida!!!!!!"
+        },
+        {
+            "billet-list-part-item-title": "Pocas acciones"
+        },
+        {
+            "billet-list-part-item-title": "Menos de 15 deportes para apostar"
+        }
+    ]
+}

@@ -20,6 +20,13 @@ class ACFReview
         'afillate' => 'about-afillate',
 	];
 
+    public static function register_functions()
+    {
+        $handler = new self();
+
+        add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -31,8 +38,6 @@ class ACFReview
 		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type' ], [ $handler, 'choices_post_type' ] );
 
 		add_filter( 'acf/load_field/name=' . self::FIELD[ 'post-type-wiki' ], [ $handler, 'choices_post_type_wiki' ] );
-
-        add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
 
         add_action( 'acf/save_post', [ $handler, 'change_post_type' ] );
     }
