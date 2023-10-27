@@ -82,3 +82,7 @@
 #tinymce .legal-header-mma::before {
 	background-image: url( '../../img/review/header/review-mma.svg' );
 }
+
+#tinymce .legal-header-rugby::before {
+	background-image: url( '../../img/review/header/review-rugby.svg' );
+}
