@@ -17,5 +17,5 @@
 			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="underline compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
 		</div>
 	<?php endif; ?>
-	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" rel="nofollow" class="legal-compilation-button check-oops"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
+	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'button' ][ 'nofollow' ] ); ?> class="legal-compilation-button check-oops"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 </div>
