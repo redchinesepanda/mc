@@ -61,6 +61,8 @@ class CompilationBonus
 
                     'src' => $logo[ 'logo' ][ 'src' ],
 
+                    'nofollow' => $logo[ 'logo' ][ 'nofollow' ],
+
                     'alt' => $title[ 'label' ],
                 ],
 
