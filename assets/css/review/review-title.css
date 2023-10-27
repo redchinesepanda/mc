@@ -73,3 +73,7 @@
 .tcb-post-content .legal-header-mma::before {
     background-image: url( '../../img/review/header/review-mma.svg' );
 }
+
+.tcb-post-content .legal-header-rugby::before {
+    background-image: url( '../../img/review/header/review-rugby.svg' );
+}
