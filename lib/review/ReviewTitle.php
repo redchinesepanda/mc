@@ -6,7 +6,7 @@ class ReviewTitle
         'review-title' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.4',
         ],
     ];
 
@@ -59,6 +59,8 @@ class ReviewTitle
 		'esports' => 'legal-header-esports',
 
 		'mma' => 'legal-header-mma',
+
+		'rugby' => 'legal-header-rugby',
 	];
 
 	const FORMAT = [
@@ -316,6 +318,14 @@ class ReviewTitle
 						'selector' => 'h3',
 
 						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'mma' ],
+					],
+
+					[
+						'title' => 'H3 Rugby',
+						
+						'selector' => 'h3',
+
+						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'rugby' ],
 					],
 				],
 			],
