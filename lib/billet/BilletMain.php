@@ -206,6 +206,16 @@ class BilletMain
             $bonus_url = self::get_bonus_url( $id, $filter );
         }
 
+        // LegalDebug::debug( [
+        //     'function' => 'BilletMainget_url',
+
+        //     'card_url' => $card_url,
+
+        //     'bonus_url' => $bonus_url,
+
+        //     'referal_url' => $referal_url,
+        // ] );
+
         // Партнерская БК или ''
 
         // $referal_url = get_field( self::SETTINGS[ 'referal' ], $id );

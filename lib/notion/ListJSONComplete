@@ -1,0 +1,48 @@
+"["
+
++ [
+	[ "legal-minus", prop("Pros ENG Feature"), prop("Pros ENG") ],
+
+	[ "legal-plus", prop("Cons ENG Feature"), prop("Cons ENG") ]
+]
+.map(
+	"{"
+	
+	+ [
+		[ "billet-list-part-icon", "\"" + current.at( 0 ) + "\"" ],
+	
+		[ "billet-list-part-direction", "\"" + "legal-column" + "\"" ],
+	
+		[
+			"billet-list-part-feature",
+	
+			"["
+	
+			+ current.at( 1 )
+				.map( "\"" + current + "\"" )
+				.join( "," )
+			
+			+ "]"
+		],
+	
+		[
+			"billet-list-part-items",
+	
+			"["
+	
+			+ current.at( 2 )
+				.split( "\n" )
+				.map( "{\"billet-list-part-item-title\":\"" + current + "\"}" )
+				.join( "," )
+	
+			+ "]"
+		]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join(",")
+
++ "]"

@@ -23,6 +23,11 @@ class ACFMain
         wp_enqueue_script( 'acf-main' );
     }
 
+    public static function register_functions()
+    {
+        ACFReview::register_functions();
+    }
+
     public static function register()
     {
         $handler = new self();

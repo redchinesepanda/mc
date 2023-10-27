@@ -56,6 +56,8 @@
 
 .legal-tabs .legal-tab-title.legal-active {
     border: 1px solid #007bff;
+    color: #fff;
+    background: #007bff;
 }
 
 .legal-tabs .legal-tab-title:not( .legal-active ) {

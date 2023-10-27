@@ -1,0 +1,139 @@
+split(prop("Cons ENG"), "\n")
+
+"{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[\"" + join( prop("Cons ENG Feature"), "\",\"" ) + "\"],\"billet-list-part-items\":[{" + 
+"\"billet-list-part-item-title\":\"" + slice(prop("Cons ENG COMMA"), 0, 1) + "\"},{" + 
+"\"billet-list-part-item-title\":\"" + slice(prop("Cons ENG COMMA"), 1, 2) + "\"},{" + 
+"\"billet-list-part-item-title\":\"" + slice(prop("Cons ENG COMMA"), 2, 3) + "\"}" +
+"]}"
+
+"[{\"billet-list-part-item-title\":\"" + join( split( prop("Cons ENG"), "\n" ), "\"},{\"billet-list-part-item-title\":\"" ) + "\"}]"
+
+"{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[\"" + join( prop("Cons ENG Feature"), "\",\"" ) + "\"],\"billet-list-part-items\":" + prop( "Cons ENG Items JSON" ) + "}"
+
+
+"[" + join( map( split( prop("Cons ENG"), "\n" ), "{\"billet-list-part-item-title\":\"" + current + "\"}" ), "," ) + "]"
+
+"[" + prop("Cons ENG").split( "\n" ).map( "{\"billet-list-part-item-title\":\"" + current + "\"}" ).join( "," ) + "]"
+
+"[" + join( map( prop("Cons ENG Feature"), "\"" + current + "\"" ), "," ) + "]"
+
+"[" + prop("Cons ENG Feature").map( "\"" + current + "\"" ).join( "," ) + "]"
+
+// Cons Eng JSON
+
+"{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[" + prop("Cons ENG Feature").map( "\"" + current + "\"" ).join( "," ) + "],\"billet-list-part-items\":[" + prop("Cons ENG").split( "\n" ).map( "{\"billet-list-part-item-title\":\"" + current + "\"}" ).join( "," ) + "]}"
+
+// Cons Formula start
+
+"{"
+
++ [
+	[ "billet-list-part-icon", "\"" +"legal-minus" + "\"" ],
+
+	[ "billet-list-part-direction", "\"" + "legal-column" + "\"" ],
+
+	[
+		"billet-list-part-feature",
+
+		"["
+
+		+ prop("Cons ENG Feature")
+			.map( "\"" + current + "\"" )
+			.join( "," )
+		
+		+ "]"
+	],
+
+	[
+		"billet-list-part-items",
+
+		"["
+
+		+ prop("Cons ENG")
+			.split( "\n" )
+
+			.map( "{\"billet-list-part-item-title\":\"" + current + "\"}" )
+
+			.join( "," )
+
+		+ "]"
+	]
+].map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) ).join( "," )
+
++ "}"
+
+// Cons Formula end
+
+"[" + join( 
+	map(
+		[ prop("Pros ENG"), prop("Cons ENG") ],
+
+		"{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[" + join( map( prop("Cons ENG Feature"), "\"" + current + "\"" ), "," ) + "],\"billet-list-part-items\":[" + join( map( split( current, "\n" ), "{\"billet-list-part-item-title\":\"" + current + "\"}" ), "," ) + "]}"
+	),
+
+	","
+) + "]"
+
+"[" + [ prop("Pros ENG"), prop("Cons ENG") ].map(
+	"{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[" + join( map( prop("Cons ENG Feature"), "\"" + current + "\"" ), "," ) + "],\"billet-list-part-items\":[" + join( map( split( current, "\n" ), "{\"billet-list-part-item-title\":\"" + current + "\"}" ), "," ) + "]}"
+).join( "," ) + "]"
+
+"[" + [
+	[ "legal-minus", prop("Pros ENG Feature"), prop("Pros ENG") ],
+	[ "legal-plus", prop("Cons ENG Feature"), prop("Cons ENG") ]
+].map(
+	"{\"billet-list-part-icon\":\"" + current.at( 0 ) + "\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[" + join( map( current.at( 1 ), "\"" + current + "\"" ), "," ) + "],\"billet-list-part-items\":[" + join( map( split( current.at( 2 ), "\n" ), "{\"billet-list-part-item-title\":\"" + current + "\"}" ), "," ) + "]}"
+).join(", ") + "]"
+
+// Lists JSON Complete Start
+
+"["
+
++ [
+	[ "legal-minus", prop("Pros ENG Feature"), prop("Pros ENG") ],
+
+	[ "legal-plus", prop("Cons ENG Feature"), prop("Cons ENG") ]
+]
+.map(
+	"{"
+	
+	+ [
+		[ "billet-list-part-icon", "\"" + current.at( 0 ) + "\"" ],
+	
+		[ "billet-list-part-direction", "\"" + "legal-column" + "\"" ],
+	
+		[
+			"billet-list-part-feature",
+	
+			"["
+	
+			+ current.at( 1 )
+				.map( "\"" + current + "\"" )
+				.join( "," )
+			
+			+ "]"
+		],
+	
+		[
+			"billet-list-part-items",
+	
+			"["
+	
+			+ current.at( 2 )
+				.split( "\n" )
+				.map( "{\"billet-list-part-item-title\":\"" + current + "\"}" )
+				.join( "," )
+	
+			+ "]"
+		]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join(",")
+
++ "]"
+
+// Lists JSON Complete End

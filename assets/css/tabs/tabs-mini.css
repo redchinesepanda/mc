@@ -18,13 +18,14 @@
 }
 
 .legal-tabs-mini {
-    max-width: 28.5%;
+    max-width: 28.4%;
 }
 
 .legal-tabs-mini {
     background-color: #fff;
     box-shadow: 0 0 10px #e4e4e4;
     border-radius: 20px;
+    border: rgb(89 151 227 / 20%) 0.5px solid;
 }
 
 .legal-tabs-mini {
@@ -36,6 +37,9 @@
 
 .legal-tabs-mini {
     padding: 20px;
+}
+.legal-tabs-mini:hover {
+    border: #5997e3 0.5px solid;
 }
 
 @media (max-width: 768px) {
@@ -172,7 +176,7 @@
 }
 
 .mini-item-button .mini-item-button-afillate:hover {
-    background-color: #2990ff;
+    background-color: #81b1ec;
 }
 
 .tabs-mini-afillate {

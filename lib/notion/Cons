@@ -1,0 +1,36 @@
+"{"
+
++ [
+	[ "billet-list-part-icon", "\"" +"legal-minus" + "\"" ],
+
+	[ "billet-list-part-direction", "\"" + "legal-column" + "\"" ],
+
+	[
+		"billet-list-part-feature",
+
+		"["
+
+		+ prop("Cons ENG Feature")
+			.map( "\"" + current + "\"" )
+			.join( "," )
+		
+		+ "]"
+	],
+
+	[
+		"billet-list-part-items",
+
+		"["
+
+		+ prop("Cons ENG")
+			.split( "\n" )
+
+			.map( "{\"billet-list-part-item-title\":\"" + current + "\"}" )
+
+			.join( "," )
+
+		+ "]"
+	]
+].map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) ).join( "," )
+
++ "}"
