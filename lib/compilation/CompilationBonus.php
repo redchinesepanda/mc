@@ -69,6 +69,8 @@ class CompilationBonus
                 'title' => [
                     'href' => $title[ 'href' ],
 
+                    'nofollow' => $title[ 'nofollow' ],
+
                     'label' => $title_label,
                 ],
 
