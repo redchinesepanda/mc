@@ -186,6 +186,12 @@ class BilletMega
 
 		$url = BilletMain::get_url( $atts[ 'id' ] );
 
+		LegalDebug::debug( [
+			'function' => 'BilletMega::prepare',
+
+			'url' => $url,
+		] );
+
 		$parts = self::get_parts( $content );
 
 		$logo = '';
