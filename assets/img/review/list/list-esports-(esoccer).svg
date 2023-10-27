@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-esports.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="-0.037497 96 24.000001 24">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="9.055738"
+     inkscape:cx="82.823356"
+     inkscape:zoom="5.2179349"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:0.0374973;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="M 17.9647,102.00043 H 5.9629319 a 5.9995716,5.9995716 0 1 0 4.2836941,10.19927 h 3.431755 A 5.9995716,5.9995716 0 1 0 17.9647,102.00043 Z m -8.7020038,6.44954 a 0.44996787,0.44996787 0 0 1 -0.4499678,0.44997 H 6.8628676 v 1.94986 a 0.44996787,0.44996787 0 0 1 -0.4499679,0.44996 H 5.512964 A 0.44996787,0.44996787 0 0 1 5.0629961,110.8498 v -1.94986 H 3.1131354 a 0.44996787,0.44996787 0 0 1 -0.4499679,-0.44997 v -0.89994 a 0.44996787,0.44996787 0 0 1 0.4499679,-0.44997 h 1.9498607 v -1.94986 a 0.44996787,0.44996787 0 0 1 0.4499679,-0.44996 h 0.8999357 a 0.44996787,0.44996787 0 0 1 0.4499679,0.44996 v 1.94986 h 1.9498608 a 0.44996787,0.44996787 0 0 1 0.4499678,0.44997 z m 8.0994218,2.84979 a 1.4998929,1.4998929 0 1 1 1.499893,-1.49989 1.4998929,1.4998929 0 0 1 -1.499893,1.49989 z m 2.399829,-3.59974 a 1.4998929,1.4998929 0 1 1 1.499893,-1.49989 1.4998929,1.4998929 0 0 1 -1.499893,1.49989 z" />
+</svg>

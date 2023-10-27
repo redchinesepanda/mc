@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   height="24"
+   width="24"
+   sodipodi:docname="list-athletics.svg"
+   id="svg4"
+   version="1.1"
+   viewBox="2.89 1.5 23.999999 24">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="13.165104"
+     inkscape:cx="6.4125516"
+     inkscape:zoom="23.860465"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="1361"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="stroke-width:1.11628;fill:#5997e3;fill-opacity:1"
+     id="path2"
+     fill="#5997e3ff"
+     d="m 17.742093,5.9651163 c 1.216744,0 2.232558,-1.0269768 2.232558,-2.2325582 C 19.974651,2.4823256 18.958837,1.5 17.742093,1.5 c -1.23907,0 -2.232558,0.9823256 -2.232558,2.2325581 0,1.2055814 0.993488,2.2325582 2.232558,2.2325582 m -4.029768,15.4939537 1.11628,-4.889303 2.355348,2.232559 V 25.5 h 2.232559 v -8.372093 l -2.355349,-2.232558 0.68093,-3.348837 c 1.44,1.674418 3.672558,2.790697 6.139535,2.790697 v -2.232558 c -2.132093,0 -3.906977,-1.116279 -4.811163,-2.7013952 L 17.954186,7.6395349 c -0.446512,-0.692093 -1.116279,-1.1162791 -1.886512,-1.1162791 -0.346046,0 -0.558139,0.089302 -0.904186,0.089302 L 9.3699999,9.0683721 V 14.337209 H 11.602558 V 10.519535 L 13.600698,9.7381395 11.814651,18.802326 6.3448836,17.686047 5.898372,19.918605 Z" />
+</svg>
