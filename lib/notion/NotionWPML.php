@@ -42,7 +42,7 @@ class NotionWPML
 
 				'language_code' => $meta_value,
 
-				'source_language_code' => $original_post_language_info->language_code
+				// 'source_language_code' => $original_post_language_info->language_code
 			];
 	
 			do_action( 'wpml_set_element_language_details', $set_language_args );
