@@ -182,7 +182,7 @@ class WPMLMain
 
     public static function get_element_type( $id = null )
     {
-        return apply_filters( 'wpml_element_type', WPMLMain::get_post_type( $id ) );
+        return apply_filters( 'wpml_element_type', get_post_type( $id ) );
     }
 
     public static function register()
