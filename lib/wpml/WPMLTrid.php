@@ -26,7 +26,7 @@ class WPMLTrid
             FROM `wp_icl_translations`
             INNER JOIN `wp_posts` ON `element_id` = `ID`
             WHERE
-                `element_type` IN ( 'post_page', 'legal_billet' )
+                `element_type` IN ( 'post_page', 'post_legal_billet' )
                 AND `post_status` = 'publish'
             GROUP BY `trid`
             ORDER BY `legal_title`, `legal_elements`";
