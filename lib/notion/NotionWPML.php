@@ -55,11 +55,17 @@ class NotionWPML
 	
 			do_action( 'wpml_set_element_language_details', $set_language_args );
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionWPML::billet_language_code',
+			LegalDebug::die( [
+				'function' => 'NotionWPML::billet_language_code',
 
-			// 	'set_language_args' => $set_language_args,
-			// ] );
+				'wpml_element_type' => $wpml_element_type,
+				
+				'original_post_language_info' => $original_post_language_info,
+
+				'trid' => $trid,
+
+				'set_language_args' => $set_language_args,
+			] );
 		}
 	}
 
