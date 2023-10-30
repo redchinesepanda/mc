@@ -77,3 +77,7 @@
 .tcb-post-content .legal-header-rugby::before {
     background-image: url( '../../img/review/header/review-rugby.svg' );
 }
+
+.tcb-post-content .legal-header-volleyball::before {
+    background-image: url( '../../img/review/header/review-volleyball.svg' );
+}
