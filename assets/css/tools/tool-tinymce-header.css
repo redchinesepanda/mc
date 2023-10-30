@@ -86,3 +86,7 @@
 #tinymce .legal-header-rugby::before {
 	background-image: url( '../../img/review/header/review-rugby.svg' );
 }
+
+#tinymce .legal-header-volleyball::before {
+	background-image: url( '../../img/review/header/review-volleyball.svg' );
+}
