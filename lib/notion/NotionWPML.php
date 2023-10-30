@@ -46,6 +46,12 @@ class NotionWPML
 			];
 	
 			do_action( 'wpml_set_element_language_details', $set_language_args );
+
+			LegalDebug::die( [
+				'function' => 'NotionWPML::billet_language_code',
+
+				'set_language_args' => $set_language_args,
+			] );
 		}
 	}
 
