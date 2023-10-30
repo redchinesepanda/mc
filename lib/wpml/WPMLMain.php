@@ -180,6 +180,11 @@ class WPMLMain
         return apply_filters( 'wpml_permalink', $url, $locale, true );
     }
 
+    public static function get_element_type( $id = null )
+    {
+        return apply_filters( 'wpml_element_type', get_post_type() );
+    }
+
     public static function register()
     {
         $handler = new self();
