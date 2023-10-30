@@ -54,7 +54,7 @@ class WPMLTrid
         }
         
         if ( $id != 0 )
-            return apply_filters( 'wpml_element_trid', NULL, $id, 'post_page' );
+            return apply_filters( 'wpml_element_trid', NULL, $id, self::get_element_type( $id ) );
 
         return 0;
     }
