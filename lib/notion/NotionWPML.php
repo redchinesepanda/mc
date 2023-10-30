@@ -33,16 +33,22 @@ class NotionWPML
 				]
 			);
 
+			$trid = wpml_get_content_trid( $wpml_element_type, $post_id );
+
 			$set_language_args = [
 				'element_id' => $post_id,
 
 				'element_type' => $wpml_element_type,
 
-				'trid' => $original_post_language_info->trid,
+				// 'trid' => $original_post_language_info->trid,
+				
+				'trid' => $trid,
 
 				'language_code' => $meta_value,
 
-				// 'source_language_code' => $original_post_language_info->language_code
+				// 'source_language_code' => $original_post_language_info->language_code,
+
+				'source_language_code' => null,
 			];
 	
 			do_action( 'wpml_set_element_language_details', $set_language_args );
@@ -54,6 +60,45 @@ class NotionWPML
 			] );
 		}
 	}
+
+	add_action( 'template_redirect', function() {
+ 
+		if( is_admin() ) {
+			return false;
+		}
+	 
+		// Create post on the default language
+		$create_post = array(
+			'post_title'    => wp_strip_all_tags( "Hello World API" ),
+			'post_content'  => "Some content here!",
+			'post_status'   => 'publish',
+			'post_author'   => 1,
+			'post_category' => array( 1 )
+		);
+	  
+		// Insert the post into the database and return the post id
+		$post_id = wp_insert_post( $create_post );
+	 
+			// Get the post type
+		$type = get_post_type( $post_id );
+	 
+		// Get the translation id (trid)
+		$trid = wpml_get_content_trid( 'post_' . $type, $post_id );
+		 
+		// Set the desired language
+		$language_code = 'fr';
+	 
+		// Update the post language info
+		$language_args = [
+			'element_id' => $post_id,
+			'element_type' => 'post_'.$type,
+			'trid' => $trid,
+			'language_code' => $language_code,
+			'source_language_code' => null,
+		];
+	 
+		do_action( 'wpml_set_element_language_details', $language_args );
+	});
 
 	// add_action('wp_footer', 'element_connect_on_insert');
  
