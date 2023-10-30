@@ -38,6 +38,14 @@ class WPMLTrid
 
     public static function get_translation_group( $trid )
     {
+        LegalDebug::debug( [
+        	'function' => 'WPMLTrid::get_trid',
+
+        	'trid' => $trid,
+            
+        	'wpml_get_element_translations' => apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' ),
+        ] );
+
         return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
     }
 
@@ -53,15 +61,15 @@ class WPMLTrid
             }
         }
         
-        LegalDebug::debug( [
-        	'function' => 'WPMLTrid::get_trid',
+        // LegalDebug::debug( [
+        // 	'function' => 'WPMLTrid::get_trid',
 
-        	'id' => $id,
+        // 	'id' => $id,
 
-        	'get_element_type' => WPMLMain::get_element_type( $id ),
-            
-        	'wpml_element_trid' => apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) ),
-        ] );
+        // 	'get_element_type' => WPMLMain::get_element_type( $id ),
+
+        // 	'wpml_element_trid' => apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) ),
+        // ] );
         
         if ( $id != 0 )
             return apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) );
