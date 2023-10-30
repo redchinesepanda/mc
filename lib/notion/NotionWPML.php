@@ -29,7 +29,7 @@ class NotionWPML
 				[
 					'element_id' => $post_id,
 					
-					'element_type' => 'post'
+					'element_type' => self::POST_TYPE[ 'billet' ],
 				]
 			);
 
