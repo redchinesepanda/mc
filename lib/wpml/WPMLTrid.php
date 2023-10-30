@@ -38,13 +38,13 @@ class WPMLTrid
 
     public static function get_translation_group( $trid )
     {
-        LegalDebug::debug( [
-        	'function' => 'WPMLTrid::get_trid',
+        // LegalDebug::debug( [
+        // 	'function' => 'WPMLTrid::get_trid',
 
-        	'trid' => $trid,
+        // 	'trid' => $trid,
             
-        	'wpml_get_element_translations' => apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' ),
-        ] );
+        // 	'wpml_get_element_translations' => apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' ),
+        // ] );
 
         return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
     }
