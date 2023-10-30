@@ -182,6 +182,16 @@ class WPMLMain
 
     public static function get_element_type( $id = null )
     {
+        LegalDebug::debug( [
+            'function' => 'WPMLMain::get_element_type',
+
+            'id' => $id,
+
+            'get_post_type' => get_post_type( $id ),
+
+            'wpml_element_type' => apply_filters( 'wpml_element_type', get_post_type( $id ) ),
+        ] );
+
         return apply_filters( 'wpml_element_type', get_post_type( $id ) );
     }
 
