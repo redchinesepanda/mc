@@ -61,8 +61,9 @@ class NotionWPML
 		}
 	}
 
-	add_action( 'template_redirect', function() {
- 
+	// add_action( 'template_redirect', function() {
+	public static function set_post_language()
+	{
 		if( is_admin() ) {
 			return false;
 		}
