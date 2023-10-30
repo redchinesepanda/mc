@@ -53,6 +53,16 @@ class WPMLTrid
             }
         }
         
+        LegalDebug::debug( [
+        	'function' => 'WPMLTrid::get_trid',
+
+        	'id' => $id,
+
+        	'get_element_type' => WPMLMain::get_element_type( $id ),
+            
+        	'wpml_element_trid' => apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) ),
+        ] );
+        
         if ( $id != 0 )
             return apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) );
 
