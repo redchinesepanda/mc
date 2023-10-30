@@ -45,6 +45,8 @@ class ACFPage
         $field['choices'] = $choices;
 
         $field['default_value'] = WPMLTrid::get_trid();
+        
+        $field['value'] = WPMLTrid::get_trid();
 
         return $field;
     }
