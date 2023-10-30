@@ -33,7 +33,9 @@ class NotionWPML
 				]
 			);
 
-			$trid = wpml_get_content_trid( $wpml_element_type, $post_id );
+			// $trid = wpml_get_content_trid( $wpml_element_type, $post_id );
+
+			$trid = apply_filters( 'wpml_element_trid', NULL, $post_id, $wpml_element_type );
 
 			$set_language_args = [
 				'element_id' => $post_id,
