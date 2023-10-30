@@ -4,6 +4,8 @@ require_once( 'NotionList.php' );
 
 require_once( 'NotionImage.php' );
 
+require_once( 'NotionWPML.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -15,12 +17,16 @@ class NotionMain
 		NotionList::register_functions();
 
 		NotionImage::register_functions();
+
+		NotionWPML::register_functions();
 	}
 
 	const META_FIELD = [
 		'list' => 'notion_billet_list',
 
 		'list-debug' => 'notion_billet_list_debug',
+
+		'language-code' => 'notion_language_code',
 
 		'about-logo' => 'notion_about_logo',
 	];
