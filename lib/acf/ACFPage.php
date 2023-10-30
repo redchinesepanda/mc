@@ -48,11 +48,11 @@ class ACFPage
 
         $field['value'] = WPMLTrid::get_trid();
 
-        LegalDebug::debug( [
-        	'function' => 'ACFPage::choices',
+        // LegalDebug::debug( [
+        // 	'function' => 'ACFPage::choices',
 
-        	'field' => $field,
-        ] );
+        // 	'field' => $field,
+        // ] );
 
         return $field;
     }
