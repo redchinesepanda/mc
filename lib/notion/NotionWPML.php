@@ -99,7 +99,7 @@ class NotionWPML
 		];
 	 
 		do_action( 'wpml_set_element_language_details', $language_args );
-	});
+	}
 
 	// add_action('wp_footer', 'element_connect_on_insert');
  
