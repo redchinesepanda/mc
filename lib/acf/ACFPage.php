@@ -44,9 +44,15 @@ class ACFPage
 
         $field['choices'] = $choices;
 
-        $field['default_value'] = WPMLTrid::get_trid();
-        
+        // $field['default_value'] = WPMLTrid::get_trid();
+
         $field['value'] = WPMLTrid::get_trid();
+
+        LegalDebug::debug( [
+        	'function' => 'ACFPage::choices',
+
+        	'field' => $field,
+        ] );
 
         return $field;
     }
