@@ -1,19 +1,20 @@
-{
-    "billet-list-part-icon": "legal-minus",
-    "billet-list-part-direction": "legal-column",
-    "billet-list-part-feature": [
-        "feature-tennis-good",
-        "billet-bonus-test"
-    ],
-    "billet-list-part-items": [
-        {
-            "billet-list-part-item-title": "Sin bono de bienvenida!!!!!!"
-        },
-        {
-            "billet-list-part-item-title": "Pocas acciones"
-        },
-        {
-            "billet-list-part-item-title": "Menos de 15 deportes para apostar"
-        }
-    ]
-}
+[
+	{
+		"billet-feture-id": "",
+		"billet-bonus-id": "https://test.match.center/kz/ubet/freebet/",
+		"billet-bonus-title": "Apuesta gratuita de 5000 COP",
+		"billet-bonus-description": "-Debes estar registrado en www.betplay.com.co. - Realiza un deposito de $2.000 en tu cuenta. -Recibe una apuestra totalm"
+	},
+	{
+		"billet-feture-id": "feature-tennis-good",
+		"billet-bonus-id": "",
+		"billet-bonus-title": "Apuestas gratuitas hasta 220000 COP",
+		"billet-bonus-description": "az un depósito y aprovecha nuestra promoción de \"Apuestas Gratis\". Dependiendo de la cantidad depositada, recibirás una "
+	},
+	{
+		"billet-feture-id": "billet-bonus-test",
+		"billet-bonus-id": "",
+		"billet-bonus-title": "50% hasta 100000 COP",
+		"billet-bonus-description": "¡DISFRUTA TU BONO DE BIENVENIDA! ¿Aún no has realizado un depósito en Zamba? Zamba incrementa tu primer depósito un 50% "
+	}
+]
