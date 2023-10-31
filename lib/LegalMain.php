@@ -65,6 +65,8 @@ class LegalMain
 	
 		SchemaMain::register();
 
+		BaseMain::register_functions();
+
 		if ( self::check_admin() )
 		{
 			ACFMain::register();

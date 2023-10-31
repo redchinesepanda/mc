@@ -84,6 +84,13 @@ class BaseMain
         return $permission_lang;
     }
 
+    public static function register_functions()
+	{
+		BaseHeader::register_functions();
+
+        BaseFooter::register_functions();
+	}
+
 	public static function register()
     {
         BaseHeader::register();
