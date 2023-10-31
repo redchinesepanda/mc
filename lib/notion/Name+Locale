@@ -1,0 +1,7 @@
+prop("Name")
+
++ " "
+
++ prop("Locale")
+.map( current.prop("Language Code").upper() )
+.join( ", " )

@@ -6,6 +6,8 @@ require_once( 'NotionImage.php' );
 
 require_once( 'NotionWPML.php' );
 
+require_once( 'NotionBonus.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -19,6 +21,8 @@ class NotionMain
 		NotionImage::register_functions();
 
 		NotionWPML::register_functions();
+
+		NotionBonus::register_functions();
 	}
 
 	const META_FIELD = [
@@ -27,6 +31,8 @@ class NotionMain
 		'list-debug' => 'notion_billet_list_debug',
 
 		'language-code' => 'notion_language_code',
+
+		'bonus' => 'notion_billet_bonus',
 
 		'about-logo' => 'notion_about_logo',
 	];
