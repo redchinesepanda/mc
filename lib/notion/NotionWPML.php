@@ -27,7 +27,7 @@ class NotionWPML
 
 			// $trid = apply_filters( 'wpml_element_trid', NULL, $post_id, $wpml_element_type );
 			
-			$trid = WPMLMain::get_trid( $post_id );
+			$trid = WPMLTrid::get_trid( $post_id );
 	
 			do_action(
 				'wpml_set_element_language_details',
