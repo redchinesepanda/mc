@@ -31,53 +31,6 @@ class NotionBonus
 		'bonus-description' => 'billet-bonus-description',
 	];
 
-	// public static function get_lists( $item )
-	// {
-	// 	if ( is_array( $item ) )
-	// 	{
-	// 		if ( NotionMain::array_is_list( $item ) )
-	// 		{
-	// 			return $item;
-	// 		}
-
-	// 		return [ $item ];
-	// 	}
-
-	// 	return [];
-	// }
-
-	// public static function get_row_items( $list )
-	// {
-	// 	$row_items = [];
-
-	// 	if ( !empty( $list[ self::BILLET_LIST_PARTS[ 'items' ] ] ) )
-	// 	{
-	// 		foreach (  $list[ self::BILLET_LIST_PARTS[ 'items' ] ] as $item )
-	// 		{
-	// 			$row_items[] = [
-	// 				self::BILLET_LIST_PART_ITEMS_KEY[ 'title' ] => $item[ self::BILLET_LIST_PART_ITEMS[ 'title' ] ],
-	// 			];
-	// 		}
-	// 	}
-
-	// 	return $row_items;
-	// }
-
-	// const TAXONOMY = [
-	// 	'billet_feature',
-	// ];
-
-	// public static function get_feature( $features )
-	// {
-	// 	return get_terms( [
-	// 		'taxonomy' => self::TAXONOMY,
-
-	// 		'slug' => $features,
-
-	// 		'fields' => 'ids',
-	// 	] );
-	// }
-
 	public static function get_bonus( $url )
 	{
 		$id = url_to_postid( $url );
@@ -124,17 +77,17 @@ class NotionBonus
 				update_field( NotionMain::ACF_KEY[ 'bonus' ], $rows, $post_id );
 			}
 
-			LegalDebug::die( [
-				'function' => 'NotionList::billet_bonus',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionList::billet_bonus',
 
-				'meta_value' => $meta_value,
+			// 	'meta_value' => $meta_value,
 
-				'notion_bonuses' => $notion_bonuses,
+			// 	'notion_bonuses' => $notion_bonuses,
 
-				'bonuses' => $bonuses,
+			// 	'bonuses' => $bonuses,
 
-				'rows' => $rows,
-			] );
+			// 	'rows' => $rows,
+			// ] );
 		}
 	}
 }
