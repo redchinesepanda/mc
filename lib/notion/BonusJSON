@@ -47,8 +47,8 @@
 	"{"
 
 	+ [
-		[ "billet-feture-id", "\"" + "billet-bonus-test" + "\"" ],
-		[ "billet-bonus-id", "\"\"" ],
+		[ "billet-feture-id", "\"" + current.prop("Характеристики").slice( 0, 1 ) + "\"" ],
+		[ "billet-bonus-id", "\"" + current.prop("Страница Бонуса") + "\"" ],
 		[ "billet-bonus-title", "\"" + current.prop("Name") + "\"" ],
 		[ "billet-bonus-description",
 			"\""
