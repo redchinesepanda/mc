@@ -19,13 +19,7 @@ class NotionWPML
 	{
 		if ( NotionMain::META_FIELD[ 'language-code' ] == $meta_key )
 		{
-			// $wpml_element_type = apply_filters( 'wpml_element_type', self::POST_TYPE[ 'billet' ] );
-			
 			$wpml_element_type = WPMLMain::get_element_type( $post_id );
-
-			// $trid = wpml_get_content_trid( $wpml_element_type, $post_id );
-
-			// $trid = apply_filters( 'wpml_element_trid', NULL, $post_id, $wpml_element_type );
 			
 			$trid = WPMLTrid::get_trid( $post_id );
 	
@@ -48,15 +42,13 @@ class NotionWPML
 			LegalDebug::die( [
 				'function' => 'NotionWPML::billet_language_code',
 
-				'meta_value' => $meta_value,
+				'post_id' => $post_id,
 
 				'wpml_element_type' => $wpml_element_type,
-				
-				'original_post_language_info' => $original_post_language_info,
 
 				'trid' => $trid,
 
-				'set_language_args' => $set_language_args,
+				'meta_value' => $meta_value,
 			] );
 		}
 	}
