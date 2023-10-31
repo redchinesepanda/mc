@@ -77,17 +77,17 @@ class NotionBonus
 				update_field( NotionMain::ACF_KEY[ 'bonus' ], $rows, $post_id );
 			}
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionList::billet_bonus',
+			LegalDebug::die( [
+				'function' => 'NotionList::billet_bonus',
 
-			// 	'meta_value' => $meta_value,
+				'meta_value' => $meta_value,
 
-			// 	'notion_bonuses' => $notion_bonuses,
+				'notion_bonuses' => $notion_bonuses,
 
-			// 	'bonuses' => $bonuses,
+				'bonuses' => $bonuses,
 
-			// 	'rows' => $rows,
-			// ] );
+				'rows' => $rows,
+			] );
 		}
 	}
 }
