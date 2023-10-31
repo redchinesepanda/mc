@@ -42,7 +42,7 @@ class NotionWPML
 					'language_code' => $meta_value,
 	
 					'source_language_code' => null,
-				];
+				]
 			); 
 
 			// LegalDebug::die( [
