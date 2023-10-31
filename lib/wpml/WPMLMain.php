@@ -195,6 +195,21 @@ class WPMLMain
         return apply_filters( 'wpml_element_type', get_post_type( $id ) );
     }
 
+    public static function get_language_details( $id = null )
+    {
+        return apply_filters(
+            'wpml_element_language_details',
+
+            null,
+
+            [
+                'element_id' => $id,
+                
+                'element_type' => self::get_element_type( $id ),
+            ]
+        );
+    }
+
     public static function register()
     {
         $handler = new self();
