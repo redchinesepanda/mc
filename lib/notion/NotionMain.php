@@ -14,7 +14,7 @@ class NotionMain
 	{
 		$handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
 
