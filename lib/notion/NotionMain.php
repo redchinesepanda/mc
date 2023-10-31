@@ -18,7 +18,7 @@ class NotionMain
 
 		NotionImage::register_functions();
 
-		NotionWPML::register_functions();
+		// NotionWPML::register_functions();
 	}
 
 	const META_FIELD = [
