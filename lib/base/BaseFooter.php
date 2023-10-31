@@ -15,11 +15,16 @@ class BaseFooter
         BaseMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+        add_action( 'init', [ $handler, 'location' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
-
-        add_action( 'init', [ $handler, 'location' ] );
 
 		// [legal-footer]
 

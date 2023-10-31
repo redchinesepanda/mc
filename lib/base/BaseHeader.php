@@ -39,11 +39,16 @@ class BaseHeader
 		BaseMain::register_script( self::JS );
     }
 
+	public static function register_functions()
+	{
+		$handler = new self();
+
+        add_action( 'init', [ $handler, 'location' ] );
+	}
+
 	public static function register()
     {
         $handler = new self();
-
-        add_action( 'init', [ $handler, 'location' ] );
 
 		// [legal-menu]
 
