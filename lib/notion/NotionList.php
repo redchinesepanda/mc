@@ -88,7 +88,7 @@ class NotionList
 			] );
 		}
 
-		return '';
+		return [];
 	}
 
 	public static function get_row( $list )
