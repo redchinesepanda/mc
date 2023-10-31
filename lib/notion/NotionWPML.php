@@ -43,7 +43,7 @@ class NotionWPML
 	
 					'source_language_code' => null,
 				];
-			);
+			); 
 
 			// LegalDebug::die( [
 			// 	'function' => 'NotionWPML::billet_language_code',
