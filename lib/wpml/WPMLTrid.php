@@ -51,11 +51,11 @@ class WPMLTrid
 
     public static function get_trid( $id = 0 )
     {
-        if ( $id == 0 )
+        if ( empty( $id ) )
         {
             $post = get_post();
 
-            if ( !empty( $post ) )
+            if ( $post )
             {
                 $id = $post->ID;
             }
@@ -71,8 +71,10 @@ class WPMLTrid
         // 	'wpml_element_trid' => apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) ),
         // ] );
         
-        if ( $id != 0 )
+        if ( !empty( $id ) )
+        {
             return apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) );
+        }
 
         return 0;
     }
