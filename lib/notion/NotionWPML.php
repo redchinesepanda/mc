@@ -45,19 +45,19 @@ class NotionWPML
 				]
 			); 
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionWPML::billet_language_code',
+			LegalDebug::die( [
+				'function' => 'NotionWPML::billet_language_code',
 
-			// 	'meta_value' => $meta_value,
+				'meta_value' => $meta_value,
 
-			// 	'wpml_element_type' => $wpml_element_type,
+				'wpml_element_type' => $wpml_element_type,
 				
-			// 	'original_post_language_info' => $original_post_language_info,
+				'original_post_language_info' => $original_post_language_info,
 
-			// 	'trid' => $trid,
+				'trid' => $trid,
 
-			// 	'set_language_args' => $set_language_args,
-			// ] );
+				'set_language_args' => $set_language_args,
+			] );
 		}
 	}
 }
