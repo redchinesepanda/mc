@@ -77,13 +77,18 @@ class NotionList
 
 	public static function get_feature( $features )
 	{
-		return get_terms( [
-			'taxonomy' => self::TAXONOMY,
+		if ( !empty( $features ) )
+		{
+			return get_terms( [
+				'taxonomy' => self::TAXONOMY,
+	
+				'slug' => $features,
+	
+				'fields' => 'ids',
+			] );
+		}
 
-			'slug' => $features,
-
-			'fields' => 'ids',
-		] );
+		return '';
 	}
 
 	public static function get_row( $list )
