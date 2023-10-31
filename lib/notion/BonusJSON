@@ -55,7 +55,7 @@
 			
 			+ replaceAll(
 				replaceAll(
-					substring( current.prop("T&C Full"), 0, 60 ),
+					substring( current.prop("Description (for selections)"), 0, 60 ),
 					"\"",
 					"\\\""
 				),
