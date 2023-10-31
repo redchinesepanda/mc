@@ -56,8 +56,8 @@
 			+ replaceAll(
 				replaceAll(
 					substring( current.prop("Description (for selections)"), 0, 120 ),
-					"\"",
-					"\\\""
+					"[“”\"]",
+					""
 				),
 				"\n",
 				" "
