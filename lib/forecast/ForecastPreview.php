@@ -55,7 +55,7 @@ class ForecastPreview
 
 					'title' => $post->post_title,
 
-					'date' => get_field( self::ACF_FIELD[ 'forecast-date' ] ),
+					'date' => get_field( self::ACF_FIELD[ 'forecast-date' ], $post->ID ),
 				]; 
 			}
 		}
@@ -73,16 +73,6 @@ class ForecastPreview
 			'post_status' => 'publish',
 
 			'suppress_filters' => 0,
-
-			// 'tax_query' => [
-			// 	[
-			// 		'taxonomy' => $atts[ 'taxonomy' ],
-	
-			// 		'field' => 'slug',
-	
-			// 		'terms' => $atts[ 'terms' ],
-			// 	]
-			// ],
 
 			'tag_slug__in' => $atts[ 'terms' ],
 
