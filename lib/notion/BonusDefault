@@ -1,0 +1,21 @@
+prop("Бонусы")
+.filter( current.prop("Характеристики").empty() )
+.slice( 0, 1 )
+.map( current.prop("Name") )
+.join( "," )
+
+prop("Бонусы")
+.filter( current.prop("Характеристики").empty() )
+.slice( 0, 1 )
+.map(
+	replaceAll(
+		replaceAll(
+			substring( current.prop("Description (for selections)"), 0, 120 ),
+			"[“”\"]",
+			""
+		),
+		"\n",
+		" "
+	)
+)
+.join( "," )

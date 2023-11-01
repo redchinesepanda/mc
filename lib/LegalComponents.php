@@ -12,6 +12,8 @@ require_once( 'template/TemplateMain.php' );
 
 require_once( 'wiki/WikiMain.php' );
 
+require_once( 'forecast/ForecastMain.php' );
+
 class LegalComponents
 {
 	public static function register_functions()
@@ -52,6 +54,8 @@ class LegalComponents
 			TemplateMain::register();
 
 			WikiMain::register();
+
+			ForecastMain::register();
 		}
 	}
 

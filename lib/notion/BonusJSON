@@ -43,6 +43,7 @@
 "["
 
 + prop("Бонусы")
+.filter( !current.prop("Характеристики").empty())
 .map(
 	"{"
 

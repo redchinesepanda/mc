@@ -1,9 +1,9 @@
 "["
 
 + [
-	[ "legal-minus", prop("Pros ENG Feature"), prop("Pros ENG") ],
+	[ "legal-plus", prop("Pros ENG Feature"), prop("Pros ENG") ],
 
-	[ "legal-plus", prop("Cons ENG Feature"), prop("Cons ENG") ]
+	[ "legal-minus", prop("Cons ENG Feature"), prop("Cons ENG") ]
 ]
 .map(
 	"{"
