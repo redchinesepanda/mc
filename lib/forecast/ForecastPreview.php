@@ -74,15 +74,17 @@ class ForecastPreview
 
 			'suppress_filters' => 0,
 
-			'tax_query' => [
-				[
-					'taxonomy' => $atts[ 'taxonomy' ],
+			// 'tax_query' => [
+			// 	[
+			// 		'taxonomy' => $atts[ 'taxonomy' ],
 	
-					'field' => 'slug',
+			// 		'field' => 'slug',
 	
-					'terms' => $atts[ 'terms' ],
-				]
-			],
+			// 		'terms' => $atts[ 'terms' ],
+			// 	]
+			// ],
+
+			'tag_slug__in' = $atts[ 'tags' ],
 
 			'orderby' => [
 				'modified' => 'DESC',
@@ -106,7 +108,7 @@ class ForecastPreview
 
 		'taxonomy' => 'post_tag',
 
-		'terms' => [ 'prognozy-na-mma' ],
+		'terms' => [ 'prognozy-na-sport' ],
 
 		'limit' => 6,
 	];
