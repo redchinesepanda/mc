@@ -84,7 +84,7 @@ class ForecastPreview
 			// 	]
 			// ],
 
-			'tag_slug__in' = $atts[ 'terms' ],
+			'tag_slug__in' => $atts[ 'terms' ],
 
 			'orderby' => [
 				'modified' => 'DESC',
