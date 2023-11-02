@@ -35,7 +35,7 @@ class NotionAffiliate
 	{
 		if ( NotionMain::META_FIELD[ 'about-afillate' ] == $meta_key )
 		{
-			$about_afillate = self::get_afillate( $url );
+			$about_afillate = self::get_afillate( $meta_value );
 
 			if ( !empty( $about_afillate ) )
 			{
