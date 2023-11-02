@@ -32,6 +32,8 @@ require_once( 'ReviewTitle.php' );
 
 require_once( 'ReviewTable.php' );
 
+require_once( 'ReviewGoogle.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -155,6 +157,8 @@ class ReviewMain
         ReviewGallery::register_functions();
 
         ReviewAnchors::register_functions();
+
+        ReviewGoogle::register_functions();
 	}
 
     public static function register()
