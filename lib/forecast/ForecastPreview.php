@@ -82,7 +82,9 @@ class ForecastPreview
         {
             foreach ( $atts_all as $atts )
             {
-				$args = self::shortcode_get_items( $atts );
+				$args = [
+					'items' => self::shortcode_get_items( $atts ),
+				];
 
 				LegalDebug::debug( [
 					'function' => 'ForecastPreview::get_inline_style',
