@@ -39,7 +39,13 @@ class NotionAffiliate
 
 			if ( !empty( $about_afillate ) )
 			{
-				update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
+				// update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
+
+				$field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post->ID );
+
+				$field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate;
+
+				update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
 			}
 
 			// LegalDebug::die( [
