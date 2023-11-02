@@ -10,10 +10,10 @@ LegalDebug::debug( [
 <div class="legal-forecast-list">
 	<?php foreach( $args[ 'items' ] as $item ) : ?>
 		<div class="legal-forecast-block">
-			<a href="https://match.center/kz/chimaev-kosta/" class="block-prewiew chimaev-kosta">
-				<span>21 октября 2023</span>
+			<a href="<?php echo $item[ 'href' ] ?>" class="block-prewiew chimaev-kosta">
+				<span><?php echo $item[ 'date' ] ?></span>
 			</a>
-			<a href="https://match.center/kz/chimaev-kosta/" class="legal-forecast-block-title underline">Чимаев – Коста: прогнозы и коэффициенты</a>
+			<a href="<?php echo $item[ 'href' ] ?>" class="legal-forecast-block-title underline"><?php echo $item[ 'title' ] ?></a>
 		</div>
 	<?php endforeach; ?>
 
