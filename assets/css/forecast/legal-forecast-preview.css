@@ -1,0 +1,129 @@
+.legal-forecast-list * {
+	box-sizing: border-box;
+	font-family: "Source Sans Pro";
+}
+
+.legal-forecast-list a {
+	text-decoration: none;
+}
+
+.legal-forecast-list a.underline {
+	background-image: linear-gradient(#cbcbcb, #cbcbcb);
+	background-position: 50% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size .2s;
+	text-decoration: none;
+}
+
+.legal-forecast-list a.underline:hover {
+	background-size: 100% 2px;
+}
+
+/* Position */
+
+.legal-forecast-list .legal-forecast-block {
+	padding: 10px;
+}
+
+.legal-forecast-list .block-prewiew {
+	padding: 15px 10px;
+}
+
+/* Width and Height */
+
+.legal-forecast-list .legal-forecast-block {
+	width: calc(100% / 3 - 1.95rem);
+}
+
+@media (max-width: 768px) {
+	.legal-forecast-list .legal-forecast-block {
+		width: auto;
+	}
+}
+
+.legal-forecast-list  .block-prewiew {
+	width: 100%;
+	height: 185px;
+}
+
+@media (max-width: 576px) {
+	.legal-forecast-list .block-prewiew {
+		height: 175px;
+	}
+}
+
+/* Display */
+
+.legal-forecast-list {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 1rem; 
+}
+
+.legal-forecast-list .legal-forecast-block {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+@media (max-width: 768px) {
+	.legal-forecast-list .legal-forecast-block {
+		row-gap: 0.5rem;
+	}
+}
+
+.legal-forecast-list .block-prewiew {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+/* Background */
+
+.legal-forecast-list .legal-forecast-block {
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.legal-forecast-list .block-prewiew {
+	border-radius: 8px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.legal-forecast-list .legal-forecast-block:hover {
+	background-color: #fff;
+}
+
+.legal-forecast-list .block-prewiew.chimaev-kosta {
+	background-image: url('https://match.center/wp-content/uploads/image-64880ba671740-image-6488-1024x580.jpg');
+}
+
+.legal-forecast-list .block-prewiew.mahachev-oliveira {
+	background-image: url('https://match.center/wp-content/uploads/image-64fb1a417782c-image-64fb-1024x580.jpg');
+}
+
+/* Typography */
+
+.legal-forecast-list .block-prewiew p {
+	cursor: pointer;
+	text-align: left;
+	color: #fff;
+	line-height: 1.2;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.legal-forecast-list .legal-forecast-block-title {
+	cursor: pointer;
+	text-align: left;
+	color: #0c1115;
+	line-height: 1.2;
+	font-weight: 400;
+	font-size: 18px;
+}
