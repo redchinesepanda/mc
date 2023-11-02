@@ -39,11 +39,13 @@ class NotionAffiliate
 
 			if ( !empty( $about_afillate_id ) )
 			{
-				// update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
+				update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
 
 				$field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post_id );
 
-				$field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate_id;
+				// $field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate_id;
+				
+				$field[ self::REVIEW_ABOUT_KEY[ 'afillate' ] ] = $about_afillate_id;
 
 				update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
 
