@@ -39,7 +39,7 @@ class NotionAffiliate
 
 			if ( !empty( $about_afillate ) )
 			{
-				update_field( NotionMain::ACF_KEY[ 'settings' ] . '_' . self::REVIEW_ABOUT_KEY[ 'afillate' ], $about_afillate, $post_id );
+				update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
 			}
 
 			// LegalDebug::die( [
