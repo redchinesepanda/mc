@@ -84,6 +84,12 @@ class ForecastPreview
             {
 				$args = self::shortcode_get_items( $atts );
 
+				LegalDebug::debug( [
+					'function' => 'ForecastPreview::get_inline_style',
+		
+					'args' => $args,
+				] );
+
                 $output[] = self::render_inline( $args );
             }
         }
