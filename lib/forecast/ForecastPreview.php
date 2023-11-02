@@ -50,7 +50,7 @@ class ForecastPreview
         return $matches;
     }
 
-	public static function get_inline_style( $args )
+	public static function get_inline_style()
 	{
 		$output = [];
 
