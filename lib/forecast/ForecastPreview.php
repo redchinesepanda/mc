@@ -15,6 +15,66 @@ class ForecastPreview
 		ToolEnqueue::register_style( self::CSS );
     }
 
+	public static function register_inline_style()
+    {
+        ToolEnqueue::register_inline_style( 'legal-forecast-preview', self::get_inline_style() );
+    }
+
+	const SHORTCODE_INLINE = [
+        self::SHORTCODE[ 'forecast-preview' ],
+    ];
+
+	public static function get_shortcode()
+    {
+        $matches = [];
+
+        $post = get_post();
+
+        if ( $post )
+        {
+            $regex = get_shortcode_regex( self::SHORTCODE_INLINE );
+
+            $amount = preg_match_all( 
+                '/' . $regex . '/', 
+    
+                $post->post_content,
+    
+                $matches,
+    
+                PREG_SET_ORDER
+            );
+        }
+
+        // return self::get_attr_id( $matches );
+
+        return $matches;
+    }
+
+	public static function get_inline_style( $args )
+	{
+		$output = [];
+
+        // $compilations_ids = self::get_compilations_shortcode_id();
+
+		$shortcodes = self::get_shortcode();
+
+        // if ( !empty( $compilations_ids ) )
+        // {
+        //     foreach ( $compilations_ids as $compilation_id )
+        //     {
+        //         $output[] = CompilationMain::render_style( $compilation_id );
+        //     }
+        // }
+
+		LegalDebug::debug( [
+			'function' => 'ForecastPreview::get_inline_style',
+
+			'shortcodes' => $shortcodes,
+		] );
+
+        return implode( PHP_EOL, $output );
+	}
+
 	const SHORTCODE = [
 		'forecast-preview' => 'legal-forecast-preview',
 	];
@@ -32,6 +92,8 @@ class ForecastPreview
         add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
 
 	const ACF_FIELD = [
@@ -118,6 +180,8 @@ class ForecastPreview
 
 	const TEMPLATE = [
         'legal-forecast-preview' => LegalMain::LEGAL_PATH . '/template-parts/forecast/part-legal-forecast-preview.php',
+
+        'legal-forecast-preview-style' => LegalMain::LEGAL_PATH . '/template-parts/forecast/part-legal-forecast-preview.php',
     ];
 
 	public static function render( $args )
@@ -125,6 +189,17 @@ class ForecastPreview
 		ob_start();
 
         load_template( self::TEMPLATE[ 'legal-forecast-preview' ], false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
+
+	public static function render_inline_style_preview( $args )
+    {
+		ob_start();
+
+        load_template( self::TEMPLATE[ 'legal-forecast-preview-style' ], false, $args );
 
         $output = ob_get_clean();
 
