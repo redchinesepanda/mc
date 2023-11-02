@@ -16,7 +16,7 @@ class NotionMain
 	{
 		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
 
@@ -74,9 +74,9 @@ class NotionMain
 		LegalDebug::debug( [
 			'function' => 'NotionMain::billet_list_show',
 
-			self::META_FIELD[ 'bonus' ] => get_post_meta( $post->ID, self::META_FIELD[ 'bonus' ], true ),
+			self::META_FIELD[ 'about-afillate' ] => get_post_meta( $post->ID, self::META_FIELD[ 'about-afillate' ], true ),
 
-			self::ACF_FIELD[ 'bonus' ] => get_field( self::ACF_FIELD[ 'bonus' ], $post->ID ),
+			self::ACF_FIELD[ 'settings' ] => get_field( self::ACF_FIELD[ 'settings' ], $post->ID ),
 		] );
 	}
 }
