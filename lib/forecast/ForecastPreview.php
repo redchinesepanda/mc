@@ -211,7 +211,7 @@ class ForecastPreview
 	const TEMPLATE = [
         'legal-forecast-preview' => LegalMain::LEGAL_PATH . '/template-parts/forecast/part-legal-forecast-preview.php',
 
-        'legal-forecast-preview-style' => LegalMain::LEGAL_PATH . '/template-parts/forecast/part-legal-forecast-preview.php',
+        'legal-forecast-preview-style' => LegalMain::LEGAL_PATH . '/template-parts/forecast/part-legal-forecast-preview-style.php',
     ];
 
 	public static function render( $args )
