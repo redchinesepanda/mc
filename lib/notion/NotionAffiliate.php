@@ -45,7 +45,7 @@ class NotionAffiliate
 
 				$field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate_id;
 
-				update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
+				update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
 
 				LegalDebug::die( [
 					'function' => 'NotionAffiliate::billet_afillate',
