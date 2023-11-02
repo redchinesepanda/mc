@@ -54,7 +54,7 @@ class NotionAffiliate
 	
 					'meta_value' => $meta_value,
 	
-					'about_afillate' => $about_afillate,
+					'about_afillate_id' => $about_afillate_id,
 	
 					'field' => $field,
 				] );
