@@ -8,8 +8,8 @@
 
 ?>
 <div class="legal-forecast-list">
-	<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
-		<div class="legal-forecast-block legal-forecast-block-<?php echo $id; ?>">
+	<?php foreach( $args[ 'items' ] as $item ) : ?>
+		<div class="legal-forecast-block legal-forecast-block-<?php echo $item[ 'id' ]; ?>">
 			<a href="<?php echo $item[ 'href' ] ?>" class="block-prewiew">
 				<span><?php echo $item[ 'date' ] ?></span>
 			</a>
