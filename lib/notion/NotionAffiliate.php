@@ -35,28 +35,23 @@ class NotionAffiliate
 	{
 		if ( NotionMain::META_FIELD[ 'about-afillate' ] == $meta_key )
 		{
-			$about_afillate_id = self::get_afillate_id( $meta_value );
-
-			if ( !empty( $about_afillate_id ) )
-			{
-				update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
+			update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
 				
-				$field[ self::REVIEW_ABOUT_KEY[ 'afillate' ] ] = $about_afillate_id;
+			$field[ self::REVIEW_ABOUT_KEY[ 'afillate' ] ] = self::get_afillate_id( $meta_value );
 
-				update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
+			update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
 
-				// LegalDebug::die( [
-				// 	'function' => 'NotionAffiliate::billet_afillate',
-	
-				// 	'meta_key' => $meta_key,
-	
-				// 	'meta_value' => $meta_value,
-	
-				// 	'about_afillate_id' => $about_afillate_id,
-	
-				// 	'field' => $field,
-				// ] );
-			}
+			// LegalDebug::die( [
+			// 	'function' => 'NotionAffiliate::billet_afillate',
+
+			// 	'meta_key' => $meta_key,
+
+			// 	'meta_value' => $meta_value,
+
+			// 	'about_afillate_id' => $about_afillate_id,
+
+			// 	'field' => $field,
+			// ] );
 		}
 	}
 }
