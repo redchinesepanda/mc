@@ -86,21 +86,21 @@ class ForecastPreview
 					'items' => self::shortcode_get_items( $atts ),
 				];
 
-				LegalDebug::debug( [
-					'function' => 'ForecastPreview::get_inline_style',
+				// LegalDebug::debug( [
+				// 	'function' => 'ForecastPreview::get_inline_style',
 		
-					'args' => $args,
-				] );
+				// 	'args' => $args,
+				// ] );
 
                 $output[] = self::render_inline( $args );
             }
         }
 
-		LegalDebug::debug( [
-			'function' => 'ForecastPreview::get_inline_style',
+		// LegalDebug::debug( [
+		// 	'function' => 'ForecastPreview::get_inline_style',
 
-			'atts_all' => $atts_all,
-		] );
+		// 	'atts_all' => $atts_all,
+		// ] );
 
         return implode( PHP_EOL, $output );
 	}
