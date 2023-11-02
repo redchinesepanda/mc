@@ -42,15 +42,15 @@ class NotionAffiliate
 				update_field( NotionMain::ACF_KEY[ 'settings' ] . '_' . self::REVIEW_ABOUT_KEY[ 'afillate' ], $about_afillate, $post_id );
 			}
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionAffiliate::billet_afillate',
+			LegalDebug::die( [
+				'function' => 'NotionAffiliate::billet_afillate',
 
-			// 	'meta_key' => $meta_key,
+				'meta_key' => $meta_key,
 
-			// 	'meta_value' => $meta_value,
+				'meta_value' => $meta_value,
 
-			// 	'about_afillate' => $about_afillate,
-			// ] );
+				'about_afillate' => $about_afillate,
+			] );
 		}
 	}
 }
