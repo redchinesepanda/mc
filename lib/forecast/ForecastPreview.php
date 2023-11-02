@@ -78,6 +78,8 @@ class ForecastPreview
 
 		$shortcodes = self::get_shortcode();
 
+		$atts = self::get_atts( $shortcodes );
+
         // if ( !empty( $compilations_ids ) )
         // {
         //     foreach ( $compilations_ids as $compilation_id )
@@ -89,7 +91,7 @@ class ForecastPreview
 		LegalDebug::debug( [
 			'function' => 'ForecastPreview::get_inline_style',
 
-			'shortcodes' => $shortcodes,
+			'atts' => $atts,
 		] );
 
         return implode( PHP_EOL, $output );
