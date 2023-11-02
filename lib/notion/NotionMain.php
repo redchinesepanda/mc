@@ -76,7 +76,7 @@ class NotionMain
 
 			self::META_FIELD[ 'about-afillate' ] => get_post_meta( $post->ID, self::META_FIELD[ 'about-afillate' ], true ),
 
-			NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ], $post->ID ),
+			NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ], $post->ID, false ),
 		] );
 	}
 }
