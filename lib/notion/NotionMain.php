@@ -8,6 +8,8 @@ require_once( 'NotionWPML.php' );
 
 require_once( 'NotionBonus.php' );
 
+require_once( 'NotionAffiliate.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -23,6 +25,8 @@ class NotionMain
 		NotionWPML::register_functions();
 
 		NotionBonus::register_functions();
+
+		NotionAffiliate::register_functions();
 	}
 
 	const META_FIELD = [
@@ -33,6 +37,8 @@ class NotionMain
 		'language-code' => 'notion_language_code',
 
 		'bonus' => 'notion_billet_bonus',
+
+		'about-afillate' => 'notion_about_afillate',
 
 		'about-logo' => 'notion_about_logo',
 	];
