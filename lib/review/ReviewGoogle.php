@@ -17,7 +17,7 @@ class ReviewGoogle
 
 	public static function getGoogleDoc( $meta_id, $post_id, $meta_key, $meta_value )
 	{
-		if ( NotionMain::META_FIELD[ 'list' ] == $meta_key )
+		if ( self::META_FIELD[ 'content' ] == $meta_key )
 		{
 			$content = getUrl( 'https://docs.google.com/document/pub?id=' . $meta_value );
 		
