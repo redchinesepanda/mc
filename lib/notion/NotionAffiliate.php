@@ -46,19 +46,19 @@ class NotionAffiliate
 				$field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate;
 
 				update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
+
+				LegalDebug::die( [
+					'function' => 'NotionAffiliate::billet_afillate',
+	
+					'meta_key' => $meta_key,
+	
+					'meta_value' => $meta_value,
+	
+					'about_afillate' => $about_afillate,
+	
+					'field' => $field,
+				] );
 			}
-
-			LegalDebug::die( [
-				'function' => 'NotionAffiliate::billet_afillate',
-
-				'meta_key' => $meta_key,
-
-				'meta_value' => $meta_value,
-
-				'about_afillate' => $about_afillate,
-
-				'field' => $field,
-			] );
 		}
 	}
 }
