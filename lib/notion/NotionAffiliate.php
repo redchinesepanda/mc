@@ -41,7 +41,7 @@ class NotionAffiliate
 			{
 				// update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
 
-				// $field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post_id );
+				$field = get_field( NotionMain::ACF_FIELD[ 'settings' ], $post_id );
 
 				$field[ self::REVIEW_ABOUT_FIELD[ 'afillate' ] ] = $about_afillate_id;
 
