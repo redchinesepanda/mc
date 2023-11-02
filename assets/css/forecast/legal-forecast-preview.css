@@ -110,7 +110,7 @@
 
 /* Typography */
 
-.legal-forecast-list .block-prewiew p {
+.legal-forecast-list .block-prewiew span {
 	cursor: pointer;
 	text-align: left;
 	color: #fff;
