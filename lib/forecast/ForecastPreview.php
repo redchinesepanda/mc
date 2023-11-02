@@ -24,6 +24,26 @@ class ForecastPreview
         self::SHORTCODE[ 'forecast-preview' ],
     ];
 
+	public static function get_atts( $matches )
+    {
+        $atts = [];
+
+        if ( !empty( $matches ) )
+        {
+            foreach ( $matches as $match )
+            {
+                $atts[] = shortcode_atts(
+					self::PAIRS,
+
+					shortcode_parse_atts( $match[ 3 ] ),
+					self::SHORTCODE[ 'forecast-preview' ]
+				);
+            }
+        }
+
+        return $atts;
+    }
+
 	public static function get_shortcode()
     {
         $matches = [];
