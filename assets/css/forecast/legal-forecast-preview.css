@@ -7,17 +7,8 @@
 	text-decoration: none;
 }
 
-.legal-forecast-list a.underline {
-	background-image: linear-gradient(#cbcbcb, #cbcbcb);
-	background-position: 50% 100%;
-	background-repeat: no-repeat;
-	background-size: 0% 2px;
-	transition: background-size .2s;
+.legal-forecast-list a:hover {
 	text-decoration: none;
-}
-
-.legal-forecast-list a.underline:hover {
-	background-size: 100% 2px;
 }
 
 /* Position */
@@ -26,25 +17,22 @@
 	padding: 10px;
 }
 
+@media (max-width: 768px) {
+	.legal-forecast-list .legal-forecast-block {
+		margin: 0 auto;
+	}
+}
+
 .legal-forecast-list .block-prewiew {
 	padding: 15px 10px;
 }
 
 /* Width and Height */
 
-.legal-forecast-list .legal-forecast-block {
-	width: calc(100% / 3 - 1.95rem);
-}
 
-@media (max-width: 768px) {
-	.legal-forecast-list .legal-forecast-block {
-		width: auto;
-	}
-}
-
-.legal-forecast-list  .block-prewiew {
+.legal-forecast-list .block-prewiew {
 	width: 100%;
-	height: 185px;
+	height: 190px;
 }
 
 @media (max-width: 576px) {
@@ -69,6 +57,7 @@
 	justify-content: space-between;
 	flex-direction: column;
 	row-gap: 1rem;
+    flex-basis: 329px
 }
 
 @media (max-width: 768px) {
@@ -92,21 +81,18 @@
 
 .legal-forecast-list .block-prewiew {
 	border-radius: 8px;
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.legal-forecast-list .block-prewiew:hover {
+    background-size: 110%;
+    background-position: center;
 }
 
 .legal-forecast-list .legal-forecast-block:hover {
 	background-color: #fff;
 }
-
-/* .legal-forecast-list .block-prewiew.chimaev-kosta {
-	background-image: url('https://match.center/wp-content/uploads/image-64880ba671740-image-6488-1024x580.jpg');
-}
-
-.legal-forecast-list .block-prewiew.mahachev-oliveira {
-	background-image: url('https://match.center/wp-content/uploads/image-64fb1a417782c-image-64fb-1024x580.jpg');
-} */
 
 /* Typography */
 
