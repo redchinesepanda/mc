@@ -74,24 +74,24 @@ class ForecastPreview
 	{
 		$output = [];
 
-        // $compilations_ids = self::get_compilations_shortcode_id();
-
 		$shortcodes = self::get_shortcode();
 
-		$atts = self::get_atts( $shortcodes );
+		$atts_all = self::get_atts( $shortcodes );
 
-        // if ( !empty( $compilations_ids ) )
-        // {
-        //     foreach ( $compilations_ids as $compilation_id )
-        //     {
-        //         $output[] = CompilationMain::render_style( $compilation_id );
-        //     }
-        // }
+		if ( !empty( $atts_all ) )
+        {
+            foreach ( $atts_all as $atts )
+            {
+				$args = self::shortcode_get_items( $atts );
+
+                $output[] = self::render_inline( $args );
+            }
+        }
 
 		LegalDebug::debug( [
 			'function' => 'ForecastPreview::get_inline_style',
 
-			'atts' => $atts,
+			'atts_all' => $atts_all,
 		] );
 
         return implode( PHP_EOL, $output );
@@ -217,7 +217,7 @@ class ForecastPreview
         return $output;
     }
 
-	public static function render_inline_style_preview( $args )
+	public static function render_inline( $args )
     {
 		ob_start();
 
