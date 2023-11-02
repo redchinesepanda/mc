@@ -35,7 +35,7 @@ class NotionAffiliate
 	{
 		if ( NotionMain::META_FIELD[ 'about-afillate' ] == $meta_key )
 		{
-			update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
+			// update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
 				
 			$field[ self::REVIEW_ABOUT_KEY[ 'afillate' ] ] = self::get_afillate_id( $meta_value );
 

@@ -1,0 +1,65 @@
+.wp-polls .container-form_radio_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+}
+.wp-polls .form_radio_btn {
+	display: inline-block;
+	margin: 0 25px;
+}
+.wp-polls .form_radio_btn input[type=radio] {
+	display: none;
+}
+.wp-polls .form_radio_btn label {
+	display: inline-block;
+	margin: 0 0 20px 0;
+	padding: 5px 15px 5px;
+	border-radius: 20px;
+	text-align: center;
+	color: #646363;
+	border: 1px solid #5997e3;
+	box-shadow: 0 0 10px #e4e4e4;
+	width: 250px;
+}
+	
+/* Checked */
+.wp-polls .form_radio_btn input[type=radio]:checked + label {
+	background: #5997e3;
+	color: #fff;
+}
+	
+/* Hover */
+.wp-polls .form_radio_btn label:hover {
+	color: #000;
+	cursor: pointer;
+}
+	
+/* Disabled */
+.wp-polls .form_radio_btn input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #666;
+}
+.wp-polls .Button-my-style {
+	border-radius: 20px !important;
+	padding: 10px 20px !important;
+	background: #007bff !important;
+	border: #fff solid 2px !important;
+	color: #fff !important;
+	font-weight: 600 !important;
+	display: flex !important;
+	cursor: pointer !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+.wp-polls .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 576px) {
+	.wp-polls .container-form_radio_btn {
+		flex-direction: column;
+	}
+}
