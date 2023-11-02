@@ -48,15 +48,17 @@ class NotionAffiliate
 				update_field( NotionMain::ACF_FIELD[ 'settings' ], $field, $post_id );
 			}
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionAffiliate::billet_afillate',
+			LegalDebug::die( [
+				'function' => 'NotionAffiliate::billet_afillate',
 
-			// 	'meta_key' => $meta_key,
+				'meta_key' => $meta_key,
 
-			// 	'meta_value' => $meta_value,
+				'meta_value' => $meta_value,
 
-			// 	'about_afillate' => $about_afillate,
-			// ] );
+				'about_afillate' => $about_afillate,
+
+				'field' => $field,
+			] );
 		}
 	}
 }
