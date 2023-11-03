@@ -45,7 +45,7 @@
     padding-bottom: 20px;
 }
 
-.tcb-post-content > p:not( :last-child ):not( .legal-override ):not( .legal-contextbox ):not( .legal-attention ):not( .legal-faq-title ) {
+.tcb-post-content > p:not( :last-child ):not( .legal-override ):not( .legal-contextbox ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
     padding-bottom: 30px;
 }
 
