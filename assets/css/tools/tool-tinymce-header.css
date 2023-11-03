@@ -90,3 +90,7 @@
 #tinymce .legal-header-volleyball::before {
 	background-image: url( '../../img/review/header/review-volleyball.svg' );
 }
+
+#tinymce .legal-header-motorsport::before {
+	background-image: url( '../../img/review/header/review-motorsport.svg' );
+}
