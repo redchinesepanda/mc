@@ -81,3 +81,7 @@
 .tcb-post-content .legal-header-volleyball::before {
     background-image: url( '../../img/review/header/review-volleyball.svg' );
 }
+
+.tcb-post-content .legal-header-motorsport::before {
+    background-image: url( '../../img/review/header/review-motorsport.svg' );
+}
