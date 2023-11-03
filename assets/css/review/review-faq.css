@@ -31,8 +31,13 @@
 }
 
 /* .faq .faq-item-content, */
-.tcb-post-content .legal-faq-description {
+/* .tcb-post-content .legal-faq-description {
 	padding: 20px;
+} */
+
+.tcb-post-content .legal-faq-title ~ .legal-faq-description
+{
+	padding-top: 20px;
 }
 
 /* FAQ Width nad Height */
