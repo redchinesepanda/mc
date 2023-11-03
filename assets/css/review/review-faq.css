@@ -41,6 +41,11 @@
 	padding-top: 20px;
 }
 
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:not( :last-child )
+{
+	padding-bottom: 20px;
+}
+
 /* FAQ Width nad Height */
 
 .tcb-post-content .legal-faq-title:before {
