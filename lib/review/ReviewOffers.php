@@ -89,8 +89,12 @@ class ReviewOffers
 	// }
 
 	const FIELD = [
-		'about' => 'review-about',
+		'title' => 'offer-group-title',
 
+		'about' => 'review-about',
+	];
+
+	const REVIEW_ABOUT = [
 		'afillate' => 'about-afillate',
 
 		'bonus' => 'about-bonus',
@@ -102,8 +106,6 @@ class ReviewOffers
 		'font' => 'about-font',
 
 		'afillate' => 'about-afillate',
-
-		'offer' => 'tabs-title-offer',
 	];
 
 	const TAXONOMY = [
@@ -208,16 +210,16 @@ class ReviewOffers
 	// 		$group = get_field( self::FIELD[ 'about' ], $offer->ID );
 
 	// 		$items[] = [
-	// 			'bonus' => $group[ self::FIELD[ 'bonus' ] ],
+	// 			'bonus' => $group[ self::REVIEW_ABOUT[ 'bonus' ] ],
 
-	// 			'logo' => $group[ self::FIELD[ 'logo' ] ],
+	// 			'logo' => $group[ self::REVIEW_ABOUT[ 'logo' ] ],
 
-	// 			'background' => $group[ self::FIELD[ 'background' ] ],
+	// 			'background' => $group[ self::REVIEW_ABOUT[ 'background' ] ],
 
-	// 			'font' => $group[ self::FIELD[ 'font' ] ],
+	// 			'font' => $group[ self::REVIEW_ABOUT[ 'font' ] ],
 
 	// 			'afillate' => [
-    //                 'href' => self::check_url_afillate( $group[ self::FIELD[ 'afillate' ] ] ),
+    //                 'href' => self::check_url_afillate( $group[ self::REVIEW_ABOUT[ 'afillate' ] ] ),
 
     //                 'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
     //             ],
@@ -234,7 +236,7 @@ class ReviewOffers
 
 		foreach ( $offers as $offer )
 		{
-			$label = get_field( self::FIELD[ 'offer' ], $offer->ID );
+			$label = get_field( self::FIELD[ 'title' ], $offer->ID );
 
 			if ( empty( $label ) )
 			{
