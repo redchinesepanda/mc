@@ -19,40 +19,31 @@ class NotionTaxonomy
 	{
 		if ( NotionMain::META_FIELD[ 'feature' ] == $meta_key )
 		{
-			// update_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'afillate' ], $about_afillate, $post_id );
-				
-			// $field[ self::REVIEW_ABOUT_KEY[ 'afillate' ] ] = self::get_afillate_id( $meta_value );
-
-			// update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
-
 			$terms = self::format( $meta_value, self::TAXONOMY[ 'feature' ] );
 
 			$result = wp_set_post_terms( $post_id, $terms, self::TAXONOMY[ 'feature' ], false );
 
-			LegalDebug::die( [
-				'function' => 'NotionTaxonomy::billet_feature',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionTaxonomy::billet_feature',
 
-				'meta_key' => $meta_key,
+			// 	'meta_key' => $meta_key,
 
-				'meta_value' => $meta_value,
+			// 	'meta_value' => $meta_value,
 
-				'terms' => $terms,
+			// 	'terms' => $terms,
 
-				'result' => $result,
-			] );
+			// 	'result' => $result,
+			// ] );
 		}
 	}
 
 	public static function format( $value, $taxonomy )
 	{
-		// $this->importer = $importer;
-
 		if ( empty( $value ) )
 		{
 			return [];
 		}
 
-		// Make sure we have an array of terms.
 		$values = ! is_array( $value ) ? explode( ',', $value ) : $value;
 
 		$terms = [];
