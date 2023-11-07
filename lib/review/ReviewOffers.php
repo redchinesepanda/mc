@@ -187,7 +187,9 @@ class ReviewOffers
 
             'tax_query' => $tax_query,
 
-            'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
+            // 'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
+            
+			'orderby' => [ 'rand' ],
 		];
 	}
 
@@ -285,6 +287,8 @@ class ReviewOffers
 
 			if ( !empty( $posts ) )
 			{
+				shuffle( $posts );
+
 				// if ( self::check_compilation() )
 				// {
 					$items = self::parse_offers_compilation( $posts, $atts[ 'suffix' ] );
