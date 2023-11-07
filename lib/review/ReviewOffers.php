@@ -129,6 +129,10 @@ class ReviewOffers
 		return $items;
 	}
 
+	const OFFER_GROUP = [
+		'other' => 'offer-group-other',
+	];
+
 	public static function offer_query( $id, $selected_term = '' )
 	{
 		$tax_query = [
@@ -157,7 +161,7 @@ class ReviewOffers
 
                     'field' => 'slug',
 
-                    'terms' => [ $selected_term ],
+                    'terms' => array_merge( [ $selected_term ], self::OFFER_GROUP ),
 
 					'operator' => 'IN',
 				],
