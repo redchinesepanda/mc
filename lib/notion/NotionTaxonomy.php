@@ -41,7 +41,7 @@ class NotionTaxonomy
 		}
 	}
 
-	public static public function format( $value, $taxonomy )
+	public static function format( $value, $taxonomy )
 	{
 		// $this->importer = $importer;
 
