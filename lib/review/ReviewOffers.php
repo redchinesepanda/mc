@@ -30,10 +30,10 @@ class ReviewOffers
 		ReviewMain::register_script( self::JS );
     }
 
-	public static function register_inline_style()
-    {
-		ReviewMain::register_inline_style( 'review-offers', self::inline_style() );
-    }
+	// public static function register_inline_style()
+    // {
+	// 	ReviewMain::register_inline_style( 'review-offers', self::inline_style() );
+    // }
 
 	const SHORTCODE = [
 		'offers' => 'legal-offers',
@@ -54,39 +54,39 @@ class ReviewOffers
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		// [legal-offers terms=""]
 
 		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
 
-	public static function inline_style()
-	{
-		if ( !ReviewMain::check() )
-		{
-            return '';
-        }
+	// public static function inline_style()
+	// {
+	// 	if ( !ReviewMain::check() )
+	// 	{
+    //         return '';
+    //     }
 
-		if ( self::check_compilation() )
-		{
-            return '';
-        }
+	// 	if ( self::check_compilation() )
+	// 	{
+    //         return '';
+    //     }
 
-		$style = [];
+	// 	$style = [];
 
-		$style_items = self::get_offers( self::PAIRS );
+	// 	$style_items = self::get_offers( self::PAIRS );
 
-		if ( !empty( $style_items ) ) {
-			foreach ( $style_items as $style_item_id => $style_item ) {
-				$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' .item-logo { background-image: url(\'' . $style_item[ 'logo' ] .'\'); }';
+	// 	if ( !empty( $style_items ) ) {
+	// 		foreach ( $style_items as $style_item_id => $style_item ) {
+	// 			$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' .item-logo { background-image: url(\'' . $style_item[ 'logo' ] .'\'); }';
 
-				$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' { background-color: ' . $style_item[ 'background' ] .'; }';
-			}
-		}
+	// 			$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' { background-color: ' . $style_item[ 'background' ] .'; }';
+	// 		}
+	// 	}
 
-		return implode( ' ', $style );
-	}
+	// 	return implode( ' ', $style );
+	// }
 
 	const FIELD = [
 		'about' => 'review-about',
