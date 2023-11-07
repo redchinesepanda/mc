@@ -41,7 +41,7 @@
 	padding-top: 20px;
 }
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:not( :last-child )
+.tcb-post-content .legal-faq-title ~ .legal-faq-description
 {
 	padding-bottom: 20px;
 }

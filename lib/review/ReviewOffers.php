@@ -285,12 +285,12 @@ class ReviewOffers
 
 		$args = self::get_offers( $atts );
 
-		if ( self::check_compilation() )
-		{
+		// if ( self::check_compilation() )
+		// {
 			return self::render_offers_compilation( $args );
-		}
+		// }
 
-		return self::render_offers( $args );
+		// return self::render_offers( $args );
 	}
 
 	const TEMPLATE = [
