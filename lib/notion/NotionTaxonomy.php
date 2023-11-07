@@ -15,7 +15,7 @@ class NotionTaxonomy
 		'feature' => 'billet_feature',
 	];
 
-	public static function billet_afillate( $meta_id, $post_id, $meta_key, $meta_value )
+	public static function billet_feature( $meta_id, $post_id, $meta_key, $meta_value )
 	{
 		if ( NotionMain::META_FIELD[ 'feature' ] == $meta_key )
 		{
@@ -28,7 +28,7 @@ class NotionTaxonomy
 			$terms = self::format( $meta_value, self::TAXONOMY[ 'feature' ] );
 
 			LegalDebug::die( [
-				'function' => 'NotionTaxonomy::billet_afillate',
+				'function' => 'NotionTaxonomy::billet_feature',
 
 				'meta_key' => $meta_key,
 
