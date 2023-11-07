@@ -179,7 +179,7 @@ class ReviewOffers
 
             'tax_query' => $tax_query,
 
-            'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC' ],
+            'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
 		];
 	}
 
@@ -261,6 +261,12 @@ class ReviewOffers
 		{
 			$query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
+			LegalDebug::debug( [
+				'function' => 'get_offers',
+
+				'query' => $query,
+			] );
+
 			$posts = get_posts( $query );
 
 			if ( !empty( $posts ) )
@@ -285,10 +291,10 @@ class ReviewOffers
 		'suffix' => '',
 	];
 
-	public static function check_compilation()
-	{
-		return has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
-	}
+	// public static function check_compilation()
+	// {
+	// 	return has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
+	// }
 
 	public static function prepare( $atts )
     {
@@ -312,9 +318,9 @@ class ReviewOffers
 
     public static function render( $template, $args )
     {
-		if ( !ReviewMain::check() ) {
-            return '';
-        }
+		// if ( !ReviewMain::check() ) {
+        //     return '';
+        // }
 
         ob_start();
 
