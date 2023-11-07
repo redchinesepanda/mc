@@ -3,11 +3,11 @@
 class ReviewOffers
 {
 	const CSS = [
-        'review-offers-main' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
+        // 'review-offers-main' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
 
-			'ver' => '1.0.1',
-		],
+		// 	'ver' => '1.0.1',
+		// ],
 
         'review-offers-compilation' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-compilation.css',
@@ -21,14 +21,14 @@ class ReviewOffers
 		ReviewMain::register_style( self::CSS );
     }
 
-	const JS = [
-        'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
-    ];
+	// const JS = [
+    //     'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
+    // ];
 
-    public static function register_script()
-    {
-		ReviewMain::register_script( self::JS );
-    }
+    // public static function register_script()
+    // {
+	// 	ReviewMain::register_script( self::JS );
+    // }
 
 	// public static function register_inline_style()
     // {
@@ -193,34 +193,34 @@ class ReviewOffers
 		return ( OopsMain::check_oops() ? '#' : '' );
 	}
 
-	public static function parse_offers( $offers )
-	{
-		$items = [];
+	// public static function parse_offers( $offers )
+	// {
+	// 	$items = [];
 
-		foreach ( $offers as $offer )
-		{
-			$group = get_field( self::FIELD[ 'about' ], $offer->ID );
+	// 	foreach ( $offers as $offer )
+	// 	{
+	// 		$group = get_field( self::FIELD[ 'about' ], $offer->ID );
 
-			$items[] = [
-				'bonus' => $group[ self::FIELD[ 'bonus' ] ],
+	// 		$items[] = [
+	// 			'bonus' => $group[ self::FIELD[ 'bonus' ] ],
 
-				'logo' => $group[ self::FIELD[ 'logo' ] ],
+	// 			'logo' => $group[ self::FIELD[ 'logo' ] ],
 
-				'background' => $group[ self::FIELD[ 'background' ] ],
+	// 			'background' => $group[ self::FIELD[ 'background' ] ],
 
-				'font' => $group[ self::FIELD[ 'font' ] ],
+	// 			'font' => $group[ self::FIELD[ 'font' ] ],
 
-				'afillate' => [
-                    'href' => self::check_url_afillate( $group[ self::FIELD[ 'afillate' ] ] ),
+	// 			'afillate' => [
+    //                 'href' => self::check_url_afillate( $group[ self::FIELD[ 'afillate' ] ] ),
 
-                    'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
-                ],
-			];
+    //                 'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
+    //             ],
+	// 		];
 			
-		}
+	// 	}
 
-		return $items;
-	}
+	// 	return $items;
+	// }
 
 	public static function parse_offers_compilation( $offers )
 	{
@@ -298,7 +298,7 @@ class ReviewOffers
 	}
 
 	const TEMPLATE = [
-		'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-main.php',
+		// 'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-main.php',
 
 		'compilation' => LegalMain::LEGAL_PATH . '/template-parts/review/review-offers-compilation.php',
 	];
@@ -318,10 +318,10 @@ class ReviewOffers
         return $output;
     }
 
-    public static function render_offers( $args )
-    {
-		return self::render( self::TEMPLATE[ 'main' ], $args );
-    }
+    // public static function render_offers( $args )
+    // {
+	// 	return self::render( self::TEMPLATE[ 'main' ], $args );
+    // }
 
     public static function render_offers_compilation( $args )
     {
