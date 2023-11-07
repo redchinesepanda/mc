@@ -173,7 +173,7 @@ class ReviewOffers
 
             'post_type' => [ 'page' ],
 
-            'suppress_filters' => 0,
+            // 'suppress_filters' => 0,
 
             'exclude' => $id,
 
