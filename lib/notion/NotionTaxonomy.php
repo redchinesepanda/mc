@@ -27,6 +27,8 @@ class NotionTaxonomy
 
 			$terms = self::format( $meta_value, self::TAXONOMY[ 'feature' ] );
 
+			$result = wp_set_post_terms( $post_id, $terms, self::TAXONOMY[ 'feature' ], false );
+
 			LegalDebug::die( [
 				'function' => 'NotionTaxonomy::billet_feature',
 
@@ -39,7 +41,7 @@ class NotionTaxonomy
 		}
 	}
 
-	public function format( $value, $taxonomy )
+	public static public function format( $value, $taxonomy )
 	{
 		// $this->importer = $importer;
 
