@@ -161,7 +161,9 @@ class ReviewOffers
 
                     'field' => 'slug',
 
-                    'terms' => array_merge( [ $selected_term ], self::OFFER_GROUP ),
+                    // 'terms' => array_merge( [ $selected_term ], self::OFFER_GROUP ),
+                    
+					'terms' => [ $selected_term ],
 
 					'operator' => 'IN',
 				],
@@ -169,9 +171,13 @@ class ReviewOffers
 		}
 
 		return [
-			'numberposts' => -1,
+			// 'numberposts' => -1,
+			
+			'numberposts' => 5,
 
             'post_type' => [ 'page' ],
+
+			'post_status' => [ 'private', 'publish' ],
 
             // 'suppress_filters' => 0,
 
@@ -259,15 +265,21 @@ class ReviewOffers
 
 		if ( !empty( $post ) )
 		{
-			$query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
+			// $query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
+			
+			$query_current = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
-			LegalDebug::debug( [
-				'function' => 'get_offers',
+			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ] );
 
-				'query' => $query,
-			] );
+			// LegalDebug::debug( [
+			// 	'function' => 'get_offers',
 
-			$posts = get_posts( $query );
+			// 	'query' => $query,
+			// ] );
+
+			// $posts = get_posts( $query );
+
+			$posts = array_merge( get_posts( $query_current ) , get_posts( $query_default ) );
 
 			if ( !empty( $posts ) )
 			{
