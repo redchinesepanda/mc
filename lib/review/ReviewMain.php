@@ -32,7 +32,7 @@ require_once( 'ReviewTitle.php' );
 
 require_once( 'ReviewTable.php' );
 
-require_once( 'ReviewGoogle.php' );
+// require_once( 'ReviewGoogle.php' );
 
 class ReviewMain
 {
@@ -84,16 +84,10 @@ class ReviewMain
         'review-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main.css',
 
-            'ver' => '1.2.2',
+            'ver' => '1.2.3',
         ],
 
         'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
-
-        // 'review-table' => [
-        //     'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
-
-        //     'ver' => '1.1.2',
-        // ],
     ];
 
     public static function register_style( $styles = [] )
@@ -158,7 +152,7 @@ class ReviewMain
 
         ReviewAnchors::register_functions();
 
-        ReviewGoogle::register_functions();
+        // ReviewGoogle::register_functions();
 	}
 
     public static function register()
