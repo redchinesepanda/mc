@@ -37,6 +37,8 @@ class NotionTaxonomy
 				'meta_value' => $meta_value,
 
 				'terms' => $terms,
+
+				'result' => $result,
 			] );
 		}
 	}
