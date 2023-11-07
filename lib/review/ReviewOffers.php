@@ -256,14 +256,14 @@ class ReviewOffers
 
 			if ( !empty( $posts ) )
 			{
-				if ( self::check_compilation() )
-				{
+				// if ( self::check_compilation() )
+				// {
 					$items = self::parse_offers_compilation( $posts );
-				}
-				else
-				{
-					$items = self::parse_offers( $posts );
-				}
+				// }
+				// else
+				// {
+				// 	$items = self::parse_offers( $posts );
+				// }
 			}
 		}
 		
