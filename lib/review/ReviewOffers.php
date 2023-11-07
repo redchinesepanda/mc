@@ -222,7 +222,7 @@ class ReviewOffers
 	// 	return $items;
 	// }
 
-	public static function parse_offers_compilation( $offers )
+	public static function parse_offers_compilation( $offers, $suffix = '' )
 	{
 		$items = [];
 
@@ -233,6 +233,11 @@ class ReviewOffers
 			if ( empty( $label ) )
 			{
 				$label = $offer->post_title;
+			}
+
+			if ( !empty( $suffix ) )
+			{
+				$label .= ' + ' . $suffix;
 			}
 
 			$items[] = [
@@ -262,7 +267,7 @@ class ReviewOffers
 			{
 				// if ( self::check_compilation() )
 				// {
-					$items = self::parse_offers_compilation( $posts );
+					$items = self::parse_offers_compilation( $posts, $atts[ 'suffix' ] );
 				// }
 				// else
 				// {
@@ -276,6 +281,8 @@ class ReviewOffers
 
 	const PAIRS = [
 		'selected-term' => '',
+
+		'suffix' => '',
 	];
 
 	public static function check_compilation()
