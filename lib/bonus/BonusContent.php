@@ -50,6 +50,8 @@ class BonusContent
         'tr',
 
         'td',
+
+        'strong',
     ];
 
 	public static function get()
