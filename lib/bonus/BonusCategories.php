@@ -43,6 +43,8 @@ class BonusCategories
         {
             foreach ( $categories as $id => $name )
             {
+                $tag = !empty( get_term_meta( $id, self::META_KEY[ 'redirect' ], true ) ) 'a' : 'span';
+
                 $items[] = [
                     'id' => $id,
 
@@ -50,14 +52,8 @@ class BonusCategories
     
                     'label' => $name,
 
-                    'label' => $name,
+                    'tag' => $tag,
                 ];
-
-                LegalDebug::debug( [
-                    'function' => 'BonusCategories::get_items',
-
-                    'get_term_meta' => get_term_meta( $id, self::META_KEY[ 'redirect' ], true ),
-                ] );
             }
         }
 
