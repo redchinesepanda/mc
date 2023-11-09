@@ -61,27 +61,26 @@ class BonusAbout
 
         foreach ( $posts as $post )
         {
-            $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
+            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
 
-            if ( !empty( $bonus_affilate_primary ) )
+            if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
             {
-                $bonus_affilate_primary = str_replace( 'https://match.center/go/', '/', $bonus_affilate_primary );
+                $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
             }
 
-            $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
-
-            // $affiliate_id = url_to_postid( $bonus_affilate_primary );
+            if ( !empty( $bonus_affilate ) )
+            {
+                $bonus_affilate = str_replace( 'https://match.center/go/', '/', $bonus_affilate );
+            }
             
-            $affiliate_id = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
+            $affiliate_id = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' );
 
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
 
                 'ID' => $post->ID,
 
-                'bonus_affilate_primary' => $bonus_affilate_primary,
-
-                'bonus_affilate_secondary' => $bonus_affilate_secondary,
+                'bonus_affilate' => $bonus_affilate,
 
                 'affiliate_id' => $affiliate_id,
             ] );
