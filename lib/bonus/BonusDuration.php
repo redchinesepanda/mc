@@ -80,30 +80,28 @@ class BonusDuration
         {
             $date = self::date_get( $post->ID );
 
-			$date_time = DateTime::createFromFormat('d/m/Y', $date);
-
-			if ( empty( $date_time ) )
+			if ( $date )
 			{
-				$date_time = new DateTime( 'now' );
+				$date_time = DateTime::createFromFormat('d/m/Y', $date);
+
+				$date_time->setTime( 23, 59, 59 );
+				
+				$value = $date_time->format("Y-m-d H:i:s");
+	
+				update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
+
+				// LegalDebug::debug( [
+				//     'function' => 'BonusAbout::affiliate_migrate',
+
+				//     'ID' => $post->ID,
+
+				//     'date' => $date,
+
+				//     'date_time' => $date_time,
+
+				//     'value' => $value,
+				// ] );
 			}
-
-			$date_time->setTime( 23, 59, 59 );
-			
-			$value = $date_time->format("Y-m-d H:i:s");
-
-            update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
-
-            // LegalDebug::debug( [
-            //     'function' => 'BonusAbout::affiliate_migrate',
-
-            //     'ID' => $post->ID,
-
-            //     'date' => $date,
-
-            //     'date_time' => $date_time,
-
-            //     'value' => $value,
-            // ] );
         }
     }
 
