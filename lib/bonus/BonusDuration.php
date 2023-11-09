@@ -115,7 +115,7 @@ class BonusDuration
 				
 				$value = $date_time->format("Y-m-d H:i:s");
 	
-				// update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
+				update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
 
 				LegalDebug::debug( [
 				    'function' => 'BonusAbout::affiliate_migrate',
