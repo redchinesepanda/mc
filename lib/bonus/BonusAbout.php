@@ -65,12 +65,14 @@ class BonusAbout
 
             if ( !empty( $bonus_affilate_primary ) )
             {
-                $bonus_affilate_primary = str_replace( '/match.center/', '/test.match.center/kz/', $bonus_affilate_primary );
+                $bonus_affilate_primary = str_replace( 'https://match.center/', '', $bonus_affilate_primary );
             }
 
             $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
 
-            $affiliate_id = url_to_postid( $bonus_affilate_primary );
+            // $affiliate_id = url_to_postid( $bonus_affilate_primary );
+            
+            $affiliate_id = get_page_by_path( $bonus_affilate_primary );
 
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
