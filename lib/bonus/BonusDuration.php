@@ -82,6 +82,11 @@ class BonusDuration
 
 			$date_time = DateTime::createFromFormat('d/m/Y', $date);
 
+			if ( empty( $date_time ) )
+			{
+				$date_time = new DateTime( 'now' );
+			}
+
 			$date_time->setTime( 23, 59, 59 );
 			
 			$value = $date_time->format("Y-m-d H:i:s");
