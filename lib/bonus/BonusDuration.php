@@ -80,7 +80,11 @@ class BonusDuration
         {
             $date = self::date_get( $post->ID );
 
-			$date_time = DateTime::createFromFormat('d/m/Y', $date);
+			// $date_time = DateTime::createFromFormat('d/m/Y', $date);
+			
+			$date_time = DateTime::createFromFormat('d/m/Y 00:00:00', $date);
+			
+			// $value = $date_time->format("Y-m-d H:i:s");
 			
 			$value = $date_time->format("Y-m-d 00:00:00");
 
