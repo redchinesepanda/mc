@@ -65,7 +65,7 @@ class BonusAbout
 
             if ( !empty( $bonus_affilate_primary ) )
             {
-                $bonus_affilate_primary = str_replace( 'https://match.center/', '/', $bonus_affilate_primary );
+                $bonus_affilate_primary = str_replace( 'https://match.center/go/', '/', $bonus_affilate_primary );
             }
 
             $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
