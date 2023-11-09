@@ -65,15 +65,19 @@ class BonusAbout
 
             $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
 
-            // LegalDebug::debug( [
-            //     'function' => 'BonusAbout::affiliate_migrate',
+            $affiliate_id = url_to_postid( $bonus_affilate_primary );
 
-            //     'ID' => $post->ID,
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_migrate',
 
-            //     'bonus_affilate_primary' => $bonus_affilate_primary,
+                'ID' => $post->ID,
 
-            //     'bonus_affilate_secondary' => $bonus_affilate_secondary,
-            // ] );
+                'bonus_affilate_primary' => $bonus_affilate_primary,
+
+                'bonus_affilate_secondary' => $bonus_affilate_secondary,
+
+                'affiliate_id' => $affiliate_id,
+            ] );
         }
     }
 
