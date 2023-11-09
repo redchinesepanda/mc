@@ -253,9 +253,13 @@ class ReviewMain
 
     public static function check()
     {
+        // $post = get_post();
+        
         // LegalDebug::debug( [
         //     'function' => 'ReviewMain::check',
             
+        //     'post' => $post->post_title,
+
         //     'check_not_admin' => self::check_not_admin(),
 
         //     'check_post_type_page' => self::check_post_type_page(),

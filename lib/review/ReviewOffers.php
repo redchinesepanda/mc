@@ -12,7 +12,7 @@ class ReviewOffers
         'review-offers-compilation' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-compilation.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.2',
 		],
     ];
 
@@ -56,7 +56,7 @@ class ReviewOffers
 
 		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
-		// [legal-offers terms=""]
+		// [legal-offers]
 
 		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }

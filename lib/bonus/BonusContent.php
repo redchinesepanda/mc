@@ -27,6 +27,8 @@ class BonusContent
 	];
 
     const ALLOWED = [
+        'a',
+
         'h2',
 
         'h3',

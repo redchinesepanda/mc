@@ -1,3 +1,28 @@
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+
+	.legal-offers-compilation {
+		max-width: 1080px;
+	}
+	
+	/* Position */
+
+	.legal-offers-compilation {
+		margin: 0px auto;
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+
+	/* Position */
+
+	.legal-offers-compilation {
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
+}
+
 /* Display */
 
 .legal-offers-compilation {

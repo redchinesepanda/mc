@@ -65,14 +65,20 @@ class AdminTaxonomy
                         
                         'hide_empty'      => true,
                     ] );
+
+                    // LegalDebug::debug( [
+                    //     'function' => 'AdminTaxonomy::filter_dropdown',
+
+                    //     'typenow' => $typenow,
+        
+                    //     'taxonomies' => $taxonomies,
+
+                    //     'taxonomy' => $taxonomy,
+
+                    //     'label' => $info_taxonomy->label,
+                    // ] );
                 };
             }
-
-            // LegalDebug::debug( [
-            //     'typenow' => $typenow,
-
-            //     'taxonomies' => $taxonomies,
-            // ] );
         }
     }
 

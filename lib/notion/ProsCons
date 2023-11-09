@@ -1,0 +1,44 @@
+"["
+
++ prop("Списки Relation")
+.map(
+	"{"
+	
+	+ [
+		[ "billet-list-part-icon", "\"" + current.prop("Icon") + "\"" ],
+	
+		[ "billet-list-part-direction", "\"" + current.prop("Направление") + "\"" ],
+	
+		[
+			"billet-list-part-feature",
+	
+			"["
+	
+			+ current.prop("Характеристики Test")
+			.map( "\"" + current.prop("Slug") + "\"" )
+			.join( "," )
+			
+			+ "]"
+		],
+	
+		[
+			"billet-list-part-items",
+	
+			"["
+	
+			+ current.prop("Элементы списка")
+			.split( "\n" )
+			.map( "{\"billet-list-part-item-title\":\"" + current + "\"}" )
+			.join( "," )
+	
+			+ "]"
+		]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join(",")
+
++ "]"
