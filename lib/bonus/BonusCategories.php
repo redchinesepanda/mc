@@ -43,7 +43,7 @@ class BonusCategories
         {
             foreach ( $categories as $id => $name )
             {
-                $tag = !empty( get_term_meta( $id, self::META_KEY[ 'redirect' ], true ) ) 'a' : 'span';
+                $tag = !empty( get_term_meta( $id, self::META_KEY[ 'redirect' ], true ) ) ? 'a' : 'span';
 
                 $items[] = [
                     'id' => $id,
