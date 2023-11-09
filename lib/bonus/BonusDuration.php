@@ -66,7 +66,16 @@ class BonusDuration
 
         if ( !empty( $bonus_date ) && $bonus_date != '-' )
         {
-            return $bonus_date;
+            // return $bonus_date;
+
+			$date_match = '';
+				
+			$result = preg_match( "/(\d{2}/\d{2}/\d{4})/", $date, $date_match );
+
+			if ( $result == 1 )
+			{
+				return $date_match;
+			}
         }
         
         return '';
