@@ -69,6 +69,8 @@ class BonusAbout
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
 
+                'ID' => $post->ID,
+
                 'affiliate_old' => $affiliate_old,
             ] );
         }
