@@ -37,12 +37,6 @@ class BonusAbout
         'bonusy-by',
 	];
 
-    const FIELD = [
-        'affiliate-old' => 'ref-ssylka',
-
-        'affiliate-old-alternate' => 'ref-perelinkovka',
-    ];
-
     public static function affiliate_migrate()
     {
         $args = [
@@ -65,11 +59,11 @@ class BonusAbout
 
         foreach ( $posts as $post )
         {
-            $affiliate_old = get_field( self::FIELD[ 'affiliate-old' ], $post->ID );
+            $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
 
             if ( empty( $affiliate_old ) || affiliate_old == '#' )
             {
-                $affiliate_old = get_field( self::FIELD[ 'affiliate-old-alternate' ], $post->ID );
+                $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
             }
 
             LegalDebug::debug( [
