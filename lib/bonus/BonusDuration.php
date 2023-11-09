@@ -85,22 +85,20 @@ class BonusDuration
 			$date_time->setTime( 23, 59, 59 );
 			
 			$value = $date_time->format("Y-m-d H:i:s");
-			
-			// $value = $date_time->format("Y-m-d 00:00:00");
 
-            // update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
+            update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_migrate',
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_migrate',
 
-                'ID' => $post->ID,
+            //     'ID' => $post->ID,
 
-                'date' => $date,
+            //     'date' => $date,
 
-                'date_time' => $date_time,
+            //     'date_time' => $date_time,
 
-                'value' => $value,
-            ] );
+            //     'value' => $value,
+            // ] );
         }
     }
 
