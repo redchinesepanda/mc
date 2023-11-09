@@ -63,6 +63,11 @@ class BonusAbout
         {
             $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
 
+            if ( !empty( $bonus_affilate_primary ) )
+            {
+                $bonus_affilate_primary = str_replace( '/match.center/', '/test.match.center/', $bonus_affilate_primary );
+            }
+
             $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
 
             $affiliate_id = url_to_postid( $bonus_affilate_primary );
