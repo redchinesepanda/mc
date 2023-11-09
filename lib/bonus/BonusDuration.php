@@ -126,7 +126,9 @@ class BonusDuration
 				] );
 			} 
 
-			update_field( self::FIELD[ 'bonus-expire' ], '', $post->ID );
+			// update_field( self::FIELD[ 'bonus-expire' ], '', $post->ID );
+
+			delete_field( self::FIELD[ 'bonus-expire' ], $post->ID );
         }
     }
 
