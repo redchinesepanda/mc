@@ -82,7 +82,7 @@ class BonusDuration
 
 			// $date_time = DateTime::createFromFormat('d/m/Y', $date);
 			
-			$date_time = DateTime::createFromFormat('d/m/Y 00:00:00', $date);
+			$date_time = DateTime::createFromFormat('d/m/Y', $date);
 			
 			// $value = $date_time->format("Y-m-d H:i:s");
 			
