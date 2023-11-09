@@ -31,6 +31,10 @@ class BonusCategories
         );
     }
 
+    const META_KEY = [
+        'redirect' => 'page_redirect',
+    ];
+
     public static function get_items( $categories )
     {
         $items = [];
@@ -45,12 +49,14 @@ class BonusCategories
                     'href' => get_category_link( $id ),
     
                     'label' => $name,
+
+                    'label' => $name,
                 ];
 
                 LegalDebug::debug( [
                     'function' => 'BonusCategories::get_items',
 
-                    'get_term_meta' => get_term_meta( $id ),
+                    'get_term_meta' => get_term_meta( $id, self::META_KEY[ 'redirect' ], true ),
                 ] );
             }
         }
