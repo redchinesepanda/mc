@@ -15,11 +15,69 @@ class BonusAbout
         BonusMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+    {
+        self::affiliate_migrate();
+    }
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    }
+    
+    const TAXONOMY = [
+		'category' => 'category',
+	];
+
+    const CATEGORY = [
+		'bonusy-kz',
+        
+        'bonusy-by',
+	];
+
+    const FIELD = [
+        'affiliate-old' => 'ref-ssylka',
+
+        'affiliate-old-alternate' => 'ref-perelinkovka',
+    ];
+
+    public static function affiliate_migrate()
+    {
+        $args = [
+            'post_type' => 'post',
+
+            [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'category' ],
+
+                    'field' => 'slug',
+
+                    'terms' => self::CATEGORY,
+
+					'operator' => 'IN',
+				],
+            ],
+        ];
+
+        $posts = get_posts( $args );
+
+        foreach ( $posts as $post )
+        {
+            $affiliate_old = get_field( self::FIELD[ 'affiliate-old' ], $post->ID );
+
+            if ( empty( $affiliate_old ) || affiliate_old == '#' )
+            {
+                $affiliate_old = get_field( self::FIELD[ 'affiliate-old-alternate' ], $post->ID );
+            }
+
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_migrate',
+
+                'affiliate_old' => $affiliate_old,
+            ] );
+        }
     }
 
 	const FIELD = [

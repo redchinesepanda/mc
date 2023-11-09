@@ -80,7 +80,11 @@ class BonusMain
     }
 
 	const CATEGORY = [
+		'bonusy',
+
 		'bonusy-kz',
+
+		'bonusy-by',
 	];
 
 	public static function check_category()
@@ -110,6 +114,8 @@ class BonusMain
 		BonusPreview::register_functions();
 
 		BonusRelated::register_functions();
+
+		BonusAbout::register_functions();
 	}
 
 	public static function register()

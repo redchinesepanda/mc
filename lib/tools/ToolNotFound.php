@@ -48,15 +48,19 @@ class ToolNotFound
 
 	public static function set_not_found()
 	{
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::set_not_found',
+		// ] );
+
 		if ( self::check() )
 		{
 			global $wp_query;
 
 			$wp_query->set_404();
-			
+
 			// LegalDebug::debug( [
-			// 	'function' => 'ToolNotFound::check',
-	
+			// 	'function' => 'ToolNotFound::set_not_found',
+
 			// 	'permissionwp_query_category' => $wp_query,
 			// ] );
 		}
