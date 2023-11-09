@@ -91,6 +91,8 @@ class BonusDuration
 
                 'ID' => $post->ID,
 
+                'date' => $date,
+
                 'date_time' => $date_time,
 
                 'value' => $value,
