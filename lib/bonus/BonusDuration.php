@@ -42,9 +42,9 @@ class BonusDuration
         return [
             'numberposts' => -1,
 
-			// 'suppress_filters' => 1,
+			'suppress_filters' => 1,
 
-			'p' => 250736,
+			// 'p' => 250736,
 
             'post_type' => 'post',
 
