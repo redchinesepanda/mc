@@ -18,7 +18,7 @@ class LegalComponents
 {
 	public static function register_functions()
     {
-		// BonusMain::register_functions();
+		BonusMain::register_functions();
 
 		CompilationTabsMain::register_functions();
 
@@ -29,18 +29,6 @@ class LegalComponents
 
 	public static function register()
 	{
-	// 	$handler = new self();
-		
-	// 	add_action( 'wp', [ $handler, 'register_components' ] );
-	// }
-
-	// public static function register_components()
-	// {
-		// if ( LegalMain::check_admin() )
-		// {
-		// 	BonusMain::register_always();
-		// }
-
 		if ( self::check() )
 		{
 			BilletMain::register();
