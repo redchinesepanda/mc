@@ -45,9 +45,9 @@ class BonusAbout
         '/kz/',
     ];
 
-    public static function affiliate_migrate()
+    public static function affiliate_migrate_args()
     {
-        $args = [
+        return [
             'numberposts' => -1,
 
             'post_type' => 'post',
@@ -64,31 +64,42 @@ class BonusAbout
 				],
             ],
         ];
+    }
 
-        $posts = get_posts( $args );
+    public static function affiliate_get( $id )
+    {
+        $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
+
+        if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
+        {
+            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
+        }
+
+        if ( !empty( $bonus_affilate ) )
+        {
+            $bonus_affilate = str_replace( self::SEARCH, '/', $bonus_affilate );
+        }
+
+        if ( $affiliate = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' ) )
+        {
+            return $affiliate->ID;
+        }
+        
+        return '';
+    }
+
+    public static function affiliate_migrate()
+    {
+        $posts = get_posts( self::affiliate_migrate_args() );
 
         foreach ( $posts as $post )
         {
-            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
-
-            if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
-            {
-                $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
-            }
-
-            if ( !empty( $bonus_affilate ) )
-            {
-                $bonus_affilate = str_replace( self::SEARCH, '/', $bonus_affilate );
-            }
-            
-            $affiliate_id = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' );
+            $affiliate_id = self::affiliate_get( $post->ID );
 
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
 
                 'ID' => $post->ID,
-
-                'bonus_affilate' => $bonus_affilate,
 
                 'affiliate_id' => $affiliate_id,
             ] );
