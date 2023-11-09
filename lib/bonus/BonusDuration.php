@@ -17,7 +17,7 @@ class BonusDuration
 
 	public static function register_functions()
     {
-        self::date_migrate();
+        // self::date_migrate();
     }
 
 	public static function register()
