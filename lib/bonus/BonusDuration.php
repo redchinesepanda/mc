@@ -107,19 +107,9 @@ class BonusDuration
 
 				$current = get_post_meta( $post->ID, self::FIELD[ 'bonus-expire' ], true );
 
-				// LegalDebug::debug( [
-				//     'function' => 'BonusAbout::affiliate_migrate',
-
-				//     'ID' => $post->ID,
-
-				//     'date' => $date,
-				// ] );
-
 				$date_time->setTime( 23, 59, 59 );
 				
 				$value = $date_time->format( "Y-m-d H:i:s" );
-				
-				// $value = $date_time->format('Ymd');
 	
 				update_field( self::FIELD[ 'bonus-expire' ], $value, $post->ID );
 
