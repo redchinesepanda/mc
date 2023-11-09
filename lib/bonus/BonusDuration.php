@@ -128,11 +128,11 @@ class BonusDuration
 				] );
 			}
 
-			LegalDebug::debug( [
-				'function' => 'BonusAbout::affiliate_migrate',
+			// LegalDebug::debug( [
+			// 	'function' => 'BonusAbout::affiliate_migrate',
 
-				'ID' => $post->ID,
-			] );
+			// 	'ID' => $post->ID,
+			// ] );
 
 			// delete_field( self::FIELD[ 'bonus-expire' ], $post->ID );
         }
