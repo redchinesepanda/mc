@@ -14,6 +14,4 @@ require_once( 'lib/LegalMain.php' );
 
 LegalMain::register();
 
-// BonusDuration::date_migrate();
-
 ?>
