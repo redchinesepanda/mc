@@ -68,11 +68,11 @@ class BonusAbout
 
     public static function affiliate_get( $id )
     {
-        $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
+        $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
         if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
         {
-            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
+            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
         }
 
         if ( !empty( $bonus_affilate ) )
