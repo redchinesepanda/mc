@@ -44,6 +44,8 @@ class BonusDuration
 
 			// 'suppress_filters' => 1,
 
+			'p' => 250736,
+
             'post_type' => 'post',
 
             [
