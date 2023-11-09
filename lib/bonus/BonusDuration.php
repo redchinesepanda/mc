@@ -103,6 +103,8 @@ class BonusDuration
 			{
 				$date_time = DateTime::createFromFormat('d/m/Y', $date);
 
+				$current = get_field( self::FIELD[ 'bonus-expire' ], $post->ID );
+
 				// LegalDebug::debug( [
 				//     'function' => 'BonusAbout::affiliate_migrate',
 
@@ -123,6 +125,8 @@ class BonusDuration
 					'ID' => $post->ID,
 
 				    'date' => $date,
+
+				    'current' => $current,
 
 				    'date_time' => $date_time,
 
