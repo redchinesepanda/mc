@@ -17,7 +17,7 @@ class BonusAbout
 
 	public static function register_functions()
     {
-        self::affiliate_migrate();
+        // self::affiliate_migrate();
     }
 
 	public static function register()
