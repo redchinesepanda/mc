@@ -72,19 +72,19 @@ class BonusDuration
 				
 			$result = preg_match( "/(\d{2}\/\d{2}\/\d{4})/", $bonus_date, $date_match );
 
-			LegalDebug::debug( [
-				'function' => 'BonusAbout::date_get',
+			// LegalDebug::debug( [
+			// 	'function' => 'BonusAbout::date_get',
 
-				'bonus_date' => $bonus_date,
+			// 	'bonus_date' => $bonus_date,
 
-				'result' => $result,
+			// 	'result' => $result,
 
-				'date_match' => $date_match,
-			] );
+			// 	'date_match' => $date_match,
+			// ] );
 
 			if ( $result == 1 )
 			{
-				return $date_match;
+				return array_shift( $date_match );
 			}
         }
         
