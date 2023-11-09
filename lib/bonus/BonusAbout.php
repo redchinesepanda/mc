@@ -37,6 +37,14 @@ class BonusAbout
         'bonusy-by',
 	];
 
+    const SEARCH = [
+        'https://match.center/',
+
+        '/go/',
+
+        '/kz/',
+    ];
+
     public static function affiliate_migrate()
     {
         $args = [
@@ -70,7 +78,7 @@ class BonusAbout
 
             if ( !empty( $bonus_affilate ) )
             {
-                $bonus_affilate = str_replace( 'https://match.center/go/', '/', $bonus_affilate );
+                $bonus_affilate = str_replace( self::SEARCH, '/', $bonus_affilate );
             }
             
             $affiliate_id = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' );
