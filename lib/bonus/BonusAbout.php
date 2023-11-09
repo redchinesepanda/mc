@@ -96,13 +96,15 @@ class BonusAbout
         {
             $affiliate_id = self::affiliate_get( $post->ID );
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_migrate',
+            update_field( self::FIELD[ 'bonus-affilate-new' ], $affiliate_id, $post->ID );
 
-                'ID' => $post->ID,
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_migrate',
 
-                'affiliate_id' => $affiliate_id,
-            ] );
+            //     'ID' => $post->ID,
+
+            //     'affiliate_id' => $affiliate_id,
+            // ] );
         }
     }
 
@@ -118,6 +120,8 @@ class BonusAbout
 		'bonus-affilate-primary' => 'ref-ssylka',
 
 		'bonus-affilate-secondary' => 'ref-perelinkovka',
+
+		'bonus-affilate-new' => 'bonus-afillate',
 	];
 
 	public static function get_button()
