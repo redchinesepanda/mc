@@ -65,15 +65,15 @@ class BonusAbout
 
             $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_migrate',
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_migrate',
 
-                'ID' => $post->ID,
+            //     'ID' => $post->ID,
 
-                'bonus_affilate_primary' => $bonus_affilate_primary,
+            //     'bonus_affilate_primary' => $bonus_affilate_primary,
 
-                'bonus_affilate_secondary' => $bonus_affilate_secondary,
-            ] );
+            //     'bonus_affilate_secondary' => $bonus_affilate_secondary,
+            // ] );
         }
     }
 
