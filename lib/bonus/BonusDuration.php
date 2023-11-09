@@ -80,13 +80,13 @@ class BonusDuration
         {
             $date = self::date_get( $post->ID );
 
-			// $date_time = DateTime::createFromFormat('d/m/Y', $date);
-			
 			$date_time = DateTime::createFromFormat('d/m/Y', $date);
+
+			$date_time->setTime( 0, 0, 0 );
 			
-			// $value = $date_time->format("Y-m-d H:i:s");
+			$value = $date_time->format("Y-m-d H:i:s");
 			
-			$value = $date_time->format("Y-m-d 00:00:00");
+			// $value = $date_time->format("Y-m-d 00:00:00");
 
             // update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
 
