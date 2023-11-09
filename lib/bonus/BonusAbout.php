@@ -61,7 +61,7 @@ class BonusAbout
         {
             $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
 
-            if ( empty( $affiliate_old ) || affiliate_old == '#' )
+            if ( empty( $affiliate_old ) || $affiliate_old == '#' )
             {
                 $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
             }
