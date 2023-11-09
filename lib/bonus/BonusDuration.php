@@ -90,17 +90,17 @@ class BonusDuration
 	
 				update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
 
-				// LegalDebug::debug( [
-				//     'function' => 'BonusAbout::affiliate_migrate',
+				LegalDebug::debug( [
+				    'function' => 'BonusAbout::affiliate_migrate',
 
-				//     'ID' => $post->ID,
+				    'ID' => $post->ID,
 
-				//     'date' => $date,
+				    'date' => $date,
 
-				//     'date_time' => $date_time,
+				    'date_time' => $date_time,
 
-				//     'value' => $value,
-				// ] );
+				    'value' => $value,
+				] );
 			}
         }
     }
