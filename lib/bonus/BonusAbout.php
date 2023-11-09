@@ -40,6 +40,8 @@ class BonusAbout
     public static function affiliate_migrate()
     {
         $args = [
+            'numberposts' => -1,
+
             'post_type' => 'post',
 
             [
