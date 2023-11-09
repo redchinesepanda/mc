@@ -72,7 +72,7 @@ class BonusAbout
 
             // $affiliate_id = url_to_postid( $bonus_affilate_primary );
             
-            $affiliate_id = get_page_by_path( $bonus_affilate_primary );
+            $affiliate_id = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
 
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
