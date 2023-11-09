@@ -59,19 +59,18 @@ class BonusAbout
 
         foreach ( $posts as $post )
         {
-            $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
+            $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $post->ID );
 
-            if ( empty( $affiliate_old ) || $affiliate_old == '#' )
-            {
-                $affiliate_old = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
-            }
+            $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID );
 
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_migrate',
 
                 'ID' => $post->ID,
 
-                'affiliate_old' => $affiliate_old,
+                'bonus_affilate_primary' => $bonus_affilate_primary,
+
+                'bonus_affilate_secondary' => $bonus_affilate_secondary,
             ] );
         }
     }
