@@ -124,7 +124,7 @@ class BonusDuration
 
 				    'value' => $value,
 				] );
-			}
+			} 
 
 			update_field( self::FIELD[ 'bonus-expire' ], '', $post->ID );
         }
