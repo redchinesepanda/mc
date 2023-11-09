@@ -84,6 +84,14 @@ class BonusDuration
 			{
 				$date_time = DateTime::createFromFormat('d/m/Y', $date);
 
+				LegalDebug::debug( [
+				    'function' => 'BonusAbout::affiliate_migrate',
+
+				    'ID' => $post->ID,
+
+				    'date' => $date,
+				] );
+
 				$date_time->setTime( 23, 59, 59 );
 				
 				$value = $date_time->format("Y-m-d H:i:s");
@@ -92,10 +100,6 @@ class BonusDuration
 
 				LegalDebug::debug( [
 				    'function' => 'BonusAbout::affiliate_migrate',
-
-				    'ID' => $post->ID,
-
-				    'date' => $date,
 
 				    'date_time' => $date_time,
 
