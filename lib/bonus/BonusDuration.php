@@ -75,6 +75,8 @@ class BonusDuration
 			LegalDebug::debug( [
 				'function' => 'BonusAbout::date_get',
 
+				'bonus_date' => $bonus_date,
+
 				'result' => $result,
 
 				'date_match' => $date_match,
