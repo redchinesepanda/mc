@@ -15,11 +15,87 @@ class BonusDuration
         BonusMain::register_style( self::CSS );
     }
 
+	public static function register_functions()
+    {
+        self::date_migrate();
+    }
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    }
+
+	const TAXONOMY = [
+		'category' => 'category',
+	];
+
+    const CATEGORY = [
+		'bonusy-kz',
+        
+        'bonusy-by',
+	];
+
+	public static function date_migrate_args()
+    {
+        return [
+            'numberposts' => -1,
+
+			'suppress_filters' => 1,
+
+            'post_type' => 'post',
+
+            [
+                [
+                    'taxonomy' => self::TAXONOMY[ 'category' ],
+
+                    'field' => 'slug',
+
+                    'terms' => self::CATEGORY,
+
+					'operator' => 'IN',
+				],
+            ],
+        ];
+    }
+
+	public static function date_get( $id )
+    {
+        $bonus_date = get_field( self::FIELD[ 'bonus-duration' ], $id );
+
+        if ( !empty( $bonus_date ) && $bonus_date != '-' )
+        {
+            return $bonus_date;
+        }
+        
+        return '';
+    }
+
+	public static function date_migrate()
+    {
+        $posts = get_posts( self::date_migrate_args() );
+
+        foreach ( $posts as $post )
+        {
+            $date = self::date_get( $post->ID );
+
+			$date_time = DateTime::createFromFormat('d/m/Y', $date);
+			
+			$value = $date_time->format("Y-m-d H:i:s");
+
+            // update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
+
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_migrate',
+
+                'ID' => $post->ID,
+
+                'date_time' => $date_time,
+
+                'value' => $value,
+            ] );
+        }
     }
 
 	const TEMPLATE = [
@@ -28,6 +104,8 @@ class BonusDuration
 
 	const FIELD = [
 		'bonus-duration' => 'data-okonchaniya',
+
+		'bonus-expire' => 'bonus-expire',
 	];
 
 	public static function get_expired()
