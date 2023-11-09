@@ -70,7 +70,15 @@ class BonusDuration
 
 			$date_match = '';
 				
-			$result = preg_match( "/(\d{2}/\d{2}/\d{4})/", $date, $date_match );
+			$result = preg_match( "/(\d{2}\/\d{2}\/\d{4})/", $date, $date_match );
+
+			LegalDebug::debug( [
+				'function' => 'BonusAbout::date_get',
+
+				'result' => $result,
+
+				'date_match' => $date_match,
+			] );
 
 			if ( $result == 1 )
 			{
@@ -105,7 +113,7 @@ class BonusDuration
 				
 				$value = $date_time->format("Y-m-d H:i:s");
 	
-				update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
+				// update_field( self::FIELD[ 'bonus-expire' ], $date, $post->ID );
 
 				LegalDebug::debug( [
 				    'function' => 'BonusAbout::affiliate_migrate',
