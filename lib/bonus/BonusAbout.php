@@ -72,17 +72,17 @@ class BonusAbout
 
             $affiliate_id = url_to_postid( $bonus_affilate_primary );
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_migrate',
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_migrate',
 
-                'ID' => $post->ID,
+            //     'ID' => $post->ID,
 
-                'bonus_affilate_primary' => $bonus_affilate_primary,
+            //     'bonus_affilate_primary' => $bonus_affilate_primary,
 
-                'bonus_affilate_secondary' => $bonus_affilate_secondary,
+            //     'bonus_affilate_secondary' => $bonus_affilate_secondary,
 
-                'affiliate_id' => $affiliate_id,
-            ] );
+            //     'affiliate_id' => $affiliate_id,
+            // ] );
         }
     }
 
