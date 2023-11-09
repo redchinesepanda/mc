@@ -46,6 +46,12 @@ class BonusCategories
     
                     'label' => $name,
                 ];
+
+                LegalDebug::debug( [
+                    'function' => 'BonusCategories::get_items',
+
+                    'get_term_meta' => get_term_meta( $id );
+                ] );
             }
         }
 
