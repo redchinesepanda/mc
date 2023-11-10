@@ -500,13 +500,13 @@ class BonusPreview
 		LegalDebug::debug( [
 			'function' => 'BonusPreview::group_posts',
 
-			'active_partners' => count( active_partners ),
+			'active_partners' => count( $active_partners ),
 
-			'active_no_partners' => count( active_no_partners ),
+			'active_no_partners' => count( $active_no_partners ),
 
-			'expired_all' => count( expired_all ),
+			'expired_all' => count( $expired_all ),
 
-			'posts' => count( posts ),
+			'posts' => count( $posts ),
 		] );
 
 		return $posts;
