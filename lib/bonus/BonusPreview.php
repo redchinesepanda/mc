@@ -165,7 +165,9 @@ class BonusPreview
 
 	public static function get_args_date( $atts, $duration )
 	{
-		$today = date( 'Y-m-d ' );
+		// $today = date( 'Y-m-d ' );
+
+		$now = new DateTime( 'now' );
 
 		$compare = '>=';
 
@@ -196,7 +198,7 @@ class BonusPreview
 			[
 				'key' => self::FIELD[ 'expire' ],
 
-				'value' => $today,
+				'value' => $now->format('Y-m-d H:i:s');,
 
 				'compare' => $compare,
 
