@@ -5,8 +5,8 @@
 		<?php endif; ?>
 		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
-				<?php echo $item[ 'date' ]; ?>
-				<?php echo $item[ 'modified' ]; ?>
+				<div><?php echo $item[ 'date' ]; ?></div>
+				<div><?php echo $item[ 'modified' ]; ?></div>
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
 					<a class="item-image-link" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
 						<img class="item-image image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
