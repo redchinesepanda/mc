@@ -165,29 +165,43 @@ class BonusPreview
 
 	public static function get_args_date( $atts, $duration )
 	{
-		$compare = 'after';
-		
-		// $compare = '>=';
+		$today = date( 'Y-m-d ' );
 
-		$inclusive = true;
+		$compare = '>=';
+
+		// $compare = 'after';
+
+		// $inclusive = true;
 
 		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
 		{
-			$compare = 'before';
+			$compare = '<';
+			
+			// $compare = 'before';
 
-			// $compare = '<';
-
-			$inclusive = false;
+			// $inclusive = false;
 		}
 
-		return [
-			'column' => self::FIELD[ 'expire' ],
+		// return [
+		// 	'column' => self::FIELD[ 'expire' ],
 
-			// 'compare' => $compare,
+		// 	// 'compare' => $compare,
 
-			$compare => 'today',
+		// 	$compare => 'today',
 			
-			'inclusive' => $inclusive,
+		// 	'inclusive' => $inclusive,
+		// ];
+
+		return [
+			[
+				'key' => self::FIELD[ 'expire' ],
+
+				'value' => $today,
+
+				'compare' => $compare,
+
+				'type' => 'DATE',
+			],
 		];
 	}
 
@@ -261,11 +275,13 @@ class BonusPreview
 	
 	public static function get_args( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
     {
-		$meta_query = self::get_args_meta( $atts, $mode );
+		$meta_query = array_merge(
+			self::get_args_meta( $atts, $mode ),
+
+			self::get_args_date( $atts, $duration ),
+		);
 
 		$tax_query = self::get_args_tax( $atts );
-
-		$date_query = self::get_args_date( $atts, $duration );
 
 		$args = [
 			'posts_per_page' => $atts[ 'limit' ],
@@ -278,7 +294,7 @@ class BonusPreview
 
 			'meta_query' => $meta_query,
 
-			'date_query' => $date_query,
+			// 'date_query' => $date_query,
 
 			'orderby' => [
 				'menu_order' => 'DESC',
