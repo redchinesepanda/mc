@@ -495,7 +495,21 @@ class BonusPreview
 			$expired_all = self::get_posts_date( $atts, self::MODE[ 'all' ], self::DURATION[ 'expired' ] );
 		}
 
-		return array_merge( $active_partners, $active_no_partners, $expired_all );
+		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
+
+		LegalDebug::debug( [
+			'function' => 'BonusPreview::group_posts',
+
+			'active_partners' => count( active_partners ),
+
+			'active_no_partners' => count( active_no_partners ),
+
+			'expired_all' => count( expired_all ),
+
+			'posts' => count( posts ),
+		] );
+
+		return $posts;
 	}
 
 	public static function get_items_shortcode( $atts )
