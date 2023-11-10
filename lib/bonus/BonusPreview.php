@@ -317,13 +317,13 @@ class BonusPreview
 			$args[ 'post__not_in' ] = [ BonusMain::get_id() ];
 		}
 
-		LegalDebug::debug( [
-			'function' => 'BonusPreview::get_args',
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusPreview::get_args',
 
-			'atts' => $atts,
+		// 	'atts' => $atts,
 
-			'args' => $args,
-		] );
+		// 	'args' => $args,
+		// ] );
 
 		return $args;
     }
@@ -528,17 +528,17 @@ class BonusPreview
 
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
-		LegalDebug::debug( [
-			'function' => 'BonusPreview::group_posts',
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusPreview::group_posts',
 
-			'active_partners' => count( $active_partners ),
+		// 	'active_partners' => count( $active_partners ),
 
-			'active_no_partners' => count( $active_no_partners ),
+		// 	'active_no_partners' => count( $active_no_partners ),
 
-			'expired_all' => count( $expired_all ),
+		// 	'expired_all' => count( $expired_all ),
 
-			'posts' => count( $posts ),
-		] );
+		// 	'posts' => count( $posts ),
+		// ] );
 
 		return $posts;
 	}
