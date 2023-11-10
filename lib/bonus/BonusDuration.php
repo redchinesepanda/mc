@@ -164,7 +164,9 @@ class BonusDuration
 			
 			'prefix' => __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN ),
 
-			'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
+			// 'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
+			
+			'duration' => get_field( self::FIELD[ 'bonus-expire' ], $id ),
 
 			'class' => 'legal-bonus-duration-default',
 		];
