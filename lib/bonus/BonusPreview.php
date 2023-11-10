@@ -139,16 +139,16 @@ class BonusPreview
 			return [];
 		}
 
-		$compare = '>';
+		// $compare = '>';
 
-		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-		{
-			$compare = '<';
-		}
+		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		// {
+		// 	$compare = '<';
+		// }
 
 		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
 
-		$atts[ 'compare' ] = $compare;
+		// $atts[ 'compare' ] = $compare;
 
 		$atts[ 'duration' ] = $duration;
 
