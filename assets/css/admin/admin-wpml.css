@@ -1,0 +1,8 @@
+#wp-admin-bar-WPML_ALS .ab-sub-wrapper {
+	width: 500px;
+}
+
+#wp-admin-bar-WPML_ALS #wp-admin-bar-WPML_ALS-default {
+	display: flex;
+  	flex-wrap: wrap;
+}
