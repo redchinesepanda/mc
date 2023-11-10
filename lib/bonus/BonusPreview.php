@@ -202,7 +202,7 @@ class BonusPreview
 
 				'compare' => $compare,
 
-				'type' => 'DATE',
+				'type' => 'DATETIME',
 			],
 		];
 	}
