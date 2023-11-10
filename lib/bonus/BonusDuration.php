@@ -173,6 +173,8 @@ class BonusDuration
 	const FORMAT = [
 		'bonus' => 'd/m/Y',
 
+		'expire' => "Y-m-d H:i:s",
+
 		'compare' => 'Y-m-d',
 	];
 
@@ -180,11 +182,15 @@ class BonusDuration
 	{
 		$result = false;
 
-		$bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
+		// $bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
+		
+		$bonus_duration = get_field( self::FIELD[ 'bonus-expire' ], $id );
 
 		if ( $bonus_duration )
 		{
-			$bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
+			// $bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
+			
+			$bonus = DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_duration );
 
 			if ( $bonus )
 			{
