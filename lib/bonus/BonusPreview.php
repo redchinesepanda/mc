@@ -280,6 +280,12 @@ class BonusPreview
 			$args[ 'post__not_in' ] = [ BonusMain::get_id() ];
 		}
 
+		LegalDebug::debug( [
+			'function' => 'BonusPreview::get_args',
+
+			'args' => $args,
+		] );
+
 		return $args;
     }
 
