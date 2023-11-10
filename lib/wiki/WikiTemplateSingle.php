@@ -6,7 +6,7 @@ class WikiTemplateSingle
         'wiki-single' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-single.css',
 
-            'ver'=> '1.0.2',
+            'ver'=> '1.0.3',
         ],
     ];
 
