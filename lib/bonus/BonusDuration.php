@@ -159,6 +159,8 @@ class BonusDuration
 
 	public static function get_duration( $id )
     {
+		$duration = DateTime::createFromFormat( self::FORMAT[ 'expire' ], get_field( self::FIELD[ 'bonus-expire' ], $id ) );
+
         return [
 			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ) . ':',
 			
@@ -166,7 +168,9 @@ class BonusDuration
 
 			// 'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
 			
-			'duration' => get_field( self::FIELD[ 'bonus-expire' ], $id ),
+			// 'duration' => get_field( self::FIELD[ 'bonus-expire' ], $id ),
+			
+			'duration' => $duration->format( self::FORMAT[ 'bonus' ] ),
 
 			'class' => 'legal-bonus-duration-default',
 		];
