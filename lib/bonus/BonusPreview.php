@@ -596,6 +596,8 @@ class BonusPreview
 					'expired' => $expired,
 
 					'date' => get_field( self::FIELD[ 'expire' ], $post->ID ),
+
+					'modified' => $post->post_modified,
 				]; 
 			}
 		}
