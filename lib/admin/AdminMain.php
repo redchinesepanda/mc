@@ -25,7 +25,7 @@ class AdminMain
     {
         $handler = new self();
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        add_action( 'admin_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_filter( 'acf/settings/remove_wp_meta_box', '__return_false' );
 
