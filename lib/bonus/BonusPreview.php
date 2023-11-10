@@ -193,22 +193,35 @@ class BonusPreview
 
 	public static function get_args_meta( $atts, $mode )
 	{
-		$compare = 'NOT IN';
+		$meta_query = [];
+
+		if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
+		{
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'NOT IN',
+				],
+			];
+		}
 
 		if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
 		{
-			$compare = 'IN';
+			$meta_query = [
+				[
+					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'IN',
+				],
+			];
 		}
 
-		return [
-			[
-				'key' => self::FIELD[ 'afillate' ],
-				
-				'value' => [ '', '#' ],
-				
-				'compare' => $compare,
-			],
-		];
+		return $meta_query;
 	}
 
 	public static function get_args_tax( $atts )
