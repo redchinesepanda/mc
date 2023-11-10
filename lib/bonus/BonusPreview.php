@@ -150,9 +150,9 @@ class BonusPreview
 
 		// $atts[ 'compare' ] = $compare;
 
-		$atts[ 'duration' ] = $duration;
+		// $atts[ 'duration' ] = $duration;
 
-		$args = self::get_args( $atts, $mode );
+		$args = self::get_args( $atts, $mode, $duration );
 		
 		// $query = $query_filter->createWpQuery( $args );
 
@@ -163,21 +163,27 @@ class BonusPreview
 		return $posts;
 	}
 
-	public static function get_args_date( $atts )
+	public static function get_args_date( $atts, $duration )
 	{
 		$compare = 'after';
+		
+		// $compare = '>=';
 
 		$inclusive = true;
 
-		if ( in_array( $atts[ 'duration' ], [ self::DURATION[ 'expired' ] ] ) )
+		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
 		{
 			$compare = 'before';
+
+			// $compare = '<';
 
 			$inclusive = false;
 		}
 
 		return [
 			'column' => self::FIELD[ 'expire' ],
+
+			// 'compare' => $compare,
 
 			$compare => 'today',
 			
@@ -240,13 +246,13 @@ class BonusPreview
 		return $tax_query;
 	}
 	
-	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
+	public static function get_args( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
     {
 		$meta_query = self::get_args_meta( $atts, $mode );
 
 		$tax_query = self::get_args_tax( $atts );
 
-		$date_query = self::get_args_date( $atts );
+		$date_query = self::get_args_date( $atts, $duration );
 
 		$args = [
 			'posts_per_page' => $atts[ 'limit' ],
