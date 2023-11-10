@@ -196,7 +196,9 @@ class BonusDuration
 			{
 				$current = new DateTime();
 	
-				$result = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
+				// $result = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
+				
+				$result = $bonus->format( self::FORMAT[ 'expire' ] ) < $current->format( self::FORMAT[ 'expire' ] );
 			}
 		}
 
