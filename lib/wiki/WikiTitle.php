@@ -6,7 +6,7 @@ class WikiTitle
         'wiki-about' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-title.css',
 
-            'ver'=> '1.0.3',
+            'ver'=> '1.0.4',
         ],
     ];
     

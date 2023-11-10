@@ -1,3 +1,23 @@
+@media screen and ( max-width: 767px ) {
+	/* Display */
+
+	.legal-wiki-title {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+	/* Width and Height */
+
+	.legal-wiki-title h1 {
+		flex-basis: calc( 75% - 10px );
+	}
+
+	.legal-wiki-title span {
+		flex-basis: calc( 25% - 10px );
+	}
+}
+
 /* Display */
 
 .legal-wiki-title {
@@ -14,16 +34,6 @@
 
 .legal-wiki-title h1 {
 	margin-bottom: 0px;
-}
-
-/* Width and Height */
-
-.legal-wiki-title h1 {
-	flex-basis: calc( 75% - 10px );
-}
-
-.legal-wiki-title span {
-	flex-basis: calc( 25% - 10px );
 }
 
 /* Typography */
