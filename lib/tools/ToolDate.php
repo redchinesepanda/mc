@@ -59,26 +59,6 @@ class ToolDate
         return $query;
     }
 
-    // private function whereFilter(string $action) {
-    //     static $filter;
-    //     if (! $filter && $action === 'add') {
-    //         $filter = function ($where) {
-    //             global $wpdb;
-    //             $where and $where .= ' AND ';
-    //             $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-    //             $sql .= "{$this->compare} %s";
-    //             return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
-    //         };
-    //     }
-    //     $action === 'add'
-    //         ? add_filter('posts_where', $filter)
-    //         : remove_filter('posts_where', $filter);
-
-	// 	LegalDebug::debug( [
-	// 		'filter' => $filter,
-	// 	] );
-    // }
-
 	public function prepare_filter_where( $where )
 	{
 		global $wpdb;
@@ -94,22 +74,6 @@ class ToolDate
 
     private function whereFilter( string $action )
     {
-        // static $filter;
-
-        // if ( $action === 'add' ) {
-        //     $filter = function ($where) {
-        //         global $wpdb;
-        //         $where and $where .= ' AND ';
-        //         $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-        //         $sql .= "{$this->compare} %s";
-        //         return $where . $wpdb->prepare($sql, $this->format, $this->date_value);
-        //     };
-        // }
-
-        // $action === 'add'
-        //     ? add_filter('posts_where', $filter)
-        //     : remove_filter('posts_where', $filter);
-        
         $action === 'add'
             ? add_filter( 'posts_where', [ $this, 'prepare_filter_where' ] )
             : remove_filter( 'posts_where', [ $this, 'prepare_filter_where' ] );
@@ -128,21 +92,6 @@ class ToolDate
 
     private function orderByFilter( string $action )
     {
-        // static $filter;
-
-        // if (! $filter && $action === 'add') {
-        //     $filter = function () {
-        //         global $wpdb;
-        //         $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-        //         $sql .= $this->order_by_meta;
-        //         return $wpdb->prepare($sql, $this->format);
-        //     };
-        // }
-        
-        // $action === 'add'
-        //     ? add_filter('posts_orderby', $filter)
-        //     : remove_filter('posts_orderby', $filter);
-        
         $action === 'add'
             ? add_filter( 'posts_orderby', [ $this, 'prepare_filter_order' ] )
             : remove_filter( 'posts_orderby', [ $this, 'prepare_filter_order' ] );

@@ -30,6 +30,8 @@ class BonusPreview
 		add_image_size( self::SIZE[ 'logo' ], 50, 50, [ 'center', 'center' ] );
 
 		add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+
+		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
     }
 
 	public static function register()
@@ -45,8 +47,6 @@ class BonusPreview
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
     }
 
 	public static function legal_posts_order() 
@@ -89,6 +89,8 @@ class BonusPreview
 		'afillate' => 'ref-ssylka',
 
 		'duration' => 'data-okonchaniya',
+
+		'expire' => 'bonus-expire',
 	];
 
 	const MODE = [
@@ -105,6 +107,31 @@ class BonusPreview
 		'expired' => 'expired',
 	];
 
+	// public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
+	// {
+	// 	if ( $atts[ 'limit' ] == 0 )
+	// 	{
+	// 		return [];
+	// 	}
+
+	// 	$compare = '>';
+
+	// 	if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+	// 	{
+	// 		$compare = '<';
+	// 	}
+
+	// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+
+	// 	$args = self::get_args( $atts, $mode );
+		
+	// 	$query = $query_filter->createWpQuery( $args );
+
+	// 	$posts = $query->posts;
+
+	// 	return $posts;
+	// }
+	
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
 		if ( $atts[ 'limit' ] == 0 )
@@ -119,52 +146,72 @@ class BonusPreview
 			$compare = '<';
 		}
 
-		$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+		// $query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
+
+		$atts[ 'compare' ] = $compare;
+
+		$atts[ 'duration' ] = $duration;
 
 		$args = self::get_args( $atts, $mode );
 		
-		$query = $query_filter->createWpQuery( $args );
+		// $query = $query_filter->createWpQuery( $args );
 
-		$posts = $query->posts;
+		// $posts = $query->posts;
+
+		$posts = get_posts( $args );
 
 		return $posts;
 	}
-	
-	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
-    {
-		$meta_query = [];
 
-		if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
+	public static function get_args_date( $atts )
+	{
+		$compare = 'after';
+
+		$inclusive = true;
+
+		if ( in_array( $atts[ 'duration' ], [ self::DURATION[ 'expired' ] ] ) )
 		{
-			$meta_query = [
-				[
-					'key' => self::FIELD[ 'afillate' ],
-					
-					'value' => [ '', '#' ],
-					
-					'compare' => 'NOT IN',
-				],
-			];
+			$compare = 'before';
+
+			$inclusive = false;
 		}
+
+		return [
+			'column' => self::FIELD[ 'expire' ],
+
+			$compare => 'today',
+			
+			'inclusive' => $inclusive,
+		];
+	}
+
+	public static function get_args_meta( $atts, $mode )
+	{
+		$compare = 'NOT IN';
 
 		if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
 		{
-			$meta_query = [
-				[
-					'key' => self::FIELD[ 'afillate' ],
-					
-					'value' => [ '', '#' ],
-					
-					'compare' => 'IN',
-				],
-			];
+			$compare = 'IN';
 		}
 
+		return [
+			[
+				'key' => self::FIELD[ 'afillate' ],
+				
+				'value' => [ '', '#' ],
+				
+				'compare' => $compare,
+			],
+		];
+	}
+
+	public static function get_args_tax( $atts )
+	{
 		$tax_query = [];
 
 		if ( !empty( $atts[ 'taxonomy' ] ) )
 		{
-			$tax_query = [
+			$tax_query[] = [
 				[
 					'taxonomy' => $atts[ 'taxonomy' ],
 	
@@ -190,6 +237,17 @@ class BonusPreview
 			];
 		}
 
+		return $tax_query;
+	}
+	
+	public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
+    {
+		$meta_query = self::get_args_meta( $atts, $mode );
+
+		$tax_query = self::get_args_tax( $atts );
+
+		$date_query = self::get_args_date( $atts );
+
 		$args = [
 			'posts_per_page' => $atts[ 'limit' ],
             
@@ -200,6 +258,8 @@ class BonusPreview
 			'tax_query' => $tax_query,
 
 			'meta_query' => $meta_query,
+
+			'date_query' => $date_query,
 
 			'orderby' => [
 				'menu_order' => 'DESC',
@@ -222,6 +282,99 @@ class BonusPreview
 
 		return $args;
     }
+
+	// public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
+    // {
+	// 	$meta_query = [];
+
+	// 	if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
+	// 	{
+	// 		$meta_query = [
+	// 			[
+	// 				'key' => self::FIELD[ 'afillate' ],
+					
+	// 				'value' => [ '', '#' ],
+					
+	// 				'compare' => 'NOT IN',
+	// 			],
+	// 		];
+	// 	}
+
+	// 	if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
+	// 	{
+	// 		$meta_query = [
+	// 			[
+	// 				'key' => self::FIELD[ 'afillate' ],
+					
+	// 				'value' => [ '', '#' ],
+					
+	// 				'compare' => 'IN',
+	// 			],
+	// 		];
+	// 	}
+
+	// 	$tax_query = [];
+
+	// 	if ( !empty( $atts[ 'taxonomy' ] ) )
+	// 	{
+	// 		$tax_query = [
+	// 			[
+	// 				'taxonomy' => $atts[ 'taxonomy' ],
+	
+	// 				'field' => 'slug',
+	
+	// 				'terms' => $atts[ 'terms' ],
+	// 			]
+	// 		];
+	// 	}
+
+	// 	if ( !empty( $atts[ 'exclude' ] ) )
+	// 	{
+	// 		$tax_query[] = [
+	// 			[
+	// 				'taxonomy' => $atts[ 'taxonomy' ],
+
+	// 				'field' => 'slug',
+
+	// 				'terms' => $atts[ 'exclude' ],
+
+	// 				'operator' => 'NOT IN',
+	// 			]
+	// 		];
+	// 	}
+
+	// 	$args = [
+	// 		'posts_per_page' => $atts[ 'limit' ],
+            
+    //         'post_type' => $atts[ 'post_type' ],
+
+	// 		'suppress_filters' => 0,
+
+	// 		'tax_query' => $tax_query,
+
+	// 		'meta_query' => $meta_query,
+
+	// 		'orderby' => [
+	// 			'menu_order' => 'DESC',
+
+	// 			'modified' => 'DESC',
+
+	// 			'title' => 'ASC',
+	// 		],
+    //     ];
+
+	// 	if ( !empty( $atts[ 'tags' ] ) )
+	// 	{
+	// 		$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
+	// 	}
+
+	// 	if ( !empty( $atts[ 'current_not_in' ] ) )
+	// 	{
+	// 		$args[ 'post__not_in' ] = [ BonusMain::get_id() ];
+	// 	}
+
+	// 	return $args;
+    // }
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
 	{
