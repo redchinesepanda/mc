@@ -283,6 +283,8 @@ class BonusPreview
 		LegalDebug::debug( [
 			'function' => 'BonusPreview::get_args',
 
+			'atts' => $atts,
+
 			'args' => $args,
 		] );
 
