@@ -301,9 +301,7 @@ class BonusPreview
 			'orderby' => [
 				'menu_order' => 'DESC',
 
-				// 'modified' => 'DESC',
-				
-				'modified' => 'ASC',
+				'modified' => 'DESC',
 
 				'title' => 'ASC',
 			],
