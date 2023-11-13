@@ -286,11 +286,19 @@ class ReviewOffers
 
 			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ], $query_default_limit );
 
-			// LegalDebug::debug( [
-			// 	'function' => 'get_offers',
+			LegalDebug::debug( [
+				'function' => 'get_offers',
 
-			// 	'query' => $query,
-			// ] );
+				'selected-term' => $atts[ 'selected-term' ],
+
+				'query_default_limit' => $query_default_limit,
+
+				'query_current' => count( $query_current ),
+
+				'query_default' => count( $query_default ),
+
+				// 'query' => $query,
+			] );
 
 			// $posts = get_posts( $query );
 
