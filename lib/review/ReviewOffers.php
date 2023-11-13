@@ -321,9 +321,9 @@ class ReviewOffers
 
 				'query_default_limit' => $query_default_limit,
 
-				'query_current' => count( $query_current ),
+				'posts_current' => count( $posts_current ),
 
-				'query_default' => count( $query_default ),
+				'posts_default' => count( $posts_default ),
 
 				// 'query' => $query,
 			] );
