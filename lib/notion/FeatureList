@@ -1,0 +1,11 @@
+prop("Характеристики Плашек Relation")
+.map( current.prop("Slug") )
+.join( "," )
+
+"["
+
++ prop("Характеристики Плашек Relation")
+.map( "\"" + current.prop("Slug") + "\"" )
+.join( "," )
+
++ "]"
