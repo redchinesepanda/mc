@@ -135,7 +135,7 @@ class ReviewOffers
 		'other' => 'offer-group-other',
 	];
 
-	public static function offer_query( $id, $selected_term = '' )
+	public static function offer_query( $id, $selected_term = '', $limit = 5 )
 	{
 		$tax_query = [
 			[
