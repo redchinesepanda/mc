@@ -172,6 +172,12 @@ class ReviewOffers
             ];
 		}
 
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::offer_query',
+
+			'selected_term' => $selected_term,
+		] );
+
 		return [
 			// 'numberposts' => -1,
 			
@@ -261,7 +267,7 @@ class ReviewOffers
 		return $items;
 	}
 
-	public static function get_offers( $atts = [] )
+	public static function get_offers( $atts )
 	{
 		$items = [];
 
@@ -287,7 +293,7 @@ class ReviewOffers
 			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ], $query_default_limit );
 
 			LegalDebug::debug( [
-				'function' => 'get_offers',
+				'function' => 'ReviewOffers::get_offers',
 
 				'selected-term' => $atts[ 'selected-term' ],
 
