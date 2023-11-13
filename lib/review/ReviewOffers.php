@@ -135,7 +135,7 @@ class ReviewOffers
 		'other' => 'offer-group-other',
 	];
 
-	public static function offer_query( $id, $selected_term = '' )
+	public static function offer_query( $id, $selected_term = '', $limit = 5 )
 	{
 		$tax_query = [
 			[
@@ -175,7 +175,7 @@ class ReviewOffers
 		return [
 			// 'numberposts' => -1,
 			
-			'numberposts' => 5,
+			'numberposts' => $limit,
 
             'post_type' => [ 'page' ],
 
@@ -271,14 +271,20 @@ class ReviewOffers
 		{
 			// $query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 
+			$query_default_limit = 5;
+
 			$query_current = [];
 
 			if ( self::OFFER_GROUP[ 'other' ] != $atts[ 'selected-term' ] )
 			{
 				$query_current = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
 			}
+			else 
+			{
+				$query_default_limit = 10;
+			}
 
-			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ] );
+			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ], $query_default_limit );
 
 			// LegalDebug::debug( [
 			// 	'function' => 'get_offers',
