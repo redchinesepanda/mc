@@ -333,21 +333,21 @@ class ReviewOffers
 					// }
 				}
 
-				LegalDebug::debug( [
-					'function' => 'ReviewOffers::get_offers',
+				// LegalDebug::debug( [
+				// 	'function' => 'ReviewOffers::get_offers',
 
-					'OFFER_GROUP-other' => self::OFFER_GROUP[ 'other' ],
+				// 	'OFFER_GROUP-other' => self::OFFER_GROUP[ 'other' ],
 
-					'selected-term' => $atts[ 'selected-term' ],
+				// 	'selected-term' => $atts[ 'selected-term' ],
 
-					'query_default_limit' => $query_default_limit,
+				// 	'query_default_limit' => $query_default_limit,
 
-					'posts_current' => count( $posts_current ),
+				// 	'posts_current' => count( $posts_current ),
 
-					'posts_default' => count( $posts_default ),
+				// 	'posts_default' => count( $posts_default ),
 
-					// 'query' => $query,
-				] );
+				// 	// 'query' => $query,
+				// ] );
 			}
 		}
 		
