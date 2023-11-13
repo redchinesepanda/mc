@@ -181,7 +181,7 @@ class ReviewOffers
 
 			'post_status' => [ 'private', 'publish' ],
 
-            // 'suppress_filters' => 0,
+            'suppress_filters' => 0,
 
             'exclude' => $id,
 
