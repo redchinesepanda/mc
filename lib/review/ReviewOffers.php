@@ -270,8 +270,13 @@ class ReviewOffers
 		if ( !empty( $post ) )
 		{
 			// $query = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
-			
-			$query_current = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
+
+			$query_current = [];
+
+			if ( self::OFFER_GROUP[ 'other' ] != $atts[ 'selected-term' ] )
+			{
+				$query_current = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
+			}
 
 			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ] );
 
