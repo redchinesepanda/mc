@@ -78,6 +78,67 @@
 
 // Relation test end
 
+// Relation Relation Характеристики Relation start
+
+"["
+
++ prop("Бонусы")
+.filter( !current.prop("Характеристики Test").empty())
+.map(
+	"{"
+
+	+ [
+		[
+			"billet-feture-id",
+
+			"\""
+
+			+ current.prop("Характеристики Test")
+			.map( current.prop("Slug") )
+			.slice( 0, 1 )
+			
+			+ "\""
+		],
+		[ "billet-bonus-id", "\"" + current.prop("Страница Бонуса") + "\"" ],
+		[ "billet-bonus-title", "\"" + current.prop("Name") + "\"" ],
+		[ "billet-bonus-description",
+			"\""
+			
+			+ replaceAll(
+				replaceAll(
+					substring( current.prop("Description (for selections)"), 0, 120 ),
+					"[“”\"]",
+					""
+				),
+				"\n",
+				" "
+			)
+			
+			+ "\""
+		]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join( "," )
+
++ "]"
+
+// Relation Relation Характеристики Relation end
+
+"["
+
++ prop("Бонусы")
+.filter( !current.prop("Name").empty() )
+.map(
+	current
+)
+.join( "," )
+
++ "]"
+
 "["
 
 + [

@@ -19,7 +19,9 @@ class NotionTaxonomy
 	{
 		if ( NotionMain::META_FIELD[ 'feature' ] == $meta_key )
 		{
-			$terms = self::format( $meta_value, self::TAXONOMY[ 'feature' ] );
+			$features = json_decode( $meta_value );
+
+			$terms = self::format( $features, self::TAXONOMY[ 'feature' ] );
 
 			$result = wp_set_post_terms( $post_id, $terms, self::TAXONOMY[ 'feature' ], false );
 
