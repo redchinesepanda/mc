@@ -397,7 +397,7 @@ class ReviewOffers
 
 		if ( $post )
 		{
-			return has_shortcode( $post->post_content, SHORTCODE[ 'offers' ] );
+			return has_shortcode( $post->post_content, self::SHORTCODE[ 'offers' ] );
 		}
 
 		return false;
