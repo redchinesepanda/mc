@@ -279,36 +279,26 @@ class ReviewOffers
 
 			$query_default_limit = 5;
 
-			$query_current = [];
+			$posts_current = [];
 
 			if ( self::OFFER_GROUP[ 'other' ] != $atts[ 'selected-term' ] )
 			{
-				$query_current = self::offer_query( $post->ID, $atts[ 'selected-term' ] );
+				$posts_current = get_posts(
+					self::offer_query( $post->ID, $atts[ 'selected-term' ] )
+				);
 			}
 			else 
 			{
 				$query_default_limit = 10;
 			}
 
-			$query_default = self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ], $query_default_limit );
-
-			LegalDebug::debug( [
-				'function' => 'ReviewOffers::get_offers',
-
-				'selected-term' => $atts[ 'selected-term' ],
-
-				'query_default_limit' => $query_default_limit,
-
-				'query_current' => count( $query_current ),
-
-				'query_default' => count( $query_default ),
-
-				// 'query' => $query,
-			] );
+			$posts_default = get_posts(
+				self::offer_query( $post->ID, self::OFFER_GROUP[ 'other' ], $query_default_limit )
+			);
 
 			// $posts = get_posts( $query );
 
-			$posts = array_merge( get_posts( $query_current ) , get_posts( $query_default ) );
+			$posts = array_merge( $posts_current, $posts_default );
 
 			if ( !empty( $posts ) )
 			{
@@ -323,6 +313,20 @@ class ReviewOffers
 				// 	$items = self::parse_offers( $posts );
 				// }
 			}
+
+			LegalDebug::debug( [
+				'function' => 'ReviewOffers::get_offers',
+
+				'selected-term' => $atts[ 'selected-term' ],
+
+				'query_default_limit' => $query_default_limit,
+
+				'query_current' => count( $query_current ),
+
+				'query_default' => count( $query_default ),
+
+				// 'query' => $query,
+			] );
 		}
 		
 		return $items;
