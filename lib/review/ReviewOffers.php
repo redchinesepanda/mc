@@ -265,7 +265,9 @@ class ReviewOffers
 			$items[] = [
 				'label' => $label,
 
-				'href' => get_post_permalink( $offer->ID ),
+				// 'href' => get_post_permalink( $offer->ID ),
+				
+				'href' => get_page_link( $offer->ID ),
 			];
 			
 		}
@@ -358,6 +360,8 @@ class ReviewOffers
 		'selected-term' => '',
 
 		'suffix' => '',
+
+		'check' => 0,
 	];
 
 	// public static function check_compilation()
@@ -369,6 +373,14 @@ class ReviewOffers
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
 
+		if ( $atts[ 'check' ] )
+		{
+			if ( self::check_content() )
+			{
+				return '';
+			}
+		}
+
 		$args = self::get_offers( $atts );
 
 		// if ( self::check_compilation() )
@@ -377,6 +389,18 @@ class ReviewOffers
 		// }
 
 		// return self::render_offers( $args );
+	}
+
+	public static function check_content()
+	{
+		$post = get_post();
+
+		if ( $post )
+		{
+			return has_shortcode( $post->post_content, SHORTCODE[ 'offers' ] );
+		}
+
+		return false;
 	}
 
 	const TEMPLATE = [
