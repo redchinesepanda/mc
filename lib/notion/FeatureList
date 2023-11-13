@@ -2,6 +2,8 @@ prop("Характеристики Плашек Relation")
 .map( current.prop("Slug") )
 .join( "," )
 
+// Features JSON Array start
+
 "["
 
 + prop("Характеристики Плашек Relation")
@@ -9,3 +11,5 @@ prop("Характеристики Плашек Relation")
 .join( "," )
 
 + "]"
+
+// Features JSON Array end

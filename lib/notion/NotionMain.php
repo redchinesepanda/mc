@@ -16,21 +16,21 @@ class NotionMain
 {
 	public static function register_functions()
 	{
-		$handler = new self();
+		// $handler = new self();
 
 		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
-		NotionList::register_functions();
+		// NotionList::register_functions();
 
-		NotionImage::register_functions();
+		// NotionImage::register_functions();
 
-		NotionWPML::register_functions();
+		// NotionWPML::register_functions();
 
-		NotionBonus::register_functions();
+		// NotionBonus::register_functions();
 
-		NotionAffiliate::register_functions();
+		// NotionAffiliate::register_functions();
 
-		NotionTaxonomy::register_functions();
+		// NotionTaxonomy::register_functions();
 	}
 
 	const META_FIELD = [
