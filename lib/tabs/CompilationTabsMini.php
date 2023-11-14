@@ -113,16 +113,21 @@ class CompilationTabsMini
 		];
 	}
 
-	public static function filter_space( $string )
-    {
-        return preg_replace(
-            '/\s*,\s*/',
+	// public static function validate_array( $attr )
+    // {
+    //     return explode( ',', self::filter_space( $atts[ 'id' ] ) );
+    // }
+
+	// public static function filter_space( $string )
+    // {
+    //     return preg_replace(
+    //         '/\s*,\s*/',
             
-            ',',
+    //         ',',
             
-            filter_var( $string, FILTER_SANITIZE_STRING )
-        );
-    }
+    //         filter_var( $string, FILTER_SANITIZE_STRING )
+    //     );
+    // }
 
 	public static function sort_profit( $a, $b )
     {
@@ -210,7 +215,11 @@ class CompilationTabsMini
 
         $atts[ 'profit' ] = wp_validate_boolean( $atts[ 'profit' ] );
 
-        $pages = explode( ',', self::filter_space( $atts[ 'id' ] ) );
+        // $pages = explode( ',', self::filter_space( $atts[ 'id' ] ) );
+        
+        // $pages = self::validate_array( $atts[ 'id' ] );
+        
+        $pages = ToolShortcode::validate_array( $atts[ 'id' ] );
 
         $args = [];
 

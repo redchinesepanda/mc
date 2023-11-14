@@ -28,6 +28,8 @@ require_once( 'ToolTinyMCE.php' );
 
 require_once( 'ToolTransiterate.php' );
 
+require_once( 'ToolShortcode.php' );
+
 class ToolsMain
 {
     public static function register()

@@ -10,6 +10,8 @@ require_once( 'WikiFeatured.php' );
 
 require_once( 'WikiTitle.php' );
 
+require_once( 'WikiPreview.php' );
+
 class WikiMain
 {
 	const TEXT = [
@@ -47,6 +49,8 @@ class WikiMain
 		WikiFeatured::register();
 
 		WikiTitle::register();
+
+		WikiPreview::register();
     }
 
 	const CATEGORY = [
