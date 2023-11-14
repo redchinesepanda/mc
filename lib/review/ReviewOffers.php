@@ -246,17 +246,17 @@ class ReviewOffers
 	// 	return $items;
 	// }
 
-	public static function parse_offers_compilation( $offers, $suffix = '' )
+	public static function parse_offers_compilation( $posts, $suffix = '' )
 	{
 		$items = [];
 
-		foreach ( $offers as $offer )
+		foreach ( $posts as $post )
 		{
-			$label = get_field( self::FIELD[ 'title' ], $offer->ID );
+			$label = get_field( self::FIELD[ 'title' ], $post->ID );
 
 			if ( empty( $label ) )
 			{
-				$label = $offer->post_title;
+				$label = $post->post_title;
 			}
 
 			if ( !empty( $suffix ) )
@@ -266,10 +266,8 @@ class ReviewOffers
 
 			$items[] = [
 				'label' => $label,
-
-				// 'href' => get_post_permalink( $offer->ID ),
 				
-				'href' => get_page_link( $offer->ID ),
+				'href' => get_page_link( $post->ID ),
 			];
 			
 		}
@@ -344,6 +342,8 @@ class ReviewOffers
 						'function' => 'ReviewOffers::get_offers',
 
 						'suffix' => $suffix,
+
+						'items_current' => $items_current,
 					] );
 					
 					// shuffle( $posts );
