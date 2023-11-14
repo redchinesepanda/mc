@@ -323,7 +323,7 @@ class ReviewOffers
 
 				// $posts = array_merge( $posts_current, $posts_default );
 
-				if ( !empty( $posts ) )
+				if ( !empty( $posts_default ) )
 				{
 					$suffix = get_field( self::FIELD[ 'suffix' ], $post->ID );
 
