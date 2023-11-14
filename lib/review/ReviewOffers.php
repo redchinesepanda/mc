@@ -92,6 +92,8 @@ class ReviewOffers
 		'title' => 'offer-group-title',
 
 		'about' => 'review-about',
+
+		'suffix' => 'offer-group-suffix',
 	];
 
 	const REVIEW_ABOUT = [
@@ -319,15 +321,30 @@ class ReviewOffers
 					)
 				);
 
-				$posts = array_merge( $posts_current, $posts_default );
+				// $posts = array_merge( $posts_current, $posts_default );
 
 				if ( !empty( $posts ) )
 				{
-					shuffle( $posts );
+					$suffix = get_field( self::FIELD[ 'suffix' ], $post->ID );
+
+					if ( epmty( $suffix ) )
+					{
+						$suffix = $atts[ 'suffix' ];
+					}
+
+					$items_current = self::parse_offers_compilation( $posts_current, $suffix );
+
+					$items_default = self::parse_offers_compilation( $posts_default, '' );
+
+					$items = array_merge( $items_current, $items_default );
+
+					shuffle( $items );
+					
+					// shuffle( $posts );
 
 					// if ( self::check_compilation() )
 					// {
-						$items = self::parse_offers_compilation( $posts, $atts[ 'suffix' ] );
+						// $items = self::parse_offers_compilation( $posts, $atts[ 'suffix' ] );
 					// }
 					// else
 					// {
