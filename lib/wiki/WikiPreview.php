@@ -71,6 +71,17 @@ class WikiPreview
 		];
 	}
 
+	public static function get_posts( $atts )
+	{
+		LegalDebug::debug( [
+			'function' => 'get_posts',
+
+			'preview_query' => self::preview_query( $atts ),
+		] );
+
+		return get_posts( self::preview_query( $atts ) );
+	}
+
 	public static function get_items( $posts )
 	{
 		$items = [];
@@ -96,11 +107,6 @@ class WikiPreview
 		}
 
 		return $items;
-	}
-
-	public static function get_posts( $atts )
-	{
-		return get_posts( self::preview_query( $atts ) );
 	}
 
 	public static function get_items_shortcode( $atts )
