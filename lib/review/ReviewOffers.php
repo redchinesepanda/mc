@@ -343,7 +343,7 @@ class ReviewOffers
 					LegalDebug::debug( [
 						'function' => 'ReviewOffers::get_offers',
 
-						'suffix-other' => $suffix,
+						'suffix' => $suffix,
 					] );
 					
 					// shuffle( $posts );
