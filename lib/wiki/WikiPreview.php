@@ -125,7 +125,7 @@ class WikiPreview
 
 		if ( !empty( $redirect_id ) )
 		{
-			retun get_page_link( $redirect_id );
+			return get_page_link( $redirect_id );
 		}
 
 		return '';
