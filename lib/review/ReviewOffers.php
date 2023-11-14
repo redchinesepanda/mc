@@ -339,6 +339,12 @@ class ReviewOffers
 					$items = array_merge( $items_current, $items_default );
 
 					shuffle( $items );
+
+					LegalDebug::debug( [
+						'function' => 'ReviewOffers::get_offers',
+
+						'suffix-other' => $suffix,
+					] );
 					
 					// shuffle( $posts );
 
