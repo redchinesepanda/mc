@@ -338,13 +338,13 @@ class ReviewOffers
 
 					shuffle( $items );
 
-					LegalDebug::debug( [
-						'function' => 'ReviewOffers::get_offers',
+					// LegalDebug::debug( [
+					// 	'function' => 'ReviewOffers::get_offers',
 
-						'suffix' => $suffix,
+					// 	'suffix' => $suffix,
 
-						'items_current' => $items_current,
-					] );
+					// 	'items_current' => $items_current,
+					// ] );
 					
 					// shuffle( $posts );
 
