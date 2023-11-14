@@ -120,6 +120,12 @@ class WikiPreview
 			'items' => $items,
 		];
 
+		LegalDebug::debug( [
+			'function' => 'prepare',
+
+			'atts' => $atts,
+		] );
+
 		return self::render( $args );
 	}
 	
