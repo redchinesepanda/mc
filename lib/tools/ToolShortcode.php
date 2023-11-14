@@ -4,7 +4,12 @@ class ToolShortcode
 {
 	public static function validate_array( $value )
     {
-        return explode( ',', self::filter_space( $value ) );
+		if ( !is_array( $value ) )
+		{
+			return explode( ',', self::filter_space( $value ) );
+		}
+
+		return $value;
     }
 
 	public static function filter_space( $string )
