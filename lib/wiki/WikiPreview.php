@@ -25,7 +25,7 @@ class WikiPreview
     {
         $handler = new self();
 
-        // [legal-wiki terms='kak-delat-stavki-na-sport']
+        // [legal-wiki terms='kak-delat-stavki-na-sport' featured="0"]
 
         add_shortcode( self::SHORTCODE[ 'wiki' ], [ $handler, 'prepare' ] );
 
