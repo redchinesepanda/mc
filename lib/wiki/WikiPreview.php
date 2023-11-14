@@ -59,7 +59,7 @@ class WikiPreview
 
                     'field' => 'slug',
                     
-					'terms' => [ $atts[ 'terms' ] ],
+					'terms' => $atts[ 'terms' ],
 
 					'operator' => 'IN',
 				],
@@ -103,6 +103,8 @@ class WikiPreview
 
 	public static function prepare( $atts )
     {
+		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'terms' ] );
+
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'wiki' ] );
 
 		$items = self::get_items_shortcode( $atts );
