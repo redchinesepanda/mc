@@ -79,6 +79,8 @@ class WikiPreview
 			'preview_query' => self::preview_query( $atts ),
 		] );
 
+		debug_print_backtrace();
+
 		return get_posts( self::preview_query( $atts ) );
 	}
 
