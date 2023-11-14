@@ -103,9 +103,9 @@ class WikiPreview
 
 	public static function prepare( $atts )
     {
-		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'terms' ] );
-
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'wiki' ] );
+		
+		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'terms' ] );
 
 		$items = self::get_items_shortcode( $atts );
 
