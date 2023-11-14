@@ -327,7 +327,7 @@ class ReviewOffers
 				{
 					$suffix = get_field( self::FIELD[ 'suffix' ], $post->ID );
 
-					if ( epmty( $suffix ) )
+					if ( empty( $suffix ) )
 					{
 						$suffix = $atts[ 'suffix' ];
 					}
