@@ -61,7 +61,9 @@ class WikiPreview
                     
 					'terms' => $atts[ 'terms' ],
 
-					'operator' => 'IN',
+					// 'operator' => 'IN',
+					
+					'operator' => 'AND',
 				],
             ],
 
