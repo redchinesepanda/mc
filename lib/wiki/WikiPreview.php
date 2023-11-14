@@ -73,11 +73,11 @@ class WikiPreview
 
 	public static function get_posts( $atts )
 	{
-		LegalDebug::debug( [
-			'function' => 'get_posts',
+		// LegalDebug::debug( [
+		// 	'function' => 'get_posts',
 
-			'preview_query' => self::preview_query( $atts ),
-		] );
+		// 	'preview_query' => self::preview_query( $atts ),
+		// ] );
 
 		return get_posts( self::preview_query( $atts ) );
 	}
@@ -126,11 +126,11 @@ class WikiPreview
 			'items' => $items,
 		];
 
-		LegalDebug::debug( [
-			'function' => 'prepare',
+		// LegalDebug::debug( [
+		// 	'function' => 'prepare',
 
-			'atts' => $atts,
-		] );
+		// 	'atts' => $atts,
+		// ] );
 
 		return self::render( $args );
 	}
