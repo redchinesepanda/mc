@@ -2,9 +2,9 @@
 
 class ToolShortcode
 {
-	public static function validate_array( $attr )
+	public static function validate_array( $value )
     {
-        return explode( ',', self::filter_space( $atts[ 'id' ] ) );
+        return explode( ',', self::filter_space( $value ) );
     }
 
 	public static function filter_space( $string )
