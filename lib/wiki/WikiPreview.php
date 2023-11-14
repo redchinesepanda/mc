@@ -42,7 +42,7 @@ class WikiPreview
 		'wiki' => 'legal-wiki',
 	];
 
-	public static function offer_query( $atts )
+	public static function preview_query( $atts )
 	{
 		return [
 			'numberposts' => $atts[ 'limit' ],
@@ -96,9 +96,14 @@ class WikiPreview
 		return $items;
 	}
 
+	public static function get_posts( $atts )
+	{
+		return get_posts( self::preview_query( $atts ) );
+	}
+
 	public static function get_items_shortcode( $atts )
 	{
-		return self::get_items( self::group_posts( $atts ) );
+		return self::get_items( self::get_posts( $atts ) );
 	}
 
 	public static function prepare( $atts )
