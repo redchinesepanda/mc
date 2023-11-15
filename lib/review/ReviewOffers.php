@@ -319,9 +319,19 @@ class ReviewOffers
 					)
 				);
 
+				// LegalDebug::debug( [
+				// 	'function' => 'ReviewOffers::get_offers',
+		
+				// 	'query_default_limit' => $query_default_limit,
+
+				// 	'posts_current' => count( $posts_current ),
+
+				// 	'posts_default' => count( $posts_default ),
+				// ] );
+
 				// $posts = array_merge( $posts_current, $posts_default );
 
-				if ( !empty( $posts_default ) )
+				if ( !empty( $posts_current ) || !empty( $posts_default ) )
 				{
 					$suffix = get_field( self::FIELD[ 'suffix' ], $post->ID );
 
@@ -396,11 +406,11 @@ class ReviewOffers
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::prepare',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::prepare',
 
-			'check_content' => self::check_content(),
-		] );
+		// 	'check_content' => self::check_content(),
+		// ] );
 
 		if ( $atts[ 'check' ] )
 		{
@@ -412,11 +422,11 @@ class ReviewOffers
 
 		$args = self::get_offers( $atts );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewOffers::prepare',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewOffers::prepare',
 
-			'args' => $args,
-		] );
+		// 	'args' => $args,
+		// ] );
 
 		// if ( self::check_compilation() )
 		// {
