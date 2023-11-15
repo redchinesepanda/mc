@@ -48,8 +48,8 @@
 /* Width and Height */
 
 .block-article-item {
-    /* min-height: 280px;
-    height: auto; */
+    min-height: 280px;
+    /* height: auto; */
 }
 
 .block-article-item .list-article {
