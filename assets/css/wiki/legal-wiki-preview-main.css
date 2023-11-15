@@ -1,0 +1,116 @@
+.legal-wiki-blocks-article * {
+    box-sizing: border-box;
+    font-family: "Source Sans Pro";
+}
+
+.legal-wiki-blocks-article a {
+    text-decoration: none;
+    color: #0c1115;
+}
+
+.legal-wiki-blocks-article a:hover {
+    text-decoration: none;
+    color: #0c1115;
+}
+
+.legal-wiki-blocks-article a.underline {
+    background-image: linear-gradient(#cbcbcb, #cbcbcb);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+    text-decoration: none;
+}
+
+.legal-wiki-blocks-article a.underline:hover {
+    background-size: 100% 2px;
+}
+
+/* Position */
+
+.legal-wiki-blocks-article .block-article-item {
+    padding: 20px;
+}
+
+.legal-wiki-blocks-article .article {
+    padding: 13px;
+    padding-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .legal-wiki-blocks-article .block-article-item {
+        margin: 0 auto;
+    }
+}
+
+/* Width and Height */
+
+.legal-wiki-blocks-article .block-article-item {
+    min-height: 280px;
+    height: auto;
+}
+
+.legal-wiki-blocks-article .list-article {
+    width: 100%;
+}
+
+/* Display */
+.legal-wiki-blocks-article {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legal-wiki-blocks-article .block-article-item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 1rem;
+    flex-basis: 308px;
+}
+
+.legal-wiki-blocks-article .list-article {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background */
+.legal-wiki-blocks-article .block-article-item {
+    background-color: #fff;
+    box-shadow: 0 0 10px #e4e4e4;
+    border-radius: 8px;
+}
+
+.legal-wiki-blocks-article .article {
+    background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.legal-wiki-blocks-article .article:hover {
+    border-bottom: 1px solid #c1c1c1;
+}
+
+/* Typography */
+
+.legal-wiki-blocks-article .block-item-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.legal-wiki-blocks-article .list-article .article {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color:#3b3b3b;
+}
+
+.legal-wiki-blocks-article .list-article .article:hover {
+    color:#0c1115;
+    font-weight: 500;
+}
