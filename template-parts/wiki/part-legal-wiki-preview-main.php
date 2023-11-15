@@ -7,7 +7,7 @@ LegalDebug::debug( [
 ] );
 
 ?>
-<div class="block-article-item">
+<div class="block-article-item <?php echo $args[ 'terms' ] ?> ">
 	<div class="block-item-title">
 		<a href="#" class="underline">Как делать ставки на спорт</a>
 	</div>

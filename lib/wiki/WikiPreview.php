@@ -171,6 +171,8 @@ class WikiPreview
 		$atts[ 'featured' ] = wp_validate_boolean( $atts[ 'featured' ] );
 
 		$args = [
+			'settings' => self::get_settings( $atts[ 'terms' ] ),
+
 			'items' => self::get_items_shortcode( $atts ),
 		];
 
