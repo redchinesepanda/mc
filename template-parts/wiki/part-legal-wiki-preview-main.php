@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-	'template-part' => 'part-legal-wiki-preview.php',
+// LegalDebug::debug( [
+// 	'template-part' => 'part-legal-wiki-preview.php',
 
-	'args' => $args,
-] );
+// 	'args' => $args,
+// ] );
 
 ?>
 <div class="block-article-item block-article-item-<?php echo $args[ 'settings' ][ 'id' ] ?> ">
