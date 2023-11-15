@@ -261,7 +261,7 @@ class ReviewOffers
 
 			if ( !empty( $suffix ) )
 			{
-				$label .= ' + ' . $suffix;
+				$label .= ' ' . $suffix;
 			}
 
 			$items[] = [
@@ -395,6 +395,12 @@ class ReviewOffers
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
+
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::prepare',
+
+			'check_content' => self::check_content(),
+		] );
 
 		if ( $atts[ 'check' ] )
 		{
