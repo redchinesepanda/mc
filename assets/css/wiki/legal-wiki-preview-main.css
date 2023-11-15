@@ -90,11 +90,11 @@
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
-    border-bottom: 1px solid #EDEDED;
+    border-bottom: 1px dotted rgba(0,0,0,0.22);
 }
 
 .block-article-item .article:hover {
-    border-bottom: 1px solid #c1c1c1;
+    border-bottom: 1px dotted rgba(0,0,0,0.5);
 }
 
 /* Typography */
