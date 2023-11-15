@@ -9,11 +9,11 @@ class WikiPreview
             'ver'=> '1.0.0',
         ],
 
-        'legal-wiki-preview-featured' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-preview-featured.css',
+        // 'legal-wiki-preview-featured' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-preview-featured.css',
 
-            'ver'=> '1.0.0',
-        ],
+        //     'ver'=> '1.0.0',
+        // ],
     ];
 	
 	public static function register_style()
@@ -123,13 +123,23 @@ class WikiPreview
 		return $items;
 	}
 
+	public static function check_page_href( $href )
+	{
+		return !( $href == get_page_link() );
+	}
+
 	public static function get_term_href_redirect( $id )
 	{
 		$redirect_id = get_term_meta( $id, self::META_KEY[ 'redirect' ], true );
 
 		if ( !empty( $redirect_id ) )
 		{
-			return get_page_link( $redirect_id );
+			$page_link = get_page_link( $redirect_id );
+
+			if ( self::check_page_href( $page_link ) )
+			{
+				return $page_link;
+			}
 		}
 
 		return '';
