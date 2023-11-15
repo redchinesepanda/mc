@@ -1,3 +1,88 @@
+/* Display */
+
+.block-article-item {
+	display: inline-block;
+}
+
+.block-article-item .list-article {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position */
+
+.block-article-item {
+    padding: 20px;
+}
+
+.block-article-item .article {
+    padding: 13px;
+    padding-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .block-article-item {
+        margin: 0 auto;
+    }
+}
+
+.block-article-item {
+	margin-bottom: 20px;
+}
+
+.block-article-item:nth-child( 3n+1 ) {
+	margin-left: 10px;
+}
+
+.block-article-item:nth-child( 3n+2 ) {
+	margin-right: 10px;
+}
+
+.block-article-item:nth-child( 3n ) {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
+/* Width and Height */
+
+.block-article-item {
+    min-height: 280px;
+    /* height: auto; */
+}
+
+/* .block-article-item .list-article {
+	width: 100%;
+} */
+
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+	
+	.block-article-item {
+		width: calc(100% / 3 - 52px);
+	}
+}
+
+/* Background */
+
+.block-article-item {
+    background-color: #fff;
+    box-shadow: 0 0 10px #e4e4e4;
+    border-radius: 8px;
+}
+
+.block-article-item .article {
+    background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: 1px dotted rgba(0,0,0,0.22);
+}
+
+.block-article-item .article:hover {
+    border-bottom: 1px dotted rgba(0,0,0,0.5);
+}
+
 /* Typography */
 
 .block-article-item * {
@@ -27,106 +112,6 @@
 .block-article-item a.underline:hover {
     background-size: 100% 2px;
 }
-
-/* Position */
-
-.block-article-item {
-    padding: 20px;
-}
-
-.block-article-item .article {
-    padding: 13px;
-    padding-left: 25px;
-}
-
-@media (max-width: 768px) {
-    .block-article-item {
-        margin: 0 auto;
-    }
-}
-
-.block-article-item {
-	margin-bottom: 20px;
-}
-
-/* .block-article-item:nth-child( 3n ) { */
-.block-article-item:nth-child( 3n+1 ) {
-	margin-left: 10px;
-}
-
-/* .block-article-item:nth-child( 3n+1 ) { */
-.block-article-item:nth-child( 3n+2 ) {
-	margin-right: 10px;
-}
-
-/* .block-article-item:nth-child( 3n+2 ) { */
-.block-article-item:nth-child( 3n ) {
-	margin-right: 4px;
-	margin-left: 4px;
-}
-
-/* Width and Height */
-
-.block-article-item {
-    min-height: 280px;
-    /* height: auto; */
-}
-
-.block-article-item .list-article {
-    width: 100%;
-}
-
-.block-article-item {
-	width: calc(100% / 3 - 52px);
-}
-
-/* Display */
-
-.block-article-item {
-	display: inline-block;
-}
-
-/* .legal-wiki-blocks-article {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-} */
-
-/* .block-article-item {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    row-gap: 1rem;
-    flex-basis: 308px;
-} */
-
-.block-article-item .list-article {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Background */
-.block-article-item {
-    background-color: #fff;
-    box-shadow: 0 0 10px #e4e4e4;
-    border-radius: 8px;
-}
-
-.block-article-item .article {
-    background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    border-bottom: 1px dotted rgba(0,0,0,0.22);
-}
-
-.block-article-item .article:hover {
-    border-bottom: 1px dotted rgba(0,0,0,0.5);
-}
-
-/* Typography */
 
 .block-article-item .block-item-title {
     font-size: 24px;
