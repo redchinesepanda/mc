@@ -412,6 +412,12 @@ class ReviewOffers
 
 		$args = self::get_offers( $atts );
 
+		LegalDebug::debug( [
+			'function' => 'ReviewOffers::prepare',
+
+			'args' => $args,
+		] );
+
 		// if ( self::check_compilation() )
 		// {
 			return self::render_offers_compilation( $args );
