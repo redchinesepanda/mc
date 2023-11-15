@@ -45,6 +45,23 @@
     }
 }
 
+.block-article-item {
+	margin-bottom: 20px;
+}
+
+.block-article-item:nth-child( 3n ) {
+	margin-left: 10px;
+}
+
+.block-article-item:nth-child( 3n+1 ) {
+	margin-right: 10px;
+}
+
+.block-article-item:nth-child( 3n+2 ) {
+	margin-right: 4px;
+	margin-left: 4px;
+}
+
 /* Width and Height */
 
 .block-article-item {
@@ -54,6 +71,10 @@
 
 .block-article-item .list-article {
     width: 100%;
+}
+
+.block-article-item {
+	width: calc(100% / 3 - 12px);
 }
 
 /* Display */
@@ -81,18 +102,6 @@
 .block-article-item .list-article {
     display: flex;
     flex-direction: column;
-}
-
-/* Width and Height */
-
-.block-article-item {
-	width: calc( 100% / 3 );
-}
-
-/* Positon */
-
-.block-article-item {
-	margin-bottom: 20px;
 }
 
 /* Background */
