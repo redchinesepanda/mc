@@ -43,6 +43,13 @@ class WikiFeatured
 
 		// $preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
+        if ( $preview[ 'id' ] == 0 )
+        {
+            return [
+                'preview' => [],
+            ];
+        }
+
 		return [
 			'preview' => $preview,
 		];
