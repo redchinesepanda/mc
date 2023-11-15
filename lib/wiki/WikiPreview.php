@@ -32,6 +32,10 @@ class WikiPreview
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+	const META_KEY = [
+		'redirect' => 'page_redirect',
+	];
+
 	const TAXONOMY = [
 		'category' => 'category',
 	];
