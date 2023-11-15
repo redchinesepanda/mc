@@ -6,7 +6,7 @@ class WikiFeatured
         'wiki-featured' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-featured.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 
