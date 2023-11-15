@@ -7,25 +7,17 @@ LegalDebug::debug( [
 ] );
 
 ?>
-<div class="block-article-item <?php echo $args[ 'terms' ] ?> ">
+<div class="block-article-item block-article-item-<?php echo $args[ 'settings' ][ 'id' ] ?> ">
 	<div class="block-item-title">
-		<a href="#" class="underline">Как делать ставки на спорт</a>
+		<?php if ( !empty( $args[ 'settings' ][ 'href' ] ) ) : ?>
+			<a href="<?php echo $args[ 'settings' ][ 'href' ] ?>" class="underline"><?php echo $args[ 'settings' ][ 'title' ] ?></a>
+		<?php else : ?>
+			<span class="underline"><?php echo $args[ 'settings' ][ 'title' ] ?></span>
+		<?php endif; ?>
 	</div>
 	<div class="list-article">
-		<a href="#" class="article">
-			Как ставить на баскетбол
-		</a>
-		<a href="#" class="article">
-			Как ставить на теннис
-		</a>
-		<a href="#" class="article">
-			Как ставить на теннис
-		</a>
-		<a href="#" class="article">
-			Как ставить на теннис
-		</a>
-		<a href="#" class="article">
-			Основы систем ставок на спорт: топ-4 систем, которые работают
-		</a>
+		<?php foreach( $args[ 'items' ] as $item ) : ?>
+			<a href="<?php echo $item[ 'href' ] ?>" class="article article-<?php echo $item[ 'id' ] ?>"><?php echo $item[ 'title' ] ?></a>
+		<?php endforeach; ?>
 	</div>
 </div>
