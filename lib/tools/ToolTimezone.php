@@ -6,20 +6,20 @@ class ToolTimezone
 	{
 		if ( empty( $country_code ) )
 		{
-			$country_code = WPMLMain::get_locale();
+			$country_code = WPMLMain::current_language();
 		}
 
 		$timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY, $country_code );
 
-		LegalDebug::debug( [
-			'function' => 'ToolTimezone::get_timezone',
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolTimezone::get_timezone',
 
-			'country_code' => $country_code,
+		// 	'country_code' => $country_code,
 
-			'current_language' => WPMLMain::current_language(),
+		// 	'current_language' => WPMLMain::current_language(),
 
-			'timezone' => $timezone,
-		] );
+		// 	'timezone' => $timezone,
+		// ] );
 
 		return $timezone;
 	}
