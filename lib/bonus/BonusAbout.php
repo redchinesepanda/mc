@@ -72,7 +72,7 @@ class BonusAbout
     {
         if ( !empty( $item[ 'href' ] ) )
         {
-            return str_contains( $url[ 'href' ], '/go/' );
+            return str_contains( $item[ 'href' ], '/go/' );
         }
 
         return false;
