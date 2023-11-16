@@ -118,6 +118,12 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
+			$class = $table->getAttribute( 'class' );
+
+			$class = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class );
+
+			$table->setAttribute( 'class', $class );
+
 			$scroll = $dom->createElement( 'div' );
 
 			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll' ] );
