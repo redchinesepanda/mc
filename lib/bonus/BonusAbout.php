@@ -82,7 +82,10 @@ class BonusAbout
     {
         $href = str_replace( self::SEARCH, '/', $item[ 'href' ] );
 
-        $item[ 'id' ] = get_page_by_path( $href, OBJECT, 'affiliate-links' );
+        if ( $affiliate = get_page_by_path( $href, OBJECT, 'affiliate-links' ) )
+        {
+            $item[ 'id' ] = $affiliate->ID;
+        }
 
         return $item;
     }
