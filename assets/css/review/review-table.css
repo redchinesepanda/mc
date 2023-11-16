@@ -30,11 +30,12 @@
 
     /* Review Position */
 
-    /* .tcb-post-content table {
+    .tcb-post-content table.legal-raw,
+    .tcb-post-content table.legal-raw-rawspan {
         max-height: 500px;
         display: block;
         overflow-y: scroll;
-    } */
+    }
 
     /* .tcb-post-content table.legal-column + table.legal-column {
         margin-left: 20px;
