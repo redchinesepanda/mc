@@ -115,16 +115,6 @@ class BonusAbout
 
         $href_go = array_filter( $href_previous, [ $handler, 'filter_go' ] );
 
-        LegalDebug::debug( [
-            'function' => 'BonusAbout::affiliate_get',
-
-            'href_previous' => $href_previous,
-
-            'href_go' => $href_go,
-
-            'not_empty' => !empty( $href_go ),
-        ] );
-
         if ( !empty( $href_go ) )
         {
             $href_id = array_map( [ $handler, 'set_id' ], $href_go);
