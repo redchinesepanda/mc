@@ -41,8 +41,6 @@ class WikiFeatured
 
 		$preview = BonusPreview::get_thumbnail( $id, BonusFeatured::SIZE[ 'featured' ] );
 
-		// $preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
-
         if ( $preview[ 'id' ] == 0 )
         {
             return [
