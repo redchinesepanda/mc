@@ -123,19 +123,19 @@ class BonusAbout
 
             $item = array_shift( $href_id );
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_get',
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_get',
     
-                'href_previous' => $href_previous,
+            //     'href_previous' => $href_previous,
     
-                'href_go' => $href_go,
+            //     'href_go' => $href_go,
     
-                'href_id' => $href_id,
+            //     'href_id' => $href_id,
 
-                'href_result' => $href_result,
+            //     'href_result' => $href_result,
 
-                'item' => $item,
-            ] );
+            //     'item' => $item,
+            // ] );
 
             return $item[ 'id' ];
         }
