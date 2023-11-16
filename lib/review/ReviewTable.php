@@ -39,7 +39,7 @@ class ReviewTable
 
 	public static function get_nodes_scroll( $dom )
 	{
-		return get_nodes(
+		return self::get_nodes(
 			$dom,
 			
 			'//table[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')]'
@@ -48,7 +48,7 @@ class ReviewTable
 
 	public static function get_nodes_tbody( $dom )
 	{
-		return get_nodes(
+		return self::get_nodes(
 			$dom,
 			
 			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]'
