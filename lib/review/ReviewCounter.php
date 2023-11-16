@@ -51,6 +51,19 @@ class ReviewCounter
         return $output;
     }
 
+	public static function inline_style_general( $group )
+	{
+		return [
+			'.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }',
+			
+			'.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }',
+		];
+	}
+
+	const SIZE = [
+        'full' => 'full',
+    ];
+
 	public static function inline_style()
 	{
 		if ( !ReviewMain::check() )
@@ -64,9 +77,11 @@ class ReviewCounter
 
 		if ( $group )
 		{
-			$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
+			// $style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
 
-			$style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
+			// $style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
+
+			$style = array_merge( $style, inline_style_general( $group ) );
 		}
 
 		$tables = self::get_tables();
@@ -76,6 +91,22 @@ class ReviewCounter
 			foreach ( $tables as $table_id => $table )
 			{
 				$shortcode_args = ReviewBonus::get_shortcode( $table );
+
+				if ( !empty( $shortcode_args ) )
+				{
+					$logo = wp_get_attachment_image_src( $id, self::SIZE[ 'full' ] );
+
+					if ( $logo )
+					{
+						$group = [
+							ReviewAbout::ABOUT[ 'logo' ] => $logo[ 0 ],
+
+							ReviewAbout::ABOUT[ 'background' ] => '',
+						];
+
+						$style = array_merge( $style, inline_style_general( $group ) );
+					}
+				}
 
 				$items = self::get_counter_items( $table );
 
