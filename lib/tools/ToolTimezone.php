@@ -16,7 +16,7 @@ class ToolTimezone
 
 			'country_code' => $country_code,
 
-			'current_language' => current_language(),
+			'current_language' => WPMLMain::current_language(),
 
 			'timezone' => $timezone,
 		] );
