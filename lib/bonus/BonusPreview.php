@@ -171,13 +171,13 @@ class BonusPreview
 		
 		$now = new DateTime( 'now', new DateTimeZone( $timezone ) );
 
-		LegalDebug::debug( [
-			'function' => 'BonusPreview::get_args_date',
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusPreview::get_args_date',
 
-			'timezone' => $timezone,
+		// 	'timezone' => $timezone,
 
-			'now' => $now,
-		] );
+		// 	'now' => $now,
+		// ] );
 
 		$compare = '>=';
 
