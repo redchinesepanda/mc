@@ -122,7 +122,7 @@ class ReviewTable
 
 			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll' ] );
 
-			$table->parentNode->insertBefore( $table, $scroll );
+			$table->parentNode->insertBefore( $scroll, $table );
 
 			$scroll->appendChild( $table );
 		}
