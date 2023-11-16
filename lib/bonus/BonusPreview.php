@@ -167,40 +167,24 @@ class BonusPreview
 	{
 		$timezone = ToolTimezone::get_timezone();
 
+		// $now = new DateTime( 'now' );
+		
+		$now = new DateTime( 'now', new DateTimeZone( $timezone ) );
+
 		LegalDebug::debug( [
 			'function' => 'BonusPreview::get_args_date',
 
 			'timezone' => $timezone,
+
+			'now' => $now,
 		] );
 
-		// $today = date( 'Y-m-d ' );
-
-		$now = new DateTime( 'now' );
-
 		$compare = '>=';
-
-		// $compare = 'after';
-
-		// $inclusive = true;
 
 		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
 		{
 			$compare = '<';
-			
-			// $compare = 'before';
-
-			// $inclusive = false;
 		}
-
-		// return [
-		// 	'column' => self::FIELD[ 'expire' ],
-
-		// 	// 'compare' => $compare,
-
-		// 	$compare => 'today',
-			
-		// 	'inclusive' => $inclusive,
-		// ];
 
 		return [
 			[
