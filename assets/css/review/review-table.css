@@ -88,12 +88,12 @@
     padding-right: 56px;
 }
 
-.tcb-post-content table.legal-raw,
+/* .tcb-post-content table.legal-raw,
 .tcb-post-content table.legal-raw-rawspan {
     max-height: 500px;
     display: block;
     overflow-y: scroll;
-}
+} */
 
 /* Review Width and Height */
 
