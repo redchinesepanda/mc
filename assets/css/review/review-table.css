@@ -77,17 +77,11 @@
     caption-side: unset;
 }
 
-/* .tcb-post-content table.legal-raw:not( .legal-column-2 ):not( .legal-column-3 ),
-.tcb-post-content table.legal-raw-rawspan {
+.tcb-post-content .legal-scroll {
     max-height: 500px;
     display: block;
     overflow-y: scroll;
 }
-
-.tcb-post-content table.legal-raw tbody {
-    display: block;
-    width: 100%;
-} */
 
 /* Review Position */
 
