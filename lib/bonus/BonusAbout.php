@@ -124,6 +124,8 @@ class BonusAbout
     
                 'href_id' => $href_id,
             ] );
+
+            return array_shift( $href_id )[ 'id' ];
         }
 
         // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
