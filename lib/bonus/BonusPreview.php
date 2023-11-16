@@ -165,6 +165,14 @@ class BonusPreview
 
 	public static function get_args_date( $atts, $duration )
 	{
+		$timezone = ToolTimezone::get_timezone();
+
+		LegalDebug::debug( [
+			'function' => 'get_args_date',
+
+			'timezone' => $timezone,
+		] );
+
 		// $today = date( 'Y-m-d ' );
 
 		$now = new DateTime( 'now' );
