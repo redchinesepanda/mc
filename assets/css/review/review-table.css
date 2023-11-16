@@ -30,13 +30,6 @@
 
     /* Review Position */
 
-    .tcb-post-content table.legal-raw,
-    .tcb-post-content table.legal-raw-rawspan {
-        max-height: 500px;
-        display: block;
-        overflow-y: scroll;
-    }
-
     /* .tcb-post-content table.legal-column + table.legal-column {
         margin-left: 20px;
     } */
@@ -93,6 +86,13 @@
 
 .tcb-post-content table.legal-check td:last-child {
     padding-right: 56px;
+}
+
+.tcb-post-content table.legal-raw,
+.tcb-post-content table.legal-raw-rawspan {
+    max-height: 500px;
+    display: block;
+    overflow-y: scroll;
 }
 
 /* Review Width and Height */
