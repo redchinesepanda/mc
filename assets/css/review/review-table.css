@@ -77,7 +77,7 @@
     caption-side: unset;
 }
 
-.tcb-post-content table.legal-raw,
+.tcb-post-content table.legal-raw:not( .legal-column-2 ):not( .legal-column-3 ),
 .tcb-post-content table.legal-raw-rawspan {
     max-height: 500px;
     display: block;
