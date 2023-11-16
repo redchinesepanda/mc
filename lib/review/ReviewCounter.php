@@ -77,7 +77,7 @@ class ReviewCounter
 			{
 				$shortcode_args = self::get_shortcode( $table );
 
-				$items = self::get_counter_items( $table );
+				$items = ReviewBonus::get_counter_items( $table );
 
 				LegalDebug::debug( [
 					'count' => count( $items ),
