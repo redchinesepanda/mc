@@ -68,7 +68,7 @@ class BonusAbout
         ];
     }
 
-    public static function affiliate_filter( $item )
+    public static function filter_go( $item )
     {
         if ( !empty( $item[ 'href' ] ) )
         {
@@ -78,7 +78,12 @@ class BonusAbout
         return false;
     }
 
-    public static function affiliate_id( $item )
+    public static function filter_id( $item )
+    {
+        return !empty( $item[ 'id' ] );
+    }
+
+    public static function set_id( $item )
     {
         $href = str_replace( self::SEARCH, '/', $item[ 'href' ] );
 
@@ -109,23 +114,29 @@ class BonusAbout
             ],   
         ];
 
-        $href_go = array_filter( $href_previous, [ $handler, 'affiliate_filter' ] );
+        $href_go = array_filter( $href_previous, [ $handler, 'filter_go' ] );
 
         if ( !empty( $href_go ) )
         {
-            $href_id = array_map( [ $handler, 'affiliate_id' ], $href_go);
+            $href_id = array_map( [ $handler, 'set_id' ], $href_go);
 
-            // LegalDebug::debug( [
-            //     'function' => 'BonusAbout::affiliate_get',
-    
-            //     'href_previous' => $href_previous,
-    
-            //     'href_go' => $href_go,
-    
-            //     'href_id' => $href_id,
-            // ] );
+            $href_result = array_filter( $href_id, [ $handler, 'filter_id' ] );
 
-            return array_shift( $href_id )[ 'id' ];
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_get',
+    
+                'href_previous' => $href_previous,
+    
+                'href_go' => $href_go,
+    
+                'href_id' => $href_id,
+
+                'href_result' => $href_result,
+            ] );
+
+            $item = array_shift( $href_id );
+
+            return $item[ 'id' ];
         }
 
         // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
