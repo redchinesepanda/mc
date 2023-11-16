@@ -259,6 +259,12 @@ class ReviewTable
 			],
 
 			[
+				'title' => 'Ряд Rowspan Прокрутка',
+
+				'value' => self::CLASSES[ 'container' ] . ' ' . self::CLASSES[ 'scroll' ],
+			],
+
+			[
 				'title' => 'Галка',
 
 				'value' => 'legal-check',
