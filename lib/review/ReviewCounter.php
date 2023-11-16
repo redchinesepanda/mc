@@ -81,7 +81,7 @@ class ReviewCounter
 
 			// $style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
 
-			$style = array_merge( $style, inline_style_general( $group ) );
+			$style = array_merge( $style, self::inline_style_general( $group ) );
 		}
 
 		$tables = self::get_tables();
@@ -104,7 +104,7 @@ class ReviewCounter
 							ReviewAbout::ABOUT[ 'background' ] => '',
 						];
 
-						$style = array_merge( $style, inline_style_general( $group ) );
+						$style = array_merge( $style, self::inline_style_general( $group ) );
 					}
 				}
 
