@@ -6,12 +6,12 @@ class ToolTimezone
 	{
 		if ( empty( $country_code ) )
 		{
-			$country_code = WPMLMain::current_language();
+			$country_code = strtoupper( WPMLMain::current_language() );
 		}
 
-		// $timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY, $country_code );
+		$timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY, $country_code );
 		
-		$timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY );
+		// $timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY );
 
 		LegalDebug::debug( [
 			'function' => 'ToolTimezone::get_timezone',
