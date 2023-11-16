@@ -3,7 +3,7 @@
 class MetrikaMain
 {
 	const JS = [
-        'metrika-ya-lib' => [
+        'legal-metrika-ya-lib' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-lib.js',
 
             'ver' => '1.0.0',
@@ -15,8 +15,14 @@ class MetrikaMain
             'ver' => '1.0.0',
 
             'deps' => [
-                'metrika-ya-lib',
+                'legal-metrika-ya-lib',
             ],
+        ],
+
+        'legal-metrika-ya-oops' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-oops.js',
+
+            'ver' => '1.0.0',
         ],
 
         'legal-gtag-lib' => [

@@ -19,7 +19,7 @@ class ReviewAnchors
         'review-anchors' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors.js',
 
-            'ver' => '1.0.1',
+            'ver' => '1.0.3',
         ],
     ];
 

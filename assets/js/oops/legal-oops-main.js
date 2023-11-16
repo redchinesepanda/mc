@@ -13,8 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    document.querySelectorAll( 'a.check-oops[href="#"]').forEach( function ( element ) {
-
+	document.querySelectorAll( 'a.check-oops[href="#"]').forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
