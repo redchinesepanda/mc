@@ -10,7 +10,7 @@ class ReviewTable
         self::HANDLE[ 'table' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
 
-            'ver' => '1.1.4',
+            'ver' => '1.1.3',
         ],
     ];
 
@@ -37,31 +37,15 @@ class ReviewTable
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
-	public static function get_nodes_scroll( $dom )
-	{
-		return get_nodes(
-			$dom,
-			
-			'//table[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')]'
-		);
-	}
+	const CLASSES = [
+		'container' => 'legal-raw-rawspan',
+	];
 
-	public static function get_nodes_tbody( $dom )
-	{
-		return get_nodes(
-			$dom,
-			
-			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]'
-		);
-	}
-
-	public static function get_nodes( $dom, $query )
+	public static function get_nodes( $dom )
 	{
 		$xpath = new DOMXPath( $dom );
 
-		// $nodes = $xpath->query( '//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]' );
-
-		$nodes = $xpath->query( $query );
+		$nodes = $xpath->query( '//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]' );
 
 		return $nodes;
 	}
@@ -102,52 +86,15 @@ class ReviewTable
 		}
 	}
 
-	public static function set_scroll( $content )
-	{
-		if ( !ReviewMain::check() ) {
-			return $content;
-		}
-
-		$dom = LegalDOM::get_dom( $content );
-
-        $tables = self::get_nodes_scroll( $dom );
-
-		if ( $tables->length == 0 ) {
-			return $content;
-		}
-
-		foreach ( $tables as $table )
-		{
-			$scroll = $dom->createElement( 'div' );
-
-			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll' ] );
-
-			$table->parentNode->insertBefore( $table, $scroll );
-
-			$scroll->appendChild( $table );
-		}
-
-		return $dom->saveHTML( $dom );
-	}
-
 	public static function get_content( $content )
 	{
-		$content = self::set_tbody( $content );
-
-		$content = self::set_scroll( $content );
-
-		return $content;
-	}
-
-	public static function set_tbody( $content )
-	{
 		if ( !ReviewMain::check() ) {
 			return $content;
 		}
 
 		$dom = LegalDOM::get_dom( $content );
 
-        $tables = self::get_nodes_tbody( $dom );
+        $tables = self::get_nodes( $dom );
 
 		if ( $tables->length == 0 ) {
 			return $content;
@@ -191,82 +138,56 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
-	const CLASSES = [
-		'container' => 'legal-raw-rawspan',
-
-		'raw' => 'legal-raw',
-		
-		'column-3' => 'legal-column-3',
-
-		'scroll' => 'legal-scroll',
-	];
-
 	public static function table_classes( $settings )
 	{
 		$styles = [
 			[
 				'title' => 'По умолчанию',
-
 				'value' => '',
 			],
 
 			[
 				'title' => 'По умолчанию 50%',
-
 				'value' => 'legal-column',
 			],
 
 			[
 				'title' => 'По умолчанию 33.333%',
-
-				'value' => self::CLASSES[ 'column-3' ],
+				'value' => 'legal-column-3',
 			],
 
 			[
 				'title' => 'Ряд и Столбец',
-
 				'value' => 'legal-raw-column',
 			],
 
 			[
 				'title' => 'Ряд',
-
-				'value' => self::CLASSES[ 'raw' ],
+				'value' => 'legal-raw',
 			],
 
 			[
 				'title' => 'Ряд 33.333%',
-
-				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'column-3' ],
-			],
-
-			[
-				'title' => 'Ряд Прокрутка',
-
-				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ],
+				'value' => 'legal-raw legal-column-3',
 			],
 
 			[
 				'title' => 'Ряд Rowspan',
-
 				'value' => self::CLASSES[ 'container' ],
 			],
 
 			[
 				'title' => 'Галка',
-
 				'value' => 'legal-check',
 			],
 
 			[
 				'title' => 'Статистика',
-
 				'value' => 'legal-stats',
 			],
 
 			[
 				'title' => 'Счетчик',
-
 				'value' => ReviewCounter::CLASSES[ 'base' ],
 			],
 		];
