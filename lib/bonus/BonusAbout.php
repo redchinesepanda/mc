@@ -17,7 +17,7 @@ class BonusAbout
 
 	public static function register_functions()
     {
-        // self::affiliate_migrate();
+        self::affiliate_migrate();
     }
 
 	public static function register()
@@ -70,22 +70,44 @@ class BonusAbout
 
     public static function affiliate_get( $id )
     {
-        $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+        // $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
-        {
-            $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
-        }
+        $bonus_affilate = '';
+
+        $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+
+        bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
+
+        // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
+        // {
+        //     $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
+        // }
 
         if ( !empty( $bonus_affilate ) )
         {
             $bonus_affilate = str_replace( self::SEARCH, '/', $bonus_affilate );
         }
 
-        if ( $affiliate = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' ) )
-        {
-            return $affiliate->ID;
-        }
+        $affiliate_primary = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
+
+        $affiliate_secondary = get_page_by_path( $bonus_affilate_secondary, OBJECT, 'affiliate-links' );
+        
+        LegalDebug::debug( [
+            'function' => 'BonusAbout::affiliate_get',
+
+            'bonus_affilate_primary' => $bonus_affilate_primary,
+
+            'bonus_affilate_secondary' => $bonus_affilate_secondary,
+
+            'affiliate_primary' => $affiliate_primary,
+
+            'affiliate_secondary' => $affiliate_secondary,
+        ] );
+
+        // if ( $affiliate = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' ) )
+        // {
+        //     return $affiliate->ID;
+        // }
         
         return '';
     }
@@ -98,7 +120,7 @@ class BonusAbout
         {
             $affiliate_id = self::affiliate_get( $post->ID );
 
-            update_field( self::FIELD[ 'bonus-affilate-new' ], $affiliate_id, $post->ID );
+            // update_field( self::FIELD[ 'bonus-affilate-new' ], $affiliate_id, $post->ID );
 
             // LegalDebug::debug( [
             //     'function' => 'BonusAbout::affiliate_migrate',
