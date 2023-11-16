@@ -23,7 +23,7 @@ class ToolTimezone
 		// 	'timezone' => $timezone,
 		// ] );
 
-		return $array_shift( timezone );
+		return array_shift( $timezone );
 	}
 }
 
