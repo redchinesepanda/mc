@@ -9,7 +9,7 @@ class ToolTimezone
 			$country_code = WPMLMain::get_locale();
 		}
 
-		return geoip_time_zone_by_country_and_region( $country_code );
+		return \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY, $countryCode );
 	}
 }
 
