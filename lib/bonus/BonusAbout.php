@@ -17,7 +17,7 @@ class BonusAbout
 
 	public static function register_functions()
     {
-        self::affiliate_migrate();
+        // self::affiliate_migrate();
     }
 
 	public static function register()
@@ -68,40 +68,65 @@ class BonusAbout
         ];
     }
 
+    public static function affiliate_filter( $item )
+    {
+        if ( !empty( $item[ 'href' ] ) )
+        {
+            return str_contains( $url[ 'href' ], '/go/' );
+        }
+
+        return false;
+    }
+
+    public static function affiliate_id( $item )
+    {
+        $href = str_replace( self::SEARCH, '/', $item[ 'href' ] );
+
+        $item[ 'id' ] = get_page_by_path( $item, OBJECT, 'affiliate-links' );
+
+        return $item;
+    }
+
     public static function affiliate_get( $id )
     {
+        $handler = new self();
         // $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        $bonus_affilate = '';
+        $href_previous = [
+            [
+                'href' => get_field( self::FIELD[ 'bonus-affilate-primary' ], $id ),
 
-        $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+                'id' => 0,
+            ],
 
-        $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
+            [
+                'href' => get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id ),
+
+                'id' => 0,
+            ],   
+        ];
+
+        $href_go = array_filter( $href_previous, [ $handler, 'affiliate_filter' ] );
+
+        $href_id = array_map( [ $handler, 'affiliate_id' ], $href_go);
 
         // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
         // {
         //     $bonus_affilate = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
         // }
 
-        if ( !empty( $bonus_affilate ) )
-        {
-            $bonus_affilate = str_replace( self::SEARCH, '/', $bonus_affilate );
-        }
+        // $affiliate_primary = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
 
-        $affiliate_primary = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
-
-        $affiliate_secondary = get_page_by_path( $bonus_affilate_secondary, OBJECT, 'affiliate-links' );
+        // $affiliate_secondary = get_page_by_path( $bonus_affilate_secondary, OBJECT, 'affiliate-links' );
         
         LegalDebug::debug( [
             'function' => 'BonusAbout::affiliate_get',
 
-            'bonus_affilate_primary' => $bonus_affilate_primary,
+            'href_previous' => $href_previous,
 
-            'bonus_affilate_secondary' => $bonus_affilate_secondary,
+            'href_go' => $href_go,
 
-            'affiliate_primary' => $affiliate_primary,
-
-            'affiliate_secondary' => $affiliate_secondary,
+            'href_id' => $href_id,
         ] );
 
         // if ( $affiliate = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' ) )
