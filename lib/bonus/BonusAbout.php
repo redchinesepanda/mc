@@ -108,7 +108,20 @@ class BonusAbout
 
         $href_go = array_filter( $href_previous, [ $handler, 'affiliate_filter' ] );
 
-        $href_id = array_map( [ $handler, 'affiliate_id' ], $href_go);
+        if ( !empty( $href_go ) )
+        {
+            $href_id = array_map( [ $handler, 'affiliate_id' ], $href_go);
+
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_get',
+    
+                'href_previous' => $href_previous,
+    
+                'href_go' => $href_go,
+    
+                'href_id' => $href_id,
+            ] );
+        }
 
         // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
         // {
@@ -118,16 +131,6 @@ class BonusAbout
         // $affiliate_primary = get_page_by_path( $bonus_affilate_primary, OBJECT, 'affiliate-links' );
 
         // $affiliate_secondary = get_page_by_path( $bonus_affilate_secondary, OBJECT, 'affiliate-links' );
-        
-        LegalDebug::debug( [
-            'function' => 'BonusAbout::affiliate_get',
-
-            'href_previous' => $href_previous,
-
-            'href_go' => $href_go,
-
-            'href_id' => $href_id,
-        ] );
 
         // if ( $affiliate = get_page_by_path( $bonus_affilate, OBJECT, 'affiliate-links' ) )
         // {
