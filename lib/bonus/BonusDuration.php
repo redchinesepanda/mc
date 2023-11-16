@@ -200,7 +200,13 @@ class BonusDuration
 
 			if ( $bonus )
 			{
-				$current = new DateTime();
+				// $current = new DateTime();
+
+				// $timezone = ToolTimezone::get_timezone();
+				
+				// $current = new DateTime( 'now', new DateTimeZone( $timezone ) );
+				
+				$current = ToolTimezone::get_now_timezone();
 	
 				// $result = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
 				
