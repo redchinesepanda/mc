@@ -20,10 +20,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function toggleInit()
 	{
 		args.forEach( function ( arg ) {
-			if ( window.matchMedia( '( max-width: 768px )' ).matches ) {
-				document.querySelector( arg.selector ).addEventListener( arg.event, arg.action, false );
-			} else {
-				document.querySelector( arg.selector ).removeEventListener( arg.event, arg.action, false );
+			let anchorsTitle = document.querySelector( arg.selector );
+
+			if ( anchorsTitle != null )
+			{
+				if ( window.matchMedia( '( max-width: 767px )' ).matches )
+				{
+					anchorsTitle.addEventListener( arg.event, arg.action, false );
+	
+					// document.querySelector( arg.selector ).addEventListener( arg.event, arg.action, false );
+				} else {
+					anchorsTitle.removeEventListener( arg.event, arg.action, false );
+	
+					// document.querySelector( arg.selector ).removeEventListener( arg.event, arg.action, false );
+				}
 			}
 		} );
 	}

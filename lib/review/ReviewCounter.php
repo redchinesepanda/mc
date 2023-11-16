@@ -75,11 +75,15 @@ class ReviewCounter
 		{
 			foreach ( $tables as $table_id => $table )
 			{
+				$shortcode_args = self::get_shortcode( $table );
+
 				$items = self::get_counter_items( $table );
 
-				// LegalDebug::debug( [
-				// 	'count' => count( $items ),
-				// ] );
+				LegalDebug::debug( [
+					'count' => count( $items ),
+
+					'shortcode_args' => $shortcode_args,
+				] );
 	
 				$amount = count( $items );
 	

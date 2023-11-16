@@ -29,7 +29,7 @@ class OopsMain
         'legal-oops-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-main.js',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.2',
         ],
 
         'legal-lib-cookie' => [

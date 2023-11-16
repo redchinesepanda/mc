@@ -81,7 +81,9 @@ class WikiPreview
 				],
             ],
 
-            'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
+            // 'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
+            
+			'orderby' => [ 'menu_order' => 'ASC', 'date' => 'DESC', 'title' => 'ASC' ],
 		];
 	}
 
