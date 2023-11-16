@@ -77,6 +77,18 @@
     caption-side: unset;
 }
 
+.tcb-post-content table.legal-raw,
+.tcb-post-content table.legal-raw-rawspan {
+    max-height: 500px;
+    display: block;
+    overflow-y: scroll;
+}
+
+.tcb-post-content table.legal-raw tbody {
+    display: block;
+    width: 100%;
+}
+
 /* Review Position */
 
 .tcb-post-content table {
@@ -87,13 +99,6 @@
 .tcb-post-content table.legal-check td:last-child {
     padding-right: 56px;
 }
-
-/* .tcb-post-content table.legal-raw,
-.tcb-post-content table.legal-raw-rawspan {
-    max-height: 500px;
-    display: block;
-    overflow-y: scroll;
-} */
 
 /* Review Width and Height */
 
