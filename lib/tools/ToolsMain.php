@@ -30,6 +30,8 @@ require_once( 'ToolTransiterate.php' );
 
 require_once( 'ToolShortcode.php' );
 
+require_once( 'ToolTimezone.php' );
+
 class ToolsMain
 {
     public static function register()
