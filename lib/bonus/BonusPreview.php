@@ -168,7 +168,7 @@ class BonusPreview
 		$timezone = ToolTimezone::get_timezone();
 
 		LegalDebug::debug( [
-			'function' => 'get_args_date',
+			'function' => 'BonusPreview::get_args_date',
 
 			'timezone' => $timezone,
 		] );
