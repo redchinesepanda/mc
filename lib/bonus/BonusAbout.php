@@ -208,7 +208,7 @@ class BonusAbout
 
         // $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
         
-        $href = get_field( self::FIELD[ 'bonus-afillate' ], $id );
+        $href = get_field( self::FIELD[ 'bonus-affilate' ], $id );
 
         LegalDebug::debug( [
             'function' => 'BonusAbout::get_button',
