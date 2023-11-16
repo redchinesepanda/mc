@@ -16,4 +16,6 @@ LegalMain::register();
 
 // BonusDuration::date_migrate();
 
+BonusAbout::affiliate_migrate();
+
 ?>
