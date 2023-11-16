@@ -121,6 +121,8 @@ class BonusAbout
             'href_previous' => $href_previous,
 
             'href_go' => $href_go,
+
+            'not_empty' => !empty( $href_go ),
         ] );
 
         if ( !empty( $href_go ) )
