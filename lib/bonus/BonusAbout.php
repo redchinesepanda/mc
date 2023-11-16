@@ -76,7 +76,7 @@ class BonusAbout
 
         $bonus_affilate_primary = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
 
-        bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
+        $bonus_affilate_secondary = get_field( self::FIELD[ 'bonus-affilate-secondary' ], $id );
 
         // if ( empty( $bonus_affilate ) || $bonus_affilate == '#' )
         // {
