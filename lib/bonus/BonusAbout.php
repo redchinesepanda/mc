@@ -115,15 +115,15 @@ class BonusAbout
         {
             $href_id = array_map( [ $handler, 'affiliate_id' ], $href_go);
 
-            LegalDebug::debug( [
-                'function' => 'BonusAbout::affiliate_get',
+            // LegalDebug::debug( [
+            //     'function' => 'BonusAbout::affiliate_get',
     
-                'href_previous' => $href_previous,
+            //     'href_previous' => $href_previous,
     
-                'href_go' => $href_go,
+            //     'href_go' => $href_go,
     
-                'href_id' => $href_id,
-            ] );
+            //     'href_id' => $href_id,
+            // ] );
 
             return array_shift( $href_id )[ 'id' ];
         }
@@ -155,13 +155,13 @@ class BonusAbout
 
             // update_field( self::FIELD[ 'bonus-affilate-new' ], $affiliate_id, $post->ID );
 
-            // LegalDebug::debug( [
-            //     'function' => 'BonusAbout::affiliate_migrate',
+            LegalDebug::debug( [
+                'function' => 'BonusAbout::affiliate_migrate',
 
-            //     'ID' => $post->ID,
+                'ID' => $post->ID,
 
-            //     'affiliate_id' => $affiliate_id,
-            // ] );
+                'affiliate_id' => $affiliate_id,
+            ] );
         }
     }
 
