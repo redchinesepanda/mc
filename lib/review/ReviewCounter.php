@@ -94,7 +94,7 @@ class ReviewCounter
 
 				if ( !empty( $shortcode_args ) )
 				{
-					$logo = wp_get_attachment_image_src( $id, self::SIZE[ 'full' ] );
+					$logo = wp_get_attachment_image_src( $shortcode_args[ 'id' ], self::SIZE[ 'full' ] );
 
 					if ( $logo )
 					{
