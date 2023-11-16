@@ -122,6 +122,8 @@ class BonusAbout
 
             $href_result = array_filter( $href_id, [ $handler, 'filter_id' ] );
 
+            $item = array_shift( $href_id );
+
             LegalDebug::debug( [
                 'function' => 'BonusAbout::affiliate_get',
     
@@ -132,9 +134,9 @@ class BonusAbout
                 'href_id' => $href_id,
 
                 'href_result' => $href_result,
-            ] );
 
-            $item = array_shift( $href_id );
+                'item' => $item,
+            ] );
 
             return $item[ 'id' ];
         }
