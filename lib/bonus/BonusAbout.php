@@ -188,6 +188,8 @@ class BonusAbout
 
 		'bonus-bookmaker-name' => 'name-bk',
 
+		'bonus-affilate' => 'bonus-afillate',
+
 		'bonus-affilate-primary' => 'ref-ssylka',
 
 		'bonus-affilate-secondary' => 'ref-perelinkovka',
@@ -204,12 +206,26 @@ class BonusAbout
 			return [];
         }
 
-        $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+        // $href = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+        
+        $href = get_field( self::FIELD[ 'bonus-afillate' ], $id );
+
+        LegalDebug::debug( [
+            'function' => 'BonusAbout::get_button',
+
+            'href' => $href,
+        ] );
 
         if ( empty( $href ) )
         {
             $href = OopsMain::check_oops() ? '#' : '';
         }
+
+        LegalDebug::debug( [
+            'function' => 'BonusAbout::get_button',
+
+            'href' => $href,
+        ] );
 
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),

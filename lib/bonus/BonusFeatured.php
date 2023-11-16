@@ -32,6 +32,8 @@ class BonusFeatured
 	];
 
 	const FIELD = [
+        'bonus-affilate' => 'bonus-afillate',
+
 		'bonus-affilate-primary' => 'ref-ssylka',
 
 		'bonus-affilate-secondary' => 'ref-perelinkovka',
@@ -43,7 +45,9 @@ class BonusFeatured
 
 		$preview = BonusPreview::get_thumbnail( $id, self::SIZE[ 'featured' ] );
 
-		$preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+		// $preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate-primary' ], $id );
+		
+        $preview[ 'href' ] = get_field( self::FIELD[ 'bonus-affilate' ], $id );
 
 		return [
 			'preview' => $preview,
