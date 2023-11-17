@@ -118,15 +118,24 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
-			$class = $table->getAttribute( 'class' );
+			$class_table = $table->getAttribute( 'class' );
 
-			$class = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class );
+			$class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
 
-			$table->setAttribute( 'class', $class );
+			$class_scroll = self::CLASSES[ 'scroll' ];
+
+			if ( str_contains( $class_table, self::CLASSES[ 'full-width' ] ) )
+			{
+				$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
+
+				$class_scroll .= ' ' . self::CLASSES[ 'full-width' ;
+			}
+
+			$table->setAttribute( 'class', $class_table );
 
 			$scroll = $dom->createElement( 'div' );
 
-			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll' ] );
+			$scroll->setAttribute( 'class', $class_scroll );
 
 			$table->parentNode->insertBefore( $scroll, $table );
 
