@@ -26,20 +26,23 @@
 	/* 1,4,7 */
 	
 	.tcb-post-content div:nth-of-type( 3n+1 ) {
-		margin-right: 10px;
+		/* margin-right: 10px; */
+		background-color: aliceblue;
 	}
 	
 	/* 2,5,8 */
 	
 	.tcb-post-content div:nth-child( 3n+2 ) {
-		margin-right: 4px;
-		margin-left: 4px;
+		/* margin-right: 4px;
+		margin-left: 4px; */
+		background-color:antiquewhite;
 	}
 
 	/* 3,6,9 */
 	
 	.tcb-post-content div:nth-child( 3n ) {
-		margin-left: 10px;
+		/* margin-left: 10px; */
+		background-color:aquamarine;
 	}
 
 	/* Width and Height */
