@@ -83,6 +83,12 @@
 
 				'duration' => BonusPreview::DURATION[ 'actual' ],
 			];
+			
+			LegalDebug::debug( [
+				'function' => 'group_posts_actual',
+
+				'atts' => $atts,
+			] );
 
 			$atts = shortcode_atts( BonusPreview::PAIRS, $atts, 'legal-bonus' );
 			
