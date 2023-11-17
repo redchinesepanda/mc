@@ -23,6 +23,8 @@ require_once( 'BonusPreview.php' );
 class BonusMain
 {
 	const TEXT = [
+		'actual-bonuses' => 'Actual Bonuses',
+
 		'best-bookmaker-bonuses' => 'Best Bookmaker Bonuses',
 
 		'bonus-amount' => 'Bonus amount',
