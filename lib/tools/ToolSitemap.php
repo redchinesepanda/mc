@@ -82,15 +82,10 @@ class ToolSitemap
 			// 'suppress_filters' => $suppress_filters,
 			
 			'suppress_filters' => 0,
-            
-			// 'orderby' => $orderby,
-			
-			'orderby' => [ 'date' => 'DESC', 'title' => 'ASC' ],
 
 			// 'tax_query' => $tax_query,
 			
-			'tax_query' =>
-			[
+			'tax_query' => [
 				'taxonomy' => $atts[ 'taxonomy' ],
 
 				'field' => 'slug',
@@ -99,6 +94,10 @@ class ToolSitemap
 
 				'operator' => 'AND',
 			],
+            
+			// 'orderby' => $orderby,
+			
+			'orderby' => [ 'date' => 'DESC', 'title' => 'ASC' ],
         ];
     }
 
