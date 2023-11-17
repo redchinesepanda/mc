@@ -64,7 +64,7 @@
 			'primary' => '_yoast_wpseo_primary_',
 		];
 
-		public static function get_terms_primary( $id )
+		public static function get_terms( $id )
 		{
 			// $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
