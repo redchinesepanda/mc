@@ -1,9 +1,5 @@
-<ul class="legal-sitemap">
+<div class="legal-sitemap">
 	<?php foreach( $args as $item ) : ?>
-		<li>
-			<a href="<?php echo $item[ 'href' ]; ?>">
-				<?php echo $item[ 'label' ]; ?>
-			</a>
-		</li>
+		<span><?php echo $item[ 'href' ]; ?></span><br />
 	<?php endforeach; ?>
-</ul>
+</div>
