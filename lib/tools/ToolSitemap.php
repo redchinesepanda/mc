@@ -17,56 +17,71 @@ class ToolSitemap
 
 	public static function get_args( $atts )
     {
-		$tax_query = [];
+		// $tax_query = [];
 
-		if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) && $atts[ 'url' ] ) {
-			$tax_query[] = [
-				'taxonomy' => $atts[ 'taxonomy' ],
+		// if ( !empty( $atts[ 'taxonomy' ] ) && !empty( $atts[ 'terms' ] ) && $atts[ 'url' ] ) {
+		// 	$tax_query[] = [
+		// 		'taxonomy' => $atts[ 'taxonomy' ],
 
-				'field' => 'slug',
+		// 		'field' => 'slug',
 
-				'terms' => $atts[ 'terms' ],
-			];
-		}
+		// 		'terms' => $atts[ 'terms' ],
+		// 	];
+		// }
 
-		$suppress_filters = 0;
+		// $suppress_filters = 0;
 
-		$orderby = [ 'date' => 'DESC', 'title' => 'ASC' ];
+		// $orderby = [ 'date' => 'DESC', 'title' => 'ASC' ];
 
-		$numberposts = -1;
+		// $numberposts = -1;
 
-		if ( $atts[ 'lang' ] )
-		{
-			$numberposts = 60;
+		// if ( $atts[ 'lang' ] )
+		// {
+		// 	// $numberposts = 60;
 
-			$suppress_filters = 1;
+		// 	// $suppress_filters = 1;
 
-			$orderby = [ 'name' => 'ASC' ];
-		}
+		// 	$orderby = [ 'name' => 'ASC' ];
+		// }
 
-		$offset = 0;
+		// $offset = 0;
 
-		if ( $atts[ 'lang' ] && !empty( $_GET[ 'offset' ] ) )
-		{
-			$offset = $_GET[ 'offset' ];
-		}
+		// if ( $atts[ 'lang' ] && !empty( $_GET[ 'offset' ] ) )
+		// {
+		// 	$offset = $_GET[ 'offset' ];
+		// }
 
         return [
             // 'numberposts' => -1,
             
-			'numberposts' => $numberposts,
+			// 'numberposts' => $numberposts,
+			
+			'numberposts' => -1,
 
-			'offset' => $offset,
+			// 'offset' => $offset,
             
             'post_type' => $atts[ 'post_type' ],
 
 			'post_status' => 'publish',
 
-			'suppress_filters' => $suppress_filters,
+			// 'suppress_filters' => $suppress_filters,
+			
+			'suppress_filters' => 0,
             
-			'orderby' => $orderby,
+			// 'orderby' => $orderby,
+			
+			'orderby' => [ 'date' => 'DESC', 'title' => 'ASC' ],
 
-			'tax_query' => $tax_query,
+			// 'tax_query' => $tax_query,
+			
+			'tax_query' =>
+			[
+				'taxonomy' => $atts[ 'taxonomy' ],
+
+				'field' => 'slug',
+
+				'terms' => $atts[ 'terms' ],
+			],
         ];
     }
 
@@ -100,7 +115,7 @@ class ToolSitemap
 
 		'url' => false,
 
-		'lang' => false,
+		// 'lang' => false,
 	];
 
 	public static function get_settings( $atts )
@@ -127,7 +142,7 @@ class ToolSitemap
 
 		$atts[ 'url' ] = wp_validate_boolean( $atts[ 'url' ] );
 
-		$atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
+		// $atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
 
 		$args = self::get_args( $atts );
 
