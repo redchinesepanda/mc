@@ -20,6 +20,8 @@ class WikiMain
 		'publication-date' => 'Publication date',
 
 		'term-not-found' => 'Term not found',
+
+		'post-not-found' => 'Post not found',
 	];
 
 	public static function register_style( $styles = [] )

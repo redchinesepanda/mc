@@ -16,8 +16,12 @@
 		<?php endif; ?>
 	</div>
 	<div class="list-article">
-		<?php foreach( $args[ 'items' ] as $item ) : ?>
-			<a href="<?php echo $item[ 'href' ] ?>" class="article article-<?php echo $item[ 'id' ] ?>"><?php echo $item[ 'title' ] ?></a>
-		<?php endforeach; ?>
+		<?php if ( !empty( $args[ 'items' ] ) ) : ?>
+			<?php foreach( $args[ 'items' ] as $item ) : ?>
+				<a href="<?php echo $item[ 'href' ] ?>" class="article article-<?php echo $item[ 'id' ] ?>"><?php echo $item[ 'title' ] ?></a>
+			<?php endforeach; ?>
+		<?php else : ?>
+			<span class="article"><?php echo $args[ 'settings' ][ 'empty' ] ?></span>
+		<?php endif; ?>
 	</div>
 </div>

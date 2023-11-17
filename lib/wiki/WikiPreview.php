@@ -161,6 +161,8 @@ class WikiPreview
 				'href' => self::get_term_href_redirect( $term->term_id ),
 
 				'title' => $term->name,
+
+				'empty' => __( WikiMain::TEXT[ 'post-not-found' ], ToolLoco::TEXTDOMAIN ),
 			]; 
 		}
 
