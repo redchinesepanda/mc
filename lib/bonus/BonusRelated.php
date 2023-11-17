@@ -185,7 +185,7 @@
 		{
 			$title[] = __( BonusMain::TEXT[ 'actual-bonuses' ], ToolLoco::TEXTDOMAIN );
 
-			if ( $name = get_field( BonusAbout::FIELD[ 'bonus-bookmaker-name' ], $id ) )
+			if ( $name = get_field( BonusAbout::FIELD[ 'bonus-bookmaker-name' ] ) )
 			{
 				$title[] = $name;
 			}
