@@ -77,6 +77,11 @@
     caption-side: unset;
 }
 
+.tcb-post-content .legal-scroll:not( .legal-full-width ) {
+    width: fit-content;
+    margin: 0px auto;
+}
+
 .tcb-post-content .legal-scroll {
     max-height: 500px;
     display: block;

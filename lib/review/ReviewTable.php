@@ -205,6 +205,8 @@ class ReviewTable
 		'column-3' => 'legal-column-3',
 
 		'scroll' => 'legal-scroll',
+
+		'full-width' => 'legal-full-width',
 	];
 
 	public static function table_classes( $settings )
@@ -250,6 +252,12 @@ class ReviewTable
 				'title' => 'Ряд Прокрутка',
 
 				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ],
+			],
+
+			[
+				'title' => 'Ряд Прокрутка По Ширине',
+
+				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ] . ' ' . self::CLASSES[ 'full-width' ],
 			],
 
 			[
