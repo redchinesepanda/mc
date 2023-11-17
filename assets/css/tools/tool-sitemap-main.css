@@ -6,6 +6,10 @@
 
 /* Position */
 
+.legal-sitemap-item {
+	padding: 20px;
+}
+
 .legal-sitemap-item:nth-child( 2n ) {
 	margin-left: 8px;
 }
