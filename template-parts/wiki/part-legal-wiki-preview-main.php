@@ -21,7 +21,7 @@
 				<a href="<?php echo $item[ 'href' ] ?>" class="article article-<?php echo $item[ 'id' ] ?>"><?php echo $item[ 'title' ] ?></a>
 			<?php endforeach; ?>
 		<?php else : ?>
-			<span>&nbsp;</span>
+			<span>&nbsp;&nbsp;</span>
 		<?php endif; ?>
 	</div>
 </div>
