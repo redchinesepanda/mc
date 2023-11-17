@@ -1,3 +1,25 @@
+/* Display */
+
+.legal-sitemap-item {
+	display: inline-block;
+}
+
+/* Position */
+
+.legal-sitemap-item:nth-child( 2n ) {
+	margin-left: 8px;
+}
+
+.legal-sitemap-item:nth-child( 2n + 1 ) {
+	margin-right: 8px;
+}
+
+/* Width and Height */
+
+.legal-sitemap-item {
+	width: calc( 50% - 10px );
+}
+
 /* Background */
 
 .legal-sitemap-item {
