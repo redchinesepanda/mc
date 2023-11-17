@@ -34,3 +34,7 @@
 	background-color: rgb(239, 245, 251);
 	border-radius: 20px;
 }
+
+.legal-sitemap-item > ul:not( .legal-list-image ) li:before {
+    background-image: url( '../../img/review/review-ul.svg' );
+}
