@@ -18,7 +18,7 @@
 	margin-right: 8px;
 }
 
-.legal-sitemap-item .legal-sitemap {
+.legal-sitemap-item .legal-sitemap:not( .legal-override ) {
 	padding: 0px;
 }
 
