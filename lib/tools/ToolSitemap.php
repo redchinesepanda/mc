@@ -86,13 +86,15 @@ class ToolSitemap
 			// 'tax_query' => $tax_query,
 			
 			'tax_query' => [
-				'taxonomy' => $atts[ 'taxonomy' ],
+				[
+					'taxonomy' => $atts[ 'taxonomy' ],
 
-				'field' => 'slug',
+					'field' => 'slug',
 
-				'terms' => $atts[ 'terms' ],
+					'terms' => $atts[ 'terms' ],
 
-				'operator' => 'AND',
+					'operator' => 'AND',
+				],
 			],
             
 			// 'orderby' => $orderby,
