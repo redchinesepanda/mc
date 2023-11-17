@@ -245,7 +245,12 @@
 
 		public static function render_preview_actual()
 		{
-			return BonusPreview::render( self::get_preview_actual() );
+			if ( BonusDuration::check_expired( BonusMain::get_id() ) )
+			{
+				return BonusPreview::render( self::get_preview_actual() );
+			}
+			
+			return '';
 		}
 
 		public static function render( $args )
