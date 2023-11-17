@@ -25,13 +25,13 @@
 
 	/* 1,4,7 */
 	
-	.block-article-item:nth-of-type( 3n + 2 ) {
+	.block-article-item:nth-of-type( 3n+2 ) {
 		margin-right: 10px;
 	}
 	
 	/* 2,5,8 */
 	
-	.block-article-item:nth-child( 3n + 1) {
+	.block-article-item:nth-child( 3n+1) {
 		margin-right: 4px;
 		margin-left: 4px;
 	}
