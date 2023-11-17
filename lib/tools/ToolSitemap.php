@@ -13,6 +13,10 @@ class ToolSitemap
         // [legal-sitemap post_type='page' taxonomy='page_type' terms='review']
 
 		add_shortcode( self::SHORTCODE[ 'sitemap' ], [ $handler, 'prepare' ] );
+
+		LegalDebug::debug( [
+			'function' => 'ToolSitemap:register',
+		] );
     }
 
 	public static function get_args( $atts )
