@@ -18,7 +18,7 @@
 	/* Width and Height */
 	
 	.block-article-item {
-		width: calc(100% / 3 - 52px);
+		width: calc( 100% / 3 - 52px );
 	}
 
 	/* Position */
