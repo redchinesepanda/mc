@@ -2,6 +2,19 @@
 
 class ToolSitemap
 {
+	const CSS = [
+        'tool-sitemap-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-sitemap-main.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+	public static function register_style()
+    {
+        BonusMain::register_style( self::CSS );
+    }
+
 	const SHORTCODE = [
 		'sitemap' => 'legal-sitemap',
 	];
@@ -14,9 +27,7 @@ class ToolSitemap
 
 		add_shortcode( self::SHORTCODE[ 'sitemap' ], [ $handler, 'prepare' ] );
 
-		LegalDebug::debug( [
-			'function' => 'ToolSitemap:register',
-		] );
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	public static function get_args( $atts )
