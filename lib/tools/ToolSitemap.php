@@ -124,19 +124,19 @@ class ToolSitemap
 
 	public static function get_settings( $atts )
 	{
-		$class = '';
+		// $class = '';
 
-		if ( !empty( $atts[ 'title' ] ) )
-		{
-			$class = 'legal-sitemap-item';
-		}
+		// if ( !empty( $atts[ 'title' ] ) )
+		// {
+		// 	$class = 'legal-sitemap-item';
+		// }
 
 		return [
 			// 'url' => $atts[ 'url' ],
 
 			'title' => $atts[ 'title' ],
 
-			'class' => $class,
+			// 'class' => $class,
 		];
 	}
 
