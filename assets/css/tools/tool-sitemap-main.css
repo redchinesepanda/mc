@@ -18,9 +18,9 @@
 	margin-right: 8px;
 }
 
-.legal-sitemap-item .legal-sitemap:not( .legal-override ) {
+/* .legal-sitemap-item .legal-sitemap:not( .legal-override ) {
 	padding: 0px;
-}
+} */
 
 .legal-sitemap-item .legal-sitemap:not( .legal-override ) li::before {
 	margin-right: 0px;
