@@ -12,7 +12,7 @@ class ToolSitemap
 
 	public static function register_style()
     {
-        BonusMain::register_style( self::CSS );
+        ToolEnqueue::register_style( self::CSS );
     }
 
 	const SHORTCODE = [
