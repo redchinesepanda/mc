@@ -96,6 +96,8 @@ class ToolSitemap
 				'field' => 'slug',
 
 				'terms' => $atts[ 'terms' ],
+
+				'operator' => 'AND',
 			],
         ];
     }
@@ -124,7 +126,7 @@ class ToolSitemap
 
 		'taxonomy' => 'page_type',
 
-		'terms' => 'bookmaker-review',
+		'terms' => [ 'bookmaker-review' ],
 
 		'title' => '',
 
@@ -158,6 +160,8 @@ class ToolSitemap
 		// $atts[ 'url' ] = wp_validate_boolean( $atts[ 'url' ] );
 
 		// $atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
+		
+		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'lang' ] );
 
 		$args = self::get_args( $atts );
 
