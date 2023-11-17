@@ -26,23 +26,23 @@
 	/* 1,4,7 */
 	
 	.block-article-item:nth-of-type( 3n+1 ) {
-		/* margin-right: 10px; */
-		background-color:coral;
+		margin-right: 10px;
+		/* background-color:coral; */
 	}
 	
 	/* 2,5,8 */
 	
 	.block-article-item:nth-of-type( 3n + 2 ) {
-		/* margin-right: 4px;
-		margin-left: 4px; */
-		background-color:antiquewhite;
+		margin-right: 4px;
+		margin-left: 4px;
+		/* background-color:antiquewhite; */
 	}
 
 	/* 3,6,9 */
 	
 	.block-article-item:nth-of-type( 3n ) {
-		/* margin-left: 10px; */
-		background-color:aquamarine;
+		margin-left: 10px;
+		/* background-color:aquamarine; */
 	}
 
 	/* Width and Height */
