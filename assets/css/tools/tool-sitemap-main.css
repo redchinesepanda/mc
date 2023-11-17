@@ -22,6 +22,10 @@
 	padding: 0px;
 }
 
+.legal-sitemap-item .legal-sitemap:not( .legal-override ) li::before {
+	margin-right: 0px;
+}
+
 /* Width and Height */
 
 .legal-sitemap-item {
