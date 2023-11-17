@@ -10,11 +10,11 @@
 	padding: 20px;
 }
 
-.legal-sitemap-item:nth-child( 2n + 1 ) {
+.legal-sitemap-item:nth-child( 2n ) {
 	margin-left: 8px;
 }
 
-.legal-sitemap-item:nth-child( 2n ) {
+.legal-sitemap-item:nth-child( 2n + 1 ) {
 	margin-right: 8px;
 }
 
