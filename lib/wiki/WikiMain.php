@@ -21,7 +21,7 @@ class WikiMain
 
 		'term-not-found' => 'Term not found',
 
-		'post-not-found' => 'Post not found',
+		'posts-not-found' => 'Posts not found',
 	];
 
 	public static function register_style( $styles = [] )
