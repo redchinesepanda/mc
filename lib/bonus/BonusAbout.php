@@ -210,22 +210,10 @@ class BonusAbout
         
         $href = get_field( self::FIELD[ 'bonus-affilate' ], $id );
 
-        LegalDebug::debug( [
-            'function' => 'BonusAbout::get_button',
-
-            'href' => $href,
-        ] );
-
         if ( empty( $href ) )
         {
             $href = OopsMain::check_oops() ? '#' : '';
         }
-
-        LegalDebug::debug( [
-            'function' => 'BonusAbout::get_button',
-
-            'href' => $href,
-        ] );
 
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
