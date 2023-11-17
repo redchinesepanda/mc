@@ -23,17 +23,23 @@
 
 	/* Position */
 
-	.block-article-item:nth-child( 3n+1 ) {
-		margin-left: 10px;
-	}
+	/* 1,4,7 */
 	
-	.block-article-item:nth-child( 3n+2 ) {
+	.block-article-item:nth-of-type( 3n+1 ) {
 		margin-right: 10px;
 	}
 	
-	.block-article-item:nth-child( 3n ) {
+	/* 2,5,8 */
+	
+	.block-article-item:nth-child( 3n+2 ) {
 		margin-right: 4px;
 		margin-left: 4px;
+	}
+
+	/* 3,6,9 */
+	
+	.block-article-item:nth-child( 3n ) {
+		margin-left: 10px;
 	}
 
 	/* Width and Height */

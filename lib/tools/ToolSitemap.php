@@ -6,7 +6,7 @@ class ToolSitemap
         'tool-sitemap-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-sitemap-main.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
     ];
 
