@@ -68,29 +68,17 @@
 		{
 			$primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
-			LegalDebug::debug( [
-				'function' => 'get_terms_primary',
-
-				'primary_id' => $primary_id,
-			] );
-
 			if ( $primary_id )
 			{
 				$primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
 
 				if( !empty( $primary ) )
 				{
-					return [ $primary ];
+					return [ $primary->slug ];
 				}
 			}
 
-			return wp_get_post_terms(
-				$id,
-
-				self::TAXONOMY[ 'category' ],
-
-				[ 'fields', 'names' ]
-			);
+			return '';
 		}
 
 		public static function group_posts_actual()
