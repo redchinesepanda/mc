@@ -6,7 +6,7 @@ class WikiPreview
         'legal-wiki-preview-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-preview-main.css',
 
-            'ver'=> '1.0.0',
+            'ver'=> '1.0.1',
         ],
 
         // 'legal-wiki-preview-featured' => [
