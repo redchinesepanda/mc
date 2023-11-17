@@ -66,19 +66,21 @@
 
 		public static function get_terms_primary( $id )
 		{
-			$primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+			// $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
-			if ( $primary_id )
-			{
-				$primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
+			// if ( $primary_id )
+			// {
+			// 	$primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
 
-				if( !empty( $primary ) )
-				{
-					return [ $primary->slug ];
-				}
-			}
+			// 	if( !empty( $primary ) )
+			// 	{
+			// 		return [ $primary->slug ];
+			// 	}
+			// }
 
-			return '';
+			// return '';
+
+			return array_column( LegalBreadcrumbsMain::get_terms( BonusMain::get_id() ), 'slug' ); 
 		}
 
 		public static function group_posts_actual()
