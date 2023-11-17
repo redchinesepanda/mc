@@ -8,6 +8,7 @@
 
 .legal-sitemap-item {
 	padding: 20px;
+	margin-bottom: 20px;
 }
 
 .legal-sitemap-item:nth-child( 2n ) {
