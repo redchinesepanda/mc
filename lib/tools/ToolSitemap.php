@@ -164,13 +164,15 @@ class ToolSitemap
 
 		$args = self::get_args( $atts );
 
+		$posts = get_posts( $args );
+
 		LegalDebug::debug( [
 			'function' => 'ToolSitemap::prepare',
 
 			'args' => $args,
-		] );
 
-		$posts = get_posts( $args );
+			'posts' => count( $posts ),
+		] );
 
 		$args_render = [
 			'items' => self::parse_posts( $posts ),
