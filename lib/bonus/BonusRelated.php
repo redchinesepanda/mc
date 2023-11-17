@@ -89,7 +89,9 @@
 			// 	[ 'fields' => 'slugs' ]
 			// );
 
-			$categories = self::get_terms_primary( BonusMain::get_id() );
+			// $categories = self::get_terms_primary( BonusMain::get_id() );
+
+			$categories = LegalBreadcrumbsMain::get_terms( BonusMain::get_id() );
 
 			$atts = [
 				'terms' => $categories,
