@@ -128,7 +128,7 @@ class ToolSitemap
 		}
 
 		return [
-			'url' => $atts[ 'url' ],
+			// 'url' => $atts[ 'url' ],
 
 			'title' => $atts[ 'title' ],
 
