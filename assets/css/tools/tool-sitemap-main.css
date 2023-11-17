@@ -36,5 +36,5 @@
 }
 
 .legal-sitemap-item > ul:not( .legal-list-image ) li:before {
-    background-image: url( '../../img/review/review-ul.svg' );
+    background-image: url( '../../img/tools/tool-sitemap-item.svg' );
 }
