@@ -128,7 +128,7 @@ class ReviewTable
 			{
 				$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
 
-				$class_scroll .= ' ' . self::CLASSES[ 'full-width' ;
+				$class_scroll .= ' ' . self::CLASSES[ 'full-width' ] ;
 			}
 
 			$table->setAttribute( 'class', $class_table );
