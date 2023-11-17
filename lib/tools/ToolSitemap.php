@@ -190,7 +190,7 @@ class ToolSitemap
 
         'items' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap-items.php',
 
-        'url' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap-url.php',
+        // 'url' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap-url.php',
     ];
 
     public static function render_main( $args )
