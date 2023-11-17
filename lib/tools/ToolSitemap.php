@@ -92,9 +92,9 @@ class ToolSitemap
 	const PAIRS = [
 		'post_type' => 'page',
 
-		'taxonomy' => '',
+		'taxonomy' => 'page_type',
 
-		'terms' => '',
+		'terms' => 'bookmaker-review',
 
 		'title' => '',
 
