@@ -44,3 +44,13 @@
 .legal-sitemap-item > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/tools/tool-sitemap-item.svg' );
 }
+
+/* Typography */
+
+.legal-sitemap-item .sitemap-item-title {
+	font-family: "Source Sans Pro";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 38.4px;
+}
