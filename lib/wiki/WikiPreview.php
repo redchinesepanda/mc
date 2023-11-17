@@ -162,7 +162,7 @@ class WikiPreview
 
 				'title' => $term->name,
 
-				'empty' => __( WikiMain::TEXT[ 'post-not-found' ], ToolLoco::TEXTDOMAIN ),
+				'empty' => __( WikiMain::TEXT[ 'posts-not-found' ], ToolLoco::TEXTDOMAIN ),
 			]; 
 		}
 
@@ -172,6 +172,8 @@ class WikiPreview
 			'href' => '',
 
 			'title' => __( WikiMain::TEXT[ 'term-not-found' ], ToolLoco::TEXTDOMAIN ),
+
+			'empty' => __( WikiMain::TEXT[ 'posts-not-found' ], ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
