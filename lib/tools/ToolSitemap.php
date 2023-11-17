@@ -113,7 +113,7 @@ class ToolSitemap
 
 		'title' => '',
 
-		'url' => false,
+		// 'url' => false,
 
 		// 'lang' => false,
 	];
@@ -140,7 +140,7 @@ class ToolSitemap
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'sitemap' ] );
 
-		$atts[ 'url' ] = wp_validate_boolean( $atts[ 'url' ] );
+		// $atts[ 'url' ] = wp_validate_boolean( $atts[ 'url' ] );
 
 		// $atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
 
