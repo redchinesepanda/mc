@@ -29,7 +29,7 @@
 /* Width and Height */
 
 .legal-sitemap-item {
-	width: calc( 50% - 10px );
+	width: calc( 50% - 50px );
 }
 
 /* Background */
