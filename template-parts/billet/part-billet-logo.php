@@ -4,6 +4,6 @@
 <a class="legal-logo <?php echo $args['logo']['class']; ?> check-oops" href="<?php echo $args['logo']['href']; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
     <img src="<?php echo $args['logo']['src'] ?>" alt="<?php echo $args['logo']['alt'] ?>" />
 </a>
-<?php if ( !empty( echo $args['review']['href'] ) ) : ?>
+<?php if ( !empty( $args['review']['href'] ) ) : ?>
     <a class="legal-review <?php echo $args['review']['class']; ?> <?php echo $args['review']['font']; ?>" href="<?php echo $args['review']['href']; ?>"><?php echo $args['review']['label']; ?></a>
 <?php endif; ?>
