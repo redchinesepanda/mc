@@ -64,7 +64,7 @@
 			'primary' => '_yoast_wpseo_primary_',
 		];
 
-		public static function get_terms_primary( $id )
+		public static function get_terms( $id )
 		{
 			// $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
@@ -91,9 +91,9 @@
 			// 	[ 'fields' => 'slugs' ]
 			// );
 
-			// $categories = self::get_terms_primary( BonusMain::get_id() );
+			$categories = self::get_terms( BonusMain::get_id() );
 
-			$categories = LegalBreadcrumbsMain::get_terms( BonusMain::get_id() );
+			// $categories = LegalBreadcrumbsMain::get_terms( BonusMain::get_id() );
 
 			$atts = [
 				'terms' => $categories,
