@@ -2,44 +2,17 @@
 
 class ToolSitemap
 {
+	const SHORTCODE = [
+		'sitemap' => 'legal-sitemap',
+	];
+
 	public static function register()
     {
         $handler = new self();
 
-        // [legal-sitemap post_type='legal_bk_review' taxonomy='page_type' terms='review']
+        // [legal-sitemap post_type='page' taxonomy='page_type' terms='review']
 
-		// add_shortcode( 'legal-sitemap', [ $handler, 'render' ] );
-
-		add_shortcode( 'legal-sitemap', [ $handler, 'prepare' ] );
-    }
-
-	public static function prepare( $atts )
-    {
-		$pairs = [
-			'post_type' => 'page',
-
-			'taxonomy' => '',
-
-			'terms' => '',
-
-			'url' => false,
-
-			'lang' => false,
-		];
-
-		$atts = shortcode_atts( $pairs, $atts, 'legal-sitemap' );
-
-		$args = self::get_args( $atts );
-
-		$posts = get_posts( $args );
-
-		$args_render = [
-			'items' => self::parse_posts( $posts ),
-
-			'url' => $atts[ 'url' ],
-		];
-
-        return self::render( $args_render );
+		add_shortcode( self::SHORTCODE[ 'sitemap' ], [ $handler, 'prepare' ] );
     }
 
 	public static function get_args( $atts )
@@ -115,16 +88,88 @@ class ToolSitemap
 
         return $items;
     }
+
+	const PAIRS = [
+		'post_type' => 'page',
+
+		'taxonomy' => '',
+
+		'terms' => '',
+
+		'title' => '',
+
+		'url' => false,
+
+		'lang' => false,
+	];
+
+	public static function get_settings( $atts )
+	{
+		$class = '';
+
+		if ( !empty( $atts[ 'title' ] ) )
+		{
+			$class = 'legal-sitemap-item';
+		}
+
+		return [
+			'url' => $atts[ 'url' ],
+
+			'title' => $atts[ 'title' ],
+
+			'class' => $class,
+		];
+	}
+
+	public static function prepare( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'sitemap' ] );
+
+		$atts[ 'url' ] = wp_validate_boolean( $atts[ 'url' ] );
+
+		$atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
+
+		$args = self::get_args( $atts );
+
+		$posts = get_posts( $args );
+
+		$args_render = [
+			'items' => self::parse_posts( $posts ),
+
+			'settings' => self::get_settings( $atts ),
+		];
+
+        return self::render_main( $args_render );
+    }
 	
 	const TEMPLATE = [
         'sitemap' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap.php',
+
+        'items' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap-items.php',
+
+        'url' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-sitemap-url.php',
     ];
 
-    public static function render( $args )
+    public static function render_main( $args )
+	{
+		return self::render( self::TEMPLATE[ 'sitemap' ], $args );
+	}
+
+    public static function render_items( $args )
+	{
+		return self::render( self::TEMPLATE[ 'items' ], $args );
+	}
+
+    public static function render_url( $args )
+	{
+		return self::render( self::TEMPLATE[ 'url' ], $args );
+	}
+
+    public static function render( $template, $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'sitemap' ], false, $args );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
