@@ -161,7 +161,7 @@ class ToolSitemap
 
 		// $atts[ 'lang' ] = wp_validate_boolean( $atts[ 'lang' ] );
 		
-		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'lang' ] );
+		$atts[ 'terms' ] = ToolShortcode::validate_array( $atts[ 'terms' ] );
 
 		$args = self::get_args( $atts );
 
