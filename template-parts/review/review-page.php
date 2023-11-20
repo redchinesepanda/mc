@@ -1,4 +1,4 @@
-<section class="legal-section-about">
+<section class="legal-section-review-about">
 	<?php echo ReviewAbout::render(); ?>
 </section>
 <section class="legal-section-anchors">
