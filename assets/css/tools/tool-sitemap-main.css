@@ -1,12 +1,22 @@
+@media screen and ( min-width: 768px ) {
+	/* Display */
+
+	.legal-column-2 {
+		columns: 2;
+		gap: 20px;
+	}
+
+	/* Width and Height */
+
+	.legal-sitemap-item {
+		width: calc( 100% - 50px );
+	}
+}
+
 /* Display */
 
 .legal-sitemap-item {
 	display: inline-block;
-}
-
-.legal-column-2 {
-	columns: 2;
-  	gap: 20px;
 }
 
 /* Position */
@@ -39,11 +49,11 @@
 
 /* Width and Height */
 
-.legal-sitemap-item {
-	/* width: calc( 50% - 50px ); */
+/* .legal-sitemap-item {
+	width: calc( 50% - 50px );
 	
 	width: calc( 100% - 50px );
-}
+} */
 
 /* Background */
 
