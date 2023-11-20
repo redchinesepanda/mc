@@ -34,6 +34,8 @@ require_once( 'ReviewTable.php' );
 
 require_once( 'ReviewTemplatePage.php' );
 
+require_once( 'ReviewContent.php' );
+
 class ReviewMain
 {
 	const TEXT = [
