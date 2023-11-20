@@ -7,7 +7,7 @@
 <section class="legal-section-group">
 	<?php echo ReviewGroup::render(); ?>
 </section>
-<section class="legal-section-content">
+<section class="legal-section-review-content">
 	<div class="legal-bonus-single">
 		<div class="legal-bonus-main">
 			<?php echo ReviewContent::render(); ?>
