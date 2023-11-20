@@ -40,7 +40,9 @@
 /* Width and Height */
 
 .legal-sitemap-item {
-	width: calc( 50% - 50px );
+	/* width: calc( 50% - 50px ); */
+	
+	width: calc( 100% - 10px );
 }
 
 /* Background */
