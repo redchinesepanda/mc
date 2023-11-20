@@ -32,7 +32,7 @@ require_once( 'ReviewTitle.php' );
 
 require_once( 'ReviewTable.php' );
 
-// require_once( 'ReviewGoogle.php' );
+require_once( 'ReviewTemplatePage.php' );
 
 class ReviewMain
 {
@@ -152,7 +152,7 @@ class ReviewMain
 
         ReviewAnchors::register_functions();
 
-        // ReviewGoogle::register_functions();
+        ReviewTemplatePage::register_functions();
 	}
 
     public static function register()
