@@ -318,7 +318,7 @@ class ReviewAbout
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-about' ], false, self::get(  ) );
+        load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
 
         $output = ob_get_clean();
 
