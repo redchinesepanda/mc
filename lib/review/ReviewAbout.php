@@ -293,6 +293,11 @@ class ReviewAbout
 
     public static function prepare_about( $atts = [] )
     {
+        return render_about( $atts );
+    }
+
+    public static function render_about( $atts )
+    {
         return self::render( self::get( $atts ) );
     }
 
