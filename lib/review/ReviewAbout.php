@@ -350,7 +350,7 @@ class ReviewAbout
     //     return $output;
     // }
     
-    public static function prepare_footer()
+    public static function render_footer()
     {
         return self::render( self::get( [
             'mode' => 'footer'
