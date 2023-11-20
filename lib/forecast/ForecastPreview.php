@@ -6,7 +6,7 @@ class ForecastPreview
         'legal-forecast-preview' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/forecast/legal-forecast-preview.css',
 
-            'ver'=> '1.0.2',
+            'ver'=> '1.0.3',
         ],
     ];
 

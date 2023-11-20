@@ -13,6 +13,10 @@
 
 /* Position */
 
+.legal-forecast-list {
+	padding-bottom: 20px;
+}
+
 .legal-forecast-list .legal-forecast-block {
 	padding: 10px;
 }
