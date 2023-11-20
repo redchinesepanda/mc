@@ -1,9 +1,6 @@
 <section class="legal-section-about">
 	<?php echo ReviewAnchors::render(); ?>
 </section>
-<section class="legal-section-anchors">
-	<?php echo ReviewAnchors::render(); ?>
-</section>
 <section class="legal-section-group">
 	<?php echo ReviewGroup::render(); ?>
 </section>
