@@ -47,7 +47,7 @@ class ReviewAbout
 
         // [legal-about mode="mini"]
 
-        add_shortcode( 'legal-about', [ $handler, 'render' ] );
+        add_shortcode( 'legal-about', [ $handler, 'render_about' ] );
 
         // [legal-button suffix="ios" label="costom button label"]
 
@@ -298,11 +298,25 @@ class ReviewAbout
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+        // load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+        
+        load_template( self::TEMPLATE[ 'review-about' ], false, $args );
 
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function render_about( $args = [] )
+    {
+        return self::render( self::get( $args ) );
+    }
+
+    public static function render_footer()
+    {
+        return self::render( self::get( [
+            'mode' => 'footer',
+        ] ) );
     }
 
     public static function get_text( $suffix = '' )
