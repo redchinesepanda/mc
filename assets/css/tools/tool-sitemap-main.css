@@ -13,6 +13,14 @@
 	}
 }
 
+@media screen and ( max-width: 767px ) {
+	/* Width and Height */
+
+	.legal-sitemap-item {
+		width: calc( 100% - 40px );
+	}
+}
+
 /* Display */
 
 .legal-sitemap-item {
