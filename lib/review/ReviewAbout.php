@@ -330,24 +330,31 @@ class ReviewAbout
         return $output;
     }
 
-    public static function render_footer()
+    // public static function render_footer()
+    // {
+    //     if ( !ReviewMain::check() )
+    //     {
+    //         return '';
+    //     }
+
+    //     $args = [
+    //         'mode' => 'footer'
+    //     ];
+
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
+    
+    public static function prepare_footer()
     {
-        if ( !ReviewMain::check() )
-        {
-            return '';
-        }
-
-        $args = [
+        return self::render( self::get( [
             'mode' => 'footer'
-        ];
-
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
-
-        $output = ob_get_clean();
-
-        return $output;
+        ] ) );
     }
 
     public static function get_text( $suffix = '' )
