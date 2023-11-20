@@ -141,7 +141,7 @@
     padding-bottom: 0px;
 }
 
-.tcb-post-content ul:not( .legal-highlight ) li:not( :last-child ),
+.tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
 .tcb-post-content ol:not( .menu__box ) li:not( :last-child ) {
     padding-bottom: 15px;
 }
