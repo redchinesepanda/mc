@@ -9,12 +9,6 @@ get_header();
 <section class="legal-section-breadcrumbs">
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
-<section class="legal-section-anchors">
-	<?php echo ReviewAnchors::render(); ?>
-</section>
-<section class="legal-section-group">
-	<?php echo ReviewGroup::render(); ?>
-</section>
 <section class="legal-section-content">
 	<?php echo ReviewTemplatePage::render(); ?>
 </section>
