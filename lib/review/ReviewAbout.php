@@ -47,7 +47,9 @@ class ReviewAbout
 
         // [legal-about mode="mini"]
 
-        add_shortcode( 'legal-about', [ $handler, 'render' ] );
+        // add_shortcode( 'legal-about', [ $handler, 'render' ] );
+        
+        add_shortcode( 'legal-about', [ $handler, 'prepare_about' ] );
 
         // [legal-button suffix="ios" label="costom button label"]
 
@@ -289,7 +291,28 @@ class ReviewAbout
         'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
     ];
 
-    public static function render( $args = [] )
+    public static function prepare_about( $atts = [] )
+    {
+        return self::render( self::get( $atts ) );
+    }
+
+    // public static function render( $args = [] )
+    // {
+    //     if ( !ReviewMain::check() )
+    //     {
+    //         return '';
+    //     }
+
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
+    
+    public static function render( $args )
     {
         if ( !ReviewMain::check() )
         {
@@ -298,7 +321,9 @@ class ReviewAbout
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+        // load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
+        
+        load_template( self::TEMPLATE[ 'review-about' ], false, $args );
 
         $output = ob_get_clean();
 
