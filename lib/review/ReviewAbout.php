@@ -47,7 +47,7 @@ class ReviewAbout
 
         // [legal-about mode="mini"]
 
-        add_shortcode( 'legal-about', [ $handler, 'render' ] );
+        add_shortcode( 'legal-about', [ $handler, 'render_about' ] );
 
         // [legal-button suffix="ios" label="costom button label"]
 
