@@ -151,8 +151,6 @@ class ReviewMain
         ReviewGallery::register_functions();
 
         ReviewAnchors::register_functions();
-
-        ReviewTemplatePage::register_functions();
 	}
 
     public static function register()
@@ -196,6 +194,8 @@ class ReviewMain
         ReviewTitle::register();
 
         ReviewTable::register();
+
+        ReviewTemplatePage::register();
     }
 
     public static function encoding( $content )
