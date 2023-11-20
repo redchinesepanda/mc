@@ -49,7 +49,7 @@ class ReviewAbout
 
         // add_shortcode( 'legal-about', [ $handler, 'render' ] );
         
-        add_shortcode( 'legal-about', [ $handler, 'prepare_about' ] );
+        add_shortcode( self::SHPRTCODE[ 'about' ], [ $handler, 'prepare_about' ] );
 
         // [legal-button suffix="ios" label="costom button label"]
 
@@ -291,8 +291,18 @@ class ReviewAbout
         'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
     ];
 
+    const SHPRTCODE = [
+        'about' => 'legal-about',
+    ];
+
+    const PAIRS_ABOUT = [
+        'mode' => '',
+    ];
+
     public static function prepare_about( $atts = [] )
     {
+        $atts = shortcode_atts( self::PAIRS_ABOUT, $atts, self::SHPRTCODE[ 'about' ] );
+
         return render_about( $atts );
     }
 
@@ -396,7 +406,7 @@ class ReviewAbout
         return implode( ' ', $text );
     }
 
-    const PAIRS = [
+    const PAIRS_BUTTON = [
         'suffix' => '',
 
         'label' => '',
@@ -404,7 +414,7 @@ class ReviewAbout
     
     public static function get_button( $args = [] )
     {
-        $atts = shortcode_atts( self::PAIRS, $args, 'legal-button' );
+        $atts = shortcode_atts( self::PAIRS_BUTTON, $args, 'legal-button' );
 
         $id = BonusMain::get_id();
 
