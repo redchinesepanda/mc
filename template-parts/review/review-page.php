@@ -1,5 +1,5 @@
 <section class="legal-section-review-about">
-	<?php echo ReviewAbout::render(); ?>
+	<?php echo ReviewAbout::prepare_about(); ?>
 </section>
 <section class="legal-section-anchors">
 	<?php echo ReviewAnchors::render(); ?>
