@@ -15,5 +15,5 @@
 	</div>
 </section>
 <section class="legal-section-review-aboyt-footer">
-	<?php echo ReviewAbout::prepare_footer(); ?>
+	<?php echo ReviewAbout::render_footer(); ?>
 </section>
