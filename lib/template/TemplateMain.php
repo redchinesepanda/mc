@@ -6,6 +6,8 @@ require_once( 'TemplateWiki.php' );
 
 require_once( 'TemplateNotFound.php' );
 
+require_once( 'TemplatePage.php' );
+
 class TemplateMain
 {
 	public static function register()
@@ -28,6 +30,23 @@ class TemplateMain
         {
             $result = TemplateWiki::render_wiki();
         }
+
+		return $result;
+    }
+    
+    public static function render_page()
+    {
+        $result = TemplatePage::render();
+
+        // if ( empty( $result ) )
+        // {
+        //     $result = TemplateWiki::render_wiki_thrive();
+        // }
+
+        // if ( empty( $result ) )
+        // {
+        //     $result = TemplateWiki::render_wiki();
+        // }
 
 		return $result;
     }
