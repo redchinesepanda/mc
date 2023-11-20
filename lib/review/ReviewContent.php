@@ -64,7 +64,7 @@ class ReviewContent
         
 		if ( !empty( $post ) )
 		{
-			$content = $post->post_conntent;
+			$content = $post->post_content;
         }
 
 		return [
