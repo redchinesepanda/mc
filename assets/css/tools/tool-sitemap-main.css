@@ -4,6 +4,11 @@
 	display: inline-block;
 }
 
+.leglal-column-2 {
+	columns: 2;
+  	gap: 20px;
+}
+
 /* Position */
 
 .legal-sitemap-item {
@@ -14,15 +19,15 @@
 
 /* 1,3,5 */
 
-.legal-sitemap-item:nth-of-type( 2n + 1 ) {
+/* .legal-sitemap-item:nth-of-type( 2n + 1 ) {
 	margin-right: 8px;
-}
+} */
 
 /* 2,4,6 */
 
-.legal-sitemap-item:nth-of-type( 2n ) {
+/* .legal-sitemap-item:nth-of-type( 2n ) {
 	margin-left: 8px;
-}
+} */
 
 /* .legal-sitemap-item .legal-sitemap:not( .legal-override ) {
 	padding: 0px;
