@@ -58,17 +58,8 @@ class ReviewContent
 
 	public static function get()
     {
-        $post = get_post();
-
-        $content = '';
-        
-		if ( !empty( $post ) )
-		{
-			$content = $post->post_content;
-        }
-
-		return [
-			'content' => $content,
+        return [
+			'content' => apply_filters( 'the_content', get_the_content() ),
 		];
     }
 
