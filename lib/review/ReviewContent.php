@@ -58,20 +58,14 @@ class ReviewContent
 
 	public static function get()
     {
-        $id = BonusMain::get_id();
+        $post = get_post();
+
+        $content = '';
         
-		if ( empty( $id ) )
+		if ( empty( $post ) )
 		{
-			return [];
+			$content = $post->post_conntent;
         }
-
-        // $content = get_field( self::FIELD[ 'bonus-content' ], $id );
-
-        // $content = strip_tags( $content, self::ALLOWED );
-
-        // $content = preg_replace( '/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content );
-
-        // $content = str_replace( '&nbsp;', '', $content );
 
 		return [
 			'content' => $content,
