@@ -61,7 +61,33 @@ class LegalComponents
         'page_type' => 'page_type',
     ];
 
-	const TERMS = [
+	const TERMS = array_merge( self::TERMS_REVIEW, self::TERMS_COMPILATION );
+	
+	// const TERMS = [
+    //     'promo-codes',
+
+    //     'bonus',
+
+    //     'review',
+
+    //     'app',
+
+    //     'registration',
+
+    //     'how-to-play',
+
+    //     'withdrawal',
+
+    //     'obzor-bk',
+
+    //     'obzor-bk-betera',
+
+    //     'obzor-bk-1xbet',
+
+    //     'compilation',
+    // ];
+
+	const TERMS_REVIEW = [
         'promo-codes',
 
         'bonus',
@@ -81,6 +107,9 @@ class LegalComponents
         'obzor-bk-betera',
 
         'obzor-bk-1xbet',
+    ];
+	
+	const TERMS_COMPILATION = [
 
         'compilation',
     ];

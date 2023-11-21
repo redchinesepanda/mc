@@ -55,6 +55,8 @@ class BonusMain
 
 		'till' => 'till',
 
+		'indefinitely' => 'indefinitely',
+
 		'wagering' => 'Wagering',
 	];
 

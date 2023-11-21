@@ -7,7 +7,7 @@ get_header();
 	<?php echo BaseHeader::render(); ?>
 </section>
 <section class="legal-section-breadcrumbs">
-	<?php echo LegalBreadcrumbsMain::render(); ?>
+	<?php echo LegalBreadcrumbsMain::render_review(); ?>
 </section>
 <?php echo ReviewTemplatePage::render(); ?>
 <section id="theme-bottom-section" class="legal-section-author">
@@ -27,4 +27,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Page -->
+<!-- Legal Page Review -->

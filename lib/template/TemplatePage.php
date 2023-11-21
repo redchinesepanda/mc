@@ -23,23 +23,52 @@ class TemplatePage
     }
 
 	const TEMPLATE = [
-        'legal-template-page' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page.php',
+        'legal-template-page-review' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-review.php',
+
+        'legal-template-page-compilation' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-compilation.php',
+
+        'legal-template-page-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-thrive.php',
     ];
 
-	public static function render()
+    public static function render_main( $template, $args = [] )
     {
-		// if ( !BonusMain::check() )
-        // {
-        //     return '';
-        // }
-
         ob_start();
-		
-		load_template( self::TEMPLATE[ 'legal-template-page' ], false, [] );
+
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function render_review()
+    {
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        return self::render_main( self::TEMPLATE[ 'legal-template-page-review' ] );
+    }
+
+    public static function render_review()
+    {
+		if ( !CompilationMain::check() )
+        {
+            return '';
+        }
+
+        return self::render_main( self::TEMPLATE[ 'legal-template-page-compilation' ] );
+    }
+
+    public static function render_wiki_thrive()
+    {
+		if ( !WikiMain::check_thrive() )
+        {
+            return '';
+        }
+
+        return self::render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] );
     }
 }
 
