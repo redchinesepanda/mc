@@ -237,7 +237,7 @@ class BonusPreview
 				[
 					'key' => self::FIELD[ 'expire' ],
 
-					'compare' => 'NOT EXISTS',
+					'compare_key' => 'NOT EXISTS',
 				],
 			],
 		];
