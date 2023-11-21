@@ -253,10 +253,18 @@ class BonusPreview
 		if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
 		{
 			$meta_query = [
-				[
-					'key' => self::FIELD[ 'afillate' ],
+				// [
+				// 	'key' => self::FIELD[ 'afillate' ],
 					
-					'value' => [ '', '#' ],
+				// 	'value' => [ '', '#' ],
+					
+				// 	'compare' => 'NOT IN',
+				// ],
+
+				[
+					'key' => self::FIELD[ 'bonus-afillate' ],
+					
+					'value' => [ '' ],
 					
 					'compare' => 'NOT IN',
 				],
@@ -648,6 +656,10 @@ class BonusPreview
 					// 'date' => get_field( self::FIELD[ 'expire' ], $post->ID ),
 
 					// 'modified' => $post->post_modified,
+
+					'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID, false ),
+
+					'bonus-afillate-get_post_meta' => get_post_meta( $post->ID, self::FIELD[ 'bonus-afillate' ], true ),
 				]; 
 			}
 		}
