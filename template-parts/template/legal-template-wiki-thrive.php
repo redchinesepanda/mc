@@ -3,4 +3,4 @@
 thrive_template()->render();
 
 ?>
-<!-- Leglal Wiki Thrive -->
+<!-- Legal Wiki Thrive -->
