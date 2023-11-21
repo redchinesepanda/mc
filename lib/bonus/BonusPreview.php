@@ -611,6 +611,13 @@ class BonusPreview
 					$expired = __( BonusMain::TEXT[ 'promotion-expired' ], ToolLoco::TEXTDOMAIN );
 				}
 
+				$get_href = get_field( self::FIELD[ 'afillate' ], $post->ID );
+
+				if ( empty( $get_href ) )
+				{
+					$get_href = OopsMain::check_oops() > 0 ? '#' : '';
+				}
+
 				$items[] = [
 					'id' => $post->ID,
 
@@ -631,7 +638,9 @@ class BonusPreview
 					'get' => [
 						'label' => __( BonusMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
 
-						'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+						// 'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+						
+						'href' => $get_href,
 					],
 
 					'expired' => $expired,
