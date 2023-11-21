@@ -190,15 +190,37 @@ class BonusPreview
 			$compare = '<';
 		}
 
+		// return [
+		// 	[
+		// 		'key' => self::FIELD[ 'expire' ],
+
+		// 		'value' => $now->format('Y-m-d H:i:s'),
+
+		// 		'compare' => $compare,
+
+		// 		'type' => 'DATETIME',
+		// 	],
+		// ];
+
 		return [
 			[
-				'key' => self::FIELD[ 'expire' ],
+				'relation' => 'OR',
 
-				'value' => $now->format('Y-m-d H:i:s'),
+				[
+					'key' => self::FIELD[ 'expire' ],
 
-				'compare' => $compare,
+					'value' => $now->format('Y-m-d H:i:s'),
 
-				'type' => 'DATETIME',
+					'compare' => $compare,
+
+					'type' => 'DATETIME',
+				],
+
+				[
+					'key' => self::FIELD[ 'expire' ],
+
+					'compare' => 'NOT EXISTS',
+				],
 			],
 		];
 	}
