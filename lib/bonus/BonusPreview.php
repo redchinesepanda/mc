@@ -208,41 +208,39 @@ class BonusPreview
 		// 	],
 		// ];
 
-		// return [
-		// 	[
-		// 		'relation' => 'OR',
+		return [
+			[
+				'relation' => 'OR',
 
-		// 		[
-		// 			'key' => self::FIELD[ 'expire' ],
+				[
+					'key' => self::FIELD[ 'expire' ],
 
-		// 			'value' => $now->format('Y-m-d H:i:s'),
+					'value' => $now->format('Y-m-d H:i:s'),
 
-		// 			'compare' => $compare,
+					'compare' => $compare,
 
-		// 			'type' => 'DATETIME',
-		// 		],
+					'type' => 'DATETIME',
+				],
 
-		// 		[
-		// 			'key' => self::FIELD[ 'expire' ],
+				[
+					'key' => self::FIELD[ 'expire' ],
 
-		// 			// 'compare' => 'NOT EXISTS',
+					// 'compare' => 'NOT EXISTS',
 					
-		// 			// 'compare' => 'EXISTS',
+					// 'compare' => 'EXISTS',
 					
-		// 			'compare' => '=',
+					'compare' => '=',
 
-		// 			'value' => '',
-		// 		],
+					'value' => '',
+				],
 
-		// 		[
-		// 			'key' => self::FIELD[ 'expire' ],
+				[
+					'key' => self::FIELD[ 'expire' ],
 
-		// 			'compare' => 'NOT EXISTS',
-		// 		],
-		// 	],
-		// ];
-
-		return [];
+					'compare' => 'NOT EXISTS',
+				],
+			],
+		];
 	}
 
 	public static function get_args_meta( $atts, $mode )
