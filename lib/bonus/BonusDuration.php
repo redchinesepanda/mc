@@ -163,13 +163,13 @@ class BonusDuration
 
 		$prefix = '';
 
-		LegalDebug::debug( [
-			'function' => 'BonusDuration::get_duration',
+		// LegalDebug::debug( [
+		// 	'function' => 'BonusDuration::get_duration',
 
-			'get_field' => get_field( self::FIELD[ 'bonus-expire' ], $id, false ),
+		// 	'get_field' => get_field( self::FIELD[ 'bonus-expire' ], $id, false ),
 
-			'get_post_meta' => get_post_meta( $id, self::FIELD[ 'bonus-expire' ], true ),
-		] );
+		// 	'get_post_meta' => get_post_meta( $id, self::FIELD[ 'bonus-expire' ], true ),
+		// ] );
 
 		if ( $bonus_expire = get_field( self::FIELD[ 'bonus-expire' ], $id ) )
 		{
