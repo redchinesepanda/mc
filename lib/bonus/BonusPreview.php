@@ -155,6 +155,12 @@ class BonusPreview
 		// $atts[ 'duration' ] = $duration;
 
 		$args = self::get_args( $atts, $mode, $duration );
+
+		LegalDebug::debug( [
+			'function' => 'BonusPreview::get_posts_date',
+
+			'args' => $args,
+		] );
 		
 		// $query = $query_filter->createWpQuery( $args );
 
