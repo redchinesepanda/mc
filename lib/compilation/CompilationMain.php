@@ -4,6 +4,8 @@ require_once ( 'CompilationMini.php' );
 
 require_once ( 'CompilationBonus.php' );
 
+require_once ( 'CompilationTemplatePage.php' );
+
 class CompilationMain
 {
     const HANDLE = [
@@ -97,6 +99,8 @@ class CompilationMain
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
         CompilationBonus::register();
+
+        CompilationTemplatePage::register();
     }
 
     const SHORTCODES_INLINE = [
