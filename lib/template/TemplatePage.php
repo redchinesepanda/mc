@@ -12,7 +12,10 @@ class TemplatePage
 
 	public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+        if ( self::check_review() || self::check_compilation() )
+        {
+            ToolEnqueue::register_style( self::CSS );
+        }
     }
 
 	public static function register()
