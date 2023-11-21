@@ -116,9 +116,11 @@ class LegalComponents
         'compilation',
     ];
 
-	public static function check_taxonomy()
+	public static function check_taxonomy( $terms = self::TERMS )
 	{
-		return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+		// return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
+		
+		return has_term( $terms, self::TAXONOMY[ 'page_type' ] );
 	}
 	
 	public static function check_not_found()
