@@ -203,22 +203,24 @@ class BonusPreview
 		// ];
 
 		return [
-			'relation' => 'OR',
-
 			[
-				'key' => self::FIELD[ 'expire' ],
+				'relation' => 'OR',
 
-				'value' => $now->format('Y-m-d H:i:s'),
+				[
+					'key' => self::FIELD[ 'expire' ],
 
-				'compare' => $compare,
+					'value' => $now->format('Y-m-d H:i:s'),
 
-				'type' => 'DATETIME',
-			],
+					'compare' => $compare,
 
-			[
-				'key' => self::FIELD[ 'expire' ],
+					'type' => 'DATETIME',
+				],
 
-				'compare' => 'NOT EXISTS',
+				[
+					'key' => self::FIELD[ 'expire' ],
+
+					'compare' => 'NOT EXISTS',
+				],
 			],
 		];
 	}
