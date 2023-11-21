@@ -638,8 +638,6 @@ class BonusPreview
 				{
 					$expired = __( BonusMain::TEXT[ 'promotion-expired' ], ToolLoco::TEXTDOMAIN );
 				}
-
-				// $get_href = get_field( self::FIELD[ 'afillate' ], $post->ID );
 				
 				$get_href = get_field( self::FIELD[ 'bonus-afillate' ], $post->ID );
 
@@ -656,8 +654,6 @@ class BonusPreview
 					'logo' => self::get_logo( $post->ID ),
 
 					'title' => [
-						// 'label' => $post->post_title,
-						
 						'label' => get_field( self::FIELD[ 'bonus-title' ], $post->ID ),
 
 						'href' => $post_url,
@@ -667,27 +663,11 @@ class BonusPreview
 
 					'get' => [
 						'label' => __( BonusMain::TEXT[ 'bonus-preview' ], ToolLoco::TEXTDOMAIN ),
-
-						// 'href' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
 						
 						'href' => $get_href,
 					],
 
 					'expired' => $expired,
-
-					// 'date' => get_field( self::FIELD[ 'expire' ], $post->ID ),
-
-					// 'modified' => $post->post_modified,
-
-					// 'afillate-get_field' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
-
-					// 'bonus-affilate-secondary-get_field' => get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID ),
-
-					// 'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID ),
-
-					// 'bonus-afillate-get_field_false' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID, false ),
-
-					// 'bonus-afillate-get_post_meta' => get_post_meta( $post->ID, self::FIELD[ 'bonus-afillate' ], true ),
 				]; 
 			}
 		}
