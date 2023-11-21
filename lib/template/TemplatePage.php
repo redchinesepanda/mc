@@ -22,6 +22,8 @@ class TemplatePage
         'thrive-theme-styles',
 
         'parent-style',
+
+        'thrive-theme',
     ];
 
 	public static function dequeue_style()
