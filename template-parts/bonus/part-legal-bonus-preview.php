@@ -3,14 +3,8 @@
 		<?php if ( !empty( $args[ 'title' ] ) ) : ?>
 			<h2 class="bonus-list-title"><?php echo $args[ 'title' ]; ?></h2>
 		<?php endif; ?>
-		<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
+		<?php foreach( $args[ 'items' ] as $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
-				<div>id: <?php echo $id + 1; ?></div>
-				<div>1: <?php echo $item[ 'afillate-get_field' ]; ?></div>
-				<div>2: <?php echo $item[ 'bonus-affilate-secondary-get_field' ]; ?></div>
-				<div>3: <?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
-				<div>4: <?php echo $item[ 'bonus-afillate-get_field_false' ]; ?></div>
-				<div>5: <?php echo $item[ 'bonus-afillate-get_post_meta' ]; ?></div>
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
 					<a class="item-image-link" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
 						<img class="item-image image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
