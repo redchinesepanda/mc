@@ -10,7 +10,7 @@ require_once( 'TemplatePage.php' );
 
 class TemplateMain
 {
-	public static function register()
+    public static function register()
     {
         TemplateBonus::register();
 
