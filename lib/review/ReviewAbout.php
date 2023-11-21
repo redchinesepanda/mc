@@ -28,12 +28,6 @@ class ReviewAbout
 
     public static function check()
     {
-        // $permission_admin = !is_admin();
-
-        // $permission_post_type = is_singular( [ 'page', 'legal_bk_review' ] );
-        
-        // return $permission_admin && $permission_post_type;
-
         return ReviewMain::check();
     }
 
@@ -69,10 +63,6 @@ class ReviewAbout
         $style = [];
 
 		$style_item = self::get( [] );
-
-        // LegalDebug::debug( [
-        //     'style_item' => $style_item,
-        // ] );
 
         if ( !empty( $style_item[ 'background' ] ) )
         {
@@ -140,20 +130,6 @@ class ReviewAbout
         ] );
     }
 
-    // public static function get_id()
-    // {
-    //     $id = 0;
-
-    //     $post = get_post();
-
-    //     if ( !empty( $post ) )
-    //     {
-    //         $id = $post->ID;
-    //     }
-
-    //     return $id;
-    // }
-
     public static function get_title()
     {
         $group = get_field( self::FIELD );
@@ -198,11 +174,8 @@ class ReviewAbout
 
         $group = get_field( self::FIELD, $id );
 
-        if( $group ) {
-            // $title = ReviewTitle::replace_placeholder( $group[ 'about-title' ] );
-
-            // $bonus = $group[ 'about-bonus' ];
-            
+        if( $group )
+        {
             $bonus = [
                 'name' => $group[ 'about-bonus' ],
 
@@ -252,8 +225,6 @@ class ReviewAbout
             $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
             return [
-                // 'title' => $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ],
-                
                 'title' => $title,
                 
                 'bonus' => $bonus,
@@ -310,22 +281,6 @@ class ReviewAbout
     {
         return self::render( self::get( $atts ) );
     }
-
-    // public static function render( $args = [] )
-    // {
-    //     if ( !ReviewMain::check() )
-    //     {
-    //         return '';
-    //     }
-
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
     
     public static function render( $args )
     {
@@ -335,8 +290,6 @@ class ReviewAbout
         }
 
         ob_start();
-
-        // load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
         
         load_template( self::TEMPLATE[ 'review-about' ], false, $args );
 
@@ -344,28 +297,8 @@ class ReviewAbout
 
         return $output;
     }
-
-    // public static function render_footer()
-    // {
-    //     if ( !ReviewMain::check() )
-    //     {
-    //         return '';
-    //     }
-
-    //     $args = [
-    //         'mode' => 'footer'
-    //     ];
-
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'review-about' ], false, self::get( $args ) );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
     
-    public static function render_footer()
+    public static function render_about_bottom()
     {
         return self::render( self::get( [
             'mode' => 'footer'
@@ -389,8 +322,6 @@ class ReviewAbout
         {
             if ( has_term( 'app', 'page_type' ) )
             {
-                // $text = __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ) . ' ' . $group[ 'about-title' ] . ' ' . $suffix . ' ' . __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN );
-
                 $text = [
                     __( ReviewMain::TEXT[ 'download' ], ToolLoco::TEXTDOMAIN ),
 
