@@ -274,12 +274,30 @@ class BonusPreview
 		if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
 		{
 			$meta_query = [
+				// [
+				// 	'key' => self::FIELD[ 'afillate' ],
+					
+				// 	'value' => [ '', '#' ],
+					
+				// 	'compare' => 'IN',
+				// ],
+
 				[
-					'key' => self::FIELD[ 'afillate' ],
-					
-					'value' => [ '', '#' ],
-					
-					'compare' => 'IN',
+					'relation' => 'OR',
+
+					[
+						'key' => self::FIELD[ 'bonus-afillate' ],
+						
+						'value' => [ '' ],
+						
+						'compare' => 'IN',
+					],
+
+					[
+						'key' => self::FIELD[ 'bonus-afillate' ],
+						
+						'compare' => 'NOT EXIST',
+					],
 				],
 			];
 		}
