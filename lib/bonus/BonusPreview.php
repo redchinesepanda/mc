@@ -255,52 +255,52 @@ class BonusPreview
 		if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
 		{
 			$meta_query = [
-				// [
-				// 	'key' => self::FIELD[ 'afillate' ],
-					
-				// 	'value' => [ '', '#' ],
-					
-				// 	'compare' => 'NOT IN',
-				// ],
-
 				[
-					'key' => self::FIELD[ 'bonus-afillate' ],
+					'key' => self::FIELD[ 'afillate' ],
 					
-					'value' => '',
+					'value' => [ '', '#' ],
 					
-					'compare' => '!=',
+					'compare' => 'NOT IN',
 				],
+
+				// [
+				// 	'key' => self::FIELD[ 'bonus-afillate' ],
+					
+				// 	'value' => '',
+					
+				// 	'compare' => '!=',
+				// ],
 			];
 		}
 
 		if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
 		{
 			$meta_query = [
-				// [
-				// 	'key' => self::FIELD[ 'afillate' ],
-					
-				// 	'value' => [ '', '#' ],
-					
-				// 	'compare' => 'IN',
-				// ],
-
 				[
-					'relation' => 'OR',
-
-					[
-						'key' => self::FIELD[ 'bonus-afillate' ],
-						
-						'value' => '',
-						
-						'compare' => '=',
-					],
-
-					[
-						'key' => self::FIELD[ 'bonus-afillate' ],
-						
-						'compare' => 'NOT EXIST',
-					],
+					'key' => self::FIELD[ 'afillate' ],
+					
+					'value' => [ '', '#' ],
+					
+					'compare' => 'IN',
 				],
+
+				// [
+				// 	'relation' => 'OR',
+
+				// 	[
+				// 		'key' => self::FIELD[ 'bonus-afillate' ],
+						
+				// 		'value' => '',
+						
+				// 		'compare' => '=',
+				// 	],
+
+				// 	[
+				// 		'key' => self::FIELD[ 'bonus-afillate' ],
+						
+				// 		'compare' => 'NOT EXIST',
+				// 	],
+				// ],
 			];
 		}
 
