@@ -679,15 +679,15 @@ class BonusPreview
 
 					// 'modified' => $post->post_modified,
 
-					'afillate-get_field' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+					// 'afillate-get_field' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
 
-					'bonus-affilate-secondary-get_field' => get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID ),
+					// 'bonus-affilate-secondary-get_field' => get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID ),
 
-					'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID ),
+					// 'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID ),
 
-					'bonus-afillate-get_field_false' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID, false ),
+					// 'bonus-afillate-get_field_false' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID, false ),
 
-					'bonus-afillate-get_post_meta' => get_post_meta( $post->ID, self::FIELD[ 'bonus-afillate' ], true ),
+					// 'bonus-afillate-get_post_meta' => get_post_meta( $post->ID, self::FIELD[ 'bonus-afillate' ], true ),
 				]; 
 			}
 		}
