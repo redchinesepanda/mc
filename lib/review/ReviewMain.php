@@ -240,17 +240,17 @@ class ReviewMain
 
     public static function check_post_type_page()
     {
-        return is_singular( [ 'page', 'legal_bk_review' ] );
-    }
-
-    public static function check_post_type_post()
-    {
-        return is_singular( [ 'post' ] );
+        return is_singular( [ 'page' ] );
     }
 
     public static function check_taxonomy()
     {
         return has_term( LegalComponents::TERMS, LegalComponents::TAXONOMY[ 'page_type' ] );
+    }
+
+    public static function check_post_type_post()
+    {
+        return is_singular( [ 'post' ] );
     }
 
     public static function check()

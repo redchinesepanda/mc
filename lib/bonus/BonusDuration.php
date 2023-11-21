@@ -37,30 +37,30 @@ class BonusDuration
         'bonusy-by',
 	];
 
-	public static function date_migrate_args()
-    {
-        return [
-            'numberposts' => -1,
+	// public static function date_migrate_args()
+    // {
+    //     return [
+    //         'numberposts' => -1,
 
-			'suppress_filters' => 1,
+	// 		'suppress_filters' => 1,
 
-			// 'p' => 250736,
+	// 		// 'p' => 250736,
 
-            'post_type' => 'post',
+    //         'post_type' => 'post',
 
-            [
-                [
-                    'taxonomy' => self::TAXONOMY[ 'category' ],
+    //         [
+    //             [
+    //                 'taxonomy' => self::TAXONOMY[ 'category' ],
 
-                    'field' => 'slug',
+    //                 'field' => 'slug',
 
-                    'terms' => self::CATEGORY,
+    //                 'terms' => self::CATEGORY,
 
-					'operator' => 'IN',
-				],
-            ],
-        ];
-    }
+	// 				'operator' => 'IN',
+	// 			],
+    //         ],
+    //     ];
+    // }
 
 	public static function date_get( $id )
     {
@@ -93,50 +93,50 @@ class BonusDuration
         return '';
     }
 
-	public static function date_migrate()
-    {
-        $posts = get_posts( self::date_migrate_args() );
+	// public static function date_migrate()
+    // {
+    //     $posts = get_posts( self::date_migrate_args() );
 
-        foreach ( $posts as $post )
-        {
-            $date = self::date_get( $post->ID );
+    //     foreach ( $posts as $post )
+    //     {
+    //         $date = self::date_get( $post->ID );
 
-			if ( $date )
-			{
-				$date_time = DateTime::createFromFormat('d/m/Y', $date);
+	// 		if ( $date )
+	// 		{
+	// 			$date_time = DateTime::createFromFormat('d/m/Y', $date);
 
-				$current = get_post_meta( $post->ID, self::FIELD[ 'bonus-expire' ], true );
+	// 			$current = get_post_meta( $post->ID, self::FIELD[ 'bonus-expire' ], true );
 
-				$date_time->setTime( 23, 59, 59 );
+	// 			$date_time->setTime( 23, 59, 59 );
 				
-				$value = $date_time->format( "Y-m-d H:i:s" );
+	// 			$value = $date_time->format( "Y-m-d H:i:s" );
 	
-				update_field( self::FIELD[ 'bonus-expire' ], $value, $post->ID );
+	// 			update_field( self::FIELD[ 'bonus-expire' ], $value, $post->ID );
 
-				LegalDebug::debug( [
-				    'function' => 'BonusAbout::affiliate_migrate',
+	// 			LegalDebug::debug( [
+	// 			    'function' => 'BonusAbout::affiliate_migrate',
 
-					'ID' => $post->ID,
+	// 				'ID' => $post->ID,
 
-				    'date' => $date,
+	// 			    'date' => $date,
 
-				    'current' => $current,
+	// 			    'current' => $current,
 
-				    'date_time' => $date_time,
+	// 			    'date_time' => $date_time,
 
-				    'value' => $value,
-				] );
-			}
+	// 			    'value' => $value,
+	// 			] );
+	// 		}
 
-			// LegalDebug::debug( [
-			// 	'function' => 'BonusAbout::affiliate_migrate',
+	// 		// LegalDebug::debug( [
+	// 		// 	'function' => 'BonusAbout::affiliate_migrate',
 
-			// 	'ID' => $post->ID,
-			// ] );
+	// 		// 	'ID' => $post->ID,
+	// 		// ] );
 
-			// delete_field( self::FIELD[ 'bonus-expire' ], $post->ID );
-        }
-    }
+	// 		// delete_field( self::FIELD[ 'bonus-expire' ], $post->ID );
+    //     }
+    // }
 
 	const TEMPLATE = [
         'bonus-duration' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-duration.php',
@@ -159,18 +159,31 @@ class BonusDuration
 
 	public static function get_duration( $id )
     {
-		$duration = DateTime::createFromFormat( self::FORMAT[ 'expire' ], get_field( self::FIELD[ 'bonus-expire' ], $id ) );
+		$duration = __( BonusMain::TEXT[ 'indefinitely' ], ToolLoco::TEXTDOMAIN );
 
-        return [
+		$prefix = '';
+
+		if ( $bonus_expire = get_field( self::FIELD[ 'bonus-expire' ], $id ) )
+		{
+			$duration = (
+				DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire )
+			)->format( self::FORMAT[ 'bonus' ] );
+
+			$prefix = __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN );
+		}
+		
+		return [
 			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ) . ':',
 			
-			'prefix' => __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN ),
+			'prefix' => $prefix,
 
 			// 'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
 			
 			// 'duration' => get_field( self::FIELD[ 'bonus-expire' ], $id ),
 			
-			'duration' => $duration->format( self::FORMAT[ 'bonus' ] ),
+			// 'duration' => $duration->format( self::FORMAT[ 'bonus' ] ),
+			
+			'duration' => $duration,
 
 			'class' => 'legal-bonus-duration-default',
 		];
