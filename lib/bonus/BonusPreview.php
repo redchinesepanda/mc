@@ -89,6 +89,8 @@ class BonusPreview
 		'bonus-size' => 'summa',
 		
 		'afillate' => 'ref-ssylka',
+
+		'bonus-affilate-secondary' => 'ref-perelinkovka',
 		
 		'bonus-afillate' => 'bonus-afillate',
 
@@ -678,6 +680,8 @@ class BonusPreview
 					// 'modified' => $post->post_modified,
 
 					'afillate-get_field' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+
+					'bonus-affilate-secondary-get_field' => get_field( self::FIELD[ 'bonus-affilate-secondary' ], $post->ID ),
 
 					'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID ),
 

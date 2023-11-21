@@ -7,6 +7,7 @@
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
 				<div><?php echo $item[ 'afillate-get_field' ]; ?></div>
 				<div><?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
+				<div><?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
 				<div><?php echo $item[ 'bonus-afillate-get_field_false' ]; ?></div>
 				<div><?php echo $item[ 'bonus-afillate-get_post_meta' ]; ?></div>
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
