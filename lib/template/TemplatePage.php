@@ -40,7 +40,7 @@ class TemplatePage
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 999 );
     }
 
     public static function check_review()
