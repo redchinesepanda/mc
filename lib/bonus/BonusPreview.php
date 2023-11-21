@@ -266,9 +266,9 @@ class BonusPreview
 				[
 					'key' => self::FIELD[ 'bonus-afillate' ],
 					
-					'value' => '0',
+					'value' => '',
 					
-					'compare' => '>',
+					'compare' => '!=',
 				],
 			];
 		}
@@ -298,7 +298,7 @@ class BonusPreview
 					[
 						'key' => self::FIELD[ 'bonus-afillate' ],
 						
-						'compare' => 'NOT EXIST',
+						'compare' => 'NOT EXISTS',
 					],
 				],
 			];
