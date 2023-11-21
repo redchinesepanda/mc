@@ -20,6 +20,8 @@ class TemplatePage
 
     const DEQUEUE = [
         'thrive-theme-styles',
+
+        'parent-style',
     ];
 
 	public static function dequeue_style()
