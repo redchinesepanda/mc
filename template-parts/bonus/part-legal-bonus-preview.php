@@ -20,7 +20,7 @@
 						<div class="item-about-expired"><?php echo $item[ 'expired' ]; ?></div>
 					<?php endif; ?>
 					<div class="item-about-get">
-						<a class="about-get-button" href="<?php echo $item[ 'get' ][ 'href' ]; ?>"><?php echo $item[ 'get' ][ 'label' ]; ?></a>
+						<a class="about-get-button check-oops" href="<?php echo $item[ 'get' ][ 'href' ]; ?>"><?php echo $item[ 'get' ][ 'label' ]; ?></a>
 					</div>
 				</div>
 			</div>
