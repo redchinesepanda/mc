@@ -5,7 +5,7 @@
 		<?php endif; ?>
 		<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
-				<div>id: <?php echo $id; ?></div>
+				<div>id: <?php echo $id + 1; ?></div>
 				<div>afillate: <?php echo $item[ 'afillate-get_field' ]; ?></div>
 				<div>bonus-affilate-secondary: <?php echo $item[ 'bonus-affilate-secondary-get_field' ]; ?></div>
 				<div>bonus-afillate: <?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
