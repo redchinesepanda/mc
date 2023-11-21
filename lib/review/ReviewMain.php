@@ -238,9 +238,9 @@ class ReviewMain
         return !is_admin();
     }
 
-    public static function check_post_type_page()
+    public static function check_post_type_post()
     {
-        return is_singular( [ 'page' ] );
+        return is_singular( [ 'post' ] );
     }
 
     public static function check_taxonomy()
@@ -248,9 +248,9 @@ class ReviewMain
         return has_term( LegalComponents::TERMS, LegalComponents::TAXONOMY[ 'page_type' ] );
     }
 
-    public static function check_post_type_post()
+    public static function check_post_type_page()
     {
-        return is_singular( [ 'post' ] );
+        return is_singular( [ 'page' ] );
     }
 
     public static function check()
