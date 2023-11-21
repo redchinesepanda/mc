@@ -6,11 +6,11 @@
 		<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
 			<div class="bonus-list-item item-<?php echo $item[ 'id' ]; ?>">
 				<div>id: <?php echo $id + 1; ?></div>
-				<div>afillate: <?php echo $item[ 'afillate-get_field' ]; ?></div>
-				<div>bonus-affilate-secondary: <?php echo $item[ 'bonus-affilate-secondary-get_field' ]; ?></div>
-				<div>bonus-afillate: <?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
-				<div>bonus-afillate-false: <?php echo $item[ 'bonus-afillate-get_field_false' ]; ?></div>
-				<div>bonus-afillate-meta: <?php echo $item[ 'bonus-afillate-get_post_meta' ]; ?></div>
+				<div><?php echo $item[ 'afillate-get_field' ]; ?></div>
+				<div><?php echo $item[ 'bonus-affilate-secondary-get_field' ]; ?></div>
+				<div><?php echo $item[ 'bonus-afillate-get_field' ]; ?></div>
+				<div><?php echo $item[ 'bonus-afillate-get_field_false' ]; ?></div>
+				<div><?php echo $item[ 'bonus-afillate-get_post_meta' ]; ?></div>
 				<?php if ( !empty( $item[ 'preview' ] ) ) : ?>
 					<a class="item-image-link" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
 						<img class="item-image image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
