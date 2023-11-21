@@ -677,6 +677,8 @@ class BonusPreview
 
 					// 'modified' => $post->post_modified,
 
+					'afillate-get_field' => get_field( self::FIELD[ 'afillate' ], $post->ID ),
+
 					'bonus-afillate-get_field' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID ),
 
 					'bonus-afillate-get_field_false' => get_field( self::FIELD[ 'bonus-afillate' ], $post->ID, false ),
