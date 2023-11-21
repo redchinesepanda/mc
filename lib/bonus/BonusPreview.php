@@ -234,13 +234,13 @@ class BonusPreview
 					'value' => '',
 				],
 
-				[
-					'key' => self::FIELD[ 'expire' ],
+				// [
+				// 	'key' => self::FIELD[ 'expire' ],
 
-					'compare' => 'NOT EXISTS',
+				// 	'compare' => 'NOT EXISTS',
 
-					// 'compare_key' => 'NOT EXISTS',
-				],
+				// 	// 'compare_key' => 'NOT EXISTS',
+				// ],
 			],
 		];
 	}
