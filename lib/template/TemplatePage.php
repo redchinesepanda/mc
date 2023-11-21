@@ -31,6 +31,10 @@ class TemplatePage
         if ( self::check_page() )
         {
             ToolEnqueue::dequeue_style( self::DEQUEUE );
+
+            LegalDebug::debug( [
+                'function' => 'TemplatePage::dequeue_style',
+            ] );
         }
     }
 
