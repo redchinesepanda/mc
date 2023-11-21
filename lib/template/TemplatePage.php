@@ -22,6 +22,11 @@ class TemplatePage
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
+    public static function check_review()
+    {
+        
+    }
+
 	const TEMPLATE = [
         'legal-template-page-review' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-review.php',
 
@@ -51,7 +56,7 @@ class TemplatePage
         return self::render_main( self::TEMPLATE[ 'legal-template-page-review' ] );
     }
 
-    public static function render_review()
+    public static function render_compilation()
     {
 		if ( !CompilationMain::check() )
         {
@@ -61,14 +66,9 @@ class TemplatePage
         return self::render_main( self::TEMPLATE[ 'legal-template-page-compilation' ] );
     }
 
-    public static function render_wiki_thrive()
+    public static function render_thrive()
     {
-		if ( !WikiMain::check_thrive() )
-        {
-            return '';
-        }
-
-        return self::render_main( self::TEMPLATE[ 'legal-template-wiki-thrive' ] );
+		return self::render_main( self::TEMPLATE[ 'legal-template-page-thrive' ] );
     }
 }
 
