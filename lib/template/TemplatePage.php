@@ -12,9 +12,21 @@ class TemplatePage
 
 	public static function register_style()
     {
-        if ( self::check_review() || self::check_compilation() )
+        if ( self::check_page() )
         {
             ToolEnqueue::register_style( self::CSS );
+        }
+    }
+
+    const DEQUEUE = [
+        'thrive-theme-styles',
+    ];
+
+	public static function dequeue_style()
+    {
+        if ( self::check_page() )
+        {
+            ToolEnqueue::dequeue_style( self::DEQUEUE );
         }
     }
 
@@ -23,6 +35,8 @@ class TemplatePage
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
     }
 
     public static function check_review()
@@ -35,10 +49,10 @@ class TemplatePage
         return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION );
     }
 
-    // public static function check_thrive()
-    // {
-    //     return !self::check_review() && !self::check_compilation();
-    // }
+    public static function check_page()
+    {
+        return self::check_review() || self::check_compilation();
+    }
 
 	const TEMPLATE = [
         'legal-template-page-review' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-review.php',
