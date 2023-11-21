@@ -24,8 +24,18 @@ class TemplatePage
 
     public static function check_review()
     {
-        
+        return LegalComponents::check_taxonomy( LegalComponents::TERMS_REVIEW );
     }
+
+    public static function check_compilation()
+    {
+        return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION );
+    }
+
+    // public static function check_thrive()
+    // {
+    //     return !self::check_review() && !self::check_compilation();
+    // }
 
 	const TEMPLATE = [
         'legal-template-page-review' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-review.php',
@@ -34,6 +44,21 @@ class TemplatePage
 
         'legal-template-page-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-thrive.php',
     ];
+
+    public static function render( $template, $args = [] )
+    {
+        if ( self::check_review() )
+        {
+            return self::render_review();
+        }
+
+        if ( self::check_compilation() )
+        {
+            return self::render_compilation();
+        }
+
+        return self::render_thrive();
+    }
 
     public static function render_main( $template, $args = [] )
     {

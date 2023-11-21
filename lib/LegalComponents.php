@@ -112,7 +112,6 @@ class LegalComponents
     ];
 	
 	const TERMS_COMPILATION = [
-
         'compilation',
     ];
 
