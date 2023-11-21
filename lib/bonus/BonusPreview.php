@@ -190,7 +190,21 @@ class BonusPreview
 			$compare = '<';
 		}
 
+		// return [
+		// 	[
+		// 		'key' => self::FIELD[ 'expire' ],
+
+		// 		'value' => $now->format('Y-m-d H:i:s'),
+
+		// 		'compare' => $compare,
+
+		// 		'type' => 'DATETIME',
+		// 	],
+		// ];
+
 		return [
+			'relation' => 'OR',
+
 			[
 				'key' => self::FIELD[ 'expire' ],
 
@@ -199,6 +213,12 @@ class BonusPreview
 				'compare' => $compare,
 
 				'type' => 'DATETIME',
+			],
+
+			[
+				'key' => self::FIELD[ 'expire' ],
+
+				'compare' => 'NOT EXISTS',
 			],
 		];
 	}
