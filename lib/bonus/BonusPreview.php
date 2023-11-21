@@ -89,6 +89,8 @@ class BonusPreview
 		'bonus-size' => 'summa',
 		
 		'afillate' => 'ref-ssylka',
+		
+		'bonus-afillate' => 'bonus-afillate',
 
 		'duration' => 'data-okonchaniya',
 
