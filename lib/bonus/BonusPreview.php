@@ -189,12 +189,16 @@ class BonusPreview
 		// 	'now' => $now,
 		// ] );
 
-		$compare = '>=';
+		$expired = in_array( $duration, [ self::DURATION[ 'expired' ] ] );
 
-		if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-		{
-			$compare = '<';
-		}
+		$compare = $expired ? '<' : '>=';
+
+		// $compare = '>=';
+
+		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		// {
+		// 	$compare = '<';
+		// }
 
 		// return [
 		// 	[
@@ -208,39 +212,34 @@ class BonusPreview
 		// 	],
 		// ];
 
+		$meta_query_date = [
+			'key' => self::FIELD[ 'expire' ],
+
+			'value' => $now->format('Y-m-d H:i:s'),
+
+			'compare' => $compare,
+
+			'type' => 'DATETIME',
+		];
+
+		if ( $expired )
+		{
+			return [ $meta_query_date ];
+		}
+
 		return [
 			[
 				'relation' => 'OR',
 
-				[
-					'key' => self::FIELD[ 'expire' ],
-
-					'value' => $now->format('Y-m-d H:i:s'),
-
-					'compare' => $compare,
-
-					'type' => 'DATETIME',
-				],
+				$meta_query_date,
 
 				[
 					'key' => self::FIELD[ 'expire' ],
-
-					// 'compare' => 'NOT EXISTS',
-					
-					// 'compare' => 'EXISTS',
 					
 					'compare' => '=',
 
 					'value' => '',
 				],
-
-				// [
-				// 	'key' => self::FIELD[ 'expire' ],
-
-				// 	'compare' => 'NOT EXISTS',
-
-				// 	// 'compare_key' => 'NOT EXISTS',
-				// ],
 			],
 		];
 	}
