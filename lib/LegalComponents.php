@@ -61,8 +61,10 @@ class LegalComponents
         'page_type' => 'page_type',
     ];
 
-	const TERMS = array_merge( self::TERMS_REVIEW, self::TERMS_COMPILATION );
+	// const TERMS = array_merge( self::TERMS_REVIEW, self::TERMS_COMPILATION );
 	
+	const TERMS = [ ...self::TERMS_REVIEW, ...self::TERMS_COMPILATION ];
+
 	// const TERMS = [
     //     'promo-codes',
 
