@@ -82,6 +82,8 @@ class BonusPreview
 	];
 
 	const FIELD = [
+		'bonus-title' => 'h1',
+
 		'logo-preview' => 'logo_bk_mini',
 
 		'bonus-size' => 'summa',
@@ -574,7 +576,9 @@ class BonusPreview
 					'logo' => self::get_logo( $post->ID ),
 
 					'title' => [
-						'label' => $post->post_title,
+						// 'label' => $post->post_title,
+						
+						'label' => get_field( self::FIELD[ 'bonus-title' ], $post->ID ),
 
 						'href' => $post_url,
 					],
