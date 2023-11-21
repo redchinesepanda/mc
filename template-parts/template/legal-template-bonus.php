@@ -32,4 +32,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Bonus -->
+<!-- Legal Single Bonus -->
