@@ -3,4 +3,4 @@
 thrive_template()->render();
 
 ?>
-<!-- Legal Wiki Thrive -->
+<!-- Legal Single Thrive -->
