@@ -101,7 +101,7 @@ class ToolEnqueue
 
         add_filter( 'script_loader_tag', [ $handler, 'script_type' ], 10, 2 );
 
-        add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ], 999);
+        // add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ], 999);
     }
 
     public static function inspect_scripts()
