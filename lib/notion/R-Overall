@@ -1,0 +1,6 @@
+( prop("R-UX") + prop("R-Product") + prop("R-Money") ) / 9
+
+
+round(
+	( ( prop("R-UX") + prop("R-Product") + prop("R-Money") ) / 9 ) * 10
+) / 10

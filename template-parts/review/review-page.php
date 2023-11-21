@@ -1,4 +1,4 @@
-<section class="legal-section-review-about">
+<section class="legal-section-review-about-top">
 	<?php echo ReviewAbout::render_about(); ?>
 </section>
 <section class="legal-section-anchors">
@@ -14,6 +14,9 @@
 		</div>
 	</div>
 </section>
-<section class="legal-section-review-aboyt-footer">
-	<?php echo ReviewAbout::render_footer(); ?>
+<section class="legal-section-offers">
+	<?php echo ReviewOffers::render(); ?>
+</section>
+<section class="legal-section-review-about-bottom">
+	<?php echo ReviewAbout::render_about_bottom(); ?>
 </section>
