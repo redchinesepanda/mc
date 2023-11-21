@@ -45,7 +45,7 @@ class TemplatePage
         'legal-template-page-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-thrive.php',
     ];
 
-    public static function render( $template, $args = [] )
+    public static function render()
     {
         if ( self::check_review() )
         {
