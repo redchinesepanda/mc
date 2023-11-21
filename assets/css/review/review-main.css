@@ -30,6 +30,10 @@
 
 /* Review Position */
 
+.tcb-post-content {
+    margin: 0px;
+}
+
 .tcb-post-content.thrv_wrapper:not( .legal-override ) {
     margin-top: 0px;
     margin-bottom: 0px;
