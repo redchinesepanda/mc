@@ -227,7 +227,11 @@ class BonusPreview
 
 					// 'compare' => 'NOT EXISTS',
 					
-					'compare' => 'EXISTS',
+					// 'compare' => 'EXISTS',
+					
+					'compare' => '=',
+
+					'value' => '',
 				],
 			],
 		];
