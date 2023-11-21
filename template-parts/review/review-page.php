@@ -15,7 +15,7 @@
 	</div>
 </section>
 <section class="legal-section-offers">
-	<?php echo ReviewOffers::render(); ?>
+	<?php echo ReviewOffers::prepare_offers_bottom(); ?>
 </section>
 <section class="legal-section-review-about-bottom">
 	<?php echo ReviewAbout::render_about_bottom(); ?>

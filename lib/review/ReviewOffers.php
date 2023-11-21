@@ -3,12 +3,6 @@
 class ReviewOffers
 {
 	const CSS = [
-        // 'review-offers-main' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-main.css',
-
-		// 	'ver' => '1.0.1',
-		// ],
-
         'review-offers-compilation' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-offers-compilation.css',
 
@@ -20,20 +14,6 @@ class ReviewOffers
     {
 		ReviewMain::register_style( self::CSS );
     }
-
-	// const JS = [
-    //     'review-offers' => LegalMain::LEGAL_URL . '/assets/js/review/review-offers.js',
-    // ];
-
-    // public static function register_script()
-    // {
-	// 	ReviewMain::register_script( self::JS );
-    // }
-
-	// public static function register_inline_style()
-    // {
-	// 	ReviewMain::register_inline_style( 'review-offers', self::inline_style() );
-    // }
 
 	const SHORTCODE = [
 		'offers' => 'legal-offers',
@@ -54,39 +34,10 @@ class ReviewOffers
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
 		// [legal-offers]
 
 		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
     }
-
-	// public static function inline_style()
-	// {
-	// 	if ( !ReviewMain::check() )
-	// 	{
-    //         return '';
-    //     }
-
-	// 	if ( self::check_compilation() )
-	// 	{
-    //         return '';
-    //     }
-
-	// 	$style = [];
-
-	// 	$style_items = self::get_offers( self::PAIRS );
-
-	// 	if ( !empty( $style_items ) ) {
-	// 		foreach ( $style_items as $style_item_id => $style_item ) {
-	// 			$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' .item-logo { background-image: url(\'' . $style_item[ 'logo' ] .'\'); }';
-
-	// 			$style[] = '.legal-other-offers .offers-item-' . $style_item_id . ' { background-color: ' . $style_item[ 'background' ] .'; }';
-	// 		}
-	// 	}
-
-	// 	return implode( ' ', $style );
-	// }
 
 	const FIELD = [
 		'title' => 'offer-group-title',
@@ -147,16 +98,6 @@ class ReviewOffers
 			],
 		];
 
-		// if ( empty( $selected_term ) )
-		// {
-		// 	$terms = self::get_terms( $id );
-
-		// 	if ( !empty( $terms ) )
-		// 	{
-		// 		$selected_term = array_shift( $terms );
-		// 	}
-		// }
-
 		if ( !empty( $selected_term ) )
 		{
 			$tax_query = [
@@ -164,8 +105,6 @@ class ReviewOffers
                     'taxonomy' => self::TAXONOMY[ 'offer' ],
 
                     'field' => 'slug',
-
-                    // 'terms' => array_merge( [ $selected_term ], self::OFFER_GROUP ),
                     
 					'terms' => [ $selected_term ],
 
@@ -175,8 +114,6 @@ class ReviewOffers
 		}
 
 		return [
-			// 'numberposts' => -1,
-			
 			'numberposts' => $limit,
 
             'post_type' => [ 'page' ],
@@ -188,8 +125,6 @@ class ReviewOffers
             'exclude' => $id,
 
             'tax_query' => $tax_query,
-
-            // 'orderby' => [ 'menu_order' => 'ASC', 'modified' => 'DESC', 'title' => 'ASC' ],
             
 			'orderby' => [ 'rand' ],
 		];
@@ -216,35 +151,6 @@ class ReviewOffers
 
 		return ( OopsMain::check_oops() ? '#' : '' );
 	}
-
-	// public static function parse_offers( $offers )
-	// {
-	// 	$items = [];
-
-	// 	foreach ( $offers as $offer )
-	// 	{
-	// 		$group = get_field( self::FIELD[ 'about' ], $offer->ID );
-
-	// 		$items[] = [
-	// 			'bonus' => $group[ self::REVIEW_ABOUT[ 'bonus' ] ],
-
-	// 			'logo' => $group[ self::REVIEW_ABOUT[ 'logo' ] ],
-
-	// 			'background' => $group[ self::REVIEW_ABOUT[ 'background' ] ],
-
-	// 			'font' => $group[ self::REVIEW_ABOUT[ 'font' ] ],
-
-	// 			'afillate' => [
-    //                 'href' => self::check_url_afillate( $group[ self::REVIEW_ABOUT[ 'afillate' ] ] ),
-
-    //                 'text' => __( ReviewMain::TEXT[ 'bet-here' ], ToolLoco::TEXTDOMAIN ),
-    //             ],
-	// 		];
-			
-	// 	}
-
-	// 	return $items;
-	// }
 
 	public static function parse_offers_compilation( $posts, $suffix = '' )
 	{
@@ -319,18 +225,6 @@ class ReviewOffers
 					)
 				);
 
-				// LegalDebug::debug( [
-				// 	'function' => 'ReviewOffers::get_offers',
-		
-				// 	'query_default_limit' => $query_default_limit,
-
-				// 	'posts_current' => count( $posts_current ),
-
-				// 	'posts_default' => count( $posts_default ),
-				// ] );
-
-				// $posts = array_merge( $posts_current, $posts_default );
-
 				if ( !empty( $posts_current ) || !empty( $posts_default ) )
 				{
 					$suffix = get_field( self::FIELD[ 'suffix' ], $post->ID );
@@ -347,42 +241,7 @@ class ReviewOffers
 					$items = array_merge( $items_current, $items_default );
 
 					shuffle( $items );
-
-					// LegalDebug::debug( [
-					// 	'function' => 'ReviewOffers::get_offers',
-
-					// 	'suffix' => $suffix,
-
-					// 	'items_current' => $items_current,
-					// ] );
-					
-					// shuffle( $posts );
-
-					// if ( self::check_compilation() )
-					// {
-						// $items = self::parse_offers_compilation( $posts, $atts[ 'suffix' ] );
-					// }
-					// else
-					// {
-					// 	$items = self::parse_offers( $posts );
-					// }
 				}
-
-				// LegalDebug::debug( [
-				// 	'function' => 'ReviewOffers::get_offers',
-
-				// 	'OFFER_GROUP-other' => self::OFFER_GROUP[ 'other' ],
-
-				// 	'selected-term' => $atts[ 'selected-term' ],
-
-				// 	'query_default_limit' => $query_default_limit,
-
-				// 	'posts_current' => count( $posts_current ),
-
-				// 	'posts_default' => count( $posts_default ),
-
-				// 	// 'query' => $query,
-				// ] );
 			}
 		}
 		
@@ -397,20 +256,16 @@ class ReviewOffers
 		'check' => 0,
 	];
 
-	// public static function check_compilation()
-	// {
-	// 	return has_term( self::PAGE_TYPE[ 'compilation' ], self::TAXONOMY[ 'page_type' ] );
-	// }
+	public static function prepare_offers_bottom()
+	{
+		return self::prepare( [
+			'check' => 1,
+		] );
+	}
 
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
-
-		// LegalDebug::debug( [
-		// 	'function' => 'ReviewOffers::prepare',
-
-		// 	'check_content' => self::check_content(),
-		// ] );
 
 		if ( $atts[ 'check' ] )
 		{
@@ -421,19 +276,8 @@ class ReviewOffers
 		}
 
 		$args = self::get_offers( $atts );
-
-		// LegalDebug::debug( [
-		// 	'function' => 'ReviewOffers::prepare',
-
-		// 	'args' => $args,
-		// ] );
-
-		// if ( self::check_compilation() )
-		// {
-			return self::render_offers_compilation( $args );
-		// }
-
-		// return self::render_offers( $args );
+		
+		return self::render_offers_compilation( $args );
 	}
 
 	public static function check_content()
