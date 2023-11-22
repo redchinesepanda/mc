@@ -220,7 +220,9 @@
 			return [
 				'title' => implode( ' ', $title ),
 
-				'items' => BonusPreview::get_items( self::group_posts_actual() ),
+				// 'items' => BonusPreview::get_items( self::group_posts_actual() ),
+
+				'items' => BonusPreview::get_items( self::group_posts_tags() ),
 			];
 		}
 
@@ -233,10 +235,10 @@
 			return self::render( self::get_related_tags() );
 		}
 
-		public static function render_preview_tags()
-		{
-			return BonusPreview::render( self::get_preview_tags() );
-		}
+		// public static function render_preview_tags()
+		// {
+		// 	return BonusPreview::render( self::get_preview_tags() );
+		// }
 
 		public static function render_preview_categories()
 		{
@@ -248,6 +250,18 @@
 			if ( BonusDuration::check_expired( BonusMain::get_id() ) )
 			{
 				return BonusPreview::render( self::get_preview_actual() );
+			}
+			
+			return '';
+		}
+
+		public static function render_preview_other()
+		{
+			if ( !BonusDuration::check_expired( BonusMain::get_id() ) )
+			{
+				// return BonusPreview::render( self::get_preview_actual() );
+
+				return BonusPreview::render( self::get_preview_tags() );
 			}
 			
 			return '';
