@@ -259,7 +259,10 @@ class ReviewOffers
 
 					$items = array_merge( $items_current, $items_default );
 
-					shuffle( $items );
+					if ( $atts[ 'random' ] )
+					{
+						shuffle( $items );
+					}
 				}
 			}
 		}
