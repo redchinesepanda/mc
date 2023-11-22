@@ -88,7 +88,7 @@ class ReviewOffers
 		'other' => 'offer-group-other',
 	];
 
-	public static function offer_query( $id, $selected_term = '', $limit = 5 )
+	public static function offer_query( $id, $selected_term = '', $limit = 5, $random = true )
 	{
 		$tax_query = [
 			[
@@ -113,6 +113,19 @@ class ReviewOffers
             ];
 		}
 
+		$orderby = [ 'rand' ];
+
+		if ( !$random )
+		{
+			$orderby = [
+				'menu_order' => 'DESC',
+
+				'modified' => 'DESC',
+
+				'title' => 'ASC',
+			];
+		}
+
 		return [
 			'numberposts' => $limit,
 
@@ -126,7 +139,7 @@ class ReviewOffers
 
             'tax_query' => $tax_query,
             
-			'orderby' => [ 'rand' ],
+			'orderby' => $orderby,
 		];
 	}
 
@@ -206,7 +219,11 @@ class ReviewOffers
 						self::offer_query(
 							$post->ID,
 							
-							$atts[ 'selected-term' ]
+							$atts[ 'selected-term' ],
+
+							$atts[ 'limit' ],
+
+							$atts[ 'random' ]
 						)
 					);
 				}
@@ -221,7 +238,9 @@ class ReviewOffers
 						
 						self::OFFER_GROUP[ 'other' ],
 						
-						$query_default_limit
+						$query_default_limit,
+
+						$atts[ 'random' ]
 					)
 				);
 
@@ -254,6 +273,12 @@ class ReviewOffers
 		'suffix' => '',
 
 		'check' => 0,
+
+		'limit' => 5,
+
+		'other' => true,
+
+		'random' => true,
 	];
 
 	public static function prepare_offers_bottom()
@@ -266,6 +291,10 @@ class ReviewOffers
 	public static function prepare( $atts )
     {
 		$atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODE[ 'offers' ] );
+
+		$atts[ 'other' ] = wp_validate_boolean( $atts[ 'other' ] );
+
+		$atts[ 'random' ] = wp_validate_boolean( $atts[ 'random' ] );
 
 		if ( $atts[ 'check' ] )
 		{
