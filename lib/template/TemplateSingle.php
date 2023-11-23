@@ -9,16 +9,16 @@ class TemplateSingle
 			'ver' => '1.0.0',
 		],
 
-        // 'legal-template-page-review' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page-review.css',
+        // 'legal-template-single-bonus' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-bonus.css',
 
-		// 	'ver' => '1.0.0',
+		// 	'ver' => '1.0.7',
 		// ],
 
-        // 'legal-template-page-compilation' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page-compilation.css',
+        // 'legal-template-single-wiki' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-wiki.css',
 
-		// 	'ver' => '1.0.0',
+		// 	'ver' => '1.0.7',
 		// ],
     ];
 
@@ -29,14 +29,14 @@ class TemplateSingle
             ToolEnqueue::register_style( self::CSS );
         }
 
-        // if ( self::check_review() )
+        // if ( self::check_bonus() )
         // {
-        //     ToolEnqueue::register_style( [ 'legal-template-page-review' => self::CSS[ 'legal-template-page-review' ] ] );
+        //     ToolEnqueue::register_style( [ 'legal-template-single-bonus' => self::CSS[ 'legal-template-single-bonus' ] ] );
         // }
 
-        // if ( self::check_compilation() )
+        // if ( self::check_wiki() )
         // {
-        //     ToolEnqueue::register_style( [ self::CSS[ 'legal-template-page-compilation' ] ] );
+        //     ToolEnqueue::register_style( [ 'legal-template-single-wiki' => self::CSS[ 'legal-template-single-wiki' ] ] );
         // }
     }
 
