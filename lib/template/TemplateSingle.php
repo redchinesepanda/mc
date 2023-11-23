@@ -10,13 +10,13 @@ class TemplateSingle
 		],
 
         // 'legal-template-single-bonus' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-bonus.css',
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-single-bonus.css',
 
 		// 	'ver' => '1.0.7',
 		// ],
 
         // 'legal-template-single-wiki' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-wiki.css',
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-single-wiki.css',
 
 		// 	'ver' => '1.0.7',
 		// ],

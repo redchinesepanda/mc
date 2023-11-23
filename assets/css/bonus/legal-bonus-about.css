@@ -134,6 +134,11 @@
 
 /* Background */
 
+.legal-bonus-about-wrapper {
+	background-color: rgb(89, 151, 227);
+	border-top: 1.6px solid #fff;
+}
+
 .legal-bonus-about .bonus-about-action {
 	background-color: rgb(255, 255, 255);
 	border-radius: 20px;
