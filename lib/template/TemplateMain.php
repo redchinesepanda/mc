@@ -26,23 +26,27 @@ class TemplateMain
     //     ],
     // ];
 
-    public static function register_style_thrive()
-    {
-        $parent_style = 'parent-style';
+    // public static function register_style_thrive()
+    // {
+    //     $parent_style = 'parent-style';
     
-        wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    //     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     
-        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [ $parent_style ], wp_get_theme()->get( 'Version' ) );
+    //     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [ $parent_style ], wp_get_theme()->get( 'Version' ) );
 
-        wp_dequeue_style( 'child-style' );
+    //     wp_dequeue_style( 'child-style' );
 
-        wp_dequeue_style( 'parent-style' );
-    }
+    //     wp_dequeue_style( 'parent-style' );
+    // }
 
     const DEQUEUE = [
         'thrive-theme-styles',
 
         'thrive-theme',
+
+        'child-style',
+
+        'parent-style',
     ];
 
     public static function register()
