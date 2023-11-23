@@ -13,9 +13,9 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
     const DEQUEUE = [
-        'thrive-theme-styles',
+        // 'thrive-theme-styles',
 
-        'thrive-theme',
+        // 'thrive-theme',
 
         // 'child-style',
 
