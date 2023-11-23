@@ -28,6 +28,10 @@ class TemplateSingle
         {
             ToolEnqueue::register_style( self::CSS );
         }
+        else
+        {
+            TemplateMain::register_style_thrive();
+        }
 
         // if ( self::check_bonus() )
         // {
