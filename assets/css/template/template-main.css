@@ -1,3 +1,3 @@
-:root body {
+body:not( .legal-override ) {
 	background-color: rgb(250, 252, 254);
 }
