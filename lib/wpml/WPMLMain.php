@@ -6,7 +6,7 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
-// require_once( 'WPMLMedia.php' );
+require_once( 'WPMLHreflang.php' );
 
 class WPMLMain
 {
