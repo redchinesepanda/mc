@@ -125,7 +125,7 @@
 .tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ),
 .tcb-post-content ul:not( .legal-override ) li,
 .tcb-post-content ol:not( .legal-override ) li,
-.tcb-post-content table:not( .legal-override ):not( .legal-raw ) td {
+.tcb-post-content table:not( .legal-override ) td {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
