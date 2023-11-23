@@ -1,14 +1,12 @@
 <?php
 
-require_once( 'BonusTemplateSingle.php' );
+require_once( 'BonusSingle.php' );
 
 require_once( 'BonusAbout.php' );
 
 require_once( 'BonusSummary.php' );
 
 require_once( 'BonusRelated.php' );
-
-require_once( 'BonusTemplateSingle.php' );
 
 require_once( 'BonusFeatured.php' );
 
@@ -126,13 +124,13 @@ class BonusMain
 
 	public static function register()
     {
+		BonusSingle::register();
+
         BonusAbout::register();
 
 		BonusSummary::register();
 
 		BonusRelated::register();
-
-		BonusTemplateSingle::register();
 
 		BonusFeatured::register();
 

@@ -1,6 +1,6 @@
 <?php
 
-class BonusTemplateSingle
+class BonusSingle
 {
     const CSS = [
         'bonus-single' => [

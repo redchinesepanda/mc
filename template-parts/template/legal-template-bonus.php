@@ -13,7 +13,7 @@ get_header();
 	<?php echo BonusAbout::render(); ?>
 </section>
 <section class="legal-section-content">
-	<?php echo BonusTemplateSingle::render(); ?>
+	<?php echo BonusSingle::render(); ?>
 </section>
 <section id="theme-bottom-section" class="legal-section-author">
 	<?php echo ReviewAuthor::render(); ?>
