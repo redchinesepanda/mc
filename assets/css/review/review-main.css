@@ -43,10 +43,12 @@
 
 .tcb-post-content h1:not( .legal-override ) {
     padding-bottom: 30px;
+    margin: 0px;
 }
 
 .tcb-post-content h2:not( .legal-override ) {
     padding-bottom: 20px;
+    margin: 0px;
 }
 
 .tcb-post-content > p:not( :last-child ):not( .legal-override ):not( .legal-contextbox ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
@@ -62,14 +64,17 @@
 
 .tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
     padding-bottom: 20px;
+    margin: 0px;
 }
 
 .tcb-post-content h4:not( .legal-override ) {
     padding-bottom: 20px;
+    margin: 0px;
 }
 
 .tcb-post-content h5:not( .legal-override ) {
     padding-bottom: 20px;
+    margin: 0px;
 }
 
 .tcb-post-content .legal-contextbox {
