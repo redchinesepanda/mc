@@ -252,6 +252,10 @@
 
 /* Background */
 
+.legal-header-wrapper {
+	background-color: rgb(13, 11, 47);
+}
+
 .legal-menu .sub-menu {
 	background-color: rgb(13, 11, 47);
 }
