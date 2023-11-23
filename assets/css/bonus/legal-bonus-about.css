@@ -14,6 +14,12 @@
 		order: 2;
 	}
 
+	/* Position */
+
+	.legal-bonus-about-wrapper {
+		padding: 0px 20px;
+	}
+
 	/* Width and Height */
 
 	.legal-bonus-about .bonus-about-action {
