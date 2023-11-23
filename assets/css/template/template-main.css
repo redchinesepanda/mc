@@ -2,23 +2,12 @@
 {
 	/* Position */
 
-	/* .legal-section-header, */
-	/* .legal-section-breadcrumbs, */
-	/* .legal-section-about {
-		padding: 0px 20px;
-	} */
-
 	.legal-section-content {
 		padding: 20px;
 	}
 }
 
-@media screen and ( min-width: 768px )
-{
-	/* Position */
-}
-
-body:not(#legal-override) {
+body:not( #legal-override ) {
 	background-color: rgb(250, 252, 254);
 }
 
