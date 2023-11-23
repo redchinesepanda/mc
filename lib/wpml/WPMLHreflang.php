@@ -13,11 +13,11 @@ class WPMLHreflang
 	{
 		if ( empty( $hreflang_items[ 'x-default' ] ) && is_singular() )
 		{
-			LegalDebug::debug(
+			LegalDebug::debug( [
 				'function' => 'WPMLHreflang::legal_hreflangs',
 
 				'message' => 'x-default is empty',
-			);
+			] );
 
 			// $post_type = 'post_' . get_post_type();
 
