@@ -1,3 +1,3 @@
-body:not( .legal-override ) {
+body:not( [style] ) {
 	background-color: rgb(250, 252, 254);
 }
