@@ -12,6 +12,8 @@ add_action( 'wp_enqueue_scripts', function () {
 	// LegalDebug::debug( [
 	// 	'function' => 'functions.php::add_action',
 	// ] );
+
+	ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
 } );
 
 require_once( 'lib/LegalMain.php' );
@@ -21,7 +23,5 @@ LegalMain::register();
 // BonusDuration::date_migrate();
 
 // BonusAbout::affiliate_migrate();
-
-ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
 
 ?>
