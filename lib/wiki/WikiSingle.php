@@ -1,6 +1,6 @@
 <?php
 
-class WikiTemplateSingle
+class WikiSingle
 {
     const CSS = [
         'wiki-single' => [
