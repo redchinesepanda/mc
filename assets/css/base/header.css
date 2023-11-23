@@ -41,6 +41,10 @@
 
 	/* Position */
 
+	.legal-section-header-wrapper {
+		padding: 0px 20px;
+	}
+
 	.legal-menu {
 		padding-top: 15px;
 	}
