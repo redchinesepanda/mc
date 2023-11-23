@@ -6,7 +6,7 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
-require_once( 'WPMLHreflang.php' );
+// require_once( 'WPMLHreflang.php' );
 
 class WPMLMain
 {
@@ -220,7 +220,7 @@ class WPMLMain
 
         WPMLLanguageMismatch::register();
 
-        WPMLHreflang::register();
+        // WPMLHreflang::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
