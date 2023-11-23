@@ -22,22 +22,11 @@ class TemplatePage
 		// ],
     ];
 
-	public static function register_style_thrive()
-    {
-        if ( !self::check_page() )
-        {
-            TemplateMain::register_style_thrive();
-        }
-    }
 	public static function register_style()
     {
         if ( self::check_page() )
         {
             ToolEnqueue::register_style( self::CSS );
-        }
-        else
-        {
-            TemplateMain::register_style_thrive();
         }
 
         // if ( self::check_review() )
@@ -51,23 +40,11 @@ class TemplatePage
         // }
     }
 
-    // const DEQUEUE = [
-    //     'thrive-theme-styles',
-
-    //     'parent-style',
-
-    //     'thrive-theme',
-    // ];
-
 	public static function dequeue_style()
     {
         if ( self::check_page() )
         {
-            ToolEnqueue::dequeue_style( self::DEQUEUE );
-
-            LegalDebug::debug( [
-                'function' => 'TemplatePage::dequeue_style',
-            ] );
+            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
         }
     }
 
@@ -77,9 +54,7 @@ class TemplatePage
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style_thrive' ] );
-
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
     }
 
     public static function check_review()
