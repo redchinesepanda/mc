@@ -35,6 +35,8 @@ class TemplatePage
 
             LegalDebug::debug( [
                 'function' => 'register_style',
+
+                'style' => [ self::CSS[ 'legal-template-page-review' ] ],
             ] );
         }
 
