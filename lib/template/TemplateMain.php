@@ -12,6 +12,27 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+    const CSS = [
+        'legal-template-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+    public static function check()
+    {
+        return TemplatePage::check_page() || TemplateSingle::check_single();
+    }
+
+    public static function register_style()
+    {
+        if ( self::check() )
+        {
+            ToolEnqueue::register_style( self::CSS );
+        }
+    }
+
     const DEQUEUE = [
         // 'thrive-theme-styles',
 
