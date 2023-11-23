@@ -12,19 +12,19 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
-    const CSS = [
-        'parent-style' => [
-            'path' => get_template_directory_uri() . '/style.css',
+    // const CSS = [
+    //     'parent-style' => [
+    //         'path' => get_template_directory_uri() . '/style.css',
 
-            'ver' => '1.0.0',
-        ],
+    //         'ver' => '1.0.0',
+    //     ],
 
-        'child-style' => [
-            'path' => get_stylesheet_directory_uri() . '/style.css',
+    //     'child-style' => [
+    //         'path' => get_stylesheet_directory_uri() . '/style.css',
 
-            'ver' => '1.0.0',
-        ],
-    ];
+    //         'ver' => '1.0.0',
+    //     ],
+    // ];
 
     public static function register_style_thrive()
     {
