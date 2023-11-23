@@ -37,7 +37,7 @@ class TemplatePage
         if ( self::check_compilation() )
         {
             return self::render_compilation( [ self::CSS[ 'legal-template-page-compilation' ] ] );
-        }
+        } 
     }
 
     const DEQUEUE = [
