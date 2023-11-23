@@ -23,6 +23,11 @@ class ToolEnqueue
                 $path = $item[ 'path' ];
 
                 $ver = $item[ 'ver' ];
+
+                if ( !empty( $item[ 'deps' ] ) )
+                {
+                    $deps = $item[ 'deps' ];
+                }
             }
 
             wp_enqueue_style( $name, $path, $deps, $ver );
