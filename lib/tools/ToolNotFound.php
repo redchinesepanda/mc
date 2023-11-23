@@ -47,9 +47,9 @@ class ToolNotFound
 	{
 		return self::check_category()
 
-			&& self::check_tag()
-			
-			&& self::check_taxonomy();
+			|| self::check_tag()
+
+			|| self::check_taxonomy();
 	}
 
 	public static function set_not_found()
