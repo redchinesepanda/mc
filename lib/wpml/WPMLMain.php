@@ -220,7 +220,7 @@ class WPMLMain
 
         WPMLLanguageMismatch::register();
 
-        // WPMLMedia::register();
+        WPMLHreflang::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
