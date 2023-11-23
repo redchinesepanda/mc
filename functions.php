@@ -22,4 +22,6 @@ LegalMain::register();
 
 // BonusAbout::affiliate_migrate();
 
+ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
+
 ?>
