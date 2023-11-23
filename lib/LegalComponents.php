@@ -115,6 +115,10 @@ class LegalComponents
         'compilation',
     ];
 
+	const TERMS_WIKI = [
+        'legal-wiki',
+    ];
+
 	public static function check_taxonomy( $terms = self::TERMS )
 	{
 		// return has_term( self::TERMS, self::TAXONOMY[ 'page_type' ] );
