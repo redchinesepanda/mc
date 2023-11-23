@@ -15,7 +15,7 @@ add_action( 'wp_enqueue_scripts', function () {
 
 	// ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
 
-	// wp_dequeue_style( $parent_style );
+	wp_dequeue_style( $parent_style );
 } );
 
 require_once( 'lib/LegalMain.php' );
