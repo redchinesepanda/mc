@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'WikiTemplateSingle.php' );
+require_once( 'WikiSingle.php' );
 
 require_once( 'WikiContent.php' );
 
@@ -44,7 +44,7 @@ class WikiMain
 
 	public static function register()
     {
-        WikiTemplateSingle::register();
+        WikiSingle::register();
 
 		WikiContent::register();
 

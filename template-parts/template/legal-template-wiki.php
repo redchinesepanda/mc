@@ -10,7 +10,7 @@ get_header();
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
 <section class="legal-section-content">
-	<?php echo WikiTemplateSingle::render(); ?>
+	<?php echo WikiSingle::render(); ?>
 </section>
 <section id="theme-bottom-section" class="legal-section-author">
 	<?php echo ReviewAuthor::render(); ?>
