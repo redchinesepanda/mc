@@ -12,6 +12,14 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+    const DEQUEUE = [
+        'thrive-theme-styles',
+
+        'parent-style',
+
+        'thrive-theme',
+    ];
+
     public static function register()
     {
         // TemplateBonus::register();
