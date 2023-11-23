@@ -22,6 +22,10 @@
 
 /* Breadcrumbs Background */
 
+nav.breadcrumbs {
+    background-color: rgb(89, 151, 227);
+}
+
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     background-image: url( '../../img/breadcrumbs/breadcrumbs-separator.svg' );
     background-position: left center;
