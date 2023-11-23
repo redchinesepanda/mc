@@ -89,11 +89,11 @@ class TemplateSingle
     }
 
 	const TEMPLATE = [
-        'single-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-bonus.php',
+        'single-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-single-bonus.php',
 
-        'single-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
+        'single-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-single-wiki.php',
 
-        'single-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki-thrive.php',
+        'single-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-single-thrive.php',
     ];
 
     public static function render()
