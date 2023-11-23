@@ -39,7 +39,7 @@ class TemplateMain
 
 		// return $result;
 
-        return TemplateSingle::render()
+        return TemplateSingle::render();
     }
     
     public static function render_page()
