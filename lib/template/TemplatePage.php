@@ -40,13 +40,13 @@ class TemplatePage
         // }
     }
 
-    const DEQUEUE = [
-        'thrive-theme-styles',
+    // const DEQUEUE = [
+    //     'thrive-theme-styles',
 
-        'parent-style',
+    //     'parent-style',
 
-        'thrive-theme',
-    ];
+    //     'thrive-theme',
+    // ];
 
 	public static function dequeue_style()
     {
@@ -81,7 +81,7 @@ class TemplatePage
     public static function check_compilation()
     {
         return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION )
-        
+
             && LegalComponents::check_not_admin();
     }
 
