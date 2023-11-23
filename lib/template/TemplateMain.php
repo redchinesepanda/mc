@@ -12,16 +12,27 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+    public static function register_style_thrive()
+    {
+        $parent_style = 'parent-style';
+    
+        wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+    
+        wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [ $parent_style ], wp_get_theme()->get( 'Version' ) );
+    }
+
     const DEQUEUE = [
         'thrive-theme-styles',
-
-        'parent-style',
 
         'thrive-theme',
     ];
 
     public static function register()
     {
+        $handler = new self();
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style_thrive' ] );
+
         // TemplateBonus::register();
 
         // TemplateWiki::register();
