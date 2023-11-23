@@ -100,7 +100,7 @@
 
 /* Review Position */
 
-.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
 .tcb-post-content > ol:not( .legal-override ) {
     padding-top: 0px;
     padding-bottom: 30px;
