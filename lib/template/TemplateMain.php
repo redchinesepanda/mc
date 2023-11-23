@@ -25,20 +25,6 @@ class TemplateMain
 
     public static function render()
     {
-        // $result = TemplateBonus::render();
-
-        // if ( empty( $result ) )
-        // {
-        //     $result = TemplateWiki::render_wiki_thrive();
-        // }
-
-        // if ( empty( $result ) )
-        // {
-        //     $result = TemplateWiki::render_wiki();
-        // }
-
-		// return $result;
-
         return TemplateSingle::render();
     }
     
