@@ -3,8 +3,20 @@
 class TemplatePage
 {
 	const CSS = [
-        'legal-template-page' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page.css',
+        // 'legal-template-page' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page.css',
+
+		// 	'ver' => '1.0.0',
+		// ],
+
+        'legal-template-page-review' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page-review.css',
+
+			'ver' => '1.0.0',
+		],
+
+        'legal-template-page-compilation' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-page-compilation.css',
 
 			'ver' => '1.0.0',
 		],
@@ -12,9 +24,19 @@ class TemplatePage
 
 	public static function register_style()
     {
-        if ( self::check_page() )
+        // if ( self::check_page() )
+        // {
+        //     ToolEnqueue::register_style( self::CSS );
+        // }
+
+        if ( self::check_review() )
         {
-            ToolEnqueue::register_style( self::CSS );
+            ToolEnqueue::register_style( [ self::CSS[ 'legal-template-page-review' ] ] );
+        }
+
+        if ( self::check_compilation() )
+        {
+            return self::render_compilation( [ self::CSS[ 'legal-template-page-compilation' ] ] );
         }
     }
 
