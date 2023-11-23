@@ -1,8 +1,8 @@
 <?php
 
-require_once( 'TemplateBonus.php' );
+// require_once( 'TemplateBonus.php' );
 
-require_once( 'TemplateWiki.php' );
+// require_once( 'TemplateWiki.php' );
 
 require_once( 'TemplateNotFound.php' );
 
