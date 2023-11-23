@@ -33,9 +33,10 @@
     .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
     .tcb-post-content ul:not( .legal-override ):not( [style] ) ol,
     .tcb-post-content ol:not( .legal-override ):not( [style] ) ol,
-    .tcb-post-content ol:not( .legal-override ):not( [style] ) ul,
+    .tcb-post-content ol:not( .legal-override ):not( [style] ) ul 
     /* .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ol,
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ul { */
+    {
         padding-left: 0px;
     }
 
