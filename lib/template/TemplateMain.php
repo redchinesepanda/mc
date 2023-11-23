@@ -12,53 +12,18 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
-    // const CSS = [
-    //     'parent-style' => [
-    //         'path' => get_template_directory_uri() . '/style.css',
-
-    //         'ver' => '1.0.0',
-    //     ],
-
-    //     'child-style' => [
-    //         'path' => get_stylesheet_directory_uri() . '/style.css',
-
-    //         'ver' => '1.0.0',
-    //     ],
-    // ];
-
-    // public static function register_style_thrive()
-    // {
-    //     $parent_style = 'parent-style';
-    
-    //     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    
-    //     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [ $parent_style ], wp_get_theme()->get( 'Version' ) );
-
-    //     wp_dequeue_style( 'child-style' );
-
-    //     wp_dequeue_style( 'parent-style' );
-    // }
-
     const DEQUEUE = [
         'thrive-theme-styles',
 
         'thrive-theme',
 
-        'child-style',
+        // 'child-style',
 
-        'parent-style',
+        // 'parent-style',
     ];
 
     public static function register()
     {
-        // $handler = new self();
-
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style_thrive' ] );
-
-        // TemplateBonus::register();
-
-        // TemplateWiki::register();
-
         TemplatePage::register();
 
         TemplateSingle::register();
