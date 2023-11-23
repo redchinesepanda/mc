@@ -24,10 +24,10 @@ class TemplatePage
 
 	public static function register_style()
     {
-        // if ( self::check_page() )
-        // {
-        //     ToolEnqueue::register_style( self::CSS );
-        // }
+        if ( self::check_page() )
+        {
+            ToolEnqueue::register_style( self::CSS );
+        }
 
         if ( self::check_review() )
         {
