@@ -8,6 +8,8 @@ require_once( 'TemplateNotFound.php' );
 
 require_once( 'TemplatePage.php' );
 
+require_once( 'TemplateSingle.php' );
+
 class TemplateMain
 {
     public static function register()
@@ -17,28 +19,13 @@ class TemplateMain
         TemplateWiki::register();
 
         TemplatePage::register();
+
+        TemplateSingle::register();
     }
 
     public static function render()
     {
-        $result = TemplateBonus::render();
-
-        if ( empty( $result ) )
-        {
-            $result = TemplateWiki::render_wiki_thrive();
-        }
-
-        if ( empty( $result ) )
-        {
-            $result = TemplateWiki::render_wiki();
-        }
-
-		return $result;
-    }
-    
-    public static function render_page()
-    {
-        $result = TemplatePage::render();
+        // $result = TemplateBonus::render();
 
         // if ( empty( $result ) )
         // {
@@ -50,7 +37,14 @@ class TemplateMain
         //     $result = TemplateWiki::render_wiki();
         // }
 
-		return $result;
+		// return $result;
+
+        return TemplateSingle::render()
+    }
+    
+    public static function render_page()
+    {
+        return TemplatePage::render();
     }
 
     public static function render_notfound()

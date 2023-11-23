@@ -47,6 +47,11 @@ class LegalComponents
 		}
 	}
 
+	public static function check_not_admin()
+    {
+		return !is_admin();
+    }
+
 	public static function check_post_type_post()
 	{
 		return is_singular( 'post' );
@@ -118,6 +123,19 @@ class LegalComponents
 	const TERMS_WIKI = [
         'legal-wiki',
     ];
+
+	const TERMS_BONUS = [
+		'bonusy',
+
+		'bonusy-kz',
+
+		'bonusy-by',
+	];
+
+	public static function check_category( $terms = self::TERMS_BONUS )
+    {
+		return has_category( $terms );
+    }
 
 	public static function check_taxonomy( $terms = self::TERMS )
 	{

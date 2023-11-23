@@ -71,12 +71,18 @@ class TemplatePage
 
     public static function check_review()
     {
-        return LegalComponents::check_taxonomy( LegalComponents::TERMS_REVIEW );
+        return LegalComponents::check_taxonomy( LegalComponents::TERMS_REVIEW )
+
+            && LegalComponents::check_not_admin()
+            
+            || LegalComponents::check_not_found();
     }
 
     public static function check_compilation()
     {
-        return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION );
+        return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION )
+        
+            && LegalComponents::check_not_admin();
     }
 
     public static function check_page()
