@@ -32,6 +32,10 @@ class TemplatePage
         if ( self::check_review() )
         {
             ToolEnqueue::register_style( [ self::CSS[ 'legal-template-page-review' ] ] );
+
+            LegalDebug::debug( [
+                'function' => 'register_style',
+            ] );
         }
 
         if ( self::check_compilation() )
