@@ -24,7 +24,7 @@ class TemplateSingle
 
 	public static function register_style()
     {
-        if ( self::check_page() )
+        if ( self::check_single() )
         {
             ToolEnqueue::register_style( self::CSS );
         }
@@ -40,25 +40,25 @@ class TemplateSingle
         // }
     }
 
-    const DEQUEUE = [
-        'thrive-theme-styles',
+    // const DEQUEUE = [
+    //     'thrive-theme-styles',
 
-        'parent-style',
+    //     'parent-style',
 
-        'thrive-theme',
-    ];
+    //     'thrive-theme',
+    // ];
 
-	public static function dequeue_style()
-    {
-        if ( self::check_page() )
-        {
-            ToolEnqueue::dequeue_style( self::DEQUEUE );
+	// public static function dequeue_style()
+    // {
+    //     if ( self::check_page() )
+    //     {
+    //         ToolEnqueue::dequeue_style( self::DEQUEUE );
 
-            LegalDebug::debug( [
-                'function' => 'TemplatePage::dequeue_style',
-            ] );
-        }
-    }
+    //         LegalDebug::debug( [
+    //             'function' => 'TemplatePage::dequeue_style',
+    //         ] );
+    //     }
+    // }
 
 	public static function register()
     {
@@ -69,42 +69,61 @@ class TemplateSingle
         // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
     }
 
-    public static function check_review()
+    public static function check_bonus()
     {
-        return LegalComponents::check_taxonomy( LegalComponents::TERMS_REVIEW );
+        return LegalComponents::check_category( LegalComponents::TERMS_BONUS )
+            
+            && LegalComponents::check_not_admin();
     }
 
-    public static function check_compilation()
+    public static function check_wiki()
     {
-        return LegalComponents::check_taxonomy( LegalComponents::TERMS_COMPILATION );
+        return LegalComponents::check_taxonomy( LegalComponents::TERMS_WIKI )
+            
+            && LegalComponents::check_not_admin();
     }
 
-    public static function check_page()
+    public static function check_single()
     {
-        return self::check_review() || self::check_compilation();
+        return self::check_bonus() || self::check_wiki();
     }
 
 	const TEMPLATE = [
-        'legal-template-page-review' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-review.php',
+        'single-bonus' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-bonus.php',
 
-        'legal-template-page-compilation' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-compilation.php',
+        'single-wiki' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki.php',
 
-        'legal-template-page-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-page-thrive.php',
+        'single-thrive' => LegalMain::LEGAL_PATH . '/template-parts/template/legal-template-wiki-thrive.php',
     ];
 
     public static function render()
     {
-        if ( self::check_review() )
+        if ( self::check_bonus() )
         {
-            return self::render_review();
+            return self::render_bonus();
         }
 
-        if ( self::check_compilation() )
+        if ( self::check_wiki() )
         {
-            return self::render_compilation();
+            return self::render_wiki();
         }
 
         return self::render_thrive();
+    }
+
+    public static function render_bonus()
+    {
+		return self::render_main( self::TEMPLATE[ 'single-bonus' ] );
+    }
+
+    public static function render_wiki()
+    {
+		return self::render_main( self::TEMPLATE[ 'single-wiki' ] );
+    }
+
+    public static function render_thrive()
+    {
+		return self::render_main( self::TEMPLATE[ 'single-thrive' ] );
     }
 
     public static function render_main( $template, $args = [] )
@@ -116,31 +135,6 @@ class TemplateSingle
         $output = ob_get_clean();
 
         return $output;
-    }
-
-    public static function render_review()
-    {
-		if ( !ReviewMain::check() )
-        {
-            return '';
-        }
-
-        return self::render_main( self::TEMPLATE[ 'legal-template-page-review' ] );
-    }
-
-    public static function render_compilation()
-    {
-		if ( !CompilationMain::check() )
-        {
-            return '';
-        }
-
-        return self::render_main( self::TEMPLATE[ 'legal-template-page-compilation' ] );
-    }
-
-    public static function render_thrive()
-    {
-		return self::render_main( self::TEMPLATE[ 'legal-template-page-thrive' ] );
     }
 }
 
