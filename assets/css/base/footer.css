@@ -81,6 +81,11 @@
 	z-index: 10;
 }
 
+.legal-footer-wrapper {
+	padding: 40px 0px;
+	position: relative;
+}
+
 .legal-footer {
 	margin: 0px auto;
 }
@@ -151,6 +156,10 @@
 }
 
 /* Background */
+
+.legal-footer-wrapper {
+	background-color: rgb(13, 11, 47);
+}
 
 .legal-footer .item-children .item-title {
 	background-image: url( '../../img/base/footer/menu-item.svg' );
