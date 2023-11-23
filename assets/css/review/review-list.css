@@ -182,11 +182,13 @@
     background-image: url( '../../img/review/review-ul.svg' );
 }
 
-.tcb-post-content > ul.legal-list-pros li:before {
+.tcb-post-content > ul.legal-list-pros li:before,
+.billet-mega-content > ul.legal-list-pros li:before {
     background-image: url( '../../img/review/review-pros-check.svg' );
 }
 
-.tcb-post-content > ul.legal-list-cons li:before {
+.tcb-post-content > ul.legal-list-cons li:before,
+.billet-mega-content > ul.legal-list-cons li:before {
     background-image: url( '../../img/review/review-cons-cross.svg' );
 }
 
