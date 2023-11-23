@@ -36,7 +36,7 @@ class TemplatePage
 
         if ( self::check_compilation() )
         {
-            return self::render_compilation( [ self::CSS[ 'legal-template-page-compilation' ] ] );
+            ToolEnqueue::register_style( [ self::CSS[ 'legal-template-page-compilation' ] ] );
         } 
     }
 
