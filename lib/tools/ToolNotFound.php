@@ -28,22 +28,28 @@ class ToolNotFound
 	// 	],
 	// ];
 
-	public static function check()
+	public static function check_taxonomy()
 	{
-		$permission_category = self::check_category();
+		return is_tax();
+	}
 
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::check',
-
-		// 	'permission_category' => $permission_category ? 'true' : 'false',
-		// ] );
-
-		return $permission_category;
+	public static function check_tag()
+	{
+		return is_tag();
 	}
 
 	public static function check_category()
 	{
 		return is_category();
+	}
+	
+	public static function check()
+	{
+		return self::check_category()
+
+			&& self::check_tag()
+			
+			&& self::check_taxonomy();
 	}
 
 	public static function set_not_found()
