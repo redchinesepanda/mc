@@ -35,6 +35,10 @@ class TemplatePage
         {
             ToolEnqueue::register_style( self::CSS );
         }
+        else
+        {
+            TemplateMain::register_style_thrive();
+        }
 
         // if ( self::check_review() )
         // {
@@ -73,7 +77,7 @@ class TemplatePage
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style_thrive' ] );
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_style_thrive' ] );
 
         // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
     }
