@@ -14,10 +14,21 @@
 
 .legal-breadcrumbs {
     padding: 5px 0px;
+    margin: 0px auto;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     padding-left: 20px;
+}
+
+/* Width and Heigh */
+
+nav.breadcrumbs {
+	min-height: 40px;
+}
+
+.legal-breadcrumbs {
+	width: 1080px;
 }
 
 /* Breadcrumbs Background */
