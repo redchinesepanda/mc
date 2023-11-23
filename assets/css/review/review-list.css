@@ -30,10 +30,10 @@
         padding-left: 30px;
     }
 
-    .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
+    /* .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ol{
         padding-left: 0px;
-    }
+    } */
 
     .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
     .tcb-post-content ol:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
@@ -145,6 +145,7 @@
 .tcb-post-content li > ol:not( .legal-override ) {
     padding-top: 15px;
     padding-bottom: 0px;
+    padding-left: 0px;
 }
 
 .tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
