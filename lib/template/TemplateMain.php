@@ -14,9 +14,9 @@ class TemplateMain
 {
     public static function register()
     {
-        TemplateBonus::register();
+        // TemplateBonus::register();
 
-        TemplateWiki::register();
+        // TemplateWiki::register();
 
         TemplatePage::register();
 
