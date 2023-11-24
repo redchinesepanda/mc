@@ -240,6 +240,12 @@ class ReviewTable
 			],
 
 			[
+				'title' => 'По умолчанию Прокрутка',
+
+				'value' => self::CLASSES[ 'scroll' ],
+			],
+
+			[
 				'title' => 'Ряд и Столбец',
 
 				'value' => 'legal-raw-column',
