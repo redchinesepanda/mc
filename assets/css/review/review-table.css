@@ -64,6 +64,11 @@
     .tcb-post-content .legal-column-3 {
         width: calc(100% / 3 - 12px);
     }
+
+    .tcb-post-content .legal-scroll:not( .legal-full-width ) {
+        width: fit-content;
+        margin: 0px auto;
+    }
 }
 
 /* Display */
@@ -75,11 +80,6 @@
 
 .tcb-post-content table {
     caption-side: unset;
-}
-
-.tcb-post-content .legal-scroll:not( .legal-full-width ) {
-    width: fit-content;
-    margin: 0px auto;
 }
 
 .tcb-post-content .legal-scroll {
