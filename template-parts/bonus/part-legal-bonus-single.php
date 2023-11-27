@@ -9,7 +9,7 @@
 
 		<?php echo BonusContent::render(); ?>
 
-		<div class="legla-bonus-button">
+		<div class="legal-bonus-button">
 			<?php echo BonusAbout::render_button(); ?>
 		</div>
 
