@@ -63,6 +63,7 @@
 
 .block-article-item {
     padding: 20px;
+    vertical-align: top;
 }
 
 .block-article-item .article {
