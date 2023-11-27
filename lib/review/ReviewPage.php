@@ -1,6 +1,6 @@
 <?php
 
-class ReviewTemplatePage
+class ReviewPage
 {
     const CSS = [
         'review-page' => [

@@ -32,7 +32,7 @@ require_once( 'ReviewTitle.php' );
 
 require_once( 'ReviewTable.php' );
 
-require_once( 'ReviewTemplatePage.php' );
+require_once( 'ReviewPage.php' );
 
 require_once( 'ReviewContent.php' );
 
@@ -197,7 +197,7 @@ class ReviewMain
 
         ReviewTable::register();
 
-        ReviewTemplatePage::register();
+        ReviewPage::register();
     }
 
     public static function encoding( $content )
