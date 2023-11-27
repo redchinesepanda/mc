@@ -22,13 +22,8 @@
 	margin-top: 10px;
 }
 
-.tcb-post-content .legal-faq-title:not( :last-of-type ).legal-active {
+.tcb-post-content .legal-faq-title.legal-active {
 	margin-bottom: 10px;
-}
-
-.tcb-post-content .legal-faq-title:last-of-type.legal-active {
-	margin-bottom: 30px;
-	background-color: coral;
 }
 
 /* .faq .faq-item-title, */
