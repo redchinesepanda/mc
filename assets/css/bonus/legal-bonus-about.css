@@ -80,11 +80,11 @@
   	justify-content: center;
 }
 
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	display: block;
 }
 
-.full-main-content .about-action-get[ href='' ],
+.legal-bonus-button .about-action-get[ href='' ],
 .legal-bonus-about .about-action-get[ href='' ] {
 	pointer-events: none;
 }
@@ -110,7 +110,7 @@
 }
 
 .legal-bonus-about .about-action-get,
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	padding: 12px 25px 12px 52px;
 }
 
@@ -122,7 +122,7 @@
 	left: 0px;
 }
 
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	margin: 0px auto 30px auto;
 }
 
@@ -135,7 +135,7 @@
 	width: 100%;
 }
 
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	width: fit-content;
 }
 
@@ -152,7 +152,7 @@
 }
 
 .legal-bonus-about .about-action-get,
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	background-color: rgb(89, 151, 227);
 	background-image: url( '../../img/bonus/bonus-get.svg' );
 	background-position: left 25px center;
@@ -211,7 +211,7 @@
 }
 
 .legal-bonus-about .about-action-get,
-.full-main-content .about-action-get {
+.legal-bonus-button .about-action-get {
 	color: rgb(255, 255, 255);
 	font-family: "Source Sans Pro";
 	font-size: 14px;
