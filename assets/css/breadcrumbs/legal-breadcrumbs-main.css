@@ -7,6 +7,15 @@
 	}
 }
 
+@media screen and ( min-width: 768px )
+{
+    /* Width and Height */
+
+    .legal-breadcrumbs {
+        width: 1080px;
+    }
+}
+
 /* Breadcrumbs Display */
 
 .legal-breadcrumbs {
@@ -34,10 +43,6 @@
 
 nav.breadcrumbs {
 	min-height: 40px;
-}
-
-.legal-breadcrumbs {
-	width: 1080px;
 }
 
 /* Breadcrumbs Background */
