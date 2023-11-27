@@ -1,5 +1,11 @@
 /* For separate Single Style */
 
+/* Position */
+
+.legal-section-content {
+	padding-top: 20px;
+}
+
 @media screen and ( max-width: 767px )
 {
 	/* Position */
