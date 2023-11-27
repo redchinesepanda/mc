@@ -6,7 +6,7 @@ class ReviewFAQ
         'review-faq' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-faq.css',
             
-            'ver' => '1.0.6',
+            'ver' => '1.0.7',
         ],
     ];
 
