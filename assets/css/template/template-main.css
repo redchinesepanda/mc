@@ -15,6 +15,7 @@ body:not( #legal-override ) {
 
 .legal-section-content {
 	margin: 0px auto;
+	padding-bottom: 30px;
 }
 
 /* Width and Height */
