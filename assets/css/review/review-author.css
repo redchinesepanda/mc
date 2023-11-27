@@ -12,7 +12,7 @@
 	/* Position */
 
 	#theme-bottom-section .legal-author {
-		padding: 20px 70px;
+		padding: 30px 70px;
 	}
 }
 
@@ -47,6 +47,11 @@
 }
 
 /* Background */
+
+#theme-bottom-section .legal-author
+{
+	border-top: 1px solid rgb(198,198,198);
+}
 
 #theme-bottom-section .legal-author .author-photo {
 	background-position: center center;

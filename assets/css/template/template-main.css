@@ -7,19 +7,21 @@
 	}
 }
 
+@media screen and ( min-width: 768px ) {
+	/* Position */
+
+	.legal-section-content {
+		margin: 0px auto;
+		padding-bottom: 30px;
+	}
+
+	/* Width and Height */
+
+	.legal-section-content {
+		width: 1080px;
+	}
+}
+
 body:not( #legal-override ) {
 	background-color: rgb(250, 252, 254);
-}
-
-/* Position */
-
-.legal-section-content {
-	margin: 0px auto;
-	padding-bottom: 30px;
-}
-
-/* Width and Height */
-
-.legal-section-content {
-	width: 1080px;
 }
