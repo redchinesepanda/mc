@@ -81,7 +81,7 @@
 }
 
 .legal-bonus-button .about-action-get {
-	display: block;
+	display: inline-block;
 }
 
 .legal-bonus-button .about-action-get[ href='' ],
