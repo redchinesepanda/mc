@@ -2,24 +2,24 @@
 
 class ReviewPage
 {
-    const CSS = [
-        'review-page' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-page.css',
+    // const CSS = [
+    //     'review-page' => [
+    //         'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-page.css',
 
-            'ver'=> '1.0.0',
-        ],
-    ];
+    //         'ver'=> '1.0.0',
+    //     ],
+    // ];
 
-    public static function register_style()
-    {
-        ReviewMain::register_style( self::CSS );
-    }
+    // public static function register_style()
+    // {
+    //     ReviewMain::register_style( self::CSS );
+    // }
 
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	const TEMPLATE = [
