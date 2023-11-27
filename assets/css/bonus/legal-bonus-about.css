@@ -123,7 +123,11 @@
 }
 
 .legal-bonus-button .about-action-get {
-	margin: 0px auto 30px auto;
+	/* margin: 0px auto 30px auto; */
+}
+
+.legal-bonus-button {
+	padding-bottom: 30px;
 }
 
 /* Width and Height */
@@ -220,4 +224,8 @@
 	letter-spacing: 1px;
 	line-height: 14.4px;
 	text-decoration: none;
+}
+
+.legal-bonus-button {
+	text-align: center;
 }
