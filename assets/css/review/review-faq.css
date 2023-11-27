@@ -22,13 +22,13 @@
 	margin-top: 10px;
 }
 
-.tcb-post-content .legal-faq-title.legal-active:not( :last-child ) {
+.tcb-post-content .legal-faq-title.legal-active:not( :last-of-type ) {
 	margin-bottom: 10px;
 }
 
-.tcb-post-content .legal-faq-title.legal-active:last-child {
+/* .tcb-post-content .legal-faq-title.legal-active:last-of-type {
 	margin-bottom: 30px;
-}
+} */
 
 /* .faq .faq-item-title, */
 .tcb-post-content .legal-faq-title {
