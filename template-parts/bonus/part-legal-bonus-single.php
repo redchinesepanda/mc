@@ -9,6 +9,10 @@
 
 		<?php echo BonusContent::render(); ?>
 
+		<div class="legla-bonus-button">
+			<?php echo BonusAbout::render_button(); ?>
+		</div>
+
 		<?php echo BonusCategories::render(); ?>
 
 		<?php echo BonusRelated::render_preview_categories(); ?>
