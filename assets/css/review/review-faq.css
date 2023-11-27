@@ -28,6 +28,7 @@
 
 .tcb-post-content .legal-faq-title.legal-active:last-of-type {
 	margin-bottom: 30px;
+	background-color: coral;
 }
 
 /* .faq .faq-item-title, */
