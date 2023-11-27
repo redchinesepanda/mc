@@ -21,8 +21,13 @@
 .tcb-post-content .legal-faq-title ~ .legal-faq-title {
 	margin-top: 10px;
 }
-.tcb-post-content .legal-faq-title.legal-active {
+
+.tcb-post-content .legal-faq-title.legal-active:not( :last-child ) {
 	margin-bottom: 10px;
+}
+
+.tcb-post-content .legal-faq-title.legal-active:last-child {
+	margin-bottom: 30px;
 }
 
 /* .faq .faq-item-title, */
