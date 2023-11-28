@@ -134,7 +134,7 @@ class ReviewTable
 	
 				// 'result' => $result,
 				
-				'td' => $td,
+				'td' => $td->parentNode,
 
 				'th' => $th,
 			] );
