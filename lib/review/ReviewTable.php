@@ -123,27 +123,35 @@ class ReviewTable
 
 			if ( $tds->length > 0 )
 			{
+				$ths = [];
+
 				foreach ( $tds as $td )
 				{
-					$th = $dom->createElement( 'th', $td->textContent );
-
-					LegalDebug::debug( [
-						'function' => 'set_th',
-			
-						// 'result' => $result,
-						
-						'td' => substr( $td->textContent, 0, 30 ),
-
-						'th' => substr( $th->textContent, 0, 30 ),
-					] );
+					$ths[] = $dom->createElement( 'th', $td->textContent );
 
 					try
 					{
 						// $tr->replaceChild( $th, $td );
 
-						$tr->appendChild( $th );
+						// $tr->appendChild( $th );
 
 						$tr->removeChild( $td );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'function' => 'set_th',
+
+							'message' => $e->getMessage(),
+						] );
+					}
+				}
+
+				foreach ( $ths as $th )
+				{
+					try
+					{
+						$tr->appendChild( $th );
 					}
 					catch ( DOMException $e )
 					{
