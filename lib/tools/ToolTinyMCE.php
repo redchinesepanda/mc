@@ -46,17 +46,17 @@ class ToolTinyMCE
 	
 	public static function disable_rel_noreferer( $rel )
 	{	
-		// return preg_replace( '/noreferrer\s*/i', '', $rel );
-
-		// return false;
-		
-		return '';
-
 		LegalDebug::die( [
 			'function' => 'disable_rel_noreferer',
 
 			'rel' => $rel,
 		] );
+		
+		// return preg_replace( '/noreferrer\s*/i', '', $rel );
+
+		// return false;
+		
+		return '';
 	}
 
 	const CSS = [
