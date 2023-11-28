@@ -56,6 +56,8 @@ class BilletMega
 
 	public static function get_parts( $content )
 	{
+		$content = do_shortcode( $content );
+
 		$args = [
 			'content' => $content,
 
@@ -98,7 +100,9 @@ class BilletMega
 
 		// $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $dom ) );
 		
-		$args[ 'content' ] = do_shortcode( $dom->saveHTML( $dom ) );
+		// $args[ 'content' ] = do_shortcode( $dom->saveHTML( $dom ) );
+		
+		$args[ 'content' ] = $dom->saveHTML( $dom );
 
 		return $args;
 	}
