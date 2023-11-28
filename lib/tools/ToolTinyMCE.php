@@ -42,6 +42,25 @@ class ToolTinyMCE
 		$init[ 'allow_unsafe_link_target' ] = true;
 
 		$init[ 'default_link_target' ] = "_blank";
+
+		$init[ 'rel_list' ] = [
+			[
+				'title' => 'No Follow',
+
+				'value' => 'nofollow',
+			],
+
+			[
+				'title' => 'Disable',
+
+				'value' => '',
+			],
+		];
+
+		// rel_list: [
+		// 	{title: 'No Follow', value: 'nofollow'},
+		// 	{title: 'Disable', value: ''}
+		// ]
 	
 		return $init;
 	}
