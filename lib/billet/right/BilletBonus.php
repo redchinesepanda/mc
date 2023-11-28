@@ -28,7 +28,15 @@ class BilletBonus
         {
             foreach ( $feature_bonus as $feature_bonus_item )
             {
-                if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter[ 'features' ] ) )
+                if (
+                    !empty( $filter[ 'features' ] )
+
+                    && in_array(
+                        $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ],
+                        
+                        $filter[ 'features' ]
+                    )
+                )
                 {
                     $result = $feature_bonus_item;
                 }
