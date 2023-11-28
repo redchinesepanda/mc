@@ -123,12 +123,6 @@ class ReviewTable
 
         $tables = self::get_nodes_table( $dom );
 
-		LegalDebug::debug( [
-			'function' => 'set_th',
-
-			'length' => $tables->length,
-		] );
-
 		if ( $tables->length == 0 ) {
 			return $content;
 		}
@@ -136,6 +130,12 @@ class ReviewTable
 		foreach ( $tables as $table )
 		{
 			$class_table = $table->getAttribute( 'class' );
+
+			LegalDebug::debug( [
+				'function' => 'set_th',
+	
+				'class_table' => $class_table,
+			] );
 
 			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
 
