@@ -125,18 +125,20 @@ class ReviewTable
 		
 		foreach ( $td_all as $td )
 		{
-			$th = $dom->createElement( 'th', $td->nodeValue );
+			// $th = $dom->createElement( 'th', $td->nodeValue );
 
-			$result = $td->parentNode->replaceChild(
-				$th,
+			// $result = $td->parentNode->replaceChild(
+			// 	$th,
 				
-				$td
-			);
+			// 	$td
+			// );
 
 			LegalDebug::debug( [
 				'function' => 'set_th',
 	
-				'replaceChild' => $result,
+				// 'replaceChild' => $result,
+				
+				'td' => $td,
 			] );
 		}
 
@@ -192,7 +194,7 @@ class ReviewTable
 
 				// $thead = self::replace_td( $dom, $thead );
 				
-				// self::replace_td( $dom, $thead );
+				self::replace_td( $dom, $thead );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
