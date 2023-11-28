@@ -153,7 +153,7 @@ class ReviewTable
 			{
 				// $result = $tr->replaceChild( $th, $td );
 
-				$tr->removeChild( $td );
+				$result_removeChild = $tr->removeChild( $td );
 				
 				$tr->appendChild( $th );
 			}
@@ -162,7 +162,7 @@ class ReviewTable
 				LegalDebug::debug( [
 					'function' => 'set_th',
 
-					// 'td' => substr( $td->textContent, 0, 30 ),
+					'result_removeChild' => $result_removeChild,
 
 					'message' => $e->getMessage(),
 				] );
