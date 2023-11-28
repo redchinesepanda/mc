@@ -158,7 +158,7 @@ class ReviewTable
 			{
 				$thead->appendChild( $tr );
 
-				$table->appendChild( $thead );
+				$table->insertBefore( $thead, $tr->parent );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
