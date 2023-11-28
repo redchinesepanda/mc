@@ -155,7 +155,7 @@ class ReviewTable
 
 				// $tr->removeChild( $td );
 				
-				// $tr->appendChild( $th );
+				$tr->appendChild( $th );
 			}
 			catch ( DOMException $e )
 			{
