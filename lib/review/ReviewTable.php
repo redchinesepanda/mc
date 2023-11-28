@@ -141,7 +141,7 @@ class ReviewTable
 
 			try
 			{
-				$result = $tds->replaceChild( $th, $td );
+				$result = $tr->replaceChild( $th, $td );
 			}
 			catch ( DOMException $e )
 			{
