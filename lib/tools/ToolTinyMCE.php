@@ -52,11 +52,15 @@ class ToolTinyMCE
 			'rel' => $rel,
 		] );
 		
-		// return preg_replace( '/noreferrer\s*/i', '', $rel );
+		$rel = preg_replace( '/noopener\s*/i', '', $rel );
+
+		$rel = preg_replace( '/noreferrer\s*/i', '', $rel );
 
 		// return false;
 		
-		return '';
+		// return '';
+		
+		return $rel;
 	}
 
 	const CSS = [
