@@ -141,7 +141,7 @@ class ReviewTable
 
 							'td->parentNode' => $td->parentNode,
 
-							'td->parentElement' => $td->parentElement,
+							'td->textContent' => $td->textContent,
 						] );
 					}
 					catch ( DOMException $e )
