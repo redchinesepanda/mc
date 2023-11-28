@@ -135,6 +135,12 @@ class ReviewTable
 					try
 					{
 						$tr->removeChild( $td );
+
+						LegalDebug::debug( [
+							'function' => 'set_th',
+
+							'td->parentNode' => $td->parentNode,
+						] );
 					}
 					catch ( DOMException $e )
 					{
