@@ -55,7 +55,7 @@ class ReviewGallery
 
         add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        add_filter( 'post_gallery', [ $handler, 'wp_kama_post_gallery_filter' ], 10, 3 );
+        add_filter( 'post_gallery', [ $handler, 'render_gallery' ], 10, 3 );
     }
 
     const FIELD = [
@@ -117,7 +117,7 @@ class ReviewGallery
 
         return $args;
     }
-    public static function wp_kama_post_gallery_filter( $output, $attr, $instance )
+    public static function render_gallery( $output, $attr, $instance )
     {
         if ( !ReviewMain::check() )
         {
