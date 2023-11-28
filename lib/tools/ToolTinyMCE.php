@@ -34,7 +34,7 @@ class ToolTinyMCE
 		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ], 999 );
     }
 
-	function disable_rel_noopener( $init )
+	public static function disable_rel_noopener( $init )
 	{
 
 		$init[ 'allow_unsafe_link_target' ] = true;
@@ -44,13 +44,19 @@ class ToolTinyMCE
 
 	// function disable_rel_noreferer( $rel, $link_html )
 	
-	function disable_rel_noreferer( $rel )
+	public static function disable_rel_noreferer( $rel )
 	{	
 		// return preg_replace( '/noreferrer\s*/i', '', $rel );
 
 		// return false;
 		
 		return '';
+
+		LegalDebug::die( [
+			'function' => 'disable_rel_noreferer',
+
+			'rel' => $rel,
+		] );
 	}
 
 	const CSS = [
