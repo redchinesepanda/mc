@@ -115,7 +115,7 @@ class ReviewTable
 
 	public static function replace_td( $dom, $thead )
 	{
-		$tr = $thead->getElementsByTagName( 'tr' );
+		$tr = $thead->getElementsByTagName( 'tr' )->item( 0 );
 
 		if ( empty( $tr ) )
 		{
