@@ -37,6 +37,17 @@ class ReviewTable
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
+	public static function get_nodes_table( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			// '//table[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')]'
+
+			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')]'
+		);
+	}
+
 	public static function get_nodes_scroll( $dom )
 	{
 		return self::get_nodes(
@@ -102,6 +113,58 @@ class ReviewTable
 		}
 	}
 
+	public static function set_th( $content )
+	{
+		if ( !ReviewMain::check() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $tables = self::get_nodes_table( $dom );
+
+		if ( $tables->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $tables as $table )
+		{
+			$class_table = $table->getAttribute( 'class' );
+
+			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+
+			// $class_scroll = self::CLASSES[ 'scroll' ];
+
+			// if ( str_contains( $class_table, self::CLASSES[ 'full-width' ] ) )
+			// {
+			// 	$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
+
+			// 	$class_scroll .= ' ' . self::CLASSES[ 'full-width' ] ;
+			// }
+
+			// $table->setAttribute( 'class', $class_table );
+
+			$thead = $dom->createElement( 'div' );
+
+			$tr = $table->getElementsByTagName( 'body' )->item(0);
+
+			if ( !empty( $tr ) )
+			{
+				$thead->prepend( $tr );
+
+				$table->prepend( $thead );
+			}
+
+			// $scroll->setAttribute( 'class', $class_scroll );
+
+			// $table->parentNode->insertBefore( $scroll, $table );
+
+			// $scroll->appendChild( $table );
+		}
+
+		return $dom->saveHTML( $dom );
+	}
+
 	public static function set_scroll( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -150,6 +213,8 @@ class ReviewTable
 		$content = self::set_tbody( $content );
 
 		$content = self::set_scroll( $content );
+
+		$content = self::set_th( $content );
 
 		return $content;
 	}
@@ -216,6 +281,10 @@ class ReviewTable
 		'scroll' => 'legal-scroll',
 
 		'full-width' => 'legal-full-width',
+
+		'raw-column' => 'legal-raw-column',
+
+		'raw-default' => 'legal-raw-default',
 	];
 
 	public static function table_classes( $settings )
