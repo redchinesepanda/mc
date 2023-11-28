@@ -153,7 +153,7 @@ class ReviewTable
 			{
 				// $result = $tr->replaceChild( $th, $td );
 
-				// $tr->removeChild( $td );
+				$tr->removeChild( $td );
 				
 				$tr->appendChild( $th );
 			}
