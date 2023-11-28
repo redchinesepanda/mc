@@ -127,11 +127,7 @@ class ReviewTable
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
 
-			// $result = $td->parentNode->replaceChild(
-			// 	$th,
-				
-			// 	$td
-			// );
+			$result = $thead->replaceChild( $th, $td );
 
 			LegalDebug::debug( [
 				'function' => 'set_th',
