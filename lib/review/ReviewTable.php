@@ -121,17 +121,11 @@ class ReviewTable
 		{
 			$tds = $tr->getElementsByTagName( 'td' );
 
-			LegalDebug::debug( [
-				'function' => 'set_th',
-	
-				'tds' => $tds->length,
-			] );
-
 			if ( $tds->length > 0 )
 			{
 				foreach ( $tds as $td )
 				{
-					$th = $dom->createElement( 'th', $td->nodeValue );
+					$th = $dom->createElement( 'th', $td->textContent );
 
 					LegalDebug::debug( [
 						'function' => 'set_th',
@@ -163,6 +157,12 @@ class ReviewTable
 					}
 				}
 			}
+
+			LegalDebug::debug( [
+				'function' => 'set_th',
+	
+				'tds->length' => $tds->length,
+			] );
 		}
 
 		return $thead;
