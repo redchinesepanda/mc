@@ -188,7 +188,7 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
-			$class_table = $table->getAttribute( 'class' );
+			// $class_table = $table->getAttribute( 'class' );
 
 			// LegalDebug::debug( [
 			// 	'function' => 'set_th',
@@ -196,39 +196,23 @@ class ReviewTable
 			// 	'class_table' => $class_table,
 			// ] );
 
-			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+			$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
-			// $class_scroll = self::CLASSES[ 'scroll' ];
-
-			// if ( str_contains( $class_table, self::CLASSES[ 'full-width' ] ) )
-			// {
-			// 	$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
-
-			// 	$class_scroll .= ' ' . self::CLASSES[ 'full-width' ] ;
-			// }
-
-			// $table->setAttribute( 'class', $class_table );
-
-			$thead = $dom->createElement( 'thead' );
-
-			$tr = $table->getElementsByTagName( 'tr' )->item(0);
-
-			if ( !empty( $tr ) )
+			if ( !empty( $tbody ) )
 			{
-				$table->insertBefore( $thead, $tr->parentNode );
+				$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
-				$thead->appendChild( $tr );
+				if ( !empty( $tr ) )
+				{
+					$thead = $dom->createElement( 'thead' );
+					
+					$table->insertBefore( $thead, $tr->parentNode );
 
-				// $thead = self::replace_td( $dom, $thead );
-				
-				self::replace_td( $dom, $thead );
+					$thead->appendChild( $tr );
+					
+					// self::replace_td( $dom, $thead );
+				}
 			}
-
-			// $scroll->setAttribute( 'class', $class_scroll );
-
-			// $table->parentNode->insertBefore( $scroll, $table );
-
-			// $scroll->appendChild( $table );
 		}
 
 		return $dom->saveHTML( $dom );
