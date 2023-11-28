@@ -115,21 +115,33 @@ class ReviewTable
 
 	public static function replace_td( $dom, $thead )
 	{
-		$td_all = $thead->getElementsByTagName( 'td' );
+		$tr = $thead->getElementsByTagName( 'tr' );
+
+		if ( empty( $tr ) )
+		{
+			return $thead;
+		}
+
+		$tds = $tr->getElementsByTagName( 'td' );
 
 		LegalDebug::debug( [
 			'function' => 'set_th',
 
-			'td_all' => $td_all->length,
+			'tds' => $tds->length,
 		] );
+
+		if ( $tds->length == 0 )
+		{
+			return $thead;
+		}
 		
-		foreach ( $td_all as $td )
+		foreach ( $tds as $td )
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
 
 			try
 			{
-				$result = $td->parentNode->replaceChild( $th, $td );
+				$result = $tds->replaceChild( $th, $td );
 			}
 			catch ( DOMException $e )
 			{
@@ -153,7 +165,7 @@ class ReviewTable
 			] );
 		}
 
-		// return $thead;
+		return $thead;
 	}
 
 	public static function set_th( $content )

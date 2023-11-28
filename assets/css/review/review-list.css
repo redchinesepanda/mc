@@ -62,7 +62,7 @@
 
 /* Review Display */
 
-.tcb-post-content ul:not( .legal-override ),
+.tcb-post-content ul:not( .legal-override ):not( .legal-sitemap ),
 .tcb-post-content ol:not( .legal-override ) {
     margin: 0px;
 }

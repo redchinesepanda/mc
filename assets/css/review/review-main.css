@@ -58,13 +58,6 @@
     margin: 0px;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ),
-.tcb-post-content ul:not( .legal-override ) li,
-.tcb-post-content ol:not( .legal-override ) li,
-.tcb-post-content table:not( .legal-override ) {
-    margin: 0px;
-}
-
 .bonus-content > p:not( :last-child ):not( .legal-override ),
 .billet-description > p:not( :last-child ):not( .legal-override ),
 .billet .billet-description-full > p:not( :last-child ):not( .legal-override ) {
