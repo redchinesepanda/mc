@@ -98,7 +98,7 @@ class BilletMega
 
 		// $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $dom ) );
 		
-		$args[ 'content' ] = $dom->saveHTML( $dom );
+		$args[ 'content' ] = do_shortcode( $dom->saveHTML( $dom ) );
 
 		return $args;
 	}
