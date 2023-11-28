@@ -115,35 +115,21 @@ class ReviewTable
 
 	public static function replace_td( $dom, $thead )
 	{
-		$td_all = $thead->getElementsByTagName('td');
+		$td_all = $thead->getElementsByTagName( 'td' );
 
-		// foreach( $thead->childNodes as $tr )
+		LegalDebug::debug( [
+			'function' => 'set_th',
+
+			'td_all' => $td_all->length,
+		] );
 		
 		foreach( $td_all as $td )
 		{
-			// $tds = $tr->getElementsByTagName('td');
-
-			// $i = $tds->length - 1;
-
-			// while($i > -1)
-			// {
-				// $td = $tds->item($i);
+			$td->parentNode->replaceChild(
+				$dom->createElement( 'th', $td->nodeValue ),
 				
-				// $text = $td->nodeValue;
-				
-				// $th = $document->createElement( 'th', $text );
-
-				// $th = $document->createElement( 'th', $td->nodeValue );
-				
-				$td->parentNode->replaceChild(
-					$dom->createElement( 'th', $td->nodeValue ),
-					
-					$td
-				);
-				
-				// $i--;
-			// }
-		
+				$td
+			);
 		}
 
 		return $thead;
