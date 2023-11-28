@@ -128,13 +128,12 @@ class ReviewTable
 				foreach ( $tds as $td )
 				{
 					$ths[] = $dom->createElement( 'th', $td->textContent );
+				}
 
+				foreach ( $tds as $td )
+				{
 					try
 					{
-						// $tr->replaceChild( $th, $td );
-
-						// $tr->appendChild( $th );
-
 						$tr->removeChild( $td );
 					}
 					catch ( DOMException $e )
@@ -164,11 +163,11 @@ class ReviewTable
 				}
 			}
 
-			LegalDebug::debug( [
-				'function' => 'set_th',
+			// LegalDebug::debug( [
+			// 	'function' => 'set_th',
 	
-				'tds->length' => $tds->length,
-			] );
+			// 	'tds->length' => $tds->length,
+			// ] );
 		}
 
 		return $thead;
