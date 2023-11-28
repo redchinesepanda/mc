@@ -132,17 +132,17 @@ class ReviewTable
 
 				foreach ( $tds as $td )
 				{
+					LegalDebug::debug( [
+						'function' => 'set_th',
+
+						'td->parentNode' => $td->parentNode,
+
+						'td->textContent' => $td->textContent,
+					] );
+
 					try
 					{
 						$tr->removeChild( $td );
-
-						LegalDebug::debug( [
-							'function' => 'set_th',
-
-							'td->parentNode' => $td->parentNode,
-
-							'td->textContent' => $td->textContent,
-						] );
 					}
 					catch ( DOMException $e )
 					{
