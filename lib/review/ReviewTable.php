@@ -127,7 +127,20 @@ class ReviewTable
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
 
-			// $result = $td->parentNode->replaceChild( $th, $td );
+			try
+			{
+				$result = $td->parentNode->replaceChild( $th, $td );
+			}
+			catch ( DOMException $e )
+			{
+				LegalDebug::debug( [
+					'function' => 'set_th',
+
+					'td' => substr( $node->textContent, 0, 30 ),
+
+					'message' => $e->getMessage(),
+				] );
+			}
 
 			LegalDebug::debug( [
 				'function' => 'set_th',
