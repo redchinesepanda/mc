@@ -12,7 +12,9 @@
 		<div class="mega-about-logo"></div>
 		<?php if( !$args[ 'no-controls' ] ) : ?>
 			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
-			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+			<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
+				<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+			<?php endif; ?>
 		<?php endif; ?>
 		<?php if( !empty( $args[ 'author' ] ) ) : ?>
 			<div class="mega-about-name"><?php echo $args[ 'author' ][ 'name' ] ?></div>
