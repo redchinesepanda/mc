@@ -44,7 +44,7 @@ class ReviewTable
 			
 			// '//table[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')]'
 
-			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')]'
+			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'stats' ] . '\')]'
 		);
 	}
 
@@ -368,6 +368,8 @@ class ReviewTable
 		'raw-column' => 'legal-raw-column',
 
 		'raw-default' => 'legal-raw-default',
+
+		'stats' => 'legal-stats',
 	];
 
 	public static function table_classes( $settings )
