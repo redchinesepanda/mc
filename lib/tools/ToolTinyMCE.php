@@ -46,9 +46,9 @@ class ToolTinyMCE
 	
 	public static function disable_rel_noreferer( $rel )
 	{	
-		$rel = preg_replace( '/noopener\s*/i', '', $rel );
+		$rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
 
-		$rel = preg_replace( '/noreferrer\s*/i', '', $rel );
+		$rel_filtered = preg_replace( '/noreferrer\s*/i', '', $rel_filtered );
 
 		// return false;
 		
@@ -58,9 +58,11 @@ class ToolTinyMCE
 			'function' => 'disable_rel_noreferer',
 
 			'rel' => $rel,
+
+			'rel_filtered' => $rel_filtered,
 		] );
 		
-		return $rel;
+		return $rel_filtered;
 	}
 
 	const CSS = [
