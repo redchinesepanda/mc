@@ -151,7 +151,11 @@ class ReviewTable
 
 			try
 			{
-				$result = $tr->replaceChild( $th, $td );
+				// $result = $tr->replaceChild( $th, $td );
+
+				$tr::removeChild( $td );
+				
+				$tr::appendChild( $th );
 			}
 			catch ( DOMException $e )
 			{
