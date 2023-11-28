@@ -33,13 +33,15 @@ class ToolTinyMCE
 		
 		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ], 999 );
 		
-		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ] );
+		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ] );
     }
 
 	public static function disable_rel_noopener( $init )
 	{
 
 		$init[ 'allow_unsafe_link_target' ] = true;
+
+		$init[ 'default_link_target' ] = "_blank";
 	
 		return $init;
 	}
