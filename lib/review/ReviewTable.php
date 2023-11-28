@@ -123,10 +123,12 @@ class ReviewTable
 			'td_all' => $td_all->length,
 		] );
 		
-		foreach( $td_all as $td )
+		foreach ( $td_all as $td )
 		{
+			$th = $dom->createElement( 'th', $td->nodeValue );
+			
 			$result = $td->parentNode->replaceChild(
-				$dom->createElement( 'th', $td->nodeValue ),
+				$th,
 				
 				$td
 			);
