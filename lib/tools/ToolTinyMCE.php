@@ -29,65 +29,34 @@ class ToolTinyMCE
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter('tiny_mce_before_init', [ $handler, 'disable_rel_noopener' ] );
+		add_filter('tiny_mce_before_init', [ $handler, 'init_anchors' ] );
 		
 		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ], 999 );
 		
 		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ] );
     }
 
-	public static function disable_rel_noopener( $init )
+	public static function init_anchors( $init )
 	{
-
 		$init[ 'allow_unsafe_link_target' ] = true;
 
-		$init[ 'default_link_target' ] = "_blank";
+		$init[ 'default_link_target' ] = '';
 
 		$init[ 'rel_list' ] = json_encode( [
+			[
+				'title' => 'None',
+
+				'value' => '',
+			],
+
 			[
 				'title' => 'No Follow',
 
 				'value' => 'nofollow',
 			],
-
-			[
-				'title' => 'Disable',
-
-				'value' => '',
-			],
 		] );
-
-		// rel_list: [
-		// 	{title: 'No Follow', value: 'nofollow'},
-		// 	{title: 'Disable', value: ''}
-		// ]
 	
 		return $init;
-	}
-
-	// function disable_rel_noreferer( $rel, $link_html )
-	
-	public static function disable_rel_noreferer( $rel )
-	{	
-		// $rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
-
-		// $rel_filtered = preg_replace( '/noreferrer\s*/i', '', $rel_filtered );
-
-		// return false;
-		
-		// return '';
-		
-		// LegalDebug::die( [
-		// 	'function' => 'disable_rel_noreferer',
-
-		// 	'rel' => $rel,
-
-		// 	'rel_filtered' => $rel_filtered,
-		// ] );
-		
-		// return $rel_filtered;
-
-		return;
 	}
 
 	const CSS = [
