@@ -29,7 +29,7 @@ class ToolTinyMCE
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		// add_filter('tiny_mce_before_init', [ $handler, 'disable_rel_noopener' ] );
+		add_filter('tiny_mce_before_init', [ $handler, 'disable_rel_noopener' ] );
 		
 		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ], 999 );
     }
