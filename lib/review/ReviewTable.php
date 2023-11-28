@@ -131,11 +131,11 @@ class ReviewTable
 		{
 			$class_table = $table->getAttribute( 'class' );
 
-			LegalDebug::debug( [
-				'function' => 'set_th',
+			// LegalDebug::debug( [
+			// 	'function' => 'set_th',
 	
-				'class_table' => $class_table,
-			] );
+			// 	'class_table' => $class_table,
+			// ] );
 
 			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
 
@@ -152,7 +152,7 @@ class ReviewTable
 
 			$thead = $dom->createElement( 'div' );
 
-			$tr = $table->getElementsByTagName( 'body' )->item(0);
+			$tr = $table->getElementsByTagName( 'tr' )->item(0);
 
 			if ( !empty( $tr ) )
 			{
