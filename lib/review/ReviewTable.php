@@ -138,7 +138,7 @@ class ReviewTable
 			] );
 		}
 
-		return $thead;
+		// return $thead;
 	}
 
 	public static function set_th( $content )
@@ -188,7 +188,9 @@ class ReviewTable
 
 				$thead->appendChild( $tr );
 
-				$thead = self::replace_td( $dom, $thead );
+				// $thead = self::replace_td( $dom, $thead );
+				
+				self::replace_td( $dom, $thead );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
