@@ -46,7 +46,9 @@ class ToolTinyMCE
 	{	
 		// return preg_replace( '/noreferrer\s*/i', '', $rel );
 
-		return false;
+		// return false;
+		
+		return '';
 	}
 
 	const CSS = [
