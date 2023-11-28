@@ -46,7 +46,7 @@ class ToolTinyMCE
 	
 	public static function disable_rel_noreferer( $rel )
 	{	
-		$rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
+		// $rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
 
 		$rel_filtered = preg_replace( '/noreferrer\s*/i', '', $rel_filtered );
 
