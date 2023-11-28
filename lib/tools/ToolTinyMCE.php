@@ -31,9 +31,7 @@ class ToolTinyMCE
 
 		add_filter('tiny_mce_before_init', [ $handler, 'init_anchors' ] );
 		
-		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ], 999 );
-		
-		// add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ] );
+		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noopener' ], 999 );
     }
 
 	public static function init_anchors( $init )
@@ -57,6 +55,11 @@ class ToolTinyMCE
 		] );
 	
 		return $init;
+	}
+	
+	public static function disable_rel_noopener( $rel )
+	{	
+		return preg_replace( '/noopener\s*/i', '', $rel );
 	}
 
 	const CSS = [
