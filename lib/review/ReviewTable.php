@@ -139,21 +139,6 @@ class ReviewTable
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
 
-			// try
-			// {
-			// 	$result = $tr->replaceChild( $th, $td );
-			// }
-			// catch ( DOMException $e )
-			// {
-			// 	LegalDebug::debug( [
-			// 		'function' => 'set_th',
-
-			// 		'td' => substr( $node->textContent, 0, 30 ),
-
-			// 		'message' => $e->getMessage(),
-			// 	] );
-			// }
-
 			LegalDebug::debug( [
 				'function' => 'set_th',
 	
@@ -163,6 +148,21 @@ class ReviewTable
 
 				'th' => substr( $th->textContent, 0, 30 ),
 			] );
+
+			try
+			{
+				$result = $tr->replaceChild( $th, $td );
+			}
+			catch ( DOMException $e )
+			{
+				LegalDebug::debug( [
+					'function' => 'set_th',
+
+					'td' => substr( $td->textContent, 0, 30 ),
+
+					'message' => $e->getMessage(),
+				] );
+			}
 		}
 
 		return $thead;
