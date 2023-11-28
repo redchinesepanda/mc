@@ -117,55 +117,51 @@ class ReviewTable
 	{
 		$tr = $thead->getElementsByTagName( 'tr' )->item( 0 );
 
-		if ( empty( $tr ) )
+		if ( !empty( $tr ) )
 		{
-			return $thead;
-		}
-
-		$tds = $tr->getElementsByTagName( 'td' );
-
-		LegalDebug::debug( [
-			'function' => 'set_th',
-
-			'tds' => $tds->length,
-		] );
-
-		if ( $tds->length == 0 )
-		{
-			return $thead;
-		}
-		
-		foreach ( $tds as $td )
-		{
-			$th = $dom->createElement( 'th', $td->nodeValue );
+			$tds = $tr->getElementsByTagName( 'td' );
 
 			LegalDebug::debug( [
 				'function' => 'set_th',
 	
-				// 'result' => $result,
-				
-				'td' => substr( $td->textContent, 0, 30 ),
-
-				'th' => substr( $th->textContent, 0, 30 ),
+				'tds' => $tds->length,
 			] );
 
-			try
+			if ( $tds->length > 0 )
 			{
-				// $result = $tr->replaceChild( $th, $td );
+				foreach ( $tds as $td )
+				{
+					$th = $dom->createElement( 'th', $td->nodeValue );
 
-				$result_removeChild = $tr->removeChild( $td );
-				
-				$tr->appendChild( $th );
-			}
-			catch ( DOMException $e )
-			{
-				LegalDebug::debug( [
-					'function' => 'set_th',
+					LegalDebug::debug( [
+						'function' => 'set_th',
+			
+						// 'result' => $result,
+						
+						'td' => substr( $td->textContent, 0, 30 ),
 
-					'result_removeChild' => $result_removeChild,
+						'th' => substr( $th->textContent, 0, 30 ),
+					] );
 
-					'message' => $e->getMessage(),
-				] );
+					try
+					{
+						// $result = $tr->replaceChild( $th, $td );
+
+						// $result_removeChild = $tr->removeChild( $td );
+						
+						$tr->appendChild( $th );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'function' => 'set_th',
+
+							'result_removeChild' => $result_removeChild,
+
+							'message' => $e->getMessage(),
+						] );
+					}
+				}
 			}
 		}
 
@@ -210,7 +206,7 @@ class ReviewTable
 
 					$thead->appendChild( $tr );
 					
-					// self::replace_td( $dom, $thead );
+					self::replace_td( $dom, $thead );
 				}
 			}
 		}
