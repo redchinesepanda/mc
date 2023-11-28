@@ -113,7 +113,7 @@ class ReviewTable
 		}
 	}
 
-	public static function replace_td( $dom, $thead )
+	public static function replace_td( $dom, &$thead )
 	{
 		$td_all = $thead->getElementsByTagName( 'td' );
 
