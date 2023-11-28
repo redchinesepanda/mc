@@ -139,20 +139,16 @@ class ReviewTable
 
 					try
 					{
-						// $result = $tr->replaceChild( $th, $td );
+						// $tr->replaceChild( $th, $td );
 
-						
-						
 						$tr->appendChild( $th );
 
-						$result_removeChild = $tr->removeChild( $td );
+						$tr->removeChild( $td );
 					}
 					catch ( DOMException $e )
 					{
 						LegalDebug::debug( [
 							'function' => 'set_th',
-
-							'result_removeChild' => $result_removeChild,
 
 							'message' => $e->getMessage(),
 						] );
