@@ -126,7 +126,7 @@ class ReviewTable
 		foreach ( $td_all as $td )
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
-			
+
 			$result = $td->parentNode->replaceChild(
 				$th,
 				
@@ -192,7 +192,7 @@ class ReviewTable
 
 				// $thead = self::replace_td( $dom, $thead );
 				
-				self::replace_td( $dom, $thead );
+				// self::replace_td( $dom, $thead );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
