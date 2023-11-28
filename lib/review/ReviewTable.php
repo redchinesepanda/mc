@@ -113,7 +113,7 @@ class ReviewTable
 		}
 	}
 
-	public static function replace_td( $thead )
+	public static function replace_td( $dom, $thead )
 	{
 		$td_all = $thead->getElementsByTagName('td');
 
@@ -136,7 +136,7 @@ class ReviewTable
 				// $th = $document->createElement( 'th', $td->nodeValue );
 				
 				$td->parentNode->replaceChild(
-					$document->createElement( 'th', $td->nodeValue ),
+					$dom->createElement( 'th', $td->nodeValue ),
 					
 					$td
 				);
@@ -196,7 +196,7 @@ class ReviewTable
 
 				$thead->appendChild( $tr );
 
-				$thead = self::replace_td( $thead );
+				$thead = self::replace_td( $dom, $thead );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
