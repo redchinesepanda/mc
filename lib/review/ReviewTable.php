@@ -42,8 +42,6 @@ class ReviewTable
 		return self::get_nodes(
 			$dom,
 			
-			// '//table[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')]'
-
 			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'stats' ] . '\')]'
 		);
 	}
@@ -111,66 +109,6 @@ class ReviewTable
 
 			$table->appendChild( $tbody_new );
 		}
-	}
-
-	public static function replace_td( $dom, $thead )
-	{
-		$tr = $thead->getElementsByTagName( 'tr' )->item( 0 );
-
-		if ( !empty( $tr ) )
-		{
-			$tds = $tr->getElementsByTagName( 'td' );
-
-			if ( $tds->length > 0 )
-			{
-				$ths = [];
-
-				foreach ( $tds as $td )
-				{
-					$ths[] = $dom->createElement( 'th', $td->textContent );
-				}
-
-				foreach ( $tds as $td )
-				{
-					try
-					{
-						$tr->removeChild( $td );
-					}
-					catch ( DOMException $e )
-					{
-						LegalDebug::debug( [
-							'function' => 'set_th',
-
-							'message' => $e->getMessage(),
-						] );
-					}
-				}
-
-				foreach ( $ths as $th )
-				{
-					try
-					{
-						$tr->appendChild( $th );
-					}
-					catch ( DOMException $e )
-					{
-						LegalDebug::debug( [
-							'function' => 'set_th',
-
-							'message' => $e->getMessage(),
-						] );
-					}
-				}
-			}
-
-			// LegalDebug::debug( [
-			// 	'function' => 'set_th',
-	
-			// 	'tds->length' => $tds->length,
-			// ] );
-		}
-
-		return $thead;
 	}
 
 	public static function createThead( $dom, $tds )
