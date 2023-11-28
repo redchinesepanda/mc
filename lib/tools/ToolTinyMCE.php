@@ -37,14 +37,16 @@ class ToolTinyMCE
 	function disable_rel_noopener( $init )
 	{
 
-		$init['allow_unsafe_link_target'] = true;
+		$init[ 'allow_unsafe_link_target' ] = true;
 	
 		return $init;
 	}
 
 	function disable_rel_noreferer( $rel_values )
 	{	
-		return preg_replace( '/noreferrer\s*/i', '', $rel_values );
+		// return preg_replace( '/noreferrer\s*/i', '', $rel_values );
+
+		return false;
 	}
 
 	const CSS = [
