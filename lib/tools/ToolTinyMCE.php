@@ -43,7 +43,7 @@ class ToolTinyMCE
 
 		$init[ 'default_link_target' ] = "_blank";
 
-		$init[ 'rel_list' ] = [
+		$init[ 'rel_list' ] = json_encode( [
 			[
 				'title' => 'No Follow',
 
@@ -55,7 +55,7 @@ class ToolTinyMCE
 
 				'value' => '',
 			],
-		];
+		] );
 
 		// rel_list: [
 		// 	{title: 'No Follow', value: 'nofollow'},
