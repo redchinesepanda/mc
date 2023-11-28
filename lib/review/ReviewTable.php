@@ -380,6 +380,12 @@ class ReviewTable
 			],
 
 			[
+				'title' => 'По умолчанию Ряд',
+
+				'value' => self::CLASSES[ 'raw-default' ],
+			],
+
+			[
 				'title' => 'По умолчанию 50%',
 
 				'value' => 'legal-column',
