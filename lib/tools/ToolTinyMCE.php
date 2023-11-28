@@ -46,23 +46,25 @@ class ToolTinyMCE
 	
 	public static function disable_rel_noreferer( $rel )
 	{	
-		$rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
+		// $rel_filtered = preg_replace( '/noopener\s*/i', '', $rel );
 
-		$rel_filtered = preg_replace( '/noreferrer\s*/i', '', $rel_filtered );
+		// $rel_filtered = preg_replace( '/noreferrer\s*/i', '', $rel_filtered );
 
 		// return false;
 		
 		// return '';
 		
-		LegalDebug::die( [
-			'function' => 'disable_rel_noreferer',
+		// LegalDebug::die( [
+		// 	'function' => 'disable_rel_noreferer',
 
-			'rel' => $rel,
+		// 	'rel' => $rel,
 
-			'rel_filtered' => $rel_filtered,
-		] );
+		// 	'rel_filtered' => $rel_filtered,
+		// ] );
 		
-		return $rel_filtered;
+		// return $rel_filtered;
+
+		return;
 	}
 
 	const CSS = [
