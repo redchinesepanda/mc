@@ -42,9 +42,9 @@ class ToolTinyMCE
 		return $init;
 	}
 
-	function disable_rel_noreferer( $rel_values )
+	function disable_rel_noreferer( $rel, $link_html )
 	{	
-		return preg_replace( '/noreferrer\s*/i', '', $rel_values );
+		return preg_replace( '/noreferrer\s*/i', '', $rel );
 
 		// return false;
 	}
