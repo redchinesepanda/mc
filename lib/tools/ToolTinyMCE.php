@@ -44,9 +44,9 @@ class ToolTinyMCE
 
 	function disable_rel_noreferer( $rel, $link_html )
 	{	
-		return preg_replace( '/noreferrer\s*/i', '', $rel );
+		// return preg_replace( '/noreferrer\s*/i', '', $rel );
 
-		// return false;
+		return false;
 	}
 
 	const CSS = [
