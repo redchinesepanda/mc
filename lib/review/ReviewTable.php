@@ -158,7 +158,7 @@ class ReviewTable
 				LegalDebug::debug( [
 					'function' => 'set_th',
 
-					'td' => substr( $td->textContent, 0, 30 ),
+					// 'td' => substr( $td->textContent, 0, 30 ),
 
 					'message' => $e->getMessage(),
 				] );
