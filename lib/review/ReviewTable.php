@@ -132,14 +132,6 @@ class ReviewTable
 
 				foreach ( $tds as $td )
 				{
-					LegalDebug::debug( [
-						'function' => 'set_th',
-
-						'td->parentNode' => $td->parentNode,
-
-						'td->textContent' => $td->textContent,
-					] );
-
 					try
 					{
 						$tr->removeChild( $td );
@@ -181,6 +173,44 @@ class ReviewTable
 		return $thead;
 	}
 
+	public static function createThead( $dom, $tds )
+	{
+		if ( $tds->length > 0 )
+			{
+				$ths = [];
+
+				foreach ( $tds as $td )
+				{
+					$ths[] = $dom->createElement( 'th', $td->textContent );
+				}
+
+				$thead = $dom->createElement( 'thead' );
+
+				$tr = $dom->createElement( 'tr' );
+
+				foreach ( $ths as $th )
+				{
+					try
+					{
+						$tr->appendChild( $th );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'function' => 'set_th',
+
+							'message' => $e->getMessage(),
+						] );
+					}
+				}
+
+				$thead->appendChild( $tr );
+			}
+
+			return $thead;
+		}
+	}
+
 	public static function set_th( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -197,14 +227,6 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
-			// $class_table = $table->getAttribute( 'class' );
-
-			// LegalDebug::debug( [
-			// 	'function' => 'set_th',
-	
-			// 	'class_table' => $class_table,
-			// ] );
-
 			$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
 			if ( !empty( $tbody ) )
@@ -213,13 +235,13 @@ class ReviewTable
 
 				if ( !empty( $tr ) )
 				{
-					$thead = $dom->createElement( 'thead' );
-					
+					$tds = $tr->getElementsByTagName( 'td' );
+
+					$thead = self::createThead( $dom, $tds );
+
 					$table->insertBefore( $thead, $tr->parentNode );
 
-					$thead->appendChild( $tr );
-					
-					self::replace_td( $dom, $thead );
+					$tr->parentNode->removeChild( $tr );
 				}
 			}
 		}
