@@ -157,8 +157,8 @@ class ReviewTable
 			if ( !empty( $tr ) )
 			{
 				$table->insertBefore( $thead, $tr->parent );
-				
-				$thead->appendChild( $tr );
+
+				$table->appendChild( $tr );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
