@@ -113,7 +113,7 @@ class ReviewTable
 		}
 	}
 
-	public static function replace_td( $dom, &$thead )
+	public static function replace_td( $dom, $thead )
 	{
 		$td_all = $thead->getElementsByTagName( 'td' );
 
@@ -127,12 +127,12 @@ class ReviewTable
 		{
 			$th = $dom->createElement( 'th', $td->nodeValue );
 
-			$result = $thead->replaceChild( $th, $td );
+			$result = $td->parentNode->replaceChild( $th, $td );
 
 			LegalDebug::debug( [
 				'function' => 'set_th',
 	
-				// 'replaceChild' => $result,
+				'result' => $result,
 				
 				'td' => $td,
 
