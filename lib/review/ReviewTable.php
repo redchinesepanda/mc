@@ -156,7 +156,7 @@ class ReviewTable
 
 			if ( !empty( $tr ) )
 			{
-				$table->insertBefore( $thead, $tr->parent );
+				$table->insertBefore( $thead, $tr->parentNode );
 
 				$table->appendChild( $tr );
 			}
