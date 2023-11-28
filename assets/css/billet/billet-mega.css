@@ -130,6 +130,7 @@
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 15px;
+	margin-bottom: 0px;
 }
 
 .legal-billet-mega.legal-horizontal p:not( :last-child ):not( .legal-override ) {
@@ -139,6 +140,7 @@
 .legal-billet-mega h3:not( .legal-override ),
 .legal-billet-mega h4:not( .legal-override ) {
     padding-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
