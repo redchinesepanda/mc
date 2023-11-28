@@ -159,9 +159,9 @@ class ReviewTable
 	
 				// 'result' => $result,
 				
-				'td' => $td,
+				'td' => substr( $td->textContent, 0, 30 ),
 
-				'th' => $th,
+				'th' => substr( $th->textContent, 0, 30 ),
 			] );
 		}
 
