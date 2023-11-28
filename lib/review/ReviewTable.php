@@ -123,6 +123,12 @@ class ReviewTable
 
         $tables = self::get_nodes_table( $dom );
 
+		LegalDebug::debug( [
+			'function' => 'set_th',
+
+			'length' => $tables->length,
+		] );
+
 		if ( $tables->length == 0 ) {
 			return $content;
 		}
