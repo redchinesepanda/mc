@@ -176,39 +176,38 @@ class ReviewTable
 	public static function createThead( $dom, $tds )
 	{
 		if ( $tds->length > 0 )
+		{
+			$ths = [];
+
+			foreach ( $tds as $td )
 			{
-				$ths = [];
-
-				foreach ( $tds as $td )
-				{
-					$ths[] = $dom->createElement( 'th', $td->textContent );
-				}
-
-				$thead = $dom->createElement( 'thead' );
-
-				$tr = $dom->createElement( 'tr' );
-
-				foreach ( $ths as $th )
-				{
-					try
-					{
-						$tr->appendChild( $th );
-					}
-					catch ( DOMException $e )
-					{
-						LegalDebug::debug( [
-							'function' => 'set_th',
-
-							'message' => $e->getMessage(),
-						] );
-					}
-				}
-
-				$thead->appendChild( $tr );
+				$ths[] = $dom->createElement( 'th', $td->textContent );
 			}
 
-			return $thead;
+			$thead = $dom->createElement( 'thead' );
+
+			$tr = $dom->createElement( 'tr' );
+
+			foreach ( $ths as $th )
+			{
+				try
+				{
+					$tr->appendChild( $th );
+				}
+				catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'function' => 'set_th',
+
+						'message' => $e->getMessage(),
+					] );
+				}
+			}
+
+			$thead->appendChild( $tr );
 		}
+
+		return $thead;
 	}
 
 	public static function set_th( $content )
