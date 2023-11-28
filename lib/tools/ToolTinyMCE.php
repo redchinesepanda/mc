@@ -54,13 +54,13 @@ class ToolTinyMCE
 		
 		// return '';
 		
-		LegalDebug::die( [
-			'function' => 'disable_rel_noreferer',
+		// LegalDebug::die( [
+		// 	'function' => 'disable_rel_noreferer',
 
-			'rel' => $rel,
+		// 	'rel' => $rel,
 
-			'rel_filtered' => $rel_filtered,
-		] );
+		// 	'rel_filtered' => $rel_filtered,
+		// ] );
 		
 		return $rel_filtered;
 	}
