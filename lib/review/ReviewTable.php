@@ -140,6 +140,8 @@ class ReviewTable
 							'function' => 'set_th',
 
 							'td->parentNode' => $td->parentNode,
+
+							'td->parentNode' => $td->parentElement,
 						] );
 					}
 					catch ( DOMException $e )
