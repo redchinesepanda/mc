@@ -141,9 +141,11 @@ class ReviewTable
 					{
 						// $result = $tr->replaceChild( $th, $td );
 
-						// $result_removeChild = $tr->removeChild( $td );
+						
 						
 						$tr->appendChild( $th );
+
+						$result_removeChild = $tr->removeChild( $td );
 					}
 					catch ( DOMException $e )
 					{
