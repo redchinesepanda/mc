@@ -150,7 +150,7 @@ class ReviewTable
 
 			// $table->setAttribute( 'class', $class_table );
 
-			$thead = $dom->createElement( 'div' );
+			$thead = $dom->createElement( 'thead' );
 
 			$tr = $table->getElementsByTagName( 'tr' )->item(0);
 
