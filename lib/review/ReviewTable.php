@@ -113,6 +113,42 @@ class ReviewTable
 		}
 	}
 
+	public static function replace_td( $thead )
+	{
+		$td_all = $thead->getElementsByTagName('td');
+
+		// foreach( $thead->childNodes as $tr )
+		
+		foreach( $td_all as $td )
+		{
+			// $tds = $tr->getElementsByTagName('td');
+
+			// $i = $tds->length - 1;
+
+			// while($i > -1)
+			// {
+				// $td = $tds->item($i);
+				
+				// $text = $td->nodeValue;
+				
+				// $th = $document->createElement( 'th', $text );
+
+				// $th = $document->createElement( 'th', $td->nodeValue );
+				
+				$td->parentNode->replaceChild(
+					$document->createElement( 'th', $td->nodeValue ),
+					
+					$td
+				);
+				
+				// $i--;
+			// }
+		
+		}
+
+		return $thead;
+	}
+
 	public static function set_th( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -159,6 +195,8 @@ class ReviewTable
 				$table->insertBefore( $thead, $tr->parentNode );
 
 				$thead->appendChild( $tr );
+
+				$thead = self::replace_td( $thead );
 			}
 
 			// $scroll->setAttribute( 'class', $class_scroll );
