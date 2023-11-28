@@ -28,7 +28,24 @@ class ToolTinyMCE
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		add_filter('tiny_mce_before_init', [ $handler, 'disable_rel_noopener' ] );
+		
+		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noreferer' ] );
     }
+
+	function disable_rel_noopener( $init )
+	{
+
+		$init['allow_unsafe_link_target'] = true;
+	
+		return $init;
+	}
+
+	function disable_rel_noreferer( $rel_values )
+	{	
+		return preg_replace( '/noreferrer\s*/i', '', $rel_values );
+	}
 
 	const CSS = [
         'legal-tinymce-main' => LegalMain::LEGAL_URL . '/assets/css/tools/tool-tinymce-main.css',

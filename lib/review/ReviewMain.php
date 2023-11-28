@@ -89,7 +89,11 @@ class ReviewMain
             'ver' => '1.2.9',
         ],
 
-        'review-overview' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
+        'review-overview' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     public static function register_style( $styles = [] )
