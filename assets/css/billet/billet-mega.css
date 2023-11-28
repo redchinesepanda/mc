@@ -120,6 +120,10 @@
 	margin-bottom: 30px;
 }
 
+.legal-billet-mega .billet-mega-content p {
+	margin-bottom: 0px;
+}
+
 .legal-billet-mega .mega-about-afillate {
 	padding: 5px 40px 5px 20px;
 }
