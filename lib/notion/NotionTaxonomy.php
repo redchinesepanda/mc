@@ -50,22 +50,30 @@ class NotionTaxonomy
 
 		$terms = [];
 
-		foreach ( $values as $value )
-		{
-			$value = wp_strip_all_tags( $value );
+		// foreach ( $values as $value )
+		// {
+		// 	$value = wp_strip_all_tags( $value );
 
-			$term = term_exists( $value, $taxonomy );
+		// 	$term = term_exists( $value, $taxonomy );
 
-			if ( 0 === $term || null === $term )
-			{
-				$term = wp_insert_term( $value, $taxonomy );
-			}
+		// 	if ( 0 === $term || null === $term )
+		// 	{
+		// 		$term = wp_insert_term( $value, $taxonomy );
+		// 	}
 
-			if ( !is_wp_error( $term ) )
-			{
-				$terms[] = (int) $term['term_id'];
-			}
-		}
+		// 	if ( !is_wp_error( $term ) )
+		// 	{
+		// 		$terms[] = (int) $term[ 'term_id' ];
+		// 	}
+		// }
+
+		LegalDebug::debug( [
+			'function' => 'NotionTaxonomy::format',
+
+			'values' => $values,
+
+			'terms' => $terms,
+		] );
 
 		return $terms;
 	}
