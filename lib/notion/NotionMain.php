@@ -16,9 +16,9 @@ class NotionMain
 {
 	public static function register_functions()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
+		// add_action( 'edit_form_after_title', [ $handler, 'billet_list_show' ], 10, 4 );
 
 		NotionList::register_functions();
 
@@ -75,16 +75,16 @@ class NotionMain
 		return array_keys( $arr ) === range( 0, count( $arr ) - 1 );
 	}
 
-	public static function billet_list_show( $post )
-	{
-		LegalDebug::debug( [
-			'function' => 'NotionMain::billet_list_show',
+	// public static function billet_list_show( $post )
+	// {
+	// 	LegalDebug::debug( [
+	// 		'function' => 'NotionMain::billet_list_show',
 
-			self::META_FIELD[ 'about-afillate' ] => get_post_meta( $post->ID, self::META_FIELD[ 'about-afillate' ], true ),
+	// 		self::META_FIELD[ 'about-afillate' ] => get_post_meta( $post->ID, self::META_FIELD[ 'about-afillate' ], true ),
 
-			NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ], $post->ID, false ),
-		] );
-	}
+	// 		NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . NotionAffiliate::REVIEW_ABOUT_FIELD[ 'afillate' ], $post->ID, false ),
+	// 	] );
+	// }
 }
 
 ?>
