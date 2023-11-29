@@ -46,26 +46,28 @@ class NotionTaxonomy
 			return [];
 		}
 
-		$values = ! is_array( $value ) ? explode( ',', $value ) : $value;
+		$items = ! is_array( $value ) ? explode( ',', $value ) : $value;
 
 		$terms = [];
 
-		// foreach ( $values as $value )
-		// {
-		// 	$value = wp_strip_all_tags( $value );
+		foreach ( $items as $item )
+		{
+			$name = wp_strip_all_tags( $item->name );
 
-		// 	$term = term_exists( $value, $taxonomy );
+			$slug = wp_strip_all_tags( $item->slug );
 
-		// 	if ( 0 === $term || null === $term )
-		// 	{
-		// 		$term = wp_insert_term( $value, $taxonomy );
-		// 	}
+			$term = term_exists( $slug, $taxonomy );
 
-		// 	if ( !is_wp_error( $term ) )
-		// 	{
-		// 		$terms[] = (int) $term[ 'term_id' ];
-		// 	}
-		// }
+			if ( 0 === $term || null === $term )
+			{
+				$term = wp_insert_term( $name, $taxonomy, [ 'slug' => $item->slug ] );
+			}
+
+			if ( !is_wp_error( $term ) )
+			{
+				$terms[] = (int) $term[ 'term_id' ];
+			}
+		}
 
 		LegalDebug::die( [
 			'function' => 'NotionTaxonomy::format',
