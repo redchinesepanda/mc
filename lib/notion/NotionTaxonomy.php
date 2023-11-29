@@ -67,7 +67,7 @@ class NotionTaxonomy
 		// 	}
 		// }
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'function' => 'NotionTaxonomy::format',
 
 			'values' => $values,
