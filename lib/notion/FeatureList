@@ -2,7 +2,7 @@ prop("Характеристики Плашек Relation")
 .map( current.prop("Slug") )
 .join( "," )
 
-// Features JSON Array start
+// Features JSON Array slug start
 
 "["
 
@@ -12,4 +12,48 @@ prop("Характеристики Плашек Relation")
 
 + "]"
 
-// Features JSON Array end
+// Features JSON Array slug end
+
+// Features JSON Array name + slug start
+
+"["
+
++ prop("Характеристики Test")
+.map(
+	"{"
+	
+	+ [
+		[ "name", "\"" + current.prop("Характеристика") + "\"" ],
+		
+		[ "slug", "\"" + current.prop("Slug") + "\"" ]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join( "," )
+
++ "]"
+
+// Features JSON Array name + slug start
+
+"["
+
++ prop("Характеристики Test")
+.map(
+	"\"" + current.prop("Характеристика") + "\""
+)
+.join( "," )
+
++ "]"
+
+"["
+
++ prop("Характеристики Test")
+.map(
+	"\"" + current.prop("Slug") + "\""
+)
+.join( "," )
+
++ "]"
