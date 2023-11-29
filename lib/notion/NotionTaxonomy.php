@@ -69,13 +69,13 @@ class NotionTaxonomy
 			}
 		}
 
-		LegalDebug::die( [
-			'function' => 'NotionTaxonomy::format',
+		// LegalDebug::die( [
+		// 	'function' => 'NotionTaxonomy::format',
 
-			'items' => $items,
+		// 	'items' => $items,
 
-			'terms' => $terms,
-		] );
+		// 	'terms' => $terms,
+		// ] );
 
 		return $terms;
 	}
