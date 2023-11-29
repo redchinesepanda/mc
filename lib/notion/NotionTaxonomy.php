@@ -72,7 +72,7 @@ class NotionTaxonomy
 		LegalDebug::die( [
 			'function' => 'NotionTaxonomy::format',
 
-			'values' => $values,
+			'items' => $items,
 
 			'terms' => $terms,
 		] );
