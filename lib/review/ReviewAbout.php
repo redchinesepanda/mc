@@ -274,7 +274,7 @@ class ReviewAbout
     {
         $atts = shortcode_atts( self::PAIRS_ABOUT, $atts, self::SHPRTCODE[ 'about' ] );
 
-        return render_about( $atts );
+        return self::render_about( $atts );
     }
 
     public static function render_about( $atts = [] )
