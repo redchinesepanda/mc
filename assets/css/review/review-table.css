@@ -172,7 +172,7 @@
 
 /* Table legal-raw-rawspan with Tbody only */
 
-.tcb-post-content table.legal-raw-rawspan tbody:first-child {
+.tcb-post-content table.legal-raw-rawspan thead:first-child {
     background-color: rgb(8, 5, 61);
 }
 
