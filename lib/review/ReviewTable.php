@@ -136,7 +136,7 @@ class ReviewTable
 		}
 	}
 
-	public static function createThead( $dom, $tds )
+	public static function create_thead( $dom, $tds )
 	{
 		if ( $tds->length > 0 )
 		{
@@ -173,6 +173,27 @@ class ReviewTable
 		return $thead;
 	}
 
+	public static function set_thead( $dom, $table )
+	{
+		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
+
+		if ( !empty( $tbody ) )
+		{
+			$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+
+			if ( !empty( $tr ) )
+			{
+				$tds = $tr->getElementsByTagName( 'td' );
+
+				$thead = self::create_thead( $dom, $tds );
+
+				$table->insertBefore( $thead, $tr->parentNode );
+
+				$tr->parentNode->removeChild( $tr );
+			}
+		}
+	}
+
 	public static function set_th( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -189,47 +210,27 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
-			$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
+			self::set_thead( $dom, $table );
 
-			if ( !empty( $tbody ) )
-			{
-				$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+			// $tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
-				if ( !empty( $tr ) )
-				{
-					$tds = $tr->getElementsByTagName( 'td' );
-
-					$thead = self::createThead( $dom, $tds );
-
-					$table->insertBefore( $thead, $tr->parentNode );
-
-					$tr->parentNode->removeChild( $tr );
-				}
-			}
-
-			self::column_th( $dom, $table );
-
-			// $class_table = $table->getAttribute( 'class' );
-
-			// if ( str_contains( $class_table, self::CLASSES[ 'raw-column' ] ) )
+			// if ( !empty( $tbody ) )
 			// {
-			// 	$trs = $table->getElementsByTagName( 'tr' );
-				
-			// 	if ( $trs->length != 0 )
+			// 	$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+
+			// 	if ( !empty( $tr ) )
 			// 	{
-			// 		foreach ( $trs as $tr )
-			// 		{
-			// 			$td = $tr->getElementsByTagName( 'td' )->item( 0 );
+			// 		$tds = $tr->getElementsByTagName( 'td' );
 
-			// 			if ( !empty( $td ) )
-			// 			{
-			// 				$th = $dom->createElement( 'th', $td->textContent );
+			// 		$thead = self::create_thead( $dom, $tds );
 
-			// 				$td->parentNode->replaceChild( $th, $td );
-			// 			}
-			// 		}
+			// 		$table->insertBefore( $thead, $tr->parentNode );
+
+			// 		$tr->parentNode->removeChild( $tr );
 			// 	}
 			// }
+
+			self::column_th( $dom, $table );
 		}
 
 		return $dom->saveHTML( $dom );
