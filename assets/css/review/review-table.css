@@ -138,7 +138,9 @@
 }
 
 .tcb-post-content table caption {
-    background-color: #FAFCFE;
+    /* background-color: #FAFCFE; */
+    
+    background-color: transparent;
 }
 
 /* Table with Thead and Tbody */
