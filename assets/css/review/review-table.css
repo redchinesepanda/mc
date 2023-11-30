@@ -42,17 +42,19 @@
         margin-right: 8px;
     }
 
-    .tcb-post-content .legal-column-3:nth-child( 3n ) {
-        margin-left: 10px;
-    }
+    /* legal-column-3 */
 
-    .tcb-post-content .legal-column-3:nth-child( 3n+1 ) {
+    .tcb-post-content .legal-column-3:nth-of-type( 3n+1 ) {
         margin-right: 10px;
     }
 
-    .tcb-post-content .legal-column-3:nth-child( 3n+2 ) {
+    .tcb-post-content .legal-column-3:nth-of-type( 3n+2 ) {
         margin-right: 4px;
         margin-left: 4px;
+    }
+
+    .tcb-post-content .legal-column-3:nth-of-type( 3n ) {
+        margin-left: 10px;
     }
 
     /* Review Width and Height */
@@ -281,6 +283,7 @@
 
 /* .tcb-post-content table.legal-raw-column thead tr:first-child,
 .tcb-post-content table.legal-raw-column tr > td:first-child  */
+
 .tcb-post-content table.legal-raw-column th {
     font-weight: 600;
 }
