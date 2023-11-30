@@ -118,10 +118,10 @@
     width: 100%;
 }
 
-.tcb-post-content table.legal-raw.legal-column tbody,
+/* .tcb-post-content table.legal-raw.legal-column tbody,
 .tcb-post-content table.legal-raw.legal-column-3 tbody {
     width: 100%;
-}
+} */
 
 /* .tcb-post-content table caption {
     width: 100%;
