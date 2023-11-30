@@ -28,6 +28,11 @@
         display: inline-block;
     } */
 
+    .tcb-post-content .legal-column,
+    .tcb-post-content .legal-column-3 {
+        display: inline-table;
+    }
+
     /* Review Position */
 
     /* .tcb-post-content table.legal-column + table.legal-column {
