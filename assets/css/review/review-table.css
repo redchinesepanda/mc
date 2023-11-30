@@ -228,7 +228,8 @@
     background-color: rgb(239, 245, 251);
 }
 
-.tcb-post-content table.legal-raw-default tbody tr:nth-child( 2n ) {
+.tcb-post-content table.legal-raw-default tbody tr:nth-child( 2n ),
+.tcb-post-content table.legal-raw-default thead tr:nth-child( 2n+1 ) {
     background-color: transparent;
 }
 
