@@ -47,17 +47,17 @@
     
 
     .tcb-post-content .legal-column-3:nth-of-type( 3n+2 ) {
-        margin-right: 10px;
+        margin-right: 9px;
         background-color: burlywood;
     }
 
     .tcb-post-content .legal-column-3:nth-of-type( 3n ) {
-        margin-right: 4px;
-        margin-left: 4px;
+        margin-right: 5px;
+        margin-left: 5px;
         background-color: #5997e3;
     }
     .tcb-post-content .legal-column-3:nth-of-type( 3n+1 ) {
-        margin-left: 10px;
+        margin-left: 9px;
         background-color: antiquewhite;
     }
 
