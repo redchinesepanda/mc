@@ -303,7 +303,9 @@
 /* .tcb-post-content table.legal-raw caption ~ tbody tr:first-child, */
 /* .tcb-post-content table.legal-raw thead tr:first-child, */
 .tcb-post-content table.legal-raw th,
-.tcb-post-content table.legal-raw-rawspan thead:first-child {
+/* .tcb-post-content table.legal-raw-rawspan thead:first-child */
+.tcb-post-content table.legal-raw-rawspan th
+{
     font-weight: 700;
     color: rgb(255, 255, 255);
 }
