@@ -279,8 +279,9 @@
 
 /* Review Typography */
 
-.tcb-post-content table.legal-raw-column thead tr:first-child,
-.tcb-post-content table.legal-raw-column tr > td:first-child {
+/* .tcb-post-content table.legal-raw-column thead tr:first-child,
+.tcb-post-content table.legal-raw-column tr > td:first-child  */
+.tcb-post-content table.legal-raw-column th {
     font-weight: 600;
 }
 
