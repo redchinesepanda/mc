@@ -250,6 +250,7 @@
 .tcb-post-content table.legal-raw-column th {
     font-weight: 600;
     color: rgba(10, 10, 10, 0.85);
+    text-align: center;
 }
 
 .tcb-post-content table.legal-raw th,
@@ -257,6 +258,7 @@
 {
     font-weight: 700;
     color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .tcb-post-content table caption {
