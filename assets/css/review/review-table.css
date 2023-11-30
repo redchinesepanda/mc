@@ -95,8 +95,12 @@
 /* Review Position */
 
 .tcb-post-content table {
-    margin: 0px auto;
     margin-bottom: 30px;
+}
+
+.tcb-post-content table:not( .legal-column ):not( .legal-column-3 ) {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tcb-post-content table.legal-check td:last-child {
@@ -114,9 +118,9 @@
     width: 100%;
 }
 
-.tcb-post-content table caption {
+/* .tcb-post-content table caption {
     width: 100%;
-}
+} */
 
 .tcb-post-content table.legal-check {
     min-width: 300px;
