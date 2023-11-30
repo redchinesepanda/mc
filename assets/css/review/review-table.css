@@ -292,27 +292,30 @@
 
 /* Review Typography */
 
-/* .tcb-post-content table.legal-raw-column thead tr:first-child,
-.tcb-post-content table.legal-raw-column tr > td:first-child  */
+.tcb-post-content table:not( .legal-override ) th,
+.tcb-post-content table:not( .legal-override ) td {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    line-height: 28px;
+}
+
+.tcb-post-content table:not( .legal-override ) td {
+    font-weight: 400;
+    color: rgba(10, 10, 10, 0.85);
+}
 
 .tcb-post-content table.legal-raw-column th {
     font-weight: 600;
+    color: rgba(10, 10, 10, 0.85);
 }
 
-/* .tcb-post-content table.legal-raw tbody:first-child tr:first-child, */
-/* .tcb-post-content table.legal-raw caption ~ tbody tr:first-child, */
-/* .tcb-post-content table.legal-raw thead tr:first-child, */
 .tcb-post-content table.legal-raw th,
-/* .tcb-post-content table.legal-raw-rawspan thead:first-child */
 .tcb-post-content table.legal-raw-rawspan th
 {
     font-weight: 700;
     color: rgb(255, 255, 255);
 }
-
-/* .tcb-post-content table.legal-raw-rawspan tbody:first-child {
-    background-color: rgb(8, 5, 61);
-} */
 
 .tcb-post-content table caption {
     color: rgba(10, 10, 10, 0.85);
