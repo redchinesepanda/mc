@@ -181,6 +181,29 @@ class ReviewTable
 					$tr->parentNode->removeChild( $tr );
 				}
 			}
+
+			$class_table = $table->getAttribute( 'class' );
+
+			if ( str_contains( $class_table, self::CLASSES[ 'raw-column' ] ) )
+			{
+				$trs = $table->getElementsByTagName( 'tr' );
+				
+				if ( $trs->length != 0 )
+				{
+					foreach ( $trs as $tr )
+					{
+						$td = $tr->getElementsByTagName( 'td' )->item( 0 );
+
+						if ( !empty( $td ) )
+						{
+							$th = $dom->createElement( 'th', $td->textContent );
+
+							$td->parentNode->replaceChild( $th, $td );
+						}
+					}
+				}
+				
+			}
 		}
 
 		return $dom->saveHTML( $dom );
