@@ -111,7 +111,7 @@ class ReviewTable
 		}
 	}
 
-	public static function column_th( $dom, $table )
+	public static function set_th_column( $dom, $table )
 	{
 		$class_table = $table->getAttribute( 'class' );
 
@@ -212,25 +212,7 @@ class ReviewTable
 		{
 			self::set_thead( $dom, $table );
 
-			// $tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
-
-			// if ( !empty( $tbody ) )
-			// {
-			// 	$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
-
-			// 	if ( !empty( $tr ) )
-			// 	{
-			// 		$tds = $tr->getElementsByTagName( 'td' );
-
-			// 		$thead = self::create_thead( $dom, $tds );
-
-			// 		$table->insertBefore( $thead, $tr->parentNode );
-
-			// 		$tr->parentNode->removeChild( $tr );
-			// 	}
-			// }
-
-			self::column_th( $dom, $table );
+			self::set_th_column( $dom, $table );
 		}
 
 		return $dom->saveHTML( $dom );
