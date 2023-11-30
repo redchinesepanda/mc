@@ -111,6 +111,31 @@ class ReviewTable
 		}
 	}
 
+	public static function column_th( $dom, $table )
+	{
+		$class_table = $table->getAttribute( 'class' );
+
+		if ( str_contains( $class_table, self::CLASSES[ 'raw-column' ] ) )
+		{
+			$trs = $table->getElementsByTagName( 'tr' );
+			
+			if ( $trs->length != 0 )
+			{
+				foreach ( $trs as $tr )
+				{
+					$td = $tr->getElementsByTagName( 'td' )->item( 0 );
+
+					if ( !empty( $td ) )
+					{
+						$th = $dom->createElement( 'th', $td->textContent );
+
+						$td->parentNode->replaceChild( $th, $td );
+					}
+				}
+			}
+		}
+	}
+
 	public static function createThead( $dom, $tds )
 	{
 		if ( $tds->length > 0 )
@@ -182,28 +207,29 @@ class ReviewTable
 				}
 			}
 
-			$class_table = $table->getAttribute( 'class' );
+			self::column_th( $dom, $table );
 
-			if ( str_contains( $class_table, self::CLASSES[ 'raw-column' ] ) )
-			{
-				$trs = $table->getElementsByTagName( 'tr' );
+			// $class_table = $table->getAttribute( 'class' );
+
+			// if ( str_contains( $class_table, self::CLASSES[ 'raw-column' ] ) )
+			// {
+			// 	$trs = $table->getElementsByTagName( 'tr' );
 				
-				if ( $trs->length != 0 )
-				{
-					foreach ( $trs as $tr )
-					{
-						$td = $tr->getElementsByTagName( 'td' )->item( 0 );
+			// 	if ( $trs->length != 0 )
+			// 	{
+			// 		foreach ( $trs as $tr )
+			// 		{
+			// 			$td = $tr->getElementsByTagName( 'td' )->item( 0 );
 
-						if ( !empty( $td ) )
-						{
-							$th = $dom->createElement( 'th', $td->textContent );
+			// 			if ( !empty( $td ) )
+			// 			{
+			// 				$th = $dom->createElement( 'th', $td->textContent );
 
-							$td->parentNode->replaceChild( $th, $td );
-						}
-					}
-				}
-				
-			}
+			// 				$td->parentNode->replaceChild( $th, $td );
+			// 			}
+			// 		}
+			// 	}
+			// }
 		}
 
 		return $dom->saveHTML( $dom );
