@@ -214,11 +214,11 @@
 
 /* Table legal-raw-column with Thead and Tbody */
 
-.tcb-post-content table.legal-raw-column tbody tr:nth-child( 2n ) {
+.tcb-post-content table.legal-raw-column tbody tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
 }
 
-.tcb-post-content table.legal-raw-column tbody tr:nth-child( 2n+1 ) {
+.tcb-post-content table.legal-raw-column tbody tr:nth-child( 2n ) {
     background-color: transparent;
 }
 
