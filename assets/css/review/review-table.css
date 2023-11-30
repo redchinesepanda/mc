@@ -15,18 +15,6 @@
 @media screen and ( min-width: 768px )
 {
     /* Review Display */
-    
-    /* .tcb-post-content table.legal-column {
-        float: left;
-    } */
-
-    /* .tcb-post-content .legal-column {
-        display: inline-block;
-    } */
-
-    /* .tcb-post-content .legal-column-3 {
-        display: inline-block;
-    } */
 
     .tcb-post-content .legal-column,
     .tcb-post-content .legal-column-3 {
@@ -34,10 +22,6 @@
     }
 
     /* Review Position */
-
-    /* .tcb-post-content table.legal-column + table.legal-column {
-        margin-left: 20px;
-    } */
 
     .tcb-post-content table.legal-column:nth-of-type( 2n ) {
         margin-left: 8px;
@@ -82,11 +66,6 @@
 
 /* Display */
 
-/* .tcb-post-content table.legal-raw.legal-column tbody,
-.tcb-post-content table.legal-raw.legal-column-3 tbody {
-    display: table;
-} */
-
 .tcb-post-content table {
     caption-side: unset;
 }
@@ -118,15 +97,6 @@
     width: 100%;
 }
 
-/* .tcb-post-content table.legal-raw.legal-column tbody,
-.tcb-post-content table.legal-raw.legal-column-3 tbody {
-    width: 100%;
-} */
-
-/* .tcb-post-content table caption {
-    width: 100%;
-} */
-
 .tcb-post-content table.legal-check {
     min-width: 300px;
 }
@@ -138,12 +108,10 @@
 }
 
 .tcb-post-content table caption {
-    /* background-color: #FAFCFE; */
-    
     background-color: transparent;
 }
 
-/* Table with Thead and Tbody */
+/* Table default with Thead and Tbody */
 
 .tcb-post-content table:not( [ class ] ) thead tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -161,7 +129,7 @@
     background-color: rgb(239, 245, 251);
 }
 
-/* Table with Tbody only */
+/* Table default with Tbody only */
 
 .tcb-post-content table:not( [ class ] ) tbody:first-child tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -171,7 +139,7 @@
     background-color: transparent;
 }
 
-/* Table legal-raw-rawspan with Tbody only */
+/* Table legal-raw-rawspan */
 
 .tcb-post-content table.legal-raw-rawspan thead:first-child {
     background-color: rgb(8, 5, 61);
@@ -185,35 +153,7 @@
     background-color: transparent;
 }
 
-/* Table legal-raw with Tbody only */
-
-/* .tcb-post-content table.legal-raw tbody:first-child tr:first-child {
-    background-color: rgb(8, 5, 61);
-}
-
-.tcb-post-content table.legal-raw tbody:first-child tr:nth-child( 2n ) {
-    background-color: transparent;
-}
-
-.tcb-post-content table.legal-raw tbody:first-child tr:nth-child( 2n+1 ):not( :first-child ) {
-    background-color: rgb(239, 245, 251);
-} */
-
-/* Table legal-raw with Caption and Tbody only */
-
-/* .tcb-post-content table.legal-raw caption ~ tbody tr:first-child {
-    background-color: rgb(8, 5, 61);
-}
-
-.tcb-post-content table.legal-raw caption ~ tbody tr:nth-child( 2n ) {
-    background-color: transparent;
-}
-
-.tcb-post-content table.legal-raw caption ~ tbody tr:nth-child( 2n+1 ):not( :first-child ) {
-    background-color: rgb(239, 245, 251);
-} */
-
-/* Table legal-raw with Thead and Tbody */
+/* Table legal-raw */
 
 .tcb-post-content table.legal-raw thead tr:first-child {
     background-color: rgb(8, 5, 61);
@@ -227,7 +167,7 @@
     background-color: rgb(239, 245, 251);
 }
 
-/* Table legal-raw-column with Thead and Tbody */
+/* Table legal-raw-column */
 
 .tcb-post-content table.legal-raw-column tbody tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -237,7 +177,7 @@
     background-color: transparent;
 }
 
-/* Table legal-raw-default with Thead and Tbody */
+/* Table legal-raw-default */
 
 .tcb-post-content table.legal-raw-default tbody tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -248,7 +188,7 @@
     background-color: transparent;
 }
 
-/* Table legal-column with Thead and Tbody */
+/* Table legal-column */
 
 .tcb-post-content table.legal-column tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -258,7 +198,7 @@
     background-color: transparent;
 }
 
-/* Table legal-column-3 with Thead and Tbody */
+/* Table legal-column-3 */
 
 .tcb-post-content table[class="legal-column-3"] tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
@@ -268,7 +208,7 @@
     background-color: transparent;
 }
 
-/* Table legal-check with Thead and Tbody */
+/* Table legal-check */
 
 .tcb-post-content table.legal-check tr:nth-child( 2n+1 ) {
     background-color: rgb(239, 245, 251);
