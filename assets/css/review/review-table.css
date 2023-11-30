@@ -82,10 +82,10 @@
 
 /* Display */
 
-.tcb-post-content table.legal-raw.legal-column tbody,
+/* .tcb-post-content table.legal-raw.legal-column tbody,
 .tcb-post-content table.legal-raw.legal-column-3 tbody {
     display: table;
-}
+} */
 
 .tcb-post-content table {
     caption-side: unset;
