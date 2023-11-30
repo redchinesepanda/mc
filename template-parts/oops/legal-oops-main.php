@@ -9,11 +9,11 @@
 				</div>
 				<?php if( !empty( $item[ 'bonus-label' ] ) ) : ?>
 					<div class="item-bonus-wrapper">
-						<a class="item-bonus" href="<?php echo $item[ 'href' ]; ?>"><?php echo $item[ 'bonus-label' ]; ?></a>
+						<a class="item-bonus" href="<?php echo $item[ 'href' ]; ?>" rel="nofollow"><?php echo $item[ 'bonus-label' ]; ?></a>
 					</div>
 				<?php endif; ?>
 				<div class="item-button-wrapper">
-					<a class="item-button" href="<?php echo $item[ 'href' ]; ?>"><?php echo $args[ 'label' ]; ?></a>
+					<a class="item-button" href="<?php echo $item[ 'href' ]; ?>" rel="nofollow"><?php echo $args[ 'label' ]; ?></a>
 				</div>
 			</div>
 		<?php endforeach; ?>
