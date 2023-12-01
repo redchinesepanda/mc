@@ -58,16 +58,20 @@
     .tcb-post-content [class="legal-column-3"]
     {
         border: 1px solid blueviolet;
+        margin-right: 9px;
     }
 
     .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"]
     {
         border: 1px solid cadetblue;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"] + [class="legal-column-3"]
     {
         border: 1px solid darkorange;
+        margin-left: 9px;
     }
 
     .tcb-post-content .legal-column-3:nth-of-type( 3n+2 ) {
