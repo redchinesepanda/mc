@@ -64,8 +64,8 @@
     .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"]
     {
         border: 1px solid cadetblue;
-        margin-right: 4px;
-        margin-left: 4px;
+        margin-right: 3px;
+        margin-left: 3px;
     }
 
     .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"] + [class="legal-column-3"]
