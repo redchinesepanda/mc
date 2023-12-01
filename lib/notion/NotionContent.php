@@ -42,11 +42,11 @@ class NotionContent
 			{
 				if ( empty( $post->post_content ) )
 				{
-					$meta_value = self::remove_comments( $meta_value );
+					// $meta_value = self::remove_comments( $meta_value );
 
-					$meta_value = self::remove_tags( $meta_value );
+					// $meta_value = self::remove_tags( $meta_value );
 
-					$meta_value = self::remove_attr( $meta_value );
+					// $meta_value = self::remove_attr( $meta_value );
 
 					$post->post_content = $meta_value;
 
