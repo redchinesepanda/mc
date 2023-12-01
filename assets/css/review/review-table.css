@@ -81,7 +81,9 @@
 
 /* Review Position */
 
-.tcb-post-content :not( .legal-scroll ) table {
+.tcb-post-content div:not( .legal-scroll ) > table,
+.tcb-post-content .legal-scroll
+{
     margin-bottom: 30px;
 }
 
@@ -92,10 +94,6 @@
 
 .tcb-post-content table.legal-check td:last-child {
     padding-right: 56px;
-}
-
-.tcb-post-content .legal-scroll {
-    margin-bottom: 30px;
 }
 
 /* Review Width and Height */
