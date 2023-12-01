@@ -40,8 +40,8 @@ class NotionContent
 
 			if ( !empty( $post ) )
 			{
-				if ( empty( $post->post_content ) )
-				{
+				// if ( empty( $post->post_content ) )
+				// {
 					// $meta_value = self::remove_comments( $meta_value );
 
 					// $meta_value = self::remove_tags( $meta_value );
@@ -51,7 +51,7 @@ class NotionContent
 					$post->post_content = $meta_value;
 
 					wp_update_post( $post );
-				}
+				// }
 			}
 
 			// LegalDebug::die( [
