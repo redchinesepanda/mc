@@ -11,7 +11,7 @@ class NotionContent
 		add_action( 'updated_post_meta', [ $handler, 'review_content' ], 11, 4 );
 	}
 
-	function remove_comments( $content )
+	public static function remove_comments( $content )
 	{
 		return preg_replace( '/<!--(.*)-->/Uis', '', $content );
 	}
