@@ -38,6 +38,7 @@
 
     .tcb-post-content .legal-column + .legal-column
     {
+        margin-right: 0px;
         margin-left: 8px;
     }
 
