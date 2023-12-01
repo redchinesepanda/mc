@@ -136,11 +136,13 @@ class ReviewTable
 		}
 	}
 
-	public static function create_thead( $dom, $table )
+	// public static function create_thead( $dom, $table )
+	
+	public static function create_thead( $dom, $tr )
 	{
 		$thead = $dom->createElement( 'thead' );
 
-		$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+		// $tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
 		if ( !empty( $tr ) )
 		{
@@ -198,7 +200,7 @@ class ReviewTable
 
 		if ( !empty( $tbody ) )
 		{
-			// $tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+			$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
 			// if ( !empty( $tr ) )
 			// {
@@ -213,7 +215,9 @@ class ReviewTable
 			// 	// $tr->parentNode->removeChild( $tr );
 			// }
 				
-			$thead = self::create_thead( $dom, $table );
+			// $thead = self::create_thead( $dom, $table );
+			
+			$thead = self::create_thead( $dom, $tr );
 
 			$table->insertBefore( $thead, $tr->parentNode );
 
