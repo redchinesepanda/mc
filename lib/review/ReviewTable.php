@@ -140,6 +140,13 @@ class ReviewTable
 	{
 		$thead = $dom->createElement( 'thead' );
 
+		$tds = $tr->getElementsByTagName( 'td' );
+
+		if ( $tds->length == 0 )
+		{
+			$tds = $tr->getElementsByTagName( 'th' );
+		}
+
 		if ( $tds->length > 0 )
 		{
 			$ths = [];
@@ -185,8 +192,10 @@ class ReviewTable
 			{
 				$tds = $tr->getElementsByTagName( 'td' );
 
-				$thead = self::create_thead( $dom, $tds );
+				// $thead = self::create_thead( $dom, $tds );
 				
+				$thead = self::create_thead( $dom, $table );
+
 				$table->insertBefore( $thead, $tr->parentNode );
 
 				$tr->parentNode->removeChild( $tr );
