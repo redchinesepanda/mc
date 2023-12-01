@@ -44,9 +44,9 @@ class NotionContent
 				// {
 					$meta_value = self::remove_comments( $meta_value );
 
-					$meta_value = self::remove_tags( $meta_value );
+					// $meta_value = self::remove_tags( $meta_value );
 
-					$meta_value = self::remove_attr( $meta_value );
+					// $meta_value = self::remove_attr( $meta_value );
 
 					// $meta_value = preg_replace(
 					// 	"/<([a-z][a-z0-9]*)[^>]*?(\/?)>/si",
@@ -62,17 +62,13 @@ class NotionContent
 				// }
 			}
 
-			// LegalDebug::die( [
-			// 	'function' => 'NotionAffiliate::billet_afillate',
+			LegalDebug::die( [
+				'function' => 'NotionContent::review_content',
 
-			// 	'meta_key' => $meta_key,
+				'meta_key' => $meta_key,
 
-			// 	'meta_value' => $meta_value,
-
-			// 	'about_afillate_id' => $about_afillate_id,
-
-			// 	'field' => $field,
-			// ] );
+				'meta_value' => $meta_value,
+			] );
 		}
 	}
 }
