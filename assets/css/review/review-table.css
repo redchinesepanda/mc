@@ -85,6 +85,7 @@
     .tcb-post-content .legal-column-3 + .legal-column-3 + .legal-column-3
     {
         border: 1px solid darkorange;
+        margin-right: 0px;
         margin-left: 9px;
     }
 
