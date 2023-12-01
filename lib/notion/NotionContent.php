@@ -40,26 +40,18 @@ class NotionContent
 
 			if ( !empty( $post ) )
 			{
-				// if ( empty( $post->post_content ) )
-				// {
+				if ( empty( $post->post_content ) )
+				{
 					$meta_value = self::remove_comments( $meta_value );
 
 					$meta_value = self::remove_tags( $meta_value );
 
 					$meta_value = self::remove_attr( $meta_value );
 
-					// $meta_value = preg_replace(
-					// 	"/<([a-z][a-z0-9]*)[^>]*?(\/?)>/si",
-						
-					// 	'<$1$2>',
-						
-					// 	$meta_value
-					// );
-
 					$post->post_content = $meta_value;
 
 					wp_update_post( $post );
-				// }
+				}
 			}
 
 			// LegalDebug::die( [
