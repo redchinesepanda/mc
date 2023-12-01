@@ -55,15 +55,18 @@
 
     /* legal-column-3 */
 
-    .tcb-post-content [class="legal-column-3"] ~ [class="legal-column-3"] {
+    .tcb-post-content [class="legal-column-3"]
+    {
         border: 1px solid blueviolet;
     }
 
-    .tcb-post-content [class="legal-column-3"] ~ [class="legal-column-3"] + [class="legal-column-3"] {
+    .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"]
+    {
         border: 1px solid cadetblue;
     }
 
-    .tcb-post-content [class="legal-column-3"] ~ [class="legal-column-3"] + :not( [class="legal-column-3"] ) {
+    .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"] + [class="legal-column-3"]
+    {
         border: 1px solid darkorange;
     }
 
