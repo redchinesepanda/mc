@@ -55,6 +55,10 @@
 
     /* legal-column-3 */
 
+    .tcb-post-content .legal-column-3 ~ .legal-column-3 {
+        border: 1px solid blueviolet;
+    }
+
     .tcb-post-content .legal-column-3:nth-of-type( 3n+2 ) {
         /* margin-right: 9px; */
         /* background-color: burlywood; */
