@@ -136,45 +136,57 @@ class ReviewTable
 		}
 	}
 
-	public static function create_thead( $dom, $tds )
+	public static function create_thead( $dom, $table )
 	{
 		$thead = $dom->createElement( 'thead' );
 
-		$tds = $tr->getElementsByTagName( 'td' );
+		$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
-		if ( $tds->length == 0 )
+		if ( !empty( $tr ) )
 		{
-			$tds = $tr->getElementsByTagName( 'th' );
-		}
+			$items = $tr->getElementsByTagName( 'td' );
 
-		if ( $tds->length > 0 )
-		{
 			$ths = [];
 
-			foreach ( $tds as $td )
+			if ( $items->length > 0 )
 			{
-				$ths[] = $dom->createElement( 'th', $td->textContent );
-			}
-
-			$tr = $dom->createElement( 'tr' );
-
-			foreach ( $ths as $th )
-			{
-				try
+				foreach ( $items as $td )
 				{
-					$tr->appendChild( $th );
+					$ths[] = $dom->createElement( 'th', $td->textContent );
 				}
-				catch ( DOMException $e )
-				{
-					LegalDebug::debug( [
-						'function' => 'set_th',
+			}
+			else
+			{
+				$items = $tr->getElementsByTagName( 'th' );
 
-						'message' => $e->getMessage(),
-					] );
+				foreach ( $items as $th )
+				{
+					$ths[] = $th;
 				}
 			}
 
-			$thead->appendChild( $tr );
+			if ( !empty( $ths ) )
+			{
+				$tr = $dom->createElement( 'tr' );
+
+				foreach ( $ths as $th )
+				{
+					try
+					{
+						$tr->appendChild( $th );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'function' => 'set_th',
+
+							'message' => $e->getMessage(),
+						] );
+					}
+				}
+
+				$thead->appendChild( $tr );
+			}
 		}
 
 		return $thead;
@@ -190,16 +202,25 @@ class ReviewTable
 
 			if ( !empty( $tr ) )
 			{
-				$tds = $tr->getElementsByTagName( 'td' );
+				// $tds = $tr->getElementsByTagName( 'td' );
 
 				// $thead = self::create_thead( $dom, $tds );
 				
-				$thead = self::create_thead( $dom, $table );
+				// $thead = self::create_thead( $dom, $table );
 
-				$table->insertBefore( $thead, $tr->parentNode );
+				// $table->insertBefore( $thead, $tr->parentNode );
 
-				$tr->parentNode->removeChild( $tr );
+				// $tr->parentNode->removeChild( $tr );
 			}
+				
+			$thead = self::create_thead( $dom, $table );
+
+			if ( $tag->hasChildNodes() )
+			{
+				$table->insertBefore( $thead, $tr->parentNode );
+			}
+
+			$tr->parentNode->removeChild( $tr );
 		}
 	}
 
