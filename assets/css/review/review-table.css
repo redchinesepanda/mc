@@ -16,6 +16,7 @@
     .tcb-post-content table.legal-raw.legal-column
     .tcb-post-content table.legal-raw.legal-column-3
     {
+        display: table;
         width: 100%;
     }
 }
