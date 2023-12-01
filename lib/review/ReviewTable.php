@@ -198,20 +198,20 @@ class ReviewTable
 
 		if ( !empty( $tbody ) )
 		{
-			$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
+			// $tr = $table->getElementsByTagName( 'tr' )->item( 0 );
 
-			if ( !empty( $tr ) )
-			{
-				// $tds = $tr->getElementsByTagName( 'td' );
+			// if ( !empty( $tr ) )
+			// {
+			// 	// $tds = $tr->getElementsByTagName( 'td' );
 
-				// $thead = self::create_thead( $dom, $tds );
+			// 	// $thead = self::create_thead( $dom, $tds );
 				
-				// $thead = self::create_thead( $dom, $table );
+			// 	// $thead = self::create_thead( $dom, $table );
 
-				// $table->insertBefore( $thead, $tr->parentNode );
+			// 	// $table->insertBefore( $thead, $tr->parentNode );
 
-				// $tr->parentNode->removeChild( $tr );
-			}
+			// 	// $tr->parentNode->removeChild( $tr );
+			// }
 				
 			$thead = self::create_thead( $dom, $table );
 
