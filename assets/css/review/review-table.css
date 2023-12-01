@@ -8,7 +8,7 @@
     .tcb-post-content table.legal-raw-rawspan,
     .tcb-post-content table:not( [class] ) {
         overflow: scroll;
-        display: block;
+        /* display: block; */
     }
 }
 
