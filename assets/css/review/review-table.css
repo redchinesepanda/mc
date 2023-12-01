@@ -81,7 +81,8 @@
 
 /* Review Position */
 
-.tcb-post-content div:not( .legal-scroll ) > table,
+/* .tcb-post-content div:not( .legal-scroll ) > table, */
+.tcb-post-content table,
 .tcb-post-content .legal-scroll
 {
     margin-bottom: 30px;
