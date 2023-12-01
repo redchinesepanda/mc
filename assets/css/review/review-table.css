@@ -55,7 +55,7 @@
 
     /* legal-column-3 */
 
-    .tcb-post-content .legal-column-3 ~ .legal-column-3 {
+    .tcb-post-content [class="legal-column-3"] ~ [class="legal-column-3"] {
         border: 1px solid blueviolet;
     }
 
