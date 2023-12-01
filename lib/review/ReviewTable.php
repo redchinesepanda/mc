@@ -215,10 +215,7 @@ class ReviewTable
 				
 			$thead = self::create_thead( $dom, $table );
 
-			if ( $thead->hasChildNodes() )
-			{
-				$table->insertBefore( $thead, $tr->parentNode );
-			}
+			$table->insertBefore( $thead, $tr->parentNode );
 
 			$tr->parentNode->removeChild( $tr );
 		}
