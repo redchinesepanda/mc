@@ -44,9 +44,9 @@ class NotionContent
 				// {
 					$meta_value = self::remove_comments( $meta_value );
 
-					// $meta_value = self::remove_tags( $meta_value );
+					$meta_value = self::remove_tags( $meta_value );
 
-					// $meta_value = self::remove_attr( $meta_value );
+					$meta_value = self::remove_attr( $meta_value );
 
 					// $meta_value = preg_replace(
 					// 	"/<([a-z][a-z0-9]*)[^>]*?(\/?)>/si",
