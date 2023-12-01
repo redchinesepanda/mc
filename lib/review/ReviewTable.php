@@ -215,7 +215,7 @@ class ReviewTable
 				
 			$thead = self::create_thead( $dom, $table );
 
-			if ( $tag->hasChildNodes() )
+			if ( $thead->hasChildNodes() )
 			{
 				$table->insertBefore( $thead, $tr->parentNode );
 			}
