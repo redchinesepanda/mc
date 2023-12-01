@@ -86,6 +86,15 @@
 	font-weight: 600;
 }
 
+/* legal-raw-default */
+
+/* Bacground */
+
+#tinymce table.legal-raw-default tr:nth-child( 2n )
+{
+	background-color: rgb(239, 245, 251);
+}
+
 /* legal-check */
 
 #tinymce table.legal-check td:last-child {
