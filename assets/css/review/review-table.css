@@ -94,6 +94,10 @@
     padding-right: 56px;
 }
 
+.tcb-post-content .legal-scroll {
+    margin-bottom: 20px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 ) {
