@@ -15,7 +15,7 @@
 /* legal-column */
 
 #tinymce table.legal-column {
-	display: inline-block;
+	display: inline-table;
 	width: calc( 50% - 10px );
 }
 
@@ -30,7 +30,7 @@
 /* legal-column-3 */
 
 #tinymce table.legal-column-3 {
-	display: inline-block;
+	display: inline-table;
 	width: calc( 100% / 3 - 12px );
 }
 

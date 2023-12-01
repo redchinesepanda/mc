@@ -39,6 +39,19 @@
         margin-right: 8px;
     }
 
+    /* nth-of-type */
+
+    .tcb-post-content table:nth-of-type( 3n+2 ) {
+        background-color: burlywood;
+    }
+
+    .tcb-post-content table:nth-of-type( 3n ) {
+        background-color: #5997e3;
+    }
+    .tcb-post-content table:nth-of-type( 3n+1 ) {
+        background-color: aquamarine;
+    }
+
     /* legal-column-3 */
 
     .tcb-post-content .legal-column-3:nth-of-type( 3n+2 ) {
