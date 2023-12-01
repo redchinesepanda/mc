@@ -62,13 +62,13 @@ class NotionContent
 				// }
 			}
 
-			LegalDebug::die( [
-				'function' => 'NotionContent::review_content',
+			// LegalDebug::die( [
+			// 	'function' => 'NotionContent::review_content',
 
-				'meta_key' => $meta_key,
+			// 	'meta_key' => $meta_key,
 
-				'meta_value' => $meta_value,
-			] );
+			// 	'meta_value' => $meta_value,
+			// ] );
 		}
 	}
 }
