@@ -12,6 +12,8 @@ require_once( 'NotionAffiliate.php' );
 
 require_once( 'NotionTaxonomy.php' );
 
+require_once( 'NotionContent.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -31,6 +33,8 @@ class NotionMain
 		NotionAffiliate::register_functions();
 
 		NotionTaxonomy::register_functions();
+
+		NotionContent::register_functions();
 	}
 
 	const META_FIELD = [
@@ -47,6 +51,8 @@ class NotionMain
 		'about-logo' => 'notion_about_logo',
 
 		'feature' => 'notion_billet_feature',
+
+		'content' => 'notion_review_content',
 	];
 
 	const ACF_KEY = [
