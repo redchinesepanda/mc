@@ -49,7 +49,7 @@
     }
 
     /* Review Width and Height */
-    
+
     .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 )
     {
         width: 100%;
@@ -86,9 +86,9 @@
 
 /* Review Position */
 
-.billet-mega-content > table,
-.tcb-post-content > table,
-.tcb-post-content > .legal-scroll
+.billet-mega-content > table:not( :last-child ),
+.tcb-post-content > table:not( :last-child ),
+.tcb-post-content > .legal-scroll:not( :last-child )
 {
     margin-bottom: 30px;
 }
