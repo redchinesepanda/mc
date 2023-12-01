@@ -60,7 +60,8 @@
 
     .tcb-post-content .legal-scroll:not( .legal-full-width ) {
         width: fit-content;
-        margin: 0px auto 20px auto;
+        /* margin: 0px auto 20px auto; */
+        margin: 0px auto;
     }
 }
 
