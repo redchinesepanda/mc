@@ -10,7 +10,7 @@ class ReviewTable
         self::HANDLE[ 'table' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table.css',
 
-            'ver' => '1.1.9',
+            'ver' => '1.2.0',
         ],
     ];
 
