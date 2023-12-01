@@ -2,14 +2,14 @@
 {
     /* Review Display */
 
-    .tcb-post-content table.legal-stats,
+    /* .tcb-post-content table.legal-stats,
     .tcb-post-content table.legal-raw,
     .tcb-post-content table.legal-raw-column,
     .tcb-post-content table.legal-raw-rawspan,
     .tcb-post-content table:not( [class] ) {
         overflow: scroll;
         display: block;
-    }
+    } */
 }
 
 @media screen and ( min-width: 768px )
