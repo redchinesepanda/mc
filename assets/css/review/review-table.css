@@ -24,19 +24,19 @@
 {
     /* Review Display */
 
-    .tcb-post-content .legal-column,
-    .tcb-post-content .legal-column-3 {
+    .tcb-post-content table.legal-column,
+    .tcb-post-content table.legal-column-3 {
         display: inline-table;
     }
 
     /* Review Position */
 
-    .tcb-post-content .legal-column
+    .tcb-post-content table.legal-column
     {
         margin-right: 8px;
     }
 
-    .tcb-post-content .legal-column + .legal-column
+    .tcb-post-content table.legal-column + table.legal-column
     {
         margin-right: 0px;
         margin-left: 8px;
@@ -67,14 +67,14 @@
     /* legal-column-3 */
 
     /* .tcb-post-content [class="legal-column-3"] */
-    .tcb-post-content .legal-column-3
+    .tcb-post-content table.legal-column-3
     {
         /* border: 1px solid blueviolet; */
         margin-right: 9px;
     }
 
     /* .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"] */
-    .tcb-post-content .legal-column-3 + .legal-column-3
+    .tcb-post-content table.legal-column-3 + table.legal-column-3
     {
         /* border: 1px solid cadetblue; */
         margin-right: 5px;
@@ -82,7 +82,7 @@
     }
 
     /* .tcb-post-content [class="legal-column-3"] + [class="legal-column-3"] + [class="legal-column-3"] */
-    .tcb-post-content .legal-column-3 + .legal-column-3 + .legal-column-3
+    .tcb-post-content table.legal-column-3 + table.legal-column-3 + table.legal-column-3
     {
         /* border: 1px solid darkorange; */
         margin-right: 0px;
@@ -115,7 +115,7 @@
         width: calc( 50% - 10px );
     }
 
-    .tcb-post-content .legal-column-3 {
+    .tcb-post-content table.legal-column-3 {
         width: calc(100% / 3 - 12px);
     }
 
@@ -134,7 +134,7 @@
     caption-side: unset;
 }
 
-.tcb-post-content .legal-scroll {
+.tcb-post-content table.legal-scroll {
     max-height: 500px;
     display: block;
     overflow-y: scroll;
@@ -144,7 +144,7 @@
 
 .billet-mega-content > table:not( :last-child ),
 .tcb-post-content > table:not( :last-child ),
-.tcb-post-content > .legal-scroll:not( :last-child )
+.tcb-post-content > table.legal-scroll:not( :last-child )
 {
     margin-bottom: 30px;
 }
