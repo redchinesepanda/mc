@@ -251,7 +251,7 @@ class BilletMain
 
         // $logo_href = !empty( $referal_url ) ? $referal_url : $card_url;
         
-        $logo_href = !empty( $referal_url ) ? $referal_url : !empty( $card_url ) ? $card_url : $oops;
+        $logo_href = !empty( $referal_url ) ? $referal_url : ( !empty( $card_url ) ? $card_url : $oops );
 
         // Кнопка обзор учитывая тип Бонус
 
