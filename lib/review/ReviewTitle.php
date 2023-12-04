@@ -216,6 +216,14 @@ class ReviewTitle
 			$date = self::get_date( $node );
 
 			$node->textContent = $node->textContent . ' ' . $date;
+
+			LegalDebug::debug( [
+				'function' => 'ReviewTitle::modify_content',
+
+				'textContent' => $node->textContent,
+
+				'nodeValue' => $node->nodeValue,
+			] );
 		}
 
 		// return self::replace_placeholder( $dom->saveHTML() );
