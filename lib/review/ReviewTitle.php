@@ -221,13 +221,9 @@ class ReviewTitle
 
 				foreach( $node->childNodes as $childNode )
 				{
-					// if ( $childNode->nodeName == '#text' )
-					
 					if ( $childNode->nodeType == XML_TEXT_NODE )
 					{
 						$lastTextNode = $childNode;
-
-						// $childNode->textContent = $childNode->textContent . ' ' . $date;
 					}
 				}
 
