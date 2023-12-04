@@ -261,7 +261,7 @@ class BilletMain
 
         // $title_href = !empty( $card_url ) ? $card_url : $referal_url;
         
-        $title_href = !empty( $card_url ) ? $card_url : !empty( $referal_url ) ? $referal_url : $oops;
+        $title_href = !empty( $card_url ) ? $card_url : ( !empty( $referal_url ) ? $referal_url : $oops );
 
         // Заголовок бонуса учитывая локаль Казахстан
 
