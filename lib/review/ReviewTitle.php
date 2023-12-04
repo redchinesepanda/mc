@@ -215,7 +215,7 @@ class ReviewTitle
 		{
 			$date = self::get_date( $node );
 
-			$node->textContent = $node->textContent . ' ' . $date;
+			// $node->textContent = $node->textContent . ' ' . $date;
 
 			LegalDebug::debug( [
 				'function' => 'ReviewTitle::modify_content',
@@ -234,6 +234,8 @@ class ReviewTitle
 	
 					'childNode' => $childNode,
 				] );
+
+				$childNode->textContent = $childNode->textContent . ' ' . $date;
 			}
 		}
 
