@@ -226,6 +226,15 @@ class ReviewTitle
 
 				'childNodes' => $node->childNodes,
 			] );
+
+			foreach( $node->childNodes as $childNode )
+			{
+				LegalDebug::debug( [
+					'function' => 'ReviewTitle::modify_content',
+	
+					'childNode' => $childNode,
+				] );
+			}
 		}
 
 		// return self::replace_placeholder( $dom->saveHTML() );
