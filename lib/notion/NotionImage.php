@@ -17,6 +17,16 @@ class NotionImage
 		add_action( 'added_post_meta', [ $handler, 'billet_logo' ], 11, 4 );
 
 		add_action( 'updated_post_meta', [ $handler, 'billet_logo' ], 11, 4 );
+
+		add_filter( 'getimagesize_mimes_to_exts', [ $handler, 'more_mimes_to_exts' ] );
+	}
+
+	
+	public static function more_mimes_to_exts( $mime_to_ext )
+	{
+		$mime_to_ext['image/svg'] = 'svg';
+
+		return $mime_to_ext;
 	}
 
 	public static function get_image_id( $data )
