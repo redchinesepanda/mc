@@ -249,7 +249,9 @@ class BilletMain
 
         // Логотип
 
-        $logo_href = !empty( $referal_url ) ? $referal_url : $card_url;
+        // $logo_href = !empty( $referal_url ) ? $referal_url : $card_url;
+        
+        $logo_href = !empty( $referal_url ) ? $referal_url : !empty( $card_url ) ? $card_url : $oops;
 
         // Кнопка обзор учитывая тип Бонус
 
@@ -257,7 +259,9 @@ class BilletMain
 
         // Название БК
 
-        $title_href = !empty( $card_url ) ? $card_url : $referal_url;
+        // $title_href = !empty( $card_url ) ? $card_url : $referal_url;
+        
+        $title_href = !empty( $card_url ) ? $card_url : !empty( $referal_url ) ? $referal_url : $oops;
 
         // Заголовок бонуса учитывая локаль Казахстан
 
