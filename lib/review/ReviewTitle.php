@@ -237,6 +237,11 @@ class ReviewTitle
 					'childNode' => $childNode,
 				] );
 
+				if ( $childNode->nodeName == '#text' )
+				{
+					$childNode->textContent = $childNode->textContent . ' ' . $date;
+				}
+
 				// $childNode->textContent = $childNode->textContent . ' ' . $date;
 				
 				// $childNode->textContent .= ' ' . $date;
