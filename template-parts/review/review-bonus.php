@@ -1,6 +1,6 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-title">
-		<style id="item-<?php echo $args[ 'index' ]; ?>" type="text/css">
+		<style type="text/css">
 			.legal-bonus.item-<?php echo $args[ 'index' ]; ?> .bonus-title-image {
 				background-image: url( '<?php echo $args[ 'src' ]; ?>' );
 			}
@@ -16,7 +16,7 @@
 		<?php echo $args[ 'name' ][ 'text' ]; ?>
 	</h3>
 	<div class="bonus-get">
-		<a class="bonus-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>">
+		<a class="bonus-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>" target="_blank" rel="nofollow">
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
