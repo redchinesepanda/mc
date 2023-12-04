@@ -65,7 +65,7 @@ class ToolCSP
 		$handler = new self();
 
 		$content = implode(
-			';',
+			'; ',
 
 			array_map(
 				[ $handler, 'prepare_directive' ],
