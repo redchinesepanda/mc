@@ -215,38 +215,17 @@ class ReviewTitle
 		{
 			$date = self::get_date( $node );
 
-			// $node->textContent = $node->textContent . ' ' . $date;
-
-			// $node->nodeValue = $node->nodeValue . ' ' . $date;
-
-			LegalDebug::debug( [
-				'function' => 'ReviewTitle::modify_content',
-
-				'textContent' => $node->textContent,
-
-				'nodeValue' => $node->nodeValue,
-
-				'childNodes' => $node->childNodes,
-			] );
-
-			foreach( $node->childNodes as $childNode )
+			if ( $node->childNodes->length != 0 )
 			{
-				LegalDebug::debug( [
-					'function' => 'ReviewTitle::modify_content',
-	
-					'childNode' => $childNode,
-				] );
-
-				if ( $childNode->nodeName == '#text' )
+				foreach( $node->childNodes as $childNode )
 				{
-					$childNode->textContent = $childNode->textContent . ' ' . $date;
+					// if ( $childNode->nodeName == '#text' )
+					
+					if ( $childNode->nodeType == XML_TEXT_NODE )
+					{
+						$childNode->textContent = $childNode->textContent . ' ' . $date;
+					}
 				}
-
-				// $childNode->textContent = $childNode->textContent . ' ' . $date;
-				
-				// $childNode->textContent .= ' ' . $date;
-				
-				// $childNode->textContent .= '';
 			}
 		}
 
