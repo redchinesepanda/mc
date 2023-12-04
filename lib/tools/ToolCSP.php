@@ -79,10 +79,10 @@ class ToolCSP
 			'content' => $content,
 		];
 
-		self::render_csp( $args );
+		self::print_csp( $args );
 	}
 
-    public static function render_csp( $args = [] )
+    public static function print_csp( $args = [] )
 	{
 		echo self::render( self::TEMPLATE[ 'legal-tool-csp' ], $args );
 	}
