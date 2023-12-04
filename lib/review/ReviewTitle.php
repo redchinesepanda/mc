@@ -223,6 +223,8 @@ class ReviewTitle
 				'textContent' => $node->textContent,
 
 				'nodeValue' => $node->nodeValue,
+
+				'childNodes' => $node->childNodes,
 			] );
 		}
 
