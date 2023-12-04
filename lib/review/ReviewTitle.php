@@ -217,14 +217,23 @@ class ReviewTitle
 
 			if ( $node->childNodes->length != 0 )
 			{
+				$lastTextNode = null;
+
 				foreach( $node->childNodes as $childNode )
 				{
 					// if ( $childNode->nodeName == '#text' )
 					
 					if ( $childNode->nodeType == XML_TEXT_NODE )
 					{
-						$childNode->textContent = $childNode->textContent . ' ' . $date;
+						$lastTextNode = $childNode;
+
+						// $childNode->textContent = $childNode->textContent . ' ' . $date;
 					}
+				}
+
+				if ( !empty( $lastTextNode ) )
+				{
+					$lastTextNode->textContent = $lastTextNode->textContent . ' ' . $date;
 				}
 			}
 		}
