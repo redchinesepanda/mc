@@ -217,7 +217,7 @@ class ReviewTitle
 
 			// $node->textContent = $node->textContent . ' ' . $date;
 
-			$node->nodeValue = $node->nodeValue . ' ' . $date;
+			// $node->nodeValue = $node->nodeValue . ' ' . $date;
 
 			LegalDebug::debug( [
 				'function' => 'ReviewTitle::modify_content',
