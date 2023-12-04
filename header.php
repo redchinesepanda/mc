@@ -28,10 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				base-uri 'self';
 				default-src 'none';
 				connect-src 'self';
-				form-action 'self';
-				font-src 'self';
+				font-src 'self' fonts.googleapis.com;
 				img-src 'self';
-				script-src 'self';
+				script-src 'self' mc.yandex.ru www.googletagmanager.com;
 				style-src 'self' 'unsafe-inline';
 			"
 		>
