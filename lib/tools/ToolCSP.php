@@ -91,7 +91,7 @@ class ToolCSP
     {
         ob_start();
 
-        load_template( template, false, $args );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
