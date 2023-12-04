@@ -237,7 +237,9 @@ class ReviewTitle
 
 				// $childNode->textContent = $childNode->textContent . ' ' . $date;
 				
-				$childNode->textContent .= ' ' . $date;
+				// $childNode->textContent .= ' ' . $date;
+				
+				$childNode->textContent .= '';
 			}
 		}
 
