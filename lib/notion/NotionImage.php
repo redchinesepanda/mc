@@ -24,7 +24,7 @@ class NotionImage
 	
 	public static function more_mimes_to_exts( $mime_to_ext )
 	{
-		$mime_to_ext['image/svg'] = 'svg';
+		$mime_to_ext['svg'] = 'image/svg';
 
 		return $mime_to_ext;
 	}
