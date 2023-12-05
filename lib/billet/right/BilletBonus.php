@@ -373,6 +373,31 @@ class BilletBonus
     //     return $args;
     // }
 
+    public static function get( $billet )
+    {
+        return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
+    }
+
+    // public static function get( $billet )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'function' => 'BilletBonus::get',
+
+    //     //     'billet' => $billet,
+    //     // ] );
+
+    //     $enabled = true;
+
+    //     if ( !empty( $billet[ 'filter' ] ) ) {
+    //         $enabled = $billet[ 'filter' ][ 'bonus' ];
+    //     }
+
+    //     if ( $enabled ) {
+    //         return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
+    //     }
+
+    //     return [];
+    // }
     // public static function get( $billet )
     // {
     //     // LegalDebug::debug( [
