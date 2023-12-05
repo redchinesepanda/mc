@@ -1,10 +1,10 @@
 <?php
 
-// LegalDebug::debug( [
-//     'file' => 'part-billet-bonus.php',
+LegalDebug::debug( [
+    'file' => 'part-billet-bonus.php',
 
-//     'args' => $args,
-// ] )
+    'args' => $args,
+] )
 
 ?>
 <div class="bonus-title">
