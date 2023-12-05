@@ -167,17 +167,17 @@ class BilletBonus
 
         $bonus_data = self::get_bonus_data( $id, $filter );
 
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get_bonus',
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get_bonus',
 
-        //     'bonus_data' => $bonus_data,
+            'bonus_data' => $bonus_data,
 
-        //     'data' => array_merge(
-        //         $bonus_data,
+            'data' => array_merge(
+                $bonus_data,
 
-        //         self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
-        //     ),
-        // ] );
+                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
+            ),
+        ] );
 
         return array_merge(
             self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
