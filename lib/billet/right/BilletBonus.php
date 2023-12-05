@@ -130,8 +130,10 @@ class BilletBonus
             'bonus_url' => $bonus_url,
 
             'referal_url' => $referal_url,
-            
+
             'oops' => $oops,
+
+            'bonus_href' => $bonus_href,
         ] );
 
         return array_merge(
