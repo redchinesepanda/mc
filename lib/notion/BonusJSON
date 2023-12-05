@@ -1,3 +1,68 @@
+// Bonus relation description full start
+
+"["
+
++ prop("Related to Bonuses")
+.filter( !current.prop("Характеристики Test").empty())
+.map(
+	"{"
+
+	+ [
+		[
+			"billet-feture-id",
+
+			"\""
+
+			+ current.prop("Характеристики Test")
+			.map( current.prop("Slug") )
+			.slice( 0, 1 )
+			
+			+ "\""
+		],
+		[ "billet-bonus-id", "\"" + current.prop("Страница Бонуса") + "\"" ],
+		[ "billet-bonus-title", "\"" + current.prop("Name") + "\"" ],
+		[ "billet-bonus-description",
+			"\""
+			
+			+ replaceAll(
+				replaceAll(
+					substring( current.prop("Описание Краткое"), 0, 120 ),
+					"[“”\"]",
+					""
+				),
+				"\n",
+				" "
+			)
+			
+			+ "\""
+		],
+		[ "billet-bonus-description-full",
+			"\""
+			
+			+ replaceAll(
+				replaceAll(
+					current.prop("Описание Полное"),
+					"[“”\"]",
+					""
+				),
+				"\n",
+				" "
+			)
+			
+			+ "\""
+		]
+	]
+	.map( "\"" + current.at( 0 ) + "\":" + current.at( 1 ) )
+	.join( "," )
+
+	+ "}"
+)
+.join( "," )
+
++ "]"
+
+// Bonus relation description full end
+
 // Relation test start
 
 "["

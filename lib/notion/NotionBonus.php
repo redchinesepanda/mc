@@ -19,6 +19,8 @@ class NotionBonus
 		'bonus-title' => 'field_651ab5ab3b290',
 
 		'bonus-description' => 'field_651ab5c43b291',
+
+		'bonus-description-full' => 'field_656ecbdc9f624',
 	];
 
 	const BILLET_FETURE_BONUS = [
@@ -29,6 +31,8 @@ class NotionBonus
 		'bonus-title' => 'billet-bonus-title',
 
 		'bonus-description' => 'billet-bonus-description',
+
+		'bonus-description-full' => 'billet-bonus-description-full',
 	];
 
 	public static function get_bonus( $url )
@@ -53,6 +57,8 @@ class NotionBonus
 			self::BILLET_FETURE_BONUS_KEY[ 'bonus-title' ] => $item[ self::BILLET_FETURE_BONUS[ 'bonus-title' ] ],
 
 			self::BILLET_FETURE_BONUS_KEY[ 'bonus-description' ] => $item[ self::BILLET_FETURE_BONUS[ 'bonus-description' ] ],
+			
+			self::BILLET_FETURE_BONUS_KEY[ 'bonus-description-full' ] => $item[ self::BILLET_FETURE_BONUS[ 'bonus-description-full' ] ],
 		];
 	}
 
