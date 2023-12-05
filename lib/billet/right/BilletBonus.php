@@ -3,6 +3,8 @@
 class BilletBonus
 {
     const FIELD = [
+        'about' => 'review-about',
+
         'feture-bonus' => 'billet-feture-bonus',
     ];
 
@@ -14,118 +16,291 @@ class BilletBonus
         'bonus-title' => 'billet-bonus-title',
 
         'bonus-description' => 'billet-bonus-description',
+
+        'bonus-description-full' => 'billet-bonus-description-full',
     ];
 
-    public static function get_feture_bonus( $id, $filter = [] )
-    {
-        $result = null;
+    const ABOUT = [
+        'bonus-title' => 'about-bonus',
 
-        $feature_bonus_item = null;
+        'bonus-description' => 'about-description',
 
-        $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $id );
+        'description' => 'about-main-description',
+    ];
 
-        if ( $feature_bonus )
-        {
-            foreach ( $feature_bonus as $feature_bonus_item )
-            {
-                if (
-                    !empty( $filter[ 'features' ] )
+    // public static function get_feture_bonus( $id, $filter = [] )
+    // {
+    //     $result = null;
 
-                    && in_array(
-                        $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ],
+    //     $feature_bonus_item = null;
+
+    //     $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $id );
+
+    //     if ( $feature_bonus )
+    //     {
+    //         foreach ( $feature_bonus as $feature_bonus_item )
+    //         {
+    //             if (
+    //                 !empty( $filter[ 'features' ] )
+
+    //                 && in_array(
+    //                     $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ],
                         
-                        $filter[ 'features' ]
-                    )
-                )
+    //                     $filter[ 'features' ]
+    //                 )
+    //             )
+    //             {
+    //                 $result = $feature_bonus_item;
+    //             }
+    //         }
+    //     }
+
+    //     // LegalDebug::debug( [
+    //     //     'function' => 'BilletBonus::get_feture_bonus',
+
+    //     //     'feature_bonus_item' => $feature_bonus_item,
+
+    //     //     'result' => $result,
+
+    //     //     'id' => $id,
+
+    //     //     'filter' => $filter,
+    //     // ] );
+
+    //     return $result;
+    // }
+    
+    public static function get_bonus_repeater( $id = 0, $filter = [] )
+    {
+        if ( !empty( $filter[ 'features' ] ) )
+        {
+            $items = get_field( self::FIELD[ 'feture-bonus' ], $id );
+
+            if ( $items )
+            {
+                foreach ( $items as $item )
                 {
-                    $result = $feature_bonus_item;
+                    if ( in_array( $item[ self::FETURE_BONUS[ 'feture-id' ] ], $filter[ 'features' ] ) )
+                    {
+                        // LegalDebug::debug( [
+                        //     'function' => 'BilletBonus::get_feture_bonus',
+
+                        //     'feature_bonus_item' => $feature_bonus_item,
+
+                        //     'result' => $result,
+
+                        //     'id' => $id,
+
+                        //     'filter' => $filter,
+                        // ] );
+                        
+                        // return $item;
+
+                        return [
+                            'title' => $item[ self::FETURE_BONUS[ 'bonus-title' ] ],
+                
+                            'description' => $item[ self::FETURE_BONUS[ 'bonus-description' ] ],
+                
+                            'description-full' => $item[ self::FETURE_BONUS[ 'bonus-description-full' ] ],
+                        ];
+                    }
                 }
             }
         }
 
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get_feture_bonus',
-
-        //     'feature_bonus_item' => $feature_bonus_item,
-
-        //     'result' => $result,
-
-        //     'id' => $id,
-
-        //     'filter' => $filter,
-        // ] );
-
-        return $result;
+        return null;
     }
 
-    public static function get_bonus( $billet )
+    public static function get_bonus_default( $id )
     {
-        $args = [];
+        return [
+            'title' => '',
 
-        // $feature_bonus = get_field( self::FIELD[ 'feture-bonus' ], $billet[ 'id' ] );
+            'description' => '',
 
-        // if ( $feature_bonus )
+            'description-full' => '',
+        ];
+    }
+
+    public static function get_bonus_group( $id )
+    {
+        $group = get_field( self::FIELD[ 'about' ], $id );
+
+        if ( $group )
+        {
+            // $title = $group[ self::ABOUT[ 'bonus-title' ] ];
+
+            // $description = $group[ self::ABOUT[ 'bonus-description' ] ];
+            
+            // $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
+
+            return [
+                'title' => $group[ self::ABOUT[ 'bonus-title' ] ],
+    
+                'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
+    
+                'description-full' => $group[ self::ABOUT[ 'bonus-description-full' ] ],
+            ];
+        }
+
+        return null;
+    }
+
+    public static function get_bonus( $id, $url, $filter )
+    {
+        return array_merge(
+            BilletMain::href( $url[ 'bonus' ] ),
+
+            [ 'nofollow' => $url[ 'bonus-nofollow' ] ],
+
+            get_bonus_text( $id, $filter )
+        );
+    }
+
+    public static function get_bonus_text( $id, $filter )
+    {
+        if ( $bonus = self::get_bonus_repeater( $id, $filter ) )
+        {
+            return $bonus;
+        }
+
+        if ( $bonus = self::get_bonus_group( $id ) )
+        {
+            return $bonus;
+        }
+
+        return self::get_bonus_default();
+
+        // $args = [];
+
+        // $title = '';
+
+        // $description = '';
+
+        // $description_full = '';
+
+        // $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ] );
+        
+        // $feature_bonus_item = self::get_feture_bonus( $id, $filter );
+
+        // if ( !empty( $feature_bonus_item ) )
         // {
-        //     foreach ( $feature_bonus as $feature_bonus_item )
+        //     // $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+        //     // $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
+
+        //     // $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+            
+        //     $title = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+
+        //     // $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+            
+        //     $description = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+
+        //     // $args[ 'description-full' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description-full' ] ];
+            
+        //     $description_full = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description-full' ] ];
+        // }
+        // else
+
+        // // if ( empty( $args ) )
+        // {
+        //     // if ( !empty( $billet[ 'bonus' ] ) )
+        //     // {
+        //         // $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+        //         // $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
+
+        //         // $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
+
+        //         // $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
+
+        //         // $args[ 'description-full' ] = $billet[ 'bonus' ][ 'description-full' ];
+                
+        //     // }
+
+        //     $group = get_field( self::FIELD[ 'about' ], $id );
+
+        //     if ( $group )
         //     {
-        //         if ( in_array( $feature_bonus_item[ self::FETURE_BONUS[ 'feture-id' ] ], $billet[ 'filter' ][ 'features' ] ) )
-        //         {
-        //             // $href = get_post_permalink( $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-id' ] ] );
+        //         // $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
 
-        //             // LegalDebug::debug( [
-        //             //     'href' => $href,
-        //             // ] );
+        //         $title = $group[ self::ABOUT[ 'bonus-title' ] ];
 
-        //             // $args = BilletMain::href( $href );
-
-        //             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
-
-        //             $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
-
-        //             $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
-        //         }
+        //         $description = $group[ self::ABOUT[ 'bonus-description' ] ];
+                
+        //         $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
         //     }
         // }
-
-        $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ] );
-
-        if ( !empty( $feature_bonus_item ) )
-        {
-            $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
-
-            $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
-
-            $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
-
-            $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
-        }
-
-        if ( empty( $args ) )
-        {
-            if ( !empty( $billet[ 'bonus' ] ) )
-            {
-                $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
-
-                $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
-
-                $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
-
-                $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
-            }
-        }
         
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get_bonus',
+        // // LegalDebug::debug( [
+        // //     'function' => 'BilletBonus::get_bonus',
 
-        //     'billet' => $billet,
+        // //     'billet' => $billet,
 
-        //     'feature_bonus_item' => $feature_bonus_item,
+        // //     'feature_bonus_item' => $feature_bonus_item,
 
-        //     'args' => $args,
-        // ] );
+        // //     'args' => $args,
+        // // ] );
 
-        return $args;
+        // // return $args;
+        
+        // return [
+        //     'title' => $title,
+
+        //     'description' => $description,
+
+        //     'description-full' => $description_full,
+        // ];
     }
+
+    // public static function get_bonus( $billet )
+    // {
+    //     $args = [];
+
+    //     $feature_bonus_item = self::get_feture_bonus( $billet[ 'id' ], $billet[ 'filter' ] );
+
+    //     if ( !empty( $feature_bonus_item ) )
+    //     {
+    //         $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+    //         $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
+
+    //         $args[ 'title' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-title' ] ];
+
+    //         $args[ 'description' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description' ] ];
+
+    //         $args[ 'description-full' ] = $feature_bonus_item[ self::FETURE_BONUS[ 'bonus-description-full' ] ];
+    //     }
+
+    //     if ( empty( $args ) )
+    //     {
+    //         if ( !empty( $billet[ 'bonus' ] ) )
+    //         {
+    //             $args = BilletMain::href( $billet[ 'url' ][ 'bonus' ] );
+
+    //             $args[ 'nofollow' ] = $billet[ 'url' ][ 'bonus-nofollow' ];
+
+    //             $args[ 'title' ] = $billet[ 'bonus' ][ 'title' ];
+
+    //             $args[ 'description' ] = $billet[ 'bonus' ][ 'description' ];
+
+    //             $args[ 'description-full' ] = $billet[ 'bonus' ][ 'description-full' ];
+    //         }
+    //     }
+        
+    //     // LegalDebug::debug( [
+    //     //     'function' => 'BilletBonus::get_bonus',
+
+    //     //     'billet' => $billet,
+
+    //     //     'feature_bonus_item' => $feature_bonus_item,
+
+    //     //     'args' => $args,
+    //     // ] );
+
+    //     return $args;
+    // }
 
     public static function get( $billet )
     {

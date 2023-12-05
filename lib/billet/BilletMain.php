@@ -346,40 +346,89 @@ class BilletMain
         'description' => 'billet-bonus-description',
     ];
 
-    private static function get_bonus( $id )
+    private static function get_bonus( $id, $url, $filter )
     {
-        $args = [];
+        return BilletBonus::get_bonus( $id, $url, $filter );
 
-        $bonus_id = 0;
+        // // $args = [];
 
-        $title = '';
+        // $bonus_id = 0;
 
-        $description = '';
+        // $title = '';
 
-        $group = get_field( self::FIELD[ 'about' ], $id );
+        // $description = '';
 
-        if ( $group )
-        {
-            $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
+        // $description_full = '';
 
-            $title = $group[ self::ABOUT[ 'bonus-title' ] ];
+        // $group = get_field( self::FIELD[ 'about' ], $id );
 
-            $description = $group[ self::ABOUT[ 'bonus-description' ] ];
-        }
+        // if ( $group )
+        // {
+        //     $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
 
-        if ( $bonus_id )
-        {
-            $title = get_field( self::BONUS[ 'title' ], $bonus_id );
+        //     $title = $group[ self::ABOUT[ 'bonus-title' ] ];
 
-            $description = get_field( self::BONUS[ 'description' ], $bonus_id );
-        }
+        //     $description = $group[ self::ABOUT[ 'bonus-description' ] ];
+            
+        //     $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
+        // }
 
-        return [
-            'title' => $title,
+        // // if ( $bonus_id )
+        // // {
+        // //     $title = get_field( self::BONUS[ 'title' ], $bonus_id );
 
-            'description' => $description,
-        ];
+        // //     $description = get_field( self::BONUS[ 'description' ], $bonus_id );
+        // // }
+
+        // return [
+        //     'title' => $title,
+
+        //     'description' => $description,
+
+        //     'description-full' => $description_full,
+        // ];
     }
+
+    // private static function get_bonus( $id )
+    // {
+    //     // $args = [];
+
+    //     $bonus_id = 0;
+
+    //     $title = '';
+
+    //     $description = '';
+
+    //     $description_full = '';
+
+    //     $group = get_field( self::FIELD[ 'about' ], $id );
+
+    //     if ( $group )
+    //     {
+    //         $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
+
+    //         $title = $group[ self::ABOUT[ 'bonus-title' ] ];
+
+    //         $description = $group[ self::ABOUT[ 'bonus-description' ] ];
+            
+    //         $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
+    //     }
+
+    //     // if ( $bonus_id )
+    //     // {
+    //     //     $title = get_field( self::BONUS[ 'title' ], $bonus_id );
+
+    //     //     $description = get_field( self::BONUS[ 'description' ], $bonus_id );
+    //     // }
+
+    //     return [
+    //         'title' => $title,
+
+    //         'description' => $description,
+
+    //         'description-full' => $description_full,
+    //     ];
+    // }
 
     const FETURE_MAIN_DESCRIPTION = [
         'id' => 'billet-feture-id',
@@ -424,32 +473,40 @@ class BilletMain
 
     public static function get( $args )
     {
-        $id = ( !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID );
+        $id = !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID;
+
+        $url = self::get_url( $id, $filter );
 
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
-        $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
+        $bonus = self::get_bonus( $id, $url, $filter );
 
-        // LegalDebug::debug( [
-        //     'function' => 'BilletMain::get',
+        // $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
-        //     $filter,
-        // ] );
+        LegalDebug::debug( [
+            'function' => 'BilletMain::get',
+
+            'bonus' => $bonus,
+        ] );
 
         return [
             'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
 
             'id' => $id,
         
-            'url' => self::get_url( $id, $filter ),
+            // 'url' => self::get_url( $id, $filter ),
+            
+            'url' => $url,
 
-            'bonus' => self::get_bonus( $id ),
+            // 'bonus' => self::get_bonus( $id ),
+            
+            'bonus' => $bonus,
 
             'selector' => 'billet-' . $id,
 
             'color' => self::get_color( $id ),
 
-            'description' => $description,
+            // 'description' => $description,
 
             'filter' => $filter,
         ];
