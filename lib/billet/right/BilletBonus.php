@@ -124,19 +124,23 @@ class BilletBonus
             $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
         }
 
-        // LegalDebug::debug( [
-        //     'function' => 'get_bonus_href',
+        LegalDebug::debug( [
+            'function' => 'get_bonus_href',
 
-        //     'bonus_url' => $bonus_url,
+            'bonus_url' => $bonus_url,
 
-        //     'referal_url' => $referal_url,
+            'referal_url' => $referal_url,
 
-        //     'oops' => $oops,
+            'oops' => $oops,
 
-        //     'bonus_href' => $bonus_href,
+            'bonus_href' => $bonus_href,
 
-        //     'href' => BilletMain::href( $bonus_href ),
-        // ] );
+            'href' => array_merge(
+                BilletMain::href( $bonus_href ),
+    
+                [ 'nofollow' => BilletMain::get_nofollow( $bonus_href ) ]
+            ),
+        ] );
 
         return array_merge(
             BilletMain::href( $bonus_href ),
