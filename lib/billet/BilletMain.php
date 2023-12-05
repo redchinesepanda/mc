@@ -196,7 +196,7 @@ class BilletMain
 
         if ( empty( $bonus_href ) )
         {
-            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops
+            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
         }
 
         return array_merge(
