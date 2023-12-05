@@ -374,7 +374,7 @@ class BilletBonus
         }
 
         if ( $enabled ) {
-            return self::get_bonus( $billet );
+            return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
         }
 
         return [];
