@@ -20,7 +20,7 @@
 		<?php endif; ?>
 	</div>
 	<div class="billet-get">
-		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>"  target="_blank" rel="nofollow">
+		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>" target="_blank" rel="nofollow">
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
