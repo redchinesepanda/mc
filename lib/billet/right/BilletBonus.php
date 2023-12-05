@@ -208,7 +208,7 @@ class BilletBonus
 
             // [ 'nofollow' => $url[ 'bonus-nofollow' ] ],
 
-            self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'bonus' ], $url[ 'oops' ] ),
+            self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
 
             $bonus_data
         );

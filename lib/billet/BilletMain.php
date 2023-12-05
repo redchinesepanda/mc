@@ -304,6 +304,8 @@ class BilletMain
 
             'play-nofollow' => self::get_nofollow( $play_href ),
 
+            'referal' => $referal_url,
+
             'oops' => $oops,
         ];
     }
