@@ -177,6 +177,27 @@ class BilletBonus
 
     //     return !empty( $referal_url ) ? $referal_url : $oops;
     // }
+    
+    public static function get_bonus_href( $bonus_url, $referal_url, $oops )
+    {
+        $bonus_href = '';
+
+        if ( !empty( $bonus_url ) && in_array( $locale, self::LOCALE_BONUS )  )
+        {
+            $bonus_href = $bonus_url;
+        }
+
+        if ( empty( $bonus_href ) )
+        {
+            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
+        }
+
+        return array_merge(
+            BilletMain::href( $bonus_href ),
+
+            [ 'nofollow' => self::get_nofollow( $bonus_href ) ]
+        );
+    }
 
     public static function get_bonus( $id, $url, $filter )
     {
@@ -187,7 +208,7 @@ class BilletBonus
 
             // [ 'nofollow' => $url[ 'bonus-nofollow' ] ],
 
-            get_bonus_href( $bonus_data[ 'bonus_href' ], $url[ 'bonus' ], $url[ 'oops' ] ),
+            self::get_bonus_href( $bonus_data[ 'bonus_href' ], $url[ 'bonus' ], $url[ 'oops' ] ),
 
             $bonus_data
         );
