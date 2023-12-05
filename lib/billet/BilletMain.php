@@ -181,10 +181,6 @@ class BilletMain
         return str_contains( $url, '/go/' );
     }
 
-    const LOCALE_BONUS = [
-        'ru_KZ',
-    ];
-
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
