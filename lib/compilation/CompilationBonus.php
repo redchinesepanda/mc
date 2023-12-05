@@ -25,11 +25,11 @@ class CompilationBonus
 
             $title = BilletTitle::get( $args );
 
-            LegalDebug::debug( [
-                'function' => 'get_billets_bonus',
+            // LegalDebug::debug( [
+            //     'function' => 'get_billets_bonus',
 
-                'args' => $args,
-            ] );
+            //     'args' => $args,
+            // ] );
             
             $bonus = BilletBonus::get( $args );
 
