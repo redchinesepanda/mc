@@ -442,7 +442,7 @@ class BilletBonus
         return self::render_main( self::TEMPLATE[ 'bonus' ], $args );
     }
     
-    public static function render_main( $args )
+    public static function render_main( $template, $args )
     {
         ob_start();
 
