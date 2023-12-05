@@ -124,6 +124,16 @@ class BilletBonus
             $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
         }
 
+        LegalDebug::debug( [
+            'function' => 'get_bonus_href',
+
+            'bonus_url' => $bonus_url,
+
+            'referal_url' => $referal_url,
+            
+            'oops' => $oops,
+        ] );
+
         return array_merge(
             BilletMain::href( $bonus_href ),
 
