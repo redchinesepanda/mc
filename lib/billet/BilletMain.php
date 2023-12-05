@@ -475,9 +475,9 @@ class BilletMain
     {
         $id = !empty( $args['id'] ) ? $args['id'] : ( get_post() )->ID;
 
-        $url = self::get_url( $id, $filter );
-
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
+
+        $url = self::get_url( $id, $filter );
 
         $bonus = self::get_bonus( $id, $url, $filter );
 
@@ -486,7 +486,7 @@ class BilletMain
         LegalDebug::debug( [
             'function' => 'BilletMain::get',
 
-            'bonus' => $bonus,
+            'bonus' =>  $bonus,
         ] );
 
         return [
