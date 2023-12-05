@@ -105,6 +105,10 @@ class BilletBonus
 
         return null;
     }
+
+    const LOCALE_BONUS = [
+        'ru_KZ',
+    ];
     
     public static function get_bonus_href( $bonus_url, $referal_url, $oops )
     {
