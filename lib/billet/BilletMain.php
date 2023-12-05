@@ -185,13 +185,34 @@ class BilletMain
         'ru_KZ',
     ];
 
+    public static function get_bonus_href( $bonus_url, $referal_url, $oops )
+    {
+        $bonus_href = '';
+
+        if ( !empty( $bonus_url ) && in_array( $locale, self::LOCALE_BONUS )  )
+        {
+            $bonus_href = $bonus_url;
+        }
+
+        if ( empty( $bonus_href ) )
+        {
+            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops
+        }
+
+        return array_merge(
+            BilletMain::href( $bonus_href ),
+
+            [ 'nofollow' => self::get_nofollow( $bonus_href ) ]
+        );
+    }
+
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
 
         $card_url = '';
 
-        $bonus_url = '';
+        // $bonus_url = '';
 
         $group = get_field( self::FIELD[ 'about' ], $id );
 
@@ -203,7 +224,7 @@ class BilletMain
 
             // $bonus_url = $group[ self::ABOUT[ 'bonus-id' ] ];
 
-            $bonus_url = self::get_bonus_url( $id, $filter );
+            // $bonus_url = self::get_bonus_url( $id, $filter );
         }
 
         // LegalDebug::debug( [
@@ -265,20 +286,20 @@ class BilletMain
 
         // Заголовок бонуса учитывая локаль Казахстан
 
-        $bonus_href = '';
+        // $bonus_href = '';
 
-        if ( in_array( $locale, self::LOCALE_BONUS ) )
-        {
-            if ( !empty ( $bonus_url ) )
-            {
-                $bonus_href = $bonus_url;
-            }
-        }
+        // if ( in_array( $locale, self::LOCALE_BONUS ) )
+        // {
+        //     if ( !empty ( $bonus_url ) )
+        //     {
+        //         $bonus_href = $bonus_url;
+        //     }
+        // }
 
-        if ( empty( $bonus_href ) )
-        {
-            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
-        }
+        // if ( empty( $bonus_href ) )
+        // {
+        //     $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
+        // }
 
         // Кнопка играть
 
@@ -296,13 +317,15 @@ class BilletMain
 
             'title-nofollow' => self::get_nofollow( $title_href ),
         
-            'bonus' => $bonus_href,
+            // 'bonus' => $bonus_href,
 
-            'bonus-nofollow' => self::get_nofollow( $bonus_href ),
+            // 'bonus-nofollow' => self::get_nofollow( $bonus_href ),
 
             'play' => $play_href,
 
             'play-nofollow' => self::get_nofollow( $play_href ),
+
+            'oops' => $oops,
         ];
     }
 
