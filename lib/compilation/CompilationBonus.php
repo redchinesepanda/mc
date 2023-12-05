@@ -24,6 +24,12 @@ class CompilationBonus
             $logo = BilletLogo::get( $args );
 
             $title = BilletTitle::get( $args );
+
+            LegalDebug::debug( [
+                'function' => 'get_billets_bonus',
+
+                'args' => $args,
+            ] );
             
             $bonus = BilletBonus::get( $args[ 'bonus' ] );
 
