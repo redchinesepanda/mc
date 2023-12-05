@@ -114,7 +114,7 @@ class BilletBonus
     {
         $bonus_href = '';
 
-        if ( !empty( $bonus_url ) && in_array( $locale, self::LOCALE_BONUS )  )
+        if ( !empty( $bonus_url ) && in_array( WPMLMain::get_locale(), self::LOCALE_BONUS )  )
         {
             $bonus_href = $bonus_url;
         }
