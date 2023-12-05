@@ -195,7 +195,7 @@ class BilletBonus
         return array_merge(
             BilletMain::href( $bonus_href ),
 
-            [ 'nofollow' => self::get_nofollow( $bonus_href ) ]
+            [ 'nofollow' => BilletMain::get_nofollow( $bonus_href ) ]
         );
     }
 
