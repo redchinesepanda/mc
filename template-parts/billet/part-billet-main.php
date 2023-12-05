@@ -16,6 +16,6 @@
     </div>
     <?php BilletSpoiler::render( $args ); ?>
     <div class="billet-footer">
-        <?php echo $args['description'] ?>
+        <?php echo $args[ 'bonus' ][ 'description-full' ] ?>
     </div>
 </div>
