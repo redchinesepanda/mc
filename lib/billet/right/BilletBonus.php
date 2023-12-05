@@ -124,25 +124,25 @@ class BilletBonus
             $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
         }
 
-        LegalDebug::debug( [
-            'function' => 'get_bonus_href',
+        // LegalDebug::debug( [
+        //     'function' => 'get_bonus_href',
 
-            'bonus_url' => $bonus_url,
+        //     'bonus_url' => $bonus_url,
 
-            'referal_url' => $referal_url,
+        //     'referal_url' => $referal_url,
 
-            'oops' => $oops,
+        //     'oops' => $oops,
 
-            'bonus_href' => $bonus_href,
+        //     'bonus_href' => $bonus_href,
 
-            'BilletMain::href' => BilletMain::href( $bonus_href ),
+        //     'BilletMain::href' => BilletMain::href( $bonus_href ),
 
-            'array_merge' => array_merge(
-                BilletMain::href( $bonus_href ),
+        //     'array_merge' => array_merge(
+        //         BilletMain::href( $bonus_href ),
     
-                [ 'nofollow' => BilletMain::get_nofollow( $bonus_href ) ]
-            ),
-        ] );
+        //         [ 'nofollow' => BilletMain::get_nofollow( $bonus_href ) ]
+        //     ),
+        // ] );
 
         return array_merge(
             BilletMain::href( $bonus_href ),
@@ -167,17 +167,17 @@ class BilletBonus
 
         $bonus_data = self::get_bonus_data( $id, $filter );
 
-        LegalDebug::debug( [
-            'function' => 'BilletBonus::get_bonus',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletBonus::get_bonus',
 
-            'bonus_data' => $bonus_data,
+        //     'bonus_data' => $bonus_data,
 
-            'data' => array_merge(
-                $bonus_data,
+        //     'data' => array_merge(
+        //         $bonus_data,
 
-                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
-            ),
-        ] );
+        //         self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
+        //     ),
+        // ] );
 
         return array_merge(
             self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
