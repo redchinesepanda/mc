@@ -161,7 +161,7 @@ class BilletBonus
     
                 'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
     
-                'description-full' => $group[ self::ABOUT[ 'bonus-description-full' ] ],
+                'description-full' => $group[ self::ABOUT[ 'description' ] ],
             ];
         }
 
