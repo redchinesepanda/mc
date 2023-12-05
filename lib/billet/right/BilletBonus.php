@@ -161,6 +161,16 @@ class BilletBonus
 
         $bonus_data = self::get_bonus_data( $id, $filter );
 
+        LegalDebug::debug( [
+            'function' => 'BilletBonus::get_bonus',
+
+            'data' => array_merge(
+                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
+    
+                $bonus_data
+            ),
+        ] );
+
         return array_merge(
             self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
 
