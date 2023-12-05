@@ -21,6 +21,8 @@ class BilletBonus
     ];
 
     const ABOUT = [
+        'bonus-id' => 'about-bonus-id',
+
         'bonus-title' => 'about-bonus',
 
         'bonus-description' => 'about-description',
@@ -96,7 +98,16 @@ class BilletBonus
                         
                         // return $item;
 
+                        $bonus_href = '';
+
+                        if ( $bonus_id = $item[ self::FETURE_BONUS[ 'bonus-id' ] ] )
+                        {
+                            $bonus_href = get_post_permalink( $bonus_id );
+                        }
+
                         return [
+                            'href' => $bonus_href,
+
                             'title' => $item[ self::FETURE_BONUS[ 'bonus-title' ] ],
                 
                             'description' => $item[ self::FETURE_BONUS[ 'bonus-description' ] ],
@@ -114,6 +125,8 @@ class BilletBonus
     public static function get_bonus_default( $id )
     {
         return [
+            'href' => '',
+
             'title' => '',
 
             'description' => '',
@@ -134,7 +147,16 @@ class BilletBonus
             
             // $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
 
+            $bonus_href = '';
+                
+            if ( $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ] )
+            {
+                $bonus_href = get_post_permalink( $bonus_id );
+            }
+
             return [
+                'href' => $bonus_href;
+                
                 'title' => $group[ self::ABOUT[ 'bonus-title' ] ],
     
                 'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
@@ -146,18 +168,32 @@ class BilletBonus
         return null;
     }
 
+    // public static function get_bonus_href( $bonus_url, $referal_url, $oops )
+    // {
+    //     if ( !empty( $bonus_url ) && in_array( $locale, self::LOCALE_BONUS )  )
+    //     {
+    //         return $bonus_url;
+    //     }
+
+    //     return !empty( $referal_url ) ? $referal_url : $oops;
+    // }
+
     public static function get_bonus( $id, $url, $filter )
     {
+        $bonus_data = get_bonus_data( $id, $filter );
+
         return array_merge(
-            BilletMain::href( $url[ 'bonus' ] ),
+            // BilletMain::href( $url[ 'bonus' ] ),
 
-            [ 'nofollow' => $url[ 'bonus-nofollow' ] ],
+            // [ 'nofollow' => $url[ 'bonus-nofollow' ] ],
 
-            get_bonus_text( $id, $filter )
+            get_bonus_href( $bonus_data[ 'bonus_href' ], $url[ 'bonus' ], $url[ 'oops' ] ),
+
+            $bonus_data
         );
     }
 
-    public static function get_bonus_text( $id, $filter )
+    public static function get_bonus_data( $id, $filter )
     {
         if ( $bonus = self::get_bonus_repeater( $id, $filter ) )
         {
