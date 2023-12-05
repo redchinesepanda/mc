@@ -170,12 +170,13 @@ class BilletBonus
         LegalDebug::debug( [
             'function' => 'BilletBonus::get_bonus',
 
-            'bonus_data' => $bonus_data,
+            // 'bonus_data' => $bonus_data,
 
             'data' => array_merge(
-                $bonus_data,
+                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
 
-                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
+                $bonus_data
+
             ),
         ] );
 
