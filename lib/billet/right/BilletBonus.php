@@ -134,6 +134,8 @@ class BilletBonus
             'oops' => $oops,
 
             'bonus_href' => $bonus_href,
+
+            'href' => BilletMain::href( $bonus_href ),
         ] );
 
         return array_merge(
