@@ -185,27 +185,6 @@ class BilletMain
         'ru_KZ',
     ];
 
-    public static function get_bonus_href( $bonus_url, $referal_url, $oops )
-    {
-        $bonus_href = '';
-
-        if ( !empty( $bonus_url ) && in_array( $locale, self::LOCALE_BONUS )  )
-        {
-            $bonus_href = $bonus_url;
-        }
-
-        if ( empty( $bonus_href ) )
-        {
-            $bonus_href = !empty( $referal_url ) ? $referal_url : $oops;
-        }
-
-        return array_merge(
-            BilletMain::href( $bonus_href ),
-
-            [ 'nofollow' => self::get_nofollow( $bonus_href ) ]
-        );
-    }
-
     public static function get_url( $id, $filter = [] )
     {
         $referal_url = '';
