@@ -173,9 +173,9 @@ class BilletBonus
             'bonus_data' => $bonus_data,
 
             'data' => array_merge(
-                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] ),
-    
-                $bonus_data
+                $bonus_data,
+
+                self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
             ),
         ] );
 
