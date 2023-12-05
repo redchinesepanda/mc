@@ -348,6 +348,12 @@ class BilletMain
 
     private static function get_bonus( $id, $url, $filter )
     {
+        LegalDebug::debug( [
+            'function' => 'BilletMain::get_bonus',
+
+            'bonus' =>  BilletBonus::get_bonus( $id, $url, $filter ),
+        ] );
+
         return BilletBonus::get_bonus( $id, $url, $filter );
 
         // // $args = [];
