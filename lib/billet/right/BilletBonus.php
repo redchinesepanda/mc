@@ -180,7 +180,7 @@ class BilletBonus
 
     public static function get_bonus( $id, $url, $filter )
     {
-        $bonus_data = get_bonus_data( $id, $filter );
+        $bonus_data = self::get_bonus_data( $id, $filter );
 
         return array_merge(
             // BilletMain::href( $url[ 'bonus' ] ),
