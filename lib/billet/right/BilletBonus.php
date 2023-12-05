@@ -201,6 +201,20 @@ class BilletBonus
 
     public static function get_bonus( $id, $url, $filter )
     {
+        $enabled = true;
+
+        if ( !empty( $filter[ 'bonus' ] ) )
+        {
+            $enabled = $filter[ 'bonus' ];
+        }
+
+        if ( !$enabled )
+        {
+            // return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
+
+            return null;
+        }
+
         $bonus_data = self::get_bonus_data( $id, $filter );
 
         return array_merge(
@@ -359,38 +373,59 @@ class BilletBonus
     //     return $args;
     // }
 
-    public static function get( $billet )
-    {
-        // LegalDebug::debug( [
-        //     'function' => 'BilletBonus::get',
+    // public static function get( $billet )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'function' => 'BilletBonus::get',
 
-        //     'billet' => $billet,
-        // ] );
+    //     //     'billet' => $billet,
+    //     // ] );
 
-        $enabled = true;
+    //     $enabled = true;
 
-        if ( !empty( $billet[ 'filter' ] ) ) {
-            $enabled = $billet[ 'filter' ][ 'bonus' ];
-        }
+    //     if ( !empty( $billet[ 'filter' ] ) ) {
+    //         $enabled = $billet[ 'filter' ][ 'bonus' ];
+    //     }
 
-        if ( $enabled ) {
-            return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
-        }
+    //     if ( $enabled ) {
+    //         return self::get_bonus( $billet[ 'id' ], $billet[ 'url' ], $billet[ 'filter' ] );
+    //     }
 
-        return [];
-    }
+    //     return [];
+    // }
 
     const TEMPLATE = [
         'bonus' => LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-bonus.php',
     ];
 
-    public static function render( $billet )
-    {
-        $args = self::get( $billet );
+    // public static function render( $billet )
+    // {
+    //     $args = self::get( $billet );
 
-        if ( !empty( $args ) ) {
-            load_template( self::TEMPLATE[ 'bonus' ], false, $args );
+    //     if ( !empty( $args ) ) {
+    //         load_template( self::TEMPLATE[ 'bonus' ], false, $args );
+    //     }
+    // }
+
+    public static function render( $args )
+    {
+        if ( empty( $args ) )
+        {
+            return '';
         }
+        
+        return self::render_main( self::TEMPLATE[ 'bonus' ], $args );
+    }
+    
+    public static function render_main( $args )
+    {
+        ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
