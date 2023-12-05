@@ -31,7 +31,7 @@ class CompilationBonus
                 'args' => $args,
             ] );
             
-            $bonus = BilletBonus::get( $args[ 'bonus' ] );
+            $bonus = BilletBonus::get( $args );
 
             if ( empty( $bonus[ 'description' ] ) )
             {
