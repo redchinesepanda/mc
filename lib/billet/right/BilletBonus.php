@@ -155,7 +155,7 @@ class BilletBonus
             }
 
             return [
-                'href' => $bonus_href;
+                'href' => $bonus_href,
                 
                 'title' => $group[ self::ABOUT[ 'bonus-title' ] ],
     
