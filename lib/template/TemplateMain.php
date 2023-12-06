@@ -52,11 +52,11 @@ class TemplateMain
         ],
     ];
 
-    public static function register_script( $scripts = [] )
+    public static function register_script()
     {
 		if ( !self::check() )
         {
-            ToolEnqueue::register_script( $scripts );
+            ToolEnqueue::register_script( self::JS );
         }
     }
 
