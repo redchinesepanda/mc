@@ -100,18 +100,12 @@ class ReviewMain
 
             'ver' => '1.0.0',
         ],
-
-        // '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">'
     ];
 
     public static function style_attributes( $html, $handle )
     {
         if ( 'bootstrap-main' === $handle )
         {
-            LegalDebug::debug( [
-                $html,
-            ] );
-
             return str_replace( ">", "media='all' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'>", $html );
         }
 
