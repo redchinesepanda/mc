@@ -228,7 +228,7 @@ class BaseHeader
 			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 		];
 
-		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data ) );
+		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
 
 	public static function parse_languages( $languages )
