@@ -195,7 +195,8 @@
     pointer-events: none;
 }
 
-.legal-menu .menu-item.legal-country > a::after {
+.legal-menu .legal-country-cl > a::after {
+	content: 'CL';
 	content: attr( 'data-text-default' );
 }
 
