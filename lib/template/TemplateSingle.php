@@ -44,13 +44,13 @@ class TemplateSingle
         // }
     }
 
-	public static function dequeue_style()
-    {
-        if ( self::check_single() )
-        {
-            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
-        }
-    }
+	// public static function dequeue_style()
+    // {
+    //     if ( self::check_single() )
+    //     {
+    //         ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
+    //     }
+    // }
 
 	public static function register()
     {
@@ -58,7 +58,7 @@ class TemplateSingle
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
     }
 
     public static function check_bonus()
