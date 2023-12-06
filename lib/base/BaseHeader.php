@@ -223,6 +223,12 @@ class BaseHeader
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 		];
 
+		LegalDebug::debug( [
+			'function' => 'BaseHeader::parse_languages',
+
+			'current' => $languages[ 'current' ],
+		] );
+
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
 
