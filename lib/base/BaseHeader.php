@@ -275,6 +275,8 @@ class BaseHeader
 			'href' => '/choose-your-country/',
 
 			'class' => 'legal-country legal-country-all',
+
+			'data' => '',
 		];
 
 		return $item;
