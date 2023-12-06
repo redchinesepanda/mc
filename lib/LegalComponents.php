@@ -39,12 +39,14 @@ class LegalComponents
 	
 			BonusMain::register();
 	
-			TemplateMain::register();
+			// TemplateMain::register();
 
 			WikiMain::register();
 
 			ForecastMain::register();
 		}
+
+		TemplateMain::register();
 	}
 
 	public static function check_not_admin()
