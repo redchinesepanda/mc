@@ -196,8 +196,7 @@
 }
 
 .legal-menu .legal-country-cl > a::after {
-	content: 'CL';
-	content: attr( data-text-default );
+	content: attr( data-name-code );
 }
 
 /* Position */
