@@ -32,9 +32,7 @@ class TemplateMain
 
         'parent-style',
 
-        'tcb-style-base-thrive_template-1027174',
-
-        'global-styles-inline',
+        // 'global-styles-inline',
 
         'tve-logged-in-style',
 
