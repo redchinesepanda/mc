@@ -31,6 +31,20 @@ class TemplateMain
         'child-style',
 
         'parent-style',
+
+        'tcb-style-base-thrive_template-1027174',
+
+        'global-styles-inline',
+
+        'tve-logged-in-style',
+
+        'wpml-legacy-dropdown-click-0',
+
+        'wpml-legacy-horizontal-list-0',
+
+        'wpml-legacy-horizontal-list-0-inline',
+
+        'wpml-menu-item-0',
     ];
 
     const CSS = [
