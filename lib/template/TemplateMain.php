@@ -101,7 +101,7 @@ class TemplateMain
         return TemplatePage::check_page() || TemplateSingle::check_single();
     }
 
-    public static function tcb_optimized_assets( $is_optimized, $post_id )
+    public static function tcb_optimized_assets( $is_optimized, $post_id = 0 )
     {
         return !self::check();
     }
