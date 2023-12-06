@@ -185,7 +185,7 @@ class ReviewMain
 
         add_action( 'wp_head', [ $handler, 'print' ] );
 
-        add_filter( 'style_loader_tag', [ $handler, 'style_attributes' ], 10, 2 );
+        // add_filter( 'style_loader_tag', [ $handler, 'style_attributes' ], 10, 2 );
 
         // add_filter( 'content_save_pre' , [ $handler, 'encoding' ], 10, 1);
 
