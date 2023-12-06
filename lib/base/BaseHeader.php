@@ -245,11 +245,11 @@ class BaseHeader
 			'data' => self::get_data_attr( $languages[ 'current' ] ),
 		];
 
-		LegalDebug::debug( [
-			'function' => 'BaseHeader::parse_languages',
+		// LegalDebug::debug( [
+		// 	'function' => 'BaseHeader::parse_languages',
 
-			'current' => $languages[ 'current' ],
-		] );
+		// 	'current' => $languages[ 'current' ],
+		// ] );
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
