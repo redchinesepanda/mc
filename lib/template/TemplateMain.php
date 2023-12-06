@@ -12,14 +12,25 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+    const CURRENT_LANGUAGE = [
+        'pt',
+
+        'kz',
+    ];
+
+    public static function check_code()
+    {
+        return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
+    }
+
     const DEQUEUE = [
-        // 'thrive-theme-styles',
+        'thrive-theme-styles',
 
-        // 'thrive-theme',
+        'thrive-theme',
 
-        // 'child-style',
+        'child-style',
 
-        // 'parent-style',
+        'parent-style',
     ];
 
     const CSS = [
@@ -60,6 +71,19 @@ class TemplateMain
         }
     }
 
+    public static function dequeue_style()
+    {
+        if ( self::check_dequeue() )
+        {
+            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
+        }
+    }
+
+    public static function check_dequeue()
+    {
+        return self::check() && self::check_code();
+    }
+
     public static function check()
     {
         return TemplatePage::check_page() || TemplateSingle::check_single();
@@ -72,6 +96,8 @@ class TemplateMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
 
         TemplatePage::register();
 
