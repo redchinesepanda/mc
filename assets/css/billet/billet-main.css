@@ -13,6 +13,13 @@
         padding-right: 20px;
     }
 
+    /* Billet Width and Height */
+    .billet-left,
+    .billet-center,
+    .billet-right {
+        min-height: 168px;
+    }
+
     /* Billet Background */
 
     .billet-left {
@@ -28,6 +35,11 @@
 @media screen and ( min-width: 768px ) {
 
     /* Billet Width and Height */
+    .billet-left,
+    .billet-center,
+    .billet-right {
+        min-height: 200px;
+    }
 
     .billet-left {
         width: calc( 22% - 20px );
@@ -55,6 +67,11 @@
         border-radius: 0px 20px 20px 0px;
     }
 
+}
+
+/* Body */
+body {
+    background-color: #EDEFF4;
 }
 
 /* Billet Display */
@@ -98,6 +115,12 @@
 .billet-title {
     display: flex;
     column-gap: 16px;
+}
+@media (max-width: 768px) {
+    .billet-title {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+    } 
 }
 
 .billet .billet-title-achivement.legal-background {
@@ -316,12 +339,6 @@
 
 /* Billet Width and Height */
 
-.billet-left,
-.billet-center,
-.billet-right {
-    min-height: 168px;
-}
-
 .billet-left a {
     width: fit-content;
 }
@@ -361,6 +378,13 @@
     height: 39px;
 }
 
+@media (max-width: 576px) {
+    .billet-title .billet-title-achivement.legal-image {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Billet Position */
 
 .billet-item {
@@ -392,6 +416,12 @@
 .billet-title .billet-title-achivement.legal-image {
     margin-left: auto;
     padding: 5.5px 10px 5.5px 30px;
+}
+
+@media (max-width: 768px) {
+    .billet-title .billet-title-achivement.legal-image {
+        margin-left: 0;
+    }
 }
 
 /* .billet-list-part:not( .legal-default ) .billet-list-part-item { */

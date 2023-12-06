@@ -34,6 +34,8 @@ require_once( 'ToolTimezone.php' );
 
 require_once( 'ToolCSP.php' );
 
+require_once( 'ToolBootsrap.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -55,6 +57,8 @@ class ToolsMain
         ToolTinyMCE::register();
 
         ToolCSP::register();
+
+        ToolBootsrap::register();
     }
 }
 
