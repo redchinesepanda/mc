@@ -7,6 +7,8 @@ require_once( 'BaseFooter.php' );
 class BaseMain
 {
 	const TEXT = [
+		'all-countries' => 'All Countries',
+
 		'all-rights-reserved' => 'All rights reserved',
 
         'bet-now' => 'Bet now',

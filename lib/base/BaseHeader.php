@@ -211,6 +211,17 @@ class BaseHeader
 		return $prefix;
 	}
 
+	public static function prepare_data_attr( $language )
+	{
+		return [
+			'data-name-code' => strtoupper( $language[ 'language_code' ] ),
+
+			'data-name-default' => strtoupper( $language[ 'translated_name' ] ),
+
+			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
+		];
+	}
+
 	public static function parse_languages( $languages )
 	{
 		$item = [
@@ -246,7 +257,7 @@ class BaseHeader
 		}
 
 		$item[ 'children' ][] = [
-			'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
+			'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
 
 			'href' => '/choose-your-country/',
 
