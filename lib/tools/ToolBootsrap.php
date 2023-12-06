@@ -10,6 +10,14 @@ class ToolBootsrap
 
             'ver' => '1.0.0',
         ],
+
+		// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+		'bootstrap-swiper' => [
+            'path' => 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
 	public static function style_attributes( $html, $handle )
