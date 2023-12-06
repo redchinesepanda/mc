@@ -101,6 +101,11 @@ class TemplateMain
         return TemplatePage::check_page() || TemplateSingle::check_single();
     }
 
+    public static function tcb_optimized_assets( $is_optimized, $post_id )
+    {
+        return !self::check();
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -110,6 +115,8 @@ class TemplateMain
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+
+		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
         TemplatePage::register();
 
