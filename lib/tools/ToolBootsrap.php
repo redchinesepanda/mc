@@ -24,7 +24,7 @@ class ToolBootsrap
 
 	public static function check()
     {
-		return true;
+		return !TemplateMain::check();
 	}
 
 	public static function register_style()
