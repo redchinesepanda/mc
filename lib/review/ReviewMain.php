@@ -94,6 +94,14 @@ class ReviewMain
 
             'ver' => '1.0.1',
         ],
+
+        'bootstrap-main' => [
+            'path' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
+
+            'ver' => '1.0.0',
+        ],
+
+        // '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">'
     ];
 
     public static function register_style( $styles = [] )
