@@ -264,6 +264,8 @@ class BaseHeader
 				'href' => $language[ 'url' ],
 
 				'class' => 'legal-country legal-country-' . $language[ 'code' ],
+
+				'data' => '',
 			];
 		}
 
