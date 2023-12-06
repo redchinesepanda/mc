@@ -211,15 +211,24 @@ class BaseHeader
 		return $prefix;
 	}
 
-	public static function prepare_data_attr( $language )
+	public static function prepare_data_attr( $value, $name )
 	{
-		return [
+		return $name . '="' . $value . '"';
+	}
+
+	public static function get_data_attr( $language )
+	{
+		$handler = new self();
+
+		$data = [
 			'data-name-code' => strtoupper( $language[ 'language_code' ] ),
 
 			'data-name-default' => strtoupper( $language[ 'translated_name' ] ),
 
 			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 		];
+
+		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data ) );
 	}
 
 	public static function parse_languages( $languages )
@@ -232,6 +241,8 @@ class BaseHeader
 			'children' => [],
 
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
+
+			'data' => self::get_data_attr( $language );
 		];
 
 		LegalDebug::debug( [
