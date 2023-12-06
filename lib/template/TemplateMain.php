@@ -38,6 +38,28 @@ class TemplateMain
         }
     }
 
+    const JS = [
+        'legal-template-thrive-oops' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/template/template-thrive-oops.js',
+
+            'ver' => '1.0.0',
+        ],
+
+        'legal-template-thrive-title' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/template/template-thrive-title.js',
+
+            'ver' => '1.0.0',
+        ],
+    ]
+
+    public static function register_script( $scripts = [] )
+    {
+		if ( !self::check() )
+        {
+            ToolEnqueue::register_script( $scripts );
+        }
+    }
+
     public static function check()
     {
         return TemplatePage::check_page() || TemplateSingle::check_single();
@@ -48,6 +70,8 @@ class TemplateMain
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
         TemplatePage::register();
 
