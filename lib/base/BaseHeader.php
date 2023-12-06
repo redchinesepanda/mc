@@ -242,7 +242,7 @@ class BaseHeader
 
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 
-			'data' => self::get_data_attr( $language );
+			'data' => self::get_data_attr( $language ),
 		];
 
 		LegalDebug::debug( [
