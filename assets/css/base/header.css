@@ -195,6 +195,10 @@
     pointer-events: none;
 }
 
+.legal-menu .legal-country > .item-title::after {
+	content: attr( 'data-text-default' );
+}
+
 /* Position */
 
 #thrive-header {
