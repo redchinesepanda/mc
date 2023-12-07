@@ -18,6 +18,8 @@ LegalMain::register();
 
 // BonusAbout::affiliate_migrate();
 
-TemplateMain::register_thrive();
+// TemplateMain::register_thrive();
+
+remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 23 );
 
 ?>
