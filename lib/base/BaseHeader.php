@@ -572,7 +572,7 @@ class BaseHeader
 
         // return $output;
 
-		self::render_main( self::TEMPLATE[ 'header' ], self::get() );
+		return self::render_main( self::TEMPLATE[ 'header' ], self::get() );
     }
 
     public static function render_item( $item )
@@ -585,7 +585,7 @@ class BaseHeader
 
         // return $output;
 
-		self::render_main( self::TEMPLATE[ 'item' ], $item );
+		return self::render_main( self::TEMPLATE[ 'item' ], $item );
     }
 
 	public static function render_main( $template, $args )
