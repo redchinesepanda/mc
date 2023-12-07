@@ -18,11 +18,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
     //     button.addEventListener( 'click', spoilerToggle, false );
     // }
 
+    function langPrepare( lang )
+    {
+        lang.addEventListener( 'click', spoilerToggle, false );
+    }
+
     function spoilerPrepare( switcher )
     {
-        const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
-
-        button.addEventListener( 'click', spoilerToggle, false );
+        switcher.querySelectorAll( '.lang-current').forEach( langPrepare );
     }
 
     document.querySelectorAll( '.lang-switcher').forEach( spoilerPrepare );
