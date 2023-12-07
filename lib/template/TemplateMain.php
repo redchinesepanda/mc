@@ -129,10 +129,14 @@ class TemplateMain
         {
             $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
 
+            $value = get_option( $option );
+
             LegalDebug::debug( [
                 'function' => 'TemplateMain::register',
 
                 'option' => $option,
+
+                'value' => $value,
             ] );
 
             add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ], 9 );
