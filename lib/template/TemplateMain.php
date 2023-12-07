@@ -188,25 +188,25 @@ class TemplateMain
 
         // add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
 
-        global $wp_filter;
+        // global $wp_filter;
 
-        $filters = [];
+        // $filters = [];
 
-        foreach ( $wp_filter as $key => $val )
-        {
-            // if ( false !== strpos( $key, 'comment' ) )
+        // foreach ( $wp_filter as $key => $val )
+        // {
+        //     // if ( false !== strpos( $key, 'comment' ) )
 
-            if ( str_contains( $key, 'wp_head' ) )
-            {
-                $filters[$key][] = $val;
-            }
-        }
+        //     if ( str_contains( $key, 'wp_head' ) )
+        //     {
+        //         $filters[$key][] = $val;
+        //     }
+        // }
 
-        LegalDebug::debug( [
-            'function' => 'register_thrive',
+        // LegalDebug::debug( [
+        //     'function' => 'register_thrive',
 
-            'filters' => $filters,
-        ] );
+        //     'filters' => $filters,
+        // ] );
     }
 
     public static function register()
