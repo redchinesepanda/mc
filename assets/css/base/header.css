@@ -109,7 +109,8 @@
 	} 
 
 	.legal-menu > .menu-item > .sub-menu {
-		top: 68px;
+		top: 28px;
+		/* top: 68px; */
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu {
