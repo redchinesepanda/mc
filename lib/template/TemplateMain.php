@@ -140,6 +140,16 @@ class TemplateMain
             ] );
 
             add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ], 9 );
+
+            $value = get_option( $option );
+
+            LegalDebug::debug( [
+                'function' => 'TemplateMain::register',
+
+                'option' => $option,
+
+                'value' => $value,
+            ] );
         }
 
         TemplatePage::register();
