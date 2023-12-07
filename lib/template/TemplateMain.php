@@ -267,7 +267,7 @@ class TemplateMain
 			$output
 		);
 
-        $output = preg_replace( "<style type="text\/css" id="thrive-default-styles">(.+?)<\/style>", '', $output );
+        $output = preg_replace( "<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>", '', $output );
 
         return $output;
     }
