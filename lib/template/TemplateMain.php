@@ -149,7 +149,7 @@ class TemplateMain
     {
         $handler = new self();
 
-        add_action( 'init', [ $handler, 'register_thrive' ], 1 );
+        add_action( 'init', [ $handler, 'register_thrive' ], -25 );
     }
     public static function register()
     {
