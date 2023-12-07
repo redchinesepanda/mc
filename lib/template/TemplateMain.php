@@ -51,6 +51,12 @@ class TemplateMain
         'tve-logged-in-style',
 
         'tve_style_family_tve_flt',
+
+        'thrive-template',
+
+        'thrive-theme-logged-in-style',
+
+        'tve_global_variables',
     ];
 
     const DEQUEUE_GUTENBERG = [
