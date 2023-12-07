@@ -20,8 +20,6 @@ LegalMain::register();
 
 // TemplateMain::register_thrive();
 
-print_r($GLOBALS['wp_filter']);
-
 remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ] );
 
 ?>
