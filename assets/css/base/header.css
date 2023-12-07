@@ -255,7 +255,8 @@
 
 .legal-menu .menu-item a {
 	/* min-height: 48px; */
-	height: 28px;
+	/* height: 28px; */
+	min-height: 28px;
 }
 
 .legal-menu .menu-item-has-children:after {
