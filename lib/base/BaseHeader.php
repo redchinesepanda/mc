@@ -564,20 +564,35 @@ class BaseHeader
 
     public static function render()
     {
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'header' ], false, self::get() );
+        // load_template( self::TEMPLATE[ 'header' ], false, self::get() );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+		self::render_main( self::TEMPLATE[ 'header' ], self::get() );
     }
 
     public static function render_item( $item )
     {
+        // ob_start();
+
+        // load_template( self::TEMPLATE[ 'item' ], false, $item );
+
+        // $output = ob_get_clean();
+
+        // return $output;
+
+		self::render_main( self::TEMPLATE[ 'item' ], $item );
+    }
+
+	public static function render_main( $template, $args )
+    {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'item' ], false, $item );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
