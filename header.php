@@ -27,9 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- wp_head start -->
 		<?php echo TemplateMain::wp_head(); ?>
 		<!-- wp_head end -->
-		<!-- thrive_amp_permalink start -->
-		<?php thrive_amp_permalink(); ?>
-		<!-- thrive_amp_permalink end -->
+		<!-- <?php thrive_amp_permalink(); ?> -->
 		<!-- Legal Header -->
 	</head>
 	<body <?php body_class( '' ); ?>>
