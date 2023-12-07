@@ -118,7 +118,15 @@ class TemplateMain
 
 		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
-        remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
+        // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
+
+        LegalDebug::debug( [
+            'function' => 'TemplateMain::register',
+
+            \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION,
+        ] );
+
+        // add_filter( "option_{$id_base}", $multidimensional_filter );
 
         TemplatePage::register();
 
