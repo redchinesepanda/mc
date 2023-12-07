@@ -18,6 +18,6 @@ LegalMain::register();
 
 // BonusAbout::affiliate_migrate();
 
-TemplateMain::registerThrive();
+TemplateMain::register_thrive();
 
 ?>
