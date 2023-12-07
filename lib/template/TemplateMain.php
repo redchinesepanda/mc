@@ -122,13 +122,15 @@ class TemplateMain
 
         if ( class_exists( '\TCB\Lightspeed\Main' ) )
         {
+            $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
+
             LegalDebug::debug( [
                 'function' => 'TemplateMain::register',
 
-                \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION,
+                'option' => $option,
             ] );
 
-            // add_filter( 'option_' . \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION, __return_false() );
+            add_filter( "option_{$option}", __return_false() );
         }
 
         TemplatePage::register();
