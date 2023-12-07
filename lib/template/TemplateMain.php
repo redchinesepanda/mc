@@ -89,11 +89,23 @@ class TemplateMain
 		],
     ];
 
+    const CSS_THRIVE = [
+        'legal-template-thrive' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-thrive.css',
+
+			'ver' => '1.0.2',
+		],
+    ];
+
     public static function register_style()
     {
         if ( self::check() )
         {
             ToolEnqueue::register_style( self::CSS );
+        }
+        else
+        {
+            ToolEnqueue::register_style( self::CSS_THRIVE );
         }
     }
 
