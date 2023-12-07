@@ -113,6 +113,8 @@ class TemplateMain
 
     public static function register_thrive()
     {
+        $handler = new self();
+        
         // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
         if ( class_exists( '\TCB\Lightspeed\Main' ) )
