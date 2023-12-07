@@ -64,7 +64,9 @@ class TemplateMain
         
         ...self::DEQUEUE_GUTENBERG,
         
-        ...self::DEQUEUE_WPML
+        ...self::DEQUEUE_WPML,
+
+        ...self::DEQUEUE_WP,
     ];
 
     const CSS = [
