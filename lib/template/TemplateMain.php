@@ -145,6 +145,12 @@ class TemplateMain
         }
     }
 
+    public static function register_function()
+    {
+        $handler = new self();
+
+        add_action( 'init', [ $handler, 'register_thrive' ] );
+    }
     public static function register()
     {
         $handler = new self();
