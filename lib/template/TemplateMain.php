@@ -171,7 +171,7 @@ class TemplateMain
         self::register_emoji();
     }
 
-    public static function fonts_disable( $fonts_import )
+    public static function return_empty_array( $fonts_import )
     {
         return [];
     }
@@ -182,46 +182,12 @@ class TemplateMain
 
 		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
-        add_filter( 'tcb_css_imports', [ $handler, 'fonts_disable' ] );
+        add_filter( 'tcb_css_imports', [ $handler, 'return_empty_array' ] );
 
-        // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
-
-        // if ( class_exists( '\TCB\Lightspeed\Main' ) )
-        // {
-        //     $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
-            
-        //     add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
-
-        //     $value = get_option( $option );
-
-        //     LegalDebug::debug( [
-        //         'function' => 'TemplateMain::register',
-
-        //         'option' => $option,
-
-        //         'value' => $value,
-        //     ] );
-
-        //     add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] ); 
-
-        //     $value = get_option( $option );
-
-        //     LegalDebug::debug( [
-        //         'function' => 'TemplateMain::register',
-
-        //         'option' => $option,
-
-        //         'value' => $value,
-        //     ] );
-        // }
+        add_filter( 'tcb_global_colors_list', [ $handler, 'return_empty_array' ] );
+        
+        add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
     }
-
-    // public static function register_functions()
-    // {
-    //     $handler = new self();
-
-    //     add_action( 'after_setup_theme', [ $handler, 'register_thrive' ] );
-    // }
 
     public static function register()
     {
