@@ -184,9 +184,9 @@ class TemplateMain
 
         add_filter( 'tcb_css_imports', [ $handler, 'return_empty_array' ] );
 
-        add_filter( 'tcb_global_colors_list', [ $handler, 'return_empty_array' ] );
+        // add_filter( 'tcb_global_colors_list', [ $handler, 'return_empty_array' ] );
 
-        add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
+        // add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
     }
 
     public static function register()
