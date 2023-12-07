@@ -3,8 +3,16 @@
 class BaseHeader
 {
 	const CSS = [
-        'legal-header' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
+        'legal-header-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header-main.css',
+
+			'ver' => '1.1.7',
+		],
+    ];
+
+	const CSS_NEW = [
+        'legal-header-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header-new.css',
 
 			'ver' => '1.1.7',
 		],
@@ -12,7 +20,14 @@ class BaseHeader
 
     public static function register_style()
     {
-        BaseMain::register_style( self::CSS );
+		if ( TemplateMain::check_code() )
+		{
+			BaseMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			BaseMain::register_style( self::CSS );
+		}
     }
 
 	public static function register_inline_style()
