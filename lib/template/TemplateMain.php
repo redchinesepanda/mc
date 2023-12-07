@@ -187,6 +187,26 @@ class TemplateMain
         // add_filter( 'tcb_global_colors_list', [ $handler, 'return_empty_array' ] );
 
         // add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
+
+        global $wp_filter;
+
+        $filters = [];
+
+        foreach ( $wp_filter as $key => $val )
+        {
+            // if ( false !== strpos( $key, 'comment' ) )
+
+            if ( str_contains( $key, 'wp_head' ) )
+            {
+                $filters[$key][] = var_export( $val, TRUE );
+            }
+        }
+
+        LegalDebug::debug( [
+            'function' => 'register_thrive',
+
+            'filters' => $filters,
+        ] );
     }
 
     public static function register()
