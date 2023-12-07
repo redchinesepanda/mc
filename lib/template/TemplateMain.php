@@ -106,6 +106,11 @@ class TemplateMain
         return !self::check();
     }
 
+    public static function disable_lightspeed_option( $value )
+    {
+        return 0;
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -130,7 +135,7 @@ class TemplateMain
                 'option' => $option,
             ] );
 
-            add_filter( "option_{$option}", __return_false() );
+            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
         }
 
         TemplatePage::register();
