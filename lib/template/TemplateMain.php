@@ -267,13 +267,13 @@ class TemplateMain
 			$output
 		);
 
-        if ( TemplateMain::check() )
+        if ( self::check() )
         {
             $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
 
             $output = preg_replace( $pattern, '', $output );
         }
-        
+
         return $output;
     }
 }
