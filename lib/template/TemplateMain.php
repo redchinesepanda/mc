@@ -128,7 +128,7 @@ class TemplateMain
                 \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION,
             ] );
 
-            add_filter( 'option_' . \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION, __return_false() );
+            // add_filter( 'option_' . \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION, __return_false() );
         }
 
         TemplatePage::register();
