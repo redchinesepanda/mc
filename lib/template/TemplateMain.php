@@ -282,8 +282,6 @@ class TemplateMain
         'tve_global_variables',
 
         'thrive-default-styles',
-
-        'tve-frontend-compat-css',
     ];
 }
 
