@@ -60,7 +60,7 @@ class TemplateMain
         
         // 'thrive-external-font',
 
-        'tve-frontend-compat',
+        // 'tve-frontend-compat',
     ];
 
     const DEQUEUE_GUTENBERG = [
