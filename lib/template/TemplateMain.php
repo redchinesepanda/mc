@@ -23,6 +23,12 @@ class TemplateMain
         return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
     }
 
+    const DEQUEUE_WP = [
+        'classic-theme-styles',
+
+        'global-styles',
+    ];
+
     const DEQUEUE_WPML = [
         'wpml-legacy-dropdown-click-0',
 
