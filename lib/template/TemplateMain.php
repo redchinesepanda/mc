@@ -139,7 +139,7 @@ class TemplateMain
                 'value' => $value,
             ] );
 
-            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ], 9 );
+            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ], -25 );
 
             $value = get_option( $option );
 
