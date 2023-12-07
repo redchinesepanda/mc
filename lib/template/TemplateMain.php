@@ -149,7 +149,7 @@ class TemplateMain
     {
         $handler = new self();
 
-        add_action( 'wp', [ $handler, 'register_thrive' ] );
+        add_action( 'after_setup_theme', [ $handler, 'register_thrive' ] );
     }
     public static function register()
     {
