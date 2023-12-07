@@ -58,7 +58,7 @@ class TemplateMain
 
         // 'tve_global_variables',
         
-        'thrive-external-font',
+        // 'thrive-external-font',
     ];
 
     const DEQUEUE_GUTENBERG = [
@@ -169,11 +169,18 @@ class TemplateMain
         self::register_emoji();
     }
 
+    public static function fonts_disable( $fonts_import )
+    {
+        return [];
+    }
+
     public static function register_thrive()
     {
         $handler = new self();
 
 		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
+
+        add_filter( 'tcb_css_imports', [ $handler, 'fonts_disable' ] )
 
         // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
