@@ -143,14 +143,29 @@
     color: rgb(12, 17, 21);
 }
 
-.tcb-post-content .legal-attention {
+.tcb-post-content .legal-attention,
+.tcb-post-content .legal-attention a {
     font-family: "Source Sans Pro";
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 28px;
     text-align: center;
+}
+
+.tcb-post-content .legal-attention {
     color: rgb(255, 255, 255);
+}
+
+.tcb-post-content .legal-attention a {
+    color: #cfcfcf;
+}
+.tcb-post-content .legal-attention a:hover {
+    color: #cfcfcf;
+}
+
+.tcb-post-content .legal-attention a u {
+    text-decoration: none;
 }
 
 /* Buttons */

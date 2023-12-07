@@ -111,18 +111,8 @@ class TemplateMain
         return 0;
     }
 
-    public static function register()
+    public static function register_thrive()
     {
-        $handler = new self();
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
-
-		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
-
         // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
         if ( class_exists( '\TCB\Lightspeed\Main' ) )
@@ -151,6 +141,19 @@ class TemplateMain
                 'value' => $value,
             ] );
         }
+    }
+
+    public static function register()
+    {
+        $handler = new self();
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+
+		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
         TemplatePage::register();
 
