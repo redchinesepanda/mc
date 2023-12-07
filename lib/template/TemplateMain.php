@@ -267,7 +267,7 @@ class TemplateMain
 			$output
 		);
 
-        if ( self::check() )
+        if ( self::check_dequeue() )
         {
             $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
 
