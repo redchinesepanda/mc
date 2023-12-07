@@ -198,7 +198,7 @@ class TemplateMain
 
             if ( str_contains( $key, 'wp_head' ) )
             {
-                $filters[$key][] = var_export( $val, TRUE );
+                $filters[$key][] = $val;
             }
         }
 
