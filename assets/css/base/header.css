@@ -255,7 +255,7 @@
 
 .legal-menu .menu-item-has-children:after {
 	width: 28px;
-	height: 48px;
+	min-height: 48px;
 }
 
 /* Background */
