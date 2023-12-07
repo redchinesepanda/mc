@@ -22,7 +22,7 @@ LegalMain::register();
 
 add_action( 'wp_enqueue_scripts', function() {
     wp_dequeue_style( 'classic-theme-styles' );
-    wp_dequeue_style( 'global-styles-inline' );
+    wp_dequeue_style( 'global-styles' );
 }, 20 );
 
 ?>
