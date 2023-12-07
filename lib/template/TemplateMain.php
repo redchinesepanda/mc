@@ -135,7 +135,7 @@ class TemplateMain
                 'option' => $option,
             ] );
 
-            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
+            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ], 9 );
         }
 
         TemplatePage::register();
