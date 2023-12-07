@@ -9,13 +9,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
         event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
     }
 
-    const switchers = document.getElementsByClassName( 'lang-switcher' );
+    // const switchers = document.getElementsByClassName( 'lang-switcher' );
 
-    for ( let switcher of switchers ) {
+    // for ( let switcher of switchers )
+    // {
+    //     const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
+
+    //     button.addEventListener( 'click', spoilerToggle, false );
+    // }
+
+    function spoilerPrepare( switcher )
+    {
         const button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
 
         button.addEventListener( 'click', spoilerToggle, false );
     }
+
+    document.querySelectorAll( '.lang-switcher').forEach( spoilerPrepare );
 
     // document.getElementById( 'thrive-footer' ).addEventListener( 'click', function( event ) {
     //     const switchers = document.getElementsByClassName( 'lang-switcher' );
