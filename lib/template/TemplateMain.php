@@ -57,10 +57,6 @@ class TemplateMain
         'thrive-theme-logged-in-style',
 
         // 'tve_global_variables',
-        
-        // 'thrive-external-font',
-
-        // 'tve-frontend-compat',
     ];
 
     const DEQUEUE_GUTENBERG = [
@@ -269,13 +265,26 @@ class TemplateMain
 
         if ( self::check_dequeue() )
         {
-            $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
+            foreach ( self::REPLACE as $id )
+            {
+                // $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
+                
+                $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
 
-            $output = preg_replace( $pattern, '', $output );
+                $output = preg_replace( $pattern, '', $output );
+            }
         }
 
         return $output;
     }
+
+    const REPLACE = [
+        'tve_global_variables',
+
+        'thrive-default-styles',
+
+        'tve-frontend-compat-css',
+    ];
 }
 
 ?>
