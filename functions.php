@@ -20,6 +20,8 @@ LegalMain::register();
 
 // TemplateMain::register_thrive();
 
-remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ] );
+add_action( 'wp_enqueue_scripts', function() {
+    wp_dequeue_style( 'classic-theme-styles' );
+}, 20 );
 
 ?>
