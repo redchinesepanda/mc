@@ -185,8 +185,10 @@ class TemplateMain
         add_filter( 'tcb_css_imports', [ $handler, 'return_empty_array' ] );
 
         add_filter( 'tcb_global_colors_list', [ $handler, 'return_empty_array' ] );
-        
+
         add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
+
+        remove_action( 'tcb_get_extra_global_variables' [ 'TCB_Custom_Fields_Shortcode', 'output_custom_fields_variables' ]);
     }
 
     public static function register()
