@@ -23,7 +23,17 @@ class TemplateMain
         return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
     }
 
-    const DEQUEUE = [
+    const DEQUEUE_WPML = [
+        'wpml-legacy-dropdown-click-0',
+
+        'wpml-legacy-horizontal-list-0',
+
+        'wpml-legacy-horizontal-list-0-inline',
+
+        'wpml-menu-item-0',
+    ];
+
+    const DEQUEUE_THRIVE = [
         'thrive-theme-styles',
 
         'thrive-theme',
@@ -32,17 +42,23 @@ class TemplateMain
 
         'parent-style',
 
-        // 'global-styles-inline',
-
         'tve-logged-in-style',
+    ];
 
-        'wpml-legacy-dropdown-click-0',
+    const DEQUEUE_GUTENBERG = [
+        'wp-block-library',
 
-        'wpml-legacy-horizontal-list-0',
+        'wp-block-library-theme',
 
-        'wpml-legacy-horizontal-list-0-inline',
+        'wc-blocks-style',
+    ];
 
-        'wpml-menu-item-0',
+    const DEQUEUE = [
+        ...self::DEQUEUE_THRIVE,
+        
+        ...self::DEQUEUE_GUTENBERG,
+        
+        ...self::DEQUEUE_WPML
     ];
 
     const CSS = [
@@ -111,7 +127,7 @@ class TemplateMain
         return 0;
     }
 
-    public static function register_wp()
+    public static function register_emoji()
     {
         remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
@@ -128,6 +144,11 @@ class TemplateMain
         remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
         add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    }
+
+    public static function register_wp()
+    {
+        self::register_emoji();
     }
 
     public static function register_thrive()
