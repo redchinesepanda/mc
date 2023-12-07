@@ -22,6 +22,14 @@
 	}
 }
 
+/* Position */
+
+body:not( #legal-override ) {
+	margin: 0px;
+}
+
+/* Background */
+
 body:not( #legal-override ) {
 	background-color: rgb(250, 252, 254);
 }

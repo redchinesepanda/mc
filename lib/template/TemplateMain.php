@@ -81,7 +81,7 @@ class TemplateMain
         'legal-template-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main.css',
 
-			'ver' => '1.0.2',
+			'ver' => '1.0.3',
 		],
     ];
 
