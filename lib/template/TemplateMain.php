@@ -120,6 +120,8 @@ class TemplateMain
         if ( class_exists( '\TCB\Lightspeed\Main' ) )
         {
             $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
+            
+            add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
 
             $value = get_option( $option );
 
