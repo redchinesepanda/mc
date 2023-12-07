@@ -120,13 +120,16 @@ class TemplateMain
 
         // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
-        LegalDebug::debug( [
-            'function' => 'TemplateMain::register',
+        if ( class_exists( '\TCB\Lightspeed\Main' ) )
+        {
+            LegalDebug::debug( [
+                'function' => 'TemplateMain::register',
 
-            \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION,
-        ] );
+                \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION,
+            ] );
 
-        // add_filter( "option_{$id_base}", $multidimensional_filter );
+            add_filter( 'option_' . \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION, 0 );
+        }
 
         TemplatePage::register();
 
