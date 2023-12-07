@@ -6,7 +6,7 @@ class BaseHeader
         'legal-header' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header.css',
 
-			'ver' => '1.1.2',
+			'ver' => '1.1.6',
 		],
     ];
 
@@ -270,7 +270,9 @@ class BaseHeader
 		}
 
 		$item[ 'children' ][] = [
-			'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
+			// 'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
+			
+			'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 
 			'href' => '/choose-your-country/',
 
