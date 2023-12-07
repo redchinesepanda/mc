@@ -557,9 +557,13 @@ class BaseHeader
 	];
 
 	const TEMPLATE = [
-        'header' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
+        'header-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
-		'item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
+        'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
+
+		'header-item-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-main.php',
+
+		'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
     ];
 
     public static function render()
@@ -572,7 +576,12 @@ class BaseHeader
 
         // return $output;
 
-		return self::render_main( self::TEMPLATE[ 'header' ], self::get() );
+		if ( TemplateMain::check_code() )
+		{
+			return self::render_main( self::TEMPLATE[ 'header-new' ], self::get() );
+		}
+
+		return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
     }
 
     public static function render_item( $item )
@@ -585,7 +594,12 @@ class BaseHeader
 
         // return $output;
 
-		return self::render_main( self::TEMPLATE[ 'item' ], $item );
+		if ( TemplateMain::check_code() )
+		{
+			return self::render_main( self::TEMPLATE[ 'header-item-new' ], $item );
+		}
+
+		return self::render_main( self::TEMPLATE[ 'header-item-main' ], $item );
     }
 
 	public static function render_main( $template, $args )
