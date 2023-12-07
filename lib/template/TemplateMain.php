@@ -111,41 +111,62 @@ class TemplateMain
         return 0;
     }
 
-    // public static function register_thrive()
-    // {
-    //     $handler = new self();
+    public static function register_wp()
+    {
+        remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-    //     // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
+        remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 
-    //     if ( class_exists( '\TCB\Lightspeed\Main' ) )
-    //     {
-    //         $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
+        remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+
+        remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+        remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+        remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+
+        remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+        add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    }
+
+    public static function register_thrive()
+    {
+        $handler = new self();
+
+		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
+
+        // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
+
+        // if ( class_exists( '\TCB\Lightspeed\Main' ) )
+        // {
+        //     $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
             
-    //         add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
+        //     add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
 
-    //         $value = get_option( $option );
+        //     $value = get_option( $option );
 
-    //         LegalDebug::debug( [
-    //             'function' => 'TemplateMain::register',
+        //     LegalDebug::debug( [
+        //         'function' => 'TemplateMain::register',
 
-    //             'option' => $option,
+        //         'option' => $option,
 
-    //             'value' => $value,
-    //         ] );
+        //         'value' => $value,
+        //     ] );
 
-    //         add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] ); 
+        //     add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] ); 
 
-    //         $value = get_option( $option );
+        //     $value = get_option( $option );
 
-    //         LegalDebug::debug( [
-    //             'function' => 'TemplateMain::register',
+        //     LegalDebug::debug( [
+        //         'function' => 'TemplateMain::register',
 
-    //             'option' => $option,
+        //         'option' => $option,
 
-    //             'value' => $value,
-    //         ] );
-    //     }
-    // }
+        //         'value' => $value,
+        //     ] );
+        // }
+    }
 
     // public static function register_functions()
     // {
@@ -164,7 +185,9 @@ class TemplateMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
 
-		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
+        self::register_wp();
+
+        self::register_thrive();
 
         TemplatePage::register();
 
