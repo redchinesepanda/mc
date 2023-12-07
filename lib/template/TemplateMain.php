@@ -267,6 +267,11 @@ class TemplateMain
 			$output
 		);
 
+        if ( TemplateMain::check() )
+        {
+            
+        }
+
         $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
 
         $output = preg_replace( $pattern, '', $output );
