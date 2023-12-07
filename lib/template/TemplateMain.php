@@ -118,7 +118,7 @@ class TemplateMain
 
 		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
-        remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ] );
+        remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 23 );
 
         TemplatePage::register();
 
