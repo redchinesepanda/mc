@@ -49,6 +49,8 @@ class TemplateMain
         'parent-style',
 
         'tve-logged-in-style',
+
+        'tve_style_family_tve_flt',
     ];
 
     const DEQUEUE_GUTENBERG = [
