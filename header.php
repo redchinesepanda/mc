@@ -17,11 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!doctype html>
 <html <?php language_attributes(); ?> <?php thrive_html_class(); ?>>
 	<head>
+		<!-- manual start -->
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="yandex-verification" content="079ad3c653c7c146">
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
+		<!-- manual end -->
 		<!-- wp_head start -->
 		<?php echo TemplateMain::wp_head(); ?>
 		<!-- wp_head end -->
