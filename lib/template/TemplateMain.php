@@ -111,48 +111,49 @@ class TemplateMain
         return 0;
     }
 
-    public static function register_thrive()
-    {
-        $handler = new self();
+    // public static function register_thrive()
+    // {
+    //     $handler = new self();
 
-        // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
+    //     // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
-        if ( class_exists( '\TCB\Lightspeed\Main' ) )
-        {
-            $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
+    //     if ( class_exists( '\TCB\Lightspeed\Main' ) )
+    //     {
+    //         $option = \TCB\Lightspeed\Main::ENABLE_LIGHTSPEED_OPTION;
             
-            add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
+    //         add_filter( "pre_option_{$option}", [ $handler, 'disable_lightspeed_option' ] );
 
-            $value = get_option( $option );
+    //         $value = get_option( $option );
 
-            LegalDebug::debug( [
-                'function' => 'TemplateMain::register',
+    //         LegalDebug::debug( [
+    //             'function' => 'TemplateMain::register',
 
-                'option' => $option,
+    //             'option' => $option,
 
-                'value' => $value,
-            ] );
+    //             'value' => $value,
+    //         ] );
 
-            add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] ); 
+    //         add_filter( "option_{$option}", [ $handler, 'disable_lightspeed_option' ] ); 
 
-            $value = get_option( $option );
+    //         $value = get_option( $option );
 
-            LegalDebug::debug( [
-                'function' => 'TemplateMain::register',
+    //         LegalDebug::debug( [
+    //             'function' => 'TemplateMain::register',
 
-                'option' => $option,
+    //             'option' => $option,
 
-                'value' => $value,
-            ] );
-        }
-    }
+    //             'value' => $value,
+    //         ] );
+    //     }
+    // }
 
-    public static function register_functions()
-    {
-        $handler = new self();
+    // public static function register_functions()
+    // {
+    //     $handler = new self();
 
-        add_action( 'after_setup_theme', [ $handler, 'register_thrive' ] );
-    }
+    //     add_action( 'after_setup_theme', [ $handler, 'register_thrive' ] );
+    // }
+
     public static function register()
     {
         $handler = new self();
