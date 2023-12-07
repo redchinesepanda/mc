@@ -26,7 +26,7 @@ class TemplateMain
     const DEQUEUE_WP = [
         'classic-theme-styles',
 
-        'global-styles',
+        'global-styles-inline',
     ];
 
     const DEQUEUE_WPML = [
