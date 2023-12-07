@@ -180,7 +180,7 @@ class TemplateMain
 
 		add_action( 'tcb_lightspeed_has_optimized_assets', [ $handler, 'tcb_optimized_assets' ] );
 
-        add_filter( 'tcb_css_imports', [ $handler, 'fonts_disable' ] )
+        add_filter( 'tcb_css_imports', [ $handler, 'fonts_disable' ] );
 
         // remove_action( 'wp_head', [ '\TCB\Lightspeed\Hooks', 'insert_optimization_script' ], - 24 );
 
