@@ -12,7 +12,6 @@
 
 .tcb-post-content .legal-cut-item:not( .legal-active )
 {
-	/* background-color: antiquewhite; */
 	display: none;
 }
 
@@ -32,16 +31,6 @@
 
 /* Background */
 
-/* .tcb-post-content .legal-cut-item ~ .legal-cut-control
-{
-	background-color: coral;
-} */
-
-/* .tcb-post-content .legal-cut-item.legal-active
-{
-	background-color: coral;
-} */
-
 .tcb-post-content .legal-cut-control::after
 {
 	background-image: url( '../../img/review/review-cut-control.svg' );
@@ -57,13 +46,18 @@
 
 /* Typography */
 
-/* .tcb-post-content .legal-cut-item + :not( .legal-cut-item ) */
 .tcb-post-content .legal-cut-control::before
 {
-	/* background-color: cadetblue; */
 	font-family: "Source Sans Pro";
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 28px;
+	vertical-align: middle;
 }
+
+.tcb-post-content .legal-cut-control::after
+{
+	vertical-align: middle;
+}
+
