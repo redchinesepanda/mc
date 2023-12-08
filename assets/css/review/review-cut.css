@@ -20,6 +20,12 @@
 {
 	content: '';
 	display: inline-block;
+}
+
+/* Width and Height */
+
+.tcb-post-content .legal-cut-control::after
+{
 	width: 20px;
 	height: 20px;
 }
