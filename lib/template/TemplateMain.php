@@ -83,6 +83,12 @@ class TemplateMain
 
 			'ver' => '1.0.3',
 		],
+
+        'legal-template-font' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/font/gotos-text.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     const CSS_THRIVE = [
