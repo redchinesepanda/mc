@@ -7,17 +7,17 @@
 
 /* Background */
 
-.tcb-post-content .legal-cut-item ~ .legal-cut-control
+/* .tcb-post-content .legal-cut-item ~ .legal-cut-control
 {
 	background-color: coral;
-}
+} */
 
 .tcb-post-content .legal-cut-item
 {
 	background-color: antiquewhite;
 }
 
-.tcb-post-content .legal-cut-control
+.tcb-post-content .legal-cut-item + :not( .legal-cut-item )
 {
 	background-color: cadetblue;
 }
