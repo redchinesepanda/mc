@@ -74,9 +74,9 @@ class ReviewCut
 	{
 		$element = $dom->createElement( 'span' );
 
-		$element->setAttribute( 'data-default', __( ReviewMain::TEXT[ 'open' ], ToolLoco::TEXTDOMAIN ) );
+		$element->setAttribute( 'data-content-default', __( ReviewMain::TEXT[ 'open' ], ToolLoco::TEXTDOMAIN ) );
 
-		$element->setAttribute( 'data-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
+		$element->setAttribute( 'data-content-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
 
 		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
 

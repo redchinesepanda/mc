@@ -1,9 +1,14 @@
 /* Display */
 
-/* .tcb-post-content .legal-cut-control
+.tcb-post-content .legal-cut-control:not( .legal-active )::before
 {
-	background-color: cadetblue;
-} */
+	content: attr( data-content-default );
+}
+
+.tcb-post-content .legal-cut-control.legal-active::before
+{
+	content: attr( data-content-active );
+}
 
 /* Background */
 
