@@ -3,7 +3,7 @@
 	background-color: antiquewhite;
 }
 
-.tcb-post-content .legal-cut-item + :not( .legal-cut-item )
+.tcb-post-content .legal-cut-item + .legal-cut-control
 {
 	background-color: cadetblue;
 }
