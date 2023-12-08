@@ -11,21 +11,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// } );
 	}
 
-	function prepareControl ( element, setID )
+	function prepareControl ( element )
 	{
 		console.log( 'setID: ' + setID );
 
 		console.log( 'element: ' + element );
 
-		console.log( 'this: ' + this );
-
-		this.dataset.cutSetId = setID;
+		element.dataset.cutSetId = setID;
 		
-		if ( this.classList.contains( 'legal-cut-control' ) )
+		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
 			setID++;
 
-			this.addEventListener( 'click', toggleDataset, false );
+			element.addEventListener( 'click', toggleDataset, false );
 		}
 	}
 
@@ -34,7 +32,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll(
 		'.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 	)
-	.forEach( prepareControl( setID ) );
+	.forEach( prepareControl );
 } );
 
 // review-faq-js end
