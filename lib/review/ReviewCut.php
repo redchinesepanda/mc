@@ -55,6 +55,8 @@ class ReviewCut
 
 			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")])]'
 
+			// .legal-cut-item+:not(.legal-cut-item)
+
 			'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]'
 		);
 	}
@@ -66,6 +68,19 @@ class ReviewCut
 		$nodes = $xpath->query( $query );
 
 		return $nodes;
+	}
+
+	public static function get_control( $dom )
+	{
+		$element = $dom->createElement( 'span' );
+
+		$element->setAttribute( 'data-default', __( ReviewMain::TEXT[ 'open' ], ToolLoco::TEXTDOMAIN ) );
+
+		$element->setAttribute( 'data-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
+
+		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
+
+		return $element;
 	}
 
 	public static function set_cut( $dom )
@@ -80,8 +95,17 @@ class ReviewCut
 
 		if ( $nodes->length == 0 )
 		{
-			return null;
+			return false;
 		}
+
+		foreach ( $nodes as $node )
+		{
+			$control = self::get_control( $dom );
+
+			$node->parentNode->insertBefore( $control, $node->nextSibling );
+		}
+
+		return true;
 	}
 
 	public static function modify_content( $content )
