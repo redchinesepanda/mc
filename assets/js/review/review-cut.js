@@ -2,16 +2,22 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function toggleDataset( event )
+	function toggleItem( element )
 	{
-		// event.currentTarget.classList.toggle( 'legal-active' );
-
-		// document.querySelectorAll( '.tcb-post-content > .legal-faq-description[data-title*="' + event.currentTarget.dataset.id + '"]').forEach( function ( element ) {
-		// 	element.classList.toggle( 'legal-active' );
-		// } );
+		element.classList.toggle( 'legal-active' );
 	}
 
-	function prepareControl ( element )
+	function toggleDataset( event )
+	{
+		event.currentTarget.classList.toggle( 'legal-active' );
+
+		document.querySelectorAll(
+			'.tcb-post-content > .legal-cut-item[data-cut-set-id*="' + event.currentTarget.dataset.cutSetId + '"]'
+		)
+		.forEach( toggleItem );
+	}
+
+	function prepareControl( element )
 	{
 		element.dataset.cutSetId = setID;
 		
