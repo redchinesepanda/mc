@@ -87,11 +87,11 @@ class ReviewCut
 	{
 		$nodes = self::get_cut_items( $dom );
 
-		LegalDebug::debug( [
-			'function' => 'set_cut',
+		// LegalDebug::debug( [
+		// 	'function' => 'set_cut',
 
-			'$nodes->length' => $nodes->length,
-		] ); 
+		// 	'$nodes->length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length == 0 )
 		{
