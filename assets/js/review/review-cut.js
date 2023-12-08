@@ -11,20 +11,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// } );
 	}
 
-	function prepareControl ( element, index )
+	function prepareControl ( setID )
 	{
-		if ( element.classList.contains( 'legal-cut-control' ) )
-		{
-			element.addEventListener( 'click', toggleDataset, false );
-		}
+		this.dataset.cutSetId = setID;
 		
-		element.dataset.cutSetId = index;
+		if ( this.classList.contains( 'legal-cut-control' ) )
+		{
+			setID++;
+
+			this.addEventListener( 'click', toggleDataset, false );
+		}
 	}
+
+	let setID = 0;
 	
 	document.querySelectorAll(
 		'.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 	)
-	.forEach( prepareControl );
+	.forEach( prepareControl( setID ), this );
 } );
 
 // review-faq-js end
