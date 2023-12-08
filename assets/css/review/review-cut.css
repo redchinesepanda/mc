@@ -28,7 +28,7 @@
 	background-color: coral;
 } */
 
-.tcb-post-content .legal-cut-control:after
+.tcb-post-content .legal-cut-control::after
 {
 	background-image: url( '../../img/review/review-cut-control.svg' );
 	background-position: center center;
@@ -36,7 +36,7 @@
 	background-size: auto;
 }
 
-.tcb-post-content .legal-cut-control.legal-active:after
+.tcb-post-content .legal-cut-control.legal-active::after
 {
 	transform: rotate( 180deg );
 }
