@@ -36,6 +36,8 @@ require_once( 'ReviewPage.php' );
 
 require_once( 'ReviewContent.php' );
 
+require_once( 'ReviewCut.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -175,6 +177,8 @@ class ReviewMain
         ReviewGallery::register_functions();
 
         ReviewAnchors::register_functions();
+
+        ReviewCut::register_functions();
 	}
 
     public static function register()
