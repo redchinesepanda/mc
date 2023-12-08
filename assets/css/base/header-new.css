@@ -705,7 +705,7 @@
 /* Typography */
 
 .new-legal-menu a:not( .legal-disabled ) {
-	font-family: "Golos Text";
+	font-family: var( --legal-font-primary );
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
