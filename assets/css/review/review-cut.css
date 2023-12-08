@@ -16,6 +16,11 @@
 	display: none;
 }
 
+.tcb-post-content .legal-cut-control::after
+{
+	display: inline;
+}
+
 /* Background */
 
 /* .tcb-post-content .legal-cut-item ~ .legal-cut-control
