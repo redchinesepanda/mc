@@ -13,17 +13,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareControl ( element )
 	{
-		console.log( 'setID: ' + setID );
-
-		console.log( 'element: ' + element );
-
 		element.dataset.cutSetId = setID;
 		
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
-			setID++;
-
 			element.addEventListener( 'click', toggleDataset, false );
+
+			setID++;
 		}
 	}
 
