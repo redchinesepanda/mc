@@ -23,6 +23,11 @@
 
 /* Position */
 
+.tcb-post-content .legal-cut-control
+{
+	padding-bottom: 30px;
+}
+
 .tcb-post-content .legal-cut-control::before
 {
 	padding-right: 5px;
