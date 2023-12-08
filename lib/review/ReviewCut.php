@@ -102,7 +102,7 @@ class ReviewCut
 		{
 			$control = self::get_control( $dom );
 
-			$node->parentNode->insertBefore( $control, $node->nextSibling );
+			$node->parentNode->insertBefore( $control, $node );
 		}
 
 		return true;
