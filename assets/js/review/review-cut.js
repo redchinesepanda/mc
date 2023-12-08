@@ -15,6 +15,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'setID: ' + setID );
 
+		console.log( 'element: ' + element );
+
 		console.log( 'this: ' + this );
 
 		this.dataset.cutSetId = setID;
