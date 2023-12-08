@@ -15,7 +15,7 @@ class TemplateMain
     const CURRENT_LANGUAGE = [
         'pt',
 
-        'kz',
+        // 'kz',
     ];
 
     public static function check_code()
