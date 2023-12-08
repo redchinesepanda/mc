@@ -11,7 +11,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// } );
 	}
 
-	function prepareControl ( setID, element )
+	function prepareControl ( element, setID )
 	{
 		console.log( 'setID: ' + setID );
 
