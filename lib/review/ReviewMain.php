@@ -226,6 +226,8 @@ class ReviewMain
         ReviewTable::register();
 
         ReviewPage::register();
+
+        ReviewCut::register();
     }
 
     public static function encoding( $content )
