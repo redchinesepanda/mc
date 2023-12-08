@@ -55,7 +55,7 @@ class ReviewCut
 
 			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")])]'
 
-			'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")])]'
+			'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]'
 		);
 	}
 
