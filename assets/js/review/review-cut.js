@@ -13,8 +13,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareControl ( element, index )
 	{
-		console.log( element );
-		
+		console.log( 'element: ' + element );
+
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
 			element.dataset.id = index;
