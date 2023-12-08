@@ -18,6 +18,7 @@
 
 .tcb-post-content .legal-cut-control::after
 {
+	content: '';
 	display: inline-block;
 	width: 20px;
 	height: 20px;
