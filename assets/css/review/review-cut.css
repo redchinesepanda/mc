@@ -2,3 +2,8 @@
 {
 	background-color: antiquewhite;
 }
+
+.tcb-post-content .legal-cut-item + :not( .legal-cut-item )
+{
+	background-color: cadetblue;
+}
