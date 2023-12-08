@@ -13,6 +13,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareControl ( setID )
 	{
+		console.log( 'setID: ' + setID );
+
+		console.log( 'this: ' + this );
+
 		this.dataset.cutSetId = setID;
 		
 		if ( this.classList.contains( 'legal-cut-control' ) )
