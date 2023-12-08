@@ -18,7 +18,9 @@
 
 .tcb-post-content .legal-cut-control::after
 {
-	display: inline;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
 }
 
 /* Background */
