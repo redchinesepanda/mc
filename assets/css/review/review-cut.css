@@ -52,7 +52,7 @@
 /* Typography */
 
 /* .tcb-post-content .legal-cut-item + :not( .legal-cut-item ) */
-.tcb-post-content .legal-cut-control
+.tcb-post-content .legal-cut-control::before
 {
 	/* background-color: cadetblue; */
 	font-family: "Source Sans Pro";
