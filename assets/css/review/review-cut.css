@@ -21,6 +21,11 @@
 	display: inline-block;
 }
 
+.tcb-post-content .legal-cut-control
+{
+	display: inline-block;
+}
+
 /* Position */
 
 .tcb-post-content .legal-cut-control
