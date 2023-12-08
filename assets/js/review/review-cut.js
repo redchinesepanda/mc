@@ -34,7 +34,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll(
 		'.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 	)
-	.forEach( prepareControl( setID ), this );
+	.forEach( prepareControl( setID ) );
 } );
 
 // review-faq-js end
