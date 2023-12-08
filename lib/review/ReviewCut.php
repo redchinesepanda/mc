@@ -66,7 +66,7 @@ class ReviewCut
 			'function' => 'set_cut',
 
 			'$nodes->length' => $nodes->length,
-		] );
+		] ); 
 
 		if ( $nodes->length == 0 )
 		{
