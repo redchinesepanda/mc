@@ -36,6 +36,8 @@ require_once( 'ToolCSP.php' );
 
 require_once( 'ToolBootsrap.php' );
 
+require_once( 'ToolContent.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -59,6 +61,8 @@ class ToolsMain
         ToolCSP::register();
 
         ToolBootsrap::register();
+
+        ToolContent::register();
     }
 }
 
