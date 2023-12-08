@@ -15,18 +15,22 @@ class ReviewCut
 		ReviewMain::register_style( self::CSS );
     }
 
-	public static function register_functions()
-	{
-		$handler = new self();
+	const JS = [
+        'review-faq' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
+    ];
 
-        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_cut' ] );
-	}
+    public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
 
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
@@ -119,6 +123,13 @@ class ReviewCut
 		self::set_cut( $dom );
 
 		return $dom->saveHTML( $dom );
+	}
+
+	public static function register_functions()
+	{
+		$handler = new self();
+
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_cut' ] );
 	}
 
 	const CLASSES = [
