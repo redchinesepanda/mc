@@ -16,7 +16,7 @@ class ReviewCut
     }
 
 	const JS = [
-        'review-faq' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
+        'review-cut' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
     ];
 
     public static function register_script()
