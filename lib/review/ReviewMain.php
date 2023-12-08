@@ -57,11 +57,15 @@ class ReviewMain
 
 		'claim-bonus' => 'Claim Bonus',
 
+		'close' => 'Close',
+
 		'download' => 'Download',
 
 		'get-bonus' => 'Get Bonus',
 
 		'how-to-play' => 'How to play',
+
+		'open' => 'Open',
 
 		'overall-rating' => 'Overall Rating',
 
