@@ -21,6 +21,13 @@
 	display: inline-block;
 }
 
+/* Position */
+
+.tcb-post-content .legal-cut-control::before
+{
+	padding-right: 5px;
+}
+
 /* Width and Height */
 
 .tcb-post-content .legal-cut-control::after
