@@ -85,7 +85,7 @@ class TemplateMain
 		],
 
         'legal-template-font' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/font/gotos-text.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/font/gotos-text.css',
 
 			'ver' => '1.0.0',
 		],
