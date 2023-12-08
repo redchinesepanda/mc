@@ -10,7 +10,7 @@ class ReviewCut
 	}
 
 	const CLASSES = [
-		'cut-item' => 'cut-item',
+		'cut-item' => 'legal-cut-item',
 	];
 
 	public static function style_formats_cut( $settings )
