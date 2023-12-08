@@ -27,7 +27,65 @@ class ReviewCut
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
+
+	// public static function get_nodes( $dom )
+	// {
+	// 	$xpath = new DOMXPath( $dom );
+
+	// 	$nodes = $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'cut-item' ] . '\')]' );
+
+	// 	return $nodes;
+	// }
+
+	public static function get_cut_items( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'.//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")] )]'
+		);
+	}
+
+	public static function get_nodes( $dom, $query )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( $query );
+
+		return $nodes;
+	}
+
+	public static function set_cut( $dom )
+	{
+		$nodes = self::get_cut_items( $dom );
+
+		LegalDebug::debug( [
+			'function' => 'set_cut',
+
+			'$nodes->length' => $nodes->length,
+		] );
+
+		if ( $nodes->length == 0 )
+		{
+			return null;
+		}
+	}
+
+	public static function modify_content( $content )
+	{
+		if ( !ReviewMain::check() ) {
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+		self::set_cut( $dom );
+
+		return $dom->saveHTML( $dom );
+	}
 
 	const CLASSES = [
 		'cut-item' => 'legal-cut-item',
