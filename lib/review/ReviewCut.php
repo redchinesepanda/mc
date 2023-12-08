@@ -31,6 +31,8 @@ class ReviewCut
 
 	const CLASSES = [
 		'cut-item' => 'legal-cut-item',
+
+		'cut-control' => 'legal-cut-control',
 	];
 
 	public static function style_formats_cut( $settings )
@@ -46,6 +48,14 @@ class ReviewCut
 						'selector' => 'h2,h3,p,ul,ol,table',
 
 						'classes' => self::CLASSES[ 'cut-item' ],
+					],
+
+					[
+						'title' => 'Cut Control',
+						
+						'selector' => 'p,hr',
+
+						'classes' => self::CLASSES[ 'cut-control' ],
 					],
 				],
 			],
