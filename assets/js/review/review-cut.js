@@ -1,4 +1,4 @@
-// review-faq-js start
+// review-cut-js start
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
@@ -37,4 +37,4 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	.forEach( prepareControl );
 } );
 
-// review-faq-js end
+// review-cut-js end

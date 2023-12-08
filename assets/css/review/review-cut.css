@@ -10,6 +10,12 @@
 	content: attr( data-content-active );
 }
 
+.tcb-post-content .legal-cut-item:not( .legal-active )
+{
+	/* background-color: antiquewhite; */
+	display: none;
+}
+
 /* Background */
 
 /* .tcb-post-content .legal-cut-item ~ .legal-cut-control
@@ -17,17 +23,33 @@
 	background-color: coral;
 } */
 
-.tcb-post-content .legal-cut-item:not( .legal-active )
-{
-	background-color: antiquewhite;
-}
-
-.tcb-post-content .legal-cut-item.legal-active
+/* .tcb-post-content .legal-cut-item.legal-active
 {
 	background-color: coral;
+} */
+
+.tcb-post-content .legal-cut-control
+{
+	background-image: url( '../../img/review/review-cut-control.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
 }
 
-.tcb-post-content .legal-cut-item + :not( .legal-cut-item )
+.tcb-post-content .legal-cut-control.legal-active
 {
-	background-color: cadetblue;
+	transform: rotate( 180deg );
+}
+
+/* Typography */
+
+/* .tcb-post-content .legal-cut-item + :not( .legal-cut-item ) */
+.tcb-post-content .legal-cut-control
+{
+	/* background-color: cadetblue; */
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px;
 }
