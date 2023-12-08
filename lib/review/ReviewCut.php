@@ -47,7 +47,7 @@ class ReviewCut
 
 			// '//*[contains(@class, \'' . self::CLASSES[ 'cut-item' ] . '\')]'
 			
-			'.//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")] )]'
+			'//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")] )]'
 		);
 	}
 
