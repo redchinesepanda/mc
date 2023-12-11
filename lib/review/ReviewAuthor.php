@@ -159,7 +159,7 @@ class ReviewAuthor
 
     public static function get_cis()
     {
-        $href_test = get_href( '/o-nas/', $anchor = '#nasha-komanda' );
+        $href_test = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
 
         $page = get_page_by_path( '/o-nas/' );
 
