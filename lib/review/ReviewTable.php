@@ -281,9 +281,9 @@ class ReviewTable
 
 	public static function set_tbody( $content )
 	{
-		if ( !ReviewMain::check() ) {
-			return $content;
-		}
+		// if ( !ReviewMain::check() ) {
+		// 	return $content;
+		// }
 
 		$dom = LegalDOM::get_dom( $content );
 
