@@ -126,11 +126,15 @@ class ReviewAuthor
 		];
     }
 
-    public static function get_href( $url, $anchor = '' )
+    // public static function get_href( $url, $anchor = '' )
+    
+    public static function get_href( $id, $url, $anchor = '' )
     {
         $page_link = $url;
 
-        $page = get_page_by_path( $url, OBJECT, [ 'page' ] );
+        // $page = get_page_by_path( $url, OBJECT, [ 'page' ] );
+
+        $page = get_post( $id );
 
         LegalDebug::debug( [
             'function' => 'get_href',
@@ -170,7 +174,9 @@ class ReviewAuthor
 
     public static function get_cis()
     {
-        $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
+        // $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
+        
+        $href = self::get_href( 10764, '/o-nas/', $anchor = '#nasha-komanda' );
         
         // $href = self::get_href( 'o-nas-kz', $anchor = '#nasha-komanda' );
 
