@@ -69,7 +69,7 @@ class NotionContent
 
 		foreach ( $nodes as $node )
 		{
-			$content[] = $dom->saveHTML( $node );
+			$content[] = htmlspecialchars_decode( $dom->saveHTML( $node ) );
 		}
 
 		return implode( '', $content );
