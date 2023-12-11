@@ -52,7 +52,7 @@ class NotionMain
 
 		'feature' => 'notion_billet_feature',
 
-		'content' => 'notion_review_content',
+		// 'content' => 'notion_review_content',
 	];
 
 	const ACF_KEY = [
