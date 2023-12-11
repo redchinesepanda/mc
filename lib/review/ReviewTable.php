@@ -100,7 +100,7 @@ class ReviewTable
 				catch ( DOMException $e )
 				{
 					LegalDebug::debug( [
-						'function' => 'ReviewTable::get_content',
+						'function' => 'ReviewTable::tbody_replace',
 
 						'row' => substr( $row->textContent, 0, 30 ),
 
