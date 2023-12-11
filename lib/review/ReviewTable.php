@@ -345,6 +345,8 @@ class ReviewTable
 	const CLASSES = [
 		'container' => 'legal-raw-rawspan',
 
+		'default' => 'legal-default',
+
 		'raw' => 'legal-raw',
 		
 		'column-3' => 'legal-column-3',
@@ -377,6 +379,14 @@ class ReviewTable
 				'title' => 'Таблица',
 
 				'items' => [
+					[
+						'title' => 'По умолчанию',
+						
+						'selector' => 'table',
+
+						'classes' => self::CLASSES[ 'default' ],
+					],
+					
 					[
 						'title' => 'Колонка 50%',
 						
