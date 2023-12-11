@@ -139,7 +139,7 @@ class ReviewAuthor
 
             '$anchor' => $anchor,
 
-            '$page->ID' => $page->ID,
+            '$page' => $page,
         ] );
 
         if ( !empty( $page ) )
