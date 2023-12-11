@@ -133,6 +133,10 @@ class ReviewAuthor
         LegalDebug::debug( [
             'function' => 'get_href',
 
+            '$url' => $url,
+
+            '$anchor' => $anchor,
+
             '$page->ID' => $page->ID,
         ] );
 
