@@ -281,7 +281,7 @@ class ReviewTable
 
 	public static function get_content( $content )
 	{
-		$content = self::set_tbody( $content );
+		// $content = self::set_tbody( $content );
 
 		$content = self::set_scroll( $content );
 
