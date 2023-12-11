@@ -117,36 +117,36 @@ class ReviewAuthor
 
         $page = get_post( $id );
 
-        LegalDebug::debug( [
-            'function' => 'get_href',
+        // LegalDebug::debug( [
+        //     'function' => 'get_href',
 
-            '$url' => $url,
+        //     '$url' => $url,
 
-            '$anchor' => $anchor,
+        //     '$anchor' => $anchor,
 
-            '$page' => $page,
-        ] );
+        //     '$page' => $page,
+        // ] );
 
         if ( !empty( $page ) )
         {
             $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
 
-            LegalDebug::debug( [
-                'function' => 'get_href',
+            // LegalDebug::debug( [
+            //     'function' => 'get_href',
     
-                '$translated_id' => $translated_id,
-            ] );
+            //     '$translated_id' => $translated_id,
+            // ] );
 
             if ( !empty( $translated_id ) )
             {
                 $page_link = get_page_link( $translated_id );
             }
 
-            LegalDebug::debug( [
-                'function' => 'get_href',
+            // LegalDebug::debug( [
+            //     'function' => 'get_href',
     
-                '$page_link' => $page_link,
-            ] );
+            //     '$page_link' => $page_link,
+            // ] );
 
         }
         
@@ -155,7 +155,7 @@ class ReviewAuthor
 
     public static function get_default()
     {
-        $href = self::get_href( 4739, '/about-us/', $anchor = '#nasha-komanda' );
+        $href = self::get_href( 4739, '/about-us/', '#our-team' );
 
         // $page = get_page_by_path( '/about-us/' );
 
@@ -178,7 +178,7 @@ class ReviewAuthor
     {
         // $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
         
-        $href = self::get_href( 10764, '/kz/o-nas/', $anchor = '#nasha-komanda' );
+        $href = self::get_href( 10764, '/kz/o-nas/', '#nasha-komanda' );
         
         // $href = self::get_href( 'o-nas-kz', $anchor = '#nasha-komanda' );
 
@@ -188,11 +188,11 @@ class ReviewAuthor
 
         // $href = get_page_link( $translated_id ) . '#nasha-komanda';
 
-        LegalDebug::debug( [
-            'function' => 'get_cis',
+        // LegalDebug::debug( [
+        //     'function' => 'get_cis',
 
-            '$href' => $href,
-        ] );
+        //     '$href' => $href,
+        // ] );
 
         return [
 			'name' => __( ReviewMain::TEXT[ 'alexander-kachalov' ], ToolLoco::TEXTDOMAIN ),
@@ -207,7 +207,7 @@ class ReviewAuthor
 
     public static function get_es()
     {
-        $href = self::get_href( 4758, '/es/sobre-nosotros/', $anchor = '#nuestro-equipo' );
+        $href = self::get_href( 4758, '/es/sobre-nosotros/', '#nuestro-equipo' );
         
         // $href = self::get_href( '/sobre-nosotros/', $anchor = '#nuestro-equipo' );
 
