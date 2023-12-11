@@ -75,9 +75,13 @@ class NotionContent
 		return implode( '', $content );
 	}
 
+	const META_FIELD = [
+		'content' => 'notion_review_content',
+	];
+
 	public static function review_content( $meta_id, $post_id, $meta_key, $meta_value )
 	{
-		if ( NotionMain::META_FIELD[ 'content' ] == $meta_key )
+		if ( self::META_FIELD[ 'content' ] == $meta_key )
 		{
 			$post = get_post( $post_id );
 
@@ -85,9 +89,9 @@ class NotionContent
 			{
 				// if ( empty( $post->post_content ) )
 				// {
-					$dom = LegalDOM::get_dom( $content );
+					$dom = LegalDOM::get_dom( $meta_value );
 
-					$content = self::get_code_html( $meta_value );
+					$content = self::get_code_html( $dom );
 
 					LegalDebug::die( [
 						'function' => 'NotionContent::review_content',
