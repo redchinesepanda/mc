@@ -44,7 +44,7 @@ class ReviewTable
 		return self::get_nodes(
 			$dom,
 			
-			'//table/tbody'
+			'//table/tr'
 		);
 	}
 
