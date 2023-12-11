@@ -39,14 +39,14 @@ class ReviewTable
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
-	public static function get_nodes_tbody_all( $dom )
-	{
-		return self::get_nodes(
-			$dom,
+	// public static function get_nodes_tbody_all( $dom )
+	// {
+	// 	return self::get_nodes(
+	// 		$dom,
 			
-			'//table/tr'
-		);
-	}
+	// 		'//table/tr'
+	// 	);
+	// }
 
 	public static function get_nodes_table( $dom )
 	{
@@ -209,7 +209,16 @@ class ReviewTable
 	{
 		// $tbodies = $table->getElementsByTagName( 'tbody' );
 		
-		$tbodies = self::get_nodes_tbody_all( $dom );
+		// $tbodies = self::get_nodes_tbody_all( $dom );
+
+		foreach( $table->childNodes as $child )
+		{
+			LegalDebug::debug( [
+				'function' => 'ReviewTable::set_thead',
+	
+				'$child' => $dom->saveHTML( $child ),
+			] );
+		}
 
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
