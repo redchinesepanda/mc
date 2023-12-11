@@ -201,7 +201,7 @@ class ReviewTable
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
 		LegalDebug::debug( [
-			'function' => 'ReviewTable::set_th',
+			'function' => 'ReviewTable::set_thead',
 
 			'$tbody' => $tbody,
 		] );
