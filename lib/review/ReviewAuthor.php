@@ -142,7 +142,7 @@ class ReviewAuthor
 
             if ( !empty( $translated_id ) )
             {
-                $page_link get_page_link( $translated_id );
+                $page_link = get_page_link( $translated_id );
 
                 if ( empty( $page_link ) )
                 {
