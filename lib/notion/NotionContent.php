@@ -50,12 +50,12 @@ class NotionContent
 		);
 	}
 
-	public static function get_code_content( $dom )
+	public static function get_code_html( $dom )
 	{
 		$nodes = self::get_nodes_code( $dom );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'NotionContent::get_code_content',
+		// 	'function' => 'NotionContent::get_code_html',
 
 		// 	'$nodes->length' => $nodes->length,
 		// ] );
