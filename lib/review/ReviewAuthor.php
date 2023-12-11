@@ -65,6 +65,8 @@ class ReviewAuthor
 
         'kz',
 
+        'kz-kz',
+
         'by',
 
         'ua',
@@ -124,8 +126,41 @@ class ReviewAuthor
 		];
     }
 
+    public static function get_href( $url, $anchor = '' )
+    {
+        $page = get_page_by_path( $url );
+
+        LegalDebug::debug( [
+            'function' => 'get_href',
+
+            '$page->ID' => $page->ID,
+        ] );
+
+        if ( !empty( $page ) )
+        {
+            $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+            if ( !empty( $translated_id ) )
+            {
+                $page_link get_page_link( $translated_id );
+
+                if ( empty( $page_link ) )
+                {
+                    $page_link = $url;
+                }
+
+                $href = $page_link . $anchor;
+            }
+
+        }
+        
+        return true;
+    }
+
     public static function get_cis()
     {
+        $href_test = get_href( '/o-nas/', $anchor = '#nasha-komanda' );
+
         $page = get_page_by_path( '/o-nas/' );
 
         $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
