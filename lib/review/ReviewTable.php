@@ -448,7 +448,7 @@ class ReviewTable
 						
 						'selector' => 'table',
 
-						'classes' => self::CLASSES[ 'legal-stats' ],
+						'classes' => self::CLASSES[ 'stats' ],
 					],
 
 					[
