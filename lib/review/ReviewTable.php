@@ -39,6 +39,15 @@ class ReviewTable
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
+	public static function get_nodes_tbody_all( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'//tbody'
+		);
+	}
+
 	public static function get_nodes_table( $dom )
 	{
 		return self::get_nodes(
@@ -198,7 +207,9 @@ class ReviewTable
 
 	public static function set_thead( $dom, $table )
 	{
-		$tbodies = $table->getElementsByTagName( 'tbody' );
+		// $tbodies = $table->getElementsByTagName( 'tbody' );
+		
+		$tbodies = self::get_nodes_tbody_all( $dom );
 
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
