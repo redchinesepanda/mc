@@ -11,6 +11,19 @@
 	text-decoration: none;
 }
 
+.legal-forecast-list a.underline {
+	background-image: linear-gradient(#cbcbcb, #cbcbcb);
+	background-position: 50% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 2px;
+	transition: background-size .2s;
+	text-decoration: none;
+}
+
+.legal-forecast-list a.underline:hover {
+	background-size: 100% 2px;
+}
+
 /* Position */
 
 .legal-forecast-list {
@@ -61,7 +74,7 @@
 	justify-content: space-between;
 	flex-direction: column;
 	row-gap: 1rem;
-    flex-basis: 329px
+    flex-basis: 349px;
 }
 
 @media (max-width: 768px) {
@@ -109,7 +122,8 @@
 	font-size: 16px;
 }
 
-.legal-forecast-list .legal-forecast-block-title {
+.legal-forecast-list .legal-forecast-block-title,
+.legal-forecast-list .container-for-title {
 	cursor: pointer;
 	text-align: left;
 	color: #0c1115;

@@ -26,12 +26,6 @@
 
 @media screen and ( max-width: 767px ) {
 
-    /* Width and Height */
-
-    .tcb-post-content .legal-imageset .imageset-item {
-        flex-basis: 100%;
-    }
-
     /* Background */
 
     .tcb-post-content .legal-gallery {
@@ -69,6 +63,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    z-index: 1;
 }
 
 .tcb-post-content .legal-gallery .legal-left,
