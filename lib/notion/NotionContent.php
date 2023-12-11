@@ -98,6 +98,12 @@ class NotionContent
 						// $meta_value = self::remove_attr( $meta_value );
 
 						$content = $meta_value;
+
+						LegalDebug::die( [
+							'function' => 'NotionContent::review_content',
+			
+							'content' => $content,
+						] );
 					}
 
 					// $post->post_content = $meta_value;
