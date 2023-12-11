@@ -200,6 +200,12 @@ class ReviewTable
 	{
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
+		LegalDebug::debug( [
+			'function' => 'ReviewTable::set_th',
+
+			'$tbody' => $tbody,
+		] );
+
 		if ( !empty( $tbody ) )
 		{
 			$tr = $table->getElementsByTagName( 'tr' )->item( 0 );
@@ -217,8 +223,6 @@ class ReviewTable
 		if ( !ReviewMain::check() ) {
 			return $content;
 		}
-
-		
 
 		$dom = LegalDOM::get_dom( $content );
 
