@@ -140,6 +140,12 @@ class ReviewAuthor
         {
             $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
 
+            LegalDebug::debug( [
+                'function' => 'get_href',
+    
+                '$translated_id' => $translated_id,
+            ] );
+
             if ( !empty( $translated_id ) )
             {
                 $page_link = get_page_link( $translated_id );
