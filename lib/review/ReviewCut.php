@@ -153,13 +153,13 @@ class ReviewCut
 						'classes' => self::CLASSES[ 'cut-item' ],
 					],
 
-					[
-						'title' => 'Cut Control',
+					// [
+					// 	'title' => 'Cut Control',
 						
-						'selector' => 'p,hr',
+					// 	'selector' => 'p,hr',
 
-						'classes' => self::CLASSES[ 'cut-control' ],
-					],
+					// 	'classes' => self::CLASSES[ 'cut-control' ],
+					// ],
 				],
 			],
 		] );
