@@ -203,7 +203,7 @@ class ReviewTable
 		LegalDebug::debug( [
 			'function' => 'ReviewTable::set_thead',
 
-			'$table' => $table,
+			'$table' => $dom->saveHTML( $table ),
 
 			'$tbody' => $tbody,
 		] );
