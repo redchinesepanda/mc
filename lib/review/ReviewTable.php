@@ -198,12 +198,16 @@ class ReviewTable
 
 	public static function set_thead( $dom, $table )
 	{
+		$tbodies = $table->getElementsByTagName( 'tbody' );
+
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
 		LegalDebug::debug( [
 			'function' => 'ReviewTable::set_thead',
 
 			'$table' => $dom->saveHTML( $table ),
+
+			'$tbodies' => $tbodies,
 
 			'$tbody' => $tbody,
 		] );
