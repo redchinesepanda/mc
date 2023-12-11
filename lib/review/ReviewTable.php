@@ -216,7 +216,9 @@ class ReviewTable
 			LegalDebug::debug( [
 				'function' => 'ReviewTable::set_thead',
 	
-				'$child' => $dom->saveHTML( $child ),
+				// '$child' => $dom->saveHTML( $child ),
+				
+				'$child' => $child,
 			] );
 		}
 
