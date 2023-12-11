@@ -207,32 +207,32 @@ class ReviewTable
 
 	public static function set_thead( $dom, $table )
 	{
-		$tbodies = $table->getElementsByTagName( 'tbody' );
+		// $tbodies = $table->getElementsByTagName( 'tbody' );
 		
 		// $tbodies = self::get_nodes_tbody_all( $dom );
 
-		foreach( $table->childNodes as $child )
-		{
-			LegalDebug::debug( [
-				'function' => 'ReviewTable::set_thead',
+		// foreach( $table->childNodes as $child )
+		// {
+		// 	LegalDebug::debug( [
+		// 		'function' => 'ReviewTable::set_thead',
 	
-				// '$child' => $dom->saveHTML( $child ),
+		// 		// '$child' => $dom->saveHTML( $child ),
 				
-				'$child' => $child,
-			] );
-		}
+		// 		'$child' => $child,
+		// 	] );
+		// }
 
 		$tbody = $table->getElementsByTagName( 'tbody' )->item( 0 );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewTable::set_thead',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewTable::set_thead',
 
-			'$table' => $dom->saveHTML( $table ),
+		// 	'$table' => $dom->saveHTML( $table ),
 
-			'$tbodies' => $tbodies,
+		// 	'$tbodies' => $tbodies,
 
-			'$tbody' => $tbody,
-		] );
+		// 	'$tbody' => $tbody,
+		// ] );
 
 		if ( !empty( $tbody ) )
 		{
@@ -256,11 +256,11 @@ class ReviewTable
 
         $tables = self::get_nodes_table( $dom );
 		
-		LegalDebug::debug( [
-			'function' => 'ReviewTable::set_th',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewTable::set_th',
 
-			'$tables->length' => $tables->length,
-		] );
+		// 	'$tables->length' => $tables->length,
+		// ] );
 
 		if ( $tables->length == 0 ) {
 			return $content;
@@ -379,11 +379,11 @@ class ReviewTable
 
 		$content = self::set_th( $content );
 
-		LegalDebug::debug( [
-			'function' => 'ReviewTable::get_content',
+		// LegalDebug::debug( [
+		// 	'function' => 'ReviewTable::get_content',
 
-			// 'content' => $content,
-		] );
+		// 	// 'content' => $content,
+		// ] );
 
 		return $content;
 	}
