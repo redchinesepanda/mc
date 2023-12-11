@@ -281,7 +281,7 @@ class ReviewTable
 
 	public static function get_content( $content )
 	{
-		// $content = self::set_tbody( $content );
+		$content = self::set_tbody( $content );
 
 		$content = self::set_scroll( $content );
 
@@ -304,12 +304,12 @@ class ReviewTable
 			return $content;
 		}
 
-		$tbodies = [];
-
 		$tbody_id = 0;
 
 		foreach ( $tables as $table )
 		{
+			$tbodies = [];
+
 			$rows = $table->getElementsByTagName( 'tr' );
 
 			if ( $rows->length )
