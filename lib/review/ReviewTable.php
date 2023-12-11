@@ -207,7 +207,7 @@ class ReviewTable
 
 	public static function set_thead( $dom, $table )
 	{
-		// $tbodies = $table->getElementsByTagName( 'tbody' );
+		$tbodies = $table->getElementsByTagName( 'tbody' );
 		
 		// $tbodies = self::get_nodes_tbody_all( $dom );
 
