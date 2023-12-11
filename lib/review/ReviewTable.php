@@ -23,9 +23,11 @@ class ReviewTable
 	{
 		$handler = new self();
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_table' ] );
 
-		add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
+		// add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
+
+		// add_filter( 'tiny_mce_before_init', [ $handler, 'table_cell_classes' ] );
 	}
 
 	public static function register()
@@ -356,117 +358,234 @@ class ReviewTable
 		'raw-default' => 'legal-raw-default',
 
 		'stats' => 'legal-stats',
+
+		'column' => 'legal-column',
+
+		'raw-column' => 'legal-raw-column',
+
+		'check' => 'legal-check',
+
+		'stats' => 'legal-stats',
+
+		'cross' => 'legal-cross',
 	];
 
-	public static function table_classes( $settings )
+	public static function style_formats_table( $settings )
 	{
-		$styles = [
+		return ToolTinyMCE::style_formats_check( $settings, [
 			[
-				'title' => 'По умолчанию',
+				'title' => 'Таблица',
 
-				'value' => '',
-			],
+				'items' => [
+					[
+						'title' => 'Колонка 50%',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'По умолчанию Ряд',
+						'classes' => self::CLASSES[ 'column' ],
+					],
 
-				'value' => self::CLASSES[ 'raw-default' ],
-			],
+					[
+						'title' => 'Колонка 33.333%',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'По умолчанию 50%',
+						'classes' => self::CLASSES[ 'column-3' ],
+					],
 
-				'value' => 'legal-column',
-			],
+					[
+						'title' => 'По умолчанию Ряд',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'По умолчанию 33.333%',
+						'classes' => self::CLASSES[ 'raw-default' ],
+					],
 
-				'value' => self::CLASSES[ 'column-3' ],
-			],
+					[
+						'title' => 'Ряд',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'Ряд и Столбец',
+						'classes' => self::CLASSES[ 'raw' ],
+					],
+					
+					[
+						'title' => 'Ряд + Столбец',
+						
+						'selector' => 'table',
 
-				'value' => 'legal-raw-column',
-			],
+						'classes' => self::CLASSES[ 'raw-column' ],
+					],
 
-			[
-				'title' => 'Ряд',
+					[
+						'title' => 'Ряд Rowspan',
+						
+						'selector' => 'table',
 
-				'value' => self::CLASSES[ 'raw' ],
-			],
+						'classes' => self::CLASSES[ 'container' ],
+					],
 
-			[
-				'title' => 'Ряд 33.333%',
+					[
+						'title' => 'Галка',
+						
+						'selector' => 'table',
 
-				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'column-3' ],
-			],
+						'classes' => self::CLASSES[ 'check' ],
+					],
 
-			[
-				'title' => 'Ряд Прокрутка',
+					[
+						'title' => 'Статистика',
+						
+						'selector' => 'table',
 
-				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ],
-			],
+						'classes' => self::CLASSES[ 'legal-stats' ],
+					],
 
-			[
-				'title' => 'Ряд Прокрутка По Ширине',
+					[
+						'title' => 'Счетчик',
+						
+						'selector' => 'table',
 
-				'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ] . ' ' . self::CLASSES[ 'full-width' ],
-			],
+						'classes' => ReviewCounter::CLASSES[ 'base' ],
+					],
+					
+					[
+						'title' => 'Прокрутка По Высоте',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'Ряд Rowspan',
+						'classes' => self::CLASSES[ 'scroll' ],
+					],
 
-				'value' => self::CLASSES[ 'container' ],
-			],
+					[
+						'title' => 'Прокрутка По Ширине',
+						
+						'selector' => 'table',
 
-			[
-				'title' => 'Ряд Rowspan Прокрутка',
+						'classes' => self::CLASSES[ 'full-width' ],
+					],
 
-				'value' => self::CLASSES[ 'container' ] . ' ' . self::CLASSES[ 'scroll' ],
-			],
+					[
+						'title' => 'Ячейка Крест',
+						
+						'selector' => 'td',
 
-			[
-				'title' => 'Галка',
-
-				'value' => 'legal-check',
-			],
-
-			[
-				'title' => 'Статистика',
-
-				'value' => 'legal-stats',
-			],
-
-			[
-				'title' => 'Счетчик',
-
-				'value' => ReviewCounter::CLASSES[ 'base' ],
-			],
-		];
-
-		$settings[ 'table_class_list' ] = json_encode( $styles );
-
-		return $settings;
-	}
-
-	public static function table_cell_classes( $settings )
-	{
-		$settings[ 'table_cell_class_list' ] = json_encode( [
-			[
-				'title' => 'По умолчанию',
-				'value' => '',
-			],
-
-			[
-				'title' => 'Крест',
-				'value' => 'legal-cross',
+						'classes' => self::CLASSES[ 'cross' ],
+					],
+				],
 			],
 		] );
-
-		return $settings;
 	}
+
+	// public static function table_classes( $settings )
+	// {
+	// 	$styles = [
+	// 		// [
+	// 		// 	'title' => 'По умолчанию',
+
+	// 		// 	'value' => '',
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'По умолчанию Ряд',
+
+	// 		// 	'value' => self::CLASSES[ 'raw-default' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'По умолчанию 50%',
+
+	// 		// 	'value' => 'legal-column',
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'По умолчанию 33.333%',
+
+	// 		// 	'value' => self::CLASSES[ 'column-3' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд и Столбец',
+
+	// 		// 	'value' => 'legal-raw-column',
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд',
+
+	// 		// 	'value' => self::CLASSES[ 'raw' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд 33.333%',
+
+	// 		// 	'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'column-3' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд Прокрутка',
+
+	// 		// 	'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд Прокрутка По Ширине',
+
+	// 		// 	'value' => self::CLASSES[ 'raw' ] . ' ' . self::CLASSES[ 'scroll' ] . ' ' . self::CLASSES[ 'full-width' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд Rowspan',
+
+	// 		// 	'value' => self::CLASSES[ 'container' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Ряд Rowspan Прокрутка',
+
+	// 		// 	'value' => self::CLASSES[ 'container' ] . ' ' . self::CLASSES[ 'scroll' ],
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Галка',
+
+	// 		// 	'value' => 'legal-check',
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Статистика',
+
+	// 		// 	'value' => 'legal-stats',
+	// 		// ],
+
+	// 		// [
+	// 		// 	'title' => 'Счетчик',
+
+	// 		// 	'value' => ReviewCounter::CLASSES[ 'base' ],
+	// 		// ],
+	// 	];
+
+	// 	$settings[ 'table_class_list' ] = json_encode( $styles );
+
+	// 	return $settings;
+	// }
+
+	// public static function table_cell_classes( $settings )
+	// {
+	// 	$settings[ 'table_cell_class_list' ] = json_encode( [
+	// 		[
+	// 			'title' => 'По умолчанию',
+	// 			'value' => '',
+	// 		],
+
+	// 		[
+	// 			'title' => 'Крест',
+	// 			'value' => 'legal-cross',
+	// 		],
+	// 	] );
+
+	// 	return $settings;
+	// }
 }
 
 ?>
