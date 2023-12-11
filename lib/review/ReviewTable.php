@@ -339,6 +339,12 @@ class ReviewTable
 
 		$content = self::set_th( $content );
 
+		LegalDebug::debug( [
+			'function' => 'ReviewTable::get_content',
+
+			'content' => $content,
+		] );
+
 		return $content;
 	}
 
