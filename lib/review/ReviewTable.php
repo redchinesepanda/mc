@@ -214,9 +214,9 @@ class ReviewTable
 
 	public static function set_th( $content )
 	{
-		if ( !ReviewMain::check() ) {
-			return $content;
-		}
+		// if ( !ReviewMain::check() ) {
+		// 	return $content;
+		// }
 
 		$dom = LegalDOM::get_dom( $content );
 
@@ -279,17 +279,6 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
-	public static function get_content( $content )
-	{
-		$content = self::set_tbody( $content );
-
-		$content = self::set_scroll( $content );
-
-		$content = self::set_th( $content );
-
-		return $content;
-	}
-
 	public static function set_tbody( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -340,6 +329,17 @@ class ReviewTable
 		}
 
 		return $dom->saveHTML( $dom );
+	}
+
+	public static function get_content( $content )
+	{
+		$content = self::set_tbody( $content );
+
+		$content = self::set_scroll( $content );
+
+		$content = self::set_th( $content );
+
+		return $content;
 	}
 
 	const CLASSES = [
