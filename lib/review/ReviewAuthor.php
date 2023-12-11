@@ -130,7 +130,7 @@ class ReviewAuthor
     {
         $page_link = $url;
 
-        $page = get_page_by_path( $url );
+        $page = get_page_by_path( $url, OBJECT, 'page' );
 
         LegalDebug::debug( [
             'function' => 'get_href',
