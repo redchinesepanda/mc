@@ -32,6 +32,49 @@ class NotionContent
 		);
 	}
 
+	public static function get_nodes( $dom, $query )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( $query );
+
+		return $nodes;
+	}
+
+	public static function get_nodes_code( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'//code'
+		);
+	}
+
+	public static function get_code_content( $dom )
+	{
+		$nodes = self::get_nodes_code( $dom );
+
+		// LegalDebug::debug( [
+		// 	'function' => 'NotionContent::get_code_content',
+
+		// 	'$nodes->length' => $nodes->length,
+		// ] );
+
+		$content = [];
+
+		if ( $nodes->length == 0 )
+		{
+			return '';
+		}
+
+		foreach ( $nodes as $node )
+		{
+			$content[] = $dom->saveHTML( $node );
+		}
+
+		return implode( '', $content );
+	}
+
 	public static function review_content( $meta_id, $post_id, $meta_key, $meta_value )
 	{
 		if ( NotionMain::META_FIELD[ 'content' ] == $meta_key )
@@ -42,13 +85,24 @@ class NotionContent
 			{
 				// if ( empty( $post->post_content ) )
 				// {
-					// $meta_value = self::remove_comments( $meta_value );
+					$dom = LegalDOM::get_dom( $content );
 
-					// $meta_value = self::remove_tags( $meta_value );
+					$content = self::get_code_html( $meta_value );
 
-					// $meta_value = self::remove_attr( $meta_value );
+					if ( empty( $content ) )
+					{
+						// $meta_value = self::remove_comments( $meta_value );
 
-					$post->post_content = $meta_value;
+						// $meta_value = self::remove_tags( $meta_value );
+
+						// $meta_value = self::remove_attr( $meta_value );
+
+						$content = $meta_value;
+					}
+
+					// $post->post_content = $meta_value;
+
+					$post->post_content = $content;
 
 					wp_update_post( $post );
 				// }
