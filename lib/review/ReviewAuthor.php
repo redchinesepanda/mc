@@ -107,25 +107,6 @@ class ReviewAuthor
         return self::get_default();
     }
 
-    public static function get_default()
-    {
-        $page = get_page_by_path( '/about-us/' );
-
-        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
-
-        $href = get_page_link( $translated_id ) . '#our-team';
-
-        return [
-			'name' => __( ReviewMain::TEXT[ 'valentin-axani' ], ToolLoco::TEXTDOMAIN ),
-
-			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
-
-			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
-
-			'href' => $href,
-		];
-    }
-
     // public static function get_href( $url, $anchor = '' )
     
     public static function get_href( $id, $url, $anchor = '' )
@@ -172,11 +153,32 @@ class ReviewAuthor
         return $page_link . $anchor;
     }
 
+    public static function get_default()
+    {
+        $href = self::get_href( 4739, '/about-us/', $anchor = '#nasha-komanda' );
+
+        // $page = get_page_by_path( '/about-us/' );
+
+        // $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        // $href = get_page_link( $translated_id ) . '#our-team';
+
+        return [
+			'name' => __( ReviewMain::TEXT[ 'valentin-axani' ], ToolLoco::TEXTDOMAIN ),
+
+			'duty' => __( ReviewMain::TEXT[ 'website-manager' ], ToolLoco::TEXTDOMAIN ),
+
+			'file' => LegalMain::LEGAL_URL . '/assets/img/review/author/valentin-axani.webp',
+
+			'href' => $href,
+		];
+    }
+
     public static function get_cis()
     {
         // $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
         
-        $href = self::get_href( 10764, '/o-nas/', $anchor = '#nasha-komanda' );
+        $href = self::get_href( 10764, '/kz/o-nas/', $anchor = '#nasha-komanda' );
         
         // $href = self::get_href( 'o-nas-kz', $anchor = '#nasha-komanda' );
 
@@ -205,7 +207,9 @@ class ReviewAuthor
 
     public static function get_es()
     {
-        $href = self::get_href( '/sobre-nosotros/', $anchor = '#nuestro-equipo' );
+        $href = self::get_href( 4758, '/es/sobre-nosotros/', $anchor = '#nuestro-equipo' );
+        
+        // $href = self::get_href( '/sobre-nosotros/', $anchor = '#nuestro-equipo' );
 
         // $page = get_page_by_path( '/sobre-nosotros/' );
 
