@@ -85,7 +85,7 @@ class NotionContent
 		{
 			// $content[] = htmlspecialchars_decode( $dom->saveHTML( $node ) );
 			
-			$content[] = htmlspecialchars_decode( self::get_inner_html( $dom, $node );
+			$content[] = htmlspecialchars_decode( self::get_inner_html( $dom, $node ) );
 		}
 
 		return implode( '', $content );
