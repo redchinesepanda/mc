@@ -155,6 +155,12 @@ class ReviewAuthor
                     $page_link = $url;
                 }
 
+                LegalDebug::debug( [
+                    'function' => 'get_href',
+        
+                    '$page_link' => $page_link,
+                ] );
+
                 $href = $page_link . $anchor;
             }
 
