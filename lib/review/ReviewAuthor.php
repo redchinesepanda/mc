@@ -176,6 +176,12 @@ class ReviewAuthor
 
         $href = get_page_link( $translated_id ) . '#nasha-komanda';
 
+        LegalDebug::debug( [
+            'function' => 'get_cis',
+
+            '$href_test' => $href_test,
+        ] );
+
         return [
 			'name' => __( ReviewMain::TEXT[ 'alexander-kachalov' ], ToolLoco::TEXTDOMAIN ),
 
