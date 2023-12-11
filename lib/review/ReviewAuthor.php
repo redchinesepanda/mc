@@ -128,6 +128,8 @@ class ReviewAuthor
 
     public static function get_href( $url, $anchor = '' )
     {
+        $page_link = $url;
+
         $page = get_page_by_path( $url );
 
         LegalDebug::debug( [
@@ -150,8 +152,6 @@ class ReviewAuthor
                 '$translated_id' => $translated_id,
             ] );
 
-            $page_link = $url;
-
             if ( !empty( $translated_id ) )
             {
                 $page_link = get_page_link( $translated_id );
@@ -163,11 +163,9 @@ class ReviewAuthor
                 '$page_link' => $page_link,
             ] );
 
-            return $page_link . $anchor;
-
         }
         
-        return '#';
+        return $page_link . $anchor;
     }
 
     public static function get_cis()
