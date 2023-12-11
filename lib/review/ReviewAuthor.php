@@ -168,18 +168,18 @@ class ReviewAuthor
 
     public static function get_cis()
     {
-        $href_test = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
+        $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
 
-        $page = get_page_by_path( '/o-nas/' );
+        // $page = get_page_by_path( '/o-nas/' );
 
-        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+        // $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
 
-        $href = get_page_link( $translated_id ) . '#nasha-komanda';
+        // $href = get_page_link( $translated_id ) . '#nasha-komanda';
 
         LegalDebug::debug( [
             'function' => 'get_cis',
 
-            '$href_test' => $href_test,
+            '$href' => $href,
         ] );
 
         return [
@@ -195,11 +195,13 @@ class ReviewAuthor
 
     public static function get_es()
     {
-        $page = get_page_by_path( '/sobre-nosotros/' );
+        $href = self::get_href( '/sobre-nosotros/', $anchor = '#nuestro-equipo' );
 
-        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+        // $page = get_page_by_path( '/sobre-nosotros/' );
 
-        $href = get_page_link( $translated_id ) . '#nuestro-equipo';
+        // $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        // $href = get_page_link( $translated_id ) . '#nuestro-equipo';
 
         return [
 			'name' => __( ReviewMain::TEXT[ 'borja-imbergamo' ], ToolLoco::TEXTDOMAIN ),
