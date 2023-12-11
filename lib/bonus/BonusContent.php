@@ -47,6 +47,10 @@ class BonusContent
 
         'table',
 
+        'thead',
+
+        'tbody',
+
         'th',
 
         'tr',
