@@ -50,6 +50,20 @@ class NotionContent
 		);
 	}
 
+	public static function get_inner_html( $dom, $node )
+	{
+		$innerHTML= [];
+
+		$children = $node->childNodes;
+
+		foreach ( $children as $child )
+		{
+			$innerHTML[] = $dom->saveHTML( $child );
+		}
+	
+		return implode( '', $innerHTML );
+	} 
+
 	public static function get_code_html( $dom )
 	{
 		$nodes = self::get_nodes_code( $dom );
@@ -69,7 +83,9 @@ class NotionContent
 
 		foreach ( $nodes as $node )
 		{
-			$content[] = htmlspecialchars_decode( $dom->saveHTML( $node ) );
+			// $content[] = htmlspecialchars_decode( $dom->saveHTML( $node ) );
+			
+			$content[] = htmlspecialchars_decode( self::get_inner_html( $dom, $node );
 		}
 
 		return implode( '', $content );
