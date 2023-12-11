@@ -214,9 +214,9 @@ class ReviewTable
 
 	public static function set_th( $content )
 	{
-		if ( !ReviewMain::check() ) {
-			return $content;
-		}
+		// if ( !ReviewMain::check() ) {
+		// 	return $content;
+		// }
 
 		$dom = LegalDOM::get_dom( $content );
 
