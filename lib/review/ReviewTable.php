@@ -342,7 +342,7 @@ class ReviewTable
 		LegalDebug::debug( [
 			'function' => 'ReviewTable::get_content',
 
-			'content' => $content,
+			// 'content' => $content,
 		] );
 
 		return $content;
