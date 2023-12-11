@@ -78,9 +78,9 @@ class BonusContent
         $content = str_replace( '&nbsp;', '', $content );
 
 		return [
-			// 'content' => $content,
+			'content' => $content,
 			
-            'content' => apply_filters( 'the_content', $content ),
+            // 'content' => apply_filters( 'the_content', $content ),
 		];
     }
 
