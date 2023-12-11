@@ -109,11 +109,11 @@ class NotionContent
 
 					$content = self::get_code_html( $dom );
 
-					LegalDebug::die( [
-						'function' => 'NotionContent::review_content',
+					// LegalDebug::die( [
+					// 	'function' => 'NotionContent::review_content',
 		
-						'content' => $content,
-					] );
+					// 	'content' => $content,
+					// ] );
 
 					if ( empty( $content ) )
 					{
