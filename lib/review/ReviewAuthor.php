@@ -146,27 +146,24 @@ class ReviewAuthor
                 '$translated_id' => $translated_id,
             ] );
 
+            $page_link = $url;
+
             if ( !empty( $translated_id ) )
             {
                 $page_link = get_page_link( $translated_id );
-
-                if ( empty( $page_link ) )
-                {
-                    $page_link = $url;
-                }
-
-                LegalDebug::debug( [
-                    'function' => 'get_href',
-        
-                    '$page_link' => $page_link,
-                ] );
-
-                $href = $page_link . $anchor;
             }
+
+            LegalDebug::debug( [
+                'function' => 'get_href',
+    
+                '$page_link' => $page_link,
+            ] );
+
+            return $page_link . $anchor;
 
         }
         
-        return true;
+        return '#';
     }
 
     public static function get_cis()
