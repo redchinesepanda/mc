@@ -100,7 +100,7 @@ class ReviewTable
 				catch ( DOMException $e )
 				{
 					LegalDebug::debug( [
-						'function' => 'ReviewTable::get_content',
+						'function' => 'ReviewTable::tbody_replace',
 
 						'row' => substr( $row->textContent, 0, 30 ),
 
@@ -281,9 +281,9 @@ class ReviewTable
 
 	public static function set_tbody( $content )
 	{
-		// if ( !ReviewMain::check() ) {
-		// 	return $content;
-		// }
+		if ( !ReviewMain::check() ) {
+			return $content;
+		}
 
 		$dom = LegalDOM::get_dom( $content );
 
