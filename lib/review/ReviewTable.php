@@ -218,6 +218,12 @@ class ReviewTable
 		// 	return $content;
 		// }
 
+		LegalDebug::debug( [
+			'function' => 'ReviewTable::set_th',
+
+			// 'content' => $content,
+		] );
+
 		$dom = LegalDOM::get_dom( $content );
 
         $tables = self::get_nodes_table( $dom );
