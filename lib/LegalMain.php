@@ -81,7 +81,7 @@ class LegalMain
 
 	public static function register_components()
 	{
-		remove_action( 'the_content', 'tve_clean_wp_editor_content' );
+		remove_action( 'the_content', 'tve_clean_wp_editor_content', 100 );
 
 		LegalComponents::register();
 
