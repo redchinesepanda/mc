@@ -479,6 +479,11 @@
 	content: attr( data-content-active );
 }
 
+.legal-menu .legal-cut-item:not( .legal-active )
+{
+	display: none;
+}
+
 .legal-menu a {
 	display: inline;
 }
