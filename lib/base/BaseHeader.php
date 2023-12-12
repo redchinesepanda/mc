@@ -49,19 +49,19 @@ class BaseHeader
 		// ],
     ];
 
-	const JS_NEW = [
-        'legal-header-new' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-new.js',
+	// const JS_NEW = [
+    //     'legal-header-new' => [
+	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-new.js',
 
-			'ver' => '1.0.0',
-		],
+	// 		'ver' => '1.0.0',
+	// 	],
 
-        // 'legal-header-show-all' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-show-all.js',
+    //     // 'legal-header-show-all' => [
+	// 	// 	'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-show-all.js',
 
-		// 	'ver' => '1.0.0',
-		// ],
-    ];
+	// 	// 	'ver' => '1.0.0',
+	// 	// ],
+    // ];
 
     public static function register_script()
     {
