@@ -605,6 +605,12 @@ class BaseHeader
 
 			$cut = array_slice( $item[ 'children' ], 6 );
 
+			LegalDebug::debug( [
+				'visible' => $visible,
+
+				'cut' => $cut,
+			] );
+
 			foreach( $cut as &$cut_item )
 			{
 				$cut_item[ 'class' ] = 'legal-cut-item';
