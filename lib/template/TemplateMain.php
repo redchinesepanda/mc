@@ -255,6 +255,23 @@ class TemplateMain
 		return TemplateNotFound::render();
     }
 
+    public static function wp_head_replace_style( $output )
+    {
+        if ( self::check_new() )
+        {
+            foreach ( self::REPLACE as $id )
+            {
+                // $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
+                
+                $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
+
+                $output = preg_replace( $pattern, '', $output );
+            }
+        }
+
+        return $output;
+    }
+
     public static function wp_head()
     {
 		ob_start();
@@ -287,17 +304,19 @@ class TemplateMain
 			$output
 		);
 
-        if ( self::check_new() )
-        {
-            foreach ( self::REPLACE as $id )
-            {
-                // $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
+        // if ( self::check_new() )
+        // {
+        //     foreach ( self::REPLACE as $id )
+        //     {
+        //         // $pattern = '/<style type=\"text\/css\" id=\"thrive-default-styles\">(.+?)<\/style>/i';
                 
-                $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
+        //         $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
 
-                $output = preg_replace( $pattern, '', $output );
-            }
-        }
+        //         $output = preg_replace( $pattern, '', $output );
+        //     }
+        // }
+
+        $output = self::wp_head_replace_style( $output );
 
         return $output;
     }
