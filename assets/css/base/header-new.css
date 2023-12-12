@@ -740,7 +740,7 @@
 
 /* Other */
 
-#content:not(.legal-override) {
+/* #content:not(.legal-override) {
 	z-index: 1;
 }
 
@@ -754,4 +754,4 @@
 
 .drop-menu_content_Spoiler {
 	display: none;
-}
+} */
