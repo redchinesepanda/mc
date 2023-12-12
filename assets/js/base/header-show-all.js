@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     // let setID = 0;
 
     document.querySelectorAll(
-		'.legal-menu . sub-menu'
+		'.legal-menu .sub-menu'
 	)
 	.forEach( prepareControl );
 } );
