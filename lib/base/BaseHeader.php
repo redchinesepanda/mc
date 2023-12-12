@@ -605,11 +605,11 @@ class BaseHeader
 
 			$cut = array_slice( $item[ 'children' ], 6 );
 
-			// LegalDebug::debug( [
-			// 	'visible' => $visible,
+			LegalDebug::debug( [
+				'visible' => $visible,
 
-			// 	'cut' => $cut,
-			// ] );
+				'cut' => $cut,
+			] );
 
 			foreach( $cut as &$cut_item )
 			{
