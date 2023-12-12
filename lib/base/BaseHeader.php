@@ -702,10 +702,10 @@ class BaseHeader
 
         // return $output;
 
-		if ( TemplateMain::check_code() )
-		{
-			return self::render_main( self::TEMPLATE[ 'header-new' ], self::get() );
-		}
+		// if ( TemplateMain::check_code() )
+		// {
+		// 	return self::render_main( self::TEMPLATE[ 'header-new' ], self::get() );
+		// }
 
 		return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
     }
@@ -725,10 +725,10 @@ class BaseHeader
 
         // return $output;
 
-		if ( TemplateMain::check_code() )
-		{
-			return self::render_main( self::TEMPLATE[ 'header-item-new' ], $item );
-		}
+		// if ( TemplateMain::check_code() )
+		// {
+		// 	return self::render_main( self::TEMPLATE[ 'header-item-new' ], $item );
+		// }
 
 		return self::render_main( self::TEMPLATE[ 'header-item-main' ], $item );
     }
