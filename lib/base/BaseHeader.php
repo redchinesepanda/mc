@@ -506,6 +506,11 @@ class BaseHeader
 	{
 		$post = $items[ $key ];
 
+		LegalDebug::debug( [
+			$post->title,
+			$key,
+		] );
+
 		$item = [
 			'title' => $post->title,
 
