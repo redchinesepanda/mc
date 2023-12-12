@@ -662,7 +662,7 @@ class BaseHeader
 
 		// $items = self::group_items( $items );
 
-		if ( TemplateMain::check_new )
+		if ( TemplateMain::check_new() )
 		{
 			self::group_items( $items );
 		}
