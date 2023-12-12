@@ -597,33 +597,28 @@ class BaseHeader
 
 	public static function group_children( $children )
 	{
-		$handler = new self();
+		if ( !empty( $children ) )
+		{
+			$handler = new self();
 
-		$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+			$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+	
+			$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
 
-		$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
+			return array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
+		}
 
-		$groups = array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
-
-		LegalDebug::debug( [
-			'function' => 'group_children',
-
-			'groups' => $groups,
-			
-			'has_children' => $has_children,
-
-			'no_children' => $no_children,
-		] );
+		return [];
 	}
 
 	public static function group_items( $items )
 	{
 		foreach ( $items as $item )
 		{
-			if ( !empty( $item[ 'children' ] ) )
-			{
+			// if ( !empty( $item[ 'children' ] ) )
+			// {
 				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
-			}
+			// }
 		}
 
 		return $items;
