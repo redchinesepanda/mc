@@ -549,6 +549,7 @@ class BaseHeader
 					$post->title,
 					$key,
 					$child_key,
+					$parents,
 				] );
 			}
 
