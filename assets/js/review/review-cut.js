@@ -34,7 +34,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll(
 		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 		
-		'.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu > .legal-cut-item, .legal-menu > .legal-cut-control'
+		'.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
 	)
 	.forEach( prepareControl );
 } );
