@@ -512,6 +512,8 @@ class BaseHeader
 			'href' => $post->url,
 
 			'class' => '',
+
+			'data' => '',
 		];
 
 		$post_class = get_field( self::FIELD[ 'class' ], $post );
