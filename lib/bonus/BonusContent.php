@@ -77,6 +77,14 @@ class BonusContent
 
         $content = str_replace( '&nbsp;', '', $content );
 
+        global $wp_filter;
+
+        LegalDebug::debug( [
+            'function' => 'ConusContent::get',
+
+            'wp_filter' => $wp_filter[ 'the_content' ],
+        ] );
+
 		return [
 			// 'content' => $content,
 			
