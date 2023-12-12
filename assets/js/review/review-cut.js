@@ -12,7 +12,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.classList.toggle( 'legal-active' );
 
 		document.querySelectorAll(
-			'.tcb-post-content > .legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
+			// '.tcb-post-content > .legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
+			
+			'.tcb-post-content > .legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"], .legal-menu .legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
 		)
 		.forEach( toggleItem );
 	}
