@@ -469,6 +469,16 @@
 	column-gap: 15px;
 }
 
+.legal-menu .legal-cut-control:not( .legal-active )::before
+{
+	content: attr( data-content-default );
+}
+
+.legal-menu .legal-cut-control.legal-active::before
+{
+	content: attr( data-content-active );
+}
+
 .legal-menu a {
 	display: inline;
 }
@@ -672,11 +682,11 @@
 	background-color: transparent;
 }
 
-.legal-menu .menu-item.legal-country-pt > a {   /* стиль для наглядности иконок языкового переключателя*/
+.legal-menu .menu-item.legal-country-pt > a {
 	background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
 }
 
-.legal-menu .menu-item.legal-country-all > a {   /* стиль для наглядности иконок языкового переключателя*/
+.legal-menu .menu-item.legal-country-all > a {
 	background-image: url(https://match.center/wp-content/uploads/image-656869944f58a-image-6568.svg);
 }
 
