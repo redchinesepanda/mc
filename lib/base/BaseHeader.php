@@ -620,6 +620,8 @@ class BaseHeader
 			// if ( !empty( $item[ 'children' ] ) )
 			// {
 				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
+
+				$item[ 'children' ] = [];
 			// }
 		}
 
