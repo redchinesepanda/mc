@@ -575,9 +575,61 @@ class BaseHeader
 		return $items;
 	}
 
+	public static function filter_has_children( $item )
+    {
+        if ( !empty( $item[ 'children' ] ) )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+	public static function filter_no_children( $item )
+    {
+        if ( empty( $item[ 'children' ] ) )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+	public static function group_children( $children )
+	{
+		$handler = new self();
+
+		$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
+
+		$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+
+		LegalDebug::debug( [
+			'function' => 'group_children',
+
+			'has_children' => $has_children,
+
+			'no_children' => $no_children,
+		] );
+	}
+
+	public static function group_items( $items )
+	{
+		foreach ( $items as $item )
+		{
+			if ( !empty( $item[ 'children' ] ) )
+			{
+				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
+			}
+		}
+
+		return $items;
+	}
+
 	public static function get()
 	{
 		$items = self::get_menu_items();
+
+		$items = self::group_items( $items );
 
 		return [
 			'href' => LegalBreadcrumbsMain::get_home_url(),
