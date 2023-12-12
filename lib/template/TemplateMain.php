@@ -68,13 +68,13 @@ class TemplateMain
     ];
 
     const DEQUEUE = [
-        ...self::DEQUEUE_THRIVE,
-        
-        ...self::DEQUEUE_GUTENBERG,
+        ...self::DEQUEUE_WP,
         
         ...self::DEQUEUE_WPML,
 
-        ...self::DEQUEUE_WP,
+        ...self::DEQUEUE_THRIVE,
+        
+        ...self::DEQUEUE_GUTENBERG,
     ];
 
     const CSS = [
@@ -162,10 +162,10 @@ class TemplateMain
         return !self::check();
     }
 
-    public static function disable_lightspeed_option( $value )
-    {
-        return 0;
-    }
+    // public static function disable_lightspeed_option( $value )
+    // {
+    //     return 0;
+    // }
 
     public static function register_emoji()
     {
