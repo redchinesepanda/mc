@@ -1,10 +1,10 @@
 <?php
 
-// LegalDebug::debug([
-// 	'template' => 'part-header-new.php',
+LegalDebug::debug([
+	'template' => 'part-header-new.php',
 
-// 	'args' => $args,
-// ]);
+	'args' => $args,
+]);
 
 ?>
 <?php if ( !empty( $args ) ) : ?>
