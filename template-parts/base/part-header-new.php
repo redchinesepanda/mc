@@ -346,6 +346,10 @@
 								<a class="item-title" href="https://match.center/pt/esc-online/" draggable="false">
 									ESC Online		</a>
 							</div>
+							<div class="menu-item legal-cut-control" data-content-default="Open" data-content-active="Close">
+								<a class="item-title" href="#" draggable="false">
+									</a>
+							</div>
 	
 							<div class="content-hidden-list-3-level">
 								<div class="menu-item  ">
