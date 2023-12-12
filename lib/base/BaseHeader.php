@@ -603,7 +603,7 @@ class BaseHeader
 
 		$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
 
-		$groups = array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 );
+		$groups = array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
 
 		LegalDebug::debug( [
 			'function' => 'group_children',
