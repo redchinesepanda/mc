@@ -301,48 +301,48 @@
 									Betclic		</a>
 							</div>
 	
-							<div class="menu-item  link-hidden-list-3-level">
+							<!-- <div class="menu-item  link-hidden-list-3-level">
 								<a class="item-title" href="#" draggable="false">
 									Show all		</a>
-							</div>
+							</div> -->
 
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/bwin/" draggable="false">
 									Bwin		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/casino-portugal/" draggable="false">
 									Casino Portugal		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/casino-solverde/" draggable="false">
 									Casino Solverde		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/esc-online/" draggable="false">
 									ESC Online		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/betano/" draggable="false">
 									Betano		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/betclic/" draggable="false">
 									Betclic		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/bwin/" draggable="false">
 									Bwin		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/casino-portugal/" draggable="false">
 									Casino Portugal		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/casino-solverde/" draggable="false">
 									Casino Solverde		</a>
 							</div>
-							<div class="menu-item  ">
+							<div class="menu-item legal-cut-item ">
 								<a class="item-title" href="https://match.center/pt/esc-online/" draggable="false">
 									ESC Online		</a>
 							</div>
