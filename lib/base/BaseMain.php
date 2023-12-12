@@ -19,6 +19,8 @@ class BaseMain
 
 		'gambling-sites' => 'Gambling Sites',
 
+        'hide' => 'Hide',
+
         'i-accept' => 'I Accept',
 
 		'legal-review-bk-header' => 'Legal Review BK Header',
@@ -38,6 +40,8 @@ class BaseMain
 		'oops-page-not-found' => 'Oops! Page Not Found',
 
         'ouch' => 'Ouch',
+
+        'show-all' => 'Show All',
 
         'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
 

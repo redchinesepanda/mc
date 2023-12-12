@@ -369,7 +369,7 @@
 										ESC Online		</a>
 								</div>
 								<div class="menu-item  ">
-									<a class="item-title" href="https://match.center/pt/betano/" draggable="false">
+									<a class="item-title" href="https://match.center/pt/betano/" draggable="false">Close
 										Betano		</a>
 								</div>
 								<div class="menu-item  ">
