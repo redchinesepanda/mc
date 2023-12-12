@@ -599,7 +599,7 @@ class BaseHeader
 
 	public static function set_cut( &$item )
     {
-        if ( empty( $item[ 'children' ] ) )
+        if ( !empty( $item[ 'children' ] ) )
         {
             $visible = array_slice( $item[ 'children' ], 0, 6 );
 
