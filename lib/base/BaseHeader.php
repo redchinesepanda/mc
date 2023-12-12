@@ -613,24 +613,26 @@ class BaseHeader
 		return [];
 	}
 
-	public static function group_items( $items )
+	public static function group_items( &$items )
 	{
-		foreach ( $items as $id => $item )
+		foreach ( $items as &$item )
 		{
 			// if ( !empty( $item[ 'children' ] ) )
 			// {
-				$items[ $id ][ 'groups' ] = self::group_children( $item[ 'children' ] );
+				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
 			// }
 		}
 
-		return $items;
+		// return $items;
 	}
 
 	public static function get()
 	{
 		$items = self::get_menu_items();
 
-		$items = self::group_items( $items );
+		// $items = self::group_items( $items );
+		
+		self::group_items( $items );
 
 		return [
 			'href' => LegalBreadcrumbsMain::get_home_url(),
