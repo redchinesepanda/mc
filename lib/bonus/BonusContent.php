@@ -20,8 +20,6 @@ class BonusContent
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        remove_action( 'the_content', 'tve_clean_wp_editor_content' );
     }
 
 	const FIELD = [
