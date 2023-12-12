@@ -3,12 +3,16 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-    function prepareControl( element )
+    function prepareItem( element )
 	{
-        
+        element.classList.add( 'legal-cut-item' );
+    }
 
+    function prepareItems( element )
+	{
         if ( element.children.length > 6 )
         {
+            [ ...element.children ].slice( 6 ).forEach( prepareItem );
             console.log( 'element.children.length : ' + element.children.length );
         }
         
@@ -27,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     document.querySelectorAll(
 		'.legal-menu .sub-menu'
 	)
-	.forEach( prepareControl );
+	.forEach( prepareItems );
 } );
 
 // review-cut-js end
