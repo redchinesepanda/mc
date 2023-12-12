@@ -661,8 +661,11 @@ class BaseHeader
 		$items = self::get_menu_items();
 
 		// $items = self::group_items( $items );
-		
-		self::group_items( $items );
+
+		if ( TemplateMain::check_new )
+		{
+			self::group_items( $items );
+		}
 
 		return [
 			'href' => LegalBreadcrumbsMain::get_home_url(),
@@ -680,13 +683,13 @@ class BaseHeader
 	const TEMPLATE = [
         'header-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
-        'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
+        // 'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
 
         'header-group-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-group-main.php',
 
 		'header-item-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-main.php',
 
-		'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
+		// 'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
     ];
 
     public static function render()
