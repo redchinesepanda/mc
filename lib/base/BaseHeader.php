@@ -544,13 +544,6 @@ class BaseHeader
 
 			foreach ( $child_keys as $child_key) {
 				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
-
-				LegalDebug::debug( [
-					$post->title,
-					$key,
-					$child_key,
-					$parents,
-				] );
 			}
 
 			$item[ 'class' ] .= ' menu-item-has-children';
