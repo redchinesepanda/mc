@@ -5,7 +5,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareControl( element )
 	{
-        console.log( 'element.children.length : ' + element.children.length );
+        
+
+        if ( element.children.length > 6 )
+        {
+            console.log( 'element.children.length : ' + element.children.length );
+        }
         
 		// element.dataset.cutSetId = setID;
 		
