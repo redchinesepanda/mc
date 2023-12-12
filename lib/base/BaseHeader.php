@@ -599,13 +599,17 @@ class BaseHeader
 	{
 		$handler = new self();
 
+		$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+
 		$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
 
-		$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+		$groups = array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 );
 
 		LegalDebug::debug( [
 			'function' => 'group_children',
 
+			'groups' => $groups,
+			
 			'has_children' => $has_children,
 
 			'no_children' => $no_children,
