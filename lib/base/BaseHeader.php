@@ -652,6 +652,8 @@ class BaseHeader
 
         'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
 
+        'header-group-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-group-main.php',
+
 		'header-item-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-main.php',
 
 		'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
@@ -673,6 +675,11 @@ class BaseHeader
 		}
 
 		return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
+    }
+
+	public static function render_group( $group )
+    {
+        return self::render_main( self::TEMPLATE[ 'header-group-main' ], $group );
     }
 
     public static function render_item( $item )
