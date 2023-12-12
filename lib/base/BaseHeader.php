@@ -252,7 +252,7 @@ class BaseHeader
 		return $name . '="' . $value . '"';
 	}
 
-	public static function get_data_attr( $language )
+	public static function get_data_attr_language( $language )
 	{
 		$handler = new self();
 
@@ -262,6 +262,19 @@ class BaseHeader
 			'data-name-default' => strtoupper( $language[ 'translated_name' ] ),
 
 			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
+		];
+
+		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
+	}
+
+	public static function get_data_attr_cut_control()
+	{
+		$handler = new self();
+
+		$data = [
+			'data-content-default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+
+			'data-content-active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
@@ -278,7 +291,7 @@ class BaseHeader
 
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 
-			'data' => self::get_data_attr( $languages[ 'current' ] ),
+			'data' => self::get_data_attr_language( $languages[ 'current' ] ),
 		];
 
 		// LegalDebug::debug( [
@@ -615,6 +628,16 @@ class BaseHeader
 			{
 				$cut_item[ 'class' ] = 'legal-cut-item';
 			}
+
+			$cut_control = [
+				'title' => '',
+
+				'href' => '#',
+
+				'class' => 'legal-cut-control',
+
+				'data' => self::get_data_attr_cut_control(),
+			];
 
 			$item[ 'children' ] = array_merge( $visible, $cut );
         }
