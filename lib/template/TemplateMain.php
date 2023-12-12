@@ -13,7 +13,7 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
     const CURRENT_LANGUAGE = [
-        'pt',
+        // 'pt',
 
         // 'kz',
     ];
@@ -141,13 +141,13 @@ class TemplateMain
 
     public static function dequeue_style()
     {
-        if ( self::check_dequeue() )
+        if ( self::check_new() )
         {
             ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
         }
     }
 
-    public static function check_dequeue()
+    public static function check_new()
     {
         return self::check() && self::check_code();
     }
@@ -209,6 +209,20 @@ class TemplateMain
         // add_filter( 'thrv_global_gradients', [ $handler, 'return_empty_array' ] );
     }
 
+    public static function register_dequeue()
+    {
+        if ( self::check_new() )
+        {
+            $handler = new self();
+
+            add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+
+            self::register_wp();
+
+            self::register_thrive();
+        }
+    }
+
     public static function register()
     {
         $handler = new self();
@@ -217,11 +231,9 @@ class TemplateMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+        // self::register_wp();
 
-        self::register_wp();
-
-        self::register_thrive();
+        // self::register_thrive();
 
         TemplatePage::register();
 
@@ -275,7 +287,7 @@ class TemplateMain
 			$output
 		);
 
-        if ( self::check_dequeue() )
+        if ( self::check_new() )
         {
             foreach ( self::REPLACE as $id )
             {
