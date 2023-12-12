@@ -597,6 +597,23 @@ class BaseHeader
         return false;
     }
 
+	public static function set_cut( &$item )
+    {
+        if ( empty( $item[ 'children' ] ) )
+        {
+            $visible = array_slice( $item[ 'children' ], 0, 6 );
+
+			$cut = array_slice( $item[ 'children' ], 6 );
+
+			foreach( $cut as &$cut_item )
+			{
+				$cut_item[ 'class' ] = 'legal-cut-item';
+			}
+
+			$item[ 'children' ] = array_merge( $visible, $cut );
+        }
+    }
+
 	public static function group_children( $children )
 	{
 		if ( !empty( $children ) )
@@ -606,6 +623,11 @@ class BaseHeader
 			$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
 	
 			$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
+
+			foreach( $has_children as &$item )
+			{
+				self::set_cut( $item );
+			}
 
 			return array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
 		}
