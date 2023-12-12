@@ -615,11 +615,11 @@ class BaseHeader
 
 	public static function group_items( $items )
 	{
-		foreach ( $items as $item )
+		foreach ( $items as $id => $item )
 		{
 			// if ( !empty( $item[ 'children' ] ) )
 			// {
-				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
+				$items[ $id ][ 'groups' ] = self::group_children( $item[ 'children' ] );
 			// }
 		}
 
