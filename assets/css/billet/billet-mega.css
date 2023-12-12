@@ -27,6 +27,10 @@
 		width: calc( 25% - 36px );
 	}
 
+	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-about {
+		width: calc( 30% - 36px );
+	}
+
 	.legal-billet-mega.legal-default .billet-mega-content,
 	.legal-billet-mega.legal-image .billet-mega-content,
 	.legal-billet-mega.legal-no-controls .billet-mega-content,
@@ -36,6 +40,10 @@
 
 	.legal-billet-mega.legal-author .billet-mega-content {
 		width: calc( 75% - 15px );
+	}
+
+	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-content {
+		width: calc( 70% - 15px );
 	}
 
 	/* Background */
@@ -192,6 +200,11 @@
 
 .legal-billet-mega.legal-author .mega-about-logo {
 	width: 200px;
+	height: 200px;
+}
+
+.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .mega-about-logo {
+	width: 158px;
 	height: 200px;
 }
 
