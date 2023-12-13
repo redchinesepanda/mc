@@ -1,0 +1,309 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Child Thrive Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-27 14:26+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-5.9.2\n"
+"X-Domain: thrive-theme-child"
+
+#. Author of the theme
+msgid "<a href=\"http://www.thrivethemes.com\">Thrive Themes</a>"
+msgstr ""
+
+msgid ""
+"<p>Match.Center is not a gambling operator (we do not accept any bets). The "
+"content of this website is strictly for information purposes and does not "
+"constitute advice. We only review gambling operators who are licenced by "
+"their respective local and international regulators. We only claim "
+"information to be correct at the time of posting.</p><p>Always gamble "
+"responsibly and never risk money that you can not afford to lose!</p>"
+msgstr ""
+
+msgid "All rights reserved"
+msgstr ""
+
+msgid "App"
+msgstr ""
+
+msgid "app"
+msgstr ""
+
+msgid "Basic facts"
+msgstr ""
+
+msgid "basic-information"
+msgstr ""
+
+msgid "Bet here"
+msgstr ""
+
+msgid "Bet now"
+msgstr ""
+
+msgid "Betting"
+msgstr ""
+
+msgid "betting"
+msgstr ""
+
+msgid "Betting Sites"
+msgstr ""
+
+msgid "Bonus"
+msgstr ""
+
+msgid "Bonuses"
+msgstr ""
+
+msgid "bonuses"
+msgstr ""
+
+msgid "Bookmaker Lightbox"
+msgstr ""
+
+msgid "Bookmaker Review"
+msgstr ""
+
+msgid "Casino"
+msgstr ""
+
+msgid "casino"
+msgstr ""
+
+#. Name of the theme
+msgid "Child Thrive Theme"
+msgstr ""
+
+msgid "Choose your country"
+msgstr ""
+
+msgid "Claim Bonus"
+msgstr ""
+
+msgid "Close Details"
+msgstr ""
+
+msgid "Common problems"
+msgstr ""
+
+msgid "common-problems"
+msgstr ""
+
+msgid "Compare"
+msgstr ""
+
+msgid "compare"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "FAQs"
+msgstr ""
+
+msgid "faqs"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Fully customizable, front end theme and template editing for WordPress has "
+"arrived!"
+msgstr ""
+
+msgid "Get Bonus"
+msgstr ""
+
+msgid "Get in touch"
+msgstr ""
+
+msgid "How to bet"
+msgstr ""
+
+msgid "How to get"
+msgstr ""
+
+msgid "How to play"
+msgstr ""
+
+msgid "How to use"
+msgstr ""
+
+msgid "how-to-bet"
+msgstr ""
+
+msgid "how-to-get"
+msgstr ""
+
+msgid "how-to-sign-up"
+msgstr ""
+
+msgid "how-to-use"
+msgstr ""
+
+#. URI of the theme
+msgid "http://thrivethemes.com/"
+msgstr ""
+
+msgid "In play betting"
+msgstr ""
+
+msgid "in-play-betting"
+msgstr ""
+
+msgid "Last updated"
+msgstr ""
+
+msgid "Legal Review BK Footer"
+msgstr ""
+
+msgid "Legal Review BK Header"
+msgstr ""
+
+msgid "Margin"
+msgstr ""
+
+msgid "Match.Center"
+msgstr ""
+
+msgid "More Details"
+msgstr ""
+
+msgid "Odds"
+msgstr ""
+
+msgid "odds"
+msgstr ""
+
+msgid "Offers"
+msgstr ""
+
+msgid "offers"
+msgstr ""
+
+msgid "Oops! Page Not Found"
+msgstr ""
+
+msgid "Other bonuses"
+msgstr ""
+
+msgid "other-bonuses"
+msgstr ""
+
+msgid "Ouch"
+msgstr ""
+
+msgid "Overall Rating"
+msgstr ""
+
+msgid "Page contents"
+msgstr ""
+
+msgid "Payment"
+msgstr ""
+
+msgid "payment-methods"
+msgstr ""
+
+msgid "Promo Code"
+msgstr ""
+
+msgid "Promotions"
+msgstr ""
+
+msgid "promotions"
+msgstr ""
+
+msgid "Pros & cons"
+msgstr ""
+
+msgid "pros-and-cons"
+msgstr ""
+
+msgid "Rating"
+msgstr ""
+
+msgid "Read more about"
+msgstr ""
+
+msgid "Registration"
+msgstr ""
+
+msgid "registration"
+msgstr ""
+
+msgid "Review"
+msgstr ""
+
+msgid "review"
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "security"
+msgstr ""
+
+msgid "Sign up"
+msgstr ""
+
+#. Name of the template
+msgid "Single Legal Billet"
+msgstr ""
+
+#. Name of the template
+msgid "Single Legal Compilation"
+msgstr ""
+
+msgid "Sports"
+msgstr ""
+
+msgid "sports"
+msgstr ""
+
+msgid "Sports & Markets"
+msgstr ""
+
+msgid "sports-and-markets"
+msgstr ""
+
+#. Name of the template
+msgid "Template Legal Tabs"
+msgstr ""
+
+msgid "There are no tabs added yet"
+msgstr ""
+
+msgid ""
+"This bookie doesn't pay for the referral program. But here are the offers of "
+"Match.Center partners"
+msgstr ""
+
+msgid "Tips and tricks"
+msgstr ""
+
+msgid "tips-and-tricks"
+msgstr ""
+
+msgid "Valentin Axani"
+msgstr ""
+
+msgid "Website Manager"
+msgstr ""
+
+msgid "Withdrawal"
+msgstr ""
+
+msgid ""
+"You must have picked the wrong door because I haven't been able to lay my "
+"eye on the page you've been searching for."
+msgstr ""
