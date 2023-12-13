@@ -171,11 +171,11 @@
 		width: 100%;
 	}
 	
-	.legal-header .legal-menu .menu-item.legal-country:not( .legal-country:last-child ) > a {
+	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
 		padding: 16px 24px 16px 0;
 		font-weight: 600;
 	}
-	.legal-header .legal-menu > .menu-item.legal-country:last-child > a {
+	.legal-header .legal-menu > .menu-item:last-child > .item-title {
 		padding: 16px 24px 16px 33px;
 		background-position: left center;
 		font-weight: 600;
