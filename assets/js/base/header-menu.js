@@ -47,9 +47,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
+	function appendAll( element, index, item )
+	{
+		element.appendChild( item );
+	}
+
 	function groupAppend( subMenu, index, group )
 	{
-		let element = subMenu.createElement( 'div' );
+		let element = document.createElement( 'div' );
+		
+		group.forEach( appendAll.bind( element ) );
+
+		subMenu.appendChild( element );
 
 		// console.log( subMenu );
 
