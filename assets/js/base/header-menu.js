@@ -27,14 +27,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function filter_children_no( item )
 	{
-		console.log( item );
-
-		return !item.hasChildNodes();
+		return !item.classList.contains( 'menu-item-has-children' );
 	}
 
     function filter_children_has( item )
 	{
-		return item.hasChildNodes();
+		return item.classList.contains( 'menu-item-has-children' );
 	}
 
 	function arrayChunk( items, size )
