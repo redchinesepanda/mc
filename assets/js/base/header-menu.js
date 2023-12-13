@@ -66,7 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 
-			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
+			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( element ) );
 			
 			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
