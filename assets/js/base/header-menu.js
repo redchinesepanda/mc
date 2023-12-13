@@ -47,28 +47,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
-	function groupAppend( element, index, group )
+	function groupAppend( subMenu, index, group )
 	{
 		// let group = element.parentElement.createElement( 'div' );
 
-		console.log( element );
+		console.log( subMenu );
 
 		console.log( index );
 
 		console.log( group );
 	}
 
-    function setGroups( element )
+    function setGroups( subMenu )
 	{
-		if ( element.hasChildNodes() )
+		if ( subMenu.hasChildNodes() )
 		{
-			let children = [ ...element.children ];
+			let children = [ ...subMenu.children ];
 
 			let children_no = children.filter( filter_children_no );
 
 			let children_has = children.filter( filter_children_has );
 
-			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( element ) );
+			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
 			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
