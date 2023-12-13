@@ -94,6 +94,48 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	function removeAll( item )
+	{
+		// console.log( this );
+
+		// console.log( item );
+
+		this.appendChild( item );
+	}
+
+	function groupRemove( group )
+	{
+		// let element = document.createElement( 'div' );
+
+		// element.classList.add( 'menu-group' );
+		
+		group.forEach( removeAll, this );
+
+		this.removeChild( group );
+	}
+
+    function removeGroups( element )
+	{
+		if ( element.hasChildNodes() )
+		{
+			// let children = [ ...element.children ];
+			
+			// let children = [ ...element.querySelectorAll( elements.menuGroup.selectors ) ];
+			
+			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
+
+			// children.forEach( setOrder );
+
+			// console.log( children );
+
+			// let children_no = children.filter( filter_children_no );
+
+			// let children_has = children.filter( filter_children_has );
+			
+			// [].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
+		}
+	}
+
 	const elements = {
 		menu : {
 			selectors : '.legal-menu > .menu-item-has-children > .sub-menu'
@@ -101,6 +143,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		menuItem : {
 			selectors : ':scope > .menu-item'
+		},
+
+		menuGroup : {
+			selectors : ':scope > .menu-group'
 		}
 	};
 
@@ -112,7 +158,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-
+			document.querySelectorAll( elements.menu.selectors ).forEach( removeGroups )
 		}
 	}
 
