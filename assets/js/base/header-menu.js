@@ -58,9 +58,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( element.hasChildNodes() )
 		{
-			let children_no = element.children.filter( filter_children_no );
+			let children = [ ...element.children ];
 
-			let children_has = element.children.filter( filter_children_has );
+			let children_no = children.filter( filter_children_no );
+
+			let children_has = children.filter( filter_children_has );
 
 			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend );
 			
