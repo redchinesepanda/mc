@@ -124,6 +124,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
 
+			console.log( [ ...element.querySelectorAll( elements.menuGroup.selectors ) ] );
+
 			// children.forEach( setOrder );
 
 			// console.log( children );
