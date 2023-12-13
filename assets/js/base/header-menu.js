@@ -132,7 +132,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			let items = [];
 
-			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupClildrenRemove, items ).forEach( groupRemove, element );
+			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupClildrenRemove, items );
+
+			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
 
 			items.sort( sortByDataOrder ).forEach( appendAll, element );
 		}
