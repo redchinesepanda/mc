@@ -55,6 +55,12 @@ class BaseHeader
 
 			'ver' => '1.0.0',
 		],
+
+        'legal-header-cut' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-cut.js',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_script()

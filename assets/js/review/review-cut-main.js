@@ -28,7 +28,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			setID++;
 		}
 	}
-	
+
 	function prepareControl( element )
 	{
 		element.dataset.cutSetId = setID;
@@ -43,22 +43,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const elements = {
 		cut : {
-			selectors : '.legal-menu > .menu-item-has-children > .sub-menu'
+			selectors : '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 		},
 
 		menu : {
-			selectors : ':scope > .menu-item'
+			selectors : '.legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
 		}
 	};
 
-	document.querySelectorAll(
-		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
+	// document.querySelectorAll(
+	// 	// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
 		
-		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
+	// 	// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
 		
-		elements.menu.selectors
-	)
-	.forEach( prepareMenu );
+	// 	elements.menu.selectors
+	// )
+	// .forEach( prepareMenu );
 
 	let setID = 0;
 
