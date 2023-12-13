@@ -4,6 +4,7 @@
 
 	.legal-bonus-list {
 		gap: 20px;
+		justify-content: center;
 	}
 
 	/* Position */
@@ -19,6 +20,7 @@
 
 	.legal-bonus-list {
 		gap: 30px;
+		justify-content: flex-start;
 	} 
 	
 	/* Position */
@@ -30,7 +32,7 @@
 	/* Width and Height */
 
 	.legal-bonus-list .bonus-list-item {
-		flex-basis: 330px;
+		flex-basis: 340px;
 	}
 }
 
@@ -39,7 +41,7 @@
 .legal-bonus-list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	align-items: flex-start;
 }
 
 .legal-bonus-list .bonus-list-item {
@@ -51,7 +53,7 @@
 .legal-bonus-list .list-item-about {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 20px 10px;
 	align-items: center;
 }
 
@@ -102,12 +104,13 @@
 }
 
 .legal-bonus-list .bonus-list-item {
-	flex-basis: 330px;
+	flex-basis: 340px;
 	min-height: 400px;
 }
 
 .legal-bonus-list .item-image {
 	min-height: 190px;
+	width: 340px;
 }
 
 .legal-bonus-list .list-item-about {
@@ -115,11 +118,11 @@
 }
 
 .legal-bonus-list .item-about-title {
-	flex-basis: calc( 70% - 25px );
+	flex-basis: calc( 70% - 10px );
 }
 
 .legal-bonus-list .item-about-size {
-	flex-basis: calc( 30% - 25px );
+	flex-basis: calc( 30% - 10px );
 	flex-grow: 1;
 }
 
