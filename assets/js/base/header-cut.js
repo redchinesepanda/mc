@@ -27,7 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         {
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
 
-            // console.log( 'element.children.length : ' + element.children.length );
+            console.log( 'element.children.length : ' + element.children.length );
 
 			element.appendChild( prepareControl() );
         }
@@ -38,8 +38,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			selectors : 'legal-menu .sub-menu'
 		}
 	};
-
-    console.log( elements.menu.selectors );
 
     document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
