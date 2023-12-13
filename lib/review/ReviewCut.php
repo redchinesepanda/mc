@@ -16,20 +16,18 @@ class ReviewCut
     }
 
 	const JS = [
-        'review-cut-lib' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-lib.js',
+        // 'review-cut-lib' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-lib.js',
 
-			'ver' => '1.0.0',
-
-			'deps' =>  'review-cut-lib',
-		],
+		// 	'ver' => '1.0.0',
+		// ],
 
         'review-cut-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-main.js',
 
 			'ver' => '1.0.0',
 
-			'deps' =>  'review-cut-lib',
+			'deps' => [ 'legal-header-cut' ],
 		],  
     ];
 
