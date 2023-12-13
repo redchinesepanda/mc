@@ -96,45 +96,42 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function removeAll( item )
 	{
-		// console.log( this );
-
-		// console.log( item );
-
-		this.appendChild( item );
+		// this.appendChild( item );
+		
+		this.push( item );
 	}
 
 	function groupRemove( group )
 	{
-		// let element = document.createElement( 'div' );
-
-		// element.classList.add( 'menu-group' );
-		
 		[ ...group.children ].forEach( removeAll, this );
 
 		this.removeChild( group );
+	}
+
+	function sortByDataOrder( a, b )
+	{
+		if ( a.dataset.order < b.dataset.order )
+		{
+			return -1;
+		}
+		
+		if ( a.dataset.order > b.dataset.order )
+		{
+			return 1;
+		}
+		
+		return 0;
 	}
 
     function removeGroups( element )
 	{
 		if ( element.hasChildNodes() )
 		{
-			// let children = [ ...element.children ];
-			
-			// let children = [ ...element.querySelectorAll( elements.menuGroup.selectors ) ];
+			let items = [];
 
-			// console.log( [ ...element.querySelectorAll( elements.menuGroup.selectors ) ] );
-			
-			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
+			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, items );
 
-			// children.forEach( setOrder );
-
-			// console.log( children );
-
-			// let children_no = children.filter( filter_children_no );
-
-			// let children_has = children.filter( filter_children_has );
-			
-			// [].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
+			items.sort( sortByDataOrder ).forEach( appendAll, element );
 		}
 	}
 
