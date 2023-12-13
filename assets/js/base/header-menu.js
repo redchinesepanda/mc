@@ -85,6 +85,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( children_no );
 
+			console.log( children_has );
+
 			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
 			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend, subMenu );
