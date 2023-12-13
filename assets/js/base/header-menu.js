@@ -68,7 +68,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.appendChild( element );
 		
-		// group.forEach( appendAll, element );
+		group.forEach( appendAll, element );
 	}
 
     function setGroups( element )
