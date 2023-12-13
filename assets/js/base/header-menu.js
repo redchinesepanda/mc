@@ -25,11 +25,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
-    function setOrder( item )
+    function setOrder( item, index )
 	{
-		item.dataset.order = this;
-
-		this++;
+		item.dataset.order = index;
 	}
 
     function filter_children_no( item )
@@ -82,9 +80,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// let children = [ ...element.children ];
 
-			let order = 0;
-
-			children.forEach( setOrder, order );
+			children.forEach( setOrder );
 			
 			let children = [ ...element.querySelectorAll( elements.menuItem.selectors ) ];
 
