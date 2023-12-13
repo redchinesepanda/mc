@@ -10,7 +10,8 @@ let LegalCut = ( function()
 			element.classList.toggle( 'legal-active' );
 		},
 
-		toggleDataset: function ( event )
+		// toggleDataset: function ( event )
+		toggleDataset ( event )
 		{
 			event.currentTarget.classList.toggle( 'legal-active' );
 
@@ -20,15 +21,16 @@ let LegalCut = ( function()
 			.forEach( LegalCut.toggleItem );
 		}, 
 
-		prepareControl : function ( element )
+		// prepareControl : function ( element )
+		prepareControl ( element )
 		{
 			element.dataset.cutSetId = this.id;
 			
 			if ( element.classList.contains( 'legal-cut-control' ) )
 			{
-				element.addEventListener( 'click', { toggleDataset }, false );
+				element.addEventListener( 'click', this.toggleDataset, false );
 
-				this.id++;
+				// this.id++;
 			}
 		}
 	};
