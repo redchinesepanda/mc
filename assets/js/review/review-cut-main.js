@@ -2,33 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// function toggleItem( element )
-	// {
-	// 	element.classList.toggle( 'legal-active' );
-	// }
-
-	// function toggleDataset( event )
-	// {
-	// 	event.currentTarget.classList.toggle( 'legal-active' );
-
-	// 	event.currentTarget.parentElement.querySelectorAll(
-	// 		'.legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
-	// 	)
-	// 	.forEach( toggleItem );
-	// }
-
-	// function prepareControl( element )
-	// {
-	// 	element.dataset.cutSetId = setID;
-		
-	// 	if ( element.classList.contains( 'legal-cut-control' ) )
-	// 	{
-	// 		element.addEventListener( 'click', toggleDataset, false );
-
-	// 		setID++;
-	// 	}
-	// }
-
 	let setData = {
 		id : 0
 	};

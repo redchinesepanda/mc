@@ -17,7 +17,7 @@ let LegalCut = ( function()
 			event.currentTarget.parentElement.querySelectorAll(
 				'.legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
 			)
-			.forEach( toggleItem );
+			.forEach( LegalCut.toggleItem );
 		}, 
 
 		prepareControl : function ( element )
@@ -26,7 +26,7 @@ let LegalCut = ( function()
 			
 			if ( element.classList.contains( 'legal-cut-control' ) )
 			{
-				element.addEventListener( 'click', toggleDataset, false );
+				element.addEventListener( 'click', LegalCut.toggleDataset, false );
 
 				this.id++;
 			}
