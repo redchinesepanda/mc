@@ -302,6 +302,10 @@
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
 		font-weight: 400;
 	}
+
+	.legal-menu .legal-cut-control::before {
+		font-size: 16px;
+	}
 	
 }
 
@@ -459,6 +463,10 @@
 		text-underline-offset: 5px;
 		font-weight: 600;
 	}
+
+	.legal-menu .legal-cut-control::before {
+		font-size: 14px;
+	}
     
 }
 
@@ -480,17 +488,10 @@
 }
 
 .legal-menu .legal-cut-control::before {
-	font-size: 14px;
-    font-family: var( --legal-font-primary );
-    cursor: pointer;
-    color: #000;
-    font-weight: 500;
-}
-
-.legal-menu .legal-cut-control::before:hover {
-	text-decoration: solid underline #000 2px;
-	text-underline-offset: 5px;
-	font-weight: 600;
+	font-family: var( --legal-font-primary );
+	cursor: pointer;
+	color: #000;
+	font-weight: 500;
 }
 
 .legal-menu .legal-cut-control:not( .legal-active )::before {
@@ -769,6 +770,12 @@
 
 .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu .item-title {
     font-size: 14px;
+}
+
+.legal-menu .legal-cut-control:hover::before {
+	text-decoration: solid underline #000 2px;
+	text-underline-offset: 5px;
+	font-weight: 600;
 }
 
 /* Other */
