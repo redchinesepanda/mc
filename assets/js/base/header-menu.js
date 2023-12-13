@@ -77,6 +77,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			let children = element.querySelectorAll( elements.menuItem.selectors );
 
+			console.log( children );
+
 			let children_no = children.filter( filter_children_no );
 
 			let children_has = children.filter( filter_children_has );
