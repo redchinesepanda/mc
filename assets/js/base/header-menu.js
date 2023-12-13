@@ -47,7 +47,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
-	function appendAll( element, index, item )
+	function appendAll( item )
 	{
 		// console.log( element );
 
@@ -55,7 +55,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( item );
 
-		// element.appendChild( item );
+		this.appendChild( item );
 	}
 
 	// function groupAppend( subMenu, index, group )
@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = document.createElement( 'div' );
 		
-		group.forEach( appendAll.bind( element ) );
+		group.forEach( appendAll, element );
 
 		// subMenu.appendChild( element );
 
