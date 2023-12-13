@@ -23,11 +23,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItems( element )
 	{
+        console.log( 'element.children.length : ' + element.children.length );
+        
         if ( element.children.length > 6 )
         {
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
 
-            console.log( 'element.children.length : ' + element.children.length );
+            
 
 			element.appendChild( prepareControl() );
         }
