@@ -2,29 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-    // function toggleBlock( event )
-	// {
-	// 	let current = event.currentTarget;
-
-	// 	let element = event.target;
-		
-	// 	if ( current == element ) {
-	// 		current.classList.toggle( 'legal-active' );
-	// 	}
-	// }
-
-    // function toggleLink( event )
-	// {
-	// 	let element = event.target;
-
-	// 	if ( element.hasAttribute( 'href' ) ) {
-
-	// 		if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
-	// 			event.preventDefault();
-	// 		}
-	// 	}
-	// }
-
     function setOrder( item, index )
 	{
 		item.dataset.order = index;
@@ -54,14 +31,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function appendAll( item )
 	{
-		// console.log( this );
-
-		// console.log( item );
-
 		this.appendChild( item );
 	}
-
-	// function groupAppend( subMenu, index, group )
 	
 	function groupAppend( group )
 	{
@@ -78,13 +49,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( element.hasChildNodes() )
 		{
-			// let children = [ ...element.children ];
-			
 			let children = [ ...element.querySelectorAll( elements.menuItem.selectors ) ];
 
 			children.forEach( setOrder );
-
-			// console.log( children );
 
 			let children_no = children.filter( filter_children_no );
 
@@ -96,8 +63,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function removeAll( item )
 	{
-		// this.appendChild( item );
-		
 		this.push( item );
 	}
 
