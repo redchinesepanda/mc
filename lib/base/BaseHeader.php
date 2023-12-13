@@ -60,6 +60,8 @@ class BaseHeader
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-cut.js',
 
 			'ver' => '1.0.0',
+
+			'deps' => [ 'legal-header-menu' ],
 		],
     ];
 
