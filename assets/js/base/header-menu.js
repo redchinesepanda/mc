@@ -47,12 +47,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
-	function groupAppend( element, item )
+	function groupAppend( element, item, index )
 	{
 		// let group = element.parentElement.createElement( 'div' );
 
 		console.log( element );
-		
+
 		console.log( item );
 	}
 
