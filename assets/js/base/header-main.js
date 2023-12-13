@@ -1,4 +1,4 @@
-// header-js start
+// header-main-js start
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
@@ -77,4 +77,4 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	window.addEventListener( 'resize', toggleInit, false );
 } );
 
-// header-js end
+// header-main-js end

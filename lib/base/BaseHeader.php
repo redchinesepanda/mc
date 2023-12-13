@@ -42,11 +42,11 @@ class BaseHeader
 			'ver' => '1.0.1',
 		],
 
-        // 'legal-header-nofollow' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-nofollow.js',
+        'legal-header-menu' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-menu.js',
 
-		// 	'ver' => '1.0.0',
-		// ],
+			'ver' => '1.0.0',
+		],
     ];
 
 	// const JS_NEW = [
