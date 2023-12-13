@@ -49,7 +49,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function groupAppend( subMenu, index, group )
 	{
-		let group = subMenu.createElement( 'div' );
+		let element = subMenu.createElement( 'div' );
 
 		// console.log( subMenu );
 
