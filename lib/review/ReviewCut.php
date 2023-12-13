@@ -30,7 +30,7 @@ class ReviewCut
 			'ver' => '1.0.0',
 
 			'deps' =>  'review-cut-lib',
-		], 
+		],  
     ];
 
     public static function register_script()
