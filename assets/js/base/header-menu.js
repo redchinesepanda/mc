@@ -68,9 +68,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// subMenu.appendChild( element );
 
-		console.log( this );
+		// console.log( this );
 
-		console.log( group );
+		// console.log( group );
 	}
 
     function setGroups( subMenu )
@@ -82,6 +82,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			let children_no = children.filter( filter_children_no );
 
 			let children_has = children.filter( filter_children_has );
+
+			console.log( children_no );
 
 			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
