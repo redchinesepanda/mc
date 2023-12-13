@@ -113,12 +113,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function sortByDataOrder( a, b )
 	{
-		if ( a.dataset.order < b.dataset.order )
+		let valueA = parseInt( a );
+
+		let valueB = parseInt( b );
+
+		if ( avalueA.dataset.order < valueB.dataset.order )
 		{
 			return -1;
 		}
 		
-		if ( a.dataset.order > b.dataset.order )
+		if ( valueA.dataset.order > valueB.dataset.order )
 		{
 			return 1;
 		}
