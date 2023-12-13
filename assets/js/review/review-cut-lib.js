@@ -23,11 +23,11 @@ let LegalCut = ( function()
 			event.currentTarget.parentElement.querySelectorAll(
 				'.legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
 			)
-			.forEach( LegalCut.toggleItem );
+			.forEach( this.toggleItem );
 		}, 
 
 		// prepareControl : function ( element )
-		
+
 		prepareControl ( element )
 		{
 			element.dataset.cutSetId = this.id;
