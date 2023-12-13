@@ -58,7 +58,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// element.appendChild( item );
 	}
 
-	function groupAppend( subMenu, index, group )
+	// function groupAppend( subMenu, index, group )
+	
+	function groupAppend( group )
 	{
 		let element = document.createElement( 'div' );
 		
@@ -66,9 +68,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// subMenu.appendChild( element );
 
-		console.log( subMenu );
-
-		console.log( index );
+		console.log( this );
 
 		console.log( group );
 	}
@@ -83,7 +83,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 
-			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
+			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
+			
+			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend, subMenu );
 			
 			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
