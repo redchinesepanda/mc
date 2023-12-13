@@ -314,7 +314,7 @@
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
-        gap: 28px 32px;
+        gap: 28px 32px; 
 	}
 
 	.legal-menu .menu-group .menu-item:hover > .sub-menu {
