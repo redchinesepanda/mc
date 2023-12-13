@@ -1,6 +1,6 @@
 // lib-cookie start
 
-let LegalCut = {
+let legalCut = {
 	id : 1,
 
 	cutSetId : 1,
