@@ -121,10 +121,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// let children = [ ...element.children ];
 			
 			// let children = [ ...element.querySelectorAll( elements.menuGroup.selectors ) ];
-			
-			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
 
 			console.log( [ ...element.querySelectorAll( elements.menuGroup.selectors ) ] );
+			
+			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
 
 			// children.forEach( setOrder );
 
