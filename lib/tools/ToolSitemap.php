@@ -70,7 +70,9 @@ class ToolSitemap
 
 					'terms' => $atts[ 'terms' ],
 
-					'operator' => 'AND',
+					// 'operator' => 'AND',
+					
+					'operator' => 'OR',
 				],
 			],
 			
