@@ -41,6 +41,14 @@ class BaseHeader
 
 			'ver' => '1.0.1',
 		],
+    ];
+
+	const JS_NEW = [
+        'legal-header-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-main.js',
+
+			'ver' => '1.0.1',
+		],
 
         'legal-header-menu' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-menu.js',
@@ -49,30 +57,16 @@ class BaseHeader
 		],
     ];
 
-	// const JS_NEW = [
-    //     'legal-header-new' => [
-	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-new.js',
-
-	// 		'ver' => '1.0.0',
-	// 	],
-
-    //     // 'legal-header-show-all' => [
-	// 	// 	'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-show-all.js',
-
-	// 	// 	'ver' => '1.0.0',
-	// 	// ],
-    // ];
-
     public static function register_script()
     {
-		// if ( TemplateMain::check_code() )
-		// {
-		// 	BaseMain::register_script( self::JS_NEW );
-		// }
-		// else
-		// {
+		if ( TemplateMain::check_new() )
+		{
+			BaseMain::register_script( self::JS_NEW );
+		}
+		else
+		{
 			BaseMain::register_script( self::JS );
-		// }
+		}
     }
 
 	public static function register_functions()
