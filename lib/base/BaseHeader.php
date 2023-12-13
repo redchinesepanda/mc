@@ -584,94 +584,94 @@ class BaseHeader
 		return $items;
 	}
 
-	public static function filter_has_children( $item )
-    {
-        if ( !empty( $item[ 'children' ] ) )
-        {
-            return true;
-        }
+	// public static function filter_has_children( $item )
+    // {
+    //     if ( !empty( $item[ 'children' ] ) )
+    //     {
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
-	public static function filter_no_children( $item )
-    {
-        if ( empty( $item[ 'children' ] ) )
-        {
-            return true;
-        }
+	// public static function filter_no_children( $item )
+    // {
+    //     if ( empty( $item[ 'children' ] ) )
+    //     {
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
-	public static function set_cut( &$item )
-    {
-        if ( !empty( $item[ 'children' ] ) )
-        {
-            $visible = array_slice( $item[ 'children' ], 0, 6 );
+	// public static function set_cut( &$item )
+    // {
+    //     if ( !empty( $item[ 'children' ] ) )
+    //     {
+    //         $visible = array_slice( $item[ 'children' ], 0, 6 );
 
-			$cut = array_slice( $item[ 'children' ], 6 );
+	// 		$cut = array_slice( $item[ 'children' ], 6 );
 
-			// LegalDebug::debug( [
-			// 	'visible' => $visible,
+	// 		// LegalDebug::debug( [
+	// 		// 	'visible' => $visible,
 
-			// 	'cut' => $cut,
-			// ] );
+	// 		// 	'cut' => $cut,
+	// 		// ] );
 
-			foreach( $cut as &$cut_item )
-			{
-				$cut_item[ 'class' ] = 'legal-cut-item';
-			}
+	// 		foreach( $cut as &$cut_item )
+	// 		{
+	// 			$cut_item[ 'class' ] = 'legal-cut-item';
+	// 		}
 
-			$cut_control = [
-				'title' => '',
+	// 		$cut_control = [
+	// 			'title' => '',
 
-				'href' => '#',
+	// 			'href' => '#',
 
-				'class' => 'legal-cut-control',
+	// 			'class' => 'legal-cut-control',
 
-				'data' => self::get_data_attr_cut_control(),
-			];
+	// 			'data' => self::get_data_attr_cut_control(),
+	// 		];
 
-			$item[ 'children' ] = array_merge( $visible, $cut );
-        }
-    }
+	// 		$item[ 'children' ] = array_merge( $visible, $cut );
+    //     }
+    // }
 
-	public static function group_children( $children )
-	{
-		if ( !empty( $children ) )
-		{
-			$handler = new self();
+	// public static function group_children( $children )
+	// {
+	// 	if ( !empty( $children ) )
+	// 	{
+	// 		$handler = new self();
 
-			$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
+	// 		$no_children = array_filter( $children, [ $handler, 'filter_no_children' ] );
 	
-			$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
+	// 		$has_children = array_filter( $children, [ $handler, 'filter_has_children' ] );
 
-			foreach( $has_children as &$item )
-			{
-				self::set_cut( $item );
-			}
+	// 		foreach( $has_children as &$item )
+	// 		{
+	// 			self::set_cut( $item );
+	// 		}
 
-			return array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
-		}
+	// 		return array_merge( array_chunk( $no_children, 6 ), array_chunk( $has_children, 1 ) );
+	// 	}
 
-		return [];
-	}
+	// 	return [];
+	// }
 
-	public static function group_items( &$items )
-	{
-		foreach ( $items as &$item )
-		{
-			// if ( !empty( $item[ 'children' ] ) )
-			// {
-				$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
+	// public static function group_items( &$items )
+	// {
+	// 	foreach ( $items as &$item )
+	// 	{
+	// 		// if ( !empty( $item[ 'children' ] ) )
+	// 		// {
+	// 			$item[ 'groups' ] = self::group_children( $item[ 'children' ] );
 
-				$item[ 'children' ] = [];
-			// }
-		}
+	// 			$item[ 'children' ] = [];
+	// 		// }
+	// 	}
 
-		// return $items;
-	}
+	// 	// return $items;
+	// }
 
 	public static function get()
 	{
