@@ -1,7 +1,7 @@
 // lib-cookie start
 
 let LegalCut = {
-	id : 0,
+	id : 1,
 
 	// toggleItem: function ( element )
 
