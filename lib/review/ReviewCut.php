@@ -22,7 +22,7 @@ class ReviewCut
 		// 	'ver' => '1.0.0',
 		// ],
 
-        'review-cut-main' => [
+        'review-cut' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-main.js',
 
 			'ver' => '1.0.0',
