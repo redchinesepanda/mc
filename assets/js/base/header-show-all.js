@@ -9,9 +9,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		control.classList.add( 'menu-item', 'legal-cut-control' );
 
-		control.dataset.contentDefault = '';
+		control.dataset.contentDefault = 'Open test';
 
-		control.dataset.contentActive = '';
+		control.dataset.contentActive = 'Close test';
 
 		return control;
     }
@@ -28,6 +28,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
 
             console.log( 'element.children.length : ' + element.children.length );
+
+			element.appendChild( prepareControl() );
         }
         
 		// element.dataset.cutSetId = setID;
