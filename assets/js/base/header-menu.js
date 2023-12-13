@@ -54,6 +54,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( element );
 
 		console.log( item );
+
+		console.log( index );
 	}
 
     function setGroups( element )
