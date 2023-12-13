@@ -75,11 +75,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// console.log( group );
 	}
 
-    function setGroups( subMenu )
+    function setGroups( element )
 	{
-		if ( subMenu.hasChildNodes() )
+		if ( element.hasChildNodes() )
 		{
-			let children = [ ...subMenu.children ];
+			let children = [ ...element.children ];
 
 			let children_no = children.filter( filter_children_no );
 
@@ -91,7 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
-			[].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, subMenu );
+			[].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
 			
 			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
