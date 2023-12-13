@@ -26,7 +26,7 @@ let LegalCut = ( function()
 			
 			if ( element.classList.contains( 'legal-cut-control' ) )
 			{
-				element.addEventListener( 'click', LegalCut.toggleDataset, false );
+				element.addEventListener( 'click', this.toggleDataset, false );
 
 				this.id++;
 			}
