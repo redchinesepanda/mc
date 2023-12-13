@@ -91,7 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		menuItem : {
-			selectors : '> .menu-item'
+			selectors : '.menu-item'
 		}
 	};
 
