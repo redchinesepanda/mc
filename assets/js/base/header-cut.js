@@ -41,6 +41,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
+    // function cutInit()
+	// {
+	// 	if ( window.matchMedia( '( min-width: 768px )' ).matches )
+	// 	{
+	// 		document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
+	// 	}
+	// 	else
+	// 	{
+			
+	// 	}
+	// }
+
+    // cutInit();
+
     document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
 

@@ -133,7 +133,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-			document.querySelectorAll( elements.menu.selectors ).forEach( removeGroups )
+			document.querySelectorAll( elements.menu.selectors ).forEach( removeGroups );
 		}
 	}
 
