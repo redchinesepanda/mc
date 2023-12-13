@@ -49,13 +49,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function groupAppend( subMenu, index, group )
 	{
-		// let group = element.parentElement.createElement( 'div' );
+		let group = subMenu.createElement( 'div' );
 
-		console.log( subMenu );
+		// console.log( subMenu );
 
-		console.log( index );
+		// console.log( index );
 
-		console.log( group );
+		// console.log( group );
 	}
 
     function setGroups( subMenu )
