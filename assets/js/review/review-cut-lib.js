@@ -26,7 +26,7 @@ let LegalCut = {
 
 	// prepareControl : function ( element )
 
-	prepareControl : function ( element )
+	prepareControl ( element )
 	{
 		element.dataset.cutSetId = this.id;
 
