@@ -51,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// let group = element.parentElement.createElement( 'div' );
 
-		console.log( item );
+		console.log( item.parentNode );
 	}
 
     function setGroups( element )
