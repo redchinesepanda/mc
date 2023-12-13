@@ -79,10 +79,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( element.hasChildNodes() )
 		{
 			// let children = [ ...element.children ];
-
-			children.forEach( setOrder );
 			
 			let children = [ ...element.querySelectorAll( elements.menuItem.selectors ) ];
+
+			children.forEach( setOrder );
 
 			// console.log( children );
 
