@@ -5,12 +5,17 @@ let LegalCut = ( function()
 	"use strict";
 
 	return {
-		toggleItem: function ( element )
+		id : 0,
+
+		// toggleItem: function ( element )
+
+		toggleItem ( element )
 		{
 			element.classList.toggle( 'legal-active' );
 		},
 
 		// toggleDataset: function ( event )
+
 		toggleDataset ( event )
 		{
 			event.currentTarget.classList.toggle( 'legal-active' );
@@ -22,6 +27,7 @@ let LegalCut = ( function()
 		}, 
 
 		// prepareControl : function ( element )
+		
 		prepareControl ( element )
 		{
 			element.dataset.cutSetId = this.id;
@@ -30,7 +36,7 @@ let LegalCut = ( function()
 			{
 				element.addEventListener( 'click', this.toggleDataset, false );
 
-				// this.id++;
+				this.id++;
 			}
 		}
 	};
