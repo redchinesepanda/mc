@@ -1,7 +1,7 @@
 // lib-cookie start
 
 let LegalCut = {
-	cutSetId : 0,
+	id : 0,
 
 	// toggleItem: function ( element )
 
@@ -26,13 +26,13 @@ let LegalCut = {
 
 	prepareControl : function ( element )
 	{
-		element.dataset.cutSetId = this.cutSetId;
+		element.dataset.cutSetId = this.id;
 		
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
 			element.addEventListener( 'click', this.toggleDataset, false );
 
-			this.cutSetId++;
+			this.id++;
 		}
 	}
 };
