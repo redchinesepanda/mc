@@ -27,6 +27,8 @@ let LegalCut = {
 	prepareControl : function ( element )
 	{
 		element.dataset.cutSetId = this.id;
+
+		console.log( 'this.id: ' + this.id );
 		
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
