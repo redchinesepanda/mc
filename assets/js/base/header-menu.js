@@ -64,15 +64,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = document.createElement( 'div' );
 
-		this.appendChild( element );
-
 		element.classList.add( 'menu-group' );
+
+		this.appendChild( element );
 		
-		group.forEach( appendAll, element );
-
-		// console.log( this );
-
-		// console.log( group );
+		// group.forEach( appendAll, element );
 	}
 
     function setGroups( element )
@@ -85,7 +81,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 			
-			// [].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
+			[].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
 		}
 	}
 
