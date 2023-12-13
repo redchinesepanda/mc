@@ -109,7 +109,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// element.classList.add( 'menu-group' );
 		
-		group.forEach( removeAll, this );
+		group.children.forEach( removeAll, this );
 
 		this.removeChild( group );
 	}
