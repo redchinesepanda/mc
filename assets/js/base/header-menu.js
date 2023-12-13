@@ -109,7 +109,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// element.classList.add( 'menu-group' );
 		
-		group.children.forEach( removeAll, this );
+		[ ...group.children ].forEach( removeAll, this );
 
 		this.removeChild( group );
 	}
@@ -122,7 +122,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			// let children = [ ...element.querySelectorAll( elements.menuGroup.selectors ) ];
 
-			console.log( [ ...element.querySelectorAll( elements.menuGroup.selectors ) ] );
+			// console.log( [ ...element.querySelectorAll( elements.menuGroup.selectors ) ] );
 			
 			[ ...element.querySelectorAll( elements.menuGroup.selectors ) ].forEach( groupRemove, element );
 
