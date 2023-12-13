@@ -52,8 +52,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	let setID = 0;
-
-	console.log( [ elements.cut.selectors, elements.menu.selectors ].join( ', ' ) );
 	
 	document.querySelectorAll(
 		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'

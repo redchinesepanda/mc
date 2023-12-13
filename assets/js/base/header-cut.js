@@ -39,6 +39,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
+    console.log( elements.menu.selectors );
+
     document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
 
