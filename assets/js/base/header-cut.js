@@ -24,7 +24,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     function prepareItems( element )
 	{
         console.log( 'element.children.length : ' + element.children.length );
-        
+
         if ( element.children.length > 6 )
         {
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
@@ -37,7 +37,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const elements = {
 		menu : {
-			selectors : 'legal-menu .sub-menu'
+			selectors : '.legal-menu .sub-menu'
 		}
 	};
 
