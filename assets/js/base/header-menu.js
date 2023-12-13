@@ -54,9 +54,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function appendAll( item )
 	{
-		console.log( this );
+		// console.log( this );
 
-		console.log( item );
+		// console.log( item );
 
 		this.appendChild( item );
 	}
