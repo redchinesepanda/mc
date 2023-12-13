@@ -47,12 +47,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
-	// function groupAppend( item )
-	// {
-	// 	let group = element.parentElement.createElement( 'div' );
+	function groupAppend( item )
+	{
+		// let group = element.parentElement.createElement( 'div' );
 
-
-	// }
+		console.log( item.parentElement );
+	}
 
     function setGroups( element )
 	{
@@ -64,9 +64,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 
-			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend );
+			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend );
 			
-			console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
+			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
 		}
 	}
