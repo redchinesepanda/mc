@@ -9,14 +9,14 @@ let LegalCut = ( function()
 
 		// toggleItem: function ( element )
 
-		toggleItem ( element )
+		toggleItem : function ( element )
 		{
 			element.classList.toggle( 'legal-active' );
 		},
 
 		// toggleDataset: function ( event )
 
-		toggleDataset ( event )
+		toggleDataset : function ( event )
 		{
 			event.currentTarget.classList.toggle( 'legal-active' );
 
@@ -28,7 +28,7 @@ let LegalCut = ( function()
 
 		// prepareControl : function ( element )
 
-		prepareControl ( element )
+		prepareControl : function ( element )
 		{
 			element.dataset.cutSetId = this.cutSetId;
 			
