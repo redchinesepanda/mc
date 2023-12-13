@@ -75,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// let children = [ ...element.children ];
 			
-			let children = element.querySelectorAll( elements.menuItem.selectors );
+			let children = [ ...element.querySelectorAll( elements.menuItem.selectors ) ];
 
 			console.log( children );
 
