@@ -64,11 +64,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let element = document.createElement( 'div' );
 
+		this.appendChild( element );
+
 		element.classList.add( 'menu-group' );
 		
 		group.forEach( appendAll, element );
-
-		this.appendChild( element );
 
 		// console.log( this );
 
