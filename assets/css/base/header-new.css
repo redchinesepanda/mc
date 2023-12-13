@@ -527,7 +527,7 @@
 	flex-wrap: nowrap;
 }
 
-.legal-menu .menu-group-shift .menu-item-has-children:after {
+.legal-menu .menu-group .menu-item-has-children:after {
 	content: none;
 }
 
@@ -566,28 +566,28 @@
 	padding: 8px 0;
 }
 
-.legal-menu > .menu-item:not( .legal-country ) > a {
+/* .legal-menu > .menu-item:not( .legal-country ) > a {
 	padding: 10px;
-}
+} */
 
-.legal-menu .sub-menu .menu-item.menu-item-new a::after {
+.legal-menu .sub-menu .menu-item.menu-item-new .item-title::after {
     position: absolute;
     padding-left: 5px;
 }
 
-.legal-menu .menu-item.legal-country:not( .legal-country:last-child ) > a {
+.legal-menu > .menu-item:not( :last-child ) > .item-title {
 	padding: 30px 24px;
 }
 
-.legal-menu > .menu-item.legal-country:last-child > a {
+.legal-menu > .menu-item:last-child > .item-title {
 	padding: 30px 24px 30px 43px;
 }
 
-.legal-menu .menu-item.legal-country:last-child > .sub-menu {
+.legal-menu > .menu-item:last-child > .sub-menu {
 	padding: 18px;
 }
 
-.legal-menu .menu-item.legal-country:last-child > .sub-menu .menu-item {
+.legal-menu > .menu-item:last-child > .sub-menu .menu-item {
 	padding: 0;
 }
 
@@ -595,11 +595,11 @@
 	transform: rotate(180deg);
 }
 
-.legal-menu .menu-item:not( .legal-country ) > a {
+.legal-menu .menu-item:not( .legal-menu > .menu-item) > .item-title {
 	padding: 0px;
 }
 
-.legal-menu .menu-item.legal-country:last-child .sub-menu .menu-group > .legal-country > a {
+.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item > .item-title {
 	padding: 10px 10px 10px 53px;
 }
 
@@ -630,7 +630,7 @@
 	width: fit-content;
 }
 
-.legal-menu .menu-item.legal-country:last-child > .sub-menu .menu-item {
+.legal-menu > .menu-item:last-child > .sub-menu .menu-item {
 	width: 270px;
 }
 
@@ -687,24 +687,25 @@
 	background-color: transparent;
 }
 
-.legal-menu .menu-item.legal-country-pt > a {
+.legal-menu .menu-item.legal-country-pt > a {   /* стиль для наглядности иконок языкового переключателя*/
 	background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
 }
 
-.legal-menu .menu-item.legal-country-all > a {
+.legal-menu .menu-item.legal-country-all > a {   /* стиль для наглядности иконок языкового переключателя*/
 	background-image: url(https://match.center/wp-content/uploads/image-656869944f58a-image-6568.svg);
 }
 
-.legal-menu .menu-item.legal-country > a {
-	background-position: left 10px center;
+.legal-menu > .menu-item:last-child > .item-title {
+	background-position: left 10px center; 
 }
 
-.legal-menu .menu-item.legal-country .menu-item a {
+.legal-menu > .menu-item:last-child .menu-item .item-title {
 	background-position: left 17px center;
-	position: relative;
+	background-repeat: no-repeat;
+/* 	position: relative; */
 }
 
-.legal-menu .menu-item.legal-country > a {
+.legal-menu > .menu-item:last-child > .item-title {
 	background-repeat: no-repeat;
 }
 
