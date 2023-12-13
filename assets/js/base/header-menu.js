@@ -47,11 +47,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return chunks;
 	}
 
-	function groupAppend( item )
+	function groupAppend( element, item )
 	{
 		// let group = element.parentElement.createElement( 'div' );
 
 		console.log( element );
+		
+		console.log( item );
 	}
 
     function setGroups( element )
@@ -64,7 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 
-			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend );
+			arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
 			
 			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
 			
