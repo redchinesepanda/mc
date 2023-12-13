@@ -93,7 +93,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		menuItem : {
-			selectors : '.menu-item'
+			selectors : ':scope > .menu-item'
 		}
 	};
 
