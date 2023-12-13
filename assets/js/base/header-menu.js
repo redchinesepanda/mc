@@ -25,6 +25,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
+    function setOrder( item )
+	{
+		item.dataset.order = this;
+
+		this++;
+	}
+
     function filter_children_no( item )
 	{
 		return !item.classList.contains( 'menu-item-has-children' );
@@ -74,6 +81,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( element.hasChildNodes() )
 		{
 			// let children = [ ...element.children ];
+
+			let order = 0;
+
+			children.forEach( setOrder, order );
 			
 			let children = [ ...element.querySelectorAll( elements.menuItem.selectors ) ];
 
@@ -102,20 +113,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
 			document.querySelectorAll( elements.menu.selectors ).forEach( setGroups );
+		}
+		else
+		{
 
-			// args.forEach( function ( arg ) {
-			// 	document.querySelectorAll( arg.selector ).forEach( function ( element ) {
-			// 		element.addEventListener( arg.event, arg.action, false );
-			// 	} );
-			// } );
-		} else {
-			// args.forEach( function ( arg ) {
-			// 	document.querySelectorAll( arg.selector ).forEach( function ( element ) {
-			// 		element.removeEventListener( arg.event, arg.action, false );
-			// 	} );
-			// } );
-
-			
 		}
 	}
 
