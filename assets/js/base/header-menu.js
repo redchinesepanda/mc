@@ -97,7 +97,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	groupInit();
+	groupsInit();
 
 	window.addEventListener( 'resize', groupsInit, false );
 } );
