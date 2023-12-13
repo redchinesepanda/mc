@@ -90,6 +90,10 @@
 
 	/* Position */
 
+	.legal-header .legal-logo {
+		padding-left: 16px;
+	}
+
 	.legal-menu {
 		padding: 8px 16px;
 		border-top: 2px solid #000;
@@ -154,6 +158,10 @@
 	}
 
 	/* Width and Height */
+
+	.legal-header .legal-logo {
+		height: 52px;
+	}
 
 	.legal-menu {
 		width: 100%;
@@ -226,11 +234,10 @@
 	/* Background */
 
 	.legal-header .legal-logo {
-		background-image: url('https://match.center/wp-content/uploads/image-656ed29a991ee-image-656e.svg');
+		/* background-image: url('https://match.center/wp-content/uploads/image-656ed29a991ee-image-656e.svg');
 		background-repeat: no-repeat;
-		background-position: left 16px center;
+		background-position: left 16px center; */
 		cursor: pointer;
-		height: 52px;
 	}
 
 	.legal-header-control {
@@ -364,6 +371,10 @@
 
 	/* Position */
 
+	.legal-header .legal-logo {
+		padding: 0;
+	}
+
 	.legal-menu > .menu-item:last-child {
 		margin-left: auto;
 	}
@@ -415,10 +426,9 @@
 	/* Background */
 
 	.legal-header .legal-logo {
-		background-image: url('https://match.center/wp-content/uploads/image-656d80a6d9c8b-image-656d.svg');
-		padding: 0;
+		/* background-image: url('https://match.center/wp-content/uploads/image-656d80a6d9c8b-image-656d.svg');
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center; */
 		cursor: pointer;
 	}
    
@@ -576,7 +586,7 @@
 }
 
 .legal-menu > .menu-item:last-child > .item-title {
-	padding: 30px 24px 30px 43px;
+	padding: 30px 0px 30px 43px;
 }
 
 .legal-menu > .menu-item:last-child > .sub-menu {
