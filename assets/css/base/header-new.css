@@ -696,7 +696,7 @@
 }
 
 .legal-menu > .menu-item:last-child > .item-title {
-	background-position: left 10px center;
+	background-position: left 10px center; 
 }
 
 .legal-menu > .menu-item:last-child .menu-item .item-title {
