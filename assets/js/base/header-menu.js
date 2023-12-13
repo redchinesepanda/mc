@@ -73,7 +73,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( element.hasChildNodes() )
 		{
-			let children = [ ...element.children ];
+			// let children = [ ...element.children ];
+			
+			let children = element.querySelectorAll( elements.menuItem.selectors );
 
 			let children_no = children.filter( filter_children_no );
 
@@ -86,6 +88,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const elements = {
 		menu : {
 			selectors : '.legal-menu > .menu-item-has-children > .sub-menu'
+		},
+
+		menuItem : {
+			selectors : '> .menu-item'
 		}
 	};
 
