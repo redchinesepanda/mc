@@ -27,6 +27,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function filter_children_no( item )
 	{
+		console.log( item );
+
 		return !item.hasChildNodes();
 	}
 
@@ -83,9 +85,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let children_has = children.filter( filter_children_has );
 
-			console.log( children_no );
+			// console.log( children_no );
 
-			console.log( children_has );
+			// console.log( children_has );
 
 			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
