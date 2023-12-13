@@ -117,7 +117,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let valueB = parseInt( b );
 
-		if ( avalueA.dataset.order < valueB.dataset.order )
+		if ( valueA.dataset.order < valueB.dataset.order )
 		{
 			return -1;
 		}
