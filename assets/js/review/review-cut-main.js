@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	id : 0
 	// };
 
-	let cut = LegalCut();
+	let cut = legalCut;
 	
 	document.querySelectorAll(
 		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
