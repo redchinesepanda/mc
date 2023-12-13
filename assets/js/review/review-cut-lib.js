@@ -5,7 +5,7 @@ let LegalCut = ( function()
 	"use strict";
 
 	return {
-		id : 0,
+		cutSetId : 0,
 
 		// toggleItem: function ( element )
 
@@ -30,13 +30,13 @@ let LegalCut = ( function()
 
 		prepareControl ( element )
 		{
-			element.dataset.cutSetId = this.id;
+			element.dataset.cutSetId = this.cutSetId;
 			
 			if ( element.classList.contains( 'legal-cut-control' ) )
 			{
 				element.addEventListener( 'click', this.toggleDataset, false );
 
-				this.id++;
+				this.cutSetId++;
 			}
 		}
 	};
