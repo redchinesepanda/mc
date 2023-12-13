@@ -66,7 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		group.forEach( appendAll, element );
 
-		// subMenu.appendChild( element );
+		subMenu.appendChild( element );
 
 		// console.log( this );
 
