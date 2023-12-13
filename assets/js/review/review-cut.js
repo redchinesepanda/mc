@@ -51,20 +51,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-	// document.querySelectorAll(
-	// 	// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
-		
-	// 	// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
-		
-	// 	elements.menu.selectors
-	// )
-	// .forEach( prepareMenu );
-
 	let setID = 0;
 
-	// let setData = {
-	// 	id : 0
-	// };
+	console.log( [ elements.cut.selectors, elements.menu.selectors ].join( ', ' ) );
 	
 	document.querySelectorAll(
 		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
