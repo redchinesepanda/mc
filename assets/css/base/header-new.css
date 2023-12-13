@@ -151,7 +151,7 @@
 		padding: 14px 0 14px 18px;
 	}
 
-	.legal-menu .menu-group-shift .menu-item-has-children .content-hidden-list-3-level {
+	.legal-menu .menu-group .menu-item-has-children .content-hidden-list-3-level {
 		margin-left: -16px;
 		padding: 0 0 8px 16px;
 		background-color: #fff;
@@ -340,7 +340,7 @@
 		order: 1;
 	}
 
-	.legal-menu .menu-group-shift .menu-item-has-children {
+	.legal-menu .menu-group .menu-item-has-children {
 		display: flex;
 		flex-direction: column;
 	}
@@ -414,7 +414,7 @@
 		top: -1px;
 	}
 
-	.legal-menu .menu-group-shift .menu-item .sub-menu {
+	.legal-menu .menu-group .menu-item .sub-menu {
 		position: relative;
 	}
  
