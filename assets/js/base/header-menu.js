@@ -84,17 +84,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			let children_no = children.filter( filter_children_no );
 
 			let children_has = children.filter( filter_children_has );
-
-			// console.log( children_no );
-
-			// console.log( children_has );
-
-			// arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ).forEach( groupAppend.bind( subMenu ) );
 			
-			[].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
-			
-			// console.log( arrayChunk( children_no, 6 ).concat( arrayChunk( children_has, 1 ) ) );
-			
+			// [].concat( arrayChunk( children_no, 6 ), arrayChunk( children_has, 1 ) ).forEach( groupAppend, element );
 		}
 	}
 
