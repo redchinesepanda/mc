@@ -3,6 +3,8 @@
 let LegalCut = {
 	id : 1,
 
+	cutSetId : 1,
+
 	// toggleItem: function ( element )
 
 	toggleItem : function ( element )
@@ -29,6 +31,8 @@ let LegalCut = {
 		element.dataset.cutSetId = this.id;
 
 		console.log( 'this.id: ' + this.id );
+		
+		console.log( 'this.cutSetId: ' + this.cutSetId );
 		
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
