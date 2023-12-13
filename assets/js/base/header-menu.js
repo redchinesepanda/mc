@@ -63,6 +63,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function groupAppend( group )
 	{
 		let element = document.createElement( 'div' );
+
+		element.classList.add( 'menu-group' );
 		
 		group.forEach( appendAll, element );
 
