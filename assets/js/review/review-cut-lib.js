@@ -39,6 +39,8 @@ let LegalCut = {
 			element.addEventListener( 'click', this.toggleDataset, false );
 
 			this.id++;
+
+			this.cutSetId++;
 		}
 	}
 };
