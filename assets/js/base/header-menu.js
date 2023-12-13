@@ -49,13 +49,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function appendAll( element, index, item )
 	{
-		console.log( element );
+		// console.log( element );
 
-		console.log( index );
+		// console.log( index );
 
-		console.log( item );
+		// console.log( item );
 
-		element.appendChild( item );
+		// element.appendChild( item );
 	}
 
 	function groupAppend( subMenu, index, group )
@@ -66,11 +66,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		subMenu.appendChild( element );
 
-		// console.log( subMenu );
+		console.log( subMenu );
 
-		// console.log( index );
+		console.log( index );
 
-		// console.log( group );
+		console.log( group );
 	}
 
     function setGroups( subMenu )
