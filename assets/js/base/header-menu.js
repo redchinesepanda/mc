@@ -51,11 +51,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// let group = element.parentElement.createElement( 'div' );
 
-		console.log( 'element: ' + element );
+		console.log( element );
 
-		console.log( 'index: ' + index );
+		console.log( index );
 
-		console.log( 'group: ' + group );
+		console.log( group );
 	}
 
     function setGroups( element )
