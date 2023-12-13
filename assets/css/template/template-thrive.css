@@ -1,8 +1,14 @@
 /* For separate Thrive Style */
 
+/* Position */
+
+.tcb-post-content .emoji {
+	margin-right: 5px;
+}
+
 /* Width and Height */
 
-.tcb-post-content .emoji
-{
+.tcb-post-content .emoji {
+	width: 14px;
 	max-height: 14px;
 }

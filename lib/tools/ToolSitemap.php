@@ -72,7 +72,7 @@ class ToolSitemap
 
 					// 'operator' => 'AND',
 					
-					'operator' => 'OR',
+					'operator' => 'IN',
 				],
 			],
 			
