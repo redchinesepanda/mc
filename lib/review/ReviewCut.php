@@ -16,7 +16,21 @@ class ReviewCut
     }
 
 	const JS = [
-        'review-cut' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
+        'review-cut-lib' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-lib.js',
+
+			'ver' => '1.0.0',
+
+			'deps' =>  'review-cut-lib',
+		],
+
+        'review-cut-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-main.js',
+
+			'ver' => '1.0.0',
+
+			'deps' =>  'review-cut-lib',
+		],
     ];
 
     public static function register_script()
@@ -35,31 +49,10 @@ class ReviewCut
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
-	// public static function get_cut_items( $dom )
-	// {
-	// 	return self::get_nodes(
-	// 		$dom,
-
-	// 		'//*[contains(@class, \'' . self::CLASSES[ 'cut-item' ] . '\')]'
-	// 	);
-	// }
-
 	public static function get_cut_items( $dom )
 	{
 		return self::get_nodes(
 			$dom,
-
-			// '//*[contains(@class, \'' . self::CLASSES[ 'cut-item' ] . '\')]'
-
-			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]'
-
-			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]'
-			
-			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")] )]'
-
-			// '//*[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")]/following-sibling::*[1]/self::*[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-cut-item ")])]'
-
-			// .legal-cut-item+:not(.legal-cut-item)
 
 			'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]'
 		);
@@ -90,12 +83,6 @@ class ReviewCut
 	public static function set_cut( $dom )
 	{
 		$nodes = self::get_cut_items( $dom );
-
-		// LegalDebug::debug( [
-		// 	'function' => 'set_cut',
-
-		// 	'$nodes->length' => $nodes->length,
-		// ] );
 
 		if ( $nodes->length == 0 )
 		{
@@ -152,14 +139,6 @@ class ReviewCut
 
 						'classes' => self::CLASSES[ 'cut-item' ],
 					],
-
-					// [
-					// 	'title' => 'Cut Control',
-						
-					// 	'selector' => 'p,hr',
-
-					// 	'classes' => self::CLASSES[ 'cut-control' ],
-					// ],
 				],
 			],
 		] );
