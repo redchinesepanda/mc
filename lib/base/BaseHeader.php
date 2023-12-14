@@ -65,25 +65,13 @@ class BaseHeader
 		],
     ];
 
-	const LOCALIZE = [
-		'legal-header-cut-text' => [
-			'object_name' => 'legal-header-cut-text',
-
-			'data' => [
-				'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
-
-				'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
-			],
-		],
-	];
-
     public static function register_script()
     {
 		if ( TemplateMain::check_new() )
 		{
 			BaseMain::register_script( self::JS_NEW );
 
-			ToolEnqueue::localize_script( self::LOCALIZE );
+			ToolEnqueue::localize_script( self::get_localize() );
 		}
 		else
 		{
@@ -113,14 +101,20 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-	// public static function get_cut_text()
-	// {
-	// 	return [
-	// 		'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
-
-	// 		'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
-	// 	];
-	// }
+	public static function get_localize()
+	{
+		return [
+			'legal-header-cut-text' => [
+				'object_name' => 'legal-header-cut-text',
+	
+				'data' => [
+					'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+	
+					'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
+				],
+			],
+		];
+	}
 
 	public static function inline_style()
 	{
