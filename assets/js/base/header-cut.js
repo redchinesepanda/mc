@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
         let control = document.createElement( 'span' );
 
-		control.classList.add( 'menu-item', 'legal-cut-control' );
+		control.classList.add( 'legal-cut-control' );
 
 		control.dataset.contentDefault = 'Open test';
 
