@@ -9,9 +9,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		control.classList.add( classes.cutControl );
 
-		control.dataset.contentDefault = 'Open test';
+		control.dataset.contentDefault = legalHeaderCutText.default;
 
-		control.dataset.contentActive = 'Close test';
+		control.dataset.contentActive = legalHeaderCutText.active;
 
 		return control;
     }
