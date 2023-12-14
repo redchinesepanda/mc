@@ -703,15 +703,17 @@ class BaseHeader
 				],
 	
 				'source' => [
-					'srcset' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-mobile.svg',
+					[
+						'srcset' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-mobile.svg',
 
-					'media' => '(max-width: 767px)',
+						'media' => '(max-width: 767px)',
 
-					'width' => 48,
+						'width' => 48,
 
-					'height' => 48,
+						'height' => 48,
 
-					'alt' => 'Match.Center',
+						'alt' => 'Match.Center',
+					],
 				],
 			];
 		}
