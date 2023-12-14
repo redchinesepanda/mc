@@ -66,6 +66,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// .forEach( LegalCut.prepareControl, setData );
 	}
 
+	reviewCutInit();
+
 	window.addEventListener( 'resize', reviewCutInit, false );
 } );
 
