@@ -5,6 +5,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareItem( element )
 	{
+		console.log( element.closest( elements.parent.selectors ) );
+
+		console.log( element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ) );
+
+		console.log( element.getAttribute( 'href' ) );
+
 		element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
 	}
 
