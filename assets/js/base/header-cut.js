@@ -62,7 +62,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		cutItem : 'legal-cut-item',
 
 		cutControl : 'legal-cut-control',
-	}
+	}; 
 
     const elements = {
 		menu : {
