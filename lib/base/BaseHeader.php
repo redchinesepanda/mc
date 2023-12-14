@@ -731,21 +731,12 @@ class BaseHeader
 
 	public static function get()
 	{
-		$items = self::get_menu_items();
-
-		// $items = self::group_items( $items );
-
-		// if ( TemplateMain::check_new() )
-		// {
-		// 	self::group_items( $items );
-		// }
-
-		
-
 		return [
 			// 'href' => LegalBreadcrumbsMain::get_home_url(),
+
+			'logo' => self::get_logo(),
 			
-			'items' => $items,
+			'items' => self::get_menu_items(),
 		];
 	}
 
