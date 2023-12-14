@@ -38,7 +38,7 @@ class NotionMain
 	}
 
 	const META_FIELD = [
-		'list' => 'notion_billet_list',
+		// 'list' => 'notion_billet_list',
 
 		'list-debug' => 'notion_billet_list_debug',
 

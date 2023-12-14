@@ -104,9 +104,13 @@ class NotionList
 		];
 	}
 
+	const META_FIELD = [
+		'list' => 'notion_billet_list',
+	]; 
+
 	public static function billet_list( $meta_id, $post_id, $meta_key, $meta_value )
 	{
-		if ( NotionMain::META_FIELD[ 'list' ] == $meta_key )
+		if ( self::META_FIELD[ 'list' ] == $meta_key )
 		{
 			$rows = [];
 			

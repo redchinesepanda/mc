@@ -30,6 +30,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
         if ( items.length > 6 )
         {
             [ ...items ].slice( 6 ).forEach( prepareItem );
+
+			console.log( prepareControl() );
 			
 			element.appendChild( prepareControl() );
         }
