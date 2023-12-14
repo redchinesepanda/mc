@@ -69,7 +69,11 @@ class BaseHeader
 		'legal-header-cut-text' => [
 			'object_name' => 'legal-header-cut-text',
 
-			'data' => self::get_cut_text(),
+			'data' => [
+				'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+
+				'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
+			],
 		],
 	];
 
@@ -109,14 +113,14 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-	public static function get_cut_text()
-	{
-		return [
-			'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+	// public static function get_cut_text()
+	// {
+	// 	return [
+	// 		'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
 
-			'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
-		];
-	}
+	// 		'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
+	// 	];
+	// }
 
 	public static function inline_style()
 	{
