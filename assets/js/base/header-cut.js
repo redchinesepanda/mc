@@ -19,6 +19,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
     function prepareItem( element )
 	{
         element.classList.add( 'legal-cut-item' );
+
+		element.querySelector( elements.cutControl.selectors ).remove();
     }
 
     function prepareItems( element )
@@ -54,8 +56,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			selectors : ':scope .menu-item'
 		},
 
-		itemInGroup : {
-			selectors : ':scope > .menu-group > .menu-item'
+		// itemInGroup : {
+		// 	selectors : ':scope > .menu-group > .menu-item'
+		// },
+
+		cutControl : {
+			selectors : ':scope > .legal-cut-control'
 		}
 	};
 
@@ -63,8 +69,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
-			console.log( elements.menu.selectors );
-
 			document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 		}
 		else
