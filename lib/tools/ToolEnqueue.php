@@ -66,25 +66,7 @@ class ToolEnqueue
     {
         foreach ( $scripts as $handle => $item )
         {
-            $object_name = '';
-            
-            $data = [];
-
-            if ( is_array( $item ) )
-            {
-                $object_name = $item[ 'object_name' ];
-
-                if ( !empty( $item[ 'data' ] ) )
-                {
-                    $data = $item[ 'data' ];
-                }
-            }
-
-            wp_register_script( $handle );
-
-            wp_localize_script( $handle, $object_name, $data );
-
-            wp_enqueue_script( $handle );
+            wp_localize_script( $handle, $item[ 'object_name' ], $item[ 'data' ] );
         }
     }
 

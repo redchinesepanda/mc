@@ -104,7 +104,7 @@ class BaseHeader
 	public static function get_localize()
 	{
 		return [
-			'legal-header-cut-text' => [
+			'legal-header-cut' => [
 				'object_name' => 'legalHeaderCutText',
 	
 				'data' => [
