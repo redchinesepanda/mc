@@ -63,6 +63,12 @@ class BaseHeader
 
 			'deps' => [ 'legal-header-menu' ],
 		],
+
+        'legal-header-has-href' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-has-href.js',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_script()
