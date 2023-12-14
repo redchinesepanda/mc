@@ -159,12 +159,6 @@
 		background-position: center top 2px;
 	}
 
-	/* .legal-menu .menu-group .menu-item-has-children .content-hidden-list-3-level {
-		margin-left: -16px;
-		padding: 0 0 8px 16px;
-		background-color: #fff;
-	}
- */
 	/* Width and Height */
 
 	.legal-header .legal-logo {
@@ -242,9 +236,6 @@
 	/* Background */
 
 	.legal-header .legal-logo {
-		/* background-image: url('https://match.center/wp-content/uploads/image-656ed29a991ee-image-656e.svg');
-		background-repeat: no-repeat;
-		background-position: left 16px center; */
 		cursor: pointer;
 	}
 
@@ -438,9 +429,6 @@
 	/* Background */
 
 	.legal-header .legal-logo {
-		/* background-image: url('https://match.center/wp-content/uploads/image-656d80a6d9c8b-image-656d.svg');
-		background-repeat: no-repeat;
-		background-position: center; */
 		cursor: pointer;
 	}
    
@@ -448,29 +436,15 @@
         background-color: transparent;
 	}
 
-	/* .legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
-	    background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
-		background-repeat: no-repeat;
-		background-size: 16px 16px;
-		background-position: right 10px center;
-		cursor: pointer;
-	}
-
-	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level.rotate-svg {
-	    background-image: url(https://match.center/wp-content/uploads/image-6569d9e9ee01f-image-6569.svg);
-	} */
-
 	/* Typography */
 
 	.legal-menu > .menu-item:hover > .item-title {
-        /* font-weight: 600; */
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
 
 	.legal-menu .sub-menu .menu-item .item-title:hover {
 		text-decoration: solid underline #000 2px;
 		text-underline-offset: 5px;
-		/* font-weight: 600; */
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
 
@@ -481,7 +455,6 @@
 	.legal-menu .legal-cut-control:hover::before {
 		text-decoration: solid underline #000 2px;
 		text-underline-offset: 5px;
-		/* font-weight: 600; */
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
     
@@ -739,11 +712,7 @@
 	background-color: transparent;
 }
 
-.legal-menu .menu-item.legal-country-pt > .item-title {   /* стиль для наглядности иконок языкового переключателя*/
-	background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
-}
-
-.legal-menu .menu-item.legal-country-all > .item-title {   /* стиль для наглядности иконок языкового переключателя*/
+.legal-menu .menu-item.legal-country-all > .item-title { 
 	background-image: url(https://match.center/wp-content/uploads/image-656869944f58a-image-6568.svg);
 }
 
