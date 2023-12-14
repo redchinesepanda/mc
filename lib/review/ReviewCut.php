@@ -16,12 +16,14 @@ class ReviewCut
     }
 
 	const JS = [
-        // 'review-cut-lib' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut-lib.js',
+        'review-cut' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
 
-		// 	'ver' => '1.0.0',
-		// ],
+			'ver' => '1.0.0',
+		],  
+    ];
 
+	const JS_NEW = [
         'review-cut' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-cut.js',
 
@@ -33,7 +35,14 @@ class ReviewCut
 
     public static function register_script()
     {
-        ReviewMain::register_script( self::JS );
+		if ( TemplateMain::check_new() )
+		{
+			ReviewMain::register_script( self::JS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_script( self::JS );
+		}
     }
 
 	public static function register()
