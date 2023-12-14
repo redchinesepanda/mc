@@ -440,21 +440,6 @@
         background-color: transparent;
 	}
 
-	.legal-menu .legal-cut-control::after {
-		background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
-		background-repeat: no-repeat;
-		background-size: 16px 16px;
-		background-position: center;
-		padding-left: 10px;
-		cursor: pointer;
-		width: 16px;
-		height: 16px;
-	}
-
-	.legal-menu .legal-cut-control.legal-active::after {
-		transform: rotate(180deg);
-	}
-
 	/* .legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
 	    background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
 		background-repeat: no-repeat;
@@ -749,6 +734,21 @@
 .legal-menu > .menu-item:last-child > .item-title,
 .legal-menu > .menu-item:last-child .menu-item > .item-title {
 	background-size: 23px 23px;
+}
+
+.legal-menu .legal-cut-control::after {
+	background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: center;
+	padding-left: 10px;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+}
+
+.legal-menu .legal-cut-control.legal-active::after {
+	transform: rotate(180deg);
 }
 
 /* Typography */
