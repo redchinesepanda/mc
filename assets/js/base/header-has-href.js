@@ -8,10 +8,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.closest( elements.parent.selectors )
 		.querySelector( elements.title.selectors )
 		.setAttribute(
-			'href',
+			attr.href,
 			
 			element.querySelector( elements.title.selectors )
-			.getAttribute( 'href' )
+			.getAttribute( attr.href )
 		);
 	}
 
@@ -19,8 +19,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
         element.closest( elements.parent.selectors )
 		.querySelector( elements.title.selectors )
-		.setAttribute( 'href', value.hrefNo );
+		.setAttribute( attr.href, value.hrefNo );
     }
+
+	const attr = {
+		href : 'href'
+	};
 
 	const value = {
 		hrefNo : '#'
@@ -40,7 +44,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 	};
 
-    function headerCutInit()
+    function headerHasHrefInit()
 	{
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
@@ -52,9 +56,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    // headerCutInit();
+    // headerHasHrefInit();
 
-	window.addEventListener( 'resize', headerCutInit, false );
+	window.addEventListener( 'resize', headerHasHrefInit, false );
 } );
 
 // header-has-href end
