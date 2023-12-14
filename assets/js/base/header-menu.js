@@ -117,7 +117,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		menuItem : {
-			selectors : ':scope > .menu-item'
+			selectors : ':scope > .menu-item:not( .legal-has-href )'
 		},
 
 		menuGroup : {
