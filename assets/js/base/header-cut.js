@@ -23,9 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItems( element )
 	{
-        console.log( 'element.children.length : ' + element.children.length );
-
-        if ( element.children.length > 6 )
+        if ( element.querySelectorAll( elements.item.selectors ).length > 6 )
         {
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
 
@@ -35,27 +33,41 @@ document.addEventListener( 'DOMContentLoaded', function ()
         }
 	}
 
+	function forgetItem( element )
+	{
+        element.classList.remove( 'legal-cut-item' );
+    }
+
+    function forgetItems( element )
+	{
+        [ ...element.children ].forEach( forgetItem );
+	}
+
     const elements = {
 		menu : {
 			selectors : '.legal-menu .sub-menu'
+		},
+
+		item : {
+			selectors : '.legal-menu .menu-item'
 		}
 	};
 
-    // function cutInit()
-	// {
-	// 	if ( window.matchMedia( '( min-width: 768px )' ).matches )
-	// 	{
-	// 		document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
-	// 	}
-	// 	else
-	// 	{
-			
-	// 	}
-	// }
+    function cutInit()
+	{
+		if ( window.matchMedia( '( min-width: 768px )' ).matches )
+		{
+			document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
+		}
+		else
+		{
+			document.querySelectorAll( elements.menu.selectors ).forEach( forgetItems );
+		}
+	}
 
-    // cutInit();
+    cutInit();
 
-    document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
+    // document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
 
 // header-cut-js end
