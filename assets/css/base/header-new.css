@@ -130,7 +130,7 @@
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
-		background-image: url( 'https://match.center/wp-content/uploads/image-656f316b72537-image-656f.svg' );
+		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-arrow-left.svg' );
 		transform: none;
 	}
 
