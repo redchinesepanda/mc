@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         {
             [ ...items ].slice( 6 ).forEach( prepareItem );
 
-			console.log( prepareControl() );
+			console.log( prepareControl() ); 
 			
 			element.appendChild( prepareControl() );
         }
