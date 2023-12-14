@@ -113,7 +113,7 @@ class BaseHeader
 			// if ( str_contains( $style_item[ 'class' ], 'leglal-country' ) )
 			// {
 				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
-			// }
+			// } 
 		}
 
 		return implode( ' ', $style );
