@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareItem( element )
 	{
-		element.closest( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
+		element.closest( elements.parent.selectors ).document.querySelector( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
 	}
 
 	function forgetItem( element )
@@ -20,6 +20,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
     const elements = {
 		item : {
 			selectors : '.legal-menu .legal-has-href'
+		},
+
+		parent : {
+			selectors : '.menu-item'
 		},
 
 		title : {
