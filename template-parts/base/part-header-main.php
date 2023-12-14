@@ -8,7 +8,7 @@
             		<img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/header-logo-mc-desktop.svg" alt="Match.Center">
         		</picture>
 			</a> -->
-			<?php echo LegalHeader::render_logo( $args[ 'logo' ] ); ?>
+			<?php echo BaseHeader::render_logo( $args[ 'logo' ] ); ?>
 			<div class="legal-header-control">
 			</div>
 			<?php if ( !empty( $args[ 'items' ] ) ) : ?>
