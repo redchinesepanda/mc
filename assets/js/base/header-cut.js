@@ -23,7 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItems( element )
 	{
-		console.log( element.querySelectorAll( elements.item.selectors ).length );
+		// console.log( element.querySelectorAll( elements.item.selectors ).length );
 
         if ( element.querySelectorAll( elements.item.selectors ).length > 6 )
         {
