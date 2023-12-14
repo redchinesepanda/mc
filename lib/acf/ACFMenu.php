@@ -17,6 +17,8 @@ class ACFMenu
     {
         $langs = WPMLMain::get_all_languages();
 
+        $choices[ 'legal-has-href' ] = 'Has Href';
+
         $choices[ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
 
         $choices[ 'legal-country-football' ] = '[ football ] Sports';
