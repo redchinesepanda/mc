@@ -5,14 +5,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareItem( element )
 	{
-		// console.log( element.closest( elements.parent.selectors ) );
-
-		// console.log( element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ) );
-
-		// console.log( element );
-
-		// console.log( element.getAttribute( 'href' ) );
-
 		element.closest( elements.parent.selectors )
 		.querySelector( elements.title.selectors )
 		.setAttribute(
@@ -25,7 +17,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function forgetItem( element )
 	{
-        element.closest( elements.title.selectors ).setAttribute( 'href', value.hrefNo );
+        element.closest( elements.parent.selectors )
+		.querySelector( elements.title.selectors )
+		.setAttribute( 'href', value.hrefNo );
     }
 
 	const value = {
