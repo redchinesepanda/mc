@@ -348,7 +348,7 @@
         gap: 28px 32px; 
 	}
 
-	.legal-menu .legal-has-href {
+	.legal-menu .menu-item.legal-has-href {
 		display: none;
 	}
 
