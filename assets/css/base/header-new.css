@@ -84,9 +84,6 @@
 		display: flex;
 	}
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu .link-hidden-list-3-level {
-		display: none;
-	}
 
 	/* Position */
 
@@ -115,6 +112,10 @@
 		transform: rotate(270deg);
 	}
 
+	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
+		padding: 16px 24px 16px 0;
+	}
+
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		transform: rotate(270deg);
 		padding: 0px;
@@ -130,13 +131,17 @@
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
-		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-arrow-left.svg' );
 		transform: none;
+	}
+
+	.legal-header .legal-menu > .menu-item:last-child > .item-title {
+		padding: 16px 24px 16px 33px;
 	}
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
 		padding: 14px 24px 14px 18px;
 	}
+	
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu {
 		padding: 8px 16px;
@@ -151,12 +156,9 @@
 		padding: 14px 0 14px 18px;
 	}
 
-	.legal-menu .legal-cut-control::after {
-		background-position: center top 5px;
-	}
-
-	.legal-menu .legal-cut-control.legal-active::after {
-		background-position: center top 2px;
+	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
+		padding: 8px 16px;
+		margin-left: -16px;
 	}
 
 	/* Width and Height */
@@ -168,24 +170,14 @@
 	.legal-menu {
 		width: 100%;
 	}
-	
-	.legal-header .legal-menu > .menu-item {
+
+	.legal-menu .menu-item {
 		width: 100%;
 	}
 	
-	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
-		padding: 16px 24px 16px 0;
-		font-weight: 600;
-	}
-	.legal-header .legal-menu > .menu-item:last-child > .item-title {
-		padding: 16px 24px 16px 33px;
-		background-position: left center;
-		font-weight: 600;
-		font-size: 14px;
-	}
-	.legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
-		font-size: 16px;
-	}
+	/* .legal-header .legal-menu > .menu-item {
+		width: 100%;
+	} */
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		width: 28px;
@@ -224,10 +216,6 @@
 		height: 32px;
 	}
 
-	.legal-menu > .menu-item > .item-title {
-		background-position: left 24px center;
-	}
-
 	.legal-menu .menu-item > .sub-menu,
 	.legal-menu > .menu-item:last-child > .sub-menu {
 		width: 100%;
@@ -256,6 +244,14 @@
 		border: none;
 	}
 
+	.legal-menu > .menu-item > .item-title {
+		background-position: left 24px center;
+	}
+
+	.legal-header .legal-menu > .menu-item:last-child > .item-title {
+		background-position: left center;
+	}
+
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-corner-down.svg' );
 		background-position: center center;
@@ -266,6 +262,11 @@
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child {
 		background-color: #fff;
+	}
+
+	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
+	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
+		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-arrow-left.svg' );
 	}
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu {
@@ -287,7 +288,27 @@
 		background-color: #fff;
 	}
 
+	.legal-menu .legal-cut-control::after {
+		background-position: center top 5px;
+	}
+
+	.legal-menu .legal-cut-control.legal-active::after {
+		background-position: center top 2px;
+	}
+
 	/* Typography */
+
+	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
+		font-weight: 600;
+	}
+	.legal-header .legal-menu > .menu-item:last-child > .item-title {
+		font-weight: 600;
+		font-size: 14px;
+	}
+
+	.legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
+		font-size: 16px;
+	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children .item-title {
 		font-size: 16px;
@@ -325,6 +346,10 @@
         flex-wrap: wrap;
         align-content: flex-start;
         gap: 28px 32px; 
+	}
+
+	.legal-menu .legal-has-href {
+		display: none;
 	}
 
 	.legal-menu .menu-group .menu-item:hover > .sub-menu {
