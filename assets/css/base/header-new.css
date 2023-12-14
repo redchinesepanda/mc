@@ -745,6 +745,7 @@
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
+	content: " ";
 }
 
 .legal-menu .legal-cut-control.legal-active::after {
