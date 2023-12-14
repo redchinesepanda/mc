@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
         let control = document.createElement( 'span' );
 
-		control.classList.add( 'legal-cut-control' );
+		control.classList.add( classes.cutControl );
 
 		control.dataset.contentDefault = 'Open test';
 
@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItem( element )
 	{
-        element.classList.add( 'legal-cut-item' );
+        element.classList.add( classes.cutItem );
     }
 
     function prepareItems( element )
@@ -37,20 +37,31 @@ document.addEventListener( 'DOMContentLoaded', function ()
         }
 	}
 
-	function forgetItem( element )
+    function removeCutControl( element )
 	{
-        element.classList.remove( 'legal-cut-item' );
+        element.remove();
     }
 
-    function forgetItems( element )
+	function forgetItem( element )
 	{
-		// console.log( element.querySelectorAll( elements.item.selectors ) );
+        element.classList.remove( classes.cutItem );
+    }
 
-        element.querySelectorAll( elements.item.selectors ).forEach( forgetItem );
+    // function forgetItems( element )
+	// {
+	// 	// console.log( element.querySelectorAll( elements.item.selectors ) );
 
-		// console.log( element.querySelector( elements.cutControl.selectors ) );
+    //     element.querySelectorAll( elements.item.selectors ).forEach( forgetItem );
 
-		element.querySelector( elements.cutControl.selectors ).remove();
+	// 	// console.log( element.querySelector( elements.cutControl.selectors ) );
+
+	// 	element.querySelector( elements.cutControl.selectors ).remove();
+	// }
+
+	const classes = {
+		cutItem : 'legal-cut-item',
+
+		cutControl : 'legal-cut-control',
 	}
 
     const elements = {
@@ -62,9 +73,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			selectors : ':scope .menu-item'
 		},
 
-		// itemInGroup : {
-		// 	selectors : ':scope > .menu-group > .menu-item'
-		// },
+		items : {
+			selectors : '.legal-menu .menu-item'
+		},
 
 		cutControl : {
 			selectors : ':scope > .legal-cut-control'
@@ -79,7 +90,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-			document.querySelectorAll( elements.menu.selectors ).forEach( forgetItems );
+			document.querySelectorAll( elements.items.selectors ).forEach( forgetItem );
+
+			document.querySelectorAll( elements.cutControl.selectors ).forEach( removeCutControl );
 		}
 	}
 
