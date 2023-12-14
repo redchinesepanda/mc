@@ -9,6 +9,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ) );
 
+		console.log( element );
+
 		console.log( element.getAttribute( 'href' ) );
 
 		element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
