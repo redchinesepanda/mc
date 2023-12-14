@@ -685,6 +685,50 @@ class BaseHeader
 	// 	// return $items;
 	// }
 
+	public static function get_logo()
+	{
+		if ( TemplateMain::check_code() )
+		{
+			return [
+				'href' => LegalBreadcrumbsMain::get_home_url(),
+				
+				'img' => [
+					'src' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+
+					'width' => 91,
+
+					'height' => 45,
+
+					'alt' => 'Match.Center',
+				],
+	
+				'source' => [
+					'srcset' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-mobile.svg',
+
+					'media' => '(max-width: 767px)',
+
+					'width' => 48,
+
+					'height' => 48,
+
+					'alt' => 'Match.Center',
+				],
+			];
+		}
+
+		return [
+			'src' => LegalMain::LEGAL_URL . '/assets/img/base/header/mc-logo.png',
+
+			'width' => 213,
+
+			'height' => 21,
+
+			'alt' => 'Match.Center',
+
+			'source' => [],
+		];
+	}
+
 	public static function get()
 	{
 		$items = self::get_menu_items();
@@ -696,8 +740,10 @@ class BaseHeader
 		// 	self::group_items( $items );
 		// }
 
+		
+
 		return [
-			'href' => LegalBreadcrumbsMain::get_home_url(),
+			// 'href' => LegalBreadcrumbsMain::get_home_url(),
 			
 			'items' => $items,
 		];
@@ -719,6 +765,8 @@ class BaseHeader
 		'header-item-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-main.php',
 
 		// 'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
+		
+		'header-logo' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-logo.php',
     ];
 
     public static function render()
@@ -760,6 +808,11 @@ class BaseHeader
 		// }
 
 		return self::render_main( self::TEMPLATE[ 'header-item-main' ], $item );
+    }
+
+    public static function render_logo( $logo )
+    {
+        return self::render_main( self::TEMPLATE[ 'header-logo' ], $logo );
     }
 
 	public static function render_main( $template, $args )
