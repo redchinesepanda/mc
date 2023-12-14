@@ -38,8 +38,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function forgetItem( element )
 	{
         element.classList.remove( 'legal-cut-item' );
-
-		// element.querySelector( elements.cutControl.selectors ).remove();
     }
 
     function forgetItems( element )
@@ -48,7 +46,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
         element.querySelectorAll( elements.item.selectors ).forEach( forgetItem );
 
-		console.log( element.querySelector( elements.cutControl.selectors ) );
+		// console.log( element.querySelector( elements.cutControl.selectors ) );
+
+		element.querySelector( elements.cutControl.selectors ).remove();
 	}
 
     const elements = {
