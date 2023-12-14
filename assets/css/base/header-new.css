@@ -151,12 +151,20 @@
 		padding: 14px 0 14px 18px;
 	}
 
-	.legal-menu .menu-group .menu-item-has-children .content-hidden-list-3-level {
+	.legal-menu .legal-cut-control::after {
+		background-position: center top 5px;
+	}
+
+	.legal-menu .legal-cut-control.legal-active::after {
+		background-position: center top 2px;
+	}
+
+	/* .legal-menu .menu-group .menu-item-has-children .content-hidden-list-3-level {
 		margin-left: -16px;
 		padding: 0 0 8px 16px;
 		background-color: #fff;
 	}
-
+ */
 	/* Width and Height */
 
 	.legal-header .legal-logo {
