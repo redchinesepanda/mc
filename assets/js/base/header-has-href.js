@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		parent : {
-			selectors : '.menu-item'
+			selectors : '.menu-item-has-children'
 		},
 
 		title : {
