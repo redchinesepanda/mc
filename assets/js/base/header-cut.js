@@ -69,7 +69,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-    function cutInit()
+    function headerCutInit()
 	{
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
@@ -81,9 +81,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    cutInit();
+    headerCutInit();
 
-	window.addEventListener( 'resize', cutInit, false );
+	window.addEventListener( 'resize', headerCutInit, false );
 
     // document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
