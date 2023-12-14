@@ -40,7 +40,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function forgetItems( element )
 	{
-        [ ...element.children ].forEach( forgetItem );
+        element.querySelectorAll( elements.itemInGroup.selectors ).forEach( forgetItem );
 	}
 
     const elements = {
@@ -50,6 +50,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		item : {
 			selectors : ':scope > .menu-item'
+		},
+
+		itemInGroup : {
+			selectors : ':scope > .menu-group > .menu-item'
 		}
 	};
 
