@@ -33,7 +33,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// element.dataset.cutSetId = setID;
 
-		element.dataset.cutSetId = document.dataset.setId;
+		element.dataset.cutSetId = document.setId;
 		
 		if ( element.classList.contains( 'legal-cut-control' ) )
 		{
@@ -41,7 +41,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// setID++;
 
-			document.dataset.setId++;
+			document.setId++;
 		}
 	}
 
@@ -59,7 +59,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let setID = 0;
 	
-		document.dataset.setId = 0;
+		document.setId = 0;
 
 		document.querySelectorAll(
 			// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
