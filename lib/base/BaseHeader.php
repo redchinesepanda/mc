@@ -105,7 +105,7 @@ class BaseHeader
 	{
 		return [
 			'legal-header-cut-text' => [
-				'object_name' => 'legal-header-cut-text',
+				'object_name' => 'legalHeaderCutText',
 	
 				'data' => [
 					'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
