@@ -61,7 +61,7 @@ class BaseHeader
 
 			'ver' => '1.0.0',
 
-			'deps' => [ 'legal-header-menu' ],
+			// 'deps' => [ 'legal-header-menu' ],
 		],
     ];
 
