@@ -37,7 +37,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
         element.classList.remove( 'legal-cut-item' );
 
-		element.querySelector( elements.cutControl.selectors ).remove();
+		// element.querySelector( elements.cutControl.selectors ).remove();
+
+		console.log( element.querySelector( elements.cutControl.selectors ) );
     }
 
     function forgetItems( element )
