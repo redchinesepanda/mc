@@ -65,11 +65,21 @@ class BaseHeader
 		],
     ];
 
+	const LOCALIZE = [
+		'legal-header-cut-text' => [
+			'object_name' => 'legal-header-cut-text',
+
+			'data' => self::get_cut_text(),
+		],
+	];
+
     public static function register_script()
     {
 		if ( TemplateMain::check_new() )
 		{
 			BaseMain::register_script( self::JS_NEW );
+
+			ToolEnqueue::localize_script( self::LOCALIZE );
 		}
 		else
 		{
@@ -99,7 +109,17 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-	public static function inline_style() {
+	public static function get_cut_text()
+	{
+		return [
+			'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+
+			'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
+		];
+	}
+
+	public static function inline_style()
+	{
 		$style = [];
 
 		$style_items = self::parse_all_inline();

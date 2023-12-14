@@ -43,12 +43,6 @@ class ToolEnqueue
 
             $deps = [];
 
-            // $args = [
-            //     'in_footer' => false,
-
-            //     'strategy' => 'async',
-            // ];
-
             $args = true;
 
             if ( is_array( $item ) ) {
@@ -65,6 +59,28 @@ class ToolEnqueue
             wp_register_script( $name, $path, $deps, $ver, $args );
 
             wp_enqueue_script( $name );
+        }
+    }
+
+    public static function localize_script( $scripts = [] )
+    {
+        foreach ( $scripts as $handle => $item )
+        {
+            $object_name = '';
+            
+            $data = [];
+
+            if ( is_array( $item ) )
+            {
+                $object_name = $item[ 'object_name' ];
+
+                if ( !empty( $item[ 'data' ] ) )
+                {
+                    $data = $item[ 'data' ];
+                }
+            }
+
+            wp_localize_script( $handle, $object, $data );
         }
     }
 
