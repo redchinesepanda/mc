@@ -49,7 +49,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		item : {
-			selectors : '.legal-menu .menu-item'
+			selectors : ':scope > .menu-item'
 		}
 	};
 
