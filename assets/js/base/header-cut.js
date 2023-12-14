@@ -19,8 +19,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
     function prepareItem( element )
 	{
         element.classList.add( 'legal-cut-item' );
-
-		element.querySelector( elements.cutControl.selectors ).remove();
     }
 
     function prepareItems( element )
@@ -38,6 +36,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function forgetItem( element )
 	{
         element.classList.remove( 'legal-cut-item' );
+
+		element.querySelector( elements.cutControl.selectors ).remove();
     }
 
     function forgetItems( element )
