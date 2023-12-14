@@ -51,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-	function cutInit()
+	function reviewCutInit()
 	{
 		let setID = 0;
 	
@@ -66,7 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// .forEach( LegalCut.prepareControl, setData );
 	}
 
-	window.addEventListener( 'resize', cutInit, false );
+	window.addEventListener( 'resize', reviewCutInit, false );
 } );
 
 // review-cut-js end
