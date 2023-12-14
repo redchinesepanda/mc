@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareItem( element )
 	{
-		element.closest( elements.parent.selectors ).document.querySelector( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
+		element.closest( elements.parent.selectors ).querySelector( elements.title.selectors ).setAttribute( 'href', element.getAttribute( 'href' ) );
 	}
 
 	function forgetItem( element )
