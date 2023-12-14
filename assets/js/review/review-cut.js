@@ -51,17 +51,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-	let setID = 0;
+	function cutInit()
+	{
+		let setID = 0;
 	
-	document.querySelectorAll(
-		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
-		
-		// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
+		document.querySelectorAll(
+			// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
+			
+			// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
 
-		[ elements.cut.selectors, elements.menu.selectors ].join( ', ' )
-	)
-	.forEach( prepareControl );
-	// .forEach( LegalCut.prepareControl, setData );
+			[ elements.cut.selectors, elements.menu.selectors ].join( ', ' )
+		)
+		.forEach( prepareControl );
+		// .forEach( LegalCut.prepareControl, setData );
+	}
+
+	window.addEventListener( 'resize', cutInit, false );
 } );
 
 // review-cut-js end
