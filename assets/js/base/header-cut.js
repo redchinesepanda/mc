@@ -75,6 +75,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     cutInit();
 
+	window.addEventListener( 'resize', cutInit, false );
+
     // document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 } );
 
