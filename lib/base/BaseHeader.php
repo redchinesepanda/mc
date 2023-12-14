@@ -711,8 +711,6 @@ class BaseHeader
 						'width' => 48,
 
 						'height' => 48,
-
-						'alt' => 'Match.Center',
 					],
 				],
 			];
