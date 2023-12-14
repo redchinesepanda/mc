@@ -47,7 +47,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const elements = {
 		menu : {
-			selectors : '.legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item > .sub-menu'
+			selectors : '.legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item-has-children > .sub-menu'
 		},
 
 		item : {
