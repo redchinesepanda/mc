@@ -40,7 +40,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function forgetItems( element )
 	{
-        element.querySelectorAll( elements.itemInGroup.selectors ).forEach( forgetItem );
+        element.querySelectorAll( elements.item.selectors ).forEach( forgetItem );
 	}
 
     const elements = {
