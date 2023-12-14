@@ -447,6 +447,8 @@
 		background-position: center;
 		padding-left: 10px;
 		cursor: pointer;
+		width: 16px;
+		height: 16px;
 	}
 
 	.legal-menu .legal-cut-control.legal-active::after {
