@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         {
             [ ...items ].slice( 6 ).forEach( prepareItem );
 
-			console.log( prepareControl() );
+			console.log( items.length );
 			
 			element.appendChild( prepareControl() );
         }
@@ -55,7 +55,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const elements = {
 		menu : {
-			selectors : '.legal-menu > .menu-item-has-children > .sub-menu .menu-item-has-children > .sub-menu'
+			selectors : '.legal-menu > .menu-item-has-children > .sub-menu > .menu-group .menu-item-has-children > .sub-menu'
 		},
 
 		item : {
