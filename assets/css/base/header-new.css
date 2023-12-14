@@ -462,7 +462,7 @@
 
 	/* Typography */
 
-	.legal-menu .menu-item:hover > .item-title {
+	.legal-menu > .menu-item:hover > .item-title {
         font-weight: 600;
 	}
 
