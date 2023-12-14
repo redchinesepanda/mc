@@ -440,7 +440,20 @@
         background-color: transparent;
 	}
 
-	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
+	.legal-menu .legal-cut-control::after {
+		background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
+		background-repeat: no-repeat;
+		background-size: 16px 16px;
+		background-position: center;
+		padding-left: 10px;
+		cursor: pointer;
+	}
+
+	.legal-menu .legal-cut-control.legal-active::after {
+		transform: rotate(180deg);
+	}
+
+	/* .legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
 	    background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
 		background-repeat: no-repeat;
 		background-size: 16px 16px;
@@ -450,7 +463,7 @@
 
 	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level.rotate-svg {
 	    background-image: url(https://match.center/wp-content/uploads/image-6569d9e9ee01f-image-6569.svg);
-	}
+	} */
 
 	/* Typography */
 
