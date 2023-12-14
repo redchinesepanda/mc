@@ -80,7 +80,11 @@ class ToolEnqueue
                 }
             }
 
+            wp_register_script( $handle );
+
             wp_localize_script( $handle, $object_name, $data );
+
+            wp_enqueue_script( $handle );
         }
     }
 
