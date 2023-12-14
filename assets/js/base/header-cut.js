@@ -51,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		item : {
-			selectors : ':scope > .menu-item'
+			selectors : ':scope .menu-item'
 		},
 
 		itemInGroup : {
