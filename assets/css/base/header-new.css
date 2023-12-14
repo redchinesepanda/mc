@@ -240,7 +240,7 @@
 	}
 
 	.legal-header-control {
-		background-image: url( 'https://match.center/wp-content/uploads/image-656ec117b3f99-image-656e.svg' ), url('https://match.center/wp-content/uploads/flags/pt.svg');
+		background-image: url( 'https://match.center/wp-content/uploads/image-656ec117b3f99-image-656e.svg' ), url( 'https://match.center/wp-content/uploads/flags/pt.svg' );
 		background-repeat: no-repeat;
 		background-position: right 16px center, left center;
 		background-size: 24px;
@@ -713,7 +713,7 @@
 }
 
 .legal-menu .menu-item.legal-country-all > .item-title { 
-	background-image: url(https://match.center/wp-content/uploads/image-656869944f58a-image-6568.svg);
+	background-image: url( 'https://match.center/wp-content/uploads/image-656869944f58a-image-6568.svg' );
 }
 
 .legal-menu > .menu-item:last-child > .item-title {
@@ -735,7 +735,7 @@
 }
 
 .legal-menu .legal-cut-control::after {
-	background-image: url(https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg);
+	background-image: url( 'https://match.center/wp-content/uploads/image-656889a6719fd-image-6568.svg' );
 	background-repeat: no-repeat;
 	background-size: 16px 16px;
 	background-position: center;
