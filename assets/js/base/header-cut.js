@@ -83,7 +83,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    headerCutInit();
+    // headerCutInit();
 
 	window.addEventListener( 'resize', headerCutInit, false );
 
