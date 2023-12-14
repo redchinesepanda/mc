@@ -62,9 +62,27 @@ class NotionBonus
 		];
 	}
 
+	const META_FIELD = [
+		'buffer-repeater' => 'notion_billet_bonus',
+
+		'direct-title-default' => 'review-about_about-bonus',
+
+		'direct-description-default' => 'review-about_about-description',
+
+		'direct-description-main-default' => 'review-about_about-main-description',
+	];
+
+	const ACF_KEY = [
+		'bonus' => 'field_651ab4be3b28d',
+	];
+
+	const ACF_FIELD = [
+		'bonus' => 'billet-feture-bonus',
+	];
+
 	public static function billet_bonus( $meta_id, $post_id, $meta_key, $meta_value )
 	{
-		if ( NotionMain::META_FIELD[ 'bonus' ] == $meta_key )
+		if ( self::META_FIELD[ 'buffer-repeater' ] == $meta_key )
 		{
 			$rows = [];
 			
@@ -80,7 +98,7 @@ class NotionBonus
 					$rows[] = self::get_row( $bonus );
 				}
 	
-				update_field( NotionMain::ACF_KEY[ 'bonus' ], $rows, $post_id );
+				update_field( self::ACF_KEY[ 'bonus' ], $rows, $post_id );
 			}
 
 			// LegalDebug::die( [

@@ -44,7 +44,7 @@ class NotionMain
 
 		'language-code' => 'notion_language_code',
 
-		'bonus' => 'notion_billet_bonus',
+		// 'bonus' => 'notion_billet_bonus',
 
 		'about-afillate' => 'notion_about_afillate',
 
@@ -53,14 +53,14 @@ class NotionMain
 		'feature' => 'notion_billet_feature',
 
 		// 'content' => 'notion_review_content',
-	];
+	]; 
 
 	const ACF_KEY = [
 		'parts' => 'field_6412f442f2c53',
 
 		'settings' => 'field_6437de4fa65c9',
 
-		'bonus' => 'field_651ab4be3b28d',
+		// 'bonus' => 'field_651ab4be3b28d',
 	];
 
 	const ACF_FIELD = [
@@ -68,7 +68,7 @@ class NotionMain
 
 		'settings' => 'review-about',
 
-		'bonus' => 'billet-feture-bonus',
+		// 'bonus' => 'billet-feture-bonus',
 	];
 
 	public static function array_is_list( array $arr )
