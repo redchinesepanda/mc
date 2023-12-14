@@ -5,7 +5,7 @@
 				<!-- <img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/mc-logo.png" width="213" height="21" alt="Match.Center"> -->
 				<picture>
             		<source srcset="/wp-content/themes/thrive-theme-child/assets/img/base/header/header-logo-mc-mobile.svg" alt="Match.Center" media="(max-width: 767px)">
-            		<img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/header-logo-MC.svg" alt="Match.Center">
+            		<img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/header-logo-mc-desktop.svg" alt="Match.Center">
         		</picture>
 			</a>
 			<div class="legal-header-control">
@@ -19,4 +19,4 @@
 			<?php endif; ?>
 		</div>
 	</div>
-<?php endif; ?>
+<?php endif; ?> 
