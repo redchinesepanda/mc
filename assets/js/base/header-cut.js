@@ -65,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// },
 
 		cutControl : {
-			selectors : ':scope .legal-cut-control'
+			selectors : ':scope > .legal-cut-control'
 		}
 	};
 
