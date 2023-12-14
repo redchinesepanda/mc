@@ -63,6 +63,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( min-width: 768px )' ).matches )
 		{
+			console.log( elements.menu.selectors );
+
 			document.querySelectorAll( elements.menu.selectors ).forEach( prepareItems );
 		}
 		else
