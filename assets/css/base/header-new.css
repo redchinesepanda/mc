@@ -388,6 +388,10 @@
 		height: 44px;
 	}
 
+	.legal-menu .menu-item {
+		width: fit-content;
+	}
+
 	.legal-menu .menu-item:not( :last-child ) > .sub-menu {
 		width: 1080px;
 	}
@@ -666,10 +670,6 @@
 
 .legal-header .legal-logo {
     width: 120px;
-}
-
-.legal-menu .menu-item {
-	width: fit-content;
 }
 
 .legal-menu > .menu-item:last-child > .sub-menu .menu-item {
