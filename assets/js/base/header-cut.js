@@ -23,12 +23,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItems( element )
 	{
+		console.log( element.querySelectorAll( elements.item.selectors ).length );
+
         if ( element.querySelectorAll( elements.item.selectors ).length > 6 )
         {
             [ ...element.children ].slice( 6 ).forEach( prepareItem );
-
-            
-
+			
 			element.appendChild( prepareControl() );
         }
 	}
