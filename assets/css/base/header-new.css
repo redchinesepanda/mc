@@ -178,10 +178,6 @@
 	.legal-menu .menu-item {
 		width: 100%;
 	}
-	
-	/* .legal-header .legal-menu > .menu-item {
-		width: 100%;
-	} */
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		width: 28px;
@@ -377,13 +373,8 @@
 		flex-direction: column;
 	}
 
-	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
-		order: 1;
-	}
-
-	.legal-menu .menu-group .menu-item-has-children .content-hidden-list-3-level {
-		display: none;
-		flex-direction: column;
+	.legal-menu .legal-cut-control {
+		display: flex;
 	}
 
 	/* Width and Height */
