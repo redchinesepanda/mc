@@ -40,10 +40,6 @@
     margin: 0px auto;
 }
 
-.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title::after {
-    padding-left: 18px;
-}
-
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     padding-left: 0;
 }
@@ -111,8 +107,8 @@ nav.breadcrumbs {
 .legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title::after {
     content: '\f107';
     color: #6C6C6C;
-    line-height: 1;
-    font-size: 24px;
+    line-height: 16px;
+    font-size: 28px;
     font-family: var(--legal-font-icons);
 }
 
