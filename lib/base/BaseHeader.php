@@ -348,10 +348,19 @@ class BaseHeader
 			];
 		}
 
+		$title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
+
+		if ( TemplateMain::check_new() )
+		{
+			$title = __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN );
+		}
+
 		$item[ 'children' ][] = [
 			// 'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
 			
-			'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
+			// 'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
+
+			'title' => $title,
 
 			'href' => '/choose-your-country/',
 
