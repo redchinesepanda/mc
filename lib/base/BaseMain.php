@@ -15,6 +15,8 @@ class BaseMain
 
 		'betting-sites' => 'Betting Sites',
 
+		'change-country' => 'Change country',
+
 		'choose-your-country' => 'Choose your country',
 
 		'gambling-sites' => 'Gambling Sites',

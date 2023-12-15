@@ -136,11 +136,23 @@ class WPMLLangSwitcher
         return $args;
     }
 
+    public static function get_suffix()
+    {
+        if ( TemplateMain::check_new() )
+        {
+            return __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN );
+        }
+
+        return '';
+    }
+
     public static function get()
     {
         $languages = self::get_all();
 
         $args['active'] = self::get_active( $languages );
+
+        $args['active'][ 'suffix' ] = self::get_suffix();
 
         // $languages = WPMLMain::exclude( $languages );
 
