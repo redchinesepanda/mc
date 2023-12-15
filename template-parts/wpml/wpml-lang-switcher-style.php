@@ -1,4 +1,7 @@
-.lang-switcher .lang-current .lang-title::before {
+.lang-switcher .lang-current:not( .legal-new ) .lang-title::before {
+    background-image: url('<?php echo $args['active']['src']; ?>');
+}
+.lang-switcher .lang-current.legal-new .lang-title::after {
     background-image: url('<?php echo $args['active']['src']; ?>');
 }
 <?php foreach( $args['languages'] as $lang ) : ?>
