@@ -34,6 +34,12 @@
     content: '';
 }
 
+.lang-switcher .lang-current .lang-title::before
+{
+    content: '';
+    display: block;
+}
+
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
         row-gap: 10px;
@@ -67,6 +73,12 @@
 .lang-switcher .lang-current .lang-title::after {
     width: 24px;
     height: 28px;
+}
+
+.lang-switcher .lang-current .lang-title::before
+{
+    width: 36px;
+    height: 20px;
 }
 
 @media screen and ( min-width: 1080px ) {
@@ -121,11 +133,6 @@
 
 .lang-switcher .lang-current .lang-title::before
 {
-    content: '';
-    display: block;
-    width: 36px;
-    height: 20px;
-    /* padding-right: 8px; */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto;
