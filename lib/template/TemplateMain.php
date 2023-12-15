@@ -135,7 +135,7 @@ class TemplateMain
         else
         {
             ToolEnqueue::register_style( self::CSS_THRIVE );
-        }
+        } 
     }
 
     const JS = [
