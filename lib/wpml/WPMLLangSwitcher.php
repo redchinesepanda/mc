@@ -3,8 +3,16 @@
 class WPMLLangSwitcher
 {
     const CSS = [
-        'legal-wpml-lang-switcher' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher.css',
+        'legal-wpml-lang-switcher-main' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-main.css',
+    
+            'ver' => '1.0.1',
+        ],
+    ];
+
+    const CSS = [
+        'legal-wpml-lang-switcher-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-new.css',
     
             'ver' => '1.0.1',
         ],
@@ -12,7 +20,14 @@ class WPMLLangSwitcher
 
     public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+        if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}  
     }
 
     public static function register_inline_style()
