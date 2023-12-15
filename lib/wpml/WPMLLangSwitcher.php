@@ -136,23 +136,35 @@ class WPMLLangSwitcher
         return $args;
     }
 
-    public static function get_suffix()
+    public static function get_data()
     {
         if ( TemplateMain::check_new() )
         {
-            return __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN );
+            return [
+                'suffix' => __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN ),
+    
+                'class' => 'legal-new',
+            ];
         }
 
-        return '';
+        return [
+            'suffix' => '',
+
+            'class' => '',
+        ];
     }
 
     public static function get()
     {
         $languages = self::get_all();
 
-        $args['active'] = self::get_active( $languages );
+        $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
-        $args['active'][ 'suffix' ] = self::get_suffix();
+        // $args['active'] = self::get_active( $languages );
+
+        // $args['active'][ 'suffix' ] = self::get_suffix();
+
+        // $args['active'][ 'class' ] = self::get_suffix();
 
         // $languages = WPMLMain::exclude( $languages );
 
