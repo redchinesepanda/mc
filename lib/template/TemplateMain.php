@@ -83,6 +83,14 @@ class TemplateMain
 
 			'ver' => '1.0.3',
 		],
+    ];
+
+    const CSS_NEW = [
+        'legal-template-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main.css',
+
+			'ver' => '1.0.3',
+		],
 
         'legal-template-font-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
@@ -115,7 +123,14 @@ class TemplateMain
     {
         if ( self::check() )
         {
-            ToolEnqueue::register_style( self::CSS );
+            if ( TemplateMain::check_new() )
+            {
+                ToolEnqueue::register_style( self::CSS_NEW );
+            }
+            else
+            {
+                ToolEnqueue::register_style( self::CSS );
+            }
         }
         else
         {
