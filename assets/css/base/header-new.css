@@ -377,6 +377,11 @@
 		display: flex;
 	}
 
+	.legal-menu .legal-cut-control.legal-hide
+	{
+		display: none;
+	}
+
 	/* Width and Height */
 
 	.legal-header .legal-logo {
