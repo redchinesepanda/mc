@@ -10,7 +10,7 @@ class WPMLLangSwitcher
         ],
     ];
 
-    const CSS = [
+    const CSS_NEW = [
         'legal-wpml-lang-switcher-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-new.css',
     
