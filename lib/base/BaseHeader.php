@@ -775,9 +775,9 @@ class BaseHeader
 
         // 'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
 
-        'header-group-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-group-main.php',
+        // 'header-group' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-group.php',
 
-		'header-item-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-main.php',
+		'header-item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
 
 		// 'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
 		
@@ -786,43 +786,17 @@ class BaseHeader
 
     public static function render()
     {
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'header' ], false, self::get() );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
-		// if ( TemplateMain::check_code() )
-		// {
-		// 	return self::render_main( self::TEMPLATE[ 'header-new' ], self::get() );
-		// }
-
-		return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
+        return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
     }
 
-	public static function render_group( $group )
-    {
-        return self::render_main( self::TEMPLATE[ 'header-group-main' ], $group );
-    }
+	// public static function render_group( $group )
+    // {
+    //     return self::render_main( self::TEMPLATE[ 'header-group-main' ], $group );
+    // }
 
     public static function render_item( $item )
     {
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'item' ], false, $item );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
-		// if ( TemplateMain::check_code() )
-		// {
-		// 	return self::render_main( self::TEMPLATE[ 'header-item-new' ], $item );
-		// }
-
-		return self::render_main( self::TEMPLATE[ 'header-item-main' ], $item );
+        return self::render_main( self::TEMPLATE[ 'header-item' ], $item );
     }
 
     public static function render_logo( $logo )

@@ -3,16 +3,30 @@
 class BaseFooter
 {
 	const CSS = [
-        'legal-footer' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer.css',
+        'legal-footer-main' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-main.css',
 
 			'ver' => '1.0.5',
 		],
     ];
 
+	const CSS_NEW = [
+        'legal-footer-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
     public static function register_style()
     {
-        BaseMain::register_style( self::CSS );
+		if ( TemplateMain::check_code() )
+		{
+			BaseMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			BaseMain::register_style( self::CSS );
     }
 
 	public static function register_functions()
