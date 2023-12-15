@@ -52,7 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function forgetItem( element )
 	{
-        element.classList.remove( classes.cutItem );
+        // element.classList.remove( classes.cutItem );
+        
+		element.classList.remove( classes.cutItem, classes.active );
 
         // delete element.dataset.cutSetId;
     }
@@ -72,6 +74,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		cutItem : 'legal-cut-item',
 
 		cutControl : 'legal-cut-control',
+
+		active : 'legal-active',
 
 		hide : 'legal-hide',
 	}; 
