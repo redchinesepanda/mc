@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function hideControl( event )
 	{
-		event.currentTarget.control.classList.add( classes.hide ); 
+		event.currentTarget.classList.add( classes.hide ); 
 	}
 
     function prepareControl()
