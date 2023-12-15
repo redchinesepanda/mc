@@ -53,6 +53,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function forgetItem( element )
 	{
         element.classList.remove( classes.cutItem );
+
+        delete element.dataset.cutSetId;
     }
 
     // function forgetItems( element )
