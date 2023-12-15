@@ -4,9 +4,9 @@
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 
-    function removeControl( event )
+    function hideControl( event )
 	{
-		event.currentTarget.dataset.remove = true;
+		event.currentTarget.classList.add( classes.hide ); 
 	}
 
     function prepareControl()
@@ -19,7 +19,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		control.dataset.contentActive = legalHeaderCutText.active;
 
-		control.addEventListener( 'click', removeControl, false );
+		control.addEventListener( 'click', hideControl, false );
 
 		return control;
     }
@@ -52,7 +52,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function forgetItem( element )
 	{
-        element.classList.remove( classes.cutItem );
+        // element.classList.remove( classes.cutItem );
+        
+		element.classList.remove( classes.cutItem, classes.active );
+
+        // delete element.dataset.cutSetId;
     }
 
     // function forgetItems( element )
@@ -70,6 +74,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		cutItem : 'legal-cut-item',
 
 		cutControl : 'legal-cut-control',
+
+		active : 'legal-active',
+
+		hide : 'legal-hide',
 	}; 
 
     const elements = {
