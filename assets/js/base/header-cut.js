@@ -19,7 +19,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		control.dataset.contentActive = legalHeaderCutText.active;
 
-		control.addEventListener( 'clicks', removeControl, false );
+		control.addEventListener( 'click', removeControl, false );
 
 		return control;
     }
