@@ -26,6 +26,7 @@
 .lang-switcher .lang-current .lang-title {
     display: flex;
     column-gap: 1px;
+    align-items: center;
 }
 
 .lang-switcher .lang-current .lang-title::after {
@@ -124,6 +125,10 @@
     display: block;
     width: 20px;
     height: 20px;
+    padding-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;
 }
 
 .lang-switcher .lang-current .lang-title::after {
