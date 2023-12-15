@@ -27,6 +27,7 @@ class BaseFooter
 		else
 		{
 			BaseMain::register_style( self::CSS );
+		}
     }
 
 	public static function register_functions()
