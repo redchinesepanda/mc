@@ -17,17 +17,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		.forEach( toggleItem );
 	}
 
-	function prepareControl( element )
-	{
-		element.dataset.cutSetId = setID;
+	// function prepareControl( element )
+	// {
+	// 	element.dataset.cutSetId = setID;
 		
-		if ( element.classList.contains( 'legal-cut-control' ) )
-		{
-			element.addEventListener( 'click', toggleDataset, false );
+	// 	if ( element.classList.contains( 'legal-cut-control' ) )
+	// 	{
+	// 		element.addEventListener( 'click', toggleDataset, false );
 
-			setID++;
-		}
-	}
+	// 		setID++;
+	// 	}
+	// }
 
 	function prepareControl( element )
 	{
@@ -57,7 +57,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function reviewCutInit()
 	{
-		let setID = 0;
+		// let setID = 0;
 	
 		document.setId = 0;
 
