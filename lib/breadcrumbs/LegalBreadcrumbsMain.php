@@ -10,10 +10,26 @@ class LegalBreadcrumbsMain extends LegalDebug
         ],
     ];
 
+    const CSS_NEW = [
+        'legal-breadcrumbs-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/breadcrumbs/legal-breadcrumbs-new.css',
+
+            'ver' => '1.0.2',
+        ],
+    ];
+
     public static function register_style()
     {
-        if ( self::check() ) {
-            ToolEnqueue::register_style( self::CSS );
+        if ( self::check() )
+        {
+            if ( TemplateMain::check_code() )
+            {
+                ToolEnqueue::register_style( self::CSS_NEW );
+            }
+            else
+            {
+                ToolEnqueue::register_style( self::CSS );
+            }
         }
     }
 
