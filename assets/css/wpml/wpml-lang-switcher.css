@@ -118,6 +118,14 @@
     transform: rotate( 180deg );
 }
 
+.lang-switcher .lang-current .lang-title::before
+{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
 .lang-switcher .lang-current .lang-title::after {
     background-image: url( '../../img/wpml/wpml-lang-switcher-open.svg' );
     background-repeat: no-repeat;
