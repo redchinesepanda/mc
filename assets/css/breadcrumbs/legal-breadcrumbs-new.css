@@ -1,1 +1,111 @@
 /* Breadcrumbs new CSS */
+@media screen and ( max-width: 767px )
+{
+	/* Position */
+
+	nav.breadcrumbs {
+		padding: 0px 20px;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Width and Height */
+
+    .legal-breadcrumbs {
+        width: 1080px;
+    }
+}
+
+/* Breadcrumbs Display */
+
+.legal-breadcrumbs {
+    display: flex;
+    column-gap: 8px;
+    flex-wrap: wrap;
+}
+
+.legal-breadcrumbs .legal-item-title {
+    display: inline-block;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {  /*временный стиль для отключения надписи Match Center*/
+    display: none;
+}
+
+/* Breadcrumbs Position */
+
+.legal-breadcrumbs {
+    padding: 5px 0px;
+    margin: 0px auto;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
+    padding-left: 0;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
+    padding-right: 8px;
+}
+
+/* Width and Heigh */
+
+nav.breadcrumbs {
+	min-height: 40px;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title {
+    width: 18px;
+    height: 100%;
+}
+
+/* Breadcrumbs Background */
+
+nav.breadcrumbs {
+    background-color: transparent;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
+    background-image: none;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title {
+    background-image: url( 'https://match.center/wp-content/uploads/image-65781c925258a-image-6578.svg' );
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    cursor: pointer;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title:hover {
+    background-image: url( 'https://match.center/wp-content/uploads/image-657853621dd3d-image-6578.svg' );
+}
+
+/* Breadcrumbs Typography */
+
+.legal-breadcrumbs span.legal-item-title {
+    color: #0A0A0A;
+}
+
+.legal-breadcrumbs a.legal-item-title {
+    font-weight: 400;
+}
+
+.legal-breadcrumbs a.legal-item-title:hover {
+    font-weight: 600;
+}
+
+.legal-breadcrumbs .legal-item-title {
+    font-family: "Golos Text";
+    font-size: 13px;
+    font-style: normal;
+    line-height: 17px;
+    color: #6C6C6C;
+    text-decoration: none;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
+    content: "/";
+    color: #6C6C6C;
+    padding-right: 8px;
+}
