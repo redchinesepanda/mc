@@ -1,6 +1,3 @@
-/* .lang-switcher .locale-<?php echo $args['active']['id']; ?> {
-    background-image: url('<?php echo $args['active']['src']; ?>');
-} */
 .lang-switcher .lang-current .lang-title::before {
     background-image: url('<?php echo $args['active']['src']; ?>');
 }
