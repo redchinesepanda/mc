@@ -125,7 +125,7 @@
     display: block;
     width: 36px;
     height: 20px;
-    padding-right: 8px;
+    /* padding-right: 8px; */
     background-repeat: no-repeat;
     background-position: center center;
     background-size: auto;
