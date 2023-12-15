@@ -15,6 +15,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'.legal-cut-item[data-cut-set-id="' + event.currentTarget.dataset.cutSetId + '"]'
 		)
 		.forEach( toggleItem );
+
+		if ( event.currentTarget.dataset.remove )
+		{
+			event.currentTarget.remove();
+		}
 	}
 
 	// function prepareControl( element )

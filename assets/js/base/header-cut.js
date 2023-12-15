@@ -4,9 +4,9 @@
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 
-    function removeControl( element )
+    function removeControl( event )
 	{
-		this.remove();
+		event.currentTarget.dataset.remove = true;
 	}
 
     function prepareControl()
