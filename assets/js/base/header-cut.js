@@ -3,6 +3,12 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+
+    function removeControl( element )
+	{
+		this.remove();
+	}
+
     function prepareControl()
 	{
         let control = document.createElement( 'span' );
@@ -12,6 +18,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		control.dataset.contentDefault = legalHeaderCutText.default;
 
 		control.dataset.contentActive = legalHeaderCutText.active;
+
+		control.addEventListener( 'clicks', removeControl, false );
 
 		return control;
     }
