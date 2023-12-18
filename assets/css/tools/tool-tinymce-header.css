@@ -43,10 +43,10 @@
 
 /* Title with image */
 
-#tinymce .legal-header-3::before
+/* #tinymce .legal-header-3::before
 {
 	content: attr( class );
-}
+} */
 
 /* #tinymce .legal-header-basketball::before {
 	background-image: url( '../../img/review/header/review-basketball.svg' );

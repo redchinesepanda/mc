@@ -15,6 +15,15 @@ class ToolTinyMCE
 		ToolEnqueue::register_script( self::JS );
     }
 
+	function style_inline_title( $settings )
+	{
+        // $settings['content_style'] = '* {outline: 1px solid red;}';
+        
+		$settings['content_style'] = ReviewTitle::register_style( '#tinymce' );
+
+        return $settings;
+	}
+
     public static function register()
     {
         $handler = new self();
@@ -24,6 +33,8 @@ class ToolTinyMCE
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_contextbox' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_column' ] );
+
+		add_filter( 'tiny_mce_before_init', [ $handler, 'style_inline_title' ] );
 
 		add_action( 'after_setup_theme', [ $handler, 'editor_styles' ] );
 
