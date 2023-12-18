@@ -21,7 +21,7 @@ class ReviewTitle
 
 		foreach ( self::CLASSES_SPORT as $name => $item )
 		{
-			$style[] = '.tcb-post-content .legal-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/review-' . $name .'.svg\'); }';
+			$style[] = '.tcb-post-content .legal-header-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/review-' . $name .'.svg\'); }';
 		}
 
 		return implode( ' ', $style ); 
