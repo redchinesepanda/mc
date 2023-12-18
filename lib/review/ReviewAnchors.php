@@ -206,13 +206,19 @@ class ReviewAnchors
 
         $items = [];
 
-        foreach ( $nodes as $node ) {
+        foreach ( $nodes as $node )
+        {
             $label = '';
 
-            if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) ) {
+            if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) )
+            {
                 $label = $labels[ $node->getAttribute( 'id' ) ];
-            } else {
-                $label = $node->parentNode->textContent;
+            }
+            else
+            {
+                // $label = $node->parentNode->textContent;
+                
+                $label = mb_substr( $node->parentNode->textContent, 0, 30 );
             }
 
             $items[] = [
