@@ -330,7 +330,7 @@ class ReviewTitle
 			[
 				'title' => 'Title with Image',
 
-				'items' => $items,
+				'items' => $items, 
 
 				// 'items' => [
 				// 	[
