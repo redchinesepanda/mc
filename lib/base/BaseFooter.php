@@ -31,17 +31,19 @@ class BaseFooter
     }
 
 	/* Изменения Kolombo */
-	const JS = [
-        'legal-footer-main' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/base/footer-main.js',
 
-			'ver' => '1.0.1',
-		],
-    ];
-	public static function register_script()
-    {
-        ToolEnqueue::register_script( self::JS );
-    }
+	// const JS = [
+    //     'legal-footer-main' => [
+	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/base/footer-main.js',
+
+	// 		'ver' => '1.0.1',
+	// 	],
+    // ];
+
+	// public static function register_script()
+    // {
+    //     ToolEnqueue::register_script( self::JS );
+    // }
 
 	/* Окончание изменений Kolombo */
 
@@ -101,6 +103,11 @@ class BaseFooter
 			foreach ( $child_keys as $child_key) {
 				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
 			}
+		}
+
+		if ( !empty( $item[ 'children' ] )
+		{
+			$item[ 'class' ] .= ' .menu-item-has-children';
 		}
 
 		return $item;
