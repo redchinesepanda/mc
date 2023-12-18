@@ -15,6 +15,23 @@ class ReviewTitle
         ReviewMain::register_style( self::CSS );
     }
 
+	public static function inline_style()
+	{
+		$style = [];
+
+		foreach ( self::CLASSES_SPORT as $name => $item )
+		{
+			$style[] = '.tcb-post-content .legal-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/' . $item .'.svg\'); }';
+		}
+
+		return implode( ' ', $style );
+	}
+
+	public static function register_inline_style()
+    {
+		ToolEnqueue::register_inline_style( 'review-title', self::inline_style() );
+    }
+
 	public static function register_functions()
 	{
 		$handler = new self();
@@ -30,66 +47,10 @@ class ReviewTitle
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
-
-	// const CLASSES = [
-	// 	'date-year' => 'legal-header-year',
-
-	// 	'date-month-year' => 'legal-header-month-year',
-
-	// 	'h3' => 'legal-header-3',
-
-	// 	'basketball' => 'legal-header-basketball',
-
-	// 	'cricket' => 'legal-header-cricket',
-
-	// 	'deposit' => 'legal-header-deposit',
-
-	// 	'esports' => 'legal-header-esports',
-
-	// 	'features' => 'legal-header-features',
-
-	// 	'football' => 'legal-header-football',
-
-	// 	'handball' => 'legal-header-handball',
-
-	// 	'history' => 'legal-header-history',
-
-	// 	'hockey' => 'legal-header-hockey',
-
-	// 	'horceracing' => 'legal-header-horceracing',
-
-	// 	'mma' => 'legal-header-mma',
-
-	// 	'motorsport' => 'legal-header-motorsport',
-
-	// 	'rugby' => 'legal-header-rugby',
-
-	// 	'tennis' => 'legal-header-tennis',
-
-	// 	'volleyball' => 'legal-header-volleyball',
-
-	// 	'widthdraw' => 'legal-header-widthdraw',
-	// ];
-
-	// const CLASSES = [
-	// 	...self::CLASSES_SELECTOR,
-
-	// 	...self::CLASSES_DATE,
-
-	// 	...self::CLASSES_SPORT,
-	// ];
-
-	// const CLASSES_SELECTOR = [
-	// 	'h3' => 'legal-header-3',
-	// ];
-
-	// const CLASSES_DATE = [
-	// 	'date-year' => 'legal-header-year',
-
-	// 	'date-month-year' => 'legal-header-month-year',
-	// ];
 
 	const CLASSES = [
 		'h3' => 'legal-header-3',

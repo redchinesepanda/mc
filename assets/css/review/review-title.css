@@ -34,7 +34,7 @@
     border-radius: 50%;
 }
 
-.tcb-post-content .legal-header-history::before {
+/* .tcb-post-content .legal-header-history::before {
     background-image: url( '../../img/review/header/review-history.svg' );
 }
 
@@ -88,4 +88,4 @@
 
 .tcb-post-content .legal-header-cricket::before {
     background-image: url( '../../img/review/header/review-cricket.svg' );
-}
+} */
