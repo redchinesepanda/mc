@@ -222,7 +222,7 @@ class ReviewAnchors
                 
                 // $label = mb_substr( $node->nextSibling->textContent, 0, 30 ); 
 
-                if ( !empty( $node->nextSibling ) )
+                if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
                 {
                     $label = $node->nextSibling->textContent;  
                 }
