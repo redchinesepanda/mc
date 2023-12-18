@@ -59,7 +59,7 @@ class BonusContent
 
         'strong',
 
-        'img',
+        'img', 
     ];
 
 	public static function get()
