@@ -15,13 +15,13 @@ class ReviewTitle
         ReviewMain::register_style( self::CSS );
     }
 
-	public static function inline_style()
+	public static function inline_style( $container = '.tcb-post-content' )
 	{
 		$style = [];
 
 		foreach ( self::CLASSES_SPORT as $name => $item )
 		{
-			$style[] = '.tcb-post-content .legal-header-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/review-' . $name .'.svg\'); }';
+			$style[] = $container . ' .legal-header-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/review-' . $name .'.svg\'); }';
 		}
 
 		return implode( ' ', $style ); 
