@@ -88,7 +88,8 @@
 		height: 24px;
 	} */
 
-	.legal-footer .footer-menu > .menu-item > .item-children {
+	.legal-footer .footer-menu > .menu-item > .item-children,
+	.legal-footer .footer-menu .menu-item-end .menu-item > .item-children {
 		width: 100%;
 	}
 
