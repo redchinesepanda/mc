@@ -219,6 +219,10 @@
 		padding: 0px;
 	}
 
+	.legal-menu .menu-item.legal-country-all > .item-title { 
+		padding-left: 0;
+	}
+
 	.legal-menu .menu-item.legal-country-all > .item-title::before { 
 		padding-right: 21px;
 	}
