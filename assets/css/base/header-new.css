@@ -367,6 +367,14 @@
 		font-family: var(--legal-font-icons);
 	}
 
+	.legal-menu .menu-item.legal-country-all > .item-title::before { 
+		content: '\f102';
+		font-size: 24px;
+		text-align: left;
+		line-height: 51px;
+		font-family: var(--legal-font-icons);
+	}
+
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
 	}
@@ -783,10 +791,10 @@
 	background-color: transparent;
 }
 
-.legal-menu .menu-item.legal-country-all > .item-title { 
+/* .legal-menu .menu-item.legal-country-all > .item-title { 
 	background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-arrow-right.svg' );
 }
-
+ */
 .legal-menu > .menu-item:last-child > .item-title {
 	background-position: left 10px center;
 }
