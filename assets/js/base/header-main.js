@@ -48,7 +48,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'event' : 'click',
 
 			'action' : toggleBlock
-		}
+		},
+
+		{
+			'selector' : '.footer-menu .menu-item-has-children',
+
+			'event' : 'click',
+
+			'action' : toggleBlock
+		},
+
+		{
+			'selector' : '.footer-menu .menu-item-has-children > a',
+
+			'event' : 'click',
+
+			'action' : toggleLink
+		},
 	];
 
 	function toggleInit()
