@@ -112,7 +112,8 @@
 		cursor: pointer;
 	}
 
-	.legal-footer .footer-menu > .menu-item.legal-active::after {
+	.legal-footer .footer-menu > .menu-item.legal-active::after,
+	.legal-footer .footer-menu .menu-item-end .menu-item.legal-active::after {
 		transform: rotate(180deg);
 	}
 
