@@ -162,14 +162,6 @@
 		padding: 10px 10px 10px 36px;
 	}
 
-	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item.legal-country-all > .item-title {
-		padding-left: 0;
-	}
-
-	.legal-menu .menu-item.legal-country-all > .item-title::before { 
-		padding-right: 21px;
-	}
-
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active > .item-title {
 		padding: 14px 0 14px 18px;
 	}
@@ -383,14 +375,6 @@
 		content: '\f104';
 		font-size: 24px;
 		text-align: center;
-		font-family: var(--legal-font-icons);
-	}
-
-	.legal-menu .menu-item.legal-country-all > .item-title::before { 
-		content: '\f103';
-		font-size: 18px;
-		line-height: 1;
-		vertical-align: middle;
 		font-family: var(--legal-font-icons);
 	}
 
@@ -734,6 +718,15 @@
 	padding: 0;
 }
 
+.legal-menu .menu-item.legal-country-all > .item-title {
+	position: relative;
+}
+
+.legal-menu .menu-item.legal-country-all > .item-title::before { 
+	position: absolute;
+	left: 0;
+}
+
 .legal-menu .legal-cut-control::after {
 	margin-left: 4px;
 }
@@ -878,6 +871,14 @@
 
 .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu .item-title {
     font-size: 14px;
+}
+
+.legal-menu .menu-item.legal-country-all > .item-title::before { 
+	content: '\f103';
+	font-size: 18px;
+	line-height: 1;
+	vertical-align: middle;
+	font-family: var(--legal-font-icons);
 }
 
 /* Other */ 
