@@ -33,40 +33,96 @@ class ReviewTitle
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
+	// const CLASSES = [
+	// 	'date-year' => 'legal-header-year',
+
+	// 	'date-month-year' => 'legal-header-month-year',
+
+	// 	'h3' => 'legal-header-3',
+
+	// 	'basketball' => 'legal-header-basketball',
+
+	// 	'cricket' => 'legal-header-cricket',
+
+	// 	'deposit' => 'legal-header-deposit',
+
+	// 	'esports' => 'legal-header-esports',
+
+	// 	'features' => 'legal-header-features',
+
+	// 	'football' => 'legal-header-football',
+
+	// 	'handball' => 'legal-header-handball',
+
+	// 	'history' => 'legal-header-history',
+
+	// 	'hockey' => 'legal-header-hockey',
+
+	// 	'horceracing' => 'legal-header-horceracing',
+
+	// 	'mma' => 'legal-header-mma',
+
+	// 	'motorsport' => 'legal-header-motorsport',
+
+	// 	'rugby' => 'legal-header-rugby',
+
+	// 	'tennis' => 'legal-header-tennis',
+
+	// 	'volleyball' => 'legal-header-volleyball',
+
+	// 	'widthdraw' => 'legal-header-widthdraw',
+	// ];
+
 	const CLASSES = [
+		...self::CLASSES_SELECTOR,
+
+		...self::CLASSES_DATE,
+
+		...self::CLASSES_SPORT,
+	];
+
+	const CLASSES_SELECTOR = [
+		'h3' => 'legal-header-3',
+	];
+
+	const CLASSES_DATE = [
 		'date-year' => 'legal-header-year',
 
 		'date-month-year' => 'legal-header-month-year',
+	];
 
-		'h3' => 'legal-header-3',
+	const CLASSES_SPORT = [
+		'basketball' => 'legal-header-basketball',
 
-		'history' => 'legal-header-history',
+		'cricket' => 'legal-header-cricket',
+
+		'deposit' => 'legal-header-deposit',
+
+		'esports' => 'legal-header-esports',
 
 		'features' => 'legal-header-features',
 
 		'football' => 'legal-header-football',
 
-		'tennis' => 'legal-header-tennis',
+		'handball' => 'legal-header-handball',
 
-		'basketball' => 'legal-header-basketball',
+		'history' => 'legal-header-history',
+
+		'hockey' => 'legal-header-hockey',
 
 		'horceracing' => 'legal-header-horceracing',
 
-		'deposit' => 'legal-header-deposit',
-
-		'widthdraw' => 'legal-header-widthdraw',
-
-		'esports' => 'legal-header-esports',
-
 		'mma' => 'legal-header-mma',
-
-		'rugby' => 'legal-header-rugby',
-
-		'volleyball' => 'legal-header-volleyball',
 
 		'motorsport' => 'legal-header-motorsport',
 
-		'cricket' => 'legal-header-cricket',
+		'rugby' => 'legal-header-rugby',
+
+		'tennis' => 'legal-header-tennis',
+
+		'volleyball' => 'legal-header-volleyball',
+
+		'widthdraw' => 'legal-header-widthdraw',
 	];
 
 	const FORMAT = [
@@ -257,123 +313,138 @@ class ReviewTitle
 
 	public static function style_formats_header( $settings )
 	{
+		$items = [];
+
+		foreach ( self::CLASSES_SPORT as $name => $item )
+		{
+			$items[] = [
+				'title' => 'H3 ' . ucfirst( $name ),
+				
+				'selector' => 'h3',
+
+				'classes' => self::CLASSES[ 'h3' ] . ' ' . $item,
+			];
+		}
+
 		return ToolTinyMCE::style_formats_check( $settings, [
 			[
 				'title' => 'Title with Image',
 
-				'items' => [
-					[
-						'title' => 'H3 History',
+				'items' => $items,
+
+				// 'items' => [
+				// 	[
+				// 		'title' => 'H3 History',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'history' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'history' ],
+				// 	],
 
-					[
-						'title' => 'H3 Features',
+				// 	[
+				// 		'title' => 'H3 Features',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'features' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'features' ],
+				// 	],
 
-					[
-						'title' => 'H3 Football',
+				// 	[
+				// 		'title' => 'H3 Football',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'football' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'football' ],
+				// 	],
 
-					[
-						'title' => 'H3 Tennis',
+				// 	[
+				// 		'title' => 'H3 Tennis',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'tennis' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'tennis' ],
+				// 	],
 
-					[
-						'title' => 'H3 Basketball',
+				// 	[
+				// 		'title' => 'H3 Basketball',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'basketball' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'basketball' ],
+				// 	],
 
-					[
-						'title' => 'H3 Horceracing',
+				// 	[
+				// 		'title' => 'H3 Horceracing',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'horceracing' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'horceracing' ],
+				// 	],
 
-					[
-						'title' => 'H3 Deposit',
+				// 	[
+				// 		'title' => 'H3 Deposit',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'deposit' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'deposit' ],
+				// 	],
 
-					[
-						'title' => 'H3 Widthdraw',
+				// 	[
+				// 		'title' => 'H3 Widthdraw',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'widthdraw' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'widthdraw' ],
+				// 	],
 
-					[
-						'title' => 'H3 E-Sports',
+				// 	[
+				// 		'title' => 'H3 E-Sports',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'esports' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'esports' ],
+				// 	],
 
-					[
-						'title' => 'H3 MMA',
+				// 	[
+				// 		'title' => 'H3 MMA',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'mma' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'mma' ],
+				// 	],
 
-					[
-						'title' => 'H3 Rugby',
+				// 	[
+				// 		'title' => 'H3 Rugby',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'rugby' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'rugby' ],
+				// 	],
 
-					[
-						'title' => 'H3 Volleyball',
+				// 	[
+				// 		'title' => 'H3 Volleyball',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'volleyball' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'volleyball' ],
+				// 	],
 
-					[
-						'title' => 'H3 Motorsport',
+				// 	[
+				// 		'title' => 'H3 Motorsport',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'motorsport' ],
-					],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'motorsport' ],
+				// 	],
 
-					[
-						'title' => 'H3 Cricket',
+				// 	[
+				// 		'title' => 'H3 Cricket',
 						
-						'selector' => 'h3',
+				// 		'selector' => 'h3',
 
-						'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'cricket' ],
-					],
-				],
+				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'cricket' ],
+				// 	],
+				// ],
 			],
 		] );
 	}
