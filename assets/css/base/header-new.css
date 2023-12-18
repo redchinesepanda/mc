@@ -540,6 +540,10 @@
         background-color: transparent;
 	}
 
+	.legal-menu > .menu-item:last-child > .item-title {
+		background-position: left 10px center;
+	}
+
 	.legal-menu > .menu-item:last-child > .item-title,
 	.legal-menu > .menu-item:last-child .menu-item > .item-title {
 		background-size: 23px 23px;
@@ -826,9 +830,6 @@
 	background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-arrow-right.svg' );
 }
  */
-.legal-menu > .menu-item:last-child > .item-title {
-	background-position: left 10px center;
-}
 
 .legal-menu > .menu-item:last-child .menu-item .item-title {
 	background-position: left center;
