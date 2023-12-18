@@ -327,6 +327,12 @@
 	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
 		font-weight: 600;
 	}
+
+	.legal-menu .menu-item:not( .legal-menu > .menu-item) > .item-title,
+	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
+		font-size: 14px;
+	}
+
 	.legal-header .legal-menu > .menu-item:last-child > .item-title {
 		font-weight: 600;
 		font-size: 14px;
