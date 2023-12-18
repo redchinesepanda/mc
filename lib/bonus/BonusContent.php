@@ -58,6 +58,8 @@ class BonusContent
         'td',
 
         'strong',
+
+        'img',
     ];
 
 	public static function get()
