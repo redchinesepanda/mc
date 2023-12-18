@@ -17,7 +17,6 @@
 
 	.legal-header-control {
 		display: block;
-		content: '';
 	}
 
 	.legal-menu {
@@ -165,6 +164,10 @@
 		margin-left: -16px;
 	}
 
+	.legal-header-control {
+		padding-right: 16px
+	}
+
 	/* Width and Height */
 
 	.legal-header .legal-logo {
@@ -228,10 +231,13 @@
 	}
 
 	.legal-header-control {
-		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger.svg' ), url( 'https://match.center/wp-content/uploads/flags/pt.svg' );
+		/* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger.svg' ), url( 'https://match.center/wp-content/uploads/flags/pt.svg' ); */
+		background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
 		background-repeat: no-repeat;
-		background-position: right 16px center, left center;
+		background-position: left center;
+		/* background-position: right 16px center, left center; */
 		background-size: 24px;
+		padding-right: 16px
 	}
 	
 	.legal-header-control.legal-active {
@@ -325,6 +331,12 @@
 
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
+	}
+	.legal-menu .legal-header-control::after {
+		content: '\f106';
+		line-height: 16px;
+		font-size: 28px;
+		font-family: var(--legal-font-icons);
 	}
 	
 }
