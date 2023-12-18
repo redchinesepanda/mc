@@ -224,7 +224,7 @@ class ReviewAnchors
 
                 if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
                 {
-                    $label = $node->nextSibling->textContent;  
+                    $label = $node->nextSibling->textContent;
                 }
             }
 
