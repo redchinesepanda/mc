@@ -218,7 +218,7 @@ class ReviewAnchors
             {
                 // $label = $node->parentNode->textContent;
                 
-                $label = mb_substr( $node->parentNode->textContent, 0, 30 );
+                $label = mb_substr( $node->parentNode->textContent, 0, 30 ); 
             }
 
             $items[] = [
