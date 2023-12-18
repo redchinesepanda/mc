@@ -107,7 +107,7 @@ class BaseFooter
 
 		if ( !empty( $item[ 'children' ] ) )
 		{
-			$item[ 'class' ] .= ' .menu-item-has-children';
+			$item[ 'class' ] .= ' menu-item-has-children';
 		}
 
 		return $item;
