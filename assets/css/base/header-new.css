@@ -164,8 +164,9 @@
 		margin-left: -16px;
 	}
 
-	.legal-header-control {
-		padding-right: 16px
+	.legal-header-control::after {
+		position: absolute;
+		right: 16px;
 	}
 
 	/* Width and Height */
@@ -237,7 +238,7 @@
 		background-position: left center;
 		/* background-position: right 16px center, left center; */
 		background-size: 24px;
-		padding-right: 16px
+		position: relative;
 	}
 	
 	.legal-header-control.legal-active {
@@ -333,8 +334,8 @@
 		font-size: 16px;
 	}
 	.legal-header-control::after {
-		content: '\f106';
-		line-height: 16px;
+	    content: '\f106';
+		line-height: 1;
 		font-size: 28px;
 		font-family: var(--legal-font-icons);
 	}
