@@ -164,8 +164,9 @@
 		margin-left: -16px;
 	}
 
-	.legal-header-control {
-		padding-right: 16px
+	.legal-header-control::after {
+		position: absolute;
+		right: 16px;
 	}
 
 	/* Width and Height */
@@ -237,13 +238,14 @@
 		background-position: left center;
 		/* background-position: right 16px center, left center; */
 		background-size: 24px;
-		padding-right: 16px
+		position: relative;
 	}
 	
 	.legal-header-control.legal-active {
-		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger-close.svg' );
+		background-image: none;
+		/* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger-close.svg' );
 		background-size: auto;
-		background-position: right 16px center;
+		background-position: right 16px center; */
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu {
@@ -334,9 +336,13 @@
 	}
 	.legal-header-control::after {
 		content: '\f106';
-		line-height: 16px;
-		font-size: 28px;
+		line-height: 30px;
+		font-size: 26px;
 		font-family: var(--legal-font-icons);
+	}
+
+	.legal-header-control.legal-active::after {
+		content: '\f105';
 	}
 	
 }
@@ -820,7 +826,7 @@
 
 .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu .item-title {
     font-size: 14px;
-} 
+}  
 
 /* Other */ 
 
