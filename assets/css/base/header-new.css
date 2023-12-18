@@ -349,12 +349,19 @@
 		font-weight: 400;
 	}
 
+	.legal-menu .menu-item-has-children:after {
+		line-height: 51px;
+	}
+
+	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
+		line-height: 1;
+	}
+
 	.legal-menu .menu-item-has-children:after,
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		content: '\f104';
 		font-size: 28px;
 		text-align: center;
-		line-height: 51px;
 		font-family: var(--legal-font-icons);
 	}
 
