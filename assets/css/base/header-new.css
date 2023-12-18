@@ -241,11 +241,12 @@
 		position: relative;
 	}
 	
-	/* .legal-header-control.legal-active {
-		background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger-close.svg' );
+	.legal-header-control.legal-active {
+		background-image: none;
+		/* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/base/header/header-hamburger-close.svg' );
 		background-size: auto;
-		background-position: right 16px center;
-	} */
+		background-position: right 16px center; */
+	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu {
 		border: none;
