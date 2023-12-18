@@ -1,5 +1,10 @@
 /* Footer New CSS */
-
+@media screen and ( max-width: 960px )
+{
+	.legal-footer .footer-menu > .menu-item-end {
+		flex-direction: column;
+	}
+}
 @media screen and ( max-width: 767px )
 {
 	/* Display */
@@ -131,6 +136,11 @@
         display: none;
     }
 
+	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
+		flex-grow: 1;
+		flex-basis: 180px;
+	}
+
 	/* Position */
 
 	.legal-footer .footer-copy{
@@ -245,11 +255,6 @@
 .legal-footer .footer-menu,
 .legal-footer .footer-logo {
 	width: 100%;
-}
-
-.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
-	flex-grow: 1;
-  	flex-basis: 180px;
 }
 
 .legal-footer .footer-menu > .menu-item-end {
