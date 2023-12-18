@@ -128,6 +128,10 @@
 		padding: 0px;
 	} */
 
+	.legal-header .legal-menu .menu-item-has-children:after {
+		padding: 0px;
+	}
+
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child {
 		position: absolute;
@@ -149,7 +153,6 @@
 		padding: 14px 24px 14px 18px;
 	}
 	
-
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu {
 		padding: 8px 16px;
 		margin-left: -16px;
@@ -157,6 +160,14 @@
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
 		padding: 10px 10px 10px 36px;
+	}
+
+	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item.legal-country-all > .item-title {
+		padding-left: 0;
+	}
+
+	.legal-menu .menu-item.legal-country-all > .item-title::before { 
+		padding-right: 21px;
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active > .item-title {
@@ -213,18 +224,6 @@
 
 	.legal-menu .sub-menu .menu-item.menu-item-has-children {
 		row-gap: 0;
-	}
-	
-	.legal-header .legal-menu .menu-item-has-children:after {
-		padding: 0px;
-	}
-
-	.legal-menu .menu-item.legal-country-all > .item-title { 
-		padding-left: 0;
-	}
-
-	.legal-menu .menu-item.legal-country-all > .item-title::before { 
-		padding-right: 21px;
 	}
 
 	.legal-header-control {
