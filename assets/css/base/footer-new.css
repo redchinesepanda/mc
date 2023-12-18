@@ -250,6 +250,7 @@
 .legal-footer .footer-menu > .menu-item-end {
 	flex-grow: 1;
 	display: flex;
+	column-gap: 20px;
 }
 
 .legal-footer .footer-menu > .menu-item-end .menu-item {
