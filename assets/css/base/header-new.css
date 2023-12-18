@@ -378,6 +378,10 @@
 		font-family: var(--legal-font-icons);
 	}
 
+	.legal-menu .menu-item.legal-country-all > .item-title::before { 
+		font-size: 18px;
+	}
+
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
 	}
@@ -540,6 +544,10 @@
 		text-decoration: solid underline #000 2px;
 		text-underline-offset: 5px;
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
+	}
+
+	.legal-menu .menu-item.legal-country-all > .item-title::before { 
+		font-size: 24px;
 	}
 
 	.legal-menu .legal-cut-control::before {
@@ -875,9 +883,7 @@
 
 .legal-menu .menu-item.legal-country-all > .item-title::before { 
 	content: '\f103';
-	font-size: 18px;
 	line-height: 1;
-	vertical-align: middle;
 	font-family: var(--legal-font-icons);
 }
 
