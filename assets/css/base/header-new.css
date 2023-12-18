@@ -259,7 +259,13 @@
 		background-position: left 24px center;
 	}
 
-	.legal-header .legal-menu > .menu-item:last-child > .item-title {
+	/* .legal-header .legal-menu > .menu-item:last-child > .item-title {
+		background-position: left center;
+	} */
+
+	.legal-menu > .menu-item:last-child > .item-title,
+	.legal-menu > .menu-item:last-child .menu-item > .item-title {
+		background-size: 18px;
 		background-position: left center;
 	}
 
@@ -532,6 +538,11 @@
    
 	.legal-menu .menu-item:hover {
         background-color: transparent;
+	}
+
+	.legal-menu > .menu-item:last-child > .item-title,
+	.legal-menu > .menu-item:last-child .menu-item > .item-title {
+		background-size: 23px 23px;
 	}
 
 	/* Typography */
@@ -826,11 +837,6 @@
 
 .legal-menu > .menu-item:last-child > .item-title {
 	background-repeat: no-repeat;
-}
-
-.legal-menu > .menu-item:last-child > .item-title,
-.legal-menu > .menu-item:last-child .menu-item > .item-title {
-	background-size: 23px 23px;
 }
 
 .legal-menu .legal-cut-control::after {
