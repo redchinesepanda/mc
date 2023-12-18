@@ -73,19 +73,27 @@ class ReviewTitle
 	// 	'widthdraw' => 'legal-header-widthdraw',
 	// ];
 
+	// const CLASSES = [
+	// 	...self::CLASSES_SELECTOR,
+
+	// 	...self::CLASSES_DATE,
+
+	// 	...self::CLASSES_SPORT,
+	// ];
+
+	// const CLASSES_SELECTOR = [
+	// 	'h3' => 'legal-header-3',
+	// ];
+
+	// const CLASSES_DATE = [
+	// 	'date-year' => 'legal-header-year',
+
+	// 	'date-month-year' => 'legal-header-month-year',
+	// ];
+
 	const CLASSES = [
-		...self::CLASSES_SELECTOR,
-
-		...self::CLASSES_DATE,
-
-		...self::CLASSES_SPORT,
-	];
-
-	const CLASSES_SELECTOR = [
 		'h3' => 'legal-header-3',
-	];
 
-	const CLASSES_DATE = [
 		'date-year' => 'legal-header-year',
 
 		'date-month-year' => 'legal-header-month-year',
