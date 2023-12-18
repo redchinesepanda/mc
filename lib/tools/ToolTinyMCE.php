@@ -19,7 +19,7 @@ class ToolTinyMCE
 	{
         // $settings['content_style'] = '* {outline: 1px solid red;}';
         
-		$settings['content_style'] = ReviewTitle::register_style( '#tinymce' );
+		$settings['content_style'] = ReviewTitle::register_style( '#tinymce' ); 
 
         return $settings;
 	}
