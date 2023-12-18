@@ -62,7 +62,7 @@ nav.breadcrumbs {
 /* Breadcrumbs Background */
 
 nav.breadcrumbs {
-    background-color: transparent;
+    background-color: #fff;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
