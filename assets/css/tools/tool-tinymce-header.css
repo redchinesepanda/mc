@@ -43,7 +43,8 @@
 
 /* Title with image */
 
-#tinymce .legal-header-basketball::before {
+#tinymce .legal-header-3::before
+{
 	content: attr( class );
 }
 
