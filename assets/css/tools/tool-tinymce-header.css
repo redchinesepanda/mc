@@ -44,6 +44,10 @@
 /* Title with image */
 
 #tinymce .legal-header-basketball::before {
+	content: attr( class );
+}
+
+/* #tinymce .legal-header-basketball::before {
 	background-image: url( '../../img/review/header/review-basketball.svg' );
 }
 
@@ -93,4 +97,4 @@
 
 #tinymce .legal-header-motorsport::before {
 	background-image: url( '../../img/review/header/review-motorsport.svg' );
-}
+} */

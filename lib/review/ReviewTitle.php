@@ -6,7 +6,7 @@ class ReviewTitle
         'review-title' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title.css',
 
-            'ver' => '1.0.7',
+            'ver' => '1.0.8',
         ],
     ];
 
@@ -299,121 +299,7 @@ class ReviewTitle
 			[
 				'title' => 'Title with Image',
 
-				'items' => $items, 
-
-				// 'items' => [
-				// 	[
-				// 		'title' => 'H3 History',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'history' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Features',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'features' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Football',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'football' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Tennis',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'tennis' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Basketball',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'basketball' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Horceracing',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'horceracing' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Deposit',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'deposit' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Widthdraw',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'widthdraw' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 E-Sports',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'esports' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 MMA',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'mma' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Rugby',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'rugby' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Volleyball',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'volleyball' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Motorsport',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'motorsport' ],
-				// 	],
-
-				// 	[
-				// 		'title' => 'H3 Cricket',
-						
-				// 		'selector' => 'h3',
-
-				// 		'classes' => self::CLASSES[ 'h3' ] . ' ' . self::CLASSES[ 'cricket' ],
-				// 	],
-				// ],
+				'items' => $items,
 			],
 		] );
 	}
