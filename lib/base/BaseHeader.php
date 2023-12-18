@@ -750,13 +750,17 @@ class BaseHeader
 		}
 
 		return [
-			'src' => LegalMain::LEGAL_URL . '/assets/img/base/header/mc-logo.png',
+			'href' => LegalBreadcrumbsMain::get_home_url(),
 
-			'width' => 213,
+			'img' => [
+				'src' => LegalMain::LEGAL_URL . '/assets/img/base/header/mc-logo.png',
 
-			'height' => 21,
+				'width' => 213,
 
-			'alt' => 'Match.Center',
+				'height' => 21,
+
+				'alt' => 'Match.Center',
+			],
 
 			'source' => [],
 		];

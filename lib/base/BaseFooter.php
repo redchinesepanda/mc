@@ -30,23 +30,6 @@ class BaseFooter
 		}
     }
 
-	/* Изменения Kolombo */
-
-	// const JS = [
-    //     'legal-footer-main' => [
-	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/base/footer-main.js',
-
-	// 		'ver' => '1.0.1',
-	// 	],
-    // ];
-
-	// public static function register_script()
-    // {
-    //     ToolEnqueue::register_script( self::JS );
-    // }
-
-	/* Окончание изменений Kolombo */
-
 	public static function register_functions()
 	{
 		$handler = new self();
