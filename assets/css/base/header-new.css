@@ -332,7 +332,7 @@
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
 	}
-	.legal-menu .legal-header-control::after {
+	.legal-header-control::after {
 		content: '\f106';
 		line-height: 16px;
 		font-size: 28px;
