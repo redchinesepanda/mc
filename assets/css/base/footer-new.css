@@ -141,6 +141,14 @@
 		flex-basis: 180px;
 	}
 
+	.legal-footer .footer-menu > .menu-item-end {
+		flex-grow: 1;
+	}
+	
+	.legal-footer .footer-menu > .menu-item-end .menu-item {
+		flex-basis: 180px;
+	}
+
 	/* Position */
 
 	.legal-footer .footer-copy{
@@ -255,14 +263,6 @@
 .legal-footer .footer-menu,
 .legal-footer .footer-logo {
 	width: 100%;
-}
-
-.legal-footer .footer-menu > .menu-item-end {
-	flex-grow: 1;
-}
-
-.legal-footer .footer-menu > .menu-item-end .menu-item {
-  	flex-basis: 180px;
 }
 
 .legal-footer .footer-menu > .menu-item.legal-default,
