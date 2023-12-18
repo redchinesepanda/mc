@@ -24,7 +24,7 @@ class ReviewTitle
 			$style[] = '.tcb-post-content .legal-' . $name . '::before { background-image: url(\'' . LegalMain::LEGAL_URL . '/assets/img/review/header/' . $item .'.svg\'); }';
 		}
 
-		return implode( ' ', $style );
+		return implode( ' ', $style ); 
 	}
 
 	public static function register_inline_style()
