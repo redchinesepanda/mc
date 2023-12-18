@@ -15,7 +15,8 @@
 	}
 
 	.legal-footer .footer-menu > .menu-item,
-	.legal-footer .footer-menu .menu-item-end {
+	.legal-footer .footer-menu .menu-item-end,
+	.legal-footer .footer-menu .menu-item-end > .menu-item {
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -33,7 +34,7 @@
 	}
 
 	.legal-footer .footer-menu > .menu-item > .item-children,
-	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-children {
+	.legal-footer .footer-menu .menu-item-end .menu-item > .item-children {
 		display: none;
 		order: 2;
 	}
