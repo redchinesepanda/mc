@@ -199,7 +199,7 @@
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
-		width: 34px;
+		width: 28px;
 		height: 19px;
 	}
 
@@ -762,7 +762,7 @@
 }
 
 .legal-menu .menu-item-has-children:after {
-	width: 28px;
+	width: auto;
 	height: auto;
 }
 
