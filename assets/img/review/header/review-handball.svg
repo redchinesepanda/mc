@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="5.5 1 25 25"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="review-handball.svg"
+   width="25"
+   height="25"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3440"
+     inkscape:window-height="1361"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="43.959877"
+     inkscape:cx="6.4949999"
+     inkscape:cy="11.465"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 22.180919,11.281291 a 7.5556041,7.5556041 0 0 1 2.791103,4.829917 7.2394244,7.2394244 0 0 1 -0.970345,5.058875 l -1.875273,-1.090275 a 5.4513737,5.4513737 0 0 0 0.719582,-2.725687 5.6912342,5.6912342 0 0 0 -1.06847,-3.205407 L 14.930591,26 13.033513,24.931531 16.304337,19.262102 14.418162,18.18273 12.78275,20.995639 10.91838,19.92717 16.511489,10.212822 A 7.6319232,7.6319232 0 0 1 14.516287,5.8626254 7.5337985,7.5337985 0 0 1 15.486631,1.1090275 l 1.897078,1.1229829 a 5.2769298,5.2769298 0 0 0 -0.566943,4.1103358 5.1679023,5.1679023 0 0 0 2.507633,3.3035325 M 22.366264,5.361099 a 2.1805495,2.1805495 0 1 0 2.18055,2.1805495 2.1805495,2.1805495 0 0 0 -2.18055,-2.1805495 M 19.640578,1 A 1.6354121,1.6354121 0 1 0 21.27599,2.6354121 1.6354121,1.6354121 0 0 0 19.640578,1 Z"
+     fill="#5997e3ff"
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;stroke-width:1.09027" />
+</svg>
