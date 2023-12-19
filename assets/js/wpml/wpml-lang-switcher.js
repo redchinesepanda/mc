@@ -10,22 +10,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		current : 'lang-current',
 	};
 
-    const elements = {
-		footer : {
-			selector : '.legal-footer-wrapper'
-		},
+    const selectors = {
+		footer : '.legal-footer-wrapper',
 
-		switcher : {
-			selectors : '.lang-switcher'
-		},
+		switcher : '.lang-switcher',
 
-		current : {
-			selector : '.lang-current'
-		},
+		current : '.lang-current',
 
-		title : {
-			selector : '.lang-title'
-		}
+		title : '.lang-title'
 	};
 
     function spoilerToggle( event )
@@ -34,7 +26,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
         // event.currentTarget.nextElementSibling.classList.toggle( classes.active );
         
-        event.currentTarget.closest( elements.current.selector ).nextElementSibling.classList.toggle( classes.active );
+        event.currentTarget.closest( selectors.current ).nextElementSibling.classList.toggle( classes.active );
     }
 
     function langPrepare( lang )
@@ -44,12 +36,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function spoilerPrepare( switcher )
     {
-        // switcher.querySelectorAll( elements.current.selector ).forEach( langPrepare );
+        // switcher.querySelectorAll( elements.current ).forEach( langPrepare );
         
-        switcher.querySelectorAll( elements.title.selector ).forEach( langPrepare );
+        switcher.querySelectorAll( selectors.title ).forEach( langPrepare );
     }
 
-    document.querySelectorAll( elements.switcher.selector ).forEach( spoilerPrepare );
+    document.querySelectorAll( selectors.switcher ).forEach( spoilerPrepare );
 
     function toggle( event ) 
     {
@@ -73,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         element.addEventListener( 'click', toggle );
     }
 
-    document.querySelectorAll( elements.footer.selector ).forEach( prepare );
+    document.querySelectorAll( selectors.footer ).forEach( prepare );
 } );
 
 // wpml-lang-switcher-js
