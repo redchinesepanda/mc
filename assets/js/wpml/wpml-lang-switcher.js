@@ -12,7 +12,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const elements = {
 		footer : {
-			selectors : '.legal-footer-wrapper'
+			selector : '.legal-footer-wrapper'
 		},
 
 		switcher : {
@@ -20,11 +20,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		current : {
-			selectors : '.lang-current'
+			selector : '.lang-current'
 		},
 
 		title : {
-			selectors : '.lang-title'
+			selector : '.lang-title'
 		}
 	};
 
@@ -34,7 +34,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
         // event.currentTarget.nextElementSibling.classList.toggle( classes.active );
         
-        event.currentTarget.closest( classes.current ).nextElementSibling.classList.toggle( classes.active );
+        event.currentTarget.closest( elements.current.selector ).nextElementSibling.classList.toggle( classes.active );
     }
 
     function langPrepare( lang )
@@ -44,12 +44,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function spoilerPrepare( switcher )
     {
-        // switcher.querySelectorAll( elements.current.selectors ).forEach( langPrepare );
+        // switcher.querySelectorAll( elements.current.selector ).forEach( langPrepare );
         
-        switcher.querySelectorAll( elements.title.selectors ).forEach( langPrepare );
+        switcher.querySelectorAll( elements.title.selector ).forEach( langPrepare );
     }
 
-    document.querySelectorAll( elements.switcher.selectors ).forEach( spoilerPrepare );
+    document.querySelectorAll( elements.switcher.selector ).forEach( spoilerPrepare );
 
     function toggle( event ) 
     {
@@ -73,7 +73,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         element.addEventListener( 'click', toggle );
     }
 
-    document.querySelectorAll( elements.footer.selectors ).forEach( prepare );
+    document.querySelectorAll( elements.footer.selector ).forEach( prepare );
 } );
 
 // wpml-lang-switcher-js
