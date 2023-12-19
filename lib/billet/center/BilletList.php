@@ -97,7 +97,7 @@ class BilletList
         return empty( $list[ self::LIST[ 'feature' ] ] );
     }
 
-    public static function filter_lists_feature_empty( $list )
+    public static function filter_lists_feature_empty( $lists )
     {
         $handler = new self();
 
