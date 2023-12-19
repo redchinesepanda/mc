@@ -92,6 +92,11 @@
 		padding-left: 16px;
 	}
 
+	.legal-header-control {
+		position: static;
+		margin-right: 58px;
+	}
+
 	.legal-menu {
 		padding: 8px 16px;
 		border-top: 2px solid #000;
@@ -214,8 +219,10 @@
 	}
 
 	.legal-header-control {
-		width: 78px;
-		height: 32px;
+	/* 	width: 78px;
+		height: 32px; */
+		width: 24px;
+		height: 24px;
 	}
 
 	.legal-menu .menu-item > .sub-menu,
@@ -232,9 +239,10 @@
 	.legal-header-control {
 		background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
 		background-repeat: no-repeat;
-		background-position: left center;
+		background-position: center;
 		background-size: 24px;
-		position: relative;
+		border-radius: 50%;
+		border: #000000 solid 1px;
 	}
 	
 	.legal-header-control.legal-active {
@@ -347,7 +355,7 @@
 	}
 	.legal-header-control::after {
 		content: '\f106';
-		line-height: 30px;
+		line-height: 23px;
 		font-size: 26px;
 		font-family: var(--legal-font-icons);
 	}
