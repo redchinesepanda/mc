@@ -140,7 +140,7 @@ class BaseHeader
 			}
 
 			LegalDebug::debug( [
-				$style_item[ 'class' ],
+				$style_item[ 'class' ], 
 			] );
 		}
 
