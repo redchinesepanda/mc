@@ -30,16 +30,16 @@ class BilletList
         return [];
     }
 
-    public static function check_features_in_filter( $list, $fetures )
-    {
-        return !empty(
-            array_intersect(
-                $list[ self::LIST[ 'feature' ] ],
+    // public static function check_features_in_filter( $list, $fetures )
+    // {
+    //     return !empty(
+    //         array_intersect(
+    //             $list[ self::LIST[ 'feature' ] ],
                 
-                $fetures
-            )
-        );
-    }
+    //             $fetures
+    //         )
+    //     );
+    // }
 
     public static function check_features_empty( $list )
     {
@@ -127,9 +127,19 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
-        $handler = new self();
+        // $handler = new self();
 
-        return array_filter( $lists, [ $handler, 'check_features_in_filter' ] use ( $features ) );
+        // return array_filter( $lists, [ $handler, 'check_features_in_filter' ] use ( $features ) );
+        
+        return array_filter( $lists, function( $list ) use ( $features ) {
+            return !empty(
+                array_intersect(
+                    $list[ self::LIST[ 'feature' ] ],
+                    
+                    $features
+                )
+            );
+		} );
     }
 
     public static function filter_lists_feature_empty( $list )
