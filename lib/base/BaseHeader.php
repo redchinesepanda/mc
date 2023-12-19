@@ -161,7 +161,14 @@ class BaseHeader
 
 		$items = [];
 
-		foreach ( $menu_items as $menu_item ) {
+		foreach ( $menu_items as $menu_item )
+		{
+			LegalDebug::debug( [
+				'function' => 'parse_items_inline',
+
+				'menu_item' => $menu_item,
+			] );
+
 			$item_class = get_field( self::FIELD[ 'class' ], $menu_item );
 			
 			if( $item_class ) {
