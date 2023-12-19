@@ -235,7 +235,7 @@ class TemplateMain
         LegalDebug::debug( [
             self::check_new(),
         ] );
-        
+
         if ( self::check_new() )
         {
             $handler = new self();
@@ -255,6 +255,8 @@ class TemplateMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
 
         // self::register_wp();
 
