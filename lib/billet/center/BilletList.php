@@ -119,11 +119,11 @@ class BilletList
             $result = self::filter_lists_feature_has( $lists, $features );
         }
 
-        LegalDebug::debug( [
-            'function' => 'BilletList::get',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletList::get',
 
-            'result' => $result,
-        ] );
+        //     'result' => $result,
+        // ] );
 
         if ( empty( $result ) )
         {
