@@ -243,13 +243,16 @@
 		cursor: pointer;
 	}
 
-	.legal-header-control {
-		background-image: url(https://match.center/wp-content/uploads/flags/pt.svg);
+	/* .legal-header-control */
+	
+	.legal-header-control::before
+	{
+		/* background-image: url(https://match.center/wp-content/uploads/flags/pt.svg); */
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 24px;
 		border-radius: 50%;
-		border: #000000 solid 1px;
+		border: 1px solid #000000;
 	}
 	
 	.legal-header-control.legal-active {
@@ -365,7 +368,7 @@
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
 	}
-	
+
 	.legal-header-control::after {
 		font-family: var(--legal-font-icons);
 		line-height: 24px;
