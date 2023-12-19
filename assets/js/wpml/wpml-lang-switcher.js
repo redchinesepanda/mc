@@ -22,13 +22,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		current : {
 			selectors : '.lang-current'
 		},
+
+		title : {
+			selectors : '.lang-title'
+		}
 	};
 
     function spoilerToggle( event )
     {
         event.currentTarget.classList.toggle( classes.active );
 
-        event.currentTarget.nextElementSibling.classList.toggle( classes.active );
+        // event.currentTarget.nextElementSibling.classList.toggle( classes.active );
+        
+        event.currentTarget.closest( classes.current ).nextElementSibling.classList.toggle( classes.active );
     }
 
     function langPrepare( lang )
@@ -38,7 +44,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function spoilerPrepare( switcher )
     {
-        switcher.querySelectorAll( elements.current.selectors ).forEach( langPrepare );
+        // switcher.querySelectorAll( elements.current.selectors ).forEach( langPrepare );
+        
+        switcher.querySelectorAll( elements.title.selectors ).forEach( langPrepare );
     }
 
     document.querySelectorAll( elements.switcher.selectors ).forEach( spoilerPrepare );
