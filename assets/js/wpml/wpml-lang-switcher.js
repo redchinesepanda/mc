@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     {
         event.currentTarget.classList.toggle( 'legal-active' );
 
-        event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' );
+       /*  event.currentTarget.nextElementSibling.classList.toggle( 'legal-active' ); */
     }
 
     // const switchers = document.getElementsByClassName( 'lang-switcher' );
