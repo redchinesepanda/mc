@@ -53,12 +53,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let switcher of switchers ) {
             let button = switcher.getElementsByClassName( 'lang-current' ).item( 0 );
 
-            let buttonChildren = switcher.getElementsByClassName( 'lang-current' ).children[1];
-
             let avaible = button.nextElementSibling;
 
-            if ( !avaible.contains( event.target ) && !buttonChildren.contains( event.target )  ) {
-                buttonChildren.classList.remove( 'legal-active' );
+            if ( !avaible.contains( event.target ) && !button.contains( event.target )  ) {
+                button.classList.remove( 'legal-active' );
 
                 avaible.classList.remove( 'legal-active' );
             }
