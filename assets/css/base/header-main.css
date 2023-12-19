@@ -174,7 +174,7 @@
 {
 	display: flex;
 	align-items: center;
-	gap: 13px;
+	gap: 10px;
 }
 
 .legal-menu .menu-item.legal-country > .item-title::before
