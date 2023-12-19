@@ -424,6 +424,8 @@
 
 	.legal-menu .legal-cut-control {
 		display: flex;
+		align-items: center;
+		gap: 4px;
 	}
 
 	.legal-menu .legal-cut-control.legal-hide
@@ -653,9 +655,11 @@
 	content: '\F103';
     font-family: var(--legal-font-icons);
     /* font-size: 26px; */
-    font-size: 1em;
+    /* font-size: 1em; */
+    font-size: 16px;
     /* line-height: 8px; */
-    line-height: 1em; 
+    /* line-height: 1em;  */
+    line-height: 16px; 
 }
 
 .legal-menu .item-title[href="#"] {
