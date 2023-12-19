@@ -94,7 +94,7 @@ nav.breadcrumbs {
 .legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title::after {
     content: '\f107';
     color: #6C6C6C;
-    line-height: 16px;
+    line-height: 9px;
     font-size: 28px;
     font-family: var(--legal-font-icons);
 }
