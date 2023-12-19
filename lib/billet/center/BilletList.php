@@ -101,16 +101,16 @@ class BilletList
             $result = self::filter_lists_feature_has( $lists, $features );
         }
 
+        LegalDebug::debug( [
+            'function' => 'BilletList::get',
+
+            'result' => $result,
+        ] );
+
         if ( empty( $result ) )
         {
             $result = self::filter_lists_feature_empty( $list );
         }
-
-        LegalDebug::debug( [
-            'function' => 'BilletList::get',
-
-            'features' => $features,
-        ] );
 
         // return self::parse_lists( $result, $billet );
         
