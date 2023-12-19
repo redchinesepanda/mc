@@ -718,7 +718,11 @@
 	padding: 0px;
 }
 
-.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item:not(.menu-item.legal-country-all) > .item-title {
+.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item > .item-title {
+	padding: 10px 10px 10px 0px;
+}
+
+.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item.legal-country-all > .item-title {
 	padding: 10px 10px 10px 0px;
 }
 
@@ -812,10 +816,10 @@
 	background-color: transparent;
 }
 
-.legal-menu > .menu-item:last-child .menu-item .item-title {
+/* .legal-menu > .menu-item:last-child .menu-item .item-title {
 	background-position: left center;
 	background-repeat: no-repeat;
-}
+} */
 
 .legal-menu > .menu-item:last-child > .item-title {
 	background-repeat: no-repeat;
