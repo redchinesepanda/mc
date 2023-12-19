@@ -67,6 +67,11 @@
 		width: 100%;
 	}
 
+	.legal-menu .menu-item > a
+	{
+		min-width: 75%;
+	}
+
 	.legal-header-control {
 		width: 22px;
 		height: 22px;
