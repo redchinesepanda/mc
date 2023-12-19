@@ -667,11 +667,11 @@
 	padding: 8px 0;
 }
 
-.legal-menu .legal-country > .item-title::before {
+.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     display: inline-block;
 }
 
-.legal-menu .legal-country > .item-title::before {
+.legal-menu .legal-country:not(.legal-country-all)> .item-title::before {
     border-radius: 50%;
     border: #000 solid 1px;
     background-repeat: no-repeat;
@@ -679,17 +679,17 @@
     background-position: center left;
 }
 
-.legal-menu .legal-country > .item-title::before {
+.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     width: 23px;
     height: 23px;
 }
 
-.legal-menu .legal-country > .item-title::before {
+.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
 	content: '';
 	vertical-align: middle;
 }
 
-.legal-menu .legal-country > .item-title::before {
+.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     margin-right: 8px;
 }
 
@@ -718,8 +718,8 @@
 	padding: 0px;
 }
 
-.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item > .item-title {
-	padding: 10px 10px 10px 36px;
+.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item:not(.menu-item.legal-country-all) > .item-title {
+	padding: 10px 10px 10px 0px;
 }
 
 .legal-menu .menu-item-has-children:after {
