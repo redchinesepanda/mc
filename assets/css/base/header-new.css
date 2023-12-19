@@ -580,6 +580,7 @@
 	cursor: pointer;
 	color: #000;
 	font-weight: 500;
+	line-height: 20px;
 }
 
 .legal-menu .legal-cut-control:not( .legal-active )::before {
@@ -749,7 +750,7 @@
 }
 
 .legal-menu .legal-cut-control {
-	padding: 8px 0;
+	padding: 6px 0;
 }
 
 .legal-menu .legal-cut-control::after {
