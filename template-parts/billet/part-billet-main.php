@@ -8,7 +8,7 @@
 
             <?php echo BilletDescription::render( $args ); ?>
 
-            <?php BilletList::render( $args ); ?>
+            <?php echo BilletList::render( $args ); ?>
         </div>
         <div class="billet-right">
             <?php BilletRight::render( $args ); ?>
