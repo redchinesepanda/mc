@@ -140,7 +140,9 @@ class BaseHeader
 			}
 
 			LegalDebug::debug( [
-				$style_item[ 'class' ],
+				'function' => 'inline_style',
+
+				'style_item' => $style_item,
 			] );
 		}
 
