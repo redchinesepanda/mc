@@ -2,6 +2,28 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+    const classes = {
+		active : 'legal-active',
+
+		switcher : 'lang-switcher',
+
+		current : 'lang-current',
+	};
+
+    const elements = {
+		footer : {
+			selectors : '.legal-footer-wrapper'
+		},
+
+		switcher : {
+			selectors : '.lang-switcher'
+		},
+
+		current : {
+			selectors : '.lang-current'
+		},
+	};
+
     function spoilerToggle( event )
     {
         event.currentTarget.classList.toggle( classes.active );
@@ -20,14 +42,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
     }
 
     document.querySelectorAll( elements.switcher.selectors ).forEach( spoilerPrepare );
-
-    const classes = {
-		active : 'legal-active',
-
-		switcher : 'lang-switcher',
-
-		current : 'lang-current',
-	};
 
     function toggle( event ) 
     {
@@ -50,20 +64,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
         element.addEventListener( 'click', toggle );
     }
-
-    const elements = {
-		footer : {
-			selectors : '.legal-footer-wrapper'
-		},
-
-		switcher : {
-			selectors : '.lang-switcher'
-		},
-
-		current : {
-			selectors : '.lang-current'
-		},
-	};
 
     document.querySelectorAll( elements.footer.selectors ).forEach( prepare );
 } );
