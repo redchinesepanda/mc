@@ -30,71 +30,10 @@ class BilletList
         return [];
     }
 
-    // public static function check_features_in_filter( $list, $fetures )
-    // {
-    //     return !empty(
-    //         array_intersect(
-    //             $list[ self::LIST[ 'feature' ] ],
-                
-    //             $fetures
-    //         )
-    //     );
-    // }
-
-    public static function check_features_empty( $list )
-    {
-        return empty( $list[ self::LIST[ 'feature' ] ] );
-    }
-
-    // public static function check_list_in_filter( $billet, $part )
-    // {
-    //     // $display = true;
-
-    //     // if ( !empty( $billet[ 'filter' ] ) )
-    //     // {
-    //     //     $permission_filter = false;
-
-    //     //     $permission_empty = empty( $part[ self::LIST[ 'feature' ] ] );
-
-    //     //     if ( !$permission_empty )
-    //     //     {
-    //     //         $permission_filter = !empty(
-    //     //             array_intersect(
-    //     //                 $part[ self::LIST[ 'feature' ] ],
-                        
-    //     //                 $billet[ 'filter' ][ 'features' ]
-    //     //             )
-    //     //         );
-    //     //     }
-
-    //     //     $display = ( $permission_filter || $permission_empty );
-    //     // }
-
-    //     // return $display;
-
-    //     // if ( self::check_filter_empty( $billet ) )
-    //     // {
-    //     //     return true;
-    //     // }
-
-
-    // }
-
     public static function parse_items( $items )
     {
-        // $result = [];
-
-        // foreach ( $items as $item )
-        // {
-        //     $result[] = $item[ self::ITEM[ 'title' ] ];
-        // }
-
-        // return $result;
-
         return array_column( $items, self::ITEM[ 'title' ] );
     }
-
-    // public static function parse_lists( $lists, $billet )
     
     public static function parse_lists( $lists )
     {
@@ -104,16 +43,13 @@ class BilletList
         {
             foreach ( $lists as $list )
             {
-                // if ( self::check_list_in_filter( $billet, $list ) )
-                // {
-                    $result[] = [
-                        'part-icon' => $list[ self::LIST[ 'icon' ] ],
+                $result[] = [
+                    'part-icon' => $list[ self::LIST[ 'icon' ] ],
 
-                        'part-direction' => $list[ self::LIST[ 'direction' ] ],
+                    'part-direction' => $list[ self::LIST[ 'direction' ] ],
 
-                        'part-items' => self::parse_items( $list[ self::LIST[ 'items' ] ] ),
-                    ];
-                // }
+                    'part-items' => self::parse_items( $list[ self::LIST[ 'items' ] ] ),
+                ];
             }
         }
 
@@ -127,10 +63,6 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
-        // $handler = new self();
-
-        // return array_filter( $lists, [ $handler, 'check_features_in_filter' ] use ( $features ) );
-        
         return array_filter( $lists, function( $list ) use ( $features ) {
             return !empty(
                 array_intersect(
@@ -142,11 +74,16 @@ class BilletList
 		} );
     }
 
+    public static function check_feature_empty( $list )
+    {
+        return empty( $list[ self::LIST[ 'feature' ] ] );
+    }
+
     public static function filter_lists_feature_empty( $list )
     {
         $handler = new self();
 
-        return array_filter( $lists, [ $handler, 'check_features_empty' ] );
+        return array_filter( $lists, [ $handler, 'check_feature_empty' ] );
     }
 
     public static function get( $billet )
@@ -154,6 +91,12 @@ class BilletList
         // $args = [];
 
         $lists = get_field( self::FIELD[ 'lists' ], $billet[ 'id' ] );
+
+        LegalDebug::debug( [
+            'function' => 'BilletList::get',
+
+            'lists' => $lists,
+        ] );
 
         $features = self::get_features( $billet );
 
