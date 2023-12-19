@@ -1,20 +1,1218 @@
-[
-	{
-		"billet-feture-id": "",
-		"billet-bonus-id": "https://test.match.center/kz/ubet/freebet/",
-		"billet-bonus-title": "Apuesta gratuita de 5000 COP",
-		"billet-bonus-description": "-Debes estar registrado en www.betplay.com.co. - Realiza un deposito de $2.000 en tu cuenta. -Recibe una apuestra totalm"
-	},
-	{
-		"billet-feture-id": "feature-tennis-good",
-		"billet-bonus-id": "",
-		"billet-bonus-title": "Apuestas gratuitas hasta 220000 COP",
-		"billet-bonus-description": "az un depósito y aprovecha nuestra promoción de \"Apuestas Gratis\". Dependiendo de la cantidad depositada, recibirás una "
-	},
-	{
-		"billet-feture-id": "billet-bonus-test",
-		"billet-bonus-id": "",
-		"billet-bonus-title": "50% hasta 100000 COP",
-		"billet-bonus-description": "¡DISFRUTA TU BONO DE BIENVENIDA! ¿Aún no has realizado un depósito en Zamba? Zamba incrementa tu primer depósito un 50% "
-	}
-]
+{
+	"object": "list",
+	"results": [
+		{
+			"object": "page",
+			"id": "bd16c649-8080-483d-939e-ba225bb60344",
+			"created_time": "2023-11-30T12:21:00.000Z",
+			"last_edited_time": "2023-12-14T07:35:00.000Z",
+			"created_by": {
+				"object": "user",
+				"id": "e59f6f21-bc4c-4afe-adf9-9205d4682adb"
+			},
+			"last_edited_by": {
+				"object": "user",
+				"id": "712c33a4-afe0-4a83-a9a1-5c3ea4b690d5"
+			},
+			"cover": null,
+			"icon": {
+				"type": "emoji",
+				"emoji": "🇨🇱"
+			},
+			"parent": {
+				"type": "database_id",
+				"database_id": "044a9c86-ed8c-4574-afdf-70fb00d545b1"
+			},
+			"archived": false,
+			"properties": {
+				"NHL outcomes": {
+					"id": "%3AbxN",
+					"type": "number",
+					"number": null
+				},
+				"Pros BR (Legalbet)": {
+					"id": "%3AdF%3A",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Number of Esports": {
+					"id": "%3Ag%7DJ",
+					"type": "number",
+					"number": null
+				},
+				"Cash Out Types": {
+					"id": "%3BNMk",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Pros MC Eng": {
+					"id": "%3C%3Aic",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Название + Language Code": {
+					"id": "%3CH%5D%3E",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "Betfair CL"
+					}
+				},
+				"R-Reg&Support": {
+					"id": "%3CW%5CB",
+					"type": "number",
+					"number": null
+				},
+				"Basketball markets": {
+					"id": "%3C%5B%7C%3D",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Created by": {
+					"id": "%3C%7C%60E",
+					"type": "created_by",
+					"created_by": {
+						"object": "user",
+						"id": "e59f6f21-bc4c-4afe-adf9-9205d4682adb",
+						"name": "Pavel Poznyakov",
+						"avatar_url": "https://lh3.googleusercontent.com/a/AAcHTtfEuZ8ygPQEvJRHkgpYN3Ewl7VP6Jz1naFCzrVe=s100",
+						"type": "person",
+						"person": {
+							"email": "pavel.poznyakov@legalbet.com"
+						}
+					}
+				},
+				"Pros MC Dansk": {
+					"id": "%3D%3EyS",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Cons Legalbet": {
+					"id": "%3DxCL",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros (UKC) BR": {
+					"id": "%3EH%5Ed",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Licence Actual": {
+					"id": "%3EUh_",
+					"type": "checkbox",
+					"checkbox": false
+				},
+				"Owner": {
+					"id": "%3FHln",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Locale": {
+					"id": "%3FZCw",
+					"type": "relation",
+					"relation": [
+						{
+							"id": "e9d5d90a-7b1c-43a5-a566-6bda9da46c11"
+						}
+					],
+					"has_more": false
+				},
+				"Products": {
+					"id": "%3Feb%40",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Достижения": {
+					"id": "%40%3Cd~",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"EPL Markets": {
+					"id": "%40O~%3A",
+					"type": "select",
+					"select": null
+				},
+				"Navigation problems": {
+					"id": "%40TMe",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Headquarters": {
+					"id": "%40dCK",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"EPL": {
+					"id": "AFZ%3C",
+					"type": "select",
+					"select": null
+				},
+				"Bonus (Type)": {
+					"id": "AjvG",
+					"type": "select",
+					"select": null
+				},
+				"Bonus (For whom)": {
+					"id": "As%3CP",
+					"type": "select",
+					"select": null
+				},
+				"Handball competitions": {
+					"id": "A%7DiL",
+					"type": "number",
+					"number": null
+				},
+				"Hockey margin": {
+					"id": "BYoA",
+					"type": "number",
+					"number": null
+				},
+				"Фон": {
+					"id": "BeeT",
+					"type": "rich_text",
+					"rich_text": [
+						{
+							"type": "text",
+							"text": {
+								"content": "rgb(255,181,41)",
+								"link": null
+							},
+							"annotations": {
+								"bold": false,
+								"italic": false,
+								"strikethrough": false,
+								"underline": false,
+								"code": false,
+								"color": "default"
+							},
+							"plain_text": "rgb(255,181,41)",
+							"href": null
+						}
+					]
+				},
+				"Handball Champions League markets": {
+					"id": "Bzow",
+					"type": "number",
+					"number": null
+				},
+				"R-Apps Comment": {
+					"id": "B%7Bh%3F",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Margin Basketball": {
+					"id": "CRpR",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"R-BonusEx Comment": {
+					"id": "CXD%60",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Free bets": {
+					"id": "C%5B%5E%40",
+					"type": "select",
+					"select": null
+				},
+				"Pros (MC)": {
+					"id": "DKMi",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Revolut": {
+					"id": "DcTk",
+					"type": "select",
+					"select": null
+				},
+				"Streaming - Yes/No": {
+					"id": "EFdE",
+					"type": "select",
+					"select": null
+				},
+				"Esports Score (from 1 to 10)": {
+					"id": "Esl%5C",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Safest Betting Sites": {
+					"id": "Fws%5C",
+					"type": "select",
+					"select": null
+				},
+				"Sports streamed": {
+					"id": "G%3Ds%40",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Cons MC Dansk": {
+					"id": "GJaW",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Live outcomes": {
+					"id": "GNd~",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Headquarter": {
+					"id": "GOMl",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Champions league": {
+					"id": "GRMd",
+					"type": "select",
+					"select": null
+				},
+				"Bonuses 1": {
+					"id": "GVXC",
+					"type": "relation",
+					"relation": [],
+					"has_more": false
+				},
+				"Min Deposit": {
+					"id": "GhVj",
+					"type": "select",
+					"select": null
+				},
+				"Max Withdrawal": {
+					"id": "HB%7Cw",
+					"type": "number",
+					"number": null
+				},
+				"Featured Sports": {
+					"id": "HmQN",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Casino - Yes/No": {
+					"id": "HzY%5C",
+					"type": "select",
+					"select": null
+				},
+				"Cons": {
+					"id": "JjKx",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"R-Information": {
+					"id": "Jr%3Fo",
+					"type": "number",
+					"number": null
+				},
+				"Bonus Desc (UKC)": {
+					"id": "Jxhn",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros Legalbet": {
+					"id": "KA%40e",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Fast withdrawals": {
+					"id": "L%3BA_",
+					"type": "select",
+					"select": null
+				},
+				"Features ": {
+					"id": "LNbb",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"R-BonusEx": {
+					"id": "M%3Cx%7B",
+					"type": "number",
+					"number": null
+				},
+				"Credit cards": {
+					"id": "M%3EdA",
+					"type": "select",
+					"select": null
+				},
+				"Football Features": {
+					"id": "MESc",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Rollup 1": {
+					"id": "N%5B%3CL",
+					"type": "rollup",
+					"rollup": {
+						"type": "array",
+						"array": [
+							{
+								"type": "multi_select",
+								"multi_select": []
+							}
+						],
+						"function": "show_original"
+					}
+				},
+				"Horse Racing Features": {
+					"id": "OUF%5B",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Created time 1": {
+					"id": "OxXQ",
+					"type": "created_time",
+					"created_time": "2023-11-30T12:21:00.000Z"
+				},
+				"Overview Draft": {
+					"id": "QF%60b",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"R-Navigation": {
+					"id": "QSB%3F",
+					"type": "number",
+					"number": null
+				},
+				"Football competitions": {
+					"id": "Q%5B%7B%5C",
+					"type": "number",
+					"number": null
+				},
+				"Бонус Название по умолчанию": {
+					"id": "Q%60Ip",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "Apuestas Gratis hasta $100"
+					}
+				},
+				"Bonus desc SWE (LB)": {
+					"id": "RFFF",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Aff?": {
+					"id": "ROlz",
+					"type": "checkbox",
+					"checkbox": false
+				},
+				"Football Stat markets": {
+					"id": "Rhzx",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Hockey Features": {
+					"id": "S%3C%5Bh",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Betting features": {
+					"id": "SByf",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"R-Streams": {
+					"id": "SVc%3E",
+					"type": "number",
+					"number": null
+				},
+				"Cons (UKC)": {
+					"id": "S_U%3E",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Cons ENG": {
+					"id": "Sfk%3A",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Registered Office": {
+					"id": "Sk%3Fh",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Min deposit": {
+					"id": "SzXL",
+					"type": "number",
+					"number": null
+				},
+				"Last edit": {
+					"id": "TTIu",
+					"type": "last_edited_time",
+					"last_edited_time": "2023-12-14T07:35:00.000Z"
+				},
+				"Pros": {
+					"id": "T_dF",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"ПЛАТЁЖНАЯ БАЗА ДАННЫХ": {
+					"id": "Td%5E%3E",
+					"type": "relation",
+					"relation": [],
+					"has_more": false
+				},
+				"Hockey competitions": {
+					"id": "U%3A%3D%7D",
+					"type": "number",
+					"number": null
+				},
+				"Related to Bonuses": {
+					"id": "UHCC",
+					"type": "relation",
+					"relation": [
+						{
+							"id": "7330507e-4718-4ba9-8865-44d04ad0c9ec"
+						}
+					],
+					"has_more": false
+				},
+				"Бонусы JSON": {
+					"id": "URH%3A",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "[]"
+					}
+				},
+				"Cons (UKC) BR": {
+					"id": "V%3Fxy",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"App": {
+					"id": "VFC%60",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Pros ENG": {
+					"id": "VMQi",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Payments": {
+					"id": "V%5BfV",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Support work evaluation": {
+					"id": "WiVU",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"RU Desc (LB)": {
+					"id": "WjZg",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Created": {
+					"id": "XUTc",
+					"type": "created_time",
+					"created_time": "2023-11-30T12:21:00.000Z"
+				},
+				"Partnerships": {
+					"id": "YC%3FV",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Характеристики Test": {
+					"id": "YJxw",
+					"type": "relation",
+					"relation": [
+						{
+							"id": "ea8da916-d82d-4381-846a-89b847ff718b"
+						},
+						{
+							"id": "e1b74597-0706-48f2-a96f-742f6c79c9ec"
+						}
+					],
+					"has_more": false
+				},
+				"Cheltenham": {
+					"id": "Y%5Da%7B",
+					"type": "select",
+					"select": null
+				},
+				"Bookie+Country": {
+					"id": "Z%3Df%3C",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "Betfair Chile"
+					}
+				},
+				"Margin Football": {
+					"id": "ZLaU",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"PIX": {
+					"id": "Z%5Dq%60",
+					"type": "select",
+					"select": null
+				},
+				"Live features": {
+					"id": "ZklH",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Deposit Methods": {
+					"id": "%5BBkS",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Features": {
+					"id": "%5Bwva",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Sites": {
+					"id": "%5B%7BWC",
+					"type": "multi_select",
+					"multi_select": [
+						{
+							"id": "0d746461-563e-4702-9177-7e60f0ca8234",
+							"name": "Match.Center",
+							"color": "blue"
+						}
+					]
+				},
+				"Rollup": {
+					"id": "%5CA%5Dq",
+					"type": "rollup",
+					"rollup": {
+						"type": "array",
+						"array": [
+							{
+								"type": "title",
+								"title": [
+									{
+										"type": "text",
+										"text": {
+											"content": "Apuestas Gratis hasta $100",
+											"link": null
+										},
+										"annotations": {
+											"bold": false,
+											"italic": false,
+											"strikethrough": false,
+											"underline": false,
+											"code": false,
+											"color": "default"
+										},
+										"plain_text": "Apuestas Gratis hasta $100",
+										"href": null
+									}
+								]
+							}
+						],
+						"function": "show_original"
+					}
+				},
+				"R-UX": {
+					"id": "%5DU%5C%5E",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Casino slots": {
+					"id": "%5D_Df",
+					"type": "number",
+					"number": null
+				},
+				"License": {
+					"id": "%5Dl%3FZ",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros ENG (MC)": {
+					"id": "%5ECjI",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Esport CS2 outcomes": {
+					"id": "%5E_tv",
+					"type": "number",
+					"number": null
+				},
+				"База данных обзоров": {
+					"id": "%5EeP%3F",
+					"type": "relation",
+					"relation": [],
+					"has_more": false
+				},
+				"R-Money": {
+					"id": "%5EuvS",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Обновление Дата": {
+					"id": "%5Ex%5Ej",
+					"type": "last_edited_time",
+					"last_edited_time": "2023-12-14T07:35:00.000Z"
+				},
+				"Horse Racing": {
+					"id": "_KPR",
+					"type": "select",
+					"select": null
+				},
+				"Live-streaming features": {
+					"id": "_rfF",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Number of sports": {
+					"id": "_%7Bzx",
+					"type": "number",
+					"number": null
+				},
+				"Cons RU Legalbet": {
+					"id": "%60W%7Cl",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Global Brand": {
+					"id": "a%3C%7D%3D",
+					"type": "relation",
+					"relation": [],
+					"has_more": false
+				},
+				"R-Overall": {
+					"id": "a%3Fl~",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Football": {
+					"id": "aYN%3A",
+					"type": "select",
+					"select": null
+				},
+				"Типы Плашек": {
+					"id": "a__B",
+					"type": "multi_select",
+					"multi_select": [
+						{
+							"id": "1f98e860-a509-49b7-9b8d-5584b6da814b",
+							"name": "billet_bookmaker",
+							"color": "blue"
+						}
+					]
+				},
+				"Football margin": {
+					"id": "ab%7Cl",
+					"type": "number",
+					"number": null
+				},
+				"Apuesta min.": {
+					"id": "a%7CJ%5B",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Cons DE": {
+					"id": "a%7CYz",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Цвет Текста": {
+					"id": "b%5C%7B%7C",
+					"type": "select",
+					"select": {
+						"id": "da630529-e0a0-46f7-8662-023a96bed538",
+						"name": "legal-black",
+						"color": "gray"
+					}
+				},
+				"Bonus (Form)": {
+					"id": "c%5DSB",
+					"type": "select",
+					"select": null
+				},
+				"Handball outcomes": {
+					"id": "c_lb",
+					"type": "number",
+					"number": null
+				},
+				"Margin Tennis": {
+					"id": "dCrA",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"License Date": {
+					"id": "dM%5C%5C",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Screens": {
+					"id": "drm%3D",
+					"type": "files",
+					"files": []
+				},
+				"Cons RU (MC)": {
+					"id": "eGUq",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Cons ENG (MC)": {
+					"id": "eVUy",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros DE": {
+					"id": "etS_",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Game types": {
+					"id": "fvT_",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Cons MC Eng": {
+					"id": "gd%60B",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Бонус Описание Краткое по умолчанию": {
+					"id": "go%5BZ",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": ""
+					}
+				},
+				"R-Line Оценка рынков": {
+					"id": "gt%40G",
+					"type": "number",
+					"number": null
+				},
+				"Withdrawal methods": {
+					"id": "hEW%40",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"R-Product": {
+					"id": "h%5DUo",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Cash Out - Yes/No": {
+					"id": "h%7BHA",
+					"type": "select",
+					"select": null
+				},
+				"Payment Limits": {
+					"id": "iX%3Ab",
+					"type": "url",
+					"url": null
+				},
+				"Bonus Desc EN (UKC)": {
+					"id": "iZNA",
+					"type": "rollup",
+					"rollup": {
+						"type": "array",
+						"array": [
+							{
+								"type": "rich_text",
+								"rich_text": []
+							}
+						],
+						"function": "show_original"
+					}
+				},
+				"R-BonusNew": {
+					"id": "i%5DX%3A",
+					"type": "number",
+					"number": null
+				},
+				"R-Line": {
+					"id": "ialW",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Partner?": {
+					"id": "j%3Dx%5D",
+					"type": "status",
+					"status": {
+						"id": "6df623ff-f190-49bf-ab3d-d7a4ab398272",
+						"name": "No Ref",
+						"color": "default"
+					}
+				},
+				"Withdrawal Methods": {
+					"id": "jAH%3D",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Bet Builder features": {
+					"id": "jTdF",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Обновление": {
+					"id": "j%5DDa",
+					"type": "checkbox",
+					"checkbox": false
+				},
+				"Характеристики JSON": {
+					"id": "kA%3BU",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "[{\"name\":\"Notion Test\",\"slug\":\"legal-notion-test\"},{\"name\":\"Main\",\"slug\":\"glavnaya-main\"}]"
+					}
+				},
+				"Название": {
+					"id": "l%3Aah",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "Betfair"
+					}
+				},
+				"Ref URL": {
+					"id": "ldW%7D",
+					"type": "url",
+					"url": null
+				},
+				"Withdrawal time ": {
+					"id": "ldjj",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros (UKC)": {
+					"id": "lgKI",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Бонус Описание Полное по умолчанию": {
+					"id": "luG%3D",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "Regístrate en la casa de apuestas con el código promocional ZBBLAT y realiza 5 apuestas de $10 o más cada una con cuotas mínimas de 1.50. Por esto, la casa de apuestas te entregará una apuesta gratuita de $20. Puedes repetir el proceso hasta 5 veces. Dispones de 7 días para completar cada paso de la promoción. Las apuestas gratuitas deben usarse dentro de los 30 días."
+					}
+				},
+				"R-BonusNew Comment": {
+					"id": "l%7C%5C%5D",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Volume": {
+					"id": "nB_g",
+					"type": "number",
+					"number": null
+				},
+				"Aff Comment": {
+					"id": "nLIV",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Pros RU (MC)": {
+					"id": "nWe%3D",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Football Legalbet Score (1 to 10)": {
+					"id": "nnWy",
+					"type": "number",
+					"number": null
+				},
+				"Status": {
+					"id": "pLG%7B",
+					"type": "select",
+					"select": null
+				},
+				"Cons BR (Legalbet)": {
+					"id": "pVHl",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Corners": {
+					"id": "pe%60J",
+					"type": "select",
+					"select": null
+				},
+				"Партнерская Ссылка": {
+					"id": "pk%5CS",
+					"type": "url",
+					"url": null
+				},
+				"Hockey Legalbet Score (1 to 10)": {
+					"id": "qMOn",
+					"type": "number",
+					"number": null
+				},
+				"Esports games": {
+					"id": "qSnr",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Min Withdrawal": {
+					"id": "quRn",
+					"type": "number",
+					"number": null
+				},
+				"Rollup 2": {
+					"id": "rLxJ",
+					"type": "rollup",
+					"rollup": {
+						"type": "array",
+						"array": [
+							{
+								"type": "rich_text",
+								"rich_text": []
+							}
+						],
+						"function": "show_original"
+					}
+				},
+				"Bonus desc SWE (LB) 1": {
+					"id": "rgkP",
+					"type": "rollup",
+					"rollup": {
+						"type": "array",
+						"array": [
+							{
+								"type": "rich_text",
+								"rich_text": []
+							}
+						],
+						"function": "show_original"
+					}
+				},
+				"Founded year": {
+					"id": "s%3Deq",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Instant Withdrawals": {
+					"id": "s%5B%5Eo",
+					"type": "checkbox",
+					"checkbox": false
+				},
+				"Foundation year": {
+					"id": "sc%40%3F",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"R-Payments": {
+					"id": "snfL",
+					"type": "number",
+					"number": null
+				},
+				"Handball margin": {
+					"id": "tF%3Eu",
+					"type": "number",
+					"number": null
+				},
+				"Football countries": {
+					"id": "tKYA",
+					"type": "number",
+					"number": null
+				},
+				"Locale Language Code": {
+					"id": "tMT~",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "cl"
+					}
+				},
+				"History": {
+					"id": "t%5CQv",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Esport CS2 Margin": {
+					"id": "toqk",
+					"type": "number",
+					"number": null
+				},
+				"Cons (MC)": {
+					"id": "uF%7Dz",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Big Brother Brasil": {
+					"id": "uIY%3D",
+					"type": "select",
+					"select": null
+				},
+				"Логотип": {
+					"id": "uMd%7B",
+					"type": "files",
+					"files": [
+						{
+							"name": "Betfair logo.webp",
+							"type": "file",
+							"file": {
+								"url": "https://prod-files-secure.s3.us-west-2.amazonaws.com/cd6b61c3-db2a-4dc9-adbf-e9f70e7d3865/33bb5fcb-f235-4c9b-9786-c62fe1270cbf/Betfair_logo.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231214%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231214T075409Z&X-Amz-Expires=3600&X-Amz-Signature=bd40db68060b3042a5e07468d9d102e1dfe6f2390cee8b827a2c9bc52a0dcf14&X-Amz-SignedHeaders=host&x-id=GetObject",
+								"expiry_time": "2023-12-14T08:54:09.560Z"
+							}
+						}
+					]
+				},
+				"Списки Тест": {
+					"id": "upC%60",
+					"type": "relation",
+					"relation": [
+						{
+							"id": "b1721c6c-7a16-40e0-a899-777a3200dd0c"
+						},
+						{
+							"id": "622fe493-daac-475a-99bd-666f20d1dd52"
+						}
+					],
+					"has_more": false
+				},
+				"Pros RU Legalbet": {
+					"id": "utEg",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Bonus (Expire)": {
+					"id": "vaOJ",
+					"type": "date",
+					"date": null
+				},
+				"Bank ID": {
+					"id": "w%60PY",
+					"type": "select",
+					"select": null
+				},
+				"К-Line Оценка видов спорта": {
+					"id": "weNU",
+					"type": "number",
+					"number": null
+				},
+				"Оценка маржи": {
+					"id": "xZw~",
+					"type": "number",
+					"number": null
+				},
+				"Suggestions about this database": {
+					"id": "x_FX",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"URL": {
+					"id": "xdmf",
+					"type": "url",
+					"url": null
+				},
+				"R-OVRLSRC": {
+					"id": "xgF%5E",
+					"type": "formula",
+					"formula": {
+						"type": "number",
+						"number": 0
+					}
+				},
+				"Company name": {
+					"id": "xvUS",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Desc to translate (LB)": {
+					"id": "y%5Csy",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Списки Тест JSON": {
+					"id": "y%60m~",
+					"type": "formula",
+					"formula": {
+						"type": "string",
+						"string": "[{\"billet-list-part-icon\":\"legal-plus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[\"legal-notion-test\",\"glavnaya-main\"],\"billet-list-part-items\":[{\"billet-list-part-item-title\":\"Buen bono de bienvenida\"},{\"billet-list-part-item-title\":\"Uno de los mejores intercambios de apuestas\"},{\"billet-list-part-item-title\":\"SuperCuotas y Especiales\"}]},{\"billet-list-part-icon\":\"legal-minus\",\"billet-list-part-direction\":\"legal-column\",\"billet-list-part-feature\":[\"legal-notion-test\",\"glavnaya-main\"],\"billet-list-part-items\":[{\"billet-list-part-item-title\":\"No hay estadísticas previas al partido\"},{\"billet-list-part-item-title\":\"No acepta Webpay\"}]}]"
+					}
+				},
+				"Support": {
+					"id": "zLBP",
+					"type": "multi_select",
+					"multi_select": []
+				},
+				"Owner Company": {
+					"id": "zd%5Em",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"Screenshots": {
+					"id": "%7BBRg",
+					"type": "files",
+					"files": []
+				},
+				"Head company": {
+					"id": "%7BQ%40U",
+					"type": "rich_text",
+					"rich_text": []
+				},
+				"R-Apps": {
+					"id": "%7B~FF",
+					"type": "number",
+					"number": null
+				},
+				"Handball Legalbet Score (1 to 10)": {
+					"id": "%7CQFW",
+					"type": "number",
+					"number": null
+				},
+				"Created time": {
+					"id": "~%40u%3A",
+					"type": "created_time",
+					"created_time": "2023-11-30T12:21:00.000Z"
+				},
+				"FA Cup": {
+					"id": "~XuU",
+					"type": "select",
+					"select": null
+				},
+				"Swish": {
+					"id": "~uRC",
+					"type": "select",
+					"select": null
+				},
+				"": {
+					"id": "title",
+					"type": "title",
+					"title": [
+						{
+							"type": "text",
+							"text": {
+								"content": "Betfair",
+								"link": null
+							},
+							"annotations": {
+								"bold": false,
+								"italic": false,
+								"strikethrough": false,
+								"underline": false,
+								"code": false,
+								"color": "default"
+							},
+							"plain_text": "Betfair",
+							"href": null
+						}
+					]
+				}
+			},
+			"url": "https://www.notion.so/Betfair-bd16c6498080483d939eba225bb60344",
+			"public_url": null
+		}
+	],
+	"next_cursor": null,
+	"has_more": false,
+	"type": "page_or_database",
+	"page_or_database": {},
+	"request_id": "8934d53b-8450-49d7-b797-5f219b3eeaa7"
+}

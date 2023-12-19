@@ -5,4 +5,12 @@
 	font-weight: 400;
 	src: url( '../font/mc-icons/mc-icons.woff2' ) format( 'woff2' );
 }
+
+@font-face {
+	font-display: swap;
+	font-family: 'MC Icons2';
+	font-style: normal;
+	font-weight: 400;
+	src: url( '../font/mc-icons2/mc-icons.woff2' ) format( 'woff2' );
+} 
   
