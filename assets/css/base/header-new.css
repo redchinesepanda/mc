@@ -85,6 +85,11 @@
 		display: flex;
 	}
 
+	.legal-header .legal-header-control::before
+	{
+		content: '';
+	}
+
 
 	/* Position */
 
@@ -245,7 +250,7 @@
 
 	/* .legal-header-control */
 	
-	.legal-header-control::before
+	.legal-header .legal-header-control::before
 	{
 		/* background-image: url(https://match.center/wp-content/uploads/flags/pt.svg); */
 		background-repeat: no-repeat;
