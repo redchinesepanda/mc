@@ -61,7 +61,7 @@
     width: 153px;
 }
 
-.lang-switcher .lang-current .lang-title::before {
+.lang-switcher .lang-current .lang-title::after {
     width: 17px;
     height: 17px;
 }
@@ -199,8 +199,6 @@
     text-decoration: none;
 }
 
-.lang-switcher .lang-current .lang-title::before {
+.lang-switcher .lang-current .lang-title::after {
     content: '';
-    width: 17px;
-    height: 17px;
 }
