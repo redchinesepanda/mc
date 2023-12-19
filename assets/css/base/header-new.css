@@ -104,10 +104,10 @@
 		padding-left: 16px;
 	}
 
-	.legal-header-control {
+	/* .legal-header-control {
 		position: static;
 		margin-right: 58px;
-	}
+	} */
 
 	.legal-menu {
 		padding: 8px 16px;
@@ -187,10 +187,10 @@
 		margin-left: -16px;
 	}
 
-	.legal-header-control::after {
+	/* .legal-header-control::after {
 		position: absolute;
 		right: 16px;
-	}
+	} */
 
 	/* Width and Height */
 
