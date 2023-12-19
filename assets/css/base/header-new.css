@@ -267,7 +267,7 @@
 
 	/* .legal-header-control */
 	
-	.legal-header .legal-header-control::before
+	.legal-header .legal-header-control:not( .legal-active )::before
 	{
 		background-repeat: no-repeat;
 		background-position: center;
