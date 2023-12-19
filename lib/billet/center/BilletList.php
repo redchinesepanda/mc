@@ -92,12 +92,6 @@ class BilletList
 
         $lists = get_field( self::FIELD[ 'lists' ], $billet[ 'id' ] );
 
-        LegalDebug::debug( [
-            'function' => 'BilletList::get',
-
-            'lists' => $lists,
-        ] );
-
         $features = self::get_features( $billet );
 
         $result = [];
@@ -111,6 +105,12 @@ class BilletList
         {
             $result = self::filter_lists_feature_empty( $list );
         }
+
+        LegalDebug::debug( [
+            'function' => 'BilletList::get',
+
+            'features' => $features,
+        ] );
 
         // return self::parse_lists( $result, $billet );
         
