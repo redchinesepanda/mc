@@ -170,6 +170,12 @@
 	display: block;
 }
 
+.legal-menu .menu-item.legal-country > a::before
+{
+	display: inline-block;
+	content: '';
+}
+
 .legal-menu .menu-item {
 	display: flex;
 	cursor: pointer;
@@ -179,16 +185,16 @@
 	display: none;
 }
 
-.legal-menu .menu-item-has-children:after {
+.legal-menu .menu-item-has-children::after {
 	display: block;
 	content: '';
 }
 
-.legal-menu .menu-item-has-children:after {
+.legal-menu .menu-item-has-children::after {
 	cursor: pointer;
 }
 
-.legal-menu .menu-item-has-children.legal-active:after {
+.legal-menu .menu-item-has-children.legal-active::after {
 	transform: rotate(180deg);
 }
 
@@ -231,7 +237,7 @@
 	padding: 10px 10px 10px 53px;
 }
 
-.legal-menu .menu-item-has-children:after {
+.legal-menu .menu-item-has-children::after {
 	padding: 10px 0px;
 }
 
@@ -259,7 +265,7 @@
 	min-height: 28px;
 }
 
-.legal-menu .menu-item-has-children:after {
+.legal-menu .menu-item-has-children::after {
 	width: 28px;
 	/* min-height: 48px; */
 }
@@ -285,34 +291,34 @@
 	border-width: 1px;
 }
 
-.legal-menu .menu-item-has-children:hover:after {
+.legal-menu .menu-item-has-children:hover::after {
 	transform: rotate(180deg);
 }
-.legal-menu .menu-item-has-children:after {
+.legal-menu .menu-item-has-children::after {
 	background-image: url( '../../img/base/header/item-open.svg' );
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: auto;
 }
 
-.legal-menu .menu-item.legal-country > a {
+.legal-menu .menu-item.legal-country > a::before {
 	background-position: left 10px center;
 }
 
-.legal-menu .menu-item.legal-country .menu-item a {
+.legal-menu .menu-item.legal-country .menu-item a::before {
 	background-position: left 17px center;
 }
 
-.legal-menu .menu-item.legal-country > a {
+.legal-menu .menu-item.legal-country > a::before {
 	background-repeat: no-repeat;
 }
 
-.legal-menu > .menu-item:not( :last-child ).legal-country > a {
+.legal-menu > .menu-item:not( :last-child ).legal-country > a::before {
 	background-size: 18px 18px;
 }
 
-.legal-menu > .menu-item:last-child > a,
-.legal-menu > .menu-item:last-child .menu-item.legal-country > a {
+.legal-menu > .menu-item:last-child > a::before,
+.legal-menu > .menu-item:last-child .menu-item.legal-country > a::before {
 	background-size: 23px 23px;
 }
 

@@ -136,7 +136,7 @@ class BaseHeader
 		{
 			if ( str_contains( $style_item[ 'class' ], 'legal-country' ) )
 			{
-				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			} 
 		}
 
