@@ -132,6 +132,8 @@ class BaseHeader
 			return '';
 		}
 
+		$code = WPMLMain::current_language();
+
 		foreach ( $style_items as $style_item )
 		{
 			if ( str_contains( $style_item[ 'class' ], 'legal-country' ) )
@@ -139,11 +141,10 @@ class BaseHeader
 				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
 
-			LegalDebug::debug( [
-				'function' => 'inline_style',
-
-				'style_item' => $style_item,
-			] );
+			if ( $style_item[ 'url-part' ] == $code )
+			{
+				$style[] = '';
+			}
 		}
 
 		return implode( ' ', $style );
@@ -192,10 +193,6 @@ class BaseHeader
 		$code = WPMLMain::current_language();
 
 		$search[ 'current' ] = $languages_all[ $code ];
-
-		LegalDebug::debug( [
-			$search[ 'current' ]
-		] );
 
 		unset( $languages_all[ $code ] );
 
