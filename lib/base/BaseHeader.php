@@ -143,7 +143,7 @@ class BaseHeader
 
 			if ( $style_item[ 'url-part' ] == $code )
 			{
-				$style[] = '';
+				$style[] = '.legal-header .legal-header-control::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
 		}
 
