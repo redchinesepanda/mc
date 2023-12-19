@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active : 'legal-active',
 
 		hide : 'legal-hide',
-	}; 
+	};
 
     const elements = {
 		menu : {
