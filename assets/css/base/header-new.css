@@ -87,9 +87,10 @@
 
 	.legal-header .legal-header-control::before
 	{
+		display: inline-block;
 		content: '';
-	}
 
+	}
 
 	/* Position */
 
