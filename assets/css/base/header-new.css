@@ -399,7 +399,8 @@
 
 	.legal-header-control:not( .legal-active )::after {
 		/* content: '\f106'; */
-		content: '\F108';
+		/* content: '\F108'; */
+		content: '\F10A';
 	}
 
 	.legal-header-control.legal-active::after {
