@@ -232,10 +232,6 @@ class TemplateMain
 
     public static function register_dequeue()
     {
-        LegalDebug::debug( [
-            self::check_new(),
-        ] );
-
         if ( self::check_new() )
         {
             $handler = new self();
