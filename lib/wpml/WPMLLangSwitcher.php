@@ -159,6 +159,8 @@ class WPMLLangSwitcher
                 'suffix' => __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN ),
     
                 'class' => 'legal-new',
+
+                'href' => LegalMain::LEGAL_ROOT . '/choose-your-country/',
             ];
         }
 
@@ -166,6 +168,8 @@ class WPMLLangSwitcher
             'suffix' => '',
 
             'class' => '',
+
+            'href' => '#',
         ];
     }
 

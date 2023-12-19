@@ -2,7 +2,7 @@
     <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
         <div class="lang-title"><?php echo $args[ 'active' ][ 'title' ]; ?></div>
         <?php if ( $args[ 'active' ][ 'suffix' ] ) : ?>
-            <div class="lang-title-suffix"><?php echo $args[ 'active' ][ 'suffix' ]; ?></div>
+            <a class="lang-title-suffix" href="<?php echo $args[ 'active' ][ 'href' ]; ?>"><?php echo $args[ 'active' ][ 'suffix' ]; ?></a>
         <?php endif; ?>
     </div>
     <div id="lang-menu-1" class="menu-avaible">
