@@ -63,21 +63,24 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
-        LegalDebug::debug( [
-            'function' => 'BilletList::filter_lists_feature_has',
+        // LegalDebug::debug( [
+        //     'function' => 'BilletList::filter_lists_feature_has',
 
-            'features' => $features,
-        ] );
+        //     'features' => $features,
+        // ] );
 
         return array_filter( $lists, function( $list ) use ( $features )
         {
-            LegalDebug::debug( [
-                'function' => 'BilletList::array_filter',
+            // LegalDebug::debug( [
+            //     'function' => 'BilletList::array_filter',
     
-                'list' => $list,
+            //     'list' => $list,
+            // ] );
 
-                'features' => $features,
-            ] );
+            if ( empty( $list[ self::LIST[ 'feature' ] ] ) )
+            {
+                return false;
+            }
 
             return !empty(
                 array_intersect(
