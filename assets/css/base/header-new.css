@@ -146,7 +146,8 @@
 	}
 
 	.legal-header .legal-menu > .menu-item:last-child > .item-title {
-		padding: 16px 24px 16px 33px;
+		/* padding: 16px 24px 16px 33px; */
+		padding: 16px 24px 16px 0px;
 	}
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
@@ -667,11 +668,30 @@
 }
 
 .legal-menu .legal-country > .item-title::before {
+    display: inline-block;
+}
+
+.legal-menu .legal-country > .item-title::before {
+    border-radius: 50%;
+    border: #000 solid 1px;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center left;
+}
+
+.legal-menu .legal-country > .item-title::before {
+    width: 23px;
+    height: 23px;
+}
+
+.legal-menu .legal-country > .item-title::before {
 	content: '';
-	display: inline-block;
-	width: 23px;
-	height: 23px;
-  }
+	vertical-align: middle;
+}
+
+.legal-menu .legal-country > .item-title::before {
+    margin-right: 8px;
+}
 
 .legal-menu .sub-menu .menu-item.menu-item-new .item-title::after {
     position: absolute;
