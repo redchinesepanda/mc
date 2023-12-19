@@ -170,6 +170,13 @@
 	display: block;
 }
 
+.legal-menu .menu-item.legal-country > .item-title
+{
+	display: flex;
+	align-items: center;
+	gap: 13px;
+}
+
 .legal-menu .menu-item.legal-country > .item-title::before
 {
 	display: inline-block;
@@ -221,10 +228,10 @@
 	margin-right: auto;
 }
 
-.legal-menu .menu-item.legal-country > .item-title::before
+/* .legal-menu .menu-item.legal-country > .item-title::before
 {
 	vertical-align: -6px;
-}
+} */
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
 	padding: 10px;
