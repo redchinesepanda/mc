@@ -168,6 +168,10 @@
 	.legal-footer .footer-text {
 		padding-top: 5px;
 	}
+
+	.legal-footer .footer-text p {
+		padding: 0px;
+	}
 	
 	.legal-footer .footer-text p:not(:last-child) {
 		margin: 4px 0 0 0;

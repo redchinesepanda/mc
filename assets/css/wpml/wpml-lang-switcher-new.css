@@ -3,7 +3,7 @@
 .lang-switcher .lang-item {
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 14px;
 }
 
 .lang-switcher .menu-avaible {
@@ -107,6 +107,10 @@
     padding: 0px 40px 0px 0;
 }
 
+.lang-switcher .lang-current .lang-title-suffix {
+    padding-left: 14px;
+}
+
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
         padding: 18px;
@@ -135,7 +139,7 @@
     background-image: url('img/en.svg');
 }
 
-.lang-switcher .lang-image {
+/* .lang-switcher .lang-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -150,6 +154,11 @@
     border-right: 1px solid #6a6969;
     border-radius: 0;
     pointer-events: none;
+} */
+
+.lang-switcher .lang-current .lang-title-suffix {
+    padding-left: 14px;
+    border-left: 1px solid #6a6969;
 }
 
 .lang-switcher .menu-avaible {
