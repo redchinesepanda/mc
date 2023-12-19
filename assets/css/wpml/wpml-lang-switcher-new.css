@@ -139,7 +139,7 @@
     background-image: url('img/en.svg');
 }
 
-/* .lang-switcher .lang-image {
+.lang-switcher .lang-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -154,7 +154,7 @@
     border-right: 1px solid #6a6969;
     border-radius: 0;
     pointer-events: none;
-} */
+}
 
 .lang-switcher .lang-current .lang-title-suffix {
     padding-left: 14px;
