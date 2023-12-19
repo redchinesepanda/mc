@@ -134,6 +134,8 @@ class BaseHeader
 
 		$code = WPMLMain::current_language();
 
+		$new = TemplateMain::check_new();
+
 		foreach ( $style_items as $style_item )
 		{
 			if ( str_contains( $style_item[ 'class' ], 'legal-country' ) )
@@ -141,7 +143,7 @@ class BaseHeader
 				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
 
-			if ( $style_item[ 'url-part' ] == $code )
+			if ( $new && $style_item[ 'url-part' ] == $code )
 			{
 				$style[] = '.legal-header .legal-header-control::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
