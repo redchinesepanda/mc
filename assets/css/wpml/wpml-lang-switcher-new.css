@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    column-gap: 0.5rem;
+    column-gap: 28px;
 }
 
 .lang-switcher .menu-avaible {
@@ -72,7 +72,7 @@
 
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
-        width: 960px;
+        width: 877px;
         box-sizing: content-box;
     }
 }
