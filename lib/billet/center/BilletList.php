@@ -63,7 +63,22 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
-        return array_filter( $lists, function( $list ) use ( $features ) {
+        LegalDebug::debug( [
+            'function' => 'BilletList::filter_lists_feature_has',
+
+            'features' => $features,
+        ] );
+
+        return array_filter( $lists, function( $list ) use ( $features )
+        {
+            LegalDebug::debug( [
+                'function' => 'BilletList::array_filter',
+    
+                'list' => $list,
+
+                'features' => $features,
+            ] );
+
             return !empty(
                 array_intersect(
                     $list[ self::LIST[ 'feature' ] ],
@@ -109,7 +124,7 @@ class BilletList
 
         if ( empty( $result ) )
         {
-            $result = self::filter_lists_feature_empty( $list );
+            $result = self::filter_lists_feature_empty( $lists );
         }
 
         // return self::parse_lists( $result, $billet );
