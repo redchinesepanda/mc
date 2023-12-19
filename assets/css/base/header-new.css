@@ -247,6 +247,7 @@
 	
 	.legal-header-control.legal-active {
 		background-image: none;
+		border: none;
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu {
