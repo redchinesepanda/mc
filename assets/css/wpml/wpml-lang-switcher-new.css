@@ -197,7 +197,7 @@
     line-height: 28px;
     color: #FFFFFF;
     text-decoration: none;
-}
+} 
 
 .lang-switcher .lang-current .lang-title::after {
     content: '';
