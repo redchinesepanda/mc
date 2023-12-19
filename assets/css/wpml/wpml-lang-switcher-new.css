@@ -25,7 +25,8 @@
 
 .lang-switcher .lang-current .lang-title {
     display: flex;
-    column-gap: 1px;
+    align-items: center;
+    column-gap: 8px;
 }
 
 .lang-switcher .lang-item .lang-image {
@@ -160,6 +161,10 @@
     border-right: 1px solid #6a6969;
     border-radius: 0;
     pointer-events: none;
+}
+
+.lang-switcher .lang-current .lang-title::after {
+    background-size: 17px;
 }
 
 .lang-switcher .lang-current .lang-title-suffix {
