@@ -25,13 +25,8 @@
 
 .lang-switcher .lang-current .lang-title {
     display: flex;
-    column-gap: 1px;
-}
-
-.lang-switcher .lang-current .lang-title {
-    content: '';
-    width: 17px;
-    height: 17px;
+    align-items: center;
+    column-gap: 8px;
 }
 
 .lang-switcher .lang-item .lang-image {
@@ -65,6 +60,11 @@
 
 .lang-switcher .menu-avaible .lang-item {
     width: 153px;
+}
+
+.lang-switcher .lang-current .lang-title::after {
+    width: 17px;
+    height: 17px;
 }
 
 .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
@@ -163,8 +163,11 @@
     pointer-events: none;
 }
 
+.lang-switcher .lang-current .lang-title::after {
+    background-size: 17px;
+}
+
 .lang-switcher .lang-current .lang-title-suffix {
-    padding-left: 14px;
     border-left: 1px solid #6a6969;
 }
 
@@ -190,7 +193,8 @@
 
 /* Language Typography */
 
-.lang-switcher .lang-item {
+.lang-switcher .lang-item,
+.lang-switcher .lang-current .lang-title-suffix {
     font-family: "Golos Text";
     font-size: 14px;
     font-style: normal;
@@ -198,4 +202,8 @@
     line-height: 28px;
     color: #FFFFFF;
     text-decoration: none;
-}
+} 
+
+.lang-switcher .lang-current .lang-title::after {
+    content: '';
+} 
