@@ -77,6 +77,14 @@ class TemplateMain
         ...self::DEQUEUE_GUTENBERG,
     ];
 
+    public static function dequeue_style()
+    {
+        if ( self::check_new() )
+        {
+            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
+        }
+    }
+
     const CSS = [
         'legal-template-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main.css',
@@ -123,7 +131,7 @@ class TemplateMain
     {
         if ( self::check() )
         {
-            if ( TemplateMain::check_new() )
+            if ( self::check_new() )
             {
                 ToolEnqueue::register_style( self::CSS_NEW );
             }
@@ -157,14 +165,6 @@ class TemplateMain
 		if ( !self::check() )
         {
             ToolEnqueue::register_script( self::JS );
-        }
-    }
-
-    public static function dequeue_style()
-    {
-        if ( self::check_new() )
-        {
-            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
         }
     }
 
@@ -232,6 +232,10 @@ class TemplateMain
 
     public static function register_dequeue()
     {
+        LegalDebug::debug( [
+            self::check_new(),
+        ] );
+        
         if ( self::check_new() )
         {
             $handler = new self();
