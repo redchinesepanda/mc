@@ -146,7 +146,6 @@
 	}
 
 	.legal-header .legal-menu > .menu-item:last-child > .item-title {
-		/* padding: 16px 24px 16px 33px; */
 		padding: 16px 24px 16px 0px;
 	}
 
@@ -188,8 +187,6 @@
 	}
 
 	.legal-header-control {
-	/* 	width: 78px;
-		height: 32px; */
 		width: 24px;
 		height: 24px;
 	}
@@ -815,11 +812,6 @@
     border-radius: 0;
 	background-color: transparent;
 }
-
-/* .legal-menu > .menu-item:last-child .menu-item .item-title {
-	background-position: left center;
-	background-repeat: no-repeat;
-} */
 
 .legal-menu > .menu-item:last-child > .item-title {
 	background-repeat: no-repeat;
