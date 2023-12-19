@@ -249,8 +249,8 @@
 
 .legal-menu .menu-item.legal-country > .item-title::before
 {
-	width: 24px;
-	height: 24px;
+	width: 23px;
+	height: 23px;
 }
 
 .legal-menu .menu-item:not( .legal-country-wide ) > .sub-menu {
@@ -308,7 +308,8 @@
 }
 
 .legal-menu .menu-item.legal-country > a::before {
-	background-position: left 10px center; 
+	/* background-position: left 10px center;  */
+	background-position: left center; 
 }
 
 .legal-menu .menu-item.legal-country .menu-item a::before {
