@@ -41,7 +41,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         switcher.querySelectorAll( selectors.title ).forEach( langPrepare );
     }
 
-    document.querySelectorAll( selectors.switcher ).forEach( spoilerPrepare );
+    document.querySelectorAll( selectors.switcher ).forEach( spoilerPrepare ); 
 
     function toggle( event ) 
     {
