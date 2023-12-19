@@ -652,7 +652,7 @@
 	content: '\f101';
     font-family: var(--legal-font-icons);
     font-size: 26px;
-    line-height: 11px;
+    line-height: 8px;
 }
 
 .legal-menu .item-title[href="#"] {
@@ -739,6 +739,10 @@
 .legal-menu .menu-item.legal-country-all > .item-title::before { 
 	position: absolute;
 	left: 0;
+}
+
+.legal-menu .legal-cut-control {
+	padding: 8px 0;
 }
 
 .legal-menu .legal-cut-control::after {
