@@ -170,7 +170,7 @@
 	display: block;
 }
 
-.legal-menu .menu-item.legal-country > a::before
+.legal-menu .menu-item.legal-country > .item-title::before
 {
 	display: inline-block;
 	content: '';
@@ -245,6 +245,12 @@
 
 .legal-header {
 	max-width: 1080px;
+}
+
+.legal-menu .menu-item.legal-country > .item-title::before
+{
+	width: 24px;
+	height: 24px;
 }
 
 .legal-menu .menu-item:not( .legal-country-wide ) > .sub-menu {
