@@ -85,6 +85,12 @@
 		display: flex;
 	}
 
+	.legal-header .legal-header-control
+	{
+		display: flex;
+		gap: 18px;
+	}
+
 	.legal-header .legal-header-control::before
 	{
 		display: inline-block;
