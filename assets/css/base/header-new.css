@@ -649,10 +649,13 @@
 }
 
 .legal-menu .legal-cut-control::after {
-	content: '\f101';
+	/* content: '\f101'; */
+	content: '\F103';
     font-family: var(--legal-font-icons);
-    font-size: 26px;
-    line-height: 8px;
+    /* font-size: 26px; */
+    font-size: 1em;
+    /* line-height: 8px; */
+    line-height: 1em;
 }
 
 .legal-menu .item-title[href="#"] {
