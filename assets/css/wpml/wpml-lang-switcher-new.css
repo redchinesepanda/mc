@@ -28,6 +28,12 @@
     column-gap: 1px;
 }
 
+.lang-switcher .lang-current .lang-title {
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+
 .lang-switcher .lang-item .lang-image {
     display: flex;
 }
