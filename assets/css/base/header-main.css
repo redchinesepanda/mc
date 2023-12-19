@@ -302,7 +302,7 @@
 }
 
 .legal-menu .menu-item.legal-country > a::before {
-	background-position: left 10px center;
+	background-position: left 10px center; 
 }
 
 .legal-menu .menu-item.legal-country .menu-item a::before {
