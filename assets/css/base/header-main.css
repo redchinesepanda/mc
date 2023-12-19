@@ -223,7 +223,7 @@
 
 .legal-menu .menu-item.legal-country > .item-title::before
 {
-	vertical-align: middle;
+	vertical-align: -7px;
 }
 
 .legal-menu > .menu-item:not( .legal-country ) > a {
