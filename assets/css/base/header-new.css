@@ -365,15 +365,21 @@
 	.legal-menu .legal-cut-control::before {
 		font-size: 16px;
 	}
+	
 	.legal-header-control::after {
-		content: '\f106';
-		line-height: 23px;
-		font-size: 26px;
 		font-family: var(--legal-font-icons);
+		line-height: 24px;
+		font-size: 24px;
+	}
+
+	.legal-header-control:not( .legal-active )::after {
+		/* content: '\f106'; */
+		content: '\F108';
 	}
 
 	.legal-header-control.legal-active::after {
-		content: '\f105';
+		/* content: '\f105'; */
+		content: '\F107';
 	}
 	
 }
