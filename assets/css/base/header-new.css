@@ -265,12 +265,12 @@
 	
 	.legal-header .legal-header-control::before
 	{
-		/* background-image: url(https://match.center/wp-content/uploads/flags/pt.svg); */
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 24px;
 		border-radius: 50%;
 		border: 1px solid #000000;
+		box-sizing: border-box;
 	}
 	
 	.legal-header-control.legal-active {
