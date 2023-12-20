@@ -133,7 +133,7 @@
 	}
 	
 
-	.legal-menu .menu-item:hover > .sub-menu {
+	.legal-menu .menu-item:not( :last-child ):hover > .sub-menu {
         padding: 28px 40px;
 	}
 
