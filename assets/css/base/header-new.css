@@ -928,7 +928,7 @@
     font-size: 14px;
 }
 
-.legal-menu .legal-country:not(.legal-country-all):not(.legal-has-href) > .item-title::before {
+.legal-menu .legal-country:not(.legal-has-href) > .item-title::before {
 	content: '';
 	vertical-align: middle;
 }
