@@ -286,7 +286,7 @@
 	order: 0;
 	display: flex;
 	flex-direction: column;
-	flex-basis: 224px;
+	/* flex-basis: 224px; */
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-new a::after {
@@ -449,7 +449,8 @@
 } */
 
 .legal-menu > .menu-item:last-child > .sub-menu .menu-item {
-	width: 260px;
+	/* width: 260px; */
+	min-width: 152px;
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu {
