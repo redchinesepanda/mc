@@ -122,17 +122,17 @@ class BaseHeader
 		];
 	}
 
-	public static function check_url_part( $item )
-    {
-        return $item[ 'url-part' ] != 'all';
-    }
+	// public static function check_url_part( $item )
+    // {
+    //     return $item[ 'url-part' ] != 'all';
+    // }
 
-    public static function filter_style_items( $items )
-    {
-        $handler = new self();
+    // public static function filter_style_items( $items )
+    // {
+    //     $handler = new self();
 
-        return array_filter( $items, [ $handler, 'check_url_part' ] );
-    }
+    //     return array_filter( $items, [ $handler, 'check_url_part' ] );
+    // }
 
 	public static function inline_style()
 	{
@@ -148,10 +148,12 @@ class BaseHeader
 
 		$new = TemplateMain::check_new();
 
-		// if ( $new )
-		// {
-		// 	$style_items = self::filter_style_items( $style_items );
-		// }
+		if ( $new )
+		{
+			// $style_items = self::filter_style_items( $style_items );
+
+			$style_items[ count( $fields ) - 1 ][ 'url-part' ] = 'all-new';
+		}
 
 		foreach ( $style_items as $style_item )
 		{
