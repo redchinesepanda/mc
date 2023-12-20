@@ -174,9 +174,19 @@
 		background-position: left 10px center;
 	}
 
-	.legal-menu > .menu-item:last-child > .item-title::before,
+	/* .legal-menu > .menu-item:last-child > .item-title::before,
 	.legal-menu > .menu-item:last-child .menu-item > .item-title::before {
 		background-size: 23px 23px;
+	} */
+
+	.legal-menu > .legal-country:last-child > .item-title::before
+	{
+		background-size: 24px 24px;
+	}
+
+	.legal-menu .sub-menu .legal-country:last-child > .item-title::before
+	{
+		background-size: 24px 24px;
 	}
 
 	/* Typography */
