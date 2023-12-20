@@ -19,9 +19,9 @@
 		display: none;
 	}
 
-	.legal-menu .menu-item > .item-title {
+	/* .legal-menu .menu-item > .item-title {
 		flex-grow: 1;
-	}
+	} */
 
 	.legal-menu > .menu-item:last-child > .item-title::after {
 		content: attr( data-name-code );
@@ -463,10 +463,10 @@
 	min-width: 152px;
 }
 
-.legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu {
+/* .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu {
     width: fit-content;
     height: auto;
-}
+} */
 
 .legal-menu .menu-item-has-children:after {
 	width: auto;
