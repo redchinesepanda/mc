@@ -323,7 +323,7 @@
 
 .legal-menu > .menu-item:last-child > .sub-menu {
 	gap: 0 28px;
-	flex-wrap: nowrap;
+	/* flex-wrap: nowrap; */
 }
 
 .legal-menu .menu-group .menu-item-has-children:after {
