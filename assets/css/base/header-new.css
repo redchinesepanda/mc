@@ -285,6 +285,11 @@
 	flex-basis: 240px;
 }
 
+.legal-menu .menu-item-has-children .legal-country
+{
+	flex-basis: 152px;
+}
+
 .legal-menu .menu-item > .sub-menu {
 	display: none;
 }
