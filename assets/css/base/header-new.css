@@ -554,7 +554,7 @@
 
 .legal-menu .sub-menu .legal-country > .item-title,
 .legal-menu > .menu-item-has-children .menu-item-has-children > .item-title,
-.legal-menu > .menu-item-has-children .menu-item-has-children .sub-menu > .menu-item > .item-title,
+.legal-menu > .menu-item-has-children .menu-item-has-children .sub-menu > .menu-item > .item-title
 {
 	font-family: var( --legal-font-primary );
 	font-size: 14px;
