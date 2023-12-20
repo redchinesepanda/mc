@@ -503,11 +503,13 @@
 	background-repeat: no-repeat;
 }
 
-.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
-    border-radius: 50%;
-    border: #000 solid 1px;
+.legal-menu .legal-country:not(.legal-country-all) > .item-title::before
+{
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+	box-sizing: border-box;
 }
 
 .legal-menu .legal-cut-control::after {
@@ -515,7 +517,7 @@
 }
 
 .legal-menu .legal-cut-control.legal-active::after {
-	transform: rotate(180deg);
+	transform: rotate( 180deg );
 }
 
 /* Typography */
