@@ -88,7 +88,14 @@
 		width: auto;
 	}
 
-	.legal-menu .legal-country > .item-title::before {
+	.legal-menu > .legal-country:last-child > .item-title::before
+	{
+		width: 24px;
+		height: 24px;
+	}
+
+	.legal-menu .sub-menu .legal-country > .item-title::before
+	{
 		width: 18px;
 		height: 18px;
 	}
