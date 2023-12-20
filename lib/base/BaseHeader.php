@@ -148,10 +148,10 @@ class BaseHeader
 
 		$new = TemplateMain::check_new();
 
-		if ( $new )
-		{
-			$style_items = self::filter_style_items( $style_items );
-		}
+		// if ( $new )
+		// {
+		// 	$style_items = self::filter_style_items( $style_items );
+		// }
 
 		foreach ( $style_items as $style_item )
 		{
