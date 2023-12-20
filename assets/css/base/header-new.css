@@ -280,7 +280,7 @@
 }
 
 .legal-menu .menu-item > .sub-menu {
-	/* display: none; */
+	display: none;
 }
 
 .legal-menu .menu-group {
