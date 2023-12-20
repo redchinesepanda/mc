@@ -364,7 +364,8 @@
 	padding: 0px;
 }
 
-.legal-menu > .menu-item-has-children > .sub-menu > .menu-item {
+.legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item
+{
 	padding: 10px 0px;
 }
 
