@@ -363,9 +363,9 @@
     position: relative;
 }
 
-.legal-menu .menu-item {
+/* .legal-menu .menu-item {
 	padding: 0px;
-}
+} */
 
 .legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
 {
