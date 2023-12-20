@@ -30,7 +30,7 @@
 	.legal-menu .menu-item:hover > .sub-menu {
         display: flex;
         flex-wrap: wrap;
-        align-content: flex-start;
+        /* align-content: flex-start; */
         gap: 28px 32px; 
 	}
 
