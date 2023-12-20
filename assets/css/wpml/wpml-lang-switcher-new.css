@@ -180,13 +180,15 @@
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible .lang-item .lang-title:hover {
         font-weight: 600;
-        text-decoration: solid underline #fff 2px;
+        /* text-decoration: solid underline #fff 2px; */
+        text-shadow: 0 0 0.35px #fff, 0 0 0.35px #e7e7e7;
         text-underline-offset: 5px;
     }
     
     .lang-switcher .lang-current .lang-title:hover {
         font-weight: 600;
-        text-decoration: solid underline #fff 2px;
+        /* text-decoration: solid underline #fff 2px; */
+        text-shadow: 0 0 0.35px #fff, 0 0 0.35px #e7e7e7;
         text-underline-offset: 5px;
     }
 }
