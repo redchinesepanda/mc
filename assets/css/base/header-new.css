@@ -556,8 +556,18 @@
 .legal-menu > .menu-item-has-children .menu-item-has-children .sub-menu > .menu-item > .item-title
 {
 	font-size: 14px;
-	font-weight: 400;
 	line-height: 20px;
+}
+
+.legal-menu .sub-menu .legal-country > .item-title,
+.legal-menu > .menu-item-has-children .menu-item-has-children > .item-title
+{
+	font-weight: 400;
+}
+
+.legal-menu > .menu-item-has-children .menu-item-has-children .sub-menu > .menu-item > .item-title
+{
+	font-weight: 600;
 }
 
 .legal-menu > .menu-item-has-children:not( .legal-country ) .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title,
