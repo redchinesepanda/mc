@@ -761,7 +761,8 @@
 }
 
 .legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item.legal-country-all > .item-title {
-	padding: 10px 10px 10px 34px;
+	/* padding: 10px 10px 10px 34px; */
+	padding: 10px;
 }
 
 .legal-menu .menu-item-has-children:after {
@@ -777,10 +778,10 @@
 	position: relative;
 }
 
-.legal-menu .menu-item.legal-country-all > .item-title::before { 
+/* .legal-menu .menu-item.legal-country-all > .item-title::before { 
 	position: absolute;
 	left: 0;
-}
+} */
 
 .legal-menu .legal-cut-control {
 	padding: 6px 0;
