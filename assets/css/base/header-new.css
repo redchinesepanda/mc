@@ -629,8 +629,15 @@
 	display: none;
 }
 
-.legal-menu a {
+/* .legal-menu a {
 	display: inline;
+} */
+
+.legal-menu .legal-country .item-title
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .legal-menu .menu-item {
