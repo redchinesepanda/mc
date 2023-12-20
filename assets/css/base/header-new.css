@@ -274,9 +274,14 @@
 	gap: 8px; 
 }
 
-.legal-menu .menu-item {
+.legal-menu .menu-item
+{
 	display: flex;
 	cursor: default;
+}
+
+.legal-menu .menu-item-has-children .menu-item:not( .legal-country )
+{
 	flex-basis: 240px;
 }
 
