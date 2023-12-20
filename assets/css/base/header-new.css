@@ -769,7 +769,7 @@
 
 .legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item.legal-country-all > .item-title {
 	/* padding: 10px 10px 10px 34px; */
-	padding: 10px;
+	padding: 10px 0px;
 }
 
 .legal-menu .menu-item-has-children:after {
