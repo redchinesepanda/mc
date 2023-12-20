@@ -575,6 +575,11 @@
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
 
+	.legal-menu .sub-menu .menu-item .item-title:hover::before
+	{
+		text-decoration: unset;
+	}
+
 	.legal-menu .menu-item.legal-country-all > .item-title::before { 
 		font-size: 24px;
 	}
