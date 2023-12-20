@@ -757,9 +757,9 @@ class BaseHeader
 				'img' => [
 					'src' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
 
-					'width' => 91,
+					'width' => 120,
 
-					'height' => 45,
+					'height' => 48,
 
 					'alt' => 'Match.Center',
 				],
