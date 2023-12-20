@@ -287,9 +287,9 @@
 .legal-menu .menu-group {
 	order: 0;
 	display: flex;
-	/* flex-direction: column; */
 	flex-basis: 240px;
 	flex-wrap: wrap;
+	align-content: start;
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-new a::after {
