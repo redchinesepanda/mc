@@ -1,9 +1,8 @@
-.legal-menu * {
+/* .legal-menu * {
     box-sizing: border-box;
-}
+} */
 
-
-@media screen and ( max-width: var( --width-mobile-end ) )
+@media screen and ( --mobile )
 {
 	/* Display */
 
@@ -411,7 +410,7 @@
 	
 }
 
-@media screen and ( min-width: var( --width-desktop-start ) )
+@media screen and ( --desktop )
 {
 	/* Display */
 

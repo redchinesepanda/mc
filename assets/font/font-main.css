@@ -6,3 +6,6 @@
 	--width-desktop-start: 768px;
 	--width-mobile-end: 767px;
 }
+
+@custom-media --desktop ( min-width: 768px );
+@custom-media --mobile ( max-width: 767px );
