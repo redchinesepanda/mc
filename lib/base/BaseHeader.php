@@ -122,6 +122,18 @@ class BaseHeader
 		];
 	}
 
+	public static function check_url_part( $item )
+    {
+        return $style_item[ 'url-part' ] != 'all';
+    }
+
+    public static function filter_style_items( $items )
+    {
+        $handler = new self();
+
+        return array_filter( $items, [ $handler, 'check_url_part' ] );
+    }
+
 	public static function inline_style()
 	{
 		$style = [];
@@ -135,6 +147,11 @@ class BaseHeader
 		$code = WPMLMain::current_language();
 
 		$new = TemplateMain::check_new();
+
+		if ( $new )
+		{
+			$style_items = self::filter_style_items( $style_items );
+		}
 
 		foreach ( $style_items as $style_item )
 		{
