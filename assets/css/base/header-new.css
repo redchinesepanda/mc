@@ -933,14 +933,13 @@
 	vertical-align: middle;
 }
 
-.legal-menu .menu-item.legal-country-all > .item-title::before
+/* .legal-menu .menu-item.legal-country-all > .item-title::before
 {
-	font-family: var(--legal-font-icons);
-	/* content: '\f103'; */
+	font-family: var(--legal-font-icons);\
 	content: '\F105';
 	font-size: 18px;
 	line-height: 18px;
-}
+} */
 
 /* Other */ 
 
