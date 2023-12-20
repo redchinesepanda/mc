@@ -152,7 +152,7 @@ class BaseHeader
 		{
 			// $style_items = self::filter_style_items( $style_items );
 
-			$style_items[ count( $fields ) - 1 ][ 'url-part' ] = 'all-new';
+			$style_items[ count( $style_items ) - 1 ][ 'url-part' ] = 'all-new';
 		}
 
 		foreach ( $style_items as $style_item )
