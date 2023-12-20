@@ -372,7 +372,7 @@
 	padding: 10px 0px;
 }
 
-.legal-menu > .menu-item-has-children:not( .legal-country ) > .menu-group > .menu-item-has-children > .sub-menu > .menu-item
+.legal-menu > .menu-item-has-children .menu-item-has-children .sub-menu > .menu-item > .item-title
 {
 	padding: 8px 0px;
 }
