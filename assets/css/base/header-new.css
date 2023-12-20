@@ -280,7 +280,7 @@
 }
 
 .legal-menu .menu-item > .sub-menu {
-	display: none;
+	/* display: none; */
 }
 
 .legal-menu .menu-group {
@@ -595,18 +595,18 @@
     line-height: 22px;
 }
 
-.legal-menu .sub-menu > .menu-group > .menu-item-has-children .menu-item.menu-item-new .item-title::after {
+/* .legal-menu .sub-menu > .menu-group > .menu-item-has-children .menu-item.menu-item-new .item-title::after {
     line-height: 19px;
-}
+} */
 
-.legal-menu .sub-menu .menu-item.menu-item-has-children > .item-title {
+/* .legal-menu .sub-menu .menu-item.menu-item-has-children > .item-title {
     color: #939393;
     font-size: 14px;
-}
+} */
 
-.legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu .item-title {
+/* .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu .item-title {
     font-size: 14px;
-}
+} */
 
 .legal-menu .legal-country:not(.legal-has-href) > .item-title::before {
 	content: '';
