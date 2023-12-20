@@ -405,9 +405,9 @@
 	padding: 0;
 }
 
-.legal-menu .menu-item:not( .legal-menu > .menu-item) > .item-title {
+/* .legal-menu .menu-item:not( .legal-menu > .menu-item) > .item-title {
 	padding: 0px;
-}
+} */
 
 .legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item > .item-title {
 	/* padding: 10px 10px 10px 0px; */
