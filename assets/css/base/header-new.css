@@ -542,7 +542,7 @@
 	text-decoration: none;
 }
 
-.legal-menu > .menu-item-has-children:not( .legal-country ) .menu-item:not( .menu-item-has-children ) :not( .sub-menu ) > .item-title
+.legal-menu > .menu-item-has-children:not( .legal-country ) .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title
 {
 	color: var(--Base-base-09, #0A0A0A);
 	font-family: var( --legal-font-primary );
