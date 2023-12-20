@@ -27,7 +27,7 @@
 		content: attr( data-name-code );
 	}
 
-	.legal-menu .menu-item:hover > .sub-menu {
+	.legal-menu .menu-item:not( .legal-country ):hover > .sub-menu {
         display: flex;
         flex-wrap: wrap;
         /* align-content: flex-start; */
