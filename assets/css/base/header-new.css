@@ -287,7 +287,7 @@
 	order: 0;
 	display: flex;
 	flex-direction: column;
-	/* flex-basis: 224px; */
+	flex-basis: 240px;
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-new a::after {
