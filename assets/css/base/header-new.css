@@ -2,7 +2,8 @@
     box-sizing: border-box;
 } */
 
-@media screen and ( --mobile )
+
+@media screen and ( max-width: 767px )
 {
 	/* Display */
 
@@ -410,7 +411,7 @@
 	
 }
 
-@media screen and ( --desktop )
+@media screen and ( min-width: 768px )
 {
 	/* Display */
 
