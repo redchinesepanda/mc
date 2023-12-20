@@ -484,9 +484,9 @@
 		width: auto;
 	}
 
-	.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
-		width: 23px;
-		height: 23px;
+	.legal-menu .legal-country > .item-title::before {
+		width: 18px;
+		height: 18px;
 	}
 
 
