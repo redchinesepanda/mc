@@ -124,7 +124,7 @@ class BaseHeader
 
 	public static function check_url_part( $item )
     {
-        return $style_item[ 'url-part' ] != 'all';
+        return $item[ 'url-part' ] != 'all';
     }
 
     public static function filter_style_items( $items )
