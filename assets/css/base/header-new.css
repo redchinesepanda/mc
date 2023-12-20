@@ -3,7 +3,7 @@
 }
 
 
-@media screen and ( max-width: 767px )
+@media screen and ( max-width: var( --width-mobile-end ) )
 {
 	/* Display */
 
@@ -411,7 +411,7 @@
 	
 }
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: var( --width-desktop-start ) )
 {
 	/* Display */
 
@@ -753,7 +753,8 @@
 }
 
 .legal-menu > .menu-item:last-child > .item-title {
-	padding: 30px 20px 30px 43px;
+	/* padding: 30px 20px 30px 43px; */
+	padding: 12px 24px;
 }
 
 .legal-menu > .menu-item:last-child > .sub-menu {
