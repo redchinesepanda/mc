@@ -537,7 +537,7 @@
 	color: #000;
 } */
 
-.legal-menu > .menu-item > .sub-menu > .menu-item:not( .legal-country ) > .item-title
+.legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item:not( .legal-country ) > .item-title
 {
 	color: var(--Base-base-09, #0A0A0A);
 	font-family: var( --legal-font-primary );
@@ -548,7 +548,7 @@
 }
 
 .legal-menu .sub-menu .legal-country > .item-title,
-.legal-menu > .sub-menu .sub-menu > .menu-item:not( .legal-country ) > .item-title
+.legal-menu > .menu-item > .sub-menu .sub-menu > .menu-item:not( .legal-country ) > .item-title
 {
 	color: var(--Base-base-09, #0A0A0A);
 	font-family: var( --legal-font-primary );
