@@ -205,9 +205,9 @@
 	column-gap: 18px;
 }
 
-.legal-header .legal-logo {
+/* .legal-header .legal-logo {
 	display: flex;
-}
+} */
 
 .legal-menu {
 	display: flex;
@@ -324,9 +324,9 @@
 	margin: 0px auto;
 }
 
-.legal-header .legal-logo {
+/* .legal-header .legal-logo {
 	margin-right: auto;
-}
+} */
 
 .legal-menu {
     position: relative;
@@ -416,9 +416,9 @@
 	width: 100%;
 }
 
-.legal-header .legal-logo {
+/* .legal-header .legal-logo {
     width: 120px;
-}
+} */
 
 .legal-menu > .menu-item:last-child > .sub-menu .menu-item {
 	width: 260px;
