@@ -918,10 +918,13 @@
 	vertical-align: middle;
 }
 
-.legal-menu .menu-item.legal-country-all > .item-title::before { 
-	content: '\f103';
-	line-height: 1;
+.legal-menu .menu-item.legal-country-all > .item-title::before
+{
 	font-family: var(--legal-font-icons);
+	/* content: '\f103'; */
+	content: '\f103';
+	font-size: 18px;
+	line-height: 18px;
 }
 
 /* Other */ 
