@@ -365,9 +365,9 @@
 	padding: 8px 0;
 }
 
-.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
+/* .legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     margin-right: 8px;
-}
+} */
 
 .legal-menu .sub-menu .menu-item.menu-item-new .item-title::after {
     position: absolute;
