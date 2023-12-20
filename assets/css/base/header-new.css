@@ -104,10 +104,15 @@
 
 	/* Position */
 
-	.legal-header .legal-menu
+	.legal-header
+	{
+		padding: 0px 32px;
+	}
+
+	/* .legal-header .legal-menu
 	{
 		padding: 18px 32px;
-	}
+	} */
 
 	/* .legal-header .legal-logo {
 		padding: 0;
