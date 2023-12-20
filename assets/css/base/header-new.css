@@ -277,6 +277,7 @@
 .legal-menu .menu-item {
 	display: flex;
 	cursor: default;
+	flex-basis: 240px;
 }
 
 .legal-menu .menu-item > .sub-menu {
@@ -286,8 +287,9 @@
 .legal-menu .menu-group {
 	order: 0;
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	flex-basis: 240px;
+	flex-wrap: wrap;
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-new a::after {
