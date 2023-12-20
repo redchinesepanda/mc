@@ -117,10 +117,9 @@
 		margin-left: auto;
 	}
 
-	.legal-menu .menu-item-has-children {
-		/* position: static; */
-		position: relative;
-	}
+	/* .legal-menu .menu-item-has-children {
+		position: static;
+	} */
 
 	.legal-menu > .menu-item > .sub-menu {
 		/* top: 75px; */
