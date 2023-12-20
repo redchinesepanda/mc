@@ -117,11 +117,13 @@
 	}
 
 	.legal-menu .menu-item-has-children {
-		position: static;
+		/* position: static; */
+		position: relative;
 	}
 
 	.legal-menu > .menu-item > .sub-menu {
-		top: 75px;
+		/* top: 75px; */
+		top: 48px;
 	}
 
 	.legal-menu .menu-item .sub-menu {
