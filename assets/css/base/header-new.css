@@ -7,7 +7,7 @@
 	/* Display */
 
 	.legal-header .legal-logo,
-	.legal-header .legal-logo :picture-in-picture
+	.legal-header .legal-logo picture
 	{
 		display: inline-block;
 		width: 120px;
