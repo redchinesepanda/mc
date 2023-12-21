@@ -397,6 +397,7 @@
 		line-height: 22px;
 	}
 
+	.legal-menu .legal-cut-control,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item > .item-title
 	{
