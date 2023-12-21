@@ -87,6 +87,18 @@
 
 /* menu item 1th not lang menu item 2th end */
 
+/* menu group start */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu .menu-group
+	{
+		background-color:cornflowerblue; 
+	}
+}
+
+/* menu group end */
+
 /* .legal-menu * {
     box-sizing: border-box;
 } */
