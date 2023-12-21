@@ -91,21 +91,21 @@
 
 /* sub menu all */
 
-.legal-menu .sub-menu
+.legal-menu > .menu-item > .sub-menu
 {
 	background-color: darkseagreen; 
 }
 
 /* menu item 1th not lang menu sub menu all */
 
-.legal-menu > .menu-item:not( :last-child ) .sub-menu
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu
 {
 	background-color:indianred; 
 }
 
 /* menu item 1th lang sub menu all */
 
-.legal-menu > .menu-item:last-child .sub-menu
+.legal-menu > .menu-item:last-child > .sub-menu
 {
 	background-color:deeppink; 
 }
