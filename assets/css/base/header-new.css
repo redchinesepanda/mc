@@ -372,14 +372,14 @@
 	} */
 
 	.legal-menu > .menu-item:hover,
-	.legal-menu > .menu-item:hover:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),
-	.legal-menu > .menu-item:hover:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),:hover
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover
 	{
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
 
-	.legal-menu > .menu-item:hover:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),
-	.legal-menu > .menu-item:hover:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ):hover,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover
 	{
 		text-decoration: solid underline #000 2px;
 		text-underline-offset: 5px;
@@ -390,13 +390,6 @@
 		text-underline-offset: 5px;
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	} */
-
-	.legal-menu > .menu-item,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
-	{
-		text-decoration: unset;
-	}
 
 	.legal-menu .menu-item.legal-country-all > .item-title::before { 
 		font-size: 24px;
