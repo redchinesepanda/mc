@@ -48,14 +48,14 @@
 
 @media screen and ( min-width: 768px )
 {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title
 	{
 		background-color:burlywood; 
 	}
 }
 
 @media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
 	{
 		background-color:burlywood; 
 	}
