@@ -175,9 +175,7 @@
 	.legal-header .legal-logo,
 	.legal-header .legal-logo picture
 	{
-		display: inline-block;
 		width: 120px;
-		height: 48px;
 	}
 
 	.legal-header .legal-header-control
@@ -436,6 +434,13 @@
 .legal-header {
 	display: flex;
 	align-items: center;
+}
+
+.legal-header .legal-logo,
+.legal-header .legal-logo picture
+{
+	display: inline-block;
+	height: 48px;
 }
 
 .legal-menu {
@@ -847,7 +852,6 @@
 	.legal-header .legal-logo picture
 	{
 		width: 48px;
-		height: 48px;
 	}
 
 	/* .legal-header-control {
