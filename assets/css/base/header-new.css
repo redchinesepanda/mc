@@ -749,19 +749,21 @@
 
 	/* Position */
 
-	.legal-header .legal-logo {
+	.legal-header
+	{
+		padding: 5px 0px;
+	}
+
+	.legal-header .legal-logo
+	{
 		margin-left: 16px;
 	}
 
-	.legal-header .legal-header-control {
+	.legal-header .legal-header-control
+	{
 		margin-left: auto;
 		margin-right: 16px;
 	}
-
-	/* .legal-header-control {
-		position: static;
-		margin-right: 58px;
-	} */
 
 	.legal-menu {
 		padding: 8px 16px;
@@ -841,11 +843,6 @@
 		margin-left: -16px;
 	}
 
-	/* .legal-header-control::after {
-		position: absolute;
-		right: 16px;
-	} */
-
 	/* Width and Height */
 
 	.legal-header .legal-logo,
@@ -853,11 +850,6 @@
 	{
 		width: 48px;
 	}
-
-	/* .legal-header-control {
-		width: 24px;
-		height: 24px;
-	} */
 
 	.legal-header .legal-header-control::before
 	{
@@ -917,8 +909,6 @@
 		cursor: pointer;
 	}
 
-	/* .legal-header-control */
-	
 	.legal-header .legal-header-control:not( .legal-active )::before
 	{
 		background-repeat: no-repeat;
