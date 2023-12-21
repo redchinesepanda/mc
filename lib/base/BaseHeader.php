@@ -361,7 +361,7 @@ class BaseHeader
 				self::get_data_attr_columns( $item ),
 			]
 		);
-	}
+	} 
 
 	public static function parse_languages( $languages )
 	{
