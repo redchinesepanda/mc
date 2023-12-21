@@ -500,6 +500,11 @@
     pointer-events: none;
 }
 
+.legal-menu > .menu-item:last-child .menu-item > .item-title::before
+{
+	content: '';
+}
+
 /* Position */
 
 .legal-header
@@ -647,12 +652,6 @@
     font-weight: 600;
     line-height: 22px;
 } */
-
-.legal-menu > .menu-item:last-child .menu-item > .item-title::before
-{
-	content: '';
-	/* vertical-align: middle; */
-}
 
 @media screen and ( max-width: 767px )
 {
