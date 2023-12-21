@@ -29,8 +29,11 @@
 
 	.legal-menu .menu-item:not( .legal-country ):hover > .sub-menu {
         display: flex;
+	}
+
+	.legal-menu .menu-item:not( .legal-country ) > .sub-menu {
+		display: none;
         flex-wrap: wrap;
-        /* align-content: flex-start; */
         gap: 28px 32px; 
 	}
 
