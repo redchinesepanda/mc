@@ -592,10 +592,10 @@
 	padding: 10px 0px;
 }
 
-.legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu {
+/* .legal-menu .sub-menu .menu-item.menu-item-has-children .sub-menu {
     position: relative;
 	padding: 0;
-}
+} */
 
 .legal-menu .menu-item.legal-country-all > .item-title {
 	position: relative;
