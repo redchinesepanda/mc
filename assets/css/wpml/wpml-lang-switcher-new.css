@@ -40,14 +40,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .lang-switcher .lang-item {
     display: flex;
     align-items: center;
-    column-gap: 8px;
 }
 
-.lang-switcher .menu-avaible .lang-item {
-    column-gap: 8px;
-}
-
-.lang-switcher .lang-current .lang-item {
+.lang-switcher .lang-current {
     column-gap: 14px;
 }
 
@@ -58,10 +53,8 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     column-gap: 28px;
 }
 
-.lang-switcher .menu-avaible {
-    position: absolute;
-    bottom: 30px;
-    right: 0px;
+.lang-switcher .menu-avaible .lang-item {
+    column-gap: 8px;
 }
 
 .lang-switcher .menu-avaible:not( .legal-active ) {
@@ -148,6 +141,12 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 .lang-switcher {
     position: relative;
+}
+
+.lang-switcher .menu-avaible {
+    position: absolute;
+    bottom: 30px;
+    right: 0px;
 }
 
 /* .lang-switcher .lang-image {
