@@ -391,7 +391,9 @@
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	} */
 
-	.legal-menu > .menu-item
+	.legal-menu > .menu-item,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
 	{
 		text-decoration: unset;
 	}
