@@ -21,6 +21,13 @@
 	background-color:aqua; 
 }
 
+/* menu item 2th not has children */
+
+.legal-menu > .menu-item:not( :last-child ) .menu-item:not( .menu-item-has-children )
+{
+	background-color:aquamarine; 
+}
+
 
 /* .legal-menu * {
     box-sizing: border-box;
