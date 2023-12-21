@@ -830,15 +830,6 @@
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
 		transform: none;
 	}
-
-	/* .legal-header .legal-menu > .menu-item:last-child > .item-title {
-		padding: 16px 24px 16px 0px;
-	} */
-
-	.legal-menu > .menu-item:last-child.legal-active
-	{
-		padding: 14px 24px 14px 0px;
-	}
 	
 	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu {
 		padding: 8px 16px;
