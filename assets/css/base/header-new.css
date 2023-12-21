@@ -969,7 +969,7 @@
 	/* .legal-menu > .menu-item > .item-title {
 		background-position: left 24px center;
 	} */
-
+ 
 	.legal-menu > .menu-item:last-child > .item-title::before
 	{
 		background-size: 18px;
