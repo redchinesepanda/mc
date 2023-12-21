@@ -180,7 +180,7 @@
         display: flex;
 	}
 
-	.legal-menu .menu-item > .sub-menu
+	.legal-menu .menu-item:not( :hover ) > .sub-menu
 	{
 		display: none;
 	}
