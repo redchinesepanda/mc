@@ -37,7 +37,7 @@
 
 /* menu item 1th lang menu item 2th */
 
-.legal-menu > .menu-item:last-child > .menu-item
+.legal-menu > .menu-item:last-child .menu-item
 {
 	background-color:blueviolet; 
 }
