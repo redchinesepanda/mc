@@ -439,7 +439,7 @@
 .legal-menu .menu-item
 {
 	display: flex;
-	cursor: default;
+	/* cursor: default; */
 }
 
 .legal-menu .menu-item-has-children .menu-item:not( .legal-country )
