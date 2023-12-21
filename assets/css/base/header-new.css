@@ -393,7 +393,7 @@
 	display: inline;
 } */
 
-.legal-menu > .menu-item:last-child .menu-item .item-title
+.legal-menu > .menu-item:last-child .item-title
 {
 	display: flex;
 	align-items: center;
