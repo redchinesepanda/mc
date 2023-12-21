@@ -369,7 +369,7 @@ class BaseHeader
 
 			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
 			
-			'data' => get_data_attr_current( $languages[ 'current' ] ),
+			'data' => get_data_attr_current( $languages[ 'current' ] ), 
 		];
 
 		// LegalDebug::debug( [
