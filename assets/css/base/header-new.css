@@ -1129,7 +1129,7 @@ a
 	
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
-		background-color: #fff;
+		/* background-color: #fff; */
 	}
 
 	/* Typography */
