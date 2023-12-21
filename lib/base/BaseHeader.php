@@ -289,20 +289,25 @@ class BaseHeader
 		// 	'language' => $language,
 		// ] );
 
-		$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
+		$prefix = '';
 
-		if ( self::get_casino_permission() )
+		if ( !TemplateMain::check_new() )
 		{
-			$prefix = __( BaseMain::TEXT[ 'online-casinos' ], ToolLoco::TEXTDOMAIN );
-		}
+			$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
 
-		// if ( self::check_root_url( $language[ 'url' ] ) )
+			if ( self::get_casino_permission() )
+			{
+				$prefix = __( BaseMain::TEXT[ 'online-casinos' ], ToolLoco::TEXTDOMAIN );
+			}
+
+			// if ( self::check_root_url( $language[ 'url' ] ) )
+			
+			if ( self::check_root_url( $language ) )
+			{
+				$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
+			}
+		}
 		
-		if ( self::check_root_url( $language ) )
-		{
-			$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
-		}
-
 		return $prefix;
 	}
 
