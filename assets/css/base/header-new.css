@@ -792,7 +792,7 @@
 		transform: rotate(180deg);
 	}
 
-	.legal-menu > .menu-item:not( :last-child )
+	.legal-menu > .menu-item:not( :last-child ) > .item-title
 	{
 		padding: 16px 0px;
 	}
