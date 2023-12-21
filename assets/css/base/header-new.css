@@ -89,7 +89,7 @@
 
 /* sub menu start */
 
-/* sub menu all */
+/* menu item 1th sub menu all */
 
 .legal-menu > .menu-item > .sub-menu
 {
@@ -283,7 +283,8 @@
 		top: 82px;
 	}
 
-	.legal-menu .menu-item .sub-menu {
+	.legal-menu > .menu-item > .sub-menu
+	{
 		position: absolute;
 		z-index: 1;
 	}
