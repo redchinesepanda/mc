@@ -305,6 +305,11 @@
 	}
 
 	/* Position */
+	
+	.legal-header
+	{
+		margin: 0px auto;
+	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
 	{
@@ -511,11 +516,6 @@
 }
 
 /* Position */
-
-.legal-header
-{
-	margin: 0px auto;
-}
 
 .legal-header {
     position: relative;
