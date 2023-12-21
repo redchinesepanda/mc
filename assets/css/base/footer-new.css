@@ -148,16 +148,19 @@
 
 	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		/* flex-grow: 1; */
 		flex-basis: 226px;
 		display: flex;
 		row-gap: 8px;
 		flex-direction: column;
 	}
 
-	/* .legal-footer .footer-menu > .menu-item-end {
-		flex-grow: 1;
-	} */
+	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
+	/* flex-grow: 1; */
+	}
+
+	.legal-footer .footer-menu > .menu-item-end {
+		flex-grow: 2;
+	}
 	
 /* 	.legal-footer .footer-menu > .menu-item-end .menu-item {
 		flex-basis: 180px;
