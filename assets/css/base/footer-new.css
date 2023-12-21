@@ -308,11 +308,11 @@
 /* Background */
 
 .legal-footer-wrapper {
-	background-color: #0A0A0A;
+	background-color: var(--Base-base-09);
 }
 
 .legal-footer .footer-logo {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.20); 
+	border-bottom: 1px solid var(--Base-base-07); 
 }
 
 .legal-footer .lang-switcher {
@@ -343,7 +343,7 @@
 }
 
 .legal-footer .item-children .item-title:hover {
-    text-decoration: solid underline #fff 2px;
+    text-decoration: solid underline var(--white-60) 2px;
     text-underline-offset: 5px;
 	text-shadow: 0 0 0.35px #fff, 0 0 0.35px #e7e7e7;
 }
