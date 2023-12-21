@@ -306,7 +306,7 @@
 .legal-menu .menu-group {
 	order: 0;
 	display: flex;
-	flex-basis: calc( 100% / 4 - 24px );
+	flex-basis: calc( 100% / 4 - 24px ); 
 	flex-wrap: wrap;
 	align-content: start;
 }
