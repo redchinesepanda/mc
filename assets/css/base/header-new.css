@@ -44,7 +44,7 @@
 	}
 }
 
-/* menu item 1th not lang menu item 2th has children */
+/* menu item 1th not lang menu item 2th has children item title */
 
 @media screen and ( min-width: 768px )
 {
@@ -56,6 +56,23 @@
 
 @media screen and ( max-width: 767px ) {
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		background-color:burlywood; 
+	}
+}
+
+/* menu item 1th not lang menu item 2th has children menu item */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
+	{
+		background-color:burlywood; 
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item
 	{
 		background-color:burlywood; 
 	}
