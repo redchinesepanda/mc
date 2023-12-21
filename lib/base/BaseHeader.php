@@ -344,7 +344,7 @@ class BaseHeader
 		$handler = new self();
 
 		$data = [
-			'data-columns' => count( $item[ 'children' ] ),
+			'data-columns' => count( array_chunk( $item[ 'children' ] ), 6 ),
 		];
 
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
