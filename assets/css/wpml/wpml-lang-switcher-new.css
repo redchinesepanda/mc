@@ -232,7 +232,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 .lang-switcher .lang-item {
     line-height: 20px;
-}
+} 
 
 .lang-switcher .lang-current .lang-title-suffix {
     line-height: 18px;
