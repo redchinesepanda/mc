@@ -230,13 +230,20 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 /* Language Typography */
 
+.lang-switcher .lang-item {
+    line-height: 20px;
+}
+
+.lang-switcher .lang-current .lang-title-suffix {
+    line-height: 18px;
+}
+
 .lang-switcher .lang-item,
 .lang-switcher .lang-current .lang-title-suffix {
-    font-family: "Golos Text";
+    font-family: var( --legal-font-primary );
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 28px;
     color: var(--Base-base-01);
     text-decoration: none;
 } 
