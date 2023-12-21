@@ -222,7 +222,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     }
     
     .lang-switcher .lang-current .lang-title:hover {
-        text-decoration: solid underline var(--Base-base-01) 2px;
+        text-decoration: solid underline var(--Base-base-01) 2px; 
         text-shadow: 0 0 0.35px #fff, 0 0 0.35px #e7e7e7;
         text-underline-offset: 5px;
     }
