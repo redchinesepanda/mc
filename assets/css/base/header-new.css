@@ -994,6 +994,14 @@
 		font-style: normal;
 	}
 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+	}
+
 	.legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
 		font-weight: 600;
 	}
