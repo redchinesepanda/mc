@@ -321,9 +321,9 @@
 		top: -1px;
 	}
 
-	.legal-menu .menu-group .menu-item .sub-menu {
+	/* .legal-menu .menu-group .menu-item .sub-menu {
 		position: relative;
-	}
+	} */
  
 	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
 		padding: 8px 30px 8px 0;
