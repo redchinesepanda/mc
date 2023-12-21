@@ -660,7 +660,9 @@
 		flex-wrap: wrap;
 	}
 
-	.legal-header-control:not( .legal-active ) ~ .legal-menu {
+	.legal-menu > .menu-item:not( .legal-active ) > .sub-menu,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children:not( .legal-active ) > .sub-menu
+	{
 		display: none;
 	}
 
