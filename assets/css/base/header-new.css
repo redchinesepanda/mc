@@ -513,10 +513,10 @@
 	padding: 0px;
 } */
 
-.legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
+/* .legal-menu > .menu-item-has-children > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
 {
 	padding: 10px 0px;
-}
+} */
 
 .legal-menu > .menu-item-has-children .menu-item-has-children .item-title
 {
