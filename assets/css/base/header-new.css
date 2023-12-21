@@ -1040,19 +1040,22 @@
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( .legal-active ) > .item-title::after,
-	.legal-menu > .menu-item:last-child:not( .legal-active )::after
+	.legal-menu > .menu-item:last-child:not( .legal-active )::after,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
 	{
 		content: '\F106';  
 	}
 
 	.legal-menu > .menu-item:not( :last-child ).legal-active > .item-title::after,
-	.legal-menu > .menu-item:last-child.legal-active::after
+	.legal-menu > .menu-item:last-child.legal-active::after,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
 	{
 		content: '\F10C'; 
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
-	.legal-menu > .menu-item:last-child::after
+	.legal-menu > .menu-item:last-child::after,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
 	{
 		font-family: var(--legal-font-icons);
 		font-size: 24px;
