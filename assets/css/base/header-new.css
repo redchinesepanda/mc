@@ -238,9 +238,10 @@
 		order: 1;
 	}
 
-	.legal-menu .menu-group .menu-item-has-children {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
+	{
 		display: flex;
-		flex-direction: column;
+		flex-wrap: wrap;
 	}
 
 	.legal-menu .legal-cut-control {
