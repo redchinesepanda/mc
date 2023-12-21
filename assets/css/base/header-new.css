@@ -554,9 +554,9 @@
 	padding: 8px 0px;
 }
 
-.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item.legal-country-all > .item-title {
+/* .legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item.legal-country-all > .item-title {
 	padding: 10px 0px;
-}
+} */
 
 .legal-menu .menu-item-has-children:after {
 	padding: 10px 0px;
