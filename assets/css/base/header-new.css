@@ -7,6 +7,13 @@
 	background-color: aliceblue; 
 }
 
+/* menu item 1th not lang */
+
+.legal-menu > .menu-item:not( :last-child )
+{
+	background-color:antiquewhite; 
+}
+
 
 /* .legal-menu * {
     box-sizing: border-box;
