@@ -43,6 +43,10 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     column-gap: 8px;
 }
 
+.lang-switcher .menu-avaible .lang-item {
+    column-gap: 8px;
+}
+
 .lang-switcher .lang-current .lang-item {
     column-gap: 14px;
 }
@@ -146,9 +150,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     position: relative;
 }
 
-.lang-switcher .lang-image {
+/* .lang-switcher .lang-image {
     margin-left: 5px;
-}
+} */
 
 .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
     margin-left: 0px;
@@ -203,9 +207,10 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--Base-base-09);
 }
 
 /* .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
@@ -246,7 +251,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 /* Language Typography */
 
-.lang-switcher .lang-item {
+.lang-switcher .menu-avaible .lang-item {
     line-height: 20px;
 } 
 
