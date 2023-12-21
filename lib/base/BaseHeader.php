@@ -211,9 +211,9 @@ class BaseHeader
 
 		unset( $languages_all[ $code ] );
 
-		// $languages_all = WPMLMain::exclude( $languages_all );
+		$languages_all = WPMLMain::exclude( $languages_all );
 
-		$lang = WPMLMain::get_group_language();
+		// $lang = WPMLMain::get_group_language();
 
 		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
 
