@@ -332,6 +332,7 @@
 
 .legal-menu > .menu-item:last-child > .sub-menu {
 	column-gap: 28px;
+	width: min-content;
 }
 
 .legal-menu .menu-group .menu-item-has-children:after {
