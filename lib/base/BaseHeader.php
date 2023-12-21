@@ -213,9 +213,11 @@ class BaseHeader
 
 		$languages_all = WPMLMain::exclude( $languages_all );
 
-		// $lang = WPMLMain::get_group_language();
+		$lang = WPMLMain::get_group_language();
 
-		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+		// $search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+
+		$search[ 'avaible' ] = $languages_all;
 
 		return $search;
 	}
