@@ -339,30 +339,26 @@ class BaseHeader
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
 
-	public static function get_data_attr_columns( $items )
+	public static function get_data_attr_columns( $item )
 	{
 		$handler = new self();
 
-		// LegalDebug::debug( [
-		// 	$item,
-		// ] );
-
 		$data = [
-			'data-columns' => count( $items ),
+			'data-columns' => count( $item[ 'children' ] ),
 		];
 
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
 
-	public static function get_data_attr_current( $languages )
+	public static function get_data_attr_current( $current, $item )
 	{
 		return implode(
 			' ',
-			
-			[
-				self::get_data_attr_language( $languages[ 'current' ] ),
 
-				self::get_data_attr_columns( $languages[ 'avaible' ] ),
+			[
+				self::get_data_attr_language( $current ),
+
+				self::get_data_attr_columns( $item ),
 			]
 		);
 	}
@@ -380,7 +376,7 @@ class BaseHeader
 
 			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
 			
-			'data' => self::get_data_attr_current( $languages ), 
+			// 'data' => self::get_data_attr_current( $languages ),
 		];
 
 		// LegalDebug::debug( [
@@ -427,6 +423,8 @@ class BaseHeader
 
 			'data' => '',
 		];
+
+		$item[ 'data' ] = self::get_data_attr_current( $languages[ 'current' ], $item );
 
 		return $item;
 	}
