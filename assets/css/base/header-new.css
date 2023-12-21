@@ -1034,7 +1034,7 @@
 		content: '\F10C'; 
 	}
 
-	.legal-menu > .menu-item:not( :last-child )::after,
+	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
 	.legal-menu > .menu-item:last-child::after
 	{
 		font-family: var(--legal-font-icons);
