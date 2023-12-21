@@ -188,10 +188,6 @@
 	.legal-menu > .menu-item > .sub-menu
 	{
         flex-wrap: wrap;
-	}
-
-	.legal-menu > .menu-item > .sub-menu
-	{
         gap: 28px 32px; 
 	}
 
