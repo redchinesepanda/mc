@@ -110,6 +110,23 @@
 	background-color:deeppink; 
 }
 
+/* menu item 1th not lang menu item 2th has children sub menu */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .sub-menu
+	{
+		background-color:honeydew; 
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
+	{
+		background-color:honeydew; 
+	}
+}
+
 /* sub menu end */
 
 /* menu group start */
