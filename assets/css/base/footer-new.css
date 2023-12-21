@@ -153,7 +153,7 @@
 
 	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		flex-basis: 226px;
+		/* flex-basis: 226px; */
 		display: flex;
 		row-gap: 8px;
 		flex-direction: column;
@@ -313,6 +313,11 @@
 
 .legal-footer .item-title {
 	width: fit-content;
+}
+
+.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
+.legal-footer .footer-menu > .menu-item-end .menu-item {
+	flex-basis: 226px;
 }
 
 /* Background */
