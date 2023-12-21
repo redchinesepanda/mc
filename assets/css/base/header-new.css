@@ -131,11 +131,33 @@
 
 /* menu group start */
 
+/* menu item 1th menu group all */
+
 @media screen and ( min-width: 768px )
 {
 	.legal-menu .menu-group
 	{
 		background-color:cornflowerblue; 
+	}
+}
+
+/* menu item 1th not lang menu group all */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group
+	{
+		background-color:olive; 
+	}
+}
+
+/* menu item 1th lang menu group all */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
+	{
+		background-color:tomato; 
 	}
 }
 
@@ -419,6 +441,13 @@
 	order: 0;
 	display: flex;
 	flex-basis: calc( 100% / 4 - 24px ); 
+	flex-wrap: wrap;
+	align-content: start;
+}
+
+.legal-menu .menu-group
+{ 
+	display: flex;
 	flex-wrap: wrap;
 	align-content: start;
 }
