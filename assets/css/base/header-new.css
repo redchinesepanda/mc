@@ -229,21 +229,10 @@
 
 	/* Width and Height */
 
-	/* .legal-header .legal-logo {
-		height: 44px;
-	} */
-
-	/* .legal-menu .menu-item {
-		width: fit-content;
-	} */
-
-	.legal-menu .menu-item:not( :last-child ) > .sub-menu {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+	{
 		width: 1080px;
 	}
-
-	/* .legal-menu > .menu-item:last-child > .sub-menu {
-		width: auto;
-	} */
 
 	.legal-menu > .legal-country:last-child > .item-title::before
 	{
@@ -254,7 +243,6 @@
 	.legal-menu .sub-menu .legal-country > .item-title::before
 	{
 		width: 18px;
-		/* width: 22px; */
 		height: 18px;
 	}
 
@@ -264,15 +252,6 @@
 	{
         padding: 28px 40px;
 	}
-
-	/* .legal-header .legal-menu
-	{
-		padding: 18px 32px;
-	} */
-
-	/* .legal-header .legal-logo {
-		padding: 0;
-	} */
 
 	.legal-menu > .menu-item:last-child {
 		margin-left: auto;
