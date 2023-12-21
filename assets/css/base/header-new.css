@@ -29,9 +29,12 @@
 
 /* menu item 1th not lang menu item 2th not has children */
 
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
+@media screen and ( min-width: 768px )
 {
-	background-color:aquamarine; 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
+	{
+		background-color:aquamarine; 
+	}
 }
 
 @media screen and ( max-width: 767px ) {
@@ -43,15 +46,18 @@
 
 /* menu item 1th not lang menu item 2th has children */
 
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
+@media screen and ( min-width: 768px )
 {
-	background-color:#939393; 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
+	{
+		background-color:burlywood; 
+	}
 }
 
 @media screen and ( max-width: 767px ) {
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children
 	{
-		background-color:#939393; 
+		background-color:burlywood; 
 	}
 }
 
