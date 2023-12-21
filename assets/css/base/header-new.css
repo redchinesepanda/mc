@@ -67,14 +67,14 @@
 {
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
 	{
-		background-color:burlywood; 
+		background-color:coral; 
 	}
 }
 
 @media screen and ( max-width: 767px ) {
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item
 	{
-		background-color:burlywood; 
+		background-color:coral; 
 	}
 }
 
