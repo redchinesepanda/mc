@@ -1097,6 +1097,7 @@
 	/* .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after */
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
 	.legal-menu > .menu-item:last-child:not( .legal-active )::after,
+	.legal-menu > .menu-item:last-child.legal-active::before,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title::after
 	{
 		font-family: var(--legal-font-icons);
