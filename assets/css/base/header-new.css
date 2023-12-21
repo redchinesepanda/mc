@@ -550,7 +550,7 @@
 	padding: 0px;
 } */
 
-.legal-menu > .menu-item:last-child .sub-menu .menu-group > .menu-item > .item-title {
+.legal-menu > .menu-item:last-child .menu-item > .item-title {
 	padding: 8px 0px;
 }
 
