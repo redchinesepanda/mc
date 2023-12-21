@@ -262,6 +262,10 @@
 
 	/* Width and Height */
 
+	.legal-header {
+		max-width: 1080px;
+	}
+
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
 	{
 		width: 1080px;
@@ -558,10 +562,6 @@
 }
 
 /* Width and Height */
-
-.legal-header {
-	max-width: 1080px;
-}
 
 .legal-menu {
 	width: 100%;
