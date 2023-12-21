@@ -770,9 +770,9 @@
 		border-top: 2px solid #000;
 	}
 
-	.legal-menu .menu-item > .item-title {
+	/* .legal-menu .menu-item > .item-title {
 		margin-right: auto;
-	}
+	} */
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item {
 		padding: 8px 0;
