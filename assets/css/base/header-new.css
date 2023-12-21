@@ -80,7 +80,7 @@
 
 /* menu item 1th lang menu item 2th */
 
-.legal-menu > .menu-item:last-child .menu-item 
+.legal-menu > .menu-item:last-child .menu-item
 {
 	background-color:blueviolet; 
 }
@@ -388,7 +388,7 @@
 	display: inline;
 } */
 
-.legal-menu > .menu-item:last-child .item-title
+.legal-menu > .menu-item:last-child .menu-item .item-title
 {
 	display: flex;
 	align-items: center;
