@@ -619,7 +619,7 @@
 }
 
 .legal-menu .sub-menu {
-	background-color: #fff;
+	/* background-color: #fff; */
     border-radius: 21px;
     border: 2px solid #000;
     background: #FFF;
