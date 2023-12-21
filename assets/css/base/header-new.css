@@ -865,7 +865,7 @@
 		width: 100%;
 	} */
 
-	.legal-menu > .menu-item > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .item-title
 	{
 		flex-basis: 100%;
 	}
