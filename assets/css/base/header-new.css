@@ -774,7 +774,8 @@
 		border-top: 2px solid #000;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .item-title::after
+	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
 	{
 		margin-left: auto;
 	}
