@@ -778,9 +778,9 @@
 		margin-left: auto;
 	}
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item {
+	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item {
 		padding: 8px 0;
-	}
+	} */
 
 	.legal-menu .sub-menu .sub-menu {
 		padding: 0px 10px 10px 10px;
