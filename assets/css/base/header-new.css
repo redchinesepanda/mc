@@ -1,3 +1,13 @@
+/* Background */
+
+/* menu item 1th all */
+
+.legal-menu > .menu-item
+{
+	background-color: aliceblue;
+}
+
+
 /* .legal-menu * {
     box-sizing: border-box;
 } */
