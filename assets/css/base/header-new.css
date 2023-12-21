@@ -253,8 +253,12 @@
 		height: 18px;
 	}
 
-
 	/* Position */
+
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+	{
+        padding: 28px 40px;
+	}
 
 	/* .legal-header .legal-menu
 	{
@@ -282,11 +286,6 @@
 	.legal-menu .menu-item .sub-menu {
 		position: absolute;
 		z-index: 1;
-	}
-	
-
-	.legal-menu .menu-item:not( :last-child ):hover > .sub-menu {
-        padding: 28px 40px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu {
