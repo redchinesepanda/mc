@@ -314,6 +314,11 @@
 		left: 0px;
 	}
 
+	.legal-menu > .menu-item:last-child > .sub-menu
+	{
+		right: 0px;
+	}
+
 	/* .legal-menu > .menu-item:last-child .sub-menu,
 	.legal-menu > .menu-item:nth-last-child(2) .sub-menu {
 		right: 0px;
