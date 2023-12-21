@@ -1035,7 +1035,7 @@
 	}
 
 	.legal-menu > .menu-item > .item-title::after,
-	.legal-menu > .menu-item::after,
+	.legal-menu > .menu-item::after
 	{
 		font-family: var(--legal-font-icons);
 		font-size: 24px;
