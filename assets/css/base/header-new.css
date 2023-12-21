@@ -93,9 +93,9 @@
 		width: 1080px;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu {
+	/* .legal-menu > .menu-item:last-child > .sub-menu {
 		width: auto;
-	}
+	} */
 
 	.legal-menu > .legal-country:last-child > .item-title::before
 	{
@@ -331,8 +331,8 @@
 }
 
 .legal-menu > .menu-item:last-child > .sub-menu {
-	column-gap: 28px;
 	width: min-content;
+	column-gap: 28px;
 }
 
 .legal-menu .menu-group .menu-item-has-children:after {
