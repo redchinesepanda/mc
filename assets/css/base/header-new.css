@@ -688,6 +688,12 @@
 	{
 		display: flex;
 	}
+
+	.legal-menu > .menu-item:not(:last-child) > .item-title::after,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
+	{
+		align-items: center;
+	}
  
 	/* .legal-menu .menu-item-has-children:after {
 		display: block;
