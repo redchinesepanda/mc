@@ -27,10 +27,19 @@
 		content: attr( data-name-code );
 	}
 
-	.legal-menu .menu-item:not( .legal-country ):hover > .sub-menu {
+	.legal-menu .menu-item:hover > .sub-menu
+	{
         display: flex;
+	}
+
+	.legal-menu .menu-item > .sub-menu
+	{
+		display: none;
+	}
+
+	.legal-menu .menu-item > .sub-menu
+	{
         flex-wrap: wrap;
-        /* align-content: flex-start; */
         gap: 28px 32px; 
 	}
 
