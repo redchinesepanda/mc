@@ -149,6 +149,11 @@
 {
 	/* Display */
 
+	.legal-header
+	{
+		column-gap: 32px;
+	}
+
 	.legal-header .legal-logo,
 	.legal-header .legal-logo picture
 	{
@@ -388,7 +393,6 @@
 .legal-header {
 	display: flex;
 	align-items: center;
-	column-gap: 18px;
 }
 
 /* .legal-header .legal-logo {
