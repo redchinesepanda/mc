@@ -683,7 +683,8 @@
 		align-items: center;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
 	{
 		display: flex;
 	}
