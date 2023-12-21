@@ -694,8 +694,9 @@
 		content: attr( data-name-alternate );
 	}
 
-	.legal-menu .menu-item.legal-active > .sub-menu {
-		display: block;
+	.legal-menu > .menu-item > .sub-menu
+	{
+		flex-basis: 100%;
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
