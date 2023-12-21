@@ -199,10 +199,6 @@
         gap: 0;
 	}
 
-	.legal-menu .menu-item:not( :last-child ) > .sub-menu {
-		box-sizing: border-box;
-	}
-
 	.legal-menu .menu-item-has-children:after {
 		display: none;
 	}
@@ -293,14 +289,6 @@
 
 	/* Background */
 
-	/* .legal-header .legal-logo {
-		cursor: pointer;
-	} */
-   
-	/* .legal-menu .menu-item:hover {
-        background-color: transparent;
-	} */
-
 	.legal-menu > .menu-item:last-child > .item-title {
 		background-position: left 10px center;
 	}
@@ -311,10 +299,10 @@
 		border-radius: 21px;
 	}
 
-	/* .legal-menu > .menu-item:last-child > .item-title::before,
-	.legal-menu > .menu-item:last-child .menu-item > .item-title::before {
-		background-size: 23px 23px;
-	} */
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+	{
+		box-sizing: border-box;
+	}
 
 	.legal-menu > .legal-country:last-child > .item-title::before
 	{
