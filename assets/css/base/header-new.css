@@ -674,9 +674,9 @@
 		flex-direction: column;
 	}
 
-	/* .legal-menu .menu-item {
+	.legal-menu .menu-item {
 		flex-wrap: wrap;
-	} */
+	}
 
 	.legal-menu > .menu-item:last-child
 	{
