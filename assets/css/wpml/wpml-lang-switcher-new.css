@@ -192,20 +192,20 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     border-radius: 20px;
 }
 
-.lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
+/* .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
     background-position: right 10px center;
     background-size: 20px;
     border-right: 1px solid #6a6969;
     border-radius: 0;
     pointer-events: none;
-}
+} */
 
 .lang-switcher .lang-current .lang-title::after {
     background-size: 17px;
 }
 
 .lang-switcher .lang-current .lang-title-suffix {
-    border-left: 1px solid (--Base-base-07);
+    border-left: 1px solid var(--Base-base-07);
 }
 
 .lang-switcher .menu-avaible {
