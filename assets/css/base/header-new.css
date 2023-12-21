@@ -303,7 +303,7 @@
 	display: none;
 }
 
-.legal-menu > .menu-item > .sub-menu > .menu-group { 
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group { 
 	order: 0;
 	display: flex;
 	flex-basis: calc( 100% / 4 - 24px ); 
