@@ -287,8 +287,7 @@
 
 	.legal-menu > .menu-item:last-child > .sub-menu
 	{
-		/* width: min-content; */
-		flex-basis: min-content;
+		width: min-content;
 	}
 
 	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
