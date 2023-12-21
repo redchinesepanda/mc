@@ -259,7 +259,8 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     line-height: 18px;
 }
 
-.lang-switcher .lang-item {
+.lang-switcher .lang-item,
+.lang-switcher .lang-current .lang-title-suffix {
     font-family: var( --legal-font-primary );
     font-size: 14px;
     font-style: normal;
