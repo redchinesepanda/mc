@@ -93,9 +93,9 @@
 		width: 1080px;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu {
+	/* .legal-menu > .menu-item:last-child > .sub-menu {
 		width: auto;
-	}
+	} */
 
 	.legal-menu > .legal-country:last-child > .item-title::before
 	{
