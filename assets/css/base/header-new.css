@@ -1022,11 +1022,13 @@
 		line-height: 1;
 	}
 
+	.legal-menu > .menu-item:not( .legal-active ) > .item-title::after,
 	.legal-menu > .menu-item:not( .legal-active )::after
 	{
 		content: '\F106';  
 	}
 
+	.legal-menu > .menu-item.legal-active > .item-title::after,
 	.legal-menu > .menu-item.legal-active::after
 	{
 		content: '\F10C'; 
