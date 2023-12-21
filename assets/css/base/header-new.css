@@ -23,7 +23,7 @@
 
 /* menu item 2th not has children */
 
-.legal-menu > .menu-item:not( :last-child ) .sub-menu:first-child
+.legal-menu > .menu-item:not( :last-child ) .sub-menu:first-of-type
 {
 	background-color:aquamarine; 
 }
