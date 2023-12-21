@@ -678,17 +678,10 @@
 		flex-wrap: wrap;
 	}
 
-	/* .legal-menu .menu-item > .item-title {
-		order: 1;
+	.legal-menu > .menu-item:not( :last-child ) > .item-title
+	{
+		display: flex;
 	}
-
-	.legal-menu .menu-item::after {
-		order: 2;
-	}
-
-	.legal-menu .menu-item > .sub-menu {
-		order: 3;
-	} */
  
 	.legal-menu .menu-item-has-children:after {
 		display: block;
