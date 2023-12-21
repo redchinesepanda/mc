@@ -23,7 +23,6 @@
 	.legal-footer .footer-menu,
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
-		/* row-gap: 20px; */
 	}
 
 	.legal-footer .footer-menu > .menu-item,
@@ -75,10 +74,6 @@
 		padding: 32px 16px;
 	}
 
-/* 	.legal-footer {
-		padding: 0px 20px;
-	} */
-
 	.legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
 		padding: 8px 0px;
@@ -115,11 +110,6 @@
 
 	/* Width and Height */
 
-	/* .legal-footer .footer-menu > .menu-item::after {
-		width: 24px;
-		height: 24px;
-	} */
-
 	.legal-footer .footer-menu > .menu-item > .item-children,
 	.legal-footer .footer-menu .menu-item-end .menu-item > .item-children {
 		width: 100%;
@@ -137,10 +127,6 @@
 	/* Background */
 
 	.legal-footer .footer-menu > .menu-item::after {
-	/* 	background-image: url( 'https://match.center/wp-content/uploads/image-6576abf68154b-image-6576.svg' );
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: auto; */
 		cursor: pointer;
 	}
 
@@ -180,7 +166,6 @@
 
 	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		/* flex-basis: 226px; */
 		display: flex;
 		row-gap: 8px;
 		flex-direction: column;
@@ -193,10 +178,6 @@
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-grow: 2;
 	}
-	
-/* 	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		flex-basis: 180px;
-	} */
 
 	/* Position */
 
@@ -212,14 +193,6 @@
 		padding: 0px;
 		margin: 0px;
 	}
-	
-/* 	.legal-footer .footer-text p:not(:last-child) {
-		margin: 4px 0 0 0;
-	}
-	
-	.legal-footer .footer-text p:last-child {
-		margin: 0;
-	} */
 
 	/* Width and Height */
 
@@ -248,11 +221,6 @@
 	display: flex;
 	column-gap: 32px;
 }
-
-/* .legal-footer .footer-menu > .menu-item-end {
-	display: flex;
-	column-gap: 20px;
-} */
 
 .legal-footer .item-title {
 	display: block;
@@ -285,14 +253,6 @@
 	margin: 0px auto;
 }
 
-/* .legal-footer .item-children {
-	padding-top: 8px;
-} */
-
-/* .footer-menu > .menu-item-end > .menu-item:not( :last-child ) {
-	padding-bottom: 20px; 
-} */
-
 .legal-footer .item-children .item-title {
 	padding: 8px 0;
 }
@@ -303,7 +263,6 @@
 }
 
 .legal-footer .footer-logo {
-	/* padding-top: 5px; */
 	padding-bottom: 40px;
 	margin-bottom: 28px;
 }
@@ -394,4 +353,3 @@
 	line-height: 18px;
 	color: var(--white-60);
 }
-
