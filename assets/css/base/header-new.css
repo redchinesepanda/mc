@@ -87,6 +87,15 @@
 
 /* menu item 1th not lang menu item 2th end */
 
+/* sub menu start */
+
+.legal-menu .sub-menu
+{
+	background-color:darkseagreen; 
+}
+
+/* sub menu end */
+
 /* menu group start */
 
 @media screen and ( min-width: 768px )
