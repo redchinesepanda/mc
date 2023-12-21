@@ -814,12 +814,14 @@
 		padding: 0px;
 	} */
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
-	.legal-header .legal-menu > .menu-item.legal-active:last-child {
+	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
+	.legal-header .legal-menu > .menu-item.legal-active:last-child */
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children.legal-active,
+	.legal-menu > .menu-item:last-child.legal-active
+	{
 		position: absolute;
-		z-index: 2;
-		padding: 0;
-		top: 10px;
+		top: 58px;
+    	left: 0px;
 	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
