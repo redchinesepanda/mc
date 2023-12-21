@@ -23,7 +23,7 @@
 	.legal-footer .footer-menu,
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
-		row-gap: 20px;
+		/* row-gap: 20px; */
 	}
 
 	.legal-footer .footer-menu > .menu-item,
@@ -71,9 +71,13 @@
 
 	/* Position */
 
-	.legal-footer {
-		padding: 0px 20px;
+	.legal-footer-wrapper {
+		padding: 32px 16px;
 	}
+
+/* 	.legal-footer {
+		padding: 0px 20px;
+	} */
 
 	.legal-footer .footer-menu > .menu-item > .item-title,
 	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-title {
@@ -103,6 +107,12 @@
 	.legal-footer .footer-menu > .menu-item > .item-children,
 	.legal-footer .footer-menu .menu-item-end .menu-item > .item-children {
 		width: 100%;
+	}
+
+	.legal-footer .footer-menu > .menu-item,
+	.legal-footer .footer-menu .menu-item-end > .menu-item {
+		padding: 8px 0px;
+		margin-bottom: 14px;
 	}
 
 	.legal-footer .footer-copy,
@@ -141,7 +151,7 @@
 
 	.legal-footer .footer-menu > .menu-item::after,
 	.legal-footer .footer-menu .menu-item-end > .menu-item::after {
-		content: '\f104';
+		content: '\f106';
 		color: var(--Base-base-01);
 		line-height: 1;
 		font-size: 24px;
@@ -257,7 +267,7 @@
 }
 
 .legal-footer-wrapper {
-	padding: 40px 0px;
+	padding: 32px 16px;
 	position: relative;
 }
 
@@ -283,7 +293,7 @@
 }
 
 .legal-footer .footer-logo {
-	padding-top: 5px;
+	/* padding-top: 5px; */
 	padding-bottom: 40px;
 	margin-bottom: 28px;
 }
