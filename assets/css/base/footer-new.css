@@ -130,7 +130,7 @@
 	.legal-footer .footer-menu > .menu-item::after,
 	.legal-footer .footer-menu .menu-item-end > .menu-item::after {
 		content: '\f104';
-		color: #fff;
+		color: var(--Base-base-01);
 		line-height: 1;
 		font-size: 24px;
 		font-family: var(--legal-font-icons);
@@ -319,7 +319,7 @@
 
 .footer-menu > .menu-item > .item-title,
 .footer-menu > .menu-item-end > .menu-item > .item-title {
-	font-family: "Golos Text";
+	font-family: var( --legal-font-primary );
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 600;
@@ -329,13 +329,13 @@
 }
 
 .legal-footer .item-children .item-title {
-	font-family: "Golos Text";
+	font-family: var( --legal-font-primary );
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
 	text-decoration: none;
 	line-height: 20px;
-	color: #fff;
+	color: var(--Base-base-01);
 }
 
 .legal-footer .item-children .item-title:hover {
@@ -346,11 +346,11 @@
 
 .legal-footer .footer-copy,
 .legal-footer .footer-text p {
-	font-family: "Golos Text";
+	font-family: var( --legal-font-primary );
 	font-size: 12px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 18px;
-	color: #939393;
+	color: var(--white-60);
 }
 
