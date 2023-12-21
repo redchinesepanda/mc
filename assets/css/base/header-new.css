@@ -618,9 +618,9 @@
 	border-color: rgb(89, 151, 227);
 }
 
-.legal-menu .sub-menu .menu-item:not( :last-child ) {
+/* .legal-menu .sub-menu .menu-item:not( :last-child ) {
 	border-width: 1px 1px 0px 1px;
-}
+} */
 
 .legal-menu .sub-menu .menu-item:last-child {
 	border-width: 1px;
