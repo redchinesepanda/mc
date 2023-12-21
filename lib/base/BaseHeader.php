@@ -211,7 +211,7 @@ class BaseHeader
 
 		unset( $languages_all[ $code ] );
 
-		$languages_all = WPMLMain::exclude( $languages_all );
+		// $languages_all = WPMLMain::exclude( $languages_all );
 
 		$lang = WPMLMain::get_group_language();
 
@@ -307,7 +307,7 @@ class BaseHeader
 				$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
 			}
 		}
-		
+
 		return $prefix;
 	}
 
