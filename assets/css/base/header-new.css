@@ -1,6 +1,8 @@
 /* Background */
 
-/* menu item 1th all */
+/* menu item 1th start */
+
+/* menu item 1th all start */
 
 .legal-menu > .menu-item
 {
@@ -21,6 +23,10 @@
 	background-color:aqua; 
 }
 
+/* menu item 1th end */
+
+/* menu item 1th not lang menu item 2th start */
+
 /* menu item 1th not lang menu item 2th not has children */
 
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
@@ -35,6 +41,20 @@
 	}
 }
 
+/* menu item 1th not lang menu item 2th has children */
+
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
+{
+	background-color:#939393; 
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children
+	{
+		background-color:#939393; 
+	}
+}
+
 /* menu item 1th lang menu item 2th */
 
 .legal-menu > .menu-item:last-child .menu-item 
@@ -42,6 +62,7 @@
 	background-color:blueviolet; 
 }
 
+/* menu item 1th not lang menu item 2th end */
 
 /* .legal-menu * {
     box-sizing: border-box;
