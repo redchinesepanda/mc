@@ -1023,7 +1023,7 @@
 	.legal-menu > .menu-item:not( .legal-active ) > .item-title::after
 	{
 		font-family: var(--legal-font-icons);
-		content: '\F102';
+		content: '\F102'; 
 	}
 
 	.legal-menu > .menu-item > .item-title::after
