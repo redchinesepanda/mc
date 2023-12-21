@@ -32,7 +32,7 @@
 	}
 
 	.legal-menu .menu-item:not( .legal-country ) > .sub-menu {
-		display: none;
+		display: none; 
         flex-wrap: wrap;
         gap: 28px 32px; 
 	}
