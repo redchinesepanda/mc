@@ -326,9 +326,9 @@
 		cursor: pointer;
 	} */
    
-	.legal-menu .menu-item:hover {
+	/* .legal-menu .menu-item:hover {
         background-color: transparent;
-	}
+	} */
 
 	.legal-menu > .menu-item:last-child > .item-title {
 		background-position: left 10px center;
