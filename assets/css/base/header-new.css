@@ -14,6 +14,13 @@
 	background-color:antiquewhite; 
 }
 
+/* menu item 1th not lang */
+
+.legal-menu > .menu-item:last-child
+{
+	background-color:aqua; 
+}
+
 
 /* .legal-menu * {
     box-sizing: border-box;
