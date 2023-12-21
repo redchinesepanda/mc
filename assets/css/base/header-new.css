@@ -189,6 +189,11 @@
 		display: none;
 	}
 
+	.legal-menu > .menu-item:last-child > .sub-menu
+	{
+		flex-wrap: nowrap;
+	}
+
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group
 	{ 
 		order: 0;
@@ -280,11 +285,10 @@
 		height: 18px;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu
+	/* .legal-menu > .menu-item:last-child > .sub-menu
 	{
 		width: min-content;
-		/* width: auto; */
-	}
+	} */
 
 	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
 	{
