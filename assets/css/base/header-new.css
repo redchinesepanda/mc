@@ -285,10 +285,11 @@
 		height: 18px;
 	}
 
-	/* .legal-menu > .menu-item:last-child > .sub-menu
+	.legal-menu > .menu-item:last-child > .sub-menu
 	{
-		width: min-content;
-	} */
+		/* width: min-content; */
+		flex-basis: min-content;
+	}
 
 	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
 	{
