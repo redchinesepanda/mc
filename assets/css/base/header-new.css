@@ -687,9 +687,11 @@
 		display: block;
 	}
 
-	.legal-menu > .menu-item:last-child > .item-title::after {
+	.legal-menu > .menu-item:last-child > .item-title::before
+	{
 		content: attr( data-name-default );
 	}
+
 	.legal-menu > .menu-item.legal-active:last-child > .item-title::after {
 		content: attr( data-name-alternate );
 	}
