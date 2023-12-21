@@ -1,6 +1,8 @@
 /* Background */
 
-/* menu item 1th all */
+/* menu item 1th start */
+
+/* menu item 1th all start */
 
 .legal-menu > .menu-item
 {
@@ -14,18 +16,25 @@
 	background-color:antiquewhite; 
 }
 
-/* menu item 1th not lang */
+/* menu item 1th lang */
 
 .legal-menu > .menu-item:last-child
 {
 	background-color:aqua; 
 }
 
-/* menu item 2th not has children */
+/* menu item 1th end */
 
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
+/* menu item 1th not lang menu item 2th start */
+
+/* menu item 1th not lang menu item 2th not has children */
+
+@media screen and ( min-width: 768px )
 {
-	background-color:aquamarine; 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
+	{
+		background-color:aquamarine; 
+	}
 }
 
 @media screen and ( max-width: 767px ) {
@@ -35,6 +44,102 @@
 	}
 }
 
+/* menu item 1th not lang menu item 2th has children item title */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title
+	{
+		background-color:burlywood; 
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		background-color:burlywood; 
+	}
+}
+
+/* menu item 1th not lang menu item 2th has children menu item */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
+	{
+		background-color:coral; 
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item
+	{
+		background-color:coral; 
+	}
+}
+
+/* menu item 1th lang menu item 2th */
+
+.legal-menu > .menu-item:last-child .menu-item 
+{
+	background-color:blueviolet; 
+}
+
+/* menu item 1th not lang menu item 2th end */
+
+/* sub menu start */
+
+/* sub menu all */
+
+.legal-menu > .menu-item > .sub-menu
+{
+	background-color: darkseagreen; 
+}
+
+/* menu item 1th not lang menu sub menu all */
+
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+{
+	background-color:indianred; 
+}
+
+/* menu item 1th lang sub menu all */
+
+.legal-menu > .menu-item:last-child > .sub-menu
+{
+	background-color:deeppink; 
+}
+
+/* menu item 1th not lang menu item 2th has children sub menu */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .sub-menu
+	{
+		background-color:honeydew; 
+	}
+}
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
+	{
+		background-color:honeydew; 
+	}
+}
+
+/* sub menu end */
+
+/* menu group start */
+
+@media screen and ( min-width: 768px )
+{
+	.legal-menu .menu-group
+	{
+		background-color:cornflowerblue; 
+	}
+}
+
+/* menu group end */
 
 /* .legal-menu * {
     box-sizing: border-box;
@@ -148,8 +253,12 @@
 		height: 18px;
 	}
 
-
 	/* Position */
+
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+	{
+        padding: 28px 40px;
+	}
 
 	/* .legal-header .legal-menu
 	{
@@ -177,11 +286,6 @@
 	.legal-menu .menu-item .sub-menu {
 		position: absolute;
 		z-index: 1;
-	}
-	
-
-	.legal-menu .menu-item:not( :last-child ):hover > .sub-menu {
-        padding: 28px 40px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu {
@@ -222,6 +326,12 @@
 
 	.legal-menu > .menu-item:last-child > .item-title {
 		background-position: left 10px center;
+	}
+
+	.legal-menu > .menu-item > .sub-menu
+	{
+		border: 2px solid #000;
+		border-radius: 21px;
 	}
 
 	/* .legal-menu > .menu-item:last-child > .item-title::before,
@@ -544,13 +654,6 @@
 
 .legal-menu {
     background-color: #fff;
-}
-
-.legal-menu .sub-menu {
-	background-color: #fff;
-    border-radius: 21px;
-    border: 2px solid #000;
-    background: #FFF;
 }
 
 .legal-menu .sub-menu .menu-item {
@@ -1024,7 +1127,7 @@ a
 	
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
-		background-color: #fff;
+		/* background-color: #fff; */
 	}
 
 	/* Typography */
