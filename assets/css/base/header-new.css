@@ -687,7 +687,7 @@
 	.legal-menu .menu-item > .sub-menu {
 		order: 3;
 	} */
-
+ 
 	.legal-menu .menu-item-has-children:after {
 		display: block;
 	}
