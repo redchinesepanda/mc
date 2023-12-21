@@ -864,7 +864,7 @@
 		width: 100%;
 	} */
 
-	.legal-menu > .menu-item:last-child
+	.legal-menu > .menu-item:last-child > .item-title
 	{
 		flex-grow: 1;
 	}
