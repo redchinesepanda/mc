@@ -285,8 +285,9 @@
 		z-index: 1;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ):not( :nth-last-child(2) ) .sub-menu {
-		right: 0px;
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
+	{
+		left: 0px;
 	}
 
 	.legal-menu > .menu-item:last-child .sub-menu,
