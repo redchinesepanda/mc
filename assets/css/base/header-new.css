@@ -1021,7 +1021,7 @@
 
 	.legal-menu > .menu-item:not( .legal-active ) > .item-title::after
 	{
-		content: '\F106'; 
+		content: '\F106';  
 	}
 
 	.legal-menu > .menu-item.legal-active > .item-title::after
