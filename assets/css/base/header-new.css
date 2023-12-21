@@ -781,10 +781,10 @@
 		padding: 0px 10px 10px 10px;
 	}
 
-	.legal-menu > .menu-item:last-child::after,
+	/* .legal-menu > .menu-item:last-child::after,
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		transform: rotate(270deg);
-	}
+	} */
 
 	.legal-menu .menu-item-has-children.legal-active:after {
 		transform: rotate(180deg);
