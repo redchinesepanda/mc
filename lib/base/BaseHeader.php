@@ -39,7 +39,13 @@ class BaseHeader
         'legal-header-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-main.js',
 
-			'ver' => '1.0.1',
+			'ver' => '1.0.2',
+		],
+
+        'legal-header-open' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-open.js',
+
+			'ver' => '1.0.0',
 		],
     ];
 

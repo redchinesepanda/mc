@@ -9,21 +9,34 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let element = event.target;
 		
 		if ( current == element ) {
-			current.classList.toggle( 'legal-active' );
+			current.classList.toggle( classes.active );
 		}
 	}
 
-    function toggleLink( event )
-	{
-		let element = event.target;
+    // function toggleLink( event )
+	// {
+	// 	let element = event.target;
 
-		if ( element.hasAttribute( 'href' ) ) {
+	// 	if ( element.hasAttribute( attrs.href ) ) {
 
-			if ( !element.parentElement.classList.contains( 'legal-active' ) ) {
-				event.preventDefault();
-			}
-		}
-	}
+	// 		if ( !element.parentElement.classList.contains( classes.active ) )
+	// 		{
+	// 			event.preventDefault();
+	// 		}
+	// 	}
+	// }
+
+	// const attrs = {
+	// 	href: 'href'
+	// };
+
+	const classes = {
+		active: 'legal-active',
+
+		item: 'menu-item',
+		
+		menu: 'legal-menu'
+	};
 
 	const args = [
 		{
@@ -34,13 +47,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'action' : toggleBlock
 		},
 
-		{
-			'selector' : '.legal-menu .menu-item-has-children > a',
+		// {
+		// 	'selector' : '.legal-menu .menu-item-has-children > a',
 
-			'event' : 'click',
+		// 	'event' : 'click',
 
-			'action' : toggleLink
-		},
+		// 	'action' : toggleLink
+		// },
 
 		{
 			'selector' : '.legal-header-control',
@@ -58,13 +71,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'action' : toggleBlock
 		},
 
-		{
-			'selector' : '.footer-menu .menu-item-has-children > a',
+		// {
+		// 	'selector' : '.footer-menu .menu-item-has-children > a',
 
-			'event' : 'click',
+		// 	'event' : 'click',
 
-			'action' : toggleLink
-		},
+		// 	'action' : toggleLink
+		// },
 	];
 
 	function toggleInit()
