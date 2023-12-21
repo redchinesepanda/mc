@@ -350,18 +350,18 @@ class BaseHeader
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
 
-	public static function get_data_attr_current( $current, $item )
-	{
-		return implode(
-			' ',
+	// public static function get_data_attr_current( $current, $item )
+	// {
+	// 	return implode(
+	// 		' ',
 
-			[
-				self::get_data_attr_language( $current ),
+	// 		[
+	// 			self::get_data_attr_language( $current ),
 
-				self::get_data_attr_columns( $item ),
-			]
-		);
-	} 
+	// 			self::get_data_attr_columns( $item ),
+	// 		]
+	// 	);
+	// }
 
 	public static function parse_languages( $languages )
 	{
@@ -374,7 +374,7 @@ class BaseHeader
 
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 
-			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			'data' => self::get_data_attr_language( $languages[ 'current' ] ),
 			
 			// 'data' => self::get_data_attr_current( $languages ),
 		];
@@ -424,7 +424,7 @@ class BaseHeader
 			'data' => '',
 		];
 
-		$item[ 'data' ] = self::get_data_attr_current( $languages[ 'current' ], $item );
+		// $item[ 'data' ] = self::get_data_attr_current( $languages[ 'current' ], $item );
 
 		return $item;
 	}
