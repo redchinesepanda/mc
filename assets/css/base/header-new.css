@@ -500,6 +500,7 @@
     pointer-events: none;
 }
 
+.legal-menu > .menu-item:last-child,
 .legal-menu > .menu-item:last-child .menu-item > .item-title::before
 {
 	content: '';
