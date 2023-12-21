@@ -429,9 +429,9 @@
 	display: inline;
 } */
 
-.legal-menu .legal-country .item-title
+.legal-menu > .menu-item:last-child .item-title
 {
-	display: flex;
+	/* display: flex; */
 	align-items: center;
 	gap: 8px; 
 }
