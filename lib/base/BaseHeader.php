@@ -343,6 +343,10 @@ class BaseHeader
 	{
 		$handler = new self();
 
+		LegalDebug::debug( [
+			$item,
+		] );
+
 		$data = [
 			'data-columns' => count( $item[ 'children' ] ),
 		];
