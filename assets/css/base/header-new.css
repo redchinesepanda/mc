@@ -648,10 +648,11 @@
     line-height: 22px;
 } */
 
-/* .legal-menu .legal-country:not(.legal-has-href) > .item-title::before {
+.legal-menu > .menu-item:last-child .menu-item > .item-title::before
+{
 	content: '';
-	vertical-align: middle;
-} */
+	/* vertical-align: middle; */
+}
 
 @media screen and ( max-width: 767px )
 {
