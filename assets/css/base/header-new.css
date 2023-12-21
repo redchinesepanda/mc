@@ -689,8 +689,8 @@
 		display: flex;
 	}
 
-	.legal-menu > .menu-item:not(:last-child) > .item-title::after,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after
+	.legal-menu > .menu-item:not(:last-child) > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
 	{
 		align-items: center;
 	}
