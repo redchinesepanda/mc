@@ -356,10 +356,15 @@ class BaseHeader
 
 	public static function get_data_attr_current( $languages )
 	{
-		return
-			self::get_data_attr_language( $languages[ 'current' ] ) . ' ' .
+		return implode(
+			' ',
 			
-			self::get_data_attr_columns( $languages[ 'avaible' ] );
+			[
+				self::get_data_attr_language( $languages[ 'current' ] ),
+
+				self::get_data_attr_columns( $languages[ 'avaible' ] ),
+			]
+		);
 	}
 
 	public static function parse_languages( $languages )
