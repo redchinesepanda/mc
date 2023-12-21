@@ -283,7 +283,8 @@
 	.legal-menu > .menu-item:last-child > .sub-menu
 	{
 		/* width: min-content; */
-		width: auto;
+		/* width: auto; */
+		width: max-content;
 	}
 
 	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
