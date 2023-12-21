@@ -380,6 +380,13 @@
 		color: var(--Base-base-05, #939393); 
 	}
 
+	.legal-menu .legal-cut-control
+	{
+		font-family: var( --legal-font-primary );
+		text-decoration: none;
+		font-style: normal;
+	}
+
 	/* .legal-menu .legal-cut-control::before
 	{
 		font-family: var( --legal-font-primary );
