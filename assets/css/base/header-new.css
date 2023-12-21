@@ -895,17 +895,17 @@
 		height: auto;
 	}
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
+	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
 		width: 100%;
-	}
+	} */
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children {
+	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children {
 		width: auto;
-	}
+	} */
 
-	.legal-menu .sub-menu .menu-item.menu-item-has-children {
+	/* .legal-menu .sub-menu .menu-item.menu-item-has-children {
 		row-gap: 0;
-	}
+	} */
 
 	.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
 		width: 18px;
