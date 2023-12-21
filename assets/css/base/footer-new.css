@@ -9,6 +9,7 @@
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
 		flex-basis: 226px;
+		row-gap: 28px;
 	}
 
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
@@ -19,7 +20,8 @@
 {
 	/* Display */
 
-	.legal-footer .footer-menu {
+	.legal-footer .footer-menu,
+	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
 		row-gap: 20px;
 	}
