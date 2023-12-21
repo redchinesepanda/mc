@@ -419,10 +419,6 @@
 	flex-basis: 152px;
 }
 
-.legal-menu .menu-item > .sub-menu {
-	display: none;
-}
-
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group { 
 	order: 0;
 	display: flex;
