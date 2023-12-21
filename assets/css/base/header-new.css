@@ -262,6 +262,12 @@
 		width: 1080px;
 	}
 
+	.legal-menu .menu-item-has-children .menu-item:not( .legal-country ),
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title
+	{
+		flex-basis: 240px;
+	}
+
 	.legal-menu > .legal-country:last-child > .item-title::before
 	{
 		width: 24px;
@@ -322,7 +328,6 @@
 	.legal-menu .menu-group .menu-item-has-children .link-hidden-list-3-level {
 		padding: 8px 30px 8px 0;
 	}
-
 
 	/* Background */
 
@@ -435,11 +440,6 @@
 .legal-menu .menu-item
 {
 	display: flex;
-}
-
-.legal-menu .menu-item-has-children .menu-item:not( .legal-country )
-{
-	flex-basis: 240px;
 }
 
 .legal-menu .menu-item-has-children .legal-country
