@@ -14,14 +14,14 @@
 	background-color:antiquewhite; 
 }
 
-/* menu item 1th not lang */
+/* menu item 1th lang */
 
 .legal-menu > .menu-item:last-child
 {
 	background-color:aqua; 
 }
 
-/* menu item 2th not has children */
+/* menu item 1th not lang menu item 2th not has children */
 
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
 {
@@ -33,6 +33,13 @@
 	{
 		background-color:aquamarine; 
 	}
+}
+
+/* menu item 1th lang menu item 2th */
+
+.legal-menu > .menu-item:last-child > .menu-item
+{
+	background-color:aquamarine; 
 }
 
 
