@@ -708,7 +708,7 @@
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		display: block;
-	}
+	} 
 
 	/* .legal-menu .sub-menu .menu-item.menu-item-has-children {
 		flex-direction: row;
