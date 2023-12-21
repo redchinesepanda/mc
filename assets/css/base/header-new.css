@@ -135,7 +135,7 @@
 
 @media screen and ( min-width: 768px )
 {
-	.legal-menu .menu-group
+	.legal-menu > .menu-item > .sub-menu > .menu-group
 	{
 		background-color:cornflowerblue; 
 	}
@@ -445,7 +445,7 @@
 	align-content: start;
 }
 
-.legal-menu .menu-group
+.legal-menu > .menu-item > .sub-menu > .menu-group
 { 
 	display: flex;
 	flex-wrap: wrap;
