@@ -170,20 +170,21 @@
 	}
 
 	.legal-footer .footer-text {
-		padding-top: 5px;
+		padding-top: 4px;
 	}
 
 	.legal-footer .footer-text p {
 		padding: 0px;
+		margin: 0px;
 	}
 	
-	.legal-footer .footer-text p:not(:last-child) {
+/* 	.legal-footer .footer-text p:not(:last-child) {
 		margin: 4px 0 0 0;
 	}
 	
 	.legal-footer .footer-text p:last-child {
 		margin: 0;
-	}
+	} */
 
 	/* Width and Height */
 
