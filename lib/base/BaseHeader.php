@@ -339,6 +339,29 @@ class BaseHeader
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
 
+	public static function get_data_attr_columns( $items )
+	{
+		$handler = new self();
+
+		// LegalDebug::debug( [
+		// 	$item,
+		// ] );
+
+		$data = [
+			'data-columns' => count( $items ),
+		];
+
+		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
+	}
+
+	public static function get_data_attr_current( $languages )
+	{
+		return
+			self::get_data_attr_language( $languages[ 'current' ] ) . ' ' .
+			
+			self::get_data_attr_columns( $languages[ 'avaible' ] );
+	}
+
 	public static function parse_languages( $languages )
 	{
 		$item = [
@@ -350,7 +373,9 @@ class BaseHeader
 
 			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 
-			'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			
+			'data' => self::get_data_attr_current( $languages ), 
 		];
 
 		// LegalDebug::debug( [
