@@ -789,7 +789,7 @@
 		transform: rotate(180deg);
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .item-title
+	.legal-menu > .menu-item > .item-title
 	{
 		padding: 16px 0px;
 	}
@@ -811,9 +811,9 @@
 		transform: none;
 	}
 
-	.legal-header .legal-menu > .menu-item:last-child > .item-title {
+	/* .legal-header .legal-menu > .menu-item:last-child > .item-title {
 		padding: 16px 24px 16px 0px;
-	}
+	} */
 
 	.legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
 		padding: 14px 24px 14px 18px;
