@@ -843,8 +843,11 @@
 
 	/* Width and Height */
 
-	.legal-header .legal-logo {
-		height: 52px;
+	.legal-header .legal-logo,
+	.legal-header .legal-logo picture
+	{
+		width: 48px;
+		height: 48px;
 	}
 
 	/* .legal-header-control {
