@@ -1,8 +1,13 @@
 /* Footer New CSS */
-@media screen and ( max-width: 960px )
+@media ( min-width: 767px ) and ( max-width: 960px )
 {
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
+		flex-basis: 226px;
+	}
+
+	.legal-footer .footer-menu > .menu-item-end .menu-item {
+		flex-basis: auto;
 	}
 }
 @media screen and ( max-width: 767px )
@@ -257,9 +262,9 @@
 	padding-top: 8px;
 } */
 
-.footer-menu > .menu-item-end > .menu-item:not( :last-child ) {
+/* .footer-menu > .menu-item-end > .menu-item:not( :last-child ) {
 	padding-bottom: 20px; 
-}
+} */
 
 .legal-footer .item-children .item-title {
 	padding: 8px 0;
