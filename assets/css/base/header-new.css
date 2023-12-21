@@ -322,9 +322,9 @@
 
 	/* Background */
 
-	.legal-header .legal-logo {
+	/* .legal-header .legal-logo {
 		cursor: pointer;
-	}
+	} */
    
 	.legal-menu .menu-item:hover {
         background-color: transparent;
