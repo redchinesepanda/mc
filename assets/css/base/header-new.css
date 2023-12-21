@@ -329,6 +329,12 @@
 		background-position: left 10px center;
 	}
 
+	.legal-menu > .menu-item > .sub-menu
+	{
+		border: 2px solid #000;
+		border-radius: 21px;
+	}
+
 	/* .legal-menu > .menu-item:last-child > .item-title::before,
 	.legal-menu > .menu-item:last-child .menu-item > .item-title::before {
 		background-size: 23px 23px;
@@ -649,13 +655,6 @@
 
 .legal-menu {
     background-color: #fff;
-}
-
-.legal-menu .sub-menu {
-	/* background-color: #fff; */
-    border-radius: 21px;
-    border: 2px solid #000;
-    /* background: #FFF; */
 }
 
 .legal-menu .sub-menu .menu-item {
