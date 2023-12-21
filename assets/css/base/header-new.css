@@ -966,9 +966,9 @@
 		border: none;
 	}
 
-	.legal-menu > .menu-item > .item-title {
+	/* .legal-menu > .menu-item > .item-title {
 		background-position: left 24px center;
-	}
+	} */
 
 	.legal-menu > .menu-item:last-child > .item-title::before
 	{
