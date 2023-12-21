@@ -1084,13 +1084,14 @@
 
 	.legal-menu > .menu-item:not( :last-child ).legal-active > .item-title::after
 	{
-		content: '\F106'; 
+		/* content: '\F106'; */
+		content: '\F10C';
 	}
 
 	.legal-menu > .menu-item:not( :last-child ).legal-active > .item-title::after,
 	.legal-menu > .menu-item:last-child.legal-active::after > .item-title::after
 	{
-		content: '\F10C'; 
+		content: '\F10C';
 	}
 	
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title::after
