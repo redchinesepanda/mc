@@ -687,7 +687,7 @@
 		display: block;
 	}
 
-	.legal-menu > .menu-item:last-child > .item-title::before
+	.legal-menu > .menu-item:last-child > .item-title::after
 	{
 		content: attr( data-name-default );
 	}
