@@ -27,7 +27,7 @@
 		content: attr( data-name-code );
 	}
 
-	.legal-menu .menu-item:not:hover > .sub-menu
+	.legal-menu .menu-item:hover > .sub-menu
 	{
         display: flex;
 	}
