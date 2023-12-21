@@ -324,6 +324,11 @@
 		padding: 30px 18px;
 	}
 
+	.legal-menu > .menu-item-has-children .menu-item-has-children .item-title
+	{
+		padding: 8px 0px;
+	}
+
 	.legal-menu > .menu-item:last-child
 	{
 		margin-left: auto;
@@ -534,12 +539,6 @@
 
 .legal-header {
     position: relative;
-}
-
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
-{
-	padding: 8px 0px;
 }
 
 .legal-menu .sub-menu .menu-item.menu-item-new .item-title::after {
