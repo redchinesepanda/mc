@@ -898,7 +898,11 @@
 		width: 100%;
 	}
 
-
+	.legal-menu > .menu-item:last-child .menu-item > .item-title::before
+	{
+		width: 18px;
+		height: 18px;
+	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
