@@ -542,10 +542,10 @@
 		display: block;
 	}
 
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
+	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child {
 		align-content: flex-start;
-	}
+	} */
 
 	.legal-header .legal-header-control
 	{
