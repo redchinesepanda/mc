@@ -13,7 +13,7 @@
     /* Width and Height */
 
     .legal-breadcrumbs {
-        width: 1080px;
+        width: 1218px;
     }
 }
 
@@ -27,6 +27,11 @@
 
 .legal-breadcrumbs .legal-item-title {
     display: inline-block;
+}
+
+.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
+    display: flex;
+    column-gap: 8px;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {  /*временный стиль для отключения надписи Match Center*/
