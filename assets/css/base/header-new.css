@@ -847,19 +847,11 @@
 		padding-left: 16px;
 	}
 
-	/* .legal-menu > .menu-item:not( :last-child ).legal-active > .sub-menu
+	.legal-menu > .menu-item > .sub-menu
 	{
-		padding-left: 16px;
-	} */
-
-	/* .legal-menu > .menu-item:last-child .menu-item > .item-title
-	{
-		padding: 8px 0px;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .menu-item.legal-country-all > .item-title {
-		padding: 10px 10px 10px 26px;
-	} */
+		padding-top: 8px;
+  		padding-bottom: 8px;
+	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active > .item-title {
 		padding: 14px 0 14px 18px;
@@ -883,10 +875,6 @@
 		width: 24px;
 		height: 24px;
 	}
-
-	/* .legal-menu {
-		width: 100%;
-	} */
 
 	.legal-menu > .menu-item:last-child > .item-title
 	{
