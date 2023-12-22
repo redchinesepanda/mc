@@ -975,59 +975,6 @@
 		line-height: 20px;
 	}
 
-	/* .legal-header .legal-menu > .menu-item:not( :last-child ) > .item-title {
-		font-weight: 600;
-	} */
- 
-	/* .legal-menu .menu-item:not( .legal-menu > .menu-item) > .item-title,
-	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
-		font-size: 14px;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item:last-child > .item-title {
-		font-weight: 600;
-		font-size: 14px;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
-		font-size: 16px;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title::before {
-		content: none
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
-	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
-		content: '\f102';
-		font-size: 24px;
-		text-align: left;
-		line-height: 51px;
-		font-family: var(--legal-font-icons);
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active > .item-title {
-		font-weight: 600;
-		font-size: 16px;
-		color: #000;
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children > .item-title{
-		color: #000;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
-		font-weight: 400;
-	} */
-
-	/* .legal-menu .menu-item-has-children:after {
-		line-height: 51px;
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
-		line-height: 1;
-	} */
-
 	.legal-menu > .menu-item:not( :last-child ):not( .legal-active ) > .item-title::after,
 	.legal-menu > .menu-item:last-child:not( .legal-active )::after
 	{
@@ -1049,8 +996,6 @@
 		content: '\F104';
 	}
 	
-	/* .legal-menu > .menu-item:last-child::after, */
-	/* .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title::after */
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
 	.legal-menu > .menu-item:last-child:not( .legal-active )::after,
 	.legal-menu > .menu-item:last-child.legal-active::before,
@@ -1076,14 +1021,10 @@
 	}
 
 	.legal-header-control:not( .legal-active )::after {
-		/* content: '\f106'; */
-		/* content: '\F108'; */
 		content: '\F10A';
 	}
 
 	.legal-header-control.legal-active::after {
-		/* content: '\f105'; */
-		/* content: '\F107'; */
 		content: '\F10B';
 	}
 	
