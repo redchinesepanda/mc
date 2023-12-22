@@ -120,6 +120,15 @@
 	}
 }
 
+/* menu item 1th not lang menu item 2th has children */
+
+@media screen and ( max-width: 767px ) {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children
+	{
+		background-color:cornflowerblue; 
+	}
+}
+
 /* menu item 1th not lang menu item 2th has children item title */
 
 @media screen and ( min-width: 768px )
