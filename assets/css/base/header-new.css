@@ -942,7 +942,8 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:last-child .menu-item,
-	.legal-menu > .menu-item:last-child .menu-item > .item-title
+	.legal-menu > .menu-item:last-child .menu-item > .item-title,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children .menu-item > .item-title
 	{
 		flex-basis: 100%;
 	}
@@ -994,7 +995,8 @@
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item > .item-title
 	{
 		font-family: var( --legal-font-primary );
 		text-decoration: none;
@@ -1002,14 +1004,15 @@
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item > .item-title
 	{
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 20px;
 	}
 
-	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
 		font-size: 16px;
 		font-weight: 600;
