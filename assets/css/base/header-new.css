@@ -740,7 +740,8 @@
 		display: flex;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu
+	.legal-menu > .menu-item:last-child > .sub-menu,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
 		flex-wrap: wrap;
 		row-gap: 8px;
@@ -834,7 +835,8 @@
     	left: 0px;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu
+	.legal-menu > .menu-item:last-child > .sub-menu,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
 		padding: 0px 16px;
 	}
