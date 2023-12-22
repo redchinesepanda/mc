@@ -1,177 +1,3 @@
-/* Background */
-
-/* sub menu start */
-
-/* menu item 1th sub menu all */
-
-.legal-menu > .menu-item > .sub-menu
-{
-	background-color: darkseagreen; 
-}
-
-/* menu item 1th not lang menu sub menu all */
-
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu
-{
-	background-color:indianred; 
-}
-
-/* menu item 1th lang sub menu all */
-
-.legal-menu > .menu-item:last-child > .sub-menu
-{
-	background-color:deeppink; 
-}
-
-/* menu item 1th not lang menu item 2th has children sub menu */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .sub-menu
-	{
-		background-color:honeydew; 
-	}
-}
-
-@media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
-	{
-		background-color:honeydew; 
-	}
-}
-
-/* sub menu end */
-
-/* menu group start */
-
-/* menu item 1th menu group all */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item > .sub-menu > .menu-group
-	{
-		background-color:cornflowerblue; 
-	}
-}
-
-/* menu item 1th not lang menu group all */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group
-	{
-		background-color:olive; 
-	}
-}
-
-/* menu item 1th lang menu group all */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:last-child > .sub-menu > .menu-group
-	{
-		background-color:tomato; 
-	}
-}
-
-/* menu group end */
-
-/* menu item 1th start */
-
-/* menu item 1th all start */
-
-.legal-menu > .menu-item
-{
-	background-color: aliceblue; 
-}
-
-/* menu item 1th not lang */
-
-.legal-menu > .menu-item:not( :last-child )
-{
-	background-color:antiquewhite; 
-}
-
-/* menu item 1th lang */
-
-.legal-menu > .menu-item:last-child
-{
-	background-color:aqua; 
-}
-
-/* menu item 1th end */
-
-/* menu item 1th not lang menu item 2th start */
-
-/* menu item 1th not lang menu item 2th not has children */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children )
-	{
-		background-color:aquamarine; 
-	}
-}
-
-@media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children )
-	{
-		background-color:aquamarine; 
-	}
-}
-
-/* menu item 1th not lang menu item 2th has children */
-
-@media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children
-	{
-		background-color:cornflowerblue; 
-	}
-}
-
-/* menu item 1th not lang menu item 2th has children item title */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title
-	{
-		background-color:burlywood; 
-	}
-}
-
-@media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
-	{
-		background-color:burlywood; 
-	}
-}
-
-/* menu item 1th not lang menu item 2th has children menu item */
-
-@media screen and ( min-width: 768px )
-{
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
-	{
-		background-color:coral; 
-	}
-}
-
-@media screen and ( max-width: 767px ) {
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item
-	{
-		background-color:coral; 
-	}
-}
-
-/* menu item 1th lang menu item 2th */
-
-.legal-menu > .menu-item:last-child .menu-item
-{
-	background-color:mistyrose; 
-}
-
-/* menu item 1th not lang menu item 2th end */
-
 @media screen and ( min-width: 768px )
 {
 	/* Display */
@@ -292,14 +118,11 @@
 		width: 1080px;
 	}
 
-	/* .legal-menu .menu-item-has-children .menu-item:not( .legal-country ), */
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ),
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-group > .menu-item-has-children .menu-item
-	/* .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title */
 	{
-		/* flex-basis: 240px; */
 		flex-basis: 100%;
 	}
 
@@ -543,7 +366,6 @@
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
 {
 	content: "new";
-	/* flex-basis: 50%; */
   	flex-grow: 1;
 }
 
