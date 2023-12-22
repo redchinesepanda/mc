@@ -258,11 +258,15 @@
 		display: none;
 	}
 
-	/* Width and Height */
+	/* Width and Height */	
 
 	.legal-header {
 		max-width: 1080px;
 	}
+
+	/* .legal-menu {
+		width: 100%;
+	} */
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
 	{
@@ -567,15 +571,6 @@
 }
 
 /* Width and Height */
-
-.legal-menu {
-	width: 100%;
-}
-
-/* .legal-menu .menu-item-has-children:after {
-	width: auto;
-	height: auto;
-} */
 
 /* Background */
 
