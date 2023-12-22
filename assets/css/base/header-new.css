@@ -261,9 +261,21 @@
 
 	/* Typography */
 
-	.legal-menu .legal-cut-control
+	.legal-menu > .menu-item > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title
 	{
-		cursor: pointer;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 22px;
+	}
+
+	.legal-menu .legal-cut-control,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item > .item-title
+	{
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
 	}
 
 	.legal-menu .legal-cut-control,
@@ -288,23 +300,6 @@
 		font-style: normal;
 	}
 
-	.legal-menu > .menu-item > .item-title,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title
-	{
-		font-size: 16px;
-		font-weight: 500;
-		line-height: 22px;
-	}
-
-	.legal-menu .legal-cut-control,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children > .item-title,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item > .item-title
-	{
-		font-size: 14px;
-		font-weight: 400;
-		line-height: 20px;
-	}
-
 	.legal-menu > .menu-item > .item-title:hover,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title:hover,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover,
@@ -326,6 +321,11 @@
 		font-family: var(--legal-font-icons);
 		font-size: 16px;
 		line-height: 16px; 
+	}
+
+	.legal-menu .legal-cut-control
+	{
+		cursor: pointer;
 	}
 }
 
