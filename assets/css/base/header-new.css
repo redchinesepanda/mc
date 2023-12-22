@@ -116,10 +116,11 @@
 	/* Width and Height */	
 
 	.legal-header {
-		max-width: 1080px;
+		max-width: var( --base-width-desktop );
 	}
 
-	.legal-menu {
+	.legal-menu
+	{
 		width: 100%;
 	}
 
@@ -218,7 +219,8 @@
 		padding: 10px 0px;
 	}
 
-	.legal-menu > .menu-item:last-child > .sub-menu {
+	.legal-menu > .menu-item:last-child > .sub-menu
+	{
 		padding: 18px;
 	}
 
