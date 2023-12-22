@@ -394,9 +394,10 @@
 
 /* Background */
 
-.legal-header-wrapper
+.legal-header-wrapper,
+.legal-menu > .menu-item > .sub-menu
 {
-	background-color: #fff;
+	background-color: var(--Base-base-01, #FFF); 
 }
 
 /* Typography */
