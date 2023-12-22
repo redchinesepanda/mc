@@ -264,9 +264,9 @@
 		max-width: 1080px;
 	}
 
-	/* .legal-menu {
+	.legal-menu {
 		width: 100%;
-	} */ 
+	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
 	{
