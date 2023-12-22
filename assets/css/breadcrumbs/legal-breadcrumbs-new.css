@@ -92,10 +92,10 @@ nav.breadcrumbs {
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title::after {
-    content: '\f107';
+    content: '\f109';
     color: #6C6C6C;
-    line-height: 9px;
-    font-size: 28px;
+    line-height: 18px;
+    font-size: 18px;
     font-family: var(--legal-font-icons);
 }
 
