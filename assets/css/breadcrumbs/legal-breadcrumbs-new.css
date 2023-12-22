@@ -26,7 +26,7 @@
 }
 
 .legal-breadcrumbs .legal-item-title {
-    display: inline-block;
+    display: flex;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
@@ -79,10 +79,10 @@ nav.breadcrumbs {
     color: #0A0A0A;
 }
 
-.legal-breadcrumbs a.legal-item-title {
+/* .legal-breadcrumbs a.legal-item-title {
     font-weight: 400;
 }
-
+ */
 .legal-breadcrumbs a.legal-item-title:hover {
     text-shadow: 0 0 0.35px #000, 0 0 0.35px #525252;
 }
@@ -111,4 +111,5 @@ nav.breadcrumbs {
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
     content: "/";
     color: #6C6C6C;
+    line-height: 17px;
 }
