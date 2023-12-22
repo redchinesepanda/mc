@@ -567,9 +567,16 @@
 
 	/* Position */
 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active,
+	.legal-menu > .menu-item:last-child.legal-active
+	{
+		position: absolute;
+		top: 58px;
+    	left: 0px;
+	}
+
 	.legal-header
 	{
-		/* padding: 5px 0px; */
 		padding-top: 5px;
 	}
 
@@ -610,10 +617,6 @@
 		padding: 6px 0px;
 	}
 
-	.legal-menu .menu-item-has-children.legal-active:after {
-		transform: rotate(180deg);
-	}
-
 	.legal-menu > .menu-item > .item-title,
 	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
@@ -621,12 +624,11 @@
 		padding-bottom: 16px;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active,
-	.legal-menu > .menu-item:last-child.legal-active
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
-		position: absolute;
-		top: 58px;
-    	left: 0px;
+		padding-top: 8px;
+  		padding-bottom: 8px;
 	}
 
 	.legal-menu > .menu-item:last-child > .sub-menu,
@@ -645,13 +647,6 @@
 	.legal-menu > .menu-item:last-child.legal-active::before
 	{
 		padding-left: 16px;
-	}
-
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu,
-	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .sub-menu
-	{
-		padding-top: 8px;
-  		padding-bottom: 8px;
 	}
 
 	/* Width and Height */
