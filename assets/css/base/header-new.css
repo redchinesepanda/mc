@@ -332,7 +332,8 @@
 		padding: 30px 18px;
 	}
 
-	.legal-menu > .menu-item-has-children .menu-item-has-children .item-title
+	.legal-menu > .menu-item-has-children .menu-item-has-children .item-title,
+	.legal-menu .legal-cut-control
 	{
 		padding: 8px 0px;
 	}
