@@ -846,7 +846,8 @@
 
 	.legal-menu > .menu-item > .item-title
 	{
-		padding: 16px 0px;
+		padding-top: 16px;
+		padding-bottom: 16px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active,
