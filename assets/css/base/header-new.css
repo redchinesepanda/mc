@@ -724,9 +724,13 @@
 		flex-basis: 100%;
 	}
 
+	.legal-menu > .menu-item:last-child.legal-active > .sub-menu
+	{
+		display: flex;
+	}
+
 	.legal-menu > .menu-item:last-child > .sub-menu
 	{
-		/* display: flex; */
 		flex-wrap: wrap;
 		row-gap: 8px;
 	}
