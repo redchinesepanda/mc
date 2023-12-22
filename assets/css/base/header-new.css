@@ -139,7 +139,7 @@
 	.legal-menu > .menu-item:last-child .menu-item > .item-title
 	{
 		/* min-width: 152px; */
-		flex-basis: 100%;
+		flex-basis: 152px;
 	}
 
 	/* Position */
