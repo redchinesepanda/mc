@@ -49,9 +49,9 @@
     padding-left: 0;
 }
 
-.legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
+/* .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
     padding-right: 8px;
-}
+} */
 
 /* Width and Heigh */
 
@@ -111,5 +111,4 @@ nav.breadcrumbs {
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
     content: "/";
     color: #6C6C6C;
-    padding-right: 8px;
 }
