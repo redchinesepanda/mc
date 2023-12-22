@@ -675,10 +675,11 @@
 		display: block;
 	}
 
-	.legal-menu {
+	/* .legal-menu {
 		flex-direction: column;
-	}
+	} */
 
+	.legal-menu,
 	.legal-menu .menu-item {
 		flex-wrap: wrap;
 	}
