@@ -882,16 +882,6 @@
   		padding-bottom: 8px;
 	}
 
-	/* .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
-	{
-		padding: 14px 16px;
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
-		padding: 8px 16px;
-		margin-left: -16px;
-	} */
-
 	/* Width and Height */
 
 	.legal-header .legal-logo,
@@ -1057,25 +1047,28 @@
 		line-height: 24px;
 	}
 
-	.legal-menu .menu-item.legal-country-all > .item-title::before { 
+	/* .legal-menu .menu-item.legal-country-all > .item-title::before { 
 		font-size: 18px;
-	}
+	} */
 
-	.legal-menu .legal-cut-control::before {
+	/* .legal-menu .legal-cut-control::before {
 		font-size: 16px;
-	}
+	} */
 
-	.legal-header-control::after {
+	.legal-header > .legal-header-control::after
+	{
 		font-family: var(--legal-font-icons);
 		line-height: 24px;
 		font-size: 24px;
 	}
 
-	.legal-header-control:not( .legal-active )::after {
+	.legal-header > .legal-header-control:not( .legal-active )::after
+	{
 		content: '\F10A';
 	}
 
-	.legal-header-control.legal-active::after {
+	.legal-header > .legal-header-control.legal-active::after
+	{
 		content: '\F10B';
 	}
 	
