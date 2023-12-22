@@ -183,6 +183,10 @@
 		display: none;
 	}
 
+	.legal-menu {
+		display: flex;
+	}
+
 	.legal-menu > .menu-item:last-child > .sub-menu
 	{
 		flex-wrap: nowrap;
@@ -464,10 +468,6 @@
 {
 	display: inline-block;
 	height: 48px;
-}
-
-.legal-menu {
-	display: flex;
 }
 
 .legal-menu .legal-cut-control:not( .legal-active )::before {
