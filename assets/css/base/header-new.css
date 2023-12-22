@@ -839,8 +839,9 @@
 		padding-left: 16px;
 	}
 
-	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
-		padding: 10px 10px 10px 0px;
+	.legal-menu > .menu-item:last-child .menu-item > .item-title
+	{
+		padding: 8px 0px;
 	}
 
 	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .menu-item.legal-country-all > .item-title {
