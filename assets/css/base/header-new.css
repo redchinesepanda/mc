@@ -780,14 +780,6 @@
 		font-style: normal;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .item-title,
-	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
-	{
-		font-size: 16px;
-		font-weight: 600;
-		line-height: 22px;
-	}
-
 	.legal-menu > .menu-item:last-child > .item-title
 	{
 		font-size: 14px;
@@ -804,6 +796,7 @@
 		line-height: 20px;
 	}
 
+	.legal-menu > .menu-item:not( :last-child ) > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
 		font-size: 16px;
