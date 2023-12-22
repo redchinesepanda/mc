@@ -969,7 +969,7 @@
 		border-top: 2px solid #000;
 	}
  
-	.legal-menu > .menu-item:last-child > .item-title::before
+	.legal-menu > .menu-item:last-child:not( .legal-active ) > .item-title::before
 	{
 		background-size: 18px;
 	}
