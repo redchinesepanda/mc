@@ -332,7 +332,8 @@
 		padding: 30px 18px;
 	}
 
-	.legal-menu > .menu-item-has-children .menu-item-has-children .item-title
+	.legal-menu > .menu-item-has-children .menu-item-has-children .item-title,
+	.legal-menu .legal-cut-control
 	{
 		padding: 8px 0px;
 	}
@@ -562,13 +563,13 @@
 	padding: 10px 0px;
 } */
 
-.legal-menu .menu-item.legal-country-all > .item-title {
+/* .legal-menu .menu-item.legal-country-all > .item-title {
 	position: relative;
-}
+} */
 
-.legal-menu .legal-cut-control {
+/* .legal-menu .legal-cut-control {
 	padding: 6px 0;
-}
+} */
 
 /* Width and Height */
 
