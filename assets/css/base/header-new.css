@@ -314,6 +314,19 @@
 		text-decoration: solid underline var(--Base-base-09, #0A0A0A) 2px;
 		text-underline-offset: 5px;
 	}
+
+	.legal-menu .legal-cut-control::after
+	{
+		content: '\F103';
+		font-family: var(--legal-font-icons);
+		font-size: 16px;
+		line-height: 16px; 
+	}
+
+	.legal-menu .legal-cut-control
+	{
+		cursor: pointer;
+	}
 }
 
 /* Display */
