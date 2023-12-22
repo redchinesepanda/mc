@@ -2,22 +2,15 @@
 {
 	/* Display */
 
-	.legal-menu .legal-cut-control.legal-hide
-	{
-		display: none;
-	}
-
-	.legal-header .legal-header-control
-	{
-		display: none;
-	}
-
+	.legal-menu .legal-cut-control.legal-hide,
+	.legal-header .legal-header-control,
 	.legal-menu > .menu-item:not( :hover ) > .sub-menu
 	{
 		display: none;
 	}
 
-	.legal-menu .menu-item.legal-has-href {
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-has-href
+	{
 		display: none;
 	}
 
