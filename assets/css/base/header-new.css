@@ -758,6 +758,12 @@
 		background-size: 18px;
 	}
 
+	.legal-menu > .menu-item:last-child.legal-active,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active
+	{
+		background-color: var(--Base-base-01, #FFF); 
+	}
+
 	/* Typography */
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
