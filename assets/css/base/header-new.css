@@ -744,6 +744,11 @@
 		row-gap: 8px;
 	}
 
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		column-gap: 18px;
+	}
+
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		display: block;
 	}
