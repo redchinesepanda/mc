@@ -410,7 +410,7 @@
 		background-size: 24px 24px;
 	}
 
-	.legal-menu .sub-menu .legal-country:last-child > .item-title::before
+	.legal-menu > .menu-item:last-child .menu-item > .item-title::before
 	{
 		background-size: 18px 18px;
 	}
