@@ -9,7 +9,7 @@
 		display: none;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .legal-has-href
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .legal-has-href
 	{
 		display: none;
 	}
