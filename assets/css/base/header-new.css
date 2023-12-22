@@ -780,6 +780,13 @@
 		font-style: normal;
 	}
 
+	.legal-menu > .menu-item:not( :last-child ) > .item-title
+	{
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 22px;
+	}
+
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children .menu-item > .item-title
