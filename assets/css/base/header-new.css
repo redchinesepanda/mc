@@ -521,9 +521,9 @@
 	cursor: pointer;
 }
 
-.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
+/* .legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     display: inline-block;
-}
+} */
 
 .legal-menu .legal-cut-control::after
 {
@@ -680,8 +680,10 @@
 	} */
 
 	.legal-menu,
-	.legal-menu .menu-item {
+	.legal-menu .menu-item
+	{
 		flex-wrap: wrap;
+		align-content: start;
 	}
 
 	.legal-menu > .menu-item:last-child
@@ -760,23 +762,28 @@
 
 	.legal-header
 	{
-		padding: 5px 0px;
+		/* padding: 5px 0px; */
+		padding-top: 5px;
 	}
 
 	.legal-header .legal-logo
 	{
 		margin-left: 16px;
+		padding-bottom: 5px;
 	}
 
 	.legal-header .legal-header-control
 	{
 		margin-left: auto;
 		margin-right: 16px;
+		padding-bottom: 5px; 
 	}
 
 	.legal-menu
 	{
-		padding: 0px 16px;
+		padding-top: 8px;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
@@ -832,13 +839,14 @@
 		padding-left: 16px;
 	}
 
-	.legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
-		padding: 10px 10px 10px 0px;
+	.legal-menu > .menu-item:last-child .menu-item > .item-title
+	{
+		padding: 8px 0px;
 	}
 
-	.legal-header .legal-menu > .menu-item.legal-active:last-child .menu-item.legal-country-all > .item-title {
+	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .menu-item.legal-country-all > .item-title {
 		padding: 10px 10px 10px 26px;
-	}
+	} */
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active > .item-title {
 		padding: 14px 0 14px 18px;
@@ -863,9 +871,9 @@
 		height: 24px;
 	}
 
-	.legal-menu {
+	/* .legal-menu {
 		width: 100%;
-	}
+	} */
 
 	.legal-menu > .menu-item:last-child > .item-title
 	{
@@ -883,14 +891,19 @@
 		height: 19px;
 	}
 
+	.legal-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active,
 	.legal-menu > .menu-item:last-child.legal-active
 	{
-		height: calc( 100vh - 58px );
+		min-height: calc( 100vh - 58px );
 		width: 100%;
 	}
 
-
+	.legal-menu > .menu-item:last-child .menu-item > .item-title::before
+	{
+		width: 18px;
+		height: 18px;
+	}
 
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
