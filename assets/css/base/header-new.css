@@ -96,7 +96,7 @@
 		content: attr( data-name-code );
 	}
 
-	/* .legal-menu .legal-cut-control:not( .legal-active )::before
+	.legal-menu .legal-cut-control:not( .legal-active )::before
 	{
 		content: attr( data-content-default );
 	}
@@ -104,7 +104,7 @@
 	.legal-menu .legal-cut-control.legal-active::before
 	{
 		content: attr( data-content-active );
-	} */
+	}
 
 	/* Width and Height */	
 
