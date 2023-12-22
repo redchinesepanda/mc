@@ -726,8 +726,7 @@
 		align-items: center;
 	}
 
-	.legal-menu > .menu-item:last-child,
-	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children
+	.legal-menu > .menu-item:last-child
 	{
 		gap: 8px 18px;
 	}
@@ -874,7 +873,8 @@
 		padding-left: 16px;
 	}
 
-	.legal-menu > .menu-item > .sub-menu
+	.legal-menu > .menu-item > .sub-menu,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
 		padding-top: 8px;
   		padding-bottom: 8px;
