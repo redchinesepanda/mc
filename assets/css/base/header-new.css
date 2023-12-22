@@ -780,7 +780,8 @@
 		font-style: normal;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .item-title
+	.legal-menu > .menu-item:not( :last-child ) > .item-title,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
 		font-size: 16px;
 		font-weight: 600;
