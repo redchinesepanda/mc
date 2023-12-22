@@ -383,11 +383,13 @@
 
 /* Position */
 
-.legal-header {
+.legal-header
+{
     position: relative;
 }
 
-.legal-menu > .menu-item:last-child .menu-item > .item-title {
+.legal-menu > .menu-item:last-child .menu-item > .item-title
+{
 	padding: 8px 0px;
 }
 
