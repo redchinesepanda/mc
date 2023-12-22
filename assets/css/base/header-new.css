@@ -894,7 +894,7 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active,
 	.legal-menu > .menu-item:last-child.legal-active
 	{
-		height: calc( 100vh - 58px );
+		min-height: calc( 100vh - 58px );
 		width: 100%;
 	}
 
