@@ -858,6 +858,7 @@
 	}
 
 	.legal-menu > .menu-item:last-child > .sub-menu,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
 		padding-left: 16px;
