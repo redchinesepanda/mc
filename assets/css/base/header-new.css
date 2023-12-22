@@ -415,6 +415,16 @@
 		background-size: 18px 18px;
 	}
 
+	.legal-menu > .menu-item:last-child > .item-title::before,
+	.legal-menu > .menu-item:last-child .menu-item:not( :last-child ) > .item-title::before
+	{
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 50%;
+		border: 1px solid #000;
+		box-sizing: border-box;
+	}
+
 	/* Typography */
 
 	.legal-menu .legal-cut-control
@@ -607,15 +617,6 @@
 
 /* .legal-menu > .menu-item:last-child > .item-title {
 	background-repeat: no-repeat;
-} */
-
-/* .legal-menu .legal-country:not(.legal-country-all) > .item-title::before
-{
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-    border: 1px solid #000;
-	box-sizing: border-box;
 } */
 
 /* .legal-menu .legal-cut-control::after {
