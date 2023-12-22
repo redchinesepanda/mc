@@ -469,6 +469,11 @@
 		display: flex;
 	}
 
+	.legal-header
+	{
+		flex-wrap: wrap;
+	}
+
 	.legal-menu,
 	.legal-menu .menu-item
 	{
