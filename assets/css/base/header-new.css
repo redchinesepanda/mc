@@ -1001,7 +1001,8 @@
 		content: '\F102';
 	}
 
-	.legal-menu > .menu-item:last-child.legal-active::before
+	.legal-menu > .menu-item:last-child.legal-active::before,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
 		content: '\F104';
 	}
@@ -1009,7 +1010,8 @@
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
 	.legal-menu > .menu-item:last-child:not( .legal-active )::after,
 	.legal-menu > .menu-item:last-child.legal-active::before,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title::after
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children:not( .legal-active ) > .item-title::after,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active > .item-title
 	{
 		font-family: var(--legal-font-icons);
 		font-size: 24px;
