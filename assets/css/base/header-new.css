@@ -515,11 +515,6 @@
 		content: attr( data-name-alternate );
 	}
 
-	.legal-menu > .menu-item > .sub-menu
-	{
-		flex-basis: 100%;
-	}
-
 	.legal-menu > .menu-item:last-child.legal-active > .sub-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active > .sub-menu
 	{
@@ -541,11 +536,6 @@
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
 		display: block;
 	}
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
-	.legal-header .legal-menu > .menu-item.legal-active:last-child {
-		align-content: flex-start;
-	} */
 
 	.legal-header .legal-header-control
 	{
@@ -659,6 +649,7 @@
 	.legal-menu > .menu-item,
 	.legal-menu > .menu-item:not( :last-child ) > .item-title,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item:not( .menu-item-has-children ) > .item-title,
+	.legal-menu > .menu-item > .sub-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:last-child .menu-item,
 	.legal-menu > .menu-item:last-child .menu-item > .item-title,
