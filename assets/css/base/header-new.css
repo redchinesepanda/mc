@@ -992,8 +992,7 @@
 		content: '\F102';
 	}
 
-	.legal-menu > .menu-item:last-child.legal-active::before,
-
+	.legal-menu > .menu-item:last-child.legal-active::before
 	{
 		content: '\F104';
 	}
