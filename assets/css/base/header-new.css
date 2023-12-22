@@ -315,13 +315,13 @@
 		text-underline-offset: 5px;
 	}
 
-	.legal-menu .legal-cut-control::after
+	/* .legal-menu .legal-cut-control::after
 	{
 		content: '\F103';
 		font-family: var(--legal-font-icons);
 		font-size: 16px;
 		line-height: 16px; 
-	}
+	} */
 
 	.legal-menu .legal-cut-control
 	{
