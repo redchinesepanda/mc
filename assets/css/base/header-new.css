@@ -136,9 +136,10 @@
 		max-width: var( --base-width-desktop );
 	}
 
-	.legal-menu > .menu-item:last-child .menu-item .item-title
+	.legal-menu > .menu-item:last-child .menu-item > .item-title
 	{
-		min-width: 152px;
+		/* min-width: 152px; */
+		flex-basis: 100%;
 	}
 
 	/* Position */
