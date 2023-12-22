@@ -484,6 +484,14 @@
 		text-decoration: solid underline #000 2px;
 		text-underline-offset: 5px;
 	}
+
+	.legal-menu .legal-cut-control::after
+	{
+		content: '\F103';
+		font-family: var(--legal-font-icons);
+		font-size: 16px;
+		line-height: 16px; 
+	}
 }
 
 /* Display */
@@ -555,15 +563,8 @@
     display: inline-block;
 } */
 
-.legal-menu .legal-cut-control::after
+.legal-menu .item-title[ href="#" ]
 {
-	content: '\F103';
-    font-family: var(--legal-font-icons);
-    font-size: 16px;
-    line-height: 16px; 
-}
-
-.legal-menu .item-title[href="#"] {
     pointer-events: none;
 }
 
@@ -783,6 +784,11 @@
 		display: inline-block;
 		content: '';
 
+	}
+
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		pointer-events: none;
 	}
 
 	/* Position */
