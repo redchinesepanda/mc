@@ -20,7 +20,6 @@ class BaseHeader
         'legal-header-selectors' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header-selectors.css',
 
-			'ver' => '1.0.0',
 		],
     ];
 
