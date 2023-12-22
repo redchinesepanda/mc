@@ -947,11 +947,16 @@
 		cursor: pointer;
 	}
 
-	.legal-header .legal-header-control:not( .legal-active )::before
+	.legal-header > .legal-header-control:not( .legal-active )::before
+	{
+		background-size: 24px;
+	}
+
+	.legal-header > .legal-header-control:not( .legal-active )::before,
+	.legal-menu > .menu-item:last-child .menu-item > .item-title::before
 	{
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: 24px;
 		border-radius: 50%;
 		border: 1px solid #000000;
 		box-sizing: border-box;
