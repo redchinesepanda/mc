@@ -943,6 +943,7 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title,
 	.legal-menu > .menu-item:last-child .menu-item,
 	.legal-menu > .menu-item:last-child .menu-item > .item-title,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children .menu-item,
 	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children .menu-item > .item-title
 	{
 		flex-basis: 100%;
