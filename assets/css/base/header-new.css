@@ -750,7 +750,9 @@
 		box-sizing: border-box;
 	}
 	
-	.legal-menu
+	.legal-menu,
+	.legal-menu > .menu-item:last-child.legal-active,
+	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children.legal-active
 	{
 		border-top: 2px solid #000;
 	}
