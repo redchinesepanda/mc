@@ -521,9 +521,9 @@
 	cursor: pointer;
 }
 
-.legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
+/* .legal-menu .legal-country:not(.legal-country-all) > .item-title::before {
     display: inline-block;
-}
+} */
 
 .legal-menu .legal-cut-control::after
 {
