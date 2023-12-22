@@ -774,9 +774,9 @@
 		margin-right: 16px;
 	}
 
-	.legal-menu {
-		padding: 8px 16px;
-		border-top: 2px solid #000;
+	.legal-menu
+	{
+		padding: 0px 16px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
@@ -903,28 +903,11 @@
 		flex-basis: 100%;
 	}
 
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
-		width: 100%;
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children {
-		width: auto;
-	} */
-
-	/* .legal-menu .sub-menu .menu-item.menu-item-has-children {
-		row-gap: 0;
-	} */
-
 	.legal-menu > .menu-item:last-child > .item-title::before
 	{
 		width: 18px;
 		height: 18px;
 	}
-
-	/* .legal-menu .menu-item > .sub-menu,
-	.legal-menu > .menu-item:last-child > .sub-menu {
-		width: 100%;
-	} */
 	
 	/* Background */
 
@@ -942,42 +925,14 @@
 		box-sizing: border-box;
 	}
 	
-	/* .legal-header-control.legal-active {
-		background-image: none;
-		border: none;
-	} */
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu {
-		border: none;
-	} */
+	.legal-menu
+	{
+		border-top: 2px solid #000;
+	}
  
 	.legal-menu > .menu-item:last-child > .item-title::before
 	{
 		background-size: 18px;
-	}
-
-	/* .legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active,
-	.legal-header .legal-menu > .menu-item.legal-active:last-child {
-		background-color: #fff;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu {
-		border-radius: 0;
-		background-color: #fff;
-	} */
-	
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child > .item-title {
-		background-position: left center;
-		background-image: none;
-	} */
-
-	/* .legal-header .legal-menu > .menu-item.legal-active:last-child .sub-menu .menu-item > .item-title {
-		background-position: left center;
-	} */
-	
-
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active .sub-menu {
-		/* background-color: #fff; */
 	}
 
 	/* Typography */
