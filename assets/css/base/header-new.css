@@ -315,9 +315,13 @@
 		text-underline-offset: 5px;
 	}
 
-	.legal-menu .legal-cut-control::after
+	.legal-menu .legal-cut-control:not( .legal-active ):after
 	{
 		content: '\F103';
+	}
+
+	.legal-menu .legal-cut-control::after
+	{
 		font-family: var(--legal-font-icons);
 		font-size: 16px;
 		line-height: 16px; 
