@@ -474,7 +474,7 @@
 		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
 	}
 
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ):hover,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title:hover,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover
 	{
 		text-decoration: solid underline #000 2px;
@@ -527,6 +527,11 @@
 .legal-menu .menu-item
 {
 	display: flex;
+}
+
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new
+{
+	align-items: center;
 }
 
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
