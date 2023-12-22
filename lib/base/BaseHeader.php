@@ -16,6 +16,12 @@ class BaseHeader
 
 			'ver' => '1.1.7',
 		],
+
+        'legal-header-selectors' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/header-selectors.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()
