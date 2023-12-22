@@ -83,14 +83,6 @@
         gap: 28px 32px; 
 	}
 
-	.legal-menu .menu-group .menu-item:hover > .sub-menu {
-        gap: 0;
-	}
-
-	.legal-menu .menu-group.menu-group-shift {
-		order: 1;
-	}
-
 	.legal-menu > .menu-item:last-child > .item-title::after
 	{
 		content: attr( data-name-code );
