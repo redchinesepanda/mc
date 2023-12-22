@@ -451,19 +451,10 @@
 {
 	/* Display */
 
-	.legal-header {
-		flex-wrap: wrap;
-	}
-
 	.legal-header .legal-header-control:not( .legal-active ) ~ .legal-menu
 	{
 		display: none;
 	}
-
-	.legal-header .legal-header-control.legal-active ~ .legal-menu
-	{
-		display: flex;
-	} 
 
 	.legal-menu > .menu-item:not( .legal-active ) > .sub-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children:not( .legal-active ) > .sub-menu,
@@ -472,8 +463,23 @@
 		display: none;
 	}
 
-	.legal-header-control {
-		display: block;
+	.legal-header {
+		flex-wrap: wrap;
+	}
+
+	.legal-header .legal-header-control.legal-active ~ .legal-menu,
+	.legal-menu > .menu-item:not( :last-child ) > .item-title,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title,
+	.legal-menu > .menu-item:last-child.legal-active > .sub-menu,
+	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active > .sub-menu
+	{
+		display: flex;
+	}
+
+	.legal-header .legal-header-control
+	{
+		display: flex;
+		gap: 18px;
 	}
 
 	.legal-menu,
@@ -486,12 +492,6 @@
 	.legal-menu > .menu-item:last-child
 	{
 		align-items: center;
-	}
-
-	.legal-menu > .menu-item:not( :last-child ) > .item-title,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
-	{
-		display: flex;
 	}
 
 	.legal-menu > .menu-item:not(:last-child) > .item-title,
@@ -515,12 +515,6 @@
 		content: attr( data-name-alternate );
 	}
 
-	.legal-menu > .menu-item:last-child.legal-active > .sub-menu,
-	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active > .sub-menu
-	{
-		display: flex;
-	}
-
 	.legal-menu > .menu-item:last-child > .sub-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
@@ -531,16 +525,6 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .item-title
 	{
 		column-gap: 18px;
-	}
-
-	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children::after {
-		display: block;
-	}
-
-	.legal-header .legal-header-control
-	{
-		display: flex;
-		gap: 18px;
 	}
 
 	.legal-header .legal-header-control::before
