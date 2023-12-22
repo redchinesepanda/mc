@@ -726,7 +726,7 @@
 
 	.legal-menu > .menu-item:last-child > .sub-menu
 	{
-		display: flex;
+		/* display: flex; */
 		flex-wrap: wrap;
 		row-gap: 8px;
 	}
