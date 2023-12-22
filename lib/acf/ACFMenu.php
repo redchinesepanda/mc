@@ -19,6 +19,8 @@ class ACFMenu
 
         $choices[ 'legal-has-href' ] = 'Has Href';
 
+        $choices[ 'legal-new' ] = 'New';
+
         $choices[ 'legal-country-rocket' ] = '[ rocket ] Betting sites';
 
         $choices[ 'legal-country-football' ] = '[ football ] Sports';
