@@ -220,7 +220,7 @@
 
 	.legal-menu > .menu-item > .sub-menu
 	{
-		border: 2px solid #000;
+		border: 2px solid var(--Base-base-09, #0A0A0A);
 		border-radius: 21px;
 	}
 
@@ -245,7 +245,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		border-radius: 50%;
-		border: 1px solid #000;
+		border: 1px solid var(--Base-base-09, #0A0A0A);
 		box-sizing: border-box;
 	}
 
@@ -300,13 +300,13 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover,
 	.legal-menu .legal-cut-control
 	{
-		text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
+		text-shadow: 0 0 0.35px var(--Base-base-09, #0A0A0A), 0 0 0.35px var(--Base-base-09, #353535);
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ) > .item-title:hover,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children .menu-item:hover
 	{
-		text-decoration: solid underline #000 2px;
+		text-decoration: solid underline var(--Base-base-09, #0A0A0A) 2px;
 		text-underline-offset: 5px;
 	}
 
@@ -403,6 +403,20 @@
 
 /* Typography */
 
+.legal-menu > .menu-item:last-child .menu-item > .item-title
+{
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
+{
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 18px;
+}
+
 .legal-menu > .menu-item > .item-title,
 .legal-menu > .menu-item:last-child .menu-item > .item-title
 {
@@ -422,28 +436,14 @@
 	font-style: normal;
 }
 
-.legal-menu > .menu-item:last-child .menu-item > .item-title
+.legal-menu > .menu-item:last-child .menu-item > .item-title:hover
 {
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
-}
-
-.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
-{
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 18px;
+	text-shadow: 0 0 0.35px var(--Base-base-09, #0A0A0A), 0 0 0.35px var(--Base-base-07, #353535);
 }
 
 .legal-menu > .menu-item:last-child .menu-item > .item-title:hover
 {
-	text-shadow: 0 0 0.35px #000, 0 0 0.35px #333;
-}
-
-.legal-menu > .menu-item:last-child .menu-item > .item-title:hover
-{
-	text-decoration: solid underline #000 2px;
+	text-decoration: solid underline var(--Base-base-09, #0A0A0A) 2px;
 	text-underline-offset: 5px;
 }
 
