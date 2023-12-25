@@ -1,11 +1,10 @@
-:root {
+:root
+{
 	--legal-font-primary: "Golos Text", sans-serif;
-	/* --legal-font-icons: "MC Icons"; */
 	--legal-font-icons: "MC Icons2";
-	/* --legal-font-icons2: "MC Icons2"; */
-	/* --base-width-desktop: 1080px; */
 	--base-width-desktop: 1280px;
 	--Base-base-01: #FFF;
+	--Base-base-03: #EDEDED;
 	--Base-base-05: #939393;
 	--Base-base-07: #353535;
 	--Base-base-08: #1D1D1D;
