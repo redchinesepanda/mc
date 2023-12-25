@@ -6,15 +6,16 @@
 	nav.breadcrumbs {
 		padding: 0px 20px;
 	}
+}
+
+@media screen and ( min-width: 960px )
+{
+	/* Position */
 
     .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
     {
         margin-left: 32px;
     }
-}
-
-@media screen and ( min-width: 960px )
-{
     /* Width and Height */
 
     .legal-breadcrumbs {
