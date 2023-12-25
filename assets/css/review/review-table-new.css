@@ -144,10 +144,12 @@
 
     /* Level 2 item last */
 
-    .tcb-post-content table td:last-child
+    .tcb-post-content table tr td:last-child
     {
         background-color:cadetblue;
     }
+
+    /* Level 2 last row last item */
     
     .tcb-post-content table tr:last-child td:last-child
     {
