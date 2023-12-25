@@ -129,6 +129,11 @@
 		margin-left: auto;
 	}
 
+	.footer-menu .menu-item-has-children:not( :last-child ) > .item-title
+	{
+		margin-bottom: 16px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-menu > .menu-item > .item-children,
