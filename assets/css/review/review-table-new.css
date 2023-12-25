@@ -25,7 +25,9 @@
     .tcb-post-content table tr > th:first-child,
     .tcb-post-content table tr > td:first-child
     {
+        background-color: antiquewhite;
         position: absolute;
+        width: 100px;
     }
 
     /* Review Width and Height */
