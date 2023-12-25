@@ -33,6 +33,17 @@
 	}
 }
 
+@media screen and ( min-width: 1210px )
+{
+	/* Position */
+
+	.legal-footer-wrapper
+	{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
 @media screen and ( min-width: 960px ) and ( max-width: 1209px )
 {
 	/* Display */
@@ -306,12 +317,6 @@
 		padding-top: 38px;
 		padding-bottom: 40px;
 		margin-bottom: 28px;
-	}
-
-	.legal-footer-wrapper
-	{
-		padding-top: 40px;
-		padding-bottom: 40px;
 	}
 
 	/* Width and Height */
