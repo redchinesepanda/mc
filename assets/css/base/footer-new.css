@@ -139,6 +139,12 @@
 		padding-top: 16px;
 	}
 
+	.legal-footer .footer-logo
+	{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-menu > .menu-item > .item-children,
@@ -240,6 +246,11 @@
 		margin-bottom: 20px;
 	}
 
+	.legal-footer .footer-logo {
+		padding-bottom: 40px;
+		margin-bottom: 28px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-text {
@@ -302,11 +313,6 @@
 
 .legal-footer .item-children .item-title {
 	padding: 8px 0;
-}
-
-.legal-footer .footer-logo {
-	padding-bottom: 40px;
-	margin-bottom: 28px;
 }
 
 
