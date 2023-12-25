@@ -25,6 +25,10 @@
 		flex-direction: column;
 	}
 
+	.legal-footer .footer-menu {
+		row-gap: 14px;
+	}
+
 	.legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
@@ -224,7 +228,6 @@
 .legal-footer .footer-menu > .menu-item-end {
 	display: flex;
 	column-gap: 32px;
-	row-gap: 14px;
 }
 
 .legal-footer .item-title {
