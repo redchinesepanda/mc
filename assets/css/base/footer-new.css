@@ -244,7 +244,7 @@
         display: none;
     }
 
-	.footer-menu > .menu-item-end > .menu-item-has-children
+	.footer-menu .menu-item-has-children
 	{
 		display: flex;
 		row-gap: 8px;
