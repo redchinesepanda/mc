@@ -267,17 +267,17 @@
 
 	.footer-menu > .menu-item-has-children
 	{
-		flex-basis: calc( 100% / 5 - 25.6px );
+		flex-basis: calc( 100% / 5 - 24px );
 	}
 
 	.footer-menu .menu-item-end
 	{
-		flex-basis: calc( 2 * 100% / 5 - 25.6px );
+		flex-basis: calc( 2 * 100% / 5 - 24px );
 	}
 
 	.footer-menu > .menu-item-end > .menu-item-has-children
 	{
-		flex-basis: calc( 100% / 2 - 25.6px );
+		flex-basis: calc( 100% / 2 - 16px );
 	}
 
 	/* Typography */
