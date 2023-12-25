@@ -48,7 +48,8 @@
 /* Breadcrumbs Position */
 
 .legal-breadcrumbs {
-    padding: 18px 0px;
+    padding-top: 18px;
+    padding-bottom: 14px;
     margin: 0px auto;
 }
 
