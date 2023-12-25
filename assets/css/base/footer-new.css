@@ -26,6 +26,11 @@
 		flex-wrap: wrap;
 	}
 
+	.footer-menu .menu-item-end
+	{
+		align-content: baseline;
+	}
+
 	/* Width and Heoght */
 
 	.footer-menu > .menu-item-has-children,
