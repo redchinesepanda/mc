@@ -113,8 +113,10 @@
 		padding-bottom: 8px;
 	}
 
-	.legal-footer .lang-switcher {
-		margin-bottom: 18px;
+	.legal-footer .lang-switcher
+	{
+		padding-top: 28px;
+    	padding-bottom: 18px;
 	}
 
 	.legal-footer .footer-text {
