@@ -17,6 +17,39 @@
 		flex-basis: auto;
 	}
 }
+
+@media screen and ( min-width: 960px ) and ( max-width: 1209px )
+{
+	.footer-menu > .menu-item-has-children,
+	.footer-menu .menu-item-end
+	{
+		flex-basis: calc( 100% / 4 - 24px );
+	}
+
+	.footer-menu > .menu-item-end > .menu-item-has-children
+	{
+		flex-basis: 100%;
+	}
+}
+
+@media screen and ( min-width: 1210px )
+{
+	.footer-menu > .menu-item-has-children
+	{
+		flex-basis: calc( 100% / 5 - 24px );
+	}
+
+	.footer-menu .menu-item-end
+	{
+		flex-basis: calc( 2 * 100% / 5 - 24px );
+	}
+
+	.footer-menu > .menu-item-end > .menu-item-has-children
+	{
+		flex-basis: calc( 100% / 2 - 16px );
+	}
+}
+
 @media screen and ( max-width: 767px )
 {
 	/* Display */
@@ -26,17 +59,11 @@
 		flex-direction: column;
 	}
 
-	/* .legal-footer .footer-menu,
-	.legal-footer .footer-menu > .menu-item-end {
-		row-gap: 14px;
-	} */
-
 	.legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
 		display: flex;
 		flex-wrap: wrap;
-		/* row-gap: 16px; */
 	}
 
 	.legal-footer .footer-menu > .menu-item::after,
@@ -91,21 +118,10 @@
 		padding: 32px 16px;
 	}
 
-	/* .legal-footer .footer-menu > .menu-item,
-	.legal-footer .footer-menu .menu-item-end > .menu-item {
-		padding: 8px 0px;
-		margin-bottom: 14px;
-	} */
-
 	.legal-footer .footer-menu > .menu-item.legal-active,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active {
 		margin-bottom: 0px;
 	}
-
-	/* .legal-footer .footer-menu > .menu-item > .item-title,
-	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-title {
-		margin-right: auto;
-	} */
 
 	.legal-footer .footer-menu .item-title {
 		padding-top: 8px;
@@ -114,7 +130,6 @@
 
 	.legal-footer .footer-menu > .menu-item.legal-active > .item-children,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active > .item-children {
-		/* padding-top: 16px; */
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
@@ -254,11 +269,6 @@
 		margin: 0px;
 	}
 
-	/* .footer-menu {
-		padding-bottom: 20px;
-		margin-bottom: 20px;
-	} */
-
 	.legal-footer .footer-logo
 	{
 		padding-top: 38px;
@@ -281,21 +291,6 @@
 	.footer-menu .menu-item > .item-title
 	{
 		width: 100%;
-	}
-
-	.footer-menu > .menu-item-has-children
-	{
-		flex-basis: calc( 100% / 5 - 24px );
-	}
-
-	.footer-menu .menu-item-end
-	{
-		flex-basis: calc( 2 * 100% / 5 - 24px );
-	}
-
-	.footer-menu > .menu-item-end > .menu-item-has-children
-	{
-		flex-basis: calc( 100% / 2 - 16px );
 	}
 
 	.legal-footer .footer-logo .logo-item > img
