@@ -128,6 +128,13 @@
         background-color:bisque;
     }
 
+    /* Level 1 row item not last */
+
+    .tcb-post-content table tr td:not( :first-child ):not( :last-child )
+    {
+        background-color:azure;
+    }
+
     /* Level 1 item last */
 
     .tcb-post-content table tr:last-child td:first-child
