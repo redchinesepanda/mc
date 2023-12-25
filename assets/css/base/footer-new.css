@@ -244,8 +244,8 @@
         display: none;
     }
 
-	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
-	.legal-footer .footer-menu > .menu-item-end .menu-item {
+	.footer-menu > .menu-item-end > .menu-item-has-children
+	{
 		display: flex;
 		row-gap: 8px;
 		flex-wrap: wrap;
