@@ -19,7 +19,7 @@
     .tcb-post-content table td,
     .tcb-post-content table th
     {
-        height: 68px;
+        /* height: 68px; */
         box-sizing: border-box;
         min-width: 100px;
     }
@@ -187,9 +187,17 @@
     background-color: transparent;
 }
 
+/* Table */
+
 .tcb-post-content table
 {
     border-collapse: collapse;
+}
+
+.tcb-post-content table th,
+.tcb-post-content table td
+{
+    height: 68px;
 }
 
 /* Table default with Thead and Tbody */
