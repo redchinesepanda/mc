@@ -119,6 +119,13 @@
         border-bottom: 1px solid #000; 
     }
 
+
+
+    .tcb-post-content table tr:first-child td:first-child
+    {
+        background-color: brown;
+    }
+
     .tcb-post-content table tr td:first-child
     {
         background-color:bisque;
@@ -132,6 +139,11 @@
     .tcb-post-content table td:last-child
     {
         background-color:cadetblue;
+    }
+    
+    .tcb-post-content table tr:last-child td:last-child
+    {
+        background-color:cornflowerblue;
     }
 
     /* 1v Адаптива тамблицы end */
