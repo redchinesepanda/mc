@@ -46,13 +46,19 @@
 
     /* 1v Адаптива тамблицы start */
 
+    /* Display */
+
     .tcb-post-content table
     {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .tcb-post-content table thead,
+    .tcb-post-content table thead
+    {
+        display: none;
+    }
+    
     .tcb-post-content table tbody
     {
         flex-basis: 100%;
@@ -72,6 +78,10 @@
     {
         flex-basis: 100%;
     }
+
+
+
+    /* Background */
 
     .tcb-post-content table
     {
