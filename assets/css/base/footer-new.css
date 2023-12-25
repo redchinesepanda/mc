@@ -97,7 +97,9 @@
 
 	.legal-footer .footer-menu > .menu-item.legal-active > .item-children,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active > .item-children {
-		padding-top: 16px;
+		/* padding-top: 16px; */
+		padding-top: 8px;
+		padding-bottom: 8px;
 	}
 
 	.legal-footer .lang-switcher {
