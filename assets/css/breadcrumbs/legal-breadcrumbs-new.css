@@ -13,7 +13,7 @@
     /* Width and Height */
 
     .legal-breadcrumbs {
-        width: 1218px;
+        width: var( --base-width-desktop );
     }
 }
 
