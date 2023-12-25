@@ -44,6 +44,39 @@
 
     /* 2v Вариант со скроллом end */
 
+    /* 1v Адаптива тамблицы start */
+
+    .tcb-post-content table
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table thead,
+    .tcb-post-content table tbody
+    {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table tr
+    {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table th,
+    .tcb-post-content table td
+    {
+        flex-basis: 100%;
+    }
+
+
+
+    /* 1v Адаптива тамблицы end */
+
     /* Review Width and Height */
 
     .tcb-post-content table.legal-raw.legal-column-3
