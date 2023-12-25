@@ -124,6 +124,10 @@
 		width: 100%;
 	}
 
+	.legal-footer .logo-item {
+		height: 24px;
+	}
+
 	/* Background */
 
 	.legal-footer .footer-menu > .menu-item::after {
