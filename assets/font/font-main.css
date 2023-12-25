@@ -3,6 +3,10 @@
 	--legal-font-primary: "Golos Text", sans-serif;
 	--legal-font-icons: "MC Icons2";
 	--base-width-desktop: 1280px;
+	--medium-width-desktop: 1210px;
+	--small-width-desktop: 960px;
+	--base-width-tablet: 768px;
+	--base-width-mobile: 375px;
 	--Base-base-01: #FFF;
 	--Base-base-03: #EDEDED;
 	--Base-base-05: #939393;
