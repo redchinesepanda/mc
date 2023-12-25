@@ -397,7 +397,7 @@
 /* Width and Height */
 
 .legal-footer {
-	max-width: 1218px;
+	max-width: var( --base-width-desktop );
 }
 
 .legal-footer .footer-menu,
