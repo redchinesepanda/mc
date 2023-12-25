@@ -214,11 +214,6 @@
 		width: 100%;
 	}
 
-	.footer-menu > .menu-item-end > .menu-item-has-children > .item-children
-	{
-		flex-basis: 100%;
-	}
-
 	/* Background */
 
 	.legal-footer .footer-menu > .menu-item::after {
@@ -324,6 +319,11 @@
 	{
 		height: 32px;
 		width: auto;
+	}
+
+	.footer-menu > .menu-item-end > .menu-item-has-children > .item-children
+	{
+		flex-basis: 100%;
 	}
 
 	/* Typography */
