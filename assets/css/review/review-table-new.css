@@ -21,13 +21,13 @@
         height: 68px;
     }
 
-    .legal-table-mobile
+    .tcb-post-content .legal-table-mobile
     {
         width: 100%;
         overflow-x: scroll;
     }
 
-    .legal-table-mobile table
+    .tcb-post-content .legal-table-mobile table
     {
         margin-left: 100px;
     }
