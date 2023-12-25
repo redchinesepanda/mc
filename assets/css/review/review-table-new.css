@@ -142,6 +142,8 @@
         background-color:burlywood;
     }
 
+    /* Level 2 item last */
+
     .tcb-post-content table td:last-child
     {
         background-color:cadetblue;
