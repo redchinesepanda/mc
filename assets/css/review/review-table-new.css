@@ -21,6 +21,11 @@
         height: 68px;
     }
 
+    .legal-table-mobile
+    {
+        width: 100%;
+        overflow-x: scroll;
+    }
     
     .tcb-post-content table tr > th:first-child,
     .tcb-post-content table tr > td:first-child
