@@ -145,7 +145,6 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 .lang-switcher .menu-avaible {
     position: absolute;
-    bottom: 30px;
     right: 0px;
 }
 
@@ -183,6 +182,22 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 @media screen and ( max-width: 768px ) {
     .lang-switcher .menu-avaible {
         padding: 18px 0px;
+    }
+}
+
+@media screen and ( max-width: 959px )
+{
+    .lang-switcher .menu-avaible
+    {
+        bottom: 50px;
+    }
+}
+
+@media screen and ( min-width: 960px )
+{
+    .lang-switcher .menu-avaible
+    {
+        bottom: 30px;
     }
 }
 
