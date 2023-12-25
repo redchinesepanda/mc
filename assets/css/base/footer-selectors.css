@@ -36,6 +36,12 @@
 	background-color:brown;
 }
 
+/* menu-item-end */
+
+.footer-menu .menu-item-end {
+	background-color: darkseagreen;
+}
+
 /* footer-logo */
 
 .legal-footer .footer-logo
