@@ -259,6 +259,11 @@
 		width: 70%;
 	}
 
+	.footer-menu .menu-item > .item-title
+	{
+		width: 100%;
+	}
+
 	/* Typography */
 
 	.footer-menu > .menu-item > .item-title:hover,
@@ -345,10 +350,6 @@
 
 .legal-footer .footer-menu > .menu-item.legal-33-333 {
 	flex-basis: 33.333%;
-}
-
-.legal-footer .item-title {
-	width: fit-content;
 }
 
 /* Background */
