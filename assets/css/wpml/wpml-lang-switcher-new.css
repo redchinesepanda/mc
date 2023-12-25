@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: "mc-icons";
     src: url("./mc-icons.woff2?7d39a90d3a5f6032475b894bc33af0a5") format("woff2");
-}
+} */
 
-i[class^="icon-"]:before, i[class*=" icon-"]:before {
+/* i[class^="icon-"]:before, i[class*=" icon-"]:before {
     font-family: mc-icons !important;
     font-style: normal;
     font-weight: normal !important;
@@ -12,9 +12,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 
-.icon-header-arrow-fill-down:before {
+/* .icon-header-arrow-fill-down:before {
     content: "\f101";
 }
 .icon-header-arrow-left:before {
@@ -34,7 +34,8 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 }
 .icon-x-breadcrumbs-home:before {
     content: "\f107";
-}
+} */
+
 /* Language Display */
 
 .lang-switcher .lang-item {
@@ -125,10 +126,6 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     .lang-switcher .menu-avaible {
         width: 100%;
     }
-
-    /* .lang-switcher .lang-current {
-        margin: 0px auto;
-    } */
 }
 
 @media screen and ( max-width: 767px ) {
@@ -148,10 +145,6 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     right: 0px;
 }
 
-/* .lang-switcher .lang-image {
-    margin-left: 5px;
-} */
-
 .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
     margin-left: 0px;
     padding: 0px 40px 0px 0px;
@@ -160,12 +153,6 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .lang-switcher .lang-current .lang-title-suffix {
     padding-left: 14px;
 }
-
-/* @media screen and ( min-width: 1080px ) {
-    .lang-switcher .menu-avaible {
-        padding: 18px;
-    }
-} */
 
 @media screen and ( min-width: 768px ) {
 
