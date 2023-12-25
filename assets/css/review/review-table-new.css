@@ -26,6 +26,11 @@
         width: 100%;
         overflow-x: scroll;
     }
+
+    .legal-table-mobile table
+    {
+        margin-left: 100px;
+    }
     
     .tcb-post-content table tr > th:first-child,
     .tcb-post-content table tr > td:first-child
@@ -33,6 +38,7 @@
         background-color: antiquewhite;
         position: absolute;
         width: 100px;
+        left: 20px;
     }
 
     /* Review Width and Height */
