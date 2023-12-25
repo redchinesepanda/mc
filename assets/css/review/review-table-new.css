@@ -100,7 +100,8 @@
         border-top: 2px solid #000;
     }
 
-    .tcb-post-content table tr:last-child td:last-child
+    .tcb-post-content table tr:last-child td:last-child,
+    .tcb-post-content table tr:last-child td:first-child:not( .legal-active )
     {
         border-radius: 0px 0px 18px 18px;
         border-bottom: 2px solid #000;
