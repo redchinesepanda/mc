@@ -2,7 +2,8 @@
 {
 	--legal-font-primary: "Golos Text", sans-serif;
 	--legal-font-icons: "MC Icons2";
-	--base-width-desktop: 1218px;
+	--base-width-desktop: 1280px;
+	--other-width-desktop: 1218px;
 	--medium-width-desktop: 1210px;
 	--small-width-desktop: 960px;
 	--base-width-tablet: 768px;
