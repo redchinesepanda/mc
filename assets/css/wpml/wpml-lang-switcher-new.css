@@ -232,6 +232,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     background-color: var(--Base-base-08);
     border: 2px solid var(--Base-base-07);
     border-radius: 21px;
+    box-sizing: border-box;
 }
 
 @media screen and ( min-width: 1080px ) {
