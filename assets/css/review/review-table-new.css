@@ -14,26 +14,12 @@
     .tcb-post-content table
     {
         border-collapse: collapse;
-        /* table-layout: fixed; */
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .tcb-post-content table thead,
-    .tcb-post-content table tbody
-    {
-        /* border-collapse: collapse; */
-        /* table-layout: fixed; */
-        flex-basis: 100%;
-        display: flex;
-        flex-wrap: wrap;
+        table-layout: fixed;
     }
 
     .tcb-post-content table tr
     {
-        /* height: 68px; */
-        flex-basis: 68px;
-        display: flex;
+        height: 68px;
     }
 
     .tcb-post-content table td,
