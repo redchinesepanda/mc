@@ -21,12 +21,11 @@
         height: 68px;
     }
 
-    .tcb-post-content table td,
-    .tcb-post-content table th
+    
+    .tcb-post-content table tr > th:first-child,
+    .tcb-post-content table tr > td:first-child
     {
-        /* height: 68px; */
-        box-sizing: border-box;
-        min-width: 100px;
+        position: absolute;
     }
 
     /* Review Width and Height */
