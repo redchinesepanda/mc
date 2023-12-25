@@ -5,6 +5,13 @@
 	background-color: aliceblue;
 }
 
+/* menu-item all */
+
+.footer-menu .menu-item
+{
+	background-color: lightgrey;
+}
+
 /* menu-item 1st */
 
 .footer-menu .menu-item-has-children
