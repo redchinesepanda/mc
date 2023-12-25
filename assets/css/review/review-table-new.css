@@ -88,10 +88,12 @@
     }
 
     .tcb-post-content table th,
-    .tcb-post-content table td
+    .tcb-post-content table td:not( last-child )
     {
         border-bottom: 1px solid #000; 
     }
+
+
 
     /* 1v Адаптива тамблицы end */
 
