@@ -234,6 +234,11 @@
 		flex-grow: 2;
 	}
 
+	.legal-footer .footer-logo
+	{
+		column-gap: 24px;
+	}
+
 	/* Position */
 
 	.legal-footer .footer-copy{
