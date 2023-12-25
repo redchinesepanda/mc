@@ -134,6 +134,11 @@
 		margin-bottom: 16px;
 	}
 
+	.footer-menu
+	{
+		padding-top: 16px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-menu > .menu-item > .item-children,
