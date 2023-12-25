@@ -126,9 +126,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
         width: 100%;
     }
 
-    .lang-switcher .lang-current {
+    /* .lang-switcher .lang-current {
         margin: 0px auto;
-    }
+    } */
 }
 
 @media screen and ( max-width: 767px ) {
