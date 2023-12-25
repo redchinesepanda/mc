@@ -79,6 +79,13 @@
         flex-basis: 100%;
     }
 
+    .tcb-post-content table th:not( .legal-active ) ~ th,
+    .tcb-post-content table th:not( .legal-active ) ~ td,
+    .tcb-post-content table td:not( .legal-active ) ~ td
+    {
+        display: none;
+    }
+
     /* Background */
 
     .tcb-post-content table
