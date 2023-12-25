@@ -1,3 +1,12 @@
+/* footer-menu */
+
+.footer-menu
+{
+	background-color: aliceblue;
+}
+
+/* menu-item 1st */
+
 .footer-menu .menu-item-has-children
 {
 	background-color:antiquewhite;
@@ -7,6 +16,8 @@
 {
 	background-color:chocolate;
 }
+
+/* menu-item 2nd */
 
 .footer-menu .menu-item:not( .menu-item-has-children )
 {
