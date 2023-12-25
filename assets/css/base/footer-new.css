@@ -212,9 +212,9 @@
 		flex-direction: column;
 	}
 
-	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
-	/* flex-grow: 1; */
-	}
+	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
+		flex-grow: 1;
+	} */
 
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-grow: 2;
@@ -233,6 +233,11 @@
 	.legal-footer .footer-text p {
 		padding: 0px;
 		margin: 0px;
+	}
+
+	.footer-menu {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
 	}
 
 	/* Width and Height */
@@ -297,11 +302,6 @@
 
 .legal-footer .item-children .item-title {
 	padding: 8px 0;
-}
-
-.footer-menu {
-	padding-bottom: 20px;
-	margin-bottom: 20px;
 }
 
 .legal-footer .footer-logo {
