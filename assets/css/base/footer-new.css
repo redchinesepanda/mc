@@ -1,12 +1,7 @@
 /* Footer New CSS */
-@media screen and ( min-width: 960px ) {
-	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
-	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		flex-basis: 226px;
-	} */
-}
 
-@media ( min-width: 767px ) and ( max-width: 960px ) {
+@media ( min-width: 767px ) and ( max-width: 960px )
+{
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
 		flex-basis: 226px;
@@ -15,6 +10,16 @@
 
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
 		flex-basis: auto;
+	}
+}
+
+@media screen and ( max-width: 959px )
+{
+	/* Position */
+
+	.legal-footer-wrapper
+	{
+		padding: 32px 16px;
 	}
 }
 
@@ -133,10 +138,6 @@
 	}
 
 	/* Position */
-
-	.legal-footer-wrapper {
-		padding: 32px 16px;
-	}
 
 	.legal-footer .footer-menu > .menu-item.legal-active,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active {
