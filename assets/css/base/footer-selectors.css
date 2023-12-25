@@ -1,0 +1,85 @@
+/* footer-menu */
+
+.footer-menu
+{
+	background-color: aliceblue;
+}
+
+/* menu-item all */
+
+.footer-menu .menu-item
+{
+	background-color: lightgrey;
+}
+
+/* menu-item 1st all */
+
+.footer-menu .menu-item-has-children
+{
+	background-color:darkgray;
+}
+
+.footer-menu .menu-item-has-children > .item-title
+{
+	background-color:chocolate;
+}
+
+/* menu-item 1st not end */
+
+.footer-menu > .menu-item-has-children
+{
+	background-color: darkslategrey;
+}
+
+/* menu-item 1st end */
+
+.footer-menu > .menu-item-end > .menu-item-has-children
+{
+	background-color:dodgerblue;
+}
+
+/* menu-item 2nd */
+
+.footer-menu .menu-item:not( .menu-item-has-children )
+{
+	background-color:azure;
+}
+
+.footer-menu .menu-item:not( .menu-item-has-children ) > .item-title
+{
+	background-color:brown;
+}
+
+/* menu-item-end */
+
+.footer-menu .menu-item-end {
+	background-color: darkseagreen;
+}
+
+/* footer-logo */
+
+.legal-footer .footer-logo
+{
+	background-color: darkorange;
+}
+
+/* lang-switcher */
+
+.legal-footer .lang-switcher
+{
+	background-color:cadetblue;
+}
+
+/* footer-copy */
+
+.legal-footer .footer-copy
+{
+	background-color:blueviolet;
+}
+
+/* footer-text */
+
+.legal-footer .footer-text
+{
+	background-color:cornflowerblue;
+}

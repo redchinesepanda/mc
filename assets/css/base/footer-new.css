@@ -1,10 +1,11 @@
 /* Footer New CSS */
 @media screen and ( min-width: 960px ) {
-	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
+	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
 		flex-basis: 226px;
-	}
+	} */
 }
+
 @media ( min-width: 767px ) and ( max-width: 960px ) {
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
@@ -25,11 +26,17 @@
 		flex-direction: column;
 	}
 
+	/* .legal-footer .footer-menu,
+	.legal-footer .footer-menu > .menu-item-end {
+		row-gap: 14px;
+	} */
+
 	.legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
 		display: flex;
 		flex-wrap: wrap;
+		/* row-gap: 16px; */
 	}
 
 	.legal-footer .footer-menu > .menu-item::after,
@@ -68,35 +75,54 @@
 		order: 2;
 	}
 
+	.legal-footer .footer-menu .item-title {
+		display: flex;
+    	align-items: center;
+	}
+
+	.legal-footer .footer-logo
+	{
+		justify-content: space-between;
+	}
+
 	/* Position */
 
 	.legal-footer-wrapper {
 		padding: 32px 16px;
 	}
 
-	.legal-footer .footer-menu > .menu-item,
+	/* .legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
 		padding: 8px 0px;
 		margin-bottom: 14px;
-	}
+	} */
 
 	.legal-footer .footer-menu > .menu-item.legal-active,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active {
 		margin-bottom: 0px;
 	}
 
-	.legal-footer .footer-menu > .menu-item > .item-title,
+	/* .legal-footer .footer-menu > .menu-item > .item-title,
 	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-title {
 		margin-right: auto;
+	} */
+
+	.legal-footer .footer-menu .item-title {
+		padding-top: 8px;
+    	padding-bottom: 8px;
 	}
 
 	.legal-footer .footer-menu > .menu-item.legal-active > .item-children,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active > .item-children {
-		padding-top: 16px;
+		/* padding-top: 16px; */
+		padding-top: 8px;
+		padding-bottom: 8px;
 	}
 
-	.legal-footer .lang-switcher {
-		margin-bottom: 18px;
+	.legal-footer .lang-switcher
+	{
+		padding-top: 28px;
+    	padding-bottom: 18px;
 	}
 
 	.legal-footer .footer-text {
@@ -107,6 +133,25 @@
 		margin: 0;
 	}
 
+	.legal-footer .footer-menu .item-title::after {
+		margin-left: auto;
+	}
+
+	.footer-menu .menu-item-has-children > .item-title
+	{
+		margin-bottom: 16px;
+	}
+
+	.footer-menu
+	{
+		padding-top: 16px;
+	}
+
+	.legal-footer .footer-logo
+	{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
 
 	/* Width and Height */
 
@@ -121,6 +166,16 @@
 	}
 
 	.legal-footer .lang-switcher {
+		width: 100%;
+	}
+
+	.legal-footer .logo-item {
+		height: 24px;
+	}
+
+	.footer-menu .menu-item-has-children > .item-title,
+	.footer-menu .menu-item:not( .menu-item-has-children ) > .item-title
+	{
 		width: 100%;
 	}
 
@@ -145,10 +200,10 @@
 		text-align: justify;
 	}
 
-	.legal-footer .footer-menu > .menu-item::after,
-	.legal-footer .footer-menu .menu-item-end > .menu-item::after {
+	.legal-footer .footer-menu > .menu-item > .item-title::after,
+	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-title::after {
 		content: '\f106';
-		color: var(--Base-base-01);
+		color: var(--Base-base-01, #FFF);
 		line-height: 1;
 		font-size: 24px;
 		font-family: var(--legal-font-icons);
@@ -171,12 +226,17 @@
 		flex-direction: column;
 	}
 
-	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
-	/* flex-grow: 1; */
-	}
+	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
+		flex-grow: 1;
+	} */
 
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-grow: 2;
+	}
+
+	.legal-footer .footer-logo
+	{
+		column-gap: 24px;
 	}
 
 	/* Position */
@@ -194,17 +254,61 @@
 		margin: 0px;
 	}
 
+	/* .footer-menu {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	} */
+
+	.legal-footer .footer-logo
+	{
+		padding-top: 38px;
+		padding-bottom: 40px;
+		margin-bottom: 28px;
+	}
+
+	.legal-footer-wrapper
+	{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
 	/* Width and Height */
 
 	.legal-footer .footer-text {
 		width: 70%;
 	}
 
+	.footer-menu .menu-item > .item-title
+	{
+		width: 100%;
+	}
+
+	.footer-menu > .menu-item-has-children
+	{
+		flex-basis: calc( 100% / 5 - 24px );
+	}
+
+	.footer-menu .menu-item-end
+	{
+		flex-basis: calc( 2 * 100% / 5 - 24px );
+	}
+
+	.footer-menu > .menu-item-end > .menu-item-has-children
+	{
+		flex-basis: calc( 100% / 2 - 16px );
+	}
+
+	.legal-footer .footer-logo .logo-item > img
+	{
+		height: 32px;
+		width: auto;
+	}
+
 	/* Typography */
 
 	.footer-menu > .menu-item > .item-title:hover,
 	.footer-menu > .menu-item-end > .menu-item > .item-title:hover {
-		text-decoration: solid underline #fff 2px;
+		text-decoration: solid underline var(--Base-base-01, #FFF) 2px;
 		text-underline-offset: 5px;
 	}
 }
@@ -233,9 +337,8 @@
 
 .legal-footer .footer-logo {
 	display: flex;
-	column-gap: 20px;
-	row-gap: 15px;
 	flex-wrap: wrap;
+	row-gap: 15px;
 }
 
 /* Position */
@@ -244,8 +347,8 @@
 	z-index: 10;
 }
 
-.legal-footer-wrapper {
-	padding: 32px 16px;
+.legal-footer-wrapper
+{
 	position: relative;
 }
 
@@ -255,16 +358,6 @@
 
 .legal-footer .item-children .item-title {
 	padding: 8px 0;
-}
-
-.footer-menu {
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-}
-
-.legal-footer .footer-logo {
-	padding-bottom: 40px;
-	margin-bottom: 28px;
 }
 
 
@@ -297,18 +390,14 @@
 	flex-basis: 33.333%;
 }
 
-.legal-footer .item-title {
-	width: fit-content;
-}
-
 /* Background */
 
 .legal-footer-wrapper {
-	background-color: var(--Base-base-09);
+	background-color: var(--Base-base-09, #0A0A0A);
 }
 
 .legal-footer .footer-logo {
-	border-bottom: 1px solid var(--white-20); 
+	border-bottom: 1px solid var(--white-20, rgba(255, 255, 255, 0.20)); 
 }
 
 .legal-footer .lang-switcher {
@@ -335,13 +424,13 @@
 	font-weight: 400;
 	text-decoration: none;
 	line-height: 20px;
-	color: var(--Base-base-01);
+	color: var(--Base-base-01, #FFF);
 }
 
 .legal-footer .item-children .item-title:hover {
-    text-decoration: solid underline var(--white-60) 2px;
+    text-decoration: solid underline var(--white-60, rgba(255, 255, 255, 0.60)) 2px;
     text-underline-offset: 5px;
-	text-shadow: 0 0 0.35px #fff, 0 0 0.35px #e7e7e7;
+	text-shadow: 0 0 0.35px var(--Base-base-01, #FFF), 0 0 0.35px var(--Base-base-03, #EDEDED);
 }
 
 .legal-footer .footer-copy,
@@ -351,5 +440,5 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 18px;
-	color: var(--white-60);
+	color: var(--white-60, rgba(255, 255, 255, 0.60));
 }
