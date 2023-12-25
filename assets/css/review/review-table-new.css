@@ -11,6 +11,11 @@
         display: block;
     } */
 
+    .tcb-post-content table td
+    {
+        height: 112px;
+    }
+
     /* Review Width and Height */
 
     .tcb-post-content table.legal-raw.legal-column-3
