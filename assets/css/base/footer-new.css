@@ -284,10 +284,6 @@
     	align-content: baseline;
 	}
 
-	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
-		flex-grow: 1;
-	} */
-
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-grow: 2;
 	}
