@@ -80,6 +80,11 @@
     	align-items: center;
 	}
 
+	.legal-footer .footer-logo
+	{
+		justify-content: space-between;
+	}
+
 	/* Position */
 
 	.legal-footer-wrapper {
@@ -313,9 +318,7 @@
 
 .legal-footer .footer-logo {
 	display: flex;
-	/* column-gap: 20px; */
 	flex-wrap: wrap;
-	justify-content: space-between;
 	row-gap: 15px;
 }
 
