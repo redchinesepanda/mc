@@ -100,7 +100,7 @@
         border-bottom: 1px solid #000; 
     }
 
-    .tcb-post-content table td:last-child
+    /* .tcb-post-content table td:last-child
     {
         background-color:bisque;
     }
@@ -108,8 +108,7 @@
     .tcb-post-content table td:last-of-type
     {
         background-color:cadetblue;
-    }
-
+    } */
 
     /* 1v Адаптива тамблицы end */
 
