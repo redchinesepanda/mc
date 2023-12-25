@@ -100,13 +100,13 @@
         border-right: 2px solid #000;
     }
 
-    .tcb-post-content table tr td:first-child
+    .tcb-post-content table tr:first-child td:first-child
     {
         border-radius: 18px 18px 0px 0px;
         border-top: 2px solid #000;
     }
 
-    .tcb-post-content table td:last-child
+    .tcb-post-content table tr:last-child td:last-child
     {
         border-radius: 0px 0px 18px 18px;
         border-bottom: 2px solid #000;
