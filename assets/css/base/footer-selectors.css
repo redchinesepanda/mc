@@ -1,9 +1,19 @@
 .footer-menu .menu-item-has-children
 {
+	background-color:antiquewhite;
+}
+
+.footer-menu .menu-item-has-children > .item-title
+{
 	background-color:chocolate;
 }
 
 .footer-menu .menu-item:not( .menu-item-has-children )
+{
+	background-color:azure;
+}
+
+.footer-menu .menu-item:not( .menu-item-has-children ) > .item-title
 {
 	background-color:brown;
 }
