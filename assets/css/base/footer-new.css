@@ -1,10 +1,11 @@
 /* Footer New CSS */
 @media screen and ( min-width: 960px ) {
-	.legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
+	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
 	.legal-footer .footer-menu > .menu-item-end .menu-item {
 		flex-basis: 226px;
-	}
+	} */
 }
+
 @media ( min-width: 767px ) and ( max-width: 960px ) {
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
@@ -262,6 +263,11 @@
 	.footer-menu .menu-item > .item-title
 	{
 		width: 100%;
+	}
+
+	.footer-menu > .menu-item-has-children
+	{
+		flex-basis: calc( 100% / 5 - 25.6px );
 	}
 
 	/* Typography */
