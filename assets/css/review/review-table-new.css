@@ -11,10 +11,18 @@
         display: block;
     } */
 
+    .tcb-post-content table
+    {
+        border-collapse: collapse;
+    }
+
     .tcb-post-content table td,
     .tcb-post-content table th
     {
         height: 68px;
+        box-sizing: border-box;
+        height: 68px;
+        min-width: 100px;
     }
 
     /* Review Width and Height */
