@@ -11,14 +11,11 @@
         display: block;
     } */
 
-    .tcb-post-content table
+    /* 2v Вариант со скроллом start */
+
+    /* .tcb-post-content table
     {
         min-width: max-content;
-    }
-
-    .tcb-post-content table tr
-    {
-        height: 68px;
     }
 
     .tcb-post-content .legal-table-mobile,
@@ -43,7 +40,9 @@
         left: 20px;
         display: flex;
         align-items: center;
-    }
+    } */
+
+    /* 2v Вариант со скроллом end */
 
     /* Review Width and Height */
 
