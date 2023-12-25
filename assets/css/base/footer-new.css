@@ -25,7 +25,8 @@
 		flex-direction: column;
 	}
 
-	.legal-footer .footer-menu {
+	.legal-footer .footer-menu,
+	.legal-footer .footer-menu > .menu-item-end {
 		row-gap: 14px;
 	}
 
