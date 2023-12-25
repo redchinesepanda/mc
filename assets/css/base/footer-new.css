@@ -299,7 +299,8 @@
 		width: 70%;
 	}
 
-	.footer-menu .menu-item > .item-title
+	.footer-menu .menu-item > .item-title,
+	.footer-menu .menu-item:not(.menu-item-has-children) > .item-title
 	{
 		width: 100%;
 	}
