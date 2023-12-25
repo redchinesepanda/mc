@@ -14,6 +14,7 @@
     .tcb-post-content table
     {
         border-collapse: collapse;
+        table-layout: fixed;
     }
 
     .tcb-post-content table tr
