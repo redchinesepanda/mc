@@ -42,3 +42,17 @@
 {
 	background-color:cadetblue;
 }
+
+/* footer-copy */
+
+.legal-footer .footer-copy
+{
+	background-color:blueviolet;
+}
+
+/* footer-text */
+
+.legal-footer .footer-text
+{
+	background-color:aqua;
+}
