@@ -11,7 +11,8 @@
         display: block;
     } */
 
-    .tcb-post-content table td
+    .tcb-post-content table td,
+    .tcb-post-content table th
     {
         height: 112px;
     }
