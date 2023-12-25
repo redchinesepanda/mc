@@ -11,12 +11,6 @@
         display: block;
     } */
 
-    .tcb-post-content table
-    {
-        border-collapse: collapse;
-        table-layout: fixed;
-    }
-
     .tcb-post-content table tr
     {
         height: 68px;
@@ -191,6 +185,11 @@
 
 .tcb-post-content table caption {
     background-color: transparent;
+}
+
+.tcb-post-content table
+{
+    border-collapse: collapse;
 }
 
 /* Table default with Thead and Tbody */
