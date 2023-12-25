@@ -79,20 +79,14 @@
         flex-basis: 100%;
     }
 
-    .tcb-post-content table th:not( .legal-active ) ~ th,
+    /* .tcb-post-content table th:not( .legal-active ) ~ th,
     .tcb-post-content table th:not( .legal-active ) ~ td,
     .tcb-post-content table td:not( .legal-active ) ~ td
     {
         display: none;
-    }
+    } */
 
     /* Background */
-
-    /* .tcb-post-content table
-    {
-        border-radius: 18px;
-        border: 2px solid #000; 
-    } */
     
     .tcb-post-content table tr td
     {
@@ -120,16 +114,28 @@
     }
 
 
+    /* Level 1 item 1st */
 
     .tcb-post-content table tr:first-child td:first-child
     {
         background-color: brown;
     }
 
+    /* Level 1 item all */
+
     .tcb-post-content table tr td:first-child
     {
         background-color:bisque;
     }
+
+    /* Level 1 item last */
+
+    .tcb-post-content table tr:last-child td:first-child
+    {
+        background-color:darkcyan;
+    }
+
+    /* All items */
 
     .tcb-post-content table tr td
     {
