@@ -81,8 +81,9 @@
 
 	.legal-footer .footer-menu > .menu-item,
 	.legal-footer .footer-menu .menu-item-end > .menu-item {
-		padding: 8px 0px;
+		/* padding: 8px 0px; */
 		/* margin-bottom: 14px; */
+		padding-top: 8px;
 	}
 
 	.legal-footer .footer-menu > .menu-item.legal-active,
