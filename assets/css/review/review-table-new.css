@@ -11,6 +11,11 @@
         display: block;
     } */
 
+    .tcb-post-content table
+    {
+        min-width: max-content;
+    }
+
     .tcb-post-content table tr
     {
         height: 68px;
