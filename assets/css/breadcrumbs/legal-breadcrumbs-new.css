@@ -1,14 +1,19 @@
 /* Breadcrumbs new CSS */
-@media screen and ( max-width: 767px )
+@media screen and ( max-width: 959px )
 {
 	/* Position */
 
 	nav.breadcrumbs {
 		padding: 0px 20px;
 	}
+
+    .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
+    {
+        margin-left: 32px;
+    }
 }
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 960px )
 {
     /* Width and Height */
 
@@ -35,7 +40,7 @@
     column-gap: 8px;
 }
 
-.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {  /*временный стиль для отключения надписи Match Center*/
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {
     display: none;
 }
 
@@ -49,10 +54,6 @@
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     padding-left: 0;
 }
-
-/* .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
-    padding-right: 8px;
-} */
 
 /* Width and Heigh */
 
@@ -80,10 +81,6 @@ nav.breadcrumbs {
     color: #0A0A0A;
 }
 
-/* .legal-breadcrumbs a.legal-item-title {
-    font-weight: 400;
-}
- */
 .legal-breadcrumbs a.legal-item-title:hover {
     text-shadow: 0 0 0.35px #000, 0 0 0.35px #525252;
 }
