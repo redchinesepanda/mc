@@ -73,6 +73,11 @@
         flex-basis: 100%;
     }
 
+    .tcb-post-content table
+    {
+        border-radius: 18px;
+        border: 2px solid #000; 
+    }
 
 
     /* 1v Адаптива тамблицы end */
