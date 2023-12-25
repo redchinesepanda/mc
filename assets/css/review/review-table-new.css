@@ -58,7 +58,7 @@
     {
         display: none;
     }
-    
+
     .tcb-post-content table tbody
     {
         flex-basis: 100%;
@@ -79,8 +79,6 @@
         flex-basis: 100%;
     }
 
-
-
     /* Background */
 
     .tcb-post-content table
@@ -89,6 +87,11 @@
         border: 2px solid #000; 
     }
 
+    .tcb-post-content table th,
+    .tcb-post-content table td
+    {
+        border-bottom: 1px solid #000; 
+    }
 
     /* 1v Адаптива тамблицы end */
 
