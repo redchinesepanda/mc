@@ -12,7 +12,7 @@
 	background-color: lightgrey;
 }
 
-/* menu-item 1st */
+/* menu-item 1st all */
 
 .footer-menu .menu-item-has-children
 {
@@ -22,6 +22,13 @@
 .footer-menu .menu-item-has-children > .item-title
 {
 	background-color:chocolate;
+}
+
+/* menu-item 1st not end */
+
+.footer-menu > .menu-item-has-children
+{
+	background-color: darkslategrey;
 }
 
 /* menu-item 2nd */
