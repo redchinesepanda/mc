@@ -198,6 +198,7 @@
 .tcb-post-content table td
 {
     height: 68px;
+    box-sizing: border-box;
 }
 
 /* Table default with Thead and Tbody */
