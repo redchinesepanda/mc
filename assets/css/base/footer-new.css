@@ -290,6 +290,12 @@
 		flex-basis: calc( 100% / 2 - 16px );
 	}
 
+	.legal-footer .footer-logo .logo-item > img
+	{
+		height: 32px;
+		width: auto;
+	}
+
 	/* Typography */
 
 	.footer-menu > .menu-item > .item-title:hover,
