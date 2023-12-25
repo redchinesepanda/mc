@@ -95,7 +95,7 @@
     }
 
     .tcb-post-content table th,
-    .tcb-post-content table td:not( :last-of-type )
+    .tcb-post-content table tr:not( :last-child ) td:not( :last-child )
     {
         border-bottom: 1px solid #000; 
     }
