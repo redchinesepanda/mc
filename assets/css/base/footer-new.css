@@ -157,8 +157,8 @@
 		text-align: justify;
 	}
 
-	.legal-footer .footer-menu > .menu-item::after,
-	.legal-footer .footer-menu .menu-item-end > .menu-item::after {
+	.legal-footer .footer-menu > .menu-item > .item-title::after,
+	.legal-footer .footer-menu .menu-item-end > .menu-item > .item-title::after {
 		content: '\f106';
 		color: var(--Base-base-01, #FFF);
 		line-height: 1;
