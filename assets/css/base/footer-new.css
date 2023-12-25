@@ -149,7 +149,9 @@
 		height: 24px;
 	}
 
-	.legal-footer .footer-menu .item-title {
+	.footer-menu .menu-item-has-children > .item-title,
+	.footer-menu .menu-item:not( .menu-item-has-children ) > .item-title
+	{
 		flex-basis: 100%;
 	}
 
