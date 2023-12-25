@@ -179,10 +179,10 @@
     margin-bottom: 30px;
 }
 
-.tcb-post-content table:not( .legal-column ):not( .legal-column-3 ) {
+/* .tcb-post-content table:not( .legal-column ):not( .legal-column-3 ) {
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 .tcb-post-content table.legal-check td:last-child {
     padding-right: 56px;
