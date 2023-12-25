@@ -31,6 +31,13 @@
 	background-color: darkslategrey;
 }
 
+/* menu-item 1st end */
+
+.footer-menu > .menu-item-end > .menu-item-has-children
+{
+	background-color: darkslategrey;
+}
+
 /* menu-item 2nd */
 
 .footer-menu .menu-item:not( .menu-item-has-children )
