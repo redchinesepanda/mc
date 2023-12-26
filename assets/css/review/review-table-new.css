@@ -80,7 +80,10 @@
         flex-basis: 100%;
     }
 
-
+    .tcb-post-content table tr *
+    {
+        align-items: center;
+    }
 
     .tcb-post-content table tr :first-child.legal-active ~ *
     {
