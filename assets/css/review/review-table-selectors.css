@@ -7,21 +7,21 @@
 
 /* Level 1 item all */
 
-.tcb-post-content table tr *:first-child
+.tcb-post-content table tr > :first-child
 {
 	background-color:bisque;
 }
 
 /* Level 1 row item not last */
 
-.tcb-post-content table tr *:not( :first-child ):not( :last-child )
+.tcb-post-content table tr > :not( :first-child ):not( :last-child )
 {
 	background-color:azure;
 }
 
 /* Level 1 item last */
 
-.tcb-post-content table tr:last-child *:first-child
+.tcb-post-content table tr:last-child >:first-child
 {
 	background-color:darkgrey;
 }
