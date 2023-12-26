@@ -73,18 +73,13 @@
         flex-wrap: wrap;
     }
 
-    /* .tcb-post-content table th,
-    .tcb-post-content table td */
-    .tcb-post-content table tr *
-    {
-        flex-basis: 100%;
-    }
-
     .tcb-post-content table tr *
     {
         align-items: center;
+        flex-basis: 100%;
     }
 
+    .tcb-post-content table tr *:first-child,
     .tcb-post-content table tr :first-child.legal-active ~ *
     {
         display: flex;
