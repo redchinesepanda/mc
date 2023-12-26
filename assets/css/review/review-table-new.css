@@ -153,6 +153,13 @@
         background-color:burlywood;
     }
 
+    /* Level 2 item all */
+
+    .tcb-post-content table tr td:not( :first-child )
+    {
+        background-color:gold;
+    }
+
     /* Level 2 item last */
 
     .tcb-post-content table tr td:last-child
