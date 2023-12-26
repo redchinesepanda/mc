@@ -155,7 +155,8 @@
 
     .tcb-post-content table tr td:first-child
     {
-        background-color:bisque;
+        /* background-color:bisque; */
+        background-color: var(--Base-base-02, #F6F6F6);
     }
 
     /* Level 1 row item not last */
