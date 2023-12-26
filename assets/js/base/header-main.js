@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'selector' : '.footer-menu .menu-item-has-children',
+			'selector' : '.tcb-post-content table tr td:first-child',
 
 			'event' : 'click',
 
