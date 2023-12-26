@@ -1,55 +1,58 @@
-/* Level 1 item 1st */
-
-.tcb-post-content table:not( .legal-raw-rawspan ) tr:first-child > :first-child
+@media screen and ( max-width: 959px )
 {
-	background-color: brown;
-}
+	/* Level 1 item 1st */
 
-/* Level 1 item all */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr:first-child > :first-child
+	{
+		background-color: brown;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr > :first-child
-{
-	background-color:bisque;
-}
+	/* Level 1 item all */
 
-/* Level 1 row item not last */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr > :first-child
+	{
+		background-color:bisque;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr > :not( :first-child ):not( :last-child )
-{
-	background-color:azure;
-}
+	/* Level 1 row item not last */
 
-/* Level 1 item last */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr > :not( :first-child ):not( :last-child )
+	{
+		background-color:azure;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child >:first-child
-{
-	background-color:darkgrey;
-}
+	/* Level 1 item last */
 
-/* All items */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child >:first-child
+	{
+		background-color:darkgrey;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr > *
-{
-	background-color:burlywood;
-}
+	/* All items */
 
-/* Level 2 item all */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr > *
+	{
+		background-color:burlywood;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr td:not( :first-child )
-{
-	background-color:gold;
-}
+	/* Level 2 item all */
 
-/* Level 2 item last */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr td:not( :first-child )
+	{
+		background-color:gold;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr td:last-child
-{
-	background-color:cadetblue;
-}
+	/* Level 2 item last */
 
-/* Level 2 last row last item */
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr td:last-child
+	{
+		background-color:cadetblue;
+	}
 
-.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child td:last-child
-{
-	background-color:cornflowerblue;
+	/* Level 2 last row last item */
+
+	.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child td:last-child
+	{
+		background-color:cornflowerblue;
+	}	
 }
