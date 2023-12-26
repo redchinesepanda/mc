@@ -102,6 +102,13 @@
         flex-basis: 100%;
     }
 
+    /* Width and Height */
+
+    .tcb-post-content table tr *
+    {
+        min-height: 68px;
+    }
+
     /* Background */
     
     .tcb-post-content table tr td
@@ -296,7 +303,12 @@
         background-color: antiquewhite;
     } */
 
-    /* Review Width and Height */
+    /* Width and Height */
+
+    .tcb-post-content table tr *
+    {
+        height: 68px;
+    }
 
     .tcb-post-content table.legal-raw:not( .legal-column ):not( .legal-column-3 )
     {
@@ -374,10 +386,8 @@
     /* table-layout: fixed; */
 }
 
-.tcb-post-content table th,
-.tcb-post-content table td
+.tcb-post-content table tr *
 {
-    height: 68px;
     box-sizing: border-box;
     padding-left: 16px;
     padding-right: 16px;
