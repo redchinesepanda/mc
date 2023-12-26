@@ -79,9 +79,10 @@
         flex-basis: 100%;
     }
 
-    .tcb-post-content table tr th:not( .legal-active ) ~ th,
+    /* .tcb-post-content table tr th:not( .legal-active ) ~ th,
     .tcb-post-content table tr th:not( .legal-active ) ~ td,
-    .tcb-post-content table tr td:not( .legal-active ) ~ td
+    .tcb-post-content table tr td:not( .legal-active ) ~ td, */
+    .tcb-post-content table tr td:first-child:not( .legal-active ) ~ td
     {
         display: none;
     }
