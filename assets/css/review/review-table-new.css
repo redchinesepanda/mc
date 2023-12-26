@@ -297,6 +297,45 @@
         /* margin: 0px auto 20px auto; */
         /* margin: 0px auto; */
     }
+
+    /* Typography */
+
+    .tcb-post-content table:not( .legal-override ) th,
+    .tcb-post-content table:not( .legal-override ) td {
+        font-family: "Source Sans Pro";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 28px;
+    }
+    
+    .tcb-post-content table:not( .legal-override ) td {
+        font-weight: 400;
+        color: rgba(10, 10, 10, 0.85);
+    }
+    
+    .tcb-post-content table.legal-raw-column th {
+        font-weight: 600;
+        color: rgba(10, 10, 10, 0.85);
+        text-align: center;
+    }
+    
+    .tcb-post-content table.legal-raw th,
+    .tcb-post-content table.legal-raw-rawspan th
+    {
+        font-weight: 700;
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    
+    .tcb-post-content table caption {
+        color: rgba(10, 10, 10, 0.85);
+        font-family: "Source Sans Pro";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: center;
+    }
 }
 
 /* Display */
@@ -503,43 +542,6 @@
     line-height: 20px;
     /* text-decoration: none; */
 }
-
-/* .tcb-post-content table:not( .legal-override ) th,
-.tcb-post-content table:not( .legal-override ) td {
-    font-family: "Source Sans Pro";
-    font-size: 16px;
-    font-style: normal;
-    line-height: 28px;
-}
-
-.tcb-post-content table:not( .legal-override ) td {
-    font-weight: 400;
-    color: rgba(10, 10, 10, 0.85);
-}
-
-.tcb-post-content table.legal-raw-column th {
-    font-weight: 600;
-    color: rgba(10, 10, 10, 0.85);
-    text-align: center;
-}
-
-.tcb-post-content table.legal-raw th,
-.tcb-post-content table.legal-raw-rawspan th
-{
-    font-weight: 700;
-    color: rgb(255, 255, 255);
-    text-align: center;
-}
-
-.tcb-post-content table caption {
-    color: rgba(10, 10, 10, 0.85);
-    font-family: "Source Sans Pro";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: center;
-} */
 
 /* Other */
 
