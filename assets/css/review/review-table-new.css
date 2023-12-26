@@ -90,9 +90,16 @@
         display: none;
     }
 
+    .tcb-post-content table tr td:not( :first-child )
+    {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
     .tcb-post-content table tr td:not( :first-child ):before
     {
         content: attr( data-column-name, 'default column name' );
+        flex-basis: 100%;
     }
 
     /* Background */
@@ -194,6 +201,14 @@
     .tcb-post-content table tr *
     {
         font-weight: 500; 
+    }
+
+    .tcb-post-content table tr td:not( :first-child ):before
+    {
+        color: var(--Base-base-05, #939393);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
     }
 }
 
