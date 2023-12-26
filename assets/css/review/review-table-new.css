@@ -80,6 +80,13 @@
         flex-basis: 100%;
     }
 
+
+
+    .tcb-post-content table tr :first-child.legal-active ~ *
+    {
+        display: flex;
+    }
+
     .tcb-post-content table tr :first-child:not( .legal-active ) ~ td
     {
         display: none;
@@ -113,7 +120,6 @@
         border-bottom: 1px solid #000; 
     }
 
-
     /* Level 1 item 1st */
 
     .tcb-post-content table tr:first-child td:first-child
@@ -144,7 +150,7 @@
 
     /* All items */
 
-    .tcb-post-content table tr td
+    .tcb-post-content table tr *
     {
         background-color:burlywood;
     }
@@ -171,6 +177,13 @@
     {
         display: table;
         width: 100%;
+    }
+
+    /* Typography */
+
+    .tcb-post-content table tr *
+    {
+        font-weight: 500; 
     }
 }
 
@@ -480,7 +493,18 @@
 
 /* Review Typography */
 
-.tcb-post-content table:not( .legal-override ) th,
+.tcb-post-content table tr *
+{
+    color: var(--Base-base-09, #0A0A0A);
+    font-family: var( --legal-font-primary );
+    font-style: normal;
+    font-size: 14px;
+    /* font-weight: 400; */
+    line-height: 20px;
+    /* text-decoration: none; */
+}
+
+/* .tcb-post-content table:not( .legal-override ) th,
 .tcb-post-content table:not( .legal-override ) td {
     font-family: "Source Sans Pro";
     font-size: 16px;
@@ -515,11 +539,11 @@
     font-weight: 600;
     line-height: 24px;
     text-align: center;
-}
+} */
 
 /* Other */
 
-.table-custom1 table  {
+/* .table-custom1 table  {
     border:1px solid #000;
     border-collapse: collapse;
     width: 100%;
@@ -628,4 +652,4 @@
     .img-bonus {
         max-width: 770px;
     }
-}
+} */
