@@ -19,7 +19,7 @@
     /* Width and Height */
 
     .legal-breadcrumbs {
-        max-width: var( --base-width-desktop );
+        max-width: var( --other-width-desktop );
     }
 }
 
