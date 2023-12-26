@@ -1,9 +1,19 @@
+.tcb-post-content table:not( .legal-raw-rawspan )
+{
+	/* Level 1 item 1st */
+
+	tr:first-child > :first-child
+	{
+		background-color: brown;
+	}
+}
+
 /* Level 1 item 1st */
 
-.tcb-post-content table tr:first-child > :first-child
+/* .tcb-post-content table tr:first-child > :first-child
 {
 	background-color: brown;
-}
+} */
 
 /* Level 1 item all */
 
