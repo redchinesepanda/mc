@@ -144,62 +144,14 @@
         border-bottom: 1px solid #000; 
     }
 
-    /* Level 1 item 1st */
-
-    .tcb-post-content table tr:first-child td:first-child
-    {
-        background-color: brown;
-    }
-
-    /* Level 1 item all */
-
     .tcb-post-content table tr td:first-child
     {
-        /* background-color:bisque; */
         background-color: var(--Base-base-02, #F6F6F6);
     }
 
-    /* Level 1 row item not last */
-
-    .tcb-post-content table tr td:not( :first-child ):not( :last-child )
-    {
-        background-color:azure;
-    }
-
-    /* Level 1 item last */
-
-    .tcb-post-content table tr:last-child td:first-child
-    {
-        background-color:darkgrey;
-    }
-
-    /* All items */
-
-    .tcb-post-content table tr *
-    {
-        background-color:burlywood;
-    }
-
-    /* Level 2 item all */
-
     .tcb-post-content table tr td:not( :first-child )
     {
-        /* background-color:gold; */
         background-color: var(--Base-base-01, #FFF);
-    }
-
-    /* Level 2 item last */
-
-    .tcb-post-content table tr td:last-child
-    {
-        background-color:cadetblue;
-    }
-
-    /* Level 2 last row last item */
-    
-    .tcb-post-content table tr:last-child td:last-child
-    {
-        background-color:cornflowerblue;
     }
 
     /* 1v Адаптива тамблицы end */
