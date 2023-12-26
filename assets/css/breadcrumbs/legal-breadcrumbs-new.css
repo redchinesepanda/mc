@@ -1,5 +1,5 @@
 /* Breadcrumbs new CSS */
-@media screen and ( max-width: 767px )
+@media screen and ( max-width: 959px )
 {
 	/* Position */
 
@@ -8,12 +8,18 @@
 	}
 }
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 960px )
 {
+	/* Position */
+
+    .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
+    {
+        margin-left: 32px;
+    }
     /* Width and Height */
 
     .legal-breadcrumbs {
-        width: 1218px;
+        max-width: var( --base-width-desktop );
     }
 }
 
@@ -23,6 +29,7 @@
     display: flex;
     column-gap: 8px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .legal-breadcrumbs .legal-item-title {
@@ -34,24 +41,21 @@
     column-gap: 8px;
 }
 
-.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {  /*временный стиль для отключения надписи Match Center*/
+.legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title span {
     display: none;
 }
 
 /* Breadcrumbs Position */
 
 .legal-breadcrumbs {
-    padding: 18px 0px;
+    padding-top: 18px;
+    padding-bottom: 14px;
     margin: 0px auto;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
     padding-left: 0;
 }
-
-/* .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
-    padding-right: 8px;
-} */
 
 /* Width and Heigh */
 
@@ -79,10 +83,6 @@ nav.breadcrumbs {
     color: #0A0A0A;
 }
 
-/* .legal-breadcrumbs a.legal-item-title {
-    font-weight: 400;
-}
- */
 .legal-breadcrumbs a.legal-item-title:hover {
     text-shadow: 0 0 0.35px #000, 0 0 0.35px #525252;
 }

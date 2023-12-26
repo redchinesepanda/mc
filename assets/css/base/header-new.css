@@ -1,4 +1,4 @@
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 960px )
 {
 	/* Display */
 
@@ -146,6 +146,16 @@
 	.legal-header
 	{
 		margin: 0px auto;
+	}
+
+	.legal-header .legal-logo
+	{
+		margin-left: 32px;
+	}
+
+	.legal-header .legal-menu
+	{
+		margin-right: 32px;
 	}
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu
@@ -427,7 +437,7 @@
 	text-underline-offset: 5px;
 }
 
-@media screen and ( max-width: 767px )
+@media screen and ( max-width: 959px )
 {
 	/* Display */
 

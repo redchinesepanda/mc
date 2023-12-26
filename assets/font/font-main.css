@@ -1,12 +1,18 @@
 :root
 {
+	/* Font */
 	--legal-font-primary: "Golos Text", sans-serif;
-	--legal-font-icons: "MC Icons2";
+	--legal-font-icons: "MC Icons";
+
+	/* Width and Height */
 	--base-width-desktop: 1280px;
+	--other-width-desktop: 1218px;
 	--medium-width-desktop: 1210px;
 	--small-width-desktop: 960px;
 	--base-width-tablet: 768px;
 	--base-width-mobile: 375px;
+
+	/* Background */
 	--Base-base-01: #FFF;
 	--Base-base-03: #EDEDED;
 	--Base-base-05: #939393;

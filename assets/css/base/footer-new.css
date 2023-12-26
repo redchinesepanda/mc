@@ -1,12 +1,7 @@
 /* Footer New CSS */
-@media screen and ( min-width: 960px ) {
-	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item),
-	.legal-footer .footer-menu > .menu-item-end .menu-item {
-		flex-basis: 226px;
-	} */
-}
 
-@media ( min-width: 767px ) and ( max-width: 960px ) {
+@media ( min-width: 767px ) and ( max-width: 960px )
+{
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-direction: column;
 		flex-basis: 226px;
@@ -18,12 +13,53 @@
 	}
 }
 
+@media screen and ( max-width: 767px )
+{
+	/* Position */
+
+	.legal-footer-wrapper
+	{
+		padding: 32px 16px;
+	}
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1209px )
+{
+	/* Position */
+
+	.legal-footer-wrapper
+	{
+		padding: 32px 32px 40px 32px;
+	}
+}
+
+@media screen and ( min-width: 1210px )
+{
+	/* Position */
+
+	.legal-footer-wrapper
+	{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
 @media screen and ( min-width: 960px ) and ( max-width: 1209px )
 {
 	/* Display */
 
 	.footer-menu .menu-item-end {
 		flex-wrap: wrap;
+	}
+
+	.footer-menu .menu-item-end
+	{
+		align-content: baseline;
+	}
+
+	.footer-menu .menu-item-end
+	{
+		row-gap: 28px;
 	}
 
 	/* Width and Heoght */
@@ -42,7 +78,7 @@
 
 @media screen and ( min-width: 1210px )
 {
-	/* Width and Heoght */
+	/* Width and Height */
 
 	.footer-menu > .menu-item-has-children
 	{
@@ -60,7 +96,7 @@
 	}
 }
 
-@media screen and ( max-width: 767px )
+@media screen and ( max-width: 959px )
 {
 	/* Display */
 
@@ -123,10 +159,6 @@
 	}
 
 	/* Position */
-
-	.legal-footer-wrapper {
-		padding: 32px 16px;
-	}
 
 	.legal-footer .footer-menu > .menu-item.legal-active,
 	.legal-footer .footer-menu .menu-item-end > .menu-item.legal-active {
@@ -235,7 +267,7 @@
 	}
 }
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 960px )
 {
 
     /* Display */
@@ -251,10 +283,6 @@
 		flex-wrap: wrap;
     	align-content: baseline;
 	}
-
-	/* .legal-footer .footer-menu > .menu-item:not(.menu-item-end .menu-item) {
-		flex-grow: 1;
-	} */
 
 	.legal-footer .footer-menu > .menu-item-end {
 		flex-grow: 2;
@@ -287,12 +315,6 @@
 		margin-bottom: 28px;
 	}
 
-	.legal-footer-wrapper
-	{
-		padding-top: 40px;
-		padding-bottom: 40px;
-	}
-
 	/* Width and Height */
 
 	.legal-footer .footer-text {
@@ -309,6 +331,11 @@
 	{
 		height: 32px;
 		width: auto;
+	}
+
+	.footer-menu > .menu-item-end > .menu-item-has-children > .item-children
+	{
+		flex-basis: 100%;
 	}
 
 	/* Typography */
@@ -371,7 +398,7 @@
 /* Width and Height */
 
 .legal-footer {
-	max-width: 1218px;
+	max-width: var( --other-width-desktop );
 }
 
 .legal-footer .footer-menu,
