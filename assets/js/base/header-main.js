@@ -47,14 +47,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'action' : toggleBlock
 		},
 
-		// {
-		// 	'selector' : '.legal-menu .menu-item-has-children > a',
-
-		// 	'event' : 'click',
-
-		// 	'action' : toggleLink
-		// },
-
 		{
 			'selector' : '.legal-header-control',
 
@@ -71,13 +63,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'action' : toggleBlock
 		},
 
-		// {
-		// 	'selector' : '.footer-menu .menu-item-has-children > a',
+		{
+			'selector' : '.footer-menu .menu-item-has-children',
 
-		// 	'event' : 'click',
+			'event' : 'click',
 
-		// 	'action' : toggleLink
-		// },
+			'action' : toggleBlock
+		}
 	];
 
 	function toggleInit()
