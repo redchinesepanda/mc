@@ -90,6 +90,11 @@
         display: none;
     }
 
+    .tcb-post-content table tr td:not( :first-child ):before
+    {
+        content: attr( data-column-name, 'default column name' );
+    }
+
     /* Background */
     
     .tcb-post-content table tr td
