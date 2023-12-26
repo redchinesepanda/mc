@@ -73,15 +73,13 @@
         flex-wrap: wrap;
     }
 
-    .tcb-post-content table th,
-    .tcb-post-content table td
+    /* .tcb-post-content table th,
+    .tcb-post-content table td */
+    .tcb-post-content table tr *
     {
         flex-basis: 100%;
     }
 
-    /* .tcb-post-content table tr th:not( .legal-active ) ~ th,
-    .tcb-post-content table tr th:not( .legal-active ) ~ td,
-    .tcb-post-content table tr td:not( .legal-active ) ~ td, */
     .tcb-post-content table tr :first-child:not( .legal-active ) ~ td
     {
         display: none;
