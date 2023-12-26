@@ -184,7 +184,8 @@
 
     .tcb-post-content table tr td:not( :first-child )
     {
-        background-color:gold;
+        /* background-color:gold; */
+        background-color: var(--Base-base-01, #FFF);
     }
 
     /* Level 2 item last */
