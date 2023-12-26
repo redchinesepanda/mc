@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'selector' : '.tcb-post-content table tr td:first-child',
+			'selector' : '.tcb-post-content table tr *:first-child',
 
 			'event' : 'click',
 
