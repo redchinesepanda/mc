@@ -102,6 +102,13 @@
         flex-basis: 100%;
     }
 
+    /* Position */
+
+    .tcb-post-content table tr *
+    {
+        padding: 18px;
+    }
+
     /* Width and Height */
 
     .tcb-post-content table tr *
@@ -228,7 +235,13 @@
         display: inline-table;
     }
 
-    /* Review Position */
+    /* Position */
+
+    .tcb-post-content table tr *
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 
     .tcb-post-content table.legal-column
     {
@@ -389,8 +402,6 @@
 .tcb-post-content table tr *
 {
     box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
 }
 
 /* Table default with Thead and Tbody */
