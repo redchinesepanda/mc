@@ -79,8 +79,8 @@
         flex-basis: 100%;
     }
 
-    .tcb-post-content table tr *:first-child,
-    .tcb-post-content table tr :first-child.legal-active ~ *
+    .tcb-post-content table tr:first-child > :first-child,
+    .tcb-post-content table tr:first-child > :first-child.legal-active ~ *
     {
         display: flex;
     }
