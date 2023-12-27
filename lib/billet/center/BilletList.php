@@ -37,6 +37,14 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
+        LegalDebug::debug( [
+            'function' => 'filter_lists_feature_has',
+
+            'lists' => $lists,
+
+            'features' => $features,
+        ] );
+
         return array_filter( $lists, function( $list ) use ( $features )
         {
             if ( empty( $list[ self::LIST[ 'feature' ] ] ) )
