@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'selector' : '.tcb-post-content table:not( .legal-row-rowspan, .legal-check ) tr *:first-child',
+			'selector' : '.tcb-post-content table:not( .legal-row-rowspan ):not( .legal-check ) tr *:first-child',
 
 			'event' : 'click',
 
