@@ -16,12 +16,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 1 ) ).forEach( prepareCell );
     }
 
-    function prepareItem( element )
-	{
-		console.log( selectors.firstRowCells );
+    // function prepareItem( element )
+	// {
+	// 	console.log( selectors.firstRowCells );
 
-        element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
-    }
+    //     element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
+    // }
 
     // function prepareItems( element )
 	// {
@@ -59,7 +59,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		thead : 'thead',
 		
-		firstRowCells : ':scope thead tr:first-child > *',
+		firstRowCells : 'thead tr:first-child > *',
 
 		currentCell : function( number )
 		{
@@ -77,7 +77,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			console.log( selectors.firstRowCells );
 
-			document.querySelectorAll( selectors.firstRowCells ).forEach( prepareItem );
+			document.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn );
 		}
 	}
 
