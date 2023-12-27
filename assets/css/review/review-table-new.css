@@ -79,15 +79,13 @@
         flex-basis: 100%;
     }
 
-    /* .tcb-post-content table tr :first-child,
-    .tcb-post-content table tr :first-child.legal-active ~ * */
     .tcb-post-content table tr > :first-child:not( :only-child ),
     .tcb-post-content table tr > :first-child:not( :only-child ).legal-active ~ *
     {
         display: flex;
     }
 
-    .tcb-post-content table tr :first-child:not( .legal-active ) ~ td
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active ) ~ td
     {
         display: none;
     }
