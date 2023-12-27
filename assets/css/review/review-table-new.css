@@ -79,7 +79,7 @@
         flex-basis: 100%;
     }
 
-    .tcb-post-content table tr > :first-child:not( :only-child ),
+    .tcb-post-content table tr > :first-child,
     .tcb-post-content table tr > :first-child:not( :only-child ).legal-active ~ td
     {
         display: flex;
