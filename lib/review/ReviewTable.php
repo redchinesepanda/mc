@@ -40,9 +40,27 @@ class ReviewTable
 		}
     }
 
+	const JS_NEW = [
+        self::HANDLE[ 'table' ] => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-table.js',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+	public static function register_script()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ReviewMain::register_script( self::JS_NEW );
+		}
+    }
+
 	public static function register_functions()
 	{
 		$handler = new self();
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_table' ] );
 
