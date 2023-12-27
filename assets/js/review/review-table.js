@@ -16,6 +16,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareColumn( element, index )
 	{
+		console.log( selectors.tbodyFirstCell );
+		
 		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classlist.add( classes.active );
 
         [ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
