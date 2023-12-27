@@ -60,8 +60,6 @@ class ReviewTable
 	{
 		$handler = new self();
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_table' ] );
 
 		// add_filter( 'tiny_mce_before_init', [ $handler, 'table_classes' ] );
@@ -74,6 +72,8 @@ class ReviewTable
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
