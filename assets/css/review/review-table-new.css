@@ -160,16 +160,6 @@
         background-color: var(--Base-base-01, #FFF);
     }
 
-    /* 1v Адаптива тамблицы end */
-
-    /* Review Width and Height */
-
-    .tcb-post-content table.legal-raw.legal-column-3
-    {
-        display: table;
-        width: 100%;
-    }
-
     /* Typography */
 
     .tcb-post-content table tr *
@@ -184,6 +174,8 @@
         font-weight: 400;
         line-height: 18px;
     }
+
+    /* 1v Адаптива тамблицы end */
 }
 
 @media screen and ( min-width: 960px )
