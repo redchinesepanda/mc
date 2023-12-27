@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( selectors.firstRow );
 
-        element.querySelectorAll( selectors.firstRow ).forEach( prepareColumn )
+        element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
 
     function prepareItems( element )
@@ -57,7 +57,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		thead : 'thead',
 		
-		firstRow : ':scope > tr:first-child',
+		firstRowCells : ':scope > tr:first-child > td',
 
 		currentCell : function( number )
 		{
