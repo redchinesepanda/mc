@@ -51,7 +51,7 @@
 
 	/* Level 2 last row last item */
 
-	.tcb-post-content table tr:last-child td:last-child
+	.tcb-post-content table tr:last-child td:last-child:not( :only-child )
 	{
 		background-color:cornflowerblue;
 	}	
