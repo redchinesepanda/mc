@@ -31,7 +31,7 @@
 
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item-has-children
 	{
-		display: flex;
+		/* display: flex; */
 		flex-wrap: wrap;
 	}
 
