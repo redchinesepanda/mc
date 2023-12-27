@@ -37,21 +37,21 @@
 
 	/* Level 2 item all */
 
-	.tcb-post-content table tr td:not( :first-child )
+	.tcb-post-content table tr > td:not( :first-child )
 	{
 		background-color:gold;
 	}
 
 	/* Level 2 item last */
 
-	.tcb-post-content table tr td:last-child:not( :only-child )
+	.tcb-post-content table tr > td:last-child:not( :only-child )
 	{
 		background-color:cadetblue;
 	}
 
 	/* Level 2 last row last item */
 
-	.tcb-post-content table tr:last-child td:last-child:not( :only-child )
+	.tcb-post-content table tr:last-child > td:last-child:not( :only-child )
 	{
 		background-color:cornflowerblue;
 	}	
