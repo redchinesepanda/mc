@@ -50,8 +50,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else 
 		{
-			console.log( selectors.allCells() );
-
 			document.querySelectorAll( selectors.allCells() ).forEach( forgetCell );
 		}
 	}
