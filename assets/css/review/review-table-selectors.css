@@ -30,7 +30,7 @@
 
 	/* All items */
 
-	.tcb-post-content table tr > 
+	.tcb-post-content table tr > *
 	{
 		background-color:burlywood;
 	}
