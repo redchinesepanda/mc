@@ -11,9 +11,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareColumn( element, index )
 	{
-        console.log( selectors.currentCell( index + 1 ) );
+        console.log( selectors.currentCell( index + 2 ) );
 
-		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 1 ) ).forEach( prepareCell );
+		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) ).forEach( prepareCell );
     }
 
     function prepareItem( element )
