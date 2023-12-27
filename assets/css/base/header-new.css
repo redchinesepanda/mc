@@ -546,14 +546,14 @@
 
 	.legal-header .legal-logo
 	{
-		margin-left: 16px;
+		/* margin-left: 16px; */
 		padding-bottom: 5px;
 	}
 
 	.legal-header .legal-header-control
 	{
 		margin-left: auto;
-		margin-right: 16px;
+		/* margin-right: 16px; */
 		padding-bottom: 5px; 
 	}
 
