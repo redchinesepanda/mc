@@ -99,7 +99,7 @@
 
     .tcb-post-content table tr td:not( :first-child ):before
     {
-        content: attr( data-column-name, 'default column name' );
+        content: attr( data-column-name, '' );
         flex-basis: 100%;
     }
 
