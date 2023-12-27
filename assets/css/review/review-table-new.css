@@ -182,7 +182,7 @@
         content: '\F106';
     }
 
-    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::after
+    .tcb-post-content table tr > :first-child:not( :only-child ).legal-active::after
     {
         content: '\F10C';
     }
