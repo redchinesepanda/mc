@@ -16,20 +16,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareColumn( element, index )
 	{
+		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classlist.add( classes.active );
+
         [ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
     }
 
     function prepareItem( element )
 	{
-		element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
+		element.querySelectorAll( selectors.theadCells ).forEach( prepareColumn )
     }
+
+	const classes = {
+		active: 'legal-active'
+	};
 
     const selectors = {
 		table : '.tcb-post-content table:not( .legal-row-rowspan, .legal-check )',
-
-		thead : 'thead',
 		
-		firstRowCells : 'thead tr:first-child > :not( :first-child )',
+		theadCells : 'thead tr:first-child > :not( :first-child )',
+
+		tbodyFirstCell : 'tbody tr:first-child > :first-child',
 
 		currentCell : function( number )
 		{
