@@ -210,7 +210,7 @@
         line-height: 24px;
     }
 
-    .tcb-post-content .legal-check tr > :first-child:only-child,
+    .tcb-post-content .legal-check tr > :first-child:only-child::after,
     .tcb-post-content table tr > :first-child:not( :only-child )::after
     {
         font-family: var( --legal-font-icons );
