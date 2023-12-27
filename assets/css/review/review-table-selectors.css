@@ -16,7 +16,7 @@
 
 	/* Level 1 row item not 1st and last */
 
-	.tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child
+	.tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child:not( :only-child )
 	{
 		background-color:azure;
 	}
