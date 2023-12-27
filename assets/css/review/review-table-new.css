@@ -132,7 +132,8 @@
     .tcb-post-content table tr:first-child > :first-child
     {
         border-radius: 18px 18px 0px 0px;
-        border-top: 2px solid #000;
+        /* border-top: 2px solid #000; */
+        border-top: var(--table-border-external);
     }
 
     .tcb-post-content table tr:last-child td:last-child,
