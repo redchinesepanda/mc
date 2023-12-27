@@ -169,12 +169,29 @@
         font-weight: 500; 
     }
 
-    .tcb-post-content table tr td:not( :first-child ):before
+    .tcb-post-content table tr td:not( :first-child )::before
     {
-        color: var(--Base-base-05, #939393);
+        color: var( --Base-base-05, #939393 );
         font-size: 12px;
         font-weight: 400;
         line-height: 18px;
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::before
+    {
+        content: '\F106';
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::before
+    {
+        content: '\F10C';
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child )::before
+    {
+        font-family: var( --legal-font-icons );
+        font-size: 24px;
+        line-height: 24px;
     }
 
     /* 1v Адаптива тамблицы end */
