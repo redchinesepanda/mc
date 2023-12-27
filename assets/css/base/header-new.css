@@ -3,7 +3,7 @@
 	/* Display */
 
 	.legal-menu .legal-cut-control.legal-hide,
-	/* .legal-header .legal-header-control, */
+	.legal-header .legal-header-control,
 	.legal-menu > .menu-item:not( :hover ) > .sub-menu,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .legal-has-href
 	{
