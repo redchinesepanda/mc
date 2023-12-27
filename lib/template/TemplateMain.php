@@ -103,7 +103,7 @@ class TemplateMain
         'legal-template-font-main' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-main.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
 
         'legal-template-font-gotos-text' => [
