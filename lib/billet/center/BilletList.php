@@ -107,8 +107,12 @@ class BilletList
 
         if ( empty( $result ) )
         {
-            $result = self::filter_lists_feature_empty( $lists );
+            // $result = self::filter_lists_feature_empty( $lists );
+
+            $result = self::filter_lists_feature_has( $lists, [ 'legal-default' ] );
         }
+
+        $result = array_merge( $result, self::filter_lists_feature_empty( $lists ) );
         
         return self::parse_lists( $result );
     }
