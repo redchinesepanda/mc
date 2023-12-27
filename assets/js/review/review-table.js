@@ -16,18 +16,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareColumn( element, index )
 	{
-        console.log( selectors.currentCell( index + 2 ) );
-
-		console.log( element.textContent );
-
-		[ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
+        [ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
     }
 
     function prepareItem( element )
 	{
-		console.log( selectors.firstRowCells );
-
-        element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
+		element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
 
     const selectors = {
@@ -49,12 +43,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( max-width: 959px )' ).matches )
 		{
-			console.log( selectors.table );
-
 			document.querySelectorAll( selectors.table ).forEach( prepareItem );
 		}
 		else 
 		{
+			console.log( selectors.allCells );
+
 			document.querySelectorAll( selectors.allCells ).forEach( forgetCell );
 		}
 	}
