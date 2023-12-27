@@ -23,12 +23,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
         element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
 
-    function prepareItems( element )
-	{
-		console.log( selectors.thead );
+    // function prepareItems( element )
+	// {
+	// 	console.log( selectors.thead );
 
-		element.querySelectorAll( selectors.thead ).forEach( prepareItem );
-	}
+	// 	element.querySelectorAll( selectors.thead ).forEach( prepareItem );
+	// }
 
     // function removeCutControl( element )
 	// {
@@ -59,11 +59,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		thead : 'thead',
 		
-		firstRowCells : 'tr:first-child > *',
+		firstRowCells : 'thead tr:first-child > *',
 
 		currentCell : function( number )
 		{
-			return 'tr > :nth-child(' + number + ')';
+			return 'tbody tr > :nth-child(' + number + ')';
 		}
 	};
 
@@ -71,9 +71,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( max-width: 959px )' ).matches )
 		{
-			console.log( selectors.table );
+			// console.log( selectors.table );
 
-			document.querySelectorAll( selectors.table ).forEach( prepareItems );
+			// document.querySelectorAll( selectors.table ).forEach( prepareItems );
+			
+			console.log( selectors.firstRowCells );
+
+			document.querySelectorAll( selectors.firstRowCells ).forEach( prepareItem );
 		}
 	}
 
