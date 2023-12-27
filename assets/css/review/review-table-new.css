@@ -144,7 +144,7 @@
     }
 
     .tcb-post-content table tr:first-child > :first-child,
-    .tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child:not( :only-child ),
+    .tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child,
     .tcb-post-content table tr:last-child > :first-child.legal-active,
     .tcb-post-content table tr td:not( :first-child )
     /* .tcb-post-content table tr > :not( :first-child ):not( :last-child ),
