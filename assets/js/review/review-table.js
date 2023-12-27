@@ -50,9 +50,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else 
 		{
-			console.log( selectors.allCells );
+			console.log( selectors.allCells() );
 
-			document.querySelectorAll( selectors.allCells ).forEach( forgetCell );
+			document.querySelectorAll( selectors.allCells() ).forEach( forgetCell );
 		}
 	}
 
