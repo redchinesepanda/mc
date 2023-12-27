@@ -73,7 +73,7 @@
         flex-wrap: wrap;
     }
 
-    .tcb-post-content table tr *
+    .tcb-post-content table tr > *
     {
         align-items: center;
         flex-basis: 100%;
