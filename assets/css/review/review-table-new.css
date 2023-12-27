@@ -151,7 +151,7 @@
         border-bottom: var( --table-border-internal ); 
     }
 
-    .tcb-post-content table tr > :first-child
+    .tcb-post-content table tr > :first-child:not( :only-child )
     {
         background-color: var(--Base-base-02, #F6F6F6);
     }
