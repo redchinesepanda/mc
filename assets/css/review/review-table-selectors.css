@@ -2,56 +2,56 @@
 {
 	/* Level 1 item 1st */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr:first-child > :first-child
+	.tcb-post-content table tr:first-child > :not( [ rowspan ] ):first-child
 	{
 		background-color: brown;
 	}
 
 	/* Level 1 item all */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr > :first-child
+	.tcb-post-content table tr > :first-child
 	{
 		background-color:bisque;
 	}
 
 	/* Level 1 row item not last */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr > :not( :first-child ):not( :last-child )
+	.tcb-post-content table tr > :not( :first-child ):not( :last-child )
 	{
 		background-color:azure;
 	}
 
 	/* Level 1 item last */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child >:first-child
+	.tcb-post-content table tr:last-child >:first-child
 	{
 		background-color:darkgrey;
 	}
 
 	/* All items */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr > *
+	.tcb-post-content table tr > *
 	{
 		background-color:burlywood;
 	}
 
 	/* Level 2 item all */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr td:not( :first-child )
+	.tcb-post-content table tr td:not( :first-child )
 	{
 		background-color:gold;
 	}
 
 	/* Level 2 item last */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr td:last-child
+	.tcb-post-content table tr td:last-child
 	{
 		background-color:cadetblue;
 	}
 
 	/* Level 2 last row last item */
 
-	.tcb-post-content table:not( .legal-raw-rawspan ) tr:last-child td:last-child
+	.tcb-post-content table tr:last-child td:last-child
 	{
 		background-color:cornflowerblue;
 	}	
