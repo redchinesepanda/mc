@@ -177,17 +177,17 @@
         line-height: 18px;
     }
 
-    .tcb-post-content .legal-check tr > :first-child:only-child:not( .legal-cross )
+    .tcb-post-content .legal-check tr > :first-child:only-child:not( .legal-cross )::after
     {
         content: '\F10D';
     }
 
-    .tcb-post-content .legal-check tr > :first-child:only-child.legal-cross
+    .tcb-post-content .legal-check tr > :first-child:only-child.legal-cross::after
     {
         content: '\F10E';
     }
 
-    .tcb-post-content .legal-check tr > :first-child:only-child
+    .tcb-post-content .legal-check tr > :first-child:only-child::after
     {
         font-size: 18px;
         line-height: 18px;
