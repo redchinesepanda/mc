@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareCell( element )
 	{
-		element.dataset.columnName = 'test';
+		element.dataset.columnName = this.textContent;
 	}
 
     function prepareColumn( element, index )
@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element.textContent );
 
-		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) ).forEach( prepareCell );
+		[ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
     }
 
     function prepareItem( element )
