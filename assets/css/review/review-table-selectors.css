@@ -44,7 +44,7 @@
 
 	/* Level 2 item last */
 
-	.tcb-post-content table tr td:last-child
+	.tcb-post-content table tr td:last-child:not( :only-child )
 	{
 		background-color:cadetblue;
 	}
