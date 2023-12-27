@@ -18,12 +18,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		[ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
 
-		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classList.add( classes.active );
+		// element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classList.add( classes.active );
     }
 
     function prepareItem( element )
 	{
-		element.querySelectorAll( selectors.theadCells ).forEach( prepareColumn )
+		element.querySelectorAll( selectors.theadCells ).forEach( prepareColumn );
+
+		element.querySelector( selectors.tbodyFirstCell ).classList.add( classes.active );
     }
 
 	const classes = {
