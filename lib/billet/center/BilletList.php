@@ -37,13 +37,13 @@ class BilletList
 
     public static function filter_lists_feature_has( $lists, $features )
     {
-        LegalDebug::debug( [
-            'function' => 'filter_lists_feature_has',
+        // LegalDebug::debug( [
+        //     'function' => 'filter_lists_feature_has',
 
-            'lists' => $lists,
+        //     'lists' => $lists,
 
-            'features' => $features,
-        ] );
+        //     'features' => $features,
+        // ] );
 
         return array_filter( $lists, function( $list ) use ( $features )
         {
