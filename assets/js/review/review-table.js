@@ -59,7 +59,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		thead : 'thead',
 		
-		firstRowCells : 'thead tr:first-child > *',
+		firstRowCells : ':scope thead tr:first-child > *',
 
 		currentCell : function( number )
 		{
