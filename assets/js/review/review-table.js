@@ -16,13 +16,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareColumn( element, index )
 	{
-		console.log( selectors.tbodyFirstCell );
-
-		console.log( element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ) );
+		[ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
 
 		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classList.add( classes.active );
-
-        [ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
     }
 
     function prepareItem( element )
