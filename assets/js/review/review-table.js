@@ -4,14 +4,16 @@
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 
-    // function hideControl( event )
-	// {
-	// 	event.currentTarget.classList.add( classes.hide ); 
-	// }
+    function prepareCell( element )
+	{
+		element.dataset.columnName = 'test';
+	}
 
     function prepareColumn( element, index )
 	{
-        console.log( selectors.currentCell( index ) )
+        console.log( selectors.currentCell( index + 1 ) );
+
+		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 1 ) ).forEach( prepareCell );
     }
 
     function prepareItem( element )
