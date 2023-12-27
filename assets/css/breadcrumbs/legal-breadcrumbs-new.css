@@ -1,25 +1,36 @@
 /* Breadcrumbs new CSS */
+
+@media screen and ( min-width: 767px ) and ( max-width: 1279px )
+{
+	nav.breadcrumbs
+	{
+		padding-left: 32px;
+  		padding-right: 32px;
+	}	
+}
+
 @media screen and ( max-width: 959px )
 {
 	/* Position */
 
-	nav.breadcrumbs {
+	/* nav.breadcrumbs {
 		padding: 0px 20px;
-	}
+	} */
 }
 
 @media screen and ( min-width: 960px )
 {
 	/* Position */
 
-    .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
+    /* .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
     {
         margin-left: 32px;
-    }
+    } */
+
     /* Width and Height */
 
     .legal-breadcrumbs {
-        max-width: var( --other-width-desktop );
+        max-width: var( --base-width-desktop );
     }
 }
 
