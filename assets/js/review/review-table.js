@@ -16,12 +16,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItem( element )
 	{
+		console.log( selectors.firstRow );
+
         element.querySelectorAll( selectors.firstRow ).forEach( prepareColumn )
     }
 
     function prepareItems( element )
 	{
-		// console.log( element.querySelectorAll( elements.item.selectors ).length );
+		console.log( selectors.thead );
 
 		element.querySelectorAll( selectors.thead ).forEach( prepareItem );
 	}
@@ -57,8 +59,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		firstRow : ':scope > tr:first-child',
 
-		currentCell : function( number ) {
-			return 'tr > :nth-child-' + number;
+		currentCell : function( number )
+		{
+			return 'tr > :nth-child(' + number + ')';
 		}
 	};
 
@@ -66,6 +69,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( max-width: 959px )' ).matches )
 		{
+			console.log( selectors.table );
+
 			document.querySelectorAll( selectors.table ).forEach( prepareItems );
 		}
 	}
