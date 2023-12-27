@@ -105,7 +105,7 @@
 
     /* Position */
 
-    .tcb-post-content table tr *
+    .tcb-post-content table tr > *
     {
         padding: 18px;
     }
@@ -118,7 +118,7 @@
 
     /* Width and Height */
 
-    .tcb-post-content table tr *
+    .tcb-post-content table tr > *
     {
         min-height: 68px;
     }
