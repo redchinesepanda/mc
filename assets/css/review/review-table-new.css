@@ -136,8 +136,8 @@
         border-top: var( --table-border-external );
     }
 
-    .tcb-post-content table tr:last-child td:last-child,
-    .tcb-post-content table tr:last-child > :first-child:not( .legal-active )
+    .tcb-post-content table tr:last-child > :first-child:not( .legal-active ),
+    .tcb-post-content table tr:last-child td:last-child:not( :only-child )
     {
         border-radius: 0px 0px 18px 18px;
         border-bottom: var( --table-border-external );
