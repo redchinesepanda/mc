@@ -177,17 +177,17 @@
         line-height: 18px;
     }
 
-    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::before
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::after
     {
         content: '\F106';
     }
 
-    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::before
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::after
     {
         content: '\F10C';
     }
 
-    .tcb-post-content table tr > :first-child:not( :only-child )::before
+    .tcb-post-content table tr > :first-child:not( :only-child )::after
     {
         font-family: var( --legal-font-icons );
         font-size: 24px;
