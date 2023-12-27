@@ -13,14 +13,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
         console.log( selectors.currentCell( index + 2 ) );
 
+		console.log( element.textContent );
+
 		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) ).forEach( prepareCell );
     }
 
     function prepareItem( element )
 	{
 		console.log( selectors.firstRowCells );
-
-		console.log( element.textContent );
 
         element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
