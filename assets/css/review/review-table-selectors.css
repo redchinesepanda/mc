@@ -2,7 +2,7 @@
 {
 	/* Level 1 item 1st */
 
-	.tcb-post-content table tr:first-child > :first-child
+	.tcb-post-content table tr:first-child > :first-child:not( #legal-override )
 	{
 		background-color: brown;
 	}
