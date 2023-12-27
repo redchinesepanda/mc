@@ -156,6 +156,7 @@
         background-color: var(--Base-base-02, #F6F6F6);
     }
 
+    .tcb-post-content table tr > :first-child:only-child,
     .tcb-post-content table tr td:not( :first-child )
     {
         background-color: var(--Base-base-01, #FFF);
