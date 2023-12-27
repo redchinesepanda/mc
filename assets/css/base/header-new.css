@@ -314,6 +314,15 @@
 	}
 }
 
+@media screen and ( min-width: 767px ) and ( max-width: 1279px )
+{
+	.legal-header-wrapper
+	{
+		padding-left: 32px;
+  		padding-right: 32px;
+	}	
+}
+
 /* Display */
 
 .legal-menu .legal-cut-item:not( .legal-active )
