@@ -9,7 +9,7 @@
 
 	/* Level 1 item all */
 
-	.tcb-post-content table tr > :first-child:not( :only-child )
+	.tcb-post-content table tr > :first-child
 	{
 		background-color:bisque;
 	}
