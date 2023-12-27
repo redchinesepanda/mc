@@ -120,27 +120,28 @@
 
     .tcb-post-content table tr *
     {
-        --table-border-external: 2px solid #000;
+        --table-border-external: 2px solid var( --Base-base-09, #0A0A0A );
+        --table-border-internal: 1px solid var( --Base-base-09, #0A0A0A );
     }
     
     .tcb-post-content table tr > *
     {
-        border-left: 2px solid #000;
-        border-right: 2px solid #000;
+        border-left: var( --table-border-external );
+        border-right: var( --table-border-external );
     }
 
     .tcb-post-content table tr:first-child > :first-child
     {
         border-radius: 18px 18px 0px 0px;
         /* border-top: 2px solid #000; */
-        border-top: var(--table-border-external);
+        border-top: var( --table-border-external );
     }
 
     .tcb-post-content table tr:last-child td:last-child,
     .tcb-post-content table tr:last-child > :first-child:not( .legal-active )
     {
         border-radius: 0px 0px 18px 18px;
-        border-bottom: 2px solid #000;
+        border-bottom: var( --table-border-external );
     }
 
     /* .tcb-post-content table th,
@@ -150,7 +151,7 @@
     .tcb-post-content table tr > :not( :first-child ):not( :last-child ),
     .tcb-post-content table tr:last-child > :first-child.legal-active
     {
-        border-bottom: 1px solid #000; 
+        border-bottom: var( --table-border-internal ); 
     }
 
     .tcb-post-content table tr td:first-child
