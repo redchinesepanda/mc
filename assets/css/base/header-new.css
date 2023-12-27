@@ -773,13 +773,14 @@
 		content: '\F10B';
 	}
 	
-	.legal-header > .legal-header-control::after
+	.legal-header > .legal-header-control.legal-active::after
 	{
 		font-family: var(--legal-font-icons);
 		font-size: 32px;
 		line-height: 32px;
 	}
 
+	.legal-header > .legal-header-control:not( .legal-active )::after,
 	.legal-menu > .menu-item:not( :last-child ) > .item-title::after,
 	.legal-menu > .menu-item:last-child:not( .legal-active )::after,
 	.legal-menu > .menu-item:last-child.legal-active::before,
