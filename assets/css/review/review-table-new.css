@@ -80,7 +80,8 @@
     }
 
     .tcb-post-content table tr > :first-child,
-    .tcb-post-content table tr > :first-child:not( :only-child ).legal-active ~ td
+    .tcb-post-content table tr > :first-child:not( :only-child ).legal-active ~ td,
+    .tcb-post-content .legal-check tr > :first-child:only-child
     {
         display: flex;
     }
