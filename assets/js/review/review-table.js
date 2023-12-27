@@ -36,7 +36,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return 'tbody tr > :nth-child(' + number + ')';
 		},
 
-		allCells : this.table + ' tr > *'
+		allCells : function()
+		{
+			return this.table + ' tr > *';
+		}
 	};
 
     function headerTableInit()
