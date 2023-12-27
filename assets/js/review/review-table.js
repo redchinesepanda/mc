@@ -33,7 +33,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
     const selectors = {
-		table : '.tcb-post-content table:not( .legal-row-rowspan, .legal-check )',
+		table : '.tcb-post-content table:not( .legal-row-rowspan):not( .legal-check )',
 		
 		theadCells : 'thead tr:first-child > :not( :first-child )',
 
