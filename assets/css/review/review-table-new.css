@@ -110,6 +110,12 @@
         padding: 18px;
     }
 
+    .tcb-post-content .legal-check tr > :first-child:only-child::after,
+    .tcb-post-content table tr > :first-child:not( :only-child )::after
+    {
+        margin-left: auto;
+    }
+
     /* Width and Height */
 
     .tcb-post-content table tr *
