@@ -4,6 +4,11 @@
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 
+    function forgetCell( element )
+	{
+		delete element.dataset.columnName;
+	}
+
     function prepareCell( element )
 	{
 		element.dataset.columnName = this.textContent;
@@ -25,37 +30,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
         element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
 
-    // function prepareItems( element )
-	// {
-	// 	console.log( selectors.thead );
-
-	// 	element.querySelectorAll( selectors.thead ).forEach( prepareItem );
-	// }
-
-    // function removeCutControl( element )
-	// {
-    //     element.remove();
-    // }
-
-	// function forgetItem( element )
-	// {
-    //     // element.classList.remove( classes.cutItem );
-        
-	// 	element.classList.remove( classes.cutItem, classes.active );
-
-    //     // delete element.dataset.cutSetId;
-    // }
-
-	// const classes = {
-	// 	cutItem : 'legal-cut-item',
-
-	// 	cutControl : 'legal-cut-control',
-
-	// 	active : 'legal-active',
-
-	// 	hide : 'legal-hide',
-	// };
-
     const selectors = {
 		table : '.tcb-post-content table:not( .legal-row-rowspan, .legal-check )',
 
@@ -66,7 +40,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		currentCell : function( number )
 		{
 			return 'tbody tr > :nth-child(' + number + ')';
-		}
+		},
+
+		allCells : this.table + ' tr > *'
 	};
 
     function headerTableInit()
@@ -76,6 +52,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log( selectors.table );
 
 			document.querySelectorAll( selectors.table ).forEach( prepareItem );
+		}
+		else 
+		{
+			document.querySelectorAll( selectors.allCells ).forEach( forgetCell );
 		}
 	}
 
