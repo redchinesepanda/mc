@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function prepareItem( element )
 	{
-		console.log( selectors.firstRow );
+		console.log( selectors.firstRowCells );
 
         element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
