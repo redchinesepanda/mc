@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ) );
 
-		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classlist.add( classes.active );
+		element.closest( selectors.table ).querySelector( selectors.tbodyFirstCell ).classList.add( classes.active );
 
         [ ...element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 2 ) )].forEach( prepareCell, element );
     }
