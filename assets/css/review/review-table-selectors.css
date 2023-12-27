@@ -23,7 +23,7 @@
 
 	/* Level 1 item last */
 
-	.tcb-post-content table tr:last-child > :first-child:not( :only-child )
+	.tcb-post-content table tr:last-child > :first-child
 	{
 		background-color:darkgrey;
 	}
