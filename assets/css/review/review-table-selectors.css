@@ -14,7 +14,7 @@
 		background-color:bisque;
 	}
 
-	/* Level 1 row item not last */
+	/* Level 1 row item not 1st and last */
 
 	.tcb-post-content table tr > :not( [ rowspan ] ):not( :first-child ):not( :last-child )
 	{
