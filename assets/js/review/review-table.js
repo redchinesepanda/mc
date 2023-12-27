@@ -20,6 +20,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( selectors.firstRowCells );
 
+		console.log( element.textContent );
+
         element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
     }
 
