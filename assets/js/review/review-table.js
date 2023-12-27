@@ -16,12 +16,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.closest( selectors.table ).querySelectorAll( selectors.currentCell( index + 1 ) ).forEach( prepareCell );
     }
 
-    // function prepareItem( element )
-	// {
-	// 	console.log( selectors.firstRowCells );
+    function prepareItem( element )
+	{
+		console.log( selectors.firstRowCells );
 
-    //     element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
-    // }
+        element.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn )
+    }
 
     // function prepareItems( element )
 	// {
@@ -71,13 +71,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( max-width: 959px )' ).matches )
 		{
-			// console.log( selectors.table );
+			console.log( selectors.table );
 
-			// document.querySelectorAll( selectors.table ).forEach( prepareItems );
-			
-			console.log( selectors.firstRowCells );
-
-			document.querySelectorAll( selectors.firstRowCells ).forEach( prepareColumn );
+			document.querySelectorAll( selectors.table ).forEach( prepareItem );
 		}
 	}
 
