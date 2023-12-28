@@ -79,7 +79,7 @@
 
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
-        width: calc( (152px * 6) - 40px );
+        width: calc( (152px * 5) + (28px * 4) );
     }
 }
 
