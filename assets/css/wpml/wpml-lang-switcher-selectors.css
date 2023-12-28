@@ -10,7 +10,7 @@
 /* lang-current countryball */
 
 .lang-switcher .lang-current > .lang-title {
-    background-color:aliceblue;
+    background-color:darkmagenta;
 }
 
 /* lang-current change country */
@@ -22,5 +22,5 @@
 /* menu-avaible countryball */
 
 .lang-switcher .menu-avaible .lang-item {
-    background-color:chartreuse;
+    background-color:darkgreen;
 }
