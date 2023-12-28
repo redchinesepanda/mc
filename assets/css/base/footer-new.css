@@ -242,11 +242,11 @@
 		cursor: pointer;
 	}
 
-	.legal-footer .footer-menu > .menu-item.legal-active::after,
+	/* .legal-footer .footer-menu > .menu-item.legal-active::after,
 	.legal-footer .footer-menu .menu-item-end .menu-item.legal-active::after {
 		transform: rotate(180deg);
 	}
-
+ */
 	/* Typography */
 
 	.legal-footer .footer-copy {
@@ -262,9 +262,14 @@
 	.footer-menu .menu-item-has-children > .item-title::after {
 		content: '\f106';
 		color: var(--Base-base-01, #FFF);
-		line-height: 1;
+		line-height: 24px;
 		font-size: 24px;
 		font-family: var(--legal-font-icons);
+		font-weight: 400;
+	}
+
+	.footer-menu .menu-item-has-children.legal-active > .item-title::after {
+		content: '\F10C';
 	}
 }
 
