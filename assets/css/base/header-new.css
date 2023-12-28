@@ -825,7 +825,7 @@
 		line-height: 24px;
 	}
 
-	.legal-menu > .menu-item > .item-title::after
+	.legal-menu > .menu-item:not( :last-child ) > .item-title::after
 	{
 		font-weight: 400;
 	}
