@@ -1,5 +1,33 @@
 /* Background */
 
+/* wrapper */
+
+.legal-header-wrapper
+{
+	background-color: darksalmon;
+}
+
+/* legal-header */
+
+.legal-header
+{
+	background-color:greenyellow;
+}
+
+/* legal-logo */
+
+.legal-header .legal-logo
+{
+	background-color:indianred;
+}
+
+/* legal-menu */
+
+.legal-header .legal-menu
+{
+	background-color:khaki;
+}
+
 /* sub menu start */
 
 /* menu item 1th sub menu all */

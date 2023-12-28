@@ -411,6 +411,7 @@
 
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
 {
+	font-family: var( --legal-font-primary );
 	font-size: 12px;
 	font-weight: 600;
 	line-height: 18px;
