@@ -1,1 +1,26 @@
 /* Lang Switcher Selectors */
+
+
+/* lang-current */
+
+.lang-switcher .lang-current {
+    background-color:brown;
+}
+
+/* lang-current countryball */
+
+.lang-switcher .lang-current > .lang-title {
+    background-color:aliceblue;
+}
+
+/* lang-current change country */
+
+.lang-switcher .lang-title-suffix {
+    background-color:blue;
+}
+
+/* menu-avaible countryball */
+
+.lang-switcher .menu-avaible .lang-item {
+    background-color:chartreuse;
+}
