@@ -14,6 +14,13 @@
 	background-color:greenyellow;
 }
 
+/* legal-header-control */
+
+.legal-header .legal-header-control
+{
+	background-color:lightyellow;
+}
+
 /* legal-logo */
 
 .legal-header .legal-logo
