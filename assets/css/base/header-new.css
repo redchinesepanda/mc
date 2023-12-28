@@ -462,16 +462,16 @@
 	}
 }
 
-@media screen and ( min-width: 768px ) and ( max-width: 959px )
-{
+/* @media screen and ( min-width: 768px ) and ( max-width: 959px )
+{ */
 	/* Width and Height */
 
-	.legal-header .legal-menu
+/* 	.legal-header .legal-menu
 	{
 		width: 100%;
 	}
 }
-
+ */
 @media screen and ( max-width: 959px )
 {
 	/* Display */
@@ -695,6 +695,11 @@
 	.legal-menu .menu-item.legal-active > .sub-menu .menu-item.menu-item-has-children.legal-active::after,
 	.legal-header .legal-menu > .menu-item.legal-active:last-child::after {
 		height: auto;
+	}
+
+	.legal-header .legal-menu
+	{
+		width: 100%;
 	}
 
 	.legal-menu,
