@@ -39,7 +39,7 @@
 
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
-        row-gap: 10px;
+        row-gap: 8px;
     }
 }
 
@@ -52,7 +52,7 @@
 
 @media screen and ( max-width: 1079px ) {
     .lang-switcher .menu-avaible {
-        row-gap: 15px;
+        row-gap: 14px;
     }
 }
 
