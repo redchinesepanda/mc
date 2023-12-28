@@ -424,7 +424,7 @@
 
 .legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-group > .menu-item:not( .menu-item-has-children ).legal-new::after
 {
-	color: var(--primary-blue-Blue-80, #4D80FF);
+	color: var(--primary-blue-Primary-Blue, #06F);
 }
 
 .legal-menu > .menu-item > .item-title,
