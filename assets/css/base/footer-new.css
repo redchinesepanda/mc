@@ -196,13 +196,14 @@
 
 	.footer-menu .menu-item-has-children > .item-title
 	{
-		margin-bottom: 16px;
+		margin-top: 8px;
+		margin-bottom: 8px;
 	}
 
-	.footer-menu
+/* 	.footer-menu
 	{
 		padding-top: 16px;
-	}
+	} */
 
 	.legal-footer .footer-logo
 	{
