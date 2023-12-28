@@ -532,6 +532,10 @@
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children > .sub-menu
 	{
 		flex-wrap: wrap;
+	}
+
+	.legal-menu > .menu-item:last-child > .sub-menu
+	{
 		row-gap: 8px;
 	}
 	
