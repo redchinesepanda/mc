@@ -567,6 +567,7 @@
 		position: absolute;
 		top: 58px;
     	left: 0px;
+		padding-top: 8px;
 	}
 
 	.legal-header
@@ -641,11 +642,11 @@
 		padding-left: 16px;
 	}
 
-	.legal-menu > .menu-item:last-child.legal-active,
+/* 	.legal-menu > .menu-item:last-child.legal-active,
 	.legal-menu > .menu-item:not( :last-child ) > .sub-menu > .menu-item-has-children.legal-active
 	{
 		padding-top: 10px;
-	}
+	} */
 
 	/* Width and Height */
 
