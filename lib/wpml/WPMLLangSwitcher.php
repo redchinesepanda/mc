@@ -16,6 +16,12 @@ class WPMLLangSwitcher
     
             'ver' => '1.0.1',
         ],
+
+        'legal-wpml-lang-switcher-selectors' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-selectors.css',
+    
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style()
