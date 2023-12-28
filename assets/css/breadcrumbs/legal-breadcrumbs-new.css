@@ -2,7 +2,7 @@
 
 @media screen and ( max-width: 767px )
 {
-	nav.breadcrumbs
+	.legal-section-breadcrumbs .breadcrumbs
 	{
 		padding-left: 16px;
   		padding-right: 16px;
@@ -11,7 +11,7 @@
 
 @media screen and ( min-width: 768px ) and ( max-width: 1279px )
 {
-	nav.breadcrumbs
+	.legal-section-breadcrumbs .breadcrumbs
 	{
 		padding-left: 32px;
   		padding-right: 32px;
@@ -22,7 +22,7 @@
 {
 	/* Position */
 
-	/* nav.breadcrumbs {
+	/* .legal-section-breadcrumbs .breadcrumbs {
 		padding: 0px 20px;
 	} */
 }
@@ -47,7 +47,7 @@
 
 .legal-breadcrumbs {
     display: flex;
-    column-gap: 8px;
+    gap: 8px;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -79,13 +79,13 @@
 
 /* Width and Heigh */
 
-nav.breadcrumbs {
+.legal-section-breadcrumbs .breadcrumbs {
 	min-height: 40px;
 }
 
 /* Breadcrumbs Background */
 
-nav.breadcrumbs {
+.legal-section-breadcrumbs .breadcrumbs {
     background-color: #fff;
 }
 
