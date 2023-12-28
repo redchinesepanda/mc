@@ -815,7 +815,7 @@ class BaseHeader
 					[
 						'srcset' => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-mobile.svg',
 
-						'media' => '(max-width: 767px)',
+						'media' => '(max-width: 959px)',
 
 						'width' => 48,
 
