@@ -823,6 +823,10 @@
 		font-family: var(--legal-font-icons);
 		font-size: 24px;
 		line-height: 24px;
+	}
+
+	.legal-menu > .menu-item > .item-title::after
+	{
 		font-weight: 400;
 	}
 }
