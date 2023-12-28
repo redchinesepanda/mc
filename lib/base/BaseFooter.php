@@ -17,11 +17,11 @@ class BaseFooter
 			'ver' => '1.0.0',
 		],
 
-        // 'legal-footer-selectors' => [
-		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
+        'legal-footer-selectors' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
 
-		// 	'ver' => '1.0.0',
-		// ],
+			'ver' => '1.0.0',
+		],
     ];
 
     public static function register_style()
