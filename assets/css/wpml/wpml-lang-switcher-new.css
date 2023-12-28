@@ -60,7 +60,7 @@
 
 
 .lang-switcher .menu-avaible .lang-item {
-    width: 153px;
+    width: 152px;
 }
 
 .lang-switcher .lang-current .lang-title::after {
@@ -79,7 +79,7 @@
 
 @media screen and ( min-width: 1080px ) {
     .lang-switcher .menu-avaible {
-        width: 917px;
+        width: calc( (152px * 6) - 40px );
     }
 }
 
@@ -195,7 +195,7 @@
     background-color: var(--Base-base-08);
     border: 2px solid var(--Base-base-07);
     border-radius: 21px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 @media screen and ( min-width: 1080px ) {
