@@ -20,6 +20,13 @@
 }
 
 @media screen and ( min-width: 768px ) {
+    /* Display */
+
+    .lang-switcher .menu-avaible {
+        justify-content: flex-start;
+        column-gap: 28px;
+    }
+
     /* Position */
 
     .lang-switcher .menu-avaible .lang-item {
@@ -39,17 +46,12 @@
     /* Width and Height */
 
     .lang-switcher .menu-avaible {
-        width: 100%;
+        /* width: 100%; */
+        width: calc(100% - 36px);
     }
 }
 
 @media screen and ( min-width: 960px ) {
-    /* Display */
-
-    .lang-switcher .menu-avaible {
-        justify-content: flex-start;
-        column-gap: 28px;
-    }
 
      /* Position */
 
