@@ -2,7 +2,8 @@
     /* Display */
 
     .lang-switcher .menu-avaible {
-        justify-content: space-evenly;
+        /* justify-content: space-evenly; */
+        justify-content: space-between;
         column-gap: 0;
     }
 
@@ -12,18 +13,14 @@
         margin: 0px;
     }
 
-    .lang-switcher .menu-avaible {
+  /*   .lang-switcher .menu-avaible {
         padding: 18px 0px;
-    }
+    } */
 
 }
 
 @media screen and ( min-width: 768px ) {
     /* Position */
-
-    .lang-switcher .menu-avaible {
-        padding: 18px;
-    }
 
     .lang-switcher .menu-avaible .lang-item {
         padding: 8px 0px;
@@ -164,6 +161,7 @@
 .lang-switcher .menu-avaible {
     position: absolute;
     right: 0px;
+    padding: 18px;
 }
 
 .lang-switcher .lang-item .lang-image:not(.menu-avaible.legal-active .lang-avaible .lang-image) {
