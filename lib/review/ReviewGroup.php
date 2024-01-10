@@ -151,7 +151,11 @@ class ReviewGroup
                         $label[ 'type' ] = $text;
                     }
                 }
-            } 
+            }
+
+            LegalDebug::debug( [
+                'terms' => $terms,
+            ] );
         }
 
         if ( in_array( WPMLMain::current_language(), [ 'ng' ] ) )
