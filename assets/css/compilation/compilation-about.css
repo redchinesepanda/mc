@@ -1,17 +1,5 @@
 /* Compilation About CSS */
 
-@media screen and ( min-width: 768px ) {
-    /* Display */
-
-    /* Width and Height */
-
-    /* Position */
-
-    /* Background */
-
-    /* Typography */
-}
-
 @media screen and ( max-width: 767px ) {
     /* Display */
 
@@ -19,23 +7,14 @@
         display: none;
     }
 
-    /* Width and Height */
-
-    /* Position */
-
-    /* Background */
-
-    /* Typography */
 }
 
 @media screen and ( min-width: 376px ) {
-    /* Display */
-
-    /* Width and Height */
-
     /* Position */
 
-    /* Background */
+    .compilation-about h1 {
+        padding-bottom: 28px;
+    }
 
     /* Typography */
     .compilation-about h1 {
@@ -56,13 +35,11 @@
 }
 
 @media screen and ( max-width: 375px ) {
-    /* Display */
-
-    /* Width and Height */
-
     /* Position */
 
-    /* Background */
+    .compilation-about h1 {
+        padding-bottom: 18px;
+    }
 
     /* Typography */
 
@@ -115,10 +92,6 @@
 
 .compilation-about {
     margin: 0px auto;
-}
-
-.compilation-about h1 {
-    padding-bottom: 28px;
 }
 
 .compilation-about .text:first-of-type {
