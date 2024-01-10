@@ -15,7 +15,7 @@
 
 				<?php foreach ( $args[ 'content' ] as $item ) : ?>
 
-                	<p class="text"><?php echo $item; ?></p>
+                	<p class="text <?php echo $item[ 'class' ]; ?>"><?php echo $item[ 'text' ]; ?></p>
 
 				<?php endforeach; ?>
 

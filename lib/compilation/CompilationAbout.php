@@ -58,28 +58,49 @@ class CompilationAbout
 
 	public static function get_title( $dom )
 	{
-		$titles = self::get_nodes_title( $dom );
+		$nodes = self::get_nodes_title( $dom );
 
-		if ( $titles->length == 0 )
+		if ( $nodes->length == 0 )
 		{
 			return '';
 		}
 
-		return $titles->item( 0 )->textContent;
+		return $nodes->item( 0 )->textContent;
 	}
 
+	public static function parse_node( $node )
+	{
+		return [
+			'text' => $node->textContent,
+
+			'class' => $node->getAttribute( 'class' ),
+		];
+	}
+
+	public static function parse_content( $nodes )
+	{
+		$items = [];
+
+		foreach ( $nodes as $node )
+		{
+			$items[] = self::parse_node( $node );
+		}
+
+		return $items;
+	}
+	
 	public static function get_content( $dom )
 	{
-		$content = self::get_nodes_content( $dom );
+		$nodes = self::get_nodes_content( $dom );
 
-		if ( $content->length == 0 )
+		if ( $nodes->length == 0 )
 		{
 			return '';
 		}
 
-		// return array_column( $content, 'textContent' );
-		
-		return array_column( iterator_to_array( $content ), 'textContent' );
+		// return array_column( iterator_to_array( $nodes ), 'textContent' );
+
+		return self::parse_content( $nodes );
 	}
 
 	public static function get()
