@@ -159,6 +159,10 @@ class ReviewGroup
             $label = array_reverse( $label );
         }
 
+        LegalDebug::debug( [
+            'label' => $label,
+        ] );
+
         return implode( ' ', $label );
     }
 
