@@ -38,8 +38,8 @@
     padding-bottom: 28px;
 }
 
-.compilation-about .text {
-    padding-bottom: 18px;
+.compilation-about .text:first-of-type {
+    padding-bottom: 8px;
 }
 
 .compilation-about h1,
