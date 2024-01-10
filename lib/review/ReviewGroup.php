@@ -136,6 +136,11 @@ class ReviewGroup
             }
         }
 
+        if ( WPMLMain::current_language(), [ 'kz' ] ) )
+        {
+            $label[ 'title' ] = '';
+        }
+
         if ( in_array( $post->post_type, [ 'legal_bk_review', 'page' ] ) && $type )
         {
             $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'type' ] );
@@ -154,7 +159,7 @@ class ReviewGroup
 
                 LegalDebug::debug( [
                     'type' => $type,
-                    
+
                     'slugs' => $slugs,
                 ] );
             }
