@@ -77,7 +77,9 @@ class CompilationAbout
 			return '';
 		}
 
-		return array_column( $content, 'textContent' );
+		// return array_column( $content, 'textContent' );
+		
+		return array_column( iterator_to_array( $content ), 'textContent' );
 	}
 
 	public static function get()
