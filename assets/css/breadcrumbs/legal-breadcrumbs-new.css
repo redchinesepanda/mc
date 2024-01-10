@@ -18,24 +18,9 @@
 	}	
 }
 
-@media screen and ( max-width: 959px )
-{
-	/* Position */
-
-	/* .legal-section-breadcrumbs .breadcrumbs {
-		padding: 0px 20px;
-	} */
-}
 
 @media screen and ( min-width: 960px )
 {
-	/* Position */
-
-    /* .legal-breadcrumbs > .legal-breadcrumbs-item:first-child
-    {
-        margin-left: 32px;
-    } */
-
     /* Width and Height */
 
     .legal-breadcrumbs {
@@ -86,7 +71,7 @@
 /* Breadcrumbs Background */
 
 .legal-section-breadcrumbs .breadcrumbs {
-    background-color: #fff;
+    background-color: var(--Base-base-01);
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child ) {
@@ -100,7 +85,7 @@
 /* Breadcrumbs Typography */
 
 .legal-breadcrumbs span.legal-item-title {
-    color: #0A0A0A;
+    color: var(--Base-base-09);
 }
 
 .legal-breadcrumbs a.legal-item-title:hover {
@@ -112,13 +97,13 @@
     font-size: 13px;
     font-style: normal;
     line-height: 17px;
-    color: #6C6C6C;
+    color: var(--Base-breadcrumbs);
     text-decoration: none;
 }
 
 .legal-breadcrumbs .legal-breadcrumbs-item:first-child .legal-item-title::after {
     content: '\f109';
-    color: #6C6C6C;
+    color: var(--Base-breadcrumbs);
     line-height: 18px;
     font-size: 18px;
     font-family: var(--legal-font-icons);
@@ -130,6 +115,6 @@
 
 .legal-breadcrumbs .legal-breadcrumbs-item:not( :first-child )::before {
     content: "/";
-    color: #6C6C6C;
+    color: var(--Base-breadcrumbs);
     line-height: 17px;
 }
