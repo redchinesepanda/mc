@@ -60,7 +60,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		compilationAbout : {
-			selectors : '.legal-main-screen .legal-cut-item, .legal-main-screen .legal-cut-control'
+			selectors : '.compilation-about .legal-cut-item, .compilation-about .legal-cut-control'
 		}
 	};
 
