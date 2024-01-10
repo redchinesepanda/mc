@@ -89,7 +89,7 @@ class CompilationAbout
 			return [];
 		}
 
-		$dom = LegalDOM::get_dom( $post-post_content );
+		$dom = LegalDOM::get_dom( $post->post_content );
 
 		return [
 			'title' => self::get_title( $dom ),
