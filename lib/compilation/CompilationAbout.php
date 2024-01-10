@@ -96,7 +96,7 @@ class CompilationAbout
 		}
 
 		return $items;
-	}
+	} 
 	
 	public static function get_content( $dom )
 	{
