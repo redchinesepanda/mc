@@ -57,6 +57,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		menu : {
 			selectors : '.legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
+		},
+
+		compilationAbout : {
+			selectors : '.legal-main-screen .legal-cut-item, .legal-main-screen .legal-cut-control'
 		}
 	};
 
