@@ -136,7 +136,7 @@ class ReviewGroup
             }
         }
 
-        if ( WPMLMain::current_language(), [ 'kz' ] ) )
+        if ( in_array( WPMLMain::current_language(), [ 'kz' ] ) )
         {
             $label[ 'title' ] = '';
         }
