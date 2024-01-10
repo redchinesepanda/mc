@@ -75,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control, .legal-menu .legal-cut-item, .legal-menu .legal-cut-control'
 
-			[ elements.cut.selectors, elements.menu.selectors ].join( ', ' )
+			[ elements.cut.selectors, elements.menu.selectors, elements.compilationAbout.selectors ].join( ', ' )
 		)
 		.forEach( prepareControl );
 		// .forEach( LegalCut.prepareControl, setData );
