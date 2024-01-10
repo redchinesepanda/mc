@@ -1,5 +1,88 @@
 /* Compilation About CSS */
 
+@media screen and ( min-width: 768px ) {
+    /* Display */
+
+    /* Width and Height */
+
+    /* Position */
+
+    /* Background */
+
+    /* Typography */
+}
+
+@media screen and ( max-width: 767px ) {
+    /* Display */
+
+    .compilation-about .block-frame {
+        display: none;
+    }
+
+    /* Width and Height */
+
+    /* Position */
+
+    /* Background */
+
+    /* Typography */
+}
+
+@media screen and ( min-width: 376px ) {
+    /* Display */
+
+    /* Width and Height */
+
+    /* Position */
+
+    /* Background */
+
+    /* Typography */
+    .compilation-about h1 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .compilation-about .text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+
+    .compilation-about .legal-cut-control::before {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media screen and ( max-width: 375px ) {
+    /* Display */
+
+    /* Width and Height */
+
+    /* Position */
+
+    /* Background */
+
+    /* Typography */
+
+    .compilation-about h1 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .compilation-about .text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .compilation-about .legal-cut-control::before {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
 /* Display */
 
 .compilation-about {
@@ -71,15 +154,7 @@
 }
 
 .compilation-about h1 {
-    font-size: 48px;
     font-weight: 700;
-    line-height: 58px;
-}
-
-.compilation-about .text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 26px;
 }
 
 .compilation-about .legal-cut-control {
@@ -88,9 +163,7 @@
 
 .compilation-about .legal-cut-control::before {
     content: attr( data-content-default );
-    font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
 }
 
 /* .compilation-about .legal-cut-control:hover .legal-cut-control::before {
