@@ -23,7 +23,7 @@
             </div>
 
             <div class="block-frame">
-                <img class="frame" src="https://test.match.center/assets/img/compilation/compilation-frame-start-screen.png">
+                <img class="frame" src="https://test.match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/compilation-frame-start-screen.png">
             </div>
 
         </div>
