@@ -23,7 +23,7 @@
             </div>
 
             <div class="block-frame">
-                <img class="frame" src="img/frame-1.png">
+                <img class="frame" src="https://test.match.center/assets/img/compilation/compilation-frame-start-screen.png">
             </div>
 
         </div>
