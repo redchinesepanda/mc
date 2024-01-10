@@ -2,98 +2,98 @@
 
 /* Display */
 
-.legal-main-screen {
+.compilation-about {
     display: flex;
 }
 
-.legal-main-screen .legal-cut-item:not( .legal-active ) {
+.compilation-about .legal-cut-item:not( .legal-active ) {
     display: none;
 }
 
-.legal-main-screen .legal-cut-control.legal-active {
+.compilation-about .legal-cut-control.legal-active {
     display: none;
 }
 
 /* Width and Height */
-.legal-main-screen {
+.compilation-about {
     max-width: var(--base-width-desktop);
 }
 
-.legal-main-screen .frame {
+.compilation-about .frame {
     width: 264px;
     height: 309px;
 }
 
 /* Position */
-.legal-main-screen-wrapper {
+.compilation-about-wrapper {
     padding-top: 28px;
     padding-bottom: 40px;
 }
 
-.legal-main-screen {
+.compilation-about {
     margin: 0px auto;
 }
 
-.legal-main-screen h1 {
+.compilation-about h1 {
     padding-bottom: 28px;
 }
 
-.legal-main-screen .text {
+.compilation-about .text {
     padding-bottom: 18px;
 }
 
-.legal-main-screen h1,
-.legal-main-screen .text {
+.compilation-about h1,
+.compilation-about .text {
     margin: 0px; /* временное правило*/
 }
 
-.legal-main-screen .block-frame {
+.compilation-about .block-frame {
     padding: 6px 68px 5px 68px;
 }
 
-.legal-main-screen .legal-cut-control {
+.compilation-about .legal-cut-control {
     padding: 8px 0px;
 }
 
 /* Background */
 
-.legal-main-screen-wrapper {
+.compilation-about-wrapper {
     background-color: var(--Base-base-02);
     border-bottom: 2px solid var(--Base-base-09);
 }
 
 /* Typography */
-.legal-main-screen h1,
-.legal-main-screen .text,
-.legal-main-screen .legal-cut-control::before {
+.compilation-about h1,
+.compilation-about .text,
+.compilation-about .legal-cut-control::before {
     color: var(--Base-base-09);
     font-family: var(--legal-font-primary);
 }
 
-.legal-main-screen h1 {
+.compilation-about h1 {
     font-size: 48px;
     font-weight: 700;
     line-height: 58px;
 }
 
-.legal-main-screen .text {
+.compilation-about .text {
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
 }
 
-.legal-main-screen .legal-cut-control {
+.compilation-about .legal-cut-control {
     cursor: pointer;
 }
 
-.legal-main-screen .legal-cut-control::before {
+.compilation-about .legal-cut-control::before {
     content: attr( data-content-default );
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
 }
 
-/* .legal-main-screen .legal-cut-control:hover .legal-cut-control::before {
+/* .compilation-about .legal-cut-control:hover .legal-cut-control::before {
     font-weight: 600;
 }
  */
