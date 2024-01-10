@@ -6,6 +6,8 @@ require_once ( 'CompilationBonus.php' );
 
 require_once ( 'CompilationTemplatePage.php' );
 
+require_once ( 'CompilationAbout.php' );
+
 class CompilationMain
 {
     const HANDLE = [
@@ -101,6 +103,13 @@ class CompilationMain
         CompilationBonus::register();
 
         CompilationTemplatePage::register();
+
+        CompilationAbout::register();
+    }
+
+    public static function register_functions()
+    {
+        CompilationAbout::register_functions();
     }
 
     const SHORTCODES_INLINE = [

@@ -20,6 +20,8 @@ class LegalComponents
     {
 		BonusMain::register_functions();
 
+		CompilationMain::register_functions();
+
 		CompilationTabsMain::register_functions();
 
 		WikiMain::register_functions();

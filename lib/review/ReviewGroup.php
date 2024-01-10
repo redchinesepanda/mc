@@ -136,9 +136,11 @@ class ReviewGroup
             }
         }
 
-        if ( in_array( WPMLMain::current_language(), [ 'kz' ] ) )
+        if ( in_array( WPMLMain::current_language(), [ 'br' ] ) )
         {
             $label[ 'title' ] = '';
+
+            $type = true;
         }
 
         if ( in_array( $post->post_type, [ 'legal_bk_review', 'page' ] ) && $type )
@@ -157,11 +159,11 @@ class ReviewGroup
                     }
                 }
 
-                LegalDebug::debug( [
-                    'type' => $type,
+                // LegalDebug::debug( [
+                //     'type' => $type,
 
-                    'slugs' => $slugs,
-                ] );
+                //     'slugs' => $slugs,
+                // ] );
             }
         }
 
@@ -170,9 +172,9 @@ class ReviewGroup
             $label = array_reverse( $label );
         }
 
-        LegalDebug::debug( [
-            'label' => $label,
-        ] );
+        // LegalDebug::debug( [
+        //     'label' => $label,
+        // ] );
 
         return implode( ' ', $label );
     }
