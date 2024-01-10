@@ -102,7 +102,7 @@ class CompilationAbout
         'compilation-about' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-about.php',
     ];
 
-	public static function render_about()
+	public static function render()
     {
         return self::render_main( self::TEMPLATE[ 'compilation-about' ], self::get() );
     }
