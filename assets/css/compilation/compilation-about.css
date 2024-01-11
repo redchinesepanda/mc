@@ -82,6 +82,10 @@
     display: none;
 }
 
+.compilation-about .legal-cut-control {
+    display: flex;
+}
+
 .compilation-about .legal-cut-control.legal-active {
     display: none;
 }
