@@ -30,19 +30,19 @@
 }
 
 /* .faq .faq-item-title, */
-.tcb-post-content .legal-faq-title {
+/* .tcb-post-content .legal-faq-title {
 	padding: 10px 20px;
-}
+} */
 
 .tcb-post-content .legal-faq-title::before {
 	margin-left: auto;
 }
 
 /* .faq .faq-item-content, */
-.tcb-post-content .legal-faq-description {
+/* .tcb-post-content .legal-faq-description {
 	padding-left: 20px;
 	padding-right: 20px;
-}
+} */
 
 .tcb-post-content .legal-faq-title + .legal-faq-description
 {
