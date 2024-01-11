@@ -112,20 +112,32 @@ class CompilationAbout
 		return self::parse_content( $nodes );
 	}
 
-	public static function check_read_more( $items )
-	{
-		$result = array_search(
-			self::CLASSES[ 'content' ] . ' ' . ReviewCut::CLASSES[ 'cut-item' ],
+	// public static function check_read_more( $items )
+	// {
+	// 	$result = array_search(
+	// 		self::CLASSES[ 'content' ] . ' ' . ReviewCut::CLASSES[ 'cut-item' ],
 			
-			array_column( $items, 'class' )
-		);
+	// 		array_column( $items, 'class' )
+	// 	);
 
-		LegalDebug::debug( [
-			'items' => $items,
+	// 	LegalDebug::debug( [
+	// 		'items' => $items,
 
-			'result' => $result,
-		] );
-	}
+	// 		'result' => $result,
+	// 	] );
+	// }
+
+	public static function has_read_more( $item )
+    {
+        return str_contains( $item, ReviewCut::CLASSES[ 'cut-item' ] );
+    }
+
+    public static function check_read_more( $items )
+    {
+        $handler = new self();
+
+        return !empty( array_filter( array_column( $items, 'class' ), [ $handler, 'has_read_more' ] ) );
+    }
 
 	public static function get()
 	{
@@ -138,7 +150,11 @@ class CompilationAbout
 
 		$dom = LegalDOM::get_dom( $post->post_content );
 
-		self::check_read_more( self::get_content( $dom ) );
+		
+
+		LegalDebug::debug( [
+			'check_read_more' => self::check_read_more( self::get_content( $dom ) ),
+		] );
 
 		return [
 			'title' => self::get_title( $dom ),
