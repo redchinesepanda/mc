@@ -105,8 +105,8 @@
     margin: 0px auto;
 }
 
-.compilation-about .text:first-of-type {
-    padding-bottom: 8px;
+.compilation-about .text:not( :first-of-type ) {
+    padding-top: 18px;
 }
 
 .compilation-about h1,
@@ -120,6 +120,7 @@
 
 .compilation-about .legal-cut-control {
     padding: 8px 0px;
+    margin-top: 8px;
 }
 
 /* Background */
