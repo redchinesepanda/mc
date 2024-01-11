@@ -95,10 +95,10 @@
     max-width: var(--base-width-desktop);
 }
 
-.compilation-about .frame {
+/* .compilation-about .frame {
     width: 264px;
     height: 309px;
-}
+} */
 
 /* Position */
 .compilation-about-wrapper {
@@ -118,9 +118,9 @@
     margin: 0px; /* временное правило*/
 }
 
-.compilation-about .block-frame {
+/* .compilation-about .block-frame {
     padding: 6px 68px 5px 68px;
-}
+} */
 
 .compilation-about .legal-cut-control {
     margin-top: 8px;
