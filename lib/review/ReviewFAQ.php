@@ -10,13 +10,13 @@ class ReviewFAQ
         ],
     ];
 
-    const CSS_NEW = [
+/*     const CSS_NEW = [
         'review-faq-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-faq-new.css',
 
 			'ver' => '1.0.0',
 		],
-    ];
+    ]; */
 
  /*    public static function register_style()
     {
