@@ -30,17 +30,17 @@
 } */
 
 /* .faq .faq-item-title, */
-.tcb-post-content .legal-faq-title {
+/* .tcb-post-content .legal-faq-title {
 	padding-top: 28px;
-}
+} */
 
 .tcb-post-content .legal-faq-title::before {
 	margin-left: auto;
 }
 
-.tcb-post-content .legal-faq-title,
-.tcb-post-content .legal-faq-description {
+.tcb-post-content .legal-faq-title {
 	margin: 0px;
+	padding-top: 28px;
 	padding-bottom: 28px;
 }
 
@@ -50,14 +50,14 @@
 	padding-right: 20px;
 } */
 
-.tcb-post-content .legal-faq-title + .legal-faq-description
+/* .tcb-post-content .legal-faq-title + .legal-faq-description
 {
 	padding-top: 20px;
-}
+} */
 
 .tcb-post-content .legal-faq-title ~ .legal-faq-description
 {
-	padding-bottom: 20px;
+	padding-bottom: 28px;
 }
 
 /* FAQ Width nad Height */
