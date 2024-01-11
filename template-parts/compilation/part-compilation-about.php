@@ -18,7 +18,7 @@
 
                 <?php endforeach; ?>
 
-                <span class="legal-cut-control" data-content-default="Read more" data-content-active="Hide" data-cut-set-id="0"></span>
+                <span class="legal-cut-control" data-content-default="Read more" data-content-active="Hide" data-cut-set-id="0">Read more</span>
             </div>
 
             <div class="block-frame">

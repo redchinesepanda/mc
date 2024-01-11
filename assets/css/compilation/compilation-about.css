@@ -34,7 +34,7 @@
         line-height: 26px;
     }
 
-    .compilation-about .legal-cut-control::before {
+    .compilation-about .legal-cut-control {
         font-size: 16px;
         line-height: 22px;
     }
@@ -83,7 +83,7 @@
 }
 
 .compilation-about .legal-cut-control {
-    display: flex;
+    display: inline-block;
 }
 
 .compilation-about .legal-cut-control.legal-active {
@@ -123,7 +123,6 @@
 }
 
 .compilation-about .legal-cut-control {
-    padding: 8px 0px;
     margin-top: 8px;
 }
 
@@ -137,7 +136,7 @@
 /* Typography */
 .compilation-about h1,
 .compilation-about .text,
-.compilation-about .legal-cut-control::before {
+.compilation-about .legal-cut-control {
     color: var(--Base-base-09);
     font-family: var(--legal-font-primary);
 }
@@ -150,13 +149,13 @@
     cursor: pointer;
 }
 
-.compilation-about .legal-cut-control::before {
-    content: attr( data-content-default );
+.compilation-about .legal-cut-control {
+    /* content: attr( data-content-default ); */
     font-weight: 500;
 }
 
-/* .compilation-about .legal-cut-control:hover .legal-cut-control::before {
+.compilation-about .legal-cut-control:hover {
     font-weight: 600;
 }
- */
+
 
