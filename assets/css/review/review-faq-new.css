@@ -69,6 +69,18 @@
 
 /* FAQ Background */
 
+.tcb-post-content .legal-faq-title:not( .legal-active ) {
+	border-bottom: 1px solid var(--Base-base-09);
+}
+
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-of-type {
+	border-bottom: 1px solid var(--Base-base-09);
+}
+
+/* .tcb-post-content .legal-faq-title.legal-active {
+	border-bottom: none;
+} */
+
 .tcb-post-content .legal-faq-title.legal-active::before {
 	content: '\F106';
 }
