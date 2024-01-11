@@ -138,7 +138,7 @@ class CompilationAbout
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
-		]; 
+		];
 	}
 
 	const TEMPLATE = [
