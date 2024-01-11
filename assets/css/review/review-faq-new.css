@@ -69,7 +69,7 @@
 
 /* FAQ Background */
 
-.tcb-post-content .legal-faq-title:not( .legal-active ) {
+.tcb-post-content .legal-faq-title.legal-active {
 	border-bottom: 1px solid var(--Base-base-09);
 }
 
