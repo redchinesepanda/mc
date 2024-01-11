@@ -8,7 +8,6 @@
 
 .tcb-post-content .legal-faq-title {
 	display: flex;
-	align-items: center;
 }
 
 .tcb-post-content .legal-faq-title::before {
