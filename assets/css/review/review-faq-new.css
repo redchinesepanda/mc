@@ -22,20 +22,26 @@
 
 /* FAQ Position */
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-title {
+/* .tcb-post-content .legal-faq-title ~ .legal-faq-title {
 	margin-top: 10px;
 }
 .tcb-post-content .legal-faq-title.legal-active {
 	margin-bottom: 10px;
-}
+} */
 
 /* .faq .faq-item-title, */
-/* .tcb-post-content .legal-faq-title {
-	padding: 10px 20px;
-} */
+.tcb-post-content .legal-faq-title {
+	padding-top: 28px;
+}
 
 .tcb-post-content .legal-faq-title::before {
 	margin-left: auto;
+}
+
+.tcb-post-content .legal-faq-title,
+.tcb-post-content .legal-faq-description {
+	margin: 0px;
+	padding-bottom: 28px;
 }
 
 /* .faq .faq-item-content, */
