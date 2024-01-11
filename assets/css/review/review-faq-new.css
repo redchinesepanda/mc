@@ -56,7 +56,7 @@
 /* FAQ Background */
 
 .tcb-post-content .legal-faq-title:not( .legal-active ):before {
-	transform: rotate( -90deg );
+	content: '\F106';
 }
 
 /* .tcb-post-content .legal-faq-title:before {
@@ -83,7 +83,7 @@
 }
 
 .tcb-post-content .legal-faq-title:before {
-	content: '\F106';
+	content: '\F10C';
 	font-weight: 400;
 	font-family: var(--legal-font-icons);
     font-size: 24px;
