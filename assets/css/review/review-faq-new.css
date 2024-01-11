@@ -1,0 +1,96 @@
+/* FAQ Display */
+
+/* .faq .faq-item-content:not( .legal-active ), */
+.tcb-post-content .legal-faq-description.legal-active {
+	display: none;
+}
+
+/* .faq .faq-item-title, */
+.tcb-post-content .legal-faq-title {
+	display: flex;
+}
+
+/* .faq .faq-item-title:before, */
+.tcb-post-content .legal-faq-title:before {
+	display: block;
+	content: '';
+}
+
+/* FAQ Position */
+
+.tcb-post-content .legal-faq-title ~ .legal-faq-title {
+	margin-top: 10px;
+}
+.tcb-post-content .legal-faq-title.legal-active {
+	margin-bottom: 10px;
+}
+
+/* .faq .faq-item-title, */
+.tcb-post-content .legal-faq-title {
+	padding: 10px 20px;
+}
+
+/* .faq .faq-item-content, */
+.tcb-post-content .legal-faq-description {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.tcb-post-content .legal-faq-title + .legal-faq-description
+{
+	padding-top: 20px;
+}
+
+.tcb-post-content .legal-faq-title ~ .legal-faq-description
+{
+	padding-bottom: 20px;
+}
+
+/* FAQ Width nad Height */
+
+.tcb-post-content .legal-faq-title:before {
+	width: 32px;
+	height: 32px;
+}
+
+/* FAQ Background */
+
+.tcb-post-content .legal-faq-title:not( .legal-active ):before {
+	transform: rotate( -90deg );
+}
+
+.tcb-post-content .legal-faq-title:before {
+	background-image: url( '../../img/review/review-faq.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.tcb-post-content .legal-faq-title {
+	background-color: rgb(22, 124, 226);
+	border-radius: 20px;
+}
+
+/* FAQ Typography */
+
+.tcb-post-content .legal-faq-title {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 32px;
+	color: rgb(0, 0, 0);
+}
+
+.tcb-post-content .legal-faq-title a {
+	line-height: 32px;
+}
+
+.tcb-post-content .legal-faq-description {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+	color: rgba(10, 10, 10, 0.85);
+}
