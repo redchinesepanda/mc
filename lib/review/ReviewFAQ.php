@@ -10,20 +10,20 @@ class ReviewFAQ
         ],
     ];
 
-    const CSS_NEW = [
+/*     const CSS_NEW = [
         'review-faq-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-faq-new.css',
 
 			'ver' => '1.0.0',
 		],
-    ];
-
- /*    public static function register_style()
-    {
-        ReviewMain::register_style( self::CSS );
-    } */
+    ]; */
 
     public static function register_style()
+    {
+        ReviewMain::register_style( self::CSS );
+    }
+
+/*     public static function register_style()
     {
 		if ( TemplateMain::check_code() )
 		{
@@ -33,7 +33,7 @@ class ReviewFAQ
 		{
 			ReviewMain::register_style( self::CSS );
 		}
-    }
+    } */
 
     const JS = [
         'review-faq' => LegalMain::LEGAL_URL . '/assets/js/review/review-faq.js',
