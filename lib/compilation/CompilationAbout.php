@@ -150,16 +150,12 @@ class CompilationAbout
 
 		$dom = LegalDOM::get_dom( $post->post_content );
 
-		
-
-		LegalDebug::debug( [
-			'check_read_more' => self::check_read_more( self::get_content( $dom ) ),
-		] );
-
 		return [
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
+
+			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 		];
 	}
 

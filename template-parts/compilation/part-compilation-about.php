@@ -21,9 +21,11 @@
                 <span class="legal-cut-control" data-content-default="Read more" data-content-active="Hide" data-cut-set-id="0">Read more</span>
             </div>
 
-            <div class="block-frame">
-                <img class="frame" src="https://test.match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/compilation-frame-start-screen.png">
-            </div>
+			<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
+				<div class="block-frame">
+					<img class="frame" src="https://test.match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/compilation-frame-start-screen.png">
+				</div>
+			<?php endif; ?>
 
         </div>
     </div>
