@@ -121,6 +121,8 @@ class CompilationAbout
 		);
 
 		LegalDebug::debug( [
+			'items' => $items,
+
 			'result' => $result,
 		] );
 	}
