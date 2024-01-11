@@ -77,7 +77,7 @@
 	border-top: 1px solid var(--Base-base-09);
 }
 
-.tcb-post-content .legal-faq-title:last-of-type,
+.tcb-post-content .legal-faq-title:last-of-type:not( .legal-active ),
 .tcb-post-content .legal-faq-description:last-child {
 	border-bottom: 1px solid var(--Base-base-09);
 }
