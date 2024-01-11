@@ -112,6 +112,15 @@ class CompilationAbout
 		return self::parse_content( $nodes );
 	}
 
+	public static function check_read_more( $items )
+	{
+		$result = array_search( ReviewCut::CLASSES[ 'cut-item' ], array_column( $items, 'class' ) );
+
+		LegalDebug::debug( [
+			'result' => $result,
+		] );
+	}
+
 	public static function get()
 	{
 		$post = get_post();
@@ -123,11 +132,13 @@ class CompilationAbout
 
 		$dom = LegalDOM::get_dom( $post->post_content );
 
+		self::check_read_more( self::get_content( $dom ) );
+
 		return [
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
-		];
+		]; 
 	}
 
 	const TEMPLATE = [
