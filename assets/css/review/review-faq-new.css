@@ -70,10 +70,7 @@
 /* FAQ Background */
 
 .tcb-post-content .legal-faq-title.legal-active {
-	border-bottom: 1px solid var(--Base-base-09);
-}
-
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-of-type {
+	border-top: 1px solid var(--Base-base-09);
 	border-bottom: 1px solid var(--Base-base-09);
 }
 
