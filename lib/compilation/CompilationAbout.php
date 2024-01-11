@@ -114,7 +114,11 @@ class CompilationAbout
 
 	public static function check_read_more( $items )
 	{
-		$result = array_search( ReviewCut::CLASSES[ 'cut-item' ], array_column( $items, 'class' ) );
+		$result = array_search(
+			self::CLASSES[ 'content' ] . ' ' . ReviewCut::CLASSES[ 'cut-item' ],
+			
+			array_column( $items, 'class' )
+		);
 
 		LegalDebug::debug( [
 			'result' => $result,
