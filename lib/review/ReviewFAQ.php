@@ -18,9 +18,21 @@ class ReviewFAQ
 		],
     ];
 
-    public static function register_style()
+ /*    public static function register_style()
     {
         ReviewMain::register_style( self::CSS );
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ReviewMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_style( self::CSS );
+		}
     }
 
     const JS = [
