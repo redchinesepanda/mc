@@ -15,14 +15,14 @@ class CompilationAbout
         ToolEnqueue::register_style( self::CSS );
     }
 
-	const JS = [
+/* 	const JS = [
         'compilation-start-screen-cut' => LegalMain::LEGAL_URL . '/assets/js/compilation/start-screen-cut.js',
     ];
 
     public static function register_script()
     {
         ToolEnqueue::register_script( self::JS );
-    }
+    } */
 
 	public static function register()
     {
