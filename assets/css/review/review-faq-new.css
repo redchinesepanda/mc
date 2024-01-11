@@ -64,7 +64,7 @@
 /* FAQ Background */
 
 .tcb-post-content .legal-faq-title.legal-active::before {
-	content: '\F10C';
+	content: '\F106';
 }
 
 /* .tcb-post-content .legal-faq-title:before {
@@ -102,7 +102,7 @@
 }
 
 .tcb-post-content .legal-faq-title:not( .legal-active )::before {
-	content: '\F106';
+	content: '\F10C';
 }
 
 /* .tcb-post-content .legal-faq-title a {
