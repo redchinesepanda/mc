@@ -341,8 +341,8 @@ class ReviewCounter
 				$value = $cell_value->textContent;
 			}
 
-			if ( $value != -1 )
-			{
+			// if ( $value != -1 )
+			// {
 				return [
 					'label' => $cell_text->textContent,
 
@@ -350,7 +350,7 @@ class ReviewCounter
 
 					'progress' => ( $value * 10 ) . '%',
 				];
-			}
+			// }
 		}
 
 		return null;
