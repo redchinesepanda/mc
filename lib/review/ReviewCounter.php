@@ -264,7 +264,9 @@ class ReviewCounter
 				$rating += $item[ 'value' ];
 			}
 
-			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
+			// $rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
+			
+			$rating = number_format( ( double ) ( $rating / $amount ), 1, '.', '');
 		}
 
 		if ( $amount == 5 )
