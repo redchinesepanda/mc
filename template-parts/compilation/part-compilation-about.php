@@ -6,7 +6,7 @@
 
 ?>
 <!-- Compilation About Template -->
-<?php if ( !empty( $args ) ) : ?>
+<?php if ( !empty( $args[ 'title' ] ) ) : ?>
     <div class="compilation-about-wrapper">
         <div class="compilation-about">
             <div class="block-title-text">
