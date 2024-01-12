@@ -15,7 +15,7 @@ class CompilationAbout
         ToolEnqueue::register_style( self::CSS );
     }
 
-/* 	const JS = [
+	/* 	const JS = [
         'compilation-start-screen-cut' => LegalMain::LEGAL_URL . '/assets/js/compilation/start-screen-cut.js',
     ];
 
@@ -29,6 +29,8 @@ class CompilationAbout
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		// add_filter( 'the_content', [ $handler, 'remove_compilation_about_content' ] );
     }
 
 	public static function register_functions()
@@ -74,11 +76,13 @@ class CompilationAbout
 			return '';
 		}
 
-		$title = $nodes->item( 0 )->textContent;
+		// $title = $nodes->item( 0 )->textContent;
 
-		$dom->removeChild( $nodes->item( 0 ) );
+		// $dom->removeChild( $nodes->item( 0 ) );
 
-		return $title;
+		// return $title;
+
+		return $nodes->item( 0 )->textContent;
 	}
 
 	public static function parse_node( $node )
@@ -167,6 +171,35 @@ class CompilationAbout
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 		];
+	}
+
+	public static function remove_items( $dom )
+	{
+		$nodes = self::get_nodes_title( $dom );
+
+		if ( $nodes->length != 0 )
+		{
+			$dom->removeChild( $nodes->item( 0 ) );
+		}
+
+		$nodes = self::get_nodes_content( $dom );
+
+		if ( $nodes->length != 0 )
+		{
+			foreach ( $nodes as $node )
+			{
+				$dom->removeChild( $node );
+			}
+		}
+	}
+
+	public static function remove_compilation_about_content( $content )
+	{
+		$dom = LegalDOM::get_dom( $content );
+
+		self::remove_items( $dom );
+
+		return $dom->saveHTML( $dom )
 	}
 
 	const TEMPLATE = [

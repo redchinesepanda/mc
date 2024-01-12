@@ -4,8 +4,12 @@ class ReviewContent
 {
 	public static function get()
     {
+        // return [
+		// 	'content' => apply_filters( 'the_content', get_the_content() ),
+		// ];
+        
         return [
-			'content' => apply_filters( 'the_content', get_the_content() ),
+			'content' => CompilationAbout::remove_compilation_about_content( apply_filters( 'the_content', get_the_content() ) ),
 		];
     }
 
