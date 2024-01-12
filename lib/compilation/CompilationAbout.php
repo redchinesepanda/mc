@@ -180,9 +180,9 @@ class CompilationAbout
     }
 
 	const CLASSES = [
-		'title' => 'compilation-about-title',
+		'title' => 'section-content-title',
 
-		'content' => 'compilation-about-content',
+		'content' => 'section-content-text',
 	];
 
 	public static function style_formats_compilation_about( $settings )
