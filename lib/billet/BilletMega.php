@@ -306,13 +306,36 @@ class BilletMega
 
 	const TEMPLATE = [
         'billet-mega' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-mega.php',
+
+        'billet-mega-new' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-mega-new.php',
     ];
 
-    public static function render( $args )
+    // public static function render( $args )
+    // {
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'billet-mega' ], false, $args );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
+    
+	public static function render( $args )
+    {
+        if ( TemplateMain::check_new() )
+		{
+			return self::render_main( self::TEMPLATE[ 'billet-mega-new' ], $args );
+		}
+
+		return self::render_main( self::TEMPLATE[ 'billet-mega' ], $args );
+    }
+	
+    public static function render_main( $template, $args )
     {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'billet-mega' ], false, $args );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
