@@ -112,11 +112,13 @@ class ReviewCut
 			return $content;
 		}
 
-		$dom = LegalDOM::get_dom( $content );
+		// $dom = LegalDOM::get_dom( $content );
+		
+		$dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) );
 
 		self::set_cut( $dom );
 
-		return CompilationAbout::remove_compilation_about_content( $dom->saveHTML( $dom ) );
+		return $dom->saveHTML( $dom );
 	}
 
 	public static function register_functions()
