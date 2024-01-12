@@ -116,7 +116,7 @@ class ReviewCut
 
 		self::set_cut( $dom );
 
-		return $dom->saveHTML( $dom );
+		return CompilationAbout::remove_compilation_about_content( $dom->saveHTML( $dom ) );
 	}
 
 	public static function register_functions()
