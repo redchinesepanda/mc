@@ -1,3 +1,5 @@
+/*review-pros-cons-NEW*/
+
 @media screen and ( min-width: 768px )
 {
 	/* Pros Cons Width */
@@ -12,7 +14,7 @@
 div.legal-pros-cons {
 	display: flex;
 	flex-wrap: wrap;
-	column-gap: 16px;
+	column-gap: 18px;
 	row-gap: 30px;
 }
 
@@ -35,6 +37,19 @@ div.legal-pros-cons {
 }
 
 /* Pros Cons Background */
+
+.legal-pros-cons .pros-cons-item {
+	border: 1px solid var(--Base-base-09);
+	border-radius: 21px;
+}
+
+.legal-pros-cons .pros-cons-item:first-of-type {
+	background-color: var(--Primitives-green-40, #ECF9E2);
+}
+
+.legal-pros-cons .pros-cons-item:last-of-type {
+	background-color: var(--Base-base-01, #FFF);
+}
 
 .legal-pros-cons .pros-cons-title {
 	background-color: rgb(45, 132, 245);
