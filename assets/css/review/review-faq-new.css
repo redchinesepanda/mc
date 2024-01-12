@@ -48,10 +48,6 @@
 	border-bottom: 1px solid var(--Base-base-09);
 }
 
-.tcb-post-content .legal-faq-title.legal-active::after {
-	content: '\F106';
-}
-
 /* FAQ Typography */
 
 .tcb-post-content .legal-faq-title,
@@ -85,6 +81,11 @@
 	font-weight: 400;
     font-size: 24px;
     line-height: 24px;
+	cursor: pointer;
+}
+
+.tcb-post-content .legal-faq-title.legal-active::after {
+	content: '\F106';
 }
 
 .tcb-post-content .legal-faq-title:not( .legal-active )::after {
