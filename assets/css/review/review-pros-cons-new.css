@@ -94,14 +94,14 @@ div.legal-pros-cons {
 	line-height: 24px;
 }
 
-.legal-pros-cons .pros-cons-description li {
+.tcb-post-content .legal-pros-cons li {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 22px;
 }
 
 .legal-pros-cons .pros-cons-title,
-.legal-pros-cons .pros-cons-description ul li {
+.tcb-post-content .legal-pros-cons li {
 	font-family: var( --legal-font-primary );
 	font-style: normal;
 	color: var( --Base-base-09 );
