@@ -104,7 +104,7 @@ class CompilationAbout
 
 		if ( $nodes->length == 0 )
 		{
-			return [];
+			return []; 
 		}
 
 		// return array_column( iterator_to_array( $nodes ), 'textContent' );
