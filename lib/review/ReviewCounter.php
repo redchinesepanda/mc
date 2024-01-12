@@ -251,11 +251,11 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $node );
 
-		LegalDebug::debug( [
-			'function' => 'get_counter_data',
+		// LegalDebug::debug( [
+		// 	'function' => 'get_counter_data',
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 
 		$amount = count( $items );
 
