@@ -3,7 +3,7 @@
 @media screen and ( max-width: 959px ) {
     /* Display */
 
-    .compilation-about .frame {
+    .compilation-about .section-image-item {
         max-height: 0;
         overflow: hidden;
     }
@@ -29,7 +29,7 @@
         line-height: 58px;
     }
 
-    .compilation-about .text {
+    .compilation-about .section-content-text {
         font-size: 16px;
         font-weight: 400;
         line-height: 26px;
@@ -61,7 +61,7 @@
         line-height: 38px;
     }
 
-    .compilation-about .text {
+    .compilation-about .section-content-text {
         font-size: 14px;
         line-height: 22px;
     }
@@ -96,11 +96,6 @@
     max-width: var(--base-width-desktop);
 }
 
-/* .compilation-about .frame {
-    width: 264px;
-    height: 309px;
-} */
-
 /* Position */
 .compilation-about-wrapper {
     padding-top: 28px;
@@ -110,16 +105,16 @@
     margin: 0px auto;
 }
 
-.compilation-about .text:not( :first-of-type ) {
+.compilation-about .section-content-text:not( :first-of-type ) {
     padding-top: 18px;
 }
 
 .compilation-about h1,
-.compilation-about .text {
+.compilation-about .section-content-text {
     margin: 0px; /* временное правило*/
 }
 
-/* .compilation-about .block-frame {
+/* .compilation-about .about-section-image {
     padding: 6px 68px 5px 68px;
 } */
 
@@ -136,7 +131,7 @@
 
 /* Typography */
 .compilation-about h1,
-.compilation-about .text,
+.compilation-about .section-content-text,
 .compilation-about .legal-cut-control {
     color: var(--Base-base-09);
     font-family: var(--legal-font-primary);
