@@ -5,7 +5,7 @@
 	/* Pros Cons Width */
 
 	.legal-pros-cons .pros-cons-item {
-		width: calc( 50% - 8px );
+		width: calc( 50% - 9px - 2px );
 	}
 }
 
