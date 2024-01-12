@@ -114,7 +114,7 @@ class ReviewCut
 
 		// $dom = LegalDOM::get_dom( $content );
 		
-		$dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) );
+		$dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) ); 
 
 		self::set_cut( $dom );
 
