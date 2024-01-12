@@ -199,7 +199,7 @@ class CompilationAbout
 
 		self::remove_items( $dom );
 
-		return $dom->saveHTML( $dom )
+		return $dom->saveHTML( $dom );
 	}
 
 	const TEMPLATE = [
