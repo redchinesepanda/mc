@@ -1,0 +1,79 @@
+@media screen and ( min-width: 768px )
+{
+	/* Pros Cons Width */
+
+	.legal-pros-cons .pros-cons-item {
+		width: calc( 50% - 8px );
+	}
+}
+
+/* Pros Cons Display */
+
+div.legal-pros-cons {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 16px;
+	row-gap: 30px;
+}
+
+/* Pros Cons Position */
+
+.tcb-post-content > .legal-pros-cons {
+	padding-bottom: 30px;
+}
+
+.legal-pros-cons .pros-cons-title {
+	padding-left: 60px;
+	padding-bottom: 0px;
+	margin-bottom: 20px;
+}
+
+/* Width and Height */
+
+.legal-pros-cons {
+	width: 100%;
+}
+
+/* Pros Cons Background */
+
+.legal-pros-cons .pros-cons-title {
+	background-color: rgb(45, 132, 245);
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	border-radius: 20px;
+}
+
+.legal-pros-cons .legal-pros .pros-cons-title {
+	background-image: url( '../../img/review/review-pros.svg' );
+}
+
+.legal-pros-cons .legal-cons .pros-cons-title {
+	background-image: url( '../../img/review/review-cons.svg' );
+}
+
+.legal-pros-cons li:before {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	list-style-image: none;
+}
+
+.legal-pros-cons .legal-pros ul li:before {
+	background-image: url( '../../img/review/review-pros-check.svg' );
+}
+
+.legal-pros-cons .legal-cons ul li:before {
+	background-image: url( '../../img/review/review-cons-cross.svg' );
+}
+
+/* Pros Cons Typography */
+
+.legal-pros-cons .pros-cons-title {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 40px;
+	color: rgb(0, 0, 0);
+}
