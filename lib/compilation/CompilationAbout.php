@@ -145,7 +145,9 @@ class CompilationAbout
 
 	public static function get()
 	{
-		$post = get_post();
+		// $post = get_post();
+
+		global $post;
 
 		if ( empty( $post ) )
 		{
@@ -156,7 +158,7 @@ class CompilationAbout
 
 		$post->post_content = $dom->saveHTML( $dom );
 
-		setup_postdata( $post ); 
+		// setup_postdata( $post ); 
 
 		return [
 			'title' => self::get_title( $dom ),
