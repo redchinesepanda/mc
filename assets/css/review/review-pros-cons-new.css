@@ -101,7 +101,7 @@ div.legal-pros-cons {
 }
 
 .legal-pros-cons .pros-cons-title,
-.legal-pros-cons .pros-cons-title ul li {
+.tcb-post-content .legal-pros-cons .pros-cons-title ul li {
 	font-family: var( --legal-font-primary );
 	font-style: normal;
 	color: var( --Base-base-09 );
