@@ -74,7 +74,11 @@ class CompilationAbout
 			return '';
 		}
 
-		return $nodes->item( 0 )->textContent;
+		$title = $nodes->item( 0 )->textContent;
+
+		$dom->removeChild( $nodes->item( 0 ) );
+
+		return $title;
 	}
 
 	public static function parse_node( $node )
@@ -149,6 +153,10 @@ class CompilationAbout
 		}
 
 		$dom = LegalDOM::get_dom( $post->post_content );
+
+		$post->post_content = $dom->saveHTML( $dom );
+
+		setup_postdata( $post );
 
 		return [
 			'title' => self::get_title( $dom ),
