@@ -156,7 +156,7 @@ class CompilationAbout
 
 		$post->post_content = $dom->saveHTML( $dom );
 
-		setup_postdata( $post );
+		setup_postdata( $post ); 
 
 		return [
 			'title' => self::get_title( $dom ),
