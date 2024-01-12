@@ -111,6 +111,8 @@ class ReviewCounter
 				$items = self::get_counter_items( $table );
 
 				// LegalDebug::debug( [
+				// 	'function' => 'inline_style',
+
 				// 	'count' => count( $items ),
 
 				// 	'shortcode_args' => $shortcode_args,
@@ -249,6 +251,12 @@ class ReviewCounter
 
 		$items = self::get_counter_items( $node );
 
+		LegalDebug::debug( [
+			'function' => 'get_counter_data',
+
+			'items' => $items,
+		] );
+
 		$amount = count( $items );
 
 		$items_overall = [];
@@ -264,9 +272,7 @@ class ReviewCounter
 				$rating += $item[ 'value' ];
 			}
 
-			// $rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
-			
-			$rating = number_format( ( double ) ( $rating / $amount ), 1, '.', '');
+			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
 		}
 
 		if ( $amount == 5 )
@@ -353,6 +359,8 @@ class ReviewCounter
 	public static function get_counter_items( $node )
 	{
 		$rows = $node->getElementsByTagName( 'tr' );
+
+		$args = [];
 
 		if ( $rows->length )
 		{
