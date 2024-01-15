@@ -385,7 +385,7 @@
 
 .tcb-post-content table > thead
 {
-    background-color: var( --Base-base-02, #F6F6F6 );
+    /* background-color: var( --Base-base-02, #F6F6F6 ); */
 }
 
 /* Review Typography */
