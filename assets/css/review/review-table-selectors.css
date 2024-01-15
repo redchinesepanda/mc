@@ -79,6 +79,13 @@
 
 	/* tbody not last tr not last th or td all */
 
+	.tcb-post-content table > tbody:not( :last-of-type ) > tr:not( :last-of-type ) > *
+	{
+		background-color:darkseagreen;
+	}
+
+	/* tbody last tr last th or td all */
+
 	.tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
 	{
 		background-color:darksalmon;
