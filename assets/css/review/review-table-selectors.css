@@ -56,7 +56,14 @@
 
 	.tcb-post-content table > :last-child > tr:last-child > *:first-child
 	{
-		background-color:chartreuse;
+		/* background-color:chartreuse; */
+	}
+
+	/* thead or tbody last tr lasst th or td last */
+
+	.tcb-post-content table > :last-child > tr:last-child > *:last-child
+	{
+		background-color:chocolate;
 	}
 
 	/* Level 1 item 1st */
