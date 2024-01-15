@@ -227,3 +227,14 @@
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
     color: #ffffff;
 }
+
+.tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
+.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li
+{
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(10, 10, 10, 0.85);
+}
