@@ -101,11 +101,25 @@
 		background-color:darkgrey;
 	} */
 
-	/* All items */
+	/* th and td all */
 
 	.tcb-post-content table tr > *
 	{
 		/* background-color:aliceblue; */
+	}
+
+	/* th all */
+
+	.tcb-post-content table tr > th
+	{
+		/* background-color:aliceblue; */
+	}
+
+	/* td all */
+
+	.tcb-post-content table tr > td
+	{
+		background-color:darkorange;
 	}
 
 	/* Level 2 item all */

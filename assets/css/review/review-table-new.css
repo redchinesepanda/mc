@@ -380,12 +380,12 @@
     line-height: 20px;
 }
 
-.tcb-post-content table > th
+.tcb-post-content table th
 {
     font-weight: 500; 
 }
 
-.tcb-post-content table > td
+.tcb-post-content table td
 {
     font-weight: 400; 
 }
