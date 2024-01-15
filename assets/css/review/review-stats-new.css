@@ -28,7 +28,7 @@
 
 .review-stats .item-value:after
 {
-    content: attr( data-value, '9/10' );
+    content: attr( data-value, '9/10' ); 
 }
 
 /* Stats Position */
