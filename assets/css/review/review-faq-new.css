@@ -31,12 +31,12 @@
 }
 
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:not(:last-child)
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:not(:last-of-type)
 {
 	padding-bottom: 18px;
 }
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-child
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-of-type
 {
 	padding-bottom: 28px;
 }
