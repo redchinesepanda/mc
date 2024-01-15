@@ -79,7 +79,7 @@
 
 	/* tbody last tr all th or td rowspan */
 
-	.tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]
+	.tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]:not([ rowspan="1" ])
 	{
 		background-color:darkseagreen;
 	}
