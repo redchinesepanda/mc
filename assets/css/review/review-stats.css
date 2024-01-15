@@ -50,15 +50,6 @@
 
 /* Stats Background */
 
-.tcb-post-content table.legal-stats tbody tr:nth-child( 2n+1 ) {
-    background-color: rgb(239, 245, 251);
-}
-
-.tcb-post-content table.legal-stats tbody tr:nth-child( 2n )
-.tcb-post-content table.legal-stats thead tr:nth-child( 2n ) {
-    background-color: transparent;
-}
-
 .review-stats .item-value-wrapper {
     background-color: #F6F6F6;
     box-shadow: 0 0 2px #e4e4e4;
@@ -70,7 +61,7 @@
     border-radius: 20px;
 }
 
-/* Stats Typography */
+/* Stats Typography */ 
 
 .review-stats .item-title {
 	font-family: "Source Sans Pro";
