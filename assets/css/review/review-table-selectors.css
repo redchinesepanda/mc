@@ -1,5 +1,8 @@
 /* @media screen and ( max-width: 959px )
 { */
+
+	/* TABLE */
+
 	/* table start */
 
 	.tcb-post-content table
@@ -8,6 +11,8 @@
 	}
 
 	/* table end */
+
+	/* THEAD, TBODY */
 
 	/* thead and tbody start */
 
@@ -34,6 +39,8 @@
 
 	/* thead and tbody end */
 
+	/* TR */
+
 	/* tr start */
 
 	/* thead or tbody 1st tr 1st */
@@ -52,7 +59,16 @@
 
 	/* tr end */
 
+	/* TH, TR */
+
 	/* th and td start */
+
+	/* thead 1st tr 1st th or td all */
+
+	.tcb-post-content table > thead:first-child > tr:first-child > *
+	{
+		background-color:brown;
+	}
 
 	/* thead or tbody 1st tr 1st th or td 1st */
 
