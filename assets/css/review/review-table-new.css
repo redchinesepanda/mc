@@ -76,13 +76,13 @@
 
     /* Background */
 
-    .tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
+    /* .tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
         background-image: url( '../../img/review/review-table-check.svg' );
     }
     
     .tcb-post-content table.legal-check td.legal-cross:last-child {
         background-image: url( '../../img/review/review-table-cross.svg' );
-    }
+    } */
 
     /* Typography */
 }
@@ -171,6 +171,23 @@
 .tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
 {
     border-bottom: unset;
+}
+
+.tcb-post-content .legal-check td:not(.legal-cross):last-child::after
+{
+    content: '\F10D';
+}
+
+.tcb-post-content .legal-check td.legal-cross:last-child::after
+{
+    content: '\F10E';
+}
+
+.tcb-post-content .legal-check td:last-child::::after
+{
+    font-family: var( --legal-font-icons );
+    font-style: normal;
+    font-weight: 400;
 }
 
 /* Review Typography */
