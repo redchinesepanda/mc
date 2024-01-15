@@ -1,5 +1,5 @@
-@media screen and ( max-width: 959px )
-{
+/* @media screen and ( max-width: 959px )
+{ */
 	/* Level 1 item 1st */
 
 	.tcb-post-content table tr:first-child > :first-child:not( #legal-override )
@@ -55,4 +55,4 @@
 	{
 		background-color:cornflowerblue;
 	}	
-}
+/* } */
