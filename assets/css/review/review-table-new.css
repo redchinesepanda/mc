@@ -110,7 +110,7 @@
 .tcb-post-content > table:not( :last-child ),
 .tcb-post-content > table.legal-scroll:not( :last-child )
 {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .tcb-post-content table caption
