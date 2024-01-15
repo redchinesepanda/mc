@@ -11,17 +11,17 @@ class ReviewProsCons
     ];
 
 	const CSS_NEW = [
-        'review-pros-cons-new' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-pros-cons-new.css',
+        // 'review-pros-cons-new' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-pros-cons-new.css',
 
-			'ver' => '1.0.0',
-		],
+		// 	'ver' => '1.0.0',
+		// ],
     ];
 
-/*     public static function register_style()
-    {
-		ReviewMain::register_style( self::CSS );
-    } */
+	// public static function register_style()
+    // {
+	// 	ReviewMain::register_style( self::CSS );
+    // }
 
 	public static function register_style()
     {
