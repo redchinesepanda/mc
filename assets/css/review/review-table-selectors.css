@@ -70,6 +70,13 @@
 		/* background-color:brown; */
 	}
 
+	/* tbody all tr all th or td all */
+
+	.tcb-post-content table > tbody > tr > *
+	{
+		background-color:darkcyan;
+	}
+
 	/* thead or tbody 1st tr 1st th or td 1st */
 
 	.tcb-post-content table > :first-child > tr:first-child > *:first-child
