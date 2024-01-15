@@ -20,7 +20,7 @@ class ReviewList
 
     public static function register_style()
     {
-        if ( TemplateMain::check_code() )
+        if ( TemplateMain::check_code() ) 
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 		}
