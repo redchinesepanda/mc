@@ -9,6 +9,15 @@
 	}
 }
 
+@media screen and ( max-width: 767px )
+{
+	/* Pros Cons Width */
+
+	.legal-pros-cons .pros-cons-item {
+		width: 100%;
+	}
+}
+
 /* Pros Cons Display */
 
 div.legal-pros-cons {
