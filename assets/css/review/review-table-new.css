@@ -183,9 +183,9 @@
     content: '\F10E';
 }
 
-.tcb-post-content .legal-check td:last-child::::after
+.tcb-post-content .legal-check td:last-child::after
 {
-    font-family: var( --legal-font-icons );
+    font-family: var( --legal-font-icons ); 
     font-style: normal;
     font-weight: 400;
 }
