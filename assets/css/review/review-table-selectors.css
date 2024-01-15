@@ -29,7 +29,7 @@
 
 	/* tr 1st */
 
-	.tcb-post-content table > * > tr:first-child
+	.tcb-post-content table > :first-child > tr:first-child
 	{
 		background-color: bisque; 
 	}
