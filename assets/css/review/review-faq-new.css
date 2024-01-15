@@ -31,16 +31,16 @@
 }
 
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:not(:last-of-type)
-{
-	padding-bottom: 18px;
-}
-
-.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-of-type
+.tcb-post-content .legal-faq-title ~ .legal-faq-description
 {
 	padding-bottom: 28px;
 }
 
+/* .tcb-post-content .legal-faq-title ~ .legal-faq-description:nth-last-child
+{
+	padding-bottom: 28px;
+}
+ */
 /* FAQ Background */
 
 
