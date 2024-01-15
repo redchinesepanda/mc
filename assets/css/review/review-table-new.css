@@ -104,7 +104,7 @@
     display: flex;
 }
 
-/* Table Position */
+/* Position */
 
 .tcb-post-content table tr > *
 {
@@ -121,6 +121,11 @@
 .tcb-post-content table caption
 {
     padding-top: 12px;
+}
+
+.tcb-post-content .legal-check td:last-child
+{
+    margin-left: auto;
 }
 
 /* Width and Height */
