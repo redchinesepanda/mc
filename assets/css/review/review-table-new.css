@@ -182,9 +182,9 @@
 
 /* Display */
 
-.tcb-post-content table {
+/* .tcb-post-content table {
     caption-side: unset;
-}
+} */
 
 .tcb-post-content table.legal-scroll {
     max-height: 500px;
@@ -424,6 +424,17 @@
 .tcb-post-content table td
 {
     font-weight: 400; 
+}
+
+.tcb-post-content table caption
+{
+    color: var(--Base-base-05, #939393);
+    /* Text/14 */
+    font-family: Golos Text;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */ 
 }
 
 /* Other */
