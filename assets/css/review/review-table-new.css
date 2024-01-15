@@ -383,6 +383,11 @@
     border-top-right-radius: 18px;
 }
 
+.tcb-post-content table > thead
+{
+    background-color: var( --Base-base-02, #F6F6F6 );
+}
+
 /* Review Typography */
 
 .tcb-post-content table tr > *
