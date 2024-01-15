@@ -77,9 +77,9 @@
 		/* background-color:darkcyan; */
 	}
 
-	/* tbody not last tr not last th or td all */
+	/* tbody last tr all th or td rowspan */
 
-	.tcb-post-content table > tbody:not( :last-of-type ) > tr:not( :last-of-type ) > *
+	.tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]
 	{
 		background-color:darkseagreen;
 	}
