@@ -56,7 +56,7 @@
 
 	.tcb-post-content table > :first-child > tr:first-child > *:first-child
 	{
-		background-color:cornflowerblue;
+		background-color:cornflowerblue; 
 	}
 
 	/* thead or tbody last tr lasst th or td 1st */
