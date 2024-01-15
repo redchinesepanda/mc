@@ -99,6 +99,11 @@
     overflow-y: scroll;
 }
 
+.tcb-post-content .legal-check td:last-child
+{
+    display: flex;
+}
+
 /* Table Position */
 
 .tcb-post-content table tr > *
@@ -183,14 +188,7 @@
     content: '\F10E';
 }
 
-.tcb-post-content .legal-check td:last-child::after
-{
-    font-family: var( --legal-font-icons ); 
-    font-style: normal;
-    font-weight: 400;
-}
-
-/* Review Typography */
+/* Typography */
 
 .tcb-post-content table > thead:first-of-type > tr:first-child > *
 {
@@ -225,4 +223,11 @@
     font-weight: 400;
     line-height: 20px;
     text-align: left;
+}
+
+.tcb-post-content .legal-check td:last-child::after
+{
+    font-family: var( --legal-font-icons ); 
+    font-style: normal;
+    font-weight: 400;
 }
