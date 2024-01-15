@@ -1,193 +1,138 @@
-/* @media screen and ( max-width: 959px )
-{ */
+/* TABLE */
 
-	/* TABLE */
+/* table start */
 
-	/* table start */
+.tcb-post-content table
+{
+	/* background-color: khaki; */
+}
 
-	.tcb-post-content table
-	{
-		background-color: khaki;
-	}
+/* table end */
 
-	/* table end */
+/* THEAD, TBODY */
 
-	/* THEAD, TBODY */
+/* thead and tbody start */
 
-	/* thead and tbody start */
+/* thead and tbody all */
 
-	/* thead and tbody all */
+.tcb-post-content table > *
+{
+	/* background-color: lightgray; */
+}
 
-	.tcb-post-content table > *
-	{
-		/* background-color: lightgray; */
-	}
+/* thead all */
 
-	/* thead all */
+.tcb-post-content table > thead
+{
+	/* background-color:burlywood; */
+}
 
-	.tcb-post-content table > thead
-	{
-		/* background-color:burlywood; */
-	}
+/* tbody all */
 
-	/* tbody all */
+.tcb-post-content table > tbody
+{
+	/* background-color:cornsilk; */
+}
 
-	.tcb-post-content table > tbody
-	{
-		/* background-color:cornsilk; */
-	}
+/* thead and tbody end */
 
-	/* thead and tbody end */
+/* TR */
 
-	/* TR */
+/* tr start */
 
-	/* tr start */
+/* thead or tbody 1st tr 1st */
 
-	/* thead or tbody 1st tr 1st */
+.tcb-post-content table > :first-child > tr:first-child
+{
+	/* background-color: bisque;  */
+}
 
-	.tcb-post-content table > :first-child > tr:first-child
-	{
-		/* background-color: bisque;  */
-	}
+/* thead or tbody last tr last */
 
-	/* thead or tbody last tr last */
+.tcb-post-content table > :last-child > tr:last-child
+{
+	/* background-color:azure; */
+}
 
-	.tcb-post-content table > :last-child > tr:last-child
-	{
-		/* background-color:azure; */
-	}
+/* tr end */
 
-	/* tr end */
+/* TH, TR */
 
-	/* TH, TR */
+/* th and td start */
 
-	/* th and td start */
+/* thead 1st tr 1st th or td all */
 
-	/* thead 1st tr 1st th or td all */
+.tcb-post-content table > thead:first-of-type > tr:first-child > *
+{
+	/* background-color:brown; */
+}
 
-	.tcb-post-content table > thead:first-of-type > tr:first-child > *
-	{
-		/* background-color:brown; */
-	}
+/* tbody all tr all th or td all */
 
-	/* tbody all tr all th or td all */
+.tcb-post-content table > tbody > tr > *
+{
+	/* background-color:darkcyan; */
+}
 
-	.tcb-post-content table > tbody > tr > *
-	{
-		/* background-color:darkcyan; */
-	}
+/* tbody last tr all th or td rowspan */
 
-	/* tbody last tr all th or td rowspan */
+.tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]:not([ rowspan="1" ])
+{
+	/* background-color:darkseagreen; */
+}
 
-	.tcb-post-content table > tbody:last-of-type > tr > *[ rowspan ]:not([ rowspan="1" ])
-	{
-		background-color:darkseagreen;
-	}
+/* tbody last tr last th or td all */
 
-	/* tbody last tr last th or td all */
+.tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
+{
+	/* background-color:darksalmon; */
+}
 
-	.tcb-post-content table > tbody:last-of-type > tr:last-of-type > *
-	{
-		background-color:darksalmon;
-	}
+/* thead or tbody 1st tr 1st th or td 1st */
 
-	/* thead or tbody 1st tr 1st th or td 1st */
+.tcb-post-content table > :first-child > tr:first-child > *:first-child
+{
+	/* background-color:aquamarine; */
+}
 
-	.tcb-post-content table > :first-child > tr:first-child > *:first-child
-	{
-		/* background-color:aquamarine; */
-	}
+/* thead or tbody 1st tr 1st th or td last */
 
-	/* thead or tbody 1st tr 1st th or td last */
+.tcb-post-content table > :first-child > tr:first-child > *:last-child
+{
+	/* background-color:cornflowerblue; */
+}
 
-	.tcb-post-content table > :first-child > tr:first-child > *:last-child
-	{
-		/* background-color:cornflowerblue; */
-	}
+/* thead or tbody last tr lasst th or td 1st */
 
-	/* thead or tbody last tr lasst th or td 1st */
+.tcb-post-content table > :last-child > tr:last-child > *:first-child
+{
+	/* background-color:chartreuse; */
+}
 
-	.tcb-post-content table > :last-child > tr:last-child > *:first-child
-	{
-		/* background-color:chartreuse; */
-	}
+/* thead or tbody last tr lasst th or td last */
 
-	/* thead or tbody last tr lasst th or td last */
+.tcb-post-content table > :last-child > tr:last-child > *:last-child
+{
+	/* background-color:chocolate; */
+}
 
-	.tcb-post-content table > :last-child > tr:last-child > *:last-child
-	{
-		/* background-color:chocolate; */
-	}
+/* th and td all */
 
-	/* Level 1 item 1st */
+.tcb-post-content table tr > *
+{
+	/* background-color:aliceblue; */
+}
 
-	/* .tcb-post-content table tr:first-child > :first-child:not( #legal-override )
-	{
-		background-color: brown;
-	} */
+/* th all */
 
-	/* Level 1 item all */
+.tcb-post-content table tr > th
+{
+	/* background-color:darksalmon; */
+}
 
-	/* .tcb-post-content table tr > :first-child
-	{
-		background-color:bisque;
-	} */
+/* td all */
 
-	/* Level 1 row item not 1st and last */
-
-	/* .tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child
-	{
-		background-color:azure;
-	} */
-
-	/* Level 1 item last */
-
-	/* .tcb-post-content table tr:last-child > :first-child
-	{
-		background-color:darkgrey;
-	} */
-
-	/* th and td all */
-
-	.tcb-post-content table tr > *
-	{
-		/* background-color:aliceblue; */
-	}
-
-	/* th all */
-
-	.tcb-post-content table tr > th
-	{
-		/* background-color:darksalmon; */
-	}
-
-	/* td all */
-
-	.tcb-post-content table tr > td
-	{
-		/* background-color:darkorange; */
-	}
-
-	/* Level 2 item all */
-
-	/* .tcb-post-content table tr td:not( :first-child )
-	{
-		background-color:gold;
-	} */
-
-	/* Level 2 item last */
-
-	/* .tcb-post-content table tr td:last-child:not( :only-child )
-	{
-		background-color:cadetblue;
-	} */
-
-	/* Level 2 last row last item */
-
-	/* .tcb-post-content table tr:last-child td:last-child:not( :only-child )
-	{
-		background-color:cornflowerblue;
-	}	 */
-
-	/* th and td end */
-/* } */
+.tcb-post-content table tr > td
+{
+	/* background-color:darkorange; */
+}
