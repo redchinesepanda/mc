@@ -12,7 +12,7 @@
     /* Stats Width */
 
     .review-stats .stats-item {
-        width: calc(50% - 10px);
+        width: calc( 50% - 10px );
     }
 }
 
@@ -49,6 +49,12 @@
 }
 
 /* Stats Background */
+
+.review-stats .item-value-wrapper
+{
+    border-radius: 8px;
+    border: 2px solid #000;
+}
 
 .review-stats .item-value-wrapper {
     background-color: #F6F6F6;
