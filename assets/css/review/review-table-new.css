@@ -192,7 +192,12 @@
     overflow-y: scroll;
 }
 
-/* Review Position */
+/* Table Position */
+
+.tcb-post-content table tr > *
+{
+    padding: 16px 24px;
+}
 
 .billet-mega-content > table:not( :last-child ),
 .tcb-post-content > table:not( :last-child ),
