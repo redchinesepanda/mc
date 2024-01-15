@@ -58,28 +58,28 @@
 
 	.tcb-post-content table > :first-child > tr:first-child > *:first-child
 	{
-		background-color:aquamarine;
+		/* background-color:aquamarine; */
 	}
 
 	/* thead or tbody 1st tr 1st th or td last */
 
 	.tcb-post-content table > :first-child > tr:first-child > *:last-child
 	{
-		background-color:cornflowerblue; 
+		/* background-color:cornflowerblue; */
 	}
 
 	/* thead or tbody last tr lasst th or td 1st */
 
 	.tcb-post-content table > :last-child > tr:last-child > *:first-child
 	{
-		background-color:chartreuse;
+		/* background-color:chartreuse; */
 	}
 
 	/* thead or tbody last tr lasst th or td last */
 
 	.tcb-post-content table > :last-child > tr:last-child > *:last-child
 	{
-		background-color:chocolate;
+		/* background-color:chocolate; */
 	}
 
 	/* Level 1 item 1st */
