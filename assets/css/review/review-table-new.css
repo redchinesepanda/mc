@@ -93,7 +93,8 @@
     caption-side: bottom;
 }
 
-.tcb-post-content table.legal-scroll {
+.tcb-post-content .legal-scroll
+{
     max-height: 500px;
     display: block;
     overflow-y: scroll;
@@ -113,7 +114,7 @@
 
 .billet-mega-content > table:not( :last-child ),
 .tcb-post-content > table:not( :last-child ),
-.tcb-post-content > table.legal-scroll:not( :last-child )
+.tcb-post-content > .legal-scroll:not( :last-child )
 {
     margin-bottom: 24px;
 }
