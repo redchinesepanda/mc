@@ -123,7 +123,7 @@
     padding-top: 12px;
 }
 
-.tcb-post-content .legal-check td:last-child
+.tcb-post-content .legal-check td:last-child::after
 {
     margin-left: auto;
 }
