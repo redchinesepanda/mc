@@ -24,7 +24,7 @@ class ReviewTable
         'review-table-selectors' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-table-selectors.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
     ];
 
