@@ -2,57 +2,57 @@
 { */
 	/* Level 1 item 1st */
 
-	.tcb-post-content table tr:first-child > :first-child:not( #legal-override )
+	/* .tcb-post-content table tr:first-child > :first-child:not( #legal-override )
 	{
 		background-color: brown;
-	}
+	} */
 
 	/* Level 1 item all */
 
-	.tcb-post-content table tr > :first-child
+	/* .tcb-post-content table tr > :first-child
 	{
 		background-color:bisque;
-	}
+	} */
 
 	/* Level 1 row item not 1st and last */
 
-	.tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child
+	/* .tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child
 	{
 		background-color:azure;
-	}
+	} */
 
 	/* Level 1 item last */
 
-	.tcb-post-content table tr:last-child > :first-child
+	/* .tcb-post-content table tr:last-child > :first-child
 	{
 		background-color:darkgrey;
-	}
+	} */
 
 	/* All items */
 
-	.tcb-post-content table tr > *
+	/* .tcb-post-content table tr > *
 	{
 		background-color:burlywood;
-	}
+	} */
 
 	/* Level 2 item all */
 
-	.tcb-post-content table tr td:not( :first-child )
+	/* .tcb-post-content table tr td:not( :first-child )
 	{
 		background-color:gold;
-	}
+	} */
 
 	/* Level 2 item last */
 
-	.tcb-post-content table tr td:last-child:not( :only-child )
+	/* .tcb-post-content table tr td:last-child:not( :only-child )
 	{
 		background-color:cadetblue;
-	}
+	} */
 
 	/* Level 2 last row last item */
 
-	.tcb-post-content table tr:last-child td:last-child:not( :only-child )
+	/* .tcb-post-content table tr:last-child td:last-child:not( :only-child )
 	{
 		background-color:cornflowerblue;
-	}	
+	}	 */
 /* } */
