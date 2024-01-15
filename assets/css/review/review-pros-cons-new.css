@@ -47,6 +47,10 @@ div.legal-pros-cons {
 	padding-left: 0px; /*Временное правило*/
 }
 
+.legal-pros-cons li:before {
+	position: absolute;
+}
+
 /* Width and Height */
 
 .legal-pros-cons {
