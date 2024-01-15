@@ -67,7 +67,7 @@
 
 	.tcb-post-content table > thead:first-of-type > tr:first-child > *
 	{
-		background-color:brown;
+		/* background-color:brown; */
 	}
 
 	/* thead or tbody 1st tr 1st th or td 1st */
