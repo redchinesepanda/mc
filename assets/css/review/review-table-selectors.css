@@ -1,11 +1,29 @@
 /* @media screen and ( max-width: 959px )
 { */
-	/* thead tbody all */
+	/* thead and tbody start */
+
+	/* thead and tbody all */
 
 	.tcb-post-content table > *
 	{
 		background-color: lightgray;
 	}
+
+	/* thead all */
+
+	.tcb-post-content table > thead
+	{
+		background-color:burlywood;
+	}
+
+	/* tbody all */
+
+	.tcb-post-content table > tbody
+	{
+		background-color:cornsilk;
+	}
+
+	/* thead and tbody end */
 
 	/* Level 1 item 1st */
 
