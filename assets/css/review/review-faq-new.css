@@ -31,7 +31,12 @@
 }
 
 
-.tcb-post-content .legal-faq-title ~ .legal-faq-description
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:not(:last-child)
+{
+	padding-bottom: 18px;
+}
+
+.tcb-post-content .legal-faq-title ~ .legal-faq-description:last-child
 {
 	padding-bottom: 28px;
 }
