@@ -182,9 +182,9 @@
 
 /* Display */
 
-/* .tcb-post-content table {
-    caption-side: unset;
-} */
+.tcb-post-content table {
+    caption-side: bottom;
+}
 
 .tcb-post-content table.legal-scroll {
     max-height: 500px;
