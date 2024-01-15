@@ -15,7 +15,7 @@
 
 	.tcb-post-content table > *
 	{
-		background-color: lightgray;
+		/* background-color: lightgray; */
 	}
 
 	/* thead all */
@@ -29,7 +29,7 @@
 
 	.tcb-post-content table > tbody
 	{
-		background-color:cornsilk;
+		/* background-color:cornsilk; */
 	}
 
 	/* thead and tbody end */
