@@ -1,0 +1,182 @@
+@media screen and ( max-width: 959px )
+{
+	/* 1v Адаптива тамблицы start */
+
+    /* Display */
+
+    .tcb-post-content table
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table thead
+    {
+        display: none;
+    }
+
+    .tcb-post-content table tbody
+    {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table tr
+    {
+        flex-basis: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tcb-post-content table tr > *
+    {
+        align-items: center;
+        flex-basis: 100%;
+    }
+
+    .tcb-post-content table tr > :first-child,
+    .tcb-post-content table tr > :first-child:not( :only-child ).legal-active ~ td,
+    .tcb-post-content .legal-check tr > :first-child:only-child
+    {
+        display: flex;
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active ) ~ td
+    {
+        display: none;
+    }
+
+    .tcb-post-content table tr td:not( :first-child )
+    {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .tcb-post-content table tr td:not( :first-child ):before
+    {
+        content: attr( data-column-name, '' );
+        flex-basis: 100%;
+    }
+
+    /* Position */
+
+    .tcb-post-content table tr > *
+    {
+        padding: 18px;
+    }
+
+    .tcb-post-content .legal-check tr > :first-child:only-child::after,
+    .tcb-post-content table tr > :first-child:not( :only-child )::after
+    {
+        margin-left: auto;
+    }
+
+    /* Width and Height */
+
+    .tcb-post-content table tr > *
+    {
+        min-height: 68px;
+    }
+
+    /* Background */
+
+    .tcb-post-content table tr > *
+    {
+        --table-border-external: 2px solid var( --Base-base-09, #0A0A0A );
+        --table-border-internal: 1px solid var( --Base-base-09, #0A0A0A );
+    }
+    
+    .tcb-post-content table tr > *
+    {
+        border-left: var( --table-border-external );
+        border-right: var( --table-border-external );
+    }
+
+    .tcb-post-content table tr:first-child > :first-child
+    {
+        border-radius: 18px 18px 0px 0px;
+        border-top: var( --table-border-external );
+    }
+
+    .tcb-post-content table tr:last-child > :first-child:not( .legal-active ),
+    .tcb-post-content table tr:last-child td:last-child:not( :only-child )
+    {
+        border-radius: 0px 0px 18px 18px;
+        border-bottom: var( --table-border-external );
+    }
+
+    .tcb-post-content table tr:first-child > :first-child,
+    .tcb-post-content table tr:not( :first-child ):not( :last-child ) > :first-child,
+    .tcb-post-content table tr:last-child > :first-child.legal-active,
+    .tcb-post-content table tr td:not( :first-child )
+    {
+        border-bottom: var( --table-border-internal ); 
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child )
+    {
+        background-color: var(--Base-base-02, #F6F6F6);
+    }
+
+    .tcb-post-content table tr > :first-child:only-child,
+    .tcb-post-content table tr td:not( :first-child )
+    {
+        background-color: var(--Base-base-01, #FFF);
+    }
+
+    /* Typography */
+
+    .tcb-post-content table tr > *
+    {
+        font-weight: 500; 
+    }
+
+    .tcb-post-content table tr td:not( :first-child )::before
+    {
+        color: var( --Base-base-05, #939393 );
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    .tcb-post-content .legal-check tr > :first-child:only-child:not( .legal-cross )::after
+    {
+        content: '\F10D';
+    }
+
+    .tcb-post-content .legal-check tr > :first-child:only-child.legal-cross::after
+    {
+        content: '\F10E';
+    }
+
+    .tcb-post-content .legal-check tr > :first-child:only-child::after
+    {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child ):not( .legal-active )::after
+    {
+        content: '\F106';
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child ).legal-active::after
+    {
+        content: '\F10C';
+    }
+
+    .tcb-post-content table tr > :first-child:not( :only-child )::after
+    {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .tcb-post-content .legal-check tr > :first-child:only-child::after,
+    .tcb-post-content table tr > :first-child:not( :only-child )::after
+    {
+        font-family: var( --legal-font-icons );
+    }
+
+    /* 1v Адаптива тамблицы end */
+}

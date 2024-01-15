@@ -88,13 +88,15 @@ div.legal-pros-cons {
 
 /* Pros Cons Typography */
 
-.legal-pros-cons .pros-cons-title {
+.legal-pros-cons .pros-cons-title
+{
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 24px;
 }
 
-.tcb-post-content .legal-pros-cons li {
+.tcb-post-content .legal-pros-cons li
+{
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 22px;
