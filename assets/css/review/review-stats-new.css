@@ -1,0 +1,73 @@
+@media screen and ( max-width: 767px )
+{
+    /* Stats Width */
+
+    .review-stats .stats-item {
+        width: 100%;
+    }
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Stats Width */
+
+    .review-stats .stats-item {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Stats Display */
+
+.review-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+/* Stats Position */
+
+.review-stats {
+    padding-bottom: 30px;
+}
+
+.review-stats .item-title {
+	padding-bottom: 20px;
+}
+
+/* Stats Width */
+
+.review-stats .item-value-wrapper,
+.review-stats .item-value {
+	height: 27px;
+}
+
+.review-stats .item-value-wrapper {
+	width: 100%;
+}
+
+/* Stats Background */
+
+.review-stats .item-value-wrapper {
+    background-color: #F6F6F6;
+    box-shadow: 0 0 2px #e4e4e4;
+    border-radius: 20px;
+}
+
+.review-stats .item-value {
+    background-color: #5997e3;
+    border-radius: 20px;
+}
+
+/* Stats Typography */ 
+
+.review-stats .item-title {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px;
+	color: rgb(59, 59, 59);
+}
