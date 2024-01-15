@@ -118,12 +118,12 @@ div.legal-pros-cons {
 }
 
 .legal-pros-cons .legal-pros ul li:before {
-	content: "F10D";
+	content: "\F10D";
 	color: var( --Base-base-09 );
 }
 
 .legal-pros-cons .legal-cons ul li:before {
-	content: "F10E";
+	content: "\F10E";
 	color: var(--Base-base-05 );
 }
 
