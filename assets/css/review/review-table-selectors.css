@@ -1,5 +1,12 @@
 /* @media screen and ( max-width: 959px )
 { */
+	/* thead tbody all */
+
+	.tcb-post-content table > *
+	{
+		background-color: lightgray;
+	}
+
 	/* Level 1 item 1st */
 
 	/* .tcb-post-content table tr:first-child > :first-child:not( #legal-override )
