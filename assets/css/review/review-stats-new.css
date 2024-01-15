@@ -12,7 +12,7 @@
     /* Stats Width */
 
     .review-stats .stats-item {
-        width: calc( 50% - 10px );
+        width: calc( 50% - 20px );
     }
 }
 
@@ -23,14 +23,14 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    row-gap: 20px;
-    column-gap: 20px;
+    gap: 40px;
 }
 
 /* Stats Position */
 
-.review-stats {
-    padding-bottom: 30px;
+.review-stats
+{
+    padding-bottom: 24px;
 }
 
 .review-stats .item-title {
