@@ -55,6 +55,7 @@
     border-radius: 8px;
     border: 2px solid var( --Base-base-09 );
     background: var( --Base-base-01 );
+    overflow: hidden;
 }
 
 .review-stats .item-value
