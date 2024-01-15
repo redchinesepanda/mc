@@ -31,7 +31,14 @@
 
 	.tcb-post-content table > :first-child > tr:first-child
 	{
-		background-color: bisque; 
+		/* background-color: bisque;  */
+	}
+
+	/* tr last */
+
+	.tcb-post-content table > :last-child > tr:last-child
+	{
+		background-color:azure;
 	}
 
 	/* tr end */
