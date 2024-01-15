@@ -26,6 +26,11 @@
     gap: 40px;
 }
 
+.review-stats .item-value:after
+{
+    content: attr( data-value, '9/10' );
+}
+
 /* Stats Position */
 
 .review-stats
