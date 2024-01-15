@@ -371,6 +371,8 @@
 
 .tcb-post-content table
 {
+    border-collapse: separate;
+    border-spacing: 0;
     border-radius: 18px;
     border: 2px solid var( --Base-base-09, #0A0A0A );
 }
