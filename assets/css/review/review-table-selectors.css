@@ -25,6 +25,19 @@
 
 	/* thead and tbody end */
 
+	/* tr start */
+
+	/* tr 1st */
+
+	.tcb-post-content table > * > tr:first-child
+	{
+		background-color: bisque;
+	}
+
+	/* tr end */
+
+	/* th and td start */
+
 	/* Level 1 item 1st */
 
 	/* .tcb-post-content table tr:first-child > :first-child:not( #legal-override )
@@ -80,4 +93,6 @@
 	{
 		background-color:cornflowerblue;
 	}	 */
+
+	/* th and td end */
 /* } */
