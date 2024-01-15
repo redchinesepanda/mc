@@ -1,0 +1,240 @@
+@media screen and ( max-width: 767px )
+{
+    /* Review Position */
+
+    .tcb-post-content li:not( .legal-override ) {
+        padding-left: 34px;
+    }
+    
+    .tcb-post-content li::before {
+        margin-left: -34px;
+    }
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Display */
+
+    .tcb-post-content .legal-list-2,
+    .tcb-post-content .legal-list-3,
+    .tcb-post-content .legal-list-4 {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+
+    /* Review Position */
+
+    .tcb-post-content > ul:not( .legal-override ):not( [style] ),
+    .tcb-post-content > ol:not( .legal-override ) {
+        padding-left: 30px;
+    }
+
+    /* .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
+    .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ol{
+        padding-left: 0px;
+    } */
+
+    .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
+    .tcb-post-content ol:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
+    .tcb-post-content ol:not( .legal-override ):not( [ class ] ) li:not( .legal-override ) {
+        padding-left: 34px;
+    }
+    
+    .tcb-post-content li::before {
+        margin-left: -34px;
+    }
+
+    /* Width and Height */
+
+    .tcb-post-content .legal-list-2 li {
+        width: 50%;
+    }
+
+    .tcb-post-content .legal-list-3 li {
+        width: 33.333%;
+    }
+
+    .tcb-post-content .legal-list-4 li {
+        width: 25%;
+    }
+}
+
+/* Review Display */
+
+.tcb-post-content ul:not( .legal-override ):not( .legal-sitemap ),
+.tcb-post-content ol:not( .legal-override ) {
+    margin: 0px;
+}
+
+.tcb-post-content ol:not( .menu__box ) {
+    list-style: none;
+    counter-reset: legal-counter;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] {
+    list-style: none !important;
+    counter-reset: legal-counter-alpha;
+}
+
+.tcb-post-content ol:not( .menu__box ) > li {
+    counter-increment: legal-counter;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li {
+    counter-increment: legal-counter-alpha;
+}
+
+.tcb-post-content ol:not( .menu__box ) > li::before {
+    content: counter( legal-counter );
+    display: inline-block;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li::before {
+    content: counter( legal-counter-alpha, upper-alpha );
+}
+
+.tcb-post-content ul {
+	list-style: none;
+	list-style-type: none;
+}
+
+.tcb-post-content ul li::before {
+	content: '';
+    display: inline-block;
+}
+
+/* Review Position */
+
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
+.tcb-post-content > ol:not( .legal-override ) {
+    padding-top: 0px;
+    padding-bottom: 30px;
+}
+
+.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet-description > ul:not( .legal-override ):not( [style] ),
+.bonus-content > ol:not( .legal-override ),
+.billet-description > ol:not( .legal-override ),
+.billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet .billet-description-full > ol:not( .legal-override ) {
+    padding-top: 0px;
+}
+
+.tcb-post-content .legal-highlight {
+    padding-top: 15px;
+}
+
+.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( :last-child ),
+.billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
+.bonus-content > ol:not( .legal-override ):not( :last-child ),
+.billet-description > ol:not( .legal-override ):not( :last-child ),
+.billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+.billet .billet-description-full > ol:not( .legal-override ) {
+    padding-bottom: 15px;
+}
+
+.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):last-child,
+.billet-description > ul:not( .legal-override ):not( [style] ):last-child,
+.bonus-content > ol:not( .legal-override ):last-child,
+.billet-description > ol:not( .legal-override ):last-child {
+    padding-bottom: 0px;
+}
+
+.tcb-post-content li > ul:not( .legal-override ),
+.tcb-post-content li > ol:not( .legal-override ) {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+.tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
+.tcb-post-content ol:not( .menu__box ) li:not( :last-child ) {
+    padding-bottom: 15px;
+}
+
+.tcb-post-content ul.legal-highlight li {
+    padding-bottom: 0px;
+}
+
+.tcb-post-content ul:not( .legal-override ):not( [style] ) li:not( .legal-override ),
+.tcb-post-content ol:not( .menu__box ) li:not( .legal-override ) {
+	margin-left: 0px;
+}
+
+.tcb-post-content li::before {
+    margin-right: 10px;
+}
+
+.tcb-post-content ul li::before {
+	margin-bottom: -8px;
+}
+
+/* Review Width and Height */
+
+.tcb-post-content li::before {
+    width: 24px;
+    height: 24px;
+}
+
+/* Review Background */
+
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) > li:before,
+.tcb-post-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) ul > li:before,
+.tcb-post-content > ol ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before,
+.legal-billet ul:not( .legal-list-image ) li:before,
+.legal-bonus ul:not( .legal-list-image ) li:before,
+.billet ul:not( .legal-list-image ) li:before,
+.billet-mega-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before {
+    background-image: url( '../../img/review/review-ul.svg' );
+}
+
+.tcb-post-content > ul.legal-list-pros li:before,
+.billet-mega-content > ul.legal-list-pros li:before {
+    background-image: url( '../../img/review/review-pros-check.svg' );
+}
+
+.tcb-post-content > ul.legal-list-cons li:before,
+.billet-mega-content > ul.legal-list-cons li:before {
+    background-image: url( '../../img/review/review-cons-cross.svg' );
+}
+
+.tcb-post-content ul li:before {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	list-style-image: none;
+}
+
+.tcb-post-content ol:not( .menu__box ) > li::before {
+    border: 2px solid rgb(89, 151, 227);
+    border-radius: 50%;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
+    background-color: rgb(89, 151, 227);
+}
+
+/* Review Typography */
+
+.tcb-post-content ol:not( .menu__box ) > li::before {
+    font-weight: 600;
+    line-height: 20px;
+    color: rgb(89, 151, 227);
+    text-align: center;
+}
+
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
+    color: #ffffff;
+}
+
+.tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
+.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li
+{
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(10, 10, 10, 0.85);
+}
