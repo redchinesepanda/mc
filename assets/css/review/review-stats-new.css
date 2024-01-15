@@ -53,18 +53,13 @@
 .review-stats .item-value-wrapper
 {
     border-radius: 8px;
-    border: 2px solid #000;
+    border: 2px solid var( --Base-base-09 );
+    background: var( --Base-base-01 );
 }
 
-.review-stats .item-value-wrapper {
-    background-color: #F6F6F6;
-    box-shadow: 0 0 2px #e4e4e4;
-    border-radius: 20px;
-}
-
-.review-stats .item-value {
-    background-color: #5997e3;
-    border-radius: 20px;
+.review-stats .item-value
+{
+    background-color: var( --Primitives-purple-40 );
 }
 
 /* Stats Typography */ 
