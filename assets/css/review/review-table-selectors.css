@@ -27,14 +27,14 @@
 
 	/* tr start */
 
-	/* tr 1st */
+	/* thead or tbody 1st tr 1st */
 
 	.tcb-post-content table > :first-child > tr:first-child
 	{
 		/* background-color: bisque;  */
 	}
 
-	/* tr last */
+	/* thead or tbody last tr last */
 
 	.tcb-post-content table > :last-child > tr:last-child
 	{
@@ -44,6 +44,13 @@
 	/* tr end */
 
 	/* th and td start */
+
+	/* thead or tbody 1st tr 1st th or td 1st */
+
+	.tcb-post-content table > :first-child > tr:first-child > *:first-child
+	{
+		background-color:aquamarine; 
+	}
 
 	/* Level 1 item 1st */
 
