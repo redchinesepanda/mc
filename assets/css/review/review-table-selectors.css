@@ -77,6 +77,13 @@
 		/* background-color:darkcyan; */
 	}
 
+	/* tbody not last tr not last th or td all */
+
+	.tcb-post-content table > tbody:not( :last-of-type ) > tr:not(:last-of-type ) > *
+	{
+		background-color:darksalmon;
+	}
+
 	/* thead or tbody 1st tr 1st th or td 1st */
 
 	.tcb-post-content table > :first-child > tr:first-child > *:first-child
