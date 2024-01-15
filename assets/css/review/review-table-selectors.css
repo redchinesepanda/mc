@@ -112,14 +112,14 @@
 
 	.tcb-post-content table tr > th
 	{
-		/* background-color:aliceblue; */
+		background-color:darksalmon
 	}
 
 	/* td all */
 
 	.tcb-post-content table tr > td
 	{
-		background-color:darkorange;
+		/* background-color:darkorange; */
 	}
 
 	/* Level 2 item all */
