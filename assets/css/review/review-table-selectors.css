@@ -1,5 +1,14 @@
 /* @media screen and ( max-width: 959px )
 { */
+	/* table start */
+
+	.tcb-post-content table
+	{
+		background-color: khaki;
+	}
+
+	/* table end */
+
 	/* thead and tbody start */
 
 	/* thead and tbody all */
