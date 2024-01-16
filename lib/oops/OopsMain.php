@@ -215,6 +215,10 @@ class OopsMain
 
     public static function get_posts( $prefix = ' ' )
     {
+        LegalDebug::debug( [
+            self::get_args( $prefix ),
+        ] );
+
         $query = new WP_Query( self::get_args( $prefix ) );
         
         return $query->posts;
