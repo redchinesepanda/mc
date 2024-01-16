@@ -399,7 +399,7 @@ class ReviewTable
 
 			if ( $tr_all->length > 0 )
 			{
-				if ( $td_all->item( 0 )->childNodes->length > 3 )
+				if ( $tr_all->item( 0 )->childNodes->length > 3 )
 				{
 					// $scroll = $dom->createElement( 'div' );
 
