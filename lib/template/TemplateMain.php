@@ -94,8 +94,8 @@ class TemplateMain
     ];
 
     const CSS_NEW = [
-        'legal-template-main' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main.css',
+        'legal-template-main-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main-new.css',
 
 			'ver' => '1.0.3',
 		],
