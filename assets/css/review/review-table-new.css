@@ -7,6 +7,7 @@
         width: 100%;
     }
 
+    .tcb-post-content .legal-scroll,
     .tcb-post-content .legal-scroll-x
     {
         overflow-x: scroll;
