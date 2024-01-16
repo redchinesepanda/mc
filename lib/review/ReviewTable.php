@@ -92,7 +92,7 @@ class ReviewTable
 		return self::get_nodes(
 			$dom,
 			
-			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'stats' ] . '\')]'
+			'//table[contains(@class, \'' . self::CLASSES[ 'raw-rawspan' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-column' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'raw-default' ] . '\')] | //table[contains(@class, \'' . self::CLASSES[ 'stats' ] . '\')]'
 		);
 	}
 
@@ -105,20 +105,27 @@ class ReviewTable
 		);
 	}
 
+	public static function get_nodes_table_not_scroll( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+
+			'//table[not([contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
+		);
+	}
+
 	public static function get_nodes_tbody( $dom )
 	{
 		return self::get_nodes(
 			$dom,
 			
-			'//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]'
+			'//table[contains(@class, \'' . self::CLASSES[ 'raw-rawspan' ] . '\')]'
 		);
 	}
 
 	public static function get_nodes( $dom, $query )
 	{
 		$xpath = new DOMXPath( $dom );
-
-		// $nodes = $xpath->query( '//table[contains(@class, \'' . self::CLASSES[ 'container' ] . '\')]' );
 
 		$nodes = $xpath->query( $query );
 
@@ -358,6 +365,50 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
+	public static function set_scroll_x( $content )
+	{
+		if ( !ReviewMain::check() )
+		{
+			return $content;
+		}
+
+		$dom = LegalDOM::get_dom( $content );
+
+        $tables = self::get_nodes_table_not_scroll( $dom );
+
+		if ( $tables->length == 0 ) {
+			return $content;
+		}
+
+		foreach ( $tables as $table )
+		{
+			// $class_table = $table->getAttribute( 'class' );
+
+			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+
+			// $class_scroll = self::CLASSES[ 'scroll' ];
+
+			// if ( str_contains( $class_table, self::CLASSES[ 'full-width' ] ) )
+			// {
+			// 	$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
+
+			// 	$class_scroll .= ' ' . self::CLASSES[ 'full-width' ] ;
+			// }
+
+			// $table->setAttribute( 'class', $class_table );
+
+			$scroll = $dom->createElement( 'div' );
+
+			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
+
+			$table->parentNode->insertBefore( $scroll, $table );
+
+			$scroll->appendChild( $table );
+		}
+
+		return $dom->saveHTML( $dom );
+	}
+
 	public static function set_tbody( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -416,6 +467,8 @@ class ReviewTable
 
 		$content = self::set_scroll( $content );
 
+		$content = self::set_scroll_x( $content );
+
 		$content = self::set_th( $content );
 
 		// LegalDebug::debug( [
@@ -428,7 +481,7 @@ class ReviewTable
 	}
 
 	const CLASSES = [
-		'container' => 'legal-raw-rawspan',
+		'raw-rawspan' => 'legal-raw-rawspan',
 
 		'default' => 'legal-default',
 
@@ -455,6 +508,8 @@ class ReviewTable
 		'stats' => 'legal-stats',
 
 		'cross' => 'legal-cross',
+
+		'scroll-x' => 'legal-scroll-x',
 	];
 
 	public static function style_formats_table( $settings )
@@ -517,7 +572,7 @@ class ReviewTable
 						
 						'selector' => 'table',
 
-						'classes' => self::CLASSES[ 'container' ],
+						'classes' => self::CLASSES[ 'raw-rawspan' ],
 					],
 
 					[
@@ -632,13 +687,13 @@ class ReviewTable
 	// 		// [
 	// 		// 	'title' => 'Ряд Rowspan',
 
-	// 		// 	'value' => self::CLASSES[ 'container' ],
+	// 		// 	'value' => self::CLASSES[ 'raw-rawspan' ],
 	// 		// ],
 
 	// 		// [
 	// 		// 	'title' => 'Ряд Rowspan Прокрутка',
 
-	// 		// 	'value' => self::CLASSES[ 'container' ] . ' ' . self::CLASSES[ 'scroll' ],
+	// 		// 	'value' => self::CLASSES[ 'raw-rawspan' ] . ' ' . self::CLASSES[ 'scroll' ],
 	// 		// ],
 
 	// 		// [
