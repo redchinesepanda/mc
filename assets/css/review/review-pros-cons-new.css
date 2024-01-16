@@ -47,6 +47,10 @@ div.legal-pros-cons {
 	padding-left: 0px; /*Временное правило*/
 }
 
+.tcb-post-content .legal-pros-cons li:not( :last-child ) {
+	padding-bottom: 18px;
+}
+
 .legal-pros-cons li:before {
 	position: absolute;
 }
