@@ -133,6 +133,11 @@
     padding-bottom: 30px;
 }
 
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ) li,
+.tcb-post-content > ol:not( .legal-override ) li {
+    padding-bottom: 24px;
+}
+
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet-description > ul:not( .legal-override ):not( [style] ),
 .bonus-content > ol:not( .legal-override ),
