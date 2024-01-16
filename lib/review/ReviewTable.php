@@ -125,11 +125,22 @@ class ReviewTable
 		);
 	}
 
-	public static function get_nodes( $dom, $query )
+	public static function get_nodes_th_td( $dom, $node )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'//td|//th',
+
+			$node
+		);
+	}
+
+	public static function get_nodes( $dom, $query, $node = null )
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( $query );
+		$nodes = $xpath->query( $query, $node );
 
 		return $nodes;
 	}
@@ -400,8 +411,12 @@ class ReviewTable
 			if ( $tr_all->length > 0 )
 			{
 				LegalDebug::debug( [
-					$tr_all->item( 0 )->childNodes->length
+					// $tr_all->item( 0 )->childNodes->length,
+
+					'get_nodes_th_td' => self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length,
 				] );
+
+				
 
 				if ( $tr_all->item( 0 )->childNodes->length > 3 )
 				{
