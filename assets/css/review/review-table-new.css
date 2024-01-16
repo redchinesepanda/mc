@@ -13,15 +13,25 @@
         display: table;
         width: 100%;
     }
+
+    .tcb-post-content table
+    {
+        overflow-x: scroll;
+    }
 }
 
 @media screen and ( min-width: 960px )
 {
-    /* Review Display */
+    /* Display */
 
     .tcb-post-content table.legal-column,
     .tcb-post-content table.legal-column-3 {
         display: inline-table;
+    }
+
+    .tcb-post-content table
+    {
+        overflow: hidden;
     }
 
     /* Position */
@@ -89,14 +99,6 @@
     }
 
     /* Background */
-
-    /* .tcb-post-content table.legal-check td:not( .legal-cross ):last-child {
-        background-image: url( '../../img/review/review-table-check.svg' );
-    }
-    
-    .tcb-post-content table.legal-check td.legal-cross:last-child {
-        background-image: url( '../../img/review/review-table-cross.svg' );
-    } */
 
     /* Typography */
 }
@@ -168,7 +170,7 @@
     border-spacing: 0;
     border-radius: 18px;
     border: 2px solid var( --Base-base-09, #0A0A0A );
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .tcb-post-content table > :first-child > tr:first-child
