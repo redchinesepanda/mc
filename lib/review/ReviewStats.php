@@ -82,9 +82,9 @@ class ReviewStats
 		$items = self::get_stats( $table );
 
 		foreach ( $items as $id => $item ) {
-			// $style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'width' ] .'%; }';
+			$style[] = '.stats-item-' . $id . ' .item-value { width: ' . $item[ 'width' ] .'%; }';
 
-			$style[] = '.stats-item-' . $id . ' .item-value { background-size: ' . $item[ 'width' ] .'% auto; }';
+			// $style[] = '.stats-item-' . $id . ' .item-value { background-size: ' . $item[ 'width' ] .'% auto; }';
 		}
 
 		return implode( ' ', $style );
