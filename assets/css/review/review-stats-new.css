@@ -26,14 +26,16 @@
     gap: 40px;
 }
 
-.review-stats .item-value
+.review-stats .item-value-wrapper
 {
-    display: flex;
+    position: relative;
 }
 
-.review-stats .item-value:after
+.review-stats .item-value-wrapper:after
 {
     content: attr( data-value, '9/10' ); 
+    position: absolute;
+    right: 0px;
 }
 
 /* Stats Position */
@@ -73,11 +75,11 @@
     background-color: var( --Primitives-purple-40 );
 }
 
-.review-stats .item-value
+/* .review-stats .item-value
 {
     background-position: left center;
     background-repeat: no-repeat;
-}
+} */
 
 /* Stats Typography */ 
 
