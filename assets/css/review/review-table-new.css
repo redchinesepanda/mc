@@ -5,7 +5,7 @@
     .tcb-post-content table
     {
         display: block;
-        overflow-x: auto;
+        /* overflow-x: auto; */
     }
 
     /* .tcb-post-content table > *
