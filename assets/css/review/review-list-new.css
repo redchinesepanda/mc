@@ -184,7 +184,7 @@
     padding-top: 15px;
     padding-bottom: 0px;
     padding-left: 0px;
-    margin-left: -4px;
+    margin-left: calc(28px - (24px + 12px));
 }
 
 /* .tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
