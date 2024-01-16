@@ -26,8 +26,12 @@
     gap: 40px;
 }
 
-/* .review-stats .item-value:after */
-.review-stats .item-value-wrapper::after 
+.review-stats .item-value
+{
+    display: flex;
+}
+
+.review-stats .item-value:after
 {
     content: attr( data-value, '9/10' ); 
 }
