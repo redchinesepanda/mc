@@ -181,10 +181,16 @@
 
 .tcb-post-content li > ul,
 .tcb-post-content li > ol {
-    padding-top: 15px;
+   /*  padding-top: 15px; */
+    padding-top: 24px;
     padding-bottom: 0px;
     padding-left: 0px;
     margin-left: calc(28px - (24px + 12px));
+}
+
+.tcb-post-content li > ul li:not(:last-child),
+.tcb-post-content li > ol li:not(:last-child){
+    padding-bottom: 16px;
 }
 
 /* .tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
