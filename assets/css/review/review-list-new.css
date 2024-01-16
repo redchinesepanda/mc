@@ -25,6 +25,11 @@
 
     /* Review Position */
 
+    .tcb-post-content ul li,
+    .tcb-post-content ol li {
+        position: relative;
+    }
+
     .tcb-post-content > ul:not( [style] ),
     .tcb-post-content > ol {
         /* padding-left: 30px; */
@@ -34,7 +39,6 @@
     .tcb-post-content > ul:not( [style] ) li,
     .tcb-post-content > ol li {
         padding-left: calc(24px + 12px);
-        position: relative;
     }
 
     /* .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
