@@ -25,10 +25,16 @@
 
     /* Review Position */
 
-    .tcb-post-content > ul:not( .legal-override ):not( [style] ),
-    .tcb-post-content > ol:not( .legal-override ) {
+    .tcb-post-content > ul:not( [style] ),
+    .tcb-post-content > ol {
         /* padding-left: 30px; */
         padding-left: 0px;
+    }
+
+    .tcb-post-content > ul:not( [style] ) li,
+    .tcb-post-content > ol li {
+        padding-left: calc(24px + 12px);
+        position: relative;
     }
 
     /* .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
@@ -36,13 +42,13 @@
         padding-left: 0px;
     } */
 
-    .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
+ /*    .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
     .tcb-post-content ol:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) li:not( .legal-override ) {
-        /* padding-left: 34px; */
-        padding-left: calc(24px + 8px); /*правило для pros & cons*/
+        padding-left: 34px;
+        padding-left: calc(24px + 8px); 
         position: relative;
-    }
+    } */
     
     .tcb-post-content li::before {
         /* margin-left: -34px; */

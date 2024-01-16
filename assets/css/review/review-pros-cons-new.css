@@ -49,6 +49,7 @@ div.legal-pros-cons {
 
 .tcb-post-content .legal-pros-cons li:not( :last-child ) {
 	padding-bottom: 18px;
+	padding-left: calc(24px + 8px);
 }
 
 /* .legal-pros-cons li:before {
