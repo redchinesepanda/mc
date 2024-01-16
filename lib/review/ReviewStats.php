@@ -46,25 +46,6 @@ class ReviewStats
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
-	const TEMPLATE = [
-		'review-stats' => LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php',
-	];
-
-    public static function render_stats( $node )
-    {
-		if ( !ReviewMain::check() ) {
-            return '';
-        }
-
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'review-stats' ], false, self::get_stats( $node ) );
-
-        $output = ob_get_clean();
-
-        return $output;
-    }
-
 	public static function inline_style()
 	{
 		if ( !ReviewMain::check() ) {
@@ -181,6 +162,8 @@ class ReviewStats
 						'title' => ToolEncode::encode( $cells[ 0 ]->textContent ),
 	
 						'width' => ( round( ( float ) $value ) / 10 ) * 100,
+
+						'value' => $text,
 					];
 				}
 			}
@@ -188,6 +171,43 @@ class ReviewStats
 
 		return $args;
 	}
+
+	const TEMPLATE = [
+		'review-stats' => LegalMain::LEGAL_PATH . '/template-parts/review/review-stats.php',
+	];
+
+    public static function render_stats( $node )
+    {
+		// if ( !ReviewMain::check() ) {
+        //     return '';
+        // }
+
+        // ob_start();
+
+        // load_template( self::TEMPLATE[ 'review-stats' ], false, self::get_stats( $node ) );
+
+        // $output = ob_get_clean();
+
+        // return $output;
+
+		return self::render_main( self::TEMPLATE[ 'review-stats' ], self::get_stats( $node ) );
+    }
+
+    public static function render_main( $tempalte, $args )
+    {
+		if ( !ReviewMain::check() )
+		{
+            return '';
+        }
+
+        ob_start();
+
+        load_template( $tempalte, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
 }
 
 ?>

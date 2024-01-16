@@ -26,17 +26,9 @@
     gap: 40px;
 }
 
-.review-stats .item-value-wrapper
-{
-    position: relative;
-}
-
 .review-stats .item-value-wrapper:after
 {
-    content: attr( data-value, '9/10' ); 
-    position: absolute;
-    right: 8px;
-    top: calc( 50% - 11px ); 
+    content: attr( data-value, '9/10' );
 }
 
 /* Stats Position */
@@ -46,8 +38,21 @@
     padding-bottom: 24px;
 }
 
-.review-stats .item-title {
+.review-stats .item-title
+{
 	padding-bottom: 12px;
+}
+
+.review-stats .item-value-wrapper
+{
+    position: relative;
+}
+
+.review-stats .item-value-wrapper:after
+{
+    position: absolute;
+    right: 8px;
+    top: calc( 50% - 11px ); 
 }
 
 /* Stats Width */

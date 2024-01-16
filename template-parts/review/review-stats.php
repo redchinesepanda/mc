@@ -3,7 +3,7 @@
 		<div class="stats-item stats-item-<?php echo $id; ?>">
 			<div class="item-title"><?php echo $item[ 'title' ]; ?></div>
 			<div class="item-value-wrapper">
-				<div class="item-value"></div>
+				<div class="item-value" data-value="<?php echo $item[ 'value' ]; ?>"></div>
 			</div>
 		</div>
 	<?php endforeach; ?>
