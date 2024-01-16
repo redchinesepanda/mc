@@ -36,6 +36,7 @@
     content: attr( data-value, '9/10' ); 
     position: absolute;
     right: 0px;
+    top: calc( 50% - 11px );
 }
 
 /* Stats Position */
