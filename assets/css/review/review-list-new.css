@@ -120,10 +120,10 @@
 	list-style-type: none;
 }
 
-/* .tcb-post-content ul li::before {
+.tcb-post-content ul li::before {
 	content: '';
     display: inline-block;
-} */
+}
 
 /* Review Position */
 
