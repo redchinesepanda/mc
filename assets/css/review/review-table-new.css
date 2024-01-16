@@ -5,12 +5,12 @@
     /* .tcb-post-content table
     {
         display: block;
-    }
+    } */
 
-    .tcb-post-content table
+    .tcb-post-content .legal-scroll-x
     {
         overflow-x: scroll;
-    } */
+    }
 }
 
 @media screen and ( min-width: 960px )
