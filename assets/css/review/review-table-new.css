@@ -15,9 +15,14 @@
 
     /* Position */
 
-    .tcb-post-content .legal-scroll
+    /* .tcb-post-content .legal-scroll
     {
         padding-right: 8px;
+    } */
+
+    .tcb-post-content .legal-scroll table
+    {
+        margin-right: 8px;
     }
 
     .tcb-post-content .legal-scroll,
