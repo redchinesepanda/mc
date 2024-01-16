@@ -54,7 +54,7 @@
 
 .review-stats .item-value-wrapper,
 .review-stats .item-value {
-	height: 27px;
+	height: 40px;
 }
 
 .review-stats .item-value-wrapper {
@@ -65,9 +65,10 @@
 
 .review-stats .item-value-wrapper
 {
+    background: var( --Base-base-01 );
     border-radius: 8px;
     border: 2px solid var( --Base-base-09 );
-    background: var( --Base-base-01 );
+    box-sizing: border-box;
     overflow: hidden;
 }
 
