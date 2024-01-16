@@ -141,8 +141,10 @@
 
 .tcb-post-content > ul:not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
 .tcb-post-content > ol {
-    padding-top: 0px;
-    padding-bottom: 30px;
+    /* padding-top: 0px;
+    padding-bottom: 30px; */
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .tcb-post-content > ul:not( .legal-highlight ):not( .legal-faq-description ):not( [style] ) > li:not( :last-child ),
