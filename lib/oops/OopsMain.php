@@ -215,6 +215,10 @@ class OopsMain
 
     public static function get_posts( $prefix = ' ' )
     {
+        LegalDebug::debug( [
+            self::get_args( $prefix ), 
+        ] );
+
         $query = new WP_Query( self::get_args( $prefix ) );
         
         return $query->posts;
@@ -222,6 +226,12 @@ class OopsMain
 
     public static function check_oops()
     {
+        LegalDebug::debug( [
+            self::get_args(), 
+
+            self::get_args( '-' ),
+        ] );
+
         $query1 = new WP_Query( self::get_args() );
 
         $query2 = new WP_Query( self::get_args( '-' ) );
