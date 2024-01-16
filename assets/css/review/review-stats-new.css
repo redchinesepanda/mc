@@ -27,7 +27,7 @@
 }
 
 /* .review-stats .item-value:after */
-.review-stats .item-value-wrapper::after
+.review-stats .item-value-wrapper::after 
 {
     content: attr( data-value, '9/10' ); 
 }
