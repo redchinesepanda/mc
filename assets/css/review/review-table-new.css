@@ -1,6 +1,6 @@
 @media screen and ( max-width: 959px )
 {
-    /* Review Display */
+    /* Display */
 
     .tcb-post-content table
     {
@@ -10,6 +10,19 @@
     .tcb-post-content .legal-scroll-x
     {
         overflow-x: scroll;
+    }
+
+    /* Position */
+
+    .tcb-post-content .legal-scroll
+    {
+        padding-right: 8px;
+    }
+
+    .tcb-post-content .legal-scroll,
+    .tcb-post-content .legal-scroll-x
+    {
+        padding-bottom: 8px;
     }
 }
 
