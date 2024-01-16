@@ -112,7 +112,7 @@ class ReviewTable
 
 			// '//table[not([contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
 
-			'.//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])]'
+			'//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])]'
 		);
 	}
 
