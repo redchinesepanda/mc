@@ -35,7 +35,7 @@
 {
     content: attr( data-value, '9/10' ); 
     position: absolute;
-    right: 0px;
+    right: 8px;
     top: calc( 50% - 11px ); 
 }
 
