@@ -400,7 +400,8 @@ class ReviewTable
 
         $tables = self::get_nodes_table_not_scroll( $dom );
 
-		if ( $tables->length == 0 ) {
+		if ( $tables->length == 0 )
+		{
 			return $content;
 		}
 
@@ -410,24 +411,8 @@ class ReviewTable
 
 			if ( $tr_all->length > 0 )
 			{
-				LegalDebug::debug( [
-					// $tr_all->item( 0 )->childNodes->length,
-
-					'get_nodes_th_td' => self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length,
-				] );
-
-				
-
-				if ( $tr_all->item( 0 )->childNodes->length > 3 )
+				if ( self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length > 3 )
 				{
-					// $scroll = $dom->createElement( 'div' );
-
-					// $scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
-		
-					// $table->parentNode->insertBefore( $scroll, $table );
-		
-					// $scroll->appendChild( $table );
-
 					self::set_scroll_x_wrapper( $dom, $table );
 				}
 			}
