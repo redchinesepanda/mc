@@ -75,7 +75,7 @@ class ReviewTable
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter( 'the_content', [ $handler, 'get_content' ] );
+		add_filter( 'the_content', [ $handler, 'get_content' ], 9 );
 	}
 
 	// public static function get_nodes_tbody_all( $dom )
