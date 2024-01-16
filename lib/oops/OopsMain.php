@@ -222,10 +222,6 @@ class OopsMain
 
     public static function get_posts( $prefix = ' ' )
     {
-        LegalDebug::debug( [
-            self::get_args( $prefix ), 
-        ] );
-
         $query = new WP_Query( self::get_args( $prefix ) );
         
         return $query->posts;
@@ -236,16 +232,6 @@ class OopsMain
         $query1 = new WP_Query( self::get_args() );
 
         $query2 = new WP_Query( self::get_args( '-' ) );
-
-        LegalDebug::debug( [
-            self::get_args(),
-
-            $query1->found_posts,
-
-            self::get_args( '-' ),
-
-            $query2->found_posts,
-        ] );
         
         return ( $query1->found_posts || $query2->found_posts );
     }
