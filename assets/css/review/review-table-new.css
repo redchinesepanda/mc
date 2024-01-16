@@ -98,8 +98,10 @@
 
 /* Display */
 
-.tcb-post-content table {
+.tcb-post-content table
+{
     caption-side: bottom;
+    display: inline-table;
 }
 
 .tcb-post-content .legal-scroll
@@ -246,4 +248,10 @@
     font-family: var( --legal-font-icons ); 
     font-style: normal;
     font-weight: 400;
+}
+
+.tcb-post-content .legal-scroll,
+.tcb-post-content .legal-scroll-x
+{
+    text-align: center;
 }
