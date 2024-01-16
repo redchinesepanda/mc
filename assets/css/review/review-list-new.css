@@ -68,20 +68,20 @@
 
 /* Review Display */
 
-.tcb-post-content ul,
+/* .tcb-post-content ul,
 .tcb-post-content ol
 {
     width: 100%;
-}
+} */
 
 
-.tcb-post-content ul li,
+/* .tcb-post-content ul li,
 .tcb-post-content ol li
 {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
-}
+} */
 
 .tcb-post-content ul:not( .legal-override ):not( .legal-sitemap ),
 .tcb-post-content ol:not( .legal-override ) {
