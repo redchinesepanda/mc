@@ -130,7 +130,7 @@ class ReviewTable
 		return self::get_nodes(
 			$dom,
 			
-			'//td|//th',
+			'td|th',
 
 			$node
 		);
