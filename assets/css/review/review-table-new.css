@@ -1,6 +1,18 @@
 @media screen and ( max-width: 959px )
 {
     /* Review Display */
+
+    .tcb-post-content table
+    {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .tcb-post-content table > *
+    {
+        display: table;
+        width: 100%;
+    }
 }
 
 @media screen and ( min-width: 960px )
