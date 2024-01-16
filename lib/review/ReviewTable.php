@@ -409,7 +409,7 @@ class ReviewTable
 		
 					// $scroll->appendChild( $table );
 
-					self::set_scroll_x_wrapper( $dom, $table )
+					self::set_scroll_x_wrapper( $dom, $table );
 				}
 			}
 		}
