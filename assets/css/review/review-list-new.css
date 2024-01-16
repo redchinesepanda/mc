@@ -146,7 +146,7 @@
 }
 
 .tcb-post-content > ul:not( .legal-highlight ):not( .legal-faq-description ):not( [style] ) > li:not( :last-child ),
-.tcb-post-content > ol > li:not( :last-child ) {
+.tcb-post-content > ol:not( .legal-faq-description ) > li:not( :last-child ) {
     padding-bottom: 24px;
 }
 
