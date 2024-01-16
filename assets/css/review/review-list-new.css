@@ -240,7 +240,8 @@
 }
 
 
-{
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
+.tcb-post-content > ol:not( .legal-override ) {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
