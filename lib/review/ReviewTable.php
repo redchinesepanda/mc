@@ -399,6 +399,10 @@ class ReviewTable
 
 			if ( $tr_all->length > 0 )
 			{
+				LegalDebug::debug( [
+					$tr_all->item( 0 )->childNodes->length
+				] );
+
 				if ( $tr_all->item( 0 )->childNodes->length > 3 )
 				{
 					// $scroll = $dom->createElement( 'div' );
