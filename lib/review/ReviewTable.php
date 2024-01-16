@@ -111,8 +111,12 @@ class ReviewTable
 			$dom,
 
 			// '//table[not([contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
+			
+			'//table[not(self::node()[contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
 
-			'//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])]'
+			// '//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])]'
+
+			// .//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])][not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-column ")])][not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-column-3 ")])]
 		);
 	}
 
