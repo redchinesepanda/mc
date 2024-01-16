@@ -411,10 +411,10 @@ class ReviewTable
 
 			if ( $tr_all->length > 0 )
 			{
-				if ( self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length > 2 )
-				{
+				// if ( self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length > 2 )
+				// {
 					self::set_scroll_x_wrapper( $dom, $table );
-				}
+				// }
 			}
 		}
 
