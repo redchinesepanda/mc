@@ -244,6 +244,7 @@
     color: rgb(89, 151, 227);
     text-align: center; */
     line-height: 22px;
+    text-align: center;
 }
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
