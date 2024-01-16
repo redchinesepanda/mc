@@ -327,7 +327,7 @@ class BaseHeader
 			if ( self::check_root_url( $language ) )
 			{
 				$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
-			}
+			} 
 		}
 
 		return $prefix;
