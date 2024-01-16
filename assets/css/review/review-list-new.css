@@ -39,11 +39,13 @@
     .tcb-post-content ul:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
     .tcb-post-content ol:not( .legal-override ):not( [ style ] ) li:not( .legal-override ),
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) li:not( .legal-override ) {
-        padding-left: 34px;
+        /* padding-left: 34px; */
+        padding-left: calc(24px + 8px); /*правило для pros & cons*/
     }
     
     .tcb-post-content li::before {
-        margin-left: -34px;
+        /* margin-left: -34px; */
+        margin-left: calc(-24px + -8px); /*правило для pros & cons*/
     }
 
     /* Width and Height */
@@ -151,7 +153,7 @@
 
 .tcb-post-content ul:not( .legal-highlight ):not( .legal-sitemap ) li:not( :last-child ),
 .tcb-post-content ol:not( .menu__box ) li:not( :last-child ) {
-    padding-bottom: 24px;
+    padding-bottom: 18px;
 }
 
 .tcb-post-content ul.legal-highlight li {
@@ -207,10 +209,10 @@
 	list-style-image: none;
 }
 
-.tcb-post-content ol:not( .menu__box ) > li::before {
+/* .tcb-post-content ol:not( .menu__box ) > li::before {
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
-}
+} */
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
     background-color: rgb(89, 151, 227);
@@ -220,9 +222,10 @@
 
 .tcb-post-content ol:not( .menu__box ) > li::before {
     font-weight: 600;
-    line-height: 20px;
+    /* line-height: 20px;
     color: rgb(89, 151, 227);
-    text-align: center;
+    text-align: center; */
+    line-height: 22px;
 }
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
@@ -230,7 +233,8 @@
 }
 
 .tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
-.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li
+.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li,
+.tcb-post-content ol:not( .menu__box ) > li::before
 {
     color: var( --Base-base-09, #0A0A0A );
     font-family: var( --legal-font-primary );
@@ -238,8 +242,9 @@
 }
 
 
-{
-    font-size: 14px;
+.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
+.tcb-post-content > ol:not( .legal-override ) {
+    font-size: 16px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 22px;
 }
