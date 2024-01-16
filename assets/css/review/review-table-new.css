@@ -2,22 +2,15 @@
 {
     /* Review Display */
 
-    .tcb-post-content table
+    /* .tcb-post-content table
     {
         display: block;
-        /* overflow-x: auto; */
     }
-
-    /* .tcb-post-content table > *
-    {
-        display: table;
-        width: 100%;
-    } */
 
     .tcb-post-content table
     {
         overflow-x: scroll;
-    }
+    } */
 }
 
 @media screen and ( min-width: 960px )
