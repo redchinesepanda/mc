@@ -219,10 +219,10 @@
 
 /* Review Width and Height */
 
-/* .tcb-post-content li::before {
+.tcb-post-content ol > li::before {
     width: 24px;
     height: 24px;
-} */
+}
 
 /* Review Background */
 
