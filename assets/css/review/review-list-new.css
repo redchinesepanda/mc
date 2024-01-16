@@ -165,14 +165,14 @@
 	margin-left: 0px;
 }
 
-.tcb-post-content li::before {
+/* .tcb-post-content li::before {
     margin-right: 10px;
-}
+} */
 
-.tcb-post-content ul li::before {
+/* .tcb-post-content ul li::before {
 	margin-bottom: -8px;
 }
-
+ */
 /* Review Width and Height */
 
 .tcb-post-content li::before {
