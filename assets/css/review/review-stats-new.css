@@ -73,6 +73,12 @@
     background-color: var( --Primitives-purple-40 );
 }
 
+.review-stats .item-value
+{
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
 /* Stats Typography */ 
 
 .review-stats .item-title
