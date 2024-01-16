@@ -226,15 +226,19 @@ class OopsMain
 
     public static function check_oops()
     {
-        LegalDebug::debug( [
-            self::get_args(), 
-
-            self::get_args( '-' ),
-        ] );
-
         $query1 = new WP_Query( self::get_args() );
 
         $query2 = new WP_Query( self::get_args( '-' ) );
+        
+        LegalDebug::debug( [
+            self::get_args(),
+
+            $query1->found_posts,
+
+            self::get_args( '-' ),
+
+            $query2->found_posts,
+        ] );
         
         return ( $query1->found_posts || $query2->found_posts );
     }
