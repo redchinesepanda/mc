@@ -2,10 +2,10 @@
 {
     /* Review Display */
 
-    /* .tcb-post-content table
+    .tcb-post-content table
     {
-        display: block;
-    } */
+        width: 100%;
+    }
 
     .tcb-post-content .legal-scroll-x
     {
