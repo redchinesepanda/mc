@@ -295,6 +295,14 @@ class BaseHeader
 		return $result;
 	}
 
+	const PREFIX = [
+		'en',
+
+		'es',
+
+		'br',
+	];
+
 	public static function get_title_prefix( $language )
 	{
 		// LegalDebug::debug( [
@@ -304,8 +312,8 @@ class BaseHeader
 		// ] );
 
 		$prefix = '';
-/* 
-		if ( !TemplateMain::check_new() )
+
+		if ( !TemplateMain::check_new() && !in_array( WPMLMain::current_language(), self::PREFIX ) )
 		{
 			$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
 
@@ -320,7 +328,7 @@ class BaseHeader
 			{
 				$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
 			}
-		} */
+		}
 
 		return $prefix;
 	}
