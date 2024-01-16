@@ -110,7 +110,9 @@ class ReviewTable
 		return self::get_nodes(
 			$dom,
 
-			'//table[not([contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
+			// '//table[not([contains(@class, \'' . self::CLASSES[ 'scroll' ] . '\')])]'
+
+			'.//table[not(self::node()[contains(concat(" ",normalize-space(@class)," ")," legal-scroll ")])]'
 		);
 	}
 
