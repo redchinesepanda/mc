@@ -35,6 +35,10 @@
 	padding-bottom: 18px;
 }
 
+.tcb-post-content .legal-faq-title ~ .legal-faq-description li:not( :last-of-type ){
+	padding-bottom: 24px;
+}
+
 /* .tcb-post-content .legal-faq-title ~ .legal-faq-description:last-of-type {
 	padding-bottom: 28px;
 } */
