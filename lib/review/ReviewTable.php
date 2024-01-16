@@ -75,7 +75,7 @@ class ReviewTable
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter( 'the_content', [ $handler, 'get_content' ], 9 );
+		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
 
 	// public static function get_nodes_tbody_all( $dom )
@@ -411,7 +411,7 @@ class ReviewTable
 
 			if ( $tr_all->length > 0 )
 			{
-				if ( self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length > 3 )
+				if ( self::get_nodes_th_td( $dom, $tr_all->item( 0 ) )->length > 2 )
 				{
 					self::set_scroll_x_wrapper( $dom, $table );
 				}
