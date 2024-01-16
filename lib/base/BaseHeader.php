@@ -301,7 +301,7 @@ class BaseHeader
 		'es',
 
 		'br',
-	];
+	]; 
 
 	public static function get_title_prefix( $language )
 	{
