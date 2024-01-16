@@ -304,7 +304,7 @@ class BaseHeader
 		// ] );
 
 		$prefix = '';
-
+/* 
 		if ( !TemplateMain::check_new() )
 		{
 			$prefix = __( BaseMain::TEXT[ 'betting-sites' ], ToolLoco::TEXTDOMAIN );
@@ -320,7 +320,7 @@ class BaseHeader
 			{
 				$prefix = __( BaseMain::TEXT[ 'gambling-sites' ], ToolLoco::TEXTDOMAIN );
 			}
-		}
+		} */
 
 		return $prefix;
 	}
