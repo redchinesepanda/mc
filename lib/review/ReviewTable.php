@@ -367,6 +367,17 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
+	public static function set_scroll_x_wrapper( $dom, $table )
+	{
+		$scroll = $dom->createElement( 'div' );
+
+		$scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
+
+		$table->parentNode->insertBefore( $scroll, $table );
+
+		$scroll->appendChild( $table );
+	}
+
 	public static function set_scroll_x( $content )
 	{
 		if ( !ReviewMain::check() )
@@ -384,28 +395,23 @@ class ReviewTable
 
 		foreach ( $tables as $table )
 		{
-			// $class_table = $table->getAttribute( 'class' );
+			$tr_all = $table->getElementsByTagName( 'tr' );
 
-			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+			if ( $tr_all->length > 0 )
+			{
+				if ( $td_all->item( 0 )->childNodes->length > 3 )
+				{
+					// $scroll = $dom->createElement( 'div' );
 
-			// $class_scroll = self::CLASSES[ 'scroll' ];
+					// $scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
+		
+					// $table->parentNode->insertBefore( $scroll, $table );
+		
+					// $scroll->appendChild( $table );
 
-			// if ( str_contains( $class_table, self::CLASSES[ 'full-width' ] ) )
-			// {
-			// 	$class_table = str_replace( ' ' . self::CLASSES[ 'full-width' ], '', $class_table );
-
-			// 	$class_scroll .= ' ' . self::CLASSES[ 'full-width' ] ;
-			// }
-
-			// $table->setAttribute( 'class', $class_table );
-
-			$scroll = $dom->createElement( 'div' );
-
-			$scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
-
-			$table->parentNode->insertBefore( $scroll, $table );
-
-			$scroll->appendChild( $table );
+					self::set_scroll_x_wrapper( $dom, $table )
+				}
+			}
 		}
 
 		return $dom->saveHTML( $dom );
