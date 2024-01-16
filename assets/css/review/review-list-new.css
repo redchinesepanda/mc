@@ -41,11 +41,14 @@
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) li:not( .legal-override ) {
         /* padding-left: 34px; */
         padding-left: calc(24px + 8px); /*правило для pros & cons*/
+        position: relative;
     }
     
     .tcb-post-content li::before {
         /* margin-left: -34px; */
-        margin-left: calc(-24px + -8px); /*правило для pros & cons*/
+       /*  margin-left: calc(-24px + -8px); */ 
+       position: absolute; /*правило для pros & cons*/
+       left: 0px;
     }
 
     /* Width and Height */
