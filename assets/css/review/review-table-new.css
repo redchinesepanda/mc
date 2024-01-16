@@ -8,11 +8,11 @@
         overflow-x: auto;
     }
 
-    .tcb-post-content table > *
+    /* .tcb-post-content table > *
     {
         display: table;
         width: 100%;
-    }
+    } */
 
     .tcb-post-content table
     {
