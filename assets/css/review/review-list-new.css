@@ -207,7 +207,11 @@
 .legal-bonus ul:not( .legal-list-image ) li:before,
 .billet ul:not( .legal-list-image ) li:before,
 .billet-mega-content > ul:not( .legal-list-image ):not( .legal-list-pros ):not( .legal-list-cons ) li:before {
-    background-image: url( '../../img/review/review-ul.svg' );
+    /* background-image: url( '../../img/review/review-ul.svg' ); */
+    content: '\F107';
+    font-family: var(--legal-font-icons);
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .tcb-post-content > ul.legal-list-pros li:before,
