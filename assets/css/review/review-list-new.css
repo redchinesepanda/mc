@@ -249,8 +249,7 @@
     content: '\F10E';
 }
 
-.tcb-post-content ul li:before,
- {
+.tcb-post-content ul li:before {
     font-family: var(--legal-font-icons);
     font-size: 24px;
     line-height: 24px;
