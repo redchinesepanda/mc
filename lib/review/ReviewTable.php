@@ -129,16 +129,16 @@ class ReviewTable
 		);
 	}
 
-	public static function get_nodes_th_td( $dom, $node )
-	{
-		return self::get_nodes(
-			$dom,
+	// public static function get_nodes_th_td( $dom, $node )
+	// {
+	// 	return self::get_nodes(
+	// 		$dom,
 			
-			'td|th',
+	// 		'td|th',
 
-			$node
-		);
-	}
+	// 		$node
+	// 	);
+	// }
 
 	public static function get_nodes( $dom, $query, $node = null )
 	{
@@ -481,9 +481,9 @@ class ReviewTable
 	{
 		$content = self::set_tbody( $content );
 
-		$content = self::set_scroll( $content );
-
 		$content = self::set_scroll_x( $content );
+
+		$content = self::set_scroll( $content );
 
 		$content = self::set_th( $content );
 
