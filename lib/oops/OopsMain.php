@@ -114,6 +114,13 @@ class OopsMain
             ];
         }
 
+        $lang = WPMLMain::current_language();
+
+        if ( $lang == 'en' )
+        {
+            $lang = 'uk';
+        }
+
         return [
             'numberposts' => -1,
             
@@ -123,7 +130,7 @@ class OopsMain
 
             'suppress_filters' => 0,
             
-            's' => '"' . $prefix . WPMLMain::current_language() . '"',
+            's' => '"' . $prefix . $lang . '"',
 
             'meta_query' =>
             [
@@ -229,7 +236,7 @@ class OopsMain
         $query1 = new WP_Query( self::get_args() );
 
         $query2 = new WP_Query( self::get_args( '-' ) );
-        
+
         LegalDebug::debug( [
             self::get_args(),
 
