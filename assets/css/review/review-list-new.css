@@ -189,6 +189,13 @@
     padding-left: calc(24px + 12px);
 }
 
+.bonus-content > ul li:not(:last-child),
+.billet-description > ul li:not(:last-child),
+.bonus-content > ol li:not(:last-child),
+.billet-description > ol li:not(:last-child) {
+    padding-bottom: 24px;
+}
+
 .tcb-post-content li > ul,
 .tcb-post-content li > ol {
    /*  padding-top: 15px; */
@@ -199,7 +206,11 @@
 }
 
 .tcb-post-content li > ul li:not(:last-child),
-.tcb-post-content li > ol li:not(:last-child){
+.tcb-post-content li > ol li:not(:last-child),
+.bonus-content li > ul li:not(:last-child),
+.bonus-content li > ol li:not(:last-child),
+.billet-description li > ul li:not(:last-child),
+.billet-description li > ol li:not(:last-child) {
     padding-bottom: 16px;
 }
 
