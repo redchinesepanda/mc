@@ -101,11 +101,11 @@ class ReviewMain
             'ver' => '1.0.1',
         ],
 
-        'review-main-new' => [
+      /*   'review-main-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main-new.css',
 
 			'ver' => '1.0.0',
-		],
+		], */
 
         // <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
@@ -114,6 +114,14 @@ class ReviewMain
 
         //     'ver' => '1.0.0',
         // ],
+    ];
+
+    const CSS_NEW = [
+        'review-main-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-main-new.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     // public static function style_attributes( $html, $handle )
@@ -126,11 +134,29 @@ class ReviewMain
     //     return $html;
     // }
 
-    public static function register_style( $styles = [] )
+/*     public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
             if ( empty( $styles ) ) {
                 $styles = self::CSS;
+            }
+
+            ToolEnqueue::register_style( $styles );
+        }
+    } */
+
+    public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                if ( TemplateMain::check_code() )
+                {
+                    $styles = self::CSS_NEW;
+                }
+                else
+                {
+                    $styles = self::CSS;
+                }
             }
 
             ToolEnqueue::register_style( $styles );
