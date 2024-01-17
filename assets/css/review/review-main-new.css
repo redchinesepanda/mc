@@ -95,7 +95,8 @@
 }
 
 .tcb-post-content h1:not( .legal-override ) {
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
+    padding-bottom: 24px;
     margin: 0px;
 }
 
@@ -107,7 +108,8 @@
 .tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
     padding-top: 0px;
     /* padding-bottom: 30px; */
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    padding-bottom: 18px;
     margin: 0px;
 }
 

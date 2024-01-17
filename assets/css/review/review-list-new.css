@@ -261,10 +261,10 @@
     padding-bottom: 0px;
 }
 
-.tcb-post-content ul:not( .legal-override ):not( [style] ) li:not( .legal-override ),
+/* .tcb-post-content ul:not( .legal-override ):not( [style] ) li:not( .legal-override ),
 .tcb-post-content ol:not( .menu__box ) li:not( .legal-override ) {
 	margin-left: 0px;
-}
+} */
 
 /* .tcb-post-content li::before {
     margin-right: 10px;
