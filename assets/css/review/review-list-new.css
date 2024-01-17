@@ -128,7 +128,7 @@
 }
 
 .tcb-post-content ul li::before {
-	content: '';
+	/* content: ''; */
     display: inline-block;
 }
 
