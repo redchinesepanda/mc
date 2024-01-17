@@ -321,6 +321,7 @@
 }
 
 .tcb-post-content ol:not( .menu__box ) > li::before {
+    font-size: 16px;
     font-weight: 600;
     /* line-height: 20px;
     color: rgb(89, 151, 227);
