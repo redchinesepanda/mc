@@ -115,7 +115,8 @@
 .icon-match:before {
     content: "\f127";
 }
-.icon-muay-thai, 
+.icon-ufc,
+.icon-ufc-mma,
 .icon-mma:before {
     content: "\f128";
 }
