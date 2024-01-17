@@ -182,10 +182,10 @@
     padding-left: 0px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):last-child li,
-.billet-description > ul:not( .legal-override ):not( [style] ):last-child li,
-.bonus-content > ol:not( .legal-override ):last-child li,
-.billet-description > ol:not( .legal-override ):last-child li {
+.bonus-content > ul li,
+.billet-description > ul li,
+.bonus-content > ol li,
+.billet-description > ol li {
     padding-left: calc(24px + 12px);
 }
 
