@@ -338,5 +338,5 @@
 .tcb-post-content .legal-list-image li::before
 {
     font-family: var( --legal-font-icons-sport );
-    font-style: normal;
+    font-style: normal; 
 }
