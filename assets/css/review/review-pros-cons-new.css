@@ -47,6 +47,10 @@ div.legal-pros-cons {
 	padding-left: 0px; /*Временное правило*/
 }
 
+.tcb-post-content .legal-pros-cons li {
+	padding-left: calc(24px + 8px);
+}
+
 .tcb-post-content .legal-pros-cons li:not( :last-child ) {
 	padding-bottom: 18px;
 }
@@ -119,11 +123,11 @@ div.legal-pros-cons {
 	line-height: 22px;
 }
 
-.legal-pros-cons li:before {
+/* .legal-pros-cons li:before {
 	font-family: var(--legal-font-icons);
 	line-height: 24px;
 	font-size: 24px;
-}
+} */
 
 .legal-pros-cons .legal-pros ul li:before {
 	content: "\F10D";
