@@ -48,8 +48,8 @@
 .icon-billiard:before {
     content: "\f10c";
 }
-.icon-list-rowing:before,
-.icon-list-boat-race:before,
+.icon-rowing:before,
+.icon-boat-race:before,
 .icon-boat-racing:before {
     content: "\f10d";
 }
@@ -96,11 +96,11 @@
 .icon-floorball:before {
     content: "\f118";
 }
-.icon-list-beach-football:before,
-.icon-list-soccer:before,
-.icon-list-gaelic-football:before,
-.icon-list-futsal:before,
-.icon-list-futsal-4x4:before,
+.icon-beach-football:before,
+.icon-soccer:before,
+.icon-gaelic-football:before,
+.icon-futsal:before,
+.icon-futsal-4x4:before,
 .icon-football:before {
     content: "\f119";
 }
@@ -211,7 +211,7 @@
 .icon-skiing:before {
     content: "\f135";
 }
-.icon-list-ski-jumping:before,
+.icon-ski-jumping:before,
 .icon-skyjumping:before {
     content: "\f136";
 }
