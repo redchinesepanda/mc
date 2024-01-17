@@ -156,6 +156,8 @@
 .icon-ski-race:before {
     content: "\f134";
 }
+.icon-alpine-skiing:before,
+.icon-alpine:before,
 .icon-skiing:before {
     content: "\f135";
 }
