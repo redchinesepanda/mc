@@ -25,17 +25,6 @@
 
     /* Review Position */
 
-    .tcb-post-content > ul:not( [style] ),
-    .tcb-post-content > ol {
-        /* padding-left: 30px; */
-        padding-left: 0px;
-    }
-
-    .tcb-post-content > ul:not( [style] ) li,
-    .tcb-post-content > ol li {
-        padding-left: calc(24px + 12px);
-    }
-
     /* .tcb-post-content ul:not( .legal-override ):not( [style] ) ul,
     .tcb-post-content ol:not( .legal-override ):not( [ class ] ) ol{
         padding-left: 0px;
@@ -133,6 +122,17 @@
 }
 
 /* Review Position */
+
+.tcb-post-content > ul:not( [style] ),
+.tcb-post-content > ol {
+    /* padding-left: 30px; */
+    padding-left: 0px;
+}
+
+.tcb-post-content > ul:not( [style] ) li,
+.tcb-post-content > ol li {
+    padding-left: calc(24px + 12px);
+}
 
 .tcb-post-content ul li,
 .tcb-post-content ol li {
