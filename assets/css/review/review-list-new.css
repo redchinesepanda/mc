@@ -53,11 +53,13 @@
     /* Width and Height */
 
     .tcb-post-content .legal-list-2 li {
-        width: 50%;
+        /* width: 50%; */
+        width: calc(50% - 34px);
     }
 
     .tcb-post-content .legal-list-3 li {
-        width: 33.333%;
+        /* width: 33.333%; */
+        width: calc(33.333% - 34px);
     }
 
     .tcb-post-content .legal-list-4 li {
