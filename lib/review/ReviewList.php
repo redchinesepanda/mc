@@ -61,6 +61,11 @@ class ReviewList
 
     public static function inline_style()
     {
+        if ( TemplateMain::check_new() )
+        {
+            return '';
+        }
+
         if ( !ReviewMain::check() ) {
             return '';
         }
