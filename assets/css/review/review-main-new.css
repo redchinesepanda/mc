@@ -1,0 +1,196 @@
+/* review-main-new */
+
+@media screen and ( max-width: 767px )
+{
+    /* Review Position */
+
+    .tcb-post-content.thrv_wrapper:not( .legal-off-style ) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Width and Height */
+
+    .tcb-post-content iframe {
+        width: 100%;
+    }
+}
+
+/* Review Display */
+
+#content .main-content-background {
+    display: none;
+}
+
+.tcb-post-content hr {
+    clear: both;
+}
+
+.tcb-post-content iframe {
+    display: block;
+}
+
+/* Review Position */
+
+.tcb-post-content {
+    margin: 0px;
+}
+
+.tcb-post-content.thrv_wrapper:not( .legal-override ) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* padding-top: 30px; */
+    padding-bottom: 30px;
+}
+
+.tcb-post-content h1:not( .legal-override ) {
+    padding-bottom: 30px;
+    margin: 0px;
+}
+
+.tcb-post-content h2:not( .legal-override ) {
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
+    padding-top: 0px;
+    /* padding-bottom: 30px; */
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.bonus-content > p:not( :last-child ):not( .legal-override ),
+.billet-description > p:not( :last-child ):not( .legal-override ),
+.billet .billet-description-full > p:not( :last-child ):not( .legal-override ) {
+    padding-bottom: 15px;
+}
+
+.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.tcb-post-content h4:not( .legal-override ) {
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.tcb-post-content h5:not( .legal-override ) {
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.tcb-post-content .legal-contextbox {
+    padding-left: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+}
+
+.tcb-post-content .legal-attention,
+.tcb-post-content .legal-highlight:not( .legal-override ) {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.tcb-post-content iframe {
+    margin: 0px auto;
+}
+
+/* Review Background */
+
+#content {
+    background-color: #FAFCFE;
+}
+
+.tcb-post-content .legal-contextbox {
+    border-left: 2px solid rgb(89, 151, 227);
+}
+
+.tcb-post-content .legal-highlight {
+    border-radius: 20px;
+}
+
+.tcb-post-content .legal-attention {
+    background-color: rgb(255, 94, 106);
+    background-image: linear-gradient( rgb(255,94,106) 0%, rgb(236,70,82) 99% );
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
+}
+
+.tcb-post-content hr {
+    background-color: rgb(89, 151, 227);
+    border: unset;
+}
+
+/* Review Typography */
+
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
+/* .tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
+.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li */
+{
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgba(11, 72, 27, 0.85);
+}
+
+.tcb-post-content h3 {
+    font-family: "Source Sans Pro";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33.6px;
+    color: rgb(12, 17, 21);
+}
+
+.tcb-post-content .legal-attention,
+.tcb-post-content .legal-attention a {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: center;
+}
+
+.tcb-post-content .legal-attention {
+    color: rgb(255, 255, 255);
+}
+
+.tcb-post-content .legal-attention a {
+    color: #cfcfcf;
+}
+.tcb-post-content .legal-attention a:hover {
+    color: #cfcfcf;
+}
+
+.tcb-post-content .legal-attention a u {
+    text-decoration: none;
+}
+
+/* Buttons */
+
+.tcb-post-content a.legal-button {
+	display: inline-block;
+
+	padding: 2px 10px;
+	margin-right: 10px;
+
+	border-radius: 20px;
+	border: 1px solid #5997e3;
+}
+
+.tcb-post-content a.legal-button:hover {
+	background: unset;
+}
+
+.tcb-post-content a.legal-button,
+.tcb-post-content a.legal-button:hover {
+	box-shadow: 0 0 10px #e4e4e4;
+	font-size: 14px;
+	text-align: center;
+	color: #646363;
+}
