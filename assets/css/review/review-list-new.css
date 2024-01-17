@@ -158,7 +158,8 @@
 .billet-description > ol:not( .legal-override ),
 .billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet .billet-description-full > ol:not( .legal-override ) {
-    padding-top: 0px;
+    /* padding-top: 0px; */
+    padding-top: 12px;
 }
 
 .tcb-post-content .legal-highlight {
@@ -178,7 +179,8 @@
 .billet-description > ul:not( .legal-override ):not( [style] ):last-child,
 .bonus-content > ol:not( .legal-override ):last-child,
 .billet-description > ol:not( .legal-override ):last-child {
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; */
+    padding-bottom: 12px;
     padding-left: 0px;
 }
 
