@@ -194,7 +194,7 @@ class ReviewList
                     );
 
                     $element->setAttribute( 'class', $element_class );
-                }
+                } 
             }
 		}
 
