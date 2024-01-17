@@ -2,13 +2,26 @@
 {
     /* Review Position */
 
-    .tcb-post-content li:not( .legal-override ) {
+ /*    .tcb-post-content li:not( .legal-override ) {
         padding-left: 34px;
-    }
+    } */
     
-    .tcb-post-content li::before {
+/*     .tcb-post-content li::before {
         margin-left: -34px;
-    }
+    } */
+
+      /* Typography */
+
+      .tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
+      .tcb-post-content > ol:not( .legal-override ),
+      .bonus-content > ul li,
+      .billet-description > ul li,
+      .bonus-content > ol li,
+      .billet-description > ol li {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+      }
 }
 
 @media screen and ( min-width: 768px )
@@ -37,13 +50,6 @@
         padding-left: calc(24px + 8px); 
         position: relative;
     } */
-    
-    .tcb-post-content li::before {
-        /* margin-left: -34px; */
-       /*  margin-left: calc(-24px + -8px); */ 
-       position: absolute; /*правило для pros & cons*/
-       left: 0px;
-    }
 
     /* Width and Height */
 
@@ -57,6 +63,19 @@
 
     .tcb-post-content .legal-list-4 li {
         width: 25%;
+    }
+
+    /* Typography */
+
+    .tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
+    .tcb-post-content > ol:not( .legal-override ),
+    .bonus-content > ul li,
+    .billet-description > ul li,
+    .bonus-content > ol li,
+    .billet-description > ol li {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
     }
 }
 
@@ -122,6 +141,13 @@
 }
 
 /* Review Position */
+
+.tcb-post-content li::before {
+    /* margin-left: -34px; */
+   /*  margin-left: calc(-24px + -8px); */ 
+   position: absolute; /*правило для pros & cons*/
+   left: 0px;
+}
 
 .tcb-post-content > ul:not( [style] ),
 .tcb-post-content > ol {
@@ -257,17 +283,6 @@
 }
 
 /* Typography */
-
-.tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
-.tcb-post-content > ol:not( .legal-override ),
-.bonus-content > ul li,
-.billet-description > ul li,
-.bonus-content > ol li,
-.billet-description > ol li {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
-}
 
 /* .tcb-post-content ul li,  */
 .tcb-post-content ul > li,
