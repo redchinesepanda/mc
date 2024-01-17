@@ -129,7 +129,7 @@
 
 .tcb-post-content ul li::before {
 	/* content: ''; */ 
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 /* Review Position */
