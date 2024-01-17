@@ -155,20 +155,24 @@
 	margin-bottom: 0px;
 }
 
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( .legal-list-pros ):not( .legal-list-cons ) {
+/* .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ):not( .legal-list-pros ):not( .legal-list-cons ) {
 	padding-top: 0px;
     padding-bottom: 15px;
-}
+} */
 
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros,
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons {
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-pros,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-cons,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( .legal-highlight ):not( [style] ) {
 	padding-top: 12px;
     padding-bottom: 12px;
 	padding-left: 0px;
 }
 
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li,
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li {
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( .legal-highlight ):not( [style] ) {
 	padding-left: calc(24px + 12px);
 }
 
