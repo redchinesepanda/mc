@@ -115,8 +115,8 @@
 .icon-match:before {
     content: "\f127";
 }
-.icon-ufc, 
-.icon-ufc-mma,
+.icon-ufc:before, 
+.icon-ufc-mma:before,
 .icon-mma:before {
     content: "\f128";
 }
