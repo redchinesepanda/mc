@@ -177,16 +177,13 @@
 }
 
 .tcb-post-content > .legal-list-image li {
+    padding-bottom: 15px;
     padding-left: 34px;
 }
 
 .tcb-post-content > ul:not( .legal-highlight ):not( .legal-faq-description ):not( [style] ):not( .legal-list-image ) > li:not( :last-child ),
 .tcb-post-content > ol:not( .legal-faq-description ) > li:not( :last-child ) {
     padding-bottom: 24px;
-}
-
-.tcb-post-content > .legal-list-image li:not( :last-child ) {
-    padding-bottom: 15px;
 }
 
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
