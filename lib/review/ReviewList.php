@@ -85,6 +85,15 @@ class ReviewList
 		return implode( ' ', $style );
 	}
 
+    public static function get_label( $node )
+    {
+        $label = strtolower( $node->textContent );
+
+        $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
+
+        return str_replace( [ ' ', '/' ], '-', $label );
+    }
+
     public static function get_data( $node )
     {
         $items = [];
@@ -95,14 +104,18 @@ class ReviewList
         {
             foreach ( $elements as $element )
             {
-                $label = strtolower( $element->textContent );
+                // $label = strtolower( $element->textContent );
 
-                $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
+                // $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
 
-                $label = str_replace( [ ' ', '/' ], '-', $label );
+                // $label = str_replace( [ ' ', '/' ], '-', $label );
+
+                // $items[] = [
+                //     'label' => $label,
+                // ];
 
                 $items[] = [
-                    'label' => $label,
+                    'label' => self::get_label( $element ),
                 ];
             }
         }
@@ -148,7 +161,17 @@ class ReviewList
 
 		foreach ( $nodes as $node_id => $node )
         {
-            $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
+            // $node_class = $node->getAttribute( 'class' ) . ' ' . self::CLASSES[ 'base' ] . '-' . $node_id;
+
+            $node_class = implode(
+                ' ',
+
+                [
+                    $node->getAttribute( 'class' ),
+
+                    self::CLASSES[ 'base' ] . '-' . $node_id,
+                ]
+            );
 
             $node->setAttribute( 'class', $node_class );
 
@@ -158,7 +181,17 @@ class ReviewList
             {
                 foreach ( $elements as $element_id => $element )
                 {
-                    $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
+                    // $element_class = self::CLASSES[ 'item' ] . '-' . $element_id;
+
+                    $element_class = implode(
+                        ' ',
+        
+                        [
+                            self::CLASSES[ 'item' ] . '-' . $element_id,
+        
+                            self::get_label( $element ),
+                        ]
+                    );
 
                     $element->setAttribute( 'class', $element_class );
                 }
