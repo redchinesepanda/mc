@@ -138,7 +138,9 @@ class ReviewGroup
 
         if ( in_array( WPMLMain::current_language(), [ 'br' ] ) )
         {
-            $label[ 'title' ] = '';
+            // $label[ 'title' ] = '';
+
+            unset( $label[ 'title' ] );
 
             $type = true;
         }
