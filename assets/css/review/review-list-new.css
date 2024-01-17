@@ -254,7 +254,7 @@
     background-color: rgb(89, 151, 227);
 }
 
-/* Review Typography */
+/* Typography */
 
 .tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
 .tcb-post-content > ol:not( .legal-override ),
@@ -331,4 +331,10 @@
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
     color: #ffffff;
+}
+
+.tcb-post-content .legal-list-image li::before
+{
+    font-family: var( --legal-font-icons-sport );
+    font-style: normal;
 }
