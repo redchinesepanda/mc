@@ -2,13 +2,13 @@
 {
     /* Review Position */
 
-    .tcb-post-content li:not( .legal-override ) {
+ /*    .tcb-post-content li:not( .legal-override ) {
         padding-left: 34px;
-    }
+    } */
     
-    .tcb-post-content li::before {
+/*     .tcb-post-content li::before {
         margin-left: -34px;
-    }
+    } */
 }
 
 @media screen and ( min-width: 768px )
@@ -37,13 +37,6 @@
         padding-left: calc(24px + 8px); 
         position: relative;
     } */
-    
-    .tcb-post-content li::before {
-        /* margin-left: -34px; */
-       /*  margin-left: calc(-24px + -8px); */ 
-       position: absolute; /*правило для pros & cons*/
-       left: 0px;
-    }
 
     /* Width and Height */
 
@@ -122,6 +115,13 @@
 }
 
 /* Review Position */
+
+.tcb-post-content li::before {
+    /* margin-left: -34px; */
+   /*  margin-left: calc(-24px + -8px); */ 
+   position: absolute; /*правило для pros & cons*/
+   left: 0px;
+}
 
 .tcb-post-content > ul:not( [style] ),
 .tcb-post-content > ol {
