@@ -189,7 +189,7 @@ class ReviewList
                         [
                             self::CLASSES[ 'item' ] . '-' . $element_id,
         
-                            'legal-list-' . self::get_label( $element ),
+                            'image-item-' . self::get_label( $element ),
                         ]
                     );
 
