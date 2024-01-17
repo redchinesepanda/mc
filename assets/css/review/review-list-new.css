@@ -257,7 +257,11 @@
 /* Review Typography */
 
 .tcb-post-content > ul:not( .legal-override ):not( .legal-highlight ):not( .legal-faq-description ):not( [style] ),
-.tcb-post-content > ol:not( .legal-override ) {
+.tcb-post-content > ol:not( .legal-override ),
+.bonus-content > ul li,
+.billet-description > ul li,
+.bonus-content > ol li,
+.billet-description > ol li {
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
