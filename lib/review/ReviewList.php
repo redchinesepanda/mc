@@ -16,6 +16,12 @@ class ReviewList
 
             'ver' => '1.0.0',
         ],
+
+        'review-list-icons' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-icons.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_style()
@@ -189,7 +195,7 @@ class ReviewList
                         [
                             self::CLASSES[ 'item' ] . '-' . $element_id,
         
-                            'image-item-' . self::get_label( $element ),
+                            'icon-' . self::get_label( $element ),
                         ]
                     );
 
