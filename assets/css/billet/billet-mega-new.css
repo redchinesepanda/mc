@@ -89,8 +89,9 @@
 
 .legal-billet-mega.legal-horizontal .billet-mega-content {
 	display: flex;
-	align-items: center;
-	column-gap: 50px;
+	/* align-items: center; */
+	/* column-gap: 50px; */
+	flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
