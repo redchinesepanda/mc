@@ -272,13 +272,13 @@ class ReviewCounter
 				$rating += $item[ 'value' ];
 			}
 
+			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
+
 			LegalDebug::debug( [
 				'ReviewCounter' => 'get_counter_data',
 
 				'rating' => $rating,
 			] );
-
-			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
 		}
 
 		if ( $amount == 5 )
