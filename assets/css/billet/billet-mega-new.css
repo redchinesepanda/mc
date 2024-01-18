@@ -209,13 +209,13 @@
 }
 
 .legal-billet-mega.legal-horizontal .legal-license {
-	flex-basis: 15%;
+	/* flex-basis: 15%; */
 }
 .legal-billet-mega.legal-horizontal .legal-license ~ p {
-	flex-basis: 35%;
+	/* flex-basis: 35%; */
 }
 .legal-billet-mega.legal-horizontal .legal-license ~ p ~ ul {
-	flex-basis: 50%;
+	/* flex-basis: 50%; */
 }
 
 .legal-billet-mega.legal-default .mega-about-logo,
