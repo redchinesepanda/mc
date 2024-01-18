@@ -176,11 +176,11 @@ class ReviewCounter
 
 			$args = self::get_counter_data( $node );
 
-			LegalDebug::debug( [
-				'ReviewCounter' => 'get_content',
+			// LegalDebug::debug( [
+			// 	'ReviewCounter' => 'get_content',
 
-				'args' => $args,
-			] );
+			// 	'args' => $args,
+			// ] );
 
 			if ( !empty( $args[ 'items_overall' ] ) )
 			{
@@ -293,6 +293,12 @@ class ReviewCounter
 
 			$rating = $ovarall[ 'value' ];
 		}
+
+		LegalDebug::debug( [
+			'ReviewCounter' => 'get_counter_data',
+
+			'rating' => $rating,
+		] );
 
 		if ( $amount <= 5 )
 		{
