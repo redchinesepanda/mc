@@ -32,6 +32,11 @@ class ReviewList
 		],
     ];
 
+    public static function check_contains_list_icons()
+    {
+        return self::check_contains( self::CLASSES[ 'base' ] );
+    }
+
     public static function check_contains( $class = self::CLASSES[ 'base' ] )
     {
         if ( $post = get_post() )
@@ -48,7 +53,7 @@ class ReviewList
         {
             ReviewMain::register_style( self::CSS_NEW );
 
-            if ( self::check_contains() )
+            if ( self::check_contains_list_icons() )
             {
                 ReviewMain::register_style( self::CSS_LIST_ICONS );
             }
