@@ -9,7 +9,7 @@
 /* FAQ Typography */
 
 .tcb-post-content .legal-header-3::before {
-    content: '';
+    content: '\f119';
     font-family: var(--legal-font-icons-sport);
     font-weight: 400;
     font-size: 32px;
