@@ -11,15 +11,10 @@
 	<div class="billet-mega-about">
 		<div class="mega-about-logo"></div>
 		<?php if( !$args[ 'no-controls' ] ) : ?>
-			<?php if( !$args[ 'no-controls' ] ) : ?>
-				<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title">
-					<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title' ][ 'text' ] ?></a>
-				</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
-			<?php endif; ?>
+			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
 			<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
 				<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
 			<?php endif; ?>
-			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
 		<?php endif; ?>
 		<?php if( !empty( $args[ 'author' ] ) ) : ?>
 			<div class="mega-about-name"><?php echo $args[ 'author' ][ 'name' ] ?></div>
@@ -37,6 +32,11 @@
 		<?php endif; ?>
 	</div>
 	<div class="billet-mega-content">
+		<?php if( !$args[ 'no-controls' ] ) : ?>
+			<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title">
+				<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title' ][ 'text' ] ?></a>
+			</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
+		<?php endif; ?>
 		<?php echo $args[ 'content' ] ?>
 	</div>
 	<?php if( !empty( $args[ 'footer' ] ) ) : ?>
