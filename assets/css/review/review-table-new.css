@@ -41,11 +41,6 @@
         display: inline-table;
     }
 
-    .tcb-post-content table
-    {
-        overflow: hidden;
-    }
-
     /* Position */
 
     .tcb-post-content table tr *
@@ -121,12 +116,12 @@
 {
     caption-side: bottom;
     display: inline-table;
+    overflow: hidden;
 }
 
 .tcb-post-content .legal-scroll
 {
     max-height: 500px;
-    /* display: block; */
     overflow-y: scroll;
 }
 
