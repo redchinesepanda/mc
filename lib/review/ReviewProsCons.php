@@ -250,7 +250,7 @@ class ReviewProsCons
 
 						ToolEncode::encode( $dom->saveHTML( $node ) )
 					)
-				);
+				); 
 				
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) ); 
 			}
