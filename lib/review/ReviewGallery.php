@@ -169,7 +169,7 @@ class ReviewGallery
         if ( TemplateMain::check_new() )
         {
             return self::render_new( self::get( $attr ) );
-        }
+        } 
 
         return self::render( self::get( $attr ) );
     }
