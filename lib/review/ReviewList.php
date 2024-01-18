@@ -32,6 +32,15 @@ class ReviewList
 		],
     ];
 
+    const SELCTORS = [
+		'list' => '<li',
+	];
+
+    public static function check_contains_list()
+    {
+        return LegalComponents::check_contains( self::SELCTORS[ 'list' ] );
+    }
+
     public static function check_contains_list_icons()
     {
         return LegalComponents::check_contains( self::CLASSES[ 'base' ] );
@@ -41,7 +50,10 @@ class ReviewList
     {
         if ( TemplateMain::check_new() ) 
         {
-            ReviewMain::register_style( self::CSS_NEW );
+            if ( self::check_contains_list() )
+            {
+                ReviewMain::register_style( self::CSS_NEW );
+            }
 
             if ( self::check_contains_list_icons() )
             {
