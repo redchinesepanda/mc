@@ -10,9 +10,36 @@ class ReviewGallery
         ],
     ];
 
+    const CSS_NEW = [
+        'review-gallery' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery-new.css',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+    const SHORTCODES = [
+        'gallery' => 'gallery',
+    ];
+
+    public static function check_shortcode_gallery()
+    {
+        return LegalComponents::check_shortcode( self::SHORTCODES[ 'gallery' ] );
+    }
+
     public static function register_style()
     {
-        ReviewMain::register_style( self::CSS );
+        if ( TemplateMain::check_new() )
+        {
+            if ( self::check_shortcode_gallery() )
+            {
+                ReviewMain::register_style( self::CSS_NEW );
+            }
+        }
+        else
+        {
+            ReviewMain::register_style( self::CSS );
+        }
     }
 
     const JS = [

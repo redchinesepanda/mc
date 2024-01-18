@@ -1,0 +1,137 @@
+@media screen and ( min-width: 768px ) {
+    /* Gallery Width and Height */
+
+    .legal-imageset.columns-1 .imageset-item {
+        width: 100%;
+    }
+
+    .legal-imageset.columns-2 .imageset-item {
+        width: calc( 50% - 9px );
+    }
+
+    .legal-imageset.columns-3 .imageset-item {
+        width: calc( 33.333% - 12px );
+    }
+
+    .legal-imageset.columns-4 .imageset-item {
+        width: calc( 25% - 13.5px );
+    }
+
+    /* Background */
+
+    .tcb-post-content .legal-gallery {
+        background-size: auto;
+    }
+}
+
+@media screen and ( max-width: 767px ) {
+
+    /* Background */
+
+    .tcb-post-content .legal-gallery {
+        background-size: 90%;
+    }
+}
+
+/* Gallery Display */
+
+.tcb-post-content .legal-imageset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 18px;
+    row-gap: 18px;
+}
+
+.tcb-post-content .legal-imageset .imageset-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+/* Gallery Position */
+
+.tcb-post-content .legal-imageset .item-caption {
+    padding-top: 5px;
+}
+
+.tcb-post-content .legal-imageset {
+    padding-bottom: 30px;
+}
+
+.tcb-post-content .legal-gallery {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.tcb-post-content .legal-gallery .legal-left,
+.tcb-post-content .legal-gallery .legal-right {
+    position: absolute;
+    top: 50%;
+}
+
+.tcb-post-content .legal-gallery .legal-left {
+    left: 0px;
+}
+
+.tcb-post-content .legal-gallery .legal-right {
+    right: 0px;
+}
+  
+/* Gallery Width and Height */
+
+.tcb-post-content .legal-gallery {
+    height: 100vh;
+    width: 100%;
+}
+
+.tcb-post-content .legal-gallery .legal-left,
+.tcb-post-content .legal-gallery .legal-right {
+    width: 36px;
+    height: 66px;
+}
+  
+/* Gallery Background */
+
+.tcb-post-content .legal-gallery,
+.tcb-post-content .legal-gallery .legal-left,
+.tcb-post-content .legal-gallery .legal-right {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.tcb-post-content .legal-gallery .legal-left,
+.tcb-post-content .legal-gallery .legal-right {
+    background-size: auto;
+}
+
+.tcb-post-content .legal-gallery .legal-left {
+    background-image: url( '../../img/review/review-gallery-left.svg' );
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.tcb-post-content .legal-gallery .legal-right {
+    background-image: url( '../../img/review/review-gallery-right.svg' );
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.tcb-post-content .legal-gallery {
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: opacity 0.5s;
+}
+
+/* Gallery Typography */
+
+.tcb-post-content .legal-imageset .item-caption {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    color: rgb(105, 105, 105);
+    text-align: left;
+}
