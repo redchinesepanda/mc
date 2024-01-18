@@ -1,0 +1,2 @@
+if( prop("Slug").empty(), prop("🏇🏼 Bookmakers").first().prop("Название").lower() + "-" + prop("Locale").first().prop("Language Code"), prop("Slug") )
+;

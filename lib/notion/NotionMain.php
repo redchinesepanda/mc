@@ -14,6 +14,8 @@ require_once( 'NotionTaxonomy.php' );
 
 require_once( 'NotionContent.php' );
 
+require_once( 'NotionYoast.php' );
+
 class NotionMain
 {
 	public static function register_functions()
@@ -35,6 +37,8 @@ class NotionMain
 		NotionTaxonomy::register_functions();
 
 		NotionContent::register_functions();
+
+		NotionYoast::register_functions();
 	}
 
 	const META_FIELD = [
