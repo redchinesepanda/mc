@@ -39,9 +39,12 @@ class ReviewTable
 
 	public static function register_style()
     {
-		if ( TemplateMain::check_code() && self::check_contains_table() )
+		if ( TemplateMain::check_new() )
 		{
-			ReviewMain::register_style( self::CSS_NEW );
+			if ( self::check_contains_table() )
+			{
+				ReviewMain::register_style( self::CSS_NEW );
+			}
 		}
 		else
 		{
@@ -59,9 +62,12 @@ class ReviewTable
 
 	public static function register_script()
     {
-		if ( TemplateMain::check_new() && self::check_contains_table() )
+		if ( TemplateMain::check_new() )
 		{
-			ReviewMain::register_script( self::JS_NEW );
+			if ( self::check_contains_table() )
+			{
+				ReviewMain::register_script( self::JS_NEW );
+			}
 		}
     }
 
