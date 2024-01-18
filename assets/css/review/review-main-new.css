@@ -9,6 +9,28 @@
         padding-right: 15px;
     }
 
+    .tcb-post-content h1,
+    .tcb-post-content h2,
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        /* padding-bottom: 30px; */
+        padding-bottom: 16px;
+    }
+
+    .tcb-post-content h2 {
+        margin-top: 0px;
+        padding-top: 16px;
+    }
+
+    .tcb-post-content h2:not( :first-child ) {
+        margin-top: 28px;
+    }
+
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        padding-top: 16px;
+        margin-top: 16px;
+        /* margin: 0px; */
+    }
+
     /* Width and Height */
 
     .tcb-post-content iframe {
@@ -42,6 +64,30 @@
 
 @media screen and ( min-width: 768px )
 {
+    /* Review Position */
+
+    .tcb-post-content h1,
+    .tcb-post-content h2,
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        /* padding-bottom: 30px; */
+        padding-bottom: 24px;
+    }
+
+    .tcb-post-content h2 {
+        margin-top: 0px;
+        padding-top: 24px;
+    }
+
+    .tcb-post-content h2:not( :first-child ) {
+        margin-top: 32px;
+    }
+
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        padding-top: 14px;
+        margin-top: 24px;
+        /* margin: 0px; */
+    }
+
     /* Review Typography */
 
     .tcb-post-content h1 {
@@ -94,37 +140,15 @@
     padding-bottom: 30px;
 }
 
+.tcb-post-content h1 {
+    margin-top: 0px;
+}
+
 .tcb-post-content h1,
 .tcb-post-content h2,
 .tcb-post-content h3,
 .tcb-post-content h4 {
     margin-bottom: 0px;
-}
-
-.tcb-post-content h1,
-.tcb-post-content h2,
-.tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-    /* padding-bottom: 30px; */
-    padding-bottom: 24px;
-}
-
-.tcb-post-content h1 {
-    margin-top: 0px;
-}
-
-.tcb-post-content h2 {
-    margin-top: 0px;
-    padding-top: 24px;
-}
-
-.tcb-post-content h2:not( :first-child ) {
-    margin-top: 32px;
-}
-
-.tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-    padding-top: 14px;
-    margin-top: 24px;
-    /* margin: 0px; */
 }
 
 /* .tcb-post-content h2:not( .legal-override ) {
