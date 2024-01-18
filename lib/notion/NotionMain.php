@@ -39,6 +39,10 @@ class NotionMain
 		NotionContent::register_functions();
 
 		NotionYoast::register_functions();
+
+		LegalDebug::debug( [
+			'NotionMain' => 'register_functions', 
+		] );
 	}
 
 	const META_FIELD = [
