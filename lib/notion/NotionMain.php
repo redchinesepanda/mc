@@ -21,10 +21,6 @@ class NotionMain
 	public static function register()
 	{
 		NotionYoast::register();
-
-		LegalDebug::debug( [
-			'NotionMain' => 'register_functions', 
-		] );
 	}
 
 	public static function register_functions()
