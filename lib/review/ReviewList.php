@@ -34,17 +34,7 @@ class ReviewList
 
     public static function check_contains_list_icons()
     {
-        return self::check_contains( self::CLASSES[ 'base' ] );
-    }
-
-    public static function check_contains( $class )
-    {
-        if ( $post = get_post() )
-		{
-			return str_contains( $post->post_content, $class );
-		}
-
-		return false;
+        return LegalComponents::check_contains( self::CLASSES[ 'base' ] );
     }
 
     public static function register_style()
