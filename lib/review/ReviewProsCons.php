@@ -242,8 +242,6 @@ class ReviewProsCons
 
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
 				
-				$container[ $type ][ 'content' ] = preg_match('/^\n|\n$/', ToolEncode::encode( $dom->saveHTML( $node ) ));
-				
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) ); 
 			}
 
