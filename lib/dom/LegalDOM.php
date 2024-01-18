@@ -26,7 +26,7 @@ class LegalDOM
 
 		$dom->validateOnParse=false;
 
-		$dom->standalone=true; 
+		$dom->standalone=true;
 
 		$dom->strictErrorChecking=false;
 
