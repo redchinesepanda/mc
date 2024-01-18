@@ -94,16 +94,38 @@
     padding-bottom: 30px;
 }
 
-.tcb-post-content h1:not( .legal-override ) {
-    /* padding-bottom: 30px; */
-    padding-bottom: 24px;
-    margin: 0px;
+.tcb-post-content h1,
+.tcb-post-content h2,
+.tcb-post-content h3,
+.tcb-post-content h4 {
+    margin-bottom: 0px;
 }
 
-.tcb-post-content h2:not( .legal-override ) {
+.tcb-post-content h1,
+.tcb-post-content h2,
+.tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+    /* padding-bottom: 30px; */
+    padding-bottom: 24px;
+}
+
+.tcb-post-content h1 {
+    margin-top: 0px;
+}
+
+.tcb-post-content h2 {
+    margin-top: 40px;
+}
+
+.tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+    padding-top: 14px;
+    margin-top: 24px;
+    /* margin: 0px; */
+}
+
+/* .tcb-post-content h2:not( .legal-override ) {
     padding-bottom: 20px;
     margin: 0px;
-}
+} */
 
 .tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
     padding-top: 0px;
@@ -117,11 +139,6 @@
 .billet-description > p:not( :last-child ):not( .legal-override ),
 .billet .billet-description-full > p:not( :last-child ):not( .legal-override ) {
     padding-bottom: 15px;
-}
-
-.tcb-post-content > h3:not( .legal-override ):not( .legal-faq-title ):not( .bonus-name ) {
-    padding-bottom: 20px;
-    margin: 0px;
 }
 
 .tcb-post-content h4:not( .legal-override ) {
