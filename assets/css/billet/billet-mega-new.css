@@ -32,6 +32,7 @@
 
 	.legal-billet-mega.legal-author .billet-mega-about {
 		/* width: calc( 25% - 36px ); */
+		flex-basis: 100%;
 	}
 
 	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-about {
