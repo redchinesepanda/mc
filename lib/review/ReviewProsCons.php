@@ -240,7 +240,17 @@ class ReviewProsCons
 			{
 				$node->removeAttribute( 'class' );
 
-				$container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				// $container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				
+				$container[ $type ][ 'content' ] = trim(
+					preg_replace(
+						'/\s+/',
+
+						' ',
+
+						ToolEncode::encode( $dom->saveHTML( $node ) )
+					)
+				);
 				
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) ); 
 			}
