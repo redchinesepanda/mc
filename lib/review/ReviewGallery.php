@@ -166,14 +166,42 @@ class ReviewGallery
             return '';
         }
 
+        if ( TemplateMain::check_new() )
+        {
+            return self::render_new( self::get( $attr ) );
+        }
+
         return self::render( self::get( $attr ) );
     }
 
     const TEMPLATE = [
         'gallery' => LegalMain::LEGAL_PATH . '/template-parts/review/review-gallery.php',
+
+        'gallery-new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-gallery-new.php',
     ];
 
     public static function render( $args )
+    {
+        // if ( !ReviewMain::check() )
+        // {
+        //     return '';
+        // }
+
+        // ob_start();
+
+        // load_template( self::TEMPLATE[ 'gallery' ], false, $args );
+
+        // return ob_get_clean();
+
+        return self::render_main( self::TEMPLATE[ 'gallery' ], $args );
+    }
+
+    public static function render_new( $args )
+    {
+        return self::render_main( self::TEMPLATE[ 'gallery-new' ], $args );
+    }
+
+    public static function render_main( $template, $args )
     {
         if ( !ReviewMain::check() )
         {
@@ -182,7 +210,7 @@ class ReviewGallery
 
         ob_start();
 
-        load_template( self::TEMPLATE[ 'gallery' ], false, $args );
+        load_template( $template, false, $args );
 
         return ob_get_clean();
     }
