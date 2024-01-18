@@ -11,7 +11,13 @@
 	/* Position */
 
 	.legal-billet-mega .billet-mega-about {
-		padding: 40px 20px 40px 0px;
+		/* padding: 40px 20px 40px 0px; */
+		padding: 20px;
+	}
+
+	.legal-billet-mega .billet-mega-content
+	{
+		padding: 20px 18px;
 	}
 
 	/* Width and Height */
@@ -125,7 +131,7 @@
 /* Position */
 
 .legal-billet-mega {
-	padding: 30px;
+	/* padding: 30px; */
 	margin-bottom: 30px;
 }
 
