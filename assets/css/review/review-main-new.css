@@ -117,7 +117,7 @@
     padding-top: 24px;
 }
 
-.tcb-post-content h2:not( :first-of-type ) {
+.tcb-post-content h2:not( :first-child ) {
     margin-top: 32px;
 }
 
