@@ -52,24 +52,24 @@ class ReviewTable
 		}
     }
 
-	const JS_NEW = [
-        self::HANDLE[ 'table' ] => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-table.js',
+	// const JS_NEW = [
+    //     self::HANDLE[ 'table' ] => [
+	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-table.js',
 
-			'ver' => '1.0.0',
-		],
-    ];
+	// 		'ver' => '1.0.0',
+	// 	],
+    // ];
 
-	public static function register_script()
-    {
-		if ( TemplateMain::check_new() )
-		{
-			if ( self::check_contains_table() )
-			{
-				ReviewMain::register_script( self::JS_NEW );
-			}
-		}
-    }
+	// public static function register_script()
+    // {
+	// 	if ( TemplateMain::check_new() )
+	// 	{
+	// 		if ( self::check_contains_table() )
+	// 		{
+	// 			ReviewMain::register_script( self::JS_NEW );
+	// 		}
+	// 	}
+    // }
 
 	public static function register_functions()
 	{
@@ -88,7 +88,7 @@ class ReviewTable
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
 	}
