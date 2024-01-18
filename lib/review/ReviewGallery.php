@@ -120,8 +120,16 @@ class ReviewGallery
             ] );
 
             foreach ( $ids as $id ) {
-                // if ( !empty( $attr[ 'size' ] ) )
-                $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
+                $size = self::SIZE[ 'review' ];
+                
+                if ( !empty( $attr[ 'size' ] ) )
+                {
+                    $size = $attr[ 'size' ];
+                }
+                
+                // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
+                
+                $review = wp_get_attachment_image_src( $id, $size );
 
                 $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
 
