@@ -10,13 +10,17 @@
 	</style>
 	<div class="billet-mega-about">
 		<div class="mega-about-logo"></div>
-		<?php if( !empty( $args[ 'name' ] ) ) : ?>
-			<div class="mega-about-name"><?php echo $args[ 'name' ] ?></div>
-		<?php endif; ?>
-		<?php if( !$args[ 'no-controls' ] ) : ?>
-			<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
-				<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+		<div class="mega-about-options">
+			<?php if( !empty( $args[ 'name' ] ) ) : ?>
+				<div class="mega-about-name"><?php echo $args[ 'name' ] ?></div>
 			<?php endif; ?>
+			<?php if( !$args[ 'no-controls' ] ) : ?>
+				<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
+					<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="mega-about-review check-oops"><?php echo $args[ 'review' ][ 'text' ]; ?></a>
+				<?php endif; ?>
+			<?php endif; ?>
+		</div>
+		<?php if( !$args[ 'no-controls' ] ) : ?>
 			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
 		<?php endif; ?>
 		<?php if( !empty( $args[ 'author' ] ) ) : ?>
