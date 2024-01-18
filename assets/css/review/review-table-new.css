@@ -188,20 +188,20 @@
     /* overflow: hidden; */
 }
 
-.tcb-post-content table {  /*скроллбар для мозилы*/
+.tcb-post-content .legal-scroll {  /*скроллбар для мозилы*/
     scrollbar-color: var(--Base-base-02) var(--Base-base-04); /* «цвет ползунка» «цвет полосы скроллбара» */
     scrollbar-width: thin;  /* толщина */
 }
 
-.tcb-post-content table::-webkit-scrollbar {
+.tcb-post-content .legal-scroll::-webkit-scrollbar {
     width: 12px;
 }
 
-.tcb-post-content table::-webkit-scrollbar-track {
+.tcb-post-content .legal-scroll::-webkit-scrollbar-track {
     background-color: var(--Base-base-02);
 }
 
-.tcb-post-content table::-webkit-scrollbar-thumb {
+.tcb-post-content .legal-scroll::-webkit-scrollbar-thumb {
     border-radius: 60px;
     background-color: var(--Base-base-04);
 }
