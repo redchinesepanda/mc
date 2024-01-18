@@ -283,7 +283,7 @@ class ReviewCounter
 			LegalDebug::debug( [
 				'ReviewCounter' => 'get_counter_data',
 
-				'rating' => $rating,
+				'rating<=4' => $rating,
 			] );
 		}
 
