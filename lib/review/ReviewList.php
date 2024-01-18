@@ -32,7 +32,7 @@ class ReviewList
 		],
     ];
 
-    public static function check_contains()
+    public static function check_contains( $class = self::CLASSES[ 'base' ] )
     {
         if ( $post = get_post() )
 		{
