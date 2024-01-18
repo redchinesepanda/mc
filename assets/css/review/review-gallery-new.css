@@ -2,19 +2,19 @@
     /* Gallery Width and Height */
 
     .legal-imageset.columns-1 .imageset-item {
-        width: 100%;
+        /* width: 100%; */
     }
 
     .legal-imageset.columns-2 .imageset-item {
-        width: calc( 50% - 9px );
+        /* width: calc( 50% - 9px ); */
     }
 
     .legal-imageset.columns-3 .imageset-item {
-        width: calc( 33.333% - 12px );
+        /* width: calc( 33.333% - 12px ); */
     }
 
     .legal-imageset.columns-4 .imageset-item {
-        width: calc( 25% - 13.5px );
+        /* width: calc( 25% - 13.5px ); */
     }
 
     /* Background */
