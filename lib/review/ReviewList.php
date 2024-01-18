@@ -54,18 +54,16 @@ class ReviewList
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        if ( !TemplateMain::check_new() )
+        {
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        }
 
         add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
     public static function inline_style()
     {
-        if ( TemplateMain::check_new() )
-        {
-            return '';
-        }
-
         if ( !ReviewMain::check() ) {
             return '';
         }

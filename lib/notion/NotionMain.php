@@ -60,6 +60,10 @@ class NotionMain
 		'feature' => 'notion_billet_feature',
 
 		// 'content' => 'notion_review_content',
+		
+		'prefix' => 'review-about_about-prefix',
+		
+		'suffix' => 'review-about_about-suffix',
 	]; 
 
 	const ACF_KEY = [
