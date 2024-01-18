@@ -146,7 +146,7 @@
 }
 
 .legal-billet-mega:not( .legal-image ) .billet-mega-content {
-	padding-top: 10px;
+	/* padding-top: 10px; */
 }
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( :last-child ):not( .legal-override ) {
