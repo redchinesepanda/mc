@@ -205,6 +205,7 @@
 .tcb-post-content .legal-scroll::-webkit-scrollbar-thumb {
     border-radius: 60px;
     background-color: var(--Base-base-04);
+    border: 3px solid var(--Base-base-02);
 }
 
 .tcb-post-content table > :first-child > tr:first-child
