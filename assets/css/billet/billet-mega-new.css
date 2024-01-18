@@ -15,7 +15,8 @@
 		width: 100%;
 	} */
 	
-	.legal-billet-mega .mega-about-afillate
+	.legal-billet-mega .mega-about-afillate,
+	.legal-billet-mega .mega-about-links
 	{
 		flex-basis: 100%;
 	}
