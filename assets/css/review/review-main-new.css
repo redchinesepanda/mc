@@ -113,10 +113,11 @@
 }
 
 .tcb-post-content h2 {
+    margin-top: 0px;
     padding-top: 24px;
 }
 
-.tcb-post-content h2:not( :first-child ) {
+.tcb-post-content h2:not( :first-of-type ) {
     margin-top: 32px;
 }
 
