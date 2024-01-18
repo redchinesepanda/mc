@@ -176,6 +176,12 @@ class ReviewCounter
 
 			$args = self::get_counter_data( $node );
 
+			LegalDebug::debug( [
+				'ReviewCounter' => 'get_content',
+
+				'args' => $args,
+			] );
+
 			if ( !empty( $args[ 'items_overall' ] ) )
 			{
 				$class[ 'amount' ] = 'legal-overall';
