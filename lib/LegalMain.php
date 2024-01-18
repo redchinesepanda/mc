@@ -53,6 +53,8 @@ class LegalMain
 		add_action( 'wp', [ $handler, 'register_components' ] );
 
 		self::register_functions();
+
+		NotionMain::register();
 	}
 
 	public static function register_functions()

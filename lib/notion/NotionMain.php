@@ -18,6 +18,15 @@ require_once( 'NotionYoast.php' );
 
 class NotionMain
 {
+	public static function register()
+	{
+		NotionYoast::register_functions();
+
+		LegalDebug::debug( [
+			'NotionMain' => 'register_functions', 
+		] );
+	}
+
 	public static function register_functions()
 	{
 		// $handler = new self();
@@ -37,12 +46,6 @@ class NotionMain
 		NotionTaxonomy::register_functions();
 
 		NotionContent::register_functions();
-
-		NotionYoast::register_functions();
-
-		LegalDebug::debug( [
-			'NotionMain' => 'register_functions', 
-		] );
 	}
 
 	const META_FIELD = [
