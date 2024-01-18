@@ -108,7 +108,8 @@
 }
 
 .legal-billet-mega.legal-author .billet-mega-about {
-	row-gap: 10px;
+	/* row-gap: 10px; */
+	column-gap: 16px;
 }
 
 .legal-billet-mega .mega-about-afillate[href=""] {
