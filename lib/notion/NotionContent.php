@@ -103,8 +103,8 @@ class NotionContent
 
 			if ( !empty( $post ) )
 			{
-				// if ( empty( $post->post_content ) )
-				// {
+				if ( empty( $post->post_content ) )
+				{
 					$dom = LegalDOM::get_dom( $meta_value );
 
 					$content = self::get_code_html( $dom );
@@ -131,7 +131,7 @@ class NotionContent
 					$post->post_content = $content;
 
 					wp_update_post( $post );
-				// }
+				}
 			}
 
 			// LegalDebug::die( [
