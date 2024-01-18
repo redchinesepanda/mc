@@ -30,7 +30,8 @@ div.legal-pros-cons {
 /* Pros Cons Position */
 
 .tcb-post-content > .legal-pros-cons {
-	padding-bottom: 30px;
+	/* padding-bottom: 30px; */
+	padding-bottom: 24px;
 }
 
 .legal-pros-cons .pros-cons-item {
