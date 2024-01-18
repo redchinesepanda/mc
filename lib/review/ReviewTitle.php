@@ -10,9 +10,29 @@ class ReviewTitle
         ],
     ];
 
-	public static function register_style( $styles = [] )
+	const CSS_NEW = [
+        'review-title-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title-new.css',
+
+			'ver' => '1.0.0',
+		], 
+    ];
+
+	/* public static function register_style( $styles = [] )
     {
         ReviewMain::register_style( self::CSS );
+    } */
+
+	public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ReviewMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_style( self::CSS );
+		}
     }
 
 	public static function inline_style( $container = '.tcb-post-content' )

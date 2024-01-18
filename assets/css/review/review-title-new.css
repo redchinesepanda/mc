@@ -1,0 +1,35 @@
+/* Review Display */
+
+.tcb-post-content .legal-header-3 {
+    display: flex;
+    align-items: center;
+}
+
+.tcb-post-content .legal-header-3::before {
+    content: '';
+    display: block;
+}
+
+/* Review Position */
+
+.tcb-post-content .legal-header-3::before {
+    margin-right: 20px;
+    padding: 27.5px;
+}
+
+/* Review Width and Height */
+
+.tcb-post-content .legal-header-3::before {
+    width: 55px;
+    height: 55px;
+}
+
+/* Review Background */
+
+.tcb-post-content .legal-header-3::before {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgb(89, 151, 227);
+    border-radius: 50%;
+}
