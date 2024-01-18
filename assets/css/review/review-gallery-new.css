@@ -46,7 +46,8 @@
 .tcb-post-content .legal-imageset .imageset-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    align-items: start;
 }
   
 /* Gallery Position */
