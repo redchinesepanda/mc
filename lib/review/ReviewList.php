@@ -16,7 +16,9 @@ class ReviewList
 
             'ver' => '1.0.0',
         ],
+    ];
 
+    const CSS_LIST_ICONS = [
         'review-list-icons' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-list-icons.css',
 
@@ -42,16 +44,18 @@ class ReviewList
 
     public static function register_style()
     {
-        if ( self::check_contains() )
+        if ( TemplateMain::check_new() ) 
         {
-            if ( TemplateMain::check_code() ) 
+            ReviewMain::register_style( self::CSS_NEW );
+
+            if ( self::check_contains() )
             {
-                ReviewMain::register_style( self::CSS_NEW );
+                ReviewMain::register_style( self::CSS_LIST_ICONS );
             }
-            else
-            {
-                ReviewMain::register_style( self::CSS );
-            }
+        }
+        else
+        {
+            ReviewMain::register_style( self::CSS );
         }
     }
 
