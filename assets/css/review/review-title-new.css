@@ -6,7 +6,7 @@
 }
 
 .tcb-post-content .legal-header-3::before {
-    content: '';
+    /* content: ''; */
     display: block;
 }
 
@@ -19,17 +19,28 @@
 
 /* Review Width and Height */
 
-.tcb-post-content .legal-header-3::before {
+/* .tcb-post-content .legal-header-3::before {
     width: 55px;
     height: 55px;
-}
+} */
 
 /* Review Background */
 
-.tcb-post-content .legal-header-3::before {
+/* .tcb-post-content .legal-header-3::before {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
     background-color: rgb(227, 163, 89);
     border-radius: 50%;
-}
+} */
+
+/* FAQ Typography */
+
+.tcb-post-content .legal-header-3::before {
+    content: '';
+    font-family: var( --legal-font-icons );
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    color: var(--Base-base-09);
+} 
