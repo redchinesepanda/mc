@@ -44,8 +44,8 @@
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
-    column-gap: 18px;
-    row-gap: 18px;
+    column-gap: 8px;
+    /* row-gap: 18px; */
 }
 
 .tcb-post-content .legal-imageset .imageset-item {
