@@ -2,7 +2,7 @@
 
 class NotionYoast
 {
-	public static function register()
+	public static function register() 
 	{
 		$handler = new self();
 
