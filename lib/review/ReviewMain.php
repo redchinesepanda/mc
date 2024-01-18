@@ -149,7 +149,7 @@ class ReviewMain
     {
         if ( self::check() ) {
             if ( empty( $styles ) ) {
-                if ( TemplateMain::check_code() )
+                if ( TemplateMain::check_new() )
                 {
                     $styles = self::CSS_NEW;
                 }
