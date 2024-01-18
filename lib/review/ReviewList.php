@@ -30,16 +30,29 @@ class ReviewList
 		],
     ];
 
+    public static function check_contains()
+    {
+        if ( $post = get_post() )
+		{
+			return str_contains( $post->post_content, self::CLASSES[ 'base' ] );
+		}
+
+		return false;
+    }
+
     public static function register_style()
     {
-        if ( TemplateMain::check_code() ) 
-		{
-			ReviewMain::register_style( self::CSS_NEW );
-		}
-		else
-		{
-			ReviewMain::register_style( self::CSS );
-		}
+        if ( self::check_contains() )
+        {
+            if ( TemplateMain::check_code() ) 
+            {
+                ReviewMain::register_style( self::CSS_NEW );
+            }
+            else
+            {
+                ReviewMain::register_style( self::CSS );
+            }
+        }
     }
 
     public static function register_inline_style()
