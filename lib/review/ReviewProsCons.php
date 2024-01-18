@@ -242,7 +242,7 @@ class ReviewProsCons
 
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
 				
-				$container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) );
+				$container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) ); 
 			}
 
 			if ( $permission_replace )
