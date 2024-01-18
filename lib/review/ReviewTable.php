@@ -59,7 +59,7 @@ class ReviewTable
 
 	public static function register_script()
     {
-		if ( TemplateMain::check_new() )
+		if ( TemplateMain::check_new() && self::check_contains_table() )
 		{
 			ReviewMain::register_script( self::JS_NEW );
 		}
