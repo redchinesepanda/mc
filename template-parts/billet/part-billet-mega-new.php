@@ -10,8 +10,8 @@
 	</style>
 	<div class="billet-mega-about">
 		<div class="mega-about-logo"></div>
-		<?php if( !empty( $args[ 'author' ][ 'name' ] ) ) : ?>
-			<div class="mega-about-name"><?php echo $args[ 'author' ][ 'name' ] ?></div>
+		<?php if( !empty( $args[ 'name' ] ) ) : ?>
+			<div class="mega-about-name"><?php echo $args[ 'name' ] ?></div>
 		<?php endif; ?>
 		<?php if( !$args[ 'no-controls' ] ) : ?>
 			<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
@@ -20,6 +20,7 @@
 			<?php endif; ?>
 		<?php endif; ?>
 		<?php if( !empty( $args[ 'author' ] ) ) : ?>
+			<div class="mega-about-name"><?php echo $args[ 'author' ][ 'name' ] ?></div>
 			<div class="mega-about-post"><?php echo $args[ 'author' ][ 'post' ] ?></div>
 			<?php if( !empty( $args[ 'author' ][ 'items' ] ) ) : ?>
 				<div class="mega-about-links">

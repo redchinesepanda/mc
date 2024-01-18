@@ -227,6 +227,8 @@ class BilletMega
 
 		$background = BilletMain::DEFAULT_COLOR;
 
+		$name = '';
+
 		$title_text = '';
 
 		$author = [];
@@ -244,6 +246,8 @@ class BilletMega
 					$logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
 				}
 	
+				$name = $group[ BilletTitle::ABOUT[ 'title' ] ];
+
 				$title_text = $group[ BilletTitle::ABOUT[ 'title' ] ];
 
 				if ( !empty( $atts[ 'title-label' ] ) )
@@ -292,6 +296,8 @@ class BilletMega
 			'logo' => $logo,
 
 			'background' => $background,
+
+			'name' => $name,
 
 			'title' => [
 				'href' => $url[ 'play' ],
