@@ -65,13 +65,13 @@
 
 .legal-billet-mega .billet-mega-about {
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	align-items: center;
 }
 
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-horizontal .billet-mega-about {
-	justify-content: center;
+	/* justify-content: center; */
 }
 
 .legal-billet-mega.legal-image .billet-mega-content {
