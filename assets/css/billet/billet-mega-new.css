@@ -1,4 +1,12 @@
-@media screen and ( max-width: 767px ) {
+@media screen and ( max-width: 959px )
+{
+	/* Display */
+
+	.legal-billet-mega .billet-mega-about
+	{
+		flex-wrap: wrap;
+	}
+
 	/* Width and Height */
 
 	.legal-billet-mega .billet-mega-about {
@@ -6,7 +14,7 @@
 	}
 }
 
-@media screen and ( min-width: 768px ) {
+@media screen and ( min-width: 960px ) {
 
 	/* Position */
 
@@ -18,6 +26,11 @@
 	.legal-billet-mega .billet-mega-content
 	{
 		padding: 18px 20px;
+	}
+
+	.legal-billet-mega .mega-about-afillate
+	{
+		margin-left: auto; 
 	}
 
 	/* Width and Height */
@@ -138,7 +151,6 @@
 
 .legal-billet-mega .mega-about-afillate {
 	padding: 5px 40px 5px 20px;
-	margin-left: auto; 
 }
 
 .legal-billet-mega .mega-about-links
