@@ -14,7 +14,7 @@ require_once( 'NotionTaxonomy.php' );
 
 require_once( 'NotionContent.php' );
 
-require_once( 'NotionYoast.php' );
+require_once( 'NotionYoast.php' ); 
 
 class NotionMain
 {
