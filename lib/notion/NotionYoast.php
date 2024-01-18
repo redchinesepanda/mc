@@ -25,7 +25,7 @@ class NotionYoast
 	{
 		$post = get_post();
 
-		if ( !emty( $post ) )
+		if ( !empty( $post ) )
 		{
 			$meta_value = get_post_meta( $post->ID, self::META_FIELD[ 'title' ], true );
 
@@ -50,7 +50,7 @@ class NotionYoast
 	{
 		$post = get_post();
 
-		if ( !emty( $post ) )
+		if ( !empty( $post ) )
 		{
 			$meta_value = get_post_meta( $post->ID, self::META_FIELD[ 'description' ], true );
 
