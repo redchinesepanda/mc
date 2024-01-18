@@ -278,10 +278,6 @@ class BilletMega
 
 		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] ) )
 		{
-			LegalDebug::debug( [
-				$atts[ 'id' ], 
-			] );
-
 			$field = get_field( self::FIELD[ 'name' ], $atts[ 'id' ] );
 	
 			if ( $field )
