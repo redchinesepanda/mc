@@ -24,7 +24,7 @@ class ReviewGallery
 
     public static function check_shortcode_gallery()
     {
-        return LegalComponents::check_shortcode( self::SHORTCODES[ 'gallery' ] ); 
+        return LegalComponents::check_shortcode( self::SHORTCODES[ 'gallery' ] );
     }
 
     public static function register_style()
