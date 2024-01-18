@@ -140,6 +140,22 @@ class ReviewProsCons
 		'h3',
 	];
 
+	public static function innerHTML( $element )
+	{
+		$fragment = $element->ownerDocument->createDocumentFragment();
+
+		while ( $element->hasChildNodes() )
+		{
+			$fragment->appendChild( $element->firstChild );
+		}
+
+		$html = $element->ownerDocument->saveHTML( $fragment );
+
+		$element->appendChild( $fragment );
+
+		return $html;
+	}
+
 	public static function get_content( $content )
 	{
 		if ( !ReviewMain::check() ) {
@@ -224,7 +240,9 @@ class ReviewProsCons
 			{
 				$node->removeAttribute( 'class' );
 
-				$container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				// $container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				
+				$container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) );
 			}
 
 			if ( $permission_replace )
