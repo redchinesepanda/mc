@@ -193,6 +193,18 @@ class LegalComponents
 
 		return false;
     }
+
+	public static function check_shortcode( $shortcode = '' )
+	{
+		$post = get_post();
+
+		if ( $post )
+		{
+			return has_shortcode( $post->post_content, $shortcode );
+		}
+
+		return false;
+	}
 }
 
 ?>

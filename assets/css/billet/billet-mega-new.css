@@ -1,0 +1,363 @@
+@media screen and ( max-width: 767px ) {
+	/* Width and Height */
+
+	.legal-billet-mega .billet-mega-about {
+		width: 100%;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Position */
+
+	.legal-billet-mega .billet-mega-about {
+		padding: 40px 20px 40px 0px;
+	}
+
+	/* Width and Height */
+
+	.legal-billet-mega.legal-default .billet-mega-about,
+	.legal-billet-mega.legal-image .billet-mega-about,
+	.legal-billet-mega.legal-no-controls .billet-mega-about,
+	.legal-billet-mega.legal-horizontal .billet-mega-about {
+		width: calc( 20% - 36px );
+	}
+
+	.legal-billet-mega.legal-author .billet-mega-about {
+		width: calc( 25% - 36px );
+	}
+
+	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-about {
+		width: calc( 30% - 36px );
+	}
+
+	.legal-billet-mega.legal-default .billet-mega-content,
+	.legal-billet-mega.legal-image .billet-mega-content,
+	.legal-billet-mega.legal-no-controls .billet-mega-content,
+	.legal-billet-mega.legal-horizontal .billet-mega-content {
+		width: calc( 80% - 15px );
+	}
+
+	.legal-billet-mega.legal-author .billet-mega-content {
+		width: calc( 75% - 15px );
+	}
+
+	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-content {
+		width: calc( 70% - 15px );
+	}
+
+	/* Background */
+
+	.legal-billet-mega.legal-default .billet-mega-about,
+	.legal-billet-mega.legal-no-controls .billet-mega-about {
+		border-right: 1px solid rgb(237, 237, 237);
+	}
+}
+
+/* Display */
+
+.legal-billet-mega {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.legal-billet-mega .billet-mega-about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.legal-billet-mega.legal-image .billet-mega-about,
+.legal-billet-mega.legal-horizontal .billet-mega-about {
+	justify-content: center;
+}
+
+.legal-billet-mega.legal-image .billet-mega-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content {
+	display: flex;
+	align-items: center;
+	column-gap: 50px;
+}
+
+@media (max-width: 768px) {
+    .legal-billet-mega.legal-horizontal .billet-mega-content {
+        flex-direction: column;
+		row-gap: 1rem;
+    } 
+}
+
+.legal-billet-mega.legal-default .billet-mega-about,
+.legal-billet-mega.legal-image .billet-mega-about,
+.legal-billet-mega.legal-no-controls .billet-mega-about {
+	row-gap: 20px;
+}
+
+.legal-billet-mega.legal-author .billet-mega-about {
+	row-gap: 10px;
+}
+
+.legal-billet-mega .mega-about-afillate[href=""] {
+	display: block;
+	pointer-events: none;
+}
+
+.legal-billet-mega .mega-about-review[href=""] {
+	pointer-events: none;
+}
+
+.legal-billet-mega .mega-about-links {
+	display: flex;
+	column-gap: 10px;
+}
+
+.legal-billet-mega .link-item {
+	display: flex;
+	align-items: center;
+}
+
+/* Position */
+
+.legal-billet-mega {
+	padding: 30px;
+	margin-bottom: 30px;
+}
+
+.legal-billet-mega .billet-mega-content p {
+	margin-bottom: 0px;
+}
+
+.legal-billet-mega .mega-about-afillate {
+	padding: 5px 40px 5px 20px;
+}
+
+.legal-billet-mega:not( .legal-image ) .billet-mega-content {
+	padding-top: 10px;
+}
+
+.legal-billet-mega:not( .legal-horizontal ) p:not( :last-child ):not( .legal-override ) {
+    padding-bottom: 15px;
+	margin-bottom: 0px;
+}
+
+.legal-billet-mega.legal-horizontal p:not( :last-child ):not( .legal-override ) {
+    padding-bottom: 0px;
+}
+
+.legal-billet-mega h3:not( .legal-override ),
+.legal-billet-mega h4:not( .legal-override ) {
+    padding-bottom: 30px;
+	margin-bottom: 0px;
+}
+
+/* .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ):not( .legal-list-pros ):not( .legal-list-cons ) {
+	padding-top: 0px;
+    padding-bottom: 15px;
+} */
+
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-pros,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-cons,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( .legal-highlight ):not( [style] ) {
+	padding-top: 12px;
+    padding-bottom: 12px;
+	padding-left: 0px;
+}
+
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li,
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol li {
+	padding-left: calc(24px + 12px);
+}
+
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li:not( :last-child ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li:not( :last-child ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li:not( :last-child ),
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( :last-child ) {
+	padding-bottom: 24px;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ) {
+	padding-top: 0px;
+    padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+.legal-billet-mega .legal-license {
+	padding-right: 21px;
+}
+
+/* Width and Height */
+
+.legal-billet-mega .billet-mega-content {
+	width: 100%;
+}
+
+.legal-billet-mega.legal-horizontal .legal-license {
+	flex-basis: 15%;
+}
+.legal-billet-mega.legal-horizontal .legal-license ~ p {
+	flex-basis: 35%;
+}
+.legal-billet-mega.legal-horizontal .legal-license ~ p ~ ul {
+	flex-basis: 50%;
+}
+
+.legal-billet-mega.legal-default .mega-about-logo,
+.legal-billet-mega.legal-no-controls .mega-about-logo,
+.legal-billet-mega.legal-horizontal .mega-about-logo {
+	width: 100%;
+	height: 45px;
+}
+
+.legal-billet-mega.legal-image .mega-about-logo {
+	width: 100%;
+	height: 80px;
+}
+
+.legal-billet-mega.legal-author .mega-about-logo {
+	width: 200px;
+	height: 200px;
+}
+
+.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .mega-about-logo {
+	width: 158px;
+	height: 200px;
+}
+
+.legal-billet-mega .mega-about-afillate {
+	width: 100%;
+}
+
+.legal-billet-mega .billet-mega-footer {
+	width: 100%;
+}
+
+/* Background */
+
+.legal-billet-mega {
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
+	border-radius: 20px;
+	background-color: #fff;
+}
+
+.legal-billet-mega .mega-about-logo {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.legal-billet-mega .mega-about-afillate {
+	background-image: url( '../../img/review/review-bet-here.svg' );
+	background-position: right 22px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
+}
+
+.legal-billet-mega.legal-image {
+	background-image: linear-gradient(to left, #eff5fb, #fdfdfd);
+}
+
+.legal-billet-mega.legal-horizontal {
+	background-color: #fff;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content a {
+	background: unset;
+}
+
+.legal-billet-mega .legal-license {
+	background-image: url( '../../img/billet/mega/mega-license.svg' );
+	background-position: right center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+/* Typography */
+
+.legal-billet-mega .mega-about-afillate {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28.8px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+
+.legal-billet-mega .mega-about-review {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 15px;
+	color: rgb(18, 0, 0);
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+/* .legal-billet-mega .mega-content-title, */
+.legal-billet-mega .content-title-link {
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 33.6px;
+	color: rgb(12, 17, 21);
+	text-decoration: none;
+}
+
+.legal-billet-mega .mega-about-name {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 19.2px;
+	color: rgb(12, 17, 21);
+	text-transform: uppercase;
+}
+
+.legal-billet-mega .mega-about-post {
+	font-family: "Source Sans Pro";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 2px;
+	line-height: 19.2px;
+	color: rgb(106, 107, 108);
+	text-transform: uppercase;
+}
+
+.legal-billet-mega .mega-about-prefix {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: normal;
+	line-height: 28px;
+	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content p {
+	text-align: center;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content a {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 20.8px;
+	color: rgb(12, 11, 45);
+}

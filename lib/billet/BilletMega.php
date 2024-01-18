@@ -10,9 +10,32 @@ class BilletMega
         ],
     ];
 
+	const CSS_NEW = [
+        'billet-mega' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-mega-new.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+	public static function check_contains_billet_mega()
+    {
+        return LegalComponents::check_shortcode( self::SHORTCODE[ 'mega' ] );
+    }
+
     public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+		if ( TemplateMain::check_new() )
+		{
+			if ( self::check_contains_billet_mega() )
+			{
+				ToolEnqueue::register_style( self::CSS_NEW );
+			}
+		}
+		else
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
     }
 
 	public static function register_functions()
@@ -22,13 +45,17 @@ class BilletMega
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
 	}
 
+	const SHORTCODE = [
+		'mega' => 'billet-mega',
+	];
+
 	public static function register()
     {
         $handler = new self();
 
         // [billet-mega id="269185" title-label="Custom Title Label" title-suffix="Custom Title Sufix" title-tag="h4" review-label="Custom Review Label" review-url="bonus" button-label="Custom Button Label" no-controls="1"][/billet-mega]
 
-        add_shortcode( 'billet-mega', [ $handler, 'prepare' ] );
+        add_shortcode( self::SHORTCODE[ 'mega' ], [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
