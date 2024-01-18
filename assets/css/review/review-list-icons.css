@@ -142,7 +142,8 @@
 .icon-trotting-antepost:before,
 .icon-horse-racing:before,
 .icon-horse-racing-antepost:before,
-.icon-horeseracing:before {
+.icon-horeseracing:before,
+.legal-header-horceracing::before {
     content: "\f122";
 }
 .icon-hurting:before {
