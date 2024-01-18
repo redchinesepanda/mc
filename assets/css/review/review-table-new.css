@@ -238,7 +238,7 @@
 /* Typography */
 
 /* .tcb-post-content table > thead:first-of-type > tr:first-child > * */
-.tcb-post-content table > tbody > tr > *
+.tcb-post-content table > * > tr > *
 {
     text-align: left;
 }
