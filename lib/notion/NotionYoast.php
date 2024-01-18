@@ -17,7 +17,7 @@ class NotionYoast
 		'description' => 'notion_wpseo_metadesc',
 	]; 
 
-	function wp_kama_wpseo_title_filter( $title, $presentation )
+	public static function wp_kama_wpseo_title_filter( $title, $presentation )
 	{
 		$post = get_post();
 
@@ -42,7 +42,7 @@ class NotionYoast
 		return $title;
 	}
 
-	function wp_kama_wpseo_metadesc_filter( $meta_description, $presentation )
+	public static function wp_kama_wpseo_metadesc_filter( $meta_description, $presentation )
 	{
 		$post = get_post();
 
