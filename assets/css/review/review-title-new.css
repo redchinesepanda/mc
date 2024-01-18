@@ -3,19 +3,20 @@
 .tcb-post-content .legal-header-3 {
     display: flex;
     align-items: center;
+    column-gap: 18px;
 }
 
-.tcb-post-content .legal-header-3::before {
-    /* content: ''; */
+/* .tcb-post-content .legal-header-3::before {
+    content: '';
     display: block;
-}
+} */
 
 /* Review Position */
 
-.tcb-post-content .legal-header-3::before {
+/* .tcb-post-content .legal-header-3::before {
     margin-right: 20px;
     padding: 27.5px;
-}
+} */
 
 /* Review Width and Height */
 
@@ -37,7 +38,7 @@
 /* FAQ Typography */
 
 .tcb-post-content .legal-header-3::before {
-    content: '';
+    content: '\f119';
     font-family: var(--legal-font-icons-sport);
     font-weight: 400;
     font-size: 32px;
