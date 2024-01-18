@@ -6,39 +6,10 @@
     column-gap: 18px;
 }
 
-/* .tcb-post-content .legal-header-3::before {
-    content: '';
-    display: block;
-} */
-
-/* Review Position */
-
-/* .tcb-post-content .legal-header-3::before {
-    margin-right: 20px;
-    padding: 27.5px;
-} */
-
-/* Review Width and Height */
-
-/* .tcb-post-content .legal-header-3::before {
-    width: 55px;
-    height: 55px;
-} */
-
-/* Review Background */
-
-/* .tcb-post-content .legal-header-3::before {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: rgb(227, 163, 89);
-    border-radius: 50%;
-} */
-
 /* FAQ Typography */
 
 .tcb-post-content .legal-header-3::before {
-    content: '\f119';
+    content: '';
     font-family: var(--legal-font-icons-sport);
     font-weight: 400;
     font-size: 32px;
