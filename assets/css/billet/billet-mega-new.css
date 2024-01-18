@@ -145,6 +145,11 @@
 	margin-left: auto; 
 }
 
+.legal-billet-mega .mega-about-links
+{
+	margin-left: auto;
+}
+
 .legal-billet-mega:not( .legal-image ) .billet-mega-content {
 	padding-top: 10px;
 }
