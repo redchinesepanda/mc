@@ -23,6 +23,11 @@ class ReviewTitle
         ReviewMain::register_style( self::CSS );
     } */
 
+	public static function check_contains_title_with_image()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'h3' ] );
+    }
+
 	public static function register_style()
     {
 		if ( TemplateMain::check_code() )
