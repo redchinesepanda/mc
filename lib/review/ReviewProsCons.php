@@ -242,15 +242,17 @@ class ReviewProsCons
 
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( $dom->saveHTML( $node ) );
 				
-				$container[ $type ][ 'content' ] = trim(
-					preg_replace(
-						'/\s+/',
+				$container[ $type ][ 'content' ] = str_replace( '&#13;', '', ToolEncode::encode( $dom->saveHTML( $node ) ) );
+				
+				// $container[ $type ][ 'content' ] = trim(
+				// 	preg_replace(
+				// 		'/\s+/',
 
-						' ',
+				// 		' ',
 
-						ToolEncode::encode( $dom->saveHTML( $node ) )
-					)
-				); 
+				// 		ToolEncode::encode( $dom->saveHTML( $node ) )
+				// 	)
+				// ); 
 				
 				// $container[ $type ][ 'content' ] = ToolEncode::encode( self::innerHTML( $node ) ); 
 			}
