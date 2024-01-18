@@ -113,7 +113,14 @@ class ReviewGallery
                 $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
             }
 
+            LegalDebug::debug( [
+                'ReviewGallery' => 'get',
+
+                'attr' => $attr,
+            ] );
+
             foreach ( $ids as $id ) {
+                // if ( !empty( $attr[ 'size' ] ) )
                 $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
 
                 $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
