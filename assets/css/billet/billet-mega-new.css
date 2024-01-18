@@ -1,12 +1,28 @@
-@media screen and ( max-width: 767px ) {
+@media screen and ( max-width: 959px )
+{
+	/* Display */
+
+	.legal-billet-mega .billet-mega-about
+	{
+		flex-wrap: wrap;
+	}
+
+	/* Position */
+
 	/* Width and Height */
 
-	.legal-billet-mega .billet-mega-about {
+	/* .legal-billet-mega .billet-mega-about {
 		width: 100%;
+	} */
+	
+	.legal-billet-mega .mega-about-afillate,
+	.legal-billet-mega .mega-about-links
+	{
+		flex-basis: 100%;
 	}
 }
 
-@media screen and ( min-width: 768px ) {
+@media screen and ( min-width: 960px ) {
 
 	/* Position */
 
@@ -18,6 +34,16 @@
 	.legal-billet-mega .billet-mega-content
 	{
 		padding: 18px 20px;
+	}
+
+	.legal-billet-mega .mega-about-afillate
+	{
+		margin-left: auto; 
+	}
+	
+	.legal-billet-mega .mega-about-links
+	{
+		margin-left: auto;
 	}
 
 	/* Width and Height */
@@ -32,6 +58,7 @@
 
 	.legal-billet-mega.legal-author .billet-mega-about {
 		/* width: calc( 25% - 36px ); */
+		flex-basis: 100%;
 	}
 
 	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-about {
@@ -88,8 +115,9 @@
 
 .legal-billet-mega.legal-horizontal .billet-mega-content {
 	display: flex;
-	align-items: center;
-	column-gap: 50px;
+	/* align-items: center; */
+	/* column-gap: 50px; */
+	flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
@@ -99,14 +127,9 @@
     } 
 }
 
-.legal-billet-mega.legal-default .billet-mega-about,
-.legal-billet-mega.legal-image .billet-mega-about,
-.legal-billet-mega.legal-no-controls .billet-mega-about {
-	row-gap: 20px;
-}
-
-.legal-billet-mega.legal-author .billet-mega-about {
-	row-gap: 10px;
+.legal-billet-mega .billet-mega-about
+{
+	column-gap: 16px;
 }
 
 .legal-billet-mega .mega-about-afillate[href=""] {
@@ -144,7 +167,7 @@
 }
 
 .legal-billet-mega:not( .legal-image ) .billet-mega-content {
-	padding-top: 10px;
+	/* padding-top: 10px; */
 }
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( :last-child ):not( .legal-override ) {
@@ -207,13 +230,13 @@
 }
 
 .legal-billet-mega.legal-horizontal .legal-license {
-	flex-basis: 15%;
+	/* flex-basis: 15%; */
 }
 .legal-billet-mega.legal-horizontal .legal-license ~ p {
-	flex-basis: 35%;
+	/* flex-basis: 35%; */
 }
 .legal-billet-mega.legal-horizontal .legal-license ~ p ~ ul {
-	flex-basis: 50%;
+	/* flex-basis: 50%; */
 }
 
 .legal-billet-mega.legal-default .mega-about-logo,
