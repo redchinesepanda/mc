@@ -36,7 +36,7 @@ class ReviewList
     {
         if ( $post = get_post() )
 		{
-			return str_contains( $post->post_content, self::CLASSES[ 'base' ] );
+			return str_contains( $post->post_content, $class );
 		}
 
 		return false;
