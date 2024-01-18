@@ -21,7 +21,7 @@
 	.legal-billet-mega.legal-no-controls .billet-mega-about,
 	.legal-billet-mega.legal-horizontal .billet-mega-about {
 		/* width: calc( 20% - 36px ); */
-		flex-basis: 100%;
+		flex-basis: 100%; 
 	}
 
 	.legal-billet-mega.legal-author .billet-mega-about {
