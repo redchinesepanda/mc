@@ -35,8 +35,8 @@ class NotionYoast
 			'$post->ID' => $post->ID,
 
 			'$meta_value' => $meta_value,
-			
-			'$title' => $title,
+
+			'$title' => $title, 
 		] );
 		
 		return $title;
