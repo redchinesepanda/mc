@@ -38,7 +38,7 @@
 
 .tcb-post-content .legal-header-3::before {
     content: '';
-    font-family: var( --legal-font-icons );
+    font-family: var(--legal-font-icons-sport);
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
