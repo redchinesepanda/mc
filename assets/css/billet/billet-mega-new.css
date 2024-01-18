@@ -102,7 +102,8 @@
 .legal-billet-mega.legal-default .billet-mega-about,
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-no-controls .billet-mega-about {
-	row-gap: 20px;
+	/* row-gap: 20px; */
+	column-gap: 16px;
 }
 
 .legal-billet-mega.legal-author .billet-mega-about {
