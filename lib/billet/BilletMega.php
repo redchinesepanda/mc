@@ -183,6 +183,10 @@ class BilletMega
 		return $items;
 	}
 
+	const FIELD = [
+		'name' => 'media-name',
+	];
+
 	public static function prepare( $atts, $content = '' )
     {
 		$pairs = [
@@ -269,6 +273,20 @@ class BilletMega
 			if ( !empty( $image = self::get_iamge( $atts[ 'id' ] ) ) )
 			{
 				$logo = $image[ 'src' ];
+			}
+		}
+
+		if ( in_array( $atts[ 'mode' ], [ self::MODE[ 'image' ] ] ) )
+		{
+			LegalDebug::debug( [
+				$atts[ 'id' ],
+			] );
+
+			$field = get_field( self::FIELD[ 'name' ], $atts[ 'id' ] );
+	
+			if ( $field )
+			{
+				$name = $field;
 			}
 		}
 
