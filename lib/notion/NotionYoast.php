@@ -30,6 +30,14 @@ class NotionYoast
 				$title = $meta_value;
 			}
 		}
+
+		LegalDebug::debug( [
+			'$post->ID' => $post->ID,
+
+			'$meta_value' => $meta_value,
+			
+			'$title' => $title,
+		] );
 		
 		return $title;
 	}
