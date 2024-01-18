@@ -9,10 +9,6 @@ class NotionYoast
 		add_filter( 'wpseo_title', [ $handler, 'wp_kama_wpseo_title_filter' ], 10, 2 );
 
 		add_filter( 'wpseo_metadesc', [ $handler, 'wp_kama_wpseo_metadesc_filter' ], 10, 2 );
-
-		LegalDebug::debug( [
-			'$handler' => $handler, 
-		] );
 	}
 
 	const META_FIELD = [
