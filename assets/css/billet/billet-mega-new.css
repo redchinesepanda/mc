@@ -7,6 +7,8 @@
 		flex-wrap: wrap;
 	}
 
+	/* Position */
+
 	/* Width and Height */
 
 	/* .legal-billet-mega .billet-mega-about {
@@ -36,6 +38,11 @@
 	.legal-billet-mega .mega-about-afillate
 	{
 		margin-left: auto; 
+	}
+	
+	.legal-billet-mega .mega-about-links
+	{
+		margin-left: auto;
 	}
 
 	/* Width and Height */
@@ -156,11 +163,6 @@
 
 .legal-billet-mega .mega-about-afillate {
 	padding: 5px 40px 5px 20px;
-}
-
-.legal-billet-mega .mega-about-links
-{
-	margin-left: auto;
 }
 
 .legal-billet-mega:not( .legal-image ) .billet-mega-content {
