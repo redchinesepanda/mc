@@ -9,8 +9,13 @@
 
 	/* Width and Height */
 
-	.legal-billet-mega .billet-mega-about {
+	/* .legal-billet-mega .billet-mega-about {
 		width: 100%;
+	} */
+	
+	legal-billet-mega .mega-about-afillate
+	{
+		flex-basis: 100%;
 	}
 }
 
@@ -34,11 +39,6 @@
 	}
 
 	/* Width and Height */
-	
-	legal-billet-mega .mega-about-afillate
-	{
-		flex-basis: 100%;
-	}
 
 	.legal-billet-mega.legal-default .billet-mega-about,
 	.legal-billet-mega.legal-image .billet-mega-about,
