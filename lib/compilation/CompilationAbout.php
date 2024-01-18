@@ -10,9 +10,17 @@ class CompilationAbout
         ],
     ];
 
+	public static function check_contains_about()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'title' ] );
+    }
+
     public static function register_style()
     {
-        ToolEnqueue::register_style( self::CSS );
+		if ( self::check_contains_about() )
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
     }
 
 	/* 	const JS = [
