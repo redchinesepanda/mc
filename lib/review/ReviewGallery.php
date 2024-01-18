@@ -113,11 +113,11 @@ class ReviewGallery
                 $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
             }
 
-            LegalDebug::debug( [
-                'ReviewGallery' => 'get',
+            // LegalDebug::debug( [
+            //     'ReviewGallery' => 'get',
 
-                'attr' => $attr,
-            ] );
+            //     'attr' => $attr,
+            // ] );
 
             foreach ( $ids as $id ) {
                 $size = self::SIZE[ 'review' ];
