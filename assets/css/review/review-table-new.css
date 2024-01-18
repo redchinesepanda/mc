@@ -202,8 +202,9 @@
 }
 
 .tcb-post-content .legal-scroll::-webkit-scrollbar-thumb {
-    border-radius: 60px;
-    background-color: var(--Base-base-04);
+   /*  border-radius: 60px; */
+    background: #000;
+    /* background-color: var(--Base-base-04); */
 }
 
 .tcb-post-content table > :first-child > tr:first-child
