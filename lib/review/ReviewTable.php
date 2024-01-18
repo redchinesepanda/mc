@@ -28,9 +28,18 @@ class ReviewTable
         ],
     ];
 
+	const SELCTORS = [
+		'table' => '<table',
+	];
+
+    public static function check_contains_table()
+    {
+        return LegalComponents::check_contains( self::SELCTORS[ 'table' ] );
+    }
+
 	public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_code() && self::check_contains_table() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 		}
