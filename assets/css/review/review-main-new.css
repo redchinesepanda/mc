@@ -113,8 +113,11 @@
 }
 
 .tcb-post-content h2 {
-    margin-top: 40px;
     padding-top: 24px;
+}
+
+.tcb-post-content h2:not( :first-child ) {
+    margin-top: 32px;
 }
 
 .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
