@@ -122,6 +122,12 @@ class ReviewMain
 
 			'ver' => '1.0.0',
 		],
+
+        'review-overview' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
+
+            'ver' => '1.0.1',
+        ],
     ];
 
     // public static function style_attributes( $html, $handle )
