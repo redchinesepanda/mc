@@ -49,7 +49,7 @@ class LegalDOM
 				
 				. '<div>' . $content . '</div>',
 				
-				LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED
+				LIBXML_NOERROR | LIBXML_HTML_NOIMPLIED | LIBXML_NOBLANKS
 			);
 
 			// Работает 1 конец
