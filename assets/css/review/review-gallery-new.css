@@ -82,7 +82,7 @@
     right: 0px;
 }
   
-/* Gallery Width and Height */
+/* Width and Height */
 
 .tcb-post-content .legal-gallery {
     height: 100vh;
@@ -95,7 +95,7 @@
     height: 66px;
 }
   
-/* Gallery Background */
+/* Background */
 
 .tcb-post-content .legal-gallery,
 .tcb-post-content .legal-gallery .legal-left,
@@ -124,6 +124,11 @@
 .tcb-post-content .legal-gallery {
     background-color: rgba(0, 0, 0, 0.75);
     transition: opacity 0.5s;
+}
+
+.tcb-post-content .legal-gallery .item-image
+{
+    border-radius: 12px;
 }
 
 /* Gallery Typography */
