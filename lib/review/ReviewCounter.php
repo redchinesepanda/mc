@@ -279,12 +279,6 @@ class ReviewCounter
 			}
 
 			$rating = number_format( ( float ) ( $rating / $amount ), 1, '.', '');
-
-			LegalDebug::debug( [
-				'ReviewCounter' => 'get_counter_data',
-
-				'rating<=4' => $rating,
-			] );
 		}
 
 		if ( $amount == 5 )
@@ -293,12 +287,6 @@ class ReviewCounter
 
 			$rating = $ovarall[ 'value' ];
 		}
-
-		LegalDebug::debug( [
-			'ReviewCounter' => 'get_counter_data',
-
-			'rating' => $rating,
-		] );
 
 		if ( $amount <= 5 )
 		{
