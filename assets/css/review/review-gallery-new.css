@@ -35,9 +35,14 @@
 
 /* Gallery Display */
 
+.tcb-post-content .legal-imageset-wrapper
+{
+    overflow-x: scroll;
+}
+
 .tcb-post-content .legal-imageset {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     column-gap: 18px;
     row-gap: 18px;
