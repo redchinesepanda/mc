@@ -26,10 +26,10 @@ class LegalDOM
 
 		$dom->validateOnParse=false;
 
-		$dom->standalone=true;
+		$dom->standalone=true; 
 
 		$dom->strictErrorChecking=false;
-		
+
 		$dom->recover=true;
 
 		// $dom = new DOMDocument( '1.0', 'utf-8' );
