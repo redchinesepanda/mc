@@ -272,9 +272,11 @@
 /* Background */
 
 .legal-billet-mega {
-	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
-	border-radius: 20px;
-	background-color: #fff;
+	/* box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
+	border-radius: 20px; */
+	background-color: var(--Base-base-01);
+	border-radius: 24px 24px 18px 18px;
+	border: 1px solid var(--Base-base-09);
 }
 
 .legal-billet-mega .mega-about-logo {
