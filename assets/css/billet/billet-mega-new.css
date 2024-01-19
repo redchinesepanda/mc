@@ -145,6 +145,10 @@
 	padding: 20px;
 }
 
+.legal-billet-mega .link-item {
+	padding: 7px;
+}
+
 .legal-billet-mega .billet-mega-content
 {
 	padding: 18px 20px;
@@ -267,6 +271,11 @@
 	height: 72px;
 }
 
+.legal-billet-mega .link-item {
+	width: calc(32px - 7px * 2);
+    height: calc(32px - 7px * 2);
+}
+
 .legal-billet-mega .mega-about-afillate {
 	/* width: 100%; */
 }
@@ -313,6 +322,11 @@
 	background-size: auto;
 	background-color: rgb(89, 151, 227);
 	border-radius: 20px;
+}
+
+.legal-billet-mega .link-item {
+	border: 1px solid var(--Base-base-09 );
+    border-radius: 4px;
 }
 
 /* .legal-billet-mega.legal-image {
