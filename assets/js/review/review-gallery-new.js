@@ -177,7 +177,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			slidesOffsetBefore: 0,
 			//
 			grabCursor: true,
-		} ) ); 
+		} ) );
 	}
 
 	const selectors = {
