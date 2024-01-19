@@ -1,4 +1,4 @@
-/* Review Display */
+/* Display */
 
 .tcb-post-content .legal-header-3 {
     display: flex;
@@ -6,13 +6,13 @@
     column-gap: 18px;
 }
 
-/* FAQ Typography */
+/* Typography */
 
 .tcb-post-content .legal-header-3::before {
-    /* content: '\f119'; */
-    font-family: var(--legal-font-icons-sport);
+    color: var( --Base-base-09 );
+    /* font-family: var(--legal-font-icons-sport); */
+    font-family: var( --legal-font-icons-title );
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
-    color: var(--Base-base-09);
 }  

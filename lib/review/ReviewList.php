@@ -58,10 +58,12 @@ class ReviewList
             if ( 
                 self::check_contains_list_icons()
 
-                || ReviewTitle::check_contains_title_with_image()
+                || ReviewTitle::check_contains_title_icons()
             )
             {
                 ReviewMain::register_style( self::CSS_LIST_ICONS );
+
+                ReviewMain::register_style( self::CSS_TITLE_ICONS );
             }
         }
         else

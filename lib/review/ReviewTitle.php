@@ -18,12 +18,15 @@ class ReviewTitle
 		], 
     ];
 
-	/* public static function register_style( $styles = [] )
-    {
-        ReviewMain::register_style( self::CSS );
-    } */
+	const CSS_TITLE_ICONS = [
+        'legal-template-font-mc-icons-title' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-title.css',
 
-	public static function check_contains_title_with_image()
+			'ver' => '1.0.0',
+		],
+    ];
+
+	public static function check_contains_title_icons()
     {
         return LegalComponents::check_contains( self::CLASSES[ 'h3' ] );
     }
@@ -33,6 +36,11 @@ class ReviewTitle
 		if ( TemplateMain::check_code() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
+
+			if ( self::check_contains_title_icons() )
+			{
+				ReviewMain::register_style( self::CSS_TITLE_ICONS );
+			}
 		}
 		else
 		{
