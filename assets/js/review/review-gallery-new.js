@@ -96,20 +96,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	document.querySelectorAll( '.tcb-post-content .legal-imageset' ).forEach( function ( imageset, index ) {
-		imageset.id = 'imageset-' + index;
+	// document.querySelectorAll( '.tcb-post-content .legal-imageset' ).forEach( function ( imageset, index ) {
+	// 	imageset.id = 'imageset-' + index;
 
-		imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
+	// 	imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
 
-			item.dataset.imageset = imageset.id;
+	// 		item.dataset.imageset = imageset.id;
 
-			item.dataset.id = index;
+	// 		item.dataset.id = index;
 
-			item.addEventListener( 'click', popup, false );
+	// 		item.addEventListener( 'click', popup, false );
 
-			item.addEventListener( 'click', popupUpdate, false );
-		} );
-	} );
+	// 		item.addEventListener( 'click', popupUpdate, false );
+	// 	} );
+	// } );
 
 	const swiper = new Swiper( '.swiper-container', {
 		// Optional parameters
