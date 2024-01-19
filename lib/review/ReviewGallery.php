@@ -152,6 +152,8 @@ class ReviewGallery
                         'caption' => $caption,
         
                         'alt' => $alt,
+
+                        'class' => 'item-image-' . $id,
                     ];
                 }
             }
@@ -182,17 +184,6 @@ class ReviewGallery
 
     public static function render( $args )
     {
-        // if ( !ReviewMain::check() )
-        // {
-        //     return '';
-        // }
-
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'gallery' ], false, $args );
-
-        // return ob_get_clean();
-
         return self::render_main( self::TEMPLATE[ 'gallery' ], $args );
     }
 
