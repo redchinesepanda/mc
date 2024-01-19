@@ -6,11 +6,11 @@
 .icon-esports:before {
     content: "\f102";
 }
-.legal-header-football:before
+.legal-header-football:before,
 .icon-football:before {
     content: "\f103";
 }
-.legal-header-horceracing:before
+.legal-header-horceracing:before,
 .icon-horeseracing:before {
     content: "\f104";
 }
