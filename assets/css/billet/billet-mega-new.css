@@ -26,16 +26,6 @@
 
 	/* Position */
 
-	.legal-billet-mega .billet-mega-about {
-		/* padding: 40px 20px 40px 0px; */
-		padding: 20px;
-	}
-
-	.legal-billet-mega .billet-mega-content
-	{
-		padding: 18px 20px;
-	}
-
 	.legal-billet-mega .mega-about-afillate
 	{
 		margin-left: auto; 
@@ -148,6 +138,16 @@
 .legal-billet-mega {
 	/* padding: 30px; */
 	margin-bottom: 24px;
+}
+
+.legal-billet-mega .billet-mega-about {
+	/* padding: 40px 20px 40px 0px; */
+	padding: 20px;
+}
+
+.legal-billet-mega .billet-mega-content
+{
+	padding: 18px 20px;
 }
 
 .legal-billet-mega .billet-mega-content p {
