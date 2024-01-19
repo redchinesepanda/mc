@@ -139,11 +139,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function swiper( element, index )
 	{
-		let selectorImagesetWrapperCurrent = selectors.imagesetWrapperCurrent( index );
+		element.classList.add( classes.imagesetWrapperCurrent( index ) );
 
-		element.classList.add( selectorImagesetWrapperCurrent );
-
-		let mySwiper = new Swiper ( selectorImagesetWrapperCurrent, {
+		let mySwiper = new Swiper ( selectors.imagesetWrapperCurrent( index ), {
 			speed: 400,
 			spaceBetween: 100,
 			initialSlide: 0,
@@ -193,6 +191,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetWrapperCurrent : function( index )
 		{
 			return '.legal-imageset-wrapper-' + index;
+		}
+	};
+
+	const classes = {
+		imagesetCurrent : function( index )
+		{
+			return 'legal-imageset-' + index;
+		},
+
+		imagesetWrapperCurrent : function( index )
+		{
+			return 'legal-imageset-wrapper-' + index;
 		}
 	};
 	
