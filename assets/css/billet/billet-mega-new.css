@@ -8,6 +8,11 @@
 	}
 
 	/* Position */
+	.legal-billet-mega h3,
+	.legal-billet-mega h4 {
+		padding-top: 16px;
+		padding-bottom: 16px;
+	}
 
 	/* Width and Height */
 
@@ -41,6 +46,12 @@
 	.legal-billet-mega .mega-about-links
 	{
 		margin-left: auto;
+	}
+
+	.legal-billet-mega h3,
+	.legal-billet-mega h4 {
+		padding-top: 14px;
+		padding-bottom: 24px;
 	}
 
 	/* Width and Height */
@@ -192,8 +203,6 @@
 
 .legal-billet-mega h3,
 .legal-billet-mega h4 {
-    padding-top: 14px;
-    padding-bottom: 24px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
