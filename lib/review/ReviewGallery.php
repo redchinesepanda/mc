@@ -56,7 +56,7 @@ class ReviewGallery
         ],
     ];
 
-    const JS = [
+    const JS_NEW = [
         'review-gallery' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
 
@@ -72,7 +72,18 @@ class ReviewGallery
 
     public static function register_script()
     {
-        ReviewMain::register_script( self::JS );
+        if ( TemplateMain::check_new() )
+        {
+            if ( self::check_shortcode_gallery() )
+            {
+                ReviewMain::register_script( self::JS_NEW );
+            }
+        }
+        else
+        {
+            ReviewMain::register_script( self::JS );
+        }
+        
     }
 
     const SIZE = [
