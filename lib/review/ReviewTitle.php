@@ -19,6 +19,12 @@ class ReviewTitle
     ];
 
 	const CSS_TITLE_ICONS = [
+		'review-title-icons' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title-icons.css',
+
+            'ver' => '1.0.0',
+        ],
+		
         'legal-template-font-mc-icons-title' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-title.css',
 
