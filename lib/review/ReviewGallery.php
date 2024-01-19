@@ -16,6 +16,12 @@ class ReviewGallery
 
             'ver' => '1.0.0',
         ],
+
+        'swiper-bundle' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     const SHORTCODES = [
@@ -45,6 +51,20 @@ class ReviewGallery
     const JS = [
         'review-gallery' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+    const JS = [
+        'review-gallery' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
+
+            'ver' => '1.0.0',
+        ],
+
+        'swiper-bundle' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
             'ver' => '1.0.0',
         ],
