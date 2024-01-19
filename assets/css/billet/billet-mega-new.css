@@ -395,11 +395,6 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
-.legal-billet-mega .billet-mega-content p {
-	font-size: 14px;
-	line-height: 22px;
-}
-
 .legal-billet-mega.legal-horizontal .billet-mega-content p {
 	text-align: center;
 }
