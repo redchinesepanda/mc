@@ -402,10 +402,10 @@
 
 .legal-billet-mega .content-title-link {
 	/* font-family: "Source Sans Pro"; */
-	font-size: 28px;
-	font-weight: 400;
-	line-height: 33.6px;
-	color: rgb(12, 17, 21);
+	/* font-size: 28px;
+	font-weight: 700;
+	line-height: 33.6px; */
+	color: var( --Base-base-09 );
 	text-decoration: none;
 }
 
