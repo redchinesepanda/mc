@@ -34,3 +34,19 @@
 .icon-stars:before {
     content: "\f109";
 }
+.legal-header-handball:before,
+.icon-handball:before {
+    content: "\f10a";
+}
+.legal-header-hockey:before,
+.icon-hockey:before {
+    content: "\f10b";
+}
+.legal-header-rugby:before,
+.icon-rugby:before {
+    content: "\f10c";
+}
+.legal-header-volleyball:before,
+.icon-volleyball:before {
+    content: "\f10d";
+}
