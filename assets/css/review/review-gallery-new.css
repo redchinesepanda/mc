@@ -51,7 +51,7 @@
 .tcb-post-content .legal-imageset {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
 }
 
