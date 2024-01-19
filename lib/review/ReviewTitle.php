@@ -22,7 +22,7 @@ class ReviewTitle
 		'review-title-icons' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-title-icons.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
 		
         'legal-template-font-mc-icons-title' => [
