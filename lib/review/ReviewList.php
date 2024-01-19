@@ -55,7 +55,7 @@ class ReviewList
                 ReviewMain::register_style( self::CSS_NEW );
             }
 
-            if ( sself::check_contains_list_icons() )
+            if ( self::check_contains_list_icons() )
             {
                 ReviewMain::register_style( self::CSS_LIST_ICONS );
 
