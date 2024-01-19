@@ -54,6 +54,11 @@
         line-height: 24px;
     }
 
+    .tcb-post-content h4 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
     .tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
     {
         font-size: 14px;
@@ -103,6 +108,11 @@
     .tcb-post-content h3 {
         font-size: 22px;
         line-height: 26px;
+    }
+
+    .tcb-post-content h4 {
+        font-size: 20px;
+        line-height: 24px;
     }
 
     .tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
@@ -171,7 +181,8 @@
 }
 
 .tcb-post-content h4:not( .legal-override ) {
-    padding-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 18px;
     margin: 0px;
 }
 
