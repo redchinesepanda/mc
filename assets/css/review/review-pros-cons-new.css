@@ -20,7 +20,7 @@
 
 /* Pros Cons Display */
 
-div.legal-pros-cons {
+.legal-pros-cons {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 18px;
