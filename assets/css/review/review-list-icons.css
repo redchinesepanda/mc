@@ -31,10 +31,10 @@
 .icon-baseball:before {
     content: "\f107";
 }
-.icon-basketball-shots:before,
+/* .icon-basketball-shots:before,
 .icon-basketball:before {
     content: "\f108";
-}
+} */
 .icon-beach-football:before {
     content: "\f109";
 }
@@ -78,9 +78,9 @@
 .icon-darts:before {
     content: "\f114";
 }
-.icon-esports:before {
+/* .icon-esports:before {
     content: "\f115";
-}
+} */
 .icon-motorbikes:before,
 .icon-indy-racing:before,
 .icon-motorsports:before,
@@ -96,7 +96,7 @@
 .icon-floorball:before {
     content: "\f118";
 }
-.icon-beach-football:before,
+/* .icon-beach-football:before,
 .icon-soccer:before,
 .icon-gaelic-football:before,
 .icon-futsal:before,
@@ -104,7 +104,7 @@
 .icon-football:before,
 .legal-header-football:before {
     content: "\f119";
-}
+} */
 .icon-futzal:before {
     content: "\f11a";
 }
@@ -138,14 +138,14 @@
 .icon-hockey:before {
     content: "\f121";
 }
-.icon-trotting:before,
+/* .icon-trotting:before,
 .icon-trotting-antepost:before,
 .icon-horse-racing:before,
 .icon-horse-racing-antepost:before,
 .icon-horeseracing:before,
 .legal-header-horceracing::before {
     content: "\f122";
-}
+} */
 .icon-hurting:before {
     content: "\f123";
 }
@@ -162,11 +162,11 @@
 .icon-match:before {
     content: "\f127";
 }
-.icon-ufc:before, 
+/* .icon-ufc:before, 
 .icon-ufc-mma:before,
 .icon-mma:before {
     content: "\f128";
-}
+} */
 .icon-muay-thai:before {
     content: "\f129";
 }
@@ -224,9 +224,9 @@
 .icon-tank:before {
     content: "\f138";
 }
-.icon-tennis:before {
+/* .icon-tennis:before {
     content: "\f139";
-}
+} */
 .icon-table-tennis:before,
 .icon-tennis2:before {
     content: "\f13a";
