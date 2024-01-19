@@ -137,11 +137,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	// },
 	// });
 
+	let swipers = [];
+
 	function swiper( element, index )
 	{
 		element.classList.add( classes.imagesetWrapperCurrent( index ) );
 
-		let mySwiper = new Swiper ( selectors.imagesetWrapperCurrent( index ), {
+		swipers.push( new Swiper ( selectors.imagesetWrapperCurrent( index ), {
 			speed: 400,
 			spaceBetween: 100,
 			initialSlide: 0,
@@ -175,7 +177,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			slidesOffsetBefore: 0,
 			//
 			grabCursor: true,
-		} ); 
+		} ) ); 
 	}
 
 	const selectors = {
