@@ -147,7 +147,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			new Swiper (
 				selectors.imagesetWrapperCurrent( index ),
 
-				{}
+				{} 
 
 				// {
 				// 	speed: 400,
