@@ -139,11 +139,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function swiper( element, index )
 	{
-		let selectorImagesetCurrent = selectors.imagesetCurrent( index );
+		let selectorImagesetWrapperCurrent = selectors.imagesetWrapperCurrent( index );
 
-		element.classList.add( selectorImagesetCurrent );
+		element.classList.add( selectorImagesetWrapperCurrent );
 
-		let mySwiper = new Swiper ( selectorImagesetCurrent, {
+		let mySwiper = new Swiper ( selectorImagesetWrapperCurrent, {
 			speed: 400,
 			spaceBetween: 100,
 			initialSlide: 0,
@@ -183,13 +183,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
 
+		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+
 		imagesetCurrent : function( index )
 		{
-			return '.legal-imageset' + index;
+			return '.legal-imageset-' + index;
+		},
+
+		imagesetWrapperCurrent : function( index )
+		{
+			return '.legal-imageset-wrapper-' + index;
 		}
 	};
 	
-	document.querySelectorAll( selectors.imageset ).forEach( swiper );
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( swiper );
 	  
 } );
 
