@@ -154,12 +154,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			autoplay: 5000,
 			autoplayStopOnLast: false, // loop false also
 			// If we need pagination
-			pagination: '.swiper-pagination',
+			pagination: selectors.imagesetWrapperCurrent( index ) + ' .swiper-pagination',
 			paginationType: "bullets",
 			
 			// Navigation arrows
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
+			nextButton: selectors.imagesetWrapperCurrent( index ) + ' .swiper-button-next',
+			prevButton: selectors.imagesetWrapperCurrent( index ) + ' .swiper-button-prev',
 			
 			// And if we need scrollbar
 			//scrollbar: '.swiper-scrollbar',
