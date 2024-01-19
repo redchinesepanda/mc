@@ -286,7 +286,10 @@
 .legal-billet-mega .mega-about-logo {
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: contain;
+	/* background-size: contain; */
+	background-size: 80%;
+	border: 1px solid var(--Base-base-09);
+	border-radius: 12px;
 }
 
 .legal-billet-mega .mega-about-afillate {
