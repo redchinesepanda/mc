@@ -141,7 +141,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let selectorImagesetCurrent = selectors.imagesetCurrent( index );
 
-		element.classlist.add( selectorImagesetCurrent );
+		element.classList.add( selectorImagesetCurrent );
 
 		let mySwiper = new Swiper ( selectorImagesetCurrent, {
 			speed: 400,
