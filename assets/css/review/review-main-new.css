@@ -105,7 +105,7 @@
         line-height: 26px;
     }
 
-    .tcb-post-content:not( .legal-billet-mega ) p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
+    .tcb-post-content > p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
     {
         font-size: 16px;
         line-height: 26px;
