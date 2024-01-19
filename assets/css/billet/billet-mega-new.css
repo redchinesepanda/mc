@@ -315,10 +315,21 @@
 
 /* Typography */
 
+.legal-billet-mega .mega-about-afillate,
+.legal-billet-mega .mega-about-review,
+.legal-billet-mega .content-title-link,
+.legal-billet-mega .mega-about-name,
+.legal-billet-mega .mega-about-name,
+.legal-billet-mega .mega-about-post,
+.legal-billet-mega .mega-about-prefix,
+.legal-billet-mega.legal-horizontal .billet-mega-content a {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
+}
+
 .legal-billet-mega .mega-about-afillate {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 28.8px;
 	text-transform: uppercase;
@@ -328,9 +339,8 @@
 }
 
 .legal-billet-mega .mega-about-review {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 15px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 15px;
 	color: rgb(18, 0, 0);
@@ -339,10 +349,10 @@
 }
 
 /* .legal-billet-mega .mega-content-title, */
+
 .legal-billet-mega .content-title-link {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 28px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 33.6px;
 	color: rgb(12, 17, 21);
@@ -350,20 +360,18 @@
 }
 
 .legal-billet-mega .mega-about-name {
-	font-family: "Source Sans Pro";
-	font-size: 15px;
-	font-style: normal;
-	font-weight: 600;
-	letter-spacing: 2px;
-	line-height: 19.2px;
-	color: rgb(12, 17, 21);
-	text-transform: uppercase;
+	/* font-family: "Source Sans Pro"; */
+	font-size: 16px;
+	font-weight: 700;
+	/* letter-spacing: 2px; */
+	line-height: 24px;
+	color: var( --Base-base-09 );
+	/* text-transform: uppercase; */
 }
 
 .legal-billet-mega .mega-about-post {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 12px;
-	font-style: normal;
 	font-weight: 400;
 	letter-spacing: 2px;
 	line-height: 19.2px;
@@ -372,9 +380,8 @@
 }
 
 .legal-billet-mega .mega-about-prefix {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
-	font-style: normal;
 	font-weight: 600;
 	letter-spacing: normal;
 	line-height: 28px;
@@ -386,9 +393,8 @@
 }
 
 .legal-billet-mega.legal-horizontal .billet-mega-content a {
-	font-family: "Source Sans Pro";
+	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
-	font-style: normal;
 	font-weight: 700;
 	line-height: 20.8px;
 	color: rgb(12, 11, 45);
