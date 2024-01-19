@@ -1,38 +1,26 @@
 .legal-header-basketball:before,
-.icon-basketball-shots:before,
 .icon-basketball:before {
-    content: "\f108";
+    content: "\f101";
 }
 .legal-header-esports:before,
 .icon-esports:before {
-    content: "\f115";
+    content: "\f102";
 }
 .legal-header-football:before
-.icon-beach-football:before,
-.icon-soccer:before,
-.icon-gaelic-football:before,
-.icon-futsal:before,
-.icon-futsal-4×4:before,
 .icon-football:before {
-    content: "\f119";
+    content: "\f103";
 }
 .legal-header-horceracing:before
-.icon-trotting:before,
-.icon-trotting-antepost:before,
-.icon-horse-racing:before,
-.icon-horse-racing-antepost:before,
 .icon-horeseracing:before {
-    content: "\f122";
+    content: "\f104";
 }
 .legal-header-mma:before,
-.icon-ufc:before, 
-.icon-ufc-mma:before,
 .icon-mma:before {
-    content: "\f128";
+    content: "\f105";
 }
 .legal-header-tennis:before,
 .icon-tennis:before {
-    content: "\f139";
+    content: "\f106";
 }
 .legal-header-deposite:before,
 .icon-deposite:before {
