@@ -11,11 +11,11 @@ class ReviewGallery
     ];
 
     const CSS_NEW = [
-        'review-gallery' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery-new.css',
+        // 'review-gallery' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery-new.css',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
 
         'swiper-bundle' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.css',
@@ -57,11 +57,11 @@ class ReviewGallery
     ];
 
     const JS_NEW = [
-        'review-gallery' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
+        // 'review-gallery' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
 
         'swiper-bundle' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
