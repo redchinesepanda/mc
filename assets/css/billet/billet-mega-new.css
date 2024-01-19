@@ -293,9 +293,17 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	/* background-size: contain; */
-	background-size: 80%;
 	border: 1px solid var(--Base-base-09);
-	border-radius: 12px;
+}
+
+.legal-billet-mega:not( .legal-author ) .mega-about-logo {
+	background-size: 80%;
+	border-radius: 12%;
+}
+
+.legal-billet-mega.legal-author .mega-about-logo {
+	background-size: contain;
+	border-radius: 50%;
 }
 
 .legal-billet-mega .mega-about-afillate {
