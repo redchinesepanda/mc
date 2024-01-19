@@ -111,31 +111,85 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	} );
 	// } );
 
-	const swiper = new Swiper( '.swiper-container', {
-		// Optional parameters
-		// direction: 'vertical',
-		direction: 'horizontal',
+	// const swiper = new Swiper( '.swiper-container', {
+	// 	// Optional parameters
+	// 	// direction: 'vertical',
+	// 	direction: 'horizontal',
 
-		// loop: true,
-		loop: false,
+	// 	// loop: true,
+	// 	loop: false,
 	  
-		// If we need pagination
-		pagination: {
-		  el: '.swiper-pagination',
-		},
+	// 	// If we need pagination
+	// 	pagination: {
+	// 	  el: '.swiper-pagination',
+	// 	},
 	  
-		// Navigation arrows
-		navigation: {
-		  nextEl: '.swiper-button-next',
+	// 	// Navigation arrows
+	// 	navigation: {
+	// 	  nextEl: '.swiper-button-next',
 
-		  prevEl: '.swiper-button-prev',
-		},
+	// 	  prevEl: '.swiper-button-prev',
+	// 	},
 	  
-		// And if we need scrollbar
-		// scrollbar: {
-		//   el: '.swiper-scrollbar',
-		// },
-	});
+	// 	// And if we need scrollbar
+	// 	// scrollbar: {
+	// 	//   el: '.swiper-scrollbar',
+	// 	// },
+	// });
+
+	function swiper( element, index )
+	{
+		let selectorImagesetCurrent = selectors.imagesetCurrent( index );
+
+		element.classlist.add( selectorImagesetCurrent );
+
+		let mySwiper = new Swiper ( selectorImagesetCurrent, {
+			speed: 400,
+			spaceBetween: 100,
+			initialSlide: 0,
+			//truewrapper adoptsheight of active slide
+			autoHeight: false,
+			// Optional parameters
+			direction: 'horizontal',
+			loop: true,
+			// delay between transitions in ms
+			autoplay: 5000,
+			autoplayStopOnLast: false, // loop false also
+			// If we need pagination
+			pagination: '.swiper-pagination',
+			paginationType: "bullets",
+			
+			// Navigation arrows
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			
+			// And if we need scrollbar
+			//scrollbar: '.swiper-scrollbar',
+			// "slide", "fade", "cube", "coverflow" or "flip"
+			effect: 'slide',
+			// Distance between slides in px.
+			spaceBetween: 60,
+			//
+			slidesPerView: 2,
+			//
+			centeredSlides: true,
+			//
+			slidesOffsetBefore: 0,
+			//
+			grabCursor: true,
+		} ); 
+	}
+
+	const selectors = {
+		imageset : '.tcb-post-content .legal-imageset',
+
+		imagesetCurrent : function( index )
+		{
+			return '.legal-imageset' + index;
+		}
+	};
+	
+	document.querySelectorAll( selectors.imageset ).forEach( swiper );
 	  
 } );
 
