@@ -1,5 +1,5 @@
 <?php if( !empty( $args[ 'items' ] ) ): ?>
-    <!-- <div class="legal-imageset-wrapper"> -->
+    <!-- <div class="legal-imageset-wrapper"> --> 
         <div class="legal-imageset <?php echo $args[ 'class' ]; ?>">
             <?php foreach( $args[ 'items' ] as $image ): ?>
                 <div class="imageset-item">
