@@ -163,8 +163,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetForward : '.imageset-forward',
 		
-		// imageFirst : function()
-		imageFirst()
+		imageFirst : function()
 		{
 			return this.imageset + ' .imageset-item';
 		}
