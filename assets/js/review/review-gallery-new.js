@@ -190,8 +190,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.add( classes.imageActive );
 	}
 
-	console.log( selectors.imageFirst() );
-
 	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
 	  
 } );
