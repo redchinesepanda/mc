@@ -69,6 +69,12 @@ class ReviewGallery
             'ver' => '1.0.0',
         ],
 
+        'review-gallery-swiper' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-swiper.js',
+
+            'ver' => '1.0.0',
+        ],
+
         // 'swiper-bundle' => [
         //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
