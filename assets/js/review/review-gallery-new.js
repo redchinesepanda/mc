@@ -166,7 +166,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imageFirst : function()
 		{
 			return this.imageset + ' .imageset-item';
-		},
+		}
 		
 		// imageFirst : this.imageset + ' .imageset-item'
 	};
