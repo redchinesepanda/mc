@@ -105,15 +105,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( imageset !== null )
 		{
-			// imageset.scroll({
-			// 	top: 0,
+			imageset.scroll({
+				top: 0,
 	
-			// 	left: shift,
+				// left: shift,
+				
+				left: imageset.scrollLeft + shift,
 	
-			// 	behavior: "smooth",
-			// });
+				behavior: "smooth",
+			});
 
-			imageset.scrollLeft += shift;
+			// imageset.scrollLeft += shift;
 		}
 	}
 
