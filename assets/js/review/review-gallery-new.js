@@ -129,7 +129,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	});
 		// }
 
-		scrollX( event.currentTarget, -300 );
+		scrollX( event.currentTarget, -100 );
 	}
 
 	function scrollForward( event )
@@ -148,7 +148,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	});
 		// }
 
-		scrollX( event.currentTarget, 300 );
+		scrollX( event.currentTarget, 100 );
 	}
 
 	function listenerBackward( element )
