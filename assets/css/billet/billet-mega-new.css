@@ -356,6 +356,10 @@
 	border-radius: 20px;
 }
 
+.legal-billet-mega .mega-about-afillate:hover {
+	background: var(--Base-base-07);
+}
+
 .legal-billet-mega .link-item {
 	border: 1px solid var(--Base-base-09 );
     border-radius: 4px;
@@ -396,13 +400,13 @@
 
 .legal-billet-mega .mega-about-afillate {
 	/* font-family: "Source Sans Pro"; */
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 28.8px;
-	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	/* text-transform: uppercase; */
 	text-decoration: none;
 	text-align: center;
-	color: rgb(255, 255, 255);
+	color: var(--Base-base-01);
 }
 
 .legal-billet-mega .mega-about-review {
@@ -410,7 +414,7 @@
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 15px;
-	color: rgb(18, 0, 0);
+	color: var( --Base-base-09 );
 	text-decoration: none;
 	text-transform: uppercase;
 }
