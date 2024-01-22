@@ -184,7 +184,7 @@
 	padding: 18px 20px;
 }
 
-.legal-billet-mega .billet-mega-content p {
+.legal-billet-mega .billet-mega-content p:not( .legal-contextbox ) {
 	margin: 0px;
 }
 
@@ -197,7 +197,7 @@
 	/* padding-top: 10px; */
 }
 
-.legal-billet-mega:not( .legal-horizontal ) p:not( :last-child ) {
+.legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( :last-child ) {
     padding-bottom: 18px;
 	margin-bottom: 0px;
 }
