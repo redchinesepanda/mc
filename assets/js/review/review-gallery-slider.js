@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function scrollX( element, shift )
 	{
-		console.log( 'scrollX shift: ' + shift );
+		// console.log( 'scrollX shift: ' + shift );
 
 		let imageset = element.closest( selectors.imagesetWrapper )
 			.querySelector( selectors.imageset );
