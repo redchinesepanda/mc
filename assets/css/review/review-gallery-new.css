@@ -66,7 +66,7 @@
 
 .tcb-post-content .legal-imageset .imageset-item {
     scroll-snap-align: start;
-    min-width: 100%;
+    /* min-width: 100%; */
 }
   
 /* Position */
