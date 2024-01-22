@@ -104,7 +104,7 @@
 
 .tcb-post-content .legal-imageset
 {
-    /* min-width: max-content; */
+    min-width: max-content;
 }
 
 .tcb-post-content .legal-gallery {
