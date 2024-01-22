@@ -96,26 +96,59 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
+	function scrollX( element, shift )
+	{
+		let imageset = element.closest( selectors.imagesetWrapper )
+			.querySelector( selectors.imageset );
+
+		if ( imageset !== null )
+		{
+			imageset.scroll({
+				top: 0,
+	
+				left: shift,
+	
+				behavior: "smooth",
+			});
+		}
+	}
+
 	function scrollfBackward( event )
 	{
-		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
-			top: 0,
+		// let imageset = event.currentTarget.closest( selectors.imagesetWrapper )
+		// 	.querySelector( selectors.imageset );
 
-			left: -300,
+		// if ( imageset !== null )
+		// {
+		// 	imageset.scroll({
+		// 		top: 0,
+	
+		// 		left: -300,
+	
+		// 		behavior: "smooth",
+		// 	});
+		// }
 
-			behavior: "smooth",
-		});
+		scrollX( event.currentTarget, -300 );
 	}
 
 	function scrollForward( event )
 	{
-		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
-			top: 0,
+		// let imageset = event.currentTarget.closest( selectors.imagesetWrapper )
+		// 	.querySelector( selectors.imageset );
 
-			left: 300,
+		// if ( imageset !== null )
+		// {
+		// 	imageset.scroll({
+		// 		top: 0,
+	
+		// 		left: 300,
+	
+		// 		behavior: "smooth",
+		// 	});
+		// }
 
-			behavior: "smooth",
-		});
+		scrollX( event.currentTarget, 300 );
 	}
 
 	function listenerBackward( element )
