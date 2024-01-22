@@ -37,6 +37,11 @@
 
 .tcb-post-content .legal-imageset-wrapper
 {
+    /* overflow-x: scroll; */
+}
+
+.tcb-post-content .legal-imageset
+{
     overflow-x: scroll;
 }
 
@@ -140,7 +145,7 @@
 
 .tcb-post-content .legal-imageset
 {
-    min-width: max-content;
+    /* min-width: max-content; */
 }
 
 .tcb-post-content .legal-gallery {
