@@ -120,6 +120,10 @@
 	justify-content: center;
 } */
 
+.legal-billet-mega .mega-about-review {
+	display: inline-block;
+}
+
 .legal-billet-mega.legal-image .billet-mega-content,
 .legal-billet-mega.legal-horizontal .billet-mega-content {
 	display: flex;
