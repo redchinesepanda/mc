@@ -85,10 +85,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'touchend', touchEnd );
 	}
 
-	console.log( selectors.imagesetWrapper );
-	
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
-
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
 
 	// let treshold = Math.max( 1, Math.floor( 0.01 * ( pageWidth ) ) );
@@ -203,6 +199,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imageActive : 'legal-active'
 	};
+
+	console.log( selectors.imagesetWrapper );
+	
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
 	
 	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
