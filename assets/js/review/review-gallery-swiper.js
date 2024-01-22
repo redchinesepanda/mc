@@ -12,7 +12,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let yx = Math.abs( y / x );
 
-		if ( Math.abs( x ) > treshold || Math.abs( y ) > treshold )
+		if ( Math.abs( x ) > element.dataset.treshold || Math.abs( y ) > element.dataset.treshold )
 		{
 			if ( yx <= limit )
 			{
