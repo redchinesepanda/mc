@@ -17,11 +17,11 @@ class ReviewGallery
         //     'ver' => '1.0.0',
         // ],
 
-        'swiper-bundle' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.css',
+        // 'swiper-bundle' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.css',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
     ];
 
     const SHORTCODES = [
@@ -63,11 +63,11 @@ class ReviewGallery
             'ver' => '1.0.0',
         ],
 
-        'swiper-bundle' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+        // 'swiper-bundle' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
     ];
 
     public static function register_script()
