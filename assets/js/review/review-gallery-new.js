@@ -163,7 +163,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetForward : '.imageset-forward',
 		
-		imageFirst : this.imageset + ' .imageset-item'
+		imageFirst : function()
+		{
+			return this.imageset + ' .imageset-item';
+		},
+		
+		// imageFirst : this.imageset + ' .imageset-item'
 	};
 
 	const classes = {
@@ -189,7 +194,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	console.log( selectors.imageFirst );
 
-	document.querySelectorAll( selectors.imageFirst ).forEach( setActive );
+	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
 	  
 } );
 
