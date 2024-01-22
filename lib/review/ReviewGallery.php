@@ -14,7 +14,7 @@ class ReviewGallery
         'review-gallery' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-gallery-new.css',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
 
         // 'swiper-bundle' => [
