@@ -96,7 +96,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
-	function listenerBackward( event )
+	function scrollfBackward( event )
 	{
 		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
 			top: 0,
@@ -107,7 +107,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	}
 
-	function listenerForward( event )
+	function scrollForward( event )
 	{
 		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
 			top: 0,
@@ -125,7 +125,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function listenerForward( element )
 	{
-		element.addEventListener( 'click', scrollforward, false );
+		element.addEventListener( 'click', scrollForward, false );
 	}
 
 	function slider( element, index )
