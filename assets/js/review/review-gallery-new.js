@@ -115,6 +115,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	function getShift( element )
+	{
+		let shift = 0;
+
+		let imageset = element.closest( selectors.imagesetWrapper )
+			.querySelector( selectors.imageset );
+
+		if ( imageset !== null )
+		{
+			let itemActive = imageset.querySelector( selectors.imageActive );
+
+			if ( itemActive !== null )
+			{
+				shift = itemActive.getBoundingClientRect().width;
+			}
+		}
+
+		return shift;
+	}
+
 	function scrollfBackward( event )
 	{
 		scrollX( event.currentTarget, -100 );
@@ -125,12 +145,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		scrollX( event.currentTarget, 100 );
 	}
 
-	function listenerBackward( element )
+	function setBackward( element )
 	{
 		element.addEventListener( 'click', scrollfBackward );
 	}
 
-	function listenerForward( element )
+	function setForward( element )
 	{
 		element.addEventListener( 'click', scrollForward );
 	}
@@ -139,9 +159,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.classList.add( classes.imagesetWrapperCurrent( index ) );
 
-		element.querySelectorAll( selectors.imagesetBackward ).forEach( listenerBackward );
+		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 
-		element.querySelectorAll( selectors.imagesetForward ).forEach( listenerForward );
+		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
 	}
 
 	const selectors = {
@@ -166,7 +186,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imageFirst : function()
 		{
 			return this.imageset + ' .imageset-item:first-of-type';
-		}
+		},
+
+		imageActive : ' .legal-active'
 	};
 
 	const classes = {
