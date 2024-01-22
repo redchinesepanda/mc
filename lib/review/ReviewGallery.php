@@ -57,8 +57,14 @@ class ReviewGallery
     ];
 
     const JS_NEW = [
-        'review-gallery' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
+        // 'review-gallery' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
+
+        //     'ver' => '1.0.0',
+        // ],
+
+        'review-gallery-slider' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-slider.js',
 
             'ver' => '1.0.0',
         ],

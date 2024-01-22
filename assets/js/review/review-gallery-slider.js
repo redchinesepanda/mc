@@ -1,49 +1,145 @@
-// review-offers start
+// review-gallery-slider-js start
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function next( element )
+	function scrollX( element, shift )
 	{
-		const slideWidth = slide.clientWidth;
+		console.log( 'scrollX shift: ' + shift );
 
-		slidesContainer.scrollLeft += slideWidth + offset;
+		let imageset = element.closest( selectors.imagesetWrapper )
+			.querySelector( selectors.imageset );
+
+		if ( imageset !== null )
+		{
+			imageset.scroll({
+				top: 0,
+	
+				// left: shift,
+				
+				left: imageset.scrollLeft + shift,
+	
+				behavior: "smooth",
+			});
+
+			// imageset.scrollLeft += shift;
+		}
 	}
 
-	function previous( element )
+	function getShift( element )
 	{
-		const slideWidth = slide.clientWidth;
+		let shift = 0;
 
-		slidesContainer.scrollLeft -= slideWidth + offset;
-	}
+		let imageset = element.closest( selectors.imagesetWrapper )
+			.querySelector( selectors.imageset );
 
-	function swipe( element )
-	{
-		const slidesContainer = element.querySelector( '.legal-other-offers' );
+		if ( imageset !== null )
+		{
+			let itemActive = imageset.querySelector( selectors.imageActive );
 
-		const slide = slidesContainer.querySelector( '.offers-item' );
+			if ( itemActive !== null )
+			{
+				shift = parseInt( itemActive.getBoundingClientRect().width )
+					+ parseInt( window.getComputedStyle( imageset, null )
+						.getPropertyValue( properties.columnGap )
+						.match( /\d+/ ) );
 
-		const nextButton = element.querySelector( '.offers-arrow-next' );
+				// console.log( 'getShift columnGap: ' + window.getComputedStyle( imageset, null )
+				// .getPropertyValue( properties.columnGap ).match( /\d+/ ) );
 
-		const prevButton = element.querySelector( '.offers-arrow-prev' );
-
-		let offset = 0;
-
-		if ( window.matchMedia( '( min-width: 768px )' ).matches ) {
-			offset = 18;
+				// console.log( 'getShift width: ' + itemActive.getBoundingClientRect().width );
+			}
 		}
 
-		nextButton.addEventListener( "click", next );
-	
-		prevButton.addEventListener( "click", previous );
+		return shift;
 	}
 
-	const selectors = {
-		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+	function scrollfBackward( event )
+	{
+		// scrollX( event.currentTarget, -100 );
 
-		imageset : '.tcb-post-content .legal-imageset',
+		scrollX( event.currentTarget, getShift( event.currentTarget ) * -1 );
+	}
+
+	function scrollForward( event )
+	{
+		// scrollX( event.currentTarget, 100 );
+		
+		scrollX( event.currentTarget, getShift( event.currentTarget ) );
+	}
+
+	function setBackward( element )
+	{
+		element.addEventListener( 'click', scrollfBackward );
+	}
+
+	function setForward( element )
+	{
+		element.addEventListener( 'click', scrollForward );
+	}
+
+	function slider( element, index )
+	{
+		element.classList.add( classes.imagesetWrapperCurrent( index ) );
+
+		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
+
+		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
+	}
+
+	const properties = {
+		columnGap : 'column-gap',
 	};
 
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( swipe );
+	const selectors = {
+		imageset : '.tcb-post-content .legal-imageset',
+
+		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+
+		imagesetCurrent : function( index )
+		{
+			return '.legal-imageset-' + index;
+		},
+
+		imagesetWrapperCurrent : function( index )
+		{
+			return '.legal-imageset-wrapper-' + index;
+		},
+
+		imagesetBackward : '.imageset-backward',
+
+		imagesetForward : '.imageset-forward',
+		
+		imageFirst : function()
+		{
+			return this.imageset + ' .imageset-item:first-of-type';
+		},
+
+		imageActive : ' .legal-active'
+	};
+
+	const classes = {
+		imagesetCurrent : function( index )
+		{
+			return 'legal-imageset-' + index;
+		},
+
+		imagesetWrapperCurrent : function( index )
+		{
+			return 'legal-imageset-wrapper-' + index;
+		},
+
+		imageActive : 'legal-active'
+	};
+	
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+
+	function setActive( element )
+	{
+		element.classList.add( classes.imageActive );
+	}
+
+	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
+	  
 } );
 
-// review-offers-js end
+// review-gallery-slider-js end
