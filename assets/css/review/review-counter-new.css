@@ -3,15 +3,22 @@
 @media screen and ( max-width: 767px ) {
 	/* Display */
 
-	/* .legal-review-counter,
-	.legal-review-counter .review-counter-info,
-	.legal-review-counter .review-counter-set {
+	.tcb-post-content > .legal-review-counter,
+	.tcb-post-content > .legal-review-counter .review-counter-info,
+	.tcb-post-content > .legal-review-counter .review-counter-set {
 		flex-direction: column;
 		row-gap: 20px;
-	} */
-
-	.legal-review-counter {
+	}
+ 
+	.legal-billet-mega .legal-review-counter.legal-overall,
+	.legal-billet-mega .legal-review-counter .review-counter-info,
+	.legal-billet-mega .legal-review-counter .review-counter-set {
 		flex-direction: column;
+	}
+
+	.legal-billet-mega .legal-review-counter,
+	.legal-billet-mega .legal-review-counter .review-counter-info,
+	.legal-billet-mega .legal-review-counter .review-counter-set {
 		row-gap: 20px;
 	}
 
