@@ -50,7 +50,7 @@
 	border-top: 1px solid var(--Base-base-09);
 }
 
-.tcb-post-content .legal-faq-title.legal-active:last-of-type,
+.tcb-post-content .legal-faq-title.legal-active:not( .legal-faq-description ):last-of-type,
 .tcb-post-content .legal-faq-description:last-child {
 	border-bottom: 1px solid var(--Base-base-09);
 }
