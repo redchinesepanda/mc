@@ -195,7 +195,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	console.log( selectors.imageFirst );
 
-	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
+	document.querySelectorAll( selectors.imageFirst ).forEach( setActive );
 	  
 } );
 
