@@ -202,14 +202,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imageActive : 'legal-active'
 	};
 	
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
-	function setActive( element )
-	{
-		element.classList.add( classes.imageActive );
-	}
+	// function setActive( element )
+	// {
+	// 	element.classList.add( classes.imageActive );
+	// }
 
-	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
+	// document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
 	  
 } );
 
