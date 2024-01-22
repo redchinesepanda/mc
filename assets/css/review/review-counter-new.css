@@ -1,0 +1,430 @@
+/* review-counter-new */
+
+@media screen and ( max-width: 767px ) {
+	/* Display */
+
+	.legal-review-counter,
+	.legal-review-counter .review-counter-info,
+	.legal-review-counter .review-counter-set {
+		flex-direction: column;
+		row-gap: 20px;
+	}
+
+	.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
+		flex-direction: column;
+		row-gap: 10px;
+	}
+
+	.legal-review-counter .review-counter-set {
+		align-items: center;
+	}
+
+	/* Position */
+
+	.legal-review-counter {
+		padding: 40px 0;
+	}
+
+	.legal-review-counter.legal-overall .review-counter-footer {
+		padding: 0px 30px;
+	}
+
+	/* Width and Height */
+
+	.legal-review-counter .info-logo {
+		width: 100%;
+	}
+
+	/* Background */
+
+	.legal-review-counter .info-logo {
+		background-position: top center;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Position */
+
+	.legal-review-counter {
+		padding: 20px 0;
+	}
+
+	/* Background */
+
+	.legal-review-counter .info-logo {
+		background-position: left 25px center;
+	}
+
+}
+
+/* Display */
+
+.legal-review-counter {
+	display: flex;
+	/* flex-direction: column; */
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.legal-review-counter.legal-overall {
+	justify-content: center;
+}
+
+.legal-review-counter .review-counter-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.legal-review-counter.legal-default .review-counter-set {
+	justify-content: center;
+}
+
+.legal-review-counter .review-counter-set {
+	display: flex;
+	column-gap: 39px;
+	row-gap: 20px;
+	flex-wrap: wrap;
+}
+
+.legal-review-counter.legal-overall .review-counter-overall {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 20px;
+}
+
+.legal-review-counter.legal-overall .review-counter-overall .set-item-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 10px;
+}
+
+.legal-review-counter .set-item {
+	display: flex;
+}
+
+.legal-review-counter .set-item-info {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	row-gap: 5px;
+}
+
+.legal-review-counter .info-logo {
+	flex-basis: 25%;
+	flex-grow: 1;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	display: block;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate[href=""] {
+	pointer-events: none;
+}
+
+/* Position */
+
+.legal-review-counter {
+	margin-bottom: 15px;
+}
+
+.legal-review-counter.legal-default .set-item-info {
+	margin: 10px;
+}
+
+.legal-review-counter.legal-overall .set-item-info {
+	margin: 3px;
+}
+
+.legal-review-counter .info-rating {
+	padding: 15px 25px;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	padding: 5px 45px 5px 20px;
+}
+
+/* Width and Height */
+
+.legal-review-counter {
+	min-height: 255px;
+}
+
+.legal-review-counter .review-counter-info {
+	flex-basis: 100%;
+}
+
+.legal-review-counter .info-logo {
+	min-height: 45px;
+}
+
+.legal-review-counter.legal-default .review-counter-set {
+	flex-basis: 100%;
+}
+
+.legal-review-counter.legal-overall .review-counter-set {
+	flex-basis: calc( 75% - 50px );
+}
+
+.legal-review-counter .review-counter-overall {
+	flex-basis: calc( 25% - 50px );
+}
+
+.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
+	flex-basis: calc( 100% / 3 - 26px );
+}
+
+.legal-review-counter.legal-default .set-item {
+	width: 160px;
+	height: 160px;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .set-item {
+	width: 60px;
+	height: 60px;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .item-label {
+	width: 80px;
+}
+
+.legal-review-counter.legal-overall .review-counter-overall .set-item {
+	width: 80px;
+	height: 80px;
+}
+
+.legal-review-counter .set-item-info {
+	width: 100%;
+}
+
+.legal-review-counter .set-item-info {
+	border-radius: 50%;
+	background: white;
+}
+
+/* Typography */
+
+.legal-review-counter.font-legal-default .info-rating {
+	color: #fff;
+}
+
+.legal-review-counter.font-legal-black .info-rating {
+	color: #000000;
+}
+
+.legal-review-counter .info-rating {
+	letter-spacing: 3px;
+}
+
+.legal-review-counter .set-item-info {
+	font-size: 1rem;
+	text-align: center;
+}
+
+.legal-review-counter {
+	font-family: "Source Sans Pro";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+.legal-review-counter .info-rating {
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.legal-review-counter .item-value {
+	font-weight: 600;
+	color: rgb(89, 151, 227);
+}
+
+.legal-review-counter.legal-default .item-value {
+	font-size: 35px;
+}
+
+.legal-review-counter.legal-overall .item-value {
+	font-size: 20px;
+}
+
+.legal-review-counter.legal-default .item-label {
+	font-size: 14px;
+	color: rgb(59, 59, 59);
+}
+
+.legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
+	color: rgb(255, 255, 255);
+}
+
+.legal-review-counter.legal-overall.font-legal-black .review-counter-set .item-label {
+	color: #000000;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .item-label {
+	font-family: "Source Sans Pro";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: center;
+}
+
+.legal-review-counter.legal-overall.font-legal-default .review-counter-overall .item-label {
+	color: rgb(255, 255, 255);
+}
+
+.legal-review-counter.legal-overall.font-legal-black .review-counter-overall .item-label {
+	color: #000000;
+}
+
+.legal-review-counter.legal-overall .review-counter-overall .item-label {
+	font-family: "Source Sans Pro";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 15.6px;
+	text-align: center;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28.8px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+
+/* Background */
+
+.legal-review-counter .info-rating {
+	background-color: rgba(175, 177, 179, 0.3);
+}
+
+.legal-review-counter .info-logo {
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.legal-review-counter {
+	border-radius: 20px;
+	--legal-counter-color: #5997E3;
+	--legal-counter-second: #5997e300;
+}
+
+.legal-review-counter .set-item {
+	border-radius: 50%;
+	background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg );
+	animation: .4s ease-out turn_in reverse;
+}
+
+.legal-review-counter.legal-overall.font-legal-default .review-counter-footer .review-counter-afillate {
+	border: 1.6px solid rgb(255, 255, 255);
+}
+
+.legal-review-counter.legal-overall.font-legal-black .review-counter-footer .review-counter-afillate {
+	border: 1.6px solid transparent;
+}
+
+.legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
+	background-image: url( '../../img/review/review-bet-here.svg' );
+	background-position: right 22px center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-color: rgb(89, 151, 227);
+	border-radius: 20px;
+}
+
+@keyframes turn_in {
+	5% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .95 ), var( --legal-counter-second ) 0deg );
+	}
+
+	10% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .9 ), var( --legal-counter-second ) 0deg );
+	}
+
+	15% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .85 ), var( --legal-counter-second ) 0deg );
+	}
+
+	20% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .8 ), var( --legal-counter-second ) 0deg );
+	}
+
+	25% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .75 ), var( --legal-counter-second ) 0deg );
+	}
+
+	30% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .7 ), var( --legal-counter-second ) 0deg );
+	}
+
+	35% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .65 ), var( --legal-counter-second ) 0deg );
+	}
+
+	40% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .6 ), var( --legal-counter-second ) 0deg );
+	}
+
+	45% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .55 ), var( --legal-counter-second ) 0deg );
+	}
+
+	50% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .5 ), var( --legal-counter-second ) 0deg );
+	}
+
+	55% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .45 ), var( --legal-counter-second ) 0deg );
+	}
+
+	60% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .4 ), var( --legal-counter-second ) 0deg );
+	}
+
+	65% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .35 ), var( --legal-counter-second ) 0deg );
+	}
+
+	70% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * 0.3 ), var( --legal-counter-second ) 0deg );
+	}
+
+	75% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * 0.25 ), var( --legal-counter-second ) 0deg );
+	}
+
+	80% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .2 ), var( --legal-counter-second ) 0deg );
+	}
+
+	85% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .15 ), var( --legal-counter-second ) 0deg );
+	}
+
+	90% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .1 ), var( --legal-counter-second ) 0deg );
+	}
+
+	95% {
+		background: conic-gradient( var( --legal-counter-color ) calc( var( --progress ) * .05 ), var( --legal-counter-second ) 0deg );
+	}
+
+	100% {
+		background: conic-gradient(var( --legal-counter-second ) 0deg );
+	}
+}
