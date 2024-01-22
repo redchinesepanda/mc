@@ -84,6 +84,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchend', touchEnd );
 	}
+
+	console.log( selectors.imagesetWrapper );
 	
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
 
