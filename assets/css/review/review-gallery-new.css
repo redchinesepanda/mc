@@ -85,12 +85,31 @@
   
 /* Position */
 
+.tcb-post-content .legal-imageset-wrapper
+{
+    position: relative;
+}
+
+.tcb-post-content .legal-imageset-wrapper .imageset-backward
+{
+    position: absolute;
+    left: 0px;
+    top: calc(50% - 24px);
+}
+
+.tcb-post-content .legal-imageset-wrapper .imageset-forward
+{
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 24px);
+}
+
 /* .tcb-post-content .legal-imageset .item-caption {
     padding-top: 5px;
 } */
 
 .tcb-post-content .legal-imageset {
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 
 .tcb-post-content .legal-gallery {
