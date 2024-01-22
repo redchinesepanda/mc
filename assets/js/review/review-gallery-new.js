@@ -145,7 +145,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollfBackward( event )
 	{
-		scrollX( event.currentTarget, -100 );
+		// scrollX( event.currentTarget, -100 );
+
+		scrollX( event.currentTarget, getShift( event.currentTarget ) * -1 );
 	}
 
 	function scrollForward( event )
