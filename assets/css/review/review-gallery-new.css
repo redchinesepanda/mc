@@ -72,7 +72,7 @@
 .tcb-post-content .legal-imageset-wrapper .imageset-backward::before,
 .tcb-post-content .legal-imageset-wrapper .imageset-forward::before
 {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .tcb-post-content .legal-imageset-wrapper .imageset-backward,
