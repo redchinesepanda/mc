@@ -144,8 +144,13 @@
 	row-gap: 18px;
 }
 
+.legal-billet-mega .mega-about-afillate {
+	display: flex;
+	align-items: center;
+}
+
 .legal-billet-mega .mega-about-afillate[href=""] {
-	display: block;
+	/* display: block; */
 	pointer-events: none;
 }
 
@@ -315,6 +320,7 @@
 .legal-billet-mega .mega-about-afillate {
 	/* width: 100%; */
 	min-width: 128px;
+	min-height: 30px;
 }
 
 .legal-billet-mega .billet-mega-footer {
