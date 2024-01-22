@@ -63,7 +63,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.pageWidth = window.innerWidth || document.body.clientWidth;
 
-		element.dataset.treshold = Math.max( 1, Math.floor( 0.01 * ( pageWidth ) ) );
+		element.dataset.treshold = Math.max( 1, Math.floor( 0.01 * ( element.dataset.pageWidth ) ) );
 
 		element.dataset.touchstartX = 0;
 
