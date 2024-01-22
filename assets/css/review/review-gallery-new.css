@@ -92,15 +92,18 @@
 
 .tcb-post-content .legal-imageset-wrapper .imageset-backward
 {
-    position: absolute;
-    left: 0px;
-    top: calc(50% - 24px);
+    left: 8px;
 }
 
 .tcb-post-content .legal-imageset-wrapper .imageset-forward
 {
+    right: 8px;
+}
+
+.tcb-post-content .legal-imageset-wrapper .imageset-backward,
+.tcb-post-content .legal-imageset-wrapper .imageset-forward
+{
     position: absolute;
-    right: 0px;
     top: calc(50% - 24px);
 }
 
