@@ -128,7 +128,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			if ( itemActive !== null )
 			{
-				shift = itemActive.getBoundingClientRect().width;
+				shift = itemActive.getBoundingClientRect().width
+					+ window.getComputedStyle( imageset, null )
+						.getPropertyValue( properties.columnGap );
 			}
 		}
 
@@ -165,6 +167,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
 	}
+
+	const properties = {
+		columnGap : 'column-gap',
+	};
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
