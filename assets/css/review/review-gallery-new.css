@@ -68,6 +68,12 @@
     scroll-snap-align: start;
     /* min-width: 100%; */
 }
+
+.tcb-post-content .legal-imageset-wrapper .imageset-backward::before,
+.tcb-post-content .legal-imageset-wrapper .imageset-forward::before
+{
+    display: block;
+}
   
 /* Position */
 
