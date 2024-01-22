@@ -274,7 +274,12 @@
 	/* flex-basis: 50%; */
 }
 
-.legal-billet-mega.legal-default .mega-about-logo,
+.legal-billet-mega .mega-about-logo {
+	width: 72px;
+	height: 72px;
+}
+
+/* .legal-billet-mega.legal-default .mega-about-logo,
 .legal-billet-mega.legal-no-controls .mega-about-logo,
 .legal-billet-mega.legal-horizontal .mega-about-logo {
 	width: 72px;
@@ -294,7 +299,7 @@
 .legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .mega-about-logo {
 	width: 72px;
 	height: 72px;
-}
+} */
 
 .legal-billet-mega .link-item {
 	width: calc(32px - 7px * 2);
