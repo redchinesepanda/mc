@@ -96,97 +96,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	// document.querySelectorAll( '.tcb-post-content .legal-imageset' ).forEach( function ( imageset, index ) {
-	// 	imageset.id = 'imageset-' + index;
+	function slider( element, index )
+	{
+		element.classList.add( classes.imagesetWrapperCurrent( index ) );
 
-	// 	imageset.querySelectorAll( '.imageset-item' ).forEach( function ( item, index ) {
-
-	// 		item.dataset.imageset = imageset.id;
-
-	// 		item.dataset.id = index;
-
-	// 		item.addEventListener( 'click', popup, false );
-
-	// 		item.addEventListener( 'click', popupUpdate, false );
-	// 	} );
-	// } );
-
-	// const swiper = new Swiper( '.swiper-container', {
-	// 	// Optional parameters
-	// 	// direction: 'vertical',
-	// 	direction: 'horizontal',
-
-	// 	// loop: true,
-	// 	loop: false,
-	  
-	// 	// If we need pagination
-	// 	pagination: {
-	// 	  el: '.swiper-pagination',
-	// 	},
-	  
-	// 	// Navigation arrows
-	// 	navigation: {
-	// 	  nextEl: '.swiper-button-next',
-
-	// 	  prevEl: '.swiper-button-prev',
-	// 	},
-	  
-	// 	// And if we need scrollbar
-	// 	// scrollbar: {
-	// 	//   el: '.swiper-scrollbar',
-	// 	// },
-	// });
-
-	// let swipers = [];
-
-	// function swiper( element, index )
-	// {
-	// 	element.classList.add( classes.imagesetWrapperCurrent( index ) );
-
-	// 	swipers.push(
-	// 		new Swiper (
-	// 			selectors.imagesetWrapperCurrent( index ),
-
-	// 			{} 
-
-	// 			// {
-	// 			// 	speed: 400,
-	// 			// 	spaceBetween: 100,
-	// 			// 	initialSlide: 0,
-	// 			// 	//truewrapper adoptsheight of active slide
-	// 			// 	autoHeight: false,
-	// 			// 	// Optional parameters
-	// 			// 	direction: 'horizontal',
-	// 			// 	loop: true,
-	// 			// 	// delay between transitions in ms
-	// 			// 	autoplay: 5000,
-	// 			// 	autoplayStopOnLast: false, // loop false also
-	// 			// 	// If we need pagination
-	// 			// 	pagination: selectors.imagesetWrapperCurrent( index ) + ' .swiper-pagination',
-	// 			// 	paginationType: "bullets",
-					
-	// 			// 	// Navigation arrows
-	// 			// 	nextButton: selectors.imagesetWrapperCurrent( index ) + ' .swiper-button-next',
-	// 			// 	prevButton: selectors.imagesetWrapperCurrent( index ) + ' .swiper-button-prev',
-					
-	// 			// 	// And if we need scrollbar
-	// 			// 	//scrollbar: '.swiper-scrollbar',
-	// 			// 	// "slide", "fade", "cube", "coverflow" or "flip"
-	// 			// 	effect: 'slide',
-	// 			// 	// Distance between slides in px.
-	// 			// 	spaceBetween: 60,
-	// 			// 	//
-	// 			// 	slidesPerView: 2,
-	// 			// 	//
-	// 			// 	centeredSlides: true,
-	// 			// 	//
-	// 			// 	slidesOffsetBefore: 0,
-	// 			// 	//
-	// 			// 	grabCursor: true,
-	// 			// }
-	// 		)
-	// 	);
-	// } 
+		
+	} 
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
@@ -216,7 +131,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 	
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( swiper );
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 	  
 } );
 

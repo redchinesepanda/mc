@@ -1,6 +1,6 @@
 <?php if( !empty( $args[ 'items' ] ) ): ?>
-    <div class="legal-imageset-wrapper swiper-container">
-        <div class="legal-imageset <?php echo $args[ 'class' ]; ?> swiper-wrapper">
+    <div class="legal-imageset-wrapper">
+        <div class="legal-imageset <?php echo $args[ 'class' ]; ?>">
             <?php foreach( $args[ 'items' ] as $image ): ?>
                 <div class="imageset-item">
                     <img class="item-image <?php echo $image[ 'class' ]; ?>" src="<?php echo $image[ 'src' ]; ?>" alt="<?php echo $image[ 'alt' ]; ?>" width="<?php echo $image[ 'width' ]; ?>" height="<?php echo $image[ 'height' ]; ?>" data-src="<?php echo $image[ 'data-src' ]; ?>">
@@ -8,8 +8,8 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="imageset-pagination"></div>
+        <div class="imageset-backward"></div>
+        <div class="imageset-forward"></div>
     </div>
 <?php endif; ?>
