@@ -130,10 +130,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				shift = itemActive.getBoundingClientRect().width
 					+ window.getComputedStyle( imageset, null )
-						.getPropertyValue( properties.columnGap );
+						.getPropertyValue( properties.columnGap )
+						.match( /\d+/ );
 
 				console.log( 'getShift columnGap: ' + window.getComputedStyle( imageset, null )
-				.getPropertyValue( properties.columnGap ).match(/\d+/) );
+				.getPropertyValue( properties.columnGap ).match( /\d+/ ) );
 
 				console.log( 'getShift width: ' + itemActive.getBoundingClientRect().width );
 			}
