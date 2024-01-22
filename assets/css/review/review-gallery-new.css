@@ -48,13 +48,13 @@
     /* row-gap: 18px; */
 }
 
-.tcb-post-content .legal-imageset {
+/* .tcb-post-content .legal-imageset {
     overflow: auto;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    /* width: 100%; */
+    width: 100%;
     align-items: center;
-}
+} */
 
 .tcb-post-content .legal-imageset .imageset-item {
     display: flex;
