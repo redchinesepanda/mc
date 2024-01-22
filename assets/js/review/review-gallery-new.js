@@ -101,7 +101,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
 			top: 0,
 
-			left: 300,
+			left: -300,
 
 			behavior: "smooth",
 		});
@@ -112,7 +112,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
 			top: 0,
 
-			left: -300,
+			left: 300,
 
 			behavior: "smooth",
 		});
