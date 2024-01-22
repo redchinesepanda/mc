@@ -2,105 +2,139 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function popupNext( event )
-	{
-		let button = event.currentTarget;
+	// function popupNext( event )
+	// {
+	// 	let button = event.currentTarget;
 
-		let imageset = document.getElementById( button.dataset.imageset );
+	// 	let imageset = document.getElementById( button.dataset.imageset );
 
-		let next = button.dataset.next;
+	// 	let next = button.dataset.next;
 
-		if( typeof next !== 'undefined' ) {
-			let item = imageset.querySelector( '.imageset-item[data-id="' + next + '"]' );
+	// 	if( typeof next !== 'undefined' ) {
+	// 		let item = imageset.querySelector( '.imageset-item[data-id="' + next + '"]' );
 
-			item.click();
-		}
-	}
+	// 		item.click();
+	// 	}
+	// }
 
-	function popupRemove( event )
-	{
-		if ( event.target === this ) {
-			event.currentTarget.remove();
-		}
-	}
+	// function popupRemove( event )
+	// {
+	// 	if ( event.target === this ) {
+	// 		event.currentTarget.remove();
+	// 	}
+	// }
 
-	function popup( event )
-    {
-		let content = document.querySelector( '.tcb-post-content' );
+	// function popup( event )
+    // {
+	// 	let content = document.querySelector( '.tcb-post-content' );
 
-		if ( content.querySelector( '.legal-gallery' ) === null ) {
-			let popup = document.createElement( 'div' );
+	// 	if ( content.querySelector( '.legal-gallery' ) === null ) {
+	// 		let popup = document.createElement( 'div' );
 		
-			popup.classList.add( 'legal-gallery' );
+	// 		popup.classList.add( 'legal-gallery' );
 
-			popup.addEventListener( 'click', popupRemove, false );
+	// 		popup.addEventListener( 'click', popupRemove, false );
 
-			let left = document.createElement( 'div' );
+	// 		let left = document.createElement( 'div' );
 			
-			left.classList.add( 'legal-left' );
+	// 		left.classList.add( 'legal-left' );
 
-			left.addEventListener( 'click', popupNext, false );
+	// 		left.addEventListener( 'click', popupNext, false );
 
-			popup.appendChild( left );
+	// 		popup.appendChild( left );
 
-			let right = document.createElement( 'div' );
+	// 		let right = document.createElement( 'div' );
 			
-			right.classList.add( 'legal-right' );
+	// 		right.classList.add( 'legal-right' );
 
-			right.addEventListener( 'click', popupNext, false );
+	// 		right.addEventListener( 'click', popupNext, false );
 
-			popup.appendChild( right );
+	// 		popup.appendChild( right );
 
-			content.appendChild( popup );
-		}
-	}
+	// 		content.appendChild( popup );
+	// 	}
+	// }
 
-	function preload_image( url, popup )
-	{
-		let img = new Image();
+	// function preload_image( url, popup )
+	// {
+	// 	let img = new Image();
 
-		img.onload = function()
-		{
-			popup.style.backgroundImage = 'url( \'' + this.src + '\' )';
-		};
+	// 	img.onload = function()
+	// 	{
+	// 		popup.style.backgroundImage = 'url( \'' + this.src + '\' )';
+	// 	};
 	  
-		img.src = url;
-	} 
+	// 	img.src = url;
+	// } 
 
-	async function popupUpdate( event )
+	// async function popupUpdate( event )
+	// {
+	// 	let item = event.currentTarget;
+
+	// 	let content = document.querySelector( '.tcb-post-content' );
+		
+	// 	let popup = content.querySelector( '.legal-gallery' );
+		
+	// 	let url = item.querySelector( '.item-image' ).dataset.src;
+
+	// 	preload_image( url, popup );
+
+	// 	let left = popup.querySelector( '.legal-left' );
+
+	// 	left.dataset.imageset = item.dataset.imageset;
+
+	// 	if ( item.previousElementSibling !== null ) {
+	// 		left.dataset.next = item.previousElementSibling.dataset.id;
+	// 	}
+
+	// 	let right = popup.querySelector( '.legal-right' );
+
+	// 	right.dataset.imageset = item.dataset.imageset;
+
+	// 	if ( item.nextElementSibling !== null ) {
+	// 		right.dataset.next = item.nextElementSibling.dataset.id;
+	// 	}
+	// }
+
+	function listenerBackward( event )
 	{
-		let item = event.currentTarget;
+		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
+			top: 0,
 
-		let content = document.querySelector( '.tcb-post-content' );
-		
-		let popup = content.querySelector( '.legal-gallery' );
-		
-		let url = item.querySelector( '.item-image' ).dataset.src;
+			left: 300,
 
-		preload_image( url, popup );
+			behavior: "smooth",
+		});
+	}
 
-		let left = popup.querySelector( '.legal-left' );
+	function listenerForward( event )
+	{
+		event.currentTarget.closest( selectors.imagesetWrapper ).scroll({
+			top: 0,
 
-		left.dataset.imageset = item.dataset.imageset;
+			left: -300,
 
-		if ( item.previousElementSibling !== null ) {
-			left.dataset.next = item.previousElementSibling.dataset.id;
-		}
+			behavior: "smooth",
+		});
+	}
 
-		let right = popup.querySelector( '.legal-right' );
+	function listenerBackward( element )
+	{
+		element.addEventListener( 'click', scrollfBackward, false );
+	}
 
-		right.dataset.imageset = item.dataset.imageset;
-
-		if ( item.nextElementSibling !== null ) {
-			right.dataset.next = item.nextElementSibling.dataset.id;
-		}
+	function listenerForward( element )
+	{
+		element.addEventListener( 'click', scrollforward, false );
 	}
 
 	function slider( element, index )
 	{
 		element.classList.add( classes.imagesetWrapperCurrent( index ) );
 
-		
+		element.querySelectorAll( selectors.imagesetBackward ).forEach( listenerBackward );
+
+		element.querySelectorAll( selectors.imagesetForward ).forEach( listenerForward );
 	} 
 
 	const selectors = {
@@ -116,7 +150,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetWrapperCurrent : function( index )
 		{
 			return '.legal-imageset-wrapper-' + index;
-		}
+		},
+
+		imagesetBackward : '.imageset-backward',
+
+		imagesetForward : '.imageset-forward'
 	};
 
 	const classes = {
