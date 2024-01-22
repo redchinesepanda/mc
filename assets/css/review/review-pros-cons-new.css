@@ -73,11 +73,11 @@
 	border-radius: 21px;
 }
 
-.legal-pros-cons .pros-cons-item:first-of-type {
+.legal-pros-cons .legal-pros {
 	background-color: var(--Primitives-green-40);
 }
 
-.legal-pros-cons .pros-cons-item:last-of-type {
+.legal-pros-cons .legal-cons {
 	background-color: var(--Base-base-01);
 }
 
