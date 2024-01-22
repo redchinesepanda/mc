@@ -147,6 +147,7 @@
 .legal-billet-mega .mega-about-afillate {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .legal-billet-mega .mega-about-afillate[href=""] {
