@@ -115,50 +115,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollfBackward( event )
 	{
-		// let imageset = event.currentTarget.closest( selectors.imagesetWrapper )
-		// 	.querySelector( selectors.imageset );
-
-		// if ( imageset !== null )
-		// {
-		// 	imageset.scroll({
-		// 		top: 0,
-	
-		// 		left: -300,
-	
-		// 		behavior: "smooth",
-		// 	});
-		// }
-
 		scrollX( event.currentTarget, -100 );
 	}
 
 	function scrollForward( event )
 	{
-		// let imageset = event.currentTarget.closest( selectors.imagesetWrapper )
-		// 	.querySelector( selectors.imageset );
-
-		// if ( imageset !== null )
-		// {
-		// 	imageset.scroll({
-		// 		top: 0,
-	
-		// 		left: 300,
-	
-		// 		behavior: "smooth",
-		// 	});
-		// }
-
 		scrollX( event.currentTarget, 100 );
 	}
 
 	function listenerBackward( element )
 	{
-		element.addEventListener( 'click', scrollfBackward, false );
+		element.addEventListener( 'click', scrollfBackward );
 	}
 
 	function listenerForward( element )
 	{
-		element.addEventListener( 'click', scrollForward, false );
+		element.addEventListener( 'click', scrollForward );
 	}
 
 	function slider( element, index )
