@@ -400,11 +400,15 @@
     font-style: normal;
 }
 
+.legal-billet-mega .mega-about-afillate,
+.legal-billet-mega .mega-about-review {
+	font-size: 14px;
+	line-height: 20px;
+}
+
 .legal-billet-mega .mega-about-afillate {
 	/* font-family: "Source Sans Pro"; */
-	font-size: 14px;
 	font-weight: 500;
-	line-height: 20px;
 	/* text-transform: uppercase; */
 	text-decoration: none;
 	text-align: center;
@@ -413,12 +417,10 @@
 
 .legal-billet-mega .mega-about-review {
 	/* font-family: "Source Sans Pro"; */
-	font-size: 15px;
-	font-weight: 600;
-	line-height: 15px;
+	font-weight: 400;
 	color: var( --Base-base-09 );
-	text-decoration: none;
-	text-transform: uppercase;
+/* 	text-decoration: none;
+	text-transform: uppercase; */
 }
 
 /* .legal-billet-mega .mega-content-title, */
