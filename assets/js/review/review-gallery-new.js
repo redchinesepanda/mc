@@ -131,6 +131,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				shift = itemActive.getBoundingClientRect().width
 					+ window.getComputedStyle( imageset, null )
 						.getPropertyValue( properties.columnGap );
+
+				console.log( 'getShift columnGap: ' + window.getComputedStyle( imageset, null )
+				.getPropertyValue( properties.columnGap ) );
+
+				console.log( 'getShift width: ' + itemActive.getBoundingClientRect().width );
 			}
 		}
 
