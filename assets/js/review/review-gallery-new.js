@@ -142,7 +142,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( listenerBackward );
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( listenerForward );
-	} 
+	}
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
@@ -161,7 +161,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetBackward : '.imageset-backward',
 
-		imagesetForward : '.imageset-forward'
+		imagesetForward : '.imageset-forward',
+		
+		imageFirst : this.imageset + ' .imageset-item'
 	};
 
 	const classes = {
@@ -173,10 +175,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetWrapperCurrent : function( index )
 		{
 			return 'legal-imageset-wrapper-' + index;
-		}
+		},
+
+		imageActive : 'legal-active'
 	};
 	
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+
+	function setActive( element )
+	{
+		element.classList.add( classes.imageActive );
+	}
+
+	document.querySelectorAll( selectors.imageFirst ).forEach( setActive );
 	  
 } );
 
