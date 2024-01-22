@@ -167,8 +167,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			return this.imageset + ' .imageset-item';
 		}
-		
-		// imageFirst : this.imageset + ' .imageset-item'
 	};
 
 	const classes = {
@@ -192,9 +190,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.add( classes.imageActive );
 	}
 
-	console.log( selectors.imageFirst );
+	console.log( selectors.imageFirst() );
 
-	document.querySelectorAll( selectors.imageFirst ).forEach( setActive );
+	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
 	  
 } );
 
