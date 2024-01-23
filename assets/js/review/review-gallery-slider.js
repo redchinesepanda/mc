@@ -27,10 +27,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function getShift( element )
 	{
+		console.log( 'getShift' );
+
 		let shift = 0;
 
 		let imageset = element.closest( selectors.imagesetWrapper )
 			.querySelector( selectors.imageset );
+
+		console.log( imageset );
 
 		if ( imageset !== null )
 		{
