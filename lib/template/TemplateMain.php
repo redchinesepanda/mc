@@ -117,12 +117,6 @@ class TemplateMain
 
 			'ver' => '1.0.0',
 		],
-
-        'legal-template-font-mc-icons-sports' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/font/font-mc-icons-sports.css',
-
-			'ver' => '1.0.0',
-		],
     ];
 
     const CSS_THRIVE = [

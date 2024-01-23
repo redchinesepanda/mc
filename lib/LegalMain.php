@@ -166,16 +166,6 @@ class LegalMain
 
 		return self::check_plugins() && self::check_permissions();
 	}
-
-    public static function check_contains( $class = '' )
-    {
-        if ( $post = get_post() )
-		{
-			return str_contains( $post->post_content, $class );
-		}
-
-		return false;
-    }
 }
 
 ?>
