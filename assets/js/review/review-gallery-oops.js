@@ -26,9 +26,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function oopsOpen( event )
 	{
-		console.log( 'oopsOpen' );
+		// console.log( 'oopsOpen' );
 
-		console.log( event.currentTarget );
+		// console.log( event.currentTarget );
 
 		event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
 	}
