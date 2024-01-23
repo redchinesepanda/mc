@@ -68,6 +68,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollForward( event )
 	{
+		console.log( event.currentTarget );
+
 		// scrollX( event.currentTarget, 100 );
 		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
@@ -92,7 +94,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function setSwipeForward( element )
 	{
 		console.log( element );
-		
+
 		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
 	}
 
