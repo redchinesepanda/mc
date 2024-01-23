@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// console.log( event.changedTouches );
 		
-		console.log( getTouches( event ).clientX );
+		console.log( getTouches( event ).clientX ); 
 	}
 
 	function touchEnd( event )
