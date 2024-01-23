@@ -71,6 +71,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchStart( event )
 	{
+		event.preventDefault();
+		
 		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
 
 		// event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
@@ -97,6 +99,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchEnd( event )
 	{
+		event.preventDefault();
+		
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
 		// event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
