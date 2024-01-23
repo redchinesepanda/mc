@@ -2,9 +2,9 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function handleGesture( element )
+	function handleSwipe( element )
 	{
-		// console.log( 'handleGesture' );
+		// console.log( 'handleSwipe' );
 		
 		// console.log( element.dataset ); 
 
@@ -60,11 +60,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchStart( event )
 	{
-		// event.preventDefault();
+		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
 
-		// event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
-
-		// event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
+		event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
 
 		console.log( 'handleTouchStart' );
 
@@ -82,6 +80,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'handleTouchMove' );
 
 		// getTouches( event );
+
+		handleSwipe( event.currentTarget );
 	}
 
 	function handleTouchEnd( event )
@@ -100,7 +100,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// getTouches( event );
 
-		// handleGesture( event.currentTarget );
+		// handleSwipe( event.currentTarget );
 	}
 
 	function initDataset( element )
