@@ -2,50 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// function handleSwipe( element )
-	// {
-	// 	if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
-	// 	{
-	// 		element.dispatchEvent( events.swipeForward( element.dataset.id ) );
-	// 	}
-	// 	else
-	// 	{
-	// 		element.dispatchEvent( events.swipeBackward( element.dataset.id ) );
-	// 	}
-	// }
-
-	// function handleTouchStart( event )
-	// {
-	// 	event.preventDefault();
-		
-	// 	event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
-	// }
-
-	// function handleTouchEnd( event )
-	// {
-	// 	event.preventDefault();
-
-	// 	event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
-
-	// 	handleSwipe( event.currentTarget );
-	// }
-
-	// function initDataset( element )
-	// {
-	// 	element.dataset.touchstartX = 0;
-
-	// 	element.dataset.touchendX = 0;
-	// }
-
-	// function setTouch( element )
-	// {
-	// 	initDataset( element );
-
-	// 	element.addEventListener( 'touchstart', handleTouchStart, false );
-
-	// 	element.addEventListener( 'touchend', handleTouchEnd, false );
-	// }
-
 	function pageForward( element )
 	{
 		let pageForward = element.querySelector( selectors.paginationItemActive ).nextSibling;
@@ -73,7 +29,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
-		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageForward', pageForward, false );
+		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
 	}
 
 	function checkOffscreen( element )
