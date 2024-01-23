@@ -47,7 +47,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-			element.dispatchEvent( reviewGalleySwiper.swipeBackwardEvent( element.dataset.id ) );
+			if ( element.dataset.touchendX - element.dataset.touchstartX > 0 )
+			{
+				element.dispatchEvent( reviewGalleySwiper.swipeBackwardEvent( element.dataset.id ) );
+			}
+			else
+			{
+				element.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+
+				console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+			}
 		}
 	}
 
@@ -82,34 +91,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchend', handleTouchEnd, false );
 	}
-
-	// const events = {
-	// 	swipeForward : function( id )
-	// 	{
-	// 		return new CustomEvent(
-	// 			'swipeforward',
-
-	// 			{
-	// 				detail: {
-	// 					id: () => id
-	// 				},
-	// 			}
-	// 		)
-	// 	},
-
-	// 	swipeBackward : function( id )
-	// 	{
-	// 		return new CustomEvent(
-	// 			'swipebackward',
-
-	// 			{
-	// 				detail: {
-	// 					id: () => id
-	// 				},
-	// 			}
-	// 		)
-	// 	}
-	// };
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
