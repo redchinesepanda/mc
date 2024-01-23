@@ -111,7 +111,8 @@
 .tcb-post-content .legal-imageset-wrapper .imageset-pagination
 {
     display: flex;
-    justify-content: end; 
+    justify-content: end;
+    column-gap: 4px;
 }
   
 /* Position */
