@@ -9,7 +9,7 @@
             <?php endforeach; ?>
         </div>
         <div class="imageset-pagination">
-            <!-- <div class="pagination-item"></div> -->
+            <div class="pagination-item legal-active"></div>
         </div>
         <div class="imageset-backward"></div>
         <div class="imageset-forward"></div>
