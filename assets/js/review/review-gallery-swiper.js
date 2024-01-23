@@ -60,7 +60,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchStart( event )
 	{
-		event.preventDefault();
+		// event.preventDefault();
 
 		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
 
