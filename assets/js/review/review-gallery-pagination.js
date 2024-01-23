@@ -121,9 +121,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setPagination( element )
 	{
-		element.scroll( c{
+		element.scroll( {
 			left: 0,
-			
+
 			behavior: 'smooth'
 		} );
 
