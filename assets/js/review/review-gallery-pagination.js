@@ -93,6 +93,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setPagination( element )
 	{
+		console.log( this );
+		
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen );
 
 		// initDataset( element );
@@ -104,7 +106,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function slider( element )
 	{
-		element.querySelectorAll( selectors.imageset ).forEach( setPagination );
+		element.querySelectorAll( selectors.imageset ).forEach( setPagination, element );
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
