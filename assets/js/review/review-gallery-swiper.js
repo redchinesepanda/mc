@@ -8,12 +8,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			element.dispatchEvent( events.swipeForward( element.dataset.id ) );
 
-			console.log( events.swipeForward( element.dataset.id ) );
-
 			console.log( "right" );
 		}
 		else
 		{
+			element.dispatchEvent( events.swipeBackward( element.dataset.id ) );
+
 			console.log( "left" );
 		}
 	}
