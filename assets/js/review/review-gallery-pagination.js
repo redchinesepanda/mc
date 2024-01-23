@@ -46,6 +46,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	element.addEventListener( 'touchend', handleTouchEnd, false );
 	// }
 
+	function pageForward( element )
+	{
+		let pageForward = element.querySelector( selectors.paginationItemActive ).nextSibling;
+
+		if ( pageForward !== null )
+		{
+			element.classList.remove( classes.paginationItemActive );
+
+			pageForward.classList.add( classes.paginationItemActive );
+		}
+	}
+	
 	function addPaginationItem( element )
 	{
 		const paginationItem = document.createElement( 'div' );
@@ -57,7 +69,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initPagination( element )
 	{
+		console.log( element.querySelectorAll( selectors.offScreen ).length );
+		
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
+
+		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageForward', pageForward, false );
 	}
 
 	function checkOffscreen( element )
@@ -113,13 +129,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		offScreen : '.legal-off-screen',
 
-		imagesetPagination : '.imageset-pagination'
+		imagesetPagination : '.imageset-pagination',
+		
+		paginationItemActive : '.legal-active'
 	};
 	
 	const classes = {
 		offScreen : 'legal-off-screen',
 
-		paginationItem : 'pagination-item'
+		paginationItem : 'pagination-item',
+
+		paginationItemActive : 'legal-active'
 	};
 
 	function setPagination( element )
