@@ -46,6 +46,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	element.addEventListener( 'touchend', handleTouchEnd, false );
 	// }
 
+	function addPaginationItem( element )
+	{
+		const paginationItem = document.createElement( 'div' );
+
+		paginationItem.classList.add( classes.paginationItem );
+
+		this.querySelector( selectors.imagesetPagination ).appendChild( paginationItem );
+	}
+
+	function initPagination( element )
+	{
+		element.querySelectorAll( selectors.offScreen ).foreach( addPaginationItem, this );
+	}
+
 	function checkOffscreen( element )
 	{
 		console.log( 'checkOffscreen' );
@@ -95,11 +109,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
 
-		imagesetItem : '.tcb-post-content .legal-imageset-wrapper .imageset-item'
+		imagesetItem : '.tcb-post-content .legal-imageset-wrapper .imageset-item',
+
+		offScreen : '.legal-off-screen',
+
+		imagesetPagination : '.imageset-pagination'
 	};
 	
 	const classes = {
-		offScreen : 'legal-off-screen'
+		offScreen : 'legal-off-screen',
+
+		paginationItem : 'pagination-item'
 	};
 
 	function setPagination( element )
@@ -120,6 +140,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( element.classList );
 
 		element.querySelectorAll( selectors.imageset ).forEach( setPagination, element );
+
+		element.querySelectorAll( selectors.imageset ).forEach( initPagination, element );
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
