@@ -68,12 +68,19 @@
 .tcb-post-content .legal-cut-control::before
 {
 	/* font-family: "Source Sans Pro"; */
+	font-family: var( --legal-font-primary );
+	font-size: 16px;
+	font-style: normal;
+	/* font-weight: 600; */
+	line-height: 22px;
+	/* vertical-align: middle; */
+}
+
+.tcb-post-content .legal-cut-control::after {
 	font-family: var( --legal-font-icons );
 	font-size: 24px;
 	font-style: normal;
-	/* font-weight: 600; */
 	line-height: 24px;
-	/* vertical-align: middle; */
 }
 
 /* .tcb-post-content .legal-cut-control::after
