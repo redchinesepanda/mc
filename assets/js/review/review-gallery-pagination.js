@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( selectors.paginationItemActive );
 
-		let pageForward = event.currentTarget.querySelector( selectors.paginationItemActive ).nextSibling;
+		let pageForward = event.currentTarget.querySelector( selectors.paginationItemNext );
 
 		if ( pageForward !== null )
 		{
@@ -91,9 +91,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetPagination : '.imageset-pagination',
 		
-		paginationItemActive : '.legal-active'
+		paginationItemActive : '.legal-active',
 
-		paginationItemNext : '.legal-active + .pagination-item',
+		paginationItemNext : '.legal-active + .pagination-item'
 	};
 	
 	const classes = {
