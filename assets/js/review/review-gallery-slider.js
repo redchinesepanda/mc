@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return shift;
 	}
 
-	function scrollfBackward( event )
+	function scrollBackward( event )
 	{
 		// scrollX( event.currentTarget, -100 );
 
@@ -69,7 +69,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setBackward( element )
 	{
-		element.addEventListener( 'click', scrollfBackward );
+		element.addEventListener( 'click', scrollBackward );
 	}
 
 	function setForward( element )
