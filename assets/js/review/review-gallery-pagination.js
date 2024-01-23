@@ -2,20 +2,35 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function pageForward( event )
+	function pageChange( element, selector )
 	{
-		console.log( selectors.paginationItemActive );
-
-		let pageForward = event.currentTarget.querySelector( selectors.paginationItemNext );
+		let pageForward = element.querySelector( selector );
 
 		if ( pageForward !== null )
 		{
-			event.currentTarget.querySelector( selectors.paginationItemActive ).classList.remove( classes.paginationItemActive );
-
-			console.log( pageForward );
+			element.querySelector( selectors.paginationItemActive ).classList.remove( classes.paginationItemActive );
 
 			pageForward.classList.add( classes.paginationItemActive );
 		}
+	}
+
+	function pageForward( event )
+	{
+		// let pageForward = event.currentTarget.querySelector( selectors.paginationItemNext );
+
+		// if ( pageForward !== null )
+		// {
+		// 	event.currentTarget.querySelector( selectors.paginationItemActive ).classList.remove( classes.paginationItemActive );
+
+		// 	pageForward.classList.add( classes.paginationItemActive );
+		// }
+
+		pageChange( event.currentTarget, selectors.paginationItemNext );
+	}
+
+	function pageBackward( event )
+	{
+		pageChange( event.currentTarget, selectors.paginationItemPrevious );
 	}
 	
 	function addPaginationItem( element )
