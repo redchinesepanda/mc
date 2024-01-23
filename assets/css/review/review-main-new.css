@@ -137,6 +137,10 @@
     display: block;
 }
 
+.tcb-post-content .legal-button {
+	display: inline-block;
+}
+
 /* Review Position */
 
 .tcb-post-content {
@@ -209,6 +213,11 @@
     margin: 0px auto;
 }
 
+.tcb-post-content .legal-button {
+	padding: 2px 15px;
+	margin-right: 10px;
+}
+
 /* Review Background */
 
 #content {
@@ -235,6 +244,11 @@
 .tcb-post-content hr {
     background-color: rgb(89, 151, 227);
     border: unset;
+}
+
+.tcb-post-content .legal-button {
+	border-radius: 50px;
+	border: 1px solid var( --Base-base-09 );
 }
 
 /* Review Typography */
@@ -305,26 +319,20 @@
     text-decoration: none;
 }
 
-/* Buttons */
 
-.tcb-post-content a.legal-button {
-	display: inline-block;
 
-	padding: 2px 10px;
-	margin-right: 10px;
-
-	border-radius: 20px;
-	border: 1px solid #5997e3;
-}
-
-.tcb-post-content a.legal-button:hover {
+.tcb-post-content .legal-button:hover {
 	background: unset;
 }
 
-.tcb-post-content a.legal-button,
-.tcb-post-content a.legal-button:hover {
-	box-shadow: 0 0 10px #e4e4e4;
-	font-size: 14px;
+.tcb-post-content .legal-button {
+	/* box-shadow: 0 0 10px #e4e4e4; */
+	font-size: 12px;
 	text-align: center;
-	color: #646363;
+	/* color: #646363; */
+    color: var( --Base-base-09 );
+}
+
+.tcb-post-content .legal-button:hover {
+    font-weight: 600;
 }
