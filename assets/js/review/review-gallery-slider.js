@@ -162,7 +162,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return this.imageset + ' .imageset-item:first-of-type';
 		},
 
-		imageActive : ' .legal-active'
+		imageActive : ' .legal-active',
+
+		imagesetPagination : '.imageset-pagination'
 	};
 
 	const classes = {
