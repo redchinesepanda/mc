@@ -4,43 +4,31 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function scrollX( element, shift )
 	{
-		// console.log( 'scrollX shift: ' + shift );
-
 		let imageset = element.closest( selectors.imagesetWrapper )
 			.querySelector( selectors.imageset );
 
 		if ( imageset !== null )
 		{
-			imageset.scroll({
+			imageset.scroll( {
 				top: 0,
-	
-				// left: shift,
 				
 				left: imageset.scrollLeft + shift,
 	
 				behavior: "smooth",
-			});
-
-			// imageset.scrollLeft += shift;
+			} );
 		}
 	}
 
 	function getShift( element )
 	{
-		console.log( 'getShift' );
-
 		let shift = 0;
 
 		let imageset = element.closest( selectors.imagesetWrapper )
 			.querySelector( selectors.imageset );
 
-		console.log( imageset );
-
 		if ( imageset !== null )
 		{
 			let itemActive = imageset.querySelector( selectors.imageActive );
-
-			console.log( itemActive );
 
 			if ( itemActive !== null )
 			{
@@ -49,13 +37,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 						.getPropertyValue( properties.columnGap )
 						.match( /\d+/ ) );
 
-				console.log( 'getShift columnGap: ' + parseInt( window.getComputedStyle( imageset, null )
-				.getPropertyValue( properties.columnGap )
-				.match( /\d+/ ) ) );
+				// console.log( 'getShift columnGap: ' + parseInt( window.getComputedStyle( imageset, null )
+				// .getPropertyValue( properties.columnGap )
+				// .match( /\d+/ ) ) );
 
-				console.log( 'getShift width: ' + parseInt( itemActive.getBoundingClientRect().width ) );
+				// console.log( 'getShift width: ' + parseInt( itemActive.getBoundingClientRect().width ) );
 
-				console.log( 'getShift shift: ' + shift );
+				// console.log( 'getShift shift: ' + shift );
 			}
 		}
 
@@ -64,33 +52,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollBackward( event )
 	{
-		// scrollX( event.currentTarget, -100 );
-
 		scrollX( event.currentTarget, getShift( event.currentTarget ) * -1 );
 
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
-			// .dispatchEvent( events.pageBackward( event.currentTarget.parentElement.dataset.id ) );
 			.dispatchEvent( reviewGalleyPagination.pageBackwardEvent( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function scrollForward( event )
 	{
-		console.log( 'scrollForward' );
-
-		console.log( event.currentTarget );
-
-		// scrollX( event.currentTarget, 100 );
-		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
-
-		console.log( getShift( event.currentTarget ) );
 
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
-			// .dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
 			.dispatchEvent( reviewGalleyPagination.pageForwardEvent( event.currentTarget.parentElement.dataset.id ) );
 	}
 
@@ -106,8 +82,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setSwipeForward( element )
 	{
-		console.log( element );
-
 		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
 	}
 
@@ -118,8 +92,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function slider( element, index )
 	{
-		// element.classList.add( classes.imagesetWrapperCurrent( index ) );
-		
 		element.dataset.id = classes.imagesetWrapperCurrent( index );
 
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
@@ -130,34 +102,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
 	}
-
-	// const events = {
-	// 	pageForward : function( id )
-	// 	{
-	// 		return new CustomEvent(
-	// 			'pageforward',
-
-	// 			{
-	// 				detail: {
-	// 					id: () => id
-	// 				},
-	// 			}
-	// 		)
-	// 	},
-
-	// 	pageBackward : function( id )
-	// 	{
-	// 		return new CustomEvent(
-	// 			'pagebackward',
-
-	// 			{
-	// 				detail: {
-	// 					id: () => id
-	// 				},
-	// 			}
-	// 		)
-	// 	}
-	// };
 
 	const properties = {
 		columnGap : 'column-gap',

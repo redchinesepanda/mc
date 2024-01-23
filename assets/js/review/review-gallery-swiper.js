@@ -43,13 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
-			console.log( 'handleSwipe' );
-
-			console.log( element );
-
 			element.dispatchEvent( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
-
-			console.log( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
 		}
 		else
 		{
