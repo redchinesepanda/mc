@@ -26,6 +26,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function oopsOpen( event )
 	{
+		console.log( 'oopsOpen' );
+
+		console.log( event.currentTarget );
+
 		event.currentTarget.classList.add( classes.imagesetWrapperActive );
 	}
 
