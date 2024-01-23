@@ -68,6 +68,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollForward( event )
 	{
+		console.log( 'scrollForward' );
+
 		console.log( event.currentTarget );
 
 		// scrollX( event.currentTarget, 100 );
