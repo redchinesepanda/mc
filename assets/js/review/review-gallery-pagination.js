@@ -4,13 +4,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function pageChange( element, selector )
 	{
-		let pageForward = element.querySelector( selector );
+		let sibling = element.querySelector( selector );
 
-		if ( pageForward !== null )
+		if ( sibling !== null )
 		{
 			element.querySelector( selectors.paginationItemActive ).classList.remove( classes.paginationItemActive );
 
-			pageForward.classList.add( classes.paginationItemActive );
+			sibling.classList.add( classes.paginationItemActive );
 		}
 	}
 
@@ -30,7 +30,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function pageBackward( event )
 	{
-		pageChange( event.currentTarget, selectors.paginationItemPrevious );
+		console.log( event.currentTarget.previousSibling );
+
+		console.log( event.currentTarget.previousElementSibling );
+
+		// pageChange( event.currentTarget, selectors.paginationItemPrevious );
 	}
 	
 	function addPaginationItem( element )
@@ -49,6 +53,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
 		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
+
+		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pagebackward', pageBackward, false );
 	}
 
 	function checkOffscreen( element )

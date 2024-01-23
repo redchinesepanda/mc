@@ -66,9 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
 
-		event.currentTarget.parentElement.querySelector( selectors.imagesetPagination ).dispatchEvent( events.pageForward( 1 ) );
-
-		console.log( events.pageForward( 1 ) );
+		event.currentTarget.parentElement.querySelector( selectors.imagesetPagination ).dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function setBackward( element )
