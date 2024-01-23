@@ -17,7 +17,6 @@
 
 .tcb-post-content .legal-cut-control::after
 {
-	content: '\F106';
 	display: inline-block;
 }
 
@@ -81,6 +80,16 @@
 	font-size: 24px;
 	font-style: normal;
 	line-height: 24px;
+}
+
+.tcb-post-content .legal-cut-control:not( .legal-active )::after
+{
+	content: '\F106';
+}
+
+.tcb-post-content .legal-cut-control.legal-active::after
+{
+	content: '\FF10C';
 }
 
 /* .tcb-post-content .legal-cut-control::after
