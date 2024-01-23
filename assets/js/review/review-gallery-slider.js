@@ -84,7 +84,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setSwipeBackward( element )
 	{
-		element.addEventListener( 'swipebackward', scrollForward );
+		element.addEventListener( 'swipebackward', scrollBackward );
 	}
 
 	function slider( element, index )
