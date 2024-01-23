@@ -10,7 +10,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( pageForward !== null )
 		{
-			event.currentTarget.classList.remove( classes.paginationItemActive );
+			event.currentTarget.querySelector( selectors.paginationItemActive ).classList.remove( classes.paginationItemActive );
 
 			console.log( pageForward );
 
