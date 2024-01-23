@@ -121,6 +121,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setPagination( element )
 	{
+		element.scroll( 0, 0 );
+		
 		// console.log( this ); 
 
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen, this );
