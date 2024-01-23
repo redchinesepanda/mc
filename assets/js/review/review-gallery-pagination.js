@@ -93,8 +93,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setPagination( element )
 	{
-		console.log( this );
-		
+		console.log( this ); 
+
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen );
 
 		// initDataset( element );
