@@ -220,11 +220,34 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
+	function setSwipeForward( element )
+	{
+		element.addEventListener( 'swipeforward', scrollForward );
+	}
+
+	function setSwipeBackward( element )
+	{
+		element.addEventListener( 'swipebackward', scrollForward );
+	}
+
 	const events = {
 		swipeForward : function( id )
 		{
 			return new CustomEvent(
 				'swipeforward',
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		},
+
+		swipebackward : function( id )
+		{
+			return new CustomEvent(
+				'swipebackward',
 
 				{
 					detail: {
@@ -283,8 +306,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	console.log( selectors.imagesetWrapper );
 	
 	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
+
+	function slider( element )
+	{
+		element.querySelectorAll( selectors.imageset ).forEach( setTouch );
 	
-	document.querySelectorAll( selectors.imageset ).forEach( setTouch );
+		element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
+
+		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
+	}
+
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 	
 	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 

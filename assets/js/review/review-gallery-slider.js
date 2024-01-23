@@ -82,6 +82,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'swipeforward', scrollForward );
 	}
 
+	function setSwipeBackward( element )
+	{
+		element.addEventListener( 'swipebackward', scrollForward );
+	}
+
 	function slider( element, index )
 	{
 		// element.classList.add( classes.imagesetWrapperCurrent( index ) );
@@ -91,8 +96,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
-
+	
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
+
+		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
 	}
 
 	const properties = {
