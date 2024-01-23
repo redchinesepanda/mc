@@ -93,10 +93,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	const events = {
-		swipeForward : function( id )
+		pageForward : function( id )
 		{
 			return new CustomEvent(
-				'swipeforward',
+				'pageforward',
 
 				{
 					detail: {
@@ -106,10 +106,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			)
 		},
 
-		swipeBackward : function( id )
+		pageBackward : function( id )
 		{
 			return new CustomEvent(
-				'swipebackward',
+				'pagebackward',
 
 				{
 					detail: {

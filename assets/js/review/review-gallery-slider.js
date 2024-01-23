@@ -65,6 +65,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// scrollX( event.currentTarget, 100 );
 		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
+
+		event.currentTarget.dispatchEvent( events.pageForward( 1 ) );
 	}
 
 	function setBackward( element )
@@ -101,6 +103,34 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
 	}
+
+	const events = {
+		pageForward : function( id )
+		{
+			return new CustomEvent(
+				'pageforward',
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		},
+
+		pageBackward : function( id )
+		{
+			return new CustomEvent(
+				'pagebackward',
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		}
+	};
 
 	const properties = {
 		columnGap : 'column-gap',
