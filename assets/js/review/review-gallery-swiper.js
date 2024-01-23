@@ -49,7 +49,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function getTouches( event )
 	{
-		return event.touches;
+		return event.touches[ 0 ];
 	}  
 
 	function touchStart( event )
@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// console.log( event.changedTouches );
 		
-		console.log( getTouches( event ) );
+		console.log( getTouches( event ).clientX );
 	}
 
 	function touchEnd( event )
