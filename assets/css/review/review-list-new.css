@@ -54,17 +54,17 @@
 
     .tcb-post-content .legal-list-2 li {
         /* width: 50%; */
-        width: calc(50% - (24px + 14px));
+        width: calc(50% - (24px + 14px + 18px));
     }
 
     .tcb-post-content .legal-list-3 li {
         /* width: 33.333%; */
-        width: calc(33.333% - (24px + 14px));
+        width: calc(33.333% - (24px + 14px + 18px));
     }
 
     .tcb-post-content .legal-list-4 li {
         /* width: 25%; */
-        width: calc(25% - (24px + 14px));
+        width: calc(25% - (24px + 14px + 18px));
     } 
 
     /* Typography */
@@ -181,6 +181,7 @@
 
 .tcb-post-content > .legal-list-image li {
     padding-top: 18px;
+    padding-right: 18px;
     padding-bottom: 18px;
     padding-left: calc(24px + 14px);
 }
