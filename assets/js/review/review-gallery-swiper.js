@@ -44,6 +44,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
 			element.dispatchEvent( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
+
+			console.log( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
 		}
 		else
 		{
