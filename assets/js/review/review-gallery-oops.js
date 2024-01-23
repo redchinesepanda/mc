@@ -10,7 +10,7 @@ let reviewGalleyOops = ( function()
 		oopsOpenEvent : function( id )
 		{
 			return new CustomEvent(
-				this.swipeForward,
+				this.oopsOpen,
 
 				{
 					detail: {
