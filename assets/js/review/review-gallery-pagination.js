@@ -48,8 +48,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initPagination( element )
 	{
-		console.log( element.querySelectorAll( selectors.offScreen ).length );
-
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
 		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
