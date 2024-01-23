@@ -30,9 +30,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function pageBackward( event )
 	{
-		console.log( event.currentTarget.previousSibling );
+		console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousSibling );
 
-		console.log( event.currentTarget.previousElementSibling );
+		console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousElementSibling );
 
 		// pageChange( event.currentTarget, selectors.paginationItemPrevious );
 	}
