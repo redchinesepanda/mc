@@ -55,9 +55,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 			else
 			{
-				element.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+				element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 
-				console.log( element );
+				console.log( element.parentElement );
 
 				console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 			}
