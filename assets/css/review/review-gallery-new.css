@@ -42,7 +42,8 @@
 
 .tcb-post-content .legal-imageset
 {
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+    overflow-x: hidden;
 }
 
 .tcb-post-content .legal-imageset {
