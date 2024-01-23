@@ -57,7 +57,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initPagination( element )
 	{
-		element.querySelectorAll( selectors.offScreen ).foreach( addPaginationItem, this );
+		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 	}
 
 	function checkOffscreen( element )
