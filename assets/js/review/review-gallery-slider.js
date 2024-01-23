@@ -76,6 +76,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
 
+		console.log( getShift( event.currentTarget ) );
+
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
