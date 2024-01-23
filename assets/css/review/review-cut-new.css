@@ -25,6 +25,7 @@
 	/* display: inline-block; */
 	display: flex;
 	column-gap: 14px;
+	cursor: pointer;
 }
 
 /* Position */
@@ -89,7 +90,7 @@
 
 .tcb-post-content .legal-cut-control.legal-active::after
 {
-	content: '\FF10C';
+	content: '\F10C';
 }
 
 /* .tcb-post-content .legal-cut-control::after
