@@ -7,14 +7,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
 			element.dispatchEvent( events.swipeForward( element.dataset.id ) );
-
-			console.log( "right" );
 		}
 		else
 		{
 			element.dispatchEvent( events.swipeBackward( element.dataset.id ) );
-
-			console.log( "left" );
 		}
 	}
 
@@ -81,28 +77,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
 
-		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
-
-		imagesetCurrent : function( index )
-		{
-			return '.legal-imageset-' + index;
-		},
-
-		imagesetWrapperCurrent : function( index )
-		{
-			return '.legal-imageset-wrapper-' + index;
-		},
-
-		imagesetBackward : '.imageset-backward',
-
-		imagesetForward : '.imageset-forward',
-		
-		imageFirst : function()
-		{
-			return this.imageset + ' .imageset-item:first-of-type';
-		},
-
-		imageActive : ' .legal-active'
+		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper'
 	};
 
 	console.log( selectors.imagesetWrapper );
