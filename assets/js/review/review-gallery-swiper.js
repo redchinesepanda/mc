@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// console.log( event.changedTouches );
 		
-		console.log( getTouches( event ).clientX ); 
+		console.log( getTouches( event ).clientX );
 	}
 
 	function touchEnd( event )
@@ -73,11 +73,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
 
-		// console.log( 'touchEnd' );
+		console.log( 'touchEnd' );
 		
 		// console.log( event.currentTarget.dataset );
 
 		// console.log( event.changedTouches );
+
+		console.log( getTouches( event ).clientX );
 
 		handleGesture( event.currentTarget );
 	}
