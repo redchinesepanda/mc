@@ -119,9 +119,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchstart', handleTouchStart, false );
 
-		// element.addEventListener( 'touchend', handleTouchEnd, false );
+		element.addEventListener( 'touchend', handleTouchEnd, false );
 		
-		element.addEventListener( 'touchmove', handleTouchEnd, false );
+		// element.addEventListener( 'touchmove', handleTouchEnd, false );
 	}
 
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
