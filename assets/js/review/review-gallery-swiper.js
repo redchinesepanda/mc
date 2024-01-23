@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			)
 		},
 
-		swipebackward : function( id )
+		swipeBackward : function( id )
 		{
 			return new CustomEvent(
 				'swipebackward',
