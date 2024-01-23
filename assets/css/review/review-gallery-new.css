@@ -7,6 +7,13 @@
     {
         display: none;
     }
+
+    /* Width and Height */
+
+    .tcb-post-content .legal-imageset .imageset-item .item-image
+    {
+        max-width: 338px;
+    }
 }
 
 @media screen and ( min-width: 960px )
