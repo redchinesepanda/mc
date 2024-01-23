@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let yx = Math.abs( y / x );
 
-		console.log( x );
+		// console.log( x );
 
 		if ( x < 0 )
 		{
@@ -100,7 +100,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function handleTouchEnd( event )
 	{
 		event.preventDefault();
-		
+
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
 		// event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
@@ -120,9 +120,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initDataset( element )
 	{
-		element.dataset.pageWidth = window.innerWidth || document.body.clientWidth;
+		// element.dataset.pageWidth = window.innerWidth || document.body.clientWidth;
 
-		element.dataset.treshold = Math.max( 1, Math.floor( 0.01 * ( element.dataset.pageWidth ) ) );
+		// element.dataset.treshold = Math.max( 1, Math.floor( 0.01 * ( element.dataset.pageWidth ) ) );
 
 		element.dataset.touchstartX = 0;
 
@@ -132,7 +132,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// element.dataset.touchendY = 0;
 
-		element.dataset.limit = Math.tan( 45 * 1.5 / 180 * Math.PI );
+		// element.dataset.limit = Math.tan( 45 * 1.5 / 180 * Math.PI );
 	}
 
 	function setTouch( element )
