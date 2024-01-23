@@ -50,11 +50,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'checkOffscreen' );
 
-		console.log( 'element left: ' + element.getBoundingClientRect().left );
+		// console.log( 'element left: ' + element.getBoundingClientRect().left );
 
 		console.log( 'element right: ' + element.getBoundingClientRect().right );
 
 		console.log( 'wrapper right: ' + this.getBoundingClientRect().right );
+
+		if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
+		{
+			element.classList.add( classes.offScreen );
+		}
 	}
 
 	const events = {
@@ -91,6 +96,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
 
 		imagesetItem : '.tcb-post-content .legal-imageset-wrapper .imageset-item'
+	};
+	
+	const classes = {
+		offScreen : 'legal-off-screen'
 	};
 
 	function setPagination( element )
