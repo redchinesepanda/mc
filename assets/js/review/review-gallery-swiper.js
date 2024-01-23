@@ -77,6 +77,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		getTouches( event );
 	}
 
+	function handleTouchMove( event )
+	{
+		console.log( 'handleTouchMove' );
+
+		getTouches( event );
+	}
+
 	function handleTouchEnd( event )
 	{
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
@@ -121,7 +128,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchend', handleTouchEnd, false );
 		
-		// element.addEventListener( 'touchmove', handleTouchEnd, false );
+		element.addEventListener( 'touchmove', handleTouchMove, false );
 	}
 
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
