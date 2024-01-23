@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// console.log( 'handleGesture' );
 		
-		// console.log( element.dataset );
+		// console.log( element.dataset ); 
 
 		let x = element.dataset.touchendX - element.dataset.touchstartX;
 
