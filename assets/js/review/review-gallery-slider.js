@@ -75,7 +75,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function setForward( element )
 	{
 		element.addEventListener( 'click', scrollForward );
+	}
 
+	function setSwipeForward( element )
+	{
 		element.addEventListener( 'swipeforward', scrollForward );
 	}
 
@@ -88,6 +91,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
+
+		element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
 	}
 
 	const properties = {
