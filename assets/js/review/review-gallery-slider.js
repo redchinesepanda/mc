@@ -91,12 +91,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setSwipeForward( element )
 	{
-		element.addEventListener( reviewGalleySwipe.swipeForward, scrollForward );
+		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
 	}
 
 	function setSwipeBackward( element )
 	{
-		element.addEventListener( reviewGalleySwipe.swipeBackward, scrollBackward );
+		element.addEventListener( reviewGalleySwiper.swipeBackward, scrollBackward );
 	}
 
 	function slider( element, index )

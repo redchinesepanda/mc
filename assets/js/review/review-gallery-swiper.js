@@ -1,6 +1,6 @@
-// review-gallery-swipe-js start
+// review-gallery-swiper-js start
 
-let reviewGalleySwipe = ( function()
+let reviewGalleySwiper = ( function()
 {
 	"use strict";
 
@@ -43,11 +43,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
-			element.dispatchEvent( reviewGalleySwipe.swipeForwardEvent( element.dataset.id ) );
+			element.dispatchEvent( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
 		}
 		else
 		{
-			element.dispatchEvent( reviewGalleySwipe.swipeBackwardEvent( element.dataset.id ) );
+			element.dispatchEvent( reviewGalleySwiper.swipeBackwardEvent( element.dataset.id ) );
 		}
 	}
 
@@ -126,4 +126,4 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	  
 } );
 
-// review-gallery-swipe-js end
+// review-gallery-swiper-js end
