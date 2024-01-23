@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( pageForward !== null )
 		{
-			element.classList.remove( classes.paginationItemActive );
+			event.currentTarget.classList.remove( classes.paginationItemActive );
 
 			pageForward.classList.add( classes.paginationItemActive );
 		}
