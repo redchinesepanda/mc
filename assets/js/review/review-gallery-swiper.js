@@ -113,7 +113,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchstart', touchStart );
 
-		element.addEventListener( 'touchend', touchEnd );
+		// element.addEventListener( 'touchend', touchEnd );
+		
+		element.addEventListener( 'touchmove', touchEnd );
 	}
 
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
