@@ -331,8 +331,9 @@
 	text-align: center;
 	/* color: #646363; */
     color: var( --Base-base-09 );
+    text-decoration: none;
 }
 
 .tcb-post-content .legal-button:hover {
-    font-weight: 600;
+    text-shadow: 0 0 0.35px var(--Base-base-09);
 }
