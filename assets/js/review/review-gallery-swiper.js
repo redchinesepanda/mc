@@ -111,11 +111,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		initDataset( element );
 
-		element.addEventListener( 'touchstart', touchStart );
+		element.addEventListener( 'touchstart', touchStart, false );
 
-		// element.addEventListener( 'touchend', touchEnd );
+		// element.addEventListener( 'touchend', touchEnd, false );
 		
-		element.addEventListener( 'touchmove', touchEnd );
+		element.addEventListener( 'touchmove', touchEnd, false );
 	}
 
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
