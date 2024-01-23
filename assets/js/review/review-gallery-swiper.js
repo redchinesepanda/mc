@@ -20,6 +20,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( x < 0 )
 		{
+			element.dispatchEvent( events.swipeForward );
+
 			console.log( "left" );
 		}
 		else
@@ -215,6 +217,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 		console.log( "tap" );
 	// 	}
 	// }
+
+	const events = {
+		swipeForward : function( imagesetId )
+		{
+			return new CustomEvent(
+				'swipeForward',
+
+				{
+					imagesetId: imagesetId
+				}
+			)
+		}
+	};
 
 	const properties = {
 		columnGap : 'column-gap',

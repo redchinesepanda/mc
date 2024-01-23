@@ -75,6 +75,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function setForward( element )
 	{
 		element.addEventListener( 'click', scrollForward );
+
+		element.addEventListener( 'swipeForward', scrollForward );
 	}
 
 	function slider( element, index )
