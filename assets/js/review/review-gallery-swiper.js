@@ -16,9 +16,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let yx = Math.abs( y / x );
 
-		if ( Math.abs( x ) > element.dataset.treshold || Math.abs( y ) > element.dataset.treshold )
+		if (
+			Math.abs( x ) > element.dataset.treshold
+			
+			|| Math.abs( y ) > element.dataset.treshold
+		)
 		{
-			if ( yx <= limit )
+			if ( yx <= element.dataset.limit )
 			{
 				if ( x < 0 )
 				{
@@ -29,7 +33,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					console.log( "right" );
 				}
 			}
-			if ( xy <= limit )
+			if ( xy <= element.dataset.limit )
 			{
 				if ( y < 0 )
 				{
