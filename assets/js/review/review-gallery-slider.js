@@ -58,6 +58,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// scrollX( event.currentTarget, -100 );
 
 		scrollX( event.currentTarget, getShift( event.currentTarget ) * -1 );
+
+		event.currentTarget
+			.parentElement
+			.querySelector( selectors.imagesetPagination )
+			.dispatchEvent( events.pageBackward( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function scrollForward( event )
@@ -66,7 +71,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
 
-		event.currentTarget.parentElement.querySelector( selectors.imagesetPagination ).dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
+		event.currentTarget
+			.parentElement
+			.querySelector( selectors.imagesetPagination )
+			.dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function setBackward( element )
