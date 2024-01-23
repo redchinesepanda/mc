@@ -227,7 +227,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				'swipeforward',
 
 				{
-					detail: id
+					detail: {
+						id: () => id
+					},
 				}
 			)
 		}
