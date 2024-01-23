@@ -10,6 +10,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			event.currentTarget.classList.remove( classes.paginationItemActive );
 
+			console.log( pageForward );
+
 			pageForward.classList.add( classes.paginationItemActive );
 		}
 	}
