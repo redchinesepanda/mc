@@ -4,6 +4,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function pageForward( event )
 	{
+		console.log( selectors.paginationItemActive );
+		
 		let pageForward = event.currentTarget.querySelector( selectors.paginationItemActive ).nextSibling;
 
 		if ( pageForward !== null )
