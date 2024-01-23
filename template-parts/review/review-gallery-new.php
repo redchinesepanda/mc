@@ -8,7 +8,9 @@
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="imageset-pagination"></div>
+        <div class="imageset-pagination">
+            <div class="pagination-item"></div>
+        </div>
         <div class="imageset-backward"></div>
         <div class="imageset-forward"></div>
     </div>
