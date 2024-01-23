@@ -78,10 +78,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 
-	const properties = {
-		columnGap : 'column-gap',
-	};
-
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
 
@@ -109,23 +105,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imageActive : ' .legal-active'
 	};
 
-	const classes = {
-		imagesetCurrent : function( index )
-		{
-			return 'legal-imageset-' + index;
-		},
-
-		imagesetWrapperCurrent : function( index )
-		{
-			return 'legal-imageset-wrapper-' + index;
-		},
-
-		imageActive : 'legal-active'
-	};
-
 	console.log( selectors.imagesetWrapper );
-	
-	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
 
 	function slider( element )
 	{
@@ -133,15 +113,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
-	
-	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
-
-	// function setActive( element )
-	// {
-	// 	element.classList.add( classes.imageActive );
-	// }
-
-	// document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
 	  
 } );
 
