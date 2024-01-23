@@ -70,7 +70,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function initPagination( element )
 	{
 		console.log( element.querySelectorAll( selectors.offScreen ).length );
-		
+
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
 		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageForward', pageForward, false );
@@ -78,13 +78,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkOffscreen( element )
 	{
-		console.log( 'checkOffscreen' );
+		// console.log( 'checkOffscreen' );
 
 		// console.log( 'element left: ' + element.getBoundingClientRect().left );
 
-		console.log( 'element right: ' + element.getBoundingClientRect().right );
+		// console.log( 'element right: ' + element.getBoundingClientRect().right );
 
-		console.log( 'wrapper right: ' + this.getBoundingClientRect().right );
+		// console.log( 'wrapper right: ' + this.getBoundingClientRect().right );
 
 		if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		{
