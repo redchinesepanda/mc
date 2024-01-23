@@ -91,6 +91,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setSwipeForward( element )
 	{
+		console.log( element );
+		
 		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
 	}
 
