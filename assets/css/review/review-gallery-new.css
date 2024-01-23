@@ -150,6 +150,11 @@
 .tcb-post-content .legal-gallery .legal-right {
     right: 0px;
 }
+
+.tcb-post-content .legal-imageset-wrapper .imageset-pagination
+{
+    padding-top: 8px;
+}
   
 /* Width and Height */
 
