@@ -100,7 +100,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// getTouches( event );
 
-		// handleSwipe( event.currentTarget );
+		handleSwipe( event.currentTarget );
 	}
 
 	function initDataset( element )
@@ -128,7 +128,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchend', handleTouchEnd, false );
 		
-		element.addEventListener( 'touchmove', handleTouchMove, false );
+		// element.addEventListener( 'touchmove', handleTouchMove, false );
 	}
 
 	// let pageWidth = window.innerWidth || document.body.clientWidth;
