@@ -62,9 +62,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// event.preventDefault();
 
-		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
+		// event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
 
-		event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
+		// event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
 
 		console.log( 'handleTouchStart' );
 
@@ -74,21 +74,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// console.log( getTouches( event ).clientX );
 
-		getTouches( event );
+		// getTouches( event );
 	}
 
 	function handleTouchMove( event )
 	{
 		console.log( 'handleTouchMove' );
 
-		getTouches( event );
+		// getTouches( event );
 	}
 
 	function handleTouchEnd( event )
 	{
-		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
+		// event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
-		event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
+		// event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
 
 		console.log( 'handleTouchEnd' );
 		
@@ -98,9 +98,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( getTouches( event ).clientX );
 
-		getTouches( event );
+		// getTouches( event );
 
-		handleGesture( event.currentTarget );
+		// handleGesture( event.currentTarget );
 	}
 
 	function initDataset( element )
@@ -126,7 +126,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchstart', handleTouchStart, false );
 
-		// element.addEventListener( 'touchend', handleTouchEnd, false );
+		element.addEventListener( 'touchend', handleTouchEnd, false );
 		
 		element.addEventListener( 'touchmove', handleTouchMove, false );
 	}
