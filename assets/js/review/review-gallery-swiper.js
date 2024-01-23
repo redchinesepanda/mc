@@ -57,9 +57,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 
-				console.log( element.parentElement );
+				// console.log( element.parentElement );
 
-				console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+				// console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 			}
 		}
 	}

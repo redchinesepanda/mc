@@ -30,7 +30,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( event.currentTarget );
 
-		event.currentTarget.classList.add( classes.imagesetWrapperActive );
+		event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
 	}
 
 	const selectors = {
