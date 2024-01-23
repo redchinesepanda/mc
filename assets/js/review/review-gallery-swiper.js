@@ -4,6 +4,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function handleGesture( element )
 	{
+		console.log( 'handleGesture' );
+		
+		console.log( element.dataset );
+
 		let x = element.dataset.touchendX - element.dataset.touchstartX;
 
 		let y = element.dataset.touchendY - element.dataset.touchstartY;
@@ -49,9 +53,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.dataset.touchstartY = event.changedTouches[0].screenY;
 
-		console.log( 'touchStart' );
+		// console.log( 'touchStart' );
 
-		console.log( event.currentTarget.dataset );
+		// console.log( event.currentTarget.dataset );
 	}
 
 	function touchEnd( event )
@@ -60,9 +64,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.dataset.touchendY = event.changedTouches[0].screenY;
 
-		console.log( 'touchEnd' );
+		// console.log( 'touchEnd' );
 		
-		console.log( event.currentTarget.dataset );
+		// console.log( event.currentTarget.dataset );
 
 		handleGesture( event.currentTarget );
 	}
