@@ -80,8 +80,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper'
 	};
 
-	console.log( selectors.imagesetWrapper );
-
 	function slider( element )
 	{
 		element.querySelectorAll( selectors.imageset ).forEach( setTouch );
