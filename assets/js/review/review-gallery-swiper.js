@@ -1,16 +1,53 @@
 // review-gallery-swipe-js start
 
+let reviewGalleySwipe = ( function()
+{
+	"use strict";
+
+	return {
+		swipeForward : 'swipeforward',
+
+		swipeForwardEvent : function( id )
+		{
+			return new CustomEvent(
+				this.swipeForward,
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		},
+
+		swipeBackward : 'swipebackward',
+
+		swipeBackwardEvent : function( id )
+		{
+			return new CustomEvent(
+				this.swipeBackward,
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		}
+	};
+} )();
+
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function handleSwipe( element )
 	{
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
-			element.dispatchEvent( events.swipeForward( element.dataset.id ) );
+			element.dispatchEvent( reviewGalleySwipe.swipeForwardEvent( element.dataset.id ) );
 		}
 		else
 		{
-			element.dispatchEvent( events.swipeBackward( element.dataset.id ) );
+			element.dispatchEvent( reviewGalleySwipe.swipeBackwardEvent( element.dataset.id ) );
 		}
 	}
 
@@ -46,33 +83,33 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'touchend', handleTouchEnd, false );
 	}
 
-	const events = {
-		swipeForward : function( id )
-		{
-			return new CustomEvent(
-				'swipeforward',
+	// const events = {
+	// 	swipeForward : function( id )
+	// 	{
+	// 		return new CustomEvent(
+	// 			'swipeforward',
 
-				{
-					detail: {
-						id: () => id
-					},
-				}
-			)
-		},
+	// 			{
+	// 				detail: {
+	// 					id: () => id
+	// 				},
+	// 			}
+	// 		)
+	// 	},
 
-		swipeBackward : function( id )
-		{
-			return new CustomEvent(
-				'swipebackward',
+	// 	swipeBackward : function( id )
+	// 	{
+	// 		return new CustomEvent(
+	// 			'swipebackward',
 
-				{
-					detail: {
-						id: () => id
-					},
-				}
-			)
-		}
-	};
+	// 			{
+	// 				detail: {
+	// 					id: () => id
+	// 				},
+	// 			}
+	// 		)
+	// 	}
+	// };
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
