@@ -13,6 +13,11 @@
 {
     /* Display */
 
+    .tcb-post-content .legal-imageset
+    {
+        column-gap: 8px;
+    }
+
     .tcb-post-content .legal-imageset-wrapper .imageset-backward,
     .tcb-post-content .legal-imageset-wrapper .imageset-forward
     {
@@ -89,10 +94,6 @@
 
 .tcb-post-content .legal-imageset {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    column-gap: 8px; 
-    /* row-gap: 18px; */
 }
 
 .tcb-post-content .legal-imageset .imageset-item {
