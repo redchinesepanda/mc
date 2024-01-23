@@ -50,9 +50,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'checkOffscreen' );
 
-		console.log( element.getBoundingClientRect().right );
+		console.log( 'element left: ' + element.getBoundingClientRect().left );
 
-		console.log( this.clientWidth );
+		console.log( 'element right: ' + element.getBoundingClientRect().right );
+
+		console.log( 'wrapper right: ' + this.getBoundingClientRect().right );
 	}
 
 	const events = {
