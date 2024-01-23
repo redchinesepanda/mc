@@ -40,6 +40,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			let itemActive = imageset.querySelector( selectors.imageActive );
 
+			console.log( itemActive );
+
 			if ( itemActive !== null )
 			{
 				shift = parseInt( itemActive.getBoundingClientRect().width )
