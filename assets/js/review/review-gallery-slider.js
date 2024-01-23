@@ -49,10 +49,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 						.getPropertyValue( properties.columnGap )
 						.match( /\d+/ ) );
 
-				// console.log( 'getShift columnGap: ' + window.getComputedStyle( imageset, null )
-				// .getPropertyValue( properties.columnGap ).match( /\d+/ ) );
+				console.log( 'getShift columnGap: ' + parseInt( window.getComputedStyle( imageset, null )
+				.getPropertyValue( properties.columnGap )
+				.match( /\d+/ ) ) );
 
-				// console.log( 'getShift width: ' + itemActive.getBoundingClientRect().width );
+				console.log( 'getShift width: ' + parseInt( itemActive.getBoundingClientRect().width ) );
+
+				console.log( 'getShift shift: ' + shift );
 			}
 		}
 
