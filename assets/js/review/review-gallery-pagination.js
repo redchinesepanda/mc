@@ -2,9 +2,10 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function pageChange( element, selector )
+	// function pageChange( element, selector )
+	function pageChange( element, sibling )
 	{
-		let sibling = element.querySelector( selector );
+		// let sibling = element.querySelector( selector );
 
 		if ( sibling !== null )
 		{
@@ -25,16 +26,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	pageForward.classList.add( classes.paginationItemActive );
 		// }
 
-		pageChange( event.currentTarget, selectors.paginationItemNext );
+		// pageChange( event.currentTarget, selectors.paginationItemNext );
+		
+		pageChange( event.currentTarget, event.currentTarget.querySelector( selectors.paginationItemActive ).nextElementSibling );
 	}
 
 	function pageBackward( event )
 	{
-		console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousSibling );
+		// console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousSibling );
 
-		console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousElementSibling );
+		// console.log( event.currentTarget.querySelector( selectors.paginationItemActive ).previousElementSibling );
 
-		// pageChange( event.currentTarget, selectors.paginationItemPrevious );
+		pageChange( event.currentTarget, event.currentTarget.querySelector( selectors.paginationItemActive ).previousElementSibling );
 	}
 	
 	function addPaginationItem( element )
