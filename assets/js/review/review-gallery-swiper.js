@@ -10,45 +10,54 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let x = element.dataset.touchendX - element.dataset.touchstartX;
 
-		let y = element.dataset.touchendY - element.dataset.touchstartY;
+		// let y = element.dataset.touchendY - element.dataset.touchstartY;
 
-		let xy = Math.abs( x / y );
+		// let xy = Math.abs( x / y );
 
-		let yx = Math.abs( y / x );
+		// let yx = Math.abs( y / x );
 
-		if (
-			Math.abs( x ) > element.dataset.treshold
-			
-			|| Math.abs( y ) > element.dataset.treshold
-		)
+		if ( x < 0 )
 		{
-			if ( yx <= element.dataset.limit )
-			{
-				if ( x < 0 )
-				{
-					console.log( "left" );
-				}
-				else
-				{
-					console.log( "right" );
-				}
-			}
-			if ( xy <= element.dataset.limit )
-			{
-				if ( y < 0 )
-				{
-					console.log( "top" );
-				}
-				else
-				{
-					console.log( "bottom" );
-				}
-			}
+			console.log( "left" );
 		}
 		else
 		{
-			console.log( "tap" );
+			console.log( "right" );
 		}
+
+		// if (
+		// 	Math.abs( x ) > element.dataset.treshold
+			
+		// 	|| Math.abs( y ) > element.dataset.treshold
+		// )
+		// {
+		// 	if ( yx <= element.dataset.limit )
+		// 	{
+		// 		if ( x < 0 )
+		// 		{
+		// 			console.log( "left" );
+		// 		}
+		// 		else
+		// 		{
+		// 			console.log( "right" );
+		// 		}
+		// 	}
+		// 	if ( xy <= element.dataset.limit )
+		// 	{
+		// 		if ( y < 0 )
+		// 		{
+		// 			console.log( "top" );
+		// 		}
+		// 		else
+		// 		{
+		// 			console.log( "bottom" );
+		// 		}
+		// 	}
+		// }
+		// else
+		// {
+		// 	console.log( "tap" );
+		// }
 	}
 
 	function getTouches( event )
@@ -111,11 +120,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.dataset.touchstartX = 0;
 
-		element.dataset.touchstartY = 0;
+		// element.dataset.touchstartY = 0;
 
 		element.dataset.touchendX = 0;
 
-		element.dataset.touchendY = 0;
+		// element.dataset.touchendY = 0;
 
 		element.dataset.limit = Math.tan( 45 * 1.5 / 180 * Math.PI );
 	}
