@@ -137,15 +137,8 @@
     display: block;
 }
 
-.tcb-post-content p > .legal-button {
-	display: flex;
-    flex-wrap: wrap;
-    column-gap: 4px;
-    row-gap: 10px;
-}
-
 .tcb-post-content .legal-button {
-	display: flex;
+	display: inline-block;
 }
 
 /* Review Position */
@@ -223,6 +216,8 @@
 .tcb-post-content .legal-button {
 	padding: 2px 15px;
 	/* margin-right: 10px; */
+    margin-right: 4px;
+    margin-bottom: 10px;
 }
 
 /* Review Background */
