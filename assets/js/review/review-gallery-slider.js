@@ -81,7 +81,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function slider( element, index )
 	{
-		element.classList.add( classes.imagesetWrapperCurrent( index ) );
+		// element.classList.add( classes.imagesetWrapperCurrent( index ) );
+		
+		element.dataset.id = classes.imagesetWrapperCurrent( index );
 
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 

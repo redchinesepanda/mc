@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( x < 0 )
 		{
-			element.dispatchEvent( events.swipeForward );
+			element.dispatchEvent( events.swipeForward( element.dataset.id ) );
 
 			console.log( "left" );
 		}
@@ -219,13 +219,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// }
 
 	const events = {
-		swipeForward : function( imagesetId )
+		swipeForward : function( id )
 		{
 			return new CustomEvent(
 				'swipeForward',
 
 				{
-					imagesetId: imagesetId
+					id: id
 				}
 			)
 		}
