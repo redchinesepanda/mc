@@ -224,7 +224,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		swipeForward : function( id )
 		{
 			return new CustomEvent(
-				'swipeForward',
+				'swipeforward',
 
 				{
 					id: id
