@@ -137,8 +137,15 @@
     display: block;
 }
 
+.tcb-post-content p > .legal-button {
+	display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    row-gap: 10px;
+}
+
 .tcb-post-content .legal-button {
-	display: inline-block;
+	display: flex;
 }
 
 /* Review Position */
@@ -215,7 +222,7 @@
 
 .tcb-post-content .legal-button {
 	padding: 2px 15px;
-	margin-right: 10px;
+	/* margin-right: 10px; */
 }
 
 /* Review Background */
@@ -319,11 +326,9 @@
     text-decoration: none;
 }
 
-
-
-.tcb-post-content .legal-button:hover {
+/* .tcb-post-content .legal-button:hover {
 	background: unset;
-}
+} */
 
 .tcb-post-content .legal-button {
 	/* box-shadow: 0 0 10px #e4e4e4; */
