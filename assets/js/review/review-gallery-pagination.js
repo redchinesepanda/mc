@@ -106,6 +106,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function slider( element )
 	{
+		console.log( element.classlist );
+		
 		element.querySelectorAll( selectors.imageset ).forEach( setPagination, element );
 	}
 
