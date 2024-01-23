@@ -76,7 +76,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageForward, pageForward, false );
 
-		this.querySelector( selectors.imagesetPagination ).addEventListener( 'pagebackward', pageBackward, false );
+		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageBackward, pageBackward, false );
 	}
 
 	function checkOffscreen( element )

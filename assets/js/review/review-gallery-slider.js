@@ -62,7 +62,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
-			.dispatchEvent( events.pageBackward( event.currentTarget.parentElement.dataset.id ) );
+			// .dispatchEvent( events.pageBackward( event.currentTarget.parentElement.dataset.id ) );
+			.dispatchEvent( reviewGalleyPagination.pageBackwardEvent( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function scrollForward( event )
@@ -74,7 +75,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
-			.dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
+			// .dispatchEvent( events.pageForward( event.currentTarget.parentElement.dataset.id ) );
+			.dispatchEvent( reviewGalleyPagination.pageForwardEvent( event.currentTarget.parentElement.dataset.id ) );
 	}
 
 	function setBackward( element )
@@ -112,33 +114,33 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
 	}
 
-	const events = {
-		pageForward : function( id )
-		{
-			return new CustomEvent(
-				'pageforward',
+	// const events = {
+	// 	pageForward : function( id )
+	// 	{
+	// 		return new CustomEvent(
+	// 			'pageforward',
 
-				{
-					detail: {
-						id: () => id
-					},
-				}
-			)
-		},
+	// 			{
+	// 				detail: {
+	// 					id: () => id
+	// 				},
+	// 			}
+	// 		)
+	// 	},
 
-		pageBackward : function( id )
-		{
-			return new CustomEvent(
-				'pagebackward',
+	// 	pageBackward : function( id )
+	// 	{
+	// 		return new CustomEvent(
+	// 			'pagebackward',
 
-				{
-					detail: {
-						id: () => id
-					},
-				}
-			)
-		}
-	};
+	// 			{
+	// 				detail: {
+	// 					id: () => id
+	// 				},
+	// 			}
+	// 		)
+	// 	}
+	// };
 
 	const properties = {
 		columnGap : 'column-gap',
