@@ -233,7 +233,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	console.log( selectors.imagesetWrapper );
 	
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
+	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( setTouch );
+	
+	document.querySelectorAll( selectors.imageset ).forEach( setTouch );
 	
 	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
