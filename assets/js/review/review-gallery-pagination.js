@@ -52,7 +52,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element.getBoundingClientRect().right );
 
-		console.log( this );
+		console.log( this.clientWidth );
 	}
 
 	const events = {
