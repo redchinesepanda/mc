@@ -67,6 +67,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		scrollX( event.currentTarget, getShift( event.currentTarget ) );
 
 		event.currentTarget.dispatchEvent( events.pageForward( 1 ) );
+
+		console.log( events.pageForward( 1 ) );
 	}
 
 	function setBackward( element )
