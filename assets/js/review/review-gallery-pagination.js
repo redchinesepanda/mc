@@ -2,9 +2,9 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function pageForward( element )
+	function pageForward( event )
 	{
-		let pageForward = element.querySelector( selectors.paginationItemActive ).nextSibling;
+		let pageForward = event.currentTarget.querySelector( selectors.paginationItemActive ).nextSibling;
 
 		if ( pageForward !== null )
 		{
