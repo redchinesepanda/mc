@@ -52,7 +52,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( element.getBoundingClientRect().right );
 
-		console.log( window.innerWidth );
+		console.log( this.innerWidth );
 	}
 
 	const events = {
@@ -93,9 +93,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setPagination( element )
 	{
-		console.log( this ); 
+		// console.log( this ); 
 
-		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen );
+		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen, this );
 
 		// initDataset( element );
 
