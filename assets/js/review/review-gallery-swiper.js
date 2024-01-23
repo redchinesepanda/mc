@@ -126,7 +126,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( 'touchstart', handleTouchStart, false );
 
-		element.addEventListener( 'touchend', handleTouchEnd, false );
+		// element.addEventListener( 'touchend', handleTouchEnd, false );
 		
 		element.addEventListener( 'touchmove', handleTouchMove, false );
 	}
