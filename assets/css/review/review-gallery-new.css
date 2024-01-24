@@ -40,7 +40,8 @@
 
     .tcb-post-content .legal-imageset
     {
-        column-gap: 0px;
+        /* column-gap: 0px; */
+        column-gap: 32px;
     }
 
     /* Width and Height */
@@ -57,7 +58,14 @@
 
     .tcb-post-content .legal-imageset-oops .item-image
     {
-        max-width: calc( 100% - 32px );
+        /* max-width: calc( 100% - 32px ); */
+        max-width: 100%;
+    }
+
+    .tcb-post-content .legal-imageset-oops .legal-imageset
+    {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 
