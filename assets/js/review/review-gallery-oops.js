@@ -30,7 +30,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( event.currentTarget );
 
-		event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
+		// event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
+
+		event.currentTarget.parentElement.insertBefore( event.currentTarget.cloneNode( true ), event.currentTarget );
 	}
 
 	const selectors = {
