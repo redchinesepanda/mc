@@ -99,6 +99,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		console.log( parseFloat( this.getBoundingClientRect().right ) );
 
+		console.log( parseFloat( element.getBoundingClientRect().right )
+			
+			> parseFloat( this.getBoundingClientRect().right ) );
+
 		// if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		
 		if (
