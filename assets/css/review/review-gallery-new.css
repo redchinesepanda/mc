@@ -1,3 +1,33 @@
+/* Selectors */
+
+.tcb-post-content .legal-imageset-oops
+{
+    background-color: aliceblue;
+}
+
+.tcb-post-content .legal-imageset
+{
+    background-color:antiquewhite;
+}
+
+.tcb-post-content .imageset-item
+{
+    background-color:beige;
+}
+.tcb-post-content .item-image
+{
+    background-color:burlywood;
+}
+.tcb-post-content .item-caption
+{
+    background-color:coral;
+}
+
+.tcb-post-content .imageset-pagination
+{
+    background-color:cornsilk;
+}
+
 @media screen and ( max-width: 959px )
 {
     /* Display */
