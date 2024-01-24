@@ -103,6 +103,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			> parseFloat( this.getBoundingClientRect().right ) );
 
+		element.classList.remove( classes.offScreen );
+
 		// if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		
 		if (
