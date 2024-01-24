@@ -59,6 +59,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		};
 	  
 		image.src = src;
+
+		image.remove();
 	}
 
 	function setSrc( element )
