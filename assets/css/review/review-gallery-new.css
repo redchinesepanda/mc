@@ -46,7 +46,7 @@
 
     /* Width and Height */
 
-    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .imageset-item
     {
         min-width: 100%;
     }
