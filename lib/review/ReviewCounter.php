@@ -51,26 +51,6 @@ class ReviewCounter
 		add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
-	const TEMPLATE = [
-		self::CLASSES[ 'base' ] => LegalMain::LEGAL_PATH . '/template-parts/review/review-counter.php',
-	];
-
-    public static function render_counter( $args )
-    {
-		if ( !ReviewMain::check() )
-        {
-            return '';
-        }
-
-        ob_start();
-
-        load_template( self::TEMPLATE[ self::CLASSES[ 'base' ] ], false, $args );
-
-        $output = ob_get_clean();
-
-        return $output;
-    }
-
 	public static function inline_style_general( $group )
 	{
 		return [
@@ -156,6 +136,8 @@ class ReviewCounter
 
 	const CLASSES = [
 		'base' => 'legal-review-counter',
+
+		'new' => 'legal-review-counter-new',
 	];
 
 	public static function get_nodes( $dom )
@@ -419,6 +401,38 @@ class ReviewCounter
 
 		return $args;
 	}
+
+	const TEMPLATE = [
+		self::CLASSES[ 'base' ] => LegalMain::LEGAL_PATH . '/template-parts/review/review-counter.php',
+
+		self::CLASSES[ 'new' ] => LegalMain::LEGAL_PATH . '/template-parts/review/review-counter-new.php',
+	];
+
+    public static function render_counter( $args )
+    {
+		if ( TemplateMain::check_new() )
+		{
+			return self::render_main( self::TEMPLATE[ self::CLASSES[ 'new' ] ], $args );
+		}
+
+		return self::render_main( self::TEMPLATE[ self::CLASSES[ 'base' ] ], $args );
+    }
+
+    public static function render_main( $template, $args )
+    {
+		if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
 }
 
 ?>
