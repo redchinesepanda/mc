@@ -71,7 +71,7 @@
 }
 
 .legal-oops {
-	padding: 25px 15px;
+	padding: 24px 16px;
 }
 
 .legal-oops .item-bonus {
@@ -110,8 +110,8 @@
 
 .legal-oops {
 	background-color: #ffffff;
-	border-radius: 6px;
-	border: 1px solid var( --Base-base-09 );
+	border-radius: 24px;
+	border: 2px solid var( --Base-base-09 );
 }
 
 .legal-oops .item-button {
