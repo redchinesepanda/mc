@@ -210,8 +210,8 @@
     z-index: 1;
 }
 
-.tcb-post-content .legal-gallery .legal-left,
-.tcb-post-content .legal-gallery .legal-right {
+.tcb-post-content :not( .legal-imageset-oops ) .legal-gallery .legal-left,
+.tcb-post-content :not( .legal-imageset-oops ) .legal-gallery .legal-right {
     position: absolute;
     top: 50%;
 }
