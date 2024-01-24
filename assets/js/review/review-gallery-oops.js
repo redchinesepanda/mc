@@ -49,9 +49,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	function preloadSrc( element, src )
+	{
+		let image = new Image();
+
+		image.onload = function()
+		{
+			element.src = this.src;
+		};
+	  
+		image.src = src;
+	}
+
 	function setSrc( element )
 	{
-		element.src = element.dataset.src;
+		// element.src = element.dataset.src;
+
+		preloadSrc( element, element.dataset.src );
 
 		element.removeAttribute( 'width' );
 
