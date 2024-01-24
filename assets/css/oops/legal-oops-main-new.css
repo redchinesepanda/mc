@@ -1,0 +1,182 @@
+@media screen and ( max-width: 767px )
+{
+    /* Oops Position */
+
+	.legal-oops-background {
+		padding: 0px 15px;
+	}
+
+	/* Oops Width and Height */
+
+	.legal-oops {
+		width: inherit;
+	}
+}
+
+@media screen and ( min-width: 768px )
+{
+	/* Oops Width and Height */
+
+	.legal-oops {
+		width: 425px;
+	}
+
+	/* Oops Width and Height */
+
+	.legal-oops-background {
+		width: 100%;
+	}
+}
+
+/* Oops Display */
+
+.legal-oops-background {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.legal-oops {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 20px;
+}
+
+.legal-oops .oops-item {
+	display: flex;
+	column-gap: 20px;
+	align-items: center;
+}
+
+.legal-oops-background:not( .legal-active ) {
+	display: none;
+}
+
+.legal-oops .item-image-wrapper {
+	display: flex;
+	justify-content: right;
+}
+
+.legal-oops .item-bonus {
+	display: inline-block;
+}
+
+/* Oops Position */
+
+.legal-oops-background {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+.legal-oops {
+	padding: 25px 15px;
+}
+
+.legal-oops .item-bonus {
+	padding-left: 30px;
+}
+
+.legal-oops .item-button {
+	padding: 5px 35px 5px 13px;
+}
+
+/* Oops Width and Height */
+
+.legal-oops-background {
+	height: 100vh;
+}
+
+.legal-oops .oops-item {
+	width: 100%;
+}
+
+.legal-oops .item-bonus-wrapper {
+	flex-basis: 20%;
+}
+
+.legal-oops .item-image-wrapper,
+.legal-oops .item-button-wrapper {
+	flex-basis: calc( 100% / 3 );
+	flex-grow: 1;
+}
+
+/* Oops Background */
+
+.legal-oops-background {
+	background-color: #323232CC;
+}
+
+.legal-oops {
+	background-color: #ffffff;
+	border-radius: 6px;
+	border: 1px solid var( --Base-base-09 );
+}
+
+.legal-oops .item-button {
+	background-color: rgb(89, 151, 227);
+	background-image: url( '../../img/oops/oops-bet-now.svg' );
+    background-position: right 13px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+	border-radius: 20px;
+}
+
+.legal-oops .item-image[src$="mc.png"] {
+	background-color: rgb(13, 11, 47);
+	border-radius: 10px;
+}
+
+.legal-oops .item-bonus {
+	background-image: url( '../../img/oops/oops-bonus.svg' );
+	background-position: left center;
+	background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Oops Typography */
+
+.legal-oops .oops-title {
+	font-family: "Source Sans Pro";
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: 35.2px;
+	color: rgba(10, 10, 10, 0.85);
+}
+
+.legal-oops .oops-description {
+	font-family: "Source Sans Pro";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27.2px;
+	color: rgb(110, 110, 110);
+	text-align: center;
+}
+
+.legal-oops .item-bonus {
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 32.4px;
+	text-decoration: none;
+	color: rgb(89, 151, 227);
+}
+
+.legal-oops .item-bonus-wrapper {
+	text-align: center;
+}
+
+.legal-oops .item-button {
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 14.4px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	text-transform: uppercase;
+}
