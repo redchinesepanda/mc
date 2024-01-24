@@ -28,6 +28,17 @@
     background-color:cornsilk;
 }
 
+@media screen and ( max-width: 767px )
+{
+    /* Width and Height */
+
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image
+    {
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media screen and ( max-width: 959px )
 {
     /* Display */
@@ -53,12 +64,6 @@
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .imageset-item
     {
         min-width: 100%;
-    }
-
-    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image
-    {
-        width: 100%;
-        height: auto;
     }
 
     .tcb-post-content .legal-imageset-oops .legal-imageset
