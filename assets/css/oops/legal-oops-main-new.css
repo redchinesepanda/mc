@@ -115,7 +115,7 @@
 }
 
 .legal-oops .item-button {
-	background-color: rgb(89, 151, 227);
+	background-color: var( --Base-base-09 );
 	background-image: url( '../../img/oops/oops-bet-now.svg' );
     background-position: right 13px center;
     background-repeat: no-repeat;
@@ -137,33 +137,43 @@
 
 /* Oops Typography */
 
+.legal-oops .oops-title,
+.legal-oops .oops-description,
+.legal-oops .item-bonus,
+.legal-oops .item-button {
+	font-family: var( --legal-font-primary );
+}
+
+.legal-oops .oops-title,
+.legal-oops .oops-description,
+.legal-oops .item-bonus {
+	color: var( --Base-base-09 );
+}
+
 .legal-oops .oops-title {
-	font-family: "Source Sans Pro";
-	font-size: 32px;
+	font-size: 26px;
 	font-style: normal;
-	font-weight: 900;
-	line-height: 35.2px;
-	color: rgba(10, 10, 10, 0.85);
+	font-weight: 700;
+	line-height: 28px;
+	text-transform: uppercase;
 }
 
 .legal-oops .oops-description {
-	font-family: "Source Sans Pro";
-	font-size: 16px;
+	font-size: 14px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 27.2px;
-	color: rgb(110, 110, 110);
+	line-height: 17px;
+	/* color: rgb(110, 110, 110); */
 	text-align: center;
 }
 
 .legal-oops .item-bonus {
-	font-family: "Source Sans Pro";
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 32.4px;
 	text-decoration: none;
-	color: rgb(89, 151, 227);
+	/* color: rgb(89, 151, 227); */
 }
 
 .legal-oops .item-bonus-wrapper {
@@ -171,12 +181,11 @@
 }
 
 .legal-oops .item-button {
-	font-family: "Source Sans Pro";
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 14.4px;
-	color: rgb(255, 255, 255);
+	color: var( --Base-base-01 );
 	text-decoration: none;
 	text-transform: uppercase;
 }
