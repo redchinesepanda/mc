@@ -67,7 +67,10 @@
 }
 
 .legal-oops .item-bonus {
-	display: inline-block;
+	/* display: inline-block; */
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
 }
 
 /* Oops Position */
@@ -208,9 +211,9 @@
 }
 
 .legal-oops .item-bonus {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 600;
-	line-height: 32.4px;
+	line-height: 22px;
 	text-decoration: none;
 	/* color: rgb(89, 151, 227); */
 }
