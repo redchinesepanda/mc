@@ -61,7 +61,7 @@
 
 .legal-oops .item-image-wrapper {
 	display: flex;
-	justify-content: right;
+	/* justify-content: right; */
 }
 
 .legal-oops .item-bonus {
