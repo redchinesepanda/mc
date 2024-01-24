@@ -62,6 +62,8 @@
 .legal-oops .item-image-wrapper {
 	display: flex;
 	/* justify-content: right; */
+	align-items: center;
+	column-gap: 8px;
 }
 
 .legal-oops .item-bonus {
@@ -92,9 +94,9 @@
 	padding-bottom: 24px;
 }
 
-.legal-oops .item-bonus {
+/* .legal-oops .item-bonus {
 	padding-left: 30px;
-}
+} */
 
 .legal-oops .item-button {
 	/* padding: 5px 35px 5px 13px; */
@@ -165,31 +167,33 @@
 	border: 1px solid var( --Base-base-09 );
 }
 
-.legal-oops .item-bonus {
+/* .legal-oops .item-bonus {
 	background-image: url( '../../img/oops/oops-bonus.svg' );
 	background-position: left center;
 	background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
 /* Oops Typography */
 
 .legal-oops .oops-title,
 .legal-oops .oops-description,
 .legal-oops .item-bonus,
-.legal-oops .item-button {
+.legal-oops .item-button,
+.legal-oops .item-image-wrapper {
 	font-family: var( --legal-font-primary );
+	font-style: normal;
 }
 
 .legal-oops .oops-title,
 .legal-oops .oops-description,
-.legal-oops .item-bonus {
+.legal-oops .item-bonus,
+.legal-oops .item-image-wrapper {
 	color: var( --Base-base-09 );
 }
 
 .legal-oops .oops-title {
 	font-size: 26px;
-	font-style: normal;
 	font-weight: 700;
 	line-height: 28px;
 	text-transform: uppercase;
@@ -197,7 +201,6 @@
 
 .legal-oops .oops-description {
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 17px;
 	/* color: rgb(110, 110, 110); */
@@ -206,20 +209,31 @@
 
 .legal-oops .item-bonus {
 	font-size: 18px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 32.4px;
 	text-decoration: none;
 	/* color: rgb(89, 151, 227); */
 }
 
+.legal-oops .item-bonus::before {
+	content: "\F109";
+	font-family: var(--legal-font-icons);
+	font-size: 24px;
+	line-height: 24px;
+}
+
 .legal-oops .item-bonus-wrapper {
 	text-align: center;
 }
 
+.legal-oops .item-image-wrapper {
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 17px;
+}
+
 .legal-oops .item-button {
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 500;
 	line-height: 16px;
 	color: var( --Base-base-01 );
