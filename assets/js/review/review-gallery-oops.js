@@ -27,6 +27,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function setSrc( element )
 	{
 		element.src = element.dataset.src;
+
+		element.removeAttribute( 'width' );
+
+		element.removeAttribute( 'height' );
 	}
 
 	function oopsOpen( event )
