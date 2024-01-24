@@ -1,18 +1,19 @@
 /* Overview Position */
 
 .tcb-post-content .legal-overview {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 30px;
-    margin: 0px;
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    margin-top: 0px;
 }
 
-.tcb-post-content .legal-overview-start {
+/* .tcb-post-content .legal-overview-start {
     padding-top: 30px;
-}
+} */
 
 .tcb-post-content .legal-overview-end {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 /* Overview Background */
