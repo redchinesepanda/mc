@@ -251,6 +251,13 @@
     align-items: center;
     padding: 0px 32px;
 }
+
+.tcb-post-content .legal-imageset-oops::before
+{
+    position: absolute;
+    top: 18px;
+    right: 16px;
+}
   
 /* Width and Height */
 
