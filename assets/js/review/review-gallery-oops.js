@@ -32,7 +32,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
 
-		event.currentTarget.parentElement.insertBefore( event.currentTarget.cloneNode( true ), event.currentTarget );
+		let imagesetOops = event.currentTarget.cloneNode( true );
+
+		imagesetOops.classList.add( classes.imagesetOops );
+
+		event.currentTarget.parentElement.insertBefore( imagesetOops, event.currentTarget );
 	}
 
 	const selectors = {
@@ -42,7 +46,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const classes = {
-		imagesetWrapperActive : 'legal-active'
+		imagesetWrapperActive : 'legal-active',
+
+		imagesetOops : 'legal-imageset-oops'
 	};
 
 	function oops( element )
