@@ -173,7 +173,7 @@
     align-content: center;
 }
 
-.tcb-post-content .legal-imageset-oops
+.tcb-post-content .legal-imageset-oops .legal-imageset
 {
     margin-left: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
     margin-right: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
