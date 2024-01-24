@@ -340,6 +340,7 @@
 
 .legal-billet-mega:hover {
 	box-shadow: 4px 4px 0px 0px #000; /*тест ховера*/
+	transition: 0.4s;
 }
 
 .legal-billet-mega .billet-mega-about {
