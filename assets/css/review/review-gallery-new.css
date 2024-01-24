@@ -172,6 +172,11 @@
     justify-content: center;
     align-content: center;
 }
+
+.tcb-post-content .legal-imageset-oops .imageset-item
+{
+    justify-content: center;
+}
   
 /* Position */
 
