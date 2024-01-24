@@ -123,8 +123,8 @@ class ReviewMain
 			'ver' => '1.0.0',
 		],
 
-        'review-overview' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview.css',
+        'review-overview-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-overview-new.css',
 
             'ver' => '1.0.1',
         ],
