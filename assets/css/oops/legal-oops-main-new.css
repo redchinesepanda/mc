@@ -81,7 +81,8 @@
 }
 
 .legal-oops .item-button {
-	padding: 5px 35px 5px 13px;
+	/* padding: 5px 35px 5px 13px; */
+	padding: 8px 18px;
 }
 
 /* Oops Width and Height */
@@ -96,6 +97,10 @@
 
 .legal-oops .item-bonus-wrapper {
 	flex-basis: 20%;
+}
+
+.legal-oops .item-button {
+	min-width: 82px;
 }
 
 /* .legal-oops .item-image-wrapper,
