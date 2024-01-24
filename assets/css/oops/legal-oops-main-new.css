@@ -51,6 +51,10 @@
 	justify-content: space-between;
 }
 
+.legal-oops .item-button {
+	display: inline-block;
+}
+
 .legal-oops-background:not( .legal-active ) {
 	display: none;
 }
@@ -191,8 +195,9 @@
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
-	line-height: 20px;
+	line-height: 16px;
 	color: var( --Base-base-01 );
 	text-decoration: none;
+	text-align: center;
 	/* text-transform: uppercase; */
 }
