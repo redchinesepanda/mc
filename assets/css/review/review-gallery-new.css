@@ -104,6 +104,11 @@
 
     /* Width and Height */
 
+    .tcb-post-content .legal-imageset-oops .imageset-item
+    {
+        min-width: var( --base-width-desktop );
+    }
+
     .tcb-post-content .legal-imageset-oops .legal-imageset
     {
         width: var( --base-width-desktop ); 
@@ -189,10 +194,6 @@
 .tcb-post-content .legal-imageset-oops .imageset-item
 {
     justify-content: center;
-    /* padding-left: calc( ( var( --base-width-desktop ) - 1024px) / 2 );
-    padding-right: calc( ( var( --base-width-desktop ) - 1024px) / 2 );
-    width: var( --base-width-desktop ); */
-    min-width: var( --base-width-desktop );
     align-items: center;
 }
   
