@@ -117,6 +117,12 @@
         justify-content: center;
     }
 
+    .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-backward,
+    .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-forward
+    {
+        display: none;
+    }
+
     /* Position */
 
     .tcb-post-content .legal-imageset-wrapper .imageset-backward
