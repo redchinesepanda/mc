@@ -111,6 +111,15 @@
 	width: 100%;
 }
 
+.legal-oops .item-image-wrapper {
+	flex-basis: 164px;
+}
+
+.legal-oops .item-image[src$="mc.png"] {
+	width: 32px;
+	height: 32px;
+}
+
 .legal-oops .item-bonus-wrapper {
 	flex-basis: 20%;
 }
@@ -153,8 +162,7 @@
 .legal-oops .item-image[src$="mc.png"] {
 	background-color: rgb(13, 11, 47);
 	border-radius: 8px;
-	width: 32px;
-	height: 32px;
+	border: 1px solid var( --Base-base-09 );
 }
 
 .legal-oops .item-bonus {
