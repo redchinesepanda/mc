@@ -113,14 +113,19 @@
     .tcb-post-content .legal-imageset-wrapper .legal-imageset:not( .columns-1 ) ~ .imageset-forward
     {
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-backward,
     .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-forward
     {
         display: none;
+    }
+
+    .tcb-post-content .legal-imageset-wrapper .imageset-backward,
+    .tcb-post-content .legal-imageset-wrapper .imageset-forward
+    {
+        align-items: center;
+        justify-content: center;
     }
 
     /* Position */
