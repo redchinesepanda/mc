@@ -100,7 +100,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		paginationItemActive : '.legal-active',
 
-		paginationItemNext : '.legal-active + .pagination-item'
+		paginationItemNext : '.legal-active + .pagination-item',
+
+		imagesetOops : '.tcb-post-content .legal-imageset-oops'
 	};
 	
 	const classes = {
@@ -130,6 +132,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+
+	function oopsReady( event )
+	{
+		document.querySelectorAll( selectors.imagesetOops ).forEach( slider );
+	}
+
+	document.addEventListener( reviewGalleyOops.oopsReady, oopsReady, false );
 	  
 } );
 
