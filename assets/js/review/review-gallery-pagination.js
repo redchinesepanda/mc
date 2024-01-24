@@ -95,9 +95,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'checkOffscreen' );
 
-		console.log( element.getBoundingClientRect().right );
+		console.log( parseFloat( element.getBoundingClientRect().right ) );
 		
-		console.log( this.getBoundingClientRect().right );
+		console.log( parseFloat( this.getBoundingClientRect().right ) );
 
 		if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		{
