@@ -46,6 +46,16 @@
 
     /* Width and Height */
 
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset
+    {
+        min-width: 100%;
+    }
+
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image
+    {
+        width: 100%;
+    }
+
     .tcb-post-content .legal-imageset-oops .legal-imageset
     {
         width: 100%;
