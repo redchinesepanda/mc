@@ -34,11 +34,18 @@ let reviewGalleyOops = ( function()
 				}
 			)
 		},
+
+		click : 'click',
 	};
 } )();
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function oopsRemove( event )
+	{
+		event.currentTarget.remove();
+	}
+
 	function setSrc( element )
 	{
 		element.src = element.dataset.src;
@@ -61,6 +68,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetOops.classList.add( classes.imagesetOops );
 
 		imagesetOops.querySelectorAll( selectors.itemImage ).forEach( setSrc );
+
+		imagesetOops.addEventListener( reviewGalleyOops.click, oopsRemove, false );
 
 		event.currentTarget.parentElement.insertBefore( imagesetOops, event.currentTarget );
 
