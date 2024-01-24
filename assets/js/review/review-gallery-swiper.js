@@ -41,7 +41,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function handleSwipe( element )
 	{
-		console.log( 'handleSwipe' );
+		// console.log( 'handleSwipe' );
 
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
