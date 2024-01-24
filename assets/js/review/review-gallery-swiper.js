@@ -60,6 +60,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				// console.log( element.parentElement );
 
 				// console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+
+				console.log( 'handleSwipe tap' )
 			}
 		}
 	}

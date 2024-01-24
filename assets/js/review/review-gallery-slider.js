@@ -102,6 +102,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function oopsOpen( event )
 	{
 		event.currentTarget.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( event.currentTarget.dataset.id ) );
+
+		console.log( 'handleSwipe click' );
 	}
 
 	function setSwipe( element )
