@@ -16,12 +16,6 @@ class ReviewGallery
 
             'ver' => '1.0.3',
         ],
-
-        // 'swiper-bundle' => [
-        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.css',
-
-        //     'ver' => '1.0.0',
-        // ],
     ];
 
     const SHORTCODES = [
@@ -57,12 +51,6 @@ class ReviewGallery
     ];
 
     const JS_NEW = [
-        // 'review-gallery' => [
-        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-new.js',
-
-        //     'ver' => '1.0.0',
-        // ],
-
         'review-gallery-slider' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-slider.js',
 
@@ -86,12 +74,6 @@ class ReviewGallery
 
             'ver' => '1.0.0',
         ],
-
-        // 'swiper-bundle' => [
-        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
-
-        //     'ver' => '1.0.0',
-        // ],
     ];
 
     public static function register_script()
