@@ -190,14 +190,14 @@
     scroll-snap-align: start;
 }
 
-.tcb-post-content .legal-imageset-wrapper .legal-imageset:not( .columns-1 ) .imageset-pagination
+.tcb-post-content .legal-imageset-wrapper .legal-imageset:not( .columns-1 ) ~ .imageset-pagination
 {
     display: flex;
     justify-content: end;
     column-gap: 4px;
 }
 
-.tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 .imageset-pagination
+.tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-pagination
 {
     display: none;
 }
