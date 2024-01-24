@@ -55,8 +55,8 @@
 {
     /* Display */
 
-    .tcb-post-content .legal-imageset-wrapper .legal-imageset:not( .columns-1 ) ~ .imageset-backward,
-    .tcb-post-content .legal-imageset-wrapper .legal-imageset:not( .columns-1 ) ~ .imageset-forward
+    .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-backward,
+    .tcb-post-content .legal-imageset-wrapper .legal-imageset.columns-1 ~ .imageset-forward
     {
         display: none;
     }
