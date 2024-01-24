@@ -359,8 +359,18 @@
 
 /* Typography */
 
-.tcb-post-content .legal-imageset .item-caption {
-    color: var(--Base-base-05, #939393);
+.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset .item-caption
+{
+    color: var( --Base-base-05, #939393 );
+}
+
+.tcb-post-content .legal-imageset-oops .legal-imageset .item-caption
+{
+    color: var( --Base-base-01 );
+}
+
+.tcb-post-content .legal-imageset .item-caption
+{
     font-family: var( --legal-font-primary );
     font-size: 13px;
     font-style: normal;
