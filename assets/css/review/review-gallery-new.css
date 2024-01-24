@@ -58,6 +58,7 @@
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image
     {
         width: 100%;
+        height: auto;
     }
 
     .tcb-post-content .legal-imageset-oops .legal-imageset
