@@ -135,6 +135,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsReady( event )
 	{
+		console.log( 'review-gallery-pagination-js oopsReady' );
+
 		document.querySelectorAll( selectors.imagesetOops ).forEach( slider );
 	}
 
