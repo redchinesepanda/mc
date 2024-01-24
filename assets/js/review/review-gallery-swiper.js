@@ -41,8 +41,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function handleSwipe( element )
 	{
-		// console.log( 'handleSwipe' );
-
 		if ( element.dataset.touchendX - element.dataset.touchstartX < 0 )
 		{
 			element.dispatchEvent( reviewGalleySwiper.swipeForwardEvent( element.dataset.id ) );
@@ -56,12 +54,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			else
 			{
 				element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
-
-				// console.log( element.parentElement );
-
-				// console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
-
-				console.log( 'handleSwipe tap' );
 			}
 		}
 	}
