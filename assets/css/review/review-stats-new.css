@@ -28,8 +28,7 @@
 
 .review-stats .item-value-wrapper:after
 {
-    content: attr( data-value, '9/10' );
-    content: '9/10';
+    content: attr( data-value );
 }
 
 /* Stats Position */
