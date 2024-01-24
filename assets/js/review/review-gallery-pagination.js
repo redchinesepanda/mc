@@ -132,7 +132,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		paginationItemNext : '.legal-active + .pagination-item',
 
-		paginationItemNotFirst : '.pagination-item:not( :first-of-type )',
+		paginationItemNotFirst : '.pagination-item:not( .legal-active )',
 
 		imagesetOops : '.tcb-post-content .legal-imageset-oops'
 	};
