@@ -145,7 +145,7 @@
   
 /* Position */
 
-.tcb-post-content .legal-imageset-wrapper
+.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops )
 {
     position: relative;
 }
