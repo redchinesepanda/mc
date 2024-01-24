@@ -1,5 +1,14 @@
 // review-gallery-slider-js start
 
+let reviewGalleySlider = ( function()
+{
+	"use strict";
+
+	return {
+		click : 'click',
+	};
+} )();
+
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function scrollX( element, shift )
@@ -80,14 +89,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', scrollForward );
 	}
 
-	function setSwipeForward( element )
+	// function setSwipeForward( element )
+	// {
+	// 	element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
+	// }
+
+	// function setSwipeBackward( element )
+	// {
+	// 	element.addEventListener( reviewGalleySwiper.swipeBackward, scrollBackward );
+	// }
+
+	function oopsOpen( event )
 	{
-		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
+		event.currentTarget.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( event.currentTarget.dataset.id ) );
 	}
 
-	function setSwipeBackward( element )
+	function setSwipe( element )
 	{
+		element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
+
 		element.addEventListener( reviewGalleySwiper.swipeBackward, scrollBackward );
+
+		element.addEventListener( reviewGalleySlider.click, oopsOpen );
 	}
 
 	function slider( element, index )
@@ -98,9 +121,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
 	
-		element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
+		// element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
 
-		element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
+		// element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
+
+		element.querySelectorAll( selectors.imageset ).forEach( setSwipe );
 	}
 
 	const properties = {
