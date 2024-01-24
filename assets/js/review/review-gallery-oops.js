@@ -26,7 +26,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function oopsOpen( event )
 	{
-		// console.log( 'oopsOpen' );
+		console.log( 'oopsOpen' );
 
 		// console.log( event.currentTarget );
 
