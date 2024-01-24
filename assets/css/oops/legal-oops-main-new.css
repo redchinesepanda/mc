@@ -41,7 +41,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	row-gap: 20px;
+	/* row-gap: 20px; */
 }
 
 .legal-oops .oops-item {
@@ -78,6 +78,18 @@
 
 .legal-oops {
 	padding: 24px 16px;
+}
+
+.legal-oops .oops-title {
+	padding-bottom: 16px;
+}
+
+.legal-oops .oops-description {
+	padding-bottom: 28px;
+}
+
+.legal-oops .oops-item:not( :last-child ) {
+	padding-bottom: 24px;
 }
 
 .legal-oops .item-bonus {
@@ -134,9 +146,15 @@
 	border-radius: 20px;
 }
 
+.legal-oops .item-button:hover {
+	background: var(--Base-base-07);
+}
+
 .legal-oops .item-image[src$="mc.png"] {
 	background-color: rgb(13, 11, 47);
-	border-radius: 10px;
+	border-radius: 8px;
+	width: 32px;
+	height: 32px;
 }
 
 .legal-oops .item-bonus {
