@@ -14,7 +14,7 @@ class ReviewStats
         'review-stats' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-stats-new.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
