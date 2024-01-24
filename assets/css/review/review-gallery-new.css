@@ -55,7 +55,7 @@
 {
     /* Display */
 
-    .tcb-post-content .legal-imageset
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset
     {
         column-gap: 8px;
     }
