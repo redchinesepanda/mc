@@ -56,17 +56,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		image.onload = function()
 		{
 			element.src = this.src;
+
+			this.remove();
 		};
 	  
 		image.src = src;
-
-		image.remove();
 	}
 
 	function setSrc( element )
 	{
-		// element.src = element.dataset.src;
-
 		preloadSrc( element, element.dataset.src );
 
 		element.removeAttribute( 'width' );
@@ -76,12 +74,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsOpen( event )
 	{
-		console.log( 'oopsOpen' );
-
-		// console.log( event.currentTarget );
-
-		// event.currentTarget.classList.toggle( classes.imagesetWrapperActive );
-
 		let imagesetOops = event.currentTarget.cloneNode( true );
 
 		imagesetOops.classList.add( classes.imagesetOops );

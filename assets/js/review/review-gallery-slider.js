@@ -45,14 +45,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					+ parseInt( window.getComputedStyle( imageset, null )
 						.getPropertyValue( properties.columnGap )
 						.match( /\d+/ ) );
-
-				// console.log( 'getShift columnGap: ' + parseInt( window.getComputedStyle( imageset, null )
-				// .getPropertyValue( properties.columnGap )
-				// .match( /\d+/ ) ) );
-
-				// console.log( 'getShift width: ' + parseInt( itemActive.getBoundingClientRect().width ) );
-
-				// console.log( 'getShift shift: ' + shift );
 			}
 		}
 
@@ -89,21 +81,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', scrollForward );
 	}
 
-	// function setSwipeForward( element )
-	// {
-	// 	element.addEventListener( reviewGalleySwiper.swipeForward, scrollForward );
-	// }
-
-	// function setSwipeBackward( element )
-	// {
-	// 	element.addEventListener( reviewGalleySwiper.swipeBackward, scrollBackward );
-	// }
-
 	function oopsOpen( event )
 	{
 		event.currentTarget.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( event.currentTarget.dataset.id ) );
-
-		console.log( 'handleSwipe click' );
 	}
 
 	function setSwipe( element )
@@ -122,10 +102,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 
 		element.querySelectorAll( selectors.imagesetForward ).forEach( setForward );
-	
-		// element.querySelectorAll( selectors.imageset ).forEach( setSwipeForward );
-
-		// element.querySelectorAll( selectors.imageset ).forEach( setSwipeBackward );
 
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipe );
 	}
@@ -161,7 +137,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imageActive : ' .legal-active',
 
 		imagesetPagination : '.imageset-pagination',
-		
+
 		imagesetOops : '.tcb-post-content .legal-imageset-oops'
 	};
 

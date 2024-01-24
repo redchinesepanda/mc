@@ -84,8 +84,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
-		// this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
-		
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageForward, pageForward, false );
 
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageBackward, pageBackward, false );
@@ -93,19 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkOffscreen( element )
 	{
-		console.log( 'checkOffscreen' );
-
-		console.log( parseFloat( element.getBoundingClientRect().right ) );
-		
-		console.log( parseFloat( this.getBoundingClientRect().right ) );
-
-		console.log( parseFloat( element.getBoundingClientRect().right )
-			
-			> parseFloat( this.getBoundingClientRect().right ) );
-
 		element.classList.remove( classes.offScreen );
-
-		// if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		
 		if (
 			parseFloat( element.getBoundingClientRect().right )
@@ -152,8 +138,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			behavior: 'smooth'
 		} );
-
-		console.log( 'setPagination' );
 
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen, this );
 	}
