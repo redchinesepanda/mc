@@ -19,6 +19,21 @@ let reviewGalleyOops = ( function()
 				}
 			)
 		},
+
+		oopsReady : 'oopsready',
+
+		oopsReadyEvent : function( id )
+		{
+			return new CustomEvent(
+				this.oopsReady,
+
+				{
+					detail: {
+						id: () => id
+					},
+				}
+			)
+		},
 	};
 } )();
 
@@ -48,6 +63,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		imagesetOops.querySelectorAll( selectors.itemImage ).forEach( setSrc );
 
 		event.currentTarget.parentElement.insertBefore( imagesetOops, event.currentTarget );
+
+		document.dispatchEvent( reviewGalleyOops.oopsReadyEvent( event.currentTarget.dataset.id ) );
 	}
 
 	const selectors = {

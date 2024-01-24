@@ -61,7 +61,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 				// console.log( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 
-				console.log( 'handleSwipe tap' )
+				console.log( 'handleSwipe tap' );
 			}
 		}
 	}
@@ -101,7 +101,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
 
-		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper'
+		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+
+		imagesetOops : '.tcb-post-content .legal-imageset-oops'
 	};
 
 	function slider( element )
@@ -110,6 +112,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+
+	function oopsReady( event )
+	{
+		document.querySelectorAll( selectors.imagesetOops ).forEach( slider );
+	}
+
+	document.addEventListener( reviewGalleyOops.oopsReady, oopsReady, false );
 	  
 } );
 
