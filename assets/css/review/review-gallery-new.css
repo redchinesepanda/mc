@@ -294,6 +294,17 @@
     width: 12px;
     height: 12px;
 }
+
+.tcb-post-content .legal-imageset.columns-1 .imageset-item
+{
+    width: 100%;
+}
+
+.tcb-post-content .legal-imageset.columns-1 .item-image
+{
+    width: 100%;
+    height: auto;
+}
   
 /* Background */
 
