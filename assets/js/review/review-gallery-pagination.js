@@ -78,11 +78,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initPagination( element )
 	{
+		clearPagination( this.querySelector( selectors.imagesetPagination ) );
+
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
 		// this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
-
-		clearPagination( this.querySelector( selectors.imagesetPagination ) );
 		
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageForward, pageForward, false );
 
