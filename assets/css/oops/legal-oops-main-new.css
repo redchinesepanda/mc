@@ -111,6 +111,7 @@
 .legal-oops {
 	background-color: #ffffff;
 	border-radius: 6px;
+	border: 1px solid var( --Base-base-09 );
 }
 
 .legal-oops .item-button {
