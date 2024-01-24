@@ -224,9 +224,14 @@
     right: 0px;
 }
 
-.tcb-post-content .legal-imageset-wrapper .imageset-pagination
+.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .imageset-pagination
 {
     padding-top: 8px;
+}
+
+.tcb-post-content .legal-imageset-oops .imageset-pagination
+{
+    align-items: center;
 }
   
 /* Width and Height */
