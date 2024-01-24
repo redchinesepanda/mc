@@ -139,7 +139,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			left: 0,
 
 			behavior: 'smooth'
-		} ); 
+		} );
+
+		console.log( 'setPagination' );
 
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen, this );
 	}
