@@ -93,6 +93,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkOffscreen( element )
 	{
+		console.log( 'checkOffscreen' );
+
+		console.log( element.getBoundingClientRect().right );
+		
+		console.log( this.getBoundingClientRect().right );
+
 		if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
 		{
 			element.classList.add( classes.offScreen );
