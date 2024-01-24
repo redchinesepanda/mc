@@ -43,7 +43,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function oopsRemove( event )
 	{
-		event.currentTarget.remove();
+		if ( event.target === event.currentTarget )
+		{
+			event.currentTarget.remove();
+		}
 	}
 
 	function setSrc( element )
