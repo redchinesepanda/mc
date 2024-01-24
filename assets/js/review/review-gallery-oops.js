@@ -24,6 +24,11 @@ let reviewGalleyOops = ( function()
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function setSrc( element )
+	{
+		element.src = element.dataset.src;
+	}
+
 	function oopsOpen( event )
 	{
 		console.log( 'oopsOpen' );
@@ -36,13 +41,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imagesetOops.classList.add( classes.imagesetOops );
 
+		imagesetOops.querySelectorAll( selectors.itemImage ).forEach( setSrc );
+
 		event.currentTarget.parentElement.insertBefore( imagesetOops, event.currentTarget );
 	}
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
 
-		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper'
+		imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+
+		itemImage : '.item-image'
 	};
 
 	const classes = {
