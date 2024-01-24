@@ -173,9 +173,19 @@
     align-content: center;
 }
 
+.tcb-post-content .legal-imageset-oops
+{
+    margin-left: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
+    margin-right: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
+    width: var( --base-width-desktop );
+}
+
 .tcb-post-content .legal-imageset-oops .imageset-item
 {
     justify-content: center;
+    padding-left: calc( ( var( --base-width-desktop ) - 1024px) / 2 );
+    padding-right: calc( ( var( --base-width-desktop ) - 1024px) / 2 );
+    width: var( --base-width-desktop );
 }
   
 /* Position */
