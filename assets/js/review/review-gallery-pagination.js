@@ -68,11 +68,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		this.querySelector( selectors.imagesetPagination ).appendChild( paginationItem );
 	}
 
+	function clearPagination( element )
+	{
+		while ( element.childNodes.length > 1)
+		{
+			element.removeChild( element.lastChild );
+		}
+	}
+
 	function initPagination( element )
 	{
 		element.querySelectorAll( selectors.offScreen ).forEach( addPaginationItem, this );
 
 		// this.querySelector( selectors.imagesetPagination ).addEventListener( 'pageforward', pageForward, false );
+
+		clearPagination( this.querySelector( selectors.imagesetPagination ) );
 		
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageForward, pageForward, false );
 
