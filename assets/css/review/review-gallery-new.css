@@ -178,6 +178,7 @@
     margin-left: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
     margin-right: calc( ( 100% - var( --base-width-desktop ) ) / 2 );
     width: var( --base-width-desktop ); 
+    padding-bottom: 18px;
 }
 
 .tcb-post-content .legal-imageset-oops .imageset-item
