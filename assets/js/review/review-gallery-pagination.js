@@ -68,12 +68,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		this.querySelector( selectors.imagesetPagination ).appendChild( paginationItem );
 	}
 
+	function removePaginationItem( element )
+	{
+		element.remove();
+	}
+
 	function clearPagination( element )
 	{
-		while ( element.childNodes.length > 1)
-		{
-			element.removeChild( element.lastChild );
-		}
+		element.querySelectorAll( selectors.paginationItemNotFirst ).forEach( removePaginationItem );
 	}
 
 	function initPagination( element )
@@ -111,6 +113,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		paginationItemActive : '.legal-active',
 
 		paginationItemNext : '.legal-active + .pagination-item',
+
+		paginationItemNotFirst : '.pagination-item:not( :first-of-type )',
 
 		imagesetOops : '.tcb-post-content .legal-imageset-oops'
 	};
