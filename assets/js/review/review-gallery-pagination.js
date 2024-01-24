@@ -99,7 +99,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		console.log( parseFloat( this.getBoundingClientRect().right ) );
 
-		if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
+		// if ( element.getBoundingClientRect().right > this.getBoundingClientRect().right )
+		
+		if (
+			parseFloat( element.getBoundingClientRect().right )
+			
+			> parseFloat( this.getBoundingClientRect().right )
+		)
 		{
 			element.classList.add( classes.offScreen );
 		}
