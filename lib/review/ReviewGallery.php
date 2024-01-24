@@ -16,7 +16,7 @@ class ReviewGallery
 
             'ver' => '1.0.3',
         ],
-    ];
+    ]; 
 
     const SHORTCODES = [
         'gallery' => 'gallery',
