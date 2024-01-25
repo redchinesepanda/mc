@@ -51,10 +51,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 				wrapperSelector: wrapperSelector
 			} );
-		}
-		else
-		{
-			wrapper.classList.add( classes.active );
+
+			if ( element.dataset.enabled )
+			{
+				wrapper.classList.add( classes.active );
+			}
 		}
 	}
 	
@@ -76,7 +77,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function enableOops( element )
 	{
-		element.classList.add( classes.active );
+		// element.classList.add( classes.active );
+
+		element.dataset.enabled = true;
 	}
 
 	const events = {
