@@ -235,7 +235,7 @@
 	line-height: 17px;
 }
 
-.legal-oops .item-image-wrapper::before {
+.legal-oops .item-image-wrapper::after {
 	content: attr( data-alt );
 }
 
