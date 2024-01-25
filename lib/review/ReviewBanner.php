@@ -24,13 +24,16 @@ class ReviewBanner
 
 	public static function register()
     {
-        $handler = new self();
-
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_filter( 'disable_captions', [ $handler, 'disable_captions' ] );
+		if ( self::check() )
+		{
+			$handler = new self();
+	
+			add_filter( 'the_content', [ $handler, 'get_content' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_filter( 'disable_captions', [ $handler, 'disable_captions' ] );
+		}
     }
 
 	public static function disable_captions( $bool ){
@@ -40,6 +43,11 @@ class ReviewBanner
 	const CSS_CLASS = [
 		'container' => 'legal-banner',
 	];
+
+	public static function check()
+	{
+		return LegalComponent::check_contains( self::CSS_CLASS[ 'container' ] );
+	}
 
 	public static function style_formats_banner( $settings )
 	{
