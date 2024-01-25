@@ -104,9 +104,9 @@ class LegalMain
 			MetrikaMain::register();
 		}
 
-		LegalDebug::debug( [
-			get_option( 'tve_user_templates' ),
-		] );
+		// LegalDebug::debug( [
+		// 	get_option( 'tve_user_templates' ),
+		// ] );
 	}
 
 	public static function check_admin()
