@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php echo OopsAge::render(); ?>
 </section>
 
-<?php //wp_footer(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>
