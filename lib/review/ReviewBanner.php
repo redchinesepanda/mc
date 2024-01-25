@@ -48,7 +48,7 @@ class ReviewBanner
 
 	public static function check()
 	{
-		return LegalComponent::check_contains( self::CSS_CLASS[ 'container' ] );
+		return LegalComponents::check_contains( self::CSS_CLASS[ 'container' ] );
 	}
 
 	public static function style_formats_banner( $settings )

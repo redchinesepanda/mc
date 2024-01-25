@@ -49,8 +49,8 @@ class ReviewBonus
 
 	public static function check()
 	{
-		return LegalComponent::check_contains( self::BONUS_CLASS[ 'bonus' ] )
-			|| LegalComponent::check_contains( self::BONUS_CLASS[ 'billet' ] );
+		return LegalComponents::check_contains( self::BONUS_CLASS[ 'bonus' ] )
+			|| LegalComponents::check_contains( self::BONUS_CLASS[ 'billet' ] );
 	}
 
 	const BONUS_CLASS = [
