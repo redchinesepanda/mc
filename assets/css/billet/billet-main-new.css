@@ -200,8 +200,9 @@ body {
     border-radius: 20px;
 }
 
-.billet-right {
-    background-color: #F6F8FF;
+.billet-item .billet-bonus
+{
+    background-color: var(--Primitives-blue-40, #D9F2FF);
 }
 
 .billet-title .billet-title-rating {
