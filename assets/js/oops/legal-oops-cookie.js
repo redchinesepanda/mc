@@ -14,9 +14,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		console.log( event.currentTarget );
+		console.log( this );
 
-		LegalCookie.setCookie( event.currentTarget.closest( selectors.cookieWrapper ).dataset.cookie, 'accepted', LegalCookie.options );
+		LegalCookie.setCookie( cookie, 'accepted', LegalCookie.options );
 
 		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
 	}
@@ -32,11 +32,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( LegalCookie.getCookie( cookie ) );
 
-		wrapper.dataset.cookie = cookie;
-
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
-			wrapper.querySelectorAll( selector ).forEach( prepareAccept );
+			wrapper.querySelectorAll( selector ).forEach( prepareAccept, {
+				cookie: cookie,
+
+				wrapper: wrapper
+			} );
 		}
 		else
 		{
