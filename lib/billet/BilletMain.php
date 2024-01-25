@@ -371,6 +371,11 @@ class BilletMain
         return BilletLogo::get_logo( $id, $index, $url, $filter ); 
     }
 
+    private static function get_title( $id, $index, $url, $filter )
+    {
+        return BilletLogo::get_title( $id, $index, $url, $filter ); 
+    }
+
     private static function get_bonus( $id, $url, $filter )
     {
         return BilletBonus::get_bonus( $id, $url, $filter );
@@ -429,6 +434,8 @@ class BilletMain
         
         $logo = self::get_logo( $id, $index, $url, $filter );
 
+        $title = self::get_logo( $id, $index, $url, $filter );
+
         $bonus = self::get_bonus( $id, $url, $filter );
 
         // $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
@@ -451,6 +458,8 @@ class BilletMain
             // 'bonus' => self::get_bonus( $id ),
             
             'logo' => $logo,
+
+            'title' => $title,
 
             'bonus' => $bonus,
 
