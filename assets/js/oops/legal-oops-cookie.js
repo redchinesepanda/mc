@@ -19,6 +19,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
 	}
 
+	function prepareAccept( button )
+	{
+		button.addEventListener( 'click', acceptCookie, false );
+	}
+
 	function oopsInit( wrapper, cookie, selector )
 	{
 		console.log( 'oopsInit' );
@@ -27,10 +32,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
-			wrapper.querySelectorAll( selector ).forEach( function ( button )
-			{
-				button.addEventListener( 'click', acceptCookie, false );
-			} );
+			wrapper.querySelectorAll( selector ).forEach( prepareAccept );
 		}
 		else
 		{
