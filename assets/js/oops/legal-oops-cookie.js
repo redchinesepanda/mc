@@ -2,12 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	const cookies = {
-		oopsAge: 'legal-oops-age',
-
-		oopsCookie: 'legal-oops-cookie'
-	};
-
 	// let oopsCookieName = 'legal-oops-cookie';
 
 	// let oopsCookieClass = 'legal-active';
@@ -44,24 +38,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 	
+	const cookies = {
+		oopsAge: 'legal-oops-age',
+
+		oopsCookie: 'legal-oops-cookie'
+	};
+
 	document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
 	{
-		// if ( LegalCookie.getCookie( cookies.oopsCookie ) === undefined )
-		// {
-		// 	wrapper.querySelectorAll( selectors.cookieButton ).forEach( function ( button )
-		// 	{
-		// 		button.addEventListener( 'click', acceptCookie, false );
-		// 	} );
-
-		// 	// wrapper.classList.add( oopsCookieClass );
-		// }
-
 		oopsInit( wrapper, cookies.oopsCookie, selectors.cookieButton );
 	} );
 
 	document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
 	{
-		oopsInit( wrapper, cookies.ageCookie, selectors.ageButtonYes );
+		oopsInit( wrapper, cookies.oopsAge, selectors.ageButtonYes );
 	} );
 
 	const classes = {
