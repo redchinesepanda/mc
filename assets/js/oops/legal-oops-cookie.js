@@ -54,10 +54,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( wrapper.dataset.enabled );
 
-			if ( wrapper.dataset.enabled )
-			{
+			// if ( wrapper.dataset.enabled )
+			// {
 				wrapper.classList.add( classes.active );
-			}
+			// }
 		}
 	}
 	
@@ -67,21 +67,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		oopsCookie: 'legal-oops-cookie'
 	};
 
-	document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
-	{
-		oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
-	} );
-
-	document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
-	{
-		oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
-	} );
-
 	function enableOops( element )
 	{
-		// element.classList.add( classes.active );
+		// element.dataset.enabled = true;
 
-		element.dataset.enabled = true;
+		document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
+		{
+			oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
+		} );
+	
+		document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
+		{
+			oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
+		} );
 	}
 
 	const events = {
