@@ -72,8 +72,6 @@ class BilletMain
 
             'ver' => '1.0.0',
         ],
-
-        // self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
     public static function print()
@@ -366,95 +364,15 @@ class BilletMain
         'description' => 'billet-bonus-description',
     ];
 
-    private static function get_bonus( $id, $url, $filter )
+    private static function get_logo( $id, $index, $url, $filter )
     {
-        // LegalDebug::debug( [
-        //     'function' => 'BilletMain::get_bonus',
-
-        //     'bonus' =>  BilletBonus::get_bonus( $id, $url, $filter ),
-        // ] );
-
-        return BilletBonus::get_bonus( $id, $url, $filter );
-
-        // // $args = [];
-
-        // $bonus_id = 0;
-
-        // $title = '';
-
-        // $description = '';
-
-        // $description_full = '';
-
-        // $group = get_field( self::FIELD[ 'about' ], $id );
-
-        // if ( $group )
-        // {
-        //     $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
-
-        //     $title = $group[ self::ABOUT[ 'bonus-title' ] ];
-
-        //     $description = $group[ self::ABOUT[ 'bonus-description' ] ];
-            
-        //     $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
-        // }
-
-        // // if ( $bonus_id )
-        // // {
-        // //     $title = get_field( self::BONUS[ 'title' ], $bonus_id );
-
-        // //     $description = get_field( self::BONUS[ 'description' ], $bonus_id );
-        // // }
-
-        // return [
-        //     'title' => $title,
-
-        //     'description' => $description,
-
-        //     'description-full' => $description_full,
-        // ];
+        return BilletLogo::get_logo( $id, $index, $url, $filter );
     }
 
-    // private static function get_bonus( $id )
-    // {
-    //     // $args = [];
-
-    //     $bonus_id = 0;
-
-    //     $title = '';
-
-    //     $description = '';
-
-    //     $description_full = '';
-
-    //     $group = get_field( self::FIELD[ 'about' ], $id );
-
-    //     if ( $group )
-    //     {
-    //         $bonus_id = $group[ self::ABOUT[ 'bonus-id' ] ];
-
-    //         $title = $group[ self::ABOUT[ 'bonus-title' ] ];
-
-    //         $description = $group[ self::ABOUT[ 'bonus-description' ] ];
-            
-    //         $description_full = $group[ self::ABOUT[ 'bonus-description-full' ] ];
-    //     }
-
-    //     // if ( $bonus_id )
-    //     // {
-    //     //     $title = get_field( self::BONUS[ 'title' ], $bonus_id );
-
-    //     //     $description = get_field( self::BONUS[ 'description' ], $bonus_id );
-    //     // }
-
-    //     return [
-    //         'title' => $title,
-
-    //         'description' => $description,
-
-    //         'description-full' => $description_full,
-    //     ];
-    // }
+    private static function get_bonus( $id, $url, $filter )
+    {
+        return BilletBonus::get_bonus( $id, $url, $filter );
+    }
 
     const FETURE_MAIN_DESCRIPTION = [
         'id' => 'billet-feture-id',
@@ -504,6 +422,8 @@ class BilletMain
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
         $url = self::get_url( $id, $filter );
+        
+        $logo = self::get_logo( $id, $url, $filter );
 
         $bonus = self::get_bonus( $id, $url, $filter );
 
@@ -526,6 +446,8 @@ class BilletMain
 
             // 'bonus' => self::get_bonus( $id ),
             
+            'logo' => $logo,
+
             'bonus' => $bonus,
 
             'selector' => 'billet-' . $id,

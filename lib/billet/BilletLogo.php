@@ -20,7 +20,21 @@ class BilletLogo
         'title' => 'about-title',
     ];
 
-    public static function get( $billet )
+    // $billet['id']
+
+    // $billet['index']
+
+    // $billet['url']['review']
+
+    // $billet['url']['logo']
+
+    // $billet[ 'url' ][ 'logo-nofollow' ]
+
+    // $billet['filter']['review']['label']
+
+    // $billet['filter']['order']
+
+    public static function get_logo( $id, $index, $url, $filter )
     {
         $font = '';
 
@@ -28,7 +42,7 @@ class BilletLogo
 
         $alt = 'bookmaker logo';
 
-        $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
+        $group = get_field( self::FIELD[ 'about' ], $id );
 
         if ( $group )
         {
@@ -42,33 +56,89 @@ class BilletLogo
             }
         }
 
-        $args['review'] = BilletMain::href( $billet['url']['review'] );
+        $args['review'] = BilletMain::href( $url['review'] );
 
-        $args['review']['label'] = ( !empty( $billet['filter']['review']['label'] ) ? $billet['filter']['review']['label'] : __( BilletMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ) );
+        $args['review']['label'] = ( !empty( $filter['review']['label'] ) ? $filter['review']['label'] : __( BilletMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ) );
 
         $args['review'][ 'font' ] = $font;
 
-        $args['index'] = $billet['index'];
+        $args['index'] = $index;
 
-        $args['order'] = ( !empty( $billet['filter']['order'] ) ? $billet['filter']['order'] : self::ORDER_VALUE );
+        $args['order'] = ( !empty( $filter['order'] ) ? $filter['order'] : self::ORDER_VALUE );
 
-        $args['logo'] = BilletMain::href( $billet['url']['logo'] );
+        $args['logo'] = BilletMain::href( $url['logo'] );
 
-        $args[ 'logo' ][ 'nofollow' ] = $billet[ 'url' ][ 'logo-nofollow' ];
+        $args[ 'logo' ][ 'nofollow' ] = $url[ 'logo-nofollow' ];
 
         $args['logo']['src'] = $src;
 
         $args['logo']['alt'] = $alt;
 
         // LegalDebug::debug( [
-        //     'function' => 'BilletLogo::get',
+        //     'BilletLogo' => 'get_logo',
 
-        //     'billet' => $billet,
+        //     'id' => $id,
 
-        //     'args' => $args,
+        //     'index' => $index,
+
+        //     'url' => $url,
+
+        //     'filter' => $filter,
         // ] );
 
         return $args;
+    }
+    public static function get( $billet )
+    {
+        // $font = '';
+
+        // $src = self::DEFAULT_LOGO;
+
+        // $alt = 'bookmaker logo';
+
+        // $group = get_field( self::FIELD[ 'about' ], $billet['id'] );
+
+        // if ( $group )
+        // {
+        //     $font = $group[ self::ABOUT[ 'font' ] ];
+
+        //     if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
+        //     {
+        //         $src = $group[ self::ABOUT[ 'logo' ] ];
+
+        //         $alt = $group[ self::ABOUT[ 'title' ] ] . ' logo';
+        //     }
+        // }
+
+        // $args['review'] = BilletMain::href( $billet['url']['review'] );
+
+        // $args['review']['label'] = ( !empty( $billet['filter']['review']['label'] ) ? $billet['filter']['review']['label'] : __( BilletMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ) );
+
+        // $args['review'][ 'font' ] = $font;
+
+        // $args['index'] = $billet['index'];
+
+        // $args['order'] = ( !empty( $billet['filter']['order'] ) ? $billet['filter']['order'] : self::ORDER_VALUE );
+
+        // $args['logo'] = BilletMain::href( $billet['url']['logo'] );
+
+        // $args[ 'logo' ][ 'nofollow' ] = $billet[ 'url' ][ 'logo-nofollow' ];
+
+        // $args['logo']['src'] = $src;
+
+        // $args['logo']['alt'] = $alt;
+
+        // // LegalDebug::debug( [
+        // //     'function' => 'BilletLogo::get',
+
+        // //     'billet' => $billet,
+
+        // //     'args' => $args,
+        // // ] );
+
+        // return $args;
+
+        return self::get_logo( $billet[ 'id' ], $billet[ 'index' ], $billet[ 'url' ], $billet[ 'filter' ] );
     }
 
     const TEMPLATE = [
