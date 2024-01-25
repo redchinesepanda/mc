@@ -52,7 +52,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				wrapperSelector: wrapperSelector
 			} );
 
-			if ( element.dataset.enabled )
+			if ( wrapper.dataset.enabled )
 			{
 				wrapper.classList.add( classes.active );
 			}
