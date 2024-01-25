@@ -288,12 +288,17 @@ class OopsMain
 
     public static function check_post_type()
     {
-        return is_singular( [ 'post' ] );
+        return is_singular( [ 'post', 'page' ] );
     }
 
 	public static function check_not_wiki_thrive()
     {
         return !WikiMain::check_thrive();
+    }
+
+	public static function check_template()
+    {
+        return TemplateMain::check();
     }
 }
 

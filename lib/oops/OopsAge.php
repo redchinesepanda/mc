@@ -66,7 +66,9 @@ class OopsAge
 
 		// $permission_age = in_array( $lang, self::AGE );
 
-        return self::check_locale() && OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
+        // return self::check_locale() && OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
+        
+        return self::check_locale() && OopsMain::check_template();;
     }
 
 	public static function get()

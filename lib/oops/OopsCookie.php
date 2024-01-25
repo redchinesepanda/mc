@@ -63,13 +63,15 @@ class OopsCookie
 
 	public static function check()
     {
-        LegalDebug::debug( [
-            'check_post_type' => OopsMain::check_post_type(),
+        // LegalDebug::debug( [
+        //     'check_post_type' => OopsMain::check_post_type(),
 
-            'check_not_wiki_thrive' => OopsMain::check_not_wiki_thrive(),
-        ] );
-        
-		return OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
+        //     'check_not_wiki_thrive' => OopsMain::check_not_wiki_thrive(),
+        // ] );
+
+		// return OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
+
+        return OopsMain::check_template();
     }
 
 	public static function get()
