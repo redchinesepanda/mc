@@ -219,7 +219,7 @@
 }
 
 .legal-oops .item-bonus::before {
-	content: "\F109";
+	content: "\F108";
 	font-family: var(--legal-font-icons);
 	font-size: 24px;
 	line-height: 24px;
