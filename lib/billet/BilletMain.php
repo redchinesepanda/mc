@@ -434,7 +434,7 @@ class BilletMain
         
         $logo = self::get_logo( $id, $index, $url, $filter );
 
-        $title = self::get_logo( $id, $index, $url, $filter );
+        $title = self::get_title( $id, $index, $url, $filter );
 
         $bonus = self::get_bonus( $id, $url, $filter );
 
