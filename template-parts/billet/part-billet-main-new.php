@@ -1,13 +1,13 @@
 <div class="billet-item">
     <div id="<?php echo $args['selector']; ?>" class="billet">
-        <div class="billet-center">
+        <div class="billet-center billet-main">
             <?php BilletTitle::render( $args ); ?>
 
             <?php echo BilletDescription::render( $args ); ?>
 
             <?php echo BilletList::render( $args ); ?>
         </div>
-        <div class="billet-right">
+        <div class="billet-right billet-bonus">
             <?php BilletRight::render( $args ); ?>
         </div>
     </div>

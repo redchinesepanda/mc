@@ -52,12 +52,14 @@
         width: calc( 22% - 20px );
     }
 
-    .billet-right {
-        width: calc( 24% - 20px );
+    .billet-item .billet-bonus
+    {
+        width: calc( 100% / 3 );
     }
 
-    .billet-center {
-        width: calc( 54% - 20px );
+    .billet-item .billet-main
+    {
+        width: calc( 100% / 3 * 2 );
     }
 
     .billet-list-part.legal-column {
