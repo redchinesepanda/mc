@@ -422,8 +422,10 @@ class BilletMain
         $filter = ( !empty( $args[ 'filter' ] ) ? $args[ 'filter' ] : [] );
 
         $url = self::get_url( $id, $filter );
+
+        $index = !empty( $args['index'] ) ? $args['index'] : 1;
         
-        $logo = self::get_logo( $id, $url, $filter );
+        $logo = self::get_logo( $id, $index, $url, $filter );
 
         $bonus = self::get_bonus( $id, $url, $filter );
 
@@ -436,7 +438,7 @@ class BilletMain
         // ] );
 
         return [
-            'index' => ( !empty( $args['index'] ) ? $args['index'] : 1 ),
+            'index' => $index,
 
             'id' => $id,
         
