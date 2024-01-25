@@ -54,12 +54,12 @@
 
     .billet-item .billet-bonus
     {
-        width: calc( 100% / 3 - 48px );
+        width: calc( 100% / 3 );
     }
 
     .billet-item .billet-main
     {
-        width: calc( 100% / 3 * 2 - 48px );
+        width: calc( 100% / 3 * 2 );
     }
 
     .billet-list-part.legal-column {
@@ -375,6 +375,12 @@ body {
 .billet-item .billet .billet-main
 {
     border-right: var( --base-border-billet ); 
+}
+
+.billet-item .billet .billet-main,
+.billet-item .billet .billet-bonus
+{
+    box-sizing: border-box;
 }
 
 /* Width and Height */
