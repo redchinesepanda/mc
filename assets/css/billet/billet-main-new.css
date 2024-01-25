@@ -255,16 +255,17 @@ body {
 }
 
 .billet-right .legal-play {
-    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
-    background-color: #007BFF;
+    /* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' ); */
+    /* background-color: #007BFF; */
+   /*  background-color: var(--Base-base-09);
     background-position: right 20px center;
     background-repeat: no-repeat;
-    background-size: auto;
-    border-radius: 66px;
+    background-size: auto; */
+    border-radius: 60px;
 }
 
 .billet-right .legal-play:hover {
-    background-color: rgb(89, 151, 227);
+    background-color: var(--Base-base-07);
 }
 
 .billet-right .bonus-spoiler {
@@ -492,7 +493,7 @@ body {
 }
 
 .billet-right .legal-play {
-    padding: 11px 67px 11px 33px;
+    padding: 10px 18px;
 }
 
 .billet-right .bonus-spoiler {
@@ -631,9 +632,9 @@ body {
     font-size: 23px;
     line-height: 29px;
     text-transform: capitalize;
-    text-decoration: none;
     color: #0C0B2D; */
     color: var( --Base-base-09 );
+    text-decoration: none;
 }
 
 /* .billet-right .legal-bonus:hover {
@@ -655,9 +656,9 @@ body {
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--Base-base-01);
 }
 
 .billet-right .bonus-spoiler {
