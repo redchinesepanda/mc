@@ -88,7 +88,7 @@ body {
 .billet {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 30px;
+    /* column-gap: 30px; */
 }
 
 .billet-left {
