@@ -28,7 +28,7 @@ class ReviewAbout
 
     public static function check()
     {
-        return ReviewMain::check();
+        return ReviewMain::check() && TemplatePage::check_review();
     }
 
     public static function register()
