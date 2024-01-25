@@ -373,7 +373,7 @@ class BilletMain
 
     private static function get_title( $id, $index, $url, $filter )
     {
-        return BilletLogo::get_title( $id, $index, $url, $filter ); 
+        return BilletTitle::get_title( $id, $index, $url, $filter ); 
     }
 
     private static function get_bonus( $id, $url, $filter )
