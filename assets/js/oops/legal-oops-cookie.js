@@ -14,13 +14,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		console.log( 'acceptCookie' );
+		// console.log( 'acceptCookie' );
 
-		console.log( event.currentTarget.dataset.cookie ); 
+		// console.log( event.currentTarget.dataset.cookie ); 
 
-		LegalCookie.setCookie( cookie, 'accepted', LegalCookie.options );
+		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
+		event.currentTarget.closest( event.currentTarget.dataset.wrapper ).classList.remove( oopsCookieClass );
 	}
 
 	function prepareAccept( button )
