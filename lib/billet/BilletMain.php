@@ -87,16 +87,14 @@ class BilletMain
     {
         if ( self::check() )
         {
-            if ( TemplateMain::check_new() )
+            
+            if ( empty( $styles ) )
             {
-                if ( empty( $styles ) )
+                if ( TemplateMain::check_new() )
                 {
                     $styles = self::CSS_NEW;
                 }
-            }
-            else
-            {
-                if ( empty( $styles ) )
+                else
                 {
                     $styles = self::CSS;
                 }
