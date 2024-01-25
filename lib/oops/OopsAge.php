@@ -18,23 +18,23 @@ class OopsAge
         }
     }
 
-    const JS = [
-        'legal-oops-age' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-age.js',
+    // const JS = [
+    //     'legal-oops-age' => [
+	// 		'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-age.js',
 
-			'ver' => '1.0.1',
+	// 		'ver' => '1.0.1',
 
-            'deps' => [ 'legal-lib-cookie' ],
-		],
-    ];
+    //         'deps' => [ 'legal-lib-cookie' ],
+	// 	],
+    // ];
 
-	public static function register_script( $scripts = [] )
-    {
-        if ( self::check() )
-		{
-            ToolEnqueue::register_script( self::JS );
-        }
-    }
+	// public static function register_script( $scripts = [] )
+    // {
+    //     if ( self::check() )
+	// 	{
+    //         ToolEnqueue::register_script( self::JS );
+    //     }
+    // }
 
 	public static function register()
     {
@@ -42,13 +42,15 @@ class OopsAge
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	const AGE = [
 		'es',
 
 		'hr',
+
+        'kz',
 	];
 
 	public static function check_locale()
