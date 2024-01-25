@@ -108,7 +108,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     row-gap: 20px;
 }
 
@@ -155,7 +155,10 @@ body {
 }
 
 .billet-right .legal-play {
-    display: block;
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .billet-left .legal-review {
@@ -255,16 +258,18 @@ body {
 }
 
 .billet-right .legal-play {
-    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
-    background-color: #007BFF;
+    /* background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' ); */
+    /* background-color: #007BFF; */
+    background-color: var(--Base-base-09);
+   /*  background-color: var(--Base-base-09);
     background-position: right 20px center;
     background-repeat: no-repeat;
-    background-size: auto;
-    border-radius: 66px;
+    background-size: auto; */
+    border-radius: 60px;
 }
 
 .billet-right .legal-play:hover {
-    background-color: rgb(89, 151, 227);
+    background-color: var(--Base-base-07);
 }
 
 .billet-right .bonus-spoiler {
@@ -357,9 +362,14 @@ body {
     background-size: auto;
 }
 
-.billet-item
-{
+.billet-item {
     --base-border-billet: 1px solid var(--Base-base-09, #0A0A0A);
+    border-radius: 24px;
+}
+
+.billet-item:hover {
+    box-shadow: 4px 4px 0px 0px #000; /*тест ховера*/
+	transition: 0.4s;
 }
 
 
@@ -394,6 +404,14 @@ body {
 
 .billet-left a {
     width: fit-content;
+}
+
+.billet-right .bonus-button {
+    width: 100%;
+}
+
+.billet-right .legal-play {
+    min-height: calc( 50px - (10px * 2) );
 }
 
 .billet-spoiler {
@@ -487,7 +505,7 @@ body {
 }
 
 .billet-right .legal-play {
-    padding: 11px 67px 11px 33px;
+    padding: 10px 18px;
 }
 
 .billet-right .bonus-spoiler {
@@ -540,8 +558,13 @@ body {
     color: #FFFFFF;
 }
 
+.billet-item {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
+}
+
 .billet-left .legal-review {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -552,7 +575,7 @@ body {
 
 .billet-center .legal-title,
 .billet-center .billet-order {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-weight: 600;
     font-size: 23px;
     font-style: normal;
@@ -562,7 +585,7 @@ body {
 }
 
 .billet-title .billet-title-rating {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -571,7 +594,7 @@ body {
 }
 
 .billet-title .billet-title-achivement {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-style: normal;
     font-weight: 600;
 }
@@ -597,7 +620,7 @@ body {
 }
 
 .billet-list-part .billet-list-part-item {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-size: 14px;
     line-height: 18px;
@@ -606,20 +629,24 @@ body {
 
 .billet-right .bonus-title {
     text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
 }
 
 .billet-right .legal-bonus,
 .billet-right .legal-bonus:hover,
 .billet-right .legal-bonus:active,
 .billet-right .legal-bonus:visited {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
+    /* font-family: 'Source Sans Pro'; */
+  /*   font-style: normal;
     font-weight: 700;
     font-size: 23px;
     line-height: 29px;
     text-transform: capitalize;
+    color: #0C0B2D; */
+    color: var( --Base-base-09 );
     text-decoration: none;
-    color: #0C0B2D;
 }
 
 /* .billet-right .legal-bonus:hover {
@@ -627,7 +654,7 @@ body {
 } */
 
 .billet-right .bonus-description {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -636,18 +663,19 @@ body {
 }
 
 .billet-right .legal-play {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 20px;
-    text-transform: uppercase;
+    line-height: 22px;
+    /* text-transform: uppercase; */
     text-decoration: none;
-    color: #FFFFFF;
+    text-align: center;
+    color: var(--Base-base-01);
 }
 
 .billet-right .bonus-spoiler {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -655,7 +683,7 @@ body {
 }
 
 .billet-left .billet-order {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -665,7 +693,7 @@ body {
 
 .billet .profit-label,
 .billet .profit-value {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     line-height: 28px;
@@ -683,7 +711,7 @@ body {
 .billet-item .billet-footer
 {
     color: var( --Base-base-05, #939393 );
-    font-family: var( --legal-font-primary );
+  /*   font-family: var( --legal-font-primary ); */
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -692,7 +720,7 @@ body {
 
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 15px;
     font-style: normal;
     font-weight: 600;

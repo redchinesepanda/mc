@@ -338,10 +338,10 @@
 	border: 1px solid var(--Base-base-09);
 }
 
-.legal-billet-mega:hover {
-	box-shadow: 4px 4px 0px 0px #000; /*тест ховера*/
+/* .legal-billet-mega:hover {
+	box-shadow: 4px 4px 0px 0px #000;
 	transition: 0.4s;
-}
+} */
 
 .legal-billet-mega .billet-mega-about {
 	border-bottom: 1px solid var(--Base-base-09);
@@ -375,7 +375,7 @@
 }
 
 .legal-billet-mega .mega-about-afillate:hover {
-	background: var(--Base-base-07);
+	background-color: var(--Base-base-07);
 }
 
 .legal-billet-mega .link-item {
