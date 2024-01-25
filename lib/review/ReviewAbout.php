@@ -33,25 +33,28 @@ class ReviewAbout
 
     public static function register()
     {
-        $handler = new self();
-
-        // [legal-about]
-
-        // [legal-about mode="footer"]
-
-        // [legal-about mode="mini"]
-
-        // add_shortcode( 'legal-about', [ $handler, 'render' ] );
-        
-        add_shortcode( self::SHPRTCODE[ 'about' ], [ $handler, 'prepare_about' ] );
-
-        // [legal-button suffix="ios" label="costom button label"]
-
-        add_shortcode( 'legal-button', [ $handler, 'render_button' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        if ( self::check() )
+        {
+            $handler = new self();
+    
+            // [legal-about]
+    
+            // [legal-about mode="footer"]
+    
+            // [legal-about mode="mini"]
+    
+            // add_shortcode( 'legal-about', [ $handler, 'render' ] );
+            
+            add_shortcode( self::SHPRTCODE[ 'about' ], [ $handler, 'prepare_about' ] );
+    
+            // [legal-button suffix="ios" label="costom button label"]
+    
+            add_shortcode( 'legal-button', [ $handler, 'render_button' ] );
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        }
     }
 
     public static function inline_style_highlight()
