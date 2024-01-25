@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'acceptCookie' );
 
-		console.log( this ); 
+		console.log( event.currentTarget.dataset.cookie ); 
 
 		LegalCookie.setCookie( cookie, 'accepted', LegalCookie.options );
 
@@ -25,6 +25,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareAccept( button )
 	{
+		button.dataset.cookie = this.cookie;
+
+		button.dataset.wrapper = this.wrapper;
+
 		button.addEventListener( 'click', acceptCookie, false );
 	}
 
