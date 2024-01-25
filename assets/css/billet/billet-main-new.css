@@ -404,8 +404,10 @@ body {
     padding-bottom: 20px;
 }
 
-.billet-footer {
-    margin-top: 5px;
+.billet-item .billet-footer
+{
+    margin-top: -24px;
+    padding: 32px 24px 8px 24px;
 }
 
 .billet-title h3 {
