@@ -200,6 +200,11 @@ body {
     border-radius: 20px;
 }
 
+.billet-item .billet-main
+{
+    background-color: var(--Base-base-01, #FFF);
+}
+
 .billet-item .billet-bonus
 {
     background-color: var(--Primitives-blue-40, #D9F2FF);
