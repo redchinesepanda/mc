@@ -14,6 +14,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
+		console.log( event.currentTarget );
+
 		LegalCookie.setCookie( event.currentTarget.closest( selectors.cookieWrapper ).dataset.cookie, 'accepted', LegalCookie.options );
 
 		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
