@@ -108,7 +108,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     row-gap: 20px;
 }
 
@@ -543,6 +543,11 @@ body {
 
 .billet-left .legal-review:not( .legal-black ) {
     color: #FFFFFF;
+}
+
+.billet-item {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
 }
 
 .billet-left .legal-review {
