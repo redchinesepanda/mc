@@ -14,7 +14,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		console.log( this );
+		console.log( 'acceptCookie' );
+
+		console.log( this ); 
 
 		LegalCookie.setCookie( cookie, 'accepted', LegalCookie.options );
 
