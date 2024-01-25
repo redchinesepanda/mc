@@ -18,23 +18,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( event.currentTarget.dataset.cookie ); 
 
-		console.log( event.currentTarget.dataset.selector ); 
+		console.log( event.currentTarget.dataset.wrapperSelector ); 
 
 		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( event.currentTarget.dataset.selector ).classList.remove( classes.active );
+		event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
 	}
 
 	function prepareAccept( button )
 	{
 		button.dataset.cookie = this.cookie;
 
-		button.dataset.selector = this.selector;
+		button.dataset.wrapperSelector = this.wrapperSelector;
 
 		button.addEventListener( 'click', acceptCookie, false );
 	}
 
-	function oopsInit( wrapper, cookie, selector )
+	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
 	{
 		console.log( 'oopsInit' );
 
@@ -42,10 +42,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
-			wrapper.querySelectorAll( selector ).forEach( prepareAccept, {
+			wrapper.querySelectorAll( itemSlector ).forEach( prepareAccept, {
 				cookie: cookie,
 
-				selector: selector
+				wrapperSelector: wrapperSelector
 			} );
 		}
 		else
@@ -62,12 +62,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
 	{
-		oopsInit( wrapper, cookies.oopsCookie, selectors.cookieButton );
+		oopsInit( wrapper, wrapperSelector, cookies.oopsCookie, selectors.cookieButton );
 	} );
 
 	document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
 	{
-		oopsInit( wrapper, cookies.oopsAge, selectors.ageButtonYes );
+		oopsInit( wrapper, wrapperSelector, cookies.oopsAge, selectors.ageButtonYes );
 	} );
 
 	const classes = {
