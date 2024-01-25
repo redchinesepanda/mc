@@ -21,6 +21,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsInit( wrapper, cookie, selector )
 	{
+		console.log( 'oopsInit' );
+
+		console.log( LegalCookie.getCookie( cookie ) );
+
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
 			wrapper.querySelectorAll( selector ).forEach( function ( button )
