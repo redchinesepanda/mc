@@ -25,6 +25,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			wrapper.classList.add( oopsCookieClass );
 		}
 	} );
+
+	function enableOops( element )
+	{
+		element.classList.add( oopsCookieClass );
+	}
+
+	function enableOopsAll( event )
+	{
+		document.querySelectorAll( '.legal-oops-cookie-wrapper' ).forEach( enableOops );
+
+		document.removeEventListener( 'mousemove', enableOopsAll, { once: true } );
+
+		document.removeEventListener( 'scroll', enableOopsAll, { once: true } );
+	}
+
+	document.addEventListener( 'mousemove', enableOopsAll, { once: true } );
+
+	document.addEventListener( 'scroll', enableOopsAll, { once: true } );
 } );
 
 // oops-cookie end
