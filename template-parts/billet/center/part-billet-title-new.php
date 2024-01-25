@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'part' => 'part-billet-title-new.php',
+// LegalDebug::debug( [
+//     'part' => 'part-billet-title-new.php',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <div class="billet-title">
@@ -18,8 +18,8 @@ LegalDebug::debug( [
     <?php if ( !empty( $args[ 'title' ]['rating'] ) ): ?>
         <div class="billet-title-rating"><?php echo $args[ 'title' ]['rating']; ?></div>
     <?php endif; ?>
-    <?php if ( !empty( $args['review']['href'] ) ) : ?>
-        <a class="legal-review <?php echo $args['review']['class']; ?> <?php echo $args['review']['font']; ?>" href="<?php echo $args['review']['href']; ?>"><?php echo $args['review']['label']; ?></a>
+    <?php if ( !empty( $args['logo']['review']['href'] ) ) : ?>
+        <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
     <?php endif; ?>
     <?php //echo BilletAchievement::render_achievement( $args ); ?>
 </div>
