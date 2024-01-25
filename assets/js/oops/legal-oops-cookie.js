@@ -52,6 +52,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				wrapperSelector: wrapperSelector
 			} );
 
+			console.log( wrapper.dataset.enabled );
+
 			if ( wrapper.dataset.enabled )
 			{
 				wrapper.classList.add( classes.active );
