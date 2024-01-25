@@ -12,7 +12,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<?php echo OopsCookie::render(); ?>
+<section class="legal-section-footer">
+	<?php echo BaseFooter::render(); ?>
+
+	<?php echo OopsMain::render(); ?>
+
+	<?php echo OopsCookie::render(); ?>
+
+	<?php echo OopsAge::render(); ?>
+</section>
 
 <?php wp_footer(); ?>
 
