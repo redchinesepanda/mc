@@ -551,7 +551,7 @@ body {
 }
 
 .billet-left .legal-review {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -562,7 +562,7 @@ body {
 
 .billet-center .legal-title,
 .billet-center .billet-order {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-weight: 600;
     font-size: 23px;
     font-style: normal;
@@ -572,7 +572,7 @@ body {
 }
 
 .billet-title .billet-title-rating {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -581,7 +581,7 @@ body {
 }
 
 .billet-title .billet-title-achivement {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-style: normal;
     font-weight: 600;
 }
@@ -607,7 +607,7 @@ body {
 }
 
 .billet-list-part .billet-list-part-item {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-size: 14px;
     line-height: 18px;
@@ -616,20 +616,24 @@ body {
 
 .billet-right .bonus-title {
     text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
 }
 
 .billet-right .legal-bonus,
 .billet-right .legal-bonus:hover,
 .billet-right .legal-bonus:active,
 .billet-right .legal-bonus:visited {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
+    /* font-family: 'Source Sans Pro'; */
+  /*   font-style: normal;
     font-weight: 700;
     font-size: 23px;
     line-height: 29px;
     text-transform: capitalize;
     text-decoration: none;
-    color: #0C0B2D;
+    color: #0C0B2D; */
+    color: var( --Base-base-09 );
 }
 
 /* .billet-right .legal-bonus:hover {
@@ -637,7 +641,7 @@ body {
 } */
 
 .billet-right .bonus-description {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -646,7 +650,7 @@ body {
 }
 
 .billet-right .legal-play {
-    font-family: 'Source Sans Pro';
+    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
@@ -657,7 +661,7 @@ body {
 }
 
 .billet-right .bonus-spoiler {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -665,7 +669,7 @@ body {
 }
 
 .billet-left .billet-order {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -675,7 +679,7 @@ body {
 
 .billet .profit-label,
 .billet .profit-value {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     line-height: 28px;
@@ -693,7 +697,7 @@ body {
 .billet-item .billet-footer
 {
     color: var( --Base-base-05, #939393 );
-    font-family: var( --legal-font-primary );
+  /*   font-family: var( --legal-font-primary ); */
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -702,7 +706,7 @@ body {
 
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
