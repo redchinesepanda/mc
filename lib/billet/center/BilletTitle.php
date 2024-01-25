@@ -22,7 +22,7 @@ class BilletTitle extends LegalDebug
 
     // $billet['filter']
 
-    public static function get( $id, $index, $url, $filter )
+    public static function get_title( $id, $index, $url, $filter )
     {
         $rating = 0;
 
@@ -64,6 +64,7 @@ class BilletTitle extends LegalDebug
 
         return $args;
     }
+
     public static function get( $billet )
     {
         // $rating = 0;
@@ -106,7 +107,7 @@ class BilletTitle extends LegalDebug
 
         // return $args;
 
-        return self::get( $billet['id'], $billet['index'], $billet['url'], $billet['filter'] );
+        return self::get_title( $billet['id'], $billet['index'], $billet['url'], $billet['filter'] );
     }
 
     const TEMPLATE = [
