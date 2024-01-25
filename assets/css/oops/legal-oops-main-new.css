@@ -235,6 +235,10 @@
 	line-height: 17px;
 }
 
+.legal-oops .item-image-wrapper::before {
+	content: attr( data-alt );
+}
+
 .legal-oops .item-button {
 	font-size: 14px;
 	font-weight: 500;
