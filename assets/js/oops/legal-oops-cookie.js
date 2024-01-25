@@ -62,12 +62,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
 	{
-		oopsInit( wrapper, wrapperSelector, cookies.oopsCookie, selectors.cookieButton );
+		oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
 	} );
 
 	document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
 	{
-		oopsInit( wrapper, wrapperSelector, cookies.oopsAge, selectors.ageButtonYes );
+		oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
 	} );
 
 	const classes = {
