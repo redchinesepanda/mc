@@ -518,6 +518,11 @@ body {
     padding-top: 45px;
 }
 
+.billet-item .billet
+{
+    position: relative;
+}
+
 .billet-item .billet .billet-main,
 .billet-item .billet .billet-bonus
 {
