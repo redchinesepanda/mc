@@ -2,10 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// let oopsCookieName = 'legal-oops-cookie';
-
-	// let oopsCookieClass = 'legal-active';
-
 	const selectors = {
 		cookieWrapper: '.legal-oops-cookie-wrapper',
 
@@ -23,8 +19,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
 	}
 
-	// document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
-
 	function oopsInit( wrapper, cookie, selector )
 	{
 		if ( LegalCookie.getCookie( cookie ) === undefined )
@@ -33,8 +27,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				button.addEventListener( 'click', acceptCookie, false );
 			} );
-
-			// wrapper.classList.add( oopsCookieClass );
 		}
 	}
 	
@@ -75,10 +67,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		document.querySelectorAll( [ selectors.cookieWrapper, selectors.ageWrapper ].join( ', ' ) ).forEach( enableOops );
 
-		// document.removeEventListener( 'mousemove', enableOopsAll, { once: true } );
-
-		// document.removeEventListener( 'scroll', enableOopsAll, { once: true } );
-
 		for ( const [ key, value ] of Object.entries( events ) )
 		{
 			document.removeEventListener( value, enableOopsAll, { once: true } );
@@ -87,14 +75,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	for ( const [ key, value ] of Object.entries( events ) )
 	{
-		// console.log(`${key}: ${value}`);
-
 		document.addEventListener( value, enableOopsAll, { once: true } );
 	}
-
-	// document.addEventListener( 'mousemove', enableOopsAll, { once: true } );
-
-	// document.addEventListener( 'scroll', enableOopsAll, { once: true } );
 } );
 
 // oops-cookie end

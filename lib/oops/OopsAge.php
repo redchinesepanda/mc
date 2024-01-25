@@ -38,11 +38,14 @@ class OopsAge
 
 	public static function register()
     {
-        $handler = new self();
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+        if ( self::check() )
+        {
+            $handler = new self();
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    
+            // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+        }
     }
 
 	const AGE = [
@@ -50,7 +53,7 @@ class OopsAge
 
 		'hr',
 
-        'kz',
+        // 'kz',
 	];
 
 	public static function check_locale()
@@ -70,7 +73,7 @@ class OopsAge
 
         // return self::check_locale() && OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
         
-        return self::check_locale() && OopsMain::check_template();;
+        return self::check_locale() && OopsMain::check_template();
     }
 
 	public static function get()
