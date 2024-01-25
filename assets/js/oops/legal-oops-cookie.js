@@ -64,9 +64,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		oopsInit( wrapper, cookies.ageCookie, selectors.ageButtonYes );
 	} );
 
+	const classes = {
+		active: 'legal-active'
+	};
+
 	function enableOops( element )
 	{
-		element.classList.add( oopsCookieClass );
+		element.classList.add( classes.active );
 	}
 
 	const events = {
