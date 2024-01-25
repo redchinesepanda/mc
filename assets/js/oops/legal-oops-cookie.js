@@ -31,7 +31,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				button.addEventListener( 'click', acceptCookie, false );
 			} );
-
+		}
+		else
+		{
 			wrapper.classList.add( classes.active );
 		}
 	}
