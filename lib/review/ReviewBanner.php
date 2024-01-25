@@ -1,5 +1,7 @@
 <?php
 
+// not used
+
 class ReviewBanner
 {
 	const CSS = [

@@ -35,13 +35,22 @@ class ReviewBonus
 
 	public static function register()
 	{
-		$handler = new self();
+		if ( self::check() )
+		{
+			$handler = new self();
+	
+			add_filter( 'the_content', [ $handler, 'get_content' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		}
+	}
 
-		add_filter( 'the_content', [ $handler, 'get_content' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+	public static function check()
+	{
+		return LegalComponent::check_contains( self::BONUS_CLASS[ 'bonus' ] )
+			|| LegalComponent::check_contains( self::BONUS_CLASS[ 'billet' ] );
 	}
 
 	const BONUS_CLASS = [
