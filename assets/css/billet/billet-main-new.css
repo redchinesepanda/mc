@@ -354,8 +354,9 @@ body {
     width: 100%;
 }
 
-.billet-footer {
-    width: 100%;
+.billet-item .billet-footer
+{
+    width: auto;
 }
 
 .billet-title {
