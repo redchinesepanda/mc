@@ -12,6 +12,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		ageButtonYes: '.age-button-yes-link'
 	};
 
+	const classes = {
+		active: 'legal-active'
+	};
+
 	function acceptCookie( event )
 	{
 		console.log( 'acceptCookie' );
@@ -69,10 +73,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
 	} );
-
-	const classes = {
-		active: 'legal-active'
-	};
 
 	function enableOops( element )
 	{
