@@ -22,7 +22,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( event.currentTarget.dataset.selector ).classList.remove( oopsCookieClass );
+		event.currentTarget.closest( event.currentTarget.dataset.selector ).classList.remove( classes.active );
 	}
 
 	function prepareAccept( button )
