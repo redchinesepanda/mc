@@ -1,0 +1,648 @@
+/* Selectors */
+
+.billet-item .billet-footer
+{
+    /* background-color:aliceblue; */
+}
+
+@media screen and ( max-width: 767px ) {
+
+    /* Billet Display */
+
+    .billet {
+        flex-direction: column;
+    }
+
+    /* Billet Position */
+
+    .billet-center {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Billet Width and Height */
+    .billet-left,
+    .billet-center,
+    .billet-right {
+        min-height: 168px;
+    }
+
+    /* Billet Background */
+
+    .billet-left {
+        border-radius: 20px 20px 0px 0px;
+    }
+
+    .billet-right {
+        border-radius: 0px 0px 20px 20px;
+    }
+
+}
+
+@media screen and ( min-width: 768px ) {
+
+    /* Billet Width and Height */
+    .billet-left,
+    .billet-center,
+    .billet-right {
+        min-height: 200px;
+    }
+
+    .billet-left {
+        width: calc( 22% - 20px );
+    }
+
+    .billet-right {
+        width: calc( 24% - 20px );
+    }
+
+    .billet-center {
+        width: calc( 54% - 20px );
+    }
+
+    .billet-list-part.legal-column {
+        width: calc( 50% - 4px );
+    }
+
+    /* Billet Background */
+
+    .billet-left {
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .billet-right {
+        border-radius: 0px 20px 20px 0px;
+    }
+
+}
+
+/* Body */
+body {
+    background-color: #EDEFF4;
+}
+
+/* Billet Display */
+
+.billet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+}
+
+.billet-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.billet-left a {
+    display: block;
+    width: fit-content;
+}
+
+.billet-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.billet-center {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 22px;
+    column-gap: 8px;
+    position: relative;
+}
+
+.billet-title {
+    display: flex;
+    column-gap: 16px;
+}
+@media (max-width: 768px) {
+    .billet-title {
+        flex-wrap: wrap;
+        row-gap: 0.5rem;
+    } 
+}
+
+.billet .billet-title-achivement.legal-background {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+}
+
+.billet-list-part.legal-row {
+    display: flex;
+    column-gap: 4px;
+}
+
+@media (max-width: 768px) {
+    .billet-list-part.legal-row {
+        flex-direction: column;
+    } 
+}
+
+.billet-list-part.legal-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.billet-right .legal-play {
+    display: block;
+}
+
+.billet-left .legal-review {
+    display: block;
+}
+
+.billet-spoiler:not( .legal-active ) {
+    display: none;
+}
+
+.billet-right .bonus-spoiler {
+    cursor: pointer;
+}
+
+.billet-right .bonus-spoiler.legal-active .spoiler-open,
+.billet-right .bonus-spoiler:not( .legal-active ) .spoiler-close {
+    display: none;
+}
+
+.billet .legal-disabled {
+    pointer-events: none;
+}
+
+.billet .bonus-mobile {
+    display: flex;
+    column-gap: 15px;
+}
+
+.billet .bonus-mobile-item {
+    display: block;
+}
+
+/* Billet Background */
+
+.billet {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+}
+
+.billet-right {
+    background-color: #F6F8FF;
+}
+
+.billet-title .billet-title-rating {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-rating.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.billet-title .billet-title-achivement.legal-image {
+    background-position: left 8px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 50px;
+}
+
+.billet-list-part .billet-list-part-item {
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.billet-list-part.legal-check .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check.svg');
+}
+
+.billet-list-part.legal-check-round .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check-round.svg');
+}
+
+.billet-list-part.legal-close .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-close.svg');
+}
+
+.billet-list-part.legal-plus .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-plus.svg');
+}
+
+.billet-list-part.legal-minus .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-minus.svg');
+}
+
+.billet-list-part.legal-triangle .billet-list-part-item {
+    background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-triangle.svg');
+}
+
+.billet-right .legal-play {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-play.svg' );
+    background-color: #007BFF;
+    background-position: right 20px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 66px;
+}
+
+.billet-right .legal-play:hover {
+    background-color: rgb(89, 151, 227);
+}
+
+.billet-right .bonus-spoiler {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.billet-right .bonus-spoiler:not( .legal-active ) {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-spoiler-open.svg' );
+}
+
+.billet-right .bonus-spoiler.legal-active {
+    background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-spoiler-close.svg' );
+}
+
+.billet-left .legal-review {
+    border-bottom: 1px solid transparent;
+}
+
+.billet-left .legal-review:hover {
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.billet-left .billet-order {
+    clip-path: polygon(100% 0%, 100% 100%, 50% 90%, 0% 100%, 0% 0%);
+    background-color: rgb(89, 151, 227);
+}
+
+.billet .bonus-mobile-item {
+    background-color: rgb(230, 230, 230);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 50%;
+}
+
+.billet .legal-iphone {
+    background-image: url( '../../img/billet/mobile/billet-mobile-iphone.svg' );
+}
+
+.billet .legal-android {
+    background-image: url( '../../img/billet/mobile/billet-mobile-android.svg' );
+}
+
+.billet .legal-site {
+    background-image: url( '../../img/billet/mobile/billet-mobile-site.svg' );
+}
+
+.billet .legal-iphone:not( .legal-disabled ):hover {
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-iphone.svg' );
+}
+
+.billet .legal-android:not( .legal-disabled ):hover {
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-android.svg' );
+}
+
+.billet .legal-site:not( .legal-disabled ):hover {
+    background-image: url( '../../img/billet/mobile/billet-mobile-hover-site.svg' );
+}
+
+.billet .profit-label {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.billet .profit-label.legal-green {
+    background-image: url( '../../img/billet/profit/billet-profit-green.svg' );
+}
+
+.billet .profit-label.legal-yellow {
+    background-image: url( '../../img/billet/profit/billet-profit-yellow.svg' );
+}
+
+.billet .profit-label.legal-red {
+    background-image: url( '../../img/billet/profit/billet-profit-red.svg' );
+}
+
+.billet .billet-title-achivement.legal-background {
+    background-color: rgb(8, 5, 61);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.billet .billet-license {
+    background-image: url( '../../img/billet/billet-license-no.svg' );
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Billet Width and Height */
+
+.billet-left a {
+    width: fit-content;
+}
+
+.billet-spoiler {
+    width: 100%;
+}
+
+.billet-footer {
+    width: 100%;
+}
+
+.billet-title {
+    width: 100%;
+}
+
+.billet-list-part .billet-list-part-item {
+    min-height: 24px;
+}
+
+.billet-list-part.legal-row .billet-list-part-item {
+    width: 33.333%;
+}
+
+@media (max-width: 768px) {
+    .billet-list-part.legal-row .billet-list-part-item {
+        width: auto;
+    }
+}
+
+.billet-list-part.legal-row {
+    width: 100%;
+}
+
+.billet .bonus-mobile-item {
+    width: 39px;
+    height: 39px;
+}
+
+@media (max-width: 576px) {
+    .billet-title .billet-title-achivement.legal-image {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Billet Position */
+
+.billet-item {
+    margin-bottom: 15px;
+}
+
+.billet-center,
+.billet-right {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.billet-footer {
+    margin-top: 5px;
+}
+
+.billet-title h3 {
+    margin: 0px;
+}
+
+.billet-title .billet-title-rating {
+    padding-left: 30px;
+}
+
+.billet-title .billet-title-achivement.legal-background {
+    padding: 3px 10px;
+}
+
+.billet-title .billet-title-achivement.legal-image {
+    margin-left: auto;
+    padding: 5.5px 10px 5.5px 30px;
+}
+
+@media (max-width: 768px) {
+    .billet-title .billet-title-achivement.legal-image {
+        margin-left: 0;
+    }
+}
+
+/* .billet-list-part:not( .legal-default ) .billet-list-part-item { */
+.billet-list-part .billet-list-part-item {
+    padding: 3px 0px 0px 30px;
+}
+
+.billet-right .legal-play {
+    padding: 11px 67px 11px 33px;
+}
+
+.billet-right .bonus-spoiler {
+    padding-right: 22px;
+}
+
+.billet-right .bonus-title,
+.billet-right .bonus-description {
+    /* margin: 0px 40px; */
+    padding: 0px 15px;
+}
+
+.billet-left .billet-order {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    padding: 8px 5px;
+}
+
+.billet-left {
+    position: relative;
+}
+
+.billet .profit-label {
+    padding-left: 33px;
+}
+
+.billet .billet-license {
+    padding-top: 45px;
+}
+
+/* Background */
+
+.billet-item .billet-footer
+{
+    border-radius: 0px 0px 18px 18px;
+    border: 1px solid var(--Base-base-09, #0A0A0A);
+    background: var(--Base-base-02, #F6F6F6); 
+}
+
+/* Billet Typography */
+
+.billet-left .legal-review.legal-black {
+    color: #000000;
+}
+
+.billet-left .legal-review:not( .legal-black ) {
+    color: #FFFFFF;
+}
+
+.billet-left .legal-review {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.billet-center .legal-title,
+.billet-center .billet-order {
+    font-family: "Source Sans Pro";
+    font-weight: 600;
+    font-size: 23px;
+    font-style: normal;
+    line-height: 29px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.billet-title .billet-title-rating {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+    color: #000000;
+}
+
+.billet-title .billet-title-achivement {
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+}
+
+.billet-title .billet-title-achivement.legal-background {
+    font-size: 13px;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+}
+.billet-title .billet-title-achivement.legal-image {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.billet-list-part:not( .legal-default ) .billet-list-part-item {
+    font-weight: 400;
+}
+
+.billet-list-part.legal-default .billet-list-part-item {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.billet-list-part .billet-list-part-item {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.billet-right .bonus-title {
+    text-align: center;
+}
+
+.billet-right .legal-bonus,
+.billet-right .legal-bonus:hover,
+.billet-right .legal-bonus:active,
+.billet-right .legal-bonus:visited {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 29px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #0C0B2D;
+}
+
+/* .billet-right .legal-bonus:hover {
+    text-decoration: underline;
+} */
+
+.billet-right .bonus-description {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    text-align: center;
+}
+
+.billet-right .legal-play {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.billet-right .bonus-spoiler {
+    font-family: "Source Sans Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.billet-left .billet-order {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: rgb(255, 255, 255);
+}
+
+.billet .profit-label,
+.billet .profit-value {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    line-height: 28px;
+    color: rgb(59, 59, 59);
+}
+
+.billet .profit-label {
+    font-weight: 400;
+}
+
+.billet .profit-value {
+    font-weight: 600;
+}
+
+.legal-compilation .billet-footer {
+    font-family: "Source Sans Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17.4px;
+    color: rgb(106, 107, 108);
+}
+
+.billet .billet-license .billet-license-label {
+    color: rgb(59, 59, 59);
+    font-family: "Source Sans Pro";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 22.5px;
+}

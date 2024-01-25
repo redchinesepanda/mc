@@ -66,6 +66,16 @@ class BilletMain
         self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
+    const CSS = [
+        self::HANDLE[ 'main' ] => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main-new.css',
+
+            'ver' => '1.0.0',
+        ],
+
+        // self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
+    ];
+
     public static function print()
     {
         ToolPrint::print_style( self::CSS );
