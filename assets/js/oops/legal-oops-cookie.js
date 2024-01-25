@@ -18,12 +18,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		console.log( 'acceptCookie' );
-
-		console.log( event.currentTarget.dataset.cookie ); 
-
-		console.log( event.currentTarget.dataset.wrapperSelector ); 
-
 		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
 		event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
@@ -40,10 +34,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
 	{
-		console.log( 'oopsInit' );
-
-		console.log( LegalCookie.getCookie( cookie ) );
-
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
 			wrapper.querySelectorAll( itemSlector ).forEach( prepareAccept, {
@@ -51,13 +41,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 				wrapperSelector: wrapperSelector
 			} );
-
-			console.log( wrapper.dataset.enabled );
-
-			// if ( wrapper.dataset.enabled )
-			// {
-				wrapper.classList.add( classes.active );
-			// }
+			
+			wrapper.classList.add( classes.active );
 		}
 	}
 	
@@ -69,8 +54,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function enableOops( element )
 	{
-		// element.dataset.enabled = true;
-
 		document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
 		{
 			oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
