@@ -378,7 +378,8 @@ body {
 }
 
 .billet-item .billet .billet-main,
-.billet-item .billet .billet-bonus
+.billet-item .billet .billet-bonus,
+.billet-item .billet-footer
 {
     box-sizing: border-box;
 }
@@ -393,10 +394,10 @@ body {
     width: 100%;
 }
 
-.billet-item .billet-footer
+/* .billet-item .billet-footer
 {
     width: auto;
-}
+} */
 
 .billet-title {
     width: 100%;
