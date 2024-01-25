@@ -23,6 +23,8 @@ class BilletMain
     const HANDLE = [
         'main' => 'billet-main',
 
+        'new' => 'billet-main-new',
+
         'style' => 'billet-style',
 
         'spoiler' => 'billet-spoiler',
@@ -502,6 +504,11 @@ class BilletMain
 
     public static function render_billet( $args = [] )
     { 
+        if ( TemplateMain::check_new() )
+        {
+            return self::render_main( self::TEMPLATE[ self::HANDLE[ 'new' ] ], self::get( $args ) );
+        }
+
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $args ) );
     }
 
