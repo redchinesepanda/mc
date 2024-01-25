@@ -366,7 +366,7 @@ class BilletMain
 
     private static function get_logo( $id, $index, $url, $filter )
     {
-        return BilletLogo::get_logo( $id, $index, $url, $filter );
+        return BilletLogo::get_logo( $id, $index, $url, $filter ); 
     }
 
     private static function get_bonus( $id, $url, $filter )
