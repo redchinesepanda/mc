@@ -291,10 +291,10 @@ class OopsMain
         return is_singular( [ 'post', 'page' ] );
     }
 
-	public static function check_not_wiki_thrive()
-    {
-        return !WikiMain::check_thrive();
-    }
+	// public static function check_not_wiki_thrive()
+    // {
+    //     return !WikiMain::check_thrive();
+    // }
 
 	public static function check_template()
     {
