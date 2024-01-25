@@ -66,7 +66,7 @@ class BilletMain
         self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
     ];
 
-    const CSS = [
+    const CSS_NEW = [
         self::HANDLE[ 'main' ] => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-main-new.css',
 
@@ -85,9 +85,21 @@ class BilletMain
 
 	public static function register_style( $styles = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $styles ) ) {
-                $styles = self::CSS;
+        if ( self::check() )
+        {
+            if ( TemplateMain::check_new() )
+            {
+                if ( empty( $styles ) )
+                {
+                    $styles = self::CSS_NEW;
+                }
+            }
+            else
+            {
+                if ( empty( $styles ) )
+                {
+                    $styles = self::CSS;
+                }
             }
 
             ToolEnqueue::register_style( $styles );
