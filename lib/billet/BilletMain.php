@@ -493,6 +493,8 @@ class BilletMain
     const TEMPLATE = [
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main.php',
 
+        self::HANDLE[ 'new' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-main-new.php',
+
         self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-style.php',
 
         self::HANDLE[ 'bonus' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
