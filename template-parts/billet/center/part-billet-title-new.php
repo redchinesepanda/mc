@@ -8,8 +8,8 @@ LegalDebug::debug( [
 
 ?>
 <div class="billet-title">
-    <a class="legal-logo <?php echo $args['logo']['class']; ?> check-oops" href="<?php echo $args['logo']['href']; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
-        <img src="<?php echo $args['logo']['src'] ?>" alt="<?php echo $args['logo']['alt'] ?>" />
+    <a class="legal-logo <?php echo $args['logo']['logo']['class']; ?> check-oops" href="<?php echo $args['logo']['logo']['href']; ?>" <?php echo BilletMain::render_nofollow( $args['logo'][ 'logo' ][ 'nofollow' ] ); ?>>
+        <img src="<?php echo $args['logo']['logo']['src'] ?>" alt="<?php echo $args['logo']['alt'] ?>" />
     </a>
     <?php if ( $args[ 'title' ]['order'] == BilletTitle::ORDER_TYPE ) : ?>
         <div class="billet-order">#<?php echo $args[ 'title' ]['index']; ?></div>
