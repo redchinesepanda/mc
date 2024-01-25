@@ -109,6 +109,9 @@ class BilletTitle extends LegalDebug
 
         return self::get_title( $billet['id'], $billet['index'], $billet['url'], $billet['filter'] );
     }
+    public static function prepare_title( $title )
+        return self::get_title( $billet['id'], $billet['index'], $billet['url'], $billet['filter'] );
+    }
 
     const TEMPLATE = [
         'title' => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title.php',
@@ -120,12 +123,21 @@ class BilletTitle extends LegalDebug
     {
         // load_template( self::TEMPLATE[ 'title' ], false, self::get( $billet ) );
 
-        if ( TemplateMain::check_new() )
-        {
-            return self::render_main( self::TEMPLATE[ 'new' ], self::get( $billet ) );
-        }
+        // if ( TemplateMain::check_new() )
+        // {
+        //     return self::render_main( self::TEMPLATE[ 'new' ], self::get( $billet ) );
+        // }
 
         return self::render_main( self::TEMPLATE[ 'title' ], self::get( $billet ) );
+    }
+
+    public static function render( $logo, $title )
+    {
+        return self::render_main( self::TEMPLATE[ 'new' ], [
+            'logo' => $logo,
+
+            'title' => $title,
+        ] );
     }
 
     public static function render_main( $template, $args )

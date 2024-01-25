@@ -8,12 +8,12 @@
 
 ?>
 <div class="billet-title">
-    <?php if ( $args['order'] == BilletTitle::ORDER_TYPE ) : ?>
-        <div class="billet-order">#<?php echo $args['index']; ?></div>
+    <?php if ( $args[ 'title' ]['order'] == BilletTitle::ORDER_TYPE ) : ?>
+        <div class="billet-order">#<?php echo $args[ 'title' ]['index']; ?></div>
     <?php endif; ?>
-    <a class="legal-title <?php echo $args['class']; ?> check-oops" href="<?php echo $args['href']; ?>" <?php echo BilletMain::render_nofollow( $args[ 'nofollow' ] ); ?>><?php echo $args['label']; ?></a>
-    <?php if ( !empty( $args['rating'] ) ): ?>
-        <div class="billet-title-rating"><?php echo $args['rating']; ?></div>
+    <a class="legal-title <?php echo $args[ 'title' ]['class']; ?> check-oops" href="<?php echo $args[ 'title' ]['href']; ?>" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title' ]['label']; ?></a>
+    <?php if ( !empty( $args[ 'title' ]['rating'] ) ): ?>
+        <div class="billet-title-rating"><?php echo $args[ 'title' ]['rating']; ?></div>
     <?php endif; ?>
-    <?php echo BilletAchievement::render_achievement( $args ); ?>
+    <?php //echo BilletAchievement::render_achievement( $args ); ?>
 </div>
