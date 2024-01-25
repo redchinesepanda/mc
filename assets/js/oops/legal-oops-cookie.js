@@ -22,7 +22,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				button.addEventListener( 'click', acceptCookie, false );
 			} );
 
-			wrapper.classList.add( oopsCookieClass );
+			// wrapper.classList.add( oopsCookieClass );
 		}
 	} );
 
