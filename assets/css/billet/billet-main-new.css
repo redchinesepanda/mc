@@ -441,8 +441,9 @@ body {
 
 /* Position */
 
-.billet-item {
-    margin-bottom: 15px;
+.billet-item
+{
+    margin-bottom: 24px;
 }
 
 .billet-center,
