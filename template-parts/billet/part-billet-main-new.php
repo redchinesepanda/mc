@@ -1,7 +1,7 @@
 <div class="billet-item">
     <div id="<?php echo $args['selector']; ?>" class="billet">
         <div class="billet-center billet-main">
-            <?php BilletTitle::render( $args ); ?>
+            <?php echo BilletTitle::render( $args ); ?>
 
             <?php echo BilletDescription::render( $args ); ?>
 
