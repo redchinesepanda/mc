@@ -155,7 +155,10 @@ body {
 }
 
 .billet-right .legal-play {
-    display: block;
+    /* display: block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .billet-left .legal-review {
@@ -401,6 +404,14 @@ body {
 
 .billet-left a {
     width: fit-content;
+}
+
+.billet-right .bonus-button {
+    width: 100%;
+}
+
+.billet-right .legal-play {
+    min-height: calc( 50px - (10px * 2) );
 }
 
 .billet-spoiler {
@@ -656,9 +667,10 @@ body {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 22px;
     /* text-transform: uppercase; */
     text-decoration: none;
+    text-align: center;
     color: var(--Base-base-01);
 }
 
