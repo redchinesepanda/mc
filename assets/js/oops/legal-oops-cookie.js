@@ -14,20 +14,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		// console.log( 'acceptCookie' );
+		console.log( 'acceptCookie' );
 
-		// console.log( event.currentTarget.dataset.cookie ); 
+		console.log( event.currentTarget.dataset.cookie ); 
+
+		console.log( event.currentTarget.dataset.selector ); 
 
 		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( event.currentTarget.dataset.wrapper ).classList.remove( oopsCookieClass );
+		event.currentTarget.closest( event.currentTarget.dataset.selector ).classList.remove( oopsCookieClass );
 	}
 
 	function prepareAccept( button )
 	{
 		button.dataset.cookie = this.cookie;
 
-		button.dataset.wrapper = this.wrapper;
+		button.dataset.selector = this.selector;
 
 		button.addEventListener( 'click', acceptCookie, false );
 	}
@@ -43,7 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			wrapper.querySelectorAll( selector ).forEach( prepareAccept, {
 				cookie: cookie,
 
-				wrapper: wrapper
+				selector: selector
 			} );
 		}
 		else
