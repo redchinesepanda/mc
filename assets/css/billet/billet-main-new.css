@@ -54,12 +54,12 @@
 
     .billet-item .billet-bonus
     {
-        width: calc( 100% / 3 );
+        width: calc( 100% / 3 - 48px );
     }
 
     .billet-item .billet-main
     {
-        width: calc( 100% / 3 * 2 );
+        width: calc( 100% / 3 * 2 - 48px );
     }
 
     .billet-list-part.legal-column {
