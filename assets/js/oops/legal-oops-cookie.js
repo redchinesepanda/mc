@@ -14,7 +14,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		LegalCookie.setCookie( cookies.oopsCookie, 'accepted', LegalCookie.options );
+		LegalCookie.setCookie( event.currentTarget.closest( selectors.cookieWrapper ).dataset.cookie, 'accepted', LegalCookie.options );
 
 		event.currentTarget.closest( selectors.cookieWrapper ).classList.remove( oopsCookieClass );
 	}
@@ -29,6 +29,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'oopsInit' );
 
 		console.log( LegalCookie.getCookie( cookie ) );
+
+		wrapper.dataset.cookie = cookie;
 
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
