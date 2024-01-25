@@ -1,10 +1,10 @@
 <div class="billet-item">
     <div id="<?php echo $args['selector']; ?>" class="billet">
         <div class="billet-left">
-            <?php BilletLogo::render( $args ); ?>
+            <?php echo BilletLogo::render( $args[ 'logo' ] ); ?>
         </div>
         <div class="billet-center">
-            <?php BilletTitle::render( $args ); ?>
+            <?php echo BilletTitle::render( $args[ 'title' ] ); ?>
 
             <?php echo BilletDescription::render( $args ); ?>
 

@@ -147,7 +147,20 @@ class BilletLogo
 
     public static function render( $billet )
     { 
-        load_template( self::TEMPLATE[ 'logo' ], false, self::get( $billet ) );
+        // load_template( self::TEMPLATE[ 'logo' ], false, self::get( $billet ) );
+
+        return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
+    }
+
+    public static function render_main( $template, $args )
+    {
+		ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
