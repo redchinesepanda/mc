@@ -37,13 +37,21 @@ class ReviewStats
 
     public static function register()
     {
-        $handler = new self();
+		if ( self::check_contains_stats() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+	
+			add_filter( 'the_content', [ $handler, 'get_content' ] );
+		}
+    }
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
-		add_filter( 'the_content', [ $handler, 'get_content' ] );
+	public static function check_contains_stats()
+    {
+        return LegalComponents::check_contains( self::CSS_CLASS[ 'base' ] );
     }
 
 	public static function inline_style()
