@@ -105,7 +105,7 @@ class ReviewTitle
 
 	public static function check_contains_title_image()
     {
-		return LegalComponents::check_contains( elf::CLASSES[ 'h3' ] );
+		return LegalComponents::check_contains( self::CLASSES[ 'h3' ] );
     }
 
 	public static function check_contains_placeholder()
