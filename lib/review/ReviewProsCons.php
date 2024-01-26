@@ -44,11 +44,19 @@ class ReviewProsCons
 
     public static function register()
     {
-        $handler = new self();
+		if ( self::check_contains_pros_cons() )
+		{
+			$handler = new self();
+	
+			add_filter( 'the_content', [ $handler, 'get_content' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+		}
+    }
 
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	public static function check_contains_pros_cons()
+    {
+        return LegalComponents::check_contains( self::CSS_CLASS[ 'container' ] );
     }
 
 	public static function permission_debug( $permissions )
