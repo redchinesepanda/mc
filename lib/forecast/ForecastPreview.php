@@ -115,6 +115,10 @@ class ForecastPreview
 
 	public static function register()
     {
+		LegalDebug::debug( [
+			self::check_contains_forecast()
+		] );
+
 		// if ( self::check_contains_forecast() )
 		// {
 			$handler = new self();
