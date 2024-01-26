@@ -67,13 +67,21 @@ class ReviewCut
 
 	public static function register()
     {
-        $handler = new self();
+		if ( self::check_contains_сut() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+	
+			add_filter( 'the_content', [ $handler, 'modify_content' ] );
+		}
+    }
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-		add_filter( 'the_content', [ $handler, 'modify_content' ] );
+	public static function check_contains_сut()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'cut-item' ] );
     }
 
 	public static function get_cut_items( $dom )
