@@ -53,7 +53,7 @@ class ReviewFAQ
 
     public static function register()
     {
-        if ( self::check_contains_counter() )
+        if ( self::check_contains_faq() )
         {
             $handler = new self();
     
