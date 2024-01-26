@@ -87,21 +87,36 @@ class ReviewTitle
 		] );
 
         $handler = new self();
+		
+		if ( self::check_contains_title_image() )
+		{
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		}
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
-		add_filter( 'the_content', [ $handler, 'modify_content' ] );
+		if ( self::check_contains_placeholder() )
+		{
+			add_filter( 'the_content', [ $handler, 'modify_content' ] );
+		}
     }
 
-	public static function check_contains_title()
+	public static function check_contains_title_image()
+    {
+		return LegalComponents::check_contains( elf::CLASSES[ 'h3' ] );
+    }
+
+	public static function check_contains_placeholder()
     {
 		$result = false;
 
 		foreach (
 			array_merge(
-				self::CLASSES,
+				[
+					self::CLASSES[ 'date-year' ],
+
+					self::CLASSES[ 'date-month-year' ],
+				],
 
 				array_keys( self::PLACEHOLDER )
 			) as $item
@@ -109,12 +124,6 @@ class ReviewTitle
 		{
 			$result = $result || LegalComponents::check_contains( $item );
 		}
-
-        // return LegalComponents::check_contains( self::CLASSES[ 'date-year' ] )
-
-		// 	|| LegalComponents::check_contains( self::CLASSES[ 'date-month-year' ] )
-			
-		// 	|| $result;
 
 		return $result;
     }
