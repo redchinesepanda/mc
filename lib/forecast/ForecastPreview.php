@@ -117,20 +117,20 @@ class ForecastPreview
     {
 		$handler = new self();
 
+		// [legal-forecast-preview post_type='page' taxonomy='post_tag' terms='prognozy-na-mma' limit=6]
+
 		add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
 
 		LegalDebug::debug( [
 			self::check_contains_forecast()
 		] );
 
-		// if ( self::check_contains_forecast() )
-		// {
-			// [legal-forecast-preview post_type='page' taxonomy='post_tag' terms='prognozy-na-mma' limit=6]
-	
+		if ( self::check_contains_forecast() )
+		{
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-		// }
+		}
     }
 
 	public static function check_contains_forecast()
