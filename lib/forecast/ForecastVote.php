@@ -27,11 +27,11 @@ class ForecastVote
 
     public static function check_contains_forecast_vote()
     {
-        return LegalComponents::check_contains( self::CLASSES[ 'polls' ] );
+        return LegalComponents::check_shortcode( self::CLASSES[ 'poll' ] );
     }
 
-    const CLASSES = [
-        'polls' => 'wp-polls',
+    const SHORTCODES = [
+        'poll' => 'poll',
     ];
 }
 
