@@ -27,16 +27,24 @@ class ReviewGroup
 
     public static function register()
     {
-        $handler = new self();
-
-        // [legal-group]
-
-        add_shortcode( 'legal-group', [ $handler, 'render' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        if ( self::check_has_group() )
+        {
+            $handler = new self();
+    
+            // [legal-group]
+    
+            add_shortcode( 'legal-group', [ $handler, 'render' ] );
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        }
     }
 
     // const TAXONOMY = 'page_group';
+
+    public static function check_has_group()
+    {
+        return has_term( '', self::TAXONOMY[ 'group' ] );
+    }
     
     const TAXONOMY = [
         'group' => 'page_group',
