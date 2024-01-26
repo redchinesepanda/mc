@@ -1,4 +1,4 @@
-<nav class="group">
+<nav class="group" style="padding-bottom: 30px;">
     <?php if( !empty( $args[ 'other' ] ) ) : ?>
         <div class="review-group">
             <span class="group-item"><?php echo $args[ 'current' ][ 'label' ]; ?></span>

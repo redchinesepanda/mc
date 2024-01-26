@@ -91,6 +91,13 @@ class ReviewTitle
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
+	public static function check_contains_table()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'date-year' ] )
+
+			|| LegalComponents::check_contains( self::CLASSES[ 'date-month-year' ] );
+    }
+
 	const CLASSES = [
 		'h3' => 'legal-header-3',
 
