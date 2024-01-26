@@ -53,11 +53,19 @@ class ReviewFAQ
 
     public static function register()
     {
-        $handler = new self();
+        if ( self::check_contains_counter() )
+        {
+            $handler = new self();
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+        }
+    }
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+    public static function check_contains_faq()
+    {
+        return LegalComponents::check_contains( self::CSS_CLASS[ 'legal-faq' ] );
     }
 
     public static function schema()
