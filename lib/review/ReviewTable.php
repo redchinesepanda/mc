@@ -34,7 +34,9 @@ class ReviewTable
 
     public static function check_contains_table()
     {
-        return LegalComponents::check_contains( self::SELCTORS[ 'table' ] );
+        return LegalComponents::check_contains( self::SELCTORS[ 'table' ] )
+
+			&& !LegalComponents::check_contains( ReviewCounter::CLASSES[ 'base' ] );
     }
 
 	public static function register_style()
