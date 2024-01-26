@@ -283,7 +283,9 @@ class OopsMain
 
     public static function check()
     {
-        return ReviewMain::check();
+        // return ReviewMain::check();
+
+        return true;
     }
 
     public static function check_post_type()

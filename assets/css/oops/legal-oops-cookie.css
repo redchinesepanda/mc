@@ -30,6 +30,7 @@
 .legal-oops-cookie-wrapper {
 	display: flex;
 	justify-content: center;
+	z-index: 14;
 }
 
 .legal-oops-cookie-wrapper:not( .legal-active ) {

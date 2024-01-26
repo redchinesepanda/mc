@@ -6,7 +6,7 @@ class OopsCookie
 		'legal-oops-cookie' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-cookie.css',
 
-            'ver' => '1.0.4',
+            'ver' => '1.0.6',
         ],
     ];
 
@@ -71,7 +71,9 @@ class OopsCookie
 
 		// return OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
 
-        return OopsMain::check_template();
+        // return OopsMain::check_template();
+
+        return true;
     }
 
 	public static function get()

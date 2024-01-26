@@ -6,7 +6,7 @@ class OopsAge
 		'legal-oops-age' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-age.css',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.5',
         ],
     ];
 
@@ -73,7 +73,9 @@ class OopsAge
 
         // return self::check_locale() && OopsMain::check_post_type() && OopsMain::check_not_wiki_thrive();
         
-        return self::check_locale() && OopsMain::check_template();
+        // return self::check_locale() && OopsMain::check_template();
+        
+        return self::check_locale();
     }
 
 	public static function get()
