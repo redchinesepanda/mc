@@ -115,6 +115,8 @@ class ForecastPreview
 
 	public static function register()
     {
+		add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
+
 		LegalDebug::debug( [
 			self::check_contains_forecast()
 		] );
@@ -124,8 +126,6 @@ class ForecastPreview
 			$handler = new self();
 	
 			// [legal-forecast-preview post_type='page' taxonomy='post_tag' terms='prognozy-na-mma' limit=6]
-	
-			add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 	
