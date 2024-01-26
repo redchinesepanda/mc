@@ -103,7 +103,7 @@ class ReviewTitle
 			array_merge(
 				self::CLASSES,
 
-				array_keys( self::PLACEHOLDERS )
+				array_keys( self::PLACEHOLDER )
 			) as $placeholder
 		)
 		{
