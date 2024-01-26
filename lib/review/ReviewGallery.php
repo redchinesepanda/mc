@@ -100,13 +100,16 @@ class ReviewGallery
 
 	public static function register_functions()
     {
-        $handler = new self();
-        
-        add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
-
-        add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
-
-        add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+        if ( self::check_shortcode_gallery() )
+        {
+            $handler = new self();
+            
+            add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
+    
+            add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
+    
+            add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
+        }
     }
 
     public static function register()
