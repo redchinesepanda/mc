@@ -82,6 +82,10 @@ class ReviewTitle
 
 	public static function register()
     {
+		LegalDebug::debug( [
+			self::check_contains_title(),
+		] );
+
         $handler = new self();
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
@@ -91,11 +95,28 @@ class ReviewTitle
 		add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
 
-	public static function check_contains_table()
+	public static function check_contains_title()
     {
-        return LegalComponents::check_contains( self::CLASSES[ 'date-year' ] )
+		$result = false;
 
-			|| LegalComponents::check_contains( self::CLASSES[ 'date-month-year' ] );
+		foreach (
+			array_merge(
+				self::CLASSES,
+
+				array_keys( self::PLACEHOLDERS )
+			) as $placeholder
+		)
+		{
+			$result = $result || LegalComponents::check_contains( self::CLASSES[ 'date-year' ] );
+		}
+
+        // return LegalComponents::check_contains( self::CLASSES[ 'date-year' ] )
+
+		// 	|| LegalComponents::check_contains( self::CLASSES[ 'date-month-year' ] )
+			
+		// 	|| $result;
+
+		return $result;
     }
 
 	const CLASSES = [
