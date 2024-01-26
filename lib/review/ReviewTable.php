@@ -84,13 +84,16 @@ class ReviewTable
 
 	public static function register()
     {
-        $handler = new self();
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-
-		add_filter( 'the_content', [ $handler, 'get_content' ] );
+		if ( self::check_contains_table() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+	
+			add_filter( 'the_content', [ $handler, 'get_content' ] );
+		}
 	}
 
 	// public static function get_nodes_tbody_all( $dom )
