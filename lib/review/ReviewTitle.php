@@ -104,10 +104,10 @@ class ReviewTitle
 				self::CLASSES,
 
 				array_keys( self::PLACEHOLDER )
-			) as $placeholder
+			) as $item
 		)
 		{
-			$result = $result || LegalComponents::check_contains( self::CLASSES[ 'date-year' ] );
+			$result = $result || LegalComponents::check_contains( $item );
 		}
 
         // return LegalComponents::check_contains( self::CLASSES[ 'date-year' ] )
