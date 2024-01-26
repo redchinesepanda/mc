@@ -80,16 +80,19 @@ class ReviewList
 
     public static function register()
     {
-        $handler = new self();
-
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-        if ( !TemplateMain::check_new() )
+        if ( self::check_contains_list() )
         {
-            add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+            $handler = new self();
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+    
+            if ( !TemplateMain::check_new() )
+            {
+                add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+            }
+    
+            add_filter( 'the_content', [ $handler, 'get_content' ] );
         }
-
-        add_filter( 'the_content', [ $handler, 'get_content' ] );
     }
 
     public static function inline_style()

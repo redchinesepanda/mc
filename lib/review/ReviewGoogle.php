@@ -1,5 +1,7 @@
 <?php
 
+// not used
+
 class ReviewGoogle
 {
 	public static function register_functions()
