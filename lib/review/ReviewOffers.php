@@ -30,13 +30,21 @@ class ReviewOffers
 
 	public static function register()
     {
-        $handler = new self();
+		if ( self::check_has_offers() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			// [legal-offers]
+	
+			add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
+		}
+    }
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		// [legal-offers]
-
-		add_shortcode( self::SHORTCODE[ 'offers' ], [ $handler, 'prepare' ] );
+	public static function check_has_offers()
+    {
+        return has_term( '', self::TAXONOMY[ 'offer' ] );
     }
 
 	const FIELD = [
