@@ -100,29 +100,29 @@ class ReviewGallery
 
 	public static function register_functions()
     {
-        if ( self::check_shortcode_gallery() )
-        {
-            $handler = new self();
-            
-            add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
-    
-            add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
-    
-            add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
-        }
+        $handler = new self();
+        
+        add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
+
+        add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
+
+        add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
 
     public static function register()
     {
-        $handler = new self();
+        if ( self::check_shortcode_gallery() )
+        {
+            $handler = new self();
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_filter( 'wp_lazy_loading_enabled', '__return_true' );
+            add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 
-        add_filter( 'post_gallery', [ $handler, 'render_gallery' ], 10, 3 );
+            add_filter( 'post_gallery', [ $handler, 'render_gallery' ], 10, 3 );
+        }
     }
 
     const FIELD = [
