@@ -27,7 +27,7 @@ class ForecastVote
 
     public static function check_contains_forecast_vote()
     {
-        return LegalComponents::check_shortcode( self::CLASSES[ 'poll' ] );
+        return LegalComponents::check_shortcode( self::SHORTCODES[ 'poll' ] );
     }
 
     const SHORTCODES = [
