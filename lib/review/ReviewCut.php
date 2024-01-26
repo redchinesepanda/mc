@@ -67,7 +67,7 @@ class ReviewCut
 
 	public static function register()
     {
-		if ( self::check_contains_сut() )
+		if ( TemplateMain::check_new() || self::check_contains_сut() )
 		{
 			$handler = new self();
 	
