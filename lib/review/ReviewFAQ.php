@@ -65,7 +65,7 @@ class ReviewFAQ
 
     public static function check_contains_faq()
     {
-        return LegalComponents::check_contains( self::CSS_CLASS[ 'legal-faq' ] );
+        return LegalComponents::check_contains( self::CSS_CLASS[ 'base' ] );
     }
 
     public static function schema()
