@@ -83,7 +83,9 @@ class ReviewTitle
 	public static function register()
     {
 		LegalDebug::debug( [
-			self::check_contains_title(),
+			self::check_contains_title_image(),
+
+			self::check_contains_placeholder(),
 		] );
 
         $handler = new self();
