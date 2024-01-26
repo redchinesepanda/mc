@@ -135,7 +135,9 @@ class ForecastPreview
 
 	public static function check_contains_forecast()
     {
-        return LegalComponents::check_shortcode( self::SHORTCODE[ 'forecast-preview' ] );
+        // return LegalComponents::check_shortcode( self::SHORTCODE[ 'forecast-preview' ] );
+        
+		return LegalComponents::check_contains( self::SHORTCODE[ 'forecast-preview' ] );
     }
 
 	const ACF_FIELD = [
