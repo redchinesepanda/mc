@@ -17,10 +17,22 @@ class ForecastVote
 
 	public static function register()
     {
-        $handler = new self();
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        if ( self::check_contains_forecast_vote() )
+        {
+            $handler = new self();
+    
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        }
     }
+
+    public static function check_contains_forecast_vote()
+    {
+        return LegalComponents::check_contains( self::CLASSES[ 'polls' ] );
+    }
+
+    const CLASSES = [
+        'polls' => 'wp-polls',
+    ];
 }
 
 ?>
