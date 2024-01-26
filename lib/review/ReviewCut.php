@@ -67,7 +67,7 @@ class ReviewCut
 
 	public static function register()
     {
-		if ( TemplateMain::check_new() || self::check_contains_сut() )
+		if ( self::check_сut() )
 		{
 			$handler = new self();
 	
@@ -78,6 +78,11 @@ class ReviewCut
 			add_filter( 'the_content', [ $handler, 'modify_content' ] );
 		}
     }
+
+	public static function check_сut()
+	{
+		return TemplateMain::check_new() || self::check_contains_сut();
+	}
 
 	public static function check_contains_сut()
     {
