@@ -20,7 +20,9 @@ class BilletMega
 
 	public static function check_contains_billet_mega()
     {
-        return LegalComponents::check_shortcode( self::SHORTCODE[ 'mega' ] );
+        // return LegalComponents::check_shortcode( self::SHORTCODE[ 'mega' ] );
+        
+		return LegalComponents::check_contains( self::SHORTCODE[ 'mega' ] );
     }
 
     public static function register_style()
@@ -51,15 +53,18 @@ class BilletMega
 
 	public static function register()
     {
-        $handler = new self();
-
-        // [billet-mega id="269185" title-label="Custom Title Label" title-suffix="Custom Title Sufix" title-tag="h4" review-label="Custom Review Label" review-url="bonus" button-label="Custom Button Label" no-controls="1"][/billet-mega]
-
-        add_shortcode( self::SHORTCODE[ 'mega' ], [ $handler, 'prepare' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
+		if ( self::check_contains_billet_mega() )
+		{
+			$handler = new self();
+	
+			// [billet-mega id="269185" title-label="Custom Title Label" title-suffix="Custom Title Sufix" title-tag="h4" review-label="Custom Review Label" review-url="bonus" button-label="Custom Button Label" no-controls="1"][/billet-mega]
+	
+			add_shortcode( self::SHORTCODE[ 'mega' ], [ $handler, 'prepare' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
+		}
     }
 
 	public static function remove_empty_paragraph_shortcode( $content ) {
