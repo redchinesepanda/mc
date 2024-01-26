@@ -115,15 +115,23 @@ class ForecastPreview
 
 	public static function register()
     {
-        $handler = new self();
+		if ( check_contains_forecast() )
+		{
+			$handler = new self();
+	
+			// [legal-forecast-preview post_type='page' taxonomy='post_tag' terms='prognozy-na-mma' limit=6]
+	
+			add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		}
+    }
 
-        // [legal-forecast-preview post_type='page' taxonomy='post_tag' terms='prognozy-na-mma' limit=6]
-
-        add_shortcode( self::SHORTCODE[ 'forecast-preview' ], [ $handler, 'prepare' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+	public static function check_contains_forecast()
+    {
+        return LegalComponents::check_shortcode( self::SHORTCODE[ 'forecast-preview' ] );
     }
 
 	const ACF_FIELD = [
