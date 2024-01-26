@@ -27,8 +27,8 @@ class ReviewGroup
 
     public static function register()
     {
-        if ( self::check_has_group() )
-        {
+        // if ( self::check_has_group() )
+        // {
             $handler = new self();
     
             // [legal-group]
@@ -36,7 +36,7 @@ class ReviewGroup
             add_shortcode( 'legal-group', [ $handler, 'render' ] );
     
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-        }
+        // }
     }
 
     // const TAXONOMY = 'page_group';
