@@ -673,7 +673,7 @@ body {
     font-style: normal;
     font-size: 14px;
     line-height: 18px;
-    color: #000000;
+    color: var(--Base-base-09);
 }
 
 .billet-right .bonus-title {
@@ -681,6 +681,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     line-height: 26px;
+    color: var(--Base-base-09);
 }
 
 .billet-right .legal-bonus,
