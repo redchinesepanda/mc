@@ -135,6 +135,8 @@ body {
 .billet .title-data {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    column-gap: 14px;
 }
 
 .billet .billet-title-achivement.legal-background {
@@ -445,6 +447,10 @@ body {
 } */
 
 .billet-title {
+    width: 100%;
+}
+
+.billet .title-data {
     width: 100%;
 }
 
