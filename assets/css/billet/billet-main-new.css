@@ -646,6 +646,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    color: var(--Base-base-09);
 }
 
 .billet-title .billet-title-achivement.legal-background {
@@ -681,7 +682,6 @@ body {
     font-size: 22px;
     font-weight: 700;
     line-height: 26px;
-    color: var(--Base-base-09);
 }
 
 .billet-right .legal-bonus,
