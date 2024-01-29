@@ -106,8 +106,6 @@ class BilletMain
 
     const JS = [
         self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js',
-
-        self::HANDLE[ 'spoiler-description-new' ] => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler-description-new.js'
     ];
 
     public static function register_script( $scripts = [] )
