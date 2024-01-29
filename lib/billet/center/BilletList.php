@@ -80,9 +80,9 @@ class BilletList
         {
             return [];
         }
-        
+
         return array_column( $items, self::ITEM[ 'title' ] );
-    }
+    } 
     
     public static function parse_lists( $lists )
     {
