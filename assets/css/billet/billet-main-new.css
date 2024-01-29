@@ -630,9 +630,12 @@ body {
 .billet-title .billet-title-rating {
     /* font-family: 'Source Sans Pro'; */
     font-style: normal;
-    font-weight: 700;
+    /* font-weight: 700;
     font-size: 18px;
-    line-height: 29px;
+    line-height: 29px; */
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
     color: var(--Base-base-09);
 }
 
