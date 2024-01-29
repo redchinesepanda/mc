@@ -475,14 +475,8 @@ body {
 
 /* Position */
 
-.billet-item:last-child
-{
+.billet-item {
     margin-bottom: 24px;
-}
-
-.billet-item:not( :first-child )
-{
-    margin-top: 24px;
 }
 
 .billet-center,
@@ -497,11 +491,15 @@ body {
 }
 
 .billet-item .billet-footer:not( :empty ) {
-    padding: 32px 24px 8px 24px;
+    padding-top: 32px;
+    padding-right: 24px;
+    padding-bottom: 8px;
+    padding-left: 24px;
 }
 
 .billet-item .billet-footer:empty {
-    padding: 0px;
+    padding-top: 23px;
+    padding-bottom: 0px;
 }
 
 {
