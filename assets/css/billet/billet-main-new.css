@@ -419,6 +419,7 @@ body {
 .billet-item .legal-logo img {  /* временное правило для понимания размеров лого */
     max-width: 100%;
     height: auto;
+    border-radius: 12.8px;
 }
 
 .billet-right .bonus-button {
