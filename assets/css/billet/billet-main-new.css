@@ -460,6 +460,7 @@ body {
 
 .billet .legal-title::after {
     width: 100%;
+    content: '';
 }
 
 .billet-list-part .billet-list-part-item {
