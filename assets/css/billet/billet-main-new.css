@@ -139,6 +139,11 @@ body {
     column-gap: 14px;
 }
 
+.billet .title-data-group {
+    display: flex;
+    column-gap: 14px;
+}
+
 .billet .billet-title-achivement.legal-background {
     position: absolute;
     top: 0px;
