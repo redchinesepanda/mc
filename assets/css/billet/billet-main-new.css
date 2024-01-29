@@ -213,7 +213,7 @@ body {
     background-color: var(--Primitives-blue-40, #D9F2FF);
 }
 
-.billet-left .legal-logo {
+.billet-item .legal-logo {
     border: 1px solid var(--Base-base-09);
     border-radius: 12.8px;
 }
@@ -411,12 +411,12 @@ body {
     width: fit-content;
 } */
 
-.billet-left .legal-logo {
+.billet-item .legal-logo {
     width: 70px;
     height: 70px;
 }
 
-.billet-left .legal-logo img {  /* временное правило для понимания размеров лого */
+.billet-item .legal-logo img {  /* временное правило для понимания размеров лого */
     max-width: 100%;
     height: auto;
 }
