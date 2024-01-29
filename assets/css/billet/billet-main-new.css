@@ -380,7 +380,7 @@ body {
 
 .billet-item .billet-footer
 {
-    border-radius: 0px 0px 18px 18px;
+    border-radius: 0px 0px 24px 24px;
     border-left: var( --base-border-billet );
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
