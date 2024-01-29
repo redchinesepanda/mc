@@ -45,11 +45,18 @@ class BilletList
         //     'features' => $features,
         // ] );
 
+        if ( empty( $lists ) )
+        {
+            return [];
+        }
+
         return array_filter( $lists, function( $list ) use ( $features )
         {
             if ( empty( $list[ self::LIST[ 'feature' ] ] ) )
             {
-                return false;
+                // return false;
+                
+                return [];
             }
 
             return !empty(
@@ -60,7 +67,7 @@ class BilletList
                 )
             );
 		} );
-    }
+    } 
 
     public static function check_feature_empty( $list )
     {
@@ -69,6 +76,11 @@ class BilletList
 
     public static function filter_lists_feature_empty( $lists )
     {
+        if ( empty( $lists ) )
+        {
+            return [];
+        }
+
         $handler = new self();
 
         return array_filter( $lists, [ $handler, 'check_feature_empty' ] );
@@ -82,7 +94,7 @@ class BilletList
         }
 
         return array_column( $items, self::ITEM[ 'title' ] );
-    } 
+    }
     
     public static function parse_lists( $lists )
     {
