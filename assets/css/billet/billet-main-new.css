@@ -458,9 +458,8 @@ body {
     width: 100%;
 } */
 
-.billet .legal-title::after {
+.billet .title-data-group {
     width: 100%;
-    content: '';
 }
 
 .billet-list-part .billet-list-part-item {
