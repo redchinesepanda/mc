@@ -31,7 +31,7 @@ class ForecastVote
 
     public static function dequeue_style()
     {
-        if ( TemplateMain::check_new() )
+        if ( TemplateMain::check_new() ) 
         {
             ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
         }
