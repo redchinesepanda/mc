@@ -475,9 +475,14 @@ body {
 
 /* Position */
 
-.billet-item
+.billet-item:last-child
 {
     margin-bottom: 24px;
+}
+
+.billet-item:not( :first-child )
+{
+    margin-top: 24px;
 }
 
 .billet-center,
@@ -487,6 +492,18 @@ body {
 }
 
 .billet-item .billet-footer
+{
+    margin-top: -24px;
+}
+
+.billet-item .billet-footer:not( :empty ) {
+    padding: 32px 24px 8px 24px;
+}
+
+.billet-item .billet-footer:empty {
+    padding: 0px;
+}
+
 {
     margin-top: -24px;
     padding: 32px 24px 8px 24px;
