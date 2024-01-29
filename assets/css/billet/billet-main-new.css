@@ -454,7 +454,11 @@ body {
     width: 100%;
 }
 
-.billet .legal-title {
+/* .billet .legal-title {
+    width: 100%;
+} */
+
+.billet .legal-title::after {
     width: 100%;
 }
 
