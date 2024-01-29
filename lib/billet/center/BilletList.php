@@ -76,6 +76,11 @@ class BilletList
 
     public static function parse_items( $items )
     {
+        if ( empty( $items ) )
+        {
+            return [];
+        }
+        
         return array_column( $items, self::ITEM[ 'title' ] );
     }
     
