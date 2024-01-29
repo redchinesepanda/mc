@@ -132,6 +132,11 @@ body {
     } 
 }
 
+.billet .title-data {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .billet .billet-title-achivement.legal-background {
     position: absolute;
     top: 0px;
