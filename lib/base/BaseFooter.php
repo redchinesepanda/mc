@@ -238,9 +238,24 @@ class BaseFooter
 
     public static function render()
     {
+        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() )
+    }
+
+    public static function render_footer()
+    {
+		if ( !TemplateMain::check() )
+		{
+			return '';
+		}
+		
+        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() )
+    }
+
+    public static function render_main( $template, $args )
+    {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'footer' ], false, self::get() );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 

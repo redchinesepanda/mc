@@ -15,6 +15,28 @@ class ForecastVote
 		ToolEnqueue::register_style( self::CSS );
     }
 
+    const DEQUEUE_CSS = [
+        'wp-polls',
+    ];
+
+    const DEQUEUE_JS = [
+        'wp-polls',
+    ];
+
+    const DEQUEUE = [
+        ...self::DEQUEUE_CSS,
+        
+        ...self::DEQUEUE_JS,
+    ];
+
+    public static function dequeue_style()
+    {
+        if ( self::check_new() )
+        {
+            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
+        }
+    }
+
 	public static function register()
     {
         if ( self::check_contains_forecast_vote() )
@@ -22,6 +44,10 @@ class ForecastVote
             $handler = new self();
     
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        }
+        else
+        {
+            add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
         }
     }
 

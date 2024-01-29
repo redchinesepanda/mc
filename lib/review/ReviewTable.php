@@ -248,7 +248,9 @@ class ReviewTable
 			{
 				foreach ( $items as $td )
 				{
-					$ths[] = $dom->createElement( 'th', $td->textContent );
+					// $ths[] = $dom->createElement( 'th', $td->textContent );
+
+					$ths[] = $dom->createElement( 'th', htmlspecialchars( $td->textContent ) );
 				}
 			}
 			else
