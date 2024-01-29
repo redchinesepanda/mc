@@ -238,7 +238,7 @@ class BaseFooter
 
     public static function render()
     {
-        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() )
+        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
     }
 
     public static function render_footer()
@@ -247,8 +247,8 @@ class BaseFooter
 		{
 			return '';
 		}
-		
-        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() )
+
+        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
     }
 
     public static function render_main( $template, $args )

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="legal-section-footer">
-	<?php echo BaseFooter::render(); ?>
+	<?php echo BaseFooter::render_footer(); ?>
 
 	<?php echo OopsMain::render(); ?>
 
