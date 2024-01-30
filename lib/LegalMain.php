@@ -67,6 +67,8 @@ class LegalMain
 
 		BaseMain::register_functions();
 
+		YoastMain::register_functions();
+
 		if ( self::check_admin() )
 		{
 			ACFMain::register();

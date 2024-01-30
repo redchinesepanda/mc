@@ -4,12 +4,15 @@ require_once( 'YoastOG.php' );
 
 class YoastMain
 {
+    public static function register_functions()
+    {
+        $handler = new self();
+
+        add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
+    }
+    
     public static function register()
     {
-        // $handler = new self();
-
-        // add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
-
         YoastOG::register();
     }
 
