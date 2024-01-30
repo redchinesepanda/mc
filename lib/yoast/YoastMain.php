@@ -6,9 +6,9 @@ class YoastMain
 {
     public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
+        // add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
 
         YoastOG::register();
     }
