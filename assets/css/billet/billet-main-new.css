@@ -153,13 +153,14 @@ body {
 .billet-list-part.legal-row {
     display: flex;
     column-gap: 4px;
+    flex-direction: column;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .billet-list-part.legal-row {
         flex-direction: column;
     } 
-}
+} */
 
 .billet-list-part.legal-column {
     display: flex;
@@ -472,14 +473,15 @@ body {
 }
 
 .billet-list-part.legal-row .billet-list-part-item {
-    width: 33.333%;
+    /* width: 33.333%; */
+    width: auto;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .billet-list-part.legal-row .billet-list-part-item {
         width: auto;
     }
-}
+} */
 
 .billet-list-part.legal-row {
     width: 100%;
