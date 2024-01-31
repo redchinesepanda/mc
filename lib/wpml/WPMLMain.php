@@ -224,7 +224,7 @@ class WPMLMain
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
-        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
         
         // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
 
@@ -256,18 +256,20 @@ class WPMLMain
     //     return $locale;
     // }
 
-    // public static function legal_language_attributes ( $output, $doctype )
-    // {
-    //     LegalDebug::debug( [
-    //         'WPMLMain' => 'legal_language_attributes',
+    public static function legal_language_attributes ( $output, $doctype )
+    {
+        LegalDebug::debug( [
+            'WPMLMain' => 'legal_language_attributes',
 
-    //         'output' => $output,
+            'output' => $output,
 
-    //         'doctype' => $doctype,
-    //     ] );
+            'doctype' => $doctype,
+            
+            'get_bloginfo' => get_bloginfo( 'language' ),
+        ] );
 
-    //     return $output;
-    // }
+        return $output;
+    }
   
     public static function change_page_hreflang( $hreflang_items )
     {
