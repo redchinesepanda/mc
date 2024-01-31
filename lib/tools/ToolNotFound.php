@@ -116,7 +116,7 @@ class ToolNotFound
 
 	public static function check_locale_user( $locale )
     {
-		return array_key_exists( $locale_user, self::FORBIDDEN );
+		return array_key_exists( $locale, self::FORBIDDEN );
 	}
 
 	public static function check_locale_country( $countries )
