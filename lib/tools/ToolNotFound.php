@@ -11,7 +11,7 @@ class ToolNotFound
 
 		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
-		add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
+		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
 
 		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
@@ -147,11 +147,11 @@ class ToolNotFound
 		{
 			$data = json_decode( $json );
 
-			LegalDebug::debug( [
-				'ToolNotFound' => 'get_ip_data',
+			// LegalDebug::debug( [
+			// 	'ToolNotFound' => 'get_ip_data',
 
-				'data' => $data,
-			] );
+			// 	'data' => $data,
+			// ] );
 
 			return strtolower( $data->countryCode );
 		}
@@ -172,11 +172,11 @@ class ToolNotFound
 
 		$json = curl_exec( $curl );
 
-		LegalDebug::debug( [
-			'ToolNotFound' => 'get_ip_data',
+		// LegalDebug::debug( [
+		// 	'ToolNotFound' => 'get_ip_data',
 
-			'curl_error' => curl_error( $curl ),
-		] );
+		// 	'curl_error' => curl_error( $curl ),
+		// ] );
 
 		curl_close( $curl );
 
