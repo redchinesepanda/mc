@@ -11,6 +11,8 @@ class ToolNotFound
 
 		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
+		add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
+
 		// add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
@@ -19,14 +21,6 @@ class ToolNotFound
 
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
-
-	// const LOCALE = [
-	// 	'kz' => [
-	// 		'kz',
-
-	// 		'ru',
-	// 	],
-	// ];
 
 	public static function check_taxonomy()
 	{
@@ -58,7 +52,7 @@ class ToolNotFound
 		// 	'function' => 'ToolNotFound::set_not_found',
 		// ] );
 
-		if ( self::check() )
+		if ( self::check_not_found() )
 		{
 			global $wp_query;
 
@@ -70,6 +64,112 @@ class ToolNotFound
 			// 	'permissionwp_query_category' => $wp_query,
 			// ] );
 		}
+	}
+
+	public static function set_forbidden()
+	{
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::set_not_found',
+		// ] );
+
+		if ( self::check_forbidden() )
+		{
+			global $wp_query;
+
+			$wp_query->set_403();
+
+			// LegalDebug::debug( [
+			// 	'function' => 'ToolNotFound::set_not_found',
+
+			// 	'permissionwp_query_category' => $wp_query,
+			// ] );
+		}
+	}
+
+	const FORBIDDEN = [
+		'de' => [
+			'de',
+		],
+	];
+
+	public static function check_forbidden()
+	{
+		return self::check_locale_forbidden();
+	}
+
+	public static function get_locale_user()
+	{
+		$country = self::get_country();
+
+		if ( !empty( $country ) )
+		{
+			return $country;
+		}
+
+		return 'en';
+	}
+
+	public static function check_locale_user( $locale )
+    {
+		return array_key_exists( $locale_user, self::FORBIDDEN );
+	}
+
+	public static function check_locale_country( $countries )
+	{
+		return in_array( WPMLMain::current_language(), $countries );
+    }
+
+	public static function check_locale_forbidden()
+	{
+		$locale = self::get_locale_user();
+
+		if ( self::check_locale_user( $locale ) )
+		{
+			return self::check_locale_country( self::FORBIDDEN[ $locale ] );
+		}
+
+		return false;
+	}
+
+	public static function get_country()
+	{
+		return self::parse_country( self::get_ip_data() );
+	}
+
+	public static function parse_country( $json )
+	{
+		if ( $json )
+		{
+			$data = json_decode( $json );
+
+			return strtolower( $data[ 'countryCode' ] );
+		}
+
+		return '';
+	}
+	public static function get_ip_data()
+	{
+		// $_SERVER['REMOTE_ADDR']
+
+		// $_SERVER['HTTP_X_FORWARDED_FOR']
+
+		$url = 'http://ip-api.com/json/' . $_SERVER['REMOTE_ADDR'];
+
+		$curl = curl_init( $url );
+
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+
+		$json = curl_exec( $curl );
+
+		LegalDebug::debug( [
+			'ToolNotFound' => 'get_ip_data',
+
+			'curl_error' => curl_error( $curl ),
+		] );
+
+		curl_close( $curl );
+
+		return $json;
 	}
 
 	// public static function check_not_found()

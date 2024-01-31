@@ -18,7 +18,7 @@ class YoastMain
 
     public static function max_entries_per_sitemap()
     {
-        return 100;
+        return 250;
     }
 
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
