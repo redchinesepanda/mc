@@ -245,16 +245,16 @@ class WPMLMain
     //     return $locale;
     // }
 
-    public static function legal_locale ( $locale )
-    {
-        LegalDebug::debug( [
-            'function' => 'change_page_hreflang',
+    // public static function legal_locale ( $locale )
+    // {
+    //     LegalDebug::debug( [
+    //         'function' => 'change_page_hreflang',
 
-            'locale' => $locale,
-        ] );
+    //         'locale' => $locale,
+    //     ] );
         
-        return $locale;
-    }
+    //     return $locale;
+    // }
 
     // public static function legal_language_attributes ( $output, $doctype )
     // {
