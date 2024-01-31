@@ -226,24 +226,24 @@ class WPMLMain
 
         // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
         
-        add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
+        // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
 
         // add_filter( 'locale', [ $handler, 'legal_locale' ] );
     }
 
-    public static function legal_determine_locale ( $locale )
-    {
-        if ( $post = get_post() )
-        {
-            LegalDebug::debug( [
-                'WPMLMain' => 'legal_determine_locale',
+    // public static function legal_determine_locale ( $locale )
+    // {
+    //     if ( $post = get_post() )
+    //     {
+    //         LegalDebug::debug( [
+    //             'WPMLMain' => 'legal_determine_locale',
                 
-                'get_language_details' => self::get_language_details( $post->ID ),
-            ] );
-        }
+    //             'get_language_details' => self::get_language_details( $post->ID ),
+    //         ] );
+    //     }
 
-        return $locale;
-    }
+    //     return $locale;
+    // }
 
     public static function legal_locale ( $locale )
     {
