@@ -22,6 +22,11 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	public static function check()
+	{
+		return self::check_not_found();
+	}
+
 	public static function check_taxonomy()
 	{
 		return is_tax();
