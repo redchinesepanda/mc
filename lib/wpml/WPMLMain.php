@@ -236,7 +236,7 @@ class WPMLMain
         LegalDebug::debug( [
             'WPMLMain' => 'legal_determine_locale',
             
-            'get_language_details' => get_language_details( null ),
+            'get_language_details' => self::get_language_details( null ),
         ] );
 
         return $locale;
