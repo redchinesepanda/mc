@@ -147,6 +147,12 @@ class ToolNotFound
 		{
 			$data = json_decode( $json );
 
+			LegalDebug::debug( [
+				'ToolNotFound' => 'get_ip_data',
+
+				'data' => $data,
+			] );
+
 			return strtolower( $data[ 'countryCode' ] );
 		}
 
