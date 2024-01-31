@@ -37,7 +37,7 @@ class ToolNotFound
 		return is_category();
 	}
 	
-	public static function check()
+	public static function check_not_found()
 	{
 		return self::check_category()
 
