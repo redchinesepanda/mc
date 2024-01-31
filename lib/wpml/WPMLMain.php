@@ -233,11 +233,14 @@ class WPMLMain
 
     public static function legal_determine_locale ( $locale )
     {
-        LegalDebug::debug( [
-            'WPMLMain' => 'legal_determine_locale',
-            
-            'get_language_details' => self::get_language_details( null ),
-        ] );
+        if ( $post = get_post() )
+        {
+            LegalDebug::debug( [
+                'WPMLMain' => 'legal_determine_locale',
+                
+                'get_language_details' => self::get_language_details( $post->ID ),
+            ] );
+        }
 
         return $locale;
     }
