@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> <?php thrive_html_class(); ?>>
-	<head>
+	<head> 
 		<!-- manual start -->
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
