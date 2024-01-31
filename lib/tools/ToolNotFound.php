@@ -153,7 +153,7 @@ class ToolNotFound
 				'data' => $data,
 			] );
 
-			return strtolower( $data[ 'countryCode' ] );
+			return strtolower( $data->countryCode );
 		}
 
 		return '';
