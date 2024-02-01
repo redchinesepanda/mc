@@ -251,15 +251,15 @@ body {
     border-radius: 50px;
 }
 
-.billet-list-part .billet-list-part-item {
+/* .billet-list-part .billet-list-part-item {
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
-.billet-list-part.legal-check .billet-list-part-item {
+/* .billet-list-part.legal-check .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check.svg');
-} 
+}  */
 
 .billet-list-part.legal-check-round .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check-round.svg');
@@ -659,6 +659,13 @@ body {
 .billet-title .billet-title-rating::before {
     content: '\F10F';
     /* color: var(--Base-base-09); */
+    line-height: 24px;
+    font-size: 24px;
+    font-family: var(--legal-font-icons);
+}
+
+.billet-list-part.legal-check .billet-list-part-item {
+    content: 'F107';
     line-height: 24px;
     font-size: 24px;
     font-family: var(--legal-font-icons);
