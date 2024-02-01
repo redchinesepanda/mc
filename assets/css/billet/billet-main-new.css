@@ -156,10 +156,15 @@ body {
     right: 30px;
 }
 
-.billet-list-part.legal-row {
+.billet-list-part {
     display: flex;
-    /* column-gap: 4px; */
     row-gap: 8px;
+}
+
+.billet-list-part.legal-row {
+    /* display: flex; */
+    /* column-gap: 4px; */
+    /* row-gap: 8px; */
     flex-direction: column;
 }
 
@@ -468,9 +473,9 @@ body {
     width: 100%;
 }
 
-.billet .title-data {
+/* .billet .title-data {
     width: 100%;
-}
+} */
 
 /* .billet .legal-title {
     width: 100%;
