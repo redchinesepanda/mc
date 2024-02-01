@@ -168,25 +168,25 @@ class TemplateMain
         }
     }
 
-    const JS_DEQUEUE_THRIVE = [
-        'jquery',
+    // const JS_DEQUEUE_THRIVE = [
+    //     'jquery',
 
-        'jquery-masonry', 
+    //     'jquery-masonry', 
 
-        'tve_frontend',
-    ];
+    //     'tve_frontend',
+    // ];
 
-    const JS_DEQUEUE = [
-        ...self::JS_DEQUEUE_THRIVE,
-    ];
+    // const JS_DEQUEUE = [
+    //     ...self::JS_DEQUEUE_THRIVE,
+    // ];
 
-    public static function dequeue_script()
-    {
-        if ( self::check_new() )
-        {
-            ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
-        }
-    }
+    // public static function dequeue_script()
+    // {
+    //     if ( self::check_new() )
+    //     {
+    //         ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
+    //     }
+    // }
 
     public static function check_new()
     {
@@ -252,10 +252,12 @@ class TemplateMain
 
     public static function register_dequeue()
     {
-        $handler = new self();
+        // $handler = new self();
 
         if ( self::check_new() )
         {
+            $handler = new self();
+
             add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
 
             self::register_wp();
@@ -263,7 +265,7 @@ class TemplateMain
             self::register_thrive();
         }
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 ); 
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 ); 
     }
 
     public static function register()
