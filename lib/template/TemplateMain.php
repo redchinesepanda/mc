@@ -357,6 +357,38 @@ class TemplateMain
 
         return $output;
     }
+
+    const REPLACE_ELEMENT = [
+        'tve_thrive_lightbox_',
+    ];
+
+    public static function wp_footer_replace_element( $output )
+    {
+        // if ( self::check_new() )
+        // {
+            foreach ( self::REPLACE_ELEMENT as $id )
+            {
+                $pattern = '/<div id=\"' . $id . '(.+?)<\/div>/i';
+
+                $output = preg_replace( $pattern, '', $output );
+            }
+        // }
+
+        return $output;
+    }
+
+    public static function wp_head()
+    {
+		ob_start();
+		
+		wp_footer();
+
+        $output = ob_get_clean();
+
+        $output = self::wp_head_replace_style( $output );
+
+        return $output;
+    }
 }
 
 ?>
