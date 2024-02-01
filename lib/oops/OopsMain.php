@@ -55,7 +55,7 @@ class OopsMain
         'legal-oops-main' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/oops/legal-oops-main.js',
 
-            'ver' => '1.0.3',
+            'ver' => '1.0.4',
         ],
 
         'legal-lib-cookie' => [
