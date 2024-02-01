@@ -2,6 +2,14 @@
 
 class ToolEnqueue
 {
+    public static function dequeue_script( $styles = [] )
+    {
+        foreach ( $styles as $name )
+        {
+            wp_dequeue_script( $handle );
+        }
+    }
+
     public static function dequeue_style( $styles = [] )
     {
         foreach ( $styles as $name )
