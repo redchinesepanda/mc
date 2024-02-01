@@ -251,11 +251,11 @@ body {
     border-radius: 50px;
 }
 
-/* .billet-list-part .billet-list-part-item {
+.billet-list-part .billet-list-part-item {
     background-position: left top;
     background-repeat: no-repeat;
     background-size: auto;
-} */
+}
 
 /* .billet-list-part.legal-check .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-check.svg');
@@ -664,7 +664,7 @@ body {
     font-family: var(--legal-font-icons);
 }
 
-.billet-list-part.legal-check .billet-list-part-item {
+.billet-list-part.legal-check .billet-list-part-item::before {
     content: 'F107';
     line-height: 24px;
     font-size: 24px;
