@@ -162,7 +162,7 @@ class TemplateMain
 
     public static function register_script()
     {
-		if ( !self::check() )
+		if ( !self::check() && MetrikaMain::check() )
         {
             ToolEnqueue::register_script( self::JS );
         }
