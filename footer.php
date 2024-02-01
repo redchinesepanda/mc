@@ -24,11 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php
 
-global $wp_filter;
+// global $wp_filter;
 
-LegalDebug::debug( [
-	$wp_filter['wp_footer'],
-] )
+// LegalDebug::debug( [
+// 	$wp_filter['wp_footer'],
+// ] )
 
 ?>
 
