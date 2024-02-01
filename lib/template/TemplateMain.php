@@ -377,7 +377,7 @@ class TemplateMain
         return $output;
     }
 
-    public static function wp_head()
+    public static function wp_footer()
     {
 		ob_start();
 		
@@ -385,7 +385,7 @@ class TemplateMain
 
         $output = ob_get_clean();
 
-        $output = self::wp_head_replace_style( $output );
+        $output = self::wp_footer_replace_element( $output );
 
         return $output;
     }
