@@ -224,11 +224,21 @@ class WPMLMain
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
-        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
         
         // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
 
         // add_filter( 'locale', [ $handler, 'legal_locale' ] );
+    }
+
+    public static function language_attributes()
+    {
+        echo 'lang="' . esc_attr( self::get_hreflang() ) . '"';
+    }
+
+    public static function get_hreflang()
+    {
+        return str_replace( '_', '-', self::get_locale() );
     }
 
     // public static function legal_determine_locale ( $locale )
