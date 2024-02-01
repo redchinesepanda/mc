@@ -6,7 +6,7 @@ WHERE
 --  end
 
 --  post ID of all the translated/duplicated attachments start
-SELECT `element_id` 
+SELECT *
 FROM `wp_icl_translations` 
 WHERE 
 `element_type` = 'post_attachment'
@@ -62,7 +62,7 @@ AND
 `mc_icl_translations`.`source_language_code` IS NOT NULL;
 -- count wp_posts inner join wp_icl_translations duplicated start
 
--- delete start
+-- delete duplicated start
 DELETE `mc_posts`,
 `mc_icl_translations`
 FROM `wp_posts` AS `mc_posts`
@@ -71,4 +71,57 @@ WHERE
 `mc_icl_translations`.`element_type` = 'post_attachment'
 AND 
 `mc_icl_translations`.`source_language_code` IS NOT NULL;
+-- end
+
+-- select unattached start
+SELECT *
+FROM `wp_posts` AS `mc_posts`
+WHERE
+`mc_posts`.`post_type` = 'attachment'
+AND `mc_posts`.`post_parent` IS NULL;
+-- end
+
+-- count unattached start
+SELECT COUNT(`mc_posts`.`ID`)
+FROM `wp_posts` AS `mc_posts`
+WHERE
+`mc_posts`.`post_type` = 'attachment'
+AND `mc_posts`.`post_parent` = 0
+LIMIT 0, 1000;
+-- end
+
+-- delete unattached start
+DELETE FROM `wp_posts` AS `mc_posts`
+WHERE
+`mc_posts`.`post_type` = 'attachment'
+AND `mc_posts`.`post_parent` = 0
+LIMIT 10000;
+-- end
+
+-- procedure start
+DROP PROCEDURE IF EXISTS GeekLoop();
+
+DELIMITER $$ 
+
+CREATE PROCEDURE GeekLoop()
+BEGIN
+	DECLARE no INT;
+
+	SET no = 0;
+
+	loop: LOOP
+		SET no = no +1;
+
+		select no ;
+
+		IF no =5 THEN
+			LEAVE loop;
+		END IF;
+	END LOOP loop;
+
+	SELECT no;
+
+END $$
+
+DELIMITER ;
 -- end
