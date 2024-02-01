@@ -22,6 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php echo OopsAge::render(); ?>
 </section>
 
+<?php
+
+global $wp_filter;
+
+var_dump( $wp_filter['wp_footer'] );
+
+?>
+
 <?php wp_footer(); ?>
 
 </body>
