@@ -26,7 +26,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $wp_filter;
 
-var_dump( $wp_filter['wp_footer'] );
+LegalDebug::debug( [
+	$wp_filter['wp_footer'],
+] )
 
 ?>
 
