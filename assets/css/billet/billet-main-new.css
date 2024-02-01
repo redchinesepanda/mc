@@ -158,7 +158,8 @@ body {
 
 .billet-list-part.legal-row {
     display: flex;
-    column-gap: 4px;
+    /* column-gap: 4px; */
+    row-gap: 8px;
     flex-direction: column;
 }
 
@@ -171,6 +172,11 @@ body {
 .billet-list-part.legal-column {
     display: flex;
     flex-direction: column;
+}
+
+.billet-list-part .billet-list-part-item {
+    display: flex;
+    column-gap: 8px;
 }
 
 .billet-right .legal-play {
@@ -558,9 +564,13 @@ body {
 }
 
 /* .billet-list-part:not( .legal-default ) .billet-list-part-item { */
-.billet-list-part .billet-list-part-item {
+.billet-list-part:not( .legal-check ) .billet-list-part-item {
     padding: 3px 0px 0px 30px;
 }
+
+/* .billet-list-part.legal-check .billet-list-part-item {
+    padding: 0px;
+} */
 
 .billet-right .legal-play {
     padding: 10px 18px;
