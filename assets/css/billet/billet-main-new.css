@@ -142,6 +142,7 @@ body {
 .billet .title-data-group {
     display: flex;
     column-gap: 14px;
+    align-items: center;
 }
 
 .billet-title .billet-title-rating {
