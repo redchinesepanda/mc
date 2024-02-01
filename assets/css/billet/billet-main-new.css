@@ -62,8 +62,16 @@
         width: calc( 100% / 3 * 2 );
     }
 
-    .billet-list-part.legal-column {
+    .billet-list-part.legal-column:not( .legal-check ):not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
         width: calc( 50% - 4px );
+    }
+
+    .billet-list-part.legal-check.legal-column {
+        width: calc(78% - 8px);
+    }
+
+    .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
+        width: 22%;
     }
 
     /* Billet Background */
@@ -485,9 +493,9 @@ body {
     width: 100%;
 }
 
-.billet-list-part .billet-list-part-item {
+/* .billet-list-part .billet-list-part-item {
     min-height: 24px;
-}
+} */
 
 .billet-list-part.legal-row .billet-list-part-item {
     /* width: 33.333%; */
