@@ -368,7 +368,9 @@ class TemplateMain
         // {
             foreach ( self::REPLACE_ELEMENT as $id )
             {
-                $pattern = '/<div id=\"' . $id . '(.+?)<\/div>/i';
+                $pattern = '/<div id=\"' . $id . '-(.*?)\">(.+?)<\/div>/i';
+
+                // '<div id=\"attachment_(.*?)\">(.+?)</div>'
 
                 $output = preg_replace( $pattern, '', $output );
             }
