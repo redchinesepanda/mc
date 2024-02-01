@@ -224,55 +224,52 @@ class WPMLMain
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
-        // add_filter( 'language_attributes', [ $handler, 'wp_kama_language_attributes_filter' ], 10, 2 ); 
-
-        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        
+        // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
 
         // add_filter( 'locale', [ $handler, 'legal_locale' ] );
     }
 
-    public static function legal_locale ( $locale )
+    // public static function legal_determine_locale ( $locale )
+    // {
+    //     if ( $post = get_post() )
+    //     {
+    //         LegalDebug::debug( [
+    //             'WPMLMain' => 'legal_determine_locale',
+                
+    //             'get_language_details' => self::get_language_details( $post->ID ),
+    //         ] );
+    //     }
+
+    //     return $locale;
+    // }
+
+    // public static function legal_locale ( $locale )
+    // {
+    //     LegalDebug::debug( [
+    //         'function' => 'change_page_hreflang',
+
+    //         'locale' => $locale,
+    //     ] );
+        
+    //     return $locale;
+    // }
+
+    public static function legal_language_attributes ( $output, $doctype )
     {
         LegalDebug::debug( [
-            'function' => 'change_page_hreflang',
+            'WPMLMain' => 'legal_language_attributes',
 
-            'locale' => $locale,
+            'output' => $output,
+
+            'doctype' => $doctype,
+            
+            'get_bloginfo' => get_bloginfo( 'language' ),
         ] );
-        
-        return $locale;
+
+        return $output;
     }
-
-    // public static function legal_language_attributes ( $output, $doctype )
-    // {
-    //     // global $wpdb;
-
-    //     // $code = ICL_LANGUAGE_CODE;
-
-    //     // return preg_replace('/lang="(.*?)"/i', 'lang="'.$wpdb->get_var("SELECT default_locale FROM {$wpdb->prefix}icl_languages WHERE code='{$code}'").'"', $output);
-
-    //     LegalDebug::debug( [
-    //         'function' => 'WPMLMain::legal_language_attributes',
-
-    //         'output' => $output,
-
-    //         'doctype' => $doctype,
-    //     ] );
-
-    //     return $output;
-    // }
-
-    // public static function wp_kama_language_attributes_filter( $output, $doctype )
-    // {
-    //     LegalDebug::debug( [
-    //         'function' => 'WPMLMain::wp_kama_language_attributes_filter',
-
-    //         'output' => $output,
-
-    //         'doctype' => $doctype,
-    //     ] );
-
-    //     return $output;
-    // }
   
     public static function change_page_hreflang( $hreflang_items )
     {
