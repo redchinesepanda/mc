@@ -665,7 +665,7 @@ body {
 }
 
 .billet-list-part.legal-check .billet-list-part-item::before {
-    content: 'F107';
+    content: '\F107';
     line-height: 24px;
     font-size: 24px;
     font-family: var(--legal-font-icons);
