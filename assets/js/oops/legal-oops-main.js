@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		hrefHash: 'a.check-oops[href="#"]',
 
 		thrive: 'a.tve_et_click[href="#"]'
-	};
+	}; 
 
 	document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
