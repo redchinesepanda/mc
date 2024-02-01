@@ -16,7 +16,7 @@ LegalMain::register();
 
 if( !function_exists( 'tve_load_global_variables' ) )
 {
-	function tve_load_global_variables() {}
+	// function tve_load_global_variables() {}
 }
 
 ?>
