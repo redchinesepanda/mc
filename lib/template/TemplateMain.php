@@ -372,7 +372,7 @@ class TemplateMain
             {
                 // $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
 
-                $pattern = '/<div id=\"' . $id . '(.*?)\">(.+?)<\/div>/i';
+                $pattern = '/<div id=\"' . $id . '(.+?)\">(.+?)<\/div>/i';
 
                 $output = preg_replace( $pattern, '', $output );
             }
