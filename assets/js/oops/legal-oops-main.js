@@ -13,7 +13,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	document.querySelectorAll( 'a.check-oops[href="#"]').forEach( function ( element ) {
+	const selectors = {
+		hrefHash: 'a.check-oops[href="#"]',
+
+		thrive: 'a.tcb-button-link[href="#"]'
+	};
+
+	document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
