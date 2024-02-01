@@ -144,6 +144,11 @@ body {
     column-gap: 14px;
 }
 
+.billet-title .billet-title-rating {
+    display: flex;
+    column-gap: 4px;
+}
+
 .billet .billet-title-achivement.legal-background {
     position: absolute;
     top: 0px;
@@ -231,12 +236,12 @@ body {
     border-radius: 12.8px;
 }
 
-.billet-title .billet-title-rating {
+/* .billet-title .billet-title-rating {
     background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-rating.svg' );
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
 .billet-title .billet-title-achivement.legal-image {
     background-position: left 8px center;
@@ -532,9 +537,9 @@ body {
     margin: 0px;
 }
 
-.billet-title .billet-title-rating {
+/* .billet-title .billet-title-rating {
     padding-left: 30px;
-}
+} */
 
 .billet-title .billet-title-achivement.legal-background {
     padding: 3px 10px;
@@ -648,6 +653,14 @@ body {
     font-size: 14px;
     line-height: 20px;
     color: var(--Base-base-09);
+}
+
+.billet-title .billet-title-rating::before {
+    content: '\F10F';
+    /* color: var(--Base-base-09); */
+    line-height: 24px;
+    font-size: 24px;
+    font-family: var(--legal-font-icons);
 }
 
 .billet-title .billet-title-achivement {
