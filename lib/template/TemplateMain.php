@@ -171,8 +171,8 @@ class TemplateMain
     const JS_DEQUEUE_THRIVE = [
         'jquery',
 
-        'jquery-masonry',
-        
+        'jquery-masonry', 
+
         'tve_frontend',
     ];
 
