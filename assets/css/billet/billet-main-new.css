@@ -27,7 +27,7 @@
         min-height: 168px;
     }
 
-    .billet-item .legal-logo img {  
+    .billet-item .legal-logo {  
         width: 48px;
         height: 48px;
     }
@@ -67,7 +67,7 @@
         width: calc( 100% / 3 * 2 );
     }
 
-    .billet-item .legal-logo img {  
+    .billet-item .legal-logo {  
         width: 70px;
         height: 70px;
     }
@@ -471,6 +471,11 @@ body {
     width: 70px;
     height: 70px;
 } */
+
+.billet-item .legal-logo img {  
+    max-width:100%;
+    height: auto; 
+}
 
 .billet-right .bonus-button {
     width: 100%;
