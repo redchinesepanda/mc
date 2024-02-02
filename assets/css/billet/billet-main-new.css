@@ -134,12 +134,12 @@ body {
     display: flex;
     column-gap: 16px;
 }
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .billet-title {
         flex-wrap: wrap;
         row-gap: 0.5rem;
     } 
-}
+} */
 
 .billet .title-data {
     display: flex;
