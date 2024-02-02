@@ -63,7 +63,8 @@
     }
 
     .billet-list-part.legal-column:not( .legal-check ):not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
-        width: calc( 50% - 4px );
+        /* width: calc( 50% - 4px ); */
+        width: calc( 50% - 28px );
     }
 
     .billet-list-part.legal-check.legal-column {
