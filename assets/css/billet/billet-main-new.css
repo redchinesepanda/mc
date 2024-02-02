@@ -71,7 +71,7 @@
     }
 
     .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
-        width: 22%;
+        width: calc( 22% - 28px);
     }
 
     /* Billet Background */
@@ -124,8 +124,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    row-gap: 22px;
-    column-gap: 8px;
+    row-gap: 18px;
+    column-gap: 28px;
     position: relative;
 }
 
@@ -579,12 +579,13 @@ body {
 
 /* .billet-list-part:not( .legal-default ) .billet-list-part-item { */
 .billet-list-part:not( .legal-check ):not( .legal-default ) .billet-list-part-item {
-    padding: 3px 0px 0px 30px;
+    /* padding: 3px 0px 0px 30px; */
+    padding-left: 30px; 
 }
 
-.billet-list-part.legal-default .billet-list-part-item {
+/* .billet-list-part.legal-default .billet-list-part-item {
     padding: 0px 0px 0px 28px;
-}
+} */
 
 /* .billet-list-part.legal-check .billet-list-part-item {
     padding: 0px;
