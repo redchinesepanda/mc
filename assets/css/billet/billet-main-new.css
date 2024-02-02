@@ -467,10 +467,9 @@ body {
     width: fit-content;
 } */
 
-/* .billet-item .legal-logo {
-    width: 70px;
-    height: 70px;
-} */
+.billet-item .legal-logo {
+    box-sizing: border-box;
+}
 
 .billet-item .legal-logo img {  
     max-width:100%;
