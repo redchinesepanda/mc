@@ -267,11 +267,12 @@ body {
 .billet-item .legal-logo {
     border: 1px solid var(--Base-base-09);
     border-radius: 12.8px;
+    overflow: hidden;
 }
 
-.billet-item .legal-logo img {  
+/* .billet-item .legal-logo img {  
     border-radius: 12.8px;
-}
+} */
 
 /* .billet-title .billet-title-rating {
     background-image: url( '/wp-content/themes/thrive-theme-child/assets/img/billet/billet-rating.svg' );
