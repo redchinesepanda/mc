@@ -27,6 +27,11 @@
         min-height: 168px;
     }
 
+    .billet-item .legal-logo img {  
+        width: 48px;
+        height: 48px;
+    }
+
     /* Billet Background */
 
     .billet-left {
@@ -60,6 +65,11 @@
     .billet-item .billet-main
     {
         width: calc( 100% / 3 * 2 );
+    }
+
+    .billet-item .legal-logo img {  
+        width: 70px;
+        height: 70px;
     }
 
     .billet-list-part.legal-column:not( .legal-check ):not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
@@ -124,7 +134,8 @@ body {
 .billet-center {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    /* align-content: center; */
+    align-content: flex-start;
     row-gap: 18px;
     column-gap: 28px;
     position: relative;
@@ -255,6 +266,10 @@ body {
 
 .billet-item .legal-logo {
     border: 1px solid var(--Base-base-09);
+    border-radius: 12.8px;
+}
+
+.billet-item .legal-logo img {  
     border-radius: 12.8px;
 }
 
@@ -451,16 +466,10 @@ body {
     width: fit-content;
 } */
 
-.billet-item .legal-logo {
+/* .billet-item .legal-logo {
     width: 70px;
     height: 70px;
-}
-
-.billet-item .legal-logo img {  /* временное правило для понимания размеров лого */
-    max-width: 100%;
-    height: auto;
-    border-radius: 12.8px;
-}
+} */
 
 .billet-right .bonus-button {
     width: 100%;
