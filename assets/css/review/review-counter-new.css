@@ -359,7 +359,7 @@
 	border-radius: 12px;
 	/* --legal-counter-color: #5997E3; */
 	--legal-counter-color: var( --Primitives-purple-40 );
-	--legal-counter-second: #5997e300;
+	--legal-counter-second: #92b9e6;
 }
 
 .tcb-post-content > .legal-review-counter {
