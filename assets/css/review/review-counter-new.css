@@ -349,7 +349,8 @@
 .legal-review-counter {
 	/* border-radius: 20px; */
 	border-radius: 12px;
-	--legal-counter-color: #5997E3;
+	/* --legal-counter-color: #5997E3; */
+	--legal-counter-color: var( --Primitives-purple-40 );
 	--legal-counter-second: #5997e300;
 }
 
@@ -361,7 +362,7 @@
 	border-radius: 50%;
 	/* background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg ); */
 	background: conic-gradient( var( --Primitives-purple-40 ) var(--progress ), var( --legal-counter-second ) 0deg );
-	animation: .4s ease-out turn_in reverse;
+	animation: .7s ease-out turn_in reverse;
 	border: 2px solid var(--Base-base-09);
 }
 
