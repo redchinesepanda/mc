@@ -50,6 +50,13 @@
         border-bottom: var( --base-border-billet ); 
     }
 
+       /* Billet Typography */
+
+       .billet-right .bonus-title,
+       .billet-right .bonus-description {
+           text-align: start;
+       }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -111,6 +118,13 @@
 
     .billet-item .billet .billet-main {
         border-right: var( --base-border-billet ); 
+    }
+
+    /* Billet Typography */
+
+    .billet-right .bonus-title,
+    .billet-right .bonus-description {
+        text-align: center;
     }
 
 }
@@ -496,6 +510,11 @@ body {
     min-height: calc( 50px - (10px * 2) );
 }
 
+.billet-right .bonus-title,
+.billet-right .bonus-description {
+    width: 100%;
+}
+
 .billet-spoiler {
     width: 100%;
 }
@@ -626,11 +645,11 @@ body {
     padding-right: 22px;
 }
 
-.billet-right .bonus-title,
+/* .billet-right .bonus-title,
 .billet-right .bonus-description {
-    /* margin: 0px 40px; */
+    margin: 0px 40px;
     padding: 0px 15px;
-}
+} */
 
 .billet-left .billet-order {
     position: absolute;
