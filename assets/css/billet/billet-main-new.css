@@ -87,6 +87,10 @@
         column-gap: 16px;
     }
 
+    .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
+        flex-direction: column;
+    }
+
     /* Billet Width and Height */
     .billet-left,
     .billet-center,
@@ -270,6 +274,9 @@ body {
 
 .billet-list-part.legal-column {
     display: flex;
+}
+
+.billet-list-part.legal-column:not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
     flex-direction: column;
 }
 
