@@ -300,8 +300,8 @@ class ReviewCounter
 
 		if ( $amount <= 5 )
 		{
-			/* $title .= ' - ' . $rating; */
-			$title .= ' ' . $rating;
+			$title .= ' - ' . $rating;
+			/* $title .= ' ' . $rating; */
 		}
 
 		if ( $amount > 5 )
