@@ -110,6 +110,12 @@
 	flex-wrap: wrap;
 }
 
+.legal-review-counter .set-item-wrapper {
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+}
+
 .legal-review-counter.legal-overall .review-counter-overall {
 	display: flex;
 	flex-direction: column;
@@ -285,8 +291,11 @@
 }
 
 .legal-review-counter.legal-default .item-label {
-	font-size: 14px;
-	color: rgb(59, 59, 59);
+	/* font-size: 14px; */
+	/* color: rgb(59, 59, 59); */
+	font-size: 13px; 
+	line-height: 17px;
+	text-align: center;
 }
 
 .legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
