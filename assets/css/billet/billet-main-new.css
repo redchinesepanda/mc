@@ -13,6 +13,10 @@
         flex-direction: column;
     }
 
+    .billet-center {
+        row-gap: 16px;
+    }  
+
     .billet-title {
         column-gap: 9.18px;
     }
@@ -20,6 +24,10 @@
     .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
         column-gap: 24px;
         order: 0;
+    }
+
+    .billet-list-part.legal-column:not(.billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column) {
+        order: 1;
     }
 
     /* Billet Position */
@@ -87,6 +95,10 @@
 @media screen and ( min-width: 768px ) {
 
      /* Billet Display */
+
+    .billet-center {
+        row-gap: 18px;
+    }    
 
     .billet-title {
         column-gap: 16px;
@@ -219,7 +231,6 @@ body {
     flex-wrap: wrap;
     /* align-content: center; */
     align-content: flex-start;
-    row-gap: 18px;
     column-gap: 28px;
     position: relative;
 }
