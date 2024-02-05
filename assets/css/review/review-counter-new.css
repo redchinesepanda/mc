@@ -223,6 +223,11 @@
 	height: 160px;
 }
 
+.legal-review-counter.legal-default .set-item-info {
+	width: 137px;
+	height: 137px;
+}
+
 .legal-review-counter.legal-overall .review-counter-set .set-item {
 	width: 60px;
 	height: 60px;
@@ -238,9 +243,7 @@
 }
 
 .legal-review-counter .set-item-info {
-	/* width: 100%; */
-	width: 137px;
-	height: 137px;
+	width: 100%;
 }
 
 /* Typography */
