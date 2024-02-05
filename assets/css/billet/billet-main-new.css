@@ -13,6 +13,10 @@
         flex-direction: column;
     }
 
+    .billet-title {
+        column-gap: 9.18px;
+    }
+
     /* Billet Position */
 
     .billet-center {
@@ -42,9 +46,19 @@
         border-radius: 0px 0px 20px 20px;
     }
 
+    .billet-item .billet .billet-main {
+        border-bottom: var( --base-border-billet ); 
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
+
+     /* Billet Display */
+
+    .billet-title {
+        column-gap: 16px;
+    }
 
     /* Billet Width and Height */
     .billet-left,
@@ -95,6 +109,10 @@
         border-radius: 0px 20px 20px 0px;
     }
 
+    .billet-item .billet .billet-main {
+        border-right: var( --base-border-billet ); 
+    }
+
 }
 
 /* Body */
@@ -143,7 +161,6 @@ body {
 
 .billet-title {
     display: flex;
-    column-gap: 16px;
 }
 /* @media (max-width: 768px) {
     .billet-title {
@@ -447,11 +464,6 @@ body {
 {
     border-radius: 24px;
     border: var( --base-border-billet );
-}
-
-.billet-item .billet .billet-main
-{
-    border-right: var( --base-border-billet ); 
 }
 
 .billet-item .billet .billet-main,
