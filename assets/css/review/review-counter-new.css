@@ -255,9 +255,9 @@
 	color: #000000;
 }
 
-.legal-review-counter .info-rating {
+/* .legal-review-counter .info-rating {
 	letter-spacing: 3px;
-}
+} */
 
 .legal-review-counter .set-item-info {
 	font-size: 1rem;
@@ -275,7 +275,8 @@
 
 .legal-review-counter .info-rating {
 	font-size: 16px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
+	line-height: 22px;
 }
 
 .legal-review-counter .item-value {
@@ -351,9 +352,9 @@
 
 /* Background */
 
-.legal-review-counter .info-rating {
+/* .legal-review-counter .info-rating {
 	background-color: rgba(175, 177, 179, 0.3);
-}
+} */
 
 .legal-review-counter .info-logo {
 	background-repeat: no-repeat;
