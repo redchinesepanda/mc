@@ -204,6 +204,10 @@
 	flex-basis: calc( 75% - 50px );
 }
 
+.legal-review-counter .set-item-wrapper {
+	width: min-content;
+}
+
 .legal-review-counter .review-counter-overall {
 	flex-basis: calc( 25% - 50px );
 }
@@ -233,11 +237,6 @@
 
 .legal-review-counter .set-item-info {
 	width: 100%;
-}
-
-.legal-review-counter .set-item-info {
-	border-radius: 50%;
-	background: white;
 }
 
 /* Typography */
@@ -373,6 +372,11 @@
 	background: conic-gradient( var( --Primitives-purple-40 ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .7s ease-out turn_in reverse;
 	border: 2px solid var(--Base-base-09);
+}
+
+.legal-review-counter .set-item-info {
+	border-radius: 50%;
+	background: white;
 }
 
 .legal-review-counter.legal-overall.font-legal-default .review-counter-footer .review-counter-afillate {
