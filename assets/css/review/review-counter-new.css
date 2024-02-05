@@ -378,19 +378,18 @@
 	background: conic-gradient( var( --Primitives-purple-40 ) var(--progress ), var( --legal-counter-second ) 0deg );
 	animation: .7s ease-out turn_in reverse;
 	border: 2px solid var(--Base-base-09);
-	position: relative;
+	/* position: relative; */
 }
 
-.legal-review-counter.legal-default .set-item::before {
+/* .legal-review-counter.legal-default .set-item::before {
 	border-radius: 50%;
-	/* background: conic-gradient( var( --legal-counter-color ) var(--progress ), var( --legal-counter-second ) 0deg ); */
 	background: conic-gradient(  var(--Base-base-09) calc( var(--progress ) + 0.5% ), var( --legal-counter-second ) 0deg );
 	animation: .7s ease-out turn_in reverse;
 	content: '';
 	position: absolute;
 	width: 100%;
 	inset: 0;
-}
+} */
 
 .legal-review-counter .border-internal {
 	background: conic-gradient( var(--Base-base-09) var(--progress ), var(--Base-base-01) 0deg );
