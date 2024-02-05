@@ -298,10 +298,10 @@ class ReviewCounter
 			$rating = $ovarall[ 'value' ];
 		}
 
-		if ( $amount <= 5 )
+	/* 	if ( $amount <= 5 )
 		{
 			$title .= ' - ' . $rating;
-		}
+		} */
 
 		if ( $amount > 5 )
 		{
