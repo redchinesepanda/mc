@@ -789,7 +789,7 @@ body {
 }
 
 .billet-right .bonus-title {
-    text-align: center;
+    /* text-align: center; */
     font-size: 22px;
     font-weight: 700;
     line-height: 26px;
@@ -820,7 +820,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24.5px;
-    text-align: center;
+ /*    text-align: center; */
 }
 
 .billet-right .legal-play {
