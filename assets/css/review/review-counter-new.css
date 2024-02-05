@@ -138,8 +138,6 @@
 
 .legal-review-counter .set-item {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .legal-review-counter .set-item-info {
@@ -168,9 +166,10 @@
 	margin-bottom: 15px;
 }
 
-/* .legal-review-counter.legal-default .set-item-info {
-	margin: 10px;
-} */
+.legal-review-counter.legal-default .set-item-info {
+	/* margin: 10px; */
+	margin: 2px;
+}
 
 .legal-review-counter.legal-overall .set-item-info {
 	margin: 3px;
@@ -223,10 +222,10 @@
 	height: 160px;
 }
 
-.legal-review-counter.legal-default .set-item-info {
+/* .legal-review-counter.legal-default .set-item-info {
 	width: 137px;
 	height: 137px;
-}
+} */
 
 .legal-review-counter.legal-overall .review-counter-set .set-item {
 	width: 60px;
@@ -389,8 +388,6 @@
 	width: 140px;
 	height: 140px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .legal-review-counter .set-item-info {
