@@ -17,6 +17,11 @@
         column-gap: 9.18px;
     }
 
+    .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
+        column-gap: 24px;
+        order: 0;
+    }
+
     /* Billet Position */
 
     .billet-center {
