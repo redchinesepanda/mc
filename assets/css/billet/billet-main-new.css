@@ -24,10 +24,14 @@
         padding-right: 20px;
     }
 
-
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
         padding: 20px;
+    }
+
+    .billet-item .billet-footer:not( :empty ) {
+        padding-right: 16px;
+        padding-left: 16px;
     }
 
     /* Billet Width and Height */
@@ -127,6 +131,11 @@
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
         padding: 20px 24px;
+    }
+
+    .billet-item .billet-footer:not( :empty ) {
+        padding-right: 24px;
+        padding-left: 24px;
     }
 
     /* Billet Background */
@@ -623,9 +632,7 @@ body {
 
 .billet-item .billet-footer:not( :empty ) {
     padding-top: 32px;
-    padding-right: 24px;
     padding-bottom: 8px;
-    padding-left: 24px;
 }
 
 .billet-item .billet-footer:empty {
