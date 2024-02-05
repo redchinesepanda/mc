@@ -385,9 +385,16 @@
 	animation: .7s ease-out turn_in reverse;
 	margin: 9px;
 	border-radius: 50%;
-	width: 140px;
-	height: 140px;
+	width: 100%;
 	display: flex;
+}
+
+.legal-review-counter.legal-default .border-internal {
+	margin: 9px;
+}
+
+.legal-review-counter.legal-overall .border-internal {
+	margin: 3px;
 }
 
 .legal-review-counter .set-item-info {
