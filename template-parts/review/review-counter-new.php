@@ -6,8 +6,10 @@
 	<?php foreach( $args[ 'items' ] as $id => $item ) : ?>
 		<div class="set-item-wrapper">
 			<div class="set-item set-item-<?php echo $id; ?>" >
-				<div class="set-item-info">
-					<div class="item-value"><?php echo $item[ 'value' ]; ?></div>
+				<div class="border-internal">
+					<div class="set-item-info">
+						<div class="item-value"><?php echo $item[ 'value' ]; ?></div>
+					</div>
 				</div>
 			</div>
 			<div class="item-label set-item-<?php echo $id; ?>"><?php echo $item[ 'label' ]; ?></div>
