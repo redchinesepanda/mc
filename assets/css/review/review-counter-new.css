@@ -293,11 +293,11 @@
 }
 
 .legal-review-counter {
-	/* font-family: "Source Sans Pro"; */
 	font-family: var( --legal-font-primary );
 	font-style: normal;
-	/* font-weight: 400;
-	line-height: 28px; */
+}
+
+.legal-review-counter:not( .legal-review-counter .review-counter-afillate ) {
 	color: var(--Base-base-09);
 }
 
@@ -367,15 +367,14 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-footer .review-counter-afillate {
-	font-family: "Source Sans Pro";
-	font-size: 16px;
-	font-style: normal;
-	font-weight: 600;
-	line-height: 28.8px;
-	text-transform: uppercase;
+	/* font-family: "Source Sans Pro"; */
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	/* text-transform: uppercase; */
 	text-decoration: none;
 	text-align: center;
-	color: rgb(255, 255, 255);
+	color: var(--Base-base-01);
 }
 
 /* Background */
