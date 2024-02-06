@@ -454,11 +454,11 @@
 	border-radius: 50%;
 }
 
-.legal-review-counter .legal-default .border-internal {
+.legal-review-counter.legal-default .border-internal {
 	background: conic-gradient( var(--Base-base-01), var(--Base-base-09) 0.3% calc( var(--progress ) + 0.5%), var(--Base-base-01) 0deg );
 }
 
-.legal-review-counter .legal-overall .border-internal {
+.legal-review-counter.legal-overall .border-internal {
 	background: conic-gradient( var(--Base-base-01), var(--Base-base-09) 1.6% calc( var(--progress ) + 1.6%), var(--Base-base-01) 0deg );
 }
 
