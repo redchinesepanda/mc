@@ -76,7 +76,8 @@
 	/* Background */
 
 	.legal-review-counter .info-logo {
-		background-position: left 25px center;
+		/* background-position: left 25px center; */
+		background-position: center center;
 	}
 
 }
@@ -365,7 +366,6 @@
 	background-repeat: no-repeat;
 	/* background-size: auto; */
 	background-size: 80%;
-	background-position: center center;
 	border-radius: 12%;
 	border: 1px solid var(--Base-base-09);
 }
