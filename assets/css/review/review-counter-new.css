@@ -385,7 +385,7 @@
 }
 
 .legal-review-counter .border-internal {
-	background: conic-gradient( var(--Base-base-09) calc( var(--progress ) + 0.5%), var(--Base-base-01) 0deg );
+	background: conic-gradient( var(--Base-base-01), var(--Base-base-09) 0.3% calc( var(--progress ) + 0.5%), var(--Base-base-01) 0deg );
 	animation: .7s ease-out turn_in reverse;
 	border-radius: 50%;
 	width: 100%;
