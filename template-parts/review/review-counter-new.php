@@ -21,8 +21,10 @@
 		<?php foreach( $args[ 'items_overall' ] as $overall_id => $overall_item ) : ?>
 			<div class="set-item-wrapper">
 				<div class="set-item set-item-<?php echo $args[ 'amount' ] + $overall_id; ?>" >
-					<div class="set-item-info">
-						<div class="item-value"><?php echo $overall_item[ 'value' ]; ?></div>
+					<div class="border-internal">
+						<div class="set-item-info">
+							<div class="item-value"><?php echo $overall_item[ 'value' ]; ?></div>
+						</div>
 					</div>
 				</div>
 				<div class="item-label"><?php echo $overall_item[ 'label' ]; ?></div>
