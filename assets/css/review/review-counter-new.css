@@ -331,6 +331,7 @@
 	font-size: 16px;
 	/* text-transform: uppercase; */
 	line-height: 22px;
+	font-weight: 600;
 }
 
 .legal-review-counter .item-value {
