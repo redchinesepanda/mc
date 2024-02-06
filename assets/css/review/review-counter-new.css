@@ -209,7 +209,11 @@
 	margin: 1.6px;
 }
 
-.legal-review-counter.legal-overall .set-item-info {
+.legal-review-counter.legal-overall .review-counter-set .set-item-info {
+	margin: 1.5px;
+}
+
+.legal-review-counter.legal-overall .review-counter-set .set-item-info {
 	margin: 1.5px;
 }
 
