@@ -204,18 +204,11 @@
 	margin: 6px;
 }
 
-.legal-review-counter.legal-default .set-item-info {
+.legal-review-counter .set-item-info {
 	/* margin: 10px; */
 	margin: 1.6px;
 }
 
-.legal-review-counter.legal-overall .review-counter-set .set-item-info {
-	margin: 1.5px;
-}
-
-.legal-review-counter.legal-overall .review-counter-set .set-item-info {
-	margin: 1.5px;
-}
 
 /* .legal-review-counter .info-rating {
 	padding: 15px 25px;
