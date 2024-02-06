@@ -75,10 +75,9 @@
 
 	/* Background */
 
-	.legal-review-counter .info-logo {
-		/* background-position: left 25px center; */
-		background-position: center center;
-	}
+	/* .legal-review-counter .info-logo {
+		background-position: left 25px center;
+	} */
 
 }
 
@@ -189,6 +188,7 @@
 
 .legal-review-counter {
 	min-height: 255px;
+	width: 100%;
 }
 
 .legal-review-counter .review-counter-info {
@@ -197,8 +197,8 @@
 
 .legal-review-counter .info-logo {
 	/* min-height: 45px; */
-	width: 72px;
-  	height: 72px;
+	width: 48px;
+  	height: 48px;
 }
 
 .legal-review-counter.legal-default .review-counter-set {
@@ -365,6 +365,7 @@
 .legal-review-counter .info-logo {
 	background-repeat: no-repeat;
 	/* background-size: auto; */
+	background-position: center center;
 	background-size: 80%;
 	border-radius: 12%;
 	border: 1px solid var(--Base-base-09);
