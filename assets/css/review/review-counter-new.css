@@ -450,7 +450,7 @@
 }
 
 .legal-review-counter .border-internal {
-	/* animation: .7s ease-out turn_in reverse; */
+	animation: .7s ease-out turn_in reverse;
 	border-radius: 50%;
 }
 
