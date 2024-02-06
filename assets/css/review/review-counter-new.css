@@ -188,6 +188,9 @@
 
 .legal-review-counter {
 	min-height: 255px;
+}
+
+.legal-billet-mega .legal-review-counter {
 	width: 100%;
 }
 
