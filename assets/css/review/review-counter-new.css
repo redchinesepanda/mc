@@ -70,7 +70,10 @@
 
 	.legal-review-counter {
 		/* padding: 20px 0; */
-		padding: 20px;
+		padding-top: 8px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
 	}
 
 	/* Background */
@@ -86,7 +89,7 @@
 .legal-review-counter {
 	display: flex;
 	/* flex-direction: column; */
-	gap: 20px;
+	column-gap: 20px;
 	flex-wrap: wrap;
 }
 
@@ -170,7 +173,17 @@
 /* Position */
 
 .legal-review-counter {
-	margin-bottom: 15px;
+	margin-bottom: 24px;
+}
+
+.legal-review-counter .review-counter-info {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.legal-review-counter .review-counter-set {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .legal-review-counter.legal-default .set-item-info {
