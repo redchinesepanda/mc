@@ -297,7 +297,9 @@
 	font-style: normal;
 }
 
-.legal-review-counter:not( .legal-review-counter .review-counter-afillate ) {
+.legal-review-counter .info-rating,
+.legal-review-counter .item-value,
+.legal-review-counter .item-label {
 	color: var(--Base-base-09);
 }
 
