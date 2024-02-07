@@ -72,9 +72,9 @@
 
     /* Anchors Position */
     
-    .review-anchors {
+   /*  .review-anchors {
         padding: 5px 0px;
-    }
+    } */
 
 }
 
@@ -100,7 +100,9 @@
 
 .review-anchors .anchors-item {
     margin-top: 8px;
+    padding-top: 6px;
     padding-right: 24px;
+    padding-bottom: 6px;
     padding-left: 24px;
 }
 
