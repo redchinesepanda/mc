@@ -159,5 +159,5 @@
 
 .swiper-slide {
     width: fit-content !important;
-    height: 36px !important;
+    height: fit-content !important;
 }
