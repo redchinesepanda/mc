@@ -63,7 +63,7 @@
 /* Compilation Typography */
 
 .legal-compilation .compilation-title {
-    font-family: "Source Sans Pro";
+    font-family: var( --legal-font-primary );
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
