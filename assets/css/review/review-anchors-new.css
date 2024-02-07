@@ -158,6 +158,6 @@
 }
 
 .swiper-slide {
-    width: fit-content;
-    min-height: 30px;
+    width: fit-content !important;
+    height: 36px !important;
 }
