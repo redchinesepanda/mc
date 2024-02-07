@@ -84,7 +84,7 @@
 .review-anchors {
     display: flex;
     /* column-gap: 20px; */
-    column-gap: 8px;
+    /* column-gap: 8px; */
     flex-wrap: wrap;
     /* justify-content: center; */
 }
@@ -152,12 +152,12 @@
 
 /* Anchors Swiper */
 
-.swiper {
+/* .swiper {
     width: 100%;
     height: fit-content;
-}
+} */
 
-.swiper-slide {
+/* .swiper-slide {
     width: fit-content !important;
     height: fit-content !important;
-}
+} */
