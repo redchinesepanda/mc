@@ -40,13 +40,13 @@
 
     /* Background */
 
-    .review-anchors:not( .legal-active ) .anchors-title {
+  /*   .review-anchors:not( .legal-active ) .anchors-title {
         background-image: url( '../../img/review/review-anchors-open.svg' );
-    }
+    } */
 
-    .review-anchors.legal-active .anchors-title {
+  /*   .review-anchors.legal-active .anchors-title {
         background-image: url( '../../img/review/review-anchors-close.svg' );
-    }
+    } */
 
     .review-anchors .anchors-title {
         background-position: right center;
