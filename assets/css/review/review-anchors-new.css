@@ -146,5 +146,5 @@
 }
 
 .review-anchors .anchors-item:hover {
-    font-weight: 600;
+    text-shadow: 0 0 0.35px var(--Base-base-09);
 }
