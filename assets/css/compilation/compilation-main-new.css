@@ -23,9 +23,9 @@
 }
 
 .legal-compilation .compilation-date {
-    padding-left: 20px;
-    margin-left: auto;
-    margin-bottom: 20px;
+    padding: 4px 18px;
+   /*  margin-left: auto; */
+    margin-bottom: 24px;
 }
 
 /* Width and Height */
@@ -47,6 +47,11 @@
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
 } */
+
+.legal-compilation .compilation-date {
+    border-radius: 18px;
+    background: var(--Base-base-02);
+}
 
 /* .legal-compilation .compilation-date {
     background-image: url( '../../img/compilation/compilation-updated.svg' );
