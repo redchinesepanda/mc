@@ -82,13 +82,24 @@
 
 .review-anchors {
     display: flex;
-    column-gap: 20px;
+    /* column-gap: 20px; */
+    column-gap: 8px;
     flex-wrap: wrap;
     /* justify-content: center; */
 }
 
+ /* Anchors Position */
+
 .review-anchors {
     margin: 0px auto;
+}
+
+.review-anchors .anchors-title {
+    padding-bottom: 10px;
+}
+
+.review-anchors .anchors-item {
+    margin-top: 8px;
 }
 
 /* Anchors Width and Height */
@@ -118,8 +129,7 @@ nav.anchors {
     font-weight: 700;
 }
 
-.review-anchors .anchors-item,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).anchors-item {
+.review-anchors .anchors-item {
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
