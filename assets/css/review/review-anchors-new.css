@@ -67,7 +67,8 @@
     /* Anchors Width and Height */
 
     .review-anchors {
-        width: 1080px;
+        /* width: 1080px; */
+        max-width: var( --base-width-desktop );
     }
 
     /* Anchors Position */
