@@ -56,6 +56,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			slidesPerView: 'auto',
 		
 		});
+
+		swiper.slidesPerViewDynamic();
 	})
 	
 } );
