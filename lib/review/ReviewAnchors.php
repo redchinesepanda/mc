@@ -18,8 +18,8 @@ class ReviewAnchors
 		],
 
         /* подключение свайпера начало*/
-        'legal-swiper-new' => [
-			'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        'review-swiper-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-swiper-new.css',
 
 			'ver' => '1.0.0',
 		],
