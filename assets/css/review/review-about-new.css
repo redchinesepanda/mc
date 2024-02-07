@@ -138,6 +138,7 @@
 
 .tcb-post-content .legal-afillate {
     width: fit-content;
+    min-height: 36px;
 }
 
 .review-about .about-achievement {
@@ -165,11 +166,12 @@
 
 .review-about .legal-afillate,
 .tcb-post-content .legal-afillate {
-    padding: 5px 45px 5px 20px;
+    /* padding: 5px 45px 5px 20px; */
+    padding: 10px 18px;
 }
 
 .tcb-post-content > .legal-afillate {
-    margin: 0px auto 30px auto;
+    margin: 0px auto 24px auto;
 }
 
 .review-about .achievement-bonus .achievement-bonus-link {
@@ -203,16 +205,15 @@
     background-size: auto;
 }
 
-.legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
-    background-image: url( '../../img/review/review-bet-here.svg' );
-    background-position: right 22px center;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-color: rgb(89, 151, 227);
-    border-radius: 20px;
-    border: 1.6px solid rgb(255, 255, 255);
+.legal-afillate {
+   /*  background-image: url( '../../img/review/review-bet-here.svg' ); */
+    /* background-position: right 22px center; */
+   /*  background-repeat: no-repeat; */
+   /*  background-size: auto; */
+    /* background-color: rgb(89, 151, 227); */
+    border-radius: 60px;
+    background-color: var(--Base-base-09);
+    /* border: 1.6px solid rgb(255, 255, 255); */
 }
 
 .review-about.legal-default .achievement-bonus .achievement-bonus-link {
@@ -311,22 +312,20 @@
 }
 
 .legal-afillate:hover {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+    /* text-decoration: none;
+    color: rgb(255, 255, 255); */
+    background-color: var(--Base-base-07);
 }
 
-.legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
-    font-family: "Source Sans Pro";
+.legal-afillate {
+    font-family: var( --legal-font-primary );
     font-size: 16px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 28.8px;
-    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 22px;
     text-decoration: none;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: var(--Base-base-01);
 }
 
 .review-about.legal-black .legal-afillate-description {
