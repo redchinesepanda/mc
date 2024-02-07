@@ -1,0 +1,92 @@
+/* Compilation Display */
+
+/* Compilation Position */
+
+.legal-compilation:not( :last-child ) {
+    margin-bottom: 30px; 
+}
+
+.legal-compilation .compilation-title.legal-image {
+    padding-left: 70px;
+}
+
+.legal-compilation .compilation-title {
+    margin-bottom: 30px;
+}
+
+.legal-compilation .compilation-attention.legal-attention {
+    padding: 10px 20px;
+}
+
+.legal-compilation .compilation-attention:not( :last-child ) {
+    margin-bottom: 15px;
+}
+
+.legal-compilation .compilation-date {
+    padding-left: 20px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+/* Width and Height */
+
+.legal-compilation .compilation-date {
+    width: fit-content;
+}
+
+/* Compilation Background */
+
+.legal-compilation .compilation-title.legal-image {
+    background-position: left 15px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.legal-compilation .compilation-attention.legal-attention {
+    background-color: rgb(255, 94, 106);
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
+}
+
+.legal-compilation .compilation-date {
+    background-image: url( '../../img/compilation/compilation-updated.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Compilation Typography */
+
+.legal-compilation .compilation-title {
+    font-family: "Source Sans Pro";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.legal-compilation .compilation-attention.legal-attention {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.legal-compilation .compilation-attention {
+    color: rgb(59, 59, 59);
+}
+
+.legal-compilation .compilation-attention {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.legal-compilation .compilation-date {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(59, 59, 59, 0.5);
+    line-height: 20px;
+}
