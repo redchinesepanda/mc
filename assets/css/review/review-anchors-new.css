@@ -100,6 +100,8 @@
 
 .review-anchors .anchors-item {
     margin-top: 8px;
+    padding-right: 24px;
+    padding-left: 24px;
 }
 
 /* Anchors Width and Height */
@@ -110,8 +112,13 @@
 
 /* Anchors Background */
 
-nav.anchors {
+/* nav.anchors {
     background-color: rgb(239, 245, 251);
+} */
+
+.review-anchors .anchors-item {
+    border: 1px solid var(--Base-base-09);
+    border-radius: 60px;
 }
 
 /* Anchors Typography */
