@@ -34,9 +34,9 @@
         width: 100%;
     }
 
-    .review-anchors .anchors-item {
+    /* .review-anchors .anchors-item {
         width: calc( 50% - 10px );
-    }
+    } */
 
     /* Background */
 
@@ -148,16 +148,3 @@
 .review-anchors .anchors-item:hover {
     text-shadow: 0 0 0.7px var(--Base-base-09);
 }
-
-
-/* Anchors Swiper */
-
-/* .swiper {
-    width: 100%;
-    height: fit-content;
-} */
-
-/* .swiper-slide {
-    width: fit-content !important;
-    height: fit-content !important;
-} */
