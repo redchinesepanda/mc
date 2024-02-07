@@ -795,7 +795,7 @@ body {
 }
 
 .billet-title .billet-title-rating::before {
-    content: '\F10F';
+    content: '\F110';
     /* color: var(--Base-base-09); */
     line-height: 24px;
     font-size: 24px;
