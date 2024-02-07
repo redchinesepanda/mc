@@ -52,10 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll('.swiper').forEach(el => {
 		/*--------------------Swiper--------------*/
 		new Swiper(el, {
-			loop: true,
+			loop: false,
 			slidesPerView: 'auto',
-			spaceBetween: 15,
-			allowSlideNext: false,
+			spaceBetween: 8,
 		});
 	})
 	
