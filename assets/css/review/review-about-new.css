@@ -108,7 +108,10 @@
 }
 
 .legal-afillate {
-    display: block;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .legal-afillate[href=""] {
@@ -138,6 +141,7 @@
 
 .tcb-post-content .legal-afillate {
     width: fit-content;
+    min-width: 252px;
     min-height: 36px;
 }
 
