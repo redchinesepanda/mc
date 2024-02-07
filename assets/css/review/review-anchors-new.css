@@ -145,6 +145,6 @@
     text-decoration: none;
 }
 
-.review-anchors .anchors-item {
+.review-anchors .anchors-item:hover {
     font-weight: 600;
 }
