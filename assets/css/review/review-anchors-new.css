@@ -154,7 +154,7 @@
 
 .swiper {
     width: 100%;
-    height: 40px;
+    height: fit-content;
 }
 
 .swiper-slide {
