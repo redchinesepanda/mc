@@ -1,0 +1,120 @@
+@media screen and ( max-width: 767px )
+{
+    /* Display */
+
+    .review-anchors {
+        row-gap: 10px;
+    }
+
+    .review-anchors .anchors-title {
+        cursor: pointer;
+    }
+
+    .review-anchors:not( .legal-active ) .anchors-item {
+        display: none;
+    }
+
+    .review-anchors .anchors-item {
+        flex-grow: 1;
+    }
+
+    /* Anchors Position */
+    
+    .review-anchors {
+        padding: 5px 15px;
+    }
+
+    .review-anchors .anchors-title {
+        padding-right: 30px;
+    }
+
+    /* Width and Height */
+
+    .review-anchors .anchors-title {
+        width: 100%;
+    }
+
+    .review-anchors .anchors-item {
+        width: calc( 50% - 10px );
+    }
+
+    /* Background */
+
+    .review-anchors:not( .legal-active ) .anchors-title {
+        background-image: url( '../../img/review/review-anchors-open.svg' );
+    }
+
+    .review-anchors.legal-active .anchors-title {
+        background-image: url( '../../img/review/review-anchors-close.svg' );
+    }
+
+    .review-anchors .anchors-title {
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Anchors Display */
+
+    .review-anchors .anchors-control {
+        display: none;
+    }
+
+    /* Anchors Width and Height */
+
+    .review-anchors {
+        width: 1080px;
+    }
+
+    /* Anchors Position */
+    
+    .review-anchors {
+        padding: 5px 0px;
+    }
+
+}
+
+/* Anchors Display */
+
+.review-anchors {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.review-anchors {
+    margin: 0px auto;
+}
+
+/* Anchors Background */
+
+nav.anchors {
+    background-color: rgb(239, 245, 251);
+}
+
+/* Anchors Typography */
+
+.review-anchors .anchors-title {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    color: rgb(59, 59, 59);
+}
+
+.review-anchors .anchors-item,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).anchors-item {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    text-decoration: none;
+    color: rgba(10, 10, 10, 0.85);
+}

@@ -10,9 +10,29 @@ class ReviewAnchors
         ],
     ];
 
-    public static function register_style()
+    const CSS_NEW = [
+        'review-anchors-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+/*     public static function register_style()
     {
         ReviewMain::register_style( self::CSS );
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ReviewMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_style( self::CSS );
+		}
     }
 
     const JS = [

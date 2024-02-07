@@ -1,0 +1,368 @@
+@media screen and ( max-width: 767px )
+{
+    /* Review About Display */
+
+    .review-about {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .review-about .about-achievement {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .review-about .about-right {
+        align-items: center;
+    }
+
+    /* Review About Width and Height */
+
+    .review-about .legal-afillate {
+        width: 250px;
+    }
+
+    /* Review About Position */
+
+    .review-about {
+        padding: 20px 15px;
+    }
+}
+
+@media screen and ( min-width: 768px )
+{
+    /* Review About Display */
+
+    .review-about {
+        column-gap: 20px;
+    }
+
+    /* Review About Position */
+
+    .review-about {
+        margin: 0px auto;
+    }
+
+    .review-about:not( .legal-mode-mini ) {
+        padding: 10px 0px;
+    }
+
+    .review-about.legal-mode-mini {
+        padding: 10px 20px;
+    }
+
+    .review-about.legal-mode-mini {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .review-about .about-achievement {
+        padding: 30px 0px;
+    }
+    
+    /* Review About Width and Height */
+
+    .review-about {
+        /* width: 1080px; */
+    }
+
+    .review-about .about-left,
+    .review-about .about-right {
+        width: calc( 25% - 20px );
+    }
+
+    .review-about .about-center {
+        width: calc( 50% - 20px );
+    }
+
+    .review-about.legal-mode-mini {
+        width: 800px;
+    }
+
+    .review-about .about-achievement div {
+        width: 270px;
+    }
+    
+}
+
+/* Review About Display */
+
+.review-about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.review-about .about-left,
+.review-about .about-center,
+.review-about .about-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+}
+
+.review-about .about-left {
+    align-items: center;
+}
+
+.legal-afillate {
+    display: block;
+}
+
+.legal-afillate[href=""] {
+    pointer-events: none;
+}
+
+.review-about .about-achievement {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.review-about .achievement-bonus-link {
+    display: inline-block;
+}
+
+/* Review About Width and Height */
+
+.review-about .about-logo {
+    width: 100%;
+    height: 45px;
+}
+
+.review-about .about-rating {
+    width: fit-content;
+}
+
+.tcb-post-content .legal-afillate {
+    width: fit-content;
+}
+
+.review-about .about-achievement {
+    width: 100%;
+}
+
+.review-about .achievement-bonus-link {
+    height: 28px;
+}
+
+/* Review About Position */
+
+.review-about-wrapper.legal-mode-mini {
+    padding-bottom: 30px;
+}
+
+.review-about .about-rating {
+    padding-left: 34px;
+}
+
+.review-about .about-center h1,
+.review-about .about-center .review-bonus-title {
+    padding-bottom: 0px;
+}
+
+.review-about .legal-afillate,
+.tcb-post-content .legal-afillate {
+    padding: 5px 45px 5px 20px;
+}
+
+.tcb-post-content > .legal-afillate {
+    margin: 0px auto 30px auto;
+}
+
+.review-about .achievement-bonus .achievement-bonus-link {
+    padding-left: 37px;
+}
+
+.review-about .achievement-name .achievement-bonus-link {
+    padding-left: 32px;
+}
+
+.review-about .achievement-app .achievement-bonus-link {
+    padding-left: 64px;
+}
+
+/* Review About Background */
+
+.review-about.legal-mode-mini {
+    border-radius: 20px;
+}
+
+.review-about .about-logo {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.review-about .about-rating {
+    background-image: url( '../../img/review/review-rating.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
+    background-image: url( '../../img/review/review-bet-here.svg' );
+    background-position: right 22px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgb(89, 151, 227);
+    border-radius: 20px;
+    border: 1.6px solid rgb(255, 255, 255);
+}
+
+.review-about.legal-default .achievement-bonus .achievement-bonus-link {
+    background-image: url( '../../img/review/about/bonus-white.svg' );
+}
+
+.review-about.legal-black .achievement-bonus .achievement-bonus-link {
+    background-image: url( '../../img/review/about/bonus-black.svg' );
+}
+
+.review-about.legal-default .achievement-name .achievement-bonus-link {
+    background-image: url( '../../img/review/about/achievement-white.svg' );
+}
+
+.review-about.legal-black .achievement-name .achievement-bonus-link {
+    background-image: url( '../../img/review/about/achievement-black.svg' );
+}
+
+.review-about .achievement-bonus .achievement-bonus-link,
+.review-about .achievement-name .achievement-bonus-link {
+    background-position: left center;
+}
+
+.review-about .achievement-bonus .achievement-bonus-link,
+.review-about .achievement-name .achievement-bonus-link,
+.review-about .achievement-app .achievement-bonus-link {
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.review-about.legal-default .achievement-app .achievement-bonus-link {
+    background-image: url( '../../img/review/about/ios-white.svg' ),
+    url( '../../img/review/about/android-white.svg' );
+}
+
+.review-about.legal-black .achievement-app .achievement-bonus-link {
+    background-image: url( '../../img/review/about/ios-black.svg' ),
+    url( '../../img/review/about/android-black.svg' );
+}
+
+.review-about .achievement-app .achievement-bonus-link {
+    background-position: left center, left 32px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Review About Typography */
+
+.review-about:not( .legal-black ) .about-rating,
+.review-about:not( .legal-black ) .about-center h1,
+.review-about:not( .legal-black ) .about-center .review-bonus-title,
+.review-about:not( .legal-black ) .about-center .review-bonus-description {
+    color: #ffffff;
+}
+
+.review-about.legal-black .about-rating,
+.review-about.legal-black .about-center h1,
+.review-about.legal-black .about-center .review-bonus-title,
+.review-about.legal-black .about-center .review-bonus-description {
+    color: #000000;
+}
+
+.review-about .about-rating {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.review-about .about-center h1 {
+    font-family: "Source Sans Pro";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26.4px;
+    text-align: center;
+}
+
+.review-about .about-center .review-bonus-title {
+    font-family: "Source Sans Pro";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.review-about .about-center .review-bonus-description {
+    font-family: "Source Sans Pro";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: center;
+}
+
+.legal-afillate:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).legal-afillate:hover {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.review-about.legal-black .legal-afillate-description {
+    color: #000000;
+}
+
+.review-about:not( .legal-black ) .legal-afillate-description {
+    color: rgb(255, 255, 255);
+}
+
+.review-about .legal-afillate-description {
+    font-family: "Source Sans Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24.5px;
+    text-align: center;
+}
+
+.review-about.legal-default .about-achievement .achievement-bonus-link {
+    color: rgb(255, 255, 255);
+}
+
+.review-about.legal-black .about-achievement .achievement-bonus-link {
+    color: #000000;
+}
+
+.review-about .about-achievement .achievement-bonus-link {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.review-about .about-achievement div {
+    text-align: center;
+}

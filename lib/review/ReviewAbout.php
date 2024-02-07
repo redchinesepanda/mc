@@ -10,11 +10,31 @@ class ReviewAbout
         ],
     ];
 
-    public static function register_style()
+    const CSS_NEW = [
+        'review-about-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+/*     public static function register_style()
     {
         if ( self::check() ) {
             ToolEnqueue::register_style( self::CSS );
         }
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ToolEnqueue::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
     }
 
     public static function register_inline_style()
