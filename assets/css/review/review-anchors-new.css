@@ -84,11 +84,17 @@
     display: flex;
     column-gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .review-anchors {
     margin: 0px auto;
+}
+
+/* Anchors Width and Height */
+
+.review-anchors .anchors-title {
+    width: 100%;
 }
 
 /* Anchors Background */
@@ -99,22 +105,22 @@ nav.anchors {
 
 /* Anchors Typography */
 
-.review-anchors .anchors-title {
-    font-family: "Source Sans Pro";
-    font-size: 13px;
+.review-anchors .anchors-title,
+.review-anchors .anchors-item {
+    font-family: var( --legal-font-primary );
+    color: var(--Base-base-01);
+    line-height: 22px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
-    color: rgb(59, 59, 59);
+}
+
+.review-anchors .anchors-title {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .review-anchors .anchors-item,
 :not(.inc) .thrv_text_element a:not(.tcb-button-link).anchors-item {
-    font-family: "Source Sans Pro";
-    font-size: 13px;
-    font-style: normal;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 26px;
     text-decoration: none;
-    color: rgba(10, 10, 10, 0.85);
 }
