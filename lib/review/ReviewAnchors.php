@@ -16,6 +16,15 @@ class ReviewAnchors
 
 			'ver' => '1.0.0',
 		],
+
+        /* подключение свайпера начало*/
+        'legal-swiper-new' => [
+			'path' => LegalMain::LEGAL_URL . 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+
+			'ver' => '1.0.0',
+		],
+        /* подключение свайпера конец*/
+
     ];
 
 /*     public static function register_style()
@@ -43,9 +52,36 @@ class ReviewAnchors
         ],
     ];
 
-    public static function register_script()
+    const JS_NEW = [
+        'review-anchors-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
+
+            'ver' => '1.0.0',
+        ],
+
+        'legal-swiper-new' => [
+            'path' => LegalMain::LEGAL_URL . 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+
+  /*   public static function register_script()
     {
         ReviewMain::register_script( self::JS );
+    } */
+
+    public static function register_script()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ReviewMain::register_script( self::JS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_script( self::JS );
+		}
     }
 
     public static function register_admin_script()
