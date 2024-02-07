@@ -144,3 +144,7 @@
     font-weight: 400;
     text-decoration: none;
 }
+
+.review-anchors .anchors-item {
+    font-weight: 600;
+}
