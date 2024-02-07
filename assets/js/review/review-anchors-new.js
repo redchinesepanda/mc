@@ -54,10 +54,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		new Swiper(el, {
 			loop: true,
 			slidesPerView: 'auto',
-		
+			spaceBetween: 15,
 		});
-
-		swiper.slidesPerViewDynamic();
 	})
 	
 } );
