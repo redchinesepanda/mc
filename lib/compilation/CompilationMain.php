@@ -40,6 +40,12 @@ class CompilationMain
 
 			'ver' => '1.0.0',
 		],
+
+        'compilation-bonus-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-bonus-new.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
 /* 	public static function register_style( $styles = [] )
