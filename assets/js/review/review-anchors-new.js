@@ -1,6 +1,6 @@
 // review-anchors-js start
 
-document.addEventListener( 'DOMContentLoaded', function ()
+/* document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleItems( event )
 	{
@@ -41,6 +41,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	toggleInit();
 
 	window.addEventListener( 'resize', toggleInit, false );
-} );
+} ); */
 
 // review-anchors-js end
+
+
+document.addEventListener( 'DOMContentLoaded', function ()
+{
+	
+	document.querySelectorAll('.swiper').forEach(el => {
+		/*--------------------Swiper--------------*/
+		new Swiper(el, {
+			loop: true,
+			/* pagination: {
+				el: '.swiper-pagination',
+			},
+			navigation: {
+				nextEl:'.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			}, */
+		});
+	})
+	
+} );

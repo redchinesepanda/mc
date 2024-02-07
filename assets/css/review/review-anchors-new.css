@@ -148,3 +148,11 @@
 .review-anchors .anchors-item:hover {
     text-shadow: 0 0 0.7px var(--Base-base-09);
 }
+
+
+/* Anchors Swiper */
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
