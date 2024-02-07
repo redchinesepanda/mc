@@ -53,6 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		/*--------------------Swiper--------------*/
 		new Swiper(el, {
 			loop: true,
+			slidesPerView: 'auto',
 		
 		});
 	})
