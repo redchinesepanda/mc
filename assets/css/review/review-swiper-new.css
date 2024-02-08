@@ -40,7 +40,13 @@
   .review-anchors .swiper {
     width: 100%;
     /* height: fit-content; */
-    height: 36px;
+    /* height: 36px; */
+  }
+
+  .review-group .swiper {
+    width: 100%;
+    /* height: fit-content; */
+    /* height: 36px; */
   }
 
   .swiper-vertical>.swiper-wrapper {
