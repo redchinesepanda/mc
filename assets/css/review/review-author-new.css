@@ -71,6 +71,13 @@
 	border: 2px solid var(--Base-base-09);
 }
 
+#theme-bottom-section .legal-author .author-photo::after {
+	background-image: url( '../../img/review/review-label-check.svg' );
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
 /* Typography */
 
 #theme-bottom-section .legal-author .author-name,
