@@ -73,7 +73,7 @@
 
 	/* Typography */
 
-	.legal-review-counter .review-counter-overall .item-label {
+	.legal-review-counter.legal-overall .review-counter-set .item-label {
 		text-align: center;
 	}
 }
