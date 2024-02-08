@@ -8,8 +8,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
-			/* spaceBetween: 8, */
-			/* normalizeSlideIndex: false, */
 		});
 	})
 	

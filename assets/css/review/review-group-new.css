@@ -1,0 +1,68 @@
+@media screen and ( min-width: 768px )
+{
+    /* Group Position */
+
+    .review-group {
+        padding: 20px 0px 5px 0px;
+    }
+}
+
+@media screen and ( max-width: 767px )
+{
+    /* Group Position */
+
+    .review-group {
+        padding: 20px 15px 5px 15px;
+    }
+}
+
+/* Group Display */
+
+.review-group {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 46px;
+    justify-content: center;
+}
+
+/* Group Width and Height */
+#theme-content-section .tve_wp_shortcode:not( .legal-off-style ) {
+    width: inherit;
+}
+
+/* Group Position */
+
+/* nav.group {
+    padding-bottom: 30px;
+} */
+
+.review-group {
+    margin: 0px auto;
+}
+
+/* Group Background */
+
+.review-group {
+    border-bottom: 0.8px solid rgb(199, 227, 255);
+}
+
+/* Group Typography */
+
+.review-group .group-item,
+:not(.inc) .thrv_text_element a:not(.tcb-button-link).group-item {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.review-group span.group-item {
+    color: rgb(59, 59, 59);
+}
+
+.review-group a.group-item {
+    color: rgb(89, 151, 227);
+}
