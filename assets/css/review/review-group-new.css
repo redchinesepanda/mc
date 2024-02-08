@@ -69,22 +69,29 @@
 
 /* Group Typography */
 
-.review-group .group-item,
-:not(.inc) .thrv_text_element a:not(.tcb-button-link).group-item {
+.review-group .group-item {
    /*  font-family: "Source Sans Pro"; */
-   font-family: var( --legal-font-primary );
-    font-size: 16px;
+    font-family: var( --legal-font-primary );
+    font-size: 14px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 28px;
-    text-transform: uppercase;
+    line-height: 20px;
+    color: var(--Base-base-09);
+   /*  text-transform: uppercase; */
+}
+
+.review-group span.group-item {
+    font-weight: 500;
+}
+
+.review-group a.group-item {
+    font-weight: 400;
     text-decoration: none;
 }
 
-.review-group .group-item {
-    /* color: rgb(59, 59, 59); */
+/* .review-group .group-item {
+    color: rgb(59, 59, 59);
     color: var(--Base-base-09);
-}
+} */
 
 /* .review-group a.group-item {
     color: rgb(89, 151, 227);
