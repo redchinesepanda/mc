@@ -80,6 +80,10 @@
 
 /* Typography */
 
+#theme-bottom-section .legal-author .author-photo::after {
+	content: "";
+}
+
 #theme-bottom-section .legal-author .author-name,
 #theme-bottom-section .legal-author .author-duty {
 	font-family: var( --legal-font-primary );
