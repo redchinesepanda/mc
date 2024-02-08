@@ -41,7 +41,9 @@
 /* Position */
 
 #theme-bottom-section .legal-author {
-	margin: 0px auto;
+/* 	margin: 0px auto; */
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /* Width and Height */
