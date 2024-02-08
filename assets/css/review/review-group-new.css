@@ -9,9 +9,9 @@
 
     /* Group Position */
 
-    .review-group {
+   /*  .review-group {
         padding: 20px 0px 5px 0px;
-    }
+    } */
 }
 
 @media screen and ( max-width: 767px )
@@ -19,7 +19,9 @@
     /* Group Position */
 
     .review-group {
-        padding: 20px 15px 5px 15px;
+        /* padding: 20px 15px 5px 15px; */
+        padding-right: 16px;
+        padding-left: 16px;
     }
 }
 
