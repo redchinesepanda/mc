@@ -29,7 +29,7 @@
 
 #theme-bottom-section .legal-author {
 	display: flex;
-	column-gap: 20px;
+	column-gap: 16px;
 }
 
 #theme-bottom-section .legal-author .author-data {
@@ -51,8 +51,8 @@
 #theme-bottom-section .legal-author .author-photo {
 	/* width: 100px;
 	height: 100px; */
-	width: 64px;
-	height: 64px;
+	width: 80px;
+	height: 80px;
 }
 
 /* Background */
