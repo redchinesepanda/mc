@@ -21,7 +21,8 @@
     /* Anchors Position */
     
     .review-anchors {
-        padding: 5px 15px;
+        /* padding: 5px 15px; */
+        padding-top: 32px;
     }
 
     .review-anchors .anchors-title {
@@ -73,9 +74,10 @@
 
     /* Anchors Position */
     
-   /*  .review-anchors {
-        padding: 5px 0px;
-    } */
+    .review-anchors {
+        /* padding: 5px 0px; */
+        padding-top: 48px;
+    }
 
 }
 
