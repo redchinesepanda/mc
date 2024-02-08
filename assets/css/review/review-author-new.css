@@ -50,7 +50,8 @@
 
 #theme-bottom-section .legal-author
 {
-	border-top: 1px dashed rgb(198,198,198);
+	/* border-top: 1px dashed rgb(198,198,198); */
+	border-bottom: 1px solid var(--Gray-200);
 }
 
 #theme-bottom-section .legal-author .author-photo {
@@ -64,24 +65,27 @@
 
 /* Typography */
 
-#theme-bottom-section .legal-author .author-name {
-	font-family: "Source Sans Pro";
-	font-size: 16px;
+#theme-bottom-section .legal-author .author-name,
+#theme-bottom-section .legal-author .author-duty {
+	font-family: var( --legal-font-primary );
 	font-style: normal;
+	color: var(--Base-base-09);
+}
+
+#theme-bottom-section .legal-author .author-name {
+	font-size: 16px;
 	font-weight: 600;
-	line-height: 28.8px;
-	color: rgb(89, 151, 227);
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	line-height: 22px;
+	/* color: rgb(89, 151, 227); */
+	/* letter-spacing: 2px; */
+	/* text-transform: uppercase; */
 }
 
 #theme-bottom-section .legal-author .author-duty {
-	font-family: "Source Sans Pro";
-	font-size: 12px;
-	font-style: normal;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 19.2px;
-	color: rgb(106, 107, 108);
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	line-height: 20px;
+	/* color: rgb(106, 107, 108); */
+	/* letter-spacing: 2px; */
+	/* text-transform: uppercase; */
 }
