@@ -32,13 +32,17 @@
 		row-gap: 20px;
 	}
 
-	.legal-review-counter.legal-overall .review-counter-overall {
+	.legal-review-counter .review-counter-overall {
 		align-items: center;
 	}
 
 	.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 		flex-direction: column;
 		row-gap: 10px;
+	}
+
+	.legal-review-counter .review-counter-overall .set-item-wrapper {
+		flex-direction: column;
 	}
 
 	.legal-review-counter .review-counter-set {
@@ -65,6 +69,12 @@
 
 	.legal-review-counter .info-logo {
 		background-position: top center;
+	}
+
+	/* Typography */
+
+	.legal-review-counter .review-counter-overall .item-label {
+		text-align: center;
 	}
 }
 
@@ -134,7 +144,7 @@
 	align-items: center;
 }
 
-.legal-review-counter.legal-overall .review-counter-overall {
+.legal-review-counter .review-counter-overall {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
@@ -149,7 +159,7 @@
 	
 }
 
-.legal-review-counter.legal-overall .review-counter-overall .set-item-wrapper {
+.legal-review-counter .review-counter-overall .set-item-wrapper {
 	/* display: flex; */
 	/* flex-direction: column; */
 	align-items: center;
@@ -289,7 +299,7 @@
 	width: 80px;
 }
 
-.legal-review-counter.legal-overall .review-counter-overall .set-item {
+.legal-review-counter .review-counter-overall .set-item {
 	width: 80px;
 	height: 80px;
 }
@@ -369,7 +379,7 @@
 } */
 
 .legal-review-counter.legal-overall .review-counter-set .item-label,
-.legal-review-counter.legal-overall .review-counter-overall .item-label {
+.legal-review-counter .review-counter-overall .item-label {
 	/* font-family: "Source Sans Pro"; */
 	font-size: 13px;
 	font-weight: 400;
@@ -385,7 +395,7 @@
 	color: #000000;
 } */
 
-.legal-review-counter.legal-overall .review-counter-overall .item-label {
+.legal-review-counter .review-counter-overall .item-label {
 /* 	font-family: "Source Sans Pro";
 	font-size: 13px;
 	font-style: normal;
@@ -447,7 +457,7 @@
 	background: conic-gradient( var(--Base-base-09), var( --Primitives-purple-40 ) 1.6% var(--progress ), var(--Base-base-09) calc( var(--progress ) + 1.6%), var( --legal-counter-second ) 0deg );
 }
 
-.legal-review-counter.legal-overall .review-counter-overall .set-item {
+.legal-review-counter .review-counter-overall .set-item {
 	background: conic-gradient( var(--Base-base-09), var( --Primitives-purple-40 ) 1% var(--progress ), var(--Base-base-09) calc( var(--progress ) + 1%), var( --legal-counter-second ) 0deg );
 }
 
@@ -464,7 +474,7 @@
 	background: conic-gradient( var(--Base-base-01), var(--Base-base-09) 1.6% calc( var(--progress ) + 1.6%), var(--Base-base-01) 0deg );
 }
 
-.legal-review-counter.legal-overall .review-counter-overall .border-internal {
+.legal-review-counter .review-counter-overall .border-internal {
 	background: conic-gradient( var(--Base-base-01), var(--Base-base-09) 1% calc( var(--progress ) + 1%), var(--Base-base-01) 0deg );
 }
 
