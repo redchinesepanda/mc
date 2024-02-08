@@ -32,6 +32,10 @@
 	column-gap: 16px;
 }
 
+#theme-bottom-section .legal-author .author-photo::after {
+	display: block;
+}
+
 #theme-bottom-section .legal-author .author-data {
 	display: flex;
 	flex-direction: column;
@@ -53,6 +57,11 @@
 	height: 100px; */
 	width: 80px;
 	height: 80px;
+}
+
+#theme-bottom-section .legal-author .author-photo::after {
+	width: 14px;
+	height: 14px;
 }
 
 /* Background */
