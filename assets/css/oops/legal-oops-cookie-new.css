@@ -179,7 +179,7 @@
 
 .legal-oops-cookie .oops-cookie-button:hover,
 .legal-oops-cookie .oops-cookie-privacy:hover {
-	font-weight: 600;
+	text-shadow: 0 0 0.6px var(--Base-base-09);
 }
 
 .legal-oops-cookie .oops-cookie-button {

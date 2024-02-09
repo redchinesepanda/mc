@@ -250,12 +250,9 @@
 	color: var(--Base-base-01);
 }
 
-.legal-oops-age .age-button-yes-link:hover {
-	font-weight: 600;
-}
-
+.legal-oops-age .age-button-yes-link:hover,
 .legal-oops-age .age-button-no-link:hover {
-	font-weight: 600;
+	text-shadow: 0 0 0.6px var(--Base-base-09);
 }
 
 .legal-oops-age .oops-age-after {
