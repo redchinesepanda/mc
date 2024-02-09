@@ -36,6 +36,7 @@
 
 	.legal-oops-cookie-wrapper {
 		max-width: 520px;
+		box-sizing: border-box;
 	}
 
 	/* Position */
