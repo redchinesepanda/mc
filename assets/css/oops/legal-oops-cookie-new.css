@@ -9,6 +9,11 @@
 
 	/* Position */
 
+	.legal-oops-cookie-wrapper {
+		bottom: 0px;
+		left: 0px;
+	}
+
 	.legal-oops-cookie {
 		padding: 0px 20px;
 	}
@@ -23,6 +28,27 @@
 	.legal-oops-cookie .oops-cookie-button {
 		text-align: center;
 	}
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+
+	.legal-oops-cookie-wrapper {
+		max-width: 520px;
+	}
+
+	/* Position */
+
+	.legal-oops-cookie-wrapper {
+		bottom: 32px;
+		left: 32px;
+		padding-top: 24px;
+		padding-right: 16px;
+		padding-bottom: 24px;
+		padding-left: calc(16px + 54px + 16px);
+	}
+
 }
 
 /* Display */
@@ -47,9 +73,7 @@
 
 .legal-oops-cookie-wrapper {
 	position: fixed;
-	left: 0px;
-	bottom: 0px;
-	padding: 25px 0px;
+	/* padding: 25px 0px; */
 }
 
 .legal-oops-cookie .oops-cookie-button {
@@ -58,9 +82,9 @@
 
 /* Width and height */
 
-.legal-oops-cookie-wrapper {
+/* .legal-oops-cookie-wrapper {
 	width: 100%;
-}
+} */
 
 .legal-oops-cookie {
 	flex-basis: 1080px;
@@ -79,7 +103,8 @@
 /* Background */
 
 .legal-oops-cookie-wrapper {
-	background-color: rgba(0, 0, 0, 0.85);
+	/* background-color: rgba(0, 0, 0, 0.85); */
+	background-color: var(--Base-base-01);
 }
 
 .legal-oops-cookie .oops-cookie-button {
