@@ -11,9 +11,9 @@
 	
 	#theme-bottom-section .legal-author {
 		/* padding: 20px; */
-		padding-right: 16px;
-		padding-left: 16px;
+		margin-right: 16px;
 		margin-bottom: 32px;
+		margin-left: 16px;
 	}	
 
 	/* Typography */
@@ -43,7 +43,9 @@
 
 	#theme-bottom-section .legal-author {
 		/* padding: 30px 70px; */
+		margin-right: auto;
 		margin-bottom: 64px;
+		margin-left: auto;
 	}
 
 	/* Width and Height */
@@ -87,8 +89,6 @@
 
 #theme-bottom-section .legal-author {
 /* 	margin: 0px auto; */
-	margin-right: auto;
-	margin-left: auto;
 	padding-bottom: 24px;
 }
 
