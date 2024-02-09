@@ -139,9 +139,9 @@
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	color: var(--Base-base-09);
+	color: var(--Base-base-01);
 	cursor: pointer;
-	display: block;
+	/* display: block; */
 	font-size: 14px;
 	font-weight: 600;
 	letter-spacing: 2px;
