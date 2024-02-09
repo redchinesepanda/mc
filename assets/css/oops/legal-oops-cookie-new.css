@@ -2,9 +2,16 @@
 {
 	/* Display */
 
-	.legal-oops-cookie {
+/* 	.legal-oops-cookie {
 		flex-direction: column;
 		row-gap: 20px;
+	} */
+
+	/* Width and Height */
+
+	.legal-oops-cookie .oops-cookie-privacy,
+	.legal-oops-cookie .oops-cookie-button {
+		min-width: calc(50% - 8px);
 	}
 
 	/* Position */
@@ -16,9 +23,9 @@
 		padding-left: 16px;
 	}
 
-	.legal-oops-cookie {
+/* 	.legal-oops-cookie {
 		padding: 0px 20px;
-	}
+	} */
 
 	/* Background */
 
