@@ -105,31 +105,38 @@
 .legal-oops-cookie-wrapper {
 	/* background-color: rgba(0, 0, 0, 0.85); */
 	background-color: var(--Base-base-01);
+	border-radius: 24px; 
+	border: 2px solid var(--Base-base-09);
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	background-color: rgb(89, 151, 227);
+	background-color: var(--Base-base-09);
 	border-radius: 20px;
 }
 
 /* Typography */
 
+.legal-oops-cookie .oops-cookie-description,
+.legal-oops-cookie .oops-cookie-button,
+.legal-oops-cookie .oops-cookie-privacy {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
+	color: var(--Base-base-09);
+}
+
 .legal-oops-cookie .oops-cookie-description {
-	color: rgb(255, 255, 255);
-	font-family: "Source Sans Pro";
+	/* color: rgb(255, 255, 255);
+	font-family: "Source Sans Pro"; */
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 16.8px;
 }
 
 .legal-oops-cookie .oops-cookie-button {
-	color: rgb(255, 255, 255);
+	/* color: rgb(255, 255, 255); */
 	cursor: pointer;
 	display: block;
-	font-family: "Source Sans Pro";
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 600;
 	letter-spacing: 2px;
 	line-height: 14.4px;
@@ -137,11 +144,9 @@
 }
 
 .legal-oops-cookie .oops-cookie-privacy {
-	font-family: "Source Sans Pro";
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 25.2px;
 	text-transform: uppercase;
-	color: rgb(255, 255, 255);
+	/* color: rgb(255, 255, 255); */
 }
