@@ -14,21 +14,6 @@
 	.legal-oops-age .oops-age-button-no {
 		justify-content: center;
 	}
-
-	/* Position */
-
-	/* .legal-oops-age-wrapper {
-		padding: 20px;
-	} */
-
-	/* .legal-oops-age .oops-age-button-yes {
-		flex-basis: 100%;
-	} */
-
-	/* .legal-oops-age .oops-age-button-no {
-		flex-basis: 100%;
-	} */
-
 	
 	/* Width and Height */
 
@@ -64,16 +49,6 @@
 	.legal-oops-age .oops-age-button-yes {
 		justify-content: right;
 	}
-
-	/* Position */
-
-	/* .legal-oops-age .oops-age-button-yes {
-		flex-basis: calc( 50% - 10px );
-	} */
-
-	/* .legal-oops-age .oops-age-button-no {
-		flex-basis: calc( 50% - 10px );
-	} */
 
 	/* Width and Height */
 
@@ -116,10 +91,6 @@
 .legal-oops-age .oops-age-button-no {
 	display: flex;
 }
-
-/* .legal-oops-age .oops-age-button-no {
-	display: flex;
-} */
 
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
@@ -291,14 +262,6 @@
 .legal-oops-age .age-button-no-link:hover {
 	font-weight: 600;
 }
-
-/* .legal-oops-age .age-button-no-link {
-	cursor: pointer;
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 14.4px;
-	text-decoration: none;
-} */
 
 .legal-oops-age .oops-age-after {
 	color: var(--Base-base-05);
