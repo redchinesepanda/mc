@@ -3,7 +3,10 @@
 	/* Position */
 	
 	#theme-bottom-section .legal-author {
-		padding: 20px;
+		/* padding: 20px; */
+		padding-right: 16px;
+		padding-left: 16px;
+		margin-bottom: 32px;
 	}	
 }
 
@@ -13,7 +16,6 @@
 
 	#theme-bottom-section .legal-author {
 		/* padding: 30px 70px; */
-		padding-bottom: 24px;
 		margin-bottom: 64px;
 	}
 
@@ -48,6 +50,7 @@
 /* 	margin: 0px auto; */
 	margin-right: auto;
 	margin-left: auto;
+	padding-bottom: 24px;
 }
 
 /* Width and Height */
