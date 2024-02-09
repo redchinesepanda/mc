@@ -141,6 +141,11 @@
 	border-radius: 20px;
 }
 
+.legal-oops-cookie .oops-cookie-button:hover {
+	background-color: var(--Base-base-07);
+	border: 1px solid var(--Base-base-07);
+}
+
 /* Typography */
 
 .legal-oops-cookie .oops-cookie-description,
@@ -170,6 +175,11 @@
 	font-weight: 500;
 	line-height: 20px;
 	text-align: center;
+}
+
+.legal-oops-cookie .oops-cookie-button:hover,
+.legal-oops-cookie .oops-cookie-privacy:hover {
+	font-weight: 600;
 }
 
 .legal-oops-cookie .oops-cookie-button {
