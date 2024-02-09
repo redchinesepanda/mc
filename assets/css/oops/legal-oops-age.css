@@ -2,34 +2,23 @@
 {
 	/* Display */
 
-	.legal-oops-age-wrapper {
-		align-items: flex-end;
-	}
-
-	.legal-oops-age {
-		column-gap: 8px;
-	}
-
 	.legal-oops-age .oops-age-button-yes,
 	.legal-oops-age .oops-age-button-no {
 		justify-content: center;
 	}
-	
-	/* Width and Height */
 
-	.legal-oops-age {
+	/* Position */
+
+	.legal-oops-age-wrapper {
+		padding: 20px;
+	}
+
+	.legal-oops-age .oops-age-button-yes {
 		flex-basis: 100%;
 	}
 
-	.legal-oops-age .oops-age-button-yes,
 	.legal-oops-age .oops-age-button-no {
-		width: calc(50% - 8px);
-	}
-
-	/* Background */
-
-	.legal-oops-age {
-		border-radius: 24px 24px 0px 0px
+		flex-basis: 100%;
 	}
 	
 }
@@ -38,34 +27,18 @@
 {
 	/* Display */
 
-	.legal-oops-age-wrapper {
-		align-items: center;
-	}
-
-	.legal-oops-age {
-		column-gap: 14px;
-	}
-
 	.legal-oops-age .oops-age-button-yes {
 		justify-content: right;
 	}
 
-	/* Width and Height */
+	/* Position */
 
-	.legal-oops-age {
-		/* flex-basis: 600px; */
-		flex-basis: calc(382px - (24px * 2));
+	.legal-oops-age .oops-age-button-yes {
+		flex-basis: calc( 50% - 10px );
 	}
 
-	.legal-oops-age .oops-age-button-yes,
 	.legal-oops-age .oops-age-button-no {
-		width: 120px;
-	}
-
-	/* Background */
-
-	.legal-oops-age {
-		border-radius: 24px;
+		flex-basis: calc( 50% - 10px );
 	}
 }
 
@@ -73,6 +46,7 @@
 
 .legal-oops-age-wrapper {
 	display: flex;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -83,18 +57,15 @@
 .legal-oops-age {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	/* gap: 20px; */
+	gap: 20px;
 }
 
-.legal-oops-age .oops-age-button-yes,
-.legal-oops-age .oops-age-button-no {
+.legal-oops-age .oops-age-button-yes {
 	display: flex;
 }
 
-.legal-oops-age .age-button-yes-link,
-.legal-oops-age .age-button-no-link {
-	display: block;
+.legal-oops-age .oops-age-button-no {
+	display: flex;
 }
 
 /* Position */
@@ -107,41 +78,12 @@
 }
 
 .legal-oops-age {
-	/* padding:  165px 30px 30px 30px; */
-	padding-top: calc(24px + 56px + 16px);
-	padding-right: 24px;
-	padding-bottom: 24px;
-	padding-left: 24px;
-}
-
-.legal-oops-age .oops-age-title {
-	padding-bottom: 8px;
-}
-
-.legal-oops-age .oops-age-description {
-	padding-bottom: 28px;
+	padding:  165px 30px 30px 30px;
 }
 
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
-	/* padding: 20px 80px; */
-	padding: 10px 18px;
-}
-
-.legal-oops-age .oops-age-button-yes {
-	order: 1;
-}
-
-.legal-oops-age .oops-age-button-yes-no {
-	order: 0;
-}
-
-.legal-oops-age .oops-age-after {
-	order: 2;
-}
-
-.legal-oops-age .oops-age-after {
-	padding-top: 8px;
+	padding: 20px 80px;
 }
 
 /* Width and Height */
@@ -151,6 +93,10 @@
 	width: 100%;
 }
 
+.legal-oops-age {
+	flex-basis: 600px;
+}
+
 .legal-oops-age .oops-age-title {
 	flex-basis: 100%;
 }
@@ -161,8 +107,7 @@
 
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
-	/* flex-basis: fit-content; */
-	width: 100%;
+	flex-basis: fit-content;
 }
 
 .legal-oops-age .oops-age-after {
@@ -176,27 +121,21 @@
 }
 
 .legal-oops-age {
-	background-image: url( '../../img/oops/legal-oops-age-new.svg' );
-	/* background-image: url( 'img/legal-oops-age-new.svg' ); */  /* временный путь */
-	background-position: top 24px center;
+	background-image: url( '../../img/oops/legal-oops-age.webp' );
+	background-position: top 30px center;
 	background-repeat: no-repeat;
 	background-size: auto;
-	background-color: var(--Base-base-01);
-	border: 2px solid var(--Base-base-09);
+	background-color: #ffffff;
+	border-radius: 20px;
 }
 
 .legal-oops-age .age-button-yes-link {
-	background-color: var(--Base-base-09);
-	border: 1px solid var(--Base-base-09);
-}
-
-.legal-oops-age .age-button-yes-link:hover {
-	background-color: var(--Base-base-07);
-	border: 1px solid var(--Base-base-07);
+	background-color: rgb(89, 151, 227);
+	border: 0.8px solid transparent;
 }
 
 .legal-oops-age .age-button-no-link {
-	border: 1px solid var(--Base-base-09);
+	border: 0.8px solid rgb(220, 209, 209);
 }
 
 .legal-oops-age .age-button-yes-link,
@@ -211,62 +150,62 @@
 
 /* Typography */
 
-.legal-oops-age .oops-age-title,
-.legal-oops-age .oops-age-description,
-.legal-oops-age .age-button-yes-link,
-.legal-oops-age .age-button-no-link,
-.legal-oops-age .oops-age-after {
-	font-family: var( --legal-font-primary );
-    font-style: normal;
-}
-
-.legal-oops-age .oops-age-title,
-.legal-oops-age .oops-age-description,
-.legal-oops-age .age-button-no-link,
-.legal-oops-age .oops-age-after {
-	color: var(--Base-base-09);
-}
-
 .legal-oops-age .oops-age-title {
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 22px;
+	color: rgb(12, 17, 21);
+	font-family: "Source Sans Pro";
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 49px;
 	text-align: center;
 }
 
 .legal-oops-age .oops-age-description {
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 17px;
-	text-align: center;
-}
-
-.legal-oops-age .age-button-yes-link,
-.legal-oops-age .age-button-no-link {
-	font-size: 14px;
-	font-weight: 500;
-	line-height: 20px;
-	text-decoration: none;
-	cursor: pointer;
+	color: rgba(106, 107, 108, 0.9);
+	font-family: "Source Sans Pro";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	letter-spacing: normal;
+	line-height: 31.5px;
 	text-align: center;
 }
 
 .legal-oops-age .age-button-yes-link {
-	color: var(--Base-base-01);
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
-.legal-oops-age .age-button-yes-link:hover {
+.legal-oops-age .age-button-no-link {
+	color: rgb(89, 151, 227);
+	cursor: pointer;
+	display: block;
+	font-family: "Source Sans Pro";
+	font-size: 20px;
+	font-style: normal;
 	font-weight: 600;
-}
-
-.legal-oops-age .age-button-no-link:hover {
-	font-weight: 600;
+	letter-spacing: 2px;
+	line-height: 14.4px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .legal-oops-age .oops-age-after {
-	color: var(--Base-base-05);
-	font-size: 13px;
+	color: rgb(105, 105, 105);
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
 	font-weight: 400;
-	line-height: 17px;
+	letter-spacing: normal;
+	line-height: 26.25px;
 	text-align: center;
 }

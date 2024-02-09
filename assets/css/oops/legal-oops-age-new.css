@@ -204,11 +204,6 @@
 	border-radius: 20px;
 }
 
-.legal-oops-age .age-button-yes-link:hover,
-.legal-oops-age .age-button-no-link:hover {
-	box-shadow: rgba(124, 173, 238, 0.12) 0px 4px 16px 0px;
-}
-
 /* Typography */
 
 .legal-oops-age .oops-age-title,
