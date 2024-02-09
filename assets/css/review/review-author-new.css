@@ -1,5 +1,12 @@
 @media screen and ( max-width: 767px )
 {
+	/* Display */
+
+	#theme-bottom-section .legal-author .author-photo {
+		width: 48px;
+		height: 48px;
+	}
+
 	/* Position */
 	
 	#theme-bottom-section .legal-author {
@@ -8,10 +15,30 @@
 		padding-left: 16px;
 		margin-bottom: 32px;
 	}	
+
+	/* Typography */
+
+	#theme-bottom-section .legal-author .author-name {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	#theme-bottom-section .legal-author .author-duty {
+		font-size: 13px;
+		line-height: 17px;
+	}
 }
 
 @media screen and ( min-width: 768px )
 {
+
+	/* Display */
+
+	#theme-bottom-section .legal-author .author-photo {
+		width: 80px;
+		height: 80px;
+	}
+
 	/* Position */
 
 	#theme-bottom-section .legal-author {
@@ -24,6 +51,18 @@
 	#theme-bottom-section .legal-author {
 		/* max-width: 1080px; */
 		max-width: var( --base-width-desktop );
+	}
+
+	/* Typography */
+
+	#theme-bottom-section .legal-author .author-name {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	#theme-bottom-section .legal-author .author-duty {
+		font-size: 14px;
+		line-height: 20px;
 	}
 }
 
@@ -58,8 +97,6 @@
 #theme-bottom-section .legal-author .author-photo {
 	/* width: 100px;
 	height: 100px; */
-	width: 80px;
-	height: 80px;
 	position: relative;
 }
 
@@ -108,9 +145,7 @@
 }
 
 #theme-bottom-section .legal-author .author-name {
-	font-size: 16px;
 	font-weight: 600;
-	line-height: 22px;
 	text-decoration: none;
 	/* color: rgb(89, 151, 227); */
 	/* letter-spacing: 2px; */
@@ -118,9 +153,7 @@
 }
 
 #theme-bottom-section .legal-author .author-duty {
-	font-size: 14px;
 	font-weight: 400;
-	line-height: 20px;
 	/* color: rgb(106, 107, 108); */
 	/* letter-spacing: 2px; */
 	/* text-transform: uppercase; */
