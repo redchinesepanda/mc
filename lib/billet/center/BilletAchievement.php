@@ -175,6 +175,12 @@ class BilletAchievement
 
     public static function render_style( $args )
     {
+        LegalDebug::debug( [
+            'BilletAchievement' => 'render_style',
+
+            '$args' => $args,
+        ] );
+
         $billet = BilletMain::get( $args );
 
         $title = BilletTitle::get( $billet );
