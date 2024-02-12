@@ -19,6 +19,8 @@ class BaseMain
 
 		'choose-your-country' => 'Choose your country',
 
+		'сookies' => 'Cookies!',
+
 		'gambling-sites' => 'Gambling Sites',
 
         'hide' => 'Hide',

@@ -111,6 +111,8 @@ class OopsCookie
         $href = get_page_link( $translated_id );
 
         return  [
+            'title' => __( BaseMain::TEXT[ 'сookies' ], ToolLoco::TEXTDOMAIN ),
+
             'description' => __( BaseMain::TEXT[ 'to-give' ], ToolLoco::TEXTDOMAIN ),
 
             'privacy' => [
