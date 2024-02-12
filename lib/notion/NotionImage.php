@@ -64,7 +64,7 @@ class NotionImage
 
 			NotionMain::META_FIELD[ 'about-logo' ] => get_post_meta( $post->ID, NotionMain::META_FIELD[ 'about-logo' ], true ),
 
-			self::REVIEW_ABOUT_FIELD[ 'logo' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'logo' ], $post->ID, false ),
+			self::REVIEW_ABOUT_FIELD[ 'logo' ] => get_field( NotionMain::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'logo' ], $post->ID, false ),
 		] );
 	}
 }
