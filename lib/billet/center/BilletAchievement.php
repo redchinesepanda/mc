@@ -65,13 +65,13 @@ class BilletAchievement
 
         $term = null;
 
-        $feature_achievement = get_field( self::FIELD[ 'feture-achievement' ], $title[ 'id' ] );
+        $feature_achievement = get_field( self::FIELD[ 'feture-achievement' ], $id );
 
         if ( $feature_achievement )
         {
             foreach ( $feature_achievement as $feature_achievement_item )
             {
-                if ( in_array( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $title[ 'filter' ][ 'features' ] ) )
+                if ( in_array( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $filter[ 'features' ] ) )
                 {
                     $term = get_term( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
                 }
@@ -80,7 +80,7 @@ class BilletAchievement
 
         if ( empty( $term ) )
         {
-            $terms = wp_get_post_terms( $title['id'], self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+            $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
 
             if ( !empty( $terms ) && !is_wp_error( $terms ) )
             {
@@ -100,7 +100,7 @@ class BilletAchievement
             $args = [
                 // 'class' => $title['achievement'],
                 
-                'class' => self::get_achievement_class( $title[ 'filter' ][ 'achievement' ] ),
+                'class' => self::get_achievement_class( $filter[ 'achievement' ] ),
             
                 'selector' => 'achievement-' . $term->term_id,
 
