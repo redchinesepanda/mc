@@ -330,7 +330,7 @@ class TemplateMain
     }
 
     const REPLACE_LINK = [
-        'tcb-style-base-thrive_template-2467980',
+        // 'tcb-style-base-thrive_template-2467980',
     ];
     
     // <link rel="stylesheet" id="tcb-style-base-thrive_template-2467980" href="//cdn13118.templcdn.com/wp-content/uploads/thrive/tcb-base-css-2467980-1699872370.css" media="all">
