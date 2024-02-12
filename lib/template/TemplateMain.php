@@ -168,27 +168,27 @@ class TemplateMain
         }
     }
 
-    const JS_DEQUEUE_THRIVE = [
-        'jquery',
+    // const JS_DEQUEUE_THRIVE = [
+    //     'jquery',
 
-        'jquery-migrate',
+    //     'jquery-migrate',
 
-        'jquery-masonry', 
+    //     'jquery-masonry', 
 
-        // 'tve_frontend',
-    ];
+    //     // 'tve_frontend',
+    // ];
 
-    const JS_DEQUEUE = [
-        ...self::JS_DEQUEUE_THRIVE,
-    ];
+    // const JS_DEQUEUE = [
+    //     ...self::JS_DEQUEUE_THRIVE,
+    // ];
 
-    public static function dequeue_script()
-    {
-        if ( self::check_new() )
-        {
-            ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
-        }
-    }
+    // public static function dequeue_script()
+    // {
+    //     if ( self::check_new() )
+    //     {
+    //         ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
+    //     }
+    // }
 
     public static function check_new()
     {

@@ -2,9 +2,9 @@
 
 class ToolEnqueue
 {
-    public static function dequeue_script( $styles = [] )
+    public static function dequeue_script( $scripts = [] )
     {
-        foreach ( $styles as $name )
+        foreach ( $scripts as $name )
         {
             wp_dequeue_script( $name );
         }
