@@ -8,6 +8,7 @@
 
 ?>
 <div class="billet-title">
+    <?php echo BilletAchievement::render( $args[ 'achievement' ] ); ?>
     <a class="legal-logo <?php echo $args['logo']['logo']['class']; ?> check-oops" href="<?php echo $args['logo']['logo']['href']; ?>" <?php echo BilletMain::render_nofollow( $args['logo'][ 'logo' ][ 'nofollow' ] ); ?>>
         <img src="<?php echo $args['logo']['logo']['src'] ?>" alt="<?php echo $args['logo']['logo']['alt'] ?>" />
     </a>
@@ -25,5 +26,5 @@
             <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
         <?php endif; ?>
     </div>
-    <?php echo BilletAchievement::render( $args[ 'achievement' ] ); ?>
+    <?php echo BilletMobile::render( $args ); ?>
 </div>
