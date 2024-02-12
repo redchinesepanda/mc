@@ -267,7 +267,7 @@ class TemplateMain
             self::register_thrive();
         }
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 );
     }
 
     public static function register()
@@ -278,7 +278,7 @@ class TemplateMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
 
         // self::register_wp();
 
