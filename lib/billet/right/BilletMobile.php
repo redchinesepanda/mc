@@ -4,7 +4,7 @@ class BilletMobile
 {
     const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-mobile.php';
 
-    public static function get_mobile( $id )
+    public static function prepare_mobile( $id )
     {
         $args['iphone'] = BilletMain::href( get_field( 'billet-play-mobile-iphone', $id ) );
 
@@ -31,7 +31,7 @@ class BilletMobile
         }
 
         if ( $enabled ) {
-            $args['mobile'] = self::get_mobile( $id );
+            $args[ 'mobile' ] = self::prepare_mobile( $id );
         }
 
         return $args;
