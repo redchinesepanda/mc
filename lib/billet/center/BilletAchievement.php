@@ -30,13 +30,36 @@ class BilletAchievement
         'achievement-id' => 'billet-achievement-id',
     ];
     
+    public static function get_achievement_class( $achievement_class )
+    {
+        return !empty( $achievement_class ) ? $achievement_class : BilletAchievement::TYPE_IMAGE;
+    }
+
+    // public static function get( $title )
+    
     public static function get( $title )
+    {
+        // $title[ 'id' ]
+
+        // $title[ 'filter' ]
+
+        // $title['achievement']
+
+        return self::get_achievement( $title[ 'id' ], $title[ 'filter' ] );
+    }
+    
+    public static function get_achievement( $id, $filter )
     {
         // LegalDebug::debug( [
         //     'function' => 'BilletAchievement::get',
 
         //     'title' => $title,
         // ] );
+
+        if ( self::check_disabled( $filter ) )
+        {
+            return [];
+        }
 
         $args = [];
 
@@ -75,7 +98,9 @@ class BilletAchievement
             }
 
             $args = [
-                'class' => $title['achievement'],
+                // 'class' => $title['achievement'],
+                
+                'class' => self::get_achievement_class( $title[ 'filter' ][ 'achievement' ] ),
             
                 'selector' => 'achievement-' . $term->term_id,
 
@@ -113,17 +138,31 @@ class BilletAchievement
     //     }
     // }
 
-    public static function check_disabled( $title )
+    // public static function check_disabled( $title )
+    
+    public static function check_disabled( $filter )
     {
-        return $title[ 'achievement' ] == self::TYPE_DISABLED;
+        // return $title[ 'achievement' ] == self::TYPE_DISABLED;
+        
+        return $filter[ 'achievement' ] == self::TYPE_DISABLED;
+    }
+
+    public static function render( $achievement )
+    {
+        // if ( self::check_disabled( $title ) )
+        // {
+        //     return '';
+        // }
+        
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], $achievement );
     }
 
     public static function render_achievement( $title )
     {
-        if ( self::check_disabled( $title ) )
-        {
-            return '';
-        }
+        // if ( self::check_disabled( $title ) )
+        // {
+        //     return '';
+        // }
         
         return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $title ) );
     }

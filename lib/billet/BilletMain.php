@@ -65,7 +65,11 @@ class BilletMain
             'ver' => '1.0.7',
         ],
 
-        self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
+        self::HANDLE[ 'spoiler' ] => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/billet/billet-spoiler.css',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     const CSS_NEW = [
@@ -105,7 +109,11 @@ class BilletMain
     }
 
     const JS = [
-        self::HANDLE[ 'spoiler' ] => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js',
+        self::HANDLE[ 'spoiler' ] => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_script( $scripts = [] )
@@ -381,6 +389,11 @@ class BilletMain
         return BilletBonus::get_bonus( $id, $url, $filter );
     }
 
+    private static function get_achievement( $id, $filter )
+    {
+        return BilletAchievement::get_achievement( $id, $filter );
+    }
+
     const FETURE_MAIN_DESCRIPTION = [
         'id' => 'billet-feture-id',
 
@@ -438,6 +451,8 @@ class BilletMain
 
         $bonus = self::get_bonus( $id, $url, $filter );
 
+        $achievement = self::get_achievement( $id, $filter );
+
         // $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
         // LegalDebug::debug( [
@@ -462,6 +477,8 @@ class BilletMain
             'title' => $title,
 
             'bonus' => $bonus,
+
+            'achievement' => $achievement,
 
             'selector' => 'billet-' . $id,
 

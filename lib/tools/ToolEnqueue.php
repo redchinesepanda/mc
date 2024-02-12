@@ -64,7 +64,7 @@ class ToolEnqueue
                 }
             }
 
-            wp_register_script( $name, $path, $deps, $ver, $args );
+            wp_register_script( $name, $path, $deps, $ver, $args, false );
 
             wp_enqueue_script( $name );
         }
@@ -117,6 +117,17 @@ class ToolEnqueue
         add_filter( 'script_loader_tag', [ $handler, 'script_type' ], 10, 2 );
 
         // add_action( 'wp_print_scripts', [ $handler, 'inspect_scripts' ], 999);
+
+        add_filter( 'script_loader_tag', [ $handler, 'legal_script_defer' ], 10, 2 );
+    }
+
+    public static function legal_script_defer( $tag, $handle )
+    {
+        // if ( 'foo' !== $handle ) {
+        //     return $url;
+        // }
+
+        return str_replace( ' src=', ' defer="defer" src=', $tag );
     }
 
     public static function inspect_scripts()

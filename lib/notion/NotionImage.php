@@ -19,6 +19,8 @@ class NotionImage
 		add_action( 'updated_post_meta', [ $handler, 'billet_logo' ], 11, 4 );
 
 		add_filter( 'getimagesize_mimes_to_exts', [ $handler, 'more_mimes_to_exts' ] );
+
+		add_action( 'edit_form_after_title', [ $handler, 'billet_image_show' ], 10, 4 );
 	}
 
 	
@@ -53,6 +55,17 @@ class NotionImage
 
 			update_field( NotionMain::ACF_KEY[ 'settings' ], $field, $post_id );
 		}
+	}
+
+	public static function billet_image_show( $post )
+	{
+		LegalDebug::debug( [
+			'NotionImage' => 'billet_image_show',
+
+			NotionMain::META_FIELD[ 'about-logo' ] => get_post_meta( $post->ID, NotionMain::META_FIELD[ 'about-logo' ], true ),
+
+			self::REVIEW_ABOUT_FIELD[ 'logo' ] => get_field( self::ACF_FIELD[ 'settings' ] . '_' . self::REVIEW_ABOUT_FIELD[ 'logo' ], $post->ID, false ),
+		] );
 	}
 }
 

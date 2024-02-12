@@ -168,25 +168,27 @@ class TemplateMain
         }
     }
 
-    // const JS_DEQUEUE_THRIVE = [
-    //     'jquery',
+    const JS_DEQUEUE_THRIVE = [
+        'jquery',
 
-    //     'jquery-masonry', 
+        'jquery-migrate',
 
-    //     'tve_frontend',
-    // ];
+        'jquery-masonry', 
 
-    // const JS_DEQUEUE = [
-    //     ...self::JS_DEQUEUE_THRIVE,
-    // ];
+        // 'tve_frontend',
+    ];
 
-    // public static function dequeue_script()
-    // {
-    //     if ( self::check_new() )
-    //     {
-    //         ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
-    //     }
-    // }
+    const JS_DEQUEUE = [
+        ...self::JS_DEQUEUE_THRIVE,
+    ];
+
+    public static function dequeue_script()
+    {
+        if ( self::check_new() )
+        {
+            ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
+        }
+    }
 
     public static function check_new()
     {
@@ -252,11 +254,11 @@ class TemplateMain
 
     public static function register_dequeue()
     {
-        // $handler = new self();
+        $handler = new self();
 
         if ( self::check_new() )
         {
-            $handler = new self();
+            // $handler = new self();
 
             add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
 
@@ -265,7 +267,7 @@ class TemplateMain
             self::register_thrive();
         }
 
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 ); 
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 );
     }
 
     public static function register()
@@ -306,6 +308,8 @@ class TemplateMain
         'tve_global_variables',
 
         'thrive-default-styles',
+
+        'tcb-style-template-thrive_template-2467980',
     ];
 
     public static function wp_head_replace_style( $output )
@@ -314,11 +318,34 @@ class TemplateMain
         {
             foreach ( self::REPLACE as $id )
             {
-                $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
+                // $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\">(.+?)<\/style>/i';
+                
+                $pattern = '/<style type=\"text\/css\" id=\"' . $id . '\"(.+?)<\/style>/i';
 
                 $output = preg_replace( $pattern, '', $output );
             }
         }
+
+        return $output;
+    }
+
+    const REPLACE_LINK = [
+        'tcb-style-base-thrive_template-2467980',
+    ];
+    
+    // <link rel="stylesheet" id="tcb-style-base-thrive_template-2467980" href="//cdn13118.templcdn.com/wp-content/uploads/thrive/tcb-base-css-2467980-1699872370.css" media="all">
+
+    public static function wp_head_replace_link( $output )
+    {
+        // if ( self::check_new() )
+        // {
+            foreach ( self::REPLACE_LINK as $id )
+            {
+                $pattern = '/<link rel=\"stylesheet\" id=\"' . $id . '\" (.+?)>/i';
+
+                $output = preg_replace( $pattern, '', $output );
+            }
+        // }
 
         return $output;
     }
@@ -356,6 +383,8 @@ class TemplateMain
 		);
 
         $output = self::wp_head_replace_style( $output );
+
+        $output = self::wp_head_replace_link( $output );
 
         return $output;
     }

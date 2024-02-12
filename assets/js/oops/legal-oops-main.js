@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		hrefHash: 'a.check-oops[href="#"]',
 
-		thrive: 'a.tve_et_click[href="#"]'
+		thrive: 'a.tcb-button-link[href="#"]'
 	}; 
 
 	document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
