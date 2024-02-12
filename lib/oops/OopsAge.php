@@ -78,7 +78,7 @@ class OopsAge
 
 		'hr',
 
-        // 'kz',
+        'kz',
 	];
 
 	public static function check_locale()
