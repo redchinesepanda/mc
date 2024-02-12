@@ -387,7 +387,7 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
     border-radius: 50px;
-    background: var(--Base-base-01);
+    background-color: var(--Base-base-01);
     border: 1px solid var(--Base-base-09); 
 }
 
