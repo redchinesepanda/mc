@@ -44,7 +44,7 @@ class ToolsMain
     {
         ToolDisable::register();
 
-        // ToolEnqueue::register();
+        ToolEnqueue::register();
 
         ToolLoco::register();
 
