@@ -8,6 +8,6 @@
         <span class="billet-license-label"><?php echo $args[ 'license' ][ 'label' ]; ?></span> 
     </div>
 <?php endif; ?>
-<?php // echo BilletMobile::render( $args ); ?>
+<?php echo BilletMobile::render( $args ); ?>
 <?php BilletProfit::render( $args ); ?>
 <?php BilletSpoilerButton::render( $args ); ?>
