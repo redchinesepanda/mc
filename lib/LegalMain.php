@@ -59,13 +59,13 @@ class LegalMain
     {
 		LegalComponents::register_functions();
 
-		ACFMain::register_functions();
+		// ACFMain::register_functions();
 	
 		ToolsMain::register();
 	
 		SchemaMain::register();
 
-		// BaseMain::register_functions();
+		BaseMain::register_functions();
 
 		YoastMain::register_functions();
 
