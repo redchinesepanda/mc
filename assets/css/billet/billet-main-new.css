@@ -66,7 +66,7 @@
     }
 
     .billet-right {
-        border-radius: 0px 0px 20px 20px;
+        border-radius: 0px 0px 24px 24px;
     }
 
     .billet-item .billet .billet-main {
@@ -170,7 +170,7 @@
     }
 
     .billet-right {
-        border-radius: 0px 20px 20px 0px;
+        border-radius: 0px 24px 24px 0px;
     }
 
     .billet-item .billet .billet-main {
@@ -342,26 +342,26 @@ body {
     display: block;
 }
 
-.billet-item .billet
+/* .billet-item .billet
 {
     overflow: hidden;
-}
+} */
 
 /* Background */
 
 .billet {
-    background-color: #FFFFFF;
+    background-color: var(--Base-base-01);
     border-radius: 20px;
 }
 
-.billet-item .billet-main
+/* .billet-item .billet-main
 {
     background-color: var(--Base-base-01, #FFF);
-}
+} */
 
 .billet-item .billet-bonus
 {
-    background-color: var(--Primitives-blue-40, #D9F2FF);
+    background-color: var(--Primitives-blue-40);
 }
 
 .billet-item .legal-logo {
