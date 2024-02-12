@@ -59,11 +59,11 @@ class LegalMain
     {
 		LegalComponents::register_functions();
 
-		// ACFMain::register_functions();
+		ACFMain::register_functions();
 	
-		// ToolsMain::register();
+		ToolsMain::register();
 	
-		// SchemaMain::register();
+		SchemaMain::register();
 
 		// BaseMain::register_functions();
 
