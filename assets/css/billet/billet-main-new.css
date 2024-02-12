@@ -59,6 +59,11 @@
         height: 48px;
     }
 
+    .billet .bonus-mobile-item::before {
+        width: 24px;
+        height: 24px;
+    }
+
     /* Billet Background */
 
     .billet-left {
@@ -136,6 +141,11 @@
     .billet-item .legal-logo {  
         width: 70px;
         height: 70px;
+    }
+
+    .billet .bonus-mobile-item::before {
+        width: 28px;
+        height: 28px;
     }
 
     .billet-list-part.legal-column:not( .legal-check ):not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
@@ -653,11 +663,6 @@ body {
     height: 39px;
 } */
 
-.billet .bonus-mobile-item::before {
-    width: 24px;
-    height: 24px;
-}
-
 /* @media (max-width: 576px) {
     .billet-title .billet-title-achivement.legal-image {
         width: 100%;
@@ -850,15 +855,18 @@ body {
     font-weight: 600;
 }
 
+.billet .bonus-mobile-item {
+    text-decoration: none;
+}
+
 .billet .bonus-mobile-item::before {
     font-family: var( --legal-font-icons );
     font-size: 18px;
     line-height: 18px;
-    text-decoration: none;
     color: var(--Base-base-09);
 }
 
-.billet .bonus-mobile-item::before:hover {
+.billet .bonus-mobile-item:hover .bonus-mobile-item::before {
     color: var(--Base-base-07);
 }
 
