@@ -54,7 +54,7 @@
 
 	.legal-oops-age {
 		/* flex-basis: 600px; */
-		flex-basis: calc(382px - (24px * 2));
+		flex-basis: calc(382px - 4px - (24px * 2));
 	}
 
 	.legal-oops-age .oops-age-button-yes,
