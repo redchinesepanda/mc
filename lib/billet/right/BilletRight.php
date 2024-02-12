@@ -68,7 +68,7 @@ class BilletRight
 
     public static function render( $billet )
     { 
-        if ( TemplateMain::check_new )
+        if ( TemplateMain::check_new() )
         {
             return self::render_main( self::TEMPLATE[ 'new' ], self::get( $billet ) );
         }
