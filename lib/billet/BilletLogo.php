@@ -153,13 +153,15 @@ class BilletLogo
 
     public static function render( $billet )
     { 
-        return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
-    }
+        // return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
 
-    public static function render_logo( $logo )
-    { 
         return self::render_main( self::TEMPLATE[ 'logo' ], $logo );
     }
+
+    // public static function render_logo( $logo )
+    // { 
+    //     return self::render_main( self::TEMPLATE[ 'logo' ], $logo );
+    // }
 
     public static function render_main( $template, $args )
     {
