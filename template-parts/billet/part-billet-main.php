@@ -11,7 +11,7 @@
             <?php echo BilletList::render( $args ); ?>
         </div>
         <div class="billet-right">
-            <?php BilletRight::render( $args ); ?>
+            <?php echo BilletRight::render( $args ); ?>
         </div>
     </div>
     <?php BilletSpoiler::render( $args ); ?>
