@@ -66,7 +66,7 @@ class BilletBonus
         return null;
     }
 
-    public static function get_bonus_default( $id )
+    public static function get_bonus_default()
     {
         return [
             'href' => '',
