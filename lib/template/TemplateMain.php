@@ -278,7 +278,7 @@ class TemplateMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
+        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
 
         // self::register_wp();
 
