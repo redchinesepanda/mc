@@ -125,7 +125,7 @@ class BilletTitle extends LegalDebug
         return self::render_main( self::TEMPLATE[ 'title' ], $title );
     }
 
-    public static function render_title( $logo, $title, $achievement )
+    public static function render_title( $logo, $title, $achievement, $mobile )
     {
         return self::render_main( self::TEMPLATE[ 'new' ], [
             'logo' => $logo,
@@ -133,6 +133,8 @@ class BilletTitle extends LegalDebug
             'title' => $title,
 
             'achievement' => $achievement,
+
+            'mobile' => $mobile,
         ] );
     }
 

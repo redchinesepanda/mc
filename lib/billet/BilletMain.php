@@ -394,6 +394,11 @@ class BilletMain
         return BilletAchievement::get_achievement( $id, $filter );
     }
 
+    private static function get_mobile( $id, $filter )
+    {
+        return BilletMobile::get_mobile( $id, $filter );
+    }
+
     const FETURE_MAIN_DESCRIPTION = [
         'id' => 'billet-feture-id',
 
@@ -453,6 +458,8 @@ class BilletMain
 
         $achievement = self::get_achievement( $id, $filter );
 
+        $mobile = self::get_mobile( $id, $filter );
+
         // $description = self::get_main_description( $args['id'], $args[ 'filter' ] );
 
         // LegalDebug::debug( [
@@ -479,6 +486,8 @@ class BilletMain
             'bonus' => $bonus,
 
             'achievement' => $achievement,
+
+            'mobile' => $mobile,
 
             'selector' => 'billet-' . $id,
 
