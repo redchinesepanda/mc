@@ -375,6 +375,7 @@ body {
 {
     border-radius: 24px;
     border: var( --base-border-billet );
+    background-color: var(--Base-base-01, #FFF);
 }
 
 /* .billet-item .billet-main
