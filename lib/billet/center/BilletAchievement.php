@@ -187,7 +187,9 @@ class BilletAchievement
         //     '$billet' => $billet,
         // ] );
 
-        if ( self::check_disabled( $title ) )
+        // if ( self::check_disabled( $title ) )
+
+        if ( self::check_disabled( $title[ 'filter' ] ) )
         {
             return '';
         }
