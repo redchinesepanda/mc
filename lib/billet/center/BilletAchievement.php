@@ -143,6 +143,12 @@ class BilletAchievement
     public static function check_disabled( $filter )
     {
         // return $title[ 'achievement' ] == self::TYPE_DISABLED;
+
+        LegalDebug::debug( [
+            'BilletAchievemnet' => 'check_disabled',
+
+            '$filter' => $filter,
+        ] );
         
         return $filter[ 'achievement' ] == self::TYPE_DISABLED;
     }
