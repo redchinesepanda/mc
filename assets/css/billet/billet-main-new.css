@@ -678,9 +678,13 @@ body {
 
 .billet-title .billet-title-achivement.legal-image {
     margin-left: auto;
-    padding: 5.5px 10px 5.5px 30px;
+   /*  padding: 5.5px 10px 5.5px 30px; */
+    padding-top: 5px;
+    padding-right: 14px;
+    padding-bottom: 5px;
+    padding-left: calc(8px + 18px + 4px);
     position: absolute;
-    top: -16px;
+    top: calc(0px - (30px / 2));
 }
 
 @media (max-width: 768px) {
