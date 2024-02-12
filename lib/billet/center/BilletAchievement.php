@@ -144,11 +144,11 @@ class BilletAchievement
     {
         // return $title[ 'achievement' ] == self::TYPE_DISABLED;
 
-        // LegalDebug::debug( [
-        //     'BilletAchievemnet' => 'check_disabled',
+        LegalDebug::debug( [
+            'BilletAchievemnet' => 'check_disabled',
 
-        //     '$filter' => $filter,
-        // ] );
+            '$filter' => $filter,
+        ] );
         
         return $filter[ 'achievement' ] == self::TYPE_DISABLED;
     }
@@ -179,13 +179,13 @@ class BilletAchievement
 
         $title = BilletTitle::get( $billet ); 
 
-        LegalDebug::debug( [
-            'BilletAchievement' => 'render_style',
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'render_style',
 
-            '$args' => $args,
+        //     '$args' => $args,
 
-            '$billet' => $billet,
-        ] );
+        //     '$billet' => $billet,
+        // ] );
 
         if ( self::check_disabled( $title ) )
         {
