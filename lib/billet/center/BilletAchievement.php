@@ -144,11 +144,11 @@ class BilletAchievement
     {
         // return $title[ 'achievement' ] == self::TYPE_DISABLED;
 
-        LegalDebug::debug( [
-            'BilletAchievemnet' => 'check_disabled',
+        // LegalDebug::debug( [
+        //     'BilletAchievemnet' => 'check_disabled',
 
-            '$filter' => $filter,
-        ] );
+        //     '$filter' => $filter,
+        // ] );
         
         return $filter[ 'achievement' ] == self::TYPE_DISABLED;
     }
