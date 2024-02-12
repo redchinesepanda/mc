@@ -151,7 +151,7 @@ class BilletLogo
         'logo' => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-logo.php'
     ];
 
-    public static function render( $billet )
+    public static function render( $logo )
     { 
         // return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
 
