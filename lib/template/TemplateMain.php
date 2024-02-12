@@ -384,7 +384,7 @@ class TemplateMain
 
         $output = self::wp_head_replace_style( $output );
 
-        $output = self::wp_head_replace_link( $output );
+        // $output = self::wp_head_replace_link( $output );
 
         return $output;
     }
