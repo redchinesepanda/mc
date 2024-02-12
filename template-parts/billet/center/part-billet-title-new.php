@@ -25,5 +25,5 @@
             <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
         <?php endif; ?>
     </div>
-    <?php //echo BilletAchievement::render_achievement( $args ); ?>
+    <?php echo BilletAchievement::render( $args[ 'achievement' ] ); ?>
 </div>

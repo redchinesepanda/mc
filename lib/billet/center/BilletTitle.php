@@ -50,7 +50,7 @@ class BilletTitle extends LegalDebug
 
         $args['order'] = !empty( $filter['order'] ) ? $filter['order'] : self::ORDER_TYPE;
 
-        $args['achievement'] = !empty( $filter['achievement'] ) ? $filter['achievement'] : BilletAchievement::TYPE_IMAGE;
+        // $args['achievement'] = !empty( $filter['achievement'] ) ? $filter['achievement'] : BilletAchievement::TYPE_IMAGE;
 
         // $args['rating'] = ( !empty( $billet['filter']['rating'] ) ? get_field( 'billet-title-rating', $billet['id'] ) : 0 );
 
@@ -121,12 +121,14 @@ class BilletTitle extends LegalDebug
         return self::render_main( self::TEMPLATE[ 'title' ], self::get( $billet ) );
     }
 
-    public static function render_title( $logo, $title )
+    public static function render_title( $logo, $title, $achievement )
     {
         return self::render_main( self::TEMPLATE[ 'new' ], [
             'logo' => $logo,
 
             'title' => $title,
+
+            'achievement' => $achievement,
         ] );
     }
 
