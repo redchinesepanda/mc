@@ -42,6 +42,10 @@
         padding: 20px;
     }
 
+    .billet .bonus-mobile {
+        margin-left: auto;
+    }
+
     .billet-item .billet-footer:not( :empty ) {
         padding-right: 16px;
         padding-left: 16px;
@@ -868,6 +872,7 @@ body {
 
 .billet .bonus-mobile-item:hover .bonus-mobile-item::before {
     color: var(--Base-base-07);
+    font-weight: 600;
 }
 
 .billet-title .legal-review {
