@@ -66,6 +66,11 @@ class BilletRight
         ];
     }
 
+    // public static function render( $billet )
+    // { 
+    //     load_template( self::TEMPLATE[ 'main' ], false, self::get( $billet ) );
+    // }
+
     public static function render( $billet )
     { 
         if ( TemplateMain::check_new() )
