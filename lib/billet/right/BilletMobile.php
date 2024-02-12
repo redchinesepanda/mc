@@ -17,16 +17,21 @@ class BilletMobile
 
     public static function get( $billet )
     {
+        return self::get_mobile( $billet[ 'id' ], $billet[ 'filter' ] );
+    }
+
+    public static function get_mobile( $id, $filter )
+    {
         $args = [];
 
         $enabled = true;
 
-        if ( !empty( $billet[ 'filter' ] ) ) {
-            $enabled = $billet['filter']['mobile'];
+        if ( !empty( $filter ) ) {
+            $enabled = $filter['mobile'];
         }
 
         if ( $enabled ) {
-            $args['mobile'] = self::get_mobile( $billet['id'] );
+            $args['mobile'] = self::get_mobile( $id );
         }
 
         return $args;
@@ -34,11 +39,24 @@ class BilletMobile
 
     public static function render( $billet )
     {
-        $args = self::get( $billet );
+        // $args = self::get( $billet );
 
-        if ( !empty( $args ) ) {
-            load_template( self::TEMPLATE, false, $args );
-        }
+        // if ( !empty( $args ) ) {
+        //     load_template( self::TEMPLATE, false, $args );
+        // }
+
+        return self::render_main( self::TEMPLATE, self::get( $billet ) );
+    }
+
+    public static function render_main( $template, $args )
+    {
+		ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
