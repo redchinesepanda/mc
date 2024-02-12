@@ -338,8 +338,14 @@ body {
     column-gap: 15px;
 }
 
-.billet .bonus-mobile-item {
+/* .billet .bonus-mobile-item {
     display: block;
+} */
+
+.billet .bonus-mobile-item::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* .billet-item .billet
@@ -463,15 +469,20 @@ body {
     background-color: rgb(89, 151, 227);
 }
 
-.billet .bonus-mobile-item {
+/* .billet .bonus-mobile-item {
     background-color: rgb(230, 230, 230);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
     border-radius: 50%;
+} */
+
+.billet .bonus-mobile-item::before {
+    border-radius: 50%;
+    border: 1px solid var(--Base-base-09); 
 }
 
-.billet .legal-iphone {
+/* .billet .legal-iphone {
     background-image: url( '../../img/billet/mobile/billet-mobile-iphone.svg' );
 }
 
@@ -493,6 +504,18 @@ body {
 
 .billet .legal-site:not( .legal-disabled ):hover {
     background-image: url( '../../img/billet/mobile/billet-mobile-hover-site.svg' );
+} */
+
+.billet .bonus-mobile-item.legal-iphone::before {
+    content: \F112;
+}
+
+.billet .legal-android::before {
+    content: \F111;
+}
+
+.billet .legal-site::before {
+    content: \F113;
 }
 
 .billet .profit-label {
@@ -625,9 +648,14 @@ body {
     width: 100%;
 }
 
-.billet .bonus-mobile-item {
+/* .billet .bonus-mobile-item {
     width: 39px;
     height: 39px;
+} */
+
+.billet .bonus-mobile-item::before {
+    width: 24px;
+    height: 24px;
 }
 
 /* @media (max-width: 576px) {
@@ -820,6 +848,12 @@ body {
     /* font-family: "Source Sans Pro"; */
     font-style: normal;
     font-weight: 600;
+}
+
+.billet .bonus-mobile-item::before{
+    font-family: var( --legal-font-icons );
+    font-size: 18px;
+    line-height: 18px;
 }
 
 .billet-title .legal-review {
