@@ -42,10 +42,6 @@
         padding: 20px;
     }
 
-    .billet .bonus-mobile {
-        margin-left: auto;
-    }
-
     .billet-item .billet-footer:not( :empty ) {
         padding-right: 16px;
         padding-left: 16px;
@@ -170,6 +166,10 @@
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
         padding: 20px 24px;
+    }
+
+    .billet .bonus-mobile {
+        margin-left: auto;
     }
 
     .billet-item .billet-footer:not( :empty ) {
@@ -520,7 +520,7 @@ body {
     background-image: url( '../../img/billet/mobile/billet-mobile-hover-site.svg' );
 } */
 
-.billet .bonus-mobile-item.legal-iphone::before {
+.billet .legal-iphone::before {
     content: '\F112';
 }
 
@@ -641,6 +641,10 @@ body {
 
 .billet .title-data-group {
     width: 100%;
+}
+
+.billet .bonus-mobile-item {
+    height: fit-content;
 }
 
 /* .billet-list-part .billet-list-part-item {
