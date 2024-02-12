@@ -876,8 +876,6 @@ body {
     color: var(--Base-base-09);
 }
 
-/* .billet .legal-iphone:hover .legal-iphone::before */
-
 .billet .bonus-mobile-item:hover.bonus-mobile-item::before {
     color: var(--Base-base-07);
     font-weight: 600;
