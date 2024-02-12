@@ -854,6 +854,7 @@ body {
     font-family: var( --legal-font-icons );
     font-size: 18px;
     line-height: 18px;
+    content: "";
 }
 
 .billet-title .legal-review {
