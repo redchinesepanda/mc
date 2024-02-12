@@ -10,7 +10,11 @@ require_once( 'BilletSpoilerButton.php' );
 
 class BilletRight
 {
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-right.php';
+    const TEMPLATE = [
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-right.php',
+
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-right-new.php',
+    ];
     
     private static function get_play( $billet )
     {
@@ -64,7 +68,23 @@ class BilletRight
 
     public static function render( $billet )
     { 
-        load_template( self::TEMPLATE, false, self::get( $billet ) );
+        if ( TemplateMain::check_new )
+        {
+            return self::render_main( self::TEMPLATE[ 'new' ], self::get( $billet ) );
+        }
+
+        return self::render_main( self::TEMPLATE[ 'main' ], self::get( $billet ) );
+    }
+
+    public static function render_main( $template, $args )
+    {
+		ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
     }
 }
 
