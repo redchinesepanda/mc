@@ -236,7 +236,7 @@ body {
     /* align-content: center; */
     align-content: flex-start;
     column-gap: 28px;
-    position: relative;
+    /* position: relative; */
 }
 
 .billet-title {
@@ -349,9 +349,10 @@ body {
 
 /* Background */
 
-.billet {
-    background-color: var(--Base-base-01);
-    border-radius: 20px;
+.billet-item .billet
+{
+    border-radius: 24px;
+    border: var( --base-border-billet );
 }
 
 /* .billet-item .billet-main
@@ -541,12 +542,6 @@ body {
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
     background: var(--Base-base-02, #F6F6F6);
-}
-
-.billet-item .billet
-{
-    border-radius: 24px;
-    border: var( --base-border-billet );
 }
 
 .billet-item .billet .billet-main,
@@ -833,7 +828,7 @@ body {
     color: rgb(255, 255, 255);
 }
 .billet-title .billet-title-achivement.legal-image {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
 }
 
