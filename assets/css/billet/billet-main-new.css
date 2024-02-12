@@ -18,7 +18,9 @@
     }  
 
     .billet-title {
+        flex-wrap: wrap;
         column-gap: 9.18px;
+        row-gap: 16px;
     }
 
     .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
@@ -349,7 +351,7 @@ body {
 
 .billet .bonus-mobile {
     display: flex;
-    column-gap: 15px;
+    column-gap: 8px;
 }
 
 /* .billet .bonus-mobile-item {
@@ -872,6 +874,10 @@ body {
     font-size: 18px;
     line-height: 18px;
     color: var(--Base-base-09);
+}
+
+.billet .bonus-mobile-item:hover {
+    background-color: grey;
 }
 
 .billet .bonus-mobile-item:hover .bonus-mobile-item::before {
