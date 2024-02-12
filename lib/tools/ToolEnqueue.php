@@ -6,7 +6,7 @@ class ToolEnqueue
     {
         foreach ( $styles as $name )
         {
-            wp_dequeue_script( $handle );
+            wp_dequeue_script( $name );
         }
     }
 
