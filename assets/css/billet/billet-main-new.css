@@ -507,15 +507,15 @@ body {
 } */
 
 .billet .bonus-mobile-item.legal-iphone::before {
-    content: \F112;
+    content: '\F112';
 }
 
 .billet .legal-android::before {
-    content: \F111;
+    content: '\F111';
 }
 
 .billet .legal-site::before {
-    content: \F113;
+    content: '\F113';
 }
 
 .billet .profit-label {
@@ -854,7 +854,6 @@ body {
     font-family: var( --legal-font-icons );
     font-size: 18px;
     line-height: 18px;
-    content: "";
 }
 
 .billet-title .legal-review {
