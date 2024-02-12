@@ -116,9 +116,13 @@ class BilletTitle extends LegalDebug
         'new' => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title-new.php',
     ];
 
-    public static function render( $billet )
+    // public static function render( $billet )
+    
+    public static function render( $title )
     {
-        return self::render_main( self::TEMPLATE[ 'title' ], self::get( $billet ) );
+        // return self::render_main( self::TEMPLATE[ 'title' ], self::get( $billet ) );
+        
+        return self::render_main( self::TEMPLATE[ 'title' ], $title );
     }
 
     public static function render_title( $logo, $title, $achievement )
