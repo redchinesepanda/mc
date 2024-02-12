@@ -26,5 +26,5 @@
             <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
         <?php endif; ?>
     </div>
-    <?php echo BilletMobile::render( $args[ 'mobile' ] ); ?>
+    <?php echo BilletMobile::render_mobile( $args[ 'mobile' ] ); ?>
 </div>

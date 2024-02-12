@@ -48,6 +48,17 @@ class BilletMobile
         return self::render_main( self::TEMPLATE, self::get( $billet ) );
     }
 
+    public static function render_mobile( $mobile )
+    {
+        // $args = self::get( $billet );
+
+        // if ( !empty( $args ) ) {
+        //     load_template( self::TEMPLATE, false, $args );
+        // }
+
+        return self::render_main( self::TEMPLATE, $mobile );
+    }
+
     public static function render_main( $template, $args )
     {
 		ob_start();
