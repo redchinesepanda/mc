@@ -850,10 +850,16 @@ body {
     font-weight: 600;
 }
 
-.billet .bonus-mobile-item::before{
+.billet .bonus-mobile-item::before {
     font-family: var( --legal-font-icons );
     font-size: 18px;
     line-height: 18px;
+    text-decoration: none;
+    color: var(--Base-base-09);
+}
+
+.billet .bonus-mobile-item::before:hover {
+    color: var(--Base-base-07);
 }
 
 .billet-title .legal-review {
