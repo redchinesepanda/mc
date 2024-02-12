@@ -183,7 +183,7 @@ class BilletAchievement
 
         $billet = BilletMain::get( $args );
 
-        $title = BilletTitle::get( $billet );
+        $title = BilletTitle::get( $billet ); 
 
         if ( self::check_disabled( $title ) )
         {
