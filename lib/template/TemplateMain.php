@@ -309,7 +309,7 @@ class TemplateMain
 
         'thrive-default-styles',
 
-        'tcb-style-template-thrive_template-2467980',
+        // 'tcb-style-template-thrive_template-2467980',
     ];
 
     public static function wp_head_replace_style( $output )
