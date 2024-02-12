@@ -387,6 +387,8 @@ body {
     background-repeat: no-repeat;
     background-size: auto;
     border-radius: 50px;
+    background: var(--Base-base-01);
+    border: 1px solid var(--Base-base-09); 
 }
 
 .billet-list-part .billet-list-part-item {
