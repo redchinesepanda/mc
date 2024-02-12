@@ -61,7 +61,7 @@ class LegalMain
 
 		ACFMain::register_functions();
 	
-		// ToolsMain::register();
+		ToolsMain::register();
 	
 		SchemaMain::register();
 

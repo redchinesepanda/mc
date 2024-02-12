@@ -42,7 +42,7 @@ class ToolsMain
 {
     public static function register()
     {
-        ToolDisable::register();
+        // ToolDisable::register();
 
         ToolEnqueue::register();
 
