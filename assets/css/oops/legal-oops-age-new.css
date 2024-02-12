@@ -6,6 +6,10 @@
 		align-items: flex-end;
 	}
 
+	.legal-oops-cookie {
+		justify-content: center;
+	}
+
 	.legal-oops-age {
 		column-gap: 8px;
 	}
