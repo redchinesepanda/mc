@@ -630,12 +630,12 @@ body {
     height: 39px;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
     .billet-title .billet-title-achivement.legal-image {
         width: 100%;
         text-align: center;
     }
-}
+} */
 
 /* Position */
 
