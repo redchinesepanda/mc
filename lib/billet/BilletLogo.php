@@ -138,6 +138,12 @@ class BilletLogo
 
         // return $args;
 
+        LegalDebug::debug( [
+            'BilletLogo' => 'get',
+            
+            '$billet' => $billet,
+        ] );
+
         return self::get_logo( $billet[ 'id' ], $billet[ 'index' ], $billet[ 'url' ], $billet[ 'filter' ] );
     }
 
