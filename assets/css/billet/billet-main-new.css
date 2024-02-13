@@ -415,9 +415,9 @@ body {
 }
 
 .billet-list-part .billet-list-part-item {
-    background-position: left top;
+  /*   background-position: left top; */
     background-repeat: no-repeat;
-    background-size: auto;
+    /* background-size: auto; */
 }
 
 /* .billet-list-part.legal-check .billet-list-part-item {
@@ -432,14 +432,14 @@ body {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-close.svg');
 }
 
-.billet-list-part.legal-plus .billet-list-part-item {
+/* .billet-list-part.legal-plus .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-plus.svg');
-}
+} */
 
-.billet-list-part.legal-minus .billet-list-part-item {
+/* .billet-list-part.legal-minus .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-minus.svg');
 }
-
+ */
 .billet-list-part.legal-triangle .billet-list-part-item {
     background-image: url('/wp-content/themes/thrive-theme-child/assets/img/billet/list/billet-list-triangle.svg');
 }
@@ -845,19 +845,30 @@ body {
     line-height: 20px;
 }
 
+.billet-title .billet-title-rating::before,
+.billet-list-part.legal-check .billet-list-part-item::before,
+.billet-list-part.legal-plus .billet-list-part-item::before,
+.billet-list-part.legal-minus .billet-list-part-item::before {
+    font-family: var(--legal-font-icons);
+    line-height: 24px;
+    font-size: 24px;
+}
+
 .billet-title .billet-title-rating::before {
     content: '\F110';
     /* color: var(--Base-base-09); */
-    line-height: 24px;
-    font-size: 24px;
-    font-family: var(--legal-font-icons);
 }
 
 .billet-list-part.legal-check .billet-list-part-item::before {
     content: '\F107';
-    line-height: 24px;
-    font-size: 24px;
-    font-family: var(--legal-font-icons);
+}
+
+.billet-list-part.legal-plus .billet-list-part-item::before {
+    content: '\F10D';
+}
+
+.billet-list-part.legal-minus .billet-list-part-item::before {
+    content: '\F10E';
 }
 
 .billet-title .billet-title-achivement {
