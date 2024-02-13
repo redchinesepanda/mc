@@ -39,11 +39,11 @@ class BilletAchievement
     
     public static function get( $title )
     {
-        LegalDebug::debug( [
-            'BilletAchievement' => 'get',
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
 
-            '$title' => $title,
-        ] );
+        //     '$title' => $title,
+        // ] );
 
         return self::get_achievement( $title[ 'id' ], $title[ 'filter' ] );
     }
@@ -149,8 +149,13 @@ class BilletAchievement
 
         //     '$filter' => $filter,
         // ] );
+
+        if ( !empty( $filter[ 'achievement' ] ) )
+        {
+            return $filter[ 'achievement' ] == self::TYPE_DISABLED;
+        }
         
-        return $filter[ 'achievement' ] == self::TYPE_DISABLED;
+        return true;
     }
 
     public static function render( $achievement )
