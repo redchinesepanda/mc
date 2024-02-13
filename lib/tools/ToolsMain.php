@@ -38,8 +38,15 @@ require_once( 'ToolBootsrap.php' );
 
 require_once( 'ToolContent.php' );
 
+require_once( 'ToolSitemapXML.php' );
+
 class ToolsMain
 {
+    public static function register()
+    {
+
+    }
+
     public static function register()
     {
         ToolDisable::register();
@@ -63,6 +70,8 @@ class ToolsMain
         ToolBootsrap::register();
 
         ToolContent::register();
+
+        ToolSitemapXML::register();
     }
 }
 
