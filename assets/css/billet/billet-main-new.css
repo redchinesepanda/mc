@@ -359,6 +359,7 @@ body {
     border: 1px solid var(--Base-base-09);
     border-radius: 12.8px;
     overflow: hidden;
+    background-color: var(--Logo-background);
 }
 
 .billet-title .billet-title-achivement.legal-image {
