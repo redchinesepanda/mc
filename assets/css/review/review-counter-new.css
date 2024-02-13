@@ -425,9 +425,10 @@
 	background-repeat: no-repeat;
 	/* background-size: auto; */
 	background-position: center center;
-	background-size: 80%;
+	background-size: contain;
 	border-radius: 12%;
 	border: 1px solid var(--Base-base-09);
+	background-color: var(--Logo-background);
 }
 
 .legal-review-counter {

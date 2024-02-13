@@ -210,7 +210,7 @@
     background-position: center center;
     background-repeat: no-repeat;
    /*  background-size: auto; */
-    background-size: 80%;
+    background-size: contain;
     border-radius: 12.8px;
     border: 1px solid var(--Base-base-09);
     background-color: var(--Logo-background);
