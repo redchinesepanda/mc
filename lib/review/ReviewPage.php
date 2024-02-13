@@ -23,19 +23,26 @@ class ReviewPage
     }
 
 	const TEMPLATE = [
-        'legal-review-page' => LegalMain::LEGAL_PATH . '/template-parts/review/review-page.php',
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-page.php',
+
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-page-new.php',
     ];
 
     public static function render()
     {
-        // if ( !BonusMain::check() )
-        // {
-        //     return '';
-        // }
+        if ( TemplateMain::check_new() )
+        {
+            return render_main( self::TEMPLATE[ 'new' ], [] );
+        }
 
+        return render_main( self::TEMPLATE[ 'main' ], [] );
+    }
+
+    public static function render_main( $template, $args )
+    {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-review-page' ], false, [] );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
