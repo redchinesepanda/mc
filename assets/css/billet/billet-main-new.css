@@ -738,7 +738,7 @@ body {
 }
 
 /* .billet-list-part:not( .legal-default ) .billet-list-part-item { */
-.billet-list-part:not( .legal-check ):not( .legal-default ) .billet-list-part-item {
+.billet-list-part:not( .legal-check ):not( .legal-plus ):not( .legal-minus ):not( .legal-default ) .billet-list-part-item {
     /* padding: 3px 0px 0px 30px; */
     padding-left: 30px; 
 }
