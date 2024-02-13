@@ -1,6 +1,6 @@
 <?php
 
-class CompilationTemplatePage
+class CompilationPage
 {
     const CSS = [
         'compilation-page' => [

@@ -4,7 +4,7 @@ require_once ( 'CompilationMini.php' );
 
 require_once ( 'CompilationBonus.php' );
 
-require_once ( 'CompilationTemplatePage.php' );
+require_once ( 'CompilationPage.php' );
 
 require_once ( 'CompilationAbout.php' );
 
@@ -134,7 +134,7 @@ class CompilationMain
 
         CompilationBonus::register();
 
-        CompilationTemplatePage::register();
+        CompilationPage::register();
 
         CompilationAbout::register();
     }
