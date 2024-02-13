@@ -23,14 +23,26 @@ class CompilationPage
     }
 
 	const TEMPLATE = [
-        'legal-compilation-page' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-page.php',
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-page.php',
+
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-page-new.php',
     ];
 
     public static function render()
     {
+        if ( TemplateMain::check_new() )
+        {
+            return self::render_main( self::TEMPLATE[ 'new' ], [] );
+        }
+
+        return self::render_main( self::TEMPLATE[ 'main' ], [] );
+    }
+
+    public static function render_main( $template, $args )
+    {
         ob_start();
 
-        load_template( self::TEMPLATE[ 'legal-compilation-page' ], false, [] );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
