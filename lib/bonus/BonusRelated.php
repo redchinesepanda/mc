@@ -8,7 +8,7 @@ class BonusRelated
 
 			'ver'=> '1.0.2',
 		],
-	];
+	]; 
 
 	public static function register_style()
 	{
