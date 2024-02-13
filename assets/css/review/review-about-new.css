@@ -207,8 +207,9 @@
     background-repeat: no-repeat;
    /*  background-size: auto; */
     background-size: 80%;
-    border-radius: 12%;
+    border-radius: 20%;
     border: 1px solid var(--Base-base-09);
+    background-color: brown; /* временное правило */
 }
 
 .review-about .about-rating {
@@ -279,46 +280,46 @@
 .review-about:not( .legal-black ) .about-center h1,
 .review-about:not( .legal-black ) .about-center .review-bonus-title,
 .review-about:not( .legal-black ) .about-center .review-bonus-description {
-    color: #ffffff;
+    color: var( --Base-base-01 );;
 }
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
 .review-about.legal-black .about-center .review-bonus-title,
 .review-about.legal-black .about-center .review-bonus-description {
-    color: #000000;
+    color: var( --Base-base-09 );
+}
+
+.review-about .about-rating,
+.review-about .about-center h1,
+.review-about .about-center .review-bonus-title,
+.review-about .about-center .review-bonus-description {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
 }
 
 .review-about .about-rating {
-    font-family: "Source Sans Pro";
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 28px;
 }
 
 .review-about .about-center h1 {
-    font-family: "Source Sans Pro";
     font-size: 22px;
-    font-style: normal;
     font-weight: 600;
     line-height: 26.4px;
     text-align: center;
 }
 
 .review-about .about-center .review-bonus-title {
-    font-family: "Source Sans Pro";
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: 24px;
     text-align: center;
 }
 
 .review-about .about-center .review-bonus-description {
-    font-family: "Source Sans Pro";
     font-size: 13px;
-    font-style: normal;
     font-weight: 400;
     line-height: 19.5px;
     text-align: center;

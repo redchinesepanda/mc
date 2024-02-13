@@ -833,7 +833,7 @@ body {
 }
 
 .billet-item .billet-footer {
-    color: var( --Base-base-05, #939393 );
+    color: var( --Base-base-05 );
   /*   font-family: var( --legal-font-primary ); */
     font-style: normal;
     font-weight: 400;
