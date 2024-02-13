@@ -819,7 +819,7 @@ body {
 .billet-title .billet-title-rating,
 .billet-title .legal-review,
 .billet-title .billet-title-achivement.legal-image,
-.billet-list-part .billet-list-part-item {
+.billet-list-part:not( .legal-minus ) .billet-list-part-item {
     color: var(--Base-base-09);
     font-style: normal;
 }
@@ -869,6 +869,7 @@ body {
 
 .billet-list-part.legal-minus .billet-list-part-item::before {
     content: '\F10E';
+    color: var(--Base-base-05);
 }
 
 .billet-title .billet-title-achivement {
