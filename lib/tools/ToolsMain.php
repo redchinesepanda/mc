@@ -42,7 +42,7 @@ require_once( 'ToolSitemapXML.php' );
 
 class ToolsMain
 {
-    public static function register()
+    public static function register_functions()
     {
 
     }
