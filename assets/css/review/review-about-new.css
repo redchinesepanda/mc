@@ -211,9 +211,9 @@
     background-repeat: no-repeat;
    /*  background-size: auto; */
     background-size: 80%;
-    border-radius: 20%;
+    border-radius: 12.8px;
     border: 1px solid var(--Base-base-09);
-    background-color: brown; /* временное правило */
+    background-color: #E3E3E3; /* временное правило */
 }
 
 .review-about .about-rating {
