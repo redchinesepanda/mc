@@ -32,10 +32,10 @@ class ReviewPage
     {
         if ( TemplateMain::check_new() )
         {
-            return render_main( self::TEMPLATE[ 'new' ], [] );
+            return self::render_main( self::TEMPLATE[ 'new' ], [] );
         }
 
-        return render_main( self::TEMPLATE[ 'main' ], [] );
+        return self::render_main( self::TEMPLATE[ 'main' ], [] );
     }
 
     public static function render_main( $template, $args )
