@@ -45,7 +45,8 @@
 
     .review-about:not( .legal-mode-mini ) {
         /* padding: 10px 0px; */
-        padding: 28px 32px 32px 32px;
+        padding-top: 28px;
+        padding-bottom: 32px;
     }
 
     .review-about.legal-mode-mini {
@@ -198,14 +199,11 @@
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
     background-color: var(--Base-base-02) !important;  /* временный импортант из-за инлайновых стилей */
+    border-bottom: 2px solid var(--Base-base-09); 
 }
 
 .review-about.legal-mode-mini {
     border-radius: 20px;
-}
-
-.review-about:not(.legal-mode-mini) {
-    border-bottom: 2px solid var(--Base-base-09); 
 }
 
 .review-about .about-logo {
