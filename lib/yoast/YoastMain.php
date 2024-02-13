@@ -11,7 +11,7 @@ class YoastMain
 
     public static function register_functions()
     {
-        // $handler = new self();
+        $handler = new self();
 
         add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
 
