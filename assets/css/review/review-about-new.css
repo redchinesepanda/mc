@@ -195,7 +195,7 @@
 /* Review About Background */
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
-    background-color: var(--Base-base-02);
+    background-color: var(--Base-base-02) !important;  /* временный импортант из-за инлайновых стилей */
 }
 
 .review-about.legal-mode-mini {
