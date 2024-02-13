@@ -259,9 +259,9 @@ class ReviewGroup
     }
 
     const TEMPLATE = [
-        'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php'
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php',
 
-        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group-new.php'
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group-new.php',
     ];
 
     public static function render()
