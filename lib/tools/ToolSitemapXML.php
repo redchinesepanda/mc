@@ -59,6 +59,10 @@ class ToolSitemapXML
         'tcb_symbol',
 
         'affiliate-links',
+
+		'legal_bk_review',
+
+		'tcb_lightbox',
     ];
 
     public static function wpkama_remove_sitemaps_post_types( $post_types )
