@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'part' => 'part-billet-title.php',
+// LegalDebug::debug( [
+//     'part' => 'part-billet-title.php',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <div class="billet-title">
