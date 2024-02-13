@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
-			breakpointsBase: 'container',
+			slidesOffsetAfter: 50,
 		});
 	})
 	
