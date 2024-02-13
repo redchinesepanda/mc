@@ -258,9 +258,23 @@ class ReviewGroup
         return $items;
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php';
+    const TEMPLATE = [
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group.php'
+
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-group-new.php'
+    ];
 
     public static function render()
+    {
+        if ( TemplateMain::check_new() )
+        {
+            return self::render_main( self::TEMPLATE[ 'new' ], self::get() );
+        }
+
+        return self::render_main( self::TEMPLATE[ 'main' ], self::get() );
+    }
+
+    public static function render_main( $template, $args )
     {
         if ( !ReviewMain::check() )
         {
@@ -269,7 +283,7 @@ class ReviewGroup
 
         ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        load_template( $template, false, $args );
 
         $output = ob_get_clean();
 
