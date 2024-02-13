@@ -8,7 +8,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
-			longSwipes: false,
+			autoplay: {
+				delay: 5000,
+			},
 		});
 	})
 	
