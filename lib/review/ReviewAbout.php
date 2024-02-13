@@ -150,6 +150,8 @@ class ReviewAbout
             'id' => $id,
 
             'achievement' => BilletAchievement::TYPE[ 'about' ],
+
+            'filter' => [],
         ] );
     }
 
