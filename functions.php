@@ -18,5 +18,3 @@ LegalMain::register();
 // {
 // 	function tve_load_global_variables() {}
 // }
-
-?>
