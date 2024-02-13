@@ -252,6 +252,12 @@ body {
     display: flex;
 }
 
+.billet-item .legal-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .billet .title-data {
     display: flex;
     flex-wrap: wrap;
