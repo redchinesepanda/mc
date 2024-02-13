@@ -15,7 +15,7 @@ get_header();
 <?php echo CompilationPage::render(); ?>
 <section id="theme-bottom-section" class="legal-section-author">
 	<?php echo ReviewAuthor::render(); ?>
-</section>
+</section> 
 <?php
 
 get_footer();
