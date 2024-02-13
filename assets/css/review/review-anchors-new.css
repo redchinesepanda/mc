@@ -76,12 +76,12 @@
 
     /* Anchors Position */
     
-    .review-anchors:not(.legal-section-group + .anchors .review-anchors) {
+    .review-anchors:not(.legal-section-group + .legal-section-anchors .review-anchors) {
         /* padding: 5px 0px; */
         padding-top: 48px;
     }
 
-   .legal-section-group + .anchors .review-anchors {
+   .legal-section-group + .legal-section-anchors .review-anchors {
         padding-top: calc( 48px - 30px );
    }
 
