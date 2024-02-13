@@ -355,7 +355,7 @@
 }
 
 .legal-billet-mega:not( .legal-author ) .mega-about-logo {
-	background-size: 80%;
+	background-size: contain;
 	border-radius: 12%;
 	background-color: var(--Logo-background);
 }
