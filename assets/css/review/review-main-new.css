@@ -13,12 +13,12 @@
     .tcb-post-content h2,
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         /* padding-bottom: 30px; */
+        padding-top: 16px;
         padding-bottom: 16px;
     }
 
     .tcb-post-content h2 {
         margin-top: 0px;
-        padding-top: 16px;
         margin-top: 28px;
     }
 
@@ -27,7 +27,6 @@
     } */
 
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-        padding-top: 16px;
         margin-top: 16px;
         /* margin: 0px; */
     }
@@ -77,6 +76,10 @@
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         /* padding-bottom: 30px; */
         padding-bottom: 24px;
+    }
+
+    .tcb-post-content h1 {
+        padding-top: 24px;
     }
 
     .tcb-post-content h2 {
