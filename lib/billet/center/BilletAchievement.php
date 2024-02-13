@@ -39,11 +39,11 @@ class BilletAchievement
     
     public static function get( $title )
     {
-        // $title[ 'id' ]
+        LegalDebug::debug( [
+            'BilletAchievement' => 'get',
 
-        // $title[ 'filter' ]
-
-        // $title['achievement']
+            '$title' => $title,
+        ] );
 
         return self::get_achievement( $title[ 'id' ], $title[ 'filter' ] );
     }
