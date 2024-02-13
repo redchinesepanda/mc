@@ -44,7 +44,8 @@
     }
 
     .review-about:not( .legal-mode-mini ) {
-        padding: 10px 0px;
+        /* padding: 10px 0px; */
+        padding: 28px 32px 32px 32px;
     }
 
     .review-about.legal-mode-mini {
@@ -63,7 +64,8 @@
     /* Review About Width and Height */
 
     .review-about {
-        width: 1080px;
+        /* width: 1080px; */
+        max-width: var( --base-width-desktop );
     }
 
     .review-about .about-left,
@@ -200,6 +202,10 @@
 
 .review-about.legal-mode-mini {
     border-radius: 20px;
+}
+
+.review-about:not(.legal-mode-mini) {
+    border-bottom: 2px solid var(--Base-base-09); 
 }
 
 .review-about .about-logo {
