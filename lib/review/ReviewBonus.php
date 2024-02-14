@@ -552,6 +552,9 @@ class ReviewBonus
 
 				'alt' => $group[ self::GROUP[ 'title' ] ],
 			],
+
+			'name' => $group[ 'about-title' ],
+
 			'review' => [
 				'href' => self::check_url_review( $id ),
 
