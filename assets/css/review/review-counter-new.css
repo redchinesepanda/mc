@@ -259,7 +259,7 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-set {
-	flex-basis: calc( 75% - 50px );
+	flex-basis: calc( 75% - 20px );
 }
 
 .legal-review-counter:not(.legal-overall) .set-item-wrapper {
@@ -267,7 +267,7 @@
 }
 
 .legal-review-counter .review-counter-overall {
-	flex-basis: calc( 25% - 50px );
+	flex-basis: 25%;
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
