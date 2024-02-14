@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		billetFooter: '.billet .billet-footer'
 	};
 
-	document.querySelectorAll( selectors.billetFooterControl ).forEach( Footer );
+	document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
 } );
 
 // billet-footer-js end
