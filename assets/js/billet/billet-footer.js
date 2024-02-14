@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.toggle( classes.active );
 	}
 
-	function checkFooter( event )
+	function toggleControl( event )
 	{
 		event.currentTarget.closest( selectors.billet ).querySelectorAll( selectors.billetFooter ).forEach( toggleFooter );
 
@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function setFooter( element )
 	{
-		element.addEventListener( 'click', checkFooter, false );
+		element.addEventListener( 'click', toggleControl, false );
 	}
 
 	const classes = {
@@ -28,7 +28,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		billetFooterControl: '.billet .billet-footer-control',
 		
-		billetFooter: '.billet .billet-footer'
+		billetFooter: '.billet-footer'
 	};
 
 	document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
