@@ -111,6 +111,8 @@
 }
 
 .review-about .about-rating {
+    display: flex;
+    align-items: center;
     column-gap: 6px;
 }
 
@@ -313,7 +315,7 @@
 }
 
 .review-about .about-rating::before {
-    content: '\F110';
+    content: '\F10F';
     font-family: var(--legal-font-icons);
     line-height: 24px;
     font-size: 24px;
