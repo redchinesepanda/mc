@@ -9,6 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			loop: false,
 			slidesPerView: 'auto',
 			/* initialSlide: 3, */
+			centeredSlides: true,
 		});
 	})
 	
