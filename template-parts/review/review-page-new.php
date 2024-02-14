@@ -11,6 +11,10 @@
 	<div class="legal-review-page">
 		<div class="legal-review-page-main">
 			<?php echo ReviewContent::render(); ?>
+
+			<div id="theme-bottom-section" class="legal-section-author">
+				<?php echo ReviewAuthor::render(); ?>
+			</div>
 		</div>
 		<div class="legal-review-page-sidebar"></div>
 	</div>
