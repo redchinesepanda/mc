@@ -10,9 +10,24 @@ class BonusSingle
         ],
     ];
 
+    const CSS_NEW = [
+        'bonus-single' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-single-new.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
     public static function register_style()
     {
-        BonusMain::register_style( self::CSS );
+        if ( TemplateMain::check_new() )
+        {
+            BonusMain::register_style( self::CSS_NEW );
+        }
+        else
+        {
+            BonusMain::register_style( self::CSS );
+        }
     }
 
 	public static function register()
