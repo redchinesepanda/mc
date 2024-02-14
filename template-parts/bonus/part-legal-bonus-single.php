@@ -18,5 +18,5 @@
 		<?php echo BonusRelated::render_preview_categories(); ?>
 
 		<?php echo BonusRelated::render_preview_other(); ?>
-	</div>
+	</div> 
 </div>
