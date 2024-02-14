@@ -455,13 +455,15 @@ class ReviewBonus
             return '';
         }
 
-		ob_start();
+		// ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
+        // load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+		return LegalComponents::render_main( self::TEMPLATE[ 'bonus' ], self::get_bonus( $args ) );
     }
 
 	const GROUP = [
@@ -587,13 +589,15 @@ class ReviewBonus
             return '';
         }
 
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );
+        // load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+		return LegalComponents::render_main( self::TEMPLATE[ 'billet' ], self::get_billet( $args ) );
     }
 
 	public static function style_formats_bonus( $settings )

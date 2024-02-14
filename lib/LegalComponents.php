@@ -205,6 +205,17 @@ class LegalComponents
 
 		return false;
 	}
+
+	public static function render_main( $template, $args )
+    {
+		ob_start();
+
+        load_template( $template, false, $args );
+
+        $output = ob_get_clean();
+
+        return $output;
+    }
 }
 
 ?>
