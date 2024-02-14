@@ -4,11 +4,19 @@
 
 	.legal-review-page-main
 	{
-		width: calc( 100% / 3 * 2 - 32px );
+		width: calc( 100% / 3 * 2 - 24px );
 	}
 
 	.legal-review-page-sidebar
 	{
-		width: calc( 100% / 3 - 32px );
+		width: calc( 100% / 3 - 24px );
 	}
+}
+
+/* Display */
+
+.legal-review-page
+{
+	display: flex;
+	gap: 48px;
 }
