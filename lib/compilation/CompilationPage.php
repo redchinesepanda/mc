@@ -12,7 +12,7 @@ class CompilationPage
 
     const CSS_NEW = [
         'compilation-page' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-page.css',
+            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-page-new.css',
 
             'ver'=> '1.0.0',
         ],
