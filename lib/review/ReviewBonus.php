@@ -446,6 +446,8 @@ class ReviewBonus
 		'bonus' => LegalMain::LEGAL_PATH . '/template-parts/review/review-bonus.php',
 
 		'billet' => LegalMain::LEGAL_PATH . '/template-parts/review/review-billet.php',
+
+		'billet-new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-billet-new.php',
 	];
 
     public static function render_bonus( $args )
@@ -576,10 +578,15 @@ class ReviewBonus
 
     public static function render_billet( $args )
     {
-		if ( !ReviewMain::check() )
-        {
-            return '';
-        }
+		// if ( !ReviewMain::check() )
+        // {
+        //     return '';
+        // }
+
+		if ( TemplateMain::check_new() )
+		{
+			return LegalComponents::render_main( self::TEMPLATE[ 'billet-new' ], self::get_billet( $args ) );
+		}
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'billet' ], self::get_billet( $args ) );
     }
