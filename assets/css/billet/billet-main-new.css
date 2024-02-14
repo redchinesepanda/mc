@@ -836,7 +836,7 @@ body {
     content: attr( data-active );
 }
 
-.billet-right .billet-footer-control:not( .legal-active )::after {
+.billet-right .billet-footer-control::after {
     content: '\F103';
     font-family: var(--legal-font-icons);
     font-size: 16px;
