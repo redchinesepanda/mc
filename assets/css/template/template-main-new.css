@@ -12,19 +12,27 @@
 
 @media screen and ( min-width: 960px )
 {
+	/* Display */
+
+	.legal-section-content
+	{
+		gap: 48px;
+	}
+
 	/* Position */
 
-	.legal-section-content {
+	.legal-section-content
+	{
 		margin: 0px auto;
-		/* padding-bottom: 30px; */
 		padding-bottom: 40px;
 		
 	}
 
 	/* Width and Height */
 
-	.legal-section-content {
-		width: 1080px;
+	.legal-section-content
+	{
+		width: var( --base-width-desktop );
 	}
 }
 
