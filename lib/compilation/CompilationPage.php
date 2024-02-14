@@ -10,9 +10,24 @@ class CompilationPage
         ],
     ];
 
+    const CSS_NEW = [
+        'compilation-page' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-page.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
     public static function register_style()
     {
-        CompilationMain::register_style( self::CSS );
+        if ( TemplateMain::check_new() )
+        {
+            CompilationMain::register_style( self::CSS_NEW );
+        }
+        else
+        {
+            CompilationMain::register_style( self::CSS );
+        }
     }
 
 	public static function register()

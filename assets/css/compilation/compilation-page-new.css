@@ -1,0 +1,22 @@
+@media screen and ( min-width: 1218px )
+{
+	/* Width and Height  */
+
+	.legal-compilation-page-main
+	{
+		width: calc( 100% / 3 * 2 - 24px );
+	}
+
+	.legal-compilation-page-sidebar
+	{
+		width: calc( 100% / 3 - 24px );
+	}
+}
+
+/* Display */
+
+.legal-compilation-page
+{
+	display: flex;
+	gap: 48px;
+}
