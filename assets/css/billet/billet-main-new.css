@@ -351,6 +351,14 @@ body {
     align-items: center;
 }
 
+.billet-item .billet-footer:not( .legal-active ) {
+    display: none;
+}
+
+.billet-item .billet-footer.legal-active {
+    display: block;
+}
+
 /* Background */
 
 .billet-item .billet
@@ -808,6 +816,17 @@ body {
     text-decoration: none;
     text-align: center;
     color: var(--Base-base-01);
+}
+
+.billet-right .billet-footer-control::before {
+    content: attr( data-default );
+}
+
+.billet-right .billet-footer-control::after {
+    content: '\F103';
+    font-family: var(--legal-font-icons);
+    font-size: 16px;
+    font-weight: 16px;
 }
 
 .billet-right .bonus-spoiler {
