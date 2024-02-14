@@ -1,0 +1,14 @@
+@media screen and ( min-width: 1218px )
+{
+	/* Width and Height  */
+
+	.legal-review-page-main
+	{
+		width: clac( 100% / 3 * 2 - 32px );
+	}
+
+	.legal-review-page-sidebar
+	{
+		width: clac( 100% / 3 - 32px );
+	}
+}

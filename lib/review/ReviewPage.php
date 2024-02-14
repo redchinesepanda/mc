@@ -10,16 +10,27 @@ class ReviewPage
     //     ],
     // ];
 
-    // public static function register_style()
-    // {
-    //     ReviewMain::register_style( self::CSS );
-    // }
+    const CSS_NEW = [
+        'review-page' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-page-new.css',
+
+            'ver'=> '1.0.0',
+        ],
+    ];
+
+    public static function register_style()
+    {
+        if ( TemplateMain::check() )
+        {
+            ReviewMain::register_style( self::CSS_NEW );
+        }
+    }
 
 	public static function register()
     {
-        // $handler = new self();
+        $handler = new self();
 
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
     }
 
 	const TEMPLATE = [
