@@ -110,6 +110,10 @@
     align-items: center;
 }
 
+.review-about .about-rating {
+    column-gap: 6px;
+}
+
 .legal-afillate {
     /* display: block; */
     display: flex;
@@ -164,9 +168,9 @@
     padding-bottom: 30px;
 }
 
-.review-about .about-rating {
+/* .review-about .about-rating {
     padding-left: 34px;
-}
+} */
 
 .review-about .about-center h1,
 .review-about .about-center .review-bonus-title {
@@ -216,12 +220,12 @@
     background-color: var(--Logo-background);
 }
 
-.review-about .about-rating {
+/* .review-about .about-rating {
     background-image: url( '../../img/review/review-rating.svg' );
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
 .legal-afillate {
    /*  background-image: url( '../../img/review/review-bet-here.svg' ); */
@@ -306,6 +310,13 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
+}
+
+.review-about .about-rating::before {
+    content: '\F110';
+    font-family: var(--legal-font-icons);
+    line-height: 24px;
+    font-size: 24px;
 }
 
 .review-about .about-center h1 {
