@@ -10,6 +10,6 @@
 <?php endif; ?>
 <?php BilletProfit::render( $args ); ?>
 <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
-    <span class="billet-description-full-control legal-active" data-default="Show T&C" data-active="Hide T&C"></span>
+    <span class="billet-footer-control legal-active" data-default="Show T&C" data-active="Hide T&C"></span>
 <?php endif; ?>
 <?php BilletSpoilerButton::render( $args ); ?>
