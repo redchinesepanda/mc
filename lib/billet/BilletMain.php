@@ -41,6 +41,8 @@ class BilletMain
 
 		'get-in-touch' => 'Get in touch',
 
+        'hide-tnc' => 'Hide T&C',
+
 		'last-updated' => 'Last updated',
 
 		'margin' => 'Margin',
@@ -52,6 +54,8 @@ class BilletMain
 		'read-more-about' => 'Read more about',
 
 		'review' => 'Review',
+        
+        'show-tnc' => 'Show T&C',
 
         'there-are-no-tabs' => 'There are no tabs added yet',
 	];

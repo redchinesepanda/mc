@@ -16,6 +16,15 @@ class BilletRight
         'new' => LegalMain::LEGAL_PATH . '/template-parts/billet/right/part-billet-right-new.php',
     ];
     
+    private static function get_footer_control()
+    {
+        return [
+            'default' => __( BilletMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+
+            'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
     private static function get_play( $billet )
     {
         $args = BilletMain::href( $billet['url']['play'] );
@@ -61,6 +70,8 @@ class BilletRight
             'play' => self::get_play( $billet ),
 
             'license' => self::get_license( $billet ),
+
+            'footer-control' => self::get_footer_control(),
 
             'filter' => ( !empty( $billet['filter'] ) ? $billet['filter'] : [] ),
         ];
