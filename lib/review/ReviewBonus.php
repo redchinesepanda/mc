@@ -15,10 +15,31 @@ class ReviewBonus
             'ver' => '1.1.0',
         ],
     ];
+
+	const CSS_NEW = [
+        'review-bonus' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
+
+			'ver' => '1.1.9',
+		],
+
+        'review-billet' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet-new.css',
+
+            'ver' => '1.0.0',
+        ],
+    ];
  
     public static function register_style()
     {
-		ReviewMain::register_style( self::CSS );
+		if ( TemplateMain::check_new() )
+		{
+			ReviewMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_style( self::CSS );
+		}
     }
 
     public static function register_inline_style()
