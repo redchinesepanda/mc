@@ -167,9 +167,9 @@
         margin-left: auto;
     }
 
-    .billet-list-part.legal-check {
+   /*  .billet-list-part.legal-check {
         margin-left: -8px;
-    }
+    } */
 
     .billet-item .billet-footer:not( :empty ) {
         padding-right: 24px;
