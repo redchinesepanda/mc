@@ -9,6 +9,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleControl( event )
 	{
+		console.log( event.currentTarget.closest( selectors.billet ) );
+		
 		event.currentTarget.closest( selectors.billet ).querySelectorAll( selectors.billetFooter ).forEach( toggleFooter );
 
 		event.currentTarget.classList.toggle( classes.active );
