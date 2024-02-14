@@ -8,10 +8,11 @@
 	<?php echo ReviewAnchors::render(); ?>
 </section>
 <section class="legal-section-content">
-	<div class="legal-bonus-single">
-		<div class="legal-bonus-main">
+	<div class="legal-review-page">
+		<div class="legal-review-page-main">
 			<?php echo ReviewContent::render(); ?>
 		</div>
+		<div class="legal-review-page-sidebar"></div>
 	</div>
 </section>
 <section class="legal-section-offers">
