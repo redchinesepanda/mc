@@ -455,14 +455,6 @@ class ReviewBonus
             return '';
         }
 
-		// ob_start();
-
-        // load_template( self::TEMPLATE[ 'bonus' ], false, self::get_bonus( $args ) );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
 		return LegalComponents::render_main( self::TEMPLATE[ 'bonus' ], self::get_bonus( $args ) );
     }
 
@@ -588,14 +580,6 @@ class ReviewBonus
         {
             return '';
         }
-
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'billet' ], false, self::get_billet( $args ) );
-
-        // $output = ob_get_clean();
-
-        // return $output;
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'billet' ], self::get_billet( $args ) );
     }
