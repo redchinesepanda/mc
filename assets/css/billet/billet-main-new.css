@@ -149,11 +149,11 @@
     }
 
     .billet-list-part.legal-check.legal-column {
-        width: calc(76% - 8px);
+        width: 74%;
     }
 
     .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column {
-        width: calc( 24% - 28px);
+        width: calc( 26% - 28px);
     }
 
     /* Position */
