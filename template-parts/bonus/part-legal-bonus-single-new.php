@@ -19,4 +19,5 @@
 
 		<?php echo BonusRelated::render_preview_other(); ?>
 	</div>
+	<div class="legal-bonus-sidebar"></div>
 </div>
