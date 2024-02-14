@@ -116,11 +116,34 @@ class BilletMain
         ],
     ];
 
+    const JS_NEW = [
+        self::HANDLE[ 'spoiler' ] => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-spoiler.js',
+
+            'ver' => '1.0.0',
+        ],
+
+        'billet-footer' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
     public static function register_script( $scripts = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $scripts ) ) {
-                $scripts = self::JS;
+        if ( self::check() )
+        {
+            if ( empty( $scripts ) )
+            {
+                if ( TemplateMain::check_new() )
+                {
+                    $scripts = self::JS_NEW;    
+                }
+                else
+                {
+                    $scripts = self::JS;
+                }
             }
 
             ToolEnqueue::register_script( $scripts );
