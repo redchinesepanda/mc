@@ -2,32 +2,40 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function moveBonusToReviewAbout( element )
-	{
-		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
-	}
+	// function moveBonusToReviewAbout( element )
+	// {
+	// 	element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+	// }
 
-	function moveBonusToSidebar( element )
-	{
-		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
-	}
+	// function moveBonusToSidebar( element )
+	// {
+	// 	element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
+	// }
 
 	function checkState( event )
 	{
+		console.log( 'checkState' );
+
 		console.log( window.scrollY );
+
+		console.log( localStorage.getItem( 'reviewAboutScroll' ) );
 
 		if ( window.scrollY > 0 && localStorage.getItem( 'reviewAboutScroll' ) != true )
 		{
 			localStorage.setItem( 'reviewAboutScroll', true );
 
-			document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
+			console.log( localStorage.getItem( 'reviewAboutScroll' ) );
+
+			// document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
 		}
 
 		if ( window.scrollY == 0 && localStorage.getItem( 'reviewAboutScroll' ) == true )
 		{
 			localStorage.setItem( 'reviewAboutScroll', false );
 
-			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
+			console.log( localStorage.getItem( 'reviewAboutScroll' ) );
+
+			// document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
 		}
 	}
 
