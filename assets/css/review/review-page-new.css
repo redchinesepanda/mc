@@ -1,5 +1,13 @@
 @media screen and ( min-width: 1218px )
 {
+	/* Position */
+
+	.legal-review-page-sidebar
+	{
+		position: sticky;
+		top: 0px;
+	}
+
 	/* Width and Height  */
 
 	.legal-review-page-main
@@ -10,6 +18,7 @@
 	.legal-review-page-sidebar
 	{
 		width: calc( 100% / 3 - 24px );
+		height: fit-content;
 	}
 }
 
