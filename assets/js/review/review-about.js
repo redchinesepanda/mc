@@ -2,15 +2,15 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// function moveBonusToReviewAbout( element )
-	// {
-	// 	element.appendChild( document.querySelector( selectors.sidebarBonus ) );
-	// }
+	function moveBack( element )
+	{
+		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+	}
 
-	// function moveBonusToSidebar( element )
-	// {
-	// 	element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
-	// }
+	function moveToSidebar( element )
+	{
+		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
+	}
 
 	function checkState( event )
 	{
@@ -30,7 +30,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// console.log( 'reviewAboutScroll move: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
-			document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
+			document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
 		}
 
 		// console.log( '== 0: ' + ( window.scrollY == 0 ) );
@@ -43,7 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// console.log( 'reviewAboutScroll back: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
-			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
+			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBack );
 		}
 	}
 
