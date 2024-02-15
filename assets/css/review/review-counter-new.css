@@ -3,14 +3,14 @@
 @media screen and ( max-width: 767px ) {
 	/* Display */
 
-/* 	.tcb-post-content > .legal-review-counter,
+	.tcb-post-content > .legal-review-counter,
 	.tcb-post-content > .legal-review-counter .review-counter-set {
 		flex-direction: column;
-		row-gap: 20px;
+		/* row-gap: 20px; */
 	}
-  */
-	.legal-review-counter,
-	.legal-review-counter .review-counter-set {
+ 
+	.legal-billet-mega .legal-review-counter.legal-overall,
+	.legal-billet-mega .legal-review-counter .review-counter-set {
 		flex-direction: column;
 	}
 
