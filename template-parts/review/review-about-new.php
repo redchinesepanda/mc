@@ -3,12 +3,14 @@
         <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'class' ]; ?>">
             <div class="about-center">
                 <div class="about-logo"></div>
-                <?php if( empty( $args['mode'] ) ) : ?>
-                    <h1><?php echo $args[ 'title' ]; ?></h1>
-                <?php endif; ?>
-                <?php if( empty( $args['mode'] ) && !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
-                    <div class="about-rating"><?php echo $args[ 'rating' ][ 'label' ]; ?> - <?php echo $args[ 'rating' ][ 'value' ]; ?></div>
-                <?php endif; ?>
+                <div class="about-data">
+                    <?php if( empty( $args['mode'] ) ) : ?>
+                        <h1><?php echo $args[ 'title' ]; ?></h1>
+                    <?php endif; ?>
+                    <?php if( empty( $args['mode'] ) && !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
+                        <div class="about-rating"><?php echo $args[ 'rating' ][ 'label' ]; ?> - <?php echo $args[ 'rating' ][ 'value' ]; ?></div>
+                    <?php endif; ?>
+                </div>
             </div>
             <div class="about-right">
                 <?php if( !empty( $args['bonus'][ 'name' ] ) ) : ?>
