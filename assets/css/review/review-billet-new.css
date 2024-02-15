@@ -108,6 +108,10 @@
 	margin-bottom: 30px;
 }
 
+.legal-billet .billet-review {
+	padding: 20px;
+}
+
 .legal-billet .billet-get-link {
 	padding: 12px 55px 12px 22px;
 }
@@ -136,7 +140,7 @@
 /* Billet Background */
 
 .legal-billet {
-	background-color: var(--Base-base-01);;
+	background-color: var(--Base-base-01);
 	/* border: 0.8px solid rgba(198, 198, 198, 0.2); */
 	border: 1px solid var(--Base-base-09); 
 	border-radius: 24px 24px 18px 18px;
