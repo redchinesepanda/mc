@@ -4,7 +4,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+		// element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+		
+		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
 	}
 
 	function moveToSidebar( element )
