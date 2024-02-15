@@ -80,7 +80,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( window.matchMedia( '( min-width: 1218px )' ).matches )
 		{
 			items.forEach( function ( item ) {
-				element.addEventListener( item.event, item.action, item.args );
+				document.addEventListener( item.event, item.action, item.args );
 			} );
 
 			// document.addEventListener( events.scroll, initBonus, { once: true } );
@@ -92,7 +92,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		else
 		{
 			items.forEach( function ( item ) {
-				element.removeEventListener( item.event, item.action, item.args );
+				document.removeEventListener( item.event, item.action, item.args );
 			} );
 
 			// document.removeEventListener( events.scroll, initBonus, { once: true } );
