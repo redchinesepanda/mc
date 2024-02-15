@@ -120,7 +120,8 @@
 	}
 }
 
-.moved-box {
+.review-about .about-right
+{
 	animation: append-animate .3s linear;
 }
 

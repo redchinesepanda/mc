@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-box');
+		// document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-box');
 
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
