@@ -22,28 +22,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let state = localStorage.getItem( 'reviewAboutScroll' );
 
-		console.log( 'state != 1: ' + ( state != 1 ) );
+		// console.log( 'state != 1: ' + ( state != 1 ) );
 
 		if ( window.scrollY > 0 && state != 1 )
 		{
 			localStorage.setItem( 'reviewAboutScroll', 1 );
 
-			console.log( 'reviewAboutScroll move: ' + localStorage.getItem( 'reviewAboutScroll' ) );
+			// console.log( 'reviewAboutScroll move: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
-			// document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
+			document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
 		}
 
 		// console.log( '== 0: ' + ( window.scrollY == 0 ) );
 
-		console.log( 'state == 1: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == 1 ) );
+		// console.log( 'state == 1: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == 1 ) );
 
 		if ( window.scrollY == 0 && state == 1 )
 		{
 			localStorage.setItem( 'reviewAboutScroll', 0 );
 
-			console.log( 'reviewAboutScroll back: ' + localStorage.getItem( 'reviewAboutScroll' ) );
+			// console.log( 'reviewAboutScroll back: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
-			// document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
+			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
 		}
 	}
 
