@@ -4,7 +4,6 @@
 	/* Display */
 
 	.tcb-post-content > .legal-review-counter,
-	.tcb-post-content > .legal-review-counter .review-counter-info,
 	.tcb-post-content > .legal-review-counter .review-counter-set {
 		flex-direction: column;
 		/* row-gap: 20px; */
@@ -27,10 +26,10 @@
 		align-items: center;
 	}
 
-	.legal-review-counter .review-counter-info {
+	/* .legal-review-counter .review-counter-info {
 		flex-direction: column;
 		row-gap: 20px;
-	}
+	} */
 
 	.legal-review-counter .review-counter-set {
 		flex-direction: column;
