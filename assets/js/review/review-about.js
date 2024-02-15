@@ -29,9 +29,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
 		}
 
-		console.log( 'window.scrollY: ' + ( window.scrollY == 0 ) );
+		console.log( '== 0: ' + ( window.scrollY == 0 ) );
 
-		console.log( 'window.scrollY: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == true ) );
+		console.log( '== true: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == true ) );
 
 		if ( window.scrollY == 0 && localStorage.getItem( 'reviewAboutScroll' ) == true )
 		{
