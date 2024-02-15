@@ -109,7 +109,7 @@
 .legal-review-counter {
 	display: flex;
 	/* flex-direction: column; */
-	column-gap: 20px;
+	/* column-gap: 20px; */
 	flex-wrap: wrap;
 }
 
@@ -264,7 +264,8 @@
 }
 
 .legal-review-counter.legal-overall .review-counter-set {
-	flex-basis: calc( 75% - 20px );
+	/* flex-basis: calc( 75% - 20px ); */
+	flex-basis: calc((100% / 3) * 2);
 }
 
 .legal-review-counter:not(.legal-overall) .set-item-wrapper {
@@ -272,7 +273,8 @@
 }
 
 .legal-review-counter .review-counter-overall {
-	flex-basis: 25%;
+	/* flex-basis: 25%; */
+	flex-basis: calc(100% / 3);
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
