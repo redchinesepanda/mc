@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		// document.querySelector( selectors.sidebarBonus ).classList.add( 'moved-bonus' );
+		// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
 
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
@@ -24,7 +24,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutScroll', 1 );
 
-			document.querySelector( selectors.reviewAboutBonus ).classList.add( 'moved-bonus' );
+			// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
 			document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
 		}
@@ -46,6 +46,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		sidebarBonus : '.legal-review-page-sidebar .about-right',
 	};
+
+	const classes = {
+		moved: 'moved-bonus'
+	};
+
+	document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
 	document.addEventListener( 'scroll', checkState, false );
 } );
