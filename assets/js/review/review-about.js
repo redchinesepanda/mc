@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
+		// document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
 
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
@@ -23,6 +23,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( window.scrollY > 0 && state != 1 )
 		{
 			localStorage.setItem( 'reviewAboutScroll', 1 );
+
+			document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
 
 			document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
 		}
