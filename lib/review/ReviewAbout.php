@@ -284,6 +284,8 @@ class ReviewAbout
     const TEMPLATE = [
         'review-about' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about.php',
 
+        'review-about-new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about-new.php',
+
         'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
     ];
 
@@ -314,13 +316,12 @@ class ReviewAbout
             return '';
         }
 
-        ob_start();
-        
-        load_template( self::TEMPLATE[ 'review-about' ], false, $args );
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'review-about-new' ], $args );
+        }
 
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'review-about' ], $args );
     }
     
     public static function render_about_bottom()
