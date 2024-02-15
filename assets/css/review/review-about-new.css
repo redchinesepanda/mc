@@ -107,6 +107,23 @@
     
 }
 
+/* Animation */
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;	
+	}
+}
+
+.moved-box {
+	animation: append-animate .3s linear;
+}
+
 /* Display */
 
 .review-about {
