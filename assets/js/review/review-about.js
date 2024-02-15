@@ -54,7 +54,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.addEventListener( 'scroll', checkState, false );
 
-	document.addEventListener( 'scroll', initBonus, once );
+	document.addEventListener( 'scroll', initBonus, {
+		once: true
+	} );
 } );
 
 // review-about-js end
