@@ -9,6 +9,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function moveBack( element )
 	{
+		console.log( document.querySelector( selectors.sidebarBonus ) );
+		
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
 
