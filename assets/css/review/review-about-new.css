@@ -94,10 +94,10 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about .about-center
+  /*   .review-about .about-center
     {
         width: calc( 100% / 3 * 2 - 24px );
-    }
+    } */
 
     .review-about.legal-mode-mini {
         width: 800px;
@@ -142,7 +142,8 @@
 .review-about .about-center {
     display: flex;
     /* flex-direction: column; */
-    row-gap: 10px;
+   /*  row-gap: 10px; */
+    column-gap: 26px;
     /* justify-content: center; */
 }
 
