@@ -1,9 +1,11 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <div class="review-about-wrapper <?php echo $args[ 'class' ]; ?>">
         <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'class' ]; ?>">
-            <div class="achievement-name">
-                <span class="achievement-bonus-link"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
-            </div>
+            <?php if( !empty( $args['achievement'] ) ) : ?>
+                <div class="achievement-name">
+                    <span class="achievement-bonus-link"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
+                </div>
+            <?php endif; ?>
             <div class="about-left">
                 <div class="about-logo"></div>
             </div>
