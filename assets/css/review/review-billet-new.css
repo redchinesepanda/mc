@@ -212,20 +212,29 @@
 	color: #000000;
 }
 
+.legal-billet .billet-name,
+.legal-billet .review-title-link,
+.legal-billet .billet-get-link,
+.legal-billet .billet-title {
+	font-family: var( --legal-font-primary );
+  	font-style: normal;
+}
+
+.legal-billet .billet-name,
+.legal-billet .review-title-link,
+.legal-billet .billet-title {
+	color: var( --Base-base-09 );
+}
+
 .legal-billet .review-title-link {
-	font-family: "Source Sans Pro";
 	font-size: 15px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 27px;
 	text-decoration: none;
-	text-transform: uppercase;
 }
 
 .legal-billet .billet-title {
-	font-family: "Source Sans Pro";
 	font-size: 23px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 27.6px;
 }
@@ -236,12 +245,9 @@
 }
 
 .legal-billet .billet-get-link {
-	font-family: "Source Sans Pro";
 	font-size: 14px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 14.4px;
-	color: rgb(255, 255, 255);
+	color: var( --Base-base-01 );
 	text-decoration: none;
-	text-transform: uppercase;
 }
