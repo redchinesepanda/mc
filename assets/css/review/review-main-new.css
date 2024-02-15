@@ -186,7 +186,9 @@
 .bonus-content > p:not( :last-child ):not( .legal-override ),
 .billet-description > p:not( :last-child ):not( .legal-override ),
 .billet .billet-description-full > p:not( :last-child ):not( .legal-override ) {
-    padding-bottom: 15px;
+    padding-bottom: 18px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .tcb-post-content h4:not( .legal-override ) {
