@@ -53,11 +53,61 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		moved: 'moved-bonus'
 	};
 
-	document.addEventListener( 'scroll', initBonus, { once: true } );
+	const events = {
+		scroll: 'scroll'
+	};
 
-	document.addEventListener( 'scroll', checkState, false );
+	const items = [
+		{
+			event: events.scroll,
 
-	localStorage.setItem( 'reviewAboutScroll', 0 );
+			action: initBonus,
+
+			args: { once: true }
+		},
+
+		{
+			event: events.scroll,
+
+			action: checkState,
+
+			args: false
+		}
+	];
+
+	function reviewAboutInit()
+	{
+		if ( window.matchMedia( '( min-width: 1218px )' ).matches )
+		{
+			items.forEach( function ( item ) {
+				element.addEventListener( item.event, item.action, item.args );
+			} );
+
+			// document.addEventListener( events.scroll, initBonus, { once: true } );
+
+			// document.addEventListener( events.scroll, checkState, false );
+
+			localStorage.setItem( 'reviewAboutScroll', 0 );
+		}
+		else
+		{
+			items.forEach( function ( item ) {
+				element.removeEventListener( item.event, item.action, item.args );
+			} );
+
+			// document.removeEventListener( events.scroll, initBonus, { once: true } );
+
+			// document.removeEventListener( events.scroll, checkState, false );
+		}
+	}
+
+	reviewAboutInit();
+
+	// document.addEventListener( 'scroll', initBonus, { once: true } );
+
+	// document.addEventListener( 'scroll', checkState, false );
+
+	// localStorage.setItem( 'reviewAboutScroll', 0 );
 } );
 
 // review-about-js end
