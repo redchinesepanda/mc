@@ -2,6 +2,11 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function initBonus( event )
+	{
+		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
+	}
+
 	function moveBack( element )
 	{
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
@@ -48,6 +53,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
 	document.addEventListener( 'scroll', checkState, false );
+
+	document.addEventListener( 'scroll', initBonus, once );
 } );
 
 // review-about-js end
