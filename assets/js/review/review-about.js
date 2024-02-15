@@ -10,8 +10,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function moveBack( element )
 	{
 		console.log( document.querySelector( selectors.sidebarBonus ) );
-		
-		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+
+		if ( document.querySelector( selectors.sidebarBonus ) !== null )
+		{
+			element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+		}
 	}
 
 	function moveToSidebar( element )
