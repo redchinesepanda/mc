@@ -120,7 +120,8 @@
 	}
 }
 
-.review-about .about-right
+.moved-bonus
+/* .review-about .about-right */
 {
 	animation: append-animate .3s linear;
 }
