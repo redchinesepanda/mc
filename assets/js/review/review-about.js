@@ -54,7 +54,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const events = {
-		scroll: 'scroll'
+		scroll: 'scroll',
+
+		resize: 'resize'
 	};
 
 	const items = [
@@ -77,7 +79,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function reviewAboutInit()
 	{
-		if ( window.matchMedia( '( min-width: 1218px )' ).matches )
+		if ( window.matchMedia( '( min-width: 960px )' ).matches )
 		{
 			items.forEach( function ( item ) {
 				document.addEventListener( item.event, item.action, item.args );
@@ -101,7 +103,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	reviewAboutInit();
+	// reviewAboutInit();
+
+	window.addEventListener( events.resize, reviewAboutInit, false );
 
 	// document.addEventListener( 'scroll', initBonus, { once: true } );
 
