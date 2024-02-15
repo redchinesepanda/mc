@@ -107,6 +107,8 @@
 	display: flex;
 	/* flex-direction: column; */
 	align-items: center;
+	column-gap: 16px;
+	row-gap: 18px;
 }
 
 .legal-billet-mega.legal-image .billet-mega-about,
@@ -137,11 +139,6 @@
         flex-direction: column;
 		row-gap: 1rem;
     } 
-}
-
-.legal-billet-mega .billet-mega-about {
-	column-gap: 16px;
-	row-gap: 18px;
 }
 
 .legal-billet-mega .mega-about-afillate {
