@@ -22,11 +22,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let state = localStorage.getItem( 'reviewAboutScroll' );
 
-		console.log( 'state != true: ' + ( state != true ) );
+		console.log( 'state != 1: ' + ( state != 1 ) );
 
-		if ( window.scrollY > 0 && state != true )
+		if ( window.scrollY > 0 && state != 1 )
 		{
-			localStorage.setItem( 'reviewAboutScroll', true );
+			localStorage.setItem( 'reviewAboutScroll', 1 );
 
 			console.log( 'reviewAboutScroll move: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
