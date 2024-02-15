@@ -12,7 +12,9 @@
         row-gap: 20px;
     }
 
-    .review-about .about-right {
+    .review-about .about-right,
+    .legal-review-page-sidebar .about-right
+    {
         align-items: center;
     }
 
@@ -144,7 +146,8 @@
     /* justify-content: center; */
 }
 
-.review-about .about-right
+.review-about .about-right,
+.legal-review-page-sidebar .about-right
 {
     display: flex;
     row-gap: 10px;
@@ -211,7 +214,8 @@
 
 /* Position */
 
-.review-about .about-right
+.review-about .about-right,
+.legal-review-page-sidebar .about-right
 {
     padding: 24px 28px;
 }
@@ -253,7 +257,8 @@
 
 /* Background */
 
-.review-about .about-right
+.review-about .about-right,
+.legal-review-page-sidebar .about-right
 {
     box-sizing: border-box;
     border-radius: 32px;
