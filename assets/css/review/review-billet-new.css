@@ -80,6 +80,7 @@
 
 .legal-billet .billet-review {
 	display: flex;
+	flex-wrap: wrap;
 	/* flex-direction: column; */
 	/* justify-content: center; */
 	align-items: center;
@@ -155,6 +156,7 @@
 .legal-billet .billet-review {
 	/* width: 22%; */
 	width: 100%;
+	box-sizing: border-box;
 }
 
 .legal-billet .billet-name {
@@ -174,6 +176,7 @@
 .legal-billet .billet-body {
 	/* width: calc( 56% - 60px ); */
 	width: 100%;
+	box-sizing: border-box;
 }
 
 .legal-billet .billet-get-link {
