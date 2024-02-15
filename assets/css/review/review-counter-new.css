@@ -7,7 +7,9 @@
 	.tcb-post-content > .legal-review-counter .review-counter-info,
 	.tcb-post-content > .legal-review-counter .review-counter-set {
 		flex-direction: column;
-		row-gap: 20px;
+		/* row-gap: 20px; */
+		row-gap: 24px;
+
 	}
  
 	.legal-billet-mega .legal-review-counter.legal-overall,
@@ -36,24 +38,24 @@
 		align-items: center;
 	}
 
-	.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
+/* 	.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 		flex-direction: column;
 		row-gap: 10px;
 	}
-
+ */
 	.legal-review-counter .review-counter-overall .set-item-wrapper {
 		flex-direction: column;
 	}
 
-	.legal-review-counter .review-counter-set {
+	/* .legal-review-counter .review-counter-set {
 		align-items: center;
-	}
+	} */
 
 	/* Position */
 
-	.legal-review-counter {
+/* 	.legal-review-counter {
 		padding: 40px 0;
-	}
+	} */
 
 	.legal-review-counter.legal-overall .review-counter-footer {
 		padding: 0px 30px;
@@ -82,13 +84,9 @@
 
 	/* Position */
 
-	.legal-review-counter {
-		/* padding: 20px 0; */
-		padding-top: 8px;
-		padding-right: 20px;
-		padding-bottom: 20px;
-		padding-left: 20px;
-	}
+	/* .legal-review-counter {
+		padding: 20px 0;
+	} */
 
 	/* Width and Height */
 
@@ -200,6 +198,13 @@
 
 .tcb-post-content > .legal-review-counter {
 	margin-bottom: 24px;
+}
+
+.legal-review-counter {
+	padding-top: 8px;
+	padding-right: 16px;
+	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
 .legal-review-counter .review-counter-info {
