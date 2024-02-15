@@ -4,8 +4,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
-
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
 
@@ -16,15 +14,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkState( event )
 	{
-		console.log( 'checkState' );
-
 		let state = localStorage.getItem( 'reviewAboutScroll' );
 
 		if ( window.scrollY > 0 && state != 1 )
 		{
 			localStorage.setItem( 'reviewAboutScroll', 1 );
-
-			// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
 			document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
 		}
