@@ -17,7 +17,8 @@
 				<?php echo ReviewAuthor::render(); ?>
 			</div>
 		</div>
-		<div class="legal-review-page-sidebar"></div>
+		<div class="legal-review-page-sidebar">
+		</div>
 	</div>
 </section>
 <section class="legal-section-offers">
