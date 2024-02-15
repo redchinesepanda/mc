@@ -60,6 +60,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.addEventListener( 'scroll', initBonus, { once: true } );
 
 	document.addEventListener( 'scroll', checkState, false );
+
+	localStorage.setItem( 'reviewAboutScroll', 0 );
 } );
 
 // review-about-js end
