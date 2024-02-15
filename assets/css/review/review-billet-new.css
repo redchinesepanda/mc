@@ -136,6 +136,12 @@
 	width: min-content;
 }
 
+.legal-billet .review-image {
+	width: 70px;
+	height: 72px;
+	height: auto;
+}
+
 .legal-billet .billet-body {
 	/* width: calc( 56% - 60px ); */
 	width: 100%;
@@ -157,6 +163,11 @@
 .legal-billet .billet-review {
 	border-bottom: 1px solid var(--Base-base-09);
 	background-color: transparent !important; /* временное правило, для перекрытия */
+}
+
+.legal-billet .review-image {
+	border: 1px solid var(--Base-base-09);
+	border-radius: 12.8px;
 }
 
 .legal-billet .billet-get {
