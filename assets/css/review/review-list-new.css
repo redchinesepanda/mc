@@ -191,28 +191,35 @@
     padding-bottom: 24px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
+/* .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet-description > ul:not( .legal-override ):not( [style] ),
 .bonus-content > ol:not( .legal-override ),
 .billet-description > ol:not( .legal-override ),
 .billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet .billet-description-full > ol:not( .legal-override ) {
+    padding-top: 12px;
+} */
+
+.legal-billet ul,
+.legal-billet ol {
     /* padding-top: 0px; */
     padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 0px;
 }
 
 .tcb-post-content .legal-highlight {
     padding-top: 15px;
 }
 
-.bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( :last-child ),
+/* .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):not( :last-child ),
 .billet-description > ul:not( .legal-override ):not( [style] ):not( :last-child ),
 .bonus-content > ol:not( .legal-override ):not( :last-child ),
 .billet-description > ol:not( .legal-override ):not( :last-child ),
 .billet .billet-description-full > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ),
 .billet .billet-description-full > ol:not( .legal-override ) {
     padding-bottom: 15px;
-}
+} */
 
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):last-child,
 .billet-description > ul:not( .legal-override ):not( [style] ):last-child,

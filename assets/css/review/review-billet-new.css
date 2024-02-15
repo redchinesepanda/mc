@@ -101,7 +101,7 @@
 .legal-billet .billet-body {
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	/* row-gap: 20px; */
 }
 
 .legal-billet .billet-get {
