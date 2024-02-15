@@ -1,6 +1,6 @@
 @media screen and ( max-width: 767px )
 {
-    /* Review About Display */
+    /* Display */
 
     .review-about {
         flex-direction: column;
@@ -16,13 +16,13 @@
         align-items: center;
     }
 
-    /* Review About Width and Height */
+    /* Width and Height */
 
     .review-about .legal-afillate {
         width: 250px;
     }
 
-    /* Review About Position */
+    /* Position */
 
     .review-about {
         padding: 20px 15px;
@@ -31,13 +31,13 @@
 
 @media screen and ( min-width: 768px )
 {
-    /* Review About Display */
+    /* Display */
 
     .review-about {
         column-gap: 20px;
     }
 
-    /* Review About Position */
+    /* Position */
 
     .review-about {
         margin: 0px auto;
@@ -62,7 +62,7 @@
         padding: 30px 0px;
     }
     
-    /* Review About Width and Height */
+    /* Width and Height */
 
     .review-about {
         /* width: 1080px; */
@@ -88,7 +88,7 @@
     
 }
 
-/* Review About Display */
+/* Display */
 
 .review-about {
     display: flex;
@@ -137,7 +137,7 @@
     display: inline-block;
 }
 
-/* Review About Width and Height */
+/* Width and Height */
 
 .review-about .about-logo {
    /*  width: 100%; */
@@ -164,7 +164,7 @@
     height: 28px;
 }
 
-/* Review About Position */
+/* Position */
 
 .review-about-wrapper.legal-mode-mini {
     padding-bottom: 30px;
@@ -201,7 +201,14 @@
     padding-left: 64px;
 }
 
-/* Review About Background */
+/* Background */
+
+.review-about .about-right
+{
+    border-radius: 32px;
+    border: 2px solid var( --Base-base-09, #0A0A0A );
+    background: var( --Primitives-purple-60 ); 
+}
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
     background-color: var(--Base-base-02) !important;  /* временный импортант из-за инлайновых стилей */
@@ -284,7 +291,7 @@
     background-size: auto;
 }
 
-/* Review About Typography */
+/* Typography */
 
 .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
