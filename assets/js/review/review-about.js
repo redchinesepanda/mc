@@ -52,9 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
-	document.addEventListener( 'scroll', checkState, false );
-
 	document.addEventListener( 'scroll', initBonus, { once: true } );
+
+	document.addEventListener( 'scroll', checkState, false );
 } );
 
 // review-about-js end
