@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
-		// document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
+		document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
 
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
@@ -19,8 +19,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'checkState' );
 
 		let state = localStorage.getItem( 'reviewAboutScroll' );
-
-		document.querySelector( selectors.sidebarBonus ).classList.add('box', 'moved-bonus');
 
 		if ( window.scrollY > 0 && state != 1 )
 		{
