@@ -20,9 +20,9 @@
 
     /* Width and Height */
 
-    .review-about .legal-afillate {
+  /*   .review-about .legal-afillate {
         width: 250px;
-    }
+    } */
 
     /* Position */
 
@@ -94,10 +94,10 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about .about-center
+  /*   .review-about .about-center
     {
         width: calc( 100% / 3 * 2 - 24px );
-    }
+    } */
 
     .review-about.legal-mode-mini {
         width: 800px;
@@ -142,7 +142,8 @@
 .review-about .about-center {
     display: flex;
     /* flex-direction: column; */
-    row-gap: 10px;
+   /*  row-gap: 10px; */
+    column-gap: 26px;
     /* justify-content: center; */
 }
 
@@ -198,10 +199,13 @@
     width: fit-content;
 }
 
-.tcb-post-content .legal-afillate {
-    width: fit-content;
-    min-width: 252px;
-    min-height: 36px;
+.review-about .about-right .legal-afillate, 
+.legal-review-page-sidebar .about-right .legal-afillate {
+   /*  width: fit-content; */
+    /* min-width: 252px; */
+    /* min-height: 36px; */
+    width: 100%;
+    min-height: calc(56px - 20px);
 }
 
 .review-about .about-achievement {
@@ -220,6 +224,10 @@
     padding: 24px 28px;
 }
 
+.legal-review-page-sidebar .about-right {
+    margin-bottom: 80px;
+}
+
 .review-about-wrapper.legal-mode-mini {
     padding-bottom: 30px;
 }
@@ -233,14 +241,14 @@
     padding-bottom: 0px;
 }
 
-.review-about .legal-afillate,
+/* .review-about .legal-afillate,
 .tcb-post-content .legal-afillate {
-    /* padding: 5px 45px 5px 20px; */
+    padding: 5px 45px 5px 20px;
     padding: 10px 18px;
-}
+} */
 
-.legal-review-page-sidebar .about-right .legal-afillate
-{
+.review-about .about-right .legal-afillate, 
+.legal-review-page-sidebar .about-right .legal-afillate {
     padding: 10px 18px;
 }
 
@@ -370,8 +378,10 @@
 
 .review-about .about-rating,
 .review-about .about-center h1,
-.review-about .about-center .review-bonus-title,
-.review-about .about-center .review-bonus-description {
+.review-about .about-right .review-bonus-title,
+.legal-review-page-sidebar .about-right .review-bonus-title,
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -396,18 +406,19 @@
     text-align: center;
 }
 
-.review-about .about-center .review-bonus-title {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
+.review-about .about-right .review-bonus-title,
+.legal-review-page-sidebar .about-right .review-bonus-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 28px;
 }
 
-.review-about .about-center .review-bonus-description {
-    font-size: 13px;
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description {
+    font-size: 12px;
     font-weight: 400;
-    line-height: 19.5px;
-    text-align: center;
+    line-height: 18px;
+    color: var(--Base-base-05);
 }
 
 .legal-afillate:hover {

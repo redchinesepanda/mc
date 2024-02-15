@@ -16,7 +16,8 @@
 	.legal-review-page-sidebar
 	{
 		position: sticky;
-		top: 0px;
+		/* top: 0px; */
+		top: 30px;
 	}
 
 	/* Width and Height  */
