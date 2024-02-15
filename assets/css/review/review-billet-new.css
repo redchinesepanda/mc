@@ -49,29 +49,21 @@
 
 	/* Billet Width and Height */
 
-	.legal-billet .billet-review {
+	/* .legal-billet .billet-get {
 		width: 22%;
-	}
-
-	.legal-billet .billet-body {
-		width: calc( 56% - 60px );
-	}
-
-	.legal-billet .billet-get {
-		width: 22%;
-	}
+	} */
 
 	/* Billet Background */
 
-	.legal-billet .billet-review {
+	/* .legal-billet .billet-review {
 		border-top-left-radius: 20px;
 		border-bottom-left-radius: 20px;
-	}
+	} */
 
-	.legal-billet .billet-get {
+	/* .legal-billet .billet-get {
 		border-top-right-radius: 20px;
 		border-bottom-right-radius: 20px;
-	}
+	} */
 }
 
 /* Billet Display */
@@ -84,8 +76,8 @@
 
 .legal-billet .billet-review {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	/* flex-direction: column; */
+	/* justify-content: center; */
 	align-items: center;
 	row-gap: 10px;
 }
@@ -127,6 +119,16 @@
 
 /* Billet Width and Height */
 
+.legal-billet .billet-review {
+	/* width: 22%; */
+	width: 100%;
+}
+
+.legal-billet .billet-body {
+	/* width: calc( 56% - 60px ); */
+	width: 100%;
+}
+
 .legal-billet .billet-get-link {
 	width: fit-content;
 }
@@ -134,9 +136,14 @@
 /* Billet Background */
 
 .legal-billet {
-	background-color: #ffffff;
-	border: 0.8px solid rgba(198, 198, 198, 0.2);
-	border-radius: 20px;
+	background-color: var(--Base-base-01);;
+	/* border: 0.8px solid rgba(198, 198, 198, 0.2); */
+	border: 1px solid var(--Base-base-09); 
+	border-radius: 24px 24px 18px 18px;
+}
+
+.legal-billet .billet-review {
+	border-bottom: 1px solid var(--Base-base-09);
 }
 
 .legal-billet .billet-get {
