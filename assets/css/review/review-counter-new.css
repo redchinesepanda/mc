@@ -24,6 +24,11 @@
 		row-gap: 20px;
 	}
 
+	.legal-review-counter:not( .legal-overall ) .set-item-wrapper {
+		column-gap: 12px;
+		align-items: center;
+	}
+
 	.legal-review-counter .review-counter-info {
 		flex-direction: column;
 		row-gap: 20px;
@@ -34,18 +39,18 @@
 		row-gap: 20px;
 	}
 
-	.legal-review-counter .review-counter-overall {
+	/* .legal-review-counter .review-counter-overall {
 		align-items: center;
-	}
+	} */
 
 /* 	.legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 		flex-direction: column;
 		row-gap: 10px;
 	}
  */
-	.legal-review-counter .review-counter-overall .set-item-wrapper {
+	/* .legal-review-counter .review-counter-overall .set-item-wrapper {
 		flex-direction: column;
-	}
+	} */
 
 	/* .legal-review-counter .review-counter-set {
 		align-items: center;
@@ -62,6 +67,11 @@
 	}
 
 	/* Width and Height */
+
+	.legal-review-counter.legal-default .set-item {
+		width: 60px;
+  		height: 60px;
+	}
 
 	.legal-review-counter .info-logo {
 		width: 100%;
@@ -82,6 +92,14 @@
 
 @media screen and ( min-width: 768px ) {
 
+	/* Display */
+
+	.legal-review-counter:not( .legal-overall ) .set-item-wrapper {
+		flex-direction: column;
+		row-gap: 12px;
+		align-items: center;
+	}
+
 	/* Position */
 
 	/* .legal-review-counter {
@@ -92,6 +110,13 @@
 
 	.legal-review-counter .review-counter-afillate {
 		min-width: 306px;
+	}
+
+	.legal-review-counter.legal-default .set-item {
+		/* width: 160px;
+		height: 160px; */
+		width: 132px;
+		height: 132px;
 	}
 
 	/* Background */
@@ -134,12 +159,6 @@
 
 .legal-review-counter .set-item-wrapper {
 	display: flex;
-}
-
-.legal-review-counter:not( .legal-overall ) .set-item-wrapper {
-	flex-direction: column;
-	row-gap: 12px;
-	align-items: center;
 }
 
 .legal-review-counter .review-counter-overall {
@@ -286,13 +305,6 @@
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
 	/* flex-basis: calc( 100% / 3 - 26px ); */
 	flex-basis: calc( (100% / 3) - (32px / 1.5));
-}
-
-.legal-review-counter.legal-default .set-item {
-	/* width: 160px;
-	height: 160px; */
-	width: 132px;
-	height: 132px;
 }
 
 .legal-review-counter .border-internal {
