@@ -2,10 +2,11 @@
 {
 	/* Display */
 
-/* 	.legal-oops-cookie {
-		flex-direction: column;
-		row-gap: 20px;
-	} */
+	.legal-oops-cookie {
+		/* flex-direction: column;
+		row-gap: 20px; */
+		justify-content: center;
+	}
 
 	/* Width and Height */
 
