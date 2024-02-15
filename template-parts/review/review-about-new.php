@@ -1,15 +1,8 @@
 <?php if( !empty( $args[ 'title' ] ) ) : ?>
     <div class="review-about-wrapper <?php echo $args[ 'class' ]; ?>">
         <div class="review-about <?php echo $args[ 'font' ]; ?> <?php echo $args[ 'class' ]; ?>">
-            <!-- <?php if( !empty( $args['achievement'] ) ) : ?>
-                <div class="achievement-name">
-                    <span class="achievement-bonus-link"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
-                </div>
-            <?php endif; ?> -->
-            <div class="about-left">
-                <div class="about-logo"></div>
-            </div>
             <div class="about-center">
+                <div class="about-logo"></div>
                 <?php if( empty( $args['mode'] ) ) : ?>
                     <h1><?php echo $args[ 'title' ]; ?></h1>
                 <?php endif; ?>
@@ -25,23 +18,7 @@
                     <div class="review-bonus-description"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
                 <?php endif; ?>
                 <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
-                <!-- <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
-                    <div class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></div>
-                <?php endif; ?> -->
             </div>
-            <!-- <?php if( !empty( $args['achievement'] ) && empty( $args['mode'] ) ) : ?>
-                <div class="about-achievement">
-                    <div class="achievement-bonus">
-                        <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'bonus' ]; ?></a>
-                    </div>
-                    <div class="achievement-name">
-                        <span class="achievement-bonus-link"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
-                    </div>
-                    <div class="achievement-app">
-                        <a href="<?php echo $args[ 'achievement' ][ 'href' ]; ?>" class="achievement-bonus-link check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'achievement' ][ 'app' ]; ?></a>
-                    </div>
-                </div>
-            <?php endif; ?> -->
         </div>
     </div>
 <?php endif; ?>
