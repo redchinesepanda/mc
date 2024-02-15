@@ -2,9 +2,14 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function appendItem( element )
+	function moveBonusToReviewAbout( element )
 	{
-		element.appendChild( document.querySelector( selectors.reviewAboutRight ) );
+		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+	}
+
+	function moveBonusToSidebar( element )
+	{
+		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
 	}
 
 	function checkState( event )
@@ -15,23 +20,25 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutScroll', true );
 
-			document.querySelectorAll( selectors.sidebar ).forEach( appendItem );
+			document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
 		}
 
 		if ( window.scrollY == 0 && localStorage.getItem( 'reviewAboutScroll' ) == true )
 		{
 			localStorage.setItem( 'reviewAboutScroll', false );
 
-			document.querySelectorAll( selectors.reviewAbout ).forEach( appendItem );
+			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBonusToReviewAbout );
 		}
 	}
 
 	const selectors = {
 		reviewAbout : '.review-about',
 
-		reviewAboutRight : '.review-about .about-right',
+		reviewAboutBonus : '.review-about .about-right',
 
-		sidebar : '.legal-review-page-sidebar'
+		sidebar : '.legal-review-page-sidebar',
+
+		sidebarBonus : '.legal-review-page-sidebar .about-right',
 	};
 
 	document.addEventListener( 'scroll', checkState, false );
