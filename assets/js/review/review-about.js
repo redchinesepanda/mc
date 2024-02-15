@@ -20,6 +20,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'reviewAboutScroll: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
+		console.log( '!= true: ' + ( localStorage.getItem( 'reviewAboutScroll' ) != true ) );
+
 		if ( window.scrollY > 0 && localStorage.getItem( 'reviewAboutScroll' ) != true )
 		{
 			localStorage.setItem( 'reviewAboutScroll', true );
