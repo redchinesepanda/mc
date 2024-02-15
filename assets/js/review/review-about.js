@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			document.querySelectorAll( selectors.sidebar ).forEach( appendItem );
 		}
 
-		if ( window.scrollY == 0 )
+		if ( window.scrollY == 0 && localStorage.getItem( 'reviewAboutScroll' ) == true )
 		{
 			localStorage.setItem( 'reviewAboutScroll', false );
 
