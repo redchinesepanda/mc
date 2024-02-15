@@ -45,7 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		moved: 'moved-bonus'
 	};
 
-	document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
+	// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 
 	document.addEventListener( 'scroll', checkState, false );
 } );

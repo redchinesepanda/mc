@@ -120,10 +120,11 @@
 	}
 }
 
-.moved-bonus
-/* .review-about .about-right */
+/* .moved-bonus */
+.review-about .about-right,
+.legal-review-page-sidebar .about-right
 {
-	animation: append-animate .1s linear;
+	animation: append-animate .3s linear;
 }
 
 /* Display */
