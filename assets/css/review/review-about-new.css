@@ -117,12 +117,18 @@
 }
 
 .review-about .about-left,
-.review-about .about-center,
-.review-about .about-right {
+.review-about .about-center {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     row-gap: 10px;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.review-about .about-right
+{
+    display: flex;
+    row-gap: 10px;
+    flex-wrap: wrap;
 }
 
 .review-about .about-left {
