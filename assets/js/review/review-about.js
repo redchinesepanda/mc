@@ -4,11 +4,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function moveBack( element )
 	{
+		console.log( element );
+
+		console.log( document.querySelector( selectors.sidebarBonus ) );
+
 		element.appendChild( document.querySelector( selectors.sidebarBonus ) );
 	}
 
 	function moveToSidebar( element )
 	{
+		console.log( element );
+
+		console.log( document.querySelector( selectors.reviewAboutBonus ) );
+
 		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
 	}
 
