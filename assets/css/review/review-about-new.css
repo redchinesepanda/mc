@@ -220,6 +220,10 @@
     padding: 24px 28px;
 }
 
+.legal-review-page-sidebar .about-right {
+    margin-bottom: 80px;
+}
+
 .review-about-wrapper.legal-mode-mini {
     padding-bottom: 30px;
 }
