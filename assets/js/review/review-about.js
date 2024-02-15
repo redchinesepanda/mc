@@ -56,9 +56,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	const selectors = {
-		reviewAbout : '.review-about',
+		reviewAbout : '.review-about.legal-mode-default',
 
-		reviewAboutBonus : '.review-about .about-right',
+		reviewAboutBonus : '.review-about.legal-mode-default .about-right',
 
 		sidebar : '.legal-review-page-sidebar',
 
