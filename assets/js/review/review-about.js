@@ -103,7 +103,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	// reviewAboutInit();
+	reviewAboutInit();
 
 	window.addEventListener( events.resize, reviewAboutInit, false );
 
