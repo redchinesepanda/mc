@@ -92,8 +92,9 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about .about-center {
-        width: calc( 50% - 20px );
+    .review-about .about-center
+    {
+        width: calc( 100% / 3 * 2 - 24px );
     }
 
     .review-about.legal-mode-mini {
@@ -111,7 +112,7 @@
 .review-about {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     column-gap: 30px;
 }
 
