@@ -82,6 +82,10 @@
 	row-gap: 10px;
 }
 
+.legal-billet .review-data {
+	display: block;
+}
+
 .legal-billet .billet-body {
 	display: flex;
 	flex-direction: column;
@@ -128,6 +132,10 @@
 	width: 100%;
 }
 
+.legal-billet .review-data {
+	width: min-content;
+}
+
 .legal-billet .billet-body {
 	/* width: calc( 56% - 60px ); */
 	width: 100%;
@@ -148,6 +156,7 @@
 
 .legal-billet .billet-review {
 	border-bottom: 1px solid var(--Base-base-09);
+	background-color: transparent !important; /* временное правило, для перекрытия */
 }
 
 .legal-billet .billet-get {
