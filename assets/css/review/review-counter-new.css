@@ -8,8 +8,6 @@
 	.tcb-post-content > .legal-review-counter .review-counter-set {
 		flex-direction: column;
 		/* row-gap: 20px; */
-		row-gap: 24px;
-
 	}
  
 	.legal-billet-mega .legal-review-counter.legal-overall,
@@ -136,6 +134,10 @@
 		min-width: 306px;
 	}
 
+	.legal-review-counter:not(.legal-overall) .set-item-wrapper {
+		width: 148px;
+	}
+
 	.legal-review-counter.legal-default .set-item {
 		/* width: 160px;
 		height: 160px; */
@@ -179,6 +181,10 @@
 		/* font-size: 35px; */
 		font-size: 20px;
 		line-height: 26px;
+	}
+
+	.legal-review-counter.legal-default .item-label {
+		text-align: center;
 	}
 
 }
@@ -345,10 +351,6 @@
 	/* flex-basis: calc((100% / 3) * 2); */
 }
 
-.legal-review-counter:not(.legal-overall) .set-item-wrapper {
-	width: 148px;
-}
-
 .legal-review-counter .review-counter-overall {
 	flex-basis: 30%;
 	/* flex-basis: calc(100% / 3); */
@@ -434,7 +436,6 @@
 	/* color: rgb(59, 59, 59); */
 	font-size: 13px; 
 	line-height: 17px;
-	text-align: center;
 }
 
 .legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
