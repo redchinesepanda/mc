@@ -147,7 +147,7 @@
 .legal-review-counter .review-counter-overall {
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	row-gap: 24px;
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {
@@ -207,6 +207,11 @@
 }
 
 .legal-review-counter .review-counter-set {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.legal-review-counter .review-counter-overall {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
@@ -300,8 +305,10 @@
 }
 
 .legal-review-counter .review-counter-overall .set-item {
-	width: 80px;
-	height: 80px;
+	/* width: 80px;
+	height: 80px; */
+	width: 98px;
+	height: 98px;
 }
 
 .legal-review-counter .set-item-info {
