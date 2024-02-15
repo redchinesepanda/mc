@@ -16,9 +16,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( 'checkState' );
 
-		console.log( 'window.scrollY: ' + window.scrollY );
+		// console.log( 'window.scrollY: ' + window.scrollY );
 
-		console.log( 'reviewAboutScroll: ' + localStorage.getItem( 'reviewAboutScroll' ) );
+		// console.log( 'reviewAboutScroll: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
 		let state = localStorage.getItem( 'reviewAboutScroll' );
 
@@ -33,13 +33,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// document.querySelectorAll( selectors.sidebar ).forEach( moveBonusToSidebar );
 		}
 
-		console.log( '== 0: ' + ( window.scrollY == 0 ) );
+		// console.log( '== 0: ' + ( window.scrollY == 0 ) );
 
-		console.log( '== true: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == true ) );
+		console.log( 'state == 1: ' + ( localStorage.getItem( 'reviewAboutScroll' ) == 1 ) );
 
-		if ( window.scrollY == 0 && localStorage.getItem( 'reviewAboutScroll' ) == true )
+		if ( window.scrollY == 0 && state == 1 )
 		{
-			localStorage.setItem( 'reviewAboutScroll', false );
+			localStorage.setItem( 'reviewAboutScroll', 0 );
 
 			console.log( 'reviewAboutScroll back: ' + localStorage.getItem( 'reviewAboutScroll' ) );
 
