@@ -58,6 +58,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	function handleTouchMove( event )
+	{
+		event.preventDefault();
+		
+		console.log( 'handleTouchStart start' );
+
+		console.log( event.changedTouches[0].screenX );
+
+		console.log( 'handleTouchStart end' );
+	}
+
 	function handleTouchStart( event )
 	{
 		event.preventDefault();
@@ -93,13 +104,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.dataset.touchendX = 0;
 	}
 
+	const types = {
+		touchstart: 'touchstart',
+
+		touchend: 'touchend',
+
+		touchmove: 'touchmove',
+	};
+
 	function setTouch( element )
 	{
 		initDataset( element );
 
-		element.addEventListener( 'touchstart', handleTouchStart, false );
+		element.addEventListener( types.touchstart, handleTouchStart, false );
 
-		element.addEventListener( 'touchend', handleTouchEnd, false );
+		element.addEventListener( types.touchend, handleTouchEnd, false );
+
+		element.addEventListener( types.touchend, handleTouchMove, false );
 	}
 
 	const selectors = {
