@@ -1,5 +1,12 @@
 @media screen and ( max-width: 1217px )
 {
+	/* Display */
+
+	.legal-review-page
+	{
+		flex-wrap: wrap;
+	}
+	
 	/* Width and Height  */
 
 	.legal-review-page-main,
