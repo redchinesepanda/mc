@@ -7,17 +7,32 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 	}
 
+	function move( element, selector )
+	{
+		if ( document.querySelector( selector ) !== null )
+		{
+			element.appendChild( document.querySelector( selector ) );
+		}
+	}
+
 	function moveBack( element )
 	{
-		if ( document.querySelector( selectors.sidebarBonus ) !== null )
-		{
-			element.appendChild( document.querySelector( selectors.sidebarBonus ) );
-		}
+		// if ( document.querySelector( selectors.sidebarBonus ) !== null )
+		// {
+		// 	element.appendChild( document.querySelector( selectors.sidebarBonus ) );
+		// }
+
+		move( element, selectors.sidebarBonus );
 	}
 
 	function moveToSidebar( element )
 	{
-		element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
+		// if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
+		// {
+		// 	element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
+		// }
+
+		move( element, selectors.reviewAboutBonus );
 	}
 
 	function checkState( event )
