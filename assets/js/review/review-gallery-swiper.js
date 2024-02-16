@@ -96,7 +96,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log( event.changedTouches[0].screenX );
 
 			console.log( 'handleTouchEnd end' );
-		}, 0 );
+		}, 100 );
 
 		// console.log( 'handleTouchEnd start' );
 
