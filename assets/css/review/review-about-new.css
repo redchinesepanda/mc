@@ -30,6 +30,10 @@
         width: 250px;
     } */
 
+    .review-about .about-right {
+        width: 100%;
+    }
+
     /* Position */
 
     .review-about {
@@ -44,12 +48,16 @@
         z-index: 1;
     }
 
-        /* Background */
+    /* Background */
 
-        .review-about .about-right {
-            border-radius: 32px;
-            background: var( --Primitives-purple-60 ); 
-        }
+    .review-about .about-right:not( .sticky-bonus ) {
+        border-radius: 32px;
+        background: var( --Primitives-purple-60 ); 
+    }
+
+    .review-about .about-right.sticky-bonus {
+        background: var(--Base-base-01);
+    }
 }
 
 @media screen and ( min-width: 960px )
@@ -347,7 +355,7 @@
     background-repeat: no-repeat;
    /*  background-size: auto; */
     background-size: contain;
-    border-radius: 12.8px;
+    border-radius: 24px;
     border: 1px solid var(--Base-base-09);
     background-color: var(--Logo-background);
 }
