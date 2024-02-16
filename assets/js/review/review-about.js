@@ -17,21 +17,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function moveBack( element )
 	{
-		// if ( document.querySelector( selectors.sidebarBonus ) !== null )
-		// {
-		// 	element.appendChild( document.querySelector( selectors.sidebarBonus ) );
-		// }
-
 		move( element, selectors.sidebarBonus );
 	}
 
 	function moveToSidebar( element )
 	{
-		// if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
-		// {
-		// 	element.appendChild( document.querySelector( selectors.reviewAboutBonus ) );
-		// }
-
 		move( element, selectors.reviewAboutBonus );
 	}
 
@@ -100,10 +90,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				document.addEventListener( item.event, item.action, item.args );
 			} );
 
-			// document.addEventListener( events.scroll, initBonus, { once: true } );
-
-			// document.addEventListener( events.scroll, checkState, false );
-
 			localStorage.setItem( 'reviewAboutScroll', 0 );
 		}
 		else
@@ -113,22 +99,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			items.forEach( function ( item ) {
 				document.removeEventListener( item.event, item.action, item.args );
 			} );
-
-			// document.removeEventListener( events.scroll, initBonus, { once: true } );
-
-			// document.removeEventListener( events.scroll, checkState, false );
 		}
 	}
 
 	reviewAboutInit();
 
 	window.addEventListener( events.resize, reviewAboutInit, false );
-
-	// document.addEventListener( 'scroll', initBonus, { once: true } );
-
-	// document.addEventListener( 'scroll', checkState, false );
-
-	// localStorage.setItem( 'reviewAboutScroll', 0 );
 } );
 
 // review-about-js end
