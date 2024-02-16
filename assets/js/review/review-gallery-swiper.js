@@ -88,21 +88,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
-		handleSwipe( event.currentTarget );
+		// handleSwipe( event.currentTarget );
 
-		setTimeout( function() {
-			console.log( 'handleTouchEnd start' );
+		console.log( 'handleTouchEnd start' );
 
-			console.log( event.changedTouches[0].screenX );
+		console.log( event.changedTouches[0].screenX );
 
-			console.log( 'handleTouchEnd end' );
-		}, 100 );
-
-		// console.log( 'handleTouchEnd start' );
-
-		// console.log( event.changedTouches[0].screenX );
-
-		// console.log( 'handleTouchEnd end' );
+		console.log( 'handleTouchEnd end' );
 	}
 
 	function initDataset( element )
