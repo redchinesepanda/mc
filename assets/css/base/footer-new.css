@@ -386,6 +386,7 @@
 .legal-footer-wrapper
 {
 	position: relative;
+	z-index: 1;
 }
 
 .legal-footer {
