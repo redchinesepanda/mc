@@ -49,24 +49,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	// function checkSticky( event )
-	// {
-	// 	let state = localStorage.getItem( 'reviewAboutSticky' );
+	function checkSticky( event )
+	{
+		let state = localStorage.getItem( 'reviewAboutSticky' );
 
-	// 	if ( window.scrollY > 0 && state != 1 )
-	// 	{
-	// 		localStorage.setItem( 'reviewAboutSticky', 1 );
+		if ( window.scrollY > 0 && state != 1 )
+		{
+			localStorage.setItem( 'reviewAboutSticky', 1 );
 
-	// 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
-	// 	}
+			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
+		}
 
-	// 	if ( window.scrollY == 0 && state == 1 )
-	// 	{
-	// 		localStorage.setItem( 'reviewAboutSticky', 0 );
+		if ( window.scrollY == 0 && state == 1 )
+		{
+			localStorage.setItem( 'reviewAboutSticky', 0 );
 
-	// 		document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.sticky );
-	// 	}
-	// }
+			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.sticky );
+		}
+	}
 
 	const selectors = {
 		reviewAbout : '.review-about.legal-mode-default',
@@ -115,6 +115,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			action: suspendBonus,
 
 			args: { once: true }
+		},
+
+		{
+			event: events.scroll,
+
+			action: checkSticky,
+
+			args: false
 		}
 	];
 
@@ -122,6 +130,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( window.matchMedia( '( min-width: 960px )' ).matches )
 		{
+			itemsMobile.forEach( function ( item ) {
+				document.removeEventListener( item.event, item.action, item.args );
+			} );
+
 			items.forEach( function ( item ) {
 				document.addEventListener( item.event, item.action, item.args );
 			} );
