@@ -108,7 +108,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-			document.querySelectorAll( selectors.sidebar ).forEach( moveBack );
+			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBack );
 
 			items.forEach( function ( item ) {
 				document.removeEventListener( item.event, item.action, item.args );
