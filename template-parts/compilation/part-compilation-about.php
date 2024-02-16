@@ -19,7 +19,7 @@
 				<?php endif; ?>
             </div>
 			<div class="about-section-image">
-				<img class="section-image-item" src="https://test.match.center/wp-content/themes/thrive-theme-child/assets/img/compilation/compilation-frame-start-screen.png">
+				<img class="section-image-item" src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>">
 			</div>
         </div>
     </div>
