@@ -180,7 +180,7 @@ class CompilationAbout
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
 			'image' => [
-				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/author/about-default.webp',
+				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp',
 
 				'width' => 400,
 
