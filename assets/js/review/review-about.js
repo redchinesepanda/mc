@@ -57,8 +57,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutSticky', 1 );
 
-			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.moved );
-
 			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
 		}
 
@@ -67,8 +65,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			localStorage.setItem( 'reviewAboutSticky', 0 );
 
 			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.sticky );
-
-			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 		}
 	}
 
