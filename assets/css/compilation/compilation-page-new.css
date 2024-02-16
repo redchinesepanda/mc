@@ -2,15 +2,15 @@
 {
 	/* Display */
 
-	.legal-review-page
+	/* .legal-compilation-page
 	{
 		flex-wrap: wrap;
-	}
-	
+	} */
+
 	/* Width and Height  */
 
-	.legal-review-page-main,
-	.legal-review-page-sidebar
+	.legal-compilation-page-main,
+	.legal-compilation-page-sidebar
 	{
 		width: 100%;
 	}
