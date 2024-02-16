@@ -216,18 +216,7 @@ class CompilationAbout
 
 	public static function render()
     {
-        return self::render_main( self::TEMPLATE[ 'compilation-about' ], self::get() );
-    }
-
-	public static function render_main( $template, $args )
-    {
-        ob_start();
-
-        load_template( $template, false, $args );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'compilation-about' ], self::get() );
     }
 
 	const CLASSES = [
