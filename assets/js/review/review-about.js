@@ -55,7 +55,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const classes = {
-		moved: 'moved-bonus'
+		moved: 'moved-bonus',
+
+		sticky: 'sticky-bonus',
 	};
 
 	const events = {
