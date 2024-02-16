@@ -20,9 +20,12 @@ class ReviewPage
 
     public static function register_style()
     {
-        if ( TemplateMain::check_new() )
+        if ( TemplatePage::check_review() )
         {
-            ReviewMain::register_style( self::CSS_NEW );
+            if ( TemplateMain::check_new() )
+            {
+                ReviewMain::register_style( self::CSS_NEW );
+            }
         }
     }
 
