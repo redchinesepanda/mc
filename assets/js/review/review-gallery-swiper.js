@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 			else
 			{
-				element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+				// element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 			}
 		}
 	}
@@ -63,6 +63,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.preventDefault();
 		
 		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
+
+		console.log( 'handleTouchStart start' );
+
+		console.log( event.changedTouches[0].screenX );
+
+		console.log( 'handleTouchStart end' );
 	}
 
 	function handleTouchEnd( event )
@@ -72,6 +78,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
 		handleSwipe( event.currentTarget );
+
+		console.log( 'handleTouchEnd start' );
+
+		console.log( event.changedTouches[0].screenX );
+
+		console.log( 'handleTouchEnd end' );
 	}
 
 	function initDataset( element )
