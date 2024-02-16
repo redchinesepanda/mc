@@ -66,6 +66,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( event.changedTouches[0].screenX );
 
+		console.log( event.changedTouches );
+
 		console.log( 'handleTouchMove end' );
 	}
 
@@ -78,8 +80,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'handleTouchStart start' );
 
 		console.log( event.changedTouches[0].screenX );
-
-		console.log( event.changedTouches );
 
 		console.log( 'handleTouchStart end' );
 	}
@@ -95,6 +95,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log( 'handleTouchEnd start' );
 
 		console.log( event.changedTouches[0].screenX );
+
+		console.log( event.changedTouches );
 
 		console.log( 'handleTouchEnd end' );
 	}
