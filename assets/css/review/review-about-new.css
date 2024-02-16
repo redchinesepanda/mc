@@ -43,6 +43,13 @@
         left: 0px;
         z-index: 1;
     }
+
+        /* Background */
+
+        .review-about .about-right {
+            border-radius: 32px;
+            background: var( --Primitives-purple-60 ); 
+        }
 }
 
 @media screen and ( min-width: 960px )
@@ -124,8 +131,7 @@
     /* Background */
 
     .review-about .about-right,
-    .legal-review-page-sidebar .about-right
-    {
+    .legal-review-page-sidebar .about-right {
         border-radius: 32px;
         background: var( --Primitives-purple-60 ); 
     }
