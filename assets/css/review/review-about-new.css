@@ -208,6 +208,7 @@
     /* height: 45px; */
     width: 100px;
     height: 100px;
+    flex-shrink: 0;
 }
 
 .review-about .about-center h1,
