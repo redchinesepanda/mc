@@ -59,14 +59,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
 
-			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.animated );
+			// document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.animated );
 		}
 
 		if ( window.scrollY == 0 && state == 1 )
 		{
 			localStorage.setItem( 'reviewAboutSticky', 0 );
 
-			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.animated );
+			// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.animated );
 
 			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.sticky );
 		}
