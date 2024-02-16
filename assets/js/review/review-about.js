@@ -2,6 +2,11 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function suspendBonus( event )
+	{
+		document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.moved );
+	}
+
 	function initBonus( event )
 	{
 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
@@ -44,6 +49,25 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	// function checkSticky( event )
+	// {
+	// 	let state = localStorage.getItem( 'reviewAboutSticky' );
+
+	// 	if ( window.scrollY > 0 && state != 1 )
+	// 	{
+	// 		localStorage.setItem( 'reviewAboutSticky', 1 );
+
+	// 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
+	// 	}
+
+	// 	if ( window.scrollY == 0 && state == 1 )
+	// 	{
+	// 		localStorage.setItem( 'reviewAboutSticky', 0 );
+
+	// 		document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.sticky );
+	// 	}
+	// }
+
 	const selectors = {
 		reviewAbout : '.review-about.legal-mode-default',
 
@@ -84,6 +108,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	];
 
+	const itemsMobile = [
+		{
+			event: events.scroll,
+
+			action: suspendBonus,
+
+			args: { once: true }
+		}
+	];
+
 	function reviewAboutInit()
 	{
 		if ( window.matchMedia( '( min-width: 960px )' ).matches )
@@ -100,6 +134,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			items.forEach( function ( item ) {
 				document.removeEventListener( item.event, item.action, item.args );
+			} );
+
+			itemsMobile.forEach( function ( item ) {
+				document.addEventListener( item.event, item.action, item.args );
 			} );
 		}
 	}
