@@ -12,11 +12,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 	}
 
-	function initSticky( event )
-	{
-		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.animated );
-	}
-
 	function move( element, selector )
 	{
 		if ( document.querySelector( selector ) !== null )
@@ -130,14 +125,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			action: checkSticky,
 
 			args: false
-		},
-
-		{
-			event: events.scroll,
-
-			action: initSticky,
-
-			args: { once: true }
 		}
 	];
 
