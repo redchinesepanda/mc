@@ -58,6 +58,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			localStorage.setItem( 'reviewAboutSticky', 1 );
 
 			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
+
+			document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.animated );
 		}
 
 		if ( window.scrollY == 0 && state == 1 )
