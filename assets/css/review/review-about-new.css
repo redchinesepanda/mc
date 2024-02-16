@@ -48,6 +48,10 @@
         z-index: 1;
     }
 
+    .review-about .about-right.sticky-bonus {
+        padding: 14px 16px 16px 16px;
+    }
+
     /* Background */
 
     .review-about .about-right:not( .sticky-bonus ) {
@@ -72,12 +76,13 @@
 
     .review-about {
         margin: 0px auto;
-    }
-
-    .review-about
-    {
         position: relative;
     }
+
+ /*    .review-about
+    {
+        position: relative;
+    } */
 
     .review-about .about-right
     {
@@ -279,14 +284,13 @@
 
 /* Position */
 
-.review-about .about-right,
-.legal-review-page-sidebar .about-right
-{
-    padding: 24px 28px;
-}
-
 .legal-review-page-sidebar .about-right {
     margin-bottom: 80px;
+}
+
+.review-about .about-right,
+.legal-review-page-sidebar .about-right {
+    padding: 24px 28px;
 }
 
 .review-about-wrapper.legal-mode-mini {
