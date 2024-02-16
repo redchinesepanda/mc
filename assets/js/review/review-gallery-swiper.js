@@ -60,18 +60,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchMove( event )
 	{
-		event.preventDefault();
+		// event.preventDefault();
 		
-		console.log( 'handleTouchStart start' );
+		console.log( 'handleTouchMove start' );
 
 		console.log( event.changedTouches[0].screenX );
 
-		console.log( 'handleTouchStart end' );
+		console.log( 'handleTouchMove end' );
 	}
 
 	function handleTouchStart( event )
 	{
-		event.preventDefault();
+		// event.preventDefault();
 		
 		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
 
@@ -84,7 +84,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleTouchEnd( event )
 	{
-		event.preventDefault();
+		// event.preventDefault();
 
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
