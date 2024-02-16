@@ -53,22 +53,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 			else
 			{
-				// element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
+				element.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( element.dataset.id ) );
 			}
 		}
-	}
-
-	function handleTouchMove( event )
-	{
-		event.preventDefault();
-		
-		console.log( 'handleTouchMove start' );
-
-		console.log( event.changedTouches[0].screenX );
-
-		console.log( event.changedTouches );
-
-		console.log( 'handleTouchMove end' );
 	}
 
 	function handleTouchStart( event )
@@ -76,12 +63,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		event.preventDefault();
 		
 		event.currentTarget.dataset.touchstartX = event.changedTouches[0].screenX;
-
-		console.log( 'handleTouchStart start' );
-
-		console.log( event.changedTouches[0].screenX );
-
-		console.log( 'handleTouchStart end' );
 	}
 
 	function handleTouchEnd( event )
@@ -90,15 +71,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.dataset.touchendX = event.changedTouches[0].screenX;
 
-		// handleSwipe( event.currentTarget );
-
-		console.log( 'handleTouchEnd start' );
-
-		console.log( event.changedTouches[0].screenX );
-
-		console.log( event.changedTouches );
-
-		console.log( 'handleTouchEnd end' );
+		handleSwipe( event.currentTarget );
 	}
 
 	function initDataset( element )
@@ -112,8 +85,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		touchstart: 'touchstart',
 
 		touchend: 'touchend',
-
-		touchmove: 'touchmove',
 	};
 
 	function setTouch( element )
