@@ -12,6 +12,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
 	}
 
+	function initSticky( event )
+	{
+		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.animated );
+	}
+
 	function move( element, selector )
 	{
 		if ( document.querySelector( selector ) !== null )
@@ -57,7 +62,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutSticky', 1 );
 
-			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved, classes.sticky );
+			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.sticky );
 		}
 
 		if ( window.scrollY == 0 && state == 1 )
@@ -82,6 +87,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		moved: 'moved-bonus',
 
 		sticky: 'sticky-bonus',
+
+		animated: 'animated-bonus',
 	};
 
 	const events = {
@@ -123,6 +130,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			action: checkSticky,
 
 			args: false
+		},
+
+		{
+			event: events.scroll,
+
+			action: initSticky,
+
+			args: { once: true }
 		}
 	];
 
