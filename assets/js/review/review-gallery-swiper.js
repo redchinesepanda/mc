@@ -90,11 +90,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		handleSwipe( event.currentTarget );
 
-		console.log( 'handleTouchEnd start' );
+		setTimeout( function() {
+			console.log( 'handleTouchEnd start' );
 
-		console.log( event.changedTouches[0].screenX );
+			console.log( event.changedTouches[0].screenX );
 
-		console.log( 'handleTouchEnd end' );
+			console.log( 'handleTouchEnd end' );
+		}, 0 );
+
+		// console.log( 'handleTouchEnd start' );
+
+		// console.log( event.changedTouches[0].screenX );
+
+		// console.log( 'handleTouchEnd end' );
 	}
 
 	function initDataset( element )
