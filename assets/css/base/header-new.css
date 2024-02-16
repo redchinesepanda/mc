@@ -383,6 +383,7 @@
 .legal-header
 {
     position: relative;
+	z-index: 2;
 }
 
 .legal-menu > .menu-item:last-child .menu-item > .item-title
