@@ -20,13 +20,16 @@ class CompilationPage
 
     public static function register_style()
     {
-        if ( TemplateMain::check_new() )
+        if ( TemplatePage::check_compilation() )
         {
-            CompilationMain::register_style( self::CSS_NEW );
-        }
-        else
-        {
-            CompilationMain::register_style( self::CSS );
+            if ( TemplateMain::check_new() )
+            {
+                CompilationMain::register_style( self::CSS_NEW );
+            }
+            else
+            {
+                CompilationMain::register_style( self::CSS );
+            }
         }
     }
 
