@@ -2,7 +2,7 @@
 
 class ToolLoco
 {
-    const TEXTDOMAIN = 'mc-child';
+    const TEXTDOMAIN = 'mc-theme';
 
     public static function register()
     {
