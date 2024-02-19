@@ -146,7 +146,7 @@
     .review-about .about-right,
     .legal-review-page-sidebar .about-right {
         border-radius: 32px;
-        background: var( --Primitives-purple-60 ); 
+        background: var( --Primitives-purple-50 ); 
     }
     
 }
@@ -484,7 +484,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
-    color: var(--Base-base-05);
+    color: var(--Base-base-09);
 }
 
 .legal-afillate:hover {
