@@ -19,7 +19,10 @@
 				<?php endif; ?>
             </div>
 			<div class="about-section-image">
-				<img class="section-image-item" src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>">
+                <picture>
+                    <source srcset="<?php echo $args[ 'image' ][ 'src' ]; ?>" media="(min-width: 960px)" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" alt="betting sites">
+                    <img srcset="" width="0px" height="0px" alt="">
+                </picture>
 			</div>
         </div>
     </div>
