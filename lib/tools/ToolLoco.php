@@ -2,7 +2,7 @@
 
 class ToolLoco
 {
-    const TEXTDOMAIN = 'thrive-theme-child';
+    const TEXTDOMAIN = 'mc-child';
 
     public static function register()
     {
