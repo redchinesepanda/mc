@@ -195,13 +195,19 @@
 .legal-review-page-sidebar .about-right
 {
     display: flex;
-    row-gap: 10px;
+    /* row-gap: 10px; */
     flex-wrap: wrap;
 }
 
 .review-about .about-right .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active) {
     display: none;
+}
+
+.about-right .legal-cut-control {
+    display: flex;
+    column-gap: 4px;
+    cursor: pointer;
 }
 
 /* .review-about .about-left {
@@ -306,11 +312,25 @@
     padding-left: 34px;
 } */
 
-.review-about .about-center h1,
-.review-about .about-center .review-bonus-title {
+.review-about .about-center h1 {
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.review-about .about-right .review-bonus-title, 
+.legal-review-page-sidebar .about-right .review-bonus-title {
+    padding-bottom: 18px;
+}
+
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description,
+.about-right .legal-cut-control {
+    padding-top: 14px;
+}
+
+.about-right .legal-cut-control {
+    margin: 0 auto;
 }
 
 /* .review-about .legal-afillate,
@@ -327,10 +347,6 @@
 
 .tcb-post-content > .legal-afillate {
     margin: 0px auto 24px auto;
-}
-
-.about-right .legal-cut-control {
-    padding-top: 10px;
 }
 
 .review-about .achievement-bonus .achievement-bonus-link {
@@ -525,7 +541,7 @@
     text-align: center;
 }
 
-.about-right .legal-cut-control:not(.legal-active)::before {
+.about-right .legal-cut-control::before {
     content: attr( data-default );
 }
 
