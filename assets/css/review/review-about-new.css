@@ -199,6 +199,11 @@
     flex-wrap: wrap;
 }
 
+.review-about .about-right .review-bonus-description:not(.legal-active),
+.legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active) {
+    display: none;
+}
+
 /* .review-about .about-left {
     align-items: center;
 } */
@@ -324,6 +329,10 @@
     margin: 0px auto 24px auto;
 }
 
+.about-right .legal-cut-control {
+    padding-top: 10px;
+}
+
 .review-about .achievement-bonus .achievement-bonus-link {
     padding-left: 37px;
 }
@@ -430,15 +439,20 @@
 
 .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
+.legal-afillate,
+.review-about.legal-default .about-achievement .achievement-bonus-link,
 .review-about:not( .legal-black ) .about-center .review-bonus-title,
 .review-about:not( .legal-black ) .about-center .review-bonus-description {
-    color: var( --Base-base-01 );;
+    color: var( --Base-base-01 );
 }
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
+.review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
-.review-about.legal-black .about-center .review-bonus-description {
+.review-about.legal-black .about-center .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description,
+.about-right .legal-cut-control {
     color: var( --Base-base-09 );
 }
 
@@ -447,7 +461,11 @@
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title,
 .review-about .about-right .review-bonus-description,
-.legal-review-page-sidebar .about-right .review-bonus-description {
+.legal-review-page-sidebar .about-right .review-bonus-description,
+.legal-afillate,
+.review-about .legal-afillate-description,
+.review-about .about-achievement .achievement-bonus-link,
+.about-right .legal-cut-control {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -484,7 +502,6 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
-    color: var(--Base-base-09);
 }
 
 .legal-afillate:hover {
@@ -494,26 +511,41 @@
 }
 
 .legal-afillate {
-    font-family: var( --legal-font-primary );
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: 22px;
     text-decoration: none;
     text-align: center;
+}
+
+.about-right .legal-cut-control {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+}
+
+.about-right .legal-cut-control:not(.legal-active)::before {
+    content: attr( data-default );
+}
+
+.about-right .legal-cut-control::after {
+    content: '\F103';
+    font-family: var(--legal-font-icons);
+    font-size: 16px;
+    font-weight: 16px;
+  }
+
+/* .review-about.legal-black .legal-afillate-description {
+    color: var(--Base-base-09);
+} */
+
+/* .review-about:not( .legal-black ) .legal-afillate-description {
     color: var(--Base-base-01);
-}
-
-.review-about.legal-black .legal-afillate-description {
-    color: #000000;
-}
-
-.review-about:not( .legal-black ) .legal-afillate-description {
-    color: rgb(255, 255, 255);
-}
+} */
 
 .review-about .legal-afillate-description {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -521,16 +553,16 @@
     text-align: center;
 }
 
-.review-about.legal-default .about-achievement .achievement-bonus-link {
-    color: rgb(255, 255, 255);
-}
+/* .review-about.legal-default .about-achievement .achievement-bonus-link {
+    color: var(--Base-base-01);
+} */
 
-.review-about.legal-black .about-achievement .achievement-bonus-link {
-    color: #000000;
-}
+/* .review-about.legal-black .about-achievement .achievement-bonus-link {
+    color: var(--Base-base-09);
+} */
 
 .review-about .about-achievement .achievement-bonus-link {
-    font-family: "Source Sans Pro";
+    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
