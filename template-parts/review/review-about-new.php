@@ -18,7 +18,10 @@
                 <?php endif; ?>
                 <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
                 <?php if( empty( $args['mode'] ) && !empty( $args[ 'bonus' ][ 'description' ] ) ) : ?>
-                    <div class="review-bonus-description"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
+                    <div class="review-bonus-description legal-cut-item" data-cut-set-id="0"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
+                <?php endif; ?>
+                <?php if( empty( $args['mode'] ) && !empty( $args[ 'bonus' ][ 'description' ] ) ) : ?>
+                    <span class="legal-cut-control" data-content-default="Show T&C" data-content-active="Hide T&C" data-cut-set-id="0">Show T&C</span>
                 <?php endif; ?>
             </div>
         </div>
