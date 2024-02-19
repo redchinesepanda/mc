@@ -61,6 +61,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		compilationAbout : {
 			selectors : '.compilation-about .legal-cut-item, .compilation-about .legal-cut-control'
+		},
+
+		reviewAbout : {
+			selectors : '.review-about .legal-cut-item, .review-about .legal-cut-control'
 		}
 	};
 
