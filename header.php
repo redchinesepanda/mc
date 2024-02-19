@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <!doctype html>
-<html <?php WPMLMain::language_attributes(); ?> <?php thrive_html_class(); ?>>
+<html <?php WPMLMain::language_attributes(); ?> <?php //thrive_html_class(); ?>>
 	<head> 
 		<!-- manual start -->
 		<link rel="profile" href="https://gmpg.org/xfn/11">
