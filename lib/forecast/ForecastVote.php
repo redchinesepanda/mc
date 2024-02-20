@@ -41,6 +41,10 @@ class ForecastVote
     {
         $handler = new self();
 
+        LegalDebug::debug( [
+            'check_contains_forecast_vote' => self::check_contains_forecast_vote(),
+        ] );
+
         if ( self::check_contains_forecast_vote() )
         {
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );

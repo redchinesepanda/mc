@@ -223,8 +223,6 @@ class CompilationTabs
     public static function check_contains_tabs()
     {
         return LegalComponents::check_shortcode( self::SHORTCODE[ 'tabs' ] );
-        
-		// return LegalComponents::check_contains( self::SHORTCODE[ 'tabs' ] );
     }
 }
 
