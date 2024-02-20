@@ -17,6 +17,20 @@ class WPMLTrid
     {
         global $wpdb;
 
+        // $query = "SELECT
+        //         DISTINCT `wp_icl_translations`.`trid` AS `legal_trid`,
+        //         COUNT( `wp_icl_translations`.`element_id` ) AS `legal_elements`,
+        //         `wp_icl_translations`.`element_id` AS `legal_element_id`,
+        //         `wp_posts`.`post_title` AS `legal_title`,
+        //         GROUP_CONCAT( `language_code` ) as 'legal_language_codes'
+        //     FROM `wp_icl_translations`
+        //     INNER JOIN `wp_posts` ON `element_id` = `ID`
+        //     WHERE
+        //         `element_type` IN ( 'post_page', 'post_legal_billet' )
+        //         AND `post_status` = 'publish'
+        //     GROUP BY `trid`
+        //     ORDER BY `legal_title`, `legal_elements`";
+        
         $query = "SELECT
                 DISTINCT `wp_icl_translations`.`trid` AS `legal_trid`,
                 COUNT( `wp_icl_translations`.`element_id` ) AS `legal_elements`,
@@ -26,7 +40,8 @@ class WPMLTrid
             FROM `wp_icl_translations`
             INNER JOIN `wp_posts` ON `element_id` = `ID`
             WHERE
-                `element_type` IN ( 'post_page', 'post_legal_billet' )
+                `element_type` = 'post_page'
+                AND `post_type` = 'page'
                 AND `post_status` = 'publish'
             GROUP BY `trid`
             ORDER BY `legal_title`, `legal_elements`";
