@@ -42,6 +42,12 @@ class ToolEnqueue
         }
     }
 
+    const ARGS_SCRIPT = [
+        'in_footer' => false,
+
+        'strategy'  => 'defer',
+    ];
+
     public static function register_script( $scripts = [] )
     {
         foreach ( $scripts as $name => $item ) {
@@ -66,7 +72,7 @@ class ToolEnqueue
 
             // wp_register_script( $name, $path, $deps, $ver, $args, false );
             
-            wp_register_script( $name, $path, $deps, $ver, $args, [ 'in_footer' => false, ] );
+            wp_register_script( $name, $path, $deps, $ver, $args, self::ARGS_SCRIPT );
 
             wp_enqueue_script( $name );
         }
