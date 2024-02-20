@@ -23,11 +23,11 @@ class ForecastVote
         'wp-polls',
     ];
 
-    const DEQUEUE = [
-        ...self::DEQUEUE_CSS,
+    // const DEQUEUE = [
+    //     ...self::DEQUEUE_CSS,
         
-        ...self::DEQUEUE_JS,
-    ];
+    //     ...self::DEQUEUE_JS,
+    // ];
 
     public static function dequeue_style()
     {
@@ -45,9 +45,9 @@ class ForecastVote
     {
         $handler = new self();
 
-        LegalDebug::debug( [
-            'check_contains_forecast_vote' => self::check_contains_forecast_vote(),
-        ] );
+        // LegalDebug::debug( [
+        //     'check_contains_forecast_vote' => self::check_contains_forecast_vote(),
+        // ] );
 
         if ( self::check_contains_forecast_vote() )
         {
