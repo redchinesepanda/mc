@@ -28,7 +28,7 @@ class WPMLTrid
                 AND `post_status` = 'publish'
             GROUP BY `trid`
             ORDER BY `legal_title`, `legal_elements`
-            LIMIT $position, 100";
+            LIMIT $position, $limit";
     }
 
     public static function get()
