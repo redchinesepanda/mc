@@ -18,8 +18,10 @@
         align-items: center;
     }
 
+    .review-about .about-right.sticky-bonus .review-bonus-head,
     .review-about .about-right.sticky-bonus .review-bonus-title,
-    .review-about .about-right.sticky-bonus .review-bonus-description {
+    .review-about .about-right.sticky-bonus .review-bonus-description,
+    .review-about .about-right.sticky-bonus .legal-cut-control {
         display: none;
     }
     
@@ -113,15 +115,19 @@
     
     /* Width and Height */
 
+    .tcb-post-content > .legal-afillate {
+        width: calc( 343px - (18px * 2) );
+    }
+
     .review-about {
         /* width: 1080px; */
         max-width: var( --base-width-desktop );
     }
 
-  /*   .review-about .about-left
-    {
-
-    } */
+    .review-about .about-right .review-bonus-title, 
+    .legal-review-page-sidebar .about-right .review-bonus-title {
+        min-height: calc(162px - 18px);
+    }
 
     .review-about .about-right
     {
@@ -199,15 +205,19 @@
     flex-wrap: wrap;
 }
 
-.review-about .about-right .review-bonus-description:not(.legal-active),
+.review-about .about-right:not( .sticky-bonus ) .review-bonus-description:not(.legal-active),
 .legal-review-page-sidebar .about-right .review-bonus-description:not(.legal-active) {
     display: none;
 }
 
 .about-right .legal-cut-control {
-    display: flex;
+    align-items: center;
     column-gap: 4px;
     cursor: pointer;
+}
+
+.about-right:not( .sticky-bonus ) .legal-cut-control {
+    display: flex;
 }
 
 /* .review-about .about-left {
@@ -268,9 +278,12 @@
 } */
 
 .review-about .about-right .legal-afillate, 
-.legal-review-page-sidebar .about-right .legal-afillate,
-.tcb-post-content .legal-afillate {
+.legal-review-page-sidebar .about-right .legal-afillate {
     min-height: calc(56px - 20px);
+}
+
+.tcb-post-content > .legal-afillate {
+    min-height: calc(50px - 20px);
 }
 
 .review-about .about-right .legal-afillate, 
@@ -279,10 +292,6 @@
     /* min-width: 252px; */
     /* min-height: 36px; */
     width: 100%;
-}
-
-.tcb-post-content .legal-afillate {
-    width: fit-content;
 }
 
 .review-about .about-achievement {
@@ -318,6 +327,10 @@
     margin-bottom: 0px;
 }
 
+.about-right .review-bonus-head {
+    padding-bottom: 8px;
+}
+
 .review-about .about-right .review-bonus-title, 
 .legal-review-page-sidebar .about-right .review-bonus-title {
     padding-bottom: 18px;
@@ -333,6 +346,10 @@
     margin: 0 auto;
 }
 
+.about-right .legal-cut-control.legal-active::after {
+    transform: rotate(180deg);
+}
+
 /* .review-about .legal-afillate,
 .tcb-post-content .legal-afillate {
     padding: 5px 45px 5px 20px;
@@ -345,9 +362,9 @@
     padding: 10px 18px;
 }
 
-.tcb-post-content > .legal-afillate {
+/* .tcb-post-content > .legal-afillate {
     margin: 0px auto 24px auto;
-}
+} */
 
 .review-about .achievement-bonus .achievement-bonus-link {
     padding-left: 37px;
@@ -456,9 +473,7 @@
 .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
 .legal-afillate,
-.review-about.legal-default .about-achievement .achievement-bonus-link,
-.review-about:not( .legal-black ) .about-center .review-bonus-title,
-.review-about:not( .legal-black ) .about-center .review-bonus-description {
+.review-about.legal-default .about-achievement .achievement-bonus-link {
     color: var( --Base-base-01 );
 }
 
@@ -466,9 +481,10 @@
 .review-about.legal-black .about-center h1,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
-.review-about.legal-black .about-center .review-bonus-description,
+.review-about .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
-.about-right .legal-cut-control {
+.about-right .legal-cut-control,
+.about-right .review-bonus-head {
     color: var( --Base-base-09 );
 }
 
@@ -481,7 +497,8 @@
 .legal-afillate,
 .review-about .legal-afillate-description,
 .review-about .about-achievement .achievement-bonus-link,
-.about-right .legal-cut-control {
+.about-right .legal-cut-control,
+.about-right .review-bonus-head {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -504,6 +521,12 @@
     font-weight: 600;
     line-height: 26.4px;
     /* text-align: center; */
+}
+
+.about-right .review-bonus-head {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
 }
 
 .review-about .about-right .review-bonus-title,
@@ -541,16 +564,20 @@
     text-align: center;
 }
 
-.about-right .legal-cut-control::before {
-    content: attr( data-default );
+.about-right .legal-cut-control:not( .legal-active ):before {
+    content: attr( data-review-default );
+}
+
+.about-right .legal-cut-control.legal-active::before {
+    content: attr( data-review-active );
 }
 
 .about-right .legal-cut-control::after {
     content: '\F103';
     font-family: var(--legal-font-icons);
     font-size: 16px;
-    font-weight: 16px;
-  }
+    line-height: 16px;
+}
 
 /* .review-about.legal-black .legal-afillate-description {
     color: var(--Base-base-09);
@@ -588,4 +615,4 @@
 
 .review-about .about-achievement div {
     text-align: center;
-} 
+}
