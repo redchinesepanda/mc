@@ -138,7 +138,9 @@ class BilletMain
 
     public static function register_script( $scripts = [] )
     {
-        if ( self::check() )
+        // if ( self::check() )
+
+        if ( CompilationTabs::check_contains_tabs() )
         {
             if ( empty( $scripts ) )
             {
