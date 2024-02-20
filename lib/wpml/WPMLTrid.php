@@ -41,10 +41,10 @@ class WPMLTrid
             INNER JOIN `wp_posts` ON `element_id` = `ID`
             WHERE
                 `element_type` = 'post_page'
-                AND `post_type` = 'page'
                 AND `post_status` = 'publish'
             GROUP BY `trid`
-            ORDER BY `legal_title`, `legal_elements`";
+            ORDER BY `legal_title`, `legal_elements`
+            LIMIT 0, 100";
         
         $posts = $wpdb->get_results( $query );
 
