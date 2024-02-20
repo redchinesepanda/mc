@@ -35,39 +35,23 @@ class WPMLTrid
     {
         global $wpdb;
 
-        // $query = "SELECT
-        //         DISTINCT `wp_icl_translations`.`trid` AS `legal_trid`,
-        //         COUNT( `wp_icl_translations`.`element_id` ) AS `legal_elements`,
-        //         `wp_icl_translations`.`element_id` AS `legal_element_id`,
-        //         `wp_posts`.`post_title` AS `legal_title`,
-        //         GROUP_CONCAT( `language_code` ) as 'legal_language_codes'
-        //     FROM `wp_icl_translations`
-        //     INNER JOIN `wp_posts` ON `element_id` = `ID`
-        //     WHERE
-        //         `element_type` IN ( 'post_page', 'post_legal_billet' )
-        //         AND `post_status` = 'publish'
-        //     GROUP BY `trid`
-        //     ORDER BY `legal_title`, `legal_elements`";
-
-        $posts = [];
+        // $posts = [];
 
         $position = 0;
 
         $limit = 100;
         
-        do
-        {
-            $result = $wpdb->get_results( self::get_query( $position, $limit ) );
+        // do
+        // {
+        //     $result = $wpdb->get_results( self::get_query( $position, $limit ) );
 
-            $posts = array_merge( $posts, $result );
+        //     $posts = array_merge( $posts, $result );
 
-            $position += $limit;
-        }
-        while ( !empty( $result ) );
+        //     $position += $limit;
+        // }
+        // while ( !empty( $result ) );
         
-        // $posts = $wpdb->get_results( $query );
-
-        return $posts;
+        return $wpdb->get_results( self::get_query( $position, $limit ) );
     }
 
     public static function get_translation_group( $trid )
