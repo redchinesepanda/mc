@@ -64,7 +64,9 @@ class ToolEnqueue
                 }
             }
 
-            wp_register_script( $name, $path, $deps, $ver, $args, false );
+            // wp_register_script( $name, $path, $deps, $ver, $args, false );
+            
+            wp_register_script( $name, $path, $deps, $ver, $args, [ 'in_footer' => false, ] );
 
             wp_enqueue_script( $name );
         }
