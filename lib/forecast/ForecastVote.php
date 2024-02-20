@@ -35,9 +35,9 @@ class ForecastVote
         {
             // ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE );
             
-            ToolEnqueue::dequeue_style( TemplateMain::DEQUEUE_CSS );
+            ToolEnqueue::dequeue_style( self::DEQUEUE_CSS );
 
-            ToolEnqueue::dequeue_script( TemplateMain::DEQUEUE_JS );
+            ToolEnqueue::dequeue_script( self::DEQUEUE_JS );
         }
     }
 
