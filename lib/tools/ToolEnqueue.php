@@ -70,9 +70,9 @@ class ToolEnqueue
                 }
             }
 
-            // wp_register_script( $name, $path, $deps, $ver, $args, false );
+            wp_register_script( $name, $path, $deps, $ver, $args, false );
             
-            wp_register_script( $name, $path, $deps, $ver, $args, self::ARGS_SCRIPT );
+            // wp_register_script( $name, $path, $deps, $ver, $args, self::ARGS_SCRIPT );
 
             wp_enqueue_script( $name );
         }
