@@ -93,7 +93,9 @@ class BilletMain
 
 	public static function register_style( $styles = [] )
     {
-        if ( self::check() )
+        // if ( self::check() )
+        
+        if ( CompilationTabs::check_contains_tabs() )
         {
             
             if ( empty( $styles ) )

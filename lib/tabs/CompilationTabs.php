@@ -84,6 +84,10 @@ class CompilationTabs
         return LegalComponents::check();
     }
 
+    const SHORTCODE = [
+        'tabs' => 'legal-tabs',
+    ];
+
     public static function register()
     {
         $handler = new self();
@@ -214,6 +218,13 @@ class CompilationTabs
         $output = ob_get_clean();
 
         return $output;
+    }
+
+    public static function check_contains_tabs()
+    {
+        return LegalComponents::check_shortcode( self::SHORTCODE[ 'tabs' ] );
+        
+		// return LegalComponents::check_contains( self::SHORTCODE[ 'tabs' ] );
     }
 }
 
