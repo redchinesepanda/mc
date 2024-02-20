@@ -13,7 +13,7 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
     const CURRENT_LANGUAGE = [
-        // 'pt',
+        'pt', 
 
         'kz',
     ];
