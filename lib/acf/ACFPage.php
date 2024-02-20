@@ -26,7 +26,9 @@ class ACFPage
 
     public static function choices( $field )
     {
-        $items = WPMLTrid::get();
+        // $items = WPMLTrid::get();
+        
+        $items = [];
 
         $choices = [];
 
