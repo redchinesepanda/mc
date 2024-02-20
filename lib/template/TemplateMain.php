@@ -20,10 +20,6 @@ class TemplateMain
 
     public static function check_code()
     {
-        LeglalDebug::debug( [
-            WPMLMain::current_language(),
-        ] );
-        
         return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
     }
 
