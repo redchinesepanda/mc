@@ -121,10 +121,15 @@
 	flex-basis: 164px;
 }
 
-.legal-oops .item-image[src$="mc.png"] {
+.legal-oops .item-image {
+	width: 30px;
+	height: 30px;
+}
+
+/* .legal-oops .item-image[src$="mc.png"] {
 	width: 32px;
 	height: 32px;
-}
+} */
 
 .legal-oops .item-bonus-wrapper {
 	flex-basis: 20%;
@@ -165,8 +170,14 @@
 	background: var(--Base-base-07);
 }
 
-.legal-oops .item-image[src$="mc.png"] {
+/* .legal-oops .item-image[src$="mc.png"] {
 	background-color: rgb(13, 11, 47);
+	border-radius: 8px;
+	border: 1px solid var( --Base-base-09 );
+} */
+
+.legal-oops .item-image {
+	background-color: var(--Logo-background);
 	border-radius: 8px;
 	border: 1px solid var( --Base-base-09 );
 }
