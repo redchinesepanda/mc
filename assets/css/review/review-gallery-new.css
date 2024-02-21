@@ -104,6 +104,11 @@
         column-gap: 8px;
     }
 
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset.columns-1
+    {
+        justify-content: center;
+    }
+
     .tcb-post-content .legal-imageset-oops .legal-imageset
     {
         column-gap: 0px;
@@ -313,7 +318,7 @@
 
 .tcb-post-content .legal-imageset.columns-1 .imageset-item
 {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .tcb-post-content .legal-imageset.columns-1 .item-image
