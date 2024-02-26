@@ -1,4 +1,5 @@
-@media screen and ( max-width: 1217px )
+/* @media screen and ( max-width: 1217px ) */
+@media screen and ( max-width: 959px )
 {
 	/* Display */
 
@@ -14,17 +15,27 @@
 	{
 		width: 100%;
 	}
+
+	/* Position */
+
+	.legal-review-page-main {
+		order: 1;
+	}
+
+	.legal-review-page-sidebar {
+		order: 0;
+	}
 }
 
-@media screen and ( min-width: 1218px )
+/* @media screen and ( min-width: 1218px ) */
+@media screen and ( min-width: 960px )
 {
 	/* Position */
 
-	.legal-review-page-sidebar
-	{
+	.legal-review-page-sidebar {
 		position: sticky;
-		/* top: 0px; */
-		top: 30px;
+		/* top: 30px; */
+		top: calc( 145px + 30px );
 	}
 
 	/* Width and Height  */
@@ -46,5 +57,6 @@
 .legal-review-page
 {
 	display: flex;
-	gap: 48px;
+	/* gap: 48px; */
+	column-gap: 48px;
 }
