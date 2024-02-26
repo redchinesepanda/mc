@@ -161,7 +161,7 @@ class ReviewGallery
             {
                 $args[ 'class' ] = 'columns-1';
 
-                $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
+                // $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
             }
 
             // LegalDebug::debug( [
@@ -179,38 +179,6 @@ class ReviewGallery
 
             foreach ( $ids as $id )
             {    
-                // // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
-                
-                // $review = wp_get_attachment_image_src( $id, $size );
-
-                // $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
-
-                // $caption = wp_get_attachment_caption( $id );
-
-                // $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
-
-                // $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
-
-                // if ( $review && $lightbox ) {
-                //     $args[ 'items' ][] = [
-                //         'src' => $review[ 0 ],
-        
-                //         'width' => $review[ 1 ],
-        
-                //         'height' => $review[ 2 ],
-
-                //         'landscape' => $review[ 1 ] > $review[ 2 ],
-        
-                //         'data-src' => $lightbox[ 0 ],
-        
-                //         'caption' => $caption,
-        
-                //         'alt' => $alt,
-
-                //         'class' => 'item-image-' . $id,
-                //     ];
-                // }
-
                 $item = self::get_item( $id, $size );
 
                 if ( !empty( $item ) )

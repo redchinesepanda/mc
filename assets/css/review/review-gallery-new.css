@@ -323,12 +323,12 @@
 
 .tcb-post-content .legal-imageset.columns-1 .imageset-item
 {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .tcb-post-content .legal-imageset.columns-1 .legal-landscape
 {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .tcb-post-content .legal-imageset.columns-1 .item-image
