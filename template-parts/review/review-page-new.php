@@ -18,12 +18,10 @@
 			</div>
 		</div>
 		<div class="legal-review-page-sidebar">
+			<?php echo ReviewAbout::render_bonus(); ?>
 		</div>
 	</div>
 </section>
 <section class="legal-section-offers">
 	<?php echo ReviewOffers::prepare_offers_bottom(); ?>
-</section>
-<section class="legal-section-review-about-bottom">
-	<?php // echo ReviewAbout::render_about_bottom(); ?>
 </section>

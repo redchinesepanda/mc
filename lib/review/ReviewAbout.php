@@ -303,6 +303,8 @@ class ReviewAbout
         'review-about' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about.php',
 
         'review-about-new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about-new.php',
+        
+        'review-about-bonus' => LegalMain::LEGAL_PATH . '/template-parts/review/review-about-bonus.php',
 
         'review-button' => LegalMain::LEGAL_PATH . '/template-parts/review/review-button.php',
     ];
@@ -340,6 +342,21 @@ class ReviewAbout
         }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'review-about' ], $args );
+    }
+
+    public static function render_bonus( $atts = [] )
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'review-about-bonus' ], self::get( $atts ) );
+        }
+
+        return '';
     }
     
     public static function render_about_bottom()
@@ -421,13 +438,15 @@ class ReviewAbout
             return '';
         }
 
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'review-button' ], false, self::get_button( $args ) );
+        // load_template( self::TEMPLATE[ 'review-button' ], false, self::get_button( $args ) );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'review-button' ], self::get_button( $args ) );
     }
 }
 
