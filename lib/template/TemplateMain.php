@@ -282,6 +282,8 @@ class TemplateMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_dequeue' ] );
 
+        add_filter( 'the_content', [ $handler, 'modify_content' ] );
+
         // self::register_wp();
 
         // self::register_thrive();
@@ -289,6 +291,34 @@ class TemplateMain
         TemplatePage::register();
 
         TemplateSingle::register();
+    }
+    
+    public static function modify_content( $content )
+    {
+        $content = self::change_strong_to_b( $content );
+
+        $content = self::remove_data_attributes( $content );
+
+        $content = self::change_inline_style( $content );
+
+        return $content;
+    }
+
+    public static function change_strong_to_b( $content )
+    {
+        // return str_replace( 'strong>', 'b>', $content );
+
+        return preg_replace('/<strong>(.*)<\/strong>/', '<b>$1</b>', $content);
+    }
+
+    public static function remove_data_attributes( $content )
+    {
+        return preg_replace('/\s*data-.*=\".*\"/', '', $content);
+    }
+
+    public static function change_inline_style( $content )
+    {
+        return str_replace( 'border-collapse: collapse;', '', $content );
     }
 
     public static function render()
