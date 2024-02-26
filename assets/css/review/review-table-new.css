@@ -43,7 +43,7 @@
 
     /* Position */
 
-    .tcb-post-content table tr *
+    .tcb-post-content table tr > *
     {
         padding-left: 16px;
         padding-right: 16px;
