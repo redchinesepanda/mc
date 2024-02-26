@@ -251,6 +251,11 @@
     position: relative;
 }
 
+.tcb-post-content .legal-imageset-wrapper:not( :last-child )
+{
+    padding-bottom: 18px;
+}
+
 .tcb-post-content .legal-gallery {
     position: fixed;
     top: 0px;
