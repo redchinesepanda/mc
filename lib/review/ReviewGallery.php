@@ -223,6 +223,12 @@ class ReviewGallery
         return $args;
     }
 
+    const CLASSES = [
+        'landscape' = 'legal-landscape',
+
+        'portrait' = 'legal-portrait',
+    ];
+
     public static function get_item( $id, $size )
     {
         // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
@@ -236,6 +242,8 @@ class ReviewGallery
         $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
 
         $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
+
+        $orientation = ( $review[ 1 ] > $review[ 2 ] ) ? self::CLASSES[ 'landscape' ] : self::CLASSES[ 'portrait' ];
 
         // if ( $review && $lightbox )
         
@@ -251,7 +259,7 @@ class ReviewGallery
 
             'height' => $review[ 2 ],
 
-            'landscape' => $review[ 1 ] > $review[ 2 ],
+            'landscape' => ,
 
             'data-src' => $lightbox[ 0 ],
 
@@ -259,7 +267,7 @@ class ReviewGallery
 
             'alt' => $alt,
 
-            'class' => 'item-image-' . $id,
+            'class' => 'item-image-' . $id . ' ' . $orientation,
         ];
     }
 
