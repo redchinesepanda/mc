@@ -161,7 +161,7 @@ class ReviewGallery
             {
                 $args[ 'class' ] = 'columns-1';
 
-                $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
+                // $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
             }
 
             // LegalDebug::debug( [
