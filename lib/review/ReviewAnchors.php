@@ -107,7 +107,57 @@ class ReviewAnchors
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        add_filter( 'the_content', [ $handler, 'modify_content' ] );
     }
+
+    public static function modify_content( $content )
+	{
+		$dom = LegalDOM::get_dom( $content ); 
+
+		self::set_header_id( $dom );
+
+		return $dom->saveHTML( $dom );
+	}
+
+    public static function set_header_id( $dom )
+	{
+		$nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return false;
+		}
+
+		foreach ( $nodes as $node )
+		{
+			if ( $node->parentNode )
+            {
+                $id = $node->getAttribute( 'id' );
+
+                $node->removeAttribute( 'id' );
+
+                $node->parentNode->setAttribute( 'id', $id );
+
+                try
+                {
+                    $node->parentNode->removeChild( $node );
+                }
+                catch ( DOMException $e )
+                {
+                    LegalDebug::debug( [
+                        'ReviewAnchors' => 'set_header_id',
+
+                        'node' => substr( $node->textContent, 0, 30 ),
+
+                        'message' => $e->getMessage(),
+                    ] );
+                }
+            }
+		}
+
+		return true;
+	}
 
 	public static function anchors_data()
 	{
@@ -126,15 +176,20 @@ class ReviewAnchors
 		return $keys;
 	}
 
+	// public static function get_nodes( $dom )
+	// {
+	// 	$xpath = new DOMXPath( $dom );
+		
+    //     // $nodes = $xpath->query( ".//a[@id and not(contains(@id, 'legal-'))]" ); 
+        
+    //     $nodes = $xpath->query( "//a[@id and not(contains(@id, 'legal-'))]" ); 
+
+	// 	return $nodes;
+	// }
+
 	public static function get_nodes( $dom )
 	{
-		$xpath = new DOMXPath( $dom );
-		
-        // $nodes = $xpath->query( ".//a[@id and not(contains(@id, 'legal-'))]" ); 
-        
-        $nodes = $xpath->query( "//a[@id and not(contains(@id, 'legal-'))]" ); 
-
-		return $nodes;
+		return LegalDOM::get_nodes( $dom, "//a[@id and not(contains(@id, 'legal-'))]" );
 	}
 
     const TEXT_ANCHORS = [

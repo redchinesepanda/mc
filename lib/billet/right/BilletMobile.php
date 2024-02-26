@@ -27,7 +27,7 @@ class BilletMobile
         $enabled = true;
 
         if ( !empty( $filter ) ) {
-            $enabled = $filter['mobile'];
+            $enabled = $filter[ 'mobile' ];
         }
 
         if ( $enabled ) {
@@ -45,30 +45,29 @@ class BilletMobile
         //     load_template( self::TEMPLATE, false, $args );
         // }
 
-        return self::render_main( self::TEMPLATE, self::get( $billet ) );
+        return LegalComponents::render_main( self::TEMPLATE, self::get( $billet ) );
     }
 
     public static function render_mobile( $mobile )
     {
-        // $args = self::get( $billet );
+        if ( empty( $mobile ) )
+        {
+            return '';    
+        }
 
-        // if ( !empty( $args ) ) {
-        //     load_template( self::TEMPLATE, false, $args );
-        // }
-
-        return self::render_main( self::TEMPLATE, $mobile );
+        return LegalComponents::render_main( self::TEMPLATE, $mobile );
     }
 
-    public static function render_main( $template, $args )
-    {
-		ob_start();
+    // public static function render_main( $template, $args )
+    // {
+	// 	ob_start();
 
-        load_template( $template, false, $args );
+    //     load_template( $template, false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 }
 
 ?>

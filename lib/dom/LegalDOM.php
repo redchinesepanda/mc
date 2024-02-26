@@ -135,6 +135,15 @@ class LegalDOM
             $node->textContent = preg_replace( '/\s+/', ' ', $node->textContent );
         }
     }
+
+	public static function get_nodes( $dom, $query )
+	{
+		$xpath = new DOMXPath( $dom );
+
+		$nodes = $xpath->query( $query );
+
+		return $nodes;
+	}
 }
 
 ?>
