@@ -160,6 +160,8 @@ class ReviewGallery
             if ( count( $ids ) == 1 )
             {
                 $args[ 'class' ] = 'columns-1';
+
+                $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
             }
 
             // LegalDebug::debug( [
