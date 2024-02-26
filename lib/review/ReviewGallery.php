@@ -211,14 +211,14 @@ class ReviewGallery
 
         $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
 
-        $orientation = ( $review[ 1 ] > $review[ 2 ] ) ? self::CLASSES[ 'landscape' ] : self::CLASSES[ 'portrait' ];
-
         // if ( $review && $lightbox )
         
         if ( !$review || !$lightbox )
         {
             return [];  
         }
+
+        $orientation = ( $review[ 1 ] > $review[ 2 ] ) ? self::CLASSES[ 'landscape' ] : self::CLASSES[ 'portrait' ];
 
         return [
             'src' => $review[ 0 ],
