@@ -18,13 +18,19 @@
         align-items: center;
     }
 
-    .review-about .about-right.sticky-bonus .review-bonus-head,
-    .review-about .about-right.sticky-bonus .review-bonus-title,
-    .review-about .about-right.sticky-bonus .review-bonus-description,
-    .review-about .about-right.sticky-bonus .legal-cut-control {
+    .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-head,
+    .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-title,
+    .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-description,
+    .legal-review-page-sidebar .about-right.sticky-bonus .legal-cut-control {
         display: none;
     }
     
+    /* .moved-bonus, */
+
+    .sticky-bonus {
+        /* animation: append-animate .3s linear; */
+        animation: myAnim 0.8s ease 0s 1 normal forwards;
+    }
 
     /* Width and Height */
 
@@ -32,7 +38,9 @@
         width: 250px;
     } */
 
-    .review-about .about-right {
+    .review-about .about-right,
+    .legal-review-page-sidebar .about-right.sticky-bonus,
+    .about-right .review-bonus-head {
         width: 100%;
     }
 
@@ -42,7 +50,15 @@
         padding: 20px 15px;
     }
 
-    .review-about .about-right.sticky-bonus
+   /*  .review-about .about-right.sticky-bonus
+    {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+    } */
+
+    .legal-review-page-sidebar .about-right.sticky-bonus
     {
         position: fixed;
         bottom: 0px;
@@ -50,19 +66,20 @@
         z-index: 1;
     }
 
-    .review-about .about-right.sticky-bonus {
+    .legal-review-page-sidebar .about-right.sticky-bonus {
         padding: 14px 16px 16px 16px;
+    }
+
+    .legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
+        margin-top: 32px;
+        margin-bottom:32px;
     }
 
     /* Background */
 
-    .review-about .about-right:not( .sticky-bonus ) {
-        border-radius: 32px;
-        background: var( --Primitives-purple-60 ); 
-    }
-
-    .review-about .about-right.sticky-bonus {
+    .legal-review-page-sidebar .about-right.sticky-bonus {
         background: var(--Base-base-01);
+        border-top: 2px solid var( --Base-base-09);
     }
 }
 
@@ -112,12 +129,17 @@
     .review-about .about-achievement {
         padding: 30px 0px;
     }
+
+    .legal-review-page-sidebar .about-right {
+        margin-top: -145px;
+        margin-bottom: 80px;
+    }
     
     /* Width and Height */
 
-    .tcb-post-content > .legal-afillate {
+   /*  .tcb-post-content > .legal-afillate {
         width: calc( 343px - (18px * 2) );
-    }
+    } */
 
     .review-about {
         /* width: 1080px; */
@@ -148,18 +170,12 @@
     }
 
     /* Background */
-
-    .review-about .about-right,
-    .legal-review-page-sidebar .about-right {
-        border-radius: 32px;
-        background: var( --Primitives-purple-50 ); 
-    }
     
 }
 
 /* Animation */
 
-@keyframes append-animate {
+/* @keyframes append-animate {
 	from {
 		transform: scale(0);
 		opacity: 0;
@@ -168,15 +184,17 @@
 		transform: scale(1);
 		opacity: 1;	
 	}
-}
+} */
 
-.moved-bonus,
-/* .animated-bonus, */
-.sticky-bonus
-/* .review-about .about-right,
-.legal-review-page-sidebar .about-right */
-{
-	animation: append-animate .3s linear;
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* Display */
@@ -277,16 +295,21 @@
     width: fit-content;
 } */
 
-.review-about .about-right .legal-afillate, 
+.about-right .review-bonus-head,
+.legal-review-page-sidebar .about-right .review-bonus-title {
+    width: 100%;
+}
+
+/* .review-about .about-right .legal-afillate,  */
 .legal-review-page-sidebar .about-right .legal-afillate {
     min-height: calc(56px - 20px);
 }
 
-.tcb-post-content > .legal-afillate {
+/* .tcb-post-content > .legal-afillate {
     min-height: calc(50px - 20px);
-}
+} */
 
-.review-about .about-right .legal-afillate, 
+/* .review-about .about-right .legal-afillate,  */
 .legal-review-page-sidebar .about-right .legal-afillate {
    /*  width: fit-content; */
     /* min-width: 252px; */
@@ -303,10 +326,6 @@
 }
 
 /* Position */
-
-.legal-review-page-sidebar .about-right {
-    margin-bottom: 80px;
-}
 
 .review-about .about-right,
 .legal-review-page-sidebar .about-right {
@@ -380,11 +399,14 @@
 
 /* Background */
 
-.review-about .about-right,
+/* .review-about .about-right, */
 .legal-review-page-sidebar .about-right
 {
     box-sizing: border-box;
-    border: 2px solid var( --Base-base-09, #0A0A0A );
+}
+
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
+    border: 2px solid var( --Base-base-09);
 }
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
@@ -468,14 +490,18 @@
     background-size: auto;
 }
 
+.legal-review-page-sidebar .about-right:not( .sticky-bonus ) {
+    border-radius: 32px;
+    background: var( --Primitives-purple-50 );
+}
+
 /* Typography */
 
-.review-about:not( .legal-black ) .about-rating,
+/* .review-about:not( .legal-black ) .about-rating,
 .review-about:not( .legal-black ) .about-center h1,
-.legal-afillate,
 .review-about.legal-default .about-achievement .achievement-bonus-link {
     color: var( --Base-base-01 );
-}
+} */
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
@@ -552,9 +578,17 @@
 .legal-afillate {
     font-size: 16px;
     font-weight: 500;
-    line-height: 22px;
     text-decoration: none;
     text-align: center;
+    color: var( --Base-base-01 );
+}
+
+.legal-review-page-sidebar .about-right .legal-afillate {
+    line-height: 22px;
+}
+
+.tcb-post-content > .legal-afillate {
+    line-height: 20px;
 }
 
 .about-right .legal-cut-control {
