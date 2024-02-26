@@ -157,6 +157,11 @@ class ReviewGallery
                 $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
             }
 
+            if ( count( $ids ) == 1 && $attr[ 'columns' ] != 1 )
+            {
+                $args[ 'class' ] = 'columns-1';
+            }
+
             // LegalDebug::debug( [
             //     'ReviewGallery' => 'get',
 
