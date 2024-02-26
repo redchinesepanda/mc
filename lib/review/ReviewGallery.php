@@ -259,8 +259,6 @@ class ReviewGallery
 
             'height' => $review[ 2 ],
 
-            'landscape' => ,
-
             'data-src' => $lightbox[ 0 ],
 
             'caption' => $caption,
