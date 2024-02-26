@@ -224,9 +224,9 @@ class ReviewGallery
     }
 
     const CLASSES = [
-        'landscape' = 'legal-landscape',
+        'landscape' => 'legal-landscape',
 
-        'portrait' = 'legal-portrait',
+        'portrait' => 'legal-portrait',
     ];
 
     public static function get_item( $id, $size )
