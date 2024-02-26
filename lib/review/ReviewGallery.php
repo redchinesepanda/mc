@@ -169,49 +169,100 @@ class ReviewGallery
 
             //     'attr' => $attr,
             // ] );
+            
+            $size = self::SIZE[ 'review' ];
+            
+            if ( !empty( $attr[ 'size' ] ) )
+            {
+                $size = $attr[ 'size' ];
+            }
 
-            foreach ( $ids as $id ) {
-                $size = self::SIZE[ 'review' ];
+            foreach ( $ids as $id )
+            {    
+                // // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
                 
-                if ( !empty( $attr[ 'size' ] ) )
+                // $review = wp_get_attachment_image_src( $id, $size );
+
+                // $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
+
+                // $caption = wp_get_attachment_caption( $id );
+
+                // $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
+
+                // $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
+
+                // if ( $review && $lightbox ) {
+                //     $args[ 'items' ][] = [
+                //         'src' => $review[ 0 ],
+        
+                //         'width' => $review[ 1 ],
+        
+                //         'height' => $review[ 2 ],
+
+                //         'landscape' => $review[ 1 ] > $review[ 2 ],
+        
+                //         'data-src' => $lightbox[ 0 ],
+        
+                //         'caption' => $caption,
+        
+                //         'alt' => $alt,
+
+                //         'class' => 'item-image-' . $id,
+                //     ];
+                // }
+
+                $item = self::get_item( $id, $size );
+
+                if ( !empty( $item ) )
                 {
-                    $size = $attr[ 'size' ];
-                }
-                
-                // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
-                
-                $review = wp_get_attachment_image_src( $id, $size );
-
-                $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
-
-                $caption = wp_get_attachment_caption( $id );
-
-                $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
-
-                $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
-
-                if ( $review && $lightbox ) {
-                    $args[ 'items' ][] = [
-                        'src' => $review[ 0 ],
-        
-                        'width' => $review[ 1 ],
-        
-                        'height' => $review[ 2 ],
-        
-                        'data-src' => $lightbox[ 0 ],
-        
-                        'caption' => $caption,
-        
-                        'alt' => $alt,
-
-                        'class' => 'item-image-' . $id,
-                    ];
+                    $args[ 'items' ][] = $item;
                 }
             }
-        }
+        } 
 
         return $args;
     }
+
+    public static function get_item( $id, $size )
+    {
+        // $review = wp_get_attachment_image_src( $id, $attr[ 'size' ] );
+                        
+        $review = wp_get_attachment_image_src( $id, $size );
+
+        $lightbox = wp_get_attachment_image_src( $id, self::SIZE[ 'lightbox' ] );
+
+        $caption = wp_get_attachment_caption( $id );
+
+        $meta_value = get_post_meta( $id, '_wp_attachment_image_alt', true );
+
+        $alt = ( !empty( $meta_value ) ? $meta_value : $caption );
+
+        // if ( $review && $lightbox )
+        
+        if ( !$review || !$lightbox )
+        {
+            return [];  
+        }
+
+        return [
+            'src' => $review[ 0 ],
+
+            'width' => $review[ 1 ],
+
+            'height' => $review[ 2 ],
+
+            'landscape' => $review[ 1 ] > $review[ 2 ],
+
+            'data-src' => $lightbox[ 0 ],
+
+            'caption' => $caption,
+
+            'alt' => $alt,
+
+            'class' => 'item-image-' . $id,
+        ];
+    }
+
     public static function render_gallery( $output, $attr, $instance )
     {
         if ( !ReviewMain::check() )
