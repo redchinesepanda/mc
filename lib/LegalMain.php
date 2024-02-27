@@ -71,7 +71,7 @@ class LegalMain
 
 		if ( self::check_admin() )
 		{
-			// ACFMain::register();
+			ACFMain::register();
 	
 			// AdminMain::register();
 
