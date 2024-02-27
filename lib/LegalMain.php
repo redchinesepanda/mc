@@ -63,7 +63,7 @@ class LegalMain
 			'check_admin' => self::check_admin(),
 		] );
 
-		// LegalComponents::register_functions();
+		LegalComponents::register_functions();
 
 		// ACFMain::register_functions();
 	
