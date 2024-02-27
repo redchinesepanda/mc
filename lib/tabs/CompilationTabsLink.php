@@ -46,7 +46,9 @@ class CompilationTabsLink
 
 	public static function get_nodes_link( $dom )
 	{
-		$query = '//div[contains(concat(" ",normalize-space(@class)," ")," ' . self::CLASSES[ 'tabs' ] . ' ")]/following-sibling::*[1]/self::ul';
+		// $query = '//div[contains(concat(" ",normalize-space(@class)," ")," ' . self::CLASSES[ 'tabs' ] . ' ")]/following-sibling::*[1]/self::ul';
+		
+		$query = '//div[contains(concat(" ",normalize-space(@class)," ")," legal-compilation ")]/following-sibling::*[1]/self::ul|//div[contains(concat(" ",normalize-space(@class)," ")," legal-tabs ")]/following-sibling::*[1]/self::ul';
 
 		// LegalDebug::debug( [
 		// 	'CompilationTabsLink' => 'get_nodes_link',
