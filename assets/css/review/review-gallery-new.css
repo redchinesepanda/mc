@@ -267,6 +267,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.tcb-post-content .legal-imageset.columns-1 .imageset-item
+{
+    align-items: center;
+}
   
 /* Position */
 
