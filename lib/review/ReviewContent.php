@@ -4,13 +4,13 @@ class ReviewContent
 {
 	public static function get()
     {
+        $content = apply_filters( 'the_content', get_the_content() );
+
+        $content = CompilationTabsLink::modify_content( $content );
+
         return [
-			'content' => apply_filters( 'the_content', get_the_content() ),
+			'content' => $content,
 		];
-        
-        // return [
-		// 	'content' => CompilationAbout::remove_compilation_about_content( apply_filters( 'the_content', get_the_content() ) ),
-		// ];
     }
 
 	const TEMPLATE = [
@@ -19,12 +19,7 @@ class ReviewContent
 
     public static function render()
     {
-		// if ( !BonusMain::check() )
-        // {
-        //     return '';
-        // }
-
-        ob_start();
+		ob_start();
 
         load_template( self::TEMPLATE[ 'review-content' ], false, self::get() );
 

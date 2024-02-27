@@ -308,12 +308,16 @@ class TemplateMain
 
     public static function change_strong_to_b( $content )
     {
-        return preg_replace('/<strong>(.*)<\/strong>/', '<b>$1</b>', $content);
+        // return preg_replace('/<strong>(.*)<\/strong>/', '<b>$1</b>', $content);
+        
+        return preg_replace('/<strong>(.*?)<\/strong>/', '<b>$1</b>', $content);
     }
 
     public static function remove_data_attributes( $content )
     {
-        return preg_replace('/\s*data-(\d|[a-z])+=\"(\d|[a-z])+\"/', '', $content);
+        // return preg_replace('/\s*data-(\d|[a-z])+=\"(\d|[a-z])+\"/', '', $content);
+        
+        return preg_replace('/\s*data-(.*?)=\"(.*?)\"/', '', $content);
     }
 
     public static function change_inline_style( $content )
