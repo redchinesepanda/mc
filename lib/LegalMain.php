@@ -57,6 +57,12 @@ class LegalMain
 
 	public static function register_functions()
     {
+		LegalDebug::debug( [
+			'LegalMain' => 'register_functions',
+
+			'check_admin' => self::check_admin(),
+		] );
+
 		LegalComponents::register_functions();
 
 		ACFMain::register_functions();
