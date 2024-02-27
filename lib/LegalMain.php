@@ -104,7 +104,7 @@ class LegalMain
 		// 	NotFoundMain::register();
 	
 		// 	MetrikaMain::register();
-		}
+		// }
 
 		// LegalDebug::debug( [
 		// 	get_option( 'tve_user_templates' ),
