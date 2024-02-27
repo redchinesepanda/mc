@@ -57,11 +57,11 @@ class LegalMain
 
 	public static function register_functions()
     {
-		// LegalDebug::debug( [
-		// 	'LegalMain' => 'register_functions',
+		LegalDebug::debug( [
+			'LegalMain' => 'register_functions',
 
-		// 	'check_admin' => self::check_admin(),
-		// ] );
+			'check_admin' => self::check_admin(),
+		] );
 
 		LegalComponents::register_functions();
 
@@ -74,6 +74,8 @@ class LegalMain
 		BaseMain::register_functions();
 
 		YoastMain::register_functions();
+
+
 
 		ReviewMain::register_functions();
 
