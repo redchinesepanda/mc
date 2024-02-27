@@ -57,54 +57,54 @@ class LegalMain
 
 	public static function register_functions()
     {
-		// LegalComponents::register_functions();
+		LegalComponents::register_functions();
 
-		// ACFMain::register_functions();
+		ACFMain::register_functions();
 	
-		// ToolsMain::register();
+		ToolsMain::register();
 	
-		// SchemaMain::register();
+		SchemaMain::register();
 
-		// BaseMain::register_functions();
+		BaseMain::register_functions();
 
-		// YoastMain::register_functions();
+		YoastMain::register_functions();
 
-		// if ( self::check_admin() )
-		// {
-		// 	ACFMain::register();
+		if ( self::check_admin() )
+		{
+			ACFMain::register();
 	
-		// 	AdminMain::register();
+			AdminMain::register();
 
-		// 	ReviewMain::register_functions();
+			ReviewMain::register_functions();
 
-		// 	NotionMain::register_functions();
-		// }
+			NotionMain::register_functions();
+		}
 	}
 
 	public static function register_components()
 	{
-		// LegalComponents::register();
+		LegalComponents::register();
 
-		// NotionMain::register();
+		NotionMain::register();
 
-		// if ( self::check() )
-		// {
-		// 	OopsMain::register();
+		if ( self::check() )
+		{
+			OopsMain::register();
 	
-		// 	LegalBreadcrumbsMain::register();
+			LegalBreadcrumbsMain::register();
 	
-		// 	ReviewMain::register();
+			ReviewMain::register();
 	
-		// 	WPMLMain::register();
+			WPMLMain::register();
 	
-		// 	YoastMain::register();
+			YoastMain::register();
 	
-		// 	BaseMain::register();
+			BaseMain::register();
 	
-		// 	NotFoundMain::register();
+			NotFoundMain::register();
 	
-		// 	MetrikaMain::register();
-		// }
+			MetrikaMain::register();
+		}
 
 		// LegalDebug::debug( [
 		// 	get_option( 'tve_user_templates' ),

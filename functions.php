@@ -12,7 +12,7 @@
 
 require_once( 'lib/LegalMain.php' );
 
-LegalMain::register();
+// LegalMain::register();
 
 // if( !function_exists( 'tve_load_global_variables' ) )
 // {
