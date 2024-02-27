@@ -301,24 +301,29 @@ class TemplateMain
 
         $content = self::change_inline_style( $content );
 
+        $content = self::remove_empty_style( $content );
+
         return $content;
     }
 
     public static function change_strong_to_b( $content )
     {
-        // return str_replace( 'strong>', 'b>', $content );
-
         return preg_replace('/<strong>(.*)<\/strong>/', '<b>$1</b>', $content);
     }
 
     public static function remove_data_attributes( $content )
     {
-        return preg_replace('/\s*data-.*=\".*\"/', '', $content);
+        return preg_replace('/\s*data-(\d|[a-z])+=\"(\d|[a-z])+\"/', '', $content);
     }
 
     public static function change_inline_style( $content )
     {
         return str_replace( 'border-collapse: collapse;', '', $content );
+    }
+
+    public static function remove_empty_style( $content )
+    {
+        return str_replace( ' style=""', '', $content );
     }
 
     public static function render()
