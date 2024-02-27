@@ -172,10 +172,10 @@ class ReviewGallery
             
             $size = self::SIZE[ 'review' ];
             
-            if ( !empty( $attr[ 'size' ] ) )
-            {
-                $size = $attr[ 'size' ];
-            }
+            // if ( !empty( $attr[ 'size' ] ) )
+            // {
+            //     $size = $attr[ 'size' ];
+            // }
 
             foreach ( $ids as $id )
             {    
