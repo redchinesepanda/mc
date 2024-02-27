@@ -57,23 +57,23 @@ class LegalMain
 
 	public static function register_functions()
     {
-		// LegalComponents::register_functions();
+		LegalComponents::register_functions();
 
-		// ACFMain::register_functions();
+		ACFMain::register_functions();
 	
-		// ToolsMain::register();
+		ToolsMain::register();
 	
-		// SchemaMain::register();
+		SchemaMain::register();
 
-		// BaseMain::register_functions();
+		BaseMain::register_functions();
 
-		// YoastMain::register_functions();
+		YoastMain::register_functions();
 
 		if ( self::check_admin() )
 		{
 			ACFMain::register();
 	
-			// AdminMain::register();
+			AdminMain::register();
 
 			ReviewMain::register_functions();
 
