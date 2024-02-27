@@ -92,6 +92,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function checkOffscreen( element )
 	{
 		element.classList.remove( classes.offScreen );
+
+		// console.log( 'element: ' + parseFloat( element.getBoundingClientRect().right ) );
+
+		// console.log( 'this: ' + parseFloat( this.getBoundingClientRect().right ) );
+
+		// console.log( '>: ' + ( parseFloat( element.getBoundingClientRect().right )
+			
+		// > parseFloat( this.getBoundingClientRect().right ) ) );
 		
 		if (
 			parseFloat( element.getBoundingClientRect().right )

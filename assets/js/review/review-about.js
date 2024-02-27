@@ -14,7 +14,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initBonus( event )
 	{
-		document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
+		if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
+		{
+			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
+		}
 	}
 
 	function move( element, selector )

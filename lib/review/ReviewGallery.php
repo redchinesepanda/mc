@@ -64,7 +64,7 @@ class ReviewGallery
         'review-gallery-swiper' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-swiper.js',
 
-            'ver' => '1.0.0',
+            'ver' => '1.0.1',
         ],
 
         'review-gallery-pagination' => [
@@ -100,15 +100,19 @@ class ReviewGallery
         'review' => 'legal-bookmaker-review',
 
         'lightbox' => 'legal-bookmaker-review-lightbox',
+
+        'medium' => 'medium',
+
+        'medium-large' => 'medium_large',
     ];
 
 	public static function register_functions()
     {
+        $handler = new self();
+        
         add_image_size( self::SIZE[ 'review' ], 354, 175, [ 'center', 'top' ] );
 
         add_image_size( self::SIZE[ 'lightbox' ], 1024, 619, false );
-
-        $handler = new self();
 
         add_filter( 'image_size_names_choose', [ $handler, 'size_label' ] );
     }
@@ -142,6 +146,34 @@ class ReviewGallery
         ] );
     }
 
+    const COLUMNS = [
+        '1' => 'columns-1',
+
+        '2' => 'columns-2',
+
+        '3' => 'columns-3',
+    ];
+
+    // public static function get_size( $amount, $size )
+    // {
+    //     if ( $columns == 1 )
+    //     {
+    //         return $size;
+    //     }
+
+    //     return self::SIZE[ 'review' ];
+    // }
+
+    public static function get_class( $amount )
+    {
+        if ( array_key_exists( $amount , self::COLUMNS ) )
+        {
+            return self::COLUMNS[ $amount ];
+        }
+
+        return self::COLUMNS[ '3' ];
+    }
+
     public static function get( $attr )
     {
         $args = [];
@@ -150,32 +182,26 @@ class ReviewGallery
         {
             $ids =  explode( ',', $attr[ 'ids' ] );
 
-            $args[ 'class' ] = 'columns-3';
+            $amount = count( $ids );
 
-            if ( !empty( $attr[ 'columns' ] ) )
-            {
-                $args[ 'class' ] = 'columns-' . $attr[ 'columns' ];
-            }
-
-            if ( count( $ids ) == 1 )
-            {
-                $args[ 'class' ] = 'columns-1';
-
-                // $attr[ 'size' ] = self::SIZE[ 'lightbox' ];
-            }
-
-            // LegalDebug::debug( [
-            //     'ReviewGallery' => 'get',
-
-            //     'attr' => $attr,
-            // ] );
+            $args[ 'class' ] = self::get_class( $amount );
             
             $size = self::SIZE[ 'review' ];
             
             // if ( !empty( $attr[ 'size' ] ) )
-            // {
-            //     $size = $attr[ 'size' ];
-            // }
+            if ( $amount == 1 && !empty( $attr[ 'size' ] ) )
+            {
+                // LegalDebug::debug( [
+                //     $attr[ 'size' ],
+                // ] );
+
+                // if ( $amount == 1 && $attr[ 'size' ] == self::SIZE[ 'lightbox' ] )
+                // {
+                    $size = $attr[ 'size' ];
+                // }
+            }
+
+            // $size = self::get_size( $amount, $attr[ 'size' ] );
 
             foreach ( $ids as $id )
             {    
