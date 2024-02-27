@@ -75,7 +75,7 @@ class LegalMain
 
 		YoastMain::register_functions();
 
-		// ReviewMain::register_functions();
+		ReviewMain::register_functions();
 
 		if ( self::check_admin() )
 		{
@@ -89,7 +89,7 @@ class LegalMain
 	
 			AdminMain::register();
 
-			ReviewMain::register_functions();
+			// ReviewMain::register_functions();
 
 			NotionMain::register_functions();
 		}
