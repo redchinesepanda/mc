@@ -69,16 +69,16 @@ class LegalMain
 
 		// YoastMain::register_functions();
 
-		// if ( self::check_admin() )
-		// {
-		// 	ACFMain::register();
+		if ( self::check_admin() )
+		{
+			ACFMain::register();
 	
-		// 	AdminMain::register();
+			AdminMain::register();
 
-		// 	ReviewMain::register_functions();
+			ReviewMain::register_functions();
 
-		// 	NotionMain::register_functions();
-		// }
+			NotionMain::register_functions();
+		}
 	}
 
 	public static function register_components()
