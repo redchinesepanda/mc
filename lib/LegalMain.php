@@ -75,17 +75,21 @@ class LegalMain
 
 		YoastMain::register_functions();
 
-
-
-		ReviewMain::register_functions();
+		// ReviewMain::register_functions();
 
 		if ( self::check_admin() )
 		{
+			LegalDebug::debug( [
+				'LegalMain' => 'register_functions',
+	
+				'check_admin' => self::check_admin(),
+			] );
+			
 			ACFMain::register();
 	
 			AdminMain::register();
 
-			// ReviewMain::register_functions();
+			ReviewMain::register_functions();
 
 			NotionMain::register_functions();
 		}
