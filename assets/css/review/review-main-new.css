@@ -12,7 +12,6 @@
     .tcb-post-content h1,
     .tcb-post-content h2,
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-        /* padding-bottom: 30px; */
         padding-top: 16px;
         padding-bottom: 16px;
     }
@@ -22,13 +21,8 @@
         margin-top: 28px;
     }
 
-    /* .tcb-post-content h2:not( :first-child ) {
-        margin-top: 28px;
-    } */
-
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         margin-top: 16px;
-        /* margin: 0px; */
     }
 
     /* Width and Height */
@@ -74,7 +68,6 @@
     .tcb-post-content h1,
     .tcb-post-content h2,
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-        /* padding-bottom: 30px; */
         padding-bottom: 24px;
     }
 
@@ -88,14 +81,9 @@
         margin-top: 32px;
     }
 
-    /* .tcb-post-content h2:not( :first-child ) {
-        margin-top: 32px;
-    } */
-
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         padding-top: 14px;
         margin-top: 24px;
-        /* margin: 0px; */
     }
 
     /* Review Typography */
@@ -155,7 +143,6 @@
 .tcb-post-content.thrv_wrapper:not( .legal-override ) {
     margin-top: 0px;
     margin-bottom: 0px;
-    /* padding-top: 30px; */
     padding-bottom: 30px;
 }
 
@@ -170,15 +157,8 @@
     margin-bottom: 0px;
 }
 
-/* .tcb-post-content h2:not( .legal-override ) {
-    padding-bottom: 20px;
-    margin: 0px;
-} */
-
 .tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
     padding-top: 0px;
-    /* padding-bottom: 30px; */
-    /* padding-bottom: 20px; */
     padding-bottom: 18px;
     margin: 0px;
 }
@@ -209,7 +189,6 @@
 
 .tcb-post-content .legal-contextbox {
     padding-left: 24px;
-    /* padding-bottom: 0px; */
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -217,8 +196,16 @@
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-highlight:not( .legal-override ) {
     padding: 24px 16px;
-    margin-top: 0px;
     margin-bottom: 24px;
+}
+
+.tcb-post-content .legal-attention:not( :first-child ),
+.tcb-post-content .legal-highlight:not( .legal-override ) {
+    margin-top: 0px;
+}
+
+.tcb-post-content .legal-attention:first-child {
+    margin-top: 24px;
 }
 
 .tcb-post-content iframe {
@@ -227,7 +214,6 @@
 
 .tcb-post-content .legal-button {
 	padding: 2px 15px;
-	/* margin-right: 10px; */
     margin-right: 4px;
     margin-bottom: 10px;
 }
@@ -248,11 +234,8 @@
 
 .tcb-post-content .legal-attention {
     background-color: var(--Primitives-red-40 );
-  /*   background-image: linear-gradient( rgb(255,94,106) 0%, rgb(236,70,82) 99% ); */
-    /* border-radius: 20px; */
     border-radius: 8px 18px 18px 18px;
     border: 1px solid var(--Base-base-09 );
-    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset; */
 }
 
 .tcb-post-content hr {
@@ -275,21 +258,12 @@
     font-family: var( --legal-font-primary );
     color: var( --Base-base-09 );
     font-weight: 700;
-   /*  font-family: "Source Sans Pro";
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 33.6px;
-    color: rgb(12, 17, 21); */
 }
 
 .tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ),
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a
-/* .tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
-.tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li */
 {
-    /* font-family: "Source Sans Pro"; */
     font-family: var( --legal-font-primary );
     font-style: normal;
     font-weight: 400;
@@ -300,27 +274,13 @@
     color: var( --Base-base-09 );
 }
 
-.tcb-post-content a:not( [class] ) {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ) {
     color: var( --Base-link );
 }
 
-.tcb-post-content a:not( [class] ):hover {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):hover {
     color: var( --Base-link-hover );
 }
-
-/* .tcb-post-content .legal-attention,
-.tcb-post-content .legal-attention a {
-    font-family: var( --legal-font-primary );
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 26px;
-    text-align: center;
-} */
-
-/* .tcb-post-content .legal-attention {
-    color: rgb(255, 255, 255);
-} */
 
 .tcb-post-content .legal-attention a {
     color: #cfcfcf;
@@ -333,15 +293,9 @@
     text-decoration: none;
 }
 
-/* .tcb-post-content .legal-button:hover {
-	background: unset;
-} */
-
 .tcb-post-content .legal-button {
-	/* box-shadow: 0 0 10px #e4e4e4; */
 	font-size: 12px;
 	text-align: center;
-	/* color: #646363; */
     color: var( --Base-base-09 );
     text-decoration: none;
 }

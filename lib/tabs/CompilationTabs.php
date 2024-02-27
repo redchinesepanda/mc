@@ -5,6 +5,8 @@ class CompilationTabs
     const HANDLE = [
         'main' => 'tabs-main',
 
+        'main-new' => 'tabs-main-new',
+
         'style' => 'tabs-style',
     ];
 
@@ -12,13 +14,35 @@ class CompilationTabs
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main.css',
     ];
 
-	public static function register_style( $styles = [] )
+    const CSS_NEW = [
+        self::HANDLE[ 'main-new' ] => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-main-new.css',
+    ];
+
+/* 	public static function register_style( $styles = [] )
     {
         if ( self::check() )
         {
             if ( empty( $styles ) )
             {
                 $styles = self::CSS;
+            }
+
+            ToolEnqueue::register_style( $styles );
+        }
+    } */
+
+    public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                if ( TemplateMain::check_new() )
+                {
+                    $styles = self::CSS_NEW;
+                }
+                else
+                {
+                    $styles = self::CSS;
+                }
             }
 
             ToolEnqueue::register_style( $styles );
