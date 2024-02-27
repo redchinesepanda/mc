@@ -176,6 +176,11 @@
         top: calc(50% - 24px);
     }
 
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset.columns-1 .item-image.legal-portrait
+    {
+        margin: 0px auto;
+    }
+
     /* Width and Height */
 
     .tcb-post-content .legal-imageset-oops .imageset-item
@@ -317,11 +322,6 @@
     position: absolute;
     top: 18px;
     right: 16px;
-}
-
-.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset.columns-1 .item-image.legal-portrait
-{
-    margin: 0px auto;
 }
   
 /* Width and Height */
