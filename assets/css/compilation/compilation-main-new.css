@@ -1,5 +1,21 @@
 /* Compilation Display */
 
+.compilation-link {
+    cursor: pointer;
+}
+
+.tcb-post-content .compilation-link a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tcb-post-content .compilation-link a::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Compilation Position */
 
 .legal-compilation:not( :last-child ) {
@@ -14,10 +30,6 @@
     margin-bottom: 30px;
 }
 
-/* .legal-compilation .compilation-attention.legal-attention {
-    padding: 10px 20px;
-} */
-
 .legal-compilation .compilation-attention:not( :last-child ) {
     margin-bottom: 15px;
 }
@@ -28,10 +40,23 @@
     margin-bottom: 24px;
 }
 
+.compilation-link {
+    padding: 13px 14px 13px 28px;
+}
+
 /* Width and Height */
 
 .legal-compilation .compilation-date {
     width: fit-content;
+}
+
+.tcb-post-content .compilation-link a {
+    width: 100%;
+}
+
+.tcb-post-content .compilation-link a::after {
+    width: 46px;
+    height: 46px;
 }
 
 /* Compilation Background */
@@ -42,57 +67,64 @@
     background-size: auto;
 }
 
-/* .legal-compilation .compilation-attention.legal-attention {
-    background-color: rgb(255, 94, 106);
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.2) 0px 0px 1px 0px, rgb(254, 254, 254) 0px 0px 2px 0px inset;
-} */
-
 .legal-compilation .compilation-date {
     border-radius: 18px;
     background: var(--Base-base-02);
 }
 
-/* .legal-compilation .compilation-date {
-    background-image: url( '../../img/compilation/compilation-updated.svg' );
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: auto;
-} */
+.compilation-link {
+    border-radius: 60px;
+    border: 1px solid var(--Base-base-09);
+    background-color: var(--Base-base-01);
+}
+
+.tcb-post-content .compilation-link a::after {
+    border-radius: 50%;
+    background-color: var(--Base-base-01);
+    border: 1px solid var(--Base-base-09);
+}
+
+.tcb-post-content .compilation-link:hover a::after {
+    background-color: var(--Base-base-09);
+}
 
 /* Compilation Typography */
 
-.legal-compilation .compilation-title {
+.legal-compilation .compilation-title,
+.legal-compilation .compilation-date,
+.tcb-post-content .compilation-link a {
     font-family: var( --legal-font-primary );
-    font-size: 26px;
     font-style: normal;
+    color: var(--Base-base-09);
+}
+
+.legal-compilation .compilation-title {
+    font-size: 26px;
     font-weight: 700;
     line-height: 40px;
 }
 
-/* .legal-compilation .compilation-attention.legal-attention {
-    text-align: center;
-    color: rgb(255, 255, 255);
-} */
-
-/* .legal-compilation .compilation-attention {
-    color: rgb(59, 59, 59);
-} */
-
-/* .legal-compilation .compilation-attention {
-    font-family: "Source Sans Pro";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-} */
-
 .legal-compilation .compilation-date {
-    font-family: var( --legal-font-primary );
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
-    /* color: rgba(59, 59, 59, 0.5); */
-    color: var(--Base-base-09);
     line-height: 20px;
+}
+
+.tcb-post-content .compilation-link a {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.tcb-post-content .compilation-link a::after {
+    content: '\F102';
+    font-family: var( --legal-font-icons );
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--Base-base-09);
+}
+
+.tcb-post-content .compilation-link:hover a::after {
+    color: var(--Base-base-01);
 }

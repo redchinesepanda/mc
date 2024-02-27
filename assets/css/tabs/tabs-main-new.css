@@ -1,0 +1,145 @@
+@media screen and ( max-width: 767px ) {
+
+       /* Tabs Position */
+
+    .legal-tabs .legal-tab-menu {
+        padding-bottom: 18px;
+    }
+
+}
+
+@media screen and ( min-width: 768px ) {
+
+    /* Tabs Position */
+
+    .legal-tabs .legal-tab-menu {
+        padding-bottom: 28px;
+    }
+
+}
+
+/* Tabs Display */
+
+.legal-tabs .legal-tab-menu {
+    display: flex;
+    column-gap: 8px;
+}
+
+.legal-tabs .legal-tab-content:not( .legal-active ) {
+    display: none;
+}
+
+.legal-tabs .legal-tab-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.legal-tabs .legal-tabs-link {
+    display: block;
+}
+
+/* Width and Height */
+
+.legal-tabs .legal-tab-title {
+    min-height: 34px;
+}
+
+/* Tabs Position */
+
+.legal-tabs .legal-tabs-title {
+    margin-top: 20px;
+}
+
+.legal-tabs .legal-tab-menu {
+    padding-top: 18px;
+}
+
+.legal-tabs .legal-tab-display {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.legal-tabs .legal-tab-title[class*="tab-image-"] {
+    padding-left: 44px;
+}
+.legal-tabs .legal-tab-title {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.legal-tabs .legal-tabs-description {
+    margin-bottom: 15px;
+}
+
+.legal-tabs .legal-tabs-link {
+    padding-left: 50px;
+}
+
+/* Tabs Background */
+
+.legal-tabs .legal-tab-title {
+    border: 1px solid var(--Base-base-09); 
+    border-radius: 20px;
+}
+
+.legal-tabs .legal-tab-title:not( .legal-active ) {
+    background-color: var(--Base-base-01);
+}
+
+.legal-tabs .legal-tab-title.legal-active {
+    background-color: var(--Base-base-09);
+}
+
+.legal-tabs .legal-tab-title[class*="tab-image-"] {
+    background-position: left 20px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.legal-tabs .legal-tabs-link {
+    background-image: url( '../../img/compilation/compilation-all.svg' );
+    background-position: left 15px center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+/* Tabs Typography */
+
+.legal-tabs .legal-tabs-title,
+.legal-tabs .legal-tab-title,
+.legal-tabs .legal-tabs-description,
+.legal-tabs .legal-tabs-link {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
+}
+
+.legal-tabs .legal-tab-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.legal-tabs .legal-tab-title:not( .legal-active ) {
+    color: var(--Base-base-09);
+    transition: 0.5s;
+}
+
+.legal-tabs .legal-tab-title.legal-active {
+    color: var(--Base-base-01);
+}
+
+.legal-tabs .legal-tabs-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: var(--Base-base-09);
+}
+
+.legal-tabs .legal-tabs-link {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+    text-decoration: none;
+    color: rgb(89, 151, 227);
+}
