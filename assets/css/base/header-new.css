@@ -373,8 +373,7 @@
   	flex-grow: 1;
 }
 
-/* .legal-menu .item-title[ href="#" ], */
-.legal-menu .menu-item-has-children > .item-title
+.legal-menu .item-title[ href="#" ]
 {
     pointer-events: none;
 }
@@ -556,6 +555,11 @@
 	}
 
 	.legal-menu > .menu-item:not(:last-child) > .sub-menu > .menu-item-has-children > .item-title
+	{
+		pointer-events: none;
+	}
+	
+	.legal-menu .menu-item-has-children > .item-title
 	{
 		pointer-events: none;
 	}
