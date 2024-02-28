@@ -100,8 +100,8 @@ class TemplateMain
 			'ver' => '1.0.0',
 		],
 
-        'legal-template-font-sourcesanspro' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/font/font-sourcesanspro.css',
+        'legal-template-font-source-sans-3' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-source-sans-3.css',
 
 			'ver' => '1.0.1',
 		],
