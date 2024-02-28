@@ -5,6 +5,46 @@ class BilletList
     const FIELD = [
         'lists' => 'billet-list-parts',
     ];
+    
+    const ICON_OTHER = [
+        // Без маркера
+
+        'legal-default',
+    ];
+
+    const ICON_PROS = [
+        // Галка
+
+        'legal-check',
+
+        // Галка в круге
+
+        'legal-check-round',
+
+        // Плюс
+
+        'legal-plus',
+    ];
+
+    const ICON_ALLOWED = [
+        ...self::ICON_OTHER,
+
+        ...self::ICON_PROS,
+    ];
+
+    const ICON_CONS = [
+        // Крест
+
+        'legal-close',
+
+        // Минус
+
+        'legal-minus',
+
+        // Треугольник
+
+        'legal-triangle',
+    ];
 
     const LIST = [
         'icon' => 'billet-list-part-icon',
@@ -86,6 +126,25 @@ class BilletList
         return array_filter( $lists, [ $handler, 'check_feature_empty' ] );
     }
 
+    public static function check_icon_allowed( $list )
+    {
+        return in_array( $list[ self::LIST[ 'icon' ] ], self::ICON_ALLOWED );
+        
+        // return in_array( $list[ self::LIST[ 'icon' ] ], self::ICON_CONS );
+    }
+
+    public static function filter_lists_icon_allowed( $lists )
+    {
+        if ( empty( $lists ) )
+        {
+            return [];
+        }
+
+        $handler = new self();
+
+        return array_filter( $lists, [ $handler, 'check_icon_allowed' ] );
+    }
+
     public static function parse_items( $items )
     {
         if ( empty( $items ) )
@@ -140,6 +199,11 @@ class BilletList
         }
 
         $result = array_merge( $result, self::filter_lists_feature_empty( $lists ) );
+
+        if ( TemplateMain::check_new() )
+        {
+            $result = self::filter_lists_icon_allowed( $result );
+        }
         
         return self::parse_lists( $result );
     }
