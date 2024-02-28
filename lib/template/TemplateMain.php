@@ -99,6 +99,12 @@ class TemplateMain
 
 			'ver' => '1.0.0',
 		],
+
+        'legal-template-font-sourcesanspro' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/font/font-sourcesanspro.css',
+
+			'ver' => '1.0.1',
+		],
     ];
 
     const CSS_NEW = [
