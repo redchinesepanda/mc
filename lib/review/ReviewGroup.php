@@ -24,7 +24,7 @@ class ReviewGroup
         'review-group-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-group-new.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
@@ -83,15 +83,44 @@ class ReviewGroup
     //     return ReviewMain::check() && $permission_term;
     // }
 
-    public static function get_group_args( $post, $terms = [] ) {
-        return [
+    // public static function get_group_args( $post, $terms = [] ) {
+    //     return [
+    //         'numberposts' => -1,
+
+    //         'post_type' => [ 'legal_bk_review', 'page' ],
+
+    //         'suppress_filters' => 0,
+
+    //         'exclude' => $post->ID,
+
+    //         'tax_query' => [
+    //             [
+    //                 'taxonomy' => self::TAXONOMY[ 'group' ],
+
+    //                 'field' => 'term_id',
+
+    //                 'terms' => $terms,
+
+    //                 'operator' => 'IN',
+    //             ]
+    //         ],
+
+    //         'orderby' => 'menu_order',
+
+    //         'order' => 'ASC',
+    //     ];
+    // }
+    
+    public static function get_group_args( $post, $terms = [] )
+    {
+        $args = [
             'numberposts' => -1,
 
-            'post_type' => [ 'legal_bk_review', 'page' ],
+            'post_type' => [ 'page' ],
 
             'suppress_filters' => 0,
 
-            'exclude' => $post->ID,
+            // 'exclude' => $post->ID,
 
             'tax_query' => [
                 [
@@ -109,6 +138,13 @@ class ReviewGroup
 
             'order' => 'ASC',
         ];
+
+        if ( !TemplateMain::check_new() )
+        {
+            $args[ 'exclude' ] = $post->ID;
+        }
+
+        return $args;
     }
 
     public static function get_term_field( $items, $field )
@@ -224,6 +260,62 @@ class ReviewGroup
         return $items;
     }
 
+    // public static function get()
+    // {
+    //     $post = get_post();
+
+    //     if ( empty( $post ) ) {
+    //         return [];
+    //     }
+
+    //     $items[ 'current' ] = [
+    //         'label' => self::get_item_label( $post ),
+    //     ];
+        
+    //     $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'group' ] );
+
+    //     $ids = self::get_terms_ids( $terms );
+
+    //     $posts = get_posts( self::get_group_args( $post, $ids ) );
+
+    //     $items[ 'other' ] = [];
+
+    //     if ( !empty( $posts ) ) {
+    //         foreach ( $posts as $post ) {
+
+    //             $items[ 'other' ][] = [
+    //                 'label' => self::get_item_label( $post ),
+    
+    //                 'href' => get_post_permalink( $post->ID ),
+    //             ];
+    //         }
+    //     }
+
+    //     return $items;
+    // }
+
+    const CLASSES = [
+        'default' => 'legal-default',
+        
+        'active' => 'legal-active',
+    ];
+    
+    public static function parse_item( $group, $post )
+    {
+        return [
+            'label' => self::get_item_label( $group ),
+
+            'href' => get_post_permalink( $group->ID ),
+
+            'class' => self::get_class( $group, $post ),
+        ];
+    }
+
+    public static function get_class( $group, $post )
+    {
+        return $group->ID == $post->ID ? self::CLASSES[ 'active' ] : self::CLASSES[ 'default' ];
+    }
+
     public static function get()
     {
         $post = get_post();
@@ -232,26 +324,28 @@ class ReviewGroup
             return [];
         }
 
-        $items[ 'current' ] = [
-            'label' => self::get_item_label( $post ),
-        ];
+        if ( !TemplateMain::check_new() )
+        {
+            $items[ 'current' ] = [
+                'label' => self::get_item_label( $post ),
+            ];
+        }
         
         $terms = wp_get_post_terms( $post->ID, self::TAXONOMY[ 'group' ] );
 
         $ids = self::get_terms_ids( $terms );
 
-        $posts = get_posts( self::get_group_args( $post, $ids ) );
+        $args = self::get_group_args( $post, $ids );
+
+        $groups = get_posts( $args );
 
         $items[ 'other' ] = [];
 
-        if ( !empty( $posts ) ) {
-            foreach ( $posts as $post ) {
-
-                $items[ 'other' ][] = [
-                    'label' => self::get_item_label( $post ),
-    
-                    'href' => get_post_permalink( $post->ID ),
-                ];
+        if ( !empty( $groups ) )
+        {
+            foreach ( $groups as $group )
+            {
+                $items[ 'other' ][] = self::parse_item( $group, $post );
             }
         }
 
