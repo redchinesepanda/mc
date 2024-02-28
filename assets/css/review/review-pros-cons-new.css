@@ -1,16 +1,13 @@
 /*review-pros-cons-NEW*/
 
-@media screen and ( min-width: 768px )
-{
-	/* Pros Cons Width */
+@media screen and ( max-width: 767px ) {
 
-	.legal-pros-cons .pros-cons-item {
-		width: calc( 50% - 36px - 9px - 2px );
+	/* Pros Cons Display */
+
+	.legal-pros-cons {
+		flex-wrap: wrap;
 	}
-}
 
-@media screen and ( max-width: 767px )
-{
 	/* Pros Cons Width */
 
 	.legal-pros-cons .pros-cons-item {
@@ -18,11 +15,20 @@
 	}
 }
 
+@media screen and ( min-width: 768px )
+{
+	/* Pros Cons Width */
+
+	.legal-pros-cons .pros-cons-item {
+		/* width: calc( 50% - 36px - 9px - 2px ); */
+		flex-basis: 100%;
+	}
+}
+
 /* Pros Cons Display */
 
 .legal-pros-cons {
 	display: flex;
-	flex-wrap: wrap;
 	column-gap: 18px;
 	row-gap: 30px;
 }
