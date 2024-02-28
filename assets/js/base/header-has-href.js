@@ -56,7 +56,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-    // headerHasHrefInit();
+    headerHasHrefInit();
 
 	window.addEventListener( 'resize', headerHasHrefInit, false );
 } );
