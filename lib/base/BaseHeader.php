@@ -79,7 +79,7 @@ class BaseHeader
         'legal-header-has-href' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/base/header-has-href.js',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
