@@ -93,6 +93,12 @@ class TemplateMain
 
 			'ver' => '1.0.3',
 		],
+
+        'legal-template-fallback' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-fallback.css',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     const CSS_NEW = [
