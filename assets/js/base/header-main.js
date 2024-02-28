@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function toggleBlock( event )
 	{
-		if ( !window.matchMedia( '( max-width: 1209px )' ).matches )
+		if ( window.matchMedia( '( max-width: 1209px )' ).matches )
 		{
 			event.preventDefaults();
 		}
