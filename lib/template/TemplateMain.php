@@ -20,9 +20,9 @@ class TemplateMain
 
     public static function check_code()
     {
-        // return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
+        return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
 
-        return true;
+        // return true;
     }
 
     const DEQUEUE_WP = [
