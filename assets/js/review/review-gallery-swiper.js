@@ -95,7 +95,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( types.touchend, handleTouchEnd, false );
 
-		element.addEventListener( types.touchend, handleTouchMove, false );
+		// element.addEventListener( types.touchend, handleTouchMove, false );
 	}
 
 	const selectors = {
