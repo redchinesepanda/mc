@@ -37,6 +37,10 @@
         padding: 20px;
     }
 
+    .billet-right .bonus-button {
+        margin-top: 32px;
+    }
+
     .billet-item .billet-footer:not( :empty ) {
         padding-right: 16px;
         padding-left: 16px;
@@ -74,11 +78,6 @@
     }
 
     /* Billet Typography */
-
-    .billet-right .bonus-title,
-    .billet-right .bonus-description {
-        text-align: start;
-    }
 
     .billet-list-part .billet-list-part-item {
         font-size: 14px;
@@ -144,7 +143,6 @@
     }
 
     .billet-list-part.legal-column:not( .legal-check ):not( .billet-list-part.legal-check.legal-column + .billet-list-part.legal-default.legal-column ) {
-        /* width: calc( 50% - 4px ); */
         width: calc( 50% - 28px );
     }
 
@@ -167,9 +165,9 @@
         margin-left: auto;
     }
 
-   /*  .billet-list-part.legal-check {
-        margin-left: -8px;
-    } */
+    .billet-right .bonus-button {
+        margin-top: auto;
+    }
 
     .billet-item .billet-footer:not( :empty ) {
         padding-right: 24px;
@@ -191,11 +189,6 @@
     }
 
     /* Billet Typography */
-
-    .billet-right .bonus-title,
-    .billet-right .bonus-description {
-        text-align: center;
-    }
 
     .billet-list-part .billet-list-part-item {
         font-size: 16px;
@@ -219,7 +212,6 @@ body {
 .billet {
     display: flex;
     flex-wrap: wrap;
-    /* column-gap: 30px; */
 }
 
 .billet-left {
@@ -242,10 +234,8 @@ body {
 .billet-center {
     display: flex;
     flex-wrap: wrap;
-    /* align-content: center; */
     align-content: flex-start;
     column-gap: 28px;
-    /* position: relative; */
 }
 
 .billet-title {
@@ -277,11 +267,11 @@ body {
     align-items: center;
 }
 
-.billet .billet-title-achivement.legal-background {
+/* .billet .billet-title-achivement.legal-background {
     position: absolute;
     top: 0px;
     right: 30px;
-}
+} */
 
 .billet-list-part {
     display: flex;
@@ -289,9 +279,6 @@ body {
 }
 
 .billet-list-part.legal-row {
-    /* display: flex; */
-    /* column-gap: 4px; */
-    /* row-gap: 8px; */
     flex-direction: column;
 }
 
@@ -313,12 +300,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /* row-gap: 20px; */
     row-gap: 14px;
 }
 
 .billet-right .legal-play {
-    /* display: block; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -388,7 +373,7 @@ body {
     background-color: var(--Logo-background);
 }
 
-.billet-title .billet-title-achivement.legal-image {
+.billet-title .billet-title-achivement {
     background-position: left 8px center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -398,9 +383,7 @@ body {
 }
 
 .billet-list-part .billet-list-part-item {
-  /*   background-position: left top; */
     background-repeat: no-repeat;
-    /* background-size: auto; */
 }
 
 .billet-list-part.legal-check-round .billet-list-part-item {
@@ -486,11 +469,11 @@ body {
     background-image: url( '../../img/billet/profit/billet-profit-red.svg' );
 }
 
-.billet .billet-title-achivement.legal-background {
+/* .billet .billet-title-achivement.legal-background {
     background-color: rgb(8, 5, 61);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
+} */
 
 .billet .billet-license {
     background-image: url( '../../img/billet/billet-license-no.svg' );
@@ -505,7 +488,7 @@ body {
 }
 
 .billet-item:hover {
-    box-shadow: 4px 4px 0px 0px #000; /*тест ховера*/
+    box-shadow: 4px 4px 0px 0px #000;
 	transition: 0.4s;
 }
 
@@ -516,7 +499,7 @@ body {
     border-left: var( --base-border-billet );
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
-    background: var(--Base-base-02, #F6F6F6);
+    background: var(--Base-base-02);
 }
 
 .billet-item .billet .billet-main,
@@ -533,7 +516,6 @@ body {
 }
 
 .billet-item .legal-logo img {  
-   /*  max-width:100%; */
    width: 100%;
     height: auto; 
 }
@@ -568,7 +550,6 @@ body {
 }
 
 .billet-list-part.legal-row .billet-list-part-item {
-    /* width: 33.333%; */
     width: auto;
 }
 
@@ -607,13 +588,11 @@ body {
     margin: 0px;
 }
 
-.billet-title .billet-title-achivement.legal-background {
+/* .billet-title .billet-title-achivement.legal-background {
     padding: 3px 10px;
-}
+} */
 
-.billet-title .billet-title-achivement.legal-image {
-    /* margin-left: auto; */
-   /*  padding: 5.5px 10px 5.5px 30px; */
+.billet-title .billet-title-achivement {
     padding-top: 5px;
     padding-right: 14px;
     padding-bottom: 5px;
@@ -623,20 +602,7 @@ body {
 }
 
 .billet-list-part:not( .legal-check ):not( .legal-plus ):not( .legal-minus ):not( .legal-default ) .billet-list-part-item {
-    /* padding: 3px 0px 0px 30px; */
     padding-left: 30px; 
-}
-
-.billet-right .bonus-button {
-    margin-top: auto;
-}
-
-.billet-right .legal-play {
-    padding: 10px 18px;
-}
-
-.billet-right .bonus-spoiler {
-    padding-right: 22px;
 }
 
 .billet-left .billet-order {
@@ -648,6 +614,18 @@ body {
 
 .billet-left {
     position: relative;
+}
+
+.billet-right .legal-play {
+    padding: 10px 18px;
+}
+
+.billet-right .bonus-spoiler {
+    padding-right: 22px;
+}
+
+.billet-right .billet-footer-control.legal-active::after {
+    transform: rotate(180deg);
 }
 
 .billet .profit-label {
@@ -679,7 +657,6 @@ body {
 }
 
 .billet-left .legal-review {
-    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -692,7 +669,7 @@ body {
 .billet-center .billet-order,
 .billet-title .billet-title-rating,
 .billet-title .legal-review,
-.billet-title .billet-title-achivement.legal-image,
+.billet-title .billet-title-achivement,
 .billet-list-part:not( .legal-minus ) .billet-list-part-item {
     color: var(--Base-base-09);
     font-style: normal;
@@ -700,20 +677,13 @@ body {
 
 .billet-center .legal-title,
 .billet-center .billet-order {
-    /* font-family: "Source Sans Pro"; */
     font-weight: 700;
-    /* font-size: 23px; */
     font-size: 16px;
-    /* line-height: 29px; */
     line-height: 24px;
     text-decoration: none;
 }
 
 .billet-title .billet-title-rating {
-    /* font-family: 'Source Sans Pro'; */
-    /* font-weight: 700;
-    font-size: 18px;
-    line-height: 29px; */
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
@@ -730,7 +700,6 @@ body {
 
 .billet-title .billet-title-rating::before {
     content: '\F110';
-    /* color: var(--Base-base-09); */
 }
 
 .billet-list-part.legal-check .billet-list-part-item::before {
@@ -747,7 +716,6 @@ body {
 }
 
 .billet-title .billet-title-achivement {
-    /* font-family: "Source Sans Pro"; */
     font-style: normal;
     font-weight: 600;
 }
@@ -774,12 +742,13 @@ body {
     line-height: 20px;
 }
 
-.billet-title .billet-title-achivement.legal-background {
+/* .billet-title .billet-title-achivement.legal-background {
     font-size: 13px;
     line-height: 20px;
     color: rgb(255, 255, 255);
-}
-.billet-title .billet-title-achivement.legal-image {
+} */
+
+.billet-title .billet-title-achivement {
     font-size: 12px;
     line-height: 18px;
 }
@@ -789,13 +758,11 @@ body {
 }
 
 .billet-list-part.legal-default .billet-list-part-item {
-    /* font-weight: 600; */
     font-weight: 400;
     text-transform: uppercase;
 }
 
 .billet-right .bonus-title {
-    /* text-align: center; */
     font-size: 22px;
     font-weight: 700;
     line-height: 26px;
@@ -810,21 +777,17 @@ body {
 }
 
 .billet-right .bonus-description {
-    /* font-family: "Source Sans Pro"; */
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 24.5px;
- /*    text-align: center; */
 }
 
 .billet-right .legal-play {
-    /* font-family: 'Source Sans Pro'; */
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    /* text-transform: uppercase; */
     text-decoration: none;
     text-align: center;
     color: var(--Base-base-01);
@@ -847,15 +810,10 @@ body {
     content: '\F103';
     font-family: var(--legal-font-icons);
     font-size: 16px;
-    font-weight: 16px;
-}
-
-.billet-right .billet-footer-control.legal-active::after {
-    transform: rotate(180deg);
+    line-height: 16px;
 }
 
 .billet-right .bonus-spoiler {
-    /* font-family: "Source Sans Pro"; */
     font-size: 12px;
     font-style: normal;
     font-weight: 600;
@@ -863,7 +821,6 @@ body {
 }
 
 .billet-left .billet-order {
-    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -873,7 +830,6 @@ body {
 
 .billet .profit-label,
 .billet .profit-value {
-    /* font-family: "Source Sans Pro"; */
     font-size: 16px;
     font-style: normal;
     line-height: 28px;
@@ -890,14 +846,12 @@ body {
 
 .billet-item .billet-footer {
     color: var( --Base-base-05 );
-  /*   font-family: var( --legal-font-primary ); */
     font-style: normal;
     font-weight: 400;
 }
 
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);
-    /* font-family: "Source Sans Pro"; */
     font-size: 15px;
     font-style: normal;
     font-weight: 600;

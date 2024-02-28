@@ -64,7 +64,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		reviewAbout : {
-			selectors : '.review-about .legal-cut-item, .review-about .legal-cut-control'
+			selectors : '.legal-review-page-sidebar .legal-cut-item, .legal-review-page-sidebar .legal-cut-control'
 		}
 	};
 
