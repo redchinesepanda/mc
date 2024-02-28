@@ -373,7 +373,8 @@
   	flex-grow: 1;
 }
 
-.legal-menu .item-title[ href="#" ]
+/* .legal-menu .item-title[ href="#" ], */
+.legal-menu .menu-item-has-children > .item-title
 {
     pointer-events: none;
 }
