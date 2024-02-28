@@ -10,21 +10,11 @@
         cursor: pointer;
     }
 
-   /*  .review-anchors:not( .legal-active ) .anchors-item {
-        display: none;
-    } */
-
-   /*  .review-anchors .anchors-item {
-        flex-grow: 1;
-    } */
-
     /* Anchors Position */
     
     .review-anchors {
-        /* padding: 5px 15px; */
-        padding-top: 32px;
-        /* padding-right: 16px; */
-        padding-left: 16px;
+        /* padding-top: 32px; */
+        margin-top: 32px;
     }
 
     .review-anchors .anchors-title {
@@ -37,19 +27,7 @@
         width: 100%;
     }
 
-    /* .review-anchors .anchors-item {
-        width: calc( 50% - 10px );
-    } */
-
     /* Background */
-
-  /*   .review-anchors:not( .legal-active ) .anchors-title {
-        background-image: url( '../../img/review/review-anchors-open.svg' );
-    } */
-
-  /*   .review-anchors.legal-active .anchors-title {
-        background-image: url( '../../img/review/review-anchors-close.svg' );
-    } */
 
     .review-anchors .anchors-title {
         background-position: right center;
@@ -70,20 +48,15 @@
     /* Anchors Width and Height */
 
     .review-anchors {
-        /* width: 1080px; */
         max-width: var( --base-width-desktop );
     }
 
     /* Anchors Position */
     
     .review-anchors {
-        /* padding: 5px 0px; */
-        padding-top: 48px;
+        /* padding-top: 48px; */
+        margin-top: 48px;
     }
-
-  /*  .legal-section-group + .legal-section-anchors .review-anchors {
-        padding-top: calc( 48px - 30px );
-   } */
 
 }
 
@@ -91,22 +64,18 @@
 
 .review-anchors {
     display: flex;
-    /* column-gap: 20px; */
-    /* column-gap: 8px; */
     row-gap: 18px;
     flex-wrap: wrap;
-    /* justify-content: center; */
 }
 
  /* Anchors Position */
 
 .review-anchors {
-    margin: 0px auto;
+    /* margin: 0px auto; */
+    margin-right: auto;
+    margin-bottom: 24px;
+    margin-left: auto;
 }
-
-/* .review-anchors .anchors-title {
-    padding-bottom: 10px;
-} */
 
 .review-anchors .anchors-item {
     margin-right: 8px;
@@ -123,10 +92,6 @@
 }
 
 /* Anchors Background */
-
-/* nav.anchors {
-    background-color: rgb(239, 245, 251);
-} */
 
 .review-anchors .anchors-item {
     border: 1px solid var(--Base-base-09);
