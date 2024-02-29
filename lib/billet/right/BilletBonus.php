@@ -153,12 +153,22 @@ class BilletBonus
 
     public static function get_bonus( $id, $url, $filter )
     {
-        $enabled = true;
+        // $enabled = true;
+        
+        $enabled = false;
 
         if ( !empty( $filter[ 'bonus' ] ) )
         {
             $enabled = $filter[ 'bonus' ];
         }
+
+        // LegalDebug::debug( [
+        //     'BilletBonus' => 'get_bonus',
+
+        //     'enabled' => $enabled,
+
+        //     'filter-bonus' => $filter[ 'bonus' ],
+        // ] );
 
         if ( !$enabled )
         {
