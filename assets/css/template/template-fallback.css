@@ -1,7 +1,5 @@
 @media (min-width: 300px) {
-
-	.tcb-style-wrap ul:not([class*="menu"]),
-	.tcb-style-wrap ol {
+	.tcb-style-wrap ul:not([class*="menu"]), .tcb-style-wrap ol {
 		padding-top: 10px;
 		padding-bottom: 10px;
 		margin-top: 0px;
@@ -12,433 +10,333 @@
 		font-weight: var(--g-regular-weight, normal);
 		color: var(--tcb-skin-color-24);
 		--tcb-typography-color: var(--tcb-skin-color-24);
-		--tve-applied-color: var$(
-			--tcb-skin-color-24
-		);
-	--tcb-applied-color: var$(
-		--tcb-skin-color-24
-	);
-font-size: 18px;
---tcb-typography-font-size: 18px;
-padding-left: 30px;
-line-height: 1.8em;
---tcb-typography-line-height: 1.8em;
---g-bold-weight: 600;
+		--tve-applied-color: var$( --tcb-skin-color-24 );
+		--tcb-applied-color: var$( --tcb-skin-color-24 );
+		font-size: 18px;
+		--tcb-typography-font-size: 18px;
+		padding-left: 30px;
+		line-height: 1.8em;
+		--tcb-typography-line-height: 1.8em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h1 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		padding-bottom: 10px;
+		margin-bottom: 0px;
+		font-size: 42px;
+		--tcb-typography-font-size: 42px;
+		padding-top: 0px;
+		margin-top: 0px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h2 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		padding-bottom: 10px;
+		margin-bottom: 0px;
+		font-size: 32px;
+		--tcb-typography-font-size: 32px;
+		padding-top: 0px;
+		margin-top: 0px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h3 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		font-size: 28px;
+		--tcb-typography-font-size: 28px;
+		padding-top: 0px;
+		padding-bottom: 10px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		background-color: rgba(0, 0, 0, 0);
+		font-style: normal;
+		margin: 0px;
+		text-decoration: rgb(32, 65, 71);
+		text-transform: none;
+		border-left: 0px none rgb(32, 65, 71);
+		--tcb-typography-font-weight: var(--g-bold-weight, bold);
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h4 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		padding-bottom: 10px;
+		margin-bottom: 0px;
+		font-size: 24px;
+		--tcb-typography-font-size: 24px;
+		padding-top: 0px;
+		margin-top: 0px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h5 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+		font-size: 22px;
+		--tcb-typography-font-size: 22px;
+		padding-top: 0px;
+		margin-top: 0px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap h6 {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-4);
+		--tcb-typography-color: var(--tcb-skin-color-4);
+		--tve-applied-color: var$( --tcb-skin-color-4 );
+		--tcb-applied-color: var$( --tcb-skin-color-4 );
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+		font-size: 20px;
+		--tcb-typography-font-size: 20px;
+		padding-top: 0px;
+		margin-top: 0px;
+		line-height: 1.2em;
+		--tcb-typography-line-height: 1.2em;
+		--g-bold-weight: 600;
+   }
+	:not(.inc) .thrv_text_element a:not(.tcb-button-link), :not(.inc) .tcb-styled-list a, :not(.inc) .tcb-numbered-list a, .tve-input-option-text a, .tcb-post-content p a, .tcb-post-content li a, .tcb-post-content blockquote a, .tcb-post-content pre a {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		--tcb-typography-color: var(--tcb-skin-color-24);
+		--tcb-applied-color: var$( --tcb-skin-color-24 );
+		font-size: inherit;
+		--tcb-typography-font-size: 18px;
+		line-height: 1.8em;
+		--tcb-typography-line-height: 1.8em;
+		color: var(--tcb-skin-color-0);
+		--tve-applied-color: var$( --tcb-skin-color-0 );
+		--eff-color: rgb(203, 203, 203);
+		--eff-faded: rgba(203, 203, 203, 0.6);
+		--eff-ensure-contrast: rgba(203, 203, 203, 0.6);
+		--eff-ensure-contrast-complement: rgba(203, 203, 203, 0.6);
+		box-shadow: none;
+		border-bottom: medium none;
+		background-image: linear-gradient(var(--eff-color), var(--eff-color));
+		background-position: center bottom;
+		background-size: 0px 0.1em;
+		background-repeat: no-repeat;
+		background-attachment: initial;
+		background-origin: initial;
+		background-clip: initial;
+		background-color: initial;
+		text-decoration: none;
+		animation: 0s ease 0s 1 normal none running none;
+		transition: background 0.15s ease-out 0.05s;
+		padding-left: 0px;
+		--eff: expand;
+		--tve-applied-box-shadow: none;
+		--tve-applied-background-image: linear-gradient(var$( --eff-color), var$( --eff-color) );
+		--g-bold-weight: 600;
+   }
+	:not(.inc) .thrv_text_element a:not(.tcb-button-link):hover, :not(.inc) .tcb-styled-list a:hover, :not(.inc) .tcb-numbered-list a:hover, .tve-input-option-text a:hover, .tcb-post-content p a:hover, .tcb-post-content li a:hover, .tcb-post-content blockquote a:hover, .tcb-post-content pre a:hover {
+		text-decoration: none;
+		background-image: linear-gradient(var(--eff-color), var(--eff-color));
+		background-position: center bottom;
+		background-size: 100% 0.1em;
+		background-repeat: no-repeat;
+		background-attachment: initial;
+		background-origin: initial;
+		background-clip: initial;
+		background-color: initial;
+		box-shadow: none;
+		--tve-applied-box-shadow: none;
+		--tve-applied-background-image: linear-gradient(var$( --eff-color), var$( --eff-color) );
+		color: var(--tcb-skin-color-0);
+		--tve-applied-color: var$( --tcb-skin-color-0 );
+   }
+	body, .tcb-plain-text {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-24);
+		--tcb-typography-color: var(--tcb-skin-color-24);
+		--tve-applied-color: var$( --tcb-skin-color-24 );
+		--tcb-applied-color: var$( --tcb-skin-color-24 );
+		font-size: 16px;
+		--tcb-typography-font-size: 16px;
+		line-height: 1.75em;
+		--tcb-typography-line-height: 1.75em;
+		--g-bold-weight: 600;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		background-color: rgba(0, 0, 0, 0);
+		font-style: normal;
+		margin: 0px;
+		text-decoration: none solid rgb(59, 59, 59);
+		text-transform: none;
+		border-left: 0px none rgb(59, 59, 59);
+   }
+	.tcb-style-wrap blockquote {
+		margin-top: 12px;
+		margin-bottom: 20px;
+		background-color: var(--tcb-skin-color-20);
+		--background-color: var(--tcb-skin-color-20);
+		--tve-applied-background-color: var$( --tcb-skin-color-20 );
+		padding: 14px 20px;
+		border-left: medium none;
+		--tve-border-width: 1px;
+		border-top: 1px solid var(--tcb-skin-color-1);
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		color: var(--tcb-skin-color-24);
+		--tcb-typography-color: var(--tcb-skin-color-24);
+		--tve-applied-color: var$( --tcb-skin-color-24 );
+		--tcb-applied-color: var$( --tcb-skin-color-24 );
+		line-height: 1.8em;
+		--tcb-typography-line-height: 1.8em;
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap pre {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		font-weight: var(--g-regular-weight, normal);
+		--g-bold-weight: 600;
+   }
+	.tcb-style-wrap p {
+		padding-bottom: 0px;
+		margin-bottom: 0px;
+		padding-top: 0px;
+		margin-top: 0px;
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		--g-bold-weight: 600;
+		font-weight: var(--g-regular-weight, normal);
+   }
+	.tcb-style-wrap li:not([class*="menu"]) {
+		font-family: "Source Sans Pro";
+		--tcb-typography-font-family: "Source Sans Pro";
+		--g-regular-weight: 400;
+		--g-bold-weight: 600;
+		font-weight: var(--g-regular-weight, normal);
+   }
 }
-
-.tcb-style-wrap h1 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-padding-bottom: 10px;
-margin-bottom: 0px;
-font-size: 42px;
---tcb-typography-font-size: 42px;
-padding-top: 0px;
-margin-top: 0px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap h2 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-padding-bottom: 10px;
-margin-bottom: 0px;
-font-size: 32px;
---tcb-typography-font-size: 32px;
-padding-top: 0px;
-margin-top: 0px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap h3 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-font-size: 28px;
---tcb-typography-font-size: 28px;
-padding-top: 0px;
-padding-bottom: 10px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
-background-color: rgba(0, 0, 0, 0);
-font-style: normal;
-margin: 0px;
-text-decoration: rgb(32, 65, 71);
-text-transform: none;
-border-left: 0px none rgb(32, 65, 71);
---tcb-typography-font-weight: var(--g-bold-weight, bold);
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap h4 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-padding-bottom: 10px;
-margin-bottom: 0px;
-font-size: 24px;
---tcb-typography-font-size: 24px;
-padding-top: 0px;
-margin-top: 0px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap h5 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-padding-bottom: 0px;
-margin-bottom: 0px;
-font-size: 22px;
---tcb-typography-font-size: 22px;
-padding-top: 0px;
-margin-top: 0px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap h6 {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-4);
-	--tcb-typography-color: var(--tcb-skin-color-4);
-	--tve-applied-color: var$(
-		--tcb-skin-color-4
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-4
-);
-padding-bottom: 0px;
-margin-bottom: 0px;
-font-size: 20px;
---tcb-typography-font-size: 20px;
-padding-top: 0px;
-margin-top: 0px;
-line-height: 1.2em;
---tcb-typography-line-height: 1.2em;
---g-bold-weight: 600;
-}
-
-:not(.inc) .thrv_text_element a:not(.tcb-button-link),
-:not(.inc) .tcb-styled-list a,
-:not(.inc) .tcb-numbered-list a,
-.tve-input-option-text a,
-.tcb-post-content p a,
-.tcb-post-content li a,
-.tcb-post-content blockquote a,
-.tcb-post-content pre a {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	--tcb-typography-color: var(--tcb-skin-color-24);
-	--tcb-applied-color: var$(
-		--tcb-skin-color-24
-	);
-font-size: inherit;
---tcb-typography-font-size: 18px;
-line-height: 1.8em;
---tcb-typography-line-height: 1.8em;
-color: var(--tcb-skin-color-0);
---tve-applied-color: var$(
-	--tcb-skin-color-0
-);
---eff-color: rgb(203, 203, 203);
---eff-faded: rgba(203, 203, 203, 0.6);
---eff-ensure-contrast: rgba(203, 203, 203, 0.6);
---eff-ensure-contrast-complement: rgba(203, 203, 203, 0.6);
-box-shadow: none;
-border-bottom: medium none;
-background-image: linear-gradient(var(--eff-color), var(--eff-color));
-background-position: center bottom;
-background-size: 0px 0.1em;
-background-repeat: no-repeat;
-background-attachment: initial;
-background-origin: initial;
-background-clip: initial;
-background-color: initial;
-text-decoration: none;
-animation: 0s ease 0s 1 normal none running none;
-transition: background 0.15s ease-out 0.05s;
-padding-left: 0px;
---eff: expand;
---tve-applied-box-shadow: none;
---tve-applied-background-image: linear-gradient(var$(
-		--eff-color),
-	var$(
-	--eff-color)
-);
---g-bold-weight: 600;
-}
-
-:not(.inc) .thrv_text_element a:not(.tcb-button-link):hover,
-:not(.inc) .tcb-styled-list a:hover,
-:not(.inc) .tcb-numbered-list a:hover,
-.tve-input-option-text a:hover,
-.tcb-post-content p a:hover,
-.tcb-post-content li a:hover,
-.tcb-post-content blockquote a:hover,
-.tcb-post-content pre a:hover {
-	text-decoration: none;
-	background-image: linear-gradient(var(--eff-color), var(--eff-color));
-	background-position: center bottom;
-	background-size: 100% 0.1em;
-	background-repeat: no-repeat;
-	background-attachment: initial;
-	background-origin: initial;
-	background-clip: initial;
-	background-color: initial;
-	box-shadow: none;
-	--tve-applied-box-shadow: none;
-	--tve-applied-background-image: linear-gradient(var$(
-			--eff-color),
-		var$(
-		--eff-color)
-	);
-color: var(--tcb-skin-color-0);
---tve-applied-color: var$(
-	--tcb-skin-color-0
-);
-}
-
-body,
-.tcb-plain-text {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	color: var(--tcb-skin-color-24);
-	--tcb-typography-color: var(--tcb-skin-color-24);
-	--tve-applied-color: var$(
-		--tcb-skin-color-24
-	);
---tcb-applied-color: var$(
-	--tcb-skin-color-24
-);
-font-size: 16px;
---tcb-typography-font-size: 16px;
-line-height: 1.75em;
---tcb-typography-line-height: 1.75em;
---g-bold-weight: 600;
-padding-top: 0px;
-padding-bottom: 0px;
-background-color: rgba(0, 0, 0, 0);
-font-style: normal;
-margin: 0px;
-text-decoration: none solid rgb(59, 59, 59);
-text-transform: none;
-border-left: 0px none rgb(59, 59, 59);
-}
-
-.tcb-style-wrap blockquote {
-	margin-top: 12px;
-	margin-bottom: 20px;
-	background-color: var(--tcb-skin-color-20);
-	--background-color: var(--tcb-skin-color-20);
-	--tve-applied-background-color: var$(
-		--tcb-skin-color-20
-	);
-padding: 14px 20px;
-border-left: medium none;
---tve-border-width: 1px;
-border-top: 1px solid var(--tcb-skin-color-1);
-font-family: "Source Sans Pro";
---tcb-typography-font-family: "Source Sans Pro";
---g-regular-weight: 400;
-font-weight: var(--g-regular-weight, normal);
-color: var(--tcb-skin-color-24);
---tcb-typography-color: var(--tcb-skin-color-24);
---tve-applied-color: var$(
-	--tcb-skin-color-24
-);
---tcb-applied-color: var$(
-	--tcb-skin-color-24
-);
-line-height: 1.8em;
---tcb-typography-line-height: 1.8em;
---g-bold-weight: 600;
-}
-
-.tcb-style-wrap pre {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	font-weight: var(--g-regular-weight, normal);
-	--g-bold-weight: 600;
-}
-
-.tcb-style-wrap p {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-	padding-top: 0px;
-	margin-top: 0px;
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	--g-bold-weight: 600;
-	font-weight: var(--g-regular-weight, normal);
-}
-
-.tcb-style-wrap li:not([class*="menu"]) {
-	font-family: "Source Sans Pro";
-	--tcb-typography-font-family: "Source Sans Pro";
-	--g-regular-weight: 400;
-	--g-bold-weight: 600;
-	font-weight: var(--g-regular-weight, normal);
-}
-}
-
 @media (max-width: 1023px) {
 	.tcb-style-wrap h1 {
 		font-size: 40px;
 		--tcb-typography-font-size: 40px;
-	}
-
+   }
 	.tcb-style-wrap h2 {
 		font-size: 34px;
 		--tcb-typography-font-size: 34px;
-	}
-
+   }
 	.tcb-style-wrap h3 {
 		font-size: 30px;
 		--tcb-typography-font-size: 30px;
-	}
-
+   }
 	.tcb-style-wrap h4 {
 		font-size: 26px;
 		--tcb-typography-font-size: 26px;
-	}
-
+   }
 	.tcb-style-wrap h5 {
 		font-size: 22px;
 		--tcb-typography-font-size: 22px;
-	}
-
-	body,
-	.tcb-plain-text {
+   }
+	body, .tcb-plain-text {
 		font-size: 16px;
 		--tcb-typography-font-size: 16px;
-	}
-
+   }
 	.tcb-style-wrap p {
 		font-size: 16px;
 		--tcb-typography-font-size: 16px;
-	}
+   }
 }
-
 @media (max-width: 767px) {
-
-	.tcb-style-wrap ul:not([class*="menu"]),
-	.tcb-style-wrap ol {
+	.tcb-style-wrap ul:not([class*="menu"]), .tcb-style-wrap ol {
 		padding-top: 8px;
 		padding-bottom: 8px;
 		padding-left: 4px;
-	}
-
+   }
 	.tcb-style-wrap h1 {
 		font-size: 30px;
 		--tcb-typography-font-size: 30px;
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
+   }
 	.tcb-style-wrap h2 {
 		font-size: 26px;
 		--tcb-typography-font-size: 26px;
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
+   }
 	.tcb-style-wrap h3 {
 		font-size: 24px;
 		--tcb-typography-font-size: 24px;
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
+   }
 	.tcb-style-wrap h4 {
 		font-size: 22px;
 		--tcb-typography-font-size: 22px;
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
+   }
 	.tcb-style-wrap h5 {
 		font-size: 19px;
 		--tcb-typography-font-size: 19px;
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
+   }
 	.tcb-style-wrap h6 {
 		padding-bottom: 0px;
 		margin-bottom: 0px;
-	}
-
-	body,
-	.tcb-plain-text {
+   }
+	body, .tcb-plain-text {
 		font-size: 16px;
 		--tcb-typography-font-size: 16px;
-	}
-
+   }
 	.tcb-style-wrap p {
 		font-size: 16px;
 		--tcb-typography-font-size: 16px;
-	}
+   }
 }
