@@ -14,7 +14,7 @@ class ReviewAbout
         'review-about-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-about-new.css',
 
-			'ver' => '1.0.1',
+			'ver' => '1.0.0',
 		],
     ];
 
@@ -50,7 +50,7 @@ class ReviewAbout
         'review-about' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about.js',
 
-			'ver' => '1.0.1',
+			'ver' => '1.0.0',
 		],
     ];
 
@@ -268,6 +268,14 @@ class ReviewAbout
             $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
             return [
+                'text' => [
+                    'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
+    
+                    'show' => __( ReviewMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+    
+                    'hide' => __( ReviewMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+                ],
+
                 'title' => $title,
                 
                 'bonus' => $bonus,
@@ -437,14 +445,6 @@ class ReviewAbout
         {
             return '';
         }
-
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'review-button' ], false, self::get_button( $args ) );
-
-        // $output = ob_get_clean();
-
-        // return $output;
 
         return LegalComponents::render_main( self::TEMPLATE[ 'review-button' ], self::get_button( $args ) );
     }

@@ -63,6 +63,8 @@ class ReviewMain
 
 		'get-bonus' => 'Get Bonus',
 
+		'hide-tnc' => 'Hide T&C',
+
 		'how-to-play' => 'How to play',
 
 		'open' => 'Open',
@@ -78,6 +80,8 @@ class ReviewMain
 		'registration' => 'Registration',
 
 		'review' => 'Review',
+
+		'show-tnc' => 'Show T&C',
         
 		'valentin-axani' => 'Valentin Axani',
 
