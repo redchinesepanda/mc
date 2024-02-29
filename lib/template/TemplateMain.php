@@ -81,16 +81,16 @@ class TemplateMain
 
     public static function dequeue_style()
     {
-        if ( self::check_new() )
-        {
+        // if ( self::check_new() )
+        // {
             LegalDebug::debug( [
                 'TemplateMain' => 'dequeue_style',
 
                 'DEQUEUE' => self::DEQUEUE,
             ] );
-            
+
             ToolEnqueue::dequeue_style( self::DEQUEUE );
-        }
+        // }
     }
 
     const CSS = [
