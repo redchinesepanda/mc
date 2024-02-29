@@ -10,10 +10,6 @@
 	/* Position */
 	
 	#theme-bottom-section .legal-author {
-		/* padding: 20px; */
-		margin-right: 16px;
-		/* margin-bottom: 32px; */
-		margin-left: 16px;
 		padding-top: 28px;
 	}	
 
@@ -30,13 +26,6 @@
 	}
 }
 
-@media screen and ( min-width: 768px ) and ( max-width: 1218px ) {
-	#theme-bottom-section .legal-author {
-		padding-right: 16px;
-		padding-left: 16px;
-	}
-}
-
 @media screen and ( min-width: 768px )
 {
 
@@ -50,9 +39,7 @@
 	/* Position */
 
 	#theme-bottom-section .legal-author {
-		/* padding: 30px 70px; */
 		margin-right: auto;
-		/* margin-bottom: 64px; */
 		margin-left: auto;
 		padding-top: 40px;
 	}
@@ -60,7 +47,6 @@
 	/* Width and Height */
 
 	#theme-bottom-section .legal-author {
-		/* max-width: 1080px; */
 		max-width: var( --base-width-desktop );
 	}
 
@@ -91,39 +77,37 @@
 #theme-bottom-section .legal-author .author-data {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 }
 
 /* Position */
 
 #theme-bottom-section .legal-author {
-/* 	margin: 0px auto; */
 	padding-bottom: 24px;
 }
 
-/* Width and Height */
-
 #theme-bottom-section .legal-author .author-photo {
-	/* width: 100px;
-	height: 100px; */
 	position: relative;
 }
 
 #theme-bottom-section .legal-author .author-photo::after {
-	width: 14px;
-	height: 14px;
 	position: absolute;
 	right: 0px;
 	bottom: 0px;
 }
 
+/* Width and Height */
+
+#theme-bottom-section .legal-author .author-photo::after {
+	width: 18px;
+	height: 18px;
+}
+
 /* Background */
 
-#theme-bottom-section .legal-author
+/* #theme-bottom-section .legal-author
 {
-	/* border-top: 1px dashed rgb(198,198,198); */
 	border-bottom: 2px solid var(--Gray-200);
-}
+} */
 
 #theme-bottom-section .legal-author .author-photo {
 	background-position: center center;
@@ -156,14 +140,8 @@
 #theme-bottom-section .legal-author .author-name {
 	font-weight: 600;
 	text-decoration: none;
-	/* color: rgb(89, 151, 227); */
-	/* letter-spacing: 2px; */
-	/* text-transform: uppercase; */
 }
 
 #theme-bottom-section .legal-author .author-duty {
 	font-weight: 400;
-	/* color: rgb(106, 107, 108); */
-	/* letter-spacing: 2px; */
-	/* text-transform: uppercase; */
 }
