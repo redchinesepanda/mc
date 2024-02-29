@@ -100,6 +100,11 @@ class BilletMega
 		];
 	}
 
+	public static function modify_license( $value )
+	{
+		return str_replace(  ':', '', $value );
+	}
+
 	public static function get_license( $dom )
 	{
 		if ( !TemplateMain::check_new() )
@@ -118,7 +123,7 @@ class BilletMega
 
 		LegalDOM::remove_child( $dom, $node );
 
-		return $dom->saveHTML( $node );
+		return self::modify_license( $dom->saveHTML( $node ) );
 	}
 
 	public static function get_footer( $dom )
