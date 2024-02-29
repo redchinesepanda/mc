@@ -144,6 +144,24 @@ class LegalDOM
 
 		return $nodes;
 	}
+
+	public static function remove_child( $dom, $node )
+	{
+		try
+		{
+			$node->parentNode->removeChild( $node );
+		}
+		catch ( DOMException $e )
+		{
+			LegalDebug::debug( [
+				'LegalDOM' => 'remove_child,removeChild',
+
+				'node' => substr( $node->textContent, 0, 30 ),
+
+				'message' => $e->getMessage(),
+			] );
+		}
+	}
 }
 
 ?>

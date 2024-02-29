@@ -77,64 +77,69 @@ class BilletMega
 		] );
 	}
 
+	public static function get_nodes_license( $dom )
+	{
+		return LegalDOM::get_nodes( $dom, '//*[contains(@class, \'' . self::CLASSES[ 'license' ] . '\')]' );
+	}
+
 	public static function get_nodes( $dom )
 	{
-		$xpath = new DOMXPath( $dom );
-
-		// return $xpath->query( '//body/*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
-		
-		return $xpath->query( '//*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
+		return LegalDOM::get_nodes( $dom, '//*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
 	}
 
 	public static function get_parts( $content )
 	{
-		$content = do_shortcode( $content );
+		$dom = LegalDOM::get_dom( do_shortcode( $content ) );
 
-		$args = [
-			'content' => $content,
+		return [
+			'license' => self::get_license( $dom ),
 
-			'footer' => '',
+			'footer' => self::get_footer( $dom ),
+
+			'content' => $dom->saveHTML( $dom ),
 		];
+	}
 
-		$dom = LegalDOM::get_dom( $content );
-
-		$nodes = self::get_nodes( $dom );
-
-		if ( $nodes->length == 0 ) {
-			return $args;
+	public static function get_license( $dom )
+	{
+		if ( !TemplateMain::check_new() )
+		{
+			return '';
 		}
 
-		// $body = $dom->getElementsByTagName( 'body' )->item(0);
+		$nodes = self::get_nodes_license( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return '';
+		}
+
+		$node = $nodes->item( 0 );
+
+		LegalDOM::remove_child( $dom, $node );
+
+		return $dom->saveHTML( $node );
+	}
+
+	public static function get_footer( $dom )
+	{
+		$nodes = self::get_nodes( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return '';
+		}
+
+		$footer = [];
 
 		foreach ( $nodes as $id => $node )
 		{
-			$args[ 'footer' ] .= ToolEncode::encode( $dom->saveHTML( $node ) );
+			$footer[] = ToolEncode::encode( $dom->saveHTML( $node ) );
 
-			// $body->removeChild( $node );
-
-			try
-			{
-				$node->parentNode->removeChild( $node );
-			}
-			catch ( DOMException $e )
-			{
-				LegalDebug::debug( [
-					'class' => 'BilletMega',
-
-					'function' => 'get_parts,removeChild',
-
-					'node' => substr( $node->textContent, 0, 30 ),
-
-					'message' => $e->getMessage(),
-				] );
-			}
+			LegalDOM::remove_child( $dom, $node );
 		}
 
-		// $args[ 'content' ] = ToolEncode::encode( $dom->saveHTML( $dom ) );
-		
-		$args[ 'content' ] = $dom->saveHTML( $dom );
-
-		return $args;
+		return implode( '', $footer );
 	}
 
 	const MODE = [
@@ -341,6 +346,8 @@ class BilletMega
 
 				'text' => $atts[ 'review-label' ],
 			],
+
+			'license' => $parts[ 'license' ],
 
 			'content' => $parts[ 'content' ],
 
