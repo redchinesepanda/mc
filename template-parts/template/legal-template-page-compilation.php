@@ -21,4 +21,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Page Compilation -->
+<!-- MC Page Compilation -->

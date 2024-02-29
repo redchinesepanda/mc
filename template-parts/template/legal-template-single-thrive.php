@@ -6,7 +6,7 @@
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
 <section class="legal-section-content">
-	<h1>Legal Single Thrive</h1>
+	<h1>MC Single Thrive</h1>
 </section>
 <?php get_footer(); ?>
-<!-- Legal Single Thrive -->
+<!-- MC Single Thrive -->

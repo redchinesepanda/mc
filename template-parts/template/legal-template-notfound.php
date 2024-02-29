@@ -17,4 +17,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Not Found -->
+<!-- MC Not Found -->

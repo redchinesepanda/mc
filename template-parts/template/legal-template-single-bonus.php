@@ -23,4 +23,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Single Bonus -->
+<!-- MC Single Bonus -->

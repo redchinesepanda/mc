@@ -20,4 +20,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Single Wiki -->
+<!-- MC Single Wiki -->

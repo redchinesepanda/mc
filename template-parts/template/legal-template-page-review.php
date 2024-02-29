@@ -18,4 +18,4 @@ get_header();
 get_footer();
 
 ?>
-<!-- Legal Page Review -->
+<!-- MC Page Review -->
