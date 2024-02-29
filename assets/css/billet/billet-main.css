@@ -331,6 +331,11 @@ body {
     background-image: url( '../../img/billet/profit/billet-profit-red.svg' );
 }
 
+.billet .profit-label:not( .legal-green ):not( .legal-yellow ):not( .legal-red )
+{
+    background-image: url( '../../img/billet/profit/billet-profit.svg' );
+}
+
 .billet .billet-title-achivement.legal-background {
     background-color: rgb(8, 5, 61);
     border-bottom-left-radius: 10px;
