@@ -186,6 +186,13 @@ body {
     border-radius: 20px;
 }
 
+.billet-left,
+.billet-center,
+.billet-right
+{
+    box-sizing: border-box;
+}
+
 .billet-right {
     background-color: #F6F8FF;
 }
