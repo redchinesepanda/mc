@@ -57,7 +57,9 @@ class BonusContent
 
         'td',
 
-        'strong',
+        // 'strong',
+
+        'b',
 
         'img', 
     ];
