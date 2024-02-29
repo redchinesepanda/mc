@@ -4,7 +4,7 @@ LegalDebug::debug( [
     'template-part' => 'part-billet-mobile.php',
 
     'args' => $args,
-] );
+] ); 
 
 ?>
 <div class="bonus-mobile">
