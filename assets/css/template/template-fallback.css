@@ -192,7 +192,7 @@
    }
 	body, .tcb-plain-text {
 		font-family: "Source Sans Pro";
-		--tcb-typography-font-family: "Source Sans Pro";
+		/* --tcb-typography-font-family: "Source Sans Pro";
 		--g-regular-weight: 400;
 		font-weight: var(--g-regular-weight, normal);
 		color: var(--tcb-skin-color-24);
@@ -200,9 +200,9 @@
 		--tve-applied-color: var$( --tcb-skin-color-24 );
 		--tcb-applied-color: var$( --tcb-skin-color-24 );
 		font-size: 16px;
-		--tcb-typography-font-size: 16px;
+		--tcb-typography-font-size: 16px; */
 		line-height: 1.75em;
-		--tcb-typography-line-height: 1.75em;
+		/* --tcb-typography-line-height: 1.75em;
 		--g-bold-weight: 600;
 		padding-top: 0px;
 		padding-bottom: 0px;
@@ -211,7 +211,7 @@
 		margin: 0px;
 		text-decoration: none solid rgb(59, 59, 59);
 		text-transform: none;
-		border-left: 0px none rgb(59, 59, 59);
+		border-left: 0px none rgb(59, 59, 59); */
    }
 	.tcb-style-wrap blockquote {
 		margin-top: 12px;
