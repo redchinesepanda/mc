@@ -6,7 +6,7 @@
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
 <section class="legal-section-content">
-<h1>Legal Page Thrive</h1>
+	<h1>Legal Page Thrive</h1>
 </section>
 <?php get_footer(); ?>
 <!-- Legal Page Thrive -->
