@@ -243,10 +243,10 @@ class BaseFooter
 
     public static function render_footer()
     {
-		if ( !TemplateMain::check() )
-		{
-			return '';
-		}
+		// if ( !TemplateMain::check() )
+		// {
+		// 	return '';
+		// }
 
         return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
     }
