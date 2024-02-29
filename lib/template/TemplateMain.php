@@ -270,12 +270,10 @@ class TemplateMain
     {
         $handler = new self();
 
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
+
         if ( self::check_new() )
         {
-            // $handler = new self();
-
-            add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_style' ], 99 );
-
             self::register_wp();
 
             self::register_thrive();
