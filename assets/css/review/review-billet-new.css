@@ -127,7 +127,8 @@
 	margin-bottom: 30px;
 }
 
-.legal-billet .billet-review {
+.legal-billet .billet-review,
+.legal-billet .billet-body {
 	padding: 20px;
 }
 
@@ -135,10 +136,9 @@
 	padding: 10px 18px;
 }
 
-.legal-billet .billet-body {
-	/* padding: 30px 0px; */
+/* .legal-billet .billet-body {
 	padding: 18px 20px;
-}
+} */
 
 .legal-billet .billet-title {
 	margin-top: 0px;

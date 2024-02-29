@@ -15,10 +15,6 @@
 	}
 
 	/* Width and Height */
-
-	/* .legal-billet-mega .billet-mega-about {
-		width: 100%;
-	} */
 	
 	.legal-billet-mega .mega-about-afillate,
 	.legal-billet-mega .mega-about-links
@@ -57,40 +53,16 @@
 	/* Width and Height */
 
 	.legal-billet-mega.legal-author .billet-mega-about {
-		/* width: calc( 25% - 36px ); */
 		flex-basis: 100%;
 	}
-
-	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-about {
-		/* width: calc( 30% - 36px ); */
-	}
-
-	.legal-billet-mega.legal-default .billet-mega-content,
-	.legal-billet-mega.legal-image .billet-mega-content,
-	.legal-billet-mega.legal-no-controls .billet-mega-content,
-	.legal-billet-mega.legal-horizontal .billet-mega-content {
-		/* width: calc( 80% - 15px ); */
-	}
-
-	.legal-billet-mega.legal-author .billet-mega-content {
-		/* width: calc( 75% - 15px ); */
-	}
-
-	.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .billet-mega-content {
-		/* width: calc( 70% - 15px ); */
-	}
-
-	/* Background */
-
-/* 	.legal-billet-mega.legal-default .billet-mega-about,
-	.legal-billet-mega.legal-no-controls .billet-mega-about {
-		border-right: 1px solid rgb(237, 237, 237);
-	} */
 
 	/* Typography */
 
 	.legal-billet-mega li {
 		font-size: 16px;
+	}
+
+	.legal-billet-mega:not( .legal-horizontal ) li {
     	line-height: 22px;
 	}
 }
@@ -100,27 +72,14 @@
 .legal-billet-mega {
 	display: flex;
 	flex-wrap: wrap;
-	/* gap: 30px; */
 }
 
 .legal-billet-mega .billet-mega-about {
 	display: flex;
-	/* flex-direction: column; */
 	align-items: center;
 	column-gap: 16px;
 	row-gap: 18px;
 }
-
-.legal-billet-mega.legal-image .billet-mega-about,
-.legal-billet-mega.legal-horizontal .billet-mega-about {
-	/* justify-content: center; */
-}
-
-/* .legal-billet-mega.legal-image .billet-mega-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-} */
 
 .legal-billet-mega .mega-about-review {
 	display: inline-block;
@@ -129,17 +88,19 @@
 .legal-billet-mega.legal-image .billet-mega-content,
 .legal-billet-mega.legal-horizontal .billet-mega-content {
 	display: flex;
-	/* align-items: center; */
-	/* column-gap: 50px; */
 	flex-wrap: wrap;
 }
 
-@media (max-width: 767px) {
+.legal-billet-mega.legal-horizontal .billet-mega-content {
+	row-gap: 16px;
+}
+
+/* @media (max-width: 767px) {
     .legal-billet-mega.legal-horizontal .billet-mega-content {
         flex-direction: column;
 		row-gap: 1rem;
     } 
-}
+} */
 
 .legal-billet-mega .mega-about-afillate {
 	display: flex;
@@ -148,7 +109,6 @@
 }
 
 .legal-billet-mega .mega-about-afillate[href=""] {
-	/* display: block; */
 	pointer-events: none;
 }
 
@@ -161,6 +121,18 @@
 	column-gap: 10px;
 }
 
+.legal-billet-mega .legal-license {
+	display: flex;
+	align-items: center;
+	column-gap: 6px;
+}
+
+.legal-billet-mega .legal-license::before {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .legal-billet-mega .link-item {
 	display: flex;
 	align-items: center;
@@ -169,12 +141,11 @@
 /* Position */
 
 .legal-billet-mega {
-	/* padding: 30px; */
 	margin-bottom: 24px;
 }
 
-.legal-billet-mega .billet-mega-about {
-	/* padding: 40px 20px 40px 0px; */
+.legal-billet-mega .billet-mega-about,
+.legal-billet-mega .billet-mega-content {
 	padding: 20px;
 }
 
@@ -182,27 +153,21 @@
 	padding: 7px;
 }
 
-.legal-billet-mega .billet-mega-content
+/* .legal-billet-mega .billet-mega-content
 {
 	padding: 18px 20px;
-}
+} */
 
 .legal-billet-mega .billet-mega-content p:not( .legal-contextbox ) {
 	margin: 0px;
 }
 
 .legal-billet-mega .mega-about-afillate {
-	/* padding: 5px 40px 5px 20px; */
 	padding: 10px 18px;
-}
-
-.legal-billet-mega:not( .legal-image ) .billet-mega-content {
-	/* padding-top: 10px; */
 }
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( :last-child ) {
     padding-bottom: 18px;
-	/* margin-bottom: 0px; */
 }
 
 .legal-billet-mega.legal-horizontal p:not( :last-child ) {
@@ -214,11 +179,6 @@
     margin-top: 0px;
 }
 
-/* .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ):not( .legal-list-pros ):not( .legal-list-cons ) {
-	padding-top: 0px;
-    padding-bottom: 15px;
-} */
-
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-pros,
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-cons,
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ),
@@ -228,17 +188,17 @@
 	padding-left: 0px;
 }
 
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li,
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li,
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li,
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol li {
+.legal-billet-mega .billet-mega-content > .legal-list-pros li,
+.legal-billet-mega .billet-mega-content > .legal-list-cons li,
+.legal-billet-mega .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li,
+.legal-billet-mega .billet-mega-content > ol li {
 	padding-left: calc(24px + 12px);
 }
 
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-pros li:not( :last-child ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > .legal-list-cons li:not( :last-child ),
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ul:not( .legal-highlight ):not( [style] ) li:not( :last-child ),
-.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol:not( :last-child ) {
+.legal-billet-mega:not( .legal-horizontal ) .billet-mega-content > ol li:not( :last-child ) {
 	padding-bottom: 24px;
 }
 
@@ -249,7 +209,10 @@
 }
 
 .legal-billet-mega .legal-license {
-	padding-right: 21px;
+	/* padding-right: 21px; */
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding: 2px 8px 2px 3px;
 }
 
 .legal-billet-mega .billet-mega-footer {
@@ -268,18 +231,7 @@
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-no-controls .billet-mega-about,
 .legal-billet-mega.legal-horizontal .billet-mega-about {
-	/* width: calc( 20% - 36px ); */
 	flex-basis: 100%; 
-}
-
-.legal-billet-mega.legal-horizontal .legal-license {
-	/* flex-basis: 15%; */
-}
-.legal-billet-mega.legal-horizontal .legal-license ~ p {
-	/* flex-basis: 35%; */
-}
-.legal-billet-mega.legal-horizontal .legal-license ~ p ~ ul {
-	/* flex-basis: 50%; */
 }
 
 .legal-billet-mega .mega-about-logo {
@@ -287,38 +239,24 @@
 	height: 70px;
 }
 
-/* .legal-billet-mega.legal-default .mega-about-logo,
-.legal-billet-mega.legal-no-controls .mega-about-logo,
-.legal-billet-mega.legal-horizontal .mega-about-logo {
-	width: 72px;
-	height: 72px;
-}
-
-.legal-billet-mega.legal-image .mega-about-logo {
-	width: 72px;
-	height: 72px;
-}
-
-.legal-billet-mega.legal-author .mega-about-logo {
-	width: 70px;
-	height: 70px;
-}
-
-.legal-wiki-single .legal-wiki-main .legal-billet-mega.legal-author .mega-about-logo {
-	width: 72px;
-	height: 72px;
-} */
-
 .legal-billet-mega .link-item {
 	width: calc(32px - 7px * 2);
     height: calc(32px - 7px * 2);
 }
 
+.legal-billet-mega .legal-license::before {
+	width: 16px;
+	height: 16px;
+}
 
 .legal-billet-mega .mega-about-afillate {
-	/* width: 100%; */
 	min-width: 128px;
 	min-height: 30px;
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content p,
+.legal-billet-mega.legal-horizontal .billet-mega-content ul {
+	width: 100%;
 }
 
 .legal-billet-mega .billet-mega-footer {
@@ -328,17 +266,10 @@
 /* Background */
 
 .legal-billet-mega {
-	/* box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 12px 0px;
-	border-radius: 20px; */
 	background-color: var(--Base-base-01);
 	border-radius: 24px 24px 18px 18px;
 	border: 1px solid var(--Base-base-09);
 }
-
-/* .legal-billet-mega:hover {
-	box-shadow: 4px 4px 0px 0px #000;
-	transition: 0.4s;
-} */
 
 .legal-billet-mega .billet-mega-about {
 	border-bottom: 1px solid var(--Base-base-09);
@@ -347,7 +278,6 @@
 .legal-billet-mega .mega-about-logo {
 	background-position: center center;
 	background-repeat: no-repeat;
-	/* background-size: contain; */
 	border: 1px solid var(--Base-base-09);
 }
 
@@ -363,11 +293,6 @@
 }
 
 .legal-billet-mega .mega-about-afillate {
-	/* background-image: url( '../../img/review/review-bet-here.svg' );
-	background-position: right 22px center;
-	background-repeat: no-repeat;
-	background-size: auto; */
-	/* background-color: rgb(89, 151, 227); */
 	background-color: var(--Base-base-09);
 	border-radius: 60px;
 }
@@ -377,27 +302,30 @@
 }
 
 .legal-billet-mega .link-item {
-	border: 1px solid var(--Base-base-09 );
+	border: 1px solid var(--Base-base-09);
     border-radius: 4px;
 }
 
-/* .legal-billet-mega.legal-image {
-	background-image: linear-gradient(to left, #eff5fb, #fdfdfd);
+.legal-billet-mega.legal-horizontal {
+	background-color: var(--Base-base-01);
+}
+
+/* .legal-billet-mega.legal-horizontal .billet-mega-content a {
+	background: unset;
 } */
 
-.legal-billet-mega.legal-horizontal {
-	background-color: #fff;
-}
-
-.legal-billet-mega.legal-horizontal .billet-mega-content a {
-	background: unset;
-}
-
 .legal-billet-mega .legal-license {
-	background-image: url( '../../img/billet/mega/mega-license.svg' );
+	/* background-image: url( '../../img/billet/mega/mega-license.svg' );
 	background-position: right center;
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: auto; */
+	border-radius: 16px;
+	background-color: var(--Base-base-02);
+}
+
+.legal-billet-mega .legal-license::before {
+	background-color: var(--primary-blue-Blue-80);
+	border-radius: 50%;
 }
 
 /* Typography */
@@ -421,45 +349,30 @@
 }
 
 .legal-billet-mega .mega-about-afillate {
-	/* font-family: "Source Sans Pro"; */
 	font-weight: 500;
-	/* text-transform: uppercase; */
 	text-decoration: none;
 	text-align: center;
 	color: var(--Base-base-01);
 }
 
 .legal-billet-mega .mega-about-review {
-	/* font-family: "Source Sans Pro"; */
 	font-weight: 400;
 	color: var( --Base-base-09 );
-/* 	text-decoration: none;
-	text-transform: uppercase; */
 }
 
-/* .legal-billet-mega .mega-content-title, */
-
 .legal-billet-mega .content-title-link {
-	/* font-family: "Source Sans Pro"; */
-	/* font-size: 28px;
-	font-weight: 700;
-	line-height: 33.6px; */
 	color: var( --Base-base-09 );
 	text-decoration: none;
 }
 
 .legal-billet-mega .mega-about-name {
-	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
 	font-weight: 700;
-	/* letter-spacing: 2px; */
 	line-height: 24px;
 	color: var( --Base-base-09 );
-	/* text-transform: uppercase; */
 }
 
 .legal-billet-mega .mega-about-post {
-	/* font-family: "Source Sans Pro"; */
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 20px;
@@ -467,7 +380,6 @@
 }
 
 .legal-billet-mega .mega-about-prefix {
-	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
 	font-weight: 600;
 	letter-spacing: normal;
@@ -475,14 +387,30 @@
 	color: rgba(10, 10, 10, 0.85);
 }
 
-.legal-billet-mega.legal-horizontal .billet-mega-content p {
+/* .legal-billet-mega.legal-horizontal .billet-mega-content p {
 	text-align: center;
+} */
+
+.legal-billet-mega .legal-license::before {
+	content: '\F10D';
+	font-family: var(--legal-font-icons);
+    line-height: 12px;
+    font-size: 12px;
+	font-weight: 600;
+	color: var( --Base-base-01 );
 }
 
 .legal-billet-mega.legal-horizontal .billet-mega-content a {
-	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
-	font-weight: 700;
-	line-height: 20.8px;
-	color: rgb(12, 11, 45);
+	font-weight: 500;
+	line-height: 22px;
+	color: var( --Base-base-09 );
+}
+
+.legal-billet-mega.legal-horizontal .billet-mega-content a:hover {
+	text-shadow: 0 0 0.6px var(--Base-base-09);
+}
+
+.legal-billet-mega.legal-horizontal li {
+	line-height: 26px;
 }
