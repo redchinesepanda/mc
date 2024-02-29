@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+    'template-part' => 'part-billet-main-new.php',
+
+    'args' => $args,
+] );
+
+?>
 <div class="billet-item">
     <div id="<?php echo $args['selector']; ?>" class="billet">
         <div class="billet-center billet-main">
