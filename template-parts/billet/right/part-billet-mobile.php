@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template-part' => 'part-billet-mobile.php',
+// LegalDebug::debug( [
+//     'template-part' => 'part-billet-mobile.php',
 
-    'args' => $args,
-] ); 
+//     'args' => $args,
+// ] ); 
 
 ?>
 <div class="bonus-mobile">
