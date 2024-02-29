@@ -83,6 +83,12 @@ class TemplateMain
     {
         if ( self::check_new() )
         {
+            LegalDebug::debug( [
+                'TemplateMain' => 'dequeue_style',
+
+                'DEQUEUE' => self::DEQUEUE,
+            ] );
+            
             ToolEnqueue::dequeue_style( self::DEQUEUE );
         }
     }
