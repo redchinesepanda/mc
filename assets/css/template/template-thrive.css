@@ -1,5 +1,22 @@
 /* For separate Thrive Style */
 
+/* Display */
+
+body
+{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.legal-section-content
+{
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 /* Position */
 
 .tcb-post-content .emoji {
