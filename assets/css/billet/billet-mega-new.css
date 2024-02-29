@@ -391,6 +391,11 @@
 	text-align: center;
 } */
 
+.legal-billet-mega .legal-license {
+	font-size: 13px;
+	line-height: 26px;
+}
+
 .legal-billet-mega .legal-license::before {
 	content: '\F10D';
 	font-family: var(--legal-font-icons);

@@ -108,8 +108,7 @@
         line-height: 24px;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
-    {
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ) {
         font-size: 16px;
         line-height: 26px;
     }
