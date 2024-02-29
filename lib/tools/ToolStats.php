@@ -6,7 +6,7 @@ class ToolStats
 	{
 		$handler = new self();
 
-		add_action( 'af_link_before_redirect', [ $handler, 'af_redirect' ], 10, 3 );
+		// add_action( 'af_link_before_redirect', [ $handler, 'af_redirect' ], 10, 3 );
 	}
 
 	public static function check()

@@ -22,7 +22,7 @@ require_once( 'ToolPrint.php' );
 
 require_once( 'ToolSitemap.php' );
 
-require_once( 'ToolStats.php' );
+// require_once( 'ToolStats.php' );
 
 require_once( 'ToolTinyMCE.php' );
 
@@ -56,7 +56,7 @@ class ToolsMain
         
         ToolSitemap::register();
 
-        ToolStats::register();
+        // ToolStats::register();
 
         ToolTinyMCE::register();
 
