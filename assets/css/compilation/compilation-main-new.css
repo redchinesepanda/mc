@@ -35,8 +35,8 @@
 }
 
 .legal-compilation .compilation-date {
-    padding: 4px 18px;
-    margin-bottom: 24px;
+    padding: 8px 18px;
+    margin-bottom: 28px;
 }
 
 .compilation-link {
@@ -48,11 +48,6 @@
 .legal-compilation .compilation-date {
     width: fit-content;
 }
-
-/* .tcb-post-content .compilation-link {
-    width: 100%;
-    box-sizing: border-box;
-} */
 
 .tcb-post-content .compilation-link::after {
     width: 46px;

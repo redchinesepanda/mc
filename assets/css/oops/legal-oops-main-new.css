@@ -44,7 +44,7 @@
 
 .legal-oops .oops-item {
 	display: flex;
-	column-gap: 32px;
+	/* column-gap: 32px; */
 	align-items: center;
 	justify-content: space-between;
 }
@@ -118,7 +118,8 @@
 }
 
 .legal-oops .item-bonus-wrapper {
-	flex-basis: 20%;
+	/* flex-basis: 20%; */
+	flex-basis: calc(100% / 3);
 }
 
 .legal-oops .item-button {
