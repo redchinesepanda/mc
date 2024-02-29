@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template-part' => 'part-billet-main-new.php',
+// LegalDebug::debug( [
+//     'template-part' => 'part-billet-main-new.php',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <div class="billet-item">
