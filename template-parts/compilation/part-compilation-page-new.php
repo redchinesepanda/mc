@@ -11,7 +11,7 @@
 			<?php echo ReviewContent::render(); ?>
 
 			<div id="theme-bottom-section" class="legal-section-author">
-				<?php echo ReviewAuthor::render(); ?>
+				<?php echo ReviewAuthor::render_block(); ?>
 			</div> 
 		</div>
 		<div class="legal-compilation-page-sidebar"></div>

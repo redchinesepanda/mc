@@ -256,19 +256,40 @@ class ReviewAuthor
 
     public static function render()
     {
-        if ( !ReviewMain::check() )
-        {
-            return '';
-        }
-        
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return self::render_section();
     }
+
+    public static function render_section()
+    {
+        if ( !TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+        }
+    }
+
+    public static function render_block()
+    {
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+        }
+    }
+
+    // public static function render()
+    // {
+    //     if ( !ReviewMain::check() )
+    //     {
+    //         return '';
+    //     }
+        
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
 
     public static function render_style()
     {
