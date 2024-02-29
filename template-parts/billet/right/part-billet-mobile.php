@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+    'template-part' => 'part-billet-mobile.php',
+
+    'args' => $args,
+] );
+
+?>
 <div class="bonus-mobile">
     <?php if ( !empty( $args['mobile']['iphone']['href'] ) ) : ?>
         <a class="bonus-mobile-item legal-iphone" href="<?php echo $args['mobile']['iphone']['href']; ?>" rel="nofollow"></a>
