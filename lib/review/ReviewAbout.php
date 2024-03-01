@@ -39,14 +39,11 @@ class ReviewAbout
 
     public static function register_inline_style()
     {
-        if ( !TemplateMain::check_new() )
+        if ( self::check() )
         {
-            if ( self::check() )
-            {
-                ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
-    
-                ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
-            }
+            ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
+
+            ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
         }
     }
 
@@ -101,6 +98,11 @@ class ReviewAbout
 
     public static function inline_style_highlight()
     {
+        if ( !TemplateMain::check_new() )
+        {
+            return '';
+        }
+
         if ( !self::check() ) {
             return '';
         }
@@ -127,9 +129,12 @@ class ReviewAbout
 
 		$style_item = self::get( [] );
 
-        if ( !empty( $style_item[ 'background' ] ) )
+        if ( !TemplateMain::check_new() )
         {
-            $style[] = '.review-about-wrapper:not( .legal-mode-mini ), .review-about.legal-mode-mini { background-color: ' . $style_item[ 'background' ] .'; }';
+            if ( !empty( $style_item[ 'background' ] ) )
+            {
+                $style[] = '.review-about-wrapper:not( .legal-mode-mini ), .review-about.legal-mode-mini { background-color: ' . $style_item[ 'background' ] .'; }';
+            }
         }
 
         if ( !empty( $style_item[ 'logo' ] ) )

@@ -63,7 +63,7 @@ class BilletBonus
             }
         }
 
-        return null;
+        return [];
     }
 
     public static function get_bonus_default()
@@ -103,7 +103,7 @@ class BilletBonus
             ];
         }
 
-        return null;
+        return [];
     }
 
     const LOCALE_BONUS = [
@@ -172,7 +172,7 @@ class BilletBonus
 
         if ( !$enabled )
         {
-            return null;
+            return [];
         }
 
         $bonus_data = self::get_bonus_data( $id, $filter );
