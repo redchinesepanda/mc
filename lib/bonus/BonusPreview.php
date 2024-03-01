@@ -15,11 +15,32 @@ class BonusPreview
             'ver'=> '1.1.2',
         ],
     ];
+
+	const CSS_NEW = [
+        'legal-bonus-preview-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-preview-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
 	
-	public static function register_style()
+/* 	public static function register_style()
     {
 		ReviewMain::register_style( self::CSS );
     }
+ */
+
+	public static function register_style()
+	{
+		if ( TemplateMain::check_code() )
+		{
+			ToolEnqueue::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
+	}
 
 	public static function register_functions()
     {
