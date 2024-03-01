@@ -39,10 +39,14 @@ class ReviewAbout
 
     public static function register_inline_style()
     {
-        if ( self::check() ) {
-            ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
-
-            ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
+        if ( !TemplateMain::check_new() )
+        {
+            if ( self::check() )
+            {
+                ToolEnqueue::register_inline_style( 'review-about', self::inline_style_about() );
+    
+                ToolEnqueue::register_inline_style( 'review-highlight', self::inline_style_highlight() );
+            }
         }
     }
 
