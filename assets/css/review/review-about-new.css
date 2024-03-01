@@ -164,11 +164,6 @@
         max-width: var( --base-width-desktop );
     }
 
-   /*  .review-about .about-right .review-bonus-title, 
-    .legal-review-page-sidebar .about-right .review-bonus-title {
-        min-height: calc(162px - 18px);
-    } */
-
     .review-about .about-center {
         width: calc( 100% / 3 * 2 - 24px );
     }
@@ -384,7 +379,7 @@
 }
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
-    background-color: var(--Base-base-02) !important;  /* временный импортант из-за инлайновых стилей */
+    background-color: var(--Base-base-02);
     border-bottom: 2px solid var(--Base-base-09); 
 }
 

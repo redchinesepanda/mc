@@ -30,6 +30,8 @@ class BilletMain
         'spoiler' => 'billet-spoiler',
 
         'bonus' => 'billet-bonus',
+
+        'bonus-new' => 'billet-bonus-new',
     ];
 
 	const TEXT = [
@@ -94,7 +96,7 @@ class BilletMain
 	public static function register_style( $styles = [] )
     {
         // if ( self::check() )
-        
+
         if ( CompilationTabs::check_contains_tabs() )
         {
             
@@ -566,6 +568,8 @@ class BilletMain
         self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-style.php',
 
         self::HANDLE[ 'bonus' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus.php',
+
+        self::HANDLE[ 'bonus-new' ] => LegalMain::LEGAL_PATH . '/template-parts/billet/part-billet-item-bonus-new.php',
     ];
 
     public static function render_billet( $args = [] )
@@ -585,7 +589,12 @@ class BilletMain
 
     public static function render_bonus( $args = [] )
     {
-		return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], $args );
+        if ( TemplateMain::check_new() )
+        {
+            return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus-new' ] ], $args );
+        }
+		
+        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'bonus' ] ], $args );
     }
 
     public static function render_main( $template, $args )
