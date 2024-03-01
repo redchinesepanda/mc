@@ -44,7 +44,10 @@ class ReviewBonus
 
     public static function register_inline_style()
     {
-		ReviewMain::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
+		if ( !TemplateMain::check_new() )
+		{
+			ReviewMain::register_inline_style( self::BONUS_CLASS[ 'bonus' ], self::inline_style() );
+		}
     }
 
 	public static function register_functions()
