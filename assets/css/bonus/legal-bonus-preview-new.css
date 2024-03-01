@@ -54,6 +54,7 @@
 .legal-bonus-list .list-item-about {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 /* 	gap: 20px 10px; */
 	/* align-items: center; */
 	/* align-content: flex-start; */
@@ -159,7 +160,8 @@
 
 .legal-bonus-list .item-about-size {
 /* 	flex-basis: calc( 30% - 10px ); */
-	flex-grow: 1;
+	/* flex-grow: 1; */
+	flex-basis: 134px;
 }
 
 .legal-bonus-list .item-about-get {
