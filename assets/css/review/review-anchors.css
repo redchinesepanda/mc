@@ -91,12 +91,14 @@
     display: flex;
     column-gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .review-group .swiper:not( .swiper-initialized ) .swiper-wrapper {
     display: flex;
     column-gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Anchors Position */
