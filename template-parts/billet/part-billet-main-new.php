@@ -1,12 +1,3 @@
-<?php
-
-// LegalDebug::debug( [
-//     'template-part' => 'part-billet-main-new.php',
-
-//     'args' => $args,
-// ] );
-
-?>
 <div class="billet-item">
     <div id="<?php echo $args['selector']; ?>" class="billet">
         <div class="billet-center billet-main">
@@ -21,5 +12,7 @@
         </div>
     </div>
     <?php BilletSpoiler::render( $args ); ?>
-    <div class="billet-footer"><?php echo $args[ 'bonus' ][ 'description-full' ]; ?></div>
+    <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
+        <div class="billet-footer"><?php echo $args[ 'bonus' ][ 'description-full' ]; ?></div>
+    <?php endif; ?>
 </div>
