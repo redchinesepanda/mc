@@ -95,6 +95,11 @@
 	position: relative;
 }
 
+.legal-bonus-list .bonus-list-item:hover {
+	margin-top: -4px;
+	transition: 0.2s;
+}
+
 .legal-bonus-list .bonus-list-title {
 	margin-bottom: 0px;
 }
