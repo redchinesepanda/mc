@@ -226,7 +226,7 @@
 .legal-bonus-list .item-logo {
 	border: 1px solid var(--Base-base-09);
 	/* border-radius: 50% */
-	border-radius: 12.8px;
+	border-radius: 8px;
 }
 
 /* .legal-bonus-list .about-get-button {
@@ -303,7 +303,7 @@
 
 .legal-bonus-list .item-about-size {
 	font-weight: 600;
-	/* text-align: right; */
+	text-align: right;
 }
 
 .legal-bonus-list .about-get-button {

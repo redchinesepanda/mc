@@ -1,9 +1,24 @@
+@media screen and ( max-width: 767px ) {
+	/* Width and Height */
+
+	/* .legal-sitemap-item {
+		width: calc( 100% - 40px );
+	} */
+
+	/* Position */
+
+	.legal-sitemap-item {
+		margin-bottom: 28px;
+	}
+}
+
 @media screen and ( min-width: 768px ) {
 	/* Display */
 
 	.legal-column-2 {
 		columns: 2;
-		gap: 20px;
+		/* gap: 20px; */
+		column-gap: 58px;
 	}
 
 	/* Width and Height */
@@ -11,14 +26,14 @@
 	/* .legal-sitemap-item {
 		width: calc( 100% - 50px );
 	} */
-}
 
-@media screen and ( max-width: 767px ) {
-	/* Width and Height */
+	/* Position */
 
-	/* .legal-sitemap-item {
-		width: calc( 100% - 40px );
-	} */
+	.legal-sitemap-item {
+	/* 	padding: 20px; */
+		margin-bottom: 32px;
+		/* vertical-align: top; */
+	}
 }
 
 /* Display */
@@ -27,13 +42,11 @@
 	display: inline-block;
 }
 
-/* Position */
-
-.legal-sitemap-item {
-	padding: 20px;
-	margin-bottom: 20px;
-	vertical-align: top;
+.legal-sitemap-item .sitemap-item-title {
+	display: block;
 }
+
+/* Position */
 
 /* 1,3,5 */
 
@@ -52,12 +65,25 @@
 } */
 
 .legal-sitemap-item .legal-sitemap:not( .legal-override ) {
-	margin: 20px 0 0 0;
+	/* margin: 20px 0 0 0; */
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
 }
 
-.legal-sitemap-item .legal-sitemap:not( .legal-override ) li::before {
-	margin-right: 0px;
+.legal-sitemap-item .sitemap-item-title {
+	padding-top: 8px;
+	padding-bottom: 16px;
 }
+
+.legal-sitemap-item .legal-sitemap li {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+/* .legal-sitemap-item .legal-sitemap:not( .legal-override ) li::before {
+	margin-right: 0px;
+} */
 
 /* Width and Height */
 
@@ -76,19 +102,35 @@
 
 .legal-sitemap-item {
 	background-color: rgb(239, 245, 251);
-	border-radius: 20px;
+	/* border-radius: 20px; */
 }
 
-.legal-sitemap-item > ul:not( .legal-list-image ) li:before {
+/* .legal-sitemap-item > ul:not( .legal-list-image ) li:before {
     background-image: url( '../../img/tools/tool-sitemap-item.svg' );
-}
+} */
 
 /* Typography */
 
-.legal-sitemap-item .sitemap-item-title {
-	font-family: "Source Sans Pro";
-	font-size: 32px;
+.legal-sitemap-item .sitemap-item-title,
+.legal-sitemap-item .legal-sitemap li,
+.legal-sitemap-item .legal-sitemap a {
+	font-family: var( --legal-font-primary );
 	font-style: normal;
-	font-weight: 400;
-	line-height: 38.4px;
+	color: var(--Base-base-09); 
+}
+
+.legal-sitemap-item .sitemap-item-title {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 26px;
+}
+
+.legal-sitemap-item .legal-sitemap li {
+	font-size: 16px;
+	line-height: 22px;
+	list-style-type: none;
+}
+
+.legal-sitemap-item .legal-sitemap a {
+	text-decoration: none;
 }
