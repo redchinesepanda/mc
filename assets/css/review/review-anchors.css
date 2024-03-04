@@ -2,7 +2,8 @@
 {
     /* Display */
 
-    .review-anchors {
+    .review-anchors,
+    .review-anchors .swiper:not( .swiper-initialized ) .swiper-wrapper {
         row-gap: 10px;
     }
 
