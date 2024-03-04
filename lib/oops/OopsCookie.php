@@ -104,11 +104,29 @@ class OopsCookie
 
 	public static function get()
     {
-        $page = get_page_by_path( '/privacy-policy/' );
+        $href = '/privacy-policy/';
 
-        $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+        if ( $page = get_page_by_path( '/privacy-policy/' ) )
+        {
+            if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
+            {
+                $href = get_page_link( $translated_id );
+            }
+        }
 
-        $href = get_page_link( $translated_id );
+        // $page = get_page_by_path( '/privacy-policy/' );
+
+        // $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type );
+
+        // $href = get_page_link( $translated_id );
+
+        // LegalDebug::debug( [
+        //     'OopsCookie' => 'get',
+
+        //     'translated_id' => $translated_id,
+
+        //     'value' => $translated_id ? 'yes' : 'no',
+        // ] );
 
         return  [
             'title' => __( BaseMain::TEXT[ 'сookies' ], ToolLoco::TEXTDOMAIN ),
@@ -131,18 +149,23 @@ class OopsCookie
 
     public static function render()
     {
-        if ( !self::check() ) {
-            return '';
-        }
-
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'legal-oops-cookie' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'legal-oops-cookie' ], self::get() );
     }
+
+    // public static function render()
+    // {
+    //     if ( !self::check() ) {
+    //         return '';
+    //     }
+
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'legal-oops-cookie' ], false, self::get() );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
 }
 
 ?>
