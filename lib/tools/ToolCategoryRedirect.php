@@ -30,7 +30,7 @@ class ToolCategoryRedirect
 	{
 		$page_id = self::get_redirect_page_id( $term_id );
 
-		if ( (int) $page_id && !is_editor_page_raw() )
+		if ( (int) $page_id && !id_admin() )
 		{
 			$link = get_permalink( $page_id );
 		}
