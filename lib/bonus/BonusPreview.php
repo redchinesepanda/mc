@@ -710,24 +710,35 @@ class BonusPreview
 	}
 
 	const TEMPLATE = [
-        'legal-bonus-preview' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-preview.php',
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-preview.php',
+
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-preview-new.php',
     ];
 
     public static function render( $args )
-    {
-		if ( !ReviewMain::check() )
-        {
-            return '';
-        }
+	{
+		if ( TemplateMain::check_new() )
+		{
+			return LegalComponents::render_main( self::TEMPLATE[ 'new' ], $args );
+		}
 
-        ob_start();
+		return LegalComponents::render_main( self::TEMPLATE[ 'main' ], $args );
+	}
+    // public static function render( $args )
+    // {
+	// 	if ( !ReviewMain::check() )
+    //     {
+    //         return '';
+    //     }
 
-        load_template( self::TEMPLATE[ 'legal-bonus-preview' ], false, $args );
+    //     ob_start();
 
-        $output = ob_get_clean();
+    //     load_template( self::TEMPLATE[ 'main' ], false, $args );
 
-        return $output;
-    }
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
 }
 
 ?>
