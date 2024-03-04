@@ -87,6 +87,20 @@
     justify-content: center;
 }
 
+.review-anchors .swiper:not( .swiper-initialized ) .swiper-wrapper {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review-group .swiper:not( .swiper-initialized ) .swiper-wrapper {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Anchors Position */
+
 .review-anchors {
     margin: 0px auto;
 }
