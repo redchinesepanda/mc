@@ -1,12 +1,3 @@
-@media screen and ( min-width: 768px )
-{
-    /* Group Position */
-
-    .review-group {
-        padding: 20px 0px 5px 0px;
-    }
-}
-
 @media screen and ( max-width: 767px )
 {
     /* Group Position */
@@ -16,12 +7,34 @@
     }
 }
 
+@media screen and ( min-width: 768px )
+{
+    /* Group Width and Height */
+
+    .review-group {
+        max-width: 1080px;
+    }
+
+    /* Group Position */
+
+    .review-group {
+        padding: 20px 0px 5px 0px;
+    }
+}
+
 /* Group Display */
 
 .review-group {
     display: flex;
     flex-wrap: wrap;
     column-gap: 46px;
+    justify-content: center;
+}
+
+.review-group .swiper:not( .swiper-initialized ) .swiper-wrapper {
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
