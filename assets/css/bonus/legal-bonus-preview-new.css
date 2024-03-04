@@ -301,6 +301,10 @@
 	text-decoration: none;
 }
 
+.legal-bonus-list .item-about-title .item-image-link:hover {
+	text-shadow: 0 0 0.5px var(--Base-base-09);
+}
+
 .legal-bonus-list .item-about-size {
 	font-weight: 600;
 	text-align: right;

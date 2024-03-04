@@ -131,6 +131,10 @@
 	list-style-type: none;
 }
 
+.legal-sitemap-item .legal-sitemap li a:hover {
+	text-shadow: 0 0 0.5px var(--Base-base-09);
+}
+
 .legal-sitemap-item .legal-sitemap a {
 	text-decoration: none;
 }
