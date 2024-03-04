@@ -148,11 +148,16 @@
 	min-height: 400px;
 } */
 
+.legal-bonus-list .item-image-link {
+	height: 155px;
+}
+
 .legal-bonus-list .item-image {
 	/* min-height: 190px; */
 	/* width: 260px; */
-	height: 155px;
+	height: 100%;
 	width: 100%;
+	object-fit: cover;
 }
 
 .legal-bonus-list .list-item-about {
