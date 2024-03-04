@@ -25,6 +25,10 @@ body
 
 /* Width and Height */
 
+.legal-section-content {
+	min-height: 200px;
+}
+
 .tcb-post-content .emoji {
 	width: 14px;
 	max-height: 14px;
