@@ -40,6 +40,8 @@ require_once( 'ToolContent.php' );
 
 require_once( 'ToolSitemapXML.php' );
 
+require_once( 'ToolCategoryRedirect.php' );
+
 class ToolsMain
 {
     public static function register()
@@ -67,6 +69,8 @@ class ToolsMain
         ToolContent::register();
 
         ToolSitemapXML::register();
+
+        ToolCategoryRedirect::register();
     }
 }
 
