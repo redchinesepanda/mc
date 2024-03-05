@@ -16,6 +16,41 @@ class YoastMain
         add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
 
         // add_filter( 'wpseo_xml_sitemap_post_url', [ $handler, 'sitemap_post_url' ], 10, 2 );
+
+        \add_filter( 'wpseo_indexable_forced_included_post_types', [ $handler, 'include_post_types' ] );
+
+        \add_action( 'init', [ $handler, 'init' ] );
+
+        \add_filter( 'wpseo_force_creating_and_using_attachment_indexables', '__return_true' );
+    }
+
+    public static function include_post_types( $post_types )
+    {
+        $post_types[] = 'attachment';
+
+        return $post_types;
+    }
+
+    public static function init( $post_types )
+    {
+        $handler = new self();
+
+        \add_filter( 'wpseo_indexable_excluded_post_types', [ $handler, 'exclude_post_types' ] );
+    }
+    
+    public static function exclude_post_types( $post_types )
+    {
+        $filtered_post_types = [];
+
+        foreach ( $post_types as $post_type )
+        {
+           if ( $post_type !== 'attachment' )
+           {
+              $filtered_post_types[] = $post_type;
+           }
+        }
+
+        return $filtered_post_types;
     }
 
     public static function max_entries_per_sitemap()
