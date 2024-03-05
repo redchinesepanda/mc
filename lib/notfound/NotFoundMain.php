@@ -10,10 +10,26 @@ class NotFoundMain
 		],
     ];
 
+	const CSS_NEW = [
+        'legal-notfound' => [
+			'path' =>  LegalMain::LEGAL_URL . '/assets/css/notfound/notfound-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
     public static function register_style()
     {
-		if ( self::check() ) {
-			ToolEnqueue::register_style( self::CSS );
+		if ( self::check() )
+		{
+			if ( TemplateMain::check_new() )
+			{
+				ToolEnqueue::register_style( self::CSS_NEW );
+			}
+			else
+			{
+				ToolEnqueue::register_style( self::CSS );
+			}
 		}
     }
 
@@ -62,8 +78,96 @@ class NotFoundMain
 		return implode( ' ', $style );
 	}
 
+	public static function get_cross_args()
+	{
+		return [
+			'posts_per_page' => 3,
+            
+            'post_type' => 'page',
+
+			'suppress_filters' => 0,
+
+			'tax_query' => [
+				[
+					'taxonomy' => 'page_type',
+
+					'field' => 'slug',
+
+					'terms' => [
+						'legal-cross',
+
+						'legal-cross-casino',
+					],
+
+					'operator' => 'IN',
+				]
+			],
+
+			'orderby' => [
+				'menu_order' => 'DESC',
+
+				'modified' => 'DESC',
+
+				'title' => 'ASC',
+			],
+        ];
+	}
+
+	public static function get_label( $post )
+	{
+		if ( has_term( 'legal-cross-casino', 'page_type', $post ) )
+		{
+			return __( 'Top Casino', ToolLoco::TEXTDOMAIN );
+	   	}
+
+		return __( 'Top Betting', ToolLoco::TEXTDOMAIN );
+	}
+
+	public static function parse_posts( $posts )
+	{
+		$result[ 'items' ][] = [
+			'href' => LegalBreadcrumbsMain::get_home_url(),
+
+			'label' => __( 'Home page', ToolLoco::TEXTDOMAIN ),
+		];
+		
+		foreach ( $posts as $post )
+		{
+			$result[ 'items' ][] = [
+				'href' => get_post_permalink( $post->ID ),
+
+				'label' => self::get_label( $post ),
+			];
+		}
+
+		return $result;
+	}
+	public static function get_cross()
+	{
+		$args = self::get_cross_args();
+
+		$posts = get_posts( $args );
+
+		return self::parse_posts( $posts );
+	}
+
 	public static function get()
 	{
+		$labels = [
+			'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
+			
+			'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
+		];
+
+		if ( TemplateMain::check_new() )
+		{
+			return array_merge(
+				$labels,
+	
+				self::get_cross()
+			);
+		}
+		
 		$languages = WPMLLangSwitcher::get_not_found();
 
 		// LegalDebug::debug( [
@@ -72,12 +176,8 @@ class NotFoundMain
 		// 	'languages' => $languages,
 		// ] );
 
-		return  array_merge(
-			[
-				'title' => __( BaseMain::TEXT[ 'oops-page-not-found' ], ToolLoco::TEXTDOMAIN ),
-				
-				'description' => __( BaseMain::TEXT[ 'you-must-have' ], ToolLoco::TEXTDOMAIN ),
-			],
+		return array_merge(
+			$labels,
 
 			$languages
 		);
@@ -85,18 +185,19 @@ class NotFoundMain
 
 	const TEMPLATE = [
         'notfound' => LegalMain::LEGAL_PATH . '/template-parts/notfound/part-notfound-main.php',
-    ];
+
+        'notfound-new' => LegalMain::LEGAL_PATH . '/template-parts/notfound/part-notfound-main-new.php',
+    ]; 
 
     public static function render()
-    {
-        ob_start();
+	{
+		if ( TemplateMain::check_new() )
+		{
+			return LegalComponents::render_main( self::TEMPLATE[ 'notfound-new' ], self::get() );
+		}
 
-        load_template( self::TEMPLATE[ 'notfound' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
-    }
+		return LegalComponents::render_main( self::TEMPLATE[ 'notfound' ], self::get() );
+	}
 }
 
 ?>
