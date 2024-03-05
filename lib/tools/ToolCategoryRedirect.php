@@ -16,9 +16,9 @@ class ToolCategoryRedirect
 
 		add_action( 'create_category', [ $handler, 'save_meta' ] );
 
-		add_action( 'category_edit_form_fields', [ $handler, 'echo_field_redirect' ] );
+		add_action( 'category_edit_form_fields', [ $handler, 'edit_field_redirect' ] );
 
-		add_action( 'category_add_form_fields', [ $handler, 'echo_field_redirect' ] );
+		add_action( 'category_add_form_fields', [ $handler, 'add_field_redirect' ] );
 	}
 
 	public static function modify_term_link( $link, $term )
@@ -28,11 +28,11 @@ class ToolCategoryRedirect
 
 	public static function get_link( $term_id, $default_link = '' )
 	{
-		$page_id = self::get_redirect_page_id( $term_id );
+		$redirect_page_id = self::get_redirect_page_id( $term_id );
 
-		if ( (int) $page_id && !is_admin() )
+		if ( (int) $redirect_page_id && !is_admin() )
 		{
-			$link = get_permalink( $page_id );
+			$link = get_permalink( $redirect_page_id );
 		}
 
 		return empty( $link ) ? $default_link : $link;
@@ -73,15 +73,29 @@ class ToolCategoryRedirect
 		update_term_meta( $term_id, $meta_field, $meta_value );
 	}
 
-	public static function get_options()
+	public static function get_selected( $page_id, $redirect_page_id )
+	{
+		return $page_id === (int) $redirect_page_id ? 'selected' : '';
+	}
+
+	public static function get_options( $term_id = 0 )
 	{
 		$options = [
 			[
 				'id' => 0,
 	
-				'title' => __( 'None', ToolLoco::TEXTDOMAIN ),
+				'title' => __( ToolsMain::TEXT[ 'none' ], ToolLoco::TEXTDOMAIN ),
+
+				'selected' => '',
 			],
 		];
+
+		$redirect_page_id = 0;
+
+		if ( !empty( $term_id ) )
+		{
+			$redirect_page_id = self::get_redirect_page_id( $term_id );
+		}
 
 		foreach ( get_pages() as $page )
 		{
@@ -89,39 +103,51 @@ class ToolCategoryRedirect
 				'id' => $page->ID,
 	
 				'title' => get_the_title( $page->ID ),
+
+				'selected' => self::get_selected( $page->ID, $redirect_page_id )
 			];
 		}
 		
 		return $options;
 	}
 
-	public static function get()
+	public static function get( $term_id = 0 )
 	{
 		return [
 			'field' => self::META_FIELD[ 'redirect' ],
 
-			'label' => __( 'Redirect Category to a Page', ToolLoco::TEXTDOMAIN ),
+			'label' => __( ToolsMain::TEXT[ 'redirect' ], ToolLoco::TEXTDOMAIN ),
 
-			'options' => self::get_options(),
+			'options' => self::get_options( $term_id ),
 
-			'description' => __( 'If set you can replace the WordPress category page with your own highly optimised landing page', ToolLoco::TEXTDOMAIN ),
+			'description' => __( ToolsMain::TEXT[ 'if-set-you-can' ], ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
 	const TEMPATE = [
-		LegalMain::LEGAL_PATH . '/template-parts/admin/part-notice.php',
-
-		'redirect' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-category-redirect.php',
+		'redirect-add' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-category-redirect-add.php',
+		
+		'redirect-edit' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-category-redirect-edit.php',
 	];
 	
-	public static function render()
+	public static function render_add()
     {
-        return LegalComponents::render_main( self::TEMPATE[ 'redirect' ], self::get() );
+        return LegalComponents::render_main( self::TEMPATE[ 'redirect-add' ], self::get() );
     }
 
-	public static function echo_field_redirect()
+	public static function render_edit( $term_id = 0 )
+    {
+        return LegalComponents::render_main( self::TEMPATE[ 'redirect-edit' ], self::get( $term_id ) );
+    }
+
+	public static function add_field_redirect()
 	{
-		echo self::render();
+		echo self::render_add();
+	}
+
+	public static function edit_field_redirect( $term )
+	{
+		echo self::render_edit( $term->term_id );
 	}
 }
 

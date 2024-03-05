@@ -44,6 +44,14 @@ require_once( 'ToolCategoryRedirect.php' );
 
 class ToolsMain
 {
+    const TEXT = [
+        'none' => 'None',
+
+        'redirect' => 'Redirect Category to a Page',
+
+        'if-set-you-can' => 'If set you can replace the WordPress category page with your own highly optimised landing page',
+    ]; 
+
     public static function register()
     {
         ToolDisable::register();

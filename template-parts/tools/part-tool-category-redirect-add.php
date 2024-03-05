@@ -1,4 +1,4 @@
-<div class="form-field">
+<div class="form-field mc-category-redirect">
 	<label for="<?php echo $args[ 'field' ]; ?>"><?php echo $args[ 'label' ]; ?></label>
 	<select name="<?php echo $args[ 'field' ]; ?>">
 		<?php foreach ( $args[ 'options' ] as $option ): ?>
