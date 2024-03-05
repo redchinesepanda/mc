@@ -32,7 +32,7 @@ class ReviewOffers
     {
 		// if ( self::check_has_offers() )
 		
-		if ( LegalComponents::check_shortcode( self::SHORTCODE[ 'offers' ] ) )
+		if ( LegalComponents::check_contains( self::SHORTCODE[ 'offers' ] ) )
 		{
 			$handler = new self();
 	
