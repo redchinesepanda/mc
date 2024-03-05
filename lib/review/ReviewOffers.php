@@ -30,7 +30,9 @@ class ReviewOffers
 
 	public static function register()
     {
-		if ( self::check_has_offers() )
+		// if ( self::check_has_offers() )
+		
+		if ( LegalComponents::check_shortcode( self::SHORTCODE[ 'offers' ] ) )
 		{
 			$handler = new self();
 	
