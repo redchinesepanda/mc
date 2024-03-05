@@ -13,6 +13,12 @@
 
 	/* Position */
 
+	.legal-notfound {
+		padding-right: 16px;
+		padding-bottom: calc( 40px + 32px );
+		padding-left: 16px;
+	}
+
 	.legal-notfound .notfound-title,
 	.legal-notfound .menu-notfound {
 		padding-top: 28px;
@@ -55,6 +61,16 @@
 	}
 } */
 
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+	/* Position */
+
+	.legal-notfound {
+		padding-left: 32px;
+    	padding-right: 32px;
+	}
+}
+
 @media screen and ( min-width: 768px ) {
 
 	/* Width and Height */
@@ -70,6 +86,10 @@
 	}
 
 	/* Position */
+
+	.legal-notfound {
+		padding-bottom: calc( 40px + 64px );
+	}
 
 	.legal-notfound .menu-notfound {
 		padding-top: 58px;
@@ -139,9 +159,7 @@
 /* Position */
 
 .legal-notfound {
-	margin-bottom: 40px;
 	padding-top: 50px;
-	padding-bottom: 0;
 }
 
 .legal-notfound .notfound-title,
@@ -165,6 +183,10 @@
 }
 
 /* Background */
+
+.legal-notfound {
+	background-color: var(--Base-base-02);
+}
 
 .legal-notfound .svg-oops-notfound {
 	background-image: url('../../img/notfound/notfound-new.svg');

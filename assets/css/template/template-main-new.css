@@ -1,8 +1,8 @@
-@media screen and ( max-width: 959px )
+@media screen and ( max-width: 767px )
 {
 	/* Position */
 
-	.legal-section-content {
+	:not( .error404 ) > .legal-section-content {
 		/* padding: 16px; */
 		padding-right: 16px;
 		padding-bottom: 32px;
@@ -10,7 +10,14 @@
 	}
 }
 
-@media screen and ( min-width: 960px )
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+	:not( .error404 ) > .legal-section-content {
+		padding-left: 32px;
+    	padding-right: 32px;
+	}
+}
+
+@media screen and ( min-width: 768px )
 {
 	/* Display */
 
@@ -24,16 +31,21 @@
 	.legal-section-content
 	{
 		margin: 0px auto;
+		
+	}
+
+	:not( .error404 ) > .legal-section-content
+	{
 		padding-bottom: 64px;
 		
 	}
 
 	/* Width and Height */
 
-	.legal-section-content
+	:not( .error404 ) > .legal-section-content
 	{
-		width: var( --base-width-desktop );
-	}
+		max-width: var( --base-width-desktop );
+	} 
 }
 
 /* Position */
