@@ -30,9 +30,7 @@ class ReviewOffers
 
 	public static function register()
     {
-		// if ( self::check_has_offers() )
-		
-		if ( LegalComponents::check_contains( self::SHORTCODE[ 'offers' ] ) )
+		if ( self::check_has_offers() )
 		{
 			$handler = new self();
 	
@@ -44,9 +42,19 @@ class ReviewOffers
 		}
     }
 
-	public static function check_has_offers()
+	public static function check_contains()
+    {
+        return LegalComponents::check_contains( self::SHORTCODE[ 'offers' ] );
+    }
+
+	public static function check_has_term()
     {
         return has_term( '', self::TAXONOMY[ 'offer' ] );
+    }
+
+	public static function check_has_offers()
+    {
+        return self::check_has_term() || self::check_contains();
     }
 
 	const FIELD = [
