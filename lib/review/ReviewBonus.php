@@ -17,13 +17,13 @@ class ReviewBonus
     ];
 
 	const CSS_NEW = [
-        'review-bonus' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
+        'review-bonus-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus-new.css',
 
 			'ver' => '1.1.9',
 		],
 
-        'review-billet' => [
+        'review-billet-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-billet-new.css',
 
             'ver' => '1.0.0',

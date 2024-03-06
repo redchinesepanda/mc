@@ -44,7 +44,7 @@
 		margin-left: auto;
 	}
 
-	.legal-billet-mega h3,
+	.legal-billet-mega h3:not( .legal-bonus h3 ),
 	.legal-billet-mega h4 {
 		padding-top: 14px;
 		padding-bottom: 24px;

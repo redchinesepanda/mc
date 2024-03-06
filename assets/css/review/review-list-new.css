@@ -150,7 +150,7 @@
 
 .bonus-content > ul:not( .legal-override ):not( .legal-highlight ):not( [style] ):last-child,
 .billet-description > ul:not( .legal-override ):not( [style] ):last-child,
-.bonus-content > ol:not( .legal-override ):last-child,
+/* .bonus-content > ol:not( .legal-override ):last-child, */
 .billet-description > ol:not( .legal-override ):last-child {
   padding-bottom: 12px;
   padding-left: 0px;
@@ -194,7 +194,7 @@
 .tcb-post-content li > br
 {
   display: block;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 /* Review Width and Height */

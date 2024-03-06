@@ -43,7 +43,7 @@
         line-height: 26px;
     }
     
-    .tcb-post-content h3 {
+    .tcb-post-content h3:not( .legal-bonus .bonus-name) {
         font-size: 20px;
         line-height: 24px;
     }
@@ -98,7 +98,7 @@
         line-height: 28px;
     }
     
-    .tcb-post-content h3 {
+    .tcb-post-content h3:not( .legal-bonus .bonus-name) {
         font-size: 22px;
         line-height: 26px;
     }
@@ -251,7 +251,7 @@
 
 .tcb-post-content h1,
 .tcb-post-content h2,
-.tcb-post-content h3,
+.tcb-post-content h3:not( .legal-bonus .bonus-name),
 .tcb-post-content h4,
 .tcb-post-content h5 {
     font-family: var( --legal-font-primary );

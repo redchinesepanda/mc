@@ -42,9 +42,9 @@
 
 	/* Display */
 
-	.legal-compilation-bonus {
+	/* .legal-compilation-bonus {
 		justify-content: space-between;
-	}
+	} */
 
 	/* Width and Height */
 
@@ -72,11 +72,11 @@
 	display: flex;
 }
 
-.legal-compilation-bonus .legal-compilation-logo {
+/* .legal-compilation-bonus .legal-compilation-logo {
 	display: flex;
 	justify-content: center;
 	column-gap: 1rem;
-}
+} */
 
 .legal-compilation-bonus .legal-logo-link {
 	display: flex;
