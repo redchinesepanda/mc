@@ -44,11 +44,18 @@ class CompilationTabsLink
 		return $dom->saveHTML( $dom );
 	}
 
+	public static function get_nodes_anchors( $dom )
+	{
+		$query = '//div[contains(concat(" ",normalize-space(@class)," ")," legal-section-anchors ")]';
+
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
 	public static function get_nodes_link( $dom )
 	{
-		// $query = '//div[contains(concat(" ",normalize-space(@class)," ")," ' . self::CLASSES[ 'tabs' ] . ' ")]/following-sibling::*[1]/self::ul';
+		// $query = '//div[contains(concat(" ",normalize-space(@class)," ")," legal-compilation ")]/following-sibling::*[1]/self::ul|//div[contains(concat(" ",normalize-space(@class)," ")," legal-tabs ")]/following-sibling::*[1]/self::ul';
 		
-		$query = '//div[contains(concat(" ",normalize-space(@class)," ")," legal-compilation ")]/following-sibling::*[1]/self::ul|//div[contains(concat(" ",normalize-space(@class)," ")," legal-tabs ")]/following-sibling::*[1]/self::ul';
+		$query = '//div[contains(concat(" ",normalize-space(@class)," ")," legal-compilation ")]/following-sibling::*[1]/self::ul|//div[contains(concat(" ",normalize-space(@class)," ")," legal-section-anchors ")]/following-sibling::*[1]/self::ul';
 
 		// LegalDebug::debug( [
 		// 	'CompilationTabsLink' => 'get_nodes_link',
@@ -103,15 +110,15 @@ class CompilationTabsLink
 
 				$item->textContent = $anchor->textContent;
 
-				// LegalDebug::debug( [
-				// 	'CompilationTabsLink' => 'modify_link',
-
-				// 	'item' => $item,
-				// ] );
+				$anchors = self::get_nodes_anchors( $dom );
 
 				try
 				{
-					$node->parentNode->replaceChild( $item, $node );
+					// $node->parentNode->replaceChild( $item, $node );
+
+					$node->parentNode->insertBefore( $item, $anchors->item( 0 ) );
+
+					$node->parentNode->removeChild( $node );
 				}
 				catch ( DOMException $e )
 				{

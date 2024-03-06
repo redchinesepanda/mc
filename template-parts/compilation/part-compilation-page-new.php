@@ -5,7 +5,7 @@
 				<?php echo ReviewGroup::render(); ?>
 			</div>
 			<div class="legal-section-anchors">
-				<?php echo ReviewAnchors::render(); ?>
+				<?php // echo ReviewAnchors::render(); ?>
 			</div>
 
 			<?php echo ReviewContent::render(); ?>
