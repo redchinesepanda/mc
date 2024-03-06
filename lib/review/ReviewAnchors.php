@@ -382,7 +382,9 @@ class ReviewAnchors
     }
 
     const TEMPLATE = [
-        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php',
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php',
+
+        'block' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors-block.php',
     ];
 
     public static function render()
@@ -397,22 +399,17 @@ class ReviewAnchors
         //     return '';
         // }
 
-        return LegalComponents::render_main( self::TEMPLATE[ 'new' ], self::get() );
+        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
 
-    public static function render_compilation()
+    public static function render_block()
     {
         if ( !ReviewMain::check() )
         {
             return '';
         }
 
-        if ( CompilationTabs::check_contains_tabs() )
-        {
-            return '';
-        }
-
-        return LegalComponents::render_main( self::TEMPLATE[ 'new' ], self::get() );
+        return LegalComponents::render_main( self::TEMPLATE[ 'block' ], self::get() );
     }
 
     // public static function render()

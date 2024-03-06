@@ -230,6 +230,8 @@ class CompilationTabs
             $output[] = self::render_tabs( $args );
         }
 
+        $output[] = ReviewAnchors::render_block();
+
         return implode( '', $output );
     }
 

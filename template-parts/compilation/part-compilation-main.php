@@ -12,6 +12,3 @@
     <?php endforeach; ?>
     <?php echo CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'bottom' ] ); ?>
 </div>
-<div class="legal-section-anchors">
-	<?php echo ReviewAnchors::render_compilation(); ?>
-</div>
