@@ -53,16 +53,20 @@ class ReviewAnchors
     ];
 
     const JS_NEW = [
-        'review-anchors-new' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
+        'legal-swiper-lib' => [
+            // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+            
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
             'ver' => '1.0.0',
         ],
 
-        'legal-swiper-new' => [
-            'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        'review-anchors-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
 
             'ver' => '1.0.0',
+
+            'deps' => 'legal-swiper-lib',
         ],
     ];
 
@@ -377,7 +381,9 @@ class ReviewAnchors
         ];
     }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php';
+    const TEMPLATE = [
+        'new' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors.php',
+    ];
 
     public static function render()
     {
@@ -385,15 +391,45 @@ class ReviewAnchors
         {
             return '';
         }
-        
-        ob_start();
 
-        load_template( self::TEMPLATE, false, self::get() );
+        // if ( CompilationTabs::check_contains_tabs() )
+        // {
+        //     return '';
+        // }
 
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'new' ], self::get() );
     }
+
+    public static function render_compilation()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        if ( CompilationTabs::check_contains_tabs() )
+        {
+            return '';
+        }
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'new' ], self::get() );
+    }
+
+    // public static function render()
+    // {
+    //     if ( !ReviewMain::check() )
+    //     {
+    //         return '';
+    //     }
+        
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'new' ], false, self::get() );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
 }
 
 ?>
