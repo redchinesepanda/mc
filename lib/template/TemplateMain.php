@@ -333,7 +333,9 @@ class TemplateMain
     {
         // return preg_replace('/\s*data-(\d|[a-z])+=\"(\d|[a-z])+\"/', '', $content);
         
-        return preg_replace('/\s*data-(.*?)=\"(.*?)\"/', '', $content);
+        // return preg_replace('/\s*data-(.*?)=\"(.*?)\"/', '', $content);
+        
+        return preg_replace( '/\sdata-(.*?)=\"(.*?)\"/', '', $content) ;
     }
 
     public static function change_inline_style( $content )
