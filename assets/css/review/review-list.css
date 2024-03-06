@@ -170,6 +170,12 @@
 	margin-bottom: -8px;
 }
 
+.tcb-post-content li > br
+{
+    display: block;
+    margin-top: 5px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content li::before {
