@@ -120,6 +120,8 @@ class ACFCompilation
 
         $choices[ 'legal-attention' ] = 'Блок Внимание';
 
+        $choices[ 'legal-tooltip' ] = 'Блок Подсказка';
+
         $field[ 'choices' ] = $choices;
 
         return $field;

@@ -1,0 +1,1 @@
+<div class="compilation-attention-tooltip"><?php echo $args[ 'label' ]; ?></div>

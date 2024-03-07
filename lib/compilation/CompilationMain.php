@@ -592,6 +592,8 @@ class CompilationMain
         self::HANDLE[ 'style' ] => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-style.php',
         
         'compilation-attention' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention.php',
+
+        'attention-tooltip' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-attention-tooltip.php',
     ];
 
     public static function prepare_compilation( $atts )
@@ -607,24 +609,24 @@ class CompilationMain
 
     public static function render_style( $id = 0 )
     {
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $id ) );
+        return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $id ) );
     }
 
     public static function render_compilation(  $id = 0  )
     {
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $id ) );
+        return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], self::get( $id ) );
     }
 
-    public static function render_main( $template, $args )
-    {
-        ob_start();
+    // public static function render_main( $template, $args )
+    // {
+    //     ob_start();
 
-        load_template( $template, false, $args );
+    //     load_template( $template, false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
     
     const POSITION = [
         'above' => 'legal-above-title',
@@ -640,9 +642,26 @@ class CompilationMain
         {
             if ( $position == $attention[ 'position' ] )
             {
-                return self::render_main( self::TEMPLATE[ self::HANDLE[ 'attention' ] ], $attention );
+                return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'attention' ] ], $attention );
             }
         }
+    }
+
+    public static function get_tooltip()
+    {
+        return [
+            'label' => __( BilletMain::TEXT[ 'how-do-we-evaluate' ], ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
+    public static function render_attention_tooltip( $attention )
+    {
+        if ( $attention[ 'type' ] != 'legal-tooltip' )
+        {
+            return '';
+        }
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'attention-tooltip' ], self::get_tooltip() );
     }
 }
 

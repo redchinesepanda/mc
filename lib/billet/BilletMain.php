@@ -45,6 +45,8 @@ class BilletMain
 
         'hide-tnc' => 'Hide T&C',
 
+        'how-do-we-evaluate' => 'How do we evaluate bookmakers?',
+
 		'last-updated' => 'Last updated',
 
 		'margin' => 'Margin',
