@@ -82,7 +82,7 @@ class BonusPreview
 	{
 		if ( self::check_contains_bonus() )
 		{
-			retur;n $content
+			return $content;
 		}
 
 		$dom = LegalDOM::get_dom( $content ); 
