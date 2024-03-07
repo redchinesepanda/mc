@@ -89,7 +89,7 @@ class BonusPreview
 			LegalDebug::debug( [
 				'BonusPreview' => 'insert_anchors',
 	
-				'class' => $child->getAttribute( 'class' ),
+				'nodeType' => $child->nodeType,
 
 				'textContent' => $child->textContent,
 			] );
