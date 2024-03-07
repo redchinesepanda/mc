@@ -99,7 +99,7 @@ class BonusPreview
 			return false;
 		}
 
-		$last = $nodes->item( $nodes->length );
+		$last = $nodes->item( $nodes->length - 1 );
 
 		LegalDebug::debug( [
 			'BonusPreview' => 'insert_anchors',
