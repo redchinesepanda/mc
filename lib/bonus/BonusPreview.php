@@ -79,29 +79,31 @@ class BonusPreview
 	{
 		// return LegalDOM::get_nodes( $dom, "//*[text()[contains(., '[legal-bonus terms')]]" );
 		
+		// return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
+		
 		return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
 	}
 
 	public static function insert_anchors( $dom )
 	{
-		LegalDebug::debug( [
-			'BonusPreview' => 'insert_anchors',
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'insert_anchors',
 
-			'saveHTML' => $dom->saveHTML( $dom ),
-		] );
+		// 	'saveHTML' => $dom->saveHTML( $dom ),
+		// ] );
 
 		$nodes = self::get_nodes_shortcode( $dom );
 
-		foreach ( $dom->childNodes as $child )
+		foreach ( $nodes as $node )
 		{
 			LegalDebug::debug( [
 				'BonusPreview' => 'insert_anchors',
 	
-				'nodeName' => $child->nodeName,
+				'nodeName' => $node->nodeName,
 
-				'nodeType' => $child->nodeType,
+				'nodeType' => $node->nodeType,
 
-				'textContent' => $child->textContent,
+				'textContent' => $node->textContent,
 			] );
 		}
 	}
