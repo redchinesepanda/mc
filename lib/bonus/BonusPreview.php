@@ -89,6 +89,8 @@ class BonusPreview
 			LegalDebug::debug( [
 				'BonusPreview' => 'insert_anchors',
 	
+				'nodeName' => $child->nodeName,
+
 				'nodeType' => $child->nodeType,
 
 				'textContent' => $child->textContent,
