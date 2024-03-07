@@ -109,7 +109,9 @@ class BonusPreview
 		// 	'last' => $last,
 		// ] );
 
-		$section = $dom->createElement( 'section' );
+		$section = $dom->createElement( 'div' );
+
+		$section->setAttribute( 'class', 'legal-section-anchors' );
 
 		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
 
@@ -119,9 +121,7 @@ class BonusPreview
 			'saveHTML' => $dom->saveHTML( $section ),
 		] );
 
-		$last->parentNode->insertBefore( $section->firstChild, $last->nextSibling);
-
-		// $dom->removeChild( $section );
+		$last->parentNode->insertBefore( $section, $last->nextSibling);
 
 		// foreach ( $nodes as $node )
 		// {
