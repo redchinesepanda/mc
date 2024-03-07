@@ -80,9 +80,23 @@ class ReviewTitle
 		add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_header_date' ] );
 	}
 
+	const PAIRS_THRIVE = [
+		'id' => 'Y',
+
+		'inline' => '1',
+	];
+
+	const SHORTCODE = [
+		// [thrv_dynamic_data_date id='Y' inline='1']
+
+		'thrive' => 'thrv_dynamic_data_date',
+	];
+
 	public static function register()
     {
 		$handler = new self();
+
+		add_shortcode( self::SHORTCODE[ 'thrive' ], [ $handler, 'prepare' ] );
 		
 		if ( self::check_contains_title_image() )
 		{
@@ -96,6 +110,19 @@ class ReviewTitle
 			add_filter( 'the_content', [ $handler, 'modify_content' ] );
 		}
     }
+	public static function prepare( $atts )
+    {
+		$atts = shortcode_atts( self::PAIRS_THRIVE, $atts, self::SHORTCODE[ 'thrive' ] );
+
+		$format_key = self::CLASSES[ 'date-year' ];
+
+		if ( $atts[ 'id' ] != $format_key )
+		{
+			$format_key = self::CLASSES[ 'date-month-year' ];
+		}
+
+		return self::format_date( self::FORMAT[ $format_key ] );
+	}
 
 	public static function check_contains_title_image()
     {
