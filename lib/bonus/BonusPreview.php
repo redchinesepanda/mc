@@ -94,9 +94,9 @@ class BonusPreview
 
 	public static function get_nodes_shortcode( $dom )
 	{
-		return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
+		// return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
 		
-		// return LegalDOM::get_nodes( $dom, "//text()[contains(., '[" . self::SHORTCODE[ 'preview' ] . "')]" );
+		return LegalDOM::get_nodes( $dom, "//text()[contains(., '[" . self::SHORTCODE[ 'preview' ] . "')]" );
 	}
 
 	public static function insert_anchors( $dom )
