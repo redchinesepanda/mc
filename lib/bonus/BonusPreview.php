@@ -101,17 +101,23 @@ class BonusPreview
 
 		$last = $nodes->item( $nodes->length - 1 );
 
-		LegalDebug::debug( [
-			'BonusPreview' => 'insert_anchors',
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'insert_anchors',
 
-			'length' => $nodes->length,
+		// 	'length' => $nodes->length,
 
-			'last' => $last,
-		] );
+		// 	'last' => $last,
+		// ] );
 
 		$section = $dom->createElement( 'section' );
 
 		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
+
+		LegalDebug::debug( [
+			'BonusPreview' => 'insert_anchors',
+
+			'section' => $section,
+		] );
 
 		$last->parentNode->insertBefore( $section->firstChild, $last->nextSibling);
 
