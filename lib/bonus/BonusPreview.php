@@ -84,6 +84,12 @@ class BonusPreview
 
 	public static function insert_anchors( $dom )
 	{
+		LegalDebug::debug( [
+			'BonusPreview' => 'insert_anchors',
+
+			'saveHTML' => $dom->saveHTML( $dom ),
+		] );
+
 		$nodes = self::get_nodes_shortcode( $dom );
 
 		foreach ( $dom->childNodes as $child )
