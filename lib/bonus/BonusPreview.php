@@ -23,16 +23,10 @@ class BonusPreview
 			'ver' => '1.0.0',
 		],
     ];
-	
-/* 	public static function register_style()
-    {
-		ReviewMain::register_style( self::CSS );
-    }
- */
 
 	public static function register_style()
 	{
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_style( self::CSS_NEW );
 		}
@@ -68,7 +62,27 @@ class BonusPreview
         add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'the_content', [ $handler, 'modify_content' ] );
     }
+	
+	public static function modify_content( $content )
+	{
+		$dom = LegalDOM::get_dom( $content ); 
+
+		self::insert_anchors( $dom );
+
+		return $dom->saveHTML( $dom );
+	}
+
+	public static function insert_anchors( $dom )
+	{
+		LegalDebug::debug( [
+			'BonusPreview' => 'insert_anchors',
+			
+			'saveHTML' => $dom->saveHTML( $dom )
+		] );
+	}
 
 	public static function legal_posts_order() 
 	{
@@ -133,31 +147,6 @@ class BonusPreview
 
 		'expired' => 'expired',
 	];
-
-	// public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
-	// {
-	// 	if ( $atts[ 'limit' ] == 0 )
-	// 	{
-	// 		return [];
-	// 	}
-
-	// 	$compare = '>';
-
-	// 	if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
-	// 	{
-	// 		$compare = '<';
-	// 	}
-
-	// 	$query_filter = new ToolDate ( self::FIELD[ 'duration' ], date( 'Y-m-d' ), '%d/%m/%Y', $compare );
-
-	// 	$args = self::get_args( $atts, $mode );
-		
-	// 	$query = $query_filter->createWpQuery( $args );
-
-	// 	$posts = $query->posts;
-
-	// 	return $posts;
-	// }
 	
 	public static function get_posts_date( $atts, $mode = self::MODE[ 'all' ], $duration = self::DURATION[ 'actual' ] )
 	{
@@ -415,99 +404,6 @@ class BonusPreview
 
 		return $args;
     }
-
-	// public static function get_args( $atts, $mode = self::MODE[ 'all' ] )
-    // {
-	// 	$meta_query = [];
-
-	// 	if ( in_array( $mode, [ self::MODE[ 'partner' ] ] ) )
-	// 	{
-	// 		$meta_query = [
-	// 			[
-	// 				'key' => self::FIELD[ 'afillate' ],
-					
-	// 				'value' => [ '', '#' ],
-					
-	// 				'compare' => 'NOT IN',
-	// 			],
-	// 		];
-	// 	}
-
-	// 	if ( in_array( $mode, [ self::MODE[ 'no-partner' ] ] ) )
-	// 	{
-	// 		$meta_query = [
-	// 			[
-	// 				'key' => self::FIELD[ 'afillate' ],
-					
-	// 				'value' => [ '', '#' ],
-					
-	// 				'compare' => 'IN',
-	// 			],
-	// 		];
-	// 	}
-
-	// 	$tax_query = [];
-
-	// 	if ( !empty( $atts[ 'taxonomy' ] ) )
-	// 	{
-	// 		$tax_query = [
-	// 			[
-	// 				'taxonomy' => $atts[ 'taxonomy' ],
-	
-	// 				'field' => 'slug',
-	
-	// 				'terms' => $atts[ 'terms' ],
-	// 			]
-	// 		];
-	// 	}
-
-	// 	if ( !empty( $atts[ 'exclude' ] ) )
-	// 	{
-	// 		$tax_query[] = [
-	// 			[
-	// 				'taxonomy' => $atts[ 'taxonomy' ],
-
-	// 				'field' => 'slug',
-
-	// 				'terms' => $atts[ 'exclude' ],
-
-	// 				'operator' => 'NOT IN',
-	// 			]
-	// 		];
-	// 	}
-
-	// 	$args = [
-	// 		'posts_per_page' => $atts[ 'limit' ],
-            
-    //         'post_type' => $atts[ 'post_type' ],
-
-	// 		'suppress_filters' => 0,
-
-	// 		'tax_query' => $tax_query,
-
-	// 		'meta_query' => $meta_query,
-
-	// 		'orderby' => [
-	// 			'menu_order' => 'DESC',
-
-	// 			'modified' => 'DESC',
-
-	// 			'title' => 'ASC',
-	// 		],
-    //     ];
-
-	// 	if ( !empty( $atts[ 'tags' ] ) )
-	// 	{
-	// 		$args[ 'tag_slug__in' ] = $atts[ 'tags' ];
-	// 	}
-
-	// 	if ( !empty( $atts[ 'current_not_in' ] ) )
-	// 	{
-	// 		$args[ 'post__not_in' ] = [ BonusMain::get_id() ];
-	// 	}
-
-	// 	return $args;
-    // }
 
 	public static function get_thumbnail( $id, $size = self::SIZE[ 'preview' ] )
 	{
