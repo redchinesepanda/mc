@@ -22,6 +22,22 @@ class YoastMain
         \add_action( 'init', [ $handler, 'init' ] );
 
         \add_filter( 'wpseo_force_creating_and_using_attachment_indexables', '__return_true' );
+
+        add_action( 'wpseo_register_extra_replacements', [ $handler, 'register_my_plugin_extra_replacements' ] );
+    }
+
+    function register_my_plugin_extra_replacements()
+    {
+        // wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'advanced', 'this is a help text for myvar1' );
+        
+        wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'basic', 'This is a current tabs unique billets amount' );
+        
+        // wpseo_register_var_replacement( 'myvar2', array( 'class', 'method_name' ), 'basic', 'this is a help text for myvar2' );
+    }
+
+    function retrieve_billetsamount_replacement( $var1 )
+    {
+        return CompilationTabs::get_billets_amount();
     }
 
     public static function include_post_types( $post_types )
@@ -121,20 +137,38 @@ class YoastMain
         // self::debug( $message );
     }
 
-    public static function get_seo_title() {
+    const PLACEHOLDER = [
+        'billets-amount' => '{billets-amount}',
+    ];
+
+    public static function get_seo_title()
+    {
         $post = get_post();
 
-        if ( $post ) {
+        if ( $post )
+        {
+            // $title = YoastSEO()->meta->for_post( $post->ID )->title;
+
+            // if ( str_contains( $title, self::PLACEHOLDER[ 'billets-amount' ] ) )
+            // {
+
+            //     $title = str_replace( self::PLACEHOLDER[ 'billets-amount' ], CompilationTabs::get_billets_amount(), $title );
+            // }
+
+            // return $title;
+
             return YoastSEO()->meta->for_post( $post->ID )->title;
         }
 
         return '';
     }
 
-    public static function get_seo_description() {
+    public static function get_seo_description()
+    {
         $post = get_post();
 
-        if ( $post ) {
+        if ( $post )
+        {
             return YoastSEO()->meta->for_post( $post->ID )->description;
         }
 

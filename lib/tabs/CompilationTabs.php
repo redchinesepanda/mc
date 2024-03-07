@@ -147,9 +147,57 @@ class CompilationTabs
         'compilations' => 'tab-compilations',
     ];
 
+    public static function get_compilations()
+    {
+        $post = get_post();
+
+        $args[ 'tabs' ] = [];
+
+        if ( $post )
+        {
+            $tabs = get_field( self::TABS[ 'items' ], $post->ID );
+        
+            if ( $tabs )
+            {
+                foreach ( $tabs as $key => $tab )
+                {
+                    $compilations = ( !empty( $tab[ self::TAB[ 'compilations' ] ] ) ? $tab[ self::TAB[ 'compilations' ] ] : [] );
+
+                    $args[ 'tabs' ][] = [
+                        'compilations' => $compilations,
+                    ];
+                }
+
+                return array_unique( call_user_func_array( 'array_merge', array_column( $args[ 'tabs' ], 'compilations' ) ) );
+            }
+        }
+
+        return [];
+    }
+
+    public static function get_billets_amount( $compilations = [] )
+    {
+        $amounts = [];
+
+        if ( empty( $compilations ) )
+        {
+            $compilations = self::get_compilations();
+        }
+
+        foreach( $compilations as $compilation )
+        {
+            $amounts[] = CompilationMain::get_billets_id( $compilation );
+        }
+
+        $unique = array_unique( call_user_func_array( 'array_merge', $amounts ) );
+
+        return count ( $unique );
+    }
+
     public static function get_date( $compilations )
     {
         $date = [];
+
         foreach( $compilations as $compilation )
         {
             $date[] = CompilationMain::get_date( $compilation );

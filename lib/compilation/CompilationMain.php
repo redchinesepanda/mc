@@ -396,6 +396,23 @@ class CompilationMain
         'updated' => 'd.m.Y',
     ];
 
+    public static function get_billets_id( $id )
+    {
+        // LegalDebug::debug( [
+        //     'CompilationMain' => 'get_billets_id',
+
+        //     // 'id' => $id,
+
+        //     // 'get' => self::get( $id ),
+
+        //     // 'billets' => self::get( $id )[ 'billets' ],
+
+        //     'array_column' => array_column( self::get( $id )[ 'billets' ], 'id' )
+        // ] );
+
+        return array_column( self::get( $id )[ 'billets' ], 'id' );
+    }
+
     public static function get_date( $id )
     {
         $date = '';
