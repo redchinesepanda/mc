@@ -94,18 +94,35 @@ class BonusPreview
 
 		$nodes = self::get_nodes_shortcode( $dom );
 
-		foreach ( $nodes as $node )
+		if ( $nodes->length == 0 )
 		{
-			LegalDebug::debug( [
-				'BonusPreview' => 'insert_anchors',
-	
-				'nodeName' => $node->nodeName,
-
-				'nodeType' => $node->nodeType,
-
-				'textContent' => $node->textContent,
-			] );
+			return false;
 		}
+
+		$last = $nodes->item( $nodes->length );
+
+		$section = $dom->createElement( 'section' );
+
+		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
+
+		$last->parentNode->insertBefore( $section->firstChild, $last->nextSibling);
+
+		$node->parentNode->removeChild( $section );
+
+		// foreach ( $nodes as $node )
+		// {
+		// 	LegalDebug::debug( [
+		// 		'BonusPreview' => 'insert_anchors',
+	
+		// 		'nodeName' => $node->nodeName,
+
+		// 		'nodeType' => $node->nodeType,
+
+		// 		'textContent' => $node->textContent,
+		// 	] );
+		// }
+
+		return true;
 	}
 
 	public static function legal_posts_order() 
