@@ -399,10 +399,10 @@ class ReviewAnchors
             return '';
         }
 
-        if ( self::check_contains() )
-        {
-            return '';
-        }
+        // if ( self::check_contains() )
+        // {
+        //     return '';
+        // }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
