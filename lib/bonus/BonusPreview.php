@@ -101,6 +101,12 @@ class BonusPreview
 
 		$last = $nodes->item( $nodes->length );
 
+		LegalDebug::debug( [
+			'BonusPreview' => 'insert_anchors',
+
+			'last' => $last,
+		] );
+
 		$section = $dom->createElement( 'section' );
 
 		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
