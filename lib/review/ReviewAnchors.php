@@ -407,6 +407,21 @@ class ReviewAnchors
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
 
+    public static function render_section()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return '';
+        }
+
+        if ( self::check_contains() )
+        {
+            return '';
+        }
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+    }
+
     public static function render_block()
     {
         if ( !ReviewMain::check() )
