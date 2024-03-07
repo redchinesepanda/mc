@@ -75,13 +75,23 @@ class BonusPreview
 		return $dom->saveHTML( $dom );
 	}
 
+	public static function get_nodes( $dom )
+	{
+		return LegalDOM::get_nodes( $dom, "//*[text()[contains(., '[legal-bonus terms')]]" );
+	}
+
 	public static function insert_anchors( $dom )
 	{
-		LegalDebug::debug( [
-			'BonusPreview' => 'insert_anchors',
-			
-			'saveHTML' => $dom->saveHTML( $dom )
-		] );
+		$nodes = self::get_nodes_shortcode( $dom );
+
+		foreach ( $dom->childNodes as $child )
+		{
+			LegalDebug::debug( [
+				'BonusPreview' => 'insert_anchors',
+	
+				'textContent' => $child->textContent,
+			] );
+		}
 	}
 
 	public static function legal_posts_order() 
