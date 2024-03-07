@@ -116,7 +116,7 @@ class BonusPreview
 		LegalDebug::debug( [
 			'BonusPreview' => 'insert_anchors',
 
-			'section' => $section,
+			'saveHTML' => $dom->saveHTML( $section ),
 		] );
 
 		$last->parentNode->insertBefore( $section->firstChild, $last->nextSibling);
