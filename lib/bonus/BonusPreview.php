@@ -72,14 +72,19 @@ class BonusPreview
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		if ( self::check_contains_bonus() )
-		{
+		// if ( self::check_contains_bonus() )
+		// {
 			add_action( 'the_content', [ $handler, 'modify_content' ] );
-		}
+		// }
     }
 	
 	public static function modify_content( $content )
 	{
+		if ( self::check_contains_bonus() )
+		{
+			retur;n $content
+		}
+
 		$dom = LegalDOM::get_dom( $content ); 
 
 		self::insert_anchors( $dom );
