@@ -104,6 +104,8 @@ class BonusPreview
 		LegalDebug::debug( [
 			'BonusPreview' => 'insert_anchors',
 
+			'length' => $nodes->length,
+
 			'last' => $last,
 		] );
 
