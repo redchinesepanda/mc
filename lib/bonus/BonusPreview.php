@@ -115,7 +115,7 @@ class BonusPreview
 
 		$last->parentNode->insertBefore( $section->firstChild, $last->nextSibling);
 
-		$last->parentNode->removeChild( $section );
+		$dom->removeChild( $section );
 
 		// foreach ( $nodes as $node )
 		// {
