@@ -75,7 +75,7 @@ class BonusPreview
 		return $dom->saveHTML( $dom );
 	}
 
-	public static function get_nodes( $dom )
+	public static function get_nodes_shortcode( $dom )
 	{
 		return LegalDOM::get_nodes( $dom, "//*[text()[contains(., '[legal-bonus terms')]]" );
 	}
