@@ -387,6 +387,11 @@ class ReviewAnchors
         'block' => LegalMain::LEGAL_PATH . '/template-parts/review/review-anchors-block.php',
     ];
 
+    public static function check_contains()
+    {
+        return CompilationTabs::check_contains_tabs() || BonusPreview::check_contains_bonus();
+    }
+
     public static function render()
     {
         if ( !ReviewMain::check() )
@@ -394,10 +399,10 @@ class ReviewAnchors
             return '';
         }
 
-        // if ( CompilationTabs::check_contains_tabs() )
-        // {
-        //     return '';
-        // }
+        if ( self::check_contains() )
+        {
+            return '';
+        }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
     }
