@@ -6,7 +6,7 @@
         padding-right: 15px;
         padding-left: 15px;
     }
-}
+} 
 
 @media screen and ( max-width: 959px )
 {
@@ -15,7 +15,7 @@
     .review-about {
         flex-direction: column;
         row-gap: 20px;
-    }
+    } 
 
     .review-about .about-achievement {
         flex-direction: column;
@@ -380,7 +380,7 @@
 
 .review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
     background-color: var(--Base-base-02);
-    border-bottom: 2px solid var(--Base-base-09); 
+    border-bottom: 1px solid var(--Base-base-09); 
 }
 
 .review-about.legal-mode-mini {

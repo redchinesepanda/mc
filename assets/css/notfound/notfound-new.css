@@ -29,18 +29,6 @@
 		padding-bottom: 5px;
 	}
 
-	/* .legal-notfound {
-		padding: 50px 20px 0 20px;
-	} */
-
-	/* .legal-notfound .svg-before-text-block {
-		padding: 0 10px;
-	} */
-
-	/* .legal-notfound .notfound-description {
-		padding: 0 10px;
-	} */
-
 	/* Typography */
 
 	.legal-notfound .notfound-title {
@@ -51,15 +39,6 @@
 		font-weight: 600;
 	}
 }
-
-/* @media screen and (max-width: 1079px) {
-
-	Width and Height
-
-	.legal-notfound .menu-notfound {
-		width: 100%;
-	}
-} */
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 
@@ -113,7 +92,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* row-gap: 1.5rem; */
 }
 
 .legal-notfound .svg-before-text-block {
@@ -126,7 +104,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	/* row-gap: 0.7rem; */
 	column-gap: 8px;
 	row-gap: 8px;
 }
@@ -142,19 +119,6 @@
 .legal-notfound .svg-oops-notfound {
 	flex-basis: 100%;
 }
-
-/* .legal-notfound .menu-notfound {
-	width: 900px;
-} */
-
-/* .legal-notfound .menu-notfound .menu-item .lang-title {
-	width: fit-content;
-} */
-
-/* .legal-notfound .menu-notfound .menu-item .lang-image {
-	height: 20px;
-	width: 20px;
-} */
 
 /* Position */
 
@@ -173,7 +137,6 @@
 }
 
 .legal-notfound .menu-notfound {
-/* 	margin: 0 auto; */
 	padding-bottom: 100px;
 }
 
@@ -200,20 +163,6 @@
 	border: 1px solid var(--Base-base-09);
 }
 
-/* .legal-notfound .menu-notfound .menu-item:hover {
-	background-color: #5997E3;
-	border-radius: 10px;
-	box-shadow: 0 0 10px #E4E4E4;
-} */
-
-/* .legal-notfound .menu-notfound .menu-item .lang-image {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	border-radius: 50%;
-	border: #B8B8B8 solid 1.5px;
-} */
-
 /* Typography */
 
 .legal-notfound .notfound-title,
@@ -231,11 +180,16 @@
 	text-align: center;
 }
 
+.legal-notfound .notfound-description {
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+}
+
 .legal-notfound .menu-item {
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
-	/* text-transform: uppercase; */
 	text-decoration: none;
 }
 

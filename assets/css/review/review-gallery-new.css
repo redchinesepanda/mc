@@ -280,9 +280,14 @@
     position: relative;
 }
 
+.tcb-post-content .legal-imageset-wrapper {
+    padding-top: 16px;
+}
+
 .tcb-post-content .legal-imageset-wrapper:not( :last-child )
 {
-    padding-bottom: 18px;
+    /* padding-bottom: 18px; */
+    padding-bottom: 16px;
 }
 
 .tcb-post-content .legal-gallery {
