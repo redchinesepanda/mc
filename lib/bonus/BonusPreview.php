@@ -49,6 +49,15 @@ class BonusPreview
 		add_action( 'admin_init', [ $handler, 'legal_posts_order' ] );
     }
 
+	const SHORTCODE = [
+		'preview' => 'legal-bonus',
+	];
+	
+	public static function check_contains_bonus()
+    {
+        return LegalComponents::check_shortcode( self::SHORTCODE[ 'preview' ] );
+    }
+
 	public static function register()
     {
         $handler = new self();
@@ -59,11 +68,14 @@ class BonusPreview
         
 		// [legal-bonus terms='bonusy-kz']
 
-        add_shortcode( 'legal-bonus', [ $handler, 'prepare' ] );
+        add_shortcode( self::SHORTCODE[ 'preview' ], [ $handler, 'prepare' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'the_content', [ $handler, 'modify_content' ] );
+		if ( self::check_contains_bonus() )
+		{
+			add_action( 'the_content', [ $handler, 'modify_content' ] );
+		}
     }
 	
 	public static function modify_content( $content )
@@ -77,21 +89,13 @@ class BonusPreview
 
 	public static function get_nodes_shortcode( $dom )
 	{
-		// return LegalDOM::get_nodes( $dom, "//*[text()[contains(., '[legal-bonus terms')]]" );
-		
 		// return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
 		
-		return LegalDOM::get_nodes( $dom, "//text()[contains(., 'legal-bonus terms')]" );
+		return LegalDOM::get_nodes( $dom, "//text()[contains(., '[" . self::SHORTCODE[ 'preview' ] . "')]" );
 	}
 
 	public static function insert_anchors( $dom )
 	{
-		// LegalDebug::debug( [
-		// 	'BonusPreview' => 'insert_anchors',
-
-		// 	'saveHTML' => $dom->saveHTML( $dom ),
-		// ] );
-
 		$nodes = self::get_nodes_shortcode( $dom );
 
 		if ( $nodes->length == 0 )
@@ -99,15 +103,7 @@ class BonusPreview
 			return false;
 		}
 
-		$last = $nodes->item( $nodes->length - 1 );
-
-		// LegalDebug::debug( [
-		// 	'BonusPreview' => 'insert_anchors',
-
-		// 	'length' => $nodes->length,
-
-		// 	'last' => $last,
-		// ] );
+		$node = $nodes->item( $nodes->length - 1 );
 
 		$section = $dom->createElement( 'div' );
 
@@ -115,26 +111,20 @@ class BonusPreview
 
 		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
 
-		LegalDebug::debug( [
-			'BonusPreview' => 'insert_anchors',
+		try
+		{
+			$node->parentNode->insertBefore( $section, $node->nextSibling );
+		}
+		catch ( DOMException $e )
+		{
+			LegalDebug::debug( [
+				'BonusPreview' => 'insert_anchors',
 
-			'saveHTML' => $dom->saveHTML( $section ),
-		] );
+				'node' => substr( $node->textContent, 0, 30 ),
 
-		$last->parentNode->insertBefore( $section, $last->nextSibling);
-
-		// foreach ( $nodes as $node )
-		// {
-		// 	LegalDebug::debug( [
-		// 		'BonusPreview' => 'insert_anchors',
-	
-		// 		'nodeName' => $node->nodeName,
-
-		// 		'nodeType' => $node->nodeType,
-
-		// 		'textContent' => $node->textContent,
-		// 	] );
-		// }
+				'message' => $e->getMessage(),
+			] );
+		}
 
 		return true;
 	}
