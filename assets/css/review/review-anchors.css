@@ -19,6 +19,10 @@
         flex-grow: 1;
     }
 
+    .legal-to-top:not( .legal-active ) {
+        display: none;
+    }
+
     /* Anchors Position */
     
     .review-anchors {
