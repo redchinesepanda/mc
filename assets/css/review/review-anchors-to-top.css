@@ -1,0 +1,62 @@
+/* Display */
+
+.legal-to-top {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.legal-to-top.legal-active {
+    display: flex;
+}
+
+.legal-to-top:not( .legal-active ) {
+    display: none;
+}
+
+/* Position */
+
+.legal-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    z-index: 10;
+}
+
+.legal-to-top::before {
+    transform: rotate(90deg);
+}
+
+/* Width and Height */
+
+.legal-to-top {
+    width: calc(48px - (12px * 2));
+    height: calc(48px - (12px * 2)); 
+}
+
+/* Background */
+
+.legal-to-top {
+    background-color: var(--Base-base-01);
+    border-radius: 60px;
+    border: 2px solid var(--Base-base-09); 
+}
+
+.legal-to-top:hover {
+    background-color: var(--Base-base-09);
+}
+
+/* Typography */
+
+.legal-to-top::before {
+    content: '\F104';
+    font-family: var( --legal-font-icons );
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--Base-base-09);
+}
+
+.legal-to-top:hover::before {
+    color: var(--Base-base-01);
+}

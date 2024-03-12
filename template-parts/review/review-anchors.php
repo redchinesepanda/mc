@@ -12,7 +12,7 @@
                 <?php endforeach; ?>
                 </div>
             </div>
-
         </div>
+        <span class="legal-to-top"></span>
     </nav>
 <?php endif; ?>

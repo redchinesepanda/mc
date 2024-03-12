@@ -7,24 +7,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
-			/* initialSlide: 3, */
-			/* centeredSlides: true, */
-
 		});
 
 		let swiperBoxBlur = document.querySelectorAll('.review-anchors .swiper-initialized');
 
 		swiper.on('slideChange', function () {
-			console.log('slide changed');
-
-			/* swiperBoxBlur.forEach(i => {
-				i.classList.add('legal-active');
-				i.classList.remove('legal-active-end');
-			}); */
+			/* console.log('slide changed'); */
 		});
 
 		swiper.on('reachBeginning', function () {
-			console.log('slide reachBeginning');
+			/* console.log('slide reachBeginning'); */
 			
 			swiperBoxBlur.forEach(i => {
 				i.classList.add('legal-active-start');
@@ -33,7 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}); 
 
 		swiper.on('reachEnd', function () {
-			console.log('slide reachEnd');
+			/* console.log('slide reachEnd'); */
 
 			swiperBoxBlur.forEach(i => {
 				i.classList.add('legal-active-end');
@@ -43,8 +35,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	})
 
 	const settings = {
-		scroll : {
+		behavior : {
 			behavior: 'smooth'
+		},
+
+		top : {
+			top: 0,
 		}
 	};
 
@@ -57,7 +53,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const selectors = {
-		anchorsItem : '.review-anchors .anchors-item[href^="#"]'
+		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
+
+		buttonToTop : '.anchors .legal-to-top'
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
@@ -68,10 +66,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			if ( element !== null )
 			{
-				element.scrollIntoView( settings.scroll );
+				element.scrollIntoView( settings.behavior ); 
 			}
 		} );
 	} );
+
+	/*button-to-top start*/
+	const buttonToTop = document.querySelector( selectors.buttonToTop );
+   
+    window.addEventListener("scroll", function () {
+		if(!buttonToTop) return;
+		if(window.pageYOffset > 300) {
+			buttonToTop.classList.add( 'legal-active' );
+		} else {
+			buttonToTop.classList.remove( 'legal-active' );
+		}
+    });
+   
+    buttonToTop.addEventListener("click", function (event) {
+	  window.scrollTo( {...settings.behavior, ...settings.top} );
+    });
+	/*button-to-top end*/
+
 } );
 
 // review-anchors-js end
