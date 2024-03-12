@@ -6,6 +6,88 @@ let reviewGalleySlider = ( function()
 
 	return {
 		click : 'click',
+
+		selectors : {
+			imagesetWrapper : '.tcb-post-content .legal-imageset-wrapper',
+
+			imageset : '.tcb-post-content .legal-imageset',
+	
+			imageActive : ' .imageset-item.legal-active'
+		},
+
+		properties : {
+			columnGap : 'column-gap',
+		},
+
+		getShift : function ( element )
+		{
+			let shift = 0;
+
+			let imageset = element.closest( this.selectors.imagesetWrapper )
+				.querySelector( this.selectors.imageset );
+
+			if ( imageset !== null )
+			{
+				let itemActive = imageset.querySelector( this.selectors.imageActive );
+
+				if ( itemActive !== null )
+				{
+					shift = parseInt( itemActive.getBoundingClientRect().width )
+						+ parseInt( window.getComputedStyle( imageset, null )
+							.getPropertyValue( this.properties.columnGap )
+							.match( /\d+/ ) );
+				}
+			}
+
+			return shift;
+		},
+
+		scrollX : function ( element, shift = null )
+		{
+			let imageset = element.closest( this.selectors.imagesetWrapper )
+				.querySelector( this.selectors.imageset );
+
+			if ( imageset !== null )
+			{
+				let scrollArgs = {
+					top: 0,
+					
+					left: 0,
+		
+					behavior: 'instant',
+				};
+
+				if ( shift !== null )
+				{
+					scrollArgs = {
+						top: 0,
+						
+						left: imageset.scrollLeft + shift,
+			
+						behavior: 'smooth',
+					};
+				}
+
+				imageset.scroll( scrollArgs );
+			}
+		},
+
+		scrollSatrt : function ( element )
+		{
+			let imageset = element.closest( this.selectors.imagesetWrapper )
+				.querySelector( this.selectors.imageset );
+
+			if ( imageset !== null )
+			{
+				imageset.scroll( {
+					top: 0,
+					
+					left: 0,
+		
+					behavior: "smooth",
+				} );
+			}
+		}
 	};
 } )();
 
@@ -28,32 +110,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function getShift( element )
-	{
-		let shift = 0;
-
-		let imageset = element.closest( selectors.imagesetWrapper )
-			.querySelector( selectors.imageset );
-
-		if ( imageset !== null )
-		{
-			let itemActive = imageset.querySelector( selectors.imageActive );
-
-			if ( itemActive !== null )
-			{
-				shift = parseInt( itemActive.getBoundingClientRect().width )
-					+ parseInt( window.getComputedStyle( imageset, null )
-						.getPropertyValue( properties.columnGap )
-						.match( /\d+/ ) );
-			}
-		}
-
-		return shift;
-	}
-
 	function scrollBackward( event )
 	{
-		scrollX( event.currentTarget, getShift( event.currentTarget ) * -1 );
+		scrollX( event.currentTarget, reviewGalleySlider.getShift( event.currentTarget ) * -1 );
 
 		event.currentTarget
 			.parentElement
@@ -63,12 +122,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function scrollForward( event )
 	{
-		scrollX( event.currentTarget, getShift( event.currentTarget ) );
+		scrollX( event.currentTarget, reviewGalleySlider.getShift( event.currentTarget ) );
 
 		event.currentTarget
 			.parentElement
 			.querySelector( selectors.imagesetPagination )
 			.dispatchEvent( reviewGalleyPagination.pageForwardEvent( event.currentTarget.parentElement.dataset.id ) );
+	}
+
+	function setActive( element )
+	{
+		element.addEventListener( 'click', scrollActive );
 	}
 
 	function setBackward( element )
@@ -83,6 +147,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsOpen( event )
 	{
+		if ( event.currentTarget.contains( event.target ) )
+		{
+			setActive( event.target.closest( selectors.imagesetItem ) );
+		}
+		
 		event.currentTarget.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( event.currentTarget.dataset.id ) );
 	}
 
@@ -97,7 +166,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function slider( element, index )
 	{
-		element.dataset.id = classes.imagesetWrapperCurrent( index );
+		element.dataset.id = classes.imagesetWrapperCurrent( index ) + this.suffix;
 
 		element.querySelectorAll( selectors.imagesetBackward ).forEach( setBackward );
 
@@ -134,11 +203,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return this.imageset + ' .imageset-item:first-of-type';
 		},
 
-		imageActive : ' .legal-active',
+		imageActive : ' .imageset-item.legal-active',
 
 		imagesetPagination : '.imageset-pagination',
 
-		imagesetOops : '.tcb-post-content .legal-imageset-oops'
+		imagesetOops : '.tcb-post-content .legal-imageset-oops',
+
+		imagesetItem : '.imageset-item'
 	};
 
 	const classes = {
@@ -154,19 +225,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		imageActive : 'legal-active'
 	};
-	
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+
+	function suspendActive( element )
+	{
+		element.classList.remove( classes.imageActive );
+	}
 
 	function setActive( element )
 	{
+		element.closest( selectors.imageset ).querySelectorAll( selectors.imagesetItem ).forEach( suspendActive );
+
 		element.classList.add( classes.imageActive );
 	}
 
 	document.querySelectorAll( selectors.imageFirst() ).forEach( setActive );
+	
+	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider, { suffix : '-main' } );
 
 	function oopsReady( event )
 	{
-		document.querySelectorAll( selectors.imagesetOops ).forEach( slider );
+		document.querySelectorAll( selectors.imagesetOops ).forEach( slider, { suffix : '-oops' } );
 	}
 
 	document.addEventListener( reviewGalleyOops.oopsReady, oopsReady, false );

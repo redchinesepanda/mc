@@ -7,14 +7,16 @@ let reviewGalleySwiper = ( function()
 	return {
 		swipeForward : 'swipeforward',
 
-		swipeForwardEvent : function( id )
+		swipeForwardEvent : function( valueID )
 		{
 			return new CustomEvent(
 				this.swipeForward,
 
 				{
 					detail: {
-						id: () => id
+						// id: () => id
+
+						id: valueID
 					},
 				}
 			)
@@ -22,14 +24,16 @@ let reviewGalleySwiper = ( function()
 
 		swipeBackward : 'swipebackward',
 
-		swipeBackwardEvent : function( id )
+		swipeBackwardEvent : function( valueID )
 		{
 			return new CustomEvent(
 				this.swipeBackward,
 
 				{
 					detail: {
-						id: () => id
+						// id: () => id
+						
+						id: valueID
 					},
 				}
 			)

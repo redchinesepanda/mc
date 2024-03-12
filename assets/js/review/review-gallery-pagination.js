@@ -33,6 +33,23 @@ let reviewGalleyPagination = ( function()
 					},
 				}
 			)
+		},
+
+		pageActive : 'pageactive',
+
+		pageActiveEvent : function( valueID, valueIndex )
+		{
+			return new CustomEvent(
+				this.pageActive,
+
+				{
+					detail: {
+						id: valueID,
+
+						index: valueIndex
+					}
+				}
+			)
 		}
 	};
 } )();
@@ -47,6 +64,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			sibling.classList.add( classes.paginationItemActive );
 		}
+	}
+
+	function pageActive( event )
+	{
+		pageChange( event.currentTarget, event.currentTarget.querySelector( selectors.paginationItemIndex( event.detail.index ) ) );
 	}
 
 	function pageForward( event )
@@ -78,6 +100,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.paginationItemNotFirst ).forEach( removePaginationItem );
 	}
 
+	function scrollActive( element )
+	{
+		let active = element.querySelector( selectors.imageActive );
+
+		let index = [ ...element.children ].indexOf( active );
+
+		reviewGalleySlider.scrollX( element, reviewGalleySlider.getShift( active ) * index );
+
+		element.parentElement.querySelector( selectors.imagesetPagination ).dispatchEvent( reviewGalleyPagination.pageActiveEvent( element.parentElement.dataset.id, index ) );
+	}
+
 	function initPagination( element )
 	{
 		clearPagination( this.querySelector( selectors.imagesetPagination ) );
@@ -87,6 +120,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageForward, pageForward, false );
 
 		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageBackward, pageBackward, false );
+
+		this.querySelector( selectors.imagesetPagination ).addEventListener( reviewGalleyPagination.pageActive, pageActive, false );
+
+		if ( element.parentElement.classList.contains( classes.imagesetOops ) )
+		{
+			scrollActive( element );
+		}
 	}
 
 	function checkOffscreen( element )
@@ -128,7 +168,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		paginationItemNotFirst : '.pagination-item:not( .legal-active )',
 
-		imagesetOops : '.tcb-post-content .legal-imageset-oops'
+		paginationItemIndex : function( index )
+		{
+			return '.pagination-item:nth-child( ' + ( index + 1 ) + ' )';
+		},
+
+		imagesetOops : '.tcb-post-content .legal-imageset-oops',
+
+		imageActive : '.legal-active',
 	};
 	
 	const classes = {
@@ -136,16 +183,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		paginationItem : 'pagination-item',
 
-		paginationItemActive : 'legal-active'
+		paginationItemActive : 'legal-active',
+
+		imagesetOops : 'legal-imageset-oops'
 	};
 
 	function setPagination( element )
 	{
-		element.scroll( {
-			left: 0,
-
-			behavior: 'smooth'
-		} );
+		reviewGalleySlider.scrollX( element, null );
 
 		element.querySelectorAll( selectors.imagesetItem ).forEach( checkOffscreen, this );
 	}
