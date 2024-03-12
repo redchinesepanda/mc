@@ -13,7 +13,6 @@
     /* Anchors Position */
     
     .review-anchors {
-        /* padding-top: 32px; */
         margin-top: 32px;
     }
 
@@ -54,7 +53,6 @@
     /* Anchors Position */
     
     .review-anchors {
-        /* padding-top: 48px; */
         margin-top: 48px;
     }
 
@@ -112,6 +110,26 @@
 .review-anchors .anchors-title {
     font-size: 18px;
     font-weight: 700;
+}
+
+.review-anchors .swiper.legal-active-end::before {
+    content: "";
+    width: 83px;
+    height: 36px;
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+}
+
+.review-anchors .swiper:not( .legal-active-end ):after {
+    content: "";
+    width: 83px;
+    height: 36px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+    position: absolute;
+    right: 0px;
+    top: 0;
 }
 
 .review-anchors .anchors-item {
