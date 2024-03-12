@@ -4,11 +4,43 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	document.querySelectorAll('.swiper').forEach(el => {
 		/*--------------------Swiper--------------*/
-		new Swiper(el, {
+		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
 			/* initialSlide: 3, */
 			/* centeredSlides: true, */
+
+		});
+
+		let swiperShadow = document.querySelectorAll('.review-anchors .swiper-initialized');
+
+		/* swiper.on('slideChange', function () {
+			console.log('slide changed');
+			
+
+			swiperShadow.forEach(i => {
+				i.classList.add('legal-active');
+				i.classList.remove('legal-active-end');
+			});
+		}); */
+
+		swiper.on('reachBeginning', function () {
+			console.log('slide reachBeginning');
+			
+
+			swiperShadow.forEach(i => {
+				i.classList.add('legal-active-start');
+				i.classList.remove('legal-active-end');
+			});
+		});
+
+		swiper.on('reachEnd', function () {
+			console.log('slide reachEnd');
+
+			swiperShadow.forEach(i => {
+				i.classList.add('legal-active-end');
+				i.classList.remove('legal-active-start');
+			});
 		});
 	})
 

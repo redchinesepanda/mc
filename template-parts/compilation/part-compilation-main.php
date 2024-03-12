@@ -8,8 +8,8 @@
             <div class="compilation-date"><?php echo $args[ 'settings' ][ 'date' ][ 'label' ]; ?>: <?php echo $args[ 'settings' ][ 'date' ][ 'value' ]; ?></div>
         <?php endif; ?>
         <?php echo CompilationMain::render_attention_tooltip( $args['settings']['attention'] ); ?>
+        <?php echo CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'below' ] ); ?>
     </div>
-    <?php echo CompilationMain::render_attention( $args['settings']['attention'], CompilationMain::POSITION[ 'below' ] ); ?>
     <?php foreach( $args['billets'] as $billet ) : ?>
         <?php echo BilletMain::render_billet( $billet ); ?>
     <?php endforeach; ?>

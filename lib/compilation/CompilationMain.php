@@ -102,6 +102,22 @@ class CompilationMain
         return implode( PHP_EOL, $output );
     }
 
+    const JS = [
+        'compilation-tooltip' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-tooltip.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+    public static function register_script()
+    {
+        if ( TemplateMain::check_new() )
+        {
+            ToolEnqueue::register_script( self::JS );
+        }
+    }
+
     public static function print()
     {
         BilletMain::print();
@@ -129,6 +145,8 @@ class CompilationMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     
         add_filter( 'posts_where', [ $handler, 'compilation_posts_where' ] );
 
@@ -671,9 +689,23 @@ class CompilationMain
         ];
     }
 
+    // $choices[ 'legal-default' ] = 'Текст';
+
+    // $choices[ 'legal-attention' ] = 'Блок Внимание';
+
+    // $choices[ 'legal-tooltip' ] = 'Блок Подсказка';
+
+    const TYPE = [
+        'default' => 'legal-default',
+
+        'attention' => 'legal-attention',
+
+        'tooltip' => 'legal-tooltip',
+    ];
+
     public static function render_attention_tooltip( $attention )
     {
-        if ( $attention[ 'type' ] != 'legal-tooltip' )
+        if ( $attention[ 'type' ] != self::TYPE[ 'tooltip' ] )
         {
             return '';
         }
