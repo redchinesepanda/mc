@@ -12,32 +12,30 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		});
 
-		let swiperShadow = document.querySelectorAll('.review-anchors .swiper-initialized');
+		let swiperBoxBlur = document.querySelectorAll('.review-anchors .swiper-initialized');
 
-		/* swiper.on('slideChange', function () {
+		swiper.on('slideChange', function () {
 			console.log('slide changed');
-			
 
-			swiperShadow.forEach(i => {
+			/* swiperBoxBlur.forEach(i => {
 				i.classList.add('legal-active');
 				i.classList.remove('legal-active-end');
-			});
-		}); */
+			}); */
+		});
 
 		swiper.on('reachBeginning', function () {
 			console.log('slide reachBeginning');
 			
-
-			swiperShadow.forEach(i => {
+			swiperBoxBlur.forEach(i => {
 				i.classList.add('legal-active-start');
 				i.classList.remove('legal-active-end');
 			});
-		});
+		}); 
 
 		swiper.on('reachEnd', function () {
 			console.log('slide reachEnd');
 
-			swiperShadow.forEach(i => {
+			swiperBoxBlur.forEach(i => {
 				i.classList.add('legal-active-end');
 				i.classList.remove('legal-active-start');
 			});
