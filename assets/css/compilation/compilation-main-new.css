@@ -1,3 +1,39 @@
+@media screen and ( max-width: 767px ) {
+    
+    /* Width and Height */
+
+    .legal-compilation .legal-tooltip {
+        width: calc( 100% - (16px * 2) );
+    }
+
+     /* Position */
+
+    .legal-compilation .compilation-date ~ .legal-tooltip {
+        top: calc( 24px + (8px * 2) + 36px );
+    }
+
+    .legal-compilation .legal-tooltip:not( .compilation-date ~ .legal-tooltip )  {
+        top: calc( 24px + (8px * 2) );
+    }
+}
+
+
+@media screen and ( min-width: 768px ) {
+
+    /* Width and Height */
+
+    .legal-compilation .legal-tooltip {
+        width: calc( 320px - (16px * 2) );
+    }
+
+    /* Position */
+
+    .legal-compilation .legal-tooltip {
+        top: calc( 24px + (8px * 2) );
+    }
+    
+}
+
 /* Compilation Display */
 
 .legal-compilation .legal-compilation-info {
@@ -134,8 +170,6 @@
 .legal-compilation .legal-tooltip
 {
     position: absolute;
-    /* top: 0px; */
-    top: calc( 24px + (8px * 2) );
     right: 0px;
     z-index: 1;
 }
@@ -151,10 +185,6 @@
     width: 46px;
     height: 46px;
     flex-shrink: 0;
-}
-
-.legal-compilation .legal-tooltip {
-    width: calc( 320px - (16px * 2) );
 }
 
 /* .legal-compilation .legal-tooltip h2 {

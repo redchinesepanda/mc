@@ -1,3 +1,23 @@
+@media screen and ( max-width: 767px ) {
+    /* Position */
+
+    .legal-to-top:not( .legal-review-page-main .legal-to-top ) {
+        bottom: 20px;
+    }
+
+    .legal-review-page-main .legal-to-top {
+        bottom: calc( 88px + 20px );
+    }
+}
+
+@media screen and ( min-width: 768px ) {
+    /* Position */
+
+    .legal-to-top {
+        bottom: 20px;
+    }
+}
+
 /* Display */
 
 .legal-to-top {
@@ -18,10 +38,9 @@
 
 .legal-to-top {
     position: fixed;
-    bottom: 20px;
     right: 20px;
     padding: 12px;
-    z-index: 10;
+    z-index: 1;
 }
 
 .legal-to-top::before {
