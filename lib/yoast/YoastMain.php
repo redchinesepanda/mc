@@ -143,24 +143,14 @@ class YoastMain
 
     public static function get_seo_title()
     {
-        // if ( !LegalMain::check_plugins() )
-        // {
-        //     return '';
-        // }
-
         $post = get_post();
 
         if ( $post )
         {
-            // $title = YoastSEO()->meta->for_post( $post->ID )->title;
-
-            // if ( str_contains( $title, self::PLACEHOLDER[ 'billets-amount' ] ) )
-            // {
-
-            //     $title = str_replace( self::PLACEHOLDER[ 'billets-amount' ], CompilationTabs::get_billets_amount(), $title );
-            // }
-
-            // return $title;
+            if ( !LegalMain::check_plugins() )
+            {
+                return $post->post_title;
+            }
 
             return YoastSEO()->meta->for_post( $post->ID )->title;
         }
