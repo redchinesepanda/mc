@@ -80,10 +80,6 @@ class ToolsMain
 
         ToolSitemapXML::register();
 
-        LegalDebug::debug( [
-            'ToolSitemapXML',
-        ] );
-
         ToolCategoryRedirect::register();
 
         ToolRobots::register();

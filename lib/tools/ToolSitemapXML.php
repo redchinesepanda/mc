@@ -9,6 +9,10 @@ class ToolSitemapXML
     
 	public static function register()
     {
+        LegalDebug::debug( [
+            'ToolSitemapXML',
+        ] );
+        
         $handler = new self(); 
 
         add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
