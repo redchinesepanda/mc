@@ -14,7 +14,21 @@ require_once( 'lib/LegalMain.php' );
 
 LegalMain::register();
 
-ToolRobots::register();
+add_action( 'do_robotstxt', 'wp_kama_robots_txt' );
+
+function wp_kama_robots_txt(){
+
+	$lines = [
+		'User-agent: *',
+		'Disallow: /wp-admin/',
+		'Disallow: /wp-includes/',
+		'',
+	];
+
+	echo implode( "\r\n", $lines );
+
+	die; // обрываем работу PHP
+}
 
 // if( !function_exists( 'tve_load_global_variables' ) )
 // {
