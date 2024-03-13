@@ -7,6 +7,8 @@ class ToolRobots
 		$handler = new self();
 
 		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
+
+		LegalDebug::debug();
 	}
 
 	public static function mc_robots_txt()

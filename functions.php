@@ -14,6 +14,8 @@ require_once( 'lib/LegalMain.php' );
 
 LegalMain::register();
 
+ToolRobots::register();
+
 // if( !function_exists( 'tve_load_global_variables' ) )
 // {
 // 	function tve_load_global_variables() {}
