@@ -143,10 +143,10 @@ class YoastMain
 
     public static function get_seo_title()
     {
-        if ( !LegalMain::check_plugins() )
-        {
-            return '';
-        }
+        // if ( !LegalMain::check_plugins() )
+        // {
+        //     return '';
+        // }
 
         $post = get_post();
 
