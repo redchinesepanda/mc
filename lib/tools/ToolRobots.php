@@ -17,7 +17,9 @@ class ToolRobots
 			'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 		];
 
-		echo implode( '\n', array_merge( self::ROBOTS, $sitemap ) );
+		// echo implode( '\n', array_merge( self::ROBOTS, $sitemap ) );
+		
+		print_r( implode( '\n', array_merge( self::ROBOTS, $sitemap ) ) );
 
 		die();
 	}
