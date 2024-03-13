@@ -38,11 +38,11 @@ class ToolNotFound
 	{
 		$result = true;
 
-		if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::ALLOWED ) )
+		if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
 		{
 			$language = WPMLMain::current_language();
 
-			foreach ( self::ALLOWED as $languages )
+			foreach ( self::RESTRICTED as $languages )
 			{
 				if ( in_array( $language, $languages ) )
 				{
