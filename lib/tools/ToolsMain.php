@@ -42,6 +42,8 @@ require_once( 'ToolSitemapXML.php' );
 
 require_once( 'ToolCategoryRedirect.php' );
 
+require_once( 'ToolRobots.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -79,6 +81,8 @@ class ToolsMain
         ToolSitemapXML::register();
 
         ToolCategoryRedirect::register();
+
+        ToolRobots::register();
     }
 }
 
