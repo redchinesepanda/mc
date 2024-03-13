@@ -6,7 +6,7 @@ class ToolRobots
 	{
 		$handler = new self();
 
-		// add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
+		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
 	}
 
 	public static function mc_robots_txt()
@@ -17,7 +17,7 @@ class ToolRobots
 			'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 		];
 
-		echo implode( '\r\n', array_merge( self::ROBOTS, $sitemap ) );
+		echo implode( '\n', array_merge( self::ROBOTS, $sitemap ) );
 
 		die();
 	}
