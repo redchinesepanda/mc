@@ -23,17 +23,17 @@ class ToolNotFound
     }
 
 	const RESTRICTED = [
-		'old-pl.match.center' => [
+		// 'old-pl.match.center' => [
 
-		// 'old.match.center' => [
-			'pl'
-		],
+		// // 'old.match.center' => [
+		// 	'pl'
+		// ],
 
-		'old-ca.match.center' => [
-			'ca',
+		// 'old-ca.match.center' => [
+		// 	'ca',
 
-			'ca-fr',
-		],
+		// 	'ca-fr',
+		// ],
 	];
 
 	public static function check_domain()
