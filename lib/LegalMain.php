@@ -48,11 +48,14 @@ class LegalMain
 
 	public static function register()
 	{
-		$handler = new self();
+		if ( !self::check_plugins() )
+		{
+			$handler = new self();
 		
-		add_action( 'wp', [ $handler, 'register_components' ] );
+			add_action( 'wp', [ $handler, 'register_components' ] );
 
-		self::register_functions();
+			self::register_functions();
+		}
 	}
 
 	public static function register_functions()
