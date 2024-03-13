@@ -81,9 +81,9 @@ class ToolNotFound
 
 	public static function check_domain()
 	{
-		return self::check_domain_in_restricted()
+		return !self::check_domain_in_restricted()
 			
-			|| self::check_domain_not_in_restricted();
+			|| !self::check_domain_not_in_restricted();
 	}
 
 	public static function check()
