@@ -6,7 +6,7 @@ class ToolRobots
 	{
 		$handler = new self();
 
-		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
+		// add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
 	}
 
 	public static function mc_robots_txt()
