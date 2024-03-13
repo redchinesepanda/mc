@@ -81,6 +81,14 @@ class ToolNotFound
 
 	public static function check_domain()
 	{
+		LegalDebug::debug( [
+			'ToolNotFound' => 'check_domain',
+
+			'check_domain_in_restricted' => self::check_domain_in_restricted(),
+
+			'check_domain_not_in_restricted' => self::check_domain_not_in_restricted(),
+		] );
+
 		return !self::check_domain_in_restricted()
 			
 			|| !self::check_domain_not_in_restricted();
