@@ -60,7 +60,7 @@ class ToolNotFound
 	{
 		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
 		{
-			if ( in_array( WPMLMain::current_language(), self::RESTRICTED )[ $_SERVER[ 'HTTP_HOST' ] ] )
+			if ( in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] ) )
 			{
 				return true;
 			}
