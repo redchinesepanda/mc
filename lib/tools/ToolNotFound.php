@@ -36,63 +36,88 @@ class ToolNotFound
 		],
 	];
 
-	public static function check_domain_not_in_restricted()
+	public static function check_domain()
 	{
-		$result = true;
-
-		if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
+		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
 		{
-			$language = WPMLMain::current_language();
+			return true;
+		}
 
-			foreach ( self::RESTRICTED as $languages )
+		return false;
+	}
+
+	public static function check_language()
+	{
+		$result = false;
+
+		foreach ( self::RESTRICTED as $languages )
+		{
+			if ( in_array( $language, $languages ) )
 			{
-				if ( in_array( $language, $languages ) )
-				{
-					$result = false;
-				}
+				$result = true;
 			}
 		}
 
 		return $result;
 	}
 
-	public static function check_domain_in_restricted()
-	{
-		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
-		{
-			if ( in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] ) )
-			{
-				LegalDebug::debug( [
-					'ToolNotFound' => 'check_domain_in_restricted',
-
-					'HTTP_HOST' => $_SERVER[ 'HTTP_HOST' ],
-
-					'current_language' => WPMLMain::current_language(),
-
-					'in_array' => in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
-				] );
-
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	public static function check_domain()
+	public static function check_restricted()
 	{
 		LegalDebug::debug( [
-			'ToolNotFound' => 'check_domain',
+			'ToolNotFound' => 'check_restricted',
 
-			'check_domain_in_restricted' => self::check_domain_in_restricted(),
+			'check_domain' => self::check_domain(),
 
-			'check_domain_not_in_restricted' => self::check_domain_not_in_restricted(),
+			'check_language' => self::check_language(),
 		] );
 
-		return !self::check_domain_in_restricted()
+		return self::check_domain() && !self::check_language()
 			
-			|| !self::check_domain_not_in_restricted();
+			|| !self::check_domain() && self::check_language();
 	}
+	
+	// public static function check_domain_not_in_restricted()
+	// {
+	// 	$result = true;
+
+	// 	if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
+	// 	{
+	// 		$language = WPMLMain::current_language();
+
+	// 		foreach ( self::RESTRICTED as $languages )
+	// 		{
+	// 			if ( in_array( $language, $languages ) )
+	// 			{
+	// 				$result = false;
+	// 			}
+	// 		}
+	// 	}
+
+	// 	return $result;
+	// }
+
+	// public static function check_domain_in_restricted()
+	// {
+	// 	if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
+	// 	{
+	// 		if ( in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] ) )
+	// 		{
+	// 			LegalDebug::debug( [
+	// 				'ToolNotFound' => 'check_domain_in_restricted',
+
+	// 				'HTTP_HOST' => $_SERVER[ 'HTTP_HOST' ],
+
+	// 				'current_language' => WPMLMain::current_language(),
+
+	// 				'in_array' => in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
+	// 			] );
+
+	// 			return true;
+	// 		}
+	// 	}
+
+	// 	return false;
+	// }
 
 	public static function check()
 	{
@@ -122,7 +147,7 @@ class ToolNotFound
 
 			|| self::check_taxonomy()
 
-			|| self::check_domain();
+			|| self::check_restricted();
 	}
 
 	public static function set_not_found()
