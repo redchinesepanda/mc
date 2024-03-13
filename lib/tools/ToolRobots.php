@@ -12,6 +12,8 @@ class ToolRobots
 	public static function mc_robots_txt()
 	{
 		$sitemap = [
+			'',
+			
 			'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER['HTTP_HOST'] . '/sitemap_index.xml',
 		];
 
