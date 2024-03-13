@@ -50,6 +50,8 @@ class ToolNotFound
 	{
 		$result = false;
 
+		$language = WPMLMain::current_language();
+
 		foreach ( self::RESTRICTED as $languages )
 		{
 			if ( in_array( $language, $languages ) )
