@@ -1,6 +1,10 @@
 @media screen and ( max-width: 767px ) {
     /* Position */
 
+    .legal-to-top {
+        z-index: 1;
+    }
+
     .legal-to-top:not( .legal-review-page-main .legal-to-top ) {
         bottom: 20px;
     }
@@ -15,6 +19,7 @@
 
     .legal-to-top {
         bottom: 20px;
+        z-index: 2;
     }
 }
 
@@ -40,7 +45,6 @@
     position: fixed;
     right: 20px;
     padding: 12px;
-    z-index: 1;
 }
 
 .legal-to-top::before {
