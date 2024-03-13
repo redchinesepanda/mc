@@ -65,13 +65,13 @@ class ToolNotFound
 
 	public static function check_restricted()
 	{
-		LegalDebug::debug( [
-			'ToolNotFound' => 'check_restricted',
+		// LegalDebug::debug( [
+		// 	'ToolNotFound' => 'check_restricted',
 
-			'check_domain' => self::check_domain(),
+		// 	'check_domain' => self::check_domain(),
 
-			'check_language' => self::check_language(),
-		] );
+		// 	'check_language' => self::check_language(),
+		// ] );
 
 		return self::check_domain() && !self::check_language()
 			
