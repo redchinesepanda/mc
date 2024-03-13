@@ -362,7 +362,7 @@ class TemplateMain
     {
         if ( !LegalMain::check_plugins() )
         {
-            return 'render_notfound';
+            return 'TemplateMain::render_notfound';
         }
 
 		return TemplateNotFound::render();
