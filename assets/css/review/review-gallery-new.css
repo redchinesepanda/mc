@@ -149,12 +149,17 @@
     {
         align-items: center;
         justify-content: center;
+        cursor: pointer;
     }
 
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset.columns-1,
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset.columns-2
     {
         justify-content: space-around;
+    }
+
+    .tcb-post-content .legal-imageset-oops::before {
+        cursor: pointer;
     }
 
     /* Position */
