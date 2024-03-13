@@ -78,6 +78,12 @@ class ToolNotFound
 
 	public static function check()
 	{
+		LegalDebug::debug( [
+			'ToolNotFound' => 'check',
+
+			'check_not_found' => self::check_not_found(),
+		] );
+
 		return self::check_not_found();
 	}
 
