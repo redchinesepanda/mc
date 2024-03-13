@@ -168,15 +168,15 @@ class LegalMain
 
 		$permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
 
-		LegalDebug::debug( [
-			'function' => 'check_plugins',
+		// LegalDebug::debug( [
+		// 	'function' => 'check_plugins',
 
-			'permission_acf' => $permission_acf,
+		// 	'permission_acf' => $permission_acf,
 
-			'permission_wpml' => $permission_wpml,
+		// 	'permission_wpml' => $permission_wpml,
 
-			'permission_yoast' => $permission_yoast,
-		] );
+		// 	'permission_yoast' => $permission_yoast,
+		// ] );
 	
 		return $permission_acf
 
