@@ -48,7 +48,7 @@ class LegalMain
 
 	public static function register()
 	{
-		if ( !self::check_plugins() )
+		if ( self::check_plugins() )
 		{
 			$handler = new self();
 		
