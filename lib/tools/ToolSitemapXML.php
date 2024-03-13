@@ -10,7 +10,7 @@ class ToolSitemapXML
 	public static function register()
     {
         LegalDebug::debug( [
-            'ToolSitemapXML',
+            'ToolSitemapXML' => 'register',
         ] );
 
         $handler = new self(); 
