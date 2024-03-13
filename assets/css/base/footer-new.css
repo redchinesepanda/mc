@@ -342,8 +342,8 @@
 
 	/* Typography */
 
-	.footer-menu > .menu-item > .item-title:hover,
-	.footer-menu > .menu-item-end > .menu-item > .item-title:hover {
+	.footer-menu > .menu-item > a.item-title:hover,
+	.footer-menu > .menu-item-end > .menu-item > a.item-title:hover {
 		text-decoration: solid underline var(--Base-base-01, #FFF) 2px;
 		text-underline-offset: 5px;
 	}
@@ -439,6 +439,11 @@
 
 .legal-footer .lang-switcher {
 	cursor: pointer;
+}
+
+.footer-menu > .menu-item > .item-title:not( a ),
+.footer-menu > .menu-item-end > .menu-item > .item-title:not( a ) {
+	cursor: default;
 }
 
 /* Typography */
