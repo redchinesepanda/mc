@@ -69,9 +69,9 @@ class ToolNotFound
 
 					'current_language' => WPMLMain::current_language(),
 
-					in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
+					'in_array' => in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
 				] );
-				
+
 				return true;
 			}
 		}
