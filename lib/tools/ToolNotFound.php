@@ -22,6 +22,56 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	const RESTRICTED = [
+		'old-pl.match.center' => [
+			'pl'
+		],
+
+		'old-ca.match.center' => [
+			'ca',
+
+			'ca-fr',
+		],
+	];
+
+	public static function check_domain_not_in_restricted()
+	{
+		$result = true;
+
+		if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::ALLOWED ) )
+		{
+			$language = WPMLMain::current_language();
+
+			foreach ( self::ALLOWED as $languages )
+			{
+				if ( in_array( $language, $languages ) )
+				{
+					$result = false;
+				}
+			}
+		}
+
+		return $result;
+	}
+
+	public static function check_domain_in_restricted()
+	{
+		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
+		{
+			if ( in_array( WPMLMain::current_language(), self::RESTRICTED )[ $_SERVER[ 'HTTP_HOST' ] ] )
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public static function check_domain()
+	{
+		return self::check_domain_in_restricted() || self::check_domain_not_in_restricted()
+	}
+
 	public static function check()
 	{
 		return self::check_not_found();
@@ -48,7 +98,9 @@ class ToolNotFound
 
 			|| self::check_tag()
 
-			|| self::check_taxonomy();
+			|| self::check_taxonomy()
+			
+			|| self::check_domain();
 	}
 
 	public static function set_not_found()

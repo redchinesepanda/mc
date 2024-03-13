@@ -151,8 +151,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			setActive( event.target.closest( selectors.imagesetItem ) );
 		}
-		
+	
 		event.currentTarget.parentElement.dispatchEvent( reviewGalleyOops.oopsOpenEvent( event.currentTarget.dataset.id ) );
+
+		// reviewGalleySlider.scrollX( event.currentTarget, null );
 	}
 
 	function setSwipe( element )
@@ -161,7 +163,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.addEventListener( reviewGalleySwiper.swipeBackward, scrollBackward );
 
-		element.addEventListener( reviewGalleySlider.click, oopsOpen );
+		if ( !element.parentElement.classList.contains( classes.imagesetOops ) )
+		{
+			element.addEventListener( reviewGalleySlider.click, oopsOpen );
+		}
 	}
 
 	function slider( element, index )
@@ -174,10 +179,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.imageset ).forEach( setSwipe );
 	}
-
-	const properties = {
-		columnGap : 'column-gap',
-	};
 
 	const selectors = {
 		imageset : '.tcb-post-content .legal-imageset',
@@ -223,7 +224,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return 'legal-imageset-wrapper-' + index;
 		},
 
-		imageActive : 'legal-active'
+		imageActive : 'legal-active',
+		
+		imagesetOops : 'legal-imageset-oops'
 	};
 
 	function suspendActive( element )
