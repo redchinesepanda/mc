@@ -77,49 +77,6 @@ class ToolNotFound
 			
 			|| !self::check_domain() && self::check_language();
 	}
-	
-	// public static function check_domain_not_in_restricted()
-	// {
-	// 	$result = true;
-
-	// 	if ( !array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
-	// 	{
-	// 		$language = WPMLMain::current_language();
-
-	// 		foreach ( self::RESTRICTED as $languages )
-	// 		{
-	// 			if ( in_array( $language, $languages ) )
-	// 			{
-	// 				$result = false;
-	// 			}
-	// 		}
-	// 	}
-
-	// 	return $result;
-	// }
-
-	// public static function check_domain_in_restricted()
-	// {
-	// 	if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
-	// 	{
-	// 		if ( in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] ) )
-	// 		{
-	// 			LegalDebug::debug( [
-	// 				'ToolNotFound' => 'check_domain_in_restricted',
-
-	// 				'HTTP_HOST' => $_SERVER[ 'HTTP_HOST' ],
-
-	// 				'current_language' => WPMLMain::current_language(),
-
-	// 				'in_array' => in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
-	// 			] );
-
-	// 			return true;
-	// 		}
-	// 	}
-
-	// 	return false;
-	// }
 
 	public static function check()
 	{
