@@ -163,13 +163,13 @@ class LegalMain
 
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'check_plugins',
+		LegalDebug::debug( [
+			'function' => 'check_plugins',
 
-		// 	'permission_acf' => $permission_acf,
+			'permission_acf' => $permission_acf,
 
-		// 	'permission_wpml' => $permission_wpml,
-		// ] );
+			'permission_wpml' => $permission_wpml,
+		] );
 	
 		return $permission_acf && $permission_wpml;
 	}
