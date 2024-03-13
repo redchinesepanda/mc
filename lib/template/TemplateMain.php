@@ -360,6 +360,11 @@ class TemplateMain
 
     public static function render_notfound()
     {
+        if ( !LegalMain::check_plugins() )
+        {
+            return 'render_notfound';
+        }
+
 		return TemplateNotFound::render();
     }
 
