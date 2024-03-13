@@ -62,6 +62,16 @@ class ToolNotFound
 		{
 			if ( in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] ) )
 			{
+				LegalDebug::debug( [
+					'ToolNotFound' => 'check_domain_in_restricted',
+
+					'HTTP_HOST' => $_SERVER[ 'HTTP_HOST' ],
+
+					'current_language' => WPMLMain::current_language(),
+
+					in_array( WPMLMain::current_language(), self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ] )
+				] );
+				
 				return true;
 			}
 		}
@@ -71,7 +81,7 @@ class ToolNotFound
 
 	public static function check_domain()
 	{
-		return !self::check_domain_in_restricted()
+		return self::check_domain_in_restricted()
 			
 			|| self::check_domain_not_in_restricted();
 	}
