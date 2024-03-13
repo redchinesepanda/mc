@@ -12,7 +12,7 @@ class ToolSitemapXML
         LegalDebug::debug( [
             'ToolSitemapXML',
         ] );
-        
+
         $handler = new self(); 
 
         add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
@@ -139,6 +139,10 @@ class ToolSitemapXML
 
     public static function wpkama_sitemaps_posts_entry( $entry, $post )
     {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wpkama_sitemaps_posts_entry',
+        ] );
+
         $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
 
         $entry[ 'priority' ] = self::get_priority( $post );
