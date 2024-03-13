@@ -23,9 +23,9 @@ class ToolNotFound
     }
 
 	const RESTRICTED = [
-		'oldpl.match.center' => [
-			'pl'
-		],
+		// 'oldpl.match.center' => [
+		// 	'pl'
+		// ],
 
 		// 'old-ca.match.center' => [
 		// 	'ca',
