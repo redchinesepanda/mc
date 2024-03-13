@@ -5,14 +5,8 @@
 
 class ToolSitemapXML
 {
-    // public static function register_functions()
-    
-	public static function register()
+    public static function register()
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'register',
-        ] );
-
         $handler = new self(); 
 
         add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
@@ -24,10 +18,6 @@ class ToolSitemapXML
         //  Отключение типа записи из карты сайта
 
         add_filter( 'wp_sitemaps_post_types', [ $handler,'wpkama_remove_sitemaps_post_types' ] );
-
-        # Отключение таксономии из карты сайта
-
-        // add_filter( 'wp_sitemaps_taxonomies', [ $handler,'wpkama_remove_sitemaps_taxonomies' ] );
 
         # Добавление колонок Last Modified, Change Frequency, Priority
 
@@ -78,32 +68,6 @@ class ToolSitemapXML
 
         return $post_types;
     }
-
-    // const TAXONOMIES = [
-    //     'post_tag',
-
-    //     'page_group',
-
-    //     'media_type',
-
-    //     'page_type',
-
-    //     'billet_feature',
-
-    //     'billet_achievement',
-
-    //     'offer_group',
-    // ];
-
-    // public static function wpkama_remove_sitemaps_taxonomies( $taxonomies )
-    // {
-    //     foreach ( self::TAXONOMIES as $taxonomy )
-    //     {
-    //         unset( $taxonomies[ $taxonomy ] );
-    //     }
-
-    //     return $taxonomies;
-    // }
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
@@ -139,10 +103,6 @@ class ToolSitemapXML
 
     public static function wpkama_sitemaps_posts_entry( $entry, $post )
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wpkama_sitemaps_posts_entry',
-        ] );
-
         $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
 
         $entry[ 'priority' ] = self::get_priority( $post );
