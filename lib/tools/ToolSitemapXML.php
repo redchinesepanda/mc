@@ -60,7 +60,26 @@ class ToolSitemapXML
 
 		// return $where . $wpdb->prepare( $sql, $this->format, $this->date_value );
 
-        $where = str_replace( "'en'", "'pl'", $where );
+        // $where = str_replace( "'en'", "'pl'", $where );
+
+        $participate = 'NOT IN';
+
+        if ( ToolNotFound::check_domain() )
+        {
+            $participate = 'IN';
+        }
+
+        $restricted_languages = ToolNotFounds::get_restricted_languages();
+
+        $values = "'" . join( "', '", $restricted_languages ) . "'";
+
+        $where = preg_replace(
+            '/wpml_translations.language_code(\s=\s\'[a-z]+\')?/',
+            
+            'wpml_translations.language_code ' . $participate . ' (' . $values . ')',
+            
+            $where
+        );
 		
         return $where;
 	}
