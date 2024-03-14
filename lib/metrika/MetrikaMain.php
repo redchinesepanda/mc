@@ -41,6 +41,10 @@ class MetrikaMain
             'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-lib.js',
 
             'ver' => '1.0.0',
+
+            'deps' => [
+                'legal-metrika-lib',
+            ],
         ],
 
         'legal-gtag-main' => [
