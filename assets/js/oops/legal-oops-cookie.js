@@ -73,9 +73,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 
-			console.log( LegalCookieOops.oopsCookieEvent );
+			// console.log( LegalCookieOops.oopsCookieEvent );
 
-			document.dispatchEvent( LegalCookieOops.oopsCookieEvent );
+			document.dispatchEvent( LegalCookieOops.oopsCookieEvent() );
 		}
 
 		closeOops( event.currentTarget );

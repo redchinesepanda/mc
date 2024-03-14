@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		userInit();
 	}
 
-	document.addEventListener( LegalCookieOops.oopsCookieHandler(), userInit, { once: true } );
+	document.addEventListener( LegalCookieOops.oopsCookieHandler, userInit, { once: true } );
 
 } );
 // Google Tag Manager End
