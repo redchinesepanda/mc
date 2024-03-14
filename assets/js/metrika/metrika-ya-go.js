@@ -2,15 +2,10 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// console.log( 'ym 86785715 start' );
-
 	if ( !document.body.classList.contains( 'logged-in' ) )
 	{
-		// console.log( 'ym 86785715 not logged-in' );
-
-		function sendMetric( href ) {
-			// console.log( 'ym 86785715 sendMetric href: ' + href );
-
+		function sendMetric( href )
+		{
 			let prefix = 'goal-';
 
 			if ( href.indexOf( '/ca/' ) !== -1 ) {
@@ -24,7 +19,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			if ( window[ 'yaCounter' + YandexMetrikaId ] )
 			{
 				window[ 'yaCounter' + YandexMetrikaId ].reachGoal( goalName, goalParams );
-			} else if ( window[ 'ym' ] )
+
+				console.log( { YandexMetrikaId: YandexMetrikaId, goalName: goalName, goalParams: goalParams } );
+			}
+			else if ( window[ 'ym' ] )
 			{
 				window[ 'ym' ]( YandexMetrikaId, 'reachGoal', goalName, goalParams );
 			}
@@ -32,7 +30,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			if ( window[ 'gtag' ] )
 			{
 				window[ 'gtag' ]( 'event', 'conversion', { event_category: goalName, event_label: goalParams.label } );
-			} else if ( window[ 'ga' ] )
+			}
+			else if ( window[ 'ga' ] )
 			{
 				window[ 'ga' ]( 'send', 'event', { eventCategory: 'conversion', eventAction: goalName, eventLabel: goalParams.label } );
 			}
@@ -43,25 +42,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		const regExp = /-\d+\/$/;
 
-		// console.log( 'ym 86785715 refs' + refs );
-
-		for ( var ref of refs ) {
-
-			// console.log( 'ym 86785715 ref: ' + ref );
-
-			// console.log( 'ym 86785715 ref.href: ' + ref.href );
-
-			ref.addEventListener( 'click', function ( e ) {
-				// const regExp = /-\d+$/;
-				
-				// const regExp = /-\d+\/$/;
-
-				// console.log( 'ym 86785715 regExp.test: ' + regExp.test( this.href ) );
-				
+		for ( var ref of refs )
+		{
+			ref.addEventListener( 'click', function ( e )
+			{
 				if ( regExp.test( this.href ) )
 				{
-					// console.log( 'ym 86785715 ref: ' + ref );
-
 					sendMetric( this.href.replace( regExp, '' ) );
 				}
 
