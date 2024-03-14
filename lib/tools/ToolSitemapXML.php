@@ -31,10 +31,6 @@ class ToolSitemapXML
 
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
 
-        LegalDebug::debug( [
-            'is_sitemap_page()' => self::is_sitemap_page(),
-        ] );
-
         add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
     }
 
@@ -54,10 +50,15 @@ class ToolSitemapXML
 
     public static function prepare_filter_where( $where )
 	{
-        LegalDebug::debug( [
-            'is_sitemap_page()' => self::is_sitemap_page(),
-        ] );
-        
+        // LegalDebug::debug( [
+        //     'is_sitemap_page()' => self::is_sitemap_page(),
+        // ] );
+
+        if ( !self::is_sitemap_page() )
+        {
+            return $where;
+        }
+
         $participate = 'NOT IN';
 
         if ( ToolNotFound::check_domain() )
