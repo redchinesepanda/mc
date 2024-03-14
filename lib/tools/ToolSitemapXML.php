@@ -31,37 +31,28 @@ class ToolSitemapXML
 
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
 
+        LegalDebug::debug( [
+            'is_sitemap_page()' => self::is_sitemap_page(),
+        ] );
+
         add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
     }
 
-    public function prepare_filter_where( $where )
+    public static function is_sitemap_page()
+    {
+        global $wp_version;
+    
+        if( ! did_action( 'parse_request' ) ){
+            _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
+    
+            return false;
+        }
+    
+        return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
+    }
+
+    public static function prepare_filter_where( $where )
 	{
-        // global $wp_filter;
-
-        // global $sitepress;
-
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'prepare_filter_where',
-
-        //     // 'wp_filter' => $wp_filter[ 'posts_where' ],
-
-        //     'where' => $where,
-
-        //     // 'sitepress' => $sitepress,
-        // ] );
-
-		// global $wpdb;
-
-		// $where and $where .= ' AND ';
-
-		// $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
-
-		// $sql .= "{$this->compare} %s";
-
-		// return $where . $wpdb->prepare( $sql, $this->format, $this->date_value );
-
-        // $where = str_replace( "'en'", "'pl'", $where );
-
         $participate = 'NOT IN';
 
         if ( ToolNotFound::check_domain() )
