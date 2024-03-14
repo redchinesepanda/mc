@@ -38,11 +38,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
 		{
-			console.log( event.currentTarget.dataset.cookie );
+			console.log( cookies.oopsCookie );
 
-			console.log( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) );
+			console.log( LegalCookie.getCookie( cookies.oopsCookie ) );
 			
-			if ( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) === cookieValue.accepted )
+			if ( LegalCookie.getCookie( cookies.oopsCookie ) === cookieValue.accepted )
 			{
 				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 			}
