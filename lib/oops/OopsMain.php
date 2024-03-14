@@ -65,6 +65,19 @@ class OopsMain
         ],
     ];
 
+    public static function get_localize()
+	{
+		return [
+			'legal-lib-cookie' => [
+				'object_name' => 'LibCookie',
+	
+				'data' => [
+					'domain' => '.' . $_SERVER[ 'HTTP_HOST' ],
+				],
+			],
+		];
+	}
+
     public static function register_script( $scripts = [] )
     {
         if ( self::check() ) {
@@ -73,6 +86,8 @@ class OopsMain
             }
 
             ToolEnqueue::register_script( $scripts );
+
+            ToolEnqueue::localize_script( self::get_localize() );
         }
     }
 

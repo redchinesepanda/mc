@@ -57,6 +57,21 @@ class OopsCookie
 		],
     ];
 
+    public static function get_localize()
+	{
+		return [
+			'legal-lib-cookie' => [
+				'object_name' => 'legalHeaderCutText',
+	
+				'data' => [
+					'default' => __( BaseMain::TEXT[ 'show-all' ], ToolLoco::TEXTDOMAIN ),
+	
+					'active' => __( BaseMain::TEXT[ 'hide' ], ToolLoco::TEXTDOMAIN ),
+				],
+			],
+		];
+	}
+
     public static function register_script( $scripts = [] )
     {
         if ( self::check() ) {
@@ -65,6 +80,8 @@ class OopsCookie
             }
 
             ToolEnqueue::register_script( $scripts );
+
+            ToolEnqueue::localize_script( self::get_localize() );
         }
     }
 
