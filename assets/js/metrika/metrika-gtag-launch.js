@@ -3,5 +3,4 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-224707123-1');
-console.log( 'Google Tag Manager run' );
 // Google Tag Manager run start
