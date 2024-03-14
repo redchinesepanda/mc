@@ -25,7 +25,7 @@ class ToolSitemapXML
 
         # Изменение параметров запроса WP_Query для карты сайта posts
 
-        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
 
         # Исключение отдельных url (url записи, рубрики, метки)
 
@@ -36,15 +36,15 @@ class ToolSitemapXML
 
     public function prepare_filter_where( $where )
 	{
-        global $sitepress;
+        // global $sitepress;
 
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'prepare_filter_where',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'prepare_filter_where',
 
-            'where' => $where,
+        //     'where' => $where,
 
-            'sitepress' => $sitepress,
-        ] );
+        //     'sitepress' => $sitepress,
+        // ] );
 		// global $wpdb;
 
 		// $where and $where .= ' AND ';
@@ -54,6 +54,8 @@ class ToolSitemapXML
 		// $sql .= "{$this->compare} %s";
 
 		// return $where . $wpdb->prepare( $sql, $this->format, $this->date_value );
+
+        $where = str_replace( "'en'", "'pl'", $where );
 		
         return $where;
 	}
