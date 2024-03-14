@@ -40,15 +40,15 @@ class ToolSitemapXML
 
         // global $sitepress;
 
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'prepare_filter_where',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'prepare_filter_where',
 
-            // 'wp_filter' => $wp_filter[ 'posts_where' ],
+        //     // 'wp_filter' => $wp_filter[ 'posts_where' ],
 
-            'where' => $where,
+        //     'where' => $where,
 
-            // 'sitepress' => $sitepress,
-        ] );
+        //     // 'sitepress' => $sitepress,
+        // ] );
 
 		// global $wpdb;
 
