@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	if ( MetrikaLib.checkCookie() )
 	{
-		gtagInit();
+		MetrikaLib.userInit( gtagInit );
 	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagInit, { once: true } );
