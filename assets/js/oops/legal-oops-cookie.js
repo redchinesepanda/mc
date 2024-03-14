@@ -32,7 +32,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
 		{
-			if ( LegalCookie.getCookie( cookie ) === 'accepted' )
+			if ( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) === 'accepted' )
 			{
 				LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 			}
