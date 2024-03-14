@@ -131,7 +131,7 @@ class ToolSitemapXML
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
 
-            'wp_query' => $wp_query,
+            'wp_query' => $wp_query->request,
         ] );
 
         $args[ 'suppress_filters' ] = true;
