@@ -25,31 +25,31 @@ class MetrikaMain
             'ver' => '1.0.0',
         ],
 
-        'legal-gtag-lib' => [
-            'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
+        // 'legal-gtag-lib' => [
+        //     'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
 
-        'legal-gtag-main' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-main.js',
+        // 'legal-gtag-main' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-main.js',
 
-            'ver' => '1.0.0',
+        //     'ver' => '1.0.0',
             
-            'deps' => [
-                'legal-gtag-lib',
-            ],
-        ],
+        //     'deps' => [
+        //         'legal-gtag-lib',
+        //     ],
+        // ],
 
-        'legal-gtag-launch' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-launch.js',
+        // 'legal-gtag-launch' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-launch.js',
 
-            'ver' => '1.0.0',
+        //     'ver' => '1.0.0',
 
-            'deps' => [
-                'legal-gtag-lib',
-            ],
-        ],
+        //     'deps' => [
+        //         'legal-gtag-lib',
+        //     ],
+        // ],
     ]; 
 
 	public static function register_script( $scripts = [] )
