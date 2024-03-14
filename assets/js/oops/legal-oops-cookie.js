@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		cookieWrapper: '.legal-oops-cookie-wrapper',
 
-		cookieButton: '.oops-cookie-button',
+		cookieButton: '.oops-cookie-button.legal-all',
 
 		cookieButtonNecessary: '.oops-cookie-button.legal-necessary',
 
