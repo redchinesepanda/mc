@@ -95,6 +95,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	console.log( events );
+
 	for ( const [ key, value ] of Object.entries( events ) )
 	{
 		document.addEventListener( value, enableOopsAll, { once: true } );
