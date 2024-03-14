@@ -69,11 +69,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
 		{
 			oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
+
+			console.log( wrapper );
 		} );
 	
 		document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
 		{
 			oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
+
+			console.log( wrapper );
 		} );
 	}
 
@@ -100,6 +104,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	for ( const [ key, value ] of Object.entries( events ) )
 	{
 		document.addEventListener( value, enableOopsAll, { once: true } );
+
+		console.log( value );
 	}
 } );
 
