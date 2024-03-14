@@ -10,7 +10,9 @@ let LegalCookie = ( function()
 
 			path: '/',
 
-			expires: 90*86400
+			expires: 90*86400,
+
+			sameSite: 'Lax'
 		},
 
 		setCookie: function ( name, value, options )
