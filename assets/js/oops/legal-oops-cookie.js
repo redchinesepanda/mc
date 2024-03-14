@@ -16,11 +16,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active: 'legal-active'
 	};
 
+	function closeOops( element )
+	{
+		element.closest( element.dataset.wrapperSelector ).classList.remove( classes.active );
+	}
+
 	function acceptCookie( event )
 	{
 		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
+		// event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
+
+		closeOops( event.currentTarget );
 	}
 
 	function prepareAccept( button )
@@ -43,6 +50,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			} );
 			
 			wrapper.classList.add( classes.active );
+
+			if ( wrapperSelector == selectors.cookieWrapper )
+			{
+				closeOops( wrapper.querySelector( itemSlector ) );
+			}
 		}
 	}
 	
