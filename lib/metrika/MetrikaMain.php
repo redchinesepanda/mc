@@ -42,9 +42,9 @@ class MetrikaMain
 
             'ver' => '1.0.0',
 
-            'deps' => [
-                'legal-metrika-lib',
-            ],
+            // 'deps' => [
+            //     'legal-metrika-lib',
+            // ],
         ],
 
         'legal-gtag-main' => [
