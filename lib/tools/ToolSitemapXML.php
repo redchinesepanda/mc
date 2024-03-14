@@ -26,6 +26,41 @@ class ToolSitemapXML
         # Изменение параметров запроса WP_Query для карты сайта posts
 
         add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+
+        # Исключение отдельных url (url записи, рубрики, метки)
+
+        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
+    }
+    
+    public static function kama_sitemaps_posts_query_args( $args, $post_type )
+    {
+        if( 'page' !== $post_type )
+        {
+            return $args;
+        }
+
+        $restricted_languages = ToolNotFound::get_restricted_languages();
+
+        LegalDebug::debug( [
+            'toolSitemapXML' => 'kama_sitemaps_posts_query_args',
+
+            'restricted_languages' => $restricted_languages,
+        ] );
+
+        // учтем что этот параметр может быть уже установлен
+
+        if( ! isset( $args['post__not_in'] ) )
+        {
+            $args['post__not_in'] = [];
+        }
+
+        // Исключаем посты
+        foreach( [ 12, 24 ] as $post_id )
+        {
+            $args['post__not_in'][] = $post_id;
+        }
+
+        return $args;
     }
     
     public static function kama_sitemap_max_urls( $num, $object_type )
