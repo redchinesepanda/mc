@@ -57,10 +57,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( wrapper.classList );
 
-			if ( wrapperSelector == selectors.cookieWrapper )
-			{
-				wrapper.classList.remove( classes.active );
-			}
+			// if ( wrapperSelector == selectors.cookieWrapper )
+			// {
+			// 	closeOops( wrapper.querySelector( itemSlector ) ); 
+
+			// 	wrapper.classList.remove( classes.active );
+			// }
 		}
 	}
 	
