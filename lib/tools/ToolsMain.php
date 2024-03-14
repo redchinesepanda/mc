@@ -62,8 +62,6 @@ class ToolsMain
 
         ToolLoco::register();
 
-        ToolSitemapXML::register();
-
         ToolNotFound::register();
 
         ToolPosts::register();
@@ -79,6 +77,8 @@ class ToolsMain
         ToolBootsrap::register();
 
         ToolContent::register();
+
+        ToolSitemapXML::register();
 
         ToolCategoryRedirect::register();
 

@@ -69,7 +69,7 @@ class ToolSitemapXML
             $participate = 'IN';
         }
 
-        $restricted_languages = ToolNotFounds::get_restricted_languages();
+        $restricted_languages = ToolNotFound::get_restricted_languages();
 
         $values = "'" . join( "', '", $restricted_languages ) . "'";
 
