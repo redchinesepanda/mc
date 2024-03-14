@@ -48,9 +48,15 @@ class ToolSitemapXML
                 $updated[] = $language;
             }
         }
+
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'my_change_french_url_to_custom_external_site',
+
+            'updated' => $updated,
+        ] );
     
         // return $languages;
-        
+
         return $updated;
     }
     
