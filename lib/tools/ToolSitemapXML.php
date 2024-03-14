@@ -36,10 +36,14 @@ class ToolSitemapXML
 
     public function prepare_filter_where( $where )
 	{
+        global $sitepress;
+
         LegalDebug::debug( [
             'ToolSitemapXML' => 'prepare_filter_where',
 
             'where' => $where,
+
+            'sitepress' => $sitepress,
         ] );
 		// global $wpdb;
 
