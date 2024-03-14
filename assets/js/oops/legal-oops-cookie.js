@@ -22,7 +22,7 @@ let LegalCookieOops = ( function()
 		oopsCookieEvent : function()
 		{
 			return new CustomEvent( this.oopsCookieHandler, {} );
-		},
+		}
 	};
 } )();
 
