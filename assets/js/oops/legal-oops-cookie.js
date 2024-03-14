@@ -55,6 +55,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			wrapper.classList.add( classes.active );
 
+			console.log( wrapper.classList );
+
 			if ( wrapperSelector == selectors.cookieWrapper )
 			{
 				closeOops( wrapper.querySelector( itemSlector ) ); 
