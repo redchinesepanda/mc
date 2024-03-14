@@ -41,6 +41,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
 	{
+		console.log( LegalCookie.getCookie( cookie ) );
+
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
 			wrapper.querySelectorAll( itemSlector ).forEach( prepareAccept, {
