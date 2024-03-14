@@ -68,9 +68,9 @@ class ToolSitemapXML
 
         $restricted_languages = ToolNotFound::get_restricted_languages();
 
-        LegalDebug::debug( [
-            'restricted_languages' => $restricted_languages,
-        ] );
+        // LegalDebug::debug( [
+        //     'restricted_languages' => $restricted_languages,
+        // ] );
 
         $values = "'" . join( "', '", $restricted_languages ) . "'";
 
