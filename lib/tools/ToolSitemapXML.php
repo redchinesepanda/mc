@@ -42,7 +42,8 @@ class ToolSitemapXML
     {
         global $wp_version;
     
-        if( ! did_action( 'parse_request' ) ){
+        if( ! did_action( 'parse_request' ) )
+        {
             _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
     
             return false;
@@ -53,6 +54,10 @@ class ToolSitemapXML
 
     public static function prepare_filter_where( $where )
 	{
+        LegalDebug::debug( [
+            'is_sitemap_page()' => self::is_sitemap_page(),
+        ] );
+        
         $participate = 'NOT IN';
 
         if ( ToolNotFound::check_domain() )
