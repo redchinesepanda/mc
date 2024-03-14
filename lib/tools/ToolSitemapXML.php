@@ -30,7 +30,29 @@ class ToolSitemapXML
         # Исключение отдельных url (url записи, рубрики, метки)
 
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
+
+        add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
     }
+
+    public function prepare_filter_where( $where )
+	{
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'prepare_filter_where',
+
+            'where' => $where,
+        ] );
+		// global $wpdb;
+
+		// $where and $where .= ' AND ';
+
+		// $sql = "STR_TO_DATE({$wpdb->postmeta}.meta_value, %s) ";
+
+		// $sql .= "{$this->compare} %s";
+
+		// return $where . $wpdb->prepare( $sql, $this->format, $this->date_value );
+		
+        return $where;
+	}
     
     public static function kama_sitemaps_posts_query_args( $args, $post_type )
     {
