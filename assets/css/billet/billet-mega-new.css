@@ -224,7 +224,8 @@
 /* Width and Height */
 
 .legal-billet-mega .billet-mega-content {
-	width: 100%;
+	/* width: 100%; */
+	width: calc(100% -(20px* 2));
 }
 
 .legal-billet-mega.legal-default .billet-mega-about,
