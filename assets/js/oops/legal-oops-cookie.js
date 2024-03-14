@@ -18,6 +18,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		active: 'legal-active'
 	};
 
+	const cookieValue = {
+		accepted: 'accepted',
+
+		undefined: undefined,
+	};
+
 	function closeOops( element )
 	{
 		element.closest( element.dataset.wrapperSelector ).classList.remove( classes.active );
@@ -32,14 +38,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
 		{
-			if ( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) === 'accepted' )
+			console.log( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) );
+
+			console.log(  );
+			
+			if ( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) === cookieValue.accepted )
 			{
-				LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
+				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 			}
 		}
 		else
 		{
-			LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
+			LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 		}
 
 		// event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
@@ -53,12 +63,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		button.dataset.wrapperSelector = this.wrapperSelector;
 
-		button.addEventListener( 'click', acceptCookie, false );
+		button.addEventListener( events.click, acceptCookie, false );
 	}
 
 	function prepareAcceptNecessary( wrapper )
 	{
-		wrapper.querySelector( selectors.cookieButtonNecessary ).addEventListener( 'click', acceptCookieNecessary, false );
+		wrapper.querySelector( selectors.cookieButtonNecessary ).addEventListener( events.click, acceptCookieNecessary, false );
 	}
 
 	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
