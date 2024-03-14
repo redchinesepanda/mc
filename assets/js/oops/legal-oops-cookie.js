@@ -7,6 +7,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		cookieButton: '.oops-cookie-button',
 
+		cookieButtonNecessary: '.oops-cookie-button.legal-necessary',
+
 		ageWrapper: '.legal-oops-age-wrapper',
 
 		ageButtonYes: '.age-button-yes-link'
@@ -19,6 +21,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function closeOops( element )
 	{
 		element.closest( element.dataset.wrapperSelector ).classList.remove( classes.active );
+	}
+
+	function acceptCookieNecessary( event )
+	{
+		closeOops( event.currentTarget );
 	}
 
 	function acceptCookie( event )
@@ -39,6 +46,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		button.addEventListener( 'click', acceptCookie, false );
 	}
 
+	function prepareAcceptNecessary( wrapper )
+	{
+		wrapper.querySelector( selectors.cookieButtonNecessary ).addEventListener( 'click', acceptCookieNecessary, false );
+	}
+
 	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
 	{
 		console.log( LegalCookie.getCookie( cookie ) );
@@ -57,12 +69,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			console.log( wrapper.classList );
 
-			// if ( wrapperSelector == selectors.cookieWrapper )
-			// {
-			// 	closeOops( wrapper.querySelector( itemSlector ) ); 
+			if ( wrapperSelector == selectors.cookieWrapper )
+			{
+				closeOops( wrapper.querySelector( itemSlector ) ); 
 
-			// 	wrapper.classList.remove( classes.active );
-			// }
+				wrapper.classList.remove( classes.active );
+			}
 		}
 	}
 	
