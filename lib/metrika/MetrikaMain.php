@@ -32,7 +32,7 @@ class MetrikaMain
         // ],
 
         'legal-metrika-lib' => [
-            'path' => '/assets/js/metrika/metrika-lib.js',
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-lib.js',
 
             'ver' => '1.0.0',
         ],
