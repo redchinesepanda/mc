@@ -7,6 +7,10 @@ require_once( 'BaseFooter.php' );
 class BaseMain
 {
 	const TEXT = [
+        'accept-all' => 'Accept all cookies',
+
+        'accept-necessary' => 'Only accept necessary cookies',
+
 		'all-countries' => 'All Countries',
 
 		'all-rights-reserved' => 'All rights reserved',

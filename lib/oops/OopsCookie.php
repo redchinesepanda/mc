@@ -139,7 +139,9 @@ class OopsCookie
                 'label' => __( BaseMain::TEXT[ 'more-information' ], ToolLoco::TEXTDOMAIN ),
             ],
 
-			'label' => __( BaseMain::TEXT[ 'i-accept' ], ToolLoco::TEXTDOMAIN ),
+			'label-necessary' => __( BaseMain::TEXT[ 'accept-necessary' ], ToolLoco::TEXTDOMAIN ),
+
+			'label-all' => __( BaseMain::TEXT[ 'accept-all' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 
