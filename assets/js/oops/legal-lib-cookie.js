@@ -6,7 +6,9 @@ let LegalCookie = ( function()
 
 	return {
 		options: {
-			domain: '.match.center',
+			// domain: '.match.center',
+			
+			domain: LibCookie.data.domain,
 
 			path: '/',
 
