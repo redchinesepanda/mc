@@ -1,5 +1,31 @@
 // oops-cookie start
 
+let LegalCookieOops = ( function()
+{
+	"use strict";
+
+	return {
+		cookieName : {
+			oopsAge: 'legal-oops-age',
+	
+			oopsCookie: 'legal-oops-cookie'
+		},
+
+		cookieValue : {
+			accepted: 'accepted',
+	
+			undefined: undefined,
+		},
+
+		oopsCookieHandler : 'oopscookiesset',
+
+		oopsCookieEvent : function()
+		{
+			return new CustomEvent( this.oopsCookieHandler, {} );
+		},
+	};
+} )();
+
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 	const selectors = {
@@ -46,6 +72,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		else
 		{
 			LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
+
+			document.dispatchEvent( LegalCookieOops.oopsCookieEvent );
 		}
 
 		closeOops( event.currentTarget );
