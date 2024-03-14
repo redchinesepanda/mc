@@ -16,44 +16,55 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-PW5JXP9');
 
-		userSuspend();
+		// userSuspend();
+
+		// MetrikaLib.userSuspend( gtmInit );
 	}
 
-	const events = {
-		mousemove: 'mousemove',
-
-		scroll: 'scroll',
-
-		click: 'click'
-	};
-
-	function userSuspend()
+	if ( MetrikaLib.checkCookie() )
 	{
-		for ( const [ key, value ] of Object.entries( events ) )
-		{
-			document.removeEventListener( value, gtmInit, { once: true } );
-		}
-	}
+		// MetrikaLib.userInit( userInit );
 
-	function userInit()
-	{
-		for ( const [ key, value ] of Object.entries( events ) )
-		{
-			document.addEventListener( value, gtmInit, { once: true } );
-		}
+		gtmInit();
 	}
+	
+	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtmInit, { once: true } );
 
-	function checkCookie()
-	{
-		return LegalCookie.getCookie( LegalCookieOops.cookieName.oopsCookie ) === LegalCookieOops.cookieValue.accepted;
-	}
+	// const events = {
+	// 	mousemove: 'mousemove',
 
-	if ( checkCookie() )
-	{
-		userInit();
-	}
+	// 	scroll: 'scroll',
 
-	document.addEventListener( LegalCookieOops.oopsCookieHandler, userInit, { once: true } );
+	// 	click: 'click'
+	// };
+
+	// function userSuspend()
+	// {
+	// 	for ( const [ key, value ] of Object.entries( events ) )
+	// 	{
+	// 		document.removeEventListener( value, gtmInit, { once: true } );
+	// 	}
+	// }
+
+	// function userInit()
+	// {
+	// 	for ( const [ key, value ] of Object.entries( events ) )
+	// 	{
+	// 		document.addEventListener( value, gtmInit, { once: true } );
+	// 	}
+	// }
+
+	// function checkCookie()
+	// {
+	// 	return LegalCookie.getCookie( LegalCookieOops.cookieName.oopsCookie ) === LegalCookieOops.cookieValue.accepted;
+	// }
+
+	// if ( checkCookie() )
+	// {
+	// 	userInit();
+	// }
+
+	// document.addEventListener( LegalCookieOops.oopsCookieHandler, userInit, { once: true } );
 
 } );
 
