@@ -20,22 +20,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				window[ 'yaCounter' + YandexMetrikaId ].reachGoal( goalName, goalParams );
 
-				console.log( { type: 'yaCounter', YandexMetrikaId: YandexMetrikaId, goalName: goalName, goalParams: goalParams } );
+				// console.log( { type: 'yaCounter', YandexMetrikaId: YandexMetrikaId, goalName: goalName, goalParams: goalParams } );
 			}
 			else if ( window[ 'ym' ] )
 			{
 				window[ 'ym' ]( YandexMetrikaId, 'reachGoal', goalName, goalParams );
 
-				console.log( { type: 'ym', YandexMetrikaId: YandexMetrikaId, goalName: goalName, goalParams: goalParams } );
+				// console.log( { type: 'ym', YandexMetrikaId: YandexMetrikaId, goalName: goalName, goalParams: goalParams } );
 			}
 
 			if ( window[ 'gtag' ] )
 			{
 				window[ 'gtag' ]( 'event', 'conversion', { event_category: goalName, event_label: goalParams.label } );
+
+				console.log( { type: 'gtag', goalName: goalName, goalParams: goalParams } );
 			}
 			else if ( window[ 'ga' ] )
 			{
 				window[ 'ga' ]( 'send', 'event', { eventCategory: 'conversion', eventAction: goalName, eventLabel: goalParams.label } );
+
+				console.log( { type: 'ga', goalName: goalName, goalParams: goalParams } );
 			}
 		}
 
