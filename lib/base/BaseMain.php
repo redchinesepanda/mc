@@ -9,7 +9,7 @@ class BaseMain
 	const TEXT = [
         'accept-all' => 'Accept all cookies',
 
-        'accept-necessary' => 'Only accept necessary cookies',
+        'accept-necessary' => 'Accept only necessary cookies',
 
 		'all-countries' => 'All Countries',
 
