@@ -36,6 +36,11 @@ class ToolNotFound
 
 	public static function get_restricted_languages()
 	{
+		if ( self::check_domain() )
+		{
+			return self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ];
+		}
+
 		return call_user_func_array( 'array_merge', self::RESTRICTED );
 	}
 
