@@ -27,9 +27,7 @@ class ToolSitemapXML
 
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
 
-        # Исключение отдельных url (url записи, рубрики, метки)
-
-        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
+        # Исключение отдельных язвков из карты сайта
 
         add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
     }
@@ -85,57 +83,6 @@ class ToolSitemapXML
         return $where;
 	}
     
-    public static function kama_sitemaps_posts_query_args( $args, $post_type )
-    {
-        // if( 'page' !== $post_type )
-
-        if( !in_array( $post_type, [ 'post', 'page' ] ) )
-        {
-            return $args;
-        }
-
-        $restricted_languages = ToolNotFound::get_restricted_languages();
-
-        if ( empty( $restricted_languages ) )
-        {
-            return $args;
-        }
-
-        LegalDebug::debug( [
-            'toolSitemapXML' => 'kama_sitemaps_posts_query_args',
-
-            'restricted_languages' => $restricted_languages,
-        ] );
-
-        $current_language = $sitepress->get_current_language();
-
-        global $sitepress;
-
-        foreach ( $restricted_languages as $language )
-        {
-            $sitepress->switch_lang( $language );
-
-
-
-            $sitepress->switch_lang( $current_language );
-        }
-
-        // учтем что этот параметр может быть уже установлен
-
-        if( ! isset( $args['post__not_in'] ) )
-        {
-            $args['post__not_in'] = [];
-        }
-
-        // Исключаем посты
-        foreach( [ 12, 24 ] as $post_id )
-        {
-            $args['post__not_in'][] = $post_id;
-        }
-
-        return $args;
-    }
-    
     public static function kama_sitemap_max_urls( $num, $object_type )
     {
         return 1000;
@@ -179,14 +126,6 @@ class ToolSitemapXML
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
-        global $wp_query;
-
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
-
-            'wp_query' => $wp_query->request,
-        ] );
-
         $args[ 'suppress_filters' ] = true;
 
         return $args;
