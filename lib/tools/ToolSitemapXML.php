@@ -30,34 +30,6 @@ class ToolSitemapXML
         # Исключение отдельных url (url записи, рубрики, метки)
 
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
-
-        add_filter( 'icl_ls_languages', [ $handler, 'my_change_french_url_to_custom_external_site' ] );
-    }
-
-    public static function my_change_french_url_to_custom_external_site( $languages )
-    {
-        $updated = [];
-        
-        foreach( $languages as &$language )
-        {
-            if( $language['default_locale'] === 'pl_PL' )
-            {
-                $language['url'] = 'https://my-custom-external-url.com';
-                break;
-
-                $updated[] = $language;
-            }
-        }
-
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'my_change_french_url_to_custom_external_site',
-
-            'updated' => $updated,
-        ] );
-    
-        // return $languages;
-
-        return $updated;
     }
     
     public static function kama_sitemaps_posts_query_args( $args, $post_type )
@@ -154,6 +126,14 @@ class ToolSitemapXML
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
+        global $wp_query;
+
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+
+            'wp_query' => $wp_query,
+        ] );
+
         $args[ 'suppress_filters' ] = true;
 
         return $args;
