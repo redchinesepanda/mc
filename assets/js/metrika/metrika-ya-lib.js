@@ -13,4 +13,6 @@ ym(86785715, "init", {
 	webvisor:true
 });
 
+console.log( 'Yandex.Metrika counter' );
+
 // Yandex.Metrika counter end
