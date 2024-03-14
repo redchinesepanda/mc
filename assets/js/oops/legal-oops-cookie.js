@@ -71,9 +71,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			if ( wrapperSelector == selectors.cookieWrapper )
 			{
-				closeOops( wrapper.querySelector( itemSlector ) ); 
+				// closeOops( wrapper.querySelector( itemSlector ) ); 
 
-				wrapper.classList.remove( classes.active );
+				// wrapper.classList.remove( classes.active );
+
+				prepareAcceptNecessary( wrapper )
 			}
 		}
 	}
