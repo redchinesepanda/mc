@@ -30,7 +30,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function acceptCookie( event )
 	{
-		LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
+		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
+		{
+			if ( LegalCookie.getCookie( cookie ) === 'accepted' )
+			{
+				LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
+			}
+		}
+		else
+		{
+			LegalCookie.setCookie( event.currentTarget.dataset.cookie, 'accepted', LegalCookie.options );
+		}
 
 		// event.currentTarget.closest( event.currentTarget.dataset.wrapperSelector ).classList.remove( classes.active );
 
