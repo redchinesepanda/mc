@@ -38,9 +38,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
 		{
-			console.log( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) );
+			console.log( event.currentTarget.dataset.cookie );
 
-			console.log(  );
+			console.log( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) );
 			
 			if ( LegalCookie.getCookie( event.currentTarget.dataset.cookie ) === cookieValue.accepted )
 			{
