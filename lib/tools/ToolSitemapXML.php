@@ -36,15 +36,21 @@ class ToolSitemapXML
 
     public function prepare_filter_where( $where )
 	{
+        global $wp_filter;
+
+
+
         // global $sitepress;
 
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'prepare_filter_where',
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'prepare_filter_where',
 
-        //     'where' => $where,
+            'wp_filter' => $wp_filter[ 'posts_where' ],
 
-        //     'sitepress' => $sitepress,
-        // ] );
+            // 'where' => $where,
+
+            // 'sitepress' => $sitepress,
+        ] );
 		// global $wpdb;
 
 		// $where and $where .= ' AND ';
