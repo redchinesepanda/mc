@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		MetrikaLib.userSuspend( gtagInit );
 	}
 
-	if ( checkCookie() )
+	if ( MetrikaLib.checkCookie() )
 	{
 		gtagInit();
 	}
