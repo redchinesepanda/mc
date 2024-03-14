@@ -43,6 +43,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		console.log( LegalCookie.getCookie( cookie ) );
 
+		console.log( LegalCookie.getCookie( cookie ) === undefined );
+
 		if ( LegalCookie.getCookie( cookie ) === undefined )
 		{
 			wrapper.querySelectorAll( itemSlector ).forEach( prepareAccept, {
