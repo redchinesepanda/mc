@@ -27,11 +27,11 @@ class ToolNotFound
 			'pl'
 		],
 
-		// 'old-ca.match.center' => [
-		// 	'ca',
+		'oldca.match.center' => [
+			'ca',
 
-		// 	'ca-fr',
-		// ],
+			'ca-fr',
+		],
 	];
 
 	public static function get_restricted_languages()
