@@ -1,0 +1,82 @@
+let MetrikaLib = ( function()
+{
+	"use strict";
+
+	return {
+		events : {
+			mousemove: 'mousemove',
+	
+			scroll: 'scroll',
+	
+			click: 'click'
+		},
+	
+		userSuspend : function( handler )
+		{
+			for ( const [ key, value ] of Object.entries( this.events ) )
+			{
+				document.removeEventListener( value, handler, { once: true } );
+			}
+		},
+	
+		userInit: function( handler )
+		{
+			for ( const [ key, value ] of Object.entries( this.events ) )
+			{
+				document.addEventListener( value, handler, { once: true } );
+			}
+		},
+	
+		checkCookie : function()
+		{
+			return LegalCookie.getCookie( LegalCookieOops.cookieName.oopsCookie ) === LegalCookieOops.cookieValue.accepted;
+		}
+
+		// pageForward : 'pageforward',
+
+		// pageForwardEvent : function( id )
+		// {
+		// 	return new CustomEvent(
+		// 		this.pageForward,
+
+		// 		{
+		// 			detail: {
+		// 				id: () => id
+		// 			},
+		// 		}
+		// 	)
+		// },
+
+		// pageBackward : 'pagebackward',
+
+		// pageBackwardEvent : function( id )
+		// {
+		// 	return new CustomEvent(
+		// 		'pagebackward',
+
+		// 		{
+		// 			detail: {
+		// 				id: () => id
+		// 			},
+		// 		}
+		// 	)
+		// },
+
+		// pageActive : 'pageactive',
+
+		// pageActiveEvent : function( valueID, valueIndex )
+		// {
+		// 	return new CustomEvent(
+		// 		this.pageActive,
+
+		// 		{
+		// 			detail: {
+		// 				id: valueID,
+
+		// 				index: valueIndex
+		// 			}
+		// 		}
+		// 	)
+		// }
+	};
+} )();

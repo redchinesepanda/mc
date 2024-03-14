@@ -56,4 +56,5 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, userInit, { once: true } );
 
 } );
+
 // Google Tag Manager End

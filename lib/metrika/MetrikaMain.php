@@ -25,8 +25,20 @@ class MetrikaMain
         //     'ver' => '1.0.0',
         // ],
 
+        // 'legal-gtag-lib' => [
+        //     'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
+
+        //     'ver' => '1.0.0',
+        // ],
+
+        'legal-metrika-lib' => [
+            'path' => '/assets/js/metrika/metrika-lib.js',
+
+            'ver' => '1.0.0',
+        ],
+
         'legal-gtag-lib' => [
-            'path' => 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1',
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-lib.js',
 
             'ver' => '1.0.0',
         ],
@@ -36,9 +48,9 @@ class MetrikaMain
 
             'ver' => '1.0.0',
             
-            'deps' => [
-                'legal-gtag-lib',
-            ],
+            // 'deps' => [
+            //     'legal-gtag-lib',
+            // ],
         ],
 
         'legal-gtag-launch' => [
@@ -46,9 +58,9 @@ class MetrikaMain
 
             'ver' => '1.0.0',
 
-            'deps' => [
-                'legal-gtag-lib',
-            ],
+            // 'deps' => [
+            //     'legal-gtag-lib',
+            // ],
         ],
     ]; 
 
