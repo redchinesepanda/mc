@@ -29,23 +29,65 @@ class ToolSitemapXML
 
         # Исключение отдельных url (url записи, рубрики, метки)
 
-        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
+        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
+
+        add_filter( 'icl_ls_languages', [ $handler, 'my_change_french_url_to_custom_external_site' ] );
+    }
+
+    public static function my_change_french_url_to_custom_external_site( $languages )
+    {
+        $updated = [];
+        
+        foreach( $languages as &$language )
+        {
+            if( $language['default_locale'] === 'pl_PL' )
+            {
+                $language['url'] = 'https://my-custom-external-url.com';
+                break;
+
+                $updated[] = $language;
+            }
+        }
+    
+        // return $languages;
+        
+        return $updated;
     }
     
     public static function kama_sitemaps_posts_query_args( $args, $post_type )
     {
-        if( 'page' !== $post_type )
+        // if( 'page' !== $post_type )
+
+        if( !in_array( $post_type, [ 'post', 'page' ] ) )
         {
             return $args;
         }
 
         $restricted_languages = ToolNotFound::get_restricted_languages();
 
+        if ( empty( $restricted_languages ) )
+        {
+            return $args;
+        }
+
         LegalDebug::debug( [
             'toolSitemapXML' => 'kama_sitemaps_posts_query_args',
 
             'restricted_languages' => $restricted_languages,
         ] );
+
+        $current_language = $sitepress->get_current_language();
+
+        global $sitepress;
+
+        foreach ( $restricted_languages as $language )
+        {
+            $sitepress->switch_lang( $language );
+
+
+
+            $sitepress->switch_lang( $current_language );
+        }
 
         // учтем что этот параметр может быть уже установлен
 
