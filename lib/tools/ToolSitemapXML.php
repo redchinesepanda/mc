@@ -7,7 +7,7 @@ class ToolSitemapXML
 {
     public static function register()
     {
-        if ( self::is_sitemap_page() )
+        if ( !self::is_sitemap_page() )
         {
             LegalDebug::debug( [
                 'ToolSitemapXML' => 'register', 
