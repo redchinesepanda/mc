@@ -54,9 +54,16 @@
 
     /* 2,4,6 */
 
-    .block-article-item:nth-of-type( even ) {
+    .block-article-item:nth-of-type( even ):not( :last-of-type ) {
 		margin-left: calc( 72px / 2 );
         background-color:coral;
+	}
+
+    /*last*/
+
+    .block-article-item:last-of-type {
+		margin-left: calc( (72px / 2) + 4px );
+        background-color:antiquewhite;
 	}
 
 	/* Width and Height */
@@ -88,7 +95,8 @@
 }
 
 .block-article-item {
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
+    margin-bottom: 28px;
 }
 
 /* Background */
