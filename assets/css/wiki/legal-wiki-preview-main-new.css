@@ -70,9 +70,9 @@
 
 	/* Width and Height */
 
-	.block-article-item {
+	/* .block-article-item {
 		min-height: 280px;
-	}
+	} */
 }
 
 /* Display */
@@ -87,6 +87,12 @@
 .block-article-item {
     /* padding: 20px; */
     vertical-align: top;
+    margin-bottom: 28px;
+}
+
+.block-article-item .block-item-title {
+    padding-top: 8px;
+    padding-bottom: 16px;
 }
 
 .block-article-item .article {
@@ -96,10 +102,9 @@
     padding-bottom: 18px;
 }
 
-.block-article-item {
-	/* margin-bottom: 20px; */
-    margin-bottom: 28px;
-}
+/* .block-article-item {
+	margin-bottom: 20px;
+} */
 
 /* Background */
 
