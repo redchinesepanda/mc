@@ -56,6 +56,12 @@ class ToolsMain
 
     public static function register()
     {
+
+        ToolSitemapXML::register();
+    }
+
+    public static function register_function()
+    {
         ToolDisable::register();
 
         ToolEnqueue::register();
@@ -77,8 +83,6 @@ class ToolsMain
         ToolBootsrap::register();
 
         ToolContent::register();
-
-        ToolSitemapXML::register();
 
         ToolCategoryRedirect::register();
 

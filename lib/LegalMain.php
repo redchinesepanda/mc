@@ -69,8 +69,8 @@ class LegalMain
 		LegalComponents::register_functions();
 
 		ACFMain::register_functions();
-	
-		ToolsMain::register();
+
+		ToolsMain::register_functions();
 	
 		SchemaMain::register();
 
@@ -103,6 +103,8 @@ class LegalMain
 		LegalComponents::register();
 
 		NotionMain::register();
+
+		ToolsMain::register();
 
 		if ( self::check() )
 		{
