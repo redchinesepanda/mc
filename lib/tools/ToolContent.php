@@ -4,7 +4,7 @@ class ToolContent
 {
 	public static function remove_empty_lines( $content )
 	{
-		return preg_replace("/&nbsp;/", "", $content);;
+		return preg_replace("/&nbsp;/", "", $content);
 	}
 
 	public static function register()
