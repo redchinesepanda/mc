@@ -87,6 +87,8 @@ class ToolsMain
         ToolCategoryRedirect::register();
 
         ToolRobots::register();
+
+        ToolSitemapXML::register_functions();
     }
 }
 
