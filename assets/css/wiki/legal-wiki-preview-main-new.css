@@ -49,12 +49,14 @@
 
     .block-article-item:nth-of-type( odd ) {
 		margin-right: calc( 72px / 2 );
+        background-color:aquamarine;
 	}
 
     /* 2,4,6 */
 
     .block-article-item:nth-of-type( even ) {
 		margin-left: calc( 72px / 2 );
+        background-color:coral;
 	}
 
 	/* Width and Height */
@@ -91,11 +93,10 @@
 
 /* Background */
 
-.block-article-item {
-    background-color: lightgray;
-    /* box-shadow: 0 0 10px #e4e4e4; */
-    /* border-radius: 8px; */
-}
+/* .block-article-item {
+    box-shadow: 0 0 10px #e4e4e4;
+    border-radius: 8px;
+} */
 
 /* .block-article-item .article {
     background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
