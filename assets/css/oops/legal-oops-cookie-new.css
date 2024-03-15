@@ -10,9 +10,10 @@
 
 	/* Width and Height */
 
-	.legal-oops-cookie .oops-cookie-privacy,
+	/* .legal-oops-cookie .oops-cookie-privacy, */
 	.legal-oops-cookie .oops-cookie-button {
-		min-width: calc( 50% - 4px - 2px - (18px * 2) );
+		/* min-width: calc( 50% - 4px - 2px - (18px * 2) ); */
+		width: 100%;
 	}
 
 	/* Position */
@@ -22,6 +23,10 @@
 		left: 0px;
 		padding-top: calc(24px + 54px + 16px);
 		padding-left: 16px;
+	}
+
+	.legal-oops-cookie .legal-necessary {
+		margin-bottom: 12px;
 	}
 
 /* 	.legal-oops-cookie {
@@ -36,14 +41,18 @@
 
 	/* Typography */
 
-	.legal-oops-cookie .oops-cookie-description {
-		text-align: justify;
-	}
-
-	.legal-oops-cookie .oops-cookie-privacy,
-	.legal-oops-cookie .oops-cookie-button {
+	.legal-oops-cookie .oops-cookie-info {
 		text-align: center;
 	}
+
+	/* .legal-oops-cookie .oops-cookie-description {
+		text-align: justify;
+	} */
+
+	/* .legal-oops-cookie .oops-cookie-privacy,
+	.legal-oops-cookie .oops-cookie-button {
+		text-align: center;
+	} */
 }
 
 @media screen and ( min-width: 768px ) {
