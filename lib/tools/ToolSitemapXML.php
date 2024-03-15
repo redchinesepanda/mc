@@ -30,11 +30,11 @@ class ToolSitemapXML
 
     public static function register()
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'register',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'register',
 
-            'is_sitemap_page' => self::is_sitemap_page(),
-        ] );
+        //     'is_sitemap_page' => self::is_sitemap_page(),
+        // ] );
 
         if ( self::is_sitemap_page() )
         {
