@@ -45,6 +45,10 @@
 
 	/* Width and height */
 
+	.legal-oops-cookie .oops-cookie-info {
+		width: 70%;
+	}
+
 	/* .legal-oops-cookie .oops-cookie-description {
 		flex-basis: calc( 60% - 50px );
 	} */
