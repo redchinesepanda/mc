@@ -88,12 +88,12 @@ class BilletMain
         ],
     ];
 
-    public static function print()
-    {
-        ToolPrint::print_style( self::CSS );
+    // public static function print()
+    // {
+    //     ToolPrint::print_style( self::CSS );
 
-        ToolPrint::print_script( self::JS );
-    }
+    //     ToolPrint::print_script( self::JS );
+    // }
 
 	public static function register_style( $styles = [] )
     {

@@ -118,12 +118,12 @@ class CompilationMain
         }
     }
 
-    public static function print()
-    {
-        BilletMain::print();
+    // public static function print()
+    // {
+    //     BilletMain::print();
 
-        ToolPrint::print_style( self::CSS );
-    }
+    //     ToolPrint::print_style( self::CSS );
+    // }
 
 	public static function check()
     {

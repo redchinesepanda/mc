@@ -81,14 +81,14 @@ class CompilationTabs
         self::HANDLE[ 'main' ] => LegalMain::LEGAL_URL . '/assets/js/tabs/tabs-main.js',
     ];
 
-    public static function print()
-    {
-        ToolPrint::print_style( self::CSS );
+    // public static function print()
+    // {
+    //     ToolPrint::print_style( self::CSS );
 
-        ToolPrint::print_script( self::JS );
+    //     ToolPrint::print_script( self::JS );
 
-        CompilationMain::print();
-    }
+    //     CompilationMain::print();
+    // }
 
     public static function register_script( $scripts = [] )
     {
