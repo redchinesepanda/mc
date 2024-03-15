@@ -67,8 +67,10 @@
 }
 
 .block-article-item .article {
-    padding: 13px;
-    padding-left: 25px;
+    /* padding: 13px; */
+    /* padding-left: 25px; */
+    padding-top: 18px;
+    padding-bottom: 18px;
 }
 
 .block-article-item {
@@ -78,67 +80,75 @@
 /* Background */
 
 .block-article-item {
-    background-color: #fff;
-    box-shadow: 0 0 10px #e4e4e4;
-    border-radius: 8px;
+    background-color: grey;
+    /* box-shadow: 0 0 10px #e4e4e4; */
+    /* border-radius: 8px; */
 }
 
-.block-article-item .article {
+/* .block-article-item .article {
     background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
     border-bottom: 1px dotted rgba(0,0,0,0.22);
-}
+} */
 
-.block-article-item .article:hover {
+/* .block-article-item .article:hover {
     border-bottom: 1px dotted rgba(0,0,0,0.5);
-}
+} */
 
 /* Typography */
 
-.block-article-item * {
+/* .block-article-item * {
     box-sizing: border-box;
     font-family: "Source Sans Pro";
+} */
+
+.block-article-item .block-item-title a,
+.block-article-item .list-article .article {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
+    text-decoration: none;
+    color: var( --Base-base-09 );
 }
 
-.block-article-item a {
+/* .block-article-item a {
     text-decoration: none;
     color: #0c1115;
-}
+} */
 
-.block-article-item a:hover {
+/* .block-article-item a:hover {
     text-decoration: none;
     color: #0c1115;
-}
+} */
 
-.block-article-item a.underline {
+/* .block-article-item a.underline {
     background-image: linear-gradient(#cbcbcb, #cbcbcb);
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
     transition: background-size .2s;
     text-decoration: none;
-}
+} */
 
-.block-article-item a.underline:hover {
+/* .block-article-item a.underline:hover {
     background-size: 100% 2px;
-}
+} */
 
 .block-article-item .block-item-title {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
 }
 
 .block-article-item .list-article .article {
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.2;
-    color:#3b3b3b;
+    line-height: 22px;
+   /*  color:#3b3b3b; */
 }
 
 .block-article-item .list-article .article:hover {
-    color:#0c1115;
+    /* color:#0c1115; */
     font-weight: 500;
 }
