@@ -51,7 +51,8 @@
 	/* Width and Height */
 
 	.legal-oops-cookie-wrapper {
-		max-width: 520px;
+		/* max-width: 520px; */
+		max-width: 555px;
 		box-sizing: border-box;
 	}
 
@@ -111,7 +112,11 @@
 	padding-bottom: 8px;
 }
 
-.legal-oops-cookie .oops-cookie-description {
+/* .legal-oops-cookie .oops-cookie-description {
+	padding-bottom: 28px;
+} */
+
+.legal-oops-cookie .oops-cookie-info {
 	padding-bottom: 28px;
 }
 
