@@ -16,7 +16,7 @@ require_once( 'ToolNotFound.php' );
 
 // require_once( 'ToolPDO.php' );
 
-require_once( 'ToolPosts.php' );
+// require_once( 'ToolPosts.php' );
 
 // require_once( 'ToolPrint.php' );
 
@@ -70,7 +70,7 @@ class ToolsMain
 
         ToolNotFound::register();
 
-        ToolPosts::register();
+        // ToolPosts::register();
         
         ToolSitemap::register();
 
