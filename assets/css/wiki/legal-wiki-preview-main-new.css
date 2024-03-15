@@ -1,0 +1,144 @@
+@media (max-width: 768px) {
+
+	/* Position */
+
+    .block-article-item {
+        margin: 0 auto;
+    }
+}
+
+@media screen and ( min-width: 768px ) {
+	
+	/* Display */
+
+	.block-article-item {
+		display: inline-block;
+	}
+
+	/* Width and Height */
+	
+	.block-article-item {
+		width: calc( 100% / 3 - 10px );
+	}
+
+	/* Position */
+
+	/* 1,4,7 */
+	
+	.block-article-item:nth-of-type( 3n+1 ) {
+		margin-right: 10px;
+		/* background-color:coral; */
+	}
+	
+	/* 2,5,8 */
+	
+	.block-article-item:nth-of-type( 3n + 2 ) {
+		margin-right: 4px;
+		margin-left: 4px;
+		/* background-color:antiquewhite; */
+	}
+
+	/* 3,6,9 */
+	
+	.block-article-item:nth-of-type( 3n ) {
+		margin-left: 10px;
+		/* background-color:aquamarine; */
+	}
+
+	/* Width and Height */
+
+	.block-article-item {
+		min-height: 280px;
+	}
+}
+
+/* Display */
+
+.block-article-item .list-article {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position */
+
+.block-article-item {
+    padding: 20px;
+    vertical-align: top;
+}
+
+.block-article-item .article {
+    padding: 13px;
+    padding-left: 25px;
+}
+
+.block-article-item {
+	margin-bottom: 20px;
+}
+
+/* Background */
+
+.block-article-item {
+    background-color: #fff;
+    box-shadow: 0 0 10px #e4e4e4;
+    border-radius: 8px;
+}
+
+.block-article-item .article {
+    background-image: url( '../../img/wiki/legal-wiki-preview-main.svg' );
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-bottom: 1px dotted rgba(0,0,0,0.22);
+}
+
+.block-article-item .article:hover {
+    border-bottom: 1px dotted rgba(0,0,0,0.5);
+}
+
+/* Typography */
+
+.block-article-item * {
+    box-sizing: border-box;
+    font-family: "Source Sans Pro";
+}
+
+.block-article-item a {
+    text-decoration: none;
+    color: #0c1115;
+}
+
+.block-article-item a:hover {
+    text-decoration: none;
+    color: #0c1115;
+}
+
+.block-article-item a.underline {
+    background-image: linear-gradient(#cbcbcb, #cbcbcb);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+    text-decoration: none;
+}
+
+.block-article-item a.underline:hover {
+    background-size: 100% 2px;
+}
+
+.block-article-item .block-item-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.block-article-item .list-article .article {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color:#3b3b3b;
+}
+
+.block-article-item .list-article .article:hover {
+    color:#0c1115;
+    font-weight: 500;
+}

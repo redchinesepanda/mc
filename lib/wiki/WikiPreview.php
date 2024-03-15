@@ -15,11 +15,32 @@ class WikiPreview
         //     'ver'=> '1.0.0',
         // ],
     ];
+
+	const CSS_NEW = [
+        'legal-wiki-preview-main-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-preview-main-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
 	
-	public static function register_style()
+/* 	public static function register_style()
     {
 		ReviewMain::register_style( self::CSS );
+    } */
+
+	public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			ReviewMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ReviewMain::register_style( self::CSS );
+		}
     }
+
 
 	public static function register()
     {
