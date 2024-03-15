@@ -60,7 +60,7 @@ class ToolsMain
         ToolSitemapXML::register();
     }
 
-    public static function register_function()
+    public static function register_functions()
     {
         ToolDisable::register();
 
