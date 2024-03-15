@@ -11,8 +11,8 @@ class WikiTitle
     ];
 
     const CSS_NEW = [
-        'wiki-about-new' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/wiki-about-new.css',
+        'wiki-title-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/wiki-title-new.css',
 
 			'ver' => '1.0.0',
 		],
