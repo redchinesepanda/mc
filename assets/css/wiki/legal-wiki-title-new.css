@@ -1,0 +1,60 @@
+@media screen and ( max-width: 767px ) {
+	/* Display */
+
+	.legal-wiki-title {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+	/* Width and Height */
+
+	.legal-wiki-title h1 {
+		flex-basis: calc( 75% - 10px );
+	}
+
+	.legal-wiki-title span {
+		flex-basis: calc( 25% - 10px );
+	}
+}
+
+/* Display */
+
+.legal-wiki-title {
+	display: flex;
+  	gap: 20px;
+	align-items: center;
+}
+
+/* Position */
+
+.legal-wiki-title {
+	padding-bottom: 20px;
+}
+
+.legal-wiki-title h1 {
+	margin-bottom: 0px;
+}
+
+/* Typography */
+
+.legal-wiki-title h1 {
+	color: rgb(12, 17, 21);
+	font-family: "Source Sans Pro";
+	font-size: 42px;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 50.4px;
+	overflow-wrap: break-word;
+	text-transform: capitalize;
+}
+
+.legal-wiki-title span {
+	color: rgb(106, 107, 108);
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26.25px;
+}

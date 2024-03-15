@@ -9,10 +9,30 @@ class WikiTitle
             'ver'=> '1.0.4',
         ],
     ];
+
+    const CSS_NEW = [
+        'wiki-about-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/wiki-about-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
     
-    public static function register_style()
+  /*   public static function register_style()
     {
         WikiMain::register_style( self::CSS );
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			WikiMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			WikiMain::register_style( self::CSS );
+		}
     }
 
 	public static function register()
