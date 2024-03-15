@@ -132,11 +132,10 @@
     font-family: "Source Sans Pro";
 } */
 
-.block-article-item .block-item-title a,
+.block-article-item .block-item-title,
 .block-article-item .list-article .article {
     font-family: var( --legal-font-primary );
     font-style: normal;
-    text-decoration: none;
     color: var( --Base-base-09 );
 }
 
@@ -169,10 +168,16 @@
     line-height: 26px;
 }
 
+.block-article-item .block-item-title a {
+    color: var( --Base-base-09 );
+    text-decoration: none;
+}
+
 .block-article-item .list-article .article {
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
+    text-decoration: none;
    /*  color:#3b3b3b; */
 }
 
