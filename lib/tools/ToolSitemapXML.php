@@ -7,6 +7,13 @@ class ToolSitemapXML
 {
     public static function register()
     {
+        if ( self::is_sitemap_page() )
+        {
+            LegalDebug::debug( [
+                'ToolSitemapXML' => 'register', 
+            ] );
+        }
+
         $handler = new self(); 
 
         add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
