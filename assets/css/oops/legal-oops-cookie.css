@@ -7,6 +7,10 @@
 		row-gap: 20px;
 	}
 
+	.legal-oops-cookie .oops-cookie-info {
+		flex-wrap: wrap;
+	}
+
 	/* Width and height */
 
 	.legal-oops-cookie .oops-cookie-description {
@@ -41,9 +45,9 @@
 
 	/* Width and height */
 
-	.legal-oops-cookie .oops-cookie-description {
+	/* .legal-oops-cookie .oops-cookie-description {
 		flex-basis: calc( 60% - 50px );
-	}
+	} */
 }
 
 /* Display */
@@ -72,8 +76,7 @@
 
 .legal-oops-cookie .oops-cookie-info {
 	display: flex;
-	column-gap: 20px;
-	flex-wrap: wrap;
+	column-gap: 15px;
 }
 
 /* Position */
