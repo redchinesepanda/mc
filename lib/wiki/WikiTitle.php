@@ -12,7 +12,7 @@ class WikiTitle
 
     const CSS_NEW = [
         'wiki-title-new' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/wiki-title-new.css',
+			'path' => LegalMain::LEGAL_URL . '/assets/css/wiki/legal-wiki-title-new.css',
 
 			'ver' => '1.0.0',
 		],
