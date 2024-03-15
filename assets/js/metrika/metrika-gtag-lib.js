@@ -11,21 +11,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.head.appendChild( script );
 	}
 
-	function gtagInit()
+	function gtagLibInit()
 	{
 		appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
-
-		// MetrikaLib.userSuspend( gtagInit );
 	}
 
 	if ( MetrikaLib.checkCookie() )
 	{
-		// MetrikaLib.userInit( gtagInit );
-
-		gtagInit();
+		gtagLibInit();
 	}
 
-	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagInit, { once: true } );
+	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagLibInit, { once: true } );
 	
 } );
 
