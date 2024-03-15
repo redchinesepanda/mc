@@ -26,10 +26,24 @@ let MetrikaLib = ( function()
 				document.addEventListener( value, handler, { once: true } );
 			}
 		},
+
+		hreflangs : [
+			'da-DK'
+		],
 	
+		checkCode : function()
+		{
+			return this.hreflangs.includes( document.documentElement.lang );
+		},
+
 		checkCookie : function()
 		{
-			return LegalCookie.getCookie( LegalCookieOops.cookieName.oopsCookie ) === LegalCookieOops.cookieValue.accepted;
+			if ( this.checkCode() )
+			{
+				return LegalCookie.getCookie( LegalCookieOops.cookieName.oopsCookie ) === LegalCookieOops.cookieValue.accepted;
+			}
+
+			return true;
 		}
 
 		// pageForward : 'pageforward',

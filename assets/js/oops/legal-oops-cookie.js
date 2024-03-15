@@ -75,7 +75,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// console.log( LegalCookieOops.oopsCookieEvent );
 
-			document.dispatchEvent( LegalCookieOops.oopsCookieEvent() );
+			if ( MetrikaLib.checkCode() )
+			{
+				document.dispatchEvent( LegalCookieOops.oopsCookieEvent() );
+			}
 		}
 
 		closeOops( event.currentTarget );
