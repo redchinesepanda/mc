@@ -16,6 +16,8 @@ class TemplateMain
         'pt', 
 
         'kz',
+
+        'ru',
     ];
 
     public static function check_code()
