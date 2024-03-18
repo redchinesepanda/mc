@@ -1,0 +1,48 @@
+@media screen and ( min-width: 768px )
+{
+	/* Display */
+
+	.legal-banner {
+		justify-content: center;
+	}
+}
+
+/* Display */
+
+.legal-banner {
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+}
+
+.legal-banner .banner-image {
+	flex: 0 0 auto;
+}
+
+/* Position */
+
+.legal-banner {
+	margin: 0px 0px 20px 0px;
+	padding: 0px;
+}
+
+.legal-banner .image-caption {
+	padding-top: 5px;
+}
+
+/* Width and Height */
+
+.legal-banner {
+	width: 100%;
+}
+
+/* Typography */
+
+.legal-banner .image-caption {
+	font-family: var(--legal-font-primary);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+	color: var(--Base-base-05);
+}

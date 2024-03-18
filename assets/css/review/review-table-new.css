@@ -30,6 +30,12 @@
     {
         padding-bottom: 8px;
     }
+
+     /* Typography */
+
+     .tcb-post-content table.legal-column-3 tr > * {
+        font-size: 14px;
+    }
 }
 
 @media screen and ( min-width: 960px )
@@ -113,6 +119,10 @@
     /* Background */
 
     /* Typography */
+
+    .tcb-post-content table.legal-column-3 tr > * {
+        font-size: 12px;
+    }
 }
 
 /* Display */
@@ -251,6 +261,7 @@
 .tcb-post-content table > * > tr > *
 {
     text-align: left;
+    vertical-align: top;
 }
 
 .tcb-post-content table tr > *
@@ -258,8 +269,11 @@
     color: var(--Base-base-09, #0A0A0A);
     font-family: var( --legal-font-primary );
     font-style: normal;
-    font-size: 14px;
     line-height: 20px;
+}
+
+.tcb-post-content table:not( .legal-column-3 ) tr > * {
+    font-size: 14px;
 }
 
 .tcb-post-content table th
@@ -274,7 +288,7 @@
 
 .tcb-post-content table caption
 {
-    color: var( --Base-base-05, #939393 );
+    color: var( --Base-base-05 );
     font-family: var( --legal-font-primary );
     font-size: 14px;
     font-style: normal;
