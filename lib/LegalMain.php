@@ -202,6 +202,8 @@ class LegalMain
 
 	const HOST_PRODUCTION = [
 		'production' => 'match.center',
+
+		'pldpl' => 'oldpl.match.center',
 	];
 
 	const HOST_DEBUG = [
