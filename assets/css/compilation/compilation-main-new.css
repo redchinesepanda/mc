@@ -1,4 +1,10 @@
 @media screen and ( max-width: 767px ) {
+
+    /* Display */
+
+    .legal-compilation .legal-compilation-info {
+        row-gap: 8px;
+    }
     
     /* Width and Height */
 
@@ -9,7 +15,7 @@
      /* Position */
 
     .legal-compilation .compilation-date ~ .legal-tooltip {
-        top: calc( 24px + (8px * 2) + 36px );
+        top: calc( 24px + (8px * 2) + 36px + 8px );
     }
 
     .legal-compilation .legal-tooltip:not( .compilation-date ~ .legal-tooltip )  {
@@ -270,8 +276,13 @@
     line-height: 24px;
 }
 
-.legal-compilation .compilation-attention-tooltip {
+.legal-compilation .compilation-attention-tooltip:not( .legal-active ) {
     color: var(--Base-base-05);
+}
+
+.legal-compilation .compilation-attention-tooltip:not( .legal-active ):hover,
+.legal-compilation .compilation-attention-tooltip.legal-active {
+    color: var(--Base-base-07);
 }
 
 .legal-compilation .compilation-attention-tooltip::after {

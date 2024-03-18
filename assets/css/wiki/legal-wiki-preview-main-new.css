@@ -50,7 +50,7 @@
 
     .block-article-item:nth-of-type( odd ) {
 		margin-right: calc( 72px / 2 );
-        background-color:aquamarine;
+        /* background-color:aquamarine; */
 	}
 
     /* 2,4,6 четные для варианта с сайдбаром */
@@ -58,7 +58,7 @@
     /* .block-article-item:nth-of-type( even ):not( :last-of-type ) */ 
     .block-article-item:nth-of-type( even ) {
 		margin-left: calc( 72px / 2 );
-        background-color:coral;
+        /* background-color:coral; */
 	}
 
     /*last*/
@@ -182,6 +182,6 @@
 }
 
 .block-article-item .list-article .article:hover {
-    /* color:#0c1115; */
-    font-weight: 500;
+    /* font-weight: 500; */
+    text-shadow: 0 0 0.5px var(--Base-base-09);
 }

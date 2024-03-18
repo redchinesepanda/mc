@@ -79,7 +79,7 @@
     position: absolute;
     left: 0px;
     z-index: 1;
-}
+} 
 
 .review-anchors .swiper:not( .legal-active-end ):after {
     position: absolute;

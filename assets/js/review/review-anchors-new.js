@@ -9,28 +9,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			slidesPerView: 'auto',
 		});
 
-		let swiperBoxBlur = document.querySelectorAll('.review-anchors .swiper-initialized');
-
 		swiper.on('slideChange', function () {
 			/* console.log('slide changed'); */
 		});
 
 		swiper.on('reachBeginning', function () {
 			/* console.log('slide reachBeginning'); */
-			
-			swiperBoxBlur.forEach(i => {
-				i.classList.add('legal-active-start');
-				i.classList.remove('legal-active-end');
-			});
+
+			el.classList.add('legal-active-start');
+			el.classList.remove('legal-active-end');
 		}); 
 
 		swiper.on('reachEnd', function () {
 			/* console.log('slide reachEnd'); */
 
-			swiperBoxBlur.forEach(i => {
-				i.classList.add('legal-active-end');
-				i.classList.remove('legal-active-start');
-			});
+			el.classList.add('legal-active-end');
+			el.classList.remove('legal-active-start');
 		});
 	})
 
@@ -49,13 +43,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const events = {
-		click : 'click'
+		click : 'click',
+
+		scroll : 'scroll',
 	};
 
 	const selectors = {
 		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
 
 		buttonToTop : '.anchors .legal-to-top'
+	};
+
+	const classes = {
+		active : 'legal-active'
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
@@ -72,20 +72,55 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	} );
 
 	/*button-to-top start*/
-	const buttonToTop = document.querySelector( selectors.buttonToTop );
-   
-    window.addEventListener("scroll", function () {
-		if(!buttonToTop) return;
-		if(window.pageYOffset > 300) {
-			buttonToTop.classList.add( 'legal-active' );
-		} else {
-			buttonToTop.classList.remove( 'legal-active' );
+
+	function scrollToTop( event )
+	{
+		// window.scrollTo( {...settings.behavior, ...settings.top} );
+
+		window.scrollTo( {
+			top: 0,
+
+			left: 0,
+
+			behavior: 'smooth',
+		} );
+	}
+	
+	function initToTop( buttonToTop )
+	{
+		if ( window.pageYOffset > 300 )
+		{
+			buttonToTop.classList.add( classes.active );
 		}
-    });
+		else
+		{
+			buttonToTop.classList.remove( classes.active );
+		}
+
+		buttonToTop.addEventListener( events.click, scrollToTop );
+	}
+
+	function initScroll()
+	{
+		document.querySelectorAll( selectors.buttonToTop ).forEach( initToTop );	
+    }
    
-    buttonToTop.addEventListener("click", function (event) {
-	  window.scrollTo( {...settings.behavior, ...settings.top} );
-    });
+    window.addEventListener( events.scroll, initScroll );
+
+	// const buttonToTop = document.querySelector( selectors.buttonToTop );
+   
+    // window.addEventListener("scroll", function () {
+	// 	if(!buttonToTop) return;
+	// 	if(window.pageYOffset > 300) {
+	// 		buttonToTop.classList.add( 'legal-active' );
+	// 	} else {
+	// 		buttonToTop.classList.remove( 'legal-active' );
+	// 	}
+    // });
+   
+    // buttonToTop.addEventListener("click", function (event) {
+	//   window.scrollTo( {...settings.behavior, ...settings.top} );
+    // });
 	/*button-to-top end*/
 
 } );

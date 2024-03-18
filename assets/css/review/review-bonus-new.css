@@ -307,12 +307,16 @@
 	border-top: 1px solid var(--Base-base-09);
 }
 
+.legal-bonus .bonus-content .legal-highlight {
+	background-color: var(--Base-base-02) !important; /* временный important - перекрытие inline */
+}
+
 /* Bonus Typography */
 
-.legal-bonus .bonus-content.legal-default .legal-highlight li,
+/* .legal-bonus .bonus-content.legal-default .legal-highlight li,
 .legal-bonus .bonus-content.legal-default .legal-highlight {
 	color: #ffffff;
-}
+} */
 
 .legal-bonus .bonus-content:not( .legal-default ) .legal-highlight {
 	color: #000000;
@@ -334,7 +338,9 @@
 }
 
 .legal-bonus .bonus-title-link,
-.legal-bonus .bonus-name {
+.legal-bonus .bonus-name,
+.legal-bonus .bonus-content.legal-default .legal-highlight,
+.legal-bonus .bonus-content.legal-default .legal-highlight li {
 	color: var(--Base-base-09);
 }
 
