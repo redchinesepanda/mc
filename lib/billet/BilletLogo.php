@@ -17,6 +17,8 @@ class BilletLogo
 
         'mega' => 'about-logo-mega',
 
+        'square' => 'about-logo-square',
+
         'title' => 'about-title',
     ];
 
@@ -48,11 +50,39 @@ class BilletLogo
         {
             $font = $group[ self::ABOUT[ 'font' ] ];
 
-            if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
-            {
-                $src = $group[ self::ABOUT[ 'logo' ] ];
+            $alt = $group[ self::ABOUT[ 'title' ] ] . ' logo';
+        }
 
-                $alt = $group[ self::ABOUT[ 'title' ] ] . ' logo';
+        if ( $brand_src = BrandMain::get_logo_billet( $id ) )
+        {
+            $src = $brand_src;
+        }
+        else
+        {
+            if ( $group )
+            {
+                if ( TemplateMain::check_new() )
+                {
+                    if ( !empty( $group[ self::ABOUT[ 'square' ] ] ) )
+                    {
+                        $src = $group[ self::ABOUT[ 'square' ] ];
+                    }
+                    else
+                    {
+                        if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
+                        {
+                            $src = $group[ self::ABOUT[ 'logo' ] ];
+                        }
+                    }
+                }
+                else
+                {
+                    if ( !empty( $group[ self::ABOUT[ 'logo' ] ] ) )
+                    {
+                        $src = $group[ self::ABOUT[ 'logo' ] ];
+
+                    }
+                }
             }
         }
 
@@ -155,7 +185,7 @@ class BilletLogo
     { 
         // return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
 
-        return self::render_main( self::TEMPLATE[ 'logo' ], $logo );
+        return TemplateMain::render_main( self::TEMPLATE[ 'logo' ], $logo );
     }
 
     // public static function render_logo( $logo )

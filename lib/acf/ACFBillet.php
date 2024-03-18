@@ -25,6 +25,73 @@ class ACFBillet
         add_filter( 'acf/prepare_field/name=' . self::PROFIT[ 'pair' ], [ $handler, 'legal_hidden' ] );
 
         // add_filter( 'save_post', [ $handler, 'billet_to_review' ], 10, 2 );
+        
+        // add_filter( 'save_post', [ $handler, 'billet_set_brand' ], 10, 2 );
+        
+        add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'billet_set_brand' ], 10, 2 );
+    }
+
+    public static function brand_args( $title )
+    {
+        return [
+            'numberposts' => 1,
+
+            'fields' => 'ids',
+
+            'suppress_filters' => 1,
+
+            'post_type' => self::POST_TYPE[ 'brand' ],
+
+            's' => $title,
+        ];
+    }
+
+    public static function get_brand( $title )
+    {
+        return get_posts( self::brand_args( $title ) );
+    }
+
+    const GROUP = [
+        'about' => 'review-about',
+
+        'brand' => 'billet-brand',
+    ];
+
+    public static function billet_set_brand( $post_id, $post )
+    {
+        // if ( self::POST_TYPE[ 'billet' ] == $post->post_type )
+        // {
+            $args = 0;
+
+            $about = get_field( self::GROUP[ 'about' ], $post_id );
+
+            if ( $about )
+            {
+                if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
+                {
+                    $brands = self::get_brand( $title );
+
+                    // LegalDebug::die( [
+                    //     'ACFBillet' => 'billet_set_brand',
+
+                    //     'brands' => $brands,
+                    // ] );
+
+                    $args = array_shift( $brands );
+                }
+            }
+
+            // LegalDebug::die( [
+            //     'ACFBillet' => 'billet_set_brand',
+
+            //     'args' => $args,
+            // ] );
+
+            if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
+            {
+                update_field( self::GROUP[ 'brand' ], $args, $post_id );
+            }
+        // }
     }
 
 	const FIELD = [
@@ -62,12 +129,14 @@ class ACFBillet
     // public static function billet_to_review( $post_id )
 
     const POST_TYPE = [
-        'legal_billet',
+        'billet' => 'legal_billet',
+
+        'brand' => 'legal_brand',
     ];
     
     public static function billet_to_review( $post_id, $post )
     {
-        if ( in_array( $post->post_type, self::POST_TYPE ) ) {
+        if ( self::POST_TYPE[ 'billet' ] == $post->post_type ) {
             // $group = get_field( BilletMain::FIELD[ 'about' ], $post_id );
     
             // if ( !$group )

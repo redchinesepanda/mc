@@ -419,17 +419,25 @@ class ReviewBonus
 
 			if ( !$args[ 'atts' ][ 'image' ] )
 			{
-				if ( $args[ 'atts' ][ 'large' ] )
+				if ( $brand_src = BrandMain::get_logo_review_bonus( $id, $args[ 'atts' ][ 'large' ] ) )
 				{
-					$src = $group[ 'about-logo-mega' ];
-
-					if ( !$src )
+					$src = $brand_src;
+				}
+				else
+				{
+					if ( $args[ 'atts' ][ 'large' ] )
 					{
-						$src = $group[ 'about-logo' ];
+						$src = $group[ 'about-logo-mega' ];
+
+						if ( !$src )
+						{
+							$src = $group[ 'about-logo' ];
+						}
 					}
-				} else
-				{
-					$src = $group[ 'about-logo-square' ];
+					else
+					{
+						$src = $group[ 'about-logo-square' ];
+					}
 				}
 			}
 
@@ -567,12 +575,30 @@ class ReviewBonus
 		}
 
 		$group = get_field( ReviewAbout::FIELD, $id );
+
+		$src = '';
+
+		if ( $brand_src = BrandMain::get_logo_review_billet( $id ) )
+		{
+			$src = $brand_src;
+		}
+		else
+		{
+			if ( !empty( $group[ self::GROUP[ 'logo' ] ] ) )
+			{
+				$src = $group[ self::GROUP[ 'logo' ] ];
+			}
+
+			// $src = ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' );
+		}
         
 		return [
 			'class' => !empty( $group[ 'about-font' ] ) ? $group[ 'about-font' ] : 'legal-default',
 
 			'image' => [
-				'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
+				// 'src' => ( !empty( $group[ self::GROUP[ 'logo' ] ] ) ? $group[ self::GROUP[ 'logo' ] ] : '' ),
+				
+				'src' => $src,
 
 				'alt' => $group[ self::GROUP[ 'title' ] ],
 			],

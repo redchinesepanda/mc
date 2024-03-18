@@ -2,6 +2,8 @@
 
 require_once( 'billet/BilletMain.php' );
 
+require_once( 'brand/BrandMain.php' );
+
 require_once( 'compilation/CompilationMain.php' );
 
 require_once( 'tabs/CompilationTabsMain.php' );

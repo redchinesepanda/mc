@@ -276,6 +276,13 @@ class ReviewAbout
 
             $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
+            $logo = BrandMain::get_logo_review( $id );
+
+            if ( empty( $logo ) )
+            {
+                $logo = $group[ self::ABOUT[ 'logo' ] ];
+            }
+
             return [
                 'text' => [
                     'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
@@ -289,7 +296,9 @@ class ReviewAbout
                 
                 'bonus' => $bonus,
                 
-                'logo' => $group[ self::ABOUT[ 'logo' ] ],
+                // 'logo' => $group[ self::ABOUT[ 'logo' ] ],
+                
+                'logo' => $logo,
 
                 'background' => $group[ self::ABOUT[ 'background' ] ],
 

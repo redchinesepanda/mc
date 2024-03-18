@@ -258,11 +258,24 @@ class BilletMega
 	
 			if ( $group )
 			{
-				$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+				// LegalDebug::debug( [
+				// 	'BilletMega' => 'prepare',
 
-				if ( !empty( $group[ BilletLogo::ABOUT[ 'mega' ] ] ) )
+				// 	'get_logo_megabillet' => BrandMain::get_logo_megabillet( $atts[ 'id' ] ),
+				// ] );
+
+				if ( $brand_src = BrandMain::get_logo_megabillet( $atts[ 'id' ] ) )
 				{
-					$logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
+					$logo = $brand_src;
+				}
+				else
+				{
+					$logo = $group[ BilletLogo::ABOUT[ 'logo' ] ];
+
+					if ( !empty( $group[ BilletLogo::ABOUT[ 'mega' ] ] ) )
+					{
+						$logo = $group[ BilletLogo::ABOUT[ 'mega' ] ];
+					}
 				}
 	
 				$name = $group[ BilletTitle::ABOUT[ 'title' ] ];

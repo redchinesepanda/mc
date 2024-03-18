@@ -61,10 +61,23 @@ class ReviewCounter
 
 	public static function inline_style_general( $group )
 	{
+		$url = '';
+
+		if ( $brandSrc = BrandMain:: get_logo_review_counter( false ) )
+		{
+			$url = $brandSrc;
+		}
+		else
+		{
+			$url = $group[ ReviewAbout::ABOUT[ 'logo' ] ];
+		}
+
 		return [
 			/* '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }', */
 			
-			'.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }',
+			// '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }',
+			
+			'.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $url . '\'); }',
 		];
 	}
 
