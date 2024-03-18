@@ -16,13 +16,13 @@
 @media screen and ( min-width: 768px ) {
 	/* Width and Height */
 
-	.legal-wiki-title h1 {
+	/* .legal-wiki-title h1 {
 		flex-basis: calc( 75% - 10px );
-	}
+	} */
 
-	.legal-wiki-title span {
+	/* .legal-wiki-title span {
 		flex-basis: calc( 25% - 10px );
-	}
+	} */
 
 	/* Typography */
 
@@ -38,7 +38,14 @@
 	display: flex;
   	gap: 20px;
 	align-items: center;
+	flex-wrap: wrap;
 }
+
+/* Width and Height */
+
+	.legal-wiki-title h1 {
+		width: 100%;
+	}
 
 /* Position */
 
