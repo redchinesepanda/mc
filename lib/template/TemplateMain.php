@@ -21,7 +21,7 @@ class TemplateMain
     ];
 
     const CURRENT_LANGUAGE_PRODUCTION = [
-        'pt',
+        // 'pt',
     ];
 
     public static function check_code()
