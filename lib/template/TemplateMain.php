@@ -12,7 +12,7 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
-    const CURRENT_LANGUAGE = [
+    const CURRENT_LANGUAGE_DEBUG = [
         'pt', 
 
         'kz',
@@ -20,9 +20,20 @@ class TemplateMain
         'ru',
     ];
 
+    const CURRENT_LANGUAGE_PRODUCTION = [
+        'pt',
+    ];
+
     public static function check_code()
     {
-        return in_array( WPMLMain::current_language(), self::CURRENT_LANGUAGE );
+        $current_language = self::CURRENT_LANGUAGE_DEBUG;
+
+        if ( LegalMain::check_host_production() )
+        {
+            $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
+        }
+
+        return in_array( WPMLMain::current_language(), $current_language );
 
         // return true;
     }

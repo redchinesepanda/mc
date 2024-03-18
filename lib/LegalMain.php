@@ -199,6 +199,26 @@ class LegalMain
 
 		return self::check_plugins() && self::check_permissions();
 	}
+
+	const HOST_PRODUCTION = [
+		'production' => 'match.center',
+	];
+
+	const HOST_DEBUG = [
+		'old' => 'old.match.center',
+
+		'test' => 'test.match.center',
+	];
+
+	public static function check_host_production()
+	{
+		if ( in_array( $_SERVER[ 'HTTP_HOST' ], self::HOST_PRODUCTION ) )
+		{
+			return true;
+		}
+
+		return false;
+	}
 }
 
 ?>
