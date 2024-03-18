@@ -185,7 +185,7 @@ class BilletLogo
     { 
         // return self::render_main( self::TEMPLATE[ 'logo' ], self::get( $billet ) );
 
-        return TemplateMain::render_main( self::TEMPLATE[ 'logo' ], $logo );
+        return LegalComponents::render_main( self::TEMPLATE[ 'logo' ], $logo );
     }
 
     // public static function render_logo( $logo )
