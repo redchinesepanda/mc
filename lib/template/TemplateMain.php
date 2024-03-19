@@ -18,6 +18,8 @@ class TemplateMain
         'kz',
 
         'ru',
+
+        'es',
     ];
 
     const CURRENT_LANGUAGE_PRODUCTION = [
