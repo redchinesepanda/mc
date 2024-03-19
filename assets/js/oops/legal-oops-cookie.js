@@ -41,7 +41,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const classes = {
-		active: 'legal-active'
+		active: 'legal-active',
+
+		necessary: 'legal-necessary',
 	};
 
 	const cookieValue = {
@@ -74,8 +76,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		else
 		{
 			// LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
-			
-			if ( !MetrikaLib.checkCode() )
+
+			let permissionCookie = true;
+
+			if ( MetrikaLib.checkCode() )
+			{
+				if ( event.currentTarget.classList.contains( classes.necessary ) )
+				{
+					permissionCookie = false;
+				}
+			}
+
+			if ( permissionCookie )
 			{
 				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 			}
