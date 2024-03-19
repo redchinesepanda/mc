@@ -152,10 +152,10 @@ class WikiRecent
 
         if ( TemplateMain::check_new() )
         {
-            return LegalComponents::render_main( self::TEMPLATE[ 'recent-new' ], [] );
+            return LegalComponents::render_main( self::TEMPLATE[ 'recent-new' ], self::get_recent_args() );
         }
 
-        return LegalComponents::render_main( self::TEMPLATE[ 'recent-main' ], [] );
+        return LegalComponents::render_main( self::TEMPLATE[ 'recent-main' ], self::get_recent_args() );
     }
 
 	// public static function render()
