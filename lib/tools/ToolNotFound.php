@@ -78,20 +78,32 @@ class ToolNotFound
 		return false;
 	}
 
-	public static function check_language()
+	// public static function check_language()
+	
+	public static function check_language( $languages = [] )
 	{
 		$result = false;
 
 		$language = WPMLMain::current_language();
 
-		$restricted = self::RESTRICTED_DEBUG;
+		if ( empty( $languages ) )
+		{
+			$restricted = self::RESTRICTED_DEBUG;
 
-        if ( LegalMain::check_host_production() )
-        {
-            $restricted = self::RESTRICTED_PRODUCTION;
-        }
-
-		foreach ( $restricted as $languages )
+			if ( LegalMain::check_host_production() )
+			{
+				$restricted = self::RESTRICTED_PRODUCTION;
+			}
+	
+			foreach ( $restricted as $languages )
+			{
+				if ( in_array( $language, $languages ) )
+				{
+					$result = true;
+				}
+			}
+		}
+		else
 		{
 			if ( in_array( $language, $languages ) )
 			{
@@ -106,7 +118,7 @@ class ToolNotFound
 
 	public static function check_restricted_domain_and_not_language()
 	{
-		return self::check_domain() && !self::check_language();
+		return self::check_domain() && !self::check_language( self::get_restricted_languages() );
 	}
 
 	// Домен не ограничен, а страна да
