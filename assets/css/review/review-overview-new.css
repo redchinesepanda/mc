@@ -1,3 +1,26 @@
+@media screen and ( max-width: 767px ) {
+
+	/* Position */
+
+    .tcb-post-content .legal-overview {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+}
+
+@media screen and ( min-width: 768px ) {
+	
+	/* Position */
+
+    .tcb-post-content .legal-overview {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+
+}
+
 /* Overview Position */
 
 .tcb-post-content .legal-overview {
@@ -5,7 +28,7 @@
     padding-right: 24px;
     padding-bottom: 24px;
     padding-left: 16px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 /* .tcb-post-content .legal-overview-start {
