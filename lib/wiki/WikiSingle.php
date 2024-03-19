@@ -43,7 +43,9 @@ class WikiSingle
     }
 
 	const TEMPLATE = [
-        'legal-wiki-single' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single.php',
+        'single-main' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single.php',
+
+        'single-new' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single-news.php',
     ];
 
     public static function render()
@@ -53,13 +55,20 @@ class WikiSingle
             return '';
         }
 
-        ob_start();
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'single-new' ], [] );
+        }
 
-        load_template( self::TEMPLATE[ 'legal-wiki-single' ], false, [] );
+        return LegalComponents::render_main( self::TEMPLATE[ 'single-main' ], [] );
 
-        $output = ob_get_clean();
+        // ob_start();
 
-        return $output;
+        // load_template( self::TEMPLATE[ 'single-main' ], false, [] );
+
+        // $output = ob_get_clean();
+
+        // return $output;
     }
 }
 

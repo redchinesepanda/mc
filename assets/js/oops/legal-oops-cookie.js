@@ -118,7 +118,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 				// wrapper.classList.remove( classes.active );
 
-				prepareAcceptNecessary( wrapper )
+				prepareAcceptNecessary( wrapper );
 			}
 		}
 	}
