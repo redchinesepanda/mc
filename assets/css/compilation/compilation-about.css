@@ -105,6 +105,11 @@
     margin: 0px auto;
 }
 
+.compilation-about h1,
+.compilation-about .section-content-text:not( .legal-contextbox ) {
+    margin: 0px;
+}
+
 .compilation-about .section-content-text:not( :first-of-type ):not( .legal-contextbox ) {
     padding-top: 18px;
 }
@@ -113,11 +118,6 @@
     padding-left: 24px;
     margin-top: 12px;
     margin-bottom: 12px;
-}
-
-.compilation-about h1,
-.compilation-about .section-content-text {
-    margin: 0px; /* временное правило*/
 }
 
 /* .compilation-about .about-section-image {
