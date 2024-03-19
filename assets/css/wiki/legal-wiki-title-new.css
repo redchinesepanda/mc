@@ -43,9 +43,9 @@
 
 /* Width and Height */
 
-	.legal-wiki-title h1 {
-		width: 100%;
-	}
+.legal-wiki-title h1 {
+	width: 100%;
+}
 
 /* Position */
 
@@ -56,6 +56,17 @@
 .legal-wiki-title h1 {
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+.legal-wiki-title span {
+	padding: 8px 18px;
+}
+
+/* Background */
+
+.legal-wiki-title span {
+	border-radius: 18px;
+	background: var(--Base-base-02);
 }
 
 /* Typography */
