@@ -64,7 +64,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		if ( event.currentTarget.dataset.wrapperSelector == selectors.ageWrapper )
 		{
-			if ( LegalCookie.getCookie( cookies.oopsCookie ) === cookieValue.accepted )
+			// if ( LegalCookie.getCookie( cookies.oopsCookie ) === cookieValue.accepted )
+			
+			if ( MetrikaLib.checkCookie() )
 			{
 				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 			}
