@@ -66,9 +66,11 @@ class ToolSitemapXML
 
     public static function check_filter()
     {
-        return self::is_sitemap_page()
+        // return self::is_sitemap_page()
 
-            && ToolNotFound::check_restricted();
+        //     && ToolNotFound::check_restricted();
+
+        return self::is_sitemap_page();
     }
 
     public static function prepare_filter_where( $where )
@@ -83,12 +85,16 @@ class ToolSitemapXML
         {
             $participate = 'NOT IN';
 
+            $restricted_languages = [];
+
             if ( ToolNotFound::check_domain() )
             {
                 $participate = 'IN';
+
+                $restricted_languages = ToolNotFound::get_restricted_languages();
             }
 
-            $restricted_languages = ToolNotFound::get_restricted_languages();
+            // $restricted_languages = ToolNotFound::get_restricted_languages();
 
             // LegalDebug::debug( [
             //     'restricted_languages' => $restricted_languages,
