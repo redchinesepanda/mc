@@ -73,17 +73,30 @@ class OopsAge
         }
     }
 
-	const AGE = [
+	const AGE_DEBUG = [
 		'es',
 
 		'hr',
 
-        // 'kz',
+        'kz',
+	];
+
+	const AGE_PRODUCTION = [
+		'es',
+
+		'hr',
 	];
 
 	public static function check_locale()
     {
-        return in_array( WPMLMain::current_language(), self::AGE );
+        $current_language = self::AGE_DEBUG;
+
+        if ( LegalMain::check_host_production() )
+        {
+            $current_language = self::AGE_PRODUCTION;
+        }
+
+        return in_array( WPMLMain::current_language(), $current_language );
     }
     
 	public static function check()
