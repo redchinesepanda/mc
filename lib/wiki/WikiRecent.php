@@ -97,12 +97,15 @@ class WikiRecent
 		{
 			foreach ( $posts as $post )
 			{
+				$published_datetime = get_post_datetime( $post->ID );
+
 				$items[] = [
 					'href' => get_post_permalink( $post->ID ),
 
 					'title' => $post->post_title,
+
+					'published' => $published_datetime->format( 'd.m.Y' ),
 				];
-				
 			}
 		}
 
@@ -135,24 +138,41 @@ class WikiRecent
 	}
 
 	const TEMPLATE = [
-        'legal-wiki-recent' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-recent.php',
+        'recent-main' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-recent.php',
+
+        'recent-new' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-recent-new.php',
     ];
 
 	public static function render()
     {
-		if ( !WikiMain::check() )
+        if ( !WikiMain::check() )
         {
             return '';
         }
 
-        ob_start();
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'recent-new' ], [] );
+        }
 
-        load_template( self::TEMPLATE[ 'legal-wiki-recent' ], false, self::get_recent_args() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'recent-main' ], [] );
     }
+
+	// public static function render()
+    // {
+	// 	if ( !WikiMain::check() )
+    //     {
+    //         return '';
+    //     }
+
+    //     ob_start();
+
+    //     load_template( self::TEMPLATE[ 'recent-main' ], false, self::get_recent_args() );
+
+    //     $output = ob_get_clean();
+
+    //     return $output;
+    // }
 }
 
 ?>
