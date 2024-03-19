@@ -73,7 +73,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 		else
 		{
-			LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
+			// LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
+			
+			if ( !MetrikaLib.checkCode() )
+			{
+				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
+			}
 
 			// console.log( LegalCookieOops.oopsCookieEvent );
 
