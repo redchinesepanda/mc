@@ -55,10 +55,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.closest( element.dataset.wrapperSelector ).classList.remove( classes.active );
 	}
 
-	function acceptCookieNecessary( event )
-	{
-		closeOops( event.currentTarget );
-	}
+	// function acceptCookieNecessary( event )
+	// {
+	// 	closeOops( event.currentTarget );
+	// }
 
 	function acceptCookie( event )
 	{
@@ -100,10 +100,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		button.addEventListener( events.click, acceptCookie, false );
 	}
 
-	function prepareAcceptNecessary( wrapper )
-	{
-		wrapper.querySelector( selectors.cookieButtonNecessary ).addEventListener( events.click, acceptCookieNecessary, false );
-	}
+	// function prepareAcceptNecessary( wrapper )
+	// {
+	// 	wrapper.querySelector( selectors.cookieButtonNecessary ).addEventListener( events.click, acceptCookieNecessary, false );
+	// }
 
 	function oopsInit( wrapper, wrapperSelector, cookie, itemSlector )
 	{
@@ -117,14 +117,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			
 			wrapper.classList.add( classes.active );
 
-			if ( wrapperSelector == selectors.cookieWrapper )
-			{
-				// closeOops( wrapper.querySelector( itemSlector ) ); 
+			// if ( wrapperSelector == selectors.cookieWrapper )
+			// {
+			// 	// closeOops( wrapper.querySelector( itemSlector ) ); 
 
-				// wrapper.classList.remove( classes.active );
+			// 	// wrapper.classList.remove( classes.active );
 
-				prepareAcceptNecessary( wrapper );
-			}
+			// 	prepareAcceptNecessary( wrapper );
+			// }
 		}
 	}
 	
@@ -134,17 +134,38 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		oopsCookie: 'legal-oops-cookie'
 	};
 
+	function oopsInitCookieNecessary( wrapper )
+	{
+		oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButtonNecessary );
+	}
+
+	function oopsInitCookieAll( wrapper )
+	{
+		oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
+	}
+
+	function oopsInitAge( wrapper )
+	{
+		oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
+	}
+
 	function enableOops( element )
 	{
-		document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
-		{
-			oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
-		} );
+		document.querySelectorAll( selectors.cookieWrapper ).forEach( oopsInitCookieAll );
+
+		document.querySelectorAll( selectors.cookieWrapper ).forEach( oopsInitCookieNecessary );
+
+		// document.querySelectorAll( selectors.cookieWrapper ).forEach( function ( wrapper )
+		// {
+		// 	oopsInit( wrapper, selectors.cookieWrapper, cookies.oopsCookie, selectors.cookieButton );
+		// } );
 	
-		document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
-		{
-			oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
-		} );
+		document.querySelectorAll( selectors.ageWrapper ).forEach( oopsInitAge );
+
+		// document.querySelectorAll( selectors.ageWrapper ).forEach( function ( wrapper )
+		// {
+		// 	oopsInit( wrapper, selectors.ageWrapper, cookies.oopsAge, selectors.ageButtonYes );
+		// } );
 	}
 
 	const events = {
