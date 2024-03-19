@@ -49,7 +49,7 @@
 	padding-bottom: 16px;
 }
 
-.legal-wiki-recent .legal-sidebar-articles {
+.legal-wiki-recent .recent-list-item {
 	/* padding: 10px; */
 	padding-top: 14px;
 	padding-bottom: 14px;
@@ -82,9 +82,15 @@
 	/* row-gap: 10px; */
 }
 
+.legal-wiki-recent .recent-list-item {
+	display:flex;
+	flex-direction: column;
+	row-gap: 4px;
+}
+
 /* Background */
 
-.legal-wiki-recent .legal-sidebar-articles {
+.legal-wiki-recent .recent-list-item {
 	/* background-color:darkkhaki; */
 	border-bottom: 1px solid var(--Base-base-02); 
 /* 	box-shadow: 0 0 10px #f5eaea; */
@@ -95,9 +101,14 @@
 /* Typography */
 
 .legal-wiki-recent .title-of-sidebar,
-.legal-wiki-recent .legal-sidebar-articles {
+.legal-wiki-recent .legal-sidebar-articles,
+.legal-wiki-recent .list-item-date {
 	font-family: var( --legal-font-primary );
     font-style: normal;
+}
+
+.legal-wiki-recent .title-of-sidebar,
+.legal-wiki-recent .legal-sidebar-articles {
 	color: var(--Base-base-09); 
 }
 
@@ -121,4 +132,11 @@
 	/* color: #5997e3; */
 	text-shadow: 0 0 0.5px var(--Base-base-09);
 	border-bottom: 1px solid var(--Base-base-04);
+}
+
+.legal-wiki-recent .list-item-date {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	color: var(--Base-base-05);
 }
