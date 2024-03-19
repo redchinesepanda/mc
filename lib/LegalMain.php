@@ -201,15 +201,19 @@ class LegalMain
 	}
 
 	const HOST_PRODUCTION = [
-		'production' => 'match.center',
-
-		'oldpl' => 'oldpl.match.center',
+		'mc' => 'match.center',
 	];
 
 	const HOST_DEBUG = [
 		'old' => 'old.match.center',
 
+		'oldpl' => 'oldpl.match.center',
+
+		'oldes' => 'oldes.match.center',
+
 		'test' => 'test.match.center',
+
+		'es' => 'es.match.center',
 	];
 
 	public static function check_host_production()

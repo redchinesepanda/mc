@@ -22,10 +22,20 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
-	const RESTRICTED = [
-		// 'oldpl.match.center' => [
-		// 	'pl'
-		// ],
+	const RESTRICTED_PRODUCTION = [
+		'es.match.center' => [
+			'es'
+		],
+	];
+
+	const RESTRICTED_DEBUG = [
+		'oldpl.match.center' => [
+			'pl'
+		],
+
+		'oldes.match.center' => [
+			'es'
+		],
 
 		// 'oldca.match.center' => [
 		// 	'ca',
@@ -36,17 +46,31 @@ class ToolNotFound
 
 	public static function get_restricted_languages()
 	{
+		$restricted = self::RESTRICTED_DEBUG;
+
+        if ( LegalMain::check_host_production() )
+        {
+            $restricted = self::RESTRICTED_PRODUCTION;
+        }
+
 		if ( self::check_domain() )
 		{
-			return self::RESTRICTED[ $_SERVER[ 'HTTP_HOST' ] ];
+			return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
 		}
 
-		return call_user_func_array( 'array_merge', self::RESTRICTED );
+		return call_user_func_array( 'array_merge', $restricted );
 	}
 
 	public static function check_domain()
 	{
-		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], self::RESTRICTED ) )
+		$restricted = self::RESTRICTED_DEBUG;
+
+        if ( LegalMain::check_host_production() )
+        {
+            $restricted = self::RESTRICTED_PRODUCTION;
+        }
+
+		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
 		{
 			return true;
 		}
@@ -60,7 +84,14 @@ class ToolNotFound
 
 		$language = WPMLMain::current_language();
 
-		foreach ( self::RESTRICTED as $languages )
+		$restricted = self::RESTRICTED_DEBUG;
+
+        if ( LegalMain::check_host_production() )
+        {
+            $restricted = self::RESTRICTED_PRODUCTION;
+        }
+
+		foreach ( $restricted as $languages )
 		{
 			if ( in_array( $language, $languages ) )
 			{
@@ -69,6 +100,24 @@ class ToolNotFound
 		}
 
 		return $result;
+	}
+
+	// Домен ограничен, а страна нет
+
+	public static function check_restricted_domain_and_not_language()
+	{
+		return self::check_domain() && !self::check_language();
+	}
+
+	// Домен не ограничен, а страна да
+
+	public static function check_restricted_not_domain_and_language()
+	{
+		// return !self::check_domain() && self::check_language();
+	
+		// Временно для не ограниченных доменов доступны все страны
+
+		return false;
 	}
 
 	public static function check_restricted()
@@ -81,9 +130,13 @@ class ToolNotFound
 		// 	'check_language' => self::check_language(),
 		// ] );
 
-		return self::check_domain() && !self::check_language()
+		// return self::check_domain() && !self::check_language()
 			
-			|| !self::check_domain() && self::check_language();
+		// 	|| !self::check_domain() && self::check_language();
+
+		return self::check_restricted_domain_and_not_language()
+
+			|| self::check_restricted_not_domain_and_language();
 	}
 
 	public static function check()

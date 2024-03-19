@@ -52,8 +52,6 @@ class ToolSitemapXML
 
     public static function is_sitemap_page()
     {
-        
-
         global $wp_version;
     
         if( ! did_action( 'parse_request' ) )
@@ -66,39 +64,46 @@ class ToolSitemapXML
         return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
     }
 
+    public static function check_filter()
+    {
+        return self::is_sitemap_page()
+
+            && ToolNotFound::check_restricted();
+    }
+
     public static function prepare_filter_where( $where )
 	{
         // LegalDebug::debug( [
         //     'is_sitemap_page()' => self::is_sitemap_page(),
         // ] );
 
-        if ( !self::is_sitemap_page() )
+        // if ( !self::is_sitemap_page() )
+        
+        if ( self::check_filter() )
         {
-            return $where;
+            $participate = 'NOT IN';
+
+            if ( ToolNotFound::check_domain() )
+            {
+                $participate = 'IN';
+            }
+
+            $restricted_languages = ToolNotFound::get_restricted_languages();
+
+            // LegalDebug::debug( [
+            //     'restricted_languages' => $restricted_languages,
+            // ] );
+
+            $values = "'" . join( "', '", $restricted_languages ) . "'";
+
+            $where = preg_replace(
+                '/wpml_translations.language_code(\s=\s\'[a-z]+\')?/',
+                
+                'wpml_translations.language_code ' . $participate . ' (' . $values . ')',
+                
+                $where
+            );
         }
-
-        $participate = 'NOT IN';
-
-        if ( ToolNotFound::check_domain() )
-        {
-            $participate = 'IN';
-        }
-
-        $restricted_languages = ToolNotFound::get_restricted_languages();
-
-        // LegalDebug::debug( [
-        //     'restricted_languages' => $restricted_languages,
-        // ] );
-
-        $values = "'" . join( "', '", $restricted_languages ) . "'";
-
-        $where = preg_replace(
-            '/wpml_translations.language_code(\s=\s\'[a-z]+\')?/',
-            
-            'wpml_translations.language_code ' . $participate . ' (' . $values . ')',
-            
-            $where
-        );
 		
         return $where;
 	}
