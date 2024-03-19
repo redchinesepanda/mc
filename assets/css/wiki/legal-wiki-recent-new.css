@@ -20,6 +20,11 @@
 	/* margin-top: 20px; */
 }
 
+.legal-wiki-recent .title-of-sidebar {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
 .legal-wiki-recent .legal-sidebar-articles {
 	/* padding: 10px; */
 	padding-top: 14px;
@@ -44,19 +49,19 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	row-gap: 1rem;
+	/* row-gap: 1rem; */
 }
 
 .legal-wiki-recent .block-with-articles {
 	display:flex;
 	flex-direction: column;
-	row-gap: 10px;
+	/* row-gap: 10px; */
 }
 
 /* Background */
 
 .legal-wiki-recent .legal-sidebar-articles {
-	background-color:darkkhaki;
+	/* background-color:darkkhaki; */
 	border-bottom: 1px solid var(--Base-base-02); 
 /* 	box-shadow: 0 0 10px #f5eaea; */
 	/* border-radius: 3px; */
