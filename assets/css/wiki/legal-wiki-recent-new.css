@@ -1,12 +1,41 @@
-.legal-wiki-recent * {
-	box-sizing: border-box;
-	font-family: "Source Sans Pro";
+@media screen and ( max-width: 767px ) {
+
+	/* Width and Height */
+
+	.legal-wiki-recent {
+		width: 100%;
+	}
+
 }
 
-.legal-wiki-recent a {
+@media screen and ( min-width: 768px ) {
+	
+	/* Position */
+
+	.legal-wiki-recent {
+		/* padding: 0px 20px; */
+		/* margin-top: 20px; */
+		padding-right: 20px;
+  		padding-left: 20px;
+	}
+
+	/* Width and Height */
+
+	.legal-wiki-recent {
+		width: 287px;
+	}
+
+}
+
+/* .legal-wiki-recent * {
+	box-sizing: border-box;
+	font-family: "Source Sans Pro";
+} */
+
+/* .legal-wiki-recent a {
 	text-decoration: none;
 	color:#3b3b3b;	
-}
+} */
 
 /* Position */
 
@@ -15,26 +44,28 @@
 	top: 0px;
 }
 
-.legal-wiki-recent {
-	padding: 0px 20px;
-	/* margin-top: 20px; */
+.legal-wiki-recent .title-of-sidebar {
+	padding-top: 16px;
+	padding-bottom: 16px;
 }
 
 .legal-wiki-recent .legal-sidebar-articles {
-	padding: 10px;
+	/* padding: 10px; */
+	padding-top: 14px;
+	padding-bottom: 14px;
 }
 
 /* Width and Height */
 
-.legal-wiki-recent {
+/* .legal-wiki-recent {
 	width: 287px;
-}
+} */
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
 	.legal-wiki-recent {
 		width: auto;
 	}
-}
+} */
 
 /* Display */
 
@@ -42,39 +73,52 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	row-gap: 1rem;
+	/* row-gap: 1rem; */
 }
 
 .legal-wiki-recent .block-with-articles {
 	display:flex;
 	flex-direction: column;
-	row-gap: 10px;
+	/* row-gap: 10px; */
 }
 
 /* Background */
 
 .legal-wiki-recent .legal-sidebar-articles {
-	background-color: #fff;
-	box-shadow: 0 0 10px #f5eaea;
-	border-radius: 3px;
-	border: 1px solid #fff;
+	/* background-color:darkkhaki; */
+	border-bottom: 1px solid var(--Base-base-02); 
+/* 	box-shadow: 0 0 10px #f5eaea; */
+	/* border-radius: 3px; */
+	/* border: 1px solid #fff; */
 }
 
 /* Typography */
 
+.legal-wiki-recent .title-of-sidebar,
+.legal-wiki-recent .legal-sidebar-articles {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
+	color: var(--Base-base-09); 
+}
+
 .legal-wiki-recent .title-of-sidebar {
-	color: #969696;
+	/* color: #969696; */
 	font-size: 16px;
-	font-weight: 400;
-	text-align: left;
+	font-weight: 600;
+	line-height: 22px;
+	/* text-align: left; */
 }
 
 .legal-wiki-recent .legal-sidebar-articles {
-	line-height: 1.5;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
 	text-decoration: none;
 }
 
 .legal-wiki-recent .legal-sidebar-articles:hover {
-	border-left: #5997e3 1px solid;
-	color: #5997e3;
+	/* border-left: #5997e3 1px solid; */
+	/* color: #5997e3; */
+	text-shadow: 0 0 0.5px var(--Base-base-09);
+	border-bottom: 1px solid var(--Base-base-04);
 }

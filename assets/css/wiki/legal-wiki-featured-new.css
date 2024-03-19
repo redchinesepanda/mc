@@ -1,0 +1,36 @@
+/* Display */
+
+.legal-wiki-main .legal-wiki-featured {
+	display: flex;
+  	justify-content: center;
+}
+
+/* Width and Height */
+
+.legal-wiki-main .legal-wiki-featured {
+	height: 400px;
+	overflow: hidden;
+}
+
+.legal-wiki-main .wiki-featured-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Position */
+
+.legal-wiki-main .legal-wiki-featured {
+	/* padding-bottom: 20px; */
+	margin-bottom: 20px;
+}
+
+/* Background */
+
+.legal-wiki-main .legal-wiki-featured {
+	border-radius: 10px;
+}
+
+/* .legal-wiki-main .wiki-featured-image {
+	border-radius: 10px;
+} */
