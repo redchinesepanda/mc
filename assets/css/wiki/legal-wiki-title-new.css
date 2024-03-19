@@ -5,6 +5,12 @@
 		flex-wrap: wrap;
 	}
 
+	/* Position */
+
+	.legal-wiki-title {
+		padding-bottom: 18px;
+	}
+
 	/* Typography */
 
 	.legal-wiki-title h1 {
@@ -23,6 +29,13 @@
 	/* .legal-wiki-title span {
 		flex-basis: calc( 25% - 10px );
 	} */
+
+	/* Position */
+
+	.legal-wiki-title {
+		/* padding-bottom: 20px; */
+		padding-bottom: 32px;
+	}
 
 	/* Typography */
 
@@ -48,10 +61,6 @@
 }
 
 /* Position */
-
-.legal-wiki-title {
-	padding-bottom: 20px;
-}
 
 .legal-wiki-title h1 {
 	margin-top: 0px;

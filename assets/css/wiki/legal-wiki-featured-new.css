@@ -1,3 +1,24 @@
+@media screen and ( max-width: 767px ) {
+
+	/* Position */
+
+	.legal-wiki-main .legal-wiki-featured {
+		margin-bottom: 18px;
+	}
+
+}
+
+@media screen and ( min-width: 768px ) {
+	
+	/* Position */
+
+	.legal-wiki-main .legal-wiki-featured {
+		/* padding-bottom: 20px; */
+		margin-bottom: 32px;
+	}
+
+}
+
 /* Display */
 
 .legal-wiki-main .legal-wiki-featured {
@@ -16,13 +37,6 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-}
-
-/* Position */
-
-.legal-wiki-main .legal-wiki-featured {
-	/* padding-bottom: 20px; */
-	margin-bottom: 20px;
 }
 
 /* Background */
