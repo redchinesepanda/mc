@@ -45,7 +45,7 @@ class WikiSingle
 	const TEMPLATE = [
         'single-main' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single.php',
 
-        'single-new' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single-news.php',
+        'single-new' => LegalMain::LEGAL_PATH . '/template-parts/wiki/part-legal-wiki-single-new.php',
     ];
 
     public static function render()
