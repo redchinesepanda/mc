@@ -1,0 +1,38 @@
+@media screen and ( max-width: 767px ) {
+	/* Display */
+
+	.legal-wiki-single {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and ( min-width: 768px ) {
+	/* Width and Height */
+
+	.legal-wiki-single .legal-wiki-main {
+		flex-basis: calc( 75% - 10px );
+	}
+
+	.legal-wiki-single .legal-wiki-sidebar {
+		flex-basis: calc( 25% - 9px );
+	}
+}
+
+/* Display */
+
+.legal-wiki-single {
+	display: flex;
+	gap: 20px;
+}
+
+/* Position */
+
+.legal-wiki-single .legal-wiki-sidebar {
+	position: relative;
+}
+
+/* Background */
+
+/* .legal-wiki-single .legal-wiki-sidebar {
+	border-left: 1px solid rgb(240,240,240);
+} */
