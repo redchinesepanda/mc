@@ -112,6 +112,7 @@ class ToolNotFound
 			// }
 
 			$restricted = self::get_restricted();
+		}
 		else
 		{
 			$restricted[] = $languages;
