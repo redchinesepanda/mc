@@ -11,7 +11,7 @@ class WPMLChooseYourCountry
     ];
 
     const CSS_NEW = [
-        'wpml-choose-your-country-new' => [
+        'wpml-choose-your-country' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-choose-your-country-new.css',
 
 			'ver' => '1.0.0',
