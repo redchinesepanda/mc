@@ -183,9 +183,11 @@ class ToolNotFound
 
 	public static function set_not_found()
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
-		// ] );
+		LegalDebug::debug( [
+			'function' => 'ToolNotFound::set_not_found',
+
+			'check_not_found' => self::check_not_found(),
+		] );
 
 		if ( self::check_not_found() )
 		{
