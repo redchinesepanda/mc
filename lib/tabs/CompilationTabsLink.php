@@ -37,6 +37,11 @@ class CompilationTabsLink
 
 	public static function modify_content( $content )
 	{
+		if ( !TemplateMain::check_new() )
+		{
+			return $content;
+		}
+
 		$dom = LegalDOM::get_dom( $content );
 
 		self::modify_link( $dom );
