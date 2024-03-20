@@ -160,6 +160,11 @@
     padding-right: 56px;
 }
 
+.tcb-post-content table tr > *
+{
+    padding: 10px;
+}
+
 /* Review Width and Height */
 
 .tcb-post-content table.legal-check {
