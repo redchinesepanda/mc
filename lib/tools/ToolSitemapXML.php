@@ -28,13 +28,28 @@ class ToolSitemapXML
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
     }
 
+    public static function check_sitemap_enabled()
+    {
+        // $is_sitemaps_enabled = wp_sitemaps_get_server()->sitemaps_enabled();
+
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'check_sitemap_enabled',
+
+        //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
+        // ] );
+
+        // return $is_sitemaps_enabled;
+        
+        return wp_sitemaps_get_server()->sitemaps_enabled();
+    }
+
     public static function register()
     {
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'register',
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'register',
 
-        //     'is_sitemap_page' => self::is_sitemap_page(),
-        // ] );
+            'check_sitemap_enabled' => self::check_sitemap_enabled(),
+        ] );
 
         if ( self::is_sitemap_page() )
         {
