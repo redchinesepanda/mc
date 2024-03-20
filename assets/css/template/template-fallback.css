@@ -149,7 +149,7 @@
 		--tcb-typography-font-size: 18px;
 		line-height: 1.8em;
 		--tcb-typography-line-height: 1.8em;
-		color: var(--tcb-skin-color-0);
+		/* color: var(--tcb-skin-color-0); */
 		--tve-applied-color: var$( --tcb-skin-color-0 );
 		--eff-color: rgb(203, 203, 203);
 		--eff-faded: rgba(203, 203, 203, 0.6);
@@ -187,7 +187,7 @@
 		box-shadow: none;
 		--tve-applied-box-shadow: none;
 		--tve-applied-background-image: linear-gradient(var$( --eff-color), var$( --eff-color) );
-		color: var(--tcb-skin-color-0);
+		/* color: var(--tcb-skin-color-0); */
 		--tve-applied-color: var$( --tcb-skin-color-0 );
    }
 	body, .tcb-plain-text {
