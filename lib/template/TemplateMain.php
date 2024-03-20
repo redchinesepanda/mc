@@ -365,11 +365,21 @@ class TemplateMain
 
     public static function render()
     {
+        if ( !LegalMain::check_plugins() )
+        {
+            return 'TemplateMain::render';
+        }
+
         return TemplateSingle::render();
     }
     
     public static function render_page()
     {
+        if ( !LegalMain::check_plugins() )
+        {
+            return 'TemplateMain::render_page';
+        }
+
         return TemplatePage::render();
     }
 
