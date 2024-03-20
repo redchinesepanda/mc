@@ -132,6 +132,8 @@
 
 .tcb-post-content table {
     caption-side: unset;
+    box-sizing: border-box;
+    border-collapse: collapse;
 }
 
 .tcb-post-content table.legal-scroll {
