@@ -170,6 +170,20 @@ class YoastMain
         return '';
     }
 
+    const TAXONOMY = [
+        'category' => 'category',
+    ];
+
+    public static function get_primary_term_id( $id, $category = self::TAXONOMY[ 'category' ] )
+    {
+        if ( empty( $id ) )
+        {
+            return 0;
+        }
+
+        return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+    }
+
     public static function render()
     {
         load_template( self::TEMPLATE, false, self::get() );

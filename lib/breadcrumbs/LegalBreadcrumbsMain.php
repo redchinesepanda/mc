@@ -58,7 +58,9 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         // $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
         
-        $primary_id = yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+        // $primary_id = yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+        
+        $primary_id = YoastMain::get_primary_term_id( $id, self::TAXONOMY[ 'category' ] );
 
         // LegalDebug::debug( [
         //     'LegalBreadcrumbsMain' => 'get_terms',
