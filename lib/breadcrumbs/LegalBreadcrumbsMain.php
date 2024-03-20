@@ -240,7 +240,12 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
 
-                if ( empty( $items ) ) {
+                if ( empty( $items ) )
+                {
+                    LegalDebug::debug( [
+                        'LegalBreadcrumbsMain' => 'get',
+                    ] );
+
                     $legal_terms = self::get_terms( $post_id );
 
                     if ( !empty( $legal_terms ) ) {
