@@ -204,6 +204,10 @@
 	text-decoration: none;
 }
 
+.legal-bonus-list .bonus-list-item > .item-image-link {
+	line-height: 0;
+}
+
 .legal-bonus-list .item-about-size {
 	font-family: "Source Sans Pro";
 	font-size: 20px;
