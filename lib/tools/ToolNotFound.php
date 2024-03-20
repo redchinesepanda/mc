@@ -162,16 +162,23 @@ class ToolNotFound
 	{
 		return is_category();
 	}
+
+	public static function check_not_robots_txt()
+	{
+		return !is_robots();
+	}
 	
 	public static function check_not_found()
 	{
-		return self::check_category()
+		return (
+			self::check_category()
 
 			|| self::check_tag()
 
 			|| self::check_taxonomy()
 
-			|| self::check_restricted();
+			|| self::check_restricted()
+		) && !self::check_not_robots_txt();
 	}
 
 	public static function set_not_found()
