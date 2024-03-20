@@ -166,6 +166,10 @@
 	display: flex;
 }
 
+.legal-header .legal-logo picture {
+	display: flex;
+}
+
 .legal-menu {
 	display: flex;
 	column-gap: 15px;
