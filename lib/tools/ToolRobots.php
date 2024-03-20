@@ -57,6 +57,36 @@ class ToolRobots
 		die();
 	}
 
+	// User-agent: AhrefsSiteAudit
+	// Allow: /
+	// User-agent: AhrefsBot
+	// Allow: /
+
+	// User-agent: dotbot
+	// Disallow: /
+
+	// User-Agent: trendictionbot
+	// Disallow: /
+
+	// User-agent: SemrushBot
+	// Disallow: /
+
+	// User-agent: SemrushBot-SA
+	// Disallow: /
+
+	// User-agent: MJ12bot
+	// Disallow: /
+
+	// User-agent: *
+	// Disallow: /wp-admin/
+	// Disallow: /wp-json/
+	// Disallow: /football/
+	// Allow: /odds/en/football/
+	// Disallow: /*?swcfpc=1
+
+	// Allow: /wp-admin/admin-ajax.php
+	// Sitemap: https://match.center/wp-sitemap.xml
+
 	const ROBOTS = [
 		'User-agent: AhrefsSiteAudit',
 
@@ -108,9 +138,17 @@ class ToolRobots
 
 		'Disallow: /wp-json/',
 
+		'Disallow: /football/',
+
+		'Disallow: /*?swcfpc=1',
+
 		'',
 
+		'Allow: /odds/en/football/',
+
 		'Allow: /wp-admin/admin-ajax.php',
+
+		'',
 	];
 }
 
