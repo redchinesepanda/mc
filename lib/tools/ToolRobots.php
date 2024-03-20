@@ -15,7 +15,7 @@ class ToolRobots
 	{
 		LegalDebug::debug( [
 			'ToolRobots' => 'mc_robots_txt_append',
-			
+
 			'$output' => $output,
 		] );
 
@@ -37,7 +37,9 @@ class ToolRobots
 		// $str = preg_replace( '/^[\t ]+(?!#)/mU', '', $str );
 		// $output .= "$str\n";
 	
-		return $output;
+		// return $output;
+		
+		return '';
 	}
 
 	public static function mc_robots_txt()
