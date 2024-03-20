@@ -256,6 +256,12 @@ class LegalBreadcrumbsMain extends LegalDebug
                                 $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
                             }
                         }
+
+                        LegalDebug::debug( [
+                            'LegalBreadcrumbsMain' => 'get',
+
+                            '$items' => $items,
+                        ] );
                     }
                 }
 
