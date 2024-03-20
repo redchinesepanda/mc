@@ -63,7 +63,7 @@
     /* Review About Width and Height */
 
     .review-about {
-        /* width: 1080px; */
+        max-width: 1080px;
     }
 
     .review-about .about-left,
