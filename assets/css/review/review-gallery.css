@@ -92,6 +92,11 @@
     width: 36px;
     height: 66px;
 }
+
+.tcb-post-content .legal-imageset .item-image {
+    width: 100%;
+    height: auto;
+}
   
 /* Gallery Background */
 
