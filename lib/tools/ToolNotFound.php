@@ -9,7 +9,7 @@ class ToolNotFound
     {
         $handler = new self();
 
-		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
 
