@@ -47,6 +47,12 @@
 
     /* Width and Height */
 
+    .tcb-post-content .legal-list-2 li,
+    .tcb-post-content .legal-list-3 li,
+    .tcb-post-content .legal-list-4 li {
+        box-sizing: border-box;
+    }
+
     .tcb-post-content .legal-list-2 li {
         width: 50%;
     }
