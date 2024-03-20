@@ -58,6 +58,12 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
 
+        LegalDebug::debug( [
+            'LegalBreadcrumbsMain' => 'get_terms',
+
+            '$primary_id' => $primary_id,
+        ] );
+
         if ( $primary_id )
         {
             $primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
