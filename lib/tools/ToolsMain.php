@@ -59,7 +59,7 @@ class ToolsMain
 
         ToolSitemapXML::register();
 
-        ToolRobots::register();
+        // ToolRobots::register();
     }
 
     public static function register_functions()
