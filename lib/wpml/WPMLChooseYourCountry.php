@@ -6,7 +6,7 @@ class WPMLChooseYourCountry
         'wpml-choose-your-country' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-choose-your-country.css',
 
-			'ver' => '1.0.0',
+			'ver' => '1.0.1',
 		],
     ];
 
