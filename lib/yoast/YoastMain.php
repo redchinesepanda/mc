@@ -24,9 +24,34 @@ class YoastMain
         \add_filter( 'wpseo_force_creating_and_using_attachment_indexables', '__return_true' );
 
         add_action( 'wpseo_register_extra_replacements', [ $handler, 'register_my_plugin_extra_replacements' ] );
+
+        add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
     }
 
-    function register_my_plugin_extra_replacements()
+    /**
+     * Fix Yoast SEO robots.txt changes.
+     * https://wordpress.org/support/topic/disable-robots-txt-changing-by-yoast-seo/#post-16648736
+     */
+    public static function wpwc_fix_yoast_seo_robots_txt()
+    {
+        global $wp_filter;
+
+        if ( isset( $wp_filter['robots_txt']->callbacks ) && is_array( $wp_filter['robots_txt']->callbacks ) )
+        {
+            foreach ( $wp_filter['robots_txt']->callbacks as $callback_priority => $callback )
+            {
+                foreach ( $callback as $function_key => $function )
+                {
+                    if ( 'filter_robots' === $function['function'][1] )
+                    {
+                        unset( $wp_filter['robots_txt']->callbacks[ $callback_priority ][ $function_key ] );
+                    }
+                }
+            }
+        }
+    }
+
+    public static function register_my_plugin_extra_replacements()
     {
         // wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'advanced', 'this is a help text for myvar1' );
         
@@ -35,7 +60,7 @@ class YoastMain
         // wpseo_register_var_replacement( 'myvar2', array( 'class', 'method_name' ), 'basic', 'this is a help text for myvar2' );
     }
 
-    function retrieve_billetsamount_replacement( $var1 )
+    public static function retrieve_billetsamount_replacement( $var1 )
     {
         return CompilationTabs::get_billets_amount();
     }
