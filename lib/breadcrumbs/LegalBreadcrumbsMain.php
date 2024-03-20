@@ -56,21 +56,23 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_terms( $id )
     {
-        $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+        // $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+        
+        $primary_id = yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
 
-        LegalDebug::debug( [
-            'LegalBreadcrumbsMain' => 'get_terms',
+        // LegalDebug::debug( [
+        //     'LegalBreadcrumbsMain' => 'get_terms',
 
-            '$primary_id' => $primary_id,
+        //     '$primary_id' => $primary_id,
 
-            'get_language_code' => WPMLMain::get_language_code( $id ),
+        //     'get_language_code' => WPMLMain::get_language_code( $id ),
 
-            'get_language_details' => WPMLMain::get_language_details( $id ),
+        //     'get_language_details' => WPMLMain::get_language_details( $id ),
 
-            'current_language' => WPMLMain::current_language(),
+        //     'current_language' => WPMLMain::current_language(),
 
-            'yoast_get_primary_term_id' => yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id ),
-        ] );
+        //     'yoast_get_primary_term_id' => yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id ),
+        // ] );
 
         if ( $primary_id )
         {
@@ -275,13 +277,13 @@ class LegalBreadcrumbsMain extends LegalDebug
                             if ( !$exclude ) {
                                 $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
 
-                                LegalDebug::debug( [
-                                    'LegalBreadcrumbsMain' => 'get',
+                                // LegalDebug::debug( [
+                                //     'LegalBreadcrumbsMain' => 'get',
         
-                                    '$items' => $items,
+                                //     '$items' => $items,
 
-                                    '$term->term_id' => $term->term_id,
-                                ] );
+                                //     '$term->term_id' => $term->term_id,
+                                // ] );
                             }
                         }
 
