@@ -62,6 +62,10 @@ class LegalBreadcrumbsMain extends LegalDebug
             'LegalBreadcrumbsMain' => 'get_terms',
 
             '$primary_id' => $primary_id,
+
+            'get_language_code' => WPMLMain::get_language_code( $id ),
+
+            'current_language' => WPMLMain::current_language(),
         ] );
 
         if ( $primary_id )
