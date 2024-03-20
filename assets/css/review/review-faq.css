@@ -20,7 +20,9 @@
 
 .tcb-post-content .legal-faq-title ~ .legal-faq-title {
 	margin-top: 10px;
+	margin-bottom: 0px;
 }
+
 .tcb-post-content .legal-faq-title.legal-active {
 	margin-bottom: 10px;
 }
