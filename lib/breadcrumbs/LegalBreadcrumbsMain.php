@@ -68,6 +68,8 @@ class LegalBreadcrumbsMain extends LegalDebug
             'get_language_details' => WPMLMain::get_language_details( $id ),
 
             'current_language' => WPMLMain::current_language(),
+
+            'yoast_get_primary_term_id' => yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id ),
         ] );
 
         if ( $primary_id )
