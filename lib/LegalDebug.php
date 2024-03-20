@@ -19,19 +19,19 @@ class LegalDebug
 
     public static function debug( $message )
     {
-        // if ( self::check() )
-        // {
+        if ( self::check() )
+        {
             echo ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' . PHP_EOL );
-        // }
+        }
         
     }
 
     public static function die( $message )
     {
-        // if ( self::check() )
-        // {
+        if ( self::check() )
+        {
             wp_die ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' . PHP_EOL );
-        // }
+        }
         
     }
 }
