@@ -180,7 +180,7 @@ class ToolNotFound
 			'check_taxonomy' => self::check_taxonomy(),
 
 			'check_restricted' => self::check_restricted(),
-			
+
 			'check_not_robots_txt' => self::check_not_robots_txt(),
 		] );
 
@@ -192,7 +192,7 @@ class ToolNotFound
 			|| self::check_taxonomy()
 
 			|| self::check_restricted()
-		) && !self::check_not_robots_txt();
+		) && self::check_not_robots_txt();
 	}
 
 	public static function set_not_found()
