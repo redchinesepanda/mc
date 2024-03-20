@@ -1,1 +1,0 @@
-first( prop("Locale") ).prop("Language Code")
