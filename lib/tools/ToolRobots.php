@@ -6,9 +6,9 @@ class ToolRobots
 	{
 		$handler = new self();
 
-		// add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
+		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
 
-		add_action( 'robots_txt', [ $handler, 'mc_robots_txt_append' ], 10, 2 );
+		// add_action( 'robots_txt', [ $handler, 'mc_robots_txt_append' ], 10, 2 );
 	}
 
 	public static function mc_robots_txt_append( $output )
