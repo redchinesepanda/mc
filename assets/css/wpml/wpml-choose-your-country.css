@@ -1,0 +1,247 @@
+/*--------------choose-your-country------------*/
+@media screen and (max-width: 1079px) {
+    .choose-you-country {
+        width: 100%;
+    }
+}
+
+@media screen and ( max-width: 767px ) {
+
+    /* Width and Height */
+
+    .choose-you-country .lang-item {
+        width: 158px;
+    }
+
+    /* Typography */
+
+    .choose-you-country .lang-item {
+        font-weight: 600;
+    }
+}
+
+@media screen and ( min-width: 768px ) {
+
+    /* Width and Height */
+
+    .choose-you-country .lang-item {
+        width: 162px;
+    }
+
+    /* Typography */
+
+    .choose-you-country .lang-item {
+        font-weight: 650;
+    }
+
+}
+
+/* Display */
+
+.choose-you-country {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 0.7rem;
+    column-gap: 0.55rem;
+}
+
+.choose-you-country .lang-item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* Position */
+
+.choose-you-country {
+    margin: 5px auto 30px auto;
+}
+
+.choose-you-country .lang-item {
+    padding-left: 10px;
+}
+
+/* Width and Height */
+
+.choose-you-country {
+    width: 100%;
+}
+
+.choose-you-country .lang-item .lang-image {
+    height: 20px;
+    width: 20px;
+}
+
+/* Background */
+
+.choose-you-country .lang-item:hover {
+    background-color: #5997e3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #e4e4e4;
+}
+
+.choose-you-country .lang-item .lang-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: #b8b8b8 solid 1.5px;
+}
+
+.locale-1 {
+background-image: url(/wp-content/uploads/flags/default.svg);
+}
+
+.locale-2 {
+background-image: url(/wp-content/uploads/flags/es.svg);
+}
+
+.locale-3 {
+    background-image: url(/wp-content/uploads/flags/de.svg);
+}
+
+.locale-5 {
+    background-image: url(/wp-content/uploads/flags/ar.svg);
+}
+
+.locale-8 {
+    background-image: url(/wp-content/uploads/flags/ca.svg);
+}
+
+.locale-22 {
+    background-image: url(/wp-content/uploads/flags/hr.svg);
+}
+
+.locale-34 {
+    background-image: url(/wp-content/uploads/flags/mt.svg);
+}
+
+.locale-37 {
+    background-image: url(/wp-content/uploads/flags/nl.svg);
+}
+
+.locale-40 {
+    background-image: url(/wp-content/uploads/flags/pl.svg);
+}
+
+.locale-44 {
+    background-image: url(/wp-content/uploads/flags/ro.svg);
+}
+
+.locale-66 {
+    background-image: url(/wp-content/uploads/flags/kz.svg);
+}
+
+.locale-67 {
+    background-image: url(/wp-content/uploads/flags/by.svg);
+}
+
+.locale-69 {
+    background-image: url(/wp-content/uploads/flags/mx.svg);
+}
+
+.locale-70 {
+    background-image: url(/wp-content/uploads/flags/ng.svg);
+}
+
+.locale-71 {
+    background-image: url(/wp-content/uploads/flags/ie.svg);
+}
+
+.locale-72 {
+    background-image: url(/wp-content/uploads/flags/ua.svg);
+}
+
+.locale-74 {
+    background-image: url(/wp-content/uploads/flags/au.svg);
+}
+
+.locale-75 {
+    background-image: url(/wp-content/uploads/flags/za.svg);
+}
+
+.locale-77 {
+    background-image: url(/wp-content/uploads/flags/ke.svg);
+}
+
+.locale-78 {
+    background-image: url(/wp-content/uploads/flags/nz.svg);
+}
+
+.locale-79 {
+    background-image: url(/wp-content/uploads/flags/pe.svg);
+}
+
+.locale-80 {
+    background-image: url(/wp-content/uploads/flags/co.svg);
+}
+
+.locale-83 {
+    background-image: url(/wp-content/uploads/flags/py.svg);
+}
+
+.locale-84 {
+    background-image: url(/wp-content/uploads/flags/ph.svg);
+}
+
+.locale-85 {
+    background-image: url(/wp-content/uploads/flags/br.svg);
+}
+
+.locale-86 {
+    background-image: url(/wp-content/uploads/flags/pt.svg);
+}
+
+.locale-87 {
+    background-image: url(/wp-content/uploads/flags/at.svg);
+}
+
+.locale-88 {
+    background-image: url(/wp-content/uploads/flags/se.svg);
+}
+
+.locale-89 {
+    background-image: url(/wp-content/uploads/flags/cz.svg);
+}
+
+.locale-90 {
+    background-image: url(/wp-content/uploads/flags/rs.svg);
+}
+
+.locale-91 {
+    background-image: url(/wp-content/uploads/image-648c11827b791-image-648c.svg);
+}
+
+.locale-92 {
+    background-image: url(/wp-content/uploads/flags/chile-flag-button-round.svg);
+}
+
+.locale-93 {
+    background-image: url(/wp-content/uploads/flags/ch.svg);
+}
+
+.locale-94 {
+    background-image: url(/wp-content/uploads/flags/in.svg);
+}
+
+.locale-95 {
+    background-image: url(/wp-content/uploads/flags/dk.svg);
+}
+
+/* Typography */
+
+.choose-you-country .lang-item {
+    font-family: "source sans pro";
+    font-size: 14px;
+    font-style: normal;
+    line-height: 28px;
+    color: #6c6c6c;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.choose-you-country .lang-item:hover {
+    transition: 0.5s;
+    color: #fff;
+}
