@@ -163,9 +163,9 @@ class ToolNotFound
 		return is_category();
 	}
 
-	public static function check_not_robots_txt()
+	public static function check_robots_txt()
 	{
-		return !is_robots();
+		return is_robots();
 	}
 	
 	public static function check_not_found()
@@ -181,7 +181,7 @@ class ToolNotFound
 
 			'check_restricted' => self::check_restricted(),
 
-			'check_not_robots_txt' => self::check_not_robots_txt(),
+			'check_robots_txt' => self::check_robots_txt(),
 		] );
 
 		return self::check_category()
