@@ -146,7 +146,8 @@
 
 .billet-mega-content > table:not( :last-child ),
 .tcb-post-content > table:not( :last-child ),
-.tcb-post-content > table.legal-scroll:not( :last-child )
+.tcb-post-content > table.legal-scroll:not( :last-child ),
+.tcb-post-content > .legal-scroll-x:not( :last-child )
 {
     margin-bottom: 30px;
 }
