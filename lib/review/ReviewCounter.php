@@ -72,13 +72,24 @@ class ReviewCounter
 			$url = $group[ ReviewAbout::ABOUT[ 'logo' ] ];
 		}
 
-		return [
-			/* '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }', */
-			
-			// '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }',
-			
+		$style_general = [
 			'.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $url . '\'); }',
 		];
+
+		if ( !TemplateMain::check_new() )
+		{
+			$style_general[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
+		}
+
+		return $style_general;
+
+		// return [
+		// 	/* '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }', */
+			
+		// 	// '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }',
+			
+		// 	'.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $url . '\'); }',
+		// ];
 	}
 
 	const SIZE = [
@@ -98,7 +109,7 @@ class ReviewCounter
 
 		if ( $group )
 		{
-			$style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
+			// $style[] = '.' . self::CLASSES[ 'base' ] . ' { background-color: ' . $group[ ReviewAbout::ABOUT[ 'background' ] ] . '; }';
 
 			// $style[] = '.' . self::CLASSES[ 'base' ] . ' .info-logo { background-image: url(\'' . $group[ ReviewAbout::ABOUT[ 'logo' ] ] . '\'); }';
 
