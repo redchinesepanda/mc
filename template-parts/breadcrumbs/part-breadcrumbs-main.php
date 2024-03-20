@@ -10,6 +10,6 @@
                     <span class="legal-item-title"><?php echo $arg[ 'title' ]['text']; ?></span>
                 <?php endif; ?>
             </div>
-        <? endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </nav>
