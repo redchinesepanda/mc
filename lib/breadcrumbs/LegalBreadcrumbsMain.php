@@ -202,6 +202,12 @@ class LegalBreadcrumbsMain extends LegalDebug
         'label' => 'item-label',
     ];
 
+    // public static function check_term_link( $href )
+    // {
+    //     if ( str_contains() )
+    //     {}
+    // }
+
     public static function get()
     {
         $id = 0;
@@ -242,9 +248,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                 if ( empty( $items ) )
                 {
-                    LegalDebug::debug( [
-                        'LegalBreadcrumbsMain' => 'get',
-                    ] );
+                    // LegalDebug::debug( [
+                    //     'LegalBreadcrumbsMain' => 'get',
+                    // ] );
 
                     $legal_terms = self::get_terms( $post_id );
 
@@ -254,14 +260,22 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                             if ( !$exclude ) {
                                 $items[] = self::get_item( $term->name, get_term_link( $term->term_id ), $index );
+
+                                LegalDebug::debug( [
+                                    'LegalBreadcrumbsMain' => 'get',
+        
+                                    '$items' => $items,
+
+                                    '$term->term_id' => $term->term_id,
+                                ] );
                             }
                         }
 
-                        LegalDebug::debug( [
-                            'LegalBreadcrumbsMain' => 'get',
+                        // LegalDebug::debug( [
+                        //     'LegalBreadcrumbsMain' => 'get',
 
-                            '$items' => $items,
-                        ] );
+                        //     '$items' => $items,
+                        // ] );
                     }
                 }
 
