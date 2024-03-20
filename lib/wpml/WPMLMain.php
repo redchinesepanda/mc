@@ -8,6 +8,8 @@ require_once( 'WPMLLanguageMismatch.php' );
 
 // require_once( 'WPMLHreflang.php' );
 
+require_once( 'WPMLChooseYourCountry.php' );
+
 class WPMLMain
 {
     public static function get_all_languages() {
@@ -236,6 +238,8 @@ class WPMLMain
         WPMLLanguageMismatch::register();
 
         // WPMLHreflang::register();
+
+        WPMLChooseYourCountry::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
