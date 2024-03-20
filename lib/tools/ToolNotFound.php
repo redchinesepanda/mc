@@ -184,15 +184,13 @@ class ToolNotFound
 			'check_not_robots_txt' => self::check_not_robots_txt(),
 		] );
 
-		return (
-			self::check_category()
+		return self::check_category()
 
 			|| self::check_tag()
 
 			|| self::check_taxonomy()
 
-			|| self::check_restricted()
-		) && self::check_not_robots_txt();
+			|| self::check_restricted();
 	}
 
 	public static function set_not_found()
