@@ -48,12 +48,14 @@
 	justify-content: flex-start;
 	margin: 0 auto;
 	padding-bottom: 100px;
-	row-gap: 0.7rem;
-	column-gap: 0.77rem;
+	/* row-gap: 0.7rem; */
+	/* column-gap: 0.77rem; */
+	gap: 12px;
 }
 
 .page404 .menu-avaible-404 .lang-item {
-	width: 170px;
+	/* width: 170px; */
+	width: calc( 170px - ((12px * 4) / 5) );
 	display: flex;
 	align-items: center;
 	column-gap: 10px;
