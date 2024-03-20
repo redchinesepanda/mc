@@ -232,7 +232,8 @@
 }
 
 .legal-billet-mega .mega-about-afillate {
-	width: 100%;
+	/* width: 100%; */
+	width: calc( 100% - (30px * 2) );
 }
 
 .legal-billet-mega .billet-mega-footer {
