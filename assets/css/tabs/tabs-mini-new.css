@@ -134,11 +134,11 @@
 	line-height: 26px;
 }
 
-.legal-tabs-mini:not( .item-3 ) .tabs-mini-title {
+.legal-tabs-mini:not( .item-3 ) .tabs-mini-title::before {
     font-family: var( --legal-font-icons );
 }
 
-.legal-tabs-mini.item-3 .tabs-mini-title {
+.legal-tabs-mini.item-3 .tabs-mini-title::before {
     font-family: var( --legal-font-icons-sport );
 }
 
