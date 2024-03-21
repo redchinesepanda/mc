@@ -8,6 +8,12 @@
 
 /* Position */
 
+.legal-tabs-mini {
+    /* padding: 20px; */
+    padding-top: 24px;
+    padding-bottom: 20px;
+}
+
 .mini-item-button .mini-item-button-afillate,
 .tabs-mini-afillate {
     padding-right: 18px;
@@ -34,6 +40,10 @@
     border-radius: 18px;
     border: 1px solid var( --Base-base-09 ); 
     /* border: rgb(89 151 227 / 20%) 0.5px solid; */
+}
+
+.legal-tabs-mini .tabs-mini-items {
+    border-top: 1px solid var( --Base-base-09 );
 }
 
 .legal-tabs-mini .mini-item-button-afillate {
@@ -156,9 +166,6 @@
     flex-basis: 348px;
 }
 
-.legal-tabs-mini {
-    padding: 20px;
-}
 /* .legal-tabs-mini:hover {
     border: #5997e3 0.5px solid;
 } */
