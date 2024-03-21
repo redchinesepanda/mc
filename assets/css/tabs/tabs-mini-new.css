@@ -134,15 +134,8 @@
 	line-height: 26px;
 }
 
-.legal-tabs-mini:not( .item-2 ) .tabs-mini-title::before {
-    font-family: var( --legal-font-icons );
-}
-
-.legal-tabs-mini.item-2 .tabs-mini-title::before {
-    font-family: var( --legal-font-icons-title );
-}
-
 .legal-tabs-mini .tabs-mini-title::before {
+    font-family: var( --legal-font-icons );
     font-size: 32px;
     line-height: 32px;
 }
@@ -152,11 +145,11 @@
 }
 
 .legal-tabs-mini.item-1 .tabs-mini-title::before {
-    content: '\F113';
+    content: '\F108';
 }
 
 .legal-tabs-mini.item-2 .tabs-mini-title::before {
-    content: '\F102';
+    content: '\F10F';
 }
 
 .legal-tabs-mini .tabs-mini-description {
