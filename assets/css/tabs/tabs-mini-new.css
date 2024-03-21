@@ -40,7 +40,7 @@
 /* Width and Height */
 
 .legal-tabs-mini {
-    width: calc( 50% - (24px / 2) - 2px );
+    flex-basis: calc( 50% - (24px / 2) - 2px );
 }
 
 .legal-tabs-mini .tabs-mini-title::before {
