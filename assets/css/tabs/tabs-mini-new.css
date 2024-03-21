@@ -2,6 +2,10 @@
 
 /* Width and Height */
 
+.legal-tabs-mini {
+    width: calc( 50% - (24px / 2) - 2px );
+}
+
 .legal-tabs-mini  .mini-item-button-afillate {
     min-width: calc( 118px - (18px * 2) );
 }
@@ -179,7 +183,7 @@
     flex-direction: column;
     justify-content: space-between;
     row-gap: 1rem;
-    flex-basis: 348px;
+    /* flex-basis: 348px; */
 }
 
 /* .legal-tabs-mini:hover {
