@@ -130,6 +130,8 @@ class LegalBreadcrumbsMain extends LegalDebug
         'eng' => '',
 
         'bp' => 'br',
+
+        'sv' => 'se',
     ];
 
     public static function get_home_url()
