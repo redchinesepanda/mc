@@ -48,6 +48,11 @@
     height: 46px; 
 }
 
+.legal-tabs-mini .mini-item-logo-afillate {
+    width: 38px;
+    height: 38px;
+}
+
 .legal-tabs-mini  .mini-item-button-afillate {
     min-width: calc( 118px - (18px * 2) );
 }
@@ -131,6 +136,15 @@
 
 .legal-tabs-mini .tabs-mini-items {
     border-top: 1px solid var( --Base-base-09 );
+}
+
+.legal-tabs-mini .mini-item-logo-afillate {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12.8px;
+    border: 1px solid var(--Base-base-09);
+    background-color: var(--Logo-background);
 }
 
 .legal-tabs-mini .mini-item-button-afillate {
@@ -271,17 +285,6 @@
 
 .mini-item-logo .mini-item-logo-afillate {
     display: block;
-}
-
-.mini-item-logo .mini-item-logo-afillate {
-    width: 74px;
-    height: 25px;
-}
-
-.mini-item-logo .mini-item-logo-afillate {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 /* .mini-item-profit, .mini-item-bonus {
