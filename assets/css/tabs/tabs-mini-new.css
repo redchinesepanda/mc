@@ -129,9 +129,15 @@
 }
 
 .legal-tabs-mini .tabs-mini-title {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
-	line-height: 28px;
+	line-height: 26px;
+}
+
+.legal-tabs-mini .tabs-mini-title::before {
+    font-family: var( --legal-font-icons );
+    font-size: 32px;
+    line-height: 32px;
 }
 
 .legal-tabs-mini .tabs-mini-description {
@@ -158,14 +164,7 @@
     text-decoration: none;
 }
 
-/* .legal-tabs-mini .tabs-mini-afillate {
-    color: #000;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1rem;
-    text-decoration: none;
-    text-align: center;
-} */
+
 
 .legal-tabs-mini-set {
     display: flex;
@@ -203,9 +202,9 @@
 	align-items: center;
 }
 
-.tabs-mini-title {
+/* .tabs-mini-title {
     min-height: 56px;
-}
+} */
 
 .tabs-mini-description {
 	margin-bottom: auto;
