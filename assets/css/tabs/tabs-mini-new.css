@@ -147,15 +147,15 @@
     line-height: 32px;
 }
 
-.legal-tabs-mini.item-1 {
+.legal-tabs-mini.item-1 .tabs-mini-title::before {
     content: '\F113';
 }
 
-.legal-tabs-mini.item-2 {
+.legal-tabs-mini.item-2 .tabs-mini-title::before {
     content: '\F113';
 }
 
-.legal-tabs-mini.item-3 {
+.legal-tabs-mini.item-3 .tabs-mini-title::before {
     content: '\F115';
 }
 
