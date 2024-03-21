@@ -59,6 +59,8 @@ class ReviewMain
 
 		'close' => 'Close',
 
+		'deposit' => 'Deposit',
+
 		'download' => 'Download',
 
 		'get-bonus' => 'Get Bonus',
