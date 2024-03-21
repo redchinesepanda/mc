@@ -14,10 +14,21 @@
     column-gap: 14px;
 }
 
+.legal-tabs-mini .tabs-mini-title::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Width and Height */
 
 .legal-tabs-mini {
     width: calc( 50% - (24px / 2) - 2px );
+}
+
+.legal-tabs-mini .tabs-mini-title::before {
+    width: 48px;
+    height: 48px; 
 }
 
 .legal-tabs-mini  .mini-item-button-afillate {
@@ -86,6 +97,11 @@
     background-repeat: no-repeat;
     background-size: auto; */
     background-image: none !important; /*временное правило*/
+}
+
+.legal-tabs-mini .tabs-mini-title::before {
+    border-radius: 12.848px;
+    border: 1px solid var( --Base-base-09 ); 
 }
 
 .legal-tabs-mini .tabs-mini-items {
