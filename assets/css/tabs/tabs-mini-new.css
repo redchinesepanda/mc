@@ -139,7 +139,7 @@
 }
 
 .legal-tabs-mini.item-2 .tabs-mini-title::before {
-    font-family: var( --legal-font-icons-sport );
+    font-family: var( --legal-font-icons-title );
 }
 
 .legal-tabs-mini .tabs-mini-title::before {
@@ -156,7 +156,7 @@
 }
 
 .legal-tabs-mini.item-2 .tabs-mini-title::before {
-    content: '\F115';
+    content: '\F102';
 }
 
 .legal-tabs-mini .tabs-mini-description {
