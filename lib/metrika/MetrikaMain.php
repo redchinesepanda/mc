@@ -120,9 +120,9 @@ class MetrikaMain
             && self::check_not_logged_in();
     }
 
-    public static function check_guest()
+    public static function check()
     {
-        
+        return self::check_guest();
     }
 
 	public static function register()
