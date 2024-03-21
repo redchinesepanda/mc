@@ -75,10 +75,10 @@
 
 .legal-tabs-mini-set {
     display: flex;
-    align-items: stretch;
-    justify-content: center;
+    /* align-items: stretch; */
+    /* justify-content: center; */
 	flex-wrap: wrap;
-    gap: 1rem;
+    gap: 24px;
 }
 
 .legal-tabs-mini-set {
