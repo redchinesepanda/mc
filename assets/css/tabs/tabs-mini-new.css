@@ -1,5 +1,19 @@
 /* Display */
 
+.legal-tabs-mini {
+    display: flex;
+    flex-direction: column;
+   /*  justify-content: space-between; */
+    /* row-gap: 1rem; */
+    /* flex-basis: 348px; */
+}
+
+.tabs-mini-title {
+    display: flex;
+	align-items: center;
+    column-gap: 14px;
+}
+
 /* Width and Height */
 
 .legal-tabs-mini {
@@ -23,6 +37,10 @@
     /* padding-left: 40px; */
     padding-right: 24px;
     padding-left: 24px;
+}
+
+.legal-tabs-mini .tabs-mini-title {
+    padding-bottom: 14px;
 }
 
 .legal-tabs-mini .tabs-mini-items {
@@ -155,7 +173,7 @@
 .legal-tabs-mini .tabs-mini-description {
     font-size: 14px;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 20px;
     /* color: #3b3b3b */
 }
 
@@ -195,23 +213,6 @@
         flex-direction: column;
     }
     
-}
-
-.legal-tabs-mini {
-    display: flex;
-    flex-direction: column;
-   /*  justify-content: space-between; */
-    /* row-gap: 1rem; */
-    /* flex-basis: 348px; */
-}
-
-/* .legal-tabs-mini:hover {
-    border: #5997e3 0.5px solid;
-} */
-
-.tabs-mini-title {
-    display: flex;
-	align-items: center;
 }
 
 /* .tabs-mini-title {
