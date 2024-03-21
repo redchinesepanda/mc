@@ -1,3 +1,7 @@
 languages/
 *.pot
 *.pot~
+*.po
+*.po~
+*.mo
+*.mo~

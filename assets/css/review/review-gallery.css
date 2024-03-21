@@ -93,7 +93,9 @@
     height: 66px;
 }
 
-.tcb-post-content .legal-imageset.columns-3 .item-image {
+.tcb-post-content .legal-imageset.columns-1 .item-image,
+.tcb-post-content .legal-imageset.columns-3 .item-image
+{
     width: 100%;
     height: auto;
 }
