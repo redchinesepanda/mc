@@ -4,6 +4,24 @@
 
 /* Position */
 
+.mini-item-button .mini-item-button-afillate,
+.tabs-mini-afillate {
+    padding-right: 18px;
+    padding-left: 18px;
+}
+
+.mini-item-button .mini-item-button-afillate {
+    /* padding: 0.5rem 1rem; */
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.tabs-mini-afillate {
+    /* padding: 0.5rem 1rem; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* Background */
 
 .legal-tabs-mini {
@@ -12,6 +30,19 @@
     border-radius: 18px;
     border: 1px solid var( --Base-base-09 ); 
     /* border: rgb(89 151 227 / 20%) 0.5px solid; */
+}
+
+.legal-tabs-mini .mini-item-button-afillate {
+    /* background-color: #5997e3; */
+    border-radius: 60px;
+    background-color: var( --Base-base-09 );
+    /* border: none; */
+    /* border-radius: 3px; */
+    /* cursor: pointer; */
+}
+
+.legal-tabs-mini .mini-item-button-afillate:hover {
+    background-color: var( --Base-base-07 );
 }
 
 /* Typography */
@@ -48,25 +79,27 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 1.7;
-    color: #3b3b3b
+    /* color: #3b3b3b */
 }
 
 .mini-item-profit, 
 .mini-item-bonus {
     font-size: 15px;
     font-weight: 600;
+    line-height: 20px;
 }
 
 .mini-item-button .mini-item-button-afillate {
-    color: #fff;
-    font-weight: 600;
-    line-height: 1rem;
-    text-align: center;
+   /*  color: #fff; */
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    /* text-align: center; */
     text-decoration: none;
 }
 
 .tabs-mini-afillate {
-    color: #000;
+    /* color: #000; */
     font-weight: 600;
     line-height: 1rem;
     text-decoration: none;
@@ -192,22 +225,7 @@
 }
 
 .mini-item-button .mini-item-button-afillate {
-    background-color: #5997e3;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.mini-item-button .mini-item-button-afillate {
     display: inline-block;
-}
-
-.mini-item-button .mini-item-button-afillate {
-    padding: 0.5rem 1rem;
-}
-
-.mini-item-button .mini-item-button-afillate:hover {
-    background-color: #81b1ec;
 }
 
 .tabs-mini-afillate {
@@ -218,10 +236,6 @@
     background-color: #eff5fb;
     border: none;
     border-radius: 3px;
-}
-
-.tabs-mini-afillate {
-    padding: 0.5rem 1rem;
 }
 
 .tabs-mini-afillate {
