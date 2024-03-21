@@ -48,6 +48,8 @@ class WPMLMain
         
         'dk_DA',
 
+        'da',
+
         'pt',
 
         'sv',

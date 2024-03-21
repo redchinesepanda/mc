@@ -132,6 +132,8 @@ class LegalBreadcrumbsMain extends LegalDebug
         'bp' => 'br',
 
         'sv' => 'se',
+
+        'da' => 'dk',
     ];
 
     public static function get_home_url()
