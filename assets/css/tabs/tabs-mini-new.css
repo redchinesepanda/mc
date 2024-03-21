@@ -134,10 +134,29 @@
 	line-height: 26px;
 }
 
-.legal-tabs-mini .tabs-mini-title::before {
+.legal-tabs-mini:not( .item-3 ) .tabs-mini-title {
     font-family: var( --legal-font-icons );
+}
+
+.legal-tabs-mini.item-3 .tabs-mini-title {
+    font-family: var( --legal-font-icons-sport );
+}
+
+.legal-tabs-mini .tabs-mini-title::before {
     font-size: 32px;
     line-height: 32px;
+}
+
+.legal-tabs-mini.item-1 {
+    content: '\F113';
+}
+
+.legal-tabs-mini.item-2 {
+    content: '\F113';
+}
+
+.legal-tabs-mini.item-3 {
+    content: '\F115';
 }
 
 .legal-tabs-mini .tabs-mini-description {
