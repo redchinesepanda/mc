@@ -218,11 +218,11 @@
 }
 
 .legal-tabs-mini.item-1 .tabs-mini-title::before {
-    content: '\F108';
+    content: '\F116';
 }
 
 .legal-tabs-mini.item-2 .tabs-mini-title::before {
-    content: '\F10F';
+    content: '\F115';
 }
 
 .legal-tabs-mini .tabs-mini-description {
