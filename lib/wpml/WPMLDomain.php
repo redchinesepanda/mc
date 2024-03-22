@@ -54,12 +54,16 @@ class WPMLDomain
     {
 		global $sitepress;
 
+		$default_language = ToolNotFound::get_default_language();
+
 		LegalDebug::debug( [
 			'WPMLDomain' => 'get_posts',
 
 			'check_change_default_language' => self::check_change_default_language(),
 
-			'get_default_language' => ToolNotFound::get_default_language(),
+			// 'get_default_language' => ToolNotFound::get_default_language(),
+			
+			'$default_language' => $default_language,
 
 			'default_language' => $sitepress->get_setting( 'default_language' ),
 
@@ -71,8 +75,6 @@ class WPMLDomain
 
 			// 'current_language' => WPMLMain::current_language(),
 		] );
-
-		$default_language = ToolNotFound::get_default_language();
 
 		if ( self::check_change_default_language() )
 		{
