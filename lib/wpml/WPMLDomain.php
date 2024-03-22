@@ -24,15 +24,17 @@ class WPMLDomain
 		{
 			$default_language = ToolNotFound::get_default_language();
 
-			LegalDebug::debug( [
-				'WPMLDomain' => 'wp_kama_option_filter',
+			// LegalDebug::debug( [
+			// 	'WPMLDomain' => 'wp_kama_option_filter',
 
-				'default_language' => $default_language,
+			// 	'default_language' => $default_language,
 
-				'option' => $option,
+			// 	'option' => $option,
 
-				'value' => $value,
-			] );
+			// 	'value' => $value,
+			// ] );
+
+			$value[ 'default_language' ] = $default_language;
 		}
 
 		return $value;
