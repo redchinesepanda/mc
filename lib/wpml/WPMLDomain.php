@@ -18,6 +18,8 @@ class WPMLDomain
 		LegalDebug::debug( [
 			'WPMLDomain' => 'get_posts',
 
+			'default_language' => $sitepress->get_setting( 'default_language' ),
+
 			'urls' => $sitepress->get_setting( 'urls' ),
 
 			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
