@@ -131,10 +131,10 @@ class ToolEnqueue
 
     public static function legal_script_defer( $tag, $handle )
     {
-        if ( LegalMain::check_admin() )
-        {
-            return $tag;
-        }
+        // if ( LegalMain::check_admin() )
+        // {
+        //     return $tag;
+        // }
 
         return str_replace( ' src=', ' defer="defer" src=', $tag );
     }
