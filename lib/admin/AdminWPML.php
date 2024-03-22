@@ -17,7 +17,7 @@ class AdminWPML
 		// 	'$items' => $items,
 		// ] );
 
-		foreach( $items as &$item )
+		foreach( $items as $language => $item )
 		{
 			if ( !empty( $item[ 'flag' ] ) )
             {
@@ -27,13 +27,13 @@ class AdminWPML
 				// 	'flag' => $item[ 'flag' ],
 				// ] );
 				
-                $item[ 'flag' ] = str_replace( "<img ", '<img loading="lazy" ', $item[ 'flag' ] );
+                $items[ $language ][ 'flag' ] = str_replace( "<img ", '<img loading="lazy" ', $item[ 'flag' ] );
 
-				LegalDebug::debug( [
-					'AdminWPML' =>'mc_wpml_admin_language_switcher_items',
+				// LegalDebug::debug( [
+				// 	'AdminWPML' =>'mc_wpml_admin_language_switcher_items',
 
-					'flag' => $item[ 'flag' ],
-				] );
+				// 	'flag' => $item[ 'flag' ],
+				// ] );
             }
 		}
 
