@@ -33,12 +33,14 @@ class WPMLDomain
 
 		if ( self::check_default_language() )
 		{
-			$sitepress->set_setting( 'default_language', WPMLMain::current_language(), true );
+			// $sitepress->set_setting( 'default_language', WPMLMain::current_language(), true );
+
+			$sitepress->settings[ 'default_language' ] = WPMLMain::current_language();
 		}
-		else
-		{
-			$sitepress->set_setting( 'default_language', 'en', true );
-		}
+		// else
+		// {
+		// 	$sitepress->set_setting( 'default_language', 'en', true );
+		// }
     }
 	
 	public static function check_default_language()
