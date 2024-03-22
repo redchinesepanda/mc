@@ -18,12 +18,18 @@ class AdminWPML
 				$items[ $language ][ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
             }
 
-			LegalDebug::debug( [
-				'AdminWPML' => 'mc_wpml_admin_language_switcher_items',
+			// LegalDebug::debug( [
+			// 	'AdminWPML' => 'mc_wpml_admin_language_switcher_items',
 
-				'flag' => $items[ $language ][ 'flag' ],
-			] );
+			// 	'flag' => $items[ $language ][ 'flag' ],
+			// ] );
 		}
+
+		LegalDebug::debug( [
+			'AdminWPML' => 'mc_wpml_admin_language_switcher_items',
+
+			'items' => $items,
+		] );
 
 		return $items;
 	}
