@@ -111,11 +111,15 @@
     color: var(--Base-base-09);
 }
 
-/* .legal-offers-compilation .offers-compilation-item:not( :hover ) {
-	color: rgb(59, 59, 59);
-} */
-
 .legal-offers-compilation .offers-compilation-item:hover {
 	/* color: #ffffff; */
 	text-shadow: 0 0 0.7px var(--Base-base-09);
+}
+
+.legal-offers-compilation .swiper.legal-active-end::before {
+    content: "";
+}
+
+.legal-offers-compilation .swiper:not( .legal-active-end ):after {
+    content: "";
 }
