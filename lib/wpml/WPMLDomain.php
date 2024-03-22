@@ -40,10 +40,10 @@ class WPMLDomain
 				'option' => $option,
 			] );
 
-			return $old_value;
+			// return $old_value;
 		}
 
-		return $value;
+		// return $value;
 	}
 
 	const SETTINGS = [
