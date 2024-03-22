@@ -27,7 +27,9 @@ class WPMLDomain
 			'option' => $option,
 		] );
 
-		return $old_value;
+		// return $old_value;
+
+		return $value;
 	}
 
 	public static function change_language_negotiation_type()
