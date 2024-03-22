@@ -6,7 +6,9 @@ require_once( 'AdminTaxonomy.php' );
 
 require_once( 'AdminNotice.php' );
 
-require_once( 'AdminWPML.php' );
+// require_once( 'AdminWPML.php' );
+
+require_once( 'AdminDequeue.php' );
 
 class AdminMain
 {
@@ -37,7 +39,9 @@ class AdminMain
 
         AdminNotice::register();
 
-        AdminWPML::register();
+        // AdminWPML::register();
+
+        AdminDequeue::register();
     }
 }
 
