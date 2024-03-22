@@ -20,7 +20,7 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'WPMLDomain' => 'prevent_update_option',
 
 			'old_value' => $old_value,
