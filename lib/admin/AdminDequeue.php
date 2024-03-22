@@ -94,7 +94,7 @@ class AdminDequeue
 
 		'otgsSwitcher',
 
-		
+
 	];
 
 	public static function dequeue_admin_styles()
