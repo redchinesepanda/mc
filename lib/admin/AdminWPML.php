@@ -19,7 +19,7 @@ class AdminWPML
 
 		foreach( $items as $item )
 		{
-			if ( !empty( $item[ 'flag' ] )
+			if ( !empty( $item[ 'flag' ] ) )
             {
                 $item[ 'flag' ] = str_replace( '<img ', '<img loading="lazy" ', $item[ 'flag' ] );
             }
