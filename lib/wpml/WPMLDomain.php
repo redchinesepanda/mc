@@ -8,11 +8,34 @@ class WPMLDomain
 
 		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 		
-		// add_action( 'update_option_' . self::OPTIONS[ 'wpml-settings' ], [ $handler,'prevent_update_option' ], 10, 3 );
+		// add_action( 'update_option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
 		// add_action( 'update_option_' . self::OPTIONS[ 'wplang' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
 		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
+
+		add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
+	}
+	
+	function wp_kama_option_filter( $value, $option )
+	{
+
+		if ( $option == self::OPTIONS[ 'icl-sitepress-settings' ] )
+		{
+			$default_language = ToolNotFound::get_default_language();
+
+			LegalDebug::debug( [
+				'WPMLDomain' => 'wp_kama_option_filter',
+
+				'default_language' => $default_language,
+
+				'option' => $option,
+
+				'value' => $value,
+			] );
+		}
+
+		return $value;
 	}
 
 	public static function register()
@@ -25,7 +48,7 @@ class WPMLDomain
 	}
 
 	const OPTIONS = [
-		'wpml-settings' => 'icl_sitepress_settings',
+		'icl-sitepress-settings' => 'icl_sitepress_settings',
 
 		'wplang' => 'WPLANG',
 	];
