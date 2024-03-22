@@ -135,7 +135,7 @@ class WPMLDomain
 				true
 			);
 
-			$sitepress->save_settings();
+			// $sitepress->save_settings();
 		}
     }
 	
