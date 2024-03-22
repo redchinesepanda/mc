@@ -44,11 +44,35 @@
 }
 
 .legal-offers-compilation .offers-compilation-item {
-	margin-right: 8px !important;
+	margin-right: 8px;
     padding-top: 6px;
     padding-right: 24px;
     padding-bottom: 6px;
     padding-left: 24px;
+}
+
+.review-anchors .swiper.legal-active-end::before {
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+} 
+
+.review-anchors .swiper:not( .legal-active-end ):after {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+/* Width and Height */
+
+.review-anchors .swiper.legal-active-end::before {
+    width: 83px;
+    height: 36px;
+}
+
+.review-anchors .swiper:not( .legal-active-end ):after {
+    width: 83px;
+    height: 36px;
 }
 
 /* Background */
@@ -60,6 +84,14 @@
 	border-radius: 60px;
 	border: 1px solid var( --Base-base-09 );
 	background: var( --Base-base-01 ); 
+}
+
+.review-anchors .swiper.legal-active-end::before {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.review-anchors .swiper:not( .legal-active-end ):after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
 
 /* .legal-offers-compilation .offers-compilation-item:hover{
