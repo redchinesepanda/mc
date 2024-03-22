@@ -46,7 +46,7 @@ class WPMLDomain
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
-		self::change_language_negotiation_type();
+		// self::change_language_negotiation_type();
 	}
 
 	const OPTIONS = [
@@ -90,7 +90,7 @@ class WPMLDomain
 		$option_default_language = get_option( self::SETTINGS[ 'default-language' ] );
 
 		LegalDebug::debug( [
-			'WPMLDomain' => 'get_posts',
+			'WPMLDomain' => 'change_language_negotiation_type',
 
 			'check_change_default_language' => self::check_change_default_language(),
 			
