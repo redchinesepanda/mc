@@ -25,7 +25,14 @@
 
 /* Display */
 
-.legal-offers-compilation {
+/* .legal-offers-compilation {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+} */
+
+.legal-offers-compilation .swiper:not( .swiper-initialized ) .swiper-wrapper {
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
