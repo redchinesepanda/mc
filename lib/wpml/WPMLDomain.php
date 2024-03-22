@@ -28,7 +28,7 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		if ( $option == self::OPTIONS[ 'wpml-settings' ] )
+		if ( $option === self::OPTIONS[ 'wpml-settings' ] )
 		{
 			LegalDebug::die( [
 				'WPMLDomain' => 'prevent_update_option',
@@ -83,27 +83,23 @@ class WPMLDomain
 			$sitepress->set_setting
 			(
 				self::SETTINGS[ 'default-language' ],
-				
-				// WPMLMain::current_language(),
-
-				// ToolNotFound::get_default_language(),
 
 				$default_language,
 				
 				true
 			);
 		}
-		else
-		{
-			$sitepress->set_setting
-			(
-				self::SETTINGS[ 'default-language' ],
+		// else
+		// {
+		// 	$sitepress->set_setting
+		// 	(
+		// 		self::SETTINGS[ 'default-language' ],
 				
-				$default_language,
+		// 		$default_language,
 				
-				true
-			);
-		}
+		// 		true
+		// 	);
+		// }
     }
 	
 	public static function check_change_default_language()
