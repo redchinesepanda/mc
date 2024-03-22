@@ -23,7 +23,7 @@ class WPMLDomain
 	}
 
 	const OPTIONS = [
-		'wpml-settings' = 'icl_sitepress_settings',
+		'wpml-settings' => 'icl_sitepress_settings',
 	];
 
 	function prevent_update_option( $old_value, $value, $option )
