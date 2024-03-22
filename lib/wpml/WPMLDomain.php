@@ -20,15 +20,18 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		LegalDebug::die( [
-			'WPMLDomain' => 'prevent_update_option',
-
-			'old_value' => $old_value,
-
-			'value' => $value,
-
-			'option' => $option,
-		] );
+		if ( $option == 'icl_sitepress_settings' )
+		{
+			LegalDebug::die( [
+				'WPMLDomain' => 'prevent_update_option',
+	
+				'old_value' => $old_value,
+	
+				'value' => $value,
+	
+				'option' => $option,
+			] );
+		}
 
 		// return $old_value;
 
