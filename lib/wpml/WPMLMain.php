@@ -233,6 +233,11 @@ class WPMLMain
         );
     }
 
+    public static function register_fuinctions()
+    {
+        WPMLDomain::register_fuinctions();
+    }
+
     public static function register()
     {
         $handler = new self();

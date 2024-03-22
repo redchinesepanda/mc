@@ -2,7 +2,7 @@
 
 class WPMLDomain
 {
-	public static function register()
+	public static function register_fuinctions()
 	{
 		$handler = new self();
 
@@ -11,7 +11,10 @@ class WPMLDomain
 		add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 
 		add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
+	}
 
+	public static function register()
+	{
 		self::change_language_negotiation_type();
 	}
 
