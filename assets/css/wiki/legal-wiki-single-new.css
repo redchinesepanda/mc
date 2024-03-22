@@ -4,17 +4,26 @@
 	.legal-wiki-single {
 		flex-wrap: wrap;
 	}
+
+	/* Width and Height  */
+
+	.legal-wiki-single .legal-wiki-main,
+	.legal-wiki-single .legal-wiki-sidebar {
+		width: 100%;
+	}
 }
 
 @media screen and ( min-width: 768px ) {
 	/* Width and Height */
 
 	.legal-wiki-single .legal-wiki-main {
-		flex-basis: calc( 75% - 10px );
+		/* flex-basis: calc( 75% - 10px ); */
+		width: calc( 100% / 3 * 2 - 24px );
 	}
 
 	.legal-wiki-single .legal-wiki-sidebar {
-		flex-basis: calc( 25% - 9px );
+		/* flex-basis: calc( 25% - 9px ); */
+		width: calc( 100% / 3 - 24px );
 	}
 }
 
@@ -22,7 +31,8 @@
 
 .legal-wiki-single {
 	display: flex;
-	gap: 20px;
+	/* gap: 20px; */
+	column-gap: 48px;
 }
 
 /* Position */
