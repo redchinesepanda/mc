@@ -11,19 +11,13 @@ class AdminWPML
 
 	public static function mc_wpml_admin_language_switcher_items( $items )
 	{
-		// foreach( $items as $language => $item )
-		
-		foreach( $items as &$item )
+		foreach( $items as $language => $item )
 		{
 			if ( !empty( $item[ 'flag' ] ) )
             {
-				// $items[ $language ][ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
-
-				$item[ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
+				$items[ $language ][ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
             }
 		}
-
-		unset( $item );
 
 		return $items;
 	}
