@@ -86,7 +86,9 @@ class WPMLDomain
 
 				$default_language,
 				
-				true
+				// true
+
+				false
 			);
 		// }
 		// else
