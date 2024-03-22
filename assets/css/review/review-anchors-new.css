@@ -134,7 +134,7 @@
     color: var(--Base-base-09);
     line-height: 22px;
     font-style: normal;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .review-anchors .anchors-title {

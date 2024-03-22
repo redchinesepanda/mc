@@ -1,0 +1,121 @@
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+
+	.legal-offers-compilation {
+		max-width: 1080px;
+	}
+	
+	/* Position */
+
+	.legal-offers-compilation {
+		margin: 0px auto;
+	}
+}
+
+/* @media screen and ( max-width: 767px ) {
+
+	Position
+
+	.legal-offers-compilation {
+		padding-left: 15px;
+    	padding-right: 15px;
+	}
+} */
+
+/* Display */
+
+/* .legal-offers-compilation {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+} */
+
+/* Position */
+
+/* .legal-offers-compilation {
+	padding-bottom: 30px;
+} */
+
+.legal-offers-compilation .swiper-wrapper {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.legal-offers-compilation .offers-compilation-item {
+	margin-right: 8px;
+    padding-top: 6px;
+    padding-right: 24px;
+    padding-bottom: 6px;
+    padding-left: 24px;
+}
+
+.legal-offers-compilation .swiper.legal-active-end::before {
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+} 
+
+.legal-offers-compilation .swiper:not( .legal-active-end ):after {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+/* Width and Height */
+
+.legal-offers-compilation .swiper.legal-active-end::before,
+.legal-offers-compilation .swiper:not( .legal-active-end ):after {
+    width: 83px;
+    height: 100%;
+}
+
+/* Background */
+
+.legal-offers-compilation .offers-compilation-item {
+	/* border-radius: 20px; */
+	/* border: 1px solid rgba(10, 10, 10, 0.85); */
+	/* box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px; */
+	border-radius: 60px;
+	border: 1px solid var( --Base-base-09 );
+	background: var( --Base-base-01 ); 
+}
+
+.legal-offers-compilation .swiper.legal-active-end::before {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+.legal-offers-compilation .swiper:not( .legal-active-end ):after {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
+}
+
+/* .legal-offers-compilation .offers-compilation-item:hover{
+	background-color: rgb(89, 151, 227);
+} */
+
+/* Typography */
+
+.legal-offers-compilation .offers-compilation-item {
+	font-family: var( --legal-font-primary );
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+    font-style: normal;
+	font-weight: 400;
+	text-decoration: none;
+    color: var(--Base-base-09);
+}
+
+.legal-offers-compilation .offers-compilation-item:hover {
+	/* color: #ffffff; */
+	text-shadow: 0 0 0.7px var(--Base-base-09);
+}
+
+.legal-offers-compilation .swiper.legal-active-end::before {
+    content: "";
+}
+
+.legal-offers-compilation .swiper:not( .legal-active-end ):after {
+    content: "";
+}
