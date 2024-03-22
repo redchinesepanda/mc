@@ -80,7 +80,7 @@ class LegalMain
 
 		ReviewMain::register_functions();
 
-		WPMLMain::register_functions();
+		WPMLMain::register_fuinctions();
 
 		if ( self::check_admin() )
 		{
