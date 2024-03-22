@@ -109,7 +109,7 @@ class WPMLDomain
 			// 'current_language' => WPMLMain::current_language(),
 		] );
 
-		$sitepress->set_default_language( $default_language );
+		// $sitepress->set_default_language( $default_language );
 
 		// if ( self::check_change_default_language() )
 		// {
