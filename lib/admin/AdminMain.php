@@ -6,6 +6,8 @@ require_once( 'AdminTaxonomy.php' );
 
 require_once( 'AdminNotice.php' );
 
+require_once( 'AdminWPML.php' );
+
 class AdminMain
 {
     const CSS = [
@@ -34,6 +36,8 @@ class AdminMain
         AdminTaxonomy::register();
 
         AdminNotice::register();
+
+        AdminWPML::register();
     }
 }
 
