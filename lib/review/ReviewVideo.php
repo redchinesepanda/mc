@@ -20,7 +20,7 @@ class ReviewVideo
 	public static function modify_content( $content )
 	{
 		return str_replace(  '<iframe ', '<iframe loading="lazy" ', $content );
-	} 
+	}
 }
 
 ?>
