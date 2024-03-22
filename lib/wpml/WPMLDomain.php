@@ -8,34 +8,34 @@ class WPMLDomain
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
-		add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
+		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 
-		add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
+		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
 	}
 
 	public static function register()
 	{
-		self::change_language_negotiation_type();
+		// self::change_language_negotiation_type();
 	}
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		// if ( $option == 'icl_sitepress_settings' )
-		// {
-		// 	LegalDebug::die( [
-		// 		'WPMLDomain' => 'prevent_update_option',
+		if ( $option == 'icl_sitepress_settings' )
+		{
+			LegalDebug::die( [
+				'WPMLDomain' => 'prevent_update_option',
 	
-		// 		'old_value' => $old_value,
+				'old_value' => $old_value,
 	
-		// 		'value' => $value,
+				'value' => $value,
 	
-		// 		'option' => $option,
-		// 	] );
-		// }
+				'option' => $option,
+			] );
+		}
 
 		// return $old_value;
 
-		return $value;
+		// return $value;
 	}
 
 	public static function change_language_negotiation_type()
