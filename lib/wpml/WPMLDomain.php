@@ -20,18 +20,18 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		if ( $option == 'icl_sitepress_settings' )
-		{
-			LegalDebug::die( [
-				'WPMLDomain' => 'prevent_update_option',
+		// if ( $option == 'icl_sitepress_settings' )
+		// {
+		// 	LegalDebug::die( [
+		// 		'WPMLDomain' => 'prevent_update_option',
 	
-				'old_value' => $old_value,
+		// 		'old_value' => $old_value,
 	
-				'value' => $value,
+		// 		'value' => $value,
 	
-				'option' => $option,
-			] );
-		}
+		// 		'option' => $option,
+		// 	] );
+		// }
 
 		// return $old_value;
 
