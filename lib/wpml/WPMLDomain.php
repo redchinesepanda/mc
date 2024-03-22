@@ -10,6 +10,8 @@ class WPMLDomain
 
 		add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 
+		add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
+
 		self::change_language_negotiation_type();
 	}
 
