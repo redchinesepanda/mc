@@ -17,9 +17,13 @@ class AdminWPML
 		{
 			if ( !empty( $item[ 'flag' ] ) )
             {
+				// $items[ $language ][ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
+
 				$item[ 'flag' ] = str_replace( "img ", 'img loading="lazy" ', $item[ 'flag' ] );
             }
 		}
+
+		unset( $item );
 
 		return $items;
 	}
