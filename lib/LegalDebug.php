@@ -30,10 +30,12 @@ class LegalDebug
 
     public static function die( $message )
     {
-        if ( self::check() )
-        {
-            wp_die ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' . PHP_EOL );
-        }
+        // if ( self::check() )
+        // {
+        //     wp_die ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' . PHP_EOL );
+        // }
+
+        wp_die ( '<pre>' . __CLASS__ . '::debug: ' . print_r( $message, true ) . '</pre>' . PHP_EOL );
         
     }
 }
