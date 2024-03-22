@@ -11,11 +11,19 @@ class AdminWPML
 
 	public static function mc_wpml_admin_language_switcher_items( $items )
 	{
-		LegalDebug::debug( [
-			'AdminWPML' =>'mc_wpml_admin_language_switcher_items',
+		// LegalDebug::debug( [
+		// 	'AdminWPML' =>'mc_wpml_admin_language_switcher_items',
 
-			'$items' => $items,
-		] );
+		// 	'$items' => $items,
+		// ] );
+
+		foreach( $items as $item )
+		{
+			if ( !empty( $item[ 'flag' ] )
+            {
+                $item[ 'flag' ] = str_replace( '<img ', '<img loading="lazy" ', $item[ 'flag' ] );
+            }
+		}
 
 		return $items;
 	}
