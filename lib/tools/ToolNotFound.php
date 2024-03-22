@@ -66,6 +66,18 @@ class ToolNotFound
 		return call_user_func_array( 'array_merge', $restricted );
 	}
 
+	public static function check_one_restricted_language()
+	{
+		$restricted = self::get_restricted();
+
+		if ( self::check_domain() )
+		{
+			return count( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] ) == 1;
+		}
+
+		return false;
+	}
+
 	public static function check_domain()
 	{
 		$restricted = self::get_restricted();

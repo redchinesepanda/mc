@@ -27,28 +27,16 @@ class WPMLDomain
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 		] );
 
-		$sitepress->set_setting( 'default_language', 'pl', true );
-
-        // $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
-
-        // $switch_lang = ( !empty( $new_lang ) );
-
-        // if ( $switch_lang ) {
-        //     global $sitepress;
-
-        //     $current_lang = $sitepress->get_current_language();
-
-        //     $sitepress->switch_lang( $new_lang );
-        // }
-
-        // $posts = get_posts( self::get_args( $id ) );
-
-        // if ( $switch_lang ) {
-        //     $sitepress->switch_lang( $current_lang );
-        // }
-
-        // return $posts;
+		if ( self::check_default_language() )
+		{
+			$sitepress->set_setting( 'default_language', 'pl', true );
+		}
     }
+	
+	public static function check_default_language()
+	{
+		return ToolNotFound::check_one_restricted_language();
+	}
 }
 
 ?>
