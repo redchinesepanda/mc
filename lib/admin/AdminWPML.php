@@ -21,6 +21,12 @@ class AdminWPML
 		{
 			if ( !empty( $item[ 'flag' ] ) )
             {
+				LegalDebug::debug( [
+					'AdminWPML' =>'mc_wpml_admin_language_switcher_items',
+
+					'flag' => $item[ 'flag' ],
+				] );
+				
                 $item[ 'flag' ] = str_replace( '<img ', '<img loading="lazy" ', $item[ 'flag' ] );
             }
 		}
