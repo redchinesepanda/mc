@@ -34,13 +34,14 @@
 
 /* Position */
 
-.legal-offers-compilation {
+/* .legal-offers-compilation {
 	padding-bottom: 30px;
-}
-
-/* .legal-offers-compilation .swiper-wrapper {
-	column-gap: 8px;
 } */
+
+.legal-offers-compilation .swiper-wrapper {
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
 
 .legal-offers-compilation .offers-compilation-item {
 	margin-right: 8px !important;

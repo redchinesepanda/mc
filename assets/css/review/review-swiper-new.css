@@ -37,8 +37,8 @@
   display:block
 }
 
-.review-anchors .swiper,
-.legal-offers-compilation .swiper {
+/* .legal-offers-compilation .swiper, */
+.review-anchors .swiper {
   width: 100%;
   /* height: fit-content; */
   height: 36px;
