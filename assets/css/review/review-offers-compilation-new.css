@@ -65,14 +65,10 @@
 
 /* Width and Height */
 
-.legal-offers-compilation .swiper.legal-active-end::before {
-    width: 83px;
-    height: 36px;
-}
-
+.legal-offers-compilation .swiper.legal-active-end::before,
 .legal-offers-compilation .swiper:not( .legal-active-end ):after {
     width: 83px;
-    height: 36px;
+    height: 100%;
 }
 
 /* Background */
