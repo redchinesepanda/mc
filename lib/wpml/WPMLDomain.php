@@ -8,9 +8,9 @@ class WPMLDomain
 
 		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 		
-		add_action( 'update_option_' . self::OPTIONS[ 'wpml-settings' ], [ $handler,'prevent_update_option' ], 10, 3 );
+		// add_action( 'update_option_' . self::OPTIONS[ 'wpml-settings' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
-		add_action( 'update_option_' . self::OPTIONS[ 'wplang' ], [ $handler,'prevent_update_option' ], 10, 3 );
+		// add_action( 'update_option_' . self::OPTIONS[ 'wplang' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
 		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
 	}
