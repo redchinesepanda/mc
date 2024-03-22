@@ -30,20 +30,20 @@ class WPMLDomain
 	{
 		// if ( $option == self::OPTIONS[ 'wpml-settings' ] )
 		// {
-			LegalDebug::die( [
-				'WPMLDomain' => 'prevent_update_option',
+			// LegalDebug::die( [
+			// 	'WPMLDomain' => 'prevent_update_option',
 	
-				'old_value' => $old_value,
+			// 	'old_value' => $old_value,
 	
-				'value' => $value,
+			// 	'value' => $value,
 	
-				'option' => $option,
-			] );
+			// 	'option' => $option,
+			// ] );
 
-			// return $old_value;
+			return $old_value;
 		// }
 
-		return $value;
+		// return $value;
 	}
 
 	const SETTINGS = [
