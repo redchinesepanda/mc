@@ -4,11 +4,18 @@ class WPMLDomain
 {
 	public static function register()
 	{
-		// $handler = new self();
+		$handler = new self();
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
+		add_action( 'update_option_icl_sitepress_settings', 'prevent_update_option', 10, 3 );
+
 		self::change_language_negotiation_type();
+	}
+
+	function prevent_update_option( $old_value, $value, $option )
+	{
+		return $old_value;
 	}
 
 	public static function change_language_negotiation_type()
