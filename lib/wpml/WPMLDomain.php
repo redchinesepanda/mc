@@ -25,11 +25,13 @@ class WPMLDomain
 			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
 
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
+
+			'current_language' => WPMLMain::current_language(),
 		] );
 
 		if ( self::check_default_language() )
 		{
-			$sitepress->set_setting( 'default_language', 'pl', true );
+			$sitepress->set_setting( 'default_language', WPMLMain::current_language(), true );
 		}
     }
 	
