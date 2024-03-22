@@ -28,8 +28,8 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		if ( $option === self::OPTIONS[ 'wpml-settings' ] )
-		{
+		// if ( $option === self::OPTIONS[ 'wpml-settings' ] )
+		// {
 			LegalDebug::die( [
 				'WPMLDomain' => 'prevent_update_option',
 	
@@ -41,7 +41,7 @@ class WPMLDomain
 			] );
 
 			// return $old_value;
-		}
+		// }
 
 		// return $value;
 	}
