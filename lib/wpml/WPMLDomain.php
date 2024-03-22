@@ -56,18 +56,20 @@ class WPMLDomain
 
 		$default_language = ToolNotFound::get_default_language();
 
+		$sitepress_default_language = $sitepress->get_setting( self::SETTINGS[ 'default-language' ] );
+
+		$option_default_language = get_option( self::SETTINGS[ 'default-language' ] );
+
 		LegalDebug::debug( [
 			'WPMLDomain' => 'get_posts',
 
 			'check_change_default_language' => self::check_change_default_language(),
-
-			// 'get_default_language' => ToolNotFound::get_default_language(),
 			
 			'default_language' => $default_language,
 
-			'get_setting' => $sitepress->get_setting( self::SETTINGS[ 'default-language' ] ),
+			'sitepress_default_language' => $sitepress_default_language,
 
-			'get_option' => get_option( self::SETTINGS[ 'default-language' ] ),
+			'option_default_language' => $option_default_language,
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
 
