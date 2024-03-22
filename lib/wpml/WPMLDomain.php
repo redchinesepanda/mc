@@ -19,25 +19,25 @@ class WPMLDomain
 	
 	function wp_kama_option_filter( $value, $option )
 	{
-		LegalDebug::debug( [
-			'WPMLDomain' => 'wp_kama_option_filter',
+		// LegalDebug::debug( [
+		// 	'WPMLDomain' => 'wp_kama_option_filter',
 
-			'option' => $option,
-		] );
+		// 	'option' => $option,
+		// ] );
 
 		if ( $option == self::OPTIONS[ 'icl-sitepress-settings' ] )
 		{
 			$default_language = ToolNotFound::get_default_language();
 
-			LegalDebug::debug( [
-				'WPMLDomain' => 'wp_kama_option_filter',
+			// LegalDebug::debug( [
+			// 	'WPMLDomain' => 'wp_kama_option_filter',
 
-				'default_language' => $default_language,
+			// 	'default_language' => $default_language,
 
-				'option' => $option,
+			// 	'option' => $option,
 
-				'value' => $value,
-			] );
+			// 	'value' => $value,
+			// ] );
 
 			$value[ 'default_language' ] = $default_language;
 		}
@@ -110,7 +110,7 @@ class WPMLDomain
 
 			'option_default_language' => $option_default_language,
 
-			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
+			// 'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
 
