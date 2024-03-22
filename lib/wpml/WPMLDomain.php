@@ -15,6 +15,16 @@ class WPMLDomain
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
+		LegalDebug::debug( [
+			'WPMLDomain' => 'prevent_update_option',
+
+			'old_value' => $old_value,
+
+			'value' => $value,
+
+			'option' => $option,
+		] );
+
 		return $old_value;
 	}
 
