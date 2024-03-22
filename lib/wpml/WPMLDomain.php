@@ -98,7 +98,7 @@ class WPMLDomain
 
 		if ( !empty( $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ] ) )
 		{
-			$option_default_language = get_option( self::OPTIONS[ 'icl-sitepress-settings' ][ self::SETTINGS[ 'default-language' ] ]);
+			$option_default_language = $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ];
 		}
 
 		LegalDebug::debug( [
