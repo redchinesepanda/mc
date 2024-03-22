@@ -38,12 +38,12 @@
 	padding-bottom: 30px;
 }
 
-.legal-offers-compilation .swiper-wrapper {
+/* .legal-offers-compilation .swiper-wrapper {
 	column-gap: 8px;
-}
+} */
 
 .legal-offers-compilation .offers-compilation-item {
-	/* margin-right: 8px; */
+	margin-right: 8px !important;
     padding-top: 6px;
     padding-right: 24px;
     padding-bottom: 6px;
