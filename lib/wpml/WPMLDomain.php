@@ -78,8 +78,8 @@ class WPMLDomain
 			// 'current_language' => WPMLMain::current_language(),
 		] );
 
-		if ( self::check_change_default_language() )
-		{
+		// if ( self::check_change_default_language() )
+		// {
 			$sitepress->set_setting
 			(
 				self::SETTINGS[ 'default-language' ],
@@ -88,7 +88,7 @@ class WPMLDomain
 				
 				true
 			);
-		}
+		// }
 		// else
 		// {
 		// 	$sitepress->set_setting
