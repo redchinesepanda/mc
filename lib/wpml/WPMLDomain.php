@@ -47,7 +47,7 @@ class WPMLDomain
 
 	public static function register()
 	{
-		// $handler = new self();
+		$handler = new self();
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
