@@ -19,7 +19,7 @@ class WPMLDomain
 	
 	function wp_kama_option_filter( $value, $option )
 	{
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'WPMLDomain' => 'wp_kama_option_filter',
 
 			'default_language' => $default_language,
@@ -28,7 +28,7 @@ class WPMLDomain
 
 			'value' => $value,
 		] );
-		
+
 		if ( $option == self::OPTIONS[ 'icl-sitepress-settings' ] )
 		{
 			$default_language = ToolNotFound::get_default_language();
