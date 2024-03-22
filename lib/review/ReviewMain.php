@@ -38,6 +38,8 @@ require_once( 'ReviewContent.php' );
 
 require_once( 'ReviewCut.php' );
 
+require_once( 'ReviewVideo.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -58,6 +60,8 @@ class ReviewMain
 		'claim-bonus' => 'Claim Bonus',
 
 		'close' => 'Close',
+
+		'deposit' => 'Deposit',
 
 		'download' => 'Download',
 
@@ -274,6 +278,8 @@ class ReviewMain
         ReviewPage::register();
 
         ReviewCut::register();
+
+        ReviewVideo::register();
     }
 
     public static function encoding( $content )

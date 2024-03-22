@@ -36,7 +36,7 @@ class ToolSitemapXML
         //     'ToolSitemapXML' => 'check_sitemap_enabled',
 
         //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
-        // ] );
+        // ] ); 
 
         // return $is_sitemaps_enabled;
         
@@ -49,7 +49,7 @@ class ToolSitemapXML
         //     'ToolSitemapXML' => 'register',
 
         //     'check_sitemap_enabled' => self::check_sitemap_enabled(),
-        // ] );
+        // ] ); 
 
         if ( self::is_sitemap_page() )
         {

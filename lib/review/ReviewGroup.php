@@ -28,11 +28,6 @@ class ReviewGroup
 		],
     ];
 
-  /*   public static function register_style()
-    {
-        ReviewMain::register_style( self::CSS );
-    } */
-
     public static function register_style()
     {
 		if ( TemplateMain::check_code() )
@@ -59,8 +54,6 @@ class ReviewGroup
         }
     }
 
-    // const TAXONOMY = 'page_group';
-
     public static function check_has_group()
     {
         return has_term( '', self::TAXONOMY[ 'group' ] );
@@ -71,45 +64,6 @@ class ReviewGroup
 
         'type' => 'page_type',
     ];
-
-    // const TERMS = [
-    //     'compilation',
-    // ];
-
-    // public static function check()
-    // {
-    //     $permission_term = !has_term( self::TERMS, self::TAXONOMY[ 'type' ] );
-
-    //     return ReviewMain::check() && $permission_term;
-    // }
-
-    // public static function get_group_args( $post, $terms = [] ) {
-    //     return [
-    //         'numberposts' => -1,
-
-    //         'post_type' => [ 'legal_bk_review', 'page' ],
-
-    //         'suppress_filters' => 0,
-
-    //         'exclude' => $post->ID,
-
-    //         'tax_query' => [
-    //             [
-    //                 'taxonomy' => self::TAXONOMY[ 'group' ],
-
-    //                 'field' => 'term_id',
-
-    //                 'terms' => $terms,
-
-    //                 'operator' => 'IN',
-    //             ]
-    //         ],
-
-    //         'orderby' => 'menu_order',
-
-    //         'order' => 'ASC',
-    //     ];
-    // }
     
     public static function get_group_args( $post, $terms = [] )
     {
@@ -119,8 +73,6 @@ class ReviewGroup
             'post_type' => [ 'page' ],
 
             'suppress_filters' => 0,
-
-            // 'exclude' => $post->ID,
 
             'tax_query' => [
                 [
@@ -170,6 +122,8 @@ class ReviewGroup
             'how-to-play' => __( ReviewMain::TEXT[ 'how-to-play' ], ToolLoco::TEXTDOMAIN ),
     
             'withdrawal' => __( ReviewMain::TEXT[ 'withdrawal' ], ToolLoco::TEXTDOMAIN ),
+
+            'deposit' => __( ReviewMain::TEXT[ 'deposit' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 

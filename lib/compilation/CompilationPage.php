@@ -3,11 +3,11 @@
 class CompilationPage
 {
     const CSS = [
-        'compilation-page' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-page.css',
+        // 'compilation-page' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-page.css',
 
-            'ver'=> '1.0.0',
-        ],
+        //     'ver'=> '1.0.0',
+        // ],
     ];
 
     const CSS_NEW = [

@@ -1,7 +1,7 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="billet-review <?php echo $args[ 'class' ]; ?>">
 		<div class="review-image">
-			<img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" alt="<?php echo $args[ 'image' ][ 'alt' ]; ?>">
+			<img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" alt="<?php echo $args[ 'image' ][ 'alt' ]; ?>" loading="lazy">
 		</div>
 		<div class="review-data">
 			<?php if( !empty( $args[ 'name' ] ) ) : ?>

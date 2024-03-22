@@ -282,6 +282,11 @@
 	background-size: auto;
 }
 
+.legal-billet-mega .billet-mega-about
+{
+	box-sizing: border-box;
+}
+
 /* Typography */
 
 .legal-billet-mega .mega-about-afillate {

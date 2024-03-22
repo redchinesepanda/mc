@@ -2,7 +2,15 @@
 
 class MetrikaMain
 {
-	const JS = [
+	const JS_MAIN = [
+        'legal-metrika-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-lib.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	const JS_GUEST = [
         'legal-metrika-ya-lib' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-ya-lib.js',
 
@@ -31,11 +39,11 @@ class MetrikaMain
         //     'ver' => '1.0.0',
         // ],
 
-        'legal-metrika-lib' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-lib.js',
+        // 'legal-metrika-lib' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-lib.js',
 
-            'ver' => '1.0.0',
-        ],
+        //     'ver' => '1.0.0',
+        // ],
 
         'legal-gtag-lib' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/metrika/metrika-gtag-lib.js',
@@ -68,24 +76,53 @@ class MetrikaMain
         ],
     ]; 
 
-	public static function register_script( $scripts = [] )
+	// public static function register_script( $scripts = [] )
+	
+    public static function register_script()
     {
-		if ( empty( $scripts ) ) {
-			$scripts = self::JS;
-		}
+		// if ( empty( $scripts ) ) {
+		// 	$scripts = self::JS;
+		// }
 
-        if ( self::check() ) {
-            ToolEnqueue::register_script( $scripts );
+        if ( self::check_not_admin() )
+        {
+            ToolEnqueue::register_script( self::JS_MAIN );
+        }
+
+        if ( self::check_guest() )
+        {
+            // ToolEnqueue::register_script( $scripts );
+
+            ToolEnqueue::register_script( self::JS_GUEST );
         }
     }
 
-	public static function check()
+	public static function check_not_admin()
     {
-        $permission_admin = !is_admin();
+        return !is_admin();
+    }
 
-        $permission_loggedin = !is_user_logged_in();
+	public static function check_not_logged_in()
+    {
+        return !is_user_logged_in();
+    }
+
+	public static function check_guest()
+    {
+        // $permission_admin = !is_admin();
+
+        // $permission_loggedin = !is_user_logged_in();
         
-        return ( $permission_admin && $permission_loggedin );
+        // return ( $permission_admin && $permission_loggedin );
+        
+        return self::check_not_admin()
+
+            && self::check_not_logged_in();
+    }
+
+    public static function check()
+    {
+        return self::check_guest();
     }
 
 	public static function register()

@@ -24,7 +24,7 @@
 					<span class="mega-about-prefix"><?php echo $args[ 'author' ][ 'prefix' ] ?>: </span>
 					<?php foreach( $args[ 'author' ][ 'items' ] as $item ) : ?>
 						<a class="link-item" href="<?php echo $item[ 'url' ]; ?>">
-							<img src="<?php echo $item[ 'image' ]; ?>" width="25" height="25" />
+							<img src="<?php echo $item[ 'image' ]; ?>" width="25" height="25" loading="lazy">
 						</a>
 					<?php endforeach; ?>
 				</div>

@@ -10,13 +10,38 @@ class CompilationTabsMini
         ],
     ];
 
-	public static function register_style( $styles = [] )
+    const CSS_NEW = [
+        'tabs-mini-new' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/css/tabs/tabs-mini-new.css',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+/* 	public static function register_style( $styles = [] )
     {
         if ( self::check() ) {
             if ( empty( $styles ) ) {
                 $styles = self::CSS;
             }
 
+            ToolEnqueue::register_style( $styles );
+        }
+    } */
+
+    public static function register_style( $styles = [] )
+    {
+        if ( self::check() ) {
+            if ( empty( $styles ) ) {
+                if ( TemplateMain::check_new() )
+                {
+                    $styles = self::CSS_NEW;
+                }
+                else
+                {
+                    $styles = self::CSS;
+                }
+            }
             ToolEnqueue::register_style( $styles );
         }
     }

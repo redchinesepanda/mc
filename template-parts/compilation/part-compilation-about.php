@@ -21,7 +21,7 @@
 			<div class="about-section-image">
                 <picture>
                     <source srcset="<?php echo $args[ 'image' ][ 'src' ]; ?>" media="(min-width: 960px)" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" alt="betting sites">
-                    <img srcset="" width="0px" height="0px" alt="">
+                    <img srcset="" width="0px" height="0px" alt="" loading="lazy">
                 </picture>
 			</div>
         </div>

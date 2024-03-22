@@ -11,7 +11,7 @@
 	<div class="legal-header-wrapper">
 		<div class="legal-header">
 			<a class="legal-logo" href="<?php echo $args[ 'href' ]; ?>">
-				<!-- <img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/mc-logo.png" width="213" height="21" alt="Match.Center"> -->
+				<!-- <img src="/wp-content/themes/thrive-theme-child/assets/img/base/header/mc-logo.png" width="213" height="21" alt="Match.Center" loading="lazy"> -->
 			</a>
 			<div class="legal-header-control">
 			</div>

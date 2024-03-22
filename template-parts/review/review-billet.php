@@ -1,6 +1,6 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="billet-review <?php echo $args[ 'class' ]; ?>">
-		<img class="review-image" src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="138" height="45" alt="<?php echo $args[ 'image' ][ 'alt' ]; ?>">
+		<img class="review-image" src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="138" height="45" alt="<?php echo $args[ 'image' ][ 'alt' ]; ?>" loading="lazy">
 		<?php if( empty( $args['review'][ 'disabled' ] ) ) : ?>
 			<a class="review-title-link check-oops" href="<?php echo $args['review'][ 'href' ]; ?>">
 				<?php echo $args['review'][ 'text' ]; ?>

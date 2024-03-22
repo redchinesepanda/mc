@@ -4,7 +4,7 @@
 		<?php foreach ( $args[ 'items' ] as $item ) : ?>
 			<div class="related-container-item">
 				<a class="container-item-image-link" href="<?php echo $item[ 'preview' ][ 'href' ]; ?>">
-					<img class="container-item-image container-item-image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" />
+					<img class="container-item-image container-item-image-<?php echo $item[ 'preview' ][ 'id' ]; ?>" src="<?php echo $item[ 'preview' ][ 'src' ]; ?>" width="<?php echo $item[ 'preview' ][ 'width' ]; ?>" height="<?php echo $item[ 'preview' ][ 'height' ]; ?>" loading="lazy">
 				</a>
 				<a class="container-item-title" href="<?php echo $item[ 'title' ][ 'href' ]; ?>"><?php echo $item[ 'title' ][ 'label' ]; ?></a>
 			</div>
