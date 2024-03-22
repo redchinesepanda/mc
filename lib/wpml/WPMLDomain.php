@@ -63,9 +63,9 @@ class WPMLDomain
 
 			// 'get_default_language' => ToolNotFound::get_default_language(),
 			
-			'$default_language' => $default_language,
+			'ToolNotFound_default_language' => $default_language,
 
-			'default_language' => $sitepress->get_setting( 'default_language' ),
+			'sitepress_default_language' => $sitepress->get_setting( 'default_language' ),
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
 
