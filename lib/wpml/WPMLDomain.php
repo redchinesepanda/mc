@@ -96,18 +96,22 @@ class WPMLDomain
 
 		$sitepress_default_language = $sitepress->get_setting( self::SETTINGS[ 'default-language' ] );
 
-		$option_default_language = get_option( self::SETTINGS[ 'default-language' ] );
+		$option_default_language = get_option( self::OPTIONS[ 'icl-sitepress-settings' ][ 'default_language' ])
+
+		$option_icl_sitepress_settings = get_option( self::OPTIONS[ 'icl-sitepress-settings' ] );
 
 		LegalDebug::debug( [
 			'WPMLDomain' => 'change_language_negotiation_type',
-
-			'check_change_default_language' => self::check_change_default_language(),
 			
 			'default_language' => $default_language,
 
 			'sitepress_default_language' => $sitepress_default_language,
 
 			'option_default_language' => $option_default_language,
+
+			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
+
+			// 'check_change_default_language' => self::check_change_default_language(),
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
 
