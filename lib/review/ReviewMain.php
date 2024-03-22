@@ -280,6 +280,10 @@ class ReviewMain
         ReviewCut::register();
 
         ReviewVideo::register();
+
+        LegalDebug::debug( [
+            'ReviewMain' => 'register',
+        ] );
     }
 
     public static function encoding( $content )
