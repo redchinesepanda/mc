@@ -35,6 +35,10 @@ class WPMLDomain
 		{
 			$sitepress->set_setting( 'default_language', WPMLMain::current_language(), true );
 		}
+		else
+		{
+			$sitepress->set_setting( 'default_language', 'en', true );
+		}
     }
 	
 	public static function check_default_language()
