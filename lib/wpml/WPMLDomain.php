@@ -46,7 +46,7 @@ class WPMLDomain
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
-		// self::change_language_negotiation_type();
+		self::change_language_negotiation_type();
 	}
 
 	const OPTIONS = [
@@ -113,16 +113,16 @@ class WPMLDomain
 
 		if ( self::check_change_default_language() )
 		{
-			$sitepress->set_setting
-			(
-				self::SETTINGS[ 'default-language' ],
+			// $sitepress->set_setting
+			// (
+			// 	self::SETTINGS[ 'default-language' ],
 
-				$default_language,
+			// 	$default_language,
 				
-				true
-			);
+			// 	true
+			// );
 
-			$sitepress->save_settings();
+			// $sitepress->save_settings();
 		}
 		else
 		{
