@@ -17,7 +17,7 @@ class AdminWPML
 		// 	'$items' => $items,
 		// ] );
 
-		foreach( $items as $item )
+		foreach( $items as &$item )
 		{
 			if ( !empty( $item[ 'flag' ] ) )
             {
