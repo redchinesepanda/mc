@@ -96,7 +96,7 @@ class WPMLDomain
 
 		$sitepress_default_language = $sitepress->get_setting( self::SETTINGS[ 'default-language' ] );
 
-		$option_default_language = get_option( self::OPTIONS[ 'icl-sitepress-settings' ][ 'default_language' ])
+		$option_default_language = get_option( self::OPTIONS[ 'icl-sitepress-settings' ][ 'default_language' ]);
 
 		$option_icl_sitepress_settings = get_option( self::OPTIONS[ 'icl-sitepress-settings' ] );
 
