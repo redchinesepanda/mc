@@ -27,7 +27,7 @@ class WPMLDomain
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 		] );
 
-		// $sitepress->set_setting( 'language_negotiation_type', $value, true );
+		$sitepress->set_setting( 'default_language', 'pl', true );
 
         // $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
