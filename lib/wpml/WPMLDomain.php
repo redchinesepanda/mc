@@ -6,21 +6,29 @@ class WPMLDomain
 	{
 		$handler = new self();
 
-		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
-
 		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
+		
+		add_action( 'update_option_' . self::OPTIONS[ 'wpml-settings' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
 		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
 	}
 
 	public static function register()
 	{
-		// self::change_language_negotiation_type();
+		// $handler = new self();
+
+		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
+
+		self::change_language_negotiation_type();
 	}
+
+	const OPTIONS = [
+		'wpml-settings' = 'icl_sitepress_settings',
+	];
 
 	function prevent_update_option( $old_value, $value, $option )
 	{
-		if ( $option == 'icl_sitepress_settings' )
+		if ( $option == self::OPTIONS[ 'wpml-settings' ] )
 		{
 			LegalDebug::die( [
 				'WPMLDomain' => 'prevent_update_option',
@@ -31,12 +39,16 @@ class WPMLDomain
 	
 				'option' => $option,
 			] );
+
+			return $old_value;
 		}
 
-		// return $old_value;
-
-		// return $value;
+		return $value;
 	}
+
+	const SETTINGS = [
+		'default-language' => 'default_language',
+	];
 
 	public static function change_language_negotiation_type()
     {
@@ -53,16 +65,24 @@ class WPMLDomain
 
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
-			'current_language' => WPMLMain::current_language(),
+			// 'current_language' => WPMLMain::current_language(),
+
+			'get_default_language' => ToolNotFound::get_default_language(),
 
 			'check_default_language' => self::check_default_language(),
 		] );
 
 		if ( self::check_default_language() )
 		{
-			$sitepress->set_setting( 'default_language', WPMLMain::current_language(), true );
+			$sitepress->set_setting(
+				self::SETTINGS[ 'default-language' ],
+				
+				// WPMLMain::current_language(),
 
-			// $sitepress->settings[ 'default_language' ] = WPMLMain::current_language();
+				ToolNotFound::get_default_language(),
+				
+				true
+			);
 		}
 		else
 		{

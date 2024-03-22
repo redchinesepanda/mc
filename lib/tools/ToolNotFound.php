@@ -54,6 +54,9 @@ class ToolNotFound
 		return self::RESTRICTED_DEBUG;
 	}
 
+	public static function get_restricted_languages_current()
+	{}
+
 	public static function get_restricted_languages()
 	{
 		$restricted = self::get_restricted();
@@ -66,17 +69,34 @@ class ToolNotFound
 		return call_user_func_array( 'array_merge', $restricted );
 	}
 
-	public static function check_one_restricted_language()
+	public static function get_default_language()
 	{
 		$restricted = self::get_restricted();
 
 		if ( self::check_domain() )
 		{
-			return count( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] ) == 1;
+			return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
 		}
 
-		return false;
+		return 'en';
 	}
+
+	// public static function get_default_restricted_language()
+	// {
+	// 	return array_shift( self::get_restricted_languages() );
+	// }
+
+	// public static function check_one_restricted_language()
+	// {
+	// 	$restricted = self::get_restricted();
+
+	// 	if ( self::check_domain() )
+	// 	{
+	// 		return count( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] ) == 1;
+	// 	}
+
+	// 	return false;
+	// }
 
 	public static function check_domain()
 	{
