@@ -27,6 +27,8 @@ class WPMLDomain
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
 			'current_language' => WPMLMain::current_language(),
+
+			'check_default_language' => self::check_default_language(),
 		] );
 
 		if ( self::check_default_language() )
