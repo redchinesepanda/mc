@@ -36,10 +36,18 @@ class WPMLDomain
 
 				'option' => $option,
 
-				'value' => $value,
+				'value_default_language' => $value[ 'default_language' ],
+
+				// 'value' => $value,
 			] );
 
-			// $value[ 'default_language' ] = $default_language;
+			$value[ 'default_language' ] = $default_language;
+
+			LegalDebug::debug( [
+				'WPMLDomain' => 'wp_kama_option_filter',
+
+				'value_default_language' => $value[ 'default_language' ],
+			] );
 		}
 
 		return $value;
