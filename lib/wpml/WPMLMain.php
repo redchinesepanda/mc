@@ -233,9 +233,9 @@ class WPMLMain
         );
     }
 
-    public static function register_fuinctions()
+    public static function register_functions()
     {
-        WPMLDomain::register_fuinctions();
+        WPMLDomain::register_functions();
     } 
 
     public static function register()

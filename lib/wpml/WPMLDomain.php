@@ -2,7 +2,7 @@
 
 class WPMLDomain
 {
-	public static function register_fuinctions()
+	public static function register_functions()
 	{
 		$handler = new self();
 
