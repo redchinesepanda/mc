@@ -94,13 +94,13 @@ class WPMLDomain
 
 			'sitepress_default_language' => $sitepress_default_language,
 
+			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
+
 			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
-
-			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
 
 			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
