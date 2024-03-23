@@ -102,7 +102,7 @@ class WPMLDomain
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
 
-			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
+			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
 			// 'current_language' => WPMLMain::current_language(),
 		] );
