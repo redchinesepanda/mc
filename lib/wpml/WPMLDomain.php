@@ -43,6 +43,8 @@ class WPMLDomain
 
 			$value[ 'default_language' ] = $default_language;
 
+			$value[ 'admin_default_language' ] = $default_language;
+
 			LegalDebug::debug( [
 				'WPMLDomain' => 'wp_kama_option_filter',
 
