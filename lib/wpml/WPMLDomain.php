@@ -98,11 +98,11 @@ class WPMLDomain
 
 			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
+			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
+
 			// 'check_change_default_language' => self::check_change_default_language(),
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
-
-			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
 			// 'current_language' => WPMLMain::current_language(),
 		] );
