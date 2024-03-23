@@ -80,14 +80,14 @@ class WPMLDomain
 
 		$default_language = ToolNotFound::get_default_language();
 
-		$option_icl_sitepress_settings = get_option( self::OPTIONS[ 'icl-sitepress-settings' ] );
+		// $option_icl_sitepress_settings = get_option( self::OPTIONS[ 'icl-sitepress-settings' ] );
 
-		$option_default_language = 'unset';
+		// $option_default_language = 'unset';
 
-		if ( !empty( $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ] ) )
-		{
-			$option_default_language = $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ];
-		}
+		// if ( !empty( $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ] ) )
+		// {
+		// 	$option_default_language = $option_icl_sitepress_settings[ self::SETTINGS[ 'default-language' ] ];
+		// }
 
 		$sitepress_default_language = $sitepress->get_setting( self::SETTINGS[ 'default-language' ] );
 
@@ -96,7 +96,7 @@ class WPMLDomain
 			
 			'default_language' => $default_language,
 
-			'option_default_language' => $option_default_language,
+			// 'option_default_language' => $option_default_language,
 
 			'sitepress_default_language' => $sitepress_default_language,
 
