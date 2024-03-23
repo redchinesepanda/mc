@@ -98,6 +98,10 @@ class WPMLDomain
 
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
+			'WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN' => WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN,
+
+			'WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER' => WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER,
+
 			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
