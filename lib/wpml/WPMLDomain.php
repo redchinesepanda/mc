@@ -21,6 +21,10 @@ class WPMLDomain
 
 	public static function filter_settings()
 	{
+		LegalDebug::debug( [
+			'WPMLDomain' => 'filter_settings',
+		] );
+
 		$handler = new self();
 
 		add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
