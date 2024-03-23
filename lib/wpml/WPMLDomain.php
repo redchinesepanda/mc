@@ -93,6 +93,8 @@ class WPMLDomain
 
 		LegalDebug::debug( [
 			'WPMLDomain' => 'change_language_negotiation_type',
+
+			'home' => get_option( 'home' ),
 			
 			'default_language' => $default_language,
 
