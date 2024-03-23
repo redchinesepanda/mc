@@ -38,6 +38,8 @@ class WPMLDomain
 
 				'value_default_language' => $value[ 'default_language' ],
 
+				'admin_default_language' => $value[ 'admin_default_language' ],
+
 				// 'value' => $value,
 			] );
 
@@ -49,6 +51,8 @@ class WPMLDomain
 				'WPMLDomain' => 'wp_kama_option_filter',
 
 				'value_default_language' => $value[ 'default_language' ],
+
+				'admin_default_language' => $value[ 'admin_default_language' ],
 			] );
 		}
 
