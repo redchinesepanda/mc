@@ -95,6 +95,8 @@ class WPMLDomain
 			'WPMLDomain' => 'change_language_negotiation_type',
 
 			'home' => get_option( 'home' ),
+
+			'is_current_request_root' => WPML_Root_Page::is_current_request_root(),
 			
 			'default_language' => $default_language,
 
