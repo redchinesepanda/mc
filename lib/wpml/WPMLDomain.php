@@ -85,8 +85,6 @@ class WPMLDomain
 
 		LegalDebug::debug( [
 			'WPMLDomain' => 'change_language_negotiation_type',
-
-			// 'BLOG_ID_CURRENT_SITE' => BLOG_ID_CURRENT_SITE,
 			
 			'default_language' => $default_language,
 
@@ -94,15 +92,19 @@ class WPMLDomain
 
 			'sitepress_default_language' => $sitepress_default_language,
 
-			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
+			'getOrAttemptRecovery' => WPML\LIB\WP\Option::getOrAttemptRecovery( 'icl_sitepress_settings', [] ),
 
-			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
+			// 'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
 
-			'WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN' => WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN,
+			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
-			'WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER' => WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER,
+			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN' => WPML_LANGUAGE_NEGOTIATION_TYPE_DOMAIN,
 
-			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
+			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER' => WPML_LANGUAGE_NEGOTIATION_TYPE_PARAMETER,
+
+			// 'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
+
+			// 'BLOG_ID_CURRENT_SITE' => BLOG_ID_CURRENT_SITE,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
 
