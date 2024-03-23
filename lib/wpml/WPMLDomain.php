@@ -65,7 +65,7 @@ class WPMLDomain
 
 		// add_action( 'init', [ $handler,'change_language_negotiation_type' ] );
 
-		self::change_language_negotiation_type();
+		// self::change_language_negotiation_type();
 
 		// add_action( 'switch_blog', [ $handler, 'change_language_negotiation_type' ], 10, 1 );
 	}
