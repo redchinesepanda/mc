@@ -13,11 +13,20 @@ class WPMLDomain
 		// add_action( 'update_option_' . self::OPTIONS[ 'wplang' ], [ $handler,'prevent_update_option' ], 10, 3 );
 
 		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
+		
+		add_action( 'wpml_before_startup', [ $handler, 'filter_settings' ], 10, 3 );
+
+		// add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
+	}
+
+	public static function filter_settings()
+	{
+		$handler = new self();
 
 		add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
 	}
-	
-	function wp_kama_option_filter( $value, $option )
+
+	public static function  wp_kama_option_filter( $value, $option )
 	{
 		// LegalDebug::debug( [
 		// 	'WPMLDomain' => 'wp_kama_option_filter',
