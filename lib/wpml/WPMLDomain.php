@@ -85,6 +85,8 @@ class WPMLDomain
 
 		LegalDebug::debug( [
 			'WPMLDomain' => 'change_language_negotiation_type',
+
+			'BLOG_ID_CURRENT_SITE' => BLOG_ID_CURRENT_SITE,
 			
 			'default_language' => $default_language,
 
