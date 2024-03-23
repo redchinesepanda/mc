@@ -96,9 +96,9 @@ class WPMLDomain
 
 			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
 
-			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
-
 			'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
+
+			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
 
