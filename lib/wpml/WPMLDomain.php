@@ -86,7 +86,7 @@ class WPMLDomain
 		LegalDebug::debug( [
 			'WPMLDomain' => 'change_language_negotiation_type',
 
-			'BLOG_ID_CURRENT_SITE' => BLOG_ID_CURRENT_SITE,
+			// 'BLOG_ID_CURRENT_SITE' => BLOG_ID_CURRENT_SITE,
 			
 			'default_language' => $default_language,
 
@@ -100,7 +100,7 @@ class WPMLDomain
 
 			// 'urls' => $sitepress->get_setting( 'urls' ),
 
-			// 'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
+			'language_negotiation_type' => $sitepress->get_setting( 'language_negotiation_type' ),
 
 			// 'WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY' => WPML_LANGUAGE_NEGOTIATION_TYPE_DIRECTORY,
 
