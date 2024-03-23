@@ -92,7 +92,7 @@ class WPMLDomain
 
 			'sitepress_default_language' => $sitepress_default_language,
 
-			// 'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
+			'option_icl_sitepress_settings' => $option_icl_sitepress_settings,
 
 			// 'check_change_default_language' => self::check_change_default_language(),
 
