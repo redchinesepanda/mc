@@ -49,9 +49,9 @@
 	margin-bottom: 20px;
 }
 
-.legal-bonus-summary .item-label {
+/* .legal-bonus-summary .item-label {
 	padding-left: 25px;
-}
+} */
 
 /* Background */
 
@@ -60,13 +60,13 @@
 	border-radius: 20px;
 }
 
-.legal-bonus-summary .item-label {
+/* .legal-bonus-summary .item-label {
 	background-position: left top 9.75px;
 	background-repeat: no-repeat;
 	background-size: auto;
-}
+} */
 
-.legal-bonus-summary .item-label-bookmaker {
+/* .legal-bonus-summary .item-label-bookmaker {
 	background-image: url( '../../img/bonus/bonus-summary-bookmaker.svg' );
 }
 
@@ -84,7 +84,7 @@
 
 .legal-bonus-summary .item-label-published {
 	background-image: url( '../../img/bonus/bonus-summary-published.svg' );
-}
+} */
 
 /* Typography */
 
