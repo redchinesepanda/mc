@@ -170,6 +170,12 @@ class WPMLMain
 
     public static function get_locale()
 	{
+        LegalDebug::debug( [
+            'WPMLMain' => 'get_locale',
+
+            'determine_locale' => determine_locale(),
+        ] );
+            
         return get_locale();
 	}
 

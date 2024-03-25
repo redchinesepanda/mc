@@ -104,6 +104,8 @@ class WPMLDomain
 		'default-language' => 'default_language',
 	];
 
+	// https://developer.wordpress.org/advanced-administration/plugins/mu-plugins/
+
 	public static function change_language_negotiation_type()
     {
 		global $sitepress;
