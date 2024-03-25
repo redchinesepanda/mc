@@ -195,11 +195,20 @@ class ToolNotFound
 		return is_category();
 	}
 
-	public static function check_robots_txt()
+	public static function check_not_robots_txt()
 	{
-		return is_robots();
+		return !is_robots();
 	}
 	
+	public static function check_taxonomies()
+	{
+		return self::check_category()
+
+			|| self::check_tag()
+
+			|| self::check_taxonomy();
+	}
+
 	public static function check_not_found()
 	{
 		// LegalDebug::debug( [
@@ -216,13 +225,14 @@ class ToolNotFound
 		// 	'check_robots_txt' => self::check_robots_txt(),
 		// ] );
 
-		return self::check_category()
-
-			|| self::check_tag()
-
-			|| self::check_taxonomy()
-
-			|| self::check_restricted();
+		return
+		(
+			self::check_taxonomies()
+			
+			|| self::check_restricted()
+		)
+		
+		&& self::check_not_robots_txt();
 	}
 
 	public static function set_not_found()
