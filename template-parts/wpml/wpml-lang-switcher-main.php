@@ -1,3 +1,10 @@
+<?php
+
+LegalDebug::debug( [
+    $args,
+] );
+
+?>
 <div class="lang-switcher">
     <?php if ( !empty( $args[ 'active' ] ) ) : ?>
         <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
