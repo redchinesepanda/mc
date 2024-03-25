@@ -215,6 +215,14 @@ class BaseHeader
 
 	public static function search_languages()
 	{
+		global $sitepress;
+		
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'get_settings' => $sitepress->get_settings(),
+		] );
+
 		$languages_all = WPMLMain::get_all_languages();
 
 		if ( empty( $languages_all ) )
