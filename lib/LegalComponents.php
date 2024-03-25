@@ -210,6 +210,14 @@ class LegalComponents
 
 		if ( $post )
 		{
+			if ( $post->post_type == 'post' )
+			{
+				if ( $content = get_field( BonusContent::FIELD[ 'bonus-content' ], $post->ID ) )
+				{
+					return has_shortcode( $content, $shortcode );
+				}
+			}
+
 			return has_shortcode( $post->post_content, $shortcode );
 		}
 
