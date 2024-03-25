@@ -217,13 +217,22 @@ class BaseHeader
 	{
 		$languages_all = WPMLMain::get_all_languages();
 
+		if ( empty( $languages_all ) )
+		{
+			return [
+				'current' => [],
+
+				'avaible' => [],
+			];
+		}
+
 		$code = WPMLMain::current_language();
 
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
 			'languages_all' => $languages_all,
-			
+
             'code' => $code,
 		] );
 
@@ -254,8 +263,11 @@ class BaseHeader
 	public static function parse_languages_inline()
 	{
 		$languages = self::search_languages();
-		
-		$items[] = self::get_inline_item( $languages[ 'current' ] );
+
+		if ( !empty( $languages[ 'current' ] ) )
+		{
+			$items[] = self::get_inline_item( $languages[ 'current' ] );
+		}
 
 		foreach ( $languages[ 'avaible' ] as $language ) {
 			$items[] = self::get_inline_item( $language );
