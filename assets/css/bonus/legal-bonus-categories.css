@@ -9,7 +9,8 @@
 
 /* Display */
 
-.legal-bonus-categories {
+/* .legal-bonus-categories */
+.legal-bonus-categories .swiper-wrapper {
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
