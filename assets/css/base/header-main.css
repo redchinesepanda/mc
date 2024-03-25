@@ -295,7 +295,8 @@
 }
 
 .legal-menu .menu-item-has-children::after {
-	width: 28px;
+	width: 14px;
+	/* width: 28px; */
 	/* min-height: 48px; */
 }
 
