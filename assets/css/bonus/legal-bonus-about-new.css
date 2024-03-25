@@ -169,6 +169,11 @@
 	border-radius: 60px;
 }
 
+.legal-bonus-about .about-action-get:hover,
+.legal-bonus-button .about-action-get:hover {
+	background-color: var(--Base-base-07);
+}
+
 .legal-bonus-about-overlay1,
 .legal-bonus-about-overlay2,
 .legal-bonus-about-overlay3 {
