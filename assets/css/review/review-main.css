@@ -123,6 +123,10 @@
 
 /* Review Typography */
 
+.tcb-post-content {
+    font-family: "Source Sans Pro";
+}
+
 .tcb-post-content h1,
 .tcb-post-content h2,
 .tcb-post-content h3,
