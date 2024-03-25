@@ -9,10 +9,30 @@ class BonusAbout
             'ver'=> '1.0.4',
         ],
     ];
+
+    const CSS_NEW = [
+        'bonus-about-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-about-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
     
-    public static function register_style()
+   /*  public static function register_style()
     {
         BonusMain::register_style( self::CSS );
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			BonusMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			BonusMain::register_style( self::CSS );
+		}
     }
 
 	public static function register_functions()

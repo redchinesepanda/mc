@@ -27,11 +27,11 @@ class WikiSingle
     {
 		if ( TemplateMain::check_code() )
 		{
-			ReviewMain::register_style( self::CSS_NEW );
+			WikiMain::register_style( self::CSS_NEW );
 		}
 		else
 		{
-			ReviewMain::register_style( self::CSS );
+			WikiMain::register_style( self::CSS );
 		}
     }
 
