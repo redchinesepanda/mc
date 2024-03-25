@@ -219,6 +219,14 @@ class BaseHeader
 
 		$languages_all = WPMLMain::get_all_languages();
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'languages_all' => $languages_all,
+
+			'get_settings' => $sitepress->get_settings(),
+		] );
+
 		if ( empty( $languages_all ) )
 		{
 			return [
@@ -235,11 +243,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'languages_all' => $languages_all,
-
             'code' => $code,
-
-			'get_settings' => $sitepress->get_settings(),
 		] );
 
 		$search[ 'current' ] = $languages_all[ $code ];
