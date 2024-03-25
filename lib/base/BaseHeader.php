@@ -224,7 +224,7 @@ class BaseHeader
 
 			'default_language' => $sitepress->get_setting( 'default_language' ),
 
-			'icl_get_languages' => icl_get_languages(),
+			// 'icl_get_languages' => icl_get_languages(),
 
 			// 'languages_all' => $languages_all,
 
