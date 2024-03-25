@@ -1,13 +1,22 @@
-@media screen and ( max-width: 768px )
+@media screen and ( max-width: 1217px )
 {
-	/* Position */
+	/* Display */
 
-	/* .legal-bonus-main .legal-bonus-sidebar {
-		padding-top: 20px;
-	} */
+	.legal-bonus-single
+	{
+		flex-wrap: wrap;
+	}
+
+	/* Width and Height */
+
+	.legal-bonus-single .legal-bonus-main,
+	.legal-bonus-single .legal-bonus-sidebar
+	{
+		width: 100%;
+	}
 }
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 1218px )
 {
 	/* Width and Height */
 
