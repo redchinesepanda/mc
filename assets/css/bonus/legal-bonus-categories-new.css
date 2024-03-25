@@ -1,0 +1,45 @@
+@media screen and ( max-width: 767px )
+{
+	/* Display */
+	
+	.legal-bonus-categories {
+		justify-content: center;
+	}
+}
+
+/* Display */
+
+.legal-bonus-categories {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+/* Position */
+
+.legal-bonus-categories {
+	padding-bottom: 30px;
+}
+
+.legal-bonus-categories .bonus-categories-item {
+	padding: 5px 10px;
+}
+
+/* Background */
+
+.legal-bonus-categories .bonus-categories-item {
+	border: 0.8px solid rgb(89, 151, 227);
+	border-radius: 20px;
+}
+
+/* Typography */
+
+.legal-bonus-categories .bonus-categories-item {
+	font-family: "Source Sans Pro";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 27px;
+	color: rgb(89, 151, 227);
+	text-decoration: none;
+}
