@@ -363,12 +363,22 @@ class BaseHeader
 		$handler = new self();
 
 		$data = [
-			'data-name-code' => strtoupper( $language[ 'language_code' ] ),
+			'data-name-code' => '',
 
-			'data-name-default' => strtoupper( $language[ 'translated_name' ] ),
+			'data-name-default' => '',
 
 			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 		];
+
+		if ( !empty( $language[ 'language_code' ] )
+		{
+			$data[ 'data-name-code' ] = strtoupper(  $language[ 'language_code' ] );
+		}
+
+		if ( !empty( $language[ 'translated_name' ] ) )
+		{
+			$data[ 'data-name-default' ] = strtoupper( $language[ 'translated_name' ] );
+		}
 
 		return implode( ' ', array_map( [ $handler, 'prepare_data_attr' ], $data, array_keys( $data ) ) );
 	}
