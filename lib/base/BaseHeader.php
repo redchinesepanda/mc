@@ -219,13 +219,13 @@ class BaseHeader
 
 		if ( empty( $languages_all ) )
 		{
-			// return [
-			// 	'current' => [],
+			return [
+				'current' => [],
 
-			// 	'avaible' => [],
-			// ];
+				'avaible' => [],
+			];
 
-			return [];
+			// return [];
 		}
 
 		$code = WPMLMain::current_language();
