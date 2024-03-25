@@ -146,6 +146,10 @@
 	width: calc( 100% - (18px * 2) );
 }
 
+.legal-bonus-about .about-action-get {
+	min-height: calc( 56px - (10px * 2) );
+}
+
 /* Background */
 
 .legal-bonus-about-wrapper {
