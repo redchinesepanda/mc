@@ -25,6 +25,8 @@ class ACFReview
         $handler = new self();
 
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
+
+        add_filter( 'post_type_link', 'afillate_link_filter_locale', 10, 4 );
     }
 
     public static function register()
@@ -62,11 +64,25 @@ class ACFReview
 		}
 	}
 
-    public static function format_afillate( $value, $post_id, $field )
+    public static function format_afillate( $value, $post_id = 0, $field = '' )
     {
         $lang = WPMLMain::current_language();
 
         return str_replace(  '/' . $lang . '/', '/', $value );
+    }
+
+    const POST_TYPE = [
+        'affiliate-links' => 'affiliate-links',
+    ];
+
+    function afillate_link_filter_locale( $post_link, $post, $leavename, $sample )
+    {
+        if ( $post->post_type == self::POST_TYPE[ 'affiliate-links' ] )
+        {
+            return self::format_afillate( $post_link );
+        }
+
+        return $post_link;
     }
 
 	function choices_post_type( $field )

@@ -215,7 +215,7 @@ class BonusAbout
             $href = OopsMain::check_oops() ? '#' : '';
         }
 
-        $href = ACFReview::format_afillate( $href, 0, '' );
+        // $href = ACFReview::format_afillate( $href, 0, '' );
 
         return [
             'label' => __( BonusMain::TEXT[ 'claim-bonus' ], ToolLoco::TEXTDOMAIN ),
