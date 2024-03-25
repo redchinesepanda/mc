@@ -87,7 +87,17 @@ class WPMLLangSwitcher
     {
         if ( empty( $args ) )
         {
-            return [];
+            return [
+                'id' => 0,
+
+                'title' => '',
+
+                'href' => '#',
+
+                'src' => '',
+
+                'alt' => '',
+            ];
         }
 
         $mapped['id'] = $args['id'];
