@@ -11,35 +11,42 @@
 
 .legal-bonus-categories {
 	display: flex;
-	gap: 20px;
+	gap: 8px;
 	flex-wrap: wrap;
 }
 
 /* Position */
 
 .legal-bonus-categories {
-	padding-bottom: 30px;
+	padding-bottom: 28px;
 }
 
 .legal-bonus-categories .bonus-categories-item {
-	padding: 5px 10px;
+	/* padding: 5px 10px; */
+	padding-top: 6px;
+	padding-right: 24px;
+	padding-bottom: 6px;
+	padding-left: 24px;
 }
 
 /* Background */
 
 .legal-bonus-categories .bonus-categories-item {
-	border: 0.8px solid rgb(89, 151, 227);
-	border-radius: 20px;
+	/* border: 0.8px solid rgb(89, 151, 227); */
+	/* border-radius: 20px; */
+	border: 1px solid var(--Base-base-09);
+  	border-radius: 60px;
 }
 
 /* Typography */
 
 .legal-bonus-categories .bonus-categories-item {
-	font-family: "Source Sans Pro";
-	font-size: 15px;
+	/* font-family: "Source Sans Pro"; */
+	font-family: var( --legal-font-primary );
 	font-style: normal;
+	font-size: 16px;
 	font-weight: 400;
-	line-height: 27px;
-	color: rgb(89, 151, 227);
+	line-height: 22px;
+	color: var( --Base-base-09 );
 	text-decoration: none;
 }
