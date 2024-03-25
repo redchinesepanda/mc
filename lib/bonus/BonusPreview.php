@@ -613,6 +613,8 @@ class BonusPreview
 					$get_href = OopsMain::check_oops() > 0 ? '#' : '';
 				}
 
+				$get_href = ACFReview::format_afillate( $get_href, 0, '' );
+
 				$items[] = [
 					'id' => $post->ID,
 
