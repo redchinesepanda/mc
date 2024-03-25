@@ -123,6 +123,17 @@
 
 /* Review Typography */
 
+.tcb-post-content h1,
+.tcb-post-content h2,
+.tcb-post-content h3,
+.tcb-post-content h4,
+.tcb-post-content h5,
+.tcb-post-content p,
+.tcb-post-content li
+{
+    font-family: "Source Sans Pro";
+}
+
 .tcb-post-content h1:not( .legal-override )
 {
     font-size: 36px;
