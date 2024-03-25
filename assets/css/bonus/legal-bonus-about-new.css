@@ -80,8 +80,11 @@
   	justify-content: center;
 }
 
+.legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .legal-bonus-button .about-action-get[ href='' ],
@@ -247,7 +250,7 @@
 	line-height: 20px;
 	text-decoration: none;
 	color: var( --Base-base-01 );
-	text-align: center;
+	/* text-align: center; */
 }
 
 /* .legal-bonus-button {
