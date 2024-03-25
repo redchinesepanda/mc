@@ -9,11 +9,11 @@
 
 /* Display */
 
-.legal-bonus-categories {
+/* .legal-bonus-categories {
 	display: flex;
 	gap: 8px;
 	flex-wrap: wrap;
-}
+} */
 
 /* Position */
 
@@ -23,6 +23,7 @@
 
 .legal-bonus-categories .bonus-categories-item {
 	/* padding: 5px 10px; */
+	margin-right: 8px;
 	padding-top: 6px;
 	padding-right: 24px;
 	padding-bottom: 6px;

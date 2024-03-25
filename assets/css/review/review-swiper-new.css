@@ -38,6 +38,7 @@
 }
 
 /* .legal-offers-compilation .swiper, */
+.legal-bonus-categories .swiper,
 .review-anchors .swiper {
   width: 100%;
   /* height: fit-content; */
