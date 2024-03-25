@@ -85,6 +85,11 @@ class WPMLLangSwitcher
 
     private static function map( $args )
     {
+        if ( empty( $args ) )
+        {
+            return [];
+        }
+        
         $mapped['id'] = $args['id'];
 
         $mapped['title'] = $args['native_name'];
