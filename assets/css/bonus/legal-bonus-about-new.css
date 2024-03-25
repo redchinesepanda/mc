@@ -111,7 +111,8 @@
 
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	padding: 12px 25px 12px 52px;
+	/* padding: 12px 25px 12px 52px; */
+	padding: 10px 18px;
 }
 
 .legal-bonus-about-overlay1,
@@ -140,7 +141,8 @@
 }
 
 .legal-bonus-button .about-action-get {
-	width: fit-content;
+	/* width: fit-content; */
+	width: calc( 100% - (18px * 2) );
 }
 
 /* Background */
@@ -235,8 +237,9 @@
 	line-height: 20px;
 	text-decoration: none;
 	color: var( --Base-base-01 );
-}
-
-.legal-bonus-button {
 	text-align: center;
 }
+
+/* .legal-bonus-button {
+	text-align: center;
+} */
