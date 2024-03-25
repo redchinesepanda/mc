@@ -52,7 +52,8 @@
 	/* Width and Height */
 
 	.legal-bonus-about {
-		width: 1080px;
+		/* width: 1080px; */
+		width: var( --base-width-desktop );
 	}
 
 	.legal-bonus-about .bonus-about-data {
@@ -108,8 +109,12 @@
 /* Position */
 
 .legal-bonus-about {
-	margin: 0px auto;
+	/* margin: 0px auto; */
+	margin-right: auto;
+	margin-left: auto;
 	padding: 40px 0px;
+	padding-top: 28px;
+	padding-bottom: 32px;
 	position: relative;
 }
 
