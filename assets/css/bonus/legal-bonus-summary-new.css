@@ -88,20 +88,22 @@
 
 /* Typography */
 
+.legal-bonus-summary .item-label,
+.legal-bonus-summary .item-value {
+	font-family: var( --legal-font-primary );
+	font-style: normal; 
+}
+
 .legal-bonus-summary .item-label {
-	font-family: "Source Sans Pro";
 	font-size: 15px;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 34.5px;
-	color: rgb(59, 59, 59);
+	color: var( --Base-base-05 );
 }
 
 .legal-bonus-summary .item-value {
-	font-family: "Source Sans Pro";
 	font-size: 15px;
-	font-style: normal;
 	font-weight: 400;
 	line-height: 34.5px;
-	color: rgb(59, 59, 59);
+	color: var( --Base-base-09 );
 }
