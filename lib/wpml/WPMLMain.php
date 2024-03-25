@@ -174,6 +174,8 @@ class WPMLMain
             'WPMLMain' => 'get_locale',
 
             'determine_locale' => determine_locale(),
+
+            'WPLANG' => get_option( 'WPLANG' ),
         ] );
             
         return get_locale();
