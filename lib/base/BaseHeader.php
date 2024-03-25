@@ -219,17 +219,17 @@ class BaseHeader
 
 		$languages_all = WPMLMain::get_all_languages();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'default_language' => $sitepress->get_setting( 'default_language' ),
+		// 	'default_language' => $sitepress->get_setting( 'default_language' ),
 
-			// 'icl_get_languages' => icl_get_languages(),
+		// 	// 'icl_get_languages' => icl_get_languages(),
 
-			// 'languages_all' => $languages_all,
+		// 	// 'languages_all' => $languages_all,
 
-			// 'get_settings' => $sitepress->get_settings(),
-		] );
+		// 	// 'get_settings' => $sitepress->get_settings(),
+		// ] );
 
 		if ( empty( $languages_all ) )
 		{
@@ -244,11 +244,11 @@ class BaseHeader
 
 		$code = WPMLMain::current_language();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-            'code' => $code,
-		] );
+        //     'code' => $code,
+		// ] );
 
 		$search[ 'current' ] = $languages_all[ $code ];
 
