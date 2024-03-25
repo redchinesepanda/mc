@@ -24,7 +24,7 @@ class ACFReview
     {
         $handler = new self();
 
-        add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
+        // add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
 
         add_filter( 'post_type_link', [ $handler, 'afillate_link_filter_locale' ], 10, 4 );
     }
