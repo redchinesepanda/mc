@@ -216,12 +216,6 @@ class BaseHeader
 	public static function search_languages()
 	{
 		global $sitepress;
-		
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
-
-			'get_settings' => $sitepress->get_settings(),
-		] );
 
 		$languages_all = WPMLMain::get_all_languages();
 
@@ -238,13 +232,15 @@ class BaseHeader
 
 		$code = WPMLMain::current_language();
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'languages_all' => $languages_all,
+			'languages_all' => $languages_all,
 
-        //     'code' => $code,
-		// ] );
+            'code' => $code,
+
+			'get_settings' => $sitepress->get_settings(),
+		] );
 
 		$search[ 'current' ] = $languages_all[ $code ];
 
