@@ -370,7 +370,7 @@ class BaseHeader
 			'data-name-alternate' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 		];
 
-		if ( !empty( $language[ 'language_code' ] )
+		if ( !empty( $language[ 'language_code' ] ) )
 		{
 			$data[ 'data-name-code' ] = strtoupper(  $language[ 'language_code' ] );
 		}
