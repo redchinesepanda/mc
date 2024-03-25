@@ -53,13 +53,19 @@
 	gap: 12px;
 }
 
+.page404 h1,
+.page404 p
+{
+	font-family: "Source Sans Pro";
+}
+
 .page404 .menu-avaible-404 .lang-item {
 	/* width: 170px; */
 	width: calc( 170px - ((12px * 4) / 5) );
 	display: flex;
 	align-items: center;
 	column-gap: 10px;
-	font-family: "source sans pro";
+	font-family: "Source Sans Pro";
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 650;
