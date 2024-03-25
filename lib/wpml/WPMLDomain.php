@@ -14,11 +14,11 @@ class WPMLDomain
 
 		// add_action( 'update_option', [ $handler,'prevent_update_option' ], 10, 3 );
 		
-		add_action( 'wpml_before_startup', [ $handler, 'filter_settings' ], 10, 3 );
+		// add_action( 'wpml_before_startup', [ $handler, 'filter_settings' ], 10, 3 );
 
 		// add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
 
-		add_filter( 'pre_option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_pre_option_filter'], 10, 3 );
+		// add_filter( 'pre_option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_pre_option_filter'], 10, 3 );
 	}
 
 	public static function wp_kama_pre_option_filter( $pre_option, $option, $default_value )
