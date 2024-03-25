@@ -162,8 +162,9 @@
 }
 
 .legal-bonus-about .bonus-about-action {
-	background-color: rgb(255, 255, 255);
-	border-radius: 20px;
+	background-color: var( --Primitives-purple-50 );
+	border: 2px solid var( --Base-base-09 ); 
+	border-radius: 32px;
 }
 
 .legal-bonus-about .about-action-get,
