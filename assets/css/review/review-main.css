@@ -127,9 +127,9 @@
 .tcb-post-content h2,
 .tcb-post-content h3,
 .tcb-post-content h4,
-.tcb-post-content h5,
-.tcb-post-content p,
-.tcb-post-content li
+.tcb-post-content h5
+/* .tcb-post-content p, */
+/* .tcb-post-content li */
 {
     font-family: "Source Sans Pro";
 } 
