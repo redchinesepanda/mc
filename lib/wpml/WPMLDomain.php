@@ -4,7 +4,7 @@ class WPMLDomain
 {
 	public static function register_functions()
 	{
-		$handler = new self();
+		// $handler = new self();
 
 		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 		
