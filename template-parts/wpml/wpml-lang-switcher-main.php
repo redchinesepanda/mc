@@ -1,19 +1,17 @@
 <?php
 
-LegalDebug::debug( [
-    $args,
-] );
+// LegalDebug::debug( [
+//     $args,
+// ] );
 
 ?>
 <div class="lang-switcher">
-    <?php if ( !empty( $args[ 'active' ] ) ) : ?>
-        <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
-            <div class="lang-title"><?php echo $args[ 'active' ][ 'title' ]; ?></div>
-            <?php if ( $args[ 'active' ][ 'suffix' ] ) : ?>
-                <a class="lang-title-suffix" href="<?php echo $args[ 'active' ][ 'href' ]; ?>"><?php echo $args[ 'active' ][ 'suffix' ]; ?></a>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
+    <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
+        <div class="lang-title"><?php echo $args[ 'active' ][ 'title' ]; ?></div>
+        <?php if ( $args[ 'active' ][ 'suffix' ] ) : ?>
+            <a class="lang-title-suffix" href="<?php echo $args[ 'active' ][ 'href' ]; ?>"><?php echo $args[ 'active' ][ 'suffix' ]; ?></a>
+        <?php endif; ?>
+    </div>
     <div id="lang-menu-1" class="menu-avaible">
         <?php foreach( $args[ 'languages' ] as $lang ) : ?>
             <a class='lang-avaible lang-item' href="<?php echo $lang[ 'href' ]; ?>" target="_blank">
