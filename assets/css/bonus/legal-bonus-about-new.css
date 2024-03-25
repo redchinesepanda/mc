@@ -165,7 +165,7 @@
 	background-color: var( --Primitives-purple-50 );
 	border: 2px solid var( --Base-base-09 ); 
 	border-radius: 32px;
-}
+} 
 
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
