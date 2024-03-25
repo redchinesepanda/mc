@@ -241,7 +241,7 @@ class OopsMain
 
             $href = get_post_permalink( $post->ID );
 
-            $href = ACFReview::format_afillate( $href, 0, '' );
+            // $href = ACFReview::format_afillate( $href, 0, '' );
 
             $args['items'][] = [
                 'src' => ( $src ? $src[ 'url' ] : LegalMain::LEGAL_URL . '/assets/img/oops/mc.png' ),
