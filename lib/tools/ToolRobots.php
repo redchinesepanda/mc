@@ -6,40 +6,7 @@ class ToolRobots
 	{
 		$handler = new self();
 
-		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ] );
-
-		// add_action( 'robots_txt', [ $handler, 'mc_robots_txt_append' ], 10, 2 );
-	}
-
-	public static function mc_robots_txt_append( $output )
-	{
-		LegalDebug::debug( [
-			'ToolRobots' => 'mc_robots_txt_append',
-
-			'$output' => $output,
-		] );
-
-		// $str = '
-		// Disallow: /cgi-bin             # Стандартная папка на хостинге.
-		// Disallow: /?                   # Все параметры запроса на главной.
-		// Disallow: *?s=                 # Поиск.
-		// Disallow: *&s=                 # Поиск.
-		// Disallow: /search              # Поиск.
-		// Disallow: /author/             # Архив автора.
-		// Disallow: */embed              # Все встраивания.
-		// Disallow: */page/              # Все виды пагинации.
-		// Disallow: */xmlrpc.php         # Файл WordPress API
-		// Disallow: *utm*=               # Ссылки с utm-метками
-		// Disallow: *openstat=           # Ссылки с метками openstat
-		// ';
-	
-		// $str = trim( $str );
-		// $str = preg_replace( '/^[\t ]+(?!#)/mU', '', $str );
-		// $output .= "$str\n";
-	
-		// return $output;
-		
-		return '';
+		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ], 10, 2 );
 	}
 
 	public static function check_not_restricted()
