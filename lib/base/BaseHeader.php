@@ -219,11 +219,13 @@ class BaseHeader
 
 		if ( empty( $languages_all ) )
 		{
-			return [
-				'current' => [],
+			// return [
+			// 	'current' => [],
 
-				'avaible' => [],
-			];
+			// 	'avaible' => [],
+			// ];
+
+			return [];
 		}
 
 		$code = WPMLMain::current_language();
@@ -429,6 +431,13 @@ class BaseHeader
 			$code = $languages[ 'current' ][ 'code' ];
 		}
 
+		$data = [];
+
+		if ( !empty( $languages[ 'current' ] ) )
+		{
+			$data = $languages[ 'current' ];
+		}
+
 		$item = [
 			'title' => '',
 
@@ -440,7 +449,9 @@ class BaseHeader
 			
 			'class' => 'menu-item-has-children legal-country legal-country-' . $code,
 
-			'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			
+			'data' => self::get_data_attr_language( $data ),
 			
 			// 'data' => self::get_data_attr_current( $languages ),
 		];
@@ -451,22 +462,26 @@ class BaseHeader
 		// 	'current' => $languages[ 'current' ],
 		// ] );
 
-		foreach ( $languages[ 'avaible' ] as $language ) {
-			$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
+		if ( !empty( $languages[ 'avaible' ] ) )
+		{
 
-			$prefix = self::get_title_prefix( $language );
-
-			$title = $prefix . ' ' . $label;
-
-			$item[ 'children' ][] = [
-				'title' => $title,
-
-				'href' => $language[ 'url' ],
-
-				'class' => 'legal-country legal-country-' . $language[ 'code' ],
-
-				'data' => '',
-			];
+			foreach ( $languages[ 'avaible' ] as $language ) {
+				$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
+	
+				$prefix = self::get_title_prefix( $language );
+	
+				$title = $prefix . ' ' . $label;
+	
+				$item[ 'children' ][] = [
+					'title' => $title,
+	
+					'href' => $language[ 'url' ],
+	
+					'class' => 'legal-country legal-country-' . $language[ 'code' ],
+	
+					'data' => '',
+				];
+			}
 		}
 
 		$title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
