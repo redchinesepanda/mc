@@ -159,7 +159,7 @@
 	background-color: var( --Base-base-02 );
 	border-bottom: 1px solid var( --Base-base-09 );
 	/* border-top: 1.6px solid #fff; */
-}
+} 
 
 .legal-bonus-about .bonus-about-action {
 	background-color: var( --Primitives-purple-50 );
