@@ -221,6 +221,7 @@
 .tcb-post-content ol:not( .menu__box ) > li::before {
     border: 2px solid rgb(89, 151, 227);
     border-radius: 50%;
+    box-sizing: border-box;
 }
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
