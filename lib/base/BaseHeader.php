@@ -222,6 +222,8 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
+			'default_language' => $sitepress->get_setting( 'default_language' ),
+
 			// 'languages_all' => $languages_all,
 
 			// 'get_settings' => $sitepress->get_settings(),
