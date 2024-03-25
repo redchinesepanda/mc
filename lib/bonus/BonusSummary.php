@@ -10,9 +10,29 @@ class BonusSummary
         ],
     ];
 
-	public static function register_style()
+	const CSS_NEW = [
+        'bonus-summary-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/bonus/legal-bonus-summary-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+/* 	public static function register_style()
     {
         BonusMain::register_style( self::CSS );
+    } */
+
+	public static function register_style()
+    {
+		if ( TemplateMain::check_code() )
+		{
+			BonusMain::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			BonusMain::register_style( self::CSS );
+		}
     }
 
 	public static function register()

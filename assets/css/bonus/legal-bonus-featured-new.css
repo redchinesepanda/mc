@@ -1,0 +1,12 @@
+/* Display */
+
+.legal-bonus-main .legal-bonus-featured {
+	display: flex;
+  	justify-content: center;
+}
+
+/* Position */
+
+.legal-bonus-main .legal-bonus-featured {
+	padding-bottom: 20px;
+}
