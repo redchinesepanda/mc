@@ -80,8 +80,11 @@
   	justify-content: center;
 }
 
+.legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .legal-bonus-button .about-action-get[ href='' ],
@@ -111,7 +114,8 @@
 
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	padding: 12px 25px 12px 52px;
+	/* padding: 12px 25px 12px 52px; */
+	padding: 10px 18px;
 }
 
 .legal-bonus-about-overlay1,
@@ -122,9 +126,9 @@
 	left: 0px;
 }
 
-.legal-bonus-button .about-action-get {
-	/* margin: 0px auto 30px auto; */
-}
+/* .legal-bonus-button .about-action-get {
+	margin: 0px auto 30px auto;
+} */
 
 .legal-bonus-button {
 	padding-bottom: 30px;
@@ -139,8 +143,14 @@
 	width: 100%;
 }
 
+.legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	width: fit-content;
+	/* width: fit-content; */
+	width: calc( 100% - (18px * 2) );
+}
+
+.legal-bonus-about .about-action-get {
+	min-height: calc( 56px - (10px * 2) );
 }
 
 /* Background */
@@ -152,8 +162,8 @@
 }
 
 .legal-bonus-about .bonus-about-action {
-	background-color: var( --Base-base-09 );
-	border-radius: 60px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 20px;
 }
 
 .legal-bonus-about .about-action-get,
@@ -164,6 +174,11 @@
 	background-repeat: no-repeat;
 	background-size: auto; */
 	border-radius: 60px;
+}
+
+.legal-bonus-about .about-action-get:hover,
+.legal-bonus-button .about-action-get:hover {
+	background-color: var(--Base-base-07);
 }
 
 .legal-bonus-about-overlay1,
@@ -203,8 +218,12 @@
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
 	font-family: var( --legal-font-primary );
-	font-style: normal;
-	color: var( --Base-base-01 ); 
+	font-style: normal; 
+} 
+
+.legal-bonus-about .about-data-title,
+.legal-bonus-about .about-data-description {
+	color: var( --Base-base-09 );
 }
 
 .legal-bonus-about .about-data-title {
@@ -226,16 +245,14 @@
 
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	/* color: rgb(255, 255, 255); */
-	/* font-family: "Source Sans Pro"; */
 	font-size: 14px;
-	/* font-style: normal; */
 	font-weight: 500;
-	/* letter-spacing: 1px; */
 	line-height: 20px;
 	text-decoration: none;
+	color: var( --Base-base-01 );
+	/* text-align: center; */
 }
 
-.legal-bonus-button {
+/* .legal-bonus-button {
 	text-align: center;
-}
+} */
