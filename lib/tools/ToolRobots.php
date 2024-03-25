@@ -42,50 +42,34 @@ class ToolRobots
 		return '';
 	}
 
+	public static function check_not_restricted()
+	{
+		return !ToolNotFound::check_domain();
+	}
+
 	public static function mc_robots_txt()
 	{
-		$sitemap = [
-			'',
+		$robots = self::ROBOTS_DISALLOW_ALL;
 
-			// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
-			
-			'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
-		];
+		$sitemap = [];
 
-		echo implode( "\n", array_merge( self::ROBOTS, $sitemap ) );
+		if ( self::check_not_restricted() )
+		{
+			$robots = self::ROBOTS;
+
+			$sitemap = [
+				'',
+	
+				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
+				
+				'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+			];
+		}
+
+		echo implode( "\n", array_merge( $robots, $sitemap ) );
 
 		die();
 	}
-
-	// User-agent: AhrefsSiteAudit
-	// Allow: /
-	// User-agent: AhrefsBot
-	// Allow: /
-
-	// User-agent: dotbot
-	// Disallow: /
-
-	// User-Agent: trendictionbot
-	// Disallow: /
-
-	// User-agent: SemrushBot
-	// Disallow: /
-
-	// User-agent: SemrushBot-SA
-	// Disallow: /
-
-	// User-agent: MJ12bot
-	// Disallow: /
-
-	// User-agent: *
-	// Disallow: /wp-admin/
-	// Disallow: /wp-json/
-	// Disallow: /football/
-	// Allow: /odds/en/football/
-	// Disallow: /*?swcfpc=1
-
-	// Allow: /wp-admin/admin-ajax.php
-	// Sitemap: https://match.center/wp-sitemap.xml
 
 	const ROBOTS = [
 		'User-agent: AhrefsSiteAudit',
@@ -149,6 +133,11 @@ class ToolRobots
 		'Allow: /wp-admin/admin-ajax.php',
 
 		'',
+	];
+	const ROBOTS_DISALLOW_ALL = [
+		'User-agent: *',
+
+		'Disallow: /',
 	];
 }
 
