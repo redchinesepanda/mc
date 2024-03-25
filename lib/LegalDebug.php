@@ -8,8 +8,10 @@ class LegalDebug
 
         $current_user = wp_get_current_user();
 
-        if( $current_user->exists() ){
-            if ( $current_user->user_login == 'redchinesepanda' ) {
+        if ( $current_user->exists() )
+        {
+            if ( $current_user->user_login == 'redchinesepanda' )
+            {
                 $permission = true;
             }
         }
