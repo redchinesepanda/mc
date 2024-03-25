@@ -10,3 +10,22 @@
 .legal-bonus-main .legal-bonus-featured {
 	padding-bottom: 20px;
 }
+
+/* Width and Height */
+
+.legal-bonus-main .bonus-featured-image-link {
+	height: 400px;
+  	overflow: hidden;
+}
+
+.legal-bonus-main .bonus-featured-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/* Background */
+
+.legal-bonus-main .bonus-featured-image-link {
+	border-radius: 10px;
+}
