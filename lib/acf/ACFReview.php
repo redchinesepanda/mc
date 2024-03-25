@@ -26,7 +26,7 @@ class ACFReview
 
         add_filter('acf/format_value/name=' . self::ABOUT[ 'afillate' ], [ $handler, 'format_afillate' ], 10, 3 );
 
-        add_filter( 'post_type_link', 'afillate_link_filter_locale', 10, 4 );
+        add_filter( 'post_type_link', [ $handler, 'afillate_link_filter_locale' ], 10, 4 );
     }
 
     public static function register()
@@ -75,7 +75,7 @@ class ACFReview
         'affiliate-links' => 'affiliate-links',
     ];
 
-    function afillate_link_filter_locale( $post_link, $post, $leavename, $sample )
+    public static function afillate_link_filter_locale( $post_link, $post, $leavename, $sample )
     {
         if ( $post->post_type == self::POST_TYPE[ 'affiliate-links' ] )
         {
@@ -85,7 +85,7 @@ class ACFReview
         return $post_link;
     }
 
-	function choices_post_type( $field )
+	public static function choices_post_type( $field )
     {
         $choices[ 'page' ] = 'Страница';
 
@@ -101,7 +101,7 @@ class ACFReview
         return $field;
     }
 
-	function choices_post_type_wiki( $field )
+	public static function choices_post_type_wiki( $field )
     {
         $choices[ 'post' ] = 'Пост';
 
@@ -117,7 +117,7 @@ class ACFReview
         return $field;
     }
 
-	function choices_image( $field )
+	public static function choices_image( $field )
     {
         $choices[ 'link-linkedin' ] = 'Linkedin';
 
