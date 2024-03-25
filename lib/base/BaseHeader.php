@@ -412,6 +412,13 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
+		$code = WPMLMain::current_language();
+
+		if ( !empty( $languages[ 'current' ][ 'code' ] ) )
+		{
+			$code = $languages[ 'current' ][ 'code' ];
+		}
+
 		$item = [
 			'title' => '',
 
@@ -419,7 +426,9 @@ class BaseHeader
 
 			'children' => [],
 
-			'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
+			// 'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
+			
+			'class' => 'menu-item-has-children legal-country legal-country-' . $code,
 
 			'data' => self::get_data_attr_language( $languages[ 'current' ] ),
 			
