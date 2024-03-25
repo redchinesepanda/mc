@@ -40,10 +40,10 @@ class NotFoundMain
 		}
     }
 
-	public static function check_not_notfound()
-    {
-        return !is_404(); 
-    }
+	// public static function check_not_notfound()
+    // {
+    //     return !is_404(); 
+    // }
 
 	public static function check()
     {
