@@ -224,7 +224,7 @@ class BaseHeader
 
 			// 'languages_all' => $languages_all,
 
-			'get_settings' => $sitepress->get_settings(),
+			// 'get_settings' => $sitepress->get_settings(),
 		] );
 
 		if ( empty( $languages_all ) )
