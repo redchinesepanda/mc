@@ -192,7 +192,7 @@ class LegalComponents
 		{
 			if ( $post->post_type == 'post' )
 			{
-				if ( $content = get_field( BonusContent::FIELD[ 'bonus-content' ], $id ) )
+				if ( $content = get_field( BonusContent::FIELD[ 'bonus-content' ], $post->ID ) )
 				{
 					return str_contains( $content, $class );
 				}
