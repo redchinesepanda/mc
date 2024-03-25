@@ -122,9 +122,9 @@
 	left: 0px;
 }
 
-.legal-bonus-button .about-action-get {
-	/* margin: 0px auto 30px auto; */
-}
+/* .legal-bonus-button .about-action-get {
+	margin: 0px auto 30px auto;
+} */
 
 .legal-bonus-button {
 	padding-bottom: 30px;
@@ -204,7 +204,7 @@
 .legal-bonus-button .about-action-get {
 	font-family: var( --legal-font-primary );
 	font-style: normal; 
-}
+} 
 
 .legal-bonus-about .about-data-title,
 .legal-bonus-about .about-data-description {
