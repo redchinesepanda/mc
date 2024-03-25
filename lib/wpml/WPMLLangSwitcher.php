@@ -89,7 +89,7 @@ class WPMLLangSwitcher
         {
             return [];
         }
-        
+
         $mapped['id'] = $args['id'];
 
         $mapped['title'] = $args['native_name'];
@@ -154,6 +154,8 @@ class WPMLLangSwitcher
 
 		// 	'languages' => $languages,
 		// ] );
+
+        $args = [];
 
         foreach ( $languages as $lang ) {
             $args['languages'][] = self::map( $lang );
