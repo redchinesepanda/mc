@@ -9,7 +9,7 @@ class ToolNotFound
     {
         $handler = new self();
 
-		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
 
@@ -227,11 +227,13 @@ class ToolNotFound
 
 	public static function set_not_found()
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
+		LegalDebug::debug( [
+			'function' => 'ToolNotFound::set_not_found',
 
-		// 	'check_not_found' => self::check_not_found(),
-		// ] );
+			'check_not_found' => self::check_not_found(),
+
+			'is_robots' => is_robots(),
+		] );
 
 		if ( self::check_not_found() )
 		{
