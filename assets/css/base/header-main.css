@@ -148,6 +148,12 @@
 		flex-grow: 1;
 	}
 
+	.legal-menu .menu-item
+	{
+		padding-left: 2px;
+		padding-right: 2px;
+	}
+
 	/* Background */
 
 	.legal-menu .menu-item:hover {
@@ -195,6 +201,7 @@
 .legal-menu .menu-item {
 	display: flex;
 	cursor: pointer;
+	column-gap: 8px;
 }
 
 .legal-menu .menu-item > .sub-menu {
@@ -247,8 +254,10 @@
 }
 
 .legal-menu .menu-item.legal-country > a {
+	padding-top: 10px;
+  	padding-bottom: 10px;
 	/* padding: 10px 10px 10px 43px; */
-	padding: 10px;
+	/* padding: 10px; */
 }
 
 .legal-menu .menu-item:not( .legal-country ) > a {
