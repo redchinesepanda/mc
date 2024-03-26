@@ -16,11 +16,11 @@ class WPMLHreflang
 
 	public static function legal_hreflang_domain( $hreflang_items )
 	{
-		// LegalDebug::debug( [
-		// 	'WPMLHreflang' => 'legal_hreflang_domain',
+		LegalDebug::debug( [
+			'WPMLHreflang' => 'legal_hreflang_domain',
 
-		// 	'hreflang_items' => $hreflang_items,
-		// ] );
+			'hreflang_items' => $hreflang_items,
+		] );
 
 		if ( ToolNotFound::check_domain_restricted() )
 		{
@@ -46,11 +46,11 @@ class WPMLHreflang
 	{
 		$parsed_url = parse_url( $href );
 
-		LegalDebug::debug( [
-			'WPMLHreflang' => 'get_language_from_url',
+		// LegalDebug::debug( [
+		// 	'WPMLHreflang' => 'get_language_from_url',
 
-			'parsed_url' => $parsed_url,
-		] );
+		// 	'parsed_url' => $parsed_url,
+		// ] );
 
 	}
 
