@@ -108,10 +108,12 @@ class ToolNotFound
 
 		$restricted = self::get_restricted();
 
-		if ( self::check_domain() )
+		// if ( self::check_domain() )
+		
+		if ( self::check_domain( $host ) )
 		{
 			// return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
-			
+
 			return array_shift( $restricted[ $host ] );
 		}
 
