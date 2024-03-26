@@ -53,6 +53,8 @@ class ToolRobots
 		LegalDebug::debug( [
 			'ToolRobots' =>'mc_robots_txt',
 
+			'get_host' => self::get_host(),
+
 			'check_not_restricted' => self::check_not_restricted(),
 
 			'robots' => $robots,
