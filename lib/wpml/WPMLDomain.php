@@ -64,6 +64,10 @@ class WPMLDomain
 				if ( array_key_exists( $language, $languages ) )
 				{
 					$languages[ $language ][ 'url' ] = str_replace( $current_host, $restricted_host, $languages[ $language ][ 'url' ] );
+
+					$replace_code = ToolNotFound::get_default_language( $restricted_host );
+
+					$languages[ $code ][ 'url' ] = str_replace( '/' . $replace_code . '/', '/', $languages[ $code ][ 'url' ] );
 				}
 			}
 		}
