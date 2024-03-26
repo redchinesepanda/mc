@@ -85,7 +85,7 @@ class WPMLDomain
 						$replace_host = ToolNotFound::get_restricted_language_host( $code );
 					}
 					
-					$languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
+					// $languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
 				}
 			}
 		}
