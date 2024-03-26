@@ -11,10 +11,10 @@ class WPMLHreflang
 		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
     }
 
-	public static function legal_hreflang_x_default( $hreflang_items )
+	public static function legal_hreflang_domain( $hreflang_items )
 	{
 		LegalDebug::debug( [
-			'WPMLHreflang' => 'legal_hreflang_x_default',
+			'WPMLHreflang' => 'legal_hreflang_domain',
 
 			'hreflang_items' => $hreflang_items,
 		] );
