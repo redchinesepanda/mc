@@ -87,13 +87,21 @@ class WPMLDomain
 				'restricted_languages' => $restricted_languages,
 			] );
 
-			// foreach( $restricted_languages as $language )
-			// {
-			// 	if ( array_key_exists( $language, $languages ) )
-			// 	{
-			// 		$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
-			// 	}
-			// }
+			foreach( $restricted_languages as $language )
+			{
+				$restricted_host = ToolNotFound::get_restricted_language_host( $language );
+
+				LegalDebug::debug( [
+					'WPMLDomain' => 'wpml_get_active_languages_filter',
+
+					'restricted_host' => $restricted_host,
+				] );
+
+				// if ( array_key_exists( $language, $languages ) )
+				// {
+				// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+				// }
+			}
 		}
 
 		return $languages;

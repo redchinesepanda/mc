@@ -66,8 +66,12 @@ class ToolNotFound
 		return self::RESTRICTED_DEBUG;
 	}
 
-	public static function get_restricted_languages_current()
-	{}
+	public static function get_restricted_language_host( $language )
+	{
+		$restricted = self::get_restricted();
+
+		return array_search( $language, $restricted );
+	}
 
 	public static function get_restricted_languages()
 	{
