@@ -43,6 +43,11 @@ class WPMLDomain
 
 		// return $ls_languages;
 
+		if ( empty( $languages) )
+		{
+			return $languages;
+		}
+
 		if ( ToolNotFound::check_domain_restricted() )
 		{
 			$current_host = $_SERVER[ 'HTTP_HOST' ];
@@ -68,10 +73,15 @@ class WPMLDomain
 		
 				// 	'language' => $language,
 				// ] );
-
-				if ( !in_array( $language[ 'code' ], $restricted_languages ) )
+				
+				if ( !empty( $language[ 'code' ] ) )
 				{
-					$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+					$code = $language[ 'code' ];
+
+					if ( !in_array( $code, $restricted_languages ) )
+					{
+						$languages[ $code ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $code ][ 'url' ] );
+					}
 				}
 			}
 		}
