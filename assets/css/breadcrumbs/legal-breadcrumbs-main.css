@@ -31,7 +31,9 @@
 /* Breadcrumbs Position */
 
 .legal-breadcrumbs {
-    padding: 5px 0px;
+    /* padding: 5px 0px; */
+    padding-top: calc((40px - 16px) / 2);
+    padding-bottom: calc((40px - 16px) / 2);
     margin: 0px auto;
 }
 
