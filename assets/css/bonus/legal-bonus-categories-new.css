@@ -29,6 +29,18 @@
 	padding-bottom: 28px;
 }
 
+.legal-bonus-categories .swiper.legal-active-end::before {
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+} 
+
+.legal-bonus-categories .swiper:not( .legal-active-end ):after {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
 .legal-bonus-categories .bonus-categories-item {
 	/* padding: 5px 10px; */
 	margin-right: 8px;
