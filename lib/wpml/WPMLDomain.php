@@ -97,10 +97,10 @@ class WPMLDomain
 					'restricted_host' => $restricted_host,
 				] );
 
-				// if ( array_key_exists( $language, $languages ) )
-				// {
-				// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
-				// }
+				if ( array_key_exists( $language, $languages ) )
+				{
+					$languages[ $language ][ 'url' ] = str_replace( $current_host, $restricted_host, $languages[ $language ][ 'url' ] );
+				}
 			}
 		}
 
