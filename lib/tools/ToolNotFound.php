@@ -97,18 +97,22 @@ class ToolNotFound
 		return call_user_func_array( 'array_merge', $restricted );
 	}
 
-	public static function get_default_language( $host = '' )
+	// public static function get_default_language( $host = '' )
+	
+	public static function get_default_language()
 	{
-		if ( empty( $host ) )
-		{
-			$host = $_SERVER[ 'HTTP_HOST' ];
-		}
+		// if ( empty( $host ) )
+		// {
+		// 	$host = $_SERVER[ 'HTTP_HOST' ];
+		// }
 
 		$restricted = self::get_restricted();
 
 		if ( self::check_domain() )
 		{
-			return array_shift( $restricted[ $host ] );
+			// return array_shift( $restricted[ $host ] );
+			
+			return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
 		}
 
 		return 'en';
