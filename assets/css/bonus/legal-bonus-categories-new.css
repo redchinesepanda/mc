@@ -51,6 +51,10 @@
 	text-decoration: none;
 }
 
-.legal-bonus-categories .bonus-categories-item:hover {
+.legal-bonus-categories span.bonus-categories-item {
+	cursor: default;
+}
+
+.legal-bonus-categories .bonus-categories-item:not( span.bonus-categories-item ):hover {
 	text-shadow: 0 0 0.7px var(--Base-base-09);
 }
