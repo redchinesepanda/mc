@@ -19,7 +19,9 @@ class WPMLDomain
 			return $languages;
 		}
 		
-		$current_host = $_SERVER[ 'HTTP_HOST' ];
+		// $current_host = $_SERVER[ 'HTTP_HOST' ];
+		
+		$current_host = ToolRobots::get_host();
 
 		$main_host = LegalMain::get_main_host();
 

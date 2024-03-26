@@ -4,22 +4,54 @@ class WPMLHreflang
 {
 	public static function register()
     {
-        $handler = new self();
+		if ( ToolNotFound::check_domain_restricted() )
+		{
+			$handler = new self();
 
-		add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
+			add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
 
-		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
+			// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
+		}
     }
 
 	public static function legal_hreflang_domain( $hreflang_items )
 	{
-		LegalDebug::debug( [
-			'WPMLHreflang' => 'legal_hreflang_domain',
+		// LegalDebug::debug( [
+		// 	'WPMLHreflang' => 'legal_hreflang_domain',
 
-			'hreflang_items' => $hreflang_items,
-		] );
+		// 	'hreflang_items' => $hreflang_items,
+		// ] );
+
+		if ( ToolNotFound::check_domain_restricted() )
+		{
+			$current_host = ToolRobots::get_host();
+
+			$main_host = LegalMain::get_main_host();
+
+			foreach ( $hreflang_items as $hreflang => $url )
+			{
+				if ( $hreflang != 'x-default' )
+				{
+					get_language_from_url( $url );
+
+					// $hreflang_items[ $hreflang ] = str_replace( $current_host, $main_host, $url );
+				}
+			}
+		}
 
 		return $hreflang_items;
+	}
+
+	public static function get_language_from_url( $href )
+	{
+		$parsed_url =  parse_url( $href );
+
+		LegalDebug::debug( [
+			'WPMLHreflang' => 'get_language_from_url',
+
+			'parsed_url' => $parsed_url[ PHP_URL_PATH ],
+		] );
+
 	}
 
 	public static function legal_hreflang_x_default( $hreflang_items )
