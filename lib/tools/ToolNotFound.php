@@ -61,6 +61,10 @@ class ToolNotFound
 
 		// 	'ca-fr',
 		// ],
+
+		'es.match.center' => [
+			'es'
+		],
 	];
 
 	public static function get_restricted()
@@ -170,7 +174,7 @@ class ToolNotFound
 			'ToolNotFound' => 'check_domain',
 
 			'host' => $host,
-			
+
             'restricted' => $restricted,
         ] );
 
