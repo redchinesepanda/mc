@@ -39,16 +39,6 @@ class WPMLDomain
 
 					$replace_code = ToolNotFound::get_default_language( $replace_host );
 
-					// LegalDebug::debug( [
-					// 	'WPMLDomain' => 'wpml_get_active_languages_filter',
-
-					// 	'replace_code' => $replace_code,
-
-                    //     'replace_host' => $replace_host,
-
-                    //     'code' => $code,
-                    // ] );
-
 					$languages[ $code ][ 'url' ] = str_replace( '/' . $replace_code . '/', '/', $languages[ $code ][ 'url' ] );
 				}
 			}
