@@ -80,7 +80,7 @@ class WPMLDomain
 
 					if ( !in_array( $code, $restricted_languages ) )
 					{
-						$languages[ $code ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $code ][ 'url' ] );
+						// $languages[ $code ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $code ][ 'url' ] );
 					}
 				}
 			}
