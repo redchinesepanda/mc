@@ -12,7 +12,7 @@ require_once( 'WPMLChooseYourCountry.php' );
 
 require_once( 'WPMLDomain.php' );
 
-require_once( 'WPMLUrl.php' );
+// require_once( 'WPMLUrl.php' );
 
 class WPMLMain
 {
@@ -262,7 +262,7 @@ class WPMLMain
 
         WPMLChooseYourCountry::register();
 
-        WPMLUrl::register();
+        // WPMLUrl::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
