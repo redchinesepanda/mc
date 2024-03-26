@@ -170,13 +170,13 @@ class ToolNotFound
 
 		$restricted = self::get_restricted();
 
-		LegalDebug::debug( [
-			'ToolNotFound' => 'check_domain',
+		// LegalDebug::debug( [
+		// 	'ToolNotFound' => 'check_domain',
 
-			'host' => $host,
+		// 	'host' => $host,
 
-            'restricted' => $restricted,
-        ] );
+        //     'restricted' => $restricted,
+        // ] );
 
 		// if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
 		
