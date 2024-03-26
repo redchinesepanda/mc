@@ -63,10 +63,16 @@ class WPMLDomain
 
 			foreach( $languages as $language )
 			{
-				if ( !in_array( $language, $restricted_languages ) )
-				{
-					$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
-				}
+				LegalDebug::debug( [
+					'WPMLDomain' => 'wpml_get_active_languages_filter',
+		
+					'language' => $language,
+				] );
+
+				// if ( !in_array( $language, $restricted_languages ) )
+				// {
+				// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+				// }
 			}
 		}
 		else
