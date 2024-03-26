@@ -44,12 +44,12 @@ class WPMLHreflang
 
 	public static function get_language_from_url( $href )
 	{
-		$parsed_url =  parse_url( $href );
+		$parsed_url = parse_url( $href );
 
 		LegalDebug::debug( [
 			'WPMLHreflang' => 'get_language_from_url',
 
-			'parsed_url' => $parsed_url[ PHP_URL_PATH ],
+			'parsed_url' => $parsed_url,
 		] );
 
 	}
