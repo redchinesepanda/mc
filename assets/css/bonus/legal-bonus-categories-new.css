@@ -53,6 +53,7 @@
 
 .legal-bonus-categories span.bonus-categories-item {
 	cursor: default;
+	font-weight: 600;
 }
 
 .legal-bonus-categories .bonus-categories-item:not( span.bonus-categories-item ):hover {
