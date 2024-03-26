@@ -94,15 +94,15 @@ class WPMLDomain
 						$replace_host = $restricted_host;
 					}
 
-					LegalDebug::debug( [
-						'WPMLDomain' => 'wpml_get_active_languages_filter',
+					// LegalDebug::debug( [
+					// 	'WPMLDomain' => 'wpml_get_active_languages_filter',
 
-						'code' => $code,
+					// 	'code' => $code,
 			
-						'replace_host' => $replace_host,
-					] );
+					// 	'replace_host' => $replace_host,
+					// ] );
 					
-					// $languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
+					$languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
 				}
 			}
 		}
