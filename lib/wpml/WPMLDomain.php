@@ -96,7 +96,7 @@ class WPMLDomain
 			// }
 		}
 
-		return $empty_value;
+		return $languages;
 	}
 
 	public static function wp_kama_pre_option_filter( $pre_option, $option, $default_value )
