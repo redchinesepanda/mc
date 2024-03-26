@@ -87,6 +87,8 @@ class WPMLDomain
 
 					LegalDebug::debug( [
 						'WPMLDomain' => 'wpml_get_active_languages_filter',
+
+						'code' => $code,
 			
 						'replace_host' => $replace_host,
 					] );
