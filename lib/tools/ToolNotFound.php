@@ -70,7 +70,19 @@ class ToolNotFound
 	{
 		$restricted = self::get_restricted();
 
-		return array_search( $language, $restricted );
+		$result = false;
+
+		foreach ( $restricted as $host => $languages )
+		{
+			if ( in_array( $language, $languages ) )
+            {
+                $result = $host;
+
+				break;
+            }
+		}
+
+		return $result;
 	}
 
 	public static function get_restricted_languages()
