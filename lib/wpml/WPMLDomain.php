@@ -4,7 +4,9 @@ class WPMLDomain
 {
 	public static function register_functions()
 	{
-		// $handler = new self();
+		$handler = new self();
+
+		add_filter( 'wpml_active_languages', [ $handler, 'wpml_get_active_languages_filter' ], 10, 2 );
 
 		// add_action( 'update_option_icl_sitepress_settings', [ $handler,'prevent_update_option' ], 10, 3 );
 		
@@ -19,6 +21,23 @@ class WPMLDomain
 		// add_filter( 'option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_option_filter' ], 10, 2 );
 
 		// add_filter( 'pre_option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_pre_option_filter'], 10, 3 );
+	}
+
+	public static function wpml_get_active_languages_filter( $empty_value, $args = '' )
+	{
+		LegalDebug::debug( [
+			'WPMLDomain' => 'wpml_get_active_languages_filter',
+
+			'empty_value' => $empty_value,
+
+			'args' => $args,
+		] );
+		
+		global $sitepress;
+	
+		$args = wp_parse_args( $args );
+
+		return $sitepress->get_ls_languages( $args );
 	}
 
 	public static function wp_kama_pre_option_filter( $pre_option, $option, $default_value )
