@@ -84,6 +84,12 @@ class WPMLDomain
 					{
 						$replace_host = ToolNotFound::get_restricted_language_host( $code );
 					}
+
+					LegalDebug::debug( [
+						'WPMLDomain' => 'wpml_get_active_languages_filter',
+			
+						'replace_host' => $replace_host,
+					] );
 					
 					// $languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
 				}
