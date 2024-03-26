@@ -50,6 +50,16 @@ class ToolRobots
 			];
 		}
 
+		LegalDebug::debug( [
+			'ToolRobots' =>'mc_robots_txt',
+
+			'check_not_restricted' => self::check_not_restricted(),
+
+			'robots' => $robots,
+
+			'sitemap' => $sitemap,
+		] );
+
 		echo implode( "\n", array_merge( $robots, $sitemap ) );
 
 		die();
