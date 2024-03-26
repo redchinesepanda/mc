@@ -25,19 +25,23 @@ class WPMLDomain
 
 	public static function wpml_get_active_languages_filter( $empty_value, $args = '' )
 	{
+		global $sitepress;
+	
+		$args = wp_parse_args( $args );
+
+		$ls_languages = $sitepress->get_ls_languages( $args );
+
 		LegalDebug::debug( [
 			'WPMLDomain' => 'wpml_get_active_languages_filter',
 
 			'empty_value' => $empty_value,
 
 			'args' => $args,
-		] );
-		
-		global $sitepress;
-	
-		$args = wp_parse_args( $args );
 
-		return $sitepress->get_ls_languages( $args );
+			'ls_languages' => $ls_languages,
+		] );
+
+		return $ls_languages;
 	}
 
 	public static function wp_kama_pre_option_filter( $pre_option, $option, $default_value )
