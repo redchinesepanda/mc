@@ -166,6 +166,14 @@ class ToolNotFound
 
 		$restricted = self::get_restricted();
 
+		LegalDebug::debug( [
+			'ToolNotFound' => 'check_domain',
+
+			'host' => $host,
+			
+            'restricted' => $restricted,
+        ] );
+
 		// if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
 		
 		if ( array_key_exists( $host, $restricted ) )
