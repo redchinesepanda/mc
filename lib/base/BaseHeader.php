@@ -434,6 +434,23 @@ class BaseHeader
 	// 	);
 	// }
 
+	public static function get_url()
+	{
+		return ToolRobots::get_scheme(). '://'. LegalMain::get_main_host();
+	}
+
+	public static function get_href()
+	{
+		$href = '/choose-your-country/';
+
+		if ( ToolNotFound::check_domain_restricted() )
+		{
+			$href = self::get_url() . $href;
+		}
+
+		return $href;
+	}
+
 	public static function parse_languages( $languages )
 	{
 		$code = WPMLMain::current_language();
@@ -503,6 +520,8 @@ class BaseHeader
 			$title = __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN );
 		}
 
+		$href = self::get_href();
+
 		$item[ 'children' ][] = [
 			// 'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
 			
@@ -510,7 +529,9 @@ class BaseHeader
 
 			'title' => $title,
 
-			'href' => '/choose-your-country/',
+			// 'href' => '/choose-your-country/',
+			
+			'href' => $href,
 
 			'class' => 'legal-country legal-country-all',
 

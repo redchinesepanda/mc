@@ -9,6 +9,21 @@ class ToolRobots
 		add_action( 'do_robotstxt', [ $handler, 'mc_robots_txt' ], 10, 2 );
 	}
 
+	public static function get_scheme()
+	{
+		return $_SERVER[ 'REQUEST_SCHEME' ];
+	}
+
+	public static function get_host()
+	{
+		return $_SERVER[ 'HTTP_HOST' ];
+	}
+
+	public static function get_url()
+	{
+		return self::get_scheme(). '://'. self::get_host();
+	}
+
 	public static function check_not_restricted()
 	{
 		return !ToolNotFound::check_domain();
@@ -29,7 +44,9 @@ class ToolRobots
 	
 				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 				
-				'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+				
+				'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
 			];
 		}
 

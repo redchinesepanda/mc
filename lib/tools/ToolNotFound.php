@@ -22,6 +22,11 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	public static function get_host()
+	{
+		return $_SERVER[ 'HTTP_HOST' ];
+	}
+
 	// const MAIN_DEBUG = [
 	// 	'old.match.center' => [
 	// 		'en'
@@ -91,7 +96,9 @@ class ToolNotFound
 
 		if ( self::check_domain() )
 		{
-			return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
+			// return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
+			
+			return $restricted[ self::get_host() ];
 		}
 
 		return call_user_func_array( 'array_merge', $restricted );
@@ -103,7 +110,9 @@ class ToolNotFound
 	{
 		if ( empty( $host ) )
 		{
-			$host = $_SERVER[ 'HTTP_HOST' ];
+			// $host = $_SERVER[ 'HTTP_HOST' ];
+			
+			$host = self::get_host();
 		}
 
 		$restricted = self::get_restricted();
@@ -148,7 +157,9 @@ class ToolNotFound
 	{
 		if ( empty( $host ) )
 		{
-            $host = $_SERVER[ 'HTTP_HOST' ];
+            // $host = $_SERVER[ 'HTTP_HOST' ];
+            
+			$host = self::get_host();
         }
 
 		$restricted = self::get_restricted();
