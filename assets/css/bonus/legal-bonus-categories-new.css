@@ -42,7 +42,6 @@
 /* Typography */
 
 .legal-bonus-categories .bonus-categories-item {
-	/* font-family: "Source Sans Pro"; */
 	font-family: var( --legal-font-primary );
 	font-style: normal;
 	font-size: 16px;
@@ -50,4 +49,8 @@
 	line-height: 22px;
 	color: var( --Base-base-09 );
 	text-decoration: none;
+}
+
+.legal-bonus-categories .bonus-categories-item:hover {
+	text-shadow: 0 0 0.7px var(--Base-base-09);
 }
