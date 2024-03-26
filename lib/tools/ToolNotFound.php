@@ -96,23 +96,23 @@ class ToolNotFound
 
 		return call_user_func_array( 'array_merge', $restricted );
 	}
-
-	// public static function get_default_language( $host = '' )
 	
-	public static function get_default_language()
+	// public static function get_default_language()
+
+	public static function get_default_language( $host = '' )
 	{
-		// if ( empty( $host ) )
-		// {
-		// 	$host = $_SERVER[ 'HTTP_HOST' ];
-		// }
+		if ( empty( $host ) )
+		{
+			$host = $_SERVER[ 'HTTP_HOST' ];
+		}
 
 		$restricted = self::get_restricted();
 
 		if ( self::check_domain() )
 		{
-			// return array_shift( $restricted[ $host ] );
+			// return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
 			
-			return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
+			return array_shift( $restricted[ $host ] );
 		}
 
 		return 'en';
@@ -140,11 +140,20 @@ class ToolNotFound
 		return self::check_domain();
 	}
 
-	public static function check_domain()
+	// public static function check_domain()
+	
+	public static function check_domain( $host = '' )
 	{
+		if ( empty( $host ) )
+		{
+            $host = $_SERVER[ 'HTTP_HOST' ];
+        }
+
 		$restricted = self::get_restricted();
 
-		if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
+		// if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
+		
+		if ( array_key_exists( $host, $restricted ) )
 		{
 			return true;
 		}
