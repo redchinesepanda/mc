@@ -32,7 +32,7 @@ class WPMLHreflang
 			{
 				if ( $hreflang != 'x-default' )
 				{
-					get_language_from_url( $url );
+					self::get_language_from_url( $url );
 
 					// $hreflang_items[ $hreflang ] = str_replace( $current_host, $main_host, $url );
 				}
