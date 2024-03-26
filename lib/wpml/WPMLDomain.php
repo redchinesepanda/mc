@@ -54,7 +54,9 @@ class WPMLDomain
 
 			$main_host = LegalMain::get_main_host();
 
-			$restricted_languages = ToolNotFound::get_restricted_languages();
+			// $restricted_languages = ToolNotFound::get_restricted_languages();
+
+			$restricted = ToolNotFound::get_restricted();
 
 			LegalDebug::debug( [
 				'WPMLDomain' => 'wpml_get_active_languages_filter',
@@ -63,7 +65,9 @@ class WPMLDomain
 
 				'main_host' => $main_host,
 
-				'restricted_languages' => $restricted_languages,
+				// 'restricted_languages' => $restricted_languages,
+
+				'restricted' => $restricted,
 			] );
 
 			foreach( $languages as $language )
@@ -80,9 +84,14 @@ class WPMLDomain
 
 					$replace_host = $main_host;
 
-					if ( in_array( $code, $restricted_languages ) )
+					// if ( in_array( $code, $restricted_languages ) )
+					// {
+					// 	$replace_host = ToolNotFound::get_restricted_language_host( $code );
+					// }
+					
+					if ( $restricted_host = ToolNotFound::get_restricted_language_host( $code ) )
 					{
-						$replace_host = ToolNotFound::get_restricted_language_host( $code );
+						$replace_host = $restricted_host;
 					}
 
 					LegalDebug::debug( [
