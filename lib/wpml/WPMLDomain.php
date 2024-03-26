@@ -47,60 +47,25 @@ class WPMLDomain
 		{
 			return $languages;
 		}
+		
+		$current_host = $_SERVER[ 'HTTP_HOST' ];
+
+		$main_host = LegalMain::get_main_host();
 
 		if ( ToolNotFound::check_domain_restricted() )
 		{
-			$current_host = $_SERVER[ 'HTTP_HOST' ];
-
-			$main_host = LegalMain::get_main_host();
-
-			// $restricted_languages = ToolNotFound::get_restricted_languages();
-
-			$restricted = ToolNotFound::get_restricted();
-
-			LegalDebug::debug( [
-				'WPMLDomain' => 'wpml_get_active_languages_filter',
-	
-				'current_host' => $current_host,
-
-				'main_host' => $main_host,
-
-				// 'restricted_languages' => $restricted_languages,
-
-				'restricted' => $restricted,
-			] );
-
 			foreach( $languages as $language )
 			{
-				// LegalDebug::debug( [
-				// 	'WPMLDomain' => 'wpml_get_active_languages_filter',
-		
-				// 	'language' => $language,
-				// ] );
-				
 				if ( !empty( $language[ 'code' ] ) )
 				{
 					$code = $language[ 'code' ];
 
 					$replace_host = $main_host;
-
-					// if ( in_array( $code, $restricted_languages ) )
-					// {
-					// 	$replace_host = ToolNotFound::get_restricted_language_host( $code );
-					// }
 					
 					if ( $restricted_host = ToolNotFound::get_restricted_language_host( $code ) )
 					{
 						$replace_host = $restricted_host;
 					}
-
-					// LegalDebug::debug( [
-					// 	'WPMLDomain' => 'wpml_get_active_languages_filter',
-
-					// 	'code' => $code,
-			
-					// 	'replace_host' => $replace_host,
-					// ] );
 					
 					$languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
 				}
@@ -108,31 +73,11 @@ class WPMLDomain
 		}
 		else
 		{
-			$current_host = $_SERVER[ 'HTTP_HOST' ];
-
-			$main_host = LegalMain::get_main_host();
-
 			$restricted_languages = ToolNotFound::get_restricted_languages();
-
-			LegalDebug::debug( [
-				'WPMLDomain' => 'wpml_get_active_languages_filter',
-	
-				'current_host' => $current_host,
-
-				'main_host' => $main_host,
-
-				'restricted_languages' => $restricted_languages,
-			] );
 
 			foreach( $restricted_languages as $language )
 			{
 				$restricted_host = ToolNotFound::get_restricted_language_host( $language );
-
-				LegalDebug::debug( [
-					'WPMLDomain' => 'wpml_get_active_languages_filter',
-
-					'restricted_host' => $restricted_host,
-				] );
 
 				if ( array_key_exists( $language, $languages ) )
 				{
