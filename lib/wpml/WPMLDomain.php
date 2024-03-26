@@ -36,6 +36,10 @@ class WPMLDomain
 					}
 					
 					$languages[ $code ][ 'url' ] = str_replace( $current_host, $replace_host, $languages[ $code ][ 'url' ] );
+
+					$replace_code = ToolNotFound::get_default_language( $replace_host );
+
+					$languages[ $code ][ 'url' ] = str_replace( '/' . $replace_code . '/', '/', $languages[ $code ][ 'url' ] );
 				}
 			}
 		}
