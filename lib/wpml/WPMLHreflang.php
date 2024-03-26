@@ -65,7 +65,7 @@ class WPMLHreflang
 
 		if ( !empty( $matches ) )
 		{
-			return trim( array_shift( $matches ), '/';
+			return trim( array_shift( $matches ), '/' );
 		}
 
 		return '';
