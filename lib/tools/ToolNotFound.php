@@ -24,7 +24,9 @@ class ToolNotFound
 
 	public static function get_host()
 	{
-		return $_SERVER[ 'HTTP_HOST' ];
+		// return $_SERVER[ 'HTTP_HOST' ];
+		
+		return ToolRobots::get_host();
 	}
 
 	// const MAIN_DEBUG = [
