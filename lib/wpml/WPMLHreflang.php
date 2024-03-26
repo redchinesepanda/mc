@@ -32,9 +32,16 @@ class WPMLHreflang
 			{
 				if ( $hreflang != 'x-default' )
 				{
-					self::get_language_from_url( $url );
+					$code = self::get_language_from_url( $url );
 
-					// $hreflang_items[ $hreflang ] = str_replace( $current_host, $main_host, $url );
+					$replace_host = $main_host;
+
+					if ( $restricted_host = ToolNotFound::get_restricted_language_host( $code ) )
+					{
+						$replace_host = $restricted_host;
+					}
+
+					$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
 				}
 			}
 		}
@@ -52,6 +59,16 @@ class WPMLHreflang
 		// 	'parsed_url' => $parsed_url,
 		// ] );
 
+		$matches = [];
+
+		preg_match('/(\/[a-z]{2}(-[a-z]{2})?\/)/', $href, $matches);
+
+		if ( !empty( $matches ) )
+		{
+			return trim( array_shift( $matches ), '/';
+		}
+
+		return '';
 	}
 
 	public static function legal_hreflang_x_default( $hreflang_items )
