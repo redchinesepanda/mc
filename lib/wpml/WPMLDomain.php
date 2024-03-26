@@ -63,16 +63,16 @@ class WPMLDomain
 
 			foreach( $languages as $language )
 			{
-				LegalDebug::debug( [
-					'WPMLDomain' => 'wpml_get_active_languages_filter',
+				// LegalDebug::debug( [
+				// 	'WPMLDomain' => 'wpml_get_active_languages_filter',
 		
-					'language' => $language,
-				] );
+				// 	'language' => $language,
+				// ] );
 
-				// if ( !in_array( $language, $restricted_languages ) )
-				// {
-				// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
-				// }
+				if ( !in_array( $language[ 'code' ], $restricted_languages ) )
+				{
+					$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+				}
 			}
 		}
 		else
