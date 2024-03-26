@@ -227,6 +227,18 @@ class LegalMain
 
 		return false;
 	}
+
+	public static function get_main_host()
+	{
+		$host = self::HOST_DEBUG;
+
+		if ( self::check_host_production() )
+		{
+			$host = self::HOST_PRODUCTION;
+		}
+
+		return array_shift( $host );
+	}
 }
 
 ?>

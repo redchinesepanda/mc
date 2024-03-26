@@ -23,7 +23,7 @@ class WPMLDomain
 		// add_filter( 'pre_option_' . self::OPTIONS[ 'icl-sitepress-settings' ], [ $handler, 'wp_kama_pre_option_filter'], 10, 3 );
 	}
 
-	public static function wpml_get_active_languages_filter( $empty_value, $args = '' )
+	public static function wpml_get_active_languages_filter( $languages, $args = '' )
 	{
 		// global $sitepress;
 	
@@ -34,14 +34,67 @@ class WPMLDomain
 		LegalDebug::debug( [
 			'WPMLDomain' => 'wpml_get_active_languages_filter',
 
-			'empty_value' => $empty_value,
+			// 'languages' => $languages,
 
-			'args' => $args,
+			// 'args' => $args,
 
 			// 'ls_languages' => $ls_languages,
 		] );
 
 		// return $ls_languages;
+
+		if ( ToolNotFound::check_domain_restricted() )
+		{
+			$current_host = $_SERVER[ 'HTTP_HOST' ];
+
+			$main_host = LegalMain::get_main_host();
+
+			$restricted_languages = ToolNotFound::get_restricted_languages();
+
+			LegalDebug::debug( [
+				'WPMLDomain' => 'wpml_get_active_languages_filter',
+	
+				'current_host' => $current_host,
+
+				'main_host' => $main_host,
+
+				'restricted_languages' => $restricted_languages,
+			] );
+
+			// foreach( $languages as $language )
+			// {
+			// 	if ( !array_key_exists( $language, $restricted_languages ) )
+			// 	{
+			// 		$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+			// 	}
+			// }
+		}
+		else
+		{
+			$current_host = $_SERVER[ 'HTTP_HOST' ];
+
+			$main_host = LegalMain::get_main_host();
+
+			$restricted_languages = ToolNotFound::get_restricted_languages();
+
+			LegalDebug::debug( [
+				'WPMLDomain' => 'wpml_get_active_languages_filter',
+	
+				'current_host' => $current_host,
+
+				'main_host' => $main_host,
+
+				'restricted_languages' => $restricted_languages,
+			] );
+
+			// foreach( $restricted_languages as $language )
+			// {
+			// 	if ( array_key_exists( $language, $languages ) )
+			// 	{
+			// 		$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
+			// 	}
+			// }
+		}
 
 		return $empty_value;
 	}

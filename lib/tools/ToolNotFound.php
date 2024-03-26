@@ -22,6 +22,18 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	// const MAIN_DEBUG = [
+	// 	'old.match.center' => [
+	// 		'en'
+	// 	],
+	// ];
+
+	// const MAIN_PRODUCTION = [
+	// 	'match.center' => [
+	// 		'en'
+	// 	],
+	// ];
+
 	const RESTRICTED_PRODUCTION = [
 		'es.match.center' => [
 			'es'
@@ -97,6 +109,11 @@ class ToolNotFound
 
 	// 	return false;
 	// }
+
+	public static function check_domain_restricted()
+	{
+		return self::check_domain();
+	}
 
 	public static function check_domain()
 	{
