@@ -4,9 +4,12 @@ class WPMLDomain
 {
 	public static function register_functions()
 	{
-		$handler = new self();
-
-		add_filter( 'wpml_active_languages', [ $handler, 'wpml_get_active_languages_filter' ], 10, 2 );
+		if ( ToolNotFound::check_domain_restricted() )
+		{
+			$handler = new self();
+	
+			add_filter( 'wpml_active_languages', [ $handler, 'wpml_get_active_languages_filter' ], 10, 2 );
+		}
 	}
 
 	public static function wpml_get_active_languages_filter( $languages, $args = '' )
