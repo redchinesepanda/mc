@@ -106,7 +106,7 @@
     height: 36px;
 }
 
-.review-anchors .swiper:not( .legal-active-end ):after {
+.review-anchors .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 36px;
 }

@@ -18,7 +18,7 @@
 /* Width and Height */
 
 .legal-bonus-categories .swiper.legal-active-end::before,
-.legal-bonus-categories .swiper:not( .legal-active-end ):after {
+.legal-bonus-categories .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 36px;
 }
