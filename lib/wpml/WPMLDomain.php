@@ -63,7 +63,7 @@ class WPMLDomain
 
 			foreach( $languages as $language )
 			{
-				if ( !array_key_exists( $language, $restricted_languages ) )
+				if ( !in_array( $language, $restricted_languages ) )
 				{
 					$languages[ $language ][ 'url' ] = str_replace( $current_host, $main_host, $languages[ $language ][ 'url' ] );
 				}
