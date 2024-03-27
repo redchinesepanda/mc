@@ -34,6 +34,18 @@ class WPMLHreflang
 			{
 				$code = self::get_language_from_url( $url );
 
+				LegalDebug::debug( [
+					'WPMLHreflang' => 'modify_url_main',
+
+					'hreflang' => $hreflang,
+
+					'url' => $url,
+
+					'code' => $code,
+
+					'language' => $language,
+				] );
+
 				if ( $code == $language )
 				{
 					$hreflang_exists = false;
