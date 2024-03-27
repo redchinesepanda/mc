@@ -159,7 +159,7 @@ class AdminDequeue
 	{
 		global $pagenow;
 
-		return $page === $pagenow
+		return $page === $pagenow;
 	}
 
 	public static function check_affiliate_link()
