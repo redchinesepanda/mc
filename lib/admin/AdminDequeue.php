@@ -150,6 +150,8 @@ class AdminDequeue
 		self::dequeue_notion();
 
 		self::dequeue_wpml();
+
+		self::dequeue_acf();
 	}
 
 	public static function dequeue_affiliate_links()
