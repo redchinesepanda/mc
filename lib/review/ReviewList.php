@@ -85,7 +85,7 @@ class ReviewList
 
             'check_contains_list' => self::check_contains_list(),
 
-            'check_new' => TemplateMain::check_new(),
+            '!check_new' => !TemplateMain::check_new(),
         ] );
 
         if ( self::check_contains_list() )
