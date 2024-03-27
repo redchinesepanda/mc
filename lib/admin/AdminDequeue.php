@@ -204,6 +204,8 @@ class AdminDequeue
 			'check_post_edit' => self::check_post_edit(),
 		] );
 
+		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
+
 		if ( !self::check_acf_admin() )
 		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
