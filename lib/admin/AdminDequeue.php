@@ -25,7 +25,7 @@ class AdminDequeue
 		'sitepress-style',
 	];
 
-	const DEQUEUE_CSS_OTGS = [
+	const DEQUEUE_CSS_WPML_OTGS = [
 		'otgs-dialogs',
 
 		'otgs-icons',
@@ -153,6 +153,16 @@ class AdminDequeue
 		}
 	}
 
+	public static function dequeue_wpml()
+	{
+		// if ( !self::check_wpml() )
+		// {
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
+
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
+		// }
+	}
+
 	const ARGS = [
 		'post' => 'post',
 
@@ -204,8 +214,6 @@ class AdminDequeue
 		return $post_type_check === $post_type_current;
 	}
 
-	// public static function check_pagenow( $page = 'post.php' )
-	
 	public static function check_pagenow( $page = self::PAGENOW[ 'page' ] )
 	{
 		global $pagenow;
