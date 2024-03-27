@@ -26,16 +26,28 @@ class WPMLHreflang
 		{	
 			$restricted_host = ToolNotFound::get_restricted_language_host( $language );
 
-			$code = self::get_language_from_url( $url );
+			$hreflang_exists = false;
 
-			// if ( array_key_exists( $code, $languages ) )
-			// {
-			// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $restricted_host, $languages[ $language ][ 'url' ] );
+			foreach( $hreflang_items as $hreflang => $url )
+			{
+				$code = self::get_language_from_url( $url );
 
-			// 	$replace_code = ToolNotFound::get_default_language( $restricted_host );
+				if ( $code == $language )
+				{
+					$hreflang_exists = false;
 
-			// 	$languages[ $language ][ 'url' ] = str_replace( '/' . $replace_code . '/', '/', $languages[ $language ][ 'url' ] );
-			// }
+					break;
+				}
+			}
+
+			if ( $hreflang_exists )
+			{
+				$hreflang_items[ $hreflang ] = str_replace( $current_host, $restricted_host, $hreflang_items[ $hreflang ] );
+
+				$replace_code = ToolNotFound::get_default_language( $restricted_host );
+
+				$hreflang_items[ $hreflang ] = str_replace( '/' . $replace_code . '/', '/', $hreflang_items[ $hreflang ] );
+			}
 
 			LegalDebug::debug( [
 				'WPMLHreflang' => 'modify_url_main',
