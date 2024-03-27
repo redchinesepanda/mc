@@ -83,12 +83,35 @@
     background-image: url( '../../img/tools/tool-sitemap-item.svg' );
 }
 
+.legal-sitemap-item .legal-sitemap a {
+	background-image: linear-gradient(#cbcbcb, #cbcbcb);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+}
+
+.legal-sitemap-item .legal-sitemap a:hover {
+	background-size: 100% 2px;
+}
+
 /* Typography */
 
-.legal-sitemap-item .sitemap-item-title {
+.legal-sitemap-item .sitemap-item-title,
+.legal-sitemap-item .legal-sitemap a {
 	font-family: "Source Sans Pro";
-	font-size: 32px;
 	font-style: normal;
 	font-weight: 400;
+}
+
+.legal-sitemap-item .sitemap-item-title {
+	font-size: 32px;
 	line-height: 38.4px;
+}
+
+.legal-sitemap-item .legal-sitemap a {
+	font-size: 16px;
+	line-height: 28.8px;
+	color:#5997e3;
+	text-decoration: none;
 }
