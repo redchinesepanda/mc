@@ -34,21 +34,21 @@ class WPMLHreflang
 			{
 				$code = self::get_language_from_url( $url );
 
-				LegalDebug::debug( [
-					'WPMLHreflang' => 'modify_url_main',
+				// LegalDebug::debug( [
+				// 	'WPMLHreflang' => 'modify_url_main',
 
-					'hreflang' => $hreflang,
+				// 	'hreflang' => $hreflang,
 
-					'url' => $url,
+				// 	'url' => $url,
 
-					'code' => $code,
+				// 	'code' => $code,
 
-					'language' => $language,
-				] );
+				// 	'language' => $language,
+				// ] );
 
 				if ( $code == $language )
 				{
-					$hreflang_exists = false;
+					$hreflang_exists = true;
 
 					break;
 				}
