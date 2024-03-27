@@ -62,6 +62,18 @@ class AdminDequeue
 		'select2',
 	];
 
+	const DEQUEUE_CSS_ACF = [
+		...DEQUEUE_CSS_ACF_ADMIN,
+
+		...DEQUEUE_CSS_ACF_DATE_TIME_TICKER,
+
+		...DEQUEUE_CSS_ACF_FIELDS,
+
+		...DEQUEUE_CSS_ACF_REPEATER,
+
+		...DEQUEUE_CSS_ACF_SELECT,
+	];
+
 	const DEQUEUE_CSS_YOAST = [
 		'yoast-seo-admin-global',
 
@@ -182,6 +194,8 @@ class AdminDequeue
 
 	public static function dequeue_acf()
 	{
+		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF );
+		
 		if ( !self::check_acf_admin() )
 		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
