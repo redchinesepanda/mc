@@ -194,7 +194,15 @@ class AdminDequeue
 
 	public static function dequeue_acf()
 	{
-		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF );
+		// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF );
+
+		LegalDebug::debug( [
+			'AdminDequeue' => 'dequeue_acf',
+
+			'check_acf_admin' => self::check_acf_admin(),
+
+			'check_post_edit' => self::check_post_edit(),
+		] );
 
 		if ( !self::check_acf_admin() )
 		{
