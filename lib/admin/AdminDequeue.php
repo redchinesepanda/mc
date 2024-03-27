@@ -227,7 +227,7 @@ class AdminDequeue
 
 	public static function check_affiliate_link()
 	{
-		return self::check_pagenow( self::PAGENOW[ 'page' ] )
+		return self::check_pagenow( self::PAGENOW[ 'post' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'affiliate-link' ] );
 	}
@@ -238,7 +238,7 @@ class AdminDequeue
 			
 			&& self::check_post_type( self::POST_TYPE[ 'notion' ], self::get_post_type(), self::POST_TYPE[ 'notion' ] )
 			
-			|| self::check_pagenow( self::PAGENOW[ 'page' ] )
+			|| self::check_pagenow( self::PAGENOW[ 'post' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'notion' ] );
 	}
