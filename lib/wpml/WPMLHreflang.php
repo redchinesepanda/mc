@@ -34,6 +34,11 @@ class WPMLHreflang
 				{
 					$code = self::get_language_from_url( $url );
 
+					if ( empty( $code ) )
+					{
+						$code = WPMLMain::current_language();
+					}
+
 					$replace_host = $main_host;
 
 					if ( $restricted_host = ToolNotFound::get_restricted_language_host( $code ) )
