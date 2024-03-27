@@ -434,10 +434,14 @@
 	font-family: var( --legal-font-primary );
 	text-decoration: none;
 	font-style: normal;
+}
+
+.legal-menu > .menu-item:not( :last-child )
+{
 	text-transform: lowercase;
 }
 
-.legal-menu > .menu-item > .item-title::first-letter
+.legal-menu > .menu-item:not( :last-child ) > .item-title::first-letter
 {
 	text-transform: capitalize;
 }
