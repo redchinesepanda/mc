@@ -4,15 +4,48 @@ class WPMLHreflang
 {
 	public static function register()
     {
-		if ( ToolNotFound::check_domain_restricted() )
-		{
-			$handler = new self();
+		// if ( !ToolNotFound::check_domain_restricted() )
+		// {
+		// 	return false;
+		// }
 
-			add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
+		$handler = new self();
 
-			// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
-		}
+		add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
+
+		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
+
+		return true;
     }
+
+	public static function modify_url_main( &$hreflang_items, $current_host, $main_host )
+	{
+		$restricted_languages = ToolNotFound::get_restricted_languages();
+
+		foreach( $restricted_languages as $language )
+		{	
+			$restricted_host = ToolNotFound::get_restricted_language_host( $language );
+
+			$code = self::get_language_from_url( $url );
+
+			// if ( array_key_exists( $code, $languages ) )
+			// {
+			// 	$languages[ $language ][ 'url' ] = str_replace( $current_host, $restricted_host, $languages[ $language ][ 'url' ] );
+
+			// 	$replace_code = ToolNotFound::get_default_language( $restricted_host );
+
+			// 	$languages[ $language ][ 'url' ] = str_replace( '/' . $replace_code . '/', '/', $languages[ $language ][ 'url' ] );
+			// }
+
+			LegalDebug::debug( [
+				'WPMLHreflang' => 'modify_url_main',
+
+				'restricted_host' => $restricted_host,
+
+				'code' => $code,
+			] );
+		}
+	}
 
 	public static function modify_url_restricted( &$hreflang_items, $current_host, $main_host )
 	{
@@ -67,12 +100,6 @@ class WPMLHreflang
 
 	public static function legal_hreflang_domain( $hreflang_items )
 	{
-		// LegalDebug::debug( [
-		// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-		// 	'hreflang_items' => $hreflang_items,
-		// ] );
-
 		$current_host = ToolRobots::get_host();
 
 		$main_host = LegalMain::get_main_host();
@@ -80,58 +107,10 @@ class WPMLHreflang
 		if ( ToolNotFound::check_domain_restricted() )
 		{
 			self::modify_url_restricted( $hreflang_items, $current_host, $main_host );
-
-			// $current_host = ToolRobots::get_host();
-
-			// $main_host = LegalMain::get_main_host();
-
-			// foreach ( $hreflang_items as $hreflang => $url )
-			// {
-			// 	if ( $hreflang != 'x-default' )
-			// 	{
-			// 		$code = self::get_language_from_url( $url );
-
-			// 		if ( empty( $code ) )
-			// 		{
-			// 			$code = WPMLMain::current_language();
-			// 		}
-
-			// 		$replace_host = $main_host;
-
-			// 		if ( $restricted_host = ToolNotFound::get_restricted_language_host( $code ) )
-			// 		{
-			// 			$replace_host = $restricted_host;
-			// 		}
-
-			// 		// LegalDebug::debug( [
-			// 		// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-			// 		// 	'code' => $code,
-
-			// 		// 	'replace_host' => $replace_host,
-
-			// 		// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-			// 		// ] );
-					
-			// 		$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
-
-			// 		// LegalDebug::debug( [
-			// 		// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-			// 		// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-			// 		// ] );
-
-			// 		$replace_code = ToolNotFound::get_default_language( $replace_host );
-
-			// 		$hreflang_items[ $hreflang ] = str_replace( '/' . $replace_code . '/', '/', $hreflang_items[ $hreflang ] );
-
-			// 		// LegalDebug::debug( [
-			// 		// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-			// 		// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-			// 		// ] );
-			// 	}
-			// }
+		}
+		else
+		{
+			self::modify_url_main( $hreflang_items, $current_host, $main_host );
 		}
 
 		return $hreflang_items;
