@@ -169,7 +169,7 @@ class AdminDequeue
 	{
 		if ( empty( $post_id ) )
 		{
-			$post_id = get_post_id();
+			$post_id = self::get_post_id();
 		}
 
 		return $post_type === get_post_type( $post_id );
