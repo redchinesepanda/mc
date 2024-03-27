@@ -241,6 +241,14 @@ class AdminDequeue
 
 	public static function dequeue_yoast()
 	{
+		LegalDebug::debug( [
+			'AdminDequeue' => 'dequeue_yoast',
+
+			// 'check_yoast_admin' => self::check_yoast_admin(),
+
+			'check_post_edit' => self::check_post_edit(),
+        ] );
+
 		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
 
 		// if ( !self::check_yoast_admin() )
