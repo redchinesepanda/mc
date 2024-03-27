@@ -216,28 +216,26 @@ class AdminDequeue
 
 		// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
 
-		if ( !self::check_acf_admin() )
-		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
-		}
+		// if ( !self::check_acf_admin() )
+		// {
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
+		// }
 
-		if ( self::check_acf_admin() )
-		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
+		// if ( self::check_acf_admin() )
+		// {
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
 
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_FIELDS );
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_FIELDS );
 
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_REPEATER );
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_REPEATER );
 
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_SELECT );
-		}
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_SELECT );
+		// }
 
 		// if ( self::check_post_edit() )
 		
 		if ( self::check_page_edit() )
 		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
-			
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
 		}
 	}
