@@ -98,12 +98,6 @@ class ReviewAbout
 
     public static function inline_style_highlight()
     {
-        LegalDebug::debug( [
-            'ReviewAbout' => 'inline_style_highlight',
-            'check_new' => TemplateMain::check_new(),
-            'check' => self::check(),
-        ] );
-
         if ( TemplateMain::check_new() )
         {
             return '';
