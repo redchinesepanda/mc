@@ -156,18 +156,6 @@ class AdminDequeue
 	{
 		return !empty( $_GET[ 'post' ] );
 	}
-
-	// public static function check_post_type( $post_type = 'post' )
-	// {
-	// 	$post_id = null;
-
-	// 	if ( !empty( $_GET[ 'post' ] ) )
-	// 	{
-	// 		$post_id = $_GET[ 'post' ];
-	// 	}
-
-	// 	return $post_type === get_post_type( $post_id );
-	// }
 	
 	public static function check_post_type( $post_type, $post_id = null )
 	{
@@ -188,19 +176,9 @@ class AdminDequeue
 
 	public static function check_affiliate_link()
 	{
-		LegalDebug::debug( [
-			'AdminDequeue' => 'check_affiliate_link',
-
-			'check_pagenow' => self::check_pagenow(),
-
-			'check_post_type' => self::check_post_type( 'affiliate-link' ),
-		] );
-
 		return self::check_pagenow()
 			
 			&& self::check_post_type( 'affiliate-links' );
-			
-			// && self::check_get_post();
 	}
 }
 
