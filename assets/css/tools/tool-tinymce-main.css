@@ -143,11 +143,20 @@
 	padding-right: 32px;
     padding-left: 32px;
 }
+
+#tinymce .section-content-title,
+#tinymce .section-content-text
+{
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 #tinymce .section-content-title
 {
 	padding-top: 28px;
 }
 
+#tinymce .section-content-title,
 #tinymce .section-content-text:not( :last-of-type )
 {
     padding-bottom: 20px;
