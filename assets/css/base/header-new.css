@@ -436,7 +436,7 @@
 	font-style: normal;
 }
 
-.legal-menu > .menu-item:not( :last-child )
+.legal-menu > .menu-item:not( :last-child ) > .item-title
 {
 	text-transform: lowercase;
 }
