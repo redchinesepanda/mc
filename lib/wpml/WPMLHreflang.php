@@ -79,7 +79,7 @@ class WPMLHreflang
 
 		if ( ToolNotFound::check_domain_restricted() )
 		{
-			modify_url_restricted( $hreflang_items, $current_host, $main_host );
+			self::modify_url_restricted( $hreflang_items, $current_host, $main_host );
 
 			// $current_host = ToolRobots::get_host();
 
