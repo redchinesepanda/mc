@@ -161,8 +161,3 @@
 {
     padding-bottom: 20px;
 }
-
-#tinymce :not( .section-content-text ) + .section-content-texts
-{
-	margin-bottom: 20px;
-}
