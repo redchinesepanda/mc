@@ -236,6 +236,8 @@ class AdminDequeue
 		
 		if ( self::check_page_edit() )
 		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
+			
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
 		}
 	}
