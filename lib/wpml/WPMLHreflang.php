@@ -48,7 +48,7 @@ class WPMLHreflang
 
 						'replace_host' => $replace_host,
 
-						'hreflang_items' = >$hreflang_items[ $hreflang ],
+						'hreflang_items' => $hreflang_items[ $hreflang ],
 					] );
 					
 					$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
@@ -56,7 +56,7 @@ class WPMLHreflang
 					LegalDebug::debug( [
 						'WPMLHreflang' => 'legal_hreflang_domain',
 
-						'hreflang_items' = >$hreflang_items[ $hreflang ],
+						'hreflang_items' => $hreflang_items[ $hreflang ],
 					] );
 
 					$replace_code = ToolNotFound::get_default_language( $replace_host );
@@ -66,7 +66,7 @@ class WPMLHreflang
 					LegalDebug::debug( [
 						'WPMLHreflang' => 'legal_hreflang_domain',
 
-						'hreflang_items' = >$hreflang_items[ $hreflang ],
+						'hreflang_items' => $hreflang_items[ $hreflang ],
 					] );
 				}
 			}
