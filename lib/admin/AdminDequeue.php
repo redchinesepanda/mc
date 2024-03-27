@@ -232,7 +232,9 @@ class AdminDequeue
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_SELECT );
 		}
 
-		if ( self::check_post_edit() )
+		// if ( self::check_post_edit() )
+		
+		if ( self::check_page_edit() )
 		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
 		}
@@ -375,6 +377,13 @@ class AdminDequeue
 		return self::check_pagenow( self::PAGENOW[ 'post' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'post' ] );
+	}
+
+	public static function check_page_edit()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'post' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'page' ] );
 	}
 
 	// public static function check_yoast_admin()
