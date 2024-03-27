@@ -78,7 +78,7 @@ class AdminDequeue
 	];
 
 	const DEQUEUE_CSS_AFFILIATE_LINKS = [
-		'affiliate-links',
+		'affiliate-links-css',
 	];
 
 	const DEQUEUE_CSS_NOTION = [
