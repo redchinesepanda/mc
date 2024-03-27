@@ -138,18 +138,38 @@ class AdminDequeue
 		}
 	}
 
+	public static function get_post_id()
+	{
+		if ( self::check_get_post() )
+		{
+			return $_GET[ 'post' ];
+		}
+
+		return null;
+	}
+
 	public static function check_get_post()
 	{
 		return !empty( $_GET[ 'post' ] );
 	}
 
-	public static function check_post_type( $post_type = 'post' )
-	{
-		$post_id = null;
+	// public static function check_post_type( $post_type = 'post' )
+	// {
+	// 	$post_id = null;
 
-		if ( !empty( $_GET[ 'post' ] ) )
+	// 	if ( !empty( $_GET[ 'post' ] ) )
+	// 	{
+	// 		$post_id = $_GET[ 'post' ];
+	// 	}
+
+	// 	return $post_type === get_post_type( $post_id );
+	// }
+	
+	public static function check_post_type( $post_type, $post_id = null )
+	{
+		if ( empty( $post_id ) )
 		{
-			$post_id = $_GET[ 'post' ];
+			$post_id = get_post_id();
 		}
 
 		return $post_type === get_post_type( $post_id );
@@ -166,9 +186,9 @@ class AdminDequeue
 	{
 		return self::check_pagenow()
 			
-			// && self::check_post_type( 'affiliate-links' );
+			&& self::check_post_type( 'affiliate-links' );
 			
-			&& self::check_get_post();
+			// && self::check_get_post();
 	}
 }
 
