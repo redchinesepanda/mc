@@ -85,8 +85,6 @@ class AdminDequeue
 
 		'yoast-seo-tailwind',
 
-		'yoast-seo-metabox-css',
-
 		'yoast-seo-scoring',
 
 		'yoast-seo-monorepo',
@@ -101,8 +99,9 @@ class AdminDequeue
 	];
 
 	const DEQUEUE_CSS_YOAST_WIDGET = [
-		'yoast-seo-primary-category',
+		'yoast-seo-metabox-css',
 
+		'yoast-seo-primary-category',
 	];
 
 	const DEQUEUE_CSS_YOAST = [
