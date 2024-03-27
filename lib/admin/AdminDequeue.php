@@ -81,7 +81,7 @@ class AdminDequeue
 
 		'yoast-seo-toggle-switch',
 
-		// 'yoast-seo-admin-css',
+		'yoast-seo-admin-css',
 
 		// 'yoast-seo-tailwind',
 
