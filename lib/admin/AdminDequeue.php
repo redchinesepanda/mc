@@ -249,14 +249,14 @@ class AdminDequeue
 			'check_post_edit' => self::check_post_edit(),
         ] );
 
-		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
+		// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
 
 		// if ( !self::check_yoast_admin() )
 		// {
 		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_WIDGET );
 		// }
 
-		if ( !self::check_post_edit() )
+		if ( self::check_post_edit() )
 		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_ADMIN );
 		}
