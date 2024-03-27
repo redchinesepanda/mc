@@ -12,12 +12,14 @@
 .legal-banner {
 	display: flex;
 	flex-direction: row;
-	overflow-x: auto;
+	overflow: hidden;
+	/* overflow-x: auto; */
+	
 }
 
-.legal-banner .banner-image {
+/* .legal-banner .banner-image {
 	flex: 0 0 auto;
-}
+} */
 
 /* Position */
 
@@ -28,6 +30,11 @@
 
 .legal-banner .image-caption {
 	padding-top: 5px;
+}
+
+.legal-banner .banner-image img {
+	max-width: 100%;
+    height: auto;
 }
 
 /* Width and Height */
