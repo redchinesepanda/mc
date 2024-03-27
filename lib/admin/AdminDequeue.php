@@ -149,7 +149,7 @@ class AdminDequeue
 	{
 		if ( !self::check_notion() )
 		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_NOTION );
 		}
 	}
 
