@@ -28,6 +28,8 @@ class WPMLHreflang
 
 			$hreflang_exists = false;
 
+			$code = '';
+
 			foreach( $hreflang_items as $hreflang => $url )
 			{
 				$code = self::get_language_from_url( $url );
@@ -57,6 +59,8 @@ class WPMLHreflang
 				'restricted_host' => $restricted_host,
 
 				'code' => $code,
+
+				'hreflang_exists' => $hreflang_exists,
 			] );
 		}
 	}
