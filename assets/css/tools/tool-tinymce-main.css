@@ -133,3 +133,27 @@
 	opacity: 0.5;
   	border: 1px dashed;
 }
+
+/* Compilation About */
+
+#tinymce .section-content-title,
+#tinymce .section-content-text
+{
+	background-color: rgb(246, 246, 246);
+	padding-right: 32px;
+    padding-left: 32px;
+}
+#tinymce .section-content-title
+{
+	padding-top: 28px;
+}
+
+#tinymce .section-content-text:not( :last-of-type )
+{
+    padding-bottom: 20px;
+}
+
+#tinymce .section-content-text:last-of-type
+{
+    padding-bottom: 40px;
+}
