@@ -8,7 +8,7 @@ require_once( 'AdminNotice.php' );
 
 // require_once( 'AdminWPML.php' );
 
-// require_once( 'AdminDequeue.php' );
+require_once( 'AdminDequeue.php' );
 
 class AdminMain
 {
@@ -41,7 +41,7 @@ class AdminMain
 
         // AdminWPML::register();
 
-        // AdminDequeue::register();
+        AdminDequeue::register();
     }
 }
 
