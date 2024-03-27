@@ -434,6 +434,12 @@
 	font-family: var( --legal-font-primary );
 	text-decoration: none;
 	font-style: normal;
+	text-transform: lowercase;
+}
+
+.legal-menu > .menu-item > .item-title::first-letter
+{
+	text-transform: capitalize;
 }
 
 .legal-menu > .menu-item:last-child .menu-item > .item-title:hover
