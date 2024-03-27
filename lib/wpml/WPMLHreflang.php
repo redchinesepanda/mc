@@ -18,6 +18,24 @@ class WPMLHreflang
 		return true;
     }
 
+	public static function check_hreflang_exists( $hreflang_items, $language )
+	{
+		$hreflang_exists = false;
+
+		foreach( $hreflang_items as $hreflang => $url )
+		{
+			$code = self::get_language_from_url( $url );
+
+			if ( $code == $language )
+			{
+				$hreflang_exists = true;
+
+				break;
+			}
+		}
+
+		return $hreflang_exists;
+	}
 	public static function modify_url_main( &$hreflang_items, $current_host, $main_host )
 	{
 		$restricted_languages = ToolNotFound::get_restricted_languages();
@@ -26,35 +44,25 @@ class WPMLHreflang
 		{	
 			$restricted_host = ToolNotFound::get_restricted_language_host( $language );
 
-			$hreflang_exists = false;
+			// $hreflang_exists = false;
 
-			$code = '';
+			// $code = '';
 
-			foreach( $hreflang_items as $hreflang => $url )
-			{
-				$code = self::get_language_from_url( $url );
+			// foreach( $hreflang_items as $hreflang => $url )
+			// {
+			// 	$code = self::get_language_from_url( $url );
 
-				// LegalDebug::debug( [
-				// 	'WPMLHreflang' => 'modify_url_main',
+			// 	if ( $code == $language )
+			// 	{
+			// 		$hreflang_exists = true;
 
-				// 	'hreflang' => $hreflang,
+			// 		break;
+			// 	}
+			// }
 
-				// 	'url' => $url,
-
-				// 	'code' => $code,
-
-				// 	'language' => $language,
-				// ] );
-
-				if ( $code == $language )
-				{
-					$hreflang_exists = true;
-
-					break;
-				}
-			}
-
-			if ( $hreflang_exists )
+			// if ( $hreflang_exists )
+			
+			if ( self::check_hreflang_exists( $hreflang_items, $language ) )
 			{
 				$hreflang_items[ $hreflang ] = str_replace( $current_host, $restricted_host, $hreflang_items[ $hreflang ] );
 
@@ -62,18 +70,6 @@ class WPMLHreflang
 
 				$hreflang_items[ $hreflang ] = str_replace( '/' . $replace_code . '/', '/', $hreflang_items[ $hreflang ] );
 			}
-
-			LegalDebug::debug( [
-				'WPMLHreflang' => 'modify_url_main',
-
-				'language' => $language,
-
-				'restricted_host' => $restricted_host,
-
-				'code' => $code,
-
-				'hreflang_exists' => $hreflang_exists,
-			] );
 		}
 	}
 
