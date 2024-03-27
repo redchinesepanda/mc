@@ -4,10 +4,10 @@ class WPMLHreflang
 {
 	public static function register()
     {
-		// if ( !ToolNotFound::check_domain_restricted() )
-		// {
-		// 	return false;
-		// }
+		if ( !ToolNotFound::check_domain_restricted() )
+		{
+			return false;
+		}
 
 		$handler = new self();
 
@@ -28,8 +28,6 @@ class WPMLHreflang
 
 			if ( $code == $language )
 			{
-				// $hreflang_exists = true;
-
 				$hreflang_exists = $hreflang;
 
 				break;
@@ -43,29 +41,11 @@ class WPMLHreflang
 		$restricted_languages = ToolNotFound::get_restricted_languages();
 
 		foreach( $restricted_languages as $language )
-		{	
-			$restricted_host = ToolNotFound::get_restricted_language_host( $language );
-
-			// $hreflang_exists = false;
-
-			// $code = '';
-
-			// foreach( $hreflang_items as $hreflang => $url )
-			// {
-			// 	$code = self::get_language_from_url( $url );
-
-			// 	if ( $code == $language )
-			// 	{
-			// 		$hreflang_exists = true;
-
-			// 		break;
-			// 	}
-			// }
-
-			// if ( $hreflang_exists )
-			
+		{
 			if ( $hreflang = self::check_hreflang_exists( $hreflang_items, $language ) )
 			{
+				$restricted_host = ToolNotFound::get_restricted_language_host( $language );
+
 				$hreflang_items[ $hreflang ] = str_replace( $current_host, $restricted_host, $hreflang_items[ $hreflang ] );
 
 				$replace_code = ToolNotFound::get_default_language( $restricted_host );
@@ -94,34 +74,12 @@ class WPMLHreflang
 				{
 					$replace_host = $restricted_host;
 				}
-
-				// LegalDebug::debug( [
-				// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-				// 	'code' => $code,
-
-				// 	'replace_host' => $replace_host,
-
-				// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-				// ] );
 				
 				$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
-
-				// LegalDebug::debug( [
-				// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-				// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-				// ] );
 
 				$replace_code = ToolNotFound::get_default_language( $replace_host );
 
 				$hreflang_items[ $hreflang ] = str_replace( '/' . $replace_code . '/', '/', $hreflang_items[ $hreflang ] );
-
-				// LegalDebug::debug( [
-				// 	'WPMLHreflang' => 'legal_hreflang_domain',
-
-				// 	'hreflang_items' => $hreflang_items[ $hreflang ],
-				// ] );
 			}
 		}
 	}
