@@ -239,6 +239,8 @@ class AdminDequeue
 
 	public static function dequeue_yoast()
 	{
+		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
+
 		// if ( !self::check_yoast_admin() )
 		// {
 		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_WIDGET );
