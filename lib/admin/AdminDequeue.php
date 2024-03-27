@@ -89,15 +89,15 @@ class AdminDequeue
 
 		// 'yoast-seo-scoring',
 
-		// 'yoast-seo-monorepo',
+		'yoast-seo-monorepo',
 
-		// 'yoast-seo-introductions',
+		'yoast-seo-introductions',
 
-		// 'yoast-seo-ai-generator',
+		'yoast-seo-ai-generator',
 
-		// 'yoast-seo-featured-image',
+		'yoast-seo-featured-image',
 
-		// 'yoast-seo-adminbar',
+		'yoast-seo-adminbar',
 	];
 
 	const DEQUEUE_CSS_YOAST_WIDGET = [
