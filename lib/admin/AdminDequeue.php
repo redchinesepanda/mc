@@ -171,7 +171,7 @@ class AdminDequeue
 
 		self::dequeue_wpml();
 
-		// self::dequeue_acf();
+		self::dequeue_acf();
 
 		self::dequeue_yoast();
 	}
@@ -232,7 +232,7 @@ class AdminDequeue
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_SELECT );
 		}
 
-		if ( !self::check_post_edit() )
+		if ( self::check_post_edit() )
 		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
 		}
@@ -240,16 +240,6 @@ class AdminDequeue
 
 	public static function dequeue_yoast()
 	{
-		// LegalDebug::debug( [
-		// 	'AdminDequeue' => 'dequeue_yoast',
-
-		// 	// 'check_yoast_admin' => self::check_yoast_admin(),
-
-		// 	'check_post_edit' => self::check_post_edit(),
-        // ] );
-
-		// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
-
 		// if ( !self::check_yoast_admin() )
 		// {
 		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_WIDGET );
