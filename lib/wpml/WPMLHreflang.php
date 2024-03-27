@@ -8,9 +8,9 @@ class WPMLHreflang
 		{
 			$handler = new self();
 
-			// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
+			add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
 
-			add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
+			// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
 		}
     }
 
