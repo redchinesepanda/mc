@@ -70,12 +70,6 @@ class ReviewAbout
 
     public static function register()
     {
-        LegalDebug::debug( [
-            'ReviewAbout' => 'register',
-            
-            'check' => self::check(),
-        ] );
-
         if ( self::check() )
         {
             $handler = new self();
@@ -104,6 +98,12 @@ class ReviewAbout
 
     public static function inline_style_highlight()
     {
+        LegalDebug::debug( [
+            'ReviewAbout' => 'inline_style_highlight',
+            'check_new' => TemplateMain::check_new(),
+            'check' => self::check(),
+        ] );
+
         if ( !TemplateMain::check_new() )
         {
             return '';
