@@ -12,25 +12,26 @@ class AdminDequeue
 	const DEQUEUE_CSS_WPML = [
 		'wpml-select-2',
 
-		'wpml-tm-styles',
-
 		'wpml-postEditTranslationEditor-ui',
-
-		'wpml-dialog',
 
 		'wpml-wizard',
 
 		'admin-wpml',
 
 		'sitepress-style',
+
+		'wpml-tm-styles',
+
+		'wpml-dialog',
 	];
 
 	const DEQUEUE_CSS_WPML_OTGS = [
-		'otgs-dialogs',
 
 		'otgs-icons',
 
 		'otgs-notices',
+
+		'otgs-dialogs',
 
 		'otgsSwitcher',
 	];
