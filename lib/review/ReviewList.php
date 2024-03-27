@@ -80,16 +80,6 @@ class ReviewList
 
     public static function register()
     {
-        LegalDebug::debug( [
-            'ReviewList' => 'register',
-
-            'check_contains_list' => self::check_contains_list(),
-
-            '!check_new' => !TemplateMain::check_new(),
-
-            'check' => ReviewMain::check(),
-        ] );
-
         if ( self::check_contains_list() )
         {
             $handler = new self();
@@ -114,12 +104,6 @@ class ReviewList
 		$style = [];
 
 		$nodes = self::get_lists();
-
-        LegalDebug::debug( [
-            'ReviewList' => 'inline_style',
-
-             'nodes' => $nodes,
-        ] );
 
 		if ( empty( $nodes ) )
         {

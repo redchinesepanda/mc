@@ -70,6 +70,12 @@ class ReviewAbout
 
     public static function register()
     {
+        LegalDebug::debug( [
+            'ReviewAbout' => 'register',
+            
+            'check' => self::check(),
+        ] );
+
         if ( self::check() )
         {
             $handler = new self();
