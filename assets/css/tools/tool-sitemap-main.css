@@ -85,17 +85,20 @@
 
 /* Typography */
 
-.legal-sitemap-item .sitemap-item-title {
+.legal-sitemap-item .sitemap-item-title,
+.legal-sitemap-item .legal-sitemap a {
 	font-family: "Source Sans Pro";
-	font-size: 32px;
 	font-style: normal;
 	font-weight: 400;
+}
+
+.legal-sitemap-item .sitemap-item-title {
+	font-size: 32px;
 	line-height: 38.4px;
 }
 
 .legal-sitemap-item .legal-sitemap a {
 	font-size: 18px;
-	font-weight: 400;
 	line-height: 28.8px;
 	color:#5997e3;
 	text-decoration: none;
