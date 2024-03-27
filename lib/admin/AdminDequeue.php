@@ -184,6 +184,14 @@ class AdminDequeue
 
 	public static function check_affiliate_link()
 	{
+		LegalDebug::debug( [
+			'AdminDequeue' => 'check_affiliate_link',
+
+			'check_pagenow' => self::check_pagenow(),
+
+			'check_post_type' => self::check_post_type( 'affiliate-link' ),
+		] );
+
 		return self::check_pagenow()
 			
 			&& self::check_post_type( 'affiliate-links' );
