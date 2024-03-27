@@ -37,9 +37,16 @@
         column-gap: 0px;
     }
 
+     /* Position */
+
+    .tcb-post-content .legal-imageset.columns-1 .imageset-item {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     /* Width and Height */
 
-    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .imageset-item
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .imageset-item:not( .columns-1 .imageset-item )
     {
         min-width: 100%;
     }
