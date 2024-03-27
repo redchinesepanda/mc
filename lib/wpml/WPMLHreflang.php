@@ -40,8 +40,10 @@ class WPMLHreflang
 					{
 						$replace_host = $restricted_host;
 					}
-
-					$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
+					else
+					{
+						$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
+					}
 
 					$replace_code = ToolNotFound::get_default_language( $replace_host );
 
