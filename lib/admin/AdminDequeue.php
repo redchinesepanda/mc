@@ -83,7 +83,7 @@ class AdminDequeue
 
 		'yoast-seo-admin-css',
 
-		// 'yoast-seo-tailwind',
+		'yoast-seo-tailwind',
 
 		// 'yoast-seo-metabox-css',
 
