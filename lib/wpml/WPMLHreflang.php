@@ -40,6 +40,8 @@ class WPMLHreflang
 			LegalDebug::debug( [
 				'WPMLHreflang' => 'modify_url_main',
 
+				'language' => $language,
+
 				'restricted_host' => $restricted_host,
 
 				'code' => $code,
