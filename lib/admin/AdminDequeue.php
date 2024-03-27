@@ -87,7 +87,7 @@ class AdminDequeue
 
 		// 'yoast-seo-metabox-css',
 
-		// 'yoast-seo-scoring',
+		'yoast-seo-scoring',
 
 		'yoast-seo-monorepo',
 
