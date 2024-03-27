@@ -41,7 +41,7 @@ class AdminMain
 
         // AdminWPML::register();
 
-        // AdminDequeue::register();
+        AdminDequeue::register();
     }
 }
 

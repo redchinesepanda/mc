@@ -9,31 +9,47 @@ class AdminDequeue
 		add_action( 'admin_print_styles', [ $handler, 'dequeue_admin_styles' ] );
     }
 
-	const DEQUEUE_CSS = [
+	const DEQUEUE_CSS_WPML = [
 		'wpml-select-2',
-
-		'smush',
-
-		'acf-global',
-
-		'affiliate-links',
-
-		'mediaelement',
-
-		'wp-mediaelement',
-
-		'imgareaselect',
-
-		'bodhi-svgs-admin-edit-post',
-
-		'CSS-for-multiselect',
-
-		'wp-optimize-global',
 
 		'wpml-tm-styles',
 
 		'wpml-postEditTranslationEditor-ui',
 
+		'wpml-dialog',
+
+		'wpml-wizard',
+
+		'admin-wpml',
+
+		'sitepress-style',
+	];
+
+	const DEQUEUE_CSS_OTGS = [
+		'otgs-dialogs',
+
+		'otgs-icons',
+
+		'otgs-notices',
+
+		'otgsSwitcher',
+	];
+
+	const DEQUEUE_CSS_ACF = [
+		'acf-global',
+
+		'acf-input',
+
+		'acf-pro-input',
+
+		'acf-datepicker',
+
+		'acf-timepicker',
+
+		'select2',
+	];
+
+	const DEQUEUE_CSS_YOAST = [
 		'yoast-seo-admin-global',
 
 		'yoast-seo-primary-category',
@@ -58,48 +74,101 @@ class AdminDequeue
 
 		'yoast-seo-featured-image',
 
-		'admin-wpml',
+		'yoast-seo-adminbar',
+	];
 
+	const DEQUEUE_CSS_AFFILIATE_LINKS = [
+		'affiliate-links',
+	];
+
+	const DEQUEUE_CSS_NOTION = [
 		'notion-wp-sync-admin-select2',
 
 		'notion-wp-sync-admin',
+	];
 
-		'yoast-seo-adminbar',
+	const DEQUEUE_CSS_WP_OPTIMIZE = [
+		'wp-optimize-global',
+
+		'smush-css',
+	];
+
+	const DEQUEUE_CSS_SVG_SUPPORT = [
+		'CSS-for-multiselect',
+
+		'bodhi-svgs-admin-edit-post',
+	];
+
+	const DEQUEUE_CSS_WP = [
+		'mediaelement',
+
+		'wp-mediaelement',
+
+		'imgareaselect',
 
 		'wp-emoji-styles',
 
-		'sitepress-style',
-
-		'otgs-dialogs',
-
-		'wpml-dialog',
-
-		'otgs-icons',
-
-		'wpml-wizard',
-
 		'thickbox',
 
-		'otgs-notices',
+	];
 
-		'acf-input',
+	const DEQUEUE_CSS = [
+		...self::DEQUEUE_CSS_WPML,
 
-		'acf-pro-input',
+		...self::DEQUEUE_CSS_OTGS,
 
-		'select2',
+		...self::DEQUEUE_CSS_ACF,
 
-		'acf-datepicker',
+		...self::DEQUEUE_CSS_YOAST,
 
-		'acf-timepicker',
+		...self::DEQUEUE_CSS_AFFILIATE_LINKS,
 
-		'otgsSwitcher',
+		...self::DEQUEUE_CSS_NOTION,
 
+		...self::DEQUEUE_CSS_WP_OPTIMIZE,
 
+		...self::DEQUEUE_CSS_SVG_SUPPORT,
 	];
 
 	public static function dequeue_admin_styles()
 	{
-		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS );
+		if ( self::check_affiliate_link() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+		}
+	}
+
+	public static function check_get_post()
+	{
+		return !empty( $_GET[ 'post' ] );
+	}
+
+	public static function check_post_type( $post_type = 'post' )
+	{
+		$post_id = null;
+
+		if ( !empty( $_GET[ 'post' ] ) )
+		{
+			$post_id = $_GET[ 'post' ];
+		}
+
+		return $post_type === get_post_type( $post_id );
+	}
+
+	public static function check_pagenow( $page = 'post.php' )
+	{
+		global $pagenow;
+
+		return $page === $pagenow
+	}
+
+	public static function check_affiliate_link()
+	{
+		return self::check_pagenow()
+			
+			// && self::check_post_type( 'affiliate-links' );
+			
+			&& self::check_get_post();
 	}
 }
 
