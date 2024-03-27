@@ -104,7 +104,7 @@ class ReviewAbout
             'check' => self::check(),
         ] );
 
-        if ( !TemplateMain::check_new() )
+        if ( TemplateMain::check_new() )
         {
             return '';
         }
