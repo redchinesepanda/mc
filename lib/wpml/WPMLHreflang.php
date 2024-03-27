@@ -28,7 +28,9 @@ class WPMLHreflang
 
 			if ( $code == $language )
 			{
-				$hreflang_exists = true;
+				// $hreflang_exists = true;
+
+				$hreflang_exists = $hreflang;
 
 				break;
 			}
@@ -62,7 +64,7 @@ class WPMLHreflang
 
 			// if ( $hreflang_exists )
 			
-			if ( self::check_hreflang_exists( $hreflang_items, $language ) )
+			if ( $hreflang = self::check_hreflang_exists( $hreflang_items, $language ) )
 			{
 				$hreflang_items[ $hreflang ] = str_replace( $current_host, $restricted_host, $hreflang_items[ $hreflang ] );
 
