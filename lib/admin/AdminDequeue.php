@@ -134,8 +134,12 @@ class AdminDequeue
 	{
 		if ( self::check_affiliate_link() )
 		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+			return true;
 		}
+
+		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+
+		return false;
 	}
 
 	public static function get_post_id()
