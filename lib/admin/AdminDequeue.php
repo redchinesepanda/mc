@@ -20,6 +20,8 @@ class AdminDequeue
 
 		'sitepress-style',
 
+		// not dequeued
+
 		'wpml-tm-styles',
 
 		'wpml-dialog',
@@ -31,22 +33,32 @@ class AdminDequeue
 
 		'otgs-notices',
 
+		// not dequeued
+
 		'otgs-dialogs',
 
 		'otgsSwitcher',
 	];
 
-	const DEQUEUE_CSS_ACF = [
+	const DEQUEUE_CSS_ACF_ADMIN = [
 		'acf-global',
+	];
 
-		'acf-input',
-
-		'acf-pro-input',
-
+	const DEQUEUE_CSS_ACF_DATE_TIME_TICKER = [
 		'acf-datepicker',
 
 		'acf-timepicker',
+	];
 
+	const DEQUEUE_CSS_ACF_FIELDS = [
+		'acf-input',
+	];
+
+	const DEQUEUE_CSS_ACF_REPEATER = [
+		'acf-pro-input',
+	];
+	
+	const DEQUEUE_CSS_ACF_SELECT = [
 		'select2',
 	];
 
@@ -113,23 +125,23 @@ class AdminDequeue
 
 	];
 
-	const DEQUEUE_CSS = [
-		...self::DEQUEUE_CSS_WPML,
+	// const DEQUEUE_CSS = [
+	// 	...self::DEQUEUE_CSS_WPML,
 
-		...self::DEQUEUE_CSS_WPML_OTGS,
+	// 	...self::DEQUEUE_CSS_WPML_OTGS,
 
-		...self::DEQUEUE_CSS_ACF,
+	// 	...self::DEQUEUE_CSS_ACF,
 
-		...self::DEQUEUE_CSS_YOAST,
+	// 	...self::DEQUEUE_CSS_YOAST,
 
-		...self::DEQUEUE_CSS_AFFILIATE_LINKS,
+	// 	...self::DEQUEUE_CSS_AFFILIATE_LINKS,
 
-		...self::DEQUEUE_CSS_NOTION,
+	// 	...self::DEQUEUE_CSS_NOTION,
 
-		...self::DEQUEUE_CSS_WP_OPTIMIZE,
+	// 	...self::DEQUEUE_CSS_WP_OPTIMIZE,
 
-		...self::DEQUEUE_CSS_SVG_SUPPORT,
-	];
+	// 	...self::DEQUEUE_CSS_SVG_SUPPORT,
+	// ];
 
 	public static function dequeue_admin_styles()
 	{
@@ -164,6 +176,30 @@ class AdminDequeue
 
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
 		// }
+	}
+
+	public static function dequeue_acf()
+	{
+		if ( !self::check_acf_admin() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_ADMIN );
+		}
+
+		if ( self::check_acf_admin() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
+
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_FIELDS );
+
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_REPEATER );
+
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_SELECT );
+		}
+
+		if ( !self::check_post_edit() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_ACF_DATE_TIME_TICKER );
+		}
 	}
 
 	const ARGS = [
@@ -225,10 +261,16 @@ class AdminDequeue
 	}
 
 	const POST_TYPE = [
-		'affiliate-link' => 'affiliate-links',
+		'affiliate' => 'affiliate-links',
 
 		'notion' => 'ntwpsync-connection',
-	];
+
+		'acf' => 'acf-field-group',
+
+		'post' => 'post',
+		
+		'page' => 'page',
+    ];
 
 	const PAGENOW = [
 		'post' => 'post.php',
@@ -240,18 +282,46 @@ class AdminDequeue
 	{
 		return self::check_pagenow( self::PAGENOW[ 'post' ] )
 			
-			&& self::check_post_type( self::POST_TYPE[ 'affiliate-link' ] );
+			&& self::check_post_type( self::POST_TYPE[ 'affiliate' ] );
 	}
 
 	public static function check_notion()
 	{
 		return self::check_pagenow( self::PAGENOW[ 'edit' ] )
 			
-			&& self::check_post_type( self::POST_TYPE[ 'notion' ], self::get_post_type(), self::POST_TYPE[ 'notion' ] )
+			&& self::check_post_type( self::POST_TYPE[ 'notion' ], self::get_post_type() )
 			
 			|| self::check_pagenow( self::PAGENOW[ 'post' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'notion' ] );
+	}
+
+	public static function check_acf_edit()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'post' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'acf' ] );
+	}
+
+	public static function check_acf_list()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'edit' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
+	}
+
+	public static function check_acf_admin()
+	{
+		return self::check_acf_edit()
+			
+			|| self::check_acf_list();
+	}
+
+	public static function check_post_edit()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'post' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'post' ] );
 	}
 }
 
