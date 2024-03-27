@@ -115,6 +115,12 @@ class ReviewList
 
 		$nodes = self::get_lists();
 
+        LegalDebug::debug( [
+            'ReviewList' => 'inline_style',
+
+             'nodes' => $nodes,
+        ] );
+
 		if ( empty( $nodes ) )
         {
 			return '';
