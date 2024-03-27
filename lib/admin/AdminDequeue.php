@@ -173,6 +173,8 @@ class AdminDequeue
 		self::dequeue_wpml();
 
 		// self::dequeue_acf();
+
+		self::dequeue_yoast();
 	}
 
 	public static function dequeue_affiliate_links()
@@ -239,7 +241,7 @@ class AdminDequeue
 
 	public static function dequeue_yoast()
 	{
-		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
+		// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST );
 
 		// if ( !self::check_yoast_admin() )
 		// {
