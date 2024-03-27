@@ -127,7 +127,7 @@
     margin-bottom: 15px;
 } */
 
-.legal-compilation .legal-compilation-info {
+.legal-compilation .legal-compilation-info:not(:empty) {
     margin-bottom: 28px;
 }
 
