@@ -74,10 +74,8 @@ class AdminDequeue
 		...self::DEQUEUE_CSS_ACF_SELECT,
 	];
 
-	const DEQUEUE_CSS_YOAST = [
+	const DEQUEUE_CSS_YOAST_ADMIN = [
 		'yoast-seo-admin-global',
-
-		'yoast-seo-primary-category',
 
 		'yoast-seo-dismissible',
 
@@ -100,6 +98,17 @@ class AdminDequeue
 		'yoast-seo-featured-image',
 
 		'yoast-seo-adminbar',
+	];
+
+	const DEQUEUE_CSS_YOAST_WIDGET = [
+		'yoast-seo-primary-category',
+
+	];
+
+	const DEQUEUE_CSS_YOAST = [
+		...self::DEQUEUE_CSS_YOAST_ADMIN,
+
+		...self::DEQUEUE_CSS_YOAST_WIDGET,
 	];
 
 	const DEQUEUE_CSS_AFFILIATE_LINKS = [
@@ -228,8 +237,23 @@ class AdminDequeue
 		}
 	}
 
+	public static function dequeue_yoast()
+	{
+		// if ( !self::check_yoast_admin() )
+		// {
+		// 	ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_WIDGET );
+		// }
+
+		if ( !self::check_post_edit() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_YOAST_ADMIN );
+		}
+	}
+
 	const ARGS = [
 		'post' => 'post',
+
+		'page' => 'page',
 
 		'post-type' => 'post_type',
 	];
@@ -302,6 +326,8 @@ class AdminDequeue
 		'post' => 'post.php',
 		
 		'edit' => 'edit.php',
+
+		'admin' => 'admin.php',
 	];
 
 	public static function check_affiliate_link()
@@ -349,6 +375,13 @@ class AdminDequeue
 			
 			&& self::check_post_type( self::POST_TYPE[ 'post' ] );
 	}
+
+	// public static function check_yoast_admin()
+	// {
+	// 	return self::check_acf_edit()
+			
+	// 		|| self::check_acf_list();
+	// }
 }
 
 ?>
