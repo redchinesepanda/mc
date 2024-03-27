@@ -115,7 +115,7 @@ class AdminDequeue
 	const DEQUEUE_CSS = [
 		...self::DEQUEUE_CSS_WPML,
 
-		...self::DEQUEUE_CSS_OTGS,
+		...self::DEQUEUE_CSS_WPML_OTGS,
 
 		...self::DEQUEUE_CSS_ACF,
 
