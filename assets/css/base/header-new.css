@@ -436,7 +436,7 @@
 	font-style: normal;
 }
 
-.legal-menu > .menu-item:not( :last-child ) > .item-title
+/* .legal-menu > .menu-item:not( :last-child ) > .item-title
 {
 	text-transform: lowercase;
 }
@@ -444,7 +444,7 @@
 .legal-menu > .menu-item:not( :last-child ) > .item-title::first-letter
 {
 	text-transform: capitalize;
-}
+} */
 
 .legal-menu > .menu-item:last-child .menu-item > .item-title:hover
 {
