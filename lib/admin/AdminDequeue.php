@@ -132,21 +132,53 @@ class AdminDequeue
 
 	public static function dequeue_admin_styles()
 	{
-		if ( self::check_affiliate_link() )
+		self::dequeue_affiliate_links();
+
+		self::dequeue_notion();
+	}
+
+	public static function dequeue_affiliate_links()
+	{
+		if ( !self::check_affiliate_link() )
 		{
-			return true;
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+		}
+	}
+
+	public static function dequeue_notion()
+	{
+		if ( !self::check_notion() )
+		{
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+		}
+	}
+
+	const ARGS = [
+		'post' => 'post',
+
+		'post-type' => 'post_type',
+	];
+
+	public static function get_post_type()
+	{
+		if ( self::check_get_post_type() )
+		{
+			return $_GET[ self::ARGS[ 'post-type' ] ];
 		}
 
-		ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_AFFILIATE_LINKS );
+		return null;
+	}
 
-		return false;
+	public static function check_get_post_type()
+	{
+		return !empty( $_GET[ self::ARGS[ 'post-type' ] ] );
 	}
 
 	public static function get_post_id()
 	{
 		if ( self::check_get_post() )
 		{
-			return $_GET[ 'post' ];
+			return $_GET[ self::ARGS[ 'post' ] ];
 		}
 
 		return null;
@@ -154,31 +186,61 @@ class AdminDequeue
 
 	public static function check_get_post()
 	{
-		return !empty( $_GET[ 'post' ] );
+		return !empty( $_GET[ self::ARGS[ 'post' ] ] );
 	}
 	
-	public static function check_post_type( $post_type, $post_id = null )
+	public static function check_post_type( $post_type_check, $post_type_current = '', $post_id = null )
 	{
 		if ( empty( $post_id ) )
 		{
 			$post_id = self::get_post_id();
 		}
 
-		return $post_type === get_post_type( $post_id );
+		if ( empty( $post_type_current ) )
+		{
+			$post_type_current = get_post_type( $post_id );
+		}
+
+		return $post_type_check === $post_type_current;
 	}
 
-	public static function check_pagenow( $page = 'post.php' )
+	// public static function check_pagenow( $page = 'post.php' )
+	
+	public static function check_pagenow( $page = self::PAGENOW[ 'page' ] )
 	{
 		global $pagenow;
 
 		return $page === $pagenow;
 	}
 
+	const POST_TYPE = [
+		'affiliate-link' => 'affiliate-links',
+
+		'notion' => 'ntwpsync-connection',
+	];
+
+	const PAGENOW = [
+		'post' => 'post.php',
+		
+		'edit' => 'edit.php',
+	];
+
 	public static function check_affiliate_link()
 	{
-		return self::check_pagenow()
+		return self::check_pagenow( self::PAGENOW[ 'page' ] )
 			
-			&& self::check_post_type( 'affiliate-links' );
+			&& self::check_post_type( self::POST_TYPE[ 'affiliate-link' ] );
+	}
+
+	public static function check_notion()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'edit' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'notion' ], self::get_post_type(), self::POST_TYPE[ 'notion' ] )
+			
+			|| self::check_pagenow( self::PAGENOW[ 'page' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'notion' ] );
 	}
 }
 
