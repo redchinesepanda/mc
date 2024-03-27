@@ -42,6 +42,10 @@ class WPMLHreflang
 					}
 
 					$hreflang_items[ $hreflang ] = str_replace( $current_host, $replace_host, $url );
+
+					$replace_code = ToolNotFound::get_default_language( $replace_host );
+
+					$hreflang_items[ $hreflang ] = str_replace( '/' . $replace_code . '/', '/', $hreflang_items[ $hreflang ] );
 				}
 			}
 		}
