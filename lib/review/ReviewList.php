@@ -80,6 +80,12 @@ class ReviewList
 
     public static function register()
     {
+        LegalDebug::debug( [
+            'ReviewList' => 'register',
+
+            'check_contains_list' => self::check_contains_list(),
+        ] );
+
         if ( self::check_contains_list() )
         {
             $handler = new self();
