@@ -222,9 +222,19 @@ class CompilationAbout
         'compilation-about' => LegalMain::LEGAL_PATH . '/template-parts/compilation/part-compilation-about.php',
     ];
 
+	public static function check_render()
+	{
+		return TemplateMain::check_new();
+	}
+
 	public static function render()
     {
-        return LegalComponents::render_main( self::TEMPLATE[ 'compilation-about' ], self::get() );
+		if ( self::check_render() )
+		{
+			return LegalComponents::render_main( self::TEMPLATE[ 'compilation-about' ], self::get() );
+		}
+
+		return '';
     }
 
 	const CLASSES = [
