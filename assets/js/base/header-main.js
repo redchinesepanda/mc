@@ -87,6 +87,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	];
 
+	const selectors = {
+		headerControl: '.legal-header-control',
+
+		tagBody: 'body'
+	};
+
 	function toggleInit()
 	{
 		if ( window.matchMedia( '( max-width: 1209px )' ).matches ) {
@@ -104,22 +110,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	// Для активации кнопки кукки   начало
-/* 	let cookieButton = document.querySelector('.oops-cookie-button');
-	let containerCookieButton = document.querySelector('.legal-oops-cookie-wrapper');
-
-	cookieButton.addEventListener('click', () => {
-		containerCookieButton.classList.toggle('legal-active');
-	}); */
-
-	// Для активации кнопки кукки  конец
-
-	let headerControl = document.querySelector('.legal-header-control');
+	// Для активации скрытия контента при раскрытии гамбургера. Начало
+/* 	let headerControl = document.querySelector('.legal-header-control');
 	let tagBody = document.querySelector('body');
 
 	headerControl.addEventListener('click', () => {
 		tagBody.classList.toggle('legal-active');
-	});
+	}); */
+	// Для активации скрытия контента при раскрытии гамбургера. Конец
+
+	function toggleBody() {
+		document.querySelector( selectors.headerControl ).addEventListener('click', () => {
+			selectors.tagBody.classList.toggle( classes.active );
+		});
+	};
+	toggleBody()
 
 	toggleInit();
 
