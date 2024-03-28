@@ -70,11 +70,11 @@ class LegalMain
 
 		// ACFMain::register_functions();
 
-		ToolsMain::register_functions();
+		// ToolsMain::register_functions();
 	
 		// SchemaMain::register();
 
-		// BaseMain::register_functions();
+		BaseMain::register_functions();
 
 		// YoastMain::register_functions();
 
