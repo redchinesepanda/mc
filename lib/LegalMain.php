@@ -70,7 +70,7 @@ class LegalMain
 
 		ACFMain::register_functions();
 
-		ToolsMain::register_functions();
+		// ToolsMain::register_functions();
 	
 		SchemaMain::register();
 
@@ -80,7 +80,7 @@ class LegalMain
 
 		ReviewMain::register_functions();
 
-		// WPMLMain::register_functions();
+		WPMLMain::register_functions();
 
 		if ( self::check_admin() )
 		{
