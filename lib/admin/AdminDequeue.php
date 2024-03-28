@@ -201,7 +201,7 @@ class AdminDequeue
 	public static function dequeue_wpml()
 	{
 		self::check_wpml_admin();
-		
+
 		// if ( !self::check_wpml() )
 		// {
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
@@ -398,6 +398,11 @@ class AdminDequeue
 		'sitepress-multilingual-cms',
 	];
 
+	public static function str_contains_any(string $haystack, array $needles): bool
+	{
+		return array_reduce($needles, fn($a, $n) => $a || str_contains($haystack, $n), false);
+	}
+
 	public static function check_wpml_page()
 	{
 		$page = self::get_page_id();
@@ -407,7 +412,9 @@ class AdminDequeue
 
 			'page' => $page,
 
-			'array_intersect' => array_intersect( array_map( 'strtolower', explode( ' ', $page ) ), self::PAGE_WPML ),
+			'str_contains_any' => self::str_contains_any( $page, self::PAGE_WPML ),
+
+			// 'array_intersect' => array_intersect( array_map( 'strtolower', explode( ' ', $page ) ), self::PAGE_WPML ),
 		] );
 
 		// $string = 'My nAmE is Tom.';
