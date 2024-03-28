@@ -16,6 +16,16 @@
 
 #nav-menu-header #menu-name
 {
-	margin-left: 0px;
+	margin-left: 0px !important;
   	margin-right: auto;
+}
+
+#nav-menu-header #icl_menu_translation_of
+{
+	margin-left: 0px !important;
+}
+
+#nav-menu-header #icl_menu_language
+{
+	margin-left: 0px !important;
 }
