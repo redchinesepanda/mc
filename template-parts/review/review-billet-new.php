@@ -7,11 +7,6 @@
 			<?php if( !empty( $args[ 'name' ] ) ) : ?>
 				<span class="billet-name"><?php echo $args[ 'name' ]; ?></span>
 			<?php endif; ?>
-			<?php if( empty( $args['review'][ 'disabled' ] ) ) : ?>
-				<a class="review-title-link check-oops" href="<?php echo $args['review'][ 'href' ]; ?>">
-					<?php echo $args['review'][ 'text' ]; ?>
-				</a>
-			<?php endif; ?>
 		</div>
 		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>" target="_blank" rel="nofollow">
 			<?php echo $args['get'][ 'text' ]; ?>
