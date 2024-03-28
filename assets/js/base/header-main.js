@@ -16,6 +16,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( current == element ) {
 			current.classList.toggle( classes.active );
 		}
+
+		let tagBody = document.querySelector('body');
+
+		let headerControl = document.querySelector('.legal-header-control');
+
+		if ( element == element.closest( headerControl ) ) {
+			element.classList.toggle( classes.active );
+		}
+
 	}
 
     // function toggleLink( event )
@@ -103,6 +112,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}); */
 
 	// Для активации кнопки кукки  конец
+
+	/* let headerControl = document.querySelector('.legal-header-control');
+	let tagBody = document.querySelector('body');
+
+	headerControl.addEventListener('click', () => {
+		tagBody.classList.toggle('legal-active');
+	}); */
 
 	toggleInit();
 
