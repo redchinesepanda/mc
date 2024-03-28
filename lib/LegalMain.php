@@ -90,9 +90,9 @@ class LegalMain
 			// 	'check_admin' => self::check_admin(),
 			// ] );
 
-			// ACFMain::register();
+			ACFMain::register();
 	
-			AdminMain::register();
+			// AdminMain::register();
 
 			// ReviewMain::register_functions();
 
