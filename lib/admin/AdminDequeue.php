@@ -16,7 +16,7 @@ class AdminDequeue
 
 		'wpml-wizard',
 
-		'admin-wpml',
+		// 'admin-wpml',
 
 		'sitepress-style',
 
