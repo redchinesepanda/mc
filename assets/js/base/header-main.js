@@ -17,13 +17,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			current.classList.toggle( classes.active );
 		}
 
-		let tagBody = document.querySelector('body');
+	/* 	let tagBody = document.querySelector('body');
+		console.log(tagBody);
 
 		let headerControl = document.querySelector('.legal-header-control');
 
-		if ( element == element.closest( headerControl ) ) {
-			element.classList.toggle( classes.active );
-		}
+		if ( element.closest( headerControl ) ) {
+			tagBody.classList.toggle( classes.active );
+		} */ 
 
 	}
 
@@ -113,12 +114,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// Для активации кнопки кукки  конец
 
-	/* let headerControl = document.querySelector('.legal-header-control');
+	let headerControl = document.querySelector('.legal-header-control');
 	let tagBody = document.querySelector('body');
 
 	headerControl.addEventListener('click', () => {
 		tagBody.classList.toggle('legal-active');
-	}); */
+	});
 
 	toggleInit();
 
