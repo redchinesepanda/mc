@@ -95,12 +95,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	// Для активации кнопки кукки   начало
-	let cookieButton = document.querySelector('.oops-cookie-button');
+/* 	let cookieButton = document.querySelector('.oops-cookie-button');
 	let containerCookieButton = document.querySelector('.legal-oops-cookie-wrapper');
 
 	cookieButton.addEventListener('click', () => {
 		containerCookieButton.classList.toggle('legal-active');
-	});
+	}); */
 
 	// Для активации кнопки кукки  конец
 
