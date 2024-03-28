@@ -9,10 +9,14 @@
 
 /* Appearence > Menus satrt */
 
+/* Display */
+
 #nav-menu-header .major-publishing-actions
 {
 	flex-wrap: wrap;
 }
+
+/* Position */
 
 #nav-menu-header #menu-name
 {
@@ -29,3 +33,11 @@
 {
 	margin-left: 0px !important;
 }
+
+#nav-menu-header .icl_nav_menu_text
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* Appearence > Menus end */
