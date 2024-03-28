@@ -200,6 +200,8 @@ class AdminDequeue
 
 	public static function dequeue_wpml()
 	{
+		self::check_wpml_admin();
+		
 		// if ( !self::check_wpml() )
 		// {
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
@@ -420,6 +422,8 @@ class AdminDequeue
 
 	public static function check_wpml_admin()
 	{
+		self::check_wpml_page();
+
 		return self::check_pagenow( self::PAGENOW[ 'admin' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
