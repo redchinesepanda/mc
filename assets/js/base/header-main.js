@@ -23,7 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( element == element.closest( headerControl ) ) {
 			tagBody.classList.toggle( classes.active );
-		}
+		} 
 
 	}
 
