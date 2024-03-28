@@ -22,7 +22,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		let headerControl = document.querySelector('.legal-header-control');
 
 		if ( element == element.closest( headerControl ) ) {
-			element.classList.toggle( classes.active );
+			tagBody.classList.toggle( classes.active );
 		}
 
 	}
