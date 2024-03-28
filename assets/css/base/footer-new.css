@@ -44,7 +44,9 @@
 	}
 }
 
-@media screen and ( min-width: 960px ) and ( max-width: 1209px )
+/* @media screen and ( min-width: 960px ) and ( max-width: 1209px ) */
+
+@media screen and ( min-width: 960px )
 {
 	/* Display */
 
@@ -80,7 +82,7 @@
 {
 	/* Width and Height */
 
-	.footer-menu > .menu-item-has-children
+	/* .footer-menu > .menu-item-has-children
 	{
 		flex-basis: calc( 100% / 5 - 24px );
 	}
@@ -93,7 +95,7 @@
 	.footer-menu > .menu-item-end > .menu-item-has-children
 	{
 		flex-basis: calc( 100% / 2 - 16px );
-	}
+	} */
 }
 
 @media screen and ( max-width: 959px )
