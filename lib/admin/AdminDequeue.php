@@ -204,7 +204,7 @@ class AdminDequeue
 
 		if ( !self::check_wpml_admin() )
 		{
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
+			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
 
 			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
 		}
