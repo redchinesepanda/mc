@@ -102,30 +102,30 @@ class LegalMain
 
 	public static function register_components()
 	{
-		// LegalComponents::register();
+		LegalComponents::register();
 
-		// NotionMain::register();
+		NotionMain::register();
 
-		// ToolsMain::register();
+		ToolsMain::register();
 
-		// if ( self::check() )
-		// {
-		// 	OopsMain::register();
+		if ( self::check() )
+		{
+			OopsMain::register();
 	
-		// 	LegalBreadcrumbsMain::register();
+			LegalBreadcrumbsMain::register();
 	
-		// 	ReviewMain::register();
+			ReviewMain::register();
 	
-		// 	WPMLMain::register();
+			WPMLMain::register();
 	
-		// 	YoastMain::register();
+			YoastMain::register();
 	
-		// 	BaseMain::register();
+			BaseMain::register();
 	
-		// 	NotFoundMain::register();
+			NotFoundMain::register();
 	
-		// 	MetrikaMain::register();
-		// }
+			MetrikaMain::register();
+		}
 
 		// LegalDebug::debug( [
 		// 	get_option( 'tve_user_templates' ),
