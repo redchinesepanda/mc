@@ -121,7 +121,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleBody() {
 		document.querySelector( selectors.headerControl ).addEventListener('click', () => {
-			selectors.tagBody.classList.toggle( classes.active );
+			document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
 		});
 	};
 	toggleBody()
