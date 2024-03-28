@@ -17,15 +17,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			current.classList.toggle( classes.active );
 		}
 
-	/* 	let tagBody = document.querySelector('body');
-		console.log(tagBody);
-
-		let headerControl = document.querySelector('.legal-header-control');
-
-		if ( element.closest( headerControl ) ) {
-			tagBody.classList.toggle( classes.active );
-		} */ 
-
 	}
 
     // function toggleLink( event )
@@ -116,7 +107,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
 		});
 	};
-	
+
 	toggleBody()
 	// Для активации скрытия контента при раскрытии гамбургера. Конец
 
