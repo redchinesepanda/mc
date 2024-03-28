@@ -146,10 +146,6 @@
 	left: 0px;
 }
 
-/* .legal-bonus-button .about-action-get {
-	margin: 0px auto 30px auto;
-} */
-
 .legal-bonus-button {
 	padding-bottom: 28px;
 }
@@ -165,7 +161,6 @@
 
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
-	/* width: fit-content; */
 	width: calc( 100% - (18px * 2) );
 }
 
@@ -178,7 +173,6 @@
 .legal-bonus-about-wrapper {
 	background-color: var( --Base-base-02 );
 	border-bottom: 1px solid var( --Base-base-09 );
-	/* border-top: 1.6px solid #fff; */
 }
 
 .legal-bonus-about .bonus-about-action {
@@ -190,10 +184,6 @@
 .legal-bonus-about .about-action-get,
 .legal-bonus-button .about-action-get {
 	background-color: var( --Base-base-09 );
-/* 	background-image: url( '../../img/bonus/bonus-get.svg' );
-	background-position: left 25px center;
-	background-repeat: no-repeat;
-	background-size: auto; */
 	border-radius: 60px;
 } 
 
@@ -248,20 +238,14 @@
 }
 
 .legal-bonus-about .about-data-title {
-	/* font-family: "Source Sans Pro"; */
-	/* font-style: normal; */
 	font-weight: 700;
-	/* color: rgb(255, 255, 255); */
 }
 
 .legal-bonus-about .about-data-description {
-	/* font-family: "Source Sans Pro"; */
 	font-size: 16px;
-	/* font-style: normal; */
 	font-weight: 400;
 	letter-spacing: normal;
-	line-height: 28px;
-	/* color: rgb(255, 255, 255); */
+	line-height: 22px;
 }
 
 .legal-bonus-about .about-action-get,
@@ -273,7 +257,3 @@
 	color: var( --Base-base-01 );
 	/* text-align: center; */
 }
-
-/* .legal-bonus-button {
-	text-align: center;
-} */
