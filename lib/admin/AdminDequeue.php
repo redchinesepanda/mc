@@ -9,7 +9,7 @@ class AdminDequeue
 		add_action( 'admin_print_styles', [ $handler, 'dequeue_admin_styles' ] );
     }
 
-	const DEQUEUE_CSS_WPML = [
+	const DEQUEUE_CSS_WPML_ADMIN = [
 		'wpml-select-2',
 
 		'wpml-postEditTranslationEditor-ui',
@@ -38,6 +38,12 @@ class AdminDequeue
 		'otgs-dialogs',
 
 		'otgsSwitcher',
+	];
+
+	const DEQUEUE_CSS_WPML = [
+		...self::DEQUEUE_CSS_WPML_ADMIN,
+
+		...self::DEQUEUE_CSS_WPML_OTGS,
 	];
 
 	const DEQUEUE_CSS_ACF_ADMIN = [
@@ -198,7 +204,7 @@ class AdminDequeue
 		// {
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
 
-			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
+			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
 		// }
 	}
 
@@ -290,6 +296,21 @@ class AdminDequeue
 	{
 		return !empty( $_GET[ self::ARGS[ 'post' ] ] );
 	}
+
+	public static function get_page_id()
+	{
+		if ( self::check_get_page() )
+		{
+			return $_GET[ self::ARGS[ 'page' ] ];
+		}
+
+		return null;
+	}
+
+	public static function check_get_page()
+	{
+		return !empty( $_GET[ self::ARGS[ 'page' ] ] );
+	}
 	
 	public static function check_post_type( $post_type_check, $post_type_current = '', $post_id = null )
 	{
@@ -361,6 +382,44 @@ class AdminDequeue
 	public static function check_acf_list()
 	{
 		return self::check_pagenow( self::PAGENOW[ 'edit' ] )
+			
+			&& self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
+	}
+
+	const PAGE_WPML = [
+		'tm/menu/settings',
+
+		// 'sitepress-multilingual-cms/menu/languages.php',
+
+		// 'sitepress-multilingual-cms/menu/languages.php&trop=1',
+
+		'sitepress-multilingual-cms',
+	];
+
+	public static function check_wpml_page()
+	{
+		$page = self::get_page_id();
+
+		LegalDebug::debug( [
+			'AdminDequeue' => 'check_wpml_page',
+
+			'page' => $page,
+
+			'array_intersect' => array_intersect( array_map( 'strtolower', explode( ' ', $page ) ), self::PAGE_WPML ),
+
+		// $string = 'My nAmE is Tom.';
+
+		// $array = array("name","tom");
+
+		// if( 0 < count(array_intersect(array_map('strtolower', explode(' ', $string)), $array)))
+		// {
+		// //do sth
+		// }
+	}
+
+	public static function check_wpml_admin()
+	{
+		return self::check_pagenow( self::PAGENOW[ 'admin' ] )
 			
 			&& self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
 	}
