@@ -18,6 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		let tagBody = document.querySelector('body');
+		console.log(tagBody);
 
 		let headerControl = document.querySelector('.legal-header-control');
 
