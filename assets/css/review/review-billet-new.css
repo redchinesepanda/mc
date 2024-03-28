@@ -190,7 +190,7 @@
 /* Billet Typography */
 
 .legal-billet .billet-review.legal-default .review-title-link {
-	/* color: #ffffff; */
+	color: #ffffff;
 }
 
 .legal-billet .billet-review:not( .legal-default ) .review-title-link {
