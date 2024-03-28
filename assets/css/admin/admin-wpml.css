@@ -13,3 +13,9 @@
 {
 	flex-wrap: wrap;
 }
+
+#nav-menu-header #menu-name
+{
+	margin-left: 0px;
+  	margin-right: auto;
+}
