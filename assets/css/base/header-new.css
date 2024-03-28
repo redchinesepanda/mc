@@ -655,6 +655,10 @@
 
 	/* Width and Height */
 
+	body.legal-active {
+		overflow: hidden;
+	}
+
 	.legal-menu > .menu-item:last-child > .item-title
 	{
 		flex-grow: 1;
