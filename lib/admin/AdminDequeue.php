@@ -200,13 +200,9 @@ class AdminDequeue
 
 	public static function dequeue_wpml()
 	{
-		// self::check_wpml_admin();
-
 		if ( !self::check_wpml_admin() )
 		{
-			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
-
-			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
+			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
 		}
 	}
 
