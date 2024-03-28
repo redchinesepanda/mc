@@ -406,6 +406,7 @@ class AdminDequeue
 			'page' => $page,
 
 			'array_intersect' => array_intersect( array_map( 'strtolower', explode( ' ', $page ) ), self::PAGE_WPML ),
+		] );
 
 		// $string = 'My nAmE is Tom.';
 
