@@ -52,7 +52,7 @@ class LegalMain
 		{
 			$handler = new self();
 		
-			// add_action( 'wp', [ $handler, 'register_components' ] );
+			add_action( 'wp', [ $handler, 'register_components' ] );
 
 			self::register_functions();
 		}
@@ -60,30 +60,30 @@ class LegalMain
 
 	public static function register_functions()
     {
-		// LegalComponents::register_functions();
+		LegalComponents::register_functions();
 
-		// ACFMain::register_functions();
+		ACFMain::register_functions();
 
-		// ToolsMain::register_functions();
+		ToolsMain::register_functions();
 	
-		// SchemaMain::register();
+		SchemaMain::register();
 
 		BaseMain::register_functions();
 
-		// YoastMain::register_functions();
+		YoastMain::register_functions();
 
-		// ReviewMain::register_functions();
+		ReviewMain::register_functions();
 
-		// WPMLMain::register_functions();
+		WPMLMain::register_functions();
 
-		// if ( self::check_admin() )
-		// {
-		// 	ACFMain::register();
+		if ( self::check_admin() )
+		{
+			ACFMain::register();
 	
-		// 	AdminMain::register();
+			AdminMain::register();
 
-		// 	NotionMain::register_functions();
-		// }
+			NotionMain::register_functions();
+		}
 	}
 
 	public static function register_components()
