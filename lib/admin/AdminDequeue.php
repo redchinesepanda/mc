@@ -200,14 +200,14 @@ class AdminDequeue
 
 	public static function dequeue_wpml()
 	{
-		self::check_wpml_admin();
+		// self::check_wpml_admin();
 
-		// if ( !self::check_wpml() )
-		// {
+		if ( !self::check_wpml_admin() )
+		{
 			ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML );
 
 			// ToolEnqueue::dequeue_style( self::DEQUEUE_CSS_WPML_OTGS );
-		// }
+		}
 	}
 
 	public static function dequeue_acf()
@@ -407,33 +407,26 @@ class AdminDequeue
 	{
 		$page = self::get_page_id();
 
-		LegalDebug::debug( [
-			'AdminDequeue' => 'check_wpml_page',
+		// LegalDebug::debug( [
+		// 	'AdminDequeue' => 'check_wpml_page',
 
-			'page' => $page,
+		// 	'page' => $page,
 
-			'str_contains_any' => self::str_contains_any( $page, self::PAGE_WPML ),
+		// 	'str_contains_any' => self::str_contains_any( $page, self::PAGE_WPML ),
+		// ] );
 
-			// 'array_intersect' => array_intersect( array_map( 'strtolower', explode( ' ', $page ) ), self::PAGE_WPML ),
-		] );
-
-		// $string = 'My nAmE is Tom.';
-
-		// $array = array("name","tom");
-
-		// if( 0 < count(array_intersect(array_map('strtolower', explode(' ', $string)), $array)))
-		// {
-		// //do sth
-		// }
+		return self::str_contains_any( $page, self::PAGE_WPML );
 	}
 
 	public static function check_wpml_admin()
 	{
-		self::check_wpml_page();
+		// self::check_wpml_page();
 
 		return self::check_pagenow( self::PAGENOW[ 'admin' ] )
 			
-			&& self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
+			// && self::check_post_type( self::POST_TYPE[ 'acf' ], self::get_post_type() );
+
+			&& self::check_wpml_page();
 	}
 
 	public static function check_acf_admin()
