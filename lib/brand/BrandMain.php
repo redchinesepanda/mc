@@ -124,9 +124,9 @@ class BrandMain
 				}
 				else
 				{
-					if ( !empty( $about[ self::GROUP[ 'logo' ] ] ) )
+					if ( !empty( $about[ self::ABOUT[ 'logo' ] ] ) )
 					{
-						return $about[ self::GROUP[ 'logo' ] ];
+						return $about[ self::ABOUT[ 'logo' ] ];
 					}
 				}
 			}
@@ -154,14 +154,14 @@ class BrandMain
 				}
 				else
 				{
-					if ( $about[ self::GROUP[ 'square' ] ] )
+					if ( $about[ self::ABOUT[ 'square' ] ] )
 					{
-						return $about[ self::GROUP[ 'square' ] ];
+						return $about[ self::ABOUT[ 'square' ] ];
 					}
 
-					if ( $about[ self::GROUP[ 'logo' ] ] )
+					if ( $about[ self::ABOUT[ 'logo' ] ] )
 					{
-						return $about[ self::GROUP[ 'logo' ] ];
+						return $about[ self::ABOUT[ 'logo' ] ];
 					}
 				}
 			}
