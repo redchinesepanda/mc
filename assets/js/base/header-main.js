@@ -111,20 +111,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	// Для активации скрытия контента при раскрытии гамбургера. Начало
-/* 	let headerControl = document.querySelector('.legal-header-control');
-	let tagBody = document.querySelector('body');
-
-	headerControl.addEventListener('click', () => {
-		tagBody.classList.toggle('legal-active');
-	}); */
-	// Для активации скрытия контента при раскрытии гамбургера. Конец
-
 	function toggleBody() {
 		document.querySelector( selectors.headerControl ).addEventListener('click', () => {
 			document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
 		});
 	};
+	
 	toggleBody()
+	// Для активации скрытия контента при раскрытии гамбургера. Конец
 
 	toggleInit();
 
