@@ -92,11 +92,11 @@ class LegalMain
 
 			ACFMain::register();
 	
-			// AdminMain::register();
+			AdminMain::register();
 
 			// ReviewMain::register_functions();
 
-			NotionMain::register_functions();
+			// NotionMain::register_functions();
 		}
 	}
 
