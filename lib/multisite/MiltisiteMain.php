@@ -19,7 +19,7 @@ class MiltisiteMain
 		add_action( 'admin_notices', [ $handler, 'rudr_bulk_multisite_notices' ] );
 	}
 
-	public static function get_current_blog_id( $actions )
+	public static function get_current_blog_id()
 	{
 		return get_current_blog_id();
 	}
