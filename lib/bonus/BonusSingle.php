@@ -43,24 +43,28 @@ class BonusSingle
         'new' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-single-new.php',
     ];
 
+    public static function render_about()
+    {
+        if ( TemplateMain::check_new() )
+        {
+            return return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );
+        }
+
+        return '';
+    }
+
     public static function render()
     {
-        if ( !BonusMain::check() )
+        if ( TemplateMain::check_new() )
         {
+            // return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );
+
             return '';
         }
 
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'main' ], false, [] );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
-        if ( TemplateMain::check_new() )
+        if ( !BonusMain::check() )
         {
-            return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );
+            return '';
         }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [] );
