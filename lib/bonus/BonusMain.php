@@ -29,9 +29,9 @@ class BonusMain
 		],
 
 		'day' => [
-			'single' => '%1$s day',
+			'single' => '%s day',
 
-			'plural' => '%1$s days',
+			'plural' => '%s days',
 		],
 
 		'hour' => [
