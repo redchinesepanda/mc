@@ -190,6 +190,8 @@ class LegalMain
 
 	const HOST_PRODUCTION = [
 		'mc' => 'match.center',
+
+		'es' => 'es.match.center',
 	];
 
 	const HOST_DEBUG = [
@@ -201,7 +203,7 @@ class LegalMain
 
 		'test' => 'test.match.center',
 
-		'es' => 'es.match.center',
+		// 'es' => 'es.match.center',
 	];
 
 	public static function check_host_production()
