@@ -45,7 +45,8 @@ class AdminTaxonomy
                 //     'post_type' => $post_type,
                 // ] );
 
-                if ( $typenow == $post_type ) {
+                if ( $typenow == $post_type )
+                {
                     $selected = isset( $_GET[ $taxonomy ] ) ? $_GET[ $taxonomy ] : '';
         
                     $info_taxonomy = get_taxonomy( $taxonomy );
