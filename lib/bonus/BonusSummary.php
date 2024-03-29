@@ -98,6 +98,16 @@ class BonusSummary
         'bonus-summary' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-summary.php',
     ];
 
+    public static function render_about()
+	{
+		if ( TemplateMain::check_new() )
+        {
+            return self::render();
+        }
+        
+		return '';
+	}
+
     public static function render()
     {
 		if ( !BonusMain::check() )
@@ -105,13 +115,15 @@ class BonusSummary
             return '';
         }
 
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus-summary' ], false, self::get() );
+        // load_template( self::TEMPLATE[ 'bonus-summary' ], false, self::get() );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+		return TemplateMain::render_main( self::TEMPLATE[ 'bonus-summary' ], self::get() );
     }
 }
 
