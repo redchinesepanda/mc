@@ -21,7 +21,7 @@ require_once( 'BonusPreview.php' );
 class BonusMain
 {
 	const TEXT_PLURAL = [
-		'day' => 'day',
+		'must-be-of-post-type' => '%1$s must be of post type %2$s.',
 	];
 
 	const TEXT = [

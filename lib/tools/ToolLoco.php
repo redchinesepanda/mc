@@ -70,7 +70,7 @@ class ToolLoco
             {
                 $custom = new Loco_gettext_String( $line );
 
-                $custom->pluralize( 'days' );
+                $custom->pluralize( '%1$s must be of one of the following post types: %2$s' );
     
                 // $custom->addExtractedComment( 'This is a footer menu location name' );
     
