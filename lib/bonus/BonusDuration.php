@@ -85,7 +85,7 @@ class BonusDuration
 		];
 	}
 
-	public static function get_diff( $interval, $text )
+	public static function get_diff_part( $interval, $text )
 	{
 		$amount = $interval->format( "%a" );
 
@@ -122,7 +122,7 @@ class BonusDuration
 		// 	$amount
 		// );
 
-		return self::get_diff( $interval, BonusMain::TEXT_PLURAL[ 'day' ] );
+		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ] );
 	}
 
 	public static function get_diff_hours( $interval )
