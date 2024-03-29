@@ -113,6 +113,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 	toggleBody() */
 
+	//та же функция, но более корректная
 /* 	document.querySelector( selectors.headerControl ).addEventListener( 'click', toggleBody );
 
 	function toggleBody( event ) {
