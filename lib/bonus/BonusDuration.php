@@ -18,11 +18,6 @@ class BonusDuration
 		],
     ];
 
-	/* public static function register_style()
-    {
-        BonusMain::register_style( self::CSS );
-    } */
-
 	public static function register_style()
     {
 		if ( TemplateMain::check_code() )
@@ -33,11 +28,6 @@ class BonusDuration
 		{
 			BonusMain::register_style( self::CSS );
 		}
-    }
-
-	public static function register_functions()
-    {
-        // self::date_migrate();
     }
 
 	public static function register()
@@ -56,31 +46,6 @@ class BonusDuration
         
         'bonusy-by',
 	];
-
-	// public static function date_migrate_args()
-    // {
-    //     return [
-    //         'numberposts' => -1,
-
-	// 		'suppress_filters' => 1,
-
-	// 		// 'p' => 250736,
-
-    //         'post_type' => 'post',
-
-    //         [
-    //             [
-    //                 'taxonomy' => self::TAXONOMY[ 'category' ],
-
-    //                 'field' => 'slug',
-
-    //                 'terms' => self::CATEGORY,
-
-	// 				'operator' => 'IN',
-	// 			],
-    //         ],
-    //     ];
-    // }
 
 	public static function date_get( $id )
     {

@@ -120,8 +120,6 @@ class BonusMain
 		BonusRelated::register_functions();
 
 		BonusAbout::register_functions();
-
-		BonusDuration::register_functions();
 	}
 
 	public static function register()
