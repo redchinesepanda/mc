@@ -93,7 +93,7 @@ class BonusDuration
 
 		$plural = __( BonusMain::TEXT[ 'days' ], ToolLoco::TEXTDOMAIN );
 
-		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $rating, ToolLoco::TEXTDOMAIN ), $amount );
+		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $amount, ToolLoco::TEXTDOMAIN ), $amount );
 	}
 
 	public static function get_diff_hours( $interval )
@@ -104,7 +104,7 @@ class BonusDuration
 
 		$plural = __( BonusMain::TEXT[ 'hours' ], ToolLoco::TEXTDOMAIN );
 
-		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $rating, ToolLoco::TEXTDOMAIN ), $amount );
+		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $amount, ToolLoco::TEXTDOMAIN ), $amount );
 	}
 
 	public static function get_diff( $expire )
