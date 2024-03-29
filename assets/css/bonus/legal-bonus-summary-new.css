@@ -17,15 +17,15 @@
 {
 	/* Display */
 
-	.legal-bonus-summary {
+	/* .legal-bonus-summary {
 		row-gap: 25px;
-	}
+	} */
 
 	/* Width and Height */
 
-	.legal-bonus-summary .bonus-summary-item {
+	/* .legal-bonus-summary .bonus-summary-item {
 		flex-basis: calc( 100% / 5 - 8px );
-	}
+	} */
 
 	/* Position */
 	
@@ -39,7 +39,7 @@
 .legal-bonus-summary {
 	display: flex;
 	flex-wrap: wrap;
-	column-gap: 10px;
+	column-gap: 48px;
 }
 
 /* Position */
