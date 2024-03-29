@@ -35,6 +35,8 @@ class BonusMain
 
 		'claim-bonus' => 'Claim Bonus',
 
+		'expires-in' => 'Expires in',
+
 		'get-bonus' => 'Get Bonus',
 
 		'min-deposit' => 'Min. deposit',

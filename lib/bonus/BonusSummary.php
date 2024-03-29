@@ -61,13 +61,22 @@ class BonusSummary
 			return [];
         }
 
-		return [
-			'bookmaker' => [
-				'label' => __( BonusMain::TEXT[ 'bookmaker' ], ToolLoco::TEXTDOMAIN ),
+		$summary_bookmaker = [];
 
-				'value' => get_field( self::FIELD[ 'bonus-name' ], $id ),
-			],
+		if ( !TemplateMain::check_new() )
+		{
+			$summary_bookmaker = [
+				'bookmaker' => [
+					'label' => __( BonusMain::TEXT[ 'bookmaker' ], ToolLoco::TEXTDOMAIN ),
+	
+					'value' => get_field( self::FIELD[ 'bonus-name' ], $id ),
+				],
+			];
+		}
 
+		$published_value = get_the_date( 'd/m/Y' );
+
+		$summary_always = [
 			'bonus-amount' => [
 				'label' => __( BonusMain::TEXT[ 'bonus-amount' ], ToolLoco::TEXTDOMAIN ),
 
@@ -85,13 +94,60 @@ class BonusSummary
 
 				'value' => get_field( self::FIELD[ 'bonus-wagering' ], $id ),
 			],
+		];
 
+		$summary_published = [
 			'published' => [
 				'label' => __( BonusMain::TEXT[ 'published' ], ToolLoco::TEXTDOMAIN ),
 
 				'value' => get_the_date( 'd/m/Y' ),
 			],
 		];
+
+		if ( TemplateMain::check_new() )
+		{
+			$summary_published = [
+				'published' => [
+					'label' => __( BonusMain::TEXT[ 'expires-in' ], ToolLoco::TEXTDOMAIN ),
+	
+					'value' => get_the_date( 'd/m/Y' ),
+				],
+			];
+		}
+
+		return array_merge( $summary_bookmaker, $summary_always, $summary_published );
+
+		// return [
+		// 	'bookmaker' => [
+		// 		'label' => __( BonusMain::TEXT[ 'bookmaker' ], ToolLoco::TEXTDOMAIN ),
+
+		// 		'value' => get_field( self::FIELD[ 'bonus-name' ], $id ),
+		// 	],
+
+		// 	'bonus-amount' => [
+		// 		'label' => __( BonusMain::TEXT[ 'bonus-amount' ], ToolLoco::TEXTDOMAIN ),
+
+		// 		'value' => get_field( self::FIELD[ 'bonus-amount' ], $id ),
+		// 	],
+
+		// 	'min-deposit' => [
+		// 		'label' => __( BonusMain::TEXT[ 'min-deposit' ], ToolLoco::TEXTDOMAIN ),
+
+		// 		'value' => get_field( self::FIELD[ 'bonus-min-deposit' ], $id ),
+		// 	],
+
+		// 	'wagering' => [
+		// 		'label' => __( BonusMain::TEXT[ 'wagering' ], ToolLoco::TEXTDOMAIN ),
+
+		// 		'value' => get_field( self::FIELD[ 'bonus-wagering' ], $id ),
+		// 	],
+
+		// 	'published' => [
+		// 		'label' => __( BonusMain::TEXT[ 'published' ], ToolLoco::TEXTDOMAIN ),
+
+		// 		'value' => get_the_date( 'd/m/Y' ),
+		// 	],
+		// ];
     }
 
 	const TEMPLATE = [
