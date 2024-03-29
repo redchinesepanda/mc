@@ -102,13 +102,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	// Для активации скрытия контента при раскрытии гамбургера. Начало
-	function toggleBody() {
+	/* function toggleBody() {
 		document.querySelector( selectors.headerControl ).addEventListener('click', () => {
 			document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
 		});
 	};
-	
-	toggleBody()
+	toggleBody() */
+
+	document.querySelector( selectors.headerControl ).addEventListener( 'click', toggleBody );
+
+	function toggleBody( event ) {
+		document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
+	}
+
 	// Для активации скрытия контента при раскрытии гамбургера. Конец
 
 	toggleInit();
