@@ -106,17 +106,19 @@ class BonusSummary
 
 		if ( TemplateMain::check_new() )
 		{
-			LegalDebug::debug( [
-				'BonusSummary' => 'get',
+			// LegalDebug::debug( [
+			// 	'BonusSummary' => 'get',
 
-				'BonusDuration' => BonusDuration::get(),
-			] );
+			// 	'BonusDuration' => BonusDuration::get(),
+			// ] );
+
+			$bonus_duration = BonusDuration::get();
 
 			$summary_published = [
 				'published' => [
 					'label' => __( BonusMain::TEXT[ 'expires-in' ], ToolLoco::TEXTDOMAIN ),
 	
-					'value' => get_the_date( 'd/m/Y' ),
+					'value' => $bonus_duration[ 'duration' ],
 				],
 			];
 		}
