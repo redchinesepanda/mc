@@ -110,18 +110,15 @@ class BonusSummary
 
     public static function render()
     {
-		if ( !BonusMain::check() )
+		if ( TemplateMain::check_new() )
         {
             return '';
         }
 
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'bonus-summary' ], false, self::get() );
-
-        // $output = ob_get_clean();
-
-        // return $output;
+		if ( !BonusMain::check() )
+        {
+            return '';
+        }
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-summary' ], self::get() );
     }
