@@ -52,7 +52,7 @@ class MiltisiteMain
 	];
 
 	const DOACTION = [
-		'move-to' =>self::DOACTION[ 'move-to' ],
+		'move-to' => 'move_to_',
 	];
 
 	public static function rudr_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
