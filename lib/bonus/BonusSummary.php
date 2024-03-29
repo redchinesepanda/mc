@@ -102,7 +102,7 @@ class BonusSummary
 	{
 		if ( TemplateMain::check_new() )
         {
-            return self::render();
+            return LegalComponents::render_main( self::TEMPLATE[ 'bonus-summary' ], self::get() );
         }
         
 		return '';
