@@ -11,6 +11,8 @@ class ToolLoco
         add_action( 'after_setup_theme', [ $handler, 'loco' ] );
 
         add_filter( 'loco_extracted_template', [ $handler, 'add_custom_string'] , 10, 2 );
+
+        add_filter( 'loco_extracted_template', [ $handler, 'add_custom_string_plural'] , 10, 2 );
     }
     
     public static function loco() {
@@ -61,20 +63,22 @@ class ToolLoco
     
                 $extraction->addString( $custom, $domain );
             }
+        }
+    }
 
+    public static function add_custom_string_plural( Loco_gettext_Extraction $extraction, $domain )
+    {
+        if ( self::TEXTDOMAIN === $domain )
+        {
             $lines = array_merge(
                 BonusMain::TEXT_PLURAL
             );
 
             foreach ( $lines as $line )
             {
-                $custom = new Loco_gettext_String( $line );
+                $custom = new Loco_gettext_String( $line[ 'single' ] );
 
-                $custom->pluralize( '%1$s must be of one of the following post types: %2$s' );
-    
-                // $custom->addExtractedComment( 'This is a footer menu location name' );
-    
-                // $custom->addFileReferences( 'custom.yml:1' );
+                $custom->pluralize( $line[ 'plural' ] );
     
                 $extraction->addString( $custom, $domain );
             }
