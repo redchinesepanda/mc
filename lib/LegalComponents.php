@@ -234,6 +234,11 @@ class LegalComponents
 
         return $output;
     }
+
+	public static function print_main( $template, $args )
+    {
+		load_template( $template, false, $args );
+    }
 }
 
 ?>
