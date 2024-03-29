@@ -85,9 +85,9 @@ class BonusDuration
 		];
 	}
 
-	public static function get_diff_part( $interval, $pattern )
+	public static function get_diff_part( $interval, $pattern, $format )
 	{
-		$amount = $interval->format( "%a" );
+		$amount = $interval->format( $format );
 
 		return sprintf(
 			_n(
@@ -106,12 +106,12 @@ class BonusDuration
 
 	public static function get_diff_days( $interval )
 	{
-		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ] );
+		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ], self::FORMAT[ 'amount-days' ] );
 	}
 
 	public static function get_diff_hours( $interval )
 	{
-		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'hour' ] );
+		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'hour' ], self::FORMAT[ 'amount-hours' ] );
 	}
 
 	public static function get_diff( $expire )
@@ -160,6 +160,10 @@ class BonusDuration
 		'expire' => "Y-m-d H:i:s",
 
 		'compare' => 'Y-m-d',
+
+		'amount-days' => '%a',
+
+		'amount-hours' => '%h',
 	];
 
 	public static function check_expired( $id )
