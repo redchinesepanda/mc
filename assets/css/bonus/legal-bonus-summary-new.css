@@ -42,6 +42,10 @@
 	column-gap: 48px;
 }
 
+.legal-bonus-summary .bonus-summary-item {
+	row-gap: 8px;
+}
+
 /* Position */
 
 /* .legal-bonus-summary {
