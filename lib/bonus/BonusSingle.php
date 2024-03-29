@@ -47,7 +47,7 @@ class BonusSingle
     {
         if ( TemplateMain::check_new() )
         {
-            return return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );
+            return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );
         }
 
         return '';
