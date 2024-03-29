@@ -106,11 +106,11 @@ class BonusSummary
 
 		if ( TemplateMain::check_new() )
 		{
-			LegalDebug::debug( [
-				'BonusSummary' => 'get',
+			// LegalDebug::debug( [
+			// 	'BonusSummary' => 'get',
 
-				'BonusDuration' => BonusDuration::get(),
-			] );
+			// 	'BonusDuration' => BonusDuration::get(),
+			// ] );
 
 			$bonus_duration = BonusDuration::get();
 
