@@ -101,10 +101,12 @@ class BonusDuration
 
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
 			
-				$amount
+				$amount,
+
+				ToolLoco::TEXTDOMAIN
 			),
 			
-			ToolLoco::TEXTDOMAIN
+			$amount
 		);
 	}
 
@@ -118,10 +120,12 @@ class BonusDuration
 
 				BonusMain::TEXT_PLURAL[ 'hour' ][ 'plural' ],
 			
-				$amount
+				$amount,
+
+				ToolLoco::TEXTDOMAIN
 			),
 			
-			ToolLoco::TEXTDOMAIN
+			$amount
 		);
 	}
 
