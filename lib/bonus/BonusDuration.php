@@ -197,6 +197,11 @@ class BonusDuration
 
     public static function render()
     {
+		if ( TemplateMain::check_new() )
+		{
+			return '';
+		}
+		
 		if ( !BonusMain::check() )
         {
             return '';
