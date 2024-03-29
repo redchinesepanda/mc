@@ -51,33 +51,36 @@ class AdminTaxonomy
         
                     $info_taxonomy = get_taxonomy( $taxonomy );
 
-                    wp_dropdown_categories( [
-                        'show_option_all' => sprintf( __( 'Show all %s', ToolLoco::TEXTDOMAIN ), $info_taxonomy->label ),
-                        
-                        'taxonomy'        => $taxonomy,
-                        
-                        'name'            => $taxonomy,
-                        
-                        'orderby'         => 'name',
-                        
-                        'selected'        => $selected,
-                        
-                        'show_count'      => true,
-                        
-                        'hide_empty'      => true,
-                    ] );
-
-                    // LegalDebug::debug( [
-                    //     'function' => 'AdminTaxonomy::filter_dropdown',
-
-                    //     'typenow' => $typenow,
-        
-                    //     'taxonomies' => $taxonomies,
-
-                    //     'taxonomy' => $taxonomy,
-
-                    //     'label' => $info_taxonomy->label,
-                    // ] );
+                    if ( $info_taxonomy )
+                    {
+                        wp_dropdown_categories( [
+                            'show_option_all' => sprintf( __( 'Show all %s', ToolLoco::TEXTDOMAIN ), $info_taxonomy->label ),
+                            
+                            'taxonomy'        => $taxonomy,
+                            
+                            'name'            => $taxonomy,
+                            
+                            'orderby'         => 'name',
+                            
+                            'selected'        => $selected,
+                            
+                            'show_count'      => true,
+                            
+                            'hide_empty'      => true,
+                        ] );
+    
+                        // LegalDebug::debug( [
+                        //     'function' => 'AdminTaxonomy::filter_dropdown',
+    
+                        //     'typenow' => $typenow,
+            
+                        //     'taxonomies' => $taxonomies,
+    
+                        //     'taxonomy' => $taxonomy,
+    
+                        //     'label' => $info_taxonomy->label,
+                        // ] );
+                    }
                 };
             }
         }
