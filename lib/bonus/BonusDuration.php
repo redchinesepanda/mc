@@ -110,7 +110,7 @@ class BonusDuration
 				LegalDebug::debug( [
 					'BonusDuration' => 'get_duration',
 	
-					'interval' => $interval->format( "%H:%I:%S (Full days: %a)" ),
+					'interval' => $interval->format( "%H:%I:%S (Full days: %a) (Full hours: %h)" ),
 				] );
 			}
 
