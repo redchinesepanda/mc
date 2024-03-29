@@ -93,9 +93,26 @@ class BonusDuration
 
 		if ( $bonus_expire = get_field( self::FIELD[ 'bonus-expire' ], $id ) )
 		{
-			$duration = (
-				DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire )
-			)->format( self::FORMAT[ 'bonus' ] );
+			$expire = DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire );
+			
+			// $duration = (
+			// 	DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire )
+			// )->format( self::FORMAT[ 'bonus' ] );
+
+			$duration = $expire->format( self::FORMAT[ 'bonus' ] );
+
+			if ( TemplateMain::check_new() )
+			{
+				$now = new DateTime( 'now' );
+
+				$interval = $now->diff( $duration );
+				
+				LegalDebug::debug( [
+					'BonusDuration' => 'get_duration',
+	
+					'interval' => $interval->format( 'j days, G hours' ),
+				] );
+			}
 
 			$prefix = __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN );
 		}
@@ -165,14 +182,6 @@ class BonusDuration
         {
             return '';
         }
-
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'bonus-duration' ], false, self::get() );
-
-        // $output = ob_get_clean();
-
-        // return $output;
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-duration' ], self::get() );
     }
