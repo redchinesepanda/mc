@@ -105,7 +105,7 @@ class BonusDuration
 			{
 				$now = new DateTime( 'now' );
 
-				$interval = $now->diff( $duration );
+				$interval = $now->diff( $expire );
 				
 				LegalDebug::debug( [
 					'BonusDuration' => 'get_duration',
