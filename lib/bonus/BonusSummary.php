@@ -125,7 +125,7 @@ class BonusSummary
 				'published' => [
 					'label' => __( BonusMain::TEXT[ 'expires-in' ], ToolLoco::TEXTDOMAIN ),
 	
-					'value' => published_value,
+					'value' => $published_value,
 				],
 			];
 		}
