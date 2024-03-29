@@ -89,7 +89,7 @@ class BonusDuration
 	{
 		$amount = $interval->format( "%a" );
 
-		$single = __( BonusMain::TEXT[ 'single' ], ToolLoco::TEXTDOMAIN );
+		$single = __( BonusMain::TEXT[ 'day' ], ToolLoco::TEXTDOMAIN );
 
 		$plural = __( BonusMain::TEXT[ 'days' ], ToolLoco::TEXTDOMAIN );
 
