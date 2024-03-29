@@ -89,11 +89,23 @@ class BonusDuration
 	{
 		$amount = $interval->format( "%a" );
 
-		$single = __( BonusMain::TEXT[ 'day' ], ToolLoco::TEXTDOMAIN );
+		// $single = __( BonusMain::TEXT[ 'day' ], ToolLoco::TEXTDOMAIN );
 
-		$plural = __( BonusMain::TEXT[ 'days' ], ToolLoco::TEXTDOMAIN );
+		// $plural = __( BonusMain::TEXT[ 'days' ], ToolLoco::TEXTDOMAIN );
 
-		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $amount, ToolLoco::TEXTDOMAIN ), $amount );
+		// return sprintf( _n( '%s ' . $single, '%s ' . $plural, $amount, ToolLoco::TEXTDOMAIN ), $amount );
+
+		return sprintf(
+			_n(
+				BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
+				
+				BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
+			
+				, ToolLoco::TEXTDOMAIN
+			),
+			
+			$amount
+		);
 	}
 
 	public static function get_diff_hours( $interval )
@@ -201,7 +213,7 @@ class BonusDuration
 		{
 			return '';
 		}
-		
+
 		if ( !BonusMain::check() )
         {
             return '';

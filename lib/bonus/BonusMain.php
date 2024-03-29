@@ -27,6 +27,18 @@ class BonusMain
 
 			'plural' => '%1$s must be of one of the following post types: %2$s',
 		],
+
+		'day' => [
+			'single' => '%1$s day',
+
+			'plural' => '%1$s days',
+		],
+
+		'hour' => [
+			'single' => '%1$s hour',
+
+			'plural' => '%1$s hours',
+		],
 	];
 
 	const TEXT = [
@@ -44,17 +56,9 @@ class BonusMain
 
 		'claim-bonus' => 'Claim Bonus',
 
-		'day' => 'day',
-
-		'days' => 'days',
-
 		'expires-in' => 'Expires in',
 
 		'get-bonus' => 'Get Bonus',
-
-		'hour' => 'hour',
-
-		'hours' => 'hours',
 
 		'min-deposit' => 'Min. deposit',
 
