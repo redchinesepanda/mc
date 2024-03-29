@@ -95,6 +95,32 @@ class BonusDuration
 		// 	$count
 		// );
 
+		$plural = _n(
+			BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
+
+			BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
+		
+			$amount,
+
+			ToolLoco::TEXTDOMAIN
+		);
+
+		$replace = sprintf(
+			$plural,
+			$amount
+		);
+
+		LegalDebug::debug( [
+			'BonusDuration' => 'get_diff_days',
+
+			'amount' => $amount,
+
+			'plural' => $plural,
+
+			'replace' => $replace,
+		] );
+
+
 		return sprintf(
 			_n(
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
