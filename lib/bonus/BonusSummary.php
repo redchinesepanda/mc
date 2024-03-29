@@ -110,15 +110,13 @@ class BonusSummary
 				'BonusSummary' => 'get',
 
 				'BonusDuration' => BonusDuration::get(),
-
-				'!empty' => !empty( $published_value[ 'duration' ] ),
 			] );
 
 			$bonus_duration = BonusDuration::get();
 
 			$published_value = $bonus_duration[ 'title' ];
 
-			if ( !empty( $published_value[ 'duration' ] ) )
+			if ( !empty( $bonus_duration[ 'duration' ] ) )
 			{
 				$published_value = $bonus_duration[ 'duration' ];
 			}
