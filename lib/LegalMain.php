@@ -32,6 +32,8 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
+require_once( 'multisite/MiltisiteMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -83,6 +85,8 @@ class LegalMain
 			AdminMain::register();
 
 			NotionMain::register_functions();
+
+			MiltisiteMain::register_functions();
 		}
 	}
 

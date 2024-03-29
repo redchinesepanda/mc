@@ -2,7 +2,7 @@
 
 class MiltisiteMain
 {
-	public static function register()
+	public static function register_functions()
 	{
 		$handler = new self();
 
@@ -100,12 +100,17 @@ class MiltisiteMain
 				wp_set_object_terms( $inserted_post_id, $post_terms, 'category', false );
 				
 				// add post meta
-				foreach ( $data as $key => $values) {
+				foreach ( $data as $key => $values)
+				{
 					// if you do not want weird redirects
-					if( '_wp_old_slug' === $key ) {
+
+					if( '_wp_old_slug' === $key )
+					{
 						continue;
 					}
-					foreach( $values as $value ) {
+
+					foreach( $values as $value )
+					{
 						add_post_meta( $inserted_post_id, $key, $value );
 					}
 				}
