@@ -114,48 +114,23 @@ class BonusSummary
 
 			$bonus_duration = BonusDuration::get();
 
+			$published_value = $bonus_duration[ 'title' ];
+
+			if ( !empty( $published_value[ 'duration' ] ) )
+			{
+				$published_value = $bonus_duration[ 'duration' ];
+			}
+
 			$summary_published = [
 				'published' => [
 					'label' => __( BonusMain::TEXT[ 'expires-in' ], ToolLoco::TEXTDOMAIN ),
 	
-					'value' => $bonus_duration[ 'duration' ],
+					'value' => published_value,
 				],
 			];
 		}
 
 		return array_merge( $summary_bookmaker, $summary_always, $summary_published );
-
-		// return [
-		// 	'bookmaker' => [
-		// 		'label' => __( BonusMain::TEXT[ 'bookmaker' ], ToolLoco::TEXTDOMAIN ),
-
-		// 		'value' => get_field( self::FIELD[ 'bonus-name' ], $id ),
-		// 	],
-
-		// 	'bonus-amount' => [
-		// 		'label' => __( BonusMain::TEXT[ 'bonus-amount' ], ToolLoco::TEXTDOMAIN ),
-
-		// 		'value' => get_field( self::FIELD[ 'bonus-amount' ], $id ),
-		// 	],
-
-		// 	'min-deposit' => [
-		// 		'label' => __( BonusMain::TEXT[ 'min-deposit' ], ToolLoco::TEXTDOMAIN ),
-
-		// 		'value' => get_field( self::FIELD[ 'bonus-min-deposit' ], $id ),
-		// 	],
-
-		// 	'wagering' => [
-		// 		'label' => __( BonusMain::TEXT[ 'wagering' ], ToolLoco::TEXTDOMAIN ),
-
-		// 		'value' => get_field( self::FIELD[ 'bonus-wagering' ], $id ),
-		// 	],
-
-		// 	'published' => [
-		// 		'label' => __( BonusMain::TEXT[ 'published' ], ToolLoco::TEXTDOMAIN ),
-
-		// 		'value' => get_the_date( 'd/m/Y' ),
-		// 	],
-		// ];
     }
 
 	const TEMPLATE = [
