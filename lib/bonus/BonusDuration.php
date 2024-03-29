@@ -85,6 +85,37 @@ class BonusDuration
 		];
 	}
 
+	public static function get_diff_days( $interval )
+	{
+		$amount = $interval->format( "%a" );
+
+		$single = __( BonusMain::TEXT[ 'single' ], ToolLoco::TEXTDOMAIN );
+
+		$plural = __( BonusMain::TEXT[ 'days' ], ToolLoco::TEXTDOMAIN );
+
+		return sprintf( _n( '%s ' . $day, '%s ' . $plural, $rating, ToolLoco::TEXTDOMAIN ), $amount );
+	}
+
+	public static function get_diff_hours( $interval )
+	{
+		$amount = $interval->format( "%h" );
+
+		$single = __( BonusMain::TEXT[ 'hour' ], ToolLoco::TEXTDOMAIN );
+
+		$plural = __( BonusMain::TEXT[ 'hours' ], ToolLoco::TEXTDOMAIN );
+
+		return sprintf( _n( '%s ' . $single, '%s ' . $plural, $rating, ToolLoco::TEXTDOMAIN ), $amount );
+	}
+
+	public static function get_diff( $expire )
+	{
+		$now = new DateTime( 'now' );
+
+		$interval = $now->diff( $expire );
+
+		return implode( ', ', [ self::get_diff_days( $interval ), self::get_diff_hours( $interval ) ] );
+	}
+
 	public static function get_duration( $id )
     {
 		$duration = __( BonusMain::TEXT[ 'indefinitely' ], ToolLoco::TEXTDOMAIN );
@@ -94,24 +125,12 @@ class BonusDuration
 		if ( $bonus_expire = get_field( self::FIELD[ 'bonus-expire' ], $id ) )
 		{
 			$expire = DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire );
-			
-			// $duration = (
-			// 	DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire )
-			// )->format( self::FORMAT[ 'bonus' ] );
 
 			$duration = $expire->format( self::FORMAT[ 'bonus' ] );
 
 			if ( TemplateMain::check_new() )
 			{
-				$now = new DateTime( 'now' );
-
-				$interval = $now->diff( $expire );
-				
-				LegalDebug::debug( [
-					'BonusDuration' => 'get_duration',
-	
-					'interval' => $interval->format( "%H:%I:%S (Full days: %a) (Full hours: %h)" ),
-				] );
+				$duration = self::get_diff( $expire );
 			}
 
 			$prefix = __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN );

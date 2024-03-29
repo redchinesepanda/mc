@@ -35,9 +35,17 @@ class BonusMain
 
 		'claim-bonus' => 'Claim Bonus',
 
+		'day' => 'day',
+
+		'days' => 'days',
+
 		'expires-in' => 'Expires in',
 
 		'get-bonus' => 'Get Bonus',
+
+		'hour' => 'hour',
+
+		'hours' => 'hours',
 
 		'min-deposit' => 'Min. deposit',
 
