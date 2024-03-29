@@ -123,7 +123,7 @@ class BonusSummary
 
         // return $output;
 
-		return TemplateMain::render_main( self::TEMPLATE[ 'bonus-summary' ], self::get() );
+		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-summary' ], self::get() );
     }
 }
 
