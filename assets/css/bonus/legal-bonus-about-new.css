@@ -106,9 +106,9 @@
 	pointer-events: none;
 }
 
-.legal-bonus-about .legal-bonus-about-overlay1,
-.legal-bonus-about .legal-bonus-about-overlay2,
-.legal-bonus-about .legal-bonus-about-overlay3 {
+.legal-bonus-about ~ .legal-bonus-about-overlay1,
+.legal-bonus-about ~ .legal-bonus-about-overlay2,
+.legal-bonus-about ~ .legal-bonus-about-overlay3 {
 	display: none;
 }
 
