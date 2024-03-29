@@ -20,6 +20,10 @@ require_once( 'BonusPreview.php' );
 
 class BonusMain
 {
+	const TEXT_PLURAL = [
+		'day' => 'day',
+	];
+
 	const TEXT = [
 		'actual-bonuses' => 'Actual Bonuses',
 

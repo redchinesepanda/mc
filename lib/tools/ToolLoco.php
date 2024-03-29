@@ -61,6 +61,23 @@ class ToolLoco
     
                 $extraction->addString( $custom, $domain );
             }
+
+            $lines = array_merge(
+                BonusMain::TEXT_PLURAL
+            );
+
+            foreach ( $lines as $line )
+            {
+                $custom = new Loco_gettext_String( $line );
+
+                $custom->pluralize( 'days' );
+    
+                // $custom->addExtractedComment( 'This is a footer menu location name' );
+    
+                // $custom->addFileReferences( 'custom.yml:1' );
+    
+                $extraction->addString( $custom, $domain );
+            }
         }
     }
 }
