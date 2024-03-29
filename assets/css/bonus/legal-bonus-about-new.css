@@ -83,7 +83,7 @@
 .legal-bonus-about .bonus-about-data {
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	row-gap: 40px;
 }
 
 .legal-bonus-about .bonus-about-action {
@@ -106,13 +106,19 @@
 	pointer-events: none;
 }
 
+.legal-bonus-about .legal-bonus-about-overlay1,
+.legal-bonus-about .legal-bonus-about-overlay2,
+.legal-bonus-about .legal-bonus-about-overlay3 {
+	display: none;
+}
+
 /* Position */
 
 .legal-bonus-about {
 	/* margin: 0px auto; */
 	margin-right: auto;
 	margin-left: auto;
-	padding: 40px 0px;
+/* 	padding: 40px 0px; */
 	padding-top: 28px;
 	padding-bottom: 32px;
 	position: relative;
