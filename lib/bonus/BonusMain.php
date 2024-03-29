@@ -29,11 +29,9 @@ class BonusMain
 		],
 
 		'day' => [
-			// '%s field groups activated.'
+			'single' => '%s day',
 
-			'single' => "%s day",
-
-			'plural' => "%s days",
+			'plural' => '%s days',
 		],
 
 		'hour' => [

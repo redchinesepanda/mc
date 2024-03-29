@@ -85,47 +85,15 @@ class BonusDuration
 		];
 	}
 
-	public static function get_diff_days( $interval )
+	public static function get_diff( $interval, $text )
 	{
 		$amount = $interval->format( "%a" );
 
-		// $text = sprintf(
-		// 	/* translators: %s number of field groups activated */
-		// 	_n( 'Field group activated.', '%s field groups activated.', $count, 'acf' ),
-		// 	$count
-		// );
-
-		$plural = _n(
-			BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
-
-			BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
-		
-			$amount,
-
-			ToolLoco::TEXTDOMAIN
-		);
-
-		$replace = sprintf(
-			$plural,
-			$amount
-		);
-
-		LegalDebug::debug( [
-			'BonusDuration' => 'get_diff_days',
-
-			'amount' => $amount,
-
-			'plural' => $plural,
-
-			'replace' => $replace,
-		] );
-
-
 		return sprintf(
 			_n(
-				BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
+				$text[ 'single' ],
 
-				BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
+				$text[ 'plural' ],
 			
 				$amount,
 
@@ -134,6 +102,27 @@ class BonusDuration
 			
 			$amount
 		);
+	}
+
+	public static function get_diff_days( $interval )
+	{
+		// $amount = $interval->format( "%a" );
+
+		// return sprintf(
+		// 	_n(
+		// 		BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
+
+		// 		BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
+			
+		// 		$amount,
+
+		// 		ToolLoco::TEXTDOMAIN
+		// 	),
+			
+		// 	$amount
+		// );
+
+		return self::get_diff( $interval, BonusMain::TEXT_PLURAL[ 'day' ] );
 	}
 
 	public static function get_diff_hours( $interval )
