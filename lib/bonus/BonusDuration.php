@@ -98,10 +98,10 @@ class BonusDuration
 		return sprintf(
 			_n(
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
-				
+
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
 			
-				, ToolLoco::TEXTDOMAIN
+				ToolLoco::TEXTDOMAIN
 			),
 			
 			$amount
