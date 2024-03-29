@@ -89,16 +89,22 @@ class BonusDuration
 	{
 		$amount = $interval->format( "%a" );
 
+		// $text = sprintf(
+		// 	/* translators: %s number of field groups activated */
+		// 	_n( 'Field group activated.', '%s field groups activated.', $count, 'acf' ),
+		// 	$count
+		// );
+
 		return sprintf(
 			_n(
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'single' ],
 
 				BonusMain::TEXT_PLURAL[ 'day' ][ 'plural' ],
 			
-				ToolLoco::TEXTDOMAIN
+				$amount
 			),
 			
-			$amount
+			ToolLoco::TEXTDOMAIN
 		);
 	}
 
@@ -112,10 +118,10 @@ class BonusDuration
 
 				BonusMain::TEXT_PLURAL[ 'hour' ][ 'plural' ],
 			
-				ToolLoco::TEXTDOMAIN
+				$amount
 			),
 			
-			$amount
+			ToolLoco::TEXTDOMAIN
 		);
 	}
 
