@@ -36,7 +36,7 @@ class ToolLoco
 	public static function fill_pattern_values( $pattern, $values )
     {
         return vsprintf(
-            self::get_pattern( $pattern, $value[ 0 ] ),
+            self::get_pattern( $pattern, $values[ 0 ] ),
 			
 			$values
 		);
