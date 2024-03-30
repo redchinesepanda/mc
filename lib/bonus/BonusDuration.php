@@ -99,7 +99,7 @@ class BonusDuration
 		return ToolLoco::translate_plural(
 			BonusMain::TEXT_PLURAL[ 'hour' ],
 
-			[ $interval->format( self::FORMAT[ 'amount-hours' ] ) ]
+			$interval->format( self::FORMAT[ 'amount-hours' ] )
 		);
 	}
 

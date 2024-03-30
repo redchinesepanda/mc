@@ -65,27 +65,6 @@ class ToolLoco
         return self::fill_pattern( $pattern, $values );
     }
 
-	// public static function translate_plural( $pattern, $value )
-	
-    // public static function translate_plural( $pattern, $values )
-	// {
-	// 	// return sprintf(
-		
-    //     return vsprintf(
-	// 		_n(
-	// 			$pattern[ 'single' ],
-
-	// 			$pattern[ 'plural' ],
-			
-	// 			$values[ 0 ],
-
-	// 			ToolLoco::TEXTDOMAIN
-	// 		),
-			
-	// 		$values
-	// 	);
-	// }
-
     public static function translate_locale( $string, $locale )
     {
         return self::get_translation_locale( $string, ToolLoco::TEXTDOMAIN, $locale );
