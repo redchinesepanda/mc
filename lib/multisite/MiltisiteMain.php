@@ -87,7 +87,7 @@ class MiltisiteMain
 				
 				// empty ID field, to tell WordPress to create a new post, not update an existing one
 				
-				// $post[ 'ID' ] = '';
+				$post[ 'ID' ] = '';
 
 				switch_to_blog( $blog_id );
 				
