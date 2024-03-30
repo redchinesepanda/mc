@@ -146,27 +146,12 @@ class MiltisiteMain
         LegalComponents::print_main( self::TEMPLATE[ 'multisite-notices' ], $args );
     }
 
-	public static function get_message()
-	{
-		return ToolLoco::translate_plural(
-			self::TEXT_PLURAL[ 'post-has-been-moved-to' ],
-
-			$interval->format( self::FORMAT[ 'amount-days' ] )
-		);
-	}
-
 	public static function get_message( $values )
 	{
 		return ToolLoco::translate_plural(
 			self::TEXT_PLURAL[ 'post-has-been-moved-to' ],
 
 			$values
-
-			// [
-			// 	$posts_moved,
-
-			// 	$blog->blogname
-			// ]
 		);
 	}
 
