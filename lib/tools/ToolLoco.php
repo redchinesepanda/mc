@@ -26,8 +26,6 @@ class ToolLoco
 
 	public static function translate_plural( $pattern, $value )
 	{
-		// $amount = $interval->format( $format );
-
 		return sprintf(
 			_n(
 				$pattern[ 'single' ],

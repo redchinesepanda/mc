@@ -92,10 +92,6 @@ class BonusDuration
 
 			$interval->format( self::FORMAT[ 'amount-days' ] )
 		);
-
-		// $amount = $interval->format( self::FORMAT[ 'amount-days' ] );
-		
-		// return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ], self::FORMAT[ 'amount-days' ] );
 	}
 
 	public static function get_diff_hours( $interval )
@@ -105,8 +101,6 @@ class BonusDuration
 
 			$interval->format( self::FORMAT[ 'amount-hours' ] )
 		);
-
-		// return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'hour' ], self::FORMAT[ 'amount-hours' ] );
 	}
 
 	public static function get_diff( $expire )
