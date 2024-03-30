@@ -19,7 +19,36 @@ class ToolLoco
         load_child_theme_textdomain( self::TEXTDOMAIN, LegalMain::LEGAL_PATH . '/languages' );
     }
 
-    public static function __( $string, $textdomain, $locale )
+    public static function translate( $string )
+    {
+        return __( $string, ToolLoco::TEXTDOMAIN );
+    }
+
+	public static function translate_plural( $pattern, $value )
+	{
+		// $amount = $interval->format( $format );
+
+		return sprintf(
+			_n(
+				$pattern[ 'single' ],
+
+				$pattern[ 'plural' ],
+			
+				$value,
+
+				ToolLoco::TEXTDOMAIN
+			),
+			
+			$value
+		);
+	}
+
+    public static function translate_locale( $string, $locale )
+    {
+        return self::get_translation_locale( $string, ToolLoco::TEXTDOMAIN, $locale );
+    }
+
+    public static function get_translation_locale( $string, $textdomain, $locale )
     {
         global $l10n;
 

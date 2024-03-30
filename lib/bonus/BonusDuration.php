@@ -85,33 +85,28 @@ class BonusDuration
 		];
 	}
 
-	public static function get_diff_part( $interval, $pattern, $format )
-	{
-		$amount = $interval->format( $format );
-
-		return sprintf(
-			_n(
-				$pattern[ 'single' ],
-
-				$pattern[ 'plural' ],
-			
-				$amount,
-
-				ToolLoco::TEXTDOMAIN
-			),
-			
-			$amount
-		);
-	}
-
 	public static function get_diff_days( $interval )
 	{
-		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ], self::FORMAT[ 'amount-days' ] );
+		return ToolLoco::translate_plural(
+			BonusMain::TEXT_PLURAL[ 'day' ],
+
+			$interval->format( self::FORMAT[ 'amount-days' ] )
+		);
+
+		// $amount = $interval->format( self::FORMAT[ 'amount-days' ] );
+		
+		// return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'day' ], self::FORMAT[ 'amount-days' ] );
 	}
 
 	public static function get_diff_hours( $interval )
 	{
-		return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'hour' ], self::FORMAT[ 'amount-hours' ] );
+		return ToolLoco::translate_plural(
+			BonusMain::TEXT_PLURAL[ 'hour' ],
+
+			$interval->format( self::FORMAT[ 'amount-hours' ] )
+		);
+
+		// return self::get_diff_part( $interval, BonusMain::TEXT_PLURAL[ 'hour' ], self::FORMAT[ 'amount-hours' ] );
 	}
 
 	public static function get_diff( $expire )
