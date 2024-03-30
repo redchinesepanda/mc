@@ -24,26 +24,67 @@ class ToolLoco
         return __( $string, ToolLoco::TEXTDOMAIN );
     }
 
-	// public static function translate_plural( $pattern, $value )
-	
-    public static function translate_plural( $pattern, $values )
-	{
-		// return sprintf(
-		
-        return vsprintf(
-			_n(
-				$pattern[ 'single' ],
-
-				$pattern[ 'plural' ],
+	public static function fill_pattern( $pattern, $value )
+    {
+        return sprintf(
+            self::get_pattern( $pattern, $value ),
 			
-				$values[ 0 ],
+			$value
+		);
+    }
 
-				ToolLoco::TEXTDOMAIN
-			),
+	public static function fill_pattern_values( $pattern, $values )
+    {
+        return vsprintf(
+            self::get_pattern( $pattern, $value[ 0 ] ),
 			
 			$values
 		);
-	}
+    }
+
+	public static function get_pattern( $pattern, $value )
+    {
+        return _n(
+            $pattern[ 'single' ],
+
+            $pattern[ 'plural' ],
+        
+            $value,
+
+            ToolLoco::TEXTDOMAIN
+        );
+    }
+
+    public static function translate_plural( $pattern, $values )
+    {
+        if ( is_array( $values ) )
+        {
+            return self::fill_pattern_values( $pattern, $values );
+        }
+
+        return self::fill_pattern( $pattern, $values );
+    }
+
+	// public static function translate_plural( $pattern, $value )
+	
+    // public static function translate_plural( $pattern, $values )
+	// {
+	// 	// return sprintf(
+		
+    //     return vsprintf(
+	// 		_n(
+	// 			$pattern[ 'single' ],
+
+	// 			$pattern[ 'plural' ],
+			
+	// 			$values[ 0 ],
+
+	// 			ToolLoco::TEXTDOMAIN
+	// 		),
+			
+	// 		$values
+	// 	);
+	// }
 
     public static function translate_locale( $string, $locale )
     {

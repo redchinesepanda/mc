@@ -90,7 +90,7 @@ class BonusDuration
 		return ToolLoco::translate_plural(
 			BonusMain::TEXT_PLURAL[ 'day' ],
 
-			[ $interval->format( self::FORMAT[ 'amount-days' ] ) ]
+			$interval->format( self::FORMAT[ 'amount-days' ] )
 		);
 	}
 
