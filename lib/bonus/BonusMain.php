@@ -21,12 +21,12 @@ require_once( 'BonusPreview.php' );
 class BonusMain
 {
 	const TEXT_PLURAL = [
-		'must-be-of-post-type' =>
-		[
-			'single' => '%1$s must be of post type %2$s.',
+		// 'must-be-of-post-type' =>
+		// [
+		// 	'single' => '%1$s must be of post type %2$s.',
 
-			'plural' => '%1$s must be of one of the following post types: %2$s',
-		],
+		// 	'plural' => '%1$s must be of one of the following post types: %2$s',
+		// ],
 
 		'day' => [
 			'single' => '%s day',

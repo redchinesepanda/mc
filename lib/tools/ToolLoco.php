@@ -24,9 +24,13 @@ class ToolLoco
         return __( $string, ToolLoco::TEXTDOMAIN );
     }
 
-	public static function translate_plural( $pattern, $value )
+	// public static function translate_plural( $pattern, $value )
+	
+    public static function translate_plural( $pattern, $values )
 	{
-		return sprintf(
+		// return sprintf(
+		
+        return vsprintf(
 			_n(
 				$pattern[ 'single' ],
 
@@ -37,7 +41,7 @@ class ToolLoco
 				ToolLoco::TEXTDOMAIN
 			),
 			
-			$value
+			$values
 		);
 	}
 
