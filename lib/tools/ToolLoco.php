@@ -36,7 +36,7 @@ class ToolLoco
 
 				$pattern[ 'plural' ],
 			
-				$value,
+				$values[ 0 ],
 
 				ToolLoco::TEXTDOMAIN
 			),
