@@ -131,7 +131,9 @@ class ReviewList
     {
         $label = strtolower( $node->textContent );
 
-        $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
+        // $label = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, 'en' );
+        
+        $label = ToolLoco::translate_locale( $label, 'en' );
 
         return str_replace( [ ' ', '/' ], '-', $label );
     }

@@ -20,6 +20,27 @@ require_once( 'BonusPreview.php' );
 
 class BonusMain
 {
+	const TEXT_PLURAL = [
+		// 'must-be-of-post-type' =>
+		// [
+		// 	'single' => '%1$s must be of post type %2$s.',
+
+		// 	'plural' => '%1$s must be of one of the following post types: %2$s',
+		// ],
+
+		'day' => [
+			'single' => '%s day',
+
+			'plural' => '%s days',
+		],
+
+		'hour' => [
+			'single' => '%1$s hour',
+
+			'plural' => '%1$s hours',
+		],
+	];
+
 	const TEXT = [
 		'actual-bonuses' => 'Actual Bonuses',
 
@@ -34,6 +55,8 @@ class BonusMain
 		'bookmaker' => 'Bookmaker',
 
 		'claim-bonus' => 'Claim Bonus',
+
+		'expires-in' => 'Expires in',
 
 		'get-bonus' => 'Get Bonus',
 
@@ -118,8 +141,6 @@ class BonusMain
 		BonusRelated::register_functions();
 
 		BonusAbout::register_functions();
-
-		BonusDuration::register_functions();
 	}
 
 	public static function register()

@@ -87,7 +87,7 @@ class MiltisiteMain
 				
 				// empty ID field, to tell WordPress to create a new post, not update an existing one
 				
-				$post[ 'ID' ] = '';
+				// $post[ 'ID' ] = '';
 
 				switch_to_blog( $blog_id );
 				
@@ -143,58 +143,84 @@ class MiltisiteMain
 
 	public static function print_notices( $args )
     {
-        // return LegalComponents::render_main( self::TEMPLATE[ 'multisite-notices' ], self::get() );
-
-		LegalComponents::print_main( self::TEMPLATE[ 'multisite-notices' ], $args );
+        LegalComponents::print_main( self::TEMPLATE[ 'multisite-notices' ], $args );
     }
+
+	public static function get_message()
+	{
+		return ToolLoco::translate_plural(
+			self::TEXT_PLURAL[ 'post-has-been-moved-to' ],
+
+			$interval->format( self::FORMAT[ 'amount-days' ] )
+		);
+	}
+
+	public static function get_message( $values )
+	{
+		return ToolLoco::translate_plural(
+			self::TEXT_PLURAL[ 'post-has-been-moved-to' ],
+
+			$values
+
+			// [
+			// 	$posts_moved,
+
+			// 	$blog->blogname
+			// ]
+		);
+	}
 
 	public static function rudr_bulk_multisite_notices()
 	{
+		// $posts_moved = $_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ];
+		
 		if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ] ) )
 		{
 			// add blog names to notices
 
 			$blog = get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
-			// depending on ho much posts were changed, make the message different
-
-			// echo '<div class="updated notice is-dismissible"><p>';
-			// printf(
-			// 	_n( 
-			// 		'%d post has been moved to "%s".', 
-
-			// 		'%d posts have been moved to "%s".', 
-
-			// 		$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ]
-			// 	),
-
-			// 	$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ], 
-
-			// 	$blog->blogname 
-			// );
-			// echo '</p></div>';
-
-			$message = _n( 
-				'%d post has been moved to "%s".', 
-
-				'%d posts have been moved to "%s".', 
-
-				$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ]
-			);
-
-			$args = [
-                'message' => sprintf(
-					$message,
-					
+			$message = self::get_message(
+				[
 					$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ],
 
 					$blog->blogname
-				),
+				]
+			);
+
+			// $message = _n( 
+			// 	'%d post has been moved to "%s".', 
+
+			// 	'%d posts have been moved to "%s".', 
+
+			// 	$posts_moved
+			// );
+
+			// $args = [
+            //     'message' => sprintf(
+			// 		$message,
+					
+			// 		$posts_moved,
+
+			// 		$blog->blogname
+			// 	),
+			// ];
+			
+			$args = [
+                'message' => $message,
 			];
 
 			self::print_notices( $args );
 		}
 	}
+
+	const TEXT_PLURAL = [
+		'post-has-been-moved-to' => [
+			'single' => '%d post has been moved to "%s".',
+
+			'plural' => '%d posts have been moved to "%s".',
+		],
+	];
 }
 
 ?>

@@ -18,11 +18,6 @@ class BonusDuration
 		],
     ];
 
-	/* public static function register_style()
-    {
-        BonusMain::register_style( self::CSS );
-    } */
-
 	public static function register_style()
     {
 		if ( TemplateMain::check_code() )
@@ -33,11 +28,6 @@ class BonusDuration
 		{
 			BonusMain::register_style( self::CSS );
 		}
-    }
-
-	public static function register_functions()
-    {
-        // self::date_migrate();
     }
 
 	public static function register()
@@ -57,52 +47,15 @@ class BonusDuration
         'bonusy-by',
 	];
 
-	// public static function date_migrate_args()
-    // {
-    //     return [
-    //         'numberposts' => -1,
-
-	// 		'suppress_filters' => 1,
-
-	// 		// 'p' => 250736,
-
-    //         'post_type' => 'post',
-
-    //         [
-    //             [
-    //                 'taxonomy' => self::TAXONOMY[ 'category' ],
-
-    //                 'field' => 'slug',
-
-    //                 'terms' => self::CATEGORY,
-
-	// 				'operator' => 'IN',
-	// 			],
-    //         ],
-    //     ];
-    // }
-
 	public static function date_get( $id )
     {
         $bonus_date = get_field( self::FIELD[ 'bonus-duration' ], $id );
 
         if ( !empty( $bonus_date ) && $bonus_date != '-' )
         {
-            // return $bonus_date;
-
-			$date_match = '';
+            $date_match = '';
 				
 			$result = preg_match( "/(\d{2}\/\d{2}\/\d{4})/", $bonus_date, $date_match );
-
-			// LegalDebug::debug( [
-			// 	'function' => 'BonusAbout::date_get',
-
-			// 	'bonus_date' => $bonus_date,
-
-			// 	'result' => $result,
-
-			// 	'date_match' => $date_match,
-			// ] );
 
 			if ( $result == 1 )
 			{
@@ -112,51 +65,6 @@ class BonusDuration
         
         return '';
     }
-
-	// public static function date_migrate()
-    // {
-    //     $posts = get_posts( self::date_migrate_args() );
-
-    //     foreach ( $posts as $post )
-    //     {
-    //         $date = self::date_get( $post->ID );
-
-	// 		if ( $date )
-	// 		{
-	// 			$date_time = DateTime::createFromFormat('d/m/Y', $date);
-
-	// 			$current = get_post_meta( $post->ID, self::FIELD[ 'bonus-expire' ], true );
-
-	// 			$date_time->setTime( 23, 59, 59 );
-				
-	// 			$value = $date_time->format( "Y-m-d H:i:s" );
-	
-	// 			update_field( self::FIELD[ 'bonus-expire' ], $value, $post->ID );
-
-	// 			LegalDebug::debug( [
-	// 			    'function' => 'BonusAbout::affiliate_migrate',
-
-	// 				'ID' => $post->ID,
-
-	// 			    'date' => $date,
-
-	// 			    'current' => $current,
-
-	// 			    'date_time' => $date_time,
-
-	// 			    'value' => $value,
-	// 			] );
-	// 		}
-
-	// 		// LegalDebug::debug( [
-	// 		// 	'function' => 'BonusAbout::affiliate_migrate',
-
-	// 		// 	'ID' => $post->ID,
-	// 		// ] );
-
-	// 		// delete_field( self::FIELD[ 'bonus-expire' ], $post->ID );
-    //     }
-    // }
 
 	const TEMPLATE = [
         'bonus-duration' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-duration.php',
@@ -177,25 +85,49 @@ class BonusDuration
 		];
 	}
 
+	public static function get_diff_days( $interval )
+	{
+		return ToolLoco::translate_plural(
+			BonusMain::TEXT_PLURAL[ 'day' ],
+
+			$interval->format( self::FORMAT[ 'amount-days' ] )
+		);
+	}
+
+	public static function get_diff_hours( $interval )
+	{
+		return ToolLoco::translate_plural(
+			BonusMain::TEXT_PLURAL[ 'hour' ],
+
+			$interval->format( self::FORMAT[ 'amount-hours' ] )
+		);
+	}
+
+	public static function get_diff( $expire )
+	{
+		$now = new DateTime( 'now' );
+
+		$interval = $now->diff( $expire );
+
+		return implode( ', ', [ self::get_diff_days( $interval ), self::get_diff_hours( $interval ) ] );
+	}
+
 	public static function get_duration( $id )
     {
 		$duration = __( BonusMain::TEXT[ 'indefinitely' ], ToolLoco::TEXTDOMAIN );
 
 		$prefix = '';
 
-		// LegalDebug::debug( [
-		// 	'function' => 'BonusDuration::get_duration',
-
-		// 	'get_field' => get_field( self::FIELD[ 'bonus-expire' ], $id, false ),
-
-		// 	'get_post_meta' => get_post_meta( $id, self::FIELD[ 'bonus-expire' ], true ),
-		// ] );
-
 		if ( $bonus_expire = get_field( self::FIELD[ 'bonus-expire' ], $id ) )
 		{
-			$duration = (
-				DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire )
-			)->format( self::FORMAT[ 'bonus' ] );
+			$expire = DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_expire );
+
+			$duration = $expire->format( self::FORMAT[ 'bonus' ] );
+
+			if ( TemplateMain::check_new() )
+			{
+				$duration = self::get_diff( $expire );
+			}
 
 			$prefix = __( BonusMain::TEXT[ 'till' ], ToolLoco::TEXTDOMAIN );
 		}
@@ -204,12 +136,6 @@ class BonusDuration
 			'title' => __( BonusMain::TEXT[ 'promotion-period' ], ToolLoco::TEXTDOMAIN ) . ':',
 			
 			'prefix' => $prefix,
-
-			// 'duration' => get_field( self::FIELD[ 'bonus-duration' ], $id ),
-			
-			// 'duration' => get_field( self::FIELD[ 'bonus-expire' ], $id ),
-			
-			// 'duration' => $duration->format( self::FORMAT[ 'bonus' ] ),
 			
 			'duration' => $duration,
 
@@ -223,33 +149,25 @@ class BonusDuration
 		'expire' => "Y-m-d H:i:s",
 
 		'compare' => 'Y-m-d',
+
+		'amount-days' => '%a',
+
+		'amount-hours' => '%h',
 	];
 
 	public static function check_expired( $id )
 	{
 		$result = false;
-
-		// $bonus_duration = get_field( self::FIELD[ 'bonus-duration' ], $id );
 		
 		$bonus_duration = get_field( self::FIELD[ 'bonus-expire' ], $id );
 
 		if ( $bonus_duration )
 		{
-			// $bonus = DateTime::createFromFormat( self::FORMAT[ 'bonus' ], $bonus_duration );
-			
 			$bonus = DateTime::createFromFormat( self::FORMAT[ 'expire' ], $bonus_duration );
 
 			if ( $bonus )
 			{
-				// $current = new DateTime();
-
-				// $timezone = ToolTimezone::get_timezone();
-				
-				// $current = new DateTime( 'now', new DateTimeZone( $timezone ) );
-				
 				$current = ToolTimezone::get_now_timezone();
-	
-				// $result = $bonus->format( self::FORMAT[ 'compare' ] ) < $current->format( self::FORMAT[ 'compare' ] );
 				
 				$result = $bonus->format( self::FORMAT[ 'expire' ] ) < $current->format( self::FORMAT[ 'expire' ] );
 			}
@@ -279,18 +197,17 @@ class BonusDuration
 
     public static function render()
     {
+		if ( TemplateMain::check_new() )
+		{
+			return '';
+		}
+
 		if ( !BonusMain::check() )
         {
             return '';
         }
 
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'bonus-duration' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-duration' ], self::get() );
     }
 }
 
