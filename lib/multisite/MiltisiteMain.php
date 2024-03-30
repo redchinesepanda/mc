@@ -157,12 +157,8 @@ class MiltisiteMain
 
 	public static function rudr_bulk_multisite_notices()
 	{
-		// $posts_moved = $_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ];
-		
 		if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ] ) )
 		{
-			// add blog names to notices
-
 			$blog = get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
 			$message = self::get_message(
@@ -172,24 +168,6 @@ class MiltisiteMain
 					$blog->blogname
 				]
 			);
-
-			// $message = _n( 
-			// 	'%d post has been moved to "%s".', 
-
-			// 	'%d posts have been moved to "%s".', 
-
-			// 	$posts_moved
-			// );
-
-			// $args = [
-            //     'message' => sprintf(
-			// 		$message,
-					
-			// 		$posts_moved,
-
-			// 		$blog->blogname
-			// 	),
-			// ];
 			
 			$args = [
                 'message' => $message,
