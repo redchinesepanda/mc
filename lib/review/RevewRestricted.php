@@ -23,6 +23,24 @@ class RevewRestricted
 		'href' => 'href',
 	];
 
+	public static function replace_anchors( &$href, $language, $host )
+	{
+		$pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
+
+		if ( str_contains( $href, $pattern ) )
+		{
+			$replace_host = parse_url( $href, PHP_URL_HOST );
+
+			$href = str_replace( $replace_host, $host, $href );
+
+			$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
+
+			return true;
+		}
+
+		return false;
+	}
+
 	public static function modify_anchors( $dom )
 	{
 		$nodes = self::get_nodes_anchor( $dom );
@@ -34,51 +52,28 @@ class RevewRestricted
 
 		$restricted = ToolNotFound::get_restricted();
 
-		// $main_host = LegalMain::get_main_host();
-
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'modify_anchors',
-
-			'restricted' => $restricted,
-
-			// 'main_host' => $main_host,
-		] );
-
 		foreach ( $nodes as $node )
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			LegalDebug::debug( [
-				'href' => $href,
-			] );
-
 			foreach ( $restricted as $host => $language )
 			{
-				$pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
+				// $pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
 
-				LegalDebug::debug( [
-					'pattern' => $pattern,
-				] );
+				// if ( str_contains( $href, $pattern ) )
+				// {
+				// 	$replace_host = parse_url( $href, PHP_URL_HOST );
+	
+				// 	$href = str_replace( $replace_host, $host, $href );
+	
+				// 	$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
 
-				if ( str_contains( $href, $pattern ) )
+				// 	break;
+				// }
+
+				if ( self::replace_anchors( $href, $language, $host ) )
 				{
-					$replace_host = parse_url( $href, PHP_URL_HOST );
-
-					LegalDebug::debug( [
-						'replace_host' => $replace_host,
-					] );
-	
-					$href = str_replace( $replace_host, $host, $href );
-	
-					LegalDebug::debug( [
-						'href' => $href,
-					] );
-	
-					$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
-	
-					LegalDebug::debug( [
-						'href' => $href,
-					] );
+					break;
 				}
 			}
 
