@@ -211,13 +211,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				args : { once : true }
 			},
 
-			{
-				event : this.events.scroll,
+			// {
+			// 	event : this.events.scroll,
 
-				action : State.initBonus.bind( State ),
+			// 	action : State.initBonus.bind( State ),
 	
-				args : { once : true }
-			},
+			// 	args : { once : true }
+			// },
 	
 			{
 				event : this.events.scroll,
@@ -237,13 +237,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				args : { once : true }
 			},
 
-			{
-				event : this.events.scroll,
+			// {
+			// 	event : this.events.scroll,
 
-				action : State.suspendBonus.bind( State ),
+			// 	action : State.suspendBonus.bind( State ),
 	
-				args : { once : true }
-			},
+			// 	args : { once : true }
+			// },
 	
 			{
 				event : this.events.scroll,
