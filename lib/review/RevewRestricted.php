@@ -48,17 +48,23 @@ class RevewRestricted
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
+			LegalDebug::debug( [
+				'href' => $href,
+			] );
+
 			foreach ( $restricted as $host => $language )
 			{
 				$pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
+
+				LegalDebug::debug( [
+					'pattern' => $pattern,
+				] );
 
 				if ( str_contains( $pattern, $href ) )
 				{
 					$replace_host = parse_url( $href, PHP_URL_HOST );
 
 					LegalDebug::debug( [
-						'href' => $href,
-
 						'replace_host' => $replace_host,
 					] );
 	
