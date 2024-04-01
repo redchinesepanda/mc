@@ -121,16 +121,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			animated: 'animated-bonus',
 		}
 
-		// static modify ( action )
-		// {
-		// 	document.querySelectorAll(
-		// 		[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-		// 	).forEach( action );
-		// }
-
-		static getElements () {
-			return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
+		static modify ( action )
+		{
+			document.querySelectorAll(
+				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+			).forEach( action );
 		}
+
+		// static getElements () {
+		// 	return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
+		// }
 		
 		static setMoved ( element )
 		{
@@ -154,18 +154,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static suspendBonus ( event )
 		{
-			// this.modify( this.suspendMoved );
+			this.modify( this.suspendMoved );
 
-			console.log( this.getElements() );
+			// console.log( this.getElements() );
 
 			// this.getElements().forEach( this.suspendMoved );
 		}
 
 		static initBonus ( event )
 		{
-			// this.modify( this.setMoved );
+			this.modify( this.setMoved );
 
-			this.getElements().forEach( this.setMoved );
+			// this.getElements().forEach( this.setMoved );
 		}
 
 		static checkState ( event )
@@ -245,7 +245,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : State.checkSticky,
+				// action : State.checkSticky,
+
+				action : function( event )
+				{
+					State.checkSticky( event.currentTarget );
+				},
 	
 				args : false
 			}
