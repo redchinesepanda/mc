@@ -786,7 +786,7 @@ class BaseHeader
 
 			'menu_id_translated' => $menu_id_translated,
 
-			'menu_items' => $menu_items,
+			'menu_items' => count( $menu_items ),
 		] );
 
 		$items = [];
