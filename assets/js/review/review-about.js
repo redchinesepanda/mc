@@ -9,34 +9,38 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function suspendBonus( event )
 	{
-		document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+		// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+
+		modify( suspendMoved );
 	}
 
 	function initBonus( event )
 	{
-		if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
-		{
-			document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
-		}
+		// if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
+		// {
+		// 	// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
+		// }
+			
+		modify( setMoved );
 	}
 
-	function move( element, selector )
-	{
-		if ( document.querySelector( selector ) !== null )
-		{
-			element.appendChild( document.querySelector( selector ) );
-		}
-	}
+	// function move( element, selector )
+	// {
+	// 	if ( document.querySelector( selector ) !== null )
+	// 	{
+	// 		element.appendChild( document.querySelector( selector ) );
+	// 	}
+	// }
 
-	function moveBack( element )
-	{
-		move( element, selectors.sidebarBonus );
-	}
+	// function moveBack( element )
+	// {
+	// 	move( element, selectors.sidebarBonus );
+	// }
 
-	function moveToSidebar( element )
-	{
-		move( element, selectors.reviewAboutBonus );
-	}
+	// function moveToSidebar( element )
+	// {
+	// 	move( element, selectors.reviewAboutBonus );
+	// }
 
 	// function checkState( event )
 	// {
@@ -57,6 +61,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 	
+	function setMoved( element )
+	{
+		element.classList.add( classes.moved );
+	}
+
+	function suspendMoved( element )
+	{
+		element.classList.remove( classes.moved );
+	}
+	
 	function checkState( event )
 	{
 		let state = localStorage.getItem( 'reviewAboutScroll' );
@@ -65,14 +79,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutScroll', 1 );
 
-			document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
+			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
+
+			modify( setMoved );
 		}
 
 		if ( window.scrollY == 0 && state == 1 )
 		{
 			localStorage.setItem( 'reviewAboutScroll', 0 );
 
-			document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+
+			modify( suspendMoved );
 		}
 	}
 
@@ -95,9 +113,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 	
+	function setSticky( element )
+	{
+		element.classList.add( classes.sticky );
+	}
+
 	function suspendSticky( element )
 	{
 		element.classList.remove( classes.sticky );
+	}
+
+	function modify( action )
+	{
+		document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
 	}
 
 	function checkSticky( event )
@@ -109,7 +137,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			localStorage.setItem( 'reviewAboutSticky', 1 );
 
-			document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
+			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
+
+			// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( setSticky );
+
+			modify( setSticky );
 		}
 
 		/* if ( window.scrollY == 0 && state == 1 ) */
@@ -120,7 +152,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
 			
-			document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( suspendSticky );
+			// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( suspendSticky );
+
+			modify( suspendSticky );
 		}
 	}
 
