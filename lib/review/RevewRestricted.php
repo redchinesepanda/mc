@@ -34,14 +34,14 @@ class RevewRestricted
 
 		$restricted = ToolNotFound::get_restricted();
 
-		$main_host = LegalMain::get_main_host();
+		// $main_host = LegalMain::get_main_host();
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'modify_anchors',
 
 			'restricted' => $restricted,
 
-			'main_host' => $main_host,
+			// 'main_host' => $main_host,
 		] );
 
 		foreach ( $nodes as $node )
@@ -50,21 +50,30 @@ class RevewRestricted
 
 			foreach ( $restricted as $host => $language )
 			{
-				LegalDebug::debug( [
-					'href' => $href,
-				] );
+				$pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
 
-				$href = str_replace( $main_host, $host, $href );
+				if ( str_contains( $pattern, $href ) )
+				{
+					$replace_host = parse_url( $href, PHP_URL_HOST );
 
-				LegalDebug::debug( [
-					'href' => $href,
-				] );
+					LegalDebug::debug( [
+						'href' => $href,
 
-				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
-
-				LegalDebug::debug( [
-					'href' => $href,
-				] );
+						'replace_host' => $replace_host,
+					] );
+	
+					$href = str_replace( $replace_host, $host, $href );
+	
+					LegalDebug::debug( [
+						'href' => $href,
+					] );
+	
+					$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
+	
+					LegalDebug::debug( [
+						'href' => $href,
+					] );
+				}
 			}
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
