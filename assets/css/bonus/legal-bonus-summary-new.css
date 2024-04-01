@@ -10,6 +10,12 @@
 		display: flex;
 		column-gap: 5px;
 	}
+
+	/* Position */
+
+	.legal-bonus-summary .bonus-summary-item {
+		margin-right: 32px;
+	}
 	
 }
 
@@ -28,6 +34,10 @@
 	} */
 
 	/* Position */
+
+	.legal-bonus-summary .bonus-summary-item {
+		margin-right: 48px;
+	}
 	
 /* 	.legal-bonus-summary .item-value {
 		padding-left: 25px;
@@ -36,11 +46,11 @@
 
 /* Display */
 
-.legal-bonus-summary {
+/* .legal-bonus-summary {
 	display: flex;
 	flex-wrap: wrap;
 	column-gap: 48px;
-}
+} */
 
 .legal-bonus-summary .bonus-summary-item {
 	display: flex;
