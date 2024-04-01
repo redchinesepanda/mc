@@ -91,6 +91,9 @@ class BaseFooter
 				break;
 			}
 		}
+		LegalDebug::debug( [
+			'href' => $href,
+		] );
 
 		return $href;
 	}
