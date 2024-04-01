@@ -284,7 +284,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		]
 
-		static media = {
+		static mediaQuery = {
 			mobile : '( min-width: 960px )'
 		}
 
@@ -292,7 +292,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// if ( window.matchMedia( this.media.mobile ).matches )
 			
-			if ( window.matchMedia( ReviewAbout.media.mobile ).matches )
+			if ( window.matchMedia( this.mediaQuery.mobile ).matches )
 			{
 				this.itemsMobile.forEach( function ( item ) {
 					document.removeEventListener( item.event, item.action, item.args );
