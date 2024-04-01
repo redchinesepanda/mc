@@ -203,6 +203,89 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	};
 	
+	class ReviewAbout {
+		static events = {
+			scroll: 'scroll',
+	
+			resize: 'resize'
+		}
+
+		static items = [
+			{
+				event : this.events.scroll,
+				
+				action : State.initBonus,
+	
+				args : { once : true }
+			},
+	
+			{
+				event : this.events.scroll,
+				
+				action : State.checkState,
+	
+				args : false
+			}
+		]
+
+		static itemsMobile = [
+			{
+				event : this.events.scroll,
+				
+				action : State.suspendBonus,
+	
+				args : { once : true }
+			},
+	
+			{
+				event : this.events.scroll,
+				
+				action : State.checkSticky,
+	
+				args : false
+			}
+		]
+
+		static media = {
+			mobile : '( min-width: 960px )'
+		}
+
+		static check()
+		{
+			if ( window.matchMedia( this.media.mobile ).matches )
+			{
+				this.itemsMobile.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				this.items.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action.bind( State ), item.args );
+				} );
+
+				Storage.suspendState();
+			}
+			else
+			{
+				this.items.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				this.itemsMobile.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action, item.args );
+				} );
+			}
+		}
+
+		static init()
+		{
+			this.check();
+
+			window.addEventListener( this.events.resize, this.check, false );
+		}
+	};
+
+	ReviewAbout.init();
+	
 	// function suspendBonus( event )
 	// {
 	// 	modify( suspendMoved );
@@ -421,87 +504,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// };
 
 	// let reviewAbout =  {
-	
-	class ReviewAbout {
-		static events = {
-			scroll: 'scroll',
-	
-			resize: 'resize'
-		}
-
-		static items = [
-			{
-				event : this.events.scroll,
-				
-				action : State.initBonus,
-	
-				args : { once : true }
-			},
-	
-			{
-				event : this.events.scroll,
-				
-				action : State.checkState,
-	
-				args : false
-			}
-		]
-
-		static itemsMobile = [
-			{
-				event : this.events.scroll,
-				
-				action : State.suspendBonus,
-	
-				args : { once : true }
-			},
-	
-			{
-				event : this.events.scroll,
-				
-				action : State.checkSticky,
-	
-				args : false
-			}
-		]
-
-		static check()
-		{
-			if ( window.matchMedia( '( min-width: 960px )' ).matches )
-			{
-				this.itemsMobile.forEach( function ( item ) {
-					document.removeEventListener( item.event, item.action, item.args );
-				} );
-	
-				this.items.forEach( function ( item ) {
-					document.addEventListener( item.event, item.action, item.args );
-				} );
-	
-				// localStorage.setItem( 'reviewAboutScroll', 0 );
-
-				storage.suspendState();
-			}
-			else
-			{
-				this.items.forEach( function ( item ) {
-					document.removeEventListener( item.event, item.action, item.args );
-				} );
-	
-				this.itemsMobile.forEach( function ( item ) {
-					document.addEventListener( item.event, item.action, item.args );
-				} );
-			}
-		}
-
-		static init()
-		{
-			this.check();
-
-			window.addEventListener( this.events.resize, this.check, false );
-		}
-	};
-
-	ReviewAbout.init();
 
 	// const events = {
 	// 	scroll: 'scroll',
