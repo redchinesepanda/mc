@@ -287,6 +287,8 @@ class BonusAbout
 	const TEMPLATE = [
         'bonus-about' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about.php',
 
+        'bonus-about-new' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-new.php',
+
         'bonus-about-button' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-button.php',
     ];
 
@@ -304,6 +306,11 @@ class BonusAbout
         // $output = ob_get_clean();
 
         // return $output;
+
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-new' ], self::get() );
+        }
 
         return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about' ], self::get() );
     }
