@@ -123,9 +123,9 @@
 .legal-bonus-sidebar .bonus-about-action {
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	/* row-gap: 20px; */
 	align-items: center;
-  	justify-content: center;
+  	/* justify-content: center; */
 }
 
 .legal-bonus-about .about-action-get,
