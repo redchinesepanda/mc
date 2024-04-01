@@ -6,7 +6,7 @@
 		flex-direction: column;
 	}
 
-	/* .legal-bonus-about .bonus-about-action {
+	/* .legal-bonus-sidebar .bonus-about-action {
 		order: 1;
 	} */
 
@@ -24,7 +24,7 @@
 		padding: 0px 20px;
 	}
 
-	.legal-bonus-about .bonus-about-action {
+	.legal-bonus-sidebar .bonus-about-action {
 		padding-right: 24px;
 		padding-left: 24px;
 	}
@@ -44,7 +44,7 @@
 		width: calc( 100% - 70px - 20px );
 	}
 
-	.legal-bonus-about .bonus-about-action {
+	.legal-bonus-sidebar .bonus-about-action {
 		width: 100%;
 	}
 
@@ -67,7 +67,7 @@
 
 	/* Position */
 
-	.legal-bonus-about .bonus-about-action {
+	.legal-bonus-sidebar .bonus-about-action {
 		padding-right: 28px;
 		padding-left: 28px;
 	}
@@ -93,7 +93,7 @@
 		width: calc( 100% - 102px - 26px );
 	}
 	
-	.legal-bonus-about .bonus-about-action {
+	.legal-bonus-sidebar .bonus-about-action {
 		flex-basis: calc( 25% - 25px );
 	}
 
@@ -120,7 +120,7 @@
 	row-gap: 40px;
 }
 
-.legal-bonus-about .bonus-about-action {
+.legal-bonus-sidebar .bonus-about-action {
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
@@ -171,7 +171,7 @@
 	margin-bottom: 0px;
 }
 
-.legal-bonus-about .bonus-about-action {
+.legal-bonus-sidebar .bonus-about-action {
 	/* padding: 30px 0px; */
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -232,7 +232,7 @@
 	background-color: var(--Logo-background);
 }
 
-.legal-bonus-about .bonus-about-action {
+.legal-bonus-sidebar .bonus-about-action {
 	background-color: var( --Primitives-purple-50 );
 	border: 2px solid var( --Base-base-09 ); 
 	border-radius: 32px;
