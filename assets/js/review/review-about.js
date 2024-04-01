@@ -208,7 +208,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.suspendState();
 
-				this.modify( this.suspendSticky );
+				// this.modify( this.suspendSticky );
+
+				this.getElements().forEach( this.suspendSticky.bind( this ) );
 			}
 		}
 	};
