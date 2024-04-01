@@ -14,6 +14,10 @@
 		order: 2;
 	}
 
+	.legal-bonus-about .bonus-about-data {
+		column-gap: 20px;
+	}
+
 	/* Position */
 
 	.legal-bonus-about-wrapper {
@@ -39,13 +43,19 @@
 	/* Typography */
 
 	.legal-bonus-about .about-data-title {
-		font-size: 22px;
-		line-height: 26px;
+		font-size: 24px;
+		line-height: 28px;
 	}
 }
 
 @media screen and ( min-width: 768px )
 {
+
+	/* Display */
+
+	.legal-bonus-about .bonus-about-data {
+		column-gap: 26px;
+	}
 
 	/* Position */
 
@@ -97,7 +107,6 @@
 	display: flex;
 /* 	flex-direction: column; */
 	flex-wrap: wrap;
-  	column-gap: 26px;
 	row-gap: 40px;
 }
 
@@ -283,7 +292,7 @@
 .legal-bonus-about .about-data-description {
 	font-size: 16px;
 	font-weight: 400;
-	letter-spacing: normal;
+	/* letter-spacing: normal; */
 	line-height: 22px;
 }
 
