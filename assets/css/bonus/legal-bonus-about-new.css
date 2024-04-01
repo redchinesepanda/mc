@@ -68,7 +68,7 @@
 	/* Position */
 
 	.legal-bonus-sidebar .bonus-about-action {
-		--bonus-about-action-margin-top: calc( 0px - 1px - 24px - 32px - (40px * 2) - 50px - 44px - 102px - (28px - 18px) );
+		/* --bonus-about-action-margin-top: calc( 0px - 1px - 24px - 32px - (40px * 2) - 50px - 44px - 102px - (28px - 18px) ); */
 		padding-right: 28px;
 		padding-left: 28px;
 		margin-top: var( --bonus-about-action-margin-top );
