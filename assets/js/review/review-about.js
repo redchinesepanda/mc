@@ -137,7 +137,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// this.modify( this.setMoved );
 
-			this.modify( this.setMoved() );
+			this.modify();
 		},
 
 		checkState : function( event )
