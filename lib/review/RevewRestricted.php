@@ -58,19 +58,6 @@ class RevewRestricted
 
 			foreach ( $restricted as $host => $language )
 			{
-				// $pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
-
-				// if ( str_contains( $href, $pattern ) )
-				// {
-				// 	$replace_host = parse_url( $href, PHP_URL_HOST );
-	
-				// 	$href = str_replace( $replace_host, $host, $href );
-	
-				// 	$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
-
-				// 	break;
-				// }
-
 				if ( self::replace_anchors( $href, $language, $host ) )
 				{
 					break;
