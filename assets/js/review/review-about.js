@@ -234,10 +234,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				
 				// action : State.initBonus,
 
-				action : function( event )
-				{
-					State.initBonus( event.currentTarget );
-				},
+				action : State.initBonus.bind( State ),
+
+				// action : function( event )
+				// {
+				// 	State.initBonus( event.currentTarget );
+				// },
 	
 				args : { once : true }
 			},
@@ -247,10 +249,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				
 				// action : State.checkState,
 
-				action : function( event )
-				{
-					State.checkState( event.currentTarget );
-				},
+				action : State.checkState.bind( State ),
+
+				// action : function( event )
+				// {
+				// 	State.checkState( event.currentTarget );
+				// },
 	
 				args : false
 			}
@@ -261,11 +265,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				event : this.events.scroll,
 				
 				// action : State.suspendBonus,
+
+				action : State.suspendBonus.bind( State ),
 				
-				action : function( event )
-				{
-					State.suspendBonus( event.currentTarget );
-				},
+				// action : function( event )
+				// {
+				// 	State.suspendBonus( event.currentTarget );
+				// },
 	
 				args : { once : true }
 			},
