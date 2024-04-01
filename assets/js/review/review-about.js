@@ -485,7 +485,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			this.check();
 
-			window.addEventListener( events.resize, this.check, false );
+			window.addEventListener( this.events.resize, this.check, false );
 		}
 	};
 	
