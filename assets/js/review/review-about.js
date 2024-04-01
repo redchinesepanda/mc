@@ -465,11 +465,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			if ( window.matchMedia( '( min-width: 960px )' ).matches )
 			{
-				itemsMobile.forEach( function ( item ) {
+				this.itemsMobile.forEach( function ( item ) {
 					document.removeEventListener( item.event, item.action, item.args );
 				} );
 	
-				items.forEach( function ( item ) {
+				this.items.forEach( function ( item ) {
 					document.addEventListener( item.event, item.action, item.args );
 				} );
 	
@@ -477,11 +477,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 			else
 			{
-				items.forEach( function ( item ) {
+				this.items.forEach( function ( item ) {
 					document.removeEventListener( item.event, item.action, item.args );
 				} );
 	
-				itemsMobile.forEach( function ( item ) {
+				this.itemsMobile.forEach( function ( item ) {
 					document.addEventListener( item.event, item.action, item.args );
 				} );
 			}
