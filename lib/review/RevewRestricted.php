@@ -43,7 +43,7 @@ class RevewRestricted
 			foreach ( $restricted as $host => $language )
 			{
 				LegalDebug::debug( [
-					'ReviewRestricted::modify_anchors',
+					'ReviewRestricted' => 'modify_anchors',
 
 					'href' => $href,
 				] );
