@@ -133,7 +133,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		modify : function( action )
 		{
-			document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
+			document.querySelectorAll(
+				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+			).forEach( action );
 		},
 
 		checkState : function( event )
