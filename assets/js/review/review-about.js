@@ -107,7 +107,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
 			).forEach( action );
 		},
-		
+
 		suspendBonus : function( event )
 		{
 			this.modify( this.suspendMoved );
@@ -115,7 +115,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		initBonus : function( event )
 		{
-			this.modify( this.setMoved );
+			// this.modify( this.setMoved );
+
+			this.modify( this.setMoved() );
 		},
 		
 		setMoved : function( element )
