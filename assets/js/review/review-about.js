@@ -280,7 +280,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initDesktop()
 		{
-			this.modify( State.suspendSticky.bind( State ) );
+			State.modify( State.suspendSticky.bind( State ) );
 
 			this.itemsMobile.forEach( this.removeEvents );
 
