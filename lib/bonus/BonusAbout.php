@@ -297,13 +297,15 @@ class BonusAbout
             return '';
         }
 
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus-about' ], false, self::get() );
+        // load_template( self::TEMPLATE[ 'bonus-about' ], false, self::get() );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about' ], self::get() );
     }
 
     public static function render_button()
@@ -313,13 +315,15 @@ class BonusAbout
             return '';
         }
 
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'bonus-about-button' ], false, self::get_button() );
+        // load_template( self::TEMPLATE[ 'bonus-about-button' ], false, self::get_button() );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-button' ], self::get_button() );
     }
 }
 
