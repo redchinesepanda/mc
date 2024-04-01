@@ -485,17 +485,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		}
 
-		init()
+		static init()
 		{
 			this.check();
 
 			window.addEventListener( this.events.resize, this.check, false );
 		}
 	};
-	
-	let reviewAbout = new ReviewAbout();
 
-	reviewAbout.init();
+	ReviewAbout.init();
+	
+	// let reviewAbout = new ReviewAbout();
+
+	// reviewAbout.init();
 
 	// const events = {
 	// 	scroll: 'scroll',
