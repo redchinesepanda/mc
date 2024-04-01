@@ -113,6 +113,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	let state = {
+		classes : {
+			moved: 'moved-bonus',
+
+			sticky: 'sticky-bonus',
+
+			animated: 'animated-bonus',
+		},
+
 		modify : function( action )
 		{
 			document.querySelectorAll(
@@ -122,22 +130,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		setMoved : function( element )
 		{
-			element.classList.add( classes.moved );
+			element.classList.add( this.classes.moved );
 		},
 
 		suspendMoved : function( element )
 		{
-			element.classList.remove( classes.moved );
+			element.classList.remove( this.classes.moved );
 		},
 
 		setSticky : function( element )
 		{
-			element.classList.add( classes.sticky );
+			element.classList.add( this.classes.sticky );
 		},
 
 		suspendSticky : function( element )
 		{
-			element.classList.remove( classes.sticky );
+			element.classList.remove( this.classes.sticky );
 		},
 
 		suspendBonus : function( event )
@@ -147,9 +155,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		initBonus : function( event )
 		{
-			// this.modify( this.setMoved );
-
-			this.modify();
+			this.modify( this.setMoved );
 		},
 
 		checkState : function( event )
@@ -396,95 +402,180 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 
-	const classes = {
-		moved: 'moved-bonus',
+	// const classes = {
+	// 	moved: 'moved-bonus',
 
-		sticky: 'sticky-bonus',
+	// 	sticky: 'sticky-bonus',
 
-		animated: 'animated-bonus',
-	};
+	// 	animated: 'animated-bonus',
+	// };
 
-	const events = {
-		scroll: 'scroll',
-
-		resize: 'resize'
-	};
-
-	const items = [
-		{
-			event: events.scroll,
-
-			// action: initBonus,
-			
-			action: state.initBonus,
-
-			args: { once: true }
+	let reviewAbout = {
+		events : {
+			scroll: 'scroll',
+	
+			resize: 'resize'
 		},
 
+		items : [
+			{
+				event: events.scroll,
+	
+				// action: initBonus,
+				
+				action: state.initBonus,
+	
+				args: { once: true }
+			},
+	
+			{
+				event: events.scroll,
+	
+				// action: checkState,
+				
+				action: state.checkState,
+	
+				args: false
+			}
+		],
+
+		itemsMobile : [
+			{
+				event: events.scroll,
+	
+				// action: suspendBonus,
+				
+				action: state.suspendBonus,
+	
+				args: { once: true }
+			},
+	
+			{
+				event: events.scroll,
+	
+				// action: checkSticky,
+				
+				action: state.checkSticky,
+	
+				args: false
+			}
+		],
+
+		check : function()
 		{
-			event: events.scroll,
-
-			// action: checkState,
-			
-			action: state.checkState,
-
-			args: false
-		}
-	];
-
-	const itemsMobile = [
-		{
-			event: events.scroll,
-
-			// action: suspendBonus,
-			
-			action: state.suspendBonus,
-
-			args: { once: true }
+			if ( window.matchMedia( '( min-width: 960px )' ).matches )
+			{
+				itemsMobile.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				items.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action, item.args );
+				} );
+	
+				localStorage.setItem( 'reviewAboutScroll', 0 );
+			}
+			else
+			{
+				items.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				itemsMobile.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action, item.args );
+				} );
+			}
 		},
 
+		init : function()
 		{
-			event: events.scroll,
+			this.check();
 
-			// action: checkSticky,
+			window.addEventListener( events.resize, this.check, false );
+		}
+	};
+	
+	reviewAbout.init();
+
+	// const events = {
+	// 	scroll: 'scroll',
+
+	// 	resize: 'resize'
+	// };
+
+	// const items = [
+	// 	{
+	// 		event: events.scroll,
+
+	// 		// action: initBonus,
 			
-			action: state.checkSticky,
+	// 		action: state.initBonus,
 
-			args: false
-		}
-	];
+	// 		args: { once: true }
+	// 	},
 
-	function reviewAboutInit()
-	{
-		if ( window.matchMedia( '( min-width: 960px )' ).matches )
-		{
-			itemsMobile.forEach( function ( item ) {
-				document.removeEventListener( item.event, item.action, item.args );
-			} );
+	// 	{
+	// 		event: events.scroll,
 
-			items.forEach( function ( item ) {
-				document.addEventListener( item.event, item.action, item.args );
-			} );
+	// 		// action: checkState,
+			
+	// 		action: state.checkState,
 
-			localStorage.setItem( 'reviewAboutScroll', 0 );
-		}
-		else
-		{
-			// document.querySelectorAll( selectors.reviewAbout ).forEach( moveBack );
+	// 		args: false
+	// 	}
+	// ];
 
-			items.forEach( function ( item ) {
-				document.removeEventListener( item.event, item.action, item.args );
-			} );
+	// const itemsMobile = [
+	// 	{
+	// 		event: events.scroll,
 
-			itemsMobile.forEach( function ( item ) {
-				document.addEventListener( item.event, item.action, item.args );
-			} );
-		}
-	}
+	// 		// action: suspendBonus,
+			
+	// 		action: state.suspendBonus,
 
-	reviewAboutInit();
+	// 		args: { once: true }
+	// 	},
 
-	window.addEventListener( events.resize, reviewAboutInit, false );
+	// 	{
+	// 		event: events.scroll,
+
+	// 		// action: checkSticky,
+			
+	// 		action: state.checkSticky,
+
+	// 		args: false
+	// 	}
+	// ];
+
+	// function reviewAboutInit()
+	// {
+	// 	if ( window.matchMedia( '( min-width: 960px )' ).matches )
+	// 	{
+	// 		itemsMobile.forEach( function ( item ) {
+	// 			document.removeEventListener( item.event, item.action, item.args );
+	// 		} );
+
+	// 		items.forEach( function ( item ) {
+	// 			document.addEventListener( item.event, item.action, item.args );
+	// 		} );
+
+	// 		localStorage.setItem( 'reviewAboutScroll', 0 );
+	// 	}
+	// 	else
+	// 	{
+	// 		items.forEach( function ( item ) {
+	// 			document.removeEventListener( item.event, item.action, item.args );
+	// 		} );
+
+	// 		itemsMobile.forEach( function ( item ) {
+	// 			document.addEventListener( item.event, item.action, item.args );
+	// 		} );
+	// 	}
+	// }
+
+	// reviewAboutInit();
+
+	// window.addEventListener( events.resize, reviewAboutInit, false );
 } );
 
 // review-about-js end
