@@ -290,7 +290,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static check()
 		{
-			if ( window.matchMedia( this.media.mobile ).matches )
+			// if ( window.matchMedia( this.media.mobile ).matches )
+			
+			if ( window.matchMedia( ReviewAbout.media.mobile ).matches )
 			{
 				this.itemsMobile.forEach( function ( item ) {
 					document.removeEventListener( item.event, item.action, item.args );
