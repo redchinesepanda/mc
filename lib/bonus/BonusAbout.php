@@ -262,7 +262,7 @@ class BonusAbout
 
 	public static function get_logo_src( $id = false )
     {
-        if ( $brand_src = BrandMain::get_logo_billet( $id ) )
+        if ( $brand_src = BrandMain::get_logo_bonus( $id ) )
         {
             return $brand_src;
         }
