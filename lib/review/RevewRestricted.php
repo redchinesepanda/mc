@@ -60,7 +60,7 @@ class RevewRestricted
 					'pattern' => $pattern,
 				] );
 
-				if ( str_contains( $pattern, $href ) )
+				if ( str_contains( $href, $pattern ) )
 				{
 					$replace_host = parse_url( $href, PHP_URL_HOST );
 
