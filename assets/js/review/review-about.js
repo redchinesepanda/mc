@@ -156,7 +156,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// this.modify( this.suspendMoved );
 			
-			this.modify( State.suspendMoved );
+			State.modify( State.suspendMoved );
 
 			// console.log( this.getElements() );
 
