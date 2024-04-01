@@ -274,11 +274,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				event : this.events.scroll,
 				
 				// action : State.checkSticky,
+				
+				action : State.checkSticky.bind( State ),
 
-				action : function( event )
-				{
-					State.checkSticky( event.currentTarget );
-				},
+				// action : function( event )
+				// {
+				// 	State.checkSticky( event.currentTarget );
+				// },
 	
 				args : false
 			}
