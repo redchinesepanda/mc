@@ -36,6 +36,14 @@ class RevewRestricted
 
 		$main_host = LegalMain::get_main_host();
 
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'modify_anchors',
+
+			'restricted' => $restricted,
+
+			'main_host' => $main_host,
+		] );
+
 		foreach ( $nodes as $node )
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
@@ -43,8 +51,6 @@ class RevewRestricted
 			foreach ( $restricted as $host => $language )
 			{
 				LegalDebug::debug( [
-					'ReviewRestricted' => 'modify_anchors',
-
 					'href' => $href,
 				] );
 
