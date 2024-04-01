@@ -36,28 +36,23 @@ class RevewRestricted
 			return false;
 		}
 
-		// $node = $nodes->item( $nodes->length - 1 );
+		$restricted = ToolNotFound::get_restricted();
 
-		// $section = $dom->createElement( 'div' );
+		$main_host = LegalMain::get_main_host();
 
-		// $section->setAttribute( 'class', 'legal-section-anchors' );
+		foreach ( $nodes as $node )
+		{
+			$href = $node->getAttribute( 'href' );
 
-		// LegalDOM::appendHTML( $section, ReviewAnchors::render() );
+			foreach ( $restricted as $host => $language )
+			{
+				$href = str_replace( $main_host, $host, $href );
 
-		// try
-		// {
-		// 	$node->parentNode->insertBefore( $section, $node->nextSibling );
-		// }
-		// catch ( DOMException $e )
-		// {
-		// 	LegalDebug::debug( [
-		// 		'BonusPreview' => 'insert_anchors',
+				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '', $href );
+			}
 
-		// 		'node' => substr( $node->textContent, 0, 30 ),
-
-		// 		'message' => $e->getMessage(),
-		// 	] );
-		// }
+			$node->setAttribute( 'href', 'legal-section-anchors' );
+		}
 
 		return true;
 	}
@@ -70,11 +65,15 @@ class RevewRestricted
 
 	public static function get_nodes_anchor( $dom )
 	{
-		$restricted = ToolNotFound::get_restricted();
+		// $restricted = ToolNotFound::get_restricted();
+		
+		$restricted = ToolNotFound::get_restricted_languages_all();
 
 		$query = [];
 
-		foreach ( $restricted as $host => $language )
+		// foreach ( $restricted as $host => $language )
+		
+		foreach ( $restricted as $language )
 		{
 			$query[] = vsprintf( self::FORMAT[ 'node' ], $language );
 		}

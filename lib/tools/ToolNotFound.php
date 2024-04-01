@@ -97,6 +97,13 @@ class ToolNotFound
 
 		return call_user_func_array( 'array_merge', $restricted );
 	}
+
+	public static function get_restricted_languages_all()
+	{
+		$restricted = self::get_restricted();
+
+		return call_user_func_array( 'array_merge', $restricted );
+	}
 	
 	// public static function get_default_language()
 
