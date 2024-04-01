@@ -729,10 +729,19 @@ class BaseHeader
 	{
 		$post = $items[ $key ];
 
+		$href = $post->url;
+
+		if ( $post->type == 'custom' )
+		{
+			$href = apply_filters( 'mc_url_restricted', $post->url );
+		}
+
 		$item = [
 			'title' => $post->title,
 
-			'href' => $post->url,
+			// 'href' => $post->url,
+			
+			'href' => $href,
 
 			'class' => '',
 
@@ -781,14 +790,6 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_items',
-
-			'menu_id_translated' => $menu_id_translated,
-
-			'menu_items' => count( $menu_items ),
-		] );
-
 		$items = [];
 
 		if ( $menu_items )
@@ -803,10 +804,6 @@ class BaseHeader
 				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 			}
 		}
-
-		LegalDebug::debug( [
-			'items' => count( $items ),
-		] );
 		
 		$items[] = self::get_menu_languages();
 
