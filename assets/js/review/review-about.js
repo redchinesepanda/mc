@@ -32,6 +32,34 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return this.getState() == 1;
 		}
 	};
+
+	let scroll = {
+		offset : {
+			moved: 0,
+	
+			sticky: 550
+		},
+
+		checkMoved : function()
+		{
+			return window.scrollY > this.offset.moved;
+		},
+
+		checkMovedBack : function()
+		{
+			return window.scrollY <= this.offset.moved;
+		},
+
+		checkSticky : function()
+		{
+			return window.scrollY > this.offset.sticky;
+		},
+
+		checkStickyBack : function()
+		{
+			return window.scrollY <= this.offset.sticky;
+		},
+	};
 	
 	// function suspendBonus( event )
 	// {
@@ -105,34 +133,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// const storage = {
 	// 	scroll: 'reviewAboutScroll',
 	// };
-
-	let scroll = {
-		offset : {
-			moved: 0,
-	
-			sticky: 550
-		},
-
-		checkMoved : function()
-		{
-			return window.scrollY > offset.moved;
-		},
-
-		checkMovedBack : function()
-		{
-			return window.scrollY <= offset.moved;
-		},
-
-		checkSticky : function()
-		{
-			return window.scrollY > offset.sticky;
-		},
-
-		checkStickyBack : function()
-		{
-			return window.scrollY <= offset.sticky;
-		},
-	};
 	
 	function checkState( event )
 	{
