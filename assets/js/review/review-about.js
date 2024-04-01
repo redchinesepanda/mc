@@ -413,17 +413,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// let reviewAbout =  {
 	
 	class ReviewAbout {
-		constructor()
-		{
-			this.name = name;
-			this.age = age;
-		}
+		constructor() {}
 
 		events = {
 			scroll: 'scroll',
 	
 			resize: 'resize'
-		};
+		}
 
 		items = [
 			{
@@ -441,7 +437,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 				args : false
 			}
-		];
+		]
 
 		itemsMobile = [
 			{
@@ -459,7 +455,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 				args : false
 			}
-		];
+		]
 
 		check()
 		{
@@ -487,14 +483,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					document.addEventListener( item.event, item.action, item.args );
 				} );
 			}
-		};
+		}
 
 		init()
 		{
 			this.check();
 
 			window.addEventListener( this.events.resize, this.check, false );
-		};
+		}
 	};
 	
 	let reviewAbout = new ReviewAbout();
