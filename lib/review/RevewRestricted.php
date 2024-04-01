@@ -42,9 +42,23 @@ class RevewRestricted
 
 			foreach ( $restricted as $host => $language )
 			{
+				LegalDebug::debug( [
+					'ReviewRestricted::modify_anchors',
+
+					'href' => $href,
+				] );
+
 				$href = str_replace( $main_host, $host, $href );
 
+				LegalDebug::debug( [
+					'href' => $href,
+				] );
+
 				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '', $href );
+
+				LegalDebug::debug( [
+					'href' => $href,
+				] );
 			}
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
