@@ -31,7 +31,7 @@ class RevewRestricted
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'modify_anchors',
 
-            'length' => $nodes->length
+            'length' => $nodes->length,
 
 			'nodes' => $nodes,
 		] );
