@@ -100,6 +100,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// };
 
+	const selectors = {
+		reviewAbout : '.review-about.legal-mode-default',
+
+		reviewAboutBonus : '.review-about.legal-mode-default .about-right',
+
+		sidebar : '.legal-review-page-sidebar',
+
+		sidebarBonus : '.legal-review-page-sidebar .about-right',
+
+		sidebarAction : '.legal-bonus-sidebar .bonus-about-action',
+	};
+
 	let state = {
 		modify : function( action )
 		{
@@ -383,18 +395,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 		state.modify( state.suspendSticky );
 	// 	}
 	// }
-
-	const selectors = {
-		reviewAbout : '.review-about.legal-mode-default',
-
-		reviewAboutBonus : '.review-about.legal-mode-default .about-right',
-
-		sidebar : '.legal-review-page-sidebar',
-
-		sidebarBonus : '.legal-review-page-sidebar .about-right',
-
-		sidebarAction : '.legal-bonus-sidebar .bonus-about-action',
-	};
 
 	const classes = {
 		moved: 'moved-bonus',
