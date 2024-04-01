@@ -157,7 +157,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static suspendBonus ( event )
 		{
-			this.modify( this.suspendMoved );
+			// this.modify( this.suspendMoved );
+
+			this.getElements().forEach( this.suspendMoved );
 		}
 
 		static initBonus ( event )
