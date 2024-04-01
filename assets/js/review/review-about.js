@@ -156,13 +156,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// this.modify( this.suspendMoved );
 			
-			State.modify( State.suspendMoved );
+			// State.modify( State.suspendMoved );
 
 			// console.log( this.getElements() );
 
 			// this.getElements().forEach( this.suspendMoved );
 			
-			// this.getElements().forEach( State.suspendMoved );
+			this.getElements().forEach( State.suspendMoved );
 			
 			// this.getElements().forEach( function ( element ) {
 			// 	State.suspendMoved( element );
