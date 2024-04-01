@@ -19,17 +19,13 @@ class RevewRestricted
 		}
 	}
 
+	const ATTRIBUTE = [
+		'href' => 'href',
+	];
+
 	public static function modify_anchors( $dom )
 	{
 		$nodes = self::get_nodes_anchor( $dom );
-
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'modify_anchors',
-
-            'length' => $nodes->length,
-
-			'nodes' => $nodes,
-		] );
 
 		if ( $nodes->length == 0 )
 		{
@@ -42,7 +38,7 @@ class RevewRestricted
 
 		foreach ( $nodes as $node )
 		{
-			$href = $node->getAttribute( 'href' );
+			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
 			foreach ( $restricted as $host => $language )
 			{
@@ -51,7 +47,7 @@ class RevewRestricted
 				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '', $href );
 			}
 
-			$node->setAttribute( 'href', 'legal-section-anchors' );
+			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
 
 		return true;
