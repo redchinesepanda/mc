@@ -286,7 +286,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					document.addEventListener( item.event, item.action, item.args );
 				} );
 
-				Storage.suspendState();
+				storage.suspendState();
 			}
 			else
 			{
