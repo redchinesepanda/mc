@@ -101,6 +101,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// };
 
 	let state = {
+		modify : function( action )
+		{
+			document.querySelectorAll(
+				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+			).forEach( action );
+		},
+		
 		suspendBonus : function( event )
 		{
 			this.modify( this.suspendMoved );
@@ -129,13 +136,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		suspendSticky : function( element )
 		{
 			element.classList.remove( classes.sticky );
-		},
-
-		modify : function( action )
-		{
-			document.querySelectorAll(
-				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-			).forEach( action );
 		},
 
 		checkState : function( event )
