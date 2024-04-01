@@ -416,7 +416,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		"use strict";
 
-		let parent = {
+		var parent = {
 			events: {
 				scroll: 'scroll',
 		
