@@ -417,8 +417,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			resize: 'resize'
 		},
 
-		items : {
-			init : {
+		items : [
+			{
 				event : this.events.scroll,
 				
 				action : state.initBonus,
@@ -426,32 +426,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				args : { once : true }
 			},
 	
-			check : {
+			{
 				event : this.events.scroll,
 				
 				action : state.checkState,
 	
 				args : false
 			}
-		},
-
-		// items : [
-		// 	{
-		// 		event : this.events.scroll,
-				
-		// 		action : state.initBonus,
-	
-		// 		args : { once : true }
-		// 	},
-	
-		// 	{
-		// 		event : this.events.scroll,
-				
-		// 		action : state.checkState,
-	
-		// 		args : false
-		// 	}
-		// ],
+		],
 
 		itemsMobile : [
 			{
