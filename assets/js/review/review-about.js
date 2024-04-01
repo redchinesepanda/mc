@@ -127,10 +127,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
 			).forEach( action );
 		}
-
-		// static getElements () {
-		// 	return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
-		// }
 		
 		static setMoved ( element )
 		{
@@ -155,15 +151,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		static suspendBonus ( event )
 		{
 			this.modify( this.suspendMoved.bind( this ) );
-			
-			// this.getElements().forEach( this.suspendMoved.bind( this ) );
 		}
 
 		static initBonus ( event )
 		{
 			this.modify( this.setMoved.bind( this ) );
-
-			// this.getElements().forEach( this.setMoved.bind( this ) );
 		}
 
 		static checkState ( event )
@@ -173,8 +165,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				storage.initState();
 				
 				this.modify( this.setMoved.bind( this ) );
-
-				// this.getElements().forEach( this.setMoved.bind( this ) );
 			}
 
 			if ( scroll.checkMovedBack() && storage.checkStateReady() )
@@ -182,8 +172,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				storage.suspendState();
 				
 				this.modify( this.suspendMoved.bind( this ) );
-
-				// this.getElements().forEach( this.suspendMoved.bind( this ) );
 			}
 		}
 
@@ -194,8 +182,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				storage.initState();
 
 				this.modify( this.setSticky.bind( this ) );
-
-				// this.getElements().forEach( this.setSticky.bind( this ) );
 			}
 
 			if ( scroll.checkStickyBack() && storage.checkStateReady() )
@@ -203,8 +189,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				storage.suspendState();
 
 				this.modify( this.suspendSticky.bind( this ) );
-
-				// this.getElements().forEach( this.suspendSticky.bind( this ) );
 			}
 		}
 	};
@@ -253,32 +237,60 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		]
 
 		static mediaQuery = {
-			mobile : '( min-width: 960px )'
+			desktop : '( min-width: 960px )'
+		}
+
+		static initDesktop()
+		{
+			this.itemsMobile.forEach( function ( item ) {
+				document.removeEventListener( item.event, item.action, item.args );
+			} );
+
+			this.items.forEach( function ( item ) {
+				document.addEventListener( item.event, item.action, item.args );
+			} );
+
+			storage.suspendState();
+		}
+
+		static initMobile()
+		{
+			this.items.forEach( function ( item ) {
+				document.removeEventListener( item.event, item.action, item.args );
+			} );
+
+			this.itemsMobile.forEach( function ( item ) {
+				document.addEventListener( item.event, item.action, item.args );
+			} );
 		}
 
 		static check()
 		{
-			if ( window.matchMedia( this.mediaQuery.mobile ).matches )
+			if ( window.matchMedia( this.mediaQuery.desktop ).matches )
 			{
-				this.itemsMobile.forEach( function ( item ) {
-					document.removeEventListener( item.event, item.action, item.args );
-				} );
+				// this.itemsMobile.forEach( function ( item ) {
+				// 	document.removeEventListener( item.event, item.action, item.args );
+				// } );
 	
-				this.items.forEach( function ( item ) {
-					document.addEventListener( item.event, item.action, item.args );
-				} );
+				// this.items.forEach( function ( item ) {
+				// 	document.addEventListener( item.event, item.action, item.args );
+				// } );
 
-				storage.suspendState();
+				// storage.suspendState();
+
+				this.initDesktop();
 			}
 			else
 			{
-				this.items.forEach( function ( item ) {
-					document.removeEventListener( item.event, item.action, item.args );
-				} );
+				// this.items.forEach( function ( item ) {
+				// 	document.removeEventListener( item.event, item.action, item.args );
+				// } );
 	
-				this.itemsMobile.forEach( function ( item ) {
-					document.addEventListener( item.event, item.action, item.args );
-				} );
+				// this.itemsMobile.forEach( function ( item ) {
+				// 	document.addEventListener( item.event, item.action, item.args );
+				// } );
+
+				this.initMobile();
 			}
 		}
 
