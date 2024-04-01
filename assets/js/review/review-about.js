@@ -412,94 +412,93 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// let reviewAbout =  {
 	
-	let reviewAbout = (function(){
+	class ReviewAbout {
+		constructor()
+		{
+			this.name = name;
+			this.age = age;
+		}
 
-		// "use strict";
+		events = {
+			scroll: 'scroll',
+	
+			resize: 'resize'
+		};
 
-		var parent = {
-			events: {
-				scroll: 'scroll',
-		
-				resize: 'resize'
-			},
-
-			items : [
-				{
-					// event : this.events.scroll,
-					
-					event : parent.events.scroll,
-					
-					action : state.initBonus,
-		
-					args : { once : true }
-				},
-		
-				{
-					event : this.events.scroll,
-					
-					action : state.checkState,
-		
-					args : false
-				}
-			],
-
-			itemsMobile : [
-				{
-					event : this.events.scroll,
-					
-					action : state.suspendBonus,
-		
-					args : { once : true }
-				},
-		
-				{
-					event : this.events.scroll,
-					
-					action : state.checkSticky,
-		
-					args : false
-				}
-			],
-
-			check : function()
+		items = [
 			{
-				if ( window.matchMedia( '( min-width: 960px )' ).matches )
-				{
-					this.itemsMobile.forEach( function ( item ) {
-						document.removeEventListener( item.event, item.action, item.args );
-					} );
-		
-					this.items.forEach( function ( item ) {
-						document.addEventListener( item.event, item.action, item.args );
-					} );
-		
-					// localStorage.setItem( 'reviewAboutScroll', 0 );
-
-					storage.suspendState();
-				}
-				else
-				{
-					this.items.forEach( function ( item ) {
-						document.removeEventListener( item.event, item.action, item.args );
-					} );
-		
-					this.itemsMobile.forEach( function ( item ) {
-						document.addEventListener( item.event, item.action, item.args );
-					} );
-				}
+				event : this.events.scroll,
+				
+				action : state.initBonus,
+	
+				args : { once : true }
 			},
-
-			init : function()
+	
 			{
-				this.check();
+				event : this.events.scroll,
+				
+				action : state.checkState,
+	
+				args : false
+			}
+		];
 
-				window.addEventListener( this.events.resize, this.check, false );
+		itemsMobile = [
+			{
+				event : this.events.scroll,
+				
+				action : state.suspendBonus,
+	
+				args : { once : true }
+			},
+	
+			{
+				event : this.events.scroll,
+				
+				action : state.checkSticky,
+	
+				args : false
+			}
+		];
+
+		check()
+		{
+			if ( window.matchMedia( '( min-width: 960px )' ).matches )
+			{
+				this.itemsMobile.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				this.items.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action, item.args );
+				} );
+	
+				// localStorage.setItem( 'reviewAboutScroll', 0 );
+
+				storage.suspendState();
+			}
+			else
+			{
+				this.items.forEach( function ( item ) {
+					document.removeEventListener( item.event, item.action, item.args );
+				} );
+	
+				this.itemsMobile.forEach( function ( item ) {
+					document.addEventListener( item.event, item.action, item.args );
+				} );
 			}
 		};
 
-		return parent;
-	} )();
+		init()
+		{
+			this.check();
+
+			window.addEventListener( this.events.resize, this.check, false );
+		};
+	};
 	
+	let reviewAbout = new ReviewAbout();
+
 	reviewAbout.init();
 
 	// const events = {
