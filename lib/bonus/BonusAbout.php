@@ -301,6 +301,8 @@ class BonusAbout
 
         'bonus-about-new' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-new.php',
 
+        'bonus-about-action' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-action.php',
+
         'bonus-about-button' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-button.php',
     ];
 
@@ -311,14 +313,6 @@ class BonusAbout
             return '';
         }
 
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'bonus-about' ], false, self::get() );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
         if ( TemplateMain::check_new() )
         {
             return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-new' ], self::get() );
@@ -327,20 +321,17 @@ class BonusAbout
         return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about' ], self::get() );
     }
 
+    public static function render_action()
+    {
+		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-action' ], self::get_bonus() );
+    }
+
     public static function render_button()
     {
 		if ( !BonusMain::check() )
         {
             return '';
         }
-
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'bonus-about-button' ], false, self::get_button() );
-
-        // $output = ob_get_clean();
-
-        // return $output;
 
         return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-button' ], self::get_button() );
     }

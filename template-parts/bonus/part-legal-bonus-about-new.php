@@ -6,11 +6,11 @@
 			<span class="about-data-description"><?php echo $args[ 'description' ] ?></span>
 			<?php echo BonusSummary::render_about(); ?>
 		</div>
-		<div class="bonus-about-action">
+		<!-- <div class="bonus-about-action">
 			<span class="about-action-label"><?php echo $args[ 'bonus' ][ 'label' ] ?></span>
 			<span class="about-action-label"><?php echo $args[ 'bonus' ][ 'value' ] ?></span>
 			<?php echo BonusAbout::render_button(); ?>
-		</div>
+		</div> -->
 	</div>
 	<div class="legal-bonus-about-overlay1"></div>
 	<div class="legal-bonus-about-overlay2"></div>
