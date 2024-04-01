@@ -260,6 +260,16 @@ class BonusAbout
         return [];
     }
 
+	public static function get_logo_src( $id = false )
+    {
+        if ( $brand_src = BrandMain::get_logo_billet( $id ) )
+        {
+            return $brand_src;
+        }
+
+        return get_field( self::FIELD[ 'bonus-src' ], $id );
+    }
+
 	public static function get()
     {
         $id = BonusMain::get_id();
@@ -277,7 +287,9 @@ class BonusAbout
             'bonus' => self::get_bonus(),
 
 			'logo' => [
-				'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),
+				// 'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),
+				
+                'src' => self::get_logo_src( $id ),
 
 				'alt' => get_field( self::FIELD[ 'bonus-bookmaker-name' ], $id ),
 			],
