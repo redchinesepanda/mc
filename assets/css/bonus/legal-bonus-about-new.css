@@ -27,6 +27,8 @@
 	.legal-bonus-sidebar .bonus-about-action {
 		padding-right: 24px;
 		padding-left: 24px;
+		margin-top: calc( 32px - 24px );
+  		margin-bottom: 32px;
 	}
 
 	/* Width and Height */
@@ -94,9 +96,9 @@
 		width: calc( 100% - 102px - 26px );
 	}
 	
-	.legal-bonus-sidebar .bonus-about-action {
+	/* .legal-bonus-sidebar .bonus-about-action {
 		flex-basis: calc( 25% - 25px );
-	}
+	} */
 
 	/* Typography */
 
@@ -243,6 +245,7 @@
 	background-color: var( --Primitives-purple-50 );
 	border: 2px solid var( --Base-base-09 ); 
 	border-radius: 32px;
+	box-sizing: border-box;
 } 
 
 .legal-bonus-sidebar .about-action-get,
