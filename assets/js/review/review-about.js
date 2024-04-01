@@ -60,128 +60,193 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			return window.scrollY <= this.offset.sticky;
 		},
 	};
+
+	// let move = {
+	// 	move : function( element, selector )
+	// 	{
+	// 		if ( document.querySelector( selector ) !== null )
+	// 		{
+	// 			element.appendChild( document.querySelector( selector ) );
+	// 		}
+	// 	},
+
+	// 	moveBack : function( element )
+	// 	{
+	// 		move( element, selectors.sidebarBonus );
+	// 	},
+
+	// 	moveToSidebar : function( element )
+	// 	{
+	// 		move( element, selectors.reviewAboutBonus );
+	// 	},
+
+	// 	checkState : function( event )
+	// 	{
+	// 		let state = localStorage.getItem( 'reviewAboutScroll' );
+
+	// 		if ( window.scrollY > 0 && state != 1 )
+	// 		{
+	// 			localStorage.setItem( 'reviewAboutScroll', 1 );
+
+	// 			document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
+	// 		}
+
+	// 		if ( window.scrollY == 0 && state == 1 )
+	// 		{
+	// 			localStorage.setItem( 'reviewAboutScroll', 0 );
+
+	// 			document.querySelectorAll( selectors.reviewAbout ).forEach( moveBack );
+	// 		}
+	// 	}
+	// };
+
+	let state = {
+		suspendBonus : function( event )
+		{
+			this.modify( this.suspendMoved );
+		},
+
+		initBonus : function( event )
+		{
+			this.modify( this.setMoved );
+		},
+		
+		setMoved : function( element )
+		{
+			element.classList.add( classes.moved );
+		},
+
+		suspendMoved : function( element )
+		{
+			element.classList.remove( classes.moved );
+		},
+
+		setSticky : function( element )
+		{
+			element.classList.add( classes.sticky );
+		},
+
+		suspendSticky : function( element )
+		{
+			element.classList.remove( classes.sticky );
+		},
+
+		modify : function( action )
+		{
+			document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
+		},
+
+		checkState : function( event )
+		{
+			if ( scroll.checkMoved() && storage.checkStateSuspended() )
+			{
+				storage.initState();
+				
+				this.modify( this.setMoved );
+			}
+
+			if ( scroll.checkMovedBack() && storage.checkStateReady() )
+			{
+				storage.suspendState();
+				
+				this.modify( this.suspendMoved );
+			}
+		},
+
+		checkSticky : function( event )
+		{
+			if ( scroll.checkSticky && storage.checkStateSuspended() )
+			{
+				storage.initState();
+
+				this.modify( this.setSticky );
+			}
+
+			if ( scroll.checkStickyBack() && storage.checkStateReady() )
+			{
+				storage.suspendState();
+
+				this.modify( this.suspendSticky );
+			}
+		}
+	};
 	
 	// function suspendBonus( event )
 	// {
-	// 	document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.moved );
+	// 	modify( suspendMoved );
 	// }
 
-	function suspendBonus( event )
-	{
-		// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
-
-		modify( suspendMoved );
-	}
-
-	function initBonus( event )
-	{
-		// if ( document.querySelector( selectors.reviewAboutBonus ) !== null )
-		// {
-		// 	// document.querySelector( selectors.reviewAboutBonus ).classList.add( classes.moved );
-		// }
-			
-		modify( setMoved );
-	}
-
-	// function move( element, selector )
+	// function initBonus( event )
 	// {
-	// 	if ( document.querySelector( selector ) !== null )
-	// 	{
-	// 		element.appendChild( document.querySelector( selector ) );
-	// 	}
-	// }
-
-	// function moveBack( element )
-	// {
-	// 	move( element, selectors.sidebarBonus );
-	// }
-
-	// function moveToSidebar( element )
-	// {
-	// 	move( element, selectors.reviewAboutBonus );
-	// }
-
-	// function checkState( event )
-	// {
-	// 	let state = localStorage.getItem( 'reviewAboutScroll' );
-
-	// 	if ( window.scrollY > 0 && state != 1 )
-	// 	{
-	// 		localStorage.setItem( 'reviewAboutScroll', 1 );
-
-	// 		document.querySelectorAll( selectors.sidebar ).forEach( moveToSidebar );
-	// 	}
-
-	// 	if ( window.scrollY == 0 && state == 1 )
-	// 	{
-	// 		localStorage.setItem( 'reviewAboutScroll', 0 );
-
-	// 		document.querySelectorAll( selectors.reviewAbout ).forEach( moveBack );
-	// 	}
+	// 	modify( setMoved );
 	// }
 	
-	function setMoved( element )
-	{
-		element.classList.add( classes.moved );
-	}
+	// function setMoved( element )
+	// {
+	// 	element.classList.add( classes.moved );
+	// }
 
-	function suspendMoved( element )
-	{
-		element.classList.remove( classes.moved );
-	}
+	// function suspendMoved( element )
+	// {
+	// 	element.classList.remove( classes.moved );
+	// }
 
 	// const storage = {
 	// 	scroll: 'reviewAboutScroll',
 	// };
 	
-	function checkState( event )
-	{
-		// let state = localStorage.getItem( 'reviewAboutScroll' );
+	// function checkState( event )
+	// {
+	// 	// let state = localStorage.getItem( 'reviewAboutScroll' );
 		
-		// let state = localStorage.getItem( storage.scroll );
+	// 	// let state = localStorage.getItem( storage.scroll );
 
-		// if ( window.scrollY > offset.moved && state != 1 )
+	// 	// if ( window.scrollY > offset.moved && state != 1 )
 		
-		// if ( window.scrollY > offset.moved && checkStateSuspended() )
+	// 	// if ( window.scrollY > offset.moved && checkStateSuspended() )
 		
-		// if ( window.scrollY > offset.moved && storage.checkStateSuspended() )
+	// 	// if ( window.scrollY > offset.moved && storage.checkStateSuspended() )
 		
-		if ( scroll.checkMoved() && storage.checkStateSuspended() )
-		{
-			// localStorage.setItem( 'reviewAboutScroll', 1 );
+	// 	if ( scroll.checkMoved() && storage.checkStateSuspended() )
+	// 	{
+	// 		// localStorage.setItem( 'reviewAboutScroll', 1 );
 			
-			// localStorage.setItem( storage.scroll, 1 );
+	// 		// localStorage.setItem( storage.scroll, 1 );
 
-			// initState();
+	// 		// initState();
 			
-			storage.initState();
+	// 		storage.initState();
 
-			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
+	// 		// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
 
-			modify( setMoved );
-		}
-
-		// if ( window.scrollY == offset.moved && state == 1 )
-		
-		// if ( window.scrollY == offset.moved && checkStateReady() )
-		
-		// if ( window.scrollY == offset.moved && storage.checkStateReady() )
-		
-		if ( scroll.checkMovedBack() && storage.checkStateReady() )
-		{
-			// localStorage.setItem( 'reviewAboutScroll', 0 );
+	// 		// modify( setMoved );
 			
-			// localStorage.setItem( storage.scroll, 0 );
+	// 		state.modify( state.setMoved );
+	// 	}
 
-			// suspendState();
+	// 	// if ( window.scrollY == offset.moved && state == 1 )
+		
+	// 	// if ( window.scrollY == offset.moved && checkStateReady() )
+		
+	// 	// if ( window.scrollY == offset.moved && storage.checkStateReady() )
+		
+	// 	if ( scroll.checkMovedBack() && storage.checkStateReady() )
+	// 	{
+	// 		// localStorage.setItem( 'reviewAboutScroll', 0 );
 			
-			storage.suspendState();
+	// 		// localStorage.setItem( storage.scroll, 0 );
 
-			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+	// 		// suspendState();
+			
+	// 		storage.suspendState();
 
-			modify( suspendMoved );
-		}
-	}
+	// 		// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
+
+	// 		// modify( suspendMoved );
+			
+	// 		state.modify( state.suspendMoved );
+	// 	}
+	// }
 
 	// function checkSticky( event )
 	// {
@@ -202,20 +267,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 	
-	function setSticky( element )
-	{
-		element.classList.add( classes.sticky );
-	}
+	// function setSticky( element )
+	// {
+	// 	element.classList.add( classes.sticky );
+	// }
 
-	function suspendSticky( element )
-	{
-		element.classList.remove( classes.sticky );
-	}
+	// function suspendSticky( element )
+	// {
+	// 	element.classList.remove( classes.sticky );
+	// }
 
-	function modify( action )
-	{
-		document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
-	}
+	// function modify( action )
+	// {
+	// 	document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
+	// }
 
 	// const offset = {
 	// 	moved: 0,
@@ -248,68 +313,72 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	return getState() == 1;
 	// }
 
-	function checkSticky( event )
-	{
-		// let state = localStorage.getItem( 'reviewAboutSticky' );
+	// function checkSticky( event )
+	// {
+	// 	// let state = localStorage.getItem( 'reviewAboutSticky' );
 		
-		// let state = localStorage.getItem( storage.scroll );
+	// 	// let state = localStorage.getItem( storage.scroll );
 
-		/* if ( window.scrollY > 0 && state != 1 ) */
+	// 	/* if ( window.scrollY > 0 && state != 1 ) */
 		
-		// if ( window.scrollY > 550 )
+	// 	// if ( window.scrollY > 550 )
 		
-		// if ( window.scrollY > offset.sticky )
+	// 	// if ( window.scrollY > offset.sticky )
 		
-		// if ( window.scrollY > offset.sticky && checkStateSuspended() )
+	// 	// if ( window.scrollY > offset.sticky && checkStateSuspended() )
 		
-		// if ( window.scrollY > offset.sticky && storage.checkStateSuspended() )
+	// 	// if ( window.scrollY > offset.sticky && storage.checkStateSuspended() )
 		
-		if ( scroll.checkSticky && storage.checkStateSuspended() )
-		{
-			// localStorage.setItem( 'reviewAboutSticky', 1 );
+	// 	if ( scroll.checkSticky && storage.checkStateSuspended() )
+	// 	{
+	// 		// localStorage.setItem( 'reviewAboutSticky', 1 );
 			
-			// localStorage.setItem( storage.scroll, 1 );
+	// 		// localStorage.setItem( storage.scroll, 1 );
 
-			// initState();
+	// 		// initState();
 			
-			storage.initState();
+	// 		storage.initState();
 
-			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
+	// 		// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
 
-			// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( setSticky );
+	// 		// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( setSticky );
 
-			modify( setSticky );
-		}
-
-		/* if ( window.scrollY == 0 && state == 1 ) */
-		
-		// if ( window.scrollY <= 550 )
-		
-		// if ( window.scrollY <= offset.sticky )
-		
-		// if ( window.scrollY <= offset.sticky && state == 1 )
-		
-		// if ( window.scrollY <= offset.sticky && checkStateReady() )
-		
-		// if ( window.scrollY <= offset.sticky && storage.checkStateReady() )
-		
-		if ( scroll.checkStickyBack() && storage.checkStateReady() )
-		{
-			// localStorage.setItem( 'reviewAboutSticky', 0 );
+	// 		// modify( setSticky );
 			
-			// localStorage.setItem( storage.scroll, 0 );
+	// 		state.modify( state.setSticky );
+	// 	}
 
-			// suspendState();
+	// 	/* if ( window.scrollY == 0 && state == 1 ) */
+		
+	// 	// if ( window.scrollY <= 550 )
+		
+	// 	// if ( window.scrollY <= offset.sticky )
+		
+	// 	// if ( window.scrollY <= offset.sticky && state == 1 )
+		
+	// 	// if ( window.scrollY <= offset.sticky && checkStateReady() )
+		
+	// 	// if ( window.scrollY <= offset.sticky && storage.checkStateReady() )
+		
+	// 	if ( scroll.checkStickyBack() && storage.checkStateReady() )
+	// 	{
+	// 		// localStorage.setItem( 'reviewAboutSticky', 0 );
 			
-			storage.suspendState();
+	// 		// localStorage.setItem( storage.scroll, 0 );
 
-			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
+	// 		// suspendState();
 			
-			// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( suspendSticky );
+	// 		storage.suspendState();
 
-			modify( suspendSticky );
-		}
-	}
+	// 		// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
+			
+	// 		// document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( suspendSticky );
+
+	// 		// modify( suspendSticky );
+			
+	// 		state.modify( state.suspendSticky );
+	// 	}
+	// }
 
 	const selectors = {
 		reviewAbout : '.review-about.legal-mode-default',
@@ -341,7 +410,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			event: events.scroll,
 
-			action: initBonus,
+			// action: initBonus,
+			
+			action: state.initBonus,
 
 			args: { once: true }
 		},
@@ -349,7 +420,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			event: events.scroll,
 
-			action: checkState,
+			// action: checkState,
+			
+			action: state.checkState,
 
 			args: false
 		}
@@ -359,7 +432,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			event: events.scroll,
 
-			action: suspendBonus,
+			// action: suspendBonus,
+			
+			action: state.suspendBonus,
 
 			args: { once: true }
 		},
@@ -367,7 +442,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			event: events.scroll,
 
-			action: checkSticky,
+			// action: checkSticky,
+			
+			action: state.checkSticky,
 
 			args: false
 		}
