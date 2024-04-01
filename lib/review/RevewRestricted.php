@@ -23,10 +23,10 @@ class RevewRestricted
 	{
 		$nodes = self::get_nodes_anchor( $dom );
 
-		if ( $nodes->length == 0 )
-		{
-			return false;
-		}
+		// if ( $nodes->length == 0 )
+		// {
+		// 	return false;
+		// }
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'modify_anchors',
