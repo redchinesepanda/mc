@@ -299,7 +299,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initMobile()
 		{
-			this.modify( State.suspendMoved.bind( State ) );
+			State.modify( State.suspendMoved.bind( State ) );
 
 			this.items.forEach( this.removeEvents );
 
