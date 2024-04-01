@@ -70,23 +70,33 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.classList.remove( classes.moved );
 	}
+
+	const storage = {
+		scroll: 'reviewAboutScroll',
+	};
 	
 	function checkState( event )
 	{
-		let state = localStorage.getItem( 'reviewAboutScroll' );
+		// let state = localStorage.getItem( 'reviewAboutScroll' );
+		
+		let state = localStorage.getItem( storage.scroll );
 
-		if ( window.scrollY > 0 && state != 1 )
+		if ( window.scrollY > offset.moved && state != 1 )
 		{
-			localStorage.setItem( 'reviewAboutScroll', 1 );
+			// localStorage.setItem( 'reviewAboutScroll', 1 );
+			
+			localStorage.setItem( storage.scroll, 1 );
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
 
 			modify( setMoved );
 		}
 
-		if ( window.scrollY == 0 && state == 1 )
+		if ( window.scrollY == offset.moved && state == 1 )
 		{
-			localStorage.setItem( 'reviewAboutScroll', 0 );
+			// localStorage.setItem( 'reviewAboutScroll', 0 );
+			
+			localStorage.setItem( storage.scroll, 0 );
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
 
@@ -128,14 +138,27 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( action );
 	}
 
+	const offset = {
+		moved: 0,
+
+		sticky: 550
+	};
+
 	function checkSticky( event )
 	{
-		let state = localStorage.getItem( 'reviewAboutSticky' );
+		// let state = localStorage.getItem( 'reviewAboutSticky' );
+		
+		let state = localStorage.getItem( storage.scroll );
 
 		/* if ( window.scrollY > 0 && state != 1 ) */
-		if ( window.scrollY > 550 )
+		
+		// if ( window.scrollY > 550 )
+		
+		if ( window.scrollY > offset.sticky )
 		{
-			localStorage.setItem( 'reviewAboutSticky', 1 );
+			// localStorage.setItem( 'reviewAboutSticky', 1 );
+			
+			localStorage.setItem( storage.scroll, 1 );
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
 
@@ -146,9 +169,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		/* if ( window.scrollY == 0 && state == 1 ) */
 		
-		if ( window.scrollY <= 550 )
+		// if ( window.scrollY <= 550 )
+		
+		if ( window.scrollY <= offset.sticky )
 		{
-			localStorage.setItem( 'reviewAboutSticky', 0 );
+			// localStorage.setItem( 'reviewAboutSticky', 0 );
+			
+			localStorage.setItem( storage.scroll, 0 );
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
 			
