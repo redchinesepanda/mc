@@ -121,12 +121,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			animated: 'animated-bonus',
 		}
 
-		// static modify ( action )
-		// {
-		// 	document.querySelectorAll(
-		// 		[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-		// 	).forEach( action );
-		// }
+		static modify ( action )
+		{
+			document.querySelectorAll(
+				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+			).forEach( action );
+		}
 
 		static getElements () {
 			return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
@@ -154,21 +154,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static suspendBonus ( event )
 		{
-			// this.modify( this.suspendMoved );
+			this.modify( this.suspendMoved.bind( this ) );
 			
-			// State.modify( State.suspendMoved );
-
-			// console.log( this.getElements() );
-
-			// this.getElements().forEach( this.suspendMoved );
-
-			this.getElements().forEach( this.suspendMoved.bind( this ) );
-			
-			// this.getElements().forEach( State.suspendMoved );
-			
-			// this.getElements().forEach( function ( element ) {
-			// 	State.suspendMoved( element );
-			// } );
+			// this.getElements().forEach( this.suspendMoved.bind( this ) );
 		}
 
 		static initBonus ( event )
@@ -205,16 +193,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.initState();
 
-				// this.modify( this.setSticky );
-
 				this.getElements().forEach( this.setSticky.bind( this ) );
 			}
 
 			if ( scroll.checkStickyBack() && storage.checkStateReady() )
 			{
 				storage.suspendState();
-
-				// this.modify( this.suspendSticky );
 
 				this.getElements().forEach( this.suspendSticky.bind( this ) );
 			}
@@ -231,30 +215,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		static items = [
 			{
 				event : this.events.scroll,
-				
-				// action : State.initBonus,
 
 				action : State.initBonus.bind( State ),
-
-				// action : function( event )
-				// {
-				// 	State.initBonus( event.currentTarget );
-				// },
 	
 				args : { once : true }
 			},
 	
 			{
 				event : this.events.scroll,
-				
-				// action : State.checkState,
 
 				action : State.checkState.bind( State ),
-
-				// action : function( event )
-				// {
-				// 	State.checkState( event.currentTarget );
-				// },
 	
 				args : false
 			}
@@ -263,15 +233,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		static itemsMobile = [
 			{
 				event : this.events.scroll,
-				
-				// action : State.suspendBonus,
 
 				action : State.suspendBonus.bind( State ),
-				
-				// action : function( event )
-				// {
-				// 	State.suspendBonus( event.currentTarget );
-				// },
 	
 				args : { once : true }
 			},
@@ -279,14 +242,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				// action : State.checkSticky,
-				
 				action : State.checkSticky.bind( State ),
-
-				// action : function( event )
-				// {
-				// 	State.checkSticky( event.currentTarget );
-				// },
 	
 				args : false
 			}
@@ -298,8 +254,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static check()
 		{
-			// if ( window.matchMedia( this.media.mobile ).matches )
-			
 			if ( window.matchMedia( this.mediaQuery.mobile ).matches )
 			{
 				this.itemsMobile.forEach( function ( item ) {
