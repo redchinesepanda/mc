@@ -781,6 +781,14 @@ class BaseHeader
 
 		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_items',
+
+			'menu_id_translated' => $menu_id_translated,
+
+			'menu_items' => $menu_items,
+		] );
+
 		$items = [];
 
 		if ( $menu_items ) {
