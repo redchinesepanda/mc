@@ -419,7 +419,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		items : [
 			{
-				event : reviewAbout.events.scroll,
+				event : this.events.scroll,
 				
 				action : state.initBonus,
 	
