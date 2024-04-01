@@ -112,53 +112,53 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		sidebarAction : '.legal-bonus-sidebar .bonus-about-action',
 	};
 
-	let state = {
-		classes : {
+	class State {
+		static classes = {
 			moved: 'moved-bonus',
 
 			sticky: 'sticky-bonus',
 
 			animated: 'animated-bonus',
-		},
+		}
 
-		modify : function( action )
+		static modify ( action )
 		{
 			document.querySelectorAll(
 				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
 			).forEach( action );
-		},
+		}
 		
-		setMoved : function( element )
+		static setMoved ( element )
 		{
 			element.classList.add( this.classes.moved );
-		},
+		}
 
-		suspendMoved : function( element )
+		static suspendMoved ( element )
 		{
 			element.classList.remove( this.classes.moved );
-		},
+		}
 
-		setSticky : function( element )
+		static setSticky ( element )
 		{
 			element.classList.add( this.classes.sticky );
-		},
+		}
 
-		suspendSticky : function( element )
+		static suspendSticky ( element )
 		{
 			element.classList.remove( this.classes.sticky );
-		},
+		}
 
-		suspendBonus : function( event )
+		static suspendBonus ( event )
 		{
 			this.modify( this.suspendMoved );
-		},
+		}
 
-		initBonus : function( event )
+		static initBonus ( event )
 		{
 			this.modify( this.setMoved );
-		},
+		}
 
-		checkState : function( event )
+		static checkState ( event )
 		{
 			if ( scroll.checkMoved() && storage.checkStateSuspended() )
 			{
@@ -173,9 +173,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				
 				this.modify( this.suspendMoved );
 			}
-		},
+		}
 
-		checkSticky : function( event )
+		static checkSticky ( event )
 		{
 			if ( scroll.checkSticky && storage.checkStateSuspended() )
 			{
@@ -413,8 +413,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// let reviewAbout =  {
 	
 	class ReviewAbout {
-		constructor() {}
-
 		static events = {
 			scroll: 'scroll',
 	
@@ -425,7 +423,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : state.initBonus,
+				action : State.initBonus,
 	
 				args : { once : true }
 			},
@@ -433,7 +431,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : state.checkState,
+				action : State.checkState,
 	
 				args : false
 			}
@@ -443,7 +441,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : state.suspendBonus,
+				action : State.suspendBonus,
 	
 				args : { once : true }
 			},
@@ -451,7 +449,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : state.checkSticky,
+				action : State.checkSticky,
 	
 				args : false
 			}
@@ -494,10 +492,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	ReviewAbout.init();
-	
-	// let reviewAbout = new ReviewAbout();
-
-	// reviewAbout.init();
 
 	// const events = {
 	// 	scroll: 'scroll',
