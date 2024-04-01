@@ -95,6 +95,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	}
 	// }
 	
+	function suspendSticky( element )
+	{
+		element.classList.remove( classes.sticky );
+	}
+
 	function checkSticky( event )
 	{
 		let state = localStorage.getItem( 'reviewAboutSticky' );
@@ -108,11 +113,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		/* if ( window.scrollY == 0 && state == 1 ) */
+		
 		if ( window.scrollY <= 550 )
 		{
 			localStorage.setItem( 'reviewAboutSticky', 0 );
 
-			document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
+			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
+			
+			document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) ).forEach( suspendSticky );
 		}
 	}
 
@@ -124,6 +132,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		sidebar : '.legal-review-page-sidebar',
 
 		sidebarBonus : '.legal-review-page-sidebar .about-right',
+
+		sidebarAction : '.legal-bonus-sidebar .bonus-about-action',
 	};
 
 	const classes = {
