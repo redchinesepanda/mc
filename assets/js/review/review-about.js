@@ -228,7 +228,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : State.initBonus,
+				// action : State.initBonus,
+
+				action : function( event )
+				{
+					State.initBonus( event.currentTarget );
+				},
 	
 				args : { once : true }
 			},
@@ -236,7 +241,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : State.checkState,
+				// action : State.checkState,
+
+				action : function( event )
+				{
+					State.checkState( event.currentTarget );
+				},
 	
 				args : false
 			}
