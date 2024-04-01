@@ -173,9 +173,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initBonus ( event )
 		{
-			this.modify( this.setMoved );
+			// this.modify( this.setMoved );
 
-			// this.getElements().forEach( this.setMoved );
+			this.getElements().forEach( this.setMoved.bind( this ) );
 		}
 
 		static checkState ( event )
