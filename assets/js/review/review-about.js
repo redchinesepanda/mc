@@ -128,11 +128,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	).forEach( action );
 		// }
 
-		static getElements()
-		{
-			return document.querySelectorAll(
-				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-			);
+		static getElements () {
+			return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
 		}
 		
 		static setMoved ( element )
