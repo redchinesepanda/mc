@@ -419,9 +419,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		items : [
 			{
-				event: events.scroll,
-	
-				// action: initBonus,
+				event: this.events.scroll,
 				
 				action: state.initBonus,
 	
@@ -429,9 +427,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			},
 	
 			{
-				event: events.scroll,
-	
-				// action: checkState,
+				event: this.events.scroll,
 				
 				action: state.checkState,
 	
@@ -441,9 +437,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		itemsMobile : [
 			{
-				event: events.scroll,
-	
-				// action: suspendBonus,
+				event: this.events.scroll,
 				
 				action: state.suspendBonus,
 	
@@ -451,9 +445,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			},
 	
 			{
-				event: events.scroll,
-	
-				// action: checkSticky,
+				event: this.events.scroll,
 				
 				action: state.checkSticky,
 	
