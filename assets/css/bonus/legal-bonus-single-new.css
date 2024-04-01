@@ -38,8 +38,7 @@
 
 	.legal-bonus-single .legal-bonus-sidebar {
 		position: sticky;
-		/* top: calc( var( --bonus-about-action-margin-top ) + 30px ); */
-		top: 30px;
+		top: calc( ( var( --bonus-about-action-margin-top ) * -1 ) + 30px );
 	}
 }
 
