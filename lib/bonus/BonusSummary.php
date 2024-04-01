@@ -52,7 +52,7 @@ class BonusSummary
 		'bonus-wagering' => 'otygrysh',
 	];
 
-	public static function get_bonus_amount()
+	public static function get_bonus_amount( $id = false )
 	{
 		return [
 			'label' => __( BonusMain::TEXT[ 'bonus-amount' ], ToolLoco::TEXTDOMAIN ),
@@ -86,8 +86,8 @@ class BonusSummary
 		$published_value = get_the_date( 'd/m/Y' );
 
 		$summary_always = [
-			'bonus-amount' => self::get_bonus_amount(),
-			
+			'bonus-amount' => self::get_bonus_amount( $id ),
+
 			// 'bonus-amount' => [
 			// 	'label' => __( BonusMain::TEXT[ 'bonus-amount' ], ToolLoco::TEXTDOMAIN ),
 
