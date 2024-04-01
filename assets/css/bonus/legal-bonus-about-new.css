@@ -286,7 +286,9 @@
 .legal-bonus-about .about-data-title,
 .legal-bonus-about .about-data-description,
 .legal-bonus-sidebar .about-action-get,
-.legal-bonus-button .about-action-get {
+.legal-bonus-button .about-action-get,
+.legal-bonus-sidebar .about-action-label,
+.legal-bonus-sidebar .about-action-value {
 	font-family: var( --legal-font-primary );
 	font-style: normal; 
 } 
@@ -307,12 +309,23 @@
 	line-height: 22px;
 }
 
+.legal-bonus-sidebar .about-action-label {
+	font-weight: 600;
+}
+
+.legal-bonus-sidebar .about-action-value {
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
 .legal-bonus-button .about-action-get {
 	font-size: 14px;
 	line-height: 20px;
 }
 
-.legal-bonus-sidebar .about-action-get {
+.legal-bonus-sidebar .about-action-get,
+.legal-bonus-sidebar .about-action-label {
 	font-size: 16px;
 	line-height: 22px;
 }
