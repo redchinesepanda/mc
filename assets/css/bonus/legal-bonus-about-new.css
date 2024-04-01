@@ -27,6 +27,11 @@
 
 	/* Width and Height */
 
+	.legal-bonus-about .about-data-logo {
+		width: 68px;
+		height: 68px;
+	}
+
 	.legal-bonus-about .bonus-about-action {
 		width: 100%;
 	}
@@ -63,6 +68,13 @@
 	
 	.legal-bonus-about .bonus-about-action {
 		flex-basis: calc( 25% - 25px );
+	}
+
+	/* Width and Height */
+
+	.legal-bonus-about .about-data-logo {
+		width: 100px;
+		height: 100px;
 	}
 
 	/* Typography */
@@ -131,14 +143,18 @@
 	padding: 15px 0px;
 } */
 
+.legal-bonus-about .about-data-title {
+	margin-bottom: 0px;
+}
+
+.legal-bonus-about .about-data-logo {
+	object-fit: contain;
+}
+
 .legal-bonus-about .bonus-about-action {
 	/* padding: 30px 0px; */
 	padding-top: 24px;
 	padding-bottom: 24px;
-}
-
-.legal-bonus-about .about-data-title {
-	margin-bottom: 0px;
 }
 
 .legal-bonus-about .about-action-get,
@@ -147,13 +163,13 @@
 	padding: 10px 18px;
 }
 
-.legal-bonus-about-overlay1,
+/* .legal-bonus-about-overlay1,
 .legal-bonus-about-overlay2,
 .legal-bonus-about-overlay3 {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-}
+} */
 
 .legal-bonus-button {
 	padding-bottom: 28px;
@@ -189,6 +205,14 @@
 	border-bottom: 1px solid var( --Base-base-09 );
 }
 
+.legal-bonus-about .about-data-logo {
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-radius: 24px;
+	border: 1px solid var(--Base-base-09);
+	background-color: var(--Logo-background);
+}
+
 .legal-bonus-about .bonus-about-action {
 	background-color: var( --Primitives-purple-50 );
 	border: 2px solid var( --Base-base-09 ); 
@@ -206,13 +230,13 @@
 	background-color: var(--Base-base-07);
 }
 
-.legal-bonus-about-overlay1,
+/* .legal-bonus-about-overlay1,
 .legal-bonus-about-overlay2,
 .legal-bonus-about-overlay3 {
 	background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
-.legal-bonus-about-overlay1 {
+/* .legal-bonus-about-overlay1 {
 	opacity: 0.4;
 }
 
@@ -222,9 +246,9 @@
 
 .legal-bonus-about-overlay3 {
 	opacity: unset;
-}
+} */
 
-.legal-bonus-about-overlay1 {
+/* .legal-bonus-about-overlay1 {
 	clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
 }
 
@@ -234,7 +258,7 @@
 
 .legal-bonus-about-overlay3 {
 	clip-path: polygon(100% 100%, 0% 100%, 100% 50%);
-}
+} */
 
 /* Typography */
 
