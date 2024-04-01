@@ -124,9 +124,6 @@
 .legal-bonus-sidebar .bonus-about-action {
 	display: flex;
 	flex-direction: column;
-	/* row-gap: 20px; */
-	align-items: center;
-  	/* justify-content: center; */
 }
 
 .legal-bonus-sidebar .about-action-get,
@@ -176,6 +173,14 @@
 	/* padding: 30px 0px; */
 	padding-top: 24px;
 	padding-bottom: 24px;
+}
+
+.legal-bonus-sidebar .about-action-label {
+	padding-bottom: 8px;
+}
+
+.legal-bonus-sidebar .about-action-value {
+	padding-bottom: 48px;
 }
 
 .legal-bonus-sidebar .about-action-get,
