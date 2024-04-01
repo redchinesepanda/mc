@@ -8,6 +8,14 @@
 		flex-wrap: wrap;
 	}
 
+	.legal-bonus-single .legal-bonus-main {
+		order: 1;
+	} 
+
+	.legal-bonus-single .legal-bonus-sidebar {
+		order: 0;
+	}
+
 	/* Width and Height */
 
 	.legal-bonus-single .legal-bonus-main,
