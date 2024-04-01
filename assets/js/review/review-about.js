@@ -155,12 +155,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		static suspendBonus ( event )
 		{
 			// this.modify( this.suspendMoved );
+			
+			this.modify( State.suspendMoved );
 
 			// console.log( this.getElements() );
 
 			// this.getElements().forEach( this.suspendMoved );
 			
-			this.getElements().forEach( State.suspendMoved );
+			// this.getElements().forEach( State.suspendMoved );
 			
 			// this.getElements().forEach( function ( element ) {
 			// 	State.suspendMoved( element );
