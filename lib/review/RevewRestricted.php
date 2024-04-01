@@ -23,11 +23,6 @@ class RevewRestricted
 	{
 		$nodes = self::get_nodes_anchor( $dom );
 
-		// if ( $nodes->length == 0 )
-		// {
-		// 	return false;
-		// }
-
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'modify_anchors',
 
@@ -35,6 +30,11 @@ class RevewRestricted
 
 			'nodes' => $nodes,
 		] );
+
+		if ( $nodes->length == 0 )
+		{
+			return false;
+		}
 
 		// $node = $nodes->item( $nodes->length - 1 );
 
@@ -62,20 +62,35 @@ class RevewRestricted
 		return true;
 	}
 
+	const FORMAT = [
+		'anchor' => '/%s/',
+		
+		'node' => '//a[contains(@href,"%s")]',
+	];
+
 	public static function get_nodes_anchor( $dom )
 	{
-		return LegalDOM::get_nodes( $dom, "//a" );
+		$restricted = ToolNotFound::get_restricted();
+
+		$query = [];
+
+		foreach ( $restricted as $host => $language )
+		{
+			$query[] = vsprintf( self::FORMAT[ 'node' ], $language );
+		}
+
+		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
 	public static function check_contains_restricted_anchors()
     {
 		$result = false;
 
-		$restricted = ToolNOtFound::get_restricted();
+		$restricted = ToolNotFound::get_restricted();
 
 		foreach ( $restricted as $host => $language )
 		{
-			if ( LegalComponents::check_contains( vsprintf( '/%s/', $language ) ) )
+			if ( LegalComponents::check_contains( vsprintf( self::FORMAT[ 'anchor' ], $language ) ) )
 			{
 				$result = true;
 
