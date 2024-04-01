@@ -79,24 +79,32 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// let state = localStorage.getItem( 'reviewAboutScroll' );
 		
-		let state = localStorage.getItem( storage.scroll );
+		// let state = localStorage.getItem( storage.scroll );
 
-		if ( window.scrollY > offset.moved && state != 1 )
+		// if ( window.scrollY > offset.moved && state != 1 )
+		
+		if ( window.scrollY > offset.moved && checkStateSuspended() )
 		{
 			// localStorage.setItem( 'reviewAboutScroll', 1 );
 			
-			localStorage.setItem( storage.scroll, 1 );
+			// localStorage.setItem( storage.scroll, 1 );
+
+			initState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
 
 			modify( setMoved );
 		}
 
-		if ( window.scrollY == offset.moved && state == 1 )
+		// if ( window.scrollY == offset.moved && state == 1 )
+		
+		if ( window.scrollY == offset.moved && checkStateReady() )
 		{
 			// localStorage.setItem( 'reviewAboutScroll', 0 );
 			
-			localStorage.setItem( storage.scroll, 0 );
+			// localStorage.setItem( storage.scroll, 0 );
+
+			suspendState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
 
@@ -144,21 +152,50 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		sticky: 550
 	};
 
+	function getState()
+	{
+		return localStorage.getItem( storage.scroll );
+	}
+
+	function initState()
+	{
+		return localStorage.setItem( storage.scroll, 1 );
+	}
+
+	function suspendState()
+	{
+		return localStorage.setItem( storage.scroll, 0 );
+	}
+
+	function checkStateSuspended()
+	{
+		return getState() != 1;
+	}
+
+	function checkStateReady()
+	{
+		return getState() == 1;
+	}
+
 	function checkSticky( event )
 	{
 		// let state = localStorage.getItem( 'reviewAboutSticky' );
 		
-		let state = localStorage.getItem( storage.scroll );
+		// let state = localStorage.getItem( storage.scroll );
 
 		/* if ( window.scrollY > 0 && state != 1 ) */
 		
 		// if ( window.scrollY > 550 )
 		
-		if ( window.scrollY > offset.sticky )
+		// if ( window.scrollY > offset.sticky )
+		
+		if ( window.scrollY > offset.sticky && checkStateSuspended() )
 		{
 			// localStorage.setItem( 'reviewAboutSticky', 1 );
 			
-			localStorage.setItem( storage.scroll, 1 );
+			// localStorage.setItem( storage.scroll, 1 );
+
+			initState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
 
@@ -171,11 +208,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// if ( window.scrollY <= 550 )
 		
-		if ( window.scrollY <= offset.sticky )
+		// if ( window.scrollY <= offset.sticky )
+		
+		// if ( window.scrollY <= offset.sticky && state == 1 )
+		
+		if ( window.scrollY <= offset.sticky && checkStateReady() )
 		{
 			// localStorage.setItem( 'reviewAboutSticky', 0 );
 			
-			localStorage.setItem( storage.scroll, 0 );
+			// localStorage.setItem( storage.scroll, 0 );
+
+			suspendState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
 			
