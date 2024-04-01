@@ -70,30 +70,13 @@ class BaseFooter
 	{
 		$restricted = ToolNotFound::get_restricted();
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'replace_anchors',
-
-			'href' => $href,
-
-			'restricted' => $restricted,
-		] );
-
 		foreach ( $restricted as $host => $language )
 		{
-			LegalDebug::debug( [
-				'host' => $host,
-	
-				'language' => $language,
-			] );
-
 			if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
 			{
 				break;
 			}
 		}
-		LegalDebug::debug( [
-			'href' => $href,
-		] );
 
 		return $href;
 	}
@@ -112,12 +95,6 @@ class BaseFooter
 	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
-
-		LegalDebug::debug( [
-			'BaseFooter' => 'parse_items',
-
-			'post' => $post->type,
-		] );
 
 		$item[ 'title' ] = $post->title;
 
