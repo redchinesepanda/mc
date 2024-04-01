@@ -320,7 +320,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			this.check();
 
-			window.addEventListener( this.events.resize, this.check, false );
+			window.addEventListener( this.events.resize, this.check.bind( this ), false );
 		}
 	};
 
