@@ -121,16 +121,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			animated: 'animated-bonus',
 		}
 
-		static modify ( action )
-		{
-			document.querySelectorAll(
-				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-			).forEach( action );
-		}
-
-		// static getElements () {
-		// 	return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
+		// static modify ( action )
+		// {
+		// 	document.querySelectorAll(
+		// 		[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+		// 	).forEach( action );
 		// }
+
+		static getElements () {
+			return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
+		}
 		
 		static setMoved ( element )
 		{
@@ -154,11 +154,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static suspendBonus ( event )
 		{
-			this.modify( this.suspendMoved );
+			// this.modify( this.suspendMoved );
 
 			// console.log( this.getElements() );
 
-			// this.getElements().forEach( this.suspendMoved );
+			this.getElements().forEach( this.suspendMoved );
 		}
 
 		static initBonus ( event )
