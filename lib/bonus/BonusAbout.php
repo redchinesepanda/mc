@@ -253,7 +253,7 @@ class BonusAbout
             return [
                 'label' => ToolLoco::translate( BonusMain::TEXT[ 'bookmaker-bonus' ] ),
     
-                'value' => $bonus_amount[ 'label' ],
+                'value' => $bonus_amount[ 'value' ],
             ];
         }
 
