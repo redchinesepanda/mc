@@ -39,7 +39,7 @@
 	.legal-bonus-single .legal-bonus-sidebar {
 		--bonus-about-action-margin-top: calc( 1px + 24px + 32px + (40px * 2) + 50px + 44px + 102px + (28px - 18px) );
 		position: sticky;
-		top: calc( ( var( --bonus-about-action-margin-top ) * -1 ) + 30px );
+		top: calc( var( --bonus-about-action-margin-top ) + 30px );
 	}
 }
 
