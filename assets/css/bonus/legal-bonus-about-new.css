@@ -57,7 +57,8 @@
 	}
 
 	.legal-bonus-about .bonus-about-data {
-		flex-basis: calc( 75% - 25px );
+		/* flex-basis: calc( 75% - 25px ); */
+		width: calc( 100% / 3 * 2 - 24px );
 	}
 	
 	.legal-bonus-about .bonus-about-action {
@@ -160,10 +161,15 @@
 
 /* Width and Height */
 
-.legal-bonus-about-overlay1,
+/* .legal-bonus-about-overlay1,
 .legal-bonus-about-overlay2,
 .legal-bonus-about-overlay3 {
 	height: 56px;
+	width: 100%;
+} */
+
+.legal-bonus-about .about-data-description,
+.legal-bonus-about .legal-bonus-summary {
 	width: 100%;
 }
 
