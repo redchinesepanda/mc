@@ -40,6 +40,8 @@ require_once( 'ReviewCut.php' );
 
 require_once( 'ReviewVideo.php' );
 
+require_once( 'RevewRestricted.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -280,6 +282,8 @@ class ReviewMain
         ReviewCut::register();
 
         ReviewVideo::register();
+
+        RevewRestricted::register();
     }
 
     public static function encoding( $content )

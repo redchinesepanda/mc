@@ -29,18 +29,6 @@ class ToolNotFound
 		return ToolRobots::get_host();
 	}
 
-	// const MAIN_DEBUG = [
-	// 	'old.match.center' => [
-	// 		'en'
-	// 	],
-	// ];
-
-	// const MAIN_PRODUCTION = [
-	// 	'match.center' => [
-	// 		'en'
-	// 	],
-	// ];
-
 	const RESTRICTED_PRODUCTION = [
 		'es.match.center' => [
 			'es'
@@ -62,9 +50,9 @@ class ToolNotFound
 		// 	'ca-fr',
 		// ],
 
-		'es.match.center' => [
-			'es'
-		],
+		// 'es.match.center' => [
+		// 	'es'
+		// ],
 	];
 
 	public static function get_restricted()
