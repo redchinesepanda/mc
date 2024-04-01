@@ -250,7 +250,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				document.addEventListener( item.event, item.action, item.args );
 			} );
 
-			storage.suspendState();
+			// storage.suspendState();
 		}
 
 		static initMobile()
@@ -266,30 +266,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static check()
 		{
+			storage.suspendState();
+
 			if ( window.matchMedia( this.mediaQuery.desktop ).matches )
 			{
-				// this.itemsMobile.forEach( function ( item ) {
-				// 	document.removeEventListener( item.event, item.action, item.args );
-				// } );
-	
-				// this.items.forEach( function ( item ) {
-				// 	document.addEventListener( item.event, item.action, item.args );
-				// } );
-
-				// storage.suspendState();
-
 				this.initDesktop();
 			}
 			else
 			{
-				// this.items.forEach( function ( item ) {
-				// 	document.removeEventListener( item.event, item.action, item.args );
-				// } );
-	
-				// this.itemsMobile.forEach( function ( item ) {
-				// 	document.addEventListener( item.event, item.action, item.args );
-				// } );
-
 				this.initMobile();
 			}
 		}
