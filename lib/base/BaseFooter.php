@@ -43,6 +43,11 @@ class BaseFooter
         add_action( 'init', [ $handler, 'location' ] );
 	}
 
+	public static function check_register()
+	{
+		return ToolNotFound::check_domain_restricted();
+	}
+
 	public static function register()
     {
         $handler = new self();
@@ -54,7 +59,41 @@ class BaseFooter
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		// add_filter( 'wp_nav_menu_objects', [ $handler, 'image' ], 10, 2 );
+
+		if ( self::check_register() )
+		{
+			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+		}
     }
+
+	public static function replace_anchors( $href )
+	{
+		$restricted = ToolNotFound::get_restricted();
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'replace_anchors',
+
+			'href' => $href,
+
+			'restricted' => $restricted,
+		] );
+
+		foreach ( $restricted as $host => $language )
+		{
+			LegalDebug::debug( [
+				'host' => $host,
+	
+				'language' => $language,
+			] );
+
+			if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+			{
+				break;
+			}
+		}
+
+		return $href;
+	}
 
 	const LOCATION = 'legal-footer';
 
@@ -80,6 +119,11 @@ class BaseFooter
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
+
+		if ( $post->type == 'custom' )
+		{
+			$item[ 'href' ] = apply_filters( 'mc_url_restricted', $post->url );
+		}
 
 		$class = get_field( self::ITEM[ 'width' ], $post->ID );
 
