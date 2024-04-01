@@ -240,15 +240,29 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			desktop : '( min-width: 960px )'
 		}
 
+		static removeEvents( item )
+		{
+			document.removeEventListener( item.event, item.action, item.args );
+		}
+
+		static addEvents( item )
+		{
+			document.addEventListener( item.event, item.action, item.args );
+		}
+
 		static initDesktop()
 		{
-			this.itemsMobile.forEach( function ( item ) {
-				document.removeEventListener( item.event, item.action, item.args );
-			} );
+			this.itemsMobile.forEach( this.removeEvents );
 
-			this.items.forEach( function ( item ) {
-				document.addEventListener( item.event, item.action, item.args );
-			} );
+			this.items.forEach( this.addEvents );
+
+			// this.itemsMobile.forEach( function ( item ) {
+			// 	document.removeEventListener( item.event, item.action, item.args );
+			// } );
+
+			// this.items.forEach( function ( item ) {
+			// 	document.addEventListener( item.event, item.action, item.args );
+			// } );
 
 			// storage.suspendState();
 		}
