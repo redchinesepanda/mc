@@ -414,7 +414,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	let reviewAbout = (function(){
 
-		"use strict";
+		// "use strict";
 
 		var parent = {
 			events: {
