@@ -158,6 +158,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	this.modify( this.setMoved.bind( this ) );
 		// }
 
+		// static suspendBonus ( event )
+		// {
+		// 	this.modify( this.suspendMoved.bind( this ) );
+		// }
+
+		// static initBonus ( event )
+		// {
+		// 	this.modify( this.setMoved.bind( this ) );
+		// }
+
 		// static checkState ( event )
 		
 		static checkMoved ( event )
@@ -203,13 +213,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		static items = [
-			{
-				event : this.events.scroll,
+			// {
+			// 	event : this.events.scroll,
 
-				action : State.suspendSticky.bind( State ),
+			// 	action : State.suspendSticky.bind( State ),
 	
-				args : { once : true }
-			},
+			// 	args : { once : true }
+			// },
 
 			// {
 			// 	event : this.events.scroll,
@@ -229,13 +239,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		]
 
 		static itemsMobile = [
-			{
-				event : this.events.scroll,
+			// {
+			// 	event : this.events.scroll,
 
-				action : State.suspendMoved.bind( State ),
+			// 	action : State.suspendMoved.bind( State ),
 	
-				args : { once : true }
-			},
+			// 	args : { once : true }
+			// },
 
 			// {
 			// 	event : this.events.scroll,
@@ -270,6 +280,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initDesktop()
 		{
+			this.modify( this.suspendSticky.bind( this ) );
+
 			this.itemsMobile.forEach( this.removeEvents );
 
 			this.items.forEach( this.addEvents );
@@ -287,6 +299,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initMobile()
 		{
+			this.modify( this.suspendMoved.bind( this ) );
+
 			this.items.forEach( this.removeEvents );
 
 			this.itemsMobile.forEach( this.addEvents );
