@@ -418,7 +418,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		items : {
-			{
+			init : {
 				event : this.events.scroll,
 				
 				action : state.initBonus,
@@ -426,7 +426,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				args : { once : true }
 			},
 	
-			{
+			check : {
 				event : this.events.scroll,
 				
 				action : state.checkState,
