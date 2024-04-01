@@ -2,6 +2,37 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	let storage = {
+		field : {
+			scroll: 'reviewAboutScroll',
+		},
+
+		getState : function()
+		{
+			return localStorage.getItem( this.field.scroll );
+		},
+
+		initState : function()
+		{
+			return localStorage.setItem( this.field.scroll, 1 );
+		},
+
+		suspendState : function()
+		{
+			return localStorage.setItem( this.field.scroll, 0 );
+		},
+
+		checkStateSuspended : function()
+		{
+			return this.getState() != 1;
+		},
+
+		checkStateReady : function()
+		{
+			return this.getState() == 1;
+		}
+	};
+	
 	// function suspendBonus( event )
 	// {
 	// 	document.querySelector( selectors.reviewAboutBonus ).classList.remove( classes.moved );
@@ -71,9 +102,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.classList.remove( classes.moved );
 	}
 
-	const storage = {
-		scroll: 'reviewAboutScroll',
-	};
+	// const storage = {
+	// 	scroll: 'reviewAboutScroll',
+	// };
 	
 	function checkState( event )
 	{
@@ -83,13 +114,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// if ( window.scrollY > offset.moved && state != 1 )
 		
-		if ( window.scrollY > offset.moved && checkStateSuspended() )
+		// if ( window.scrollY > offset.moved && checkStateSuspended() )
+		
+		if ( window.scrollY > offset.moved && storage.checkStateSuspended() )
 		{
 			// localStorage.setItem( 'reviewAboutScroll', 1 );
 			
 			// localStorage.setItem( storage.scroll, 1 );
 
-			initState();
+			// initState();
+			
+			storage.initState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.moved );
 
@@ -98,13 +133,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// if ( window.scrollY == offset.moved && state == 1 )
 		
-		if ( window.scrollY == offset.moved && checkStateReady() )
+		// if ( window.scrollY == offset.moved && checkStateReady() )
+		
+		if ( window.scrollY == offset.moved && storage.checkStateReady() )
 		{
 			// localStorage.setItem( 'reviewAboutScroll', 0 );
 			
 			// localStorage.setItem( storage.scroll, 0 );
 
-			suspendState();
+			// suspendState();
+			
+			storage.suspendState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.moved );
 
@@ -152,30 +191,30 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		sticky: 550
 	};
 
-	function getState()
-	{
-		return localStorage.getItem( storage.scroll );
-	}
+	// function getState()
+	// {
+	// 	return localStorage.getItem( storage.scroll );
+	// }
 
-	function initState()
-	{
-		return localStorage.setItem( storage.scroll, 1 );
-	}
+	// function initState()
+	// {
+	// 	return localStorage.setItem( storage.scroll, 1 );
+	// }
 
-	function suspendState()
-	{
-		return localStorage.setItem( storage.scroll, 0 );
-	}
+	// function suspendState()
+	// {
+	// 	return localStorage.setItem( storage.scroll, 0 );
+	// }
 
-	function checkStateSuspended()
-	{
-		return getState() != 1;
-	}
+	// function checkStateSuspended()
+	// {
+	// 	return getState() != 1;
+	// }
 
-	function checkStateReady()
-	{
-		return getState() == 1;
-	}
+	// function checkStateReady()
+	// {
+	// 	return getState() == 1;
+	// }
 
 	function checkSticky( event )
 	{
@@ -189,13 +228,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// if ( window.scrollY > offset.sticky )
 		
-		if ( window.scrollY > offset.sticky && checkStateSuspended() )
+		// if ( window.scrollY > offset.sticky && checkStateSuspended() )
+		
+		if ( window.scrollY > offset.sticky && storage.checkStateSuspended() )
 		{
 			// localStorage.setItem( 'reviewAboutSticky', 1 );
 			
 			// localStorage.setItem( storage.scroll, 1 );
 
-			initState();
+			// initState();
+			
+			storage.initState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.add( classes.sticky );
 
@@ -212,13 +255,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		// if ( window.scrollY <= offset.sticky && state == 1 )
 		
-		if ( window.scrollY <= offset.sticky && checkStateReady() )
+		// if ( window.scrollY <= offset.sticky && checkStateReady() )
+		
+		if ( window.scrollY <= offset.sticky && storage.checkStateReady() )
 		{
 			// localStorage.setItem( 'reviewAboutSticky', 0 );
 			
 			// localStorage.setItem( storage.scroll, 0 );
 
-			suspendState();
+			// suspendState();
+			
+			storage.suspendState();
 
 			// document.querySelector( selectors.sidebarBonus ).classList.remove( classes.sticky );
 			
