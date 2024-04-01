@@ -232,7 +232,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 				
-				action : State.suspendBonus,
+				// action : State.suspendBonus,
+				
+				action : function( event )
+				{
+					State.suspendBonus( event.currentTarget );
+				},
 	
 				args : { once : true }
 			},
@@ -259,7 +264,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 				} );
 	
 				this.items.forEach( function ( item ) {
-					document.addEventListener( item.event, item.action.bind( State ), item.args );
+					document.addEventListener( item.event, item.action, item.args );
 				} );
 
 				Storage.suspendState();
