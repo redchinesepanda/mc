@@ -128,9 +128,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			).forEach( action );
 		}
 
-		static getElements () {
-			return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
-		}
+		// static getElements () {
+		// 	return document.querySelectorAll( [ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' ) );
+		// }
 		
 		static setMoved ( element )
 		{
@@ -161,9 +161,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initBonus ( event )
 		{
-			// this.modify( this.setMoved );
+			this.modify( this.setMoved.bind( this ) );
 
-			this.getElements().forEach( this.setMoved.bind( this ) );
+			// this.getElements().forEach( this.setMoved.bind( this ) );
 		}
 
 		static checkState ( event )
@@ -172,18 +172,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.initState();
 				
-				// this.modify( this.setMoved );
+				this.modify( this.setMoved.bind( this ) );
 
-				this.getElements().forEach( this.setMoved.bind( this ) );
+				// this.getElements().forEach( this.setMoved.bind( this ) );
 			}
 
 			if ( scroll.checkMovedBack() && storage.checkStateReady() )
 			{
 				storage.suspendState();
 				
-				// this.modify( this.suspendMoved );
+				this.modify( this.suspendMoved.bind( this ) );
 
-				this.getElements().forEach( this.suspendMoved.bind( this ) );
+				// this.getElements().forEach( this.suspendMoved.bind( this ) );
 			}
 		}
 
@@ -193,14 +193,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.initState();
 
-				this.getElements().forEach( this.setSticky.bind( this ) );
+				this.modify( this.setSticky.bind( this ) );
+
+				// this.getElements().forEach( this.setSticky.bind( this ) );
 			}
 
 			if ( scroll.checkStickyBack() && storage.checkStateReady() )
 			{
 				storage.suspendState();
 
-				this.getElements().forEach( this.suspendSticky.bind( this ) );
+				this.modify( this.suspendSticky.bind( this ) );
+
+				// this.getElements().forEach( this.suspendSticky.bind( this ) );
 			}
 		}
 	};
