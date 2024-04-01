@@ -305,11 +305,19 @@
 	line-height: 22px;
 }
 
-.legal-bonus-sidebar .about-action-get,
 .legal-bonus-button .about-action-get {
 	font-size: 14px;
-	font-weight: 500;
 	line-height: 20px;
+}
+
+.legal-bonus-sidebar .about-action-get {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.legal-bonus-sidebar .about-action-get,
+.legal-bonus-button .about-action-get {
+	font-weight: 500;
 	text-decoration: none;
 	color: var( --Base-base-01 );
 	/* text-align: center; */
