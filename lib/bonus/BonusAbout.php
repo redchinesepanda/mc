@@ -246,6 +246,8 @@ class BonusAbout
 
 	public static function get_bonus()
     {
+        $bonus_amount = BonusSummary::get_bonus_amount();
+
         if ( TemplateMain::check_new())
         {
             return [
@@ -266,8 +268,6 @@ class BonusAbout
 		{
 			return [];
         }
-
-        $bonus_amount = BonusSummary::get_bonus_amount();
 
 		return [
 			'title' => get_field( self::FIELD[ 'bonus-title' ], $id ),
