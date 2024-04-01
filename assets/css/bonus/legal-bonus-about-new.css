@@ -40,6 +40,10 @@
 		height: 68px;
 	}
 
+	.legal-bonus-about .about-data-title {
+		width: calc( 100% - 70px - 20px );
+	}
+
 	.legal-bonus-about .bonus-about-action {
 		width: 100%;
 	}
@@ -79,16 +83,18 @@
 		/* flex-basis: calc( 75% - 25px ); */
 		width: calc( 100% / 3 * 2 - 24px );
 	}
-	
-	.legal-bonus-about .bonus-about-action {
-		flex-basis: calc( 25% - 25px );
-	}
-
-	/* Width and Height */
 
 	.legal-bonus-about .about-data-logo {
 		width: 100px;
 		height: 100px;
+	}
+
+	.legal-bonus-about .about-data-title {
+		width: calc( 100% - 102px - 26px );
+	}
+	
+	.legal-bonus-about .bonus-about-action {
+		flex-basis: calc( 25% - 25px );
 	}
 
 	/* Typography */
