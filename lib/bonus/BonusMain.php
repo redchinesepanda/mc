@@ -177,6 +177,16 @@ class BonusMain
 
         return 0;
     }
+
+	public static function get_post()
+    {
+		if ( !empty( $post = get_post() ) )
+        {
+            return $post;
+        }
+
+        return null;
+    }
 }
 
 ?>

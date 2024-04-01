@@ -64,22 +64,49 @@ class BonusContent
         'img', 
     ];
 
-	public static function get()
+	public static function modify_content( $content )
     {
-        $id = BonusMain::get_id();
-        
-		if ( empty( $id ) )
-		{
-			return [];
-        }
-
-        $content = get_field( self::FIELD[ 'bonus-content' ], $id );
-
         $content = strip_tags( $content, self::ALLOWED );
 
         $content = preg_replace( '/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content );
 
         $content = str_replace( '&nbsp;', '', $content );
+
+        return $content;
+    }
+
+	public static function get()
+    {
+        // $id = BonusMain::get_id();
+
+        $post = BonusMain::get_post();
+        
+		if ( empty( $post ) )
+		{
+			return [];
+        }
+
+        $content = '';
+
+        if ( !empty( $post->post_content ) )
+        {
+            $content = $post->post_content;
+        }
+        else
+        {
+            $content = get_field( self::FIELD[ 'bonus-content' ], $id );
+        }
+
+        if ( !empty( $content ) )
+        {
+            $content = self::modify_content( $content );
+        }
+
+        // $content = strip_tags( $content, self::ALLOWED );
+
+        // $content = preg_replace( '/\s?<p>(\s|&nbsp;)*<\/p>/', '', $content );
+
+        // $content = str_replace( '&nbsp;', '', $content );
 
         // global $wp_filter;
 
