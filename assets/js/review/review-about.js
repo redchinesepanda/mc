@@ -160,7 +160,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// console.log( this.getElements() );
 
-			this.getElements().forEach( this.suspendMoved );
+			// this.getElements().forEach( this.suspendMoved );
+
+			this.getElements().forEach( this.suspendMoved.bind( this ) );
 			
 			// this.getElements().forEach( State.suspendMoved );
 			
