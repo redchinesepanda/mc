@@ -39,8 +39,6 @@ class RevewRestricted
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'modify_anchors',
 
-			'debug_backtrace' => debug_backtrace(),
-
 			'restricted' => $restricted,
 
 			'main_host' => $main_host,
