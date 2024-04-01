@@ -411,6 +411,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// };
 
 	let reviewAbout =  {
+		self : this,
+
 		events: {
 			scroll: 'scroll',
 	
@@ -419,7 +421,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		items : [
 			{
-				event : this.events.scroll,
+				// event : this.events.scroll,
+				
+				event : reviewAbout.self.events.scroll,
 				
 				action : state.initBonus,
 	
