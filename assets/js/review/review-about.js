@@ -161,7 +161,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// this.getElements().forEach( this.suspendMoved );
 			
 			this.getElements().forEach( function ( element ) {
-				this.suspendMoved( element );
+				State.suspendMoved( element );
 			} );
 		}
 
