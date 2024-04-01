@@ -791,7 +791,8 @@ class BaseHeader
 
 		$items = [];
 
-		if ( $menu_items ) {
+		if ( $menu_items )
+		{
 			$menu_item_parents = ToolMenu::get_parents( $menu_items );
 
 			$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
@@ -802,6 +803,10 @@ class BaseHeader
 				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 			}
 		}
+
+		LegalDebug::debug( [
+			'items' => count( $items ),
+		] );
 		
 		$items[] = self::get_menu_languages();
 
