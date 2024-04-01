@@ -71,6 +71,12 @@ class BaseFooter
 	{
 		$post = $items[ $key ];
 
+		LegalDebug::debug( [
+			'BaseFooter' => 'parse_items',
+
+			'post' => $post->type,
+		] );
+
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
@@ -110,7 +116,8 @@ class BaseFooter
 
 		$items = [];
 
-		if ( $menu_items) {
+		if ( $menu_items )
+		{
 			$menu_item_parents = ToolMenu::get_parents( $menu_items );
 
 			$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
