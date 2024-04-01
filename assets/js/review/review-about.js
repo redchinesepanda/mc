@@ -160,9 +160,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			// this.getElements().forEach( this.suspendMoved );
 			
-			this.getElements().forEach( function ( element ) {
-				State.suspendMoved( element );
-			} );
+			this.getElements().forEach( State.suspendMoved );
+			
+			// this.getElements().forEach( function ( element ) {
+			// 	State.suspendMoved( element );
+			// } );
 		}
 
 		static initBonus ( event )
