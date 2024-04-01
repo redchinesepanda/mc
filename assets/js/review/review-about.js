@@ -419,37 +419,37 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		items : [
 			{
-				event: this.events.scroll,
+				event : reviewAbout.events.scroll,
 				
-				action: state.initBonus,
+				action : state.initBonus,
 	
-				args: { once: true }
+				args : { once : true }
 			},
 	
 			{
-				event: this.events.scroll,
+				event : this.events.scroll,
 				
-				action: state.checkState,
+				action : state.checkState,
 	
-				args: false
+				args : false
 			}
 		],
 
 		itemsMobile : [
 			{
-				event: this.events.scroll,
+				event : this.events.scroll,
 				
-				action: state.suspendBonus,
+				action : state.suspendBonus,
 	
-				args: { once: true }
+				args : { once : true }
 			},
 	
 			{
-				event: this.events.scroll,
+				event : this.events.scroll,
 				
-				action: state.checkSticky,
+				action : state.checkSticky,
 	
-				args: false
+				args : false
 			}
 		],
 
@@ -465,7 +465,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 					document.addEventListener( item.event, item.action, item.args );
 				} );
 	
-				localStorage.setItem( 'reviewAboutScroll', 0 );
+				// localStorage.setItem( 'reviewAboutScroll', 0 );
+
+				storage.suspendState();
 			}
 			else
 			{
