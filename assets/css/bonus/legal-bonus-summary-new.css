@@ -107,7 +107,8 @@
 .legal-bonus-summary .item-label,
 .legal-bonus-summary .item-value {
 	font-family: var( --legal-font-primary );
-	font-style: normal; 
+	font-style: normal;
+	cursor: default;
 }
 
 .legal-bonus-summary .item-label {
