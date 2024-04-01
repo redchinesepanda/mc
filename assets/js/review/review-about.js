@@ -121,11 +121,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			animated: 'animated-bonus',
 		}
 
-		static modify ( action )
+		// static modify ( action )
+		// {
+		// 	document.querySelectorAll(
+		// 		[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
+		// 	).forEach( action );
+		// }
+
+		static getElements()
 		{
-			document.querySelectorAll(
+			return document.querySelectorAll(
 				[ selectors.sidebarBonus, selectors.sidebarAction ].join( ', ' )
-			).forEach( action );
+			);
 		}
 		
 		static setMoved ( element )
@@ -155,7 +162,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initBonus ( event )
 		{
-			this.modify( this.setMoved );
+			// this.modify( this.setMoved );
+
+			this.getElements().forEach( this.setMoved );
 		}
 
 		static checkState ( event )
