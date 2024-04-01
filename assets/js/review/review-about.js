@@ -201,7 +201,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.initState();
 
-				this.modify( this.setSticky );
+				// this.modify( this.setSticky );
+
+				this.getElements().forEach( this.setSticky.bind( this ) );
 			}
 
 			if ( scroll.checkStickyBack() && storage.checkStateReady() )
