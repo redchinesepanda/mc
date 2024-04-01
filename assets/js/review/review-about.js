@@ -457,7 +457,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		]
 
-		check()
+		static check()
 		{
 			if ( window.matchMedia( '( min-width: 960px )' ).matches )
 			{
