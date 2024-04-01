@@ -148,17 +148,19 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			element.classList.remove( this.classes.sticky );
 		}
 
-		static suspendBonus ( event )
-		{
-			this.modify( this.suspendMoved.bind( this ) );
-		}
+		// static suspendBonus ( event )
+		// {
+		// 	this.modify( this.suspendMoved.bind( this ) );
+		// }
 
-		static initBonus ( event )
-		{
-			this.modify( this.setMoved.bind( this ) );
-		}
+		// static initBonus ( event )
+		// {
+		// 	this.modify( this.setMoved.bind( this ) );
+		// }
 
-		static checkState ( event )
+		// static checkState ( event )
+		
+		static checkMoved ( event )
 		{
 			if ( scroll.checkMoved() && storage.checkStateSuspended() )
 			{
@@ -204,6 +206,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 
+				action : State.suspendSticky.bind( State ),
+	
+				args : { once : true }
+			},
+
+			{
+				event : this.events.scroll,
+
 				action : State.initBonus.bind( State ),
 	
 				args : { once : true }
@@ -212,13 +222,21 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				event : this.events.scroll,
 
-				action : State.checkState.bind( State ),
+				action : State.checkMoved.bind( State ),
 	
 				args : false
 			}
 		]
 
 		static itemsMobile = [
+			{
+				event : this.events.scroll,
+
+				action : State.suspendMoved.bind( State ),
+	
+				args : { once : true }
+			},
+
 			{
 				event : this.events.scroll,
 
@@ -269,13 +287,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static initMobile()
 		{
-			this.items.forEach( function ( item ) {
-				document.removeEventListener( item.event, item.action, item.args );
-			} );
+			this.items.forEach( this.removeEvents );
 
-			this.itemsMobile.forEach( function ( item ) {
-				document.addEventListener( item.event, item.action, item.args );
-			} );
+			this.itemsMobile.forEach( this.addEvents );
 		}
 
 		static check()
