@@ -54,7 +54,7 @@ class RevewRestricted
 					'href' => $href,
 				] );
 
-				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '', $href );
+				$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
 
 				LegalDebug::debug( [
 					'href' => $href,
