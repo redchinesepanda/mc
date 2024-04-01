@@ -415,13 +415,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	class ReviewAbout {
 		constructor() {}
 
-		events = {
+		static events = {
 			scroll: 'scroll',
 	
 			resize: 'resize'
 		}
 
-		items = [
+		static items = [
 			{
 				event : this.events.scroll,
 				
@@ -439,7 +439,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			}
 		]
 
-		itemsMobile = [
+		static itemsMobile = [
 			{
 				event : this.events.scroll,
 				
