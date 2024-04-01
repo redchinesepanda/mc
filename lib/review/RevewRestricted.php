@@ -4,13 +4,9 @@ class RevewRestricted
 {
 	public static function check_register()
 	{
-		LegalDebug::debug( [
-			'RevewRestricted' => 'check_register',
-
-			'check_contains_restricted_anchors' => self::check_contains_restricted_anchors(),
-		] );
+		return ToolNotFound::check_domain_restricted()
 		
-		return ToolNotFound::check_domain_restricted();
+			&& self::check_contains_restricted_anchors();
 	}
 
 	public static function register()
@@ -32,28 +28,36 @@ class RevewRestricted
 			return false;
 		}
 
-		$node = $nodes->item( $nodes->length - 1 );
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'modify_anchors',
 
-		$section = $dom->createElement( 'div' );
+            'length' => $nodes->length
 
-		$section->setAttribute( 'class', 'legal-section-anchors' );
+			'nodes' => $nodes,
+		] );
 
-		LegalDOM::appendHTML( $section, ReviewAnchors::render() );
+		// $node = $nodes->item( $nodes->length - 1 );
 
-		try
-		{
-			$node->parentNode->insertBefore( $section, $node->nextSibling );
-		}
-		catch ( DOMException $e )
-		{
-			LegalDebug::debug( [
-				'BonusPreview' => 'insert_anchors',
+		// $section = $dom->createElement( 'div' );
 
-				'node' => substr( $node->textContent, 0, 30 ),
+		// $section->setAttribute( 'class', 'legal-section-anchors' );
 
-				'message' => $e->getMessage(),
-			] );
-		}
+		// LegalDOM::appendHTML( $section, ReviewAnchors::render() );
+
+		// try
+		// {
+		// 	$node->parentNode->insertBefore( $section, $node->nextSibling );
+		// }
+		// catch ( DOMException $e )
+		// {
+		// 	LegalDebug::debug( [
+		// 		'BonusPreview' => 'insert_anchors',
+
+		// 		'node' => substr( $node->textContent, 0, 30 ),
+
+		// 		'message' => $e->getMessage(),
+		// 	] );
+		// }
 
 		return true;
 	}
@@ -84,12 +88,7 @@ class RevewRestricted
 
 	public static function modify_content( $content )
     {
-		if ( !self::check_contains_restricted_anchors() )
-		{
-			return $content;
-		}
-
-        $dom = LegalDOM::get_dom( $content ); 
+		$dom = LegalDOM::get_dom( $content ); 
 
 		self::modify_anchors( $dom );
 
