@@ -1,4 +1,5 @@
-@media screen and ( max-width: 1217px )
+/* @media screen and ( max-width: 1217px ) */
+@media screen and ( max-width: 959px )
 {
 	/* Display */
 
@@ -16,7 +17,8 @@
 	}
 }
 
-@media screen and ( min-width: 1218px )
+/* @media screen and ( min-width: 1218px ) */
+@media screen and ( min-width: 960px )
 {
 	/* Width and Height */
 
@@ -31,6 +33,13 @@
 		width: calc( 100% / 3 - 24px );
     	height: fit-content;
 	}
+
+	/* Position */
+
+	.legal-bonus-single .legal-bonus-sidebar {
+		position: sticky;
+		top: calc( var( --bonus-about-action-margin-top ) + 30px );
+	}
 }
 
 /* Display */
@@ -44,6 +53,6 @@
 
 /* Position */
 
-.legal-bonus-single .legal-bonus-sidebar {
+/* .legal-bonus-single .legal-bonus-sidebar {
 	position: relative;
-}
+} */
