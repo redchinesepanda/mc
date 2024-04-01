@@ -184,14 +184,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			{
 				storage.initState();
 				
-				this.modify( this.setMoved );
+				// this.modify( this.setMoved );
+
+				this.getElements().forEach( this.setMoved.bind( this ) );
 			}
 
 			if ( scroll.checkMovedBack() && storage.checkStateReady() )
 			{
 				storage.suspendState();
 				
-				this.modify( this.suspendMoved );
+				// this.modify( this.suspendMoved );
+
+				this.getElements().forEach( this.suspendMoved.bind( this ) );
 			}
 		}
 
