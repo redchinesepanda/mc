@@ -302,7 +302,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		static init()
 		{
-			this.check().bind( this );
+			this.check();
 
 			window.addEventListener( this.events.resize, this.check, false );
 		}
