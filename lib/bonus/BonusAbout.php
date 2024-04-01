@@ -244,6 +244,20 @@ class BonusAbout
         ];
     }
 
+	public static function get_bonus()
+    {
+        if ( TemplateMain::check_new())
+        {
+            return [
+                'label' => ToolLoco::translate( BonusMain::TEXT[ 'bookmaker-bonus' ] ),
+    
+                'value' => $bonus_amount[ 'label' ],
+            ];
+        }
+
+        return [];
+    }
+
 	public static function get()
     {
         $id = BonusMain::get_id();
@@ -253,10 +267,14 @@ class BonusAbout
 			return [];
         }
 
+        $bonus_amount = BonusSummary::get_bonus_amount();
+
 		return [
 			'title' => get_field( self::FIELD[ 'bonus-title' ], $id ),
 			
 			'description' => get_field( self::FIELD[ 'bonus-description' ], $id ),
+
+            'bonus' => self::get_bonus(),
 
 			'logo' => [
 				'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),

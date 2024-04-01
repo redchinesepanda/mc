@@ -54,6 +54,8 @@ class BonusMain
 		
 		'bookmaker' => 'Bookmaker',
 
+		'bookmaker-bonus' => 'Bookmaker bonus',
+
 		'claim-bonus' => 'Claim Bonus',
 
 		'expires-in' => 'Expires in',
