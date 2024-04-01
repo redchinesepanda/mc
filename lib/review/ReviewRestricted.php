@@ -1,6 +1,6 @@
 <?php
 
-class RevewRestricted
+class ReviewRestricted
 {
 	public static function check_register()
 	{
