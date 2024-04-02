@@ -272,9 +272,16 @@ class ReviewAnchors
 
         $details = WPMLMain::get_post_language_details();
 
-        if ( !empty( $details ) && !is_wp_error( $details ) ) {
+        if ( !empty( $details ) && !is_wp_error( $details ) )
+        {
             $locale = $details[ 'locale' ];
         }
+
+        LegalDebug::debug( [
+            'ReviewAnchors' => 'get_labels',
+            
+            'locale' => $locale,
+        ] );
 
         $anchors = [];
 

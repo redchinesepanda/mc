@@ -74,12 +74,19 @@ class ToolLoco
     {
         global $l10n;
 
-        if ( isset( $l10n[ $textdomain ] ) ) $backup = $l10n[ $textdomain ];
+        if ( isset( $l10n[ $textdomain ] ) )
+        {
+            $backup = $l10n[ $textdomain ];
+        }
 
         load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
 
         $translation = __( $string, $textdomain );
-        if ( isset( $backup ) ) $l10n[ $textdomain ] = $backup;
+        
+        if ( isset( $backup ) )
+        {
+            $l10n[ $textdomain ] = $backup;
+        }
 
         return $translation;
     }
