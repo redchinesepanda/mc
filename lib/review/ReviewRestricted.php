@@ -100,14 +100,24 @@ class ReviewRestricted
 
 		$restricted = ToolNotFound::get_restricted();
 
-		foreach ( $restricted as $host => $language )
+		foreach ( $restricted as $host => $languages )
 		{
-			if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
+			foreach ( $languages as $language )
 			{
-				$result = true;
-
-				break;
+				if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
+				{
+					$result = true;
+	
+					break 2;
+				}
 			}
+
+			// if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
+			// {
+			// 	$result = true;
+
+			// 	break;
+			// }
 		}
 
         return $result;
