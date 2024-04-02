@@ -70,13 +70,24 @@ class BaseFooter
 	{
 		$restricted = ToolNotFound::get_restricted();
 
-		foreach ( $restricted as $host => $language )
+		foreach ( $restricted as $host => $languages )
 		{
-			if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+			foreach ( $languages as $language )
 			{
-				break;
+				if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+				{
+					break 2;
+				}
 			}
 		}
+
+		// foreach ( $restricted as $host => $language )
+		// {
+		// 	if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+		// 	{
+		// 		break;
+		// 	}
+		// }
 
 		return $href;
 	}
