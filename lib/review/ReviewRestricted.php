@@ -56,13 +56,26 @@ class ReviewRestricted
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			foreach ( $restricted as $host => $language )
+			foreach ( $restricted as $host => $languages )
 			{
-				if ( self::replace_anchors( $href, $language, $host ) )
+				foreach ( $languages as $language )
 				{
-					break;
+					if ( self::replace_anchors( $href, $language, $host ) )
+					{
+						$result = true;
+		
+						break 2;
+					}
 				}
 			}
+
+			// foreach ( $restricted as $host => $language )
+			// {
+			// 	if ( self::replace_anchors( $href, $language, $host ) )
+			// 	{
+			// 		break;
+			// 	}
+			// }
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
