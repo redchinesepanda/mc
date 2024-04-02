@@ -12,6 +12,10 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+   const CURRENT_LANGUAGE_PRODUCTION = [
+        'pt',
+    ];
+
     const CURRENT_LANGUAGE_DEBUG = [
         'pt', 
 
@@ -20,10 +24,6 @@ class TemplateMain
         'ru',
 
         'es',
-    ];
-
-    const CURRENT_LANGUAGE_PRODUCTION = [
-        'pt',
     ];
 
     public static function check_code()
@@ -227,7 +227,13 @@ class TemplateMain
 
     public static function check_new()
     {
-        return self::check() && self::check_code();
+        // return self::check() && self::check_code();
+        
+        return ToolNotFound::check_domain_restricted()
+            
+            // || self::check() && self::check_code();
+            
+            || self::check_code();
     }
 
     public static function check()
