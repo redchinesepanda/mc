@@ -65,12 +65,18 @@ class ToolLoco
         return self::fill_pattern( $pattern, $values );
     }
 
-    public static function translate_locale( $string, $locale )
-    {
-        return self::get_translation_locale( $string, ToolLoco::TEXTDOMAIN, $locale );
-    }
+    // public static function translate_locale( $string, $locale )
+    // {
+    //     // return self::get_translation_locale( $string, ToolLoco::TEXTDOMAIN, $locale );
+        
+    //     return self::get_translation_locale( $string, $locale );
+    // }
 
-    public static function get_translation_locale( $string, $textdomain, $locale )
+    // public static function get_translation_locale( $string, $textdomain, $locale )
+    
+    // public static function get_translation_locale( $string, $locale )
+    
+    public static function translate_locale( $string, $locale )
     {
         global $l10n;
 
@@ -81,8 +87,10 @@ class ToolLoco
 
         load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
 
-        $translation = __( $string, $textdomain );
+        // $translation = __( $string, $textdomain );
         
+        $translation = __( $string, self::TEXTDOMAIN );
+
         if ( isset( $backup ) )
         {
             $l10n[ $textdomain ] = $backup;
