@@ -95,13 +95,13 @@ class CompilationTabsLink
 		{
 			$anchors = $node->getElementsByTagName( 'a' );
 
-			// LegalDebug::debug( [
-			// 	'CompilationTabsLink' => 'modify_link',
+			LegalDebug::debug( [
+				'CompilationTabsLink' => 'modify_link',
 
-			// 	'nodeclass-class' => $node->getAttribute( 'class' ),
+				'nodeclass-class' => $node->getAttribute( 'class' ),
 
-			// 	'anchors-length' => $anchors->length,
-			// ] );
+				'anchors-length' => $anchors->length,
+			] );
 
 			if ( $anchors->length != 0 )
 			{
