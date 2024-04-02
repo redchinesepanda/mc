@@ -302,7 +302,9 @@
 } 
 
 .legal-bonus-about .about-data-title,
-.legal-bonus-about .about-data-description {
+.legal-bonus-about .about-data-description,
+.legal-bonus-sidebar .about-action-label,
+.legal-bonus-sidebar .about-action-value {
 	color: var( --Base-base-09 );
 }
 
@@ -315,6 +317,16 @@
 	font-weight: 400;
 	letter-spacing: normal;
 	line-height: 22px;
+}
+
+.legal-bonus-sidebar .about-action-label {
+	font-weight: 600;
+}
+
+.legal-bonus-sidebar .about-action-value {
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 28px;
 }
 
 .legal-bonus-button .about-action-get {
