@@ -25,7 +25,7 @@ class ReviewRestricted
 
 	public static function replace_anchors( &$href, $language, $host )
 	{
-		$pattern = vsprintf( self::FORMAT[ 'anchor' ], $language );
+		$pattern = sprintf( self::FORMAT[ 'anchor' ], $language );
 
 		if ( str_contains( $href, $pattern ) )
 		{
@@ -33,7 +33,7 @@ class ReviewRestricted
 
 			$href = str_replace( $replace_host, $host, $href );
 
-			$href = str_replace( vsprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
+			$href = str_replace( sprintf( self::FORMAT[ 'anchor' ], $language ), '/', $href );
 
 			return true;
 		}
@@ -88,7 +88,7 @@ class ReviewRestricted
 		
 		foreach ( $restricted as $language )
 		{
-			$query[] = vsprintf( self::FORMAT[ 'node' ], $language );
+			$query[] = sprintf( self::FORMAT[ 'node' ], $language );
 		}
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
@@ -102,7 +102,7 @@ class ReviewRestricted
 
 		foreach ( $restricted as $host => $language )
 		{
-			if ( LegalComponents::check_contains( vsprintf( self::FORMAT[ 'anchor' ], $language ) ) )
+			if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
 			{
 				$result = true;
 
