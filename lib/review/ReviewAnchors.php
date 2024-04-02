@@ -352,6 +352,8 @@ class ReviewAnchors
 
                     'node' => substr( $node->textContent, 0, 30 ),
 
+                    'textContent' => substr( $node->nextSibling->textContent, 0, 30 ),
+
                     'label' => $label,
 
                     'nextSibling' => !empty( $node->nextSibling ),
