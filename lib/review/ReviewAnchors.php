@@ -308,9 +308,13 @@ class ReviewAnchors
                 
                 'locale' => $locale,
 
+                'id' => $id,
+
                 'id_translated' => $id_translated,
 
                 'id_ready' => $id_ready,
+
+                'label' => $label,
 
                 'label_translated' => $label_translated,
 
