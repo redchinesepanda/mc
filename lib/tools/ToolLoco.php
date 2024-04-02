@@ -21,7 +21,7 @@ class ToolLoco
 
     public static function translate( $string )
     {
-        return __( $string, ToolLoco::TEXTDOMAIN );
+        return __( $string, self::TEXTDOMAIN );
     }
 
 	public static function fill_pattern( $pattern, $value )
@@ -51,7 +51,7 @@ class ToolLoco
         
             $value,
 
-            ToolLoco::TEXTDOMAIN
+            self::TEXTDOMAIN
         );
     }
 
@@ -64,17 +64,6 @@ class ToolLoco
 
         return self::fill_pattern( $pattern, $values );
     }
-
-    // public static function translate_locale( $string, $locale )
-    // {
-    //     // return self::get_translation_locale( $string, ToolLoco::TEXTDOMAIN, $locale );
-        
-    //     return self::get_translation_locale( $string, $locale );
-    // }
-
-    // public static function get_translation_locale( $string, $textdomain, $locale )
-    
-    // public static function get_translation_locale( $string, $locale )
     
     public static function translate_locale( $string, $locale )
     {
