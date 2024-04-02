@@ -283,45 +283,20 @@ class ReviewAnchors
             'locale' => $locale,
         ] );
 
-        // $anchors = [];
-        
         $anchors = self::TEXT_ANCHORS;
 
         foreach ( self::TEXT_ANCHORS as $id => $label )
         {
-            // $anchors[ ToolTransiterate::replace(
-            //     ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
-            // ) ] = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
-
-            $id_translated = ToolLoco::translate_locale( $id, $locale );
-
-            $id_ready = ToolTransiterate::replace( $id_translated );
-
             $label_translated = ToolLoco::translate_locale( $label, $locale );
-            
-            // $anchors[ ToolTransiterate::replace(
-            //     ToolLoco::translate_locale( $id, $locale )
-            // ) ] = ToolLoco::translate_locale( $label, $locale );
 
-            LegalDebug::debug( [
-                'ReviewAnchors' => 'get_labels',
-                
-                'locale' => $locale,
-
-                'id' => $id,
-
-                'id_translated' => $id_translated,
-
-                'id_ready' => $id_ready,
-
-                'label' => $label,
-
-                'label_translated' => $label_translated,
-
-                'anchors_item' => $anchors[ $id_ready ],
-            ] );
-
-            $anchors[ $id_ready ] = $label_translated;
+            if ( !empty( $label_translated ) )
+            {
+                $id_translated = ToolLoco::translate_locale( $id, $locale );
+    
+                $id_ready = ToolTransiterate::replace( $id_translated );
+    
+                $anchors[ $id_ready ] = $label_translated;
+            }
         }
 
         return $anchors;

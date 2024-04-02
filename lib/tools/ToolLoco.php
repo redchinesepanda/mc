@@ -84,8 +84,10 @@ class ToolLoco
         // {
         //     $backup = $l10n[ $textdomain ];
         // }
+
+        $backup = '';
         
-        if ( isset( $l10n[ self::TEXTDOMAIN ] ) )
+        if ( !empty( $l10n[ self::TEXTDOMAIN ] ) )
         {
             $backup = $l10n[ self::TEXTDOMAIN ];
         }
@@ -98,7 +100,7 @@ class ToolLoco
         
         $translation = __( $string, self::TEXTDOMAIN );
 
-        if ( isset( $backup ) )
+        if ( !empty( $backup ) )
         {
             // $l10n[ $textdomain ] = $backup;
             
