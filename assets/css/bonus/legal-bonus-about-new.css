@@ -23,6 +23,12 @@
 		column-gap: 20px;
 	}
 
+	/* Animation */
+
+	.legal-bonus-sidebar .bonus-about-action.sticky-bonus {
+        animation: myAnim 0.8s ease 0s 1 normal forwards;
+    }
+
 	/* Position */
 
 	.legal-bonus-about-wrapper {
@@ -118,6 +124,19 @@
 	.legal-bonus-about .about-data-title {
 		font-size: 40px;
 		line-height: 48px;
+	}
+}
+
+/* Animation */
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(250px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
