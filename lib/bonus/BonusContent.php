@@ -94,7 +94,7 @@ class BonusContent
         }
         else
         {
-            $content = get_field( self::FIELD[ 'bonus-content' ], $id );
+            $content = get_field( self::FIELD[ 'bonus-content' ], $post->ID );
         }
 
         if ( !empty( $content ) )
