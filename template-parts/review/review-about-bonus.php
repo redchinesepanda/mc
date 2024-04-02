@@ -6,7 +6,7 @@
         <?php endif; ?>
         <a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="legal-afillate check-oops" style="" target="_blank" rel="nofollow"><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
         <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
-            <div class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></div>
+            <span class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></span>
         <?php endif; ?>
         <?php if( empty( $args[ 'mode' ] ) && !empty( $args[ 'bonus' ][ 'description' ] ) ) : ?>
             <div class="review-bonus-description legal-cut-item" data-cut-set-id="0"><?php echo $args[ 'bonus' ][ 'description' ]; ?></div>
