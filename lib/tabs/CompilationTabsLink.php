@@ -93,6 +93,8 @@ class CompilationTabsLink
 
 		foreach ( $nodes as $node_id => $node )
 		{
+			$anchors = $node->getElementsByTagName( 'a' );
+			
 			LegalDebug::debug( [
 				'CompilationTabsLink' => 'modify_link',
 
@@ -102,8 +104,6 @@ class CompilationTabsLink
 
 				'anchors-length' => $anchors->length,
 			] );
-			
-			$anchors = $node->getElementsByTagName( 'a' );
 
 			if ( $anchors->length != 0 )
 			{
