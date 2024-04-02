@@ -11,6 +11,12 @@
 		column-gap: 5px;
 	}
 
+	/* Width and Height */
+
+	.legal-bonus-summary .bonus-summary-item {
+		width: 100%;
+	}
+
 	/* Position */
 
 	.legal-bonus-summary .bonus-summary-item {
