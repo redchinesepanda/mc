@@ -1,10 +1,27 @@
-@media screen and ( max-width: 767px )
-{
+@media screen and ( max-width: 767px ) {
+
 	/* Display */
 	
 	.legal-bonus-categories {
 		justify-content: center;
 	}
+
+	/* Position */
+
+	.legal-bonus-categories {
+		margin-top: 28px;
+	}
+
+}
+
+@media screen and ( min-width: 960px ) {
+
+	/* Position */
+
+	.legal-bonus-categories {
+		margin-top: 48px;
+	}
+
 }
 
 /* Display */
