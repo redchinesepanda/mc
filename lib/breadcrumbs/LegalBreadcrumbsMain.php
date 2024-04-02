@@ -22,7 +22,7 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         if ( self::check() )
         {
-            if ( TemplateMain::check_code() )
+            if ( TemplateMain::check_new() )
             {
                 ToolEnqueue::register_style( self::CSS_NEW );
             }

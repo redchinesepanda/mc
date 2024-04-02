@@ -26,7 +26,7 @@ class BaseHeader
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			BaseMain::register_style( self::CSS_NEW );
 		}
@@ -912,7 +912,7 @@ class BaseHeader
 
 	public static function get_logo()
 	{
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			return [
 				'href' => LegalBreadcrumbsMain::get_home_url(),
@@ -991,7 +991,7 @@ class BaseHeader
 
     public static function render()
     {
-        return self::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
+        return LegalComponents::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
     }
 
 	// public static function render_group( $group )
@@ -1001,24 +1001,24 @@ class BaseHeader
 
     public static function render_item( $item )
     {
-        return self::render_main( self::TEMPLATE[ 'header-item' ], $item );
+        return LegalComponents::render_main( self::TEMPLATE[ 'header-item' ], $item );
     }
 
     public static function render_logo( $logo )
     {
-        return self::render_main( self::TEMPLATE[ 'header-logo' ], $logo );
+        return LegalComponents::render_main( self::TEMPLATE[ 'header-logo' ], $logo );
     }
 
-	public static function render_main( $template, $args )
-    {
-        ob_start();
+	// public static function render_main( $template, $args )
+    // {
+    //     ob_start();
 
-        load_template( $template, false, $args );
+    //     load_template( $template, false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 }
 
 ?>

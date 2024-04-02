@@ -40,7 +40,7 @@ class ReviewAnchors
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 		}
@@ -84,7 +84,7 @@ class ReviewAnchors
 
     public static function register_script()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_script( self::JS_NEW );
 		}
