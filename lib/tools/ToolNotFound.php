@@ -40,9 +40,9 @@ class ToolNotFound
 			'pl'
 		],
 
-		// 'oldes.match.center' => [
-		// 	'es'
-		// ],
+		'oldes.match.center' => [
+			'es'
+		],
 
 		// 'oldca.match.center' => [
 		// 	'ca',
@@ -84,29 +84,40 @@ class ToolNotFound
 		return $result;
 	}
 
-	public static function get_restricted_languages()
+	public static function get_restricted_languages_current()
 	{
 		$restricted = self::get_restricted();
+			
+		return $restricted[ self::get_host() ];
+	}
 
+	public static function get_restricted_languages()
+	{
 		if ( self::check_domain() )
 		{
 			// return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
+
+			// $restricted = self::get_restricted();
 			
-			return $restricted[ self::get_host() ];
+			// return $restricted[ self::get_host() ];
+
+			return self::get_restricted_languages_current();
 		}
 
-		return call_user_func_array( 'array_merge', $restricted );
+		// return call_user_func_array( 'array_merge', $restricted );
+
+		return self::get_restricted_languages_all();
 	}
 
 	public static function get_restricted_languages_all()
 	{
 		$restricted = self::get_restricted();
 
-		LegalDebug::debug( [
-			'ToolNotFound' => 'get_restricted_languages_all',
+		// LegalDebug::debug( [
+		// 	'ToolNotFound' => 'get_restricted_languages_all',
 
-			'restricted' => $restricted,
-		] );
+		// 	'restricted' => $restricted,
+		// ] );
 
 		if ( count( $restricted ) > 1 )
 		{
