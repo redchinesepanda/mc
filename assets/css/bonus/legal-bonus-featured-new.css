@@ -1,3 +1,32 @@
+
+@media screen and ( max-width: 767px ) {
+
+	/* Width and Height */
+
+	.legal-bonus-main .bonus-featured-image-link {
+		height: 200px;
+	}
+
+	.legal-bonus-main .bonus-featured-image {
+		height: auto;
+	}
+
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+
+	.legal-bonus-main .bonus-featured-image-link {
+		height: 400px;
+	}
+
+	.legal-bonus-main .bonus-featured-image {
+		height: 100%;
+	}
+
+}
+
 /* Display */
 
 .legal-bonus-main .legal-bonus-featured {
@@ -15,12 +44,10 @@
 
 .legal-bonus-main .bonus-featured-image-link {
 	width: 100%;
-	height: 400px;
   	overflow: hidden;
 }
 
 .legal-bonus-main .bonus-featured-image {
-	height: 100%;
 	width: 100%;
 	object-fit: cover;
 }

@@ -97,6 +97,10 @@
 	position: relative;
 }
 
+.legal-bonus-about-wrapper {
+	position: relative;
+}
+
 .legal-bonus-about .bonus-about-data {
 	padding: 15px 0px;
 }
