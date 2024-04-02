@@ -353,6 +353,11 @@ class ReviewAnchors
                 
                 // $label = mb_substr( $node->nextSibling->textContent, 0, 30 );
 
+                if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
+                {
+                    $label = $node->nextSibling->textContent;
+                }
+
                 LegalDebug::debug( [
                     'ReviewAnchors' => 'get_data',
 
@@ -361,16 +366,7 @@ class ReviewAnchors
                     'textContent' => substr( $node->nextSibling->textContent, 0, 30 ),
 
                     'label' => $label,
-
-                    'nextSibling' => !empty( $node->nextSibling ),
-
-                    'nodeType' => $node->nextSibling->nodeType,
                 ] );
-
-                if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
-                {
-                    $label = $node->nextSibling->textContent;
-                }
             }
 
             $items[] = [
