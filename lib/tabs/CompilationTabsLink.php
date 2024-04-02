@@ -79,12 +79,6 @@ class CompilationTabsLink
 		// }
 
 		$nodes = self::get_nodes_link( $dom );
-		
-		LegalDebug::debug( [
-			'CompilationTabsLink' => 'modify_link',
-
-			'nodes-length' => $nodes->length,
-		] );
 
 		if ( $nodes->length == 0 )
 		{
@@ -94,16 +88,6 @@ class CompilationTabsLink
 		foreach ( $nodes as $node_id => $node )
 		{
 			$anchors = $node->getElementsByTagName( 'a' );
-			
-			LegalDebug::debug( [
-				'CompilationTabsLink' => 'modify_link',
-
-				'node_id' => $node_id,
-
-				'nodeclass-class' => $node->getAttribute( 'class' ),
-
-				'anchors-length' => $anchors->length,
-			] );
 
 			if ( $anchors->length != 0 )
 			{
