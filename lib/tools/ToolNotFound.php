@@ -108,7 +108,12 @@ class ToolNotFound
 			'restricted' => $restricted,
 		] );
 
-		return call_user_func_array( 'array_merge', $restricted );
+		if ( count( $restricted ) > 1 )
+		{
+			return call_user_func_array( 'array_merge', $restricted );
+		}
+
+		return array_shift( $restricted );
 	}
 	
 	// public static function get_default_language()
