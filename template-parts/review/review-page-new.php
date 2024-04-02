@@ -16,12 +16,12 @@
 			<div id="theme-bottom-section" class="legal-section-author">
 				<?php echo ReviewAuthor::render_block(); ?>
 			</div>
+			<div class="legal-section-offers">
+				<?php echo ReviewOffers::prepare_offers_bottom(); ?>
+			</div>
 		</div>
 		<div class="legal-review-page-sidebar">
 			<?php echo ReviewAbout::render_bonus(); ?>
-		</div>
-		<div class="legal-section-offers">
-			<?php echo ReviewOffers::prepare_offers_bottom(); ?>
 		</div>
 	</div>
 </section>
