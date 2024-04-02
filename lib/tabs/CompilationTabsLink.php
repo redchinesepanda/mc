@@ -80,11 +80,11 @@ class CompilationTabsLink
 
 		$nodes = self::get_nodes_link( $dom );
 		
-		// LegalDebug::debug( [
-		// 	'CompilationTabsLink' => 'modify_link',
+		LegalDebug::debug( [
+			'CompilationTabsLink' => 'modify_link',
 
-		// 	'nodes-length' => $nodes->length,
-		// ] );
+			'nodes-length' => $nodes->length,
+		] );
 
 		if ( $nodes->length == 0 )
 		{
