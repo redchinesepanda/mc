@@ -338,6 +338,12 @@ class ReviewAnchors
             if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) )
             {
                 $label = $labels[ $node->getAttribute( 'id' ) ];
+
+                LegalDebug::debug( [
+                    'ReviewAnchors' => 'get_data',
+
+                    'label' => $label,
+                ] );
             }
             else
             {
