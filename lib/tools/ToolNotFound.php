@@ -102,6 +102,12 @@ class ToolNotFound
 	{
 		$restricted = self::get_restricted();
 
+		LegalDebug::debug( [
+			'ToolNotFound' => 'get_restricted_languages_all',
+
+			'restricted' => $restricted,
+		] );
+
 		return call_user_func_array( 'array_merge', $restricted );
 	}
 	
