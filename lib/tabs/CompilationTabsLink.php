@@ -91,12 +91,14 @@ class CompilationTabsLink
 			return false;
 		}
 
-		foreach ( $nodes as $node )
+		foreach ( $nodes as $id => $node )
 		{
 			$anchors = $node->getElementsByTagName( 'a' );
 
 			LegalDebug::debug( [
 				'CompilationTabsLink' => 'modify_link',
+
+				'id' => $id,
 
 				'nodeclass-class' => $node->getAttribute( 'class' ),
 
