@@ -150,7 +150,9 @@
         width: calc( 50% - 28px );
     }
 
-    .billet-list-part.legal-column:not( .legal-default ) {
+    /* .billet-list-part.legal-column:not( .legal-default ) */
+    .billet .billet-list-part:not( .legal-default )
+    {
         width: 72%;
     }
 
@@ -526,7 +528,7 @@ body {
 } */
 
 .billet-list-part.legal-row {
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* Position */
