@@ -256,7 +256,8 @@
 }
 
 .legal-compilation .compilation-date,
-.legal-compilation .compilation-attention-tooltip {
+.legal-compilation .compilation-attention-tooltip,
+.legal-compilation .compilation-attention.legal-default p {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -276,7 +277,8 @@
     line-height: 24px;
 }
 
-.legal-compilation .compilation-attention-tooltip:not( .legal-active ) {
+.legal-compilation .compilation-attention-tooltip:not( .legal-active ),
+.legal-compilation .compilation-attention.legal-default p {
     color: var(--Base-base-05);
 }
 
