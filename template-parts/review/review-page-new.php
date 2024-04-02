@@ -20,8 +20,8 @@
 		<div class="legal-review-page-sidebar">
 			<?php echo ReviewAbout::render_bonus(); ?>
 		</div>
+		<div class="legal-section-offers">
+			<?php echo ReviewOffers::prepare_offers_bottom(); ?>
+		</div>
 	</div>
-</section>
-<section class="legal-section-offers">
-	<?php echo ReviewOffers::prepare_offers_bottom(); ?>
 </section>

@@ -12,11 +12,11 @@
 
 			<div id="theme-bottom-section" class="legal-section-author">
 				<?php echo ReviewAuthor::render_block(); ?>
-			</div> 
+			</div>
+			<div class="legal-section-offers">
+				<?php echo ReviewOffers::prepare_offers_bottom(); ?>
+			</div>
 		</div>
 		<div class="legal-compilation-page-sidebar"></div>
 	</div>
-</section>
-<section class="legal-section-offers">
-	<?php echo ReviewOffers::prepare_offers_bottom(); ?>
 </section>
