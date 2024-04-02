@@ -342,6 +342,8 @@ class ReviewAnchors
                 LegalDebug::debug( [
                     'ReviewAnchors' => 'get_data',
 
+                    'id' => $node->getAttribute( 'id' ),
+
                     'label' => $label,
                 ] );
             }
