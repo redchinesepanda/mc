@@ -260,7 +260,7 @@ class ReviewAbout
             {
                 // $afillate_description = 'Publicidad | Juego Responsable | +18';
                 
-                $afillate_description = ToolLoco::translate( ReviewMain::Text[ 'advertising' ] );
+                $afillate_description = ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
             }
 
             LegalDebug::debug( [
