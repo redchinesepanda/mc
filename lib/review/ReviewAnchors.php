@@ -283,7 +283,9 @@ class ReviewAnchors
             'locale' => $locale,
         ] );
 
-        $anchors = [];
+        // $anchors = [];
+        
+        $anchors = self::TEXT_ANCHORS;
 
         foreach ( self::TEXT_ANCHORS as $id => $label )
         {
