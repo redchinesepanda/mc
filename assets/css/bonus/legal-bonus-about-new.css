@@ -53,8 +53,8 @@
 	/* Typography */
 
 	.legal-bonus-about .about-data-title {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 22px;
+		line-height: 26px;
 	}
 }
 
@@ -197,7 +197,7 @@
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-} */
+}
 
 .legal-bonus-button {
 	padding-bottom: 28px;
@@ -313,18 +313,8 @@
 .legal-bonus-about .about-data-description {
 	font-size: 16px;
 	font-weight: 400;
-	/* letter-spacing: normal; */
+	letter-spacing: normal;
 	line-height: 22px;
-}
-
-.legal-bonus-sidebar .about-action-label {
-	font-weight: 600;
-}
-
-.legal-bonus-sidebar .about-action-value {
-	font-size: 26px;
-	font-weight: 700;
-	line-height: 28px;
 }
 
 .legal-bonus-button .about-action-get {

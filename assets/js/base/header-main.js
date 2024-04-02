@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			current.classList.toggle( classes.active );
 		} 
 
-		if (element.closest( selectors.headerControl )) {
+		if ( element.closest( selectors.headerControl ) ) {
 			document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
 		}
 
@@ -113,7 +113,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 	toggleBody() */
 
-/* 	document.querySelector( selectors.headerControl ).addEventListener( 'click', toggleBody );
+	//та же функция, но более корректная
+
+	/* 	document.querySelector( selectors.headerControl ).addEventListener( 'click', toggleBody );
 
 	function toggleBody( event ) {
 		document.querySelector( selectors.tagBody ).classList.toggle( classes.active );
