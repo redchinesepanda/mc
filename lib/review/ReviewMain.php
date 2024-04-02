@@ -80,6 +80,8 @@ class ReviewMain
 		'page-contents' => 'Page contents',
 
 		'promo-code' => 'Promo Code',
+        
+        'advertising' => 'Advertising | Responsible Gaming | +18',
 
 		'rating' => 'Rating',
 

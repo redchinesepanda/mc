@@ -169,7 +169,14 @@ class ReviewAbout
         'font' => 'about-font',
     ];
 
-    const BONUS_EXCEPTION = [ 'es' ];
+    const BONUS_EXCEPTION = [
+        'es'
+    ];
+
+    public static function check_bonus_exception()
+    {
+        return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
+    }
 
     public static function get_achievement( $id )
     {
@@ -234,19 +241,37 @@ class ReviewAbout
                 'description' => $group[ 'about-description' ],
             ];
 
-            $locale = WPMLMain::current_language();
+            // $locale = WPMLMain::current_language();
 
-            if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
+            // if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
+
+            $bonus_exception = self::check_bonus_exception();
+            
+            if ( $mode == 'mini' || $bonus_exception )
             {
                 $bonus['name'] = $group[ 'about-title' ];
             }
 
             $afillate_description = '';
 
-            if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
+            // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
+            
+            if ( empty( $mode ) && $bonus_exception )
             {
-                $afillate_description = 'Publicidad | Juego Responsable | +18';
+                // $afillate_description = 'Publicidad | Juego Responsable | +18';
+                
+                $afillate_description = ToolLoco::translate( ReviewMain::Text[ 'advertising' ] );
             }
+
+            LegalDebug::debug( [
+                'ReviewAbout' => 'get',
+
+                'mode' => $mode,
+
+                'bonus_exception' => $bonus_exception,
+
+                'afillate_description' => $afillate_description,
+            ] );
 
             $term = self::get_achievement( $id );
 
