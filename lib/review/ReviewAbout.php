@@ -213,6 +213,32 @@ class ReviewAbout
         return '';
     }
 
+    public static function get_name( $group, $mode, $bonus_exception )
+    {
+        if ( $mode == 'mini' || $bonus_exception )
+        {
+            return $group[ 'about-title' ];
+        }
+
+        return $group[ 'about-bonus' ];
+    }
+
+    public static function get_afillate_description( $mode, $bonus_exception )
+    {
+        // $afillate_description = '';
+
+        // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
+        
+        if ( empty( $mode ) && $bonus_exception )
+        {
+            // $afillate_description = 'Publicidad | Juego Responsable | +18';
+            
+            return ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
+        }
+
+        return '';
+    }
+
     public static function get( $args )
     {
         $id = BonusMain::get_id();
@@ -235,8 +261,12 @@ class ReviewAbout
 
         if( $group )
         {
+            $bonus_exception = self::check_bonus_exception();
+
             $bonus = [
-                'name' => $group[ 'about-bonus' ],
+                'name' => self::get_name( $group, $mode, $bonus_exception ),
+                
+                // 'name' => $group[ 'about-bonus' ],
 
                 'description' => $group[ 'about-description' ],
             ];
@@ -244,24 +274,22 @@ class ReviewAbout
             // $locale = WPMLMain::current_language();
 
             // if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
-
-            $bonus_exception = self::check_bonus_exception();
             
-            if ( $mode == 'mini' || $bonus_exception )
-            {
-                $bonus['name'] = $group[ 'about-title' ];
-            }
+            // if ( $mode == 'mini' || $bonus_exception )
+            // {
+            //     $bonus['name'] = $group[ 'about-title' ];
+            // }
 
-            $afillate_description = '';
+            // $afillate_description = '';
 
-            // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
+            // // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
             
-            if ( empty( $mode ) && $bonus_exception )
-            {
-                // $afillate_description = 'Publicidad | Juego Responsable | +18';
+            // if ( empty( $mode ) && $bonus_exception )
+            // {
+            //     // $afillate_description = 'Publicidad | Juego Responsable | +18';
                 
-                $afillate_description = ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
-            }
+            //     $afillate_description = ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
+            // }
 
             $term = self::get_achievement( $id );
 
@@ -326,7 +354,9 @@ class ReviewAbout
 
                     'text' => self::get_text(),
 
-                    'description' => $afillate_description,
+                    'description' => self::get_afillate_description( $mode, $bonus_exception ),
+                    
+                    // 'description' => $afillate_description,
                 ],
 
                 'mode' => $mode,
