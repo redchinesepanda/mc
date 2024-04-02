@@ -263,16 +263,6 @@ class ReviewAbout
                 $afillate_description = ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
             }
 
-            LegalDebug::debug( [
-                'ReviewAbout' => 'get',
-
-                'mode' => $mode,
-
-                'bonus_exception' => $bonus_exception,
-
-                'afillate_description' => $afillate_description,
-            ] );
-
             $term = self::get_achievement( $id );
 
             $achievement = [];
