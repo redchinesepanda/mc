@@ -12,8 +12,6 @@ require_once( 'WPMLChooseYourCountry.php' );
 
 require_once( 'WPMLDomain.php' );
 
-// require_once( 'WPMLUrl.php' );
-
 class WPMLMain
 {
     public static function get_all_languages() {
@@ -261,8 +259,6 @@ class WPMLMain
         WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
-
-        // WPMLUrl::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 

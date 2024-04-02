@@ -500,11 +500,20 @@ class BaseHeader
 				$prefix = self::get_title_prefix( $language );
 	
 				$title = $prefix . ' ' . $label;
+
+				// $href = $language[ 'url' ];
+
+				// if ( $post->type == 'custom' )
+				// {
+					$href = apply_filters( 'mc_url_restricted', $href );
+				// }
 	
 				$item[ 'children' ][] = [
 					'title' => $title,
 	
-					'href' => $language[ 'url' ],
+					// 'href' => $language[ 'url' ],
+					
+					'href' => $href,
 	
 					'class' => 'legal-country legal-country-' . $language[ 'code' ],
 	
