@@ -98,6 +98,7 @@
 .tcb-post-content > ol:not( .legal-faq-description ) {
   padding-top: 12px;
   padding-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .tcb-post-content > ul:not( [style] ):not( .legal-list-image ),
