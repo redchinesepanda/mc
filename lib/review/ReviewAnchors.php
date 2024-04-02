@@ -345,7 +345,19 @@ class ReviewAnchors
                 
                 // $label = mb_substr( $node->parentNode->textContent, 0, 30 ); 
                 
-                // $label = mb_substr( $node->nextSibling->textContent, 0, 30 ); 
+                // $label = mb_substr( $node->nextSibling->textContent, 0, 30 );
+
+                LegalDebug::debug( [
+                    'ReviewAnchors' => 'get_data',
+
+                    'node' => substr( $node->textContent, 0, 30 ),
+
+                    'label' => $label,
+
+                    'nextSibling' => !empty( $node->nextSibling ),
+
+                    'nodeType' => $node->nextSibling->nodeType,
+                ] );
 
                 if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
                 {
