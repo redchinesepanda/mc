@@ -505,7 +505,7 @@ class BaseHeader
 
 				// if ( $post->type == 'custom' )
 				// {
-					$href = apply_filters( 'mc_url_restricted', $href );
+					// $href = apply_filters( 'mc_url_restricted', $href );
 				// }
 	
 				$item[ 'children' ][] = [
@@ -513,7 +513,9 @@ class BaseHeader
 	
 					// 'href' => $language[ 'url' ],
 					
-					'href' => $href,
+					// 'href' => $href,
+					
+					'href' => apply_filters( 'mc_url_restricted', $language[ 'url' ] ),
 	
 					'class' => 'legal-country legal-country-' . $language[ 'code' ],
 	
