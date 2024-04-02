@@ -277,12 +277,6 @@ class ReviewAnchors
             $locale = $details[ 'locale' ];
         }
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get_labels',
-            
-            'locale' => $locale,
-        ] );
-
         $anchors = self::TEXT_ANCHORS;
 
         foreach ( self::TEXT_ANCHORS as $id => $label )
@@ -339,12 +333,6 @@ class ReviewAnchors
             $labels = array_merge( $labels, $custom );
         }
 
-        LegalDebug::debug( [
-            'ReviewAnchors' => 'get_data',
-
-            'labels' => $labels,
-        ] );
-
         $items = [];
 
         foreach ( $nodes as $node )
@@ -354,14 +342,6 @@ class ReviewAnchors
             if ( !empty( $labels[ $node->getAttribute( 'id' ) ] ) )
             {
                 $label = $labels[ $node->getAttribute( 'id' ) ];
-
-                LegalDebug::debug( [
-                    'ReviewAnchors' => 'get_data',
-
-                    'id' => $node->getAttribute( 'id' ),
-
-                    'label' => $label,
-                ] );
             }
             else
             {
@@ -375,16 +355,6 @@ class ReviewAnchors
                 {
                     $label = $node->nextSibling->textContent;
                 }
-
-                LegalDebug::debug( [
-                    'ReviewAnchors' => 'get_data',
-
-                    'node' => substr( $node->textContent, 0, 30 ),
-
-                    'textContent' => substr( $node->nextSibling->textContent, 0, 30 ),
-
-                    'label' => $label,
-                ] );
             }
 
             $items[] = [
