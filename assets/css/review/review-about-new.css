@@ -30,6 +30,7 @@
 
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-head,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-title,
+    .legal-review-page-sidebar .legal-afillate-description,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-description,
     .legal-review-page-sidebar .about-right.sticky-bonus .legal-cut-control {
         display: none;
@@ -333,7 +334,11 @@
 .review-about .about-right .review-bonus-title, 
 .legal-review-page-sidebar .about-right .review-bonus-title {
     padding-bottom: 48px;
-} 
+}
+
+.legal-review-page-sidebar .legal-afillate-description {
+    padding-top: 8px;
+}
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
@@ -467,6 +472,7 @@
 .review-about .about-center h1,
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title,
+.legal-review-page-sidebar .legal-afillate-description,
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
 .legal-afillate,
@@ -493,7 +499,8 @@
     font-weight: 700;
 }
 
-.about-right .review-bonus-head {
+.about-right .review-bonus-head,
+.legal-review-page-sidebar .legal-afillate-description {
     font-size: 16px;
     font-weight: 600;
     line-height: 22px;
