@@ -80,12 +80,19 @@ class ToolLoco
     {
         global $l10n;
 
-        if ( isset( $l10n[ $textdomain ] ) )
+        // if ( isset( $l10n[ $textdomain ] ) )
+        // {
+        //     $backup = $l10n[ $textdomain ];
+        // }
+        
+        if ( isset( $l10n[ self::TEXTDOMAIN ] ) )
         {
-            $backup = $l10n[ $textdomain ];
+            $backup = $l10n[ self::TEXTDOMAIN ];
         }
 
-        load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
+        // load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
+        
+        load_textdomain( self::TEXTDOMAIN, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
 
         // $translation = __( $string, $textdomain );
         
@@ -93,7 +100,9 @@ class ToolLoco
 
         if ( isset( $backup ) )
         {
-            $l10n[ $textdomain ] = $backup;
+            // $l10n[ $textdomain ] = $backup;
+            
+            $l10n[ self::TEXTDOMAIN ] = $backup;
         }
 
         return $translation;
