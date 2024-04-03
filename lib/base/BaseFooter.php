@@ -221,12 +221,19 @@ class BaseFooter
 
 			$keys = array_keys( $parents_top );
 
-			foreach ( $keys as $key ) {
+			foreach ( $keys as $key )
+			{
 				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 			}
 		}
 
 		// return $items;
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'get_menu_items',
+
+			'items' => $items,
+		] );
 
 		$handler = new self();
 
