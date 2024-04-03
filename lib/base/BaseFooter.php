@@ -101,17 +101,17 @@ class BaseFooter
 
 		// if ( str_contains( $item->url, $main_host ) )
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'check_current_language',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'check_current_language',
 
-			'url' => $item->url,
+		// 	'url' => $item->url,
 
-			'host' => $host,
+		// 	'host' => $host,
 
-			'main_host' => $main_host,
+		// 	'main_host' => $main_host,
 
-			'main_host_production' => $main_host_production,
-		] );
+		// 	'main_host_production' => $main_host_production,
+		// ] );
 		
 		// if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) || str_contains( $item->url, $main_host_production ) )
 		
