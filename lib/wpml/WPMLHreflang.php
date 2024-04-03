@@ -88,14 +88,6 @@ class WPMLHreflang
 	{
 		$hreflang = strtolower( WPMLMain::get_hreflang() );
 
-		LegalDebug::debug( [
-			'WPMLHreflang' => 'clear_hreflang',
-
-			'hreflang_items' => $hreflang_items,
-
-			'hreflang' => $hreflang,
-		] );
-
 		if ( array_key_exists( $hreflang, $hreflang_items ) )
 		{
 			return [
