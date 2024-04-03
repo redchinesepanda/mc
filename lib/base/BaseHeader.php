@@ -468,6 +468,47 @@ class BaseHeader
 		return $href;
 	}
 
+	public static function get_item_all_countries()
+	{
+		if ( !ToolNotFound::check_domain_restricted() )
+		{
+			$title = ToolLoco::translate( BaseMain::TEXT[ 'choose-your-country' ] );
+	
+			if ( TemplateMain::check_new() )
+			{
+				$title = ToolLoco::translate( BaseMain::TEXT[ 'all-countries' ] );
+			}
+	
+			return [
+	
+				'title' => $title,
+				
+				'href' => self::get_href(),
+	
+				'class' => 'legal-country legal-country-all',
+	
+				'data' => '',
+			];
+		}
+
+		return [];
+	}
+
+	public static function get_item_main( $languages )
+	{
+		return [
+			'title' => '',
+
+			'href' => '#',
+
+			'children' => [],
+			
+			'class' => self::get_item_class( $languages ),
+			
+			'data' => self::get_data_attr_language( $languages ),
+		];
+	}
+
 	public static function get_item_class( $languages )
 	{
 		$code = WPMLMain::current_language();
@@ -493,50 +534,12 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		// $data = [];
-
-		// if ( !empty( $languages[ 'current' ] ) )
-		// {
-		// 	$data = $languages[ 'current' ];
-		// }
-
-		// $code = WPMLMain::current_language();
-
-		// if ( !empty( $languages[ 'current' ][ 'code' ] ) )
-		// {
-		// 	$code = $languages[ 'current' ][ 'code' ];
-		// }
-
-		// $classes = [
-		// 	'legal-country',
-
-		// 	'legal-country-' . $code,
-		// ];
-
-		// if ( !empty( $languages[ 'avaible' ] ) )
-		// {
-		// 	$classes[] = 'menu-item-has-children';
-		// }
-
-		// $class = implode( ' ', $classes );
-
-		$item = [
-			'title' => '',
-
-			'href' => '#',
-
-			'children' => [],
-			
-			'class' => self::get_item_class( $languages ),
-			
-			// 'data' => self::get_data_attr_language( $data ),
-			
-			'data' => self::get_data_attr_language( $languages ),
-		];
+		$item = self::get_item_main( $languages );
 
 		if ( !empty( $languages[ 'avaible' ] ) )
 		{
-			foreach ( $languages[ 'avaible' ] as $language ) {
+			foreach ( $languages[ 'avaible' ] as $language )
+			{
 				$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
 	
 				$prefix = self::get_title_prefix( $language );
@@ -555,25 +558,30 @@ class BaseHeader
 			}
 		}
 
-		$title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
-
-		if ( TemplateMain::check_new() )
+		if ( $item_all_countries = self::get_item_all_countries() )
 		{
-			$title = __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN );
+			$item[ 'children' ][] = $item_all_countries;
 		}
 
-		$href = self::get_href();
+		// $title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
 
-		$item[ 'children' ][] = [
+		// if ( TemplateMain::check_new() )
+		// {
+		// 	$title = __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN );
+		// }
 
-			'title' => $title,
+		// $href = self::get_href();
+
+		// $item[ 'children' ][] = [
+
+		// 	'title' => $title,
 			
-			'href' => $href,
+		// 	'href' => $href,
 
-			'class' => 'legal-country legal-country-all',
+		// 	'class' => 'legal-country legal-country-all',
 
-			'data' => '',
-		];
+		// 	'data' => '',
+		// ];
 
 		return $item;
 	}
