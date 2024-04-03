@@ -243,18 +243,24 @@ class ReviewAbout
     {
         $id = BonusMain::get_id();
 
-        $mode = '';
+        $mode = self::MODE[ 'default' ];
 
-        if ( !empty( $args[ 'mode' ] ) ) {
-            if ( $args[ 'mode' ] == 'footer' )
+        if ( !empty( $args[ 'mode' ] ) )
+        {
+            if ( in_array( $args[ 'mode' ], self::MODE ) )
             {
-                $mode = 'footer';
+                $mode = $args[ 'mode' ];
             }
 
-            if ( $args[ 'mode' ] == 'mini' )
-            {
-                $mode = 'mini';
-            }
+            // if ( $args[ 'mode' ] == self::MODE[ 'footer' ] )
+            // {
+            //     $mode = self::MODE[ 'footer' ];
+            // }
+
+            // if ( $args[ 'mode' ] == self::MODE[ 'mini' ] )
+            // {
+            //     $mode = self::MODE[ 'mini' ];
+            // }
         }
 
         $group = get_field( self::FIELD, $id );
@@ -385,7 +391,9 @@ class ReviewAbout
     ];
 
     const PAIRS_ABOUT = [
-        'mode' => '',
+        // 'mode' => '',
+        
+        'mode' => self::MODE[ 'default' ],
     ];
 
     public static function prepare_about( $atts = [] )
@@ -429,11 +437,19 @@ class ReviewAbout
 
         return '';
     }
+
+    const MODE = [
+        'default' => '',
+
+        'footer' => 'footer',
+
+        'mini' => 'mini',
+    ];
     
     public static function render_about_bottom()
     {
         return self::render( self::get( [
-            'mode' => 'footer'
+            'mode' => self::MODE[ 'footer' ],
         ] ) );
     }
 
