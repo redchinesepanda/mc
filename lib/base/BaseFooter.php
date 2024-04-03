@@ -77,18 +77,18 @@ class BaseFooter
 		return !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
 	}
 
-	public static function check_host( $item )
+	public static function check_contains( $item )
 	{
-		if ( str_contains( $item->url, LegalMain::get_main_host_production() )
+		return str_contains( $item->url, LegalMain::get_main_host_production() )
 		
 			|| str_contains( $item->url, ToolRobots::get_host() )
 
-			|| str_contains( $item->url, LegalMain::get_main_host() ) )
-		{
-			return true;
-		}
+			|| str_contains( $item->url, LegalMain::get_main_host() );
+	}
 
-		return false;
+	public static function check_host( $item )
+	{
+		return self::check_contains( $item );
 	}
 
 	public static function check_type( $item )
@@ -103,18 +103,6 @@ class BaseFooter
 
 	public static function check_item( $item )
 	{
-		LegalDebug::debug( [
-			'BaseFooter' => 'check_item',
-
-			'url' => $item->url,
-
-			'check_type' => self::check_type( $item ),
-
-			'check_host' => self::check_host( $item ),
-
-			'check_language' => self::check_language( $item ),
-		] );
-
 		return self::check_type( $item )
 		
 			&& self::check_host( $item )
@@ -124,28 +112,6 @@ class BaseFooter
 
 	public static function check_current_language( $item )
 	{
-		// $main_host = LegalMain::get_main_host();
-
-		// $host = ToolRobots::get_host();
-
-		// $main_host_production = LegalMain::get_main_host_production();
-
-		// if ( str_contains( $item->url, $main_host ) )
-
-		// LegalDebug::debug( [
-		// 	'BaseFooter' => 'check_current_language',
-
-		// 	'url' => $item->url,
-
-		// 	// 'item' => $item,
-
-		// 	// 'host' => $host,
-
-		// 	// 'main_host' => $main_host,
-
-		// 	// 'main_host_production' => $main_host_production,
-		// ] );
-		
 		return !self::check_item( $item );
 	}
 
@@ -153,15 +119,7 @@ class BaseFooter
 	{
 		$handler = new self();
 
-		// LegalDebug::debug( [
-		// 	'BaseFooter' => 'filter_only_current_language',
-
-		// 	'items' => $items,
-		// ] );
-
 		return array_filter( $items, [ $handler, 'check_current_language' ] );
-
-		// return $items;
 	}
 
 	public static function replace_anchors( $href )
