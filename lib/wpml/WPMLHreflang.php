@@ -98,7 +98,7 @@ class WPMLHreflang
 
 		if ( array_key_exists( $hreflang, $hreflang_items ) )
 		{
-			return [ $hreflang_items[ $hreflang ] ];
+			return [ $hreflang => $hreflang_items[ $hreflang ] ];
 		}
 
 		return $hreflang_items;
