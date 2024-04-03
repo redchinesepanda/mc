@@ -169,7 +169,7 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-about .about-center {
+    .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 100% / 3 * 2 - 24px );
     }
 
@@ -178,9 +178,9 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about.legal-mode-mini {
+    /* .review-about.legal-mode-mini {
         width: 800px;
-    }
+    } */
 
     .review-about .about-achievement div {
         width: 270px;
