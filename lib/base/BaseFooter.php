@@ -83,22 +83,20 @@ class BaseFooter
 		LegalDebug::debug( [
 			'BaseFooter' => 'check_current_language',
 
-			'href' => $item[ 'href' ],
+			'url' => $item->url,
 
 			'host' => $host,
 
 			'main_host' => $main_host
 		] );
 		
-		if ( str_contains( $item[ 'href' ], $host ) || str_contains( $item[ 'href' ], $main_host ) )
+		if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) )
 		{
 			LegalDebug::debug( [
-				'href' => $item[ 'href' ],
-
 				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
 			] );
 
-			if ( !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
 				// return false;
 			}
