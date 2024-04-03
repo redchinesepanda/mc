@@ -17,11 +17,11 @@ class WPMLLangSwitcher
             'ver' => '1.0.1',
         ],
 
-    /*     'legal-wpml-lang-switcher-selectors' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-selectors.css',
+        // 'legal-wpml-lang-switcher-selectors' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-selectors.css',
     
-            'ver' => '1.0.0',
-        ], */
+        //     'ver' => '1.0.0',
+        // ],
     ];
 
     public static function register_style()
@@ -82,7 +82,8 @@ class WPMLLangSwitcher
         }
     }
 
-    private static function get_all() {
+    private static function get_all()
+    {
         return WPMLMain::get_all_languages();
     }
 
@@ -127,28 +128,6 @@ class WPMLLangSwitcher
         return $mapped;
     }
 
-    // const EXCLUDE = [
-    //     'pt_GB',
-
-    //     'pt_ES',
-
-    //     'sr_SR',
-
-    //     'se_SE',
-
-    //     'cs_CS',
-
-    //     'en',
-
-    //     'es',
-
-    //     'ru',
-
-    //     'dk_DA',
-
-    //     'pt_BP',
-    // ];
-
     public static function choises()
     {
         return self::get_all();
@@ -156,8 +135,6 @@ class WPMLLangSwitcher
 
     public static function exclude( $languages )
     {
-        // return WPMLMain::exclude( $languages, self::EXCLUDE );
-        
         return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
     }
 
@@ -165,23 +142,12 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        // LegalDebug::debug( [
-        //     'function' => 'WPMLLangSwitcher::get_not_found',
-
-        //     'languages' => $languages,
-        // ] );
-
         $languages = self::exclude( $languages );
-
-        // LegalDebug::debug( [
-        //     'function' => 'WPMLLangSwitcher::get_not_found',
-
-		// 	'languages' => $languages,
-		// ] );
 
         $args = [];
 
-        foreach ( $languages as $lang ) {
+        foreach ( $languages as $lang )
+        {
             $args['languages'][] = self::map( $lang );
         }
 
@@ -216,17 +182,10 @@ class WPMLLangSwitcher
 
         $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
-        // $args['active'] = self::get_active( $languages );
-
-        // $args['active'][ 'suffix' ] = self::get_suffix();
-
-        // $args['active'][ 'class' ] = self::get_suffix();
-
-        // $languages = WPMLMain::exclude( $languages );
-
         $languages = self::exclude( $languages );
 
-        foreach ( $languages as $lang ) {
+        foreach ( $languages as $lang )
+        {
             $args['languages'][] = self::map( $lang );
         }
 
