@@ -151,15 +151,50 @@ class BaseFooter
 		'width' => 'menu-item-width',
 	];
 
+	const TYPE = [
+		'custom' => 'custom'
+	];
+
+	public static function check_post_custom( $post )
+	{
+		return $post->type == self::TYPE[ 'custom' ];
+	}
+
+	public static function check_children( $children )
+	{
+		return empty( $children );
+	}
+
+	public static function check_post_url( $post )
+	{
+		return $post->url == '#';
+	}
+
+	public static function check_post( $post, $children )
+	{
+		return self::check_post_custom( $post )
+
+		    && self::check_post_url( $post )
+		
+            && self::check_children( $children );
+	}
+
 	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
+
+		$children = ToolMenu::array_search_values( $post->ID, $parents );
+
+		if ( self::check_post( $post, $children ) )
+		{
+			return false;
+		}
 
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
 
-		if ( $post->type == 'custom' )
+		if ( self::check_post_custom( $post ) )
 		{
 			$item[ 'href' ] = apply_filters( 'mc_url_restricted', $post->url );
 		}
@@ -173,13 +208,20 @@ class BaseFooter
 			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
 		}
 		
-		$children = ToolMenu::array_search_values( $post->ID, $parents );
+		
 
-		if ( !empty( $children ) ) {
+		if ( !empty( $children ) )
+		{
 			$child_keys = array_keys( $children );
 
-			foreach ( $child_keys as $child_key) {
-				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
+			foreach ( $child_keys as $child_key)
+			{
+				if ( $child = self::parse_items( $items, $parents, $child_key ) )
+				{
+					$item[ 'children' ][] = $child;
+				}
+				
+				// $item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
 			}
 		}
 
@@ -209,7 +251,12 @@ class BaseFooter
 
 			foreach ( $keys as $key )
 			{
-				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
+				if ( $item = self::parse_items( $menu_items, $menu_item_parents, $key ) )
+				{
+					$items[] = $item;
+				}
+
+				// $items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 			}
 		}
 
