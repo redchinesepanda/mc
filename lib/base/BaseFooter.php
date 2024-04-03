@@ -68,24 +68,38 @@ class BaseFooter
 		}
     }
 
+	const FORMAT = [
+		'anchor' => '/%s/',
+	];
+
 	public static function check_current_language( $item )
 	{
-		return empty( $list[ self::LIST[ 'feature' ] ] );
+		$main_host = LegalMain::get_main_host();
+
+		if ( str_contains( $item[ 'url' ], $main_host ) )
+		{
+			if ( !str_contains( $item[ 'url' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			{
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	public static function filter_only_current_language( $items, $menu, $args )
 	{
 		$handler = new self();
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'filter_only_current_language',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'filter_only_current_language',
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 
-		// return array_filter( $items, [ $handler, 'check_current_language' ] );
+		return array_filter( $items, [ $handler, 'check_current_language' ] );
 
-		return $items;
+		// return $items;
 	}
 
 	public static function replace_anchors( $href )
