@@ -74,7 +74,7 @@ class BaseFooter
 
 	public static function check_language( $item )
 	{
-		return str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+		return !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
 	}
 
 	public static function check_host( $item )
