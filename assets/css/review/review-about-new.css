@@ -136,13 +136,17 @@
         padding-bottom: 32px;
     }
 
-    .review-about.legal-mode-mini {
+  /*   .review-about.legal-mode-mini {
         padding: 10px 20px;
-    }
+    } */
 
     .review-about.legal-mode-mini {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .review-about.legal-mode-mini .about-button {
+        margin-left: auto;
     }
 
     .review-about .about-achievement {
@@ -323,7 +327,11 @@
 }
 
 .review-about-wrapper.legal-mode-mini {
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+}
+
+.review-about.legal-mode-mini {
+    padding: 24px;
 }
 
 .review-about .about-center h1 {
@@ -411,7 +419,7 @@
     border-radius: 24px;
 }
 
-.review-about.legal-mode-mini {
+.review-about.legal-mode-mini .about-logo {
     border-radius: 12.8px;
 }
 
