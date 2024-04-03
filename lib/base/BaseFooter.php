@@ -79,12 +79,28 @@ class BaseFooter
 		$host = ToolRobots::get_host();
 
 		// if ( str_contains( $item->url, $main_host ) )
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'check_current_language',
+
+			'host' => $host,
+		] );
 		
 		if ( str_contains( $item[ 'href' ], $host ) )
 		{
+			LegalDebug::debug( [
+				'href' => $item[ 'href' ],
+			] );
+
 			if ( !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
-				return false;
+				LegalDebug::debug( [
+					'href' => $item[ 'href' ],
+
+					'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
+				] );
+
+				// return false;
 			}
 		}
 
