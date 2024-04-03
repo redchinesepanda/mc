@@ -64,7 +64,7 @@ class BaseFooter
 		{
 			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
 
-			// add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
+			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
 		}
     }
 
@@ -74,7 +74,7 @@ class BaseFooter
 
 	public static function check_current_language( $item )
 	{
-		// $main_host = LegalMain::get_main_host();
+		$main_host = LegalMain::get_main_host();
 
 		$host = ToolRobots::get_host();
 
@@ -86,9 +86,11 @@ class BaseFooter
 			'href' => $item[ 'href' ],
 
 			'host' => $host,
+
+			'main_host' => $main_host
 		] );
 		
-		if ( str_contains( $item[ 'href' ], $host ) )
+		if ( str_contains( $item[ 'href' ], $host ) || str_contains( $item[ 'href' ], $main_host ) )
 		{
 			LegalDebug::debug( [
 				'href' => $item[ 'href' ],
@@ -227,17 +229,7 @@ class BaseFooter
 			}
 		}
 
-		// return $items;
-
-		LegalDebug::debug( [
-			'BaseFooter' => 'get_menu_items',
-
-			'items' => $items,
-		] );
-
-		$handler = new self();
-
-		return array_filter( $items, [ $handler, 'check_current_language' ] );
+		return $items;
 	}
 
 	const TAXONOMY = [
