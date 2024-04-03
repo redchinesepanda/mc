@@ -118,6 +118,8 @@ class BaseFooter
 		if ( self::check_host( $item ) )
 		{
 			LegalDebug::debug( [
+				'url' => $item->url,
+				
 				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
 			] );
 
