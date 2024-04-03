@@ -56,9 +56,13 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_terms( $id )
     {
-        // $primary_id = YoastMain::get_primary_term_id( $id, self::TAXONOMY[ 'category' ] );
+        $primary_id = YoastMain::get_primary_term_id( $id, self::TAXONOMY[ 'category' ] );
         
-        $primary_id = false;
+        // $primary_id = false;
+
+        $items = [];
+
+        $exclude = [];
 
         if ( $primary_id )
         {
@@ -66,17 +70,33 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             if( !empty( $primary ) )
             {
-                return [ $primary ];
+                // return [ $primary ];
+
+                $items[] = $primary;
+
+                $exclude[] = $primary_id;
             }
         }
 
-        return wp_get_post_terms(
+        // return wp_get_post_terms(
+        //     $id,
+
+        //     self::TAXONOMY[ 'category' ],
+
+        //     // [ 'ids', 'names' ]
+        // );  
+
+        $other = wp_get_post_terms(
             $id,
 
             self::TAXONOMY[ 'category' ],
 
-            // [ 'ids', 'names' ]
+            [
+                'exclude' => $exclude,
+            ]
         );
+
+        return array_merge( $items, $other );
     }
 
     public static function get_ancestors( $id )
