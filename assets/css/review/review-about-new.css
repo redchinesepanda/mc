@@ -28,6 +28,11 @@
         align-items: center;
     }
 
+    .review-about.legal-mode-mini .about-center {
+        flex-wrap: wrap;
+        row-gap: 28px;
+    }
+
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-head,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-title,
     .legal-review-page-sidebar .legal-afillate-description,
@@ -50,9 +55,13 @@
         width: 100%;
     }
 
-    .review-about .about-logo {
+    .review-about:not( .legal-mode-mini ) .about-logo {
         width: 68px;
         height: 68px;
+    }
+
+    .review-about.legal-mode-mini .about-button {
+        width: 100%;
     }
 
     /* Position */
@@ -113,9 +122,9 @@
 {
     /* Display */
 
-    .review-about {
+   /*  .review-about {
         column-gap: 20px;
-    }
+    } */
 
     /* Position */
 
@@ -136,13 +145,17 @@
         padding-bottom: 32px;
     }
 
-    .review-about.legal-mode-mini {
+  /*   .review-about.legal-mode-mini {
         padding: 10px 20px;
-    }
+    } */
 
     .review-about.legal-mode-mini {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .review-about.legal-mode-mini .about-button {
+        margin-left: auto;
     }
 
     .review-about .about-achievement {
@@ -156,7 +169,7 @@
     
     /* Width and Height */
 
-    .review-about .about-logo {
+    .review-about:not( .legal-mode-mini ) .about-logo {
         width: 100px;
         height: 100px;
     }
@@ -165,8 +178,12 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-about .about-center {
+    .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 100% / 3 * 2 - 24px );
+    }
+
+    .review-about.legal-mode-mini .about-center {
+        width: 100%;
     }
 
     .review-about .about-right
@@ -174,9 +191,13 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about.legal-mode-mini {
-        width: 800px;
+    .review-about.legal-mode-mini .legal-afillate {
+        min-width: calc( 148px - (18px * 2) );
     }
+
+    /* .review-about.legal-mode-mini {
+        width: 800px;
+    } */
 
     .review-about .about-achievement div {
         width: 270px;
@@ -221,6 +242,10 @@
 .review-about .about-center {
     display: flex;
     column-gap: 26px;
+}
+
+.review-about.legal-mode-mini .about-center {
+    align-items: center;
 }
 
 .review-about .about-right,
@@ -310,6 +335,11 @@
     height: 28px;
 }
 
+.review-about.legal-mode-mini .about-logo {
+    width: 46px;
+    height: 46px;
+}
+
 /* Position */
 
 .review-about .about-right,
@@ -318,7 +348,11 @@
 }
 
 .review-about-wrapper.legal-mode-mini {
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+}
+
+.review-about.legal-mode-mini {
+    padding: 24px;
 }
 
 .review-about .about-center h1 {
@@ -383,22 +417,31 @@
     border: 2px solid var( --Base-base-09);
 }
 
-.review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
+.review-about-wrapper:not(.legal-mode-mini) {
     background-color: var(--Base-base-02);
     border-bottom: 1px solid var(--Base-base-09); 
 }
 
 .review-about.legal-mode-mini {
-    border-radius: 20px;
+    border-radius: 18px;
+    background-color: var(--Base-base-01);
+    border: 1px solid var(--Base-base-09);
 }
 
 .review-about .about-logo {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 24px;
     border: 1px solid var(--Base-base-09);
     background-color: var(--Logo-background);
+}
+
+.review-about:not( .legal-mode-mini ) .about-logo {
+    border-radius: 24px;
+}
+
+.review-about.legal-mode-mini .about-logo {
+    border-radius: 12.8px;
 }
 
 .legal-afillate {
