@@ -451,15 +451,15 @@ body {
     content: '\F113';
 }
 
-.billet .profit-label {
+/* .billet .profit-label {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
 
-.billet .profit-label {
+/* .billet .profit-label {
     background-image: url( '../../img/billet/profit/billet-profit.svg' );
-}
+} */
 
 .billet .billet-license {
     background-image: url( '../../img/billet/billet-license-no.svg' );
@@ -614,9 +614,9 @@ body {
     transform: rotate(180deg);
 }
 
-.billet .profit-label {
+/* .billet .profit-label {
     padding-left: 33px;
-}
+} */
 
 .billet .billet-license {
     padding-top: 45px;
