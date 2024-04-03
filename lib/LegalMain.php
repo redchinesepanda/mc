@@ -228,13 +228,17 @@ class LegalMain
 		}
 
 		// return array_shift( $host );
+
+		$host = self::HOST_DEBUG;
 		
-		return array_shift( self::HOST_DEBUG );
+		return array_shift( $host );
 	}
 
 	public static function get_main_host_production()
 	{
-		return array_shift( self::HOST_PRODUCTION );
+		$host = self::HOST_PRODUCTION;
+
+		return array_shift( $host );
 	}
 }
 
