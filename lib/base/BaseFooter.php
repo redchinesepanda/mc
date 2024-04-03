@@ -103,6 +103,18 @@ class BaseFooter
 
 	public static function check_item( $item )
 	{
+		LegalDebug::debug( [
+			'BaseFooter' => 'check_item',
+
+			'url' => $item->url,
+
+			'check_type' => self::check_type( $item ),
+
+			'check_host' => self::check_host( $item ),
+
+			'check_language' => self::check_language( $item ),
+		] );
+
 		return self::check_type( $item )
 		
 			&& self::check_host( $item )
@@ -120,19 +132,19 @@ class BaseFooter
 
 		// if ( str_contains( $item->url, $main_host ) )
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'check_current_language',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'check_current_language',
 
-			'url' => $item->url,
+		// 	'url' => $item->url,
 
-			// 'item' => $item,
+		// 	// 'item' => $item,
 
-			// 'host' => $host,
+		// 	// 'host' => $host,
 
-			// 'main_host' => $main_host,
+		// 	// 'main_host' => $main_host,
 
-			// 'main_host_production' => $main_host_production,
-		] );
+		// 	// 'main_host_production' => $main_host_production,
+		// ] );
 		
 		return !self::check_item( $item );
 	}
