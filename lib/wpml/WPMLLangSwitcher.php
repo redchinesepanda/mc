@@ -54,7 +54,18 @@ class WPMLLangSwitcher
         ToolEnqueue::register_script( self::JS );
     }
 
-    public static function register() {
+    public static function check_domain_restricted()
+    {
+        return ToolNotFound::check_domain_restricted();
+    }
+
+    public static function check_register()
+    {
+        return self::check_domain_restricted();
+    }
+
+    public static function register()
+    {
         $handler = new self();
 
         // [legal-lang-switcher]
@@ -63,9 +74,12 @@ class WPMLLangSwitcher
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        if ( self::check_register() )
+        {
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        }
     }
 
     private static function get_all() {
@@ -225,26 +239,24 @@ class WPMLLangSwitcher
         'style' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-style.php',
     ];
 
+    public static function check_render()
+    {
+        return self::check_domain_restricted();
+    }
+
     public static function render()
     {
-        ob_start();
+        if ( self::check_register() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+        }
 
-        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return '';
     }
 
     public static function render_style()
     {
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'style' ], self::get() );
     }
 }
 
