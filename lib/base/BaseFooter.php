@@ -83,9 +83,9 @@ class BaseFooter
 		LegalDebug::debug( [
 			'BaseFooter' => 'check_current_language',
 
-			'host' => $host,
-
 			'href' => $item[ 'href' ],
+
+			'host' => $host,
 		] );
 		
 		if ( str_contains( $item[ 'href' ], $host ) )
