@@ -214,7 +214,7 @@ class BaseFooter
 
 		// return $items;
 
-		array_filter( $items, [ $handler, 'check_current_language' ] )
+		array_filter( $items, [ $handler, 'check_current_language' ] );
 	}
 
 	const TAXONOMY = [
