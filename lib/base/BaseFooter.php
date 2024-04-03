@@ -341,11 +341,23 @@ class BaseFooter
 		];
 	}
 
+	public static function get_end( $items )
+	{
+		if ( count( $items ) > 4 )
+		{
+			return array_splice( $items, -2 );
+		}
+
+		return [];
+	}
+
 	public static function get()
 	{
 		$items = self::get_menu_items();
 
-		$end = array_splice( $items, -2 );
+		// $end = array_splice( $items, -2 );
+		
+		$end = self::get_end( $items )
 
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
