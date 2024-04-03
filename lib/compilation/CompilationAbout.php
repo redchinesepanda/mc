@@ -23,22 +23,11 @@ class CompilationAbout
 		}
     }
 
-	/* 	const JS = [
-        'compilation-start-screen-cut' => LegalMain::LEGAL_URL . '/assets/js/compilation/start-screen-cut.js',
-    ];
-
-    public static function register_script()
-    {
-        ToolEnqueue::register_script( self::JS );
-    } */
-
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
-
-		// add_filter( 'the_content', [ $handler, 'remove_compilation_about_content' ] );
     }
 
 	public static function register_functions()
@@ -84,12 +73,6 @@ class CompilationAbout
 			return '';
 		}
 
-		// $title = $nodes->item( 0 )->textContent;
-
-		// $dom->removeChild( $nodes->item( 0 ) );
-
-		// return $title;
-
 		return $nodes->item( 0 )->textContent;
 	}
 
@@ -123,25 +106,8 @@ class CompilationAbout
 			return []; 
 		}
 
-		// return array_column( iterator_to_array( $nodes ), 'textContent' );
-
 		return self::parse_content( $nodes );
 	}
-
-	// public static function check_read_more( $items )
-	// {
-	// 	$result = array_search(
-	// 		self::CLASSES[ 'content' ] . ' ' . ReviewCut::CLASSES[ 'cut-item' ],
-			
-	// 		array_column( $items, 'class' )
-	// 	);
-
-	// 	LegalDebug::debug( [
-	// 		'items' => $items,
-
-	// 		'result' => $result,
-	// 	] );
-	// }
 
 	public static function has_read_more( $item )
     {
@@ -159,18 +125,12 @@ class CompilationAbout
 	{
 		$post = get_post();
 
-		// global $post;
-
 		if ( empty( $post ) )
 		{
 			return [];
 		}
 
 		$dom = LegalDOM::get_dom( $post->post_content );
-
-		// $post->post_content = $dom->saveHTML( $dom );
-
-		// setup_postdata( $post ); 
 
 		return [
 			'title' => self::get_title( $dom ),
