@@ -106,6 +106,8 @@ class BaseFooter
 
 			'url' => $item->url,
 
+			'item' => $item,
+
 			// 'host' => $host,
 
 			// 'main_host' => $main_host,
