@@ -28,6 +28,11 @@
         align-items: center;
     }
 
+    .review-about.legal-mode-mini .about-center {
+        flex-wrap: wrap;
+        row-gap: 28px;
+    }
+
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-head,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-title,
     .legal-review-page-sidebar .legal-afillate-description,
@@ -53,6 +58,10 @@
     .review-about:not( .legal-mode-mini ) .about-logo {
         width: 68px;
         height: 68px;
+    }
+
+    .review-about.legal-mode-mini .about-button {
+        width: 100%;
     }
 
     /* Position */
