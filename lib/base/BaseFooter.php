@@ -17,11 +17,11 @@ class BaseFooter
 			'ver' => '1.0.0',
 		],
 
-    /*     'legal-footer-selectors' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
+    	// 'legal-footer-selectors' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
 
-			'ver' => '1.0.0',
-		], */
+		// 	'ver' => '1.0.0',
+		// ],
     ];
 
     public static function register_style()
@@ -63,8 +63,30 @@ class BaseFooter
 		if ( self::check_register() )
 		{
 			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+
+			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
 		}
     }
+
+	public static function check_current_language( $item )
+	{
+		return empty( $list[ self::LIST[ 'feature' ] ] );
+	}
+
+	public static function filter_only_current_language( $items, $menu, $args )
+	{
+		$handler = new self();
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'filter_only_current_language',
+
+			'items' => $items,
+		] );
+
+		// return array_filter( $items, [ $handler, 'check_current_language' ] );
+
+		return $items;
+	}
 
 	public static function replace_anchors( $href )
 	{
@@ -80,14 +102,6 @@ class BaseFooter
 				}
 			}
 		}
-
-		// foreach ( $restricted as $host => $language )
-		// {
-		// 	if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
-		// 	{
-		// 		break;
-		// 	}
-		// }
 
 		return $href;
 	}
