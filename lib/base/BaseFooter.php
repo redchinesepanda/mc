@@ -277,7 +277,7 @@ class BaseFooter
         'order' => 'media-order',
     ];
 
-	public static function get_items()
+	public static function get_logo_items()
 	{
 		$posts = get_posts( self::query() );
 
@@ -356,17 +356,17 @@ class BaseFooter
 		$items = self::get_menu_items();
 
 		// $end = array_splice( $items, -2 );
-		
-		$end = self::get_end( $items );
 
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
 
-			'end' => $end,
+			// 'end' => $end,
+			
+			'end' => self::get_end( $items ),
 
 			'items' => $items,
 
-			'logo' => self::get_items(),
+			'logo' => self::get_logo_items(),
 
 			'copy' => [
 				'year' => '2021-2023',
