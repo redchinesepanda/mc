@@ -54,14 +54,14 @@ class WPMLLangSwitcher
         ToolEnqueue::register_script( self::JS );
     }
 
-    public static function check_domain_restricted()
+    public static function check_domain_not_restricted()
     {
-        return ToolNotFound::check_domain_restricted();
+        return !ToolNotFound::check_domain_restricted();
     }
 
     public static function check_register()
     {
-        return self::check_domain_restricted();
+        return self::check_domain_not_restricted();
     }
 
     public static function register()
@@ -241,7 +241,7 @@ class WPMLLangSwitcher
 
     public static function check_render()
     {
-        return self::check_domain_restricted();
+        return self::check_domain_not_restricted();
     }
 
     public static function render()
