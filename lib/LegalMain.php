@@ -224,7 +224,7 @@ class LegalMain
 		{
 			// $host = self::HOST_PRODUCTION;
 
-			return self::get_main_host_production()
+			return self::get_main_host_production();
 		}
 
 		// return array_shift( $host );
