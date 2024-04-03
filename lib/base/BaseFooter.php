@@ -76,9 +76,9 @@ class BaseFooter
 	{
 		$main_host = LegalMain::get_main_host();
 
-		if ( str_contains( $item[ 'url' ], $main_host ) )
+		if ( str_contains( $item->url, $main_host ) )
 		{
-			if ( !str_contains( $item[ 'url' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
 				return false;
 			}
