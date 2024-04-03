@@ -74,9 +74,13 @@ class BaseFooter
 
 	public static function check_current_language( $item )
 	{
-		$main_host = LegalMain::get_main_host();
+		// $main_host = LegalMain::get_main_host();
 
-		if ( str_contains( $item->url, $main_host ) )
+		$host = ToolRobots::get_host();
+
+		// if ( str_contains( $item->url, $main_host ) )
+		
+		if ( str_contains( $item->url, $host ) )
 		{
 			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
@@ -89,9 +93,11 @@ class BaseFooter
 
 			'url' => $item->url,
 
-			'main_host' => $main_host,
+			// 'main_host' => $main_host,
 			
-			'str_contains-main_host' => str_contains( $item->url, $main_host ),
+			'host' => $host,
+			
+			'str_contains-main_host' => str_contains( $item->url, $host ),
 
 			'current_language' => WPMLMain::current_language(),
 
