@@ -251,51 +251,19 @@ class ReviewAbout
             {
                 $mode = $args[ 'mode' ];
             }
-
-            // if ( $args[ 'mode' ] == self::MODE[ 'footer' ] )
-            // {
-            //     $mode = self::MODE[ 'footer' ];
-            // }
-
-            // if ( $args[ 'mode' ] == self::MODE[ 'mini' ] )
-            // {
-            //     $mode = self::MODE[ 'mini' ];
-            // }
         }
 
         $group = get_field( self::FIELD, $id );
 
-        if( $group )
+        if ( $group )
         {
             $bonus_exception = self::check_bonus_exception();
 
             $bonus = [
                 'name' => self::get_name( $group, $mode, $bonus_exception ),
-                
-                // 'name' => $group[ 'about-bonus' ],
 
                 'description' => $group[ 'about-description' ],
             ];
-
-            // $locale = WPMLMain::current_language();
-
-            // if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
-            
-            // if ( $mode == 'mini' || $bonus_exception )
-            // {
-            //     $bonus['name'] = $group[ 'about-title' ];
-            // }
-
-            // $afillate_description = '';
-
-            // // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
-            
-            // if ( empty( $mode ) && $bonus_exception )
-            // {
-            //     // $afillate_description = 'Publicidad | Juego Responsable | +18';
-                
-            //     $afillate_description = ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
-            // }
 
             $term = self::get_achievement( $id );
 
@@ -314,7 +282,8 @@ class ReviewAbout
 
                     'href' => self::check_href_afillate( $id ),
                 ];
-            } else 
+            }
+            else 
             {
                 $rating = [
                     'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
@@ -334,18 +303,22 @@ class ReviewAbout
 
             return [
                 'text' => [
-                    'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
+                    // 'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
     
-                    'show' => __( ReviewMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    // 'show' => __( ReviewMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
     
-                    'hide' => __( ReviewMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    // 'hide' => __( ReviewMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    
+                    'head' => ToolLoco::translate( ReviewMain::TEXT[ 'bonus' ] ),
+    
+                    'show' => ToolLoco::translate( ReviewMain::TEXT[ 'show-tnc' ] ),
+    
+                    'hide' => ToolLoco::translate( ReviewMain::TEXT[ 'hide-tnc' ] ),
                 ],
 
                 'title' => $title,
                 
                 'bonus' => $bonus,
-                
-                // 'logo' => $group[ self::ABOUT[ 'logo' ] ],
                 
                 'logo' => $logo,
 
@@ -361,8 +334,6 @@ class ReviewAbout
                     'text' => self::get_text(),
 
                     'description' => self::get_afillate_description( $mode, $bonus_exception ),
-                    
-                    // 'description' => $afillate_description,
                 ],
 
                 'mode' => $mode,
