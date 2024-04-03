@@ -173,6 +173,15 @@
     color: rgb(12, 17, 21);
 }
 
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ) {
+    color: #5997e3;
+    text-decoration: none;
+}
+
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):hover {
+    text-decoration: underline;
+}
+
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a {
     font-family: "Source Sans Pro";
