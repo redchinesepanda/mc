@@ -213,55 +213,65 @@ class BaseHeader
 		return $items;
 	}
 
-	public static function search_languages()
+	public static function get_language_current( &$languages )
 	{
-		global $sitepress;
-
-		$languages_all = WPMLMain::get_all_languages();
-
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
-
-		// 	'default_language' => $sitepress->get_setting( 'default_language' ),
-
-		// 	// 'icl_get_languages' => icl_get_languages(),
-
-		// 	// 'languages_all' => $languages_all,
-
-		// 	// 'get_settings' => $sitepress->get_settings(),
-		// ] );
-
-		if ( empty( $languages_all ) )
-		{
-			return [
-				'current' => [],
-
-				'avaible' => [],
-			];
-
-			// return [];
-		}
-
 		$code = WPMLMain::current_language();
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		if ( array_key_exists( $code, $languages ) )
+		{
+			$result = $languages[ $code ];
 
-        //     'code' => $code,
-		// ] );
+			unset( $languages[ $code ] );
+			
+			return $result;
+		}
 
-		$search[ 'current' ] = $languages_all[ $code ];
+		return [];
+	}
 
-		unset( $languages_all[ $code ] );
+	public static function get_languages_avaible( $languages )
+	{
+		if ( !ToolNotFound::check_domain_restricted() )
+		{
+			$languages = WPMLMain::exclude( $languages );
+		
+			$lang = WPMLMain::get_group_language();
+	
+			return WPMLMain::filter_language( $languages, $lang );
+		}
 
-		$languages_all = WPMLMain::exclude( $languages_all );
+		return [];
+	}
 
-		$lang = WPMLMain::get_group_language();
+	public static function search_languages()
+	{
+		$search = [
+			'current' => [],
 
-		$search[ 'avaible' ] = WPMLMain::filter_language( $languages_all, $lang );
+			'avaible' => [],
+		];
 
-		// $search[ 'avaible' ] = $languages_all;
+		$all_languages = WPMLMain::get_all_languages();
 
+		if ( !empty( $all_languages ) )
+		{
+			$search[ 'current' ] = self::get_language_current( $all_languages );
+
+			$search[ 'avaible' ] = self::get_languages_avaible( $all_languages );
+
+			// $code = WPMLMain::current_language();
+	
+			// $search[ 'current' ] = $all_languages[ $code ];
+	
+			// unset( $all_languages[ $code ] );
+	
+			// $all_languages = WPMLMain::exclude( $all_languages );
+	
+			// $lang = WPMLMain::get_group_language();
+	
+			// $search[ 'avaible' ] = WPMLMain::filter_language( $all_languages, $lang );
+		}
+		
 		return $search;
 	}
 
@@ -372,9 +382,16 @@ class BaseHeader
 		return $name . '="' . $value . '"';
 	}
 
-	public static function get_data_attr_language( $language )
+	public static function get_data_attr_language( $languages )
 	{
 		$handler = new self();
+		
+		$language = [];
+
+		if ( !empty( $languages[ 'current' ] ) )
+		{
+			$language = $languages[ 'current' ];
+		}
 
 		$data = [
 			'data-name-code' => '',
@@ -451,7 +468,7 @@ class BaseHeader
 		return $href;
 	}
 
-	public static function parse_languages( $languages )
+	public static function get_item_class( $languages )
 	{
 		$code = WPMLMain::current_language();
 
@@ -460,12 +477,48 @@ class BaseHeader
 			$code = $languages[ 'current' ][ 'code' ];
 		}
 
-		$data = [];
+		$classes = [
+			'legal-country',
 
-		if ( !empty( $languages[ 'current' ] ) )
+			'legal-country-' . $code,
+		];
+
+		if ( !empty( $languages[ 'avaible' ] ) )
 		{
-			$data = $languages[ 'current' ];
+			$classes[] = 'menu-item-has-children';
 		}
+
+		return implode( ' ', $classes );
+	}
+
+	public static function parse_languages( $languages )
+	{
+		// $data = [];
+
+		// if ( !empty( $languages[ 'current' ] ) )
+		// {
+		// 	$data = $languages[ 'current' ];
+		// }
+
+		// $code = WPMLMain::current_language();
+
+		// if ( !empty( $languages[ 'current' ][ 'code' ] ) )
+		// {
+		// 	$code = $languages[ 'current' ][ 'code' ];
+		// }
+
+		// $classes = [
+		// 	'legal-country',
+
+		// 	'legal-country-' . $code,
+		// ];
+
+		// if ( !empty( $languages[ 'avaible' ] ) )
+		// {
+		// 	$classes[] = 'menu-item-has-children';
+		// }
+
+		// $class = implode( ' ', $classes );
 
 		$item = [
 			'title' => '',
@@ -473,47 +526,25 @@ class BaseHeader
 			'href' => '#',
 
 			'children' => [],
-
-			// 'class' => 'menu-item-has-children legal-country legal-country-' . $languages[ 'current' ][ 'code' ],
 			
-			'class' => 'menu-item-has-children legal-country legal-country-' . $code,
-
-			// 'data' => self::get_data_attr_language( $languages[ 'current' ] ),
+			'class' => self::get_item_class( $languages ),
 			
-			'data' => self::get_data_attr_language( $data ),
+			// 'data' => self::get_data_attr_language( $data ),
 			
-			// 'data' => self::get_data_attr_current( $languages ),
+			'data' => self::get_data_attr_language( $languages ),
 		];
-
-		// LegalDebug::debug( [
-		// 	'function' => 'BaseHeader::parse_languages',
-
-		// 	'current' => $languages[ 'current' ],
-		// ] );
 
 		if ( !empty( $languages[ 'avaible' ] ) )
 		{
-
 			foreach ( $languages[ 'avaible' ] as $language ) {
 				$label = $language[ 'code' ] != 'en' ? $language[ 'native_name' ] : 'UK';
 	
 				$prefix = self::get_title_prefix( $language );
 	
 				$title = $prefix . ' ' . $label;
-
-				// $href = $language[ 'url' ];
-
-				// if ( $post->type == 'custom' )
-				// {
-					// $href = apply_filters( 'mc_url_restricted', $href );
-				// }
 	
 				$item[ 'children' ][] = [
 					'title' => $title,
-	
-					// 'href' => $language[ 'url' ],
-					
-					// 'href' => $href,
 					
 					'href' => apply_filters( 'mc_url_restricted', $language[ 'url' ] ),
 	
@@ -534,13 +565,8 @@ class BaseHeader
 		$href = self::get_href();
 
 		$item[ 'children' ][] = [
-			// 'title' => __( BaseMain::TEXT[ 'all-countries' ], ToolLoco::TEXTDOMAIN ),
-			
-			// 'title' => __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN ),
 
 			'title' => $title,
-
-			// 'href' => '/choose-your-country/',
 			
 			'href' => $href,
 
@@ -548,8 +574,6 @@ class BaseHeader
 
 			'data' => '',
 		];
-
-		// $item[ 'data' ] = self::get_data_attr_current( $languages[ 'current' ], $item );
 
 		return $item;
 	}
