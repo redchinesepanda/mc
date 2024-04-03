@@ -80,9 +80,23 @@ class BaseFooter
 		{
 			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
-				return false;
+				// return false;
 			}
 		}
+
+		LegalDebug::debug( [
+			'BaseFooter' => 'check_current_language',
+
+			'url' => $item->url,
+
+			'main_host' => $main_host,
+			
+			'str_contains-main_host' => str_contains( $item->url, $main_host ),
+
+			'current_language' => WPMLMain::current_language(),
+
+			'str_contains-current_language' => !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
+		] );
 
 		return true;
 	}
