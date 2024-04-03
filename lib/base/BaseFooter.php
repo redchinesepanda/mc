@@ -84,22 +84,20 @@ class BaseFooter
 			'BaseFooter' => 'check_current_language',
 
 			'host' => $host,
+
+			'href' => $item[ 'href' ],
 		] );
 		
 		if ( str_contains( $item[ 'href' ], $host ) )
 		{
 			LegalDebug::debug( [
 				'href' => $item[ 'href' ],
+
+				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
 			] );
 
 			if ( !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
-				LegalDebug::debug( [
-					'href' => $item[ 'href' ],
-
-					'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
-				] );
-
 				// return false;
 			}
 		}
