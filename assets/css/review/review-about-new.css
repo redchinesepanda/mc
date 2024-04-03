@@ -50,7 +50,7 @@
         width: 100%;
     }
 
-    .review-about .about-logo {
+    .review-about-wrapper:not( .legal-mode-mini ) .review-about .about-logo {
         width: 68px;
         height: 68px;
     }
@@ -156,7 +156,7 @@
     
     /* Width and Height */
 
-    .review-about .about-logo {
+    .review-about-wrapper:not( .legal-mode-mini ) .review-about .about-logo {
         width: 100px;
         height: 100px;
     }
@@ -308,6 +308,11 @@
 
 .review-about .achievement-bonus-link {
     height: 28px;
+}
+
+.review-about-wrapper.legal-mode-mini .about-logo {
+    width: 46px;
+    height: 46px;
 }
 
 /* Position */
