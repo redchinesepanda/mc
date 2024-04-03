@@ -84,25 +84,25 @@ class BaseFooter
 		{
 			if ( !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
-				// return false;
+				return false;
 			}
 		}
 
-		LegalDebug::debug( [
-			'BaseFooter' => 'check_current_language',
+		// LegalDebug::debug( [
+		// 	'BaseFooter' => 'check_current_language',
 
-			'href' => $item[ 'href' ],
+		// 	'href' => $item[ 'href' ],
 
-			// 'main_host' => $main_host,
+		// 	// 'main_host' => $main_host,
 			
-			'host' => $host,
+		// 	'host' => $host,
 			
-			'str_contains-main_host' => str_contains( $item[ 'href' ], $host ),
+		// 	'str_contains-main_host' => str_contains( $item[ 'href' ], $host ),
 
-			'current_language' => WPMLMain::current_language(),
+		// 	'current_language' => WPMLMain::current_language(),
 
-			'str_contains-current_language' => !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
-		] );
+		// 	'str_contains-current_language' => !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
+		// ] );
 
 		return true;
 	}
