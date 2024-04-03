@@ -86,6 +86,12 @@ class WPMLHreflang
 
 	public static function clear_hreflang( $hreflang_items )
 	{
+		LegalDebug::debug( [
+			'WPMLHreflang' => 'clear_hreflang',
+
+			'hreflang_items' => $hreflang_items,
+		] );
+
 		$hreflang = WPMLMain::get_hreflang();
 
 		if ( array_key_exists( $hreflang, $hreflang_items ) )
@@ -105,7 +111,7 @@ class WPMLHreflang
 		if ( ToolNotFound::check_domain_restricted() )
 		{
 			$hreflang_items = self::clear_hreflang( $hreflang_items );
-			
+
 			self::modify_url_restricted( $hreflang_items, $current_host, $main_host );
 		}
 		else
