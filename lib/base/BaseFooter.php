@@ -78,6 +78,8 @@ class BaseFooter
 
 		$host = ToolRobots::get_host();
 
+		$main_host_production = LegalMain::get_main_host_production();
+
 		// if ( str_contains( $item->url, $main_host ) )
 
 		LegalDebug::debug( [
@@ -87,10 +89,12 @@ class BaseFooter
 
 			'host' => $host,
 
-			'main_host' => $main_host
+			'main_host' => $main_host,
+
+			'main_host_production' => $main_host_production,
 		] );
 		
-		if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) )
+		if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) || str_contains( $item->url, $main_host_production ) )
 		{
 			LegalDebug::debug( [
 				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),

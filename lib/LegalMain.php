@@ -218,14 +218,23 @@ class LegalMain
 
 	public static function get_main_host()
 	{
-		$host = self::HOST_DEBUG;
+		// $host = self::HOST_DEBUG;
 
 		if ( self::check_host_production() )
 		{
-			$host = self::HOST_PRODUCTION;
+			// $host = self::HOST_PRODUCTION;
+
+			return self::get_main_host_production()
 		}
 
-		return array_shift( $host );
+		// return array_shift( $host );
+		
+		return array_shift( self::HOST_DEBUG );
+	}
+
+	public static function get_main_host_production()
+	{
+		return array_shift( self::HOST_PRODUCTION );
 	}
 }
 
