@@ -341,7 +341,7 @@ class BaseFooter
 		];
 	}
 
-	public static function get_end( $items )
+	public static function get_end( &$items )
 	{
 		if ( count( $items ) > 4 )
 		{
