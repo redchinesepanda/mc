@@ -91,6 +91,25 @@ class BaseFooter
 		return false;
 	}
 
+	public static function check_type( $item )
+	{
+		if ( $item->custom == 'custom' )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	public static function check_item( $item )
+	{
+		return self::check_type( $item )
+		
+			&& self::check_host( $item )
+			
+			&& self::check_language( $item );
+	}
+
 	public static function check_current_language( $item )
 	{
 		// $main_host = LegalMain::get_main_host();
@@ -106,7 +125,7 @@ class BaseFooter
 
 			'url' => $item->url,
 
-			'item' => $item,
+			// 'item' => $item,
 
 			// 'host' => $host,
 
@@ -115,41 +134,7 @@ class BaseFooter
 			// 'main_host_production' => $main_host_production,
 		] );
 		
-		// if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) || str_contains( $item->url, $main_host_production ) )
-		
-		if ( self::check_host( $item ) )
-		{
-			LegalDebug::debug( [
-				// 'url' => $item->url,
-
-				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
-			] );
-
-			// if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
-			
-			if ( self::check_language( $item ) )
-			{
-				return false;
-			}
-		}
-
-		// LegalDebug::debug( [
-		// 	'BaseFooter' => 'check_current_language',
-
-		// 	'href' => $item[ 'href' ],
-
-		// 	// 'main_host' => $main_host,
-			
-		// 	'host' => $host,
-			
-		// 	'str_contains-main_host' => str_contains( $item[ 'href' ], $host ),
-
-		// 	'current_language' => WPMLMain::current_language(),
-
-		// 	'str_contains-current_language' => !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
-		// ] );
-
-		return true;
+		return !self::check_item( $item );
 	}
 
 	public static function filter_only_current_language( $items, $menu, $args )
