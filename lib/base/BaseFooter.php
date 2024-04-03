@@ -72,13 +72,32 @@ class BaseFooter
 		'anchor' => '/%s/',
 	];
 
+	public static function check_language( $item )
+	{
+		return !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+	}
+
+	public static function check_host( $item )
+	{
+		if ( str_contains( $item->url, LegalMain::get_main_host_production() )
+		
+			|| str_contains( $item->url, ToolRobots::get_host() )
+
+			|| str_contains( $item->url, LegalMain::get_main_host() ) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	public static function check_current_language( $item )
 	{
-		$main_host = LegalMain::get_main_host();
+		// $main_host = LegalMain::get_main_host();
 
-		$host = ToolRobots::get_host();
+		// $host = ToolRobots::get_host();
 
-		$main_host_production = LegalMain::get_main_host_production();
+		// $main_host_production = LegalMain::get_main_host_production();
 
 		// if ( str_contains( $item->url, $main_host ) )
 
@@ -94,15 +113,19 @@ class BaseFooter
 			'main_host_production' => $main_host_production,
 		] );
 		
-		if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) || str_contains( $item->url, $main_host_production ) )
+		// if ( str_contains( $item->url, $host ) || str_contains( $item->url, $main_host ) || str_contains( $item->url, $main_host_production ) )
+		
+		if ( self::check_host( $item ) )
 		{
 			LegalDebug::debug( [
 				'needle' => sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ),
 			] );
 
-			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			// if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			
+			if ( self::check_language( $item ) )
 			{
-				// return false;
+				return false;
 			}
 		}
 
