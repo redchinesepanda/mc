@@ -226,8 +226,8 @@
 
 .tcb-post-content .legal-button {
 	padding: 2px 15px;
-    margin-right: 4px;
-    margin-bottom: 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 /* Review Background */
@@ -306,7 +306,7 @@
 }
 
 .tcb-post-content .legal-button {
-	font-size: 12px;
+	font-size: 14px;
 	text-align: center;
     color: var( --Base-base-09 );
     text-decoration: none;
