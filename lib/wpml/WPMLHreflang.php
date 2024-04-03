@@ -86,7 +86,7 @@ class WPMLHreflang
 
 	public static function clear_hreflang( $hreflang_items )
 	{
-		$hreflang = WPMLMain::get_hreflang();
+		$hreflang = strtolower( WPMLMain::get_hreflang() );
 
 		LegalDebug::debug( [
 			'WPMLHreflang' => 'clear_hreflang',
