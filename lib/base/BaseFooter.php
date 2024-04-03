@@ -357,7 +357,7 @@ class BaseFooter
 
 		// $end = array_splice( $items, -2 );
 		
-		$end = self::get_end( $items )
+		$end = self::get_end( $items );
 
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
