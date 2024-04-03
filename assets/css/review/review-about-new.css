@@ -394,8 +394,9 @@
 }
 
 .review-about.legal-mode-mini {
-    border-radius: 20px;
+    border-radius: 18px;
     background-color: var(--Base-base-01);
+    border: 1px solid var(--Base-base-09);
 }
 
 .review-about .about-logo {
