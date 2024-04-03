@@ -56,25 +56,9 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_terms( $id )
     {
-        // $primary_id = get_post_meta( $id, self::FIELD[ 'primary' ] . self::TAXONOMY[ 'category' ], true );
+        // $primary_id = YoastMain::get_primary_term_id( $id, self::TAXONOMY[ 'category' ] );
         
-        // $primary_id = yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
-        
-        $primary_id = YoastMain::get_primary_term_id( $id, self::TAXONOMY[ 'category' ] );
-
-        // LegalDebug::debug( [
-        //     'LegalBreadcrumbsMain' => 'get_terms',
-
-        //     '$primary_id' => $primary_id,
-
-        //     'get_language_code' => WPMLMain::get_language_code( $id ),
-
-        //     'get_language_details' => WPMLMain::get_language_details( $id ),
-
-        //     'current_language' => WPMLMain::current_language(),
-
-        //     'yoast_get_primary_term_id' => yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id ),
-        // ] );
+        $primary_id = false;
 
         if ( $primary_id )
         {
