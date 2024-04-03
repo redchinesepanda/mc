@@ -80,9 +80,9 @@ class BaseFooter
 
 		// if ( str_contains( $item->url, $main_host ) )
 		
-		if ( str_contains( $item->url, $host ) )
+		if ( str_contains( $item[ 'href' ], $host ) )
 		{
-			if ( !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
+			if ( !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) ) )
 			{
 				// return false;
 			}
@@ -91,17 +91,17 @@ class BaseFooter
 		LegalDebug::debug( [
 			'BaseFooter' => 'check_current_language',
 
-			'url' => $item->url,
+			'href' => $item[ 'href' ],
 
 			// 'main_host' => $main_host,
 			
 			'host' => $host,
 			
-			'str_contains-main_host' => str_contains( $item->url, $host ),
+			'str_contains-main_host' => str_contains( $item[ 'href' ], $host ),
 
 			'current_language' => WPMLMain::current_language(),
 
-			'str_contains-current_language' => !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
+			'str_contains-current_language' => !str_contains( $item[ 'href' ], sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) )
 		] );
 
 		return true;
