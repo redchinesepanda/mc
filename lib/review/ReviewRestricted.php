@@ -296,31 +296,30 @@ class ReviewRestricted
 		'not-contains' => '[not(self::node()[contains(@href,"%s")])]',
 	];
 
-    public static function get_nodes_domain_and_language( $dom )
+    public static function get_language( $format )
+	{
+		$current_language = sprintf( self::FORMAT[ 'folder' ], WPMLMain::current_language() );
+
+		return sprintf( $format, $current_language );
+	}
+
+    public static function get_nodes_domain_x_language( $dom, $format = self::FORMAT[ 'contains' ] )
 	{
 		$query = [];
 
-		$current_language = sprintf( self::FORMAT[ 'folder' ], WPMLMain::current_language() );
+		$language = self::get_language( $format );
 
-		$not_language = sprintf( self::FORMAT[ 'contains' ], $current_language );
-
-		$hosts = [
-			LegalMain::get_main_host_production(),
-
-			ToolRobots::get_host(),
-
-			LegalMain::get_main_host(),
-		];
+		$hosts = self::get_hosts();
 
 		foreach ( $hosts as $host )
 		{
 			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
 
-			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $not_language );
+			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
 		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_language',
+			'ReviewRestricted' => 'get_nodes_domain_x_language',
 
 			'query' => implode( '|', $query ),
         ] );
@@ -328,51 +327,63 @@ class ReviewRestricted
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
+    public static function get_nodes_domain_and_language( $dom )
+	{
+		// $query = [];
+
+		// $language = self::get_language( self::FORMAT[ 'contains' ] );
+
+		// $hosts = self::get_hosts();
+
+		// foreach ( $hosts as $host )
+		// {
+		// 	$domain = sprintf( self::FORMAT[ 'contains' ], $host );
+
+		// 	$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
+		// }
+
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_domain_and_language',
+
+		// 	'query' => implode( '|', $query ),
+        // ] );
+
+		// return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ] );
+	}
+
     public static function get_nodes_domain_and_not_language( $dom )
 	{
-		$query = [];
+		// $query = [];
 
-		$current_language = sprintf( self::FORMAT[ 'folder' ], WPMLMain::current_language() );
+		// $language = self::get_language( self::FORMAT[ 'not-contains' ] );
 
-		$not_language = sprintf( self::FORMAT[ 'not-contains' ], $current_language );
+		// $hosts = self::get_hosts();
 
-		$hosts = [
-			LegalMain::get_main_host_production(),
+		// foreach ( $hosts as $host )
+		// {
+		// 	$domain = sprintf( self::FORMAT[ 'contains' ], $host );
 
-			ToolRobots::get_host(),
+		// 	$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
+		// }
 
-			LegalMain::get_main_host(),
-		];
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_domain_and_not_language',
 
-		foreach ( $hosts as $host )
-		{
-			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
+		// 	'query' => implode( '|', $query ),
+        // ] );
 
-			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $not_language );
-		}
+		// return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_not_language',
-
-			'query' => implode( '|', $query ),
-        ] );
-
-		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
 	}
 
 	public static function get_nodes_anchor( $dom )
 	{
 		$query = [];
 
-		$hosts = [
-			LegalMain::get_main_host_production(),
-
-			ToolRobots::get_host(),
-
-			LegalMain::get_main_host(),
-
-			...BaseFooter::HOST_EXTERNAL,
-		];
+		$hosts = array_merge( self::get_hosts(), BaseFooter::HOST_EXTERNAL );
 
 		foreach ( $hosts as $host )
 		{
@@ -382,17 +393,22 @@ class ReviewRestricted
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 	
-    public static function get_nodes_not_domain( $dom )
+    public static function get_hosts()
 	{
-		$query = [];
-
-		$hosts = [
+		return [
 			LegalMain::get_main_host_production(),
 
 			ToolRobots::get_host(),
 
 			LegalMain::get_main_host(),
 		];
+	}
+
+    public static function get_nodes_not_domain( $dom )
+	{
+		$query = [];
+
+		$hosts = self::get_hosts();
 
 		foreach ( $hosts as $host )
 		{
