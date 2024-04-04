@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <!doctype html>
-<html <?php WPMLMain::language_attributes(); ?> <?php //thrive_html_class(); ?>>
+<html <?php WPMLMain::language_attributes(); ?>>
 	<head> 
 		<!-- manual start -->
 		<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -24,12 +24,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="yandex-verification" content="079ad3c653c7c146">
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
 		<!-- manual end -->
+		<!-- yoast start -->
 		<title><?php echo YoastMain::get_seo_title() ?></title>
 		<meta name="description" content="<?php echo YoastMain::get_seo_description(); ?>">
+		<!-- yoast end -->
 		<!-- wp_head start -->
 		<?php echo TemplateMain::wp_head(); ?>
 		<!-- wp_head end -->
-		<!-- <?php // thrive_amp_permalink(); ?> -->
 		<!-- Legal Header -->
 	</head>
 	<body <?php body_class( '' ); ?>>

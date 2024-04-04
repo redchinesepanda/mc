@@ -201,6 +201,11 @@ class YoastMain
     //     'billets-amount' => '{billets-amount}',
     // ];
 
+    public static function check()
+    {
+        return function_exists( 'YoastSEO' );
+    }
+
     public static function get_seo_title()
     {
         $post = get_post();
@@ -216,11 +221,6 @@ class YoastMain
         }
 
         return '';
-    }
-
-    public static function check()
-    {
-        return function_exists( 'YoastSEO' );
     }
 
     public static function get_seo_description()
