@@ -264,12 +264,12 @@ class ReviewRestricted
 
 	public static function modify_anchors( $dom )
 	{
-		$nodes = self::get_nodes_anchor( $dom );
+		// $nodes = self::get_nodes_anchor( $dom );
 
-		if ( $nodes->length == 0 )
-		{
-			return false;
-		}
+		// if ( $nodes->length == 0 )
+		// {
+		// 	return false;
+		// }
 
 		self::replace_all( $nodes, $dom );
 
