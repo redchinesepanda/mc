@@ -124,13 +124,13 @@ class ReviewRestricted
 		{
 			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 
-			LegalDebug::debug( [
-				'ReviewRestricted' => 'modify_filtered',
+			// LegalDebug::debug( [
+			// 	'ReviewRestricted' => 'modify_filtered',
 
-				'old' => $node->getAttribute( self::ATTRIBUTE[ 'href' ] ),
+			// 	'old' => $node->getAttribute( self::ATTRIBUTE[ 'href' ] ),
 
-				'new' => $href,
-			] );
+			// 	'new' => $href,
+			// ] );
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
@@ -235,11 +235,11 @@ class ReviewRestricted
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			LegalDebug::debug( [
-				'ReviewRestricted' => 'replace_filtered',
+			// LegalDebug::debug( [
+			// 	'ReviewRestricted' => 'replace_filtered',
 
-				'href' => $href,
-			] );
+			// 	'href' => $href,
+			// ] );
 
 			$item = self::get_item( $node, $dom );
 
@@ -334,29 +334,29 @@ class ReviewRestricted
 			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_x_language',
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_domain_x_language',
 
-			'query' => implode( '|', $query ),
-		] );
+		// 	'query' => implode( '|', $query ),
+		// ] );
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
     public static function get_nodes_domain_and_language( $dom )
 	{
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_language',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_domain_and_language',
+		// ] );
 
 		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ] );
 	}
 
     public static function get_nodes_domain_and_not_language( $dom )
 	{
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_not_language',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_domain_and_not_language',
+		// ] );
 
 		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
 	}
@@ -376,9 +376,9 @@ class ReviewRestricted
 			$query[] = sprintf( self::FORMAT[ 'contains' ], $host );
 		}
 
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_not_domain',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_not_domain',
+		// ] );
 
 		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
 	}
