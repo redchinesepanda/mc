@@ -84,7 +84,7 @@ class ReviewRestricted
 
 	public static function check_current_language( $item )
 	{
-		return !self::check_item( $item );
+		return self::check_item( $item );
 	}
 
 	public static function filter_only_current_language( $items )
