@@ -76,7 +76,7 @@ class ReviewRestricted
 
 			'check_host' => BaseFooter::check_host( $href ),
 
-			'check_language' => BaseFooter::check_language( $href ),
+			// 'check_language' => BaseFooter::check_language( $href ),
 		] );
 
 		return BaseFooter::check_local( $url_host );
