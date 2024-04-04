@@ -118,7 +118,7 @@ class ReviewRestricted
 			&& self::check_language( $href );
 	}
 
-	public static function modify_domain_and_language( $nodes )
+	public static function modify_all( $nodes )
 	{
 		$handler = new self();
 		
@@ -131,7 +131,7 @@ class ReviewRestricted
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 
 			// LegalDebug::debug( [
-			// 	'ReviewRestricted' => 'modify_domain_and_language',
+			// 	'ReviewRestricted' => 'modify_all',
 
 			// 	'href' => $href,
 			// ] );
@@ -223,32 +223,19 @@ class ReviewRestricted
 		}
 	}
 	
-	public static function replace_domain_and_not_language( $nodes, $dom )
+	public static function replace_all( $nodes, $dom )
 	{
 		$handler = new self();
 
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_domain_and_not_language' ] );
+		// $filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_domain_and_not_language' ] );
 
-		self::replace_filtered( $filtered, $dom );
+		// self::replace_filtered( $filtered, $dom );
 
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_not_domain' ] );
+		// $filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_not_domain' ] );
+		
+		$nodes_not_domain = self::get_nodes_not_domain( $dom );
 
-		self::replace_filtered( $filtered, $dom );
-
-		// foreach ( $filtered as $node )
-		// {
-		// 	$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
-
-		// 	// LegalDebug::debug( [
-		// 	// 	'ReviewRestricted' => 'replace_domain_and_not_language',
-
-		// 	// 	'href' => $href,
-		// 	// ] );
-
-		// 	$item = self::get_item( $node, $dom );
-
-		// 	self::replace_node( $item, $node );
-		// }
+		self::replace_filtered( $nodes_not_domain, $dom );
 	}
 
 	public static function modify_anchors( $dom )
@@ -260,9 +247,9 @@ class ReviewRestricted
 			return false;
 		}
 
-		self::replace_domain_and_not_language( $nodes, $dom );
+		self::replace_all( $nodes, $dom );
 
-		self::modify_domain_and_language( $nodes );
+		self::modify_all( $nodes );
 
 		return true;
 	}
@@ -271,18 +258,13 @@ class ReviewRestricted
 		'anchor' => '/%s/',
 		
 		'node' => '//a[contains(@href,"%s")]',
+
+		'not-domain' => './/a[not(self::node()[contains(@href,"%s")])]'
 	];
 
 	public static function get_nodes_anchor( $dom )
 	{
-		$restricted = ToolNotFound::get_restricted_languages_all();
-
 		$query = [];
-		
-		// foreach ( $restricted as $language )
-		// {
-		// 	$query[] = sprintf( self::FORMAT[ 'node' ], $language );
-		// }
 
 		$hosts = [
 			LegalMain::get_main_host_production(),
@@ -297,6 +279,26 @@ class ReviewRestricted
 		foreach ( $hosts as $host )
 		{
 			$query[] = sprintf( self::FORMAT[ 'node' ], $host );
+		}
+
+		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+	}
+	
+    public static function get_nodes_not_domain( $dom )
+	{
+		$query = [];
+
+		$hosts = [
+			LegalMain::get_main_host_production(),
+
+			ToolRobots::get_host(),
+
+			LegalMain::get_main_host(),
+		];
+
+		foreach ( $hosts as $host )
+		{
+			$query[] = sprintf( self::FORMAT[ 'not-domain' ], $host );
 		}
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
