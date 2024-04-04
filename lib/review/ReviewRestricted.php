@@ -314,9 +314,9 @@ class ReviewRestricted
 		return sprintf( $format, $current_language );
 	}
 
-    public static function get_nodes_domain_x_language( $dom, $format_domain, $format_language = '' )
+    public static function get_nodes_domain_x_language( $dom, $format_language = '' )
 	{
-		$query_parts = [];
+		$query = [];
 
 		$language = '';
 
@@ -329,71 +329,48 @@ class ReviewRestricted
 
 		foreach ( $hosts as $host )
 		{
-			$domain = sprintf( $format_domain, $host );
+			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
 
-			$query_parts[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
-		}
-
-		$query = '';
-
-		if ( !empty( $format_language ) )
-		{
-			$query = implode( '|', $query_parts );
-		}
-		else
-		{
-			$query = sprintf( self::FORMAT[ 'root' ], implode( '', $query_parts ) );
+			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_nodes_domain_x_language',
 
-			'format_domain' => $format_domain,
-
-			'format_language' => $format_language,
-
-			'query' => $query,
+			'query' => implode( '|', $query ),
         ] );
 
-		return LegalDOM::get_nodes( $dom, $query );
+		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
     public static function get_nodes_not_domain( $dom )
 	{
-		// $query = [];
+		$query = [];
 
-		// $hosts = self::get_hosts();
+		$hosts = self::get_hosts();
 
-		// foreach ( $hosts as $host )
-		// {
-		// 	$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
-		// }
+		foreach ( $hosts as $host )
+		{
+			$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
+		}
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_nodes_not_domain',
+
+			'query' => implode( '|', $query ),
         ] );
 
-		// return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
-
-		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
+		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
 	}
 
     public static function get_nodes_domain_and_language( $dom )
 	{
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_language',
-        ] );
-
-		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ], self::FORMAT[ 'contains' ] );
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ] );
 	}
 
     public static function get_nodes_domain_and_not_language( $dom )
 	{
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_domain_and_not_language',
-        ] );
-
-		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ], self::FORMAT[ 'not-contains' ] );
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
 	}
 
 	public static function get_nodes_anchor( $dom )
