@@ -214,7 +214,7 @@ class ReviewRestricted
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
 			LegalDebug::debug( [
-				'ReviewRestricted' => 'replace_domain_and_language',
+				'ReviewRestricted' => 'replace_domain_and_not_language',
 
 				'href' => $href,
 			] );
