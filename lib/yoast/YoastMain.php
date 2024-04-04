@@ -165,37 +165,37 @@ class YoastMain
     //     return $url;
     // }
 
-    public static function print()
-    {
-        $args = self::get();
+    // public static function print()
+    // {
+    //     $args = self::get();
 
-        echo '<title>' . $args['title'] . '</title>';
+    //     echo '<title>' . $args['title'] . '</title>';
 
-        foreach ( $args['meta'] as $key => $value )
-        {
-            echo '<meta name="' . $key . '" content="' . $value . '" />';
-        }
-    }
+    //     foreach ( $args['meta'] as $key => $value )
+    //     {
+    //         echo '<meta name="' . $key . '" content="' . $value . '" />';
+    //     }
+    // }
 
-    private static function get()
-    {
-        $post = get_post();
+    // private static function get()
+    // {
+    //     $post = get_post();
 
-        return [
-            'title' => YoastSEO()->meta->for_post( $post->ID )->title,
+    //     return [
+    //         'title' => YoastSEO()->meta->for_post( $post->ID )->title,
 
-            'meta' =>
-            [
-                'description' => YoastSEO()->meta->for_post( $post->ID )->description,
+    //         'meta' =>
+    //         [
+    //             'description' => YoastSEO()->meta->for_post( $post->ID )->description,
             
-                'keywords' => 'keywords',
+    //             'keywords' => 'keywords',
                 
-                'author' => 'author',
+    //             'author' => 'author',
 
-                'viewport' => 'width=device-width, initial-scale=1.0',
-            ]
-        ];
-    }
+    //             'viewport' => 'width=device-width, initial-scale=1.0',
+    //         ]
+    //     ];
+    // }
 
     // const PLACEHOLDER = [
     //     'billets-amount' => '{billets-amount}',
@@ -221,6 +221,12 @@ class YoastMain
     public static function get_seo_description()
     {
         $post = get_post();
+
+        LegalDebug::debug( [
+            'YoastMain' => 'get_seo_description',
+
+             'post' => $post,
+        ] );
 
         if ( $post )
         {
