@@ -264,6 +264,12 @@ class BaseFooter
 			}
 		}
 
+		LegalDebug::debug( [
+			'BaseFooter''parse_items',
+
+			'classes' => $classes,
+		] );
+
 		$item[ 'class' ] = implode( ' ', $classes );
 
 		return $item;
