@@ -81,12 +81,6 @@ class BaseFooter
 
 	public static function check_exception( $host )
 	{
-		// $url_host = parse_url( $url, PHP_URL_HOST );
-
-		// $intersect = array_intersect( self::HOST_EXCEPTION, [ $url_host ] );
-
-		// return empty( $intersect );
-
 		return in_array( $host, self::HOST_EXCEPTION );
     }
 
@@ -114,12 +108,6 @@ class BaseFooter
 			|| self::check_current_host( $host )
 
 			|| self::check_main_host( $host );
-		
-			// || str_contains( $url, LegalMain::get_main_host_production() )
-		
-			// || str_contains( $url, ToolRobots::get_host() )
-
-			// || str_contains( $url, LegalMain::get_main_host() );
 	}
 
 	public static function check_host( $url )

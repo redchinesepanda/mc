@@ -63,6 +63,27 @@ class ReviewRestricted
 		return false;
 	}
 
+	public static function check_item( $item )
+	{
+		$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+
+		return BaseFooter::check_host( $href )
+			
+			&& BaseFooter::check_language( $href );
+	}
+
+	public static function check_current_language( $item )
+	{
+		return !self::check_item( $item );
+	}
+
+	public static function filter_only_current_language( $items )
+	{
+		$handler = new self();
+
+		return array_filter( $items, [ $handler, 'check_current_language' ] );
+	}
+
 	public static function modify_anchors( $dom )
 	{
 		$nodes = self::get_nodes_anchor( $dom );
@@ -72,24 +93,28 @@ class ReviewRestricted
 			return false;
 		}
 
-		$restricted = ToolNotFound::get_restricted();
+		$nodes = self::filter_only_current_language( $nodes );
+
+		// $restricted = ToolNotFound::get_restricted();
 
 		foreach ( $nodes as $node )
 		{
-			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
+			
+			// $href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			foreach ( $restricted as $host => $languages )
-			{
-				foreach ( $languages as $language )
-				{
-					if ( self::replace_anchors( $href, $language, $host ) )
-					{
-						$result = true;
+			// foreach ( $restricted as $host => $languages )
+			// {
+			// 	foreach ( $languages as $language )
+			// 	{
+			// 		if ( self::replace_anchors( $href, $language, $host ) )
+			// 		{
+			// 			$result = true;
 		
-						break 2;
-					}
-				}
-			}
+			// 			break 2;
+			// 		}
+			// 	}
+			// }
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
