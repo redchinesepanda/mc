@@ -79,7 +79,7 @@ class BaseFooter
 	{
 		// return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
 
-		return !self::check_language_contains( $url )
+		return !self::check_language_contains( $url );
 	}
 
 	const HOST_EXTERNAL = [
