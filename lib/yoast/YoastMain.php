@@ -226,6 +226,8 @@ class YoastMain
             'YoastMain' => 'get_seo_description',
 
              'ID' => $post->ID,
+
+             'description' => YoastSEO()->meta->for_post( $post->ID )->description,
         ] );
 
         if ( $post )
