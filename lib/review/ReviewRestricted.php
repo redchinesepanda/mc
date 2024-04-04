@@ -95,19 +95,7 @@ class ReviewRestricted
 
 		$url_host = parse_url( $href, PHP_URL_HOST );
 
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'check_item',
-
-			'url_host' => $url_host,
-
-			'check_host' => BaseFooter::check_host( $href ),
-
-			// 'check_language' => BaseFooter::check_language( $href ),
-		] );
-
 		return BaseFooter::check_local( $url_host );
-			
-			// && BaseFooter::check_language( $href );
 	}
 
 	public static function check_current_language( $item )
@@ -133,26 +121,9 @@ class ReviewRestricted
 
 		$nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
 
-		// $restricted = ToolNotFound::get_restricted();
-
 		foreach ( $nodes as $node )
 		{
 			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
-			
-			// $href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
-
-			// foreach ( $restricted as $host => $languages )
-			// {
-			// 	foreach ( $languages as $language )
-			// 	{
-			// 		if ( self::replace_anchors( $href, $language, $host ) )
-			// 		{
-			// 			$result = true;
-		
-			// 			break 2;
-			// 		}
-			// 	}
-			// }
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
