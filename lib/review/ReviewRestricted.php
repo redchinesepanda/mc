@@ -40,7 +40,7 @@ class ReviewRestricted
 		{
 			$handler = new self();
 
-			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+			add_filter( 'mc_url_restricted', [ $handler, 'modify_href' ], 10, 2 );
 
 			if ( self::check_contains() )
 			{
@@ -53,7 +53,7 @@ class ReviewRestricted
 		'href' => 'href',
 	];
 
-	public static function replace_anchors( &$href, $language, $host )
+	public static function replace_href( &$href, $language, $host )
 	{
 		$pattern = sprintf( self::FORMAT[ 'anchor' ], $language );
 
@@ -71,7 +71,7 @@ class ReviewRestricted
 		return false;
 	}
 	
-	public static function replace_anchors( $href )
+	public static function modify_href( $href )
 	{
 		$restricted = ToolNotFound::get_restricted();
 
@@ -79,7 +79,7 @@ class ReviewRestricted
 		{
 			foreach ( $languages as $language )
 			{
-				if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+				if ( self::replace_href( $href, $language, $host ) )
 				{
 					break 2;
 				}
