@@ -265,7 +265,7 @@ class BaseFooter
 		}
 
 		LegalDebug::debug( [
-			'BaseFooter''parse_items',
+			'BaseFooter' => 'parse_items',
 
 			'classes' => $classes,
 		] );
