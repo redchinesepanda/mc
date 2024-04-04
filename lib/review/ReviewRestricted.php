@@ -155,7 +155,7 @@ class ReviewRestricted
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-		return BaseFooter::check_local( $url_host )
+		return BaseFooter::check_local( $href )
 		
 			&& self::check_not_language( $href );
 	}
