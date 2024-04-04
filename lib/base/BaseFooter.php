@@ -251,8 +251,6 @@ class BaseFooter
 					$classes[] = $post_class;
 				}
 			}
-			
-			// $classes = array_merge( $classes, $post->classes );
 		}
 
 		$item[ 'children' ] = [];
@@ -271,16 +269,6 @@ class BaseFooter
 				}
 			}
 		}
-
-		LegalDebug::debug( [
-			'BaseFooter' => 'parse_items',
-
-			'classes' => $classes,
-
-			'class_width' => $class_width,
-
-			'$post->classes' => $post->classes,
-		] );
 
 		$item[ 'class' ] = implode( ' ', $classes );
 
