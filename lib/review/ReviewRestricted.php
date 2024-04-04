@@ -295,6 +295,17 @@ class ReviewRestricted
 
 		'not-contains' => '[not(self::node()[contains(@href,"%s")])]',
 	];
+	
+    public static function get_hosts()
+	{
+		return [
+			LegalMain::get_main_host_production(),
+
+			ToolRobots::get_host(),
+
+			LegalMain::get_main_host(),
+		];
+	}
 
     public static function get_language( $format )
 	{
@@ -303,17 +314,22 @@ class ReviewRestricted
 		return sprintf( $format, $current_language );
 	}
 
-    public static function get_nodes_domain_x_language( $dom, $format = self::FORMAT[ 'contains' ] )
+    public static function get_nodes_domain_x_language( $dom, $format_domain, $format_language = '' )
 	{
 		$query = [];
 
-		$language = self::get_language( $format );
+		$language = '';
+
+		if ( !empty( $format ) )
+		{
+			$language = self::get_language( $format );
+		}
 
 		$hosts = self::get_hosts();
 
 		foreach ( $hosts as $host )
 		{
-			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
+			$domain = sprintf( $format_domain, $host );
 
 			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
@@ -327,56 +343,36 @@ class ReviewRestricted
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
-    public static function get_nodes_domain_and_language( $dom )
+    public static function get_nodes_not_domain( $dom )
 	{
 		// $query = [];
-
-		// $language = self::get_language( self::FORMAT[ 'contains' ] );
 
 		// $hosts = self::get_hosts();
 
 		// foreach ( $hosts as $host )
 		// {
-		// 	$domain = sprintf( self::FORMAT[ 'contains' ], $host );
-
-		// 	$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
+		// 	$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
 		// }
 
 		// LegalDebug::debug( [
-		// 	'ReviewRestricted' => 'get_nodes_domain_and_language',
+		// 	'ReviewRestricted' => 'get_nodes_not_domain',
 
 		// 	'query' => implode( '|', $query ),
         // ] );
 
-		// return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+		// return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
 
-		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ] );
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
+	}
+
+    public static function get_nodes_domain_and_language( $dom )
+	{
+		return self::get_nodes_domain_x_language( $dom,, self::FORMAT[ 'contains' ] self::FORMAT[ 'contains' ] );
 	}
 
     public static function get_nodes_domain_and_not_language( $dom )
 	{
-		// $query = [];
-
-		// $language = self::get_language( self::FORMAT[ 'not-contains' ] );
-
-		// $hosts = self::get_hosts();
-
-		// foreach ( $hosts as $host )
-		// {
-		// 	$domain = sprintf( self::FORMAT[ 'contains' ], $host );
-
-		// 	$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
-		// }
-
-		// LegalDebug::debug( [
-		// 	'ReviewRestricted' => 'get_nodes_domain_and_not_language',
-
-		// 	'query' => implode( '|', $query ),
-        // ] );
-
-		// return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
-
-		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'not-contains' ] );
+		return self::get_nodes_domain_x_language( $dom,, self::FORMAT[ 'contains' ] self::FORMAT[ 'not-contains' ] );
 	}
 
 	public static function get_nodes_anchor( $dom )
@@ -391,37 +387,6 @@ class ReviewRestricted
 		}
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
-	}
-	
-    public static function get_hosts()
-	{
-		return [
-			LegalMain::get_main_host_production(),
-
-			ToolRobots::get_host(),
-
-			LegalMain::get_main_host(),
-		];
-	}
-
-    public static function get_nodes_not_domain( $dom )
-	{
-		$query = [];
-
-		$hosts = self::get_hosts();
-
-		foreach ( $hosts as $host )
-		{
-			$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
-		}
-
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_not_domain',
-
-			'query' => implode( '|', $query ),
-        ] );
-
-		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
 	}
 
 	public static function modify_content( $content )
