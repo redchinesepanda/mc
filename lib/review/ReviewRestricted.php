@@ -229,7 +229,9 @@ class ReviewRestricted
 
 		// $filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_domain_and_not_language' ] );
 
-		// self::replace_filtered( $filtered, $dom );
+		$nodes_domain_and_not_language = self::get_nodes_domain_and_not_language( $dom );
+
+		self::replace_filtered( $nodes_domain_and_not_language, $dom );
 
 		// $filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_not_domain' ] );
 		
@@ -263,10 +265,44 @@ class ReviewRestricted
 		// [not(self::node()[contains(@href,"match.center")])]
 		// [not(self::node()[contains(@href,"old.match.center")])]
 
-		'not-domain' => '//a%s',
+		'root' => '//a%s',
 
-		'not-domain-condition' => '[not(self::node()[contains(@href,"%s")])]',
+		'folder' => '/%s/',
+
+		'contains' => '[href*="%s"]',
+
+		'not-contains' => '[not(self::node()[contains(@href,"%s")])]',
 	];
+
+    public static function get_nodes_domain_and_not_language( $dom )
+	{
+		$query = [];
+
+		$current_language = sprintf( self::FORMAT[ 'folder' ], WPMLMain::current_language() );
+
+		$not_language = sprintf( self::FORMAT[ 'not-contains' ], $current_language );
+
+		$hosts = [
+			LegalMain::get_main_host_production(),
+
+			ToolRobots::get_host(),
+
+			LegalMain::get_main_host(),
+		];
+
+		foreach ( $hosts as $host )
+		{
+			$query[] = sprintf( self::FORMAT[ 'contains' ], $host ) . $not_language;
+		}
+
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'get_nodes_domain_and_not_language',
+
+			'query' => implode( '|', $query ),
+        ] );
+
+		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '|', $query ) ) );
+	}
 
 	public static function get_nodes_anchor( $dom )
 	{
@@ -304,7 +340,7 @@ class ReviewRestricted
 
 		foreach ( $hosts as $host )
 		{
-			$query[] = sprintf( self::FORMAT[ 'not-domain-condition' ], $host );
+			$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
 		}
 
 		LegalDebug::debug( [
@@ -313,7 +349,7 @@ class ReviewRestricted
 			'query' => implode( '|', $query ),
         ] );
 
-		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'not-domain' ], implode( '', $query ) ) );
+		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
 	}
 
 	public static function modify_content( $content )
