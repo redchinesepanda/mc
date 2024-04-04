@@ -292,7 +292,9 @@ class ReviewRestricted
 
 		foreach ( $hosts as $host )
 		{
-			$query[] = sprintf( self::FORMAT[ 'contains' ], $host ) . $not_language;
+			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
+
+			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $not_language );
 		}
 
 		LegalDebug::debug( [
