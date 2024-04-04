@@ -303,7 +303,7 @@ class ReviewRestricted
 			'query' => implode( '|', $query ),
         ] );
 
-		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '|', $query ) ) );
+		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
 	public static function get_nodes_anchor( $dom )
