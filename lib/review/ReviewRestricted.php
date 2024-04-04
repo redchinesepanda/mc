@@ -129,7 +129,9 @@ class ReviewRestricted
 			LegalDebug::debug( [
 				'ReviewRestricted' => 'modify_filtered',
 
-				'href' => $href,
+				'old' => $node->getAttribute( self::ATTRIBUTE[ 'href' ] ),
+
+				'new' => $href,
 			] );
 		}
 	}
