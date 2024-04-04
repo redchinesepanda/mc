@@ -235,27 +235,23 @@ class BaseFooter
 			$item[ 'href' ] = apply_filters( 'mc_url_restricted', $post->url );
 		}
 
-		$class = [];
+		$classes = [];
 
 		if ( $class_width = get_field( self::ITEM[ 'width' ], $post->ID ) )
 		{
-			$class[] = $class_width;
+			$classes[] = $class_width;
 		}
-
-		// $item[ 'class' ] = ( $class ? $class : '' );
 
 		if ( !empty( $post->classes ) )
 		{
-			// $item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
-
-			$class = array_merge( $class, $post->classes );
+			$classes = array_merge( $classes, $post->classes );
 		}
 
 		$item[ 'children' ] = [];
 
 		if ( !empty( $children ) )
 		{
-			$class[] = self::CLASSES[ 'has-children' ];
+			$classes[] = self::CLASSES[ 'has-children' ];
 
 			$child_keys = array_keys( $children );
 
@@ -265,17 +261,10 @@ class BaseFooter
 				{
 					$item[ 'children' ][] = $child;
 				}
-				
-				// $item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
 			}
 		}
 
-		// if ( !empty( $item[ 'children' ] ) )
-		// {
-		// 	$item[ 'class' ] .= ' menu-item-has-children';
-		// }
-
-		$item[ 'class' ] = implode( ' ', $class );
+		$item[ 'class' ] = implode( ' ', $classes );
 
 		return $item;
 	}
