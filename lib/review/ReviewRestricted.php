@@ -118,24 +118,44 @@ class ReviewRestricted
 			&& self::check_language( $href );
 	}
 
-	public static function modify_all( $nodes )
+	public static function modify_filtered( $nodes )
 	{
-		$handler = new self();
-		
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filetr_doamin_and_language' ] );
-
-		foreach ( $filtered as $node )
+		foreach ( $nodes as $node )
 		{
 			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 
-			// LegalDebug::debug( [
-			// 	'ReviewRestricted' => 'modify_all',
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'modify_filtered',
 
-			// 	'href' => $href,
-			// ] );
+				'href' => $href,
+			] );
 		}
+	}
+
+	public static function modify_all( $nodes, $dom )
+	{
+		$handler = new self();
+		
+		// $filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filetr_doamin_and_language' ] );
+
+		$nodes_domain_and_language = self::get_nodes_domain_and_language( $dom );
+
+		self::modify_filtered( $nodes_domain_and_language );
+
+		// foreach ( $filtered as $node )
+		// {
+		// 	$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
+
+		// 	$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+
+		// 	// LegalDebug::debug( [
+		// 	// 	'ReviewRestricted' => 'modify_all',
+
+		// 	// 	'href' => $href,
+		// 	// ] );
+		// }
 	}
 
 	public static function filter_not_domain( $item )
@@ -251,7 +271,7 @@ class ReviewRestricted
 
 		self::replace_all( $nodes, $dom );
 
-		self::modify_all( $nodes );
+		self::modify_all( $nodes, $dom );
 
 		return true;
 	}
@@ -273,6 +293,38 @@ class ReviewRestricted
 
 		'not-contains' => '[not(self::node()[contains(@href,"%s")])]',
 	];
+
+    public static function get_nodes_domain_and_language( $dom )
+	{
+		$query = [];
+
+		$current_language = sprintf( self::FORMAT[ 'folder' ], WPMLMain::current_language() );
+
+		$not_language = sprintf( self::FORMAT[ 'contains' ], $current_language );
+
+		$hosts = [
+			LegalMain::get_main_host_production(),
+
+			ToolRobots::get_host(),
+
+			LegalMain::get_main_host(),
+		];
+
+		foreach ( $hosts as $host )
+		{
+			$domain = sprintf( self::FORMAT[ 'contains' ], $host );
+
+			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $not_language );
+		}
+
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'get_nodes_domain_and_language',
+
+			'query' => implode( '|', $query ),
+        ] );
+
+		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+	}
 
     public static function get_nodes_domain_and_not_language( $dom )
 	{
