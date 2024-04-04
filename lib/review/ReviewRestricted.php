@@ -77,9 +77,9 @@ class ReviewRestricted
 			'check_language' => BaseFooter::check_language( $href ),
 		] );
 
-		return BaseFooter::check_host( $href )
+		return BaseFooter::check_host( $href );
 			
-			&& BaseFooter::check_language( $href );
+			// && BaseFooter::check_language( $href );
 	}
 
 	public static function check_current_language( $item )
