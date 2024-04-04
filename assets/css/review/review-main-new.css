@@ -86,6 +86,13 @@
         margin-top: 24px;
     }
 
+    /* Width and Height */
+
+    .tcb-post-content iframe {
+        max-width: 300px;
+        height: auto;
+    }
+
     /* Review Typography */
 
     .tcb-post-content h1 {
@@ -258,6 +265,10 @@
 .tcb-post-content .legal-button {
 	border-radius: 50px;
 	border: 1px solid var( --Base-base-09 );
+}
+
+.tcb-post-content iframe {
+    border-radius: 12px;
 }
 
 /* Review Typography */
