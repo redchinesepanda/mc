@@ -94,6 +94,11 @@ class ReviewRestricted
 		return BaseFooter::check_local( parse_url( $href, PHP_URL_HOST ) );
 	}
 
+	public static function check_not_domain( $href )
+	{
+		return !self::check_domain( $href );
+	}
+
 	public static function check_language( $href )
 	{
 		return BaseFooter::check_language_contains( parse_url( $href, PHP_URL_PATH ) );
@@ -104,7 +109,7 @@ class ReviewRestricted
 		return !self::check_language( $href );
 	}
 
-	public static function check_doamin_and_language( $item )
+	public static function filetr_doamin_and_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 		
@@ -113,11 +118,11 @@ class ReviewRestricted
 			&& self::check_language( $href );
 	}
 
-	public static function replace_domain_and_language( $nodes )
+	public static function modify_domain_and_language( $nodes )
 	{
 		$handler = new self();
 		
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_doamin_and_language' ] );
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filetr_doamin_and_language' ] );
 
 		foreach ( $filtered as $node )
 		{
@@ -126,19 +131,34 @@ class ReviewRestricted
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 
 			// LegalDebug::debug( [
-			// 	'ReviewRestricted' => 'replace_domain_and_language',
+			// 	'ReviewRestricted' => 'modify_domain_and_language',
 
 			// 	'href' => $href,
 			// ] );
 		}
 	}
 
-	public static function check_domain_and_not_language( $item )
+	public static function filter_not_domain( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
 		LegalDebug::debug( [
-			'ReviewRestricted' => 'check_domain_and_not_language',
+			'ReviewRestricted' => 'filter_not_domain',
+
+			'href' => $href,
+
+			'check_not_domain' => self::check_not_domain( $href ),
+        ] );
+
+		return self::check_not_domain( $href );
+	}
+
+	public static function filter_domain_and_not_language( $item )
+	{
+		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
+
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'filter_domain_and_not_language',
 
 			'href' => $href,
 
@@ -185,13 +205,9 @@ class ReviewRestricted
 		return $item;
 	}
 
-	public static function replace_domain_and_not_language( $nodes, $dom )
+	public static function replace_filtered( $nodes, $dom )
 	{
-		$handler = new self();
-
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_domain_and_not_language' ] );
-
-		foreach ( $filtered as $node )
+		foreach ( $nodes as $node )
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
@@ -206,6 +222,34 @@ class ReviewRestricted
 			self::replace_node( $item, $node );
 		}
 	}
+	
+	public static function replace_domain_and_not_language( $nodes, $dom )
+	{
+		$handler = new self();
+
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_domain_and_not_language' ] );
+
+		self::replace_filtered( $filtered, $dom );
+
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'filter_not_domain' ] );
+
+		self::replace_filtered( $filtered, $dom );
+
+		// foreach ( $filtered as $node )
+		// {
+		// 	$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+
+		// 	// LegalDebug::debug( [
+		// 	// 	'ReviewRestricted' => 'replace_domain_and_not_language',
+
+		// 	// 	'href' => $href,
+		// 	// ] );
+
+		// 	$item = self::get_item( $node, $dom );
+
+		// 	self::replace_node( $item, $node );
+		// }
+	}
 
 	public static function modify_anchors( $dom )
 	{
@@ -218,7 +262,7 @@ class ReviewRestricted
 
 		self::replace_domain_and_not_language( $nodes, $dom );
 
-		self::replace_domain_and_language( $nodes );
+		self::modify_domain_and_language( $nodes );
 
 		return true;
 	}
@@ -228,8 +272,6 @@ class ReviewRestricted
 		
 		'node' => '//a[contains(@href,"%s")]',
 	];
-
-
 
 	public static function get_nodes_anchor( $dom )
 	{
