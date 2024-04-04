@@ -174,16 +174,16 @@ class ReviewRestricted
 	{
 		try
 		{
-			$replace->parentNode->replaceChild( $new, $old );
+			$old->parentNode->replaceChild( $new, $old );
 		}
-		catch ( DOMException $e )
+		catch ( DOMException $exception )
 		{
 			LegalDebug::debug( [
 				'ReviewRestricted' => 'replace_node',
 
-				'node' => substr( $old->textContent, 0, 30 ),
+				'textContent' => substr( $old->textContent, 0, 30 ),
 
-				'message' => $e->getMessage(),
+				'getMessage' => $exception->getMessage(),
 			] );
 		}
 	}
