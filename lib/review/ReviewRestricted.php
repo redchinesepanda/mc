@@ -351,7 +351,9 @@ class ReviewRestricted
 	{
 		$query = [];
 
-		$hosts = self::get_hosts();
+		// $hosts = self::get_hosts();
+		
+		$hosts = BaseFooter::HOST_EXTERNAL;
 
 		foreach ( $hosts as $host )
 		{
