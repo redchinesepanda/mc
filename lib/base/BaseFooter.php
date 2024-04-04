@@ -211,6 +211,10 @@ class BaseFooter
             && self::check_children( $children );
 	}
 
+	const CLASSES = [
+		'has-children' => 'menu-item-has-children',
+	];
+
 	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
@@ -231,19 +235,28 @@ class BaseFooter
 			$item[ 'href' ] = apply_filters( 'mc_url_restricted', $post->url );
 		}
 
-		$class = get_field( self::ITEM[ 'width' ], $post->ID );
+		$class = [];
 
-		$item[ 'class' ] = ( $class ? $class : '' );
+		if ( $class_width = get_field( self::ITEM[ 'width' ], $post->ID ) )
+		{
+			$class[] = $class_width;
+		}
+
+		// $item[ 'class' ] = ( $class ? $class : '' );
 
 		if ( !empty( $post->classes ) )
 		{
-			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
+			// $item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
+
+			$class = array_merge( $class, $post->classes );
 		}
-		
-		
+
+		$item[ 'children' ] = [];
 
 		if ( !empty( $children ) )
 		{
+			$class[] = self::CLASSES[ 'has-children' ];
+
 			$child_keys = array_keys( $children );
 
 			foreach ( $child_keys as $child_key)
@@ -257,10 +270,12 @@ class BaseFooter
 			}
 		}
 
-		if ( !empty( $item[ 'children' ] ) )
-		{
-			$item[ 'class' ] .= ' menu-item-has-children';
-		}
+		// if ( !empty( $item[ 'children' ] ) )
+		// {
+		// 	$item[ 'class' ] .= ' menu-item-has-children';
+		// }
+
+		$item[ 'class' ] = implode( ' ', $class );
 
 		return $item;
 	}
