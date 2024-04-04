@@ -372,7 +372,7 @@ class ReviewRestricted
 
     public static function get_nodes_domain_and_not_language( $dom )
 	{
-		return self::get_nodes_domain_x_language( $dom,, self::FORMAT[ 'contains' ] self::FORMAT[ 'not-contains' ] );
+		return self::get_nodes_domain_x_language( $dom, self::FORMAT[ 'contains' ], self::FORMAT[ 'not-contains' ] );
 	}
 
 	public static function get_nodes_anchor( $dom )
