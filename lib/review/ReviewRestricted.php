@@ -235,11 +235,11 @@ class ReviewRestricted
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			// LegalDebug::debug( [
-			// 	'ReviewRestricted' => 'replace_filtered',
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'replace_filtered',
 
-			// 	'href' => $href,
-			// ] );
+				'href' => $href,
+			] );
 
 			$item = self::get_item( $node, $dom );
 
