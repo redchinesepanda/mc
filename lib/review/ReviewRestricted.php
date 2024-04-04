@@ -65,7 +65,7 @@ class ReviewRestricted
 
 	public static function check_item( $item )
 	{
-		$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'check_item',
