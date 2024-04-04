@@ -220,7 +220,9 @@ class YoastMain
 
     public static function check()
     {
-        return class_exists( 'YoastSEO' );
+        // return class_exists( 'YoastSEO' );
+        
+        return function_exists( 'YoastSEO' );
     }
 
     public static function get_seo_description()
