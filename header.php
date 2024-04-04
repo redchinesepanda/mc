@@ -26,7 +26,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- manual end -->
 		<!-- yoast start -->
 		<title><?php echo YoastMain::get_seo_title() ?></title>
-		<meta name="description" content="<?php echo YoastMain::get_seo_description(); ?>">
 		<!-- yoast end -->
 		<!-- wp_head start -->
 		<?php echo TemplateMain::wp_head(); ?>
