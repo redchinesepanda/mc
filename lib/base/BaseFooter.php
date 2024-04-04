@@ -244,7 +244,15 @@ class BaseFooter
 
 		if ( !empty( $post->classes ) )
 		{
-			$classes = array_merge( $classes, $post->classes );
+			foreach ( $post->classes as $post_class )
+			{
+				if ( !empty( $post_class ) )
+				{
+					$classes[] = $post_class;
+				}
+			}
+			
+			// $classes = array_merge( $classes, $post->classes );
 		}
 
 		$item[ 'children' ] = [];
