@@ -318,11 +318,15 @@ class ReviewRestricted
 	{
 		$query = [];
 
+		$glue = '|'
+
 		$language = '';
 
 		if ( !empty( $format_language ) )
 		{
 			$language = self::get_language( $format_language );
+
+			$glue = '';
 		}
 
 		$hosts = self::get_hosts();
@@ -344,7 +348,7 @@ class ReviewRestricted
 			'query' => implode( '|', $query ),
         ] );
 
-		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+		return LegalDOM::get_nodes( $dom, implode( $glue, $query ) );
 	}
 
     public static function get_nodes_not_domain( $dom )
