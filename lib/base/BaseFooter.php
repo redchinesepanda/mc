@@ -138,6 +138,8 @@ class BaseFooter
 		LegalDebug::debug( [
 			'BaseFooter' => 'check_item',
 
+			'url' => $item->url,
+
 			'check_type' => self::check_type( $item->type ),
 
 			'check_host' => self::check_host( $item->url ),
