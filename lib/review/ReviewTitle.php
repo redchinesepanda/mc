@@ -156,6 +156,8 @@ class ReviewTitle
 
 		'date-year' => 'legal-header-year',
 
+		'date-month' => 'legal-header-month',
+
 		'date-month-year' => 'legal-header-month-year',
 	];
 
