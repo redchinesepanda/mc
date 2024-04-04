@@ -365,7 +365,9 @@ class ReviewRestricted
 
 		foreach ( $hosts as $host )
 		{
-			$query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
+			// $query[] = sprintf( self::FORMAT[ 'not-contains' ], $host );
+			
+			$query[] = sprintf( self::FORMAT[ 'contains' ], $host );
 		}
 
 		LegalDebug::debug( [
