@@ -135,7 +135,7 @@ class ReviewRestricted
 	{
 		$handler = new self();
 		
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_current_language' ] );
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_doamin_and_language' ] );
 
 		foreach ( $filtered as $node )
 		{
