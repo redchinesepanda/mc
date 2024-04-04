@@ -103,7 +103,7 @@ class ReviewRestricted
 			return false;
 		}
 
-		$nodes = self::filter_only_current_language( $nodes );
+		$nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
 
 		// $restricted = ToolNotFound::get_restricted();
 
