@@ -143,11 +143,11 @@ class ReviewRestricted
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 
-			LegalDebug::debug( [
-				'ReviewRestricted' => 'replace_domain_and_language',
+			// LegalDebug::debug( [
+			// 	'ReviewRestricted' => 'replace_domain_and_language',
 
-				'href' => $href,
-			] );
+			// 	'href' => $href,
+			// ] );
 		}
 	}
 
@@ -213,11 +213,11 @@ class ReviewRestricted
 		{
 			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-			LegalDebug::debug( [
-				'ReviewRestricted' => 'replace_domain_and_not_language',
+			// LegalDebug::debug( [
+			// 	'ReviewRestricted' => 'replace_domain_and_not_language',
 
-				'href' => $href,
-			] );
+			// 	'href' => $href,
+			// ] );
 
 			$item = self::get_item( $node, $dom );
 
