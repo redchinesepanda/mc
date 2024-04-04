@@ -195,8 +195,8 @@ class ReviewTitle
 
 	const FORMAT = [
         self::CLASSES[ 'date-year' ] => 'y',
-
-        // self::CLASSES[ 'date-month-year' ] => 'MMMM y',
+        
+		self::CLASSES[ 'date-month' ] => 'LLLL',
         
 		self::CLASSES[ 'date-month-year' ] => 'LLLL y',
     ];

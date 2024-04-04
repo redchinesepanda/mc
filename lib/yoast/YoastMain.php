@@ -62,6 +62,8 @@ class YoastMain
 
         'year' => '%%YEAR%%',
 
+        'month' => '%%MONTH%%',
+
         'month-year' => '%%MONTH_YEAR%%',
     ];
 
@@ -72,6 +74,8 @@ class YoastMain
         wpseo_register_var_replacement( self::REPLACEVAR[ 'billets-amount' ], [ $handler, 'retrieve_billetsamount_replacement' ], 'basic', '[MC] This is a current [legal-tabs] unique billets amount' );
 
         wpseo_register_var_replacement( self::REPLACEVAR[ 'year' ], [ $handler, 'retrieve_year' ], 'basic', '[MC] This is a current year' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'month' ], [ $handler, 'retrieve_month' ], 'basic', '[MC] This is a current month' );
 
         wpseo_register_var_replacement( self::REPLACEVAR[ 'month-year' ], [ $handler, 'retrieve_month_year' ], 'basic', '[MC] This is a current month and year' );
         
@@ -86,6 +90,13 @@ class YoastMain
     public static function retrieve_year()
     {
         $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-year' ] ];
+
+        return ReviewTitle::format_date( $format );
+    }
+
+    public static function retrieve_month()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-month' ] ];
 
         return ReviewTitle::format_date( $format );
     }
