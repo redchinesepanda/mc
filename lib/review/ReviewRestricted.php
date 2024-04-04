@@ -49,10 +49,6 @@ class ReviewRestricted
 		}
 	}
 
-	const ATTRIBUTE = [
-		'href' => 'href',
-	];
-
 	public static function replace_href( &$href, $language, $host )
 	{
 		$pattern = sprintf( self::FORMAT[ 'anchor' ], $language );
@@ -89,25 +85,79 @@ class ReviewRestricted
 		return $href;
 	}
 
-	public static function check_item( $item )
+	const ATTRIBUTE = [
+		'href' => 'href',
+	];
+
+	// public static function check_item( $item )
+	
+	public static function check_domain( $href )
+	{
+		return BaseFooter::check_local( parse_url( $href, PHP_URL_HOST ) );
+	}
+
+	public static function check_language( $href )
+	{
+		return BaseFooter::check_language_contains( parse_url( $href, PHP_URL_PATH ) );
+	}
+
+	public static function check_doamin_and_language( $item )
+	{
+		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
+
+		// $url_host = parse_url( $href, PHP_URL_HOST );
+
+		// return BaseFooter::check_local( $url_host );
+		
+		return self::check_domain( $href )
+		
+			&& self::check_language( $href );
+	}
+
+	// public static function check_current_language( $item )
+	// {
+	// 	return self::check_item( $item );
+	// }
+
+	// public static function filter_only_current_language( $items )
+	// {
+	// 	$handler = new self();
+
+	// 	return array_filter( $items, [ $handler, 'check_current_language' ] );
+	// }
+
+	public static function replace_domain_and_language( $nodes )
+	{
+		$handler = new self();
+		
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_current_language' ] );
+
+		foreach ( $filtered as $node )
+		{
+			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
+
+			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+		}
+	}
+
+	public static function check_host_and_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
 		$url_host = parse_url( $href, PHP_URL_HOST );
 
-		return BaseFooter::check_local( $url_host );
+		$url_path = parse_url( $href, PHP_URL_PATH );
+
+		return BaseFooter::check_local( $url_host )
+		
+			&& self::check_language( $url_path );
 	}
 
-	public static function check_current_language( $item )
-	{
-		return self::check_item( $item );
-	}
-
-	public static function filter_only_current_language( $items )
+	public static function remove_anchors( $nodes )
 	{
 		$handler = new self();
 
-		return array_filter( $items, [ $handler, 'check_current_language' ] );
+		$filtered_nodes = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_language' ] );
 	}
 
 	public static function modify_anchors( $dom )
@@ -119,14 +169,18 @@ class ReviewRestricted
 			return false;
 		}
 
-		$nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
+		self::replace_domain_and_language( $nodes );
 
-		foreach ( $nodes as $node )
-		{
-			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
+		// $nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
 
-			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
-		}
+		// foreach ( $nodes as $node )
+		// {
+		// 	$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
+
+		// 	$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+		// }
+
+		self::remove_anchors( $nodes );
 
 		return true;
 	}

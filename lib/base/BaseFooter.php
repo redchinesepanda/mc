@@ -70,9 +70,16 @@ class BaseFooter
 		'anchor' => '/%s/',
 	];
 
-	public static function check_language( $url )
+	public static function check_language_contains( $url )
 	{
-		return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+		return str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+	}
+
+	public static function check_language_not_contains( $url )
+	{
+		// return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+
+		return !self::check_language_contains( $url )
 	}
 
 	const HOST_EXTERNAL = [
@@ -139,7 +146,7 @@ class BaseFooter
 		
 			&& self::check_host( $item->url )
 			
-			&& self::check_language( $item->url );
+			&& self::check_language_not_contains( $item->url );
 	}
 
 	public static function check_current_language( $item )
