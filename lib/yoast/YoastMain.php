@@ -228,7 +228,7 @@ class YoastMain
         LegalDebug::debug( [
             'YoastMain' => 'get_seo_description',
 
-            self::check() => 'Yoast SEO is active',
+            'check' => self::check(),
         ] );
 
         $post = get_post();
