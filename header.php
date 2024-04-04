@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
 		<!-- manual end -->
 		<!-- yoast start -->
-		<!-- <title><?php echo YoastMain::get_seo_title() ?></title> -->
+		<title><?php echo YoastMain::get_seo_title() ?></title>
 		<!-- yoast end -->
 		<!-- wp_head start -->
 		<?php echo TemplateMain::wp_head(); ?>
