@@ -259,7 +259,13 @@ class ReviewRestricted
 		
 		'node' => '//a[contains(@href,"%s")]',
 
-		'not-domain' => './/a[not(self::node()[contains(@href,"%s")])]'
+		// .//a
+		// [not(self::node()[contains(@href,"match.center")])]
+		// [not(self::node()[contains(@href,"old.match.center")])]
+
+		'not-domain' => '//a%s',
+
+		'not-domain-condition' => '[not(self::node()[contains(@href,"%s")])]',
 	];
 
 	public static function get_nodes_anchor( $dom )
@@ -298,7 +304,7 @@ class ReviewRestricted
 
 		foreach ( $hosts as $host )
 		{
-			$query[] = sprintf( self::FORMAT[ 'not-domain' ], $host );
+			$query[] = sprintf( self::FORMAT[ 'not-domain-condition' ], $host );
 		}
 
 		LegalDebug::debug( [
@@ -307,7 +313,7 @@ class ReviewRestricted
 			'query' => implode( '|', $query ),
         ] );
 
-		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'not-domain' ], implode( '', $query ) ) );
 	}
 
 	public static function modify_content( $content )
