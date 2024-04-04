@@ -334,6 +334,12 @@ class ReviewRestricted
 			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'get_nodes_domain_x_language',
+
+			'query' => implode( '|', $query ),
+		] );
+
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
