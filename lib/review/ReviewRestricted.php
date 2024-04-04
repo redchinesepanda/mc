@@ -122,6 +122,12 @@ class ReviewRestricted
 	{
 		foreach ( $nodes as $node )
 		{
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'modify_filtered',
+
+				'getAttribute' => $node->getAttribute( self::ATTRIBUTE[ 'href' ] ),
+			] );
+
 			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
@@ -129,9 +135,7 @@ class ReviewRestricted
 			LegalDebug::debug( [
 				'ReviewRestricted' => 'modify_filtered',
 
-				'old' => $node->getAttribute( self::ATTRIBUTE[ 'href' ] ),
-
-				'new' => $href,
+				'href' => $href,
 			] );
 		}
 	}
