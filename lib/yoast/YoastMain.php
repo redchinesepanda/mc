@@ -90,7 +90,7 @@ class YoastMain
         return ReviewTitle::format_date( $format );
     }
 
-    public static function retrieve_year()
+    public static function retrieve_month_year()
     {
         $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-month-year' ] ];
 
