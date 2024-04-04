@@ -77,8 +77,6 @@ class BaseFooter
 
 	public static function check_language_not_contains( $url )
 	{
-		// return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
-
 		return !self::check_language_contains( $url );
 	}
 

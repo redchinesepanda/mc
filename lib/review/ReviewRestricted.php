@@ -89,8 +89,6 @@ class ReviewRestricted
 		'href' => 'href',
 	];
 
-	// public static function check_item( $item )
-	
 	public static function check_domain( $href )
 	{
 		return BaseFooter::check_local( parse_url( $href, PHP_URL_HOST ) );
@@ -109,27 +107,11 @@ class ReviewRestricted
 	public static function check_doamin_and_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
-
-		// $url_host = parse_url( $href, PHP_URL_HOST );
-
-		// return BaseFooter::check_local( $url_host );
 		
 		return self::check_domain( $href )
 		
 			&& self::check_language( $href );
 	}
-
-	// public static function check_current_language( $item )
-	// {
-	// 	return self::check_item( $item );
-	// }
-
-	// public static function filter_only_current_language( $items )
-	// {
-	// 	$handler = new self();
-
-	// 	return array_filter( $items, [ $handler, 'check_current_language' ] );
-	// }
 
 	public static function replace_domain_and_language( $nodes )
 	{
@@ -238,15 +220,6 @@ class ReviewRestricted
 
 		self::replace_domain_and_language( $nodes );
 
-		// $nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
-
-		// foreach ( $nodes as $node )
-		// {
-		// 	$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
-
-		// 	$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
-		// }
-
 		return true;
 	}
 
@@ -256,15 +229,32 @@ class ReviewRestricted
 		'node' => '//a[contains(@href,"%s")]',
 	];
 
+
+
 	public static function get_nodes_anchor( $dom )
 	{
 		$restricted = ToolNotFound::get_restricted_languages_all();
 
 		$query = [];
 		
-		foreach ( $restricted as $language )
+		// foreach ( $restricted as $language )
+		// {
+		// 	$query[] = sprintf( self::FORMAT[ 'node' ], $language );
+		// }
+
+		$hosts = [
+			LegalMain::get_main_host_production(),
+
+			ToolRobots::get_host(),
+
+			LegalMain::get_main_host(),
+
+			...BaseFooter::HOST_EXTERNAL,
+		];
+
+		foreach ( $hosts as $host )
 		{
-			$query[] = sprintf( self::FORMAT[ 'node' ], $language );
+			$query[] = sprintf( self::FORMAT[ 'node' ], $host );
 		}
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
