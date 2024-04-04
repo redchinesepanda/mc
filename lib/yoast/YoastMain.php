@@ -225,7 +225,7 @@ class YoastMain
         LegalDebug::debug( [
             'YoastMain' => 'get_seo_description',
 
-             'post' => $post,
+             'ID' => $post->ID,
         ] );
 
         if ( $post )
