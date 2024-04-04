@@ -207,12 +207,12 @@ class YoastMain
 
         if ( $post )
         {
-            if ( !LegalMain::check_plugins() )
+            if ( self::check() )
             {
-                return $post->post_title;
+                return YoastSEO()->meta->for_post( $post->ID )->title;
             }
 
-            return YoastSEO()->meta->for_post( $post->ID )->title;
+            return $post->post_title;
         }
 
         return '';
@@ -220,24 +220,19 @@ class YoastMain
 
     public static function check()
     {
-        // return class_exists( 'YoastSEO' );
-        
         return function_exists( 'YoastSEO' );
     }
 
     public static function get_seo_description()
     {
-        LegalDebug::debug( [
-            'YoastMain' => 'get_seo_description',
-
-            'check' => self::check(),
-        ] );
-
-        $post = get_post();
-
-        if ( $post )
+        if ( self::check() )
         {
-            return YoastSEO()->meta->for_post( $post->ID )->description;
+            $post = get_post();
+    
+            if ( $post )
+            {
+                return YoastSEO()->meta->for_post( $post->ID )->description;
+            }
         }
 
         return '';
