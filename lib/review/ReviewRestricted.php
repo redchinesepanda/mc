@@ -136,7 +136,9 @@ class ReviewRestricted
 		}
 	}
 
-	public static function modify_all( $nodes, $dom )
+	// public static function modify_all( $nodes, $dom )
+	
+	public static function modify_all( $dom )
 	{
 		$handler = new self();
 		
@@ -245,7 +247,9 @@ class ReviewRestricted
 		}
 	}
 	
-	public static function replace_all( $nodes, $dom )
+	// public static function replace_all( $nodes, $dom )
+	
+	public static function replace_all( $dom )
 	{
 		$handler = new self();
 
@@ -271,9 +275,13 @@ class ReviewRestricted
 		// 	return false;
 		// }
 
-		self::replace_all( $nodes, $dom );
+		// self::replace_all( $nodes, $dom );
 
-		self::modify_all( $nodes, $dom );
+		// self::modify_all( $nodes, $dom );
+		
+		self::replace_all( $dom );
+
+		self::modify_all( $dom );
 
 		return true;
 	}
