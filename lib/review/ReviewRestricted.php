@@ -320,9 +320,9 @@ class ReviewRestricted
 
 		$language = '';
 
-		if ( !empty( $format ) )
+		if ( !empty( $format_language ) )
 		{
-			$language = self::get_language( $format );
+			$language = self::get_language( $format_language );
 		}
 
 		$hosts = self::get_hosts();
@@ -336,6 +336,10 @@ class ReviewRestricted
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_nodes_domain_x_language',
+
+			'format_domain' => $format_domain,
+
+			'format_language' => $format_language,
 
 			'query' => implode( '|', $query ),
         ] );
