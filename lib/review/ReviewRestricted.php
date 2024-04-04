@@ -338,11 +338,11 @@ class ReviewRestricted
 
 		if ( !empty( $format_language ) )
 		{
-			$query = LegalDOM::get_nodes( $dom, implode( '|', $query_parts ) );
+			$query = implode( '|', $query_parts );
 		}
 		else
 		{
-			$query = LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query_parts ) ) );
+			$query = sprintf( self::FORMAT[ 'root' ], implode( '', $query_parts ) );
 		}
 
 		LegalDebug::debug( [
@@ -355,7 +355,7 @@ class ReviewRestricted
 			'query' => $query,
         ] );
 
-		return $query;
+		return LegalDOM::get_nodes( $dom, $query );
 	}
 
     public static function get_nodes_not_domain( $dom )
