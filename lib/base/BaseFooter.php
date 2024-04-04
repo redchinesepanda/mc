@@ -154,23 +154,23 @@ class BaseFooter
 		return array_filter( $items, [ $handler, 'check_current_language' ] );
 	}
 
-	public static function replace_anchors( $href )
-	{
-		$restricted = ToolNotFound::get_restricted();
+	// public static function replace_anchors( $href )
+	// {
+	// 	$restricted = ToolNotFound::get_restricted();
 
-		foreach ( $restricted as $host => $languages )
-		{
-			foreach ( $languages as $language )
-			{
-				if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
-				{
-					break 2;
-				}
-			}
-		}
+	// 	foreach ( $restricted as $host => $languages )
+	// 	{
+	// 		foreach ( $languages as $language )
+	// 		{
+	// 			if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+	// 			{
+	// 				break 2;
+	// 			}
+	// 		}
+	// 	}
 
-		return $href;
-	}
+	// 	return $href;
+	// }
 
 	const LOCATION = 'legal-footer';
 

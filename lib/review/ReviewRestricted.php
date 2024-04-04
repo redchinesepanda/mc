@@ -24,20 +24,28 @@ class ReviewRestricted
         return $result;
     }
 
-	public static function check_register()
+	public static function check_contains()
 	{
-		return ToolNotFound::check_domain_restricted()
-		
-			&& self::check_contains_restricted_anchors();
+		return self::check_contains_restricted_anchors();
+	}
+
+	public static function check_restricted()
+	{
+		return ToolNotFound::check_domain_restricted();
 	}
 
 	public static function register()
 	{
-		if ( self::check_register() )
+		if ( self::check_restricted() )
 		{
 			$handler = new self();
-	
-			add_action( 'the_content', [ $handler, 'modify_content' ] );
+
+			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+
+			if ( self::check_contains() )
+			{
+				add_action( 'the_content', [ $handler, 'modify_content' ] );
+			}
 		}
 	}
 
@@ -61,6 +69,24 @@ class ReviewRestricted
 		}
 
 		return false;
+	}
+	
+	public static function replace_anchors( $href )
+	{
+		$restricted = ToolNotFound::get_restricted();
+
+		foreach ( $restricted as $host => $languages )
+		{
+			foreach ( $languages as $language )
+			{
+				if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+				{
+					break 2;
+				}
+			}
+		}
+
+		return $href;
 	}
 
 	public static function check_item( $item )
