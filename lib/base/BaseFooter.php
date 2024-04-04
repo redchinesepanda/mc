@@ -135,6 +135,16 @@ class BaseFooter
 
 	public static function check_item( $item )
 	{
+		LegalDebug::debug( [
+			'BaseFooter' => 'check_item',
+
+			'check_type' => self::check_type( $item->type ),
+
+			'check_host' => self::check_host( $item->url ),
+
+			'check_language' => self::check_language( $item->url ),
+		] );
+
 		return self::check_type( $item->type )
 		
 			&& self::check_host( $item->url )
