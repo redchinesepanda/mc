@@ -334,6 +334,17 @@ class ReviewRestricted
 			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
+		$query = '';
+
+		if ( !empty( $format_language ) )
+		{
+			$query = LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+		}
+		else
+		{
+			$query = LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
+		}
+
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_nodes_domain_x_language',
 
@@ -341,15 +352,10 @@ class ReviewRestricted
 
 			'format_language' => $format_language,
 
-			'query' => implode( '|', $query ),
+			'query' => $query,
         ] );
 
-		if ( !empty( $format_language ) )
-		{
-			return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
-		}
-
-		return LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
+		return $query;
 	}
 
     public static function get_nodes_not_domain( $dom )
