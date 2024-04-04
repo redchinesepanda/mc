@@ -2,6 +2,28 @@
 
 class ReviewRestricted
 {
+	public static function check_contains_restricted_anchors()
+    {
+		$result = false;
+
+		$restricted = ToolNotFound::get_restricted();
+
+		foreach ( $restricted as $host => $languages )
+		{
+			foreach ( $languages as $language )
+			{
+				if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
+				{
+					$result = true;
+	
+					break 2;
+				}
+			}
+		}
+
+        return $result;
+    }
+
 	public static function check_register()
 	{
 		return ToolNotFound::check_domain_restricted()
@@ -69,14 +91,6 @@ class ReviewRestricted
 				}
 			}
 
-			// foreach ( $restricted as $host => $language )
-			// {
-			// 	if ( self::replace_anchors( $href, $language, $host ) )
-			// 	{
-			// 		break;
-			// 	}
-			// }
-
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
 
@@ -91,13 +105,9 @@ class ReviewRestricted
 
 	public static function get_nodes_anchor( $dom )
 	{
-		// $restricted = ToolNotFound::get_restricted();
-		
 		$restricted = ToolNotFound::get_restricted_languages_all();
 
 		$query = [];
-
-		// foreach ( $restricted as $host => $language )
 		
 		foreach ( $restricted as $language )
 		{
@@ -106,35 +116,6 @@ class ReviewRestricted
 
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
-
-	public static function check_contains_restricted_anchors()
-    {
-		$result = false;
-
-		$restricted = ToolNotFound::get_restricted();
-
-		foreach ( $restricted as $host => $languages )
-		{
-			foreach ( $languages as $language )
-			{
-				if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
-				{
-					$result = true;
-	
-					break 2;
-				}
-			}
-
-			// if ( LegalComponents::check_contains( sprintf( self::FORMAT[ 'anchor' ], $language ) ) )
-			// {
-			// 	$result = true;
-
-			// 	break;
-			// }
-		}
-
-        return $result;
-    } 
 
 	public static function modify_content( $content )
     {

@@ -58,8 +58,6 @@ class BaseFooter
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_filter( 'wp_nav_menu_objects', [ $handler, 'image' ], 10, 2 );
-
 		if ( self::check_register() )
 		{
 			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
@@ -72,42 +70,77 @@ class BaseFooter
 		'anchor' => '/%s/',
 	];
 
-	public static function check_language( $item )
+	public static function check_language( $url )
 	{
-		return !str_contains( $item->url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+		return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
 	}
 
-	public static function check_contains( $item )
+	const HOST_EXCEPTION = [
+		'www.ukclubsport.com',
+	];
+
+	public static function check_exception( $host )
 	{
-		return str_contains( $item->url, LegalMain::get_main_host_production() )
+		// $url_host = parse_url( $url, PHP_URL_HOST );
+
+		// $intersect = array_intersect( self::HOST_EXCEPTION, [ $url_host ] );
+
+		// return empty( $intersect );
+
+		return in_array( $host, self::HOST_EXCEPTION );
+    }
+
+	public static function check_main_host_production( $host )
+	{
+		return $host == LegalMain::get_main_host_production();
+	}
+
+	public static function check_current_host( $host )
+	{
+		return $host == ToolRobots::get_host();
+	}
+
+	public static function check_main_host( $host )
+	{
+		return $host == LegalMain::get_main_host();
+	}
+
+	public static function check_contains( $host )
+	{
+		return self::check_exception( $host )
+
+			|| self::check_main_host_production( $host )
+
+			|| self::check_current_host( $host )
+
+			|| self::check_main_host( $host );
 		
-			|| str_contains( $item->url, ToolRobots::get_host() )
+			// || str_contains( $url, LegalMain::get_main_host_production() )
+		
+			// || str_contains( $url, ToolRobots::get_host() )
 
-			|| str_contains( $item->url, LegalMain::get_main_host() );
+			// || str_contains( $url, LegalMain::get_main_host() );
 	}
 
-	public static function check_host( $item )
+	public static function check_host( $url )
 	{
-		return self::check_contains( $item );
+		$url_host = parse_url( $url, PHP_URL_HOST );
+
+		return self::check_contains( $url_host );
 	}
 
-	public static function check_type( $item )
+	public static function check_type( $type )
 	{
-		if ( $item->type == 'custom' )
-		{
-			return true;
-		}
-
-		return false;
+		return $type == 'custom';
 	}
 
 	public static function check_item( $item )
 	{
-		return self::check_type( $item )
+		return self::check_type( $item->type )
 		
-			&& self::check_host( $item )
+			&& self::check_host( $item->url )
 			
-			&& self::check_language( $item );
+			&& self::check_language( $item->url );
 	}
 
 	public static function check_current_language( $item )
@@ -289,10 +322,6 @@ class BaseFooter
 			$href = get_field( self::FIELD[ 'href' ], $post->ID );
 
 			$alt = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
-
-			// LegalDebug::debug( [
-			// 	'ID' => $post->ID,
-			// ] );
 
 			if ( $image ) {
 				$items[] = [
