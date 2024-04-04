@@ -75,13 +75,13 @@ class BaseFooter
 		return !str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
 	}
 
-	const HOST_EXCEPTION = [
+	const HOST_EXTERNAL = [
 		'www.ukclubsport.com',
 	];
 
-	public static function check_exception( $host )
+	public static function check_external( $host )
 	{
-		return in_array( $host, self::HOST_EXCEPTION );
+		return in_array( $host, self::HOST_EXTERNAL );
     }
 
 	public static function check_main_host_production( $host )
@@ -99,15 +99,26 @@ class BaseFooter
 		return $host == LegalMain::get_main_host();
 	}
 
-	public static function check_contains( $host )
+	public static function check_local( $host )
 	{
-		return self::check_exception( $host )
-
-			|| self::check_main_host_production( $host )
+		return self::check_main_host_production( $host )
 
 			|| self::check_current_host( $host )
 
 			|| self::check_main_host( $host );
+	}
+
+	public static function check_contains( $host )
+	{
+		return self::check_external( $host )
+
+			|| check_local( $host );
+
+			// || self::check_main_host_production( $host )
+
+			// || self::check_current_host( $host )
+
+			// || self::check_main_host( $host );
 	}
 
 	public static function check_host( $url )

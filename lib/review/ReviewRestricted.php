@@ -67,17 +67,19 @@ class ReviewRestricted
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
+		$url_host = parse_url( $href, PHP_URL_HOST );
+
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'check_item',
 
-			'href' => $href,
+			'url_host' => $url_host,
 
 			'check_host' => BaseFooter::check_host( $href ),
 
 			'check_language' => BaseFooter::check_language( $href ),
 		] );
 
-		return BaseFooter::check_host( $href );
+		return BaseFooter::check_local( $url_host );
 			
 			// && BaseFooter::check_language( $href );
 	}
