@@ -112,7 +112,7 @@ class BaseFooter
 	{
 		return self::check_external( $host )
 
-			|| check_local( $host );
+			|| self::check_local( $host );
 
 			// || self::check_main_host_production( $host )
 
