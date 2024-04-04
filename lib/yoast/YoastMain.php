@@ -59,9 +59,9 @@ class YoastMain
 
     public static function register_my_plugin_extra_replacements()
     {
-        // wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'advanced', 'this is a help text for myvar1' );
-        
-        wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'basic', 'This is a current tabs unique billets amount' );
+        $handler = new self();
+
+        wpseo_register_var_replacement( '%%billetsamount%%', [ $handler, 'retrieve_billetsamount_replacement' ], 'basic', '[MC] This is a current tabs unique billets amount' );
         
         // wpseo_register_var_replacement( 'myvar2', array( 'class', 'method_name' ), 'basic', 'this is a help text for myvar2' );
     }
