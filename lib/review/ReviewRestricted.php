@@ -269,7 +269,7 @@ class ReviewRestricted
 
 		'folder' => '/%s/',
 
-		'contains' => '[href*="%s"]',
+		'contains' => '[contains(@href,"%s")]',
 
 		'not-contains' => '[not(self::node()[contains(@href,"%s")])]',
 	];
