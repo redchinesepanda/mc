@@ -316,7 +316,7 @@ class ReviewRestricted
 
     public static function get_nodes_domain_x_language( $dom, $format_domain, $format_language = '' )
 	{
-		$query = [];
+		$query_parts = [];
 
 		$language = '';
 
@@ -331,18 +331,18 @@ class ReviewRestricted
 		{
 			$domain = sprintf( $format_domain, $host );
 
-			$query[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
+			$query_parts[] = sprintf( self::FORMAT[ 'root' ], $domain . $language );
 		}
 
 		$query = '';
 
 		if ( !empty( $format_language ) )
 		{
-			$query = LegalDOM::get_nodes( $dom, implode( '|', $query ) );
+			$query = LegalDOM::get_nodes( $dom, implode( '|', $query_parts ) );
 		}
 		else
 		{
-			$query = LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query ) ) );
+			$query = LegalDOM::get_nodes( $dom, sprintf( self::FORMAT[ 'root' ], implode( '', $query_parts ) ) );
 		}
 
 		LegalDebug::debug( [
