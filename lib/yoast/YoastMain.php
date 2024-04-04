@@ -218,17 +218,20 @@ class YoastMain
         return '';
     }
 
+    public static function check()
+    {
+        return class_exists( 'YoastSEO' );
+    }
+
     public static function get_seo_description()
     {
-        $post = get_post();
-
         LegalDebug::debug( [
             'YoastMain' => 'get_seo_description',
 
-             'ID' => $post->ID,
-
-             'description' => YoastSEO()->meta->for_post( $post->ID )->description,
+            self::check() => 'Yoast SEO is active',
         ] );
+
+        $post = get_post();
 
         if ( $post )
         {
