@@ -318,7 +318,7 @@ class ReviewRestricted
 	{
 		$query = [];
 
-		$glue = '|'
+		$glue = '|';
 
 		$language = '';
 
