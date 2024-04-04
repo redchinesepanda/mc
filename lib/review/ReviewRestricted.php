@@ -101,6 +101,11 @@ class ReviewRestricted
 		return BaseFooter::check_language_contains( parse_url( $href, PHP_URL_PATH ) );
 	}
 
+	public static function check_not_language( $href )
+	{
+		return !self::check_language( $href );
+	}
+
 	public static function check_doamin_and_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
@@ -137,27 +142,29 @@ class ReviewRestricted
 			$href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'replace_domain_and_language',
+
+				'href' => $href,
+			] );
 		}
 	}
 
-	public static function check_host_and_language( $item )
+	public static function check_host_and_not_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-		$url_host = parse_url( $href, PHP_URL_HOST );
-
-		$url_path = parse_url( $href, PHP_URL_PATH );
-
 		return BaseFooter::check_local( $url_host )
 		
-			&& self::check_language( $url_path );
+			&& self::check_not_language( $href );
 	}
 
 	public static function remove_anchors( $nodes )
 	{
 		$handler = new self();
 
-		$filtered_nodes = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_language' ] );
+		$filtered_nodes = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_not_language' ] );
 	}
 
 	public static function modify_anchors( $dom )
