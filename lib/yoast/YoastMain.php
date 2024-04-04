@@ -58,7 +58,11 @@ class YoastMain
     }
 
     const REPLACEVAR = [
-        'billets-amount' => '%%billetsamount%%'
+        'billets-amount' => '%%billetsamount%%',
+
+        'year' => '%%YEAR%%',
+
+        'month-year' => '%%MONTH_YEAR%%',
     ];
 
     public static function register_my_plugin_extra_replacements()
@@ -66,6 +70,10 @@ class YoastMain
         $handler = new self();
 
         wpseo_register_var_replacement( self::REPLACEVAR[ 'billets-amount' ], [ $handler, 'retrieve_billetsamount_replacement' ], 'basic', '[MC] This is a current [legal-tabs] unique billets amount' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'year' ], [ $handler, 'retrieve_year' ], 'basic', '[MC] This is a current year' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'month-year' ], [ $handler, 'retrieve_month_year' ], 'basic', '[MC] This is a current month and year' );
         
         // wpseo_register_var_replacement( 'myvar2', array( 'class', 'method_name' ), 'basic', 'this is a help text for myvar2' );
     }
@@ -73,6 +81,20 @@ class YoastMain
     public static function retrieve_billetsamount_replacement( $var1 )
     {
         return CompilationTabs::get_billets_amount();
+    }
+
+    public static function retrieve_year()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-year' ] ];
+
+        return ReviewTitle::format_date( $format );
+    }
+
+    public static function retrieve_year()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-month-year' ] ];
+
+        return ReviewTitle::format_date( $format );
     }
 
     public static function include_post_types( $post_types )
