@@ -213,8 +213,14 @@ class TemplateMain
         // 'tve_frontend',
     ];
 
+    const JS_DEQUEUE_WPML = [
+        'wpml-legacy-dropdown-click-0',
+    ];
+
     const JS_DEQUEUE = [
         ...self::JS_DEQUEUE_THRIVE,
+
+        ...self::JS_DEQUEUE_WPML,
     ];
 
     public static function dequeue_script()
