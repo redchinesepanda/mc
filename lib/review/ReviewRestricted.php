@@ -160,11 +160,59 @@ class ReviewRestricted
 			&& self::check_not_language( $href );
 	}
 
-	public static function remove_anchors( $nodes )
+	public static function replace_node( $new, $old )
+	{
+		try
+		{
+			$replace->parentNode->replaceChild( $new, $old );
+		}
+		catch ( DOMException $e )
+		{
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'replace_node',
+
+				'node' => substr( $old->textContent, 0, 30 ),
+
+				'message' => $e->getMessage(),
+			] );
+		}
+	}
+
+	const CLASSES = [
+		'replaced-anchor' => 'legal-replaced-anchor'
+	];
+
+	public static function get_item( $node, $dom )
+	{
+		$item = $dom->createElement( 'span' );
+
+		$item->setAttribute( 'class', self::CLASSES[ 'replaced-anchor' ] );
+
+		$item->textContent = $node->textContent;
+
+		return $item;
+	}
+
+	public static function replace_domain_and_not_language( $nodes, $dom )
 	{
 		$handler = new self();
 
 		$filtered_nodes = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_not_language' ] );
+
+		foreach ( $filtered as $node )
+		{
+			$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'replace_domain_and_language',
+
+				'href' => $href,
+			] );
+
+			$item = self::get_item( $node, $dom );
+
+			self::replace_node( $item, $node );
+		}
 	}
 
 	public static function modify_anchors( $dom )
@@ -187,7 +235,7 @@ class ReviewRestricted
 		// 	$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		// }
 
-		self::remove_anchors( $nodes );
+		self::replace_domain_and_not_language( $nodes, $dom );
 
 		return true;
 	}
