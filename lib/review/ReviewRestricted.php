@@ -197,7 +197,7 @@ class ReviewRestricted
 	{
 		$handler = new self();
 
-		$filtered_nodes = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_not_language' ] );
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_not_language' ] );
 
 		foreach ( $filtered as $node )
 		{
