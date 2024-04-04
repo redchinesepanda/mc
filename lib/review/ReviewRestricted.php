@@ -67,6 +67,16 @@ class ReviewRestricted
 	{
 		$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'check_item',
+
+			'href' => $href,
+
+			'check_host' => BaseFooter::check_host( $href ),
+
+			'check_language' => BaseFooter::check_language( $href ),
+		] );
+
 		return BaseFooter::check_host( $href )
 			
 			&& BaseFooter::check_language( $href );
