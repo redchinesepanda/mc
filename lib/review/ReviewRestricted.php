@@ -151,11 +151,21 @@ class ReviewRestricted
 		}
 	}
 
-	public static function check_host_and_not_language( $item )
+	public static function check_domain_and_not_language( $item )
 	{
 		$href = $item->getAttribute( self::ATTRIBUTE[ 'href' ] );
 
-		return BaseFooter::check_local( $href )
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'check_domain_and_not_language',
+
+			'href' => $href,
+
+			'check_domain' => self::check_domain( $href ),
+
+			'check_not_language' => self::check_not_language( $href ),
+        ] );
+
+		return self::check_domain( $href )
 		
 			&& self::check_not_language( $href );
 	}
@@ -197,7 +207,7 @@ class ReviewRestricted
 	{
 		$handler = new self();
 
-		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_host_and_not_language' ] );
+		$filtered = array_filter( iterator_to_array( $nodes ), [ $handler, 'check_domain_and_not_language' ] );
 
 		foreach ( $filtered as $node )
 		{
