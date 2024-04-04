@@ -301,6 +301,12 @@ class ReviewRestricted
 			$query[] = sprintf( self::FORMAT[ 'not-domain' ], $host );
 		}
 
+		LegalDebug::debug( [
+			'ReviewRestricted' => 'get_nodes_not_domain',
+
+			'query' => implode( '|', $query ),
+        ] );
+
 		return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	}
 
