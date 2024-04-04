@@ -60,7 +60,7 @@ class BaseFooter
 
 		if ( self::check_register() )
 		{
-			add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+			// add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
 
 			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
 		}
