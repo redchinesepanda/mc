@@ -234,6 +234,8 @@ class ReviewRestricted
 			return false;
 		}
 
+		self::replace_domain_and_not_language( $nodes, $dom );
+
 		self::replace_domain_and_language( $nodes );
 
 		// $nodes = self::filter_only_current_language( iterator_to_array( $nodes ) );
@@ -244,8 +246,6 @@ class ReviewRestricted
 
 		// 	$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		// }
-
-		self::replace_domain_and_not_language( $nodes, $dom );
 
 		return true;
 	}
