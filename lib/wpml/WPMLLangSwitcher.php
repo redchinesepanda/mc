@@ -193,13 +193,7 @@ class WPMLLangSwitcher
             ];
         }
 
-        return [
-            'suffix' => '',
-
-            'class' => '',
-
-            'href' => '#',
-        ];
+        return [];
     }
 
     public static function get()
