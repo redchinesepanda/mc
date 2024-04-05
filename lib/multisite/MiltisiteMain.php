@@ -152,11 +152,11 @@ class MiltisiteMain
         return array_filter( get_post_custom( $post_id ), [ $handler, 'filter_not_thrive' ], ARRAY_FILTER_USE_KEY );
 	}
 
-	public static function add_post( $post )
+	public static function add_post( $post, $blog_id )
 	{
 		$post_id = $post[ 'ID' ];
 
-		$post = self::prepare_post( $post );
+		$post = self::prepare_post( $post, $blog_id );
 
 		$inserted_post_id = wp_insert_post( $post );
 
@@ -224,7 +224,7 @@ class MiltisiteMain
 	{
 		switch_to_blog( $blog_id );
 
-		if ( $post_id = self::add_post( $post ) )
+		if ( $post_id = self::add_post( $post, $blog_id ) )
 		{
 			self::add_post_terms( $post_id, $post_terms );
 
