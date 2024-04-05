@@ -114,9 +114,28 @@ class MiltisiteMain
 		return wp_get_object_terms( $post_id, self::get_taxonomies(), [ 'fields' => 'slugs' ] );
 	}
 
+	const FILTER_META = [
+		'_tve_js_modules_gutenberg',
+
+		'tve_global_scripts',
+
+		'thrive_element_visibility',
+
+		'google_post_content',
+	];
+
+	public static function filter_not_thrive( $meta_key )
+	{
+		return !in_array( $meta_key, self::FILTER_META );
+	}
+
 	public static function get_post_meta( $post_id )
 	{
-		return get_post_custom( $post_id );
+		// return get_post_custom( $post_id );
+
+		$handler = new self();
+
+        return array_filter( get_post_custom( $post_id ), [ $handler, 'filter_not_thrive' ], ARRAY_FILTER_USE_KEY );
 	}
 
 	public static function add_post( $post )
