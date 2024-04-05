@@ -154,22 +154,26 @@ class MiltisiteMain
 
 	public static function add_post( $post )
 	{
-		self::check_post_exists( $post );
+		$post_id = $post[ 'ID' ];
 
-		LegalDebug::debug( [
-			'MultisiteMain' => 'add_post',
-			
-			'ID' => $post[ 'ID' ],
-		] );
+		$post = self::prepare_post( $post );
 
-		$post_id = wp_insert_post( $post );
+		$inserted_post_id = wp_insert_post( $post );
 
-		if ( is_wp_error( $post_id ) )
+		if ( is_wp_error( $inserted_post_id ) )
 		{
 			return false;
 		}
 
-		return $post_id;
+		LegalDebug::debug( [
+			'MultisiteMain' => 'add_post',
+
+			'inserted_post_id' => $inserted_post_id,
+		] );
+
+		// self::set_post_moved( $post_id, $blog_id, $inserted_post_id );
+
+		return $inserted_post_id;
 	}
 
 	public static function add_post_terms( $post_id, $result )
@@ -258,28 +262,46 @@ class MiltisiteMain
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
 	}
 
-	public static function check_post_exists( &$post )
+	public static function check_post_moved( $post, $blog_id )
 	{
+		$post_moved = self::get_post_moved( $post[ 'ID' ] );
+
 		LegalDebug::debug( [
-			'MultisiteMain' => 'check_post_exists',
+			'MultisiteMain' => 'check_post_moved',
 			
 			'ID' => $post[ 'ID' ],
 
-			'get_post_moved' => self::get_post_moved( $post[ 'ID' ] ),
+			'post_moved' => $post_moved,
 
 			'get_post_status' => get_post_status( $post[ 'ID' ] ),
 		] );
 
-		if ( !get_post_status( $post[ 'ID' ] ) )
+		if ( array_key_exists( $blog_id, $post_moved ) )
 		{
-			// $post[ 'ID' ] = '';
+			return get_post_status( $post_moved[ $blog_id ] );
 
-			// unset( $post[ 'ID' ] );
+			// $post[ 'ID' ] = get_post_status( $post_moved[ $blog_id ] );
 
-			return false;
+			// return false;
 		}
 
-		return true;
+		// unset( $post[ 'ID' ] );
+
+		return false;
+	}
+
+	public static function prepare_post( $post, $blog_id )
+	{
+		if ( $moved_id = self::check_post_exists( $post, $blog_id ) )
+		{
+			$post[ 'ID' ] = $moved_id;
+		}
+		else
+		{
+			// unset( $post[ 'ID' ] );
+		}
+
+		return $post;
 	}
 
 	public static function rudr_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
