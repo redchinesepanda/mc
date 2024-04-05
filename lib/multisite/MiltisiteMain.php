@@ -55,6 +55,24 @@ class MiltisiteMain
 		'move-to' => 'move_to_',
 	];
 
+	public static function retirect_clean( $redirect )
+	{
+		return remove_query_arg( self::QUERY_ARG, $redirect );
+	}
+
+	public static function retirect_set( $redirect, $posts_moved, $blog_id )
+	{
+		return add_query_arg(
+			[
+				self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
+
+				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
+			],
+			
+			$redirect
+		);
+	}
+
 	public static function get_post( $post_id )
 	{
 		return wget_post( $post_id, ARRAY_A );
@@ -127,24 +145,6 @@ class MiltisiteMain
 		return false;
 	}
 
-	public static function retirect_clean( $redirect )
-	{
-		return remove_query_arg( self::QUERY_ARG, $redirect );
-	}
-
-	public static function retirect_set( $redirect, $posts_moved, $blog_id )
-	{
-		return add_query_arg(
-			[
-				self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
-
-				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
-			],
-			
-			$redirect
-		);
-	}
-
 	public static function check_doaction( $doaction )
 	{
 		return str_contains( self::DOACTION[ 'move-to' ], $doaction );
@@ -186,6 +186,18 @@ class MiltisiteMain
 					$post_terms = self::get_post_terms( $post_id );
 					
 					$post_meta = self::get_post_meta( $post_id );
+
+					LegalDebug::die( [
+						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+
+						'blog_id' => $blog_id,
+
+						'post' => $post,
+
+                        'post_terms' => $post_terms,
+
+                        'post_meta' => $post_meta,
+					] );
 
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}
