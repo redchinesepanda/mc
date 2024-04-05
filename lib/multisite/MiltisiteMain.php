@@ -38,6 +38,10 @@ class MiltisiteMain
 		] );
 
 		// self::set_blog( 2 );
+
+		$blog_prefix = wpdb::get_blog_prefix( 2 );
+
+		wpdb::set_prefix( $blog_prefix );
 	}
 	
 	public static function register_functions_admin()
