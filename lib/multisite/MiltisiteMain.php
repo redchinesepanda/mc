@@ -292,7 +292,7 @@ class MiltisiteMain
 
 	public static function prepare_post( $post, $blog_id )
 	{
-		if ( $moved_id = self::check_post_exists( $post, $blog_id ) )
+		if ( $moved_id = self::check_post_moved( $post, $blog_id ) )
 		{
 			$post[ 'ID' ] = $moved_id;
 		}
