@@ -49,7 +49,16 @@ class MiltisiteMain
 
 		// $wpdb->set_prefix( $blog_prefix );
 	}
-	
+
+	public static function modify_stylesheet_directory_uri( $uri )
+	{
+		$blog_id = self::get_current_blog_id();
+
+		$blog_details = self::get_blog_details( $blog_id );
+
+		return str_replace( $blog_details->path, '/', $uri );
+	}
+
 	public static function register_functions_admin()
 	{
 		$handler = new self();

@@ -40,6 +40,8 @@ LegalDebug::debug([
 	'LegalMain' => 'init',
 
     'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
+
+	'modify_stylesheet_directory_uri' => MultisiteMain::modify_stylesheet_directory_uri( $uri ),
 ]);
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
