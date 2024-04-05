@@ -51,7 +51,7 @@
         min-width: 100%;
     }
 
-    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image:not( .columns-1 .item-image )
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image:not( .columns-1 .item-image.legal-portrait )
     {
         width: 100%;
         height: auto;
@@ -379,7 +379,7 @@
     /* width: 100%; */
 }
 
-.tcb-post-content .legal-imageset.columns-1 .item-image
+.tcb-post-content .legal-imageset.columns-1 .item-image.legal-portrait
 {
     /* width: 100%; */
     max-width: 100%;
