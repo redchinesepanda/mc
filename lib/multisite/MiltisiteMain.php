@@ -147,6 +147,14 @@ class MiltisiteMain
 
 	public static function check_doaction( $doaction )
 	{
+		LegalDebug::debug( [
+			'MultisiteMain' => 'check_doaction',
+
+			'doaction' => $doaction,
+
+			'move-to' => self::DOACTION[ 'move-to' ],
+        ] );
+		
 		return str_contains( self::DOACTION[ 'move-to' ], $doaction );
 	}
 
@@ -171,7 +179,7 @@ class MiltisiteMain
 	{
 		$redirect = self::retirect_clean( $redirect );
 		
-		if( self::check_doaction( $doaction ) )
+		if ( self::check_doaction( $doaction ) )
 		{
 			$blog_id = get_blog_id( $doaction );
 
@@ -190,8 +198,6 @@ class MiltisiteMain
 					LegalDebug::die( [
 						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-						'blog_id' => $blog_id,
-
 						'post' => $post,
 
                         'post_terms' => $post_terms,
@@ -202,6 +208,11 @@ class MiltisiteMain
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}
 			}
+			LegalDebug::die( [
+				'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+
+				'blog_id' => $blog_id,
+			] );
 
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
@@ -214,8 +225,6 @@ class MiltisiteMain
 			'doaction' => $doaction,
 
 			'check_doaction' => self::check_doaction( $doaction ),
-
-			'blog_id' => $blog_id,
 		] );
 
 		return $redirect;
