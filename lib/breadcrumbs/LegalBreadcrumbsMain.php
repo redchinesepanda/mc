@@ -60,9 +60,9 @@ class LegalBreadcrumbsMain extends LegalDebug
         
         // $primary_id = false;
 
-        $items = [];
+        // $items = [];
 
-        $exclude = [];
+        // $exclude = [];
 
         if ( $primary_id )
         {
@@ -70,33 +70,33 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             if( !empty( $primary ) )
             {
-                // return [ $primary ];
+                return [ $primary ];
 
-                $items[] = $primary;
+                // $items[] = $primary;
 
-                $exclude[] = $primary_id;
+                // $exclude[] = $primary_id;
             }
         }
 
-        // return wp_get_post_terms(
-        //     $id,
-
-        //     self::TAXONOMY[ 'category' ],
-
-        //     // [ 'ids', 'names' ]
-        // );  
-
-        $other = wp_get_post_terms(
+        return wp_get_post_terms(
             $id,
 
             self::TAXONOMY[ 'category' ],
 
-            [
-                'exclude' => $exclude,
-            ]
-        );
+            // [ 'ids', 'names' ]
+        );  
 
-        return array_merge( $items, $other );
+        // $other = wp_get_post_terms(
+        //     $id,
+
+        //     self::TAXONOMY[ 'category' ],
+
+        //     [
+        //         'exclude' => $exclude,
+        //     ]
+        // );
+
+        // return array_merge( $items, $other );
     }
 
     public static function get_ancestors( $id )
