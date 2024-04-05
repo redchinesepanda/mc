@@ -7,7 +7,7 @@
         width: 100%;
     }
 
-    .tcb-post-content .legal-scroll-x,
+  /*   .tcb-post-content .legal-scroll-x, */
     .tcb-post-content .legal-scroll
     {
         overflow-x: scroll;
@@ -185,11 +185,11 @@
     min-width: 300px;
 }
 
-/* .tcb-post-content .legal-scroll-x {
-    overflow-x: scroll;
-} */
+.tcb-post-content .legal-scroll-x {
+    overflow-x: auto;
+}
 
-/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar, */
+.tcb-post-content .legal-scroll-x::-webkit-scrollbar,
 .tcb-post-content .legal-scroll::-webkit-scrollbar {
     width: 12px;
 }
@@ -216,19 +216,19 @@
     /* overflow: hidden; */
 }
 
-/* .tcb-post-content .legal-scroll-x, */
+.tcb-post-content .legal-scroll-x,
 .tcb-post-content .legal-scroll { /*стиль скролла для Mozila Firefox*/
     scrollbar-color: var(--Base-base-04) var(--Base-base-02);
     scrollbar-width: thin;
 }
 
-/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar-track, */
+.tcb-post-content .legal-scroll-x::-webkit-scrollbar-track,
 .tcb-post-content .legal-scroll::-webkit-scrollbar-track {
     background-color: var(--Base-base-02);
     border-radius: 60px;
 }
 
-/* .tcb-post-content .legal-scroll-x::-webkit-scrollbar-thumb, */
+.tcb-post-content .legal-scroll-x::-webkit-scrollbar-thumb,
 .tcb-post-content .legal-scroll::-webkit-scrollbar-thumb {
     border-radius: 60px;
     background-color: var(--Base-base-04);
