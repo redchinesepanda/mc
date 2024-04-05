@@ -166,9 +166,25 @@ class MiltisiteMain
 
 	public static function add_post_terms( $post_id, $result )
 	{
-		foreach( $result as $taxonomy => $post_terms )
+		LegalDebug::debug( [
+			'MultisiteMain' => 'add_post_terms',
+
+			'post_id' => $post_id,
+
+		    'result-count' => count( $result ),
+
+		    'result' => $result,
+		] );
+		
+		foreach ( $result as $taxonomy => $post_terms )
 		{
-			wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
+			$object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
+
+			LegalDebug::debug( [
+				'MultisiteMain' => 'add_post_terms',
+
+				'object_terms' => $object_terms,
+			] );
 		}
 	}
 
@@ -208,14 +224,6 @@ class MiltisiteMain
 
 	public static function check_doaction( $doaction )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteMain' => 'check_doaction',
-
-		// 	'doaction' => $doaction,
-
-		// 	'move-to' => self::DOACTION[ 'move-to' ],
-        // ] );
-
 		return str_contains( $doaction, self::DOACTION[ 'move-to' ] );
 	}
 
@@ -274,11 +282,11 @@ class MiltisiteMain
 				}
 			}
 
-			// LegalDebug::die( [
-			// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+			LegalDebug::die( [
+				'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-			// 	'blog_id' => $blog_id,
-			// ] );
+				'blog_id' => $blog_id,
+			] );
 
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
