@@ -301,7 +301,7 @@ class MiltisiteMain
 		}
 		else
 		{
-			// unset( $post[ 'ID' ] );
+			unset( $post[ 'ID' ] );
 		}
 
 		return $post;
