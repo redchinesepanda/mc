@@ -62,22 +62,6 @@ class LegalMain
 
 	public static function register_functions()
     {
-		LegalComponents::register_functions();
-
-		ACFMain::register_functions();
-
-		ToolsMain::register_functions();
-	
-		SchemaMain::register();
-
-		BaseMain::register_functions();
-
-		YoastMain::register_functions();
-
-		ReviewMain::register_functions();
-
-		WPMLMain::register_functions();
-
 		if ( self::check_admin() )
 		{
 			ACFMain::register();
@@ -90,6 +74,22 @@ class LegalMain
 		}
 		else
 		{
+			LegalComponents::register_functions();
+
+			ACFMain::register_functions();
+	
+			ToolsMain::register_functions();
+		
+			SchemaMain::register();
+	
+			BaseMain::register_functions();
+	
+			YoastMain::register_functions();
+	
+			ReviewMain::register_functions();
+	
+			WPMLMain::register_functions();
+			
 			MiltisiteMain::register_functions();
 		}
 	}
