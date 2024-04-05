@@ -245,39 +245,40 @@ class MiltisiteMain
 					
 					$post_meta = self::get_post_meta( $post_id );
 
-					LegalDebug::die( [
-						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+					// LegalDebug::die( [
+					// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-						'post' => $post[ 'ID' ],
+					// 	'post' => $post[ 'ID' ],
 
-                        'post_terms' => count( $post_terms ),
+                    //     'post_terms' => count( $post_terms ),
 
-                        'post_meta-count' => count( $post_meta ),
+                    //     'post_meta-count' => count( $post_meta ),
 
-                        'post_meta' => $post_meta,
-					] );
+                    //     // 'post_meta' => $post_meta,
+					// ] );
 
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}
 			}
-			LegalDebug::die( [
-				'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-				'blog_id' => $blog_id,
-			] );
+			// LegalDebug::die( [
+			// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+
+			// 	'blog_id' => $blog_id,
+			// ] );
 
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
 
-		LegalDebug::die( [
-			'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+		// LegalDebug::die( [
+		// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-			'redirect' => $redirect,
+		// 	'redirect' => $redirect,
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => self::check_doaction( $doaction ),
-		] );
+		// 	'check_doaction' => self::check_doaction( $doaction ),
+		// ] );
 
 		return $redirect;
 	}
