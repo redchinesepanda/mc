@@ -162,6 +162,8 @@
 }
 
 .billet-mega-content > table:not( :last-child ),
+.billet-mega-content > .legal-scroll:not( :last-child ),
+.billet-mega-content > .legal-scroll-x:not( :last-child ),
 .tcb-post-content > table:not( :last-child ),
 .tcb-post-content > .legal-scroll:not( :last-child ),
 .tcb-post-content > .legal-scroll-x:not( :last-child )
