@@ -51,10 +51,16 @@
         min-width: 100%;
     }
 
-    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image:not( .legal-imageset.columns-1 .item-image )
     {
         width: 100%;
         height: auto;
+    }
+
+    /* Background */
+
+    .tcb-post-content .legal-gallery {
+        background-size: 90%;
     }
 }
 
@@ -216,15 +222,6 @@
     /* Background */
 }
 
-@media screen and ( max-width: 767px ) {
-
-    /* Background */
-
-    .tcb-post-content .legal-gallery {
-        background-size: 90%;
-    }
-}
-
 /* Display */
 
 .tcb-post-content .legal-imageset
@@ -380,8 +377,8 @@
 .tcb-post-content .legal-imageset.columns-1 .item-image
 {
     /* width: 100%; */
-    height: auto;
     max-width: 100%;
+    height: auto;
 }
   
 /* Background */
