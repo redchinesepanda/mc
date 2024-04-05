@@ -36,13 +36,13 @@ require_once( 'multisite/MiltisiteMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
-LegalDebug::debug([
-	'LegalMain' => 'init',
+// LegalDebug::debug([
+// 	'LegalMain' => 'init',
 
-    'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
+//     'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
 
-	'modify_stylesheet_directory_uri' => MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ),
-]);
+// 	'modify_stylesheet_directory_uri' => MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ),
+// ]);
 
 define( 'LEGAL_URL', MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ) );
 
