@@ -165,13 +165,13 @@ class MiltisiteMain
 			return false;
 		}
 
-		LegalDebug::debug( [
-			'MultisiteMain' => 'add_post',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' => 'add_post',
 
-			'blog_id' => $post_id,
+		// 	'blog_id' => $post_id,
 
-			'inserted_post_id' => $inserted_post_id,
-		] );
+		// 	'inserted_post_id' => $inserted_post_id,
+		// ] );
 
 		if ( $inserted_post_id !== 0 )
 		{
@@ -264,11 +264,11 @@ class MiltisiteMain
 
 		// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
 
-		LegalDebug::debug( [
-			'MultisiteMain' =>'set_post_moved',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' =>'set_post_moved',
 
-			'meta_value' => $meta_value,
-		] );
+		// 	'meta_value' => $meta_value,
+		// ] );
 		
 		$meta_value = [ $blog_id => $moved_post_id ];
 
@@ -279,15 +279,15 @@ class MiltisiteMain
 	{
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
-		LegalDebug::debug( [
-			'MultisiteMain' => 'check_post_moved',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' => 'check_post_moved',
 			
-			'ID' => $post[ 'ID' ],
+		// 	'ID' => $post[ 'ID' ],
 
-			'post_moved' => $post_moved,
+		// 	'post_moved' => $post_moved,
 
-			'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
-		] );
+		// 	'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
+		// ] );
 
 		if ( array_key_exists( $blog_id, $post_moved ) )
 		{
@@ -348,11 +348,11 @@ class MiltisiteMain
 				}
 			}
 
-			LegalDebug::die( [
-				'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+			// LegalDebug::die( [
+			// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-				'blog_id' => $blog_id,
-			] );
+			// 	'blog_id' => $blog_id,
+			// ] );
 
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
