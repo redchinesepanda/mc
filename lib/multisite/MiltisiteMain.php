@@ -291,7 +291,10 @@ class MiltisiteMain
 
 		if ( array_key_exists( $blog_id, $post_moved ) )
 		{
-			return get_post_status( $post_moved[ $blog_id ] );
+			if ( get_post_status( $post_moved[ $blog_id ] ) )
+			{
+				return $post_moved[ $blog_id ];
+			}
 		}
 
 		return false;
