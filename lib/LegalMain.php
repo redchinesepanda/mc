@@ -37,7 +37,7 @@ require_once( 'multisite/MiltisiteMain.php' );
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 LegalDebug::debug([
-	'LegalMain' =. 'init',
+	'LegalMain' => 'init',
 
     'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
 ]);
