@@ -36,6 +36,12 @@ require_once( 'multisite/MiltisiteMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
+LegalDebug::debug([
+	'LegalMain' =. 'init',
+
+    'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
+]);
+
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
 
 define( 'LEGAL_ROOT', site_url() );
@@ -89,7 +95,7 @@ class LegalMain
 			ReviewMain::register_functions();
 	
 			WPMLMain::register_functions();
-			
+
 			MiltisiteMain::register_functions();
 		}
 	}
