@@ -262,7 +262,15 @@ class MiltisiteMain
 	{
 		$meta_value = self::get_post_moved( $post_id );
 
-		$meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
+		// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
+
+		LegalDebug::debug( [
+			'MultisiteMain' =>'set_post_moved',
+
+			'meta_value' => $meta_value,
+		] );
+		
+		$meta_value = [ $blog_id => $moved_post_id ];
 
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
 	}
