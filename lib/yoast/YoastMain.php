@@ -4,6 +4,13 @@ require_once( 'YoastOG.php' );
 
 class YoastMain
 {
+    public static function check_plugin()
+    {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+        return is_plugin_active( 'wordpress-seo/wp-seo.php' );
+    }
+
     public static function register()
     {
         YoastOG::register();

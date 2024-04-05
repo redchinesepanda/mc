@@ -55,83 +55,131 @@ class MiltisiteMain
 		'move-to' => 'move_to_',
 	];
 
+	public static function get_post( $post_id )
+	{
+		return wget_post( $post_id, ARRAY_A );
+	}
+
+	public static function get_post_terms( $post_id )
+	{
+		return wp_get_object_terms( $post_id, 'category', [ 'fields' => 'slugs' ] );
+	}
+
+	public static function get_post_meta( $post_id )
+	{
+		return get_post_custom( $post_id );
+	}
+
+	public static function add_post( $post )
+	{
+		$post_id = wp_insert_post( $post );
+
+		if ( is_wp_error( $post_id ) )
+		{
+			return false;
+		}
+
+		return $post_id;
+	}
+
+	public static function add_post_terms( $post_id )
+	{
+		$terms = wp_get_object_terms( $post_id, 'category', [ 'fields' => 'slugs' ] );
+
+		return is_wp_error( $terms );
+	}
+
+	public static function add_post_meta( $post_id, $post_meta )
+	{
+		foreach ( $post_meta as $key => $values)
+		{
+			// if you do not want weird redirects
+
+			if( '_wp_old_slug' === $key )
+			{
+				continue;
+			}
+
+			foreach( $values as $value )
+			{
+				update_post_meta( $post_id, $key, $value );
+			}
+		}
+
+		return true;
+	}
+
+	public static function add_post_and_data( $blog_id, $post, $post_terms, $post_meta )
+	{
+		switch_to_blog( $blog_id );
+
+		if ( $post_id = self::add_post( $post ) )
+		{
+			self::add_post_terms( $post_id );
+
+			self::add_post_meta( $post_id, $post_meta );
+
+			return true;
+		}
+
+		restore_current_blog();
+
+		return false;
+	}
+
+	public static function retirect_clean( $redirect )
+	{
+		return remove_query_arg( self::QUERY_ARG, $redirect );
+	}
+
+	public static function retirect_set( $redirect, $posts_moved, $blog_id )
+	{
+		return add_query_arg(
+			[
+				self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
+
+				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
+			],
+			
+			$redirect
+		);
+	}
+
+	public static function check_doaction( $doaction )
+	{
+		return str_contains( self::DOACTION[ 'move-to' ], $doaction );
+	}
+
+	public static function get_blog_id( $doaction )
+	{
+		return str_replace( self::DOACTION[ 'move-to' ], '', $doaction );
+	}
+
 	public static function rudr_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
 	{
-		// we need query args to display correct admin notices
-
-		// $redirect = remove_query_arg( [ self::QUERY_ARG[ 'posts-moved' ], self::QUERY_ARG[ 'blog-id' ] ], $redirect );
+		$redirect = self::retirect_clean( $redirect );
 		
-		$redirect = remove_query_arg( self::QUERY_ARG, $redirect );
-
-		// our actions begin with "move_to_", so let's check if it is a target action
-
-		// if( strpos( $doaction, self::DOACTION[ 'move-to' ] ) === 0 )
-		
-		if( !str_contains( self::DOACTION[ 'move-to' ], $doaction ) )
+		if( self::check_doaction( $doaction ) )
 		{
-			$blog_id = str_replace( self::DOACTION[ 'move-to' ], '', $doaction ); // get blog ID from action name
+			$blog_id = get_blog_id( $doaction );
 
 			foreach ( $object_ids as $post_id )
 			{
-				// get the original post object as an array
-				
-				$post = get_post( $post_id, ARRAY_A );
-				
-				// if you need to apply terms (more info below the code)
-				
-				$post_terms = wp_get_object_terms( $post_id, 'category', array( 'fields' => 'slugs' ) );
-				
-				// get all the post meta
-				
-				$data = get_post_custom( $post_id );
-				
-				// empty ID field, to tell WordPress to create a new post, not update an existing one
-				
-				$post[ 'ID' ] = '';
-
-				switch_to_blog( $blog_id );
-				
-				// insert the post
-				
-				$inserted_post_id = wp_insert_post( $post ); // insert the post
-				
-				// update post terms
-				
-				wp_set_object_terms( $inserted_post_id, $post_terms, 'category', false );
-				
-				// add post meta
-				foreach ( $data as $key => $values)
+				if ( $post = self::get_post( $post_id ) )
 				{
-					// if you do not want weird redirects
-
-					if( '_wp_old_slug' === $key )
-					{
-						continue;
-					}
-
-					foreach( $values as $value )
-					{
-						add_post_meta( $inserted_post_id, $key, $value );
-					}
-				}
-
-				restore_current_blog();
-
-				// if you want just to copy pages, comment this line
+					// empty ID field, to tell WordPress to create a new post, not update an existing one
 				
-				// wp_delete_post( $post_id );
+					$post[ 'ID' ] = '';
+
+					$post_terms = self::get_post_terms( $post_id );
+					
+					$post_meta = self::get_post_meta( $post_id );
+
+					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta )
+				}
 			}
 
-			$redirect = add_query_arg(
-				[
-					self::QUERY_ARG[ 'posts-moved' ] => count( $object_ids ),
-
-					self::QUERY_ARG[ 'blog-id' ] => $blog_id,
-				],
-				
-				$redirect
-			);
-
+			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
 
 		return $redirect;

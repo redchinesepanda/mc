@@ -154,13 +154,15 @@ class LegalMain
 
 	public static function check_plugins()
 	{
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		return true;
 
-		$permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+		// include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+		// $permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
 
-		$permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
+		// $permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+
+		// $permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
 
 		// LegalDebug::debug( [
 		// 	'function' => 'check_plugins',
@@ -172,11 +174,11 @@ class LegalMain
 		// 	'permission_yoast' => $permission_yoast,
 		// ] );
 	
-		return $permission_acf
+		// return $permission_acf
 
-			&& $permission_wpml
+			// && $permission_wpml
 
-			&& $permission_yoast;
+			// && $permission_yoast;
 	}
 
 	public static function check()
