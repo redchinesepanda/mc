@@ -255,7 +255,7 @@ class MiltisiteMain
 
 	public static function get_post_moved( $post_id )
 	{
-		return get_post_meta( $post_id, self::POST_META[ 'moved-to' ], false );
+		return get_post_meta( $post_id, self::POST_META[ 'moved-to' ], true );
 	}
 
 	public static function set_post_moved( $post_id, $blog_id, $moved_post_id )
