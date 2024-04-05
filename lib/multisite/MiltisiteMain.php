@@ -240,12 +240,32 @@ class MiltisiteMain
 		return str_replace( self::DOACTION[ 'move-to' ], '', $doaction );
 	}
 
+	const POST_META = [
+		'moved-to' => 'mc_moved_to',
+    ];
+
+	public static function get_post_moved( $post_id )
+	{
+		return get_post_meta( $post_id, self::POST_META[ 'moved-to' ], false );
+	}
+
+	public static function set_post_moved( $post_id, $blog_id, $moved_post_id )
+	{
+		$meta_value = self::get_post_moved( $post_id );
+
+		$meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
+
+		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
+	}
+
 	public static function check_post_exists( &$post )
 	{
 		LegalDebug::debug( [
 			'MultisiteMain' => 'check_post_exists',
 			
 			'ID' => $post[ 'ID' ],
+
+			'get_post_moved' => self::get_post_moved( $post[ 'ID' ] ),
 
 			'get_post_status' => get_post_status( $post[ 'ID' ] ),
 		] );
