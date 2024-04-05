@@ -6,7 +6,7 @@ class MiltisiteMain
 	{
 		$handler = new self();
 
-		add_action( 'init', [ $handler, 'mc_init_blog' ] );
+		// add_action( 'init', [ $handler, 'mc_init_blog' ] );
 	}
 
 	const VIRTUAL_BLOG = [
