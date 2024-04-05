@@ -111,7 +111,18 @@ class MiltisiteMain
 
 	public static function get_post_terms( $post_id )
 	{
-		return wp_get_object_terms( $post_id, self::get_taxonomies(), [ 'fields' => 'slugs' ] );
+		$taxonomies = self::get_taxonomies();
+
+		$result = [];
+
+		foreach( $taxonomies as $taxonomy )
+		{
+			$result[ $taxonomy ] = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'slugs' ] );
+		}
+
+		// return wp_get_object_terms( $post_id, self::get_taxonomies(), [ 'fields' => 'slugs' ] );
+
+		return $result;
 	}
 
 	const FILTER_META = [
@@ -150,11 +161,12 @@ class MiltisiteMain
 		return $post_id;
 	}
 
-	public static function add_post_terms( $post_id )
+	public static function add_post_terms( $post_id, $result )
 	{
-		$terms = wp_get_object_terms( $post_id, 'category', [ 'fields' => 'slugs' ] );
-
-		return is_wp_error( $terms );
+		foreach( $result as $taxonomy => $post_terms )
+		{
+			wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
+		}
 	}
 
 	public static function add_post_meta( $post_id, $post_meta )
@@ -168,7 +180,7 @@ class MiltisiteMain
 				continue;
 			}
 
-			foreach( $values as $value )
+			foreach ( $values as $value )
 			{
 				update_post_meta( $post_id, $key, $value );
 			}
@@ -261,11 +273,11 @@ class MiltisiteMain
 				}
 			}
 
-			// LegalDebug::die( [
-			// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+			LegalDebug::die( [
+				'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-			// 	'blog_id' => $blog_id,
-			// ] );
+				'blog_id' => $blog_id,
+			] );
 
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
