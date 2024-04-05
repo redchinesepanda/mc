@@ -156,6 +156,12 @@ class MiltisiteMain
 	{
 		self::check_post_exists( $post );
 
+		LegalDebug::debug( [
+			'MultisiteMain' => 'add_post',
+			
+			'ID' => $post[ 'ID' ],
+		] );
+
 		$post_id = wp_insert_post( $post );
 
 		if ( is_wp_error( $post_id ) )
@@ -168,25 +174,25 @@ class MiltisiteMain
 
 	public static function add_post_terms( $post_id, $result )
 	{
-		LegalDebug::debug( [
-			'MultisiteMain' => 'add_post_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' => 'add_post_terms',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-		    'result-count' => count( $result ),
+		//     'result-count' => count( $result ),
 
-		    'result' => $result,
-		] );
+		//     'result' => $result,
+		// ] );
 		
 		foreach ( $result as $taxonomy => $post_terms )
 		{
 			$object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
 
-			LegalDebug::debug( [
-				'MultisiteMain' => 'add_post_terms',
+			// LegalDebug::debug( [
+			// 	'MultisiteMain' => 'add_post_terms',
 
-				'object_terms' => $object_terms,
-			] );
+			// 	'object_terms' => $object_terms,
+			// ] );
 		}
 	}
 
@@ -236,13 +242,13 @@ class MiltisiteMain
 
 	public static function check_post_exists( &$post )
 	{
-		LegalDebug::debug( [
-			'MultisiteMain' => 'check_post_exists',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' => 'check_post_exists',
 			
-			'ID' => $post[ 'ID' ],
+		// 	'ID' => $post[ 'ID' ],
 
-			'get_post_status' => get_post_status( $post[ 'ID' ] ),
-		] );
+		// 	'get_post_status' => get_post_status( $post[ 'ID' ] ),
+		// ] );
 
 		if ( !get_post_status( $post[ 'ID' ] ) )
 		{
