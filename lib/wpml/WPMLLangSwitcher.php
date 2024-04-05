@@ -68,7 +68,8 @@ class WPMLLangSwitcher
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
-    private static function get_all() {
+    private static function get_all()
+    {
         return WPMLMain::get_all_languages();
     }
 
