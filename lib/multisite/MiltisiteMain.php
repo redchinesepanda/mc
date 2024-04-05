@@ -9,6 +9,19 @@ class MiltisiteMain
 		add_action( 'init', [ $handler, 'mc_init_blog' ] );
 	}
 
+	const VIRTUAL_BLOG = [
+		[
+			'from' => [
+				'domain' => 'test.match.center'
+				'path' => '/kz/',
+			],
+
+			'to' => [
+				'domain' => 'testkz.match.center',
+			],
+		],
+	];
+
 	function mc_init_blog()
 	{
 		$sites = get_sites( [
@@ -22,6 +35,8 @@ class MiltisiteMain
 
 			'sites' => $sites,
 		] );
+
+		self::set_blog( 2 );
 	}
 	
 	public static function register_functions_admin()
@@ -39,6 +54,16 @@ class MiltisiteMain
 		// show an appropriate notice
 
 		add_action( 'admin_notices', [ $handler, 'rudr_bulk_multisite_notices' ] );
+	}
+
+	public static function set_blog( $blog_id )
+	{
+		switch_to_blog( $blog_id );
+	}
+
+	public static function restore_blog()
+	{
+		restore_current_blog();
 	}
 
 	public static function get_current_blog_id()
