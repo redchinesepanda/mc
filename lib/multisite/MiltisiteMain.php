@@ -25,8 +25,10 @@ class MiltisiteMain
 
 	function mc_init_blog()
 	{
+		$blog_id = self::get_current_blog_id();
+
 		$sites = get_sites( [
-			'site__not_in' => self::get_current_blog_id(),
+			'site__not_in' => $blog_id,
 
 			'number' => 32,
 		] );
@@ -35,6 +37,8 @@ class MiltisiteMain
 			'MultisiteMain' => 'mc_init_blog',
 
 			'sites' => $sites,
+
+			'get_blog_details' => self::get_blog_details( $blog_id ),
 		] );
 
 		// self::set_blog( 2 );
@@ -76,6 +80,11 @@ class MiltisiteMain
 	public static function get_current_blog_id()
 	{
 		return get_current_blog_id();
+	}
+
+	public static function get_blog_details( $blog_id )
+	{
+		return get_blog_details( $blog_id );
 	}
 	
 	public static function rudr_my_bulk_multisite_actions( $bulk_array )
