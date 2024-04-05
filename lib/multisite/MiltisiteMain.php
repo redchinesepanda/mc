@@ -231,9 +231,9 @@ class MiltisiteMain
 
 						'post' => $post[ 'ID' ],
 
-                        'post_terms' => $post_terms,
+                        'post_terms' => count( $post_terms ),
 
-                        'post_meta' => $post_meta,
+                        'post_meta' => count( $post_meta ),
 					] );
 
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
