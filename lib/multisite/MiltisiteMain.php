@@ -168,6 +168,8 @@ class MiltisiteMain
 		LegalDebug::debug( [
 			'MultisiteMain' => 'add_post',
 
+			'blog_id' => $post_id,
+
 			'inserted_post_id' => $inserted_post_id,
 		] );
 
@@ -276,7 +278,7 @@ class MiltisiteMain
 
 			'post_moved' => $post_moved,
 
-			'get_post_status' => get_post_status( $post[ 'ID' ] ),
+			'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
 		] );
 
 		if ( array_key_exists( $blog_id, $post_moved ) )
@@ -301,7 +303,7 @@ class MiltisiteMain
 		}
 		else
 		{
-			unset( $post[ 'ID' ] );
+			// unset( $post[ 'ID' ] );
 		}
 
 		return $post;
