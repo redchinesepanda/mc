@@ -75,7 +75,7 @@ class MiltisiteMain
 
 	public static function get_post( $post_id )
 	{
-		return wget_post( $post_id, ARRAY_A );
+		return get_post( $post_id, ARRAY_A );
 	}
 
 	public static function get_post_terms( $post_id )
