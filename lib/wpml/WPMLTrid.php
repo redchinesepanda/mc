@@ -64,7 +64,12 @@ class WPMLTrid
         // 	'wpml_get_element_translations' => apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' ),
         // ] );
 
-        return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
+        if ( $trid )
+        {
+            return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
+        }
+
+        return [];
     }
 
     public static function get_trid( $id = 0 )
@@ -94,7 +99,7 @@ class WPMLTrid
             return apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) );
         }
 
-        return 0;
+        return false;
     }
 }
 
