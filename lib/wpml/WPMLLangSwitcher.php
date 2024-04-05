@@ -206,7 +206,7 @@ class WPMLLangSwitcher
 
         if ( !empty( $languages_active ) && !empty( $languages_active_data ) )
         {
-            $args['active'] = array_merge( , self::get_data() );
+            $args['active'] = array_merge( $languages_active, $languages_active_data );
         }
 
         // $args['active'] = self::get_active( $languages );
