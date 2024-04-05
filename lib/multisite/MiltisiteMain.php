@@ -78,9 +78,45 @@ class MiltisiteMain
 		return get_post( $post_id, ARRAY_A );
 	}
 
+	const TAXONOMIES_WP = [
+		'category' => 'category',
+
+		'post-tag' => 'post_tag',
+	];
+
+	const TAXONOMIES_PAGE = [
+		'page-type' => 'page_type',
+
+		'offer-group' => 'offer_group',
+
+		'page-group' => 'page_group',
+	];
+
+	const TAXONOMIES_BILLET = [
+		'billet-achievement' => 'billet_achievement',
+
+		'billet-type' => 'billet_type',
+
+		'billet-feature' => 'billet_feature',
+	];
+
+	const TAXONOMIES_ATTACHMENT = [
+		'media-type' => 'media_type',
+	];
+
+	const TAXONOMIES = [
+		...self::TAXONOMIES_WP,
+
+		...self::TAXONOMIES_PAGE,
+
+		...self::TAXONOMIES_BILLET,
+
+		...self::TAXONOMIES_ATTACHMENT,
+    ];
+
 	public static function get_post_terms( $post_id )
 	{
-		return wp_get_object_terms( $post_id, 'category', [ 'fields' => 'slugs' ] );
+		return wp_get_object_terms( $post_id, self::TAXONOMIES, [ 'fields' => 'slugs' ] );
 	}
 
 	public static function get_post_meta( $post_id )
