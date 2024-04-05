@@ -86,7 +86,11 @@ class LegalMain
 
 			NotionMain::register_functions();
 
-			MiltisiteMain::register_functions();
+			MiltisiteMain::register_functions_admin();
+		}
+		else
+		{
+			MiltisiteMain::register_functions()
 		}
 	}
 

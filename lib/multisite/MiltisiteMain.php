@@ -6,6 +6,28 @@ class MiltisiteMain
 	{
 		$handler = new self();
 
+		add_action( 'init', [ $handler, 'mc_init_blog' ] );
+	}
+
+	function mc_init_blog()
+	{
+		$sites = get_sites( [
+			'site__not_in' => self::get_current_blog_id(),
+
+			'number' => 32,
+		] );
+
+		LegalDebug::debug( [
+			'MultisiteMain' => 'mc_init_blog',
+
+			'sites' => $sites,
+		] );
+	}
+	
+	public static function register_functions_admin()
+	{
+		$handler = new self();
+
 		// add bulk actions
 
 		add_filter( 'bulk_actions-edit-page', [ $handler, 'rudr_my_bulk_multisite_actions' ] );
