@@ -90,7 +90,7 @@ class LegalMain
 		}
 		else
 		{
-			MiltisiteMain::register_functions()
+			MiltisiteMain::register_functions();
 		}
 	}
 
