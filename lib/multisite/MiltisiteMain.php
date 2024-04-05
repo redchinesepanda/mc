@@ -173,10 +173,10 @@ class MiltisiteMain
 			'inserted_post_id' => $inserted_post_id,
 		] );
 
-		// if ( $inserted_post_id !== 0 )
-		// {
+		if ( $inserted_post_id !== 0 )
+		{
 			self::set_post_moved( $post_id, $blog_id, $inserted_post_id );
-		// }
+		}
 
 		return $inserted_post_id;
 	}
@@ -292,13 +292,7 @@ class MiltisiteMain
 		if ( array_key_exists( $blog_id, $post_moved ) )
 		{
 			return get_post_status( $post_moved[ $blog_id ] );
-
-			// $post[ 'ID' ] = get_post_status( $post_moved[ $blog_id ] );
-
-			// return false;
 		}
-
-		// unset( $post[ 'ID' ] );
 
 		return false;
 	}
@@ -311,7 +305,7 @@ class MiltisiteMain
 		}
 		else
 		{
-			// unset( $post[ 'ID' ] );
+			unset( $post[ 'ID' ] );
 		}
 
 		return $post;
