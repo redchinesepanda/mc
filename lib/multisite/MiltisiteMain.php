@@ -154,6 +154,8 @@ class MiltisiteMain
 
 	public static function add_post( $post )
 	{
+		self::check_post_exists( $post );
+
 		$post_id = wp_insert_post( $post );
 
 		if ( is_wp_error( $post_id ) )
@@ -234,9 +236,19 @@ class MiltisiteMain
 
 	public static function check_post_exists( &$post )
 	{
+		LegalDebug::debug( [
+			'MultisiteMain' => 'check_post_exists',
+			
+			'ID' => $post[ 'ID' ],
+
+			'get_post_status' => get_post_status( $post[ 'ID' ] ),
+		] );
+
 		if ( !get_post_status( $post[ 'ID' ] ) )
 		{
-			$post[ 'ID' ] = '';
+			// $post[ 'ID' ] = '';
+
+			unset( $post[ 'ID' ] );
 
 			return false;
 		}
@@ -256,10 +268,6 @@ class MiltisiteMain
 			{
 				if ( $post = self::get_post( $post_id ) )
 				{
-					// empty ID field, to tell WordPress to create a new post, not update an existing one
-				
-					self::check_post_exists( $post );
-
 					$post_terms = self::get_post_terms( $post_id );
 					
 					$post_meta = self::get_post_meta( $post_id );
