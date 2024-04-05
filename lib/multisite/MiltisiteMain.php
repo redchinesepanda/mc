@@ -111,7 +111,7 @@ class MiltisiteMain
 
 	public static function get_post_terms( $post_id )
 	{
-		return wp_get_object_terms( $post_id, self::TAXONOMIES, [ 'fields' => 'slugs' ] );
+		return wp_get_object_terms( $post_id, self::get_taxonomies(), [ 'fields' => 'slugs' ] );
 	}
 
 	public static function get_post_meta( $post_id )
