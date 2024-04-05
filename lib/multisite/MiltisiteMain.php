@@ -91,7 +91,7 @@ class MiltisiteMain
 
 	public static function add_post_meta( $post_id, $post_meta )
 	{
-		foreach ( $post_meta as $key => $values)
+		foreach ( $post_meta as $key => $values )
 		{
 			// if you do not want weird redirects
 
@@ -155,6 +155,18 @@ class MiltisiteMain
 		return str_replace( self::DOACTION[ 'move-to' ], '', $doaction );
 	}
 
+	public static function check_post_exists( &$post )
+	{
+		if ( !get_post_status( $post[ 'ID' ] ) )
+		{
+			$post[ 'ID' ] = '';
+
+			return false;
+		}
+
+		return true;
+	}
+
 	public static function rudr_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
 	{
 		$redirect = self::retirect_clean( $redirect );
@@ -169,7 +181,7 @@ class MiltisiteMain
 				{
 					// empty ID field, to tell WordPress to create a new post, not update an existing one
 				
-					$post[ 'ID' ] = '';
+					self::check_post_exists( $post );
 
 					$post_terms = self::get_post_terms( $post_id );
 					
