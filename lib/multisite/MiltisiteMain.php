@@ -175,7 +175,7 @@ class MiltisiteMain
 					
 					$post_meta = self::get_post_meta( $post_id );
 
-					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta )
+					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}
 			}
 
