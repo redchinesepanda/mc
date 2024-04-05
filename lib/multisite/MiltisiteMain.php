@@ -206,6 +206,18 @@ class MiltisiteMain
 			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
 
+		LegalDebug::die( [
+			'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+
+			'redirect' => $redirect,
+
+			'doaction' => $doaction,
+
+			'check_doaction' => self::check_doaction( $doaction ),
+
+			'blog_id' => $blog_id,
+		] );
+
 		return $redirect;
 	}
 
