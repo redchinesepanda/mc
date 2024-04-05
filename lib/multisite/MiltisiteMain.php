@@ -171,7 +171,10 @@ class MiltisiteMain
 			'inserted_post_id' => $inserted_post_id,
 		] );
 
-		// self::set_post_moved( $post_id, $blog_id, $inserted_post_id );
+		if ( $inserted_post_id !== 0 )
+		{
+			self::set_post_moved( $post_id, $blog_id, $inserted_post_id );
+		}
 
 		return $inserted_post_id;
 	}
