@@ -198,16 +198,12 @@ class MiltisiteMain
 
 		if ( $post_id = self::add_post( $post ) )
 		{
-			self::add_post_terms( $post_id );
+			self::add_post_terms( $post_id, $post_terms );
 
 			self::add_post_meta( $post_id, $post_meta );
-
-			return true;
 		}
 
 		restore_current_blog();
-
-		return false;
 	}
 
 	public static function check_doaction( $doaction )
@@ -260,19 +256,19 @@ class MiltisiteMain
 					
 					$post_meta = self::get_post_meta( $post_id );
 
-					LegalDebug::die( [
-						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+					// LegalDebug::die( [
+					// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-						'post' => $post[ 'ID' ],
+					// 	'post' => $post[ 'ID' ],
 
-                        'post_terms-count' => count( $post_terms ),
+                    //     'post_terms-count' => count( $post_terms ),
 
-                        'post_terms' => $post_terms,
+                    //     'post_terms' => $post_terms,
 
-                        'post_meta-count' => count( $post_meta ),
+                    //     'post_meta-count' => count( $post_meta ),
 
-                        'post_meta' => $post_meta,
-					] );
+                    //     'post_meta' => $post_meta,
+					// ] );
 
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}
