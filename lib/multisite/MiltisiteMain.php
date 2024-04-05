@@ -115,9 +115,12 @@ class MiltisiteMain
 
 		$result = [];
 
-		foreach( $taxonomies as $taxonomy )
+		foreach ( $taxonomies as $taxonomy )
 		{
-			$result[ $taxonomy ] = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'slugs' ] );
+			if ( $terms = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'slugs' ] ) )
+			{
+				$result[ $taxonomy ] = $terms;
+			}
 		}
 
 		// return wp_get_object_terms( $post_id, self::get_taxonomies(), [ 'fields' => 'slugs' ] );
