@@ -44,7 +44,9 @@ LegalDebug::debug([
 	'modify_stylesheet_directory_uri' => MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ),
 ]);
 
-define( 'LEGAL_URL', get_stylesheet_directory_uri() );
+define( 'LEGAL_URL', MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ) );
+
+// define( 'LEGAL_URL', get_stylesheet_directory_uri() );
 
 define( 'LEGAL_ROOT', site_url() );
 
