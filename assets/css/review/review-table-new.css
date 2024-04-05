@@ -215,8 +215,7 @@
     /* overflow: hidden; */
 }
 
-.tcb-post-content .legal-scroll,
-.tcb-post-content .legal-scroll-x { /*стиль скролла для Mozila Firefox*/
+.tcb-post-content .legal-scroll { /*стиль скролла для Mozila Firefox*/
     scrollbar-color: var(--Base-base-04) var(--Base-base-02);
     scrollbar-width: thin;
 }
