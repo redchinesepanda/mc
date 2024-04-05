@@ -12,7 +12,8 @@ class MiltisiteMain
 	const VIRTUAL_BLOG = [
 		[
 			'from' => [
-				'domain' => 'test.match.center'
+				'domain' => 'test.match.center',
+				
 				'path' => '/kz/',
 			],
 
