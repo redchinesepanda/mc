@@ -13,7 +13,7 @@ class MiltisiteMain
 		[
 			'from' => [
 				'domain' => 'test.match.center',
-				
+
 				'path' => '/kz/',
 			],
 
@@ -37,7 +37,7 @@ class MiltisiteMain
 			'sites' => $sites,
 		] );
 
-		self::set_blog( 2 );
+		// self::set_blog( 2 );
 	}
 	
 	public static function register_functions_admin()
