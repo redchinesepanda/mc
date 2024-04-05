@@ -242,19 +242,19 @@ class MiltisiteMain
 
 	public static function check_post_exists( &$post )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteMain' => 'check_post_exists',
+		LegalDebug::debug( [
+			'MultisiteMain' => 'check_post_exists',
 			
-		// 	'ID' => $post[ 'ID' ],
+			'ID' => $post[ 'ID' ],
 
-		// 	'get_post_status' => get_post_status( $post[ 'ID' ] ),
-		// ] );
+			'get_post_status' => get_post_status( $post[ 'ID' ] ),
+		] );
 
 		if ( !get_post_status( $post[ 'ID' ] ) )
 		{
 			// $post[ 'ID' ] = '';
 
-			unset( $post[ 'ID' ] );
+			// unset( $post[ 'ID' ] );
 
 			return false;
 		}
