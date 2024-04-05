@@ -262,7 +262,9 @@ class MiltisiteMain
 
 						'post' => $post[ 'ID' ],
 
-                        'post_terms' => count( $post_terms ),
+                        'post_terms-count' => count( $post_terms ),
+
+                        'post_terms' => $post_terms,
 
                         'post_meta-count' => count( $post_meta ),
 
