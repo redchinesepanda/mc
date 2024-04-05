@@ -158,6 +158,7 @@
 .tcb-post-content > .legal-scroll-x
 {
     margin-top: 16px;
+    vertical-align: top;
 }
 
 .billet-mega-content > table:not( :last-child ),
