@@ -147,15 +147,15 @@ class MiltisiteMain
 
 	public static function check_doaction( $doaction )
 	{
-		LegalDebug::debug( [
-			'MultisiteMain' => 'check_doaction',
+		// LegalDebug::debug( [
+		// 	'MultisiteMain' => 'check_doaction',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'move-to' => self::DOACTION[ 'move-to' ],
-        ] );
-		
-		return str_contains( self::DOACTION[ 'move-to' ], $doaction );
+		// 	'move-to' => self::DOACTION[ 'move-to' ],
+        // ] );
+
+		return str_contains( $doaction, self::DOACTION[ 'move-to' ] );
 	}
 
 	public static function get_blog_id( $doaction )
