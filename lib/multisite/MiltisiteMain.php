@@ -104,15 +104,10 @@ class MiltisiteMain
 		'media-type' => 'media_type',
 	];
 
-	const TAXONOMIES = [
-		...self::TAXONOMIES_WP,
-
-		...self::TAXONOMIES_PAGE,
-
-		...self::TAXONOMIES_BILLET,
-
-		...self::TAXONOMIES_ATTACHMENT,
-    ];
+	public static function get_taxonomies()
+	{
+		return array_merge( self::TAXONOMIES_WP, self::TAXONOMIES_PAGE, self::TAXONOMIES_BILLET, self::TAXONOMIES_ATTACHMENT );
+	}
 
 	public static function get_post_terms( $post_id )
 	{
