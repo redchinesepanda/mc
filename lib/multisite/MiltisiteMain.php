@@ -181,7 +181,7 @@ class MiltisiteMain
 		
 		if ( self::check_doaction( $doaction ) )
 		{
-			$blog_id = get_blog_id( $doaction );
+			$blog_id = self::get_blog_id( $doaction );
 
 			foreach ( $object_ids as $post_id )
 			{
