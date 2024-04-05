@@ -198,7 +198,7 @@ class MiltisiteMain
 					LegalDebug::die( [
 						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-						'post' => $post,
+						'post' => $post[ 'ID' ],
 
                         'post_terms' => $post_terms,
 
