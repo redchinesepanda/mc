@@ -23,6 +23,16 @@ LegalDebug::debug( [
                         <?php endif; ?>
                         <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
                             <span class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></span>
+                            <?php if ( !empty( $args[ 'logo-items' ] ) ) : ?>
+                                <div class="footer-logo">
+                                    <?php foreach( $args[ 'logo-items' ] as $logo ) : ?>
+                                        <a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow">
+                                            <!-- <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"> -->
+                                            <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="16" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>

@@ -272,7 +272,12 @@ class ReviewAbout
 
     public static function get_about_logo_items()
 	{
-        return array_slice( BaseFooter::get_logo_items(), 1 );
+        if ( TemplateMain::check_new() )
+        {
+            return array_slice( BaseFooter::get_logo_items(), 1 );
+        }
+
+        return [];
     }
 
     public static function get_about_achievement( $id, $group )
@@ -413,6 +418,8 @@ class ReviewAbout
             //     $logo = $group[ self::ABOUT[ 'logo' ] ];
             // }
 
+            $logo_items = self::get_about_logo_items();
+
             return [
                 'text' => [
                     // 'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
@@ -455,6 +462,8 @@ class ReviewAbout
                 'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
 
                 'achievement' => $achievement,
+
+                'logo-items' => $logo_items,
             ];
         }
 
