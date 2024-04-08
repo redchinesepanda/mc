@@ -70,6 +70,10 @@
         padding-bottom: 20px;
     }
 
+    .review-about .legal-afillate-description {
+        margin-top: calc( 10px - 8px );
+    }
+
     .legal-review-page-sidebar .about-right.sticky-bonus
     {
         position: fixed;
@@ -373,9 +377,10 @@
     padding-bottom: 48px;
 }
 
-/* .legal-review-page-sidebar .legal-afillate-description {
-    padding-top: 8px;
-} */
+.review-about .legal-afillate-description {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
