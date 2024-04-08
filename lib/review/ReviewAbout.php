@@ -317,12 +317,12 @@ class ReviewAbout
 
     public static function get_about_logo( $group )
 	{
-        $logo = BrandMain::get_logo_review( $group );
+        // $logo = BrandMain::get_logo_review( $group );
 
-        if ( !empty( $logo ) )
-        {
-            return $logo;
-        }
+        // if ( !empty( $logo ) )
+        // {
+        //     return $logo;
+        // }
 
         // return $group[ self::ABOUT[ 'logo' ] ];
 
