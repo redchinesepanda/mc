@@ -50,11 +50,13 @@ class BilletAchievement
     
     public static function get_achievement( $id, $filter )
     {
-        // LegalDebug::debug( [
-        //     'function' => 'BilletAchievement::get',
+        LegalDebug::debug( [
+            'BilletAchievement' => 'get',
 
-        //     'title' => $title,
-        // ] );
+            'id' => $id,
+
+            'filter' => $filter,
+        ] );
 
         if ( self::check_disabled( $filter ) )
         {
