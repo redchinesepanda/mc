@@ -321,6 +321,11 @@
     display: inline-block;
 }
 
+.review-about .footer-logo {
+    display: flex;
+    column-gap: 8px;
+}
+
 /* Width and Height */
 
 .review-about .about-logo {
