@@ -317,7 +317,7 @@ class ReviewAbout
 
     public static function get_about_logo( $group )
 	{
-        // $logo = BrandMain::get_logo_review( $group );
+        $logo = BrandMain::get_logo_review( $group );
 
         // if ( !empty( $logo ) )
         // {
