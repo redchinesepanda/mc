@@ -5,11 +5,17 @@
 
 class ToolNotFound
 {
+	const SHORTCODES = [
+		'restricted' => 'legal-restricted',
+	];
+
 	public static function register()
     {
         $handler = new self();
 
 		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+
+		add_shortcode( self::SHORTCODES[ 'restricted' ], [ $handler, 'prepare' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
 
@@ -21,6 +27,20 @@ class ToolNotFound
 
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
+
+	// const PAIRS = [];
+
+	public static function prepare( $atts, $content = '' )
+    {
+		// $atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODES[ 'restricted' ] );
+
+		if ( self::check_domain_restricted() )
+		{
+			return '';
+		}
+
+		return $content;
+	}
 
 	public static function get_host()
 	{
