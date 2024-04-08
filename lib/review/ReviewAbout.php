@@ -324,9 +324,9 @@ class ReviewAbout
         //     return $logo;
         // }
 
-        // return $group[ self::ABOUT[ 'logo' ] ];
+        return $group[ self::ABOUT[ 'logo' ] ];
 
-        return '';
+        // return '';
     }
 
     public static function get( $args )
