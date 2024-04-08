@@ -275,15 +275,15 @@ class ReviewAbout
         return array_slice( BaseFooter::get_logo_items(), 1 );
     }
 
-    public static function get_about_achievement( $id )
+    public static function get_about_achievement( $id, $group )
 	{
         $term = self::get_achievement( $id );
 
-        LegalDebug::debug( [
-            'ReviewAbout' => 'get_about_achievement',
+        // LegalDebug::debug( [
+        //     'ReviewAbout' => 'get_about_achievement',
 
-            'term' => $term,
-        ] );
+        //     'term' => $term,
+        // ] );
 
         if ( !empty( $term ) )
         {
@@ -369,7 +369,7 @@ class ReviewAbout
             //     'description' => $group[ 'about-description' ],
             // ];
 
-            $achievement = self::get_about_achievement( $id );
+            $achievement = self::get_about_achievement( $id, $group );
 
             $rating = self::get_about_rating( $group );
 
