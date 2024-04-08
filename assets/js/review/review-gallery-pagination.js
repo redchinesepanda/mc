@@ -50,7 +50,9 @@ let reviewGalleyPagination = ( function()
 					}
 				}
 			)
-		}
+		},
+
+		resize: 'resize'
 	};
 } )();
 
@@ -202,7 +204,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imageset ).forEach( initPagination, element );
 	}
 
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+	function initPagination( event )
+	{
+		document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+	}
+
+	document.addEventListener( reviewGalleyPagination.resize, initPagination, false );
+
+	initPagination();
+
+	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
 	function oopsReady( event )
 	{
