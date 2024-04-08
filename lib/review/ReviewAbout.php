@@ -170,7 +170,11 @@ class ReviewAbout
     ];
 
     const BONUS_EXCEPTION = [
-        'es'
+        'es',
+
+        'mx',
+
+        'pt',
     ];
 
     public static function check_bonus_exception()
