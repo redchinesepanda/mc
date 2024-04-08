@@ -337,7 +337,7 @@ class ReviewAbout
 
         if ( $group )
         {
-            // $bonus = self::get_about_bonus( $group, $mode );
+            $bonus = self::get_about_bonus( $group, $mode );
 
             // $bonus_exception = self::check_bonus_exception();
 
@@ -378,7 +378,7 @@ class ReviewAbout
             //     ];
             // }
 
-            $title = self::get_about_title( $group );
+            // $title = self::get_about_title( $group );
 
             // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
