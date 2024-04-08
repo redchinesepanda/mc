@@ -207,11 +207,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function init( event )
 	{
 		console.log( 'init' );
-		
+
 		document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 	}
 
-	document.addEventListener( reviewGalleyPagination.resize, init, false );
+	window.addEventListener( reviewGalleyPagination.resize, init, false );
 
 	init();
 
