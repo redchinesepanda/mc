@@ -80,6 +80,12 @@ class BilletAchievement
             }
         }
 
+        LegalDebug::debug( [
+            'BilletAchievement' => 'get',
+
+            'feature_achievement' => $feature_achievement,
+        ] );
+
         if ( empty( $term ) )
         {
             $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
