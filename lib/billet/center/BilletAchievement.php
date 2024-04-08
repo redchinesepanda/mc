@@ -59,15 +59,15 @@ class BilletAchievement
     
     public static function get_achievement( $id, $filter )
     {
-        LegalDebug::debug( [
-            'BilletAchievement' => 'get',
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
 
-            'id' => $id,
+        //     'id' => $id,
 
-            'filter' => $filter,
+        //     'filter' => $filter,
 
-            'check_disabled' => self::check_disabled( $filter ),
-        ] );
+        //     'check_disabled' => self::check_disabled( $filter ),
+        // ] );
 
         if ( self::check_disabled( $filter ) )
         {
@@ -91,11 +91,11 @@ class BilletAchievement
             }
         }
 
-        LegalDebug::debug( [
-            'BilletAchievement' => 'get',
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
 
-            'feature_achievement' => $feature_achievement,
-        ] );
+        //     'feature_achievement' => $feature_achievement,
+        // ] );
 
         if ( empty( $term ) )
         {
@@ -133,11 +133,11 @@ class BilletAchievement
             ];
         }
 
-        LegalDebug::debug( [
-            'BilletAchievement' => 'get',
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
 
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
         return $args;
     }
