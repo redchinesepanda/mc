@@ -206,6 +206,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function init( event )
 	{
+		console.log( 'init' );
+		
 		document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 	}
 
