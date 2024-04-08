@@ -204,14 +204,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.imageset ).forEach( initPagination, element );
 	}
 
-	// function initPagination( event )
-	// {
-	// 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
-	// }
+	function init( event )
+	{
+		document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+	}
 
-	// document.addEventListener( reviewGalleyPagination.resize, initPagination, false );
+	document.addEventListener( reviewGalleyPagination.resize, init, false );
 
-	// initPagination();
+	init();
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
