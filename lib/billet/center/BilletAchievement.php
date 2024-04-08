@@ -171,7 +171,7 @@ class BilletAchievement
             return $filter[ 'achievement' ] == self::TYPE_DISABLED;
         }
         
-        return true;
+        return false;
     }
 
     public static function render( $achievement )
