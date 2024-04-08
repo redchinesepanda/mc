@@ -59,6 +59,10 @@
         height: 68px;
     }
 
+    .review-about .about-data {
+        width: calc( 100% - ( 70px + 26px ) );
+    }
+
     .review-about.legal-mode-mini .about-button {
         width: 100%;
     }
@@ -204,6 +208,10 @@
         width: 100%;
     }
 
+    .review-about .about-data {
+        width: calc( 100% - ( 102px + 26px ) );
+    }
+
     .review-about .about-right
     {
         width: calc( 100% / 3 - 24px );
@@ -256,10 +264,11 @@
     column-gap: 30px;
 }
 
-.review-about .about-left,
+/* .review-about .about-left, */
 .review-about .about-center {
     display: flex;
     column-gap: 26px;
+    flex-wrap: wrap;
 }
 
 .review-about.legal-mode-mini .about-center {
