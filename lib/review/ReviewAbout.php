@@ -182,7 +182,7 @@ class ReviewAbout
         return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
     }
 
-    public static function get_achievement_args( $id )
+    public static function get_achievement( $id )
     {
         return BilletAchievement::get( [
             'id' => $id,
@@ -243,7 +243,7 @@ class ReviewAbout
         return '';
     }
 
-    public static function get_mode( $args )
+    public static function get_about_mode( $args )
     {
         if ( !empty( $args[ 'mode' ] ) )
         {
@@ -256,14 +256,14 @@ class ReviewAbout
         return self::MODE[ 'default' ];
     }
 
-    public static function get_logo_items()
+    public static function get_about_logo_items()
 	{
         return array_slice( BaseFooter::get_logo_items(), 1 );
     }
 
-    public static function get_achievement( $id )
+    public static function get_about_achievement( $id )
 	{
-        $term = self::get_achievement_args( $id );
+        $term = self::get_achievement( $id );
 
         if ( !empty( $term ) )
         {
@@ -281,7 +281,7 @@ class ReviewAbout
         return [];
     }
 
-    public static function get_rating( $group )
+    public static function get_about_rating( $group )
 	{
         if ( !empty( $group[ 'about-rating' ] ) )
         {
@@ -295,7 +295,7 @@ class ReviewAbout
         return [];
     }
 
-    public static function get_title( $group )
+    public static function get_about_title( $group )
 	{
         return ReviewTitle::replace_placeholder( implode( ' ', [
             $group[ 'about-prefix' ],
@@ -306,27 +306,50 @@ class ReviewAbout
         ] ) );
     }
 
+    public static function get_about_bonus( $group, $mode )
+	{
+        return [
+            'name' => self::get_name( $group, $mode, self::check_bonus_exception() ),
+
+            'description' => $group[ 'about-description' ],
+        ];
+    }
+
+    public static function get_about_logo( $group )
+	{
+        $logo = BrandMain::get_logo_review( $group );
+
+        if ( !empty( $logo ) )
+        {
+            return $logo;
+        }
+
+        return $group[ self::ABOUT[ 'logo' ] ];
+    }
+
     public static function get( $args )
     {
         $id = BonusMain::get_id();
 
-        $mode = self::get_mode( $args );
+        $mode = self::get_about_mode( $args );
 
         $group = get_field( self::FIELD, $id );
 
         if ( $group )
         {
-            $bonus_exception = self::check_bonus_exception();
+            $bonus = self::get_about_bonus( $group, $mode );
 
-            $bonus = [
-                'name' => self::get_name( $group, $mode, $bonus_exception ),
+            // $bonus_exception = self::check_bonus_exception();
 
-                'description' => $group[ 'about-description' ],
-            ];
+            // $bonus = [
+            //     'name' => self::get_name( $group, $mode, $bonus_exception ),
 
-            $achievement = self::get_achievement( $id );
+            //     'description' => $group[ 'about-description' ],
+            // ];
 
-            $rating = self::get_rating( $group );
+            $achievement = self::get_about_achievement( $id );
+
+            $rating = self::get_about_rating( $group );
 
             // $rating = [];
             
@@ -355,16 +378,18 @@ class ReviewAbout
             //     ];
             // }
 
-            $title = self::get_title( $group );
+            $title = self::get_about_title( $group );
 
             // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
-            $logo = BrandMain::get_logo_review( $id );
+            $logo = self::get_about_logo( $group );
 
-            if ( empty( $logo ) )
-            {
-                $logo = $group[ self::ABOUT[ 'logo' ] ];
-            }
+            // $logo = BrandMain::get_logo_review( $id );
+
+            // if ( empty( $logo ) )
+            // {
+            //     $logo = $group[ self::ABOUT[ 'logo' ] ];
+            // }
 
             return [
                 'text' => [
