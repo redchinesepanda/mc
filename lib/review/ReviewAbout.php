@@ -337,7 +337,7 @@ class ReviewAbout
 
         if ( $group )
         {
-            $bonus = self::get_about_bonus( $group, $mode );
+            // $bonus = self::get_about_bonus( $group, $mode );
 
             // $bonus_exception = self::check_bonus_exception();
 
