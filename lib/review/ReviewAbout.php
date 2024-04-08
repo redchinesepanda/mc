@@ -423,7 +423,9 @@ class ReviewAbout
 
                     'text' => self::get_text(),
 
-                    'description' => self::get_afillate_description( $mode, $bonus_exception ),
+                    // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
+                    
+                    'description' => self::get_afillate_description( $mode, self::check_bonus_exception() ), 
                 ],
 
                 'mode' => $mode,
