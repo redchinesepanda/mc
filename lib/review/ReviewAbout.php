@@ -182,7 +182,7 @@ class ReviewAbout
         return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
     }
 
-    public static function get_achievement( $id )
+    public static function get_achievement_args( $id )
     {
         return BilletAchievement::get( [
             'id' => $id,
@@ -263,7 +263,7 @@ class ReviewAbout
 
     public static function get_achievement( $id )
 	{
-        $term = self::get_achievement( $id );
+        $term = self::get_achievement_args( $id );
 
         if ( !empty( $term ) )
         {
