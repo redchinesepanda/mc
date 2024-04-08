@@ -243,19 +243,74 @@ class ReviewAbout
         return '';
     }
 
-    public static function get( $args )
+    public static function get_mode( $args )
     {
-        $id = BonusMain::get_id();
-
-        $mode = self::MODE[ 'default' ];
-
         if ( !empty( $args[ 'mode' ] ) )
         {
             if ( in_array( $args[ 'mode' ], self::MODE ) )
             {
-                $mode = $args[ 'mode' ];
+                return $args[ 'mode' ];
             }
         }
+
+        return self::MODE[ 'default' ];
+    }
+
+    public static function get_logo_items()
+	{
+        return array_slice( BaseFooter::get_logo_items(), 1 );
+    }
+
+    public static function get_achievement( $id )
+	{
+        $term = self::get_achievement( $id );
+
+        if ( !empty( $term ) )
+        {
+            return [
+                'bonus' => $group[ 'about-bonus' ],
+
+                'term' => $term[ 'name' ],
+
+                'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+
+                'href' => self::check_href_afillate( $id ),
+            ];
+        }
+
+        return [];
+    }
+
+    public static function get_rating( $group )
+	{
+        if ( !empty( $group[ 'about-rating' ] ) )
+        {
+            return [
+                'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+    
+                'value' => $group[ 'about-rating' ],
+            ];
+        }
+
+        return [];
+    }
+
+    public static function get_title( $group )
+	{
+        return ReviewTitle::replace_placeholder( implode( ' ', [
+            $group[ 'about-prefix' ],
+
+            $group[ 'about-title' ],
+
+            $group[ 'about-suffix' ],
+        ] ) );
+    }
+
+    public static function get( $args )
+    {
+        $id = BonusMain::get_id();
+
+        $mode = self::get_mode( $args );
 
         $group = get_field( self::FIELD, $id );
 
@@ -269,34 +324,40 @@ class ReviewAbout
                 'description' => $group[ 'about-description' ],
             ];
 
-            $term = self::get_achievement( $id );
+            $achievement = self::get_achievement( $id );
 
-            $achievement = [];
+            $rating = self::get_rating( $group );
 
-            $rating = [];
+            // $rating = [];
+            
+            // $achievement = [];
 
-            if ( !empty( $term ) )
-            {
-                $achievement = [
-                    'bonus' => $group[ 'about-bonus' ],
+            // $term = self::get_achievement( $id );
 
-                    'term' => $term[ 'name' ],
+            // if ( !empty( $term ) )
+            // {
+            //     $achievement = [
+            //         'bonus' => $group[ 'about-bonus' ],
 
-                    'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+            //         'term' => $term[ 'name' ],
 
-                    'href' => self::check_href_afillate( $id ),
-                ];
-            }
-            else 
-            {
-                $rating = [
-                    'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+            //         'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
 
-                    'value' => $group[ 'about-rating' ],
-                ];
-            }
+            //         'href' => self::check_href_afillate( $id ),
+            //     ];
+            // }
+            // else 
+            // {
+            //     $rating = [
+            //         'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
 
-            $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
+            //         'value' => $group[ 'about-rating' ],
+            //     ];
+            // }
+
+            $title = self::get_title( $group );
+
+            // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
             $logo = BrandMain::get_logo_review( $id );
 

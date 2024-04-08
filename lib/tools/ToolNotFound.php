@@ -15,6 +15,8 @@ class ToolNotFound
 
 		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
+		// [legal-restricted][/legal-restricted]
+
 		add_shortcode( self::SHORTCODES[ 'restricted' ], [ $handler, 'prepare' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
