@@ -9,6 +9,9 @@
                         <?php if( !empty( $args[ 'rating' ][ 'value' ] ) ) : ?>
                             <div class="about-rating"><?php echo $args[ 'rating' ][ 'label' ]; ?> - <?php echo $args[ 'rating' ][ 'value' ]; ?></div>
                         <?php endif; ?>
+                        <?php if( !empty( $args[ 'afillate' ][ 'description' ] ) ) : ?>
+                            <span class="legal-afillate-description"><?php echo $args[ 'afillate' ][ 'description' ]; ?></span>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <?php if ( $args[ 'mode' ] == ReviewAbout::MODE[ 'mini' ] ) : ?>    
