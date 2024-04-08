@@ -241,13 +241,13 @@ class ReviewAbout
         return $group[ 'about-bonus' ];
     }
 
-    public static function get_afillate_description( $mode, $bonus_exception )
+    public static function get_afillate_description( $mode )
     {
         // $afillate_description = '';
 
         // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
         
-        if ( empty( $mode ) && $bonus_exception )
+        if ( empty( $mode ) && self::check_bonus_exception() )
         {
             // $afillate_description = 'Publicidad | Juego Responsable | +18';
             
@@ -272,7 +272,7 @@ class ReviewAbout
 
     public static function get_about_logo_items()
 	{
-        if ( TemplateMain::check_new() )
+        if ( TemplateMain::check_new() && self::check_bonus_exception() )
         {
             return array_slice( BaseFooter::get_logo_items(), 1 );
         }
@@ -454,7 +454,7 @@ class ReviewAbout
 
                     // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
                     
-                    'description' => self::get_afillate_description( $mode, self::check_bonus_exception() ), 
+                    'description' => self::get_afillate_description( $mode ), 
                 ],
 
                 'mode' => $mode,
