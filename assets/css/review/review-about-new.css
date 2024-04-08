@@ -608,16 +608,15 @@
 }
 
 .review-about .legal-afillate-description {
-    font-size: 14px;
-    font-style: normal;
+    font-size: 13px;
     font-weight: 400;
-    line-height: 24.5px;
+    line-height: 17px;
+    color: var( --Base-base-05 );
     /* text-align: center; */
 }
 
 .review-about .about-achievement .achievement-bonus-link {
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 28px;
     text-decoration: none;
