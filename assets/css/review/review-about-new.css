@@ -170,10 +170,6 @@
         margin-left: auto;
     }
 
-    .review-about .about-achievement {
-        padding: 30px 0px;
-    }
-
     .review-about .legal-afillate-description,
     .review-about .footer-logo {
         padding-top: 4px;
@@ -322,7 +318,7 @@
 
 .review-about .about-achievement {
     display: flex;
-    justify-content: center;
+ /*    justify-content: center; */
     column-gap: 30px;
 }
 
@@ -389,6 +385,14 @@
 
 .review-about.legal-mode-mini {
     padding: 24px;
+}
+
+.review-about .about-achievement {
+    padding-bottom: 24px;
+}
+
+.review-about .achievement-name {
+    padding: 4px 10px;
 }
 
 .review-about .about-center h1 {
@@ -458,6 +462,11 @@
     border-radius: 18px;
     background-color: var(--Base-base-01);
     border: 1px solid var(--Base-base-09);
+}
+
+.review-about .achievement-name {
+    background-color: var(--Base-base-01);
+    border-radius: 60px; 
 }
 
 .review-about .about-logo {
@@ -534,6 +543,7 @@
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
+.review-about .achievement-name,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
 .review-about .review-bonus-description,
@@ -545,6 +555,7 @@
 
 .review-about .about-rating,
 .review-about .about-center h1,
+.review-about .achievement-name,
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title,
 .review-about .about-right .review-bonus-description,
@@ -556,6 +567,12 @@
 .about-right .review-bonus-head {
     font-family: var( --legal-font-primary );
     font-style: normal;
+}
+
+.review-about .achievement-name {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .review-about .about-rating {
