@@ -184,19 +184,19 @@ class ReviewAbout
 
     public static function get_achievement( $id )
     {
-        LegalDebug::debug( [
-            'ReviewAbout' => 'get_achievement',
+        // LegalDebug::debug( [
+        //     'ReviewAbout' => 'get_achievement',
 
-            'id' => $id,
+        //     'id' => $id,
 
-            'get' => BilletAchievement::get( [
-                'id' => $id,
+        //     'get' => BilletAchievement::get( [
+        //         'id' => $id,
     
-                // 'achievement' => BilletAchievement::TYPE[ 'about' ],
+        //         // 'achievement' => BilletAchievement::TYPE[ 'about' ],
     
-                'filter' => [],
-            ] ),
-        ] );
+        //         'filter' => [],
+        //     ] ),
+        // ] );
 
         return BilletAchievement::get( [
             'id' => $id,
