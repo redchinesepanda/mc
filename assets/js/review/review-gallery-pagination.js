@@ -206,8 +206,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function init( event )
 	{
-		console.log( 'init' );
-
 		document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 	}
 
@@ -215,7 +213,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	init();
 
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
+	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( slider );
 
 	function oopsReady( event )
 	{
