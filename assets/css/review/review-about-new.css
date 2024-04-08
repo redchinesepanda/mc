@@ -271,6 +271,11 @@
     align-items: center;
 }
 
+.review-about .achievement-name {
+    display: flex;
+    align-items: center;
+}
+
 .review-about .about-right,
 .legal-review-page-sidebar .about-right
 {
@@ -340,6 +345,10 @@
 .review-about .about-center h1,
 .review-about .about-center .review-bonus-title {
     width: 100%;
+}
+
+.review-about .achievement-name {
+    min-height: calc( 36px - ( 4px * 2 ) );
 }
 
 .about-right .review-bonus-head,
