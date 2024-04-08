@@ -324,7 +324,9 @@ class ReviewAbout
             return $logo;
         }
 
-        return $group[ self::ABOUT[ 'logo' ] ];
+        // return $group[ self::ABOUT[ 'logo' ] ];
+
+        return '';
     }
 
     public static function get( $args )
@@ -382,7 +384,7 @@ class ReviewAbout
 
             // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
-            // $logo = self::get_about_logo( $group );
+            $logo = self::get_about_logo( $group );
 
             // $logo = BrandMain::get_logo_review( $id );
 
