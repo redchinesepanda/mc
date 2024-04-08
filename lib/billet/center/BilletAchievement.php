@@ -114,6 +114,12 @@ class BilletAchievement
             ];
         }
 
+        LegalDebug::debug( [
+            'BilletAchievement' => 'get',
+
+            'args' => $args,
+        ] );
+
         return $args;
     }
 
