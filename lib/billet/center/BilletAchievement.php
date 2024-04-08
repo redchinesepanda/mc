@@ -56,6 +56,8 @@ class BilletAchievement
             'id' => $id,
 
             'filter' => $filter,
+
+            'check_disabled' => self::check_disabled( $filter ),
         ] );
 
         if ( self::check_disabled( $filter ) )
