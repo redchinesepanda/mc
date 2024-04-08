@@ -378,11 +378,11 @@ class ReviewAbout
             //     ];
             // }
 
-            // $title = self::get_about_title( $group );
+            $title = self::get_about_title( $group );
 
             // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
-            $logo = self::get_about_logo( $group );
+            // $logo = self::get_about_logo( $group );
 
             // $logo = BrandMain::get_logo_review( $id );
 
