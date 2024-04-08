@@ -315,14 +315,14 @@ class ReviewAbout
         ];
     }
 
-    public static function get_about_logo( $group )
+    public static function get_about_logo( $id, $group )
 	{
-        $logo = BrandMain::get_logo_review( $group );
+        $logo = BrandMain::get_logo_review( $id );
 
-        // if ( !empty( $logo ) )
-        // {
-        //     return $logo;
-        // }
+        if ( !empty( $logo ) )
+        {
+            return $logo;
+        }
 
         return $group[ self::ABOUT[ 'logo' ] ];
 
@@ -384,7 +384,7 @@ class ReviewAbout
 
             // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
-            $logo = self::get_about_logo( $group );
+            $logo = self::get_about_logo( $id, $group );
 
             // $logo = BrandMain::get_logo_review( $id );
 
