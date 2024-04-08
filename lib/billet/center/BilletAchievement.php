@@ -30,9 +30,18 @@ class BilletAchievement
         'achievement-id' => 'billet-achievement-id',
     ];
     
-    public static function get_achievement_class( $achievement_class )
+    // public static function get_achievement_class( $achievement_class )
+    
+    public static function get_achievement_class( $achievement )
     {
-        return !empty( $achievement_class ) ? $achievement_class : BilletAchievement::TYPE_IMAGE;
+        if ( !empty( $filter[ 'achievement' ] ) )
+        {
+            return $filter[ 'achievement' ];
+        }
+
+        return BilletAchievement::TYPE_IMAGE;
+        
+        // return !empty( $achievement_class ) ? $achievement_class : BilletAchievement::TYPE_IMAGE;
     }
 
     // public static function get( $title )
@@ -110,7 +119,9 @@ class BilletAchievement
             $args = [
                 // 'class' => $title['achievement'],
                 
-                'class' => self::get_achievement_class( $filter[ 'achievement' ] ),
+                // 'class' => self::get_achievement_class( $filter[ 'achievement' ] ),
+                
+                'class' => self::get_achievement_class( $filter ),
             
                 'selector' => 'achievement-' . $term->term_id,
 
