@@ -279,7 +279,7 @@
 /* .tcb-post-content table > thead:first-of-type > tr:first-child > * */
 .tcb-post-content table > * > tr > *
 {
-    text-align: left;
+    /* text-align: left; */
     vertical-align: top;
 }
 
