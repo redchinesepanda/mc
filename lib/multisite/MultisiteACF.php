@@ -17,11 +17,11 @@ class MultisiteACF
 
 	public static function get_field_names()
 	{
-		LegalDebug::debug( [
-			'MultisiteACF' => 'get_field_names',
+		// LegalDebug::debug( [
+		// 	'MultisiteACF' => 'get_field_names',
 
-			'array_column' => array_column( self::FIELDS_COMPILATION_FILTER, 'key' ),
-		] );
+		// 	'array_column' => array_column( self::FIELDS_COMPILATION_FILTER, 'key' ),
+		// ] );
 
 		return array_merge( array_column( self::FIELDS_COMPILATION_FILTER, 'key' ), [] );
 	}
