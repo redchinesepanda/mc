@@ -55,17 +55,17 @@ class ACFMain
     }
 }
 
-// if ( ! function_exists( 'get_field' ) && ! ACFMain::check_plugin() )
-// {
-//     function get_field( $field_name, $post_id = null )
-//     {
-//         // if ( $post_id )
-//         // {
-//         //     return get_post_meta( $post_id, $field_name, true );
-//         // }
+if ( ! is_admin() && ! function_exists( 'get_field' ) )
+{
+    function get_field( $field_name, $post_id = null )
+    {
+        // if ( $post_id )
+        // {
+        //     return get_post_meta( $post_id, $field_name, true );
+        // }
 
-//         return false;
-//     }
-// }
+        return false;
+    }
+}
 
 ?>
