@@ -198,13 +198,15 @@ class ReviewAbout
         //     ] ),
         // ] );
 
-        return BilletAchievement::get( [
-            'id' => $id,
+        // return BilletAchievement::get( [
+        //     'id' => $id,
 
-            'achievement' => BilletAchievement::TYPE[ 'about' ],
+        //     'achievement' => BilletAchievement::TYPE[ 'about' ],
 
-            'filter' => [],
-        ] );
+        //     'filter' => [],
+        // ] );
+
+        return BilletAchievement::get_achievement( $id, [] );
     }
 
     public static function get_title()
