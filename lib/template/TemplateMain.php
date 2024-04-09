@@ -19,7 +19,7 @@ class TemplateMain
     const CURRENT_LANGUAGE_DEBUG = [
         'pt', 
 
-        // 'kz',
+        'kz',
 
         'ru',
 
