@@ -86,7 +86,9 @@ class MultisiteMeta
 		// 	'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
 		// ] );
 
-		if ( array_key_exists( $blog_id, $post_moved ) )
+		// if ( array_key_exists( $blog_id, $post_moved ) )
+		
+		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
 			if ( get_post_status( $post_moved[ $blog_id ] ) )
 			{
