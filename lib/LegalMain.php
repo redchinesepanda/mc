@@ -81,28 +81,6 @@ class LegalMain
 			AdminMain::register();
 
 			NotionMain::register_functions();
-
-			MiltisiteMain::register_functions_admin();
-		}
-		else
-		{
-			LegalComponents::register_functions();
-
-			ACFMain::register_functions();
-	
-			ToolsMain::register_functions();
-		
-			SchemaMain::register();
-	
-			BaseMain::register_functions();
-	
-			YoastMain::register_functions();
-	
-			ReviewMain::register_functions();
-	
-			WPMLMain::register_functions();
-
-			MiltisiteMain::register_functions();
 		}
 		else
 		{
