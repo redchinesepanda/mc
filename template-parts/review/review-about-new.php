@@ -11,8 +11,10 @@
             <div class="about-center">
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement">
-                        <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
-                        <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'name' ]; ?></span>
+                        <div class="achievement-item">
+                            <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
+                            <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'name' ]; ?></span>
+                        </div>
                     </div>
                 <?php endif; ?>
                 <div class="about-logo"></div>
