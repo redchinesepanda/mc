@@ -23,32 +23,32 @@ class MiltisiteMain
 		],
 	];
 
-	function mc_init_blog()
-	{
-		$blog_id = self::get_current_blog_id();
+	// function mc_init_blog()
+	// {
+	// 	$blog_id = self::get_current_blog_id();
 
-		$sites = get_sites( [
-			'site__not_in' => $blog_id,
+	// 	$sites = get_sites( [
+	// 		'site__not_in' => $blog_id,
 
-			'number' => 32,
-		] );
+	// 		'number' => 32,
+	// 	] );
 
-		LegalDebug::debug( [
-			'MultisiteMain' => 'mc_init_blog',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMain' => 'mc_init_blog',
 
-			'sites' => $sites,
+	// 		'sites' => $sites,
 
-			'get_blog_details' => self::get_blog_details( $blog_id ),
-		] );
+	// 		'get_blog_details' => self::get_blog_details( $blog_id ),
+	// 	] );
 
-		// self::set_blog( 2 );
+	// 	// self::set_blog( 2 );
 
-		// global $wpdb;
+	// 	// global $wpdb;
 
-		// $blog_prefix = $wpdb->get_blog_prefix( 2 );
+	// 	// $blog_prefix = $wpdb->get_blog_prefix( 2 );
 
-		// $wpdb->set_prefix( $blog_prefix );
-	}
+	// 	// $wpdb->set_prefix( $blog_prefix );
+	// }
 
 	public static function modify_stylesheet_directory_uri( $uri )
 	{
