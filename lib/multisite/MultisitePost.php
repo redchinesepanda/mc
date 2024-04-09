@@ -8,7 +8,7 @@ class MultisitePost
 
 		// move or copy posts to blog
 
-		MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler' );
+		MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
 
 		// add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'mc_bulk_action_multisite_handler' ], 10, 3 );
 	}

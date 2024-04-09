@@ -14,11 +14,11 @@ class MultisiteAdmin
 		'compilation' => 'legal_compilation',
 	];
 	
-	public static function add_filter_all( $name, $object, $handler )
+	public static function add_filter_all( $name, $object, $handler, $priority = 10, $accepted_args = 1 )
 	{
 		foreach ( self::POST_TYPES as $post_type )
 		{
-			add_filter( $name . $post_type, [ $object, $handler ] );
+			add_filter( $name . $post_type, [ $object, $handler ], $priority, $accepted_args );
 		}
 	}
 
