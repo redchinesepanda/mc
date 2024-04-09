@@ -56,15 +56,22 @@ class WPMLTrid
 
     public static function get_translation_group( $trid )
     {
-        // LegalDebug::debug( [
-        // 	'function' => 'WPMLTrid::get_trid',
+        $group = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
 
-        // 	'trid' => $trid,
+        LegalDebug::debug( [
+        	'WPMLTrid' => 'get_translation_group',
+
+        	'trid' => $trid,
             
-        // 	'wpml_get_element_translations' => apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' ),
-        // ] );
+        	'group' => $group,
+        ] );
 
-        return apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
+        if ( !empty ( $group ) )
+        {
+            return $group;
+        }
+
+        return [];
     }
 
     public static function get_trid( $id = 0 )
