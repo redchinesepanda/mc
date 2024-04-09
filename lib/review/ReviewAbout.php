@@ -284,7 +284,7 @@ class ReviewAbout
 
     public static function get_about_achievement( $id, $group )
 	{
-        $term = self::get_achievement( $id );
+        $achievement_item = self::get_achievement( $id );
 
         LegalDebug::debug( [
             'ReviewAbout' => 'get_about_achievement',
@@ -292,16 +292,18 @@ class ReviewAbout
             'term' => $term,
         ] );
 
-        if ( !empty( $term ) )
+        if ( !empty( $achievement_item ) )
         {
             return [
                 'bonus' => $group[ 'about-bonus' ],
 
-                'term' => $term[ 'name' ],
+                'term' => $achievement_item[ 'name' ],
 
                 'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
 
                 'href' => self::check_href_afillate( $id ),
+
+                'image' => $achievement_item[ 'image' ],
             ];
         }
 
