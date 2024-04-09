@@ -81,6 +81,8 @@ class LegalMain
 			AdminMain::register();
 
 			NotionMain::register_functions();
+
+			MiltisiteMain::register_functions_admin();
 		}
 		else
 		{
@@ -128,10 +130,6 @@ class LegalMain
 	
 			MetrikaMain::register();
 		}
-
-		// LegalDebug::debug( [
-		// 	get_option( 'tve_user_templates' ),
-		// ] );
 	}
 
 	public static function check_admin()
