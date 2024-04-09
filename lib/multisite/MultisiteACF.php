@@ -7,6 +7,7 @@ class MultisiteACF
 			'name' => 'compilation-filter',
 
 			'key' => 'field_642ad18b8593a',
+		],
 	];
 
 	public static function get_field_raw( $post_id, $field_name )
