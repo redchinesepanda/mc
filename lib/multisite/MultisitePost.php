@@ -15,7 +15,7 @@ class MultisitePost
 	{
 		// $redirect = self::retirect_clean( $redirect );
 		
-		$redirect = MultisiteAdmin::retirect_clean( $redirect );
+		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 		
 		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
@@ -53,7 +53,7 @@ class MultisitePost
 			// 	'blog_id' => $blog_id,
 			// ] );
 
-			$redirect = self::retirect_set( $redirect, count( $object_ids ), $blog_id );
+			$redirect = MultisiteAdmin::redirect_set( $redirect, count( $object_ids ), $blog_id );
 		}
 
 		// LegalDebug::die( [

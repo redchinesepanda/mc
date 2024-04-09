@@ -90,12 +90,12 @@ class MultisiteAdmin
         LegalComponents::print_main( self::TEMPLATE[ 'multisite-notices' ], $args );
     }
 
-	public static function retirect_clean( $redirect )
+	public static function redirect_clean( $redirect )
 	{
 		return remove_query_arg( self::QUERY_ARG, $redirect );
 	}
 
-	public static function retirect_set( $redirect, $posts_moved, $blog_id )
+	public static function redirect_set( $redirect, $posts_moved, $blog_id )
 	{
 		return add_query_arg(
 			[
