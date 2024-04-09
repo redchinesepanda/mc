@@ -56,7 +56,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			ref.addEventListener( 'click', function ( e )
 			{
-				console.log(`Нажали на нужную рефку ${ref}`); 
+				console.log('Нажали на нужную рефку'); 
 				if ( regExp.test( this.href ) )
 				{
 					sendMetric( this.href.replace( regExp, '' ), YandexMetrikaId );
