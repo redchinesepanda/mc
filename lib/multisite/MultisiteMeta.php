@@ -8,6 +8,13 @@ class MultisiteMeta
 
 	public static function register_admin()
 	{
+		$handler = new self();
+		
+		add_action( 'edit_form_after_title', [ $handler, 'wp_kama_edit_form_after_title_action' ] );
+	}
+
+	function wp_kama_edit_form_after_title_action( $post )
+	{
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
 
