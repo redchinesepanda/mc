@@ -194,7 +194,14 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
+        $active = self::get_active( $languages );
+
+        if ( ! empty( $active ) )
+        {
+            $args[ 'active' ] = array_merge( $active, self::get_data() );
+        }
+
+        // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
         $languages = self::exclude( $languages );
 
