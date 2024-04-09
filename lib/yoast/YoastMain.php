@@ -267,7 +267,7 @@ class YoastMain
         if ( self::check_functions() )
         {
             return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
-        {
+        }
 
         return 0;
     }
