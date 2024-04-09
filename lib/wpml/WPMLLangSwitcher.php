@@ -192,6 +192,8 @@ class WPMLLangSwitcher
 
     public static function get()
     {
+        $args = [];
+
         $languages = self::get_all();
 
         $active = self::get_active( $languages );
@@ -203,11 +205,11 @@ class WPMLLangSwitcher
 
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
-        $languages = self::exclude( $languages );
+        $avaible = self::exclude( $languages );
 
-        foreach ( $languages as $lang )
+        foreach ( $avaible as $lang )
         {
-            $args['languages'][] = self::map( $lang );
+            $args[ 'languages' ][] = self::map( $lang );
         }
 
         return $args;
