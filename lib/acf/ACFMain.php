@@ -73,13 +73,13 @@ class ACFMain
 }
 
 LegalDebug::debug( [
-    'check_plugin' => self::check_plugin(),
+    'check_plugin' => ACFMain::check_plugin(),
 
-    'check_not_functions' => self::check_not_functions(),
+    'check_not_functions' => ACFMain::check_not_functions(),
     
-    'check_functions' => self::check_functions(),
-    
-    'check_redeclare' => self::check_redeclare(),
+    'check_functions' => ACFMain::check_functions(),
+
+    'check_redeclare' => ACFMain::check_redeclare(),
 ] );
 
 if ( !is_admin() && !ACFMain::check_functions() )
