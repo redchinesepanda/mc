@@ -2,6 +2,14 @@
 
 class MultisiteAdmin
 {
+	const POST_TYPES = [
+		'brand' => 'legal_brand',
+
+		'billet' => 'legal_billet',
+
+		'compilation' => 'legal_compilation',
+	];
+
 	public static function register_functions_admin()
 	{
 		$handler = new self();
@@ -10,15 +18,11 @@ class MultisiteAdmin
 
 		add_filter( 'bulk_actions-edit-page', [ $handler, 'mc_bulk_multisite_actions' ] );
 
+		add_filter( 'bulk_actions-edit-' . self::POST_TYPES[ 'billet' ], [ $handler, 'mc_bulk_multisite_actions' ] );
+
 		// show an appropriate notice
 
 		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
-
-		LegalDebug::debug( [
-			'MultisiteAdmin' => 'register_functions_admin',
-
-			'get_current_screen' => get_current_screen(),
-		] );
 	}
 
 	const DOACTION = [
