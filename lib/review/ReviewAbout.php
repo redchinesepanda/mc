@@ -286,11 +286,11 @@ class ReviewAbout
 	{
         $term = self::get_achievement( $id );
 
-        // LegalDebug::debug( [
-        //     'ReviewAbout' => 'get_about_achievement',
+        LegalDebug::debug( [
+            'ReviewAbout' => 'get_about_achievement',
 
-        //     'term' => $term,
-        // ] );
+            'term' => $term,
+        ] );
 
         if ( !empty( $term ) )
         {
