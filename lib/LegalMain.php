@@ -156,7 +156,7 @@ class LegalMain
 
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
-		$permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
+		// $permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
 
 		// LegalDebug::debug( [
 		// 	'function' => 'check_plugins',
@@ -170,9 +170,9 @@ class LegalMain
 	
 		return $permission_acf
 
-			&& $permission_wpml
+			&& $permission_wpml;
 
-			&& $permission_yoast;
+			// && $permission_yoast;
 	}
 
 	public static function check()
