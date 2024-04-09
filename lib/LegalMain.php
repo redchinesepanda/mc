@@ -152,11 +152,13 @@ class LegalMain
 
 	public static function check_plugins()
 	{
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		return true;
+
+		// include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 		// $permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
 
-		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+		// $permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
 		// $permission_yoast = is_plugin_active( 'wordpress-seo/wp-seo.php' );
 
@@ -175,8 +177,6 @@ class LegalMain
 			// && $permission_wpml;
 
 			// && $permission_yoast;
-
-		return true;
 	}
 
 	public static function check()

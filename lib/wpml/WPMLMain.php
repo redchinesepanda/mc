@@ -14,11 +14,20 @@ require_once( 'WPMLDomain.php' );
 
 class WPMLMain
 {
-    public static function get_all_languages() {
+    public static function check_plugin()
+    {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		return is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+    }
+
+    public static function get_all_languages()
+    {
         $languages = apply_filters(
             'wpml_active_languages',
 
-            NULL,
+            null,
+
             [
                 'skip_missing' => 0,
 
@@ -27,6 +36,12 @@ class WPMLMain
                 'order' => 'asc',
             ]
         );
+
+        LegalDebug::debug( [
+            'WPMLMain' => 'get_all_languages',
+
+            'languages' => $languages,
+        ] );
 
         return $languages;
     }
