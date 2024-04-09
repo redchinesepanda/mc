@@ -6,6 +6,10 @@ class MultisiteMeta
 		'items' => 'tabs-items'
 	];
 
+	const FIELDS_COMPILATION_FILTER = [
+		'filter' => 'compilation-filter',
+	];
+
 	public static function register_functions_admin()
 	{
 		$handler = new self();
@@ -19,6 +23,8 @@ class MultisiteMeta
 			'MultisiteMeta' => 'register_functions_admin',
 
 			'items' => get_field( self::FIELDS_TABS[ 'items' ] ),
+
+			'filter' => get_field( self::FIELDS_COMPILATION_FILTER[ 'filter' ] ),
 		] );
 	}
 
