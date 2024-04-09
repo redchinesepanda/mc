@@ -72,9 +72,9 @@ class ACFMain
     }
 }
 
-// if ( !is_admin() && !ACFMain::check_finctions() )
+if ( !is_admin() && !ACFMain::check_finctions() )
 
-if ( ACFMain::check_redeclare() )
+// if ( ACFMain::check_redeclare() )
 {
     function get_field( $field_name, $post_id = null )
     {
