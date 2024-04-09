@@ -62,14 +62,14 @@ class LegalMain
 
 	public static function register()
 	{
-		if ( self::check_plugins() )
-		{
+		// if ( self::check_plugins() )
+		// {
 			$handler = new self();
 		
 			add_action( 'wp', [ $handler, 'register_components' ] );
 
 			self::register_functions();
-		}
+		// }
 	}
 
 	public static function register_functions()
@@ -106,6 +106,12 @@ class LegalMain
 
 	public static function register_components()
 	{
+		LegalDebug::debug( [
+			'LegalMain' => 'register_components',
+
+			'check_admin' => self::check_admin(),
+		] );
+
 		if ( self::check_admin() )
 		{
 			MiltisiteMain::register_admin();
