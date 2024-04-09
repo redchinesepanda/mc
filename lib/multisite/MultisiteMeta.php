@@ -2,6 +2,19 @@
 
 class MultisiteMeta
 {
+	const FIELDS_TABS = [
+		'items' => 'tabs-items'
+	];
+
+	public static function register_functions_admin()
+	{
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'register_functions_admin',
+
+			'items' => get_field( self::FIELDS_TABS[ 'items' ] ),
+		] );
+	}
+
 	const FILTER_META = [
 		'_tve_js_modules_gutenberg',
 
