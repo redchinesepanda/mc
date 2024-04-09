@@ -6,7 +6,7 @@ class MultisiteMeta
 		'items' => 'tabs-items'
 	];
 
-	public static function register_functions_admin()
+	public static function register_admin()
 	{
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',

@@ -106,6 +106,11 @@ class LegalMain
 
 	public static function register_components()
 	{
+		if ( self::check_admin() )
+		{
+			MiltisiteMain::register_functions_admin();
+		}
+
 		LegalComponents::register();
 
 		NotionMain::register();
@@ -201,7 +206,9 @@ class LegalMain
 		// 	'check_permissions' => self::check_permissions(),
 		// ] );
 
-		return self::check_plugins() && self::check_permissions();
+		// return self::check_plugins() && self::check_permissions();
+		
+		return self::check_permissions();
 	}
 
 	// const HOST_PRODUCTION = [
