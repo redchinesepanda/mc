@@ -6,10 +6,10 @@ class MultisiteMeta
 		'items' => 'tabs-items'
 	];
 
-	public static function register_admin()
+	public static function register_functions_admin()
 	{
 		$handler = new self();
-		
+
 		add_action( 'edit_form_after_title', [ $handler, 'wp_kama_edit_form_after_title_action' ] );
 	}
 

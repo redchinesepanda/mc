@@ -20,16 +20,15 @@ class MiltisiteMain
 		],
 	];
 
-	public static function register_admin()
-	{
-		MultisiteMeta::register_admin();
-	}
+	public static function register_admin() {}
 
 	public static function register_functions_admin()
 	{
 		MultisiteAdmin::register_functions_admin();
 
 		MultisitePost::register_functions_admin();
+
+		MultisiteMeta::register_functions_admin();
 	}
 
 	// const VIRTUAL_BLOG = [

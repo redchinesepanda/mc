@@ -110,17 +110,6 @@ class LegalMain
 
 	public static function register_components()
 	{
-		LegalDebug::debug( [
-			'LegalMain' => 'register_components',
-
-			'check_admin' => self::check_admin(),
-		] );
-
-		// if ( self::check_admin() )
-		// {
-			MiltisiteMain::register_admin();
-		// }
-
 		LegalComponents::register();
 
 		NotionMain::register();
