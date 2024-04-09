@@ -13,6 +13,12 @@ class MultisiteAdmin
 		// show an appropriate notice
 
 		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
+
+		LegalDebug::debug( [
+			'MultisiteAdmin' => 'register_functions_admin',
+
+			'get_current_screen' => get_current_screen(),
+		] );
 	}
 
 	const DOACTION = [
