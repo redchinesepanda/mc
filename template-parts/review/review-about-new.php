@@ -1,8 +1,8 @@
 <?php
 
-LegalDebug::debug( [
-    'args' => $args,
-] );
+// LegalDebug::debug( [
+//     'args' => $args,
+// ] );
 
 ?>
 <?php if ( !empty( $args[ 'title' ] ) ) : ?>
@@ -11,7 +11,7 @@ LegalDebug::debug( [
             <div class="about-center">
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement">
-                        <img src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
+                        <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
                         <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'name' ]; ?></span>
                     </div>
                 <?php endif; ?>
