@@ -2,14 +2,6 @@
 
 require_once( 'YoastOG.php' );
 
-if ( ! function_exists( 'yoast_get_primary_term_id' ) )
-{
-    function yoast_get_primary_term_id( $taxonomy, $id )
-    {
-        return 0;
-    }
-}
-
 class YoastMain
 {
     public static function check_plugin()
@@ -22,6 +14,11 @@ class YoastMain
     public static function check_api()
     {
         return function_exists( 'YoastSEO' );
+    }
+
+    public static function check_functions()
+    {
+        return function_exists( 'yoast_get_primary_term_id' );
     }
 
     public static function register()
@@ -267,12 +264,12 @@ class YoastMain
 
     public static function get_primary_term_id( $id, $category = self::TAXONOMY[ 'category' ] )
     {
-        if ( empty( $id ) )
+        if ( self::check_functions() )
         {
-            return 0;
-        }
+            return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+        {
 
-        return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+        return 0;
     }
 
     // const TEMPLATE = [
