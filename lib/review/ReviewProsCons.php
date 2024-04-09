@@ -25,7 +25,7 @@ class ReviewProsCons
 
 	public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 		}

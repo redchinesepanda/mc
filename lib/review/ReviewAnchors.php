@@ -40,7 +40,7 @@ class ReviewAnchors
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 		}
@@ -84,7 +84,7 @@ class ReviewAnchors
 
     public static function register_script()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_script( self::JS_NEW );
 		}
@@ -272,14 +272,16 @@ class ReviewAnchors
 
         $details = WPMLMain::get_post_language_details();
 
-        if ( !empty( $details ) && !is_wp_error( $details ) ) {
+        if ( !empty( $details ) && !is_wp_error( $details ) )
+        {
             $locale = $details[ 'locale' ];
         }
 
-        $anchors = [];
+        $anchors = self::TEXT_ANCHORS;
 
         foreach ( self::TEXT_ANCHORS as $id => $label )
         {
+<<<<<<< HEAD
             // $anchors[ ToolTransiterate::replace(
             //     ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
             // ) ] = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
@@ -287,6 +289,18 @@ class ReviewAnchors
             $anchors[ ToolTransiterate::replace(
                 ToolLoco::translate_locale( $id, $locale )
             ) ] = ToolLoco::translate_locale( $label, $locale );
+=======
+            $label_translated = ToolLoco::translate_locale( $label, $locale );
+
+            if ( !empty( $label_translated ) )
+            {
+                $id_translated = ToolLoco::translate_locale( $id, $locale );
+    
+                $id_ready = ToolTransiterate::replace( $id_translated );
+    
+                $anchors[ $id_ready ] = $label_translated;
+            }
+>>>>>>> 34b2d3c93fd6666bc9ca6e2d4e4c76cfba7f79d5
         }
 
         return $anchors;
@@ -345,7 +359,7 @@ class ReviewAnchors
                 
                 // $label = mb_substr( $node->parentNode->textContent, 0, 30 ); 
                 
-                // $label = mb_substr( $node->nextSibling->textContent, 0, 30 ); 
+                // $label = mb_substr( $node->nextSibling->textContent, 0, 30 );
 
                 if ( !empty( $node->nextSibling ) && $node->nextSibling->nodeType == XML_TEXT_NODE )
                 {

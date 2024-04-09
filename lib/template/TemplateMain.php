@@ -12,6 +12,10 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
+   const CURRENT_LANGUAGE_PRODUCTION = [
+        'pt',
+    ];
+
     const CURRENT_LANGUAGE_DEBUG = [
         'pt', 
 
@@ -22,15 +26,13 @@ class TemplateMain
         'es',
     ];
 
-    const CURRENT_LANGUAGE_PRODUCTION = [
-        'pt',
-    ];
-
     public static function check_code()
     {
         $current_language = self::CURRENT_LANGUAGE_DEBUG;
 
-        if ( LegalMain::check_host_production() )
+        // if ( LegalMain::check_host_production() )
+        
+        if ( LegalHosts::check_host_production() )
         {
             $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
         }
@@ -213,8 +215,14 @@ class TemplateMain
         // 'tve_frontend',
     ];
 
+    const JS_DEQUEUE_WPML = [
+        'wpml-legacy-dropdown-click-0',
+    ];
+
     const JS_DEQUEUE = [
         ...self::JS_DEQUEUE_THRIVE,
+
+        ...self::JS_DEQUEUE_WPML,
     ];
 
     public static function dequeue_script()
@@ -227,7 +235,13 @@ class TemplateMain
 
     public static function check_new()
     {
-        return self::check() && self::check_code();
+        // return self::check() && self::check_code();
+        
+        return ToolNotFound::check_domain_restricted()
+            
+            // || self::check() && self::check_code();
+            
+            || self::check_code();
     }
 
     public static function check()
@@ -300,7 +314,7 @@ class TemplateMain
             self::register_thrive();
         }
 
-        // add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 ); 
+        add_action( 'wp_enqueue_scripts', [ $handler, 'dequeue_script' ], 99 ); 
     }
 
     public static function register()

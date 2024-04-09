@@ -28,7 +28,7 @@ class ToolSitemap
 
 	public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_style( self::CSS_NEW );
 		}

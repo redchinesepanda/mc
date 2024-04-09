@@ -21,7 +21,7 @@ class ToolLoco
 
     public static function translate( $string )
     {
-        return __( $string, ToolLoco::TEXTDOMAIN );
+        return __( $string, self::TEXTDOMAIN );
     }
 
 	public static function fill_pattern( $pattern, $value )
@@ -51,7 +51,11 @@ class ToolLoco
         
             $value,
 
+<<<<<<< HEAD
             ToolLoco::TEXTDOMAIN
+=======
+            self::TEXTDOMAIN
+>>>>>>> 34b2d3c93fd6666bc9ca6e2d4e4c76cfba7f79d5
         );
     }
 
@@ -64,6 +68,7 @@ class ToolLoco
 
         return self::fill_pattern( $pattern, $values );
     }
+<<<<<<< HEAD
 
     public static function translate_locale( $string, $locale )
     {
@@ -71,15 +76,28 @@ class ToolLoco
     }
 
     public static function get_translation_locale( $string, $textdomain, $locale )
+=======
+    
+    public static function translate_locale( $string, $locale )
+>>>>>>> 34b2d3c93fd6666bc9ca6e2d4e4c76cfba7f79d5
     {
         global $l10n;
 
-        if ( isset( $l10n[ $textdomain ] ) ) $backup = $l10n[ $textdomain ];
+        $backup_l10n_item = '';
+        
+        if ( !empty( $l10n[ self::TEXTDOMAIN ] ) )
+        {
+            $backup_l10n_item = $l10n[ self::TEXTDOMAIN ];
+        }
 
-        load_textdomain( $textdomain, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
+        load_textdomain( self::TEXTDOMAIN, LegalMain::LEGAL_PATH . '/languages/'. $locale . '.mo');
 
-        $translation = __( $string, $textdomain );
-        if ( isset( $backup ) ) $l10n[ $textdomain ] = $backup;
+        $translation = __( $string, self::TEXTDOMAIN );
+
+        if ( !empty( $backup_l10n_item ) )
+        {
+            $l10n[ self::TEXTDOMAIN ] = $backup_l10n_item;
+        }
 
         return $translation;
     }

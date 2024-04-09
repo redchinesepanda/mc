@@ -10,3 +10,10 @@
 .legal-bonus-main .legal-bonus-featured {
 	padding-bottom: 20px;
 }
+
+/* Width and Height */
+
+.legal-bonus-main .bonus-featured-image {
+	max-width: 100%;
+	height: auto;
+}

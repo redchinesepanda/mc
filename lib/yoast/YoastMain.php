@@ -11,6 +11,16 @@ class YoastMain
         return is_plugin_active( 'wordpress-seo/wp-seo.php' );
     }
 
+    public static function check_api()
+    {
+        return function_exists( 'YoastSEO' );
+    }
+
+    public static function check_functions()
+    {
+        return function_exists( 'yoast_get_primary_term_id' );
+    }
+
     public static function register()
     {
         YoastOG::register();
@@ -18,13 +28,17 @@ class YoastMain
         $handler = new self();
 
         add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
+
+        add_filter( 'wpseo_json_ld_output', '__return_false' );
     }
 
     public static function register_functions()
     {
         $handler = new self();
 
-        add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
+        add_action( 'wpseo_register_extra_replacements', [ $handler, 'register_my_plugin_extra_replacements' ] );
+
+        // add_filter( 'wpseo_sitemap_entries_per_page', [ $handler, 'max_entries_per_sitemap' ] );
 
         // add_filter( 'wpseo_xml_sitemap_post_url', [ $handler, 'sitemap_post_url' ], 10, 2 );
 
@@ -34,8 +48,6 @@ class YoastMain
 
         \add_filter( 'wpseo_force_creating_and_using_attachment_indexables', '__return_true' );
 
-        add_action( 'wpseo_register_extra_replacements', [ $handler, 'register_my_plugin_extra_replacements' ] );
-
         add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
     }
 
@@ -43,6 +55,7 @@ class YoastMain
      * Fix Yoast SEO robots.txt changes.
      * https://wordpress.org/support/topic/disable-robots-txt-changing-by-yoast-seo/#post-16648736
      */
+
     public static function wpwc_fix_yoast_seo_robots_txt()
     {
         global $wp_filter;
@@ -62,18 +75,53 @@ class YoastMain
         }
     }
 
+    const REPLACEVAR = [
+        'billets-amount' => '%%billetsamount%%',
+
+        'year' => '%%YEAR%%',
+
+        'month' => '%%MONTH%%',
+
+        'month-year' => '%%MONTH_YEAR%%',
+    ];
+
     public static function register_my_plugin_extra_replacements()
     {
-        // wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'advanced', 'this is a help text for myvar1' );
-        
-        wpseo_register_var_replacement( '%%billetsamount%%', 'retrieve_billetsamount_replacement', 'basic', 'This is a current tabs unique billets amount' );
-        
-        // wpseo_register_var_replacement( 'myvar2', array( 'class', 'method_name' ), 'basic', 'this is a help text for myvar2' );
+        $handler = new self();
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'billets-amount' ], [ $handler, 'retrieve_billetsamount_replacement' ], 'basic', '[MC] This is a current [legal-tabs] unique billets amount' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'year' ], [ $handler, 'retrieve_year' ], 'basic', '[MC] This is a current year' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'month' ], [ $handler, 'retrieve_month' ], 'basic', '[MC] This is a current month' );
+
+        wpseo_register_var_replacement( self::REPLACEVAR[ 'month-year' ], [ $handler, 'retrieve_month_year' ], 'basic', '[MC] This is a current month and year' );
     }
 
     public static function retrieve_billetsamount_replacement( $var1 )
     {
         return CompilationTabs::get_billets_amount();
+    }
+
+    public static function retrieve_year()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-year' ] ];
+
+        return ReviewTitle::format_date( $format );
+    }
+
+    public static function retrieve_month()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-month' ] ];
+
+        return ReviewTitle::format_date( $format );
+    }
+
+    public static function retrieve_month_year()
+    {
+        $format = ReviewTitle::FORMAT[ ReviewTitle::CLASSES[ 'date-month-year' ] ];
+
+        return ReviewTitle::format_date( $format );
     }
 
     public static function include_post_types( $post_types )
@@ -105,10 +153,10 @@ class YoastMain
         return $filtered_post_types;
     }
 
-    public static function max_entries_per_sitemap()
-    {
-        return 250;
-    }
+    // public static function max_entries_per_sitemap()
+    // {
+    //     return 250;
+    // }
 
     // public static function sitemap_post_url( $url, $post )
     // {
@@ -134,48 +182,46 @@ class YoastMain
     //     return $url;
     // }
 
-    const TEMPLATE = LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php';
+    // public static function print()
+    // {
+    //     $args = self::get();
 
-    public static function print()
-    {
-        $args = self::get();
+    //     echo '<title>' . $args['title'] . '</title>';
 
-        echo '<title>' . $args['title'] . '</title>';
+    //     foreach ( $args['meta'] as $key => $value )
+    //     {
+    //         echo '<meta name="' . $key . '" content="' . $value . '" />';
+    //     }
+    // }
 
-        foreach ( $args['meta'] as $key => $value ) {
-            echo '<meta name="' . $key . '" content="' . $value . '" />';
-        }
-    }
+    // private static function get()
+    // {
+    //     $post = get_post();
 
-    private static function get()
-    {
-        // $message['function'] = 'get';
+    //     return [
+    //         'title' => YoastSEO()->meta->for_post( $post->ID )->title,
 
-        $post = get_post();
-
-        return [
-            'title' => YoastSEO()->meta->for_post( $post->ID )->title,
-
-            'meta' =>
-            [
-                'description' => YoastSEO()->meta->for_post( $post->ID )->description,
+    //         'meta' =>
+    //         [
+    //             'description' => YoastSEO()->meta->for_post( $post->ID )->description,
             
-                'keywords' => 'keywords',
+    //             'keywords' => 'keywords',
                 
-                'author' => 'author',
+    //             'author' => 'author',
 
-                'viewport' => 'width=device-width, initial-scale=1.0',
-            ]
-        ];
+    //             'viewport' => 'width=device-width, initial-scale=1.0',
+    //         ]
+    //     ];
+    // }
 
-        // $message['args'] = $args;
+    // const PLACEHOLDER = [
+    //     'billets-amount' => '{billets-amount}',
+    // ];
 
-        // self::debug( $message );
+    public static function check()
+    {
+        return function_exists( 'YoastSEO' );
     }
-
-    const PLACEHOLDER = [
-        'billets-amount' => '{billets-amount}',
-    ];
 
     public static function get_seo_title()
     {
@@ -183,12 +229,12 @@ class YoastMain
 
         if ( $post )
         {
-            if ( !LegalMain::check_plugins() )
+            if ( self::check_api() )
             {
-                return $post->post_title;
+                return YoastSEO()->meta->for_post( $post->ID )->title;
             }
 
-            return YoastSEO()->meta->for_post( $post->ID )->title;
+            return $post->post_title;
         }
 
         return '';
@@ -196,11 +242,17 @@ class YoastMain
 
     public static function get_seo_description()
     {
-        $post = get_post();
-
-        if ( $post )
+        if ( self::check() )
         {
-            return YoastSEO()->meta->for_post( $post->ID )->description;
+            $post = get_post();
+    
+            if ( $post )
+            {
+                if ( self::check_api() )
+                {
+                    return YoastSEO()->meta->for_post( $post->ID )->description;
+                }
+            }
         }
 
         return '';
@@ -212,29 +264,33 @@ class YoastMain
 
     public static function get_primary_term_id( $id, $category = self::TAXONOMY[ 'category' ] )
     {
-        if ( empty( $id ) )
+        if ( self::check_functions() )
         {
-            return 0;
+            return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
         }
 
-        return yoast_get_primary_term_id( self::TAXONOMY[ 'category' ], $id );
+        return 0;
     }
 
-    public static function render()
-    {
-        load_template( self::TEMPLATE, false, self::get() );
-    }
+    // const TEMPLATE = [
+    //     'main' => LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-main.php',
+    // ];
 
-    public static function render_ob()
-    {
-        ob_start();
+    // public static function render()
+    // {
+    //     load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+    // }
 
-        load_template( self::TEMPLATE, false, self::get() );
+    // public static function render_ob()
+    // {
+    //     ob_start();
 
-        $output = ob_get_clean();
+    //     load_template( self::TEMPLATE[ 'main' ], false, self::get() );
 
-        echo $output;
-    }
+    //     $output = ob_get_clean();
+
+    //     echo $output;
+    // }
 }
 
 ?>

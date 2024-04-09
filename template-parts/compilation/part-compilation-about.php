@@ -18,12 +18,14 @@
                 	<span class="legal-cut-control" data-content-default="Read more" data-content-active="Hide" data-cut-set-id="0">Read more</span>
 				<?php endif; ?>
             </div>
-			<div class="about-section-image">
-                <picture>
-                    <source srcset="<?php echo $args[ 'image' ][ 'src' ]; ?>" media="(min-width: 960px)" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" alt="betting sites">
-                    <img srcset="" width="0px" height="0px" alt="" loading="lazy">
-                </picture>
-			</div>
+            <?php if ( !empty( $args[ 'content' ] ) ) : ?>
+                <div class="about-section-image">
+                    <picture>
+                        <source srcset="<?php echo $args[ 'image' ][ 'src' ]; ?>" media="(min-width: 960px)" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" alt="betting sites">
+                        <img srcset="" width="0px" height="0px" alt="" loading="lazy">
+                    </picture>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 <?php endif; ?>

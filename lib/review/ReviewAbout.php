@@ -27,7 +27,7 @@ class ReviewAbout
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_style( self::CSS_NEW );
 		}
@@ -169,17 +169,44 @@ class ReviewAbout
         'font' => 'about-font',
     ];
 
-    const BONUS_EXCEPTION = [ 'es' ];
+    const BONUS_EXCEPTION = [
+        'es',
+
+        'mx',
+
+        'pt',
+    ];
+
+    public static function check_bonus_exception()
+    {
+        return in_array( WPMLMain::current_language(), self::BONUS_EXCEPTION );
+    }
 
     public static function get_achievement( $id )
     {
-        return BilletAchievement::get( [
-            'id' => $id,
+        // LegalDebug::debug( [
+        //     'ReviewAbout' => 'get_achievement',
 
-            'achievement' => BilletAchievement::TYPE[ 'about' ],
+        //     'id' => $id,
 
-            'filter' => [],
-        ] );
+        //     'get' => BilletAchievement::get( [
+        //         'id' => $id,
+    
+        //         // 'achievement' => BilletAchievement::TYPE[ 'about' ],
+    
+        //         'filter' => [],
+        //     ] ),
+        // ] );
+
+        // return BilletAchievement::get( [
+        //     'id' => $id,
+
+        //     'achievement' => BilletAchievement::TYPE[ 'about' ],
+
+        //     'filter' => [],
+        // ] );
+
+        return BilletAchievement::get_achievement( $id, [] );
     }
 
     public static function get_title()
@@ -206,97 +233,215 @@ class ReviewAbout
         return '';
     }
 
+    public static function get_name( $group, $mode, $bonus_exception )
+    {
+        if ( $mode == 'mini' || $bonus_exception )
+        {
+            return $group[ 'about-title' ];
+        }
+
+        return $group[ 'about-bonus' ];
+    }
+
+    public static function get_afillate_description( $mode )
+    {
+        // $afillate_description = '';
+
+        // if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
+        
+        if ( empty( $mode ) && self::check_bonus_exception() )
+        {
+            // $afillate_description = 'Publicidad | Juego Responsable | +18';
+            
+            return ToolLoco::translate( ReviewMain::TEXT[ 'advertising' ] );
+        }
+
+        return '';
+    }
+
+    public static function get_about_mode( $args )
+    {
+        if ( !empty( $args[ 'mode' ] ) )
+        {
+            if ( in_array( $args[ 'mode' ], self::MODE ) )
+            {
+                return $args[ 'mode' ];
+            }
+        }
+
+        return self::MODE[ 'default' ];
+    }
+
+    public static function get_about_logo_items()
+	{
+        if ( TemplateMain::check_new() && self::check_bonus_exception() )
+        {
+            return array_slice( BaseFooter::get_logo_items(), 1 );
+        }
+
+        return [];
+    }
+
+    public static function get_about_achievement( $id, $group )
+	{
+        $achievement_item = self::get_achievement( $id );
+
+        // LegalDebug::debug( [
+        //     'ReviewAbout' => 'get_about_achievement',
+
+        //     'achievement_item' => $achievement_item,
+        // ] );
+
+        if ( !empty( $achievement_item ) )
+        {
+            return [
+                'bonus' => $group[ 'about-bonus' ],
+
+                'name' => $achievement_item[ 'name' ],
+
+                'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+
+                'href' => self::check_href_afillate( $id ),
+
+                'image' => $achievement_item[ 'image' ],
+            ];
+        }
+
+        return [];
+    }
+
+    public static function get_about_rating( $group )
+	{
+        if ( !empty( $group[ 'about-rating' ] ) )
+        {
+            return [
+                'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+    
+                'value' => $group[ 'about-rating' ],
+            ];
+        }
+
+        return [];
+    }
+
+    public static function get_about_title( $group )
+	{
+        return ReviewTitle::replace_placeholder( implode( ' ', [
+            $group[ 'about-prefix' ],
+
+            $group[ 'about-title' ],
+
+            $group[ 'about-suffix' ],
+        ] ) );
+    }
+
+    public static function get_about_bonus( $group, $mode )
+	{
+        return [
+            'name' => self::get_name( $group, $mode, self::check_bonus_exception() ),
+
+            'description' => $group[ 'about-description' ],
+        ];
+    }
+
+    public static function get_about_logo( $id, $group )
+	{
+        $logo = BrandMain::get_logo_review( $id );
+
+        if ( !empty( $logo ) )
+        {
+            return $logo;
+        }
+
+        return $group[ self::ABOUT[ 'logo' ] ];
+
+        // return '';
+    }
+
     public static function get( $args )
     {
         $id = BonusMain::get_id();
 
-        $mode = '';
-
-        if ( !empty( $args[ 'mode' ] ) ) {
-            if ( $args[ 'mode' ] == 'footer' )
-            {
-                $mode = 'footer';
-            }
-
-            if ( $args[ 'mode' ] == 'mini' )
-            {
-                $mode = 'mini';
-            }
-        }
+        $mode = self::get_about_mode( $args );
 
         $group = get_field( self::FIELD, $id );
 
-        if( $group )
+        if ( $group )
         {
-            $bonus = [
-                'name' => $group[ 'about-bonus' ],
+            $bonus = self::get_about_bonus( $group, $mode );
 
-                'description' => $group[ 'about-description' ],
-            ];
+            // $bonus_exception = self::check_bonus_exception();
 
-            $locale = WPMLMain::current_language();
+            // $bonus = [
+            //     'name' => self::get_name( $group, $mode, $bonus_exception ),
 
-            if ( $mode == 'mini' || in_array( $locale, self::BONUS_EXCEPTION ) )
-            {
-                $bonus['name'] = $group[ 'about-title' ];
-            }
+            //     'description' => $group[ 'about-description' ],
+            // ];
 
-            $afillate_description = '';
+            $achievement = self::get_about_achievement( $id, $group );
 
-            if ( in_array( $locale, self::BONUS_EXCEPTION ) && empty( $mode ) )
-            {
-                $afillate_description = 'Publicidad | Juego Responsable | +18';
-            }
+            $rating = self::get_about_rating( $group );
 
-            $term = self::get_achievement( $id );
+            // $rating = [];
+            
+            // $achievement = [];
 
-            $achievement = [];
+            // $term = self::get_achievement( $id );
 
-            $rating = [];
+            // if ( !empty( $term ) )
+            // {
+            //     $achievement = [
+            //         'bonus' => $group[ 'about-bonus' ],
 
-            if ( !empty( $term ) )
-            {
-                $achievement = [
-                    'bonus' => $group[ 'about-bonus' ],
+            //         'term' => $term[ 'name' ],
 
-                    'term' => $term[ 'name' ],
+            //         'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
 
-                    'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
+            //         'href' => self::check_href_afillate( $id ),
+            //     ];
+            // }
+            // else 
+            // {
+            //     $rating = [
+            //         'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
 
-                    'href' => self::check_href_afillate( $id ),
-                ];
-            } else 
-            {
-                $rating = [
-                    'label' => __( ReviewMain::TEXT[ 'rating' ], ToolLoco::TEXTDOMAIN ),
+            //         'value' => $group[ 'about-rating' ],
+            //     ];
+            // }
 
-                    'value' => $group[ 'about-rating' ],
-                ];
-            }
+            $title = self::get_about_title( $group );
 
-            $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
+            // $title = ReviewTitle::replace_placeholder( $group[ 'about-prefix' ] . ' ' . $group[ 'about-title' ] . ' ' . $group[ 'about-suffix' ] );
 
-            $logo = BrandMain::get_logo_review( $id );
+            $logo = self::get_about_logo( $id, $group );
 
-            if ( empty( $logo ) )
-            {
-                $logo = $group[ self::ABOUT[ 'logo' ] ];
-            }
+            // $logo = BrandMain::get_logo_review( $id );
+
+            // if ( empty( $logo ) )
+            // {
+            //     $logo = $group[ self::ABOUT[ 'logo' ] ];
+            // }
+
+            $logo_items = self::get_about_logo_items();
 
             return [
                 'text' => [
-                    'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
+                    // 'head' => __( ReviewMain::TEXT[ 'bonus' ], ToolLoco::TEXTDOMAIN ),
     
-                    'show' => __( ReviewMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    // 'show' => __( ReviewMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
     
-                    'hide' => __( ReviewMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    // 'hide' => __( ReviewMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+                    
+                    'head' => ToolLoco::translate( ReviewMain::TEXT[ 'bonus' ] ),
+    
+                    'show' => ToolLoco::translate( ReviewMain::TEXT[ 'show-tnc' ] ),
+    
+                    'hide' => ToolLoco::translate( ReviewMain::TEXT[ 'hide-tnc' ] ),
                 ],
 
                 'title' => $title,
                 
                 'bonus' => $bonus,
-                
-                // 'logo' => $group[ self::ABOUT[ 'logo' ] ],
                 
                 'logo' => $logo,
 
@@ -311,7 +456,9 @@ class ReviewAbout
 
                     'text' => self::get_text(),
 
-                    'description' => $afillate_description,
+                    // 'description' => self::get_afillate_description( $mode, $bonus_exception ), 
+                    
+                    'description' => self::get_afillate_description( $mode ), 
                 ],
 
                 'mode' => $mode,
@@ -319,6 +466,8 @@ class ReviewAbout
                 'class' => ( !empty( $mode ) ? 'legal-mode-' . $mode : 'legal-mode-default' ),
 
                 'achievement' => $achievement,
+
+                'logo-items' => $logo_items,
             ];
         }
 
@@ -340,7 +489,9 @@ class ReviewAbout
     ];
 
     const PAIRS_ABOUT = [
-        'mode' => '',
+        // 'mode' => '',
+        
+        'mode' => self::MODE[ 'default' ],
     ];
 
     public static function prepare_about( $atts = [] )
@@ -384,11 +535,19 @@ class ReviewAbout
 
         return '';
     }
+
+    const MODE = [
+        'default' => '',
+
+        'footer' => 'footer',
+
+        'mini' => 'mini',
+    ];
     
     public static function render_about_bottom()
     {
         return self::render( self::get( [
-            'mode' => 'footer'
+            'mode' => self::MODE[ 'footer' ],
         ] ) );
     }
 

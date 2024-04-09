@@ -53,15 +53,21 @@ class ToolTinyMCE
 
 		$init[ 'rel_list' ] = json_encode( [
 			[
-				'title' => 'None',
+				'title' => 'none',
 
 				'value' => '',
 			],
 
 			[
-				'title' => 'No Follow',
+				'title' => 'nofollow',
 
 				'value' => 'nofollow',
+			],
+
+			[
+				'title' => 'nofollow noopener',
+
+				'value' => 'nofollow noopener',
 			],
 		] );
 	

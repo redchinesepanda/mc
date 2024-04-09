@@ -17,11 +17,11 @@ class WPMLLangSwitcher
             'ver' => '1.0.1',
         ],
 
-    /*     'legal-wpml-lang-switcher-selectors' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-selectors.css',
+        // 'legal-wpml-lang-switcher-selectors' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-lang-switcher-selectors.css',
     
-            'ver' => '1.0.0',
-        ], */
+        //     'ver' => '1.0.0',
+        // ],
     ];
 
     public static function register_style()
@@ -54,7 +54,18 @@ class WPMLLangSwitcher
         ToolEnqueue::register_script( self::JS );
     }
 
-    public static function register() {
+    public static function check_domain_not_restricted()
+    {
+        return !ToolNotFound::check_domain_restricted();
+    }
+
+    public static function check_register()
+    {
+        return self::check_domain_not_restricted();
+    }
+
+    public static function register()
+    {
         $handler = new self();
 
         // [legal-lang-switcher]
@@ -63,9 +74,12 @@ class WPMLLangSwitcher
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        if ( self::check_register() )
+        {
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+        }
     }
 
     private static function get_all()
@@ -91,55 +105,47 @@ class WPMLLangSwitcher
 
     private static function map( $args )
     {
-        if ( empty( $args ) )
+        if ( ! empty( $args ) )
         {
             return [
-                'id' => 0,
+                'id' => $args['id'],
 
-                'title' => '',
+                'title' => $args['native_name'],
 
-                'href' => '#',
+                'href' => $args['url'],
 
-                'src' => '',
+                'src' => $args['country_flag_url'],
 
-                'alt' => '',
+                'alt' => $args['translated_name'] . '-flag',
             ];
+
+            // return [
+            //     'id' => 0,
+
+            //     'title' => '',
+
+            //     'href' => '#',
+
+            //     'src' => '',
+
+            //     'alt' => '',
+            // ];
         }
 
-        $mapped['id'] = $args['id'];
+        return [];
 
-        $mapped['title'] = $args['native_name'];
+        // $mapped['id'] = $args['id'];
 
-        $mapped['href'] = $args['url'];
+        // $mapped['title'] = $args['native_name'];
 
-        $mapped['src'] = $args['country_flag_url'];
+        // $mapped['href'] = $args['url'];
 
-        $mapped['alt'] = $args['translated_name'] . '-flag';
+        // $mapped['src'] = $args['country_flag_url'];
 
-        return $mapped;
+        // $mapped['alt'] = $args['translated_name'] . '-flag';
+
+        // return $mapped;
     }
-
-    // const EXCLUDE = [
-    //     'pt_GB',
-
-    //     'pt_ES',
-
-    //     'sr_SR',
-
-    //     'se_SE',
-
-    //     'cs_CS',
-
-    //     'en',
-
-    //     'es',
-
-    //     'ru',
-
-    //     'dk_DA',
-
-    //     'pt_BP',
-    // ];
 
     public static function choises()
     {
@@ -148,8 +154,6 @@ class WPMLLangSwitcher
 
     public static function exclude( $languages )
     {
-        // return WPMLMain::exclude( $languages, self::EXCLUDE );
-        
         return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
     }
 
@@ -157,23 +161,12 @@ class WPMLLangSwitcher
     {
         $languages = self::get_all();
 
-        // LegalDebug::debug( [
-        //     'function' => 'WPMLLangSwitcher::get_not_found',
-
-        //     'languages' => $languages,
-        // ] );
-
         $languages = self::exclude( $languages );
-
-        // LegalDebug::debug( [
-        //     'function' => 'WPMLLangSwitcher::get_not_found',
-
-		// 	'languages' => $languages,
-		// ] );
 
         $args = [];
 
-        foreach ( $languages as $lang ) {
+        foreach ( $languages as $lang )
+        {
             $args['languages'][] = self::map( $lang );
         }
 
@@ -202,28 +195,20 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
-        $languages_active = self::get_active( $languages );
+        $active = self::get_active( $languages );
 
-        $languages_active_data = self::get_data();
-
-        if ( !empty( $languages_active ) && !empty( $languages_active_data ) )
+        if ( ! empty( $active ) )
         {
-            $args['active'] = array_merge( $languages_active, $languages_active_data );
+            $args[ 'active' ] = array_merge( $active, self::get_data() );
         }
 
-        // $args['active'] = self::get_active( $languages );
+        // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
-        // $args['active'][ 'suffix' ] = self::get_suffix();
+        $avaible = self::exclude( $languages );
 
-        // $args['active'][ 'class' ] = self::get_suffix();
-
-        // $languages = WPMLMain::exclude( $languages );
-
-        $languages = self::exclude( $languages );
-
-        foreach ( $languages as $lang )
+        foreach ( $avaible as $lang )
         {
-            $args['languages'][] = self::map( $lang );
+            $args[ 'languages' ][] = self::map( $lang );
         }
 
         return $args;
@@ -235,26 +220,24 @@ class WPMLLangSwitcher
         'style' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-lang-switcher-style.php',
     ];
 
+    public static function check_render()
+    {
+        return self::check_domain_not_restricted();
+    }
+
     public static function render()
     {
-        ob_start();
+        if ( self::check_register() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+        }
 
-        load_template( self::TEMPLATE[ 'main' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return '';
     }
 
     public static function render_style()
     {
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'style' ], self::get() );
     }
 }
 

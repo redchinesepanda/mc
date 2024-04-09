@@ -12,15 +12,13 @@ require_once( 'WPMLChooseYourCountry.php' );
 
 require_once( 'WPMLDomain.php' );
 
-// require_once( 'WPMLUrl.php' );
-
 class WPMLMain
 {
     public static function check_plugin()
     {
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-        return is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
+		return is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
     }
 
     public static function get_all_languages()
@@ -28,7 +26,8 @@ class WPMLMain
         $languages = apply_filters(
             'wpml_active_languages',
 
-            NULL,
+            null,
+
             [
                 'skip_missing' => 0,
 
@@ -38,7 +37,18 @@ class WPMLMain
             ]
         );
 
-        return $languages;
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'get_all_languages',
+
+        //     'languages' => $languages,
+        // ] );
+
+        if ( !empty( $languages ) )
+        {
+            return $languages;
+        }
+
+        return [];
     }
 
     const EXCLUDE = [
@@ -274,8 +284,6 @@ class WPMLMain
         WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
-
-        // WPMLUrl::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 

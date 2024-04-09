@@ -30,6 +30,11 @@ class BrandMain
 		return self::get_logo_billet( $billet_id );
 	}
 
+	public static function get_logo_bonus( $id )
+	{
+		return self::get_logo_billet( $id );
+	}
+
 	public static function get_logo_billet( $billet_id )
 	{
 		$brand_id = get_field( self::FIELD[ 'brand' ], $billet_id );

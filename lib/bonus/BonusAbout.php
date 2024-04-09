@@ -25,13 +25,29 @@ class BonusAbout
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			BonusMain::register_style( self::CSS_NEW );
 		}
 		else
 		{
 			BonusMain::register_style( self::CSS );
+		}
+    }
+
+    const JS_NEW = [
+        'review-about' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about.js',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+    public static function register_script()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_script( self::JS_NEW );
 		}
     }
 
@@ -45,6 +61,8 @@ class BonusAbout
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
     
     const TAXONOMY = [
@@ -244,6 +262,32 @@ class BonusAbout
         ];
     }
 
+	public static function get_bonus()
+    {
+        $bonus_amount = BonusSummary::get_bonus_amount();
+
+        if ( TemplateMain::check_new())
+        {
+            return [
+                'label' => ToolLoco::translate( BonusMain::TEXT[ 'bookmaker-bonus' ] ),
+    
+                'value' => $bonus_amount[ 'value' ],
+            ];
+        }
+
+        return [];
+    }
+
+	public static function get_logo_src( $id = false )
+    {
+        if ( $brand_src = BrandMain::get_logo_bonus( $id ) )
+        {
+            return $brand_src;
+        }
+
+        return get_field( self::FIELD[ 'bonus-src' ], $id );
+    }
+
 	public static function get()
     {
         $id = BonusMain::get_id();
@@ -258,8 +302,12 @@ class BonusAbout
 			
 			'description' => get_field( self::FIELD[ 'bonus-description' ], $id ),
 
+            'bonus' => self::get_bonus(),
+
 			'logo' => [
-				'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),
+				// 'src' => get_field( self::FIELD[ 'bonus-src' ], $id ),
+				
+                'src' => self::get_logo_src( $id ),
 
 				'alt' => get_field( self::FIELD[ 'bonus-bookmaker-name' ], $id ),
 			],
@@ -268,6 +316,10 @@ class BonusAbout
 
 	const TEMPLATE = [
         'bonus-about' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about.php',
+
+        'bonus-about-new' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-new.php',
+
+        'bonus-about-action' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-action.php',
 
         'bonus-about-button' => LegalMain::LEGAL_PATH . '/template-parts/bonus/part-legal-bonus-about-button.php',
     ];
@@ -279,13 +331,17 @@ class BonusAbout
             return '';
         }
 
-        ob_start();
+        if ( TemplateMain::check_new() )
+        {
+            return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-new' ], self::get() );
+        }
 
-        load_template( self::TEMPLATE[ 'bonus-about' ], false, self::get() );
+        return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about' ], self::get() );
+    }
 
-        $output = ob_get_clean();
-
-        return $output;
+    public static function render_action()
+    {
+		return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-action' ], self::get_bonus() );
     }
 
     public static function render_button()
@@ -295,13 +351,7 @@ class BonusAbout
             return '';
         }
 
-        ob_start();
-
-        load_template( self::TEMPLATE[ 'bonus-about-button' ], false, self::get_button() );
-
-        $output = ob_get_clean();
-
-        return $output;
+        return LegalComponents::render_main( self::TEMPLATE[ 'bonus-about-button' ], self::get_button() );
     }
 }
 

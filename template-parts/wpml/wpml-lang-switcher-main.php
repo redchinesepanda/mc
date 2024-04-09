@@ -25,5 +25,9 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+    </div> 
+>>>>>>> 34b2d3c93fd6666bc9ca6e2d4e4c76cfba7f79d5
 <?php endif; ?>

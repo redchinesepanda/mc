@@ -79,29 +79,15 @@ class CompilationTabsLink
 		// }
 
 		$nodes = self::get_nodes_link( $dom );
-		
-		// LegalDebug::debug( [
-		// 	'CompilationTabsLink' => 'modify_link',
-
-		// 	'nodes-length' => $nodes->length,
-		// ] );
 
 		if ( $nodes->length == 0 )
 		{
 			return false;
 		}
 
-		foreach ( $nodes as $node )
+		foreach ( $nodes as $node_id => $node )
 		{
 			$anchors = $node->getElementsByTagName( 'a' );
-
-			// LegalDebug::debug( [
-			// 	'CompilationTabsLink' => 'modify_link',
-
-			// 	'nodeclass-class' => $node->getAttribute( 'class' ),
-
-			// 	'anchors-length' => $anchors->length,
-			// ] );
 
 			if ( $anchors->length != 0 )
 			{
@@ -115,15 +101,23 @@ class CompilationTabsLink
 
 				$item->textContent = $anchor->textContent;
 
-				$anchors = self::get_nodes_anchors( $dom );
-
 				try
 				{
-					// $node->parentNode->replaceChild( $item, $node );
+					if ( empty( $node_id ) )
+					{
+						$section_anchors = self::get_nodes_anchors( $dom );
 
-					$node->parentNode->insertBefore( $item, $anchors->item( 0 ) );
+						if ( $section_anchors->length > 0 )
+                        {
+                            $node->parentNode->insertBefore( $item, $section_anchors->item( 0 ) );
 
-					$node->parentNode->removeChild( $node );
+							$node->parentNode->removeChild( $node );
+                        }
+					}
+					else
+					{
+						$node->parentNode->replaceChild( $item, $node );
+					}
 				}
 				catch ( DOMException $e )
 				{

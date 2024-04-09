@@ -50,14 +50,6 @@ class BonusSingle
             return '';
         }
 
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'main' ], false, [] );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
         if ( TemplateMain::check_new() )
         {
             return LegalComponents::render_main( self::TEMPLATE[ 'new' ], [] );

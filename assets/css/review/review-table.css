@@ -18,6 +18,11 @@
         display: table;
         width: 100%;
     }
+
+    .tcb-post-content .legal-scroll-x,
+    .tcb-post-content .legal-scroll {
+        overflow-x: scroll;
+    }
 }
 
 @media screen and ( min-width: 768px )

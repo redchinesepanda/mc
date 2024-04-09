@@ -17,7 +17,6 @@
     }
 
     .tcb-post-content h2 {
-        margin-top: 0px;
         margin-top: 28px;
     }
 
@@ -53,7 +52,7 @@
         line-height: 22px;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p )
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p )
     {
         font-size: 14px;
         line-height: 22px;
@@ -76,7 +75,6 @@
     }
 
     .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ) {
-        margin-top: 0px;
         padding-top: 24px;
         margin-top: 32px;
     }
@@ -84,6 +82,13 @@
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         padding-top: 14px;
         margin-top: 24px;
+    }
+
+    /* Width and Height */
+
+    .tcb-post-content iframe {
+        max-width: 300px;
+        height: auto;
     }
 
     /* Review Typography */
@@ -108,7 +113,7 @@
         line-height: 24px;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ) {
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ) {
         font-size: 16px;
         line-height: 26px;
     }
@@ -226,8 +231,12 @@
 
 .tcb-post-content .legal-button {
 	padding: 2px 15px;
-    margin-right: 4px;
-    margin-bottom: 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.tcb-post-content .legal-replaced-anchor {
+    margin-right: 14px;
 }
 
 /* Review Background */
@@ -260,6 +269,10 @@
 	border: 1px solid var( --Base-base-09 );
 }
 
+.tcb-post-content iframe {
+    border-radius: 12px;
+}
+
 /* Review Typography */
 
 .tcb-post-content h1,
@@ -272,7 +285,7 @@
     font-weight: 700;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ),
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a
 {
@@ -281,7 +294,7 @@
     font-weight: 400;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ),
 .tcb-post-content .legal-attention {
     color: var( --Base-base-09 );
 }
@@ -306,7 +319,7 @@
 }
 
 .tcb-post-content .legal-button {
-	font-size: 12px;
+	font-size: 14px;
 	text-align: center;
     color: var( --Base-base-09 );
     text-decoration: none;

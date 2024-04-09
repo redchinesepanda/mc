@@ -54,6 +54,8 @@ class BonusMain
 		
 		'bookmaker' => 'Bookmaker',
 
+		'bookmaker-bonus' => 'Bookmaker bonus',
+
 		'claim-bonus' => 'Claim Bonus',
 
 		'expires-in' => 'Expires in',
@@ -174,6 +176,16 @@ class BonusMain
         }
 
         return 0;
+    }
+
+	public static function get_post()
+    {
+		if ( !empty( $post = get_post() ) )
+        {
+            return $post;
+        }
+
+        return null;
     }
 }
 

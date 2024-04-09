@@ -23,6 +23,11 @@ class BilletAchievement
     const FIELD = [
         'feture-achievement' => 'billet-feture-achievement',
     ];
+    const FIELD_ACHIEVEMENT = [
+        'image' => 'achievement-image',
+
+        'color' => 'achievement-color',
+    ];
 
     const FETURE_ACHIEVEMENT = [
         'feture-id' => 'billet-feture-id',
@@ -30,9 +35,18 @@ class BilletAchievement
         'achievement-id' => 'billet-achievement-id',
     ];
     
-    public static function get_achievement_class( $achievement_class )
+    // public static function get_achievement_class( $achievement_class )
+    
+    public static function get_achievement_class( $filter )
     {
-        return !empty( $achievement_class ) ? $achievement_class : BilletAchievement::TYPE_IMAGE;
+        if ( !empty( $filter[ 'achievement' ] ) )
+        {
+            return $filter[ 'achievement' ];
+        }
+
+        return BilletAchievement::TYPE_IMAGE;
+        
+        // return !empty( $achievement_class ) ? $achievement_class : BilletAchievement::TYPE_IMAGE;
     }
 
     // public static function get( $title )
@@ -47,13 +61,128 @@ class BilletAchievement
 
         return self::get_achievement( $title[ 'id' ], $title[ 'filter' ] );
     }
+
+    public static function get_feature_achievement( $id, $filter )
+    {
+        if ( !empty( $filter[ 'features' ] ) )
+        {
+            $feature_achievements = get_field( self::FIELD[ 'feture-achievement' ], $id );
     
+            if ( $feature_achievements )
+            {
+                foreach ( $feature_achievements as $feature_achievement )
+                {
+                    if ( in_array( $feature_achievement[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $filter[ 'features' ] ) )
+                    {
+                        $term = get_term( $feature_achievement[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
+                    }
+                }
+            }
+        }
+
+        return [];
+    }
+
+    public static function get_default_achievements( $id )
+    {
+        return self::get_default_achievement( $id, self::MODE[ 'all' ] );
+    }
+
+    const MODE = [
+        'default' => 'default',
+
+        'all' => 'all',
+    ];
+
+    public static function get_default_achievement( $id, $mode = self::MODE[ 'default' ] )
+    {
+        $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+
+        if ( !is_wp_error( $terms ) && !empty( $terms ) )
+        {
+            if ( $mode == self::MODE[ 'default' ] )
+            {
+                return array_shift( $terms );
+            }
+            else
+            {
+                return $terms;
+            }
+        }
+
+        return [];
+    }
+
+    const COLOR = [
+        'default' => 'rgba(237, 239, 244, 1)',
+    ];
+
+    public static function get_achievement_color( $term )
+    {
+        if ( $color = get_field( self::FIELD_ACHIEVEMENT[ 'color' ], self::TAXONOMY . '_' . $term->term_id ) )
+        {
+            return $color;
+        }
+
+        return self::COLOR[ 'default' ];
+    }
+
+    public static function get_achievement_image( $term )
+    {
+        if ( $image = get_field( self::FIELD_ACHIEVEMENT[ 'image' ], self::TAXONOMY . '_' . $term->term_id ) )
+        {
+            return $image;
+        }
+
+        return '';
+    }
+    
+    public static function get_achievement_item( $term, $filter )
+    {
+        if ( !empty( $term ) )
+        {
+            // $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
+
+            // if ( empty( $color ) )
+            // {
+            //     $color = 'rgba(237, 239, 244, 1)';
+            // }
+
+            return [
+                'class' => self::get_achievement_class( $filter ),
+            
+                'selector' => 'achievement-' . $term->term_id,
+
+                'name' => ToolLoco::translate( $term->name ),
+
+                // 'color' => $color,
+                
+                'color' => self::get_achievement_color( $term ),
+
+                // 'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
+                
+                'image' => self::get_achievement_image( $term ),
+            ];
+        }
+
+        return [];
+    }
+
+    // public static function get_achievements( $id, $filter )
+    // {
+
+    // }
+
     public static function get_achievement( $id, $filter )
     {
         // LegalDebug::debug( [
-        //     'function' => 'BilletAchievement::get',
+        //     'BilletAchievement' => 'get',
 
-        //     'title' => $title,
+        //     'id' => $id,
+
+        //     'filter' => $filter,
+
+        //     'check_disabled' => self::check_disabled( $filter ),
         // ] );
 
         if ( self::check_disabled( $filter ) )
@@ -61,58 +190,78 @@ class BilletAchievement
             return [];
         }
 
-        $args = [];
+        $term = self::get_feature_achievement( $id, $filter );
+        
+        // $term = null;
 
-        $term = null;
+        // $feature_achievements = get_field( self::FIELD[ 'feture-achievement' ], $id );
 
-        $feature_achievement = get_field( self::FIELD[ 'feture-achievement' ], $id );
+        // if ( $feature_achievements )
+        // {
+        //     foreach ( $feature_achievements as $feature_achievement )
+        //     {
+        //         if ( in_array( $feature_achievement[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $filter[ 'features' ] ) )
+        //         {
+        //             $term = get_term( $feature_achievement[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
+        //         }
+        //     }
+        // }
 
-        if ( $feature_achievement )
-        {
-            foreach ( $feature_achievement as $feature_achievement_item )
-            {
-                if ( in_array( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'feture-id' ] ], $filter[ 'features' ] ) )
-                {
-                    $term = get_term( $feature_achievement_item[ self::FETURE_ACHIEVEMENT[ 'achievement-id' ] ] );
-                }
-            }
-        }
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
+
+        //     'feature_achievement' => $feature_achievement,
+        // ] );
 
         if ( empty( $term ) )
         {
-            $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
+            // $terms = wp_get_post_terms( $id, self::TAXONOMY, [ 'term_id', 'name', 'slug' ] );
 
-            if ( !empty( $terms ) && !is_wp_error( $terms ) )
-            {
-                $term = array_shift( $terms );
-            }
+            // if ( !empty( $terms ) && !is_wp_error( $terms ) )
+            // {
+            //     $term = array_shift( $terms );
+            // }
+
+            $term = self::get_default_achievement( $id );
         }
 
         if ( !empty( $term ) )
         {
-            $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
+            return self::get_achievement_item( $term, $filter );
 
-            if ( empty( $color ) )
-            {
-                $color = 'rgba(237, 239, 244, 1)';
-            }
+            // $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
 
-            $args = [
-                // 'class' => $title['achievement'],
+            // if ( empty( $color ) )
+            // {
+            //     $color = 'rgba(237, 239, 244, 1)';
+            // }
+
+            // $args = [
+            //     // 'class' => $title['achievement'],
                 
-                'class' => self::get_achievement_class( $filter[ 'achievement' ] ),
+            //     // 'class' => self::get_achievement_class( $filter[ 'achievement' ] ),
+                
+            //     'class' => self::get_achievement_class( $filter ),
             
-                'selector' => 'achievement-' . $term->term_id,
+            //     'selector' => 'achievement-' . $term->term_id,
 
-                'name' => __( $term->name, ToolLoco::TEXTDOMAIN ),
+            //     'name' => __( $term->name, ToolLoco::TEXTDOMAIN ),
 
-                'color' => $color,
+            //     'color' => $color,
 
-                'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
-            ];
+            //     'image' => get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ),
+            // ];
         }
 
-        return $args;
+        return [];
+
+        // LegalDebug::debug( [
+        //     'BilletAchievement' => 'get',
+
+        //     'args' => $args,
+        // ] );
+
+        // return $achievement_item;
     }
 
     const TEMPLATE = [
@@ -155,7 +304,7 @@ class BilletAchievement
             return $filter[ 'achievement' ] == self::TYPE_DISABLED;
         }
         
-        return true;
+        return false;
     }
 
     public static function render( $achievement )

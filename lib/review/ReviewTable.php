@@ -381,7 +381,9 @@ class ReviewTable
 		{
 			$class_table = $table->getAttribute( 'class' );
 
-			$class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+			// $class_table = str_replace( ' ' . self::CLASSES[ 'scroll' ], '', $class_table );
+			
+			$class_table = str_replace( self::CLASSES[ 'scroll' ], '', $class_table );
 
 			$class_scroll = self::CLASSES[ 'scroll' ];
 

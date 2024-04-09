@@ -40,6 +40,8 @@ require_once( 'ReviewCut.php' );
 
 require_once( 'ReviewVideo.php' );
 
+require_once( 'ReviewRestricted.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -78,6 +80,8 @@ class ReviewMain
 		'page-contents' => 'Page contents',
 
 		'promo-code' => 'Promo Code',
+        
+        'advertising' => 'Advertising | Responsible Gaming | +18',
 
 		'rating' => 'Rating',
 
@@ -280,6 +284,8 @@ class ReviewMain
         ReviewCut::register();
 
         ReviewVideo::register();
+
+        ReviewRestricted::register();
     }
 
     public static function encoding( $content )

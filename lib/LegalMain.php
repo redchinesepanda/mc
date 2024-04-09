@@ -4,6 +4,8 @@ require_once( 'LegalDebug.php' );
 
 require_once( 'LegalComponents.php' );
 
+require_once( 'LegalHosts.php' );
+
 require_once( 'acf/ACFMain.php' );
 
 require_once( 'admin/AdminMain.php' );
@@ -102,6 +104,24 @@ class LegalMain
 
 			MiltisiteMain::register_functions();
 		}
+		else
+		{
+			LegalComponents::register_functions();
+
+			ACFMain::register_functions();
+
+			ToolsMain::register_functions();
+		
+			SchemaMain::register();
+
+			BaseMain::register_functions();
+
+			YoastMain::register_functions();
+
+			ReviewMain::register_functions();
+
+			WPMLMain::register_functions();
+		}
 	}
 
 	public static function register_components()
@@ -190,7 +210,7 @@ class LegalMain
 	
 		// return $permission_acf
 
-			// && $permission_wpml
+			// && $permission_wpml;
 
 			// && $permission_yoast;
 	}
@@ -208,43 +228,58 @@ class LegalMain
 		return self::check_plugins() && self::check_permissions();
 	}
 
-	const HOST_PRODUCTION = [
-		'mc' => 'match.center',
-	];
+	// const HOST_PRODUCTION = [
+	// 	'mc' => 'match.center',
 
-	const HOST_DEBUG = [
-		'old' => 'old.match.center',
+	// 	'es' => 'es.match.center',
+	// ];
 
-		'oldpl' => 'oldpl.match.center',
+	// const HOST_DEBUG = [
+	// 	'old' => 'old.match.center',
 
-		'oldes' => 'oldes.match.center',
+	// 	'oldpl' => 'oldpl.match.center',
 
-		'test' => 'test.match.center',
+	// 	'oldes' => 'oldes.match.center',
 
-		'es' => 'es.match.center',
-	];
+	// 	'test' => 'test.match.center',
 
-	public static function check_host_production()
-	{
-		if ( in_array( $_SERVER[ 'HTTP_HOST' ], self::HOST_PRODUCTION ) )
-		{
-			return true;
-		}
+	// 	// 'es' => 'es.match.center',
+	// ];
 
-		return false;
-	}
+	// public static function check_host_production()
+	// {
+	// 	if ( in_array( $_SERVER[ 'HTTP_HOST' ], self::HOST_PRODUCTION ) )
+	// 	{
+	// 		return true;
+	// 	}
 
-	public static function get_main_host()
-	{
-		$host = self::HOST_DEBUG;
+	// 	return false;
+	// }
 
-		if ( self::check_host_production() )
-		{
-			$host = self::HOST_PRODUCTION;
-		}
+	// public static function get_main_host()
+	// {
+	// 	// $host = self::HOST_DEBUG;
 
-		return array_shift( $host );
-	}
+	// 	if ( self::check_host_production() )
+	// 	{
+	// 		// $host = self::HOST_PRODUCTION;
+
+	// 		return self::get_main_host_production();
+	// 	}
+
+	// 	// return array_shift( $host );
+
+	// 	$host = self::HOST_DEBUG;
+		
+	// 	return array_shift( $host );
+	// }
+
+	// public static function get_main_host_production()
+	// {
+	// 	$host = self::HOST_PRODUCTION;
+
+	// 	return array_shift( $host );
+	// }
 }
 
 ?>

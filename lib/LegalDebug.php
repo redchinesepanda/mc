@@ -21,7 +21,9 @@ class LegalDebug
 
     public static function debug( $message )
     {
-        if ( LegalMain::check_host_production() )
+        // if ( LegalMain::check_host_production() )
+        
+        if ( LegalHosts::check_host_production() )
         {
             if ( self::check() )
             {
@@ -36,7 +38,9 @@ class LegalDebug
 
     public static function die( $message )
     {
-        if ( LegalMain::check_host_production() )
+        // if ( LegalMain::check_host_production() )
+        
+        if ( LegalHosts::check_host_production() )
         {
             if ( self::check() )
             {

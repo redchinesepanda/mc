@@ -39,7 +39,7 @@ class ReviewTitle
 
 	public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			ReviewMain::register_style( self::CSS_NEW );
 
@@ -156,6 +156,8 @@ class ReviewTitle
 
 		'date-year' => 'legal-header-year',
 
+		'date-month' => 'legal-header-month',
+
 		'date-month-year' => 'legal-header-month-year',
 	];
 
@@ -195,8 +197,8 @@ class ReviewTitle
 
 	const FORMAT = [
         self::CLASSES[ 'date-year' ] => 'y',
-
-        // self::CLASSES[ 'date-month-year' ] => 'MMMM y',
+        
+		self::CLASSES[ 'date-month' ] => 'LLLL',
         
 		self::CLASSES[ 'date-month-year' ] => 'LLLL y',
     ];

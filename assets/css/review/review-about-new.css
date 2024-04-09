@@ -28,6 +28,11 @@
         align-items: center;
     }
 
+    .review-about.legal-mode-mini .about-center {
+        flex-wrap: wrap;
+        row-gap: 28px;
+    }
+
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-head,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-title,
     .legal-review-page-sidebar .about-right.sticky-bonus .review-bonus-description,
@@ -49,9 +54,17 @@
         width: 100%;
     }
 
-    .review-about .about-logo {
+    .review-about:not( .legal-mode-mini ) .about-logo {
         width: 68px;
         height: 68px;
+    }
+
+    .review-about .about-data {
+        width: calc( 100% - ( 70px + 26px ) );
+    }
+
+    .review-about.legal-mode-mini .about-button {
+        width: 100%;
     }
 
     /* Position */
@@ -59,6 +72,15 @@
     .review-about {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+
+    .review-about .legal-afillate-description {
+        margin-top: calc( 10px - 8px );
+        padding-top: 4px;
+    }
+
+    .review-about .footer-logo {
+        padding-bottom: 4px;
     }
 
     .legal-review-page-sidebar .about-right.sticky-bonus
@@ -112,9 +134,9 @@
 {
     /* Display */
 
-    .review-about {
+   /*  .review-about {
         column-gap: 20px;
-    }
+    } */
 
     /* Position */
 
@@ -135,17 +157,27 @@
         padding-bottom: 32px;
     }
 
-    .review-about.legal-mode-mini {
+  /*   .review-about.legal-mode-mini {
         padding: 10px 20px;
-    }
+    } */
 
     .review-about.legal-mode-mini {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .review-about .about-achievement {
-        padding: 30px 0px;
+    .review-about.legal-mode-mini .about-button {
+        margin-left: auto;
+    }
+
+    .review-about .legal-afillate-description,
+    .review-about .footer-logo {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .review-about .footer-logo {
+        margin-left: auto;
     }
 
     .legal-review-page-sidebar .about-right {
@@ -155,7 +187,7 @@
     
     /* Width and Height */
 
-    .review-about .about-logo {
+    .review-about:not( .legal-mode-mini ) .about-logo {
         width: 100px;
         height: 100px;
     }
@@ -164,8 +196,16 @@
         max-width: var( --base-width-desktop );
     }
 
-    .review-about .about-center {
+    .review-about:not( .legal-mode-mini ) .about-center {
         width: calc( 100% / 3 * 2 - 24px );
+    }
+
+    .review-about.legal-mode-mini .about-center {
+        width: 100%;
+    }
+
+    .review-about .about-data {
+        width: calc( 100% - ( 102px + 26px ) );
     }
 
     .review-about .about-right
@@ -173,9 +213,13 @@
         width: calc( 100% / 3 - 24px );
     }
 
-    .review-about.legal-mode-mini {
-        width: 800px;
+    .review-about.legal-mode-mini .legal-afillate {
+        min-width: calc( 148px - (18px * 2) );
     }
+
+    /* .review-about.legal-mode-mini {
+        width: 800px;
+    } */
 
     .review-about .about-achievement div {
         width: 270px;
@@ -216,10 +260,20 @@
     column-gap: 30px;
 }
 
-.review-about .about-left,
+/* .review-about .about-left, */
 .review-about .about-center {
     display: flex;
     column-gap: 26px;
+    flex-wrap: wrap;
+}
+
+.review-about.legal-mode-mini .about-center {
+    align-items: center;
+}
+
+.review-about .achievement-name {
+    display: flex;
+    align-items: center;
 }
 
 .review-about .about-right,
@@ -248,7 +302,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    row-gap: 4px;
+    row-gap: 8px;
 }
 
 .review-about .about-rating {
@@ -269,12 +323,17 @@
 
 .review-about .about-achievement {
     display: flex;
-    justify-content: center;
+ /*    justify-content: center; */
     column-gap: 30px;
 }
 
 .review-about .achievement-bonus-link {
     display: inline-block;
+}
+
+.review-about .footer-logo {
+    display: flex;
+    column-gap: 8px;
 }
 
 /* Width and Height */
@@ -286,6 +345,10 @@
 .review-about .about-center h1,
 .review-about .about-center .review-bonus-title {
     width: 100%;
+}
+
+.review-about .achievement-name {
+    min-height: calc( 36px - ( 4px * 2 ) );
 }
 
 .about-right .review-bonus-head,
@@ -305,8 +368,17 @@
     width: 100%;
 }
 
+.review-about .about-rating {
+    width: 100%;
+}
+
 .review-about .achievement-bonus-link {
     height: 28px;
+}
+
+.review-about.legal-mode-mini .about-logo {
+    width: 46px;
+    height: 46px;
 }
 
 /* Position */
@@ -317,7 +389,19 @@
 }
 
 .review-about-wrapper.legal-mode-mini {
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+}
+
+.review-about.legal-mode-mini {
+    padding: 24px;
+}
+
+.review-about .about-achievement {
+    padding-bottom: 24px;
+}
+
+.review-about .achievement-name {
+    padding: 4px 10px;
 }
 
 .review-about .about-center h1 {
@@ -333,7 +417,7 @@
 .review-about .about-right .review-bonus-title, 
 .legal-review-page-sidebar .about-right .review-bonus-title {
     padding-bottom: 48px;
-} 
+}
 
 .review-about .about-right .review-bonus-description,
 .legal-review-page-sidebar .about-right .review-bonus-description,
@@ -378,22 +462,36 @@
     border: 2px solid var( --Base-base-09);
 }
 
-.review-about-wrapper:not(.legal-mode-mini), .review-about.legal-mode-mini {
+.review-about-wrapper:not(.legal-mode-mini) {
     background-color: var(--Base-base-02);
     border-bottom: 1px solid var(--Base-base-09); 
 }
 
 .review-about.legal-mode-mini {
-    border-radius: 20px;
+    border-radius: 18px;
+    background-color: var(--Base-base-01);
+    border: 1px solid var(--Base-base-09);
+}
+
+.review-about .achievement-name {
+    background-color: var(--Base-base-01);
+    border-radius: 60px; 
 }
 
 .review-about .about-logo {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: 24px;
     border: 1px solid var(--Base-base-09);
     background-color: var(--Logo-background);
+}
+
+.review-about:not( .legal-mode-mini ) .about-logo {
+    border-radius: 24px;
+}
+
+.review-about.legal-mode-mini .about-logo {
+    border-radius: 12.8px;
 }
 
 .legal-afillate {
@@ -454,6 +552,7 @@
 
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
+.review-about .achievement-name,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
 .review-about .review-bonus-description,
@@ -465,6 +564,7 @@
 
 .review-about .about-rating,
 .review-about .about-center h1,
+.review-about .achievement-name,
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title,
 .review-about .about-right .review-bonus-description,
@@ -476,6 +576,12 @@
 .about-right .review-bonus-head {
     font-family: var( --legal-font-primary );
     font-style: normal;
+}
+
+.review-about .achievement-name {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .review-about .about-rating {
@@ -518,7 +624,6 @@
 }
 
 .legal-afillate {
-    font-size: 16px;
     font-weight: 500;
     text-decoration: none;
     text-align: center;
@@ -526,12 +631,14 @@
 }
 
 .legal-review-page-sidebar .about-right .legal-afillate {
+    font-size: 16px;
     line-height: 22px;
 }
 
 .tcb-post-content > .legal-afillate {
+    font-size: 14px;
     line-height: 20px;
-}
+} 
 
 .about-right .legal-cut-control {
     font-size: 14px;
@@ -556,16 +663,15 @@
 }
 
 .review-about .legal-afillate-description {
-    font-size: 14px;
-    font-style: normal;
+    font-size: 13px;
     font-weight: 400;
-    line-height: 24.5px;
-    text-align: center;
+    line-height: 17px;
+    color: var( --Base-base-05 );
+    /* text-align: center; */
 }
 
 .review-about .about-achievement .achievement-bonus-link {
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 28px;
     text-decoration: none;

@@ -321,8 +321,12 @@
 
 	/* Width and Height */
 
-	.legal-footer .footer-text {
+	.legal-footer .lang-switcher ~ .footer-text {
 		width: 70%;
+	}
+
+	.legal-footer .footer-text:not( .lang-switcher ~ .footer-text ) {
+		width: 100%;
 	}
 
 	.footer-menu .menu-item > .item-title,

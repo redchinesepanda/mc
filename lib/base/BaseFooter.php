@@ -17,16 +17,16 @@ class BaseFooter
 			'ver' => '1.0.0',
 		],
 
-    /*     'legal-footer-selectors' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
+    	// 'legal-footer-selectors' => [
+		// 	'path' => LegalMain::LEGAL_URL . '/assets/css/base/footer-selectors.css',
 
-			'ver' => '1.0.0',
-		], */
+		// 	'ver' => '1.0.0',
+		// ],
     ];
 
     public static function register_style()
     {
-		if ( TemplateMain::check_code() )
+		if ( TemplateMain::check_new() )
 		{
 			BaseMain::register_style( self::CSS_NEW );
 		}
@@ -43,6 +43,11 @@ class BaseFooter
         add_action( 'init', [ $handler, 'location' ] );
 	}
 
+	public static function check_register()
+	{
+		return ToolNotFound::check_domain_restricted();
+	}
+
 	public static function register()
     {
         $handler = new self();
@@ -53,8 +58,124 @@ class BaseFooter
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_filter( 'wp_nav_menu_objects', [ $handler, 'image' ], 10, 2 );
+		if ( self::check_register() )
+		{
+			// add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
+
+			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
+		}
     }
+
+	const FORMAT = [
+		'anchor' => '/%s/',
+	];
+
+	public static function check_language_contains( $url )
+	{
+		return str_contains( $url, sprintf( self::FORMAT[ 'anchor' ], WPMLMain::current_language() ) );
+	}
+
+	public static function check_language_not_contains( $url )
+	{
+		return !self::check_language_contains( $url );
+	}
+
+	const HOST_EXTERNAL = [
+		'www.ukclubsport.com',
+	];
+
+	public static function check_external( $host )
+	{
+		return in_array( $host, self::HOST_EXTERNAL );
+    }
+
+	public static function check_main_host_production( $host )
+	{
+		return $host == LegalMain::get_main_host_production();
+	}
+
+	public static function check_current_host( $host )
+	{
+		return $host == ToolRobots::get_host();
+	}
+
+	public static function check_main_host( $host )
+	{
+		return $host == LegalMain::get_main_host();
+	}
+
+	public static function check_local( $host )
+	{
+		return self::check_main_host_production( $host )
+
+			|| self::check_current_host( $host )
+
+			|| self::check_main_host( $host );
+	}
+
+	public static function check_contains( $host )
+	{
+		return self::check_external( $host )
+
+			|| self::check_local( $host );
+
+			// || self::check_main_host_production( $host )
+
+			// || self::check_current_host( $host )
+
+			// || self::check_main_host( $host );
+	}
+
+	public static function check_host( $url )
+	{
+		$url_host = parse_url( $url, PHP_URL_HOST );
+
+		return self::check_contains( $url_host );
+	}
+
+	public static function check_type( $type )
+	{
+		return $type == 'custom';
+	}
+
+	public static function check_item( $item )
+	{
+		return self::check_type( $item->type )
+		
+			&& self::check_host( $item->url )
+			
+			&& self::check_language_not_contains( $item->url );
+	}
+
+	public static function check_current_language( $item )
+	{
+		return !self::check_item( $item );
+	} 
+
+	public static function filter_only_current_language( $items, $menu, $args )
+	{
+		$handler = new self();
+
+		return array_filter( $items, [ $handler, 'check_current_language' ] );
+	}
+
+	// public static function replace_anchors( $href )
+	// {
+	// 	$restricted = ToolNotFound::get_restricted();
+
+	// 	foreach ( $restricted as $host => $languages )
+	// 	{
+	// 		foreach ( $languages as $language )
+	// 		{
+	// 			if ( ReviewRestricted::replace_anchors( $href, $language, $host ) )
+	// 			{
+	// 				break 2;
+	// 			}
+	// 		}
+	// 	}
+
+	// 	return $href;
+	// }
 
 	const LOCATION = 'legal-footer';
 
@@ -67,37 +188,94 @@ class BaseFooter
 		'width' => 'menu-item-width',
 	];
 
+	const TYPE = [
+		'custom' => 'custom'
+	];
+
+	public static function check_post_custom( $post )
+	{
+		return $post->type == self::TYPE[ 'custom' ];
+	}
+
+	public static function check_children( $children )
+	{
+		return empty( $children );
+	}
+
+	public static function check_post_url( $post )
+	{
+		return $post->url == '#';
+	}
+
+	public static function check_post( $post, $children )
+	{
+		return self::check_post_custom( $post )
+
+		    && self::check_post_url( $post )
+		
+            && self::check_children( $children );
+	}
+
+	const CLASSES = [
+		'has-children' => 'menu-item-has-children',
+	];
+
 	public static function parse_items( $items, $parents, $key )
 	{
 		$post = $items[ $key ];
+
+		$children = ToolMenu::array_search_values( $post->ID, $parents );
+
+		if ( self::check_post( $post, $children ) )
+		{
+			return false;
+		}
 
 		$item[ 'title' ] = $post->title;
 
 		$item[ 'href' ] = $post->url;
 
-		$class = get_field( self::ITEM[ 'width' ], $post->ID );
+		if ( self::check_post_custom( $post ) )
+		{
+			$item[ 'href' ] = apply_filters( 'mc_url_restricted', $post->url );
+		}
 
-		$item[ 'class' ] = ( $class ? $class : '' );
+		$classes = [];
+
+		if ( $class_width = get_field( self::ITEM[ 'width' ], $post->ID ) )
+		{
+			$classes[] = $class_width;
+		}
 
 		if ( !empty( $post->classes ) )
 		{
-			$item[ 'class' ] .= ' ' . implode( ' ', $post->classes );
-		}
-		
-		$children = ToolMenu::array_search_values( $post->ID, $parents );
-
-		if ( !empty( $children ) ) {
-			$child_keys = array_keys( $children );
-
-			foreach ( $child_keys as $child_key) {
-				$item[ 'children' ][] = self::parse_items( $items, $parents, $child_key );
+			foreach ( $post->classes as $post_class )
+			{
+				if ( !empty( $post_class ) )
+				{
+					$classes[] = $post_class;
+				}
 			}
 		}
 
-		if ( !empty( $item[ 'children' ] ) )
+		$item[ 'children' ] = [];
+
+		if ( !empty( $children ) )
 		{
-			$item[ 'class' ] .= ' menu-item-has-children';
+			$classes[] = self::CLASSES[ 'has-children' ];
+
+			$child_keys = array_keys( $children );
+
+			foreach ( $child_keys as $child_key)
+			{
+				if ( $child = self::parse_items( $items, $parents, $child_key ) )
+				{
+					$item[ 'children' ][] = $child;
+				}
+			}
 		}
+
+		$item[ 'class' ] = implode( ' ', $classes );
 
 		return $item;
 	}
@@ -110,15 +288,22 @@ class BaseFooter
 
 		$items = [];
 
-		if ( $menu_items) {
+		if ( $menu_items )
+		{
 			$menu_item_parents = ToolMenu::get_parents( $menu_items );
 
 			$parents_top = ToolMenu::array_search_values( 0, $menu_item_parents );
 
 			$keys = array_keys( $parents_top );
 
-			foreach ( $keys as $key ) {
-				$items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
+			foreach ( $keys as $key )
+			{
+				if ( $item = self::parse_items( $menu_items, $menu_item_parents, $key ) )
+				{
+					$items[] = $item;
+				}
+
+				// $items[] = self::parse_items( $menu_items, $menu_item_parents, $key );
 			}
 		}
 
@@ -139,7 +324,7 @@ class BaseFooter
         'order' => 'media-order',
     ];
 
-	public static function get_items()
+	public static function get_logo_items()
 	{
 		$posts = get_posts( self::query() );
 
@@ -151,10 +336,6 @@ class BaseFooter
 			$href = get_field( self::FIELD[ 'href' ], $post->ID );
 
 			$alt = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
-
-			// LegalDebug::debug( [
-			// 	'ID' => $post->ID,
-			// ] );
 
 			if ( $image ) {
 				$items[] = [
@@ -203,20 +384,32 @@ class BaseFooter
 		];
 	}
 
+	public static function get_end( &$items )
+	{
+		if ( count( $items ) > 4 )
+		{
+			return array_splice( $items, -2 );
+		}
+
+		return [];
+	}
+
 	public static function get()
 	{
 		$items = self::get_menu_items();
 
-		$end = array_splice( $items, -2 );
+		// $end = array_splice( $items, -2 );
 
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
 
-			'end' => $end,
+			// 'end' => $end,
+			
+			'end' => self::get_end( $items ),
 
 			'items' => $items,
 
-			'logo' => self::get_items(),
+			'logo' => self::get_logo_items(),
 
 			'copy' => [
 				'year' => '2021-2023',
