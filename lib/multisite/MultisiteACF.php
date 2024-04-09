@@ -26,7 +26,7 @@ class MultisiteACF
 
 		foreach ( self::get_field_names() as $field_name )
 		{
-			$fields[] = get_field_raw( $field_name, $post_id );
+			$fields[] = self::get_field_raw( $field_name, $post_id );
 		}
 
 		return $fields;
