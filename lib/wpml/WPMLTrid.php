@@ -58,13 +58,13 @@ class WPMLTrid
     {
         $group = apply_filters( 'wpml_get_element_translations', NULL, $trid, 'post_page' );
 
-        LegalDebug::debug( [
-        	'WPMLTrid' => 'get_translation_group',
+        // LegalDebug::debug( [
+        // 	'WPMLTrid' => 'get_translation_group',
 
-        	'trid' => $trid,
+        // 	'trid' => $trid,
             
-        	'group' => $group,
-        ] );
+        // 	'group' => $group,
+        // ] );
 
         if ( !empty ( $group ) )
         {
