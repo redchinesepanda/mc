@@ -127,7 +127,7 @@ class BilletAchievement
         return self::COLOR[ 'default' ];
     }
 
-    public static function get_achievement_color( $term )
+    public static function get_achievement_image( $term )
     {
         if ( $image = get_field( self::FIELD_ACHIEVEMENT[ 'image' ], self::TAXONOMY . '_' . $term->term_id ) )
         {
