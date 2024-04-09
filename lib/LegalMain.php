@@ -170,9 +170,11 @@ class LegalMain
 	
 		// return $permission_acf
 
-			&& $permission_wpml;
+			// && $permission_wpml;
 
 			// && $permission_yoast;
+
+		return true;
 	}
 
 	public static function check()
