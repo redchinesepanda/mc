@@ -79,7 +79,9 @@ class ToolNotFound
 
 	public static function get_restricted()
 	{
-		if ( LegalMain::check_host_production() )
+		// if ( LegalMain::check_host_production() )
+		
+		if ( LegalHosts::check_host_production() )
         {
             return self::RESTRICTED_PRODUCTION;
         }

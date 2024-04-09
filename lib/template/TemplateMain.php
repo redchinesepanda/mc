@@ -30,7 +30,9 @@ class TemplateMain
     {
         $current_language = self::CURRENT_LANGUAGE_DEBUG;
 
-        if ( LegalMain::check_host_production() )
+        // if ( LegalMain::check_host_production() )
+        
+        if ( LegalHosts::check_host_production() )
         {
             $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
         }

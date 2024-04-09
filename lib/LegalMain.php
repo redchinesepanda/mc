@@ -4,6 +4,8 @@ require_once( 'LegalDebug.php' );
 
 require_once( 'LegalComponents.php' );
 
+require_once( 'LegalHosts.php' );
+
 require_once( 'acf/ACFMain.php' );
 
 require_once( 'admin/AdminMain.php' );
@@ -192,58 +194,58 @@ class LegalMain
 		return self::check_plugins() && self::check_permissions();
 	}
 
-	const HOST_PRODUCTION = [
-		'mc' => 'match.center',
+	// const HOST_PRODUCTION = [
+	// 	'mc' => 'match.center',
 
-		'es' => 'es.match.center',
-	];
+	// 	'es' => 'es.match.center',
+	// ];
 
-	const HOST_DEBUG = [
-		'old' => 'old.match.center',
+	// const HOST_DEBUG = [
+	// 	'old' => 'old.match.center',
 
-		'oldpl' => 'oldpl.match.center',
+	// 	'oldpl' => 'oldpl.match.center',
 
-		'oldes' => 'oldes.match.center',
+	// 	'oldes' => 'oldes.match.center',
 
-		'test' => 'test.match.center',
+	// 	'test' => 'test.match.center',
 
-		// 'es' => 'es.match.center',
-	];
+	// 	// 'es' => 'es.match.center',
+	// ];
 
-	public static function check_host_production()
-	{
-		if ( in_array( $_SERVER[ 'HTTP_HOST' ], self::HOST_PRODUCTION ) )
-		{
-			return true;
-		}
+	// public static function check_host_production()
+	// {
+	// 	if ( in_array( $_SERVER[ 'HTTP_HOST' ], self::HOST_PRODUCTION ) )
+	// 	{
+	// 		return true;
+	// 	}
 
-		return false;
-	}
+	// 	return false;
+	// }
 
-	public static function get_main_host()
-	{
-		// $host = self::HOST_DEBUG;
+	// public static function get_main_host()
+	// {
+	// 	// $host = self::HOST_DEBUG;
 
-		if ( self::check_host_production() )
-		{
-			// $host = self::HOST_PRODUCTION;
+	// 	if ( self::check_host_production() )
+	// 	{
+	// 		// $host = self::HOST_PRODUCTION;
 
-			return self::get_main_host_production();
-		}
+	// 		return self::get_main_host_production();
+	// 	}
 
-		// return array_shift( $host );
+	// 	// return array_shift( $host );
 
-		$host = self::HOST_DEBUG;
+	// 	$host = self::HOST_DEBUG;
 		
-		return array_shift( $host );
-	}
+	// 	return array_shift( $host );
+	// }
 
-	public static function get_main_host_production()
-	{
-		$host = self::HOST_PRODUCTION;
+	// public static function get_main_host_production()
+	// {
+	// 	$host = self::HOST_PRODUCTION;
 
-		return array_shift( $host );
-	}
+	// 	return array_shift( $host );
+	// }
 }
 
 ?>
