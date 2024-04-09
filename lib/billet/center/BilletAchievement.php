@@ -23,6 +23,11 @@ class BilletAchievement
     const FIELD = [
         'feture-achievement' => 'billet-feture-achievement',
     ];
+    const FIELD_ACHIEVEMENT = [
+        'image' => 'achievement-image',
+
+        'color' => 'achievement-color',
+    ];
 
     const FETURE_ACHIEVEMENT = [
         'feture-id' => 'billet-feture-id',
@@ -114,7 +119,7 @@ class BilletAchievement
 
     public static function get_achievement_color( $term )
     {
-        if ( $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id ) )
+        if ( $color = get_field( self::FIELD_ACHIEVEMENT[ 'color' ], self::TAXONOMY . '_' . $term->term_id ) )
         {
             return $color;
         }
@@ -124,7 +129,7 @@ class BilletAchievement
 
     public static function get_achievement_color( $term )
     {
-        if ( $image = get_field( 'achievement-image', self::TAXONOMY . '_' . $term->term_id ); )
+        if ( $image = get_field( self::FIELD_ACHIEVEMENT[ 'image' ], self::TAXONOMY . '_' . $term->term_id ) )
         {
             return $image;
         }
