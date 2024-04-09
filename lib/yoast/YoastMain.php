@@ -2,6 +2,14 @@
 
 require_once( 'YoastOG.php' );
 
+if ( ! function_exists( 'yoast_get_primary_term_id' ) )
+{
+    function yoast_get_primary_term_id( $taxonomy, $id )
+    {
+        return 0;
+    }
+}
+
 class YoastMain
 {
     public static function check_plugin()
