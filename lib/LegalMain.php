@@ -116,10 +116,10 @@ class LegalMain
 			'check_admin' => self::check_admin(),
 		] );
 
-		if ( self::check_admin() )
-		{
+		// if ( self::check_admin() )
+		// {
 			MiltisiteMain::register_admin();
-		}
+		// }
 
 		LegalComponents::register();
 
