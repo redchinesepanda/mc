@@ -70,6 +70,10 @@ class LegalMain
 
 			self::register_functions();
 		// }
+
+		LegalDebug::debug( [
+			'LegalMain' => 'register',
+		] );
 	}
 
 	public static function register_functions()
