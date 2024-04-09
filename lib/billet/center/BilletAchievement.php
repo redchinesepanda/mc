@@ -227,7 +227,7 @@ class BilletAchievement
 
         if ( !empty( $term ) )
         {
-            return self::get_achievement_item( $term );
+            return self::get_achievement_item( $term, $filter );
 
             // $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id );
 
