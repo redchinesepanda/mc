@@ -12,6 +12,19 @@ require_once( 'ACFReview.php' );
 
 require_once( 'ACFBillet.php' );
 
+if ( ! function_exists( 'get_field' ) )
+{
+    function get_field( $field_name, $post_id = null )
+    {
+        // if ( $post_id )
+        // {
+        //     return get_post_meta( $post_id, $field_name, true );
+        // }
+
+        return false;
+    }
+}
+
 class ACFMain
 {
     public static function check_plugin()
