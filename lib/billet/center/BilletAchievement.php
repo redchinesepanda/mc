@@ -27,6 +27,8 @@ class BilletAchievement
         'image' => 'achievement-image',
 
         'color' => 'achievement-color',
+
+        'tooltip' => 'achievement-tooltip',
     ];
 
     const FETURE_ACHIEVEMENT = [
