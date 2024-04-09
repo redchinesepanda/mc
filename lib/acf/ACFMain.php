@@ -28,7 +28,7 @@ class ACFMain
 
     public static function check_functions()
     {
-        return !function_exists( 'get_field' );
+        return function_exists( 'get_field' );
     }
 
     public static function check_redeclare()
