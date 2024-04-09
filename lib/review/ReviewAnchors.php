@@ -281,15 +281,6 @@ class ReviewAnchors
 
         foreach ( self::TEXT_ANCHORS as $id => $label )
         {
-<<<<<<< HEAD
-            // $anchors[ ToolTransiterate::replace(
-            //     ToolLoco::__( $id, ToolLoco::TEXTDOMAIN, $locale )
-            // ) ] = ToolLoco::__( $label, ToolLoco::TEXTDOMAIN, $locale );
-            
-            $anchors[ ToolTransiterate::replace(
-                ToolLoco::translate_locale( $id, $locale )
-            ) ] = ToolLoco::translate_locale( $label, $locale );
-=======
             $label_translated = ToolLoco::translate_locale( $label, $locale );
 
             if ( !empty( $label_translated ) )
@@ -300,7 +291,6 @@ class ReviewAnchors
     
                 $anchors[ $id_ready ] = $label_translated;
             }
->>>>>>> 34b2d3c93fd6666bc9ca6e2d4e4c76cfba7f79d5
         }
 
         return $anchors;
