@@ -37,13 +37,18 @@ class WPMLMain
             ]
         );
 
-        LegalDebug::debug( [
-            'WPMLMain' => 'get_all_languages',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'get_all_languages',
 
-            'languages' => $languages,
-        ] );
+        //     'languages' => $languages,
+        // ] );
 
-        return $languages;
+        if ( !empty( $languages ) )
+        {
+            return $languages;
+        }
+
+        return [];
     }
 
     const EXCLUDE = [
