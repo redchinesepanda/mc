@@ -154,7 +154,7 @@ class LegalMain
 
 	public static function check_not_admin()
 	{
-		return !is_admin();
+		return !self::check_admin();
 	}
 
 	public static function check_not_ajax()
