@@ -17,7 +17,7 @@ class MultisitePost
 		
 		$redirect = MultisiteAdmin::retirect_clean( $redirect );
 		
-		if ( self::check_doaction( $doaction ) )
+		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
 			$blog_id = MultisiteBlog::get_blog_id( $doaction );
 
