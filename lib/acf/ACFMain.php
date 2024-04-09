@@ -72,7 +72,7 @@ class ACFMain
     }
 }
 
-if ( !is_admin() && !ACFMain::check_finctions() )
+if ( !is_admin() && !ACFMain::check_functions() )
 
 // if ( ACFMain::check_redeclare() )
 {
