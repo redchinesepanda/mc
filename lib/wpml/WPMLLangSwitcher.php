@@ -100,32 +100,46 @@ class WPMLLangSwitcher
 
     private static function map( $args )
     {
-        if ( empty( $args ) )
+        if ( ! empty( $args ) )
         {
             return [
-                'id' => 0,
+                'id' => $args['id'],
 
-                'title' => '',
+                'title' => $args['native_name'],
 
-                'href' => '#',
+                'href' => $args['url'],
 
-                'src' => '',
+                'src' => $args['country_flag_url'],
 
-                'alt' => '',
+                'alt' => $args['translated_name'] . '-flag',
             ];
+
+            // return [
+            //     'id' => 0,
+
+            //     'title' => '',
+
+            //     'href' => '#',
+
+            //     'src' => '',
+
+            //     'alt' => '',
+            // ];
         }
 
-        $mapped['id'] = $args['id'];
+        return [];
 
-        $mapped['title'] = $args['native_name'];
+        // $mapped['id'] = $args['id'];
 
-        $mapped['href'] = $args['url'];
+        // $mapped['title'] = $args['native_name'];
 
-        $mapped['src'] = $args['country_flag_url'];
+        // $mapped['href'] = $args['url'];
 
-        $mapped['alt'] = $args['translated_name'] . '-flag';
+        // $mapped['src'] = $args['country_flag_url'];
 
-        return $mapped;
+        // $mapped['alt'] = $args['translated_name'] . '-flag';
+
+        // return $mapped;
     }
 
     public static function choises()
