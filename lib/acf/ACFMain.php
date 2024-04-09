@@ -12,6 +12,19 @@ require_once( 'ACFReview.php' );
 
 require_once( 'ACFBillet.php' );
 
+if ( ! function_exists( 'get_field' ) )
+{
+    function get_field( $field_name, $post_id = null )
+    {
+        // if ( $post_id )
+        // {
+        //     return get_post_meta( $post_id, $field_name, true );
+        // }
+
+        return false;
+    }
+}
+
 class ACFMain
 {
     public static function check_plugin()
@@ -20,7 +33,7 @@ class ACFMain
 
 		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
     }
-    
+
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
 
     public static function register_script()
