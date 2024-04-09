@@ -108,7 +108,7 @@ class LegalMain
 	{
 		if ( self::check_admin() )
 		{
-			MiltisiteMain::register_functions_admin();
+			MiltisiteMain::register_admin();
 		}
 
 		LegalComponents::register();
