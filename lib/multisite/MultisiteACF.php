@@ -22,6 +22,7 @@ class MultisiteACF
 
 			'array_column' => array_column( self::FIELDS_COMPILATION_FILTER, 'key' ),
 		] );
+
 		return array_merge( array_column( self::FIELDS_COMPILATION_FILTER, 'key' ), [] );
 	}
 
@@ -29,7 +30,9 @@ class MultisiteACF
 	{
 		$fields = [];
 
-		foreach ( self::get_field_names() as $field_name )
+		$field_names = self::get_field_names();
+
+		foreach ( $field_names as $field_name )
 		{
 			$fields[] = self::get_field_raw( $field_name, $post_id );
 		}
