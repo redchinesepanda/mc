@@ -19,7 +19,7 @@ class MultisitePost
 		
 		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
-			$blog_id = MultisiteBlog::get_blog_id( $doaction );
+			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
 
 			foreach ( $object_ids as $post_id )
 			{
