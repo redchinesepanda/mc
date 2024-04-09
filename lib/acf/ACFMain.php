@@ -21,6 +21,23 @@ class ACFMain
 		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
     }
 
+    public static function check_not_functions()
+    {
+        return !self::check_functions();
+    }
+
+    public static function check_functions()
+    {
+        return !function_exists( 'get_field' );
+    }
+
+    public static function check_redeclare()
+    {
+        return LegalMain::check_not_admin()
+        
+            && self::check_not_functions();
+    }
+
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
 
     public static function register_script()
@@ -55,7 +72,9 @@ class ACFMain
     }
 }
 
-if ( ! is_admin() && ! function_exists( 'get_field' ) )
+// if ( !is_admin() && !ACFMain::check_finctions() )
+
+if ( ACFMain::check_redeclare() )
 {
     function get_field( $field_name, $post_id = null )
     {
