@@ -27,23 +27,27 @@ class MultisitePost
 			{
 				if ( $post = self::get_post( $post_id ) )
 				{
-					$post_terms = MultisiteTerms::get_post_terms( $post_id );
+					// $post_terms = MultisiteTerms::get_post_terms( $post_id );
 					
-					$post_meta = MultisiteMeta::get_post_meta( $post_id );
+					// $post_meta = MultisiteMeta::get_post_meta( $post_id );
+					
+					$post_fields = MultisiteACF::get_fields( $post_id );
 
-					// LegalDebug::die( [
-					// 	'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+					LegalDebug::die( [
+						'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
 
-					// 	'post' => $post[ 'ID' ],
+						'post' => $post[ 'ID' ],
 
-                    //     'post_terms-count' => count( $post_terms ),
+                        // 'post_terms-count' => count( $post_terms ),
 
-                    //     'post_terms' => $post_terms,
+                        // 'post_terms' => $post_terms,
 
-                    //     'post_meta-count' => count( $post_meta ),
+                        // 'post_meta-count' => count( $post_meta ),
 
-                    //     'post_meta' => $post_meta,
-					// ] );
+                        // 'post_meta' => $post_meta,
+
+						'post_fields' => $post_fields,
+					] );
 
 					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta );
 				}

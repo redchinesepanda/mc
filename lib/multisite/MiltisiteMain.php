@@ -10,6 +10,8 @@ require_once( 'MultisitePost.php' );
 
 require_once( 'MultisiteTerms.php' );
 
+require_once( 'MultisiteACF.php' );
+
 class MiltisiteMain
 {
 	const TEXT_PLURAL = [
