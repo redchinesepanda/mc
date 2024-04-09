@@ -72,19 +72,19 @@ class ACFMain
     }
 }
 
-LegalDebug::debug( [
-    'check_plugin' => ACFMain::check_plugin(),
+// LegalDebug::debug( [
+//     'check_plugin' => ACFMain::check_plugin(),
 
-    'check_not_functions' => ACFMain::check_not_functions(),
+//     'check_not_functions' => ACFMain::check_not_functions(),
     
-    'check_functions' => ACFMain::check_functions(),
+//     'check_functions' => ACFMain::check_functions(),
 
-    'check_redeclare' => ACFMain::check_redeclare(),
-] );
+//     'check_redeclare' => ACFMain::check_redeclare(),
+// ] );
 
-if ( !is_admin() && !ACFMain::check_functions() )
+// if ( !is_admin() && !ACFMain::check_functions() )
 
-// if ( ACFMain::check_redeclare() )
+if ( ACFMain::check_redeclare() )
 {
     function get_field( $field_name, $post_id = null )
     {
