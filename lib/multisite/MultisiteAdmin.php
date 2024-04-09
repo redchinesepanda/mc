@@ -3,12 +3,24 @@
 class MultisiteAdmin
 {
 	const POST_TYPES = [
+		'page' => 'page',
+
+		'post' => 'post',
+
 		'brand' => 'legal_brand',
 
 		'billet' => 'legal_billet',
 
 		'compilation' => 'legal_compilation',
 	];
+	
+	public static function add_filter_all( $name, $object, $handler )
+	{
+		foreach ( self::POST_TYPES as $post_type )
+		{
+			add_filter( $name . $post_type, [ $object, $handler ] );
+		}
+	}
 
 	public static function register_functions_admin()
 	{
@@ -16,9 +28,11 @@ class MultisiteAdmin
 
 		// add bulk actions
 
-		add_filter( 'bulk_actions-edit-page', [ $handler, 'mc_bulk_multisite_actions' ] );
+		self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
 
-		add_filter( 'bulk_actions-edit-' . self::POST_TYPES[ 'billet' ], [ $handler, 'mc_bulk_multisite_actions' ] );
+		// add_filter( 'bulk_actions-edit-page', [ $handler, 'mc_bulk_multisite_actions' ] );
+
+		// add_filter( 'bulk_actions-edit-' . self::POST_TYPES[ 'billet' ], [ $handler, 'mc_bulk_multisite_actions' ] );
 
 		// show an appropriate notice
 
