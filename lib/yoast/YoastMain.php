@@ -4,6 +4,18 @@ require_once( 'YoastOG.php' );
 
 class YoastMain
 {
+    public static function check_plugin()
+    {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+        return is_plugin_active( 'wordpress-seo/wp-seo.php' );
+    }
+
+    public static function check_api()
+    {
+        return function_exists( 'YoastSEO' );
+    }
+
     public static function register()
     {
         YoastOG::register();
@@ -212,7 +224,7 @@ class YoastMain
 
         if ( $post )
         {
-            if ( self::check() )
+            if ( self::check_api() )
             {
                 return YoastSEO()->meta->for_post( $post->ID )->title;
             }
@@ -231,7 +243,10 @@ class YoastMain
     
             if ( $post )
             {
-                return YoastSEO()->meta->for_post( $post->ID )->description;
+                if ( self::check_api() )
+                {
+                    return YoastSEO()->meta->for_post( $post->ID )->description;
+                }
             }
         }
 
