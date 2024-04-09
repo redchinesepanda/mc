@@ -1,8 +1,8 @@
 <?php
 
-// LegalDebug::debug( [
-//     $args,
-// ] );
+LegalDebug::debug( [
+    $args,
+] );
 
 ?>
 <div class="lang-switcher">
