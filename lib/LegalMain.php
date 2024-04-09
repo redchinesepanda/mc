@@ -152,7 +152,7 @@ class LegalMain
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		$permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+		// $permission_acf = is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
 
 		$permission_wpml = is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
 
@@ -168,7 +168,7 @@ class LegalMain
 		// 	'permission_yoast' => $permission_yoast,
 		// ] );
 	
-		return $permission_acf
+		// return $permission_acf
 
 			&& $permission_wpml;
 

@@ -14,6 +14,13 @@ require_once( 'ACFBillet.php' );
 
 class ACFMain
 {
+    public static function check_plugin()
+    {
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		return is_plugin_active( 'advanced-custom-fields-pro/acf.php' );
+    }
+    
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
 
     public static function register_script()
