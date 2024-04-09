@@ -27,9 +27,9 @@ class MultisitePost
 			{
 				if ( $post = self::get_post( $post_id ) )
 				{
-					// $post_terms = MultisiteTerms::get_post_terms( $post_id );
+					$post_terms = MultisiteTerms::get_post_terms( $post_id );
 					
-					// $post_meta = MultisiteMeta::get_post_meta( $post_id );
+					$post_meta = MultisiteMeta::get_post_meta( $post_id );
 					
 					$post_fields = MultisiteACF::get_fields( $post_id );
 
