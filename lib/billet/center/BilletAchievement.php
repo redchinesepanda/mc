@@ -114,7 +114,7 @@ class BilletAchievement
 
     public static function get_achievement_color( $term )
     {
-        if ( $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id ); )
+        if ( $color = get_field( 'achievement-color', self::TAXONOMY . '_' . $term->term_id ) )
         {
             return $color;
         }
