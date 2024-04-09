@@ -11,7 +11,7 @@ LegalDebug::debug( [
             <div class="about-center">
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement">
-                        <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'term' ]; ?></span>
+                        <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'name' ]; ?></span>
                     </div>
                 <?php endif; ?>
                 <div class="about-logo"></div>

@@ -289,7 +289,7 @@ class ReviewAbout
         LegalDebug::debug( [
             'ReviewAbout' => 'get_about_achievement',
 
-            'term' => $term,
+            'achievement_item' => $achievement_item,
         ] );
 
         if ( !empty( $achievement_item ) )
@@ -297,7 +297,7 @@ class ReviewAbout
             return [
                 'bonus' => $group[ 'about-bonus' ],
 
-                'term' => $achievement_item[ 'name' ],
+                'name' => $achievement_item[ 'name' ],
 
                 'app' => __( ReviewMain::TEXT[ 'app' ], ToolLoco::TEXTDOMAIN ),
 
