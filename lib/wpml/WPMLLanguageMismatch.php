@@ -4,9 +4,9 @@ class WPMLLanguageMismatch
 {
 	public static function register_functions()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_filter( 'permalink_manager_detected_post_id', [ $handler, 'fix_language_mismatch' ], 9, 3 );
+		// add_filter( 'permalink_manager_detected_post_id', [ $handler, 'fix_language_mismatch' ], 9, 3 );
 
 		// LegalDebug::debug( [
 		// 	'WPMLLanguageMismatch' => 'register_functions',
