@@ -339,6 +339,8 @@ class ToolNotFound
 
 			'check_taxonomy' => self::check_taxonomy(),
 
+			'check_taxonomies' => self::check_taxonomies(),
+
 			// 'check_restricted' => self::check_restricted(),
 
 			// 'check_robots_txt' => self::check_robots_txt(),
