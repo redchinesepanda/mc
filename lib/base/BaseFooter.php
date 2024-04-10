@@ -64,7 +64,7 @@ class BaseFooter
 		// {
 			// add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
 
-			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
+			// add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
 		// }
     }
 
@@ -82,18 +82,18 @@ class BaseFooter
 		return !self::check_language_contains( $url );
 	}
 
-	const HOST_EXTERNAL = [
-		'www.ukclubsport.com',
-	];
+	// const HOST_EXTERNAL = [
+	// 	'www.ukclubsport.com',
+	// ];
 
-	public static function check_external( $host )
-	{
-		return in_array( $host, self::HOST_EXTERNAL );
-    }
+	// public static function check_external( $host )
+	// {
+	// 	return in_array( $host, self::HOST_EXTERNAL );
+    // }
 
 	public static function check_main_host_production( $host )
 	{
-		return $host == LegalMain::get_main_host_production();
+		return $host == LegalHosts::get_main_host_production();
 	}
 
 	public static function check_current_host( $host )
@@ -103,7 +103,7 @@ class BaseFooter
 
 	public static function check_main_host( $host )
 	{
-		return $host == LegalMain::get_main_host();
+		return $host == LegalHosts::get_main_host();
 	}
 
 	public static function check_local( $host )
@@ -115,51 +115,51 @@ class BaseFooter
 			|| self::check_main_host( $host );
 	}
 
-	public static function check_contains( $host )
-	{
-		return self::check_external( $host )
+	// public static function check_contains( $host )
+	// {
+	// 	return LegalHosts::check_external( $host )
 
-			|| self::check_local( $host );
+	// 		|| self::check_local( $host );
 
-			// || self::check_main_host_production( $host )
+	// 		// || self::check_main_host_production( $host )
 
-			// || self::check_current_host( $host )
+	// 		// || self::check_current_host( $host )
 
-			// || self::check_main_host( $host );
-	}
+	// 		// || self::check_main_host( $host );
+	// }
 
-	public static function check_host( $url )
-	{
-		$url_host = parse_url( $url, PHP_URL_HOST );
+	// public static function check_host( $url )
+	// {
+	// 	$url_host = parse_url( $url, PHP_URL_HOST );
 
-		return self::check_contains( $url_host );
-	}
+	// 	return self::check_contains( $url_host );
+	// }
 
-	public static function check_type( $type )
-	{
-		return $type == 'custom';
-	}
+	// public static function check_type( $type )
+	// {
+	// 	return $type == 'custom';
+	// }
 
-	public static function check_item( $item )
-	{
-		return self::check_type( $item->type )
+	// public static function check_item( $item )
+	// {
+	// 	return self::check_type( $item->type )
 		
-			&& self::check_host( $item->url )
+	// 		&& self::check_host( $item->url )
 			
-			&& self::check_language_not_contains( $item->url );
-	}
+	// 		&& self::check_language_not_contains( $item->url );
+	// }
 
-	public static function check_current_language( $item )
-	{
-		return !self::check_item( $item );
-	} 
+	// public static function check_current_language( $item )
+	// {
+	// 	return !self::check_item( $item );
+	// } 
 
-	public static function filter_only_current_language( $items, $menu, $args )
-	{
-		$handler = new self();
+	// public static function filter_only_current_language( $items, $menu, $args )
+	// {
+	// 	$handler = new self();
 
-		return array_filter( $items, [ $handler, 'check_current_language' ] );
-	}
+	// 	return array_filter( $items, [ $handler, 'check_current_language' ] );
+	// }
 
 	// public static function replace_anchors( $href )
 	// {

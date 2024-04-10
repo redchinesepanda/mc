@@ -2,6 +2,10 @@
 
 class LegalHosts
 {
+	const HOST_EXTERNAL = [
+		'www.ukclubsport.com',
+	];
+
 	const HOST_PRODUCTION = [
 		'mc' => 'match.center',
 
@@ -19,6 +23,11 @@ class LegalHosts
 
 		// 'es' => 'es.match.center',
 	];
+
+	public static function check_external( $host )
+	{
+		return in_array( $host, self::HOST_EXTERNAL );
+    }
 
 	public static function check_host_production()
 	{
