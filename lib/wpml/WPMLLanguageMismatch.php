@@ -26,25 +26,25 @@ class WPMLLanguageMismatch
 
 	public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
 	{
-		LegalDebug::debug( [
-			'WPMLLanguageMismatch' => 'fix_language_mismatch',
+		// LegalDebug::debug( [
+		// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 
-			'item_id' => $item_id,
+		// 	'item_id' => $item_id,
 
-            'uri_parts' => $uri_parts,
+        //     'uri_parts' => $uri_parts,
 
-            'is_term' => $is_term,
-		] );
+        //     'is_term' => $is_term,
+		// ] );
 
-		if ( !empty( $uri_parts[ 'uri' ] ) )
-		{
-			if ( $uri_parts[ 'uri' ] != 'sitemap' )
-			{
-				// return 0;
+		// if ( !empty( $uri_parts[ 'uri' ] ) )
+		// {
+		// 	if ( $uri_parts[ 'uri' ] != 'sitemap' )
+		// 	{
+		// 		// return 0;
 
-				return $item_id;
-			}
-		}
+		// 		return $item_id;
+		// 	}
+		// }
 
 		$post = get_post( $item_id );
 
@@ -59,9 +59,9 @@ class WPMLLanguageMismatch
 			] );
 		}
 
-		// return $item_id;
+		return $item_id;
 
-		return 0;
+		// return 0;
 	}
 
 	// {
