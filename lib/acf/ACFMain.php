@@ -72,6 +72,10 @@ class ACFMain
     }
 }
 
+LegalDebug::debug( [
+    'check_redeclare' => ACFMain::check_redeclare(),
+] );
+
 if ( ACFMain::check_redeclare() )
 {
     function get_field( $field_name, $post_id = null )
