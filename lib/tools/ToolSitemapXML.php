@@ -51,83 +51,83 @@ class ToolSitemapXML
         //     'check_sitemap_enabled' => self::check_sitemap_enabled(),
         // ] ); 
 
-        if ( self::is_sitemap_page() )
-        {
-            $handler = new self();
+        // if ( self::is_sitemap_page() )
+        // {
+        //     $handler = new self();
 
-            # Исключение отдельных язвков из карты сайта
+        //     # Исключение отдельных язвков из карты сайта
 
-            add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
-        }
+        //     add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
+        // }
     }
 
     /*
      * Устанавливается на хуке wp после parse_request
      */
 
-    public static function is_sitemap_page()
-    {
-        global $wp_version;
+    // public static function is_sitemap_page()
+    // {
+    //     global $wp_version;
     
-        if( ! did_action( 'parse_request' ) )
-        {
-            _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
+    //     if( ! did_action( 'parse_request' ) )
+    //     {
+    //         _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
     
-            return false;
-        }
+    //         return false;
+    //     }
     
-        return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
-    }
+    //     return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
+    // }
 
-    public static function check_filter()
-    {
-        // return self::is_sitemap_page()
+    // public static function check_filter()
+    // {
+    //     // return self::is_sitemap_page()
 
-        //     && ToolNotFound::check_restricted();
+    //     //     && ToolNotFound::check_restricted();
 
-        return self::is_sitemap_page();
-    }
+    //     return self::is_sitemap_page();
+    // }
 
-    public static function prepare_filter_where( $where )
-	{
-        // LegalDebug::debug( [
-        //     'is_sitemap_page()' => self::is_sitemap_page(),
-        // ] );
+    // public static function prepare_filter_where( $where )
+	// {
+    //     // LegalDebug::debug( [
+    //     //     'is_sitemap_page()' => self::is_sitemap_page(),
+    //     // ] );
 
-        // if ( !self::is_sitemap_page() )
+    //     // if ( !self::is_sitemap_page() )
         
-        if ( self::check_filter() )
-        {
-            $participate = 'NOT IN';
+    //     if ( self::check_filter() )
+    //     {
+    //         $participate = 'NOT IN';
 
-            $restricted_languages = [];
+    //         $restricted_languages = [];
 
-            if ( ToolNotFound::check_domain() )
-            {
-                $participate = 'IN';
+    //         if ( ToolNotFound::check_domain() )
+    //         {
+    //             $participate = 'IN';
 
-                $restricted_languages = ToolNotFound::get_restricted_languages();
-            }
+    //             $restricted_languages = ToolNotFound::get_restricted_languages();
+    //         }
 
-            // $restricted_languages = ToolNotFound::get_restricted_languages();
+    //         // $restricted_languages = ToolNotFound::get_restricted_languages();
 
-            // LegalDebug::debug( [
-            //     'restricted_languages' => $restricted_languages,
-            // ] );
+    //         // LegalDebug::debug( [
+    //         //     'restricted_languages' => $restricted_languages,
+    //         // ] );
 
-            $values = "'" . join( "', '", $restricted_languages ) . "'";
+    //         $values = "'" . join( "', '", $restricted_languages ) . "'";
 
-            $where = preg_replace(
-                '/wpml_translations.language_code(\s=\s\'[a-z]+\')?/',
+    //         $where = preg_replace(
+    //             '/wpml_translations.language_code(\s=\s\'[a-z]+\')?/',
                 
-                'wpml_translations.language_code ' . $participate . ' (' . $values . ')',
+    //             'wpml_translations.language_code ' . $participate . ' (' . $values . ')',
                 
-                $where
-            );
-        }
+    //             $where
+    //         );
+    //     }
 		
-        return $where;
-	}
+    //     return $where;
+	// }
     
     public static function kama_sitemap_max_urls( $num, $object_type )
     {

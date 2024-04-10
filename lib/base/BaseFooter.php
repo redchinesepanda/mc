@@ -43,10 +43,12 @@ class BaseFooter
         add_action( 'init', [ $handler, 'location' ] );
 	}
 
-	public static function check_register()
-	{
-		return ToolNotFound::check_domain_restricted();
-	}
+	// public static function check_register()
+	// {
+	// 	// return Tool::check_domain_restricted();
+		
+	// 	return ToolRestricted::check_domain_restricted();
+	// }
 
 	public static function register()
     {
@@ -58,12 +60,12 @@ class BaseFooter
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		if ( self::check_register() )
-		{
+		// if ( self::check_register() )
+		// {
 			// add_filter( 'mc_url_restricted', [ $handler, 'replace_anchors' ], 10, 2 );
 
 			add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_only_current_language' ], 10, 3 );
-		}
+		// }
     }
 
 	const FORMAT = [
