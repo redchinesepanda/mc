@@ -44,18 +44,18 @@ class WPMLLanguageMismatch
 			}
 		}
 
-		// $post = get_post( $item_id );
+		$post = get_post( $item_id );
 
-		// if ( $post )
-		// {
-		// 	$url = get_post_permalink( $post->ID );
+		if ( $post )
+		{
+			$url = get_post_permalink( $post->ID );
 
-		// 	LegalDebug::debug( [
-		// 		'WPMLLanguageMismatch' => 'fix_language_mismatch',
+			LegalDebug::debug( [
+				'WPMLLanguageMismatch' => 'fix_language_mismatch',
 	
-		// 		'url' => $url,
-		// 	] );
-		// }
+				'url' => $url,
+			] );
+		}
 
 		return $item_id;
 	}
