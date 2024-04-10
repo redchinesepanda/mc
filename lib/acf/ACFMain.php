@@ -75,9 +75,9 @@ class ACFMain
 LegalDebug::debug( [
     'check_not_admin' => LegalMain::check_not_admin(),
 
-    'check_functions' => check_functions(),
+    'check_functions' => ACFMain::check_functions(),
 
-    'check_not_functions' => check_not_functions(),
+    'check_not_functions' => ACFMain::check_not_functions(),
 
     'check_redeclare' => ACFMain::check_redeclare(),
 ] );
