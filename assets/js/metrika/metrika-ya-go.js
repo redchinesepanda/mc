@@ -65,9 +65,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'handleRef:' );
 
-		console.log( ref );
-
 		let ref = event.curentTarget;
+
+		console.log( ref );
 
 		if ( YMGO.regExp.test( ref.href ) )
 		{
