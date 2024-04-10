@@ -8,9 +8,9 @@ class WPMLLanguageMismatch
 
 		// add_filter( 'permalink_manager_detected_post_id', [ $handler, 'fix_language_mismatch' ], 9, 3 );
 
-		LegalDebug::debug( [
-			'WPMLLanguageMismatch' => 'register_functions',
-		] );
+		// LegalDebug::debug( [
+		// 	'WPMLLanguageMismatch' => 'register_functions',
+		// ] );
 	}
 
 	public static function register()
@@ -19,22 +19,22 @@ class WPMLLanguageMismatch
 
 		// add_filter( 'permalink_manager_detected_post_id', [ $handler, 'fix_language_mismatch' ], 9, 3 );
 
-		LegalDebug::debug( [
-			'WPMLLanguageMismatch' => 'register',
-		] );
+		// LegalDebug::debug( [
+		// 	'WPMLLanguageMismatch' => 'register',
+		// ] );
 	}
 
 	public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
 	{
-		LegalDebug::debug( [
-			'WPMLLanguageMismatch' => 'fix_language_mismatch',
+		// LegalDebug::debug( [
+		// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 
-			'item_id' => $item_id,
+		// 	'item_id' => $item_id,
 
-            'uri_parts' => $uri_parts,
+        //     'uri_parts' => $uri_parts,
 
-            'is_term' => $is_term,
-		] );
+        //     'is_term' => $is_term,
+		// ] );
 
 		return 0;
 	}
