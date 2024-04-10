@@ -4,7 +4,7 @@ require_once( 'WPMLLangSwitcher.php' );
 
 require_once( 'WPMLTrid.php' );
 
-require_once( 'WPMLLanguageMismatch.php' );
+// require_once( 'WPMLLanguageMismatch.php' );
 
 // require_once( 'WPMLHreflang.php' );
 
@@ -265,7 +265,7 @@ class WPMLMain
     {
         // WPMLDomain::register_functions();
 
-        WPMLLanguageMismatch::register_functions();
+        // WPMLLanguageMismatch::register_functions();
     } 
 
     public static function register()
