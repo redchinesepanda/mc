@@ -36,15 +36,21 @@ class WPMLLanguageMismatch
         //     'is_term' => $is_term,
 		// ] );
 
-		// if ( !empty( $uri_parts[ 'uri' ] ) )
-		// {
-		// 	if ( $uri_parts[ 'uri' ] != 'sitemap' )
-		// 	{
-		// 		// return 0;
+		if ( !empty( $uri_parts[ 'uri' ] ) )
+		{
+			LegalDebug::debug( [
+				'WPMLLanguageMismatch' => 'fix_language_mismatch',
+	
+				'uri_parts' => $uri_parts[ 'uri' ],
+			] );
 
-		// 		return $item_id;
-		// 	}
-		// }
+			// if ( $uri_parts[ 'uri' ] != 'sitemap' )
+			// {
+			// 	// return 0;
+
+			// 	return $item_id;
+			// }
+		}
 
 		$post = get_post( $item_id );
 
