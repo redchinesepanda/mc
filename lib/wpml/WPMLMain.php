@@ -264,6 +264,8 @@ class WPMLMain
     public static function register_functions()
     {
         // WPMLDomain::register_functions();
+
+        WPMLLanguageMismatch::register_functions();
     } 
 
     public static function register()
