@@ -44,11 +44,11 @@ class WPMLLanguageMismatch
 				'uri_parts' => $uri_parts[ 'uri' ],
 			] );
 
-			if ( $uri_parts[ 'uri' ] == 'sitemap' )
+			if ( $uri_parts[ 'uri' ] != 'sitemap' )
 			{
-				// return 0;
+				return 0;
 
-				return $item_id;
+				// return $item_id;
 			}
 		}
 
