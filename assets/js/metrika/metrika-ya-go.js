@@ -69,6 +69,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( ref );
 
+		console.log( MetrikaLib.yandexMetrikaId );
+
 		if ( YMGO.regExp.test( ref.href ) )
 		{
 			sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
@@ -83,9 +85,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.addEventListener( 'click', handleRef );
 
-		console.log( 'prepareRef:' );
+		// console.log( 'prepareRef:' );
 
-		console.log( element );
+		// console.log( element );
 	}
 
 	function metricInit()
