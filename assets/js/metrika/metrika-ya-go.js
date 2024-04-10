@@ -25,13 +25,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let prefix = 'goal-';
 
-		if ( href.indexOf( '/ca/' ) !== -1 ) {
+		if ( href.indexOf( '/ca/' ) !== -1 )
+		{
 			prefix += 'casino-';
 		}
 
-		var parts = href.replace( /\/$/, '' ).match( /\go\/(.+)/i )[ 1 ].split( '/' ),
-			goalName = prefix + parts.slice( -1 ),
-			goalParams = { page: window.location.toString(), label: parts[ 1 ] };
+		let parts = href.replace( /\/$/, '' ).match( /\go\/(.+)/i )[ 1 ].split( '/' );
+
+		let goalName = prefix + parts.slice( -1 );
+
+		let goalParams = {
+			page: window.location.toString(),
+			
+			label: parts[ 1 ]
+		};
 
 		if ( window[ 'yaCounter' + YandexMetrikaId ] )
 		{
@@ -71,12 +78,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( MetrikaLib.yandexMetrikaId );
 
-		if ( YMGO.regExp.test( ref.href ) )
-		{
-			sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
-		}
+		// if ( YMGO.regExp.test( ref.href ) )
+		// {
+		// 	sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
+		// }
 
-		sendMetric( ref.href, '' );
+		// sendMetric( ref.href, '' );
+
+		sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
 
 		// console.log( ref.href );
 	}
@@ -89,6 +98,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( element );
 	}
+
+	const selectors = {
+		go : 'a[href*="/go/"]'
+	};
+
+	const classes = {
+		loggedIn : 'logged-in'
+	};
 
 	function metricInit()
 	{
@@ -117,7 +134,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// 	ref.addEventListener( 'click', handleRef );
 		// }
 
-		document.querySelectorAll( 'a[href*="/go/"]' ).forEach( prepareRef );
+		document.querySelectorAll( selectors.go ).forEach( prepareRef );
 	}
 
 	function checkCookie()
@@ -127,7 +144,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkLoggedIn()
 	{
-		return !document.body.classList.contains( 'logged-in' );
+		return !document.body.classList.contains( classes.loggedIn );
 	}
 
 	function check()
