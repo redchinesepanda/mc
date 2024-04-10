@@ -70,18 +70,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function handleRef( event )
 	{
 
-		// console.log( 'handleRef:' );
+		console.log( 'handleRef:' );
 
 		let ref = event.currentTarget;
 
 		// console.log( ref );
 
 		// console.log( MetrikaLib.yandexMetrikaId );
+		
+		console.log( YMGO.regExp.test( ref.href ) );
 
-		// if ( YMGO.regExp.test( ref.href ) )
-		// {
-		// 	sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
-		// }
+		if ( YMGO.regExp.test( ref.href ) )
+		{
+			sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
+		}
 
 		// sendMetric( ref.href, '' );
 
