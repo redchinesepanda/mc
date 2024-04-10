@@ -343,7 +343,7 @@ class ToolNotFound
 
 			// 'check_restricted' => self::check_restricted(),
 
-			// 'check_robots_txt' => self::check_robots_txt(),
+			'check_robots_txt' => ToolRobots::check_robots_txt(),
 		] );
 
 		// return

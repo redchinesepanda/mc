@@ -2,6 +2,11 @@
 
 class ToolRobots
 {
+	public static function check_robots_txt()
+	{
+		return is_robots();
+	}
+
 	public static function register()
 	{
 		$handler = new self();
