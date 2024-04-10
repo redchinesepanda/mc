@@ -41,30 +41,51 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
+	function handleRef( event )
+	{
+		let ref = event.curentTarget;
+
+		if ( regExp.test( ref.href ) )
+		{
+			sendMetric( ref.href.replace( /-\d+\/$/, '' ), MetrikaLib.yandexMetrikaId );
+		}
+
+		sendMetric( ref.href );
+	}
+
+	function prepareRef( element )
+	{
+		element.addEventListener( 'click', handleRef );
+	}
+
 	function metricInit()
 	{
 		// var YandexMetrikaId = 86785715,
 		// 	refs = document.querySelectorAll( 'a[href*="/go/"]' );
 
-		let YandexMetrikaId = 86785715;
+		// let YandexMetrikaId = 86785715;
 
-		let refs = document.querySelectorAll( 'a[href*="/go/"]' );
+		// let refs = document.querySelectorAll( 'a[href*="/go/"]' );
 
-		const regExp = /-\d+\/$/;
+		// const regExp = /-\d+\/$/;
 
-		for ( var ref of refs )
-		{
-			ref.addEventListener( 'click', function ( e )
-			{
-				// console.log(`Нажали на нужную рефку ${ref}`); 
-				if ( regExp.test( this.href ) )
-				{
-					sendMetric( this.href.replace( regExp, '' ), YandexMetrikaId );
-				}
+		// for ( var ref of refs )
+		// {
+			// ref.addEventListener( 'click', function ( e )
+			// {
+			// 	// console.log(`Нажали на нужную рефку ${ref}`); 
+			// 	if ( regExp.test( this.href ) )
+			// 	{
+			// 		sendMetric( this.href.replace( regExp, '' ), YandexMetrikaId );
+			// 	}
 
-				sendMetric( this.href );
-			} );
-		}
+			// 	sendMetric( this.href );
+			// } );
+
+		// 	ref.addEventListener( 'click', handleRef );
+		// }
+
+		document.querySelectorAll( 'a[href*="/go/"]' ).forEach( prepareRef );
 	}
 
 	function checkCookie()

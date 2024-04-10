@@ -3,6 +3,8 @@ let MetrikaLib = ( function()
 	"use strict";
 
 	return {
+		yandexMetrikaId: '86785715';
+
 		events : {
 			mousemove: 'mousemove',
 	
