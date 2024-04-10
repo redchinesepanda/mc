@@ -82,10 +82,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return checkCookie() && checkLoggedIn();
 	}
 
-	if ( check() )
+	/* if ( check() )
 	{
 		metricInit();
-	}
+	} */
+	metricInit();
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
 });

@@ -21,12 +21,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// MetrikaLib.userSuspend( gtmInit );
 	}
 
-	if ( MetrikaLib.checkCookie() )
+/* 	if ( MetrikaLib.checkCookie() )
 	{
 		// MetrikaLib.userInit( userInit );
 
 		gtmInit();
-	}
+	} */
+	gtmInit();
 	
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtmInit, { once: true } );
 
