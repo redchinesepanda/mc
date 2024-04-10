@@ -33,11 +33,11 @@ class ACFMain
 
     public static function check_redeclare()
     {
-        // return LegalMain::check_not_admin()
+        return LegalMain::check_not_admin()
         
-        //     && self::check_not_functions();
+            && self::check_not_functions();
 
-        return self::check_not_functions();
+        // return self::check_not_functions();
     }
 
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
