@@ -101,9 +101,12 @@ class ReviewAnchors
 
     public static function register_functions()
     {
-        $handler = new self();
-
-        add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
+        if ( ACFMain::check_functions() )
+        {
+            $handler = new self();
+    
+            add_action( 'admin_enqueue_scripts', [ $handler, 'register_admin_script' ] );
+        }
     }
 
     public static function register()
