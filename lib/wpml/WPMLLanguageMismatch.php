@@ -24,6 +24,10 @@ class WPMLLanguageMismatch
 		// ] );
 	}
 
+	const EXCEPTIONS = [
+		'sitemap',
+	];
+
 	public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
 	{
 		// LegalDebug::debug( [
@@ -44,7 +48,7 @@ class WPMLLanguageMismatch
 				'uri_parts' => $uri_parts[ 'uri' ],
 			] );
 
-			if ( $uri_parts[ 'uri' ] != 'sitemap' )
+			if ( !in_array( $uri_parts[ 'uri' ], self::EXCEPTIONS ) )
 			{
 				return 0;
 
