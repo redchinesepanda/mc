@@ -70,7 +70,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function handleRef( event )
 	{
 
-		console.log( 'handleRef:' );
+		// console.log( 'handleRef:' );
 
 		let ref = event.currentTarget;
 
@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// console.log( MetrikaLib.yandexMetrikaId );
 		
-		console.log( YMGO.regExp.test( ref.href ) );
+		// console.log( YMGO.regExp.test( ref.href ) );
 
 		if ( YMGO.regExp.test( ref.href ) )
 		{
