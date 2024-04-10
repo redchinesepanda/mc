@@ -6,7 +6,7 @@ class ReviewRestricted
     {
 		$result = false;
 
-		$restricted = ToolNotFound::get_restricted();
+		$restricted = ToolRestricted::get_restricted();
 
 		foreach ( $restricted as $host => $languages )
 		{
@@ -31,22 +31,22 @@ class ReviewRestricted
 
 	public static function check_restricted()
 	{
-		return ToolNotFound::check_domain_restricted();
+		return ToolRestricted::check_domain_restricted();
 	}
 
 	public static function register()
 	{
-		if ( self::check_restricted() )
-		{
-			$handler = new self();
+		// if ( self::check_restricted() )
+		// {
+		// 	$handler = new self();
 
-			add_filter( 'mc_url_restricted', [ $handler, 'modify_href' ], 10, 2 );
+		// 	add_filter( 'mc_url_restricted', [ $handler, 'modify_href' ], 10, 2 );
 
-			if ( self::check_contains() )
-			{
-				add_action( 'the_content', [ $handler, 'modify_content' ] );
-			}
-		}
+		// 	if ( self::check_contains() )
+		// 	{
+		// 		add_action( 'the_content', [ $handler, 'modify_content' ] );
+		// 	}
+		// }
 	}
 
 	public static function replace_href( &$href, $language, $host )
@@ -69,7 +69,7 @@ class ReviewRestricted
 	
 	public static function modify_href( $href )
 	{
-		$restricted = ToolNotFound::get_restricted();
+		$restricted = ToolRestricted::get_restricted();
 
 		foreach ( $restricted as $host => $languages )
 		{

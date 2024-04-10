@@ -24,9 +24,14 @@ class ToolRobots
 		return self::get_scheme(). '://'. self::get_host();
 	}
 
-	public static function check_not_restricted()
+	// public static function check_not_restricted()
+	// {
+	// 	return !ToolRestricted::check_domain();
+	// }
+	
+	public static function check_robots_full()
 	{
-		return !ToolNotFound::check_domain();
+		return LegalHosts::check_host_production();
 	}
 
 	public static function mc_robots_txt()
@@ -35,7 +40,9 @@ class ToolRobots
 
 		$sitemap = [];
 
-		if ( self::check_not_restricted() )
+		// if ( self::check_not_restricted() )
+		
+		if ( self::check_robots_full() )
 		{
 			$robots = self::ROBOTS;
 

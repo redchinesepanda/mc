@@ -6,11 +6,11 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
-require_once( 'WPMLHreflang.php' );
+// require_once( 'WPMLHreflang.php' );
 
 require_once( 'WPMLChooseYourCountry.php' );
 
-require_once( 'WPMLDomain.php' );
+// require_once( 'WPMLDomain.php' );
 
 class WPMLMain
 {
@@ -268,7 +268,7 @@ class WPMLMain
 
     public static function register_functions()
     {
-        WPMLDomain::register_functions();
+        // WPMLDomain::register_functions();
     } 
 
     public static function register()
@@ -281,7 +281,7 @@ class WPMLMain
 
         WPMLLanguageMismatch::register();
 
-        WPMLHreflang::register();
+        // WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
 
