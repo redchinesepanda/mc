@@ -73,6 +73,8 @@ class ACFMain
 }
 
 LegalDebug::debug( [
+    'check_not_admin' => LegalMain::check_not_admin(),
+    
     'check_redeclare' => ACFMain::check_redeclare(),
 ] );
 
