@@ -7,6 +7,10 @@ class WPMLLanguageMismatch
 		$handler = new self();
 
 		add_filter( 'permalink_manager_detected_post_id', [ $handler, 'fix_language_mismatch' ], 9, 3 );
+
+		LegalDebug::debug( [
+			'WPMLLanguageMismatch' => 'register',
+		] );
 	}
 
 	public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
