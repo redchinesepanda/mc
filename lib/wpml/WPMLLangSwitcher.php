@@ -54,15 +54,15 @@ class WPMLLangSwitcher
         ToolEnqueue::register_script( self::JS );
     }
 
-    public static function check_domain_not_restricted()
-    {
-        return !ToolNotFound::check_domain_restricted();
-    }
+    // public static function check_domain_not_restricted()
+    // {
+    //     return !ToolNotFound::check_domain_restricted();
+    // }
 
-    public static function check_register()
-    {
-        return self::check_domain_not_restricted();
-    }
+    // public static function check_register()
+    // {
+    //     return self::check_domain_not_restricted();
+    // }
 
     public static function register()
     {
@@ -76,10 +76,10 @@ class WPMLLangSwitcher
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        if ( self::check_register() )
-        {
+        // if ( self::check_register() )
+        // {
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
-        }
+        // }
     }
 
     private static function get_all()
