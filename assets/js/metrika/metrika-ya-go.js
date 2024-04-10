@@ -82,6 +82,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function prepareRef( element )
 	{
 		element.addEventListener( 'click', handleRef );
+
+		console.log( 'prepareRef:' );
+
+		console.log( element );
 	}
 
 	function metricInit()
