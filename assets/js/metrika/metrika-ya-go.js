@@ -1,5 +1,24 @@
 // ym 86785715, gtag, ga start
 
+let YMGO = ( function()
+{
+	"use strict";
+
+	return {
+		prefix : {
+			default :  'goal-',
+
+			casino :  'casino-'
+		},
+
+		part : {
+			casino : '/ca/'
+		},
+
+		regExp : /-\d+\/$/,
+	};
+} )();
+
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function sendMetric( href, YandexMetrikaId )
@@ -45,9 +64,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let ref = event.curentTarget;
 
-		if ( regExp.test( ref.href ) )
+		if ( YMGO.regExp.test( ref.href ) )
 		{
-			sendMetric( ref.href.replace( /-\d+\/$/, '' ), MetrikaLib.yandexMetrikaId );
+			sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
 		}
 
 		sendMetric( ref.href );
