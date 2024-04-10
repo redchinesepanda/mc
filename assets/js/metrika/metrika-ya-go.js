@@ -62,6 +62,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function handleRef( event )
 	{
+
+		console.log( 'handleRef:' );
+
+		console.log( ref );
+
 		let ref = event.curentTarget;
 
 		if ( YMGO.regExp.test( ref.href ) )
@@ -70,8 +75,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		sendMetric( ref.href );
-
-		console.log( 'handleRef ref.href:' );
 
 		console.log( ref.href );
 	}
