@@ -46,9 +46,9 @@ class WPMLLanguageMismatch
 
 			if ( $uri_parts[ 'uri' ] == 'sitemap' )
 			{
-				return 0;
+				// return 0;
 
-				// return $item_id;
+				return $item_id;
 			}
 		}
 
