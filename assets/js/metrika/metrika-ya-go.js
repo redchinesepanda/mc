@@ -85,7 +85,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// sendMetric( ref.href, '' );
 
-		sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
+		// sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
+
+		sendMetric( ref.href, MetrikaLib.yandexMetrikaId );
 
 		// console.log( ref.href );
 	}
