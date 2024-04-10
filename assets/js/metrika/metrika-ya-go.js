@@ -63,22 +63,22 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function handleRef( event )
 	{
 
-		console.log( 'handleRef:' );
+		// console.log( 'handleRef:' );
 
 		let ref = event.currentTarget;
 
-		console.log( ref );
+		// console.log( ref );
 
-		console.log( MetrikaLib.yandexMetrikaId );
+		// console.log( MetrikaLib.yandexMetrikaId );
 
 		if ( YMGO.regExp.test( ref.href ) )
 		{
 			sendMetric( ref.href.replace( YMGO.regExp, '' ), MetrikaLib.yandexMetrikaId );
 		}
 
-		sendMetric( ref.href );
+		sendMetric( ref.href, '' );
 
-		console.log( ref.href );
+		// console.log( ref.href );
 	}
 
 	function prepareRef( element )
