@@ -228,12 +228,12 @@ class WPMLLangSwitcher
 
     public static function render()
     {
-        if ( self::check_register() )
-        {
+        // if ( self::check_register() )
+        // {
             return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
-        }
+        // }
 
-        return '';
+        // return '';
     }
 
     public static function render_style()
