@@ -276,7 +276,7 @@ class WPMLMain
 
         WPMLTrid::register();
 
-        WPMLLanguageMismatch::register();
+        // WPMLLanguageMismatch::register();
 
         // WPMLHreflang::register();
 
