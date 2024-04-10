@@ -11,6 +11,16 @@ class WPMLLanguageMismatch
 
 	function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
 	{
+		LegalDebug::debug( [
+			'WPMLLanguageMismatch' => 'fix_language_mismatch',
+
+			'item_id' => $item_id,
+
+            'uri_parts' => $uri_parts,
+
+            'is_term' => $is_term,
+		] );
+		
 		return 0;
 	}
 
