@@ -330,19 +330,19 @@ class ToolNotFound
 
 	public static function check_not_found()
 	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
+		LegalDebug::debug( [
+			'function' => 'ToolNotFound::set_not_found',
 
-		// 	'check_category' => self::check_category(),
+			'check_category' => self::check_category(),
 
-		// 	'check_tag' => self::check_tag(),
+			'check_tag' => self::check_tag(),
 
-		// 	'check_taxonomy' => self::check_taxonomy(),
+			'check_taxonomy' => self::check_taxonomy(),
 
-		// 	'check_restricted' => self::check_restricted(),
+			'check_restricted' => self::check_restricted(),
 
-		// 	'check_robots_txt' => self::check_robots_txt(),
-		// ] );
+			'check_robots_txt' => self::check_robots_txt(),
+		] );
 
 		// return
 		// (
