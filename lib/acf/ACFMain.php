@@ -74,17 +74,17 @@ class ACFMain
     }
 }
 
-LegalDebug::debug( [
-    'check_admin' => LegalMain::check_admin(),
+// LegalDebug::debug( [
+//     'check_admin' => LegalMain::check_admin(),
 
-    'check_not_admin' => LegalMain::check_not_admin(),
+//     'check_not_admin' => LegalMain::check_not_admin(),
 
-    'check_functions' => ACFMain::check_functions(),
+//     'check_functions' => ACFMain::check_functions(),
 
-    'check_not_functions' => ACFMain::check_not_functions(),
+//     'check_not_functions' => ACFMain::check_not_functions(),
 
-    'check_redeclare' => ACFMain::check_redeclare(),
-] );
+//     'check_redeclare' => ACFMain::check_redeclare(),
+// ] );
 
 if ( ACFMain::check_redeclare() )
 {
