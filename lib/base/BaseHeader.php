@@ -231,16 +231,18 @@ class BaseHeader
 
 	public static function get_languages_avaible( $languages )
 	{
-		if ( !ToolNotFound::check_domain_restricted() )
-		{
+		// if ( !ToolNotFound::check_domain_restricted() )
+		
+		// if ( !ToolRestricted::check_domain_restricted() )
+		// {
 			$languages = WPMLMain::exclude( $languages );
 		
 			$lang = WPMLMain::get_group_language();
 	
 			return WPMLMain::filter_language( $languages, $lang );
-		}
+		// }
 
-		return [];
+		// return [];
 	}
 
 	public static function search_languages()
@@ -451,27 +453,27 @@ class BaseHeader
 	// 	);
 	// }
 
-	public static function get_url()
-	{
-		return ToolRobots::get_scheme(). '://'. LegalMain::get_main_host();
-	}
+	// public static function get_url()
+	// {
+	// 	return ToolRobots::get_scheme(). '://'. LegalMain::get_main_host();
+	// }
 
 	public static function get_href()
 	{
 		$href = '/choose-your-country/';
 
-		if ( ToolNotFound::check_domain_restricted() )
-		{
-			$href = self::get_url() . $href;
-		}
+		// if ( ToolRestricted::check_domain_restricted() )
+		// {
+			// $href = self::get_url() . $href;
+		// }
 
 		return $href;
 	}
 
 	public static function get_item_all_countries()
 	{
-		if ( !ToolNotFound::check_domain_restricted() )
-		{
+		// if ( !ToolNotFound::check_domain_restricted() )
+		// {
 			$title = ToolLoco::translate( BaseMain::TEXT[ 'choose-your-country' ] );
 	
 			if ( TemplateMain::check_new() )
@@ -489,9 +491,9 @@ class BaseHeader
 	
 				'data' => '',
 			];
-		}
+		// }
 
-		return [];
+		// return [];
 	}
 
 	public static function get_item_main( $languages )

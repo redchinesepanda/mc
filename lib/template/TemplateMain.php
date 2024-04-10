@@ -237,11 +237,13 @@ class TemplateMain
     {
         // return self::check() && self::check_code();
         
-        return ToolNotFound::check_domain_restricted()
+        // return ToolRestricted::check_domain_restricted()
             
-            // || self::check() && self::check_code();
+        //     // || self::check() && self::check_code();
             
-            || self::check_code();
+        //     || self::check_code();
+
+        return self::check_code();
     }
 
     public static function check()

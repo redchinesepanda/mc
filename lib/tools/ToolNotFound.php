@@ -5,9 +5,9 @@
 
 class ToolNotFound
 {
-	const SHORTCODES = [
-		'restricted' => 'legal-restricted',
-	];
+	// const SHORTCODES = [
+	// 	'restricted' => 'legal-restricted',
+	// ];
 
 	public static function register()
     {
@@ -17,7 +17,7 @@ class ToolNotFound
 
 		// [legal-restricted][/legal-restricted]
 
-		add_shortcode( self::SHORTCODES[ 'restricted' ], [ $handler, 'prepare' ] );
+		// add_shortcode( self::SHORTCODES[ 'restricted' ], [ $handler, 'prepare' ] );
 
 		// add_action( 'template_redirect', [ $handler, 'set_forbidden' ] );
 
@@ -32,149 +32,149 @@ class ToolNotFound
 
 	// const PAIRS = [];
 
-	public static function prepare( $atts, $content = '' )
-    {
-		// $atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODES[ 'restricted' ] );
+	// public static function prepare( $atts, $content = '' )
+    // {
+	// 	// $atts = shortcode_atts( self::PAIRS, $atts, self::SHORTCODES[ 'restricted' ] );
 
-		if ( self::check_domain_restricted() )
-		{
-			return '';
-		}
+	// 	if ( self::check_domain_restricted() )
+	// 	{
+	// 		return '';
+	// 	}
 
-		return $content;
-	}
+	// 	return $content;
+	// }
 
-	public static function get_host()
-	{
-		// return $_SERVER[ 'HTTP_HOST' ];
+	// public static function get_host()
+	// {
+	// 	// return $_SERVER[ 'HTTP_HOST' ];
 		
-		return ToolRobots::get_host();
-	}
+	// 	return ToolRobots::get_host();
+	// }
 
-	const RESTRICTED_PRODUCTION = [
-		'es.match.center' => [
-			'es'
-		],
-	];
+	// const RESTRICTED_PRODUCTION = [
+	// 	'es.match.center' => [
+	// 		'es'
+	// 	],
+	// ];
 
-	const RESTRICTED_DEBUG = [
-		'oldpl.match.center' => [
-			'pl'
-		],
+	// const RESTRICTED_DEBUG = [
+	// 	'oldpl.match.center' => [
+	// 		'pl'
+	// 	],
 
-		'oldes.match.center' => [
-			'es'
-		],
+	// 	'oldes.match.center' => [
+	// 		'es'
+	// 	],
 
-		// 'oldca.match.center' => [
-		// 	'ca',
+	// 	// 'oldca.match.center' => [
+	// 	// 	'ca',
 
-		// 	'ca-fr',
-		// ],
+	// 	// 	'ca-fr',
+	// 	// ],
 
-		// 'es.match.center' => [
-		// 	'es'
-		// ],
-	];
+	// 	// 'es.match.center' => [
+	// 	// 	'es'
+	// 	// ],
+	// ];
 
-	public static function get_restricted()
-	{
-		// if ( LegalMain::check_host_production() )
+	// public static function get_restricted()
+	// {
+	// 	// if ( LegalMain::check_host_production() )
 		
-		if ( LegalHosts::check_host_production() )
-        {
-            return self::RESTRICTED_PRODUCTION;
-        }
+	// 	if ( LegalHosts::check_host_production() )
+    //     {
+    //         return self::RESTRICTED_PRODUCTION;
+    //     }
 
-		return self::RESTRICTED_DEBUG;
-	}
+	// 	return self::RESTRICTED_DEBUG;
+	// }
 
-	public static function get_restricted_language_host( $language )
-	{
-		$restricted = self::get_restricted();
+	// public static function get_restricted_language_host( $language )
+	// {
+	// 	$restricted = self::get_restricted();
 
-		$result = false;
+	// 	$result = false;
 
-		foreach ( $restricted as $host => $languages )
-		{
-			if ( in_array( $language, $languages ) )
-            {
-                $result = $host;
+	// 	foreach ( $restricted as $host => $languages )
+	// 	{
+	// 		if ( in_array( $language, $languages ) )
+    //         {
+    //             $result = $host;
 
-				break;
-            }
-		}
+	// 			break;
+    //         }
+	// 	}
 
-		return $result;
-	}
+	// 	return $result;
+	// }
 
-	public static function get_restricted_languages_current()
-	{
-		$restricted = self::get_restricted();
+	// public static function get_restricted_languages_current()
+	// {
+	// 	$restricted = self::get_restricted();
 			
-		return $restricted[ self::get_host() ];
-	}
+	// 	return $restricted[ self::get_host() ];
+	// }
 
-	public static function get_restricted_languages()
-	{
-		if ( self::check_domain() )
-		{
-			// return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
+	// public static function get_restricted_languages()
+	// {
+	// 	if ( self::check_domain() )
+	// 	{
+	// 		// return $restricted[ $_SERVER[ 'HTTP_HOST' ] ];
 
-			// $restricted = self::get_restricted();
+	// 		// $restricted = self::get_restricted();
 			
-			// return $restricted[ self::get_host() ];
+	// 		// return $restricted[ self::get_host() ];
 
-			return self::get_restricted_languages_current();
-		}
+	// 		return self::get_restricted_languages_current();
+	// 	}
 
-		// return call_user_func_array( 'array_merge', $restricted );
+	// 	// return call_user_func_array( 'array_merge', $restricted );
 
-		return self::get_restricted_languages_all();
-	}
+	// 	return self::get_restricted_languages_all();
+	// }
 
-	public static function get_restricted_languages_all()
-	{
-		$restricted = self::get_restricted();
+	// public static function get_restricted_languages_all()
+	// {
+	// 	$restricted = self::get_restricted();
 
-		// LegalDebug::debug( [
-		// 	'ToolNotFound' => 'get_restricted_languages_all',
+	// 	// LegalDebug::debug( [
+	// 	// 	'ToolNotFound' => 'get_restricted_languages_all',
 
-		// 	'restricted' => $restricted,
-		// ] );
+	// 	// 	'restricted' => $restricted,
+	// 	// ] );
 
-		if ( count( $restricted ) > 1 )
-		{
-			return call_user_func_array( 'array_merge', $restricted );
-		}
+	// 	if ( count( $restricted ) > 1 )
+	// 	{
+	// 		return call_user_func_array( 'array_merge', $restricted );
+	// 	}
 
-		return array_shift( $restricted );
-	}
+	// 	return array_shift( $restricted );
+	// }
 	
 	// public static function get_default_language()
 
-	public static function get_default_language( $host = '' )
-	{
-		if ( empty( $host ) )
-		{
-			// $host = $_SERVER[ 'HTTP_HOST' ];
+	// public static function get_default_language( $host = '' )
+	// {
+	// 	if ( empty( $host ) )
+	// 	{
+	// 		// $host = $_SERVER[ 'HTTP_HOST' ];
 			
-			$host = self::get_host();
-		}
+	// 		$host = self::get_host();
+	// 	}
 
-		$restricted = self::get_restricted();
+	// 	$restricted = self::get_restricted();
 
-		// if ( self::check_domain() )
+	// 	// if ( self::check_domain() )
 		
-		if ( self::check_domain( $host ) )
-		{
-			// return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
+	// 	if ( self::check_domain( $host ) )
+	// 	{
+	// 		// return array_shift( $restricted[ $_SERVER[ 'HTTP_HOST' ] ] );
 
-			return array_shift( $restricted[ $host ] );
-		}
+	// 		return array_shift( $restricted[ $host ] );
+	// 	}
 
-		return 'en';
-	}
+	// 	return 'en';
+	// }
 
 	// public static function get_default_restricted_language()
 	// {
@@ -193,106 +193,106 @@ class ToolNotFound
 	// 	return false;
 	// }
 
-	public static function check_domain_restricted()
-	{
-		return self::check_domain();
-	}
+	// public static function check_domain_restricted()
+	// {
+	// 	return self::check_domain();
+	// }
 
 	// public static function check_domain()
 	
-	public static function check_domain( $host = '' )
-	{
-		if ( empty( $host ) )
-		{
-            // $host = $_SERVER[ 'HTTP_HOST' ];
+	// public static function check_domain( $host = '' )
+	// {
+	// 	if ( empty( $host ) )
+	// 	{
+    //         // $host = $_SERVER[ 'HTTP_HOST' ];
             
-			$host = self::get_host();
-        }
+	// 		$host = self::get_host();
+    //     }
 
-		$restricted = self::get_restricted();
+	// 	$restricted = self::get_restricted();
 
-		// LegalDebug::debug( [
-		// 	'ToolNotFound' => 'check_domain',
+	// 	// LegalDebug::debug( [
+	// 	// 	'ToolNotFound' => 'check_domain',
 
-		// 	'host' => $host,
+	// 	// 	'host' => $host,
 
-        //     'restricted' => $restricted,
-        // ] );
+    //     //     'restricted' => $restricted,
+    //     // ] );
 
-		// if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
+	// 	// if ( array_key_exists( $_SERVER[ 'HTTP_HOST' ], $restricted ) )
 		
-		if ( array_key_exists( $host, $restricted ) )
-		{
-			return true;
-		}
+	// 	if ( array_key_exists( $host, $restricted ) )
+	// 	{
+	// 		return true;
+	// 	}
 
-		return false;
-	}
+	// 	return false;
+	// }
 	
-	public static function check_language( $languages = [] )
-	{
-		$result = false;
+	// public static function check_language( $languages = [] )
+	// {
+	// 	$result = false;
 
-		$language = WPMLMain::current_language();
+	// 	$language = WPMLMain::current_language();
 
-		$restricted = [];
+	// 	$restricted = [];
 
-		if ( empty( $languages ) )
-		{
-			$restricted = self::get_restricted();
-		}
-		else
-		{
-			$restricted[] = $languages;
-		}
+	// 	if ( empty( $languages ) )
+	// 	{
+	// 		$restricted = self::get_restricted();
+	// 	}
+	// 	else
+	// 	{
+	// 		$restricted[] = $languages;
+	// 	}
 	
-		foreach ( $restricted as $languages )
-		{
-			if ( in_array( $language, $languages ) )
-			{
-				$result = true;
-			}
-		}
+	// 	foreach ( $restricted as $languages )
+	// 	{
+	// 		if ( in_array( $language, $languages ) )
+	// 		{
+	// 			$result = true;
+	// 		}
+	// 	}
 
-		return $result;
-	}
+	// 	return $result;
+	// }
 
 	// Домен ограничен, а страна нет
 
-	public static function check_restricted_domain_and_not_language()
-	{
-		return self::check_domain() && !self::check_language( self::get_restricted_languages() );
-	}
+	// public static function check_restricted_domain_and_not_language()
+	// {
+	// 	return self::check_domain() && !self::check_language( self::get_restricted_languages() );
+	// }
 
 	// Домен не ограничен, а страна да
 
-	public static function check_restricted_not_domain_and_language()
-	{
-		// return !self::check_domain() && self::check_language();
+	// public static function check_restricted_not_domain_and_language()
+	// {
+	// 	// return !self::check_domain() && self::check_language();
 	
-		// Временно для не ограниченных доменов доступны все страны
+	// 	// Временно для не ограниченных доменов доступны все страны
 
-		return false;
-	}
+	// 	return false;
+	// }
 
-	public static function check_restricted()
-	{
-		// LegalDebug::debug( [
-		// 	'ToolNotFound' => 'check_restricted',
+	// public static function check_restricted()
+	// {
+	// 	// LegalDebug::debug( [
+	// 	// 	'ToolNotFound' => 'check_restricted',
 
-		// 	'check_domain' => self::check_domain(),
+	// 	// 	'check_domain' => self::check_domain(),
 
-		// 	'check_language' => self::check_language(),
-		// ] );
+	// 	// 	'check_language' => self::check_language(),
+	// 	// ] );
 
-		// return self::check_domain() && !self::check_language()
+	// 	// return self::check_domain() && !self::check_language()
 			
-		// 	|| !self::check_domain() && self::check_language();
+	// 	// 	|| !self::check_domain() && self::check_language();
 
-		return self::check_restricted_domain_and_not_language()
+	// 	return self::check_restricted_domain_and_not_language()
 
-			|| self::check_restricted_not_domain_and_language();
-	}
+	// 		|| self::check_restricted_not_domain_and_language();
+	// }
 
 	public static function check()
 	{
@@ -344,14 +344,18 @@ class ToolNotFound
 		// 	'check_robots_txt' => self::check_robots_txt(),
 		// ] );
 
-		return
-		(
-			self::check_taxonomies()
+		// return
+		// (
+		// 	self::check_taxonomies()
 			
-			|| self::check_restricted()
-		)
+		// 	|| self::check_restricted()
+		// )
 		
-		&& self::check_not_robots_txt();
+		// && self::check_not_robots_txt();
+		
+		return self::check_taxonomies()
+		
+			&& self::check_not_robots_txt();
 	}
 
 	public static function set_not_found()
