@@ -70,6 +70,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 
 		sendMetric( ref.href );
+
+		console.log( 'handleRef ref.href:' );
+
+		console.log( ref.href );
 	}
 
 	function prepareRef( element )
