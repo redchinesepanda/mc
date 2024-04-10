@@ -42,11 +42,11 @@ class WPMLLanguageMismatch
 
 		if ( !empty( $uri_parts[ 'uri' ] ) )
 		{
-			LegalDebug::debug( [
-				'WPMLLanguageMismatch' => 'fix_language_mismatch',
+			// LegalDebug::debug( [
+			// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 	
-				'uri_parts' => $uri_parts[ 'uri' ],
-			] );
+			// 	'uri_parts' => $uri_parts[ 'uri' ],
+			// ] );
 
 			if ( !in_array( $uri_parts[ 'uri' ], self::EXCEPTIONS ) )
 			{
@@ -62,11 +62,11 @@ class WPMLLanguageMismatch
 		{
 			$url = get_post_permalink( $post->ID );
 
-			LegalDebug::debug( [
-				'WPMLLanguageMismatch' => 'fix_language_mismatch',
+			// LegalDebug::debug( [
+			// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 	
-				'url' => $url,
-			] );
+			// 	'url' => $url,
+			// ] );
 		}
 
 		return $item_id;
