@@ -65,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'handleRef:' );
 
-		let ref = event.curentTarget;
+		let ref = event.currentTarget;
 
 		console.log( ref );
 
