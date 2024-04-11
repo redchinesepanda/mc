@@ -166,7 +166,7 @@
     } */
 
     .review-about .achievement-tooltip {
-        top: 36px;
+        top: calc( 36px + 5px );
     }
 
     .review-about.legal-mode-mini {
