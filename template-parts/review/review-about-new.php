@@ -12,6 +12,7 @@
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement">
                         <div class="achievement-item">
+                            <div class="achievement-tooltip"><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></div>
                             <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>
                                 <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
                             <?php endif; ?>

@@ -7,26 +7,10 @@ class BilletAchievement
 
         'style' => 'achievement-style',
     ];
-
-    // const TAXONOMY = 'billet_achievement';
-
-    // self::TAXONOMY[ 'achievement' ]
     
     const TAXONOMY = [
         'achievement' => 'billet_achievement'
     ];
-
-    // const TYPE_DISABLED = 'legal-disabled';
-
-    // const TYPE_IMAGE = 'legal-image';
-
-    // const TYPE_BACKGROUND = 'legal-background';
-
-    // const TYPE = [
-    //     'about' => 'legal-about',
-    // ];
-
-    // self::TYPE[ 'image' ]
 
     const TYPE = [
         'disabled' => 'legal-disabled',
@@ -59,8 +43,6 @@ class BilletAchievement
         {
             return $filter[ 'achievement' ];
         }
-
-        // return BilletAchievement::TYPE_IMAGE;
         
         return self::TYPE[ 'image' ];
     }
@@ -144,6 +126,16 @@ class BilletAchievement
 
         return '';
     }
+
+    public static function get_achievement_tooltip( $term )
+    {
+        if ( $tooltip = get_field( self::FIELD_ACHIEVEMENT[ 'tooltip' ], self::TAXONOMY[ 'achievement' ] . '_' . $term->term_id ) )
+        {
+            return $tooltip;
+        }
+
+        return '';
+    }
     
     public static function get_achievement_item( $term, $filter )
     {
@@ -159,6 +151,8 @@ class BilletAchievement
                 'color' => self::get_achievement_color( $term ),
                 
                 'image' => self::get_achievement_image( $term ),
+
+                'tooltip' => self::get_achievement_tooltip( $term ),
             ];
         }
 
@@ -197,8 +191,6 @@ class BilletAchievement
     {
         if ( !empty( $filter[ 'achievement' ] ) )
         {
-            // return $filter[ 'achievement' ] == self::TYPE_DISABLED;
-            
             return $filter[ 'achievement' ] == self::TYPE[ 'disabled' ];
         }
         
