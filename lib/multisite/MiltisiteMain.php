@@ -14,11 +14,21 @@ require_once( 'MultisiteACF.php' );
 
 class MiltisiteMain
 {
+	const TEXT = [
+		'move-to' => 'Move to [%s]',
+	];
+	
 	const TEXT_PLURAL = [
-		'post-has-been-moved-to' => [
-			'single' => '%d post has been moved to "%s".',
+		'post-has-been-copied-to' => [
+			'single' => '%d post has been copied to "%s".',
 
-			'plural' => '%d posts have been moved to "%s".',
+			'plural' => '%d posts have been copied to "%s".',
+		],
+
+		'image-has-been-copied-to' => [
+			'single' => '%d image has been copied to &laquo;%s&raquo;.',
+
+			'plural' => '%d images have been copied to &laquo;%s&raquo;.',
 		],
 	];
 

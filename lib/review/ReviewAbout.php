@@ -235,7 +235,9 @@ class ReviewAbout
 
     public static function get_name( $group, $mode, $bonus_exception )
     {
-        if ( $mode == 'mini' || $bonus_exception )
+        // заккоментил Калабин. Проверка вывода названия бонуса в сайдбаре 
+        // if ( $mode == 'mini' || $bonus_exception )
+        if ( $mode == 'mini' && $bonus_exception )
         {
             return $group[ 'about-title' ];
         }
@@ -304,6 +306,8 @@ class ReviewAbout
                 'href' => self::check_href_afillate( $id ),
 
                 'image' => $achievement_item[ 'image' ],
+
+                'tooltip' => $achievement_item[ 'tooltip' ],
             ];
         }
 

@@ -2,23 +2,59 @@
 
 class MultisiteAdmin
 {
+	// const POST_TYPES = [
+	// 	'page' => 'page',
+
+	// 	'post' => 'post',
+
+	// 	'brand' => 'legal_brand',
+
+	// 	'billet' => 'legal_billet',
+
+	// 	'compilation' => 'legal_compilation',
+	// ];
+	
+	const POST_TYPES_POST = [
+		'page' => 'edit-page',
+
+		'post' => 'edit-post',
+
+		'brand' => 'edit-legal_brand',
+
+		'billet' => 'edit-legal_billet',
+
+		'compilation' => 'edit-legal_compilation',
+	];
+
+	const POST_TYPES_ATTACHMENT = [
+		'attachment' => 'upload',
+	];
+
 	const POST_TYPES = [
-		'page' => 'page',
+		...self::POST_TYPES_POST,
 
-		'post' => 'post',
+		...self::POST_TYPES_ATTACHMENT,
+	];
 
-		'brand' => 'legal_brand',
+	const PATTERNS = [
+		// 'move-to' => 'Move to [%s]',
 
-		'billet' => 'legal_billet',
+		'bulk-actions' => 'bulk_actions-%s',
 
-		'compilation' => 'legal_compilation',
+		'handle-bulk-actions' => 'handle_bulk_actions-%s',
 	];
 	
-	public static function add_filter_all( $name, $object, $handler, $priority = 10, $accepted_args = 1 )
+	// public static function add_filter_all( $name, $object, $handler, $priority = 10, $accepted_args = 1 )
+	
+	public static function add_filter_all( $pattern, $values, $object, $handler, $priority = 10, $accepted_args = 1 )
 	{
-		foreach ( self::POST_TYPES as $post_type )
+		foreach ( $values as $post_type )
 		{
-			add_filter( $name . $post_type, [ $object, $handler ], $priority, $accepted_args );
+			$name = sprintf( $pattern, $post_type );
+
+			// add_filter( $name . $post_type, [ $object, $handler ], $priority, $accepted_args );
+			
+			add_filter( $name, [ $object, $handler ], $priority, $accepted_args );
 		}
 	}
 
@@ -28,15 +64,25 @@ class MultisiteAdmin
 
 		// add bulk actions
 
-		self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
+		// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
+		
+		self::add_filter_all(
+			self::PATTERNS[ 'bulk-actions' ],
+			
+			self::POST_TYPES,
+			
+			$handler,
+			
+			'mc_bulk_multisite_actions'
+		);
 
-		// add_filter( 'bulk_actions-edit-page', [ $handler, 'mc_bulk_multisite_actions' ] );
-
-		// add_filter( 'bulk_actions-edit-' . self::POST_TYPES[ 'billet' ], [ $handler, 'mc_bulk_multisite_actions' ] );
-
-		// show an appropriate notice
+		// show an post notice
 
 		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
+
+		// show an attacment notice
+
+		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
 	}
 
 	const DOACTION = [
@@ -47,10 +93,8 @@ class MultisiteAdmin
 		'posts-moved' => 'mc_posts_moved',
 		
 		'blog-id' => 'mc_blog_id',
-	];
 
-	const PATTERNS = [
-		'move-to' => 'Move to [%s]',
+		'attachment-moved' => 'mc_attachment_moved',
 	];
 	
 	public static function mc_bulk_multisite_actions( $bulk_array )
@@ -63,21 +107,25 @@ class MultisiteAdmin
 		
 		if ( $sites )
 		{
+			$pattern = ToolLoco::translate( MiltisiteMain::TEXT[ 'move-to' ] );
+
 			foreach ( $sites as $site )
 			{
 				// $bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = 'Move to [' . $site->blogname . ']';
 				
-				$bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = sprintf( self::PATTERNS[ 'move-to' ], $site->blogname );
+				$bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = sprintf( $pattern, $site->blogname );
 			}
 		}
 
 		return $bulk_array;
 	}
 
-	public static function get_message( $values )
+	public static function get_message( $pattern, $values )
 	{
 		return ToolLoco::translate_plural(
-			MiltisiteMain::TEXT_PLURAL[ 'post-has-been-moved-to' ],
+			// MiltisiteMain::TEXT_PLURAL[ 'post-has-been-copied-to' ],
+
+			$pattern,
 
 			$values
 		);
@@ -90,6 +138,8 @@ class MultisiteAdmin
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
 			$message = self::get_message(
+				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-copied-to' ],
+
 				[
 					$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ],
 
@@ -102,6 +152,38 @@ class MultisiteAdmin
 			];
 
 			self::print_notices( $args );
+		}
+	}
+	
+	function mc_bulk_multisite_attachment_notices()
+	{
+		// but you can create an awesome message
+
+		// if( ! empty( $_REQUEST[ 'rudr_bulk_media' ] ) )
+		
+		if( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
+		{
+			// depending on how many posts have been changed, our message may be different
+
+			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
+
+			$message = self::get_message(
+				MiltisiteMain::TEXT_PLURAL[ 'image-has-been-copied-to' ],
+
+				[
+					$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ],
+
+					$blog->blogname,
+				]
+			);
+
+			$args = [
+                'message' => $message,
+			];
+
+			self::print_notices( $args );
+
+			// printf( '<div id="message" class="updated notice is-dismissible"><p>' . _n( '%d image has been copied to &laquo;Store&raquo;.', '%d images have been copied to &laquo;Store&raquo;.', absint( $_REQUEST[ 'rudr_bulk_media' ] ) ) . '</p></div>', $_REQUEST[ 'rudr_bulk_media' ] );
 		}
 	}
 
@@ -119,11 +201,15 @@ class MultisiteAdmin
 		return remove_query_arg( self::QUERY_ARG, $redirect );
 	}
 
-	public static function redirect_set( $redirect, $posts_moved, $blog_id )
+	// public static function redirect_set( $redirect, $posts_moved, $blog_id )
+	
+	public static function redirect_set( $redirect, $arg_moved, $posts_moved, $blog_id )
 	{
 		return add_query_arg(
 			[
-				self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
+				// self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
+				
+				$arg_moved => $posts_moved,
 
 				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
 			],

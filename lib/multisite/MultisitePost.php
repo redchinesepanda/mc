@@ -8,9 +8,21 @@ class MultisitePost
 
 		// move or copy posts to blog
 
-		MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
-
-		// add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'mc_bulk_action_multisite_handler' ], 10, 3 );
+		// MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
+		
+		MultisiteAdmin::add_filter_all(
+			MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			
+			MultisiteAdmin::POST_TYPES_POST,
+			
+			$handler,
+			
+			'mc_bulk_action_multisite_handler',
+			
+			10,
+			
+			3
+		);
 	}
 
 	public static function mc_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
@@ -59,7 +71,9 @@ class MultisitePost
 			// 	'blog_id' => $blog_id,
 			// ] );
 
-			$redirect = MultisiteAdmin::redirect_set( $redirect, count( $object_ids ), $blog_id );
+			// $redirect = MultisiteAdmin::redirect_set( $redirect, count( $object_ids ), $blog_id );
+			
+			$redirect = MultisiteAdmin::redirect_set( $redirect, MultisiteAdmin::QUERY_ARG[ 'posts-moved' ], count( $object_ids ), $blog_id );
 		}
 
 		// LegalDebug::die( [

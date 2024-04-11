@@ -59,6 +59,10 @@
         height: 68px;
     }
 
+    .review-about .achievement-tooltip {
+        width: calc( 100% - (16px * 2) - 2px );
+    }
+
     .review-about .about-data {
         width: calc( 100% - ( 70px + 26px ) );
     }
@@ -161,6 +165,10 @@
         padding: 10px 20px;
     } */
 
+    .review-about .achievement-tooltip {
+        top: calc( 36px + 4px );
+    }
+
     .review-about.legal-mode-mini {
         margin-left: auto;
         margin-right: auto;
@@ -202,6 +210,10 @@
 
     .review-about.legal-mode-mini .about-center {
         width: 100%;
+    }
+
+    .review-about .achievement-tooltip {
+        width: calc( 320px - (16px * 2) - 2px );
     }
 
     .review-about .about-data {
@@ -274,6 +286,12 @@
 .review-about .achievement-name {
     display: flex;
     align-items: center;
+    column-gap: 8px;
+}
+
+.review-about .achievement-tooltip {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .review-about .about-right,
@@ -400,8 +418,22 @@
     padding-bottom: 24px;
 }
 
+.review-about .achievement-item {
+    position: relative;
+}
+
 .review-about .achievement-name {
     padding: 4px 10px;
+}
+
+.review-about .achievement-tooltip {
+    padding: 16px;
+    position: absolute;
+    left: 0px;
+}
+
+.review-about .achievement-tooltip-close {
+    margin-left: auto;
 }
 
 .review-about .about-center h1 {
@@ -476,6 +508,12 @@
 .review-about .achievement-name {
     background-color: var(--Base-base-01);
     border-radius: 60px; 
+}
+
+.review-about .achievement-tooltip {
+    border-radius: 12px;
+    border: 1px solid var(--Base-base-09);
+    background: var(--Base-base-01);
 }
 
 .review-about .about-logo {
@@ -553,6 +591,7 @@
 .review-about.legal-black .about-rating,
 .review-about.legal-black .about-center h1,
 .review-about .achievement-name,
+.review-about .achievement-tooltip,
 .review-about.legal-black .about-achievement .achievement-bonus-link,
 .review-about.legal-black .about-center .review-bonus-title,
 .review-about .review-bonus-description,
@@ -565,6 +604,7 @@
 .review-about .about-rating,
 .review-about .about-center h1,
 .review-about .achievement-name,
+.review-about .achievement-tooltip,
 .review-about .about-right .review-bonus-title,
 .legal-review-page-sidebar .about-right .review-bonus-title,
 .review-about .about-right .review-bonus-description,
@@ -578,10 +618,23 @@
     font-style: normal;
 }
 
-.review-about .achievement-name {
+.review-about .achievement-name,
+.review-about .achievement-tooltip {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+}
+
+.review-about .achievement-tooltip-close::before,
+.review-about .about-rating::before {
+    font-family: var(--legal-font-icons);
+}
+
+.review-about .achievement-tooltip-close::before {
+    content: '\F10E';
+    font-size: 18px;
+    line-height: 18px;
+    cursor: pointer;
 }
 
 .review-about .about-rating {
@@ -590,7 +643,6 @@
 
 .review-about .about-rating::before {
     content: '\F10F';
-    font-family: var(--legal-font-icons);
     line-height: 24px;
     font-size: 24px;
 }
@@ -677,6 +729,6 @@
     text-decoration: none;
 }
 
-.review-about .about-achievement div {
+/* .review-about .about-achievement div {
     text-align: center;
-}
+} */

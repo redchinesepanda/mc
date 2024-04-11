@@ -4,7 +4,7 @@ class ToolPermalink
 {
     public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
         // add_filter( 'post_type_link', [ $handler, 'wpse_101072_flatten_hierarchies' ], 10, 2 );
     }

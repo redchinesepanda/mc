@@ -12,10 +12,15 @@
                 <?php if ( !empty( $args[ 'achievement' ] ) && empty( $args['mode'] ) ) : ?>
                     <div class="about-achievement">
                         <div class="achievement-item">
-                            <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>
-                                <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
+                            <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
+                                <div class="achievement-tooltip"><span class="achievement-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></div>
                             <?php endif; ?>
-                            <span class="achievement-name"><?php echo $args[ 'achievement' ][ 'name' ]; ?></span>
+                            <span class="achievement-name">
+                                <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>
+                                <img class="achievement-image" src="<?php echo $args[ 'achievement' ][ 'image' ]; ?>" width="18" height="18" alt="<?php echo $args[ 'achievement' ][ 'name' ]; ?>">
+                                <?php endif; ?>
+                                <?php echo $args[ 'achievement' ][ 'name' ]; ?>
+                            </span>
                         </div>
                     </div>
                 <?php endif; ?>

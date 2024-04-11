@@ -36,6 +36,8 @@ class ACFMain
         return LegalMain::check_not_admin()
         
             && self::check_not_functions();
+
+        // return self::check_not_functions();
     }
 
     const JS = LegalMain::LEGAL_URL . '/assets/js/acf/acf-main.js';
@@ -71,6 +73,18 @@ class ACFMain
         ACFBillet::register();
     }
 }
+
+// LegalDebug::debug( [
+//     'check_admin' => LegalMain::check_admin(),
+
+//     'check_not_admin' => LegalMain::check_not_admin(),
+
+//     'check_functions' => ACFMain::check_functions(),
+
+//     'check_not_functions' => ACFMain::check_not_functions(),
+
+//     'check_redeclare' => ACFMain::check_redeclare(),
+// ] );
 
 if ( ACFMain::check_redeclare() )
 {

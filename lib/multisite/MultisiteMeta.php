@@ -76,6 +76,31 @@ class MultisiteMeta
 		return true;
 	}
 
+	public static function add_attachment_metadata( $attachment_id )
+	{
+		return wp_generate_attachment_metadata( $attachment_id, get_attached_file( $attachment_id ) );
+	}
+
+	public static function add_attachment_meta( $attachment_id )
+	{
+		// make sure this file is included, because wp_generate_attachment_metadata() depends on it
+		
+		// require_once( ABSPATH . 'wp-admin/includes/image.php' );
+		
+		// update the attachment metadata.
+
+		// if ( empty( $filename ) )
+		// {
+		// 	$filename = get_attached_file( $attachment_id );
+		// }
+
+		// $metadata = wp_generate_attachment_metadata( $attachment_id, $filename );
+		
+		return wp_update_attachment_metadata( $attachment_id, self::add_attachment_metadata( $attachment_id ) );
+
+		// return true;
+	}
+
 	public static function get_post_moved( $post_id )
 	{
 		return get_post_meta( $post_id, self::POST_META[ 'moved-to' ], true );
