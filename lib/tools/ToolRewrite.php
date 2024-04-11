@@ -106,7 +106,7 @@ class ToolRewrite
 		
 		// echo '</pre>';
 		
-		exit();
+		// exit();
 	}
 
 	// public static function review_link( $post_link, $post, $leavename, $sample )
