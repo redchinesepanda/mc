@@ -18,25 +18,21 @@ class ToolDisable
 
         add_filter( 'rest_authentication_errors', [ $handler, 'disable_rest_api' ] );
 
-        add_filter( 'wpo_purge_cache_hooks', [ $handler, 'disable_wp_optimize_hooks' ] );
-
-        LegalDebug::debug( [
-            'ToolDisable' => 'register',
-        ] );
+        // add_filter( 'wpo_purge_cache_hooks', [ $handler, 'disable_wp_optimize_hooks' ] );
     }
 
-    public static function disable_wp_optimize_hooks( $actions )
-    {
-        // $actions[] = 'my_custom_action';
+    // public static function disable_wp_optimize_hooks( $actions )
+    // {
+    //     // $actions[] = 'my_custom_action';
 
-        LegalDebug::debug( [
-            'ToolDisable' => 'disable_wp_optimize_hooks',
+    //     LegalDebug::debug( [
+    //         'ToolDisable' => 'disable_wp_optimize_hooks',
 
-            'actions' => $actions,
-        ] );
+    //         'actions' => $actions,
+    //     ] );
 
-        return $actions;
-    }
+    //     return $actions;
+    // }
 
     public static function check_admin()
 	{
