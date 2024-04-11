@@ -59,13 +59,13 @@ class MultisiteAdmin
 
 			// add_filter( $name . $post_type, [ $object, $handler ], $priority, $accepted_args );
 
-			LegalDebug::debug( [
-				'MultisiteAdmin' => 'add_filter_all',
+			// LegalDebug::debug( [
+			// 	'MultisiteAdmin' => 'add_filter_all',
 
-				'name' => $name,
+			// 	'name' => $name,
 
-				'handler' => $handler,
-			] );
+			// 	'handler' => $handler,
+			// ] );
 			
 			add_filter( $name, [ $object, $handler ], $priority, $accepted_args );
 		}

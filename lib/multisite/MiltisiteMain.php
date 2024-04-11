@@ -12,12 +12,14 @@ require_once( 'MultisiteTerms.php' );
 
 require_once( 'MultisiteACF.php' );
 
+require_once( 'MultisiteAttachment.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
 		'move-to' => 'Move to [%s]',
 	];
-	
+
 	const TEXT_PLURAL = [
 		'post-has-been-copied-to' => [
 			'single' => '%d post has been copied to "%s".',
@@ -41,6 +43,8 @@ class MiltisiteMain
 		MultisitePost::register_functions_admin();
 
 		MultisiteMeta::register_functions_admin();
+
+		MultisiteAttachment::register_functions_admin();
 	}
 
 	// const VIRTUAL_BLOG = [
