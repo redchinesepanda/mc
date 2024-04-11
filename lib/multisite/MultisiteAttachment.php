@@ -177,7 +177,7 @@ class MultisiteAttachment
 	{
 		$inserted_attachment_id = false;
 
-		$post_moved_id = MultisiteMeta::get_post_moved( $post[ 'ID' ] );
+		$post_moved_id = MultisiteMeta::get_moved( $post[ 'ID' ] );
 
 		$path = self::get_path( $post[ 'ID' ] );
 
