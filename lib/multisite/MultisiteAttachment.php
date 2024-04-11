@@ -151,7 +151,7 @@ class MultisiteAttachment
 		{
 			$uploads = wp_upload_dir();
 
-			$unique_filename = get_unique_filename( $path, $uploads );
+			$unique_filename = self::get_unique_filename( $path, $uploads );
 
 			if ( $path_moved = self::copy_file( $path, $uploads, $unique_filename ) )
 			{
