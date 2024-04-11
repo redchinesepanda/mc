@@ -96,9 +96,13 @@ class ToolRewrite
 	}
 
 	public static function debug_404_template_dump( $template )
-	{ 
+	{
+		$post = get_post();
+
 		LegalDebug::debug( [
 			'template file selected' => var_export( $template, true ),
+
+			'post' => $post->ID,
 		] ); 
 
 		// echo '<h2>template file selected</h2>';

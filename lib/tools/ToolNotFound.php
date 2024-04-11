@@ -30,6 +30,211 @@ class ToolNotFound
 		// add_action ( 'wp_loaded', [ $handler, 'get_trash' ] );
     }
 
+	public static function check()
+	{
+		return self::check_not_found();
+	}
+
+	public static function check_taxonomy()
+	{
+		return is_tax();
+	}
+
+	public static function check_tag()
+	{
+		return is_tag();
+	}
+
+	public static function check_category()
+	{
+		return is_category();
+	}
+
+	public static function check_not_robots_txt()
+	{
+		return !is_robots();
+	}
+	
+	public static function check_taxonomies()
+	{
+		return self::check_category()
+
+			|| self::check_tag()
+
+			|| self::check_taxonomy();
+	}
+
+	public static function check_not_found()
+	{
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::set_not_found',
+
+		// 	'check_category' => self::check_category(),
+
+		// 	'check_tag' => self::check_tag(),
+
+		// 	'check_taxonomy' => self::check_taxonomy(),
+
+		// 	'check_taxonomies' => self::check_taxonomies(),
+
+		// 	// 'check_restricted' => self::check_restricted(),
+
+		// 	'check_robots_txt' => ToolRobots::check_robots_txt(),
+		// ] );
+
+		// return
+		// (
+		// 	self::check_taxonomies()
+			
+		// 	|| self::check_restricted()
+		// )
+		
+		// && self::check_not_robots_txt();
+		
+		// return self::check_taxonomies()
+		
+		// 	&& self::check_not_robots_txt();
+
+		return self::check_taxonomies();
+	}
+
+	public static function set_not_found()
+	{
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::set_not_found',
+
+		// 	'check_not_found' => self::check_not_found(),
+
+		// 	'is_robots' => is_robots(),
+		// ] );
+
+		if ( self::check_not_found() )
+		{
+			global $wp_query;
+
+			$wp_query->set_404();
+
+			// LegalDebug::debug( [
+			// 	'function' => 'ToolNotFound::set_not_found',
+
+			// 	'permissionwp_query_category' => $wp_query,
+			// ] );
+		}
+	}
+
+	public static function set_forbidden()
+	{
+		// LegalDebug::debug( [
+		// 	'function' => 'ToolNotFound::set_not_found',
+		// ] );
+
+		if ( self::check_forbidden() )
+		{
+			global $wp_query;
+
+			$wp_query->set_403();
+
+			// LegalDebug::debug( [
+			// 	'function' => 'ToolNotFound::set_not_found',
+
+			// 	'permissionwp_query_category' => $wp_query,
+			// ] );
+		}
+	}
+
+	const FORBIDDEN = [
+		'de' => [
+			'de',
+		],
+	];
+
+	public static function check_forbidden()
+	{
+		return self::check_locale_forbidden();
+	}
+
+	public static function get_locale_user()
+	{
+		$country = self::get_country();
+
+		if ( !empty( $country ) )
+		{
+			return $country;
+		}
+
+		return 'en';
+	}
+
+	public static function check_locale_user( $locale )
+    {
+		return array_key_exists( $locale, self::FORBIDDEN );
+	}
+
+	public static function check_locale_country( $countries )
+	{
+		return in_array( WPMLMain::current_language(), $countries );
+    }
+
+	public static function check_locale_forbidden()
+	{
+		$locale = self::get_locale_user();
+
+		if ( self::check_locale_user( $locale ) )
+		{
+			return self::check_locale_country( self::FORBIDDEN[ $locale ] );
+		}
+
+		return false;
+	}
+
+	public static function get_country()
+	{
+		return self::parse_country( self::get_ip_data() );
+	}
+
+	public static function parse_country( $json )
+	{
+		if ( $json )
+		{
+			$data = json_decode( $json );
+
+			// LegalDebug::debug( [
+			// 	'ToolNotFound' => 'get_ip_data',
+
+			// 	'data' => $data,
+			// ] );
+
+			return strtolower( $data->countryCode );
+		}
+
+		return '';
+	}
+	
+	public static function get_ip_data()
+	{
+		// $_SERVER['REMOTE_ADDR']
+
+		// $_SERVER['HTTP_X_FORWARDED_FOR']
+
+		$url = 'http://ip-api.com/json/' . $_SERVER['REMOTE_ADDR'];
+
+		$curl = curl_init( $url );
+
+		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
+
+		$json = curl_exec( $curl );
+
+		// LegalDebug::debug( [
+		// 	'ToolNotFound' => 'get_ip_data',
+
+		// 	'curl_error' => curl_error( $curl ),
+		// ] );
+
+		curl_close( $curl );
+
+		return $json;
+	}
+
 	// const PAIRS = [];
 
 	// public static function prepare( $atts, $content = '' )
@@ -293,210 +498,6 @@ class ToolNotFound
 
 	// 		|| self::check_restricted_not_domain_and_language();
 	// }
-
-	public static function check()
-	{
-		return self::check_not_found();
-	}
-
-	public static function check_taxonomy()
-	{
-		return is_tax();
-	}
-
-	public static function check_tag()
-	{
-		return is_tag();
-	}
-
-	public static function check_category()
-	{
-		return is_category();
-	}
-
-	public static function check_not_robots_txt()
-	{
-		return !is_robots();
-	}
-	
-	public static function check_taxonomies()
-	{
-		return self::check_category()
-
-			|| self::check_tag()
-
-			|| self::check_taxonomy();
-	}
-
-	public static function check_not_found()
-	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
-
-		// 	'check_category' => self::check_category(),
-
-		// 	'check_tag' => self::check_tag(),
-
-		// 	'check_taxonomy' => self::check_taxonomy(),
-
-		// 	'check_taxonomies' => self::check_taxonomies(),
-
-		// 	// 'check_restricted' => self::check_restricted(),
-
-		// 	'check_robots_txt' => ToolRobots::check_robots_txt(),
-		// ] );
-
-		// return
-		// (
-		// 	self::check_taxonomies()
-			
-		// 	|| self::check_restricted()
-		// )
-		
-		// && self::check_not_robots_txt();
-		
-		// return self::check_taxonomies()
-		
-		// 	&& self::check_not_robots_txt();
-
-		return self::check_taxonomies();
-	}
-
-	public static function set_not_found()
-	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
-
-		// 	'check_not_found' => self::check_not_found(),
-
-		// 	'is_robots' => is_robots(),
-		// ] );
-
-		if ( self::check_not_found() )
-		{
-			global $wp_query;
-
-			$wp_query->set_404();
-
-			// LegalDebug::debug( [
-			// 	'function' => 'ToolNotFound::set_not_found',
-
-			// 	'permissionwp_query_category' => $wp_query,
-			// ] );
-		}
-	}
-
-	public static function set_forbidden()
-	{
-		// LegalDebug::debug( [
-		// 	'function' => 'ToolNotFound::set_not_found',
-		// ] );
-
-		if ( self::check_forbidden() )
-		{
-			global $wp_query;
-
-			$wp_query->set_403();
-
-			// LegalDebug::debug( [
-			// 	'function' => 'ToolNotFound::set_not_found',
-
-			// 	'permissionwp_query_category' => $wp_query,
-			// ] );
-		}
-	}
-
-	const FORBIDDEN = [
-		'de' => [
-			'de',
-		],
-	];
-
-	public static function check_forbidden()
-	{
-		return self::check_locale_forbidden();
-	}
-
-	public static function get_locale_user()
-	{
-		$country = self::get_country();
-
-		if ( !empty( $country ) )
-		{
-			return $country;
-		}
-
-		return 'en';
-	}
-
-	public static function check_locale_user( $locale )
-    {
-		return array_key_exists( $locale, self::FORBIDDEN );
-	}
-
-	public static function check_locale_country( $countries )
-	{
-		return in_array( WPMLMain::current_language(), $countries );
-    }
-
-	public static function check_locale_forbidden()
-	{
-		$locale = self::get_locale_user();
-
-		if ( self::check_locale_user( $locale ) )
-		{
-			return self::check_locale_country( self::FORBIDDEN[ $locale ] );
-		}
-
-		return false;
-	}
-
-	public static function get_country()
-	{
-		return self::parse_country( self::get_ip_data() );
-	}
-
-	public static function parse_country( $json )
-	{
-		if ( $json )
-		{
-			$data = json_decode( $json );
-
-			// LegalDebug::debug( [
-			// 	'ToolNotFound' => 'get_ip_data',
-
-			// 	'data' => $data,
-			// ] );
-
-			return strtolower( $data->countryCode );
-		}
-
-		return '';
-	}
-	public static function get_ip_data()
-	{
-		// $_SERVER['REMOTE_ADDR']
-
-		// $_SERVER['HTTP_X_FORWARDED_FOR']
-
-		$url = 'http://ip-api.com/json/' . $_SERVER['REMOTE_ADDR'];
-
-		$curl = curl_init( $url );
-
-		curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
-
-		$json = curl_exec( $curl );
-
-		// LegalDebug::debug( [
-		// 	'ToolNotFound' => 'get_ip_data',
-
-		// 	'curl_error' => curl_error( $curl ),
-		// ] );
-
-		curl_close( $curl );
-
-		return $json;
-	}
 
 	// public static function check_not_found()
     // {
