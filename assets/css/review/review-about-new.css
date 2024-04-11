@@ -432,7 +432,7 @@
     left: 0px;
 }
 
-.review-about .achievement-tooltip-close::before {
+.review-about .achievement-tooltip-close {
     margin-left: auto;
 }
 
