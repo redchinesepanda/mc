@@ -63,4 +63,4 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 } );
 
-// about-achievement-tooltip-js end
+// about-achievement-tooltip-js end 
