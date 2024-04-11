@@ -212,9 +212,9 @@ class MultisiteAttachment
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 
-			'get_post_status' => check_not_moved( $post_moved_id ),
+			'check_not_moved-id' => MultisiteMeta::check_not_moved( $post_moved_id ),
 			
-			'get_post_status-false' => check_not_moved( false ),
+			'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
 		] );
 
 		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
