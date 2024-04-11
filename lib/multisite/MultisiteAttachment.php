@@ -52,7 +52,7 @@ class MultisiteAttachment
 				}
 			}
 
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
 				'blog_id' => $blog_id,
