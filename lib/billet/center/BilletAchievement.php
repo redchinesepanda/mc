@@ -22,9 +22,9 @@ class BilletAchievement
 
     const TYPE_BACKGROUND = 'legal-background';
 
-    const TYPE = [
-        'about' => 'legal-about',
-    ];
+    // const TYPE = [
+    //     'about' => 'legal-about',
+    // ];
 
     const FIELD = [
         'feture-achievement' => 'billet-feture-achievement',
@@ -193,7 +193,7 @@ class BilletAchievement
 
     public static function render( $achievement )
     {
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], $achievement );
+        return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], $achievement );
     }
 
     public static function render_achievement( $title )
@@ -214,17 +214,6 @@ class BilletAchievement
 
         return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'style' ] ], self::get( $title ) );
     }
-
-    // public static function render_main( $template, $args )
-    // {
-	// 	ob_start();
-
-    //     load_template( $template, false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 }
 
 ?>
