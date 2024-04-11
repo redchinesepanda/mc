@@ -182,7 +182,15 @@ class MultisiteAttachment
 	{
 		MultisiteBlog::set_blog( $blog_id );
 
-		if ( $attachment_id = self::add_attachment( $path, $blog_id ) )
+		$attachment_id = self::add_attachment( $path, $blog_id );
+
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'add_attachment_and_data',
+
+			'attachment_id' => $attachment_id,
+		] );
+
+		// if ( $attachment_id = self::add_attachment( $path, $blog_id ) )
 		{
 			MultisiteMeta::add_attachment_meta( $attachment_id );
 
