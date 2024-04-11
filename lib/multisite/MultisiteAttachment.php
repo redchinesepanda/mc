@@ -175,7 +175,7 @@ class MultisiteAttachment
 					'path_moved' => $path_moved,
 				] );
 
-				if ( $inserted_attachment_id = self::insert_attachment( $path, $uploads, $path_moved ) )
+				if ( $inserted_attachment_id = self::insert_attachment( $path, $uploads, $unique_filename ) )
 				{
 					LegalDebug::debug( [
 						'MultisiteAttachment' => 'add_attachment',
