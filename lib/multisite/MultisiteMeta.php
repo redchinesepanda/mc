@@ -99,11 +99,17 @@ class MultisiteMeta
 
 		// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMain' =>'set_post_moved',
+		LegalDebug::debug( [
+			'MultisiteMain' =>'set_post_moved',
 
-		// 	'meta_value' => $meta_value,
-		// ] );
+			'post_id' => $post_id,
+
+			'blog_id' => $blog_id,
+
+			'moved_post_id' => $moved_post_id,
+
+			'meta_value' => $meta_value,
+		] );
 		
 		$meta_value = [ $blog_id => $moved_post_id ];
 
