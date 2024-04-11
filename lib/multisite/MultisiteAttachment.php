@@ -147,8 +147,8 @@ class MultisiteAttachment
 			'check_post_moved' => self::check_post_moved( $post, $blog_id ),
 		] );
 
-		if ( ! self::check_post_moved( $post, $blog_id ) )
-		{
+		// if ( ! self::check_post_moved( $post, $blog_id ) )
+		// {
 			$uploads = wp_upload_dir();
 
 			$unique_filename = self::get_unique_filename( $path, $uploads );
@@ -168,7 +168,7 @@ class MultisiteAttachment
 					return $inserted_attachment_id;
 				}
 			}
-		}
+		// }
 
 		return false;
 	}
@@ -177,28 +177,31 @@ class MultisiteAttachment
 	{
 		$inserted_attachment_id = false;
 
-		$path = self::get_path( $post[ 'ID' ] );
-
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment_and_data',
-
-			'path' => $path,
-		] );
-
-		MultisiteBlog::set_blog( $blog_id );
-		
-		if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id ) )
+		if ( ! self::check_post_moved( $post, $blog_id ) )
 		{
+			$path = self::get_path( $post[ 'ID' ] );
+
 			LegalDebug::debug( [
 				'MultisiteAttachment' => 'add_attachment_and_data',
-	
-				'inserted_attachment_id' => $inserted_attachment_id,
+
+				'path' => $path,
 			] );
 
-			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
-		}
+			MultisiteBlog::set_blog( $blog_id );
+			
+			if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id ) )
+			{
+				LegalDebug::debug( [
+					'MultisiteAttachment' => 'add_attachment_and_data',
+		
+					'inserted_attachment_id' => $inserted_attachment_id,
+				] );
 
-		MultisiteBlog::restore_blog();
+				MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
+			}
+
+			MultisiteBlog::restore_blog();
+		}
 
 		return $inserted_attachment_id;
 	}
