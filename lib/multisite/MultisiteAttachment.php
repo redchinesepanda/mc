@@ -153,6 +153,12 @@ class MultisiteAttachment
 
 			$unique_filename = self::get_unique_filename( $path, $uploads );
 
+			LegalDebug::debug( [
+				'MultisiteAttachment' => 'add_attachment',
+
+				'unique_filename' => $unique_filename,
+			] );
+
 			if ( $path_moved = self::copy_file( $path, $uploads, $unique_filename ) )
 			{
 				if ( $inserted_attachment_id = self::insert_attachment( $path, $uploads, $path_moved ) )
