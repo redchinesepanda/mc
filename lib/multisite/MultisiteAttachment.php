@@ -127,7 +127,9 @@ class MultisiteAttachment
 	{
 		$uploads = wp_upload_dir();
 
-		$filename = wp_unique_filename( $uploads[ 'path' ], basename( $path ) );
+		$basename = basename( $path );
+
+		$filename = wp_unique_filename( $uploads[ 'path' ], $basename );
 
 		$new_file = $uploads[ 'path' ] . "/$filename";
 
@@ -145,6 +147,8 @@ class MultisiteAttachment
 			'blog_id' => $blog_id,
 
 			'uploads' => $uploads,
+
+			'basename' => $basename,
 
 			'filename' => $filename,
 
