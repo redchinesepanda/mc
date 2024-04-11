@@ -137,7 +137,7 @@ class MultisiteAttachment
 
 		// copy the media file into another multisite subsite uploads directory
 
-		$sideload = @copy( $file, $new_file );
+		$sideload = @copy( $filename, $new_file );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
