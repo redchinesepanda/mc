@@ -236,10 +236,11 @@ class ReviewAbout
     public static function get_name( $group, $mode, $bonus_exception )
     {
         // заккоментил Калабин. Проверка вывода названия бонуса в сайдбаре
-       /*  if ( $mode == 'mini' || $bonus_exception )
+        // if ( $mode == 'mini' || $bonus_exception )
+        if ( $mode == 'mini' && $bonus_exception )
         {
             return $group[ 'about-title' ];
-        } */
+        }
 
         return $group[ 'about-bonus' ];
     }
