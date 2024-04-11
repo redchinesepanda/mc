@@ -26,7 +26,7 @@ class ToolRewrite
 	
 			add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
 	
-			// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
+			add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 	
 			// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
 	
@@ -107,6 +107,8 @@ class ToolRewrite
 		// echo '</pre>';
 		
 		// exit();
+
+		return $template;
 	}
 
 	// public static function review_link( $post_link, $post, $leavename, $sample )
