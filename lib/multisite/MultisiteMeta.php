@@ -118,31 +118,64 @@ class MultisiteMeta
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
 	}
 
-	public static function check_post( $post )
+	public static function check_post( $id )
 	{
-		return is_single( $post[ 'ID' ] );
+		return is_single( $id );
 	}
 
-	public static function check_page( $post )
+	public static function check_page( $id )
 	{
-		return is_page( $post[ 'ID' ] );
+		return is_page( $id );
 	}
 
-	public static function check_attachment( $post )
+	public static function check_attachment( $id )
 	{
-		return is_attachment( $post[ 'ID' ] );
+		return is_attachment( $id );
 	}
 
-	public static function check_moved( $post )
+	public static function check_moved( $id )
 	{
-		return self::check_post( $post )
+		return self::check_post( $id )
 		
-		    || self::check_page( $post )
+		    || self::check_page( $id )
 			
-			|| self::check_attachment( $post );
+			|| self::check_attachment( $id );
 	}
 
 	public static function check_post_moved( $post, $blog_id )
+	{
+		$post_moved = self::get_post_moved( $post[ 'ID' ] );
+
+		LegalDebug::debug( [
+			'MultisiteMain' => 'check_post_moved',
+			
+			'ID' => $post[ 'ID' ],
+
+			'post_moved' => $post_moved,
+
+			'not_empty' => !empty( $post_moved[ $blog_id ] ),
+		] );
+
+		// if ( array_key_exists( $blog_id, $post_moved ) )
+		
+		if ( !empty( $post_moved[ $blog_id ] ) )
+		{
+			LegalDebug::debug( [
+				'MultisiteMain' => 'check_post_moved',
+	
+				'post_moved_id' => $post_moved[ $blog_id ],
+			] );
+
+			// if ( self::check_moved( $post ) )
+			// {
+				return $post_moved[ $blog_id ];
+			// }
+		}
+
+		return false;
+	}
+
+	public static function get_moved( $post, $blog_id )
 	{
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
