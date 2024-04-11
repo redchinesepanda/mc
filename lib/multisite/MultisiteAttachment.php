@@ -68,6 +68,8 @@ class MultisiteAttachment
 					LegalDebug::debug( [
 						'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
+						'attachment_id' => $attachment_id,
+
 						'path' => $path,
 					] );
 
