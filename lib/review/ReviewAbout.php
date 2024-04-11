@@ -306,6 +306,8 @@ class ReviewAbout
                 'href' => self::check_href_afillate( $id ),
 
                 'image' => $achievement_item[ 'image' ],
+
+                'tooltip' => $achievement_item[ 'tooltip' ],
             ];
         }
 
