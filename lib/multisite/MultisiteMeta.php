@@ -118,6 +118,30 @@ class MultisiteMeta
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
 	}
 
+	public static function check_post( $post )
+	{
+		return is_single( $post[ 'ID' ] );
+	}
+
+	public static function check_page( $post )
+	{
+		return is_page( $post[ 'ID' ] );
+	}
+
+	public static function check_attachment( $post )
+	{
+		return is_attachment( $post[ 'ID' ] );
+	}
+
+	public static function check_moved( $post )
+	{
+		return self::check_post( $post )
+		
+		    || self::check_page( $post )
+			
+			|| self::check_attachment( $post );
+	}
+
 	public static function check_post_moved( $post, $blog_id )
 	{
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
@@ -137,12 +161,10 @@ class MultisiteMeta
 			LegalDebug::debug( [
 				'MultisiteMain' => 'check_post_moved',
 	
-				'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
+				'check_moved' => self::check_moved( $post ),
 			] );
 
-			// if ( get_post_status( $post_moved[ $blog_id ] ) )
-			
-			if ( get_post_status( $post_moved[ $blog_id ] ) || is_attachment( $post_moved[ $blog_id ] ) )
+			if ( self::check_moved( $post ) )
 			{
 				return $post_moved[ $blog_id ];
 			}
