@@ -16,7 +16,7 @@ class ToolRewrite
 		'promo-codes',
 	];
 
-	public static function register()
+	public static function register_function()
 	{
 		$handler = new self();
 
