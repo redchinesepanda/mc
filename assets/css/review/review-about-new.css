@@ -290,8 +290,15 @@
 }
 
 .review-about .achievement-tooltip {
-    display: flex;
     flex-wrap: wrap;
+}
+
+.review-about .achievement-tooltip.legal-active {
+    display: flex;
+}
+
+.review-about .achievement-tooltip:not( .legal-active ) {
+    display: none;
 }
 
 .review-about .about-right,
@@ -623,6 +630,10 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+}
+
+.review-about .achievement-name {
+    cursor: pointer;
 }
 
 .review-about .achievement-tooltip-close::before,
