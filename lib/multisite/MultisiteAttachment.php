@@ -46,11 +46,11 @@ class MultisiteAttachment
 
 		// if ( 'rudr_copy_attachment_to' === $doaction )
 
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
+		// LegalDebug::die( [
+		// 	'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
