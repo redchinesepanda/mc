@@ -189,7 +189,7 @@ class MultisiteAttachment
 		
 		if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id ) )
 		{
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'MultisiteAttachment' => 'add_attachment_and_data',
 	
 				'inserted_attachment_id' => $inserted_attachment_id,
