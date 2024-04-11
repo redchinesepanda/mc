@@ -30,11 +30,16 @@ class MultisiteAdmin
 		'attachment' => 'upload',
 	];
 
-	const POST_TYPES = [
-		...self::POST_TYPES_POST,
+	// const POST_TYPES = [
+	// 	...self::POST_TYPES_POST,
 
-		...self::POST_TYPES_ATTACHMENT,
-	];
+	// 	...self::POST_TYPES_ATTACHMENT,
+	// ];
+
+	public static function get_post_types()
+	{
+		return array_merge( self::POST_TYPES_POST, self::POST_TYPES_ATTACHMENT );
+	}
 
 	const PATTERNS = [
 		// 'move-to' => 'Move to [%s]',
@@ -69,7 +74,7 @@ class MultisiteAdmin
 		self::add_filter_all(
 			self::PATTERNS[ 'bulk-actions' ],
 			
-			self::POST_TYPES,
+			self::get_post_types(),
 			
 			$handler,
 			
