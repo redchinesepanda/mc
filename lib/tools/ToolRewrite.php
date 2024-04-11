@@ -99,7 +99,7 @@ class ToolRewrite
 	{ 
 		LegalDebug::debug( [
 			'template file selected' => var_export( $template, true ),
-		] );
+		] ); 
 
 		// echo '<h2>template file selected</h2>';
 		// echo var_export( $template, true );
