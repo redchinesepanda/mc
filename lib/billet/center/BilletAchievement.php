@@ -193,7 +193,7 @@ class BilletAchievement
 
     public static function render( $achievement )
     {
-        return self::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], $achievement );
+        return LegalComponents::render_main( self::TEMPLATE[ self::HANDLE[ 'main' ] ], $achievement );
     }
 
     public static function render_achievement( $title )
