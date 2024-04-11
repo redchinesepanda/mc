@@ -212,7 +212,9 @@ class MultisiteAttachment
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 
-			'get_post_status' => get_post_status( $post_moved_id ),
+			// 'get_post_status' => get_post_status( $post_moved_id ),
+			
+			'get_post_status-false' => get_post_status( false ),
 		] );
 
 		if ( ! $post_moved_id || ! MultisiteMeta::check_moved( $post_moved_id ) )

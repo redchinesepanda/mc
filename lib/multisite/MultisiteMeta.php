@@ -118,28 +118,30 @@ class MultisiteMeta
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_meta_value );
 	}
 
-	public static function check_post( $id )
-	{
-		return is_single( $id );
-	}
+	// public static function check_post( $id )
+	// {
+	// 	return is_single( $id );
+	// }
 
-	public static function check_page( $id )
-	{
-		return is_page( $id );
-	}
+	// public static function check_page( $id )
+	// {
+	// 	return is_page( $id );
+	// }
 
-	public static function check_attachment( $id )
-	{
-		return is_attachment( $id );
-	}
+	// public static function check_attachment( $id )
+	// {
+	// 	return is_attachment( $id );
+	// }
 
 	public static function check_moved( $id )
 	{
-		return self::check_post( $id )
+		// return self::check_post( $id )
 		
-		    || self::check_page( $id )
+		//     || self::check_page( $id )
 			
-			|| self::check_attachment( $id );
+		// 	|| self::check_attachment( $id );
+
+		return get_post_status( $id );
 	}
 
 	public static function check_post_moved( $post, $blog_id )
