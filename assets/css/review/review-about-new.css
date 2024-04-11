@@ -59,6 +59,10 @@
         height: 68px;
     }
 
+    .review-about .achievement-tooltip {
+        width: calc( 100% - (16px * 2) - 2px );
+    }
+
     .review-about .about-data {
         width: calc( 100% - ( 70px + 26px ) );
     }
@@ -206,6 +210,10 @@
 
     .review-about.legal-mode-mini .about-center {
         width: 100%;
+    }
+
+    .review-about .achievement-tooltip {
+        width: calc( 320px - (16px * 2) - 2px );
     }
 
     .review-about .about-data {
@@ -417,7 +425,6 @@
     padding: 16px;
     position: absolute;
     left: 0px;
-    z-index: 1;
 }
 
 .review-about .about-center h1 {
