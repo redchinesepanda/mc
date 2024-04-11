@@ -47,7 +47,7 @@ class ToolSitemap
 	];
 
 	const PAGE_TYPE = [
-		'sitemap' => 'sitemap',
+		'sitemap' => 'legal-sitemap',
 	];
 
 	public static function check_page_type()

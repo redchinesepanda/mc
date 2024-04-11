@@ -24,55 +24,55 @@ class WPMLLanguageMismatch
 		// ] );
 	}
 
-	const EXCEPTIONS = [
-		'sitemap',
-	];
+	// const EXCEPTIONS = [
+	// 	'sitemap',
+	// ];
 
-	public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
-	{
-		// LegalDebug::debug( [
-		// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
+	// public static function fix_language_mismatch( $item_id, $uri_parts, $is_term = false )
+	// {
+	// 	// LegalDebug::debug( [
+	// 	// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 
-		// 	'item_id' => $item_id,
+	// 	// 	'item_id' => $item_id,
 
-        //     'uri_parts' => $uri_parts,
+    //     //     'uri_parts' => $uri_parts,
 
-        //     'is_term' => $is_term,
-		// ] );
+    //     //     'is_term' => $is_term,
+	// 	// ] );
 
-		if ( !empty( $uri_parts[ 'uri' ] ) )
-		{
-			// LegalDebug::debug( [
-			// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
+	// 	if ( !empty( $uri_parts[ 'uri' ] ) )
+	// 	{
+	// 		// LegalDebug::debug( [
+	// 		// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 	
-			// 	'uri_parts' => $uri_parts[ 'uri' ],
-			// ] );
+	// 		// 	'uri_parts' => $uri_parts[ 'uri' ],
+	// 		// ] );
 
-			if ( !in_array( $uri_parts[ 'uri' ], self::EXCEPTIONS ) )
-			{
-				return 0;
+	// 		if ( !in_array( $uri_parts[ 'uri' ], self::EXCEPTIONS ) )
+	// 		{
+	// 			return 0;
 
-				// return $item_id;
-			}
-		}
+	// 			// return $item_id;
+	// 		}
+	// 	}
 
-		$post = get_post( $item_id );
+	// 	$post = get_post( $item_id );
 
-		if ( $post )
-		{
-			$url = get_post_permalink( $post->ID );
+	// 	if ( $post )
+	// 	{
+	// 		$url = get_post_permalink( $post->ID );
 
-			// LegalDebug::debug( [
-			// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
+	// 		// LegalDebug::debug( [
+	// 		// 	'WPMLLanguageMismatch' => 'fix_language_mismatch',
 	
-			// 	'url' => $url,
-			// ] );
-		}
+	// 		// 	'url' => $url,
+	// 		// ] );
+	// 	}
 
-		return $item_id;
+	// 	return $item_id;
 
-		// return 0;
-	}
+	// 	// return 0;
+	// }
 
 	// {
 	// 	$exceptions = [
