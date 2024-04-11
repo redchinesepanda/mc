@@ -133,14 +133,18 @@ class MultisiteMeta
 			'ID' => $post[ 'ID' ],
 
 			'post_moved' => $post_moved,
-
-			'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
 		] );
 
 		// if ( array_key_exists( $blog_id, $post_moved ) )
 		
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
+			LegalDebug::debug( [
+				'MultisiteMain' => 'check_post_moved',
+	
+				'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
+			] );
+
 			if ( get_post_status( $post_moved[ $blog_id ] ) )
 			{
 				return $post_moved[ $blog_id ];
