@@ -427,6 +427,10 @@
     left: 0px;
 }
 
+.review-about .achievement-tooltip-close::before {
+    margin-left: auto;
+}
+
 .review-about .about-center h1 {
     padding-bottom: 0px;
     margin-top: 0px;
@@ -616,13 +620,24 @@
     line-height: 20px;
 }
 
+.review-about .achievement-tooltip-close::before,
+.review-about .about-rating::before {
+    font-family: var(--legal-font-icons);
+}
+
+.review-about .achievement-tooltip-close::before {
+    content: '\F10E';
+    font-size: 18px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
 .review-about .about-rating {
     font-weight: 600;
 }
 
 .review-about .about-rating::before {
     content: '\F10F';
-    font-family: var(--legal-font-icons);
     line-height: 24px;
     font-size: 24px;
 }
