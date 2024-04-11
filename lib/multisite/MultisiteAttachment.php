@@ -211,6 +211,8 @@ class MultisiteAttachment
 			'post_moved_id' => $post_moved_id,
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+
+			'get_post_status' => get_post_status( $post_moved_id ),
 		] );
 
 		if ( ! $post_moved_id || ! MultisiteMeta::check_moved( $post_moved_id ) )
