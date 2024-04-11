@@ -185,7 +185,7 @@ class MultisiteAttachment
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
 
-			'blog_id' => $post_id,
+			'blog_id' => $blog_id,
 
 			'inserted_attachment_id' => $inserted_attachment_id,
 		] );
