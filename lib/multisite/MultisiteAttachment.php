@@ -123,7 +123,7 @@ class MultisiteAttachment
 				'post_status' => 'inherit',
 			],
 
-			$new_file
+			$path_moved
 		);
 
 		if ( ! is_wp_error( $inserted_attachment_id ) )
