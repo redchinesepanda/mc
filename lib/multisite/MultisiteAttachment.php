@@ -292,7 +292,7 @@ class MultisiteAttachment
 	
 	public static function add_attachment_and_data( $blog_id, $post )
 	{
-		$path = self::get_path( $attachment_id );
+		$path = self::get_path( $post[ 'ID' ] );
 
 		MultisiteBlog::set_blog( $blog_id );
 
