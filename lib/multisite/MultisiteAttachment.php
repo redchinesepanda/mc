@@ -155,6 +155,8 @@ class MultisiteAttachment
 			'new_file' => $new_file,
 
 			'new_file_url' => $new_file_url,
+
+			'sideload' => $sideload,
 		] );
 
 		if( false === $sideload )
