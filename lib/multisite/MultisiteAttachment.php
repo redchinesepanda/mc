@@ -110,18 +110,26 @@ class MultisiteAttachment
 	{
 		$url_moved = sprintf( self::PATTERNS[ 'url' ], $uploads[ 'url' ], $unique_filename );
 
+		$attachment = [
+			'guid' => $url_moved,
+
+			'post_mime_type' => self::get_mime_type( $path_moved ),
+			
+			'post_title' => self::get_title( $unique_filename ),
+
+			'post_content' => '',
+
+			'post_status' => 'inherit',
+		];
+
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'insert_attachment',
+
+			'attachment' => $attachment,
+		] );
+
 		$inserted_attachment_id = wp_insert_attachment(
-			[
-				'guid' => $url_moved,
-
-				'post_mime_type' => self::get_mime_type( $path_moved ),
-				
-				'post_title' => self::get_title( $unique_filename ),
-
-				'post_content' => '',
-
-				'post_status' => 'inherit',
-			],
+			$attachment,
 
 			$path_moved
 		);
