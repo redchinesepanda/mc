@@ -74,7 +74,7 @@ class MultisiteAttachment
 
 						'attachment_id' => $attachment_id,
 
-						'post' => $post->ID,
+						'post' => $post[ 'ID' ],
 
 						// 'path' => $path,
 					] );
