@@ -140,7 +140,9 @@ class MultisiteMeta
 				'get_post_status' => get_post_status( $post_moved[ $blog_id ] ),
 			] );
 
-			if ( get_post_status( $post_moved[ $blog_id ] ) )
+			// if ( get_post_status( $post_moved[ $blog_id ] ) )
+			
+			if ( get_post_status( $post_moved[ $blog_id ] ) || is_attachment( $post_moved[ $blog_id ] ) )
 			{
 				return $post_moved[ $blog_id ];
 			}
