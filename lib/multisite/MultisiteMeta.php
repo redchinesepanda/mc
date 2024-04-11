@@ -158,16 +158,16 @@ class MultisiteMeta
 		
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
-			LegalDebug::debug( [
-				'MultisiteMain' => 'check_post_moved',
+			// LegalDebug::debug( [
+			// 	'MultisiteMain' => 'check_post_moved',
 	
-				'check_moved' => self::check_moved( $post ),
-			] );
+			// 	'check_moved' => self::check_moved( $post ),
+			// ] );
 
-			if ( self::check_moved( $post ) )
-			{
+			// if ( self::check_moved( $post ) )
+			// {
 				return $post_moved[ $blog_id ];
-			}
+			// }
 		}
 
 		return false;
