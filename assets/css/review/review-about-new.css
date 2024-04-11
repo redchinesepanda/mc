@@ -274,6 +274,7 @@
 .review-about .achievement-name {
     display: flex;
     align-items: center;
+    column-gap: 8px;
 }
 
 .review-about .about-right,
