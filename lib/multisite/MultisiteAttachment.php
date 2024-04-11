@@ -45,7 +45,7 @@ class MultisiteAttachment
 						'post' => $post[ 'ID' ],
 					] );
 					
-					if ( $inserted_attachment_id = $self::add_attachment_and_data( $blog_id, $post ) )
+					if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
 					{
 						MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
 					}
