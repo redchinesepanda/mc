@@ -192,7 +192,7 @@ class MultisiteAttachment
 			LegalDebug::die( [
 				'MultisiteAttachment' => 'add_attachment_and_data',
 	
-				'attachment_id' => $attachment_id,
+				'inserted_attachment_id' => $inserted_attachment_id,
 			] );
 
 			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
