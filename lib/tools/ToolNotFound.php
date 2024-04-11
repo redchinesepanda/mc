@@ -11,9 +11,9 @@ class ToolNotFound
 
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-		add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
+		// add_action( 'template_redirect', [ $handler, 'set_not_found' ] );
 
 		// [legal-restricted][/legal-restricted]
 
