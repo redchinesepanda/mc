@@ -115,6 +115,7 @@
 	background-size: contain;
 	border-radius: 50%;
 	border: 2px solid var(--Base-base-09);
+	box-sizing: border-box;
 }
 
 #theme-bottom-section .legal-author .author-photo::after {
