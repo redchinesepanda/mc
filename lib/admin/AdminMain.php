@@ -13,7 +13,7 @@ require_once( 'AdminDequeue.php' );
 class AdminMain
 {
     const TEXT = [
-        'test-site' => 'This is test site',
+        'test-site' => 'This is a test site',
 
         'production-site' => 'This is the production site',
 
