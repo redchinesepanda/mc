@@ -137,7 +137,7 @@ class MultisiteAttachment
 
 		// copy the media file into another multisite subsite uploads directory
 
-		$sideload = @copy( $filename, $new_file );
+		$sideload = @copy( $path, $new_file );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
@@ -230,7 +230,7 @@ class MultisiteAttachment
 	// {
 
 	// 	// get image path unscaled or you can use get_attached_file() if it is not necessary to copy full-sized originals 
-	// 	// $file = ;
+	// 	// $file = wp_get_original_image_path( $attachment_id );
 
 	// 	// exit the function if an attachment with this specific ID doesn't exist
 	// 	// if( ! $file ) {
