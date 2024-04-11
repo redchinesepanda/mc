@@ -40,7 +40,7 @@ class AdminNotice
     }
 
     const PATTERN = [
-        'pair' => '%s$1: %s$2',
+        'pair' => '%1$s: %2$s',
     ];
 
 	public static function get()
