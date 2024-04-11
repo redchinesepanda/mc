@@ -25,6 +25,8 @@ class MultisiteMeta
 			'items' => get_field( self::FIELDS_TABS[ 'items' ] ),
 
 			'filter' => get_field( self::FIELDS_COMPILATION_FILTER[ 'filter' ] ),
+
+			'get_post_moved' => self::get_post_moved( null ),
 		] );
 	}
 
@@ -83,22 +85,7 @@ class MultisiteMeta
 
 	public static function add_attachment_meta( $attachment_id )
 	{
-		// make sure this file is included, because wp_generate_attachment_metadata() depends on it
-		
-		// require_once( ABSPATH . 'wp-admin/includes/image.php' );
-		
-		// update the attachment metadata.
-
-		// if ( empty( $filename ) )
-		// {
-		// 	$filename = get_attached_file( $attachment_id );
-		// }
-
-		// $metadata = wp_generate_attachment_metadata( $attachment_id, $filename );
-		
 		return wp_update_attachment_metadata( $attachment_id, self::add_attachment_metadata( $attachment_id ) );
-
-		// return true;
 	}
 
 	public static function get_post_moved( $post_id )
