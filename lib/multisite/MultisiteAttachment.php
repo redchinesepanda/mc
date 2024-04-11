@@ -69,7 +69,7 @@ class MultisiteAttachment
 				{
 					// $path = self::get_path( $attachment_id );
 
-					LegalDebug::die( [
+					LegalDebug::debug( [
 						'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
 						'attachment_id' => $attachment_id,
@@ -187,6 +187,12 @@ class MultisiteAttachment
 
 	public static function add_attachment( $post, $path, $blog_id )
 	{
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'add_attachment',
+
+			'check_post_moved' => self::check_post_moved( $post, $blog_id ),
+		] );
+
 		if ( ! self::check_post_moved( $post, $blog_id ) )
 		{
 			$uploads = wp_upload_dir();
