@@ -16,15 +16,25 @@ class BilletAchievement
         'achievement' => 'billet_achievement'
     ];
 
-    const TYPE_DISABLED = 'legal-disabled';
+    // const TYPE_DISABLED = 'legal-disabled';
 
-    const TYPE_IMAGE = 'legal-image';
+    // const TYPE_IMAGE = 'legal-image';
 
-    const TYPE_BACKGROUND = 'legal-background';
+    // const TYPE_BACKGROUND = 'legal-background';
 
     // const TYPE = [
     //     'about' => 'legal-about',
     // ];
+
+    // self::TYPE[ 'image' ]
+
+    const TYPE = [
+        'disabled' => 'legal-disabled',
+
+        'image' => 'legal-image',
+
+        'background' => 'legal-background',
+    ];
 
     const FIELD = [
         'feture-achievement' => 'billet-feture-achievement',
@@ -50,7 +60,9 @@ class BilletAchievement
             return $filter[ 'achievement' ];
         }
 
-        return BilletAchievement::TYPE_IMAGE;
+        // return BilletAchievement::TYPE_IMAGE;
+        
+        return self::TYPE[ 'image' ];
     }
     
     public static function get( $title )
@@ -185,7 +197,9 @@ class BilletAchievement
     {
         if ( !empty( $filter[ 'achievement' ] ) )
         {
-            return $filter[ 'achievement' ] == self::TYPE_DISABLED;
+            // return $filter[ 'achievement' ] == self::TYPE_DISABLED;
+            
+            return $filter[ 'achievement' ] == self::TYPE[ 'disabled' ];
         }
         
         return false;
