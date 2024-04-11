@@ -18,21 +18,24 @@ class ToolRewrite
 
 	public static function register_functions()
 	{
-		$handler = new self();
-
-		add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
-
-		// add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
-
-		// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
-
-		// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
-
-		// add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
-
-		// add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
-
-		// add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
+		if ( LegalMain::check_not_admin() )
+		{
+			$handler = new self();
+	
+			add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
+	
+			// add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
+	
+			// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
+	
+			// add_filter( 'post_type_link', [ $handler, 'review_link' ], 10, 4 );
+	
+			// add_filter( 'rewrite_rules_array', [ $handler, 'mmp_rewrite_rules' ] );
+	
+			// add_filter( 'post_type_link', [ $handler, 'filter_post_type_link' ], 10, 2 );
+	
+			// add_filter( 'wp_unique_post_slug', [ $handler, 'wpse313422_non_unique_post_slug' ], 10, 6 );
+		}
 	}
 
 	public static function debug_404_rewrite_dump( &$wp )
