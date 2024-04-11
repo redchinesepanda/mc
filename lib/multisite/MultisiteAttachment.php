@@ -181,6 +181,8 @@ class MultisiteAttachment
 
 		$path = self::get_path( $post[ 'ID' ] );
 
+		MultisiteBlog::set_blog( $blog_id );
+
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment_and_data',
 
@@ -190,8 +192,6 @@ class MultisiteAttachment
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 		] );
-
-		MultisiteBlog::set_blog( $blog_id );
 
 		if ( ! $post_moved_id || ! MultisiteMeta::check_moved( $post_moved_id ) )
 		{
