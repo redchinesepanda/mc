@@ -185,6 +185,10 @@ class MultisiteAttachment
 			'MultisiteAttachment' => 'add_attachment_and_data',
 
 			'path' => $path,
+
+			'post_moved_id' => $post_moved_id,
+
+			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 		] );
 
 		MultisiteBlog::set_blog( $blog_id );
