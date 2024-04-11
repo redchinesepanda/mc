@@ -24,7 +24,7 @@ class ToolRewrite
 	
 			add_action( 'parse_request', [ $handler, 'debug_404_rewrite_dump' ] );
 	
-			// add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
+			add_action( 'template_redirect', [ $handler, 'debug_404_template_redirect' ], 99999 );
 	
 			// add_filter ( 'template_include', [ $handler, 'debug_404_template_dump' ] );
 	
@@ -81,6 +81,32 @@ class ToolRewrite
 		// global $wp_the_query;
 		// echo '<h2>the query</h2>';
 		// echo var_export( $wp_the_query, true );
+	}
+
+	public static function debug_404_template_redirect()
+	{
+		global $wp_filter;
+
+		LegalDebug::debug( [
+			'template-redirect-filters' => var_export( $wp_filter[current_filter()], true ),
+		] );
+
+		// echo '<h2>template redirect filters</h2>';
+		// echo var_export( $wp_filter[current_filter()], true );
+	}
+
+	public static function debug_404_template_dump( $template )
+	{ 
+		LegalDebug::debug( [
+			'template file selected' => var_export( $template, true ),
+		] );
+
+		// echo '<h2>template file selected</h2>';
+		// echo var_export( $template, true );
+		
+		// echo '</pre>';
+		
+		exit();
 	}
 
 	// public static function review_link( $post_link, $post, $leavename, $sample )
