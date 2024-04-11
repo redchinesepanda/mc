@@ -115,7 +115,7 @@ class MultisiteMeta
 			'updated_meta_value' => $updated_meta_value,
 		] );
 
-		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $meta_value );
+		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_meta_value );
 	}
 
 	public static function check_post( $id )
