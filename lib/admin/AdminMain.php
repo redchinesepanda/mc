@@ -12,6 +12,16 @@ require_once( 'AdminDequeue.php' );
 
 class AdminMain
 {
+    const TEXT = [
+        'test-site' => 'This is test site',
+
+        'production-site' => 'This is the production site',
+
+        'db-name' => 'DB_NAME',
+
+        'db-user' => 'DB_USER',
+    ];
+
     const CSS = [
         'admin-wpml' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/admin/admin-wpml.css',

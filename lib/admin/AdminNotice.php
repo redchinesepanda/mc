@@ -29,14 +29,28 @@ class AdminNotice
 		echo self::render();
 	}
 
+	public static function get_message()
+    {
+        if ( LegalHosts::check_host_production() )
+        {
+            return ToolLoco::translate( AdminMain::TEXT[ 'production-site' ] );
+        }
+
+        return ToolLoco::translate( AdminMain::TEXT[ 'test-site' ] );
+    }
+
+    const PATTERN = [
+        'pair' => '%s$1: %s$2',
+    ];
+
 	public static function get()
     {
         return  [
-            'message' => __( 'This is test tite', ToolLoco::TEXTDOMAIN ) . ': ' . get_site_url(),
+            'message' => sprintf( self::PATTERN[ 'pair' ], self::get_message(), get_site_url() ),
 
-            'name' => __( 'DB_NAME', ToolLoco::TEXTDOMAIN ) . ': ' . DB_NAME,
+            'name' => sprintf( self::PATTERN[ 'pair' ], ToolLoco::translate( AdminMain::TEXT[ 'db-name' ] ), DB_NAME ),
 
-            'user' => __( 'DB_USER', ToolLoco::TEXTDOMAIN ) . ': ' . DB_USER,
+            'user' => sprintf( self::PATTERN[ 'pair' ], ToolLoco::translate( AdminMain::TEXT[ 'db-user' ] ), DB_USER ),
         ];
     }
 	
