@@ -133,6 +133,11 @@ class MultisiteMeta
 	// 	return is_attachment( $id );
 	// }
 
+	public static function check_not_moved( $id )
+	{
+		return ! self::check_moved( $id );
+	}
+
 	public static function check_moved( $id )
 	{
 		// return self::check_post( $id )

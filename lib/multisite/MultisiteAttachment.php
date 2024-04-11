@@ -212,12 +212,12 @@ class MultisiteAttachment
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 
-			// 'get_post_status' => get_post_status( $post_moved_id ),
+			'get_post_status' => check_not_moved( $post_moved_id ),
 			
-			'get_post_status-false' => get_post_status( false ),
+			'get_post_status-false' => check_not_moved( false ),
 		] );
 
-		if ( ! $post_moved_id || ! MultisiteMeta::check_moved( $post_moved_id ) )
+		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
 		{
 			if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id ) )
 			{
