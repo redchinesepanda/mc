@@ -187,7 +187,7 @@ class MultisiteAttachment
 
 	public static function add_attachment( $post, $path, $blog_id )
 	{
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
 
 			'check_post_moved' => self::check_post_moved( $post, $blog_id ),
@@ -293,6 +293,12 @@ class MultisiteAttachment
 	public static function add_attachment_and_data( $blog_id, $post )
 	{
 		$path = self::get_path( $post[ 'ID' ] );
+
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'add_attachment_and_data',
+
+			'path' => $path,
+		] );
 
 		MultisiteBlog::set_blog( $blog_id );
 
