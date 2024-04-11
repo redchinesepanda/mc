@@ -63,17 +63,25 @@ class MultisiteAttachment
 			foreach( $object_ids as $attachment_id )
 			{
 				// for each media selected
-				if ( $path = self::get_path( $attachment_id ) )
+				// if ( $path = self::get_path( $attachment_id ) )
+				
+				if ( $post = MultisitePost::get_post( $attachment_id ) )
 				{
-					LegalDebug::debug( [
+					// $path = self::get_path( $attachment_id );
+
+					LegalDebug::die( [
 						'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
 						'attachment_id' => $attachment_id,
 
-						'path' => $path,
+						'post' => $post->ID,
+
+						// 'path' => $path,
 					] );
 
-					self::add_attachment_and_data( $blog_id, $path );
+					// self::add_attachment_and_data( $blog_id, $post, $path );
+					
+					self::add_attachment_and_data( $blog_id, $post );
 				}
 				// if( $attachment = self::mc_copy_attachment_to_blog( $attachment_id, $blog_id ) )
 				// {
@@ -118,61 +126,55 @@ class MultisiteAttachment
 		return mime_content_type( $url );
 	}
 
-	public static function get_title( $filename )
+	public static function get_title( $path, $uploads )
 	{
-		return preg_replace( '/\.[^.]+$/', '', $filename );
-	}
-
-	public static function add_attachment( $path, $blog_id )
-	{
-		$uploads = wp_upload_dir();
-
 		$basename = basename( $path );
 
 		$filename = wp_unique_filename( $uploads[ 'path' ], $basename );
 
+		return preg_replace( '/\.[^.]+$/', '', $filename );
+	}
+	
+	public static function check_post_moved( $post, $blog_id )
+	{
+		return MultisiteMeta::check_post_moved( $post, $blog_id );
+	}
+
+	public static function copy_file( $path, $uploads )
+	{
 		$new_file = $uploads[ 'path' ] . "/$filename";
-
-		$new_file_url = $uploads[ 'url' ] . "/$filename";
-
-		// copy the media file into another multisite subsite uploads directory
 
 		$sideload = @copy( $path, $new_file );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment',
-
-			'path' => $path,
-
-			'blog_id' => $blog_id,
-
-			'uploads' => $uploads,
-
-			'basename' => $basename,
-
-			'filename' => $filename,
-
-			'new_file' => $new_file,
-
-			'new_file_url' => $new_file_url,
-
-			'sideload' => $sideload,
-		] );
-
-		if( false === $sideload )
+		if ( $sideload )
 		{
-			return false;
+			return $new_file;
 		}
 
-		// it is time to insert media file into media gallery
+		return '';
+	}
 
-		$inserted_attachment_id = wp_insert_attachment(
+	public static function insert_attachment( $path, $uploads, $new_file )
+	{
+		// $uploads = wp_upload_dir();
+
+		$new_file_url = $uploads[ 'url' ] . "/$filename";
+
+		// $new_file = $uploads[ 'path' ] . "/$filename";
+
+		// $basename = basename( $path );
+
+		// $filename = wp_unique_filename( $uploads[ 'path' ], $basename );
+
+		wp_insert_attachment(
 			[
 				'guid' => $new_file_url,
 
 				'post_mime_type' => self::get_mime_type( $new_file ),
 
-				'post_title' => self::get_title( $filename ),
+				// 'post_title' => self::get_title( $filename ),
+				
+				'post_title' => self::get_title( $path, $uploads ),
 
 				'post_content' => '',
 
@@ -181,30 +183,114 @@ class MultisiteAttachment
 
 			$new_file
 		);
+	}
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment',
-
-			'blog_id' => $blog_id,
-
-			'inserted_attachment_id' => $inserted_attachment_id,
-		] );
-
-		if ( ! is_wp_error( $inserted_attachment_id ) )
+	public static function add_attachment( $post, $path, $blog_id )
+	{
+		if ( ! self::check_post_moved( $post, $blog_id ) )
 		{
-			return $inserted_attachment_id;
+			$uploads = wp_upload_dir();
+
+			$new_file = self::copy_file( $path, $uploads );
+
+			if ( ! empty( $new_file ) )
+			{
+				$inserted_attachment_id = self::insert_attachment( $path, $uploads, $new_file );
+
+				LegalDebug::debug( [
+					'MultisiteAttachment' => 'add_attachment',
+
+					'blog_id' => $blog_id,
+
+					'inserted_attachment_id' => $inserted_attachment_id,
+				] );
+
+				if ( ! is_wp_error( $inserted_attachment_id ) )
+				{
+					return $inserted_attachment_id;
+				}
+			}
 		}
 
-		return 0;
+		return false;
+
+		// $basename = basename( $path );
+
+		// $filename = wp_unique_filename( $uploads[ 'path' ], $basename );
+
+		// $new_file = $uploads[ 'path' ] . "/$filename";
+
+		// $new_file_url = $uploads[ 'url' ] . "/$filename";
+
+		// copy the media file into another multisite subsite uploads directory
+
+		// $sideload = @copy( $path, $new_file );
+		
+		// $sideload = self::copy_file( $path, $uploads );
+
+		// if ( ! empty( $sideload ) )
+		// {
+			
+		// }
+
+
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'add_attachment',
+
+		// 	'path' => $path,
+
+		// 	'blog_id' => $blog_id,
+
+		// 	'uploads' => $uploads,
+
+		// 	'basename' => $basename,
+
+		// 	'filename' => $filename,
+
+		// 	'new_file' => $new_file,
+
+		// 	'new_file_url' => $new_file_url,
+
+		// 	'sideload' => $sideload,
+		// ] );
+
+		// if( false === $sideload )
+		// {
+		// 	return false;
+		// }
+
+		// it is time to insert media file into media gallery
+
+		// $inserted_attachment_id = wp_insert_attachment(
+		// 	[
+		// 		'guid' => $new_file_url,
+
+		// 		'post_mime_type' => self::get_mime_type( $new_file ),
+
+		// 		'post_title' => self::get_title( $filename ),
+
+		// 		'post_content' => '',
+
+		// 		'post_status' => 'inherit',
+		// 	],
+
+		// 	$new_file
+		// );
+
+		// return 0;
 	}
 
 	// public static function add_attachment_and_data( $blog_id, $path, $post_terms, $post_meta, $post_fields )
 	
-	public static function add_attachment_and_data( $blog_id, $path )
+	// public static function add_attachment_and_data( $blog_id, $post, $path )
+	
+	public static function add_attachment_and_data( $blog_id, $post )
 	{
+		$path = self::get_path( $attachment_id );
+
 		MultisiteBlog::set_blog( $blog_id );
 
-		$attachment_id = self::add_attachment( $path, $blog_id );
+		$attachment_id = self::add_attachment( $post, $path, $blog_id );
 
 		LegalDebug::die( [
 			'MultisiteAttachment' => 'add_attachment_and_data',
@@ -213,8 +299,12 @@ class MultisiteAttachment
 		] );
 
 		// if ( $attachment_id = self::add_attachment( $path, $blog_id ) )
+		
+		if ( $attachment_id )
 		{
 			MultisiteMeta::add_attachment_meta( $attachment_id );
+
+			MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
 
 			LegalDebug::die( [
 				'MultisiteAttachment' => 'add_attachment_and_data',
@@ -224,6 +314,11 @@ class MultisiteAttachment
 		}
 
 		MultisiteBlog::restore_blog();
+
+		if ( $attachment_id )
+		{
+			MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $attachment_id );
+		}
 	}
 
 	// public static function mc_copy_attachment_to_blog( $attachment_id, $blog_id )
