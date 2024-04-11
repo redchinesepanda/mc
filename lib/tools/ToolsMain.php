@@ -62,8 +62,6 @@ class ToolsMain
         ToolSitemapXML::register();
 
         // ToolRobots::register();
-        
-        ToolRewrite::register();
     }
 
     public static function register_functions()
@@ -95,6 +93,8 @@ class ToolsMain
         ToolRobots::register();
 
         ToolSitemapXML::register_functions();
+        
+        ToolRewrite::register_functions();
     }
 }
 
