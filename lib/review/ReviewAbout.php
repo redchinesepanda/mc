@@ -235,7 +235,7 @@ class ReviewAbout
 
     public static function get_name( $group, $mode, $bonus_exception )
     {
-        // заккоментил Калабин. Проверка вывода названия бонуса в сайдбаре
+        // заккоментил Калабин. Проверка вывода названия бонуса в сайдбаре 
         // if ( $mode == 'mini' || $bonus_exception )
         if ( $mode == 'mini' && $bonus_exception )
         {
