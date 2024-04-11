@@ -137,6 +137,22 @@ class MultisiteAttachment
 
 		$sideload = @copy( $file, $new_file );
 
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'add_attachment',
+
+			'path' => $path,
+
+			'blog_id' => $blog_id,
+
+			'uploads' => $uploads,
+
+			'filename' => $filename,
+
+			'new_file' => $new_file,
+
+			'new_file_url' => $new_file_url,
+		] );
+
 		if( false === $sideload )
 		{
 			return false;
