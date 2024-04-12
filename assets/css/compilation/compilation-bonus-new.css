@@ -94,6 +94,11 @@
 	display: block;
 }
 
+.legal-compilation-bonus .peculiarity-bonys-link[ href='' ],
+.legal-compilation-bonus .legal-compilation-button[ href='' ] {
+	pointer-events: none;
+}
+
 /* Width and Height */
 
 .legal-compilation-bonus .legal-compilation-logo {
