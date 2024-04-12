@@ -32,6 +32,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
+		this.querySelectorAll( selectors.tooltip ).forEach( prepareClose, element );
+
 		element.addEventListener( 'click', toggleModal, false );
 	}
 
