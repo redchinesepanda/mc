@@ -289,6 +289,15 @@ class MultisitePost
 
 			'posts' => $posts,
 		] );
+
+		if ( count( $posts ) == 1 )
+		{
+			$post = array_shift( $posts );
+
+			return $post->ID;
+		}
+
+		return false;
 	}
 }
 
