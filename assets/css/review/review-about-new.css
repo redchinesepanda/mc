@@ -47,7 +47,8 @@
     
     /* .moved-bonus, */
 
-    .sticky-bonus {
+    .sticky-bonus,
+    .review-about .achievement-tooltip {
         animation: myAnim 0.8s ease 0s 1 normal forwards;
     }
 
