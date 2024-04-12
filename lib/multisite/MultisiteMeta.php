@@ -188,12 +188,12 @@ class MultisiteMeta
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'check_post_moved',
+
+			'blog_id' => $blog_id,
 			
 			'ID' => $post[ 'ID' ],
 
 			'post_moved' => $post_moved,
-
-			'blog_id' => $blog_id,
 		] );
 
 		// if ( array_key_exists( $blog_id, $post_moved ) )
