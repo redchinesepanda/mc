@@ -111,7 +111,7 @@ class MultisitePost
 
 		$post_moved_id = MultisiteMeta::get_moved( $post, $blog_id );
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisitePost' => 'add_post_and_data',
 
 			'post_moved_id' => $post_moved_id,
@@ -129,7 +129,7 @@ class MultisitePost
 
 				MultisiteACF::add_fields( $inserted_post_id, $post_fields );
 
-				// LegalDebug::die( [
+				// LegalDebug::debug( [
 				// 	'MultisitePost' => 'add_post_and_data',
 
 				// 	'get_fields' => MultisiteACF::get_fields( $inserted_post_id ),
