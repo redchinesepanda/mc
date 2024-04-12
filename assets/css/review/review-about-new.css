@@ -293,16 +293,17 @@
     column-gap: 8px;
 }
 
-.review-about .achievement-tooltip {
-    flex-wrap: wrap;
-}
-
-.review-about .achievement-tooltip.legal-active {
+.review-about .achievement-tooltip-backgroundp.legal-active {
     display: flex;
 }
 
-.review-about .achievement-tooltip:not( .legal-active ) {
+.review-about .achievement-tooltip-background:not( .legal-active ) {
     display: none;
+}
+
+.review-about .achievement-tooltip {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .review-about .about-right,

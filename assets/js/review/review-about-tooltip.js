@@ -51,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 		tooltipClose: '.review-about .achievement-tooltip-close',
 
-		tooltip: '.review-about .achievement-tooltip',
+		tooltip: '.review-about .achievement-tooltip-background',
 
 		aboutAchievement: '.review-about .about-achievement',
 
