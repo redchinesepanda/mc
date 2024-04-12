@@ -65,7 +65,7 @@ class MultisiteSync
 			LegalDebug::die( [
 				'MultisiteSync' => 'set_attachments',
 
-				'field' => $field,
+				'origin_post_id' => $origin_post_id,
 			] );
 		}
 
