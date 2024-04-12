@@ -84,6 +84,12 @@ class MultisiteSync
 		{
 			if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
+				LegalDebug::debug( [
+					'MultisiteSync' => 'set_attachments',
+	
+					'origin_post_id' => $origin_post_id,
+				] );
+
 				if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
 				{
 					MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
@@ -94,66 +100,12 @@ class MultisiteSync
 						'post_moved_id' => $post_moved_id,
 					] );
 				}
-	
-				// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
-				// {
-				// 	LegalDebug::debug( [
-				// 		'MultisiteSync' => 'set_attachments',
-			
-				// 		'post_moved_id' => $post_moved_id,
-				// 	] );
-				// }
-	
-				LegalDebug::debug( [
-					'MultisiteSync' => 'set_attachments',
-	
-					'origin_post_id' => $origin_post_id,
-				] );
 			}
 		}
 
 		LegalDebug::die( [
 			'MultisiteSync' => 'set_attachments',
 		] );
-
-		// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
-		// {
-
-		// }
-
-        // if ( self::POST_TYPE[ 'billet' ] == $post->post_type )
-        // {
-            // $args = 0;
-
-            // $about = get_field( self::GROUP[ 'about' ], $post_id );
-
-            // if ( $about )
-            // {
-            //     if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
-            //     {
-            //         $brands = self::get_brand( $title );
-
-            //         // LegalDebug::die( [
-            //         //     'ACFBillet' => 'billet_set_brand',
-
-            //         //     'brands' => $brands,
-            //         // ] );
-
-            //         $args = array_shift( $brands );
-            //     }
-            // }
-
-            // // LegalDebug::die( [
-            // //     'ACFBillet' => 'billet_set_brand',
-
-            // //     'args' => $args,
-            // // ] );
-
-            // if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
-            // {
-            //     update_field( self::GROUP[ 'brand' ], $args, $post_id );
-            // }
-        // }
     }
 }
 
