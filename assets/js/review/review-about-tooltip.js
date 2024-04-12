@@ -42,6 +42,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 	}
 
+
+	// Не оптимизированно, но работает - закрытие по клику на фон. Начало
 	let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
 
 	function checkOpenBackground() {
@@ -56,6 +58,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	closeTooltipsBackground();
+	// Не оптимизированно, но работает - закрытие по клику на фон. Конец
 
 	const classes = {
 		active: 'legal-active',
