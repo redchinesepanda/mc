@@ -10,6 +10,11 @@ class MultisiteACF
 		],
 	];
 
+	public static function update_field( $field_name, $value, $post_id )
+	{
+		return update_field( $field_name, $value, $post_id );
+	}
+
 	public static function get_field_raw( $field_name, $post_id )
 	{
 		return get_field( $field_name, $post_id, false );
