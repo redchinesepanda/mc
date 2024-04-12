@@ -99,6 +99,14 @@ class MultisiteMeta
 
 	public static function set_post_moved_from( $post_id, $origin_post_id )
 	{
+		LegalDebug::debug( [
+			'MultisiteMeta' =>'set_post_moved_from',
+
+			'post_id' => $post_id,
+
+			'origin_post_id' => $origin_post_id,
+		] );
+		
 		update_post_meta( $post_id, self::POST_META[ 'moved-from' ], $origin_post_id );
 	}
 
