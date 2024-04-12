@@ -38,9 +38,9 @@ class MultisiteSync
 		$field_name = sprintf(
 			self::PATTERNS[ 'group-field' ],
 			
-			self::FIELDS[ 'about' ][ 'key' ],
+			self::FIELDS[ 'about' ][ 'name' ],
 
-			self::FIELD_ABOUT[ 'logo' ][ 'key' ]
+			self::FIELD_ABOUT[ 'logo' ][ 'name' ]
 		);
 
 		LegalDebug::debug( [
