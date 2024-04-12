@@ -119,7 +119,7 @@ class MultisiteSync
 			}
 		}
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteSync' => 'set_attachments',
 		] );
     }
