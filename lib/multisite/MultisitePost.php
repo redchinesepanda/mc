@@ -248,6 +248,8 @@ class MultisitePost
 
             'post_type' => self::POST_TYPES,
 
+			'post_status' => [ 'publish', 'inherit' ],
+
             // 'suppress_filters' => 0,
 
             'meta_query' => [
