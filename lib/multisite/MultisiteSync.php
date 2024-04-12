@@ -53,8 +53,8 @@ class MultisiteSync
 
 		if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 		{
-			self::get_post_moved_id( $post_origin_id );
-			
+			MultisitePost::get_post_moved_id( $post_origin_id );
+
 			// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
 			// {
 			// 	LegalDebug::debug( [
