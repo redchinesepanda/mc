@@ -73,29 +73,32 @@ class MultisiteAdmin
 
 	public static function register_functions_admin()
 	{
-		$handler = new self();
-
-		// add bulk actions
-
-		// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
-		
-		self::add_filter_all(
-			self::PATTERNS[ 'bulk-actions' ],
+		if ( MultisiteBlog::check_main_blog() )
+		{
+			$handler = new self();
+	
+			// add bulk actions
+	
+			// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
 			
-			self::get_post_types(),
-			
-			$handler,
-			
-			'mc_bulk_multisite_actions'
-		);
-
-		// show an post notice
-
-		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
-
-		// show an attacment notice
-
-		add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
+			self::add_filter_all(
+				self::PATTERNS[ 'bulk-actions' ],
+				
+				self::get_post_types(),
+				
+				$handler,
+				
+				'mc_bulk_multisite_actions'
+			);
+	
+			// show an post notice
+	
+			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
+	
+			// show an attacment notice
+	
+			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
+		}
 	}
 
 	const DOACTION = [

@@ -8,21 +8,24 @@ class MultisiteAttachment
 
 	public static function register_functions_admin()
 	{
-		$handler = new self();
+		if ( MultisiteBlog::check_main_blog() )
+		{
+			$handler = new self();
 
-		MultisiteAdmin::add_filter_all(
-			MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 
-			MultisiteAdmin::POST_TYPES_ATTACHMENT,
-			
-			$handler,
-			
-			'mc_bulk_action_multisite_handler_attachment',
-			
-			10,
-			
-			3
-		);
+				MultisiteAdmin::POST_TYPES_ATTACHMENT,
+				
+				$handler,
+				
+				'mc_bulk_action_multisite_handler_attachment',
+				
+				10,
+				
+				3
+			);
+		}
 	}
 
 	public static function handle_attachments( $blog_id, $object_ids )
@@ -102,7 +105,7 @@ class MultisiteAttachment
 			$redirect = MultisiteAdmin::redirect_set( $redirect, MultisiteAdmin::QUERY_ARG[ 'attachment-moved' ], count( $object_ids ), $blog_id );
 		}
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
 			'redirect' => $redirect,

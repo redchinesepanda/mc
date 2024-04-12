@@ -40,15 +40,20 @@ class MiltisiteMain
 
 	public static function register_functions_admin()
 	{
-		MultisiteAdmin::register_functions_admin();
-
-		MultisitePost::register_functions_admin();
-
 		MultisiteMeta::register_functions_admin();
 
-		MultisiteAttachment::register_functions_admin();
+		if ( MultisiteBlog::check_main_blog() )
+		{
+			MultisiteAdmin::register_functions_admin();
 
-		MultisiteSync::register_functions_admin();
+			MultisitePost::register_functions_admin();
+
+			MultisiteAttachment::register_functions_admin();
+		}
+		else
+		{
+			MultisiteSync::register_functions_admin();
+		}
 	}
 }
 

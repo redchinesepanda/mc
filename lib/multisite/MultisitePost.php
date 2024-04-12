@@ -22,25 +22,28 @@ class MultisitePost
 
 	public static function register_functions_admin()
 	{
-		$handler = new self();
+		if ( MultisiteBlog::check_main_blog() )
+		{
+			$handler = new self();
 
-		// move or copy posts to blog
+			// move or copy posts to blog
 
-		// MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
-		
-		MultisiteAdmin::add_filter_all(
-			MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			// MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
 			
-			MultisiteAdmin::POST_TYPES_POST,
-			
-			$handler,
-			
-			'mc_bulk_action_multisite_handler',
-			
-			10,
-			
-			3
-		);
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+				
+				MultisiteAdmin::POST_TYPES_POST,
+				
+				$handler,
+				
+				'mc_bulk_action_multisite_handler',
+				
+				10,
+				
+				3
+			);
+		}
 	}
 
 	public static function mc_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
@@ -107,7 +110,7 @@ class MultisitePost
 			$redirect = MultisiteAdmin::redirect_set( $redirect, MultisiteAdmin::QUERY_ARG[ 'posts-moved' ], count( $object_ids ), $blog_id );
 		}
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisitePost' => 'rudr_bulk_action_multisite_handler',
 
 			'redirect' => $redirect,
