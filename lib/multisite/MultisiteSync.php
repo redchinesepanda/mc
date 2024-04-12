@@ -39,6 +39,7 @@ class MultisiteSync
 				'MultisiteSync' => 'set_attachments',
 
 				'field' => $field,
+			] );
 		}
 
 		// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
