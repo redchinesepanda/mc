@@ -18,7 +18,7 @@ class MultisitePost
 		'publish',
 		
 		'inherit',
-	],
+	];
 
 	public static function register_functions_admin()
 	{
