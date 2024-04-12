@@ -203,9 +203,11 @@ class MultisiteAttachment
 	{
 		$inserted_attachment_id = false;
 
+		$origin_post_id = $post[ 'ID' ];
+
 		$post_moved_id = MultisiteMeta::get_moved( $post, $blog_id );
 
-		$path = self::get_path( $post[ 'ID' ] );
+		$path = self::get_path( $origin_post_id );
 
 		MultisiteBlog::set_blog( $blog_id );
 
@@ -235,6 +237,8 @@ class MultisiteAttachment
 			] );
 
 			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
+
+			MultisiteMeta::set_post_moved_from( $inserted_attachment_id, $origin_post_id );
 		}
 			
 		// }
