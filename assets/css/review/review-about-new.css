@@ -340,6 +340,13 @@
 .review-about .achievement-tooltip {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+.review-about .achievement-tooltip-close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .review-about .about-right,
@@ -481,9 +488,9 @@
     padding-left: 16px;
 }
 
-.review-about .achievement-tooltip-close {
+/* .review-about .achievement-tooltip-close {
     margin-left: auto;
-}
+} */
 
 .review-about .about-center h1 {
     padding-bottom: 0px;
