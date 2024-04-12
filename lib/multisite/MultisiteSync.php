@@ -20,6 +20,18 @@ class MultisiteSync
 
 			'key' => 'field_6437df25a65cd',
 		],
+
+		'logo-contrast' => [
+			'name' => 'about-logo-mega',
+
+			'key' => 'field_64c23d34d8c9a',
+		],
+
+		'logo-square' => [
+			'name' => 'about-logo-square',
+
+			'key' => 'field_64490745cce76',
+		],
 	];
 
 	const PATTERNS = [
@@ -100,6 +112,15 @@ class MultisiteSync
 						'post_moved_id' => $post_moved_id,
 					] );
 				}
+	
+				// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
+				// {
+				// 	LegalDebug::debug( [
+				// 		'MultisiteSync' => 'set_attachments',
+			
+				// 		'post_moved_id' => $post_moved_id,
+				// 	] );
+				// }
 			}
 		}
 
