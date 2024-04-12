@@ -100,9 +100,9 @@
         z-index: 1;
     }
 
-   /*  .review-about .achievement-tooltip {
-        top: calc( 36px + 4px );
-    } */
+    .review-about .achievement-tooltip {
+        padding-bottom: 32px;
+    }
 
     .review-about .footer-logo {
         padding-bottom: 4px;
@@ -134,6 +134,10 @@
 
     .review-about .achievement-tooltip-background.legal-active {
         background-color: rgba(0, 0, 0, 0.45);
+    }
+
+     .review-about .achievement-tooltip {
+        border-radius: 12px 12px 0px 0px;
     }
 
     /* Typography */
@@ -194,6 +198,7 @@
         position: absolute;
         left: 0px;
         top: calc( 36px + 4px );
+        padding-bottom: 16px;
     }
 
     .review-about.legal-mode-mini {
@@ -263,6 +268,12 @@
    /*  .review-about .about-achievement div {
         width: 270px;
     } */
+
+    /* Background */
+
+    .review-about .achievement-tooltip {
+        border-radius: 12px;
+    }
 
     /* Typography */
 
@@ -463,7 +474,9 @@
 }
 
 .review-about .achievement-tooltip {
-    padding: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
 .review-about .achievement-tooltip-close {
@@ -545,7 +558,6 @@
 }
 
 .review-about .achievement-tooltip {
-    border-radius: 12px;
     border: 1px solid var(--Base-base-09);
     background: var(--Base-base-01);
 }
