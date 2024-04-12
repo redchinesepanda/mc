@@ -34,6 +34,16 @@ class MultisiteMeta
 		] );
 	}
 
+	public static function get_post_moved_id( $origin_post_id )
+	{
+		if ( $post = get_post( $origin_post_id ) )
+		{
+			return self::get_post_moved( $post->ID, self::POST_META[ 'moved-from' ] );
+		}
+
+		return false;
+	}
+
 	const FILTER_META = [
 		'_tve_js_modules_gutenberg',
 

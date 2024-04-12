@@ -14,6 +14,8 @@ require_once( 'MultisiteACF.php' );
 
 require_once( 'MultisiteAttachment.php' );
 
+require_once( 'MultisiteSync.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -45,6 +47,8 @@ class MiltisiteMain
 		MultisiteMeta::register_functions_admin();
 
 		MultisiteAttachment::register_functions_admin();
+
+		MultisiteSync::register_functions_admin();
 	}
 }
 
