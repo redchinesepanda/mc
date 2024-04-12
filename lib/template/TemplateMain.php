@@ -37,9 +37,22 @@ class TemplateMain
             $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
         }
 
-        return in_array( WPMLMain::current_language(), $current_language );
+        // return in_array( WPMLMain::current_language(), $current_language );
 
-        // return true;
+        return true;
+    }
+
+    public static function check_new()
+    {
+        // return self::check() && self::check_code();
+        
+        // return ToolRestricted::check_domain_restricted()
+            
+        //     // || self::check() && self::check_code();
+            
+        //     || self::check_code();
+
+        return self::check_code();
     }
 
     const DEQUEUE_WP = [
@@ -231,19 +244,6 @@ class TemplateMain
         {
             ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
         }
-    }
-
-    public static function check_new()
-    {
-        // return self::check() && self::check_code();
-        
-        // return ToolRestricted::check_domain_restricted()
-            
-        //     // || self::check() && self::check_code();
-            
-        //     || self::check_code();
-
-        return self::check_code();
     }
 
     public static function check()
