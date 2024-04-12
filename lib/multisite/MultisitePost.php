@@ -94,7 +94,7 @@ class MultisitePost
 
 			'doaction' => $doaction,
 
-			'check_doaction' => self::check_doaction( $doaction ),
+			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
 		] );
 
 		return $redirect;
