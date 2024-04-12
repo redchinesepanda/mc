@@ -11,7 +11,7 @@ class MultisitePost
 		
 		'page',
 		
-		'attacment',
+		'attachment',
 	];
 
 	public static function register_functions_admin()
