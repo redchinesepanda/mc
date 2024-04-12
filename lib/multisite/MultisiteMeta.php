@@ -19,6 +19,8 @@ class MultisiteMeta
 
 	function wp_kama_edit_form_after_title_action( $post )
 	{
+		$post = get_post();
+
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
 
@@ -26,9 +28,9 @@ class MultisiteMeta
 
 			'filter' => get_field( self::FIELDS_COMPILATION_FILTER[ 'filter' ] ),
 
-			'get_post_moved-to' => self::get_post_moved( null ),
+			'get_post_moved-to' => self::get_post_moved( $post->ID ),
 
-			'get_post_moved-from' => self::get_post_moved( null, self::POST_META[ 'moved-from' ] ),
+			'get_post_moved-from' => self::get_post_moved( $post->ID, self::POST_META[ 'moved-from' ] ),
 		] );
 	}
 
@@ -98,7 +100,15 @@ class MultisiteMeta
 		{
 			$meta_key = self::POST_META[ 'moved-to' ];
 		}
-		
+
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved',
+
+			'post_id' => $post_id,
+
+			'meta_key' => $meta_key,
+		] );
+
 		return get_post_meta( $post_id, $meta_key, true );
 	}
 
