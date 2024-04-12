@@ -34,19 +34,9 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
-require_once( 'multisite/MiltisiteMain.php' );
+// require_once( 'multisite/MiltisiteMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
-
-// LegalDebug::debug([
-// 	'LegalMain' => 'init',
-
-//     'get_stylesheet_directory_uri' => get_stylesheet_directory_uri(),
-
-// 	'modify_stylesheet_directory_uri' => MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ),
-// ]);
-
-// define( 'LEGAL_URL', MiltisiteMain::modify_stylesheet_directory_uri( get_stylesheet_directory_uri() ) );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
 
@@ -102,7 +92,7 @@ class LegalMain
 
 			NotionMain::register_functions();
 
-			MiltisiteMain::register_functions_admin();
+			// MiltisiteMain::register_functions_admin();
 		}
 	}
 
