@@ -100,9 +100,9 @@
         z-index: 1;
     }
 
-    .review-about .achievement-tooltip {
+   /*  .review-about .achievement-tooltip {
         top: calc( 36px + 4px );
-    }
+    } */
 
     .review-about .footer-logo {
         padding-bottom: 4px;
@@ -191,6 +191,8 @@
     } */
 
     .review-about .achievement-tooltip {
+        position: absolute;
+        left: 0px;
         top: calc( 36px + 4px );
     }
 
@@ -462,8 +464,6 @@
 
 .review-about .achievement-tooltip {
     padding: 16px;
-    position: absolute;
-    left: 0px;
 }
 
 .review-about .achievement-tooltip-close {
