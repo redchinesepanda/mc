@@ -70,9 +70,54 @@ class MultisiteSync
 		return $field_names;
 	}
 
+	public static function get_origin_post_ids( $post_id, $post )
+	{
+		$origin_post_ids = [];
+
+		$field_names = self::get_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
+
+		foreach ( $field_names as $field_name )
+		{
+			if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
+			{
+				$origin_post_ids[] = $origin_post_id;
+			}
+		}
+
+		return $origin_post_ids;
+	}
+
 	public static function set_attachments( $post_id, $post )
     {
-		$field_names = self::get_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
+		$origin_post_ids = self::get_origin_post_ids( $post_id, $post );
+
+		LegalDebug::debug( [
+			'MultisiteSync' => 'set_attachments',
+
+			'origin_post_ids' => $origin_post_ids,
+		] );
+
+		foreach ( $origin_post_ids as $origin_post_id )
+		{
+			LegalDebug::debug( [
+				'MultisiteSync' => 'set_attachments',
+
+				'origin_post_id' => $origin_post_id,
+			] );
+
+			if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
+			{
+				MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
+
+				LegalDebug::debug( [
+					'MultisiteSync' => 'set_attachments',
+		
+					'post_moved_id' => $post_moved_id,
+				] );
+			}
+		}
+
+		// $field_names = self::get_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
 
 		// $field_name = sprintf(
 		// 	self::PATTERNS[ 'group-field' ],
@@ -82,47 +127,47 @@ class MultisiteSync
 		// 	self::FIELD_ABOUT[ 'logo' ][ 'name' ]
 		// );
 
-		LegalDebug::debug( [
-			'MultisiteSync' => 'set_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteSync' => 'set_attachments',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			// 'field_name' => $field_name,
+		// 	// 'field_name' => $field_name,
 
-			'field_names' => $field_names,
-		] );
+		// 	'field_names' => $field_names,
+		// ] );
 
-		foreach ( $field_names as $field_name )
-		{
-			if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
-			{
-				LegalDebug::debug( [
-					'MultisiteSync' => 'set_attachments',
+		// foreach ( $field_names as $field_name )
+		// {
+		// 	if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
+		// 	{
+		// 		LegalDebug::debug( [
+		// 			'MultisiteSync' => 'set_attachments',
 	
-					'origin_post_id' => $origin_post_id,
-				] );
+		// 			'origin_post_id' => $origin_post_id,
+		// 		] );
 
-				if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
-				{
-					MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
+		// 		if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
+		// 		{
+		// 			MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
 
-					LegalDebug::debug( [
-						'MultisiteSync' => 'set_attachments',
+		// 			LegalDebug::debug( [
+		// 				'MultisiteSync' => 'set_attachments',
 			
-						'post_moved_id' => $post_moved_id,
-					] );
-				}
+		// 				'post_moved_id' => $post_moved_id,
+		// 			] );
+		// 		}
 	
-				// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
-				// {
-				// 	LegalDebug::debug( [
-				// 		'MultisiteSync' => 'set_attachments',
+		// 		// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
+		// 		// {
+		// 		// 	LegalDebug::debug( [
+		// 		// 		'MultisiteSync' => 'set_attachments',
 			
-				// 		'post_moved_id' => $post_moved_id,
-				// 	] );
-				// }
-			}
-		}
+		// 		// 		'post_moved_id' => $post_moved_id,
+		// 		// 	] );
+		// 		// }
+		// 	}
+		// }
 
 		LegalDebug::die( [
 			'MultisiteSync' => 'set_attachments',
