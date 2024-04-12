@@ -85,7 +85,7 @@ class MultisitePost
 					{
 						MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
 
-						// MultisiteAttachment::copy_attachments( $blog_id, $post_id, $post );
+						MultisiteAttachment::copy_attachments( $blog_id, $post_id, $post );
 
 						LegalDebug::debug( [
 							'MultisitePost' => 'mc_bulk_action_multisite_handler',
