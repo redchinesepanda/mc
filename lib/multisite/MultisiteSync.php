@@ -87,6 +87,12 @@ class MultisiteSync
 				if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
 				{
 					MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
+
+					LegalDebug::debug( [
+						'MultisiteSync' => 'set_attachments',
+			
+						'post_moved_id' => $post_moved_id,
+					] );
 				}
 	
 				// if ( $post_moved_id = MultisiteMeta::get_post_moved_id( $origin_post_id ) )
