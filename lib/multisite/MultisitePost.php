@@ -14,7 +14,7 @@ class MultisitePost
 		'attachment',
 	];
 
-	const POST_STATUSES => [
+	const POST_STATUSES = [
 		'publish',
 		
 		'inherit',
