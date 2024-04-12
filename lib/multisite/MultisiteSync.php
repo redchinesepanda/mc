@@ -25,7 +25,7 @@ class MultisiteSync
     {
 		$field_name = self::FIELDS[ 'logo' ][ 'key' ];
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteSync' => 'set_attachments',
 
 			'post_id' => $post_id,
