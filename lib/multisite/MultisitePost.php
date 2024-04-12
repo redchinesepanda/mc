@@ -268,7 +268,9 @@ class MultisitePost
 
 	public static function get_post_moved_id( $origin_post_id )
 	{
-		$posts = get_posts( self::get_post_moved_id_args( $origin_post_id ) );
+		$args = self::get_post_moved_id_args( $origin_post_id );
+		
+		$posts = get_posts(  );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'get_post_moved_id',
