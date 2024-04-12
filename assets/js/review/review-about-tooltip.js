@@ -28,9 +28,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = this.dataset.tooltipSet;
 
-		this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element );
+		/* this.querySelectorAll( selectors.tooltip ).forEach( prepareModal, element ); */
 
-		/* this.querySelectorAll( selectors.tooltip ).forEach( prepareClose, element ); */
+		this.querySelectorAll( selectors.tooltip ).forEach((element)=> {
+			prepareModal( element );
+			prepareClose( element );
+		});
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
