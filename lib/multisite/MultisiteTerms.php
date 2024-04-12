@@ -55,7 +55,7 @@ class MultisiteTerms
 	public static function add_post_terms( $post_id, $result )
 	{
 		// LegalDebug::debug( [
-		// 	'MultisiteMain' => 'add_post_terms',
+		// 	'MultisiteTerms' => 'add_post_terms',
 
 		// 	'post_id' => $post_id,
 
@@ -69,7 +69,7 @@ class MultisiteTerms
 			$object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
 
 			// LegalDebug::debug( [
-			// 	'MultisiteMain' => 'add_post_terms',
+			// 	'MultisitePost' => 'add_post_terms',
 
 			// 	'object_terms' => $object_terms,
 			// ] );

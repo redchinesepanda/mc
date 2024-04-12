@@ -102,7 +102,7 @@ class MultisiteMeta
 		$updated_meta_value = [ $blog_id => $moved_post_id ];
 
 		LegalDebug::debug( [
-			'MultisiteMain' =>'set_post_moved',
+			'MultisiteMeta' =>'set_post_moved',
 
 			'post_id' => $post_id,
 
@@ -154,7 +154,7 @@ class MultisiteMeta
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
 		LegalDebug::debug( [
-			'MultisiteMain' => 'check_post_moved',
+			'MultisiteMeta' => 'check_post_moved',
 			
 			'ID' => $post[ 'ID' ],
 
@@ -168,7 +168,7 @@ class MultisiteMeta
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
 			LegalDebug::debug( [
-				'MultisiteMain' => 'check_post_moved',
+				'MultisiteMeta' => 'check_post_moved',
 	
 				'post_moved_id' => $post_moved[ $blog_id ],
 			] );
@@ -187,7 +187,7 @@ class MultisiteMeta
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
 		LegalDebug::debug( [
-			'MultisiteMain' => 'check_post_moved',
+			'MultisiteMeta' => 'check_post_moved',
 			
 			'ID' => $post[ 'ID' ],
 
@@ -201,7 +201,7 @@ class MultisiteMeta
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
 			// LegalDebug::debug( [
-			// 	'MultisiteMain' => 'check_post_moved',
+			// 	'MultisiteMeta' => 'check_post_moved',
 	
 			// 	'check_moved' => self::check_moved( $post ),
 			// ] );

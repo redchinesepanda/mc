@@ -46,7 +46,7 @@ class MultisitePost
 					$post_fields = MultisiteACF::get_fields( $post_id );
 
 					// LegalDebug::debug( [
-					// 	'MultisiteMain' => 'mc_bulk_action_multisite_handler',
+					// 	'MultisitePost' => 'mc_bulk_action_multisite_handler',
 
 					// 	'post' => $post[ 'ID' ],
 
@@ -68,7 +68,7 @@ class MultisitePost
 						MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
 
 						LegalDebug::debug( [
-							'MultisiteMain' => 'mc_bulk_action_multisite_handler',
+							'MultisitePost' => 'mc_bulk_action_multisite_handler',
 
 							'inserted_post_id' => $inserted_post_id,
 						] );
@@ -77,7 +77,7 @@ class MultisitePost
 			}
 
 			LegalDebug::debug( [
-				'MultisiteMain' => 'mc_bulk_action_multisite_handler',
+				'MultisitePost' => 'mc_bulk_action_multisite_handler',
 
 				'blog_id' => $blog_id,
 			] );
@@ -88,7 +88,7 @@ class MultisitePost
 		}
 
 		LegalDebug::die( [
-			'MultisiteMain' => 'rudr_bulk_action_multisite_handler',
+			'MultisitePost' => 'rudr_bulk_action_multisite_handler',
 
 			'redirect' => $redirect,
 
@@ -112,7 +112,7 @@ class MultisitePost
 		$post_moved_id = MultisiteMeta::get_moved( $post, $blog_id );
 
 		LegalDebug::die( [
-			'MultisiteMain' => 'add_post_and_data',
+			'MultisitePost' => 'add_post_and_data',
 
 			'post_moved_id' => $post_moved_id,
 		] );
@@ -130,7 +130,7 @@ class MultisitePost
 				MultisiteACF::add_fields( $inserted_post_id, $post_fields );
 
 				// LegalDebug::die( [
-				// 	'MultisiteMain' => 'add_post_and_data',
+				// 	'MultisitePost' => 'add_post_and_data',
 
 				// 	'get_fields' => MultisiteACF::get_fields( $inserted_post_id ),
 				// ] );
@@ -151,7 +151,7 @@ class MultisitePost
 		$inserted_post_id = wp_insert_post( $post );
 
 		LegalDebug::debug( [
-			'MultisiteMain' => 'add_post',
+			'MultisitePost' => 'add_post',
 
 			'post_id' => $post_id,
 
@@ -171,7 +171,7 @@ class MultisitePost
 		}
 
 		// LegalDebug::debug( [
-		// 	'MultisiteMain' => 'add_post',
+		// 	'MultisitePost' => 'add_post',
 
 		// 	'blog_id' => $post_id,
 
