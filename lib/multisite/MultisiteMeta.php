@@ -63,7 +63,7 @@ class MultisiteMeta
 	const POST_TYPES = [
 		'legal_brand',
 
-		'legal_compilation'
+		'legal_compilation',
 
 		'post',
 		
