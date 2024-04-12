@@ -258,9 +258,9 @@ class MultisitePost
 
                     'key' => MultisiteMeta::POST_META[ 'moved-from' ],
 
-                    'compare' => '=',
-
 					'value' => $origin_post_id,
+
+                    'compare' => '=',
                 ],
 			],
         ];
