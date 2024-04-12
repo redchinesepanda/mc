@@ -32,7 +32,7 @@ class MultisiteAttachment
 			if ( $post = MultisitePost::get_post( $attachment_id ) )
 			{
 				LegalDebug::debug( [
-					'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
+					'MultisiteAttachment' => 'handle_attachments',
 
 					'attachment_id' => $attachment_id,
 
