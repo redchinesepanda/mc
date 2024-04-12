@@ -179,21 +179,30 @@ class TemplateMain
 
     public static function register_style()
     {
-        if ( self::check() )
+        // if ( self::check() )
+        // {
+        //     if ( self::check_new() )
+        //     {
+        //         ToolEnqueue::register_style( self::CSS_NEW );
+        //     }
+        //     else
+        //     {
+        //         ToolEnqueue::register_style( self::CSS );
+        //     }
+        // }
+        // else
+        // {
+        //     ToolEnqueue::register_style( self::CSS_THRIVE );
+        // } 
+
+        if ( self::check_new() )
         {
-            if ( self::check_new() )
-            {
-                ToolEnqueue::register_style( self::CSS_NEW );
-            }
-            else
-            {
-                ToolEnqueue::register_style( self::CSS );
-            }
+            ToolEnqueue::register_style( self::CSS_NEW );
         }
         else
         {
-            ToolEnqueue::register_style( self::CSS_THRIVE );
-        } 
+            ToolEnqueue::register_style( self::CSS );
+        }
     }
 
     const JS = [
