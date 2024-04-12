@@ -25,6 +25,35 @@ class MultisiteAttachment
 		);
 	}
 
+	public static function handle_attachments( $blog_id, $object_ids )
+	{
+		foreach ( $object_ids as $attachment_id )
+		{
+			if ( $post = MultisitePost::get_post( $attachment_id ) )
+			{
+				LegalDebug::debug( [
+					'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
+
+					'attachment_id' => $attachment_id,
+
+					'post' => $post[ 'ID' ],
+				] );
+				
+				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+				{
+					MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
+				}
+			}
+		}
+	}
+
+	public static function copy_attachments( $blog_id, $post_id, $post )
+    {
+		$origin_post_ids = MultisiteSync::get_origin_post_ids( $post_id, $post );
+
+		self::handle_attachments( $blog_id, $origin_post_ids );
+	}
+
 	public static function mc_bulk_action_multisite_handler_attachment( $redirect, $doaction, $object_ids )
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
@@ -32,25 +61,27 @@ class MultisiteAttachment
 		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
 			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
+
+			self::handle_attachments( $blog_id, $object_ids );
 			
-			foreach ( $object_ids as $attachment_id )
-			{
-				if ( $post = MultisitePost::get_post( $attachment_id ) )
-				{
-					LegalDebug::debug( [
-						'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
+			// foreach ( $object_ids as $attachment_id )
+			// {
+			// 	if ( $post = MultisitePost::get_post( $attachment_id ) )
+			// 	{
+			// 		LegalDebug::debug( [
+			// 			'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
 
-						'attachment_id' => $attachment_id,
+			// 			'attachment_id' => $attachment_id,
 
-						'post' => $post[ 'ID' ],
-					] );
+			// 			'post' => $post[ 'ID' ],
+			// 		] );
 					
-					if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
-					{
-						MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
-					}
-				}
-			}
+			// 		if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+			// 		{
+			// 			MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
+			// 		}
+			// 	}
+			// }
 
 			LegalDebug::debug( [
 				'MultisiteAttachment' => 'mc_bulk_action_multisite_handler_attachment',
@@ -246,38 +277,6 @@ class MultisiteAttachment
 		MultisiteBlog::restore_blog();
 
 		return $inserted_attachment_id;
-	}
-
-	public static function get_post_moved_id_args( $post_id )
-	{
-		return [
-
-            'numberposts' => -1,
-
-            'post_type' => [ 'post', 'page', 'attacment', ],
-
-            'suppress_filters' => 0,
-
-            'meta_query' => [
-
-                'relation' => 'AND',
-
-                'legal_profit' => [
-
-                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'pair' ],
-
-                    'compare' => 'LIKE',
-
-                    'value' => 'pair-order-' . $feature,
-                ],
-			],
-        ];
-	}
-
-	public static function get_post_moved_id( $post_id )
-	{
-		$posts = get_posts( self::get_post_moved_id_args( $id ) );
-
 	}
 }
 
