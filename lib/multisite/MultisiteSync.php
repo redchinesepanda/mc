@@ -40,11 +40,11 @@ class MultisiteSync
 
 	public static function register_functions_admin()
     {
-		$handler = new self();
+		// $handler = new self();
 
 		// add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
 		
-		add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
+		// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
 	}
 
 	public static function get_subfield_names( $subfields )
