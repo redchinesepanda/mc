@@ -35,6 +35,8 @@ class TemplateMain
         if ( LegalHosts::check_host_production() )
         {
             $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
+
+            return in_array( WPMLMain::current_language(), $current_language );
         }
 
         // return in_array( WPMLMain::current_language(), $current_language );
