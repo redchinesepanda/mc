@@ -215,7 +215,7 @@ class MultisiteAttachment
 			'check_not_moved-id' => MultisiteMeta::check_not_moved( $post_moved_id ),
 			
 			'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
-		] );
+		] ); 
 
 		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
 		{
