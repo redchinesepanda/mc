@@ -149,6 +149,8 @@ class MultisiteAttachment
 			'MultisiteAttachment' => 'add_attachment',
 
 			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+
+			'post_moved_id' => $post_moved_id,
 		] );
 		
 		if ( MultisiteMeta::check_moved( $post_moved_id ) )
