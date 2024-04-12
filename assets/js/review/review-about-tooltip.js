@@ -32,8 +32,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		this.querySelectorAll( selectors.tooltipClose ).forEach( prepareClose, element );
 
-		this.querySelectorAll( selectors.tooltip ).forEach( toggleSet, element );
-
 		element.addEventListener( 'click', toggleModal, false );
 	}
 
@@ -43,6 +41,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 	}
+
+	function checkOpenBackground( element ) {
+		if(selectors.tooltip.classList.contains( classes.active )) {
+			element.classList.remove( classes.active );
+		}
+	}
+
+	function closeTooltipsBacground( element, index ) {
+		document.querySelector( selectors.tooltip ).addEventListener( 'click', checkOpenBackground );
+	}
+
+	closeTooltipsBacground();
 
 	const classes = {
 		active: 'legal-active',
