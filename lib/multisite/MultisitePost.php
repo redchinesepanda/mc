@@ -14,6 +14,12 @@ class MultisitePost
 		'attachment',
 	];
 
+	const POST_STATUSES => [
+		'publish',
+		
+		'inherit',
+	],
+
 	public static function register_functions_admin()
 	{
 		$handler = new self();
@@ -248,7 +254,7 @@ class MultisitePost
 
             'post_type' => self::POST_TYPES,
 
-			'post_status' => [ 'publish', 'inherit' ],
+			'post_status' => self::POST_STATUSES,
 
             // 'suppress_filters' => 0,
 
