@@ -42,24 +42,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 	}
 
-
-	// Не оптимизированно, но работает - закрытие по клику на фон. Начало
-	let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
-
-	function checkOpenBackground() {
-		if(tooltipBackground.classList.contains( classes.active )) {
-			tooltipBackground.classList.remove( classes.active );
-		}
-	}
-
-	function closeTooltipsBackground( ) {
-		console.log( tooltipBackground );
-		tooltipBackground.addEventListener( 'click', checkOpenBackground );
-	}
-
-	closeTooltipsBackground();
-	// Не оптимизированно, но работает - закрытие по клику на фон. Конец
-
 	const classes = {
 		active: 'legal-active',
 	};
@@ -79,6 +61,33 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
+
+	// Не оптимизированно, но работает - закрытие по клику на фон. Начало
+/* 	let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
+
+	function checkOpenBackground() {
+		if(tooltipBackground.classList.contains( classes.active )) {
+			tooltipBackground.classList.remove( classes.active );
+		}
+	}
+
+	function closeTooltipsBackground( ) {
+		console.log( tooltipBackground );
+		tooltipBackground.addEventListener( 'click', checkOpenBackground );
+	}
+
+	closeTooltipsBackground(); */
+
+	let tooltipBackground = document.querySelector( selectors.tooltip );
+
+	function checkOpenBackground() {
+		if(tooltipBackground.classList.contains( classes.active )) {
+			tooltipBackground.classList.remove( classes.active );
+		}
+	}
+
+	tooltipBackground.addEventListener( 'click', checkOpenBackground );
+	// Не оптимизированно, но работает - закрытие по клику на фон. Конец
 } );
 
 // about-achievement-tooltip-js end 
