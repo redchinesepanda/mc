@@ -241,7 +241,7 @@ class MultisitePost
 		// }
 	}
 
-	public static function get_post_moved_id_args( $post_origin_id )
+	public static function get_post_moved_id_args( $origin_post_id )
 	{
 		return [
             'numberposts' => -1,
@@ -260,20 +260,20 @@ class MultisitePost
 
                     'compare' => '=',
 
-					'value' => $post_origin_id,
+					'value' => $origin_post_id,
                 ],
 			],
         ];
 	}
 
-	public static function get_post_moved_id( $post_origin_id )
+	public static function get_post_moved_id( $origin_post_id )
 	{
-		$posts = get_posts( self::get_post_moved_id_args( $post_origin_id ) );
+		$posts = get_posts( self::get_post_moved_id_args( $origin_post_id ) );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'get_post_moved_id',
 
-			'post_origin_id' => $post_origin_id,
+			'origin_post_id' => $origin_post_id,
 
 			'posts' => $posts,
 		] );
