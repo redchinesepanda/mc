@@ -109,6 +109,8 @@ class MultisitePost
 	{
 		$inserted_post_id = false;
 
+		$origin_post_id = $post[ 'ID' ];
+
 		$post_moved_id = MultisiteMeta::get_moved( $post, $blog_id );
 
 		LegalDebug::debug( [
@@ -128,6 +130,8 @@ class MultisitePost
 				MultisiteMeta::add_post_meta( $inserted_post_id, $post_meta );
 
 				MultisiteACF::add_fields( $inserted_post_id, $post_fields );
+
+				MultisiteMeta::set_post_moved_from( $inserted_post_id, $origin_post_id );
 
 				// LegalDebug::debug( [
 				// 	'MultisitePost' => 'add_post_and_data',

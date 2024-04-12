@@ -42,6 +42,8 @@ class MultisiteMeta
 
 	const POST_META = [
 		'moved-to' => 'mc_moved_to',
+
+		'moved-from' => 'mc_moved_from',
     ];
 
 	public static function filter_not_thrive( $meta_key )
@@ -91,6 +93,11 @@ class MultisiteMeta
 	public static function get_post_moved( $post_id )
 	{
 		return get_post_meta( $post_id, self::POST_META[ 'moved-to' ], true );
+	}
+
+	public static function set_post_moved_from( $post_id, $origin_post_id )
+	{
+		update_post_meta( $post_id, self::POST_META[ 'moved-from' ], $origin_post_id );
 	}
 
 	public static function set_post_moved( $post_id, $blog_id, $moved_post_id )
