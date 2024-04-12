@@ -92,8 +92,13 @@ class MultisiteMeta
 		return wp_update_attachment_metadata( $attachment_id, self::add_attachment_metadata( $attachment_id ) );
 	}
 
-	public static function get_post_moved( $post_id, $meta_key = self::POST_META[ 'moved-to' ] )
+	public static function get_post_moved( $post_id, $meta_key = '' )
 	{
+		if ( empty( $meta_key ) )
+		{
+			$meta_key = self::POST_META[ 'moved-to' ];
+		}
+		
 		return get_post_meta( $post_id, $meta_key, true );
 	}
 
@@ -106,7 +111,7 @@ class MultisiteMeta
 
 			'origin_post_id' => $origin_post_id,
 		] );
-		
+
 		update_post_meta( $post_id, self::POST_META[ 'moved-from' ], $origin_post_id );
 	}
 
