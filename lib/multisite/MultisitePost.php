@@ -61,7 +61,12 @@ class MultisitePost
 					// 	'post_fields' => $post_fields,
 					// ] );
 
-					self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta, $post_fields );
+					// self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta, $post_fields );
+
+					if ( $inserted_post_id = self::add_post_and_data( $blog_id, $post, $post_terms, $post_meta, $post_fields) )
+					{
+						MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
+					}
 				}
 			}
 
@@ -96,41 +101,51 @@ class MultisitePost
 
 	public static function add_post_and_data( $blog_id, $post, $post_terms, $post_meta, $post_fields )
 	{
-		// switch_to_blog( $blog_id );
+		$inserted_post_id = false;
+
+		$post_moved_id = MultisiteMeta::get_moved( $post, $blog_id );
 
 		MultisiteBlog::set_blog( $blog_id );
 
-		if ( $post_id = self::add_post( $post, $blog_id ) )
-		{
-			MultisiteTerms::add_post_terms( $post_id, $post_terms );
+		// if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
+		// {
+			if ( $inserted_post_id = self::add_post( $post, $blog_id, $post_moved_id ) )
+			{
+				MultisiteTerms::add_post_terms( $inserted_post_id, $post_terms );
 
-			MultisiteMeta::add_post_meta( $post_id, $post_meta );
+				MultisiteMeta::add_post_meta( $inserted_post_id, $post_meta );
 
-			MultisiteACF::add_fields( $post_id, $post_fields );
+				MultisiteACF::add_fields( $inserted_post_id, $post_fields );
 
-			// LegalDebug::die( [
-			// 	'MultisiteMain' => 'add_post_and_data',
+				// LegalDebug::die( [
+				// 	'MultisiteMain' => 'add_post_and_data',
 
-			// 	'get_fields' => MultisiteACF::get_fields( $post_id ),
-			// ] );
-		}
-
-		// restore_current_blog();
+				// 	'get_fields' => MultisiteACF::get_fields( $inserted_post_id ),
+				// ] );
+			}
+		// }
 
 		MultisiteBlog::restore_blog();
+
+		return $inserted_post_id;
 	}
 
-	public static function add_post( $post, $blog_id )
+	public static function add_post( $post, $blog_id, $post_moved_id )
 	{
 		$post_id = $post[ 'ID' ];
 
-		$post = self::prepare_post( $post, $blog_id );
+		$post = self::prepare_post( $post, $blog_id, $post_moved_id );
 
 		$inserted_post_id = wp_insert_post( $post );
 
 		if ( is_wp_error( $inserted_post_id ) )
 		{
 			return false;
+		}
+
+		if ( $inserted_post_id === 0 )
+		{
+			return $post_moved_id;
 		}
 
 		// LegalDebug::debug( [
@@ -141,26 +156,35 @@ class MultisitePost
 		// 	'inserted_post_id' => $inserted_post_id,
 		// ] );
 
-		if ( $inserted_post_id !== 0 )
-		{
-			MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
-		}
+		// if ( $inserted_post_id !== 0 )
+		// {
+		// 	MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
+		// }
 
 		return $inserted_post_id;
 	}
 
-	public static function prepare_post( $post, $blog_id )
+	public static function prepare_post( $post, $blog_id, $post_moved_id )
 	{
-		if ( $moved_id = MultisiteMeta::check_post_moved( $post, $blog_id ) )
-		{
-			$post[ 'ID' ] = $moved_id;
-		}
-		else
+		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
 		{
 			unset( $post[ 'ID' ] );
 		}
+		else
+		{
+			$post[ 'ID' ] = $post_moved_id;
+		}
 
 		return $post;
+
+		// if ( $moved_id = MultisiteMeta::check_post_moved( $post, $blog_id ) )
+		// {
+		// 	$post[ 'ID' ] = $moved_id;
+		// }
+		// else
+		// {
+		// 	unset( $post[ 'ID' ] );
+		// }
 	}
 }
 

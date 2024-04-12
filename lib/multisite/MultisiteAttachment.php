@@ -89,10 +89,10 @@ class MultisiteAttachment
 		return preg_replace( '/\.[^.]+$/', '', $unique_filename );
 	}
 	
-	public static function check_post_moved( $post, $blog_id )
-	{
-		return MultisiteMeta::check_post_moved( $post, $blog_id );
-	}
+	// public static function check_post_moved( $post, $blog_id )
+	// {
+	// 	return MultisiteMeta::check_post_moved( $post, $blog_id );
+	// }
 
 	public static function copy_file( $path, $uploads, $unique_filename )
 	{
@@ -152,10 +152,10 @@ class MultisiteAttachment
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
 
-			'check_post_moved' => self::check_post_moved( $post, $blog_id ),
+			'check_post_moved' => MultisiteMeta::check_post_moved( $post, $blog_id ),
 		] );
 
-		// if ( ! self::check_post_moved( $post, $blog_id ) )
+		// if ( ! MultisiteMeta::check_post_moved( $post, $blog_id ) )
 		// {
 			$uploads = wp_upload_dir();
 
