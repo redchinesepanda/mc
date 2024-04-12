@@ -44,9 +44,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
 
-	function checkOpenBackground( element ) {
+	function checkOpenBackground() {
 		if(tooltipBackground.classList.contains( classes.active )) {
-			element.classList.remove( classes.active );
+			tooltipBackground.classList.remove( classes.active );
 		}
 	}
 
