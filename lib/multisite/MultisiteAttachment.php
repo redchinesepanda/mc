@@ -247,6 +247,38 @@ class MultisiteAttachment
 
 		return $inserted_attachment_id;
 	}
+
+	public static function get_post_moved_id_args( $post_id )
+	{
+		return [
+
+            'numberposts' => -1,
+
+            'post_type' => [ 'post', 'page', 'attacment', ],
+
+            'suppress_filters' => 0,
+
+            'meta_query' => [
+
+                'relation' => 'AND',
+
+                'legal_profit' => [
+
+                    'key' => self::META_KEY[ 'profit' ] . '_$_' . self::PROFIT_ITEM[ 'pair' ],
+
+                    'compare' => 'LIKE',
+
+                    'value' => 'pair-order-' . $feature,
+                ],
+			],
+        ];
+	}
+
+	public static function get_post_moved_id( $post_id )
+	{
+		$posts = get_posts( self::get_post_moved_id_args( $id ) );
+
+	}
 }
 
 ?>

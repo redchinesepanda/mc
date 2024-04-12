@@ -60,6 +60,56 @@ class MultisiteMeta
 		'moved-from' => 'mc_moved_from',
     ];
 
+	const POST_TYPES = [
+		'legal_brand',
+
+		'legal_compilation'
+
+		'post',
+		
+		'page',
+		
+		'attacment',
+	];
+
+	public static function get_post_moved_id_args( $post_origin_id )
+	{
+		return [
+            'numberposts' => -1,
+
+            'post_type' => self::POST_TYPES,
+
+            // 'suppress_filters' => 0,
+
+            'meta_query' => [
+
+                'relation' => 'AND',
+
+                'mc-moved-from' => [
+
+                    'key' => self::POST_META[ 'moved-from' ],
+
+                    'compare' => '=',
+
+					'value' => $post_origin_id,
+                ],
+			],
+        ];
+	}
+
+	public static function get_post_moved_id( $post_origin_id )
+	{
+		$posts = get_posts( self::get_post_moved_id_args( $post_origin_id ) );
+
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved_id',
+
+			'post_origin_id' => $post_origin_id,
+
+			'posts' => $posts,
+		] );
+	}
+
 	public static function filter_not_thrive( $meta_key )
 	{
 		return !in_array( $meta_key, self::FILTER_META );
