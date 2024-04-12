@@ -147,13 +147,18 @@ class MultisiteAttachment
 		return wp_unique_filename( $uploads[ 'path' ], basename( $path ) );
 	}
 
-	public static function add_attachment( $post, $path, $blog_id )
+	public static function add_attachment( $post, $path, $blog_id, $post_moved_id )
 	{
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'add_attachment',
 
-			'check_post_moved' => MultisiteMeta::check_post_moved( $post, $blog_id ),
+			'check_not_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 		] );
+		
+		if ( MultisiteMeta::check_moved( $post_moved_id ) )
+		{
+			return $post_moved_id;
+		}
 
 		// if ( ! MultisiteMeta::check_post_moved( $post, $blog_id ) )
 		// {
@@ -189,6 +194,7 @@ class MultisiteAttachment
 				}
 			}
 		// }
+		}
 
 		return false;
 	}
@@ -217,9 +223,9 @@ class MultisiteAttachment
 			'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
 		] ); 
 
-		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
-		{
-			if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id ) )
+		// if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
+		// {
+			if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id, $post_moved_id ) )
 			{
 				LegalDebug::debug( [
 					'MultisiteAttachment' => 'add_attachment_and_data',
@@ -230,7 +236,7 @@ class MultisiteAttachment
 				MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
 			}
 			
-		}
+		// }
 
 		MultisiteBlog::restore_blog();
 
