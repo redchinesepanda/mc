@@ -42,14 +42,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 	}
 
+	let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
+
 	function checkOpenBackground( element ) {
-		if(selectors.tooltip.classList.contains( classes.active )) {
+		if(tooltipBackground.classList.contains( classes.active )) {
 			element.classList.remove( classes.active );
 		}
 	}
 
 	function closeTooltipsBackground( ) {
-		let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
 		console.log( tooltipBackground );
 		tooltipBackground.addEventListener( 'click', checkOpenBackground );
 	}
