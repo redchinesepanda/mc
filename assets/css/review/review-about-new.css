@@ -274,6 +274,7 @@
 
     .review-about .achievement-tooltip {
         border-radius: 12px;
+        border-bottom: 1px solid var(--Base-base-09);
     }
 
     /* Typography */
@@ -559,7 +560,9 @@
 }
 
 .review-about .achievement-tooltip {
-    border: 1px solid var(--Base-base-09);
+    border-top: 1px solid var(--Base-base-09);
+    border-right: 1px solid var(--Base-base-09);
+    border-left: 1px solid var(--Base-base-09);
     background: var(--Base-base-01);
 }
 
