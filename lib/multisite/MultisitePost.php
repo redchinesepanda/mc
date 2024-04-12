@@ -148,6 +148,16 @@ class MultisitePost
 
 		$post = self::prepare_post( $post, $blog_id, $post_moved_id );
 
+		LegalDebug::debug( [
+			'MultisitePost' => 'add_post',
+
+			'post_id' => $post_id,
+
+			'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
+
+			'inserted_post_id' => $inserted_post_id,
+		] );
+
 		$inserted_post_id = wp_insert_post( $post );
 
 		LegalDebug::debug( [
@@ -188,6 +198,18 @@ class MultisitePost
 
 	public static function prepare_post( $post, $blog_id, $post_moved_id )
 	{
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'prepare_post',
+
+			'post' => $post[ 'ID'],
+
+			'blog_id' => $blog_id,
+
+			'post_moved_id' => $post_moved_id,
+
+			'check_not_moved' => MultisiteMeta::check_not_moved( $post_moved_id ),
+		] );
+
 		if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
 		{
 			unset( $post[ 'ID' ] );
