@@ -155,7 +155,7 @@ class MultisitePost
 
 			'post_id' => $post_id,
 
-			'ID' => $post[ 'ID' ],
+			'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
 
 			'inserted_post_id' => $inserted_post_id,
 		] );
