@@ -48,13 +48,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function closeTooltipsBacground( ) {
-		let tooltipBackground = document.querySelector( selectors.tooltip );
+	function closeTooltipsBackground( ) {
+		let tooltipBackground = document.querySelector( '.review-about .achievement-tooltip-background' );
 		console.log( tooltipBackground );
 		tooltipBackground.addEventListener( 'click', checkOpenBackground );
 	}
 
-	closeTooltipsBacground();
+	closeTooltipsBackground();
 
 	const classes = {
 		active: 'legal-active',
