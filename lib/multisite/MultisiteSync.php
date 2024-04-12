@@ -7,11 +7,23 @@ class MultisiteSync
     ];
 
 	const FIELDS = [
+		'about' => [
+			'name' => 'review-about',
+
+			'key' => 'field_6437de4fa65c9',
+		],
+	];
+
+	const FIELD_ABOUT = [
 		'logo' => [
 			'name' => 'about-logo',
 
 			'key' => 'field_6437df25a65cd',
 		],
+	];
+
+	const PATTERNS = [
+		'group-field' => '%1$s-%2$s',
 	];
 
 	public static function register_functions_admin()
@@ -23,7 +35,13 @@ class MultisiteSync
 
 	public static function set_attachments( $post_id, $post )
     {
-		$field_name = self::FIELDS[ 'logo' ][ 'key' ];
+		$field_name = sprintf(
+			self::PATTERNS[ 'group-field' ],
+			
+			self::FIELDS[ 'about' ][ 'key' ],
+
+			self::FIELD_ABOUT[ 'logo' ][ 'key' ]
+		);
 
 		LegalDebug::debug( [
 			'MultisiteSync' => 'set_attachments',
