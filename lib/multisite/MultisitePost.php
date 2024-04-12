@@ -287,7 +287,7 @@ class MultisitePost
 
 			'args' => $args,
 
-			'posts' => $posts,
+			'posts' => count( $posts ),
 		] );
 
 		if ( count( $posts ) == 1 )
