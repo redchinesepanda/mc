@@ -7,7 +7,7 @@ class MultisiteSync
     ];
 
 	const FIELDS = [
-		'logo' = [
+		'logo' => [
 			'name' => 'about-logo',
 
 			'key' => 'field_6437df25a65cd',
