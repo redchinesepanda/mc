@@ -48,8 +48,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	function closeTooltipsBacground( element, index ) {
-		document.querySelector( selectors.tooltip ).addEventListener( 'click', checkOpenBackground );
+	function closeTooltipsBacground( ) {
+		let tooltipBackground = document.querySelector( selectors.tooltip );
+		console.log( tooltipBackground );
+		tooltipBackground.addEventListener( 'click', checkOpenBackground );
 	}
 
 	closeTooltipsBacground();
