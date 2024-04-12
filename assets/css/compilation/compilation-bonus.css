@@ -123,6 +123,10 @@
 	margin: 0 !important;
 }
 
+.legal-compilation-bonus-set .legal-compilation-button[ href='' ] {
+	pointer-events: none;
+}
+
 .legal-compilation-bonus-set .legal-compilation-button {
 	font-size: 16px;
 	font-style: normal;
