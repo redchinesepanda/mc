@@ -23,7 +23,7 @@ class MultisiteSync
 	];
 
 	const PATTERNS = [
-		'group-field' => '%1$s-%2$s',
+		'group-field' => '%1$s_%2$s',
 	];
 
 	public static function register_functions_admin()
