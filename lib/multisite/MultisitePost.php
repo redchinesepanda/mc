@@ -154,18 +154,12 @@ class MultisitePost
 			'post_id' => $post_id,
 
 			'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
-
-			'inserted_post_id' => $inserted_post_id,
 		] );
 
 		$inserted_post_id = wp_insert_post( $post );
 
 		LegalDebug::debug( [
 			'MultisitePost' => 'add_post',
-
-			'post_id' => $post_id,
-
-			'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
 
 			'inserted_post_id' => $inserted_post_id,
 		] );
