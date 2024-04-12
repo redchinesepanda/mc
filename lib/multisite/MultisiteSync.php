@@ -82,7 +82,7 @@ class MultisiteSync
 		{
 			if ( $origin_post_id = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
-				$origin_post_ids[] = $origin_post_id;
+				$origin_post_ids[ $field_name ] = $origin_post_id;
 			}
 		}
 
@@ -99,7 +99,7 @@ class MultisiteSync
 			'origin_post_ids' => $origin_post_ids,
 		] );
 
-		foreach ( $origin_post_ids as $origin_post_id )
+		foreach ( $origin_post_ids as $field_name => $origin_post_id )
 		{
 			LegalDebug::debug( [
 				'MultisiteSync' => 'set_attachments',
