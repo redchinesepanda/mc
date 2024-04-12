@@ -150,6 +150,16 @@ class MultisitePost
 
 		$inserted_post_id = wp_insert_post( $post );
 
+		LegalDebug::debug( [
+			'MultisiteMain' => 'add_post',
+
+			'post_id' => $post_id,
+
+			'ID' => $post[ 'ID' ],
+
+			'inserted_post_id' => $inserted_post_id,
+		] );
+
 		if ( is_wp_error( $inserted_post_id ) )
 		{
 			return false;
