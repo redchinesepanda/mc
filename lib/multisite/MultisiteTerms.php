@@ -94,7 +94,7 @@ class MultisiteTerms
 		{
 			$slugs = array_column( $post_terms, 'slug' );
 
-			$object_terms = wp_set_object_terms( $post_id, $slugs, $taxonomy, false );
+			$term_ids = wp_set_object_terms( $post_id, $slugs, $taxonomy, false );
 			
 			// $object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
 
@@ -105,8 +105,25 @@ class MultisiteTerms
 
 				'slugs' => $slugs,
 
-				'object_terms' => $object_terms,
+				'term_ids' => $term_ids,
 			] );
+
+			foreach ( $term_ids as $key => $term_id )
+			{
+				$args = [
+					'name' => $post_terms[ $key ]->name,
+
+					'slug' => $post_terms[ $key ]->slug,
+				];
+
+				LegalDebug::debug( [
+					'MultisiteTerms' => 'add_post_terms',
+
+					'args' => $args,
+				] );
+
+				// wp_update_term( $term_id, $taxonomy, $args );
+			}
 		}
 	}
 }
