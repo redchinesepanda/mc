@@ -122,7 +122,7 @@ class MultisiteTerms
 
 				wp_update_term( $term_id, $taxonomy, $args );
 
-				MultisiteMeta::set_term_moved_from( $term_id, $post_terms[ $key ]->term_id )
+				MultisiteMeta::set_term_moved_from( $term_id, $post_terms[ $key ]->term_id );
 			}
 		}
 	}
