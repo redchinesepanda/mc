@@ -142,10 +142,10 @@ class MultisiteTermSync
 		// }
 	}
 
-	public static function get_features( $field_value )
-	{
-		return array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
-	}
+	// public static function get_features( $field_repeater, $repeater_value )
+	// {
+	// 	return array_column( $repeater_value, $field_name, $field_name );
+	// }
 
 	public static function get_repeaters( $post_id )
 	{
@@ -155,11 +155,13 @@ class MultisiteTermSync
 
 		// foreach ( $fields_repeater as $field_name )
 		
-		foreach ( self::FIELDS_REPEATER as $field_repeater )
+		foreach ( self::FIELDS_REPEATER as $repeater )
 		{
-			$field_value = MultisiteACF::get_field( $field_repeater[ 'name' ], $post_id );
+			$repeater_value = MultisiteACF::get_field( $repeater[ 'name' ], $post_id );
 
-			// $feature_value = array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
+			$field_name = $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ]
+
+			$feature_value = array_column( $repeater_value, $field_name, $field_name );
 
 			// $repeaters[] = [
 			// 	'name' => $field_repeater[ 'name' ],
@@ -167,7 +169,7 @@ class MultisiteTermSync
 			// 	$field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] => $feature_value,
 			// ];
 
-			$repeaters[ $field_repeater[ 'name' ] ] = $field_value;
+			$repeaters[ $field_repeater[ 'name' ] ] = $feature_value;
 		}
 
 		return $repeaters;
@@ -183,44 +185,44 @@ class MultisiteTermSync
 			'repeaters' => $repeaters,
 		] );
 
-		foreach ( $repeaters as $field_name => $field_value )
-		{
-			$feature_ids = self::get_features( $field_value );
+		// foreach ( $repeaters as $field_name => $field_value )
+		// {
+		// 	$feature_ids = self::get_features( $field_value );
 
-			foreach ( $feature_ids as $row => $feature_id )
-			{
-				$term_id = self::get_term_moved_id( $feature_id );
+		// 	foreach ( $feature_ids as $row => $feature_id )
+		// 	{
+		// 		$term_id = self::get_term_moved_id( $feature_id );
 
-				LegalDebug::debug( [
-					'MultisiteTermSync' => 'set_terms',
+		// 		LegalDebug::debug( [
+		// 			'MultisiteTermSync' => 'set_terms',
 
-					'row' => $row,
+		// 			'row' => $row,
 
-					'term_id' => $term_id,
-				] );
+		// 			'term_id' => $term_id,
+		// 		] );
 
-				if ( $term_id )
-				{
-					$value = [
-						$repeaters[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ] => $term_id
-					];
+		// 		if ( $term_id )
+		// 		{
+		// 			$value = [
+		// 				$repeaters[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ] => $term_id
+		// 			];
 
-					LegalDebug::debug( [
-                        'MultisiteTermSync' => 'set_terms',
+		// 			LegalDebug::debug( [
+        //                 'MultisiteTermSync' => 'set_terms',
 
-						'repeater_name' =>$repeater_name,
+		// 				'repeater_name' =>$repeater_name,
 
-						'row' => $row,
+		// 				'row' => $row,
 
-						'value' => $value,
+		// 				'value' => $value,
 
-						'post_id' => $post_id,
-					] );
+		// 				'post_id' => $post_id,
+		// 			] );
 
-					// update_row( $repeater_name, $row, $value, $post_id);
-				}
-			}
-		}
+		// 			// update_row( $repeater_name, $row, $value, $post_id);
+		// 		}
+		// 	}
+		// }
 
 		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
 
