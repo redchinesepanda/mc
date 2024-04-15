@@ -159,7 +159,7 @@ class MultisiteTermSync
 		{
 			$repeater_value = MultisiteACF::get_field( $repeater[ 'name' ], $post_id );
 
-			$field_name = $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ]
+			$field_name = $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ];
 
 			$feature_value = array_column( $repeater_value, $field_name, $field_name );
 
