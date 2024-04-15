@@ -93,6 +93,11 @@
         line-height: 14px;
     }
 
+    .billet-item .billet-description-full ul li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -221,6 +226,11 @@
     .billet-item .billet-footer {
         font-size: 12px;
         line-height: 18px;
+    }
+
+    .billet-item .billet-description-full ul li {
+        font-size: 16px;
+        line-height: 22px;
     }
 
 }
@@ -632,6 +642,28 @@ body {
     position: relative;
 }
 
+.billet-item .billet-description-full ul {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.billet-item .billet-description-full ul li {
+    position: relative;
+    padding-left: calc( 24px + 12px );
+}
+
+.billet-item .billet-description-full ul li:not( :last-child ) {
+    padding-bottom: 24px;
+}
+
+.billet-item .billet-description-full ul li::before {
+    position: absolute;
+    left: 0px;
+}
+
 /* Billet Typography */
 
 .billet-left .legal-review.legal-black {
@@ -778,6 +810,17 @@ body {
     text-decoration: none;
     text-align: center;
     color: var(--Base-base-01);
+}
+
+.billet-item .billet-description-full ul {
+    list-style: none;
+}
+
+.billet-item .billet-description-full ul li::before {
+    content: '\F107';
+    font-family: var(--legal-font-icons);
+    font-size: 24px;
+    line-height: 24px;
 }
 
 .billet-right .billet-footer-control {
