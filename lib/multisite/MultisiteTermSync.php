@@ -24,11 +24,19 @@ class MultisiteTermSync
 			],
 		],
 
-		// 'lists' => [
-		// 	'name' => 'billet-list-parts',
+		'lists' => [
+			'name' => 'billet-list-parts',
 
-		// 	'key' => 'field_6412f442f2c53',
-		// ],
+			'key' => 'field_6412f442f2c53',
+
+			'fields' => [
+				'feature-id' => [
+					'name' => 'billet-list-part-feature',
+		
+					'key' => 'field_6492f753cfa1c',
+				],
+			],
+		],
 
 		// 'achievements' => [
 		// 	'name' => 'billet-feture-achievement',
@@ -57,13 +65,13 @@ class MultisiteTermSync
 	// 	],
 	// ];
 
-	const FIELD_LISTS = [
-		'feature-id' => [
-			'name' => 'billet-list-part-feature',
+	// const FIELD_LISTS = [
+	// 	'feature-id' => [
+	// 		'name' => 'billet-list-part-feature',
 
-			'key' => 'field_6492f753cfa1c',
-		],
-	];
+	// 		'key' => 'field_6492f753cfa1c',
+	// 	],
+	// ];
 
 	const FIELD_ACHIEVEMENTS = [
 		'feature-id' => [
