@@ -39,23 +39,26 @@ class MultisiteTerms
 	{
 		$post = get_post();
 
-		$terms = self::get_post_terms( $post->ID );
+		$all_terms = self::get_post_terms( $post->ID );
 
 		// self::add_post_terms( $post->ID, $terms );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'mc_debug_edit_form_after_title_action',
 
-			'terms' => $terms,
+			'all_terms' => $all_terms,
 		] );
 
-		foreach ( $terms as $term )
+		foreach ( $all_terms as $taxonomy => $terms )
 		{
-			LegalDebug::debug( [
-				'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
-
-				'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
-			] );
+			foreach ( $terms as $term )
+			{
+				LegalDebug::debug( [
+					'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
+	
+					'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
+				] );
+			}
 		}
 	}
 
