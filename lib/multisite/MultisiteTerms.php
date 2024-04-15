@@ -55,6 +55,8 @@ class MultisiteTerms
 			{
 				LegalDebug::debug( [
 					'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
+
+					'term_id' => $term->term_id,
 	
 					'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
 				] );
