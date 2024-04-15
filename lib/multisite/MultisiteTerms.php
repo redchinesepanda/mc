@@ -30,41 +30,41 @@ class MultisiteTerms
 
 	public static function register_functions_admin()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
 	}
 
-	function mc_debug_edit_form_after_title_action( $post )
-	{
-		$post = get_post();
+	// function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	$post = get_post();
 
-		$all_terms = self::get_post_terms( $post->ID );
+	// 	$all_terms = self::get_post_terms( $post->ID );
 
-		// self::add_post_terms( $post->ID, $terms );
+	// 	// self::add_post_terms( $post->ID, $terms );
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'mc_debug_edit_form_after_title_action',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMeta' => 'mc_debug_edit_form_after_title_action',
 
-			'all_terms' => $all_terms,
-		] );
+	// 		'all_terms' => $all_terms,
+	// 	] );
 
-		foreach ( $all_terms as $taxonomy => $terms )
-		{
-			foreach ( $terms as $term )
-			{
-				LegalDebug::debug( [
-					'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
+	// 	foreach ( $all_terms as $taxonomy => $terms )
+	// 	{
+	// 		foreach ( $terms as $term )
+	// 		{
+	// 			LegalDebug::debug( [
+	// 				'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
 
-					'term_id' => $term->term_id,
+	// 				'term_id' => $term->term_id,
 
-					'slug' => $term->slug,
+	// 				'slug' => $term->slug,
 	
-					'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
-				] );
-			}
-		}
-	}
+	// 				'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
+	// 			] );
+	// 		}
+	// 	}
+	// }
 
 	public static function get_taxonomies()
 	{
