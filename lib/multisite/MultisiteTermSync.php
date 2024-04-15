@@ -156,7 +156,7 @@ class MultisiteTermSync
 
 			$feature_value = array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
 
-			$repeaters[] = $feature_value;
+			$repeaters[ $field_repeater[ 'name' ] ] = $feature_value;
 		}
 
 		return $repeaters;
@@ -171,6 +171,20 @@ class MultisiteTermSync
 
 			'repeaters' => $repeaters,
 		] );
+
+		foreach ( $repeaters as $repeater_name => $repeater_values )
+		{
+			foreach ( $repeater_values as $repeater_value )
+			{
+				$term_id = self::get_term_moved_id( $repeater_value );
+
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
+
+					'term_id' => $term_id,
+				] );
+			}
+		}
 
 		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
 
@@ -204,6 +218,59 @@ class MultisiteTermSync
 		// 	'MultisiteAttachmentSync' => 'set_attachments',
 		// ] );
     }
+
+	public static function get_term_moved_id_args( $origin_post_id )
+	{
+		return [
+            // 'numberposts' => -1,
+
+            'taxonomy' => MultisiteTerms::get_taxonomies(),
+
+			// 'post_status' => self::POST_STATUSES,
+
+            // 'suppress_filters' => 0,
+
+            'meta_query' => [
+
+                'relation' => 'AND',
+
+                'mc-moved-from' => [
+
+                    'key' => MultisiteMeta::POST_META[ 'moved-from' ],
+
+					'value' => $origin_post_id,
+
+                    'compare' => '=',
+                ],
+			],
+        ];
+	}
+
+	public static function get_term_moved_id( $origin_post_id )
+	{
+		$args = self::get_term_moved_id_args( $origin_post_id );
+
+		$terms = get_terms( $args );
+
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved_id',
+
+		// 	'origin_post_id' => $origin_post_id,
+
+		// 	'args' => $args,
+
+		// 	'posts' => count( $posts ),
+		// ] );
+
+		if ( count( $terms ) == 1 )
+		{
+			$term = array_shift( $terms );
+
+			return $term->term_id;
+		}
+
+		return false;
+	}
 }
 
 ?>
