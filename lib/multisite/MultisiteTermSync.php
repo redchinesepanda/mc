@@ -73,7 +73,7 @@ class MultisiteTermSync
 		],
 	];
 
-	const FIELD_MAIN-DESCRIPTIONS = [
+	const FIELD_MAIN_DESCRIPTIONS = [
 		'feature-id' => [
 			'name' => 'billet-feture-id',
 
