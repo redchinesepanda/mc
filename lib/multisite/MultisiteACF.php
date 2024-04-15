@@ -20,6 +20,11 @@ class MultisiteACF
 		return get_field( $field_name, $post_id, false );
 	}
 
+	public static function get_field( $field_name, $post_id )
+	{
+		return get_field( $field_name, $post_id );
+	}
+
 	public static function get_field_names()
 	{
 		// LegalDebug::debug( [
