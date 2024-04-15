@@ -78,7 +78,7 @@ class MultisiteTermSync
 
 		foreach ( $fields_repeater as $field_name )
 		{
-			$repeaters[] = MultisiteACF::get_field_raw( $field_name, $post_id )
+			$repeaters[] = MultisiteACF::get_field_raw( $field_name, $post_id );
 		}
 
 		return $repeaters;
