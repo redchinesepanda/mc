@@ -14,40 +14,48 @@ class MultisiteTermSync
 			'name' => 'billet-feture-bonus',
 
 			'key' => 'field_651ab4be3b28d',
+
+			'fields' => = [
+				'feature-id' => [
+					'name' => 'billet-feture-id',
+		
+					'key' => 'field_651ab5083b28e',
+				],
+			],
 		],
 
-		'lists' => [
-			'name' => 'billet-list-parts',
+		// 'lists' => [
+		// 	'name' => 'billet-list-parts',
 
-			'key' => 'field_6412f442f2c53',
-		],
+		// 	'key' => 'field_6412f442f2c53',
+		// ],
 
-		'achievements' => [
-			'name' => 'billet-feture-achievement',
+		// 'achievements' => [
+		// 	'name' => 'billet-feture-achievement',
 
-			'key' => 'field_651aa238a7b35',
-		],
+		// 	'key' => 'field_651aa238a7b35',
+		// ],
 
-		'profits' => [
-			'name' => 'billet-profit-items',
+		// 'profits' => [
+		// 	'name' => 'billet-profit-items',
 
-			'key' => 'field_64340371d58e4',
-		],
+		// 	'key' => 'field_64340371d58e4',
+		// ],
 
-		'main-descriptions' => [
-			'name' => 'billet-feture-main-description',
+		// 'main-descriptions' => [
+		// 	'name' => 'billet-feture-main-description',
 
-			'key' => 'field_6523a4f9e9751',
-		],
+		// 	'key' => 'field_6523a4f9e9751',
+		// ],
 	];
 
-	const FIELD_FETURE_BONUS = [
-		'feature-id' => [
-			'name' => 'billet-feture-id',
+	// const FIELD_FETURE_BONUS = [
+	// 	'feature-id' => [
+	// 		'name' => 'billet-feture-id',
 
-			'key' => 'field_651ab5083b28e',
-		],
-	];
+	// 		'key' => 'field_651ab5083b28e',
+	// 	],
+	// ];
 
 	const FIELD_LISTS = [
 		'feature-id' => [
@@ -128,13 +136,19 @@ class MultisiteTermSync
 
 	public static function get_repeaters( $post_id )
 	{
-		$fields_repeater = array_column( self::FIELDS_REPEATER, 'name' );
+		// $fields_repeater = array_column( self::FIELDS_REPEATER, 'name' );
 
-		$repeaters = [];
+		// $repeaters = [];
 
-		foreach ( $fields_repeater as $field_name )
+		// foreach ( $fields_repeater as $field_name )
+		
+		foreach ( self::FIELDS_REPEATER as $field_repeater )
 		{
-			$repeaters[] = MultisiteACF::get_field( $field_name, $post_id );
+			$field_value = MultisiteACF::get_field( $field_repeater[ 'name' ], $post_id );
+
+			$feature_value = array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ] )
+
+			$repeaters[] = $feature_value;
 		}
 
 		return $repeaters;
