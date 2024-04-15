@@ -94,7 +94,7 @@ class MultisiteTerms
 		{
 			$slugs = array_column( $post_terms, 'slug' );
 
-			// $object_terms = wp_set_object_terms( $post_id, $slugs, $taxonomy, false );
+			$object_terms = wp_set_object_terms( $post_id, $slugs, $taxonomy, false );
 			
 			// $object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
 
@@ -104,6 +104,8 @@ class MultisiteTerms
 				'taxonomy' => $taxonomy,
 
 				'slugs' => $slugs,
+
+				'object_terms' => $object_terms,
 			] );
 		}
 	}
