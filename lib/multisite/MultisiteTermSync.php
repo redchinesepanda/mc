@@ -15,6 +15,30 @@ class MultisiteTermSync
 
 			'key' => 'field_651ab4be3b28d',
 		],
+
+		'lists' => [
+			'name' => 'billet-list-parts',
+
+			'key' => 'field_6412f442f2c53',
+		],
+
+		'achievements' => [
+			'name' => 'billet-feture-achievement',
+
+			'key' => 'field_651aa238a7b35',
+		],
+
+		'profits' => [
+			'name' => 'billet-profit-items',
+
+			'key' => 'field_64340371d58e4',
+		],
+
+		'main-descriptions' => [
+			'name' => 'billet-feture-main-description',
+
+			'key' => 'field_6523a4f9e9751',
+		],
 	];
 
 	const FIELD_FETURE_BONUS = [
@@ -22,6 +46,38 @@ class MultisiteTermSync
 			'name' => 'billet-feture-id',
 
 			'key' => 'field_651ab5083b28e',
+		],
+	];
+
+	const FIELD_LISTS = [
+		'feature-id' => [
+			'name' => 'billet-list-part-feature',
+
+			'key' => 'field_6492f753cfa1c',
+		],
+	];
+
+	const FIELD_ACHIEVEMENTS = [
+		'feature-id' => [
+			'name' => 'billet-feture-id',
+
+			'key' => 'field_651aa298e2e4a',
+		],
+	];
+
+	const FIELD_PROFITS = [
+		'feature-id' => [
+			'name' => 'profit-item-feature',
+
+			'key' => 'field_643403cbd58e5',
+		],
+	];
+
+	const FIELD_MAIN-DESCRIPTIONS = [
+		'feature-id' => [
+			'name' => 'billet-feture-id',
+
+			'key' => 'field_6523b09bdf712',
 		],
 	];
 
