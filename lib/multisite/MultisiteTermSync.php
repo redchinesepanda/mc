@@ -174,15 +174,38 @@ class MultisiteTermSync
 
 		foreach ( $repeaters as $repeater_name => $repeater_values )
 		{
-			foreach ( $repeater_values as $repeater_value )
+			foreach ( $repeater_values as $row => $repeater_value )
 			{
 				$term_id = self::get_term_moved_id( $repeater_value );
 
 				LegalDebug::debug( [
 					'MultisiteTermSync' => 'set_terms',
 
+					'row' => $row,
+
 					'term_id' => $term_id,
 				] );
+
+				if ( $term_id )
+				{
+					$value = [
+						self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ] => $term_id
+					];
+
+					LegalDebug::debug( [
+                        'MultisiteTermSync' => 'set_terms',
+
+						'repeater_name' =>$repeater_name,
+
+						'row' => $row,
+
+						'value' => $value,
+
+						'post_id' => $post_id,
+					] );
+
+					// update_row( $repeater_name, $row, $value, $post_id);
+				}
 			}
 		}
 
