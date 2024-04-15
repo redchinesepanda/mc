@@ -28,6 +28,28 @@ class MultisiteTerms
 		'media-type' => 'media_type',
 	];
 
+	public static function register_functions_admin()
+	{
+		$handler = new self();
+
+		add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+	}
+
+	function mc_debug_edit_form_after_title_action( $post )
+	{
+		$post = get_post();
+
+		$terms = self::get_post_terms( $post->ID );
+
+		self::add_post_terms( $post->ID, $terms );
+
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'register_functions_admin',
+
+			'terms' => $terms,
+		] );
+	}
+
 	public static function get_taxonomies()
 	{
 		return array_merge( self::TAXONOMIES_WP, self::TAXONOMIES_PAGE, self::TAXONOMIES_BILLET, self::TAXONOMIES_ATTACHMENT );
@@ -41,7 +63,11 @@ class MultisiteTerms
 
 		foreach ( $taxonomies as $taxonomy )
 		{
-			if ( $terms = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'slugs' ] ) )
+			// if ( $terms = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'slugs' ] ) )
+			
+			// if ( $terms = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'id=>slug' ] ) )
+			
+			if ( $terms = wp_get_object_terms( $post_id, $taxonomy, [ 'fields' => 'all' ] ) )
 			{
 				$result[ $taxonomy ] = $terms;
 			}
@@ -66,13 +92,19 @@ class MultisiteTerms
 		
 		foreach ( $result as $taxonomy => $post_terms )
 		{
-			$object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
+			$slugs = array_column( $post_terms, 'slug' );
 
-			// LegalDebug::debug( [
-			// 	'MultisitePost' => 'add_post_terms',
+			// $object_terms = wp_set_object_terms( $post_id, $slugs, $taxonomy, false );
+			
+			// $object_terms = wp_set_object_terms( $post_id, $post_terms, $taxonomy, false );
 
-			// 	'object_terms' => $object_terms,
-			// ] );
+			LegalDebug::debug( [
+				'MultisitePost' => 'add_post_terms',
+
+				'taxonomy' => $taxonomy,
+
+				'slugs' => $slugs,
+			] );
 		}
 	}
 }

@@ -14,7 +14,7 @@ require_once( 'MultisiteACF.php' );
 
 require_once( 'MultisiteAttachment.php' );
 
-require_once( 'MultisiteSync.php' );
+require_once( 'MultisiteAttachmentSync.php' );
 
 class MiltisiteMain
 {
