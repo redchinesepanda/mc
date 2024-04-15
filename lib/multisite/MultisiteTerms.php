@@ -30,25 +30,25 @@ class MultisiteTerms
 
 	public static function register_functions_admin()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
 	}
 
-	function mc_debug_edit_form_after_title_action( $post )
-	{
-		$post = get_post();
+	// function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	$post = get_post();
 
-		$terms = self::get_post_terms( $post->ID );
+	// 	$terms = self::get_post_terms( $post->ID );
 
-		self::add_post_terms( $post->ID, $terms );
+	// 	self::add_post_terms( $post->ID, $terms );
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'register_functions_admin',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMeta' => 'register_functions_admin',
 
-			'terms' => $terms,
-		] );
-	}
+	// 		'terms' => $terms,
+	// 	] );
+	// }
 
 	public static function get_taxonomies()
 	{
@@ -112,8 +112,6 @@ class MultisiteTerms
 			{
 				$args = [
 					'name' => $post_terms[ $key ]->name,
-
-					'slug' => $post_terms[ $key ]->slug,
 				];
 
 				LegalDebug::debug( [
@@ -122,7 +120,9 @@ class MultisiteTerms
 					'args' => $args,
 				] );
 
-				// wp_update_term( $term_id, $taxonomy, $args );
+				wp_update_term( $term_id, $taxonomy, $args );
+
+				MultisiteMeta::set_term_moved_from( $term_id, $post_terms[ $key ]->term_id )
 			}
 		}
 	}

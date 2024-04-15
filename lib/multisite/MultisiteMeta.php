@@ -94,14 +94,14 @@ class MultisiteMeta
 		return true;
 	}
 
-	public static function add_attachment_metadata( $attachment_id )
+	public static function get_attachment_metadata( $attachment_id )
 	{
 		return wp_generate_attachment_metadata( $attachment_id, get_attached_file( $attachment_id ) );
 	} 
 
 	public static function add_attachment_meta( $attachment_id )
 	{
-		return wp_update_attachment_metadata( $attachment_id, self::add_attachment_metadata( $attachment_id ) );
+		return wp_update_attachment_metadata( $attachment_id, self::get_attachment_metadata( $attachment_id ) );
 	}
 
 	public static function get_post_moved( $post_id, $meta_key = '' )
@@ -256,6 +256,54 @@ class MultisiteMeta
 
 		return false;
 	}
+
+	public static function set_term_moved_from( $term_id, $origin_term_id )
+	{
+		LegalDebug::debug( [
+			'MultisiteMeta' =>'set_term_moved_from',
+
+			'term_id' => $term_id,
+
+			'origin_term_id' => $origin_term_id,
+		] );
+
+		update_term_meta( $term_id, self::POST_META[ 'moved-from' ], $origin_term_id, '' );
+	}
+
+	// public static function set_term_moved_from( $post_id, $blog_id, $moved_post_id )
+	// {
+	// 	$meta_value = self::get_post_moved( $post_id );
+
+	// 	// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
+		
+	// 	$updated_meta_value = [ $blog_id => $moved_post_id ];
+
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMeta' =>'set_post_moved',
+
+	// 		'post_id' => $post_id,
+
+	// 		'blog_id' => $blog_id,
+
+	// 		'moved_post_id' => $moved_post_id,
+
+	// 		'meta_value' => $meta_value,
+
+	// 		'updated_meta_value' => $updated_meta_value,
+	// 	] );
+
+	// 	// update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_meta_value );
+
+	// 	update_term_meta( $term_id, self::POST_META[ 'moved-from' ], $meta_value, $prev_value );
+	// }
+
+	// public static function add_term_meta( $term_id )
+	// {
+	// 	update_term_meta( $term_id, $meta_key, $meta_value, $prev_value );
+
+	// 	// return wp_update_attachment_metadata( $attachment_id, self::add_attachment_metadata( $attachment_id ) );
+	// }
+
 }
 
 ?>
