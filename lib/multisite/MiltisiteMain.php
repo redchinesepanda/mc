@@ -16,6 +16,8 @@ require_once( 'MultisiteAttachment.php' );
 
 require_once( 'MultisiteAttachmentSync.php' );
 
+require_once( 'MultisiteTermSync.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -43,6 +45,8 @@ class MiltisiteMain
 		MultisiteMeta::register_functions_admin();
 
 		MultisiteTerms::register_functions_admin();
+
+		MultisiteTermSync::register_functions_admin();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{
