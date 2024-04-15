@@ -169,7 +169,7 @@ class MultisiteTermSync
 			// 	$field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] => $feature_value,
 			// ];
 
-			$repeaters[ $field_repeater[ 'name' ] ] = $feature_value;
+			$repeaters[ $repeater[ 'name' ] ] = $feature_value;
 		}
 
 		return $repeaters;
