@@ -52,7 +52,7 @@ class MiltisiteMain
 		}
 		else
 		{
-			MultisiteSync::register_functions_admin();
+			MultisiteAttachmentSync::register_functions_admin();
 		}
 	}
 }

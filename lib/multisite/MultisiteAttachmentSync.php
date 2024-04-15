@@ -105,7 +105,7 @@ class MultisiteAttachmentSync
 		foreach ( $origin_post_ids as $field_name => $origin_post_id )
 		{
 			// LegalDebug::debug( [
-			// 	'MultisiteSync' => 'set_attachments',
+			// 	'MultisiteAttachmentSync' => 'set_attachments',
 
 			// 	'origin_post_id' => $origin_post_id,
 			// ] );
