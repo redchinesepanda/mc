@@ -161,7 +161,7 @@ class MultisiteTermSync
 
 			$field_name = $repeater[ 'fields' ][ 'feature-id' ][ 'name' ];
 
-			$feature_value = array_column( $repeater_value, $field_name, [ $field_name ] );
+			$feature_value = array_column( $repeater_value, $field_name, $field_name );
 
 			// $repeaters[] = [
 			// 	'name' => $field_repeater[ 'name' ],
