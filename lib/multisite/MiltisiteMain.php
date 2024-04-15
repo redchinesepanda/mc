@@ -49,6 +49,8 @@ class MiltisiteMain
 			MultisitePost::register_functions_admin();
 
 			MultisiteAttachment::register_functions_admin();
+
+			MultisiteTerms::register_functions_admin();
 		}
 		else
 		{
