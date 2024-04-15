@@ -414,7 +414,7 @@ class BaseFooter
 			'logo' => self::get_logo_items(),
 
 			'copy' => [
-				'year' => '2021-2024',
+				'year' => '2021-2023',
 				
 				'company' => __( BaseMain::TEXT[ 'match-center' ], ToolLoco::TEXTDOMAIN ),
 				
