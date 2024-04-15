@@ -70,7 +70,7 @@ class MultisiteTermSync
 		// }
 	}
 
-	public static function get_repeaters()
+	public static function get_repeaters( $post_id )
 	{
 		$fields_repeater = array_column( self::FIELDS_REPEATER, 'name' );
 
@@ -86,7 +86,7 @@ class MultisiteTermSync
 
 	public static function set_terms( $post_id, $post )
     {
-		$repeaters = self::get_repeaters();
+		$repeaters = self::get_repeaters( $post_id );
 
 		LegalDebug::debug( [
 			'MultisiteTermSync' => 'set_terms',
