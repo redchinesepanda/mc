@@ -57,6 +57,8 @@ class MultisiteTerms
 					'MultisiteTerms' => 'mc_debug_edit_form_after_title_action',
 
 					'term_id' => $term->term_id,
+
+					'slug' => $term->slug,
 	
 					'movef-from' => MultisiteMeta::get_term_moved_from( $term->term_id ),
 				] );
