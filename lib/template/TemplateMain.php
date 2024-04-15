@@ -14,6 +14,8 @@ class TemplateMain
 {
    const CURRENT_LANGUAGE_PRODUCTION = [
         'pt',
+
+        'ng',
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
@@ -24,6 +26,8 @@ class TemplateMain
         'ru',
 
         'es',
+
+        'ng',
     ];
 
     public static function check_code()

@@ -265,6 +265,7 @@ class WPMLMain
     {
         // WPMLDomain::register_functions();
 
+        
         WPMLLanguageMismatch::register_functions();
     } 
 
