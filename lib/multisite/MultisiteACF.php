@@ -8,6 +8,12 @@ class MultisiteACF
 
 			'key' => 'field_642ad18b8593a',
 		],
+
+		'lists' => [
+			'name' => 'billet-list-parts',
+
+			'key' => 'field_6412f442f2c53',
+		],
 	];
 
 	public static function update_field( $field_name, $value, $post_id )
