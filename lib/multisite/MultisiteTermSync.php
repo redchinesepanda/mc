@@ -142,6 +142,11 @@ class MultisiteTermSync
 		// }
 	}
 
+	public static function get_features( $field_value )
+	{
+		return array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
+	}
+
 	public static function get_repeaters( $post_id )
 	{
 		// $fields_repeater = array_column( self::FIELDS_REPEATER, 'name' );
@@ -154,9 +159,15 @@ class MultisiteTermSync
 		{
 			$field_value = MultisiteACF::get_field( $field_repeater[ 'name' ], $post_id );
 
-			$feature_value = array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
+			// $feature_value = array_column( $field_value, $field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] );
 
-			$repeaters[ $field_repeater[ 'name' ] ] = $feature_value;
+			// $repeaters[] = [
+			// 	'name' => $field_repeater[ 'name' ],
+
+			// 	$field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] => $feature_value,
+			// ];
+
+			$repeaters[ $field_repeater[ 'name' ] ] = $field_value;
 		}
 
 		return $repeaters;
@@ -172,11 +183,13 @@ class MultisiteTermSync
 			'repeaters' => $repeaters,
 		] );
 
-		foreach ( $repeaters as $repeater_name => $repeater_values )
+		foreach ( $repeaters as $field_name => $field_value )
 		{
-			foreach ( $repeater_values as $row => $repeater_value )
+			$feature_ids = self::get_features( $field_value );
+
+			foreach ( $feature_ids as $row => $feature_id )
 			{
-				$term_id = self::get_term_moved_id( $repeater_value );
+				$term_id = self::get_term_moved_id( $feature_id );
 
 				LegalDebug::debug( [
 					'MultisiteTermSync' => 'set_terms',
@@ -189,7 +202,7 @@ class MultisiteTermSync
 				if ( $term_id )
 				{
 					$value = [
-						self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ] => $term_id
+						$repeaters[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ] => $term_id
 					];
 
 					LegalDebug::debug( [
