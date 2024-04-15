@@ -15,7 +15,7 @@ class MultisiteTermSync
 
 			'key' => 'field_651ab4be3b28d',
 
-			'fields' => = [
+			'fields' => [
 				'feature-id' => [
 					'name' => 'billet-feture-id',
 		
