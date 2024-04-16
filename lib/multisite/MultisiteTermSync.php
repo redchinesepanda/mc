@@ -160,7 +160,7 @@ class MultisiteTermSync
 	public static function get_repeaters( $post_id )
 	{
 		$repeaters = [];
-		
+
 		foreach ( self::FIELDS_REPEATER as $repeater )
 		{
 			$repeater_name = $repeater[ 'name' ];
@@ -408,11 +408,11 @@ class MultisiteTermSync
     {
 		$repeaters = self::get_repeaters( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'repeaters' => $repeaters,
-		] );
+		// 	'repeaters' => $repeaters,
+		// ] );
 
 		foreach ( $repeaters as $repeater_name => $repeater_value )
 		{
@@ -448,6 +448,16 @@ class MultisiteTermSync
 		{
 			if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
 			{
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
+
+					'field_name' => $field_name,
+
+					'field_value' => field_value,
+
+					'field_value_sync' => $field_value_sync,
+				] );
+
 				MultisiteACF::update_field( $field_name, $field_value, $post_id );
 			}
 		}
