@@ -23,9 +23,9 @@
 
 	/* Display */
 
-	.legal-forecast-block {
+	/* .legal-forecast-block {
 		row-gap: 1rem;
-	}
+	} */
 
 }
 
@@ -71,7 +71,18 @@
 } */
 
 .legal-forecast-block .block-prewiew {
-	padding: 15px 10px;
+	/* padding: 15px 10px; */
+	margin-bottom: 12px;
+}
+
+.legal-forecast-block .legal-forecast-date {
+	padding-bottom: 8px;
+}
+
+.legal-forecast-block .legal-forecast-date,
+.legal-forecast-block .legal-forecast-block-title {
+	padding-right: 16px;
+	padding-left: 16px;
 }
 
 /* Width and Height */
