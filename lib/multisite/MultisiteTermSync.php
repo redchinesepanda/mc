@@ -433,15 +433,15 @@ class MultisiteTermSync
 		{
 			if ( $field_value_sync = self::get_field_value_sync( $field_name, $field_value ) )
 			{
-				// LegalDebug::debug( [
-				// 	'MultisiteTermSync' => 'set_terms',
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
 
-				// 	'field_name' => $field_name,
+					'field_name' => $field_name,
 
-				// 	'field_value' => $field_value,
+					'field_value' => $field_value,
 
-				// 	'field_value_sync' => $field_value_sync,
-				// ] );
+					'field_value_sync' => $field_value_sync,
+				] );
 
 				// MultisiteACF::update_field( $field_name, $field_value, $post_id );
 			}
