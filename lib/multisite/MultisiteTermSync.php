@@ -99,22 +99,22 @@ class MultisiteTermSync
 
 	public static function register_functions_admin()
     {
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
 			$handler = new self();
 			
-			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
+			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		// }
+			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		}
 	}
 
-	function mc_debug_edit_form_after_title_action( $post )
-	{
-		$post = get_post();
+	// function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	$post = get_post();
 
-		self::set_terms( $post->ID, $post );
-	}
+	// 	self::set_terms( $post->ID, $post );
+	// }
 
 	public static function get_repeaters( $post_id )
 	{
@@ -164,67 +164,29 @@ class MultisiteTermSync
 					{
 						$repeater_row[ $feature_id_name ] = $term_id;
 	
-						LegalDebug::debug( [
-							'MultisiteTermSync' => 'set_terms',
+						// LegalDebug::debug( [
+						// 	'MultisiteTermSync' => 'set_terms',
 	
-							'repeater_name' =>$repeater_name,
+						// 	'repeater_name' =>$repeater_name,
 	
-							'row_number' => $row_number,
+						// 	'row_number' => $row_number,
 	
-							'repeater_row' => $repeater_row,
+						// 	'repeater_row' => $repeater_row,
 	
-							'post_id' => $post_id,
-						] );
+						// 	'post_id' => $post_id,
+						// ] );
 	
-						// update_row( $repeater_name, $row_number, $repeater_row, $post_id);
+						update_row( $repeater_name, $row_number, $repeater_row, $post_id);
 					}
 				}
 			}
 		}
-
-		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
-
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' => 'set_attachments',
-
-		// 	'origin_post_ids' => $origin_post_ids,
-		// ] );
-
-		// foreach ( $origin_post_ids as $field_name => $origin_post_id )
-		// {
-		// 	// LegalDebug::debug( [
-		// 	// 	'MultisiteAttachmentSync' => 'set_attachments',
-
-		// 	// 	'origin_post_id' => $origin_post_id,
-		// 	// ] );
-
-		// 	if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
-		// 	{
-		// 		MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
-
-		// 		// LegalDebug::debug( [
-		// 		// 	'MultisiteAttachmentSync' => 'set_attachments',
-		
-		// 		// 	'post_moved_id' => $post_moved_id,
-		// 		// ] );
-		// 	}
-		// }
-
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' => 'set_attachments',
-		// ] );
     }
 
 	public static function get_term_moved_id_args( $origin_post_id )
 	{
 		return [
-            // 'numberposts' => -1,
-
             'taxonomy' => MultisiteTerms::get_taxonomies(),
-
-			// 'post_status' => self::POST_STATUSES,
-
-            // 'suppress_filters' => 0,
 
             'meta_query' => [
 
