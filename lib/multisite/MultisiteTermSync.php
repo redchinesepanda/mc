@@ -446,16 +446,24 @@ class MultisiteTermSync
 
 		foreach ( self::FIELDS as $field_name )
 		{
+			LegalDebug::debug( [
+				'MultisiteTermSync' => 'set_terms',
+
+				'field_name' => $field_name,
+			] );
+
 			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
+	
+					'field_value' => $field_value,
+				] );
+
 				if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
 				{
 					LegalDebug::debug( [
 						'MultisiteTermSync' => 'set_terms',
-
-						'field_name' => $field_name,
-
-						'field_value' => $field_value,
 
 						'field_value_sync' => $field_value_sync,
 					] );
