@@ -4,7 +4,7 @@ class MultisiteAttachment
 {
 	const PATTERNS = [
 		'url' => '%1$s/%2$s',
-		
+
 		'regex' => '/%s/',
 	];
 
@@ -42,15 +42,23 @@ class MultisiteAttachment
 
 	public static function mc_debug_edit_form_after_title_action()
 	{
-		$matches = self::get_gallery_shortcodes();
+		// $matches = self::get_gallery_shortcodes();
 
-		$ids = self::get_shortcodes_attr_ids( $matches );
+		// $ids = self::get_shortcodes_attr_ids( $matches );
+
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+
+		// 	'ids' => $ids,
+		// ] );
+
+		$result = self::sync_gallery_shortcodes();
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
-			'ids' => $ids,
-		] );		
+			'result' => $result,
+		] );
 	}
 
 	const SHORTCODES = [
@@ -104,6 +112,43 @@ class MultisiteAttachment
         }
 
         return $matches;
+    }
+
+	public static function get_gallery_shortcodes( $matches )
+	{
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'get_gallery_shortcodes',
+
+			'matches' => $matches,
+        ] );
+	}
+
+	public static function sync_gallery_shortcodes()
+    {
+        $post = get_post();
+
+        if ( $post )
+        {
+            $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+
+			LegalDebug::debug( [
+				'MultisiteAttachment' => 'get_gallery_shortcodes',
+
+                'regex' => $regex,
+			] );
+
+			$handler = new self();
+
+            $result = preg_replace_callback( 
+                $regex,
+
+				[ $handler, 'gallery_shortcodes_ids' ],
+    
+                $post->post_content
+			);
+        }
+
+        return $result;
     }
 
 	public static function handle_attachments( $blog_id, $object_ids )
