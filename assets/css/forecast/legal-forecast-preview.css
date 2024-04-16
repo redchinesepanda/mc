@@ -37,8 +37,8 @@
 
 .legal-forecast-block .legal-forecast-date {
 	position: absolute;
-	top: 15px;
-	left: 10px;
+	top: calc( 10px + 15px );
+	left: calc( 10px + 10px );
 }
 
 @media (max-width: 768px) {
