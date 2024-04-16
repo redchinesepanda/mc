@@ -180,7 +180,7 @@ class MultisiteAttachment
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'get_gallery_shortcodes',
 
-			'match' => $match,
+			// 'match' => $match,
 
 			'atts' => $atts,
 
