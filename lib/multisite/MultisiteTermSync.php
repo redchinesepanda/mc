@@ -100,14 +100,14 @@ class MultisiteTermSync
 
 	public static function register_functions_admin()
     {
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
 			$handler = new self();
 			
 			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		// }
+			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		}
 	}
 
 	function mc_debug_edit_form_after_title_action( $post )
@@ -423,25 +423,25 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
 			if ( $field_value_sync = self::get_field_value_sync( $field_name, $field_value ) )
 			{
-				LegalDebug::debug( [
-					'MultisiteTermSync' => 'set_terms',
+				// LegalDebug::debug( [
+				// 	'MultisiteTermSync' => 'set_terms',
 
-					'field_name' => $field_name,
+				// 	'field_name' => $field_name,
 
-					'field_value' => $field_value,
+				// 	'field_value' => $field_value,
 
-					'field_value_sync' => $field_value_sync,
-				] );
+				// 	'field_value_sync' => $field_value_sync,
+				// ] );
 
 				// MultisiteACF::update_field( $field_name, $field_value, $post_id );
 			}
