@@ -93,7 +93,10 @@ class CompilationAbout
 
 		foreach ( $nodes as $node )
 		{
-			$items[] = self::parse_node( $dom, $node );
+			if ( !empty( $node->textContent ) )
+			{
+				$items[] = self::parse_node( $dom, $node );
+			}
 		}
 
 		return $items;
