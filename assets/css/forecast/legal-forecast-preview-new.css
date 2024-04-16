@@ -1,22 +1,10 @@
 @media screen and ( max-width: 767px ) {
 
-	/* Display */
-
-	.legal-forecast-block {
-		row-gap: 0.5rem;
-	}
-
-	/* Position */
-
-	/* .legal-forecast-block {
-		margin: 0 auto;
-	} */
-
 	/* Width and Height */
 
-	.legal-forecast-block .block-prewiew {
+	/* .legal-forecast-block .block-prewiew {
 		height: 175px;
-	}
+	} */
 }
 
 @media screen and ( min-width: 768px ) {
@@ -92,7 +80,7 @@
 .legal-forecast-block .block-prewiew {
 	width: 100%;
 	height: 190px;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 }
 
 .legal-forecast-block .legal-forecast-block-title {
@@ -121,11 +109,11 @@
 	/* border-radius: 8px; */
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .legal-forecast-block .block-prewiew:hover {
     background-size: 110%;
-    background-position: center;
 }
 
 /* Typography */
