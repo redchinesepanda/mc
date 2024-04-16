@@ -78,6 +78,12 @@ class CompilationAbout
 
 	public static function parse_node( $dom, $node )
 	{
+		LegalDebug::debug( [
+			'CompilationAbout' => 'parse_content',
+
+			'dom->saveHTML( $node )' => $dom->saveHTML( $node ),
+		] );
+
 		return [
 			// 'text' => $node->textContent,
 			
