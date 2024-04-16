@@ -118,17 +118,17 @@ class MultisiteAttachment
     //     return $matches;
     // }
 
-	public static function get_pair( $v, $k )
+	public static function get_atts_pair( $v, $k )
 	{
 		return sprintf( self::PATTERNS[ 'attr-pair' ], $k, $v );
 	}
 
-	public static function get_atts( $atts )
+	public static function get_atts_part( $atts )
 	{
 		$handler = new self();
 
 		return implode( ' ', array_map(
-			[ $handler, 'get_pair' ],
+			[ $handler, 'get_atts_pair' ],
 
 			$atts,
 
@@ -151,7 +151,7 @@ class MultisiteAttachment
 			$atts[ 'ids' ] = implode( ',', $ids );
         }
 
-		return self::get_atts( $atts );
+		return self::get_atts_part( $atts );
 	}
 
 	public static function gallery_shortcodes_ids( $match )
