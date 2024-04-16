@@ -1,7 +1,7 @@
-.legal-forecast-list * {
+/* .legal-forecast-list * {
 	box-sizing: border-box;
 	font-family: "Source Sans Pro";
-}
+} */
 
 .legal-forecast-list a {
 	text-decoration: none;
@@ -50,6 +50,7 @@
 .legal-forecast-list .block-prewiew {
 	width: 100%;
 	height: 190px;
+	box-sizing: border-box;
 }
 
 @media (max-width: 576px) {
@@ -75,6 +76,7 @@
 	flex-direction: column;
 	row-gap: 1rem;
     flex-basis: 349px;
+	box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
