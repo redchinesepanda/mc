@@ -113,7 +113,7 @@ class MultisiteTermSync
 	{
 		$post = get_post();
 
-		self::set_terms( $post, $post->ID );
+		self::set_terms( $post->ID, $post );
 
 		// $all_terms = self::get_post_terms( $post->ID );
 
