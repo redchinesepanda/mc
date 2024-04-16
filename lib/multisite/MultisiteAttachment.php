@@ -6,6 +6,12 @@ class MultisiteAttachment
 		'url' => '%1$s/%2$s',
 
 		'regex' => '/%s/',
+
+		'shortcode' => '[%1$s %2$s]',
+	];
+
+	const SHORTCODES = [
+		'gallery' => 'gallery',
 	];
 
 	public static function register_functions_admin()
@@ -60,10 +66,6 @@ class MultisiteAttachment
 			'result' => $result,
 		] );
 	}
-
-	const SHORTCODES = [
-		'gallery',
-	];
 
 	// public static function get_shortcodes_attr_ids( $matches )
     // {
@@ -138,15 +140,19 @@ class MultisiteAttachment
 
 		$atts = self::sync_gallery_shortcode_ids( $match );
 
+		$result = sprintf( self::PATTERNS[ 'shortcode' ], self::SHORTCODES[ 'gallery' ], $atts );
+
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'get_gallery_shortcodes',
 
 			'match' => $match,
 
 			'atts' => $atts,
+
+			'result' => $result,
         ] );
 
-		return '[gallery ids="" ]';
+		return $result;
 	}
 
 	public static function sync_gallery_shortcodes()
