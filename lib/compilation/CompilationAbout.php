@@ -78,18 +78,18 @@ class CompilationAbout
 
 	public static function parse_node( $dom, $node )
 	{
-		LegalDebug::debug( [
-			'CompilationAbout' => 'parse_content',
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'parse_content',
 
-			'dom->saveHTML( $node )' => $dom->saveHTML( $node ),
-		] );
+		// 	'dom->saveHTML( $node )' => $dom->saveHTML( $node ),
+		// ] );
 
 		return [
 			// 'text' => $node->textContent,
 			
 			'text' => $dom->saveHTML( $node ),
 
-			'class' => $node->getAttribute( 'class' ),
+			// 'class' => $node->getAttribute( 'class' ),
 		];
 	}
 
@@ -99,16 +99,16 @@ class CompilationAbout
 
 		foreach ( $nodes as $node )
 		{
-			LegalDebug::debug( [
-				'CompilationAbout' => 'parse_content',
+			// LegalDebug::debug( [
+			// 	'CompilationAbout' => 'parse_content',
 
-				'node->textContent' => $node->textContent,
-			] );
+			// 	'node->textContent' => $node->textContent,
+			// ] );
 
-			if ( !empty( $node->textContent ) )
-			{
+			// if ( !empty( $node->textContent ) )
+			// {
 				$items[] = self::parse_node( $dom, $node );
-			}
+			// }
 		}
 
 		return $items;

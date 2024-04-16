@@ -12,7 +12,6 @@
             <div class="about-section-content">
                 <h1><?php echo $args[ 'title' ]; ?></h1>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
-                    <!-- <p class="<?php echo $item[ 'class' ]; ?>"><?php echo $item[ 'text' ]; ?></p> -->
                     <?php echo $item[ 'text' ]; ?>
                 <?php endforeach; ?>
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
