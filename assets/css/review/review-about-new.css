@@ -430,6 +430,11 @@
     width: 100%;
 }
 
+.review-about .about-right .review-bonus-description,
+.legal-review-page-sidebar .about-right .review-bonus-description {
+    width: 100%;
+}
+
 .legal-review-page-sidebar .about-right .legal-afillate {
     min-height: calc(56px - 20px);
 }
