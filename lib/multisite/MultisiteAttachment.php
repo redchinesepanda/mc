@@ -47,6 +47,10 @@ class MultisiteAttachment
 		] );		
 	}
 
+	const SHORTCODES = [
+		'gallery',
+	];
+
 	public static function get_gallery_shortcodes()
     {
         $matches = [];
@@ -55,7 +59,7 @@ class MultisiteAttachment
 
         if ( $post )
         {
-            $regex = get_shortcode_regex( self::SHORTCODES_INLINE );
+            $regex = get_shortcode_regex( self::SHORTCODES );
 
             $amount = preg_match_all( 
                 '/' . $regex . '/', 
