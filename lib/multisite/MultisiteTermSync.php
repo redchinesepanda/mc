@@ -69,6 +69,12 @@ class MultisiteTermSync
 		
 					'key' => 'field_643403cbd58e5',
 				],
+
+				'pair-id' => [
+					'name' => 'profit-item-pair',
+		
+					'key' => 'field_649c318052136',
+				],
 			],
 		],
 
@@ -160,35 +166,82 @@ class MultisiteTermSync
 		return $repeaters;
 	}
 
-	const ROW_FIELDS = [
-		'feature-id',
+	public static function get_filed_name( $repeater_name, $row_field )
+	{
+		if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+		{
+			return self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
+		}
 
-		'achievement-id',
-	];
+		return false;
+	}
+	
+	public static function get_pair( $field_value )
+	{
+		$moved_from_id = explode( '-', $field_value )[ 2 ];
+
+		$term_id = self::get_term_moved_id( $moved_from_id );
+
+		if ( $term_id )
+		{
+			return str_replace( $moved_from_id, $term_id, $field_value );
+		}
+
+		return false;
+	}
+
+	public static function get_term_id( $field_value )
+	{
+		$term_id = self::get_term_moved_id( $field_value );
+
+		if ( $term_id )
+		{
+			return $term_id;
+		}
+
+		return false;
+	}
 
 	public static function sync_row( $repeater_name, $repeater_row )
 	{
 		foreach ( self::ROW_FIELDS as $row_field )
 		{
-
-			if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
 			{
-				$field_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
-
 				LegalDebug::debug( [
 					'MultisiteTermSync' =>'sync_row',
 	
 					'field_name' => $field_name,
 				] );
 
-				if ( ! empty( $repeater_row[ $field_name ] ) )
+				$field_value = $repeater_row[ $field_name ];
+
+				if ( $field_value )
 				{
-					$term_id = self::get_term_moved_id( $repeater_row[ $field_name ] );
-	
-					if ( $term_id )
+					$field_value_sync = false;
+
+					if ( is_numeric( $field_value ) )
 					{
-						$repeater_row[ $field_name ] = $term_id;
+						$field_value_sync = self::get_term_id( $field_value );
 					}
+					else
+					{
+						$field_value_sync = self::get_pair( $field_value );
+					}
+
+					if ( $field_value_sync )
+					{
+						$repeater_row[ $field_name ] = $field_value_sync;
+					}
+
+					// $term_id = self::get_term_moved_id( $field_value );
+	
+					// if ( $term_id )
+					// {
+					// 	$repeater_row[ $field_name ] = $term_id;
+					// }
+
+					// $repeater_row[ $field_name ] = $term_id;
 				}
 			}
 		}
@@ -210,8 +263,50 @@ class MultisiteTermSync
 		// }
 	}
 
+	// const ROW_FIELDS = [
+	// 	'feature' => 'feature-id',
+
+	// 	'achievement' => 'achievement-id',
+
+	// 	'pair' => 'pair-id',
+	// ];
+
+	public static function check_repeater_has_field( $repeater_name, $field_name )
+	{
+		if ( ! empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $field_name ] ) )
+        {
+            return true;
+        }
+
+		return false;
+	}
+
 	public static function sync_repeater( $repeater_name, $repeater_value )
 	{
+		// if ( self::check_repeater_has_field( $repeater_name, self::ROW_FIELDS[ 'feature' ] ) )
+		// {
+		// 	foreach ( $repeater_value as $row_number => $repeater_row )
+		// 	{
+		// 		$repeater_value[ $row_number ] = self::sync_row_feature_id( $repeater_name, $repeater_row );
+		// 	}
+		// }
+
+		// if ( self::check_repeater_has_field( $repeater_name, self::ROW_FIELDS[ 'achievement' ] ) )
+		// {
+		// 	foreach ( $repeater_value as $row_number => $repeater_row )
+		// 	{
+		// 		$repeater_value[ $row_number ] = self::sync_row_achievement_id( $repeater_name, $repeater_row );
+		// 	}
+		// }
+
+		// if ( self::check_repeater_has_field( $repeater_name, self::ROW_FIELDS[ 'pair' ] ) )
+		// {
+		// 	foreach ( $repeater_value as $row_number => $repeater_row )
+		// 	{
+		// 		$repeater_value[ $row_number ] = self::sync_row_pair_id( $repeater_name, $repeater_row );
+		// 	}
+		// }
+
 		foreach ( $repeater_value as $row_number => $repeater_row )
 		{
 			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row );
