@@ -7,6 +7,12 @@ class MultisiteTermSync
     ];
 
 	const FIELDS = [
+		'compilation-type' => [
+			'name' => 'compilation-type',
+
+			'key' => 'field_64943cb4bd61f',
+		],
+
 		'compilation-filter' => [
 			'name' => 'compilation-filter',
 
