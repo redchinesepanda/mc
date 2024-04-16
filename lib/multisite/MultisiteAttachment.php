@@ -136,6 +136,19 @@ class MultisiteAttachment
 		) );
 	}
 
+	public static function set_gallery_shortcode_moved_ids( $attachment_ids )
+	{
+		foreach ( $attachment_ids as $key => $origin_post_id )
+		{
+			if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
+			{
+				$attachment_ids[ $key ] = $post_moved_id;
+			}
+		}
+
+		return $attachment_ids;
+	}
+
 	public static function sync_gallery_shortcode_ids( $match )
 	{
 		$atts = shortcode_parse_atts( $match[ 3 ] );
@@ -144,7 +157,9 @@ class MultisiteAttachment
         {
             $ids = explode( ',', $atts[ 'ids' ] );
 
-			$ids = [ 0 ];
+			// $ids = [ 0 ];
+			
+			$ids = self::set_gallery_shortcode_moved_ids( $ids );
 
 			// sync ids
 
@@ -154,7 +169,7 @@ class MultisiteAttachment
 		return self::get_atts_part( $atts );
 	}
 
-	public static function gallery_shortcodes_ids( $match )
+	public static function replace_gallery_shortcodes_ids( $match )
 	{
 		// $atts = shortcode_parse_atts( $match[ 3 ] );
 
@@ -184,7 +199,7 @@ class MultisiteAttachment
             $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 			LegalDebug::debug( [
-				'MultisiteAttachment' => 'get_gallery_shortcodes',
+				'MultisiteAttachment' => 'sync_gallery_shortcodes',
 
                 'regex' => $regex,
 			] );
@@ -194,7 +209,7 @@ class MultisiteAttachment
             $result = preg_replace_callback( 
                 $regex,
 
-				[ $handler, 'gallery_shortcodes_ids' ],
+				[ $handler, 'replace_gallery_shortcodes_ids' ],
     
                 $post->post_content
 			);
