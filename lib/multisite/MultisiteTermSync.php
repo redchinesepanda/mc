@@ -204,7 +204,7 @@ class MultisiteTermSync
 	{
 		foreach ( $field_value_parts as $key => $field_value_part )
 		{
-			if ( $field_value = self::get_field_value( $field_value_part ) )
+			if ( $field_value = self::get_term_id( $field_value_part ) )
 			{
 				$field_value_parts[ $key ] = $field_value;
 			}
