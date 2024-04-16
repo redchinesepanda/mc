@@ -38,23 +38,47 @@ class MultisiteTermSync
 			],
 		],
 
-		// 'achievements' => [
-		// 	'name' => 'billet-feture-achievement',
+		'billet-feture-achievement' => [
+			'name' => 'billet-feture-achievement',
 
-		// 	'key' => 'field_651aa238a7b35',
-		// ],
+			'key' => 'field_651aa238a7b35',
 
-		// 'profits' => [
-		// 	'name' => 'billet-profit-items',
+			'fields' => [
+				'feature-id' => [
+					'name' => 'billet-feture-id',
+		
+					'key' => 'field_651aa298e2e4a',
+				],
+			],
+		],
 
-		// 	'key' => 'field_64340371d58e4',
-		// ],
+		'billet-profit-items' => [
+			'name' => 'billet-profit-items',
 
-		// 'main-descriptions' => [
-		// 	'name' => 'billet-feture-main-description',
+			'key' => 'field_64340371d58e4',
 
-		// 	'key' => 'field_6523a4f9e9751',
-		// ],
+			'fields' => [
+				'feature-id' => [
+					'name' => 'profit-item-feature',
+		
+					'key' => 'field_643403cbd58e5',
+				],
+			],
+		],
+
+		'main-descriptions' => [
+			'name' => 'billet-feture-main-description',
+
+			'key' => 'field_6523a4f9e9751',
+
+			'fields' => [
+				'feature-id' => [
+					'name' => 'billet-feture-id',
+		
+					'key' => 'field_6523b09bdf712',
+				],
+			],
+		],
 	];
 
 	// const FIELD_FETURE_BONUS = [
@@ -73,29 +97,29 @@ class MultisiteTermSync
 	// 	],
 	// ];
 
-	const FIELD_ACHIEVEMENTS = [
-		'feature-id' => [
-			'name' => 'billet-feture-id',
+	// const FIELD_ACHIEVEMENTS = [
+	// 	'feature-id' => [
+	// 		'name' => 'billet-feture-id',
 
-			'key' => 'field_651aa298e2e4a',
-		],
-	];
+	// 		'key' => 'field_651aa298e2e4a',
+	// 	],
+	// ];
 
-	const FIELD_PROFITS = [
-		'feature-id' => [
-			'name' => 'profit-item-feature',
+	// const FIELD_PROFITS = [
+	// 	'feature-id' => [
+	// 		'name' => 'profit-item-feature',
 
-			'key' => 'field_643403cbd58e5',
-		],
-	];
+	// 		'key' => 'field_643403cbd58e5',
+	// 	],
+	// ];
 
-	const FIELD_MAIN_DESCRIPTIONS = [
-		'feature-id' => [
-			'name' => 'billet-feture-id',
+	// const FIELD_MAIN_DESCRIPTIONS = [
+	// 	'feature-id' => [
+	// 		'name' => 'billet-feture-id',
 
-			'key' => 'field_6523b09bdf712',
-		],
-	];
+	// 		'key' => 'field_6523b09bdf712',
+	// 	],
+	// ];
 
 	public static function register_functions_admin()
     {
