@@ -7,6 +7,7 @@
 .wp-polls {
 	padding-top: 40px;
 	padding-bottom: 40px;
+	margin-bottom: 24px;
 }
 
 /* Background */
@@ -17,6 +18,39 @@
 }
 
 /* Typography */
+
+.wp-polls .wp-polls-form > p:last-of-type,
+.wp-polls .form_radio_btn label,
+.wp-polls .Button-my-style {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
+}
+
+.wp-polls .wp-polls-form > p:last-of-type,
+.wp-polls .form_radio_btn label {
+	color: var( --Base-base-09 );
+}
+
+.wp-polls .wp-polls-form > p:last-of-type {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 26px;
+}
+
+.wp-polls .form_radio_btn label,
+.wp-polls .Button-my-style {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+.wp-polls .Button-my-style {
+	color: var( --Base-base-01 );
+}
+
+
+
+
 
 .wp-polls .container-form_radio_btn {
 	display: flex;
