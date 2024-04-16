@@ -226,13 +226,15 @@ class MultisiteTermSync
 		{
 			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
 			{
-				// LegalDebug::debug( [
-				// 	'MultisiteTermSync' =>'sync_row',
-	
-				// 	'field_name' => $field_name,
-				// ] );
-
 				$field_value = $repeater_row[ $field_name ];
+				
+				LegalDebug::debug( [
+					'MultisiteTermSync' =>'sync_row',
+	
+					'field_name' => $field_name,
+
+					'field_value' => $field_value,
+				] );
 
 				if ( $field_value )
 				{
@@ -289,15 +291,15 @@ class MultisiteTermSync
 	// 	'pair' => 'pair-id',
 	// ];
 
-	public static function check_repeater_has_field( $repeater_name, $field_name )
-	{
-		if ( ! empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $field_name ] ) )
-        {
-            return true;
-        }
+	// public static function check_repeater_has_field( $repeater_name, $field_name )
+	// {
+	// 	if ( ! empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $field_name ] ) )
+    //     {
+    //         return true;
+    //     }
 
-		return false;
-	}
+	// 	return false;
+	// }
 
 	public static function sync_repeater( $repeater_name, $repeater_value )
 	{
