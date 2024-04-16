@@ -62,11 +62,11 @@ class MultisiteAttachment
 
 		$result = self::sync_gallery_shortcodes();
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 	}
 
 	// public static function get_shortcodes_attr_ids( $matches )
