@@ -62,6 +62,9 @@
 
 /* Width and Height */
 
+.legal-forecast-block {
+	height: fit-content;
+}
 
 .legal-forecast-block .block-prewiew {
 	width: 100%;
@@ -85,10 +88,6 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
-/* .legal-forecast-block .block-prewiew:hover {
-    background-size: 110%;
-} */
 
 /* Typography */
 
