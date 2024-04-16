@@ -5,11 +5,11 @@ class MultisiteAttachment
 	const PATTERNS = [
 		'url' => '%1$s/%2$s',
 
-		'regex' => '/%s/',
+		// 'regex' => '/%s/',
 
-		'shortcode' => '[%1$s %2$s]',
+		// 'shortcode' => '[%1$s %2$s]',
 
-		'attr-pair' => '%1$s="%2$s"',
+		// 'attr-pair' => '%1$s="%2$s"',
 	];
 
 	const SHORTCODES = [

@@ -38,6 +38,12 @@ class MultisiteAttachmentSync
 
 	const PATTERNS = [
 		'group-field' => '%1$s_%2$s',
+
+		'regex' => '/%s/',
+
+		'shortcode' => '[%1$s %2$s]',
+
+		'attr-pair' => '%1$s="%2$s"',
 	];
 
 	public static function register_functions_admin()
