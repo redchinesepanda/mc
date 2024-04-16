@@ -159,6 +159,8 @@ class MultisiteTermSync
 
 	public static function get_repeaters( $post_id )
 	{
+		$repeaters = [];
+		
 		foreach ( self::FIELDS_REPEATER as $repeater )
 		{
 			$repeater_name = $repeater[ 'name' ];
