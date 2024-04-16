@@ -216,11 +216,11 @@ class MultisiteTermSync
 		{
 			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
 			{
-				LegalDebug::debug( [
-					'MultisiteTermSync' =>'sync_row',
+				// LegalDebug::debug( [
+				// 	'MultisiteTermSync' =>'sync_row',
 	
-					'field_name' => $field_name,
-				] );
+				// 	'field_name' => $field_name,
+				// ] );
 
 				$field_value = $repeater_row[ $field_name ];
 
@@ -370,11 +370,11 @@ class MultisiteTermSync
 
 			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
-			LegalDebug::debug( [
-				'MultisiteTermSync' => 'set_terms',
+			// LegalDebug::debug( [
+			// 	'MultisiteTermSync' => 'set_terms',
 
-				'repeater_value' => $repeater_value,
-			] );
+			// 	'repeater_value' => $repeater_value,
+			// ] );
 		}
     }
 
