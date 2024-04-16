@@ -177,15 +177,15 @@ class MultisiteAttachment
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], self::SHORTCODES[ 'gallery' ], $atts );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'get_gallery_shortcodes',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'get_gallery_shortcodes',
 
-			'match' => $match,
+		// 	'match' => $match,
 
-			'atts' => $atts,
+		// 	'atts' => $atts,
 
-			'result' => $result,
-        ] );
+		// 	'result' => $result,
+        // ] );
 
 		return $result;
 	}
@@ -198,11 +198,11 @@ class MultisiteAttachment
         {
             $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-			LegalDebug::debug( [
-				'MultisiteAttachment' => 'sync_gallery_shortcodes',
+			// LegalDebug::debug( [
+			// 	'MultisiteAttachment' => 'sync_gallery_shortcodes',
 
-                'regex' => $regex,
-			] );
+            //     'regex' => $regex,
+			// ] );
 
 			$handler = new self();
 
