@@ -93,6 +93,12 @@ class CompilationAbout
 
 		foreach ( $nodes as $node )
 		{
+			LegalDebug::debug( [
+				'CompilationAbout' => 'parse_content',
+
+				'node->textContent' => $node->textContent,
+			] );
+
 			if ( !empty( $node->textContent ) )
 			{
 				$items[] = self::parse_node( $dom, $node );
