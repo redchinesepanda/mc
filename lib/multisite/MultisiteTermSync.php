@@ -453,12 +453,12 @@ class MultisiteTermSync
 
 					'field_name' => $field_name,
 
-					'field_value' => field_value,
+					'field_value' => $field_value,
 
 					'field_value_sync' => $field_value_sync,
 				] );
 
-				MultisiteACF::update_field( $field_name, $field_value, $post_id );
+				// MultisiteACF::update_field( $field_name, $field_value, $post_id );
 			}
 		}
     }
