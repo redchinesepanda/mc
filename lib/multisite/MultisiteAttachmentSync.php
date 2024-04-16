@@ -4,6 +4,8 @@ class MultisiteAttachmentSync
 {
 	const POST_TYPE = [
         'billet' => 'legal_billet',
+
+        'page' => 'page',
     ];
 
 	const FIELDS = [
@@ -48,7 +50,7 @@ class MultisiteAttachmentSync
 			
 			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
 
-			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments_shortcode' ], 10, 2 );
+			add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_attachments_shortcode' ], 10, 2 );
 		}
 	}
 
