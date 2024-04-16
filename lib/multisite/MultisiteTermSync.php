@@ -443,7 +443,7 @@ class MultisiteTermSync
 				// 	'field_value_sync' => $field_value_sync,
 				// ] );
 
-				MultisiteACF::update_field( $field_name, $field_value, $post_id );
+				MultisiteACF::update_field( $field_name, $field_value_sync, $post_id );
 			}
 		}
     }
