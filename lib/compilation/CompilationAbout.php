@@ -76,22 +76,24 @@ class CompilationAbout
 		return $nodes->item( 0 )->textContent;
 	}
 
-	public static function parse_node( $node )
+	public static function parse_node( $dom, $node )
 	{
 		return [
-			'text' => $node->textContent,
+			// 'text' => $node->textContent,
+			
+			'text' => $doc->saveHTML( $node ),
 
 			'class' => $node->getAttribute( 'class' ),
 		];
 	}
 
-	public static function parse_content( $nodes )
+	public static function parse_content( $dom, $nodes )
 	{
 		$items = [];
 
 		foreach ( $nodes as $node )
 		{
-			$items[] = self::parse_node( $node );
+			$items[] = self::parse_node( $dom, $node );
 		}
 
 		return $items;
@@ -106,7 +108,7 @@ class CompilationAbout
 			return []; 
 		}
 
-		return self::parse_content( $nodes );
+		return self::parse_content( $dom, $nodes );
 	}
 
 	public static function has_read_more( $item )
