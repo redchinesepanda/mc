@@ -200,6 +200,8 @@ class MultisiteTermSync
 				LegalDebug::debug( [
 					'MultisiteTermSync' => 'set_terms',
 
+					'feature_id_name' => $feature_id_name,
+
 					'repeater_row' => $repeater_row,
 
 					'term_id' => $term_id,
