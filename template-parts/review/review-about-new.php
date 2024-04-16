@@ -13,7 +13,10 @@
                     <div class="about-achievement">
                         <div class="achievement-item">
                             <?php if ( !empty( $args[ 'achievement' ][ 'tooltip' ] ) ) : ?>
-                                <div class="achievement-tooltip"><span class="achievement-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?></div>
+                                <div class="achievement-tooltip-background">
+                                    <div class="achievement-tooltip"><span class="achievement-tooltip-close"></span><?php echo $args[ 'achievement' ][ 'tooltip' ]; ?>
+                                    </div>
+                                </div>
                             <?php endif; ?>
                             <span class="achievement-name">
                                 <?php if ( !empty( $args[ 'achievement' ][ 'image' ] ) ) : ?>

@@ -14,6 +14,8 @@ class TemplateMain
 {
    const CURRENT_LANGUAGE_PRODUCTION = [
         'pt',
+
+        'ng',
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
@@ -24,6 +26,8 @@ class TemplateMain
         'ru',
 
         'es',
+
+        'ng',
     ];
 
     public static function check_code()
@@ -35,11 +39,26 @@ class TemplateMain
         if ( LegalHosts::check_host_production() )
         {
             $current_language = self::CURRENT_LANGUAGE_PRODUCTION;
+
+            return in_array( WPMLMain::current_language(), $current_language );
         }
 
-        return in_array( WPMLMain::current_language(), $current_language );
+        // return in_array( WPMLMain::current_language(), $current_language );
 
-        // return true;
+        return true;
+    }
+
+    public static function check_new()
+    {
+        // return self::check() && self::check_code();
+        
+        // return ToolRestricted::check_domain_restricted()
+            
+        //     // || self::check() && self::check_code();
+            
+        //     || self::check_code();
+
+        return self::check_code();
     }
 
     const DEQUEUE_WP = [
@@ -166,21 +185,30 @@ class TemplateMain
 
     public static function register_style()
     {
-        if ( self::check() )
+        // if ( self::check() )
+        // {
+        //     if ( self::check_new() )
+        //     {
+        //         ToolEnqueue::register_style( self::CSS_NEW );
+        //     }
+        //     else
+        //     {
+        //         ToolEnqueue::register_style( self::CSS );
+        //     }
+        // }
+        // else
+        // {
+        //     ToolEnqueue::register_style( self::CSS_THRIVE );
+        // } 
+
+        if ( self::check_new() )
         {
-            if ( self::check_new() )
-            {
-                ToolEnqueue::register_style( self::CSS_NEW );
-            }
-            else
-            {
-                ToolEnqueue::register_style( self::CSS );
-            }
+            ToolEnqueue::register_style( self::CSS_NEW );
         }
         else
         {
-            ToolEnqueue::register_style( self::CSS_THRIVE );
-        } 
+            ToolEnqueue::register_style( self::CSS );
+        }
     }
 
     const JS = [
@@ -231,19 +259,6 @@ class TemplateMain
         {
             ToolEnqueue::dequeue_script( self::JS_DEQUEUE );
         }
-    }
-
-    public static function check_new()
-    {
-        // return self::check() && self::check_code();
-        
-        // return ToolRestricted::check_domain_restricted()
-            
-        //     // || self::check() && self::check_code();
-            
-        //     || self::check_code();
-
-        return self::check_code();
     }
 
     public static function check()

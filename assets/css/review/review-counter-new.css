@@ -336,9 +336,9 @@
 	line-height: 17px;
 }
 
-.legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
+/* .legal-review-counter.legal-overall.font-legal-default .review-counter-set .item-label {
 	color: rgb(255, 255, 255);
-}
+} */
 
 .legal-review-counter.legal-overall .review-counter-set .item-label,
 .legal-review-counter .review-counter-overall .item-label {

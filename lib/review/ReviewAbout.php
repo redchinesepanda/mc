@@ -53,6 +53,12 @@ class ReviewAbout
 
 			'ver' => '1.0.0',
 		],
+
+        'review-about-tooltip' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-about-tooltip.js',
+
+			'ver' => '1.0.0',
+		], 
     ];
 
     public static function register_script()

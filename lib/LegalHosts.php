@@ -9,19 +9,15 @@ class LegalHosts
 	const HOST_PRODUCTION = [
 		'mc' => 'match.center',
 
-		'es' => 'es.match.center',
+		'old' => 'old.match.center',
 	];
 
 	const HOST_DEBUG = [
-		'old' => 'old.match.center',
-
 		'oldpl' => 'oldpl.match.center',
-
-		'oldes' => 'oldes.match.center',
 
 		'test' => 'test.match.center',
 
-		// 'es' => 'es.match.center',
+		'testkz' => 'testkz.match.center',
 	];
 
 	public static function check_external( $host )
