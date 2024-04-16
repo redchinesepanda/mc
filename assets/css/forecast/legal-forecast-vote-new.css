@@ -97,7 +97,7 @@
 .wp-polls .Button-my-style {
 	border-radius: 20px;
 	padding: 10px 20px;
-	background: #007bff;
+	background-color: var( --Base-base-07 );
 	border: #fff solid 2px;
 	color: #fff;
 	font-weight: 600;
