@@ -72,6 +72,10 @@ class MultisiteAttachment
         return $ids;
     }
 
+	const PATTERNS = [
+		'regex' => '/%s/',
+    ];
+
 	public static function get_gallery_shortcodes()
     {
         $matches = [];
@@ -80,10 +84,18 @@ class MultisiteAttachment
 
         if ( $post )
         {
-            $regex = get_shortcode_regex( self::SHORTCODES );
+            $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+
+			LegalDebug::debug( [
+				'MultisiteAttachment' => 'get_gallery_shortcodes',
+
+                'regex' => $regex,
+			] );
 
             $amount = preg_match_all( 
-                '/' . $regex . '/', 
+                // '/' . $regex . '/',
+
+				$regex
     
                 $post->post_content,
     
