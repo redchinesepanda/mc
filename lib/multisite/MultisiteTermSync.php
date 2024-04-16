@@ -200,6 +200,19 @@ class MultisiteTermSync
 		return false;
 	}
 
+	public static function get_array( $field_value_parts )
+	{
+		foreach ( $field_value_parts as $key => $field_value_part )
+		{
+			if ( $field_value = self::get_field_value( $field_value_part )
+			{
+				$field_value_parts[ $key ] = $field_value;
+			}
+		}
+
+		return $field_value_parts;
+	}
+
 	public static function get_term_id( $field_value )
 	{
 		$term_id = self::get_term_moved_id( $field_value );
@@ -246,8 +259,19 @@ class MultisiteTermSync
 					}
 					else
 					{
-						$field_value_sync = self::get_pair( $field_value );
+						if ( is_array( $field_value ) )
+						{
+							$field_value_sync = self::get_array( $field_value );
+						}
+						else
+						{
+							if ( is_string( $field_value ) )
+							{
+								$field_value_sync = self::get_pair( $field_value );
+							}
+						}
 					}
+
 
 					if ( $field_value_sync )
 					{
