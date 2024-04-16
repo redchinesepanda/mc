@@ -136,7 +136,7 @@ class MultisiteAttachment
 	{
 		// $atts = shortcode_parse_atts( $match[ 3 ] );
 
-		$atts = sync_gallery_shortcode_ids( $match )
+		$atts = sync_gallery_shortcode_ids( $match );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'get_gallery_shortcodes',
