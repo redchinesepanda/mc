@@ -45,6 +45,10 @@ class MultisiteAttachmentSync
 
 		'attr-pair' => '%1$s="%2$s"',
 	];
+	
+	const SHORTCODES = [
+		'gallery' => 'gallery',
+	];
 
 	public static function register_functions_admin()
     {
