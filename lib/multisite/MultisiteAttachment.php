@@ -213,9 +213,15 @@ class MultisiteAttachment
     
                 $post->post_content
 			);
+
+			$post->post_content = $result;
+
+			MultisitePost::update_post( $post );
+
+			return true;
         }
 
-        return $result;
+        return false;
     }
 
 	public static function handle_attachments( $blog_id, $object_ids )

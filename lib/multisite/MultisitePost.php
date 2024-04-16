@@ -304,6 +304,11 @@ class MultisitePost
 
 		return false;
 	}
+
+	public static function update_post( $post )
+	{
+		wp_update_post( $post );
+	}
 }
 
 ?>
