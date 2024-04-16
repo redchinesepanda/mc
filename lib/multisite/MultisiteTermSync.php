@@ -98,56 +98,16 @@ class MultisiteTermSync
 		],
 	];
 
-	// const FIELD_FETURE_BONUS = [
-	// 	'feature-id' => [
-	// 		'name' => 'billet-feture-id',
-
-	// 		'key' => 'field_651ab5083b28e',
-	// 	],
-	// ];
-
-	// const FIELD_LISTS = [
-	// 	'feature-id' => [
-	// 		'name' => 'billet-list-part-feature',
-
-	// 		'key' => 'field_6492f753cfa1c',
-	// 	],
-	// ];
-
-	// const FIELD_ACHIEVEMENTS = [
-	// 	'feature-id' => [
-	// 		'name' => 'billet-feture-id',
-
-	// 		'key' => 'field_651aa298e2e4a',
-	// 	],
-	// ];
-
-	// const FIELD_PROFITS = [
-	// 	'feature-id' => [
-	// 		'name' => 'profit-item-feature',
-
-	// 		'key' => 'field_643403cbd58e5',
-	// 	],
-	// ];
-
-	// const FIELD_MAIN_DESCRIPTIONS = [
-	// 	'feature-id' => [
-	// 		'name' => 'billet-feture-id',
-
-	// 		'key' => 'field_6523b09bdf712',
-	// 	],
-	// ];
-
 	public static function register_functions_admin()
     {
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
 			$handler = new self();
 			
-			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
+			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
 			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		}
+		// }
 	}
 
 	function mc_debug_edit_form_after_title_action( $post )
@@ -414,35 +374,35 @@ class MultisiteTermSync
 		// 	'repeaters' => $repeaters,
 		// ] );
 
-		foreach ( $repeaters as $repeater_name => $repeater_value )
-		{
-			$repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
+		// foreach ( $repeaters as $repeater_name => $repeater_value )
+		// {
+		// 	$repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
 
-			// foreach ( $repeater_value as $row_number => $repeater_row )
-			// {
-			// 	$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+		// 	// foreach ( $repeater_value as $row_number => $repeater_row )
+		// 	// {
+		// 	// 	$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 
-			// 	if ( ! empty( $repeater_row[ $feature_id_name ] ) )
-			// 	{
-			// 		$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
+		// 	// 	if ( ! empty( $repeater_row[ $feature_id_name ] ) )
+		// 	// 	{
+		// 	// 		$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
 	
-			// 		if ( $term_id )
-			// 		{
-			// 			$repeater_row[ $feature_id_name ] = $term_id;
+		// 	// 		if ( $term_id )
+		// 	// 		{
+		// 	// 			$repeater_row[ $feature_id_name ] = $term_id;
 	
-			// 			$repeater_value[ $row_number ] = $repeater_row;
-			// 		}
-			// 	}
-			// }
+		// 	// 			$repeater_value[ $row_number ] = $repeater_row;
+		// 	// 		}
+		// 	// 	}
+		// 	// }
 
-			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
+		// 	MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
-			// LegalDebug::debug( [
-			// 	'MultisiteTermSync' => 'set_terms',
+		// 	// LegalDebug::debug( [
+		// 	// 	'MultisiteTermSync' => 'set_terms',
 
-			// 	'repeater_value' => $repeater_value,
-			// ] );
-		}
+		// 	// 	'repeater_value' => $repeater_value,
+		// 	// ] );
+		// }
 
 		foreach ( self::FIELDS as $field_name => $field_data )
 		{
