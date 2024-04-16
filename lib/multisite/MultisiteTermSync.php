@@ -111,7 +111,7 @@ class MultisiteTermSync
 			MultisiteAdmin::add_filter_all(
 				self::PATTERNS[ 'edit-post' ],
 				
-				MultisiteAdmin::POST_TYPES_POST,
+				MultisitePost::POST_TYPES,
 				
 				$handler,
 				
