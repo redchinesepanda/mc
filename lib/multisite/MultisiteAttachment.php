@@ -65,54 +65,54 @@ class MultisiteAttachment
 		'gallery',
 	];
 
-	public static function get_shortcodes_attr_ids( $matches )
-    {
-        $ids = [];
+	// public static function get_shortcodes_attr_ids( $matches )
+    // {
+    //     $ids = [];
 
-        foreach ( $matches as $match )
-		{
-			$atts = shortcode_parse_atts( $match[ 3 ] );
+    //     foreach ( $matches as $match )
+	// 	{
+	// 		$atts = shortcode_parse_atts( $match[ 3 ] );
 
-			if ( ! empty( $atts[ 'ids' ] ) )
-			{
-				$ids[] = $atts[ 'ids' ];
-			}
-		}
+	// 		if ( ! empty( $atts[ 'ids' ] ) )
+	// 		{
+	// 			$ids[] = $atts[ 'ids' ];
+	// 		}
+	// 	}
 
-        return $ids;
-    }
+    //     return $ids;
+    // }
 
-	public static function get_gallery_shortcodes()
-    {
-        $matches = [];
+	// public static function get_gallery_shortcodes()
+    // {
+    //     $matches = [];
 
-        $post = get_post();
+    //     $post = get_post();
 
-        if ( $post )
-        {
-            $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+    //     if ( $post )
+    //     {
+    //         $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-			LegalDebug::debug( [
-				'MultisiteAttachment' => 'get_gallery_shortcodes',
+	// 		LegalDebug::debug( [
+	// 			'MultisiteAttachment' => 'get_gallery_shortcodes',
 
-                'regex' => $regex,
-			] );
+    //             'regex' => $regex,
+	// 		] );
 
-            $amount = preg_match_all( 
-                // '/' . $regex . '/',
+    //         $amount = preg_match_all( 
+    //             // '/' . $regex . '/',
 
-				$regex,
+	// 			$regex,
     
-                $post->post_content,
+    //             $post->post_content,
     
-                $matches,
+    //             $matches,
     
-                PREG_SET_ORDER
-            );
-        }
+    //             PREG_SET_ORDER
+    //         );
+    //     }
 
-        return $matches;
-    }
+    //     return $matches;
+    // }
 
 	public static function get_gallery_shortcodes( $matches )
 	{
