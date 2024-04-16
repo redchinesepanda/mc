@@ -24,61 +24,61 @@ class MultisiteTermSync
 			],
 		],
 
-		'billet-list-parts' => [
-			'name' => 'billet-list-parts',
+		// 'billet-list-parts' => [
+		// 	'name' => 'billet-list-parts',
 
-			'key' => 'field_6412f442f2c53',
+		// 	'key' => 'field_6412f442f2c53',
 
-			'fields' => [
-				'feature-id' => [
-					'name' => 'billet-list-part-feature',
+		// 	'fields' => [
+		// 		'feature-id' => [
+		// 			'name' => 'billet-list-part-feature',
 		
-					'key' => 'field_6492f753cfa1c',
-				],
-			],
-		],
+		// 			'key' => 'field_6492f753cfa1c',
+		// 		],
+		// 	],
+		// ],
 
-		'billet-feture-achievement' => [
-			'name' => 'billet-feture-achievement',
+		// 'billet-feture-achievement' => [
+		// 	'name' => 'billet-feture-achievement',
 
-			'key' => 'field_651aa238a7b35',
+		// 	'key' => 'field_651aa238a7b35',
 
-			'fields' => [
-				'feature-id' => [
-					'name' => 'billet-feture-id',
+		// 	'fields' => [
+		// 		'feature-id' => [
+		// 			'name' => 'billet-feture-id',
 		
-					'key' => 'field_651aa298e2e4a',
-				],
-			],
-		],
+		// 			'key' => 'field_651aa298e2e4a',
+		// 		],
+		// 	],
+		// ],
 
-		'billet-profit-items' => [
-			'name' => 'billet-profit-items',
+		// 'billet-profit-items' => [
+		// 	'name' => 'billet-profit-items',
 
-			'key' => 'field_64340371d58e4',
+		// 	'key' => 'field_64340371d58e4',
 
-			'fields' => [
-				'feature-id' => [
-					'name' => 'profit-item-feature',
+		// 	'fields' => [
+		// 		'feature-id' => [
+		// 			'name' => 'profit-item-feature',
 		
-					'key' => 'field_643403cbd58e5',
-				],
-			],
-		],
+		// 			'key' => 'field_643403cbd58e5',
+		// 		],
+		// 	],
+		// ],
 
-		'billet-feture-main-description' => [
-			'name' => 'billet-feture-main-description',
+		// 'billet-feture-main-description' => [
+		// 	'name' => 'billet-feture-main-description',
 
-			'key' => 'field_6523a4f9e9751',
+		// 	'key' => 'field_6523a4f9e9751',
 
-			'fields' => [
-				'feature-id' => [
-					'name' => 'billet-feture-id',
+		// 	'fields' => [
+		// 		'feature-id' => [
+		// 			'name' => 'billet-feture-id',
 		
-					'key' => 'field_6523b09bdf712',
-				],
-			],
-		],
+		// 			'key' => 'field_6523b09bdf712',
+		// 		],
+		// 	],
+		// ],
 	];
 
 	// const FIELD_FETURE_BONUS = [
@@ -200,10 +200,14 @@ class MultisiteTermSync
 						// 	'post_id' => $post_id,
 						// ] );
 	
-						update_row( $repeater_name, $row_number, $repeater_row, $post_id);
+						// update_row( $repeater_name, $row_number, $repeater_row, $post_id);
+
+						$repeater_value[ $row_number ] = $repeater_row;
 					}
 				}
 			}
+
+			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 		}
     }
 
