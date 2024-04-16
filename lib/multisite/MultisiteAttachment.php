@@ -122,7 +122,7 @@ class MultisiteAttachment
 			'matches' => $matches,
         ] );
 
-		return 'ids=""';
+		return '[gallery ids="" ]';
 	}
 
 	public static function sync_gallery_shortcodes()
