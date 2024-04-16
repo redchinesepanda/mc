@@ -423,6 +423,12 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'set_terms',
+
+			'fields' => $fields,
+		] );
+
 		foreach ( $fields as $field_name => $field_value )
 		{
 			if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
