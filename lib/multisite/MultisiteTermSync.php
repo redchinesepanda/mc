@@ -166,7 +166,7 @@ class MultisiteTermSync
 		'achievement-id',
 	];
 
-	public static function sync_row( $repeater_row )
+	public static function sync_row( $repeater_name, $repeater_row )
 	{
 		foreach ( self::ROW_FIELDS as $row_field )
 		{
@@ -214,7 +214,7 @@ class MultisiteTermSync
 	{
 		foreach ( $repeater_value as $row_number => $repeater_row )
 		{
-			$repeater_value[ $row_number ] = self::sync_row( $repeater_row );
+			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row );
 
 			// $feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 
