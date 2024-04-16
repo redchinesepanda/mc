@@ -81,7 +81,7 @@ class CompilationAbout
 		return [
 			// 'text' => $node->textContent,
 			
-			'text' => $doc->saveHTML( $node ),
+			'text' => $dom->saveHTML( $node ),
 
 			'class' => $node->getAttribute( 'class' ),
 		];
