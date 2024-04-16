@@ -126,7 +126,7 @@ class MultisiteAttachment
 
 			// sync ids
 
-			$atts[ 'ids' ] = implode( ',' $ids );
+			$atts[ 'ids' ] = implode( ',', $ids );
         }
 
 		return http_build_query( $atts, '', ' ');
