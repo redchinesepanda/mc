@@ -8,9 +8,9 @@
 
 	/* Position */
 
-	.legal-forecast-block {
+	/* .legal-forecast-block {
 		margin: 0 auto;
-	}
+	} */
 
 	/* Width and Height */
 
@@ -23,9 +23,9 @@
 
 	/* Display */
 
-	/* .legal-forecast-block {
-		row-gap: 1rem;
-	} */
+	.legal-forecast-block {
+		flex-basis: calc( ( 100% / 2 ) - ( 20px / 2 ) - 2px );
+	}
 
 }
 
@@ -45,7 +45,7 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-direction: column;
-    flex-basis: 349px;
+    /* flex-basis: 349px; */
 	box-sizing: border-box;
 }
 
