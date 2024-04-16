@@ -41,6 +41,11 @@
 	padding-bottom: 32px;
 }
 
+.legal-forecast-block:hover {
+	margin-top: -4px;
+	transition: 0.2s;
+}
+
 .legal-forecast-block .block-prewiew {
 	margin-bottom: 12px;
 }
@@ -81,9 +86,9 @@
 	background-position: center;
 }
 
-.legal-forecast-block .block-prewiew:hover {
+/* .legal-forecast-block .block-prewiew:hover {
     background-size: 110%;
-}
+} */
 
 /* Typography */
 
