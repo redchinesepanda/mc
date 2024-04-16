@@ -1,12 +1,3 @@
-@media screen and ( max-width: 767px ) {
-
-	/* Width and Height */
-
-	/* .legal-forecast-block .block-prewiew {
-		height: 175px;
-	} */
-}
-
 @media screen and ( min-width: 768px ) {
 
 	/* Display */
@@ -21,8 +12,6 @@
 
 .legal-forecast-list {
 	display: flex;
-	/* align-items: flex-start; */
-	/* justify-content: flex-start; */
 	flex-wrap: wrap;
 	row-gap: 28px;
   	column-gap: 20px;
@@ -33,7 +22,6 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	flex-direction: column;
-    /* flex-basis: 349px; */
 	box-sizing: border-box;
 }
 
@@ -53,14 +41,7 @@
 	padding-bottom: 32px;
 }
 
-/* @media (max-width: 768px) {
-	.legal-forecast-block {
-		margin: 0 auto;
-	}
-} */
-
 .legal-forecast-block .block-prewiew {
-	/* padding: 15px 10px; */
 	margin-bottom: 12px;
 }
 
@@ -80,18 +61,11 @@
 .legal-forecast-block .block-prewiew {
 	width: 100%;
 	height: 190px;
-	/* box-sizing: border-box; */
 }
 
 .legal-forecast-block .legal-forecast-block-title {
 	min-height: 44px;
 }
-
-/* @media (max-width: 576px) {
-	.legal-forecast-block .block-prewiew {
-		height: 175px;
-	}
-} */
 
 /* Background */
 
@@ -101,12 +75,7 @@
 	overflow: hidden;
 }
 
-/* .legal-forecast-block:hover {
-	background-color: #fff;
-} */
-
 .legal-forecast-block .block-prewiew {
-	/* border-radius: 8px; */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -132,7 +101,6 @@
 	cursor: default; 
 }
 
-/* .legal-forecast-list .container-for-title */
 .legal-forecast-block .legal-forecast-block-title {
 	font-size: 16px;
 	font-weight: 500;
@@ -140,4 +108,8 @@
 	color: var( --Base-base-09 );
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.legal-forecast-block .legal-forecast-block-title:hover {
+	text-shadow: 0 0 0.7px var( --Base-base-09 );
 }
