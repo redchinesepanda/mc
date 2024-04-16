@@ -150,12 +150,12 @@ class MultisiteTermSync
 		}
 	}
 
-	// function mc_debug_edit_form_after_title_action( $post )
-	// {
-	// 	$post = get_post();
+	function mc_debug_edit_form_after_title_action( $post )
+	{
+		$post = get_post();
 
-	// 	self::set_terms( $post->ID, $post );
-	// }
+		self::set_terms( $post->ID, $post );
+	}
 
 	public static function get_repeaters( $post_id )
 	{
