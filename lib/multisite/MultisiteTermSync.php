@@ -202,6 +202,14 @@ class MultisiteTermSync
 		return false;
 	}
 
+	const ROW_FIELDS = [
+		'feature' => 'feature-id',
+
+		'achievement' => 'achievement-id',
+
+		'pair' => 'pair-id',
+	];
+
 	public static function sync_row( $repeater_name, $repeater_row )
 	{
 		foreach ( self::ROW_FIELDS as $row_field )
