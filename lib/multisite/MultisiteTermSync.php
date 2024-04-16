@@ -66,7 +66,7 @@ class MultisiteTermSync
 			],
 		],
 
-		'main-descriptions' => [
+		'billet-feture-main-description' => [
 			'name' => 'billet-feture-main-description',
 
 			'key' => 'field_6523a4f9e9751',

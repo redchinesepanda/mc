@@ -3,16 +3,40 @@
 class MultisiteACF
 {
 	const FIELDS_COMPILATION_FILTER = [
-		'filter' => [
+		'compilation-filter' => [
 			'name' => 'compilation-filter',
 
 			'key' => 'field_642ad18b8593a',
 		],
 
-		'lists' => [
+		'billet-feture-bonus' => [
+			'name' => 'billet-feture-bonus',
+
+			'key' => 'field_651ab4be3b28d',
+		],
+
+		'billet-list-parts' => [
 			'name' => 'billet-list-parts',
 
 			'key' => 'field_6412f442f2c53',
+		],
+
+		'billet-feture-achievement' => [
+			'name' => 'billet-feture-achievement',
+
+			'key' => 'field_651aa238a7b35',
+		],
+
+		'billet-profit-items' => [
+			'name' => 'billet-profit-items',
+
+			'key' => 'field_64340371d58e4',
+		],
+
+		'billet-feture-main-description' => [
+			'name' => 'billet-feture-main-description',
+
+			'key' => 'field_6523a4f9e9751',
 		],
 	];
 
