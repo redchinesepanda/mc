@@ -21,7 +21,7 @@ require_once( 'MultisiteTermSync.php' );
 class MiltisiteMain
 {
 	const TEXT = [
-		'move-to' => 'Move to [%s]',
+		'copy-to' => 'Copy to [%s]',
 	];
 
 	const TEXT_PLURAL = [

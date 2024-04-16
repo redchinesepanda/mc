@@ -123,7 +123,7 @@ class MultisiteAdmin
 		
 		if ( $sites )
 		{
-			$pattern = ToolLoco::translate( MiltisiteMain::TEXT[ 'move-to' ] );
+			$pattern = ToolLoco::translate( MiltisiteMain::TEXT[ 'copy-to' ] );
 
 			foreach ( $sites as $site )
 			{
