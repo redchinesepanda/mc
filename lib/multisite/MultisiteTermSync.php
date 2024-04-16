@@ -100,14 +100,14 @@ class MultisiteTermSync
 
 	public static function register_functions_admin()
     {
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
 			$handler = new self();
 			
 			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
 			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		}
+		// }
 	}
 
 	function mc_debug_edit_form_after_title_action( $post )
