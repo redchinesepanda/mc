@@ -4,6 +4,8 @@ class MultisiteAttachment
 {
 	const PATTERNS = [
 		'url' => '%1$s/%2$s',
+		
+		'regex' => '/%s/',
 	];
 
 	public static function register_functions_admin()
@@ -71,10 +73,6 @@ class MultisiteAttachment
 
         return $ids;
     }
-
-	const PATTERNS = [
-		'regex' => '/%s/',
-    ];
 
 	public static function get_gallery_shortcodes()
     {
