@@ -121,6 +121,8 @@ class MultisiteAttachment
 
 			'matches' => $matches,
         ] );
+
+		return $matches;
 	}
 
 	public static function sync_gallery_shortcodes()
