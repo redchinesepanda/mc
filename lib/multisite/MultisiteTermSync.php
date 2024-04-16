@@ -49,6 +49,12 @@ class MultisiteTermSync
 		
 					'key' => 'field_651aa298e2e4a',
 				],
+
+				'achievement-id' => [
+					'name' => 'billet-achievement-id',
+		
+					'key' => 'field_651aa2e4e2e4b',
+				],
 			],
 		],
 
@@ -154,6 +160,73 @@ class MultisiteTermSync
 		return $repeaters;
 	}
 
+	const ROW_FIELDS = [
+		'feature-id',
+
+		'achievement-id',
+	];
+
+	public static function sync_row( $repeater_row )
+	{
+		foreach ( self::ROW_FIELDS as $row_field )
+		{
+			if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+			{
+				$field_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
+
+				if ( ! empty( $repeater_row[ $field_name ] ) )
+				{
+					$term_id = self::get_term_moved_id( $repeater_row[ $field_name ] );
+	
+					if ( $term_id )
+					{
+						$repeater_row[ $field_name ] = $term_id;
+					}
+				}
+			}
+		}
+
+		return $repeater_row;
+
+		// $feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+
+		// if ( ! empty( $repeater_row[ $feature_id_name ] ) )
+		// {
+		// 	$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
+
+		// 	if ( $term_id )
+		// 	{
+		// 		$repeater_row[ $feature_id_name ] = $term_id;
+
+		// 		// $repeater_value[ $row_number ] = $repeater_row;
+		// 	}
+		// }
+	}
+
+	public static function sync_repeater( $repeater_name, $repeater_value )
+	{
+		foreach ( $repeater_value as $row_number => $repeater_row )
+		{
+			$repeater_value[ $row_number ] = self::sync_row( $repeater_row );
+
+			// $feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+
+			// if ( ! empty( $repeater_row[ $feature_id_name ] ) )
+			// {
+			// 	$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
+
+			// 	if ( $term_id )
+			// 	{
+			// 		$repeater_row[ $feature_id_name ] = $term_id;
+
+			// 		$repeater_value[ $row_number ] = $repeater_row;
+			// 	}
+			// }
+		}
+
+		return $repeater_value;
+	}
+
 	public static function set_terms( $post_id, $post )
     {
 		$repeaters = self::get_repeaters( $post_id );
@@ -166,46 +239,24 @@ class MultisiteTermSync
 
 		foreach ( $repeaters as $repeater_name => $repeater_value )
 		{
-			foreach ( $repeater_value as $row_number => $repeater_row )
-			{
-				$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+			$repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
 
-				if ( $repeater_row[ $feature_id_name ] )
-				{
-					$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
-	
-					// LegalDebug::debug( [
-					// 	'MultisiteTermSync' => 'set_terms',
-	
-					// 	'feature_id_name' => $feature_id_name,
-	
-					// 	'repeater_row' => $repeater_row,
-	
-					// 	'term_id' => $term_id,
-					// ] );
-	
-					if ( $term_id )
-					{
-						$repeater_row[ $feature_id_name ] = $term_id;
-	
-						// LegalDebug::debug( [
-						// 	'MultisiteTermSync' => 'set_terms',
-	
-						// 	'repeater_name' =>$repeater_name,
-	
-						// 	'row_number' => $row_number,
-	
-						// 	'repeater_row' => $repeater_row,
-	
-						// 	'post_id' => $post_id,
-						// ] );
-	
-						// update_row( $repeater_name, $row_number, $repeater_row, $post_id);
+			// foreach ( $repeater_value as $row_number => $repeater_row )
+			// {
+			// 	$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 
-						$repeater_value[ $row_number ] = $repeater_row;
-					}
-				}
-			}
+			// 	if ( ! empty( $repeater_row[ $feature_id_name ] ) )
+			// 	{
+			// 		$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
+	
+			// 		if ( $term_id )
+			// 		{
+			// 			$repeater_row[ $feature_id_name ] = $term_id;
+	
+			// 			$repeater_value[ $row_number ] = $repeater_row;
+			// 		}
+			// 	}
+			// }
 
 			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 		}
