@@ -10,7 +10,7 @@ class MultisiteTermSync
 	];
 
 	const FIELDS_REPEATER = [
-		'feture-bonus' => [
+		'billet-feture-bonus' => [
 			'name' => 'billet-feture-bonus',
 
 			'key' => 'field_651ab4be3b28d',
@@ -24,7 +24,7 @@ class MultisiteTermSync
 			],
 		],
 
-		'lists' => [
+		'billet-list-parts' => [
 			'name' => 'billet-list-parts',
 
 			'key' => 'field_6412f442f2c53',
@@ -189,44 +189,42 @@ class MultisiteTermSync
 			'repeaters' => $repeaters,
 		] );
 
-		// foreach ( $repeaters as $field_name => $field_value )
-		// {
-		// 	$feature_ids = self::get_features( $field_value );
+		foreach ( $repeaters as $repeater_name => $repeater_value )
+		{
+			foreach ( $repeater_value as $row_number => $repeater_row )
+			{
+				$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 
-		// 	foreach ( $feature_ids as $row => $feature_id )
-		// 	{
-		// 		$term_id = self::get_term_moved_id( $feature_id );
+				$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
 
-		// 		LegalDebug::debug( [
-		// 			'MultisiteTermSync' => 'set_terms',
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
 
-		// 			'row' => $row,
+					'repeater_row' => $repeater_row,
 
-		// 			'term_id' => $term_id,
-		// 		] );
+					'term_id' => $term_id,
+				] );
 
-		// 		if ( $term_id )
-		// 		{
-		// 			$value = [
-		// 				$repeaters[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ] => $term_id
-		// 			];
+				if ( $term_id )
+				{
+					$repeater_row[ $feature_id_name ] = $term_id;
 
-		// 			LegalDebug::debug( [
-        //                 'MultisiteTermSync' => 'set_terms',
+					LegalDebug::debug( [
+                        'MultisiteTermSync' => 'set_terms',
 
-		// 				'repeater_name' =>$repeater_name,
+						'repeater_name' =>$repeater_name,
 
-		// 				'row' => $row,
+						'row_number' => $row_number,
 
-		// 				'value' => $value,
+						'repeater_row' => $repeater_row,
 
-		// 				'post_id' => $post_id,
-		// 			] );
+						'post_id' => $post_id,
+					] );
 
-		// 			// update_row( $repeater_name, $row, $value, $post_id);
-		// 		}
-		// 	}
-		// }
+					// update_row( $repeater_name, $row_number, $repeater_row, $post_id);
+				}
+			}
+		}
 
 		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
 
