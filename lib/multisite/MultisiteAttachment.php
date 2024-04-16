@@ -26,7 +26,48 @@ class MultisiteAttachment
 				3
 			);
 		}
+
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
+
+			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		}
 	}
+
+	public static function mc_debug_edit_form_after_title_action()
+	{
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+
+			'get_gallery_shortcodes' => self::get_gallery_shortcodes(),
+		] );
+		
+	}
+
+	public static function get_gallery_shortcodes()
+    {
+        $matches = [];
+
+        $post = get_post();
+
+        if ( $post )
+        {
+            $regex = get_shortcode_regex( self::SHORTCODES_INLINE );
+
+            $amount = preg_match_all( 
+                '/' . $regex . '/', 
+    
+                $post->post_content,
+    
+                $matches,
+    
+                PREG_SET_ORDER
+            );
+        }
+
+        return $matches;
+    }
 
 	public static function handle_attachments( $blog_id, $object_ids )
 	{
