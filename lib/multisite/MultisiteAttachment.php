@@ -8,6 +8,8 @@ class MultisiteAttachment
 		'regex' => '/%s/',
 
 		'shortcode' => '[%1$s %2$s]',
+
+		'attr-pair' => '%1$s="%2$s"',
 	];
 
 	const SHORTCODES = [
@@ -116,6 +118,24 @@ class MultisiteAttachment
     //     return $matches;
     // }
 
+	public static function get_pair( $v, $k )
+	{
+		return sprintf( self::PATTERNS[ 'attr-pair' ], $k, $v );
+	}
+
+	public static function get_atts( $atts )
+	{
+		$handler = new self();
+
+		return implode( ' ', array_map(
+			[ $handler, 'get_pair' ],
+
+			$atts,
+
+			array_keys( $atts )
+		) );
+	}
+
 	public static function sync_gallery_shortcode_ids( $match )
 	{
 		$atts = shortcode_parse_atts( $match[ 3 ] );
@@ -131,7 +151,7 @@ class MultisiteAttachment
 			$atts[ 'ids' ] = implode( ',', $ids );
         }
 
-		return http_build_query( $atts, '', ' ');
+		return self::get_atts( $atts );
 	}
 
 	public static function gallery_shortcodes_ids( $match )
