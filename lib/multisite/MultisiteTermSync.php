@@ -135,22 +135,22 @@ class MultisiteTermSync
 
 	public static function register_functions_admin()
     {
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
 			$handler = new self();
 			
-			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
+			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		// }
+			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		}
 	}
 
-	function mc_debug_edit_form_after_title_action( $post )
-	{
-		$post = get_post();
+	// function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	$post = get_post();
 
-		self::set_terms( $post->ID, $post );
-	}
+	// 	self::set_terms( $post->ID, $post );
+	// }
 
 	public static function get_repeaters( $post_id )
 	{
@@ -404,7 +404,7 @@ class MultisiteTermSync
 			// 	}
 			// }
 
-			// MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
+			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
 			// LegalDebug::debug( [
 			// 	'MultisiteTermSync' => 'set_terms',
