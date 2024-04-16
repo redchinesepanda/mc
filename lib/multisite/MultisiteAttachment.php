@@ -26,7 +26,10 @@ class MultisiteAttachment
 				3
 			);
 		}
+	}
 
+	public static function register_functions_debug()
+	{
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
 			$handler = new self();
@@ -41,8 +44,7 @@ class MultisiteAttachment
 			'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
 			'get_gallery_shortcodes' => self::get_gallery_shortcodes(),
-		] );
-		
+		] );		
 	}
 
 	public static function get_gallery_shortcodes()
