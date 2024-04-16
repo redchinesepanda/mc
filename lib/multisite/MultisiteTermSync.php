@@ -134,6 +134,23 @@ class MultisiteTermSync
 		return $repeaters;
 	}
 
+	public static function get_fields( $post_id )
+	{
+		$fields = [];
+
+		foreach ( self::FIELDS as $field )
+		{
+			$field_name = $field[ 'name' ];
+
+			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
+			{
+				$repeaters[ $field_name ] = $field_value;
+			}
+		}
+
+		return $fields;
+	}
+
 	public static function get_filed_name( $repeater_name, $row_field )
 	{
 		if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
@@ -201,7 +218,7 @@ class MultisiteTermSync
 		'pair' => 'pair-id',
 	];
 
-	public static function sync_field( $field_name, $field_value )
+	public static function get_field_value_sync( $field_name, $field_value )
 	{
 		if ( is_numeric( $field_value ) )
 		{
@@ -264,7 +281,7 @@ class MultisiteTermSync
 
 					// if ( $field_value_sync )
 					
-					if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
+					if ( $field_value_sync = self::get_field_value_sync( $field_name, $field_value ) )
 					{
 						$repeater_row[ $field_name ] = $field_value_sync;
 					}
@@ -404,34 +421,23 @@ class MultisiteTermSync
 		// 	// ] );
 		// }
 
-		foreach ( self::FIELDS as $field_name => $field_data )
+		$fields = self::get_fields( $post_id );
+
+		foreach ( $fields as $field_name => $field_value )
 		{
-			LegalDebug::debug( [
-				'MultisiteTermSync' => 'set_terms',
-
-				'field_name' => $field_name,
-
-				'field_data' => $field_data,
-			] );
-
-			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
+			if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
 			{
 				LegalDebug::debug( [
 					'MultisiteTermSync' => 'set_terms',
-	
+
+					'field_name' => $field_name,
+
 					'field_value' => $field_value,
+
+					'field_value_sync' => $field_value_sync,
 				] );
 
-				if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
-				{
-					LegalDebug::debug( [
-						'MultisiteTermSync' => 'set_terms',
-
-						'field_value_sync' => $field_value_sync,
-					] );
-
-					// MultisiteACF::update_field( $field_name, $field_value, $post_id );
-				}
+				// MultisiteACF::update_field( $field_name, $field_value, $post_id );
 			}
 		}
     }
