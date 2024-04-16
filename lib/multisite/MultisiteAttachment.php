@@ -40,16 +40,40 @@ class MultisiteAttachment
 
 	public static function mc_debug_edit_form_after_title_action()
 	{
+		$matches = self::get_gallery_shortcodes();
+
+		$ids = self::get_shortcodes_attr_ids( $matches );
+
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
-			'get_gallery_shortcodes' => self::get_gallery_shortcodes(),
+			'ids' => $ids,
 		] );		
 	}
 
 	const SHORTCODES = [
 		'gallery',
 	];
+
+	public static function get_shortcodes_attr_ids( $matches )
+    {
+        $ids = [];
+
+        if ( !empty( $matches ) )
+        {
+            foreach ( $matches as $match )
+            {
+                $atts = shortcode_parse_atts( $match[ 3 ] );
+
+                if ( !empty( $atts[ 'ids' ] ) )
+                {
+                    $ids[] = $atts[ 'ids' ];
+                }
+            }
+        }
+
+        return $ids;
+    }
 
 	public static function get_gallery_shortcodes()
     {
