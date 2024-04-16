@@ -32,6 +32,13 @@
 
 .legal-forecast-list .legal-forecast-block {
 	padding: 10px;
+	position: relative;
+}
+
+.legal-forecast-block .legal-forecast-date {
+	position: absolute;
+	top: 15px;
+	left: 10px;
 }
 
 @media (max-width: 768px) {
@@ -113,7 +120,7 @@
 
 /* Typography */
 
-.legal-forecast-list .block-prewiew span {
+.legal-forecast-block .legal-forecast-date {
 	cursor: pointer;
 	text-align: left;
 	color: #fff;
@@ -122,8 +129,8 @@
 	font-size: 16px;
 }
 
-.legal-forecast-list .legal-forecast-block-title,
-.legal-forecast-list .container-for-title {
+.legal-forecast-block .legal-forecast-block-title,
+.legal-forecast-block .container-for-title {
 	cursor: pointer;
 	text-align: left;
 	color: #0c1115;
