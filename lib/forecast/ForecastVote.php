@@ -10,9 +10,29 @@ class ForecastVote
         ],
     ];
 
-	public static function register_style()
+    const CSS_NEW = [
+        'legal-forecast-vote-new' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/forecast/legal-forecast-vote-new.css',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+	/* public static function register_style()
     {
 		ToolEnqueue::register_style( self::CSS );
+    } */
+
+    public static function register_style()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_style( self::CSS_NEW );
+		}
+		else
+		{
+			ToolEnqueue::register_style( self::CSS );
+		}
     }
 
     const DEQUEUE_CSS = [
