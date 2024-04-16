@@ -114,6 +114,24 @@ class MultisiteAttachment
     //     return $matches;
     // }
 
+	public static function sync_gallery_shortcode_ids( $match )
+	{
+		$atts = shortcode_parse_atts( $match[ 3 ] );
+
+		if ( ! empty( $atts[ 'ids' ] ) )
+        {
+            $ids = explode( ',', $atts[ 'ids' ] );
+
+			$ids = [ 0 ];
+
+			// sync ids
+
+			$atts[ 'ids' ] = implode( ',' $ids );
+        }
+
+		return http_build_query( $atts, '', ' ');
+	}
+
 	public static function gallery_shortcodes_ids( $match )
 	{
 		$atts = shortcode_parse_atts( $match[ 3 ] );
