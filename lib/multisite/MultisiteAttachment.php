@@ -114,7 +114,7 @@ class MultisiteAttachment
     //     return $matches;
     // }
 
-	public static function get_gallery_shortcodes( $matches )
+	public static function gallery_shortcodes_ids( $matches )
 	{
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'get_gallery_shortcodes',
