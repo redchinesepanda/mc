@@ -178,7 +178,7 @@ class MultisiteTermSync
 	
 	public static function get_pair( $field_value )
 	{
-		$field_value_parts = explode( ',', $field_value );
+		$field_value_parts = explode( '-', $field_value );
 
 		$moved_from_id = $field_value_parts[ 2 ];
 
