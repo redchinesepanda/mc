@@ -192,9 +192,9 @@ class MultisiteTermSync
 			'moved_from_id' => $moved_from_id,
 		] );
 
-		$term_id = self::get_term_moved_id( $moved_from_id );
-
-		if ( $term_id )
+		// $term_id = self::get_term_moved_id( $moved_from_id );
+		
+		if ( $term_id = self::get_term_id( $moved_from_id ) )
 		{
 			return str_replace( $moved_from_id, $term_id, $field_value );
 		}
@@ -217,9 +217,7 @@ class MultisiteTermSync
 
 	public static function get_term_id( $field_value )
 	{
-		$term_id = self::get_term_moved_id( $field_value );
-
-		if ( $term_id )
+		if ( $term_id = self::get_term_moved_id( $field_value ) )
 		{
 			return $term_id;
 		}
