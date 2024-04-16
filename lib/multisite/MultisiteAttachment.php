@@ -40,12 +40,12 @@ class MultisiteAttachment
 
 	public static function register_functions_debug()
 	{
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
-			$handler = new self();
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
+		// 	$handler = new self();
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		}
+		// 	add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		// }
 	}
 
 	public static function mc_debug_edit_form_after_title_action()
