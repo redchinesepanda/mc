@@ -180,6 +180,14 @@ class MultisiteTermSync
 	{
 		$field_value_parts = explode( ',', $field_value );
 
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'get_pair',
+
+			'field_value' => $field_value,
+
+			'field_value_parts' => $field_value_parts,
+		] );
+
 		$moved_from_id = $field_value_parts[ 2 ];
 
 		$term_id = self::get_term_moved_id( $moved_from_id );
