@@ -95,7 +95,7 @@ class MultisiteAttachment
             $amount = preg_match_all( 
                 // '/' . $regex . '/',
 
-				$regex
+				$regex,
     
                 $post->post_content,
     
