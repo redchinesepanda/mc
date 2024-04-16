@@ -20,6 +20,3 @@
 <section class="legal-section-review-about-bottom">
 	<?php echo ReviewAbout::render_about_bottom(); ?>
 </section>
-<div id="theme-bottom-section" class="legal-section-author">
-	<?php echo ReviewAuthor::render_block(); ?>
-</div>
