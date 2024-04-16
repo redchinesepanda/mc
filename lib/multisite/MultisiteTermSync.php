@@ -98,13 +98,31 @@ class MultisiteTermSync
 		],
 	];
 
+	const PATTERNS = [
+		'edit-post' => 'edit_post_%s',
+	];
+
 	public static function register_functions_admin()
     {
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
 			$handler = new self();
+
+			MultisiteAdmin::add_filter_all(
+				self::PATTERNS[ 'edit-post' ],
+				
+				MultisiteAdmin::POST_TYPES_POST,
+				
+				$handler,
+				
+				'set_terms',
+				
+				10,
+				
+				2
+			);
 			
-			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
+			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
 			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
 		}
