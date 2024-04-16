@@ -59,18 +59,15 @@ class MultisiteAttachment
     {
         $ids = [];
 
-        if ( !empty( $matches ) )
-        {
-            foreach ( $matches as $match )
-            {
-                $atts = shortcode_parse_atts( $match[ 3 ] );
+        foreach ( $matches as $match )
+		{
+			$atts = shortcode_parse_atts( $match[ 3 ] );
 
-                if ( !empty( $atts[ 'ids' ] ) )
-                {
-                    $ids[] = $atts[ 'ids' ];
-                }
-            }
-        }
+			if ( ! empty( $atts[ 'ids' ] ) )
+			{
+				$ids[] = $atts[ 'ids' ];
+			}
+		}
 
         return $ids;
     }
