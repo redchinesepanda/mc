@@ -144,7 +144,7 @@ class MultisiteTermSync
 
 			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
-				$repeaters[ $field_name ] = $field_value;
+				$fields[ $field_name ] = $field_value;
 			}
 		}
 
