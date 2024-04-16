@@ -380,7 +380,7 @@ class MultisiteTermSync
 			// 	}
 			// }
 
-			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
+			// MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
 			// LegalDebug::debug( [
 			// 	'MultisiteTermSync' => 'set_terms',
