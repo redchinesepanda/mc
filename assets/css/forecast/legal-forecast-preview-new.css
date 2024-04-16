@@ -92,8 +92,9 @@
 /* Background */
 
 .legal-forecast-list .legal-forecast-block {
-	border-radius: 8px;
-	overflow: hidden;
+	border-radius: 18px;
+	border: 1px solid var( --Base-base-09 );
+	/* overflow: hidden; */
 }
 
 .legal-forecast-list .block-prewiew {
@@ -113,21 +114,24 @@
 
 /* Typography */
 
-.legal-forecast-list .block-prewiew span {
+.legal-forecast-list .block-prewiew span,
+.legal-forecast-list .legal-forecast-block-title {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
 	cursor: pointer;
-	text-align: left;
-	color: #fff;
-	line-height: 1.2;
-	font-weight: 400;
-	font-size: 16px;
 }
 
-.legal-forecast-list .legal-forecast-block-title,
-.legal-forecast-list .container-for-title {
-	cursor: pointer;
-	text-align: left;
-	color: #0c1115;
-	line-height: 1.2;
+.legal-forecast-list .block-prewiew span {
+	font-size: 12px;
 	font-weight: 400;
-	font-size: 18px;
+	line-height: 18px;
+	color: var( --Base-base-05 ); 
+}
+
+/* .legal-forecast-list .container-for-title */
+.legal-forecast-list .legal-forecast-block-title {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+	color: var( --Base-base-09 );
 }
