@@ -48,7 +48,7 @@ class MiltisiteMain
 
 		MultisiteTermSync::register_functions_admin();
 
-		MultisiteAttachment::register_functions_debug();
+		MultisiteAttachmentSync::register_functions_debug();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{
