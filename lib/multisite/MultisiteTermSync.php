@@ -157,11 +157,13 @@ class MultisiteTermSync
 		
 		foreach ( self::FIELDS_REPEATER as $repeater )
 		{
-			$repeater_value = MultisiteACF::get_field( $repeater[ 'name' ], $post_id );
+			$repeater_name = $repeater[ 'name' ];
 
-			$field_name = $repeater[ 'fields' ][ 'feature-id' ][ 'name' ];
+			$repeater_value = MultisiteACF::get_field( $repeater_name, $post_id );
 
-			$feature_value = array_column( $repeater_value, $field_name, $field_name );
+			// $field_name = $repeater[ 'fields' ][ 'feature-id' ][ 'name' ];
+
+			// $feature_value = array_column( $repeater_value, $field_name, $field_name );
 
 			// $repeaters[] = [
 			// 	'name' => $field_repeater[ 'name' ],
@@ -169,7 +171,9 @@ class MultisiteTermSync
 			// 	$field_repeater[ 'fields' ][ 'feature-id' ][ 'name' ] => $feature_value,
 			// ];
 
-			$repeaters[ $repeater[ 'name' ] ] = $feature_value;
+			// $repeaters[ $repeater_name ] = $feature_value;
+			
+			$repeaters[ $repeater_name ] = $repeater_value;
 		}
 
 		return $repeaters;
