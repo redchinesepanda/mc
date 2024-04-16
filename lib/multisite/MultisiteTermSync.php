@@ -7,6 +7,11 @@ class MultisiteTermSync
     ];
 
 	const FIELDS = [
+		'compilation-filter' => [
+			'name' => 'compilation-filter',
+
+			'key' => 'field_64943cb4bd61f',
+		],
 	];
 
 	const FIELDS_REPEATER = [
@@ -141,7 +146,7 @@ class MultisiteTermSync
 			
 			add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
-			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
 		}
 	}
 
@@ -233,13 +238,33 @@ class MultisiteTermSync
 		'pair' => 'pair-id',
 	];
 
+	public static function sync_field( $field_name, $field_value )
+	{
+		if ( is_numeric( $field_value ) )
+		{
+			return self::get_term_id( $field_value );
+		}
+
+		if ( is_array( $field_value ) )
+		{
+			return self::get_array( $field_value );
+		}
+		
+		if ( is_string( $field_value ) )
+		{
+			return self::get_pair( $field_value );
+		}
+
+		return false;
+	}
+
 	public static function sync_row( $repeater_name, $repeater_row )
 	{
 		foreach ( self::ROW_FIELDS as $row_field )
 		{
 			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
 			{
-				$field_value = $repeater_row[ $field_name ];
+				// $field_value = $repeater_row[ $field_name ];
 				
 				// LegalDebug::debug( [
 				// 	'MultisiteTermSync' =>'sync_row',
@@ -249,31 +274,34 @@ class MultisiteTermSync
 				// 	'field_value' => $field_value,
 				// ] );
 
-				if ( $field_value )
+				// if ( $field_value )
+				
+				if ( $field_value = $repeater_row[ $field_name ] )
 				{
-					$field_value_sync = false;
+					// $field_value_sync = false;
 
-					if ( is_numeric( $field_value ) )
-					{
-						$field_value_sync = self::get_term_id( $field_value );
-					}
-					else
-					{
-						if ( is_array( $field_value ) )
-						{
-							$field_value_sync = self::get_array( $field_value );
-						}
-						else
-						{
-							if ( is_string( $field_value ) )
-							{
-								$field_value_sync = self::get_pair( $field_value );
-							}
-						}
-					}
+					// if ( is_numeric( $field_value ) )
+					// {
+					// 	$field_value_sync = self::get_term_id( $field_value );
+					// }
+					// else
+					// {
+					// 	if ( is_array( $field_value ) )
+					// 	{
+					// 		$field_value_sync = self::get_array( $field_value );
+					// 	}
+					// 	else
+					// 	{
+					// 		if ( is_string( $field_value ) )
+					// 		{
+					// 			$field_value_sync = self::get_pair( $field_value );
+					// 		}
+					// 	}
+					// }
 
-
-					if ( $field_value_sync )
+					// if ( $field_value_sync )
+					
+					if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
 					{
 						$repeater_row[ $field_name ] = $field_value_sync;
 					}
@@ -411,6 +439,14 @@ class MultisiteTermSync
 
 			// 	'repeater_value' => $repeater_value,
 			// ] );
+		}
+
+		foreach ( self::FIELDS as $field_name => $field_value )
+		{
+			if ( $field_value_sync = self::sync_field( $field_name, $field_value ) )
+			{
+				MultisiteACF::update_field( $field_name, $field_value, $post_id );
+			}
 		}
     }
 
