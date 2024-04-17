@@ -1,7 +1,27 @@
+@media screen and ( max-width: 767px ) {
+
+}
+
+@media screen and ( min-width: 768px ) {
+
+	/* Width and Height */
+
+	.wp-polls .wp-polls-form {
+		width: 564px;
+	}
+
+}
+
 /* Display */
 
 .wp-polls .form_radio_btn label {
 	display: inline-block;
+}
+
+.wp-polls .Button-my-style {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Width and Height */
@@ -11,12 +31,20 @@
 	width: calc( 274px - ( 18px * 2 ) - 2px );
 }
 
+.wp-polls .Button-my-style {
+	width: 100%;
+}
+
 /* Position */
 
 .wp-polls {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	margin-bottom: 24px;
+}
+
+.wp-polls .wp-polls-form {
+	margin: 0 auto;
 }
 
 .wp-polls .form_radio_btn:first-child {
@@ -29,12 +57,22 @@
 
 .wp-polls .form_radio_btn label {
 /* 	margin: 0 0 20px 0; */
-	padding: 9px 18px;
+	padding-top: 9px;
+	padding-right: 18px;
+	padding-bottom: 9px;
+	padding-left: 18px;
 }
 
 .wp-polls .container {
 	margin-top: 24px;
 	margin-bottom: 16px;
+}
+
+.wp-polls .Button-my-style {
+	padding-top: 10px;
+	padding-right: 18px;
+	padding-bottom: 10px;
+	padding-left: 18px;
 }
 
 /* Background */
@@ -48,6 +86,11 @@
 	border-radius: 60px;
 	border: 1px solid var( --Base-base-09 );
 	background-color: var( --Base-base-01 );
+}
+
+.wp-polls .Button-my-style {
+	border-radius: 60px;
+	background-color: var( --Base-base-04 );
 }
 
 /* Typography */
@@ -86,6 +129,7 @@
 
 .wp-polls .Button-my-style {
 	color: var( --Base-base-01 );
+	cursor: pointer;
 }
 
 .wp-polls a {
@@ -127,7 +171,7 @@
 	background: #efefef;
 	color: #666;
 }
-.wp-polls .Button-my-style {
+/* .wp-polls .Button-my-style {
 	border-radius: 20px;
 	padding: 10px 20px;
 	background-color: var( --Base-base-04 );
@@ -138,7 +182,7 @@
 	cursor: pointer;
 	align-items: center;
 	justify-content: center;
-}
+} */
 .wp-polls .container {
 	display: flex;
 	align-items: center;
