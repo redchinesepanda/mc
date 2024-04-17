@@ -45,10 +45,11 @@ class ForecastVote
 
     public static function register_script()
     {
-		if ( TemplateMain::check_new() )
+	/* 	if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_script( self::JS_NEW );
-		}
+		} */
+        ToolEnqueue::register_script( self::JS_NEW );
     }
 
     const DEQUEUE_CSS = [
