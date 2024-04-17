@@ -199,17 +199,17 @@ class MultisiteAttachmentSync
 
 		$post->post_content = $result;
 
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'set_attachments_shortcode',
+		// LegalDebug::die( [
+		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
 
-			// 'ids' => $ids,
+		// 	// 'ids' => $ids,
 
-			// 'origin_post_ids' => $origin_post_ids,
+		// 	// 'origin_post_ids' => $origin_post_ids,
 
-		    'regex' => $regex,
+		//     'regex' => $regex,
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		MultisitePost::update_post( $post );
     }
