@@ -203,11 +203,11 @@ class MultisiteAdmin
 
 	public static function check_request_updated( $request )
 	{
-		LegalDebug::die( [
-			'MultisiteAdmin' => 'check_request_updated',
+		// LegalDebug::die( [
+		// 	'MultisiteAdmin' => 'check_request_updated',
 
-			'request' => $request,
-		] );
+		// 	'request' => $request,
+		// ] );
 
 		$updated_requests = [
 			self::QUERY_ARG[ 'galleries-synced' ],
