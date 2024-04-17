@@ -59,6 +59,10 @@ class MultisiteAttachmentSync
 				
 				3
 			);
+
+			LegalDebug::debug( [
+				'MultisiteAttachmentSync' =>'register_functions_subsite',
+			] );
 		}
 	}
 

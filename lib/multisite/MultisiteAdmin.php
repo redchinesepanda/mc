@@ -148,8 +148,6 @@ class MultisiteAdmin
 
 			foreach ( $sites as $site )
 			{
-				// $bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = 'Move to [' . $site->blogname . ']';
-				
 				$bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = sprintf( $pattern, $site->blogname );
 			}
 		}
@@ -173,8 +171,6 @@ class MultisiteAdmin
 	public static function get_message( $pattern, $values )
 	{
 		return ToolLoco::translate_plural(
-			// MiltisiteMain::TEXT_PLURAL[ 'post-has-been-copied-to' ],
-
 			$pattern,
 
 			$values
