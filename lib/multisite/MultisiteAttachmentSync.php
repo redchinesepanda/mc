@@ -100,11 +100,11 @@ class MultisiteAttachmentSync
 				MultisiteBlog::get_current_blog_id()
 			);
 
-			LegalDebug::die( [
-				'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
+			// LegalDebug::die( [
+			// 	'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
-				'redirect' => $redirect,
-			] );
+			// 	'redirect' => $redirect,
+			// ] );
 		}
 
 		return $redirect;
