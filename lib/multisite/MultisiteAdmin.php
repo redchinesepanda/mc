@@ -119,13 +119,13 @@ class MultisiteAdmin
 
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
-			LegalDebug::debug( [
-				'MultisiteAdmin' =>'register_functions_subsite',
+			// LegalDebug::debug( [
+			// 	'MultisiteAdmin' =>'register_functions_subsite',
 
-				'PATTERNS' => self::PATTERNS[ 'bulk-actions' ],
+			// 	'PATTERNS' => self::PATTERNS[ 'bulk-actions' ],
 	
-				'get_post_types' => self::get_post_types(),
-			] );
+			// 	'get_post_types' => self::get_post_types(),
+			// ] );
 
 			$handler = new self();
 
