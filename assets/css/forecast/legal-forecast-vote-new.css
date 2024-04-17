@@ -27,7 +27,8 @@
 }
 
 .wp-polls .wp-polls-form > p:last-of-type,
-.wp-polls .form_radio_btn label {
+.wp-polls .form_radio_btn label,
+.wp-polls a {
 	color: var( --Base-base-09 );
 }
 
@@ -38,7 +39,8 @@
 }
 
 .wp-polls .form_radio_btn label,
-.wp-polls .Button-my-style {
+.wp-polls .Button-my-style,
+.wp-polls a {
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
@@ -46,6 +48,10 @@
 
 .wp-polls .Button-my-style {
 	color: var( --Base-base-01 );
+}
+
+.wp-polls a {
+	text-decoration: none;
 }
 
 

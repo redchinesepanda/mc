@@ -299,11 +299,11 @@
     color: var( --Base-base-09 );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ) {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ) {
     color: var( --Base-link );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):hover {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):hover {
     color: var( --Base-link-hover );
 }
 
