@@ -35,13 +35,13 @@ class ForecastVote
 		}
     }
 
-    const JS_NEW = [
+ /*    const JS_NEW = [
         'legal-forecast-vote' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/forecast/legal-forecast-vote.js',
 
 			'ver' => '1.0.0',
 		],
-    ];
+    ]; */
 
   /*   public static function register_script()
     {
@@ -57,6 +57,12 @@ class ForecastVote
 
     const DEQUEUE_JS = [
         'wp-polls',
+
+        'legal-forecast-vote' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/forecast/legal-forecast-vote.js',
+
+			'ver' => '1.0.0',
+		],
     ];
 
     // const DEQUEUE = [
@@ -75,7 +81,6 @@ class ForecastVote
 
             ToolEnqueue::dequeue_script( self::DEQUEUE_JS );
 
-            ToolEnqueue::register_script( self::JS_NEW );
         }
     }
 
