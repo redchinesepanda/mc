@@ -44,6 +44,8 @@ class MultisiteAttachmentSync
 		'shortcode' => '[%1$s %2$s]',
 
 		'attr-pair' => '%1$s="%2$s"',
+
+		'gallery-id' => 'gallery-%1$s-%2$s',
 	];
 	
 	const SHORTCODES = [
@@ -200,13 +202,15 @@ class MultisiteAttachmentSync
     {
         $ids = [];
 
-        foreach ( $galleries as $gallery )
+        foreach ( $galleries as $gallery_id => $gallery )
 		{
 			$atts = shortcode_parse_atts( $gallery[ 3 ] );
 
 			if ( ! empty( $atts[ 'ids' ] ) )
 			{
-				$ids[] = $atts[ 'ids' ];
+				$gallery_index = sprintf( self::PATTERNS[ 'gallery-id', $gallery_id, 1 ] );
+
+				$ids[ $gallery_index ] = $atts[ 'ids' ];
 			}
 		}
 

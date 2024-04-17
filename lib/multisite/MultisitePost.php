@@ -305,6 +305,66 @@ class MultisitePost
 		return false;
 	}
 
+	public static function get_post_moved_id_all_args( $origin_post_ids )
+	{
+		return [
+            'numberposts' => -1,
+
+            'post_type' => self::POST_TYPES,
+
+			'post_status' => self::POST_STATUSES,
+
+            'fields' => 'ids',
+
+            'meta_query' => [
+
+                'relation' => 'AND',
+
+                'mc-moved-from' => [
+
+                    'key' => MultisiteMeta::POST_META[ 'moved-from' ],
+
+					'value' => $origin_post_ids,
+
+                    'compare' => 'IN',
+                ],
+			],
+        ];
+	}
+
+	public static function get_post_moved_id_all( $origin_post_ids )
+	{
+		$args = self::get_post_moved_id_all_args( $origin_post_id );
+
+		$moved_ids = get_posts( $args );
+
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved_id',
+
+		// 	'origin_post_id' => $origin_post_id,
+
+		// 	'args' => $args,
+
+		// 	'posts' => count( $posts ),
+		// ] );
+
+		foreach ( $moved_ids as $key => $moved_id )
+		{
+			$origin_post_ids[ $key ] = $moved_id;
+		}
+
+		// if ( count( $posts ) == 1 )
+		// {
+		// 	$post = array_shift( $posts );
+
+		// 	return $post->ID;
+		// }
+
+		// return false;
+
+		return $origin_post_ids;
+	}
+
 	public static function update_post( $post )
 	{
 		wp_update_post( $post );
