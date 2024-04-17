@@ -114,19 +114,19 @@ class MultisiteTermSync
 		{
 			$handler = new self();
 
-			MultisiteAdmin::add_filter_all(
-				self::PATTERNS[ 'edit-post' ],
+			// MultisiteAdmin::add_filter_all(
+			// 	self::PATTERNS[ 'edit-post' ],
 				
-				MultisitePost::POST_TYPES,
+			// 	MultisitePost::POST_TYPES,
 				
-				$handler,
+			// 	$handler,
 				
-				'set_terms',
+			// 	'set_terms',
 				
-				10,
+			// 	10,
 				
-				2
-			);
+			// 	2
+			// );
 			
 			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
