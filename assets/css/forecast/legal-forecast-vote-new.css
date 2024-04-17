@@ -6,7 +6,7 @@
 
 	/* Width and Height */
 
-	.wp-polls .wp-polls-form {
+	.wp-polls .wp-polls-ans {
 		width: 564px;
 	}
 
@@ -44,7 +44,7 @@
 	margin-bottom: 24px;
 }
 
-.wp-polls .wp-polls-form {
+.wp-polls .wp-polls-ans {
 	margin: 0 auto;
 }
 
@@ -74,6 +74,15 @@
 	padding-right: 18px;
 	padding-bottom: 10px;
 	padding-left: 18px;
+}
+
+.wp-polls > p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.wp-polls .wp-polls-ans .wp-polls-ul {
+	margin: 0px;
 }
 
 /* Background */
@@ -110,7 +119,9 @@
 }
 
 .wp-polls .wp-polls-ul .pollbar {
-	background-color: var( --Primitives-purple-40 ); 
+	background-color: var( --Primitives-purple-40 );
+	border: 2px solid var( --Base-base-09 );
+  	border-radius: 8px;
 }
 
 /* Typography */
