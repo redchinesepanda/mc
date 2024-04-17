@@ -1,8 +1,19 @@
 @media screen and ( max-width: 767px ) {
 
+	/* Display */
+
+	.wp-polls .wp-polls-ans .wp-polls-ul {
+		flex-wrap: wrap;
+	}
 }
 
 @media screen and ( min-width: 768px ) {
+
+	/* Display */
+
+	.wp-polls .wp-polls-ans .wp-polls-ul {
+		column-gap: 20px;
+	}
 
 	/* Width and Height */
 
@@ -24,6 +35,10 @@
 	justify-content: center;
 }
 
+.wp-polls .wp-polls-ans .wp-polls-ul {
+	display: flex;
+}
+
 /* Width and Height */
 
 .wp-polls .form_radio_btn label {
@@ -34,6 +49,10 @@
 .wp-polls .Button-my-style {
 	width: 100%;
 	min-height: 50px; 
+}
+
+.wp-polls .wp-polls-ul .pollbar {
+	min-height: calc( 40px - 4px );
 }
 
 /* Position */
@@ -83,6 +102,10 @@
 
 .wp-polls .wp-polls-ans .wp-polls-ul {
 	margin: 0px;
+}
+
+.wp-polls .wp-polls-ans li {
+	position: relative;
 }
 
 /* Background */
