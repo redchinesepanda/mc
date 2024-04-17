@@ -210,7 +210,7 @@ class MultisiteAttachmentSync
 			{
 				foreach ( explode( ',', $atts[ 'ids' ] ) as $attachment_index => $attachment_id )
 				{
-					$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, 1 );
+					$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, $attachment_index );
 
 					$ids[ $gallery_index ] = $attachment_id;
 				}
