@@ -85,7 +85,7 @@ class MultisiteAttachmentSync
 				// 	self::set_attachments( $post[ 'ID' ], $post );
 				// }
 
-				self::set_attachments( $post[ 'ID' ] );
+				self::set_attachments( $post_id );
 			}
 
 			$redirect = MultisiteAdmin::redirect_set(
