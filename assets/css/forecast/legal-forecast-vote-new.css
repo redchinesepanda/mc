@@ -29,7 +29,7 @@
 
 .wp-polls .form_radio_btn label {
 /* 	margin: 0 0 20px 0; */
-	padding: 10px 18px;
+	padding: 9px 18px;
 }
 
 /* Background */
@@ -42,6 +42,7 @@
 .wp-polls .form_radio_btn label {
 	border-radius: 60px;
 	border: 1px solid var( --Base-base-09 );
+	background-color: var( --Base-base-01 );
 }
 
 /* Typography */
@@ -102,13 +103,6 @@
 } */
 .wp-polls .form_radio_btn input[type=radio] {
 	display: none;
-}
-.wp-polls .form_radio_btn label {
-	display: inline-block;
-	border-radius: 20px;
-	text-align: center;
-	border: 1px solid var( --Base-base-09 );
-	width: 250px;
 }
 	
 /* Checked */
