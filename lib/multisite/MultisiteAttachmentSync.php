@@ -189,13 +189,13 @@ class MultisiteAttachmentSync
 
 		$handler = new self();
 
-		$result = preg_replace_callback( 
-			$regex,
+		// $result = preg_replace_callback( 
+		// 	$regex,
 
-			[ $handler, 'replace_gallery_shortcodes_ids' ],
+		// 	[ $handler, 'replace_gallery_shortcodes_ids' ],
 
-			$post->post_content
-		);
+		// 	$post->post_content
+		// );
 
 		// $post->post_content = $result;
 
