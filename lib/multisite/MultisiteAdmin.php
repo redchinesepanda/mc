@@ -239,6 +239,12 @@ class MultisiteAdmin
 
 	public static function mc_bulk_updated_notices()
 	{
+		LegalDebug::die( [
+			'MultisiteAdmin' =>'mc_bulk_updated_notices',
+
+			'check_request_updated' => self::check_request_updated( $_REQUEST ),
+		] );
+
 		// if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ] ) )
 		
 		if ( self::check_request_updated( $_REQUEST ) )
