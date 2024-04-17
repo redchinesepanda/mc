@@ -35,6 +35,22 @@ class ForecastVote
 		}
     }
 
+    const JS_NEW = [
+        'legal-forecast-vote' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/forecast/legal-forecast-vote.js',
+
+			'ver' => '1.0.0',
+		],
+    ];
+
+    public static function register_script()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_script( self::JS_NEW );
+		}
+    }
+
     const DEQUEUE_CSS = [
         'wp-polls',
     ];
