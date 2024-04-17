@@ -175,7 +175,7 @@ class MultisiteAttachmentSync
 
 		// $origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
 
-        // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+        $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
@@ -187,17 +187,17 @@ class MultisiteAttachmentSync
 		//     'regex' => $regex,
 		// ] );
 
-		// $handler = new self();
+		$handler = new self();
 
-		// $result = preg_replace_callback( 
-		// 	$regex,
+		$result = preg_replace_callback( 
+			$regex,
 
-		// 	[ $handler, 'replace_gallery_shortcodes_ids' ],
+			[ $handler, 'replace_gallery_shortcodes_ids' ],
 
-		// 	$post->post_content
-		// );
+			$post->post_content
+		);
 
-		// $post->post_content = $result;
+		$post->post_content = $result;
 
 		// LegalDebug::die( [
 		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
@@ -211,17 +211,17 @@ class MultisiteAttachmentSync
 		// 	'result' => $result,
 		// ] );
 
-		$args = [
-			'ID' => $post->ID,
+		// $args = [
+		// 	'ID' => $post->ID,
 
-			'post_content' => $post->post_content,
-		];
+		// 	'post_content' => $post->post_content,
+		// ];
 
-		// MultisitePost::update_post( $post );
+		MultisitePost::update_post( $post );
 
 		// wp_update_post( $post );
 		
-		wp_update_post( $args );
+		// wp_update_post( $args );
     }
 
 	public static function get_gallery_shortcodes_attr_ids( $galleries )
