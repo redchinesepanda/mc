@@ -180,9 +180,9 @@ class MultisiteAttachmentSync
 			}
 		}
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' => 'set_attachments',
-		// ] );
+		LegalDebug::die( [
+			'MultisiteAttachmentSync' => 'set_attachments',
+		] );
     }
 }
 
