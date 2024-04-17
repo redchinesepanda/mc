@@ -70,11 +70,13 @@ class MultisiteAttachmentSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
+		LegalDebug::debug( [
+			'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
-		// 	'doaction' => $doaction,
-		// ] );
+			'doaction' => $doaction,
+
+			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] )
+		] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] ) )
 		{
