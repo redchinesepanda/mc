@@ -197,7 +197,7 @@ class MultisiteAttachmentSync
 			$post->post_content
 		);
 
-		$post->post_content = $result;
+		// $post->post_content = $result;
 
 		// LegalDebug::die( [
 		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
