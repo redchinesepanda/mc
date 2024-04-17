@@ -108,11 +108,25 @@ class MultisiteTermSync
 		'edit-post' => 'edit_post_%s',
 	];
 
-	public static function register_functions_admin()
+	public static function register_functions_subsite()
     {
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
 			$handler = new self();
+
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+				
+				MultisiteAdmin::POST_TYPES_CUSTOM,
+				
+				$handler,
+				
+				'mc_bulk_action_sync_terms',
+				
+				10,
+				
+				3
+			);
 
 			// MultisiteAdmin::add_filter_all(
 			// 	self::PATTERNS[ 'edit-post' ],
@@ -134,12 +148,37 @@ class MultisiteTermSync
 		}
 	}
 
-	function mc_debug_edit_form_after_title_action( $post )
+	public static function mc_bulk_action_sync_terms( $redirect, $doaction, $object_ids )
 	{
-		$post = get_post();
+		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		self::set_terms( $post->ID, $post );
+		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-terms' ] ) )
+		{
+			foreach ( $object_ids as $post_id )
+			{
+				self::set_terms( $post_id );
+			}
+
+			$redirect = MultisiteAdmin::redirect_set(
+				$redirect,
+				
+				MultisiteAdmin::QUERY_ARG[ 'terms-synced' ],
+				
+				count( $object_ids ),
+				
+				MultisiteBlog::get_current_blog_id()
+			);
+		}
+
+		return $redirect;
 	}
+
+	// function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	$post = get_post();
+
+	// 	self::set_terms( $post->ID, $post );
+	// }
 
 	public static function get_repeaters( $post_id )
 	{
@@ -405,7 +444,9 @@ class MultisiteTermSync
 		return $repeater_value;
 	}
 
-	public static function set_terms( $post_id, $post )
+	// public static function set_terms( $post_id, $post )
+	
+	public static function set_terms( $post_id )
     {
 		$repeaters = self::get_repeaters( $post_id );
 
