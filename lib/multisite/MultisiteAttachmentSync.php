@@ -60,15 +60,21 @@ class MultisiteAttachmentSync
 				3
 			);
 
-			LegalDebug::debug( [
-				'MultisiteAttachmentSync' =>'register_functions_subsite',
-			] );
+			// LegalDebug::debug( [
+			// 	'MultisiteAttachmentSync' =>'register_functions_subsite',
+			// ] );
 		}
 	}
 
 	public static function mc_bulk_action_sync_attachments( $redirect, $doaction, $object_ids )
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
+		LegalDebug::debug( [
+			'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
+
+			'doaction' => $doaction,
+		] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] ) )
 		{
