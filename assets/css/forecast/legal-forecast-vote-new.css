@@ -113,6 +113,11 @@
 	margin-top: calc( 12px + 22px );
 }
 
+.wp-polls .wp-polls-ans li small {
+	position: absolute;
+	top: calc( 12px + 22px );
+}
+
 .wp-polls .wp-polls-ul .pollbar::before {
 	position: absolute;
 	top: calc( 0px - 12px - 22px );
@@ -171,6 +176,7 @@
 .wp-polls .Button-my-style,
 .wp-polls .wp-polls-ans > p:first-of-type,
 /* .wp-polls .wp-polls-ans li, */
+.wp-polls .wp-polls-ans li small,
 .wp-polls .wp-polls-ul .pollbar::before,
 .wp-polls a {
 	font-family: var( --legal-font-primary );
@@ -181,6 +187,7 @@
 .wp-polls .wp-polls-form > p:last-of-type,
 .wp-polls .form_radio_btn label,
 /* .wp-polls .wp-polls-ans li, */
+.wp-polls .wp-polls-ans li small,
 .wp-polls .wp-polls-ul .pollbar::before,
 .wp-polls a {
 	color: var( --Base-base-09 );
@@ -212,6 +219,7 @@
 
 /* .wp-polls .wp-polls-ans li, */
 .wp-polls .wp-polls-ul .pollbar::before,
+.wp-polls .wp-polls-ans li small,
 .wp-polls .wp-polls-ans > p:first-of-type {
 	font-size: 16px;
 	line-height: 22px;
@@ -225,6 +233,10 @@
 .wp-polls .wp-polls-ans li {
 	font-size: 0px;
   	line-height: 0px;
+}
+
+.wp-polls .wp-polls-ans li small {
+	font-weight: 600;
 }
 
 .wp-polls .wp-polls-ul .pollbar::before {
