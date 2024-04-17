@@ -109,6 +109,10 @@
 	background-color: var( --Base-base-04 );
 }
 
+.wp-polls .wp-polls-ul .pollbar {
+	background-color: var( --Primitives-purple-40 ); 
+}
+
 /* Typography */
 
 .wp-polls > p,
