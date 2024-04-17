@@ -13,6 +13,10 @@ class MultisiteGallerySync
 
 		// 'gallery-id' => 'gallery-%1$s-%2$s',
 	];
+	
+	const SHORTCODES = [
+		'gallery' => 'gallery',
+	];
 
 	public static function register_functions_subsite()
 	{
@@ -131,10 +135,10 @@ class MultisiteGallerySync
 
 			[ $handler, 'replace_gallery_shortcodes_ids' ],
 
-			$post->post_content
+			$post[ 'post_content' ]
 		);
 
-		$post->post_content = $result;
+		$post[ 'post_content' ] = $result;
 
 		MultisitePost::update_post( $post );
     }
