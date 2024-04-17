@@ -74,7 +74,7 @@ class MultisiteAttachmentSync
 		}
 	}
 
-	public static function mc_debug_edit_form_after_title_action()
+	public static function mc_debug_edit_form_after_title_action( $post )
 	{
 		// $matches = self::get_gallery_shortcodes();
 
@@ -86,7 +86,7 @@ class MultisiteAttachmentSync
 		// 	'ids' => $ids,
 		// ] );
 
-		$result = self::set_attachments_shortcode();
+		$result = self::set_attachments_shortcode( $post->ID, $post );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
