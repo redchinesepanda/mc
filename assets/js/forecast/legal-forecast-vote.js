@@ -7,7 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	};
 	
     const selectors = {
-		voteLabel: '.wp-polls .form_radio_btn input[type="radio"]:checked + label',
+		voteLabel: '.wp-polls .form_radio_btn label',
 
 		voteButtonSend: '.wp-polls .Button-my-style'
 	};
