@@ -40,16 +40,6 @@ class MultisiteAttachmentSync
 		'group-field' => '%1$s_%2$s',
 	];
 
-	public static function register_functions_admin()
-    {
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
-			// $handler = new self();
-			
-			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
-		}
-	}
-
 	public static function register_functions_subsite()
 	{
 		if ( MultisiteBlog::check_not_main_blog() )

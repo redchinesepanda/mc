@@ -74,7 +74,7 @@ class MiltisiteMain
 		{
 			MultisiteAdmin::register_functions_subsite();
 
-			MultisiteAttachmentSync::register_functions_admin();
+			MultisiteAttachmentSync::register_functions_subsite();
 
 			MultisiteGallerySync::register_functions_subsite();
 		}
