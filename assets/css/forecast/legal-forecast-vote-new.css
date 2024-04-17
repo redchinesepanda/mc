@@ -32,6 +32,11 @@
 	padding: 9px 18px;
 }
 
+.wp-polls .container {
+	margin-top: 24px;
+	margin-bottom: 16px;
+}
+
 /* Background */
 
 .wp-polls {
