@@ -199,7 +199,7 @@ class MultisiteAttachmentSync
 
 		$post->post_content = $result;
 
-		// MultisitePost::update_post( $post );
+		MultisitePost::update_post( $post );
     }
 
 	public static function get_gallery_shortcodes_attr_ids( $galleries )
