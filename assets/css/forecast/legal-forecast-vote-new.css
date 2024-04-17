@@ -112,6 +112,11 @@
 	position: relative;
 }
 
+.wp-polls .wp-polls-ul .pollbar::before {
+	position: absolute;
+	top: 0px;
+}
+
 /* Background */
 
 .wp-polls {
@@ -148,12 +153,12 @@
 .wp-polls .wp-polls-ans li {
 	background-color: var( --Base-base-01 );
 	border: 2px solid var( --Base-base-09 );
+	border-radius: 8px;
 	overflow: hidden;
 }
 
 .wp-polls .wp-polls-ul .pollbar {
 	background-color: var( --Primitives-purple-40 );
-  	border-radius: 8px;
 }
 
 /* Typography */
