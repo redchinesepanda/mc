@@ -242,6 +242,8 @@ class MultisiteAdmin
 		LegalDebug::debug( [
 			'MultisiteAdmin' =>'mc_bulk_updated_notices',
 
+			'_REQUEST' => $_REQUEST,
+
 			'check_request_updated' => self::check_request_updated( $_REQUEST ),
 		] );
 
