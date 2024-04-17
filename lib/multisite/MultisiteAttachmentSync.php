@@ -171,18 +171,18 @@ class MultisiteAttachmentSync
 
 	public static function set_attachments_shortcode( $post_id, $post )
     {
-		$ids = self::get_gallery_attachment_ids( $post );
+		// $ids = self::get_gallery_attachment_ids( $post );
 
-		$origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
+		// $origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
 
         $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'set_attachments_shortcode',
 
-			'ids' => $ids,
+			// 'ids' => $ids,
 
-			'origin_post_ids' => $origin_post_ids,
+			// 'origin_post_ids' => $origin_post_ids,
 
 		    'regex' => $regex,
 		] );
@@ -197,7 +197,7 @@ class MultisiteAttachmentSync
 			$post->post_content
 		);
 
-		// $post->post_content = $result;
+		$post->post_content = $result;
 
 		// MultisitePost::update_post( $post );
     }
