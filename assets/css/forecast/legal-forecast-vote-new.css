@@ -83,10 +83,24 @@
   	background: var( --Base-base-02 );
 }
 
+.wp-polls .form_radio_btn,
+.wp-polls .form_radio_btn label:hover,
+.wp-polls .form_radio_btn input[type=radio]:checked + label {
+	border: 1px solid var( --Base-base-09 );
+}
+
+.wp-polls .form_radio_btn,
 .wp-polls .form_radio_btn label {
 	border-radius: 60px;
-	border: 1px solid var( --Base-base-09 );
+}
+
+.wp-polls .form_radio_btn label {
+	border: 1px solid transparent;
 	background-color: var( --Base-base-01 );
+}
+
+.wp-polls .form_radio_btn label:hover {
+	text-shadow: 0 0 0.7px var( --Base-base-09 );
 }
 
 .wp-polls .Button-my-style {
@@ -137,11 +151,6 @@
 	text-decoration: none;
 }
 
-/* Checked */
-.wp-polls .form_radio_btn input[type=radio]:checked + label {
-	border: 2px solid var(--Base-base-09, #0A0A0A); 
-	text-shadow: 0 0 0.7px var( --Base-base-09 );
-}
 
 
 
@@ -159,12 +168,6 @@
 } */
 .wp-polls .form_radio_btn input[type=radio] {
 	display: none;
-}
-	
-/* Checked */
-.wp-polls .form_radio_btn input[type=radio]:checked + label {
-	background: #5997e3;
-	color: #fff;
 }
 	
 /* Hover */
