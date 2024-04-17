@@ -70,13 +70,13 @@ class MultisiteAttachmentSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::debug( [
-			'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] )
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] )
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] ) )
 		{
@@ -100,11 +100,11 @@ class MultisiteAttachmentSync
 				MultisiteBlog::get_current_blog_id()
 			);
 
-			LegalDebug::die( [
-				'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
+			// LegalDebug::die( [
+			// 	'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
-				'redirect' => $redirect,
-			] );
+			// 	'redirect' => $redirect,
+			// ] );
 		}
 
 		return $redirect;
@@ -162,11 +162,11 @@ class MultisiteAttachmentSync
 		
 		$origin_post_ids = self::get_origin_post_ids( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteAttachmentSync' => 'set_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachmentSync' => 'set_attachments',
 
-			'origin_post_ids' => $origin_post_ids,
-		] );
+		// 	'origin_post_ids' => $origin_post_ids,
+		// ] );
 
 		foreach ( $origin_post_ids as $field_name => $origin_post_id )
 		{
