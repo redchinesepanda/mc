@@ -239,13 +239,13 @@ class MultisiteAdmin
 
 	public static function mc_bulk_updated_notices()
 	{
-		LegalDebug::debug( [
-			'MultisiteAdmin' =>'mc_bulk_updated_notices',
+		// LegalDebug::debug( [
+		// 	'MultisiteAdmin' =>'mc_bulk_updated_notices',
 
-			'_REQUEST' => $_REQUEST,
+		// 	'_REQUEST' => $_REQUEST,
 
-			'check_request_updated' => self::check_request_updated( $_REQUEST ),
-		] );
+		// 	'check_request_updated' => self::check_request_updated( $_REQUEST ),
+		// ] );
 
 		// if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ] ) )
 		
