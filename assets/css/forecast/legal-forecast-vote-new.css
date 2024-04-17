@@ -115,7 +115,7 @@
 .wp-polls .wp-polls-form > p:last-of-type,
 .wp-polls .form_radio_btn label,
 .wp-polls .Button-my-style,
-.wp-polls .wp-polls-ans p:first-child,
+.wp-polls .wp-polls-ans > p:first-of-type,
 .wp-polls .wp-polls-ans li,
 .wp-polls a {
 	font-family: var( --legal-font-primary );
@@ -155,7 +155,7 @@
 }
 
 .wp-polls .wp-polls-ans li,
-.wp-polls .wp-polls-ans p:first-child {
+.wp-polls .wp-polls-ans > p:first-of-type {
 	font-size: 16px;
 	line-height: 22px;
 }
@@ -164,7 +164,7 @@
 	font-weight: 500;
 }
 
-.wp-polls .wp-polls-ans p:first-child {
+.wp-polls .wp-polls-ans > p:first-of-type {
 	font-weight: 400;
 	color: var( --Base-base-05 );
 }
