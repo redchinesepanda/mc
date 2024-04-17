@@ -49,7 +49,7 @@ class MultisiteAttachmentSync
 			MultisiteAdmin::add_filter_all(
 				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-				MultisiteAdmin::get_post_types(),
+				MultisiteAdmin::get_post_types_post(),
 				
 				$handler,
 				
