@@ -115,14 +115,15 @@
 
 .wp-polls .wp-polls-ans li small {
 	position: absolute;
-	top: calc( 12px + 22px );
+	/* top: calc( 12px + 22px ); */
+	top: 50%;
+	right: 8px;
+	transform: translateY(-50%);
 }
 
 .wp-polls .wp-polls-ul .pollbar::before {
 	position: absolute;
-	top: 50%;
-	right: 8px;
-	transform: translateY(-50%);
+	top: calc( 0px - 12px - 22px );
 }
 
 .wp-polls .wp-polls-ul + p {
