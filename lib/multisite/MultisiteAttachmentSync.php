@@ -100,7 +100,7 @@ class MultisiteAttachmentSync
 				MultisiteBlog::get_current_blog_id()
 			);
 
-			LegalDebug::debug( [
+			LegalDebug::die( [
 				'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
 				'redirect' => $redirect,
@@ -188,9 +188,9 @@ class MultisiteAttachmentSync
 			}
 		}
 
-		LegalDebug::die( [
-			'MultisiteAttachmentSync' => 'set_attachments',
-		] );
+		// LegalDebug::die( [
+		// 	'MultisiteAttachmentSync' => 'set_attachments',
+		// ] );
     }
 }
 
