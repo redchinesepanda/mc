@@ -21,7 +21,8 @@
 
 .wp-polls .wp-polls-form > p:last-of-type,
 .wp-polls .form_radio_btn label,
-.wp-polls .Button-my-style {
+.wp-polls .Button-my-style,
+.wp-polls a {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
