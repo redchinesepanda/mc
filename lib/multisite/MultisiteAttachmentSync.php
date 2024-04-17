@@ -208,7 +208,7 @@ class MultisiteAttachmentSync
 
 			if ( ! empty( $atts[ 'ids' ] ) )
 			{
-				$gallery_index = sprintf( self::PATTERNS[ 'gallery-id', $gallery_id, 1 ] );
+				$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, 1 ] );
 
 				$ids[ $gallery_index ] = $atts[ 'ids' ];
 			}
