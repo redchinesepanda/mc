@@ -22,6 +22,12 @@ class MiltisiteMain
 {
 	const TEXT = [
 		'copy-to' => 'Copy to [%s]',
+
+		'sync-galleries' => 'Sync Galleries',
+
+		'sync-terms' => 'Sync Terms',
+
+		'sync-attachments' => 'Sync Attachments',
 	];
 
 	const TEXT_PLURAL = [
@@ -52,7 +58,7 @@ class MiltisiteMain
 
 		if ( MultisiteBlog::check_main_blog() )
 		{
-			MultisiteAdmin::register_functions_admin();
+			MultisiteAdmin::register_functions_mainsite();
 
 			MultisitePost::register_functions_admin();
 
@@ -60,6 +66,8 @@ class MiltisiteMain
 		}
 		else
 		{
+			MultisiteAdmin::register_functions_subsite();
+
 			MultisiteAttachmentSync::register_functions_admin();
 		}
 	}

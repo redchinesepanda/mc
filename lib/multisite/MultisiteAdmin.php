@@ -2,6 +2,24 @@
 
 class MultisiteAdmin
 {
+	const DOACTION = [
+		'move-to' => 'move_to_',
+
+		'sync-galleries' => 'sync_galleries',
+
+		'sync-terms' => 'sync_terms',
+
+		'sync-attachments' => 'sync_attachments',
+	];
+
+	const QUERY_ARG = [
+		'posts-moved' => 'mc_posts_moved',
+		
+		'blog-id' => 'mc_blog_id',
+
+		'attachment-moved' => 'mc_attachment_moved',
+	];
+
 	// const POST_TYPES = [
 	// 	'page' => 'page',
 
@@ -14,6 +32,22 @@ class MultisiteAdmin
 	// 	'compilation' => 'legal_compilation',
 	// ];
 	
+	const POST_TYPES_DEFAULT = [
+		'page' => 'edit-page',
+
+		'post' => 'edit-post',
+	];
+
+	const POST_TYPES_CUSTOM = [
+		'brand' => 'edit-legal_brand',
+
+		'billet' => 'edit-legal_billet',
+
+		'compilation' => 'edit-legal_compilation',
+
+		'affiliate' => 'edit-affiliate-links',
+	];
+
 	const POST_TYPES_POST = [
 		'page' => 'edit-page',
 
@@ -36,11 +70,6 @@ class MultisiteAdmin
 	// 	...self::POST_TYPES_ATTACHMENT,
 	// ];
 
-	public static function get_post_types()
-	{
-		return array_merge( self::POST_TYPES_POST, self::POST_TYPES_ATTACHMENT );
-	}
-
 	const PATTERNS = [
 		// 'move-to' => 'Move to [%s]',
 
@@ -48,6 +77,11 @@ class MultisiteAdmin
 
 		'handle-bulk-actions' => 'handle_bulk_actions-%s',
 	];
+
+	public static function get_post_types()
+	{
+		return array_merge( self::POST_TYPES_POST, self::POST_TYPES_ATTACHMENT );
+	}
 	
 	// public static function add_filter_all( $name, $object, $handler, $priority = 10, $accepted_args = 1 )
 	
@@ -71,7 +105,7 @@ class MultisiteAdmin
 		}
 	}
 
-	public static function register_functions_admin()
+	public static function register_functions_mainsite()
 	{
 		if ( MultisiteBlog::check_main_blog() )
 		{
@@ -101,17 +135,23 @@ class MultisiteAdmin
 		}
 	}
 
-	const DOACTION = [
-		'move-to' => 'move_to_',
-	];
+	public static function register_functions_subsite()
+	{
+		if ( !MultisiteBlog::check_main_blog() )
+		{
+			$handler = new self();
 
-	const QUERY_ARG = [
-		'posts-moved' => 'mc_posts_moved',
-		
-		'blog-id' => 'mc_blog_id',
-
-		'attachment-moved' => 'mc_attachment_moved',
-	];
+			self::add_filter_all(
+				self::PATTERNS[ 'bulk-actions' ],
+				
+				self::POST_TYPES_DEFAULT,
+				
+				$handler,
+				
+				'mc_bulk_subsite_actions'
+			);
+		}
+	}
 	
 	public static function mc_bulk_multisite_actions( $bulk_array )
 	{
@@ -132,6 +172,19 @@ class MultisiteAdmin
 				$bulk_array[ self::DOACTION[ 'move-to' ] . $site->blog_id ] = sprintf( $pattern, $site->blogname );
 			}
 		}
+
+		return $bulk_array;
+	}
+
+	public static function mc_bulk_subsite_actions( $bulk_array )
+	{
+		$bulk_array = array_merge( $bulk_array, [
+			self::DOACTION[ 'sync-galleries' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-galleries' ] ),
+
+			self::DOACTION[ 'sync-terms' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-terms' ] ),
+
+			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-attachments' ] ),
+		] );
 
 		return $bulk_array;
 	}
