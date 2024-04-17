@@ -211,7 +211,9 @@ class MultisiteAttachmentSync
 		// 	'result' => $result,
 		// ] );
 
-		MultisitePost::update_post( $post );
+		// MultisitePost::update_post( $post );
+
+		wp_update_post( $post );
     }
 
 	public static function get_gallery_shortcodes_attr_ids( $galleries )
