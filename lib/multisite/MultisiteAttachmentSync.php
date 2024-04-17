@@ -173,12 +173,16 @@ class MultisiteAttachmentSync
     {
 		$ids = self::get_gallery_attachment_ids( $post );
 
+		$origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
+
         $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'set_attachments_shortcode',
 
 			'ids' => $ids,
+
+			'origin_post_ids' => $origin_post_ids,
 
 		    'regex' => $regex,
 		] );
