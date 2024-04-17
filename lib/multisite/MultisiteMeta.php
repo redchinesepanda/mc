@@ -10,7 +10,7 @@ class MultisiteMeta
 		'filter' => 'compilation-filter',
 	];
 
-	public static function register_functions_admin()
+	public static function register_functions_debug()
 	{
 		// $handler = new self();
 

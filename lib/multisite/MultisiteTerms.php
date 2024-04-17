@@ -28,7 +28,7 @@ class MultisiteTerms
 		'media-type' => 'media_type',
 	];
 
-	public static function register_functions_admin()
+	public static function register_functions_debug()
 	{
 		// $handler = new self();
 

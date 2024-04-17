@@ -16,7 +16,7 @@ class MultisiteAttachment
 	// 	'gallery' => 'gallery',
 	// ];
 
-	public static function register_functions_admin()
+	public static function register_functions_mainsite()
 	{
 		if ( MultisiteBlog::check_main_blog() )
 		{

@@ -56,19 +56,13 @@ class MiltisiteMain
 
 	public static function register_functions_admin()
 	{
-		MultisiteMeta::register_functions_admin();
-
-		MultisiteTerms::register_functions_admin();
-
-		MultisiteTermSync::register_functions_admin();
-
 		if ( MultisiteBlog::check_main_blog() )
 		{
 			MultisiteAdmin::register_functions_mainsite();
 
-			MultisitePost::register_functions_admin();
+			MultisitePost::register_functions_mainsite();
 
-			MultisiteAttachment::register_functions_admin();
+			MultisiteAttachment::register_functions_mainsite();
 		}
 		else
 		{
@@ -77,6 +71,8 @@ class MiltisiteMain
 			MultisiteAttachmentSync::register_functions_subsite();
 
 			MultisiteGallerySync::register_functions_subsite();
+
+			MultisiteTermSync::register_functions_subsite();
 		}
 	}
 }
