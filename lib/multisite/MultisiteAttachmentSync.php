@@ -175,7 +175,7 @@ class MultisiteAttachmentSync
 
 		// $origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
 
-        $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+        // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
@@ -187,7 +187,7 @@ class MultisiteAttachmentSync
 		//     'regex' => $regex,
 		// ] );
 
-		$handler = new self();
+		// $handler = new self();
 
 		// $result = preg_replace_callback( 
 		// 	$regex,
