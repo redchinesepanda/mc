@@ -3,15 +3,11 @@
 class MultisiteGallerySync
 {
 	const PATTERNS = [
-		// 'group-field' => '%1$s_%2$s',
-
 		'regex' => '/%s/',
 
 		'shortcode' => '[%1$s %2$s]',
 
 		'attr-pair' => '%1$s="%2$s"',
-
-		// 'gallery-id' => 'gallery-%1$s-%2$s',
 	];
 	
 	const SHORTCODES = [
@@ -50,7 +46,7 @@ class MultisiteGallerySync
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )
 				{
-					self::set_attachments_shortcode( $post[ 'ID' ], $post );
+					self::set_gallery_shortcode( $post[ 'ID' ], $post );
 				}
 			}
 
@@ -124,7 +120,7 @@ class MultisiteGallerySync
 		return $result;
 	}
 
-	public static function set_attachments_shortcode( $post_id, $post )
+	public static function set_gallery_shortcode( $post_id, $post )
     {
         $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 

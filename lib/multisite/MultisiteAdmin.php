@@ -25,18 +25,6 @@ class MultisiteAdmin
 
 		'attachments-synced' => 'mc_attachments_synced',
 	];
-
-	// const POST_TYPES = [
-	// 	'page' => 'page',
-
-	// 	'post' => 'post',
-
-	// 	'brand' => 'legal_brand',
-
-	// 	'billet' => 'legal_billet',
-
-	// 	'compilation' => 'legal_compilation',
-	// ];
 	
 	const POST_TYPES_DEFAULT = [
 		'page' => 'edit-page',
@@ -54,31 +42,11 @@ class MultisiteAdmin
 		'affiliate' => 'edit-affiliate-links',
 	];
 
-	// const POST_TYPES_POST = [
-	// 	'page' => 'edit-page',
-
-	// 	'post' => 'edit-post',
-
-	// 	'brand' => 'edit-legal_brand',
-
-	// 	'billet' => 'edit-legal_billet',
-
-	// 	'compilation' => 'edit-legal_compilation',
-	// ];
-
 	const POST_TYPES_ATTACHMENT = [
 		'attachment' => 'upload',
 	];
 
-	// const POST_TYPES = [
-	// 	...self::POST_TYPES_POST,
-
-	// 	...self::POST_TYPES_ATTACHMENT,
-	// ];
-
 	const PATTERNS = [
-		// 'move-to' => 'Move to [%s]',
-
 		'bulk-actions' => 'bulk_actions-%s',
 
 		'handle-bulk-actions' => 'handle_bulk_actions-%s',

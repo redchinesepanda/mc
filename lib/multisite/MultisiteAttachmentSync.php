@@ -38,137 +38,69 @@ class MultisiteAttachmentSync
 
 	const PATTERNS = [
 		'group-field' => '%1$s_%2$s',
-
-		// 'regex' => '/%s/',
-
-		// 'shortcode' => '[%1$s %2$s]',
-
-		// 'attr-pair' => '%1$s="%2$s"',
-
-		// 'gallery-id' => 'gallery-%1$s-%2$s',
 	];
-	
-	// const SHORTCODES = [
-	// 	'gallery' => 'gallery',
-	// ];
 
 	public static function register_functions_admin()
     {
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
-			$handler = new self();
-	
-			// add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
+			// $handler = new self();
 			
 			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_attachments' ], 10, 2 );
-
-			// add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_attachments_shortcode' ], 10, 2 );
 		}
 	}
 
-	public static function register_functions_debug()
+	public static function register_functions_subsite()
 	{
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
-			// $handler = new self();
+			$handler = new self();
 
-			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+				
+				MultisiteAdmin::get_post_types_post(),
+				
+				$handler,
+				
+				'mc_bulk_action_sync_attachments',
+				
+				10,
+				
+				3
+			);
 		}
 	}
 
-	// public static function mc_debug_edit_form_after_title_action( $post )
-	// {
-	// 	// $matches = self::get_gallery_shortcodes();
+	public static function mc_bulk_action_sync_attachments( $redirect, $doaction, $object_ids )
+	{
+		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-	// 	// $ids = self::get_shortcodes_attr_ids( $matches );
+		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] ) )
+		{
+			foreach ( $object_ids as $post_id )
+			{
+				// if ( $post = MultisitePost::get_post( $post_id ) )
+				// {
+				// 	self::set_attachments( $post[ 'ID' ], $post );
+				// }
 
-	// 	// LegalDebug::debug( [
-	// 	// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+				self::set_attachments( $post[ 'ID' ] );
+			}
 
-	// 	// 	'ids' => $ids,
-	// 	// ] );
+			$redirect = MultisiteAdmin::redirect_set(
+				$redirect,
+				
+				MultisiteAdmin::QUERY_ARG[ 'attachments-synced' ],
+				
+				count( $object_ids ),
+				
+				MultisiteBlog::get_current_blog_id()
+			);
+		}
 
-	// 	$result = self::set_attachments_shortcode( $post->ID, $post );
-
-	// 	// LegalDebug::debug( [
-	// 	// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
-
-	// 	// 	'result' => $result,
-	// 	// ] );
-	// }
-
-	// public static function get_gallery_shortcodes_attr_ids( $galleries )
-    // {
-    //     $ids = [];
-
-    //     foreach ( $galleries as $gallery_id => $gallery )
-	// 	{
-	// 		$atts = shortcode_parse_atts( $gallery[ 3 ] );
-
-	// 		if ( ! empty( $atts[ 'ids' ] ) )
-	// 		{
-	// 			foreach ( explode( ',', $atts[ 'ids' ] ) as $attachment_index => $attachment_id )
-	// 			{
-	// 				$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, $attachment_index );
-
-	// 				$ids[ $gallery_index ] = $attachment_id;
-	// 			}
-	// 		}
-	// 	}
-
-    //     return $ids;
-    // }
-
-	// public static function get_gallery_matches( $post )
-	// {
-	// 	$matches = [];
-
-	// 	$regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-	// 	$amount = preg_match_all( 
-	// 		$regex,
-
-	// 		$post->post_content,
-
-	// 		$matches,
-
-	// 		PREG_SET_ORDER
-	// 	);
-
-	// 	return $matches;
-	// }
-
-	// public static function get_gallery_attachment_ids( $post )
-    // {
-    //     $galleries = self::get_gallery_matches( $post );
-
-    //     // $post = get_post();
-
-    //     // if ( $post )
-    //     // {
-    //         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-	// 		// // LegalDebug::debug( [
-	// 		// // 	'MultisiteAttachment' => 'get_gallery_shortcodes',
-
-    //         // //     'regex' => $regex,
-	// 		// // ] );
-
-    //         // $amount = preg_match_all( 
-    //         //     $regex,
-    
-    //         //     $post->post_content,
-    
-    //         //     $galleries,
-    
-    //         //     PREG_SET_ORDER
-    //         // );
-    //     // }
-
-	// 	$ids = self::get_gallery_shortcodes_attr_ids( $galleries );
-
-    //     return $ids;
-    // }
+		return $redirect;
+	}
 
 	public static function get_subfield_names( $subfields )
 	{
@@ -195,7 +127,9 @@ class MultisiteAttachmentSync
 		return $field_names;
 	}
 
-	public static function get_origin_post_ids( $post_id, $post )
+	// public static function get_origin_post_ids( $post_id, $post )
+	
+	public static function get_origin_post_ids( $post_id )
 	{
 		$origin_post_ids = [];
 
@@ -212,9 +146,13 @@ class MultisiteAttachmentSync
 		return $origin_post_ids;
 	}
 
-	public static function set_attachments( $post_id, $post )
+	// public static function set_attachments( $post_id, $post )
+	
+	public static function set_attachments( $post_id )
     {
-		$origin_post_ids = self::get_origin_post_ids( $post_id, $post );
+		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
+		
+		$origin_post_ids = self::get_origin_post_ids( $post_id );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachmentSync' => 'set_attachments',
