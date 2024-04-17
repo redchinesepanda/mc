@@ -125,7 +125,7 @@
 	transform: translateY(-50%);
 }
 
-.wp-polls .wp-polls-ans > p:first-of-type {
+.wp-polls .wp-polls-ul + p {
 	padding-top: 14px;
 	padding-bottom: 14px;
 	margin-top: 24px;
