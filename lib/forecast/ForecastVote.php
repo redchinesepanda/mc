@@ -43,14 +43,13 @@ class ForecastVote
 		],
     ];
 
-    public static function register_script()
+  /*   public static function register_script()
     {
-	/* 	if ( TemplateMain::check_new() )
+		if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_script( self::JS_NEW );
-		} */
-        ToolEnqueue::register_script( self::JS_NEW );
-    }
+		}
+    } */
 
     const DEQUEUE_CSS = [
         'wp-polls',
@@ -75,6 +74,8 @@ class ForecastVote
             ToolEnqueue::dequeue_style( self::DEQUEUE_CSS );
 
             ToolEnqueue::dequeue_script( self::DEQUEUE_JS );
+
+            ToolEnqueue::register_script( self::JS_NEW );
         }
     }
 
