@@ -18,6 +18,8 @@ class MultisiteAdmin
 		'blog-id' => 'mc_blog_id',
 
 		'attachment-moved' => 'mc_attachment_moved',
+
+		'galleries-synced' => 'mc_galleries_synced',
 	];
 
 	// const POST_TYPES = [
@@ -155,6 +157,8 @@ class MultisiteAdmin
 				
 				'mc_bulk_subsite_actions'
 			);
+
+			add_action( 'admin_notices', [ $handler, 'mc_bulk_updated_notices' ] );
 		}
 	}
 	
@@ -228,17 +232,58 @@ class MultisiteAdmin
 			self::print_notices( $args );
 		}
 	}
+
+	public static function check_request_updated( $request )
+	{
+		$updated_requests = [
+			self::QUERY_ARG[ 'galleries-synced' ],
+
+			self::QUERY_ARG[ 'terms-synced' ],
+
+			self::QUERY_ARG[ 'attachments-synced' ],
+		];
+
+		foreach ( $updated_requests as $updated_request )
+		{
+			if ( ! empty( $_REQUEST[ $updated_request ] ) )
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+	public static function mc_bulk_updated_notices()
+	{
+		// if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ] ) )
+		
+		if ( self::check_request_updated( $_REQUEST ) )
+		{
+			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
+
+			$message = self::get_message(
+				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
+
+				[
+					$_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ],
+
+					$blog->blogname,
+				]
+			);
+			
+			$args = [
+                'message' => $message,
+			];
+
+			self::print_notices( $args );
+		}
+	}
 	
 	function mc_bulk_multisite_attachment_notices()
 	{
-		// but you can create an awesome message
-
-		// if( ! empty( $_REQUEST[ 'rudr_bulk_media' ] ) )
-		
 		if( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
 		{
-			// depending on how many posts have been changed, our message may be different
-
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
 			$message = self::get_message(
@@ -256,8 +301,6 @@ class MultisiteAdmin
 			];
 
 			self::print_notices( $args );
-
-			// printf( '<div id="message" class="updated notice is-dismissible"><p>' . _n( '%d image has been copied to &laquo;Store&raquo;.', '%d images have been copied to &laquo;Store&raquo;.', absint( $_REQUEST[ 'rudr_bulk_media' ] ) ) . '</p></div>', $_REQUEST[ 'rudr_bulk_media' ] );
 		}
 	}
 
@@ -292,9 +335,14 @@ class MultisiteAdmin
 		);
 	}
 
-	public static function check_doaction( $doaction )
+	public static function check_doaction( $doaction, $doaction_target = '' )
 	{
-		return str_contains( $doaction, self::DOACTION[ 'move-to' ] );
+		if ( empty( $doaction ) )
+		{
+			$doaction_target = self::DOACTION[ 'move-to' ];
+		}
+
+		return str_contains( $doaction, $doaction_target );
 	}
 
 	public static function get_blog_id( $doaction )

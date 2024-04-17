@@ -39,13 +39,13 @@ class MultisiteAttachmentSync
 	const PATTERNS = [
 		'group-field' => '%1$s_%2$s',
 
-		'regex' => '/%s/',
+		// 'regex' => '/%s/',
 
-		'shortcode' => '[%1$s %2$s]',
+		// 'shortcode' => '[%1$s %2$s]',
 
-		'attr-pair' => '%1$s="%2$s"',
+		// 'attr-pair' => '%1$s="%2$s"',
 
-		'gallery-id' => 'gallery-%1$s-%2$s',
+		// 'gallery-id' => 'gallery-%1$s-%2$s',
 	];
 	
 	const SHORTCODES = [
@@ -70,232 +70,105 @@ class MultisiteAttachmentSync
 	{
 		if ( MultisiteBlog::check_not_main_blog() )
 		{
-			$handler = new self();
+			// $handler = new self();
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
 		}
 	}
 
-	public static function mc_debug_edit_form_after_title_action( $post )
-	{
-		// $matches = self::get_gallery_shortcodes();
+	// public static function mc_debug_edit_form_after_title_action( $post )
+	// {
+	// 	// $matches = self::get_gallery_shortcodes();
 
-		// $ids = self::get_shortcodes_attr_ids( $matches );
+	// 	// $ids = self::get_shortcodes_attr_ids( $matches );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
-		// 	'ids' => $ids,
-		// ] );
+	// 	// 	'ids' => $ids,
+	// 	// ] );
 
-		$result = self::set_attachments_shortcode( $post->ID, $post );
+	// 	$result = self::set_attachments_shortcode( $post->ID, $post );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
 
-		// 	'result' => $result,
-		// ] );
-	}
+	// 	// 	'result' => $result,
+	// 	// ] );
+	// }
 
-	public static function get_atts_pair( $v, $k )
-	{
-		return sprintf( self::PATTERNS[ 'attr-pair' ], $k, $v );
-	}
+	// public static function get_gallery_shortcodes_attr_ids( $galleries )
+    // {
+    //     $ids = [];
 
-	public static function get_atts_part( $atts )
-	{
-		$handler = new self();
+    //     foreach ( $galleries as $gallery_id => $gallery )
+	// 	{
+	// 		$atts = shortcode_parse_atts( $gallery[ 3 ] );
 
-		return implode( ' ', array_map(
-			[ $handler, 'get_atts_pair' ],
+	// 		if ( ! empty( $atts[ 'ids' ] ) )
+	// 		{
+	// 			foreach ( explode( ',', $atts[ 'ids' ] ) as $attachment_index => $attachment_id )
+	// 			{
+	// 				$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, $attachment_index );
 
-			$atts,
+	// 				$ids[ $gallery_index ] = $attachment_id;
+	// 			}
+	// 		}
+	// 	}
 
-			array_keys( $atts )
-		) );
-	}
+    //     return $ids;
+    // }
 
-	public static function set_gallery_shortcode_moved_ids( $attachment_ids )
-	{
-		foreach ( $attachment_ids as $key => $origin_post_id )
-		{
-			if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
-			{
-				$attachment_ids[ $key ] = $post_moved_id;
-			}
-		}
+	// public static function get_gallery_matches( $post )
+	// {
+	// 	$matches = [];
 
-		return $attachment_ids;
-	}
+	// 	$regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-	public static function sync_gallery_shortcode_ids( $match )
-	{
-		$atts = shortcode_parse_atts( $match[ 3 ] );
+	// 	$amount = preg_match_all( 
+	// 		$regex,
 
-		if ( ! empty( $atts[ 'ids' ] ) )
-        {
-            $ids = explode( ',', $atts[ 'ids' ] );
+	// 		$post->post_content,
 
-			// $ids = [ 0 ];
-			
-			$ids = self::set_gallery_shortcode_moved_ids( $ids );
+	// 		$matches,
 
-			// sync ids
+	// 		PREG_SET_ORDER
+	// 	);
 
-			$atts[ 'ids' ] = implode( ',', $ids );
-        }
+	// 	return $matches;
+	// }
 
-		return self::get_atts_part( $atts );
-	}
+	// public static function get_gallery_attachment_ids( $post )
+    // {
+    //     $galleries = self::get_gallery_matches( $post );
 
-	public static function replace_gallery_shortcodes_ids( $match )
-	{
-		// $atts = shortcode_parse_atts( $match[ 3 ] );
+    //     // $post = get_post();
 
-		$atts = self::sync_gallery_shortcode_ids( $match );
+    //     // if ( $post )
+    //     // {
+    //         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-		$result = sprintf( self::PATTERNS[ 'shortcode' ], self::SHORTCODES[ 'gallery' ], $atts );
+	// 		// // LegalDebug::debug( [
+	// 		// // 	'MultisiteAttachment' => 'get_gallery_shortcodes',
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'get_gallery_shortcodes',
+    //         // //     'regex' => $regex,
+	// 		// // ] );
 
-		// 	// 'match' => $match,
-
-		// 	'atts' => $atts,
-
-		// 	'result' => $result,
-        // ] );
-
-		return $result;
-	}
-
-	public static function set_attachments_shortcode( $post_id, $post )
-    {
-		// $ids = self::get_gallery_attachment_ids( $post );
-
-		// $origin_post_ids = MultisitePost::get_post_moved_id_all( $ids );
-
-        $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
-
-		// 	// 'ids' => $ids,
-
-		// 	// 'origin_post_ids' => $origin_post_ids,
-
-		//     'regex' => $regex,
-		// ] );
-
-		$handler = new self();
-
-		$result = preg_replace_callback( 
-			$regex,
-
-			[ $handler, 'replace_gallery_shortcodes_ids' ],
-
-			$post->post_content
-		);
-
-		$post->post_content = $result;
-
-		// LegalDebug::die( [
-		// 	'MultisiteAttachment' => 'set_attachments_shortcode',
-
-		// 	// 'ids' => $ids,
-
-		// 	// 'origin_post_ids' => $origin_post_ids,
-
-		//     'regex' => $regex,
-
-		// 	'result' => $result,
-		// ] );
-
-		// $args = [
-		// 	'ID' => $post->ID,
-
-		// 	'post_content' => $post->post_content,
-		// ];
-
-		MultisitePost::update_post( $post );
-
-		// wp_update_post( $post );
-		
-		// wp_update_post( $args );
-    }
-
-	public static function get_gallery_shortcodes_attr_ids( $galleries )
-    {
-        $ids = [];
-
-        foreach ( $galleries as $gallery_id => $gallery )
-		{
-			$atts = shortcode_parse_atts( $gallery[ 3 ] );
-
-			if ( ! empty( $atts[ 'ids' ] ) )
-			{
-				foreach ( explode( ',', $atts[ 'ids' ] ) as $attachment_index => $attachment_id )
-				{
-					$gallery_index = sprintf( self::PATTERNS[ 'gallery-id' ], $gallery_id, $attachment_index );
-
-					$ids[ $gallery_index ] = $attachment_id;
-				}
-			}
-		}
-
-        return $ids;
-    }
-
-	public static function get_gallery_matches( $post )
-	{
-		$matches = [];
-
-		$regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-		$amount = preg_match_all( 
-			$regex,
-
-			$post->post_content,
-
-			$matches,
-
-			PREG_SET_ORDER
-		);
-
-		return $matches;
-	}
-
-	public static function get_gallery_attachment_ids( $post )
-    {
-        $galleries = self::get_gallery_matches( $post );
-
-        // $post = get_post();
-
-        // if ( $post )
-        // {
-            // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-			// // LegalDebug::debug( [
-			// // 	'MultisiteAttachment' => 'get_gallery_shortcodes',
-
-            // //     'regex' => $regex,
-			// // ] );
-
-            // $amount = preg_match_all( 
-            //     $regex,
+    //         // $amount = preg_match_all( 
+    //         //     $regex,
     
-            //     $post->post_content,
+    //         //     $post->post_content,
     
-            //     $galleries,
+    //         //     $galleries,
     
-            //     PREG_SET_ORDER
-            // );
-        // }
+    //         //     PREG_SET_ORDER
+    //         // );
+    //     // }
 
-		$ids = self::get_gallery_shortcodes_attr_ids( $galleries );
+	// 	$ids = self::get_gallery_shortcodes_attr_ids( $galleries );
 
-        return $ids;
-    }
+    //     return $ids;
+    // }
 
 	public static function get_subfield_names( $subfields )
 	{

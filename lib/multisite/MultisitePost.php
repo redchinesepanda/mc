@@ -332,38 +332,38 @@ class MultisitePost
         ];
 	}
 
-	public static function get_post_moved_id_all( $origin_post_ids )
-	{
-		$args = self::get_post_moved_id_all_args( $origin_post_ids );
+	// public static function get_post_moved_id_all( $origin_post_ids )
+	// {
+	// 	$args = self::get_post_moved_id_all_args( $origin_post_ids );
 
-		$moved_ids = get_posts( $args );
+	// 	$moved_ids = get_posts( $args );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'get_post_moved_id',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteMeta' => 'get_post_moved_id',
 
-		// 	'origin_post_id' => $origin_post_id,
+	// 	// 	'origin_post_id' => $origin_post_id,
 
-		// 	'args' => $args,
+	// 	// 	'args' => $args,
 
-		// 	'posts' => count( $posts ),
-		// ] );
+	// 	// 	'posts' => count( $posts ),
+	// 	// ] );
 
-		foreach ( $moved_ids as $key => $moved_id )
-		{
-			$origin_post_ids[ $key ] = $moved_id;
-		}
+	// 	foreach ( $moved_ids as $key => $moved_id )
+	// 	{
+	// 		$origin_post_ids[ $key ] = $moved_id;
+	// 	}
 
-		// if ( count( $posts ) == 1 )
-		// {
-		// 	$post = array_shift( $posts );
+	// 	// if ( count( $posts ) == 1 )
+	// 	// {
+	// 	// 	$post = array_shift( $posts );
 
-		// 	return $post->ID;
-		// }
+	// 	// 	return $post->ID;
+	// 	// }
 
-		// return false;
+	// 	// return false;
 
-		return $origin_post_ids;
-	}
+	// 	return $origin_post_ids;
+	// }
 
 	public static function update_post( $post )
 	{

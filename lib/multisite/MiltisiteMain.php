@@ -18,6 +18,8 @@ require_once( 'MultisiteAttachmentSync.php' );
 
 require_once( 'MultisiteTermSync.php' );
 
+require_once( 'MultisiteGallerySync.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -35,6 +37,12 @@ class MiltisiteMain
 			'single' => '%d post has been copied to "%s".',
 
 			'plural' => '%d posts have been copied to "%s".',
+		],
+
+		'post-has-been-updated' => [
+			'single' => '%d post has been updated in "%s".',
+
+			'plural' => '%d posts have been updated in "%s".',
 		],
 
 		'image-has-been-copied-to' => [
@@ -69,6 +77,8 @@ class MiltisiteMain
 			MultisiteAdmin::register_functions_subsite();
 
 			MultisiteAttachmentSync::register_functions_admin();
+
+			MultisiteGallerySync::register_functions_subsite();
 		}
 	}
 }
