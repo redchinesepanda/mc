@@ -46,7 +46,7 @@ class MultisiteGallerySync
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )
 				{
-					self::set_attachments_shortcode( $post->ID, $post );
+					self::set_attachments_shortcode( $post[ 'ID' ], $post );
 				}
 			}
 
