@@ -123,7 +123,7 @@ class MultisiteAdmin
 			self::add_filter_all(
 				self::PATTERNS[ 'bulk-actions' ],
 				
-				self::POST_TYPES_DEFAULT,
+				self::get_post_types(),
 				
 				$handler,
 				
