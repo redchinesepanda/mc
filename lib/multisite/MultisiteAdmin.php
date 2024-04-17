@@ -5,11 +5,11 @@ class MultisiteAdmin
 	const DOACTION = [
 		'move-to' => 'move_to_',
 
-		'sync-galleries' => 'sync_galleries',
+		'sync-galleries' => 'mc_sync_galleries',
 
-		'sync-terms' => 'sync_terms',
+		'sync-terms' => 'mc_sync_terms',
 
-		'sync-attachments' => 'sync_attachments',
+		'sync-attachments' => 'mc_sync_attachments',
 	];
 
 	const QUERY_ARG = [
