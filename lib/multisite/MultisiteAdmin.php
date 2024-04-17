@@ -20,6 +20,10 @@ class MultisiteAdmin
 		'attachment-moved' => 'mc_attachment_moved',
 
 		'galleries-synced' => 'mc_galleries_synced',
+
+		'terms-synced' => 'mc_terms_synced',
+
+		'attachments-synced' => 'mc_attachments_synced',
 	];
 
 	// const POST_TYPES = [
