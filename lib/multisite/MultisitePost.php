@@ -334,7 +334,7 @@ class MultisitePost
 
 	public static function get_post_moved_id_all( $origin_post_ids )
 	{
-		$args = self::get_post_moved_id_all_args( $origin_post_id );
+		$args = self::get_post_moved_id_all_args( $origin_post_ids );
 
 		$moved_ids = get_posts( $args );
 
