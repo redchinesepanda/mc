@@ -78,6 +78,11 @@ class MultisiteAdmin
 		'handle-bulk-actions' => 'handle_bulk_actions-%s',
 	];
 
+	public static function get_post_types_post()
+	{
+		return array_merge( self::POST_TYPES_DEFAULT, self::POST_TYPES_CUSTOM );
+	}
+
 	public static function get_post_types()
 	{
 		return array_merge( self::POST_TYPES_DEFAULT, self::POST_TYPES_CUSTOM, self::POST_TYPES_ATTACHMENT );

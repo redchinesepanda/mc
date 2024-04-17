@@ -33,7 +33,7 @@ class MultisitePost
 			MultisiteAdmin::add_filter_all(
 				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-				MultisiteAdmin::POST_TYPES_POST,
+				MultisiteAdmin::get_post_types_post(),
 				
 				$handler,
 				
