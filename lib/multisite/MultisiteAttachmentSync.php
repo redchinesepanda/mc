@@ -66,12 +66,12 @@ class MultisiteAttachmentSync
 
 	public static function register_functions_debug()
 	{
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
-		// 	$handler = new self();
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
 
-		// 	add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		// }
+			add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		}
 	}
 
 	public static function mc_debug_edit_form_after_title_action()
@@ -86,7 +86,7 @@ class MultisiteAttachmentSync
 		// 	'ids' => $ids,
 		// ] );
 
-		// $result = self::set_attachments_shortcode();
+		$result = self::set_attachments_shortcode();
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachment' => 'mc_debug_edit_form_after_title_action',
@@ -167,90 +167,102 @@ class MultisiteAttachmentSync
 		return $result;
 	}
 
-	// public static function set_attachments( $post_id, $post )
-	
 	public static function set_attachments_shortcode( $post_id, $post )
     {
+		$ids = self::get_gallery_attachment_ids( $post );
+
+        $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'set_attachments_shortcode',
+
+			'ids' => $ids,
+
+		    'regex' => $regex,
+		] );
+
+		$handler = new self();
+
+		$result = preg_replace_callback( 
+			$regex,
+
+			[ $handler, 'replace_gallery_shortcodes_ids' ],
+
+			$post->post_content
+		);
+
+		// $post->post_content = $result;
+
+		// MultisitePost::update_post( $post );
+    }
+
+	public static function get_gallery_shortcodes_attr_ids( $galleries )
+    {
+        $ids = [];
+
+        foreach ( $galleries as $gallery )
+		{
+			$atts = shortcode_parse_atts( $gallery[ 3 ] );
+
+			if ( ! empty( $atts[ 'ids' ] ) )
+			{
+				$ids[] = $atts[ 'ids' ];
+			}
+		}
+
+        return $ids;
+    }
+
+	public static function get_gallery_matches( $post )
+	{
+		$matches = [];
+
+		$regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+
+		$amount = preg_match_all( 
+			$regex,
+
+			$post->post_content,
+
+			$matches,
+
+			PREG_SET_ORDER
+		);
+
+		return $matches;
+	}
+
+	public static function get_gallery_attachment_ids( $post )
+    {
+        $galleries = self::get_gallery_matches( $post );
+
         // $post = get_post();
 
         // if ( $post )
         // {
-            $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+            // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-			// LegalDebug::debug( [
-			// 	'MultisiteAttachment' => 'set_attachments_shortcode',
+			// // LegalDebug::debug( [
+			// // 	'MultisiteAttachment' => 'get_gallery_shortcodes',
 
-            //     'regex' => $regex,
-			// ] );
+            // //     'regex' => $regex,
+			// // ] );
 
-			$handler = new self();
-
-            $result = preg_replace_callback( 
-                $regex,
-
-				[ $handler, 'replace_gallery_shortcodes_ids' ],
+            // $amount = preg_match_all( 
+            //     $regex,
     
-                $post->post_content
-			);
-
-			$post->post_content = $result;
-
-			MultisitePost::update_post( $post );
-
-			// return true;
+            //     $post->post_content,
+    
+            //     $galleries,
+    
+            //     PREG_SET_ORDER
+            // );
         // }
 
-        // return false;
+		$ids = self::get_gallery_shortcodes_attr_ids( $galleries );
+
+        return $ids;
     }
-
-	// public static function get_shortcodes_attr_ids( $matches )
-    // {
-    //     $ids = [];
-
-    //     foreach ( $matches as $match )
-	// 	{
-	// 		$atts = shortcode_parse_atts( $match[ 3 ] );
-
-	// 		if ( ! empty( $atts[ 'ids' ] ) )
-	// 		{
-	// 			$ids[] = $atts[ 'ids' ];
-	// 		}
-	// 	}
-
-    //     return $ids;
-    // }
-
-	// public static function get_gallery_shortcodes()
-    // {
-    //     $matches = [];
-
-    //     $post = get_post();
-
-    //     if ( $post )
-    //     {
-    //         $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
-
-	// 		LegalDebug::debug( [
-	// 			'MultisiteAttachment' => 'get_gallery_shortcodes',
-
-    //             'regex' => $regex,
-	// 		] );
-
-    //         $amount = preg_match_all( 
-    //             // '/' . $regex . '/',
-
-	// 			$regex,
-    
-    //             $post->post_content,
-    
-    //             $matches,
-    
-    //             PREG_SET_ORDER
-    //         );
-    //     }
-
-    //     return $matches;
-    // }
 
 	public static function get_subfield_names( $subfields )
 	{
