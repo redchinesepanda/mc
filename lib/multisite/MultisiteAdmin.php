@@ -48,17 +48,17 @@ class MultisiteAdmin
 		'affiliate' => 'edit-affiliate-links',
 	];
 
-	const POST_TYPES_POST = [
-		'page' => 'edit-page',
+	// const POST_TYPES_POST = [
+	// 	'page' => 'edit-page',
 
-		'post' => 'edit-post',
+	// 	'post' => 'edit-post',
 
-		'brand' => 'edit-legal_brand',
+	// 	'brand' => 'edit-legal_brand',
 
-		'billet' => 'edit-legal_billet',
+	// 	'billet' => 'edit-legal_billet',
 
-		'compilation' => 'edit-legal_compilation',
-	];
+	// 	'compilation' => 'edit-legal_compilation',
+	// ];
 
 	const POST_TYPES_ATTACHMENT = [
 		'attachment' => 'upload',
@@ -80,7 +80,7 @@ class MultisiteAdmin
 
 	public static function get_post_types()
 	{
-		return array_merge( self::POST_TYPES_POST, self::POST_TYPES_ATTACHMENT );
+		return array_merge( self::POST_TYPES_DEFAULT, self::POST_TYPES_CUSTOM, self::POST_TYPES_ATTACHMENT );
 	}
 	
 	// public static function add_filter_all( $name, $object, $handler, $priority = 10, $accepted_args = 1 )
