@@ -99,8 +99,9 @@
 	background-color: var( --Base-base-01 );
 }
 
-.wp-polls .form_radio_btn label:hover {
-	text-shadow: 0 0 0.7px var( --Base-base-09 );
+.wp-polls .form_radio_btn label:hover,
+.wp-polls .form_radio_btn input[type=radio]:checked + label {
+	text-shadow: 0 0 0.6px var( --Base-base-09 );
 }
 
 .wp-polls .Button-my-style {
