@@ -106,6 +106,12 @@ class MultisitePost
 					{
 						MultisiteMeta::set_post_moved( $post_id, $blog_id, $inserted_post_id );
 
+						LegalDebug::debug( [
+							'MultisitePost' => 'mc_bulk_action_multisite_handler',
+
+							'MultisiteMeta' => 'set_post_moved',
+						] );
+
 						MultisiteAttachment::copy_attachments( $blog_id, $post_id, $post );
 
 						LegalDebug::debug( [
@@ -128,15 +134,15 @@ class MultisitePost
 			$redirect = MultisiteAdmin::redirect_set( $redirect, MultisiteAdmin::QUERY_ARG[ 'posts-moved' ], count( $object_ids ), $blog_id );
 		}
 
-		// LegalDebug::debug( [
-		// 	'MultisitePost' => 'rudr_bulk_action_multisite_handler',
+		LegalDebug::die( [
+			'MultisitePost' => 'rudr_bulk_action_multisite_handler',
 
-		// 	'redirect' => $redirect,
+			'redirect' => $redirect,
 
-		// 	'doaction' => $doaction,
+			'doaction' => $doaction,
 
-		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
-		// ] );
+			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+		] );
 
 		return $redirect;
 	}
