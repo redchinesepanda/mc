@@ -69,7 +69,9 @@ class MultisiteACF
 		// 	'array_column' => array_column( self::FIELDS_COMPILATION_FILTER, 'key' ),
 		// ] );
 
-		return array_merge( array_column( self::FIELDS_COMPILATION_FILTER, 'key' ), [] );
+		// return array_merge( array_column( self::FIELDS_COMPILATION_FILTER, 'key' ), [] );
+		
+		return array_merge( array_column( self::FIELDS_COMPILATION_FILTER, 'name' ), [] );
 	}
 
 	public static function get_fields( $post_id )
