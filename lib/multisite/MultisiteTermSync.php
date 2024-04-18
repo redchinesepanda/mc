@@ -220,20 +220,39 @@ class MultisiteTermSync
 		return $repeaters;
 	}
 
+	public static function get_field_names()
+	{
+		// $group_field_names = MultisiteAttachmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
+
+		$group_field_names = [];
+
+		$simple_field_names = [
+			self::FIELDS[ 'compilation-type' ][ 'name' ],
+
+			self::FIELDS[ 'compilation-filter' ][ 'name' ],
+		];
+
+		return array_merge( $group_field_names, $simple_field_names );
+	}
+
 	public static function get_fields( $post_id, $simple_fields = [] )
 	{
 		$fields = [];
 
 		if ( empty( $simple_fields ) )
 		{
-			$simple_fields = self::FIELDS;
+			// $simple_fields = self::FIELDS;
+			
+			$simple_fields = self::get_field_names();
 		}
 
 		// foreach ( self::FIELDS as $field )
 		
-		foreach ( $simple_fields as $field )
+		// foreach ( $simple_fields as $field )
+		
+		foreach ( $simple_fields as $field_name )
 		{
-			$field_name = $field[ 'name' ];
+			// $field_name = $field[ 'name' ];
 
 			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
