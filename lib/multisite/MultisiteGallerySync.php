@@ -197,7 +197,7 @@ class MultisiteGallerySync
 		LegalDebug::debug( [
 			'MultisiteGallerySync' => 'mc_edit_form_after_title_debug',
 
-			'get_gallery_shortcodes_ids' => get_gallery_shortcodes_ids( $post->ID, $post ),
+			'get_gallery_shortcodes_ids' => self::get_gallery_shortcodes_ids( $post->ID, $post ),
 		] );
 	}
 }
