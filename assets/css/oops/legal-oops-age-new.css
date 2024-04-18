@@ -101,12 +101,12 @@
 	display: block;
 }
 
-.legal-oops-age .oops-age-button-no {
-	cursor: pointer;
-}
-
 .legal-oops-age .oops-age-button-no:not( .legal-active ) .age-button-no-link {
 	pointer-events: none;
+}
+
+.legal-oops-age .oops-age-you-shure:not( .legal-active ) {
+	display: none;
 }
 
 /* Position */
@@ -249,6 +249,10 @@
 	font-weight: 400;
 	line-height: 17px;
 	text-align: center;
+}
+
+.legal-oops-age .oops-age-button-no {
+	cursor: pointer;
 }
 
 .legal-oops-age .age-button-yes-link,
