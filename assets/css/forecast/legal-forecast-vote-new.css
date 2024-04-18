@@ -11,6 +11,12 @@
 		flex-wrap: wrap;
 	}
 
+	/* Width and Height */
+
+	.wp-polls .form_radio_btn {
+		width: 100%;
+	}
+
 	/* Position */
 
 	.wp-polls {
@@ -28,6 +34,11 @@
 	}
 
 	/* Width and Height */
+
+	.wp-polls .form_radio_btn label {
+		/* width: 250px; */
+		width: calc( 274px - ( 18px * 2 ) - 2px );
+	}
 
 	.wp-polls .wp-polls-ans {
 		width: 564px;
@@ -89,11 +100,6 @@
 
 /* Width and Height */
 
-.wp-polls .form_radio_btn label {
-	/* width: 250px; */
-	width: calc( 274px - ( 18px * 2 ) - 2px );
-}
-
 .wp-polls .Button-my-style {
 	width: 100%;
 	min-height: 50px; 
@@ -139,7 +145,7 @@
 
 .wp-polls .container {
 	margin-top: 24px;
-	margin-bottom: 16px;
+	margin-bottom: 0px;
 }
 
 .wp-polls .Button-my-style {
