@@ -73,7 +73,7 @@ class MultisitePostSync
 
 	public static function get_field_names()
 	{
-		return self::FIELDS;
+		return array_column( self::FIELDS, 'name' );
 	}
 
 	public static function set_posts( $post_id )
