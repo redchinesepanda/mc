@@ -13,7 +13,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		voteButtonSend: '.wp-polls .Button-my-style',
 
-		voteList: '.wp-polls .wp-polls-ans li'
+		voteList: '.wp-polls .wp-polls-ans li',
+
+		linkView: '.wp-polls a'
 	};
 
     function buttonDisable( event )
@@ -33,10 +35,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		console.log(parent.childNodes);
 		parent.appendChild(wrapper);
 	}
-	
-	document.querySelectorAll( selectors.voteList ).forEach(li => wrap( li ));
 
-	console.log(document.querySelector( selectors.voteList ));
+	function initWrap() {
+		document.querySelectorAll( selectors.voteList ).forEach(li => wrap( li ));
+		console.log(document.querySelector( selectors.voteList ));
+	};
+
+	document.querySelectorAll( selectors.linkView ).forEach(i => {
+		i.addEventListener( 'click', initWrap );  
+  	});
 	
 } );
 
