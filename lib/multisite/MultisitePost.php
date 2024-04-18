@@ -134,15 +134,15 @@ class MultisitePost
 			$redirect = MultisiteAdmin::redirect_set( $redirect, MultisiteAdmin::QUERY_ARG[ 'posts-moved' ], count( $object_ids ), $blog_id );
 		}
 
-		LegalDebug::die( [
-			'MultisitePost' => 'rudr_bulk_action_multisite_handler',
+		// LegalDebug::die( [
+		// 	'MultisitePost' => 'rudr_bulk_action_multisite_handler',
 
-			'redirect' => $redirect,
+		// 	'redirect' => $redirect,
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+		// ] );
 
 		return $redirect;
 	}
