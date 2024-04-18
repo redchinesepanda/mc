@@ -207,8 +207,8 @@
 /* Review Background */
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
-  /* background-color: rgb(89, 151, 227); */
   background-color: var(--Primitives-blue-40);
+  border-radius: 50%;
 }
 
 /* Typography */

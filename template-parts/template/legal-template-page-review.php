@@ -10,9 +10,8 @@ get_header();
 	<?php echo LegalBreadcrumbsMain::render(); ?>
 </section>
 <?php echo ReviewPage::render(); ?>
-<section id="theme-bottom-section" class="legal-section-author">
-	<?php echo ReviewAuthor::render(); ?>
-</section>
+<!-- <section id="theme-bottom-section" class="legal-section-author">
+</section> -->
 <?php
 
 get_footer();
