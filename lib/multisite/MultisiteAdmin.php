@@ -313,7 +313,7 @@ class MultisiteAdmin
 	{
 		return add_query_arg(
 			[
-				=$arg_moved => $posts_moved,
+				$arg_moved => $posts_moved,
 
 				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
 			],
