@@ -187,7 +187,7 @@ class MultisiteGallerySync
 			$matches
 		);
 
-		$ids = self::get_gallery_matches_ids( $matches )
+		$ids = self::get_gallery_matches_ids( $matches );
 
 		return $ids;
     }
