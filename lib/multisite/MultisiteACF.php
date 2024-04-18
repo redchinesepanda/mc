@@ -90,6 +90,14 @@ class MultisiteACF
 	{
 		foreach ( $fields as $field_name => $field_value )
 		{
+			LegalDebug::debug( [
+				'MultisiteACF' => 'add_fields',
+
+				'field_name' => $field_name,
+
+				'field_value' => $field_value,
+			] );
+
 			update_field( $field_name, $field_value, $post_id );
 		}
 
