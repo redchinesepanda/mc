@@ -98,7 +98,10 @@ class MultisiteACF
 				'field_value' => $field_value,
 			] );
 
-			update_field( $field_name, $field_value, $post_id );
+			if ( ! empty( $field_value ) )
+			{
+				update_field( $field_name, $field_value, $post_id );
+			}
 		}
 
 		return true;
