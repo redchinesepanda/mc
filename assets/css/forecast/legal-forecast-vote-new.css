@@ -13,8 +13,10 @@
 
 	/* Width and Height */
 
-	.wp-polls .form_radio_btn {
+	.wp-polls .form_radio_btn, 
+	.wp-polls .form_radio_btn label {
 		width: 100%;
+  		box-sizing: border-box;
 	}
 
 	/* Position */
