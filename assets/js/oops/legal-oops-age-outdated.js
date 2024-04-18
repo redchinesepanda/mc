@@ -49,6 +49,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.textYouShure ).classList.add( classes.active );
 	}
 
+	console.log(oopsCookiesWrapper.querySelector( selectors.buttonNo ));
+
 	oopsCookiesWrapper.querySelectorAll( selectors.buttonNo ).forEach(i => {
 		i.addEventListener( 'click', pressButtonNoShowText );  
   	});
