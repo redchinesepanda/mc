@@ -80,6 +80,12 @@ class MultisiteACF
 
 		foreach ( $field_names as $field_name )
 		{
+			LegalDebug::debug( [
+				'MultisiteACF' => 'get_fields',
+
+				'field_name' => $field_name,
+			] );
+
 			$field_value = self::get_field_raw( $field_name, $post_id );
 
 			if ( !empty( $field_value ) )
