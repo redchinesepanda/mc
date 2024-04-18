@@ -20,51 +20,27 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// linkView: '.wp-polls a'
 	};
 
-  /*   function buttonDisable( event )
+    function buttonDisable( event )
 	{
-        console.log('скрипт подключился');
+        // console.log('скрипт подключился');
 		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
-	} */
+	}
 
-	/* document.querySelectorAll( selectors.voteLabel ).forEach(i => {
+	document.querySelectorAll( selectors.voteLabel ).forEach(i => {
 		i.addEventListener( 'click', buttonDisable );  
-  	}); */ 
+  	}); 
 
 	function inputCheck( event ) {
 		if (event.checked) {
 			console.log('is checked');
 		} else {
 			console.log('Checkbox is not checked');
-		}
-	}
+		};
+	};
 
 	document.querySelectorAll( selectors.voteInput ).forEach(i => {
 		i.addEventListener( 'click', inputCheck );
   	});
-
-	console.log( document.querySelector(selectors.voteInput) );
-
-/* 	function wrap( parent ) {
-		const wrapper = document.createElement('div');
-		wrapper.classList = classes.wrapperText;
-		parent.childNodes.forEach(ch => wrapper.appendChild(ch));
-		console.log(parent.childNodes);
-		parent.appendChild(wrapper);
-	}
-
-	function initWrap() {
-		let observer = new MutationObserver(mutationRecords => {
-			console.log(mutationRecords); // console.log(изменения)
-		});
-
-
-		document.querySelectorAll( selectors.voteList ).forEach(li => wrap( li ));
-		console.log(document.querySelector( selectors.voteList ));
-	};
-
-	document.querySelectorAll( selectors.linkView ).forEach(i => {
-		i.addEventListener( 'click', initWrap );  
-  	}); */
 	
 } );
 
