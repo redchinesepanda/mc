@@ -164,9 +164,14 @@ class MultisiteGallerySync
 		{
 			if ( ! empty( $match[ 3 ] ) )
 			{
-				$ids = explode( ',', $match[ 3 ] );
+				$atts = shortcode_parse_atts( $match[ 3 ] );
 
-				array_merge( $result, $ids );
+				if ( ! empty( $atts[ 'ids' ] ) )
+				{
+					$ids = explode( ',', $atts[ 'ids' ] );
+
+					array_merge( $result, $ids );
+				}
 			} 
 		}
 
