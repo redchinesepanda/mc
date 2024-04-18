@@ -230,7 +230,7 @@ class MultisiteAdmin
 		{
 			if ( ! empty( $_REQUEST[ $updated_request ] ) )
 			{
-				return true;
+				return $_REQUEST[ $updated_request ];
 			}
 		}
 		
@@ -249,27 +249,29 @@ class MultisiteAdmin
 
 		// if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ] ) )
 		
-		if ( self::check_request_updated( $_REQUEST ) )
+		if ( $request_updated = self::check_request_updated( $_REQUEST ) )
 		{
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
-			LegalDebug::debug( [
-				'MultisiteAdmin' =>'mc_bulk_updated_notices',
+			// LegalDebug::debug( [
+			// 	'MultisiteAdmin' =>'mc_bulk_updated_notices',
 
-				'_REQUEST' => $_REQUEST,
+			// 	'_REQUEST' => $_REQUEST,
 
-				'self::QUERY_ARG' => self::QUERY_ARG,
+			// 	'self::QUERY_ARG' => self::QUERY_ARG,
 
-				'galleries-synced' => self::QUERY_ARG[ 'galleries-synced' ],
+			// 	'galleries-synced' => self::QUERY_ARG[ 'galleries-synced' ],
 
-				'_REQUEST-QUERY_ARG' => $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ],
-			] );
+			// 	'_REQUEST-QUERY_ARG' => $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ],
+			// ] );
 
 			$message = self::get_message(
 				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
 
 				[
-					$_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ], 
+					// $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ], 
+
+					$request_updated,
 
 					$blog->blogname,
 				]
