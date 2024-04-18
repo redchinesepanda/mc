@@ -20,6 +20,8 @@ require_once( 'MultisiteTermSync.php' );
 
 require_once( 'MultisiteGallerySync.php' );
 
+require_once( 'MultisitePostSync.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -77,6 +79,8 @@ class MiltisiteMain
 			MultisiteGallerySync::register_functions_subsite();
 
 			MultisiteTermSync::register_functions_subsite();
+
+			MultisitePostSync::register_functions_subsite();
 		}
 	}
 }
