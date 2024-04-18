@@ -145,7 +145,8 @@
 	order: 2;
 } */
 
-.legal-oops-age .oops-age-after {
+.legal-oops-age .oops-age-after,
+.legal-oops-age .oops-age-you-shure {
 	padding-top: 8px;
 }
 
@@ -215,7 +216,8 @@
 .legal-oops-age .oops-age-description,
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link,
-.legal-oops-age .oops-age-after {
+.legal-oops-age .oops-age-after,
+.legal-oops-age .oops-age-you-shure {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -252,16 +254,24 @@
 }
 
 .legal-oops-age .age-button-yes-link {
-	color: var(--Base-base-01);
+	color: var( --Base-base-01 );
 }
 
 .legal-oops-age .age-button-yes-link:hover,
 .legal-oops-age .age-button-no-link:hover {
-	text-shadow: 0 0 0.6px var(--Base-base-09);
+	text-shadow: 0 0 0.6px var( --Base-base-09 );
 }
 
 .legal-oops-age .oops-age-after {
-	color: var(--Base-base-05);
+	color: var( --Base-base-05 );
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 17px;
+	text-align: center;
+}
+
+.legal-oops-age .oops-age-you-shure {
+	color: var( --Primitives-red-40 );
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 17px;
