@@ -101,6 +101,14 @@
 	display: block;
 }
 
+.legal-oops-age .oops-age-button-no {
+	cursor: pointer;
+}
+
+.legal-oops-age .oops-age-button-no:not( .legal-active ) .age-button-no-link {
+	pointer-events: none;
+}
+
 /* Position */
 
 .legal-oops-age-wrapper {
