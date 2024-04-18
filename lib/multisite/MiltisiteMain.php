@@ -56,6 +56,8 @@ class MiltisiteMain
 
 	public static function register_functions_admin()
 	{
+		MultisiteGallerySync::register_functions_debug();
+
 		if ( MultisiteBlog::check_main_blog() )
 		{
 			MultisiteAdmin::register_functions_mainsite();

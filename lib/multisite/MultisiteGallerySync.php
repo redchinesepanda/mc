@@ -120,14 +120,21 @@ class MultisiteGallerySync
 		return $result;
 	}
 
+	public static function get_gallery_shortcode_regexp()
+	{
+		return sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+	}
+
 	public static function set_gallery_shortcode( $post_id, $post )
     {
-        $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+        // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
 		$handler = new self();
 
 		$result = preg_replace_callback( 
-			$regex,
+			// $regex,
+
+			self::get_gallery_shortcode_regexp(),
 
 			[ $handler, 'replace_gallery_shortcodes_ids' ],
 
@@ -138,6 +145,61 @@ class MultisiteGallerySync
 
 		MultisitePost::update_post( $post );
     }
+
+	public static function register_functions_debug()
+	{
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
+
+			add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		}
+	}
+
+	public static function get_gallery_matches_ids( $matches )
+	{
+		$result = [];
+
+		foreach ( $matches as $match )
+		{
+			if ( ! empty( $match[ 3 ] ) )
+			{
+				$ids = explode( ',', $match[ 3 ] );
+
+				array_merge( $result, $ids );
+			} 
+		}
+
+		return $result;
+	}
+
+	public static function get_gallery_shortcodes_ids( $post_id, $post )
+    {
+        $matches = [];
+
+		$handler = new self();
+
+		$result = preg_match( 
+			self::get_gallery_shortcode_regexp(),
+
+			$post[ 'post_content' ],
+
+			$matches
+		);
+
+		$ids = self::get_gallery_matches_ids( $matches )
+
+		return $ids;
+    }
+
+	function mc_edit_form_after_title_debug( $post )
+	{
+		LegalDebug::debug( [
+			'MultisiteGallerySync' => 'mc_edit_form_after_title_debug',
+
+			'get_gallery_shortcodes_ids' => get_gallery_shortcodes_ids( $post->ID, $post ),
+		] );
+	}
 }
 
 ?>
