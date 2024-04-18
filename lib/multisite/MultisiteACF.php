@@ -96,6 +96,12 @@ class MultisiteACF
 			}
 
 			// $fields[ $field_name ] = self::get_field_raw( $field_name, $post_id );
+
+			LegalDebug::debug( [
+				'MultisiteACF' => 'get_fields',
+
+				'fields' => $fields,
+			] );
 		}
 
 		return $fields;
