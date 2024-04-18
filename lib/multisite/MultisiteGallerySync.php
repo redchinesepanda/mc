@@ -74,13 +74,13 @@ class MultisiteGallerySync
 
 	public static function get_atts_pair( $value, $key )
 	{
-		LegalDebug::debug( [
-			'MultisiteGallerySync' => 'get_atts_pair',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' => 'get_atts_pair',
 
-			'value' => $value,
+		// 	'value' => $value,
 
-			'key' => $key,
-		] );
+		// 	'key' => $key,
+		// ] );
 
 		return sprintf( self::PATTERNS[ 'attr-pair' ], $key, $value );
 	}
@@ -133,13 +133,13 @@ class MultisiteGallerySync
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], self::SHORTCODES[ 'gallery' ], $atts );
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
 
-			'match' => $match,
+		// 	'match' => $match,
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		return $result;
 	}
@@ -167,13 +167,13 @@ class MultisiteGallerySync
 
 		$post[ 'post_content' ] = $result;
 
-		LegalDebug::die( [
-			'MultisiteGallerySync' =>'set_gallery_shortcode',
+		// LegalDebug::die( [
+		// 	'MultisiteGallerySync' =>'set_gallery_shortcode',
 
-			'post_id' => $post_id,
-		] );
+		// 	'post_id' => $post_id,
+		// ] );
 
-		// MultisitePost::update_post( $post );
+		MultisitePost::update_post( $post );
     }
 
 	public static function register_functions_debug()
