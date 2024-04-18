@@ -137,7 +137,7 @@ class MultisiteGallerySync
     {
         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'MultisiteGallerySync' =>'set_gallery_shortcode',
 
 			'post_id' => $post_id,
