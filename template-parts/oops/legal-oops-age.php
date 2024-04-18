@@ -9,6 +9,6 @@
 			<span class="age-button-yes-link"><?php echo $args[ 'button-yes' ][ 'label' ]; ?></span>
 		</div>
 		<span class="oops-age-after"><?php echo $args[ 'after' ]; ?></span>
-		<span class="oops-age-you-shure"><?php echo $args[ 'you-shure' ]; ?>We are sorry, we cannot allow minors access to our website.</span>
+		<span class="oops-age-you-shure"><?php echo $args[ 'you-shure' ]; ?></span>
 	</div>
 </div>
