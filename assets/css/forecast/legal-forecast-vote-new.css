@@ -25,6 +25,10 @@
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+
+	.wp-polls .wp-polls-ans li {
+		margin-bottom: 24px;
+	}
 }
 
 @media screen and ( min-width: 768px ) {
@@ -203,6 +207,10 @@
 	padding-bottom: 14px;
 	margin-top: 24px;
 	margin-bottom: 0px;
+}
+
+.wp-polls .wp-polls-ul .pollbar {
+	margin: 0px;
 }
 
 .wp-polls .wp-polls-ans > p:last-of-type {
