@@ -194,10 +194,12 @@ class MultisiteGallerySync
 
 	function mc_edit_form_after_title_debug( $post )
 	{
+		$sync_post = MultisitePost::get_post( $post->ID );
+
 		LegalDebug::debug( [
 			'MultisiteGallerySync' => 'mc_edit_form_after_title_debug',
 
-			'get_gallery_shortcodes_ids' => self::get_gallery_shortcodes_ids( $post->ID, $post ),
+			'get_gallery_shortcodes_ids' => self::get_gallery_shortcodes_ids( $sync_post[ 'ID' ], $sync_post ),
 		] );
 	}
 }
