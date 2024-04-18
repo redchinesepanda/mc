@@ -38,6 +38,12 @@ class MultisiteACF
 
 			'key' => 'field_6523a4f9e9751',
 		],
+
+		'tabs-items' => [
+			'name' => 'tabs-items',
+
+			'key' => 'field_6423d199c433a',
+		],
 	];
 
 	public static function update_field( $field_name, $value, $post_id )
