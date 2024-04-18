@@ -63,6 +63,12 @@
 	display: flex;
 }
 
+.wp-polls .wp-polls-ans li i span::after {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* Width and Height */
 
 .wp-polls .form_radio_btn label {
@@ -78,6 +84,11 @@
 .wp-polls .wp-polls-ans li,
 .wp-polls .wp-polls-ans li span {
 	width: 100%;
+}
+
+.wp-polls .wp-polls-ans li i span::after {
+	width: calc( 22px - 4px );
+  	height: calc( 22px - 4px );
 }
 
 .wp-polls .wp-polls-ul .pollbar {
@@ -232,6 +243,11 @@
 	/* overflow: hidden; */
 }
 
+.wp-polls .wp-polls-ans li i span::after {
+	border: 2px solid var( --Base-base-09 );
+	border-radius: 50%;
+}
+
 .wp-polls .wp-polls-ul .pollbar {
 	background-color: var( --Primitives-purple-40 );
 	border-radius: 8px 0px 0px 8px;
@@ -323,8 +339,8 @@
 .wp-polls .wp-polls-ans li i span::after {
 	font-family: var(--legal-font-icons);
 	content: '\F10D';
-    font-size: 18px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 16px;
 }
 
 .wp-polls .wp-polls-ans li small {
