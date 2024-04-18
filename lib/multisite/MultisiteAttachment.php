@@ -70,15 +70,15 @@ class MultisiteAttachment
 
 		self::handle_attachments( $blog_id, $origin_post_ids );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'copy_attachments',
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'copy_attachments',
 
-		// 	'blog_id' => $blog_id,
+			'blog_id' => $blog_id,
 
-		// 	'post_id' => $post_id,
+			'post_id' => $post_id,
 
-		// 	'origin_post_ids' => $origin_post_ids,
-		// ] );
+			'origin_post_ids' => $origin_post_ids,
+		] );
 	}
 
 	public static function mc_bulk_action_multisite_handler_attachment( $redirect, $doaction, $object_ids )
