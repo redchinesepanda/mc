@@ -11,6 +11,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
     const selectors = {
 		voteLabel: '.wp-polls .form_radio_btn label',
 
+		voteInput: '.wp-polls .form_radio_btn input',
+
 		voteButtonSend: '.wp-polls .Button-my-style',
 
 		// voteList: '.wp-polls .wp-polls-ans li',
@@ -24,9 +26,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
 	}
 
-	document.querySelectorAll( selectors.voteLabel ).forEach(i => {
+	/* document.querySelectorAll( selectors.voteLabel ).forEach(i => {
 		i.addEventListener( 'click', buttonDisable );  
-  	}); 
+  	}); */ 
+
+	document.querySelectorAll( selectors.voteInput ).forEach(i => {
+		if (i.checked) {
+			console.log( i + 'is checked');
+		}
+  	});
 
 /* 	function wrap( parent ) {
 		const wrapper = document.createElement('div');
