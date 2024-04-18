@@ -147,7 +147,7 @@ class MultisiteAttachmentSync
 			self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT ),
 
 			[ self::FIELDS[ 'affilate-logo' ] ]
-		)
+		);
 	}
 	
 	public static function get_origin_post_ids( $post_id )
