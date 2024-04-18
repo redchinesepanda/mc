@@ -56,12 +56,6 @@ class ForecastVote
 
     const DEQUEUE_JS = [
         'wp-polls',
-
-        'legal-forecast-vote' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/js/forecast/legal-forecast-vote.js',
-
-			'ver' => '1.0.0',
-		],
     ];
 
     public static function dequeue_style()
