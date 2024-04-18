@@ -72,8 +72,16 @@ class MultisiteGallerySync
 		return $redirect;
 	}
 
-	public static function get_atts_pair( $key, $value )
+	public static function get_atts_pair( $value, $key )
 	{
+		LegalDebug::debug( [
+			'MultisiteGallerySync' => 'get_atts_pair',
+
+			'value' => $value,
+
+			'key' => $key,
+		] );
+
 		return sprintf( self::PATTERNS[ 'attr-pair' ], $key, $value );
 	}
 
