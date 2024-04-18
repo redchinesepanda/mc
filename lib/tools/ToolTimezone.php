@@ -22,7 +22,14 @@ class ToolTimezone
 
 		$timezone = \DateTimeZone::listIdentifiers( \DateTimeZone::PER_COUNTRY, $country_code );
 
-		return array_shift( $timezone );
+		if ( !empty( $timezone ) )
+		{
+			return array_shift( $timezone );
+		}
+
+		return false;
+
+		// return array_shift( $timezone );
 	}
 }
 
