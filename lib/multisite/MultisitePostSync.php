@@ -157,19 +157,19 @@ class MultisitePostSync
 
 		$field_names = self::get_field_names();
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::die( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'field_names' => $field_names,
-		] );
+		// 	'field_names' => $field_names,
+		// ] );
 		
 		$fields = MultisiteTermSync::get_fields( $post_id, self::FIELDS );
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::die( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
