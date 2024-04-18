@@ -259,6 +259,10 @@ class MultisiteAdmin
 				'_REQUEST' => $_REQUEST,
 
 				'self::QUERY_ARG' => self::QUERY_ARG,
+
+				'galleries-synced' => self::QUERY_ARG[ 'galleries-synced' ],
+
+				'_REQUEST-QUERY_ARG' => $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ],
 			] );
 
 			$message = self::get_message(
