@@ -82,11 +82,11 @@ class MultisiteACF
 
 		foreach ( $field_names as $field_name )
 		{
-			LegalDebug::debug( [
-				'MultisiteACF' => 'get_fields',
+			// LegalDebug::debug( [
+			// 	'MultisiteACF' => 'get_fields',
 
-				'field_name' => $field_name,
-			] );
+			// 	'field_name' => $field_name,
+			// ] );
 
 			$field_value = self::get_field_raw( $field_name, $post_id );
 
@@ -97,11 +97,11 @@ class MultisiteACF
 
 			// $fields[ $field_name ] = self::get_field_raw( $field_name, $post_id );
 
-			LegalDebug::debug( [
-				'MultisiteACF' => 'get_fields',
+			// LegalDebug::debug( [
+			// 	'MultisiteACF' => 'get_fields',
 
-				'fields' => $fields,
-			] );
+			// 	'fields' => $fields,
+			// ] );
 		}
 
 		return $fields;
@@ -111,13 +111,13 @@ class MultisiteACF
 	{
 		foreach ( $fields as $field_name => $field_value )
 		{
-			LegalDebug::debug( [
-				'MultisiteACF' => 'add_fields',
+			// LegalDebug::debug( [
+			// 	'MultisiteACF' => 'add_fields',
 
-				'field_name' => $field_name,
+			// 	'field_name' => $field_name,
 
-				'field_value' => $field_value,
-			] );
+			// 	'field_value' => $field_value,
+			// ] );
 
 			if ( ! empty( $field_value ) )
 			{
