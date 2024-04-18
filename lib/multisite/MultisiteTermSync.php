@@ -347,6 +347,12 @@ class MultisiteTermSync
 
 		if ( is_numeric( $field_value ) )
 		{
+			// LegalDebug::debug( [
+			// 	'MultisiteTermSync' => 'get_field_value_sync',
+
+			// 	'get_term_id' => self::get_term_id( $field_value ),
+			// ] );
+
 			return self::get_term_id( $field_value );
 		}
 
