@@ -121,6 +121,13 @@
 	transform: translateY(-50%);
 }
 
+.wp-polls .wp-polls-ans li i small {
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	white-space: nowrap;
+}
+
 /* .wp-polls .wp-polls-ul .pollbar::before, */
 .wp-polls .wp-polls-ans li i {
 	position: absolute;
