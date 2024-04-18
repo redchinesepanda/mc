@@ -171,6 +171,12 @@ class MultisiteAttachmentSync
             $field_names = self::get_field_names();
         }
 
+		LegalDebug::debug( [
+			'MultisiteAttachmentSync' => 'get_origin_post_ids',
+
+			'field_names' => $field_names,
+		] );
+
 		// $field_names = self::get_field_names();
 
 		foreach ( $field_names as $field_name )
