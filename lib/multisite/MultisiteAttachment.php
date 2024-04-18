@@ -70,7 +70,9 @@ class MultisiteAttachment
 			'post_id' => $post_id,
 		] );
 
-		$field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $post );
+		// $field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $post );
+		
+		$field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id );
 
 		LegalDebug::debug( [
 			'MultisiteAttachment' => 'copy_attachments',
