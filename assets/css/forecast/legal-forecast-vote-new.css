@@ -59,6 +59,10 @@
 	display: flex;
 }
 
+.wp-polls .wp-polls-ans li span {
+	display: flex;
+}
+
 /* Width and Height */
 
 .wp-polls .form_radio_btn label {
@@ -71,7 +75,8 @@
 	min-height: 50px; 
 }
 
-.wp-polls .wp-polls-ans li {
+.wp-polls .wp-polls-ans li,
+.wp-polls .wp-polls-ans li span {
 	width: 100%;
 }
 
@@ -135,6 +140,10 @@
 .wp-polls .wp-polls-ans li {
 	position: relative;
 	margin-top: calc( 12px + 22px );
+}
+
+.wp-polls .wp-polls-ans li i span::after {
+	margin-left: auto;
 }
 
 .wp-polls .wp-polls-ans li small {
