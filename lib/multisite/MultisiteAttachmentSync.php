@@ -159,7 +159,7 @@ class MultisiteAttachmentSync
 		// 	]
 		// );
 
-		$group_field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT )
+		$group_field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
 
 		$simple_field_names = [
 			self::FIELDS[ 'affilate-logo' ][ 'name' ],
