@@ -179,7 +179,7 @@ class MultisiteGallerySync
 
 		$handler = new self();
 
-		$result = preg_match( 
+		$result = preg_match_all( 
 			self::get_gallery_shortcode_regexp(),
 
 			$post[ 'post_content' ],
