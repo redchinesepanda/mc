@@ -62,7 +62,11 @@ class MultisiteAttachment
 
 	public static function copy_attachments( $blog_id, $post_id, $post )
     {
-		$origin_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $post );
+		$field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $post );
+
+		$gallery_post_ids = MultisiteGallerySync::get_gallery_shortcodes_ids( $post_id, $post );
+
+		$origin_post_ids = array_merge( $field_post_ids, $gallery_post_ids );
 
 		self::handle_attachments( $blog_id, $origin_post_ids );
 

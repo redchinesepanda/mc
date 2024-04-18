@@ -150,9 +150,9 @@ class MultisiteGallerySync
 	{
 		// if ( MultisiteBlog::check_not_main_blog() )
 		// {
-			$handler = new self();
+			// $handler = new self();
 
-			add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+			// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 		// }
 	}
 
@@ -217,16 +217,16 @@ class MultisiteGallerySync
 		return $ids;
     }
 
-	function mc_edit_form_after_title_debug( $post )
-	{
-		$sync_post = MultisitePost::get_post( $post->ID );
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	$sync_post = MultisitePost::get_post( $post->ID );
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' => 'mc_edit_form_after_title_debug',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteGallerySync' => 'mc_edit_form_after_title_debug',
 
-			'get_gallery_shortcodes_ids' => self::get_gallery_shortcodes_ids( $sync_post[ 'ID' ], $sync_post ),
-		] );
-	}
+	// 		'get_gallery_shortcodes_ids' => self::get_gallery_shortcodes_ids( $sync_post[ 'ID' ], $sync_post ),
+	// 	] );
+	// }
 }
 
 ?>
