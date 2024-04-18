@@ -311,7 +311,7 @@
 	font-weight: 500;
 }
 
-.wp-polls .wp-polls-ans li i span::before{
+.wp-polls .wp-polls-ans li i span::after {
 	font-family: var(--legal-font-icons);
 	content: '\F10D';
     font-size: 18px;
