@@ -300,15 +300,22 @@
 	line-height: 22px;
 }
 
+.wp-polls .wp-polls-ans li {
+	font-size: 0px;
+  	line-height: 0px;
+}
+
 /* .wp-polls .wp-polls-ans li */
 /* .wp-polls .wp-polls-ul .pollbar::before */
 .wp-polls .wp-polls-ans li span {
 	font-weight: 500;
 }
 
-.wp-polls .wp-polls-ans li {
-	font-size: 0px;
-  	line-height: 0px;
+.wp-polls .wp-polls-ans li i span::before{
+	font-family: var(--legal-font-icons);
+	content: '\F10D';
+    font-size: 18px;
+    line-height: 18px;
 }
 
 .wp-polls .wp-polls-ans li small {
