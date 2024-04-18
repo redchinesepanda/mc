@@ -80,7 +80,7 @@ class MultisiteACF
 
 		foreach ( $field_names as $field_name )
 		{
-			$field_value = self::get_field_raw( $field_name, $post_id )
+			$field_value = self::get_field_raw( $field_name, $post_id );
 
 			if ( !empty( $field_value ) )
 			{
