@@ -25,6 +25,10 @@ class MultisitePostSync
 			],
 		],
 	];
+	
+	const ROW_FIELDS = [
+		'post' => 'post-id',
+	];
 
 	public static function register_functions_subsite()
 	{
@@ -104,7 +108,7 @@ class MultisitePostSync
 
 		foreach ( $repeaters as $repeater_name => $repeater_value )
 		{
-			// $repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
+			$repeater_value = MultisiteTermSync::sync_repeater( $repeater_name, $repeater_value, self::ROW_FIELDS );
 
 			// MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 

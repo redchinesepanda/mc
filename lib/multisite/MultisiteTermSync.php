@@ -108,6 +108,14 @@ class MultisiteTermSync
 		'edit-post' => 'edit_post_%s',
 	];
 
+	const ROW_FIELDS = [
+		'feature' => 'feature-id',
+
+		'achievement' => 'achievement-id',
+
+		'pair' => 'pair-id',
+	];
+
 	public static function register_functions_subsite()
     {
 		if ( MultisiteBlog::check_not_main_blog() )
@@ -288,14 +296,6 @@ class MultisiteTermSync
 		return false;
 	}
 
-	const ROW_FIELDS = [
-		'feature' => 'feature-id',
-
-		'achievement' => 'achievement-id',
-
-		'pair' => 'pair-id',
-	];
-
 	public static function get_field_value_sync( $field_name, $field_value )
 	{
 		if ( is_numeric( $field_value ) )
@@ -316,9 +316,16 @@ class MultisiteTermSync
 		return false;
 	}
 
-	public static function sync_row( $repeater_name, $repeater_row )
+	public static function sync_row( $repeater_name, $repeater_row, $row_fields = [] )
 	{
-		foreach ( self::ROW_FIELDS as $row_field )
+		if ( empty( $row_fields ) )
+		{
+			$row_fields = self::ROW_FIELDS;
+		}
+
+		// foreach ( self::ROW_FIELDS as $row_field )
+		
+		foreach ( $row_fields as $row_field )
 		{
 			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
 			{
@@ -411,7 +418,7 @@ class MultisiteTermSync
 	// 	return false;
 	// }
 
-	public static function sync_repeater( $repeater_name, $repeater_value )
+	public static function sync_repeater( $repeater_name, $repeater_value, $row_fields = [] )
 	{
 		// if ( self::check_repeater_has_field( $repeater_name, self::ROW_FIELDS[ 'feature' ] ) )
 		// {
@@ -439,7 +446,7 @@ class MultisiteTermSync
 
 		foreach ( $repeater_value as $row_number => $repeater_row )
 		{
-			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row );
+			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row, $row_fields );
 
 			// $feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 
