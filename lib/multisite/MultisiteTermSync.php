@@ -356,6 +356,7 @@ class MultisiteTermSync
 	
 						'field_value' => $field_value,
 					] );
+
 					// $field_value_sync = false;
 
 					// if ( is_numeric( $field_value ) )
@@ -381,6 +382,12 @@ class MultisiteTermSync
 					
 					if ( $field_value_sync = self::get_field_value_sync( $field_name, $field_value ) )
 					{
+						LegalDebug::debug( [
+							'MultisiteTermSync' =>'sync_row',
+		
+							'field_value_sync' => $field_value_sync,
+						] );
+
 						$repeater_row[ $field_name ] = $field_value_sync;
 					}
 
