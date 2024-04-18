@@ -156,11 +156,11 @@ class MultisitePost
 
 				MultisiteMeta::set_post_moved_from( $inserted_post_id, $origin_post_id );
 
-				// LegalDebug::debug( [
-				// 	'MultisitePost' => 'add_post_and_data',
+				LegalDebug::debug( [
+					'MultisitePost' => 'add_post_and_data',
 
-				// 	'get_fields' => MultisiteACF::get_fields( $inserted_post_id ),
-				// ] );
+					'post_fields' => $post_fields,
+				] );
 			}
 		// }
 
