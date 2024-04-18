@@ -175,7 +175,9 @@ class MultisiteAttachmentSync
 			'simple_field_names' => $simple_field_names,
 		] );
 
-		return [];
+		// return [];
+
+		return array_merge( $group_field_names, $simple_field_names );
 	}
 	
 	public static function get_origin_post_ids( $post_id , $field_names = [] )
