@@ -14,9 +14,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function buttonDisable( event )
 	{
-        console.log('скрипт подключился');
+    /*     console.log('скрипт подключился'); */
 
-		document.querySelector( selectors.voteButtonSend ).classList.toggle( classes.active );
+		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
 	}
 
    /*  document.querySelector( selectors.voteLabel ).addEventListener( 'click', buttonDisable ); */
