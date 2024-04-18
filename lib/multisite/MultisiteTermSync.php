@@ -458,49 +458,49 @@ class MultisiteTermSync
     {
 		$repeaters = self::get_repeaters( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'repeaters' => $repeaters,
-		] );
+		// 	'repeaters' => $repeaters,
+		// ] );
 
-		// foreach ( $repeaters as $repeater_name => $repeater_value )
-		// {
-		// 	$repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
+		foreach ( $repeaters as $repeater_name => $repeater_value )
+		{
+			$repeater_value = self::sync_repeater( $repeater_name, $repeater_value );
 
-		// 	// foreach ( $repeater_value as $row_number => $repeater_row )
-		// 	// {
-		// 	// 	$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
-		// 	// 	if ( ! empty( $repeater_row[ $feature_id_name ] ) )
-		// 	// 	{
-		// 	// 		$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
+			// foreach ( $repeater_value as $row_number => $repeater_row )
+			// {
+			// 	$feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
+
+			// 	if ( ! empty( $repeater_row[ $feature_id_name ] ) )
+			// 	{
+			// 		$term_id = self::get_term_moved_id( $repeater_row[ $feature_id_name ] );
 	
-		// 	// 		if ( $term_id )
-		// 	// 		{
-		// 	// 			$repeater_row[ $feature_id_name ] = $term_id;
+			// 		if ( $term_id )
+			// 		{
+			// 			$repeater_row[ $feature_id_name ] = $term_id;
 	
-		// 	// 			$repeater_value[ $row_number ] = $repeater_row;
-		// 	// 		}
-		// 	// 	}
-		// 	// }
+			// 			$repeater_value[ $row_number ] = $repeater_row;
+			// 		}
+			// 	}
+			// }
 
-		// 	MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
+			// LegalDebug::debug( [
+			// 	'MultisiteTermSync' => 'set_terms',
 
-		// 	// LegalDebug::debug( [
-		// 	// 	'MultisiteTermSync' => 'set_terms',
-
-		// 	// 	'repeater_value' => $repeater_value,
-		// 	// ] );
-		// }
+			// 	'repeater_value' => $repeater_value,
+			// ] );
+		}
 
 		$fields = self::get_fields( $post_id );
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
