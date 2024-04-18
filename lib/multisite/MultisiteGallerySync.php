@@ -187,6 +187,12 @@ class MultisiteGallerySync
 			$matches
 		);
 
+		LegalDebug::debug( [
+			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
+
+			'matches' => $matches,
+		] );
+
 		$ids = self::get_gallery_matches_ids( $matches );
 
 		return $ids;
