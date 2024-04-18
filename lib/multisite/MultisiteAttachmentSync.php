@@ -146,7 +146,7 @@ class MultisiteAttachmentSync
 		return array_merge(
 			self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT ),
 
-			[ self::FIELDS[ 'affilate-logo' ] ]
+			[ self::FIELDS[ 'affilate-logo' ][ 'name' ] ]
 		);
 	}
 	
