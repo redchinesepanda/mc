@@ -308,6 +308,12 @@ class MultisiteTermSync
 
 	public static function get_field_value_sync( $field_name, $field_value )
 	{
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'get_field_value_sync',
+
+			'get_post_moved_id' => MultisitePost::get_post_moved_id( $field_value ),
+		] );
+
 		if ( is_numeric( $field_value ) )
 		{
 			return self::get_term_id( $field_value );
