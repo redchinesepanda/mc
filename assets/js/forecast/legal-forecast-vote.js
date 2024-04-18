@@ -30,10 +30,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		i.addEventListener( 'click', buttonDisable );  
   	}); */ 
 
-	document.querySelectorAll( selectors.voteInput ).forEach(i => {
-		if (i.checked) {
-			console.log( i + 'is checked');
+	function inputCheck( event ) {
+		if (event.checked) {
+			console.log('is checked');
+		} else {
+			console.log('Checkbox is not checked');
 		}
+	}
+
+	document.querySelectorAll( selectors.voteInput ).forEach(i => {
+		i.addEventListener( 'click', inputCheck );
   	});
 
 	console.log( document.querySelector(selectors.voteInput) );
