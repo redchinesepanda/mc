@@ -8,6 +8,32 @@ class MultisitePostSync
 
 			'key' => 'field_642e9f47fd7e0',
 		],
+
+		'review-about' => [
+			'name' => 'review-about',
+
+			'key' => 'field_6437de4fa65c9',
+		],
+	];
+
+	const FIELD_REVIEW_ABOUT = [
+		'about-afillate' => [
+			'name' => 'about-afillate',
+
+			'key' => 'field_6437df65a65cf',
+		],
+
+		'about-review' => [
+			'name' => 'about-review',
+
+			'key' => 'field_6437df65a65cf',
+		],
+
+		'about-bonus-id' => [
+			'name' => 'about-bonus-id',
+
+			'key' => 'field_64be3a3eccb05',
+		],
 	];
 
 	const FIELDS_REPEATER = [
@@ -93,7 +119,15 @@ class MultisitePostSync
 
 	public static function get_field_names()
 	{
-		return array_column( self::FIELDS, 'name' );
+		// return array_column( self::FIELDS, 'name' );
+
+		$group_field_names = MultisiteAttacmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
+
+		$simple_field_names = [
+			self::FIELDS[ 'tabs-link-url' ][ 'name' ],
+		];
+
+		return array_merge( $group_field_names, $simple_field_names );
 	}
 
 	public static function set_posts( $post_id )
