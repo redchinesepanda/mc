@@ -309,15 +309,11 @@ class MultisiteAdmin
 		return remove_query_arg( self::QUERY_ARG, $redirect );
 	}
 
-	// public static function redirect_set( $redirect, $posts_moved, $blog_id )
-	
 	public static function redirect_set( $redirect, $arg_moved, $posts_moved, $blog_id )
 	{
 		return add_query_arg(
 			[
-				// self::QUERY_ARG[ 'posts-moved' ] => $posts_moved,
-				
-				$arg_moved => $posts_moved,
+				=$arg_moved => $posts_moved,
 
 				self::QUERY_ARG[ 'blog-id' ] => $blog_id,
 			],

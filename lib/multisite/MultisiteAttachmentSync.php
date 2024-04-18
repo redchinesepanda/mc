@@ -14,6 +14,12 @@ class MultisiteAttachmentSync
 
 			'key' => 'field_6437de4fa65c9',
 		],
+
+		'affilate-logo' => [
+			'name' => 'affilate-logo',
+
+			'key' => 'field_64525762b2d69',
+		],
 	];
 
 	const FIELD_ABOUT = [
@@ -115,7 +121,7 @@ class MultisiteAttachmentSync
 		return array_column( $subfields, 'name' );
 	}
 
-	public static function get_field_names( $field, $subfields = [] )
+	public static function get_group_field_names( $field, $subfields = [] )
 	{
 		$field_names = [];
 
@@ -135,13 +141,22 @@ class MultisiteAttachmentSync
 		return $field_names;
 	}
 
-	// public static function get_origin_post_ids( $post_id, $post )
+	public static function get_field_names()
+	{
+		return array_merge(
+			self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT ),
+
+			[ self::FIELDS[ 'affilate-logo' ] ]
+		)
+	}
 	
 	public static function get_origin_post_ids( $post_id )
 	{
 		$origin_post_ids = [];
 
-		$field_names = self::get_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
+		// $field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
+
+		$field_names = self::get_field_names();
 
 		foreach ( $field_names as $field_name )
 		{
