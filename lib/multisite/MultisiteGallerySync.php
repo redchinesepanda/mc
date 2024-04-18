@@ -148,12 +148,12 @@ class MultisiteGallerySync
 
 	public static function register_functions_debug()
 	{
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
 			$handler = new self();
 
 			add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
-		}
+		// }
 	}
 
 	public static function get_gallery_matches_ids( $matches )
