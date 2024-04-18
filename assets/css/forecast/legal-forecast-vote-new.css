@@ -123,8 +123,8 @@
 
 .wp-polls .wp-polls-ans li i small {
 	position: absolute;
-	top: 50%;
-	right: 8px;
+	top: 55px;
+	right: -160px;
 	white-space: nowrap;
 }
 
