@@ -257,7 +257,7 @@ class MultisiteAdmin
 				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
 
 				[
-					$_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ],
+					$_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ], 
 
 					$blog->blogname,
 				]
