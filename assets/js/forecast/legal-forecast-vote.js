@@ -20,11 +20,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// linkView: '.wp-polls a'
 	};
 
-    function buttonDisable( event )
+  /*   function buttonDisable( event )
 	{
         console.log('скрипт подключился');
 		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
-	}
+	} */
 
 	/* document.querySelectorAll( selectors.voteLabel ).forEach(i => {
 		i.addEventListener( 'click', buttonDisable );  
@@ -35,6 +35,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log( i + 'is checked');
 		}
   	});
+
+	  console.log( querySelector(selectors.voteInput) );
 
 /* 	function wrap( parent ) {
 		const wrapper = document.createElement('div');
