@@ -145,12 +145,6 @@ class MultisiteGallerySync
     {
         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteGallerySync' =>'set_gallery_shortcode',
-
-		// 	'post_id' => $post_id,
-		// ] );
-
 		$handler = new self();
 
 		$result = preg_replace_callback( 
@@ -164,6 +158,12 @@ class MultisiteGallerySync
 		);
 
 		$post[ 'post_content' ] = $result;
+
+		LegalDebug::die( [
+			'MultisiteGallerySync' =>'set_gallery_shortcode',
+
+			'post_id' => $post_id,
+		] );
 
 		MultisitePost::update_post( $post );
     }
