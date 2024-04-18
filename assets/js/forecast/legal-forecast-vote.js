@@ -36,7 +36,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	
 	document.querySelectorAll( selectors.voteList ).forEach(li => wrap( li ));
 
-	console.log(document.querySelectorAll( selectors.voteList ));
+	console.log(document.querySelector( selectors.voteList ));
 	
 } );
 
