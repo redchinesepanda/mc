@@ -90,11 +90,11 @@ class MultisitePost
 
 						MultisiteAttachment::copy_attachments( $blog_id, $post_id, $post );
 
-						// LegalDebug::debug( [
-						// 	'MultisitePost' => 'mc_bulk_action_multisite_handler',
+						LegalDebug::debug( [
+							'MultisitePost' => 'mc_bulk_action_multisite_handler',
 
-						// 	'inserted_post_id' => $inserted_post_id,
-						// ] );
+							'inserted_post_id' => $inserted_post_id,
+						] );
 					}
 				}
 			}
