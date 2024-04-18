@@ -12,6 +12,8 @@ class MultisitePost
 		'page',
 		
 		'attachment',
+
+		'affiliate-links',
 	];
 
 	const POST_STATUSES = [
