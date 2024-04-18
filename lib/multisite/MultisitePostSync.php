@@ -121,7 +121,7 @@ class MultisitePostSync
 	{
 		// return array_column( self::FIELDS, 'name' );
 
-		$group_field_names = MultisiteAttacmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
+		$group_field_names = MultisiteAttachmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
 
 		$simple_field_names = [
 			self::FIELDS[ 'tabs-link-url' ][ 'name' ],
