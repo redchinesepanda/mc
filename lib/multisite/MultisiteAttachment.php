@@ -77,6 +77,10 @@ class MultisiteAttachment
 
 			'post_id' => $post_id,
 
+			'field_post_ids' => $field_post_ids,
+
+			'gallery_post_ids' => $gallery_post_ids,
+
 			'origin_post_ids' => $origin_post_ids,
 		] );
 	}
