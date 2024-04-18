@@ -458,7 +458,7 @@ class MultisiteTermSync
     {
 		$repeaters = self::get_repeaters( $post_id );
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteTermSync' => 'set_terms',
 
 			'repeaters' => $repeaters,
@@ -496,11 +496,11 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteTermSync' => 'set_terms',
+		LegalDebug::die( [
+			'MultisiteTermSync' => 'set_terms',
 
-		// 	'fields' => $fields,
-		// ] );
+			'fields' => $fields,
+		] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
