@@ -125,6 +125,14 @@ class MultisiteGallerySync
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], self::SHORTCODES[ 'gallery' ], $atts );
 
+		LegalDebug::debug( [
+			'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
+
+			'match' => $match,
+
+			'result' => $result,
+		] );
+
 		return $result;
 	}
 
@@ -137,11 +145,11 @@ class MultisiteGallerySync
     {
         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
 
-		LegalDebug::die( [
-			'MultisiteGallerySync' =>'set_gallery_shortcode',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' =>'set_gallery_shortcode',
 
-			'post_id' => $post_id,
-		] );
+		// 	'post_id' => $post_id,
+		// ] );
 
 		$handler = new self();
 
