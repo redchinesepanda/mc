@@ -345,14 +345,17 @@ class MultisiteTermSync
 					'MultisiteTermSync' =>'sync_row',
 	
 					'field_name' => $field_name,
-
-					'field_value' => $field_value,
 				] );
 
 				// if ( $field_value )
 				
 				if ( $field_value = $repeater_row[ $field_name ] )
 				{
+					LegalDebug::debug( [
+						'MultisiteTermSync' =>'sync_row',
+	
+						'field_value' => $field_value,
+					] );
 					// $field_value_sync = false;
 
 					// if ( is_numeric( $field_value ) )
