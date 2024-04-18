@@ -220,11 +220,18 @@ class MultisiteTermSync
 		return $repeaters;
 	}
 
-	public static function get_fields( $post_id )
+	public static function get_fields( $post_id, $simple_fields = [] )
 	{
 		$fields = [];
 
-		foreach ( self::FIELDS as $field )
+		if ( empty( $simple_fields ) )
+		{
+			$simple_fields = self::FIELDS;
+		}
+
+		// foreach ( self::FIELDS as $field )
+		
+		foreach ( $simple_fields as $field )
 		{
 			$field_name = $field[ 'name' ];
 

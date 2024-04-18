@@ -3,11 +3,11 @@
 class MultisitePostSync
 {
 	const FIELDS = [
-		// 'tabs-items' => [
-		// 	'name' => 'tabs-items',
+		'tabs-link-url' => [
+			'name' => 'tabs-link-url',
 
-		// 	'key' => 'field_6423d199c433a',
-		// ],
+			'key' => 'field_642e9f47fd7e0',
+		],
 	];
 
 	const FIELDS_REPEATER = [
@@ -119,37 +119,37 @@ class MultisitePostSync
 			// ] );
 		}
 		
-		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
+		$fields = MultisiteTermSync::get_fields( $post_id, self::FIELDS );
 
-		// $field_names = self::get_field_names();
-		
-		// $origin_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $field_names );
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-		// LegalDebug::die( [
-		// 	'MultisitePostSync' => 'set_posts',
-
-		// 	'origin_post_ids' => $origin_post_ids,
+		// 	'fields' => $fields,
 		// ] );
 
-		// foreach ( $origin_post_ids as $field_name => $origin_post_id )
-		// {
-		// 	// LegalDebug::debug( [
-		// 	// 	'MultisitePostSync' => 'set_posts',
+		foreach ( $fields as $field_name => $field_value )
+		{
+			if ( $field_value_sync = MultisiteTermSync::get_field_value_sync( $field_name, $field_value ) )
+			{
+				// LegalDebug::debug( [
+				// 	'MultisiteTermSync' => 'set_terms',
 
-		// 	// 	'origin_post_id' => $origin_post_id,
-		// 	// ] );
+				// 	'field_name' => $field_name,
 
-		// 	if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
-		// 	{
-		// 		// LegalDebug::debug( [
-		// 		// 	'MultisitePostSync' => 'set_posts',
-		
-		// 		// 	'post_moved_id' => $post_moved_id,
-		// 		// ] );
+				// 	'field_value' => $field_value,
 
-		// 		// MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
-		// 	}
-		// }
+				// 	'field_value_sync' => $field_value_sync,
+				// ] );
+
+				MultisiteACF::update_field( $field_name, $field_value_sync, $post_id );
+
+				// LegalDebug::debug( [
+				// 	'MultisiteTermSync' => 'set_terms',
+
+				// 	'get_field_raw' => MultisiteACF::get_field_raw( $field_name, $post_id ),
+				// ] );
+			}
+		}
 
 		// LegalDebug::die( [
 		// 	'MultisitePostSync' => 'set_posts',
