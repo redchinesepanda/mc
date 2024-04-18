@@ -1,7 +1,7 @@
 // legal-forecast-vote-js start
 
-document.addEventListener( 'DOMContentLoaded', function () {
-
+document.addEventListener( 'DOMContentLoaded', function ()
+{
     const classes = {
 		active: 'legal-active',
 	};
@@ -12,13 +12,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		voteButtonSend: '.wp-polls .Button-my-style'
 	};
 
-    function buttonDisable( event ) {
+    function buttonDisable( event )
+	{
         console.log('скрипт подключился');
+
 		document.querySelector( selectors.voteButtonSend ).classList.toggle( classes.active );
 	}
 
     document.querySelector( selectors.voteLabel ).addEventListener( 'click', buttonDisable );
-
 } );
 
-// legal-forecast-vote-js end 
+// legal-forecast-vote-js end
