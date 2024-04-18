@@ -303,16 +303,21 @@ class MultisiteTermSync
 			return $term_id;
 		}
 
+		if ( $post_id = MultisitePost::get_post_moved_id( $field_value ) )
+		{
+			return $post_id;
+		}
+
 		return false;
 	}
-
+	
 	public static function get_field_value_sync( $field_name, $field_value )
 	{
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'get_field_value_sync',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'get_field_value_sync',
 
-			'get_post_moved_id' => MultisitePost::get_post_moved_id( $field_value ),
-		] );
+		// 	'get_post_moved_id' => MultisitePost::get_post_moved_id( $field_value ),
+		// ] );
 
 		if ( is_numeric( $field_value ) )
 		{
