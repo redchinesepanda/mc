@@ -165,7 +165,7 @@ class MultisiteGallerySync
 			'post_id' => $post_id,
 		] );
 
-		MultisitePost::update_post( $post );
+		// MultisitePost::update_post( $post );
     }
 
 	public static function register_functions_debug()
