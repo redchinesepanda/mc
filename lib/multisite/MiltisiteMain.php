@@ -30,6 +30,8 @@ class MiltisiteMain
 		'sync-terms' => 'Sync Terms',
 
 		'sync-attachments' => 'Sync Attachments',
+
+		'sync-posts' => 'Sync Posts',
 	];
 
 	const TEXT_PLURAL = [

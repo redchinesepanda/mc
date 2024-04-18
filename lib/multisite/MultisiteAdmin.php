@@ -10,6 +10,8 @@ class MultisiteAdmin
 		'sync-terms' => 'mc_sync_terms',
 
 		'sync-attachments' => 'mc_sync_attachments',
+
+		'sync-posts' => 'mc_sync_posts',
 	];
 
 	const QUERY_ARG = [
@@ -24,6 +26,8 @@ class MultisiteAdmin
 		'terms-synced' => 'mc_terms_synced',
 
 		'attachments-synced' => 'mc_attachments_synced',
+
+		'posts-synced' => 'mc_posts_synced',
 	];
 	
 	const POST_TYPES_DEFAULT = [
@@ -172,6 +176,8 @@ class MultisiteAdmin
 			self::DOACTION[ 'sync-terms' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-terms' ] ),
 
 			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-attachments' ] ),
+
+			self::DOACTION[ 'sync-posts' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-posts' ] ),
 		] );
 
 		return $bulk_array;
@@ -224,6 +230,8 @@ class MultisiteAdmin
 			self::QUERY_ARG[ 'terms-synced' ],
 
 			self::QUERY_ARG[ 'attachments-synced' ],
+
+			self::QUERY_ARG[ 'posts-synced' ],
 		];
 
 		foreach ( $updated_requests as $updated_request )

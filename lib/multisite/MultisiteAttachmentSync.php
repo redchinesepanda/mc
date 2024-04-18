@@ -160,13 +160,18 @@ class MultisiteAttachmentSync
 		);
 	}
 	
-	public static function get_origin_post_ids( $post_id )
+	public static function get_origin_post_ids( $post_id , $field_names = [] )
 	{
 		$origin_post_ids = [];
 
 		// $field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
 
-		$field_names = self::get_field_names();
+		if ( empty( $field_names ) )
+		{
+            $field_names = self::get_field_names();
+        }
+
+		// $field_names = self::get_field_names();
 
 		foreach ( $field_names as $field_name )
 		{
