@@ -153,7 +153,9 @@ class MultisitePostSync
 			// ] );
 		}
 		
-		$fields = MultisiteTermSync::get_fields( $post_id, self::FIELDS );
+		// $fields = MultisiteTermSync::get_fields( $post_id, self::FIELDS );
+		
+		$fields = MultisiteTermSync::get_fields( $post_id, self::get_field_names() );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteTermSync' => 'set_terms',
