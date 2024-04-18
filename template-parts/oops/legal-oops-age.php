@@ -9,5 +9,6 @@
 			<a class="age-button-no-link" href="<?php echo $args[ 'button-no' ][ 'href' ]; ?>" rel="nofollow"><?php echo $args[ 'button-no' ][ 'label' ]; ?></a>
 		</div>
 		<span class="oops-age-after"><?php echo $args[ 'after' ]; ?></span>
+		<span class="oops-age-you-shure"><?php echo $args[ 'you-shure' ]; ?>We are sorry, we cannot allow minors access to our website.</span>
 	</div>
 </div>

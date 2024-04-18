@@ -142,6 +142,8 @@ class OopsAge
 			],
             
 			'after' => __( BaseMain::TEXT[ 'you-must-be' ], ToolLoco::TEXTDOMAIN ),
+
+            'you-shure' => __( BaseMain::TEXT[ 'we-are-sorry' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 

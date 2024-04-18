@@ -57,6 +57,8 @@ class BaseMain
 
         'to-give' => 'To give you the best possible experience, this site uses cookies and by continuing to use the site you agree that we can save them on your device. By clicking "I Accept" you consent to the use of cookies unless you have disabled them.',
 
+        'we-are-sorry' => 'We are sorry, we cannot allow minors access to our website.',
+
         'yes' => 'Yes',
         
         'you-must-be' => 'You must be 18 years or older to access this website. It is part of our commitment to responsible gaming.',
