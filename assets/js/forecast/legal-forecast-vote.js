@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// linkView: '.wp-polls a'
 	};
 
-    function buttonDisable( event )
+ /*    function buttonDisable( event )
 	{
         // console.log('скрипт подключился');
 		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
@@ -28,13 +28,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( selectors.voteLabel ).forEach(i => {
 		i.addEventListener( 'click', buttonDisable );  
-  	}); 
+  	}); */ 
 
 	function inputCheck( event ) {
 		if (event.checked) {
 			console.log('is checked');
 		} else {
 			console.log('Checkbox is not checked');
+			document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
 		};
 	};
 
