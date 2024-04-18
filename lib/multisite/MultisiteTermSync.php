@@ -341,13 +341,13 @@ class MultisiteTermSync
 			{
 				// $field_value = $repeater_row[ $field_name ];
 				
-				// LegalDebug::debug( [
-				// 	'MultisiteTermSync' =>'sync_row',
+				LegalDebug::debug( [
+					'MultisiteTermSync' =>'sync_row',
 	
-				// 	'field_name' => $field_name,
+					'field_name' => $field_name,
 
-				// 	'field_value' => $field_value,
-				// ] );
+					'field_value' => $field_value,
+				] );
 
 				// if ( $field_value )
 				
