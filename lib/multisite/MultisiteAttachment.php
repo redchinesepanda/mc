@@ -62,39 +62,39 @@ class MultisiteAttachment
 
 	public static function copy_attachments( $blog_id, $post_id, $post )
     {
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'copy_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'copy_attachments',
 
-			'blog_id' => $blog_id,
+		// 	'blog_id' => $blog_id,
 
-			'post_id' => $post_id,
-		] );
+		// 	'post_id' => $post_id,
+		// ] );
 
 		// $field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id, $post );
 		
 		$field_post_ids = MultisiteAttachmentSync::get_origin_post_ids( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'copy_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'copy_attachments',
 
-			'field_post_ids' => $field_post_ids,
-		] );
+		// 	'field_post_ids' => $field_post_ids,
+		// ] );
 
 		$gallery_post_ids = MultisiteGallerySync::get_gallery_shortcodes_ids( $post_id, $post );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'copy_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'copy_attachments',
 
-			'gallery_post_ids' => $gallery_post_ids,
-		] );
+		// 	'gallery_post_ids' => $gallery_post_ids,
+		// ] );
 
 		$origin_post_ids = array_merge( $field_post_ids, $gallery_post_ids );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'copy_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'copy_attachments',
 
-			'origin_post_ids' => $origin_post_ids,
-		] );
+		// 	'origin_post_ids' => $origin_post_ids,
+		// ] );
 
 		self::handle_attachments( $blog_id, $origin_post_ids );
 	}
