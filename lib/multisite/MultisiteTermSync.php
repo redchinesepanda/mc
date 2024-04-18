@@ -352,21 +352,21 @@ class MultisiteTermSync
 			{
 				// $field_value = $repeater_row[ $field_name ];
 				
-				LegalDebug::debug( [
-					'MultisiteTermSync' =>'sync_row',
+				// LegalDebug::debug( [
+				// 	'MultisiteTermSync' =>'sync_row',
 	
-					'field_name' => $field_name,
-				] );
+				// 	'field_name' => $field_name,
+				// ] );
 
 				// if ( $field_value )
 				
 				if ( $field_value = $repeater_row[ $field_name ] )
 				{
-					LegalDebug::debug( [
-						'MultisiteTermSync' =>'sync_row',
+					// LegalDebug::debug( [
+					// 	'MultisiteTermSync' =>'sync_row',
 	
-						'field_value' => $field_value,
-					] );
+					// 	'field_value' => $field_value,
+					// ] );
 
 					// $field_value_sync = false;
 
@@ -393,11 +393,11 @@ class MultisiteTermSync
 					
 					if ( $field_value_sync = self::get_field_value_sync( $field_name, $field_value ) )
 					{
-						LegalDebug::debug( [
-							'MultisiteTermSync' =>'sync_row',
+						// LegalDebug::debug( [
+						// 	'MultisiteTermSync' =>'sync_row',
 		
-							'field_value_sync' => $field_value_sync,
-						] );
+						// 	'field_value_sync' => $field_value_sync,
+						// ] );
 
 						$repeater_row[ $field_name ] = $field_value_sync;
 					}

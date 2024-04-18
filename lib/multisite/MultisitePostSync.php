@@ -100,23 +100,23 @@ class MultisitePostSync
     {
 		$repeaters = MultisiteTermSync::get_repeaters( $post_id, self::FIELDS_REPEATER );
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'repeaters' => $repeaters,
-		] );
+		// 	'repeaters' => $repeaters,
+		// ] );
 
 		foreach ( $repeaters as $repeater_name => $repeater_value )
 		{
 			$repeater_value = MultisiteTermSync::sync_repeater( $repeater_name, $repeater_value, self::ROW_FIELDS, self::FIELDS_REPEATER );
 
-			// MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
+			MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
-			LegalDebug::debug( [
-				'MultisiteTermSync' => 'set_terms',
+			// LegalDebug::debug( [
+			// 	'MultisiteTermSync' => 'set_terms',
 
-				'repeater_value' => $repeater_value,
-			] );
+			// 	'repeater_value' => $repeater_value,
+			// ] );
 		}
 		
 		// $origin_post_ids = self::get_origin_post_ids( $post_id, $post );
@@ -151,22 +151,22 @@ class MultisitePostSync
 		// 	}
 		// }
 
-		LegalDebug::die( [
-			'MultisitePostSync' => 'set_posts',
-		] );
+		// LegalDebug::die( [
+		// 	'MultisitePostSync' => 'set_posts',
+		// ] );
     }
 
 	public static function mc_bulk_action_sync_posts( $redirect, $doaction, $object_ids )
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::debug( [
-			'MultisitePostSync' => 'mc_bulk_action_sync_posts',
+		// LegalDebug::debug( [
+		// 	'MultisitePostSync' => 'mc_bulk_action_sync_posts',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-posts' ] ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-posts' ] ),
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-posts' ] ) )
 		{
