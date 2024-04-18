@@ -28,7 +28,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		i.addEventListener( 'click', buttonDisable );  
   	}); 
 
-	function wrap( parent ) {
+/* 	function wrap( parent ) {
 		const wrapper = document.createElement('div');
 		wrapper.classList = classes.wrapperText;
 		parent.childNodes.forEach(ch => wrapper.appendChild(ch));
@@ -37,13 +37,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	function initWrap() {
+		let observer = new MutationObserver(mutationRecords => {
+			console.log(mutationRecords); // console.log(изменения)
+		});
+
+
 		document.querySelectorAll( selectors.voteList ).forEach(li => wrap( li ));
 		console.log(document.querySelector( selectors.voteList ));
 	};
 
 	document.querySelectorAll( selectors.linkView ).forEach(i => {
 		i.addEventListener( 'click', initWrap );  
-  	});
+  	}); */
 	
 } );
 
