@@ -36,7 +36,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
   	});
 
-	  console.log( querySelector(selectors.voteInput) );
+	console.log( document.querySelector(selectors.voteInput) );
 
 /* 	function wrap( parent ) {
 		const wrapper = document.createElement('div');
