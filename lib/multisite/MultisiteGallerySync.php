@@ -40,7 +40,7 @@ class MultisiteGallerySync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
 
 			'doaction' => $doaction,
