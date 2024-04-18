@@ -237,11 +237,21 @@ class MultisiteTermSync
 		return $fields;
 	}
 
-	public static function get_filed_name( $repeater_name, $row_field )
+	public static function get_field_name( $repeater_name, $row_field, $fields_repeater = [] )
 	{
-		if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+		if ( empty( $fields_repeater ) )
 		{
-			return self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
+			$fields_repeater = self::FIELDS_REPEATER;
+		}
+
+		// if ( !empty( self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+		// {
+		// 	return self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
+		// }
+		
+		if ( !empty( $fields_repeater[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ] ) )
+		{
+			return $fields_repeater[ $repeater_name ][ 'fields' ][ $row_field ][ 'name' ];
 		}
 
 		return false;
@@ -316,7 +326,7 @@ class MultisiteTermSync
 		return false;
 	}
 
-	public static function sync_row( $repeater_name, $repeater_row, $row_fields = [] )
+	public static function sync_row( $repeater_name, $repeater_row, $row_fields = [], $fields_repeater = [] )
 	{
 		if ( empty( $row_fields ) )
 		{
@@ -327,7 +337,7 @@ class MultisiteTermSync
 		
 		foreach ( $row_fields as $row_field )
 		{
-			if ( $field_name = self::get_filed_name( $repeater_name, $row_field ) )
+			if ( $field_name = self::get_field_name( $repeater_name, $row_field, $fields_repeater ) )
 			{
 				// $field_value = $repeater_row[ $field_name ];
 				
@@ -418,7 +428,7 @@ class MultisiteTermSync
 	// 	return false;
 	// }
 
-	public static function sync_repeater( $repeater_name, $repeater_value, $row_fields = [] )
+	public static function sync_repeater( $repeater_name, $repeater_value, $row_fields = [], $fields_repeater = [] )
 	{
 		// if ( self::check_repeater_has_field( $repeater_name, self::ROW_FIELDS[ 'feature' ] ) )
 		// {
@@ -446,7 +456,7 @@ class MultisiteTermSync
 
 		foreach ( $repeater_value as $row_number => $repeater_row )
 		{
-			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row, $row_fields );
+			$repeater_value[ $row_number ] = self::sync_row( $repeater_name, $repeater_row, $row_fields, $fields_repeater );
 
 			// $feature_id_name = self::FIELDS_REPEATER[ $repeater_name ][ 'fields' ][ 'feature-id' ][ 'name' ];
 

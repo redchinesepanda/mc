@@ -108,7 +108,7 @@ class MultisitePostSync
 
 		foreach ( $repeaters as $repeater_name => $repeater_value )
 		{
-			$repeater_value = MultisiteTermSync::sync_repeater( $repeater_name, $repeater_value, self::ROW_FIELDS );
+			$repeater_value = MultisiteTermSync::sync_repeater( $repeater_name, $repeater_value, self::ROW_FIELDS, self::FIELDS_REPEATER );
 
 			// MultisiteACF::update_field( $repeater_name, $repeater_value, $post_id );
 
