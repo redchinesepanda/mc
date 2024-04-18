@@ -149,15 +149,33 @@ class MultisiteAttachmentSync
 
 	public static function get_field_names()
 	{
-		return array_merge(
-			self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT ),
+		// return array_merge(
+		// 	self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT ),
 
-			[
-				self::FIELDS[ 'affilate-logo' ][ 'name' ],
+		// 	[
+		// 		self::FIELDS[ 'affilate-logo' ][ 'name' ],
 
-				self::FIELDS[ 'compilation-title-image' ][ 'name' ],
-			]
-		);
+		// 		self::FIELDS[ 'compilation-title-image' ][ 'name' ],
+		// 	]
+		// );
+
+		$group_field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT )
+
+		$simple_field_names = [
+			self::FIELDS[ 'affilate-logo' ][ 'name' ],
+
+			self::FIELDS[ 'compilation-title-image' ][ 'name' ],
+		];
+
+		LegalDebug::debug( [
+			'MultisiteAttachmentSync' => 'get_field_names',
+
+			'group_field_names' => $group_field_names,
+
+			'simple_field_names' => $simple_field_names,
+		] );
+
+		return [];
 	}
 	
 	public static function get_origin_post_ids( $post_id , $field_names = [] )
