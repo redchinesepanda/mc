@@ -184,7 +184,9 @@ class MultisiteGallerySync
 
 			$post[ 'post_content' ],
 
-			$matches
+			$matches,
+
+			PREG_SET_ORDER
 		);
 
 		LegalDebug::debug( [
