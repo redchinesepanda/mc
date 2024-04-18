@@ -172,17 +172,17 @@ class MultisiteGallerySync
 			{
 				$atts = shortcode_parse_atts( $match[ 3 ] );
 
-				LegalDebug::debug( [
-					'MultisiteGallerySync' => 'get_gallery_matches_ids',
+				// LegalDebug::debug( [
+				// 	'MultisiteGallerySync' => 'get_gallery_matches_ids',
 	
-					'atts' => $atts,
-				] );
+				// 	'atts' => $atts,
+				// ] );
 
 				if ( ! empty( $atts[ 'ids' ] ) )
 				{
 					$ids = explode( ',', $atts[ 'ids' ] );
 
-					array_merge( $result, $ids );
+					$result = array_merge( $result, $ids );
 				}
 			} 
 		}
