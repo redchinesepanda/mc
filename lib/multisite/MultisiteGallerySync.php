@@ -40,13 +40,13 @@ class MultisiteGallerySync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::die( [
-			'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
+		// LegalDebug::die( [
+		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ),
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ) )
 		{
@@ -136,6 +136,12 @@ class MultisiteGallerySync
 	public static function set_gallery_shortcode( $post_id, $post )
     {
         // $regex = sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+
+		LegalDebug::debug( [
+			'MultisiteGallerySync' =>'set_gallery_shortcode',
+
+			'post_id' => $post_id,
+		] );
 
 		$handler = new self();
 
