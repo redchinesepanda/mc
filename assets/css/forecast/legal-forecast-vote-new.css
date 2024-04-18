@@ -121,10 +121,11 @@
 	transform: translateY(-50%);
 }
 
-/* .wp-polls .wp-polls-ul .pollbar::before {
+/* .wp-polls .wp-polls-ul .pollbar::before, */
+.wp-polls .wp-polls-ans li i {
 	position: absolute;
 	top: calc( 0px - 12px - 22px );
-} */
+}
 
 .wp-polls .wp-polls-ul + p {
 	padding-top: 14px;
@@ -194,6 +195,7 @@
 /* .wp-polls .wp-polls-ans li, */
 .wp-polls .wp-polls-ans li small,
 /* .wp-polls .wp-polls-ul .pollbar::before, */
+.wp-polls .wp-polls-ans li i,
 .wp-polls a {
 	font-family: var( --legal-font-primary );
     font-style: normal;
@@ -205,6 +207,7 @@
 /* .wp-polls .wp-polls-ans li, */
 .wp-polls .wp-polls-ans li small,
 /* .wp-polls .wp-polls-ul .pollbar::before, */
+.wp-polls .wp-polls-ans li i,
 .wp-polls a {
 	color: var( --Base-base-09 );
 }
@@ -235,6 +238,7 @@
 
 /* .wp-polls .wp-polls-ans li, */
 /* .wp-polls .wp-polls-ul .pollbar::before, */
+.wp-polls .wp-polls-ans li i,
 .wp-polls .wp-polls-ans li small,
 .wp-polls .wp-polls-ans > p:first-of-type {
 	font-size: 16px;
