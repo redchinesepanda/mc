@@ -200,11 +200,11 @@ class MultisiteGallerySync
 			PREG_SET_ORDER
 		);
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
 
-			'matches' => $matches,
-		] );
+		// 	'matches' => $matches,
+		// ] );
 
 		$ids = self::get_gallery_matches_ids( $matches );
 
