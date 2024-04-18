@@ -162,15 +162,21 @@ class MultisiteGallerySync
 
 		foreach ( $matches as $match )
 		{
-			LegalDebug::debug( [
-				'MultisiteGallerySync' => 'get_gallery_matches_ids',
+			// LegalDebug::debug( [
+			// 	'MultisiteGallerySync' => 'get_gallery_matches_ids',
 
-				'match' => $match,
-			] );
+			// 	'match' => $match,
+			// ] );
 
 			if ( ! empty( $match[ 3 ] ) )
 			{
 				$atts = shortcode_parse_atts( $match[ 3 ] );
+
+				LegalDebug::debug( [
+					'MultisiteGallerySync' => 'get_gallery_matches_ids',
+	
+					'atts' => $atts,
+				] );
 
 				if ( ! empty( $atts[ 'ids' ] ) )
 				{
