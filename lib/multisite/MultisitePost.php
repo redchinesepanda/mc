@@ -178,7 +178,7 @@ class MultisitePost
 				// 	'MultisitePost' => 'add_post_and_data',
 
 				// 	'MultisiteTerms' => 'add_post_terms',
-				// ] );
+				// ] ); 
 
 				MultisiteMeta::add_post_meta( $inserted_post_id, $post_meta );
 
