@@ -27,7 +27,7 @@
 {
 	/* Display */
 
-	.legal-oops-age .oops-age-button-yes {
+	.legal-oops-age .oops-age-button-no {
 		justify-content: right;
 	}
 
@@ -66,6 +66,10 @@
 
 .legal-oops-age .oops-age-button-no {
 	display: flex;
+}
+
+.legal-oops-age .oops-age-you-shure {
+	display: none;
 }
 
 /* Position */
