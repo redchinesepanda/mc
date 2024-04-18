@@ -168,9 +168,27 @@ class MultisitePost
 			{
 				MultisiteTerms::add_post_terms( $inserted_post_id, $post_terms );
 
+				LegalDebug::debug( [
+					'MultisitePost' => 'add_post_and_data',
+
+					'MultisiteTerms' => 'add_post_terms',
+				] );
+
 				MultisiteMeta::add_post_meta( $inserted_post_id, $post_meta );
 
+				LegalDebug::debug( [
+					'MultisitePost' => 'add_post_and_data',
+
+					'MultisiteMeta' => 'add_post_meta',
+				] );
+
 				MultisiteACF::add_fields( $inserted_post_id, $post_fields );
+
+				LegalDebug::debug( [
+					'MultisitePost' => 'add_post_and_data',
+
+					'MultisiteACF' => 'add_fields',
+				] );
 
 				MultisiteMeta::set_post_moved_from( $inserted_post_id, $origin_post_id );
 
