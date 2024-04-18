@@ -28,35 +28,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	} );
 
-	// подпись вы уверены при нажатии кнопки нет. start
-
-	const classes = {
-		active: 'legal-active',
-
-	};
-	
-    const selectors = {
-		buttonNo: '.legal-oops-age .oops-age-button-no',
-
-		textYouShure: '.legal-oops-age .oops-age-you-shure',
-
-	};
-
-	function pressButtonNoShowText( event )
-	{
-        console.log('скрипт подключился');
-		event.currentTarget.classList.add( classes.active );
-		document.querySelector( selectors.textYouShure ).classList.add( classes.active );
-	}
-
-	console.log(document.querySelector( selectors.buttonNo ));
-
-	oopsCookiesWrapper.querySelectorAll( selectors.buttonNo ).forEach(i => {
-		i.addEventListener( 'click', pressButtonNoShowText );  
-  	});
-
-	// подпись вы уверены при нажатии кнопки нет. end
-
 
 } );
 

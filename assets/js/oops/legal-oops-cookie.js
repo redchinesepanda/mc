@@ -37,7 +37,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		ageWrapper: '.legal-oops-age-wrapper',
 
-		ageButtonYes: '.age-button-yes-link'
+		ageButtonYes: '.age-button-yes-link',
+
+		ageButtonNo: '.legal-oops-age .oops-age-button-no',
+
+		ageTextYouShure: '.legal-oops-age .oops-age-you-shure',
 	};
 
 	const classes = {
@@ -202,6 +206,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		document.addEventListener( value, enableOopsAll, { once: true } );
 	}
+
+	// подпись вы уверены при нажатии кнопки нет. start
+
+	function pressButtonNoShowText( event )
+	{
+        console.log('скрипт подключился');
+		event.currentTarget.classList.add( classes.active );
+		document.querySelector( selectors.ageTextYouShure ).classList.add( classes.active );
+	}
+
+	console.log(document.querySelector( selectors.ageButtonNo ));
+
+	document.querySelectorAll( selectors.ageButtonNo ).forEach(i => {
+		i.addEventListener( 'click', pressButtonNoShowText );  
+  	});
+
+	// подпись вы уверены при нажатии кнопки нет. end
+
+
+
 } );
 
 // oops-cookie end
