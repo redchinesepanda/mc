@@ -188,11 +188,18 @@ class MultisiteTermSync
 	// 	self::set_terms( $post->ID, $post );
 	// }
 
-	public static function get_repeaters( $post_id )
+	public static function get_repeaters( $post_id, $fields_repeater = [] )
 	{
 		$repeaters = [];
 
-		foreach ( self::FIELDS_REPEATER as $repeater )
+		if ( empty( $fields_repeater) )
+		{
+			$fields_repeater = self::FIELDS_REPEATER;
+		}
+
+		// foreach ( self::FIELDS_REPEATER as $repeater )
+		
+		foreach ( $fields_repeater as $repeater )
 		{
 			$repeater_name = $repeater[ 'name' ];
 
