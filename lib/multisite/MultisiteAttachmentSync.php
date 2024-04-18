@@ -167,13 +167,13 @@ class MultisiteAttachmentSync
 			self::FIELDS[ 'compilation-title-image' ][ 'name' ],
 		];
 
-		LegalDebug::debug( [
-			'MultisiteAttachmentSync' => 'get_field_names',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachmentSync' => 'get_field_names',
 
-			'group_field_names' => $group_field_names,
+		// 	'group_field_names' => $group_field_names,
 
-			'simple_field_names' => $simple_field_names,
-		] );
+		// 	'simple_field_names' => $simple_field_names,
+		// ] );
 
 		// return [];
 
@@ -191,11 +191,11 @@ class MultisiteAttachmentSync
             $field_names = self::get_field_names();
         }
 
-		LegalDebug::debug( [
-			'MultisiteAttachmentSync' => 'get_origin_post_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachmentSync' => 'get_origin_post_ids',
 
-			'field_names' => $field_names,
-		] );
+		// 	'field_names' => $field_names,
+		// ] );
 
 		// $field_names = self::get_field_names();
 
