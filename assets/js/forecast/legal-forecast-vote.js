@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     const classes = {
 		active: 'legal-active',
 
-		wrapperText: 'wrapper-text'
+		// wrapperText: 'wrapper-text'
 	};
 	
     const selectors = {
@@ -13,14 +13,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		voteButtonSend: '.wp-polls .Button-my-style',
 
-		voteList: '.wp-polls .wp-polls-ans li',
+		// voteList: '.wp-polls .wp-polls-ans li',
 
-		linkView: '.wp-polls a'
+		// linkView: '.wp-polls a'
 	};
 
     function buttonDisable( event )
 	{
-        // console.log('скрипт подключился');
+        console.log('скрипт подключился');
 		document.querySelector( selectors.voteButtonSend ).classList.add( classes.active );
 	}
 
