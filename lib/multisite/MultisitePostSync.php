@@ -3,11 +3,11 @@
 class MultisitePostSync
 {
 	const FIELDS = [
-		'tabs-items' => [
-			'name' => 'tabs-items',
+		// 'tabs-items' => [
+		// 	'name' => 'tabs-items',
 
-			'key' => 'field_6423d199c433a',
-		],
+		// 	'key' => 'field_6423d199c433a',
+		// ],
 	];
 
 	const FIELDS_REPEATER = [
@@ -24,6 +24,7 @@ class MultisitePostSync
 				],
 			],
 		],
+	];
 
 	public static function register_functions_subsite()
 	{
