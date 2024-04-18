@@ -165,7 +165,7 @@ class MultisitePostSync
 		
 		$fields = MultisiteTermSync::get_fields( $post_id, $field_names );
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteTermSync' => 'set_terms',
 
 			'fields' => $fields,
@@ -175,29 +175,29 @@ class MultisitePostSync
 		{
 			if ( $field_value_sync = MultisiteTermSync::get_field_value_sync( $field_name, $field_value ) )
 			{
-				// LegalDebug::debug( [
-				// 	'MultisiteTermSync' => 'set_terms',
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
 
-				// 	'field_name' => $field_name,
+					'field_name' => $field_name,
 
-				// 	'field_value' => $field_value,
+					'field_value' => $field_value,
 
-				// 	'field_value_sync' => $field_value_sync,
-				// ] );
+					'field_value_sync' => $field_value_sync,
+				] );
 
 				MultisiteACF::update_field( $field_name, $field_value_sync, $post_id );
 
-				// LegalDebug::debug( [
-				// 	'MultisiteTermSync' => 'set_terms',
+				LegalDebug::debug( [
+					'MultisiteTermSync' => 'set_terms',
 
-				// 	'get_field_raw' => MultisiteACF::get_field_raw( $field_name, $post_id ),
-				// ] );
+					'get_field_raw' => MultisiteACF::get_field_raw( $field_name, $post_id ),
+				] );
 			}
 		}
 
-		// LegalDebug::die( [
-		// 	'MultisitePostSync' => 'set_posts',
-		// ] );
+		LegalDebug::die( [
+			'MultisitePostSync' => 'set_posts',
+		] );
     }
 
 	public static function mc_bulk_action_sync_posts( $redirect, $doaction, $object_ids )
