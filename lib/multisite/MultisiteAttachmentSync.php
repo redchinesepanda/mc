@@ -20,6 +20,12 @@ class MultisiteAttachmentSync
 
 			'key' => 'field_64525762b2d69',
 		],
+
+		'compilation-title-image' => [
+			'name' => 'compilation-title-image',
+
+			'key' => 'field_642e95492dd4d',
+        ],
 	];
 
 	const FIELD_ABOUT = [
