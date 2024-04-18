@@ -253,6 +253,14 @@ class MultisiteAdmin
 		{
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
+			LegalDebug::debug( [
+				'MultisiteAdmin' =>'mc_bulk_updated_notices',
+
+				'_REQUEST' => $_REQUEST,
+
+				'self::QUERY_ARG' => self::QUERY_ARG,
+			] );
+
 			$message = self::get_message(
 				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
 
