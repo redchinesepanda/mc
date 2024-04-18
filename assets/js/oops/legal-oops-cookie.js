@@ -207,22 +207,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.addEventListener( value, enableOopsAll, { once: true } );
 	}
 
-	// подпись вы уверены при нажатии кнопки нет. start
+	// подпись вы уверены при нажатии кнопки Нет. start
 
-	function pressButtonNoShowText( event )
-	{
-        console.log('скрипт подключился');
+	function pressButtonNo( event ) {
 		event.currentTarget.classList.add( classes.active );
 		document.querySelector( selectors.ageTextYouShure ).classList.add( classes.active );
 	}
 
-	console.log(document.querySelector( selectors.ageButtonNo ));
+	let wrapperAgeOops = document.querySelector( selectors.ageWrapper )
 
-	document.querySelectorAll( selectors.ageButtonNo ).forEach(i => {
-		i.addEventListener( 'click', pressButtonNoShowText );  
-  	});
+	wrapperAgeOops.querySelector( selectors.ageButtonNo ).addEventListener( 'click', pressButtonNo );
 
-	// подпись вы уверены при нажатии кнопки нет. end
+	// подпись вы уверены при нажатии кнопки Нет. end
 
 
 
