@@ -19,7 +19,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.voteButtonSend ).classList.toggle( classes.active );
 	}
 
-    document.querySelector( selectors.voteLabel ).addEventListener( 'click', buttonDisable );
+   /*  document.querySelector( selectors.voteLabel ).addEventListener( 'click', buttonDisable ); */
+
+	document.querySelectorAll( selectors.voteLabel ).forEach(i => {
+		i.addEventListener( 'click', buttonDisable );  
+  	}); 
 } );
 
 // legal-forecast-vote-js end
