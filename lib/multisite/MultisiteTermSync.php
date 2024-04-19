@@ -334,6 +334,16 @@ class MultisiteTermSync
 
 	public static function get_term_id( $field_value )
 	{
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'get_term_id',
+
+			'field_value' => $field_value,
+
+			'get_term_moved_id' => self::get_term_moved_id( $field_value ),
+
+			'get_post_moved_id' => MultisitePost::get_post_moved_id( $field_value ),
+		] );
+
 		if ( $term_id = self::get_term_moved_id( $field_value ) )
 		{
 			return $term_id;
