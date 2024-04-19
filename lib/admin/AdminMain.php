@@ -43,6 +43,8 @@ class AdminMain
 
         add_filter( 'acf/settings/remove_wp_meta_box', '__return_false' );
 
+        add_theme_support( 'post-thumbnails' );
+
         AdminBillet::register();
 
         AdminTaxonomy::register();
