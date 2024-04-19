@@ -112,6 +112,10 @@ class MultisiteMeta
 
 		'google_post_content',
 
+		// acf plugin old fields
+
+		'legal_post_type_wiki',
+
 		// acf plugin bonus deprecated
 
 		'ref-ssylka',
