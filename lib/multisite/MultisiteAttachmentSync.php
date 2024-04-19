@@ -8,13 +8,39 @@ class MultisiteAttachmentSync
         'page' => 'page',
     ];
 
-	const FIELDS = [
-		'about' => [
-			'name' => 'review-about',
+	// const FIELDS = [
+	// 	'about' => [
+	// 		'name' => 'review-about',
 
-			'key' => 'field_6437de4fa65c9',
-		],
+	// 		'key' => 'field_6437de4fa65c9',
+	// 	],
 
+	// 	'affilate-logo' => [
+	// 		'name' => 'affilate-logo',
+
+	// 		'key' => 'field_64525762b2d69',
+	// 	],
+
+	// 	// 'compilation-title-image' => [
+	// 	// 	'name' => 'compilation-title-image',
+
+	// 	// 	'key' => 'field_642e95492dd4d',
+    //     // ],
+		
+	// 	'img-bk' => [
+	// 		'name' => 'img-bk',
+
+	// 		'key' => 'field_6269173a3979f',
+    //     ],
+
+	// 	'logo_bk_mini' => [
+	// 		'name' => 'logo_bk_mini',
+
+	// 		'key' => 'field_626a36c948503',
+    //     ],
+	// ];
+
+	const FIELDS_SIMPLE = [
 		'affilate-logo' => [
 			'name' => 'affilate-logo',
 
@@ -38,6 +64,20 @@ class MultisiteAttachmentSync
 
 			'key' => 'field_626a36c948503',
         ],
+	];
+
+	const FIELDS_GROUPS = [
+		'about' => [
+			'name' => 'review-about',
+
+			'key' => 'field_6437de4fa65c9',
+		],
+	];
+
+	const FIELDS = [
+		...self::FIELDS_SIMPLE,
+
+		...self::FIELDS_GROUPS,
 	];
 
 	const FIELD_ABOUT = [
@@ -173,11 +213,17 @@ class MultisiteAttachmentSync
 
 		$group_field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
 
-		$simple_field_names = [
-			self::FIELDS[ 'affilate-logo' ][ 'name' ],
+		// $simple_field_names = [
+		// 	self::FIELDS[ 'affilate-logo' ][ 'name' ],
 
-			self::FIELDS[ 'compilation-title-image' ][ 'name' ],
-		];
+		// 	// self::FIELDS[ 'compilation-title-image' ][ 'name' ],
+
+		// 	self::FIELDS[ 'compilation-title-image' ][ 'name' ],
+
+		// 	self::FIELDS[ 'compilation-title-image' ][ 'name' ],
+		// ];
+
+		$simple_field_names = array_column( self::FIELDS_SIMPLE, 'name' );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachmentSync' => 'get_field_names',
