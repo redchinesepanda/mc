@@ -248,19 +248,20 @@
 	background-color: var( --Base-base-01 );
 }
 
+/* .wp-polls .Button-my-style {
+	border-radius: 60px;
+} */
+
+/* .wp-polls .Button-my-style:not( .legal-active ) {
+	background-color: var( --Base-base-04 );
+} */
+
 .wp-polls .Button-my-style {
 	border-radius: 60px;
-}
-
-.wp-polls .Button-my-style:not( .legal-active ) {
-	background-color: var( --Base-base-04 );
-}
-
-.wp-polls .Button-my-style.legal-active {
 	background-color: var( --Base-base-09 );
 }
 
-.wp-polls .Button-my-style.legal-active:hover {
+.wp-polls .Button-my-style:hover {
 	background-color: var( --Base-base-07 );
 }
 
