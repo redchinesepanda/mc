@@ -34,7 +34,7 @@ class ForecastVote
 		}
     }
 
-    const JS_NEW = [
+/*     const JS_NEW = [
         'legal-forecast-vote' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/forecast/legal-forecast-vote.js',
 
@@ -48,7 +48,7 @@ class ForecastVote
 		{
 			ToolEnqueue::register_script( self::JS_NEW );
 		}
-    }
+    } */
 
     const DEQUEUE_CSS = [
         'wp-polls',
@@ -76,7 +76,7 @@ class ForecastVote
         {
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-            add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+            // add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
         }
         else
         {
