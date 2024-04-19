@@ -168,13 +168,13 @@ class MultisiteTermSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::die( [
-			'MultisiteTermSync' =>'mc_bulk_action_sync_terms',
+		// LegalDebug::die( [
+		// 	'MultisiteTermSync' =>'mc_bulk_action_sync_terms',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-terms' ] ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-terms' ] ),
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-terms' ] ) )
 		{
@@ -583,11 +583,11 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteTermSync' => 'set_terms',
+		LegalDebug::die( [
+			'MultisiteTermSync' => 'set_terms',
 
-		// 	'fields' => $fields,
-		// ] );
+			'fields' => $fields,
+		] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
