@@ -19,10 +19,12 @@ class MultisiteMeta
 
 	function mc_edit_form_after_title_debug( $post )
 	{
+		$post_meta = get_post_custom( $post->ID );
+
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
 
-			'get_post_custom' => get_post_custom( $post->ID ),
+			'post_meta' => $post_meta,
 		] );
 	}
 
