@@ -660,7 +660,7 @@ class MultisiteTermSync
 
 			'args' => $args,
 
-			'posts' => count( $posts ),
+			'terms' => count( $terms ),
 		] );
 
 		if ( count( $terms ) == 1 )
