@@ -317,6 +317,11 @@ class MultisiteMeta
 			
 		// 	|| self::check_attachment( $id );
 
+		if ( empty( $id) )
+		{
+			return false;
+		}
+
 		return get_post_status( $id );
 	}
 
