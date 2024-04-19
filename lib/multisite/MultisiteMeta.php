@@ -365,6 +365,8 @@ class MultisiteMeta
 			'blog_id' => $blog_id,
 
 			'post_moved' => $post_moved,
+
+			'!empty' => !empty( $post_moved[ $blog_id ] ),
 		] );
 
 		if ( !empty( $post_moved[ $blog_id ] ) )
