@@ -18,6 +18,12 @@ class MultisiteTermSync
 
 			'key' => 'field_64943cb4bd61f',
 		],
+
+		'_yoast_wpseo_primary_category' => [
+			'name' => '_yoast_wpseo_primary_category',
+
+			'key' => '',
+		],
 	];
 
 	const FIELDS_REPEATER = [
