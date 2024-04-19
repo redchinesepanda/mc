@@ -101,7 +101,7 @@
 	display: block;
 }
 
-.legal-oops-age .oops-age-button-no:not( .legal-active ) .age-button-no-link {
+.legal-oops-age .age-button-no-link {
 	pointer-events: none;
 }
 
