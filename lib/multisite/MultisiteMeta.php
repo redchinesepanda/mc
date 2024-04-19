@@ -163,6 +163,24 @@ class MultisiteMeta
 		'remove_schema_page_specific',
 
 		'_HunchSchemaMarkup',
+
+		// LinkWhisper Plugin
+
+		'wpil_sync_report3',
+
+		'wpil_links_inbound_internal_count',
+
+		'wpil_links_inbound_internal_count_data',
+
+		'wpil_links_outbound_internal_count',
+
+		'wpil_links_outbound_internal_count_data',
+
+		'wpil_links_outbound_external_count',
+
+		'wpil_links_outbound_external_count_data',
+
+		'wpil_sync_report2_time',
 	];
 
 	const POST_META = [
