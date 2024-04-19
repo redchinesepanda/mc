@@ -259,11 +259,11 @@ class MultisiteAttachmentSync
 			}
 		}
 
-		LegalDebug::die( [
-			'MultisiteAttachmentSync' => 'get_origin_post_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachmentSync' => 'get_origin_post_ids',
 
-			'origin_post_ids' => $origin_post_ids,
-		] );
+		// 	'origin_post_ids' => $origin_post_ids,
+		// ] );
 
 		return $origin_post_ids;
 	}
@@ -294,17 +294,17 @@ class MultisiteAttachmentSync
 			{
 				MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
 
-				// LegalDebug::debug( [
-				// 	'MultisiteAttachmentSync' => 'set_attachments',
+				LegalDebug::debug( [
+					'MultisiteAttachmentSync' => 'set_attachments',
 		
-				// 	'post_moved_id' => $post_moved_id,
-				// ] );
+					'post_moved_id' => $post_moved_id,
+				] );
 			}
 		}
 
-		// LegalDebug::die( [
-		// 	'MultisiteAttachmentSync' => 'set_attachments',
-		// ] );
+		LegalDebug::die( [
+			'MultisiteAttachmentSync' => 'set_attachments',
+		] );
     }
 }
 
