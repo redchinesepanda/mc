@@ -357,18 +357,16 @@ class MultisiteMeta
 	{
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'check_post_moved',
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'check_post_moved',
 			
-		// 	'ID' => $post[ 'ID' ],
+			'post' => $post[ 'ID' ],
 
-		// 	'blog_id' => $blog_id,
+			'blog_id' => $blog_id,
 
-		// 	'post_moved' => $post_moved,
-		// ] );
+			'post_moved' => $post_moved,
+		] );
 
-		// if ( array_key_exists( $blog_id, $post_moved ) )
-		
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{
 			// LegalDebug::debug( [
@@ -377,10 +375,7 @@ class MultisiteMeta
 			// 	'check_moved' => self::check_moved( $post ),
 			// ] );
 
-			// if ( self::check_moved( $post ) )
-			// {
-				return $post_moved[ $blog_id ];
-			// }
+			return $post_moved[ $blog_id ];
 		}
 
 		return false;
