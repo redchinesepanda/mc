@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// voteList: '.wp-polls .wp-polls-ans li',
 
-		// linkView: '.wp-polls a'
+		linkView: '.wp-polls a'
 	};
 
     function buttonDisable( event )
@@ -42,6 +42,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll( selectors.voteInput ).forEach(i => {
 		i.addEventListener( 'click', inputCheck );
   	}); */
+
+	let observer = new MutationObserver(mutationRecords => {
+		console.log(mutationRecords); // console.log(изменения)
+	});
+
+	observer.observe(elem, {
+		childList: true, // наблюдать за непосредственными детьми
+		subtree: true, // и более глубокими потомками
+		characterDataOldValue: true // передавать старое значение в колбэк
+	});
 	
 } );
 
