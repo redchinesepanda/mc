@@ -2,9 +2,9 @@
 
 class MultisiteTermSync
 {
-	const POST_TYPE = [
-        'billet' => 'legal_billet',
-    ];
+	// const POST_TYPE = [
+    //     'billet' => 'legal_billet',
+    // ];
 
 	const FIELDS_SIMPLE = [
 		'compilation-type' => [
@@ -131,7 +131,9 @@ class MultisiteTermSync
 			MultisiteAdmin::add_filter_all(
 				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-				MultisiteAdmin::POST_TYPES_CUSTOM,
+				// MultisiteAdmin::POST_TYPES_CUSTOM,
+				
+				MultisiteAdmin::POST_TYPES,
 				
 				$handler,
 				
@@ -581,11 +583,11 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
