@@ -21,11 +21,22 @@ class MultisiteMeta
 	{
 		$post_meta = get_post_custom( $post->ID );
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'register_functions_admin',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'register_functions_admin',
 
-			'post_meta' => $post_meta,
-		] );
+		// 	'post_meta' => $post_meta,
+		// ] );
+
+		foreach ( $post_meta as $key => $value )
+        {
+            LegalDebug::debug( [
+                'MultisiteMeta' => 'register_functions_admin',
+
+				'key' => $key,
+
+				'value' => $value,
+            ] );
+		}
 	}
 
 	public static function get_post_moved_id( $origin_post_id )
