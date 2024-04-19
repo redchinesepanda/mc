@@ -235,13 +235,19 @@ class MultisiteAttachment
 
 	public static function add_attachment( $post, $path, $blog_id, $post_moved_id )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'add_attachment',
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'add_attachment',
 
-		// 	'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+			'post' => $post[ 'ID' ],
 
-		// 	'post_moved_id' => $post_moved_id,
-		// ] );
+			'path' => $path,
+
+			'blog_id' => $blog_id,
+
+			'post_moved_id' => $post_moved_id,
+
+			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+		] );
 		
 		if ( MultisiteMeta::check_moved( $post_moved_id ) )
 		{
@@ -301,23 +307,6 @@ class MultisiteAttachment
 
 		MultisiteBlog::set_blog( $blog_id );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment_and_data',
-
-			'path' => $path,
-
-			'post_moved_id' => $post_moved_id,
-
-			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
-
-			'check_not_moved-id' => MultisiteMeta::check_not_moved( $post_moved_id ),
-			
-			'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
-		] ); 
-
-		// if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
-		// {
-
 		if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id, $post_moved_id ) )
 		{
 			// LegalDebug::debug( [
@@ -330,8 +319,6 @@ class MultisiteAttachment
 
 			MultisiteMeta::set_post_moved_from( $inserted_attachment_id, $origin_post_id );
 		}
-			
-		// }
 
 		MultisiteBlog::restore_blog();
 
