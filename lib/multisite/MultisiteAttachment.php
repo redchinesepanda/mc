@@ -90,11 +90,11 @@ class MultisiteAttachment
 
 		$origin_post_ids = array_merge( $field_post_ids, $gallery_post_ids );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'copy_attachments',
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'copy_attachments',
 
-		// 	'origin_post_ids' => $origin_post_ids,
-		// ] );
+			'origin_post_ids' => $origin_post_ids,
+		] );
 
 		self::handle_attachments( $blog_id, $origin_post_ids );
 	}
