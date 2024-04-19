@@ -653,7 +653,7 @@ class MultisiteTermSync
 
 		$terms = get_terms( $args );
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteMeta' => 'get_post_moved_id',
 
 			'origin_post_id' => $origin_post_id,
