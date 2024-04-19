@@ -19,8 +19,6 @@ class MultisiteMeta
 
 	function mc_edit_form_after_title_debug( $post )
 	{
-		delete_post_meta( $post->ID );
-
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
 
