@@ -65,13 +65,13 @@ class MultisiteAttachment
 			}
 		}
 
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'handle_attachments',
+		// LegalDebug::die( [
+		// 	'MultisiteAttachment' => 'handle_attachments',
 
-			'blog_id' => $blog_id,
+		// 	'blog_id' => $blog_id,
 
-			'object_ids' => $object_ids,
-		] );
+		// 	'object_ids' => $object_ids,
+		// ] );
 	}
 
 	public static function copy_attachments( $blog_id, $post_id, $post )
