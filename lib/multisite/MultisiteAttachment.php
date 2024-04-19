@@ -44,13 +44,13 @@ class MultisiteAttachment
 		{
 			if ( $post = MultisitePost::get_post( $attachment_id ) )
 			{
-				// LegalDebug::debug( [
-				// 	'MultisiteAttachment' => 'handle_attachments',
+				LegalDebug::debug( [
+					'MultisiteAttachment' => 'handle_attachments',
 
-				// 	'attachment_id' => $attachment_id,
+					'attachment_id' => $attachment_id,
 
-				// 	'post' => $post[ 'ID' ],
-				// ] );
+					'post' => $post[ 'ID' ],
+				] );
 				
 				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
 				{
@@ -58,6 +58,14 @@ class MultisiteAttachment
 				}
 			}
 		}
+
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'handle_attachments',
+
+			'blog_id' => $blog_id,
+
+			'object_ids' => $object_ids,
+		] );
 	}
 
 	public static function copy_attachments( $blog_id, $post_id, $post )
@@ -90,11 +98,11 @@ class MultisiteAttachment
 
 		$origin_post_ids = array_merge( $field_post_ids, $gallery_post_ids );
 
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'copy_attachments',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'copy_attachments',
 
-			'origin_post_ids' => $origin_post_ids,
-		] );
+		// 	'origin_post_ids' => $origin_post_ids,
+		// ] );
 
 		self::handle_attachments( $blog_id, $origin_post_ids );
 	}
