@@ -43,7 +43,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		i.addEventListener( 'click', inputCheck );
   	}); */
 
-	let forecast = document.querySelector( selectors.forecastContainer );
+/* 	let forecast = document.querySelector( selectors.forecastContainer );
 
 	let observer = new MutationObserver(mutationRecords => {
 		console.log(mutationRecords); // console.log(изменения)
@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		childList: true, // наблюдать за непосредственными детьми
 		subtree: true, // и более глубокими потомками
 		characterDataOldValue: true // передавать старое значение в колбэк
-	});
+	}); */
 	
 } );
 
