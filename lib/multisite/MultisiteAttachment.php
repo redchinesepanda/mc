@@ -301,19 +301,19 @@ class MultisiteAttachment
 
 		MultisiteBlog::set_blog( $blog_id );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'add_attachment_and_data',
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'add_attachment_and_data',
 
-		// 	'path' => $path,
+			'path' => $path,
 
-		// 	'post_moved_id' => $post_moved_id,
+			'post_moved_id' => $post_moved_id,
 
-		// 	'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
 
-		// 	'check_not_moved-id' => MultisiteMeta::check_not_moved( $post_moved_id ),
+			'check_not_moved-id' => MultisiteMeta::check_not_moved( $post_moved_id ),
 			
-		// 	'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
-		// ] ); 
+			'check_not_moved-false' => MultisiteMeta::check_not_moved( false ),
+		] ); 
 
 		// if ( MultisiteMeta::check_not_moved( $post_moved_id ) )
 		// {
