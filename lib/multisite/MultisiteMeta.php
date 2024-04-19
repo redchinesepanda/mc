@@ -362,17 +362,17 @@ class MultisiteMeta
 	{
 		$post_moved = self::get_post_moved( $post[ 'ID' ] );
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'check_post_moved',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'check_post_moved',
 			
-			'post' => $post[ 'ID' ],
+		// 	'post' => $post[ 'ID' ],
 
-			'blog_id' => $blog_id,
+		// 	'blog_id' => $blog_id,
 
-			'post_moved' => $post_moved,
+		// 	'post_moved' => $post_moved,
 
-			'!empty' => !empty( $post_moved[ $blog_id ] ),
-		] );
+		// 	'!empty' => !empty( $post_moved[ $blog_id ] ),
+		// ] );
 
 		if ( !empty( $post_moved[ $blog_id ] ) )
 		{

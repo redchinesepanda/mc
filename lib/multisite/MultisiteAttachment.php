@@ -44,23 +44,23 @@ class MultisiteAttachment
 		{
 			if ( $post = MultisitePost::get_post( $attachment_id ) )
 			{
-				LegalDebug::debug( [
-					'MultisiteAttachment' => 'handle_attachments',
+				// LegalDebug::debug( [
+				// 	'MultisiteAttachment' => 'handle_attachments',
 
-					'attachment_id' => $attachment_id,
+				// 	'attachment_id' => $attachment_id,
 
-					'post' => $post[ 'ID' ],
-				] );
+				// 	'post' => $post[ 'ID' ],
+				// ] );
 				
 				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
 				{
 					MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
 
-					LegalDebug::debug( [
-						'MultisiteAttachment' => 'handle_attachments',
+					// LegalDebug::debug( [
+					// 	'MultisiteAttachment' => 'handle_attachments',
 	
-						'inserted_attachment_id' => $inserted_attachment_id,
-					] );
+					// 	'inserted_attachment_id' => $inserted_attachment_id,
+					// ] );
 				}
 			}
 		}
@@ -235,19 +235,19 @@ class MultisiteAttachment
 
 	public static function add_attachment( $post, $path, $blog_id, $post_moved_id )
 	{
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'add_attachment',
 
-			'post' => $post[ 'ID' ],
+		// 	'post' => $post[ 'ID' ],
 
-			'path' => $path,
+		// 	'path' => $path,
 
-			'blog_id' => $blog_id,
+		// 	'blog_id' => $blog_id,
 
-			'post_moved_id' => $post_moved_id,
+		// 	'post_moved_id' => $post_moved_id,
 
-			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
-		] );
+		// 	'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+		// ] );
 		
 		if ( MultisiteMeta::check_moved( $post_moved_id ) )
 		{
@@ -307,15 +307,15 @@ class MultisiteAttachment
 
 		MultisiteBlog::set_blog( $blog_id );
 
-		LegalDebug::debug( [
-			'MultisiteAttachment' => 'add_attachment_and_data',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'add_attachment_and_data',
 
-			'origin_post_id' => $origin_post_id,
+		// 	'origin_post_id' => $origin_post_id,
 
-			'post_moved_id' => $post_moved_id,
+		// 	'post_moved_id' => $post_moved_id,
 
-			'path' => $path,
-		] );
+		// 	'path' => $path,
+		// ] );
 
 		if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id, $post_moved_id ) )
 		{
