@@ -43,7 +43,23 @@ class MultisiteMeta
 
 		'tcb2_ready',
 
+		'_tve_post_constants',
+
 		'_tve_js_modules_gutenberg',
+
+		'_tve_header',
+
+		'_tve_footer',
+
+		'_tve_assets_to_preload',
+
+		'_tve_base_inline_css',
+
+		'_tve_lightspeed_version',
+
+		'_tve_js_modules',
+
+		'tve_globals',
 
 		'tve_global_scripts',
 
@@ -63,35 +79,75 @@ class MultisiteMeta
 
 		'tve_user_custom_css',
 
+		'tve_page_events',
+
 		'thrive_element_visibility',
 
 		'thrive_icon_pack',
 
 		'thrive_post_template',
 
+		'thrive_theme_video_format_meta',
+
+		'thrive_theme_audio_format_meta',
+
+		'thrive_tcb_post_fonts',
+
 		// other
 
 		'google_post_content',
 
-		// acf bonus deprecated
+		// acf plugin bonus deprecated
 
 		'ref-ssylka',
 
+		'_ref-ssylka',
+
 		'ref-perelinkovka',
 
+		'_ref-perelinkovka',
+
 		'link-bk',
+		
+		'_link-bk',
 
 		'img',
 
+		'_img',
+
 		'data-okonchaniya',
+
+		'_data-okonchaniya',
 
 		'promokod',
 
+		'_promokod',
+
 		'category',
+
+		'_category',
 
 		'drugie-bonusy',
 
+		'_drugie-bonusy',
+
 		'pohozhie-bonusy',
+
+		'_pohozhie-bonusy',
+
+		// wpml plugin
+
+		'_wpml_word_count',
+
+		'_wpml_media_duplicate',
+
+		'_wpml_media_featured',
+
+		// remove schema plugin
+
+		'remove_schema_page_specific',
+
+		'_HunchSchemaMarkup',
 	];
 
 	const POST_META = [
