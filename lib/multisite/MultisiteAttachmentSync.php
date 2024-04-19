@@ -276,11 +276,11 @@ class MultisiteAttachmentSync
 		
 		$origin_post_ids = self::get_origin_post_ids( $post_id );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' => 'set_attachments',
+		LegalDebug::debug( [
+			'MultisiteAttachmentSync' => 'set_attachments',
 
-		// 	'origin_post_ids' => $origin_post_ids,
-		// ] );
+			'origin_post_ids' => $origin_post_ids,
+		] );
 
 		foreach ( $origin_post_ids as $field_name => $origin_post_id )
 		{
