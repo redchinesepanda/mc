@@ -52,7 +52,7 @@
         line-height: 22px;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p )
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p )
     {
         font-size: 14px;
         line-height: 22px;
@@ -113,7 +113,7 @@
         line-height: 24px;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ) {
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ) {
         font-size: 16px;
         line-height: 26px;
     }
@@ -285,7 +285,7 @@
     font-weight: 700;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ),
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a
 {
@@ -294,16 +294,16 @@
     font-weight: 400;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ),
 .tcb-post-content .legal-attention {
     color: var( --Base-base-09 );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ) {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ) {
     color: var( --Base-link );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):hover {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):hover {
     color: var( --Base-link-hover );
 }
 

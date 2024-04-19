@@ -11,7 +11,6 @@ get_header();
 </section>
 <?php echo ReviewPage::render(); ?>
 <!-- <section id="theme-bottom-section" class="legal-section-author">
-	<?php echo ReviewAuthor::render(); ?>
 </section> -->
 <?php
 

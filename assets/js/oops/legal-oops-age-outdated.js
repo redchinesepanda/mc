@@ -6,14 +6,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	let oopsCookieClass = 'legal-active';
 
+	let oopsCookiesWrapper = '.legal-oops-age-wrapper'
+
 	function acceptCookie( event )
 	{
 		LegalCookie.setCookie( oopsCookieName, 'accepted', LegalCookie.options );
 
-		event.currentTarget.closest( '.legal-oops-age-wrapper' ).classList.remove( oopsCookieClass );
+		event.currentTarget.closest( oopsCookiesWrapper ).classList.remove( oopsCookieClass );
 	}
 
-	document.querySelectorAll( '.legal-oops-age-wrapper' ).forEach( function ( wrapper )
+	document.querySelectorAll( oopsCookiesWrapper ).forEach( function ( wrapper )
 	{
 		if ( LegalCookie.getCookie( oopsCookieName ) === undefined )
 		{
@@ -25,6 +27,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			wrapper.classList.add( oopsCookieClass );
 		}
 	} );
+
+
 } );
 
 // oops-cookie age

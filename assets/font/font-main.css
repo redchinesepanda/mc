@@ -35,8 +35,10 @@
 	--Primitives-purple-50: #E3DEFF;
 	--Primitives-purple-60: #C7BFFF;
 	--Primitives-red-40: #FFD9D9;
+	--Primitives-red-60: #FF845E;
 	--white-20: rgba(255, 255, 255, 0.20);
 	--white-60: rgba(255, 255, 255, 0.60);
 	--Gray-200: #EAECF0;
 	--Logo-background: #E3E3E3;
+	--Status-Error: #FF3B30;
 }

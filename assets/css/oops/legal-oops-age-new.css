@@ -101,6 +101,14 @@
 	display: block;
 }
 
+.legal-oops-age .age-button-no-link {
+	pointer-events: none;
+}
+
+.legal-oops-age .oops-age-you-shure:not( .legal-active ) {
+	display: none;
+}
+
 /* Position */
 
 .legal-oops-age-wrapper {
@@ -133,19 +141,20 @@
 	padding: 10px 18px;
 }
 
-.legal-oops-age .oops-age-button-yes {
+/* .legal-oops-age .oops-age-button-yes {
 	order: 1;
-}
+} */
 
-.legal-oops-age .oops-age-button-yes-no {
+/* .legal-oops-age .oops-age-button-yes-no {
 	order: 0;
-}
+} */
 
-.legal-oops-age .oops-age-after {
+/* .legal-oops-age .oops-age-after {
 	order: 2;
-}
+} */
 
-.legal-oops-age .oops-age-after {
+.legal-oops-age .oops-age-after,
+.legal-oops-age .oops-age-you-shure {
 	padding-top: 8px;
 }
 
@@ -215,7 +224,8 @@
 .legal-oops-age .oops-age-description,
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link,
-.legal-oops-age .oops-age-after {
+.legal-oops-age .oops-age-after,
+.legal-oops-age .oops-age-you-shure {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -241,6 +251,10 @@
 	text-align: center;
 }
 
+.legal-oops-age .oops-age-button-no {
+	cursor: pointer;
+}
+
 .legal-oops-age .age-button-yes-link,
 .legal-oops-age .age-button-no-link {
 	font-size: 14px;
@@ -252,16 +266,24 @@
 }
 
 .legal-oops-age .age-button-yes-link {
-	color: var(--Base-base-01);
+	color: var( --Base-base-01 );
 }
 
 .legal-oops-age .age-button-yes-link:hover,
-.legal-oops-age .age-button-no-link:hover {
-	text-shadow: 0 0 0.6px var(--Base-base-09);
+.legal-oops-age .oops-age-button-no:hover .age-button-no-link {
+	text-shadow: 0 0 0.6px var( --Base-base-09 );
 }
 
 .legal-oops-age .oops-age-after {
-	color: var(--Base-base-05);
+	color: var( --Base-base-05 );
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 17px;
+	text-align: center;
+}
+
+.legal-oops-age .oops-age-you-shure {
+	color: var( --Status-Error );
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 17px;

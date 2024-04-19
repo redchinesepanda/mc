@@ -1,0 +1,119 @@
+@media screen and ( min-width: 768px ) {
+
+	/* Display */
+
+	.legal-forecast-block {
+		flex-basis: calc( ( 100% / 2 ) - ( 20px / 2 ) - 2px );
+	}
+
+}
+
+/* Display */
+
+.legal-forecast-list {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 28px;
+  	column-gap: 20px;
+}
+
+.legal-forecast-block {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+.legal-forecast-block .block-prewiew {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+/* Position */
+
+.legal-forecast-list {
+	padding-bottom: 24px;
+}
+
+.legal-forecast-block {
+	padding-bottom: 32px;
+}
+
+.legal-forecast-block:hover {
+	margin-top: -4px;
+	transition: 0.2s;
+}
+
+.legal-forecast-block .block-prewiew {
+	margin-bottom: 12px;
+}
+
+.legal-forecast-block .legal-forecast-date {
+	padding-bottom: 8px;
+}
+
+.legal-forecast-block .legal-forecast-date,
+.legal-forecast-block .legal-forecast-block-title {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+/* Width and Height */
+
+.legal-forecast-block {
+	height: fit-content;
+}
+
+.legal-forecast-block .block-prewiew {
+	width: 100%;
+	height: 182px;
+}
+
+.legal-forecast-block .legal-forecast-block-title {
+	min-height: 44px;
+}
+
+/* Background */
+
+.legal-forecast-block {
+	border-radius: 18px;
+	border: 1px solid var( --Base-base-09 );
+	overflow: hidden;
+}
+
+.legal-forecast-block .block-prewiew {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Typography */
+
+.legal-forecast-block .legal-forecast-date,
+.legal-forecast-block .legal-forecast-block-title {
+	font-family: var( --legal-font-primary );
+    font-style: normal;
+}
+
+.legal-forecast-block .legal-forecast-date {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+	color: var( --Base-base-05 );
+	cursor: default; 
+}
+
+.legal-forecast-block .legal-forecast-block-title {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+	color: var( --Base-base-09 );
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.legal-forecast-block .legal-forecast-block-title:hover {
+	text-shadow: 0 0 0.7px var( --Base-base-09 );
+}

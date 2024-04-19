@@ -138,10 +138,14 @@ class OopsAge
 			'button-no' => [
 				'label' => __( BaseMain::TEXT[ 'no' ], ToolLoco::TEXTDOMAIN ),
 
-				'href' => 'http://google.' . $lang . '/',
+				// 'href' => 'http://google.' . $lang . '/',
+
+                'href' => '#',
 			],
             
 			'after' => __( BaseMain::TEXT[ 'you-must-be' ], ToolLoco::TEXTDOMAIN ),
+
+            'you-shure' => __( BaseMain::TEXT[ 'we-are-sorry' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 
