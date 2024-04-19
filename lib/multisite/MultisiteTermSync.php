@@ -637,15 +637,15 @@ class MultisiteTermSync
 
 		$terms = get_terms( $args );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'get_post_moved_id',
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved_id',
 
-		// 	'origin_post_id' => $origin_post_id,
+			'origin_post_id' => $origin_post_id,
 
-		// 	'args' => $args,
+			'args' => $args,
 
-		// 	'posts' => count( $posts ),
-		// ] );
+			'posts' => count( $posts ),
+		] );
 
 		if ( count( $terms ) == 1 )
 		{
