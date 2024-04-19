@@ -880,6 +880,10 @@ body {
     font-weight: 400;
 }
 
+.billet-item .billet-footer::after {
+    content: attr( data-footer-text );
+}
+
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);
     font-size: 15px;
