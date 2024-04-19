@@ -55,6 +55,12 @@ class MultisiteAttachment
 				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
 				{
 					MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
+
+					LegalDebug::debug( [
+						'MultisiteAttachment' => 'handle_attachments',
+	
+						'inserted_attachment_id' => $inserted_attachment_id,
+					] );
 				}
 			}
 		}
