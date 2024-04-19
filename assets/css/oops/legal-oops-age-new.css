@@ -270,7 +270,7 @@
 }
 
 .legal-oops-age .age-button-yes-link:hover,
-.legal-oops-age .age-button-no-link:hover {
+.legal-oops-age .oops-age-button-no:hover .age-button-no-link {
 	text-shadow: 0 0 0.6px var( --Base-base-09 );
 }
 
