@@ -369,6 +369,7 @@ body {
 
 .billet-item .billet-footer.legal-active {
     display: block;
+    content: "Hello world";
 }
 
 /* Background */
