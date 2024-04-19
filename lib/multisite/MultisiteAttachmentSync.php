@@ -64,6 +64,12 @@ class MultisiteAttachmentSync
 
 			'key' => 'field_626a36c948503',
         ],
+
+		'_thumbnail_id' => [
+			'name' => '_thumbnail_id',
+
+			'key' => '',
+        ],
 	];
 
 	const FIELDS_GROUPS = [
@@ -232,6 +238,21 @@ class MultisiteAttachmentSync
 		return array_merge( $group_field_names, $simple_field_names );
 	}
 	
+	// public static function get_post_thumbnail_ids( $post_id )
+	// {
+	// 	if ( is_single( $post_id ) )
+	// 	{
+	// 		if ( $post_thumbnail_id = get_post_thumbnail_id( $post_id ) )
+	// 		{
+	// 			return [
+	// 				'post_thumbnail_id' => $post_thumbnail_id,
+	// 			];
+	// 		}
+	// 	}
+
+	// 	return [];
+	// }
+
 	public static function get_origin_post_ids( $post_id , $field_names = [] )
 	{
 		$origin_post_ids = [];
