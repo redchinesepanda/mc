@@ -339,9 +339,9 @@
 	cursor: pointer;
 }
 
-.wp-polls .Button-my-style:not( .legal-active ) {
+/* .wp-polls .Button-my-style:not( .legal-active ) {
 	pointer-events: none;
-}
+} */
 
 /* .wp-polls .wp-polls-ans li, */
 /* .wp-polls .wp-polls-ul .pollbar::before, */

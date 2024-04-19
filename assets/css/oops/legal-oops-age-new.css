@@ -283,7 +283,7 @@
 }
 
 .legal-oops-age .oops-age-you-shure {
-	color: var( --Primitives-red-60 );
+	color: var( --Status-Error );
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 17px;
