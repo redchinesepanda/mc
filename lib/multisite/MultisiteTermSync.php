@@ -133,7 +133,7 @@ class MultisiteTermSync
 				
 				// MultisiteAdmin::POST_TYPES_CUSTOM,
 				
-				MultisiteAdmin::POST_TYPES,
+				MultisiteAdmin::get_post_types_post(),
 				
 				$handler,
 				
