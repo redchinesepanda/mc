@@ -12,27 +12,19 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		// $handler = new self();
+		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'wp_kama_edit_form_after_title_action' ] );
+		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 	}
 
-	// function wp_kama_edit_form_after_title_action( $post )
-	// {
-	// 	$post = get_post();
+	function mc_edit_form_after_title_debug( $post )
+	{
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'register_functions_admin',
 
-	// 	LegalDebug::debug( [
-	// 		'MultisiteMeta' => 'register_functions_admin',
-
-	// 		'items' => get_field( self::FIELDS_TABS[ 'items' ] ),
-
-	// 		'filter' => get_field( self::FIELDS_COMPILATION_FILTER[ 'filter' ] ),
-
-	// 		'get_post_moved-to' => self::get_post_moved( $post->ID ),
-
-	// 		'get_post_moved-from' => self::get_post_moved( $post->ID, self::POST_META[ 'moved-from' ] ),
-	// 	] );
-	// }
+			'get_post_custom' => get_post_custom( $post->ID ),
+		] );
+	}
 
 	public static function get_post_moved_id( $origin_post_id )
 	{
