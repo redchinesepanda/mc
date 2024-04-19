@@ -78,9 +78,9 @@ class OopsAge
 
 		'hr',
 
-        'kz',
+        // 'kz',
 
-        'dk',
+        // 'dk',
 	];
 
 	const AGE_PRODUCTION = [

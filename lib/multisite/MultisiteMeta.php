@@ -45,13 +45,61 @@ class MultisiteMeta
 	}
 
 	const FILTER_META = [
+		// thirive
+
+		'tcb_editor_enabled',
+
+		'tcb2_ready',
+
 		'_tve_js_modules_gutenberg',
 
 		'tve_global_scripts',
 
+		'tve_content_before_more',
+
+		'tve_content_more_found',
+
+		'tve_custom_css',
+
+		'tve_has_masonry',
+
+		'tve_has_typefocus',
+
+		'tve_has_wistia_popover',
+
+		'tve_updated_post',
+
+		'tve_user_custom_css',
+
 		'thrive_element_visibility',
 
+		'thrive_icon_pack',
+
+		'thrive_post_template',
+
+		// other
+
 		'google_post_content',
+
+		// acf bonus deprecated
+
+		'ref-ssylka',
+
+		'ref-perelinkovka',
+
+		'link-bk',
+
+		'img',
+
+		'data-okonchaniya',
+
+		'promokod',
+
+		'category',
+
+		'drugie-bonusy',
+
+		'pohozhie-bonusy',
 	];
 
 	const POST_META = [

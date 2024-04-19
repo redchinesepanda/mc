@@ -26,6 +26,18 @@ class MultisiteAttachmentSync
 
 		// 	'key' => 'field_642e95492dd4d',
         // ],
+		
+		'img-bk' => [
+			'name' => 'img-bk',
+
+			'key' => 'field_6269173a3979f',
+        ],
+
+		'logo_bk_mini' => [
+			'name' => 'logo_bk_mini',
+
+			'key' => 'field_626a36c948503',
+        ],
 	];
 
 	const FIELD_ABOUT = [

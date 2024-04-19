@@ -8,6 +8,18 @@ class MultisitePostSync
 
 			'key' => 'field_642e9f47fd7e0',
 		],
+		
+		'bonus-afillate' => [
+			'name' => 'bonus-afillate',
+
+			'key' => 'field_654cae6ee9bc0',
+		],
+		
+		'billet-afillate-link' => [
+			'name' => 'billet-afillate-link',
+
+			'key' => 'field_642bf5aae2f50',
+		],
 
 		'review-about' => [
 			'name' => 'review-about',
@@ -125,6 +137,8 @@ class MultisitePostSync
 
 		$simple_field_names = [
 			self::FIELDS[ 'tabs-link-url' ][ 'name' ],
+
+			self::FIELDS[ 'bonus-afillate' ][ 'name' ],
 		];
 
 		return array_merge( $group_field_names, $simple_field_names );
