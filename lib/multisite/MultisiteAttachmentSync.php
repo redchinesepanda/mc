@@ -74,12 +74,6 @@ class MultisiteAttachmentSync
 		],
 	];
 
-	const FIELDS = [
-		...self::FIELDS_SIMPLE,
-
-		...self::FIELDS_GROUPS,
-	];
-
 	const FIELD_ABOUT = [
 		'logo' => [
 			'name' => 'about-logo',
@@ -211,7 +205,7 @@ class MultisiteAttachmentSync
 		// 	]
 		// );
 
-		$group_field_names = self::get_group_field_names( self::FIELDS[ 'about' ], self::FIELD_ABOUT );
+		$group_field_names = self::get_group_field_names( self::FIELDS_GROUPS[ 'about' ], self::FIELD_ABOUT );
 
 		// $simple_field_names = [
 		// 	self::FIELDS[ 'affilate-logo' ][ 'name' ],
