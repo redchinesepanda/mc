@@ -6,7 +6,7 @@ class MultisiteTermSync
         'billet' => 'legal_billet',
     ];
 
-	const FIELDS = [
+	const FIELDS_SIMPLE = [
 		'compilation-type' => [
 			'name' => 'compilation-type',
 
@@ -232,11 +232,13 @@ class MultisiteTermSync
 
 		$group_field_names = [];
 
-		$simple_field_names = [
-			self::FIELDS[ 'compilation-type' ][ 'name' ],
+		// $simple_field_names = [
+		// 	self::FIELDS[ 'compilation-type' ][ 'name' ],
 
-			self::FIELDS[ 'compilation-filter' ][ 'name' ],
-		];
+		// 	self::FIELDS[ 'compilation-filter' ][ 'name' ],
+		// ];
+
+		$simple_field_names = array_column( self::FIELDS_SIMPLE, 'name' );
 
 		return array_merge( $group_field_names, $simple_field_names );
 	}
