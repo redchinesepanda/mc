@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		voteButtonSend: '.wp-polls .Button-my-style',
 
-		// voteList: '.wp-polls .wp-polls-ans li',
+		forecastContainer: '.wp-polls',
 
 		linkView: '.wp-polls a'
 	};
@@ -43,11 +43,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		i.addEventListener( 'click', inputCheck );
   	}); */
 
+	let forecast = document.querySelector( selectors.forecastContainer );
+
 	let observer = new MutationObserver(mutationRecords => {
 		console.log(mutationRecords); // console.log(изменения)
 	});
 
-	observer.observe(elem, {
+	observer.observe(forecast, {
 		childList: true, // наблюдать за непосредственными детьми
 		subtree: true, // и более глубокими потомками
 		characterDataOldValue: true // передавать старое значение в колбэк
