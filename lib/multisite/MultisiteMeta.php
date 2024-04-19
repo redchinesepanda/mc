@@ -36,6 +36,8 @@ class MultisiteMeta
 
 				'value' => $value,
             ] );
+
+			delete_post_meta( $post->ID, $key );
 		}
 	}
 
