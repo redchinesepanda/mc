@@ -219,13 +219,13 @@ class MultisiteAttachmentSync
 
 		$simple_field_names = array_column( self::FIELDS_SIMPLE, 'name' );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachmentSync' => 'get_field_names',
+		LegalDebug::die( [
+			'MultisiteAttachmentSync' => 'get_field_names',
 
-		// 	'group_field_names' => $group_field_names,
+			'group_field_names' => $group_field_names,
 
-		// 	'simple_field_names' => $simple_field_names,
-		// ] );
+			'simple_field_names' => $simple_field_names,
+		] );
 
 		// return [];
 
