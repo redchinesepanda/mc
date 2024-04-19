@@ -307,6 +307,16 @@ class MultisiteAttachment
 
 		MultisiteBlog::set_blog( $blog_id );
 
+		LegalDebug::debug( [
+			'MultisiteAttachment' => 'add_attachment_and_data',
+
+			'origin_post_id' => $origin_post_id,
+
+			'post_moved_id' => $post_moved_id,
+
+			'path' => $path,
+		] );
+
 		if ( $inserted_attachment_id = self::add_attachment( $post, $path, $blog_id, $post_moved_id ) )
 		{
 			// LegalDebug::debug( [
