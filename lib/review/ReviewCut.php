@@ -117,7 +117,7 @@ class ReviewCut
 
 		$element->setAttribute( 'data-content-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
 
-		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] . ' ' . $class );
+		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
 
 		return $element;
 	}
