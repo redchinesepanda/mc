@@ -685,6 +685,8 @@ class MultisiteTermSync
 			'args' => $args,
 
 			'terms' => count( $terms ),
+
+			'categories' => get_categories(),
 		] );
 
 		if ( count( $terms ) == 1 )
