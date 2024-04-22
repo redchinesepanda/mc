@@ -16,6 +16,8 @@ class TemplateMain
         'pt',
 
         'ng',
+
+        'es',
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
