@@ -119,6 +119,13 @@ class CompilationAbout
 			$items[] = self::parse_node( $dom, $node );
 		}
 
+		if ( $has_cut )
+		{
+			$control = ReviewCut::get_control( $dom );
+
+			$items[] = self::parse_node( $dom, $control );
+		}
+
 		return $items;
 	} 
 	

@@ -109,11 +109,9 @@ class ReviewCut
 		return $nodes;
 	}
 
-	public static function get_control( $dom, $class = '' )
+	public static function get_control( $dom )
 	{
-		// $element = $dom->createElement( 'span' );
-		
-		$element = $dom->createElement( 'p' );
+		$element = $dom->createElement( 'span' );
 
 		$element->setAttribute( 'data-content-default', __( ReviewMain::TEXT[ 'open' ], ToolLoco::TEXTDOMAIN ) );
 
