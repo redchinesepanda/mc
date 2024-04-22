@@ -91,6 +91,12 @@ class CompilationAbout
 	{
 		$items = [];
 
+		LegalDebug::debug( [
+			'CompilationAbout' => 'parse_content',
+
+			'nodes' => count( $nodes ),
+		] );
+
 		foreach ( $nodes as $node )
 		{
 			LegalDebug::debug( [
