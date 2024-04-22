@@ -1,11 +1,13 @@
 /* Display */
 
-.tcb-post-content .legal-cut-control:not( .legal-active )::before
+.tcb-post-content .legal-cut-control:not( .legal-active )::before,
+.compilation-about .legal-cut-control:not( .legal-active )::before
 {
 	content: attr( data-content-default );
 }
 
-.tcb-post-content .legal-cut-control.legal-active::before
+.tcb-post-content .legal-cut-control.legal-active::before,
+.compilation-about .legal-cut-control.legal-active::before
 {
 	content: attr( data-content-active );
 }
