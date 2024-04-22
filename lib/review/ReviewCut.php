@@ -131,7 +131,14 @@ class ReviewCut
 
 		foreach ( $nodes as $node )
 		{
+
 			$class = $node->getAttribute( 'class' );
+			
+			LegalDebug::debug( [
+				'ReviewCut' => 'set_cut',
+
+				'class' => $class,
+			] );
 
 			if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] ) )
 			{
