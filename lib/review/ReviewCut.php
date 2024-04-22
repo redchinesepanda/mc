@@ -133,7 +133,7 @@ class ReviewCut
 		{
 			$class = $node->getAttribute( 'class' );
 
-			if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] )
+			if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] ) )
 			{
 				$class = '';
 			}
