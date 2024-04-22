@@ -96,7 +96,9 @@ class CompilationAbout
 			LegalDebug::debug( [
 				'CompilationAbout' => 'parse_content',
 
-				$node,
+				'class' => $node->getAttribute( 'class' ),
+
+				'textContent' => $node->textContent,
 			] );
 
 			$items[] = self::parse_node( $dom, $node );
