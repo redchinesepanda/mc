@@ -36,6 +36,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function prepareControl( element )
 	{
+		console.log( element );
 		// element.dataset.cutSetId = setID;
 
 		element.dataset.cutSetId = document.setId;
@@ -73,8 +74,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// let setID = 0;
 	
 		document.setId = 0;
-
-		console.log( [ elements.cut.selectors, elements.menu.selectors, elements.compilationAbout.selectors, elements.reviewAbout.selectors ].join( ', ' ) );
 
 		document.querySelectorAll(
 			// '.tcb-post-content > .legal-cut-item, .tcb-post-content > .legal-cut-control'
