@@ -1,8 +1,8 @@
 <?php
 
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
+LegalDebug::debug( [
+	'args' => $args,
+] );
 
 ?>
 <!-- Compilation About Template -->
