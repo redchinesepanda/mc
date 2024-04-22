@@ -15,6 +15,26 @@ class MultisiteMeta
 		$handler = new self();
 
 		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+
+		add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+	}
+
+	function mc_category_pre_edit_form_debug( $tag, $taxonomy )
+	{
+		$term_meta = get_term_meta( $post->ID );
+
+		foreach ( $term_meta as $key => $value )
+        {
+            LegalDebug::debug( [
+                'MultisiteMeta' => 'mc_category_pre_edit_form_debug',
+
+				'key' => $key,
+
+				'value' => $value,
+            ] );
+
+			// delete_post_meta( $post->ID, $key );
+		}
 	}
 
 	function mc_edit_form_after_title_debug( $post )
