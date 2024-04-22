@@ -157,9 +157,9 @@ class ReviewCut
 
 	public static function modify_content( $content )
 	{
-		LegalDebug::debug( [
-			'ReviewCut' => 'modify_content',
-		] );
+		// LegalDebug::debug( [
+		// 	'ReviewCut' => 'modify_content',
+		// ] );
 
 		if ( !ReviewMain::check() ) {
 			return $content;

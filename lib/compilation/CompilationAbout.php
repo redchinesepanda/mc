@@ -91,11 +91,11 @@ class CompilationAbout
 	{
 		$items = [];
 
-		LegalDebug::debug( [
-			'CompilationAbout' => 'parse_content',
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'parse_content',
 
-			'nodes' => count( $nodes ),
-		] );
+		// 	'nodes' => count( $nodes ),
+		// ] );
 
 		$has_cut = false;
 
@@ -106,15 +106,15 @@ class CompilationAbout
 				$has_cut = true;
 			}
 
-			LegalDebug::debug( [
-				'CompilationAbout' => 'parse_content',
+			// LegalDebug::debug( [
+			// 	'CompilationAbout' => 'parse_content',
 
-				'class' => $node->getAttribute( 'class' ),
+			// 	'class' => $node->getAttribute( 'class' ),
 
-				'textContent' => $node->textContent,
+			// 	'textContent' => $node->textContent,
 
-				'has_cut' => $has_cut,
-			] );
+			// 	'has_cut' => $has_cut,
+			// ] );
 
 			$items[] = self::parse_node( $dom, $node );
 		}
