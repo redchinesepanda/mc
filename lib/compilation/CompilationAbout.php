@@ -97,14 +97,23 @@ class CompilationAbout
 			'nodes' => count( $nodes ),
 		] );
 
+		$has_cut = false;
+
 		foreach ( $nodes as $node )
 		{
+			if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
+			{
+				$has_cut = true;
+			}
+
 			LegalDebug::debug( [
 				'CompilationAbout' => 'parse_content',
 
 				'class' => $node->getAttribute( 'class' ),
 
 				'textContent' => $node->textContent,
+
+				'has_cut' => $has_cut,
 			] );
 
 			$items[] = self::parse_node( $dom, $node );
