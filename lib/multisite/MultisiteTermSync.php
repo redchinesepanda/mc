@@ -675,17 +675,15 @@ class MultisiteTermSync
 
 		wp_list_categories();
 
-		LegalDebug::die( [
-			'MultisiteMeta' => 'get_post_moved_id',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved_id',
 
-			'origin_post_id' => $origin_post_id,
+		// 	'origin_post_id' => $origin_post_id,
 
-			'args' => $args,
+		// 	'args' => $args,
 
-			'terms' => count( $terms ),
-
-			'categories' => get_categories(),
-		] );
+		// 	'terms' => count( $terms ),
+		// ] );
 
 		if ( count( $terms ) == 1 )
 		{
