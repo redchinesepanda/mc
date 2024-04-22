@@ -91,6 +91,8 @@ class ReviewCut
 
 	public static function get_cut_items( $dom )
 	{
+		// .legal-cut-item + :not(.legal-cut-item)
+
 		return self::get_nodes(
 			$dom,
 
