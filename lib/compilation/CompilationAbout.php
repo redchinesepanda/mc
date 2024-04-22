@@ -60,7 +60,11 @@ class CompilationAbout
 		return self::get_nodes(
 			$dom,
 			
-			'//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]'
+			// '//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]'
+			
+			'//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]|//p[contains(@class, \'' . ReviewCut::CLASSES[ 'cut-control' ] . '\')]'
+
+			// '//p[contains(concat(" ",normalize-space(@class)," ")," section-content-text ")]|//span[contains(concat(" ",normalize-space(@class)," ")," legal-cut-control ")]'
 		);
 	}
 
