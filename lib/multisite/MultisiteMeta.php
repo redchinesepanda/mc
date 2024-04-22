@@ -12,54 +12,54 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	function mc_category_pre_edit_form_debug( $term, $taxonomy )
-	{
-		$term_meta = get_term_meta( $term->term_id );
+	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
+	// {
+	// 	$term_meta = get_term_meta( $term->term_id );
 
-		foreach ( $term_meta as $key => $value )
-        {
-            LegalDebug::debug( [
-                'MultisiteMeta' => 'mc_category_pre_edit_form_debug',
+	// 	foreach ( $term_meta as $key => $value )
+    //     {
+    //         LegalDebug::debug( [
+    //             'MultisiteMeta' => 'mc_category_pre_edit_form_debug',
 
-				'key' => $key,
+	// 			'key' => $key,
 
-				'value' => $value,
-            ] );
+	// 			'value' => $value,
+    //         ] );
 
-			// delete_post_meta( $post->ID, $key );
-		}
-	}
+	// 		// delete_post_meta( $post->ID, $key );
+	// 	}
+	// }
 
-	function mc_edit_form_after_title_debug( $post )
-	{
-		$post_meta = get_post_custom( $post->ID );
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	$post_meta = get_post_custom( $post->ID );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'register_functions_admin',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteMeta' => 'register_functions_admin',
 
-		// 	'post_meta' => $post_meta,
-		// ] );
+	// 	// 	'post_meta' => $post_meta,
+	// 	// ] );
 
-		foreach ( $post_meta as $key => $value )
-        {
-            LegalDebug::debug( [
-                'MultisiteMeta' => 'register_functions_admin',
+	// 	foreach ( $post_meta as $key => $value )
+    //     {
+    //         LegalDebug::debug( [
+    //             'MultisiteMeta' => 'register_functions_admin',
 
-				'key' => $key,
+	// 			'key' => $key,
 
-				'value' => $value,
-            ] );
+	// 			'value' => $value,
+    //         ] );
 
-			// delete_post_meta( $post->ID, $key );
-		}
-	}
+	// 		// delete_post_meta( $post->ID, $key );
+	// 	}
+	// }
 
 	public static function get_post_moved_id( $origin_post_id )
 	{
