@@ -667,7 +667,7 @@ class MultisiteTermSync
             //     ],
 			// ],
 
-			'suppress_filter' => 1,
+			// 'suppress_filter' => 1,
         ];
 	}
 
