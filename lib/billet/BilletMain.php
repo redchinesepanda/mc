@@ -45,6 +45,8 @@ class BilletMain
 
         'hide-tnc' => 'Hide T&C',
 
+        'hide' => 'Hide',
+
         'how-do-we-evaluate' => 'How do we evaluate bookmakers?',
 
 		'last-updated' => 'Last updated',
@@ -56,6 +58,8 @@ class BilletMain
 		'no-license' => 'No license in UK',
 
 		'read-more-about' => 'Read more about',
+
+		'read-more' => 'Read more',
 
 		'review' => 'Review',
         

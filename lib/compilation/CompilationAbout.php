@@ -177,6 +177,14 @@ class CompilationAbout
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
+			'cut-control' => [
+				'label' => ToolLoco::translate( BilletMain::TEXT[ 'read-more' ] ),
+
+				'default' => ToolLoco::translate( BilletMain::TEXT[ 'read-more' ] ),
+
+				'active' => ToolLoco::translate( BilletMain::TEXT[ 'hide' ] ),
+			],
+
 			'image' => [
 				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp',
 
