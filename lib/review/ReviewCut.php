@@ -136,18 +136,18 @@ class ReviewCut
 		foreach ( $nodes as $node )
 		{
 
-			$class = $node->getAttribute( 'class' );
+			// $class = $node->getAttribute( 'class' );
 
-			LegalDebug::debug( [
-				'ReviewCut' => 'set_cut',
+			// LegalDebug::debug( [
+			// 	'ReviewCut' => 'set_cut',
 
-				'class' => $class,
-			] );
+			// 	'class' => $class,
+			// ] );
 
-			if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] ) )
-			{
-				$class = '';
-			}
+			// if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] ) )
+			// {
+			// 	$class = '';
+			// }
 
 			$control = self::get_control( $dom );
 
@@ -167,19 +167,19 @@ class ReviewCut
 			return $content;
 		}
 
-		$dom = LegalDOM::get_dom( $content );
+		// $dom = LegalDOM::get_dom( $content );
 		
-		// $dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) ); 
+		$dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) ); 
 
 		self::set_cut( $dom );
 
-		$content = $dom->saveHTML( $dom );
+		// $content = $dom->saveHTML( $dom );
 
-		$content = CompilationAbout::remove_compilation_about_content( $content );
+		// $content = CompilationAbout::remove_compilation_about_content( $content );
 
-		// return $dom->saveHTML( $dom );
+		return $dom->saveHTML( $dom );
 		
-		return $content;
+		// return $content;
 	}
 
 	public static function register_functions()
