@@ -2,7 +2,7 @@
 
 class MultisitePostSync
 {
-	const FIELDS = [
+	const FIELDS_SIMPLE = [
 		'tabs-link-url' => [
 			'name' => 'tabs-link-url',
 
@@ -21,6 +21,14 @@ class MultisitePostSync
 			'key' => 'field_642bf5aae2f50',
 		],
 
+		'bonus-afillate' => [
+			'name' => 'bonus-afillate',
+
+			'key' => 'field_654cae6ee9bc0',
+		],
+	];
+
+	const FIELDS_GROUPS = [
 		'review-about' => [
 			'name' => 'review-about',
 
@@ -133,13 +141,17 @@ class MultisitePostSync
 	{
 		// return array_column( self::FIELDS, 'name' );
 
-		$group_field_names = MultisiteAttachmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
+		// $group_field_names = MultisiteAttachmentSync::get_group_field_names( self::FIELDS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
 
-		$simple_field_names = [
-			self::FIELDS[ 'tabs-link-url' ][ 'name' ],
+		// $simple_field_names = [
+		// 	self::FIELDS[ 'tabs-link-url' ][ 'name' ],
 
-			self::FIELDS[ 'bonus-afillate' ][ 'name' ],
-		];
+		// 	self::FIELDS[ 'bonus-afillate' ][ 'name' ],
+		// ];
+		
+		$group_field_names = MultisiteAttachmentSync::get_group_field_names( self::FIELDS_GROUPS[ 'review-about' ], self::FIELD_REVIEW_ABOUT );
+
+		$simple_field_names = array_column( self::FIELDS_SIMPLE, 'name' );
 
 		return array_merge( $group_field_names, $simple_field_names );
 	}
