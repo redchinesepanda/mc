@@ -371,13 +371,13 @@ class MultisiteTermSync
 	
 	public static function get_field_value_sync( $field_name, $field_value )
 	{
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'get_field_value_sync',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'get_field_value_sync',
 
-			'field_name' => $field_name,
+		// 	'field_name' => $field_name,
 
-			'field_value' => $field_value,
-		] );
+		// 	'field_value' => $field_value,
+		// ] );
 
 		if ( is_numeric( $field_value ) )
 		{
@@ -607,11 +607,11 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'set_terms',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'set_terms',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
