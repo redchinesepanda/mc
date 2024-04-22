@@ -107,7 +107,7 @@ class ReviewCut
 		return $nodes;
 	}
 
-	public static function get_control( $dom )
+	public static function get_control( $dom, $class = '' )
 	{
 		$element = $dom->createElement( 'span' );
 
@@ -115,7 +115,7 @@ class ReviewCut
 
 		$element->setAttribute( 'data-content-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
 
-		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
+		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] . ' ' . $class );
 
 		return $element;
 	}
@@ -131,6 +131,13 @@ class ReviewCut
 
 		foreach ( $nodes as $node )
 		{
+			$class = $node->getAttribute( 'class' );
+
+			if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] )
+			{
+				$class = '';
+			}
+
 			$control = self::get_control( $dom );
 
 			$node->parentNode->insertBefore( $control, $node );
