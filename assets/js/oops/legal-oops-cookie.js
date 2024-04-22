@@ -214,13 +214,16 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelector( selectors.ageTextYouShure ).classList.add( classes.active );
 	}
 
-	let wrapperAgeOops = document.querySelector( selectors.ageWrapper )
+	let wrapperAgeOops = document.querySelector( selectors.ageWrapper );
 
-	let ageButtonNo = wrapperAgeOops.querySelector( selectors.ageButtonNo );
-
-	if ( ageButtonNo != null )
+	if ( wrapperAgeOops != null )
 	{
-		ageButtonNo.addEventListener( 'click', pressButtonNo );
+		let ageButtonNo = wrapperAgeOops.querySelector( selectors.ageButtonNo );
+	
+		if ( ageButtonNo != null )
+		{
+			ageButtonNo.addEventListener( 'click', pressButtonNo );
+		}
 	}
 
 	// подпись вы уверены при нажатии кнопки Нет. end
