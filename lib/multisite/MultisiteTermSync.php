@@ -649,19 +649,19 @@ class MultisiteTermSync
             
 			'taxonomy' => [ 'category' ],
 
-            'meta_query' => [
+            // 'meta_query' => [
 
-                'relation' => 'AND',
+            //     'relation' => 'AND',
 
-                'mc-moved-from' => [
+            //     'mc-moved-from' => [
 
-                    'key' => MultisiteMeta::POST_META[ 'moved-from' ],
+            //         'key' => MultisiteMeta::POST_META[ 'moved-from' ],
 
-					'value' => $origin_post_id,
+			// 		'value' => $origin_post_id,
 
-                    'compare' => '=',
-                ],
-			],
+            //         'compare' => '=',
+            //     ],
+			// ],
         ];
 	}
 
@@ -671,7 +671,7 @@ class MultisiteTermSync
 
 		$terms = get_terms( $args );
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'MultisiteMeta' => 'get_post_moved_id',
 
 			'origin_post_id' => $origin_post_id,
