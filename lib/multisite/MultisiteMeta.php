@@ -19,9 +19,9 @@ class MultisiteMeta
 		add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	function mc_category_pre_edit_form_debug( $tag, $taxonomy )
+	function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	{
-		$term_meta = get_term_meta( $taxonomy->term_id );
+		$term_meta = get_term_meta( $term->term_id );
 
 		foreach ( $term_meta as $key => $value )
         {
