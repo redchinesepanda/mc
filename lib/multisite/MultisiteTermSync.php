@@ -675,6 +675,8 @@ class MultisiteTermSync
 
 		$terms = get_terms( $args );
 
+		wp_list_categories();
+
 		LegalDebug::die( [
 			'MultisiteMeta' => 'get_post_moved_id',
 
