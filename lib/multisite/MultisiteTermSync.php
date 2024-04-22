@@ -644,14 +644,14 @@ class MultisiteTermSync
 
 	public static function get_term_moved_id_args( $origin_post_id )
 	{
+		return 'category';
+
 		return [
             // 'taxonomy' => MultisiteTerms::get_taxonomies(),
             
 			// 'taxonomy' => [ 'category' ],
 
 			// 'taxonomy' => 'category',
-
-			'category',
 
             // 'meta_query' => [
 
