@@ -21,7 +21,7 @@ class MultisiteMeta
 
 	function mc_category_pre_edit_form_debug( $tag, $taxonomy )
 	{
-		$term_meta = get_term_meta( $post->ID );
+		$term_meta = get_term_meta( $taxonomy->term_id );
 
 		foreach ( $term_meta as $key => $value )
         {
