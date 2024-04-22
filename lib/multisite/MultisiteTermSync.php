@@ -666,12 +666,6 @@ class MultisiteTermSync
             //         'compare' => '=',
             //     ],
 			// ],
-
-			// 'suppress_filter' => 1,
-
-			'pad_counts'   => false,
-
-    		'hierarchical' => 1,
         ];
 	}
 
