@@ -139,6 +139,10 @@ class CompilationAbout
 
 	public static function get()
 	{
+		LegalDebug::debug( [
+			'CompilationAbout' => 'get',
+		] );
+
 		$post = get_post();
 
 		if ( empty( $post ) )
