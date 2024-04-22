@@ -256,9 +256,11 @@ class MultisiteTermSync
 			$simple_fields = self::get_field_names();
 		}
 
-		// foreach ( self::FIELDS as $field )
-		
-		// foreach ( $simple_fields as $field )
+		LegalDebug::die( [
+			'MultisiteTermSync' => 'get_fields',
+
+			'simple_fields' => $simple_fields,
+		] );
 		
 		foreach ( $simple_fields as $field_name )
 		{
