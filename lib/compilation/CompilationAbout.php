@@ -62,7 +62,7 @@ class CompilationAbout
 			
 			// '//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]'
 			
-			'//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]|//span[contains(@class, \'' . ReviewCut::CLASSES[ 'cut-control' ] . '\')]'
+			'//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]|//*[contains(@class, \'' . ReviewCut::CLASSES[ 'cut-control' ] . '\')]'
 
 			// '//p[contains(concat(" ",normalize-space(@class)," ")," section-content-text ")]|//span[contains(concat(" ",normalize-space(@class)," ")," legal-cut-control ")]'
 		);
