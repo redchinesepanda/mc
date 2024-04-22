@@ -266,7 +266,7 @@ class MultisiteTermSync
 		{
 			// $field_name = $field[ 'name' ];
 
-			$field_value = MultisiteACF::get_field_raw( $field_name, $post_id )
+			$field_value = MultisiteACF::get_field_raw( $field_name, $post_id );
 
 			LegalDebug::debug( [
 				'MultisiteTermSync' => 'get_fields',
