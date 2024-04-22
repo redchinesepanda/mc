@@ -647,11 +647,11 @@ class MultisiteTermSync
 		// return 'category';
 
 		return [
-            // 'taxonomy' => MultisiteTerms::get_taxonomies(),
+            'taxonomy' => MultisiteTerms::get_taxonomies(),
             
 			// 'taxonomy' => [ 'category' ],
 
-			'taxonomy' => 'category',
+			// 'taxonomy' => 'category',
 
             // 'meta_query' => [
 
