@@ -647,25 +647,23 @@ class MultisiteTermSync
 		// return 'category';
 
 		return [
-            // 'taxonomy' => MultisiteTerms::get_taxonomies(),
-            
-			// 'taxonomy' => [ 'category' ],
+            'taxonomy' => MultisiteTerms::get_taxonomies(),
 
-			'taxonomy' => 'category',
+            'meta_query' => [
 
-            // 'meta_query' => [
+                'relation' => 'AND',
 
-            //     'relation' => 'AND',
+                'mc-moved-from' => [
 
-            //     'mc-moved-from' => [
+                    'key' => MultisiteMeta::POST_META[ 'moved-from' ],
 
-            //         'key' => MultisiteMeta::POST_META[ 'moved-from' ],
+					'value' => $origin_post_id,
 
-			// 		'value' => $origin_post_id,
+                    'compare' => '=',
+                ],
+			],
 
-            //         'compare' => '=',
-            //     ],
-			// ],
+			'hide_empty' => false,
         ];
 	}
 
