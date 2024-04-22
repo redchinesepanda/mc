@@ -256,7 +256,7 @@ class MultisiteTermSync
 			$simple_fields = self::get_field_names();
 		}
 
-		LegalDebug::die( [
+		LegalDebug::debug( [
 			'MultisiteTermSync' => 'get_fields',
 
 			'simple_fields' => $simple_fields,
@@ -268,7 +268,7 @@ class MultisiteTermSync
 
 			$field_value = MultisiteACF::get_field_raw( $field_name, $post_id )
 
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'MultisiteTermSync' => 'get_fields',
 	
 				'field_value' => $field_value,
@@ -279,6 +279,12 @@ class MultisiteTermSync
 				$fields[ $field_name ] = $field_value;
 			}
 		}
+
+		LegalDebug::die( [
+			'MultisiteTermSync' => 'get_fields',
+
+			'fields' => $fields,
+		] );
 
 		return $fields;
 	}
