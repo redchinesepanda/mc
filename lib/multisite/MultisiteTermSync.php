@@ -251,28 +251,24 @@ class MultisiteTermSync
 
 		if ( empty( $simple_fields ) )
 		{
-			// $simple_fields = self::FIELDS;
-			
 			$simple_fields = self::get_field_names();
 		}
 
-		LegalDebug::debug( [
-			'MultisiteTermSync' => 'get_fields',
+		// LegalDebug::debug( [
+		// 	'MultisiteTermSync' => 'get_fields',
 
-			'simple_fields' => $simple_fields,
-		] );
+		// 	'simple_fields' => $simple_fields,
+		// ] );
 		
 		foreach ( $simple_fields as $field_name )
 		{
-			// $field_name = $field[ 'name' ];
+			// $field_value = MultisiteACF::get_field_raw( $field_name, $post_id );
 
-			$field_value = MultisiteACF::get_field_raw( $field_name, $post_id );
-
-			LegalDebug::debug( [
-				'MultisiteTermSync' => 'get_fields',
+			// LegalDebug::debug( [
+			// 	'MultisiteTermSync' => 'get_fields',
 	
-				'field_value' => $field_value,
-			] );
+			// 	'field_value' => $field_value,
+			// ] );
 
 			if ( $field_value = MultisiteACF::get_field_raw( $field_name, $post_id ) )
 			{
@@ -280,11 +276,11 @@ class MultisiteTermSync
 			}
 		}
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'get_fields',
+		// LegalDebug::die( [
+		// 	'MultisiteTermSync' => 'get_fields',
 
-			'fields' => $fields,
-		] );
+		// 	'fields' => $fields,
+		// ] );
 
 		return $fields;
 	}
@@ -375,13 +371,13 @@ class MultisiteTermSync
 	
 	public static function get_field_value_sync( $field_name, $field_value )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteTermSync' => 'get_field_value_sync',
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'get_field_value_sync',
 
-		// 	'field_name' => $field_name,
+			'field_name' => $field_name,
 
-		// 	'field_value' => $field_value,
-		// ] );
+			'field_value' => $field_value,
+		] );
 
 		if ( is_numeric( $field_value ) )
 		{
@@ -611,11 +607,11 @@ class MultisiteTermSync
 
 		$fields = self::get_fields( $post_id );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteTermSync' => 'set_terms',
+		LegalDebug::debug( [
+			'MultisiteTermSync' => 'set_terms',
 
-		// 	'fields' => $fields,
-		// ] );
+			'fields' => $fields,
+		] );
 
 		foreach ( $fields as $field_name => $field_value )
 		{
@@ -640,6 +636,10 @@ class MultisiteTermSync
 				// ] );
 			}
 		}
+
+		LegalDebug::die( [
+			'MultisiteTermSync' => 'get_fields',
+		] );
     }
 
 	public static function get_term_moved_id_args( $origin_post_id )
