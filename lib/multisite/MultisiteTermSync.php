@@ -637,9 +637,9 @@ class MultisiteTermSync
 			}
 		}
 
-		LegalDebug::die( [
-			'MultisiteTermSync' => 'get_fields',
-		] );
+		// LegalDebug::die( [
+		// 	'MultisiteTermSync' => 'get_fields',
+		// ] );
     }
 
 	public static function get_term_moved_id_args( $origin_post_id )
