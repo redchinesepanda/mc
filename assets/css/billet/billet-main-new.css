@@ -45,7 +45,8 @@
         margin-top: 32px;
     }
 
-    .billet-item .billet-footer:not( :empty ) {
+    /* .billet-item .billet-footer:not( :empty ) */
+    .billet-item .billet-footer {
         padding-right: 16px;
         padding-left: 16px;
     }
@@ -197,7 +198,8 @@
         margin-top: auto;
     }
 
-    .billet-item .billet-footer:not( :empty ) {
+    /* .billet-item .billet-footer:not( :empty ) */
+    .billet-item .billet-footer {
         padding-right: 24px;
         padding-left: 24px;
     }
@@ -575,15 +577,16 @@ body {
     margin-top: -24px;
 }
 
-.billet-item .billet-footer:not( :empty ) {
+/* .billet-item .billet-footer:not( :empty ) */
+.billet-item .billet-footer {
     padding-top: 32px;
     padding-bottom: 8px;
 }
 
-.billet-item .billet-footer:empty {
+/* .billet-item .billet-footer:empty {
     padding-top: 23px;
     padding-bottom: 0px;
-}
+} */
 
 .billet-title h3 {
     margin: 0px;
@@ -878,6 +881,10 @@ body {
     color: var( --Base-base-05 );
     font-style: normal;
     font-weight: 400;
+}
+
+.billet-item .billet-footer::after {
+    content: attr( data-footer-text );
 }
 
 .billet .billet-license .billet-license-label {
