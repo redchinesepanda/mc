@@ -649,7 +649,9 @@ class MultisiteTermSync
             
 			// 'taxonomy' => [ 'category' ],
 
-			'taxonomy' => 'category',
+			// 'taxonomy' => 'category',
+
+			'category',
 
             // 'meta_query' => [
 
