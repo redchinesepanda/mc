@@ -37,6 +37,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function prepareControl( element )
 	{
 		console.log( element );
+		
 		// element.dataset.cutSetId = setID;
 
 		element.dataset.cutSetId = document.setId;

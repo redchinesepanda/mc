@@ -75,7 +75,7 @@ class ReviewCut
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
-			add_filter( 'the_content', [ $handler, 'modify_content' ] );
+			add_filter( 'the_content', [ $handler, 'modify_content' ], 9, 1 );
 		}
     }
 
