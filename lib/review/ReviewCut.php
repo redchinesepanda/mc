@@ -109,7 +109,9 @@ class ReviewCut
 
 	public static function get_control( $dom, $class = '' )
 	{
-		$element = $dom->createElement( 'span' );
+		// $element = $dom->createElement( 'span' );
+		
+		$element = $dom->createElement( 'p' );
 
 		$element->setAttribute( 'data-content-default', __( ReviewMain::TEXT[ 'open' ], ToolLoco::TEXTDOMAIN ) );
 
