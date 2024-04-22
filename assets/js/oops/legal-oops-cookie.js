@@ -216,12 +216,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	let wrapperAgeOops = document.querySelector( selectors.ageWrapper )
 
-	wrapperAgeOops.querySelector( selectors.ageButtonNo ).addEventListener( 'click', pressButtonNo );
+	let ageButtonNo = wrapperAgeOops.querySelector( selectors.ageButtonNo );
+
+	if ( ageButtonNo != null )
+	{
+		ageButtonNo.addEventListener( 'click', pressButtonNo );
+	}
 
 	// подпись вы уверены при нажатии кнопки Нет. end
-
-
-
 } );
 
 // oops-cookie end
