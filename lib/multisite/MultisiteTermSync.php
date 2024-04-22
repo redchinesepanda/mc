@@ -649,9 +649,9 @@ class MultisiteTermSync
 		return [
             // 'taxonomy' => MultisiteTerms::get_taxonomies(),
             
-			'taxonomy' => [ 'category' ],
+			// 'taxonomy' => [ 'category' ],
 
-			// 'taxonomy' => 'category',
+			'taxonomy' => 'category',
 
             // 'meta_query' => [
 
