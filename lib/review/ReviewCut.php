@@ -163,13 +163,19 @@ class ReviewCut
 			return $content;
 		}
 
-		// $dom = LegalDOM::get_dom( $content );
+		$dom = LegalDOM::get_dom( $content );
 		
-		$dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) ); 
+		// $dom = LegalDOM::get_dom( CompilationAbout::remove_compilation_about_content( $content ) ); 
 
 		self::set_cut( $dom );
 
-		return $dom->saveHTML( $dom );
+		$content = $dom->saveHTML( $dom );
+
+		$content = CompilationAbout::remove_compilation_about_content( $content );
+
+		// return $dom->saveHTML( $dom );
+		
+		return $content;
 	}
 
 	public static function register_functions()

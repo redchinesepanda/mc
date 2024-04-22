@@ -34,7 +34,7 @@ class CompilationAbout
 	{
 		$handler = new self();
 
-        // add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ], 11, 1 );
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ], 10, 1 );
 	}
 
 	public static function get_nodes( $dom, $query )
