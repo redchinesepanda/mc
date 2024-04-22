@@ -83,6 +83,8 @@ class CompilationAbout
 	public static function parse_node( $dom, $node )
 	{
 		return [
+			'class' => $node->getAttribute( 'class' ),
+
 			'html' => $dom->saveHTML( $node ),
 		];
 	}
@@ -97,14 +99,14 @@ class CompilationAbout
 		// 	'nodes' => count( $nodes ),
 		// ] );
 
-		$has_cut = false;
+		// $has_cut = false;
 
 		foreach ( $nodes as $node )
 		{
-			if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
-			{
-				$has_cut = true;
-			}
+			// if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
+			// {
+			// 	$has_cut = true;
+			// }
 
 			// LegalDebug::debug( [
 			// 	'CompilationAbout' => 'parse_content',
@@ -119,12 +121,12 @@ class CompilationAbout
 			$items[] = self::parse_node( $dom, $node );
 		}
 
-		if ( $has_cut )
-		{
-			$control = ReviewCut::get_control( $dom );
+		// if ( $has_cut )
+		// {
+		// 	$control = ReviewCut::get_control( $dom );
 
-			$items[] = self::parse_node( $dom, $control );
-		}
+		// 	$items[] = self::parse_node( $dom, $control );
+		// }
 
 		return $items;
 	} 
