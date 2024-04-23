@@ -219,15 +219,15 @@ class MultisitePost
 
 		$post = self::prepare_post( $post, $blog_id, $post_moved_id );
 
-		LegalDebug::die( [
-			'MultisitePost' => 'add_post',
+		// LegalDebug::debug( [
+		// 	'MultisitePost' => 'add_post',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
+		// 	'ID' => !empty( $post[ 'ID' ] ) ? $post[ 'ID' ] : 'unset',
 
-			'post' => $post,
-		] );
+		// 	'post' => $post,
+		// ] );
 
 		$inserted_post_id = wp_insert_post( $post );
 
