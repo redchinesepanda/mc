@@ -104,45 +104,6 @@ class MultisitePostSync
 		}
 	}
 
-	// public static function billet_set_brand( $post_id, $post )
-    // {
-    //     // if ( self::POST_TYPE[ 'billet' ] == $post->post_type )
-    //     // {
-    //         $args = 0;
-
-    //         $about = get_field( self::GROUP[ 'about' ], $post_id );
-
-    //         if ( $about )
-    //         {
-    //             if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
-    //             {
-    //                 $brands = self::get_brand( $title );
-
-    //                 // LegalDebug::die( [
-    //                 //     'ACFBillet' => 'billet_set_brand',
-
-    //                 //     'brands' => $brands,
-    //                 // ] );
-
-    //                 $args = array_shift( $brands );
-    //             }
-    //         }
-
-    //         // LegalDebug::die( [
-    //         //     'ACFBillet' => 'billet_set_brand',
-
-    //         //     'args' => $args,
-    //         // ] );
-
-    //         if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
-    //         {
-    //             // update_field( self::GROUP[ 'brand' ], $args, $post_id );
-
-	// 			MultisiteACF::update_field( $field_name, $post_moved_id, $post_id );
-    //         }
-    //     // }
-    // }
-
 	public static function get_field_names()
 	{
 		// return array_column( self::FIELDS, 'name' );
@@ -231,10 +192,44 @@ class MultisitePostSync
 			}
 		}
 
+		if ( $post_parent_id = self::get_parent( $post_id ) )
+		{
+			if ( $post_parent_id_sync = MultisiteTermSync::get_field_value_sync( 'post_parent', $post_parent_id ) )
+			{
+				self::set_parent( $post_id, $post_parent_id_sync );
+			}
+		}
+
 		// LegalDebug::die( [
 		// 	'MultisitePostSync' => 'set_posts',
 		// ] );
     }
+
+	public static function get_parent( $post_id )
+	{
+		$post_parent = get_post_parent( $post_id );
+
+		if ( !empty( $post_parent ) )
+		{
+			return $post_parent->ID;
+		}
+
+		return false;
+	}
+
+	public static function set_parent( $post_id, $post_parent_id )
+	{
+		if ( !empty( $post_parent_id ) )
+		{
+			$post = [
+				'ID' => $post_id,
+	
+				'post_parent' => $post_parent_id,
+			];
+	
+			MultisitePost::update_post( $post );
+		}
+	}
 
 	public static function mc_bulk_action_sync_posts( $redirect, $doaction, $object_ids )
 	{
