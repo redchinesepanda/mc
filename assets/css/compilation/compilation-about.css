@@ -140,15 +140,27 @@
 }
 
 /* Typography */
+
+.compilation-about h1,
+.compilation-about .section-content-text,
+.compilation-about .legal-cut-control,
+.compilation-about .section-content-text a {
+    font-family: var(--legal-font-primary);
+    font-style: normal;
+}
+
 .compilation-about h1,
 .compilation-about .section-content-text,
 .compilation-about .legal-cut-control {
     color: var(--Base-base-09);
-    font-family: var(--legal-font-primary);
 }
 
 .compilation-about h1 {
     font-weight: 700;
+}
+
+.compilation-about .section-content-text a {
+    color: var( --Base-link-hover );
 }
 
 .compilation-about .legal-cut-control {
