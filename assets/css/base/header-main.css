@@ -307,7 +307,8 @@
 	min-height: 28px;
 }
 
-.legal-menu .menu-item-has-children::after {
+.legal-menu .menu-item-has-children::after,
+.legal-menu .legal-country:hover::after {
 	width: 14px;
 	/* width: 28px; */
 	/* min-height: 48px; */
