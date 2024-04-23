@@ -150,7 +150,7 @@
 }
 
 .compilation-about h1,
-.compilation-about .section-content-text:not( .compilation-about a ):not( .compilation-about u ),
+.compilation-about .section-content-text:not( .compilation-about a ):not( .compilation-about a > b u ),
 .compilation-about .legal-cut-control {
     color: var(--Base-base-09);
 }
