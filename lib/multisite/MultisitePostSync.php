@@ -213,17 +213,26 @@ class MultisitePostSync
 
 	public static function get_parent( $post_id )
 	{
-		$post_parent = get_post_parent( $post_id );
+		// $post_parent = get_post_parent( $post_id );
 
-		LegalDebug::debug( [
-			'MultisitePostSync' => 'set_posts',
+		$post = get_post( $post_id );
 
-			'post_parent' => $post_parent,
-		] );
-
-		if ( !empty( $post_parent ) )
+		if ( $post )
 		{
-			return $post_parent->ID;
+			$post_parent = $post->post_parent;
+
+			LegalDebug::debug( [
+				'MultisitePostSync' => 'set_posts',
+	
+				'post_id' => $post_id,
+	
+				'post_parent' => $post_parent,
+			] );
+
+			if ( !empty( $post_parent ) )
+			{
+				return $post_parent->ID;
+			}
 		}
 
 		return false;
