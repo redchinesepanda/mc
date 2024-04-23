@@ -231,7 +231,9 @@ class MultisitePostSync
 
 			if ( !empty( $post_parent ) )
 			{
-				return $post_parent->ID;
+				// return $post_parent->ID;
+
+				return $post_parent;
 			}
 		}
 
