@@ -202,6 +202,12 @@ class MultisitePostSync
 
 			if ( $post_parent_id_sync = MultisiteTermSync::get_field_value_sync( 'post_parent', $post_parent_id ) )
 			{
+				LegalDebug::debug( [
+					'MultisitePostSync' => 'set_posts',
+		
+					'post_parent_id_sync' => $post_parent_id_sync,
+				] );
+
 				self::set_parent( $post_id, $post_parent_id_sync );
 			}
 		}
