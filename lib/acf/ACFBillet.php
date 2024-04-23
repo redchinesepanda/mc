@@ -10,6 +10,52 @@ class ACFBillet
         'pair' => 'profit-item-pair',
     ];
 
+    const GROUP = [
+        'about' => 'review-about',
+
+        'brand' => 'billet-brand',
+    ];
+
+	const FIELD = [
+        'icon' => 'billet-list-part-icon',
+
+        'direction' => 'billet-list-part-direction',
+
+        'profit' => 'billet-profit-items',
+
+        'font' => 'billet-font',
+
+        'title-text' => 'billet-title-text',
+
+        'title-rating' => 'billet-title-rating',
+
+        'logo' => 'billet-logo-url',
+
+        'font' => 'billet-font',
+
+        'referal' => 'billet-referal',
+
+        'card' => 'billet-card',
+
+        'bonus-id' => 'billet-bonus',
+
+        'bonus-title' => 'billet-bonus-title',
+
+        'bonus-description' => 'billet-bonus-description',
+
+        'color' => 'billet-color',
+
+        'description' => 'billet-description',
+    ];
+
+    const POST_TYPE = [
+        'billet' => 'legal_billet',
+
+        'brand' => 'legal_brand',
+
+        'page' => 'page',
+    ];
+
     public static function register()
     {
         $handler = new self();
@@ -28,7 +74,9 @@ class ACFBillet
         
         // add_filter( 'save_post', [ $handler, 'billet_set_brand' ], 10, 2 );
         
-        // add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'billet_set_brand' ], 10, 2 );
+        add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'billet_set_brand' ], 10, 2 );
+        
+        add_filter( 'save_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'billet_set_brand' ], 10, 2 );
     }
 
     public static function brand_args( $title )
@@ -50,12 +98,6 @@ class ACFBillet
     {
         return get_posts( self::brand_args( $title ) );
     }
-
-    const GROUP = [
-        'about' => 'review-about',
-
-        'brand' => 'billet-brand',
-    ];
 
     public static function billet_set_brand( $post_id, $post )
     {
@@ -93,46 +135,6 @@ class ACFBillet
             }
         // }
     }
-
-	const FIELD = [
-        'icon' => 'billet-list-part-icon',
-
-        'direction' => 'billet-list-part-direction',
-
-        'profit' => 'billet-profit-items',
-
-        'font' => 'billet-font',
-
-        'title-text' => 'billet-title-text',
-
-        'title-rating' => 'billet-title-rating',
-
-        'logo' => 'billet-logo-url',
-
-        'font' => 'billet-font',
-
-        'referal' => 'billet-referal',
-
-        'card' => 'billet-card',
-
-        'bonus-id' => 'billet-bonus',
-
-        'bonus-title' => 'billet-bonus-title',
-
-        'bonus-description' => 'billet-bonus-description',
-
-        'color' => 'billet-color',
-
-        'description' => 'billet-description',
-    ];
-
-    // public static function billet_to_review( $post_id )
-
-    const POST_TYPE = [
-        'billet' => 'legal_billet',
-
-        'brand' => 'legal_brand',
-    ];
     
     public static function billet_to_review( $post_id, $post )
     {
