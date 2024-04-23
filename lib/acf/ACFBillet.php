@@ -101,41 +101,52 @@ class ACFBillet
 
     public static function set_brand( $post_id, $post )
     {
-        $args = 0;
-
         $about = get_field( self::GROUP[ 'about' ], $post_id );
 
-        LegalDebug::die( [
-            'ACFBillet' => 'set_brand',
+        // LegalDebug::debug( [
+        //     'ACFBillet' => 'set_brand',
 
-            'about' => $about,
-        ] );
+        //     'about' => $about,
+        // ] );
 
         if ( $about )
         {
-            if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
-            {
-                $brands = self::get_brand( $title );
+            $brand_id = get_field( self::GROUP[ 'brand' ], $post_id );
 
+            if ( empty( $brand_id ) )
+            {
+                // $brand_id_found = 0;
+            
+                if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
+                {
+                    $brands = self::get_brand( $title );
+    
+                    LegalDebug::debug( [
+                        'ACFBillet' => 'set_brand',
+    
+                        'brands' => $brands,
+                    ] );
+    
+                    $brand_id = array_shift( $brands );
+                }
+    
                 // LegalDebug::die( [
                 //     'ACFBillet' => 'set_brand',
-
-                //     'brands' => $brands,
+        
+                //     'brand_id_found' => $brand_id_found,
                 // ] );
-
-                $args = array_shift( $brands );
+        
+                if ( !empty( $brand_id ) )
+                {
+                    update_field( self::GROUP[ 'brand' ], $brand_id, $post_id );
+                }
             }
-        }
 
-        // LegalDebug::die( [
-        //     'ACFBillet' => 'set_brand',
-
-        //     'args' => $args,
-        // ] );
-
-        if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
-        {
-            update_field( self::GROUP[ 'brand' ], $args, $post_id );
+            LegalDebug::die( [
+                'ACFBillet' => 'set_brand',
+    
+                'brand_id' => $brand_id,
+            ] );
         }
     }
     
