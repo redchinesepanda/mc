@@ -74,9 +74,9 @@ class ACFBillet
         
         // add_filter( 'save_post', [ $handler, 'billet_set_brand' ], 10, 2 );
         
-        add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'billet_set_brand' ], 10, 2 );
+        add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand' ], 10, 2 );
         
-        add_filter( 'save_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'billet_set_brand' ], 10, 2 );
+        add_filter( 'save_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
     }
 
     public static function brand_args( $title )
@@ -99,41 +99,44 @@ class ACFBillet
         return get_posts( self::brand_args( $title ) );
     }
 
-    public static function billet_set_brand( $post_id, $post )
+    public static function set_brand( $post_id, $post )
     {
-        // if ( self::POST_TYPE[ 'billet' ] == $post->post_type )
-        // {
-            $args = 0;
+        $args = 0;
 
-            $about = get_field( self::GROUP[ 'about' ], $post_id );
+        $about = get_field( self::GROUP[ 'about' ], $post_id );
 
-            if ( $about )
+        LegalDebug::die( [
+            'ACFBillet' => 'set_brand',
+
+            'about' => $about,
+        ] );
+
+        if ( $about )
+        {
+            if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
             {
-                if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
-                {
-                    $brands = self::get_brand( $title );
+                $brands = self::get_brand( $title );
 
-                    // LegalDebug::die( [
-                    //     'ACFBillet' => 'billet_set_brand',
+                // LegalDebug::die( [
+                //     'ACFBillet' => 'set_brand',
 
-                    //     'brands' => $brands,
-                    // ] );
+                //     'brands' => $brands,
+                // ] );
 
-                    $args = array_shift( $brands );
-                }
+                $args = array_shift( $brands );
             }
+        }
 
-            // LegalDebug::die( [
-            //     'ACFBillet' => 'billet_set_brand',
+        // LegalDebug::die( [
+        //     'ACFBillet' => 'set_brand',
 
-            //     'args' => $args,
-            // ] );
+        //     'args' => $args,
+        // ] );
 
-            if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
-            {
-                update_field( self::GROUP[ 'brand' ], $args, $post_id );
-            }
-        // }
+        if ( !empty( $args ) && empty( get_field( self::GROUP[ 'brand' ], $post_id ) ) )
+        {
+            update_field( self::GROUP[ 'brand' ], $args, $post_id );
+        }
     }
     
     public static function billet_to_review( $post_id, $post )
