@@ -1,3 +1,12 @@
+<?php
+
+LegalDebug::debug( [
+    'template' => 'review-anchors.php',
+
+    'args' => $args,
+] );
+
+?>
 <?php if( !empty( $args[ 'items' ] ) ) : ?>
     <nav class="anchors">
         <div class="review-anchors">
