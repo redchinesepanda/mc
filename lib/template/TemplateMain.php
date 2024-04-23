@@ -13,23 +13,37 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
    const CURRENT_LANGUAGE_PRODUCTION = [
-        'pt',
-
-        'ng',
+        'cz',
 
         'es',
-    ];
-
-    const CURRENT_LANGUAGE_DEBUG = [
-        'pt', 
 
         'kz',
 
-        'ru',
+        'ng',
+
+        'pl',
+
+        'pt',
+
+        'ro',
+    ];
+
+    const CURRENT_LANGUAGE_DEBUG = [
+        'cz',
 
         'es',
 
+        'kz',
+
         'ng',
+
+        'pl',
+        
+        'pt',
+
+        'ro',
+
+        'ru',
     ];
 
     public static function check_code()
