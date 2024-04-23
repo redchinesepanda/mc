@@ -140,7 +140,8 @@
 		right: 249px;
 	}
 
-	.legal-menu .menu-item-has-children {
+	.legal-menu .menu-item-has-children,
+	.legal-menu .legal-country {
 		position: relative;
 	}
 
