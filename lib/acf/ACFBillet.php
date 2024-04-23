@@ -121,11 +121,11 @@ class ACFBillet
                 {
                     $brands = self::get_brand( $title );
     
-                    LegalDebug::debug( [
-                        'ACFBillet' => 'set_brand',
+                    // LegalDebug::debug( [
+                    //     'ACFBillet' => 'set_brand',
     
-                        'brands' => $brands,
-                    ] );
+                    //     'brands' => $brands,
+                    // ] );
     
                     $brand_id = array_shift( $brands );
                 }
@@ -142,11 +142,11 @@ class ACFBillet
                 }
             }
 
-            LegalDebug::die( [
-                'ACFBillet' => 'set_brand',
+            // LegalDebug::die( [
+            //     'ACFBillet' => 'set_brand',
     
-                'brand_id' => $brand_id,
-            ] );
+            //     'brand_id' => $brand_id,
+            // ] );
         }
     }
     
