@@ -74,9 +74,9 @@ class ACFBillet
         
         // add_filter( 'save_post', [ $handler, 'billet_set_brand' ], 10, 2 );
         
-        add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand' ], 10, 2 );
+        // add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand' ], 10, 2 );
         
-        add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
+        // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
     }
 
     public static function brand_args( $title )
@@ -94,61 +94,61 @@ class ACFBillet
         ];
     }
 
-    public static function get_brand( $title )
-    {
-        return get_posts( self::brand_args( $title ) );
-    }
+    // public static function get_brand( $title )
+    // {
+    //     return get_posts( self::brand_args( $title ) );
+    // }
 
-    public static function set_brand( $post_id, $post )
-    {
-        $about = get_field( self::GROUP[ 'about' ], $post_id );
+    // public static function set_brand( $post_id, $post )
+    // {
+    //     $about = get_field( self::GROUP[ 'about' ], $post_id );
 
-        // LegalDebug::debug( [
-        //     'ACFBillet' => 'set_brand',
+    //     // LegalDebug::debug( [
+    //     //     'ACFBillet' => 'set_brand',
 
-        //     'about' => $about,
-        // ] );
+    //     //     'about' => $about,
+    //     // ] );
 
-        if ( $about )
-        {
-            $brand_id = get_field( self::GROUP[ 'brand' ], $post_id );
+    //     if ( $about )
+    //     {
+    //         $brand_id = get_field( self::GROUP[ 'brand' ], $post_id );
 
-            if ( empty( $brand_id ) )
-            {
-                // $brand_id_found = 0;
+    //         if ( empty( $brand_id ) )
+    //         {
+    //             // $brand_id_found = 0;
             
-                if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
-                {
-                    $brands = self::get_brand( $title );
+    //             if ( $title = $about[ BilletTitle::ABOUT[ 'title' ] ] )
+    //             {
+    //                 $brands = self::get_brand( $title );
     
-                    // LegalDebug::debug( [
-                    //     'ACFBillet' => 'set_brand',
+    //                 // LegalDebug::debug( [
+    //                 //     'ACFBillet' => 'set_brand',
     
-                    //     'brands' => $brands,
-                    // ] );
+    //                 //     'brands' => $brands,
+    //                 // ] );
     
-                    $brand_id = array_shift( $brands );
-                }
+    //                 $brand_id = array_shift( $brands );
+    //             }
     
-                // LegalDebug::die( [
-                //     'ACFBillet' => 'set_brand',
+    //             // LegalDebug::die( [
+    //             //     'ACFBillet' => 'set_brand',
         
-                //     'brand_id_found' => $brand_id_found,
-                // ] );
+    //             //     'brand_id_found' => $brand_id_found,
+    //             // ] );
         
-                if ( !empty( $brand_id ) )
-                {
-                    update_field( self::GROUP[ 'brand' ], $brand_id, $post_id );
-                }
-            }
+    //             if ( !empty( $brand_id ) )
+    //             {
+    //                 update_field( self::GROUP[ 'brand' ], $brand_id, $post_id );
+    //             }
+    //         }
 
-            // LegalDebug::die( [
-            //     'ACFBillet' => 'set_brand',
+    //         // LegalDebug::die( [
+    //         //     'ACFBillet' => 'set_brand',
     
-            //     'brand_id' => $brand_id,
-            // ] );
-        }
-    }
+    //         //     'brand_id' => $brand_id,
+    //         // ] );
+    //     }
+    // }
     
     public static function billet_to_review( $post_id, $post )
     {

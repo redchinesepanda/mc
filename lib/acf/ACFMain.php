@@ -12,6 +12,8 @@ require_once( 'ACFReview.php' );
 
 require_once( 'ACFBillet.php' );
 
+require_once( 'ACFBrand.php' );
+
 class ACFMain
 {
     public static function check_plugin()
@@ -71,6 +73,8 @@ class ACFMain
         ACFReview::register();
 
         ACFBillet::register();
+
+        ACFBrand::register();
     }
 }
 
