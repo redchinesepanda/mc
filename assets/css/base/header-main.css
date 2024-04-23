@@ -210,13 +210,13 @@
 }
 
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country::after {
+.legal-menu > .legal-country:not( .legal-country-all )::after {
 	display: block;
 	content: '';
 }
 
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country::after {
+.legal-menu > .legal-country:not( .legal-country-all )::after {
 	cursor: pointer;
 }
 
@@ -273,7 +273,7 @@
 }
 
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country::after {
+.legal-menu > .legal-country:not( .legal-country-all )::after {
 	padding: 10px 0px;
 }
 
@@ -308,7 +308,7 @@
 }
 
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country::after {
+.legal-menu > .legal-country:not( .legal-country-all )::after {
 	width: 14px;
 	/* width: 28px; */
 	/* min-height: 48px; */
@@ -336,7 +336,7 @@
 }
 
 .legal-menu .menu-item-has-children:hover::after,
-.legal-menu .legal-country:hover::after {
+.legal-menu > .legal-country:not( .legal-country-all ):hover::after {
 	transform: rotate(180deg);
 }
 .legal-menu .menu-item-has-children::after,
