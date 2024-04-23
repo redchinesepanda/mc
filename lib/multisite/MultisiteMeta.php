@@ -160,42 +160,42 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
 		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	function mc_edit_form_after_title_debug( $post )
-	{
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'register_functions_admin',
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMeta' => 'register_functions_admin',
 
-			'post_parent' => $post->post_parent,
-		] );
+	// 		'post_parent' => $post->post_parent,
+	// 	] );
 
-		// $post_meta = get_post_custom( $post->ID );
+	// 	// $post_meta = get_post_custom( $post->ID );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'register_functions_admin',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteMeta' => 'register_functions_admin',
 
-		// 	'post_meta' => $post_meta,
-		// ] );
+	// 	// 	'post_meta' => $post_meta,
+	// 	// ] );
 
-		// foreach ( $post_meta as $key => $value )
-        // {
-        //     LegalDebug::debug( [
-        //         'MultisiteMeta' => 'register_functions_admin',
+	// 	// foreach ( $post_meta as $key => $value )
+    //     // {
+    //     //     LegalDebug::debug( [
+    //     //         'MultisiteMeta' => 'register_functions_admin',
 
-		// 		'key' => $key,
+	// 	// 		'key' => $key,
 
-		// 		'value' => $value,
-        //     ] );
+	// 	// 		'value' => $value,
+    //     //     ] );
 
-		// 	// delete_post_meta( $post->ID, $key );
-		// }
-	}
+	// 	// 	// delete_post_meta( $post->ID, $key );
+	// 	// }
+	// }
 
 	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	// {
