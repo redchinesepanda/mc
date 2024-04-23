@@ -40,8 +40,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
             [ ...items ].slice( 6 ).forEach( prepareItem );
 
 			// console.log( items.length );
-			
-			element.appendChild( prepareControl() );
+
+			let cutControl = element.querySelector( elements.cutControl.selectors );
+
+			if ( cutControl == null )
+			{
+				element.appendChild( prepareControl() );
+			}
         }
 	}
 
