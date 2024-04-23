@@ -43,9 +43,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			let cutControl = element.querySelector( elements.cutControl.selectors );
 
-			console.log( elements.cutControl.selectors );
+			// console.log( elements.cutControl.selectors );
 
-			console.log( cutControl );
+			// console.log( cutControl );
 
 			if ( cutControl == null )
 			{
