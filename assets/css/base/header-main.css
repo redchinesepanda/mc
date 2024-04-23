@@ -308,7 +308,7 @@
 }
 
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country:hover::after {
+.legal-menu .legal-country::after {
 	width: 14px;
 	/* width: 28px; */
 	/* min-height: 48px; */
@@ -340,7 +340,7 @@
 	transform: rotate(180deg);
 }
 .legal-menu .menu-item-has-children::after,
-.legal-menu .legal-country::after {
+.legal-menu .legal-country::after:not( .legal-country-all ) {
 	background-image: url( '../../img/base/header/item-open.svg' );
 	background-position: center center;
 	background-repeat: no-repeat;
