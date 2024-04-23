@@ -83,31 +83,49 @@ class BilletMini
 	{
         $logo = BrandMain::get_logo_tabs_mini( $id );
 
+        LegalDebug::debug( [
+            'BilletMini' => 'get_logo',
+
+            'logo' => $logo,
+        ] );
+
         if ( empty( $logo ) )
 		{
             $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
+
+            LegalDebug::debug( [
+                'BilletMini' => 'get_logo',
+    
+                'logo' => $logo,
+            ] );
         }
         
         if ( empty( $logo ) )
         {
             $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'logo' ], $id, false );
+
+            LegalDebug::debug( [
+                'BilletMini' => 'get_logo',
+    
+                'logo' => $logo,
+            ] );
         }
 
         if ( !empty( $logo ) )
         {
             $details = wp_get_attachment_image_src( $logo, $size );
 
+            LegalDebug::debug( [
+                'BilletMini' => 'get_logo',
+    
+                'details' => $details,
+            ] );
+
             if ( $details )
             {
                 return $details[ 0 ];
             }
         }
-
-        LegalDebug::debug( [
-            'BilletMini' => 'get_logo',
-
-            'logo' => $logo,
-        ] );
 
         return LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp';
 	}
