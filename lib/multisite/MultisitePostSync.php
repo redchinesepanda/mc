@@ -26,6 +26,12 @@ class MultisitePostSync
 
 			'key' => 'field_654cae6ee9bc0',
 		],
+
+		'billet-brand' => [
+			'name' => 'billet-brand',
+
+			'key' => 'field_65f3e6787cb93',
+		],
 	];
 
 	const FIELDS_GROUPS = [
