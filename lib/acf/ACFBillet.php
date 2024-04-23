@@ -74,9 +74,9 @@ class ACFBillet
         
         // add_filter( 'save_post', [ $handler, 'billet_set_brand' ], 10, 2 );
         
-        add_filter( 'save_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand' ], 10, 2 );
+        add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand' ], 10, 2 );
         
-        add_filter( 'save_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
+        add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
     }
 
     public static function brand_args( $title )
