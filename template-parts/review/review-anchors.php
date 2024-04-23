@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template' => 'review-anchors.php',
+// LegalDebug::debug( [
+//     'template' => 'review-anchors.php',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <?php if( !empty( $args[ 'items' ] ) ) : ?>
