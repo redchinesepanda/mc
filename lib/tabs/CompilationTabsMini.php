@@ -31,8 +31,10 @@ class CompilationTabsMini
 
     public static function register_style( $styles = [] )
     {
-        if ( self::check() ) {
-            if ( empty( $styles ) ) {
+        if ( self::check() )
+        {
+            if ( empty( $styles ) )
+            {
                 if ( TemplateMain::check_new() )
                 {
                     $styles = self::CSS_NEW;
@@ -42,6 +44,7 @@ class CompilationTabsMini
                     $styles = self::CSS;
                 }
             }
+            
             ToolEnqueue::register_style( $styles );
         }
     }
