@@ -81,24 +81,24 @@ class BilletMini
 
     public static function get_logo( $id, $size = self::SIZE[ 'logo-mini' ] )
 	{
-        $logo = BrandMain::get_logo_tabs_mini( $id );
+        if ( $logo = BrandMain::get_logo_tabs_mini( $id ) )
+        {
+            LegalDebug::debug( [
+                'BilletMini' => 'get_logo',
+    
+                'logo' => $logo,
+            ] );
+            
+            return $logo;
+        }
+
+        $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
 
         LegalDebug::debug( [
             'BilletMini' => 'get_logo',
 
             'logo' => $logo,
         ] );
-
-        if ( empty( $logo ) )
-		{
-            $logo = get_field( BilletLogo::FIELD[ 'about' ] . '_' . BilletLogo::ABOUT[ 'mega' ], $id, false );
-
-            LegalDebug::debug( [
-                'BilletMini' => 'get_logo',
-    
-                'logo' => $logo,
-            ] );
-        }
         
         if ( empty( $logo ) )
         {
