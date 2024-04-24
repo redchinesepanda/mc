@@ -5,40 +5,45 @@ let MCAjaxBilletActions = ( function()
     return {
         ajaxGetDescription: function ( data )
 		{
-			const xhttp = new XMLHttpRequest();
+			const xhr = new XMLHttpRequest();
 
 			let id = data.id;
 
 			let billetId = data.billetId;
 
-			xhttp.onload = function()
+			// xhttp.onload = function()
+			
+			xhr.onreadystatechange = function()
 			{
-				try
+				if ( xhr.readyState === xhr.DONE && xhr.status === 200 )
 				{
-					let parsed = JSON.parse( this.responseText );
-
-					let billetFooter = document.querySelector( '#' + id + ' ~ .billet-footer' );
-	
-					if ( billetFooter != null )
+					try
 					{
-						billetFooter.innerHTML = parsed.description;
+						let parsed = JSON.parse( this.responseText );
+
+						let billetFooter = document.querySelector( '#' + id + ' ~ .billet-footer' );
+		
+						if ( billetFooter != null )
+						{
+							billetFooter.innerHTML = parsed.description;
+						}
 					}
-				}
-				catch ( error )
-				{
-					console.error( error );
+					catch ( error )
+					{
+						console.error( error );
+					}
 				}
 			}
 
-			// xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
+			// xhr.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
 
-			// xhttp.send();
+			// xhr.send();
 			
-			xhttp.open( "POST", MCAjax.ajax_url );
+			xhr.open( "POST", MCAjax.ajax_url );
 
-			xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+			xhr.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			
-			xhttp.send( "action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "&_ajax_nonce=" + MCAjaxBillet.nonce );
+			xhr.send( "action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "&_ajax_nonce=" + MCAjaxBillet.nonce );
 		}
     }
 } )();
