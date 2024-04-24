@@ -16,6 +16,8 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
+require_once( 'center/BilletDescriptionAjax.php' );
+
 require_once( 'right/BilletRight.php' );
 
 class BilletMain
@@ -207,6 +209,8 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
         BilletMega::register();
+
+        BilletDescriptionAjax::register();
     }
 
     public static function get_bonus_url( $id, $filter = [] )
