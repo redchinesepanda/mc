@@ -88,7 +88,7 @@ class BilletDescriptionAjax
 
 	public static function mc_ajax_get_description()
 	{
-		check_ajax_referer( self::NONCE );
+		// check_ajax_referer( self::NONCE );
 
 		$code = 0;
 
