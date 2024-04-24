@@ -100,20 +100,32 @@ class BilletDescriptionAjax
 
 		$description = '';
 
-		if ( ! empty( 'post_id', $_POST ) )
-		{
-			// $post_id = $_POST[ 'post_id' ];
+		// if ( ! empty( 'post_id', $_POST ) )
+		// {
+		// 	// $post_id = $_POST[ 'post_id' ];
 
-			LegalDebug::debug( [
-				'BilletDescriptionAjax' => 'mc_ajax_get_description',
+		// 	LegalDebug::debug( [
+		// 		'BilletDescriptionAjax' => 'mc_ajax_get_description',
 
-				'post_id' => $_POST[ 'post_id' ],
-			] );
+		// 		'post_id' => $_POST[ 'post_id' ],
+		// 	] );
 
-			$description = BilletDescription::get( [
-				'id' => $_POST[ 'post_id' ],
-			] );
-		}
+		// 	$description = BilletDescription::get( [
+		// 		'id' => $_POST[ 'post_id' ],
+		// 	] );
+		// }
+
+		echo json_encode( [
+			'code' => $code,
+			
+			'status' => $status,
+			
+			'message' => $message,
+
+			'description' => $description,
+		] );
+		
+		die();
 
 		// array_push($message, '$post_id: ' . $post_id);
 		// $comment = '';
@@ -165,18 +177,6 @@ class BilletDescriptionAjax
 		// if (empty($message)) {
 		// 	array_push($message, 'success');
 		// }
-
-		echo json_encode( [
-			'code' => $code,
-			
-			'status' => $status,
-			
-			'message' => $message,
-
-			'description' => $description,
-		] );
-		
-		die();
 	}
 }
 
