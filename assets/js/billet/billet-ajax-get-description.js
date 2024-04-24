@@ -14,7 +14,7 @@ let MCAjaxBilletActions = ( function()
 
 				console.log( parsed );
 
-				// document.querySelector( '.billet-footer' ).innerHTML = this.responseText;
+				document.querySelector( '.billet-footer' ).innerHTML = parsed.description;
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url, true );
