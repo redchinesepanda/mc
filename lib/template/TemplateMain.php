@@ -15,6 +15,8 @@ class TemplateMain
    const CURRENT_LANGUAGE_PRODUCTION = [
         'cz',
 
+        'dk',
+
         'es',
 
         'kz',
@@ -26,8 +28,6 @@ class TemplateMain
         'pt',
 
         'ro',
-
-        'dk',
 
         'se',
     ];
