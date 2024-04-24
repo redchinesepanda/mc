@@ -108,16 +108,18 @@ class BilletDescriptionAjax
 			
 			$post_id = $_GET[ 'post_id' ];
 
+			$description = BilletDescription::get( [
+				'id' => $post_id,
+			] );
+
 			LegalDebug::debug( [
 				'BilletDescriptionAjax' => 'mc_ajax_get_description',
 
 				// 'post_id' => $_POST[ 'post_id' ],
 				
 				'post_id' => $_GET[ 'post_id' ],
-			] );
 
-			$description = BilletDescription::get( [
-				'id' => $post_id,
+				'description' => $description,
 			] );
 		}
 
