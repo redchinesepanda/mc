@@ -23,7 +23,7 @@ let MCAjaxBilletActions = ( function()
 
 				console.log( id );
 
-				console.log( selectors.billetFooter( id ) );
+				console.log( '#' + id + ' .billet-footer' );
 
 				document.querySelector( '#' + id + ' .billet-footer' ).innerHTML = parsed.description;
 
@@ -78,9 +78,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		showTnCButton: '.billet-footer-control',
 
-		billetFooter: function ( id ) {
-			return '#' + id + ' .billet-footer';
-		}
+		// billetFooter: function ( id ) {
+		// 	return '#' + id + ' .billet-footer';
+		// }
 	};
 
 	document.querySelectorAll( selectors.billet ).forEach( prepareBillet );
