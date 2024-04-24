@@ -114,15 +114,15 @@ class BilletDescriptionAjax
 			
 			$description = BilletMain::get_main_description( $post_id, [] );
 
-			LegalDebug::debug( [
-				'BilletDescriptionAjax' => 'mc_ajax_get_description',
+			// LegalDebug::debug( [
+			// 	'BilletDescriptionAjax' => 'mc_ajax_get_description',
 
-				// 'post_id' => $_POST[ 'post_id' ],
+			// 	// 'post_id' => $_POST[ 'post_id' ],
 				
-				'post_id' => $_GET[ 'post_id' ],
+			// 	'post_id' => $_GET[ 'post_id' ],
 
-				'description' => $description,
-			] );
+			// 	'description' => $description,
+			// ] );
 		}
 
 		echo json_encode( [
