@@ -16,6 +16,8 @@ let MCAjaxBilletActions = ( function()
 
 				let parsed = JSON.parse( this.responseText );
 
+				console.log( 'onload' );
+
 				console.log( parsed );
 
 				console.log( id );
@@ -41,6 +43,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function getDescription( event )
 	{
+		console.log( 'getDescription' );
+
 		MCAjaxBilletActions.ajaxGetDescription( {
 			id : event.currentTarget.dataset.id,
 	
@@ -72,7 +76,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( selectors.billet ).forEach( prepareBillet );
 
-	MCAjaxBilletActions.ajaxGetDescription( {} );
+	// MCAjaxBilletActions.ajaxGetDescription( {} );
 
 	console.log( 'DOMContentLoaded' );
 } );
