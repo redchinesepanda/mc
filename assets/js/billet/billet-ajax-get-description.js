@@ -31,14 +31,14 @@ let MCAjaxBilletActions = ( function()
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
+
+			// xhttp.send();
 			
 			xhttp.open( "POST", MCAjax.ajax_url );
 
 			xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			
 			xhttp.send( "action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "nonce=" + MCAjaxBillet.nonce );
-
-			xhttp.send();
 		}
     }
 } )();
