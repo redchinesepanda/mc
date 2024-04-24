@@ -97,9 +97,16 @@ class BilletDescriptionAjax
 		$message = [];
 		
 		// $post_id = 0;
-		// if (array_key_exists('post_id', $_POST)) {
-		// 	$post_id = $_POST['post_id'];
-		// }
+
+		if ( ! empty( 'post_id', $_POST ) )
+		{
+			// $post_id = $_POST[ 'post_id' ];
+
+			$description = BilletDescription::get( [
+				'id' => $_POST[ 'post_id' ],
+			] );
+		}
+
 		// array_push($message, '$post_id: ' . $post_id);
 		// $comment = '';
 		// if (array_key_exists('comment', $_POST)) {
@@ -156,7 +163,9 @@ class BilletDescriptionAjax
 			
 			'status' => $status,
 			
-			'message' => $message
+			'message' => $message,
+
+			'description' => $description,
 		] );
 		
 		die();
