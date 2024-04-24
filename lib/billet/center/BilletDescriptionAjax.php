@@ -60,9 +60,20 @@ class BilletDescriptionAjax
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
 		add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
+
+		LegalDebug::debug( [
+			'BilletDescriptionAjax' => 'register',
+			
+			'check' => self::check(),
+		] );
 	}
 
-	public function mc_ajax_get_description()
+	public static function check()
+	{
+		return LegalComponents::check_contains( '[legal-tabs]' );
+	}
+
+	public static function mc_ajax_get_description()
 	{
 		check_ajax_referer( self::NONCE );
 
