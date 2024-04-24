@@ -23,9 +23,11 @@ let MCAjaxBilletActions = ( function()
 
 				console.log( id );
 
-				// document.querySelector( '.billet-footer' ).innerHTML = parsed.description;
+				console.log( selectors.billetFooter( id ) );
 
-				document.getElementById( id ).innerHTML = parsed.description;
+				document.querySelector( selectors.billetFooter( id ) ).innerHTML = parsed.description;
+
+				// document.getElementById( id ).innerHTML = parsed.description;
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url, true );
@@ -75,6 +77,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		billet: '.billet',
 
 		showTnCButton: '.billet-footer-control',
+
+		billetFooter: function ( id ) {
+			return '#' + id + 'billet-footer';
+		}
 	};
 
 	document.querySelectorAll( selectors.billet ).forEach( prepareBillet );
