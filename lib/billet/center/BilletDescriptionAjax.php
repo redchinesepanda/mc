@@ -100,13 +100,13 @@ class BilletDescriptionAjax
 
 		$description = '';
 
-		// if ( ! empty( $_POST[ 'post_id' ] ) )
+		if ( ! empty( $_POST[ 'post_id' ] ) )
 		
-		if ( ! empty( $_GET[ 'post_id' ] ) )
+		// if ( ! empty( $_GET[ 'post_id' ] ) )
 		{
-			// $post_id = $_POST[ 'post_id' ];
+			$post_id = $_POST[ 'post_id' ];
 			
-			$post_id = $_GET[ 'post_id' ];
+			// $post_id = $_GET[ 'post_id' ];
 
 			// $description = BilletDescription::get( [
 			// 	'id' => $post_id,
