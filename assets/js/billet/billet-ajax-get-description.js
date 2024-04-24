@@ -25,7 +25,7 @@ let MCAjaxBilletActions = ( function()
 
 				console.log( '#' + id + ' .billet-footer' );
 
-				document.querySelector( '#' + id + ' .billet-footer' ).innerHTML = parsed.description;
+				document.querySelector( '#' + id + ' ~ .billet-footer' ).innerHTML = parsed.description;
 
 				// document.getElementById( id ).innerHTML = parsed.description;
 			}
