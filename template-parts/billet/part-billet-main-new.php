@@ -15,4 +15,4 @@
     <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
         <div class="billet-footer"></div>
     <?php endif; ?>
-</div>
+</div> 
