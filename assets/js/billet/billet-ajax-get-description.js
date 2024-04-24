@@ -38,7 +38,7 @@ let MCAjaxBilletActions = ( function()
 
 			xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			
-			xhttp.send( "action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "&nonce=" + MCAjaxBillet.nonce );
+			xhttp.send( "action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "&_ajax_nonce=" + MCAjaxBillet.nonce );
 		}
     }
 } )();
