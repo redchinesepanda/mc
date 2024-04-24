@@ -17,11 +17,11 @@ let MCAjaxBilletActions = ( function()
 
 				let parsed = JSON.parse( this.responseText );
 
-				console.log( 'onload' );
+				// console.log( 'onload' );
 
-				console.log( parsed );
+				// console.log( parsed );
 
-				console.log( id );
+				// console.log( id );
 
 				console.log( '#' + id + ' .billet-footer' );
 
@@ -30,15 +30,13 @@ let MCAjaxBilletActions = ( function()
 				// document.getElementById( id ).innerHTML = parsed.description;
 			}
 
-			// xhttp.open( "GET", MCAjax.ajax_url, true );
+			// xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
 			
-			// xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=2484975", true );
-			
-			xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
+			xhttp.open( "POST", MCAjax.ajax_url );
 
-			// xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+			xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
 			
-			// xhttp.send( "action=mc_ajax_get_description&post_id=2484975" );
+			xhttp.send( "?action=" + MCAjaxBillet.actionGetDescription + "&post_id=" + billetId + "nonce=" + MCAjaxBillet.nonce );
 
 			xhttp.send();
 		}
@@ -87,5 +85,5 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// MCAjaxBilletActions.ajaxGetDescription( {} );
 
-	console.log( 'DOMContentLoaded' );
+	// console.log( 'DOMContentLoaded' );
 } );
