@@ -15,6 +15,8 @@ class TemplateMain
    const CURRENT_LANGUAGE_PRODUCTION = [
         'cz',
 
+        'dk',
+
         'es',
 
         'kz',
@@ -26,10 +28,14 @@ class TemplateMain
         'pt',
 
         'ro',
+
+        'se',
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
         'cz',
+
+        'dk',
 
         'es',
 
@@ -44,6 +50,8 @@ class TemplateMain
         'ro',
 
         'ru',
+
+        'se',
     ];
 
     public static function check_code()
