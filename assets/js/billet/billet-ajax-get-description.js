@@ -13,11 +13,13 @@ let MCAjaxBilletActions = ( function()
 				document.querySelector( '.billet-footer' ).innerHTML = this.responseText;
 			}
 
-			xhttp.open( "GET", MCAjax.ajax_url, true );
-
-			xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+			// xhttp.open( "GET", MCAjax.ajax_url, true );
 			
-			xhttp.send( "action=mc_ajax_get_description&post_id=2484975" );
+			xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=2484975", true );
+
+			// xhttp.setRequestHeader( "Content-type", "application/x-www-form-urlencoded" );
+			
+			// xhttp.send( "action=mc_ajax_get_description&post_id=2484975" );
 
 			xhttp.send();
 		}
