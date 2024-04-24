@@ -5,7 +5,7 @@ class BilletDescriptionAjax
 	const NONCE = 'mc-ajax-billet';
 
 	const ACTIONS = [
-		'get-description' = 'mc_ajax_get_description';
+		'get-description' = 'mc_ajax_get_description',
 	];
 
 	const JS = [
