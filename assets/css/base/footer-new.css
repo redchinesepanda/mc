@@ -229,9 +229,14 @@
 		width: 100%;
 	}
 
-	.legal-footer .logo-item {
+	.legal-footer .footer-logo .logo-item > img
+	{
 		height: 24px;
 	}
+
+	/* .legal-footer .logo-item {
+		height: 24px;
+	} */
 
 	.footer-menu .menu-item-has-children > .item-title,
 	.footer-menu .menu-item:not( .menu-item-has-children ) > .item-title
@@ -338,7 +343,6 @@
 	.legal-footer .footer-logo .logo-item > img
 	{
 		height: 32px;
-		width: auto;
 	}
 
 	.footer-menu > .menu-item-end > .menu-item-has-children > .item-children
@@ -431,6 +435,10 @@
 
 .legal-footer .footer-menu > .menu-item.legal-33-333 {
 	flex-basis: 33.333%;
+}
+
+.legal-footer .footer-logo .logo-item > img {
+	width: auto;
 }
 
 /* Background */
