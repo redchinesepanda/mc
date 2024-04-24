@@ -27,4 +27,6 @@ let MCAjaxBilletActions = ( function()
 document.addEventListener( 'DOMContentLoaded', function ()
 {
 	MCAjaxBilletActions.ajaxGetDescription( {} );
+
+	console.log( 'DOMContentLoaded' );
 } );
