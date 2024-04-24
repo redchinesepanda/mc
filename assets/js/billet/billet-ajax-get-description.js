@@ -30,8 +30,23 @@ let MCAjaxBilletActions = ( function()
     }
 } )();
 
+function prepareBillet( element )
+{
+	let id = element.id.replace( 'billet-', '' );
+
+	console.log( id );
+}
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+
+	const selectors = {
+		billet: '.billet',
+
+		showTnCButton: '.billet-footer-control',
+	};
+
+	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareBillet );
+
 	MCAjaxBilletActions.ajaxGetDescription( {} );
 
 	console.log( 'DOMContentLoaded' );
