@@ -198,6 +198,8 @@ class BilletMain
     public static function register_functions()
 	{
 		BilletMega::register_functions();
+
+        BilletDescriptionAjax::register_functions();
 	}
 
     public static function register()
@@ -209,8 +211,6 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
         BilletMega::register();
-
-        BilletDescriptionAjax::register();
     }
 
     public static function get_bonus_url( $id, $filter = [] )

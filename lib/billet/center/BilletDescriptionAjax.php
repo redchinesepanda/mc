@@ -53,6 +53,18 @@ class BilletDescriptionAjax
 		ToolEnqueue::localize_script( self::get_ajax_billet() );
     }
 
+	public static function register_functions()
+	{
+		if ( self::check() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
+
+			add_action('wp_ajax_nopriv_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
+		}
+	}
+
 	public static function register()
 	{
 		if ( self::check() )
@@ -60,10 +72,6 @@ class BilletDescriptionAjax
 			$handler = new self();
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
-	
-			add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
-
-			add_action('wp_ajax_nopriv_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
 		}
 
 		// LegalDebug::debug( [
