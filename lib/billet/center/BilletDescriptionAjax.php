@@ -100,18 +100,24 @@ class BilletDescriptionAjax
 
 		$description = '';
 
-		if ( ! empty( $_POST[ 'post_id' ] ) )
+		// if ( ! empty( $_POST[ 'post_id' ] ) )
+		
+		if ( ! empty( $_GET[ 'post_id' ] ) )
 		{
 			// $post_id = $_POST[ 'post_id' ];
+			
+			$post_id = $_GET[ 'post_id' ];
 
 			LegalDebug::debug( [
 				'BilletDescriptionAjax' => 'mc_ajax_get_description',
 
-				'post_id' => $_POST[ 'post_id' ],
+				// 'post_id' => $_POST[ 'post_id' ],
+				
+				'post_id' => $_GET[ 'post_id' ],
 			] );
 
 			$description = BilletDescription::get( [
-				'id' => $_POST[ 'post_id' ],
+				'id' => $post_id,
 			] );
 		}
 
