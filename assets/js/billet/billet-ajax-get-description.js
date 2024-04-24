@@ -37,33 +37,32 @@ let MCAjaxBilletActions = ( function()
 		}
     }
 } )();
-
-function getDescription( event )
-{
-	MCAjaxBilletActions.ajaxGetDescription( {
-		id : event.currentTarget.dataset.id,
-
-		billetId : event.currentTarget.dataset.billetId,
-	} );
-}
-
-function prepareBillet( billet )
-{
-	let showTnCButton = billet.querySelector( selectors.showTnCButton );
-
-	if ( showTnCButton != null )
-	{
-		showTnCButton.dataset.id = billet.id;
-
-		let billetId = billet.id.replace( 'billet-', '' );
-		
-		showTnCButton.dataset.billetId = billetId;
-
-		showTnCButton.addEventListener( 'click', getDescription, { once: true } );
-	}
-}
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	function getDescription( event )
+	{
+		MCAjaxBilletActions.ajaxGetDescription( {
+			id : event.currentTarget.dataset.id,
+	
+			billetId : event.currentTarget.dataset.billetId,
+		} );
+	}
+	
+	function prepareBillet( billet )
+	{
+		let showTnCButton = billet.querySelector( selectors.showTnCButton );
+	
+		if ( showTnCButton != null )
+		{
+			showTnCButton.dataset.id = billet.id;
+	
+			let billetId = billet.id.replace( 'billet-', '' );
+			
+			showTnCButton.dataset.billetId = billetId;
+	
+			showTnCButton.addEventListener( 'click', getDescription, { once: true } );
+		}
+	}
 
 	const selectors = {
 		billet: '.billet',
