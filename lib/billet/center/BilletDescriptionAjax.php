@@ -53,7 +53,7 @@ class BilletDescriptionAjax
 		ToolEnqueue::localize_script( self::get_ajax_billet() );
     }
 
-	public function register()
+	public static function register()
 	{
 		$handler = new self();
 
