@@ -98,6 +98,8 @@ class BilletDescriptionAjax
 		
 		// $post_id = 0;
 
+		$description = '';
+
 		if ( ! empty( 'post_id', $_POST ) )
 		{
 			// $post_id = $_POST[ 'post_id' ];
