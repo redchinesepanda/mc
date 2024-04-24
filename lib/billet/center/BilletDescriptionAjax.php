@@ -16,7 +16,7 @@ class BilletDescriptionAjax
 		],
     ];
 
-	private function get_ajax_general()
+	private static function get_ajax_general()
 	{
 		return [
 			'mc-ajax-get-description' => [
@@ -29,7 +29,7 @@ class BilletDescriptionAjax
 		];
 	}
 
-	private function get_ajax_billet()
+	private static function get_ajax_billet()
 	{
 		return [
 			'mc-ajax-get-description' => [
