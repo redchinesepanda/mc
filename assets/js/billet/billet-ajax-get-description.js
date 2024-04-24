@@ -76,7 +76,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		billet: '.billet',
 
-		showTnCButton: '.billet-footer-control',
+		showTnCButton: '.billet-footer-control'
 
 		// billetFooter: function ( id ) {
 		// 	return '#' + id + ' .billet-footer';
