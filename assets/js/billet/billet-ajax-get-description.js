@@ -10,7 +10,11 @@ let MCAjaxBilletActions = ( function()
 			xhttp.onload = function() {
 				// document.getElementById( "demo" ).innerHTML = this.responseText;
 
-				document.querySelector( '.billet-footer' ).innerHTML = this.responseText;
+				let parsed = JSON.parse( this.responseText );
+
+				console.log( parsed );
+
+				// document.querySelector( '.billet-footer' ).innerHTML = this.responseText;
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url, true );
