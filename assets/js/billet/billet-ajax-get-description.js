@@ -11,7 +11,8 @@ let MCAjaxBilletActions = ( function()
 
 			let billetId = data.billetId;
 
-			xhttp.onload = function() {
+			xhttp.onload = function()
+			{
 				// document.getElementById( "demo" ).innerHTML = this.responseText;
 
 				let parsed = JSON.parse( this.responseText );
@@ -22,7 +23,9 @@ let MCAjaxBilletActions = ( function()
 
 				console.log( id );
 
-				document.querySelector( '.billet-footer' ).innerHTML = parsed.description;
+				// document.querySelector( '.billet-footer' ).innerHTML = parsed.description;
+
+				document.getElementById( id ).innerHTML = parsed.description;
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url, true );
