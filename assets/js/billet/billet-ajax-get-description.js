@@ -49,10 +49,6 @@ function getDescription( event )
 
 function prepareBillet( billet )
 {
-	
-
-	console.log( billetId );
-
 	let showTnCButton = billet.querySelector( selectors.showTnCButton );
 
 	if ( showTnCButton != null )
