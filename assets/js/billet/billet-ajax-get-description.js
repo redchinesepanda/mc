@@ -13,21 +13,21 @@ let MCAjaxBilletActions = ( function()
 
 			xhttp.onload = function()
 			{
-				// document.getElementById( "demo" ).innerHTML = this.responseText;
+				try
+				{
+					let parsed = JSON.parse( this.responseText );
+				}
+				catch ( error )
+				{
+					console.error( error );
+				}
 
-				let parsed = JSON.parse( this.responseText );
+				let billetFooter = document.querySelector( '#' + id + ' ~ .billet-footer' );
 
-				// console.log( 'onload' );
-
-				// console.log( parsed );
-
-				// console.log( id );
-
-				// console.log( '#' + id + ' .billet-footer' );
-
-				document.querySelector( '#' + id + ' ~ .billet-footer' ).innerHTML = parsed.description;
-
-				// document.getElementById( id ).innerHTML = parsed.description;
+				if ( billetFooter != null )
+				{
+					billetFooter.innerHTML = parsed.description;
+				}
 			}
 
 			// xhttp.open( "GET", MCAjax.ajax_url + "?action=mc_ajax_get_description&post_id=" + billetId, true );
@@ -46,8 +46,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function getDescription( event )
 	{
-		// console.log( 'getDescription' );
-
 		MCAjaxBilletActions.ajaxGetDescription( {
 			id : event.currentTarget.dataset.id,
 	
@@ -75,15 +73,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		billet: '.billet',
 
 		showTnCButton: '.billet-footer-control'
-
-		// billetFooter: function ( id ) {
-		// 	return '#' + id + ' .billet-footer';
-		// }
 	};
 
 	document.querySelectorAll( selectors.billet ).forEach( prepareBillet );
-
-	// MCAjaxBilletActions.ajaxGetDescription( {} );
-
-	// console.log( 'DOMContentLoaded' );
 } );
