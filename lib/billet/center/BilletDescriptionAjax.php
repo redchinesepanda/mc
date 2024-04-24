@@ -55,14 +55,14 @@ class BilletDescriptionAjax
 
 	public static function register_functions()
 	{
-		if ( self::check() )
-		{
+		// if ( self::check() )
+		// {
 			$handler = new self();
 	
 			add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
 
 			add_action('wp_ajax_nopriv_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
-		}
+		// }
 	}
 
 	public static function register()
