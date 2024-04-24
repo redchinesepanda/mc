@@ -16,17 +16,17 @@ let MCAjaxBilletActions = ( function()
 				try
 				{
 					let parsed = JSON.parse( this.responseText );
+
+					let billetFooter = document.querySelector( '#' + id + ' ~ .billet-footer' );
+	
+					if ( billetFooter != null )
+					{
+						billetFooter.innerHTML = parsed.description;
+					}
 				}
 				catch ( error )
 				{
 					console.error( error );
-				}
-
-				let billetFooter = document.querySelector( '#' + id + ' ~ .billet-footer' );
-
-				if ( billetFooter != null )
-				{
-					billetFooter.innerHTML = parsed.description;
 				}
 			}
 
