@@ -55,17 +55,20 @@ class BilletDescriptionAjax
 
 	public static function register()
 	{
-		$handler = new self();
+		if ( self::check() )
+		{
+			$handler = new self();
+	
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+	
+			add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
+		}
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+		// LegalDebug::debug( [
+		// 	'BilletDescriptionAjax' => 'register',
 
-		add_action( 'wp_ajax_' . self::ACTIONS[ 'get-description' ], [ $handler, 'mc_ajax_get_description' ] );
-
-		LegalDebug::debug( [
-			'BilletDescriptionAjax' => 'register',
-			
-			'check' => self::check(),
-		] );
+		// 	'check' => self::check(),
+		// ] );
 	}
 
 	public static function check()
