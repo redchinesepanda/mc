@@ -16,7 +16,7 @@ class BilletDescriptionRESTAPI
 	{
 		// пространство имен
 
-		$namespace = 'myplugin/v1';
+		$namespace = 'mc/v1';
 	
 		// маршрут
 		
