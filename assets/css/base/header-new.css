@@ -234,8 +234,9 @@
 		background-size: 18px 18px;
 	}
 
-	.legal-menu > .menu-item:last-child > .item-title::before,
-	.legal-menu > .menu-item:last-child .menu-item:not( :last-child ) > .item-title::before
+	/* .legal-menu > .menu-item:last-child .menu-item:not( :last-child ) > .item-title::before, */
+	.legal-menu > .menu-item:last-child .menu-item:not( .legal-country-all ) > .item-title::before,
+	.legal-menu > .menu-item:last-child > .item-title::before
 	{
 		background-repeat: no-repeat;
 		background-position: center;
