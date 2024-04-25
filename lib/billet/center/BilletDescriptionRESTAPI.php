@@ -25,7 +25,7 @@ class BilletDescriptionRESTAPI
 		$handler = new self();
 	
 		// параметры конечной точки (маршрута)
-		
+
 		$route_params = [
 			'methods'  => 'GET',
 
@@ -53,7 +53,7 @@ class BilletDescriptionRESTAPI
 
 				// return is_user_logged_in();
 
-				return true
+				return true;
 			},
 		];
 	
