@@ -486,7 +486,7 @@ class BilletMain
             } 
         }
 
-        return $main_description;
+        return wpautop( $main_description );
     }
 
     public static function get( $args )
