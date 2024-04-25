@@ -6,6 +6,14 @@ class BilletDescription
         'description-full' => 'billet-description-full',
     ];
 
+    const ALLOWED = [
+        'a',
+
+        'b',
+
+        'p',
+    ];
+
 	public static function get( $billet )
     {
 		$args = [];
@@ -14,7 +22,9 @@ class BilletDescription
 
         if ( $description_full )
         {
-            $args[ 'description-full' ] = $description_full;
+            // $args[ 'description-full' ] = $description_full;
+            
+            $args[ 'description-full' ] = strip_tags( $description_full, self::ALLOWED );
         }
 
         return $args;
