@@ -107,7 +107,9 @@ class BilletBonus
     
                 'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
     
-                'description-full' => $group[ self::ABOUT[ 'description' ] ],
+                // 'description-full' => $group[ self::ABOUT[ 'description' ] ],
+                
+                'description-full' => wpautop( $group[ self::ABOUT[ 'description' ] ] ),
                 
                 // 'description-full' => strip_tags( $group[ self::ABOUT[ 'description' ] ], self::ALLOWED ),
             ];
