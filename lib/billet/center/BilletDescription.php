@@ -23,6 +23,12 @@ class BilletDescription
         if ( $description_full )
         {
             // $args[ 'description-full' ] = $description_full;
+
+            LegalDebug::debug( [
+                'BilletDescription' => 'get',
+
+                'description_full' => $description_full,
+            ] );
             
             $args[ 'description-full' ] = strip_tags( $description_full, self::ALLOWED );
         }
