@@ -33,6 +33,8 @@ class TemplateMain
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
+        'co',
+
         'cz',
 
         'dk',
@@ -41,7 +43,11 @@ class TemplateMain
 
         'kz',
 
+        'mx',
+
         'ng',
+
+        'ph',
 
         'pl',
         
