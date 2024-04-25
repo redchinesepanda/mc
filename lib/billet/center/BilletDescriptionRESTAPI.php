@@ -12,6 +12,8 @@ class BilletDescriptionRESTAPI
 		// }
 	}
 
+	// /wp-json/mc/v1/author-posts/1
+
 	public static function mc_restapi_get_description()
 	{
 		// пространство имен
@@ -31,7 +33,7 @@ class BilletDescriptionRESTAPI
 
 			// 'callback' => 'my_awesome_func',
 			
-			'callback' => [ $handler, 'restapi_get_description_callback' ],
+			'callback' => [ $handler, 'get_description' ],
 
 			'args'     => [
 				'arg_str' => [
@@ -47,21 +49,23 @@ class BilletDescriptionRESTAPI
 				],
 			],
 
-			'permission_callback' => function( $request )
-			{
-				// только авторизованный юзер имеет доступ к эндпоинту
+			'permission_callback' => [ $handler, 'get_permission' ],
+			
+			// 'permission_callback' => function( $request )
+			// {
+			// 	// только авторизованный юзер имеет доступ к эндпоинту
 
-				// return is_user_logged_in();
+			// 	// return is_user_logged_in();
 
-				return true;
-			},
+			// 	return true;
+			// },
 		];
 	
 		register_rest_route( $namespace, $route, $route_params );
 	
 	}
 
-	public static function restapi_get_description_callback( WP_REST_Request $request )
+	public static function get_description( WP_REST_Request $request )
 	{
 		$posts = get_posts( [
 			'author' => (int) $request['id'],
@@ -72,6 +76,15 @@ class BilletDescriptionRESTAPI
 		}
 	
 		return $posts;
+	}
+
+	public static function get_permission( $request )
+	{
+		// только авторизованный юзер имеет доступ к эндпоинту
+
+		// return is_user_logged_in();
+
+		return true;
 	}
 }
 
