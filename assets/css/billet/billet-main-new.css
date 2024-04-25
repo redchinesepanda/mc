@@ -204,6 +204,11 @@
         padding-left: 24px;
     }
 
+    .billet-item .billet-footer p {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
     /* Billet Background */
 
     .billet-left {
