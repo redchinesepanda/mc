@@ -89,6 +89,11 @@ class WPMLLangSwitcher
 
     private static function get_active( &$args )
     {
+        if ( empty( $args ) )
+        {
+            return [];
+        }
+
         $args_active = array_column( $args, 'active' );
 
         $key = array_search( 1, $args_active );
@@ -181,13 +186,7 @@ class WPMLLangSwitcher
             ];
         }
 
-        return [
-            'suffix' => '',
-
-            'class' => '',
-
-            'href' => '#',
-        ];
+        return [];
     }
 
     public static function get()

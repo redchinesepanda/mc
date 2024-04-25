@@ -101,7 +101,7 @@ class WPMLTrid
             return apply_filters( 'wpml_element_trid', NULL, $id, WPMLMain::get_element_type( $id ) );
         }
 
-        return 0;
+        return false;
     }
 }
 

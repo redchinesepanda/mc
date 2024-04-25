@@ -34,6 +34,8 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
+require_once( 'multisite/MiltisiteMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -50,14 +52,18 @@ class LegalMain
 
 	public static function register()
 	{
-		if ( self::check_plugins() )
-		{
+		// if ( self::check_plugins() )
+		// {
 			$handler = new self();
 		
 			add_action( 'wp', [ $handler, 'register_components' ] );
 
 			self::register_functions();
-		}
+		// }
+
+		// LegalDebug::debug( [
+		// 	'LegalMain' => 'register',
+		// ] );
 	}
 
 	public static function register_functions()
@@ -85,6 +91,8 @@ class LegalMain
 			AdminMain::register();
 
 			NotionMain::register_functions();
+
+			MiltisiteMain::register_functions_admin();
 		}
 	}
 
@@ -114,10 +122,6 @@ class LegalMain
 	
 			MetrikaMain::register();
 		}
-
-		// LegalDebug::debug( [
-		// 	get_option( 'tve_user_templates' ),
-		// ] );
 	}
 
 	public static function check_admin()
@@ -191,7 +195,9 @@ class LegalMain
 		// 	'check_permissions' => self::check_permissions(),
 		// ] );
 
-		return self::check_plugins() && self::check_permissions();
+		// return self::check_plugins() && self::check_permissions();
+		
+		return self::check_permissions();
 	}
 
 	// const HOST_PRODUCTION = [

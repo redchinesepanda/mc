@@ -1,7 +1,7 @@
 <?php
 
 // LegalDebug::debug( [
-//     $args,
+//     'args' => $args,
 // ] );
 
 ?>

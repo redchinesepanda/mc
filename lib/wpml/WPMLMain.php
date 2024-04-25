@@ -79,6 +79,11 @@ class WPMLMain
 
     public static function exclude( $args , $exclude = [] )
     {
+        if ( empty( $args ) )
+        {
+            return [];
+        }
+        
         $default_locale = array_column( $args, 'default_locale', 'code' );
 
         $default_locale_exclude = self::EXCLUDE;
