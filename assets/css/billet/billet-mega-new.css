@@ -168,7 +168,7 @@
 
 .legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ) {
     padding-bottom: 18px;
-}
+} 
 
 .legal-billet-mega.legal-horizontal p:not( :last-child ) {
     padding-bottom: 0px;
