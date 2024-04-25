@@ -18,7 +18,7 @@ require_once( 'center/BilletAchievement.php' );
 
 require_once( 'center/BilletDescriptionAjax.php' );
 
-require_once( 'center/BilletDescriptionRESTAPI.php' );
+// require_once( 'center/BilletDescriptionRESTAPI.php' );
 
 require_once( 'right/BilletRight.php' );
 
@@ -203,7 +203,7 @@ class BilletMain
 
         BilletDescriptionAjax::register_functions();
 
-        BilletDescriptionRESTAPI::register_functions();
+        // BilletDescriptionRESTAPI::register_functions();
 	}
 
     public static function register()
