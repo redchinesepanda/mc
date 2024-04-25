@@ -255,6 +255,7 @@
 	min-height: 30px;
 }
 
+.legal-billet-mega .billet-mega-content p:not(.legal-contextbox),
 .legal-billet-mega.legal-horizontal .billet-mega-content p,
 .legal-billet-mega.legal-horizontal .billet-mega-content ul {
 	width: 100%;
