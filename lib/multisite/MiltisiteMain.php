@@ -56,33 +56,44 @@ class MiltisiteMain
 		],
 	];
 
-	public static function register_admin() {}
+	public static function check_multisite()
+	{
+		return is_multisite();
+	}
+
+	public static function check()
+	{
+		return self::check_multisite();
+	}
 
 	public static function register_functions_admin()
 	{
-		MultisiteGallerySync::register_functions_debug();
-
-		MultisiteMeta::register_functions_debug();
-
-		if ( MultisiteBlog::check_main_blog() )
+		if ( self::check() )
 		{
-			MultisiteAdmin::register_functions_mainsite();
-
-			MultisitePost::register_functions_mainsite();
-
-			MultisiteAttachment::register_functions_mainsite();
-		}
-		else
-		{
-			MultisiteAdmin::register_functions_subsite();
-
-			MultisiteAttachmentSync::register_functions_subsite();
-
-			MultisiteGallerySync::register_functions_subsite();
-
-			MultisiteTermSync::register_functions_subsite();
-
-			MultisitePostSync::register_functions_subsite();
+			// MultisiteGallerySync::register_functions_debug();
+	
+			// MultisiteMeta::register_functions_debug();
+	
+			if ( MultisiteBlog::check_main_blog() )
+			{
+				MultisiteAdmin::register_functions_mainsite();
+	
+				MultisitePost::register_functions_mainsite();
+	
+				MultisiteAttachment::register_functions_mainsite();
+			}
+			else
+			{
+				MultisiteAdmin::register_functions_subsite();
+	
+				MultisiteAttachmentSync::register_functions_subsite();
+	
+				MultisiteGallerySync::register_functions_subsite();
+	
+				MultisiteTermSync::register_functions_subsite();
+	
+				MultisitePostSync::register_functions_subsite();
+			}
 		}
 	}
 }
