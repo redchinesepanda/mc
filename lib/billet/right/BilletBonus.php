@@ -79,6 +79,14 @@ class BilletBonus
         ];
     }
 
+    const ALLOWED = [
+        'a',
+
+        'b',
+
+        'p',
+    ];
+
     public static function get_bonus_group( $id )
     {
         $group = get_field( self::FIELD[ 'about' ], $id );
@@ -99,7 +107,9 @@ class BilletBonus
     
                 'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
     
-                'description-full' => $group[ self::ABOUT[ 'description' ] ],
+                // 'description-full' => $group[ self::ABOUT[ 'description' ] ],
+                
+                'description-full' => strip_tags( $group[ self::ABOUT[ 'description' ] ], self::ALLOWED ),
             ];
         }
 

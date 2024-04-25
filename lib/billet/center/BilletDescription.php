@@ -6,37 +6,15 @@ class BilletDescription
         'description-full' => 'billet-description-full',
     ];
 
-    const ALLOWED = [
-        'a',
-
-        'b',
-
-        'p',
-    ];
-
 	public static function get( $billet )
     {
 		$args = [];
 
         $description_full = get_field( self::FIELD[ 'description-full' ], $billet['id'] );
 
-        LegalDebug::debug( [
-            'BilletDescription' => 'get',
-
-            'description_full' => $description_full,
-        ] );
-
         if ( $description_full )
         {
-            // $args[ 'description-full' ] = $description_full;
-
-            LegalDebug::debug( [
-                'BilletDescription' => 'get',
-
-                'description_full' => $description_full,
-            ] );
-            
-            $args[ 'description-full' ] = strip_tags( $description_full, self::ALLOWED );
+            $args[ 'description-full' ] = $description_full;
         }
 
         return $args;
