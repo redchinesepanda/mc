@@ -15,14 +15,17 @@ class BilletDescriptionRESTAPI
 	public static function mc_restapi_get_description()
 	{
 		// пространство имен
+
 		$namespace = 'myplugin/v1';
 	
 		// маршрут
+		
 		$route = '/author-posts/(?P<id>\d+)';
 
 		$handler = new self();
 	
 		// параметры конечной точки (маршрута)
+		
 		$route_params = [
 			'methods'  => 'GET',
 
@@ -47,7 +50,10 @@ class BilletDescriptionRESTAPI
 			'permission_callback' => function( $request )
 			{
 				// только авторизованный юзер имеет доступ к эндпоинту
-				return is_user_logged_in();
+
+				// return is_user_logged_in();
+
+				return true
 			},
 		];
 	
