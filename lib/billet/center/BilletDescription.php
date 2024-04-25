@@ -20,6 +20,12 @@ class BilletDescription
 
         $description_full = get_field( self::FIELD[ 'description-full' ], $billet['id'] );
 
+        LegalDebug::debug( [
+            'BilletDescription' => 'get',
+
+            'description_full' => $description_full,
+        ] );
+
         if ( $description_full )
         {
             // $args[ 'description-full' ] = $description_full;
