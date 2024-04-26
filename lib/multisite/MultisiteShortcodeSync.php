@@ -51,7 +51,7 @@ class MultisiteShortcodeSync
 			$atts[ 'id' ] = implode( ',', $ids );
         }
 
-		return self::get_atts_part( $atts );
+		return MultisiteGallerySync::get_atts_part( $atts );
 	}
 
 	public static function replace_shortcodes_ids( $match )
