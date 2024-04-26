@@ -120,9 +120,9 @@ class MultisiteShortcodeSync
 	{
 		$atts = self::sync_shortcode_ids( $match );
 
-		$content = $match[ 1 ];
-
 		$shortcode = $match[ 2 ];
+
+		$content = $match[ 5 ];
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts, $content );
 
