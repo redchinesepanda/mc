@@ -177,13 +177,13 @@ class MultisiteAdmin
 		$bulk_array = array_merge( $bulk_array, [
 			self::DOACTION[ 'sync-galleries' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-galleries' ] ),
 
+			self::DOACTION[ 'sync-shortcodes' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-shortcodes' ] ),
+
 			self::DOACTION[ 'sync-terms' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-terms' ] ),
 
 			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-attachments' ] ),
 
 			self::DOACTION[ 'sync-posts' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-posts' ] ),
-
-			self::DOACTION[ 'sync-shortcodes' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-shortcodes' ] ),
 		] );
 
 		return $bulk_array;
