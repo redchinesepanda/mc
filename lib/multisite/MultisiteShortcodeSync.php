@@ -36,11 +36,76 @@ class MultisiteShortcodeSync
 		// ] );
 	}
 
+	public static function sync_shortcode_ids( $match )
+	{
+		$atts = shortcode_parse_atts( $match[ 3 ] );
+
+		if ( ! empty( $atts[ 'id' ] ) )
+        {
+            $ids = explode( ',', $atts[ 'id' ] );
+			
+			$ids = MultisiteGallerySync::set_gallery_shortcode_moved_ids( $ids );
+
+			$atts[ 'id' ] = implode( ',', $ids );
+        }
+
+		return self::get_atts_part( $atts );
+	}
+
+	public static function replace_shortcodes_ids( $match )
+	{
+		$atts = self::sync_shortcode_ids( $match );
+
+		$shortcode = $match[ 2 ];
+
+		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts );
+
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
+
+		// 	'match' => $match,
+
+		// 	'result' => $result,
+		// ] );
+
+		return $result;
+	}
+
+	public static function set_shortcodes( $post_id, $post )
+    {
+        $handler = new self();
+
+		$result = preg_replace_callback( 
+			self::get_shortcodes_regexp(),
+
+			[ $handler, 'replace_shortcodes_ids' ],
+
+			$post[ 'post_content' ]
+		);
+
+		$post[ 'post_content' ] = $result;
+
+		LegalDebug::die( [
+			'MultisiteGallerySync' =>'set_gallery_shortcode',
+
+			'post_id' => $post_id,
+
+			'result' => $result,
+		] );
+
+		// MultisitePost::update_post( $post );
+    }
+
 	public static function get_shortcodes()
 	{
 		return [
 			BilletMega::SHORTCODE[ 'mega' ],
 		];
+	}
+
+	public static function get_shortcodes_regexp()
+	{
+		return MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
 	}
 
 	public static function get_mega_shortcodes_ids( $post_id, $post )
@@ -50,7 +115,7 @@ class MultisiteShortcodeSync
 		$handler = new self();
 
 		$result = preg_match_all( 
-			MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
+			self::get_shortcodes_regexp(),
 
 			$post[ 'post_content' ],
 
@@ -61,10 +126,6 @@ class MultisiteShortcodeSync
 
 		LegalDebug::debug( [
 			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
-
-			'get_shortcode_regex' => get_shortcode_regex( self::get_shortcodes() ),
-
-			'get_gallery_shortcode_regexp' => MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
 
 			'matches' => $matches,
 		] );
