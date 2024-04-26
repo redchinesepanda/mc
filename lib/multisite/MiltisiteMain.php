@@ -31,6 +31,8 @@ class MiltisiteMain
 
 		'sync-galleries' => 'Sync Galleries',
 
+		'sync-shortcodes' => 'Sync Shortcodes',
+
 		'sync-terms' => 'Sync Terms',
 
 		'sync-attachments' => 'Sync Attachments',
