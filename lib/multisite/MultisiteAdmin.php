@@ -6,6 +6,8 @@ class MultisiteAdmin
 		'move-to' => 'move_to_',
 
 		'sync-galleries' => 'mc_sync_galleries',
+		
+		'sync-shortcodes' => 'mc_sync_shortcodes',
 
 		'sync-terms' => 'mc_sync_terms',
 
@@ -22,6 +24,8 @@ class MultisiteAdmin
 		'attachment-moved' => 'mc_attachment_moved',
 
 		'galleries-synced' => 'mc_galleries_synced',
+		
+        'shortcodes-synced' => 'mc_shortcodes_synced',
 
 		'terms-synced' => 'mc_terms_synced',
 

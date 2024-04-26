@@ -18,24 +18,82 @@ class MultisiteShortcodeSync
 
 	public static function register_functions_debug()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 	}
 
-	function mc_edit_form_after_title_debug( $post )
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	$post_prepared = MultisitePost::get_post( $post->ID );
+
+	// 	// self::get_mega_shortcodes_ids( $post->ID, $post_prepared );
+
+	// 	self::set_shortcodes( $post->ID, $post_prepared );
+
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteMeta' => 'register_functions_admin',
+
+	// 	// 	'post_parent' => $post->post_parent,
+	// 	// ] );
+	// }
+
+	public static function register_functions_subsite()
 	{
-		$post_prepared = MultisitePost::get_post( $post->ID );
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
 
-		// self::get_mega_shortcodes_ids( $post->ID, $post_prepared );
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+				
+				MultisiteAdmin::get_post_types_post(),
+				
+				$handler,
+				
+				'mc_bulk_action_sync_shortcodes',
+				
+				10,
+				
+				3
+			);
+		}
+	}
 
-		self::set_shortcodes( $post->ID, $post_prepared );
+	public static function mc_bulk_action_sync_shortcodes( $redirect, $doaction, $object_ids )
+	{
+		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'register_functions_admin',
+		// LegalDebug::die( [
+		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
 
-		// 	'post_parent' => $post->post_parent,
+		// 	'doaction' => $doaction,
+
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ),
 		// ] );
+
+		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ) )
+		{
+			foreach ( $object_ids as $post_id )
+			{
+				if ( $post = MultisitePost::get_post( $post_id ) )
+				{
+					self::set_shortcodes( $post[ 'ID' ], $post );
+				}
+			}
+
+			$redirect = MultisiteAdmin::redirect_set(
+				$redirect,
+				
+				MultisiteAdmin::QUERY_ARG[ 'shortcodes-synced' ],
+				
+				count( $object_ids ),
+				
+				MultisiteBlog::get_current_blog_id()
+			);
+		}
+
+		return $redirect;
 	}
 
 	public static function sync_shortcode_ids( $match )
@@ -73,6 +131,18 @@ class MultisiteShortcodeSync
 		return $result;
 	}
 
+	public static function get_shortcodes()
+	{
+		return [
+			BilletMega::SHORTCODE[ 'mega' ],
+		];
+	}
+
+	public static function get_shortcodes_regexp()
+	{
+		return MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() );
+	}
+
 	public static function set_shortcodes( $post_id, $post )
     {
         $handler = new self();
@@ -95,47 +165,35 @@ class MultisiteShortcodeSync
 		// 	'result' => $result,
 		// ] );
 
-		// MultisitePost::update_post( $post );
+		MultisitePost::update_post( $post );
     }
 
-	public static function get_shortcodes()
-	{
-		return [
-			BilletMega::SHORTCODE[ 'mega' ],
-		];
-	}
+	// public static function get_mega_shortcodes_ids( $post_id, $post )
+    // {
+    //     $matches = [];
 
-	public static function get_shortcodes_regexp()
-	{
-		return MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() );
-	}
+	// 	$handler = new self();
 
-	public static function get_mega_shortcodes_ids( $post_id, $post )
-    {
-        $matches = [];
+	// 	$result = preg_match_all( 
+	// 		self::get_shortcodes_regexp(),
 
-		$handler = new self();
+	// 		$post[ 'post_content' ],
 
-		$result = preg_match_all( 
-			self::get_shortcodes_regexp(),
+	// 		$matches,
 
-			$post[ 'post_content' ],
+	// 		PREG_SET_ORDER
+	// 	);
 
-			$matches,
+	// 	LegalDebug::debug( [
+	// 		'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
 
-			PREG_SET_ORDER
-		);
+	// 		'matches' => $matches,
+	// 	] );
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
+	// 	// $ids = self::get_gallery_matches_ids( $matches );
 
-			'matches' => $matches,
-		] );
-
-		// $ids = self::get_gallery_matches_ids( $matches );
-
-		// return $ids;
-    }
+	// 	// return $ids;
+    // }
 }
 
 ?>

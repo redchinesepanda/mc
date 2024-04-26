@@ -87,6 +87,8 @@ class MiltisiteMain
 			MultisiteTermSync::register_functions_subsite();
 
 			MultisitePostSync::register_functions_subsite();
+
+			MultisiteShortcodeSync::register_functions_subsite();
 		}
 	}
 }
