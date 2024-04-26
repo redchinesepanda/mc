@@ -171,7 +171,7 @@ class MultisiteShortcodeSync
 		// 	'result' => $result,
 		// ] );
 
-		// MultisitePost::update_post( $post );
+		MultisitePost::update_post( $post );
     }
 
 	// public static function get_mega_shortcodes_ids( $post_id, $post )
