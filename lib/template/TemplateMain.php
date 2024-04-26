@@ -86,7 +86,12 @@ class TemplateMain
 
     public static function check_new_get()
     {
-        return !empty( $_GET[ 'new' ] );
+        if ( !LegalHosts::check_host_production() )
+        {
+            return !empty( $_GET[ 'new' ] );
+        }
+
+        return false;
     }
 
     public static function check_new()
