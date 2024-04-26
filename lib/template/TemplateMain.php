@@ -12,7 +12,7 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
-    const CURRENT_LANGUAGE_PRODUCTION = [
+   const CURRENT_LANGUAGE_PRODUCTION = [
         'br',
 
         'by',
@@ -100,6 +100,11 @@ class TemplateMain
         return true;
     }
 
+    public static function check_new_get()
+    {
+        return !empty( $_GET[ 'new' ] );
+    }
+
     public static function check_new()
     {
         // return self::check() && self::check_code();
@@ -110,7 +115,7 @@ class TemplateMain
             
         //     || self::check_code();
 
-        return self::check_code();
+        return self::check_code() || self::check_new_get();
     }
 
     const DEQUEUE_WP = [
