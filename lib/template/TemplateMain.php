@@ -100,15 +100,15 @@ class TemplateMain
         return true;
     }
 
-    public static function check_new_get()
-    {
-        if ( !LegalHosts::check_host_production() )
-        {
-            return !empty( $_GET[ 'new' ] );
-        }
+    // public static function check_new_get()
+    // {
+    //     if ( !LegalHosts::check_host_production() )
+    //     {
+    //         return !empty( $_GET[ 'new' ] );
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
     public static function check_new()
     {
@@ -120,7 +120,9 @@ class TemplateMain
             
         //     || self::check_code();
 
-        return self::check_code() || self::check_new_get();
+        // return self::check_code() || self::check_new_get();
+        
+        return self::check_code();
     }
 
     const DEQUEUE_WP = [
