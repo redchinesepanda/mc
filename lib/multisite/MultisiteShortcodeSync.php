@@ -5,38 +5,36 @@ class MultisiteShortcodeSync
 	const PATTERNS = [
 		'regex' => '/%s/',
 
-		'shortcode' => '[%1$s %2$s]',
+		'shortcode' => '[%1$s %2$s]%3$s[/%1$s]',
 
 		'attr-pair' => '%1$s="%2$s"',
 	];
 
-	const SHORTCODES = [
-		'mega' => 'billet-mega',
-	];
-
-	// BilletMega::SHORTCODE[ 'mega' ]
+	// const SHORTCODES = [
+	// 	'mega' => 'billet-mega',
+	// ];
 
 	public static function register_functions_debug()
 	{
-		// $handler = new self();
+		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 	}
 
-	// function mc_edit_form_after_title_debug( $post )
-	// {
-	// 	$post_prepared = MultisitePost::get_post( $post->ID );
+	function mc_edit_form_after_title_debug( $post )
+	{
+		$post_prepared = MultisitePost::get_post( $post->ID );
 
-	// 	// self::get_mega_shortcodes_ids( $post->ID, $post_prepared );
+		// self::get_mega_shortcodes_ids( $post->ID, $post_prepared );
 
-	// 	self::set_shortcodes( $post->ID, $post_prepared );
+		self::set_shortcodes( $post->ID, $post_prepared );
 
-	// 	// LegalDebug::debug( [
-	// 	// 	'MultisiteMeta' => 'register_functions_admin',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'register_functions_admin',
 
-	// 	// 	'post_parent' => $post->post_parent,
-	// 	// ] );
-	// }
+		// 	'post_parent' => $post->post_parent,
+		// ] );
+	}
 
 	public static function register_functions_subsite()
 	{
@@ -122,9 +120,11 @@ class MultisiteShortcodeSync
 	{
 		$atts = self::sync_shortcode_ids( $match );
 
+		$content = $match[ 1 ];
+
 		$shortcode = $match[ 2 ];
 
-		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts );
+		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts, $content );
 
 		LegalDebug::debug( [
 			'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
@@ -171,7 +171,7 @@ class MultisiteShortcodeSync
 		// 	'result' => $result,
 		// ] );
 
-		MultisitePost::update_post( $post );
+		// MultisitePost::update_post( $post );
     }
 
 	// public static function get_mega_shortcodes_ids( $post_id, $post )
