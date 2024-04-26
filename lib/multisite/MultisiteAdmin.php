@@ -182,6 +182,8 @@ class MultisiteAdmin
 			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-attachments' ] ),
 
 			self::DOACTION[ 'sync-posts' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-posts' ] ),
+
+			self::DOACTION[ 'sync-shortcodes' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-shortcodes' ] ),
 		] );
 
 		return $bulk_array;
