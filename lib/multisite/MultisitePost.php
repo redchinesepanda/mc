@@ -333,15 +333,15 @@ class MultisitePost
 
 		$posts = get_posts( $args );
 
-		LegalDebug::die( [
-			'MultisitePost' => 'get_post_moved_id',
+		// LegalDebug::debug( [
+		// 	'MultisitePost' => 'get_post_moved_id',
 
-			'origin_post_id' => $origin_post_id,
+		// 	'origin_post_id' => $origin_post_id,
 
-			'args' => $args,
+		// 	'args' => $args,
 
-			'posts' => count( $posts ),
-		] );
+		// 	'posts' => count( $posts ),
+		// ] );
 
 		if ( count( $posts ) == 1 )
 		{
