@@ -62,13 +62,13 @@ class MultisiteShortcodeSync
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
+		LegalDebug::debug( [
+			'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
 
-		// 	'match' => $match,
+			'match' => $match,
 
-		// 	'result' => $result,
-		// ] );
+			'result' => $result,
+		] );
 
 		return $result;
 	}
@@ -87,13 +87,13 @@ class MultisiteShortcodeSync
 
 		$post[ 'post_content' ] = $result;
 
-		LegalDebug::die( [
-			'MultisiteGallerySync' =>'set_gallery_shortcode',
+		// LegalDebug::die( [
+		// 	'MultisiteGallerySync' =>'set_gallery_shortcode',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		// MultisitePost::update_post( $post );
     }
