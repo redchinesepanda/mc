@@ -104,11 +104,11 @@ class MultisiteGallerySync
 		{
 			if ( $post_moved_id = MultisitePost::get_post_moved_id( $origin_post_id ) )
 			{
-				LegalDebug::debug( [
-					'MultisiteGallerySync' => 'set_gallery_shortcode_moved_ids',
+				// LegalDebug::debug( [
+				// 	'MultisiteGallerySync' => 'set_gallery_shortcode_moved_ids',
 
-					'post_moved_id' => $post_moved_id,
-				] );
+				// 	'post_moved_id' => $post_moved_id,
+				// ] );
 				
 				$attachment_ids[ $key ] = $post_moved_id;
 			}
