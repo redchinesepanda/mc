@@ -126,13 +126,13 @@ class MultisiteShortcodeSync
 
 		$result = sprintf( self::PATTERNS[ 'shortcode' ], $shortcode, $atts, $content );
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' =>'replace_gallery_shortcodes_ids',
 
-			'match' => $match,
+		// 	'match' => $match,
 
-			'result' => $result,
-		] );
+		// 	'result' => $result,
+		// ] );
 
 		return $result;
 	}
