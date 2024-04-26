@@ -13,6 +13,12 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
    const CURRENT_LANGUAGE_PRODUCTION = [
+        'br',
+
+        'by',
+
+        'ca',
+
         'co',
 
         'cz',
@@ -35,10 +41,18 @@ class TemplateMain
 
         'ro',
 
+        'rs',
+
         'se',
     ];
 
     const CURRENT_LANGUAGE_DEBUG = [
+        'br',
+
+        'by',
+
+        'ca',
+
         'co',
 
         'cz',
@@ -60,6 +74,8 @@ class TemplateMain
         'pt',
 
         'ro',
+
+        'rs',
 
         'ru',
 
