@@ -55,6 +55,8 @@ class MultisiteShortcodeSync
 		LegalDebug::debug( [
 			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
 
+			'get_shortcode_regex' => get_shortcode_regex( self::SHORTCODES ),
+
 			'get_gallery_shortcode_regexp' => MultisiteGallerySync::get_gallery_shortcode_regexp( self::SHORTCODES ),
 
 			'matches' => $matches,
