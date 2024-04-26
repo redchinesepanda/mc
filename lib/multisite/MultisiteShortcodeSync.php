@@ -107,7 +107,7 @@ class MultisiteShortcodeSync
 
 	public static function get_shortcodes_regexp()
 	{
-		return MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
+		return MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() );
 	}
 
 	public static function get_mega_shortcodes_ids( $post_id, $post )
