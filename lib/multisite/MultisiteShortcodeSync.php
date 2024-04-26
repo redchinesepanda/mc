@@ -64,13 +64,13 @@ class MultisiteShortcodeSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::debug( [
-			'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
+		// LegalDebug::debug( [
+		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ),
-		] );
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ),
+		// ] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ) )
 		{
@@ -78,11 +78,11 @@ class MultisiteShortcodeSync
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )
 				{
-					LegalDebug::die( [
-						'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
+					// LegalDebug::debug( [
+					// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
 			
-						'ID' => $post[ 'ID' ],
-					] );
+					// 	'ID' => $post[ 'ID' ],
+					// ] );
 
 					self::set_shortcodes( $post[ 'ID' ], $post );
 				}
