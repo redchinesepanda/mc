@@ -5,6 +5,8 @@ class MultisitePost
 	const POST_TYPES = [
 		'legal_brand',
 
+		'legal_billet',
+
 		'legal_compilation',
 
 		'post',
