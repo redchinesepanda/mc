@@ -64,13 +64,13 @@ class MultisiteShortcodeSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		// LegalDebug::die( [
-		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
+		LegalDebug::die( [
+			'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
 
-		// 	'doaction' => $doaction,
+			'doaction' => $doaction,
 
-		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ),
-		// ] );
+			'check_doaction' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ),
+		] );
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ) )
 		{
