@@ -11,7 +11,7 @@ class MultisiteShortcodeSync
 	];
 
 	const SHORTCODES = [
-		'gallery' => 'gallery',
+		'mega' => 'billet-mega',
 	];
 
 	// BilletMega::SHORTCODE[ 'mega' ]
@@ -36,6 +36,13 @@ class MultisiteShortcodeSync
 		// ] );
 	}
 
+	public static function get_shortcodes()
+	{
+		return [
+			BilletMega::SHORTCODE[ 'mega' ],
+		];
+	}
+
 	public static function get_mega_shortcodes_ids( $post_id, $post )
     {
         $matches = [];
@@ -43,7 +50,7 @@ class MultisiteShortcodeSync
 		$handler = new self();
 
 		$result = preg_match_all( 
-			MultisiteGallerySync::get_gallery_shortcode_regexp( self::SHORTCODES ),
+			MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
 
 			$post[ 'post_content' ],
 
@@ -55,9 +62,9 @@ class MultisiteShortcodeSync
 		LegalDebug::debug( [
 			'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
 
-			'get_shortcode_regex' => get_shortcode_regex( self::SHORTCODES ),
+			'get_shortcode_regex' => get_shortcode_regex( self::get_shortcodes() ),
 
-			'get_gallery_shortcode_regexp' => MultisiteGallerySync::get_gallery_shortcode_regexp( self::SHORTCODES ),
+			'get_gallery_shortcode_regexp' => MultisiteGallerySync::get_gallery_shortcode_regexp( self::get_shortcodes() ),
 
 			'matches' => $matches,
 		] );
