@@ -25,7 +25,9 @@ class MultisiteShortcodeSync
 
 	function mc_edit_form_after_title_debug( $post )
 	{
-		self::get_mega_shortcodes_ids( $post->ID, $post );
+		$post_prepared = MultisitePost::get_post( $post->ID );
+
+		self::get_mega_shortcodes_ids( $post->ID, $post_prepared );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteMeta' => 'register_functions_admin',
