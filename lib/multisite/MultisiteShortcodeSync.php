@@ -64,8 +64,8 @@ class MultisiteShortcodeSync
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::die( [
-			'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
+		LegalDebug::debug( [
+			'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
 
 			'doaction' => $doaction,
 
@@ -78,6 +78,12 @@ class MultisiteShortcodeSync
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )
 				{
+					LegalDebug::die( [
+						'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
+			
+						'ID' => $post[ 'ID' ],
+					] );
+
 					self::set_shortcodes( $post[ 'ID' ], $post );
 				}
 			}
