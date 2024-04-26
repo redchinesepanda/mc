@@ -22,6 +22,8 @@ require_once( 'MultisiteGallerySync.php' );
 
 require_once( 'MultisitePostSync.php' );
 
+require_once( 'MultisiteShortcodeSync.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -63,6 +65,8 @@ class MiltisiteMain
 		MultisiteGallerySync::register_functions_debug();
 
 		MultisiteMeta::register_functions_debug();
+
+		MultisiteShortcodeSync::register_functions_debug();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{

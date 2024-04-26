@@ -144,9 +144,19 @@ class MultisiteGallerySync
 		return $result;
 	}
 
-	public static function get_gallery_shortcode_regexp()
+	// public static function get_gallery_shortcode_regexp()
+	// {
+	// 	return sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+	// }
+	
+	public static function get_gallery_shortcode_regexp( $shortcodes = '' )
 	{
-		return sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( self::SHORTCODES ) );
+		if ( empty( $shortcodes ) )
+		{
+			$shortcodes = self::SHORTCODES;
+		}
+
+		return sprintf( self::PATTERNS[ 'regex' ], get_shortcode_regex( $shortcodes ) );
 	}
 
 	public static function set_gallery_shortcode( $post_id, $post )
