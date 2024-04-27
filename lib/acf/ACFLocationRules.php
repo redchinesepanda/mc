@@ -73,44 +73,46 @@ class ACFLocationRules
 		return $choices;
 	}
 	
+	function check_has_term( $selected_slug )
+	{
+		return has_term( $selected_slug, self::TAXONOMIES_PAGE[ 'page-type' ] );
+	}
+
+	function check_not_has_term( $selected_slug )
+	{
+		return self::check_has_term( $selected_slug );
+	}
+
 	function add_location_rule_match_page_type_slug( $match, $rule, $options, $field_group )
 	{
 		// $current_user = wp_get_current_user();
 
 		// $selected_user = (int) $rule[ 'value' ];
-		
-		$selected_slug = $rule[ 'value' ];
 
 		LegalDebug::debug( [
 			'ACFLocationRules' => 'add_location_rule_match_page_type_slug',
-
-			'selected_slug' => $selected_slug,
 
 			'match' => $match,
 
 			'rule' => $rule,
 
-			'==' => ( $rule[ 'operator' ] == "==" ),
+			'check_has_term' => self::check_has_term( $selected_slug ),
 
-			'!=' => ( $rule[ 'operator' ] == "!=" ),
-
-			'has_term' => has_term( $selected_slug, self::TAXONOMIES_PAGE[ 'page-type' ] ),
-
-			'not_has_term' => ( ! has_term( $selected_slug ) ),
+			'check_not_has_term' => self::check_not_has_term( $selected_slug ),
 		] );
 
 		if ( $rule[ 'operator' ] == "==" )
 		{
 			// $match = ( $current_user->ID == $selected_user );
 			
-			return has_term( $selected_slug );
+			return self::check_has_term( $rule[ 'value' ] );
 		}
 		
 		if ( $rule[ 'operator' ] == "!=" )
 		{
 			// $match = ( $current_user->ID != $selected_user );
 
-			return ! has_term( $selected_slug );
+			return self::check_not_has_term( $rule[ 'value' ] );
 		}
 
 		// return $match;
