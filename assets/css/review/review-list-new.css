@@ -2,7 +2,7 @@
 
   /* Typography */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]) li,
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ) li,
   .tcb-post-content>ol li,
   .bonus-content>ul li,
   .billet-description>ul li,
@@ -40,7 +40,7 @@
 
   /* Typography */
 
-  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]),
+  .tcb-post-content>ul:not(.legal-highlight):not(.legal-faq-description):not([style]):not( .legal-list-image-in-border ),
   .tcb-post-content>ol,
   .bonus-content>ul li,
   .billet-description>ul li,
@@ -126,7 +126,7 @@
   padding-left: calc(24px + 12px);
 }
 
-.tcb-post-content>.legal-list-image:not(.compilation-link) li {
+.tcb-post-content>.legal-list-image:not(.compilation-link):not( .legal-list-image-in-border ) li {
   padding-top: 18px;
   padding-right: 18px;
   padding-bottom: 18px;
@@ -241,7 +241,7 @@
   color: var(--Base-base-09);
 } */
 
-.tcb-post-content ul>li:before {
+.tcb-post-content ul > li:before {
   font-family: var(--legal-font-icons);
   font-size: 24px;
   line-height: 24px;
@@ -282,4 +282,22 @@
 .tcb-post-content .legal-list-image li::before {
   font-family: var(--legal-font-icons-sport);
   font-style: normal;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  border-radius: 14px;
+  border: 1px solid var( --Base-base-09 );
+  background: var( --Base-base-01 ); 
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  padding-top: 16px;
+  padding-right: 18px;
+  padding-bottom: 16px;
+  padding-left: calc( 18px + 24px + 14px );
 }
