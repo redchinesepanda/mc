@@ -89,6 +89,12 @@ class ACFLocationRules
 			'match' => $match,
 
 			'rule' => $rule,
+
+			'==' => ( $rule[ 'operator' ] == "==" ),
+
+			'!=' => ( $rule[ 'operator' ] == "!=" ),
+
+			'has_term' => has_term( $selected_slug ),
 		] );
 
 		if ( $rule[ 'operator' ] == "==" )
