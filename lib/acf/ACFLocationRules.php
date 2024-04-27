@@ -80,7 +80,7 @@ class ACFLocationRules
 
 	function check_not_has_term( $selected_slug )
 	{
-		return self::check_has_term( $selected_slug );
+		return ! self::check_has_term( $selected_slug );
 	}
 
 	function add_location_rule_match_page_type_slug( $match, $rule, $options, $field_group )
