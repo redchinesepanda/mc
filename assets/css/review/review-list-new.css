@@ -11,6 +11,13 @@
     font-size: 14px;
     line-height: 20px;
   }
+
+   /* Width and Height */
+
+  .tcb-post-content .legal-list-3.legal-list-image-in-border li,
+  .tcb-post-content .legal-list-4.legal-list-image-in-border li {
+    width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -26,7 +33,7 @@
 
   /* Width and Height */
 
-  .tcb-post-content .legal-list-2:not( .legal-list-image-in-border ) li {
+  .tcb-post-content .legal-list-2 li {
     width: calc(50% - (24px + 14px + 18px));
   }
 
@@ -36,6 +43,14 @@
 
   .tcb-post-content .legal-list-4:not( .legal-list-image-in-border ) li {
     width: calc(25% - (24px + 14px + 18px));
+  }
+
+  .tcb-post-content .legal-list-3.legal-list-image-in-border li {
+    width: calc( 33.333% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+  }
+  
+  .tcb-post-content .legal-list-4.legal-list-image-in-border li {
+    width: calc( 25% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
   }
 
   /* Typography */
@@ -83,6 +98,19 @@
 .tcb-post-content ul {
   list-style: none;
   list-style-type: none;
+}
+
+.tcb-post-content .legal-list-image-in-border {
+  column-gap: 8px;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  display: flex;
+  align-items: center;
+}
+
+.tcb-post-content li>br {
+  display: block;
 }
 
 /* Review Position */
@@ -193,8 +221,19 @@
 }
 
 .tcb-post-content li>br {
-  display: block;
   margin-top: 8px;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  padding-top: 16px;
+  padding-right: 18px;
+  padding-bottom: 16px;
+  padding-left: calc( 18px + 24px + 14px );
+}
+
+.tcb-post-content .legal-list-image-in-border li::before {
+  position: absolute;
+  left: 18px;
 }
 
 /* Review Width and Height */
@@ -204,11 +243,21 @@
   height: 24px;
 }
 
+.tcb-post-content .legal-list-image-in-border li {
+  min-height: calc( 56px - (16px * 2) - 2px );
+}
+
 /* Review Background */
 
 .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
   background-color: var(--Primitives-blue-40);
   border-radius: 50%;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  border-radius: 14px;
+  border: 1px solid var( --Base-base-09 );
+  background: var( --Base-base-01 ); 
 }
 
 /* Typography */
@@ -223,7 +272,8 @@
 .tcb-post-content ul>li,
 .tcb-post-content ol li,
 .tcb-post-content ol:not(.menu__box)>li::before,
-.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
+.tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before,
+.tcb-post-content .legal-list-image-in-border li a {
   color: var(--Base-base-09);
 }
 
@@ -284,50 +334,12 @@
   font-style: normal;
 }
 
-.tcb-post-content .legal-list-image-in-border {
-  column-gap: 8px;
-}
-
-.tcb-post-content .legal-list-2.legal-list-image-in-border li {
-  width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
-}
-
-.tcb-post-content .legal-list-3.legal-list-image-in-border li {
-  width: calc( 33.333% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
-}
-
-.tcb-post-content .legal-list-4.legal-list-image-in-border li {
-  width: calc( 25% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
-}
-
-.tcb-post-content .legal-list-image-in-border li {
-  min-height: calc( 56px - (16px * 2) - 2px );
-}
-
-.tcb-post-content .legal-list-image-in-border li {
-  display: flex;
-  align-items: center;
-}
-
-.tcb-post-content .legal-list-image-in-border li {
-  padding-top: 16px;
-  padding-right: 18px;
-  padding-bottom: 16px;
-  padding-left: calc( 18px + 24px + 14px );
-}
-
-.tcb-post-content .legal-list-image-in-border li::before {
-  position: absolute;
-  left: 18px;
-}
-
-.tcb-post-content .legal-list-image-in-border li {
-  border-radius: 14px;
-  border: 1px solid var( --Base-base-09 );
-  background: var( --Base-base-01 ); 
-}
-
-.tcb-post-content .legal-list-image-in-border li {
+.tcb-post-content .legal-list-image-in-border li,
+.tcb-post-content .legal-list-image-in-border li a {
   font-size: 13px;
   line-height: 17px;
+}
+
+.tcb-post-content .legal-list-image-in-border li a {
+  text-decoration: none;
 }
