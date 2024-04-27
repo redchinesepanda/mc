@@ -240,7 +240,7 @@ class MultisiteGallerySync
     {
         $matches = [];
 
-		$handler = new self();
+		// $handler = new self();
 
 		$result = preg_match_all( 
 			self::get_gallery_shortcode_regexp(),

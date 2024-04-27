@@ -174,32 +174,67 @@ class MultisiteShortcodeSync
 		MultisitePost::update_post( $post );
     }
 
-	// public static function get_mega_shortcodes_ids( $post_id, $post )
-    // {
-    //     $matches = [];
+	public static function get_matches_image_ids( $matches )
+	{
+		$result = [];
 
-	// 	$handler = new self();
+		foreach ( $matches as $match )
+		{
+			// LegalDebug::debug( [
+			// 	'MultisiteGallerySync' => 'get_gallery_matches_ids',
 
-	// 	$result = preg_match_all( 
-	// 		self::get_shortcodes_regexp(),
+			// 	'match' => $match,
+			// ] );
 
-	// 		$post[ 'post_content' ],
+			if ( ! empty( $match[ 3 ] ) )
+			{
+				$atts = shortcode_parse_atts( $match[ 3 ] );
 
-	// 		$matches,
+				// LegalDebug::debug( [
+				// 	'MultisiteGallerySync' => 'get_gallery_matches_ids',
+	
+				// 	'atts' => $atts,
+				// ] );
 
-	// 		PREG_SET_ORDER
-	// 	);
+				if ( ! empty( $atts[ 'mode' ] ) )
+				{
+					if ( ! empty( $atts[ 'id' ] ) )
+					{
+						$ids = explode( ',', $atts[ 'id' ] );
+	
+						$result = array_merge( $result, $ids );
+					}
+				}
+			} 
+		}
 
-	// 	LegalDebug::debug( [
-	// 		'MultisiteGallerySync' => 'get_gallery_shortcodes_ids',
+		return $result;
+	}
 
-	// 		'matches' => $matches,
-	// 	] );
+	public static function get_shortcodes_image_ids( $post_id, $post )
+    {
+        $matches = [];
 
-	// 	// $ids = self::get_gallery_matches_ids( $matches );
+		$result = preg_match_all( 
+			self::get_shortcodes_regexp(),
 
-	// 	// return $ids;
-    // }
+			$post[ 'post_content' ],
+
+			$matches,
+
+			PREG_SET_ORDER
+		);
+
+		LegalDebug::debug( [
+			'MultisiteShortcodeSync' => 'get_shortcodes_ids',
+
+			'matches' => $matches,
+		] );
+
+		$ids = self::get_matches_image_ids( $matches );
+
+		return $ids;
+    }
 }
 
 ?>

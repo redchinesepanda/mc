@@ -102,6 +102,14 @@ class MultisiteAttachment
 		// 	'gallery_post_ids' => $gallery_post_ids,
 		// ] );
 
+		$shortcodes_post_ids = MultisiteShortcodeSync::get_shortcodes_image_ids( $post_id, $post );
+
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'copy_attachments',
+
+			'shortcodes_post_ids' => $shortcodes_post_ids,
+		] );
+
 		// $post_thumbnail_ids = MultisiteAttachmentSync::get_post_thumbnail_ids( $post_id );
 
 		// $origin_post_ids = array_merge( $field_post_ids, $gallery_post_ids, $post_thumbnail_ids );
@@ -294,6 +302,7 @@ class MultisiteAttachment
 		}
 
 		// }
+
 		// }
 
 		return false;
