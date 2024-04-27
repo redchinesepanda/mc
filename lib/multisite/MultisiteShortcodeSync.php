@@ -225,11 +225,11 @@ class MultisiteShortcodeSync
 			PREG_SET_ORDER
 		);
 
-		LegalDebug::debug( [
-			'MultisiteShortcodeSync' => 'get_shortcodes_ids',
+		// LegalDebug::debug( [
+		// 	'MultisiteShortcodeSync' => 'get_shortcodes_ids',
 
-			'matches' => $matches,
-		] );
+		// 	'matches' => $matches,
+		// ] );
 
 		$ids = self::get_matches_image_ids( $matches );
 
