@@ -26,15 +26,15 @@
 
   /* Width and Height */
 
-  .tcb-post-content .legal-list-2 li {
+  .tcb-post-content .legal-list-2:not( .legal-list-image-in-border ) li {
     width: calc(50% - (24px + 14px + 18px));
   }
 
-  .tcb-post-content .legal-list-3 li {
+  .tcb-post-content .legal-list-3:not( .legal-list-image-in-border ) li {
     width: calc(33.333% - (24px + 14px + 18px));
   }
 
-  .tcb-post-content .legal-list-4 li {
+  .tcb-post-content .legal-list-4:not( .legal-list-image-in-border ) li {
     width: calc(25% - (24px + 14px + 18px));
   }
 
@@ -282,6 +282,26 @@
 .tcb-post-content .legal-list-image li::before {
   font-family: var(--legal-font-icons-sport);
   font-style: normal;
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  column-gap: 8px;
+}
+
+.tcb-post-content .legal-list-2.legal-list-image-in-border li {
+  width: calc( 50% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+}
+
+.tcb-post-content .legal-list-3.legal-list-image-in-border li {
+  width: calc( 33.333% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+}
+
+.tcb-post-content .legal-list-4.legal-list-image-in-border li {
+  width: calc( 25% - (18px + 24px + 14px + 18px + 2px) - (8px / 4 * 3) );
+}
+
+.tcb-post-content .legal-list-image-in-border li {
+  min-height: calc( 56px - (16px * 2) - 2px );
 }
 
 .tcb-post-content .legal-list-image-in-border li {
