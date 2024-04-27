@@ -175,7 +175,8 @@
 
 .bonus-content > p,
 .billet-description > p,
-.billet .billet-description-full > p {
+.billet .billet-description-full > p,
+.legal-review-page .tcb-post-content > p:first-child {
     margin-top: 0px;
     margin-bottom: 0px;
 }
