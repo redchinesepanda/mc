@@ -14,6 +14,8 @@ require_once( 'ACFBillet.php' );
 
 require_once( 'ACFBrand.php' );
 
+require_once( 'ACFLocationRules.php' );
+
 class ACFMain
 {
     public static function check_plugin()
@@ -75,6 +77,8 @@ class ACFMain
         ACFBillet::register();
 
         ACFBrand::register();
+
+        ACFLocationRules::register();
     }
 }
 
