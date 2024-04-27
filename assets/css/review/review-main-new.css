@@ -161,7 +161,7 @@
     margin-bottom: 0px;
 }
 
-.tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ) {
+.tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ):not( :first-child ) {
     padding-top: 0px;
     padding-bottom: 18px;
     margin: 0px;
@@ -178,6 +178,10 @@
 .billet .billet-description-full > p {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+.legal-review-page .tcb-post-content > p:first-child {
+    padding-top: 18px;
 }
 
 .tcb-post-content h4:not( .legal-override ) {
