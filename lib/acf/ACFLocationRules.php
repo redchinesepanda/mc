@@ -8,9 +8,9 @@ class ACFLocationRules
 
 		add_filter( 'acf/location/rule_types', [ $handler, 'add_location_rules_types' ] );
 
-		add_filter( 'acf/location/rule_values/post_type', [ $handler, 'add_location_rule_values_post_type' ] );
+		add_filter( 'acf/location/rule_values/post_type_slug', [ $handler, 'add_location_rule_values_post_type_slug' ] );
 
-		add_filter( 'acf/location/rule_match/user', [ $handler, 'add_location_rule_match_post_type' ], 10, 4 );
+		add_filter( 'acf/location/rule_match/post_type_slug', [ $handler, 'add_location_rule_match_post_type_slug' ], 10, 4 );
 
 		// add_filter( 'acf/location/rule_operators', [ $handler, 'add_location_rules_operators' ] );
 	}
@@ -60,7 +60,7 @@ class ACFLocationRules
 		return $terms;
 	}
 
-	function add_location_rule_values_post_type( $choices )
+	function add_location_rule_values_post_type_slug( $choices )
 	{
 		$terms = self::get_terms();
 
@@ -73,22 +73,22 @@ class ACFLocationRules
 		return $choices;
 	}
 	
-	function add_location_rule_match_post_type( $match, $rule, $options, $field_group )
+	function add_location_rule_match_post_type_slug( $match, $rule, $options, $field_group )
 	{
 		// $current_user = wp_get_current_user();
 
 		// $selected_user = (int) $rule[ 'value' ];
 		
-		$selected_slug = (int) $rule[ 'value' ];
+		$selected_slug = $rule[ 'value' ];
 
-		if( $rule[ 'operator' ] == "==" )
+		if ( $rule[ 'operator' ] == "==" )
 		{
 			// $match = ( $current_user->ID == $selected_user );
 			
 			return has_term( $selected_slug );
 		}
 		
-		if( $rule[ 'operator' ] == "!=" )
+		if ( $rule[ 'operator' ] == "!=" )
 		{
 			// $match = ( $current_user->ID != $selected_user );
 
