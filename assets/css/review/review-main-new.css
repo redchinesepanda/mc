@@ -169,7 +169,8 @@
 
 .bonus-content > p:not( :last-child ):not( .legal-override ),
 .billet-description > p:not( :last-child ):not( .legal-override ),
-.billet .billet-description-full > p:not( :last-child ):not( .legal-override ) {
+.billet .billet-description-full > p:not( :last-child ):not( .legal-override ),
+.legal-review-page .tcb-post-content > p:first-child {
     padding-bottom: 18px;
 }
 
