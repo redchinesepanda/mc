@@ -95,6 +95,8 @@ class ACFLocationRules
 			'!=' => ( $rule[ 'operator' ] == "!=" ),
 
 			'has_term' => has_term( $selected_slug ),
+
+			'not_has_term' => ( ! has_term( $selected_slug ) ),
 		] );
 
 		if ( $rule[ 'operator' ] == "==" )
