@@ -89,17 +89,17 @@ class ACFLocationRules
 
 		// $selected_user = (int) $rule[ 'value' ];
 
-		LegalDebug::debug( [
-			'ACFLocationRules' => 'add_location_rule_match_page_type_slug',
+		// LegalDebug::debug( [
+		// 	'ACFLocationRules' => 'add_location_rule_match_page_type_slug',
 
-			'match' => $match,
+		// 	'match' => $match,
 
-			'rule' => $rule,
+		// 	'rule' => $rule,
 
-			'check_has_term' => self::check_has_term( $rule[ 'value' ] ),
+		// 	'check_has_term' => self::check_has_term( $rule[ 'value' ] ),
 
-			'check_not_has_term' => self::check_not_has_term( $rule[ 'value' ] ),
-		] );
+		// 	'check_not_has_term' => self::check_not_has_term( $rule[ 'value' ] ),
+		// ] );
 
 		if ( $rule[ 'operator' ] == "==" )
 		{
