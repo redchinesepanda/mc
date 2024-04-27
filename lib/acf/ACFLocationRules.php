@@ -81,6 +81,16 @@ class ACFLocationRules
 		
 		$selected_slug = $rule[ 'value' ];
 
+		LegalDebug::debug( [
+			'ACFLocationRules' => 'add_location_rule_match_page_type_slug',
+
+			'selected_slug' => $selected_slug,
+
+			'match' => $match,
+
+			'rule' => $rule,
+		] );
+
 		if ( $rule[ 'operator' ] == "==" )
 		{
 			// $match = ( $current_user->ID == $selected_user );
