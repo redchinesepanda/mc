@@ -17,7 +17,7 @@ class ACFLocationRules
 
 	function add_location_rules_types( $choices )
 	{
-		$choices[ 'MC' ][ 'page_type_slug' ] = 'Post Type Slug';
+		$choices[ 'MC' ][ 'page_type_slug' ] = 'Page Type Slug';
 
 		return $choices;	
 	}
