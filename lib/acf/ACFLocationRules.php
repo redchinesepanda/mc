@@ -96,9 +96,9 @@ class ACFLocationRules
 
 			'rule' => $rule,
 
-			'check_has_term' => self::check_has_term( $selected_slug ),
+			'check_has_term' => self::check_has_term( $rule[ 'value' ] ),
 
-			'check_not_has_term' => self::check_not_has_term( $selected_slug ),
+			'check_not_has_term' => self::check_not_has_term( $rule[ 'value' ] ),
 		] );
 
 		if ( $rule[ 'operator' ] == "==" )
