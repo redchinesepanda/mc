@@ -174,6 +174,12 @@ class MultisiteShortcodeSync
 		MultisitePost::update_post( $post );
     }
 
+	const MEGA_MODES_IMAGE = [
+		'image' => 'image',
+
+		'author' => 'author',
+	];
+
 	public static function get_matches_image_ids( $matches )
 	{
 		$result = [];
@@ -196,7 +202,7 @@ class MultisiteShortcodeSync
 				// 	'atts' => $atts,
 				// ] );
 
-				if ( ! empty( $atts[ 'mode' ] ) )
+				if ( ! empty( $atts[ 'mode' ] ) && in_array( $atts[ 'mode' ], self::MEGA_MODES_IMAGE ) )
 				{
 					if ( ! empty( $atts[ 'id' ] ) )
 					{
