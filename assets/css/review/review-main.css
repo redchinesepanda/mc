@@ -152,7 +152,7 @@
     line-height: 1.6em;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description )
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .billet-footer p )
 /* .tcb-post-content ul:not( .legal-override ):not( .legal-faq-description ) li,
 .tcb-post-content ol:not( .legal-override ):not( .legal-faq-description ) li */
 {
