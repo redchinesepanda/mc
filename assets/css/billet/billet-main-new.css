@@ -204,11 +204,6 @@
         padding-left: 24px;
     }
 
-    .billet-item .billet-footer p {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-
     /* Billet Background */
 
     .billet-left {
@@ -670,6 +665,11 @@ body {
 .billet-item .billet-description-full ul li::before {
     position: absolute;
     left: 0px;
+}
+
+.billet-item .billet-footer p {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 /* Billet Typography */
