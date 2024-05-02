@@ -18,7 +18,7 @@ class ReviewContent
 
         if ( !empty( $post = get_post() ) )
         {
-            $content = filter_content( $content );
+            $content = self::filter_content( $content );
 
             $content = apply_filters( 'the_content', $post->post_content );
 
