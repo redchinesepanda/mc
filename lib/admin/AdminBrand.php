@@ -8,9 +8,9 @@ class AdminBrand
 	
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
+        // add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
     }
 
 	public static function check_brand( $post_type )
@@ -20,31 +20,31 @@ class AdminBrand
 
 	public static function filter_dropdown( $post_type )
     {
-        // if ( self::check_brand( $post_type ) )
-		// {
-			$languages = WPMLMain::get_all_languages();
+        if ( self::check_brand( $post_type ) )
+		{
+			// $languages = WPMLMain::get_all_languages();
 
-			$language = WPMLMain::current_language();
+			// $language = WPMLMain::current_language();
 	
-			LegalDebug::debug( [
-				'AdminBrand' => 'filter_dropdown',
+			// LegalDebug::debug( [
+			// 	'AdminBrand' => 'filter_dropdown',
 	
-				'post_type' => $post_type,
+			// 	'post_type' => $post_type,
 
-				'language' => $language,
+			// 	'language' => $language,
 	
-				'languages' => $languages,
-			] );
+			// 	'languages' => $languages,
+			// ] );
 	
-			foreach ( $languages as $code => $language )
-			{
-				LegalDebug::debug( [
-					'AdminBrand' => 'filter_dropdown',
+			// foreach ( $languages as $code => $language )
+			// {
+				// LegalDebug::debug( [
+				// 	'AdminBrand' => 'filter_dropdown',
 	
-					'code' => $code,
+				// 	'code' => $code,
 	
-					'language' => $language,
-				] );
+				// 	'language' => $language,
+				// ] );
 	
 				// foreach ( $taxonomies as $taxonomy )
 				// {
@@ -90,8 +90,8 @@ class AdminBrand
 				//         }
 				//     };
 				// }
-			}
-		// }
+			// }
+		}
     }
 }
 
