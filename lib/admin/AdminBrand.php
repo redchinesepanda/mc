@@ -23,11 +23,15 @@ class AdminBrand
         // if ( self::check_brand( $post_type ) )
 		// {
 			$languages = WPMLMain::get_all_languages();
+
+			$language = WPMLMain::current_language();
 	
 			LegalDebug::debug( [
 				'AdminBrand' => 'filter_dropdown',
 	
 				'post_type' => $post_type,
+
+				'language' => $language,
 	
 				'languages' => $languages,
 			] );
