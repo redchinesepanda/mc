@@ -9,7 +9,7 @@ class AdminBrand
         add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
     }
 
-	public static function filter_dropdown( $post_type, $which )
+	public static function filter_dropdown( $post_type )
     {
         // global $typenow;
 
@@ -18,6 +18,8 @@ class AdminBrand
 		LegalDebug::debug( [
 			'AdminBrand' => 'filter_dropdown',
 
+			'post_type' => $post_type,
+
 			'languages' => $languages,
 		] );
 
@@ -25,7 +27,7 @@ class AdminBrand
         {
 			LegalDebug::debug( [
 				'AdminBrand' => 'filter_dropdown',
-				
+
 			    'code' => $code,
 
 				'language' => $language,
