@@ -210,6 +210,12 @@ class BilletMega
 
 	public static function prepare( $atts, $content = '' )
     {
+		LegalDebug::debug( [
+			'atts' => $atts,
+
+			'content' => $content,
+		] );
+		
 		$pairs = [
 			'id' => 0,
 
@@ -232,11 +238,11 @@ class BilletMega
 
 		$no_controls = in_array( $atts[ 'mode' ], [ self::MODE[ 'no-controls' ], self::MODE[ 'image' ], self::MODE[ 'author' ], self::MODE[ 'horizontal' ] ] ) ? true : false;
 
-		LegalDebug::debug( [
-			'atts' => $atts,
+		// LegalDebug::debug( [
+		// 	'atts' => $atts,
 
-			'content' => $content,
-		] );
+		// 	'content' => $content,
+		// ] );
 
 		$url = BilletMain::get_url( $atts[ 'id' ] );
 
