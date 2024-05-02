@@ -8,9 +8,9 @@ class AdminBrand
 	
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
+        // add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
     }
 
 	public static function check_brand( $post_type )
