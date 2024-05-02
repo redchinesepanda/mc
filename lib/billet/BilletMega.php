@@ -210,12 +210,12 @@ class BilletMega
 
 	public static function prepare( $atts, $content = '' )
     {
-		LegalDebug::debug( [
-			'atts' => $atts,
+		// LegalDebug::debug( [
+		// 	'atts' => $atts,
 
-			'content' => $content,
-		] );
-		
+		// 	'content' => $content,
+		// ] );
+
 		$pairs = [
 			'id' => 0,
 
