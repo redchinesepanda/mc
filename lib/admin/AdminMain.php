@@ -10,7 +10,7 @@ require_once( 'AdminNotice.php' );
 
 require_once( 'AdminDequeue.php' );
 
-// require_once( 'AdminBrand.php' );
+require_once( 'AdminBrand.php' );
 
 class AdminMain
 {
@@ -57,7 +57,7 @@ class AdminMain
 
         AdminDequeue::register();
 
-        // AdminBrand::register();
+        AdminBrand::register();
     }
 }
 
