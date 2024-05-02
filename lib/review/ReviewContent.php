@@ -18,9 +18,11 @@ class ReviewContent
 
         if ( !empty( $post = get_post() ) )
         {
-            $content = self::filter_content( $content );
+            $content = self::filter_content( $post->post_content );
 
-            $content = apply_filters( 'the_content', $post->post_content );
+            $content = apply_filters( 'the_content', $content );
+            
+            // $content = apply_filters( 'the_content', $post->post_content );
 
             $content = CompilationTabsLink::modify_content( $content );
         }
