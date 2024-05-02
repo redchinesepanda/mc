@@ -9,15 +9,23 @@ class AdminBrand
         add_action( 'restrict_manage_posts', [ $handler, 'filter_dropdown'] );
     }
 
-	public static function filter_dropdown()
+	public static function filter_dropdown( $post_type, $which )
     {
-        global $typenow;
+        // global $typenow;
 
 		$languages = WPMLMain::get_all_languages();
+
+		LegalDebug::debug( [
+			'AdminBrand' => 'filter_dropdown',
+
+			'languages' => $languages,
+		] );
 
         foreach ( $languages as $code => $language )
         {
 			LegalDebug::debug( [
+				'AdminBrand' => 'filter_dropdown',
+				
 			    'code' => $code,
 
 				'language' => $language,
