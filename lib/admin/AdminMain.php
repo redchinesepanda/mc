@@ -10,6 +10,8 @@ require_once( 'AdminNotice.php' );
 
 require_once( 'AdminDequeue.php' );
 
+require_once( 'AdminBrand.php' );
+
 class AdminMain
 {
     const TEXT = [
@@ -54,6 +56,8 @@ class AdminMain
         // AdminWPML::register();
 
         AdminDequeue::register();
+
+        AdminBrand::register();
     }
 }
 
