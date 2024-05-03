@@ -185,7 +185,8 @@ class LegalBreadcrumbsMain extends LegalDebug
         //     'array_key_exists' => array_key_exists( $lang, self::HOME ) ? 'true' : 'false',
         // ] );
         
-        if ( array_key_exists( $lang, self::HOME ) ) {
+        if ( array_key_exists( $lang, self::HOME ) )
+        {
             $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ];
 
             if ( !empty( self::HOME[ $lang ] ) ) {
@@ -208,7 +209,8 @@ class LegalBreadcrumbsMain extends LegalDebug
     {
         $link = [];
 
-        if ( !empty( $href ) ) {
+        if ( !empty( $href ) )
+        {
             $link = [
                 'href' => $href,
 
@@ -226,7 +228,7 @@ class LegalBreadcrumbsMain extends LegalDebug
             'link' => $link,
 
             'meta' => [
-                'content' => $index ++,
+                'content' => $index++,
 
                 'itemprop' => 'position',
             ],
@@ -276,12 +278,16 @@ class LegalBreadcrumbsMain extends LegalDebug
         
         $first = self::get_item( __( BaseMain::TEXT[ 'match-center' ], ToolLoco::TEXTDOMAIN ), self::get_home_url(), $index );
 
-        if ( !empty( $post_id ) ) {
-            if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) ) {
+        if ( !empty( $post_id ) )
+        {
+            if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) )
+            {
                 $legal_items = get_field( self::FIELD_ITEMS, $post_id );
 
-                if ( !empty( $legal_items ) ) {
-                    foreach( $legal_items as $item ) {
+                if ( !empty( $legal_items ) )
+                {
+                    foreach( $legal_items as $item )
+                    {
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
                         $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
@@ -331,10 +337,18 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
 
-                if ( empty( $items ) && $post->post_parent ) {
+                if ( empty( $items ) && $post->post_parent )
+                {
                     $ancestors = array_reverse( get_post_ancestors( $post_id ) );
+
+                    LegalDebug::debug( [
+                        'LegalBreadcrumbsMain' => 'get',
+
+                        '$ancestors' => $ancestors,
+                    ] );
     
-                    foreach ( $ancestors as $id ) {
+                    foreach ( $ancestors as $id )
+                    {
                         $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                     }
                 }
