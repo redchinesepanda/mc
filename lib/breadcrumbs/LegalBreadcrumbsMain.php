@@ -255,6 +255,16 @@ class LegalBreadcrumbsMain extends LegalDebug
     //     {}
     // }
 
+    public static function check_post_status( $id )
+    {
+        if ( empty( $id ) )
+		{
+			return false;
+		}
+
+		return get_post_status( $id );
+    }
+
     public static function get()
     {
         $id = 0;
@@ -314,6 +324,13 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                         $item_id = $item[ self::ITEM[ 'id' ] ];
 
+                        $href = '#';
+
+                        if ( self::check_post_status( $item_id ) )
+                        {
+                            $href = get_page_link( $item_id );
+                        }
+
                         // $href = get_page_link( $item[ self::ITEM[ 'id' ] ] );
 
                         LegalDebug::debug( [
@@ -326,7 +343,9 @@ class LegalBreadcrumbsMain extends LegalDebug
                             // 'href' => $href,
                         ] );
 
-                        $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
+                        // $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
+                        
+                        $items[] = self::get_item( $title, $href, $index );
 
                         LegalDebug::debug( [
                             'LegalBreadcrumbsMain' => 'get',
