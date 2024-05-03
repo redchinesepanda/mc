@@ -314,7 +314,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                         $item_id = $item[ self::ITEM[ 'id' ] ];
 
-                        $href = get_page_link( $item[ self::ITEM[ 'id' ] ] );
+                        // $href = get_page_link( $item[ self::ITEM[ 'id' ] ] );
 
                         LegalDebug::debug( [
                             'LegalBreadcrumbsMain' => 'get',
@@ -323,7 +323,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                             'item_id' => $item_id,
 
-                            'href' => $href,
+                            // 'href' => $href,
                         ] );
 
                         $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
