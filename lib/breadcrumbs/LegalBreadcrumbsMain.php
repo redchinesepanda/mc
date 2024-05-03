@@ -312,7 +312,19 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
+                        LegalDebug::debug( [
+                            'LegalBreadcrumbsMain' => 'get',
+                
+                            'title' => $title,
+                        ] );
+
                         $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
+
+                        LegalDebug::debug( [
+                            'LegalBreadcrumbsMain' => 'get',
+                
+                            'items' => $items,
+                        ] );
                     }
                 }
 
