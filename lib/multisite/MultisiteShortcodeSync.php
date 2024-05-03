@@ -141,6 +141,8 @@ class MultisiteShortcodeSync
 	{
 		return [
 			BilletMega::SHORTCODE[ 'mega' ],
+
+			CompilationBonus::SHORTCODES[ 'bonus' ],
 		];
 	}
 
