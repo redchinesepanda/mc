@@ -68,13 +68,13 @@ class LegalBreadcrumbsMain extends LegalDebug
         {
             $primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
 
-            LegalDebug::debug( [
-                'LegalBreadcrumbsMain' => 'get_terms',
+            // LegalDebug::debug( [
+            //     'LegalBreadcrumbsMain' => 'get_terms',
 
-                'primary_id' => $primary_id,
+            //     'primary_id' => $primary_id,
 
-                'primary' => $primary,
-            ] );
+            //     'primary' => $primary,
+            // ] );
 
             if( !empty( $primary ) )
             {
@@ -122,13 +122,13 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         while ( $ancestor = get_post( $ancestor_id ) )
         {
-            LegalDebug::debug( [
-                'LegalBreadcrumbsMain' => 'get_ancestors',
+            // LegalDebug::debug( [
+            //     'LegalBreadcrumbsMain' => 'get_ancestors',
 
-                'ancestor_id' => $ancestor_id,
+            //     'ancestor_id' => $ancestor_id,
 
-                'ancestor' => $ancestor,
-            ] );
+            //     'ancestor' => $ancestor,
+            // ] );
 
             $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
 
@@ -276,11 +276,11 @@ class LegalBreadcrumbsMain extends LegalDebug
             $post_id = $post->ID;
         }
 
-        LegalDebug::debug( [
-            'LegalBreadcrumbsMain' => 'get',
+        // LegalDebug::debug( [
+        //     'LegalBreadcrumbsMain' => 'get',
 
-            'post_id' => $post_id,
-        ] );
+        //     'post_id' => $post_id,
+        // ] );
 
         $index = 1;
 
@@ -292,11 +292,11 @@ class LegalBreadcrumbsMain extends LegalDebug
         {
             $hide = get_field( self::FIELD_HIDE, $post_id );
 
-            LegalDebug::debug( [
-                'LegalBreadcrumbsMain' => 'get',
+            // LegalDebug::debug( [
+            //     'LegalBreadcrumbsMain' => 'get',
     
-                'hide' => $hide,
-            ] );
+            //     'hide' => $hide,
+            // ] );
 
             // if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) )
             
@@ -304,21 +304,21 @@ class LegalBreadcrumbsMain extends LegalDebug
             {
                 $legal_items = get_field( self::FIELD_ITEMS, $post_id );
 
-                LegalDebug::debug( [
-                    'LegalBreadcrumbsMain' => 'get',
+                // LegalDebug::debug( [
+                //     'LegalBreadcrumbsMain' => 'get',
         
-                    'legal_items' => $legal_items,
-                ] );
+                //     'legal_items' => $legal_items,
+                // ] );
 
                 if ( !empty( $legal_items ) )
                 {
                     foreach( $legal_items as $item )
                     {
-                        LegalDebug::debug( [
-                            'LegalBreadcrumbsMain' => 'get',
+                        // LegalDebug::debug( [
+                        //     'LegalBreadcrumbsMain' => 'get',
                 
-                            'item' => $item,
-                        ] );
+                        //     'item' => $item,
+                        // ] );
 
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
@@ -333,33 +333,33 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                         // $href = get_page_link( $item[ self::ITEM[ 'id' ] ] );
 
-                        LegalDebug::debug( [
-                            'LegalBreadcrumbsMain' => 'get',
+                        // LegalDebug::debug( [
+                        //     'LegalBreadcrumbsMain' => 'get',
                 
-                            'title' => $title,
+                        //     'title' => $title,
 
-                            'item_id' => $item_id,
+                        //     'item_id' => $item_id,
 
-                            // 'href' => $href,
-                        ] );
+                        //     // 'href' => $href,
+                        // ] );
 
                         // $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
                         
                         $items[] = self::get_item( $title, $href, $index );
 
-                        LegalDebug::debug( [
-                            'LegalBreadcrumbsMain' => 'get',
+                        // LegalDebug::debug( [
+                        //     'LegalBreadcrumbsMain' => 'get',
                 
-                            'items' => $items,
-                        ] );
+                        //     'items' => $items,
+                        // ] );
                     }
                 }
 
-                LegalDebug::debug( [
-                    'LegalBreadcrumbsMain' => 'get',
+                // LegalDebug::debug( [
+                //     'LegalBreadcrumbsMain' => 'get',
         
-                    'items' => $items,
-                ] );
+                //     'items' => $items,
+                // ] );
 
                 if ( empty( $items ) )
                 {
@@ -409,11 +409,11 @@ class LegalBreadcrumbsMain extends LegalDebug
                 {
                     $ancestors = array_reverse( get_post_ancestors( $post_id ) );
 
-                    LegalDebug::debug( [
-                        'LegalBreadcrumbsMain' => 'get',
+                    // LegalDebug::debug( [
+                    //     'LegalBreadcrumbsMain' => 'get',
 
-                        '$ancestors' => $ancestors,
-                    ] );
+                    //     '$ancestors' => $ancestors,
+                    // ] );
     
                     foreach ( $ancestors as $id )
                     {
@@ -427,11 +427,11 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         array_unshift( $items, $first );
 
-        LegalDebug::debug( [
-            'LegalBreadcrumbsMain' => 'get',
+        // LegalDebug::debug( [
+        //     'LegalBreadcrumbsMain' => 'get',
 
-            'items' => $items,
-        ] );
+        //     'items' => $items,
+        // ] );
 
         return $items;
     }
