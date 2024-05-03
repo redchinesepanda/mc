@@ -280,6 +280,14 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $post_id ) )
         {
+            $hide = get_field( self::FIELD_HIDE, $post_id );
+
+            LegalDebug::debug( [
+                'LegalBreadcrumbsMain' => 'get',
+    
+                'hide' => $hide,
+            ] );
+
             if ( empty( get_field( self::FIELD_HIDE, $post_id ) ) )
             {
                 $legal_items = get_field( self::FIELD_ITEMS, $post_id );
