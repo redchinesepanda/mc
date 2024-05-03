@@ -254,7 +254,7 @@ class LegalBreadcrumbsMain extends LegalDebug
             LegalDebug::debug( [
                 'LegalBreadcrumbsMain' => 'get',
 
-                'post' => $post,
+                'ID' => $post->ID,
             ] );
 
             $post_id = $post->ID;
