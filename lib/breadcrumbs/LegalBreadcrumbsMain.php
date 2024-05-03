@@ -304,6 +304,12 @@ class LegalBreadcrumbsMain extends LegalDebug
                 {
                     foreach( $legal_items as $item )
                     {
+                        LegalDebug::debug( [
+                            'LegalBreadcrumbsMain' => 'get',
+                
+                            'item' => $item,
+                        ] );
+
                         $title = ( !empty( $item[ self::ITEM[ 'label' ] ] ) ? $item[ self::ITEM[ 'label' ] ] : get_the_title( $item[ self::ITEM[ 'id' ] ] ) );
 
                         $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
