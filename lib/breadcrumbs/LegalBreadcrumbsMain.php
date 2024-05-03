@@ -263,14 +263,14 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         if ( !empty( $post ) )
         {
-            LegalDebug::debug( [
-                'LegalBreadcrumbsMain' => 'get',
-
-                'ID' => $post->ID,
-            ] );
-
             $post_id = $post->ID;
         }
+
+        LegalDebug::debug( [
+            'LegalBreadcrumbsMain' => 'get',
+
+            'post_id' => $post_id,
+        ] );
 
         $index = 1;
 
