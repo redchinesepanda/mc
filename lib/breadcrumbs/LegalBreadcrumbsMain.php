@@ -111,7 +111,16 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $ancestors[] = $ancestor_id;
 
-        while ( $ancestor = get_post( $ancestor_id ) ) {
+        while ( $ancestor = get_post( $ancestor_id ) )
+        {
+            LegalDebug::debug( [
+                'LegalBreadcrumbsMain' => 'get_ancestors',
+
+                'ancestor_id' => $ancestor_id,
+
+                'ancestor' => $ancestor,
+            ] );
+            
             $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
 
             if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
@@ -240,7 +249,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $post = get_post();
 
-        if ( !empty( $post ) ) {
+        if ( !empty( $post ) )
+        {
             $post_id = $post->ID;
         }
 
