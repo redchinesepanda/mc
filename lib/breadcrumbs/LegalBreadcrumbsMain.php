@@ -68,6 +68,14 @@ class LegalBreadcrumbsMain extends LegalDebug
         {
             $primary = get_term( $primary_id, self::TAXONOMY[ 'category' ] );
 
+            LegalDebug::debug( [
+                'LegalBreadcrumbsMain' => 'get_terms',
+
+                'primary_id' => $primary_id,
+
+                'primary' => $primary,
+            ] );
+
             if( !empty( $primary ) )
             {
                 return [ $primary ];
@@ -105,7 +113,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
         $ancestor_id = get_field( self::FIELD_ANCESTOR, $id );
 
-        if ( ! $post || empty( $ancestor_id ) || $ancestor_id == $id ) {
+        if ( ! $post || empty( $ancestor_id ) || $ancestor_id == $id )
+        {
             return [];
         }
 
@@ -123,7 +132,8 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             $parent_id = get_field( self::FIELD_ANCESTOR, $ancestor->ID );
 
-            if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) ) {
+            if ( empty( $parent_id ) || ( $parent_id == $id ) || in_array( $parent_id, $ancestors, true ) )
+            {
                 break;
             }
 
