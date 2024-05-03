@@ -60,7 +60,15 @@ class MiltisiteMain
 		],
 	];
 
-	public static function register_admin() {}
+	public static function check_multisite()
+	{
+		return is_multisite();
+	}
+
+	public static function check()
+	{
+		return self::check_multisite();
+	}
 
 	public static function register_functions_admin()
 	{

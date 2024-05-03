@@ -195,7 +195,10 @@ class BilletList
 
             $term = get_term_by( 'slug', 'legal-default', 'billet_feature' );
 
-            $result = self::filter_lists_feature_has( $lists, [ $term->term_id ] );
+            if ( $term )
+            {
+                $result = self::filter_lists_feature_has( $lists, [ $term->term_id ] );
+            }
         }
 
         $result = array_merge( $result, self::filter_lists_feature_empty( $lists ) );

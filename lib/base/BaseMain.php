@@ -11,6 +11,8 @@ class BaseMain
 
         'accept-necessary' => 'Accept only necessary cookies',
 
+        'according-to-the-law' => 'According to the law, you have the right to use the services of this site only if you have reached the age of majority in your country',
+
 		'all-countries' => 'All Countries',
 
 		'all-rights-reserved' => 'All rights reserved',
@@ -24,6 +26,8 @@ class BaseMain
 		'choose-your-country' => 'Choose your country',
 
 		'сookies' => 'Cookies!',
+
+        'do-you-confirm' => 'Do you confirm that you are already 18 years old?',
 
 		'gambling-sites' => 'Gambling Sites',
 

@@ -75,7 +75,7 @@ class ReviewCut
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
-			add_filter( 'the_content', [ $handler, 'modify_content' ] );
+			add_filter( 'the_content', [ $handler, 'modify_content' ], 9, 1 );
 		}
     }
 
@@ -91,6 +91,8 @@ class ReviewCut
 
 	public static function get_cut_items( $dom )
 	{
+		// .legal-cut-item + :not(.legal-cut-item)
+
 		return self::get_nodes(
 			$dom,
 
@@ -131,6 +133,20 @@ class ReviewCut
 
 		foreach ( $nodes as $node )
 		{
+
+			// $class = $node->getAttribute( 'class' );
+
+			// LegalDebug::debug( [
+			// 	'ReviewCut' => 'set_cut',
+
+			// 	'class' => $class,
+			// ] );
+
+			// if ( !str_contains( $class, CompilationAbout::CLASSES[ 'content' ] ) )
+			// {
+			// 	$class = '';
+			// }
+
 			$control = self::get_control( $dom );
 
 			$node->parentNode->insertBefore( $control, $node );
@@ -141,6 +157,10 @@ class ReviewCut
 
 	public static function modify_content( $content )
 	{
+		// LegalDebug::debug( [
+		// 	'ReviewCut' => 'modify_content',
+		// ] );
+
 		if ( !ReviewMain::check() ) {
 			return $content;
 		}
@@ -151,7 +171,13 @@ class ReviewCut
 
 		self::set_cut( $dom );
 
+		// $content = $dom->saveHTML( $dom );
+
+		// $content = CompilationAbout::remove_compilation_about_content( $content );
+
 		return $dom->saveHTML( $dom );
+		
+		// return $content;
 	}
 
 	public static function register_functions()

@@ -125,9 +125,13 @@ class OopsAge
 		$lang = WPMLMain::current_language();
 
         return [
-            'title' => __( BaseMain::TEXT[ 'this-website' ], ToolLoco::TEXTDOMAIN ),
+            // 'title' => __( BaseMain::TEXT[ 'this-website' ], ToolLoco::TEXTDOMAIN ),
 
-            'description' => __( BaseMain::TEXT[ 'you-re-of' ], ToolLoco::TEXTDOMAIN ),
+            'title' => __( BaseMain::TEXT[ 'do-you-confirm' ], ToolLoco::TEXTDOMAIN ),
+
+            // 'description' => __( BaseMain::TEXT[ 'you-re-of' ], ToolLoco::TEXTDOMAIN ),
+
+            'description' => __( BaseMain::TEXT[ 'according-to-the-law' ], ToolLoco::TEXTDOMAIN ),
             
 			'button-yes' => [
 				'label' => __( BaseMain::TEXT[ 'yes' ], ToolLoco::TEXTDOMAIN ),

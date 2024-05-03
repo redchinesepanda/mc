@@ -667,6 +667,11 @@ body {
     left: 0px;
 }
 
+.billet-item .billet-footer p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 /* Billet Typography */
 
 .billet-left .legal-review.legal-black {
@@ -884,7 +889,7 @@ body {
 }
 
 .billet-item .billet-footer::after {
-    content: attr( data-footer-text );
+    /* content: attr( data-footer-text ); */
 }
 
 .billet .billet-license .billet-license-label {

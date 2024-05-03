@@ -4,6 +4,8 @@
 // 	'args' => $args,
 // ] );
 
+//  data-cut-set-id="0"
+
 ?>
 <!-- Compilation About Template -->
 <?php if ( !empty( $args[ 'title' ] ) ) : ?>
@@ -15,7 +17,7 @@
                     <?php echo $item[ 'html' ]; ?>
                 <?php endforeach; ?>
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
-                	<span class="legal-cut-control" data-content-default="Read more" data-content-active="Hide" data-cut-set-id="0">Read more</span>
+                	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
 				<?php endif; ?>
             </div>
             <?php if ( !empty( $args[ 'content' ] ) ) : ?>

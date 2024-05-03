@@ -20,6 +20,11 @@ class BrandMain
         'square' => 'about-logo-square',
     ];
 
+	public static function get_logo_tabs_mini( $billet_id )
+	{
+		return self::get_logo_billet( $billet_id );
+	}
+
 	public static function get_logo_review_counter( $billet_id )
 	{
 		return self::get_logo_billet( $billet_id );

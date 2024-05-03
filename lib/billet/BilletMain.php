@@ -16,6 +16,10 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
+require_once( 'center/BilletDescriptionAjax.php' );
+
+// require_once( 'center/BilletDescriptionRESTAPI.php' );
+
 require_once( 'right/BilletRight.php' );
 
 class BilletMain
@@ -45,6 +49,8 @@ class BilletMain
 
         'hide-tnc' => 'Hide T&C',
 
+        'hide' => 'Hide',
+
         'how-do-we-evaluate' => 'How do we evaluate bookmakers?',
 
 		'last-updated' => 'Last updated',
@@ -56,6 +62,8 @@ class BilletMain
 		'no-license' => 'No license in UK',
 
 		'read-more-about' => 'Read more about',
+
+		'read-more' => 'Read more',
 
 		'review' => 'Review',
         
@@ -192,6 +200,10 @@ class BilletMain
     public static function register_functions()
 	{
 		BilletMega::register_functions();
+
+        BilletDescriptionAjax::register_functions();
+
+        // BilletDescriptionRESTAPI::register_functions();
 	}
 
     public static function register()
@@ -203,6 +215,8 @@ class BilletMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
         BilletMega::register();
+
+        BilletDescriptionAjax::register();
     }
 
     public static function get_bonus_url( $id, $filter = [] )
@@ -472,7 +486,7 @@ class BilletMain
             } 
         }
 
-        return $main_description;
+        return wpautop( $main_description );
     }
 
     public static function get( $args )

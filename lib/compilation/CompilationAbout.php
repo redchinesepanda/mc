@@ -34,7 +34,7 @@ class CompilationAbout
 	{
 		$handler = new self();
 
-        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ] );
+        add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ], 10, 1 );
 	}
 
 	public static function get_nodes( $dom, $query )
@@ -61,6 +61,10 @@ class CompilationAbout
 			$dom,
 			
 			'//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]'
+			
+			// '//p[contains(@class, \'' . self::CLASSES[ 'content' ] . '\')]|//*[contains(@class, \'' . ReviewCut::CLASSES[ 'cut-control' ] . '\')]'
+
+			// '//p[contains(concat(" ",normalize-space(@class)," ")," section-content-text ")]|//span[contains(concat(" ",normalize-space(@class)," ")," legal-cut-control ")]'
 		);
 	}
 
@@ -79,6 +83,8 @@ class CompilationAbout
 	public static function parse_node( $dom, $node )
 	{
 		return [
+			'class' => $node->getAttribute( 'class' ),
+
 			'html' => $dom->saveHTML( $node ),
 		];
 	}
@@ -87,10 +93,40 @@ class CompilationAbout
 	{
 		$items = [];
 
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'parse_content',
+
+		// 	'nodes' => count( $nodes ),
+		// ] );
+
+		// $has_cut = false;
+
 		foreach ( $nodes as $node )
 		{
+			// if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
+			// {
+			// 	$has_cut = true;
+			// }
+
+			// LegalDebug::debug( [
+			// 	'CompilationAbout' => 'parse_content',
+
+			// 	'class' => $node->getAttribute( 'class' ),
+
+			// 	'textContent' => $node->textContent,
+
+			// 	'has_cut' => $has_cut,
+			// ] );
+
 			$items[] = self::parse_node( $dom, $node );
 		}
+
+		// if ( $has_cut )
+		// {
+		// 	$control = ReviewCut::get_control( $dom );
+
+		// 	$items[] = self::parse_node( $dom, $control );
+		// }
 
 		return $items;
 	} 
@@ -121,6 +157,10 @@ class CompilationAbout
 
 	public static function get()
 	{
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'get',
+		// ] );
+
 		$post = get_post();
 
 		if ( empty( $post ) )
@@ -136,6 +176,14 @@ class CompilationAbout
 			'content' => self::get_content( $dom ),
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
+
+			'cut-control' => [
+				'label' => ToolLoco::translate( BilletMain::TEXT[ 'read-more' ] ),
+
+				'default' => ToolLoco::translate( BilletMain::TEXT[ 'read-more' ] ),
+
+				'active' => ToolLoco::translate( BilletMain::TEXT[ 'hide' ] ),
+			],
 
 			'image' => [
 				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp',

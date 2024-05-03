@@ -13,23 +13,73 @@ require_once( 'TemplateSingle.php' );
 class TemplateMain
 {
    const CURRENT_LANGUAGE_PRODUCTION = [
-        'pt',
+        'br',
 
-        'ng',
+        'by',
+
+        'ca',
+
+        'co',
+
+        'cz',
+
+        'dk',
 
         'es',
-    ];
-
-    const CURRENT_LANGUAGE_DEBUG = [
-        'pt', 
 
         'kz',
 
-        'ru',
+        'mx',
+
+        'ng',
+
+        'ph',
+
+        'pl',
+
+        'pt',
+
+        'ro',
+
+        'rs',
+
+        'se',
+    ];
+
+    const CURRENT_LANGUAGE_DEBUG = [
+        'br',
+
+        'by',
+
+        'ca',
+
+        'co',
+
+        'cz',
+
+        'dk',
 
         'es',
 
+        'kz',
+
+        'mx',
+
         'ng',
+
+        'ph',
+
+        'pl',
+        
+        'pt',
+
+        'ro',
+
+        'rs',
+
+        'ru',
+
+        'se',
     ];
 
     public static function check_code()
@@ -50,6 +100,16 @@ class TemplateMain
         return true;
     }
 
+    // public static function check_new_get()
+    // {
+    //     if ( !LegalHosts::check_host_production() )
+    //     {
+    //         return !empty( $_GET[ 'new' ] );
+    //     }
+
+    //     return false;
+    // }
+
     public static function check_new()
     {
         // return self::check() && self::check_code();
@@ -60,6 +120,8 @@ class TemplateMain
             
         //     || self::check_code();
 
+        // return self::check_code() || self::check_new_get();
+        
         return self::check_code();
     }
 

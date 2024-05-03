@@ -74,6 +74,12 @@ class BilletMega
 			']</p>'   => ']', 
 
 			']<br />' => ']',
+
+			// '>[' => '[',
+
+			// '}">[' => '[',
+
+			// ']</span>' => ']',
 		] );
 	}
 
@@ -204,6 +210,12 @@ class BilletMega
 
 	public static function prepare( $atts, $content = '' )
     {
+		// LegalDebug::debug( [
+		// 	'atts' => $atts,
+
+		// 	'content' => $content,
+		// ] );
+
 		$pairs = [
 			'id' => 0,
 
