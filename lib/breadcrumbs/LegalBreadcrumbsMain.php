@@ -310,6 +310,12 @@ class LegalBreadcrumbsMain extends LegalDebug
                     }
                 }
 
+                LegalDebug::debug( [
+                    'LegalBreadcrumbsMain' => 'get',
+        
+                    'items' => $items,
+                ] );
+
                 if ( empty( $items ) ) {
                     $legal_ancestors = array_reverse( self::get_ancestors( $post_id ) );
 
