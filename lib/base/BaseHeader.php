@@ -255,7 +255,7 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
-		LegalGebug::debug( [
+		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
 			'all_languages' => $all_languages,
