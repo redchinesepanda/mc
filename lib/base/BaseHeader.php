@@ -262,7 +262,7 @@ class BaseHeader
 
 			'get_sites' => MultisiteBlog::get_sites(),
 
-			'sites_to_languages' => MultisiteSiteSwitcher::sites_to_languages( $sites ),
+			'sites_to_languages' => MultisiteSiteSwitcher::sites_to_languages( MultisiteBlog::get_sites() ),
 		] );
 
 		// if ( empty( $all_languages ) )
