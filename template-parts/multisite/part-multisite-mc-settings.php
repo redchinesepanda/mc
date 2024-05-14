@@ -4,7 +4,7 @@
 		<a href="<?php echo $args[ 'href-visit' ]; ?>">Visit</a> | <a href="<?php echo $args[ 'href-dashboard' ]; ?>">Dashboard</a>
 	</p>
 	<?php network_edit_site_nav( $args[ 'network-edit-site-nav' ] ); ?>
-	<form method="post" action="edit.php?action=mishaupdate">
+	<form method="post" action="edit.php?action=mcsiteinfoupdate">
 		<?php wp_nonce_field( $args[ 'nonce' ] ); ?>
 		<input type="hidden" name="id" value="<?php echo $args[ 'id' ]; ?>" />
 		<table class="form-table">

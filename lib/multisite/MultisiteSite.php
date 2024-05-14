@@ -16,7 +16,7 @@ class MultisiteSite
 
 	function mc_siteinfo_tab( $tabs )
 	{
-		$tabs[ 'site-misha' ] = [
+		$tabs[ 'mc-siteinfo-tab' ] = [
 			'label' => 'MC Siteinfo',
 
 			'url' => add_query_arg( 'page', 'mcsiteinfo', 'sites.php' ), 
@@ -56,7 +56,7 @@ class MultisiteSite
 			'network-edit-site-nav' => [
 				'blog_id'  => $id,
 
-				'selected' => 'mcsiteinfo',
+				'selected' => 'mc-siteinfo-tab',
 				
 				// 'selected' => $id,
 			],
