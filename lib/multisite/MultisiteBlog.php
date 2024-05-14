@@ -76,7 +76,14 @@ class MultisiteBlog
 
 	public static function get_current_site()
 	{
-		return self::get_sites( 'current' );
+		$sites = self::get_sites( 'current' );
+
+		if ( $sites )
+		{
+			return array_shift( $sites );
+		}
+
+		return null;
 	}
 
 	// public static function get_current_site()
