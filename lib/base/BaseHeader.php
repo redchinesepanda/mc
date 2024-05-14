@@ -259,6 +259,8 @@ class BaseHeader
 			'BaseHeader' => 'search_languages',
 
 			'all_languages' => $all_languages,
+
+			'get_sites' => MultisiteSiteswitcher::get_sites(),
 		] );
 
 		// if ( empty( $all_languages ) )
