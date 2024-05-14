@@ -21,6 +21,33 @@ class MultisiteSiteSwitcher
 		return 'en';
 	}
 
+	public static function sites_to_languages( $sites )
+	{
+		$sites = [];
+
+		foreach ( $sites as $site )
+		{
+            $sites[] = self::site_to_language( $site );
+        }
+
+		return $sites;
+	}
+
+	public static function site_to_language( $site )
+	{
+		return [
+			'native_name' => $site->blogname,
+
+			'translated_name' => $site->blogname,
+
+			'url' => $site->siteurl,
+
+			'code' => self::get_path( $site ),
+
+			'language_code' => self::get_path( $site ),
+		];
+	}
+
 	public static function parse_site( $site )
 	{
 		// LegalDebug::debug( [
