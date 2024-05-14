@@ -79,20 +79,20 @@ class ACFBillet
         // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
     }
 
-    public static function brand_args( $title )
-    {
-        return [
-            'numberposts' => 1,
+    // public static function brand_args( $title )
+    // {
+    //     return [
+    //         'numberposts' => 1,
 
-            'fields' => 'ids',
+    //         'fields' => 'ids',
 
-            'suppress_filters' => 1,
+    //         'suppress_filters' => 1,
 
-            'post_type' => self::POST_TYPE[ 'brand' ],
+    //         'post_type' => self::POST_TYPE[ 'brand' ],
 
-            's' => $title,
-        ];
-    }
+    //         's' => $title,
+    //     ];
+    // }
 
     // public static function get_brand( $title )
     // {

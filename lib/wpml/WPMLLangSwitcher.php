@@ -195,6 +195,12 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'languages' => $languages,
+        ] );
+
         $active = self::get_active( $languages );
 
         if ( ! empty( $active ) )

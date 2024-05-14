@@ -16,14 +16,6 @@ class ACFBrand
 	const FIELDS_SIMPLE = [
 		'brand' => 'billet-brand',
 	];
-	
-	const DOACTION = [
-		'search-brands' => 'mc_search_brands',
-	];
-	
-	const TEXT = [
-		'search-brands' => 'Search Brands',
-	];
 
 	public static function register()
     {
@@ -33,15 +25,6 @@ class ACFBrand
         
         add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_brand' ], 10, 2 );
     }
-
-	public static function mc_bulk_brand_actions( $bulk_array )
-	{
-		$bulk_array = array_merge( $bulk_array, [
-			self::DOACTION[ 'search-brands' ] => ToolLoco::translate( self::TEXT[ 'search-brands' ] ),
-		] );
-
-		return $bulk_array;
-	}
 	
 	public static function brand_args( $title )
     {

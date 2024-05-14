@@ -27,6 +27,40 @@ class MultisiteBlog
 		return get_blog_details( $blog_id );
 	}
 
+	public static function get_other_sites()
+	{
+		$sites = get_sites( [
+			'site__not_in' => MultisiteBlog::get_current_blog_id(),
+
+			'number' => 32,
+		] );
+
+		if ( $sites )
+		{
+			return $sites;
+		}
+
+		return [];
+	}
+
+	public static function get_current_site()
+	{
+		$current_blog_id = self::get_current_blog_id();
+
+		$sites = get_sites( [
+			'ID' => $current_blog_id,
+
+			'number' => 1,
+		] );
+
+		if ( $sites )
+		{
+			return array_shift( $sites );
+		}
+
+		return null;
+	}
+
 	public static function check_main_blog()
 	{
 		return self::get_current_blog_id() == self::get_main_blog_id();
