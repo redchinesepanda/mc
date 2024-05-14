@@ -59,13 +59,13 @@ class MultisiteSiteswitcher
 
 	public static function parse_site( $site )
 	{
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'parse_site',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'parse_site',
 
-			'site' => $site,
+		// 	'site' => $site,
 
-			'get_blog_details' => get_blog_details( $site->blog_id, true ),
-		] );
+		// 	// 'get_blog_details' => get_blog_details( $site->blog_id, true ),
+		// ] );
 
 		return [
 			'id' => $site->blog_id,
@@ -74,7 +74,7 @@ class MultisiteSiteswitcher
 
 			'href' => $site->siteurl,
 
-			'src' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $site->blog_id . '.svg',
+			'src' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $site->path . '.svg',
 
 			'alt' => $site->blogname,
 		];
