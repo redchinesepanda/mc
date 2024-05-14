@@ -255,10 +255,16 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
-		if ( empty( $all_languages ) )
-		{
-			$all_languages = MultisiteSiteswitcher::get_sites();
-		}
+		LegalGebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'all_languages' => $all_languages,
+		] );
+
+		// if ( empty( $all_languages ) )
+		// {
+		// 	$all_languages = MultisiteSiteswitcher::get_sites();
+		// }
 
 		if ( !empty( $all_languages ) )
 		{
