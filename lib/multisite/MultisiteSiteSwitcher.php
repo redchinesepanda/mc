@@ -41,6 +41,8 @@ class MultisiteSiteSwitcher
 	public static function site_to_language( $site )
 	{
 		return [
+			'id' => $site->blog_id,
+
 			'native_name' => $site->blogname,
 
 			'translated_name' => $site->blogname,
@@ -50,6 +52,8 @@ class MultisiteSiteSwitcher
 			'code' => self::get_path( $site ),
 
 			'language_code' => self::get_path( $site ),
+
+			'country_flag_url' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . self::get_path( $site ) . '.svg',
 		];
 	}
 
