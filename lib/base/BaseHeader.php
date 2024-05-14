@@ -294,6 +294,12 @@ class BaseHeader
 
 	public static function get_inline_item( $language )
 	{
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_inline_item',
+
+			'language' => $language,
+		] );
+
 		return [
 			'class' => 'legal-country-' . $language[ 'code' ],
 
