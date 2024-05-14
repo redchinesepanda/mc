@@ -16,7 +16,7 @@ class MultisiteSite
 
 			add_action( 'network_admin_menu', [ $handler, 'mc_siteinfo_page' ] );
 
-			add_action( 'network_admin_edit_mishaupdate',  [ $handler, 'mc_siteinfo_save' ] );
+			add_action( 'network_admin_edit_mcsiteinfoupdate',  [ $handler, 'mc_siteinfo_save' ] );
 		}
 	}
 
