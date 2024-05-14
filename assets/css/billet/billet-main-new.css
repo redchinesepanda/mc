@@ -516,10 +516,11 @@ body {
 
 .billet-item .legal-logo {
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .billet-item .legal-logo img {  
-   width: 100%;
+    width: 100%;
     height: auto; 
 }
 

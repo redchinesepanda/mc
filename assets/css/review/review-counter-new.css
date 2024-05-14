@@ -35,6 +35,10 @@
 
 	/* Width and Height */
 
+	.legal-review-counter .review-counter-overall {
+		width: 100%;
+	}
+
 	.legal-review-counter.legal-default .set-item,
 	.legal-review-counter .review-counter-overall .set-item {
 		width: 60px;
@@ -278,7 +282,8 @@
 }
 
 .legal-review-counter .review-counter-overall {
-	flex-basis: 30%;
+	/* flex-basis: 30%; */
+	width: 30%;
 }
 
 .legal-review-counter.legal-overall .review-counter-set .set-item-wrapper {

@@ -79,6 +79,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'event' : 'click',
 
 			'action' : toggleBlock
+		},
+
+		{
+			'selector' : '.legal-choose-you-country .choose-you-country-title',
+
+			'event' : 'click',
+
+			'action' : toggleBlock
 		}
 	];
 
