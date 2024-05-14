@@ -59,7 +59,7 @@ class MultisiteSiteswitcher
 
 	public static function get_path( $site )
 	{
-		if ( ! empty( $site->path ) )
+		if ( $site->path != '/' )
 		{
 			return $site->path;
 		}
