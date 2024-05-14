@@ -2,11 +2,19 @@
 
 class MultisiteSite
 {
+	const SETTINGS = [
+		'page' => 'mcsiteinfo',
+
+		'tab' => 'mc-siteinfo-tab',
+
+		'action' => 'mcsiteinfoupdate',
+	];
+
 	const NONCE = [
 		'check'	=> 'mc-check-',
 	];
 
-	const OPTION = [
+	const OPTIONS = [
 		'blog-language'	=> 'mc_blog_language',
 
 		'blog-locale'	=> 'mc_blog_locale',
@@ -28,10 +36,10 @@ class MultisiteSite
 
 	function mc_siteinfo_tab( $tabs )
 	{
-		$tabs[ 'mc-siteinfo-tab' ] = [
+		$tabs[ self::SETTINGS[ 'tab' ] ] = [
 			'label' => 'MC Siteinfo',
 
-			'url' => add_query_arg( 'page', 'mcsiteinfo', 'sites.php' ), 
+			'url' => add_query_arg( 'page', self::SETTINGS[ 'page' ], 'sites.php' ), 
 
 			'cap' => 'manage_sites'
 		];
@@ -43,7 +51,7 @@ class MultisiteSite
 	{
 		$handler = new self();
 
-		add_submenu_page( '', 'Edit site', 'Edit site', 'manage_network_options', 'mcsiteinfo', [ $handler, 'mc_siteinfo_page_render' ] );
+		add_submenu_page( '', 'Edit site', 'Edit site', 'manage_network_options', self::SETTINGS[ 'page' ], [ $handler, 'mc_siteinfo_page_render' ] );
 	}
 
 	const TEMPLATE = [
@@ -57,6 +65,8 @@ class MultisiteSite
 		$site = MultisiteBlog::get_site( $id );
 
 		return [
+			'action' => self::SETTINGS[ 'action' ],
+
 			'id' => $id,
 
 			'title' => $site->blogname,
@@ -68,7 +78,7 @@ class MultisiteSite
 			'network-edit-site-nav' => [
 				'blog_id'  => $id,
 
-				'selected' => 'mc-siteinfo-tab',
+				'selected' => self::SETTINGS[ 'tab' ],
 			],
 
 			// 'nonce'	=> 'mc-check-' . $id,
@@ -79,21 +89,19 @@ class MultisiteSite
 				'mc-blog-language' => [
 					'label' => 'MC Blog Language ( en )',
 
-					'name' => self::OPTION[ 'blog-language' ],
+					'name' => self::OPTIONS[ 'blog-language' ],
 
-					'value' => esc_attr( get_blog_option( $id, self::OPTION[ 'blog-language' ] ) ),
+					'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ) ),
 				],
 
 				'mc-blog-locale' => [
 					'label' => 'MC Blog Locale ( en_GB )',
 
-					'name' => self::OPTION[ 'blog-locale' ],
+					'name' => self::OPTIONS[ 'blog-locale' ],
 
-					'value' => esc_attr( get_blog_option( $id, self::OPTION[ 'blog-locale' ] ) ),
+					'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) ),
 				],
 			],
-
-			
 		];
 	}
 
@@ -108,14 +116,17 @@ class MultisiteSite
 
 		check_admin_referer( self::NONCE[ 'check' ] . $id );
 
-		update_blog_option( $id, 'mc_blog_language', sanitize_text_field( $_POST[ 'mc_blog_language' ] ) );
+		foreach ( self::OPTIONS as $option )
+		{
+			update_blog_option( $id, $option, sanitize_text_field( $_POST[ $option ] ) );
+		}
 		
 		// redirect to /wp-admin/sites.php?page=mishapage&blog_id=ID&updated=true
 
 		wp_safe_redirect( 
 			add_query_arg( 
 				[
-					'page' => 'mcsiteinfo',
+					'page' => self::SETTINGS[ 'page' ],
 
 					'id' => $id,
 
