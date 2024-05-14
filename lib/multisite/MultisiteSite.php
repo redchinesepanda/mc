@@ -57,7 +57,7 @@ class MultisiteSite
 				'blog_id'  => $id,
 
 				'selected' => 'site-misha',
-			]
+			],
 
 			'mc-blog-language' => esc_attr( get_blog_option( $id, 'mc_blog_language') ),
 		];
