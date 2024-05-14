@@ -195,6 +195,12 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'languages' => $languages,
+        ] );
+
         if ( empty( $languages ) )
         {
             return MultisiteSiteswitcher::get_sites_list();
