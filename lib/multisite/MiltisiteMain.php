@@ -24,6 +24,8 @@ require_once( 'MultisitePostSync.php' );
 
 require_once( 'MultisiteShortcodeSync.php' );
 
+require_once( 'MultisiteSiteswitcher.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -77,6 +79,8 @@ class MiltisiteMain
 		MultisiteMeta::register_functions_debug();
 
 		MultisiteShortcodeSync::register_functions_debug();
+
+		MultisiteSiteswitcher::register_functions_debug();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{
