@@ -59,11 +59,13 @@ class MultisiteSiteswitcher
 
 	public static function parse_site( $site )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteSiteswitcher' =>'parse_site',
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'parse_site',
 
-		// 	'site' => $site,
-		// ] );
+			'site' => $site,
+
+			'get_blog_details' => get_blog_details( $site->blog_id, true ),
+		] );
 
 		return [
 			'id' => $site->blog_id,
