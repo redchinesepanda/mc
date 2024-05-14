@@ -260,7 +260,7 @@ class BaseHeader
 
 			'all_languages' => $all_languages,
 
-			'get_sites' => MultisiteSiteswitcher::get_sites(),
+			'get_sites' => MultisiteBlog::get_sites(),
 		] );
 
 		// if ( empty( $all_languages ) )
