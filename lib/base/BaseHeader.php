@@ -294,12 +294,6 @@ class BaseHeader
 
 	public static function get_inline_item( $language )
 	{
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_inline_item',
-
-			'language' => $language,
-		] );
-
 		return [
 			'class' => 'legal-country-' . $language[ 'code' ],
 
@@ -557,6 +551,12 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
+		LegalDebug::debug( [
+			'BaseHeader' => 'parse_languages',
+
+			'languages' => $languages,
+		] );
+
 		$item = self::get_item_main( $languages );
 
 		if ( !empty( $languages[ 'avaible' ] ) )
