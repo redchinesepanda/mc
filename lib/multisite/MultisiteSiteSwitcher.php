@@ -53,7 +53,7 @@ class MultisiteSiteSwitcher
 
 			'language_code' => self::get_path( $site ),
 
-			'default_locale' => self::get_path( $site )
+			'default_locale' => self::get_path( $site ),
 
 			'country_flag_url' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . self::get_path( $site ) . '.svg',
 		];
