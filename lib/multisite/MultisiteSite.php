@@ -65,7 +65,7 @@ class MultisiteSite
 
 	function mc_siteinfo_page_render()
 	{
-		return LegalComponents::render_main( self::TEMPLATE[ 'mc-siteinfo' ], self::mc_siteinfo_page_args() );
+		echo LegalComponents::render_main( self::TEMPLATE[ 'mc-siteinfo' ], self::mc_siteinfo_page_args() );
 	}
 }
 
