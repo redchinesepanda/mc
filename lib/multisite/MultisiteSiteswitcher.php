@@ -57,6 +57,16 @@ class MultisiteSiteswitcher
 		] );
 	}
 
+	public static function get_path( $site )
+	{
+		if ( ! empty( $site->path ) )
+		{
+			return $site->path;
+		}
+
+		return 'en';
+	}
+
 	public static function parse_site( $site )
 	{
 		// LegalDebug::debug( [
@@ -67,6 +77,8 @@ class MultisiteSiteswitcher
 		// 	// 'get_blog_details' => get_blog_details( $site->blog_id, true ),
 		// ] );
 
+
+
 		return [
 			'id' => $site->blog_id,
 
@@ -74,7 +86,7 @@ class MultisiteSiteswitcher
 
 			'href' => $site->siteurl,
 
-			'src' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $site->path . '.svg',
+			'src' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . self::get_path( $site ) . '.svg',
 
 			'alt' => $site->blogname,
 		];
