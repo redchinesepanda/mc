@@ -18,7 +18,7 @@ class MultisiteSite
 		$tabs[ 'site-misha' ] = [
 			'label' => 'MC Siteinfo',
 
-			'url' => add_query_arg( 'page', 'mc-siteinfo', 'sites.php' ), 
+			'url' => add_query_arg( 'page', 'mcsiteinfo', 'sites.php' ), 
 
 			'cap' => 'manage_sites'
 		];
