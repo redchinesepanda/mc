@@ -1,0 +1,320 @@
+/*--------------choose-your-country------------*/
+@media screen and (max-width: 1079px) {
+    .choose-you-country-block {
+        width: 100%;
+    }
+}
+
+@media screen and ( max-width: 767px ) {
+
+    /* Display */
+
+    .legal-choose-you-country .choose-you-country-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .legal-choose-you-country .choose-you-country-title.legal-active + .choose-you-country-block {
+        display: flex;
+    }
+
+    .legal-choose-you-country .choose-you-country-title:not( .legal-active ) + .choose-you-country-block {
+        display: none;
+    }
+
+    .choose-you-country-block {
+        flex-direction: column;
+    }
+
+      /* Position */
+
+    .legal-choose-you-country .choose-you-country-title:first-of-type {
+        padding-top: 12px;
+    }
+
+    .legal-choose-you-country .choose-you-country-title:not( :first-of-type ) {
+        padding-top: 8px;
+    }
+
+    .choose-you-country-block {
+        padding-top: 8px;
+    }
+
+    /* Width and Height */
+
+    .legal-choose-you-country .choose-you-country-title {
+        min-height: 74px;
+    }
+
+    .choose-you-country-block .lang-item {
+        width: fit-content;
+    }
+
+    /* Typography */
+
+    .legal-choose-you-country .choose-you-country-title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .legal-choose-you-country .choose-you-country-title::after {
+        font-family: var(--legal-font-icons);
+        font-size: 24px;
+        line-height: 24px;
+    }
+    
+    .legal-choose-you-country .choose-you-country-title:not(.legal-active)::after {
+        content: '\F106';
+    }
+    
+    .legal-choose-you-country .choose-you-country-title.legal-active::after {
+        content: '\F10C';
+    }
+
+    .choose-you-country-block .lang-item {
+        font-weight: 600;
+    }
+}
+
+@media screen and ( min-width: 768px ) {
+
+    /* Display */
+
+    .choose-you-country-block {
+        display: flex;
+    }
+
+    /* Position */
+
+    .legal-choose-you-country .choose-you-country-title:first-of-type {
+        padding-top: 24px;
+    }
+
+    .legal-choose-you-country .choose-you-country-title {
+        padding-bottom: 32px;
+    }
+
+    .choose-you-country-block:not( :last-of-type ) {
+        padding-bottom: 64px;
+    }
+
+    /* Width and Height */
+
+    .choose-you-country-block .lang-item {
+        flex-basis: 172px;
+    }
+
+    /* Typography */
+
+    .legal-choose-you-country .choose-you-country-title {
+        font-size: 26px;
+        line-height: 28px;
+    }
+}
+
+/* Display */
+
+.choose-you-country-block {
+    flex-wrap: wrap;
+    row-gap: 12px;
+    column-gap: 32px;
+}
+
+.choose-you-country-block .lang-item {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+/* Position */
+
+.choose-you-country-block .lang-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Width and Height */
+
+.choose-you-country-block {
+    width: 100%;
+}
+
+.choose-you-country-block .lang-item .lang-image {
+    height: 18px;
+    width: 18px;
+    box-sizing: border-box;
+}
+
+/* Background */
+
+.choose-you-country-block .lang-item .lang-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    border: 1px solid var(--Base-base-09);
+}
+
+.locale-1 {
+background-image: url(/wp-content/uploads/flags/default.svg);
+}
+
+.locale-2 {
+background-image: url(/wp-content/uploads/flags/es.svg);
+}
+
+.locale-3 {
+    background-image: url(/wp-content/uploads/flags/de.svg);
+}
+
+.locale-5 {
+    background-image: url(/wp-content/uploads/flags/ar.svg);
+}
+
+.locale-8 {
+    background-image: url(/wp-content/uploads/flags/ca.svg);
+}
+
+.locale-22 {
+    background-image: url(/wp-content/uploads/flags/hr.svg);
+}
+
+.locale-34 {
+    background-image: url(/wp-content/uploads/flags/mt.svg);
+}
+
+.locale-37 {
+    background-image: url(/wp-content/uploads/flags/nl.svg);
+}
+
+.locale-40 {
+    background-image: url(/wp-content/uploads/flags/pl.svg);
+}
+
+.locale-44 {
+    background-image: url(/wp-content/uploads/flags/ro.svg);
+}
+
+.locale-66 {
+    background-image: url(/wp-content/uploads/flags/kz.svg);
+}
+
+.locale-67 {
+    background-image: url(/wp-content/uploads/flags/by.svg);
+}
+
+.locale-69 {
+    background-image: url(/wp-content/uploads/flags/mx.svg);
+}
+
+.locale-70 {
+    background-image: url(/wp-content/uploads/flags/ng.svg);
+}
+
+.locale-71 {
+    background-image: url(/wp-content/uploads/flags/ie.svg);
+}
+
+.locale-72 {
+    background-image: url(/wp-content/uploads/flags/ua.svg);
+}
+
+.locale-74 {
+    background-image: url(/wp-content/uploads/flags/au.svg);
+}
+
+.locale-75 {
+    background-image: url(/wp-content/uploads/flags/za.svg);
+}
+
+.locale-77 {
+    background-image: url(/wp-content/uploads/flags/ke.svg);
+}
+
+.locale-78 {
+    background-image: url(/wp-content/uploads/flags/nz.svg);
+}
+
+.locale-79 {
+    background-image: url(/wp-content/uploads/flags/pe.svg);
+}
+
+.locale-80 {
+    background-image: url(/wp-content/uploads/flags/co.svg);
+}
+
+.locale-83 {
+    background-image: url(/wp-content/uploads/flags/py.svg);
+}
+
+.locale-84 {
+    background-image: url(/wp-content/uploads/flags/ph.svg);
+}
+
+.locale-85 {
+    background-image: url(/wp-content/uploads/flags/br.svg);
+}
+
+.locale-86 {
+    background-image: url(/wp-content/uploads/flags/pt.svg);
+}
+
+.locale-87 {
+    background-image: url(/wp-content/uploads/flags/at.svg);
+}
+
+.locale-88 {
+    background-image: url(/wp-content/uploads/flags/se.svg);
+}
+
+.locale-89 {
+    background-image: url(/wp-content/uploads/flags/cz.svg);
+}
+
+.locale-90 {
+    background-image: url(/wp-content/uploads/flags/rs.svg);
+}
+
+.locale-91 {
+    background-image: url(/wp-content/uploads/image-648c11827b791-image-648c.svg);
+}
+
+.locale-92 {
+    background-image: url(/wp-content/uploads/flags/chile-flag-button-round.svg);
+}
+
+.locale-93 {
+    background-image: url(/wp-content/uploads/flags/ch.svg);
+}
+
+.locale-94 {
+    background-image: url(/wp-content/uploads/flags/in.svg);
+}
+
+.locale-95 {
+    background-image: url(/wp-content/uploads/flags/dk.svg);
+}
+
+/* Typography */
+
+.legal-choose-you-country .choose-you-country-title,
+.choose-you-country-block .lang-item {
+    font-family: var( --legal-font-primary );
+    font-style: normal;
+    color: var(--Base-base-09);
+}
+
+.legal-choose-you-country .choose-you-country-title {
+    font-weight: 700;
+}
+
+.choose-you-country-block .lang-item {
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+.choose-you-country-block .lang-item:hover .lang-title {
+    text-shadow: 0 0 0.6px var(--Base-base-09);
+}
