@@ -5,7 +5,7 @@
 	</p>
 	<?php network_edit_site_nav( $args[ 'network-edit-site-nav' ] ); ?>
 	<form method="post" action="edit.php?action=mishaupdate">
-		<?php wp_nonce_field( 'mc-check' . $args[ 'id' ] ); ?>
+		<?php wp_nonce_field( $args[ 'nonce' ] ); ?>
 		<input type="hidden" name="id" value="<?php echo $args[ 'id' ]; ?>" />
 		<table class="form-table">
 			<tr>

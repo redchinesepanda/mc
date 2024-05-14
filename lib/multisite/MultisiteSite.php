@@ -56,10 +56,12 @@ class MultisiteSite
 			'network-edit-site-nav' => [
 				'blog_id'  => $id,
 
-				// 'selected' => 'mcsiteinfo',
+				'selected' => 'mcsiteinfo',
 				
-				'selected' => $id,
+				// 'selected' => $id,
 			],
+
+			'nonce'	=> 'mc-check-' . $id,
 
 			'mc-blog-language' => esc_attr( get_blog_option( $id, 'mc_blog_language') ),
 		];
