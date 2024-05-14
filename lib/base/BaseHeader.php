@@ -255,6 +255,11 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
+		if ( empty( $all_languages ) )
+		{
+			return MultisiteSiteswitcher::get_sites_list();
+		}
+
 		if ( !empty( $all_languages ) )
 		{
 			$search[ 'current' ] = self::get_language_current( $all_languages );
