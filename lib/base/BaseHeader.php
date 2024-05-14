@@ -267,7 +267,7 @@ class BaseHeader
 
 		if ( empty( $all_languages ) )
 		{
-			$all_languages = MultisiteSiteSwitcher::sites_to_languages( MultisiteBlog::get_sites() );
+			$all_languages = MultisiteSiteSwitcher::get_languages();
 		}
 
 		if ( !empty( $all_languages ) )

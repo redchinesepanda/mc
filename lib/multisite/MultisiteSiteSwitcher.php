@@ -21,6 +21,11 @@ class MultisiteSiteSwitcher
 		return 'en';
 	}
 
+	public static function get_languages()
+	{
+		return self::sites_to_languages( MultisiteBlog::get_sites() );
+	}
+
 	public static function sites_to_languages( $sites )
 	{
 		$languages = [];
