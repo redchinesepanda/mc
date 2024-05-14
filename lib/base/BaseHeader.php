@@ -255,20 +255,20 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'all_languages' => $all_languages,
+		// 	'all_languages' => $all_languages,
 
-			'get_sites' => MultisiteBlog::get_sites(),
+		// 	'get_sites' => MultisiteBlog::get_sites(),
 
-			'sites_to_languages' => MultisiteSiteSwitcher::sites_to_languages( MultisiteBlog::get_sites() ),
-		] );
+		// 	'sites_to_languages' => MultisiteSiteSwitcher::sites_to_languages( MultisiteBlog::get_sites() ),
+		// ] );
 
-		// if ( empty( $all_languages ) )
-		// {
-		// 	$all_languages = MultisiteSiteswitcher::get_sites();
-		// }
+		if ( empty( $all_languages ) )
+		{
+			$all_languages = MultisiteSiteSwitcher::sites_to_languages( MultisiteBlog::get_sites() );
+		}
 
 		if ( !empty( $all_languages ) )
 		{
