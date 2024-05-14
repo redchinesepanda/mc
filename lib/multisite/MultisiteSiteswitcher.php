@@ -80,7 +80,7 @@ class MultisiteSiteswitcher
 
 	public static function get_sites_list()
 	{
-		$active = parse_site( MultisiteBlog::get_current_site() );
+		$active = self::parse_site( MultisiteBlog::get_current_site() );
 
 		$avaible = [];
 
