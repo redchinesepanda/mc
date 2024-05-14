@@ -78,10 +78,15 @@
 	column-gap: 1rem;
 } */
 
-.legal-compilation-bonus .legal-logo-link {
+.legal-compilation-bonus .legal-logo-link,
+.legal-compilation-bonus .legal-logo-linklegal-disabled {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.legal-compilation-bonus .legal-logo-linklegal-disabled {
+	pointer-events: none;
 }
 
 .legal-compilation-bonus .legal-compilation-peculiarity {
@@ -105,7 +110,8 @@
 	flex-basis: fit-content;
 }
 
-.legal-compilation-bonus .legal-logo-link {
+.legal-compilation-bonus .legal-logo-link,
+.legal-compilation-bonus .legal-logo-linklegal-disabled {
 	width: 46px;
     height: 46px;
 }
@@ -149,7 +155,8 @@
 	border-radius: 18px;
 }
 
-.legal-compilation-bonus .legal-logo-link {
+.legal-compilation-bonus .legal-logo-link,
+.legal-compilation-bonus .legal-logo-linklegal-disabled {
 	border: 1px solid var(--Base-base-09);
 	border-radius: 12.8px;
 	overflow: hidden;
