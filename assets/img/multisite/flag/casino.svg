@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="5 5 20 20"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="casino.svg"
+   width="20"
+   height="20"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:snap-page="true"
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3440"
+     inkscape:window-height="1361"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="22.627417"
+     inkscape:cx="-9.5677694"
+     inkscape:cy="12.345632"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g919" />
+  <g
+     style="fill:#ffffff;fill-opacity:1"
+     id="g919">
+    <path
+       d="M 22.777778,5.0000001 H 7.2222223 c -1.2222222,0 -2.2222222,1 -2.2222222,2.2222222 V 22.777778 C 5.0000001,24 6.0000001,25 7.2222223,25 H 22.777778 C 24,25 25,24 25,22.777778 V 7.2222223 C 25,6.0000001 24,5.0000001 22.777778,5.0000001 Z m 0,17.7777779 H 7.2222223 V 7.2222223 H 22.777778 Z"
+       fill="#000000"
+       id="path835"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.11111" />
+    <ellipse
+       style="opacity:0.997742;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.242117;stroke-opacity:0.121569"
+       id="path832"
+       cx="10.005166"
+       cy="9.9924994"
+       rx="1.6715789"
+       ry="1.6714413" />
+    <ellipse
+       ry="1.6714413"
+       rx="1.6715789"
+       cy="9.9924994"
+       cx="20.002638"
+       id="path832-4"
+       style="opacity:0.997742;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.242117;stroke-opacity:0.121569" />
+    <ellipse
+       ry="1.6714413"
+       rx="1.6715789"
+       cy="14.998261"
+       cx="14.995695"
+       id="path832-9"
+       style="opacity:0.997742;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.242117;stroke-opacity:0.121569" />
+    <ellipse
+       style="opacity:0.997742;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.242117;stroke-opacity:0.121569"
+       id="path832-9-4"
+       cx="10.005637"
+       cy="19.9925"
+       rx="1.6715789"
+       ry="1.6714413" />
+    <ellipse
+       ry="1.6714413"
+       rx="1.6715789"
+       cy="19.9925"
+       cx="20.002638"
+       id="path832-9-4-9"
+       style="opacity:0.997742;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.242117;stroke-opacity:0.121569" />
+  </g>
+</svg>

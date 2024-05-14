@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="mt.svg"
+   id="svg1897"
+   version="1.1"
+   viewBox="0 0 20 20"
+   height="20"
+   width="20">
+  <metadata
+     id="metadata1903">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1901" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg1897"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="21.110309"
+     inkscape:cx="14.469331"
+     inkscape:zoom="12.96875"
+     showgrid="false"
+     id="namedview1899"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <mask
+     id="a">
+    <circle
+       id="circle1886"
+       fill="#ffffff"
+       r="256"
+       cy="256"
+       cx="256" />
+  </mask>
+  <g
+     transform="scale(0.0390625)"
+     id="g1895"
+     mask="url(#a)">
+    <path
+       id="path1889"
+       d="M 0,0 H 256 L 308,259.2 256,512 H 0 Z"
+       fill="#eeeeee" />
+    <path
+       id="path1891"
+       d="M 256,0 H 512 V 512 H 256 Z"
+       fill="#d80027" />
+    <path
+       id="path1893"
+       d="M 178,100.2 V 66.8 h -33.3 v 33.4 h -33.4 v 33.4 h 33.4 V 167 h 33.4 v -33.4 h 33.4 v -33.4 z"
+       fill="#acabb1" />
+  </g>
+</svg>

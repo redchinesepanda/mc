@@ -59,14 +59,20 @@ class MultisiteSiteswitcher
 
 	public static function parse_site( $site )
 	{
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'parse_site',
+
+			'site' => $site,
+		] );
+
 		return [
 			'id' => $site->blog_id,
 
 			'title' => $site->blogname,
 
-			'href' => $site->domain . $site->path,
+			'href' => $site->siteurl,
 
-			'src' => $site->id,
+			'src' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $site->blog_id . '.svg',
 
 			'alt' => $site->blogname,
 		];
@@ -74,10 +80,21 @@ class MultisiteSiteswitcher
 
 	public static function get_sites_list()
 	{
-		return [
-			'active' => MultisiteBlog::get_current_site(),
+		$active = parse_site( MultisiteBlog::get_current_site() );
 
-			'languages' => MultisiteBlog::get_other_sites(),
+		$avaible = [];
+
+		$sites = MultisiteBlog::get_other_sites();
+
+		foreach ( $sites as $site )
+		{
+			$avaible[] = self::parse_site( $site );
+		}
+
+		return [
+			'active' => $active,
+
+			'languages' => $avaible,
 		];
 
 		// return [];

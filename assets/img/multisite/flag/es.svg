@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="es.svg"
+   id="svg6293"
+   version="1.1"
+   viewBox="0 0 20 20"
+   height="20"
+   width="20">
+  <metadata
+     id="metadata6299">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6297" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg6293"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="256"
+     inkscape:cx="256"
+     inkscape:zoom="1.6210938"
+     showgrid="false"
+     id="namedview6295"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <mask
+     id="a">
+    <circle
+       id="circle6224"
+       fill="#ffffff"
+       r="256"
+       cy="256"
+       cx="256" />
+  </mask>
+  <g
+     transform="scale(0.0390625)"
+     id="g6291"
+     mask="url(#a)">
+    <path
+       id="path6227"
+       d="M 0,128 256,96 512,128 V 384 L 256,416 0,384 Z"
+       fill="#ffda44" />
+    <path
+       id="path6229"
+       d="M 0,0 H 512 V 128 H 0 Z M 0,384 H 512 V 512 H 0 Z"
+       fill="#d80027" />
+    <g
+       id="g6235"
+       fill="#eeeeee">
+      <path
+         id="path6231"
+         d="m 144,304 h -16 v -80 h 16 z m 128,0 h 16 v -80 h -16 z" />
+      <ellipse
+         id="ellipse6233"
+         ry="32"
+         rx="48"
+         cy="296"
+         cx="208" />
+    </g>
+    <g
+       id="g6243"
+       fill="#d80027">
+      <rect
+         id="rect6237"
+         rx="8"
+         y="192"
+         x="128"
+         height="24"
+         width="16" />
+      <rect
+         id="rect6239"
+         rx="8"
+         y="192"
+         x="272"
+         height="24"
+         width="16" />
+      <path
+         id="path6241"
+         d="m 208,272 v 24 a 24,24 0 0 0 24,24 24,24 0 0 0 24,-24 v -24 h -24 z" />
+    </g>
+    <rect
+       id="rect6245"
+       ry="8"
+       fill="#ff9811"
+       y="208"
+       x="120"
+       height="16"
+       width="32" />
+    <rect
+       id="rect6247"
+       ry="8"
+       fill="#ff9811"
+       y="208"
+       x="264"
+       height="16"
+       width="32" />
+    <rect
+       id="rect6249"
+       rx="8"
+       fill="#ff9811"
+       y="304"
+       x="120"
+       height="16"
+       width="32" />
+    <rect
+       id="rect6251"
+       rx="8"
+       fill="#ff9811"
+       y="304"
+       x="264"
+       height="16"
+       width="32" />
+    <path
+       id="path6253"
+       d="m 160,272 v 24 c 0,8 4,14 9,19 l 5,-6 5,10 a 21,21 0 0 0 10,0 l 5,-10 5,6 c 6,-5 9,-11 9,-19 v -24 h -9 l -5,8 -5,-8 h -10 l -5,8 -5,-8 z"
+       fill="#ff9811" />
+    <path
+       id="path6255"
+       d="m 122,252 h 172 m -172,24 h 28 m 116,0 h 28" />
+    <path
+       id="path6257"
+       d="m 122,248 a 4,4 0 0 0 -4,4 4,4 0 0 0 4,4 h 172 a 4,4 0 0 0 4,-4 4,4 0 0 0 -4,-4 z m 0,24 a 4,4 0 0 0 -4,4 4,4 0 0 0 4,4 h 28 a 4,4 0 0 0 4,-4 4,4 0 0 0 -4,-4 z m 144,0 a 4,4 0 0 0 -4,4 4,4 0 0 0 4,4 h 28 a 4,4 0 0 0 4,-4 4,4 0 0 0 -4,-4 z"
+       fill="#d80027" />
+    <path
+       id="path6259"
+       d="m 196,168 c -7,0 -13,5 -15,11 l -5,-1 c -9,0 -16,7 -16,16 0,9 7,16 16,16 7,0 13,-4 15,-11 a 16,16 0 0 0 17,-4 16,16 0 0 0 17,4 16,16 0 1 0 10,-20 16,16 0 0 0 -27,-5 c -3,-4 -7,-6 -12,-6 z m 0,8 c 5,0 8,4 8,8 0,5 -3,8 -8,8 -4,0 -8,-3 -8,-8 0,-4 4,-8 8,-8 z m 24,0 c 5,0 8,4 8,8 0,5 -3,8 -8,8 -4,0 -8,-3 -8,-8 0,-4 4,-8 8,-8 z m -44,10 4,1 4,8 c 0,4 -4,7 -8,7 -4,0 -8,-3 -8,-8 0,-4 4,-8 8,-8 z m 64,0 c 5,0 8,4 8,8 0,5 -3,8 -8,8 -4,0 -8,-3 -8,-7 l 4,-8 z"
+       fill="#eeeeee" />
+    <path
+       id="path6261"
+       d="m 220,284 v 12 c 0,7 5,12 12,12 7,0 12,-5 12,-12 v -12 z"
+       fill="none" />
+    <path
+       id="path6263"
+       d="m 200,160 h 16 v 32 h -16 z"
+       fill="#ff9811" />
+    <path
+       id="path6265"
+       d="m 208,224 h 48 v 48 h -48 z"
+       fill="#eeeeee" />
+    <path
+       id="path6267"
+       d="m 248,208 -8,8 h -64 l -8,-8 c 0,-13 18,-24 40,-24 22,0 40,11 40,24 z m -88,16 h 48 v 48 h -48 z"
+       fill="#d80027" />
+    <rect
+       id="rect6269"
+       ry="10"
+       rx="10"
+       fill="#d80027"
+       y="232"
+       x="222"
+       height="32"
+       width="20" />
+    <path
+       id="path6271"
+       d="m 168,232 v 8 h 8 v 16 h -8 v 8 h 32 v -8 h -8 v -16 h 8 v -8 z m 8,-16 h 64 v 8 h -64 z"
+       fill="#ff9811" />
+    <g
+       id="g6279"
+       fill="#ffda44">
+      <circle
+         id="circle6273"
+         r="6"
+         cy="202"
+         cx="186" />
+      <circle
+         id="circle6275"
+         r="6"
+         cy="202"
+         cx="208" />
+      <circle
+         id="circle6277"
+         r="6"
+         cy="202"
+         cx="230" />
+    </g>
+    <path
+       id="path6281"
+       d="m 169,272 v 43 a 24,24 0 0 0 10,4 v -47 z m 20,0 v 47 a 24,24 0 0 0 10,-4 v -43 z"
+       fill="#d80027" />
+    <g
+       id="g6289"
+       fill="#338af3">
+      <circle
+         id="circle6283"
+         r="16"
+         cy="272"
+         cx="208" />
+      <rect
+         id="rect6285"
+         ry="8"
+         y="320"
+         x="264"
+         height="16"
+         width="32" />
+      <rect
+         id="rect6287"
+         ry="8"
+         y="320"
+         x="120"
+         height="16"
+         width="32" />
+    </g>
+  </g>
+</svg>
