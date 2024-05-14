@@ -199,6 +199,8 @@ class WPMLLangSwitcher
             'WPMLLangSwitcher' => 'get',
 
             'languages' => $languages,
+
+            'get_sites_list' => MultisiteSiteswitcher::get_sites_list(),
         ] );
 
         if ( empty( $languages ) )
