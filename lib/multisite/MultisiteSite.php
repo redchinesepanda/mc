@@ -44,7 +44,7 @@ class MultisiteSite
 
 		$site = MultisiteBlog::get_site( $id );
 
-		$args = [
+		return [
 			'id' => $id,
 
 			'title' => $site->blogname,
