@@ -26,6 +26,8 @@ require_once( 'MultisiteShortcodeSync.php' );
 
 require_once( 'MultisiteSiteSwitcher.php' );
 
+require_once( 'MultisiteSite.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -89,6 +91,8 @@ class MiltisiteMain
 			MultisitePost::register_functions_mainsite();
 
 			MultisiteAttachment::register_functions_mainsite();
+
+			MultisiteSite::register_functions_mainsite();
 		}
 		else
 		{

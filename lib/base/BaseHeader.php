@@ -551,11 +551,11 @@ class BaseHeader
 
 	public static function parse_languages( $languages )
 	{
-		LegalDebug::debug( [
-			'BaseHeader' => 'parse_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'parse_languages',
 
-			'languages' => $languages,
-		] );
+		// 	'languages' => $languages,
+		// ] );
 
 		$item = self::get_item_main( $languages );
 
