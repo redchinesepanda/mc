@@ -1,6 +1,6 @@
 <?php
 
-class MultisiteSiteswitcher
+class MultisiteSiteSwitcher
 {
 	public static function register_functions_debug()
 	{

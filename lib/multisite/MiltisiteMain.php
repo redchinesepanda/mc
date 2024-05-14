@@ -24,7 +24,7 @@ require_once( 'MultisitePostSync.php' );
 
 require_once( 'MultisiteShortcodeSync.php' );
 
-require_once( 'MultisiteSiteswitcher.php' );
+require_once( 'MultisiteSiteSwitcher.php' );
 
 class MiltisiteMain
 {
@@ -80,7 +80,7 @@ class MiltisiteMain
 
 		MultisiteShortcodeSync::register_functions_debug();
 
-		MultisiteSiteswitcher::register_functions_debug();
+		MultisiteSiteSwitcher::register_functions_debug();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{
