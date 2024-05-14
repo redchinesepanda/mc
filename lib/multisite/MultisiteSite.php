@@ -6,6 +6,12 @@ class MultisiteSite
 		'check'	=> 'mc-check-',
 	];
 
+	const OPTION = [
+		'blog-language'	=> 'mc_blog_language',
+
+		'blog-locale'	=> 'mc_blog_locale',
+	];
+
 	public static function register_functions_mainsite()
 	{
 		if ( MultisiteBlog::check_main_blog() )
@@ -69,7 +75,25 @@ class MultisiteSite
 			
 			'nonce'	=> self::NONCE[ 'check' ] . $id,
 
-			'mc-blog-language' => esc_attr( get_blog_option( $id, 'mc_blog_language') ),
+			'options' => [
+				'mc-blog-language' => [
+					'label' => 'MC Blog Language ( en )',
+
+					'name' => self::OPTION[ 'blog-language' ],
+
+					'value' => esc_attr( get_blog_option( $id, self::OPTION[ 'blog-language' ] ) ),
+				],
+
+				'mc-blog-locale' => [
+					'label' => 'MC Blog Locale ( en_GB )',
+
+					'name' => self::OPTION[ 'blog-locale' ],
+
+					'value' => esc_attr( get_blog_option( $id, self::OPTION[ 'blog-locale' ] ) ),
+				],
+			],
+
+			
 		];
 	}
 

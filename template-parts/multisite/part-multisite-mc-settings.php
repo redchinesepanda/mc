@@ -8,10 +8,12 @@
 		<?php wp_nonce_field( $args[ 'nonce' ] ); ?>
 		<input type="hidden" name="id" value="<?php echo $args[ 'id' ]; ?>" />
 		<table class="form-table">
-			<tr>
-				<th scope="row"><label for="mc_blog_language">MC Blog Language</label></th>
-				<td><input name="mc_blog_language" class="regular-text" type="text" id="mc_blog_language" value="<?php echo $args[ 'mc-blog-language' ]; ?>" /></td>
-			</tr>
+			<?php foreach ( $args[ 'options' ] as $option ) : ?>
+				<tr>
+					<th scope="row"><label for="<?php echo $option[ 'name' ]; ?>"><?php echo $option[ 'label' ]; ?></label></th>
+					<td><input name="<?php echo $option[ 'name' ]; ?>" class="regular-text" type="text" id="<?php echo $option[ 'name' ]; ?>" value="<?php echo $option[ 'value' ]; ?>" /></td>
+				</tr>
+			<?php endforeach; ?>
 		</table>
 		<?php submit_button(); ?>
 	</form>
