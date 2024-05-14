@@ -56,7 +56,7 @@ class MultisiteSite
 			'network-edit-site-nav' => [
 				'blog_id'  => $id,
 
-				'selected' => 'site-misha',
+				'selected' => 'mcsiteinfo',
 			],
 
 			'mc-blog-language' => esc_attr( get_blog_option( $id, 'mc_blog_language') ),
