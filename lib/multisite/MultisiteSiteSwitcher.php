@@ -23,14 +23,14 @@ class MultisiteSiteSwitcher
 
 	public static function sites_to_languages( $sites )
 	{
-		$sites = [];
+		$languages = [];
 
 		foreach ( $sites as $site )
 		{
-            $sites[] = self::site_to_language( $site );
+            $languages[] = self::site_to_language( $site );
         }
 
-		return $sites;
+		return $languages;
 	}
 
 	public static function site_to_language( $site )
