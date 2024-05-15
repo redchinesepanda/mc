@@ -268,16 +268,12 @@
 }
 
 .home .compilation-about h1 {
-    background: linear-gradient(219deg, 
-    var(--Base-base-09) 19%, 
-    transparent 19%,transparent 20%, 
-    var(--Primitives-green-40) 20%, var(--Primitives-green-40)  39%,
+    background: linear-gradient(90deg, 
+    var(--Base-base-09) 39%, 
     transparent 39%,transparent 40%, 
-    var(--Primitives-purple-40) 40%,var(--Primitives-purple-40) 59% ,
+    var(--Primitives-yellow-100) 40%, var(--Primitives-yellow-100)  59%,
     transparent 59%,transparent 60%, 
-    var(--Primitives-red-40) 60%, var(--Primitives-red-40) 79%,
-    transparent 79%, transparent 80%, 
-    var(--Primitives-yellow-100) 80%);
+    var(--Base-base-09) 80%);
     /* обрезаем фон по контуру букв */
     background-clip: text;
     -webkit-background-clip: text;
