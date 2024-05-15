@@ -123,6 +123,10 @@
     max-width: 754px;
 }
 
+.compilation-about .section-content-text .legal-button {
+    min-height: 44px;
+}
+
 /* Position */
 .compilation-about-wrapper:not( .home .compilation-about-wrapper ) {
     padding-top: 28px;
@@ -155,6 +159,11 @@
     margin-top: 8px;
 }
 
+.compilation-about .section-content-text .legal-button {
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
 /* Background */
 
 .compilation-about-wrapper {
@@ -173,6 +182,12 @@
     border-left: 2px solid var( --Base-base-09 );
 }
 
+.compilation-about .section-content-text .legal-button {
+    border-radius: 60px;
+    border: 1px solid var( --Base-base-09 );
+    background-color: var( --Base-base-01 );
+}
+
 /* Typography */
 
 .compilation-about h1,
@@ -185,7 +200,8 @@
 
 .compilation-about h1,
 .compilation-about .section-content-text,
-.compilation-about .legal-cut-control {
+.compilation-about .legal-cut-control,
+.compilation-about .section-content-text .legal-button {
     color: var(--Base-base-09);
 }
 
@@ -197,8 +213,14 @@
     font-weight: 700;
 }
 
-.compilation-about .section-content-text a {
+.compilation-about .section-content-text a:not( .legal-button ) {
     color: var( --Base-link-hover );
+}
+
+.compilation-about .section-content-text .legal-button {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
 }
 
 .compilation-about .legal-cut-control {
