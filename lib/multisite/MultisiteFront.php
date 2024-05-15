@@ -18,13 +18,13 @@ class MultisiteFront
 
         $blog_locale = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 		
-		LegalDebug::debug( [
-			'MultisiteFront' => 'filter_function_name_11',
+		// LegalDebug::debug( [
+		// 	'MultisiteFront' => 'filter_function_name_11',
 
-			'blog_locale' => $blog_locale,
+		// 	'blog_locale' => $blog_locale,
 
-			'locale' => $locale,
-		] );
+		// 	'locale' => $locale,
+		// ] );
 
         if ( !empty( $blog_locale ) )
         {
