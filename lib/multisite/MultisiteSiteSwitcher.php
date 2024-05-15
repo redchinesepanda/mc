@@ -32,7 +32,9 @@ class MultisiteSiteSwitcher
 
 		foreach ( $sites as $site )
 		{
-            $languages[] = self::site_to_language( $site );
+			$language = self::site_to_language( $site );
+
+            $languages[ $language[ 'code' ] ] = $language;
         }
 
 		return $languages;
@@ -40,6 +42,10 @@ class MultisiteSiteSwitcher
 
 	public static function site_to_language( $site )
 	{
+		$blog_language = MultisiteBlog::get_blog_option( $id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
+
+		$blog_locale = MultisiteBlog::get_blog_option( $id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
+
 		return [
 			'id' => $site->blog_id,
 
@@ -49,13 +55,13 @@ class MultisiteSiteSwitcher
 
 			'url' => $site->siteurl,
 
-			'code' => self::get_path( $site ),
+			'code' => $blog_language,
 
-			'language_code' => self::get_path( $site ),
+			'language_code' => $blog_language,
 
-			'default_locale' => self::get_path( $site ),
+			'default_locale' => $blog_locale,
 
-			'country_flag_url' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . self::get_path( $site ) . '.svg',
+			'country_flag_url' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $blog_language . '.svg',
 		];
 	}
 
