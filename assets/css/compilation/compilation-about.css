@@ -29,8 +29,12 @@
         padding-bottom: 48px;
     }
 
-    .compilation-about h1 {
+    .compilation-about h1:not( .home .compilation-about h1 ) {
         padding-bottom: 28px;
+    }
+
+    .home .compilation-about .section-content-text:last-child {
+        padding-top: 64px;
     }
 
     /* Typography */
@@ -64,8 +68,12 @@
         padding-top: 32px;
     }
 
-    .compilation-about h1 {
+    .compilation-about h1:not( .home .compilation-about h1 ) {
         padding-bottom: 18px;
+    }
+
+    .home .compilation-about .section-content-text:last-child {
+        padding-top: 40px;
     }
 
     /* Typography */
@@ -146,6 +154,10 @@
     margin: 0px auto;
 }
 
+.home .compilation-about h1 {
+    padding-bottom: 28px;
+}
+
 /* .home .about-section-content > h1,
 .home .about-section-content > p:not( :last-child ) {
     margin: 0px auto;
@@ -153,10 +165,6 @@
 
 .compilation-about .section-content-text:not( :first-of-type ):not( .legal-contextbox ):not( .home .compilation-about .section-content-text:last-child ) {
     padding-top: 18px;
-}
-
-.home .compilation-about .section-content-text:last-child {
-    padding-top: 64px;
 }
 
 .compilation-about .legal-contextbox {
