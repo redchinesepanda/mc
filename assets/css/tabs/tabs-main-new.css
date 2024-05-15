@@ -6,6 +6,10 @@
         padding-bottom: 18px;
     }
 
+    .home .legal-tabs .legal-tab-menu {
+        padding-top: 18px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -14,6 +18,16 @@
 
     .legal-tabs .legal-tab-menu {
         padding-bottom: 28px;
+    }
+
+    .home .legal-tabs {
+        position: relative;
+    }
+
+    .home .legal-tabs .legal-tab-menu {
+        position: absolute;
+        top: calc( 0px - 24px - 28px - ( (46px - 28px) / 2 ) );
+        right: 0px;
     }
 
 }
@@ -41,8 +55,13 @@
 
 /* Width and Height */
 
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title:not( .home .legal-tabs .legal-tab-title ) {
     min-height: 34px;
+}
+
+.home .legal-tabs .legal-tab-title {
+    min-width: 114px;
+    min-height: 44px;
 }
 
 /* Tabs Position */
@@ -51,7 +70,7 @@
     margin-top: 20px;
 }
 
-.legal-tabs .legal-tab-menu {
+.legal-tabs .legal-tab-menu:not( .home .legal-tabs .legal-tab-menu ) {
     padding-top: 18px;
 }
 
