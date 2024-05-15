@@ -135,13 +135,15 @@
 /* Background */
 
 .compilation-about-wrapper {
-    background-color: var( --Base-base-02 );
     border-bottom: 1px solid var( --Base-base-09 );
+}
+
+.compilation-about-wrapper:not( .home .compilation-about-wrapper ) {
+    background-color: var( --Base-base-02 );
 }
 
 .home .compilation-about-wrapper {
     background-color: var( --Primitives-purple-60 );
-    /* border-bottom: 1px solid var(--Base-base-09); */
 }
 
 .compilation-about .legal-contextbox {
