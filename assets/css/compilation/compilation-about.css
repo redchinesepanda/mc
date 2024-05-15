@@ -38,6 +38,11 @@
     }
 
     /* Typography */
+
+    .home .about-section-content {
+        text-align: center;
+    }
+
     .compilation-about h1 {
         font-size: 48px;
         line-height: 58px;
@@ -229,10 +234,6 @@
 .compilation-about .legal-cut-control,
 .compilation-about .section-content-text .legal-button {
     color: var(--Base-base-09);
-}
-
-.home .about-section-content {
-    text-align: center;
 }
 
 .compilation-about h1 {
