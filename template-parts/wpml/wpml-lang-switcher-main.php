@@ -13,8 +13,8 @@
                 <a class="lang-title-suffix" href="<?php echo $args[ 'active' ][ 'href' ]; ?>"><?php echo $args[ 'active' ][ 'suffix' ]; ?></a>
             <?php endif; ?>
         </div>
-        <div id="lang-menu-1" class="menu-avaible">
-            <?php if ( !empty( $args[ 'languages' ] ) ) : ?>
+        <?php if ( !empty( $args[ 'languages' ] ) ) : ?>
+            <div id="lang-menu-1" class="menu-avaible">
                 <?php foreach( $args[ 'languages' ] as $lang ) : ?>
                     <a class='lang-avaible lang-item' href="<?php echo $lang[ 'href' ]; ?>" target="_blank">
                         <div class="lang-image locale-<?php echo $lang[ 'id' ]; ?>"></div>
@@ -23,7 +23,7 @@
                         </div>
                     </a>
                 <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+        </d iv>
+        <?php endif; ?>
     </div> 
 <?php endif; ?>
