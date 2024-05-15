@@ -260,11 +260,11 @@ class BaseHeader
 			$all_languages = MultisiteSiteSwitcher::get_languages();
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'all_languages' => $all_languages,
-		] );
+		// 	'all_languages' => $all_languages,
+		// ] );
 
 		if ( !empty( $all_languages ) )
 		{
