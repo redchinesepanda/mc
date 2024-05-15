@@ -26,7 +26,7 @@ require_once( 'MultisiteShortcodeSync.php' );
 
 require_once( 'MultisiteSiteSwitcher.php' );
 
-require_once( 'MultisiteSite.php' );
+require_once( 'MultisiteSiteOptions.php' );
 
 class MiltisiteMain
 {
@@ -92,7 +92,7 @@ class MiltisiteMain
 
 			MultisiteAttachment::register_functions_mainsite();
 
-			MultisiteSite::register_functions_mainsite();
+			MultisiteSiteOptions::register_functions_mainsite();
 		}
 		else
 		{

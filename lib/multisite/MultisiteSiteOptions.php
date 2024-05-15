@@ -1,6 +1,6 @@
 <?php
 
-class MultisiteSite
+class MultisiteSiteOptions
 {
 	const SETTINGS = [
 		'page' => 'mcsiteinfo',
