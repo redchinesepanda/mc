@@ -63,22 +63,6 @@ class MultisiteBlog
 		return self::get_sites( 'other' );
 	}
 
-	// public static function get_other_sites()
-	// {
-	// 	$sites = get_sites( [
-	// 		'site__not_in' => MultisiteBlog::get_current_blog_id(),
-
-	// 		'number' => 32,
-	// 	] );
-
-	// 	if ( $sites )
-	// 	{
-	// 		return $sites;
-	// 	}
-
-	// 	return [];
-	// }
-
 	public static function get_current_site()
 	{
 		$sites = self::get_sites( 'current' );
@@ -91,23 +75,15 @@ class MultisiteBlog
 		return null;
 	}
 
-	// public static function get_current_site()
-	// {
-	// 	$current_blog_id = self::get_current_blog_id();
+	public static function get_blog_option( $blog_id, $option )
+	{
+		return esc_attr( get_blog_option( $blog_id, $option ) );
+	}
 
-	// 	$sites = get_sites( [
-	// 		'ID' => $current_blog_id,
-
-	// 		'number' => 1,
-	// 	] );
-
-	// 	if ( $sites )
-	// 	{
-	// 		return array_shift( $sites );
-	// 	}
-
-	// 	return null;
-	// }
+	public static function update_blog_option( $blog_id, $option, $value )
+	{
+		update_blog_option( $blog_id, $option, sanitize_text_field( $value ) );
+	}
 
 	public static function check_main_blog()
 	{

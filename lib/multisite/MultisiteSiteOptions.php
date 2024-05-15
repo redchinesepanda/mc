@@ -30,11 +30,13 @@ class MultisiteSiteOptions
 
 			add_action( 'network_admin_menu', [ $handler, 'mc_siteinfo_page' ] );
 
-			add_action( 'network_admin_edit_mcsiteinfoupdate',  [ $handler, 'mc_siteinfo_save' ] );
+			add_action( 'network_admin_edit_mcsiteinfoupdate', [ $handler, 'mc_siteinfo_save' ] );
+
+			add_action( 'network_admin_notices', [ $handler, 'mc_siteinfo_notice_render' ] );
 		}
 	}
 
-	function mc_siteinfo_tab( $tabs )
+	public static function mc_siteinfo_tab( $tabs )
 	{
 		$tabs[ self::SETTINGS[ 'tab' ] ] = [
 			'label' => 'MC Siteinfo',
@@ -47,18 +49,14 @@ class MultisiteSiteOptions
 		return $tabs;
 	}
 
-	function mc_siteinfo_page()
+	public static function mc_siteinfo_page()
 	{
 		$handler = new self();
 
 		add_submenu_page( '', 'Edit site', 'Edit site', 'manage_network_options', self::SETTINGS[ 'page' ], [ $handler, 'mc_siteinfo_page_render' ] );
 	}
 
-	const TEMPLATE = [
-		'mc-siteinfo' => LegalMain::LEGAL_PATH . '/template-parts/multisite/part-multisite-mc-settings.php',
-	];
-
-	function mc_siteinfo_page_args()
+	public static function mc_siteinfo_page_args()
 	{
 		$id = absint( $_REQUEST[ 'id' ] );
 
@@ -80,8 +78,6 @@ class MultisiteSiteOptions
 
 				'selected' => self::SETTINGS[ 'tab' ],
 			],
-
-			// 'nonce'	=> 'mc-check-' . $id,
 			
 			'nonce'	=> self::NONCE[ 'check' ] . $id,
 
@@ -91,7 +87,9 @@ class MultisiteSiteOptions
 
 					'name' => self::OPTIONS[ 'blog-language' ],
 
-					'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ) ),
+					// 'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ) ),
+					
+					'value' => MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ),
 				],
 
 				'mc-blog-locale' => [
@@ -99,18 +97,26 @@ class MultisiteSiteOptions
 
 					'name' => self::OPTIONS[ 'blog-locale' ],
 
-					'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) ),
+					// 'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) ),
+
+					'value' => MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ),
 				],
 			],
 		];
 	}
 
-	function mc_siteinfo_page_render()
+	const TEMPLATE = [
+		'mc-siteinfo' => LegalMain::LEGAL_PATH . '/template-parts/multisite/part-multisite-mc-settings.php',
+
+		'mc-siteinfo-notice' => LegalMain::LEGAL_PATH . '/template-parts/multisite/part-multisite-mc-settings-notice.php',
+	];
+
+	public static function mc_siteinfo_page_render()
 	{
 		echo LegalComponents::render_main( self::TEMPLATE[ 'mc-siteinfo' ], self::mc_siteinfo_page_args() );
 	}
 
-	function mc_siteinfo_save()
+	public static function mc_siteinfo_save()
 	{
 		$id = absint( $_POST[ 'id' ] );
 
@@ -118,10 +124,10 @@ class MultisiteSiteOptions
 
 		foreach ( self::OPTIONS as $option )
 		{
-			update_blog_option( $id, $option, sanitize_text_field( $_POST[ $option ] ) );
+			// update_blog_option( $id, $option, sanitize_text_field( $_POST[ $option ] ) );
+
+			MultisiteBlog::update_blog_option( $id, $option, $_POST[ $option ] );
 		}
-		
-		// redirect to /wp-admin/sites.php?page=mishapage&blog_id=ID&updated=true
 
 		wp_safe_redirect( 
 			add_query_arg( 
@@ -138,6 +144,42 @@ class MultisiteSiteOptions
 		);
 
 		exit;
+	}
+
+	public static function mc_siteinfo_notice_args()
+	{
+		return [
+			'message' => 'Congratulations!',
+
+			'button' => 'Dismiss this notice',
+		];
+	}
+
+	public static function check_page()
+	{
+		return isset( $_GET[ 'page' ] )
+		
+			&& self::SETTINGS[ 'page' ] === $_GET[ 'page' ];
+	}
+
+	public static function check_state()
+	{
+		return isset( $_GET[ 'updated' ] );
+	}
+
+	public static function mc_siteinfo_notice_check()
+	{
+		return self::check_state()
+		    
+			&& self::check_page();
+	}
+
+	public static function mc_siteinfo_notice_render()
+	{
+		if( self::mc_siteinfo_notice_check() )
+		{
+			echo LegalComponents::render_main( self::TEMPLATE[ 'mc-siteinfo-notice' ], self::mc_siteinfo_notice_args() );
+		}
 	}
 }
 
