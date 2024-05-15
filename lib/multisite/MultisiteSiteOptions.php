@@ -1,5 +1,7 @@
 <?php
 
+// https://rudrastyh.com/wordpress-multisite/custom-tabs-with-options.html
+
 class MultisiteSiteOptions
 {
 	const SETTINGS = [

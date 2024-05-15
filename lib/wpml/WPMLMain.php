@@ -202,6 +202,11 @@ class WPMLMain
 
         //     'WPLANG' => get_option( 'WPLANG' ),
         // ] );
+
+        if ( $blog_locale = MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) )
+        {
+            return $blog_locale;
+        }
             
         return get_locale();
 	}
