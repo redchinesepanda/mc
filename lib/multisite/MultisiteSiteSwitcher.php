@@ -42,9 +42,9 @@ class MultisiteSiteSwitcher
 
 	public static function site_to_language( $site )
 	{
-		$blog_language = MultisiteBlog::get_blog_option( $id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
+		$blog_language = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
-		$blog_locale = MultisiteBlog::get_blog_option( $id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
+		$blog_locale = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
 		return [
 			'id' => $site->blog_id,
