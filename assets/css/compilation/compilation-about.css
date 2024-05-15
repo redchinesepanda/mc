@@ -143,13 +143,13 @@
 
 .compilation-about h1,
 .compilation-about .section-content-text:not( .legal-contextbox ) {
-    margin: 0px;
-}
-
-.home .about-section-content > h1,
-.home .about-section-content > p:not( :last-child ) {
     margin: 0px auto;
 }
+
+/* .home .about-section-content > h1,
+.home .about-section-content > p:not( :last-child ) {
+    margin: 0px auto;
+} */
 
 .compilation-about .section-content-text:not( :first-of-type ):not( .legal-contextbox ):not( .home .compilation-about .section-content-text:last-child ) {
     padding-top: 18px;
