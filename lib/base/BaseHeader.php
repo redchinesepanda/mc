@@ -581,7 +581,9 @@ class BaseHeader
 			}
 		}
 
-		if ( $item_all_countries = self::get_item_all_countries() )
+		// if ( $item_all_countries = self::get_item_all_countries() )
+		
+		if ( MultisiteBlog::check_main_blog() )
 		{
 			$item[ 'children' ][] = $item_all_countries;
 		}
