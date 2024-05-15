@@ -268,10 +268,10 @@
     font-weight: 600;
 }
 
-.home .compilation-about h1 {
+/* .home .compilation-about h1 {
     background: linear-gradient(180deg, var(--Base-base-09) 45%, transparent 45%,transparent 46%, var(--Primitives-yellow-100) 46%);
-   /*  background: linear-gradient(160deg, var(--Base-base-09) 39%, transparent 39%,transparent 40%, var(--Primitives-yellow-100) 40%, var(--Primitives-yellow-100) 59%, transparent 59%,transparent 60%, var(--Base-base-09) 60%); */
+    background: linear-gradient(160deg, var(--Base-base-09) 39%, transparent 39%,transparent 40%, var(--Primitives-yellow-100) 40%, var(--Primitives-yellow-100) 59%, transparent 59%,transparent 60%, var(--Base-base-09) 60%);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-}
+} */
