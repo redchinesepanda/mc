@@ -76,6 +76,17 @@ class MiltisiteMain
 		return self::check_multisite();
 	}
 
+	public static function register_functions()
+	{
+		if ( MultisiteBlog::check_main_blog() )
+		{
+		}
+		else
+		{
+			MultisiteFront::register_functions_subsite();
+		}
+	}
+
 	public static function register_functions_admin()
 	{
 		MultisiteGallerySync::register_functions_debug();
@@ -109,8 +120,6 @@ class MiltisiteMain
 			MultisitePostSync::register_functions_subsite();
 
 			MultisiteShortcodeSync::register_functions_subsite();
-
-			MultisiteFront::register_functions_subsite();
 		}
 	}
 }

@@ -84,6 +84,8 @@ class LegalMain
 
 		WPMLMain::register_functions();
 
+		MiltisiteMain::register_functions();
+
 		if ( self::check_admin() )
 		{
 			ACFMain::register();
