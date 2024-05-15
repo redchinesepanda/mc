@@ -110,8 +110,17 @@
 }
 
 /* Width and Height */
-.compilation-about {
+.compilation-about:not( .home .compilation-about ) {
     max-width: var(--base-width-desktop);
+}
+
+.home .compilation-about {
+    max-width: 832px;
+}
+
+.home .about-section-content > h1,
+.home .about-section-content > p:not( :last-child ) {
+    max-width: 754px;
 }
 
 /* Position */
@@ -178,6 +187,10 @@
 .compilation-about .section-content-text,
 .compilation-about .legal-cut-control {
     color: var(--Base-base-09);
+}
+
+.home .about-section-content {
+    text-align: center;
 }
 
 .compilation-about h1 {
