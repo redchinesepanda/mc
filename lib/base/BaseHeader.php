@@ -585,7 +585,9 @@ class BaseHeader
 		
 		if ( MultisiteBlog::check_main_blog() )
 		{
-			$item[ 'children' ][] = $item_all_countries;
+			$item[ 'children' ][] = self::get_item_all_countries();
+
+			// $item[ 'children' ][] = $item_all_countries;
 		}
 
 		// $title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
