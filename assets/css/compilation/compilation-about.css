@@ -151,8 +151,12 @@
     margin: 0px auto;
 }
 
-.compilation-about .section-content-text:not( :first-of-type ):not( .legal-contextbox ) {
+.compilation-about .section-content-text:not( :first-of-type ):not( .legal-contextbox ):not( .home .compilation-about .section-content-text:last-child ) {
     padding-top: 18px;
+}
+
+.home .compilation-about .section-content-text:last-child {
+    padding-top: 64px;
 }
 
 .compilation-about .legal-contextbox {
@@ -236,6 +240,10 @@
     font-weight: 500;
     line-height: 22px;
     text-decoration: none;
+}
+
+.compilation-about .section-content-text .legal-button:hover {
+    text-shadow: 0 0 0.35px var( --Base-base-09 );
 }
 
 .compilation-about .legal-cut-control {
