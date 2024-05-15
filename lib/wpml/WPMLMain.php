@@ -205,7 +205,7 @@ class WPMLMain
 
         $current_blog_id = MultisiteBlog::get_current_blog_id();
 
-        $blog_locale = MultisiteSiteOptions::get_blog_option( $current_blog_id, self::OPTIONS[ 'blog-locale' ] )
+        $blog_locale = MultisiteSiteOptions::get_blog_option( $current_blog_id, self::OPTIONS[ 'blog-locale' ] );
 
         if ( !empty( $blog_locale ) )
         {
