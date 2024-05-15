@@ -28,6 +28,8 @@ require_once( 'MultisiteSiteSwitcher.php' );
 
 require_once( 'MultisiteSiteOptions.php' );
 
+require_once( 'MultisiteFront.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -107,6 +109,8 @@ class MiltisiteMain
 			MultisitePostSync::register_functions_subsite();
 
 			MultisiteShortcodeSync::register_functions_subsite();
+
+			MultisiteFront::register_functions_subsite();
 		}
 	}
 }
