@@ -203,7 +203,11 @@ class WPMLMain
         //     'WPLANG' => get_option( 'WPLANG' ),
         // ] );
 
-        if ( $blog_locale = MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) )
+        $current_blog_id = MultisiteBlog::get_current_blog_id();
+
+        $blog_locale = MultisiteSiteOptions::get_blog_option( $current_blog_id, self::OPTIONS[ 'blog-locale' ] )
+
+        if ( !empty( $blog_locale ) )
         {
             return $blog_locale;
         }
