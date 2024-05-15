@@ -79,6 +79,10 @@
     display: flex;
 }
 
+.home .compilation-about .about-section-image {
+    display: none;
+}
+
 .compilation-about .legal-cut-item:not( .legal-active ) {
     display: none;
 }
@@ -131,12 +135,17 @@
 /* Background */
 
 .compilation-about-wrapper {
-    background-color: var(--Base-base-02);
-    border-bottom: 1px solid var(--Base-base-09);
+    background-color: var( --Base-base-02 );
+    border-bottom: 1px solid var( --Base-base-09 );
+}
+
+.home .compilation-about-wrapper {
+    background-color: var( --Primitives-purple-60 );
+    /* border-bottom: 1px solid var(--Base-base-09); */
 }
 
 .compilation-about .legal-contextbox {
-    border-left: 2px solid var(--Base-base-09);
+    border-left: 2px solid var( --Base-base-09 );
 }
 
 /* Typography */
@@ -145,7 +154,7 @@
 .compilation-about .section-content-text,
 .compilation-about .legal-cut-control,
 .compilation-about .section-content-text a {
-    font-family: var(--legal-font-primary);
+    font-family: var( --legal-font-primary );
     font-style: normal;
 }
 
