@@ -44,10 +44,12 @@ class WPMLTranslationGroups
 
     function mc_edit_form_after_title_debug( $post )
 	{
+        $trid = WPMLTrid::get_trid( $post_id );
+
 		LegalDebug::debug( [
 			'WPMLTranslationGroups' => 'mc_edit_form_after_title_debug',
 
-			'trid' => get_field( self::FIELDS[ 'trid' ], $post->ID ),
+			'trid' => $trid,
 		] );
     }
 
@@ -64,7 +66,9 @@ class WPMLTranslationGroups
 
     public static function set_translation_group( $post_id, $post )
     {
-        $trid = get_field( self::FIELDS[ 'trid' ], $post_id );
+        // $trid = get_field( self::FIELDS[ 'trid' ], $post_id );
+        
+        $trid = WPMLTrid::get_trid( $post_id );
 
         // LegalDebug::die( [
         //     'WPMLTranslationGroups' =>'set_translation_group',
