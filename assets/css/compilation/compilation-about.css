@@ -43,9 +43,14 @@
         text-align: center;
     }
 
-    .compilation-about h1 {
+    .compilation-about h1:not( .home .compilation-about h1 ) {
         font-size: 48px;
         line-height: 58px;
+    }
+
+    .home .compilation-about h1 {
+        font-size: 56px;
+        line-height: 62px;
     }
 
     .compilation-about .section-content-text {
@@ -83,9 +88,14 @@
 
     /* Typography */
 
-    .compilation-about h1 {
+    .compilation-about h1:not( .home .compilation-about h1 ) {
         font-size: 32px;
         line-height: 38px;
+    }
+
+    .home .compilation-about h1 {
+        font-size: 40px;
+        line-height: 46px;
     }
 
     .compilation-about .section-content-text {
