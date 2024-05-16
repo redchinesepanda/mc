@@ -91,7 +91,7 @@ class WPMLTranslationGroups
             foreach ( $term_ids as $term_id )
 			{
 				$args = [
-					'name' => $post->post_name,
+					'name' => $post->post_title,
 				];
 
 				// LegalDebug::debug( [
