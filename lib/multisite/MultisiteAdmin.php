@@ -119,7 +119,29 @@ class MultisiteAdmin
 			// show an attacment notice
 	
 			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
+
+			/* Add site_name as a column */
+		
+			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_useful_columns' ] );
+
+			/* Populate site_name with blogs site_name */
+		
+			add_action( 'manage_sites_custom_column', [ $handler, 'column_site_name' ] , 10, 2 );
 		}
+	}
+
+	public static function add_useful_columns( $site_columns )
+	{
+		$site_columns[ 'site_name' ] = 'Site Name';
+
+		return $site_columns;
+	}
+
+	public static function column_site_name( $column_name, $blog_id )
+	{
+		$current_blog_details = get_blog_details( [ 'blog_id' => $blog_id ] );
+
+		echo ucwords( $current_blog_details->blogname );
 	}
 
 	public static function register_functions_subsite()
