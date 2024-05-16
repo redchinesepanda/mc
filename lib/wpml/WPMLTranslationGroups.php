@@ -48,15 +48,15 @@ class WPMLTranslationGroups
     {
         $trid = get_field( self::FIELDS[ 'trid' ], $post_id );
 
-        LegalDebug::die( [
-            'WPMLTranslationGroups' =>'set_translation_group',
+        // LegalDebug::die( [
+        //     'WPMLTranslationGroups' =>'set_translation_group',
 
-            'post_id' => $post_id,
+        //     'trid' => $trid,
 
-            'post' => $post,
+        //     'post_id' => $post_id,
 
-            'trid' => $trid,
-        ] );
+        //     'post' => $post,
+        // ] );
 
         if ( $trid )
         {
