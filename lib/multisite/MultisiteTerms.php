@@ -14,6 +14,8 @@ class MultisiteTerms
 		'offer-group' => 'offer_group',
 
 		'page-group' => 'page_group',
+
+		'translation-group' => 'translation_group',
 	];
 
 	const TAXONOMIES_BILLET = [
