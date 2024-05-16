@@ -87,6 +87,21 @@ class WPMLTranslationGroups
             ];
 
 			$term_ids = wp_set_object_terms( $post_id, $slugs, self::TAXONOMY[ 'translation_group' ], false );
+
+            foreach ( $term_ids as $term_id )
+			{
+				$args = [
+					'name' => $post->post_name,
+				];
+
+				// LegalDebug::debug( [
+				// 	'MultisiteTerms' => 'add_post_terms',
+
+				// 	'args' => $args,
+				// ] );
+
+				wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+			}
         }
     }
 
