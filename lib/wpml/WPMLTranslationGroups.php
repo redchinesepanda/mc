@@ -90,17 +90,19 @@ class WPMLTranslationGroups
 
             foreach ( $term_ids as $term_id )
 			{
-				$args = [
-					'name' => $post->post_title,
-				];
+                $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] )
 
-				// LegalDebug::debug( [
-				// 	'MultisiteTerms' => 'add_post_terms',
-
-				// 	'args' => $args,
-				// ] );
-
-				wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                if ( ! empty( $term ) )
+                {
+                    if ( ! empty( $term->name ) )
+                    {
+                        $args = [
+                            'name' => $post->post_title,
+                        ];
+        
+                        wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                    }
+                }
 			}
         }
     }
