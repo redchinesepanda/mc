@@ -292,7 +292,9 @@ class WPMLMain
         
         WPMLLanguageMismatch::register_functions();
 
-        WPMLTranslationGroups::register();
+        WPMLTranslationGroups::register_functions_debug();
+
+        WPMLTranslationGroups::register_functions_admin();
     } 
 
     public static function register()

@@ -32,8 +32,26 @@ class WPMLTranslationGroups
 
     //     wp_enqueue_script( 'acf-page' );
     // }
+    
+    public static function register_functions_debug()
+	{
+		$handler = new self();
 
-    public static function register()
+		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+
+		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+	}
+
+    function mc_edit_form_after_title_debug( $post )
+	{
+		LegalDebug::debug( [
+			'WPMLTranslationGroups' => 'mc_edit_form_after_title_debug',
+
+			'trid' => get_field( self::FIELDS[ 'trid' ], $post->ID ),
+		] );
+    }
+
+    public static function register_functions_admin()
     {
         $handler = new self();
 
