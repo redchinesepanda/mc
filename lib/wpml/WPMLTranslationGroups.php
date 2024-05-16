@@ -44,7 +44,7 @@ class WPMLTranslationGroups
 
     function mc_edit_form_after_title_debug( $post )
 	{
-        $trid = WPMLTrid::get_trid( $post_id );
+        $trid = WPMLTrid::get_trid( $post->ID );
 
 		LegalDebug::debug( [
 			'WPMLTranslationGroups' => 'mc_edit_form_after_title_debug',
