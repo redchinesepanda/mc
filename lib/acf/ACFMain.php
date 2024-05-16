@@ -2,7 +2,7 @@
 
 // require_once( 'ACFBilletCards.php' );
 
-require_once( 'ACFPage.php' );
+// require_once( 'ACFPage.php' );
 
 require_once( 'ACFCompilation.php' );
 
@@ -66,7 +66,7 @@ class ACFMain
 
         // ACFBilletCards::register();
 
-        ACFPage::register();
+        // ACFPage::register();
 
         ACFCompilation::register();
 

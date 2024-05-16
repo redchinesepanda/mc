@@ -12,6 +12,8 @@ require_once( 'WPMLChooseYourCountry.php' );
 
 // require_once( 'WPMLDomain.php' );
 
+require_once( 'WPMLTranslationGroups.php' );
+
 class WPMLMain
 {
     public static function check_plugin()
@@ -305,6 +307,8 @@ class WPMLMain
         // WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
+
+        WPMLTranslationGroups::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
