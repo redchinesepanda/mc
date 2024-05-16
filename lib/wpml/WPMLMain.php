@@ -289,9 +289,10 @@ class WPMLMain
     public static function register_functions()
     {
         // WPMLDomain::register_functions();
-
         
         WPMLLanguageMismatch::register_functions();
+
+        WPMLTranslationGroups::register();
     } 
 
     public static function register()
@@ -307,8 +308,6 @@ class WPMLMain
         // WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
-
-        WPMLTranslationGroups::register();
 
         add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
