@@ -90,7 +90,7 @@ class WPMLTranslationGroups
 
             foreach ( $term_ids as $term_id )
 			{
-                $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] )
+                $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] );
 
                 if ( ! empty( $term ) )
                 {
