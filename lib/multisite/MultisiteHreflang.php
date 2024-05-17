@@ -73,8 +73,18 @@ class MultisiteHreflang
 
 			$blog_locale = MultisiteBlog::get_blog_option( $blog->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'get_group_items_all',
+
+				'blog_id' => $blog->blog_id,
+
+				'blog_locale' => $blog_locale,
+			] );
+
 			$items[ $blog_locale ] = get_group_items( $translation_groups );
 		}
+
+		MultisiteBlog::set_blog( $current_blog_id );
 
 		return $items;
 	}
