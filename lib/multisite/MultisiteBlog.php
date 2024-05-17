@@ -42,9 +42,11 @@ class MultisiteBlog
 
 	public static function get_sites( $mode = self::MODE[ 'all' ] )
 	{
-		$sites_args = [
-			'number' => 32,
-		];
+		// $sites_args = [
+		// 	'number' => 32,
+		// ];
+		
+		$sites_args = [];
 
 		// if ( $mode == self::MODE[ 'other' ] )
 		// {
