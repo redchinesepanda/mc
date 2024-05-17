@@ -64,6 +64,12 @@ class MultisiteHreflang
 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post_id );
 
 		$blogs = MultisiteBlog::get_other_sites();
+		
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_group_items_all',
+
+			'blogs' => $blogs,
+		] );
 
 		$items = [];
 
