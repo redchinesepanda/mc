@@ -30,6 +30,8 @@ require_once( 'MultisiteSiteOptions.php' );
 
 require_once( 'MultisiteFront.php' );
 
+require_once( 'MultisiteHreflang.php' );
+
 class MiltisiteMain
 {
 	const TEXT = [
@@ -96,6 +98,8 @@ class MiltisiteMain
 		MultisiteShortcodeSync::register_functions_debug();
 
 		MultisiteSiteSwitcher::register_functions_debug();
+
+		MultisiteHreflang::register_functions_debug();
 
 		if ( MultisiteBlog::check_main_blog() )
 		{

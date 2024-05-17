@@ -292,7 +292,7 @@ class WPMLMain
         
         WPMLLanguageMismatch::register_functions();
 
-        WPMLTranslationGroups::register_functions_debug();
+        // WPMLTranslationGroups::register_functions_debug();
 
         WPMLTranslationGroups::register_functions_admin();
     } 

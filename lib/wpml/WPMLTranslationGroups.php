@@ -33,25 +33,25 @@ class WPMLTranslationGroups
     //     wp_enqueue_script( 'acf-page' );
     // }
     
-    public static function register_functions_debug()
-	{
-		$handler = new self();
+    // public static function register_functions_debug()
+	// {
+	// 	$handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+	// 	add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
-	}
+	// 	// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+	// }
 
-    function mc_edit_form_after_title_debug( $post )
-	{
-        $trid = WPMLTrid::get_trid( $post->ID );
+    // function mc_edit_form_after_title_debug( $post )
+	// {
+    //     $trid = WPMLTrid::get_trid( $post->ID );
 
-		LegalDebug::debug( [
-			'WPMLTranslationGroups' => 'mc_edit_form_after_title_debug',
+	// 	LegalDebug::debug( [
+	// 		'WPMLTranslationGroups' => 'mc_edit_form_after_title_debug',
 
-			'trid' => $trid,
-		] );
-    }
+	// 		'trid' => $trid,
+	// 	] );
+    // }
 
     public static function register_functions_admin()
     {
@@ -105,6 +105,28 @@ class WPMLTranslationGroups
                 }
 			}
         }
+    }
+
+    public static function get_translation_group( $post_id )
+    {
+        $terms_args = [
+            'fields' => 'slugs',
+        ];
+
+        $terms = wp_get_object_terms( $post_id, self::TAXONOMY[ 'translation_group' ], $terms_args );
+
+        LegalDebug::debug( [
+            'WPMLTranslationGroups' => 'get_translation_group',
+
+            'terms' => $terms,
+        ] );
+
+        if ( is_wp_error( $terms ) )
+        {
+            return [];
+        }
+
+        return $terms;
     }
 
     // public static function choices( $field )

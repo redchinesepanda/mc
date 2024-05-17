@@ -2,6 +2,14 @@
 
 class MultisiteBlog
 {
+	const MODE = [
+		'all' => 'all',
+
+		'other' => 'other',
+
+		'current' => 'current',
+	];
+
 	public static function set_blog( $blog_id )
 	{
 		switch_to_blog( $blog_id );
@@ -32,18 +40,18 @@ class MultisiteBlog
 		return get_blog_details( $blog_id );
 	}
 
-	public static function get_sites( $mode = 'all' )
+	public static function get_sites( $mode = self::MODE[ 'all' ] )
 	{
 		$sites_args = [
 			'number' => 32,
 		];
 
-		if ( $mode == 'other' )
+		if ( $mode == self::MODE[ 'other' ] )
 		{
 			$sites_args[ 'site__not_in' ] = self::get_current_blog_id();
 		}
 
-		if ( $mode = 'current' )
+		if ( $mode = self::MODE[ 'current' ] )
 		{
 			$sites_args[ 'ID' ] = self::get_current_blog_id();
 		}
@@ -60,12 +68,12 @@ class MultisiteBlog
 
 	public static function get_other_sites()
 	{
-		return self::get_sites( 'other' );
+		return self::get_sites( self::MODE[ 'other' ] );
 	}
 
 	public static function get_current_site()
 	{
-		$sites = self::get_sites( 'current' );
+		$sites = self::get_sites( self::MODE[ 'current' ] );
 
 		if ( $sites )
 		{
