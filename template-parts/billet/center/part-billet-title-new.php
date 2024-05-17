@@ -19,11 +19,14 @@
             <?php endif; ?>
             <a class="legal-title <?php echo $args[ 'title' ]['class']; ?> check-oops" href="<?php echo $args[ 'title' ]['href']; ?>" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title' ]['label']; ?></a>
         </div>
-        <?php if ( !empty( $args[ 'title' ]['rating'] ) ): ?>
+        <?php if ( !empty( $args[ 'title' ][ 'rating' ] ) ): ?>
             <div class="billet-title-rating"><?php echo $args[ 'title' ]['rating']; ?></div>
         <?php endif; ?>
         <?php if ( !empty( $args['logo']['review']['href'] ) ) : ?>
             <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
+        <?php endif; ?>
+        <?php if ( !empty( $args[ 'warning' ] ) ): ?>
+            <div class="billet-title-watning"><?php echo $args[ 'warning' ]; ?></div>
         <?php endif; ?>
     </div>
     <?php echo BilletMobile::render_mobile( $args[ 'mobile' ] ); ?>
