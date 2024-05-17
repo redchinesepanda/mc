@@ -170,19 +170,19 @@
 .bonus-content > p:not( :last-child ):not( .legal-override ),
 .billet-description > p:not( :last-child ):not( .legal-override ),
 .billet .billet-description-full > p:not( :last-child ):not( .legal-override ),
-.legal-review-page .tcb-post-content > p:first-child {
+.legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     padding-bottom: 18px;
 }
 
 .bonus-content > p,
 .billet-description > p,
 .billet .billet-description-full > p,
-.legal-review-page .tcb-post-content > p:first-child {
+.legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-.legal-review-page .tcb-post-content > p:first-child {
+.legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     padding-top: 18px;
 }
 
