@@ -82,28 +82,31 @@ class WPMLTranslationGroups
 
         if ( $trid )
         {
-            $slugs = [
-                sprintf( self::PATTERN[ 'trid-slug' ], $trid ),
-            ];
-
-			$term_ids = wp_set_object_terms( $post_id, $slugs, self::TAXONOMY[ 'translation_group' ], false );
-
-            foreach ( $term_ids as $term_id )
-			{
-                $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] );
-
-                if ( ! empty( $term ) )
+            if ( ! has_term( '', self::TAXONOMY[ 'translation_group' ] ) )
+            {
+                $slugs = [
+                    sprintf( self::PATTERN[ 'trid-slug' ], $trid ),
+                ];
+    
+                $term_ids = wp_set_object_terms( $post_id, $slugs, self::TAXONOMY[ 'translation_group' ], false );
+    
+                foreach ( $term_ids as $term_id )
                 {
-                    if ( ! empty( $term->name ) )
+                    $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] );
+    
+                    if ( ! empty( $term ) )
                     {
-                        $args = [
-                            'name' => $post->post_title,
-                        ];
-        
-                        wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                        if ( ! empty( $term->name ) )
+                        {
+                            $args = [
+                                'name' => $post->post_title,
+                            ];
+            
+                            wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                        }
                     }
                 }
-			}
+            }
         }
     }
 
