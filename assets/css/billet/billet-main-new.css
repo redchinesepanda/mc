@@ -549,7 +549,8 @@ body {
     width: 100%;
 }
 
-.billet .title-data-group {
+.billet .title-data-group,
+.billet .billet-title-warning {
     width: 100%;
 }
 
@@ -778,6 +779,12 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+}
+
+.billet .billet-title-warning {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
 }
 
 .billet-title .billet-title-achivement {
