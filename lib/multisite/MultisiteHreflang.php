@@ -13,7 +13,7 @@ class MultisiteHreflang
 
     function mc_edit_form_after_title_debug( $post )
 	{
-        $group_items = self::get_group_items( $post->ID );
+        $group_items = self::get_group_items_all( $post->ID );
 
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'mc_edit_form_after_title_debug',
