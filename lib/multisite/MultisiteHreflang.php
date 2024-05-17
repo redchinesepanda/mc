@@ -57,6 +57,8 @@ class MultisiteHreflang
                 'MultisiteHreflang' => 'get_group_items',
 				
                 'post_language_details' => $post_language_details,
+
+				'post_title' => $post->post_title,
             ] );
 
 			$items[] = get_post_permalink( $post->ID );
