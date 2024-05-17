@@ -194,7 +194,8 @@
         padding: 20px 24px;
     }
 
-    .billet-title .legal-review {
+    .billet-title .legal-review,
+    .billet-title .billet-title-rating {
         padding-top: 4px;
     }
 
