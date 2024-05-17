@@ -63,6 +63,10 @@
         height: 48px;
     }
 
+    .billet .title-data {
+        width: calc( 100% - 48px - 9.18px );
+    }
+
     .billet .bonus-mobile-item::before {
         width: 24px;
         height: 24px;
