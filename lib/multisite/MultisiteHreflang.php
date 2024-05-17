@@ -81,7 +81,7 @@ class MultisiteHreflang
 				'blog_locale' => $blog_locale,
 			] );
 
-			$items[ $blog_locale ] = get_group_items( $translation_groups );
+			$items[ $blog_locale ] = self::get_group_items( $translation_groups );
 		}
 
 		MultisiteBlog::set_blog( $current_blog_id );
