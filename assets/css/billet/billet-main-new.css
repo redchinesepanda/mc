@@ -117,9 +117,9 @@
         column-gap: 16px;
     }
 
-    .billet .title-data {
+   /*  .billet .title-data {
         row-gap: 4px;
-    }
+    } */
 
     .billet-list-part.legal-column {
         flex-direction: column;
@@ -192,6 +192,10 @@
     .billet-item .billet .billet-main,
     .billet-item .billet .billet-bonus {
         padding: 20px 24px;
+    }
+
+    .billet-title .legal-review {
+        padding-top: 4px;
     }
 
     .billet .bonus-mobile {
