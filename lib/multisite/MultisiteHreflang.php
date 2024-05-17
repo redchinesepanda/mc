@@ -51,6 +51,14 @@ class MultisiteHreflang
 
 		foreach ( $posts as $post )
 		{
+			$post_language_details = WPMLMain::get_post_language_details(  $post->ID );
+
+			LegalDebug::debug( [
+                'MultisiteHreflang' => 'get_group_items',
+				
+                'post_language_details' => $post_language_details,
+            ] );
+
 			$items[] = get_post_permalink( $post->ID );
 		}
 
