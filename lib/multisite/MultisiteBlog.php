@@ -53,10 +53,10 @@ class MultisiteBlog
 		// 	$sites_args[ 'site__not_in' ] = self::get_current_blog_id();
 		// }
 
-		if ( $mode = self::MODE[ 'current' ] )
-		{
-			$sites_args[ 'ID' ] = self::get_current_blog_id();
-		}
+		// if ( $mode = self::MODE[ 'current' ] )
+		// {
+		// 	$sites_args[ 'ID' ] = self::get_current_blog_id();
+		// }
 
 		$sites = get_sites( $sites_args );
 
