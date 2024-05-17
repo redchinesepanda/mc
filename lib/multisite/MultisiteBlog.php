@@ -46,10 +46,10 @@ class MultisiteBlog
 			'number' => 32,
 		];
 
-		if ( $mode == self::MODE[ 'other' ] )
-		{
-			$sites_args[ 'site__not_in' ] = self::get_current_blog_id();
-		}
+		// if ( $mode == self::MODE[ 'other' ] )
+		// {
+		// 	$sites_args[ 'site__not_in' ] = self::get_current_blog_id();
+		// }
 
 		if ( $mode = self::MODE[ 'current' ] )
 		{
