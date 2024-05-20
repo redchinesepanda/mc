@@ -329,6 +329,71 @@ class WPMLMain
         );
     }
 
+    const PATTERNS = [
+        'wpml-post' => 'post_%1$s',
+    ];
+
+    public static function multisite_element_language_code_query( $wpdb, $element_id, $element_type )
+    {
+        return $wpdb->prepare(
+            "SELECT language_code 
+            FROM wp_icl_translations
+            WHERE element_type = %s
+                AND element_id = %d
+                AND element_type = %s",
+
+            [
+                'post_page',
+                
+                $element_id,
+                
+                $element_type,
+            ]
+        );
+    }
+
+    public static function multisite_element_language_code( $data, $element )
+    {
+        LegalDebug::debug( [
+            'WPMLMain' => 'multisite_element_language_code',
+
+            'data' => $data,
+
+            'element' => $element,
+        ] );
+
+        global $wpdb;
+
+        $element_id = $element[ 'element_id' ];
+
+        $element_type = sprintf(
+            self::PATTERNS[ 'wpml-post' ],
+            
+            $element[ 'element_type' ]
+        );
+
+        $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
+
+        LegalDebug::debug( [
+            'WPMLMain' => 'multisite_element_language_code',
+
+            'language_code_query' => $language_code_query,
+        ] );
+        
+        // return $wpdb->get_results( $language_code_query );
+
+        $language_code = $wpdb->get_var( $language_code_query );
+
+        if ( $language_code != 'en' )
+        {
+            return $language_code;
+        }
+
+        return '';
+        
+        // return $wpdb->get_var( $language_code_query );
+    }
+
     public static function get_language_details( $id = null )
     {
         return apply_filters(
@@ -384,62 +449,6 @@ class WPMLMain
         }
             
         return false;
-    }
-
-    const PATTERNS = [
-        'wpml-post' => 'post_%1$s',
-    ];
-
-    public static function multisite_element_language_code_query( $wpdb, $element_id, $element_type )
-    {
-        return $wpdb->prepare(
-            "SELECT language_code 
-            FROM wp_icl_translations
-            WHERE element_type = %s
-                AND element_id = %d
-                AND element_type = %s",
-
-            [
-                'post_page',
-                
-                $element_id,
-                
-                $element_type,
-            ]
-        );
-    }
-
-    public static function multisite_element_language_code( $data, $element )
-    {
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_element_language_code',
-
-            'data' => $data,
-
-            'element' => $element,
-        ] );
-
-        global $wpdb;
-
-        $element_id = $element[ 'element_id' ];
-
-        $element_type = sprintf(
-            self::PATTERNS[ 'wpml-post' ],
-            
-            $element[ 'element_type' ]
-        );
-
-        $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
-
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_element_language_code',
-
-            'language_code_query' => $language_code_query,
-        ] );
-        
-        // return $wpdb->get_results( $language_code_query );
-        
-        return $wpdb->get_var( $language_code_query );
     }
 }
 
