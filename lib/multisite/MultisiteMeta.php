@@ -304,7 +304,7 @@ class MultisiteMeta
 	{
 		// return !in_array( $meta_key, self::FILTER_META_PREFIX );
 
-		return !self::check_contains_prefix( $meta_key, self::FILTER_META_PREFIX )
+		return !self::check_contains_prefix( $meta_key, self::FILTER_META_PREFIX );
 	}
 
 	// public static function filter_not_thrive( $meta_key )
