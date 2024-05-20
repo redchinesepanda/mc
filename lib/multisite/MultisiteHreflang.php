@@ -44,7 +44,7 @@ class MultisiteHreflang
 	}
 
 	const PATTERN = [
-		'post-uri' => '%s/%s',
+		'post-uri' => '%s/%s/%s',
 	];
 
 	public static function get_group_items( $terms )
@@ -55,21 +55,28 @@ class MultisiteHreflang
 
 		foreach ( $posts as $post )
 		{
-
 			$post_title = $post->post_title;
 
-			$get_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+			$url = get_bloginfo( 'url' );
 
-			$post_uri = 
+			$language_code = WPMLMain::get_language_code( $post->ID );
+
+			$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+
+			$post_uri = sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
 
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
 
 				'post_title' => $post_title,
 
-				'get_language_code' => WPMLMain::get_language_code( $post->ID ),
+				'url' => $url,
+
+				'language_code' => $language_code,
 				
-                'get_post_uri' => $get_post_uri,
+                'post_path' => $post_path,
+
+				'post_uri' => $post_uri,
 				
 				// 'trid' => $trid,
 				
