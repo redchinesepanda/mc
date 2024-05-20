@@ -41,6 +41,8 @@ class WPMLMain
 
         if ( MiltisiteMain::check_multisite() )
         {
+            $handler = new self();
+            
             add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
         }
     } 
