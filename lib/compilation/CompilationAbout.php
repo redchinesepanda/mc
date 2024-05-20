@@ -155,6 +155,26 @@ class CompilationAbout
         return !empty( array_filter( array_column( $items, 'class' ), [ $handler, 'has_read_more' ] ) );
     }
 
+	const TAXONOMY = [
+		'page-type' => 'page_type',
+	];
+
+	const PAGE_TYPE = [
+		'casino' => 'casino',
+	];
+
+	public static function get_class()
+	{
+		$classes = [];
+
+		if( has_term( self::PAGE_TYPE[ 'casino' ], self::TAXONOMY[ 'page-type' ] ) )
+		{
+			$classes[] = 'legal-' . self::PAGE_TYPE[ 'casino' ];
+	  	}
+
+		return implode( ' ', $classes );
+	}
+
 	public static function get()
 	{
 		// LegalDebug::debug( [
@@ -171,6 +191,8 @@ class CompilationAbout
 		$dom = LegalDOM::get_dom( $post->post_content );
 
 		return [
+			'class' = self::get_class(),
+			
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
