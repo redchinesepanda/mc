@@ -45,6 +45,8 @@ class CompilationAbout
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	public static function register_functions()
