@@ -33,11 +33,11 @@ class WPMLMain
 
         WPMLTranslationGroups::register_functions_admin();
         
-        LegalDebug::debug( [
-            'WPMLMain' => 'register_functions',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'register_functions',
 
-            'check_multisite' => MiltisiteMain::check_multisite(),
-        ] );
+        //     'check_multisite' => MiltisiteMain::check_multisite(),
+        // ] );
 
         if ( MiltisiteMain::check_multisite() )
         {
