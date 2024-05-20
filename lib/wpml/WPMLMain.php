@@ -23,6 +23,45 @@ class WPMLMain
 		return is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
     }
 
+    public static function register_functions()
+    {
+        // WPMLDomain::register_functions();
+        
+        WPMLLanguageMismatch::register_functions();
+
+        // WPMLTranslationGroups::register_functions_debug();
+
+        WPMLTranslationGroups::register_functions_admin();
+    } 
+
+    public static function register()
+    {
+        $handler = new self();
+
+        WPMLLangSwitcher::register();
+
+        WPMLTrid::register();
+
+        // WPMLLanguageMismatch::register();
+
+        // WPMLHreflang::register();
+
+        WPMLChooseYourCountry::register();
+
+        add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
+
+        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
+        
+        // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
+
+        // add_filter( 'locale', [ $handler, 'legal_locale' ] );
+
+        if ( MiltisiteMain::check_multisite() )
+        {
+            add_filter( 'wpml_element_language_code', [ $handler, 'multitite_element_language_code' ] );
+        }
+    }
+
     public static function get_all_languages()
     {
         $languages = apply_filters(
@@ -286,40 +325,6 @@ class WPMLMain
         );
     }
 
-    public static function register_functions()
-    {
-        // WPMLDomain::register_functions();
-        
-        WPMLLanguageMismatch::register_functions();
-
-        // WPMLTranslationGroups::register_functions_debug();
-
-        WPMLTranslationGroups::register_functions_admin();
-    } 
-
-    public static function register()
-    {
-        $handler = new self();
-
-        WPMLLangSwitcher::register();
-
-        WPMLTrid::register();
-
-        // WPMLLanguageMismatch::register();
-
-        // WPMLHreflang::register();
-
-        WPMLChooseYourCountry::register();
-
-        add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
-
-        // add_filter( 'language_attributes', [ $handler, 'legal_language_attributes' ], 10, 2 );
-        
-        // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
-
-        // add_filter( 'locale', [ $handler, 'legal_locale' ] );
-    }
-
     public static function language_attributes()
     {
         echo 'lang="' . esc_attr( self::get_hreflang() ) . '"';
@@ -362,16 +367,16 @@ class WPMLMain
         return false;
     }
 
-    // const QUERY = [
-    //     'language-code' => "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `trid` = '%2$s'",
-    // ];
+    const PATTERNS = [
+        'wpml-post' => 'post_%1$s',
+    ];
 
-    public static function get_language_code_query( $element_id, $trid )
+    public static function multitite_element_language_code_query( $element_id, $element_type )
     {
         // return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
         
         return sprintf(
-            "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `trid` = '%2$s'",
+            "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `element_type` = '%2$s'",
             
             $element_id,
             
@@ -379,15 +384,19 @@ class WPMLMain
         );
     }
 
-    public static function get_language_code()
+    public static function multitite_element_language_code( $data, $element )
     {
         global $wpdb;
 
-        $element_id = '';
+        $element_id = $element[ 'element_id' ];
+
+        $element_type = sprintf(
+            self::PATTERNS[ 'wpml-post' ],
+            
+            $element[ 'element_type' ]
+        );
         
-        $trid = '';
-        
-        return $wpdb->get_results( self::get_language_code_query( $element_id, $trid ) );
+        return $wpdb->get_results( self::multitite_element_language_code_querys( $element_id, $element_type ) );
     }
 }
 
