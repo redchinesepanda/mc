@@ -31,11 +31,11 @@
     /* Width and Height */
 
     .home .legal-tabs .legal-tabs-title {
-        width: 70%;
+        width: fit-content;
     }
 
     .home .legal-tabs .legal-tab-menu {
-        width: 30%;
+        width: calc( ( 162px * 2 ) + 8px );
     }
 
     .legal-tabs .legal-tab-display {
@@ -44,7 +44,7 @@
 
     /* Tabs Position */
 
-    .legal-tabs .legal-tab-menu {
+    .legal-tabs .legal-tab-menu:not( .home .legal-tabs .legal-tab-menu ) {
         padding-bottom: 28px;
     }
 
@@ -92,14 +92,16 @@
 }
 
 .home .legal-tabs .legal-tab-title {
-    min-width: 114px;
-    min-height: 44px;
+    /* min-width: 114px; */
+    min-width: calc( 162px - ( 24px * 2 ) - 2px );
+    height: 44px;
 }
 
 /* Tabs Position */
 
-.legal-tabs .legal-tabs-title {
-    margin-top: 20px;
+.legal-tabs .legal-tabs-title,
+.home .legal-tabs .legal-tabs-title + .legal-tab-menu {
+    margin-top: 24px;
 }
 
 .legal-tabs .legal-tab-menu:not( .home .legal-tabs .legal-tab-menu ) {
