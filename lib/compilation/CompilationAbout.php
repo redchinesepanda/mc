@@ -23,6 +23,23 @@ class CompilationAbout
 		}
     }
 
+	const JS_NEW = [
+        'compilation-about' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-about.js',
+
+			'ver' => '1.0.0',
+		],
+
+    ];
+
+    public static function register_script()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_script( self::JS_NEW );
+		}
+    }
+
 	public static function register()
     {
         $handler = new self();
