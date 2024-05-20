@@ -439,7 +439,7 @@ class WPMLMain
         
         // return $wpdb->get_results( $language_code_query );
         
-        return $wpdb->get_var( $language_code_query, 'language_code', 0 );
+        return $wpdb->get_var( $language_code_query, 'language_code' );
     }
 }
 
