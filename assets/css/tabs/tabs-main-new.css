@@ -6,6 +6,10 @@
         padding-bottom: 18px;
     }
 
+    .home .legal-tabs .legal-tabs-title + .legal-tab-menu {
+        margin-top: 28px;
+    }
+
     .home .legal-tabs .legal-tab-menu {
         padding-top: 12px;
     }
@@ -46,6 +50,11 @@
 
     .legal-tabs .legal-tab-menu:not( .home .legal-tabs .legal-tab-menu ) {
         padding-bottom: 28px;
+    }
+
+    .home .legal-tabs .legal-tabs-title + .legal-tab-menu {
+        margin-top: calc( 24px + ( ( 58px - 46px ) / 2 ) );
+        margin-left: auto;
     }
 
 /*     .home .legal-tabs .legal-tab-menu {
@@ -99,8 +108,7 @@
 
 /* Tabs Position */
 
-.legal-tabs .legal-tabs-title,
-.home .legal-tabs .legal-tabs-title + .legal-tab-menu {
+.legal-tabs .legal-tabs-title {
     margin-top: 24px;
 }
 
