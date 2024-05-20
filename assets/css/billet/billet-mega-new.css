@@ -231,7 +231,8 @@
 .legal-billet-mega.legal-default .billet-mega-about,
 .legal-billet-mega.legal-image .billet-mega-about,
 .legal-billet-mega.legal-no-controls .billet-mega-about,
-.legal-billet-mega.legal-horizontal .billet-mega-about {
+.legal-billet-mega.legal-horizontal .billet-mega-about,
+.legal-billet-mega.legal-author .billet-mega-about {
 	flex-basis: 100%; 
 }
 
