@@ -394,12 +394,29 @@ class WPMLMain
     {
         // return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
         
-        return sprintf(
-            "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `element_type` = '%2$s'",
+        // return sprintf(
+        //     "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `element_type` = '%2$s'",
             
-            $element_id,
+        //     $element_id,
             
-            $trid
+        //     $element_type
+        // );
+
+        return $wpdb->prepare(
+            // "INSERT INTO $wpdb->postmeta ( post_id, meta_key, meta_value ) VALUES ( %d, %s, %s )",
+            // 10,
+            // $metakey,
+            // $metavalue
+
+            "SELECT language_code FROM wp_icl_translations WHERE element_type = %s AND element_id = %d AND element_type = %s",
+
+            [
+                'post_page',
+                
+                $element_id,
+                
+                $element_type,
+            ]
         );
     }
 
@@ -410,7 +427,7 @@ class WPMLMain
 
             'data' => $data,
 
-            // 'element' => $element,
+            'element' => $element,
         ] );
 
         global $wpdb;
@@ -422,8 +439,16 @@ class WPMLMain
             
             $element[ 'element_type' ]
         );
+
+        $language_code_query = self::multisite_element_language_code_query( $element_id, $element_type );
+
+        LegalDebug::debug( [
+            'WPMLMain' => 'multisite_element_language_code',
+
+            'language_code_query' => $language_code_query,
+        ] );
         
-        return $wpdb->get_results( self::multisite_element_language_code_query( $element_id, $element_type ) );
+        return $wpdb->get_results( $language_code_query );
     }
 }
 
