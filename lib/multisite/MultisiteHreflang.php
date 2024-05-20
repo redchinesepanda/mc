@@ -62,7 +62,7 @@ class MultisiteHreflang
 			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
 		}
 
-		return sprintf( self::PATTERN[ 'post-root' ], $url, $post_path );
+		return sprintf( self::PATTERN[ 'post-uri-root' ], $url, $post_path );
 	}
 
 	public static function get_group_items( $terms )
