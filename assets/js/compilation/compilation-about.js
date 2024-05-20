@@ -11,12 +11,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		const picture = document.querySelector( '.compilation-about-wrapper picture source' );
 
-		console.log( picture );
-
-		/* return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-bookmaker.svg'; */
-
 		if ( wrapper.contains( casinoWrapper ) ){
-			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-bookmaker.svg';
+			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
 		} /* else {
 			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
 		}; */
