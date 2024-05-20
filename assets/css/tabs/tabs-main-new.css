@@ -4,6 +4,7 @@
 
     .home .legal-tabs .legal-tab-title {
         min-width: calc( ( 100% / 2 ) - 4px );
+        box-sizing: border-box;
     }
 
        /* Tabs Position */
