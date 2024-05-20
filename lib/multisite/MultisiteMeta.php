@@ -10,6 +10,28 @@ class MultisiteMeta
 		'filter' => 'compilation-filter',
 	];
 
+	const FILTER_META_PREFIX = [
+		// thirive theme
+
+		'tcb_',
+
+		'tcb2_',
+
+		'_tve_',
+
+		'tve_',
+
+		'thrive_',
+
+		// wpml plugin
+
+		'_wpml_',
+
+		// LinkWhisper Plugin
+
+		'wpil_',
+	];
+
 	const FILTER_META = [
 		// multisite
 
@@ -17,61 +39,11 @@ class MultisiteMeta
 
 		'mc_moved_from',
 
-		// thirive
+		// remove schema plugin
 
-		'tcb_editor_enabled',
+		'remove_schema_page_specific',
 
-		'tcb2_ready',
-
-		'_tve_post_constants',
-
-		'_tve_js_modules_gutenberg',
-
-		'_tve_header',
-
-		'_tve_footer',
-
-		'_tve_assets_to_preload',
-
-		'_tve_base_inline_css',
-
-		'_tve_lightspeed_version',
-
-		'_tve_js_modules',
-
-		'tve_globals',
-
-		'tve_global_scripts',
-
-		'tve_content_before_more',
-
-		'tve_content_more_found',
-
-		'tve_custom_css',
-
-		'tve_has_masonry',
-
-		'tve_has_typefocus',
-
-		'tve_has_wistia_popover',
-
-		'tve_updated_post',
-
-		'tve_user_custom_css',
-
-		'tve_page_events',
-
-		'thrive_element_visibility',
-
-		'thrive_icon_pack',
-
-		'thrive_post_template',
-
-		'thrive_theme_video_format_meta',
-
-		'thrive_theme_audio_format_meta',
-
-		'thrive_tcb_post_fonts',
+		'_HunchSchemaMarkup',
 
 		// other
 
@@ -119,37 +91,111 @@ class MultisiteMeta
 
 		'_pohozhie-bonusy',
 
+		// thirive
+
+		// 'tcb_editor_enabled',
+
+		// 'tcb2_ready',
+
+		// '_tve_post_constants',
+
+		// '_tve_js_modules_gutenberg',
+
+		// '_tve_header',
+
+		// '_tve_footer',
+
+		// '_tve_assets_to_preload',
+
+		// '_tve_base_inline_css',
+
+		// '_tve_lightspeed_version',
+
+		// '_tve_js_modules',
+
+		// 'tve_globals',
+
+		// 'tve_global_scripts',
+
+		// 'tve_content_before_more',
+
+		// 'tve_content_more_found',
+
+		// 'tve_custom_css',
+
+		// 'tve_has_masonry',
+
+		// 'tve_has_typefocus',
+
+		// 'tve_has_wistia_popover',
+
+		// 'tve_updated_post',
+
+		// 'tve_updated_post_tcb2-product-focused-02-homepage',
+
+		// 'tve_custom_css_tcb2-product-focused-02-homepage',
+
+		// 'tve_user_custom_css_tcb2-product-focused-02-homepage',
+
+		// 'tve_has_masonry_tcb2-product-focused-02-homepage',
+
+		// 'tve_has_typefocus_tcb2-product-focused-02-homepage',
+
+		// 'tve_has_wistia_popover_tcb2-product-focused-02-homepage',
+
+		// 'tve_page_events_tcb2-product-focused-02-homepage',
+
+		// 'tve_globals_tcb2-product-focused-02-homepage',
+
+		// 'tve_updated_post_tcb2-product-focused-01-homepage',
+
+		// 'tve_custom_css_tcb2-product-focused-01-homepage',
+
+		// 'tve_user_custom_css',
+
+		// 'tve_page_events',
+
+		// 'thrive_icon_pack_tcb2-product-focused-02-homepage',
+
+		// 'thrive_tcb_post_fonts_tcb2-product-focused-02-homepage',
+
+		// 'thrive_element_visibility',
+
+		// 'thrive_icon_pack',
+
+		// 'thrive_post_template',
+
+		// 'thrive_theme_video_format_meta',
+
+		// 'thrive_theme_audio_format_meta',
+
+		// 'thrive_tcb_post_fonts',
+
 		// wpml plugin
 
-		'_wpml_word_count',
+		// '_wpml_word_count',
 
-		'_wpml_media_duplicate',
+		// '_wpml_media_duplicate',
 
-		'_wpml_media_featured',
-
-		// remove schema plugin
-
-		'remove_schema_page_specific',
-
-		'_HunchSchemaMarkup',
+		// '_wpml_media_featured',
 
 		// LinkWhisper Plugin
 
-		'wpil_sync_report3',
+		// 'wpil_sync_report3',
 
-		'wpil_links_inbound_internal_count',
+		// 'wpil_links_inbound_internal_count',
 
-		'wpil_links_inbound_internal_count_data',
+		// 'wpil_links_inbound_internal_count_data',
 
-		'wpil_links_outbound_internal_count',
+		// 'wpil_links_outbound_internal_count',
 
-		'wpil_links_outbound_internal_count_data',
+		// 'wpil_links_outbound_internal_count_data',
 
-		'wpil_links_outbound_external_count',
+		// 'wpil_links_outbound_external_count',
 
-		'wpil_links_outbound_external_count_data',
+		// 'wpil_links_outbound_external_count_data',
 
-		'wpil_sync_report2_time',
+		// 'wpil_sync_report2_time',
 	];
 
 	const POST_META = [
@@ -175,7 +221,7 @@ class MultisiteMeta
 		// 	'post_parent' => $post->post_parent,
 		// ] );
 
-		$post_meta = get_post_custom( $post->ID );
+		$post_meta = self::get_post_meta( $post->ID );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
@@ -225,9 +271,54 @@ class MultisiteMeta
 		return false;
 	}
 
-	public static function filter_not_thrive( $meta_key )
+	public static function check_contains_prefix( $string, $array )
+	{
+		// $string = 'My nAmE is Tom.';
+
+		// $array = array("name","tom");
+
+		// if(0 < count(array_intersect(array_map('strtolower', explode(' ', $string)), $array)))
+		// {
+		// //do sth
+		// }
+
+		// $amount = count( array_intersect( array_map( 'strtolower', explode( ' ', $string ) ), $array ) );
+
+		// if ( $amount > 0 )
+		// {
+		// 	return true;
+		// }
+
+		foreach ( $array as $item )
+		{
+            if ( str_contains( $string, $item) )
+			{
+                return true;
+            }
+        }
+
+		return false;
+	}
+
+	public static function filter_not_prefix( $meta_key )
+	{
+		// return !in_array( $meta_key, self::FILTER_META_PREFIX );
+
+		return !self::check_contains_prefix( $meta_key, self::FILTER_META_PREFIX )
+	}
+
+	// public static function filter_not_thrive( $meta_key )
+
+	public static function filter_not_meta_key( $meta_key )
 	{
 		return !in_array( $meta_key, self::FILTER_META );
+	}
+
+	public static function filter_meta_key( $meta_key )
+	{
+		return self::filter_not_meta_key( $meta_key )
+
+			&& self::filter_not_prefix( $meta_key );
 	}
 
 	public static function get_post_meta( $post_id )
@@ -236,7 +327,7 @@ class MultisiteMeta
 
 		$handler = new self();
 
-        return array_filter( get_post_custom( $post_id ), [ $handler, 'filter_not_thrive' ], ARRAY_FILTER_USE_KEY );
+        return array_filter( get_post_custom( $post_id ), [ $handler, 'filter_meta_key' ], ARRAY_FILTER_USE_KEY );
 	}
 
 	public static function add_post_meta( $post_id, $post_meta )
@@ -446,7 +537,7 @@ class MultisiteMeta
 	{
 		$handler = new self();
 
-        return array_filter( get_term_meta( $term_id ), [ $handler, 'filter_not_thrive' ], ARRAY_FILTER_USE_KEY );
+        return array_filter( get_term_meta( $term_id ), [ $handler, 'filter_meta_key' ], ARRAY_FILTER_USE_KEY );
 	}
 
 	public static function add_term_meta( $term_id, $term_meta )
