@@ -13,11 +13,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( picture );
 
-		if ( wrapper.closest( casinoWrapper ) ){
+		return picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
+
+		/* if ( wrapper.closest( casinoWrapper ) ){
 			return picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
 		} else {
 			return true;
-		};
+		}; */
 	};
 
 /* 	const selectors = {
