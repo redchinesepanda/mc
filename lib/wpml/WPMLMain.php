@@ -392,23 +392,12 @@ class WPMLMain
 
     public static function multisite_element_language_code_query( $wpdb, $element_id, $element_type )
     {
-        // return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
-        
-        // return sprintf(
-        //     "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `element_type` = '%2$s'",
-            
-        //     $element_id,
-            
-        //     $element_type
-        // );
-
         return $wpdb->prepare(
-            // "INSERT INTO $wpdb->postmeta ( post_id, meta_key, meta_value ) VALUES ( %d, %s, %s )",
-            // 10,
-            // $metakey,
-            // $metavalue
-
-            "SELECT language_code FROM wp_icl_translations WHERE element_type = %s AND element_id = %d AND element_type = %s",
+            "SELECT language_code 
+            FROM wp_icl_translations
+            WHERE element_type = %s
+                AND element_id = %d
+                AND element_type = %s",
 
             [
                 'post_page',
