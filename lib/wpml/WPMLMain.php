@@ -38,6 +38,11 @@ class WPMLMain
 
             'check_multisite' => MiltisiteMain::check_multisite(),
         ] );
+
+        if ( MiltisiteMain::check_multisite() )
+        {
+            add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
+        }
     } 
 
     public static function register()
@@ -62,16 +67,16 @@ class WPMLMain
 
         // add_filter( 'locale', [ $handler, 'legal_locale' ] );
         
-        LegalDebug::debug( [
-            'WPMLMain' => 'register',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'register',
 
-            'check_multisite' => MiltisiteMain::check_multisite(),
-        ] );
+        //     'check_multisite' => MiltisiteMain::check_multisite(),
+        // ] );
 
-        if ( MiltisiteMain::check_multisite() )
-        {
-            add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
-        }
+        // if ( MiltisiteMain::check_multisite() )
+        // {
+        //     add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
+        // }
     }
 
     public static function get_all_languages()
