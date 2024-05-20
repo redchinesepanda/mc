@@ -42,7 +42,7 @@ class WPMLMain
         if ( MiltisiteMain::check_multisite() )
         {
             $handler = new self();
-            
+
             add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
         }
     } 
@@ -403,27 +403,31 @@ class WPMLMain
         );
     }
 
-    public static function multisite_element_language_code( $data, $element )
+    // public static function multisite_element_language_code( $data, $element )
+    
+    public static function multisite_element_language_code( $data )
     {
         LegalDebug::debug( [
             'WPMLMain' => 'multisite_element_language_code',
 
             'data' => $data,
 
-            'element' => $element,
+            // 'element' => $element,
         ] );
 
-        global $wpdb;
+        // global $wpdb;
 
-        $element_id = $element[ 'element_id' ];
+        // $element_id = $element[ 'element_id' ];
 
-        $element_type = sprintf(
-            self::PATTERNS[ 'wpml-post' ],
+        // $element_type = sprintf(
+        //     self::PATTERNS[ 'wpml-post' ],
             
-            $element[ 'element_type' ]
-        );
+        //     $element[ 'element_type' ]
+        // );
         
-        return $wpdb->get_results( self::multisite_element_language_code_query( $element_id, $element_type ) );
+        // return $wpdb->get_results( self::multisite_element_language_code_query( $element_id, $element_type ) );
+
+        return 'test';
     }
 }
 
