@@ -20,15 +20,15 @@
         padding-bottom: 28px;
     }
 
-    .home .legal-tabs {
+ /*    .home .legal-tabs {
         position: relative;
-    }
+    } */
 
-    .home .legal-tabs .legal-tab-menu {
+/*     .home .legal-tabs .legal-tab-menu {
         position: absolute;
         top: calc( 0px - 24px - 28px - ( (46px - 28px) / 2 ) );
         right: 0px;
-    }
+    } */
 
 }
 
