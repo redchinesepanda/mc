@@ -5,29 +5,29 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function choosePicture() {
 
-		console.log('скрипт подключился');
+		const wrapper = document.querySelector( '.compilation-about-wrapper' );
 
-		const wrapper = document.querySelector( selectors.compilationAbout );
+		const casinoWrapper = document.querySelector( '.legal-casino' );
 
-		const casinoWrapper = document.querySelector( selectors.compilationAboutCasino );
+		const picture = document.querySelector( '.compilation-about-wrapper picture source' );
 
-		const picture = document.querySelector( selectors.compilationAboutPicture );
+		console.log( picture );
 
 		if ( wrapper.closest( casinoWrapper ) ) {
 			picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
-		} else {
+		}; /* else {
 			return true;
-		};
+		}; */
 	};
 
-	const selectors = {
+/* 	const selectors = {
 
 		compilationAbout: '.compilation-about-wrapper',
 
 		compilationAboutCasino: '.legal-casino',
 
 		compilationAboutPicture: '.compilation-about-wrapper picture source',
-	};
+	}; */
 	
 	choosePicture();
 } );
