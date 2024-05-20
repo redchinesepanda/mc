@@ -361,6 +361,26 @@ class WPMLMain
             
         return false;
     }
+
+    const QUERY = [
+        'language-code' => "SELECT `language_code` FROM `wp_icl_translations` WHERE `element_type` = 'post_page' AND `element_id` = '%1$s' AND `trid` = '%2$s'",
+    ];
+
+    public static function get_language_code_query( $element_id, $trid )
+    {
+        return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
+    }
+
+    public static function get_language_code()
+    {
+        global $wpdb;
+
+        $element_id = '';
+        
+        $trid = '';
+        
+        return $wpdb->get_results( self::get_language_code_query( $element_id, $trid ) );
+    }
 }
 
 ?>
