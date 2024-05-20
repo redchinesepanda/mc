@@ -30,6 +30,10 @@ class MultisiteMeta
 		// LinkWhisper Plugin
 
 		'wpil_',
+
+		// Rank Match plugin
+
+		'rank_math_',
 	];
 
 	const FILTER_META = [
