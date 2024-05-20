@@ -18,7 +18,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if ( wrapper.contains( casinoWrapper ) ){
 			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-bookmaker.svg';
 		} else {
-			return true;
+			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
 		};
 	};
 
