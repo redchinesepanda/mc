@@ -183,19 +183,19 @@ class MultisiteMeta
 			'post_meta' => $post_meta,
 		] );
 
-	// 	// foreach ( $post_meta as $key => $value )
-    //     // {
-    //     //     LegalDebug::debug( [
-    //     //         'MultisiteMeta' => 'register_functions_admin',
+		// foreach ( $post_meta as $key => $value )
+        // {
+        //     LegalDebug::debug( [
+        //         'MultisiteMeta' => 'register_functions_admin',
 
-	// 	// 		'key' => $key,
+		// 		'key' => $key,
 
-	// 	// 		'value' => $value,
-    //     //     ] );
+		// 		'value' => $value,
+        //     ] );
 
-	// 	// 	// delete_post_meta( $post->ID, $key );
-	// 	// }
-	// }
+		// 	// delete_post_meta( $post->ID, $key );
+		// }
+	}
 
 	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	// {
