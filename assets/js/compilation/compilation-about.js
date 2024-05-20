@@ -17,8 +17,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
 		} else {
 			return true;
-		}
-	}
+		};
+	};
 
 	const selectors = {
 
