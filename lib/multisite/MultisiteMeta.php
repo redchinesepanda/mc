@@ -45,9 +45,15 @@ class MultisiteMeta
 
 		'_HunchSchemaMarkup',
 
+		'_HunchSchemaType',
+
 		// other
 
 		'google_post_content',
+
+		'theme_skin_tag',
+
+		'sections',
 
 		// acf plugin old fields
 
