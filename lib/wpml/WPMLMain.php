@@ -55,10 +55,16 @@ class WPMLMain
         // add_filter( 'pre_determine_locale', [ $handler, 'legal_determine_locale' ], 10, 2 );
 
         // add_filter( 'locale', [ $handler, 'legal_locale' ] );
+        
+        LegalDebug::debug( [
+            'WPMLMain' => 'register',
+
+            'check_multisite' => MiltisiteMain::check_multisite(),
+        ] );
 
         if ( MiltisiteMain::check_multisite() )
         {
-            add_filter( 'wpml_element_language_code', [ $handler, 'multitite_element_language_code' ] );
+            add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
         }
     }
 
@@ -371,7 +377,7 @@ class WPMLMain
         'wpml-post' => 'post_%1$s',
     ];
 
-    public static function multitite_element_language_code_query( $element_id, $element_type )
+    public static function multisite_element_language_code_query( $element_id, $element_type )
     {
         // return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
         
@@ -384,8 +390,16 @@ class WPMLMain
         );
     }
 
-    public static function multitite_element_language_code( $data, $element )
+    public static function multisite_element_language_code( $data, $element )
     {
+        LegalDebug::debug( [
+            'WPMLMain' => 'multisite_element_language_code',
+
+            'data' => $data,
+
+            'element' => $element,
+        ] );
+
         global $wpdb;
 
         $element_id = $element[ 'element_id' ];
@@ -396,7 +410,7 @@ class WPMLMain
             $element[ 'element_type' ]
         );
         
-        return $wpdb->get_results( self::multitite_element_language_code_querys( $element_id, $element_type ) );
+        return $wpdb->get_results( self::multisite_element_language_code_query( $element_id, $element_type ) );
     }
 }
 
