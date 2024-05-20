@@ -191,8 +191,8 @@ class CompilationAbout
 		$dom = LegalDOM::get_dom( $post->post_content );
 
 		return [
-			'class' = self::get_class(),
-			
+			'class' => self::get_class(),
+
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
