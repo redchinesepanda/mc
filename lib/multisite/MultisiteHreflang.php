@@ -43,6 +43,10 @@ class MultisiteHreflang
 		];
 	}
 
+	const PATTERN = [
+		'post-uri' => '%s/%s',
+	];
+
 	public static function get_group_items( $terms )
 	{
 		$items = [];
@@ -51,37 +55,42 @@ class MultisiteHreflang
 
 		foreach ( $posts as $post )
 		{
-			$post_language_details = WPMLMain::get_post_language_details( $post->ID );
 
-			$trid = WPMLTranslationGroups::get_translation_group( $post->ID );
-
-			$get_default_post_uri = Permalink_Manager_URI_Functions_Post::get_default_post_uri( $post );
+			$post_title = $post->post_title;
 
 			$get_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
+			$post_uri = 
+
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
-				
-                'post_language_details' => $post_language_details,
 
-				'post_title' => $post->post_title,
-
-				'get_post_permalink' => get_post_permalink( $post->ID ),
-
-				'get_permalink' => get_permalink( $post->ID ),
-
-				'ID' => $post->ID,
-
-				'trid' => $trid,
+				'post_title' => $post_title,
 
 				'get_language_code' => WPMLMain::get_language_code( $post->ID ),
-
-				'get_default_post_uri' => $get_default_post_uri,
 				
                 'get_post_uri' => $get_post_uri,
+				
+				// 'trid' => $trid,
+				
+                // 'post_language_details' => $post_language_details,
+
+				// 'get_post_permalink' => get_post_permalink( $post->ID ),
+
+				// 'get_permalink' => get_permalink( $post->ID ),
+
+				// 'ID' => $post->ID,
+
+				// 'get_default_post_uri' => $get_default_post_uri,
             ] );
 
 			$items[] = get_post_permalink( $post->ID );
+
+			// $post_language_details = WPMLMain::get_post_language_details( $post->ID );
+
+			// $trid = WPMLTranslationGroups::get_translation_group( $post->ID );
+
+			// $get_default_post_uri = Permalink_Manager_URI_Functions_Post::get_default_post_uri( $post );
 		}
 
 		return $items;
@@ -115,6 +124,8 @@ class MultisiteHreflang
 				'blog_id' => $blog->blog_id,
 
 				'blog_locale' => $blog_locale,
+
+				'url' => get_bloginfo( 'url' ),
 			] );
 
 			$items[ $blog_locale ] = self::get_group_items( $translation_groups );
