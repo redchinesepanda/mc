@@ -390,7 +390,7 @@ class WPMLMain
         'wpml-post' => 'post_%1$s',
     ];
 
-    public static function multisite_element_language_code_query( $element_id, $element_type )
+    public static function multisite_element_language_code_query( $wpdb, $element_id, $element_type )
     {
         // return sprintf( self::QUERY[ 'language-code' ], $element_id, $trid );
         
@@ -440,7 +440,7 @@ class WPMLMain
             $element[ 'element_type' ]
         );
 
-        $language_code_query = self::multisite_element_language_code_query( $element_id, $element_type );
+        $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
 
         LegalDebug::debug( [
             'WPMLMain' => 'multisite_element_language_code',
