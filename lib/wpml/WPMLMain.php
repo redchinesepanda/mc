@@ -32,6 +32,12 @@ class WPMLMain
         // WPMLTranslationGroups::register_functions_debug();
 
         WPMLTranslationGroups::register_functions_admin();
+        
+        LegalDebug::debug( [
+            'WPMLMain' => 'register_functions',
+
+            'check_multisite' => MiltisiteMain::check_multisite(),
+        ] );
     } 
 
     public static function register()
