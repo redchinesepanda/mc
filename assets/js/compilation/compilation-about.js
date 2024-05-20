@@ -13,7 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( picture );
 
-		return picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
+		return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-bookmaker.svg';
 
 		/* if ( wrapper.closest( casinoWrapper ) ){
 			return picture.srcset='/assets/img/compilation/compilation-bookmaker.svg';
