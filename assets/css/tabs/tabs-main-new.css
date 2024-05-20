@@ -21,11 +21,25 @@
 
 @media screen and ( min-width: 768px ) {
 
+    /* Tabs Display */
+
+    .home .legal-tabs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     /* Width and Height */
 
-    .home .legal-tabs .legal-tabs-title,
+    .home .legal-tabs .legal-tabs-title {
+        width: 70%;
+    }
+
     .home .legal-tabs .legal-tab-menu {
-        width: 50%;
+        width: 30%;
+    }
+
+    .legal-tabs .legal-tab-display {
+        width: 100%;
     }
 
     /* Tabs Position */
