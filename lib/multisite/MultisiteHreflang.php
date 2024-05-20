@@ -124,7 +124,7 @@ class MultisiteHreflang
 
 				'blog_locale' => $blog_locale,
 
-				'url' => get_bloginfo( 'url' ),
+				// 'url' => get_bloginfo( 'url' ),
 			] );
 
 			$items[ $blog_locale ] = self::get_group_items( $translation_groups );
