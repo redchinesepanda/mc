@@ -45,7 +45,25 @@ class MultisiteHreflang
 
 	const PATTERN = [
 		'post-uri' => '%s/%s/%s',
+
+		'post-uri-root' => '%s/%s',
 	];
+
+	public static function get_post_uri( $post )
+	{
+		$url = get_bloginfo( 'url' );
+
+		$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+
+		$language_code = WPMLMain::get_language_code( $post->ID );
+
+		if ( !empty( $language_code ) )
+		{
+			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+		}
+
+		return sprintf( self::PATTERN[ 'post-root' ], $url, $post_path );
+	}
 
 	public static function get_group_items( $terms )
 	{
@@ -57,47 +75,21 @@ class MultisiteHreflang
 		{
 			$post_title = $post->post_title;
 
-			$url = get_bloginfo( 'url' );
-
-			$language_code = WPMLMain::get_language_code( $post->ID );
-
-			$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
-
-			$post_uri = sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+			$post_uri = self::get_post_uri( $post );
 
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
 
 				'post_title' => $post_title,
 
-				'url' => $url,
-
-				'language_code' => $language_code,
-				
-                'post_path' => $post_path,
-
 				'post_uri' => $post_uri,
-				
-				// 'trid' => $trid,
-				
-                // 'post_language_details' => $post_language_details,
-
-				// 'get_post_permalink' => get_post_permalink( $post->ID ),
-
-				// 'get_permalink' => get_permalink( $post->ID ),
-
-				// 'ID' => $post->ID,
-
-				// 'get_default_post_uri' => $get_default_post_uri,
             ] );
 
-			$items[] = get_post_permalink( $post->ID );
+			$items[] = [
+				'post_title' => $post_title,
 
-			// $post_language_details = WPMLMain::get_post_language_details( $post->ID );
-
-			// $trid = WPMLTranslationGroups::get_translation_group( $post->ID );
-
-			// $get_default_post_uri = Permalink_Manager_URI_Functions_Post::get_default_post_uri( $post );
+				'post_uri' => $post_uri,
+			];
 		}
 
 		return $items;
