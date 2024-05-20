@@ -13,9 +13,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		if ( wrapper.contains( casinoWrapper ) ){
 			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
-		} /* else {
-			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
-		}; */
+		} else {
+			return false;
+		};
 	};
 
 /* 	const selectors = {
