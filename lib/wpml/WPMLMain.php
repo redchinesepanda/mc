@@ -354,13 +354,13 @@ class WPMLMain
 
     public static function multisite_element_language_code( $data, $element )
     {
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_element_language_code',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'multisite_element_language_code',
 
-            'data' => $data,
+        //     'data' => $data,
 
-            'element' => $element,
-        ] );
+        //     'element' => $element,
+        // ] );
 
         global $wpdb;
 
@@ -374,11 +374,11 @@ class WPMLMain
 
         $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
 
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_element_language_code',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'multisite_element_language_code',
 
-            'language_code_query' => $language_code_query,
-        ] );
+        //     'language_code_query' => $language_code_query,
+        // ] );
         
         // return $wpdb->get_results( $language_code_query );
 
