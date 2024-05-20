@@ -106,7 +106,7 @@ class MultisiteHreflang
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_group_items_all',
 
-			'blogs' => $blogs,
+			'blogs' => count( $blogs ),
 		] );
 
 		$items = [];
