@@ -57,6 +57,8 @@ class MultisiteHreflang
 
 			$get_default_post_uri = Permalink_Manager_URI_Functions_Post::get_default_post_uri( $post );
 
+			$get_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
 				
@@ -75,6 +77,8 @@ class MultisiteHreflang
 				'get_language_code' => WPMLMain::get_language_code( $post->ID ),
 
 				'get_default_post_uri' => $get_default_post_uri,
+				
+                'get_post_uri' => $get_post_uri,
             ] );
 
 			$items[] = get_post_permalink( $post->ID );
