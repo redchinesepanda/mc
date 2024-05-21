@@ -130,6 +130,12 @@ class CompilationAbout
 
 		$anchors = $node->getElementsByTagName( 'a' );
 
+		LegalDebug::debug( [
+			'CompilationAbout' => 'get_buttons',
+
+			'length' => $anchors->length,
+		] );
+
 		if ( $anchors->length > 0 )
 		{
 			foreach ( $anchors as $anchor )
