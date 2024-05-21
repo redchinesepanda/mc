@@ -1,4 +1,4 @@
-<section class="legal-section-tabs-info">
+<div class="legal-section-tabs-info">
     <div class="tabs-info-wrapper">
         <div class="legal-tabs-info">
             <h2>What is Match.Center?</h2>
@@ -37,4 +37,4 @@
 
         </div>
     </div>
-</section>
+</div>

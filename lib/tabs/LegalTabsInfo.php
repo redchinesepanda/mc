@@ -27,7 +27,7 @@ class LegalTabsInfo
 
         add_shortcode( self::SHORTCODE[ 'info' ], [ $handler, 'render' ] );
 
-        if ( self::check_contains_choose_your_country() )
+        if ( self::check_contains_tabs_info() )
         {
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
         }
@@ -42,11 +42,9 @@ class LegalTabsInfo
         return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [] );
     }
 
-    public static function check_contains_choose_your_country()
+    public static function check_contains_tabs_info()
     {
         return LegalComponents::check_shortcode( self::SHORTCODE[ 'info' ] );
-        
-		// return LegalComponents::check_contains( self::SHORTCODE[ 'mega' ] );
     } 
 }
 
