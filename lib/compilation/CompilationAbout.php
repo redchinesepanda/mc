@@ -137,6 +137,8 @@ class CompilationAbout
 				LegalDebug::debug( [
 					'CompilationAbout' => 'get_buttons',
 
+					'anchor' => substr( $anchor->textContent, 0, 30 ),
+
 					'class' => $anchor->getAttribute( 'class' ),
 
 					'button' => self::CLASSES[ 'button' ],
