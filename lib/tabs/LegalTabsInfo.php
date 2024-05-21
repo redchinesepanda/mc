@@ -33,7 +33,7 @@ class LegalTabsInfo
         }
     }
 
-    public static function get_content()
+    public static function get()
     {
 		$lang = WPMLMain::current_language();
 
@@ -45,6 +45,11 @@ class LegalTabsInfo
 	const TEMPLATE = [
         'main' => LegalMain::LEGAL_PATH . '/template-parts/tabs/legal-tabs-info.php',
     ];
+
+	public static function render()
+    {
+        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [] );
+    }
 
     public static function check_contains_tabs_info()
     {
