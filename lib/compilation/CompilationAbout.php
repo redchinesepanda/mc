@@ -97,14 +97,12 @@ class CompilationAbout
 		);
 	}
 
-	public static function get_nodes_buttons( $dom, $node )
+	public static function get_nodes_buttons( $dom )
 	{
 		return self::get_nodes(
 			$dom,
 			
-			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
-
-			$node
+			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]'
 		);
 	}
 
