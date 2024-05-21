@@ -155,7 +155,7 @@ class CompilationAbout
 
 					try
 					{
-						// $node->removeChild( $anchor );
+						$node->removeChild( $anchor );
 					}
 					catch ( DOMException $e )
 					{
