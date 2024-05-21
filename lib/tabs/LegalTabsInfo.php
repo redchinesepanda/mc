@@ -38,7 +38,7 @@ class LegalTabsInfo
 		$lang = WPMLMain::current_language();
 
         return [
-            'title' => __( BaseMain::TEXT[ 'what-is' ], ToolLoco::TEXTDOMAIN ),
+            'title' => ToolLoco::translate( BaseMain::TEXT[ 'what-is' ] ),
         ];
     }
 
