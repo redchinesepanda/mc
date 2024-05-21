@@ -160,7 +160,7 @@ class CompilationAbout
 
 			'html' => $dom->saveHTML( $node ),
 
-			'buttons' => self::get_buttons( $dom, $node ),
+			// 'buttons' => self::get_buttons( $dom, $node ),
 		];
 	}
 
