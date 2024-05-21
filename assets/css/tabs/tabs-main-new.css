@@ -45,11 +45,11 @@
         width: fit-content;
     }
 
-    .home .legal-tabs .legal-tab-menu {
+    .home .legal-tabs .legal-tab-menu:not( .legal-tabs-info .legal-tab-menu ) {
         width: calc( ( 162px * 2 ) + 8px );
     }
 
-    .home .legal-tabs .legal-tab-title {
+    .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
         min-width: calc( 162px - ( 24px * 2 ) - 2px );
     }
 
@@ -85,7 +85,7 @@
 
 /* Tabs Display */
 
-.legal-tabs .legal-tab-menu {
+.legal-tabs .legal-tab-menu:not( .legal-tabs-info .legal-tab-menu ) {
     display: flex;
     column-gap: 8px;
 }
@@ -94,7 +94,7 @@
     display: none;
 }
 
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,7 +134,7 @@
 .legal-tabs .legal-tab-title[class*="tab-image-"] {
     padding-left: 44px;
 }
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -149,7 +149,7 @@
 
 /* Tabs Background */
 
-.legal-tabs .legal-tab-title {
+.legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
     border: 1px solid var(--Base-base-09); 
 }
 
@@ -165,7 +165,7 @@
     background-color: var(--Base-base-01);
 }
 
-.legal-tabs .legal-tab-title.legal-active {
+.legal-tabs .legal-tab-title.legal-active:not( .legal-tabs-info .legal-tab-title ) {
     background-color: var(--Base-base-09);
 }
 
@@ -185,7 +185,7 @@
 /* Tabs Typography */
 
 .legal-tabs .legal-tabs-title,
-.legal-tabs .legal-tab-title,
+.legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ),
 .legal-tabs .legal-tabs-description,
 .legal-tabs .legal-tabs-link {
     font-family: var( --legal-font-primary );
@@ -212,7 +212,7 @@
     transition: 0.5s;
 }
 
-.legal-tabs .legal-tab-title.legal-active {
+.legal-tabs .legal-tab-title.legal-active:not( .legal-tabs-info .legal-tab-title ) {
     color: var(--Base-base-01);
 }
 
