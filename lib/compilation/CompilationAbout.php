@@ -156,7 +156,7 @@ class CompilationAbout
 	public static function parse_button( $node )
 	{
 		return [
-			'class' => $node->getAttribute( 'class' ),
+			// 'class' => $node->getAttribute( 'class' ),
 
 			'html' => $dom->saveHTML( $node ),
 		];
