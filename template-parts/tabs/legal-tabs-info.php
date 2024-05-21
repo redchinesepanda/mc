@@ -26,7 +26,7 @@
                     <div class="legal-tab-content legal-content-2">Our reviews are based on objective criteria, such as site features, user experience, and customer service, ensuring that our readers can make informed decisions.
                     </div>
                     <div class="legal-tab-content legal-content-3">We focus on providing reviews that are relevant to our readers, based on factors such as geographic location, preferred payment methods, and game types.
-                    </div>
+                    </div> 
                 </div>
             </div>
 
