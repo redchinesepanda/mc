@@ -134,6 +134,14 @@ class CompilationAbout
 		{
 			foreach ( $anchors as $anchor )
 			{
+				LegalDebug::debug( [
+					'CompilationAbout' => 'get_buttons',
+
+					'class' => $anchor->getAttribute( 'class' ),
+
+					'button' => self::CLASSES[ 'button' ],
+				] );
+
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
 				{
 					$class = explode( ' ',  $anchor->getAttribute( 'class' ) );
