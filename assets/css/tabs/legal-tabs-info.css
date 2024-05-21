@@ -258,7 +258,7 @@
 	}
 }
 
-@keyframes animWhatIsMCReturn {
+/* @keyframes animWhatIsMCReturn {
     0% {
 		opacity: 1;
 		transform: translateX(0);
@@ -278,7 +278,7 @@
 		opacity: 1;
 		transform: translateX(0);
 	}
-}
+} */
 
 /* Display */
 
@@ -342,11 +342,11 @@
     position: absolute;
 }
 
-/* .legal-tabs-info .legal-tab-content.legal-active {
+.legal-tabs-info .legal-tab-content.legal-active {
     animation: animWhatIsMC 0.5s ease 0s 1 normal forwards;
-} */
+}
 
-.legal-tabs-info .legal-tab-content.legal-content-0.legal-active,
+/* .legal-tabs-info .legal-tab-content.legal-content-0.legal-active,
 .legal-tabs-info .legal-tab-content.legal-content-2.legal-active {
     animation: animWhatIsMC 0.2s ease 0s 1 normal forwards;
 }
@@ -354,7 +354,7 @@
 .legal-tabs-info .legal-tab-content.legal-content-1.legal-active,
 .legal-tabs-info .legal-tab-content.legal-content-3.legal-active {
     animation: animWhatIsMCReturn 0.2s ease 0s 1 normal forwards;
-}
+} */
 
 /* .legal-tabs-info .legal-tab-content.legal-active {
     z-index: 1;
