@@ -264,6 +264,11 @@
 		transform: translateX(0);
 	}
 
+    80% {
+		opacity: 1;
+		transform: translateX(-240px);
+	}
+
     99% {
 		opacity: 0;
 		transform: translateX(-250px);
