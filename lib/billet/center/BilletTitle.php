@@ -118,6 +118,10 @@ class BilletTitle extends LegalDebug
 
     const WARNING = [
         'es',
+
+        'se',
+
+        'dk',
     ];
 
     public static function check_warning()
