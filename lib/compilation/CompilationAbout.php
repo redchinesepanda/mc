@@ -223,7 +223,7 @@ class CompilationAbout
 
 			'content' => self::get_content( $dom ),
 
-			'buttons' => self::get_buttons( $dom ),
+			// 'buttons' => self::get_buttons( $dom ),
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
