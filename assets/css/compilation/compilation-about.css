@@ -132,9 +132,9 @@
     display: none;
 }
 
-.compilation-about .section-content-button {
+/* .compilation-about .section-content-button {
     display: inline-block;
-}
+} */
 
 
 /* Width and Height */
@@ -202,7 +202,7 @@
     padding-left: 24px;
     padding-bottom: calc( (46px - 2px - 22px) / 2 );
     margin-right: 8px;
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
 }
 
 /* Background */
@@ -234,7 +234,8 @@
 .compilation-about h1,
 .compilation-about .section-content-text,
 .compilation-about .legal-cut-control,
-.compilation-about .section-content-text a {
+.compilation-about .section-content-text a,
+.compilation-about .section-content-button {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
