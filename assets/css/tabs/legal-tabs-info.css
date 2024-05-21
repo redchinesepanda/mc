@@ -259,21 +259,12 @@
 }
 
 @keyframes animWhatIsMCReturn {
-    /* 0% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-
-	100% {
-		opacity: 0;
-		transform: translateX(250px);
-	} */
     0% {
 		opacity: 1;
 		transform: translateX(0);
 	}
 
-    90% {
+    99% {
 		opacity: 0;
 		transform: translateX(250px);
 	}
