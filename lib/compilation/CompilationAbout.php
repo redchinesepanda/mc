@@ -145,7 +145,7 @@ class CompilationAbout
 			{
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
 				{
-					$buttons[] = self::parse_button( $node );
+					$buttons[] = self::parse_button( $dom, $node );
 				}
 			}
 		}
@@ -153,7 +153,7 @@ class CompilationAbout
 		return $buttons;
 	}
 
-	public static function parse_button( $node )
+	public static function parse_button( $dom, $node )
 	{
 		return [
 			// 'class' => $node->getAttribute( 'class' ),
