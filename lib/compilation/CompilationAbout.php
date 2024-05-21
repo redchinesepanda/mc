@@ -122,6 +122,18 @@ class CompilationAbout
 		return self::parse_node( $dom, $node );
 	}
 	
+	public static function set_swiper_item( $nodes )
+	{
+		foreach ( $nodes as $node )
+		{
+			$class = explode( ' ',  $node->getAttribute( 'class' ) );
+
+			$class[] = self::CLASSES[ 'swiper-slide' ];
+
+			$node->setAttribute( 'class', implode( ' ', $class ) );
+		}
+	}
+
 	public static function get_buttons( $dom )
 	{
 		$nodes = self::get_nodes_buttons( $dom );
@@ -130,6 +142,8 @@ class CompilationAbout
 		{
 			return []; 
 		}
+
+		self::set_swiper_item( $nodes );
 
 		return self::parse_content( $dom, $nodes );
 
