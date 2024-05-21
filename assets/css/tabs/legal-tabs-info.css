@@ -199,6 +199,10 @@
 
       /* Width and Height */
 
+      .tabs-info-wrapper {
+        width: 100vw;
+    }
+
       .legal-tabs-info {
         width: 100%;
     }
@@ -217,6 +221,11 @@
     }
 
     /* Width and Height */
+
+    .tabs-info-wrapper {
+        /* width: 98.8vw; */
+        width: 99vw;
+    }
 
     .legal-tabs-info {
         width: var(--base-width-desktop);
@@ -323,8 +332,6 @@
 /* Width and Height */
 
 .tabs-info-wrapper {
-    /* width: 98.8vw; */
-    width: 99vw;
     box-sizing: border-box;
 }
 
