@@ -132,7 +132,7 @@
     display: none;
 }
 
-.compilation-about .section-content-text .legal-button {
+.compilation-about .section-content-button {
     display: inline-block;
 }
 
@@ -151,7 +151,7 @@
     max-width: 754px;
 }
 
-/* .compilation-about .section-content-text .legal-button {
+/* .compilation-about .section-content-button {
     min-height: 44px;
 } */
 
@@ -196,7 +196,7 @@
     margin-top: 8px;
 }
 
-.compilation-about .section-content-text .legal-button {
+.compilation-about .section-content-button {
     padding-top: calc( (46px - 2px - 22px) / 2 );
     padding-right: 24px;
     padding-left: 24px;
@@ -223,7 +223,7 @@
     border-left: 2px solid var( --Base-base-09 );
 }
 
-.compilation-about .section-content-text .legal-button {
+.compilation-about .section-content-button {
     border-radius: 60px;
     border: 1px solid var( --Base-base-09 );
     background-color: var( --Base-base-01 );
@@ -242,7 +242,7 @@
 .compilation-about h1,
 .compilation-about .section-content-text,
 .compilation-about .legal-cut-control,
-.compilation-about .section-content-text .legal-button {
+.compilation-about .section-content-button {
     color: var(--Base-base-09);
 }
 
@@ -254,14 +254,14 @@
     color: var( --Base-link-hover );
 }
 
-.compilation-about .section-content-text .legal-button {
+.compilation-about .section-content-button {
     font-size: 16px;
     font-weight: 500;
     line-height: 22px;
     text-decoration: none;
 }
 
-.compilation-about .section-content-text .legal-button:hover {
+.compilation-about .section-content-button:hover {
     text-shadow: 0 0 0.35px var( --Base-base-09 );
 }
 
