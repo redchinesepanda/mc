@@ -156,7 +156,13 @@ class CompilationAbout
 
 					try
 					{
-						$node->removeChild( $anchor );
+						LegalDebug::debug( [
+							'CompilationAbout' => 'get_buttons',
+
+							'removeChild' => $node->removeChild( $anchor ),
+						] ); 
+
+						// $node->removeChild( $anchor );
 					}
 					catch ( DOMException $e )
 					{
