@@ -33,22 +33,22 @@ class CompilationAbout
 		}
     }
 
-	const JS_NEW = [
+/* 	const JS_NEW = [
         'compilation-about' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-about.js',
 
 			'ver' => '1.0.0',
 		],
 
-    ];
+    ]; */
 
-    public static function register_script()
+/*     public static function register_script()
     {
 		if ( TemplateMain::check_new() )
 		{
 			ToolEnqueue::register_script( self::JS_NEW );
 		}
-    }
+    } */
 
 	public static function register()
     {
@@ -56,7 +56,7 @@ class CompilationAbout
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	public static function register_functions()
