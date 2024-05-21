@@ -203,6 +203,14 @@ class CompilationAbout
 
 	public static function get_image()
 	{
+		LegaldDebug::debug( [
+			'CompilationAbout' => 'get_image',
+
+			'is_front_page' => is_front_page(),
+
+			'is_home' => is_home(),
+		] );
+
 		$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg';
 
 		if ( has_term( self::PAGE_TYPE[ 'casino' ], self::TAXONOMY[ 'page-type' ] ) )
