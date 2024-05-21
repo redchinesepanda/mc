@@ -1,12 +1,7 @@
 <div class="legal-section-tabs-info">
     <div class="tabs-info-wrapper">
         <div class="legal-tabs-info">
-            <h2>What is Match.Center?</h2>
-            <p>Our aim is to be the go-to source for players looking for reliable and trustworthy
-                information about online gambling sites. At Match.Center, we are committed to providing
-                the ultimate guides and reviews on online gambling. But what does it mean – ‘Ultimate’?
-                Here are our core values:
-            </p>
+            <h2><?php echo $args[ 'title' ]; ?></h2>
             <div class="legal-tabs">
                 <div class="legal-tab-menu">
 
