@@ -6,9 +6,9 @@
         gap: 8px;
     } */
 
-    .legal-tabs-info .swiper-wrapper {
+    /* .legal-tabs-info .swiper-wrapper {
         column-gap: 8px;
-    }
+    } */
 
     /* Position */
 
@@ -32,6 +32,10 @@
 
     .legal-tabs-info .legal-tab-menu {
         padding-left: 16px;
+    }
+
+    .legal-tabs-info .swiper-wrapper {
+        margin-right: 8px;
     }
 
     .legal-tabs-info .legal-tab-content {
