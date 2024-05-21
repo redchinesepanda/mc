@@ -8,6 +8,8 @@ class CompilationAbout
 		'content' => 'section-content-text',
 
 		'button' => 'legal-button',
+
+		'swiper-slide' => 'swiper-slide',
 	];
 
 	const CSS = [
@@ -143,6 +145,12 @@ class CompilationAbout
 			{
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
 				{
+					$class = explode( ' ',  $anchor->getAttribute( 'class' ) );
+
+					$class[] = self::CLASSES[ 'swiper-slide' ];
+
+					$anchor->setAttribute( 'class', implode( ' ', $class ) );
+
 					$buttons[] = self::parse_button( $dom, $anchor );
 				}
 			}
