@@ -7,7 +7,7 @@
 ?>
 <!-- Compilation About Template -->
 <?php if ( !empty( $args[ 'title' ] ) ) : ?>
-    <div class="compilation-about-wrapper <?php echo $args[ 'class' ]; ?>">
+    <div class="compilation-about-wrapper">
         <div class="compilation-about">
             <div class="about-section-content">
                 <?php echo $args[ 'title' ][ 'html' ]; ?>

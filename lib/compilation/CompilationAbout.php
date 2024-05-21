@@ -146,89 +146,12 @@ class CompilationAbout
 		self::set_swiper_item( $nodes );
 
 		return self::parse_content( $dom, $nodes );
-
-		// $buttons = [];
-
-		// $anchors = $node->getElementsByTagName( 'a' );
-
-		// LegalDebug::debug( [
-		// 	'CompilationAbout' => 'get_buttons',
-
-		// 	'node' => substr( $node->textContent, 0, 30 ),
-
-		// 	'length' => $anchors->length,
-		// ] );
-
-		// if ( $anchors->length > 0 )
-		// {
-		// 	foreach ( $anchors as $anchor )
-		// 	{
-		// 		LegalDebug::debug( [
-		// 			'CompilationAbout' => 'get_buttons',
-
-		// 			'anchor' => substr( $anchor->textContent, 0, 30 ),
-
-		// 			'class' => $anchor->getAttribute( 'class' ),
-
-		// 			'button' => self::CLASSES[ 'button' ],
-
-		// 			'str_contains' => str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ),
-		// 		] );
-
-		// 		if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
-		// 		{
-		// 			$class = explode( ' ',  $anchor->getAttribute( 'class' ) );
-
-		// 			$class[] = self::CLASSES[ 'swiper-slide' ];
-
-		// 			$anchor->setAttribute( 'class', implode( ' ', $class ) );
-
-		// 			$buttons[] = self::parse_button( $dom, $anchor );
-
-		// 			try
-		// 			{
-		// 				// LegalDebug::debug( [
-		// 				// 	'CompilationAbout' => 'get_buttons',
-
-		// 				// 	'removeChild' => $node->removeChild( $anchor ),
-		// 				// ] ); 
-
-		// 				$node->removeChild( $anchor );
-		// 			}
-		// 			catch ( DOMException $e )
-		// 			{
-		// 				LegalDebug::debug( [
-		// 					'CompilationAbout' => 'get_buttons',
-
-		// 					'node' => substr( $node->textContent, 0, 30 ),
-
-		// 					'anchor' => substr( $anchor->textContent, 0, 30 ),
-
-		// 					'message' => $e->getMessage(),
-		// 				] );
-		// 			}
-		// 		}
-		// 	}
-		// }
-
-		// return $buttons;
 	}
-
-	// public static function parse_button( $dom, $node )
-	// {
-	// 	return [
-	// 		// 'class' => $node->getAttribute( 'class' ),
-
-	// 		'html' => $dom->saveHTML( $node ),
-	// 	];
-	// }
 
 	public static function parse_node( $dom, $node )
 	{
 		return [
 			'class' => $node->getAttribute( 'class' ),
-
-			// 'buttons' => self::get_buttons( $dom, $node ),
 
 			'html' => $dom->saveHTML( $node ),
 		];
@@ -278,16 +201,22 @@ class CompilationAbout
 		'casino' => 'casino',
 	];
 
-	public static function get_class()
+	public static function get_image()
 	{
-		$classes = [];
+		$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg';
 
-		if( has_term( self::PAGE_TYPE[ 'casino' ], self::TAXONOMY[ 'page-type' ] ) )
+		if ( has_term( self::PAGE_TYPE[ 'casino' ], self::TAXONOMY[ 'page-type' ] ) )
 		{
-			$classes[] = 'legal-' . self::PAGE_TYPE[ 'casino' ];
+			$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-casino.svg';
 	  	}
 
-		return implode( ' ', $classes );
+		return [
+			'src' => $src,
+
+			'width' => 400,
+
+			'height' => 320,
+		];
 	}
 
 	public static function get()
@@ -306,8 +235,6 @@ class CompilationAbout
 		$dom = LegalDOM::get_dom( $post->post_content );
 
 		return [
-			'class' => self::get_class(),
-
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
@@ -324,14 +251,7 @@ class CompilationAbout
 				'active' => ToolLoco::translate( BilletMain::TEXT[ 'hide' ] ),
 			],
 
-			'image' => [
-				/* 'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp', */
-				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg',
-
-				'width' => 400,
-
-				'height' => 320,
-			],
+			'image' => self::get_image(),
 		];
 	}
 
