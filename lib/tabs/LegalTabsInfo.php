@@ -13,8 +13,6 @@ class LegalTabsInfo
 	public static function register_style()
     {
 		ToolEnqueue::register_style( self::CSS );
-
-        ToolEnqueue::localize_script( self::get_localize() );
     }
 
 	const SHORTCODE = [
