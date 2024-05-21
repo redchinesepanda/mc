@@ -10,10 +10,14 @@
             <div class="legal-tabs">
                 <div class="legal-tab-menu">
 
-                    <div class="legal-tab-title legal-active" data-content="0" data-tabs="legal-tabs-0">Expertise</div>
-                    <div class="legal-tab-title" data-content="1" data-tabs="legal-tabs-0">Transparency</div>
-                    <div class="legal-tab-title" data-content="2" data-tabs="legal-tabs-0">Fairness</div>
-                    <div class="legal-tab-title" data-content="3" data-tabs="legal-tabs-0">Relevance</div>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="legal-tab-title swiper-slide legal-active" data-content="0" data-tabs="legal-tabs-0">Expertise</div>
+                            <div class="legal-tab-title swiper-slide" data-content="1" data-tabs="legal-tabs-0">Transparency</div>
+                            <div class="legal-tab-title swiper-slide" data-content="2" data-tabs="legal-tabs-0">Fairness</div>
+                            <div class="legal-tab-title swiper-slide" data-content="3" data-tabs="legal-tabs-0">Relevance</div>
+                        </div>
+                    </div>
 
                 </div>
 
