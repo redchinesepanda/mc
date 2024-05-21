@@ -7,7 +7,7 @@ class CompilationAbout
 
 		'content' => 'section-content-text',
 
-		'button' => 'legal-button',
+		'button' => 'section-content-button',
 
 		'swiper-slide' => 'swiper-slide',
 	];
@@ -97,16 +97,16 @@ class CompilationAbout
 		);
 	}
 
-	// public static function get_nodes_buttons( $dom, $node )
-	// {
-	// 	return self::get_nodes(
-	// 		$dom,
+	public static function get_nodes_buttons( $dom, $node )
+	{
+		return self::get_nodes(
+			$dom,
 			
-	// 		'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
+			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
 
-	// 		$node
-	// 	);
-	// }
+			$node
+		);
+	}
 
 	public static function get_title( $dom )
 	{
@@ -383,6 +383,14 @@ class CompilationAbout
 						'selector' => 'p',
 
 						'classes' => self::CLASSES[ 'content' ],
+					],
+
+					[
+						'title' => 'Compilation About Button',
+						
+						'selector' => 'a',
+
+						'classes' => self::CLASSES[ 'button' ],
 					],
 				],
 			],
