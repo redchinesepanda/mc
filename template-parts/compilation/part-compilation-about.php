@@ -19,6 +19,14 @@
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
                 	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
 				<?php endif; ?>
+				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
+                            <a class="legal-button swiper-slide" href="#test2" target="_blank" rel="noopener">test2</a>
+                        </div>
+                    </div>
+				<?php endif; ?>
             </div>
             <?php if ( !empty( $args[ 'content' ] ) ) : ?>
                 <div class="about-section-image">
