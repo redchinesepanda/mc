@@ -126,15 +126,6 @@ class CompilationAbout
 	
 	public static function get_buttons( $dom, $node )
 	{
-		// $nodes = self::get_nodes_buttons( $dom, $node );
-
-		// if ( $nodes->length == 0 )
-		// {
-		// 	return []; 
-		// }
-
-		// return self::parse_content( $dom, $nodes );
-
 		$buttons = [];
 
 		$anchors = $node->getElementsByTagName( 'a' );
@@ -155,7 +146,7 @@ class CompilationAbout
 
 					try
 					{
-						// $node->removeChild( $anchor );
+						$node->removeChild( $anchor );
 					}
 					catch ( DOMException $e )
 					{
@@ -190,9 +181,9 @@ class CompilationAbout
 		return [
 			'class' => $node->getAttribute( 'class' ),
 
-			'html' => $dom->saveHTML( $node ),
-
 			'buttons' => self::get_buttons( $dom, $node ),
+
+			'html' => $dom->saveHTML( $node ),
 		];
 	}
 
