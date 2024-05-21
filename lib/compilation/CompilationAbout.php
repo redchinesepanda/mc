@@ -200,14 +200,14 @@ class CompilationAbout
 		// return $buttons;
 	}
 
-	public static function parse_button( $dom, $node )
-	{
-		return [
-			// 'class' => $node->getAttribute( 'class' ),
+	// public static function parse_button( $dom, $node )
+	// {
+	// 	return [
+	// 		// 'class' => $node->getAttribute( 'class' ),
 
-			'html' => $dom->saveHTML( $node ),
-		];
-	}
+	// 		'html' => $dom->saveHTML( $node ),
+	// 	];
+	// }
 
 	public static function parse_node( $dom, $node )
 	{
@@ -331,6 +331,16 @@ class CompilationAbout
 		}
 
 		$nodes = self::get_nodes_content( $dom );
+
+		if ( $nodes->length != 0 )
+		{
+			foreach ( $nodes as $node )
+			{
+				$dom->removeChild( $node );
+			}
+		}
+
+		$nodes = self::get_nodes_buttons( $dom );
 
 		if ( $nodes->length != 0 )
 		{
