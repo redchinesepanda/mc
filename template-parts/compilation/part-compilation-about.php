@@ -13,7 +13,7 @@ LegalDebug::debug( [
                 <?php echo $args[ 'title' ][ 'html' ]; ?>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
                     <?php echo $item[ 'html' ]; ?>
-                    <?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
+                    <?php if ( !empty( $item[ 'buttons' ] ) ) : ?>
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
