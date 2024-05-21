@@ -266,12 +266,12 @@
 
     80% {
 		opacity: 1;
-		transform: translateX(-250px);
+		transform: translateX(-350px);
 	}
 
     99% {
 		opacity: 0;
-		transform: translateX(-250px);
+		transform: translateX(-350px);
 	}
 
 	100% {
@@ -348,12 +348,12 @@
 
 .legal-tabs-info .legal-tab-content.legal-content-0.legal-active,
 .legal-tabs-info .legal-tab-content.legal-content-2.legal-active {
-    animation: animWhatIsMC 0.3s ease 0s 1 normal forwards;
+    animation: animWhatIsMC 0.2s ease 0s 1 normal forwards;
 }
 
 .legal-tabs-info .legal-tab-content.legal-content-1.legal-active,
 .legal-tabs-info .legal-tab-content.legal-content-3.legal-active {
-    animation: animWhatIsMCReturn 0.3s ease 0s 1 normal forwards;
+    animation: animWhatIsMCReturn 0.2s ease 0s 1 normal forwards;
 }
 
 /* .legal-tabs-info .legal-tab-content.legal-active {
