@@ -30,6 +30,7 @@
             <?php if ( !empty( $args[ 'content' ] ) && !empty( $args[ 'image' ] ) ) : ?>
                 <div class="about-section-image">
                     <picture>
+                    <source srcset="http://old.match.center/wp-content/themes/mc-theme/assets/img/base/header/header-logo-mc-mobile.svg" media="(max-width: 959px)" width="48" height="48">
                         <img src="<?php echo $args[ 'image' ][ 'src' ]; ?>" width="<?php echo $args[ 'image' ][ 'width' ]; ?>" height="<?php echo $args[ 'image' ][ 'height' ]; ?>" alt="Compilation about" loading="lazy">
                     </picture>
                 </div>
