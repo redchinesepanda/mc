@@ -203,7 +203,7 @@ class CompilationAbout
 
 	public static function get_image()
 	{
-		LegaldDebug::debug( [
+		LegalDebug::debug( [
 			'CompilationAbout' => 'get_image',
 
 			'is_front_page' => is_front_page(),
