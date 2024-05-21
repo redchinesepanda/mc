@@ -143,7 +143,7 @@ class CompilationAbout
 			{
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
 				{
-					$buttons[] = self::parse_button( $dom, $node );
+					$buttons[] = self::parse_button( $dom, $anchor );
 				}
 			}
 		}
