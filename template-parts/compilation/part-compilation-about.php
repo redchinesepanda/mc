@@ -13,19 +13,19 @@
                 <?php echo $args[ 'title' ][ 'html' ]; ?>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
                     <?php echo $item[ 'html' ]; ?>
-                    <?php if ( !empty( $item[ 'buttons' ] ) ) : ?>
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <?php foreach ( $item[ 'buttons' ] as $button ) : ?>
-                                    <?php echo $button[ 'html' ]; ?>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                 <?php endforeach; ?>
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
                 	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
 				<?php endif; ?>
+                <?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
+                                <?php echo $button[ 'html' ]; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <?php if ( !empty( $args[ 'content' ] ) ) : ?>
                 <div class="about-section-image">
