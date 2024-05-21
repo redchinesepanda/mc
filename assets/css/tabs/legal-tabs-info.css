@@ -273,7 +273,7 @@
 		transform: translateX(0);
 	}
 
-    50% {
+    90% {
 		opacity: 0;
 		transform: translateX(250px);
 	}
