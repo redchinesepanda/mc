@@ -133,6 +133,8 @@ class CompilationAbout
 		LegalDebug::debug( [
 			'CompilationAbout' => 'get_buttons',
 
+			'node' => substr( $node->textContent, 0, 30 ),
+
 			'length' => $anchors->length,
 		] );
 
