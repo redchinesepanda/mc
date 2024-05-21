@@ -172,7 +172,7 @@ class CompilationAbout
 						// 	'removeChild' => $node->removeChild( $anchor ),
 						// ] ); 
 
-						// $node->removeChild( $anchor );
+						$node->removeChild( $anchor );
 					}
 					catch ( DOMException $e )
 					{
