@@ -140,6 +140,8 @@ class CompilationAbout
 					'class' => $anchor->getAttribute( 'class' ),
 
 					'button' => self::CLASSES[ 'button' ],
+
+					'str_contains' => str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ),
 				] );
 
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
