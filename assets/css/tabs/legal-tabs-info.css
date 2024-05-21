@@ -247,7 +247,8 @@
 
 @keyframes animWhatIsMC {
 	0% {
-		opacity: 0;
+		/* opacity: 0; */
+        opacity: 1;
 		transform: translateX(-250px);
 	}
 
