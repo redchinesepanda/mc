@@ -153,7 +153,22 @@ class CompilationAbout
 
 					$buttons[] = self::parse_button( $dom, $anchor );
 
-					$dom->removeChild( $anchor );
+					try
+					{
+						$node->removeChild( $anchor );
+					}
+					catch ( DOMException $e )
+					{
+						LegalDebug::debug( [
+							'CompilationAbout' => 'get_buttons',
+
+							'node' => substr( $node->textContent, 0, 30 ),
+
+							'anchor' => substr( $anchor->textContent, 0, 30 ),
+
+							'message' => $e->getMessage(),
+						] );
+					}
 				}
 			}
 		}
