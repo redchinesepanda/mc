@@ -47,13 +47,14 @@
 
     /* Width and Height */
 
-    .tabs-info-wrapper {
+   /*  .tabs-info-wrapper {
         min-height: 820px;
-    }
+    } */
 
     .legal-tabs-info .legal-tab-content {
         width: calc( 100% - ( 28px * 2 ) );
-        height: 341px; 
+        height: 341px;
+        overflow: hidden; 
     }
 
     /* Background */
@@ -130,9 +131,9 @@
 
     /* Width and Height */
 
-    .tabs-info-wrapper {
+  /*   .tabs-info-wrapper {
         min-height: calc( 582px + 62px + 112px );
-    }
+    } */
 
     .legal-tabs-info .legal-tab-title {
         min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px );
