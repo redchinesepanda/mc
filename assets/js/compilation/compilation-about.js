@@ -12,10 +12,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		const picture = document.querySelector( selectors.compilationAboutPicture );
 
 		if ( wrapper.contains( casinoWrapper ) ){
-			return picture.srcset='http://old.match.center/wp-content/themes/mc-theme/assets/img/compilation/compilation-casino.svg';
+			return picture.srcset='/assets/img/compilation/compilation-casino.svg';
 		} else {
-			/* return false; */ 
-			return console.log("Стандартная картинка");
+			return false;
 		};
 	};
 
