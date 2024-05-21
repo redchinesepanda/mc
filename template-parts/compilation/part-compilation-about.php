@@ -19,8 +19,6 @@ LegalDebug::debug( [
                                 <?php foreach ( $item[ 'buttons' ] as $button ) : ?>
                                     <?php echo $button[ 'html' ]; ?>
                                 <?php endforeach; ?>
-                                <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
-                                <a class="legal-button swiper-slide" href="#test2" target="_blank" rel="noopener">test2</a>
                             </div>
                         </div>
                     <?php endif; ?>
