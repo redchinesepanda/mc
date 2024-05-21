@@ -227,7 +227,8 @@ class CompilationAbout
 			],
 
 			'image' => [
-				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp',
+				/* 'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp', */
+				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg',
 
 				'width' => 400,
 
