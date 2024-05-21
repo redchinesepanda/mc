@@ -124,73 +124,82 @@ class CompilationAbout
 		return self::parse_node( $dom, $node );
 	}
 	
-	public static function get_buttons( $dom, $node )
+	public static function get_buttons( $dom )
 	{
-		$buttons = [];
+		$nodes = self::get_nodes_buttons( $dom );
 
-		$anchors = $node->getElementsByTagName( 'a' );
-
-		LegalDebug::debug( [
-			'CompilationAbout' => 'get_buttons',
-
-			'node' => substr( $node->textContent, 0, 30 ),
-
-			'length' => $anchors->length,
-		] );
-
-		if ( $anchors->length > 0 )
+		if ( $nodes->length == 0 )
 		{
-			foreach ( $anchors as $anchor )
-			{
-				LegalDebug::debug( [
-					'CompilationAbout' => 'get_buttons',
-
-					'anchor' => substr( $anchor->textContent, 0, 30 ),
-
-					'class' => $anchor->getAttribute( 'class' ),
-
-					'button' => self::CLASSES[ 'button' ],
-
-					'str_contains' => str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ),
-				] );
-
-				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
-				{
-					$class = explode( ' ',  $anchor->getAttribute( 'class' ) );
-
-					$class[] = self::CLASSES[ 'swiper-slide' ];
-
-					$anchor->setAttribute( 'class', implode( ' ', $class ) );
-
-					$buttons[] = self::parse_button( $dom, $anchor );
-
-					try
-					{
-						// LegalDebug::debug( [
-						// 	'CompilationAbout' => 'get_buttons',
-
-						// 	'removeChild' => $node->removeChild( $anchor ),
-						// ] ); 
-
-						$node->removeChild( $anchor );
-					}
-					catch ( DOMException $e )
-					{
-						LegalDebug::debug( [
-							'CompilationAbout' => 'get_buttons',
-
-							'node' => substr( $node->textContent, 0, 30 ),
-
-							'anchor' => substr( $anchor->textContent, 0, 30 ),
-
-							'message' => $e->getMessage(),
-						] );
-					}
-				}
-			}
+			return []; 
 		}
 
-		return $buttons;
+		return self::parse_content( $dom, $nodes );
+
+		// $buttons = [];
+
+		// $anchors = $node->getElementsByTagName( 'a' );
+
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'get_buttons',
+
+		// 	'node' => substr( $node->textContent, 0, 30 ),
+
+		// 	'length' => $anchors->length,
+		// ] );
+
+		// if ( $anchors->length > 0 )
+		// {
+		// 	foreach ( $anchors as $anchor )
+		// 	{
+		// 		LegalDebug::debug( [
+		// 			'CompilationAbout' => 'get_buttons',
+
+		// 			'anchor' => substr( $anchor->textContent, 0, 30 ),
+
+		// 			'class' => $anchor->getAttribute( 'class' ),
+
+		// 			'button' => self::CLASSES[ 'button' ],
+
+		// 			'str_contains' => str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ),
+		// 		] );
+
+		// 		if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
+		// 		{
+		// 			$class = explode( ' ',  $anchor->getAttribute( 'class' ) );
+
+		// 			$class[] = self::CLASSES[ 'swiper-slide' ];
+
+		// 			$anchor->setAttribute( 'class', implode( ' ', $class ) );
+
+		// 			$buttons[] = self::parse_button( $dom, $anchor );
+
+		// 			try
+		// 			{
+		// 				// LegalDebug::debug( [
+		// 				// 	'CompilationAbout' => 'get_buttons',
+
+		// 				// 	'removeChild' => $node->removeChild( $anchor ),
+		// 				// ] ); 
+
+		// 				$node->removeChild( $anchor );
+		// 			}
+		// 			catch ( DOMException $e )
+		// 			{
+		// 				LegalDebug::debug( [
+		// 					'CompilationAbout' => 'get_buttons',
+
+		// 					'node' => substr( $node->textContent, 0, 30 ),
+
+		// 					'anchor' => substr( $anchor->textContent, 0, 30 ),
+
+		// 					'message' => $e->getMessage(),
+		// 				] );
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		// return $buttons;
 	}
 
 	public static function parse_button( $dom, $node )
@@ -207,7 +216,7 @@ class CompilationAbout
 		return [
 			'class' => $node->getAttribute( 'class' ),
 
-			'buttons' => self::get_buttons( $dom, $node ),
+			// 'buttons' => self::get_buttons( $dom, $node ),
 
 			'html' => $dom->saveHTML( $node ),
 		];
@@ -291,7 +300,7 @@ class CompilationAbout
 
 			'content' => self::get_content( $dom ),
 
-			// 'buttons' => self::get_buttons( $dom ),
+			'buttons' => self::get_buttons( $dom ),
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
