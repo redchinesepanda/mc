@@ -9,7 +9,7 @@
 
        /* Tabs Position */
 
-    .legal-tabs .legal-tab-menu {
+    .legal-tabs .legal-tab-menu:not( .legal-tabs-info .legal-tab-menu ) {
         padding-bottom: 18px;
     }
 

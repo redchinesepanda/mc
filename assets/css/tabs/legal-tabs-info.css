@@ -1,9 +1,13 @@
 @media screen and ( max-width: 767px ) {
     /* Display */
 
-    .legal-tabs-info .legal-tab-menu {
+   /*  .legal-tabs-info .legal-tab-menu {
         flex-wrap: wrap;
         gap: 8px;
+    } */
+
+    .legal-tabs-info .swiper-wrapper {
+        column-gap: 8px;
     }
 
     /* Position */
@@ -63,9 +67,12 @@
     } */
 
     .legal-tabs-info .legal-tab-content {
-        width: calc( 100% - ( 28px * 2 ) );
         height: 341px;
         overflow: hidden; 
+    }
+
+    .legal-tabs-info .legal-tab-content.empty-tab-content {
+        width: calc( 100% - ( 28px * 2 ) - ( 16px * 2) );
     }
 
     /* Background */
