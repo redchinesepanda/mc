@@ -1,51 +1,31 @@
 <?php
 
-class WPMLChooseYourCountry
+class LegalTabsInfo
 {
     const CSS = [
-        'wpml-choose-your-country' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-choose-your-country.css',
+        'legal-tabs-info' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/css/tabs/legal-tabs-info.css',
 
 			'ver' => '1.0.1',
 		],
     ];
 
-    const CSS_NEW = [
-        'wpml-choose-your-country' => [
-			'path' => LegalMain::LEGAL_URL . '/assets/css/wpml/wpml-choose-your-country-new.css',
-
-			'ver' => '1.0.0',
-		],
-    ];
-
-	/* public static function register_style()
+	public static function register_style()
     {
 		ToolEnqueue::register_style( self::CSS );
-    } */
-
-    public static function register_style()
-    {
-		if ( TemplateMain::check_new() )
-		{
-			ToolEnqueue::register_style( self::CSS_NEW );
-		}
-		else
-		{
-			ToolEnqueue::register_style( self::CSS );
-		}
     }
 
 	const SHORTCODE = [
-		'chose' => 'legal-choose-your-country',
+		'info' => 'legal-tabs-info',
 	];
 
 	public static function register()
     {
         $handler = new self();
 
-		// [legal-choose-your-country]
+		// [legal-tabs-info]
 
-        add_shortcode( self::SHORTCODE[ 'chose' ], [ $handler, 'render' ] );
+        add_shortcode( self::SHORTCODE[ 'info' ], [ $handler, 'render' ] );
 
         if ( self::check_contains_choose_your_country() )
         {
@@ -54,7 +34,7 @@ class WPMLChooseYourCountry
     }
 
 	const TEMPLATE = [
-        'main' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-choose-your-country.php',
+        'main' => LegalMain::LEGAL_PATH . '/template-parts/tabs/legal-tabs-info.php',
     ];
 
 	public static function render()
@@ -64,7 +44,7 @@ class WPMLChooseYourCountry
 
     public static function check_contains_choose_your_country()
     {
-        return LegalComponents::check_shortcode( self::SHORTCODE[ 'chose' ] );
+        return LegalComponents::check_shortcode( self::SHORTCODE[ 'info' ] );
         
 		// return LegalComponents::check_contains( self::SHORTCODE[ 'mega' ] );
     } 
