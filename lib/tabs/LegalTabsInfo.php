@@ -33,6 +33,15 @@ class LegalTabsInfo
         }
     }
 
+    public static function get()
+    {
+		$lang = WPMLMain::current_language();
+
+        return [
+            'title' => __( BaseMain::TEXT[ 'what-is' ], ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
 	const TEMPLATE = [
         'main' => LegalMain::LEGAL_PATH . '/template-parts/tabs/legal-tabs-info.php',
     ];

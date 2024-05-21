@@ -63,6 +63,8 @@ class BaseMain
 
         'we-are-sorry' => 'We are sorry, we cannot allow minors access to our website.',
 
+        'what-is' => 'What is Match.Center?',
+
         'yes' => 'Yes',
         
         'you-must-be' => 'You must be 18 years or older to access this website. It is part of our commitment to responsible gaming.',
