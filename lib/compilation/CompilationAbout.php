@@ -152,6 +152,8 @@ class CompilationAbout
 					$anchor->setAttribute( 'class', implode( ' ', $class ) );
 
 					$buttons[] = self::parse_button( $dom, $anchor );
+
+					$dom->removeChild( $anchor );
 				}
 			}
 		}
