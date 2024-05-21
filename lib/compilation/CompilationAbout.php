@@ -201,15 +201,25 @@ class CompilationAbout
 		'casino' => 'casino',
 	];
 
+	public static function check_front_page()
+	{
+		return is_front_page();
+	}
+
 	public static function get_image()
 	{
-		LegaldDebug::debug( [
-			'CompilationAbout' => 'get_image',
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'get_image',
 
-			'is_front_page' => is_front_page(),
+		// 	'is_front_page' => is_front_page(),
 
-			'is_home' => is_home(),
-		] );
+		// 	'is_home' => is_home(),
+		// ] );
+
+		if ( self::check_front_page() )
+		{
+			return null;
+		}
 
 		$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg';
 
