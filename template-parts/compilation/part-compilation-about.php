@@ -16,7 +16,7 @@ LegalDebug::debug( [
                     <?php if ( !empty( $item[ 'buttons' ] ) ) : ?>
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
+                                <?php foreach ( $item[ 'buttons' ] as $button ) : ?>
                                     <?php echo $button[ 'html' ]; ?>
                                 <?php endforeach; ?>
                                 <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
