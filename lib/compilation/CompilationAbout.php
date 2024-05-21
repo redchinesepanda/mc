@@ -145,12 +145,21 @@ class CompilationAbout
 			{
 				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
 				{
-					$buttons[] = self::parse_node( $dom, $node );
+					$buttons[] = self::parse_button( $node );
 				}
 			}
 		}
 
 		return $buttons;
+	}
+
+	public static function parse_button( $node )
+	{
+		return [
+			'class' => $node->getAttribute( 'class' ),
+
+			'html' => $dom->saveHTML( $node ),
+		];
 	}
 
 	public static function parse_node( $dom, $node )
@@ -160,7 +169,7 @@ class CompilationAbout
 
 			'html' => $dom->saveHTML( $node ),
 
-			// 'buttons' => self::get_buttons( $dom, $node ),
+			'buttons' => self::get_buttons( $dom, $node ),
 		];
 	}
 
