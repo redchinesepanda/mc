@@ -137,7 +137,8 @@
 /* Compilation About */
 
 #tinymce .section-content-title,
-#tinymce .section-content-text
+#tinymce .section-content-text,
+#tinymce .section-content-button
 {
 	background-color: rgb(246, 246, 246);
 	padding-right: 32px;
