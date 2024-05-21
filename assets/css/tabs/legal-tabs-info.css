@@ -1,25 +1,25 @@
 @media screen and ( max-width: 767px ) {
     /* Display */
 
-    .what-is-mc-wrapper .legal-tab-menu {
+    .tabs-info-wrapper .legal-tab-menu {
         flex-wrap: wrap;
         gap: 8px;
     }
 
     /* Position */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         padding-top: 58px;
         padding-right: 16px;
         padding-bottom: 62px;
         padding-left: 16px;
     }
 
-    .legal-what-is-mc h2 {
+    .legal-tabs-info h2 {
        padding-bottom: 40px !important;
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         padding-top: 52px;
         padding-right: 28px;
         padding-bottom: 52px;
@@ -35,21 +35,21 @@
         top: calc( 9px * 2 );
     }
     
-    .legal-what-is-mc .legal-tab-content.legal-active {
+    .legal-tabs-info .legal-tab-content.legal-active {
         top: 0px;
     }
     
-    .legal-what-is-mc .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 {
+    .legal-tabs-info .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 {
         top: 9px;
     }
 
     /* Width and Height */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         min-height: 820px;
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         width: calc( 100% - ( 28px * 2 ) );
         height: 341px; 
     }
@@ -58,12 +58,12 @@
 
     /* Typography */
 
-    .legal-what-is-mc h2 {
+    .legal-tabs-info h2 {
         font-size: 44px !important;
         line-height: normal !important;
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         font-size: 20px;
         line-height: 36px;
     }
@@ -73,29 +73,29 @@
 @media screen and ( min-width: 768px ) {
     /* Display */
 
-    .what-is-mc-wrapper .legal-tab-menu {
+    .tabs-info-wrapper .legal-tab-menu {
         justify-content: space-between;
         column-gap: 20px;
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         align-items: center;
     }
 
     /* Position */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         padding-top: 62px;
         padding-right: 32px;
         padding-bottom: 112px;
         padding-left: 32px;
     }
 
-    .legal-what-is-mc h2 {
+    .legal-tabs-info h2 {
         padding-bottom: 64px !important;
      }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         padding-right: 140px;
         padding-left: 140px;
     }
@@ -114,27 +114,27 @@
         left: 13px;
     }
     
-    .legal-what-is-mc .legal-tab-content.legal-active {
+    .legal-tabs-info .legal-tab-content.legal-active {
         left: -13px;
         top: 0px;
     }
     
-    .legal-what-is-mc .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 {
+    .legal-tabs-info .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 {
         top: 13px;
         left: 0px;
     }
 
     /* Width and Height */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         min-height: calc( 582px + 62px + 112px );
     }
 
-    .what-is-mc-wrapper .legal-tab-title {
+    .tabs-info-wrapper .legal-tab-title {
         min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px );
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         /* width: 1172px; */
         width: calc( 100% - ( 140px * 2 ) );
         height: 317px; 
@@ -142,18 +142,18 @@
 
     /* Background */
 
-    .legal-what-is-mc .legal-tab-content.legal-active:not( .legal-content-1 ) + .legal-tab-content.legal-content-0 {
+    .legal-tabs-info .legal-tab-content.legal-active:not( .legal-content-1 ) + .legal-tab-content.legal-content-0 {
         border-bottom: none;
     }
 
     /* Typography */
 
-    .legal-what-is-mc h2 {
+    .legal-tabs-info h2 {
         font-size: 58px !important;
         line-height: normal !important;
     }
 
-    .legal-what-is-mc .legal-tab-content {
+    .legal-tabs-info .legal-tab-content {
         font-size: 32px;
         line-height: 40px;
         text-align: center;
@@ -164,14 +164,14 @@
 @media screen and ( max-width: 1217px ) {
      /* Position */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         left: 50%;
         margin-left: -50vw;
     }
 
       /* Width and Height */
 
-      .legal-what-is-mc {
+      .legal-tabs-info {
         width: 100%;
     }
 }
@@ -180,7 +180,7 @@
 
     /* Position */
 
-    .what-is-mc-wrapper {
+    .tabs-info-wrapper {
         /* left: 78%; */
         /* margin-left: -50.4vw; */
         /* left: 80.1%; */
@@ -190,7 +190,7 @@
 
     /* Width and Height */
 
-    .legal-what-is-mc {
+    .legal-tabs-info {
         width: var(--base-width-desktop);
     }
 }
@@ -223,113 +223,113 @@
 
 /* Display */
 
-.what-is-mc-wrapper {
+.tabs-info-wrapper {
     display: flex;
     justify-content: center;
 }
 
-.what-is-mc-wrapper .legal-tab-menu {
+.tabs-info-wrapper .legal-tab-menu {
 	display: flex;
 }
 
-.what-is-mc-wrapper .legal-tab-title {
+.tabs-info-wrapper .legal-tab-title {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 }
 
-.legal-what-is-mc .legal-tab-content {
+.legal-tabs-info .legal-tab-content {
     display: flex;
 }
 
 /* Position */
 
-.what-is-mc-wrapper {
+.tabs-info-wrapper {
     position: relative;
   /*   left: calc(-50.4vw + 78%); */
 }
 
-.legal-what-is-mc > p {
+.legal-tabs-info > p {
     padding-top: 0px;
     padding-bottom: 18px;
     margin: 0px;
 }
 
-.legal-what-is-mc h2 {
+.legal-tabs-info h2 {
     margin: 0px !important;
     padding-top: 0px !important;
  }
 
- .what-is-mc-wrapper .legal-tab-menu {
+ .tabs-info-wrapper .legal-tab-menu {
     padding-bottom: 48px;
  }
 
-.what-is-mc-wrapper .legal-tab-title {
+.tabs-info-wrapper .legal-tab-title {
     padding-left: 24px;
     padding-right: 24px;
 }
 
-.legal-what-is-mc .legal-tab-display {
+.legal-tabs-info .legal-tab-display {
     position: relative;
 }
 
-.legal-what-is-mc .legal-tab-content {
+.legal-tabs-info .legal-tab-content {
     position: absolute;
 }
 
-.legal-what-is-mc .legal-tab-content.legal-active {
+.legal-tabs-info .legal-tab-content.legal-active {
     /* animation: animWhatIsMC 0.8s ease 0s 1 normal forwards; */
     animation: animWhatIsMC 0.5s ease 0s 1 normal forwards;
 }
 
-.legal-what-is-mc .legal-tab-content.legal-active {
+.legal-tabs-info .legal-tab-content.legal-active {
     z-index: 1;
 }
 
 /* Width and Height */
 
-.what-is-mc-wrapper {
+.tabs-info-wrapper {
     /* width: 98.8vw; */
     width: 99vw;
     box-sizing: border-box;
 }
 
-/* .legal-what-is-mc {
+/* .legal-tabs-info {
     max-width: var(--base-width-desktop);
 } */
 
-.what-is-mc-wrapper .legal-tab-title {
+.tabs-info-wrapper .legal-tab-title {
     min-height: 44px;
    /*  min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px ); */
 }
 
 /* Background */
 
-.what-is-mc-wrapper {
+.tabs-info-wrapper {
     background-color: var( --Primitives-yellow-60 );
     border-top: 1px solid var( --Base-base-09 ); 
     border-bottom: 1px solid var( --Base-base-09 );
 }
 
-.legal-what-is-mc .legal-tab-title {
+.legal-tabs-info .legal-tab-title {
 	border: 1px solid var( --Base-base-09 );
     border-radius: 60px;
 }
 
-.legal-what-is-mc .legal-tab-title:not(.legal-active) {
+.legal-tabs-info .legal-tab-title:not(.legal-active) {
     background-color: var( --Base-base-01 );
 }
 
-.legal-what-is-mc .legal-tab-title:not(.legal-active) {
+.legal-tabs-info .legal-tab-title:not(.legal-active) {
 	background-color: var( --Base-base-01 );
 }
 
-.legal-what-is-mc .legal-tab-title.legal-active {
+.legal-tabs-info .legal-tab-title.legal-active {
 	background-color: var( --Base-base-09 );
 }
 
-.legal-what-is-mc .legal-tab-content {
+.legal-tabs-info .legal-tab-content {
     background-color: var( --Base-base-01 );
     border-radius: 32px;
     border: 1px solid var( --Base-base-09 ); 
@@ -337,29 +337,29 @@
 
 /* Typography */
 
-.legal-what-is-mc h2 {
+.legal-tabs-info h2 {
     text-align: center;
 }
 
-.legal-what-is-mc .legal-tab-title,
-.legal-what-is-mc .legal-tab-content {
+.legal-tabs-info .legal-tab-title,
+.legal-tabs-info .legal-tab-content {
     font-family: var( --legal-font-primary );
     font-style: normal;
 }
 
-.legal-what-is-mc .legal-tab-title:hover {
+.legal-tabs-info .legal-tab-title:hover {
     text-shadow: 0 0 0.35px var( --Base-base-09 );
 }
 
-.legal-what-is-mc .legal-tab-title:not(.legal-active) {
+.legal-tabs-info .legal-tab-title:not(.legal-active) {
 	color: var(--Base-base-09);
 	transition: 0.5s;
 }
 
-.legal-what-is-mc .legal-tab-title.legal-active {
+.legal-tabs-info .legal-tab-title.legal-active {
 	color: var(--Base-base-01);
 }
 
-.legal-what-is-mc .legal-tab-content {
+.legal-tabs-info .legal-tab-content {
     font-weight: 400;
 }

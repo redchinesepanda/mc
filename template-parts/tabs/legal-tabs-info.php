@@ -1,6 +1,6 @@
-<section class="legal-section-what-is-mc">
-    <div class="what-is-mc-wrapper">
-        <div class="legal-what-is-mc">
+<section class="legal-section-tabs-info">
+    <div class="tabs-info-wrapper">
+        <div class="legal-tabs-info">
             <h2>What is Match.Center?</h2>
             <p>Our aim is to be the go-to source for players looking for reliable and trustworthy
                 information about online gambling sites. At Match.Center, we are committed to providing
@@ -27,7 +27,7 @@
                     <div class="legal-tab-content legal-content-1">We provide only honest and transparent information about the sites we review, ensuring
                         that our readers can trust our recommendations.
                     </div>
-                    <div class="legal-tab-content legal-content-0">We are professionals and enthusiasts in the online gambling industry, with years of
+                    <div class="legal-tab-content legal-content-0 legal-active">We are professionals and enthusiasts in the online gambling industry, with years of
                         experience in evaluating and recommending the best betting sites.
                     </div>
                 </div>
