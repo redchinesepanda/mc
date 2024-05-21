@@ -122,9 +122,7 @@ class CompilationAbout
 		return self::parse_node( $dom, $node );
 	}
 	
-	// public static function get_buttons( $dom, $node )
-	
-	public static function get_buttons( $node )
+	public static function get_buttons( $dom, $node )
 	{
 		// $nodes = self::get_nodes_buttons( $dom, $node );
 
