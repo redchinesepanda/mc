@@ -10,13 +10,24 @@
 
     .legal-tabs-info {
         padding-top: 58px;
-        padding-right: 16px;
+       /*  padding-right: 16px; */
         padding-bottom: 62px;
+        /* padding-left: 16px; */
+    }
+
+    .legal-tabs-info h2,
+    .legal-tabs-info > p,
+    .legal-tabs-info .legal-tab-display {
+        padding-right: 16px;
         padding-left: 16px;
     }
 
     .legal-tabs-info h2 {
        padding-bottom: 40px !important;
+    }
+
+    .legal-tabs-info .legal-tab-menu {
+        padding-left: 16px;
     }
 
     .legal-tabs-info .legal-tab-content {
