@@ -272,12 +272,16 @@
     padding-right: 24px;
 }
 
-/* .legal-tabs-info .legal-tab-display {
+.legal-tabs-info .legal-tab-display {
     position: relative;
-} */
+}
 
 .legal-tabs-info .legal-tab-content {
     position: relative;
+}
+
+.legal-tab-content.empty-tab-content {
+    position: absolute;
 }
 
 .legal-tabs-info .legal-tab-content.legal-active {
