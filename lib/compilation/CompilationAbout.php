@@ -156,11 +156,11 @@ class CompilationAbout
 
 					try
 					{
-						LegalDebug::debug( [
-							'CompilationAbout' => 'get_buttons',
+						// LegalDebug::debug( [
+						// 	'CompilationAbout' => 'get_buttons',
 
-							'removeChild' => $node->removeChild( $anchor ),
-						] ); 
+						// 	'removeChild' => $node->removeChild( $anchor ),
+						// ] ); 
 
 						// $node->removeChild( $anchor );
 					}
