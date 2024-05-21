@@ -96,7 +96,11 @@ class CompilationAbout
 			return '';
 		}
 
-		return $nodes->item( 0 )->textContent;
+		// return $nodes->item( 0 )->textContent;
+
+		$node = $nodes->item( 0 );
+
+		return self::parse_node( $dom, $node );
 	}
 
 	public static function parse_node( $dom, $node )

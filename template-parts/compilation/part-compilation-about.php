@@ -12,14 +12,14 @@
     <div class="compilation-about-wrapper <?php echo $args[ 'class' ]; ?>">
         <div class="compilation-about">
             <div class="about-section-content">
-                <h1><?php echo $args[ 'title' ]; ?></h1>
+                <h1 class="<?php echo $args[ 'title' ][ 'class' ]; ?>><?php echo $args[ 'title' ][ 'html' ]; ?></h1>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
                     <?php echo $item[ 'html' ]; ?>
                 <?php endforeach; ?>
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
                 	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
 				<?php endif; ?>
-				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
+				<?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
                     <div class="swiper">
                         <div class="swiper-wrapper">
                             <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
