@@ -10,13 +10,24 @@
 
     .legal-tabs-info {
         padding-top: 58px;
-        padding-right: 16px;
+       /*  padding-right: 16px; */
         padding-bottom: 62px;
+        /* padding-left: 16px; */
+    }
+
+    .legal-tabs-info h2,
+    .legal-tabs-info > p,
+    .legal-tabs-info .legal-tab-display {
+        padding-right: 16px;
         padding-left: 16px;
     }
 
     .legal-tabs-info h2 {
        padding-bottom: 40px !important;
+    }
+
+    .legal-tabs-info .legal-tab-menu {
+        padding-left: 16px;
     }
 
     .legal-tabs-info .legal-tab-content {
@@ -30,8 +41,9 @@
         top: 9px;
     }
     
-    .legal-tab-content.legal-content-2,
-    .legal-tab-content.legal-content-3 {
+    /* .legal-tab-content.legal-content-2,
+    .legal-tab-content.legal-content-3 */
+    .legal-tab-content.empty-tab-content:nth-of-type(1) {
         top: calc( 9px * 2 );
     }
     
@@ -39,19 +51,21 @@
         top: 0px;
     }
     
-    .legal-tabs-info .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 {
+    /* .legal-tabs-info .legal-tab-content.legal-active + .legal-tab-content.legal-content-0 */
+    .legal-tab-content.empty-tab-content:nth-of-type(2) {
         top: 9px;
     }
 
     /* Width and Height */
 
-    .tabs-info-wrapper {
+   /*  .tabs-info-wrapper {
         min-height: 820px;
-    }
+    } */
 
     .legal-tabs-info .legal-tab-content {
         width: calc( 100% - ( 28px * 2 ) );
-        height: 341px; 
+        height: 341px;
+        overflow: hidden; 
     }
 
     /* Background */
@@ -73,7 +87,8 @@
 @media screen and ( min-width: 768px ) {
     /* Display */
 
-    .legal-tabs-info .legal-tab-menu {
+    /* .legal-tabs-info .legal-tab-menu */
+    .legal-tabs-info .swiper-wrapper {
         justify-content: space-between;
         column-gap: 20px;
     }
@@ -128,8 +143,12 @@
 
     /* Width and Height */
 
-    .tabs-info-wrapper {
+  /*   .tabs-info-wrapper {
         min-height: calc( 582px + 62px + 112px );
+    } */
+
+    .legal-tabs-info .swiper {
+        width: 100%;
     }
 
     .legal-tabs-info .legal-tab-title {
@@ -230,7 +249,8 @@
     justify-content: center;
 }
 
-.legal-tabs-info .legal-tab-menu {
+/* .legal-tabs-info .legal-tab-menu */
+.legal-tabs-info .swiper-wrapper {
 	display: flex;
 }
 
@@ -306,7 +326,7 @@
 } */
 
 .legal-tabs-info .legal-tab-menu {
-    width: 100%;
+	width: 100%;
 }
 
 .legal-tabs-info .legal-tab-title {
