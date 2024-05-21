@@ -12,7 +12,7 @@
     <div class="compilation-about-wrapper <?php echo $args[ 'class' ]; ?>">
         <div class="compilation-about">
             <div class="about-section-content">
-                <h1 class="<?php echo $args[ 'title' ][ 'class' ]; ?>><?php echo $args[ 'title' ][ 'html' ]; ?></h1>
+                <h1 class="<?php echo $args[ 'title' ][ 'class' ]; ?>"><?php echo $args[ 'title' ][ 'html' ]; ?></h1>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
                     <?php echo $item[ 'html' ]; ?>
                 <?php endforeach; ?>
