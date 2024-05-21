@@ -2,6 +2,14 @@
 
 class CompilationAbout
 {
+	const CLASSES = [
+		'title' => 'section-content-title',
+
+		'content' => 'section-content-text',
+
+		'button' => 'legal-button',
+	];
+
 	const CSS = [
         'compilation-about' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-about.css',
@@ -56,11 +64,11 @@ class CompilationAbout
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ], 10, 1 );
 	}
 
-	public static function get_nodes( $dom, $query )
+	public static function get_nodes( $dom, $query, $node = null )
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( $query );
+		$nodes = $xpath->query( $query, $node );
 
 		return $nodes;
 	}
@@ -87,6 +95,17 @@ class CompilationAbout
 		);
 	}
 
+	public static function get_nodes_buttons( $dom, $node )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
+
+			$node
+		);
+	}
+
 	public static function get_title( $dom )
 	{
 		$nodes = self::get_nodes_title( $dom );
@@ -102,6 +121,18 @@ class CompilationAbout
 
 		return self::parse_node( $dom, $node );
 	}
+	
+	public static function get_buttons( $dom, $node )
+	{
+		$nodes = self::get_nodes_buttons( $dom, $node );
+
+		if ( $nodes->length == 0 )
+		{
+			return []; 
+		}
+
+		return self::parse_content( $dom, $nodes );
+	}
 
 	public static function parse_node( $dom, $node )
 	{
@@ -109,6 +140,8 @@ class CompilationAbout
 			'class' => $node->getAttribute( 'class' ),
 
 			'html' => $dom->saveHTML( $node ),
+
+			'buttons' => self::get_buttons( $dom, $node ),
 		];
 	}
 
@@ -116,43 +149,13 @@ class CompilationAbout
 	{
 		$items = [];
 
-		// LegalDebug::debug( [
-		// 	'CompilationAbout' => 'parse_content',
-
-		// 	'nodes' => count( $nodes ),
-		// ] );
-
-		// $has_cut = false;
-
 		foreach ( $nodes as $node )
 		{
-			// if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
-			// {
-			// 	$has_cut = true;
-			// }
-
-			// LegalDebug::debug( [
-			// 	'CompilationAbout' => 'parse_content',
-
-			// 	'class' => $node->getAttribute( 'class' ),
-
-			// 	'textContent' => $node->textContent,
-
-			// 	'has_cut' => $has_cut,
-			// ] );
-
 			$items[] = self::parse_node( $dom, $node );
 		}
 
-		// if ( $has_cut )
-		// {
-		// 	$control = ReviewCut::get_control( $dom );
-
-		// 	$items[] = self::parse_node( $dom, $control );
-		// }
-
 		return $items;
-	} 
+	}
 	
 	public static function get_content( $dom )
 	{
@@ -219,6 +222,8 @@ class CompilationAbout
 			'title' => self::get_title( $dom ),
 
 			'content' => self::get_content( $dom ),
+
+			'buttons' => self::get_buttons( $dom ),
 
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
@@ -288,12 +293,6 @@ class CompilationAbout
 
 		return '';
     }
-
-	const CLASSES = [
-		'title' => 'section-content-title',
-
-		'content' => 'section-content-text',
-	];
 
 	public static function style_formats_compilation_about( $settings )
 	{

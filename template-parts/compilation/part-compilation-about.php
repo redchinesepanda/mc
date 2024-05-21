@@ -1,10 +1,8 @@
 <?php
 
-// LegalDebug::debug( [
-// 	'args' => $args,
-// ] );
-
-//  data-cut-set-id="0"
+LegalDebug::debug( [
+	'args' => $args,
+] );
 
 ?>
 <!-- Compilation About Template -->
@@ -15,17 +13,20 @@
                 <?php echo $args[ 'title' ][ 'html' ]; ?>
                 <?php foreach ( $args[ 'content' ] as $item ) : ?>
                     <?php echo $item[ 'html' ]; ?>
+                    <?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
+                                    <?php echo $button[ 'html' ]; ?>
+                                <?php endforeach; ?>
+                                <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
+                                <a class="legal-button swiper-slide" href="#test2" target="_blank" rel="noopener">test2</a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
                 	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
-				<?php endif; ?>
-				<?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <a class="legal-button swiper-slide" href="#test" target="_blank" rel="noopener">test</a>
-                            <a class="legal-button swiper-slide" href="#test2" target="_blank" rel="noopener">test2</a>
-                        </div>
-                    </div>
 				<?php endif; ?>
             </div>
             <?php if ( !empty( $args[ 'content' ] ) ) : ?>
