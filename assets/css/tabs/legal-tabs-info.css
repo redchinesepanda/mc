@@ -68,7 +68,7 @@
 
     .legal-tabs-info .legal-tab-title {
         min-width: 195px;
-        box-sizing: border-box;
+        box-sizing: border-box; 
     }
 
     .legal-tabs-info .legal-tab-content {
