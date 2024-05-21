@@ -37,6 +37,10 @@
         padding-top: 64px;
     }
 
+    .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
+        top: 64px;
+    }
+
     /* Typography */
 
     .home .about-section-content {
@@ -84,6 +88,10 @@
 
     .home .compilation-about-wrapper .swiper {
         padding-top: 40px;
+    }
+
+    .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
+        top: 40px;
     }
 
     /* Typography */
@@ -159,7 +167,7 @@
 
 .compilation-about-wrapper .swiper:not( .legal-active-end )::after {
     width: 83px;
-    height: 36px;
+    height: 46px;
 }
 
 /* .compilation-about .section-content-button {
@@ -219,7 +227,6 @@
 .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
     position: absolute;
     right: 0px;
-    top: 0;
 }
 
 .compilation-about-wrapper .section-content-button {
