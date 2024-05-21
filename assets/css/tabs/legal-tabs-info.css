@@ -15,7 +15,7 @@
     .legal-tabs-info {
         padding-top: 58px;
        /*  padding-right: 16px; */
-        padding-bottom: 62px;
+        padding-bottom: 79px;
         /* padding-left: 16px; */
     }
 
@@ -65,6 +65,11 @@
    /*  .tabs-info-wrapper {
         min-height: 820px;
     } */
+
+    .legal-tabs-info .legal-tab-title {
+        min-width: 195px;
+        box-sizing: border-box; 
+    }
 
     .legal-tabs-info .legal-tab-content {
         height: 341px;
@@ -154,9 +159,14 @@
         min-height: calc( 582px + 62px + 112px );
     } */
 
+    .legal-tabs-info .legal-tab-menu,
     .legal-tabs-info .swiper {
         width: 100%;
     }
+
+  /*   .legal-tabs-info .swiper {
+        width: 100%;
+    } */
 
     .legal-tabs-info .legal-tab-title {
         min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px );
@@ -339,10 +349,6 @@
 /* .legal-tabs-info {
     max-width: var(--base-width-desktop);
 } */
-
-.legal-tabs-info .legal-tab-menu {
-	width: 100%;
-}
 
 .legal-tabs-info .legal-tab-title {
     min-height: 44px;

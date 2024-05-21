@@ -2,7 +2,7 @@
 
      /* Width and Height */
 
-    .home .legal-tabs .legal-tab-title {
+    .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
         min-width: calc( ( 100% / 2 ) - 4px );
         box-sizing: border-box;
     }
