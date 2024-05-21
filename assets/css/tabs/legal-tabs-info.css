@@ -27,7 +27,7 @@
     }
 
     .legal-tabs-info h2 {
-       padding-bottom: 40px !important;
+       padding-bottom: 40px;
     }
 
     .legal-tabs-info .legal-tab-menu {
@@ -72,7 +72,7 @@
     }
 
     .legal-tabs-info .legal-tab-content.empty-tab-content {
-        width: calc( 100% - ( 28px * 2 ) - ( 16px * 2) );
+        width: calc( 100% - ( 28px * 2 ) - ( 16px * 2) - 2px );
     }
 
     /* Background */
@@ -80,8 +80,8 @@
     /* Typography */
 
     .legal-tabs-info h2 {
-        font-size: 44px !important;
-        line-height: normal !important;
+        font-size: 44px;
+        line-height: normal;
     }
 
     .legal-tabs-info .legal-tab-content {
@@ -114,7 +114,7 @@
     }
 
     .legal-tabs-info h2 {
-        padding-bottom: 64px !important;
+        padding-bottom: 64px;
      }
 
     .legal-tabs-info .legal-tab-content {
@@ -177,8 +177,9 @@
     /* Typography */
 
     .legal-tabs-info h2 {
-        font-size: 58px !important;
-        line-height: normal !important;
+        font-size: 58px;
+        line-height: normal;
+        text-align: center;
     }
 
     .legal-tabs-info .legal-tab-content {
@@ -295,8 +296,8 @@
 }
 
 .legal-tabs-info h2 {
-    margin: 0px !important;
-    padding-top: 0px !important;
+    margin: 0px;
+    padding-top: 0px;
  }
 
 .legal-tabs-info .legal-tab-menu {
@@ -380,10 +381,6 @@
 }
 
 /* Typography */
-
-.legal-tabs-info h2 {
-    text-align: center;
-}
 
 .legal-tabs-info .legal-tab-title,
 .legal-tabs-info .legal-tab-content {
