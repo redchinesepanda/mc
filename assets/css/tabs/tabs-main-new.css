@@ -90,7 +90,7 @@
     column-gap: 8px;
 }
 
-.legal-tabs .legal-tab-content:not( .legal-active ) {
+.legal-tabs .legal-tab-content:not( .legal-active ):not( .empty-tab-content ) {
     display: none;
 }
 

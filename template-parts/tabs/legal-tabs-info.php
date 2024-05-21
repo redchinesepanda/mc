@@ -18,6 +18,8 @@
                 </div>
 
                 <div class="legal-tab-display">
+                    <div class="legal-tab-content empty-tab-content"></div>
+                    <div class="legal-tab-content empty-tab-content"></div>
                     <div class="legal-tab-content legal-content-3">We focus on providing reviews that are relevant to our readers, based on factors such as
                         geographic location, preferred payment methods, and game types.
                     </div>
