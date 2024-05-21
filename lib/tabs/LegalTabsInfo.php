@@ -13,6 +13,8 @@ class LegalTabsInfo
 	public static function register_style()
     {
 		ToolEnqueue::register_style( self::CSS );
+
+        ToolEnqueue::localize_script( self::get_localize() );
     }
 
 	const SHORTCODE = [
@@ -33,7 +35,7 @@ class LegalTabsInfo
         }
     }
 
-    public static function get()
+    public static function get_content()
     {
 		$lang = WPMLMain::current_language();
 
@@ -45,11 +47,6 @@ class LegalTabsInfo
 	const TEMPLATE = [
         'main' => LegalMain::LEGAL_PATH . '/template-parts/tabs/legal-tabs-info.php',
     ];
-
-	public static function render()
-    {
-        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [], self::get() );
-    }
 
     public static function check_contains_tabs_info()
     {
