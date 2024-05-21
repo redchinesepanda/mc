@@ -48,7 +48,7 @@ class LegalTabsInfo
 
 	public static function render()
     {
-        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [] );
+        return LegalComponents::render_main( self::TEMPLATE[ 'main' ], [], self::get() );
     }
 
     public static function check_contains_tabs_info()
