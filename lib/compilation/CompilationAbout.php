@@ -95,16 +95,16 @@ class CompilationAbout
 		);
 	}
 
-	public static function get_nodes_buttons( $dom, $node )
-	{
-		return self::get_nodes(
-			$dom,
+	// public static function get_nodes_buttons( $dom, $node )
+	// {
+	// 	return self::get_nodes(
+	// 		$dom,
 			
-			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
+	// 		'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]',
 
-			$node
-		);
-	}
+	// 		$node
+	// 	);
+	// }
 
 	public static function get_title( $dom )
 	{
@@ -122,16 +122,35 @@ class CompilationAbout
 		return self::parse_node( $dom, $node );
 	}
 	
-	public static function get_buttons( $dom, $node )
+	// public static function get_buttons( $dom, $node )
+	
+	public static function get_buttons( $node )
 	{
-		$nodes = self::get_nodes_buttons( $dom, $node );
+		// $nodes = self::get_nodes_buttons( $dom, $node );
 
-		if ( $nodes->length == 0 )
+		// if ( $nodes->length == 0 )
+		// {
+		// 	return []; 
+		// }
+
+		// return self::parse_content( $dom, $nodes );
+
+		$buttons = [];
+
+		$anchors = $node->getElementsByTagName( 'a' );
+
+		if ( $anchors->length > 0 )
 		{
-			return []; 
+			foreach ( $anchors as $anchor )
+			{
+				if ( str_contains( $anchor->getAttribute( 'class' ), self::CLASSES[ 'button' ] ) )
+				{
+					$buttons[] = self::parse_node( $dom, $node );
+				}
+			}
 		}
 
-		return self::parse_content( $dom, $nodes );
+		return $buttons;
 	}
 
 	public static function parse_node( $dom, $node )
@@ -141,7 +160,7 @@ class CompilationAbout
 
 			'html' => $dom->saveHTML( $node ),
 
-			// 'buttons' => self::get_buttons( $dom, $node ),
+			'buttons' => self::get_buttons( $dom, $node ),
 		];
 	}
 
