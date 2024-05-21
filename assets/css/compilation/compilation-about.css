@@ -160,11 +160,7 @@
     max-width: 754px;
 }
 
-.compilation-about-wrapper .swiper.legal-active-end::before {
-    width: 83px;
-    height: 36px;
-}
-
+.compilation-about-wrapper .swiper.legal-active-end::before,
 .compilation-about-wrapper .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 46px;
