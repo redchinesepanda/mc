@@ -343,7 +343,7 @@
 }
 
 .legal-tabs-info .legal-tab-content.legal-active {
-    animation: animWhatIsMC 0.5s ease 0s 1 normal forwards;
+    animation: animWhatIsMC 0.2s ease 0s 1 normal forwards;
 }
 
 /* .legal-tabs-info .legal-tab-content.legal-content-0.legal-active,
