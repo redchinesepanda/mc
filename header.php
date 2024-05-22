@@ -27,12 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Yoast SEO manual start -->
 		<title><?php echo YoastMain::get_seo_title() ?></title>
 		<!-- Yoast SEO manual end -->
-		<!-- Template start -->
-		<?php echo TemplateMain::wp_head(); ?>
-		<!-- Template end -->
 		<!-- Multisite Hreflang end -->
 		<?php echo MultisiteHreflang::prepare_hreflang(); ?>
 		<!-- Multisite Hreflang start -->
+		<!-- Template start -->
+		<?php echo TemplateMain::wp_head(); ?>
+		<!-- Template end -->
 		<!-- Legal Header -->
 	</head>
 	<body <?php body_class( '' ); ?>>
