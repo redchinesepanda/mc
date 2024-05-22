@@ -81,6 +81,8 @@ class MultisiteHreflang
 
 			$current_language = WPMLMain::current_language();
 
+			$language_code = WPMLMain::get_language_code( $post->ID );
+
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
 
@@ -91,6 +93,8 @@ class MultisiteHreflang
 				'locale' => $locale,
 
 				'current_language' => $current_language,
+
+				'language_code' => $language_code,
             ] );
 
 			$items[] = [
