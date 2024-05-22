@@ -38,7 +38,7 @@ class LegalTabsInfo
 		return [
             'title' => ToolLoco::translate( BaseMain::TEXT[ 'what-is' ] ),
 
-            'tab-title-0' => ToolLoco::translate( BaseMain::TEXT[ 'expertise' ] ),
+            'tab-title' => ToolLoco::translate( BaseMain::TEXT[ 'expertise' ] ),
 
             'tab-title-1' => ToolLoco::translate( BaseMain::TEXT[ 'transparency' ] ),
 

@@ -63,7 +63,7 @@ class BaseMain
 
         'tab-content-3' => 'We focus on providing reviews that are relevant to our readers, based on factors such as geographic location, preferred payment methods, and game types.',
 
-        'tab-title-0' => 'Expertise',
+        'tab-title' => 'Expertise',
 
         'tab-title-1' => 'Transparency',
 

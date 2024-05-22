@@ -6,7 +6,7 @@
                 <div class="legal-tab-menu">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="legal-tab-title swiper-slide legal-active" data-content="0" data-tabs="legal-tabs-0"><?php echo $args[ 'tab-title-0' ]; ?></div>
+                            <div class="legal-tab-title swiper-slide legal-active" data-content="0" data-tabs="legal-tabs-0"><?php echo $args[ 'tab-title' ]; ?></div>
                             <div class="legal-tab-title swiper-slide" data-content="1" data-tabs="legal-tabs-0"><?php echo $args[ 'tab-title-1' ]; ?></div>
                             <div class="legal-tab-title swiper-slide" data-content="2" data-tabs="legal-tabs-0"><?php echo $args[ 'tab-title-2' ]; ?></div>
                             <div class="legal-tab-title swiper-slide" data-content="3" data-tabs="legal-tabs-0"><?php echo $args[ 'tab-title-3' ]; ?></div>
