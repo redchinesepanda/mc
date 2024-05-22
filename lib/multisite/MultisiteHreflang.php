@@ -101,7 +101,7 @@ class MultisiteHreflang
 
 			if ( empty( $language_code ) )
 			{
-				$language_code = MiltisiteSiteOptions::get_blog_language();
+				$language_code = MultisiteSiteOptions::get_blog_language();
 			}
 
 			$locale = WPMLMain::multisite_locale( $language_code );
