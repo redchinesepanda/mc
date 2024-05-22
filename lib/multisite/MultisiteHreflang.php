@@ -106,7 +106,7 @@ class MultisiteHreflang
 				'locale' => $locale,
             ] );
 
-			$items[] = [
+			$items[ $locale ] = [
 				'post_title' => $post_title,
 
 				'post_uri' => $post_uri,
@@ -136,7 +136,7 @@ class MultisiteHreflang
 		{
 			MultisiteBlog::set_blog( $blog->blog_id );
 
-			$blog_locale = MultisiteBlog::get_blog_option( $blog->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
+			// $blog_locale = MultisiteBlog::get_blog_option( $blog->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'get_group_items_all',
@@ -148,7 +148,9 @@ class MultisiteHreflang
 				// 'url' => get_bloginfo( 'url' ),
 			] );
 
-			$items[ $blog_locale ] = self::get_group_items( $translation_groups );
+			// $items[ $blog_locale ] = self::get_group_items( $translation_groups );
+
+			$items = array_merge( $items, self::get_group_items( $translation_groups ) );
 		}
 
 		MultisiteBlog::set_blog( $current_blog_id );
