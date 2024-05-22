@@ -90,21 +90,21 @@ class MultisiteHreflang
 
 			$locale = WPMLMain::multisite_locale( $language_code );
 
-			LegalDebug::debug( [
-                'MultisiteHreflang' => 'get_group_items',
+			// LegalDebug::debug( [
+            //     'MultisiteHreflang' => 'get_group_items',
 
-				'post_title' => $post_title,
+			// 	'post_title' => $post_title,
 
-				'post_uri' => $post_uri,
+			// 	'post_uri' => $post_uri,
 
-				// 'locale' => $locale,
+			// 	// 'locale' => $locale,
 
-				// 'current_language' => $current_language,
+			// 	// 'current_language' => $current_language,
 
-				'language_code' => $language_code,
+			// 	'language_code' => $language_code,
 
-				'locale' => $locale,
-            ] );
+			// 	'locale' => $locale,
+            // ] );
 
 			$items[ $locale ] = [
 				'post_title' => $post_title,
