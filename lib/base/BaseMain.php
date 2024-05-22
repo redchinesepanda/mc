@@ -55,6 +55,22 @@ class BaseMain
 
         'show-all' => 'Show All',
 
+        'we-are-professionals' => 'We are professionals and enthusiasts in the online gambling industry, with years of experience in evaluating and recommending the best betting sites.',
+
+        'we-provide-only' => 'We provide only honest and transparent information about the sites we review, ensuring that our readers can trust our recommendations.',
+
+        'our-reviews' => 'Our reviews are based on objective criteria, such as site features, user experience, and customer service, ensuring that our readers can make informed decisions.',
+
+        'we-focus-on' => 'We focus on providing reviews that are relevant to our readers, based on factors such as geographic location, preferred payment methods, and game types.',
+
+        'expertise' => 'Expertise',
+
+        'transparency' => 'Transparency',
+
+        'fairness' => 'Fairness',
+
+        'relevance' => 'Relevance',
+
         'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
 
         'this-website' => 'This website is only for adults.',
@@ -62,6 +78,8 @@ class BaseMain
         'to-give' => 'To give you the best possible experience, this site uses cookies and by continuing to use the site you agree that we can save them on your device. By clicking "I Accept" you consent to the use of cookies unless you have disabled them.',
 
         'we-are-sorry' => 'We are sorry, we cannot allow minors access to our website.',
+
+        'what-is' => 'What is Match.Center?',
 
         'yes' => 'Yes',
         

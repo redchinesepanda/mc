@@ -221,7 +221,7 @@ class BonusPreview
 		$args = self::get_args( $atts, $mode, $duration );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'BonusPreview::get_posts_date',
+		// 	'BonusPreview' => 'get_posts_date',
 
 		// 	'args' => $args,
 		// ] );
@@ -231,6 +231,20 @@ class BonusPreview
 		// $posts = $query->posts;
 
 		$posts = get_posts( $args );
+
+		$query = new WP_Query( $args );
+		
+		$query_sql = $query->request;
+
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'get_posts_date',
+
+		// 	'duration' => $duration,
+
+		// 	// 'args' => $args,
+
+		// 	'query_sql' => $query_sql,
+		// ] );
 
 		return $posts;
 	}
@@ -255,57 +269,105 @@ class BonusPreview
 
 		$expired = in_array( $duration, [ self::DURATION[ 'expired' ] ] );
 
-		$compare = $expired ? '<' : '>=';
+		if ( $expired )
+		{
+			$meta_query_date = [
+				[
+					'relation' => 'AND',
+	
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'compare' => 'EXISTS',
+					],
 
-		// $compare = '>=';
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'compare' => '!=',
+	
+						'value' => '',
+					],
 
-		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+					[
+						'key' => self::FIELD[ 'expire' ],
+			
+						'value' => $now->format( 'Y-m-d H:i:s' ),
+			
+						'compare' => '<',
+			
+						'type' => 'DATETIME',
+					]
+				],
+			];
+		}
+		else
+		{
+			$meta_query_date = [
+				[
+					'relation' => 'OR',
+	
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'compare_key' => 'NOT EXISTS',
+					],
+
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'compare' => '=',
+	
+						'value' => '',
+					],
+					
+					[
+						'key' => self::FIELD[ 'expire' ],
+			
+						'value' => $now->format( 'Y-m-d H:i:s' ),
+			
+						'compare' => '>=',
+			
+						'type' => 'DATETIME',
+					]
+				]
+			];
+		}
+
+		return $meta_query_date;
+
+		// $compare = $expired ? '<' : '>=';
+
+		// $meta_query_date = [
+		// 	'key' => self::FIELD[ 'expire' ],
+
+		// 	'value' => $now->format( 'Y-m-d H:i:s' ),
+
+		// 	'compare' => $compare,
+
+		// 	'type' => 'DATETIME',
+		// ];
+
+		// if ( $expired )
 		// {
-		// 	$compare = '<';
+		// 	return [ $meta_query_date ];
 		// }
 
 		// return [
 		// 	[
-		// 		'key' => self::FIELD[ 'expire' ],
+		// 		'relation' => 'OR',
 
-		// 		'value' => $now->format('Y-m-d H:i:s'),
+		// 		$meta_query_date,
 
-		// 		'compare' => $compare,
+		// 		[
+		// 			'key' => self::FIELD[ 'expire' ],
+					
+		// 			'compare' => '=',
 
-		// 		'type' => 'DATETIME',
+		// 			'value' => '',
+		// 		],
 		// 	],
 		// ];
-
-		$meta_query_date = [
-			'key' => self::FIELD[ 'expire' ],
-
-			'value' => $now->format('Y-m-d H:i:s'),
-
-			'compare' => $compare,
-
-			'type' => 'DATETIME',
-		];
-
-		if ( $expired )
-		{
-			return [ $meta_query_date ];
-		}
-
-		return [
-			[
-				'relation' => 'OR',
-
-				$meta_query_date,
-
-				[
-					'key' => self::FIELD[ 'expire' ],
-					
-					'compare' => '=',
-
-					'value' => '',
-				],
-			],
-		];
 	}
 
 	public static function get_args_meta( $atts, $mode )
@@ -417,6 +479,8 @@ class BonusPreview
             
             'post_type' => $atts[ 'post_type' ],
 
+			'post_status' => 'publish',
+
 			'suppress_filters' => 0,
 
 			'tax_query' => $tax_query,
@@ -490,9 +554,28 @@ class BonusPreview
 
 	public static function get_logo( $id, $size = self::SIZE[ 'logo' ] )
 	{
-		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'get_logo',
 
-		if ( $logo )
+		// 	'get_logo_bonus_preview' => BrandMain::get_logo_bonus_preview( $id ),
+
+		// 	'get_field' => get_field( self::FIELD[ 'logo-preview' ], $id ),
+		// ] );
+
+		if ( $logo_brand = BrandMain::get_logo_bonus_preview( $id ) )
+        {
+            return [
+				'id' => 'post-' . $id,
+
+				'src' => $logo_brand,
+
+				'width' => 30,
+
+				'height' => 30,
+			];
+        }
+
+		if ( $logo = get_field( self::FIELD[ 'logo-preview' ], $id ) )
 		{
 			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
 
@@ -523,33 +606,46 @@ class BonusPreview
 
 	public static function group_posts( $atts )
 	{
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'group_posts',
+
+		// 	'atts' => $atts,
+		// ] );
+
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
-		
-		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
-		if ( $limit )
+		$active_partners = [];
+
+		$active_no_partners = [];
+
+		if ( !in_array( $atts[ 'duration' ], [ self::DURATION[ 'expired' ] ] ) )
 		{
-			$amount = count( $active_partners );
-
-			$rest = $atts[ 'limit' ] - $amount;
-
-			if ( $rest >= 0 )
+			$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+	
+			if ( $limit )
 			{
-				$atts[ 'limit' ] = $rest;
+				$amount = count( $active_partners );
+	
+				$rest = $atts[ 'limit' ] - $amount;
+	
+				if ( $rest >= 0 )
+				{
+					$atts[ 'limit' ] = $rest;
+				}
 			}
-		}
-
-		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
-
-		if ( $limit )
-		{
-			$amount = count( $active_no_partners );
-
-			$rest = $atts[ 'limit' ] - $amount;
-
-			if ( $rest >= 0 )
+	
+			$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+	
+			if ( $limit )
 			{
-				$atts[ 'limit' ] = $rest;
+				$amount = count( $active_no_partners );
+	
+				$rest = $atts[ 'limit' ] - $amount;
+	
+				if ( $rest >= 0 )
+				{
+					$atts[ 'limit' ] = $rest;
+				}
 			}
 		}
 
@@ -563,7 +659,7 @@ class BonusPreview
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'BonusPreview::group_posts',
+		// 	'BonusPreview' => 'group_posts',
 
 		// 	'active_partners' => count( $active_partners ),
 
@@ -672,21 +768,6 @@ class BonusPreview
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'main' ], $args );
 	}
-    // public static function render( $args )
-    // {
-	// 	if ( !ReviewMain::check() )
-    //     {
-    //         return '';
-    //     }
-
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'main' ], false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 }
 
 ?>

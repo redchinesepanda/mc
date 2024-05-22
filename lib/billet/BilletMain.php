@@ -61,6 +61,8 @@ class BilletMain
 
 		'no-license' => 'No license in UK',
 
+		'play-responsibly' => 'Play responsibly',
+
 		'read-more-about' => 'Read more about',
 
 		'read-more' => 'Read more',

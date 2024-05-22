@@ -116,7 +116,28 @@ class BilletTitle extends LegalDebug
         'new' => LegalMain::LEGAL_PATH . '/template-parts/billet/center/part-billet-title-new.php',
     ];
 
-    // public static function render( $billet )
+    const WARNING = [
+        'es',
+
+        'se',
+
+        'dk',
+    ];
+
+    public static function check_warning()
+    {
+        return in_array( WPMLMain::current_language(), self::WARNING );
+    }
+
+    public static function get_warning()
+    {
+        if ( self::check_warning() )
+        {
+            return ToolLoco::translate( BilletMain::TEXT[ 'play-responsibly' ] );
+        }
+
+        return '';
+    }
     
     public static function render( $title )
     {
@@ -135,6 +156,8 @@ class BilletTitle extends LegalDebug
             'achievement' => $achievement,
 
             'mobile' => $mobile,
+
+            'warning' => self::get_warning(),
         ] );
     }
 

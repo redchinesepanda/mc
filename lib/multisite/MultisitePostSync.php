@@ -32,6 +32,12 @@ class MultisitePostSync
 
 			'key' => 'field_65f3e6787cb93',
 		],
+
+		'breadcrumbs-ancestor' => [
+			'name' => 'breadcrumbs-ancestor',
+
+			'key' => 'field_643650f5c4fdd',
+		],
 	];
 
 	const FIELDS_GROUPS = [
@@ -73,6 +79,20 @@ class MultisitePostSync
 					'name' => 'tab-compilations',
 		
 					'key' => 'field_6426c17a847cf',
+				],
+			],
+		],
+
+		'breadcrumbs-items' => [
+			'name' => 'breadcrumbs-items',
+
+			'key' => 'field_644a5c779e2a7',
+
+			'fields' => [
+				'post-id' => [
+					'name' => 'item-id',
+		
+					'key' => 'field_644a5c969e2a8',
 				],
 			],
 		],

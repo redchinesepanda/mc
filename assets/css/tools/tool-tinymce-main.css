@@ -137,7 +137,8 @@
 /* Compilation About */
 
 #tinymce .section-content-title,
-#tinymce .section-content-text
+#tinymce .section-content-text,
+#tinymce .section-content-button
 {
 	background-color: rgb(246, 246, 246);
 	padding-right: 32px;
@@ -145,7 +146,8 @@
 }
 
 #tinymce .section-content-title,
-#tinymce .section-content-text
+#tinymce .section-content-text,
+#tinymce .section-content-button
 {
 	margin-top: 0px;
     margin-bottom: 0px;
@@ -157,7 +159,8 @@
 }
 
 #tinymce .section-content-title,
-#tinymce .section-content-text
+#tinymce .section-content-text,
+#tinymce .section-content-button
 {
     padding-bottom: 20px;
 }

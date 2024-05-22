@@ -6,6 +6,8 @@ require_once ( 'CompilationTabsMini.php' );
 
 require_once ( 'CompilationTabsLink.php' );
 
+require_once ( 'LegalTabsInfo.php' );
+
 class CompilationTabsMain
 {
 	public static function register_functions()
@@ -20,6 +22,8 @@ class CompilationTabsMain
         CompilationTabs::register();
 
         CompilationTabsMini::register();
+
+        LegalTabsInfo::register();
     }
 } 
 

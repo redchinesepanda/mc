@@ -2,6 +2,16 @@
 
 class CompilationAbout
 {
+	const CLASSES = [
+		'title' => 'section-content-title',
+
+		'content' => 'section-content-text',
+
+		'button' => 'section-content-button',
+
+		'swiper-slide' => 'swiper-slide',
+	];
+
 	const CSS = [
         'compilation-about' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/compilation/compilation-about.css',
@@ -23,11 +33,30 @@ class CompilationAbout
 		}
     }
 
+/* 	const JS_NEW = [
+        'compilation-about' => [
+			'path' => LegalMain::LEGAL_URL . '/assets/js/compilation/compilation-about.js',
+
+			'ver' => '1.0.0',
+		],
+
+    ]; */ 
+
+/*     public static function register_script()
+    {
+		if ( TemplateMain::check_new() )
+		{
+			ToolEnqueue::register_script( self::JS_NEW );
+		}
+    } */
+
 	public static function register()
     {
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+		// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
 	public static function register_functions()
@@ -37,11 +66,11 @@ class CompilationAbout
         add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_compilation_about' ], 10, 1 );
 	}
 
-	public static function get_nodes( $dom, $query )
+	public static function get_nodes( $dom, $query, $node = null )
 	{
 		$xpath = new DOMXPath( $dom );
 
-		$nodes = $xpath->query( $query );
+		$nodes = $xpath->query( $query, $node );
 
 		return $nodes;
 	}
@@ -68,6 +97,15 @@ class CompilationAbout
 		);
 	}
 
+	public static function get_nodes_buttons( $dom )
+	{
+		return self::get_nodes(
+			$dom,
+			
+			'//a[contains(@class, \'' . self::CLASSES[ 'button' ] . '\')]'
+		);
+	}
+
 	public static function get_title( $dom )
 	{
 		$nodes = self::get_nodes_title( $dom );
@@ -77,7 +115,37 @@ class CompilationAbout
 			return '';
 		}
 
-		return $nodes->item( 0 )->textContent;
+		// return $nodes->item( 0 )->textContent;
+
+		$node = $nodes->item( 0 );
+
+		return self::parse_node( $dom, $node );
+	}
+	
+	public static function set_swiper_item( $nodes )
+	{
+		foreach ( $nodes as $node )
+		{
+			$class = explode( ' ',  $node->getAttribute( 'class' ) );
+
+			$class[] = self::CLASSES[ 'swiper-slide' ];
+
+			$node->setAttribute( 'class', implode( ' ', $class ) );
+		}
+	}
+
+	public static function get_buttons( $dom )
+	{
+		$nodes = self::get_nodes_buttons( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return []; 
+		}
+
+		self::set_swiper_item( $nodes );
+
+		return self::parse_content( $dom, $nodes );
 	}
 
 	public static function parse_node( $dom, $node )
@@ -93,43 +161,13 @@ class CompilationAbout
 	{
 		$items = [];
 
-		// LegalDebug::debug( [
-		// 	'CompilationAbout' => 'parse_content',
-
-		// 	'nodes' => count( $nodes ),
-		// ] );
-
-		// $has_cut = false;
-
 		foreach ( $nodes as $node )
 		{
-			// if ( str_contains( $node->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
-			// {
-			// 	$has_cut = true;
-			// }
-
-			// LegalDebug::debug( [
-			// 	'CompilationAbout' => 'parse_content',
-
-			// 	'class' => $node->getAttribute( 'class' ),
-
-			// 	'textContent' => $node->textContent,
-
-			// 	'has_cut' => $has_cut,
-			// ] );
-
 			$items[] = self::parse_node( $dom, $node );
 		}
 
-		// if ( $has_cut )
-		// {
-		// 	$control = ReviewCut::get_control( $dom );
-
-		// 	$items[] = self::parse_node( $dom, $control );
-		// }
-
 		return $items;
-	} 
+	}
 	
 	public static function get_content( $dom )
 	{
@@ -155,6 +193,50 @@ class CompilationAbout
         return !empty( array_filter( array_column( $items, 'class' ), [ $handler, 'has_read_more' ] ) );
     }
 
+	const TAXONOMY = [
+		'page-type' => 'page_type',
+	];
+
+	const PAGE_TYPE = [
+		'casino' => 'casino',
+	];
+
+	public static function check_front_page()
+	{
+		return is_front_page();
+	}
+
+	public static function get_image()
+	{
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'get_image',
+
+		// 	'is_front_page' => is_front_page(),
+
+		// 	'is_home' => is_home(),
+		// ] );
+
+		if ( self::check_front_page() )
+		{
+			return null;
+		}
+
+		$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-bookmaker.svg';
+
+		if ( has_term( self::PAGE_TYPE[ 'casino' ], self::TAXONOMY[ 'page-type' ] ) )
+		{
+			$src = LegalMain::LEGAL_URL . '/assets/img/compilation/compilation-casino.svg';
+	  	}
+
+		return [
+			'src' => $src,
+
+			'width' => 400,
+
+			'height' => 320,
+		];
+	}
+
 	public static function get()
 	{
 		// LegalDebug::debug( [
@@ -175,6 +257,8 @@ class CompilationAbout
 
 			'content' => self::get_content( $dom ),
 
+			'buttons' => self::get_buttons( $dom ),
+
 			'read-more' => self::check_read_more( self::get_content( $dom ) ),
 
 			'cut-control' => [
@@ -185,13 +269,7 @@ class CompilationAbout
 				'active' => ToolLoco::translate( BilletMain::TEXT[ 'hide' ] ),
 			],
 
-			'image' => [
-				'src' => LegalMain::LEGAL_URL . '/assets/img/compilation/about-default.webp',
-
-				'width' => 400,
-
-				'height' => 320,
-			],
+			'image' => self::get_image(),
 		];
 	}
 
@@ -205,6 +283,16 @@ class CompilationAbout
 		}
 
 		$nodes = self::get_nodes_content( $dom );
+
+		if ( $nodes->length != 0 )
+		{
+			foreach ( $nodes as $node )
+			{
+				$dom->removeChild( $node );
+			}
+		}
+
+		$nodes = self::get_nodes_buttons( $dom );
 
 		if ( $nodes->length != 0 )
 		{
@@ -243,12 +331,6 @@ class CompilationAbout
 		return '';
     }
 
-	const CLASSES = [
-		'title' => 'section-content-title',
-
-		'content' => 'section-content-text',
-	];
-
 	public static function style_formats_compilation_about( $settings )
 	{
 		return ToolTinyMCE::style_formats_check( $settings, [
@@ -270,6 +352,14 @@ class CompilationAbout
 						'selector' => 'p',
 
 						'classes' => self::CLASSES[ 'content' ],
+					],
+
+					[
+						'title' => 'Compilation About Button',
+						
+						'selector' => 'a',
+
+						'classes' => self::CLASSES[ 'button' ],
 					],
 				],
 			],
