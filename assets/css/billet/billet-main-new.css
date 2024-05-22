@@ -65,7 +65,7 @@
 
     .billet .title-data {
         width: calc( 100% - 48px - 9.18px );
-    }
+    } 
 
     .billet .bonus-mobile-item::before {
         width: 24px;
@@ -156,29 +156,14 @@
         height: 28px;
     }
 
-    /* .billet-list-part.legal-column.legal-default:not( .billet-list-part.legal-column:not( .legal-default ) + .billet-list-part.legal-default.legal-column ) {
-        width: calc( 50% - 28px );
-    } */
-
-    /* .billet-list-part.legal-column:not( .legal-default ) */
-
     .billet .billet-list-part:not( .legal-default )
     {
-        /* width: 72%; */
-        /* width: calc( 100%/3 * 2 - 14px ); */
-
         flex-basis: calc( 100% / 3 * 2 - 14px );
         flex-grow: 1;
     }
 
-    /* .billet-list-part.legal-column:not( .legal-default ) + .billet-list-part.legal-default.legal-column */
-
     .billet-list-part:not( .legal-default ) + .billet-list-part.legal-default.legal-column
-    {
-        /* width: calc( 28% - 28px); */
-        /* width: calc( 28% - 8px); */
-        /* width: calc( 100%/3 - 14px ); */
-        
+    { 
         flex-basis: calc( 100% / 3 - 14px );
     }
 
@@ -477,16 +462,6 @@ body {
     content: '\F113';
 }
 
-/* .billet .profit-label {
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: auto;
-} */
-
-/* .billet .profit-label {
-    background-image: url( '../../img/billet/profit/billet-profit.svg' );
-} */
-
 .billet .billet-license {
     background-image: url( '../../img/billet/billet-license-no.svg' );
     background-position: top center;
@@ -563,14 +538,6 @@ body {
     height: fit-content;
 }
 
-/* .billet-list-part.legal-row .billet-list-part-item {
-    width: auto;
-} */
-
-.billet-list-part.legal-row {
-    /* width: 100%; */
-}
-
 /* Position */
 
 .billet-item {
@@ -603,10 +570,6 @@ body {
     margin: 0px;
 }
 
-/* .billet-title .billet-title-achivement.legal-background {
-    padding: 3px 10px;
-} */
-
 .billet-title .billet-title-achivement {
     padding-top: 5px;
     padding-right: 14px;
@@ -615,10 +578,6 @@ body {
     position: absolute;
     top: calc(0px - (30px / 2));
 }
-
-/* .billet-list-part:not( .legal-check ):not( .legal-plus ):not( .legal-minus ):not( .legal-default ) .billet-list-part-item {
-    padding-left: 30px; 
-} */
 
 .billet-left .billet-order {
     position: absolute;
@@ -642,10 +601,6 @@ body {
 .billet-right .billet-footer-control.legal-active::after {
     transform: rotate(180deg);
 }
-
-/* .billet .profit-label {
-    padding-left: 33px;
-} */
 
 .billet .billet-license {
     padding-top: 45px;
@@ -804,7 +759,6 @@ body {
 
 .billet-list-part.legal-default .billet-list-part-item {
     font-weight: 400;
-    /* text-transform: uppercase; */
 }
 
 .billet-right .bonus-title {
@@ -906,9 +860,9 @@ body {
     font-weight: 400;
 }
 
-.billet-item .billet-footer::after {
-    /* content: attr( data-footer-text ); */
-}
+/* .billet-item .billet-footer::after {
+    content: attr( data-footer-text );
+} */
 
 .billet .billet-license .billet-license-label {
     color: rgb(59, 59, 59);

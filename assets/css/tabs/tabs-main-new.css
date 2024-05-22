@@ -17,10 +17,6 @@
         margin-top: 28px;
     }
 
-   /*  .home .legal-tabs .legal-tab-menu {
-        padding-top: 12px;
-    } */
-
     /* Tabs Typography */
 
     .home .legal-tabs .legal-tabs-title {
@@ -68,12 +64,6 @@
         margin-left: auto;
     }
 
-/*     .home .legal-tabs .legal-tab-menu {
-        position: absolute;
-        top: calc( 0px - 24px - 28px - ( (46px - 28px) / 2 ) );
-        right: 0px;
-    } */
-
     /* Tabs Typography */
 
     .home .legal-tabs .legal-tabs-title {
@@ -112,7 +102,6 @@
 }
 
 .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
-    /* min-width: 114px; */
     height: 44px;
 }
 
