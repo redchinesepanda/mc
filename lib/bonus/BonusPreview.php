@@ -241,7 +241,9 @@ class BonusPreview
 
 			'duration' => $duration,
 
-			'query_sql' => $query_sql,
+			'args' => $args,
+
+			// 'query_sql' => $query_sql,
 		] );
 
 		return $posts;
