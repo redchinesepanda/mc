@@ -417,6 +417,8 @@ class BonusPreview
             
             'post_type' => $atts[ 'post_type' ],
 
+			'post_status' => 'publish',
+
 			'suppress_filters' => 0,
 
 			'tax_query' => $tax_query,
@@ -490,7 +492,17 @@ class BonusPreview
 
 	public static function get_logo( $id, $size = self::SIZE[ 'logo' ] )
 	{
-		$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
+		$logo = 0;
+
+		if ( $logo_brand = get_logo_bonus_preview( $id ) )
+        {
+            $logo = $logo_brand;
+        }
+
+		if ( empty( $logo ) )
+		{
+			$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
+		}
 
 		if ( $logo )
 		{
