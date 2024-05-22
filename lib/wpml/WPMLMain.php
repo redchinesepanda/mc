@@ -391,12 +391,14 @@ class WPMLMain
 
         $language_code = $wpdb->get_var( $language_code_query );
 
-        if ( $language_code != 'en' )
-        {
-            return $language_code;
-        }
+        // if ( $language_code != 'en' )
+        // {
+        //     return $language_code;
+        // }
 
-        return '';
+        // return '';
+
+        return $language_code;
         
         // return $wpdb->get_var( $language_code_query );
     }
