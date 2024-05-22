@@ -221,7 +221,7 @@ class BonusPreview
 		$args = self::get_args( $atts, $mode, $duration );
 
 		// LegalDebug::debug( [
-		// 	'function' => 'BonusPreview::get_posts_date',
+		// 	'BonusPreview' => 'get_posts_date',
 
 		// 	'args' => $args,
 		// ] );
@@ -231,6 +231,16 @@ class BonusPreview
 		// $posts = $query->posts;
 
 		$posts = get_posts( $args );
+
+		$query = new WP_Query( $args );
+		
+		$query_sql = $query->request;
+
+		LegalDebug::debug( [
+			'BonusPreview' => 'get_posts_date',
+
+			'query_sql' => $query_sql,
+		] );
 
 		return $posts;
 	}
@@ -279,7 +289,7 @@ class BonusPreview
 		$meta_query_date = [
 			'key' => self::FIELD[ 'expire' ],
 
-			'value' => $now->format('Y-m-d H:i:s'),
+			'value' => $now->format( 'Y-m-d H:i:s' ),
 
 			'compare' => $compare,
 
