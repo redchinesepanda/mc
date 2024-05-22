@@ -632,32 +632,39 @@ class BonusPreview
 		] );
 
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
-		
-		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
 
-		if ( $limit )
+		$active_partners = [];
+
+		$active_no_partners = [];
+
+		if ( !in_array( $atts[ 'duration' ], [ self::DURATION[ 'expired' ] ] ) )
 		{
-			$amount = count( $active_partners );
-
-			$rest = $atts[ 'limit' ] - $amount;
-
-			if ( $rest >= 0 )
+			$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
+	
+			if ( $limit )
 			{
-				$atts[ 'limit' ] = $rest;
+				$amount = count( $active_partners );
+	
+				$rest = $atts[ 'limit' ] - $amount;
+	
+				if ( $rest >= 0 )
+				{
+					$atts[ 'limit' ] = $rest;
+				}
 			}
-		}
-
-		$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
-
-		if ( $limit )
-		{
-			$amount = count( $active_no_partners );
-
-			$rest = $atts[ 'limit' ] - $amount;
-
-			if ( $rest >= 0 )
+	
+			$active_no_partners = self::get_posts_date( $atts, self::MODE[ 'no-partner' ], self::DURATION[ 'actual' ] );
+	
+			if ( $limit )
 			{
-				$atts[ 'limit' ] = $rest;
+				$amount = count( $active_no_partners );
+	
+				$rest = $atts[ 'limit' ] - $amount;
+	
+				if ( $rest >= 0 )
+				{
+					$atts[ 'limit' ] = $rest;
+				}
 			}
 		}
 
