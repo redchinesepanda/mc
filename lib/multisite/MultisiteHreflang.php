@@ -202,6 +202,8 @@ class MultisiteHreflang
 				'href' => $item[ 'post_uri' ],
 			];
 		}
+
+		return $hreflangs;
 	}
 
 	public static function prepare_hreflang()
@@ -210,8 +212,10 @@ class MultisiteHreflang
 
 		if ( $post = get_post() )
 		{
+			$items = self::get_group_items_all( $post->ID );
+
 			$args = [
-				'items' => self::get_group_items_all( $post->ID ),
+				'items' => self::parse_hreflang( $items ),
 			];
 		}
 
