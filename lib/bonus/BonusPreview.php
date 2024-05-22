@@ -308,7 +308,7 @@ class BonusPreview
 			
 						'value' => $now->format( 'Y-m-d H:i:s' ),
 			
-						'compare' => '>=',
+						'compare' => '<',
 			
 						'type' => 'DATETIME',
 					]
