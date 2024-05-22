@@ -494,7 +494,7 @@ class BonusPreview
 	{
 		$logo = 0;
 
-		if ( $logo_brand = get_logo_bonus_preview( $id ) )
+		if ( $logo_brand = BrandMain::get_logo_bonus_preview( $id ) )
         {
             $logo = $logo_brand;
         }
