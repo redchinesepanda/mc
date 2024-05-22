@@ -396,10 +396,6 @@
     background-color: var( --Base-base-01 );
 }
 
-.legal-tabs-info .legal-tab-title:not(.legal-active) {
-	background-color: var( --Base-base-01 );
-}
-
 .legal-tabs-info .legal-tab-title.legal-active {
 	background-color: var( --Base-base-09 );
 }
