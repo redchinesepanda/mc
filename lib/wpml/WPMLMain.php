@@ -393,11 +393,11 @@ class WPMLMain
 
         $language_code = $wpdb->get_var( $language_code_query );
 
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_element_language_code',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'multisite_element_language_code',
 
-            'language_code' => $language_code,
-        ] );
+        //     'language_code' => $language_code,
+        // ] );
 
         // if ( $language_code != 'en' )
         // {
