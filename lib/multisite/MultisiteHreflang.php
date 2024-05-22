@@ -148,7 +148,7 @@ class MultisiteHreflang
 
 		// $blogs = MultisiteBlog::get_other_sites( $current_domain );
 		
-		$blogs = MultisiteBlog::get_sites( $current_domain );
+		$blogs = MultisiteBlog::get_all_sites( $current_domain );
 		
 		// LegalDebug::debug( [
 		// 	'MultisiteHreflang' => 'get_group_items_all',

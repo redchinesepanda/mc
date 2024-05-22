@@ -73,6 +73,11 @@ class MultisiteBlog
 		return [];
 	}
 
+	public static function get_all_sites( $domain = '' )
+	{
+		return self::get_sites( self::MODE[ 'all' ], $domain );
+	}
+
 	public static function get_other_sites( $domain = '' )
 	{
 		return self::get_sites( self::MODE[ 'other' ], $domain );
