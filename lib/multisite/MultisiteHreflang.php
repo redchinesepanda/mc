@@ -185,6 +185,29 @@ class MultisiteHreflang
 
 		return $items;
 	}
+
+	const TEMPLATE = [
+        'multiste-hreflang' => LegalMain::LEGAL_PATH . '/template-parts/multisite/part-multisite-hreflang.php',
+    ];
+
+	public static function prepare_hreflang()
+	{
+		$args = [];
+
+		if ( $post = get_post() )
+		{
+			$args = [
+				'items' => self::get_group_items_all( $post->ID ),
+			];
+		}
+
+		return self::render_hreflang( $args );
+    }
+
+	public static function render_hreflang( $args )
+    {
+        return self::render_main( self::TEMPLATE[ 'multiste-hreflang' ], $args );
+    }
 }
 
 ?>

@@ -30,6 +30,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Template start -->
 		<?php echo TemplateMain::wp_head(); ?>
 		<!-- Template end -->
+		<!-- Multisite Hreflang end -->
+		<?php echo MultisiteHreflang::prepare_hreflang(); ?>
+		<!-- Multisite Hreflang start -->
 		<!-- Legal Header -->
 	</head>
 	<body <?php body_class( '' ); ?>>
