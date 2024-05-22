@@ -267,6 +267,57 @@ class BonusPreview
 
 		$expired = in_array( $duration, [ self::DURATION[ 'expired' ] ] );
 
+		if ( $expired )
+		{
+			$meta_query_date = [
+				[
+					'relation' => 'AND',
+	
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'operator' => 'EXISTS',
+					],
+
+					[
+						'key' => self::FIELD[ 'expire' ],
+			
+						'value' => $now->format( 'Y-m-d H:i:s' ),
+			
+						'compare' => '<',
+			
+						'type' => 'DATETIME',
+					]
+				],
+			]
+		}
+		else
+		{
+			$meta_query_date = [
+				[
+					'relation' => 'OR',
+	
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'operator' => 'NOT EXISTS',
+					],
+					
+					[
+						'key' => self::FIELD[ 'expire' ],
+			
+						'value' => $now->format( 'Y-m-d H:i:s' ),
+			
+						'compare' => '>=',
+			
+						'type' => 'DATETIME',
+					]
+				]
+			];
+		}
+
+		return $meta_query_date;
+
 		$compare = $expired ? '<' : '>=';
 
 		// $compare = '>=';
