@@ -336,57 +336,38 @@ class BonusPreview
 
 		return $meta_query_date;
 
-		$compare = $expired ? '<' : '>=';
+		// $compare = $expired ? '<' : '>=';
 
-		// $compare = '>=';
+		// $meta_query_date = [
+		// 	'key' => self::FIELD[ 'expire' ],
 
-		// if ( in_array( $duration, [ self::DURATION[ 'expired' ] ] ) )
+		// 	'value' => $now->format( 'Y-m-d H:i:s' ),
+
+		// 	'compare' => $compare,
+
+		// 	'type' => 'DATETIME',
+		// ];
+
+		// if ( $expired )
 		// {
-		// 	$compare = '<';
+		// 	return [ $meta_query_date ];
 		// }
 
 		// return [
 		// 	[
-		// 		'key' => self::FIELD[ 'expire' ],
+		// 		'relation' => 'OR',
 
-		// 		'value' => $now->format('Y-m-d H:i:s'),
+		// 		$meta_query_date,
 
-		// 		'compare' => $compare,
+		// 		[
+		// 			'key' => self::FIELD[ 'expire' ],
+					
+		// 			'compare' => '=',
 
-		// 		'type' => 'DATETIME',
+		// 			'value' => '',
+		// 		],
 		// 	],
 		// ];
-
-		$meta_query_date = [
-			'key' => self::FIELD[ 'expire' ],
-
-			'value' => $now->format( 'Y-m-d H:i:s' ),
-
-			'compare' => $compare,
-
-			'type' => 'DATETIME',
-		];
-
-		if ( $expired )
-		{
-			return [ $meta_query_date ];
-		}
-
-		return [
-			[
-				'relation' => 'OR',
-
-				$meta_query_date,
-
-				[
-					'key' => self::FIELD[ 'expire' ],
-					
-					'compare' => '=',
-
-					'value' => '',
-				],
-			],
-		];
 	}
 
 	public static function get_args_meta( $atts, $mode )
