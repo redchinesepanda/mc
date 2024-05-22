@@ -401,40 +401,43 @@ class WPMLMain
         // return $wpdb->get_var( $language_code_query );
     }
 
-    // public static function multisite_element_locale( $data, $element )
-    // {
-    //     // LegalDebug::debug( [
-    //     //     'WPMLMain' => 'multisite_element_language_code',
+    public static function multisite_locale_query( $wpdb, $code )
+    {
+        return $wpdb->prepare(
+            "SELECT locale 
+            FROM wp_icl_locale_map
+            WHERE code = %s",
 
-    //     //     'data' => $data,
+            [
+                $code,
+            ]
+        );
+    }
 
-    //     //     'element' => $element,
-    //     // ] );
+    public static function multisite_locale( $code )
+    {
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'multisite_element_language_code',
 
-    //     global $wpdb;
+        //     'data' => $data,
 
-    //     $element_id = $element[ 'element_id' ];
+        //     'element' => $element,
+        // ] );
 
-    //     $element_type = sprintf(
-    //         self::PATTERNS[ 'wpml-post' ],
-            
-    //         $element[ 'element_type' ]
-    //     );
+        global $wpdb;
 
-    //     $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
+        $locale_query = self::multisite_locale_query( $wpdb, $code );
 
-    //     // LegalDebug::debug( [
-    //     //     'WPMLMain' => 'multisite_element_language_code',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'multisite_element_language_code',
 
-    //     //     'language_code_query' => $language_code_query,
-    //     // ] );
-        
-    //     // return $wpdb->get_results( $language_code_query );
+        //     'language_code_query' => $language_code_query,
+        // ] );
 
-    //     $language_code = $wpdb->get_var( $language_code_query );
+        $locale = $wpdb->get_var( $locale_query );
 
-    //     return $language_code;
-    // }
+        return $locale;
+    }
 
     public static function get_language_details( $id = null )
     {

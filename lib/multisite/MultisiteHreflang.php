@@ -77,11 +77,13 @@ class MultisiteHreflang
 
 			$post_uri = self::get_post_uri( $post );
 
-			$locale = WPMLMain::get_locale();
+			// $locale = WPMLMain::get_locale();
 
-			$current_language = WPMLMain::current_language();
+			// $current_language = WPMLMain::current_language();
 
 			$language_code = WPMLMain::get_language_code( $post->ID );
+
+			$locale = WPMLMain::multisite_locale( $language_code );
 
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
@@ -90,11 +92,13 @@ class MultisiteHreflang
 
 				'post_uri' => $post_uri,
 
-				'locale' => $locale,
+				// 'locale' => $locale,
 
-				'current_language' => $current_language,
+				// 'current_language' => $current_language,
 
 				'language_code' => $language_code,
+
+				'locale' => $locale,
             ] );
 
 			$items[] = [
