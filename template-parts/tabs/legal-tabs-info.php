@@ -17,7 +17,7 @@
                         <div class="legal-tab-content empty-tab-content"></div>
                         <div class="legal-tab-content empty-tab-content"></div>
                         <?php foreach ( $args[ 'items' ] as $id => $item ) : ?>
-                            <div class="legal-tab-content legal-content-<?php echo $id; ?> legal-active"><?php echo $item[ 'content' ]; ?></div>
+                            <div class="legal-tab-content legal-content-<?php echo $id; ?> <?php echo $item[ 'class' ]; ?>"><?php echo $item[ 'content' ]; ?></div>
                         <?php endforeach; ?>
                     </div>
                 </div>
