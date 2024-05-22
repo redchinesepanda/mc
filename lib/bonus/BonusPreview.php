@@ -281,6 +281,14 @@ class BonusPreview
 
 					[
 						'key' => self::FIELD[ 'expire' ],
+						
+						'compare' => '!=',
+	
+						'value' => '',
+					],
+
+					[
+						'key' => self::FIELD[ 'expire' ],
 			
 						'value' => $now->format( 'Y-m-d H:i:s' ),
 			
