@@ -143,7 +143,7 @@ class MultisiteHreflang
 
 				'blog_id' => $blog->blog_id,
 
-				'blog_locale' => $blog_locale,
+				// 'blog_locale' => $blog_locale,
 
 				// 'url' => get_bloginfo( 'url' ),
 			] );
