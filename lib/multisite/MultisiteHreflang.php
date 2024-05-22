@@ -138,11 +138,11 @@ class MultisiteHreflang
 	{
 		$current_blog_id = MultisiteBlog::get_current_blog_id();
 
-		// $current_blog = MultisiteBlog::get_blog_details( $current_blog_id );
+		$current_blog = MultisiteBlog::get_blog_details( $current_blog_id );
 
-		// $current_domain = $current_blog->domain;
+		$current_domain = $current_blog->domain;
 
-		$current_domain = '';
+		// $current_domain = '';
 
 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post_id );
 
@@ -176,9 +176,9 @@ class MultisiteHreflang
 			// 	// 'url' => get_bloginfo( 'url' ),
 			// ] );
 
-			$items[ $blog->blog_id ] = self::get_group_items( $translation_groups );
+			// $items[ $blog->blog_id ] = self::get_group_items( $translation_groups );
 
-			// $items = array_merge( $items, self::get_group_items( $translation_groups ) );
+			$items = array_merge( $items, self::get_group_items( $translation_groups ) );
 		}
 
 		MultisiteBlog::set_blog( $current_blog_id );
