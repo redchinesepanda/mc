@@ -282,16 +282,23 @@ class WPMLMain
 
     public static function current_language()
     {
+        if ( $wpml_current_language = apply_filters( 'wpml_current_language', NULL ) )
+        {
+            return $wpml_current_language;
+        }
+
         $current_blog_id = MultisiteBlog::get_current_blog_id();
 
         $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
-        if ( !empty( $blog_language ) )
-        {
-            return $blog_language;
-        }
+        // if ( !empty( $blog_language ) )
+        // {
+        //     return $blog_language;
+        // }
 
-        return apply_filters( 'wpml_current_language', NULL );
+        return $blog_language;
+
+        // return apply_filters( 'wpml_current_language', NULL );
     }
 
     public static function locale_permalink( $url, $locale )
@@ -393,6 +400,41 @@ class WPMLMain
         
         // return $wpdb->get_var( $language_code_query );
     }
+
+    // public static function multisite_element_locale( $data, $element )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'WPMLMain' => 'multisite_element_language_code',
+
+    //     //     'data' => $data,
+
+    //     //     'element' => $element,
+    //     // ] );
+
+    //     global $wpdb;
+
+    //     $element_id = $element[ 'element_id' ];
+
+    //     $element_type = sprintf(
+    //         self::PATTERNS[ 'wpml-post' ],
+            
+    //         $element[ 'element_type' ]
+    //     );
+
+    //     $language_code_query = self::multisite_element_language_code_query( $wpdb, $element_id, $element_type );
+
+    //     // LegalDebug::debug( [
+    //     //     'WPMLMain' => 'multisite_element_language_code',
+
+    //     //     'language_code_query' => $language_code_query,
+    //     // ] );
+        
+    //     // return $wpdb->get_results( $language_code_query );
+
+    //     $language_code = $wpdb->get_var( $language_code_query );
+
+    //     return $language_code;
+    // }
 
     public static function get_language_details( $id = null )
     {
