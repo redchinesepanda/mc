@@ -562,17 +562,17 @@ class BonusPreview
 
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
-		// LegalDebug::debug( [
-		// 	'function' => 'BonusPreview::group_posts',
+		LegalDebug::debug( [
+			'function' => 'BonusPreview::group_posts',
 
-		// 	'active_partners' => count( $active_partners ),
+			'active_partners' => count( $active_partners ),
 
-		// 	'active_no_partners' => count( $active_no_partners ),
+			'active_no_partners' => count( $active_no_partners ),
 
-		// 	'expired_all' => count( $expired_all ),
+			'expired_all' => count( $expired_all ),
 
-		// 	'posts' => count( $posts ),
-		// ] );
+			'posts' => count( $posts ),
+		] );
 
 		return $posts;
 	}
@@ -672,21 +672,6 @@ class BonusPreview
 
 		return LegalComponents::render_main( self::TEMPLATE[ 'main' ], $args );
 	}
-    // public static function render( $args )
-    // {
-	// 	if ( !ReviewMain::check() )
-    //     {
-    //         return '';
-    //     }
-
-    //     ob_start();
-
-    //     load_template( self::TEMPLATE[ 'main' ], false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 }
 
 ?>
