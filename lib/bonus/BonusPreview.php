@@ -236,15 +236,15 @@ class BonusPreview
 		
 		$query_sql = $query->request;
 
-		LegalDebug::debug( [
-			'BonusPreview' => 'get_posts_date',
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'get_posts_date',
 
-			'duration' => $duration,
+		// 	'duration' => $duration,
 
-			// 'args' => $args,
+		// 	// 'args' => $args,
 
-			'query_sql' => $query_sql,
-		] );
+		// 	'query_sql' => $query_sql,
+		// ] );
 
 		return $posts;
 	}
@@ -606,11 +606,11 @@ class BonusPreview
 
 	public static function group_posts( $atts )
 	{
-		LegalDebug::debug( [
-			'BonusPreview' => 'group_posts',
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'group_posts',
 
-			'atts' => $atts,
-		] );
+		// 	'atts' => $atts,
+		// ] );
 
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 
@@ -658,17 +658,17 @@ class BonusPreview
 
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
-		LegalDebug::debug( [
-			'BonusPreview' => 'group_posts',
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'group_posts',
 
-			'active_partners' => count( $active_partners ),
+		// 	'active_partners' => count( $active_partners ),
 
-			'active_no_partners' => count( $active_no_partners ),
+		// 	'active_no_partners' => count( $active_no_partners ),
 
-			'expired_all' => count( $expired_all ),
+		// 	'expired_all' => count( $expired_all ),
 
-			'posts' => count( $posts ),
-		] );
+		// 	'posts' => count( $posts ),
+		// ] );
 
 		return $posts;
 	}
