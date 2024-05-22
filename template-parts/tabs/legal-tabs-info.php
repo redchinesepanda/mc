@@ -8,7 +8,7 @@
                         <div class="swiper">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $args[ 'items' ] as $id => $item ) : ?>
-                                    <div class="legal-tab-title swiper-slide legal-active" data-content="<?php echo $id; ?>" data-tabs="legal-tabs-<?php echo $id; ?>"><?php echo $item[ 'title' ]; ?></div>
+                                    <div class="legal-tab-title swiper-slide <?php echo $item[ 'class' ]; ?>" data-content="<?php echo $id; ?>" data-tabs="legal-tabs-<?php echo $id; ?>"><?php echo $item[ 'title' ]; ?></div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
