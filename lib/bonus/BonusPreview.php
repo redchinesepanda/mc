@@ -289,7 +289,7 @@ class BonusPreview
 						'type' => 'DATETIME',
 					]
 				],
-			]
+			];
 		}
 		else
 		{
