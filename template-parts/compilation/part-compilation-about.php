@@ -17,15 +17,6 @@
 				<?php if ( !empty( $args[ 'read-more' ] ) ) : ?>
                 	<span class="legal-cut-control" data-content-default="<?php echo $args[ 'cut-control' ][ 'default' ]; ?>" data-content-active="<?php echo $args[ 'cut-control' ][ 'active' ]; ?>"><?php echo $args[ 'cut-control' ][ 'label' ]; ?></span>
 				<?php endif; ?>
-                <?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
-                                <?php echo $button[ 'html' ]; ?>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
             </div>
             <?php if ( !empty( $args[ 'content' ] ) && !empty( $args[ 'image' ] ) ) : ?>
                 <div class="about-section-image">
@@ -36,5 +27,14 @@
                 </div>
             <?php endif; ?>
         </div>
+        <?php if ( !empty( $args[ 'buttons' ] ) ) : ?>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ( $args[ 'buttons' ] as $button ) : ?>
+                        <?php echo $button[ 'html' ]; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endif; ?>
     </div>
 <?php endif; ?>
