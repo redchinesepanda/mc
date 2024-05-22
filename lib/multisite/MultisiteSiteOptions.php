@@ -183,6 +183,30 @@ class MultisiteSiteOptions
 			echo LegalComponents::render_main( self::TEMPLATE[ 'mc-siteinfo-notice' ], self::mc_siteinfo_notice_args() );
 		}
 	}
+
+	public static function get_blog_language( $current_blog_id = 0 )
+	{
+		if ( empty( $current_blog_id ) )
+		{
+			$current_blog_id = MultisiteBlog::get_current_blog_id();
+		}
+
+        $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, self::OPTIONS[ 'blog-language' ] );
+
+        return $blog_language;
+	}
+
+	public static function get_blog_locale( $current_blog_id = 0 )
+	{
+		if ( empty( $current_blog_id ) )
+		{
+			$current_blog_id = MultisiteBlog::get_current_blog_id();
+		}
+
+        $blog_locale = MultisiteBlog::get_blog_option( $current_blog_id, self::OPTIONS[ 'blog-locale' ] );
+
+        return $blog_locale;
+	}
 }
 
 ?>

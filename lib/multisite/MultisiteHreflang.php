@@ -99,6 +99,11 @@ class MultisiteHreflang
 
 			$language_code = WPMLMain::get_language_code( $post->ID );
 
+			if ( empty( language_code ) )
+			{
+				$language_code = MiltisiteSiteOptions::get_blog_language();
+			}
+
 			$locale = WPMLMain::multisite_locale( $language_code );
 
 			LegalDebug::debug( [

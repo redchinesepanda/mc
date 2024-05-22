@@ -263,11 +263,13 @@ class WPMLMain
         //     'WPLANG' => get_option( 'WPLANG' ),
         // ] );
 
-        $current_blog_id = MultisiteBlog::get_current_blog_id();
+        // $current_blog_id = MultisiteBlog::get_current_blog_id();
 
-        $blog_locale = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
+        // $blog_locale = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
-        if ( !empty( $blog_locale ) )
+        // if ( !empty( $blog_locale ) )
+
+        if ( $blog_locale = MultisiteSiteOption::get_blog_locale() )
         {
             return $blog_locale;
         }
@@ -287,11 +289,11 @@ class WPMLMain
         //     return $wpml_current_language;
         // }
 
-        $current_blog_id = MultisiteBlog::get_current_blog_id();
+        // $current_blog_id = MultisiteBlog::get_current_blog_id();
 
-        $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
+        // $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
-        if ( !empty( $blog_language ) )
+        if ( $blog_language = MiltisiteSiteOptions::get_blog_language() )
         {
             return $blog_language;
         }
