@@ -302,6 +302,14 @@ class BonusPreview
 						
 					// 	'operator' => 'NOT EXISTS',
 					// ],
+
+					[
+						'key' => self::FIELD[ 'expire' ],
+						
+						'compare' => '=',
+	
+						'value' => '',
+					],
 					
 					[
 						'key' => self::FIELD[ 'expire' ],
