@@ -492,21 +492,26 @@ class BonusPreview
 
 	public static function get_logo( $id, $size = self::SIZE[ 'logo' ] )
 	{
-		$logo = 0;
+		$logo_id = 0;
 
 		if ( $logo_brand = BrandMain::get_logo_bonus_preview( $id ) )
         {
-            $logo = $logo_brand;
+            $logo_id = $logo_brand;
         }
 
-		if ( empty( $logo ) )
+		if ( empty( $logo_id ) )
 		{
 			$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
+
+			if ( $logo )
+			{
+				$logo_id = $logo[ 'id' ];
+			}
 		}
 
-		if ( $logo )
+		if ( $logo_id )
 		{
-			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
+			$details = wp_get_attachment_image_src( $logo_id, $size );
 
 			if ( $details )
 			{
