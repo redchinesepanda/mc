@@ -111,7 +111,7 @@
     min-height: 34px;
 }
 
-.home .legal-tabs .legal-tab-title {
+.home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
     /* min-width: 114px; */
     height: 44px;
 }
@@ -157,11 +157,11 @@
     border-radius: 20px;
 }
 
-.home .legal-tabs .legal-tab-title {
+.home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
     border-radius: 60px;
 }
 
-.legal-tabs .legal-tab-title:not( .legal-active ) {
+.legal-tabs .legal-tab-title:not( .legal-active ):not( .legal-tabs-info .legal-tab-title ) {
     background-color: var(--Base-base-01);
 }
 
@@ -207,7 +207,7 @@
     line-height: 22px;
 }
 
-.legal-tabs .legal-tab-title:not( .legal-active ) {
+.legal-tabs .legal-tab-title:not( .legal-active ):not( .legal-tabs-info .legal-tab-title ) {
     color: var(--Base-base-09);
     transition: 0.5s;
 }
