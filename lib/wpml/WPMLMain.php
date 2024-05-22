@@ -282,23 +282,23 @@ class WPMLMain
 
     public static function current_language()
     {
-        if ( $wpml_current_language = apply_filters( 'wpml_current_language', NULL ) )
-        {
-            return $wpml_current_language;
-        }
+        // if ( $wpml_current_language = apply_filters( 'wpml_current_language', NULL ) )
+        // {
+        //     return $wpml_current_language;
+        // }
 
         $current_blog_id = MultisiteBlog::get_current_blog_id();
 
         $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
-        // if ( !empty( $blog_language ) )
-        // {
-        //     return $blog_language;
-        // }
+        if ( !empty( $blog_language ) )
+        {
+            return $blog_language;
+        }
 
-        return $blog_language;
+        // return $blog_language;
 
-        // return apply_filters( 'wpml_current_language', NULL );
+        return apply_filters( 'wpml_current_language', NULL );
     }
 
     public static function locale_permalink( $url, $locale )
