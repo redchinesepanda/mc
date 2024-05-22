@@ -239,6 +239,8 @@ class BonusPreview
 		LegalDebug::debug( [
 			'BonusPreview' => 'get_posts_date',
 
+			'duration' => $duration,
+
 			'query_sql' => $query_sql,
 		] );
 
