@@ -156,15 +156,17 @@ class MultisiteHreflang
 
 			// $blog_locale = MultisiteBlog::get_blog_option( $blog->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
-			// LegalDebug::debug( [
-			// 	'MultisiteHreflang' => 'get_group_items_all',
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'get_group_items_all',
 
-			// 	'blog_id' => $blog->blog_id,
+				'blog' => $blog,
 
-			// 	// 'blog_locale' => $blog_locale,
+				// 'blog_id' => $blog->blog_id,
 
-			// 	// 'url' => get_bloginfo( 'url' ),
-			// ] );
+				// 'blog_locale' => $blog_locale,
+
+				// 'url' => get_bloginfo( 'url' ),
+			] );
 
 			// $items[ $blog_locale ] = self::get_group_items( $translation_groups );
 
