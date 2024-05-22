@@ -77,12 +77,16 @@ class MultisiteHreflang
 
 			$post_uri = self::get_post_uri( $post );
 
+			$locale = WPMLMain::get_locale();
+
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items',
 
 				'post_title' => $post_title,
 
 				'post_uri' => $post_uri,
+
+				'locale' => $locale,
             ] );
 
 			$items[] = [
