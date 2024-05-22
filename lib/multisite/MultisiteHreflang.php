@@ -97,29 +97,21 @@ class MultisiteHreflang
 
 			$post_uri = self::get_post_uri( $post );
 
-			// $locale = WPMLMain::get_locale();
-
-			// $current_language = WPMLMain::current_language();
-
 			$language_code = WPMLMain::get_language_code( $post->ID );
 
 			$locale = WPMLMain::multisite_locale( $language_code );
 
-			// LegalDebug::debug( [
-            //     'MultisiteHreflang' => 'get_group_items',
+			LegalDebug::debug( [
+                'MultisiteHreflang' => 'get_group_items',
 
-			// 	'post_title' => $post_title,
+				'post_title' => $post_title,
 
-			// 	'post_uri' => $post_uri,
+				'post_uri' => $post_uri,
 
-			// 	// 'locale' => $locale,
+				'language_code' => $language_code,
 
-			// 	// 'current_language' => $current_language,
-
-			// 	'language_code' => $language_code,
-
-			// 	'locale' => $locale,
-            // ] );
+				'locale' => $locale,
+            ] );
 
 			$items[ $locale ] = [
 				'post_title' => $post_title,
