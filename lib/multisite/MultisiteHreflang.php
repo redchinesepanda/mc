@@ -206,7 +206,7 @@ class MultisiteHreflang
 
 	public static function render_hreflang( $args )
     {
-        return self::render_main( self::TEMPLATE[ 'multiste-hreflang' ], $args );
+        return LegalComponents::render_main( self::TEMPLATE[ 'multiste-hreflang' ], $args );
     }
 }
 
