@@ -145,6 +145,11 @@ class BrandMain
 		return '';
 	}
 
+	public static function get_logo_bonus_preview( $bonus_id )
+	{
+		return self::get_logo_megabillet( $bonus_id );
+	}
+
 	public static function get_logo_megabillet( $billet_id )
 	{
 		$brand_id = get_field( self::FIELD[ 'brand' ], $billet_id );
