@@ -625,6 +625,12 @@ class BonusPreview
 
 	public static function group_posts( $atts )
 	{
+		LegalDebug::debug( [
+			'BonusPreview' => 'group_posts',
+
+			'atts' => $atts,
+		] );
+
 		$limit = $atts[ 'limit' ] != -1 && is_numeric( $atts[ 'limit' ] );
 		
 		$active_partners = self::get_posts_date( $atts, self::MODE[ 'partner' ], self::DURATION[ 'actual' ] );
@@ -665,7 +671,7 @@ class BonusPreview
 		$posts = array_merge( $active_partners, $active_no_partners, $expired_all );
 
 		LegalDebug::debug( [
-			'function' => 'BonusPreview::group_posts',
+			'BonusPreview' => 'group_posts',
 
 			'active_partners' => count( $active_partners ),
 
