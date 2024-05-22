@@ -297,11 +297,11 @@ class BonusPreview
 				[
 					'relation' => 'OR',
 	
-					// [
-					// 	'key' => self::FIELD[ 'expire' ],
+					[
+						'key' => self::FIELD[ 'expire' ],
 						
-					// 	'operator' => 'NOT EXISTS',
-					// ],
+						'operator' => 'NOT EXISTS',
+					],
 
 					[
 						'key' => self::FIELD[ 'expire' ],
