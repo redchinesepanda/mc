@@ -138,9 +138,13 @@ class MultisiteHreflang
 	{
 		$current_blog_id = MultisiteBlog::get_current_blog_id();
 
+		$current_blog = MultisiteBlog::get_blog_details( $current_blog_id );
+
+		$current_domain = $current_blog->domain;
+
 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post_id );
 
-		$blogs = MultisiteBlog::get_other_sites();
+		$blogs = MultisiteBlog::get_other_sites( $current_domain );
 		
 		// LegalDebug::debug( [
 		// 	'MultisiteHreflang' => 'get_group_items_all',
