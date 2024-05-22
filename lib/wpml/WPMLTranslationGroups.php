@@ -96,7 +96,7 @@ class WPMLTranslationGroups
     
                     if ( ! empty( $term ) )
                     {
-                        if ( ! empty( $term->name ) )
+                        if ( empty( $term->name ) )
                         {
                             $args = [
                                 'name' => $post->post_title,
