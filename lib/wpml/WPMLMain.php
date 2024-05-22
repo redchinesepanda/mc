@@ -426,6 +426,11 @@ class WPMLMain
 
         global $wpdb;
 
+        if ( empty( $code ) )
+        {
+            $code = 'en';
+        }
+
         $locale_query = self::multisite_locale_query( $wpdb, $code );
 
         // LegalDebug::debug( [
