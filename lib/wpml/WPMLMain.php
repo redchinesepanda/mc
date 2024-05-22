@@ -474,9 +474,14 @@ class WPMLMain
         echo 'lang="' . esc_attr( self::get_hreflang() ) . '"';
     }
 
-    public static function get_hreflang()
+    public static function get_hreflang( $locale = '' )
     {
-        return str_replace( '_', '-', self::get_locale() );
+        if ( empty( $locale ) )
+        {
+            $locale = self::get_locale();
+        }
+
+        return str_replace( '_', '-', $locale );
     }
 
     public static function legal_language_attributes ( $output, $doctype )

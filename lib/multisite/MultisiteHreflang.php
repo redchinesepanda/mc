@@ -190,6 +190,20 @@ class MultisiteHreflang
         'multiste-hreflang' => LegalMain::LEGAL_PATH . '/template-parts/multisite/part-multisite-hreflang.php',
     ];
 
+	public static function parse_hreflang( $items )
+	{
+		$hreflangs = [];
+
+		foreach ( $items as $locale => $item )
+		{
+			$hreflangs[] = [
+				'hreflang' => WPMLMain::get_hreflang( $locale ),
+
+				'href' => $item[ 'post_uri' ],
+			];
+		}
+	}
+
 	public static function prepare_hreflang()
 	{
 		$args = [];
