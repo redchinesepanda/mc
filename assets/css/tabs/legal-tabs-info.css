@@ -173,7 +173,7 @@
     } */
 
     .legal-tabs-info .legal-tab-title {
-        min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px );
+        min-width: calc( ( 100% / 4 ) - (20px * 3 / 4) - (18px * 2) - 2px );
     }
 
     .legal-tabs-info .legal-tab-content {
@@ -330,8 +330,11 @@
 }
 
 .legal-tabs-info .legal-tab-title {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-top: 14px;
+    padding-right: 18px;
+    padding-bottom: 14px;
+    padding-left: 18px;
+    
 }
 
 .legal-tabs-info .legal-tab-display {
@@ -374,10 +377,9 @@
     max-width: var(--base-width-desktop);
 } */
 
-.legal-tabs-info .legal-tab-title {
+/* .legal-tabs-info .legal-tab-title {
     min-height: 44px;
-   /*  min-width: calc( ( 100% / 4 ) - 15px - 48px - 2px ); */
-}
+} */
 
 /* Background */
 
