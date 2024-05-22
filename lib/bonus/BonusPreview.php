@@ -492,34 +492,30 @@ class BonusPreview
 
 	public static function get_logo( $id, $size = self::SIZE[ 'logo' ] )
 	{
-		$logo_id = 0;
+		// LegalDebug::debug( [
+		// 	'BonusPreview' => 'get_logo',
 
-		LegalDebug::debug( [
-			'BonusPreview' => 'get_logo',
+		// 	'get_logo_bonus_preview' => BrandMain::get_logo_bonus_preview( $id ),
 
-			'get_logo_bonus_preview' => BrandMain::get_logo_bonus_preview( $id ),
-
-			'get_field' => get_field( self::FIELD[ 'logo-preview' ], $id ),
-		] );
+		// 	'get_field' => get_field( self::FIELD[ 'logo-preview' ], $id ),
+		// ] );
 
 		if ( $logo_brand = BrandMain::get_logo_bonus_preview( $id ) )
         {
-            $logo_id = $logo_brand;
+            return [
+				'id' => 'post-' . $id,
+
+				'src' => $logo_brand,
+
+				'width' => 30,
+
+				'height' => 30,
+			];
         }
 
-		if ( empty( $logo_id ) )
+		if ( $logo = get_field( self::FIELD[ 'logo-preview' ], $id ) )
 		{
-			$logo = get_field( self::FIELD[ 'logo-preview' ], $id );
-
-			if ( $logo )
-			{
-				$logo_id = $logo[ 'id' ];
-			}
-		}
-
-		if ( $logo_id )
-		{
-			$details = wp_get_attachment_image_src( $logo_id, $size );
+			$details = wp_get_attachment_image_src( $logo[ 'id' ], $size );
 
 			if ( $details )
 			{
