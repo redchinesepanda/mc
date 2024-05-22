@@ -57,6 +57,11 @@ class MultisiteHreflang
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
+		if ( $language_code == 'en' )
+        {
+            $language_code = '';
+        }
+
 		if ( !empty( $language_code ) )
 		{
 			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
