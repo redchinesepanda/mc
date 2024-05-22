@@ -37,6 +37,22 @@ class LegalTabsInfo
     {
 		return [
             'title' => ToolLoco::translate( BaseMain::TEXT[ 'what-is' ] ),
+
+            'tab-title' => ToolLoco::translate( BaseMain::TEXT[ 'expertise' ] ),
+
+            'tab-title-1' => ToolLoco::translate( BaseMain::TEXT[ 'transparency' ] ),
+
+            'tab-title-2' => ToolLoco::translate( BaseMain::TEXT[ 'fairness' ] ),
+
+            'tab-title-3' => ToolLoco::translate( BaseMain::TEXT[ 'relevance' ] ),
+
+            'tab-content-0' => ToolLoco::translate( BaseMain::TEXT[ 'we-are-professionals' ] ),
+
+            'tab-content-1' => ToolLoco::translate( BaseMain::TEXT[ 'we-provide-only' ] ),
+
+            'tab-content-2' => ToolLoco::translate( BaseMain::TEXT[ 'our-reviews' ] ),
+
+            'tab-content-3' => ToolLoco::translate( BaseMain::TEXT[ 'we-focus-on' ] ),
         ];
     }
 

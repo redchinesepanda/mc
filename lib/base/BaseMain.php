@@ -55,6 +55,22 @@ class BaseMain
 
         'show-all' => 'Show All',
 
+        'tab-content-0' => 'We are professionals and enthusiasts in the online gambling industry, with years of experience in evaluating and recommending the best betting sites.',
+
+        'tab-content-1' => 'We provide only honest and transparent information about the sites we review, ensuring that our readers can trust our recommendations.',
+
+        'tab-content-2' => 'Our reviews are based on objective criteria, such as site features, user experience, and customer service, ensuring that our readers can make informed decisions.',
+
+        'tab-content-3' => 'We focus on providing reviews that are relevant to our readers, based on factors such as geographic location, preferred payment methods, and game types.',
+
+        'tab-title' => 'Expertise',
+
+        'tab-title-1' => 'Transparency',
+
+        'tab-title-2' => 'Fairness',
+
+        'tab-title-3' => 'Relevance',
+
         'this-bookie' => "This bookie doesn't pay for the referral program. But here are the offers of Match.Center partners",
 
         'this-website' => 'This website is only for adults.',
