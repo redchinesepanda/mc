@@ -494,6 +494,14 @@ class BonusPreview
 	{
 		$logo_id = 0;
 
+		LegalDebug::debug( [
+			'BonusPreview' => 'get_logo',
+
+			'get_logo_bonus_preview' => BrandMain::get_logo_bonus_preview( $id ),
+
+			'get_field' => get_field( self::FIELD[ 'logo-preview' ], $id ),
+		] );
+
 		if ( $logo_brand = BrandMain::get_logo_bonus_preview( $id ) )
         {
             $logo_id = $logo_brand;
