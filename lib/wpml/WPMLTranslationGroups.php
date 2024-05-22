@@ -118,11 +118,11 @@ class WPMLTranslationGroups
 
         $terms = wp_get_object_terms( $post_id, self::TAXONOMY[ 'translation_group' ], $terms_args );
 
-        LegalDebug::debug( [
-            'WPMLTranslationGroups' => 'get_translation_group',
+        // LegalDebug::debug( [
+        //     'WPMLTranslationGroups' => 'get_translation_group',
 
-            'terms' => $terms,
-        ] );
+        //     'terms' => $terms,
+        // ] );
 
         if ( is_wp_error( $terms ) )
         {
