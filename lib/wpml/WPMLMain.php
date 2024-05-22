@@ -471,10 +471,12 @@ class WPMLMain
 
     public static function language_attributes()
     {
-        echo 'lang="' . esc_attr( self::get_hreflang() ) . '"';
+        // echo 'lang="' . esc_attr( self::get_hreflang() ) . '"';
+        
+        echo 'lang="' . esc_attr( self::get_language_attributes() ) . '"';
     }
 
-    public static function get_hreflang( $locale = '' )
+    public static function get_language_attributes( $locale = '' )
     {
         if ( empty( $locale ) )
         {
@@ -482,6 +484,18 @@ class WPMLMain
         }
 
         return str_replace( '_', '-', $locale );
+    }
+
+    public static function get_hreflang( $locale = '' )
+    {
+        // if ( empty( $locale ) )
+        // {
+        //     $locale = self::get_locale();
+        // }
+
+        // return str_replace( '_', '-', $locale );
+
+        return strtolower( self::get_language_attributes( $locale ) );
     }
 
     public static function legal_language_attributes ( $output, $doctype )
