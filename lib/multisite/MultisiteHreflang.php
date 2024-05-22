@@ -146,7 +146,9 @@ class MultisiteHreflang
 
 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post_id );
 
-		$blogs = MultisiteBlog::get_other_sites( $current_domain );
+		// $blogs = MultisiteBlog::get_other_sites( $current_domain );
+		
+		$blogs = MultisiteBlog::get_sites( $current_domain );
 		
 		// LegalDebug::debug( [
 		// 	'MultisiteHreflang' => 'get_group_items_all',
