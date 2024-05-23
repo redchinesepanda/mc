@@ -4,38 +4,38 @@ class MultisiteHreflang
 {
 	public static function register_functions_debug()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
 		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 		
-		add_filter( 'acf/settings/save_json', [ $handler, 'my_acf_json_save_point' ] );
+		// add_filter( 'acf/settings/save_json', [ $handler, 'my_acf_json_save_point' ] );
 	}
 
-	public static function my_acf_json_save_point( $path )
-	{
-		// return get_stylesheet_directory() . '/my-custom-folder';
+	// public static function my_acf_json_save_point( $path )
+	// {
+	// 	// return get_stylesheet_directory() . '/my-custom-folder';
 
-		LegalDebug::debug( [
-			'MultisiteHreflang' =>'my_acf_json_save_point',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteHreflang' =>'my_acf_json_save_point',
 
-			'path' => $path,
-		] );
+	// 		'path' => $path,
+	// 	] );
 
-		return $path;
-	}
+	// 	return $path;
+	// }
 
-    public static function mc_edit_form_after_title_debug( $post )
-	{
-        $group_items = self::get_group_items_all( $post->ID );
+    // public static function mc_edit_form_after_title_debug( $post )
+	// {
+    //     // $group_items = self::get_group_items_all( $post->ID );
 
-		LegalDebug::debug( [
-			'MultisiteHreflang' => 'mc_edit_form_after_title_debug',
+	// 	// LegalDebug::debug( [
+	// 	// 	'MultisiteHreflang' => 'mc_edit_form_after_title_debug',
 
-			'group_items' => $group_items,
-		] );
-    }
+	// 	// 	'group_items' => $group_items,
+	// 	// ] );
+    // }
 
 	public static function group_items_query( $terms )
 	{
