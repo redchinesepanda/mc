@@ -30,13 +30,13 @@ class WPMLHreflang
 			{
 				$multisite_hreflang = MultisiteHreflang::get_group_items_all( $post->ID );
 
-				LegalDebug::debug( [
-					'WPMLHreflang' => 'change_page_hreflang',
+				// LegalDebug::debug( [
+				// 	'WPMLHreflang' => 'change_page_hreflang',
 
-					'hreflang_items' => $hreflang_items,
+				// 	'hreflang_items' => $hreflang_items,
 
-					'multisite_hreflang' => $multisite_hreflang,
-				] );
+				// 	'multisite_hreflang' => $multisite_hreflang,
+				// ] );
 
 				// $items = self::get_group_items_all( $post->ID );
 
@@ -46,17 +46,17 @@ class WPMLHreflang
 
 				// foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
 				
-				foreach ( $multisite_hreflang as $code => $item )
+				foreach ( $multisite_hreflang as $item_code => $item )
 				{
-					// LegalDebug::debug( [
-					// 	'WPMLHreflang' => 'change_page_hreflang',
-	
-					// 	'hreflang_items' => $hreflang_items,
-	
-					// 	'multisite_hreflang' => $multisite_hreflang,
-					// ] );
+					$hreflang_code = strtolower( $item_code );
 
-					$hreflang_code = strtolower( $code );
+					LegalDebug::debug( [
+						'WPMLHreflang' => 'change_page_hreflang',
+	
+						'hreflang_code' => $hreflang_code,
+	
+						'array_key_exists' => array_key_exists( strtolower( $hreflang_code ), $hreflang_items ),
+					] );
 
 					if ( array_key_exists( strtolower( $hreflang_code ), $hreflang_items ) )
 					{
