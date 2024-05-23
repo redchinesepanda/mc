@@ -26,17 +26,26 @@ class WPMLHreflang
 
         if ( !empty( $hreflang_items ) )
         {
-			$multisite_hreflang = MultisiteHreflang::get_group_items_all();
+			if ( $post = get_post() )
+			{
+				$multisite_hreflang = MultisiteHreflang::get_group_items_all( $post->ID );
 
-            foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
-            {
-				if ( array_key_exists( $hreflang_code, $multisite_hreflang ) )
+				// $items = self::get_group_items_all( $post->ID );
+
+				// $args = [
+				// 	'items' => self::parse_hreflang( $items ),
+				// ];
+
+				foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
 				{
-					unset( $hreflang_items[ $hreflang_code ] );
+					if ( array_key_exists( $hreflang_code, $multisite_hreflang ) )
+					{
+						unset( $hreflang_items[ $hreflang_code ] );
+					}
+					
+					// $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
 				}
-                
-				// $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
-            }
+			}
     
             // echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
         }
