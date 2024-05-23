@@ -8,7 +8,7 @@ function my_acf_json_save_point( $path )
 {
     // return get_stylesheet_directory() . '/my-custom-folder';
 
-	LegalDebug::debug( [
+	LegalDebug::die( [
         'functions.php' =>'my_acf_json_save_point',
 
         'path' => $path,
