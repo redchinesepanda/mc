@@ -23,7 +23,13 @@ class MultisiteSiteSwitcher
 
 	public static function get_languages()
 	{
-		return self::sites_to_languages( MultisiteBlog::get_sites() );
+		$current_domain = MultisiteBlog::get_domain();
+		
+		$blogs = MultisiteBlog::get_all_sites( $current_domain );
+
+		return self::sites_to_languages( $blogs );
+
+		// return self::sites_to_languages( MultisiteBlog::get_sites() );
 	}
 
 	public static function sites_to_languages( $sites )
