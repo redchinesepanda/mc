@@ -48,7 +48,17 @@ class WPMLHreflang
 				
 				foreach ( $multisite_hreflang as $code => $item )
 				{
-					if ( array_key_exists( strtolower( $code ), $hreflang_items ) )
+					// LegalDebug::debug( [
+					// 	'WPMLHreflang' => 'change_page_hreflang',
+	
+					// 	'hreflang_items' => $hreflang_items,
+	
+					// 	'multisite_hreflang' => $multisite_hreflang,
+					// ] );
+
+					$hreflang_code = strtolower( $code );
+
+					if ( array_key_exists( strtolower( $hreflang_code ), $hreflang_items ) )
 					{
 						unset( $hreflang_items[ $hreflang_code ] );
 					}
