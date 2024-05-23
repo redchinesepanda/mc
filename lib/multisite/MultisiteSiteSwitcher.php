@@ -52,6 +52,13 @@ class MultisiteSiteSwitcher
 
 		$blog_locale = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-locale' ] );
 
+		$active = 0;
+
+		if ( MultisiteBlog::get_current_blog_id() == $site->blog_id )
+		{
+			$active = 1;
+		}
+
 		return [
 			'id' => $site->blog_id,
 
@@ -68,6 +75,8 @@ class MultisiteSiteSwitcher
 			'default_locale' => $blog_locale,
 
 			'country_flag_url' => LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $blog_language . '.svg',
+
+			'active' => $active,
 		];
 	}
 
