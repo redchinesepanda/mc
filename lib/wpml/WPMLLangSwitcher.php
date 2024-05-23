@@ -217,7 +217,9 @@ class WPMLLangSwitcher
 
         if ( empty( $languages ) )
         {
-            $languages = MultisiteSiteSwitcher::get_languages();
+            // $languages = MultisiteSiteSwitcher::get_languages();
+            
+            $languages = $multisite_languages;
         }
 
         // LegalDebug::debug( [
