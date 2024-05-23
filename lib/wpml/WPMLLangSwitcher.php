@@ -195,10 +195,16 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
+        $post = get_post();
+
+        $items = MultisiteHreflang::get_group_items_all( $post->ID );
+
         LegalDebug::debug( [
             'WPMLLangSwitcher' => 'get',
 
             'languages' => $languages,
+
+            'items' => $items,
 
             'get_sites_list' => MultisiteSiteswitcher::get_sites_list(),
         ] );
