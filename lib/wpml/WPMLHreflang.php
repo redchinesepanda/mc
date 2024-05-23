@@ -22,19 +22,28 @@ class WPMLHreflang
   
     public static function change_page_hreflang( $hreflang_items )
     {
-        $hreflang = [];
+		$hreflang = [];
 
         if ( !empty( $hreflang_items ) )
         {
+			$multisite_hreflang = MultisiteHreflang::get_group_items_all();
+
             foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
             {
-                $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '" test>' . PHP_EOL;
+				if ( array_key_exists( $hreflang_code, $multisite_hreflang )
+				{
+					unset( $hreflang_items[ $hreflang_code ] );
+				}
+                
+				// $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
             }
     
-            echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
+            // echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
         }
             
-        return false;
+        // return false;
+
+		return $hreflang_items;
     }
 
 	// public static function check_hreflang_exists( $hreflang_items, $language )
