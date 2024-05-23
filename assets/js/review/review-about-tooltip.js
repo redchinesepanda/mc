@@ -39,7 +39,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = index;
 
-		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		/* element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element ); */
+		if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
+			element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		} else false;
 	}
 
 	const classes = {
@@ -62,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	document.querySelectorAll( selectors.aboutAchievement ).forEach( prepareElements );
 
-	// Не оптимизированно, но работает - закрытие по клику на фон. Начало
+	// закрытие по клику на фон. Начало
 	let tooltipBackground = document.querySelector( selectors.tooltip );
 
 	function closeBackgroundTooltip() {
@@ -72,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	// Не оптимизированно, но работает - закрытие по клику на фон. Конец
+	// закрытие по клику на фон. Конец
 } );
 
 // about-achievement-tooltip-js end 
