@@ -28,7 +28,11 @@ class WPMLHreflang
         {
 			if ( $post = get_post() )
 			{
-				$multisite_hreflang = MultisiteHreflang::get_group_items_all( $post->ID );
+				$multisite_items = MultisiteHreflang::get_group_items_all( $post->ID );
+
+				$multisite_hreflang MultisiteHreflang::parse_hreflang( $multisite_items ),
+
+				// $multisite_hreflang = MultisiteHreflang::get_group_items_all( $post->ID );
 
 				// LegalDebug::debug( [
 				// 	'WPMLHreflang' => 'change_page_hreflang',
@@ -43,17 +47,15 @@ class WPMLHreflang
 				// $args = [
 				// 	'items' => self::parse_hreflang( $items ),
 				// ];
-
-				// foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
 				
-				foreach ( $multisite_hreflang as $item_locale => $item )
+				foreach ( $multisite_hreflang as $item )
 				{
 					// if ( $item_locale == 'en_GB' )
 					// {
 					// 	$item_locale = 'x-default';
 					// }
 
-					$hreflang_code = strtolower( WPMLMain::get_hreflang( $item_locale ) );
+					$hreflang = $item[ 'hreflang' ];
 
 					// LegalDebug::debug( [
 					// 	'WPMLHreflang' => 'change_page_hreflang',
@@ -63,9 +65,9 @@ class WPMLHreflang
 					// 	'array_key_exists' => array_key_exists( $hreflang_code, $hreflang_items ),
 					// ] );
 
-					if ( array_key_exists( strtolower( $hreflang_code ), $hreflang_items ) )
+					if ( array_key_exists( $hreflang, $hreflang_items ) )
 					{
-						unset( $hreflang_items[ $hreflang_code ] );
+						unset( $hreflang_items[ $hreflang ] );
 					}
 					
 					// $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
