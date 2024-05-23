@@ -64,8 +64,25 @@ class MultisiteHreflang
 		'post-uri-root' => '%s/%s',
 	];
 
+	public static function get_blog_uri()
+	{
+		$current_blog_id = MultisiteBlog::get_current_blog_id();
+
+		$current_blog_details = MultisiteBlog::get_blog_details( $blog_id );
+
+		LegalDebug::debug( [
+            'MultisiteHreflang' => 'get_blog_uri',
+
+			'current_blog_id' => $current_blog_id,
+
+			'current_blog_details' => $current_blog_details,
+        ] );
+	}
+
 	public static function get_post_uri( $post )
 	{
+		self::get_blog_uri();
+
 		$url =  trim( get_bloginfo( 'url' ), '/' );
 
 		$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
