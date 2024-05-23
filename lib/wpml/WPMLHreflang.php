@@ -46,9 +46,9 @@ class WPMLHreflang
 
 				// foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
 				
-				foreach ( $multisite_hreflang as $item_code => $item )
+				foreach ( $multisite_hreflang as $item_locale => $item )
 				{
-					$hreflang_code = strtolower( $item_code );
+					$hreflang_code = strtolower( WPMLMain::get_hreflang( $item_locale ) );
 
 					LegalDebug::debug( [
 						'WPMLHreflang' => 'change_page_hreflang',
