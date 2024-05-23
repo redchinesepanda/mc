@@ -167,11 +167,13 @@ class MultisiteHreflang
 
 	public static function get_group_items_all( $post_id )
 	{
-		$current_blog_id = MultisiteBlog::get_current_blog_id();
+		// $current_blog_id = MultisiteBlog::get_current_blog_id();
 
-		$current_blog = MultisiteBlog::get_blog_details( $current_blog_id );
+		// $current_blog = MultisiteBlog::get_blog_details( $current_blog_id );
 
-		$current_domain = $current_blog->domain;
+		// $current_domain = $current_blog->domain;
+		
+		$current_domain = MultisiteBlog::get_domain();
 
 		// $current_domain = '';
 

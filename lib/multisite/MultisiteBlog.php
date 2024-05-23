@@ -10,6 +10,18 @@ class MultisiteBlog
 		'current' => 'current',
 	];
 
+	public static function get_domain( $blog_id = '' )
+	{
+		if ( empty ( $blog_id ) )
+		{
+			$blog_id = MultisiteBlog::get_current_blog_id();
+		}
+
+		$current_blog = MultisiteBlog::get_blog_details( $blog_id );
+
+		return $current_blog->domain;
+	}
+
 	public static function set_blog( $blog_id )
 	{
 		switch_to_blog( $blog_id );
