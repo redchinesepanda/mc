@@ -210,9 +210,9 @@ class WPMLLangSwitcher
 
             // 'items' => $items,
 
-            'multisite_sites_list' => $multisite_sites_list,
-
             'multisite_languages' => $multisite_languages,
+
+            'multisite_sites_list' => $multisite_sites_list,
         ] );
 
         if ( empty( $languages ) )
