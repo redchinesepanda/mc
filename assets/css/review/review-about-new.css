@@ -687,7 +687,7 @@
     line-height: 20px;
 }
 
-.review-about .achievement-tooltip-background + .review-about .achievement-item .achievement-name {
+.review-about .achievement-tooltip-background + .review-about .achievement-name {
     cursor: pointer;
 }
 
