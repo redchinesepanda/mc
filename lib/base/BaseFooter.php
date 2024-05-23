@@ -443,19 +443,21 @@ class BaseFooter
 		// 	return '';
 		// }
 
-        return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
+        // return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
+        
+		return LegalComponents::render_main( self::TEMPLATE[ 'footer' ], self::get() );
     }
 
-    public static function render_main( $template, $args )
-    {
-        ob_start();
+    // public static function render_main( $template, $args )
+    // {
+    //     ob_start();
 
-        load_template( $template, false, $args );
+    //     load_template( $template, false, $args );
 
-        $output = ob_get_clean();
+    //     $output = ob_get_clean();
 
-        return $output;
-    }
+    //     return $output;
+    // }
 
     public static function render_item( $item )
     {
