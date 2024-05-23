@@ -30,7 +30,7 @@ class WPMLHreflang
 
             foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
             {
-				if ( array_key_exists( $hreflang_code, $multisite_hreflang )
+				if ( array_key_exists( $hreflang_code, $multisite_hreflang ) )
 				{
 					unset( $hreflang_items[ $hreflang_code ] );
 				}
