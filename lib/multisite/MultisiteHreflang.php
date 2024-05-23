@@ -72,6 +72,18 @@ class MultisiteHreflang
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_post_uri',
+
+			'$post' => $post->ID,
+
+			'$url' => $url,
+
+			'$post_path' => $post_path,
+
+			'$language_code' => $language_code,
+		] );
+
 		if ( $language_code == 'en' )
         {
             $language_code = '';
