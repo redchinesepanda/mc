@@ -461,13 +461,15 @@ class BaseFooter
 
     public static function render_item( $item )
     {
-        ob_start();
+        // ob_start();
 
-        load_template( self::TEMPLATE[ 'item' ], false, $item );
+        // load_template( self::TEMPLATE[ 'item' ], false, $item );
 
-        $output = ob_get_clean();
+        // $output = ob_get_clean();
 
-        return $output;
+        // return $output;
+
+		return LegalComponents::render_main( self::TEMPLATE[ 'item' ], $item );
     }
 }
 
