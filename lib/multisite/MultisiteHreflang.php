@@ -68,7 +68,7 @@ class MultisiteHreflang
 	{
 		$current_blog_id = MultisiteBlog::get_current_blog_id();
 
-		$current_blog_details = MultisiteBlog::get_blog_details( $blog_id );
+		$current_blog_details = MultisiteBlog::get_blog_details( $current_blog_id );
 
 		LegalDebug::debug( [
             'MultisiteHreflang' => 'get_blog_uri',
