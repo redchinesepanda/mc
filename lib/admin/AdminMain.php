@@ -37,16 +37,16 @@ class AdminMain
         ToolEnqueue::register_style( self::CSS );
     }
 
-    public static function register_menus()
-    {
-        register_nav_menus(
-            [
-                'primary-menu' => __( 'Primary Menu' ),
+    // public static function register_menus()
+    // {
+    //     register_nav_menus(
+    //         [
+    //             'primary-menu' => __( 'Primary Menu' ),
                 
-                'secondary-menu' => __( 'Secondary Menu' )
-            ]
-        );
-    }
+    //             'secondary-menu' => __( 'Secondary Menu' )
+    //         ]
+    //     );
+    // }
 
     public static function register()
     {
