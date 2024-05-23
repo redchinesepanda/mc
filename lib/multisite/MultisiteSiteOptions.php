@@ -90,8 +90,6 @@ class MultisiteSiteOptions
 					'label' => 'MC Blog Language ( en )',
 
 					'name' => self::OPTIONS[ 'blog-language' ],
-
-					// 'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ) ),
 					
 					'value' => MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-language' ] ),
 				],
@@ -101,10 +99,16 @@ class MultisiteSiteOptions
 
 					'name' => self::OPTIONS[ 'blog-locale' ],
 
-					// 'value' => esc_attr( get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ) ),
-
 					'value' => MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-locale' ] ),
 				],
+
+				'mc-blog-label' => [
+                    'label' => 'MC Blog Label ( United Kingdom )',
+
+					'name' => self::OPTIONS[ 'blog-label' ],
+
+					'value' => MultisiteBlog::get_blog_option( $id, self::OPTIONS[ 'blog-label' ] ),
+				] ,
 			],
 		];
 	}
