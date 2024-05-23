@@ -44,9 +44,11 @@ class WPMLHreflang
 				// 	'items' => self::parse_hreflang( $items ),
 				// ];
 
-				foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+				// foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+				
+				foreach ( $multisite_hreflang as $code => $item )
 				{
-					if ( array_key_exists( $hreflang_code, $multisite_hreflang ) )
+					if ( array_key_exists( strtolower( $code ), $hreflang_items ) )
 					{
 						unset( $hreflang_items[ $hreflang_code ] );
 					}
