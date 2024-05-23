@@ -130,11 +130,11 @@ class MultisiteHreflang
 
 			$language_code = WPMLMain::get_language_code( $post->ID );
 
-			// LegalDebug::debug( [
-            //     'MultisiteHreflang' => 'get_group_items',
+			LegalDebug::debug( [
+                'MultisiteHreflang' => 'get_group_items',
 
-			// 	'language_code' => $language_code,
-            // ] );
+				'language_code' => $language_code,
+            ] );
 
 			if ( empty( $language_code ) )
 			{
