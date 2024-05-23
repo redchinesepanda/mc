@@ -183,7 +183,7 @@ class BaseFooter
 
 	public static function location()
 	{
-		register_nav_menu( self::LOCATION, __( BaseMain::TEXT[ 'legal-review-bk-footer' ], ToolLoco::TEXTDOMAIN ) );
+		register_nav_menu( self::LOCATION, ToolLoco::translate( BaseMain::TEXT[ 'legal-review-bk-footer' ] ) );
 	}
 
 	const ITEM = [
