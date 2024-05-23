@@ -66,7 +66,7 @@ class MultisiteHreflang
 
 	public static function get_post_uri( $post )
 	{
-		$url = get_bloginfo( 'url' );
+		$url =  trim( get_bloginfo( 'url' ), '/' );
 
 		$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
