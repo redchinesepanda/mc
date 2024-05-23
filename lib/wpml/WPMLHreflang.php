@@ -9,13 +9,32 @@ class WPMLHreflang
 		// 	return false;
 		// }
 
-		// $handler = new self();
+		$handler = new self();
+
+		add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 
 		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
 
 		// // add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_x_default' ] );
 
 		// return true;
+    }
+  
+    public static function change_page_hreflang( $hreflang_items )
+    {
+        $hreflang = [];
+
+        if ( !empty( $hreflang_items ) )
+        {
+            foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
+            {
+                $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
+            }
+    
+            echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
+        }
+            
+        return false;
     }
 
 	// public static function check_hreflang_exists( $hreflang_items, $language )
