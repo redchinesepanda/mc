@@ -55,7 +55,7 @@ class WPMLHreflang
 	
 						'hreflang_code' => $hreflang_code,
 	
-						'array_key_exists' => array_key_exists( strtolower( $hreflang_code ), $hreflang_items ),
+						'array_key_exists' => array_key_exists( $hreflang_code, $hreflang_items ),
 					] );
 
 					if ( array_key_exists( strtolower( $hreflang_code ), $hreflang_items ) )
