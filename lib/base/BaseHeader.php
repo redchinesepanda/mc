@@ -788,7 +788,7 @@ class BaseHeader
 
 	public static function location()
 	{
-		register_nav_menu( self::LOCATION, __( BaseMain::TEXT[ 'legal-review-bk-header' ], ToolLoco::TEXTDOMAIN ) );
+		register_nav_menu( self::LOCATION, ToolLoco::translate(( BaseMain::TEXT[ 'legal-review-bk-header' ] ) );
 	}
 
 	public static function parse_items( $items, $parents, $key )
