@@ -30,7 +30,7 @@ class WPMLHreflang
 			{
 				$multisite_items = MultisiteHreflang::get_group_items_all( $post->ID );
 
-				$multisite_hreflang = MultisiteHreflang::parse_hreflang( $multisite_items ),
+				$multisite_hreflang = MultisiteHreflang::parse_hreflang( $multisite_items );
 
 				// $multisite_hreflang = MultisiteHreflang::get_group_items_all( $post->ID );
 
