@@ -42,7 +42,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		/* element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element ); */
 		if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
 			element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		} /* else false; */
+		} else console.log('no tooltip text');
 	}
 
 	const classes = {
