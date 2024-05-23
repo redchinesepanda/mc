@@ -31,7 +31,7 @@ function custom_acf_json_save_paths( $paths, $post )
     //     $paths = array( get_stylesheet_directory() . '/field-groups' );
     // }
 
-	LegalDebug::die( [
+	LegalDebug::debug( [
         'functions.php' =>'my_acf_json_save_point',
 
         'paths' => $paths,
