@@ -4,6 +4,12 @@ require_once( 'lib/LegalMain.php' );
 
 LegalMain::register();
 
+LegalDebug::debug( [
+	'functions.php' =>'root',
+
+	'get_stylesheet_directory' => get_stylesheet_directory(),
+] );
+
 add_filter( 'acf/settings/load_json', 'my_acf_json_load_point' );
 
 function my_acf_json_load_point( $paths ) {
