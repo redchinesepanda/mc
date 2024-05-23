@@ -100,6 +100,16 @@ class WPMLLangSwitcher
 
         $active = array_splice( $args, $key, 1 );
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get_active',
+
+            'args_active' => $args_active,
+
+            'key' => $key,
+
+            'active' => $active,
+        ] );
+
         return self::map( array_shift( $active ) );
     }
 
