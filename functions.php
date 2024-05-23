@@ -32,7 +32,7 @@ function custom_acf_json_save_paths( $paths, $post )
     // }
 
 	LegalDebug::debug( [
-        'functions.php' =>'my_acf_json_save_point',
+        'functions.php' =>'custom_acf_json_save_paths',
 
         'paths' => $paths,
     ] );
