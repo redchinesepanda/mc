@@ -20,6 +20,8 @@ class MultisiteSiteOptions
 		'blog-language'	=> 'mc_blog_language',
 
 		'blog-locale'	=> 'mc_blog_locale',
+
+		'blog-label'	=> 'mc_blog_label',
 	];
 
 	public static function register_functions_mainsite()
