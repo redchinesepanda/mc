@@ -48,6 +48,11 @@ class WPMLHreflang
 				
 				foreach ( $multisite_hreflang as $item_locale => $item )
 				{
+					if ( $item_locale == 'en_GB' )
+					{
+						$item_locale = 'x-default';
+					}
+					
 					$hreflang_code = strtolower( WPMLMain::get_hreflang( $item_locale ) );
 
 					// LegalDebug::debug( [
