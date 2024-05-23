@@ -6,7 +6,7 @@ require_once( 'WPMLTrid.php' );
 
 require_once( 'WPMLLanguageMismatch.php' );
 
-// require_once( 'WPMLHreflang.php' );
+require_once( 'WPMLHreflang.php' );
 
 require_once( 'WPMLChooseYourCountry.php' );
 
@@ -57,7 +57,7 @@ class WPMLMain
 
         // WPMLLanguageMismatch::register();
 
-        // WPMLHreflang::register();
+        WPMLHreflang::register();
 
         WPMLChooseYourCountry::register();
 

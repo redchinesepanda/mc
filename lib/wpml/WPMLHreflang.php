@@ -28,7 +28,7 @@ class WPMLHreflang
         {
             foreach ( $hreflang_items as $hreflang_code => $hreflang_url )
             {
-                $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '">' . PHP_EOL;
+                $hreflang[] = '<link rel="alternate" hreflang="' . esc_attr( $hreflang_code ) . '" href="' . esc_url( $hreflang_url ) . '" test>' . PHP_EOL;
             }
     
             echo apply_filters( 'wpml_hreflangs_html', implode( '', $hreflang ) );
