@@ -136,16 +136,12 @@ class MultisiteHreflang
 			// 	'language_code' => $language_code,
             // ] );
 
-			$locale = WPMLMain::multisite_locale( $language_code );
-
 			if ( empty( $language_code ) )
 			{
 				$language_code = MultisiteSiteOptions::get_blog_language();
-
-				$locale = 'x-default';
 			}
 
-			// $locale = WPMLMain::multisite_locale( $language_code );
+			$locale = WPMLMain::multisite_locale( $language_code );
 
 			// LegalDebug::debug( [
             //     'MultisiteHreflang' => 'get_group_items',
