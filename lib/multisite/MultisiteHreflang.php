@@ -155,6 +155,11 @@ class MultisiteHreflang
 				'locale' => $locale,
             ] );
 
+			if ( $locale == 'en_GB' )
+			{
+				$locale = 'x-default';
+			}
+
 			$items[ $locale ] = [
 				'post_title' => $post_title,
 
