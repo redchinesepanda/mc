@@ -213,17 +213,17 @@ class WPMLLangSwitcher
 
         // $items = MultisiteHreflang::get_group_items_all( $post->ID );
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'languages' => $languages,
+            'languages' => $languages,
 
-        //     // 'items' => $items,
+            // 'items' => $items,
 
-        //     'multisite_languages' => $multisite_languages,
+            'multisite_languages' => $multisite_languages,
 
-        //     // 'multisite_sites_list' => $multisite_sites_list,
-        // ] );
+            // 'multisite_sites_list' => $multisite_sites_list,
+        ] );
 
         if ( empty( $languages ) )
         {
