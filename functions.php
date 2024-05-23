@@ -4,6 +4,8 @@ require_once( 'lib/LegalMain.php' );
 
 LegalMain::register();
 
+add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+
 function my_acf_json_save_point( $path )
 {
     // return get_stylesheet_directory() . '/my-custom-folder';
@@ -17,7 +19,7 @@ function my_acf_json_save_point( $path )
 	return $path;
 }
 
-add_filter( 'acf/settings/save_json', 'my_acf_json_save_point' );
+add_filter( 'acf/json/save_paths', 'custom_acf_json_save_paths', 10, 2 );
 
 function custom_acf_json_save_paths( $paths, $post )
 {
@@ -37,7 +39,5 @@ function custom_acf_json_save_paths( $paths, $post )
 
     return $paths;
 }
-
-add_filter( 'acf/json/save_paths', 'custom_acf_json_save_paths', 10, 2 );
 
 ?>
