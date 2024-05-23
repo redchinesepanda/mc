@@ -100,7 +100,11 @@ class MultisiteSiteSwitcher
 
 		$avaible = [];
 
-		$sites = MultisiteBlog::get_other_sites();
+		$current_domain = MultisiteBlog::get_domain();
+		
+		$sites = MultisiteBlog::get_other_sites( $current_domain );
+
+		// $sites = MultisiteBlog::get_other_sites();
 
 		foreach ( $sites as $site )
 		{
