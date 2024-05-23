@@ -46,6 +46,18 @@ class MultisiteSiteSwitcher
 		return $languages;
 	}
 
+	public static function get_native_name( $site )
+	{
+		$blog_label = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-label' ] );
+
+		if ( ! empty( $blog_label ) )
+		{
+			return $blog_label;
+		}
+
+		return $site->blogname;
+	}
+
 	public static function site_to_language( $site )
 	{
 		$blog_language = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
@@ -62,7 +74,9 @@ class MultisiteSiteSwitcher
 		return [
 			'id' => $site->blog_id,
 
-			'native_name' => $site->blogname,
+			// 'native_name' => $site->blogname,
+			
+			'native_name' => self::get_native_name( $site ),
 
 			'translated_name' => $site->blogname,
 
