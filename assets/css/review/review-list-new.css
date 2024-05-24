@@ -153,7 +153,6 @@
 
 .tcb-post-content li:not( .legal-list-image-in-border li )::before {
   position: absolute;
-  /*правило для pros & cons*/
   left: 0px;
 }
 
@@ -187,7 +186,6 @@
 
 .bonus-content>ul:not(.legal-override):not(.legal-highlight):not([style]):last-child,
 .billet-description>ul:not(.legal-override):not([style]):last-child,
-/* .bonus-content > ol:not( .legal-override ):last-child, */
 .billet-description>ol:not(.legal-override):last-child {
   padding-bottom: 12px;
   padding-left: 0px;
@@ -294,11 +292,6 @@
   font-weight: 400;
 }
 
-/* .tcb-post-content ol li,
-.tcb-post-content ol:not(.menu__box)>li::before {
-  color: var(--Base-base-09);
-} */
-
 .tcb-post-content ul > li:before {
   font-family: var(--legal-font-icons);
   font-size: 24px;
@@ -332,10 +325,6 @@
   content: '\F10E';
   color: var(--Base-base-05);
 }
-
-/* .tcb-post-content ol[style*="list-style-type: upper-alpha;"] li:before {
-  color: #ffffff;
-} */
 
 .tcb-post-content .legal-list-image li::before {
   font-family: var(--legal-font-icons-sport);
