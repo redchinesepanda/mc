@@ -73,13 +73,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	/* tooltipBackground.addEventListener( 'click', closeBackgroundTooltip ); */
-
-	console.log(tooltipBackground);
 	if ( document.querySelector( selectors.aboutAchievement ).contains( tooltipBackground ) ) {
-		console.log('yes, we find background!');
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	} else console.log('not find background');
+	};
 	// закрытие по клику на фон. Конец
 } );
 
