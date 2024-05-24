@@ -5,7 +5,6 @@
 	.legal-section-offers .legal-offers-compilation {
 		padding-left: 16px;
     	padding-right: 16px;
-		/* margin-top: -32px; */
 		margin-bottom: 32px;
 	}
 }
@@ -25,26 +24,11 @@
 		margin-left: auto;
 	}
 
-	.legal-section-offers .legal-offers-compilation {
-		/* margin-top: -64px;
-		margin-bottom: 64px; */
-	}
 }
 
 /* Display */
 
-/* .legal-offers-compilation {
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap;
-	justify-content: center;
-} */
-
 /* Position */
-
-/* .legal-offers-compilation {
-	padding-bottom: 30px;
-} */
 
 .legal-offers-compilation .swiper-wrapper {
 	padding-top: 8px;
@@ -83,9 +67,6 @@
 /* Background */
 
 .legal-offers-compilation .offers-compilation-item {
-	/* border-radius: 20px; */
-	/* border: 1px solid rgba(10, 10, 10, 0.85); */
-	/* box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px; */
 	border-radius: 60px;
 	border: 1px solid var( --Base-base-09 );
 	background: var( --Base-base-01 ); 
@@ -98,10 +79,6 @@
 .legal-offers-compilation .swiper:not( .legal-active-end ):after {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%);
 }
-
-/* .legal-offers-compilation .offers-compilation-item:hover{
-	background-color: rgb(89, 151, 227);
-} */
 
 /* Typography */
 
@@ -117,7 +94,6 @@
 }
 
 .legal-offers-compilation .offers-compilation-item:hover {
-	/* color: #ffffff; */
 	text-shadow: 0 0 0.7px var(--Base-base-09);
 }
 
