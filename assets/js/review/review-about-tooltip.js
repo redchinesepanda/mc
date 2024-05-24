@@ -73,11 +73,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
+	/* tooltipBackground.addEventListener( 'click', closeBackgroundTooltip ); */
 
-	/* if (tooltipBackground == true) {
+	if (tooltipBackground == true) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	} */
+	} else console.log('not find background');
 	// закрытие по клику на фон. Конец
 } );
 
