@@ -95,13 +95,6 @@
 	row-gap: 16px;
 }
 
-/* @media (max-width: 767px) {
-    .legal-billet-mega.legal-horizontal .billet-mega-content {
-        flex-direction: column;
-		row-gap: 1rem;
-    } 
-} */
-
 .legal-billet-mega .mega-about-afillate {
 	display: flex;
 	align-items: center;
@@ -152,11 +145,6 @@
 .legal-billet-mega .link-item {
 	padding: 7px;
 }
-
-/* .legal-billet-mega .billet-mega-content
-{
-	padding: 18px 20px;
-} */
 
 .legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ) {
 	margin: 0px;
@@ -209,7 +197,6 @@
 }
 
 .legal-billet-mega .legal-license {
-	/* padding-right: 21px; */
 	margin-top: 4px;
 	margin-bottom: 4px;
 	padding: 2px 8px 2px 3px;
@@ -224,7 +211,6 @@
 /* Width and Height */
 
 .legal-billet-mega .billet-mega-content {
-	/* width: 100%; */
 	width: calc(100% - (20px * 2));
 }
 
@@ -313,15 +299,7 @@
 	background-color: var(--Base-base-01);
 }
 
-/* .legal-billet-mega.legal-horizontal .billet-mega-content a {
-	background: unset;
-} */
-
 .legal-billet-mega .legal-license {
-	/* background-image: url( '../../img/billet/mega/mega-license.svg' );
-	background-position: right center;
-	background-repeat: no-repeat;
-	background-size: auto; */
 	border-radius: 16px;
 	background-color: var(--Base-base-02);
 }
@@ -389,10 +367,6 @@
 	line-height: 28px;
 	color: rgba(10, 10, 10, 0.85);
 }
-
-/* .legal-billet-mega.legal-horizontal .billet-mega-content p {
-	text-align: center;
-} */
 
 .legal-billet-mega .legal-license {
 	font-size: 13px;
