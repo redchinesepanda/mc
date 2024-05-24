@@ -76,6 +76,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	/* tooltipBackground.addEventListener( 'click', closeBackgroundTooltip ); */
 
 	if (tooltipBackground == true) {
+		console.log('yes, we find background!');
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
 	} else console.log('not find background');
 	// закрытие по клику на фон. Конец
