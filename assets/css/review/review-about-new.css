@@ -691,6 +691,10 @@
     cursor: pointer;
 }
 
+.review-about .achievement-name:not( .achievement-tooltip-background + .achievement-name ) {
+    cursor: default;
+}
+
 .review-about .achievement-tooltip-close::before,
 .review-about .about-rating::before {
     font-family: var(--legal-font-icons);

@@ -39,7 +39,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = index;
 
-		/* element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element ); */
 		if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
 			element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
 		};
@@ -77,7 +76,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	if (tooltipBackground == true) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
 	}
-	/* tooltipBackground.addEventListener( 'click', closeBackgroundTooltip ); */
 	// закрытие по клику на фон. Конец
 } );
 
