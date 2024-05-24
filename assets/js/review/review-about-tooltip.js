@@ -73,7 +73,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip ); 
+	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
 
 	/* if (tooltipBackground == true) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
