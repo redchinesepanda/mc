@@ -73,9 +73,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	if (tooltipBackground == true) {
+	tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
+
+	/* if (tooltipBackground == true) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
-	}
+	} */
 	// закрытие по клику на фон. Конец
 } );
 
