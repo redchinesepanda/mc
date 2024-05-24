@@ -166,12 +166,6 @@
 
 @media screen and ( min-width: 960px )
 {
-    /* Display */
-
-   /*  .review-about {
-        column-gap: 20px;
-    } */
-
     /* Position */
 
     .review-about {
@@ -190,10 +184,6 @@
         padding-top: 28px;
         padding-bottom: 32px;
     }
-
-  /*   .review-about.legal-mode-mini {
-        padding: 10px 20px;
-    } */
 
     .review-about .achievement-tooltip {
         position: absolute;
@@ -262,14 +252,6 @@
         min-width: calc( 148px - (18px * 2) );
     }
 
-    /* .review-about.legal-mode-mini {
-        width: 800px;
-    } */
-
-   /*  .review-about .about-achievement div {
-        width: 270px;
-    } */
-
     /* Background */
 
     .review-about .achievement-tooltip {
@@ -312,7 +294,6 @@
     column-gap: 30px;
 }
 
-/* .review-about .about-left, */
 .review-about .about-center {
     display: flex;
     column-gap: 26px;
@@ -396,7 +377,6 @@
 
 .review-about .about-achievement {
     display: flex;
- /*    justify-content: center; */
     column-gap: 30px;
 }
 
@@ -492,10 +472,6 @@
     padding-right: 16px;
     padding-left: 16px;
 }
-
-/* .review-about .achievement-tooltip-close {
-    margin-left: auto;
-} */
 
 .review-about .about-center h1 {
     padding-bottom: 0px;
@@ -789,7 +765,6 @@
     font-weight: 400;
     line-height: 17px;
     color: var( --Base-base-05 );
-    /* text-align: center; */
 }
 
 .review-about .about-achievement .achievement-bonus-link {
@@ -798,7 +773,3 @@
     line-height: 28px;
     text-decoration: none;
 }
-
-/* .review-about .about-achievement div {
-    text-align: center;
-} */
