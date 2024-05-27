@@ -27,6 +27,7 @@
     .home .compilation-about-wrapper {
         padding-top: 48px;
         padding-bottom: 48px;
+        margin-bottom: calc( 64px - 24px );
     }
 
     .compilation-about h1:not( .home .compilation-about h1 ) {
@@ -81,6 +82,7 @@
     .home .compilation-about-wrapper {
         padding-top: 32px;
         padding-bottom: 32px;
+        margin-bottom: calc( 32px - 24px );
     }
 
     .home .compilation-about {
