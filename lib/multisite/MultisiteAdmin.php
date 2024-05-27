@@ -103,7 +103,7 @@ class MultisiteAdmin
 	{
 		// if ( MultisiteBlog::check_main_blog() )
 		
-		if ( MultisiteBlog::check_multisite_admin() )
+		if ( self::check_multisite_admin() )
 		{
 			$handler = new self();
 	
