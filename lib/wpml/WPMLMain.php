@@ -293,7 +293,7 @@ class WPMLMain
 
         // $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
-        if ( MultisiteMain::check_multisite() )
+        if ( MiltisiteMain::check_multisite() )
         {
             if ( $blog_language = MultisiteSiteOptions::get_blog_language() )
             {
