@@ -297,7 +297,7 @@ class MultisiteHreflang
 			$languages[ $language_code ] = [
 				// 'hreflang' => $hreflang,
 
-				'href' => $item[ 'post_uri' ],
+				'url' => $item[ 'post_uri' ],
 			];
 		}
 
