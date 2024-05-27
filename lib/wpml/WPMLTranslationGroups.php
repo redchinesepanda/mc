@@ -89,6 +89,14 @@ class WPMLTranslationGroups
                 ];
     
                 $term_ids = wp_set_object_terms( $post_id, $slugs, self::TAXONOMY[ 'translation_group' ], false );
+
+                LegalDebug::debug( [
+                    'WPMLTranslationGroups' =>'set_translation_group',
+
+                    'trid' => $trid,
+
+                    'term_ids' => $term_ids,
+                ] );
     
                 foreach ( $term_ids as $term_id )
                 {
