@@ -23,7 +23,7 @@
                         </div>
                     </a>
                 <?php endforeach; ?>
-        </d iv>
+        </div>
         <?php endif; ?>
     </div> 
 <?php endif; ?>
