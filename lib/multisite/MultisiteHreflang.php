@@ -248,18 +248,23 @@ class MultisiteHreflang
 
 	public static function prepare_hreflang()
 	{
-		$args = [];
+		if ( MiltisiteMain::check_multisite() )
+        {
+			$args = [];
 
-		if ( $post = get_post() )
-		{
-			$items = self::get_group_items_all( $post->ID );
+			if ( $post = get_post() )
+			{
+				$items = self::get_group_items_all( $post->ID );
 
-			$args = [
-				'items' => self::parse_hreflang( $items ),
-			];
+				$args = [
+					'items' => self::parse_hreflang( $items ),
+				];
+			}
+
+			return self::render_hreflang( $args );
 		}
 
-		return self::render_hreflang( $args );
+		return '';
     }
 
 	public static function render_hreflang( $args )
