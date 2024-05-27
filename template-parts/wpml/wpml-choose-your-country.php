@@ -78,7 +78,7 @@
 		</a>
 		<a class="lang-item" href="/pl/" target="_blank" draggable="false">
 			<div class="lang-image locale-40"></div>
-			<div class="lang-title">polska</div>
+			<div class="lang-title">Polska</div>
 		</a>
 		<a class="lang-item" href="/se/" target="_blank" draggable="false">
 			<div class="lang-image locale-88"></div>
