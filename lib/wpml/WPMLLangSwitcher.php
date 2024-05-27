@@ -215,14 +215,14 @@ class WPMLLangSwitcher
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
-            $multisite_page_languages = MultisiteHreflang::prepare_languages();
+            // $multisite_page_languages = MultisiteHreflang::prepare_languages();
 
             LegalDebug::debug( [
                 'WPMLLangSwitcher' => 'get',
     
                 'multisite_languages' => $multisite_languages,
 
-                'multisite_page_languages' => $multisite_page_languages,
+                // 'multisite_page_languages' => $multisite_page_languages,
             ] );
 
             if ( empty( $languages ) )

@@ -21,13 +21,31 @@ class MultisiteSiteSwitcher
 		return 'en';
 	}
 
+	public static function get_combined_languages( $languages, $page_languages )
+	{
+		$page_languages = array_intersect_key( $page_languages, $languages );
+
+		foreach ( $page_languages as $language_code => $page_language )
+		{
+			$languages[ $language_code ] = array_merge( $languages[ $language_code ], $page_language );
+		}
+
+		return $languages;
+	}
+
 	public static function get_languages()
 	{
 		$current_domain = MultisiteBlog::get_domain();
 		
 		$blogs = MultisiteBlog::get_all_sites( $current_domain );
 
-		return self::sites_to_languages( $blogs );
+		$languages = self::sites_to_languages( $blogs );
+
+		$page_languages = MultisiteHreflang::prepare_languages();
+
+		return self::get_combined_languages( $languages, $page_languages );
+
+		// return self::sites_to_languages( $blogs );
 
 		// return self::sites_to_languages( MultisiteBlog::get_sites() );
 	}
