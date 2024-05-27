@@ -92,9 +92,18 @@ class MultisiteAdmin
 		}
 	}
 
+	public static function check_multisite_admin()
+	{
+		return MiltisiteMain::check_multisite()
+		
+			&& MultisiteBlog::check_main_blog();
+	}
+
 	public static function register_functions_mainsite()
 	{
-		if ( MultisiteBlog::check_main_blog() )
+		// if ( MultisiteBlog::check_main_blog() )
+		
+		if ( MultisiteBlog::check_multisite_admin() )
 		{
 			$handler = new self();
 	
