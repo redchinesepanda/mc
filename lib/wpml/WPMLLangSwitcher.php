@@ -231,6 +231,12 @@ class WPMLLangSwitcher
             }
         }
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'languages' => $languages,
+        ] );
+
         // $multisite_sites_list = MultisiteSiteswitcher::get_sites_list();
 
         // $post = get_post();
