@@ -231,7 +231,7 @@ class WPMLLangSwitcher
                 
                 // $languages = $multisite_languages;
                 
-                $languages = array_merge( $languages, $multisite_languages );
+                $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             }
         }
 
