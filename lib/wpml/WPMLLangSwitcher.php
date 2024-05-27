@@ -215,10 +215,16 @@ class WPMLLangSwitcher
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
+            $post = get_post();
+
+            $group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
+
             LegalDebug::debug( [
                 'WPMLLangSwitcher' => 'get',
     
                 'multisite_languages' => $multisite_languages,
+
+                'group_items_all' => $group_items_all,
             ] );
 
             if ( empty( $languages ) )
