@@ -9,9 +9,12 @@ class WPMLHreflang
 		// 	return false;
 		// }
 
-		$handler = new self();
+		if ( MiltisiteMain::check_multisite() )
+        {
+			$handler = new self();
 
-		add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
+			add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
+		}
 
 		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
 
