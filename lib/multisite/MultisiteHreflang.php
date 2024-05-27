@@ -143,17 +143,17 @@ class MultisiteHreflang
 
 			$locale = WPMLMain::multisite_locale( $language_code );
 
-			LegalDebug::debug( [
-                'MultisiteHreflang' => 'get_group_items',
+			// LegalDebug::debug( [
+            //     'MultisiteHreflang' => 'get_group_items',
 
-				'post_title' => $post_title,
+			// 	'post_title' => $post_title,
 
-				'post_uri' => $post_uri,
+			// 	'post_uri' => $post_uri,
 
-				'language_code' => $language_code,
+			// 	'language_code' => $language_code,
 
-				'locale' => $locale,
-            ] );
+			// 	'locale' => $locale,
+            // ] );
 
 			// $items[ $locale ] = [
 			
