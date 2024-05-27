@@ -207,6 +207,8 @@ class WPMLLangSwitcher
 
         if ( MiltisiteMain::check_multisite() )
         {
+            $multisite_languages = MultisiteSiteSwitcher::get_languages();
+
             if ( empty( $languages ) )
             {
                 // $languages = MultisiteSiteSwitcher::get_languages();
@@ -214,8 +216,6 @@ class WPMLLangSwitcher
                 $languages = $multisite_languages;
             }
         }
-
-        $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
         // $multisite_sites_list = MultisiteSiteswitcher::get_sites_list();
 
