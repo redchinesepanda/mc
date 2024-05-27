@@ -269,9 +269,12 @@ class WPMLMain
 
         // if ( !empty( $blog_locale ) )
 
-        if ( $blog_locale = MultisiteSiteOptions::get_blog_locale() )
+        if ( MiltisiteMain::check_multisite() )
         {
-            return $blog_locale;
+            if ( $blog_locale = MultisiteSiteOptions::get_blog_locale() )
+            {
+                return $blog_locale;
+            }
         }
             
         return get_locale();
