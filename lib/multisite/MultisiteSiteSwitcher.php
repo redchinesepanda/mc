@@ -36,6 +36,12 @@ class MultisiteSiteSwitcher
 			] );
 
 			$languages[ $language_code ] = array_merge( $languages[ $language_code ], $page_language );
+
+			LegalDebug::debug( [
+				'MultisiteSiteswitcher' =>'get_combined_languages',
+
+				'language' => $languages[ $language_code ],
+			] );
 		}
 
 		return $languages;
