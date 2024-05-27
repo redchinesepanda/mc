@@ -155,7 +155,9 @@ class MultisiteHreflang
 				'locale' => $locale,
             ] );
 
-			$items[ $locale ] = [
+			// $items[ $locale ] = [
+			
+			$items[] = [
 				'post_title' => $post_title,
 
 				'post_uri' => $post_uri,
@@ -233,7 +235,7 @@ class MultisiteHreflang
 
 		// foreach ( $items as $locale => $item )
 		
-		foreach ( $items as $key => $item )
+		foreach ( $items as $item )
 		{
 			$locale = $item[ 'locale' ];
 
