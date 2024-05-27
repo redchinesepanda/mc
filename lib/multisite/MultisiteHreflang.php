@@ -159,6 +159,10 @@ class MultisiteHreflang
 				'post_title' => $post_title,
 
 				'post_uri' => $post_uri,
+
+				'language_code' => $language_code,
+
+				'locale' => $locale,
 			];
 		}
 
@@ -227,8 +231,12 @@ class MultisiteHreflang
 	{
 		$hreflangs = [];
 
-		foreach ( $items as $locale => $item )
+		// foreach ( $items as $locale => $item )
+		
+		foreach ( $items as $key => $item )
 		{
+			$locale = $item[ 'locale' ];
+
 			$hreflang = WPMLMain::get_hreflang( $locale );
 
 			if ( $locale == 'en_GB' )
