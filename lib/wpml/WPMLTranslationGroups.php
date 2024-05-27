@@ -90,27 +90,30 @@ class WPMLTranslationGroups
     
                 $term_ids = wp_set_object_terms( $post_id, $slugs, self::TAXONOMY[ 'translation_group' ], false );
 
-                LegalDebug::debug( [
-                    'WPMLTranslationGroups' =>'set_translation_group',
+                // LegalDebug::debug( [
+                //     'WPMLTranslationGroups' =>'set_translation_group',
 
-                    'trid' => $trid,
+                //     'trid' => $trid,
 
-                    'term_ids' => $term_ids,
-                ] );
-    
-                foreach ( $term_ids as $term_id )
+                //     'term_ids' => $term_ids,
+                // ] );
+
+                if ( ! is_wp_error( $term_ids ) )
                 {
-                    $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] );
-    
-                    if ( ! empty( $term ) )
+                    foreach ( $term_ids as $term_id )
                     {
-                        if ( empty( $term->name ) )
+                        $term = term_exists( $term_id, self::TAXONOMY[ 'translation_group' ] );
+        
+                        if ( ! empty( $term ) )
                         {
-                            $args = [
-                                'name' => $post->post_title,
-                            ];
-            
-                            wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                            if ( empty( $term->name ) )
+                            {
+                                $args = [
+                                    'name' => $post->post_title,
+                                ];
+                
+                                wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
+                            }
                         }
                     }
                 }
