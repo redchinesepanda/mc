@@ -277,6 +277,58 @@ class MultisiteHreflang
 		return '';
     }
 
+	public static function parse_languages( $items )
+	{
+		$languages = [];
+
+		// foreach ( $items as $locale => $item )
+		
+		foreach ( $items as $item )
+		{
+			$language_code = $item[ 'language_code' ];
+
+			// $hreflang = WPMLMain::get_hreflang( $locale );
+
+			// if ( $locale == 'en_GB' )
+			// {
+			// 	$hreflang = 'x-default';
+			// }
+
+			$languages[ $language_code ] = [
+				// 'hreflang' => $hreflang,
+
+				'href' => $item[ 'post_uri' ],
+			];
+		}
+
+		return $languages;
+	}
+
+	public static function prepare_languages()
+	{
+		if ( MiltisiteMain::check_multisite() )
+        {
+			// $args = [];
+
+			if ( $post = get_post() )
+			{
+				$group_items_all = self::get_group_items_all( $post->ID );
+
+				// $args = [
+				// 	'items' => self::parse_languages( $group_items_all ),
+				// ];
+
+				$languages = self::parse_languages( $group_items_all );
+			}
+
+			// return self::render_hreflang( $args );
+		}
+
+		// return '';
+
+		return $languages;
+    }
+
 	public static function render_hreflang( $args )
     {
         return LegalComponents::render_main( self::TEMPLATE[ 'multiste-hreflang' ], $args );
