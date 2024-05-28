@@ -150,6 +150,12 @@ class CompilationAbout
 
 	public static function parse_node( $dom, $node )
 	{
+		LegalDebug::debug( [
+			'CompilationAbout' => 'parse_node',
+
+			'modify_content' => ReviewTitle::modify_content( $dom->saveHTML( $node ) ),
+		] );
+
 		return [
 			'class' => $node->getAttribute( 'class' ),
 
