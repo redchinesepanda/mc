@@ -8,7 +8,6 @@ class WPMLDB
             "SELECT wp_icl_languages.code,
 			wp_icl_languages.id,
 			wp_icl_languages_translations.name AS native_name,
-			wp_icl_languages.major AS active,
 			wp_icl_languages.default_locale
 
             FROM wp_icl_languages
@@ -27,7 +26,7 @@ class WPMLDB
         );
     }
 
-    public static function parse_languages( $items )
+    public static function parse_languages( $items, $language_code )
 	{
 		if ( $items )
 		{
@@ -35,6 +34,13 @@ class WPMLDB
 
 			foreach ( $items as $item )
 			{
+				$active = 0;
+
+				if ( $item->code == $language_code )
+				{
+					$active = 1;
+				}
+
 				$languages[] = [
 					'code' => $item->code,
 
@@ -42,7 +48,7 @@ class WPMLDB
 
 					'native_name' => $item->native_name,
 
-					'active' => $item->active,
+					'active' => $active,
 
 					'default_locale' => $item->default_locale,
 
@@ -92,7 +98,7 @@ class WPMLDB
         
         $items = $wpdb->get_results( $all_languages_query );
 
-		$languages = self::parse_languages( $items );
+		$languages = self::parse_languages( $items, $language_code );
 
         // $language_code = $wpdb->get_var( $all_languages_query );
 
