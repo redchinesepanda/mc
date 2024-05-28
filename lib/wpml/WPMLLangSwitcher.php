@@ -225,14 +225,16 @@ class WPMLLangSwitcher
                 // 'multisite_page_languages' => $multisite_page_languages,
             ] );
 
-            // if ( empty( $languages ) )
-            // {
+            if ( empty( $languages ) )
+            {
                 // $languages = MultisiteSiteSwitcher::get_languages();
                 
-                // $languages = $multisite_languages;
-                
+                $languages = $multisite_languages;
+            }
+            else
+            {
                 $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
-            // }
+            }
         }
 
         LegalDebug::debug( [
