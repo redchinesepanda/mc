@@ -34,21 +34,21 @@ class WPMLDB
 		'country_flag_url' => '%s/assets/img/multisite/flag/%s.svg',
 	];
 
-    public static function get_country_flag_url( $domain, $code )
+    public static function get_country_flag_url( $code )
 	{
 		// LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $blog_language . '.svg'
 
 		return sprintf( self::PATTERNS[ 'country_flag_url' ], LegalMain::LEGAL_URL, $code );
 	}
 
-    public static function get_url( $domain, $code )
+    public static function get_url( $siteurl, $code )
 	{
 		if ( $code == 'en' )
 		{
-			return sprintf( self::PATTERNS[ 'url-root' ], $domain );
+			return sprintf( self::PATTERNS[ 'url-root' ], $siteurl );
 		}
 
-		return sprintf( self::PATTERNS[ 'url' ], $domain, $code );
+		return sprintf( self::PATTERNS[ 'url' ], $siteurl, $code );
 	}
 
     public static function get_active( $language_code, $item_code )
@@ -67,7 +67,7 @@ class WPMLDB
 		{
 			$languages = [];
 
-			$domain = MultisiteBlog::get_domain();
+			$siteurl = MultisiteBlog::get_siteurl();
 
 			foreach ( $items as $item )
 			{
@@ -91,9 +91,9 @@ class WPMLDB
 
 					'default_locale' => $item->default_locale,
 
-					'url' => self::get_url( $domain, $item->code ),
+					'url' => self::get_url( $siteurl, $item->code ),
 
-					'country_flag_url' => self::get_country_flag_url( $domain, $item->code ),
+					'country_flag_url' => self::get_country_flag_url( $item->code ),
 
 					'language_code' => $item->code,
 				];
