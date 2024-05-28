@@ -114,7 +114,7 @@ class MultisiteBlog
 
 	public static function get_domain_main_site( $domain = '' )
 	{
-		$main_sites = self::get_sites( self::MODE[ 'all' ], $domain, '/' )
+		$main_sites = self::get_sites( self::MODE[ 'all' ], $domain, '/' );
 
 		if ( ! empty( $main_sites ) )
 		{
