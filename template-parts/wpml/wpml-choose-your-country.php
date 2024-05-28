@@ -48,7 +48,7 @@
 			<div class="lang-image locale-2"></div>
 			<div class="lang-title">España</div>
 		</a>
-		<a class="lang-item" href="" target="_blank" draggable="false">
+		<a class="lang-item" href="https://match.center/" target="_blank" draggable="false">
 			<div class="lang-image locale-1"></div>
 			<div class="lang-title">United Kingdom</div>
 		</a>
