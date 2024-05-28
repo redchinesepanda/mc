@@ -207,7 +207,7 @@ class WPMLLangSwitcher
 
         if ( empty( $languages ) )
         {
-            $subsite_languages = WPMLDB::multisite_all_languages();
+            $languages = WPMLDB::multisite_all_languages();
         }
 
         // LegalDebug::debug( [
