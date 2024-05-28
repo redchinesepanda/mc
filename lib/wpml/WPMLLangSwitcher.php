@@ -205,10 +205,14 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
+        $subsite_languages = WPMLDB::multisite_all_languages();
+
         LegalDebug::debug( [
             'WPMLLangSwitcher' => 'get',
 
             'check_multisite' => MiltisiteMain::check_multisite(),
+
+            'subsite_languages' => $subsite_languages,
 
             'languages' => $languages,
         ] );

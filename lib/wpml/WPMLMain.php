@@ -10,7 +10,7 @@ require_once( 'WPMLHreflang.php' );
 
 require_once( 'WPMLChooseYourCountry.php' );
 
-// require_once( 'WPMLDomain.php' );
+require_once( 'WPMLDB.php' );
 
 require_once( 'WPMLTranslationGroups.php' );
 
