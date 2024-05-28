@@ -306,6 +306,7 @@ class MultisiteHreflang
 
 	public static function prepare_languages()
 	{
+		// $languages = [];
 		if ( MiltisiteMain::check_multisite() )
         {
 			// $args = [];
@@ -319,6 +320,8 @@ class MultisiteHreflang
 				// ];
 
 				$languages = self::parse_languages( $group_items_all );
+
+				return $languages;
 			}
 
 			// return self::render_hreflang( $args );
@@ -326,7 +329,9 @@ class MultisiteHreflang
 
 		// return '';
 
-		return $languages;
+		// return $languages;
+
+		return [];
     }
 
 	public static function render_hreflang( $args )
