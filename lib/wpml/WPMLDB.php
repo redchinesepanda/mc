@@ -67,15 +67,22 @@ class WPMLDB
 		{
 			$languages = [];
 
-			$domain = MultisiteBlog::get_domain();
+			$blog_id = 1;
 
 			$domain_main_site = MultisiteBlog::get_domain_main_site( $domain );
 
-			LegalDebug::debug( [
-				'WPMLDB' =>'parse_languages',
+			// LegalDebug::debug( [
+			// 	'WPMLDB' =>'parse_languages',
 
-				'domain_main_site' => $domain_main_site,
-			] );
+			// 	'domain_main_site' => $domain_main_site,
+			// ] );
+
+			if ( !empty( $domain_main_site ) )
+			{
+				$blog_id = $domain_main_site->blog_id;
+			}
+
+			$siteurl = MultisiteBlog::get_siteurl( $blog_id );
 
 			foreach ( $items as $item )
 			{
