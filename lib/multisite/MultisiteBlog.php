@@ -64,7 +64,7 @@ class MultisiteBlog
 		return get_blog_details( $blog_id );
 	}
 
-	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '' )
+	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '' )
 	{
 		// $sites_args = [
 		// 	'number' => 32,
@@ -87,6 +87,11 @@ class MultisiteBlog
 			$sites_args[ 'domain' ] = $domain;
 		}
 
+		if ( !empty( $path ) )
+		{
+			$sites_args[ 'path' ] = $path;
+		}
+
 		$sites = get_sites( $sites_args );
 
 		if ( $sites )
@@ -105,6 +110,11 @@ class MultisiteBlog
 	public static function get_other_sites( $domain = '' )
 	{
 		return self::get_sites( self::MODE[ 'other' ], $domain );
+	}
+
+	public static function get_domain_main_site( $domain = '' )
+	{
+		return self::get_sites( self::MODE[ 'all' ], $domain, '/' );
 	}
 
 	public static function get_current_site()

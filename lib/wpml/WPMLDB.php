@@ -67,7 +67,15 @@ class WPMLDB
 		{
 			$languages = [];
 
-			$siteurl = MultisiteBlog::get_siteurl();
+			$domain = MultisiteBlog::get_domain();
+
+			$domain_main_site = MultisiteBlog::get_domain_main_site( $domain );
+
+			LegalDebug::debug( [
+				'WPMLDB' =>'parse_languages',
+
+				'domain_main_site' => $domain_main_site,
+			] );
 
 			foreach ( $items as $item )
 			{
