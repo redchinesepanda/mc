@@ -27,7 +27,7 @@ class WPMLDB
     }
 
 	const PATTERNS = [
-		'url' => '%s/$s/',
+		'url' => '%s$1/%s$2/',
 
 		'country_flag_url',
 	];
