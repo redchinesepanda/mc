@@ -244,6 +244,8 @@
 
 .tabs-info-wrapper {
     position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .legal-tabs-info > p {
