@@ -7,7 +7,8 @@ class WPMLDB
         return $wpdb->prepare(
             "SELECT wp_icl_languages.code,
 			wp_icl_languages.id,
-			wp_icl_languages_translations.name AS native_name,
+			wp_icl_languages.english_name AS native_name,
+			wp_icl_languages_translations.name AS translated_name,
 			wp_icl_languages.default_locale
 
             FROM wp_icl_languages
@@ -107,6 +108,8 @@ class WPMLDB
 					'active' => $active,
 
 					'default_locale' => $item->default_locale,
+
+					'translated_name' => $item->translated_name,
 
 					'url' => self::get_url( $siteurl, $item->code ),
 
