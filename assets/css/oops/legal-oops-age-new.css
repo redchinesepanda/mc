@@ -2,9 +2,9 @@
 {
 	/* Display */
 
-	.legal-oops-age-wrapper {
+	/* .legal-oops-age-wrapper {
 		align-items: flex-end;
-	}
+	} */
 
 	.legal-oops-cookie {
 		justify-content: center;
@@ -18,11 +18,19 @@
 	.legal-oops-age .oops-age-button-no {
 		justify-content: center;
 	}
+
+	/* Position */
+
+	.legal-oops-age-wrapper {
+		position: absolute;
+		bottom: 0px;
+	}
 	
 	/* Width and Height */
 
 	.legal-oops-age {
 		flex-basis: 100%;
+		height: fit-content;
 	}
 
 	.legal-oops-age .oops-age-button-yes,
