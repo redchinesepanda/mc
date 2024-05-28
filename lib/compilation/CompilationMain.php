@@ -244,6 +244,10 @@ class CompilationMain
 
     public static function get_settings( $id )
     {
+        $title_text = get_field( self::COMPILATION[ 'title-text' ], $id );
+
+        $title_text = ReviewTitle::replace_placeholder( $title_text );
+
         return [
             'id' => $id,
 
@@ -258,7 +262,9 @@ class CompilationMain
 
                     'class' => ( !empty( get_field( self::COMPILATION[ 'title-image' ], $id ) ) ? 'legal-image' : '' ),
 
-                    'text' => get_field( self::COMPILATION[ 'title-text' ], $id ),
+                    // 'text' => get_field( self::COMPILATION[ 'title-text' ], $id ),
+                    
+                    'text' => $title_text,
             ],
 
             'attention' => [
