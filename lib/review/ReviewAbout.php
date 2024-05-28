@@ -178,6 +178,8 @@ class ReviewAbout
     const BONUS_EXCEPTION = [
         'es',
 
+        'dk',
+
         'mx',
 
         'pt',
