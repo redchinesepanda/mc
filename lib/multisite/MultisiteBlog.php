@@ -114,7 +114,14 @@ class MultisiteBlog
 
 	public static function get_domain_main_site( $domain = '' )
 	{
-		return self::get_sites( self::MODE[ 'all' ], $domain, '/' );
+		$main_sites = self::get_sites( self::MODE[ 'all' ], $domain, '/' )
+
+		if ( ! empty( $main_sites ) )
+		{
+			return array_shift( $main_sites );
+		}
+
+		return null;
 	}
 
 	public static function get_current_site()
