@@ -40,6 +40,14 @@ class WPMLDB
 
         $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
+		LegalDebug::debug( [
+            'WPMLMain' => 'multisite_all_languages',
+
+            'language_code' => $language_code,
+
+            'all_languages_query' => $all_languages_query,
+        ] );
+
         // LegalDebug::debug( [
         //     'WPMLMain' => 'multisite_all_languages',
 
