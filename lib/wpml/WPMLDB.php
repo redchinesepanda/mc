@@ -36,7 +36,7 @@ class WPMLDB
 
     public static function get_country_flag_url( $domain, $code )
 	{
-		return sprintf( self::PATTERNS[ 'country_flag_url' ], LegalMain::LEGAL_URL, $code )
+		return sprintf( self::PATTERNS[ 'country_flag_url' ], LegalMain::LEGAL_URL, $code );
 	}
 
     public static function get_url( $domain, $code )
