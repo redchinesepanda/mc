@@ -49,7 +49,7 @@ class WPMLDB
 					$active = 1;
 				}
 
-				$languages[] = [
+				$languages[ $item->code ] = [
 					'code' => $item->code,
 
 					'id' => $item->id,
