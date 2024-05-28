@@ -26,11 +26,19 @@ class WPMLDB
         );
     }
 
+	const PATTERNS = [
+		'url' => '%s/$s/',
+
+		'country_flag_url',
+	];
+
     public static function parse_languages( $items, $language_code )
 	{
 		if ( $items )
 		{
 			$languages = [];
+
+			$domain = MultisiteBlog::get_domain();
 
 			foreach ( $items as $item )
 			{
@@ -52,7 +60,7 @@ class WPMLDB
 
 					'default_locale' => $item->default_locale,
 
-					'url' => '',
+					'url' => sprintf( self::PATTERNS[ 'url' ], $domain, $item->code ),
 
 					'country_flag_url' => '',
 
