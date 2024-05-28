@@ -69,6 +69,8 @@ class WPMLDB
 
 			$blog_id = 1;
 
+			$domain = MultisiteBlog::get_domain();
+
 			$domain_main_site = MultisiteBlog::get_domain_main_site( $domain );
 
 			// LegalDebug::debug( [
