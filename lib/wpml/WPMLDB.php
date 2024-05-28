@@ -29,8 +29,35 @@ class WPMLDB
 	const PATTERNS = [
 		'url' => '%s/%s/',
 
-		'country_flag_url',
+		'url-root' => '%s/',
+
+		'country_flag_url' => '%s/assets/img/multisite/flags/%s.svg',
 	];
+
+    public static function get_country_flag_url( $domain, $code )
+	{
+		return sprintf( self::PATTERNS[ 'country_flag_url' ], LegalMain::LEGAL_URL, $code )
+	}
+
+    public static function get_url( $domain, $code )
+	{
+		if ( $code == 'en' )
+		{
+			return sprintf( self::PATTERNS[ 'url-root' ], $domain );
+		}
+
+		return sprintf( self::PATTERNS[ 'url' ], $domain, $code );
+	}
+
+    public static function get_active( $language_code, $item_code )
+	{
+		if ( $item_code == $language_code )
+		{
+			return 1;
+		}
+
+		return 0;
+	}
 
     public static function parse_languages( $items, $language_code )
 	{
@@ -42,12 +69,14 @@ class WPMLDB
 
 			foreach ( $items as $item )
 			{
-				$active = 0;
+				$active = self::get_active( $language_code, $item->code );
 
-				if ( $item->code == $language_code )
-				{
-					$active = 1;
-				}
+				// $active = 0;
+
+				// if ( $item->code == $language_code )
+				// {
+				// 	$active = 1;
+				// }
 
 				$languages[ $item->code ] = [
 					'code' => $item->code,
@@ -60,9 +89,9 @@ class WPMLDB
 
 					'default_locale' => $item->default_locale,
 
-					'url' => sprintf( self::PATTERNS[ 'url' ], $domain, $item->code ),
+					'url' => self::get_url( $domain, $item->code ),
 
-					'country_flag_url' => '',
+					'country_flag_url' => self::get_country_flag_url( $domain, $item->code ),
 
 					'language_code' => $item->code,
 				];
