@@ -31,11 +31,13 @@ class WPMLDB
 
 		'url-root' => '%s/',
 
-		'country_flag_url' => '%s/assets/img/multisite/flags/%s.svg',
+		'country_flag_url' => '%s/assets/img/multisite/flag/%s.svg',
 	];
 
     public static function get_country_flag_url( $domain, $code )
 	{
+		// LegalMain::LEGAL_URL . '/assets/img/multisite/flag/' . $blog_language . '.svg'
+
 		return sprintf( self::PATTERNS[ 'country_flag_url' ], LegalMain::LEGAL_URL, $code );
 	}
 
