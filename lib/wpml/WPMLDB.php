@@ -53,6 +53,8 @@ class WPMLDB
 					'language_code' => $item->code,
 				];
 			}
+
+			return $languages;
 		}
 
 		return [];
