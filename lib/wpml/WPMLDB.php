@@ -9,7 +9,7 @@ class WPMLDB
 			wp_icl_languages.id,
 			-- wp_icl_languages_translations.language_code,
 			wp_icl_languages.major,
-			wp_icl_languages.default_locale,
+			wp_icl_languages.default_locale
 
             FROM wp_icl_languages
 
@@ -38,8 +38,6 @@ class WPMLDB
         // ] );
 
         global $wpdb;
-
-		$wpdb->show_errors( true );
 
         $language_code = MultisiteSiteOptions::get_blog_language();
 
