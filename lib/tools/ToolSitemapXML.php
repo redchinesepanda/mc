@@ -25,7 +25,7 @@ class ToolSitemapXML
 
         # Изменение параметров запроса WP_Query для карты сайта posts
 
-        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
     }
 
     public static function check_sitemap_enabled()
