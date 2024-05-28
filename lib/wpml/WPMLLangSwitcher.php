@@ -235,11 +235,11 @@ class WPMLLangSwitcher
             // }
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'languages' => $languages,
-        // ] );
+            'languages' => $languages,
+        ] );
 
         // $multisite_sites_list = MultisiteSiteswitcher::get_sites_list();
 
