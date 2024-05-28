@@ -21,7 +21,7 @@ class WPMLDB
 
             [
 				1,
-				
+
                 $display_language_code,
             ]
         );
@@ -38,6 +38,8 @@ class WPMLDB
         // ] );
 
         global $wpdb;
+
+		$wpdb->show_errors( true );
 
         $language_code = MultisiteSiteOptions::get_blog_language();
 
