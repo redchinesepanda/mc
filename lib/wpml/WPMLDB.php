@@ -124,30 +124,16 @@ class WPMLDB
 
     public static function multisite_all_languages()
     {
-        // LegalDebug::debug( [
-        //     'WPMLMain' => 'multisite_all_languages',
-
-        //     'data' => $data,
-
-        //     'element' => $element,
-        // ] );
-
         global $wpdb;
 
         $language_code = MultisiteSiteOptions::get_blog_language();
 
         $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
-		LegalDebug::debug( [
-            'WPMLMain' => 'multisite_all_languages',
+		// LegalDebug::debug( [
+        //     'WPMLDB' => 'multisite_all_languages',
 
-            'language_code' => $language_code,
-
-            'all_languages_query' => $all_languages_query,
-        ] );
-
-        // LegalDebug::debug( [
-        //     'WPMLMain' => 'multisite_all_languages',
+        //     'language_code' => $language_code,
 
         //     'all_languages_query' => $all_languages_query,
         // ] );
@@ -156,24 +142,13 @@ class WPMLDB
 
 		$languages = self::parse_languages( $items, $language_code );
 
-        // $language_code = $wpdb->get_var( $all_languages_query );
+        // LegalDebug::debug( [
+        //     'WPMLDB' => 'multisite_all_languages',
 
-        LegalDebug::debug( [
-            'WPMLMain' => 'multisite_all_languages',
+        //     'languages' => $languages,
+        // ] );
 
-            'languages' => $languages,
-        ] );
-
-        // if ( $language_code != 'en' )
-        // {
-        //     return $language_code;
-        // }
-
-        // return '';
-
-        // return $language_code;
-        
-        // return $wpdb->get_var( $language_code_query );
+		return $languages;
     }
 }
 
