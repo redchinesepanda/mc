@@ -7,16 +7,17 @@ class WPMLDB
         return $wpdb->prepare(
             "SELECT wp_icl_languages.code,
 			wp_icl_languages.id,
-			wp_icl_languages_translations.language_code,
+			-- wp_icl_languages_translations.language_code,
 			wp_icl_languages.major,
 			wp_icl_languages.default_locale,
 
             FROM wp_icl_languages
 
-			INNER JOIN wp_icl_languages_translations ON wp_icl_languages.code = wp_icl_languages_translations.language_code
+			-- INNER JOIN wp_icl_languages_translations ON wp_icl_languages.code = wp_icl_languages_translations.language_code
 
             WHERE wp_icl_languages.active = 2
-				AND wp_icl_languages_translations.display_language_code = %s",
+				-- AND wp_icl_languages_translations.display_language_code = %s
+			",
 
             [
                 $display_language_code,
