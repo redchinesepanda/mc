@@ -150,16 +150,22 @@ class CompilationAbout
 
 	public static function parse_node( $dom, $node )
 	{
-		LegalDebug::debug( [
-			'CompilationAbout' => 'parse_node',
+		$html = $dom->saveHTML( $node );
 
-			'modify_content' => ReviewTitle::modify_content( $dom->saveHTML( $node ) ),
-		] );
+		$html = ReviewTitle::modify_content( $html );
+
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'parse_node',
+
+		// 	'modify_content' => ReviewTitle::modify_content( $dom->saveHTML( $node ) ),
+		// ] );
 
 		return [
 			'class' => $node->getAttribute( 'class' ),
 
-			'html' => $dom->saveHTML( $node ),
+			// 'html' => $dom->saveHTML( $node ),
+			
+			'html' => $html,
 		];
 	}
 
