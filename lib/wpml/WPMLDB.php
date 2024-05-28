@@ -99,7 +99,7 @@ class WPMLDB
 
 					'default_locale' => $item->default_locale,
 
-					'url' => self::get_url( $siteurl, $item->code ),
+					'url' => self::get_url( $domain, $item->code ),
 
 					'country_flag_url' => self::get_country_flag_url( $item->code ),
 
