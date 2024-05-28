@@ -38,7 +38,7 @@ class WPMLDB
 
         $language_code = MultisiteSiteOptions::get_blog_language();
 
-        $all_languages_query = self::multisite_element_language_code_query( $wpdb, $language_code );
+        $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
         // LegalDebug::debug( [
         //     'WPMLMain' => 'multisite_all_languages',
