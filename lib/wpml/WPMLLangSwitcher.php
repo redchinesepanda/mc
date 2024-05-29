@@ -104,7 +104,7 @@ class WPMLLangSwitcher
 
         // $key = array_search( 1, $args_active );
 
-        $current_code = WMPLMAIN::currentlanguage();
+        $current_code = WMPLMain::current_language();
         
         $args_active = array_column( $args, 'code' );
 
