@@ -155,7 +155,7 @@
 }
 
 .tcb-post-content h1,
-.tcb-post-content h2:not( .legal-tabs-info h2 ),
+.tcb-post-content h2:not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
 .tcb-post-content h3,
 .tcb-post-content h4 {
     margin-bottom: 0px;
