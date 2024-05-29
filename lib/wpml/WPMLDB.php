@@ -17,6 +17,8 @@ class WPMLDB
 
             WHERE wp_icl_languages.active = %d
 				AND wp_icl_languages_translations.display_language_code = %s
+			
+			ORDER BY wp_icl_languages.id
 			",
 
             [
@@ -158,6 +160,16 @@ class WPMLDB
 
 		return $languages;
     }
+
+	private function sort_by_id( $array_a, $array_b ) {
+
+		return (int) $array_a['id'] > (int) $array_b['id'] ? - 1 : 1;
+	}
+
+	private function sort_by_name( $array_a, $array_b ) {
+
+		return $array_a['translated_name'] > $array_b['translated_name'] ? 1 : - 1;
+	}
 }
 
 ?>
