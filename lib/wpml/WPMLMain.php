@@ -298,25 +298,51 @@ class WPMLMain
 
         $wpml_current_language = apply_filters( 'wpml_current_language', NULL );
 
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'current_language',
+
+        //     'wpml_current_language' => $wpml_current_language,
+        // ] );
+
+        if ( MiltisiteMain::check_multisite() )
+        {
+            if ( empty( $wpml_current_language ) )
+            {
+                $blog_language = MultisiteSiteOptions::get_blog_language();
+
+                // LegalDebug::debug( [
+                //     'WPMLMain' => 'current_language',
+        
+                //     'blog_language' => $blog_language,
+                // ] );
+
+                if ( ! empty( $blog_language ) )
+                {
+                    LegalDebug::debug( [
+                        'WPMLMain' => 'current_language',
+            
+                        'blog_language' => $blog_language,
+                    ] );
+                }
+            }
+
+            // if ( $blog_language = MultisiteSiteOptions::get_blog_language() )
+            // {
+            //     LegalDebug::debug( [
+            //         'WPMLMain' => 'current_language',
+        
+            //         'blog_language' => $blog_language,
+            //     ] );
+
+            //     return $blog_language;
+            // }
+        }
+
         LegalDebug::debug( [
             'WPMLMain' => 'current_language',
 
             'wpml_current_language' => $wpml_current_language,
         ] );
-
-        if ( MiltisiteMain::check_multisite() )
-        {
-            if ( $blog_language = MultisiteSiteOptions::get_blog_language() )
-            {
-                LegalDebug::debug( [
-                    'WPMLMain' => 'current_language',
-        
-                    'blog_language' => $blog_language,
-                ] );
-
-                return $blog_language;
-            }
-        }
 
         // return $blog_language;
 
