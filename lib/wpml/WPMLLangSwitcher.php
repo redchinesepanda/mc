@@ -89,6 +89,12 @@ class WPMLLangSwitcher
 
     private static function get_active( &$args )
     {
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get_active',
+
+            'args' => $args,
+        ] );
+
         if ( empty( $args ) )
         {
             return [];
