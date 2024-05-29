@@ -127,6 +127,8 @@ class WPMLDB
 
     public static function multisite_all_languages()
     {
+		MultisiteBlog::check_main_domain();
+		
         global $wpdb;
 
         $language_code = MultisiteSiteOptions::get_blog_language();

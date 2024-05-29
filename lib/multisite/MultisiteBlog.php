@@ -155,6 +155,23 @@ class MultisiteBlog
 	{
 		return !self::check_main_blog();
 	}
+
+	public static function check_main_domain()
+	{
+		$domain = self::get_domain();
+
+		$domain_main_site = self::get_domain_main_site();
+
+		LegalDebug::debug( [
+			'MultisiteBlog' => 'check_main_domain',
+
+			'domain' => $domain,
+
+            'domain_main_site' => $domain_main_site,
+		] );
+
+		return true;
+	}
 }
 
 ?>
