@@ -208,6 +208,14 @@ class WPMLLangSwitcher
         if ( empty( $languages ) )
         {
             $languages = WPMLDB::multisite_all_languages();
+
+            LegalDebug::debug( [
+                'WPMLLangSwitcher' => 'get',
+                
+                'native_name' => array_column( $languages, 'native_name' ),
+                
+                'translated_name' => array_column( $languages, 'translated_name' ),
+            ] );
         }
 
         LegalDebug::debug( [
@@ -219,7 +227,7 @@ class WPMLLangSwitcher
 
             // 'languages' => $languages,
             'native_name' => array_column( $languages, 'native_name' ),
-            
+
             'translated_name' => array_column( $languages, 'translated_name' ),
         ] );
 
