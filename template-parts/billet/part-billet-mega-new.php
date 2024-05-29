@@ -49,12 +49,12 @@
 		<?php endif; ?>
 		<?php echo $args[ 'content' ]; ?>
 	</div>
-	<div class="billet-mega-footer">
-	Um cassino que funcionava no regime normal em todo Portugal durante 40 anos entrou no mercado online em 2017, e as apostas desportivas apareceram em 2020. A casa de apostas foi a patrocinadora principal das camisolas das equipas da primeira liga portuguesa, entre as quais CD Santa Clara, Paços de Ferreira e Rio Ave.<?php echo $args[ 'footer' ] ?>
-		</div>
 	<?php if( !empty( $args[ 'footer' ] ) ) : ?>
 		<div class="billet-mega-footer">
 			<?php echo $args[ 'footer' ] ?>
 		</div>
 	<?php endif; ?>
+</div>
+<div class="billet-mega-footer">
+	Um cassino que funcionava no regime normal em todo Portugal durante 40 anos entrou no mercado online em 2017, e as apostas desportivas apareceram em 2020. A casa de apostas foi a patrocinadora principal das camisolas das equipas da primeira liga portuguesa, entre as quais CD Santa Clara, Paços de Ferreira e Rio Ave.
 </div>
