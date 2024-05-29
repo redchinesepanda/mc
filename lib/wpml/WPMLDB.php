@@ -17,7 +17,7 @@ class WPMLDB
 
             WHERE wp_icl_languages.active = %d
 				-- AND wp_icl_languages_translations.display_language_code = %s
-				AND wp_icl_languages.code = wp_icl_languages_translations.language_code
+				AND wp_icl_languages.code = wp_icl_languages_translations.display_language_code
 			
 			ORDER BY wp_icl_languages_translations.id DESC
 			",
