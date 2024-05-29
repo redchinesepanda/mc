@@ -7,6 +7,7 @@
 // ] );
 
 ?>
+<span class="legal-to-top"></span>
 <?php if( !empty( $args[ 'items' ] ) ) : ?>
     <nav class="anchors">
         <div class="review-anchors">
@@ -22,6 +23,6 @@
                 </div>
             </div>
         </div>
-        <span class="legal-to-top"></span>
+        
     </nav>
 <?php endif; ?>
