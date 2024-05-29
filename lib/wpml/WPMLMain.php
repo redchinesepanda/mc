@@ -296,10 +296,24 @@ class WPMLMain
 
         // $blog_language = MultisiteBlog::get_blog_option( $current_blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
 
+        $wpml_current_language = apply_filters( 'wpml_current_language', NULL );
+
+        LegalDebug::debug( [
+            'WPMLMain' => 'current_language',
+
+            'wpml_current_language' => $wpml_current_language,
+        ] );
+
         if ( MiltisiteMain::check_multisite() )
         {
             if ( $blog_language = MultisiteSiteOptions::get_blog_language() )
             {
+                LegalDebug::debug( [
+                    'WPMLMain' => 'current_language',
+        
+                    'blog_language' => $blog_language,
+                ] );
+
                 return $blog_language;
             }
         }
