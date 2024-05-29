@@ -51,7 +51,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
 
-		buttonToTop : '.anchors .legal-to-top'
+		buttonToTop : '.legal-section-anchors .legal-to-top'
 	};
 
 	const classes = {
