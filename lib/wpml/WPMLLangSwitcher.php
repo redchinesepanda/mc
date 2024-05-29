@@ -100,9 +100,15 @@ class WPMLLangSwitcher
             return [];
         }
 
-        $args_active = array_column( $args, 'active' );
+        // $args_active = array_column( $args, 'active' );
 
-        $key = array_search( 1, $args_active );
+        // $key = array_search( 1, $args_active );
+
+        $current_code = WMPLMAIN::currentlanguage();
+        
+        $args_active = array_column( $args, 'code' );
+
+        $key = array_search( $current_code, $args_active );
 
         $active = array_splice( $args, $key, 1 );
 
