@@ -139,7 +139,9 @@ class WPMLDB
 
         global $wpdb;
 
-        $language_code = MultisiteSiteOptions::get_blog_language();
+        // $language_code = MultisiteSiteOptions::get_blog_language();
+        
+		$language_code = WPMLMain::current_language();
 
         $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
