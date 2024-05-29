@@ -318,11 +318,11 @@ class WPMLMain
 
                 if ( ! empty( $blog_language ) )
                 {
-                    LegalDebug::debug( [
-                        'WPMLMain' => 'current_language',
+                    // LegalDebug::debug( [
+                    //     'WPMLMain' => 'current_language',
             
-                        'blog_language' => $blog_language,
-                    ] );
+                    //     'blog_language' => $blog_language,
+                    // ] );
 
                     return $blog_language;
                 }
@@ -340,11 +340,11 @@ class WPMLMain
             // }
         }
 
-        LegalDebug::debug( [
-            'WPMLMain' => 'current_language',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'current_language',
 
-            'wpml_current_language' => $wpml_current_language,
-        ] );
+        //     'wpml_current_language' => $wpml_current_language,
+        // ] );
 
         return $wpml_current_language;
 
