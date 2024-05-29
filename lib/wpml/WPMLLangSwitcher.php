@@ -210,15 +210,15 @@ class WPMLLangSwitcher
             $languages = WPMLDB::multisite_all_languages();
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'check_multisite' => MiltisiteMain::check_multisite(),
+            // 'check_multisite' => MiltisiteMain::check_multisite(),
 
-        //     'subsite_languages' => $subsite_languages,
+            // 'subsite_languages' => $subsite_languages,
 
-        //     'languages' => $languages,
-        // ] );
+            'languages' => $languages,
+        ] );
 
         if ( MiltisiteMain::check_multisite() )
         {

@@ -121,8 +121,6 @@ class WPMLDB
 				];
 			}
 
-			krsort( $languages );
-
 			return $languages;
 		}
 
