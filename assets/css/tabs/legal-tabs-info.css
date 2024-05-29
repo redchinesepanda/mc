@@ -29,9 +29,9 @@
     }
 
     .legal-tabs-info .legal-tab-content {
-        padding-top: 52px;
+        padding-top: 28px;
         padding-right: 28px;
-        padding-bottom: 52px;
+        padding-bottom: 28px;
         padding-left: 28px;
     }
     
@@ -58,7 +58,8 @@
     }
 
     .legal-tabs-info .legal-tab-content {
-        height: 341px;
+        /* height: 341px; */
+        height: calc( 308px - ( 28px * 2 ) - 2px );
         overflow: hidden; 
     }
 
