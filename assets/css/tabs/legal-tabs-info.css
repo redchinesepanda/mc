@@ -59,7 +59,7 @@
 
     .legal-tabs-info .legal-tab-content {
         /* height: 341px; */
-        height: calc( 308px - ( 28px * 2 ) - 2px );
+        height: calc( 340px - ( 28px * 2 ) - 2px );
         overflow: hidden; 
     }
 
