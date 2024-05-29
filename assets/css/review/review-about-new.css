@@ -44,6 +44,11 @@
     .legal-review-page-sidebar .about-right.sticky-bonus .legal-cut-control {
         display: none;
     }
+
+    .review-about .footer-logo {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
     
     /* .moved-bonus, */
 
@@ -387,6 +392,10 @@
 .review-about .footer-logo {
     display: flex;
     column-gap: 8px;
+}
+
+.review-about .footer-logo .logo-item[ href='#' ] {
+	pointer-events: none;
 }
 
 /* Width and Height */
