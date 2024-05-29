@@ -229,7 +229,7 @@ class WPMLLangSwitcher
 
             'native_name' => array_column( $languages, 'native_name' ),
 
-            // 'translated_name' => array_column( $languages, 'translated_name' ),
+            'translated_name' => array_column( $languages, 'translated_name' ),
         ] );
 
         if ( MiltisiteMain::check_multisite() )
