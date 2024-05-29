@@ -323,6 +323,8 @@ class WPMLMain
             
                         'blog_language' => $blog_language,
                     ] );
+
+                    return $blog_language;
                 }
             }
 
@@ -344,9 +346,11 @@ class WPMLMain
             'wpml_current_language' => $wpml_current_language,
         ] );
 
+        return $wpml_current_language;
+
         // return $blog_language;
 
-        return apply_filters( 'wpml_current_language', NULL );
+        // return apply_filters( 'wpml_current_language', NULL );
     }
 
     public static function locale_permalink( $url, $locale )
