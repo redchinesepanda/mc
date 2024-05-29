@@ -10,13 +10,13 @@
     }
 
     .tcb-post-content h1,
-    .tcb-post-content h2:not( .legal-tabs-info h2 ),
+    .tcb-post-content h2:not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         padding-top: 16px;
         padding-bottom: 16px;
     }
 
-    .tcb-post-content h2:not( .legal-tabs-info h2 ) {
+    .tcb-post-content h2:not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ) {
         margin-top: 28px;
     }
 
@@ -65,7 +65,7 @@
     /* Review Position */
 
     .tcb-post-content h1,
-    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ),
+    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
     .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         padding-bottom: 24px;
     }
@@ -74,7 +74,7 @@
         padding-top: 24px;
     }
 
-    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ) {
+    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ) {
         padding-top: 24px;
         margin-top: 32px;
     }
@@ -155,7 +155,7 @@
 }
 
 .tcb-post-content h1,
-.tcb-post-content h2:not( .legal-tabs-info h2 ),
+.tcb-post-content h2:not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
 .tcb-post-content h3,
 .tcb-post-content h4 {
     margin-bottom: 0px;
