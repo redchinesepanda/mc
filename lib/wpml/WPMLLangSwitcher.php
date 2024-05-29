@@ -217,7 +217,14 @@ class WPMLLangSwitcher
 
             // 'subsite_languages' => $subsite_languages,
 
-            'languages' => $languages,
+            // 'languages' => $languages,
+            
+            'code' => array_column( $languages, 'code' ),
+            'id' => array_column( $languages, 'id' ),
+            'native_name' => array_column( $languages, 'native_name' ),
+            'translated_name' => array_column( $languages, 'translated_name' ),
+            'default_locale' => array_column( $languages, 'default_locale' ),
+            'language_code' => array_column( $languages, 'language_code' ),
         ] );
 
         if ( MiltisiteMain::check_multisite() )
