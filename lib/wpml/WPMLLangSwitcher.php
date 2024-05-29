@@ -210,22 +210,18 @@ class WPMLLangSwitcher
             $languages = WPMLDB::multisite_all_languages();
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     // 'check_multisite' => MiltisiteMain::check_multisite(),
+            // 'check_multisite' => MiltisiteMain::check_multisite(),
 
-        //     // 'subsite_languages' => $subsite_languages,
+            // 'subsite_languages' => $subsite_languages,
 
-        //     // 'languages' => $languages,
+            // 'languages' => $languages,
+            'native_name' => array_column( $languages, 'native_name' ),
             
-        //     'code' => array_column( $languages, 'code' ),
-        //     'id' => array_column( $languages, 'id' ),
-        //     'native_name' => array_column( $languages, 'native_name' ),
-        //     'translated_name' => array_column( $languages, 'translated_name' ),
-        //     'default_locale' => array_column( $languages, 'default_locale' ),
-        //     'language_code' => array_column( $languages, 'language_code' ),
-        // ] );
+            'translated_name' => array_column( $languages, 'translated_name' ),
+        ] );
 
         if ( MiltisiteMain::check_multisite() )
         {
