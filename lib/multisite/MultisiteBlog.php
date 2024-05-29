@@ -177,6 +177,11 @@ class MultisiteBlog
 
 		return false;
 	}
+
+	public static function check_not_main_domain()
+	{
+		return ! self::check_main_domain();
+	}
 }
 
 ?>
