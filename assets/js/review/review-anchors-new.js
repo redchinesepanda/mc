@@ -7,6 +7,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
+			spaceBetween: 8,
 		});
 
 		swiper.on('slideChange', function () {
