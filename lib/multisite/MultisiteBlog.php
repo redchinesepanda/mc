@@ -162,15 +162,20 @@ class MultisiteBlog
 
 		$domain_main_site = self::get_domain_main_site();
 
-		LegalDebug::debug( [
-			'MultisiteBlog' => 'check_main_domain',
+		// LegalDebug::debug( [
+		// 	'MultisiteBlog' => 'check_main_domain',
 
-			'domain' => $domain,
+		// 	'domain' => $domain,
 
-            'domain_main_site' => $domain_main_site,
-		] );
+        //     'domain_main_site' => $domain_main_site,
+		// ] );
 
-		return true;
+		if ( $domain == $domain_main_site->domain )
+		{
+			return true;
+		}
+
+		return false;
 	}
 }
 
