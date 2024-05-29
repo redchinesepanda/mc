@@ -218,19 +218,19 @@ class WPMLLangSwitcher
             // ] );
         }
 
-        LegalDebug::debug( [
-            'WPMLLangSwitcher' => 'get',
+        // LegalDebug::debug( [
+        //     'WPMLLangSwitcher' => 'get',
 
-            // 'check_multisite' => MiltisiteMain::check_multisite(),
+        //     // 'check_multisite' => MiltisiteMain::check_multisite(),
 
-            // 'subsite_languages' => $subsite_languages,
+        //     // 'subsite_languages' => $subsite_languages,
 
-            // 'languages' => $languages,
+        //     // 'languages' => $languages,
 
-            'native_name' => array_column( $languages, 'native_name' ),
+        //     'native_name' => array_column( $languages, 'native_name' ),
 
-            'translated_name' => array_column( $languages, 'translated_name' ),
-        ] );
+        //     'translated_name' => array_column( $languages, 'translated_name' ),
+        // ] );
 
         if ( MiltisiteMain::check_multisite() )
         {
