@@ -124,6 +124,11 @@
     margin-bottom: 24px;
 }
 
+.legal-compilation .compilation-title h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 /* .legal-compilation .compilation-attention:not( :last-child ) {
     margin-bottom: 15px;
 } */
