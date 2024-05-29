@@ -26,7 +26,7 @@ class WPMLDB
 
                 $display_language_code,
             ]
-        );
+        ); 
     }
 
 	const PATTERNS = [
