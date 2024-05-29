@@ -59,6 +59,14 @@ class WPMLDB
 
     public static function get_active( $language_code, $item_code )
 	{
+		LegalDebug::debug( [
+			'WPMLDB' => 'get_active',
+
+			'language_code' => $language_code,
+
+			'item_code' => $item_code,
+		] );
+
 		if ( $item_code == $language_code )
 		{
 			return 1;
