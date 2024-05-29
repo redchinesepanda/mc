@@ -68,6 +68,10 @@
     padding: 18px 16px;
 }
 
+.review-group .group-item:not( :first-child ) {
+    margin-left: -5px;
+}
+
 /* Group Background */
 
 .review-group .swiper.legal-active-end::before {
