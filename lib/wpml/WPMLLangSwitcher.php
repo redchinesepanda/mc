@@ -209,27 +209,27 @@ class WPMLLangSwitcher
         {
             $languages = WPMLDB::multisite_all_languages();
 
-            LegalDebug::debug( [
-                'WPMLLangSwitcher' => 'get',
+            // LegalDebug::debug( [
+            //     'WPMLLangSwitcher' => 'get',
+
+            //     'native_name' => array_column( $languages, 'native_name' ),
                 
-                'native_name' => array_column( $languages, 'native_name' ),
-                
-                'translated_name' => array_column( $languages, 'translated_name' ),
-            ] );
+            //     'translated_name' => array_column( $languages, 'translated_name' ),
+            // ] );
         }
 
-        LegalDebug::debug( [
-            'WPMLLangSwitcher' => 'get',
+        // LegalDebug::debug( [
+        //     'WPMLLangSwitcher' => 'get',
 
-            // 'check_multisite' => MiltisiteMain::check_multisite(),
+        //     // 'check_multisite' => MiltisiteMain::check_multisite(),
 
-            // 'subsite_languages' => $subsite_languages,
+        //     // 'subsite_languages' => $subsite_languages,
 
-            // 'languages' => $languages,
-            'native_name' => array_column( $languages, 'native_name' ),
+        //     // 'languages' => $languages,
+        //     'native_name' => array_column( $languages, 'native_name' ),
 
-            'translated_name' => array_column( $languages, 'translated_name' ),
-        ] );
+        //     'translated_name' => array_column( $languages, 'translated_name' ),
+        // ] );
 
         if ( MiltisiteMain::check_multisite() )
         {
