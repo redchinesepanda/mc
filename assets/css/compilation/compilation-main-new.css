@@ -21,6 +21,13 @@
     .legal-compilation .legal-tooltip:not( .compilation-date ~ .legal-tooltip )  {
         top: calc( 24px + (8px * 2) );
     }
+
+      /* Typography */
+
+    .legal-compilation .compilation-title {
+        font-size: 22px;
+        line-height: 26px;
+    }
 }
 
 
@@ -36,6 +43,13 @@
 
     .legal-compilation .legal-tooltip {
         top: calc( 24px + (8px * 2) );
+    }
+
+    /* Typography */
+
+    .legal-compilation .compilation-title {
+        font-size: 26px;
+        line-height: 28px;
     }
     
 }
@@ -270,9 +284,7 @@
 }
 
 .legal-compilation .compilation-title {
-    font-size: 26px;
     font-weight: 700;
-    line-height: 28px;
 }
 
 .legal-compilation .compilation-date,
