@@ -309,7 +309,7 @@ class BilletMega
 
 			'description' => $description,
 
-			'parts' => $parts,
+			'tnc' => $parts[ 'tnc' ],
 		] );
 
 		$logo = '';
