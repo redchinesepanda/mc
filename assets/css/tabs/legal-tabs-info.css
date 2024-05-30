@@ -108,7 +108,7 @@
 
     .legal-tabs-info .legal-tab-title:not( :first-child ) {
         margin-left: -8px;
-    }
+    } 
 
     .legal-tabs-info .legal-tab-content {
         padding-right: 140px;
