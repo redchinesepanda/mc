@@ -294,13 +294,18 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
-		// $filter = [];
-		
-		$filter = [
-			'description' => true,
+		$filter = [];
 
-			'features' => [ 'bonusy-bonus' ],
-		];
+		$term = get_term_by( 'slug', 'bonusy-bonus', 'billet_feature' );
+
+		if ( $term )
+		{
+			$filter = [
+				'description' => true,
+	
+				'features' => [ $term->term_id ],
+			];
+		}
 
 		$description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
 
