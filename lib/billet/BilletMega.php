@@ -493,7 +493,7 @@ class BilletMega
 					[
 						'title' => 'Terms and conditions',
 						
-						'selector' => 'a',
+						'selector' => 'a,p',
 
 						'classes' => self::CLASSES[ 'tnc' ],
 					],
