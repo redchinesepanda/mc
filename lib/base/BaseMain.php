@@ -55,11 +55,11 @@ class BaseMain
 
         'show-all' => 'Show All',
 
-        'we-are-professionals' => 'Our team of casino and betting professionals brings years of experience to review and recommend the best online gambling sites in the UK.',
+        'our-team-of' => 'Our team of casino and betting professionals brings years of experience to review and recommend the best online gambling sites in the UK.',
 
-        'we-provide-only' => "We thoroughly investigate and provide transparent information about the sites we review because we value our readers' trust above all else.",
+        'we-thoroughly' => "We thoroughly investigate and provide transparent information about the sites we review because we value our readers' trust above all else.",
 
-        'our-reviews' => 'Fairness is about being objective and equally treating all gambling products, established and new. We supply the facts and metrics, you make the decision.',
+        'fairness-is' => 'Fairness is about being objective and equally treating all gambling products, established and new. We supply the facts and metrics, you make the decision.',
 
         'we-focus-on' => 'We focus on analysing and selecting relevant data for our readers, including many factors such as geographical location, preferred sports or game types, and more.',
 

@@ -42,7 +42,7 @@ class LegalTabsInfo
                 [
                     'title' => ToolLoco::translate( BaseMain::TEXT[ 'expertise' ] ),
 
-                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'we-are-professionals' ] ),
+                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'our-team-of' ] ),
 
                     'class' => 'legal-active',
                 ],
@@ -50,7 +50,7 @@ class LegalTabsInfo
                 [
                     'title' => ToolLoco::translate( BaseMain::TEXT[ 'transparency' ] ),
 
-                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'we-provide-only' ] ),
+                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'we-thoroughly' ] ),
 
                     'class' => '',
                 ],
@@ -58,7 +58,7 @@ class LegalTabsInfo
                 [
                     'title' => ToolLoco::translate( BaseMain::TEXT[ 'fairness' ] ),
 
-                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'our-reviews' ] ),
+                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'fairness-is' ] ),
 
                     'class' => '',
                 ],
