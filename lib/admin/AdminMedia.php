@@ -96,7 +96,7 @@ class AdminMedia
 
 				'show_option_all' => ToolLoco::translate( 'View all media types' ), 
 
-				'hide_empty' => true, 
+				// 'hide_empty' => true, 
 
 				'hierarchical' => false,
 
