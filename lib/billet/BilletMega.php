@@ -93,6 +93,11 @@ class BilletMega
 		return LegalDOM::get_nodes( $dom, '//*[contains(@class, \'' . ReviewProsCons::CSS_CLASS[ 'container' ] . '\')]' );
 	}
 
+	public static function get_nodes_tnc( $dom )
+	{
+		return LegalDOM::get_nodes( $dom, '//*[contains(@class, \'' . self::CLASSES[ 'tnc' ] . '\')]' );
+	}
+
 	public static function get_parts( $content )
 	{
 		$dom = LegalDOM::get_dom( do_shortcode( $content ) );
@@ -101,6 +106,8 @@ class BilletMega
 			'license' => self::get_license( $dom ),
 
 			'footer' => self::get_footer( $dom ),
+
+			'tnc' => self::get_tnc( $dom ),
 
 			'content' => $dom->saveHTML( $dom ),
 		];
@@ -151,6 +158,27 @@ class BilletMega
 		}
 
 		return implode( '', $footer );
+	}
+
+	public static function get_tnc( $dom )
+	{
+		$nodes = self::get_nodes_tnc( $dom );
+
+		if ( $nodes->length == 0 )
+		{
+			return '';
+		}
+
+		$tnc = [];
+
+		foreach ( $nodes as $node )
+		{
+			$tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
+
+			LegalDOM::remove_child( $dom, $node );
+		}
+
+		return implode( '', $tnc );
 	}
 
 	const MODE = [
@@ -435,6 +463,8 @@ class BilletMega
 		'license' => 'legal-license',
 
 		'button' => 'legal-button',
+
+		'tnc' => 'legal-tnc',
 	];
 
 	public static function style_formats_mega_billet( $settings )
