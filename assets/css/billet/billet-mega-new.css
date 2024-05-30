@@ -22,13 +22,13 @@
 		flex-basis: 100%;
 	}
 
-	.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
 		width: 75%;
-	}
+	} */
 	
-	.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+	/* .legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
 		width: 25%;
-	}
+	} */
 
 	/* Typography */
 
@@ -64,13 +64,13 @@
 		flex-basis: 100%;
 	}
 
-	.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
 		width: 90%;
-	}
+	} */
 	
-	.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+	/* .legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
 		width: 10%;
-	}
+	} */
 
 	/* Typography */
 
