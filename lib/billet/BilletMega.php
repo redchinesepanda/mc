@@ -248,6 +248,26 @@ class BilletMega
 		'name' => 'media-name',
 	];
 
+	public static function get_complete_tnc( $billet_feature, $tnc )
+	{
+		$filter = [];
+
+		$term = get_term_by( 'slug', 'bonusy-bonus', $billet_feature );
+
+		if ( $term )
+		{
+			$filter = [
+				'description' => true,
+	
+				'features' => [ $term->term_id ],
+			];
+		}
+
+		$description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
+
+		return $tnc . $description;
+	}
+
 	public static function prepare( $atts, $content = '' )
     {
 		// LegalDebug::debug( [
@@ -272,6 +292,8 @@ class BilletMega
 			'review-label' => __( BilletMain::TEXT[ 'review' ], ToolLoco::TEXTDOMAIN ),
 
 			'mode' => self::MODE[ 'default' ],
+
+			'billet-feature' => '',
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
@@ -294,30 +316,34 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
-		$filter = [];
+		$billet_feature = $atts[ 'billet-feature' ];
 
-		$term = get_term_by( 'slug', 'bonusy-bonus', 'billet_feature' );
+		$parts[ 'tnc' ] = self::get_complete_tnc( $billet_feature, $parts[ 'tnc' ] );
 
-		if ( $term )
-		{
-			$filter = [
-				'description' => true,
+		// $filter = [];
+
+		// $term = get_term_by( 'slug', 'bonusy-bonus', $billet_feature );
+
+		// if ( $term )
+		// {
+		// 	$filter = [
+		// 		'description' => true,
 	
-				'features' => [ $term->term_id ],
-			];
-		}
+		// 		'features' => [ $term->term_id ],
+		// 	];
+		// }
 
-		$description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
+		// $description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
 
-		$parts[ 'tnc' ] .= $description;
+		// $parts[ 'tnc' ] .= $description;
 
-		LegalDebug::debug( [
-			'BilletMega' => 'prepare',
+		// LegalDebug::debug( [
+		// 	'BilletMega' => 'prepare',
 
-			'description' => $description,
+		// 	'description' => $description,
 
-			'tnc' => $parts[ 'tnc' ],
-		] );
+		// 	'tnc' => $parts[ 'tnc' ],
+		// ] );
 
 		$logo = '';
 
