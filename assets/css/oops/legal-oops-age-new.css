@@ -2,9 +2,9 @@
 {
 	/* Display */
 
-	/* .legal-oops-age-wrapper {
+	.legal-oops-age-wrapper {
 		align-items: flex-end;
-	} */
+	}
 
 	.legal-oops-cookie {
 		justify-content: center;
@@ -21,10 +21,10 @@
 
 	/* Position */
 
-	.legal-oops-age-wrapper .legal-oops-age {
+	/* .legal-oops-age-wrapper .legal-oops-age {
 		position: absolute;
 		bottom: 0px;
-	}
+	} */
 	
 	/* Width and Height */
 
