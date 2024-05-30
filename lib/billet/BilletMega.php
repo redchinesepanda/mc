@@ -184,6 +184,12 @@ class BilletMega
 			LegalDOM::remove_child( $dom, $node );
 		}
 
+		LegalDebug::debug( [
+			'BilletMega' => 'get_tnc',
+
+			'tnc' => $tnc,
+		] );
+
 		return implode( '', $tnc );
 	}
 
