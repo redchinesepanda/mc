@@ -470,4 +470,5 @@
 	content: attr( data-default );
 	color: var( --Base-base-08 );
 	cursor: pointer;
+	white-space: nowrap;
 }
