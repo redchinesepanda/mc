@@ -294,7 +294,13 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
-		$parts[ 'tnc' ] = BilletMain::get_main_description( $atts[ 'id' ], [] ) . $parts[ 'tnc' ];
+		$description = BilletMain::get_main_description( $atts[ 'id' ], [] );
+
+		LegalDebug::debug( [
+			'BilletMega' => 'prepare',
+
+			'description' => $description,
+		] );
 
 		$logo = '';
 
