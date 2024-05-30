@@ -30,7 +30,7 @@
 
 	.legal-oops-age {
 		flex-basis: 100%;
-		height: fit-content;
+		/* height: fit-content; */
 	}
 
 	.legal-oops-age .oops-age-button-yes,
