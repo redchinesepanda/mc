@@ -148,7 +148,7 @@
 }
 
 .legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ),
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .billet-mega-tnc p {
 	margin: 0px;
 }
 
@@ -156,7 +156,7 @@
 	padding: 10px 18px;
 }
 
-.legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ):not( .legal-tnc ) {
+.legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ):not( .billet-mega-tnc p ) {
     padding-bottom: 18px;
 } 
 
