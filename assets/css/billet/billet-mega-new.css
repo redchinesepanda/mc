@@ -454,6 +454,10 @@
     white-space: nowrap;
 }
 
+.legal-billet-mega .billet-mega-tnc-control:hover {
+	text-shadow: 0 0 0.35px var(--Base-base-09);
+}
+
 .legal-billet-mega .billet-mega-tnc-control::before {
 	content: attr( data-default );
 	color: var( --Base-base-08 );
