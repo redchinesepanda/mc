@@ -55,7 +55,7 @@
 				<?php echo $args[ 'footer' ] ?>
 			</div>
 		<?php endif; ?>
-	</div>
+	</div> 
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
 		<div class="billet-mega-tnc">
 			<?php echo $args[ 'tnc' ] ?>
