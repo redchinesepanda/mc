@@ -137,11 +137,12 @@
 	align-items: center;
 }
 
-.legal-billet-mega .billet-mega-tnc:not( .legal-active) {
+.legal-billet-mega .billet-mega-tnc:not( .legal-active ) {
 	flex-wrap: wrap;
 }
 
-.legal-billet-mega .billet-mega-tnc:not( .legal-active) p:not( :first-of-type ) {
+.legal-billet-mega .billet-mega-tnc:not( .legal-active ) p:not( :first-of-type ),
+.legal-billet-mega .billet-mega-tnc.legal-active .billet-mega-tnc-control {
 	display: none;
 }
 
