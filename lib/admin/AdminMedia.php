@@ -17,48 +17,55 @@ class AdminMedia
 		add_action( 'restrict_manage_posts', [ $handler, 'media_type_filter' ] );
 	}
 
-	public static function my_filter_media_by_cat( $q )
+	public static function my_filter_media_by_cat( $query )
 	{
 		$scr = get_current_screen();
 
-		$cat = filter_input(INPUT_GET, 'postcat', FILTER_SANITIZE_STRING );
+		$media_type = filter_input( INPUT_GET, self::TAXONOMY[ 'media-type' ], FILTER_SANITIZE_STRING );
 
-		if ( ! $q->is_main_query() || ! is_admin() || (int)$cat <= 0 || $scr->base !== 'upload' )
-			return;
+		if ( ! $q->is_main_query() || ! is_admin() || ( int ) $media_type <= 0 || $scr->base !== 'upload' )
+		{
+			return '';
+		}
 		
 		// get the posts
 
-		$posts = get_posts( 'nopaging=1&category=' . $cat );
+		// $posts = get_posts( 'nopaging=1&category=' . $cat );
 
 		// get post ids
 
-		$pids = empty( $posts ) ? false : wp_list_pluck($posts, 'ID');
+		// $pids = empty( $posts ) ? false : wp_list_pluck($posts, 'ID');
 
-		if ( ! empty( $pids ) )
-		{
-			$pidsTxt = implode( ',', $pids );
+		// if ( ! empty( $pids ) )
+		// {
+			// $pidsTxt = implode( ',', $pids );
 
 			global $wpdb;
 
 			// Get the ids of media having retrieved posts as parent
 
-			$mids = $wpdb->get_col( "SELECT ID FROM $wpdb->posts WHERE post_parent IN ($pidsTxt)" );
+			// $mids = $wpdb->get_col( "SELECT ID FROM $wpdb->posts WHERE post_parent IN ($pidsTxt)" );
 
-			if ( ! empty($mids) )
-			{
-				// Force media query to retrieve only media having retrieved posts as parent
+			// if ( ! empty($mids) )
+			// {
+			// 	// Force media query to retrieve only media having retrieved posts as parent
 
-				$q->set( 'post__in', $mids );
-			}
-			else
-			{
-				// force media query to return no posts
+			// 	$q->set( 'post__in', $mids );
+			// }
+			// else
+			// {
+			// 	// force media query to return no posts
 			
-				// Let query found nothing
+			// 	// Let query found nothing
 
-				$q->set( 'p', -1 ); 
-			}
-		}
+			// 	$q->set( 'p', -1 ); 
+			// }
+
+			LegalDebug::debug( [
+				'query' => $query,
+			] );
+
+		// }
 	}
 
 	// public static function my_add_media_cat_dropdown()
