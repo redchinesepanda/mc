@@ -28,10 +28,30 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		billetMegaControl: '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
 		
-		billetMegaTnc: '.legal-billet-mega .billet-mega-tnc'
+		billetMegaTnc: '.legal-billet-mega .billet-mega-tnc',
+
+		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type'
 	};
 
 	document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+
+	
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	let tncStr = document.querySelectorAll( selectors.billetMegaTncStr )
+
+	tncStr.forEach((str) => {
+		if (overflow(str)) {
+			console.log('Текст не умещается');
+			// Текст не умещается
+			} else {
+			console.log('Текст умещается');
+			// Текст умещается
+		}
+	});
+	
 } );
 
 // billet-mega-tnc-js end
