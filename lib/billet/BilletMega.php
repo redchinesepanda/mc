@@ -299,6 +299,8 @@ class BilletMega
 		LegalDebug::debug( [
 			'BilletMega' => 'prepare',
 
+			'parts' => $parts,
+
 			'description' => $description,
 		] );
 
