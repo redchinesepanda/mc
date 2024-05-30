@@ -262,6 +262,16 @@ class BilletMega
 				'features' => [ $term->term_id ],
 			];
 		}
+		
+		LegalDebug::debug( [
+			'id' => $id,
+
+			'billet_feature' => $billet_feature,
+
+			'filter' => $filter,
+
+			'term' => $term,
+		] );
 
 		$description = BilletMain::get_main_description( $id, $filter );
 
@@ -316,9 +326,9 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
-		$billet_feature = $atts[ 'billet-feature' ];
+		// $billet_feature = $atts[ 'billet-feature' ];
 
-		$parts[ 'tnc' ] = self::get_complete_tnc( $atts[ 'id' ], $billet_feature, $parts[ 'tnc' ] );
+		$parts[ 'tnc' ] = self::get_complete_tnc( $atts[ 'id' ], $atts[ 'billet-feature' ], $parts[ 'tnc' ] );
 
 		// $filter = [];
 
