@@ -12,6 +12,8 @@ require_once( 'AdminDequeue.php' );
 
 // require_once( 'AdminBrand.php' );
 
+require_once( 'AdminMedia.php' );
+
 class AdminMain
 {
     const TEXT = [
@@ -69,6 +71,8 @@ class AdminMain
         AdminDequeue::register();
 
         // AdminBrand::register();
+
+        AdminMedia::register();
     }
 }
 
