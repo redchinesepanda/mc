@@ -22,6 +22,14 @@
 		flex-basis: 100%;
 	}
 
+	.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+		width: 75%;
+	}
+	
+	.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+		width: 25%;
+	}
+
 	/* Typography */
 
 	.legal-billet-mega li {
@@ -54,6 +62,14 @@
 
 	.legal-billet-mega.legal-author .billet-mega-about {
 		flex-basis: 100%;
+	}
+
+	.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+		width: 90%;
+	}
+	
+	.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+		width: 10%;
 	}
 
 	/* Typography */
@@ -274,14 +290,6 @@
 
 .legal-billet-mega .billet-mega-footer {
 	width: 100%;
-}
-
-.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
-	width: 90%;
-}
-
-.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
-	width: 10%;
 }
 
 /* Background */
