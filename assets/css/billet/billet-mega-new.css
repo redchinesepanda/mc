@@ -210,6 +210,14 @@
 	padding-left: 20px;
 }
 
+.legal-billet-mega .billet-mega-tnc {
+	padding-top: 32px;
+	padding-right: 24px;
+  	padding-bottom: 12px;
+	padding-left: 24px;
+	margin-top: -24px;
+}
+
 /* Width and Height */
 
 .legal-billet-mega .billet-mega-content {
@@ -312,6 +320,14 @@
 	border-radius: 50%;
 }
 
+.legal-billet-mega .billet-mega-tnc {
+	border-radius: 0px 0px 24px 24px;
+	border-left: var( --base-border-billet );
+	border-right: var( --base-border-billet );
+	border-bottom: var( --base-border-billet );
+	background: var(--Base-base-01);
+}
+
 /* Typography */
 
 .legal-billet-mega .mega-about-afillate,
@@ -322,8 +338,7 @@
 .legal-billet-mega .mega-about-post,
 .legal-billet-mega .mega-about-prefix,
 .legal-billet-mega.legal-horizontal .billet-mega-content a,
-.legal-billet-mega .legal-tnc,
-.legal-billet-mega .billet-mega-tnc-control::before {
+.legal-billet-mega .billet-mega-tnc {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
