@@ -164,11 +164,11 @@ class BilletMega
 	{
 		$nodes = self::get_nodes_tnc( $dom );
 
-		LegalDebug::debug( [
-			'BilletMega' => 'get_tnc',
+		// LegalDebug::debug( [
+		// 	'BilletMega' => 'get_tnc',
 
-			'nodes' => $nodes,
-		] );
+		// 	'nodes' => $nodes,
+		// ] );
 
 		if ( $nodes->length == 0 )
 		{
@@ -184,11 +184,11 @@ class BilletMega
 			LegalDOM::remove_child( $dom, $node );
 		}
 
-		LegalDebug::debug( [
-			'BilletMega' => 'get_tnc',
+		// LegalDebug::debug( [
+		// 	'BilletMega' => 'get_tnc',
 
-			'tnc' => $tnc,
-		] );
+		// 	'tnc' => $tnc,
+		// ] );
 
 		return implode( '', $tnc );
 	}
@@ -422,6 +422,8 @@ class BilletMega
 			'content' => $parts[ 'content' ],
 
 			'footer' => $parts[ 'footer' ],
+
+			'tnc' => $parts[ 'tnc' ],
 
 			'no-controls' => $no_controls,
 
