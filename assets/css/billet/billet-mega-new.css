@@ -416,14 +416,14 @@
 	line-height: 26px;
 }
 
-.legal-billet-mega .legal-tnc,
+.legal-billet-mega .billet-mega-tnc p,
 .legal-billet-mega .billet-mega-tnc-control::before {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
 }
 
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .billet-mega-tnc p {
 	color: var( --Base-base-05 );
 }
 
