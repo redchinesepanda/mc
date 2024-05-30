@@ -12,7 +12,7 @@ class AdminMedia
 		
 		// add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
 
-		add_action( 'pre_get_posts', [ $handler, 'media_type_handler' ] );
+		// add_action( 'pre_get_posts', [ $handler, 'media_type_handler' ] );
 		
 		add_action( 'restrict_manage_posts', [ $handler, 'media_type_filter' ] );
 	}
@@ -98,6 +98,8 @@ class AdminMedia
 
 		if ( 'upload' == $screen->id )
 		{
+			$selected = isset( $_GET[ self::TAXONOMY[ 'media-type' ] ] ) ? $_GET[ self::TAXONOMY[ 'media-type' ] ] : '';
+
 			$dropdown_options = [ 
 				'taxonomy' => self::TAXONOMY[ 'media-type' ],
 
@@ -114,6 +116,8 @@ class AdminMedia
 				'name' => self::TAXONOMY[ 'media-type' ], 
 
 				'orderby' => 'name',
+
+				'selected' =>  $selected,
 			];
 
 			wp_dropdown_categories( $dropdown_options );
