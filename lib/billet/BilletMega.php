@@ -250,7 +250,11 @@ class BilletMega
 
 	public static function get_complete_tnc( $id, $billet_feature, $tnc )
 	{
-		$filter = [];
+		$filter = [
+			'description' => true,
+	
+			'features' => [],
+		];
 
 		$term = get_term_by( 'slug', 'bonusy-bonus', $billet_feature );
 
