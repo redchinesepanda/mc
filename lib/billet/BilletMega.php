@@ -248,6 +248,10 @@ class BilletMega
 		'name' => 'media-name',
 	];
 
+	const TAXONOMY = [
+		'billet-feature' => 'billet_feature',
+	];
+
 	public static function get_complete_tnc( $id, $billet_feature, $tnc )
 	{
 		$filter = [
@@ -256,7 +260,7 @@ class BilletMega
 			'features' => [],
 		];
 
-		$term = get_term_by( 'slug', 'bonusy-bonus', $billet_feature );
+		$term = get_term_by( 'slug', $billet_feature, self::TAXONOMY[ 'billet-feature' ] );
 
 		if ( $term )
 		{
@@ -272,9 +276,9 @@ class BilletMega
 
 			'billet_feature' => $billet_feature,
 
-			'filter' => $filter,
-
 			'term' => $term,
+
+			'filter' => $filter,
 		] );
 
 		$description = BilletMain::get_main_description( $id, $filter );
