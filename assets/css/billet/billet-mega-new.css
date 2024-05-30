@@ -322,7 +322,8 @@
 .legal-billet-mega .mega-about-post,
 .legal-billet-mega .mega-about-prefix,
 .legal-billet-mega.legal-horizontal .billet-mega-content a,
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .legal-tnc,
+.legal-billet-mega .billet-mega-tnc-control::before {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
@@ -401,9 +402,18 @@
 	line-height: 26px;
 }
 
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .legal-tnc,
+.legal-billet-mega .billet-mega-tnc-control::before {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
+}
+
+.legal-billet-mega .legal-tnc {
 	color: var( --Base-base-05 );
+}
+
+.legal-billet-mega .billet-mega-tnc-control::before {
+	content: attr( data-default );
+	color: var( --Base-base-08 );
 }
