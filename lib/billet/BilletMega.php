@@ -254,11 +254,13 @@ class BilletMega
 
 	public static function get_complete_tnc( $id, $billet_feature, $tnc )
 	{
-		$filter = [
-			'description' => true,
+		// $filter = [
+		// 	'description' => true,
 	
-			'features' => [],
-		];
+		// 	'features' => [],
+		// ];
+
+		$filter = [];
 
 		$term = get_term_by( 'slug', $billet_feature, self::TAXONOMY[ 'billet-feature' ] );
 
