@@ -466,6 +466,12 @@ class BilletMain
         {
             $feature_main_description = get_field( self::FIELD[ 'main-description' ], $id );
 
+            LegalDebug::debug( [
+                'BilletMain' => 'get_main_description',
+    
+                'feature_main_description' => $feature_main_description,
+            ] );
+
             if ( $feature_main_description )
             {
                 foreach ( $feature_main_description as $feature_main_description_item )
