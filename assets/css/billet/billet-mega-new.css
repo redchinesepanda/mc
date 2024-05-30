@@ -137,6 +137,14 @@
 	align-items: center;
 }
 
+.legal-billet-mega .billet-mega-tnc:not( .legal-active) {
+	flex-wrap: wrap;
+}
+
+.legal-billet-mega .billet-mega-tnc:not( .legal-active) p:not( :first-of-type ) {
+	display: none;
+}
+
 /* Position */
 
 .legal-billet-mega {
@@ -265,6 +273,14 @@
 
 .legal-billet-mega .billet-mega-footer {
 	width: 100%;
+}
+
+.legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+	width: 90%;
+}
+
+.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+	width: 10%;
 }
 
 /* Background */
@@ -432,7 +448,14 @@
 	color: var( --Base-base-05 );
 }
 
+.legal-billet-mega .billet-mega-tnc:not( .legal-active ) p {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .legal-billet-mega .billet-mega-tnc-control::before {
 	content: attr( data-default );
 	color: var( --Base-base-08 );
+	cursor: pointer;
 }
