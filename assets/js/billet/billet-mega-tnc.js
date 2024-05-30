@@ -9,7 +9,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function toggleControl( event )
 	{
-		event.currentTarget.closest( selectors.billetItem ).querySelectorAll( selectors.billetFooter ).forEach( toggleFooter );
+		event.currentTarget.closest( selectors.billetMega ).querySelectorAll( selectors.billetMegaTnc ).forEach( toggleFooter );
 
 		event.currentTarget.classList.toggle( classes.active );
 	}
@@ -24,16 +24,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const selectors = {
-		billet: '.billet',
+		billetMega: '.legal-billet-mega',
 
-		billetItem: '.billet-item',
-
-		billetFooterControl: '.billet .billet-footer-control',
+		billetMegaControl: '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
 		
-		billetFooter: '.billet-footer'
+		billetMegaTnc: '.legal-billet-mega .billet-mega-tnc'
 	};
 
-	document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
+	document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 } );
 
 // billet-mega-tnc-js end
