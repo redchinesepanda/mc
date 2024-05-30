@@ -273,15 +273,15 @@ class BilletMega
 			];
 		}
 		
-		LegalDebug::debug( [
-			'id' => $id,
+		// LegalDebug::debug( [
+		// 	'id' => $id,
 
-			'billet_feature' => $billet_feature,
+		// 	'billet_feature' => $billet_feature,
 
-			'term' => $term,
+		// 	'term' => $term,
 
-			'filter' => $filter,
-		] );
+		// 	'filter' => $filter,
+		// ] );
 
 		$description = BilletMain::get_main_description( $id, $filter );
 
