@@ -489,6 +489,14 @@ class BilletMega
 
 						'classes' => self::CLASSES[ 'button' ],
 					],
+
+					[
+						'title' => 'Terms and conditions',
+						
+						'selector' => 'a',
+
+						'classes' => self::CLASSES[ 'tnc' ],
+					],
 				],
 			],
 		] );
