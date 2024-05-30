@@ -4,14 +4,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	function toggleFooter( element )
 	{
-		element.classList.toggle( classes.active );
+		element.classList.add( classes.active );
 	}
 
 	function toggleControl( event )
 	{
 		event.currentTarget.closest( selectors.billetMega ).querySelectorAll( selectors.billetMegaTnc ).forEach( toggleFooter );
 
-		event.currentTarget.classList.toggle( classes.active );
+		event.currentTarget.classList.add( classes.active );
 	}
 
 	function setFooter( element )
