@@ -2,9 +2,9 @@
 {
 	/* Display */
 
-	/* .legal-oops-age-wrapper {
+	.legal-oops-age-wrapper {
 		align-items: flex-end;
-	} */
+	}
 
 	.legal-oops-cookie {
 		justify-content: center;
@@ -21,16 +21,16 @@
 
 	/* Position */
 
-	.legal-oops-age-wrapper {
+	/* .legal-oops-age-wrapper .legal-oops-age {
 		position: absolute;
 		bottom: 0px;
-	}
+	} */
 	
 	/* Width and Height */
 
 	.legal-oops-age {
 		flex-basis: 100%;
-		height: fit-content;
+		/* height: fit-content; */
 	}
 
 	.legal-oops-age .oops-age-button-yes,
@@ -169,7 +169,8 @@
 /* Width and Height */
 
 .legal-oops-age-wrapper {
-	height: 100vh;
+	/* height: 100vh; */
+	height: 100%;
 	width: 100%;
 }
 
