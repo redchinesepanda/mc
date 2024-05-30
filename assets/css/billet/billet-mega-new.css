@@ -153,7 +153,7 @@
 	align-items: center;
 }
 
-.legal-billet-mega .billet-mega-tnc:not( .legal-active ) {
+.legal-billet-mega .billet-mega-tnc.legal-active {
 	flex-wrap: wrap;
 }
 
