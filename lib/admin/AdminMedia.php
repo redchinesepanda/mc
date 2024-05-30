@@ -12,12 +12,12 @@ class AdminMedia
 		
 		// add_filter( 'tiny_mce_before_init', [ $handler, 'style_formats_mega_billet' ] );
 
-		// add_action( 'pre_get_posts', [ $handler, 'my_filter_media_by_cat' ] );
+		add_action( 'pre_get_posts', [ $handler, 'media_type_handler' ] );
 		
 		add_action( 'restrict_manage_posts', [ $handler, 'media_type_filter' ] );
 	}
 
-	public static function my_filter_media_by_cat( $query )
+	public static function media_type_handler( $query )
 	{
 		$scr = get_current_screen();
 
