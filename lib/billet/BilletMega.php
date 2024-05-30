@@ -297,6 +297,8 @@ class BilletMega
 		// $filter = [];
 		
 		$filter = [
+			'description' => true,
+
 			'features' => [ 'bonusy-bonus' ],
 		];
 
