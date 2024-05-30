@@ -164,6 +164,12 @@ class BilletMega
 	{
 		$nodes = self::get_nodes_tnc( $dom );
 
+		LegalDebug::debug( [
+			'BilletMega' => 'get_tnc',
+
+			'nodes' => $nodes,
+		] );
+
 		if ( $nodes->length == 0 )
 		{
 			return '';
