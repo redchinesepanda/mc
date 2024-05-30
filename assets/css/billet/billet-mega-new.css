@@ -322,10 +322,9 @@
 
 .legal-billet-mega .billet-mega-tnc {
 	border-radius: 0px 0px 24px 24px;
-	border-left: var( --base-border-billet );
-	border-right: var( --base-border-billet );
-	border-bottom: var( --base-border-billet );
-	background: var(--Base-base-01);
+	border-left: 1px solid var(--Base-base-09);
+	border-right: 1px solid var(--Base-base-09);
+	border-bottom: 1px solid var(--Base-base-09);
 }
 
 /* Typography */
