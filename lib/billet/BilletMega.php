@@ -294,6 +294,8 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
+		$parts[ 'tnc' ] = BilletMain::get_main_description( $atts[ 'id' ], [] ) . $parts[ 'tnc' ];
+
 		$logo = '';
 
 		$background = BilletMain::DEFAULT_COLOR;
