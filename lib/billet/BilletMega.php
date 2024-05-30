@@ -294,7 +294,13 @@ class BilletMega
 
 		$parts = self::get_parts( $content );
 
-		$description = BilletMain::get_main_description( $atts[ 'id' ], [] );
+		// $filter = [];
+		
+		$filter = [
+			'features' => [ 'bonusy-bonus' ],
+		];
+
+		$description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
 
 		$parts[ 'tnc' ] .= $description;
 
