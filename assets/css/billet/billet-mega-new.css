@@ -132,6 +132,11 @@
 	align-items: center;
 }
 
+.legal-billet-mega .billet-mega-tnc {
+	display: flex;
+	align-items: center;
+}
+
 /* Position */
 
 .legal-billet-mega {
@@ -417,7 +422,7 @@
 }
 
 .legal-billet-mega .billet-mega-tnc p,
-.legal-billet-mega .billet-mega-tnc-control::before {
+.legal-billet-mega .billet-mega-tnc-control {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
