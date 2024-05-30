@@ -55,13 +55,13 @@ class BaseMain
 
         'show-all' => 'Show All',
 
-        'we-are-professionals' => 'We are professionals and enthusiasts in the online gambling industry, with years of experience in evaluating and recommending the best betting sites.',
+        'we-are-professionals' => 'Our team of casino and betting professionals brings years of experience to review and recommend the best online gambling sites in the UK.',
 
-        'we-provide-only' => 'We provide only honest and transparent information about the sites we review, ensuring that our readers can trust our recommendations.',
+        'we-provide-only' => "We thoroughly investigate and provide transparent information about the sites we review because we value our readers' trust above all else.",
 
-        'our-reviews' => 'Our reviews are based on objective criteria, such as site features, user experience, and customer service, ensuring that our readers can make informed decisions.',
+        'our-reviews' => 'Fairness is about being objective and equally treating all gambling products, established and new. We supply the facts and metrics, you make the decision.',
 
-        'we-focus-on' => 'We focus on providing reviews that are relevant to our readers, based on factors such as geographic location, preferred payment methods, and game types.',
+        'we-focus-on' => 'We focus on analysing and selecting relevant data for our readers, including many factors such as geographical location, preferred sports or game types, and more.',
 
         'expertise' => 'Expertise',
 
