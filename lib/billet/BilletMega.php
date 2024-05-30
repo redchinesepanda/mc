@@ -248,7 +248,7 @@ class BilletMega
 		'name' => 'media-name',
 	];
 
-	public static function get_complete_tnc( $billet_feature, $tnc )
+	public static function get_complete_tnc( $id, $billet_feature, $tnc )
 	{
 		$filter = [];
 
@@ -263,7 +263,7 @@ class BilletMega
 			];
 		}
 
-		$description = BilletMain::get_main_description( $atts[ 'id' ], $filter );
+		$description = BilletMain::get_main_description( $id, $filter );
 
 		return $tnc . $description;
 	}
@@ -318,7 +318,7 @@ class BilletMega
 
 		$billet_feature = $atts[ 'billet-feature' ];
 
-		$parts[ 'tnc' ] = self::get_complete_tnc( $billet_feature, $parts[ 'tnc' ] );
+		$parts[ 'tnc' ] = self::get_complete_tnc( $atts[ 'id' ], $billet_feature, $parts[ 'tnc' ] );
 
 		// $filter = [];
 
