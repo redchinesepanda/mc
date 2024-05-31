@@ -42,18 +42,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// let tncStr = document.querySelectorAll( selectors.billetMegaTncStr )
 
-	function defineOverflow( element )
-	{
-		element.forEach((str) => {
-			if (overflow(str)) {
-				console.log('Текст не умещается');
-				// Текст не умещается
-				} else {
-				console.log('Текст умещается');
-				// Текст умещается
-			}
-		});
-	}
+	function defineOverflow( str ) {
+		if (overflow(str)) {
+			console.log('Текст не умещается');
+			// Текст не умещается
+			} else {
+			console.log('Текст умещается');
+			// Текст умещается
+		};
+	};
 
 	document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
