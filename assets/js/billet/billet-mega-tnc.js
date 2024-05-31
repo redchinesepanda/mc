@@ -49,7 +49,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			} else {
 			console.log('Текст умещается');
 			// Текст умещается
-			document.querySelector( selectors.billetMegaTnc ).classList.add( classes.shortStr );
+			/* document.querySelector( selectors.billetMegaTnc ).classList.add( classes.shortStr ); */
+			this.parentNode.classList.add( classes.shortStr );
 		};
 	};
 
