@@ -40,9 +40,24 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
-	let tncStr = document.querySelectorAll( selectors.billetMegaTncStr )
+	// let tncStr = document.querySelectorAll( selectors.billetMegaTncStr )
 
-	tncStr.forEach((str) => {
+	function defineOverflow( element )
+	{
+		element.forEach((str) => {
+			if (overflow(str)) {
+				console.log('Текст не умещается');
+				// Текст не умещается
+				} else {
+				console.log('Текст умещается');
+				// Текст умещается
+			}
+		});
+	}
+
+	document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
+
+	/* tncStr.forEach((str) => {
 		if (overflow(str)) {
 			console.log('Текст не умещается');
 			// Текст не умещается
@@ -50,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('Текст умещается');
 			// Текст умещается
 		}
-	});
+	}); */
 	
 } );
 
