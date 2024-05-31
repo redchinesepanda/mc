@@ -157,7 +157,8 @@
 }
 
 .legal-billet-mega .billet-mega-tnc:not( .legal-active ) p:not( :first-of-type ),
-.legal-billet-mega .billet-mega-tnc.legal-active .billet-mega-tnc-control {
+.legal-billet-mega .billet-mega-tnc.legal-active .billet-mega-tnc-control,
+.legal-billet-mega .billet-mega-tnc.legal-short-tnc .billet-mega-tnc-control {
 	display: none;
 }
 
