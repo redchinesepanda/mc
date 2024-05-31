@@ -35,7 +35,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type'
 	};
 
-	document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 
 	
 	function overflow(e) {
@@ -44,14 +44,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function defineOverflow( str ) {
 		if (overflow(str)) {
-			console.log('Текст не умещается');
-			// Текст не умещается
+			// console.log('Текст не умещается');
+			document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 			} else {
-			console.log('Текст умещается');
-			// Текст умещается
-			/* document.querySelector( selectors.billetMegaTnc ).classList.add( classes.shortStr ); */
-			// console.log( str );
-			/* str.classList.add( classes.shortStr ); */
+			// console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
 		};
 	};
