@@ -513,6 +513,8 @@ class BilletMega
 
 			'tnc' => $parts[ 'tnc' ],
 
+			'button-read-tns' => $atts[ 'button-read-tns' ],
+
 			'no-controls' => $no_controls,
 
 			'mode' =>  $atts[ 'mode' ],
