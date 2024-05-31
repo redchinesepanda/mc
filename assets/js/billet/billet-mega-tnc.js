@@ -50,7 +50,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('Текст умещается');
 			// Текст умещается
 			/* document.querySelector( selectors.billetMegaTnc ).classList.add( classes.shortStr ); */
-			str.parent().classList.add( classes.shortStr );
+			console.log( str );
 		};
 	};
 
