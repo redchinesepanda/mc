@@ -35,9 +35,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type'
 	};
 
-	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
-
-	
 	function overflow(e) {
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
