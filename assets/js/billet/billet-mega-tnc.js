@@ -21,6 +21,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const classes = {
 		active: 'legal-active',
+
+		shortStr: 'legal-short-tnc',
 	};
 
 	const selectors = {
@@ -40,8 +42,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
-	// let tncStr = document.querySelectorAll( selectors.billetMegaTncStr )
-
 	function defineOverflow( str ) {
 		if (overflow(str)) {
 			console.log('Текст не умещается');
@@ -49,20 +49,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			} else {
 			console.log('Текст умещается');
 			// Текст умещается
+			document.querySelectorAll( selectors.billetMegaTnc ).classList.add( classes.shortStr );
 		};
 	};
 
 	document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
-
-	/* tncStr.forEach((str) => {
-		if (overflow(str)) {
-			console.log('Текст не умещается');
-			// Текст не умещается
-			} else {
-			console.log('Текст умещается');
-			// Текст умещается
-		}
-	}); */
 	
 } );
 
