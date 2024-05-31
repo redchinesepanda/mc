@@ -52,7 +52,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			/* document.querySelector( selectors.billetMegaTnc ).classList.add( classes.shortStr ); */
 			// console.log( str );
 			/* str.classList.add( classes.shortStr ); */
-			str.parent().classList.add( classes.shortStr );
+			str.parentNode.classList.add( classes.shortStr );
 		};
 	};
 
