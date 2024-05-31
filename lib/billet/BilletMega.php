@@ -329,6 +329,8 @@ class BilletMega
 			'mode' => self::MODE[ 'default' ],
 
 			'billet-feature' => '',
+
+			'button-read-tns' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );

@@ -59,7 +59,7 @@
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
 		<div class="billet-mega-tnc">
 			<?php echo $args[ 'tnc' ] ?>
-			<span class="billet-mega-tnc-control" data-default="Read more"></span>
+			<span class="billet-mega-tnc-control" data-default="Read more<?php echo $args[ 'button-read-tns' ]; ?>"></span>
 		</div>
 	<?php endif; ?>
 </div>
