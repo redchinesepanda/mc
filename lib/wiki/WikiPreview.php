@@ -127,6 +127,14 @@ class WikiPreview
 		{
 			foreach ( $posts as $post )
 			{
+				LegalDebug::debug( [
+					'WikiPreview' => 'get_items',
+
+					'get_permalink' => get_permalink( $post->ID ),
+
+					'get_post_permalink' => get_post_permalink( $post->ID ),
+				] );
+
 				$post_url = get_post_permalink( $post->ID );
 
 				$preview = BonusPreview::get_thumbnail( $post->ID );

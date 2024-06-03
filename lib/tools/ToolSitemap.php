@@ -107,20 +107,20 @@ class ToolSitemap
 		if ( !empty( $posts ) ) {
 			foreach ( $posts as $post )
 			{
-				LegalDebug::debug( [
-					'ToolSitemap' => 'parse_posts',
+				// LegalDebug::debug( [
+				// 	'ToolSitemap' => 'parse_posts',
 
-					'get_permalink' => get_permalink( $post->ID ),
+				// 	'get_permalink' => get_permalink( $post->ID ),
 
-					'get_post_permalink' => get_post_permalink( $post->ID ),
-				] );
+				// 	'get_post_permalink' => get_post_permalink( $post->ID ),
+				// ] );
 
 				$items[] = [
 					'label' => $post->post_title,
 					
-					// 'href' => get_permalink( $post->ID ),
+					'href' => get_permalink( $post->ID ),
 					
-					'href' => get_post_permalink( $post->ID ),
+					// 'href' => get_post_permalink( $post->ID ),
 				];
 			}
 		}
