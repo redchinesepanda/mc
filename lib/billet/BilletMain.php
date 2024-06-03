@@ -16,7 +16,7 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
-require_once( 'center/BilletDescriptionAjax.php' );
+// require_once( 'center/BilletDescriptionAjax.php' );
 
 // require_once( 'center/BilletDescriptionRESTAPI.php' );
 
@@ -172,6 +172,15 @@ class BilletMain
         }
     }
 
+    private static function get_footer_control()
+    {
+        return [
+            'default' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+
+            // 'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
 	public static function check()
     {
         return LegalComponents::check();
@@ -203,7 +212,7 @@ class BilletMain
 	{
 		BilletMega::register_functions();
 
-        BilletDescriptionAjax::register_functions();
+        // BilletDescriptionAjax::register_functions();
 
         // BilletDescriptionRESTAPI::register_functions();
 	}
@@ -218,7 +227,7 @@ class BilletMain
 
         BilletMega::register();
 
-        BilletDescriptionAjax::register();
+        // BilletDescriptionAjax::register();
     }
 
     public static function get_bonus_url( $id, $filter = [] )
@@ -382,6 +391,7 @@ class BilletMain
             'referal' => $referal_url,
 
             'oops' => $oops,
+
         ];
     }
 
@@ -553,6 +563,8 @@ class BilletMain
             // 'description' => $description,
 
             'filter' => $filter,
+
+            'footer-control' => self::get_footer_control(),
         ];
     }
 

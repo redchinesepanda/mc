@@ -13,6 +13,10 @@
     </div>
     <?php BilletSpoiler::render( $args ); ?>
     <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
-        <div class="billet-footer"></div>
+        <!-- <div class="billet-footer"></div> -->
+        <div class="billet-footer">
+            <?php echo $args[ 'bonus' ][ 'description-full' ]; ?>
+            <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-control' ][ 'default' ]; ?>"></span>
+        </div>
     <?php endif; ?>
 </div> 

@@ -9,7 +9,5 @@
     </div>
 <?php endif; ?>
 <?php BilletProfit::render( $args ); ?>
-<?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
-    <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-control' ][ 'default' ]; ?>" data-active="<?php echo $args[ 'footer-control' ][ 'active' ]; ?>"></span>
-<?php endif; ?>
+
 <?php BilletSpoilerButton::render( $args ); ?>

@@ -28,7 +28,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		billetItem: '.billet-item',
 
-		billetFooterControl: '.billet .billet-footer-control',
+		billetFooterControl: '.billet-item .billet-footer-control',
 		
 		billetFooter: '.billet-footer'
 	};

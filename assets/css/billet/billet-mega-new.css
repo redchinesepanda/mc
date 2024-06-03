@@ -22,6 +22,14 @@
 		flex-basis: 100%;
 	}
 
+	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+		width: 75%;
+	} */
+	
+	/* .legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+		width: 25%;
+	} */
+
 	/* Typography */
 
 	.legal-billet-mega li {
@@ -55,6 +63,14 @@
 	.legal-billet-mega.legal-author .billet-mega-about {
 		flex-basis: 100%;
 	}
+
+	/* .legal-billet-mega .billet-mega-tnc:not( .legal-active) p {
+		width: 90%;
+	} */
+	
+	/* .legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control {
+		width: 10%;
+	} */
 
 	/* Typography */
 
@@ -132,6 +148,20 @@
 	align-items: center;
 }
 
+.legal-billet-mega .billet-mega-tnc {
+	display: flex;
+}
+
+.legal-billet-mega .billet-mega-tnc.legal-active {
+	flex-wrap: wrap;
+}
+
+.legal-billet-mega .billet-mega-tnc:not( .legal-active ) p:not( :first-of-type ),
+.legal-billet-mega .billet-mega-tnc.legal-active .billet-mega-tnc-control,
+.legal-billet-mega .billet-mega-tnc.legal-short-tnc .billet-mega-tnc-control {
+	display: none;
+}
+
 /* Position */
 
 .legal-billet-mega {
@@ -148,7 +178,7 @@
 }
 
 .legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ),
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .billet-mega-tnc p {
 	margin: 0px;
 }
 
@@ -156,7 +186,7 @@
 	padding: 10px 18px;
 }
 
-.legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ):not( .legal-tnc ) {
+.legal-billet-mega:not( .legal-horizontal ) p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( :last-child ):not( .billet-mega-tnc p ) {
     padding-bottom: 18px;
 } 
 
@@ -416,18 +446,30 @@
 	line-height: 26px;
 }
 
-.legal-billet-mega .legal-tnc,
-.legal-billet-mega .billet-mega-tnc-control::before {
+.legal-billet-mega .billet-mega-tnc p,
+.legal-billet-mega .billet-mega-tnc-control {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
 }
 
-.legal-billet-mega .legal-tnc {
+.legal-billet-mega .billet-mega-tnc p {
 	color: var( --Base-base-05 );
+}
+
+.legal-billet-mega .billet-mega-tnc:not( .legal-active ) p {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.legal-billet-mega .billet-mega-tnc-control:hover {
+	text-shadow: 0 0 0.35px var(--Base-base-09);
 }
 
 .legal-billet-mega .billet-mega-tnc-control::before {
 	content: attr( data-default );
 	color: var( --Base-base-08 );
+	cursor: pointer;
+	white-space: nowrap;
 }

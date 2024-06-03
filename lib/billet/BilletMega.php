@@ -40,6 +40,19 @@ class BilletMega
 		}
     }
 
+	const JS = [
+        'billet-mega-tnc' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-mega-tnc.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
 	public static function register_functions()
 	{
 		$handler = new self();
@@ -62,6 +75,8 @@ class BilletMega
 			add_shortcode( self::SHORTCODE[ 'mega' ], [ $handler, 'prepare' ] );
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
 			add_filter( 'the_content', [ $handler, 'remove_empty_paragraph_shortcode' ] );
 		}
@@ -314,6 +329,8 @@ class BilletMega
 			'mode' => self::MODE[ 'default' ],
 
 			'billet-feature' => '',
+
+			'button-read-tns' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
@@ -495,6 +512,8 @@ class BilletMega
 			'footer' => $parts[ 'footer' ],
 
 			'tnc' => $parts[ 'tnc' ],
+
+			'button-read-tns' => $atts[ 'button-read-tns' ],
 
 			'no-controls' => $no_controls,
 
