@@ -473,7 +473,3 @@
 	cursor: pointer;
 	white-space: nowrap;
 }
-
-.legal-billet-mega .billet-mega-tnc .data-p::before {
-	content: attr( data-text );
-}

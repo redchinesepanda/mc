@@ -58,7 +58,6 @@
 	</div> 
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
 		<div class="billet-mega-tnc">
-			<p class="data-p" data-text="Gratisspelet krediteras när en ny kund gör en första insättning på 100 kr eller mer. Du har 60 dagar på dig att använda gratisspelet och du kan inte ta ut pengarna. Endast nettovinster från gratisspelet är tillgängliga för uttag. Om en spelare placerar riktiga pengar och använder gratis bet genom att satsa på motsatta utfall av samma marknadshändelse kommer bonusen att annulleras."></p>
 			<?php echo $args[ 'tnc' ] ?>
 			<span class="billet-mega-tnc-control" data-default="<?php echo $args[ 'button-read-tns' ]; ?>"></span>
 		</div>
