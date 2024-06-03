@@ -326,20 +326,56 @@ class BaseFooter
         'order' => 'media-order',
     ];
 
-	public static function get_logo_items()
+	public static function query( $terms = [] )
 	{
-		$posts = get_posts( self::query() );
+		if ( empty( $terms ) )
+		{
+			$terms = [ 'footer', 'footer-' . WPMLMain::current_language() ];
+		}
+
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'attachment',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'media' ],
+
+					// 'terms' => [ 'footer', 'footer-' . WPMLMain::current_language() ],
+					
+					'terms' => $terms,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+
+			'meta_key' => self::FIELD[ 'order' ],
+
+			'order' => 'ASC',
+
+			'orderby' => 'meta_value',
+		];
+	}
+
+	public static function get_logo_items( $terms = [] )
+	{
+		$posts = get_posts( self::query( $terms ) );
 
 		$items = [];
 
-		foreach ( $posts as $post ) {
+		foreach ( $posts as $post )
+		{
 			$image = wp_get_attachment_image_src( $post->ID, 'full' );
 
 			$href = get_field( self::FIELD[ 'href' ], $post->ID );
 
 			$alt = get_post_meta( $post->ID, '_wp_attachment_image_alt', true );
 
-			if ( $image ) {
+			if ( $image )
+			{
 				$items[] = [
 					'href' => ( $href ? $href : '#' ),
 					
@@ -359,33 +395,6 @@ class BaseFooter
 		return $items;
 	}
 
-	public static function query()
-	{
-		return [
-			'posts_per_page' => -1,
-			
-			'post_type' => 'attachment',
-
-			'tax_query' => [
-				[
-					'taxonomy' => self::TAXONOMY[ 'media' ],
-
-					'terms' => [ 'footer', 'footer-' . WPMLMain::current_language() ],
-
-					'field' => 'slug',
-
-					'operator' => 'IN',
-				],
-			],
-
-			'meta_key' => self::FIELD[ 'order' ],
-
-			'order' => 'ASC',
-
-			'orderby' => 'meta_value',
-		];
-	}
-
 	public static function get_end( &$items )
 	{
 		if ( count( $items ) > 4 )
@@ -400,12 +409,8 @@ class BaseFooter
 	{
 		$items = self::get_menu_items();
 
-		// $end = array_splice( $items, -2 );
-
 		return  [
 			'class' => 'footer-' . WPMLMain::current_language(),
-
-			// 'end' => $end,
 			
 			'end' => self::get_end( $items ),
 
@@ -438,38 +443,12 @@ class BaseFooter
 
     public static function render_footer()
     {
-		// if ( !TemplateMain::check() )
-		// {
-		// 	return '';
-		// }
-
-        // return self::render_main( self::TEMPLATE[ 'footer' ], self::get() );
-        
 		return LegalComponents::render_main( self::TEMPLATE[ 'footer' ], self::get() );
     }
 
-    // public static function render_main( $template, $args )
-    // {
-    //     ob_start();
-
-    //     load_template( $template, false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
-
     public static function render_item( $item )
     {
-        // ob_start();
-
-        // load_template( self::TEMPLATE[ 'item' ], false, $item );
-
-        // $output = ob_get_clean();
-
-        // return $output;
-
-		return LegalComponents::render_main( self::TEMPLATE[ 'item' ], $item );
+        return LegalComponents::render_main( self::TEMPLATE[ 'item' ], $item );
     }
 }
 

@@ -286,7 +286,11 @@ class ReviewAbout
 	{
         if ( TemplateMain::check_new() && self::check_bonus_exception() )
         {
-            return array_slice( BaseFooter::get_logo_items(), 1 );
+            $terms = [ 'header', 'header-' . WPMLMain::current_language() ];
+
+            // return array_slice( BaseFooter::get_logo_items(), 1 );
+            
+            return BaseFooter::get_logo_items( $terms );
         }
 
         return [];
