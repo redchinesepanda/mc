@@ -105,7 +105,16 @@ class ToolSitemap
 		$items = [];
 
 		if ( !empty( $posts ) ) {
-			foreach ( $posts as $post ) {
+			foreach ( $posts as $post )
+			{
+				LegalDebug::debug( [
+					'ToolSitemap' => 'parse_posts',
+
+					'get_permalink' => get_permalink( $post->ID ),
+
+					'get_post_permalink' => get_post_permalink( $post->ID ),
+				] );
+
 				$items[] = [
 					'label' => $post->post_title,
 					
