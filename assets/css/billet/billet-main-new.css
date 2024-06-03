@@ -359,13 +359,13 @@ body {
     align-items: center;
 }
 
-.billet-item .billet-footer:not( .legal-active ) {
+/* .billet-item .billet-footer:not( .legal-active ) {
     display: none;
-}
+} */
 
-.billet-item .billet-footer.legal-active {
+/* .billet-item .billet-footer.legal-active {
     display: block;
-}
+} */
 
 /* Background */
 
