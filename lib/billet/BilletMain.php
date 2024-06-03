@@ -392,7 +392,6 @@ class BilletMain
 
             'oops' => $oops,
 
-            'footer-control' => self::get_footer_control(),
         ];
     }
 
@@ -564,6 +563,8 @@ class BilletMain
             // 'description' => $description,
 
             'filter' => $filter,
+
+            'footer-control' => self::get_footer_control(),
         ];
     }
 
