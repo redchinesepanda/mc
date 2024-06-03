@@ -172,6 +172,15 @@ class BilletMain
         }
     }
 
+    private static function get_footer_control()
+    {
+        return [
+            'default' => __( BilletMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+
+            'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+        ];
+    }
+
 	public static function check()
     {
         return LegalComponents::check();
@@ -382,6 +391,8 @@ class BilletMain
             'referal' => $referal_url,
 
             'oops' => $oops,
+
+            'footer-control' => self::get_footer_control(),
         ];
     }
 
