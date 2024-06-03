@@ -175,9 +175,9 @@ class BilletMain
     private static function get_footer_control()
     {
         return [
-            'default' => __( BilletMain::TEXT[ 'show-tnc' ], ToolLoco::TEXTDOMAIN ),
+            'default' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 
-            'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+            // 'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 
