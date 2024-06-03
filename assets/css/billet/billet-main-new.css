@@ -808,7 +808,7 @@ body {
     line-height: 18px;
 }
 
-.billet-right .billet-footer-control:not( .legal-active ):before {
+.billet-item .billet-footer-control:not( .legal-active ):before {
     content: attr( data-default );
 }
 
