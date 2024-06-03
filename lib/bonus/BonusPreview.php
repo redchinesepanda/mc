@@ -686,7 +686,9 @@ class BonusPreview
 		{
 			foreach ( $posts as $post )
 			{
-				$post_url = get_post_permalink( $post->ID );
+				// $post_url = get_post_permalink( $post->ID );
+				
+				$post_url = get_permalink( $post->ID );
 
 				$preview = self::get_thumbnail( $post->ID );
 
