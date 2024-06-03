@@ -84,7 +84,7 @@ class LegalMain
 
 		WPMLMain::register_functions();
 
-		// MiltisiteMain::register_functions();
+		MiltisiteMain::register_functions();
 
 		if ( self::check_admin() )
 		{
@@ -94,7 +94,7 @@ class LegalMain
 
 			NotionMain::register_functions();
 
-			// MiltisiteMain::register_functions_admin();
+			MiltisiteMain::register_functions_admin();
 		}
 	}
 
