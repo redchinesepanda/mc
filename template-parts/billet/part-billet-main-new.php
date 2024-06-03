@@ -16,7 +16,7 @@
         <!-- <div class="billet-footer"></div> -->
         <div class="billet-footer">
             <?php echo $args[ 'bonus' ][ 'description-full' ]; ?>
-            <span class="billet-footer-control" data-default="<?php echo $args[ 'default' ]; ?>"></span>
+            <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-control' ][ 'default' ]; ?>"></span>
         </div>
     <?php endif; ?>
 </div> 
