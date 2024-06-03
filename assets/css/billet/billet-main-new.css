@@ -46,10 +46,10 @@
     }
 
     /* .billet-item .billet-footer:not( :empty ) */
-    .billet-item .billet-footer {
+   /*  .billet-item .billet-footer {
         padding-right: 16px;
         padding-left: 16px;
-    }
+    } */
 
     /* Billet Width and Height */
     .billet-left,
@@ -193,10 +193,10 @@
     }
 
     /* .billet-item .billet-footer:not( :empty ) */
-    .billet-item .billet-footer {
+    /* .billet-item .billet-footer {
         padding-right: 24px;
         padding-left: 24px;
-    }
+    } */
 
     /* Billet Background */
 
@@ -494,7 +494,7 @@ body {
     border-left: var( --base-border-billet );
     border-right: var( --base-border-billet );
     border-bottom: var( --base-border-billet );
-    background: var(--Base-base-02);
+    background: var(--Base-base-01);
 }
 
 .billet-item .billet .billet-main,
@@ -566,7 +566,9 @@ body {
 /* .billet-item .billet-footer:not( :empty ) */
 .billet-item .billet-footer {
     padding-top: 32px;
-    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
 }
 
 /* .billet-item .billet-footer:empty {
