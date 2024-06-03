@@ -109,7 +109,9 @@ class ToolSitemap
 				$items[] = [
 					'label' => $post->post_title,
 					
-					'href' => get_permalink( $post->ID ),
+					// 'href' => get_permalink( $post->ID ),
+					
+					'href' => get_post_permalink( $post->ID ),
 				];
 			}
 		}
