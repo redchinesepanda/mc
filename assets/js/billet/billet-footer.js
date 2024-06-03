@@ -21,19 +21,39 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const classes = {
 		active: 'legal-active',
+
+		shortStr: 'legal-short-tnc',
 	};
 
 	const selectors = {
-		billet: '.billet',
+		// billet: '.billet',
 
 		billetItem: '.billet-item',
 
 		billetFooterControl: '.billet-item .billet-footer-control',
 		
-		billetFooter: '.billet-footer'
+		billetFooter: '.billet-item .billet-footer',
+
+		billetTncStr: '.billet-item .billet-footer p:first-of-type'
 	};
 
-	document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
+	// document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
+
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	function defineOverflow( str ) {
+		if (overflow(str)) {
+			// console.log('Текст не умещается');
+			document.querySelectorAll( selectors.billetFooterControl ).forEach( setFooter );
+			} else {
+			// console.log('Текст умещается');
+			str.parentNode.classList.add( classes.shortStr );
+		};
+	};
+
+	document.querySelectorAll( selectors.billetTncStr ).forEach( defineOverflow );
 } );
 
 // billet-footer-js end
