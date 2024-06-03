@@ -93,10 +93,10 @@
         line-height: 20px;
     }
 
-    .billet-item .billet-footer {
+   /*  .billet-item .billet-footer {
         font-size: 10px;
         line-height: 14px;
-    }
+    } */
 
     .billet-item .billet-description-full ul li {
         font-size: 14px;
@@ -219,10 +219,10 @@
         line-height: 22px;
     }
 
-    .billet-item .billet-footer {
+  /*   .billet-item .billet-footer {
         font-size: 12px;
         line-height: 18px;
-    }
+    } */
 
     .billet-item .billet-description-full ul li {
         font-size: 16px;
@@ -357,6 +357,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.billet-item .billet-footer {
+    display: flex;
+}
+
+.billet-item .billet-footer.legal-active {
+    flex-wrap: wrap;
 }
 
 /* .billet-item .billet-footer:not( .legal-active ) {
@@ -803,25 +811,35 @@ body {
     line-height: 24px;
 }
 
-.billet-right .billet-footer-control {
+/* .billet-right .billet-footer-control {
     font-size: 14px;
     line-height: 18px;
+} */
+
+.billet-item .billet-footer-control:not( .legal-active ) {
+    white-space: nowrap;
+    cursor: pointer;
+    color: var(--Base-base-08); 
+}
+
+.billet-item .billet-footer-control:not( .legal-active ):hover {
+    text-shadow: 0 0 0.35px var(--Base-base-09);
 }
 
 .billet-item .billet-footer-control:not( .legal-active ):before {
     content: attr( data-default );
 }
 
-.billet-right .billet-footer-control.legal-active::before {
+/* .billet-right .billet-footer-control.legal-active::before {
     content: attr( data-active );
-}
+} */
 
-.billet-right .billet-footer-control::after {
+/* .billet-right .billet-footer-control::after {
     content: '\F103';
     font-family: var(--legal-font-icons);
     font-size: 16px;
     line-height: 16px;
-}
+} */
 
 .billet-right .bonus-spoiler {
     font-size: 12px;
@@ -857,7 +875,9 @@ body {
 .billet-item .billet-footer {
     color: var( --Base-base-05 );
     font-style: normal;
+    font-size: 12px;
     font-weight: 400;
+    line-height: 18px;
 }
 
 .billet-item .billet-footer:not(.legal-active) p {
