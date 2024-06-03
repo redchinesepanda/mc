@@ -34,7 +34,7 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
-// require_once( 'multisite/MiltisiteMain.php' );
+require_once( 'multisite/MiltisiteMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
