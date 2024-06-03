@@ -34,7 +34,7 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
-require_once( 'multisite/MiltisiteMain.php' );
+// require_once( 'multisite/MiltisiteMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
@@ -84,7 +84,7 @@ class LegalMain
 
 		WPMLMain::register_functions();
 
-		MiltisiteMain::register_functions();
+		// MiltisiteMain::register_functions();
 
 		if ( self::check_admin() )
 		{
@@ -94,7 +94,7 @@ class LegalMain
 
 			NotionMain::register_functions();
 
-			MiltisiteMain::register_functions_admin();
+			// MiltisiteMain::register_functions_admin();
 		}
 	}
 
