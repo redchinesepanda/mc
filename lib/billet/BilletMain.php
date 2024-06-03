@@ -16,7 +16,7 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
-require_once( 'center/BilletDescriptionAjax.php' );
+// require_once( 'center/BilletDescriptionAjax.php' );
 
 // require_once( 'center/BilletDescriptionRESTAPI.php' );
 
@@ -203,7 +203,7 @@ class BilletMain
 	{
 		BilletMega::register_functions();
 
-        BilletDescriptionAjax::register_functions();
+        // BilletDescriptionAjax::register_functions();
 
         // BilletDescriptionRESTAPI::register_functions();
 	}
@@ -218,7 +218,7 @@ class BilletMain
 
         BilletMega::register();
 
-        BilletDescriptionAjax::register();
+        // BilletDescriptionAjax::register();
     }
 
     public static function get_bonus_url( $id, $filter = [] )
