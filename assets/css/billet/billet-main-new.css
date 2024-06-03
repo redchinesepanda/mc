@@ -828,7 +828,7 @@ body {
     text-shadow: 0 0 0.35px var(--Base-base-09);
 }
 
-.billet-item .billet-footer-control:not( .legal-active ):not( .legal-short-tnc ):before {
+.billet-item .billet-footer:not( .legal-short-tnc ) .billet-footer-control:not( .legal-active ):before {
     content: attr( data-default );
 }
 
