@@ -15,5 +15,6 @@
     <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
         <!-- <div class="billet-footer"></div> -->
         <div class="billet-footer"><?php echo $args[ 'bonus' ][ 'description-full' ]; ?></div>
+        <span class="billet-footer-control" data-default="<?php echo $args[ 'read-more' ]; ?>"></span>
     <?php endif; ?>
 </div> 
