@@ -183,6 +183,8 @@ class ReviewAbout
         'mx',
 
         'pt',
+
+        'se',
     ];
 
     public static function check_bonus_exception()
