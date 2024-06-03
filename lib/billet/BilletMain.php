@@ -16,7 +16,7 @@ require_once( 'center/BilletList.php' );
 
 require_once( 'center/BilletAchievement.php' );
 
-// require_once( 'center/BilletDescriptionAjax.php' );
+require_once( 'center/BilletDescriptionAjax.php' );
 
 // require_once( 'center/BilletDescriptionRESTAPI.php' );
 
