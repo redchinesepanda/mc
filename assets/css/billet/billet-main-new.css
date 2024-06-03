@@ -860,6 +860,12 @@ body {
     font-weight: 400;
 }
 
+.billet-item .billet-footer:not(.legal-active) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* .billet-item .billet-footer::after {
     content: attr( data-footer-text );
 } */
