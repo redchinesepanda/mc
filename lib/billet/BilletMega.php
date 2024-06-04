@@ -196,7 +196,7 @@ class BilletMega
 		{
 			// $tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			
-			$tnc[] = ToolEncode::encode( $node->TextContent );
+			$tnc[] = ToolEncode::encode( $node->textContent );
 
 			LegalDOM::remove_child( $dom, $node );
 		}
