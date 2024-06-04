@@ -904,3 +904,7 @@ body {
 .billet-item .footer-tnc-info::after {
 	content: attr( data-text );
 }
+
+.billet-item .footer-tnc-link {
+    color: var( --Base-base-05 );
+}
