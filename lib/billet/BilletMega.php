@@ -194,7 +194,9 @@ class BilletMega
 
 		foreach ( $nodes as $node )
 		{
-			$tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
+			// $tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
+			
+			$tnc[] = ToolEncode::encode( $node->TextContent );
 
 			LegalDOM::remove_child( $dom, $node );
 		}
