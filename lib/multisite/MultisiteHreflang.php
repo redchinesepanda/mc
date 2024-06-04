@@ -96,6 +96,10 @@ class MultisiteHreflang
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_post_uri',
 
+			'get_post_permalink' => get_post_permalink( $post );
+
+			'get_permalink' => get_permalink( $post );
+
 			'$post' => $post->ID,
 
 			'$url' => $url,
