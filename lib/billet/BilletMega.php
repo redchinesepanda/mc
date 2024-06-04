@@ -200,7 +200,7 @@ class BilletMega
 
 			$text_content = strip_tags( $text_content );
 
-			$text_content = addslashes( $text_content );
+			$text_content = htmlspecialchars( $text_content );
 			
 			$tnc[] = $text_content;
 
@@ -312,7 +312,7 @@ class BilletMega
 
 		$description = strip_tags( $description );
 
-		$description = addslashes( $description );
+		$description = htmlspecialchars( $description );
 
 		return $tnc . $description;
 	}
