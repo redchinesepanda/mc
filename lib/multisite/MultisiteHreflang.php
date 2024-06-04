@@ -87,9 +87,9 @@ class MultisiteHreflang
 		
 		$url =  self::get_blog_uri();
 
-		$post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 		
-		// $post_path = get_post_permalink( $post );
+		$post_path = get_post_permalink( $post );
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
