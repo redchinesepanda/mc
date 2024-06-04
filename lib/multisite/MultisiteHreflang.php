@@ -105,6 +105,8 @@ class MultisiteHreflang
 
 			'custom_permalink' => get_post_meta( $post->ID, 'custom_permalink', true ),
 
+			'_wp_old_slug' => get_post_meta( $post->ID, '_wp_old_slug', true ),
+
 			'permalink_post_uri' => $permalink_post_uri,
 
 			'get_post_permalink' => get_post_permalink( $post ),
