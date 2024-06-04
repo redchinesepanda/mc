@@ -270,7 +270,9 @@ class BilletMega
 	public static function get_complete_tnc( $id, $billet_feature, $tnc )
 	{
 		$filter = [
-			'description' => true,
+			// 'description' => true,
+			
+			'description' => false,
 	
 			'features' => [],
 		];
