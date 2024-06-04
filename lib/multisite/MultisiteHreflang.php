@@ -102,25 +102,25 @@ class MultisiteHreflang
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
-		LegalDebug::debug( [
-			'MultisiteHreflang' => 'get_post_uri',
+		// LegalDebug::debug( [
+		// 	'MultisiteHreflang' => 'get_post_uri',
 
-			// 'permalink_uri' => $permalink_uri,
+		// 	// 'permalink_uri' => $permalink_uri,
 
-			// 'permalink_post_uri' => $permalink_post_uri,
+		// 	// 'permalink_post_uri' => $permalink_post_uri,
 
-			// 'get_post_permalink' => get_post_permalink( $post ),
+		// 	// 'get_post_permalink' => get_post_permalink( $post ),
 
-			// 'get_permalink' => get_permalink( $post ),
+		// 	// 'get_permalink' => get_permalink( $post ),
 
-			'$post' => $post->ID,
+		// 	'$post' => $post->ID,
 
-			'$url' => $url,
+		// 	'$url' => $url,
 
-			'$post_path' => $post_path,
+		// 	'$post_path' => $post_path,
 
-			'$language_code' => $language_code,
-		] );
+		// 	'$language_code' => $language_code,
+		// ] );
 
 		if ( $language_code == 'en' )
         {
