@@ -23,6 +23,13 @@ class WPMLMain
 		return is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' );
     }
 
+    public static function check_wpml_off()
+    {
+        return MiltisiteMain::check_multisite()
+
+            && MultisiteBlog::check_not_main_blog();
+    }
+
     public static function register_functions()
     {
         // WPMLDomain::register_functions();
@@ -39,11 +46,13 @@ class WPMLMain
         //     'check_multisite' => MiltisiteMain::check_multisite(),
         // ] );
 
-        if ( MiltisiteMain::check_multisite() )
+        // if ( MiltisiteMain::check_multisite() )
+        
+        if ( self::check_wpml_off() )
         {
             $handler = new self();
 
-            // add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ], 10, 2 );
+            add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ], 10, 2 );
         }
     } 
 
