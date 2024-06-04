@@ -91,12 +91,12 @@ class MultisiteHreflang
 
 		$permalink_uri = ToolPermalink::get_post_uri( $post->ID );
 
-		$permalink_post_uri = '';
+		// $permalink_post_uri = '';
 
-		if ( class_exists( 'Permalink_Manager_URI_Functions_Post' ) )
-		{
-			$permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
-		}
+		// if ( class_exists( 'Permalink_Manager_URI_Functions_Post' ) )
+		// {
+		// 	$permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+		// }
 		
 		$post_path = get_post_permalink( $post );
 
@@ -107,11 +107,7 @@ class MultisiteHreflang
 
 			'permalink_uri' => $permalink_uri,
 
-			'custom_permalink' => get_post_meta( $post->ID, 'custom_permalink', true ),
-
-			'_wp_old_slug' => get_post_meta( $post->ID, '_wp_old_slug', true ),
-
-			'permalink_post_uri' => $permalink_post_uri,
+			// 'permalink_post_uri' => $permalink_post_uri,
 
 			'get_post_permalink' => get_post_permalink( $post ),
 
