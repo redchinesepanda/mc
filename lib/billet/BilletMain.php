@@ -45,6 +45,8 @@ class BilletMain
 
 		'close-details' => 'Close Details',
 
+        'full-tnc' => 'Full T&Cs apply',
+
 		'get-in-touch' => 'Get in touch',
 
         'hide-tnc' => 'Hide T&C',

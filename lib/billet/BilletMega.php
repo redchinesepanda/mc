@@ -345,6 +345,8 @@ class BilletMega
 			'billet-feature' => '',
 
 			'button-read-tns' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+
+			'title-tns' => __( BilletMain::TEXT[ 'full-tns' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		$atts = shortcode_atts( $pairs, $atts, 'billet-mega' );
@@ -528,6 +530,8 @@ class BilletMega
 			'tnc' => $parts[ 'tnc' ],
 
 			'button-read-tns' => $atts[ 'button-read-tns' ],
+
+			'title-tns' => $atts[ 'title-tns' ],
 
 			'no-controls' => $no_controls,
 
