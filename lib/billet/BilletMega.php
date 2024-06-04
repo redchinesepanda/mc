@@ -207,13 +207,13 @@ class BilletMega
 			LegalDOM::remove_child( $dom, $node );
 		}
 
-		LegalDebug::debug( [
-			'BilletMega' => 'get_tnc',
+		// LegalDebug::debug( [
+		// 	'BilletMega' => 'get_tnc',
 
-			'tnc' => implode( '', $tnc ),
-		] );
+		// 	'tnc' => implode( '', $tnc ),
+		// ] );
 
-		return implode( '', $tnc );
+		return implode( ' ', $tnc );
 	}
 
 	const MODE = [
