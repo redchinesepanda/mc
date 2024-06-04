@@ -88,28 +88,35 @@ class MultisiteHreflang
 		$url =  self::get_blog_uri();
 
 		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+
+		$permalink_post_uri = '';
+
+		if ( class_exists( 'Permalink_Manager_URI_Functions_Post' ) )
+		{
+			$permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+		}
 		
 		$post_path = get_post_permalink( $post );
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteHreflang' => 'get_post_uri',
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_post_uri',
 
-		// 	'auto_update_uri' => get_post_meta( $post->ID, "auto_update_uri", true ),
+			'permalink_post_uri' => $permalink_post_uri,
 
-		// 	'get_post_permalink' => get_post_permalink( $post ),
+			'get_post_permalink' => get_post_permalink( $post ),
 
-		// 	'get_permalink' => get_permalink( $post ),
+			'get_permalink' => get_permalink( $post ),
 
-		// 	'$post' => $post->ID,
+			'$post' => $post->ID,
 
-		// 	'$url' => $url,
+			'$url' => $url,
 
-		// 	'$post_path' => $post_path,
+			'$post_path' => $post_path,
 
-		// 	'$language_code' => $language_code,
-		// ] );
+			'$language_code' => $language_code,
+		] );
 
 		if ( $language_code == 'en' )
         {
