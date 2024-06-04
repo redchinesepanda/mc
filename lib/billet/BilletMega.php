@@ -195,10 +195,14 @@ class BilletMega
 		foreach ( $nodes as $node )
 		{
 			// $tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
+
+			$text_content = ToolEncode::encode( $node->textContent );
+
+			$text_content = strip_tags( $text_content );
+
+			$text_content = addslashes( $text_content );
 			
-			// $tnc[] = ToolEncode::encode( $node->textContent );
-			
-			$tnc[] = ToolEncode::encode( addslashes( $node->textContent ) );
+			$tnc[] = $text_content;
 
 			LegalDOM::remove_child( $dom, $node );
 		}
