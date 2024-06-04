@@ -35,9 +35,12 @@ class ToolPermalink
         //     'permalink_manager_uris' => $permalink_manager_uris,
         // ] );
 
-        if ( ! empty( $permalink_manager_uris[ $post_id ] ) ) {
-			return $permalink_manager_uris[ $post_id ];
-		}
+        if ( $permalink_manager_uris )
+        {
+            if ( ! empty( $permalink_manager_uris[ $post_id ] ) ) {
+                return $permalink_manager_uris[ $post_id ];
+            }
+        }
 
         $post = get_post( $post_id );
 
