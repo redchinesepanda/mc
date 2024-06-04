@@ -46,7 +46,7 @@ require_once( 'ToolRobots.php' );
 
 require_once( 'ToolRewrite.php' );
 
-require_once( 'ToolPermalink.php' );
+// require_once( 'ToolPermalink.php' );
 
 class ToolsMain
 {
@@ -98,7 +98,7 @@ class ToolsMain
         
         ToolRewrite::register_functions();
 
-        ToolPermalink::register_functions();
+        // ToolPermalink::register_functions();
     }
 }
 

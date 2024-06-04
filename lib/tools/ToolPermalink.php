@@ -4,45 +4,43 @@ class ToolPermalink
 {
     public static function register_functions()
     {
-        $handler = new self();
+        // $handler = new self();
 
         // add_filter( 'post_type_link', [ $handler, 'wpse_101072_flatten_hierarchies' ], 10, 2 );
-
-        // apply_filters( 'permalink_manager_filter_query', $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
         
-        add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
+        // add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
     }
 
-    public static function mc_permalink_manager_filter_query( $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
-    {
-        global $sitepress;
+    // public static function mc_permalink_manager_filter_query( $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
+    // {
+    //     global $sitepress;
 
-        $current_language = $sitepress->get_current_language();
+    //     $current_language = $sitepress->get_current_language();
 
-        LegalDebug::debug( [
-            'ToolPermalink' => 'mc_permalink_manager_filter_query',
+    //     LegalDebug::debug( [
+    //         'ToolPermalink' => 'mc_permalink_manager_filter_query',
 
-            'current_language' => $current_language,
+    //         'current_language' => $current_language,
 
-            'query' => $query,
+    //         'query' => $query,
 
-            'old_query' => $old_query,
+    //         'old_query' => $old_query,
 
-            'uri_parts' => $uri_parts,
+    //         'uri_parts' => $uri_parts,
 
-            'pm_query' => $pm_query,
+    //         'pm_query' => $pm_query,
 
-            'content_type' => $content_type,
+    //         'content_type' => $content_type,
 
-            'element_object' => $element_object->ID,
-        ] );
+    //         'element_object' => $element_object->ID,
+    //     ] );
 
-        // $uri_parts[ 'lang' ] = 'eng';
+    //     // $uri_parts[ 'lang' ] = 'eng';
 
-        $pm_query[ 'lang' ] = 'eng';
+    //     // $pm_query[ 'lang' ] = 'eng';
 
-        return $query;
-    }
+    //     return $query;
+    // }
 
     // public static function wpse_101072_flatten_hierarchies( $post_link, $post )
     // {
