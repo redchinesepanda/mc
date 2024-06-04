@@ -183,6 +183,21 @@ class BilletMain
         ];
     }
 
+    private static function get_play( $billet )
+    {
+        $args = BilletMain::href( $billet['url']['play'] );
+
+        $args[ 'nofollow' ] = $billet[ 'url' ][ 'play-nofollow' ];
+        
+        $args['label'] = __( BilletMain::TEXT[ 'bet-now' ], ToolLoco::TEXTDOMAIN );
+
+        if ( !empty( $billet['filter']['play']['label'] ) ) {
+            $args['label'] = $billet['filter']['play']['label'];
+        }
+
+        return $args;
+    }
+
 	public static function check()
     {
         return LegalComponents::check();
@@ -567,6 +582,8 @@ class BilletMain
             'filter' => $filter,
 
             'footer-control' => self::get_footer_control(),
+
+            'play' => self::get_play( $billet ),
         ];
     }
 
