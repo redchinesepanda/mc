@@ -31,7 +31,7 @@ class ToolPermalink
             'element_object' => $element_object->ID,
         ] );
 
-        $uri_parts[ 'lang' ] = 'eng';
+        // $uri_parts[ 'lang' ] = 'eng';
 
         return $query;
     }
