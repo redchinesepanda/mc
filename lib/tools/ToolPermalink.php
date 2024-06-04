@@ -15,8 +15,14 @@ class ToolPermalink
 
     public static function mc_permalink_manager_filter_query( $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
     {
+        global $sitepress;
+
+        $current_language = $sitepress->get_current_language();
+
         LegalDebug::debug( [
             'ToolPermalink' => 'mc_permalink_manager_filter_query',
+
+            'current_language' => $current_language,
 
             'query' => $query,
 
