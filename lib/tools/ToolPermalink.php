@@ -28,7 +28,7 @@ class ToolPermalink
 
             'content_type' => $content_type,
 
-            'element_object' => $element_object,
+            'element_object' => $element_object->ID,
         ] );
 
         return $query;
