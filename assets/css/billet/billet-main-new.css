@@ -900,3 +900,7 @@ body {
     letter-spacing: normal;
     line-height: 22.5px;
 }
+
+.billet-item .footer-tnc-info::after {
+	content: attr( data-text );
+}
