@@ -89,7 +89,7 @@ class MultisiteHreflang
 
 		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
-		ToolPermalink::get_permalink_uri( $post->ID );
+		$permalink_uri = ToolPermalink::get_post_uri( $post->ID );
 
 		$permalink_post_uri = '';
 
@@ -104,6 +104,8 @@ class MultisiteHreflang
 
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_post_uri',
+
+			'permalink_uri' => $permalink_uri,
 
 			'custom_permalink' => get_post_meta( $post->ID, 'custom_permalink', true ),
 
