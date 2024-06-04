@@ -17,7 +17,7 @@
         <div class="billet-footer">
             <p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>"><a href="" class="footer-tnc-link" rel="nofollow">Full T&Cs apply </a></p>
             <!-- <?php echo $args[ 'bonus' ][ 'description-full' ]; ?> -->
-            <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ][ 'default' ]; ?>"></span>
+            <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ][ 'button' ]; ?>"></span>
         </div>
     <?php endif; ?>
 </div> 

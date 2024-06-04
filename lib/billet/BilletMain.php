@@ -177,9 +177,10 @@ class BilletMain
     private static function get_footer_tnc()
     {
         return [
-            'default' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+            'button' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 
             // 'active' => __( BilletMain::TEXT[ 'hide-tnc' ], ToolLoco::TEXTDOMAIN ),
+            'link' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
         ];
     }
 
