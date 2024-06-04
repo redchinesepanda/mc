@@ -196,7 +196,9 @@ class BilletMega
 		{
 			// $tnc[] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			
-			$tnc[] = ToolEncode::encode( $node->textContent );
+			// $tnc[] = ToolEncode::encode( $node->textContent );
+			
+			$tnc[] = ToolEncode::encode( addslashes( $node->textContent ) );
 
 			LegalDOM::remove_child( $dom, $node );
 		}
@@ -305,6 +307,8 @@ class BilletMega
 		$description = BilletMain::get_main_description( $id, $filter );
 
 		$description = strip_tags( $description );
+
+		$description = addslashes( $description );
 
 		return $tnc . $description;
 	}
