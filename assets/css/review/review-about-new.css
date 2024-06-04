@@ -1,5 +1,11 @@
 @media screen and ( max-width: 767px ) {
 
+    /* Width and Height */
+
+    .review-about .footer-logo .logo-item img {
+        max-height: 18px;
+    }
+
     /* Position */
 
     .review-about {
@@ -361,6 +367,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    align-items: center;
     row-gap: 8px;
 }
 
@@ -781,4 +788,9 @@
     font-weight: 400;
     line-height: 28px;
     text-decoration: none;
+}
+
+.review-about .footer-logo .logo-item {
+    line-height: 0;
+    opacity: 0.65;
 }

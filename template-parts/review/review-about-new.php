@@ -41,7 +41,7 @@
                                     <?php foreach( $args[ 'logo-items' ] as $logo ) : ?>
                                         <a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow" target="_blank">
                                             <!-- <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"> -->
-                                            <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="16" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"></a>
+                                            <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="24" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"></a>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
