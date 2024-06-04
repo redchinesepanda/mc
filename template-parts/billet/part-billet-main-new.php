@@ -15,7 +15,7 @@
     <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
         <!-- <div class="billet-footer"></div> -->
         <div class="billet-footer">
-            <p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>"><a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>>Full T&Cs apply </a></p>
+            <p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>"><a href="<?php echo $args[ 'play' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'play' ][ 'nofollow' ] ); ?>>Full T&Cs apply </a></p>
             <!-- <?php echo $args[ 'bonus' ][ 'description-full' ]; ?> -->
             <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-control' ][ 'default' ]; ?>"></span>
         </div>
