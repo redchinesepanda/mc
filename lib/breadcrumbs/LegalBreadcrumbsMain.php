@@ -333,19 +333,15 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                         // $href = get_page_link( $item[ self::ITEM[ 'id' ] ] );
 
-                        LegalDebug::debug( [
-                            'LegalBreadcrumbsMain' => 'get',
+                        // LegalDebug::debug( [
+                        //     'LegalBreadcrumbsMain' => 'get',
                 
-                            'title' => $title,
+                        //     'title' => $title,
 
-                            'item_id' => $item_id,
+                        //     'item_id' => $item_id,
 
-                            // 'href' => $href,
-
-                            'get_post_permalink' => get_post_permalink( $item_id ),
-
-		                	'get_permalink' => get_permalink( $item_id ),
-                        ] );
+                        //     // 'href' => $href,
+                        // ] );
 
                         // $items[] = self::get_item( $title, get_page_link( $item[ self::ITEM[ 'id' ] ] ), $index );
                         
