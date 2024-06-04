@@ -33,6 +33,8 @@ class ToolPermalink
 
         // $uri_parts[ 'lang' ] = 'eng';
 
+        $pm_query[ 'lang' ] = 'eng';
+
         return $query;
     }
 
