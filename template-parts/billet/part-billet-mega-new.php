@@ -59,7 +59,7 @@
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
 		<div class="billet-mega-tnc">
 			<p class="data-tnc" data-text="<?php echo $args[ 'tnc' ] ?>"><a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="link-tnc" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>>T&C</a></p>
-			<?php echo $args[ 'tnc' ] ?>
+			<!-- <?php echo $args[ 'tnc' ] ?> -->
 			<span class="billet-mega-tnc-control" data-default="<?php echo $args[ 'button-read-tns' ]; ?>"></span>
 		</div>
 	<?php endif; ?>
