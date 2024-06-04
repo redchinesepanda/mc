@@ -103,6 +103,8 @@ class MultisiteHreflang
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_post_uri',
 
+			'auto_update_uri' => get_post_meta( $post->ID, "auto_update_uri", true ),
+
 			'permalink_post_uri' => $permalink_post_uri,
 
 			'get_post_permalink' => get_post_permalink( $post ),
