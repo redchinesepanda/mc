@@ -89,6 +89,8 @@ class MultisiteHreflang
 
 		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
+		ToolPermalink::get_permalink_uri( $post->ID );
+
 		$permalink_post_uri = '';
 
 		if ( class_exists( 'Permalink_Manager_URI_Functions_Post' ) )

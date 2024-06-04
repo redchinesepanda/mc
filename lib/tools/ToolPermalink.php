@@ -11,6 +11,21 @@ class ToolPermalink
         // add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
     }
 
+    public static function get_permalink_uri( $post_id )
+    {
+        $permalink_manager_uris = get_option( 'permalink-manager-uris' );
+
+        LegalDebug::debug( [
+            'ToolPermalink' => 'get_permalink_uri',
+
+            'post_id' => $post_id,
+
+            'permalink_manager_uris' => $permalink_manager_uris,
+        ] );
+
+        return '';
+    }
+
     // public static function mc_permalink_manager_filter_query( $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
     // {
     //     global $sitepress;
