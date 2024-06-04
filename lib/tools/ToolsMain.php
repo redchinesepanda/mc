@@ -46,6 +46,8 @@ require_once( 'ToolRobots.php' );
 
 require_once( 'ToolRewrite.php' );
 
+require_once( 'ToolPermalink.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -95,6 +97,8 @@ class ToolsMain
         ToolSitemapXML::register_functions();
         
         ToolRewrite::register_functions();
+
+        ToolPermalink::register_functions();
     }
 }
 
