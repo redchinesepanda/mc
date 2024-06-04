@@ -474,6 +474,6 @@
 	white-space: nowrap;
 }
 
-.legal-billet-mega .billet-mega-tnc .data-tnc::after {
+.legal-billet-mega .mega-tnc-info::after {
 	content: attr( data-text );
 }
