@@ -1,5 +1,5 @@
 @media screen and ( max-width: 767px ) {
-    
+
     /* Width and Height */
 
     .review-about .footer-logo .logo-item img {
@@ -367,6 +367,7 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    align-items: center;
     row-gap: 8px;
 }
 
