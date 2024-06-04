@@ -178,7 +178,7 @@
 }
 
 .legal-billet-mega .billet-mega-content p:not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ),
-.legal-billet-mega .billet-mega-tnc p {
+.legal-billet-mega .mega-tnc-info {
 	margin: 0px;
 }
 
@@ -446,14 +446,15 @@
 	line-height: 26px;
 }
 
-.legal-billet-mega .billet-mega-tnc p,
+.legal-billet-mega .mega-tnc-info,
 .legal-billet-mega .billet-mega-tnc-control {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
 }
 
-.legal-billet-mega .billet-mega-tnc p {
+.legal-billet-mega .mega-tnc-info,
+.legal-billet-mega .mega-tnc-info .mega-tnc-link {
 	color: var( --Base-base-05 );
 }
 
