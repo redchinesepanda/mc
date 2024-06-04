@@ -174,7 +174,7 @@ class BilletMain
         }
     }
 
-    private static function get_footer_control()
+    private static function get_footer_tnc()
     {
         return [
             'default' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
@@ -566,7 +566,7 @@ class BilletMain
 
             'filter' => $filter,
 
-            'footer-control' => self::get_footer_control(),
+            'footer-tnc' => self::get_footer_tnc(),
         ];
     }
 
