@@ -19,8 +19,10 @@
 
 	/* Position */
 
-	.legal-bonus-summary .bonus-summary-item {
-		margin-right: 32px;
+	/* .legal-bonus-summary .bonus-summary-item */
+	.legal-bonus-summary .bonus-summary-item:not( :first-of-type ) {
+		/* margin-right: 32px; */
+		margin-left: calc( 32px - 8px);
 	}
 	
 }
@@ -41,8 +43,10 @@
 
 	/* Position */
 
-	.legal-bonus-summary .bonus-summary-item {
-		margin-right: 48px;
+	/* .legal-bonus-summary .bonus-summary-item */
+	.legal-bonus-summary .bonus-summary-item:not( :first-of-type ) {
+		/* margin-right: 48px; */
+		margin-left: calc( 48px - 8px);
 	}
 	
 /* 	.legal-bonus-summary .item-value {
