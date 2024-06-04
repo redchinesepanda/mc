@@ -302,6 +302,8 @@ class BilletMega
 
 		$description = BilletMain::get_main_description( $id, $filter );
 
+		$description = strip_tags( $description );
+
 		return $tnc . $description;
 	}
 
