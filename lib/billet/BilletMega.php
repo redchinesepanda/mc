@@ -210,7 +210,7 @@ class BilletMega
 		LegalDebug::debug( [
 			'BilletMega' => 'get_tnc',
 
-			'tnc' => $tnc,
+			'tnc' => implode( '', $tnc ),
 		] );
 
 		return implode( '', $tnc );
