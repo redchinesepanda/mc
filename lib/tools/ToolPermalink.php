@@ -39,6 +39,13 @@ class ToolPermalink
 			return $permalink_manager_uris[ $post_id ];
 		}
 
+        $post = get_post( $post_id );
+
+        if ( $post )
+        {
+            return $post->post_name;
+        }
+
         return '';
     }
 
