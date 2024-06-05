@@ -21,16 +21,28 @@ class YoastSitemapXML
 		// use it to remove the '/homepage/' part from any sitemap entries
 
 		add_filter( 'wpseo_xml_sitemap_post_url', [ $handler, 'sitemap_post_url' ], 10, 2 );
+
+		// Exclude specific posts
+	
+		add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', [ $handler, 'exclude_posts_from_xml_sitemaps' ] );
     }
 
-	public static function check_front_page( $post_id )
-    {
-		// $front_page_id = get_option( 'page_on_front' );
-		
-        // return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
+	public static function exclude_posts_from_xml_sitemaps()
+	{
+		return [ get_option( 'page_on_front' ) ];
+	}
 
+	public static function check_translation_offront_page( $post_id )
+    {
 		return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
 	}
+
+	// public static function check_front_page( $post_id )
+    // {
+	// 	$front_page_id = get_option( 'page_on_front' );
+		
+    //     return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
+	// }
 
 	const PATTERNS = [
 		'path' => '/%s/',
@@ -42,7 +54,7 @@ class YoastSitemapXML
 	{  
 		// return str_replace('/homepage/', '/', $url); 
 
-		if ( self::check_front_page( $post->ID ) )
+		if ( self::check_translation_offront_page( $post->ID ) )
 		{
 			$parsed_url = parse_url( $url );
 
