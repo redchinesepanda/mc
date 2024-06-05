@@ -131,7 +131,7 @@ class ToolSitemapXML
     
     public static function kama_sitemap_max_urls( $num, $object_type )
     {
-        return 1000;
+        return 100;
     }
 
     const PROVIDERS = [
