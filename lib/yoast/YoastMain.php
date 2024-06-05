@@ -2,6 +2,8 @@
 
 require_once( 'YoastOG.php' );
 
+require_once( 'YoastSitemapXML.php' );
+
 class YoastMain
 {
     public static function check_plugin()
@@ -49,6 +51,8 @@ class YoastMain
         \add_filter( 'wpseo_force_creating_and_using_attachment_indexables', '__return_true' );
 
         add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
+
+        YoastSitemapXML::register_functions();
     }
 
     /**
