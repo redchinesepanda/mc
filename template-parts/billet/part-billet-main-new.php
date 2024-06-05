@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-    'template' => 'part-billet-main-new',
+// LegalDebug::debug( [
+//     'template' => 'part-billet-main-new',
 
-    'args' => $args,
-] );
+//     'args' => $args,
+// ] );
 
 ?>
 <div class="billet-item">
@@ -23,7 +23,7 @@ LegalDebug::debug( [
     <?php BilletSpoiler::render( $args ); ?>
     <?php if ( !empty( $args[ 'bonus' ][ 'description-full' ] ) ) : ?>
         <!-- <div class="billet-footer"></div> -->
-        <div class="billet-footer">
+        <div class="billet-footer <?php echo $args[ 'bonus' ][ 'tnc-class' ]; ?>">
             <p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>">
                 <?php if ( $args[ 'bonus' ][ 'href' ] != '#' ) : ?>
                     <a href="<?php echo $args[ 'bonus' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'bonus' ][ 'nofollow' ] ); ?>><?php echo $args[ 'footer-tnc' ][ 'link' ]; ?> </a>

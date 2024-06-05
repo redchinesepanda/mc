@@ -82,6 +82,8 @@ class BilletBonus
             'description' => '',
 
             'description-full' => '',
+
+            'tnc-class' => '',
         ];
     }
 
