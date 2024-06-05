@@ -25,9 +25,11 @@ class YoastSitemapXML
 
 	public static function check_front_page( $post_id )
     {
-		$front_page_id = get_option( 'page_on_front' );
+		// $front_page_id = get_option( 'page_on_front' );
 		
-        return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
+        // return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
+
+		return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
 	}
 	
 	public static function sitemap_post_url( $url, $post )
