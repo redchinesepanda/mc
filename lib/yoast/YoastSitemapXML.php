@@ -24,18 +24,18 @@ class YoastSitemapXML
 
 		// Exclude specific posts
 	
-		add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', [ $handler, 'exclude_posts_from_xml_sitemaps' ] );
+		// add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', [ $handler, 'exclude_posts_from_xml_sitemaps' ] );
     }
 
-	public static function exclude_posts_from_xml_sitemaps()
-	{
-		return [ get_option( 'page_on_front' ) ];
-	}
+	// public static function exclude_posts_from_xml_sitemaps()
+	// {
+	// 	return [ 1, 2, 3 ];
+	// }
 
-	public static function check_translation_offront_page( $post_id )
-    {
-		return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
-	}
+	// public static function check_translation_offront_page( $post_id )
+    // {
+	// 	return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
+	// }
 
 	// public static function check_front_page( $post_id )
     // {
