@@ -55,23 +55,23 @@ class YoastSitemapXML
 				$folder = array_shift( $path_array );
 
 				$parsed_url[ 'path' ] = sprintf( self::PATTERNS[ 'path' ], $folder );
+
+				$unparsed_url = sprintf( self::PATTERNS[ 'url' ], $parsed_url[ 'scheme' ], $parsed_url[ 'host' ], $parsed_url[ 'path' ] );
+	
+				// LegalDebug::debug( [
+				// 	'YoastSitemapXML' =>'sitemap_post_url',
+	
+				// 	'url' => $url,
+	
+				// 	'post_id' => $post->ID,
+	
+				// 	'parsed_url' => $parsed_url,
+	
+				// 	'unparsed_url' => $unparsed_url,
+				// ] );
+	
+				return $unparsed_url;
 			}
-
-			$unparsed_url = sprintf( self::PATTERNS[ 'url' ], $parsed_url[ 'scheme' ], $parsed_url[ 'host' ], $parsed_url[ 'path' ] );
-
-			LegalDebug::debug( [
-				'YoastSitemapXML' =>'sitemap_post_url',
-
-				'url' => $url,
-
-				'post_id' => $post->ID,
-
-				'parsed_url' => $parsed_url,
-
-				'unparsed_url' => $unparsed_url,
-			] );
-
-			return $unparsed_url;
 		}
 
 		return $url;
