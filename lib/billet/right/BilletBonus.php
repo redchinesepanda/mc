@@ -61,6 +61,8 @@ class BilletBonus
                             // 'description-full' => $item[ self::FETURE_BONUS[ 'bonus-description-full' ] ],
                             
                             'description-full' => $description_full,
+
+                            'tnc-class' => self::get_tnc_class(),
                         ];
                     }
                 }
