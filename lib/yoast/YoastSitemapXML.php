@@ -13,6 +13,10 @@ class YoastSitemapXML
         // Exclude a taxonomy
 	
 		add_filter( 'wpseo_sitemap_exclude_taxonomy', [ $handler, 'sitemap_exclude_taxonomy' ], 10, 2 );
+
+		// Exclude an author
+	 
+		add_filter( 'wpseo_sitemap_exclude_author', [ $handler, 'sitemap_exclude_authors' ] );
     }
 
 	const POST_TYPES = [
@@ -21,7 +25,7 @@ class YoastSitemapXML
         'author',
     ];
 
-	function sitemap_exclude_post_type( $excluded, $post_type )
+	public static function sitemap_exclude_post_type( $excluded, $post_type )
 	{
 		// return $post_type === 'recipes';
 		
@@ -48,11 +52,24 @@ class YoastSitemapXML
         'billet_feature',
     ];
 
-	function sitemap_exclude_taxonomy( $excluded, $taxonomy )
+	public static function sitemap_exclude_taxonomy( $excluded, $taxonomy )
 	{
 		// return $post_type === 'recipes';
 		
 		return in_array( $taxonomy, self::TAXONOMY );
+	}
+	
+	public static function sitemap_exclude_authors( $users )
+	{
+		// return array_filter( $users, function( $user ) {
+		// 	 if ( $user->ID === 5 ) {
+		// 		 return false;
+		// 	 }
+	 
+		// 	 return true;
+		//  } );
+
+		return false;
 	}
 }
 
