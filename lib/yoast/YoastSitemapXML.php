@@ -70,7 +70,7 @@ class YoastSitemapXML
 				// 	'unparsed_url' => $unparsed_url,
 				// ] );
 	
-				// return $unparsed_url;
+				return $unparsed_url;
 			}
 		}
 
