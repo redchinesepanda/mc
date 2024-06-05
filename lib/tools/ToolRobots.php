@@ -57,8 +57,14 @@ class ToolRobots
 				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 				
 				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+
+				// WP Sitemap XML
 				
-				'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+				// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+
+				// Yoast SEO Sitemap XML
+				
+				'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
 			];
 		}
 
