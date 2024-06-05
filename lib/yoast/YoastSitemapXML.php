@@ -69,7 +69,9 @@ class YoastSitemapXML
 				'parsed_url' => $parsed_url,
 
 				'unparsed_url' => $unparsed_url,
-			] );  
+			] );
+
+			return $unparsed_url;
 		}
 
 		return $url;
