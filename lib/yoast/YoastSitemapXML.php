@@ -31,6 +31,10 @@ class YoastSitemapXML
 
 		return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
 	}
+
+	const PATTERNS = [
+		'path' => '/%s/',
+	];
 	
 	public static function sitemap_post_url( $url, $post )
 	{  
@@ -40,6 +44,19 @@ class YoastSitemapXML
 		{
 			$parsed_url = parse_url( $url );
 
+			$path = trim( $parsed_url[ 'path' ], '/' );
+
+			$path_array = explode( '/', $path );
+
+			if ( count( $path_array ) > 1 )
+			{
+				$folder = arrays_shift( $path_array );
+
+				$parsed_url[ 'path' ] = sprintf( self::PATTERNS[ 'path' ], $folder );
+			}
+
+			$unparsed_url = unparse_url( $parsed_url );
+
 			LegalDebug::debug( [
 				'YoastSitemapXML' =>'sitemap_post_url',
 
@@ -48,7 +65,9 @@ class YoastSitemapXML
 				'post_id' => $post->ID,
 
 				'parsed_url' => $parsed_url,
-			] );
+
+				'unparsed_url' => $unparsed_url,
+			] );  
 		}
 
 		return $url;
