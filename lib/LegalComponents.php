@@ -181,9 +181,9 @@ class LegalComponents
 		
 		|| self::check_post_type_post()
 
-		|| self::check_not_found()
+		|| self::check_not_found();
 
-		|| ToolNotFound::check();
+		// || ToolNotFound::check();
     }
 
     public static function check_contains( $class = '' )
