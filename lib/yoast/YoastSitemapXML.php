@@ -17,7 +17,40 @@ class YoastSitemapXML
 		// Exclude an author
 	 
 		add_filter( 'wpseo_sitemap_exclude_author', [ $handler, 'sitemap_exclude_authors' ] );
+		
+		// use it to remove the '/homepage/' part from any sitemap entries
+
+		add_filter( 'wpseo_xml_sitemap_post_url', 'sitemap_post_url', 10, 2 );
     }
+
+	public static function check_front_page( $post_id )
+    {
+		$front_page_id = get_option( 'page_on_front' );
+		
+        return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
+	}
+	
+	public static function sitemap_post_url( $url, $post )
+	{  
+		// return str_replace('/homepage/', '/', $url); 
+
+		if ( self::check_front_page( $post->ID ) )
+		{
+			$parsed_url = parse_url( $url );
+
+			LegalDebug::debug( [
+				'YoastSitemapXML' =>'sitemap_post_url',
+
+				'url' => $url,
+
+				'post_id' => $post->ID,
+
+				'parsed_url' => $parsed_url,
+			] );
+		}
+
+		return $url;
+	}
 
 	const POST_TYPES = [
         'affiliate-links',
