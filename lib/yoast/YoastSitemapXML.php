@@ -22,7 +22,7 @@ class YoastSitemapXML
 	const POST_TYPES = [
         'affiliate-links',
 
-        'author',
+        // 'author',
     ];
 
 	public static function sitemap_exclude_post_type( $excluded, $post_type )
