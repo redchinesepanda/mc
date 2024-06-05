@@ -26,7 +26,7 @@ LegalDebug::debug( [
         <div class="billet-footer">
             <p class="footer-tnc-info" data-text="<?php echo $args[ 'bonus' ][ 'description-full' ]; ?>">
                 <?php if ( $args[ 'bonus' ][ 'href' ] != '#' ) : ?>
-                    <a href="<?php echo $args[ 'bonus' ][ 'href' ]; ?>" class="footer-tnc-link" rel="nofollow"><?php echo $args[ 'footer-tnc' ][ 'link' ]; ?> </a>
+                    <a href="<?php echo $args[ 'bonus' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'bonus' ][ 'nofollow' ] ); ?>><?php echo $args[ 'footer-tnc' ][ 'link' ]; ?> </a>
                 <?php endif; ?>
             </p>
             <!-- <?php echo $args[ 'bonus' ][ 'description-full' ]; ?> -->
