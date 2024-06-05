@@ -57,7 +57,7 @@
 		<?php endif; ?>
 	</div> 
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
-		<div class="billet-mega-tnc">
+		<div class="billet-mega-tnc <?php echo $args[ 'tnc-class' ] ?>">
 			<p class="mega-tnc-info" data-text="<?php echo $args[ 'tnc' ] ?>">
 				<?php if ( $args[ 'afillate' ][ 'href' ] != '#' ) : ?>
 					<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title-tnc' ] ?> </a>
