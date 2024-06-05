@@ -529,6 +529,8 @@ class BilletMega
 
 			'tnc' => $parts[ 'tnc' ],
 
+			'tnc-class' => BiiletBonus::get_tnc_class(),
+
 			'button-read-tnc' => $atts[ 'button-read-tnc' ],
 
 			'title-tnc' => $atts[ 'title-tnc' ],
