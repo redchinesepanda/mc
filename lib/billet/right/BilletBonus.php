@@ -49,6 +49,8 @@ class BilletBonus
                             $bonus_href = get_post_permalink( $bonus_id );
                         }
 
+                        $description_full = self::prepare_data_attr( $item[ self::FETURE_BONUS[ 'bonus-description-full' ] ] );
+
                         return [
                             'href' => $bonus_href,
 
@@ -56,7 +58,9 @@ class BilletBonus
                 
                             'description' => $item[ self::FETURE_BONUS[ 'bonus-description' ] ],
                 
-                            'description-full' => $item[ self::FETURE_BONUS[ 'bonus-description-full' ] ],
+                            // 'description-full' => $item[ self::FETURE_BONUS[ 'bonus-description-full' ] ],
+                            
+                            'description-full' => $description_full,
                         ];
                     }
                 }
@@ -100,18 +104,18 @@ class BilletBonus
                 $bonus_href = get_post_permalink( $bonus_id );
             }
 
+            $description_full = self::prepare_data_attr( $group[ self::ABOUT[ 'description' ] ] );
+
             return [
                 'href' => $bonus_href,
                 
                 'title' => $group[ self::ABOUT[ 'bonus-title' ] ],
     
                 'description' => $group[ self::ABOUT[ 'bonus-description' ] ],
-    
-                // 'description-full' => $group[ self::ABOUT[ 'description' ] ],
                 
-                'description-full' => wpautop( $group[ self::ABOUT[ 'description' ] ] ),
+                // 'description-full' => wpautop( $group[ self::ABOUT[ 'description' ] ] ),
                 
-                // 'description-full' => strip_tags( $group[ self::ABOUT[ 'description' ] ], self::ALLOWED ),
+                'description-full' => $description_full,
             ];
         }
 
@@ -206,6 +210,15 @@ class BilletBonus
 
             self::get_bonus_href( $bonus_data[ 'href' ], $url[ 'referal' ], $url[ 'oops' ] )
         );
+    }
+
+    public static function prepare_data_attr( $text )
+    {
+        $text = strip_tags( $text );
+
+		$text = htmlspecialchars( $text );
+
+		return $text;
     }
 
     public static function get_bonus_data( $id, $filter )
