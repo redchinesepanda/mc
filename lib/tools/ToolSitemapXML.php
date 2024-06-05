@@ -9,7 +9,7 @@ class ToolSitemapXML
     {
         $handler = new self();
 
-        add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
+        // add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
 
         // Отключение провайдера карт сайтов: пользователи и таксономии
 
