@@ -26,7 +26,7 @@
 					<div class="mega-about-post"><?php echo $args[ 'author' ][ 'post' ] ?></div>
 				<?php endif; ?>
 			</div>
-			<?php if( !$args[ 'no-controls' ] ) : ?>
+			<?php if( ! $args[ 'no-controls' ] ) : ?>
 				<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-about-afillate check-oops" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'afillate' ][ 'text' ]; ?></a>
 			<?php endif; ?>
 			
@@ -58,7 +58,11 @@
 	</div> 
 	<?php if( !empty( $args[ 'tnc' ] ) ) : ?>
 		<div class="billet-mega-tnc">
-			<p class="mega-tnc-info" data-text="<?php echo $args[ 'tnc' ] ?>"><a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title-tnc' ] ?> </a></p>
+			<p class="mega-tnc-info" data-text="<?php echo $args[ 'tnc' ] ?>">
+				<?php if ( $args[ 'afillate' ][ 'href' ] != '#' ) : ?>
+					<a href="<?php echo $args[ 'afillate' ][ 'href' ]; ?>" class="mega-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'afillate' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title-tnc' ] ?> </a>
+				<?php endif; ?>
+			</p>
 			<span class="billet-mega-tnc-control" data-default="<?php echo $args[ 'button-read-tnc' ]; ?>"></span>
 		</div>
 	<?php endif; ?>
