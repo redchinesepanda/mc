@@ -58,19 +58,19 @@ class YoastSitemapXML
 
 				$unparsed_url = sprintf( self::PATTERNS[ 'url' ], $parsed_url[ 'scheme' ], $parsed_url[ 'host' ], $parsed_url[ 'path' ] );
 	
-				LegalDebug::debug( [
-					'YoastSitemapXML' =>'sitemap_post_url',
+				// LegalDebug::debug( [
+				// 	'YoastSitemapXML' =>'sitemap_post_url',
 	
-					'url' => $url,
+				// 	'url' => $url,
 	
-					'post_id' => $post->ID,
+				// 	'post_id' => $post->ID,
 	
-					'parsed_url' => $parsed_url,
+				// 	'parsed_url' => $parsed_url,
 	
-					'unparsed_url' => $unparsed_url,
-				] );
+				// 	'unparsed_url' => $unparsed_url,
+				// ] );
 	
-				return $unparsed_url;
+				// return $unparsed_url;
 			}
 		}
 
