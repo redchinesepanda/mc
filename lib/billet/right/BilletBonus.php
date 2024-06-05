@@ -91,6 +91,22 @@ class BilletBonus
         'p',
     ];
 
+    const TNC_OPENED = [
+        'en',
+    ];
+
+    public static function get_tnc_class()
+    {
+        $current_language = WPMLMain::current_language();
+
+        if ( in_array( $current_language, self::TNC_OPENED ) )
+        {
+            return 'legal-active';
+        }
+
+        return '';
+    }
+
     public static function get_bonus_group( $id )
     {
         $group = get_field( self::FIELD[ 'about' ], $id );
@@ -116,6 +132,8 @@ class BilletBonus
                 // 'description-full' => wpautop( $group[ self::ABOUT[ 'description' ] ] ),
                 
                 'description-full' => $description_full,
+
+                'tnc-class' => self::get_tnc_class(),
             ];
         }
 
