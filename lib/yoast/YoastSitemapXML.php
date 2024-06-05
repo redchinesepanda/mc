@@ -20,7 +20,7 @@ class YoastSitemapXML
 		
 		// use it to remove the '/homepage/' part from any sitemap entries
 
-		add_filter( 'wpseo_xml_sitemap_post_url', 'sitemap_post_url', 10, 2 );
+		add_filter( 'wpseo_xml_sitemap_post_url', [ $handler, 'sitemap_post_url' ], 10, 2 );
     }
 
 	public static function check_front_page( $post_id )
