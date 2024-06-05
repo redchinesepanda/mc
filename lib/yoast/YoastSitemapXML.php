@@ -32,10 +32,10 @@ class YoastSitemapXML
 	// 	return [ 1, 2, 3 ];
 	// }
 
-	// public static function check_translation_offront_page( $post_id )
-    // {
-	// 	return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
-	// }
+	public static function check_translation_of_front_page( $post_id )
+    {
+		return WPMLTrid::get_trid( $post_id ) == WPMLTrid::get_trid( get_option( 'page_on_front' ) );
+	}
 
 	// public static function check_front_page( $post_id )
     // {
@@ -54,7 +54,7 @@ class YoastSitemapXML
 	{  
 		// return str_replace('/homepage/', '/', $url); 
 
-		if ( self::check_translation_offront_page( $post->ID ) )
+		if ( self::check_translation_of_front_page( $post->ID ) )
 		{
 			$parsed_url = parse_url( $url );
 
