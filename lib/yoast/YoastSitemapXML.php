@@ -35,7 +35,7 @@ class YoastSitemapXML
 	const PATTERNS = [
 		'path' => '/%s/',
 
-		'url' => '%s%s',
+		'url' => '%s://%s%s',
 	];
 	
 	public static function sitemap_post_url( $url, $post )
@@ -52,12 +52,12 @@ class YoastSitemapXML
 
 			if ( count( $path_array ) > 1 )
 			{
-				$folder = arrays_shift( $path_array );
+				$folder = array_shift( $path_array );
 
 				$parsed_url[ 'path' ] = sprintf( self::PATTERNS[ 'path' ], $folder );
 			}
 
-			$unparsed_url = sprintf( self::PATTERNS[ 'url' ], $parsed_url[ 'path' ], $parsed_url[ 'path' ] );
+			$unparsed_url = sprintf( self::PATTERNS[ 'url' ], $parsed_url[ 'scheme' ], $parsed_url[ 'host' ], $parsed_url[ 'path' ] );
 
 			LegalDebug::debug( [
 				'YoastSitemapXML' =>'sitemap_post_url',
