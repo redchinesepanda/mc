@@ -12,7 +12,7 @@ require_once( 'ToolLoco.php' );
 
 require_once( 'ToolMenu.php' );
 
-require_once( 'ToolNotFound.php' );
+// require_once( 'ToolNotFound.php' );
 
 // require_once( 'ToolPDO.php' );
 
@@ -74,7 +74,7 @@ class ToolsMain
 
         ToolLoco::register();
 
-        ToolNotFound::register();
+        // ToolNotFound::register();
 
         // ToolPosts::register();
         
