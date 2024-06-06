@@ -286,16 +286,30 @@ class BaseHeader
 		// 	'WPMLDB::multisite_all_languages' => $all_languages,
 		// ] );
 
-		if ( empty( $all_languages ) )
-		{
-			$all_languages = MultisiteSiteSwitcher::get_languages();
-		}
+		// if ( empty( $all_languages ) )
+		// {
+		// 	$all_languages = MultisiteSiteSwitcher::get_languages();
+		// }
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' => 'search_languages',
 
 		// 	'MultisiteSiteSwitcher::get_languages' => $all_languages,
 		// ] );
+
+		if ( MiltisiteMain::check_multisite() )
+        {
+            $multisite_languages = MultisiteSiteSwitcher::get_languages();
+
+            if ( empty( $all_languages ) )
+            {
+                $all_languages = $multisite_languages;
+            }
+            else
+            {
+                $all_languages = MultisiteSiteSwitcher::get_combined_languages( $all_languages, $multisite_languages );
+            }
+        }
 
 		if ( !empty( $all_languages ) )
 		{
