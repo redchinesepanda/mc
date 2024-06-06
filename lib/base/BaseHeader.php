@@ -307,6 +307,12 @@ class BaseHeader
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
+			LegalDebug::debug( [
+				'BaseHeader' => 'search_languages',
+	
+				'multisite_languages' => count( $multisite_languages ),
+			] );
+
             if ( empty( $all_languages ) )
             {
                 $all_languages = $multisite_languages;
