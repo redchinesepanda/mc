@@ -280,11 +280,11 @@ class BaseHeader
             $all_languages = WPMLDB::multisite_all_languages();
         }
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'all_languages' => count( $all_languages ),
-		] );
+		// 	'all_languages' => count( $all_languages ),
+		// ] );
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' => 'search_languages',
@@ -307,11 +307,11 @@ class BaseHeader
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
-			LegalDebug::debug( [
-				'BaseHeader' => 'search_languages',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' => 'search_languages',
 	
-				'multisite_languages' => count( $multisite_languages ),
-			] );
+			// 	'multisite_languages' => count( $multisite_languages ),
+			// ] );
 
             if ( empty( $all_languages ) )
             {
@@ -323,11 +323,11 @@ class BaseHeader
             }
         }
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'all_languages' => count( $all_languages ),
-		] );
+		// 	'all_languages' => count( $all_languages ),
+		// ] );
 
 		if ( !empty( $all_languages ) )
 		{
@@ -347,13 +347,13 @@ class BaseHeader
 	
 			// $search[ 'avaible' ] = WPMLMain::filter_language( $all_languages, $lang );
 
-			LegalDebug::debug( [
-				'BaseHeader' => 'search_languages',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' => 'search_languages',
 	
-				'current' => count( $search[ 'current' ] ),
+			// 	'current' => count( $search[ 'current' ] ),
 
-				'avaible' => count( $search[ 'avaible' ] ),
-			] );
+			// 	'avaible' => count( $search[ 'avaible' ] ),
+			// ] );
 		}
 		
 		return $search;
