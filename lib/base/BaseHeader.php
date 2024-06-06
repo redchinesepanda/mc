@@ -868,6 +868,12 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'home' => $home,
+		] );
+
 		if ( !empty( $home ) )
 		{
 			$home_urls_all = self::get_page_urls( $home );
