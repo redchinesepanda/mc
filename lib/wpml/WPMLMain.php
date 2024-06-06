@@ -262,6 +262,11 @@ class WPMLMain
         return apply_filters( 'wpml_post_language_details', NULL );
 	}
 
+    public static function check_multisite_subsite()
+    {
+
+    }
+
     public static function get_locale()
 	{
         LegalDebug::debug( [
@@ -278,7 +283,8 @@ class WPMLMain
 
         // if ( !empty( $blog_locale ) )
 
-        if ( MiltisiteMain::check_multisite() )
+        // if ( MiltisiteMain::check_multisite() )
+        if ( WPMLMain::check_wpml_off() )
         {
             if ( $blog_locale = MultisiteSiteOptions::get_blog_locale() )
             {
