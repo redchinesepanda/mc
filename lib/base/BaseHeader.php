@@ -877,6 +877,12 @@ class BaseHeader
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
 
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'home_urls_replaced' => $home_urls_replaced,
+		] );
+
 		$cross = self::get_cross_page();
 
 		$cross_urls_replaced = [];
