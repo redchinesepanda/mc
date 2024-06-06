@@ -892,9 +892,21 @@ class BaseHeader
 			$cross_urls_all = self::get_page_urls( $cross );
 
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
-		}		
+		}	
+		
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'cross_urls_replaced' => $cross_urls_replaced,
+		] );
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
+
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'urls' => $urls,
+		] );
 
 		return $urls;
 	}
