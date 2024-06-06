@@ -52,7 +52,7 @@ class WPMLMain
         {
             $handler = new self();
 
-            // add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ], 10, 2 );
+            add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ], 10, 2 );
         }
     } 
 
