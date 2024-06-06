@@ -794,10 +794,6 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_page_urls',
 
-			'trid' => $trid,
-
-			'group' => $group,
-
 			'group_items_all' => $group_items_all,
 
 			'cross_urls' => $cross_urls,
