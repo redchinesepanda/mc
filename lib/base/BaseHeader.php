@@ -768,7 +768,7 @@ class BaseHeader
 		// 	[post_status] => publish
 		// )
 
-		$group_items_all = get_group_items_all( $post->ID );
+		$group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
 
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_page_urls',
