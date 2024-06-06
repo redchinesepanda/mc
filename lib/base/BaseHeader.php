@@ -871,7 +871,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls',
 
-			'home' => $home,
+			'home' => $home->ID,
 		] );
 
 		if ( !empty( $home ) )
