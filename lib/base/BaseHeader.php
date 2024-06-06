@@ -259,6 +259,8 @@ class BaseHeader
 			'BaseHeader' => 'search_languages',
 
 			'WPMLMain::get_all_languages' => $all_languages,
+
+			'empty' => empty( $all_languages ),
 		] );
 
 		if ( empty( $all_languages ) )
