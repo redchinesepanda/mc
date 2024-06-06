@@ -323,6 +323,12 @@ class BaseHeader
             }
         }
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'all_languages' => count( $all_languages ),
+		] );
+
 		if ( !empty( $all_languages ) )
 		{
 			$search[ 'current' ] = self::get_language_current( $all_languages );
