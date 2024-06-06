@@ -276,6 +276,11 @@ class BaseHeader
 		] );
 
 		if ( empty( $all_languages ) )
+        {
+            $all_languages = WPMLDB::multisite_all_languages();
+        }
+
+		if ( empty( $all_languages ) )
 		{
 			$all_languages = MultisiteSiteSwitcher::get_languages();
 		}
