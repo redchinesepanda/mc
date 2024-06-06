@@ -756,6 +756,14 @@ class BaseHeader
 
 		$group = WPMLTrid::get_translation_group( $trid );
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_page_urls',
+
+			'trid' => $trid,
+
+			'group' => $group,
+		] );
+
 		return self::get_cross_urls( $group );
 	}
 
