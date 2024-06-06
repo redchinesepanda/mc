@@ -40,6 +40,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	const args = [
 		{
+			'selector' : '.billet-item .billet-footer-control',
+
+			'string' : '.billet-item .billet-footer p:first-of-type',
+		},
+
+		{
 			'selector' : '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
 
 			'string' : '.legal-billet-mega .billet-mega-tnc p:first-of-type',
@@ -55,13 +61,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function defineOverflow( str ) {
 		if (overflow(str)) {
-			console.log('Текст не умещается');
+			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
 			} );
 			} else {
-			console.log('Текст умещается');
+			// console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
 		};
 	};
