@@ -280,6 +280,12 @@ class BaseHeader
             $all_languages = WPMLDB::multisite_all_languages();
         }
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'WPMLDB::multisite_all_languages' => $all_languages,
+		] );
+
 		if ( empty( $all_languages ) )
 		{
 			$all_languages = MultisiteSiteSwitcher::get_languages();
