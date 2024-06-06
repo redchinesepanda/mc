@@ -255,16 +255,22 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'WPMLMain::get_all_languages' => $all_languages,
+		] );
+
 		if ( empty( $all_languages ) )
 		{
 			$all_languages = MultisiteSiteSwitcher::get_languages();
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'all_languages' => $all_languages,
-		// ] );
+			'MultisiteSiteSwitcher::get_languages' => $all_languages,
+		] );
 
 		if ( !empty( $all_languages ) )
 		{
@@ -944,13 +950,7 @@ class BaseHeader
 	const TEMPLATE = [
         'header-main' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-main.php',
 
-        // 'header-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-new.php',
-
-        // 'header-group' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-group.php',
-
 		'header-item' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item.php',
-
-		// 'header-item-new' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-item-new.php',
 		
 		'header-logo' => LegalMain::LEGAL_PATH . '/template-parts/base/part-header-logo.php',
     ];
@@ -959,11 +959,6 @@ class BaseHeader
     {
         return LegalComponents::render_main( self::TEMPLATE[ 'header-main' ], self::get() );
     }
-
-	// public static function render_group( $group )
-    // {
-    //     return self::render_main( self::TEMPLATE[ 'header-group-main' ], $group );
-    // }
 
     public static function render_item( $item )
     {
@@ -974,17 +969,6 @@ class BaseHeader
     {
         return LegalComponents::render_main( self::TEMPLATE[ 'header-logo' ], $logo );
     }
-
-	// public static function render_main( $template, $args )
-    // {
-    //     ob_start();
-
-    //     load_template( $template, false, $args );
-
-    //     $output = ob_get_clean();
-
-    //     return $output;
-    // }
 }
 
 ?>
