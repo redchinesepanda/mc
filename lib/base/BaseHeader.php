@@ -351,7 +351,7 @@ class BaseHeader
 				'BaseHeader' => 'search_languages',
 	
 				'current' => count( $search[ 'current' ] ),
-				
+
 				'avaible' => count( $search[ 'avaible' ] ),
 			] );
 		}
@@ -853,6 +853,12 @@ class BaseHeader
 	public static function get_menu_languages()
 	{
 		$search = self::search_languages();
+
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
+
+			'search' => $search,
+		] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
