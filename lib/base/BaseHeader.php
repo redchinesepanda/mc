@@ -791,13 +791,13 @@ class BaseHeader
 
 		$cross_urls = self::parse_cross_urls( $group_items_all );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_page_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_page_urls',
 
-			'group_items_all' => $group_items_all,
+		// 	'group_items_all' => $group_items_all,
 
-			'cross_urls' => $cross_urls,
-		] );
+		// 	'cross_urls' => $cross_urls,
+		// ] );
 
 		return $cross_urls;
 	}
