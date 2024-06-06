@@ -280,6 +280,12 @@ class WPMLMain
         {
             if ( $blog_locale = MultisiteSiteOptions::get_blog_locale() )
             {
+                LegalDebug::debug( [
+                    'WPMLMain' => 'get_locale',
+        
+                    'blog_locale' => $blog_locale,
+                ] );
+
                 return $blog_locale;
             }
         }
