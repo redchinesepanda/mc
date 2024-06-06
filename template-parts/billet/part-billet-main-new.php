@@ -29,7 +29,6 @@
                     <a href="<?php echo $args[ 'bonus' ][ 'href' ]; ?>" class="footer-tnc-link" <?php echo BilletMain::render_nofollow( $args[ 'bonus' ][ 'nofollow' ] ); ?>><?php echo $args[ 'footer-tnc' ][ 'link' ]; ?> </a>
                 <?php endif; ?>
             </p>
-            <!-- <?php echo $args[ 'bonus' ][ 'description-full' ]; ?> -->
             <span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ][ 'button' ]; ?>"></span>
         </div>
     <?php endif; ?>
