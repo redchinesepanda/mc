@@ -750,25 +750,46 @@ class BaseHeader
 		return has_term( [ self::TERM[ 'casino' ], self::TERM[ 'cross-casino' ] ], self::TAXONOMY[ 'type' ] );
 	}
 
+	public static function parse_cross_urls( $group_items )
+	{
+		$urls = [];
+
+		foreach ( $group_items as $item )
+		{
+			$urls[ $item[ 'language_code' ] ] = [
+				'url' => $item[ 'post_uri' ],
+			];
+		}
+
+		return $urls;
+	}
+
 	public static function get_page_urls( $post )
 	{
 		$trid = WPMLTrid::get_trid( $post->ID );
 
-		$group = WPMLTrid::get_translation_group( $trid );
+		if ( !empty( $trid ) )
+		{
+			$group = WPMLTrid::get_translation_group( $trid );
 
-		// [ar] => stdClass Object
-		// (
-		// 	[translation_id] => 2341269
-		// 	[language_code] => ar
-		// 	[element_id] => 2464875
-		// 	[source_language_code] => en
-		// 	[element_type] => post_page
-		// 	[original] => 0
-		// 	[post_title] => AR Главная
-		// 	[post_status] => publish
-		// )
+			// [ar] => stdClass Object
+			// (
+			// 	[translation_id] => 2341269
+			// 	[language_code] => ar
+			// 	[element_id] => 2464875
+			// 	[source_language_code] => en
+			// 	[element_type] => post_page
+			// 	[original] => 0
+			// 	[post_title] => AR Главная
+			// 	[post_status] => publish
+			// )
+
+			return self::get_cross_urls( $group );
+		}
 
 		$group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
+
+		$cross_urls = self::parse_cross_urls( $group_items_all );
 
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_page_urls',
@@ -778,9 +799,9 @@ class BaseHeader
 			'group' => $group,
 
 			'group_items_all' => $group_items_all,
-		] );
 
-		return self::get_cross_urls( $group );
+			'cross_urls' => $cross_urls,
+		] );
 	}
 
 	public static function get_home_page()
