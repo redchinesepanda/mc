@@ -13,7 +13,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		event.currentTarget.classList.add( classes.active ); */
 
-		event.parentNode.classList.add( classes.active );
+		event.target.closest('div').classList.add( classes.active );
+
 	}
 
 	function setFooter( element )
