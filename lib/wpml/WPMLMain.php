@@ -264,13 +264,11 @@ class WPMLMain
 
     public static function get_locale()
 	{
-        // LegalDebug::debug( [
-        //     'WPMLMain' => 'get_locale',
+        LegalDebug::debug( [
+            'WPMLMain' => 'get_locale',
 
-        //     'determine_locale' => determine_locale(),
-
-        //     'WPLANG' => get_option( 'WPLANG' ),
-        // ] );
+            'check_multisite' => MiltisiteMain::check_multisite(),
+        ] );
 
         // $current_blog_id = MultisiteBlog::get_current_blog_id();
 
