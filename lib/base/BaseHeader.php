@@ -802,6 +802,8 @@ class BaseHeader
 
 			'cross_urls' => $cross_urls,
 		] );
+
+		return $cross_urls;
 	}
 
 	public static function get_home_page()
