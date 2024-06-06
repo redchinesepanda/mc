@@ -268,6 +268,8 @@ class WPMLMain
             'WPMLMain' => 'get_locale',
 
             'check_multisite' => MiltisiteMain::check_multisite(),
+
+            'get_locale' => get_locale(),
         ] );
 
         // $current_blog_id = MultisiteBlog::get_current_blog_id();
