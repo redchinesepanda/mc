@@ -379,11 +379,11 @@ class BaseHeader
 			'url-part' => 'all',
 		];
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'items',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'items',
 
-			'items' => $items,
-		] );
+		// 	'items' => $items,
+		// ] );
 
 		return $items;
 	}
@@ -849,6 +849,16 @@ class BaseHeader
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
 		$parse = self::parse_languages( $search );
+
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
+
+			'search' => $search,
+
+			'avaible' => $search[ 'avaible' ],
+
+			'parse' => $parse,
+		] );
 
 		return $parse;
 	}
