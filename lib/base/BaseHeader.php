@@ -346,6 +346,14 @@ class BaseHeader
 			// $lang = WPMLMain::get_group_language();
 	
 			// $search[ 'avaible' ] = WPMLMain::filter_language( $all_languages, $lang );
+
+			LegalDebug::debug( [
+				'BaseHeader' => 'search_languages',
+	
+				'current' => count( $search[ 'current' ] ),
+				
+				'avaible' => count( $search[ 'avaible' ] ),
+			] );
 		}
 		
 		return $search;
