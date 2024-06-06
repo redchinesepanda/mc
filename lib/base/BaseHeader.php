@@ -756,12 +756,28 @@ class BaseHeader
 
 		$group = WPMLTrid::get_translation_group( $trid );
 
+		// [ar] => stdClass Object
+		// (
+		// 	[translation_id] => 2341269
+		// 	[language_code] => ar
+		// 	[element_id] => 2464875
+		// 	[source_language_code] => en
+		// 	[element_type] => post_page
+		// 	[original] => 0
+		// 	[post_title] => AR Главная
+		// 	[post_status] => publish
+		// )
+
+		$group_items_all = get_group_items_all( $post->ID );
+
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_page_urls',
 
 			'trid' => $trid,
 
 			'group' => $group,
+
+			'group_items_all' => $group_items_all,
 		] );
 
 		return self::get_cross_urls( $group );
