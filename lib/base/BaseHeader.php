@@ -379,6 +379,12 @@ class BaseHeader
 			'url-part' => 'all',
 		];
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'items',
+
+			'items' => $items,
+		] );
+
 		return $items;
 	}
 
