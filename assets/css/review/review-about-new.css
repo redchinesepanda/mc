@@ -2,7 +2,11 @@
 
     /* Width and Height */
 
-    .review-about .footer-logo .logo-item img {
+    .review-about .footer-logo {
+        width: 100%;
+    }
+
+    .review-about .footer-logo .logo-item:not( .logo-item[ href='#' ] ) img {
         max-height: 18px;
     }
 
@@ -454,6 +458,10 @@
 .review-about.legal-mode-mini .about-logo {
     width: 46px;
     height: 46px;
+}
+
+.review-about .footer-logo .logo-item[ href='#' ] img {
+    height: 48px;
 }
 
 /* Position */
