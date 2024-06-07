@@ -338,11 +338,11 @@ class MultisiteHreflang
 				// 	'items' => self::parse_languages( $group_items_all ),
 				// ];
 
-				LegalDebug::debug( [
-					'MultisiteHreflang' => 'prepare_languages',
+				// LegalDebug::debug( [
+				// 	'MultisiteHreflang' => 'prepare_languages',
 
-					'group_items_all' => $group_items_all,
-				] );
+				// 	'group_items_all' => $group_items_all,
+				// ] );
 
 				$languages = self::parse_languages( $group_items_all );
 
