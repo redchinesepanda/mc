@@ -39,6 +39,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
         }
     });
 
+    // проверка на вместимость строки в спойлере start
 	const selectors = {
         billetTncStr: '.billet-item .billet-footer p:first-of-type'
 	};
@@ -58,6 +59,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
     function checkLengthStr() {
         document.querySelectorAll( selectors.billetTncStr ).forEach( defineOverflow );
     };
+    // проверка на вместимость строки в спойлере end
 
 } );
 
