@@ -105,13 +105,13 @@ class MultisiteSiteSwitcher
 			$active = 1;
 		}
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'site_to_language',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'site_to_language',
 
-			'siteurl' => $site->siteurl,
+		// 	'siteurl' => $site->siteurl,
 
-			'site' => $site,
-		] );
+		// 	'site' => $site,
+		// ] );
 
 		return [
 			'id' => $site->blog_id,
