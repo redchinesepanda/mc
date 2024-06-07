@@ -153,13 +153,13 @@ class WPMLDB
 
         $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
-		// LegalDebug::debug( [
-        //     'WPMLDB' => 'multisite_all_languages',
+		LegalDebug::debug( [
+            'WPMLDB' => 'multisite_all_languages',
 
-        //     'language_code' => $language_code,
+            'language_code' => $language_code,
 
-        //     'all_languages_query' => $all_languages_query,
-        // ] );
+            'all_languages_query' => $all_languages_query,
+        ] );
         
         $items = $wpdb->get_results( $all_languages_query );
 
