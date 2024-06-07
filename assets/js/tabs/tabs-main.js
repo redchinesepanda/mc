@@ -27,8 +27,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let title of titles ) {
             title.dataset.tabs = tabs.id;
 
-            title.addEventListener( 'click', tabToggle, false );
-            // title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
+            // title.addEventListener( 'click', tabToggle, false );
+            title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
         }
     });
 
@@ -40,20 +40,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
         tab.addEventListener( 'click', spoilerinit, false );
     }); */
 
-    function toggleControl( event )
+   /*  function toggleControl( event )
 	{
-		/* event.currentTarget.closest( selectors.billetMega ).querySelectorAll( selectors.billetMegaTnc ).forEach( toggleFooter );
+		event.currentTarget.closest( selectors.billetMega ).querySelectorAll( selectors.billetMegaTnc ).forEach( toggleFooter );
 
-		event.currentTarget.classList.add( classes.active ); */
+		event.currentTarget.classList.add( classes.active );
 
 		event.target.closest('div').classList.add( classes.active );
 
-	}
+	} */
 
-	function setFooter( element )
+	/* function setFooter( element )
 	{
 		element.addEventListener( 'click', toggleControl, false );
-	}
+	} */
 
 	const classes = {
 		active: 'legal-active',
@@ -97,9 +97,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
             str.parentNode.classList.remove( classes.shortStr );
-			args.forEach( function ( arg ) {
+			/* args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
-			} );
+			} ); */
 			} else {
 			// console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
@@ -108,12 +108,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
-/* 	function spoilerinit() {
+	function spoilerinit() {
         console.log('Кликнули по табу, запустили функцию');
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
-	} */
+	}
 
 } );
 
