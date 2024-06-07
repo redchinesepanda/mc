@@ -222,7 +222,7 @@ class WPMLLangSwitcher
 
             // 'languages' => $languages,
             
-            'get_all' => count( $languages ),
+            'languages' => count( $languages ),
 
             // 'check_wpml_off' => WPMLMain::check_wpml_off(),
         ] );
@@ -240,7 +240,7 @@ class WPMLLangSwitcher
 
                     // 'languages' => $languages,
                     
-                    'WPMLDB::multisite_all_languages' => count( $languages ),
+                    'languages' => count( $languages ),
     
                     // 'native_name' => array_column( $languages, 'native_name' ),
                     
