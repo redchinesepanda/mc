@@ -141,11 +141,11 @@ class MultisiteHreflang
 
 		$group_items_query = self::group_items_query( $terms );
 
-		LegalDebug::debug( [
-		    'MultisiteHreflang' => 'get_group_items',
+		// LegalDebug::debug( [
+		//     'MultisiteHreflang' => 'get_group_items',
 
-			'group_items_query' => $group_items_query,
-		] );
+		// 	'group_items_query' => $group_items_query,
+		// ] );
 
 		$posts = get_posts( $group_items_query );
 
