@@ -61,17 +61,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		shortStr: 'legal-short-tnc',
 	};
 
-/* 	const selectors = {
-		billetMega: '.legal-billet-mega',
+	const selectors = {
+		/* billetMega: '.legal-billet-mega',
 
 		billetMegaControl: '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
 		
 		billetMegaTnc: '.legal-billet-mega .billet-mega-tnc',
 
-		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type'
-	}; */
+		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type' */
+        billetTncStr: '.billet-item .billet-footer p:first-of-type'
+	};
 
-	const args = [
+/* 	const args = [
 		{
 			'selector' : '.billet-item .billet-footer-control',
 
@@ -84,7 +85,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'string' : '.legal-billet-mega .billet-mega-tnc p:first-of-type',
 		},
 
-	];
+	]; */
 
 	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 
@@ -108,12 +109,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
-	function spoilerinit() {
+/* 	function spoilerinit() {
         console.log('Кликнули по табу, запустили функцию');
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
-	}
+	} */
+    function spoilerinit() {
+        document.querySelectorAll( selectors.billetTncStr ).forEach( defineOverflow );
+    };
 
 } );
 
