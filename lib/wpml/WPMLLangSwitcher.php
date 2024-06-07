@@ -267,13 +267,23 @@ class WPMLLangSwitcher
                 // 'empty-languages' => empty( $languages ),
             ] );
 
-            if ( empty( $languages ) )
-            {
-                // $languages = MultisiteSiteSwitcher::get_languages();
+            // if ( empty( $languages ) )
+            // {
+            //     // $languages = MultisiteSiteSwitcher::get_languages();
                 
+            //     $languages = $multisite_languages;
+            // }
+            // else
+            // {
+            //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
+            // }
+
+            if ( MultisiteBlog::check_not_main_domain() )
+            {
                 $languages = $multisite_languages;
             }
-            else
+
+            if ( MultisiteBlog::check_main_domain() )
             {
                 $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             }
