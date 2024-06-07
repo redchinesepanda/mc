@@ -260,6 +260,8 @@ class WPMLLangSwitcher
                     'multisite_languages' => count( $multisite_languages ),
     
                     // 'multisite_page_languages' => $multisite_page_languages,
+
+                    'empty-languages' => empty( $languages ),
                 ] );
     
                 if ( empty( $languages ) )
