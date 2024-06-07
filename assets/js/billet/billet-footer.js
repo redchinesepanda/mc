@@ -69,7 +69,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			} );
 			} else {
 			// console.log('Текст умещается');
-			str.parentNode.classList.toggle( classes.shortStr );
+			// str.parentNode.classList.add( classes.shortStr );
+			str.parentNode.classList.toggle( 'короткая строка' );
 		};
 	}; 
 
