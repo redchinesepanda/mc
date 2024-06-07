@@ -51,9 +51,9 @@ class MultisiteSiteSwitcher
 	{
 		$current_domain = MultisiteBlog::get_domain();
 		
-		// $blogs = MultisiteBlog::get_all_sites( $current_domain );
+		$blogs = MultisiteBlog::get_all_sites( $current_domain );
 		
-		$blogs = MultisiteBlog::get_other_sites( $current_domain );
+		// $blogs = MultisiteBlog::get_other_sites( $current_domain );
 
 		$languages = self::sites_to_languages( $blogs );
 
