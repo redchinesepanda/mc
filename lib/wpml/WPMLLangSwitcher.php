@@ -233,15 +233,15 @@ class WPMLLangSwitcher
             {
                 $languages = WPMLDB::multisite_all_languages();
     
-                LegalDebug::debug( [
-                    'WPMLLangSwitcher' => 'get',
+                // LegalDebug::debug( [
+                //     'WPMLLangSwitcher' => 'get',
 
-                    'languages' => $languages,
+                //     'languages' => $languages,
     
-                    // 'native_name' => array_column( $languages, 'native_name' ),
+                //     // 'native_name' => array_column( $languages, 'native_name' ),
                     
-                    // 'translated_name' => array_column( $languages, 'translated_name' ),
-                ] );
+                //     // 'translated_name' => array_column( $languages, 'translated_name' ),
+                // ] );
             }
 
             // if ( MiltisiteMain::check_multisite() )
@@ -250,13 +250,13 @@ class WPMLLangSwitcher
     
                 // $multisite_page_languages = MultisiteHreflang::prepare_languages();
     
-                // LegalDebug::debug( [
-                //     'WPMLLangSwitcher' => 'get',
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get',
         
-                //     'multisite_languages' => $multisite_languages,
+                    'multisite_languages' => $multisite_languages,
     
-                //     // 'multisite_page_languages' => $multisite_page_languages,
-                // ] );
+                    // 'multisite_page_languages' => $multisite_page_languages,
+                ] );
     
                 if ( empty( $languages ) )
                 {
