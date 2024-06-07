@@ -278,9 +278,9 @@ class WPMLLangSwitcher
             //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             // }
 
-            if ( MultisiteBlog::check_not_main_domain() )
+            if ( MultisiteBlog::check_main_domain() )
             {
-                $languages = $multisite_languages;
+                $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
 
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
@@ -288,10 +288,9 @@ class WPMLLangSwitcher
                     'languages' => count( $languages ),
                 ] );
             }
-
-            if ( MultisiteBlog::check_main_domain() )
+            else
             {
-                $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
+                $languages = $multisite_languages;
 
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
