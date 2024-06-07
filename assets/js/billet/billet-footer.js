@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
-	}
+	} 
 
 	spoilerinit();
 	
