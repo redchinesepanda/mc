@@ -27,8 +27,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let title of titles ) {
             title.dataset.tabs = tabs.id;
 
-            title.addEventListener( 'click', tabToggle, false );
-            // title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
+            // title.addEventListener( 'click', tabToggle, false );
+            title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
         }
     });
 
@@ -36,10 +36,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 
 
-    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
+ /*    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
         console.log(`${tab} Таб найден`);
         tab.addEventListener( 'click', spoilerinit, false );
-    });
+    }); */
 
     function toggleControl( event )
 	{
