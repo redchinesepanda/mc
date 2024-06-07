@@ -227,7 +227,9 @@ class WPMLLangSwitcher
             // 'check_wpml_off' => WPMLMain::check_wpml_off(),
         ] );
 
-        if ( WPMLMain::check_wpml_off() )
+        // if ( WPMLMain::check_wpml_off() )
+        
+        if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
         {
             if ( empty( $languages ) )
             {
