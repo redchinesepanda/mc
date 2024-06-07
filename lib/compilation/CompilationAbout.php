@@ -243,9 +243,11 @@ class CompilationAbout
 		return [
 			'src' => $src,
 
-			'width' => 400,
+			// 'width' => 400,
+			'width' => 350,
 
-			'height' => 320,
+			// 'height' => 320,
+			'height' => 246,
 		];
 	}
 

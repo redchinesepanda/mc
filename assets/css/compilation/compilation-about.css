@@ -8,6 +8,10 @@
         overflow: hidden;
     } */
 
+    .compilation-about {
+        column-gap: 64px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -20,7 +24,7 @@
 
     .compilation-about-wrapper:not( .home .compilation-about-wrapper ) {
         padding-right: 32px;
-        padding-bottom: 40px;
+        /* padding-bottom: 40px; */
         padding-left: 32px;
     }
 
@@ -185,6 +189,7 @@
 /* Position */
 .compilation-about-wrapper:not( .home .compilation-about-wrapper ) {
     padding-top: 28px;
+    padding-bottom: 32px;
 }
 
 .compilation-about,
