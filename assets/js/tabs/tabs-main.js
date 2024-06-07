@@ -97,12 +97,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if (overflow(str)) {
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+            str.parentNode.classList.remove( classes.shortStr );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
 			} );
 			} else {
 			// console.log('Текст умещается');
-			str.parentNode.classList.toggle( classes.shortStr );
+			str.parentNode.classList.add( classes.shortStr );
 		};
 	};
 
