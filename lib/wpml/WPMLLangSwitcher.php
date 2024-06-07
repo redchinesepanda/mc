@@ -280,7 +280,9 @@ class WPMLLangSwitcher
 
             if ( MultisiteBlog::check_main_domain() )
             {
-                $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
+                $page_languages = MultisiteHreflang::prepare_languages();
+
+                $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $page_languages );
 
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
