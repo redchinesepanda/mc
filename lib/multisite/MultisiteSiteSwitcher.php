@@ -26,11 +26,11 @@ class MultisiteSiteSwitcher
 		LegalDebug::debug( [
 			'MultisiteSiteswitcher' =>'get_combined_languages',
 
-			'languages' => count( $languages ),
+			'languages-count' => count( $languages ),
 			
 			'languages' => $languages,
 
-			'page_languages' => count( $page_languages ),
+			'page_languages-count' => count( $page_languages ),
 			
 			'page_languages' => $page_languages,
 		] );
