@@ -63,7 +63,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if (overflow(str)) {
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
-			str.parentNode.classList.toggle( classes.shortStr );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
 			} );
@@ -83,11 +82,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	spoilerinit();
-
-	document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
-        console.log(`${tab} Таб найден`);
-        tab.addEventListener( 'click', spoilerinit, false );
-	});
 	
 } );
 
