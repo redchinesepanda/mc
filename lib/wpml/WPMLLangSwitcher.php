@@ -287,7 +287,9 @@ class WPMLLangSwitcher
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
         
-                    'languages' => count( $languages ),
+                    'languages-count' => count( $languages ),
+
+                    'languages' => $languages,
                 ] );
             }
             else
