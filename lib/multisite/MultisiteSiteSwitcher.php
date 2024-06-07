@@ -90,10 +90,10 @@ class MultisiteSiteSwitcher
 			
 			// 'page_languages' => $page_languages,
 
-			'combined_languages-count' => count ( $combined_languages ),
+			'combined_languages-count' => count( $combined_languages ),
 		] );
 
-		return 
+		return $combined_languages;
 
 		// return self::sites_to_languages( $blogs );
 
