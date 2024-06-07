@@ -53,10 +53,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	];
 
-	document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
+	/* document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
         console.log(`${tab} Таб найден`);
         tab.addEventListener( 'click', spoilerinit, false );
-    });
+    }); */
 
 	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 
@@ -80,11 +80,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
-	/* function spoilerinit() {
+	function spoilerinit() {
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
-	} */
+	}
 
 	spoilerinit();
 	
