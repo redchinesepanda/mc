@@ -28,11 +28,11 @@ class MultisiteSiteSwitcher
 
 			'languages-count' => count( $languages ),
 			
-			'languages' => $languages,
+			// 'languages' => $languages,
 
 			'page_languages-count' => count( $page_languages ),
 			
-			'page_languages' => $page_languages,
+			// 'page_languages' => $page_languages,
 		] );
 
 		$page_languages = array_intersect_key( $page_languages, $languages );
