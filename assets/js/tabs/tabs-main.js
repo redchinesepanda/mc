@@ -34,7 +34,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 
 
-    
 
  /*    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
         console.log(`${tab} Таб найден`);
