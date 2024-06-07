@@ -251,21 +251,21 @@ class WPMLLangSwitcher
 
         if ( MiltisiteMain::check_multisite() )
         {
-            $multisite_languages = MultisiteSiteSwitcher::get_languages();
+            // $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
-            // $multisite_page_languages = MultisiteHreflang::prepare_languages();
+            // // $multisite_page_languages = MultisiteHreflang::prepare_languages();
 
-            LegalDebug::debug( [
-                'WPMLLangSwitcher' => 'get',
+            // LegalDebug::debug( [
+            //     'WPMLLangSwitcher' => 'get',
                 
-                'multisite_languages-count' => count( $multisite_languages ),
+            //     'multisite_languages-count' => count( $multisite_languages ),
     
-                'multisite_languages' => $multisite_languages,
+            //     'multisite_languages' => $multisite_languages,
 
-                // 'multisite_page_languages' => $multisite_page_languages,
+            //     // 'multisite_page_languages' => $multisite_page_languages,
 
-                // 'empty-languages' => empty( $languages ),
-            ] );
+            //     // 'empty-languages' => empty( $languages ),
+            // ] );
 
             // if ( empty( $languages ) )
             // {
@@ -287,6 +287,8 @@ class WPMLLangSwitcher
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
         
+                    'page_languages-count' => count( $page_languages ),
+
                     'languages-count' => count( $languages ),
 
                     'languages' => $languages,
@@ -294,6 +296,16 @@ class WPMLLangSwitcher
             }
             else
             {
+                $multisite_languages = MultisiteSiteSwitcher::get_languages();
+    
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get',
+                    
+                    'multisite_languages-count' => count( $multisite_languages ),
+        
+                    // 'multisite_languages' => $multisite_languages,
+                ] );
+
                 $languages = $multisite_languages;
 
                 LegalDebug::debug( [
