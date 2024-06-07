@@ -26,9 +26,9 @@ class MultisiteSiteSwitcher
 		LegalDebug::debug( [
 			'MultisiteSiteswitcher' =>'get_combined_languages',
 
-			'languages' => $languages,
+			'languages' => count( $languages ),
 
-			'page_languages' => $page_languages,
+			'page_languages' => count( $page_languages ),
 		] );
 
 		$page_languages = array_intersect_key( $page_languages, $languages );
@@ -36,7 +36,7 @@ class MultisiteSiteSwitcher
 		LegalDebug::debug( [
 			'MultisiteSiteswitcher' =>'get_combined_languages',
 
-			'page_languages' => $page_languages,
+			'page_languages' => count( $page_languages ),
 		] );
 
 		foreach ( $page_languages as $language_code => $page_language )
