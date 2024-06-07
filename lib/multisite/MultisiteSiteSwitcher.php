@@ -23,7 +23,21 @@ class MultisiteSiteSwitcher
 
 	public static function get_combined_languages( $languages, $page_languages )
 	{
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'get_combined_languages',
+
+			'languages' => $languages,
+
+			'page_languages' => $page_languages,
+		] );
+
 		$page_languages = array_intersect_key( $page_languages, $languages );
+
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'get_combined_languages',
+
+			'page_languages' => $page_languages,
+		] );
 
 		foreach ( $page_languages as $language_code => $page_language )
 		{
@@ -59,13 +73,13 @@ class MultisiteSiteSwitcher
 
 		$page_languages = MultisiteHreflang::prepare_languages();
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_languages',
 
-			'languages' => $languages,
+		// 	'languages' => $languages,
 
-			'page_languages' => $page_languages,
-		] );
+		// 	'page_languages' => $page_languages,
+		// ] );
 
 		return self::get_combined_languages( $languages, $page_languages );
 
