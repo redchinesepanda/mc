@@ -2,21 +2,28 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+
+    const classes = {
+		active: 'legal-active',
+
+		shortStr: 'legal-short-tnc',
+	};
+
     function tabToggle( event )
     {
         let tabs = document.getElementById( event.currentTarget.dataset.tabs );
 
         tabs.querySelectorAll( '.legal-tab-title' ).forEach( ( title ) => {
-            title.classList.remove( 'legal-active' );
+            title.classList.remove( classes.active );
         });
 
         tabs.querySelectorAll( '.legal-tab-content' ).forEach( ( content ) => {
-            content.classList.remove( 'legal-active' );
+            content.classList.remove( classes.active );
         });
         
-        event.currentTarget.classList.add( 'legal-active' );
+        event.currentTarget.classList.add( classes.active );
 
-        tabs.querySelector( '.legal-content-' + event.currentTarget.dataset.content ).classList.add( 'legal-active' );
+        tabs.querySelector( '.legal-content-' + event.currentTarget.dataset.content ).classList.add( classes.active );
     }
 
     Array.from( document.getElementsByClassName( 'legal-tabs' ) ).forEach( function callback( tabs, index ) {
@@ -27,19 +34,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let title of titles ) {
             title.dataset.tabs = tabs.id;
 
-            title.addEventListener( 'click', tabToggle, false );
-            // title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
+            // title.addEventListener( 'click', tabToggle, false );
+            title.addEventListener( 'click', function(event) { tabToggle(event); checkLengthStr(); }, false );
         }
     });
-
-
-
-
-/* 	const classes = {
-		active: 'legal-active',
-
-		shortStr: 'legal-short-tnc',
-	};
 
 	const selectors = {
         billetTncStr: '.billet-item .billet-footer p:first-of-type'
@@ -57,9 +55,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		};
 	};
 
-    function spoilerinit() {
+    function checkLengthStr() {
         document.querySelectorAll( selectors.billetTncStr ).forEach( defineOverflow );
-    }; */
+    };
 
 } );
 
