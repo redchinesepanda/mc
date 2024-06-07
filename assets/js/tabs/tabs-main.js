@@ -28,8 +28,91 @@ document.addEventListener( 'DOMContentLoaded', function ()
             title.dataset.tabs = tabs.id;
 
             title.addEventListener( 'click', tabToggle, false );
+            // title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
         }
     });
+
+
+
+
+
+    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
+        console.log('Таб нажат')
+        tab.addEventListener( 'click', spoilerinit, false );
+    });
+
+    function toggleControl( event )
+	{
+		/* event.currentTarget.closest( selectors.billetMega ).querySelectorAll( selectors.billetMegaTnc ).forEach( toggleFooter );
+
+		event.currentTarget.classList.add( classes.active ); */
+
+		event.target.closest('div').classList.add( classes.active );
+
+	}
+
+	function setFooter( element )
+	{
+		element.addEventListener( 'click', toggleControl, false );
+	}
+
+	const classes = {
+		active: 'legal-active',
+
+		shortStr: 'legal-short-tnc',
+	};
+
+/* 	const selectors = {
+		billetMega: '.legal-billet-mega',
+
+		billetMegaControl: '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
+		
+		billetMegaTnc: '.legal-billet-mega .billet-mega-tnc',
+
+		billetMegaTncStr: '.legal-billet-mega .billet-mega-tnc p:first-of-type'
+	}; */
+
+	const args = [
+		{
+			'selector' : '.billet-item .billet-footer-control',
+
+			'string' : '.billet-item .billet-footer p:first-of-type',
+		},
+
+		{
+			'selector' : '.legal-billet-mega .billet-mega-tnc .billet-mega-tnc-control',
+
+			'string' : '.legal-billet-mega .billet-mega-tnc p:first-of-type',
+		},
+
+	];
+
+	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	function defineOverflow( str ) {
+		if (overflow(str)) {
+			// console.log('Текст не умещается');
+			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+			args.forEach( function ( arg ) {
+				document.querySelectorAll( arg.selector ).forEach( setFooter );
+			} );
+			} else {
+			// console.log('Текст умещается');
+			str.parentNode.classList.add( classes.shortStr );
+		};
+	};
+
+	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
+
+	function spoilerinit() {
+		args.forEach( function ( arg ) {
+			document.querySelectorAll( arg.string ).forEach( defineOverflow );
+		} );
+	}
 } );
 
 // tabs-main-js end

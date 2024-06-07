@@ -324,12 +324,12 @@ body {
     justify-content: center;
 }
 
-.billet-right .billet-footer-control {
+/* .billet-right .billet-footer-control {
     display: flex;
     align-items: center;
     column-gap: 4px;
     cursor: pointer;
-}
+} */
 
 .billet-spoiler:not( .legal-active ) {
     display: none;
@@ -608,9 +608,9 @@ body {
     padding-right: 22px;
 }
 
-.billet-right .billet-footer-control.legal-active::after {
+/* .billet-right .billet-footer-control.legal-active::after {
     transform: rotate(180deg);
-}
+} */
 
 .billet .billet-license {
     padding-top: 45px;
@@ -828,7 +828,7 @@ body {
     text-shadow: 0 0 0.35px var(--Base-base-09);
 }
 
-.billet-item .billet-footer:not( .legal-short-tnc ) .billet-footer-control:not( .legal-active ):before {
+.billet-item .billet-footer:not( .legal-short-tnc ):not( .legal-active ) .billet-footer-control:before {
     content: attr( data-default );
 }
 
