@@ -108,12 +108,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
-	function spoilerinit() {
+/* 	function spoilerinit() {
         console.log('Кликнули по табу, запустили функцию');
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
-	}
+	} */
 
 } );
 

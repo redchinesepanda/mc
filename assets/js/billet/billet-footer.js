@@ -53,6 +53,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	];
 
+	document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
+        console.log(`${tab} Таб найден`);
+        tab.addEventListener( 'click', spoilerinit, false );
+    });
+
 	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
 
 	function overflow(e) {
@@ -63,6 +68,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if (overflow(str)) {
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+			str.parentNode.classList.remove( classes.shortStr );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
 			} );
