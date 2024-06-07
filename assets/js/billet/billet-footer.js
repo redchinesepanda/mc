@@ -68,6 +68,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if (overflow(str)) {
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+			console.log(str.parentNode);
 			str.parentNode.classList.remove( classes.shortStr );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
