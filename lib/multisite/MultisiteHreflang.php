@@ -211,6 +211,10 @@ class MultisiteHreflang
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_group_items_all',
 
+			'current_domain' => $current_domain,
+
+			'translation_groups' => $translation_groups,
+
 			'blogs' => count( $blogs ),
 		] );
 
