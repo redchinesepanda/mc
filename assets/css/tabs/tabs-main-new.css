@@ -2,10 +2,10 @@
 
      /* Width and Height */
 
-    .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
+  /*   .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
         min-width: calc( ( 100% / 2 ) - 4px );
         box-sizing: border-box;
-    }
+    } */
 
        /* Tabs Position */
 
@@ -42,7 +42,7 @@
     }
 
     .home .legal-tabs .legal-tab-menu:not( .legal-tabs-info .legal-tab-menu ) {
-        width: calc( ( 162px * 2 ) + 8px );
+        min-width: calc( ( 162px * 2 ) + 8px );
     }
 
     .home .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
@@ -77,6 +77,7 @@
 
 .legal-tabs .legal-tab-menu:not( .legal-tabs-info .legal-tab-menu ) {
     display: flex;
+    align-items: center;
     column-gap: 8px;
 }
 
