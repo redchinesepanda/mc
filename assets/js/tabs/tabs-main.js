@@ -1,7 +1,5 @@
 // tabs-main-js start
 
-import { spoilerinit } from '/assets/js/billet/billet-footer.js';
-
 document.addEventListener( 'DOMContentLoaded', function ()
 {
     function tabToggle( event )
