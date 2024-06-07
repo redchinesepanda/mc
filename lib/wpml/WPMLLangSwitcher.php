@@ -245,35 +245,35 @@ class WPMLLangSwitcher
                     // 'translated_name' => array_column( $languages, 'translated_name' ),
                 ] );
             }
+        }
 
-            // if ( MiltisiteMain::check_multisite() )
+        if ( MiltisiteMain::check_multisite() )
+        {
+            $multisite_languages = MultisiteSiteSwitcher::get_languages();
+
+            // $multisite_page_languages = MultisiteHreflang::prepare_languages();
+
+            LegalDebug::debug( [
+                'WPMLLangSwitcher' => 'get',
+    
+                // 'multisite_languages' => $multisite_languages,
+                
+                'multisite_languages' => count( $multisite_languages ),
+
+                // 'multisite_page_languages' => $multisite_page_languages,
+
+                // 'empty-languages' => empty( $languages ),
+            ] );
+
+            // if ( empty( $languages ) )
             // {
-                $multisite_languages = MultisiteSiteSwitcher::get_languages();
-    
-                // $multisite_page_languages = MultisiteHreflang::prepare_languages();
-    
-                LegalDebug::debug( [
-                    'WPMLLangSwitcher' => 'get',
-        
-                    // 'multisite_languages' => $multisite_languages,
-                    
-                    'multisite_languages' => count( $multisite_languages ),
-    
-                    // 'multisite_page_languages' => $multisite_page_languages,
-
-                    // 'empty-languages' => empty( $languages ),
-                ] );
-    
-                // if ( empty( $languages ) )
-                // {
-                //     // $languages = MultisiteSiteSwitcher::get_languages();
-                    
-                //     $languages = $multisite_languages;
-                // }
-                // else
-                // {
-                //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
-                // }
+            //     // $languages = MultisiteSiteSwitcher::get_languages();
+                
+            //     $languages = $multisite_languages;
+            // }
+            // else
+            // {
+            //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             // }
         }
 
