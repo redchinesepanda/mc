@@ -217,15 +217,15 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     // 'languages' => $languages,
+            // 'languages' => $languages,
             
-        //     'languages' => $languages[ 'en' ],
+            'languages' => count( $languages ),
 
-        //     // 'check_wpml_off' => WPMLMain::check_wpml_off(),
-        // ] );
+            // 'check_wpml_off' => WPMLMain::check_wpml_off(),
+        ] );
 
         if ( WPMLMain::check_wpml_off() )
         {
