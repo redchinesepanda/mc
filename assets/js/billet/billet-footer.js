@@ -70,7 +70,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			// console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
 		};
-	};
+	}; 
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
