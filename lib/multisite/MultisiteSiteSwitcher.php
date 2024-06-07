@@ -41,13 +41,13 @@ class MultisiteSiteSwitcher
 
 		foreach ( $page_languages as $language_code => $page_language )
 		{
-			LegalDebug::debug( [
-				'MultisiteSiteswitcher' =>'get_combined_languages',
+			// LegalDebug::debug( [
+			// 	'MultisiteSiteswitcher' =>'get_combined_languages',
 
-				'language' => $languages[ $language_code ],
+			// 	'language' => $languages[ $language_code ],
 
-				'page_language' => $page_language,
-			] );
+			// 	'page_language' => $page_language,
+			// ] );
 
 			$languages[ $language_code ] = array_merge( $languages[ $language_code ], $page_language );
 
