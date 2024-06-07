@@ -270,10 +270,10 @@ class WPMLLangSwitcher
                     
                     $languages = $multisite_languages;
                 }
-                // else
-                // {
+                else
+                {
                     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
-                // }
+                }
             // }
         }
 
