@@ -187,6 +187,12 @@ class MultisiteHreflang
 			];
 		}
 
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_group_items',
+
+			'items' => $items,
+		] );
+
 		return $items;
 	}
 
