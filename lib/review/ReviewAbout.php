@@ -355,6 +355,15 @@ class ReviewAbout
         ] ) );
     }
 
+    const TAXONOMY = [
+        ''
+    ];
+
+    public static function check_about_billet_bonus()
+    {
+        return has_term( '', self::TAXONOMY[ 'page_type' ] );
+    }
+
     public static function get_about_bonus( $group, $mode )
 	{
         return [

@@ -217,6 +217,14 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            // 'languages' => $languages,
+            
+            'languages' => $languages[ 'en' ],
+        ] );
+
         if ( empty( $languages ) )
         {
             $languages = WPMLDB::multisite_all_languages();
@@ -270,11 +278,13 @@ class WPMLLangSwitcher
             }
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'languages' => $languages,
-        // ] );
+            // 'languages' => $languages,
+            
+            'languages' => $languages[ 'en' ],
+        ] );
 
         // $multisite_sites_list = MultisiteSiteswitcher::get_sites_list();
 
