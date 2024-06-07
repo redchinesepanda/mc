@@ -257,10 +257,10 @@ class WPMLLangSwitcher
 
             LegalDebug::debug( [
                 'WPMLLangSwitcher' => 'get',
-    
-                // 'multisite_languages' => $multisite_languages,
                 
-                'multisite_languages' => count( $multisite_languages ),
+                'multisite_languages-count' => count( $multisite_languages ),
+    
+                'multisite_languages' => $multisite_languages,
 
                 // 'multisite_page_languages' => $multisite_page_languages,
 
