@@ -59,6 +59,14 @@ class MultisiteSiteSwitcher
 
 		$page_languages = MultisiteHreflang::prepare_languages();
 
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'get_languages',
+
+			'languages' => $languages,
+
+			'page_languages' => $page_languages,
+		] );
+
 		return self::get_combined_languages( $languages, $page_languages );
 
 		// return self::sites_to_languages( $blogs );
