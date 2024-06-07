@@ -224,7 +224,7 @@ class WPMLLangSwitcher
             
             'get_all' => count( $languages ),
 
-            'check_wpml_off' => WPMLMain::check_wpml_off(),
+            // 'check_wpml_off' => WPMLMain::check_wpml_off(),
         ] );
 
         if ( WPMLMain::check_wpml_off() )
