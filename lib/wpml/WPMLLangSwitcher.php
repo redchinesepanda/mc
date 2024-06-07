@@ -219,10 +219,10 @@ class WPMLLangSwitcher
 
         LegalDebug::debug( [
             'WPMLLangSwitcher' => 'get',
-
-            // 'languages' => $languages,
             
             'languages' => count( $languages ),
+
+            'languages' => $languages,
 
             // 'check_wpml_off' => WPMLMain::check_wpml_off(),
         ] );
@@ -237,10 +237,10 @@ class WPMLLangSwitcher
     
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
-
-                    // 'languages' => $languages,
                     
                     'languages' => count( $languages ),
+
+                    'languages' => $languages,
     
                     // 'native_name' => array_column( $languages, 'native_name' ),
                     
