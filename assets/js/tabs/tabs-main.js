@@ -28,7 +28,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
             title.dataset.tabs = tabs.id;
 
             // title.addEventListener( 'click', tabToggle, false );
-            title.addEventListener( 'click', function() { tabToggle(event); }, false );
+            title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
         }
     });
 } );
