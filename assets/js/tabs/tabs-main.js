@@ -27,8 +27,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
         for ( let title of titles ) {
             title.dataset.tabs = tabs.id;
 
-            title.addEventListener( 'click', tabToggle, false );
-            // title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
+            // title.addEventListener( 'click', tabToggle, false );
+            title.addEventListener( 'click', function(event) { tabToggle(event); spoilerinit(); }, false );
         }
     });
 
@@ -36,10 +36,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 
 
-    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
-        console.log('Таб нажат')
+ /*    document.querySelectorAll('.legal-tabs .legal-tab-title').forEach( (tab) => {
+        console.log(`${tab} Таб найден`);
         tab.addEventListener( 'click', spoilerinit, false );
-    });
+    }); */
 
     function toggleControl( event )
 	{
@@ -97,6 +97,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		if (overflow(str)) {
 			// console.log('Текст не умещается');
 			// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
+            str.parentNode.classList.remove( classes.shortStr );
 			args.forEach( function ( arg ) {
 				document.querySelectorAll( arg.selector ).forEach( setFooter );
 			} );
@@ -109,6 +110,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
 	function spoilerinit() {
+        console.log('Кликнули по табу, запустили функцию');
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
