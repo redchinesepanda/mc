@@ -96,7 +96,7 @@ class ReviewCut
 		$query = '//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]';
 
 		LegalDebug::debug( [
-			'ReviewCur' => 'get_cut_items',
+			'ReviewCut' => 'get_cut_items',
 
 			'query' => $query,
 		] );
@@ -128,6 +128,12 @@ class ReviewCut
 		$element->setAttribute( 'data-content-active', __( ReviewMain::TEXT[ 'close' ], ToolLoco::TEXTDOMAIN ) );
 
 		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
+		
+		LegalDebug::debug( [
+			'ReviewCut' => 'get_control',
+
+			'element' => $element,
+		] );
 
 		return $element;
 	}
