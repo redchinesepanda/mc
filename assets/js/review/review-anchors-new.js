@@ -52,7 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
 
-		buttonToTop : '.legal-section-anchors .legal-to-top'
+		buttonToTop : '.legal-section-anchors .legal-to-top',
+
+		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
 	};
 
 	const classes = {
@@ -127,13 +129,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}; */
 	}; 
 
-	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
-
-	defineOverflow( stringSwiper );
+	defineOverflow( selectors.stringSwiper );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
 
 	// достижение ширины контейнера конец
+
 
 	// const buttonToTop = document.querySelector( selectors.buttonToTop );
    
