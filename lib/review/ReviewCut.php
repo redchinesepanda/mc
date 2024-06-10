@@ -133,6 +133,8 @@ class ReviewCut
 			'ReviewCut' => 'get_control',
 
 			'element' => $element,
+
+			'html' => $dom->saveHTML( $element ),
 		] );
 
 		return $element;
