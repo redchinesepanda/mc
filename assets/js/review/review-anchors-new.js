@@ -44,7 +44,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		};
 	}; 
 
-	let string = document.querySelector( '.compilation-about .swiper-wrapper' );
+	let string = document.querySelector( '.compilation-about-wrapper .swiper-wrapper' );
 
 	console.log( string );
 
