@@ -929,11 +929,11 @@ class BaseHeader
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	'search' => $search,
-		// ] );
+			'search' => $search,
+		] );
 
 		$parse = self::parse_languages( $search );
 
