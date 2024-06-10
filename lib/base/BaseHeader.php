@@ -625,6 +625,15 @@ class BaseHeader
 		return implode( ' ', $classes );
 	}
 
+	public static function check_all_countries()
+	{
+		return MiltisiteMain::check_not_multisite()
+			
+			|| MiltisiteMain::check_multisite()
+			
+				&& MultisiteBlog::check_main_domain();
+	}
+
 	public static function parse_languages( $languages )
 	{
 		// LegalDebug::debug( [
@@ -659,15 +668,20 @@ class BaseHeader
 
 		// if ( $item_all_countries = self::get_item_all_countries() )
 		
-		if ( MiltisiteMain::check_multisite() )
-		{
-			if ( MultisiteBlog::check_main_domain() )
-			{
-				$item[ 'children' ][] = self::get_item_all_countries();
+		// if ( MiltisiteMain::check_multisite() )
+		// {
+		// 	if ( MultisiteBlog::check_main_domain() )
+		// 	{
+		// 		$item[ 'children' ][] = self::get_item_all_countries();
 	
-				// $item[ 'children' ][] = $item_all_countries;
-			}
-		} 
+		// 		// $item[ 'children' ][] = $item_all_countries;
+		// 	}
+		// }
+
+		if ( self::check_all_countries() )
+		{
+			$item[ 'children' ][] = self::get_item_all_countries();
+		}
 
 		// $title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
 

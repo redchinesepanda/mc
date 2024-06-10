@@ -73,6 +73,11 @@ class MiltisiteMain
 		return is_multisite();
 	}
 
+	public static function check_not_multisite()
+	{
+		return ! self::check_multisite();
+	}
+
 	public static function check()
 	{
 		return self::check_multisite();
