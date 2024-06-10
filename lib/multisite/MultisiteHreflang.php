@@ -102,7 +102,7 @@ class MultisiteHreflang
 		
 		$post_path = ToolPermalink::get_post_uri( $post->ID );
 
-		LegalDebug::deebug( [
+		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_post_uri',
 
 			'permalink_post_uri' => $permalink_post_uri,
