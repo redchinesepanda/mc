@@ -232,15 +232,15 @@ class MultisiteHreflang
 		
 		$blogs = MultisiteBlog::get_all_sites( $current_domain );
 		
-		// LegalDebug::debug( [
-		// 	'MultisiteHreflang' => 'get_group_items_all',
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_group_items_all',
 
-		// 	'current_domain' => $current_domain,
+			'current_domain' => $current_domain,
 
-		// 	'translation_groups' => $translation_groups,
+			'translation_groups' => $translation_groups,
 
-		// 	'blogs' => count( $blogs ),
-		// ] );
+			'blogs' => count( $blogs ),
+		] );
 
 		$items = [];
 
@@ -266,7 +266,9 @@ class MultisiteHreflang
 
 			if ( MultisiteBlog::check_not_main_blog() )
 			{
-				$items = array_merge( $items, self::get_group_items( $translation_groups ) );
+				$group_items = self::get_group_items( $translation_groups );
+
+				$items = array_merge( $items, $group_items );
 			}
 		}
 
