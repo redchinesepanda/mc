@@ -27,7 +27,33 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			el.classList.add('legal-active-end');
 			el.classList.remove('legal-active-start');
 		});
-	})
+	});
+
+	// достижение ширины контейнера старт
+
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	function defineOverflow( str ) {
+		console.log(`${str} Элемент найден`);
+		if (overflow(str)) {
+			console.log('Текст не умещается');
+		} else {
+			console.log('Текст умещается');
+		};
+	}; 
+
+	let string = document.querySelector( '.compilation-about-wrapper .swiper-wrapper' );
+
+	console.log( string );
+
+	defineOverflow( string );
+
+	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
+
+	// достижение ширины контейнера конец
 
 	const settings = {
 		behavior : {
