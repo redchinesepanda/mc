@@ -88,6 +88,8 @@ class MultisiteHreflang
 		$url =  self::get_blog_uri();
 
 		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+		
+		$permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
 		// $permalink_uri = ToolPermalink::get_post_uri( $post->ID );
 
@@ -99,6 +101,14 @@ class MultisiteHreflang
 		// }
 		
 		$post_path = ToolPermalink::get_post_uri( $post->ID );
+
+		LegalDebug::deebug( [
+			'MultisiteHreflang' => 'get_post_uri',
+
+			'permalink_post_uri' => $permalink_post_uri,
+
+			'post_path' => $post_path,
+		] );
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
