@@ -849,11 +849,27 @@ class BaseHeader
 	{
 		$handler = new self();
 
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'urls_home' => $urls_home,
+
+			'urls_cross' => $urls_cross,
+		] );
+
 		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
 
 		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
 
 		$urls = array_merge( $urls_udiff, $urls_uintersect );
+
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'urls' => $urls,
+
+			'urls' => $urls,
+		] );
 
 		return $urls;
 	}
@@ -864,13 +880,13 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			// 'home' => $home->ID,
+		// 	// 'home' => $home->ID,
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		if ( !empty( $home ) )
 		{
@@ -916,11 +932,11 @@ class BaseHeader
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		return $urls;
 	}
