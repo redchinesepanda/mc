@@ -849,13 +849,13 @@ class BaseHeader
 	{
 		$handler = new self();
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'urls_home' => $urls_home,
+		// 	'urls_home' => $urls_home,
 
-			'urls_cross' => $urls_cross,
-		] );
+		// 	'urls_cross' => $urls_cross,
+		// ] );
 
 		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
 
@@ -865,15 +865,15 @@ class BaseHeader
 		
 		$urls = array_merge( $urls_uintersect, $urls_udiff );
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'urls_uintersect' => $urls_uintersect,
+		// 	'urls_uintersect' => $urls_uintersect,
 
-			'urls_udiff' => $urls_udiff,
+		// 	'urls_udiff' => $urls_udiff,
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		return $urls;
 	}
