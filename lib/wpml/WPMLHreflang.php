@@ -27,10 +27,10 @@ class WPMLHreflang
     {
 		$hreflang = [];
 
-		if ( MiltisiteMain::check_multisite() )
-		{
-			return $hreflang;
-		}
+		// if ( MiltisiteMain::check_multisite() )
+		// {
+		// 	return $hreflang;
+		// }
 
         if ( !empty( $hreflang_items ) )
         {
