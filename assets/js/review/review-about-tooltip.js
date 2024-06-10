@@ -78,9 +78,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}
 	}
 
-	if ( document.querySelector( selectors.aboutAchievement ).contains( tooltipBackground ) ) {
+	/* if ( document.querySelector( selectors.aboutAchievement ).contains( tooltipBackground ) ) {
+		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
+	}; */
+	if ( document.querySelector( selectors.aboutAchievement ) ) {
 		tooltipBackground.addEventListener( 'click', closeBackgroundTooltip );
 	};
+
 	// закрытие по клику на фон. Конец
 } );
 
