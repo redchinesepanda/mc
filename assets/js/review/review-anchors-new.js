@@ -119,6 +119,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	function defineOverflow( str ) {
+		if ( !str ) {
+            return;
+        };
 		// console.log(`${str} Элемент найден`);
 		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
@@ -127,7 +130,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
 		}; */
-	}; 
+	};
 
 	defineOverflow( document.querySelector(selectors.stringSwiper ) );
 
