@@ -357,8 +357,9 @@ class MultisiteHreflang
 	public static function prepare_languages()
 	{
 		// $languages = [];
-		if ( MiltisiteMain::check_multisite() )
-        {
+
+		// if ( MiltisiteMain::check_multisite() )
+        // {
 			// $args = [];
 
 			if ( $post = get_post() )
@@ -381,7 +382,7 @@ class MultisiteHreflang
 			}
 
 			// return self::render_hreflang( $args );
-		}
+		// }
 
 		// return '';
 
