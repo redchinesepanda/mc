@@ -29,32 +29,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-	// достижение ширины контейнера старт
-
-	function overflow(e) {
-		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-	}
-
-	function defineOverflow( str ) {
-		console.log(`${str} Элемент найден`);
-		if (overflow(str)) {
-			console.log('Текст не умещается');
-		} else {
-			console.log('Текст умещается');
-		};
-	}; 
-
-	let string = document.querySelector( '.compilation-about-wrapper .swiper-wrapper' );
-
-	console.log( string );
-
-	defineOverflow( string );
-
-	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
-	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
-
-	// достижение ширины контейнера конец
-
 	const settings = {
 		behavior : {
 			behavior: 'smooth'
@@ -78,11 +52,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		anchorsItem : '.review-anchors .anchors-item[href^="#"]',
 
-		buttonToTop : '.legal-section-anchors .legal-to-top'
+		buttonToTop : '.legal-section-anchors .legal-to-top',
+
+		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
 	};
 
 	const classes = {
-		active : 'legal-active'
+		active : 'legal-active',
+
+		shortStr: 'legal-short-str',
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
@@ -133,6 +111,30 @@ document.addEventListener( 'DOMContentLoaded', function ()
     }
    
     window.addEventListener( events.scroll, initScroll );
+
+	// достижение ширины контейнера старт
+
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	function defineOverflow( str ) {
+		// console.log(`${str} Элемент найден`);
+		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+	/* 	if (overflow(str)) {
+			console.log('Текст не умещается');
+		} else {
+			console.log('Текст умещается');
+			str.parentNode.classList.add( classes.shortStr );
+		}; */
+	}; 
+
+	defineOverflow( document.querySelector(selectors.stringSwiper ) );
+
+	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+
+	// достижение ширины контейнера конец
+
 
 	// const buttonToTop = document.querySelector( selectors.buttonToTop );
    
