@@ -658,12 +658,14 @@ class BaseHeader
 		}
 
 		// if ( $item_all_countries = self::get_item_all_countries() )
-		
-		if ( MultisiteBlog::check_main_domain() )
+		if ( MultisiteMain::check_multisite() )
 		{
-			$item[ 'children' ][] = self::get_item_all_countries();
-
-			// $item[ 'children' ][] = $item_all_countries;
+			if ( MultisiteBlog::check_main_domain() )
+			{
+				$item[ 'children' ][] = self::get_item_all_countries();
+	
+				// $item[ 'children' ][] = $item_all_countries;
+			}
 		}
 
 		// $title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
