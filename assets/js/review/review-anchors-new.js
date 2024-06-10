@@ -44,8 +44,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		};
 	}; 
 
-	document.querySelectorAll( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
-	console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
+	let string = document.querySelector( '.compilation-about .swiper-wrapper' );
+
+	defineOverflow( string );
+
+	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
 
 	// достижение ширины контейнера конец
 
