@@ -408,6 +408,23 @@ class ReviewTable
 		return $dom->saveHTML( $dom );
 	}
 
+	public static function remove_class( $node, $remove )
+	{
+		$classess = explode( ' ', $node->getAttribute( 'class' ) );
+
+		foreach ( $classess as $key => $class )
+		{
+			if ( $class == $remove )
+			{
+				unset( $classess[ $key ] );
+
+				break;
+			}
+		}
+
+		$node->setAttribute( 'class', implode( ' ', $classess ) );
+	}
+
 	public static function set_scroll_x_wrapper( $dom, $table )
 	{
 		$scroll = $dom->createElement( 'div' );
@@ -416,6 +433,8 @@ class ReviewTable
 
 		if ( str_contains( $table->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
 		{
+			self::remove_class( $table, ReviewCut::CLASSES[ 'cut-item' ] );
+
 			$classess[] = ReviewCut::CLASSES[ 'cut-item' ];
 		}
 
