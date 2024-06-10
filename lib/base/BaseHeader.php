@@ -866,7 +866,9 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls',
 
-			'urls' => $urls,
+			'urls_uintersect' => $urls_uintersect,
+
+			'urls_udiff' => $urls_udiff,
 
 			'urls' => $urls,
 		] );
