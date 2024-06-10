@@ -268,6 +268,12 @@ class MultisiteHreflang
 			{
 				$group_items = self::get_group_items( $translation_groups );
 
+				LegalDebug::debug( [
+					'MultisiteHreflang' => 'get_group_items_all',
+		
+					'group_items' => $group_items,
+				] );
+
 				$items = array_merge( $items, $group_items );
 			}
 		}
