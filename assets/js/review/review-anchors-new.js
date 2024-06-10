@@ -41,14 +41,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			console.log('Текст не умещается');
 		} else {
 			console.log('Текст умещается');
+			str.parentNode.classList.add( 'legal-short-tnc' );
 		};
 	}; 
 
-	let string = document.querySelector( '.compilation-about-wrapper .swiper-wrapper' );
+	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
 
-	console.log( string );
+	// console.log( string );
 
-	defineOverflow( string );
+	defineOverflow( stringSwiper );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
 	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
