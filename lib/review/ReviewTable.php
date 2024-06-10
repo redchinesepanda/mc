@@ -414,7 +414,7 @@ class ReviewTable
 
 		$classess[] = self::CLASSES[ 'scroll-x' ];
 
-		if ( str_contains( $table->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] )
+		if ( str_contains( $table->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] ) )
 		{
 			$classess[] = ReviewCut::CLASSES[ 'cut-item' ];
 		}
