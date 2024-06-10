@@ -937,15 +937,15 @@ class BaseHeader
 
 		$parse = self::parse_languages( $search );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	'search' => $search,
+			// 'search' => $search,
 
-		// 	'avaible' => $search[ 'avaible' ],
+			// 'avaible' => $search[ 'avaible' ],
 
-		// 	'parse' => $parse,
-		// ] );
+			'parse' => $parse,
+		] );
 
 		return $parse;
 	}
