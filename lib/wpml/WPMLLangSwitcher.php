@@ -278,7 +278,7 @@ class WPMLLangSwitcher
             //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             // }
 
-            if ( MultisiteBlog::check_main_domain() )
+            if ( MiltisiteMain::check_multisite() && MultisiteBlog::check_main_domain() )
             {
                 $page_languages = MultisiteHreflang::prepare_languages();
 
