@@ -879,11 +879,11 @@ class BaseHeader
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' =>'replace_urls',
@@ -900,7 +900,13 @@ class BaseHeader
 			$cross_urls_all = self::get_page_urls( $cross );
 
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
-		}	
+		}
+		
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'urls' => $urls,
+		] );
 		
 		// LegalDebug::debug( [
 		// 	'BaseHeader' =>'replace_urls',
