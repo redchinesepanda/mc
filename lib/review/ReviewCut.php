@@ -95,11 +95,11 @@ class ReviewCut
 
 		$query = '//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]';
 
-		LegalDebug::debug( [
-			'ReviewCut' => 'get_cut_items',
+		// LegalDebug::debug( [
+		// 	'ReviewCut' => 'get_cut_items',
 
-			'query' => $query,
-		] );
+		// 	'query' => $query,
+		// ] );
 
 		return self::get_nodes( $dom, $query );
 
@@ -129,13 +129,13 @@ class ReviewCut
 
 		$element->setAttribute( 'class', self::CLASSES[ 'cut-control' ] );
 		
-		LegalDebug::debug( [
-			'ReviewCut' => 'get_control',
+		// LegalDebug::debug( [
+		// 	'ReviewCut' => 'get_control',
 
-			'element' => $element,
+		// 	'element' => $element,
 
-			'html' => $dom->saveHTML( $element ),
-		] );
+		// 	'html' => $dom->saveHTML( $element ),
+		// ] );
 
 		return $element;
 	}
@@ -144,11 +144,11 @@ class ReviewCut
 	{
 		$nodes = self::get_cut_items( $dom );
 
-		LegalDebug::debug( [
-			'ReviewCut' =>'set_cut',
+		// LegalDebug::debug( [
+		// 	'ReviewCut' =>'set_cut',
 
-			'length' => $nodes->length,
-		] );
+		// 	'length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length == 0 )
 		{
@@ -199,9 +199,17 @@ class ReviewCut
 
 		// $content = CompilationAbout::remove_compilation_about_content( $content );
 
-		return $dom->saveHTML( $dom );
+		$content = $dom->saveHTML( $dom );
+
+		LegalDebug::debug( [
+			'ReviewCut' =>'set_cut',
+
+			'content' => $content,
+		] );
+
+		// return $dom->saveHTML( $dom );
 		
-		// return $content;
+		return $content;
 	}
 
 	public static function register_functions()
