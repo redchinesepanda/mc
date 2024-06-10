@@ -17,7 +17,7 @@ class MultisiteBlog
 			$blog_id = MultisiteBlog::get_current_blog_id();
 		}
 
-		$current_blog = MultisiteBlog::get_blog_details( $blog_id );
+		$current_blog = self::get_blog_details( $blog_id );
 
 		return $current_blog->domain;
 	}
@@ -29,7 +29,7 @@ class MultisiteBlog
 			$blog_id = MultisiteBlog::get_current_blog_id();
 		}
 
-		$current_blog = MultisiteBlog::get_blog_details( $blog_id );
+		$current_blog = self::get_blog_details( $blog_id );
 
 		return $current_blog->siteurl;
 	}
