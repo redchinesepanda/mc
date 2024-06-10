@@ -201,11 +201,11 @@ class ReviewCut
 
 		$content = $dom->saveHTML( $dom );
 
-		LegalDebug::debug( [
-			'ReviewCut' =>'set_cut',
+		// LegalDebug::debug( [
+		// 	'ReviewCut' =>'set_cut',
 
-			'content' => $content,
-		] );
+		// 	'content' => $content,
+		// ] );
 
 		// return $dom->saveHTML( $dom );
 		
