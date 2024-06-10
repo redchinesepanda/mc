@@ -74,13 +74,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// document.querySelectorAll( selectors.billetMegaTncStr ).forEach( defineOverflow );
 
-	function spoilerinit() {
+	function spoilerInit() {
 		args.forEach( function ( arg ) {
 			document.querySelectorAll( arg.string ).forEach( defineOverflow );
 		} );
 	}
 
-	spoilerinit();
+	spoilerInit();
 	
 } );
 
