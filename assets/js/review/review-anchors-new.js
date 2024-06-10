@@ -118,12 +118,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function defineOverflow( str ) {
 		// console.log(`${str} Элемент найден`);
-		if (overflow(str)) {
+		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
 			console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
-		};
+		}; */
 	}; 
 
 	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
