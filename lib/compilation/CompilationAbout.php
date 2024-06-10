@@ -320,6 +320,12 @@ class CompilationAbout
 		}
 
 		$nodes = self::get_nodes_buttons( $dom );
+		
+		LegalDebug::debug( [
+			'CompilationAbout' => 'remove_items',
+
+			'length' => $nodes->length,
+		] );
 
 		if ( $nodes->length != 0 )
 		{
