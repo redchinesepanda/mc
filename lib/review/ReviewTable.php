@@ -96,7 +96,7 @@ class ReviewTable
 	
 			// add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 	
-			add_filter( 'the_content', [ $handler, 'get_content' ], 11, 1 );
+			add_filter( 'the_content', [ $handler, 'get_content' ], 10, 1 );
 		}
 	}
 
