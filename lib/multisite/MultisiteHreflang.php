@@ -270,6 +270,8 @@ class MultisiteHreflang
 
 				LegalDebug::debug( [
 					'MultisiteHreflang' => 'get_group_items_all',
+
+					'blog_id' => $blog->blog_id,
 		
 					'group_items' => $group_items,
 				] );
