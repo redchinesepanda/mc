@@ -337,7 +337,11 @@ class CompilationAbout
 				{
 					// $dom->removeChild( $node );
 
+					$parent = $node->parentNode;
+
 					$node->parentNode->removeChild( $node );
+
+					$parent->parentNode->removeChild( $parent );
 				}
 				catch ( DOMException $e )
 				{
