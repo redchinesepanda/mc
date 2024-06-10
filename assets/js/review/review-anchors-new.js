@@ -31,7 +31,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	// достижение ширины контейнера старт
 
-	function overflow(e) {
+/* 	function overflow(e) {
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
@@ -48,10 +48,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	console.log( string );
 
-	defineOverflow( string );
-
-	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
-	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
+	defineOverflow( string ); */
 
 	// достижение ширины контейнера конец
 
