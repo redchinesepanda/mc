@@ -45,6 +45,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}; 
 
 	document.querySelectorAll( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+	console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
 
 	// достижение ширины контейнера конец
 
