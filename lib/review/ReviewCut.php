@@ -126,6 +126,12 @@ class ReviewCut
 	{
 		$nodes = self::get_cut_items( $dom );
 
+		LegalDebug::debug( [
+			'ReviewCut' =>'set_cut',
+
+			'length' => $nodes->length,
+		] );
+
 		if ( $nodes->length == 0 )
 		{
 			return false;
