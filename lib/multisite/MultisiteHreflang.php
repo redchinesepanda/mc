@@ -264,7 +264,10 @@ class MultisiteHreflang
 
 			// $items[ $blog->blog_id ] = self::get_group_items( $translation_groups );
 
-			$items = array_merge( $items, self::get_group_items( $translation_groups ) );
+			if ( MultisiteBlog::check_not_main_blog() )
+			{
+				$items = array_merge( $items, self::get_group_items( $translation_groups ) );
+			}
 		}
 
 		MultisiteBlog::set_blog( $current_blog_id );
