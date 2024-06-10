@@ -667,7 +667,7 @@ class BaseHeader
 	
 				// $item[ 'children' ][] = $item_all_countries;
 			}
-		}
+		} 
 
 		// $title = __( BaseMain::TEXT[ 'choose-your-country' ], ToolLoco::TEXTDOMAIN );
 
