@@ -29,30 +29,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	});
 
-	// достижение ширины контейнера старт
-
-	function overflow(e) {
-		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-	}
-
-	function defineOverflow( str ) {
-		// console.log(`${str} Элемент найден`);
-		if (overflow(str)) {
-			console.log('Текст не умещается');
-		} else {
-			console.log('Текст умещается');
-			str.parentNode.classList.add( classes.shortStr );
-		};
-	}; 
-
-	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
-
-	defineOverflow( stringSwiper );
-
-	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
-
-	// достижение ширины контейнера конец
-
 	const settings = {
 		behavior : {
 			behavior: 'smooth'
@@ -133,6 +109,30 @@ document.addEventListener( 'DOMContentLoaded', function ()
     }
    
     window.addEventListener( events.scroll, initScroll );
+
+	// достижение ширины контейнера старт
+
+	function overflow(e) {
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	}
+
+	function defineOverflow( str ) {
+		// console.log(`${str} Элемент найден`);
+		if (overflow(str)) {
+			console.log('Текст не умещается');
+		} else {
+			console.log('Текст умещается');
+			str.parentNode.classList.add( classes.shortStr );
+		};
+	}; 
+
+	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
+
+	defineOverflow( stringSwiper );
+
+	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+
+	// достижение ширины контейнера конец
 
 	// const buttonToTop = document.querySelector( selectors.buttonToTop );
    
