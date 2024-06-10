@@ -787,7 +787,12 @@ class BaseHeader
 			return self::get_cross_urls( $group );
 		}
 
-		$group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
+		$group_items_all = [];
+
+		if ( MiltisiteMain::check_multisite() )
+        {
+			$group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
+		}
 
 		$cross_urls = self::parse_cross_urls( $group_items_all );
 
