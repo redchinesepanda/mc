@@ -36,23 +36,20 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	function defineOverflow( str ) {
-		console.log(`${str} Элемент найден`);
+		// console.log(`${str} Элемент найден`);
 		if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
 			console.log('Текст умещается');
-			str.parentNode.classList.add( 'legal-short-tnc' );
+			str.parentNode.classList.add( classes.shortStr );
 		};
 	}; 
 
 	let stringSwiper = document.querySelector( '.home .compilation-about-wrapper .swiper-wrapper' );
 
-	// console.log( string );
-
 	defineOverflow( stringSwiper );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
-	// console.log(document.querySelectorAll( '.compilation-about .swiper-wrapper' ));
 
 	// достижение ширины контейнера конец
 
@@ -83,7 +80,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	};
 
 	const classes = {
-		active : 'legal-active'
+		active : 'legal-active',
+
+		shortStr: 'legal-short-str',
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
