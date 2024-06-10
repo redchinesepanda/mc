@@ -864,11 +864,13 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'home' => $home->ID,
-		// ] );
+			// 'home' => $home->ID,
+
+			'urls' => $urls,
+		] );
 
 		if ( !empty( $home ) )
 		{
@@ -876,6 +878,12 @@ class BaseHeader
 			
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
+
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
+
+			'urls' => $urls,
+		] );
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' =>'replace_urls',
@@ -921,19 +929,19 @@ class BaseHeader
 	{
 		$search = self::search_languages();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages',
 
-			'search' => $search,
-		] );
+		// 	'search' => $search,
+		// ] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages',
 
-			'search' => $search,
-		] );
+		// 	'search' => $search,
+		// ] );
 
 		$parse = self::parse_languages( $search );
 
