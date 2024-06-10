@@ -129,7 +129,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}; */
 	}; 
 
-	defineOverflow( selectors.stringSwiper );
+	defineOverflow( document.querySelector(selectors.stringSwiper ) );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
 
