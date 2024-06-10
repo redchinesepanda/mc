@@ -304,7 +304,9 @@ class CompilationAbout
 			{
 				try
 				{
-					$dom->removeChild( $node );
+					// $dom->removeChild( $node );
+
+					$node->parentNode->removeChild( $node );
 				}
 				catch ( DOMException $e )
 				{
@@ -321,11 +323,11 @@ class CompilationAbout
 
 		$nodes = self::get_nodes_buttons( $dom );
 		
-		LegalDebug::debug( [
-			'CompilationAbout' => 'remove_items',
+		// LegalDebug::debug( [
+		// 	'CompilationAbout' => 'remove_items',
 
-			'length' => $nodes->length,
-		] );
+		// 	'length' => $nodes->length,
+		// ] );
 
 		if ( $nodes->length != 0 )
 		{
