@@ -15,13 +15,13 @@ class ToolPermalink
     {
 		$front_page_id = get_option( 'page_on_front' );
 
-        LegalDebug::debug( [
-            'ToolPermalink' => 'check_front_page',
+        // LegalDebug::debug( [
+        //     'ToolPermalink' => 'check_front_page',
 
-            'post_id' => $post_id,
+        //     'post_id' => $post_id,
 
-            'front_page_id' => $front_page_id,
-        ] );
+        //     'front_page_id' => $front_page_id,
+        // ] );
 		
         return ( ! empty( $front_page_id ) && $post_id == $front_page_id ) ? true : false;
 	}

@@ -102,13 +102,13 @@ class MultisiteHreflang
 		
 		$post_path = ToolPermalink::get_post_uri( $post->ID );
 
-		LegalDebug::debug( [
-			'MultisiteHreflang' => 'get_post_uri',
+		// LegalDebug::debug( [
+		// 	'MultisiteHreflang' => 'get_post_uri',
 
-			'permalink_post_uri' => $permalink_post_uri,
+		// 	'permalink_post_uri' => $permalink_post_uri,
 
-			'post_path' => $post_path,
-		] );
+		// 	'post_path' => $post_path,
+		// ] );
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
