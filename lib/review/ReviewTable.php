@@ -412,7 +412,16 @@ class ReviewTable
 	{
 		$scroll = $dom->createElement( 'div' );
 
-		$scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
+		$classess[] = self::CLASSES[ 'scroll-x' ];
+
+		if ( str_contains( $table->getAttribute( 'class' ), ReviewCut::CLASSES[ 'cut-item' ] )
+		{
+			$classess[] = ReviewCut::CLASSES[ 'cut-item' ];
+		}
+
+		$scroll->setAttribute( 'class', implode( ' ', $classess ) );
+
+		// $scroll->setAttribute( 'class', self::CLASSES[ 'scroll-x' ] );
 
 		$table->parentNode->insertBefore( $scroll, $table );
 
