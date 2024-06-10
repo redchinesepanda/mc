@@ -93,11 +93,21 @@ class ReviewCut
 	{
 		// .legal-cut-item + :not(.legal-cut-item)
 
-		return self::get_nodes(
-			$dom,
+		$query = '//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]';
 
-			'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]'
-		);
+		LegalDebug::debug( [
+			'ReviewCur' => 'get_cut_items',
+
+			'query' => $query,
+		] );
+
+		return self::get_nodes( $dom, $query );
+
+		// return self::get_nodes(
+		// 	$dom,
+
+		// 	'//*[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")]/following-sibling::*[1]/self::*[not(self::node()[contains(@class, "' . self::CLASSES[ 'cut-item' ] . '")])]'
+		// );
 	}
 
 	public static function get_nodes( $dom, $query )
