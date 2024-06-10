@@ -46,6 +46,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	let string = document.querySelector( '.compilation-about .swiper-wrapper' );
 
+	console.log( string );
+
 	defineOverflow( string );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
