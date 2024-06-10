@@ -302,7 +302,20 @@ class CompilationAbout
 		{
 			foreach ( $nodes as $node )
 			{
-				$dom->removeChild( $node );
+				try
+				{
+					$dom->removeChild( $node );
+				}
+				catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'CompilationAbout' => 'remove_items',
+		
+						'node' => substr( $node->textContent, 0, 30 ),
+		
+						'message' => $e->getMessage(),
+					] );
+				}
 			}
 		}
 
@@ -312,7 +325,20 @@ class CompilationAbout
 		{
 			foreach ( $nodes as $node )
 			{
-				$dom->removeChild( $node );
+				try
+				{
+					$dom->removeChild( $node );
+				}
+				catch ( DOMException $e )
+				{
+					LegalDebug::debug( [
+						'CompilationAbout' => 'remove_items',
+		
+						'node' => substr( $node->textContent, 0, 30 ),
+		
+						'message' => $e->getMessage(),
+					] );
+				}
 			}
 		}
 	}
