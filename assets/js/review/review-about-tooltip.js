@@ -39,9 +39,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		element.dataset.tooltipSet = index;
 
-		if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
+		/* if( document.querySelector( selectors.aboutAchievement ).contains( document.querySelector( selectors.tooltip ) ) ) {
 			element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
-		};
+		}; */
+		if ( !element ) {
+            return;
+        };
+		element.querySelectorAll( selectors.tooltipOpen ).forEach( prepareTooltip, element );
+		
 	}
 
 	const classes = {
