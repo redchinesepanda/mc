@@ -6,7 +6,12 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	const selectors = {
 
-		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
+		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
+
+		cutControl : '.compilation-about .legal-cut-control',
+
+		paragraph : '.compilation-about .section-content-text',
+
 	};
 
 	const classes = {
@@ -25,7 +30,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		if ( !str ) {
             return;
         };
-		// console.log(`${str} Элемент найден`);
+
 		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
@@ -35,11 +40,44 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		}; */
 	};
 
-	defineOverflow( document.querySelector(selectors.stringSwiper ) );
-
-	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
+	defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
 	// заполнение ширины контейнера свайпером конец
+
+	// сокращение текста до многоточия старт
+
+	function clampParagr( element )
+	{
+		element.classList.add( classes.active );
+	};
+
+	function openParagr( element )
+	{
+		element.classList.remove( classes.active );
+	}
+
+	function initClamp( cut ) {
+		if ( !cut ) {
+            return;
+        };
+
+		let paragr = document.querySelectorAll( selectors.paragraph );
+
+		if ( !paragr ) {
+            return;
+        };
+
+		paragr.forEach( clampParagr );
+
+		if ( cut.classList.contains( classes.active ) ) {
+			paragr.forEach( openParagr );
+		}
+
+	};
+
+	initClamp( document.querySelector( selectors.cutControl ) );
+
+	// сокращение текста до многоточия конец
 
 } );
 

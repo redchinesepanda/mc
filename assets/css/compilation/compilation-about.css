@@ -160,6 +160,16 @@
     display: inline-block;
 } */
 
+.compilation-about .section-content-text {
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.compilation-about .section-content-text.legal-active {
+    display: -webkit-box;
+}
+
 
 /* Width and Height */
 .compilation-about:not( .home .compilation-about ) {
