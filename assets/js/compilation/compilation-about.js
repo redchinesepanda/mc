@@ -31,8 +31,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		// return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
-		return setTimeout(overflow(str), 1000) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		// return setTimeout(overflow(str), 1000) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
