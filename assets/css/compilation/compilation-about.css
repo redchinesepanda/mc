@@ -191,7 +191,8 @@
     max-width: 754px;
 }
 
-.compilation-about-wrapper .swiper.legal-active-end::before,
+/* .compilation-about-wrapper .swiper.legal-active-end::before, */
+.compilation-about-wrapper .swiper.legal-active-end::after,
 .compilation-about-wrapper .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 46px;
@@ -246,7 +247,8 @@
     margin-top: 8px;
 }
 
-.compilation-about-wrapper .swiper.legal-active-end::before {
+/* .compilation-about-wrapper .swiper.legal-active-end::before */
+.compilation-about-wrapper .swiper.legal-active-end::after {
     position: absolute;
     left: 0px;
     z-index: 1;
@@ -284,7 +286,8 @@
     border-left: 2px solid var( --Base-base-09 );
 }
 
-.compilation-about-wrapper .swiper.legal-active-end::before {
+/* .compilation-about-wrapper .swiper.legal-active-end::before */
+.compilation-about-wrapper .swiper.legal-active-end::after {
     background: linear-gradient(-90deg, rgba(255, 255, 255, 0.00) 0%, #C7BFFF 100%);
 }
 
@@ -324,7 +327,8 @@
     color: var( --Base-link-hover );
 }
 
-.compilation-about-wrapper .swiper.legal-active-end:not( .legal-short-str )::before {
+/* .compilation-about-wrapper .swiper.legal-active-end:not( .legal-short-str )::before */
+.compilation-about-wrapper .swiper.legal-active-end:not( .legal-short-str )::after {
     content: "";
 }
 
