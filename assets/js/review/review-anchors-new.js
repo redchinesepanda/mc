@@ -4,7 +4,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	const swip = document.querySelectorAll('.swiper');
 
-	function initSwiper( el ) {
+	function initSwiper() {
+		setTimeout( startSwiper, 1000 );
+	}
+
+	function startSwiper( el ) {
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
@@ -30,7 +34,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 	}
 
-	swip.forEach( setTimeout(initSwiper, 1000) );
+	swip.forEach( initSwiper );
 
 /* 	document.querySelectorAll('.swiper').forEach(el => {
 		--------------------Swiper--------------
