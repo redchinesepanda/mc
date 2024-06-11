@@ -10,7 +10,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		cutControl : '.compilation-about .legal-cut-control',
 
-		paragraph : '.compilation-about .section-content-text',
+		paragraph : '.compilation-about .section-content-text:not( .legal-cut-item )',
 
 	};
 
@@ -58,8 +58,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function initClamp( cut ) {
 		if ( !cut ) {
+			console.log('нет спойлера');
             return;
         };
+
+		console.log('есть спойлер');
 
 		let paragr = document.querySelectorAll( selectors.paragraph );
 
