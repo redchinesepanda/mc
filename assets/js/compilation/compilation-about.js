@@ -62,11 +62,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function initClamp( cut ) {
 		if ( !cut ) {
-			console.log('нет спойлера');
+			// console.log('нет спойлера');
             return;
         };
 
-		console.log('есть спойлер');
+		// console.log('есть спойлер');
 
 		if ( !paragr ) {
             return;
