@@ -7,25 +7,25 @@ class ToolSitemapXML
 {
     public static function register_functions()
     {
-        // $handler = new self();
+        $handler = new self();
 
-        // // add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
+        // add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );
 
-        // // Отключение провайдера карт сайтов: пользователи и таксономии
+        // Отключение провайдера карт сайтов: пользователи и таксономии
 
-        // add_filter( 'wp_sitemaps_add_provider', [ $handler, 'kama_remove_sitemap_provider' ], 10, 2 );
+        add_filter( 'wp_sitemaps_add_provider', [ $handler, 'kama_remove_sitemap_provider' ], 10, 2 );
         
-        // //  Отключение типа записи из карты сайта
+        //  Отключение типа записи из карты сайта
 
-        // add_filter( 'wp_sitemaps_post_types', [ $handler,'wpkama_remove_sitemaps_post_types' ] );
+        add_filter( 'wp_sitemaps_post_types', [ $handler,'wpkama_remove_sitemaps_post_types' ] );
 
-        // # Добавление колонок Last Modified, Change Frequency, Priority
+        # Добавление колонок Last Modified, Change Frequency, Priority
 
-        // add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wpkama_sitemaps_posts_entry' ], 10, 2 );
+        add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wpkama_sitemaps_posts_entry' ], 10, 2 );
 
-        // # Изменение параметров запроса WP_Query для карты сайта posts
+        # Изменение параметров запроса WP_Query для карты сайта posts
 
-        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
     }
 
     public static function check_sitemap_enabled()
