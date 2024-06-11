@@ -309,11 +309,11 @@
     color: var( --Base-link-hover );
 }
 
-.compilation-about-wrapper .swiper.legal-active-end::before {
+.compilation-about-wrapper .swiper.legal-active-end:not( .legal-short-str )::before {
     content: "";
 }
 
-.compilation-about-wrapper .swiper:not( .legal-active-end ):after {
+.compilation-about-wrapper .swiper:not( .legal-active-end ):not( .legal-short-str ):after {
     content: "";
 }
 
