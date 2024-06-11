@@ -2,13 +2,9 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	const swip = document.querySelectorAll('.swiper');
 
-	function initSwiper() {
-		setTimeout( startSwiper, 1000 );
-	};
-
-	function startSwiper( el ) {
+	document.querySelectorAll('.swiper').forEach(el => {
+		/* --------------------Swiper-------------- */
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
@@ -16,52 +12,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 
 		swiper.on('slideChange', function () {
-			/* console.log('slide changed'); */
+			// console.log('slide changed');
 		});
 
 		swiper.on('reachBeginning', function () {
-			/* console.log('slide reachBeginning'); */
+			// console.log('slide reachBeginning');
 
 			el.classList.add('legal-active-start');
 			el.classList.remove('legal-active-end');
 		}); 
 
 		swiper.on('reachEnd', function () {
-			/* console.log('slide reachEnd'); */
+			// console.log('slide reachEnd');
 
 			el.classList.add('legal-active-end');
 			el.classList.remove('legal-active-start');
 		});
-	};
-
-	swip.forEach( initSwiper );
-
-/* 	document.querySelectorAll('.swiper').forEach(el => {
-		--------------------Swiper--------------
-		const swiper = new Swiper(el, {
-			loop: false,
-			slidesPerView: 'auto',
-			spaceBetween: 8,
-		});
-
-		swiper.on('slideChange', function () {
-			console.log('slide changed');
-		});
-
-		swiper.on('reachBeginning', function () {
-			console.log('slide reachBeginning');
-
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
-		}); 
-
-		swiper.on('reachEnd', function () {
-			console.log('slide reachEnd');
-
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
-		});
-	}); */
+	});
 
 	const settings = {
 		behavior : {
