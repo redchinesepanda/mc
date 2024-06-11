@@ -89,7 +89,7 @@ class MultisiteHreflang
 
 		// $post_path = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 		
-		$permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
+		// $permalink_post_uri = Permalink_Manager_URI_Functions_Post::get_post_uri( $post );
 
 		// $permalink_uri = ToolPermalink::get_post_uri( $post->ID );
 
