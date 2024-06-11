@@ -165,13 +165,13 @@
     display: inline-block;
 } */
 
-.compilation-about .section-content-text {
+.compilation-about .section-content-text:not( .legal-cut-item ) {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.compilation-about .section-content-text.legal-active {
+.compilation-about .section-content-text:not( .legal-cut-item ).legal-active {
     display: -webkit-box;
 }
 
