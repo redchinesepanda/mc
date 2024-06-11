@@ -38,7 +38,7 @@ require_once( 'ToolBootsrap.php' );
 
 require_once( 'ToolContent.php' );
 
-// require_once( 'ToolSitemapXML.php' );
+require_once( 'ToolSitemapXML.php' );
 
 require_once( 'ToolCategoryRedirect.php' );
 
@@ -61,7 +61,7 @@ class ToolsMain
     public static function register()
     {
 
-        // ToolSitemapXML::register();
+        ToolSitemapXML::register();
 
         // ToolRobots::register();
     }
@@ -94,7 +94,7 @@ class ToolsMain
 
         ToolRobots::register();
 
-        // ToolSitemapXML::register_functions();
+        ToolSitemapXML::register_functions();
         
         ToolRewrite::register_functions();
 
