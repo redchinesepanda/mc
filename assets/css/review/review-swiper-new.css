@@ -45,6 +45,10 @@
   height: 36px;
 }
 
+.legal-tabs-info .swiper-wrapper {
+  height: 52px;
+}
+
 .review-group .swiper {
   width: 100%;
 }
