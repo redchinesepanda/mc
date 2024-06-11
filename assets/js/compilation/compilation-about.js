@@ -2,8 +2,6 @@
 
 document.addEventListener( 'DOMContentLoaded', function () {
 
-	console.log( 'compilation-about-js start' );
-
 	const selectors = {
 
 		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
