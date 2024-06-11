@@ -60,11 +60,11 @@ class ToolRobots
 
 				// WP Sitemap XML
 				
-				// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+				'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
 
 				// Yoast SEO Sitemap XML
 				
-				'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
+				// 'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
 			];
 		}
 
