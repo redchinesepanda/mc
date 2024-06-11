@@ -54,13 +54,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		buttonToTop : '.legal-section-anchors .legal-to-top',
 
-		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
+		// stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper'
 	};
 
 	const classes = {
 		active : 'legal-active',
 
-		shortStr: 'legal-short-str',
+		// shortStr: 'legal-short-str',
 	};
 	
 	document.querySelectorAll( selectors.anchorsItem ).forEach( anchor => {
@@ -112,11 +112,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
    
     window.addEventListener( events.scroll, initScroll );
 
-	// достижение ширины контейнера старт
+	// заполнение ширины контейнера свайпером старт
 
-	function overflow(e) {
+	/* function overflow(e) {
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-	}
+	} */
 
 	function defineOverflow( str ) {
 		if ( !str ) {
@@ -132,11 +132,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		}; */
 	};
 
-	defineOverflow( document.querySelector(selectors.stringSwiper ) );
+	// defineOverflow( document.querySelector(selectors.stringSwiper ) );
 
 	// document.querySelector( '.compilation-about .swiper-wrapper' ).forEach( defineOverflow );
 
-	// достижение ширины контейнера конец
+	// заполнение ширины контейнера свайпером конец
 
 
 	// const buttonToTop = document.querySelector( selectors.buttonToTop );
