@@ -9,7 +9,7 @@ class ToolSitemapXML
     {
         // Disable WP XML Sitemaps
 
-        add_filter( 'wp_sitemaps_enabled', '__return_false' );
+        // add_filter( 'wp_sitemaps_enabled', '__return_false' );
 
         $handler = new self();
 
