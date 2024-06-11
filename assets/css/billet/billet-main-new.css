@@ -909,6 +909,6 @@ body {
     color: var( --Base-base-05 );
 }
 
-.billet-item .footer-tnc-link[href="#"] {
+.billet-item .footer-tnc-link[href=""] {
     pointer-events: none;
 }
