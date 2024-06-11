@@ -47,7 +47,8 @@
         padding-top: 64px;
     }
 
-    .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
+    .compilation-about-wrapper .swiper:not( .legal-active-end ):after,
+    .compilation-about-wrapper .swiper.legal-active-end::after {
         top: 64px;
     }
 
@@ -111,7 +112,8 @@
         padding-top: 40px;
     }
 
-    .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
+    .compilation-about-wrapper .swiper:not( .legal-active-end ):after,
+    .compilation-about-wrapper .swiper.legal-active-end::after {
         top: 40px;
     }
 
@@ -251,7 +253,7 @@
 .compilation-about-wrapper .swiper.legal-active-end::after {
     position: absolute;
     left: 0px;
-    z-index: 1;
+    /* z-index: 1; */
 } 
 
 .compilation-about-wrapper .swiper:not( .legal-active-end ):after {
