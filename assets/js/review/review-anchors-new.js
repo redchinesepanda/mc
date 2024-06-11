@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initSwiper() {
 		setTimeout( startSwiper, 1000 );
-	}
+	};
 
 	function startSwiper( el ) {
 		const swiper = new Swiper(el, {
@@ -32,7 +32,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			el.classList.add('legal-active-end');
 			el.classList.remove('legal-active-start');
 		});
-	}
+	};
 
 	swip.forEach( initSwiper );
 
