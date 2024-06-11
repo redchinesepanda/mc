@@ -54,7 +54,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	function openParagr()
 	{
 		// element.classList.remove( classes.active );
-		paragr.classList.remove( classes.active );
+		// paragr.classList.remove( classes.active );
+		paragr.forEach( ( elem ) => {
+			elem.classList.remove( classes.active );
+		});
 	}
 
 	function initClamp( cut ) {
