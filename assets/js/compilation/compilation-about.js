@@ -46,14 +46,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	// сокращение текста до многоточия старт
 
+	let paragr = document.querySelectorAll( selectors.paragraph );
+
 	function clampParagr( element )
 	{
 		element.classList.add( classes.active );
 	};
 
-	function openParagr( element )
+	function openParagr()
 	{
-		element.classList.remove( classes.active );
+		// element.classList.remove( classes.active );
+		paragr.classList.remove( classes.active );
 	}
 
 	function initClamp( cut ) {
@@ -64,17 +67,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		console.log('есть спойлер');
 
-		let paragr = document.querySelectorAll( selectors.paragraph );
-
 		if ( !paragr ) {
             return;
         };
 
 		paragr.forEach( clampParagr );
 
-		if ( cut.classList.contains( classes.active ) ) {
+		cut.addEventListener( 'click', openParagr, false );
+
+		/* if ( cut.classList.contains( classes.active ) ) {
 			paragr.forEach( openParagr );
-		}
+		} */
 
 	};
 
