@@ -8,6 +8,11 @@
         overflow: hidden;
     } */
 
+}
+
+@media screen and ( min-width: 960px ) {
+    /* Display */
+
     .compilation-about {
         column-gap: 64px;
     }
