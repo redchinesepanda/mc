@@ -141,7 +141,7 @@ class ToolTaxonomy
 
 		// $parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
 
-		// self::repare_incorrect_terms( $terms );
+		self::repare_incorrect_terms( $terms );
 
 		// LegalDebug::debug( [
 		// 	'ToolTaxonomy' => 'get_incorrect_terms',
