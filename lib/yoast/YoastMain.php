@@ -25,7 +25,7 @@ class YoastMain
 
     public static function register()
     {
-        YoastOG::register();
+        // YoastOG::register();
 
         $handler = new self();
 
@@ -53,6 +53,8 @@ class YoastMain
         add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
 
         YoastSitemapXML::register_functions();
+
+        YoastOG::register();
     }
 
     /**
