@@ -48,6 +48,8 @@ require_once( 'ToolRewrite.php' );
 
 require_once( 'ToolPermalink.php' );
 
+require_once( 'ToolTaxonomy.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -99,6 +101,8 @@ class ToolsMain
         ToolRewrite::register_functions();
 
         // ToolPermalink::register_functions();
+
+        ToolTaxonomy::register_functions();
     }
 }
 
