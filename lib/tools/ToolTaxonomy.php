@@ -84,9 +84,15 @@ class ToolTaxonomy
 		LegalDebug::debug( [
 			'ToolTaxonomy' => 'get_incorrect_terms',
 
-			'terms' => count( $terms ),
+			'terms-count' => count( $terms ),
+			
+			'terms' => $terms,
 
-			'parts' => count( $parts ),
+			'parts-count' => count( $parts ),
+
+			'parts' => $parts,
+
+			'parts_terms-count' => count( $parts_terms ),
 
 			'parts_terms' => $parts_terms,
 		] );
