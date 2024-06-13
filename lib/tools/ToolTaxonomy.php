@@ -53,13 +53,13 @@ class ToolTaxonomy
 
 			self::repare_incorrect_terms( $terms );
 
-			// LegalDebug::debug( [
-			// 	'ToolTaxonomy' => 'get_incorrect_terms',
+			LegalDebug::debug( [
+				'ToolTaxonomy' => 'get_incorrect_terms',
 	
-			// 	'count' => count( $terms ),
+				'count' => count( $terms ),
 
-			// 	'parts' => $parts,
-			// ] );
+				'parts' => $parts,
+			] );
 
 			// self::render_message( [
 			// 	'count' => count( $terms ),
@@ -91,11 +91,11 @@ class ToolTaxonomy
 				'name' => str_replace( ', ', '-', $term->name ),
 			];
 
-			LegalDebug::debug( [
-				'MultisiteTerms' => 'repare_incorrect_terms',
+			// LegalDebug::debug( [
+			// 	'MultisiteTerms' => 'repare_incorrect_terms',
 
-				'args' => $args,
-			] );
+			// 	'args' => $args,
+			// ] );
 
 			// wp_update_term( $term->term_id, $term->taxonomy, $args );
 		}
