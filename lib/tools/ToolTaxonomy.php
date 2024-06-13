@@ -31,13 +31,13 @@ class ToolTaxonomy
 		
 		// $terms = get_terms( 'billet_feature' );
 
-		// LegalDebug::debug( [
-		// 	'ToolTaxonomy' => 'get_incorrect_terms',
+		LegalDebug::debug( [
+			'ToolTaxonomy' => 'get_incorrect_terms',
 
-		// 	'args' => $args,
+			'args' => $args,
 
-		// 	'terms' => $terms,
-		// ] );
+			'terms' => $terms,
+		] );
 
 		// self::render_message( [
 		// 	'ToolTaxonomy' => 'get_incorrect_terms',
@@ -71,9 +71,29 @@ class ToolTaxonomy
 		return [];
     }
 
+	public static function handle_incorrect_terms_posts( $term, $posts )
+	{
+		foreach ( $posts as $post_id )
+		{
+			if ( ! has_term( $term, self::TAXONOMY[ 'billet-feature' ], $post_id ) )
+			{
+				wp_set_post_terms( $post_id, $term, self::TAXONOMY[ 'billet-feature' ], true );
+			}
+		}
+	}
+
 	public static function handle_incorrect_terms()
 	{
 		$terms = self::get_incorrect_terms();
+
+		foreach ( $terms as $term )
+		{
+			$parts = self::get_incorrect_parts( [ term ] );
+
+			$parts_terms = self::get_incorrect_parts_terms( $parts );
+
+			$parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
+		}
 
 		$parts = self::get_incorrect_parts( $terms );
 
