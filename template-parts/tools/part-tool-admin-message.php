@@ -1,0 +1,1 @@
+<div class="notice notice-info"><?php LegalDebug::debug( [ 'args' => $args ] ); ?></div>
