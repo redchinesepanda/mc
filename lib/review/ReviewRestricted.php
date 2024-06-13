@@ -90,25 +90,30 @@ class ReviewRestricted
 	{
 		$parsed_url = parse_url( $href );
 
-		$current_site = MultisiteBlog::get_current_site();
+		if ( in_array( $parsed_url[ 'scheme' ], [ 'https', 'http' ] ) )
+		{
+			$current_site = MultisiteBlog::get_current_site();
+	
+			$path = $current_site->path;
+	
+			$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', $path, $parsed_url[ 'path' ]);
+	
+			LegalDebug::debug( [
+				'ReviewRestricted' => 'get_relative',
+	
+				'href' => $href,
+	
+				'parsed_url' => $parsed_url,
+	
+				'href_replaced' => $href_replaced,
+			] );
+	
+			// return $href;
+	
+			return $href_replaced;
+		}
 
-		$path = $current_site->path;
-
-		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', $path, $parsed_url[ 'path' ]);
-
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_relative',
-
-			'href' => $href,
-
-			'parsed_url' => $parsed_url,
-
-			'href_replaced' => $href_replaced,
-		] );
-
-		// return $href;
-
-		return $href_replaced;
+		return $href;
 	}
 
 	public static function modify_filtered( $nodes )
