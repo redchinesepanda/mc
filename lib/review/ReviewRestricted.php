@@ -86,7 +86,7 @@ class ReviewRestricted
 	{
 		$parsed_url = parse_url( $href );
 
-		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', '/', $parsed_url[ 'path' ])
+		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', '/', $parsed_url[ 'path' ]);
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_relative',
