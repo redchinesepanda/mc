@@ -23,7 +23,9 @@ class ToolTaxonomy
 			'search' => ',',
 		];
 
-		$terms = get_terms( $args );
+		// $terms = get_terms( $args );
+		
+		$terms = get_terms( 'billet_feature' );
 
 		self::render_message( [
 			'args' => $args,
