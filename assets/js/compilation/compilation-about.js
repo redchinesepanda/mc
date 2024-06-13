@@ -25,7 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	function overflow(e) {
 		// console.log( e.scrollWidth );
 		// console.log( e.offsetWidth );
-		return e.scrollWidth + 2 > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
 	function defineOverflow( str ) {
@@ -33,8 +33,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
-		// return setTimeout(overflow(str), 500) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		// return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		return setTimeout(overflow(str), 500) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
