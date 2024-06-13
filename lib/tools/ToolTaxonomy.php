@@ -79,7 +79,7 @@ class ToolTaxonomy
 			{
 				// wp_set_post_terms( $post_id, $term->slug, self::TAXONOMY[ 'billet-feature' ], true );
 
-				LegalDebug::( [
+				LegalDebug::debug( [
 					'ToolTaxonomy' => 'handle_incorrect_terms_posts',
 
 					'post_id' => $post_id,
