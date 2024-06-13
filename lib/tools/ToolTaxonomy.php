@@ -71,7 +71,7 @@ class ToolTaxonomy
 
 		foreach ( $terms as $term )
 		{
-			$parts = array_merge( $parts, explode( ',', $term->name ) );
+			$parts = array_merge( $parts, explode( ', ', $term->name ) );
 		}
 
 		return $parts;
