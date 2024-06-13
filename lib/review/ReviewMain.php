@@ -40,7 +40,7 @@ require_once( 'ReviewCut.php' );
 
 require_once( 'ReviewVideo.php' );
 
-// require_once( 'ReviewRestricted.php' );
+require_once( 'ReviewRestricted.php' );
 
 class ReviewMain
 {
@@ -285,7 +285,7 @@ class ReviewMain
 
         ReviewVideo::register();
 
-        // ReviewRestricted::register();
+        ReviewRestricted::register();
     }
 
     public static function encoding( $content )
