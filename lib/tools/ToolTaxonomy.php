@@ -118,6 +118,8 @@ class ToolTaxonomy
 			'name' => $parts,
 
 			'hide_empty' => false,
+
+			'fields' => 'ids',
 		];
 
 		$terms = get_terms( $args );
