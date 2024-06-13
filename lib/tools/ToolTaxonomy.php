@@ -79,6 +79,8 @@ class ToolTaxonomy
 
 		$parts_terms = self::get_incorrect_parts_terms( $parts );
 
+		$parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
+
 		self::repare_incorrect_terms( $terms );
 
 		LegalDebug::debug( [
@@ -95,6 +97,10 @@ class ToolTaxonomy
 			'parts_terms-count' => count( $parts_terms ),
 
 			// 'parts_terms' => $parts_terms,
+
+			'parts_terms_posts-count' => count( $parts_terms_posts ),
+
+			// 'parts_terms_posts' => $parts_terms_posts,
 		] );
 	}
 
@@ -119,7 +125,9 @@ class ToolTaxonomy
 
 			'hide_empty' => false,
 
-			'fields' => 'ids',
+			// 'fields' => 'ids',
+			
+			'fields' => 'id=>slug',
 		];
 
 		$terms = get_terms( $args );
@@ -127,6 +135,39 @@ class ToolTaxonomy
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
 			return $terms;
+		}
+
+		return [];
+	}
+
+	public static function get_incorrect_parts_terms_posts( $terms = [] )
+	{
+		// if ( empty( $terms ) )
+		// {
+		// 	$terms = self::TERM[ 'cross' ];
+		// }
+
+		$posts =  get_posts( [
+			'post_type' => 'page',
+
+			'numberposts' => -1,
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
+
+					'field' => 'slug',
+
+					'terms' => $terms,
+
+					'include_children' => false,
+				],
+			],
+		] );
+
+		if ( !empty( $posts ) )
+		{
+			return $posts;
 		}
 
 		return [];
