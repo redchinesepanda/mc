@@ -8,7 +8,7 @@ class ToolTaxonomy
 
         // add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );2 );
 
-		self::get_incorrect_terms();
+		self::handle_incorrect_terms();
     }
 
 	const TAXONOMY = [
@@ -49,23 +49,48 @@ class ToolTaxonomy
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
-			$parts = self::get_incorrect_parts( $terms );
+			// $parts = self::get_incorrect_parts( $terms );
 
-			self::repare_incorrect_terms( $terms );
+			// self::repare_incorrect_terms( $terms );
 
-			LegalDebug::debug( [
-				'ToolTaxonomy' => 'get_incorrect_terms',
+			// LegalDebug::debug( [
+			// 	'ToolTaxonomy' => 'get_incorrect_terms',
 	
-				'count' => count( $terms ),
+			// 	'count' => count( $terms ),
 
-				'parts' => $parts,
-			] );
+			// 	'parts' => $parts,
+			// ] );
 
 			// self::render_message( [
 			// 	'count' => count( $terms ),
 			// ] );
+
+			return $terms;
 		}
+
+		return [];
     }
+
+	public static function handle_incorrect_terms()
+	{
+		$terms = self::get_incorrect_terms();
+
+		$parts = self::get_incorrect_parts( $terms );
+
+		$parts_terms = self::get_incorrect_parts_terms( $parts );
+
+		self::repare_incorrect_terms( $terms );
+
+		LegalDebug::debug( [
+			'ToolTaxonomy' => 'get_incorrect_terms',
+
+			'terms' => count( $terms ),
+
+			'parts' => count( $parts ),
+
+			'parts_terms' => $parts_terms,
+		] );
+	}
 
 	public static function get_incorrect_parts( $terms )
 	{
@@ -77,6 +102,26 @@ class ToolTaxonomy
 		}
 
 		return $parts;
+	}
+
+	public static function get_incorrect_parts_terms( $parts )
+	{
+		$args = [
+			'taxonomy' => self::TAXONOMY,
+
+			'name' => $parts,
+
+			'hide_empty' => false,
+		];
+
+		$terms = get_terms( $args );
+
+		if ( $terms && ! is_wp_error( $terms ) )
+		{
+			return $terms;
+		}
+
+		return [];
 	}
 
 	public static function repare_incorrect_terms( $terms )
