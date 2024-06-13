@@ -90,7 +90,7 @@ class ToolTaxonomy
 
 			'parts-count' => count( $parts ),
 
-			'parts' => $parts,
+			// 'parts' => $parts,
 
 			'parts_terms-count' => count( $parts_terms ),
 
