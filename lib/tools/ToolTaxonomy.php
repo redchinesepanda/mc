@@ -31,13 +31,13 @@ class ToolTaxonomy
 		
 		// $terms = get_terms( 'billet_feature' );
 
-		LegalDebug::debug( [
-			'ToolTaxonomy' => 'get_incorrect_terms',
+		// LegalDebug::debug( [
+		// 	'ToolTaxonomy' => 'get_incorrect_terms',
 
-			'args' => $args,
+		// 	'args' => $args,
 
-			'terms' => $terms,
-		] );
+		// 	'terms' => $terms,
+		// ] );
 
 		// self::render_message( [
 		// 	'ToolTaxonomy' => 'get_incorrect_terms',
@@ -49,10 +49,14 @@ class ToolTaxonomy
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
+			$parts = self::get_incorrect_parts( $terms );
+
 			LegalDebug::debug( [
 				'ToolTaxonomy' => 'get_incorrect_terms',
 	
 				'count' => count( $terms ),
+
+				'parts' => $parts,
 			] );
 
 			// self::render_message( [
@@ -60,6 +64,18 @@ class ToolTaxonomy
 			// ] );
 		}
     }
+
+	public static function get_incorrect_parts( $terms )
+	{
+		$parts = [];
+
+		foreach ( $terms as $term )
+		{
+			$parts = array_merge( $parts, explode( ',', $term->name ) );
+		}
+
+		return $parts;
+	}
 
 	const TEMPLATE = [
         'message' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-admin-message.php',
