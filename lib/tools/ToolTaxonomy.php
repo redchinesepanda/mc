@@ -75,9 +75,19 @@ class ToolTaxonomy
 	{
 		foreach ( $posts as $post_id )
 		{
-			if ( ! has_term( $term, self::TAXONOMY[ 'billet-feature' ], $post_id ) )
+			if ( ! has_term( $term->slug, self::TAXONOMY[ 'billet-feature' ], $post_id ) )
 			{
-				wp_set_post_terms( $post_id, $term, self::TAXONOMY[ 'billet-feature' ], true );
+				// wp_set_post_terms( $post_id, $term->slug, self::TAXONOMY[ 'billet-feature' ], true );
+
+				LegalDebug::( [
+					'ToolTaxonomy' => 'handle_incorrect_terms_posts',
+
+					'post_id' => $post_id,
+
+					'slug' => $term->slug,
+
+					'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
+				] );
 			}
 		}
 	}
@@ -86,6 +96,14 @@ class ToolTaxonomy
 	{
 		$terms = self::get_incorrect_terms();
 
+		// LegalDebug::debug( [
+		// 	'ToolTaxonomy' => 'get_incorrect_terms',
+
+		// 	'terms-count' => count( $terms ),
+			
+		// 	// 'terms' => $terms,
+		// ] );
+
 		foreach ( $terms as $term )
 		{
 			$parts = self::get_incorrect_parts( [ term ] );
@@ -93,35 +111,55 @@ class ToolTaxonomy
 			$parts_terms = self::get_incorrect_parts_terms( $parts );
 
 			$parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
+
+			self::handle_incorrect_terms_posts( $term, $posts );
+
+			LegalDebug::debug( [
+				'ToolTaxonomy' => 'get_incorrect_terms',
+
+				'term' => $term,
+				
+				'parts-count' => count( $parts ),
+
+				// 'parts' => $parts,
+
+				'parts_terms-count' => count( $parts_terms ),
+
+				// 'parts_terms' => $parts_terms,
+
+				'parts_terms_posts-count' => count( $parts_terms_posts ),
+
+				// 'parts_terms_posts' => $parts_terms_posts,
+			] );
 		}
 
-		$parts = self::get_incorrect_parts( $terms );
+		// $parts = self::get_incorrect_parts( $terms );
 
-		$parts_terms = self::get_incorrect_parts_terms( $parts );
+		// $parts_terms = self::get_incorrect_parts_terms( $parts );
 
-		$parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
+		// $parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
 
-		self::repare_incorrect_terms( $terms );
+		// self::repare_incorrect_terms( $terms );
 
-		LegalDebug::debug( [
-			'ToolTaxonomy' => 'get_incorrect_terms',
+		// LegalDebug::debug( [
+		// 	'ToolTaxonomy' => 'get_incorrect_terms',
 
-			'terms-count' => count( $terms ),
+		// 	'terms-count' => count( $terms ),
 			
-			// 'terms' => $terms,
+		// 	// 'terms' => $terms,
 
-			'parts-count' => count( $parts ),
+		// 	'parts-count' => count( $parts ),
 
-			// 'parts' => $parts,
+		// 	// 'parts' => $parts,
 
-			'parts_terms-count' => count( $parts_terms ),
+		// 	'parts_terms-count' => count( $parts_terms ),
 
-			// 'parts_terms' => $parts_terms,
+		// 	// 'parts_terms' => $parts_terms,
 
-			'parts_terms_posts-count' => count( $parts_terms_posts ),
+		// 	'parts_terms_posts-count' => count( $parts_terms_posts ),
 
-			// 'parts_terms_posts' => $parts_terms_posts,
-		] );
+		// 	// 'parts_terms_posts' => $parts_terms_posts,
+		// ] );
 	}
 
 	public static function get_incorrect_parts( $terms )
