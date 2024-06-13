@@ -59,15 +59,20 @@
         padding-bottom: 28px;
     }
 
+    .home .legal-tabs .legal-tabs-title {
+        margin-right: auto;
+    }
+
     .home .legal-tabs .legal-tabs-title + .legal-tab-menu {
         margin-top: calc( 24px + ( ( 58px - 46px ) / 2 ) );
-        margin-left: auto;
+        /* margin-left: auto; */
     }
 
     /* Tabs Typography */
 
     .home .legal-tabs .legal-tabs-title {
-        font-size: 48px;
+        /* font-size: 48px; */
+        font-size: 40px;
         line-height: 58px;
     }
 
