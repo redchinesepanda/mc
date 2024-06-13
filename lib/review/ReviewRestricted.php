@@ -2,6 +2,10 @@
 
 class ReviewRestricted
 {
+	const DOMAINS = [
+		'production-main' => 'match.center',
+	];
+
 	const HREF_PARTS = [
 		'wiki' => "wiki-tag",
 	];
@@ -140,7 +144,9 @@ class ReviewRestricted
 
     public static function get_nodes_anchors_not_wiki( $dom )
 	{
-		$domain = MultisiteBlog::get_main_domain();
+		// $domain = MultisiteBlog::get_main_domain();
+
+		$domain = self::DOMAINS[ 'production-main' ];
 
 		// $query = sprintf( self::PATTERNS[ 'a-not-contains-href' ], self::HREF_PARTS[ 'wiki' ] );
 		
@@ -226,7 +232,7 @@ class ReviewRestricted
 	{
 		// $domain = MultisiteBlog::get_main_domain();
 		
-		$domain = 'match.center';
+		$domain = self::DOMAINS[ 'production-main' ];
 
 		$query = sprintf( self::PATTERNS[ 'a-contains-href' ], $domain, self::HREF_PARTS[ 'wiki' ] );
 
