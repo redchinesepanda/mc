@@ -162,6 +162,22 @@ class ToolTaxonomy
 		// ] );
 	}
 
+	public static function delete_incorrect_terms( $terms )
+	{
+		foreach ( $terms as $term_id => $term_slug )
+		{
+			LegalDebug::debug( [
+				'ToolTaxonomy' => 'delete_incorrect_terms',
+
+				'term_id' => $term_id,
+
+				'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
+			] );
+
+			// wp_delete_term( $term_id, self::TAXONOMY[ 'billet-feature' ] );
+		}
+	}
+
 	public static function get_incorrect_parts( $terms )
 	{
 		$parts = [];
@@ -247,26 +263,24 @@ class ToolTaxonomy
 
 	public static function repare_incorrect_terms( $terms )
 	{
-		// $parts = [];
-
 		foreach ( $terms as $term )
 		{
-			// $parts = array_merge( $parts, explode( ', ', $term->name ) );
-
 			$args = [
 				'name' => str_replace( ', ', '-', $term->name ),
 			];
 
-			// LegalDebug::debug( [
-			// 	'MultisiteTerms' => 'repare_incorrect_terms',
+			LegalDebug::debug( [
+				'MultisiteTerms' => 'repare_incorrect_terms',
 
-			// 	'args' => $args,
-			// ] );
+				'term_id' => $term->term_id,
+
+				'taxonomy' => $term->taxonomy,
+
+				'args' => $args,
+			] );
 
 			// wp_update_term( $term->term_id, $term->taxonomy, $args );
 		}
-
-		// return $parts;
 	}
 
 	const TEMPLATE = [
