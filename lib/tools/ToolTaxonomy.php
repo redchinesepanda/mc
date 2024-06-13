@@ -20,12 +20,8 @@ class ToolTaxonomy
         $args = [
 			'taxonomy' => self::TAXONOMY,
 
-			'search' => ',',
+			// 'search' => ',',
 		];
-
-		// LegalDebug::debug( [
-		// 	'args' => $args,
-		// ] );
 
 		self::render_message( [
 			'args' => $args,
@@ -35,11 +31,9 @@ class ToolTaxonomy
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
-			// LegalDebug::debug( [
-			// 	'terms' => $terms,
-			// ] );
-
 			self::render_message( [
+				'count' => count( $terms ),
+
 				'terms' => $terms,
 			] );
 		}
