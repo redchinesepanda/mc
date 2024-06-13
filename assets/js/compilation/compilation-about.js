@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		cutControl : '.compilation-about .legal-cut-control',
 
-		paragraph : '.compilation-about .section-content-text:not( .legal-cut-item )',
+		paragraph : '.compilation-about .section-content-text:first-of-type',
 
 	};
 
@@ -16,11 +16,15 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		active : 'legal-active',
 
 		shortStr: 'legal-short-str',
+
+		clamp : 'legal-clamp',
 	};
 
 	// заполнение ширины контейнера свайпером старт
 
 	function overflow(e) {
+		// console.log( e.scrollWidth );
+		// console.log( e.offsetWidth );
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
@@ -29,7 +33,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		// return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		return setTimeout(overflow(str), 500) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
@@ -48,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function clampParagr( element )
 	{
-		element.classList.add( classes.active );
+		element.classList.add( classes.clamp );
 	};
 
 	function openParagr()
@@ -56,7 +61,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// element.classList.remove( classes.active );
 		// paragr.classList.remove( classes.active );
 		paragr.forEach( ( elem ) => {
-			elem.classList.remove( classes.active );
+			elem.classList.remove( classes.clamp );
 		});
 	}
 

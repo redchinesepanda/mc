@@ -151,7 +151,7 @@
     display: none;
 }
 
-.compilation-about .legal-cut-item:not( .legal-active ) {
+.compilation-about .legal-cut-item:not( .legal-active ):not( :first-of-type ) {
     display: none;
 }
 
@@ -167,13 +167,13 @@
     display: inline-block;
 } */
 
-.compilation-about .section-content-text:not( .legal-cut-item ) {
+.compilation-about .section-content-text:first-of-type {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.compilation-about .section-content-text:not( .legal-cut-item ).legal-active {
+.compilation-about .section-content-text:first-of-type.legal-clamp {
     display: -webkit-box;
 }
 
