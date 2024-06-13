@@ -236,11 +236,11 @@ class ReviewRestricted
 
 		$query = sprintf( self::PATTERNS[ 'a-contains-href' ], $domain, self::HREF_PARTS[ 'wiki' ] );
 
-		LegalDebug::debug( [
-			'ReviewRestricted' => 'get_nodes_anchors_wiki',
+		// LegalDebug::debug( [
+		// 	'ReviewRestricted' => 'get_nodes_anchors_wiki',
 
-			'query' => $query,
-		] );
+		// 	'query' => $query,
+		// ] );
 
 		return LegalDOM::get_nodes( $dom, $query );
 		
