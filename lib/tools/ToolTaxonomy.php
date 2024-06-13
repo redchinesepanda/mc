@@ -29,6 +29,8 @@ class ToolTaxonomy
 
 		self::render_message( [
 			'args' => $args,
+			
+			'count' => count( $terms ),
 
 			'terms' => $terms,
 		] );
@@ -36,9 +38,6 @@ class ToolTaxonomy
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
 			self::render_message( [
-				'count' => count( $terms ),
-
-				'terms' => $terms,
 			] );
 		}
     }
