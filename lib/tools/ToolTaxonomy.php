@@ -147,7 +147,7 @@ class ToolTaxonomy
 		// 	$terms = self::TERM[ 'cross' ];
 		// }
 
-		$posts = get_posts( [
+		$args = [
 			'post_type' => 'page',
 
 			'numberposts' => -1,
@@ -163,12 +163,16 @@ class ToolTaxonomy
 					'include_children' => false,
 				],
 			],
-		] );
+		];
+
+		$posts = get_posts( $args );
 
 		LegalDebug::debug( [
 			'ToolTaxonomy' => 'get_incorrect_parts_terms_posts',
 
             'terms' => $terms,
+
+            'args' => $args,
 
 			'posts' => $posts,
 		] );
