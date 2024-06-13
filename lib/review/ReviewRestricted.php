@@ -103,7 +103,7 @@ class ReviewRestricted
 		{
 			// $href = apply_filters( 'mc_url_restricted', $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 			
-			$href = self::get_relative_part( $href );
+			$href = self::get_relative_part( $node->getAttribute( self::ATTRIBUTE[ 'href' ] ) );
 
 			// LegalDebug::debug( [
 			// 	'ReviewRestricted' => 'modify_filtered',
