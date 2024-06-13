@@ -48,7 +48,7 @@ require_once( 'ToolRewrite.php' );
 
 require_once( 'ToolPermalink.php' );
 
-require_once( 'ToolTaxonomy.php' );
+// require_once( 'ToolTaxonomy.php' );
 
 class ToolsMain
 {
@@ -67,7 +67,7 @@ class ToolsMain
 
         // ToolRobots::register();
 
-        ToolTaxonomy::register_functions();
+        // ToolTaxonomy::register();
     }
 
     public static function register_functions()
@@ -103,8 +103,6 @@ class ToolsMain
         ToolRewrite::register_functions();
 
         // ToolPermalink::register_functions();
-
-        // ToolTaxonomy::register_functions();
     }
 }
 
