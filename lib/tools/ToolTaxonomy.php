@@ -31,15 +31,7 @@ class ToolTaxonomy
 		
 		// $terms = get_terms( 'billet_feature' );
 
-		// LegalDebug::debug( [
-		// 	'ToolTaxonomy' => 'get_incorrect_terms',
-
-		// 	'args' => $args,
-
-		// 	'terms' => $terms,
-		// ] );
-
-		self::render_message( [
+		LegalDebug::debug( [
 			'ToolTaxonomy' => 'get_incorrect_terms',
 
 			'args' => $args,
@@ -47,11 +39,25 @@ class ToolTaxonomy
 			'terms' => $terms,
 		] );
 
+		// self::render_message( [
+		// 	'ToolTaxonomy' => 'get_incorrect_terms',
+
+		// 	'args' => $args,
+
+		// 	'terms' => $terms,
+		// ] );
+
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
-			self::render_message( [
+			LegalDebug::debug( [
+				'ToolTaxonomy' => 'get_incorrect_terms',
+	
 				'count' => count( $terms ),
 			] );
+
+			// self::render_message( [
+			// 	'count' => count( $terms ),
+			// ] );
 		}
     }
 
