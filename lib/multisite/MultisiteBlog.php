@@ -22,7 +22,7 @@ class MultisiteBlog
 		return $current_blog->domain;
 	}
 
-	public static function get_main_domain( $blog_id = '' )
+	public static function get_main_domain()
 	{
 		$main_blog_id = self::get_main_blog_id();
 
