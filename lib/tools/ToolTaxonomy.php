@@ -18,14 +18,12 @@ class ToolTaxonomy
 	public static function get_incorrect_terms()
     {
         $args = [
-			'taxonomy' => [
-				'billet_feature',
-			],
+			'taxonomy' => self::TAXONOMY,
 
-			// 'search' => ',',
+			'search' => ',',
 		];
 
-		$terms = get_terms( 'args' );
+		$terms = get_terms( $args );
 
 		self::render_message( [
 			'args' => $args,
