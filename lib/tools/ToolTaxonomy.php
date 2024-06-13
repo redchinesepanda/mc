@@ -148,7 +148,7 @@ class ToolTaxonomy
 		// }
 
 		$args = [
-			'post_type' => 'page',
+			'post_type' => [ 'page', 'legal_billet' ],
 
 			'numberposts' => -1,
 
