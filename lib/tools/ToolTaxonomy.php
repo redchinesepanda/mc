@@ -18,7 +18,9 @@ class ToolTaxonomy
 	public static function get_incorrect_terms()
     {
         $args = [
-			'taxonomy' => self::TAXONOMY,
+			'taxonomy' => [
+				'billet_feature',
+			],
 
 			// 'search' => ',',
 		];
