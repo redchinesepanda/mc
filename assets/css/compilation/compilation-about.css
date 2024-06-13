@@ -173,7 +173,7 @@
     overflow: hidden;
 }
 
-.compilation-about .section-content-text:first-of-type.legal-active {
+.compilation-about .section-content-text:first-of-type.legal-clamp {
     display: -webkit-box;
 }
 

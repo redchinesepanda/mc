@@ -16,6 +16,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		active : 'legal-active',
 
 		shortStr: 'legal-short-str',
+
+		clamp : 'legal-clamp',
 	};
 
 	// заполнение ширины контейнера свайпером старт
