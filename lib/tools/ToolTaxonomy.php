@@ -23,6 +23,10 @@ class ToolTaxonomy
 			'search' => ',',
 		];
 
+		LegalDebug::debug( [
+			'args' => $args,
+		] );
+
 		$terms = get_terms( 'args' );
 
 		if ( $terms && ! is_wp_error( $terms ) )
