@@ -12,7 +12,7 @@ class ToolTaxonomy
     }
 
 	const TAXONOMY = [
-		'billet_feature',
+		'billet-feature' => 'billet_feature',
 	];
 
 	public static function get_incorrect_terms()
@@ -21,15 +21,17 @@ class ToolTaxonomy
 			'taxonomy' => self::TAXONOMY,
 
 			'search' => ',',
+
+			'hide_empty' => false,
 		];
 
-		// $terms = get_terms( $args );
+		$terms = get_terms( $args );
 		
-		$terms = get_terms( 'billet_feature' );
+		// $terms = get_terms( 'billet_feature' );
 
 		self::render_message( [
 			'args' => $args,
-			
+
 			'count' => count( $terms ),
 
 			'terms' => $terms,
