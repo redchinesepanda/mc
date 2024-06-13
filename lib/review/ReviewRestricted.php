@@ -94,7 +94,9 @@ class ReviewRestricted
 			'parsed_url' => $parsed_url,
 		] );
 
-		return $href;
+		// return $href;
+
+		return preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', '/', $parsed_url[ 'path' ]);
 	}
 
 	public static function modify_filtered( $nodes )
