@@ -131,6 +131,8 @@ class ToolTaxonomy
 			] );
 
 			self::handle_incorrect_terms_posts( $term, $parts_terms_posts );
+
+			self::delete_incorrect_terms( $parts_terms );
 		}
 
 		// $parts = self::get_incorrect_parts( $terms );
