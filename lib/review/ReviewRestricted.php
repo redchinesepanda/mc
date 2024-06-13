@@ -224,7 +224,9 @@ class ReviewRestricted
 
     public static function get_nodes_anchors_wiki( $dom )
 	{
-		$domain = MultisiteBlog::get_main_domain();
+		// $domain = MultisiteBlog::get_main_domain();
+		
+		$domain = 'match.center';
 
 		$query = sprintf( self::PATTERNS[ 'a-contains-href' ], $domain, self::HREF_PARTS[ 'wiki' ] );
 
