@@ -18,6 +18,10 @@ class ReviewRestricted
 		'replaced-anchor' => 'legal-replaced-anchor'
 	];
 
+	const ATTRIBUTE = [
+		'href' => 'href',
+	];
+
 	// public static function check_contains_restricted_anchors()
 	
 	public static function check_contains_anchors()
@@ -280,10 +284,6 @@ class ReviewRestricted
 
 	// 	return $href;
 	// }
-
-	// const ATTRIBUTE = [
-	// 	'href' => 'href',
-	// ];
 
 	// public static function check_domain( $href )
 	// {
