@@ -92,7 +92,7 @@ class ReviewRestricted
 
 		$current_site = MultisiteBlog::get_current_site();
 
-		$path = MultisiteSiteswitcher::get_path( $current_site );
+		$path = $current_site->path;
 
 		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', $path, $parsed_url[ 'path' ]);
 
