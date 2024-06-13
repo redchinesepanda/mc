@@ -104,15 +104,15 @@ class ReviewRestricted
 	
 			$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', $path, $parsed_url[ 'path' ]);
 	
-			LegalDebug::debug( [
-				'ReviewRestricted' => 'get_relative',
+			// LegalDebug::debug( [
+			// 	'ReviewRestricted' => 'get_relative',
 	
-				'href' => $href,
+			// 	'href' => $href,
 	
-				'parsed_url' => $parsed_url,
+			// 	'parsed_url' => $parsed_url,
 	
-				'href_replaced' => $href_replaced,
-			] );
+			// 	'href_replaced' => $href_replaced,
+			// ] );
 	
 			// return $href;
 	
