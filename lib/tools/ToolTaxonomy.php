@@ -23,7 +23,11 @@ class ToolTaxonomy
 			'search' => ',',
 		];
 
-		LegalDebug::debug( [
+		// LegalDebug::debug( [
+		// 	'args' => $args,
+		// ] );
+
+		self::render_message( [
 			'args' => $args,
 		] );
 
@@ -31,10 +35,23 @@ class ToolTaxonomy
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
-			LegalDebug::debug( [
+			// LegalDebug::debug( [
+			// 	'terms' => $terms,
+			// ] );
+
+			self::render_message( [
 				'terms' => $terms,
 			] );
 		}
+    }
+
+	const TEMPLATE = [
+        'message' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-admin-message.php',
+    ];
+
+	public static function render_message( $args )
+    {
+		return LegalComponents::render_main( self::TEMPLATE[ 'message' ], $args );
     }
 }
 
