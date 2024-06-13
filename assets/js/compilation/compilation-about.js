@@ -53,7 +53,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function clampParagr( element )
 	{
-		element.classList.add( classes.active );
+		element.classList.add( classes.clamp );
 	};
 
 	function openParagr()
@@ -61,7 +61,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// element.classList.remove( classes.active );
 		// paragr.classList.remove( classes.active );
 		paragr.forEach( ( elem ) => {
-			elem.classList.remove( classes.active );
+			elem.classList.remove( classes.clamp );
 		});
 	}
 
