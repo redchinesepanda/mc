@@ -51,13 +51,15 @@ class ToolTaxonomy
 		{
 			$parts = self::get_incorrect_parts( $terms );
 
-			LegalDebug::debug( [
-				'ToolTaxonomy' => 'get_incorrect_terms',
-	
-				'count' => count( $terms ),
+			self::repare_incorrect_terms( $terms );
 
-				'parts' => $parts,
-			] );
+			// LegalDebug::debug( [
+			// 	'ToolTaxonomy' => 'get_incorrect_terms',
+	
+			// 	'count' => count( $terms ),
+
+			// 	'parts' => $parts,
+			// ] );
 
 			// self::render_message( [
 			// 	'count' => count( $terms ),
