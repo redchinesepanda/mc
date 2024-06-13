@@ -86,15 +86,15 @@ class ToolTaxonomy
 
 			'terms-count' => count( $terms ),
 			
-			'terms' => $terms,
+			// 'terms' => $terms,
 
 			'parts-count' => count( $parts ),
 
-			'parts' => $parts,
+			// 'parts' => $parts,
 
 			'parts_terms-count' => count( $parts_terms ),
 
-			'parts_terms' => $parts_terms,
+			// 'parts_terms' => $parts_terms,
 		] );
 	}
 
