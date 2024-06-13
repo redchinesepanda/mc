@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		cutControl : '.compilation-about .legal-cut-control',
 
-		paragraph : '.compilation-about .section-content-text:not( .legal-cut-item )',
+		paragraph : '.compilation-about .section-content-text:first-of-type',
 
 	};
 
