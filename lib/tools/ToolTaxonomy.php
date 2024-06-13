@@ -32,14 +32,13 @@ class ToolTaxonomy
 		self::render_message( [
 			'args' => $args,
 
-			'count' => count( $terms ),
-
 			'terms' => $terms,
 		] );
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
 			self::render_message( [
+				'count' => count( $terms ),
 			] );
 		}
     }
