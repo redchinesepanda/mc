@@ -23,11 +23,13 @@ class ToolTaxonomy
 			// 'search' => ',',
 		];
 
+		$terms = get_terms( 'args' );
+
 		self::render_message( [
 			'args' => $args,
-		] );
 
-		$terms = get_terms( 'args' );
+			'terms' => $terms,
+		] );
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
