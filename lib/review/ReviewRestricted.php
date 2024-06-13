@@ -7,9 +7,11 @@ class ReviewRestricted
 	];
 
 	const PATTERNS = [
-		'a-not-contains-href' => "//a[not(contains(@href, '%s'))]",
+		// 'a-not-contains-href' => "//a[not(contains(@href, '%s'))]",
+		
+		'a-not-contains-href' => "//a[not(contains(@href, '%s'))][not(contains(@href, '%s'))]",
 
-		'a-contains-href' => "//a[contains(@href, '%s')]",
+		'a-contains-href' => "//a[not(contains(@href, '%s'))][contains(@href, '%s')]",
 
 		'href-relative' => '/%s',
 	];
@@ -135,6 +137,19 @@ class ReviewRestricted
 			$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 		}
 	}
+
+    public static function get_nodes_anchors_not_wiki( $dom )
+	{
+		$domain = MultisiteBlog::get_main_domain();
+
+		// $query = sprintf( self::PATTERNS[ 'a-not-contains-href' ], self::HREF_PARTS[ 'wiki' ] );
+		
+		$query = sprintf( self::PATTERNS[ 'a-not-contains-href' ], $domain, self::HREF_PARTS[ 'wiki' ] );
+
+		return LegalDOM::get_nodes( $dom, $query );
+
+		// $query = "//a[@id and not(contains(@id, '%s'))]";
+	}
 	
 	public static function modify_not_wiki( $dom )
 	{
@@ -209,7 +224,9 @@ class ReviewRestricted
 
     public static function get_nodes_anchors_wiki( $dom )
 	{
-		$query = sprintf( self::PATTERNS[ 'a-contains-href' ], self::HREF_PARTS[ 'wiki' ] );
+		$domain = MultisiteBlog::get_main_domain();
+
+		$query = sprintf( self::PATTERNS[ 'a-contains-href' ], $domain, self::HREF_PARTS[ 'wiki' ] );
 
 		return LegalDOM::get_nodes( $dom, $query );
 		
@@ -427,15 +444,6 @@ class ReviewRestricted
 
 	// 	return LegalDOM::get_nodes( $dom, implode( '|', $query ) );
 	// }
-
-    public static function get_nodes_anchors_not_wiki( $dom )
-	{
-		$query = sprintf( self::PATTERNS[ 'a-not-contains-href' ], self::HREF_PARTS[ 'wiki' ] );
-
-		return LegalDOM::get_nodes( $dom, $query );
-
-		// $query = "//a[@id and not(contains(@id, '%s'))]";
-	}
 
     // public static function get_nodes_domain_and_language( $dom )
 	// {
