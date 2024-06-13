@@ -12,7 +12,9 @@ class ToolTaxonomy
     }
 
 	const TAXONOMY = [
-		'billet-feature' => 'billet_feature',
+		// 'billet-feature' => 'billet_feature',
+
+		'page-type' => 'page_type',
 	];
 
 	public static function get_incorrect_terms()
