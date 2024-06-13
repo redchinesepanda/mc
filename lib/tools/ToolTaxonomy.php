@@ -100,7 +100,7 @@ class ToolTaxonomy
 			// wp_update_term( $term->term_id, $term->taxonomy, $args );
 		}
 
-		return $parts;
+		// return $parts;
 	}
 
 	const TEMPLATE = [
