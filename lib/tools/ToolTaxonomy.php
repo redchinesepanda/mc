@@ -152,6 +152,8 @@ class ToolTaxonomy
 
 			'numberposts' => -1,
 
+			'fields' => 'ids',
+
 			'tax_query' => [
 				[
 					'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
@@ -167,15 +169,15 @@ class ToolTaxonomy
 
 		$posts = get_posts( $args );
 
-		LegalDebug::debug( [
-			'ToolTaxonomy' => 'get_incorrect_parts_terms_posts',
+		// LegalDebug::debug( [
+		// 	'ToolTaxonomy' => 'get_incorrect_parts_terms_posts',
 
-            'terms' => $terms,
+        //     'terms' => $terms,
 
-            'args' => $args,
+        //     'args' => $args,
 
-			'posts' => $posts,
-		] );
+		// 	'posts' => $posts,
+		// ] );
 
 		if ( !empty( $posts ) )
 		{
