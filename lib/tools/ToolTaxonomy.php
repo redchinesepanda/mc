@@ -39,13 +39,13 @@ class ToolTaxonomy
 		// 	'terms' => $terms,
 		// ] );
 
-		self::render_message( [
-			'ToolTaxonomy' => 'get_incorrect_terms',
+		// self::render_message( [
+		// 	'ToolTaxonomy' => 'get_incorrect_terms',
 
-			'args' => $args,
+		// 	'args' => $args,
 
-			'terms' => $terms,
-		] );
+		// 	'terms' => $terms,
+		// ] );
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
