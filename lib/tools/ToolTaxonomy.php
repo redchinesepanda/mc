@@ -89,13 +89,13 @@ class ToolTaxonomy
 				'name' => str_replace( ',', '-', $term->name ),
 			];
 
-			// LegalDebug::debug( [
-			// 	'MultisiteTerms' => 'add_post_terms',
+			LegalDebug::debug( [
+				'MultisiteTerms' => 'repare_incorrect_terms',
 
-			// 	'args' => $args,
-			// ] );
+				'args' => $args,
+			] );
 
-			wp_update_term( $term_id, $taxonomy, $args );
+			// wp_update_term( $term->term_id, $term->taxonomy, $args );
 		}
 
 		return $parts;
