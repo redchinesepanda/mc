@@ -48,9 +48,13 @@ class ReviewRestricted
         // return $result;
     }
 
-	public static function check_contains()
+	public static function check_modify()
 	{
-		return self::check_contains_anchors();
+		return MiltisiteMain::check_multisite
+		
+			&& MultisiteBlog::check_not_main_domain
+			
+			&& self::check_contains_anchors();
 
 		// return self::check_contains_restricted_anchors();
 	}
@@ -64,7 +68,7 @@ class ReviewRestricted
 	{
 		$handler = new self();
 
-		if ( self::check_contains() )
+		if ( self::check_modify() )
 		{
 			add_action( 'the_content', [ $handler, 'modify_content' ] );
 		}
