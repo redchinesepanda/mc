@@ -88,7 +88,7 @@ class ToolTaxonomy
 			// $parts = array_merge( $parts, explode( ', ', $term->name ) );
 
 			$args = [
-				'name' => str_replace( ',', '-', $term->name ),
+				'name' => str_replace( ', ', '-', $term->name ),
 			];
 
 			LegalDebug::debug( [
