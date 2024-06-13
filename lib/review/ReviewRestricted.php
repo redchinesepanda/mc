@@ -94,7 +94,7 @@ class ReviewRestricted
 
 		$path = MultisiteSiteswitcher::get_path( $current_site );
 
-		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', '/' . $path . '/', $parsed_url[ 'path' ]);
+		$href_replaced = preg_replace('/(\/[a-z]{2,3}(-[a-z]{2})?\/)/', $path, $parsed_url[ 'path' ]);
 
 		LegalDebug::debug( [
 			'ReviewRestricted' => 'get_relative',
