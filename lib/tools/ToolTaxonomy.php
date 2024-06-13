@@ -51,7 +51,7 @@ class ToolTaxonomy
 
 	public static function render_message( $args )
     {
-		return LegalComponents::render_main( self::TEMPLATE[ 'message' ], $args );
+		echo LegalComponents::render_main( self::TEMPLATE[ 'message' ], $args );
     }
 }
 
