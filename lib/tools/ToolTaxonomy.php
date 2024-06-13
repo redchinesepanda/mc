@@ -106,7 +106,7 @@ class ToolTaxonomy
 
 		foreach ( $terms as $term )
 		{
-			$parts = self::get_incorrect_parts( [ term ] );
+			$parts = self::get_incorrect_parts( [ $term ] );
 
 			$parts_terms = self::get_incorrect_parts_terms( $parts );
 
