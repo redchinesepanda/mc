@@ -77,8 +77,6 @@ class ToolTaxonomy
 		{
 			if ( ! has_term( $term->slug, self::TAXONOMY[ 'billet-feature' ], $post_id ) )
 			{
-				// wp_set_post_terms( $post_id, $term->slug, self::TAXONOMY[ 'billet-feature' ], true );
-
 				LegalDebug::debug( [
 					'ToolTaxonomy' => 'handle_incorrect_terms_posts',
 
@@ -88,6 +86,8 @@ class ToolTaxonomy
 
 					'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
 				] );
+
+				wp_set_post_terms( $post_id, $term->slug, self::TAXONOMY[ 'billet-feature' ], true );
 			}
 		}
 	}
@@ -135,33 +135,7 @@ class ToolTaxonomy
 			self::delete_incorrect_terms( $parts_terms );
 		}
 
-		// $parts = self::get_incorrect_parts( $terms );
-
-		// $parts_terms = self::get_incorrect_parts_terms( $parts );
-
-		// $parts_terms_posts = self::get_incorrect_parts_terms_posts( $parts_terms );
-
 		self::repare_incorrect_terms( $terms );
-
-		// LegalDebug::debug( [
-		// 	'ToolTaxonomy' => 'get_incorrect_terms',
-
-		// 	'terms-count' => count( $terms ),
-			
-		// 	// 'terms' => $terms,
-
-		// 	'parts-count' => count( $parts ),
-
-		// 	// 'parts' => $parts,
-
-		// 	'parts_terms-count' => count( $parts_terms ),
-
-		// 	// 'parts_terms' => $parts_terms,
-
-		// 	'parts_terms_posts-count' => count( $parts_terms_posts ),
-
-		// 	// 'parts_terms_posts' => $parts_terms_posts,
-		// ] );
 	}
 
 	public static function delete_incorrect_terms( $terms )
@@ -176,7 +150,7 @@ class ToolTaxonomy
 				'taxonomy' => self::TAXONOMY[ 'billet-feature' ],
 			] );
 
-			// wp_delete_term( $term_id, self::TAXONOMY[ 'billet-feature' ] );
+			wp_delete_term( $term_id, self::TAXONOMY[ 'billet-feature' ] );
 		}
 	}
 
@@ -218,11 +192,6 @@ class ToolTaxonomy
 
 	public static function get_incorrect_parts_terms_posts( $terms = [] )
 	{
-		// if ( empty( $terms ) )
-		// {
-		// 	$terms = self::TERM[ 'cross' ];
-		// }
-
 		$args = [
 			'post_type' => [ 'page', 'legal_billet' ],
 
@@ -244,16 +213,6 @@ class ToolTaxonomy
 		];
 
 		$posts = get_posts( $args );
-
-		// LegalDebug::debug( [
-		// 	'ToolTaxonomy' => 'get_incorrect_parts_terms_posts',
-
-        //     'terms' => $terms,
-
-        //     'args' => $args,
-
-		// 	'posts' => $posts,
-		// ] );
 
 		if ( !empty( $posts ) )
 		{
@@ -281,7 +240,7 @@ class ToolTaxonomy
 				'args' => $args,
 			] );
 
-			// wp_update_term( $term->term_id, $term->taxonomy, $args );
+			wp_update_term( $term->term_id, $term->taxonomy, $args );
 		}
 	}
 
