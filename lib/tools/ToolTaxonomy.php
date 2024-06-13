@@ -12,7 +12,7 @@ class ToolTaxonomy
     }
 
 	const TAXONOMY = [
-		'billet-feature' => 'billet_feature',
+		'billet_feature',
 	];
 
 	public static function get_incorrect_terms()
