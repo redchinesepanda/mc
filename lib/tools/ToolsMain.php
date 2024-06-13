@@ -66,6 +66,8 @@ class ToolsMain
         ToolSitemapXML::register();
 
         // ToolRobots::register();
+
+        ToolTaxonomy::register_functions();
     }
 
     public static function register_functions()
@@ -102,7 +104,7 @@ class ToolsMain
 
         // ToolPermalink::register_functions();
 
-        ToolTaxonomy::register_functions();
+        // ToolTaxonomy::register_functions();
     }
 }
 
