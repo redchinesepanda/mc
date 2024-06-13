@@ -2,13 +2,13 @@
 
 class ToolTaxonomy
 {
-	public static function register_functions()
+	public static function register()
     {
         // $handler = new self();
 
         // add_filter( 'wp_sitemaps_max_urls', [ $handler, 'kama_sitemap_max_urls'], 10, 2 );2 );
 
-		self::handle_incorrect_terms();
+		// self::handle_incorrect_terms();
     }
 
 	const TAXONOMY = [
