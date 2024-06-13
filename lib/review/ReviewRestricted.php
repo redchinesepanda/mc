@@ -9,9 +9,9 @@ class ReviewRestricted
 	const PATTERNS = [
 		// 'a-not-contains-href' => "//a[not(contains(@href, '%s'))]",
 		
-		'a-not-contains-href' => "//a[not(contains(@href, '%s'))][not(contains(@href, '%s'))]",
+		'a-not-contains-href' => "//a[contains(@href, '%s')][not(contains(@href, '%s'))]",
 
-		'a-contains-href' => "//a[not(contains(@href, '%s'))][contains(@href, '%s')]",
+		'a-contains-href' => "//a[contains(@href, '%s')][contains(@href, '%s')]",
 
 		'href-relative' => '/%s',
 	];
