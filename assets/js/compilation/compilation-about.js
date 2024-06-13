@@ -21,8 +21,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// заполнение ширины контейнера свайпером старт
 
 	function overflow(e) {
-		console.log( e.scrollWidth );
-		console.log( e.offsetWidth );
+		// console.log( e.scrollWidth );
+		// console.log( e.offsetWidth );
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
@@ -31,8 +31,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
-		// return setTimeout(overflow(str), 1000) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		// return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		return setTimeout(overflow(str), 500) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
 		} else {
