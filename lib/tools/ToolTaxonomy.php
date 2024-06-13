@@ -39,13 +39,13 @@ class ToolTaxonomy
 		// 	'terms' => $terms,
 		// ] );
 
-		// self::render_message( [
-		// 	'ToolTaxonomy' => 'get_incorrect_terms',
+		self::render_message( [
+			'ToolTaxonomy' => 'get_incorrect_terms',
 
-		// 	'args' => $args,
+			'args' => $args,
 
-		// 	'terms' => $terms,
-		// ] );
+			'terms' => $terms,
+		] );
 
 		if ( $terms && ! is_wp_error( $terms ) )
 		{
@@ -72,6 +72,30 @@ class ToolTaxonomy
 		foreach ( $terms as $term )
 		{
 			$parts = array_merge( $parts, explode( ', ', $term->name ) );
+		}
+
+		return $parts;
+	}
+
+	public static function repare_incorrect_terms( $terms )
+	{
+		// $parts = [];
+
+		foreach ( $terms as $term )
+		{
+			// $parts = array_merge( $parts, explode( ', ', $term->name ) );
+
+			$args = [
+				'name' => str_replace( ',', '-', $term->name ),
+			];
+
+			// LegalDebug::debug( [
+			// 	'MultisiteTerms' => 'add_post_terms',
+
+			// 	'args' => $args,
+			// ] );
+
+			wp_update_term( $term_id, $taxonomy, $args );
 		}
 
 		return $parts;
