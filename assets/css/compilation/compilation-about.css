@@ -151,7 +151,7 @@
     display: none;
 }
 
-.compilation-about .legal-cut-item:not( .legal-active ) {
+.compilation-about .legal-cut-item:not( .legal-active ):not( :first-child ) {
     display: none;
 }
 
