@@ -1,13 +1,4 @@
 <div class="legal-billet-mega item-<?php echo $args[ 'id' ] ?> legal-<?php echo $args[ 'mode' ] ?>">
-	<!-- <style type="text/css">
-		.legal-billet-mega.item-<?php echo $args[ 'id' ] ?> .mega-about-logo {
-			background-image: url( '<?php echo $args['logo']; ?>' );
-		}
-
-		.legal-billet-mega.item-<?php echo $args[ 'id' ] ?> .legal-highlight {
-			background-color: <?php echo $args['background']; ?>;
-		}
-	</style> -->
 	<div class="billet-mega">
 		<div class="billet-mega-about">
 			<div class="mega-about-logo">
