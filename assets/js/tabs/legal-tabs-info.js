@@ -16,15 +16,15 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
 
-    let heightTextTab = firstTabInfoContent.scrollHeight + 'px';
+    let heightTextFirstTab = firstTabInfoContent.scrollHeight + 'px';
 
     console.log( heightTextTab );
 
-    // firstTabInfoContent.setAttribute( 'data-height', heightTextTab );
+    // firstTabInfoContent.setAttribute( 'data-height', heightTextFirstTab );
 
     function setHeight( element )
 	{
-		element.style.setProperty('--element-height', height);
+		element.style.setProperty('--element-height', heightTextFirstTab);
 	}
 
     tabsInfoContent.forEach( setHeight );
