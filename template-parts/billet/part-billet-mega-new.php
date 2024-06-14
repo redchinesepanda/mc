@@ -1,5 +1,5 @@
 <div class="legal-billet-mega item-<?php echo $args[ 'id' ] ?> legal-<?php echo $args[ 'mode' ] ?>">
-	<style type="text/css">
+	<!-- <style type="text/css">
 		.legal-billet-mega.item-<?php echo $args[ 'id' ] ?> .mega-about-logo {
 			background-image: url( '<?php echo $args['logo']; ?>' );
 		}
@@ -7,10 +7,12 @@
 		.legal-billet-mega.item-<?php echo $args[ 'id' ] ?> .legal-highlight {
 			background-color: <?php echo $args['background']; ?>;
 		}
-	</style>
+	</style> -->
 	<div class="billet-mega">
 		<div class="billet-mega-about">
-			<div class="mega-about-logo"></div>
+			<div class="mega-about-logo">
+				<img src="<?php echo $args['logo']; ?>" width="70" height="70" alt="<?php echo $args[ 'name' ] ?>" loading="lazy">
+			</div>
 			<div class="mega-about-options">
 				<?php if( !empty( $args[ 'name' ] ) ) : ?>
 					<div class="mega-about-name"><?php echo $args[ 'name' ] ?></div>
