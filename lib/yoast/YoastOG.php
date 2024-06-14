@@ -9,7 +9,20 @@ class YoastOG
 		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image' ] );
 
 		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
+	
+		add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
     }
+
+	function yst_wpseo_change_og_locale( $locale )
+	{
+		LegalDebug::debug( [
+			'YoastOG' => 'yst_wpseo_change_og_locale',
+
+			'locale' => $locale,
+		] );
+
+		return $locale;
+	}
 
 	public static function current_image()
 	{
