@@ -61,7 +61,7 @@ class MultisiteHreflang
 	const PATTERN = [
 		'post-uri' => '%s/%s/%s/',
 
-		'post-uri-root' => '%s/%s/',
+		'post-uri-root' => '%s/%s',
 	];
 
 	public static function get_blog_uri()
@@ -129,7 +129,9 @@ class MultisiteHreflang
             $language_code = '';
         }
 
-		if ( !empty( $language_code ) )
+		// if ( !empty( $language_code ) )
+		
+		if ( !empty( $post_path ) )
 		{
 			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
 		}
