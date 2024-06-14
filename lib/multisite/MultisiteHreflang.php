@@ -130,11 +130,9 @@ class MultisiteHreflang
         }
 
 		// if ( !empty( $language_code ) )
-		
-		if ( !empty( $post_path ) )
-		{
-			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
-		}
+		// {
+		// 	return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+		// }
 
 		return sprintf( self::PATTERN[ 'post-uri-root' ], $url, $post_path );
 	}
