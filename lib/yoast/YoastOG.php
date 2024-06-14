@@ -11,7 +11,7 @@ class YoastOG
 		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
     }
 
-	public static function current_image()
+	public static function current_image( $image )
 	{
 		$language = WPMLMain::current_language();
 
@@ -23,6 +23,8 @@ class YoastOG
 
 		LegalDebug::debug( [
 			'YoastOG' => 'current_image',
+
+			'image' => $image,
 
 			'language' => $language,
 
