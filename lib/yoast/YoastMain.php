@@ -31,7 +31,7 @@ class YoastMain
 
         add_filter( 'wpseo_json_ld_output', '__return_false' );
 
-        // YoastOG::register();
+        YoastOG::register();
     }
 
     public static function register_functions()
