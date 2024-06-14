@@ -17,4 +17,22 @@ add_filter( 'wpo_purge_cache_hooks', function( $actions )
     return $actions;
 } );
 
+add_filter('wpo_cache_cookies', 'myprefix_add_cache_cookies', 20, 2);
+
+function myprefix_add_cache_cookies( $cookies )
+{
+	// if ()
+	// {
+	// 	$cookie[] = 'cache_key_that_needs_separate_cache';
+	// }
+
+	LegalDebug::debug( [
+        'functions.php' => 'myprefix_add_cache_cookies',
+
+        'cookies' => $cookies,
+    ] );
+
+	return $cookies;
+}
+
 ?>
