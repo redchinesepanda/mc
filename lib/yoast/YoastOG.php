@@ -15,7 +15,13 @@ class YoastOG
 	{
 		$language = WPMLMain::current_language();
 
-		if ( !file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) ) {
+		// if ( empty( $language ) )
+		// {
+		// 	$language = 'default';
+		// }
+
+		if ( empty( $language ) || ! file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) )
+		{
 			$language = 'default';
 		}
 
