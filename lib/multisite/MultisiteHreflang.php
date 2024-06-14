@@ -65,7 +65,7 @@ class MultisiteHreflang
 
 		// 'post-uri-root' => '%s/%s',
 		
-		'post-uri-root' => '%s',
+		'post-uri-root' => '%s/',
 	];
 
 	public static function get_blog_uri()
