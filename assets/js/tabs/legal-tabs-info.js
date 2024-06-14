@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
 
-    let heightTextFirstTab = highestTabInfoContent.scrollHeight + 28 + 'px';
+    let heightTextFirstTab = highestTabInfoContent.scrollHeight + 36 + 'px';
 
     console.log( heightTextFirstTab );
 
