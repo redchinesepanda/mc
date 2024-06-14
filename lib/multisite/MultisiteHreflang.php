@@ -112,25 +112,17 @@ class MultisiteHreflang
 
 		$language_code = WPMLMain::get_language_code( $post->ID );
 
-		// LegalDebug::debug( [
-		// 	'MultisiteHreflang' => 'get_post_uri',
+		LegalDebug::debug( [
+			'MultisiteHreflang' => 'get_post_uri',
 
-		// 	// 'permalink_uri' => $permalink_uri,
+			'$post' => $post->ID,
 
-		// 	// 'permalink_post_uri' => $permalink_post_uri,
+			'$url' => $url,
 
-		// 	// 'get_post_permalink' => get_post_permalink( $post ),
+			'$post_path' => $post_path,
 
-		// 	// 'get_permalink' => get_permalink( $post ),
-
-		// 	'$post' => $post->ID,
-
-		// 	'$url' => $url,
-
-		// 	'$post_path' => $post_path,
-
-		// 	'$language_code' => $language_code,
-		// ] );
+			'$language_code' => $language_code,
+		] );
 
 		if ( $language_code == 'en' )
         {
