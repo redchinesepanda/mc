@@ -2,7 +2,7 @@
 
 class YoastOG
 {
-	public static function register_function()
+	public static function register_functions()
     {
         $handler = new self();
 
