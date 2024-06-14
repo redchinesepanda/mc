@@ -8,7 +8,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		firstTabContent : '.legal-tabs-info .legal-tab-content.legal-active',
 
-        tabsContent : '.legal-tabs-info .legal-tab-content.legal-active',
+        tabsContent : '.legal-tabs-info .legal-tab-content',
 
 	};
 
