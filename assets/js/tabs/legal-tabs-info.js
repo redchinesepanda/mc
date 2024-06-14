@@ -13,7 +13,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const tabInfoContent = document.querySelector( selectors.tabContent );
 
-    let heightTextTab = tabInfoContent.scrollHeight;
+    let heightTextTab = tabInfoContent.scrollHeight + 'px';
 
     console.log( heightTextTab );
 
