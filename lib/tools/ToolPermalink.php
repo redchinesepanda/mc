@@ -45,7 +45,14 @@ class ToolPermalink
 
         if ( $permalink_manager_uris )
         {
-            if ( ! empty( $permalink_manager_uris[ $post_id ] ) ) {
+            if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
+            {
+                LegalDebug::debug( [
+                    'ToolPermalink' => 'get_post_uri',
+
+                    'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
+                ] );
+
                 return $permalink_manager_uris[ $post_id ];
             }
         }
@@ -54,6 +61,12 @@ class ToolPermalink
 
         if ( $post )
         {
+            LegalDebug::debug( [
+                'ToolPermalink' => 'get_post_uri',
+
+                'post_name' => $post->post_name,
+            ] );
+
             return $post->post_name;
         }
 
