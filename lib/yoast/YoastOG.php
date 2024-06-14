@@ -13,9 +13,9 @@ class YoastOG
 
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 	
-		add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
+		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
     }
 
 	function yst_wpseo_change_og_locale( $locale )
