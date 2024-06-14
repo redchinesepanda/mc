@@ -67,7 +67,19 @@ class YoastOG
 		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 	
 		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
+
+		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
     }
+
+	function wp_kama_post_thumbnail_url_filter( $thumbnail_url, $post, $size )
+	{
+		if ( empty( $thumbnail_url ) )
+		{
+			$thumbnail_url = LegalMain::LEGAL_URL . '/assets/img/yoast/preview-default.webp';
+		}
+		
+		return $thumbnail_url;
+	}
 
 	// function yst_wpseo_change_og_locale( $locale )
 	// {
