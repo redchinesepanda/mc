@@ -10,15 +10,15 @@ class YoastOG
 
 		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 
-		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
+		// add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
 
-		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
+		// add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
 
-		add_filter( 'has_post_thumbnail', [ $handler, 'wp_kama_has_post_thumbnail_filter' ], 10, 3 );
+		// add_filter( 'has_post_thumbnail', [ $handler, 'wp_kama_has_post_thumbnail_filter' ], 10, 3 );
 
-		LegalDebug::debug( [
-			'YoastOG' => 'register_functions',
-		] );
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'register_functions',
+		// ] );
     }
 
 	public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
