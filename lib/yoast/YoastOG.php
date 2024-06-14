@@ -60,9 +60,9 @@ class YoastOG
 
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
+		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
 	
 		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
     }
