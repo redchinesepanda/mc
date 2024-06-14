@@ -8,7 +8,7 @@ class MultisiteFront
 		{
 			$handler = new self();
 
-			add_filter( 'locale', [ $handler, 'filter_function_name_11' ] );
+			// add_filter( 'locale', [ $handler, 'filter_function_name_11' ] );
 		}
 	}
 
