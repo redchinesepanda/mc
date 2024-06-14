@@ -13,6 +13,10 @@ class YoastOG
 		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
 
 		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
+
+		LegalDebug::debug( [
+			'YoastOG' => 'register_functions',
+		] );
     }
 
 	public static function current_image_twitter( $image )
