@@ -6,7 +6,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const selectors = {
 
-		highestTabContent : '.legal-tabs-info .legal-tab-content.legal-content-3',
+		highestTabContent : '.legal-tabs-info .legal-tab-content.legal-active',
 
         tabsContent : '.legal-tabs-info .legal-tab-content',
 
@@ -16,7 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
 
-    let heightTextFirstTab = highestTabInfoContent.scrollHeight + 'px';
+    let heightTextFirstTab = highestTabInfoContent.scrollHeight + 10 + 'px';
 
     console.log( heightTextFirstTab );
 
