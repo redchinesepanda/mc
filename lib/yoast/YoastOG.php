@@ -75,9 +75,28 @@ class YoastOG
 	
 	public static function wp_kama_post_thumbnail_id_filter( $thumbnail_id, $post )
 	{
+		LegalDebug::debug( [
+			'YoastOG' => 'wp_kama_post_thumbnail_id_filter',
+
+			'thumbnail_id' => $thumbnail_id,
+
+            'post' => $post->ID,
+		] );
+
 		if ( empty( $thumbnail_id ) )
 		{
-			$thumbnail_id = get_post_thumbnail_id( get_option( 'page_on_front' ) );
+			
+			$page_on_front = get_option( 'page_on_front' );
+
+			$thumbnail_id = get_post_thumbnail_id( $page_on_front );
+
+			LegalDebug::debug( [
+				'YoastOG' => 'wp_kama_post_thumbnail_id_filter',
+	
+				'page_on_front' => $page_on_front,
+	
+				'thumbnail_id' => $thumbnail_id,
+			] );
 		}
 
 		return $thumbnail_id;
