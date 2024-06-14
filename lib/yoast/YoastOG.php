@@ -34,7 +34,15 @@ class YoastOG
 			// $value = 123; // the ID for the default image
 
 			$value = $thumbnail_id;
+
+
 		}
+
+		LegalDebug::debug( [
+			'YoastOG' => 'register_functions',
+
+			'value' => $value,
+		] );
 		
 		return $value;
 	}
