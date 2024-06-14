@@ -21,13 +21,16 @@ class YoastOG
 			'locale' => $locale,
 		] );
 
-		if ( $locale_multisite = MultisiteSiteOptions::get_blog_locale() )
+		if ( MultisiteMain::check_multisite() )
 		{
-			LegalDebug::debug( [
-				'YoastOG' => 'yst_wpseo_change_og_locale',
-	
-				'locale_multisite' => $locale_multisite,
-			] );
+			if ( $locale_multisite = MultisiteSiteOptions::get_blog_locale() )
+			{
+				LegalDebug::debug( [
+					'YoastOG' => 'yst_wpseo_change_og_locale',
+		
+					'locale_multisite' => $locale_multisite,
+				] );
+			}
 		}
 
 		return $locale;
