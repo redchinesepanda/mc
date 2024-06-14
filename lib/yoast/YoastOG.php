@@ -6,10 +6,28 @@ class YoastOG
     {
         $handler = new self();
 
-		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image' ] );
+		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 
-		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image' ] );
+		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
     }
+
+	public static function current_image_twitter( $image )
+	{
+		LegalDebug::debug( [
+			'YoastOG' => 'current_image_twitter',
+		] );
+
+		return self::current_image( $image );
+	}
+
+	public static function current_image_og( $image )
+	{
+		LegalDebug::debug( [
+			'YoastOG' => 'current_image_og',
+		] );
+
+		return self::current_image( $image );
+	}
 
 	public static function current_image( $image )
 	{
