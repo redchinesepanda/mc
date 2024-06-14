@@ -22,6 +22,9 @@ class YoastOG
     }
 
 	public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
+		LegalDebug::debug( [
+			'YoastOG' => 'wp_kama_has_post_thumbnail_filter',
+		] );
 	
 		// filter...
 		// return $has_thumbnail;
