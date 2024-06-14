@@ -69,9 +69,21 @@ class YoastOG
 		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
 
 		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
-    }
 
-	function wp_kama_post_thumbnail_url_filter( $thumbnail_url, $post, $size )
+		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
+    }
+	
+	public static function wp_kama_post_thumbnail_id_filter( $thumbnail_id, $post )
+	{
+		if ( empty( $thumbnail_id ) )
+		{
+			$thumbnail_id = get_post_thumbnail_id( get_option( 'page_on_front' ) );
+		}
+
+		return $thumbnail_id;
+	}
+
+	public static function wp_kama_post_thumbnail_url_filter( $thumbnail_url, $post, $size )
 	{
 		if ( empty( $thumbnail_url ) )
 		{
