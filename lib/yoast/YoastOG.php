@@ -18,28 +18,28 @@ class YoastOG
 		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
     }
 
-	function yst_wpseo_change_og_locale( $locale )
-	{
-		LegalDebug::debug( [
-			'YoastOG' => 'yst_wpseo_change_og_locale',
+	// function yst_wpseo_change_og_locale( $locale )
+	// {
+	// 	LegalDebug::debug( [
+	// 		'YoastOG' => 'yst_wpseo_change_og_locale',
 
-			'locale' => $locale,
-		] );
+	// 		'locale' => $locale,
+	// 	] );
 
-		if ( MiltisiteMain::check_multisite() )
-		{
-			if ( $locale_multisite = MultisiteSiteOptions::get_blog_locale() )
-			{
-				LegalDebug::debug( [
-					'YoastOG' => 'yst_wpseo_change_og_locale',
+	// 	if ( MiltisiteMain::check_multisite() )
+	// 	{
+	// 		if ( $locale_multisite = MultisiteSiteOptions::get_blog_locale() )
+	// 		{
+	// 			LegalDebug::debug( [
+	// 				'YoastOG' => 'yst_wpseo_change_og_locale',
 		
-					'locale_multisite' => $locale_multisite,
-				] );
-			}
-		}
+	// 				'locale_multisite' => $locale_multisite,
+	// 			] );
+	// 		}
+	// 	}
 
-		return $locale;
-	}
+	// 	return $locale;
+	// }
 
 	public static function current_image()
 	{
