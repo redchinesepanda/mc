@@ -6,18 +6,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     const selectors = {
 
-		tabContent : '.legal-tabs-info .legal-tab-content.legal-active',
+		firstTabContent : '.legal-tabs-info .legal-tab-content.legal-active',
 
+        tabsContent : '.legal-tabs-info .legal-tab-content.legal-active',
 
 	};
 
-    const tabInfoContent = document.querySelector( selectors.tabContent );
+    const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
 
-    let heightTextTab = tabInfoContent.scrollHeight + 'px';
+    const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
+
+    let heightTextTab = firstTabInfoContent.scrollHeight + 'px';
 
     console.log( heightTextTab );
 
-    tabInfoContent.setAttribute( 'data-height', heightTextTab );
+    // firstTabInfoContent.setAttribute( 'data-height', heightTextTab );
+
+    function setHeight( element )
+	{
+		element.style.setProperty('--element-height', height);
+	}
+
+    tabsInfoContent.forEach( setHeight );
 
     
 
