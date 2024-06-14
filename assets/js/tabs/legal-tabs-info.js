@@ -20,7 +20,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
 
-    console.log( heightTextFirstTab );
+    // console.log( heightTextFirstTab );
 
     // firstTabInfoContent.setAttribute( 'data-height', heightTextFirstTab );
 
