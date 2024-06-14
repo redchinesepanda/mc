@@ -17,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     console.log( tabInfoContent.scrollHeight );
 
-    tabInfoContent('data-height', 'heightTextTab');
+    tabInfoContent.setAttribute('data-height', 'heightTextTab');
 
     
 
