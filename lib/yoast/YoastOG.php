@@ -14,10 +14,20 @@ class YoastOG
 
 		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
 
+		add_filter( 'has_post_thumbnail', [ $handler, 'wp_kama_has_post_thumbnail_filter' ], 10, 3 );
+
 		LegalDebug::debug( [
 			'YoastOG' => 'register_functions',
 		] );
     }
+
+	public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
+	
+		// filter...
+		// return $has_thumbnail;
+
+		return true;
+	}
 
 	public static function current_image_twitter( $image )
 	{
