@@ -4,7 +4,7 @@ class YoastOG
 {
 	public static function register_functions()
     {
-        $handler = new self();
+        // $handler = new self();
 
 		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
 
@@ -13,18 +13,18 @@ class YoastOG
 
 	public static function current_image_twitter( $image )
 	{
-		LegalDebug::debug( [
-			'YoastOG' => 'current_image_twitter',
-		] );
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'current_image_twitter',
+		// ] );
 
 		return self::current_image( $image );
 	}
 
 	public static function current_image_og( $image )
 	{
-		LegalDebug::debug( [
-			'YoastOG' => 'current_image_og',
-		] );
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'current_image_og',
+		// ] );
 
 		return self::current_image( $image );
 	}
@@ -45,15 +45,15 @@ class YoastOG
 
 		$url = LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
 
-		LegalDebug::debug( [
-			'YoastOG' => 'current_image',
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'current_image',
 
-			'image' => $image,
+		// 	'image' => $image,
 
-			'language' => $language,
+		// 	'language' => $language,
 
-			'url' => $url,
-		] );
+		// 	'url' => $url,
+		// ] );
 
 		return $url;
 	}
