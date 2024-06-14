@@ -21,7 +21,7 @@ class YoastOG
 			'locale' => $locale,
 		] );
 
-		if ( MultisiteMain::check_multisite() )
+		if ( MiltisiteMain::check_multisite() )
 		{
 			if ( $locale_multisite = MultisiteSiteOptions::get_blog_locale() )
 			{
