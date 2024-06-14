@@ -778,7 +778,7 @@
 		content: '\F106'; 
 	}
 
-	.legal-menu > .menu-item:last-child:not( .legal-active )::after
+	.legal-menu > .menu-item:last-child.menu-item-has-children:not( .legal-active )::after
 	{
 		content: '\F102'; 
 	}
@@ -832,4 +832,6 @@
 	{
 		font-weight: 400;
 	}
+
+	/* .legal-menu > .menu-item:last-child:not(.legal-active):not(.menu-item-has-children)::after */
 }
