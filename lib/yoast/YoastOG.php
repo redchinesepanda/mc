@@ -19,7 +19,25 @@ class YoastOG
 		// LegalDebug::debug( [
 		// 	'YoastOG' => 'register_functions',
 		// ] );
+		
+		add_filter( 'default_post_metadata', [ $handler, 'default_post_metadata__thumbnail_id' ], 10, 5 );
     }
+
+	function default_post_metadata__thumbnail_id( $value, $object_id, $meta_key, $single, $meta_type )
+	{
+		if ( '_thumbnail_id' == $meta_key )
+		{
+			$page_on_front = get_option( 'page_on_front' );
+
+			$thumbnail_id = get_post_thumbnail_id( $page_on_front );
+
+			// $value = 123; // the ID for the default image
+
+			$value = $thumbnail_id;
+		}
+		
+		return $value;
+	}
 
 	public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
 		LegalDebug::debug( [
