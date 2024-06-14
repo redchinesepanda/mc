@@ -42,6 +42,8 @@ class YoastOG
 			'YoastOG' => 'register_functions',
 
 			'value' => $value,
+
+			'meta_key' => $meta_key,
 		] );
 		
 		return $value;
