@@ -59,9 +59,9 @@ class MultisiteHreflang
 	}
 
 	const PATTERN = [
-		'post-uri' => '%s/%s/%s',
+		'post-uri' => '%s/%s/%s/',
 
-		'post-uri-root' => '%s/%s',
+		'post-uri-root' => '%s/%s/',
 	];
 
 	public static function get_blog_uri()
