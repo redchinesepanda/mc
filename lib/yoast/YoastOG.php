@@ -20,7 +20,7 @@ class YoastOG
 		// 	'YoastOG' => 'register_functions',
 		// ] );
 		
-		add_filter( 'default_post_metadata', [ $handler, 'default_post_metadata__thumbnail_id' ], 10, 5 );
+		// add_filter( 'default_post_metadata', [ $handler, 'default_post_metadata__thumbnail_id' ], 10, 5 );
     }
 
 	function default_post_metadata__thumbnail_id( $value, $object_id, $meta_key, $single, $meta_type )
@@ -38,13 +38,13 @@ class YoastOG
 
 		}
 
-		LegalDebug::debug( [
-			'YoastOG' => 'register_functions',
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'register_functions',
 
-			'value' => $value,
+		// 	'value' => $value,
 
-			'meta_key' => $meta_key,
-		] );
+		// 	'meta_key' => $meta_key,
+		// ] );
 		
 		return $value;
 	}
