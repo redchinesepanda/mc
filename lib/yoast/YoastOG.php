@@ -4,11 +4,15 @@ class YoastOG
 {
 	public static function register_functions()
     {
-        // $handler = new self();
+        $handler = new self();
 
-		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
+		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
 
-		// add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
+		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
+
+		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
+
+		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
     }
 
 	public static function current_image_twitter( $image )
@@ -60,17 +64,17 @@ class YoastOG
 
 	public static function register()
     {
-        $handler = new self();
+        // $handler = new self();
 
-		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
+		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
 
-		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
+		// add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 	
-		// add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
+		// // add_filter( 'wpseo_locale', [ $handler, 'yst_wpseo_change_og_locale' ] );
 
-		add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
+		// add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
 
-		add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
+		// add_filter( 'post_thumbnail_id', [ $handler, 'wp_kama_post_thumbnail_id_filter' ], 10, 2 );
     }
 	
 	public static function wp_kama_post_thumbnail_id_filter( $thumbnail_id, $post )
