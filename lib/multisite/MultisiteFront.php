@@ -4,11 +4,14 @@ class MultisiteFront
 {
 	public static function register_functions_subsite()
 	{
-		if ( MultisiteBlog::check_not_main_blog() )
+		if ( MiltisiteMain::check_multisite() )
 		{
-			$handler = new self();
-
-			add_filter( 'locale', [ $handler, 'multisite_locale_modify' ] );
+			if ( MultisiteBlog::check_not_main_blog() )
+			{
+				$handler = new self();
+	
+				add_filter( 'locale', [ $handler, 'multisite_locale_modify' ] );
+			}
 		}
 	}
 
