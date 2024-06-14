@@ -64,6 +64,10 @@
         overflow: hidden; 
     }
 
+    .legal-tabs-info .legal-tab-content.legal-active {
+        height: attr( data-height );
+    }
+
     .legal-tabs-info .legal-tab-content.empty-tab-content {
         width: calc( 100% - ( 28px * 2 ) - ( 16px * 2) - 2px );
     }
