@@ -439,7 +439,7 @@ class ReviewTitle
 					],
 
 					[
-						'title' => 'H1-H2 Month Year',
+						'title' => 'H1-H2 Month',
 						
 						'selector' => 'h1,h2,h3,h4,p',
 
