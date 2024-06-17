@@ -116,6 +116,8 @@ class ReviewTitle
 
 		$format_key = self::CLASSES[ 'date-year' ];
 
+		$format_key = self::CLASSES[ 'date-month' ];
+
 		if ( $atts[ 'id' ] != $format_key )
 		{
 			$format_key = self::CLASSES[ 'date-month-year' ];
@@ -139,6 +141,8 @@ class ReviewTitle
 					self::CLASSES[ 'date-year' ],
 
 					self::CLASSES[ 'date-month-year' ],
+
+					self::CLASSES[ 'date-month' ],
 				],
 
 				array_keys( self::PLACEHOLDER )
@@ -207,6 +211,8 @@ class ReviewTitle
 		'{YEAR}' => self::CLASSES[ 'date-year' ],
 
 		'{MONTH_YEAR}' => self::CLASSES[ 'date-month-year' ],
+
+		'{MONTH}' => self::CLASSES[ 'date-month' ],
 	];
 
 	public static function check_placeholder( $content )
@@ -263,6 +269,8 @@ class ReviewTitle
 	{
 		$format = self::FORMAT[ self::CLASSES[ 'date-year' ] ];
 
+		$format = self::FORMAT[ self::CLASSES[ 'date-month' ] ];
+
 		$classes = explode( ' ', $node->getAttribute( 'class' ) );
 
 		foreach ( $classes as $class )
@@ -315,7 +323,9 @@ class ReviewTitle
 	{
 		$xpath = new DOMXPath( $dom );
 		
-		return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' );
+		/* return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')]' ); */
+
+		return $xpath->query( '//*[contains(@class, \'' . self::CLASSES[ 'date-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month-year' ] . '\')] | //*[contains(@class, \'' . self::CLASSES[ 'date-month' ] . '\')]' );
 	}
 
 	public static function modify_content( $content )
@@ -426,6 +436,14 @@ class ReviewTitle
 						'selector' => 'h1,h2,h3,h4,p',
 
 						'classes' => self::CLASSES[ 'date-month-year' ],
+					],
+
+					[
+						'title' => 'H1-H2 Month Year',
+						
+						'selector' => 'h1,h2,h3,h4,p',
+
+						'classes' => self::CLASSES[ 'date-month' ],
 					],
 				],
 			],
