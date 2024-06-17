@@ -55,11 +55,19 @@ class LegalTabsInfo
 
             'items' => [
                 [
+                    'title' => ToolLoco::translate( BaseMain::TEXT[ 'relevance' ] ),
+
+                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'we-focus-on' ] ),
+
+                    'class' => 'legal-active',
+                ],
+
+                [
                     'title' => ToolLoco::translate( BaseMain::TEXT[ 'expertise' ] ),
 
                     'content' => ToolLoco::translate( BaseMain::TEXT[ 'our-team-of' ] ),
 
-                    'class' => 'legal-active',
+                    'class' => '',
                 ],
                 
                 [
@@ -78,13 +86,7 @@ class LegalTabsInfo
                     'class' => '',
                 ],
 
-                [
-                    'title' => ToolLoco::translate( BaseMain::TEXT[ 'relevance' ] ),
-
-                    'content' => ToolLoco::translate( BaseMain::TEXT[ 'we-focus-on' ] ),
-
-                    'class' => '',
-                ],
+               
             ],
         ];
     }
