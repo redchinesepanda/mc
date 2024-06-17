@@ -22,6 +22,13 @@ class MultisiteBlog
 		return $current_blog->domain;
 	}
 
+	public static function get_main_domain()
+	{
+		$main_blog_id = self::get_main_blog_id();
+
+		return self::get_domain( $main_blog_id );
+	}
+
 	public static function get_siteurl( $blog_id = '' )
 	{
 		if ( empty ( $blog_id ) )

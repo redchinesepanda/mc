@@ -59,9 +59,16 @@
 
     .legal-tabs-info .legal-tab-content {
         /* height: 341px; */
-        height: calc( 340px - ( 28px * 2 ) - 2px );
+        /* height: calc( 340px - ( 28px * 2 ) - 2px ); */
+        /* --element-height: 340px; */
+       /*  height: var( --element-height ); */
+        height: calc( var( --element-height ) - ( 28px * 2 ) - 2px );
         overflow: hidden; 
     }
+
+   /*  .legal-tabs-info .legal-tab-content.legal-active {
+        height: attr( data-height );
+    } */
 
     .legal-tabs-info .legal-tab-content.empty-tab-content {
         width: calc( 100% - ( 28px * 2 ) - ( 16px * 2) - 2px );

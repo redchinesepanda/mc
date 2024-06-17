@@ -59,9 +59,13 @@ class MultisiteHreflang
 	}
 
 	const PATTERN = [
-		'post-uri' => '%s/%s/%s',
+		// 'post-uri' => '%s/%s/%s/',
+		
+		'post-uri' => '%s/%s/',
 
-		'post-uri-root' => '%s/%s',
+		// 'post-uri-root' => '%s/%s',
+		
+		'post-uri-root' => '%s/',
 	];
 
 	public static function get_blog_uri()
@@ -110,18 +114,10 @@ class MultisiteHreflang
 		// 	'post_path' => $post_path,
 		// ] );
 
-		$language_code = WPMLMain::get_language_code( $post->ID );
+		// $language_code = WPMLMain::get_language_code( $post->ID );
 
 		// LegalDebug::debug( [
 		// 	'MultisiteHreflang' => 'get_post_uri',
-
-		// 	// 'permalink_uri' => $permalink_uri,
-
-		// 	// 'permalink_post_uri' => $permalink_post_uri,
-
-		// 	// 'get_post_permalink' => get_post_permalink( $post ),
-
-		// 	// 'get_permalink' => get_permalink( $post ),
 
 		// 	'$post' => $post->ID,
 
@@ -129,20 +125,26 @@ class MultisiteHreflang
 
 		// 	'$post_path' => $post_path,
 
-		// 	'$language_code' => $language_code,
+		// 	// '$language_code' => $language_code,
 		// ] );
 
-		if ( $language_code == 'en' )
-        {
-            $language_code = '';
-        }
+		// if ( $language_code == 'en' )
+        // {
+        //     $language_code = '';
+        // }
 
-		if ( !empty( $language_code ) )
+		// if ( !empty( $language_code ) )
+		
+		if ( !empty( $post_path ) )
 		{
-			return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+			// return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+			
+			return sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path );
 		}
 
-		return sprintf( self::PATTERN[ 'post-uri-root' ], $url, $post_path );
+		// return sprintf( self::PATTERN[ 'post-uri-root' ], $url, $post_path );
+		
+		return sprintf( self::PATTERN[ 'post-uri-root' ], $url );
 	}
 
 	public static function get_group_items( $terms )

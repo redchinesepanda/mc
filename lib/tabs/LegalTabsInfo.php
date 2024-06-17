@@ -15,6 +15,19 @@ class LegalTabsInfo
 		ToolEnqueue::register_style( self::CSS );
     }
 
+    const JS = [
+        'legal-tabs-info' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/tabs/legal-tabs-info.js',
+
+            'ver' => '1.0.3',
+        ],
+    ];
+
+    public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
 	const SHORTCODE = [
 		'info' => 'legal-tabs-info',
 	];
@@ -30,6 +43,8 @@ class LegalTabsInfo
         if ( self::check_contains_tabs_info() )
         {
             add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+            add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
         }
     }
 

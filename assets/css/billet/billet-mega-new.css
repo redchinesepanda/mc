@@ -98,6 +98,12 @@
 	row-gap: 18px;
 }
 
+.legal-billet-mega .mega-about-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .legal-billet-mega .mega-about-review {
 	display: inline-block;
 }
@@ -267,6 +273,10 @@
 	height: 70px;
 }
 
+.legal-billet-mega .mega-about-logo img {
+	height: auto;
+}
+
 .legal-billet-mega .link-item {
 	width: calc(32px - 7px * 2);
     height: calc(32px - 7px * 2);
@@ -306,9 +316,10 @@
 }
 
 .legal-billet-mega .mega-about-logo {
-	background-position: center center;
-	background-repeat: no-repeat;
+	/* background-position: center center; */
+	/* background-repeat: no-repeat; */
 	border: 1px solid var(--Base-base-09);
+	overflow: hidden;
 }
 
 .legal-billet-mega:not( .legal-author ) .mega-about-logo {
