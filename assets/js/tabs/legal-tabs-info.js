@@ -12,7 +12,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	};
 
-    // const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
+    const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
 
     // const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
 
@@ -26,7 +26,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function setHeight( element )
 	{
-        const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
 
         let strLineHeight = 36;
 
