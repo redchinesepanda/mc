@@ -12,24 +12,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	};
 
-    const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
-
-    const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
-
-    let strLineHeight = 36;
-
-    let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
-
-    console.log( heightTextFirstTab );
+    // console.log( heightTextFirstTab );
 
     // firstTabInfoContent.setAttribute( 'data-height', heightTextFirstTab );
 
-    function setHeight( element )
-	{
+    function setHeight( element ) {
+        const firstTabInfoContent = document.querySelector( selectors.firstTabContent );
+
+        let strLineHeight = 36;
+
+        let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
+
 		element.style.setProperty('--element-height', heightTextFirstTab);
 	}
 
-    tabsInfoContent.forEach( setHeight );
+    function initDetermineHeight() {
+        const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
+
+        tabsInfoContent.forEach( setHeight );
+    }
+
+    initDetermineHeight()
+
 
     
 
