@@ -16,9 +16,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     // const tabsInfoContent = document.querySelectorAll( selectors.tabsContent );
 
-    // let strLineHeight = 36;
+    let strLineHeight = 36;
 
-    // let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
+    let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
 
     // console.log( heightTextFirstTab );
 
@@ -26,11 +26,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     function setHeight( element )
 	{
-
-        let strLineHeight = 36;
-
-        let heightTextFirstTab = firstTabInfoContent.scrollHeight + strLineHeight + 'px';
-
 		element.style.setProperty('--element-height', heightTextFirstTab);
 	}
 
