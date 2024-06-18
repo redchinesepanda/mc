@@ -23,8 +23,8 @@
 
     /* Position */
 
-    .compilation-about-wrapper .section-content-button:last-child {
-        margin-right: -4px;
+    .compilation-about-wrapper .swiper.legal-short-str .section-content-button:first-child {
+        margin-left: -4px;
     }
 
 }
