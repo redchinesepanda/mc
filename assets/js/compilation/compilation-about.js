@@ -25,6 +25,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	function overflow(e) {
 		// console.log( e.scrollWidth );
 		// console.log( e.offsetWidth );
+		let eLonger = e.scrollWidth + 16;
+		console.log( e.scrollWidth );
+		console.log( eLonger );
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	}
 
