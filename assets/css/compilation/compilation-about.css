@@ -177,7 +177,7 @@
     display: -webkit-box;
 }
 
-.compilation-about-wrapper .swiper.legal-short-str {
+.compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
     justify-content: center;
 }
 
