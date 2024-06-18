@@ -27,6 +27,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// console.log( e.offsetWidth );
 		let eLonger = e.scrollWidth + 16;
 		console.log( e.scrollWidth );
+		console.log( e.offsetWidth );
 		console.log( eLonger );
 		/* return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight; */
 		return eLonger > e.offsetWidth || e.scrollHeight > e.offsetHeight;
