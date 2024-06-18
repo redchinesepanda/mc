@@ -177,6 +177,10 @@
     display: -webkit-box;
 }
 
+.compilation-about-wrapper .swiper.legal-short-str {
+    justify-content: center;
+}
+
 
 /* Width and Height */
 .compilation-about:not( .home .compilation-about ) {
