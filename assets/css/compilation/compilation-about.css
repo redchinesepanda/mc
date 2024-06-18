@@ -17,6 +17,16 @@
         column-gap: 64px;
     }
 
+    .compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
+        justify-content: center;
+    }
+
+    /* Position */
+
+    .compilation-about-wrapper .section-content-button:last-child {
+        margin-right: -4px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -176,11 +186,6 @@
 .compilation-about .section-content-text:first-of-type.legal-clamp {
     display: -webkit-box;
 }
-
-.compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
-    justify-content: center;
-}
-
 
 /* Width and Height */
 .compilation-about:not( .home .compilation-about ) {
