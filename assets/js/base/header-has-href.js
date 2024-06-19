@@ -5,7 +5,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
     function prepareItem( element )
 	{
-		console.log(element)
 		element.closest( elements.parent.selectors )
 		.querySelector( elements.title.selectors )
 		.setAttribute(
