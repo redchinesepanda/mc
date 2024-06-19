@@ -784,7 +784,8 @@
 		content: '\F106'; 
 	}
 
-	.legal-menu > .menu-item:last-child.menu-item-has-children:not( .legal-active )::after
+	/* .legal-menu > .menu-item:last-child.menu-item-has-children:not( .legal-active )::after */
+	.legal-menu > .menu-item:last-child::after
 	{
 		content: '\F102'; 
 	}
