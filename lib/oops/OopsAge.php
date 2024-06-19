@@ -74,7 +74,7 @@ class OopsAge
     }
 
 	const AGE_DEBUG = [
-		'es',
+		// 'es',
 
 		'hr',
 
@@ -84,7 +84,7 @@ class OopsAge
 	];
 
 	const AGE_PRODUCTION = [
-		'es',
+		// 'es',
 
 		'hr',
 	];
