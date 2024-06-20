@@ -149,6 +149,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log('есть меню стран');
 
+		items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
+
 
 	};
 
