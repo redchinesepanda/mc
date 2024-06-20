@@ -45,7 +45,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		item: 'menu-item',
 		
-		menu: 'legal-menu'
+		menu: 'legal-menu',
+
+		hasChild: 'menu-item-has-children',
 	};
 
 	const args = [
@@ -96,6 +98,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		tagBody: 'body',
 
 		countryMenu: '.legal-menu > .menu-item.legal-country:last-child > .sub-menu',
+
+		parentcountryMenu: '.menu-item.legal-country',
 	};
 
 	function toggleInit()
@@ -137,26 +141,25 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	window.addEventListener( 'resize', toggleInit, false );
 
-	// Добавление класса menu-item-has-children когда нет других стран. Старт
+	// Добавление класса menu-item-has-children когда нет других стран, но есть ссылка на выбор стран. Старт
+	function addClassCountry( itemMenu ) {
+		itemMenu.classList.add( classes.hasChild );
+	}
 
 	function initAddClassCountry( items ) {
 		if ( !items ) {
 			console.log('нет меню стран');
             return;
         };
-
 		console.log(items);
-
 		console.log('есть меню стран');
-
-		items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
-
-
+		addClassCountry( items.closest( selectors.parentcountryMenu ) );
+		// items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
 	};
 
 	initAddClassCountry( document.querySelector( selectors.countryMenu ) );
 
-	// Добавление класса menu-item-has-children когда нет других стран. Конец
+	// Добавление класса menu-item-has-children когда нет других стран, но есть ссылка на выбор стран. Конец
 
 } );
 
