@@ -95,7 +95,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		tagBody: 'body',
 
-		countryItem: '.legal-menu > .menu-item:last-child > .sub-menu > .legal-country',
+		countryMenu: '.legal-menu > .menu-item.legal-country:last-child > .sub-menu',
 	};
 
 	function toggleInit()
@@ -141,22 +141,18 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initAddClassCountry( items ) {
 		if ( !items ) {
-			console.log('нет страны');
+			console.log('нет меню стран');
             return;
         };
 
-		let countItems = items.length;
-
 		console.log(items);
 
-		console.log(countItems);
-
-		console.log('есть страны');
+		console.log('есть меню стран');
 
 
 	};
 
-	initAddClassCountry( document.querySelector( selectors.countryItem ) );
+	initAddClassCountry( document.querySelector( selectors.countryMenu ) );
 
 	// Добавление класса menu-item-has-children когда нет других стран. Конец
 
