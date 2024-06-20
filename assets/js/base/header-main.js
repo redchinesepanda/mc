@@ -93,7 +93,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		headerControl: '.legal-header-control',
 
-		tagBody: 'body'
+		tagBody: 'body',
+
+		countryItem: '.legal-menu > .menu-item:last-child > .sub-menu > .legal-country',
 	};
 
 	function toggleInit()
@@ -134,6 +136,28 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	toggleInit();
 
 	window.addEventListener( 'resize', toggleInit, false );
+
+	// Добавление класса menu-item-has-children когда нет других стран. Старт
+
+	function initAddClassCountry( items ) {
+		if ( !items ) {
+			console.log('нет страны');
+            return;
+        };
+
+		let countItems = items.length;
+
+		console.log(countItems);
+
+		console.log('есть страны');
+
+
+	};
+
+	initAddClassCountry( document.querySelectorAll( selectors.countryItem ) );
+
+	// Добавление класса menu-item-has-children когда нет других стран. Конец
+
 } );
 
 // header-main-js end
