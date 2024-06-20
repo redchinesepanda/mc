@@ -156,7 +156,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	};
 
-	initAddClassCountry( document.querySelectorAll( selectors.countryItem ) );
+	initAddClassCountry( document.querySelector( selectors.countryItem ) );
 
 	// Добавление класса menu-item-has-children когда нет других стран. Конец
 
