@@ -147,6 +147,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		let countItems = items.length;
 
+		console.log(items);
+
 		console.log(countItems);
 
 		console.log('есть страны');
