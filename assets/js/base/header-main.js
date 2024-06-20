@@ -142,9 +142,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	window.addEventListener( 'resize', toggleInit, false );
 
 	// Добавление класса menu-item-has-children когда нет других стран, но есть ссылка на выбор стран. Старт
-	function addClassCountry( itemMenu ) {
+	/* function addClassCountry( itemMenu ) {
 		itemMenu.classList.add( classes.hasChild );
-	}
+	} */
 
 	function initAddClassCountry( items ) {
 		if ( !items ) {
@@ -153,8 +153,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
         };
 		console.log(items);
 		console.log('есть меню стран');
-		addClassCountry( items.closest( selectors.parentcountryMenu ) );
-		// items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
+		/* addClassCountry( items.closest( selectors.parentcountryMenu ) ); */
+		items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
 	};
 
 	initAddClassCountry( document.querySelector( selectors.countryMenu ) );
