@@ -149,13 +149,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function initAddClassCountry( items ) {
 		if ( !items ) {
-			console.log('нет меню стран');
+			// console.log('нет меню стран');
             return;
         };
-		console.log(items);
-		console.log('есть меню стран');
+		// console.log('есть меню стран');
 		addClassCountry( items.closest( selectors.parentcountryMenu ) );
-		// items.closest('.menu-item.legal-country').classList.add( 'menu-item-has-children' );
 	};
 
 	initAddClassCountry( document.querySelector( selectors.countryMenu ) );
