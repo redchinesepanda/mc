@@ -199,7 +199,7 @@ class WPMLLangSwitcher
     {
         return TemplateMain::check_new()
 
-            || MiltisiteMain::check_multisite()
+            && MiltisiteMain::check_multisite()
 
             && MultisiteBlog::check_main_domain();
     }
