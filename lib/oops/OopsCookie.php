@@ -162,7 +162,7 @@ class OopsCookie
 			}
 		}
 
-		return '/privacy-policy/';
+		return '/privacy-policy-fallback/';
 	}
 
 	public static function get()
