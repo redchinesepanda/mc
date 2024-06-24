@@ -173,15 +173,15 @@ class OopsCookie
 
 		if ( ! empty( $page ) )
 		{
-            LegalDebug::debug( [
-                'OopsCookie' => 'get_privacy_policy_page_type_url',
+            // LegalDebug::debug( [
+            //     'OopsCookie' => 'get_privacy_policy_page_type_url',
 
-                'get_permalink' => get_permalink( $page ),
+            //     'get_permalink' => get_permalink( $page ),
 
-                'get_post_permalink' => get_post_permalink( $page ),
+            //     'get_post_permalink' => get_post_permalink( $page ),
 
-                'get_page_link' => get_page_link( $page ),
-            ] );
+            //     'get_page_link' => get_page_link( $page ),
+            // ] );
 
 			if ( $page_url = get_permalink( $page ) )
 			{
@@ -189,22 +189,32 @@ class OopsCookie
 			}
 		}
 
-		// return '/privacy-policy/';
+		return '/privacy-policy/';
 
         // return self::get_privacy_policy_wpml_url();
 
-        return '';
+        // return '';
 	}
 
     public static function get_privacy_policy_url()
     {
-        LegalDebug::debug( [
-            'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
+        // LegalDebug::debug( [
+        //     'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
 
-            'get_privacy_policy_wpml_url' => self::get_privacy_policy_wpml_url(),
-        ] );
+        //     'get_privacy_policy_wpml_url' => self::get_privacy_policy_wpml_url(),
+        // ] );
 
-        return '/privacy-policy/';
+        if ( MultisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_not_main_blog() )
+            {
+                return self::get_privacy_policy_page_type_url()
+            }
+        }
+
+        return self::get_privacy_policy_wpml_url();
+
+        // return '/privacy-policy/';
     }
 
 	public static function get()
