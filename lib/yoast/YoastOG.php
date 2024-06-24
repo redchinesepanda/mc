@@ -32,7 +32,7 @@ class YoastOG
 		LegalDebug::debug( [
 			'YoastOG' => 'add_og_images',
 
-			'image_container' => $image_container,
+			// 'image_container' => $image_container,
 
 			'has_images' => $image_container->has_images(),
 		] );
