@@ -16,7 +16,7 @@ class YoastOG
 
 		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_og_images' ] );
 
-		// add_filter( 'wpseo_opengraph_image', [ $handler, 'default_og_image' ] );
+		add_filter( 'wpseo_opengraph_image', [ $handler, 'default_og_image' ] );
 
 		add_filter( 'wpseo_twitter_image', [ $handler, 'default_twitter_image' ] );
     }
@@ -49,7 +49,9 @@ class YoastOG
 		
 		if ( empty( wp_get_attachment_url( $thumbnail_id ) ) )
 		{
-			$og_attachments = self::get_og_attachments();
+			// $og_attachments = self::get_og_attachments();
+			
+			$og_attachment = self::get_og_attachment();
 	
 			// LegalDebug::debug([
 			// 	'YoastOG' => 'add_default_opengraph',
@@ -57,12 +59,16 @@ class YoastOG
 			// 	'og_attachments' => $og_attachments,
 			// ]);
 	
-			if ( !empty( $og_attachments ) )
+			// if ( !empty( $og_attachments ) )
+			
+			if ( !empty( $og_attachment ) )
 			{
-				foreach ( $og_attachments as $og_attachment )
-				{
-					$image_container->add_image_by_id( $og_attachment );
-				}
+				// foreach ( $og_attachments as $og_attachment )
+				// {
+				// 	$image_container->add_image_by_id( $og_attachment );
+				// }
+
+				$image_container->add_image_by_id( $og_attachment );
 			}
 			else
 			{
@@ -86,7 +92,9 @@ class YoastOG
 		// 	'YoastOG' => 'default_og_image',
 		// ] );
 
-		return self::get_default_image();
+		// return self::get_default_image();
+
+		return self::get_og_attachment_url();
 	}
 
 	public static function get_default_image()
@@ -120,6 +128,33 @@ class YoastOG
 	public static function get_og_attachments()
 	{
 		return get_posts( self::get_og_attachment_query() );
+	}
+
+	public static function get_og_attachment()
+	{
+		$attachments = self::get_og_attachments();
+
+		if ( ! empty( $attachments ) )
+		{
+			return array_shift( $attachments );
+		}
+
+		return null;
+	}
+
+	public static function get_og_attachment_url()
+	{
+		$attachment = self::get_og_attachment();
+
+		if ( ! empty( $attachment ) )
+		{
+			if ( $attachment_url = wp_get_attachment_url( $attachment ) )
+			{
+				return $attachment_url;
+			}
+		}
+
+		return self::get_default_image();
 	}
 }
 
