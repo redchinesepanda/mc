@@ -165,7 +165,7 @@ class OopsCookie
         return $href;
     }
 
-    public static function get_privacy_policy_url()
+    public static function get_privacy_policy_page_type_url()
 	{
 		$page = self::get_privacy_policy_page();
 
@@ -179,8 +179,21 @@ class OopsCookie
 
 		// return '/privacy-policy/';
 
-        return self::get_privacy_policy_wpml_url();
+        // return self::get_privacy_policy_wpml_url();
+
+        return '';
 	}
+
+    public static function get_privacy_policy_url()
+    {
+        LegalDebug::debug( [
+            'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
+
+            'get_privacy_policy_wpml_url' => self::get_privacy_policy_wpml_url(),
+        ] );
+
+        return '/privacy-policy/';
+    }
 
 	public static function get()
     {
