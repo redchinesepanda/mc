@@ -8,7 +8,7 @@ class YoastOG
 
 		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
 
-		// add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
+		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 
 		// add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
 
@@ -24,7 +24,7 @@ class YoastOG
 
 		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_default_opengraph' ] );
 
-		add_filter( 'wpseo_twitter_image', [ $handler, 'default_opengraph' ] );
+		// add_filter( 'wpseo_twitter_image', [ $handler, 'default_opengraph' ] );
     }
 
 	// $default_opengraph = 'https://www.rafaeldejongh.com/wp-content/uploads/2017/08/RafaelDeJongh-Web-Developer-3D-Artist.jpg';
@@ -38,14 +38,14 @@ class YoastOG
 		$object->add_image( $default_opengraph );
 	}
 
-	function default_opengraph()
-	{
-		// global $default_opengraph;
+	// function default_opengraph()
+	// {
+	// 	// global $default_opengraph;
 
-		$default_opengraph = self::current_image();
+	// 	$default_opengraph = self::current_image();
 		
-		return $default_opengraph;
-	}
+	// 	return $default_opengraph;
+	// }
 
 	// function default_post_metadata__thumbnail_id( $value, $object_id, $meta_key, $single, $meta_type )
 	// {
