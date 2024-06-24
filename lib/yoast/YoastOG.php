@@ -71,9 +71,9 @@ class YoastOG
 
 	public static function current_image_og( $image )
 	{
-		// LegalDebug::debug( [
-		// 	'YoastOG' => 'current_image_og',
-		// ] );
+		LegalDebug::debug( [
+			'YoastOG' => 'current_image_og',
+		] );
 
 		return self::current_image( $image );
 	}
