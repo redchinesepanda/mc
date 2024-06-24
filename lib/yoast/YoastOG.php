@@ -45,6 +45,9 @@ class YoastOG
 
 		if ( !empty( $og_attachments ) )
 		{
+
+			$image_container->set_helpers( new Open_Graph_Image_Helper );
+
 			foreach ( $og_attachments as $og_attachment )
 			{
 				$image_container->add_image_by_id( $og_attachment );
