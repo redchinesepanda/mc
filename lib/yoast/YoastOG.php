@@ -6,9 +6,9 @@ class YoastOG
     {
         $handler = new self();
 
-		add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
+		// add_filter( 'wpseo_opengraph_image', [ $handler, 'current_image_og' ] );
 
-		add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
+		// add_filter( 'wpseo_twitter_image', [ $handler, 'current_image_twitter' ] );
 
 		// add_filter( 'post_thumbnail_url', [ $handler, 'wp_kama_post_thumbnail_url_filter' ], 10, 3 );
 
