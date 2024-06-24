@@ -37,11 +37,11 @@ class YoastOG
 
 		$og_attachments = self::get_og_attachments();
 
-		LegalDebug::debug([
-			'YoastOG' => 'add_default_opengraph',
+		// LegalDebug::debug([
+		// 	'YoastOG' => 'add_default_opengraph',
 
-			'og_attachments' => $og_attachments,
-		]);
+		// 	'og_attachments' => $og_attachments,
+		// ]);
 
 		if ( !empty( $og_attachments ) )
 		{
