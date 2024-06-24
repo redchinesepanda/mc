@@ -1,11 +1,6 @@
 <?php if( !empty( $args ) ) : ?>
 	<div class="bonus-header">
 		<div class="bonus-title">
-			<!-- <style type="text/css">
-				.legal-bonus.item-<?php echo $args[ 'index' ]; ?> .bonus-title-image {
-					background-image: url( '<?php echo $args[ 'src' ]; ?>' );
-				}
-			</style> -->
 			<?php if( !empty( $args['src'] ) ) : ?>
 				<img class="bonus-title-image" alt="<?php echo $args['title'][ 'text' ]; ?>" src="<?php echo $args[ 'src' ]; ?>" width="70" height="70" loading="lazy">
 			<?php endif; ?>
