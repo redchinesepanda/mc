@@ -150,6 +150,21 @@ class OopsCookie
 		return null;
 	}
 
+    public static function get_privacy_policy_wpml_url()
+    {
+        $href = '/privacy-policy/';
+
+        if ( $page = get_page_by_path( $href ) )
+        {
+            if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
+            {
+                $href = get_page_link( $translated_id );
+            }
+        }
+
+        return $href;
+    }
+
     public static function get_privacy_policy_url()
 	{
 		$page = self::get_privacy_policy_page();
@@ -162,7 +177,9 @@ class OopsCookie
 			}
 		}
 
-		return '/privacy-policy/';
+		// return '/privacy-policy/';
+
+        return self::get_privacy_policy_wpml_url();
 	}
 
 	public static function get()
