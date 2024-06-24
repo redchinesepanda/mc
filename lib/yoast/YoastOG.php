@@ -27,15 +27,17 @@ class YoastOG
 		// add_filter( 'wpseo_twitter_image', [ $handler, 'default_opengraph' ] );
     }
 
-	// $default_opengraph = 'https://www.rafaeldejongh.com/wp-content/uploads/2017/08/RafaelDeJongh-Web-Developer-3D-Artist.jpg';
-
-	function add_og_images( $image_container )
+	public static function add_og_images( $image_container )
 	{
-		// global $default_opengraph;
+		LegalDebug::debug( [
+			'YoastOG' => 'add_og_images',
 
-		// $default_opengraph = self::current_image();
+			'image_container' => $image_container,
 
-		if ( ! $image_container->has_images () )
+			'has_images' => $image_container->has_images(),
+		] );
+
+		if ( ! $image_container->has_images() )
 		{
 			$og_attachments = self::get_og_attachments();
 	
