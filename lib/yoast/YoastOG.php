@@ -29,13 +29,31 @@ class YoastOG
 
 	// $default_opengraph = 'https://www.rafaeldejongh.com/wp-content/uploads/2017/08/RafaelDeJongh-Web-Developer-3D-Artist.jpg';
 
-	function add_default_opengraph( $object )
+	function add_default_opengraph( $image_container )
 	{
 		// global $default_opengraph;
 
-		$default_opengraph = self::current_image();
-		
-		$object->add_image( $default_opengraph );
+		// $default_opengraph = self::current_image();
+
+		$og_attachments = self::get_og_attachments();
+
+		LegalDebug::debug([
+			'YoastOG' => 'add_default_opengraph',
+
+			'og_attachments' => $og_attachments,
+		]);
+
+		if ( !empty( $og_attachments ) )
+		{
+			foreach ( $og_attachments as $og_attachment )
+			{
+				$image_container->add_image_by_id( $og_attachment );
+			}
+		}
+		else
+		{
+			$image_container->add_image( self::get_default_image() );
+		}
 	}
 
 	// function default_opengraph()
@@ -90,7 +108,7 @@ class YoastOG
 		// 	'YoastOG' => 'current_image_twitter',
 		// ] );
 
-		return self::current_image( $image );
+		return self::get_default_image();
 	}
 
 	public static function current_image_og( $image )
@@ -99,24 +117,38 @@ class YoastOG
 		// 	'YoastOG' => 'current_image_og',
 		// ] );
 
-		return self::current_image( $image );
+		return self::get_default_image();
 	}
 
-	public static function current_image( $image = '' )
+	// public static function get_image( $image )
+	// {
+	// 	$attachments = self::get_og_attachments();
+
+	// 	if ( !empty( $attachments ) )
+	// 	{
+
+	// 	}
+
+	// 	return self::get_default_image();
+	// }
+
+	public static function get_default_image()
 	{
-		$language = WPMLMain::current_language();
+		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-default.webp';
+
+		// $language = WPMLMain::current_language();
 
 		// if ( empty( $language ) )
 		// {
 		// 	$language = 'default';
 		// }
 
-		if ( empty( $language ) || ! file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) )
-		{
-			$language = 'default';
-		}
+		// if ( empty( $language ) || ! file_exists( LegalMain::LEGAL_PATH . '/assets/img/yoast/preview-' . $language . '.webp' ) )
+		// {
+			// $language = 'default';
+		// }
 
-		$url = LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
+		// $url = LegalMain::LEGAL_URL . '/assets/img/yoast/preview-' . $language . '.webp';
 
 		// LegalDebug::debug( [
 		// 	'YoastOG' => 'current_image',
@@ -128,7 +160,43 @@ class YoastOG
 		// 	'url' => $url,
 		// ] );
 
-		return $url;
+		// return $url;
+	}
+
+	const TAXONOMY = [
+		'media' => 'media_type',
+	];
+
+	const MEDIA_TYPE = [
+		'og' => 'legal-og-image',
+	];
+
+	public static function get_og_attachment_query()
+	{
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'attachment',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'media' ],
+					
+					'terms' => self::MEDIA_TYPE,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+
+			'fields' => 'ids',
+		];
+	}
+
+	public static function get_og_attachments()
+	{
+		return get_posts( self::get_og_attachment_query() );
 	}
 
 	public static function register()
