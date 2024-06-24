@@ -16,7 +16,7 @@ class YoastOG
 
 		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_og_images' ] );
 
-		add_filter( 'wpseo_opengraph_image', [ $handler, 'default_og_image' ] );
+		// add_filter( 'wpseo_opengraph_image', [ $handler, 'default_og_image' ] );
 
 		add_filter( 'wpseo_twitter_image', [ $handler, 'default_twitter_image' ] );
     }
