@@ -195,9 +195,20 @@ class WPMLLangSwitcher
         return $args;
     }
 
+    public static function check_choose_your_country()
+    {
+        return TemplateMain::check_new()
+
+            || MiltisiteMain::check_multisite()
+
+            && MultisiteBlog::check_not_main_domain();
+    }
+
     public static function get_data()
     {
-        if ( TemplateMain::check_new() )
+        // if ( TemplateMain::check_new() )
+        
+        if ( self::check_choose_your_country() )
         {
             return [
                 'suffix' => __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN ),
