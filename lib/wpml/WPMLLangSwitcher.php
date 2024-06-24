@@ -204,7 +204,7 @@ class WPMLLangSwitcher
             && MultisiteBlog::check_main_domain();
     }
 
-    public static function get_data()
+    public static function get_choose_your_country()
     {
         // if ( TemplateMain::check_new() )
         
@@ -373,7 +373,11 @@ class WPMLLangSwitcher
 
         if ( ! empty( $active ) )
         {
-            $args[ 'active' ] = array_merge( $active, self::get_data() );
+            // $args[ 'active' ] = array_merge( $active, self::get_data() );
+            
+            $args[ 'active' ] = $active;
+
+            $args[ 'choose-your-country' ] = self::get_choose_your_country();
         }
 
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );

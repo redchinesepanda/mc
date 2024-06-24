@@ -9,8 +9,8 @@ LegalDebug::debug( [
     <div class="lang-switcher">
         <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
             <div class="lang-title"><?php echo $args[ 'active' ][ 'title' ]; ?></div>
-            <?php if ( !empty( $args[ 'active' ][ 'suffix' ] ) ) : ?>
-                <a class="lang-title-suffix" href="<?php echo $args[ 'active' ][ 'href' ]; ?>"><?php echo $args[ 'active' ][ 'suffix' ]; ?></a>
+            <?php if ( !empty( $args[ 'choose-your-country' ] ) ) : ?>
+                <a class="lang-title-suffix" href="<?php echo $args[ 'choose-your-country' ][ 'href' ]; ?>"><?php echo $args[ 'choose-your-country' ][ 'suffix' ]; ?></a>
             <?php endif; ?>
         </div>
         <?php if ( !empty( $args[ 'languages' ] ) ) : ?>
