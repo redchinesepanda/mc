@@ -39,7 +39,9 @@ class YoastOG
 			'has_images' => $image_container->has_images(),
 		] );
 
-		if ( ! $image_container->has_images() )
+		// if ( ! $image_container->has_images() )
+		
+		if ( ! has_post_thumbnail() )
 		{
 			$og_attachments = self::get_og_attachments();
 	
