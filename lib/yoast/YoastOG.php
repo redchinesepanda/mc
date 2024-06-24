@@ -22,40 +22,40 @@ class YoastOG
 		
 		// add_filter( 'default_post_metadata', [ $handler, 'default_post_metadata__thumbnail_id' ], 10, 5 );
 
-		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_default_opengraph' ] );
+		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_og_images' ] );
 
 		// add_filter( 'wpseo_twitter_image', [ $handler, 'default_opengraph' ] );
     }
 
 	// $default_opengraph = 'https://www.rafaeldejongh.com/wp-content/uploads/2017/08/RafaelDeJongh-Web-Developer-3D-Artist.jpg';
 
-	function add_default_opengraph( $image_container )
+	function add_og_images( $image_container )
 	{
 		// global $default_opengraph;
 
 		// $default_opengraph = self::current_image();
 
-		$og_attachments = self::get_og_attachments();
-
-		// LegalDebug::debug([
-		// 	'YoastOG' => 'add_default_opengraph',
-
-		// 	'og_attachments' => $og_attachments,
-		// ]);
-
-		if ( !empty( $og_attachments ) )
+		if ( ! $image_container->has_images () )
 		{
-
-			$image_container->set_helpers( new Open_Graph_Image_Helper );
-
-			foreach ( $og_attachments as $og_attachment )
+			$og_attachments = self::get_og_attachments();
+	
+			// LegalDebug::debug([
+			// 	'YoastOG' => 'add_default_opengraph',
+	
+			// 	'og_attachments' => $og_attachments,
+			// ]);
+	
+			if ( !empty( $og_attachments ) )
 			{
-				$image_container->add_image_by_id( $og_attachment );
+				foreach ( $og_attachments as $og_attachment )
+				{
+					$image_container->add_image_by_id( $og_attachment );
+				}
 			}
-		}
-		else
-		{
-			$image_container->add_image( self::get_default_image() );
+			else
+			{
+				$image_container->add_image( self::get_default_image() );
+			}
 		}
 	}
 
