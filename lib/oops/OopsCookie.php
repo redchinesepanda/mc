@@ -2,6 +2,14 @@
 
 class OopsCookie
 {
+    const TAXONOMY = [
+		'page-type' => 'page_type',
+	];
+
+	const PAGE_TYPE = [
+		'privacy-policy' => 'legal-privacy-policy',
+	];
+
 	const CSS = [
 		'legal-oops-cookie' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-cookie.css',
@@ -102,17 +110,74 @@ class OopsCookie
         return true;
     }
 
+	public static function get_privacy_policy_query()
+	{
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'attachment',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'page-type' ],
+					
+					'terms' => self::PAGE_TYPE,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+
+			'fields' => 'ids',
+		];
+	}
+
+	public static function get_privacy_policy_pages()
+    {
+        return get_posts( self::get_privacy_policy_query() );
+    }
+
+    public static function get_privacy_policy_page()
+	{
+		$pages = self::get_privacy_policy_pages();
+
+		if ( ! empty( $pages ) )
+		{
+			return array_shift( $pages );
+		}
+
+		return null;
+	}
+
+    public static function get_privacy_policy_url()
+	{
+		$page = self::get_privacy_policy_page();
+
+		if ( ! empty( $page ) )
+		{
+			if ( $page_url = get_permalink( $page ) )
+			{
+				return $page_url;
+			}
+		}
+
+		return '/privacy-policy/';
+	}
+
 	public static function get()
     {
-        $href = '/privacy-policy/';
+        $href = self::get_privacy_policy_url();
 
-        if ( $page = get_page_by_path( '/privacy-policy/' ) )
-        {
-            if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
-            {
-                $href = get_page_link( $translated_id );
-            }
-        }
+        // $href = '/privacy-policy/';
+
+        // if ( $page = get_page_by_path( '/privacy-policy/' ) )
+        // {
+        //     if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
+        //     {
+        //         $href = get_page_link( $translated_id );
+        //     }
+        // }
 
         // $page = get_page_by_path( '/privacy-policy/' );
 
