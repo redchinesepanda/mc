@@ -40,7 +40,7 @@ class YoastOG
 
 			'thumbnail_id' => $thumbnail_id,
 
-			// 'post_exists' => post_exists( $thumbnail_id ),
+			'post_exists' => post_exists( $thumbnail_id ),
 
 			'get_images' => $image_container->get_images(),
 
