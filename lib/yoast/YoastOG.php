@@ -33,7 +33,7 @@ class YoastOG
 	{
 		// global $default_opengraph;
 
-		$default_opengraph = slef::current_image();
+		$default_opengraph = self::current_image();
 		
 		$object->add_image( $default_opengraph );
 	}
@@ -42,7 +42,7 @@ class YoastOG
 	{
 		// global $default_opengraph;
 
-		$default_opengraph = slef::current_image();
+		$default_opengraph = self::current_image();
 		
 		return $default_opengraph;
 	}
