@@ -31,27 +31,29 @@ class YoastOG
 	{
 		$thumbnail_id = get_post_thumbnail_id();
 
-		LegalDebug::debug( [
-			'YoastOG' => 'add_og_images',
+		// LegalDebug::debug( [
+		// 	'YoastOG' => 'add_og_images',
 
-			// 'image_container' => $image_container,
+		// 	// 'image_container' => $image_container,
 
-			'has_post_thumbnail' => has_post_thumbnail(),
+		// 	// 'has_post_thumbnail' => has_post_thumbnail(),
 
-			'thumbnail_id' => $thumbnail_id,
+		// 	'thumbnail_id' => $thumbnail_id,
 
-			// 'post_exists' => post_exists( $thumbnail_id ),
+		// 	// 'post_exists' => post_exists( $thumbnail_id ),
 
-			'wp_get_attachment_url' => wp_get_attachment_url( $thumbnail_id ),
+		// 	'wp_get_attachment_url' => wp_get_attachment_url( $thumbnail_id ),
 
-			'get_images' => $image_container->get_images(),
+		// 	'get_images' => $image_container->get_images(),
 
-			'has_images' => $image_container->has_images(),
-		] );
+		// 	'has_images' => $image_container->has_images(),
+		// ] );
 
 		// if ( ! $image_container->has_images() )
 		
-		if ( ! has_post_thumbnail() )
+		// if ( ! has_post_thumbnail() )
+		
+		if ( empty( wp_get_attachment_url( $thumbnail_id ) ) )
 		{
 			$og_attachments = self::get_og_attachments();
 	
