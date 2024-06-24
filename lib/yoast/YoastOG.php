@@ -38,7 +38,7 @@ class YoastOG
 
 			'has_post_thumbnail' => has_post_thumbnail(),
 
-			// 'thumbnail_id' => $thumbnail_id,
+			'thumbnail_id' => $thumbnail_id,
 
 			// 'post_exists' => post_exists( $thumbnail_id ),
 
