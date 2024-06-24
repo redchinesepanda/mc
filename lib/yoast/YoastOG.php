@@ -62,9 +62,9 @@ class YoastOG
 
 	public static function current_image_twitter( $image )
 	{
-		// LegalDebug::debug( [
-		// 	'YoastOG' => 'current_image_twitter',
-		// ] );
+		LegalDebug::debug( [
+			'YoastOG' => 'current_image_twitter',
+		] );
 
 		return self::current_image( $image );
 	}
