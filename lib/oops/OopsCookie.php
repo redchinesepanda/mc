@@ -115,7 +115,7 @@ class OopsCookie
 		return [
 			'posts_per_page' => -1,
 			
-			'post_type' => 'attachment',
+			'post_type' => 'page',
 
 			'tax_query' => [
 				[
