@@ -42,7 +42,7 @@ class YoastOG
 
 			// 'post_exists' => post_exists( $thumbnail_id ),
 
-			'wp_get_attachment_url' => wp_get_attachment_url( $thumbnail_id );
+			'wp_get_attachment_url' => wp_get_attachment_url( $thumbnail_id ),
 
 			'get_images' => $image_container->get_images(),
 
