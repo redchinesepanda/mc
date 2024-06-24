@@ -21,44 +21,68 @@ class YoastOG
 		// ] );
 		
 		// add_filter( 'default_post_metadata', [ $handler, 'default_post_metadata__thumbnail_id' ], 10, 5 );
+
+		add_action( 'wpseo_add_opengraph_images', [ $handler, 'add_default_opengraph' ] );
+
+		add_filter( 'wpseo_twitter_image', [ $handler, 'default_opengraph' ] );
     }
 
-	function default_post_metadata__thumbnail_id( $value, $object_id, $meta_key, $single, $meta_type )
+	// $default_opengraph = 'https://www.rafaeldejongh.com/wp-content/uploads/2017/08/RafaelDeJongh-Web-Developer-3D-Artist.jpg';
+
+	function add_default_opengraph( $object )
 	{
-		if ( '_thumbnail_id' == $meta_key )
-		{
-			$page_on_front = get_option( 'page_on_front' );
+		// global $default_opengraph;
 
-			$thumbnail_id = get_post_thumbnail_id( $page_on_front );
-
-			// $value = 123; // the ID for the default image
-
-			$value = $thumbnail_id;
-
-
-		}
-
-		// LegalDebug::debug( [
-		// 	'YoastOG' => 'register_functions',
-
-		// 	'value' => $value,
-
-		// 	'meta_key' => $meta_key,
-		// ] );
+		$default_opengraph = slef::current_image();
 		
-		return $value;
+		$object->add_image( $default_opengraph );
 	}
 
-	public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
-		LegalDebug::debug( [
-			'YoastOG' => 'wp_kama_has_post_thumbnail_filter',
-		] );
+	function default_opengraph()
+	{
+		// global $default_opengraph;
+
+		$default_opengraph = slef::current_image();
+		
+		return $default_opengraph;
+	}
+
+	// function default_post_metadata__thumbnail_id( $value, $object_id, $meta_key, $single, $meta_type )
+	// {
+	// 	if ( '_thumbnail_id' == $meta_key )
+	// 	{
+	// 		$page_on_front = get_option( 'page_on_front' );
+
+	// 		$thumbnail_id = get_post_thumbnail_id( $page_on_front );
+
+	// 		// $value = 123; // the ID for the default image
+
+	// 		$value = $thumbnail_id;
+
+
+	// 	}
+
+	// 	// LegalDebug::debug( [
+	// 	// 	'YoastOG' => 'register_functions',
+
+	// 	// 	'value' => $value,
+
+	// 	// 	'meta_key' => $meta_key,
+	// 	// ] );
+		
+	// 	return $value;
+	// }
+
+	// public static function wp_kama_has_post_thumbnail_filter( $has_thumbnail, $post, $thumbnail_id ){
+	// 	LegalDebug::debug( [
+	// 		'YoastOG' => 'wp_kama_has_post_thumbnail_filter',
+	// 	] );
 	
-		// filter...
-		// return $has_thumbnail;
+	// 	// filter...
+	// 	// return $has_thumbnail;
 
-		return true;
-	}
+	// 	return true;
+	// }
 
 	public static function current_image_twitter( $image )
 	{
@@ -78,7 +102,7 @@ class YoastOG
 		return self::current_image( $image );
 	}
 
-	public static function current_image( $image )
+	public static function current_image( $image = '' )
 	{
 		$language = WPMLMain::current_language();
 
