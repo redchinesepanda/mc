@@ -83,7 +83,9 @@ class YoastOG
 		// 	'YoastOG' => 'default_twitter_image',
 		// ] );
 
-		return self::get_default_image();
+		// return self::get_default_image();
+
+		return self::get_og_attachment_url();
 	}
 
 	public static function default_og_image( $image )
