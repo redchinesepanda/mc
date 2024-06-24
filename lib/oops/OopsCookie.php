@@ -130,6 +130,8 @@ class OopsCookie
 			],
 
 			'fields' => 'ids',
+
+            'supress_filter' => false,
 		];
 	}
 
@@ -171,6 +173,16 @@ class OopsCookie
 
 		if ( ! empty( $page ) )
 		{
+            LegalDebug::debug( [
+                'OopsCookie' => 'get_privacy_policy_page_type_url',
+
+                'get_permalink' => get_permalink( $page ),
+
+                'get_post_permalink' => get_post_permalink( $page ),
+
+                'get_page_link' => get_page_link( $page ),
+            ] );
+
 			if ( $page_url = get_permalink( $page ) )
 			{
 				return $page_url;
