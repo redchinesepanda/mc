@@ -34,6 +34,8 @@ class YoastOG
 
 			// 'image_container' => $image_container,
 
+			'has_post_thumbnail' => has_post_thumbnail(),
+
 			'get_images' => $image_container->get_images(),
 
 			'has_images' => $image_container->has_images(),
