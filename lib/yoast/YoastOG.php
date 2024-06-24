@@ -29,12 +29,18 @@ class YoastOG
 
 	public static function add_og_images( $image_container )
 	{
+		$thumbnail_id = get_post_thumbnail_id();
+
 		LegalDebug::debug( [
 			'YoastOG' => 'add_og_images',
 
 			// 'image_container' => $image_container,
 
 			'has_post_thumbnail' => has_post_thumbnail(),
+
+			'thumbnail_id' => $thumbnail_id,
+
+			'post_exists' => post_exists( $thumbnail_id ),
 
 			'get_images' => $image_container->get_images(),
 
