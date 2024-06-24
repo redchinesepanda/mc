@@ -2,6 +2,7 @@
 {
 	/* Display */
 
+	/* .legal-menu > .menu-item:not( :hover ):not( :last-child ) > .sub-menu, */
 	.legal-menu .legal-cut-control.legal-hide,
 	.legal-header .legal-header-control,
 	.legal-menu > .menu-item:not( :hover ) > .sub-menu,
@@ -9,6 +10,10 @@
 	{
 		display: none;
 	}
+
+	/* .legal-menu > .menu-item:not( :hover ):last-child > .sub-menu {
+		visibility: hidden;
+	} */
 
 	.legal-menu,
 	.legal-menu > .menu-item:hover > .sub-menu
@@ -368,6 +373,12 @@
 }
 
 /* Position */
+
+/* .legal-section-header {
+	position: sticky;
+	top: 0px;
+	z-index: 2;
+} */
 
 .legal-header
 {
@@ -778,6 +789,7 @@
 		content: '\F106'; 
 	}
 
+	/* .legal-menu > .menu-item:last-child::after */
 	.legal-menu > .menu-item:last-child.menu-item-has-children:not( .legal-active )::after
 	{
 		content: '\F102'; 

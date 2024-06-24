@@ -33,9 +33,11 @@
 	/* Position */
 
 	.legal-review-page-sidebar {
+		--header-height: 84px;
 		position: sticky;
-		/* top: 30px; */
 		top: calc( 145px + 30px );
+		/* top: 30px; */
+		/* top: calc( 145px + 30px + var( --header-height ) ); */
 	}
 
 	/* Width and Height  */

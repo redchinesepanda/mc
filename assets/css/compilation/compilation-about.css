@@ -17,6 +17,17 @@
         column-gap: 64px;
     }
 
+    .compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
+        justify-content: center;
+    }
+
+    /* Position */
+
+    /* .compilation-about-wrapper .swiper.legal-short-str .section-content-button:first-child */
+    .compilation-about-wrapper .section-content-button:first-child {
+        margin-left: 12px;
+    }
+
 }
 
 @media screen and ( min-width: 768px ) {
@@ -176,7 +187,6 @@
 .compilation-about .section-content-text:first-of-type.legal-clamp {
     display: -webkit-box;
 }
-
 
 /* Width and Height */
 .compilation-about:not( .home .compilation-about ) {
