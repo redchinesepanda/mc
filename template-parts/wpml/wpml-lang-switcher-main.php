@@ -7,7 +7,7 @@ LegalDebug::debug( [
 ?>
 <?php if ( !empty( $args ) ) : ?>
     <div class="lang-switcher">
-        <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
+        <div class="lang-current lang-item legal-new">
             <div class="lang-title">
                 <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
             </div>
