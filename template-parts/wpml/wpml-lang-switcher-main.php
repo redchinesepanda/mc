@@ -10,8 +10,8 @@ LegalDebug::debug( [
         <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
             <div class="lang-title">
                 <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
-                <img src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy">
             </div>
+            <img class="lang-image" src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy">
             <?php if ( !empty( $args[ 'choose-your-country' ] ) ) : ?>
                 <a class="lang-title-suffix" href="<?php echo $args[ 'choose-your-country' ][ 'href' ]; ?>"><?php echo $args[ 'choose-your-country' ][ 'suffix' ]; ?></a>
             <?php endif; ?>
@@ -20,10 +20,9 @@ LegalDebug::debug( [
             <div id="lang-menu-1" class="menu-avaible">
                 <?php foreach( $args[ 'languages' ] as $lang ) : ?>
                     <a class='lang-avaible lang-item' href="<?php echo $lang[ 'href' ]; ?>" target="_blank">
-                        <div class="lang-image locale-<?php echo $lang[ 'id' ]; ?>"></div>
-                        <div class="lang-title">
-                            <?php echo $lang[ 'title' ]; ?>
-                        </div>
+                        <!-- <div class="lang-image locale-<?php echo $lang[ 'id' ]; ?>"></div> -->
+                        <img class="lang-image" src="<?php echo $lang[ 'src' ]; ?>" width="18" height="18" alt="<?php echo $lang[ 'title' ]; ?>" loading="lazy">
+                        <div class="lang-title"><?php echo $lang[ 'title' ]; ?></div>
                     </a>
                 <?php endforeach; ?>
         </div>
