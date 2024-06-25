@@ -44,13 +44,13 @@ class YoastOG
 	{
 		$locale = WPMLMain::get_locale();
 
-		LegalDebug::debug( [
-			'YoastOG' =>'check_locale_valid',
+		// LegalDebug::debug( [
+		// 	'YoastOG' =>'check_locale_valid',
 
-			'locale' => $locale,
+		// 	'locale' => $locale,
 
-			'in_array' => in_array( $locale, self::VALID_OG_LOCALE ),
-		] );
+		// 	'in_array' => in_array( $locale, self::VALID_OG_LOCALE ),
+		// ] );
 
 		if ( in_array( $locale, self::VALID_OG_LOCALE ) )
 		{
