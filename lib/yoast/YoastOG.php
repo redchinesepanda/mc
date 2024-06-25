@@ -2,6 +2,10 @@
 
 class YoastOG
 {
+	const VALID_OG_LOCALE = [
+		'en_US', 'ca_ES', 'cs_CZ', 'cx_PH', 'cy_GB', 'da_DK', 'de_DE', 'eu_ES', 'en_PI', 'en_UD', 'ck_US', 'es_LA', 'es_ES', 'es_MX', 'gn_PY', 'fi_FI', 'fr_FR', 'gl_ES', 'ht_HT', 'hu_HU', 'it_IT', 'ja_JP', 'ko_KR', 'nb_NO', 'nn_NO', 'nl_NL', 'fy_NL', 'pl_PL', 'pt_BR', 'pt_PT', 'ro_RO', 'ru_RU', 'sk_SK', 'sl_SI', 'sv_SE', 'th_TH', 'tr_TR', 'ku_TR', 'zh_CN', 'zh_HK', 'zh_TW', 'fb_LT', 'af_ZA', 'sq_AL', 'hy_AM', 'az_AZ', 'be_BY', 'bn_IN', 'bs_BA', 'bg_BG', 'hr_HR', 'nl_BE', 'en_GB', 'eo_EO', 'et_EE', 'fo_FO', 'fr_CA', 'ka_GE', 'el_GR', 'gu_IN', 'hi_IN', 'is_IS', 'id_ID', 'ga_IE', 'jv_ID', 'kn_IN', 'kk_KZ', 'ky_KG', 'la_VA', 'lv_LV', 'li_NL', 'lt_LT', 'mi_NZ', 'mk_MK', 'mg_MG', 'ms_MY', 'mt_MT', 'mr_IN', 'mn_MN', 'ne_NP', 'pa_IN', 'rm_CH', 'sa_IN', 'sr_RS', 'so_SO', 'sw_KE', 'tl_PH', 'ta_IN', 'tt_RU', 'te_IN', 'ml_IN', 'uk_UA', 'uz_UZ', 'vi_VN', 'xh_ZA', 'zu_ZA', 'km_KH', 'tg_TJ', 'ar_AR', 'he_IL', 'ur_PK', 'fa_IR', 'sy_SY', 'yi_DE', 'qc_GT', 'qu_PE', 'ay_BO', 'se_NO', 'ps_AF', 'tl_ST', 'gx_GR', 'my_MM', 'qz_MM', 'or_IN', 'si_LK', 'rw_RW', 'ak_GH', 'nd_ZW', 'sn_ZW', 'cb_IQ', 'ha_NG', 'yo_NG', 'ja_KS', 'lg_UG', 'br_FR', 'zz_TR', 'tz_MA', 'co_FR', 'ig_NG', 'as_IN', 'am_ET', 'lo_LA', 'ny_MW', 'wo_SN', 'ff_NG', 'sc_IT', 'ln_CD', 'tk_TM', 'sz_PL', 'bp_IN', 'ns_ZA', 'tn_BW', 'st_ZA', 'ts_ZA', 'ss_SZ', 'ks_IN', 've_ZA', 'nr_ZA', 'ik_US', 'su_ID', 'om_ET', 'em_ZM', 'qr_GR', 'iu_CA',
+	];
+
 	const TAXONOMY = [
 		'media' => 'media_type',
 	];
@@ -19,7 +23,51 @@ class YoastOG
 		add_filter( 'wpseo_opengraph_image', [ $handler, 'default_og_image' ] );
 
 		add_filter( 'wpseo_twitter_image', [ $handler, 'default_twitter_image' ] );
+	
+		add_action( 'wpseo_frontend_presenters', [ $handler, 'remove_og_locale' ] );
     }
+
+	public static function remove_locale_presenter( $presenter )
+	{
+		if ( ! $presenter instanceof Yoast\WP\SEO\Presenters\Open_Graph\Locale_Presenter )
+		{
+			return $presenter;
+		}
+	}
+
+	public static function check_locale_not_valid()
+	{
+		return ! self::check_locale_valid();
+	}
+
+	public static function check_locale_valid()
+	{
+		$locale = WPMLMain::get_locale();
+
+		if ( in_array( $locale, self::VALID_OG_LOCALE ) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	public static function remove_og_locale( $presenters )
+	{
+		// return array_map( function( $presenter )
+		// {
+		// 	if ( ! $presenter instanceof Yoast\WP\SEO\Presenters\Open_Graph\Locale_Presenter ) {
+		// 		return $presenter;
+		// 	}
+		// }, $presenters );
+
+		if ( self::check_locale_not_valid() )
+		{
+			$handler = new self();
+	
+			return array_map( [ $handler, 'remove_locale_presenter' ], $presenters );
+		}
+	}
 
 	public static function add_og_images( $image_container )
 	{
