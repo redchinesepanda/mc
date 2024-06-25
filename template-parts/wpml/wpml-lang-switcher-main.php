@@ -11,7 +11,7 @@ LegalDebug::debug( [
             <div class="lang-title">
                 <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
             </div>
-            <img class="lang-image" src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy">
+            <!-- <img class="lang-image" src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy"> -->
             <?php if ( !empty( $args[ 'choose-your-country' ] ) ) : ?>
                 <a class="lang-title-suffix" href="<?php echo $args[ 'choose-your-country' ][ 'href' ]; ?>"><?php echo $args[ 'choose-your-country' ][ 'suffix' ]; ?></a>
             <?php endif; ?>
