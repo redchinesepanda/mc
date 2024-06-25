@@ -8,7 +8,10 @@ LegalDebug::debug( [
 <?php if ( !empty( $args ) ) : ?>
     <div class="lang-switcher">
         <div class="lang-current lang-item <?php echo $args[ 'active' ][ 'class' ]; ?>">
-            <div class="lang-title"><?php echo $args[ 'active' ][ 'title' ]; ?></div>
+            <div class="lang-title">
+                <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
+                <img src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy">
+            </div>
             <?php if ( !empty( $args[ 'choose-your-country' ] ) ) : ?>
                 <a class="lang-title-suffix" href="<?php echo $args[ 'choose-your-country' ][ 'href' ]; ?>"><?php echo $args[ 'choose-your-country' ][ 'suffix' ]; ?></a>
             <?php endif; ?>
