@@ -265,19 +265,19 @@ class MultisiteAttachment
 
 	public static function add_attachment( $post, $path, $blog_id, $post_moved_id )
 	{
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'add_attachment',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'add_attachment',
 
-			'post' => $post[ 'ID' ],
+		// 	'post' => $post[ 'ID' ],
 
-			'path' => $path,
+		// 	'path' => $path,
 
-			'blog_id' => $blog_id,
+		// 	'blog_id' => $blog_id,
 
-			'post_moved_id' => $post_moved_id,
+		// 	'post_moved_id' => $post_moved_id,
 
-			'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
-		] );
+		// 	'check_moved' => MultisiteMeta::check_moved( $post_moved_id ),
+		// ] );
 		
 		if ( MultisiteMeta::check_moved( $post_moved_id ) )
 		{
