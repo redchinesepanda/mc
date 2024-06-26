@@ -105,6 +105,18 @@ class MultisiteMeta
 
 		'_pohozhie-bonusy',
 
+		// attachment
+
+		'_edit_lock',
+
+		'_wp_attachment_metadata',
+
+		'_wp_attached_file',
+
+		'_wp_old_slug',
+
+		'_edit_last',
+
 		// thirive
 
 		// 'tcb_editor_enabled',
