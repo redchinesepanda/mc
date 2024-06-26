@@ -360,9 +360,9 @@ class MultisiteAttachment
 			// 	'inserted_attachment_id' => $inserted_attachment_id,
 			// ] );
 
-			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
-
 			MultisiteMeta::add_post_meta( $inserted_attachment_id, $post_meta );
+
+			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
 
 			MultisiteACF::add_fields( $inserted_attachment_id, $post_fields );
 
