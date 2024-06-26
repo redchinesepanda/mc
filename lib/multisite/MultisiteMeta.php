@@ -34,6 +34,10 @@ class MultisiteMeta
 		// Rank Match plugin
 
 		'rank_math_',
+
+		// other
+
+		'_ew',
 	];
 
 	const FILTER_META = [
@@ -235,6 +239,8 @@ class MultisiteMeta
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
+
+			'post' => $post,
 
 			'post_meta' => $post_meta,
 		] );
