@@ -56,7 +56,7 @@ class MultisiteAttachment
 
 				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
 
-				$post_fields = MultisiteACF::get_fields( $post_id );
+				$post_fields = MultisiteACF::get_fields( $attachment_id );
 				
 				// if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
 				
