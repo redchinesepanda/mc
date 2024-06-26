@@ -25,6 +25,26 @@ class YoastOG
 		add_filter( 'wpseo_twitter_image', [ $handler, 'default_twitter_image' ] );
 	
 		add_action( 'wpseo_frontend_presenters', [ $handler, 'remove_og_locale' ] );
+
+		add_action( 'wp_head', [ $handler, 'add_og_meta_tags' ]);
+    }
+
+	const TEMPLATE = [
+        'og' => LegalMain::LEGAL_PATH . '/template-parts/yoast/part-yoast-og.php',
+    ];
+
+    public static function get_og_meta_tags()
+	{
+		return [
+			'og-image' => [
+				'content' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
+			],
+		];
+	}
+
+    public static function add_og_meta_tags()
+    {
+        echo LegalComponents::render_main( self::TEMPLATE[ 'og' ], self::get_og_meta_tags() );
     }
 
 	public static function remove_locale_presenter( $presenter )
