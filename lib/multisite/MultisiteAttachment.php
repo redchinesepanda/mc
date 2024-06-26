@@ -51,8 +51,12 @@ class MultisiteAttachment
 
 				// 	'post' => $post[ 'ID' ],
 				// ] );
+
+				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
 				
-				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+				// if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+				
+				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post, $post_meta ) )
 				{
 					MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
 
@@ -314,7 +318,9 @@ class MultisiteAttachment
 		return false;
 	}
 	
-	public static function add_attachment_and_data( $blog_id, $post )
+	// public static function add_attachment_and_data( $blog_id, $post )
+	
+	public static function add_attachment_and_data( $blog_id, $post, $post_meta )
 	{
 		$inserted_attachment_id = false;
 
@@ -345,6 +351,8 @@ class MultisiteAttachment
 			// ] );
 
 			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
+
+			MultisiteMeta::add_post_meta( $inserted_attachment_id, $post_meta );
 
 			MultisiteMeta::set_post_moved_from( $inserted_attachment_id, $origin_post_id );
 		}
