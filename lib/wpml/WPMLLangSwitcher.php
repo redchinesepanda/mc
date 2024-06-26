@@ -195,9 +195,20 @@ class WPMLLangSwitcher
         return $args;
     }
 
-    public static function get_data()
+    public static function check_choose_your_country()
     {
-        if ( TemplateMain::check_new() )
+        return TemplateMain::check_new()
+
+            && MiltisiteMain::check_multisite()
+
+            && MultisiteBlog::check_main_domain();
+    }
+
+    public static function get_choose_your_country()
+    {
+        // if ( TemplateMain::check_new() )
+        
+        if ( self::check_choose_your_country() )
         {
             return [
                 'suffix' => __( BaseMain::TEXT[ 'change-country' ], ToolLoco::TEXTDOMAIN ),
@@ -362,7 +373,11 @@ class WPMLLangSwitcher
 
         if ( ! empty( $active ) )
         {
-            $args[ 'active' ] = array_merge( $active, self::get_data() );
+            // $args[ 'active' ] = array_merge( $active, self::get_data() );
+            
+            $args[ 'active' ] = $active;
+
+            $args[ 'choose-your-country' ] = self::get_choose_your_country();
         }
 
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );

@@ -2,6 +2,14 @@
 
 class OopsCookie
 {
+    const TAXONOMY = [
+		'page-type' => 'page_type',
+	];
+
+	const PAGE_TYPE = [
+		'privacy-policy' => 'legal-privacy-policy',
+	];
+
 	const CSS = [
 		'legal-oops-cookie' => [
             'path' => LegalMain::LEGAL_URL . '/assets/css/oops/legal-oops-cookie.css',
@@ -102,17 +110,126 @@ class OopsCookie
         return true;
     }
 
-	public static function get()
+	public static function get_privacy_policy_query()
+	{
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'page',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'page-type' ],
+					
+					'terms' => self::PAGE_TYPE,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+
+			'fields' => 'ids',
+
+            'supress_filter' => false,
+		];
+	}
+
+	public static function get_privacy_policy_pages()
+    {
+        return get_posts( self::get_privacy_policy_query() );
+    }
+
+    public static function get_privacy_policy_page()
+	{
+		$pages = self::get_privacy_policy_pages();
+
+		if ( ! empty( $pages ) )
+		{
+			return array_shift( $pages );
+		}
+
+		return null;
+	}
+
+    public static function get_privacy_policy_wpml_url()
     {
         $href = '/privacy-policy/';
 
-        if ( $page = get_page_by_path( '/privacy-policy/' ) )
+        if ( $page = get_page_by_path( $href ) )
         {
             if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
             {
                 $href = get_page_link( $translated_id );
             }
         }
+
+        return $href;
+    }
+
+    public static function get_privacy_policy_page_type_url()
+	{
+		$page = self::get_privacy_policy_page();
+
+		if ( ! empty( $page ) )
+		{
+            // LegalDebug::debug( [
+            //     'OopsCookie' => 'get_privacy_policy_page_type_url',
+
+            //     'get_permalink' => get_permalink( $page ),
+
+            //     'get_post_permalink' => get_post_permalink( $page ),
+
+            //     'get_page_link' => get_page_link( $page ),
+            // ] );
+
+			if ( $page_url = get_permalink( $page ) )
+			{
+				return $page_url;
+			}
+		}
+
+		return '/privacy-policy/';
+
+        // return self::get_privacy_policy_wpml_url();
+
+        // return '';
+	}
+
+    public static function get_privacy_policy_url()
+    {
+        // LegalDebug::debug( [
+        //     'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
+
+        //     'get_privacy_policy_wpml_url' => self::get_privacy_policy_wpml_url(),
+        // ] );
+
+        if ( MiltisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_not_main_blog() )
+            {
+                return self::get_privacy_policy_page_type_url();
+            }
+        }
+
+        return self::get_privacy_policy_wpml_url();
+
+        // return '/privacy-policy/';
+    }
+
+	public static function get()
+    {
+        $href = self::get_privacy_policy_url();
+
+        // $href = '/privacy-policy/';
+
+        // if ( $page = get_page_by_path( '/privacy-policy/' ) )
+        // {
+        //     if ( $translated_id = WPMLMain::translated_menu_id( $page->ID, $page->post_type ) )
+        //     {
+        //         $href = get_page_link( $translated_id );
+        //     }
+        // }
 
         // $page = get_page_by_path( '/privacy-policy/' );
 

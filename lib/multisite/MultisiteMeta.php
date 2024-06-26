@@ -34,6 +34,10 @@ class MultisiteMeta
 		// Rank Match plugin
 
 		'rank_math_',
+
+		// other
+
+		'_ew',
 	];
 
 	const FILTER_META = [
@@ -100,6 +104,18 @@ class MultisiteMeta
 		'pohozhie-bonusy',
 
 		'_pohozhie-bonusy',
+
+		// attachment
+
+		'_edit_lock',
+
+		'_wp_attachment_metadata',
+
+		'_wp_attached_file',
+
+		'_wp_old_slug',
+
+		'_edit_last',
 
 		// thirive
 
@@ -235,6 +251,8 @@ class MultisiteMeta
 
 	// 	LegalDebug::debug( [
 	// 		'MultisiteMeta' => 'register_functions_admin',
+
+	// 		'post' => $post,
 
 	// 		'post_meta' => $post_meta,
 	// 	] );

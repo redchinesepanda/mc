@@ -30,8 +30,6 @@ class YoastMain
         add_action( 'wp_loaded', [ $handler, 'wpwc_fix_yoast_seo_robots_txt' ] );
 
         add_filter( 'wpseo_json_ld_output', '__return_false' );
-
-        YoastOG::register();
     }
 
     public static function register_functions()

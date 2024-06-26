@@ -49,10 +49,18 @@ class MultisiteAttachment
 
 				// 	'attachment_id' => $attachment_id,
 
-				// 	'post' => $post[ 'ID' ],
+				// 	'post-ID' => $post[ 'ID' ],
+
+				// 	'post' => $post,
 				// ] );
+
+				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
+
+				$post_fields = MultisiteACF::get_fields( $attachment_id );
 				
-				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+				// if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post ) )
+				
+				if ( $inserted_attachment_id = self::add_attachment_and_data( $blog_id, $post, $post_meta, $post_fields ) )
 				{
 					MultisiteMeta::set_post_moved( $post[ 'ID' ], $blog_id, $inserted_attachment_id );
 
@@ -214,7 +222,9 @@ class MultisiteAttachment
 		return false;
 	}
 
-	public static function insert_attachment( $path_moved, $uploads, $unique_filename )
+	// public static function insert_attachment( $path_moved, $uploads, $unique_filename )
+	
+	public static function insert_attachment( $path_moved, $uploads, $unique_filename, $post )
 	{
 		$url_moved = sprintf( self::PATTERNS[ 'url' ], $uploads[ 'url' ], $unique_filename );
 
@@ -225,7 +235,9 @@ class MultisiteAttachment
 			
 			'post_title' => self::get_title( $unique_filename ),
 
-			'post_content' => '',
+			'post_content' => $post[ 'post_content' ],
+
+			'post_excerpt' => $post[ 'post_excerpt' ],
 
 			'post_status' => 'inherit',
 		];
@@ -293,7 +305,9 @@ class MultisiteAttachment
 			// 	'path_moved' => $path_moved,
 			// ] );
 
-			if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename ) )
+			// if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename ) )
+			
+			if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename, $post ) )
 			{
 				// LegalDebug::debug( [
 				// 	'MultisiteAttachment' => 'add_attachment',
@@ -314,7 +328,9 @@ class MultisiteAttachment
 		return false;
 	}
 	
-	public static function add_attachment_and_data( $blog_id, $post )
+	// public static function add_attachment_and_data( $blog_id, $post )
+	
+	public static function add_attachment_and_data( $blog_id, $post, $post_meta, $post_fields )
 	{
 		$inserted_attachment_id = false;
 
@@ -344,7 +360,11 @@ class MultisiteAttachment
 			// 	'inserted_attachment_id' => $inserted_attachment_id,
 			// ] );
 
+			MultisiteMeta::add_post_meta( $inserted_attachment_id, $post_meta );
+
 			MultisiteMeta::add_attachment_meta( $inserted_attachment_id );
+
+			MultisiteACF::add_fields( $inserted_attachment_id, $post_fields );
 
 			MultisiteMeta::set_post_moved_from( $inserted_attachment_id, $origin_post_id );
 		}

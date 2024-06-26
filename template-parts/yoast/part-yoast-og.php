@@ -1,0 +1,1 @@
+<meta property="og:logo" content="<?php echo $args[ 'og-image' ][ 'content' ] ?>" class="mc-meta-tag">
