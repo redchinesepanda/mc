@@ -50,12 +50,6 @@ class MultisiteACF
 
 			'key' => 'media-author',
 		],
-
-		'media-author' => [
-			'name' => 'media-author',
-
-			'key' => 'media-author',
-		],
 	];
 
 	public static function update_field( $field_name, $value, $post_id )
