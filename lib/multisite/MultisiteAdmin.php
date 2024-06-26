@@ -340,7 +340,7 @@ class MultisiteAdmin
 				MiltisiteMain::TEXT_PLURAL[ 'image-has-been-copied-to' ],
 
 				[
-					$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ],
+					$_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],
 
 					$blog->blogname,
 				]
