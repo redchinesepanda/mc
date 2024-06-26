@@ -242,11 +242,11 @@ class MultisiteAttachment
 			'post_status' => 'inherit',
 		];
 
-		LegalDebug::die( [
-			'MultisiteAttachment' => 'insert_attachment',
+		// LegalDebug::debug( [
+		// 	'MultisiteAttachment' => 'insert_attachment',
 
-			'attachment' => $attachment,
-		] );
+		// 	'attachment' => $attachment,
+		// ] );
 
 		$inserted_attachment_id = wp_insert_attachment( $attachment, $path_moved );
 
