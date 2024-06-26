@@ -44,6 +44,18 @@ class MultisiteACF
 
 			'key' => 'field_6423d199c433a',
 		],
+
+		'media-author' => [
+			'name' => 'media-author',
+
+			'key' => 'media-author',
+		],
+
+		'media-author' => [
+			'name' => 'media-author',
+
+			'key' => 'media-author',
+		],
 	];
 
 	public static function update_field( $field_name, $value, $post_id )
