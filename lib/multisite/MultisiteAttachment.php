@@ -44,15 +44,15 @@ class MultisiteAttachment
 		{
 			if ( $post = MultisitePost::get_post( $attachment_id ) )
 			{
-				LegalDebug::die( [
-					'MultisiteAttachment' => 'handle_attachments',
+				// LegalDebug::debug( [
+				// 	'MultisiteAttachment' => 'handle_attachments',
 
-					'attachment_id' => $attachment_id,
+				// 	'attachment_id' => $attachment_id,
 
-					'post-ID' => $post[ 'ID' ],
+				// 	'post-ID' => $post[ 'ID' ],
 
-					'post' => $post,
-				] );
+				// 	'post' => $post,
+				// ] );
 
 				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
 
@@ -222,7 +222,9 @@ class MultisiteAttachment
 		return false;
 	}
 
-	public static function insert_attachment( $path_moved, $uploads, $unique_filename )
+	// public static function insert_attachment( $path_moved, $uploads, $unique_filename )
+	
+	public static function insert_attachment( $path_moved, $uploads, $unique_filename, $post )
 	{
 		$url_moved = sprintf( self::PATTERNS[ 'url' ], $uploads[ 'url' ], $unique_filename );
 
@@ -233,16 +235,18 @@ class MultisiteAttachment
 			
 			'post_title' => self::get_title( $unique_filename ),
 
-			'post_content' => '',
+			'post_content' => $post[ 'post_content' ],
+
+			'post_excerpt' => $post[ 'post_excerpt' ],
 
 			'post_status' => 'inherit',
 		];
 
-		// LegalDebug::debug( [
-		// 	'MultisiteAttachment' => 'insert_attachment',
+		LegalDebug::die( [
+			'MultisiteAttachment' => 'insert_attachment',
 
-		// 	'attachment' => $attachment,
-		// ] );
+			'attachment' => $attachment,
+		] );
 
 		$inserted_attachment_id = wp_insert_attachment( $attachment, $path_moved );
 
@@ -301,7 +305,9 @@ class MultisiteAttachment
 			// 	'path_moved' => $path_moved,
 			// ] );
 
-			if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename ) )
+			// if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename ) )
+			
+			if ( $inserted_attachment_id = self::insert_attachment( $path_moved, $uploads, $unique_filename, $post ) )
 			{
 				// LegalDebug::debug( [
 				// 	'MultisiteAttachment' => 'add_attachment',
