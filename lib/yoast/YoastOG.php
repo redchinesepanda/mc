@@ -37,7 +37,7 @@ class YoastOG
 	{
 		return [
 			'og-image' => [
-				'content' => LegalMain::LEGAL_URL . '/assets/img/compilation/mini-mc.webp',
+				'content' => LegalMain::LEGAL_URL . '/assets/img/yoast/mc-favicon.svg',
 			],
 		];
 	}
