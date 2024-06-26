@@ -44,13 +44,15 @@ class MultisiteAttachment
 		{
 			if ( $post = MultisitePost::get_post( $attachment_id ) )
 			{
-				// LegalDebug::debug( [
-				// 	'MultisiteAttachment' => 'handle_attachments',
+				LegalDebug::die( [
+					'MultisiteAttachment' => 'handle_attachments',
 
-				// 	'attachment_id' => $attachment_id,
+					'attachment_id' => $attachment_id,
 
-				// 	'post' => $post[ 'ID' ],
-				// ] );
+					'post' => $post[ 'ID' ],
+
+					'post' => $post,
+				] );
 
 				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
 
