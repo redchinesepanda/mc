@@ -74,7 +74,7 @@ class ToolRobots
 					'sitemaps' => $sitemaps,
 				] );
 
-				return
+				return $sitemaps;
 			}
 		}
 	}
