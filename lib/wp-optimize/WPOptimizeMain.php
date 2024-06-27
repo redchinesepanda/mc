@@ -21,6 +21,8 @@ class WPOptimizeMain
 			'WPOptimizeMain' => 'mc_edit_form_after_title_debug',
 
 			'WPO_CACHE_FILES_DIR' => WPO_CACHE_FILES_DIR,
+			
+			'ABSPATH' => ABSPATH,
 		] );
 	}
 }
