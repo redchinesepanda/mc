@@ -30,6 +30,10 @@ class ToolSitemapXML
         # Изменение параметров запроса WP_Query для карты сайта posts
 
         add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+
+        # WP_Query отдавет массив только с ID, что улучшит скорость генерации страницы и снизит нагрузку
+        
+        add_filter( 'wp_sitemaps_posts_query_args', [ $handler'optimize_sitemap_posts_query' ], 10, 1 );
     }
 
     public static function check_sitemap_enabled()
@@ -177,6 +181,13 @@ class ToolSitemapXML
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
         $args[ 'suppress_filters' ] = true;
+
+        return $args;
+    }
+
+    public static function optimize_sitemap_posts_query( $args )
+    {
+        $args[ 'fields' ] = 'ids';
 
         return $args;
     }
