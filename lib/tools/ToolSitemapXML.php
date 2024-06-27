@@ -160,11 +160,14 @@ class ToolSitemapXML
             'check_sitemap_page' => self::check_sitemap_page(),
         ] );
 
-        $handler = new self();
-
-        # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
-
-        add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
+        if ( self::check_sitemap_page() )
+        {
+            $handler = new self();
+    
+            # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
+    
+            add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
+        }
     }
 
     /*
