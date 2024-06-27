@@ -151,6 +151,14 @@ class ToolSitemapXML
 
         //     add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
         // }
+
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'register',
+
+            // 'where' => $where,
+
+            'check_sitemap_page' => self::check_sitemap_page(),
+        ] );
     }
 
     /*
