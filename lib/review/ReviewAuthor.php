@@ -127,9 +127,24 @@ class ReviewAuthor
         return self::get_default();
     }
 
-    // public static function get_href( $url, $anchor = '' )
+	const PAGE_TYPE = [
+		'about-us' => 'legal-about-us',
+	];
+
+    public static function get_about_us_url( $id, $href, $anchor = '' )
+    {
+        if ( MiltisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_not_main_blog() )
+            {
+                return OopsCookie::get_privacy_policy_page_type_url( self::PAGE_TYPE, $href,  $anchor );
+            }
+        }
+
+        return self::get_about_us_wpml_url( $id, $href, $anchor );
+    }
     
-    public static function get_href( $id, $url, $anchor = '' )
+    public static function get_about_us_wpml_url( $id, $url, $anchor = '' )
     {
         $page_link = $url;
 
@@ -175,7 +190,9 @@ class ReviewAuthor
 
     public static function get_default()
     {
-        $href = self::get_href( 4739, '/about-us/', '#our-team' );
+        // $href = self::get_href( 4739, '/about-us/', '#our-team' );
+        
+        $href = self::get_about_us_url( 4739, '/about-us/', '#our-team' );
 
         // $page = get_page_by_path( '/about-us/' );
 
@@ -198,7 +215,9 @@ class ReviewAuthor
     {
         // $href = self::get_href( '/o-nas/', $anchor = '#nasha-komanda' );
         
-        $href = self::get_href( 10764, '/kz/o-nas/', '#nasha-komanda' );
+        // $href = self::get_href( 10764, '/kz/o-nas/', '#nasha-komanda' );
+        
+        $href = self::get_about_us_url( 10764, '/kz/o-nas/', '#nasha-komanda' );
         
         // $href = self::get_href( 'o-nas-kz', $anchor = '#nasha-komanda' );
 
@@ -227,7 +246,9 @@ class ReviewAuthor
 
     public static function get_es()
     {
-        $href = self::get_href( 4758, '/es/sobre-nosotros/', '#nuestro-equipo' );
+        // $href = self::get_href( 4758, '/es/sobre-nosotros/', '#nuestro-equipo' );
+        
+        $href = self::get_about_us_url( 4758, '/es/sobre-nosotros/', '#nuestro-equipo' );
         
         // $href = self::get_href( '/sobre-nosotros/', $anchor = '#nuestro-equipo' );
 

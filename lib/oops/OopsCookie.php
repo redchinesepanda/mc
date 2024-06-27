@@ -110,8 +110,15 @@ class OopsCookie
         return true;
     }
 
-	public static function get_privacy_policy_query()
+	// public static function get_privacy_policy_query()
+	
+    public static function get_privacy_policy_query( $page_type = [] )
 	{
+        if ( empty( $page_type ) )
+        {
+            $page_type = self::PAGE_TYPE;
+        }
+
 		return [
 			'posts_per_page' => -1,
 			
@@ -121,7 +128,9 @@ class OopsCookie
 				[
 					'taxonomy' => self::TAXONOMY[ 'page-type' ],
 					
-					'terms' => self::PAGE_TYPE,
+					// 'terms' => self::PAGE_TYPE,
+					
+                    'terms' => $page_type,
 
 					'field' => 'slug',
 
@@ -135,14 +144,14 @@ class OopsCookie
 		];
 	}
 
-	public static function get_privacy_policy_pages()
+	public static function get_privacy_policy_pages( $page_type )
     {
-        return get_posts( self::get_privacy_policy_query() );
+        return get_posts( self::get_privacy_policy_query( $page_type ) );
     }
 
-    public static function get_privacy_policy_page()
+    public static function get_privacy_policy_page( $page_type )
 	{
-		$pages = self::get_privacy_policy_pages();
+		$pages = self::get_privacy_policy_pages( $page_type );
 
 		if ( ! empty( $pages ) )
 		{
@@ -152,9 +161,12 @@ class OopsCookie
 		return null;
 	}
 
-    public static function get_privacy_policy_wpml_url()
+    public static function get_privacy_policy_wpml_url( $href, $anchor = '' )
     {
-        $href = '/privacy-policy/';
+        if ( empty( $href ) )
+        {
+            $href = '/privacy-policy/';
+        }
 
         if ( $page = get_page_by_path( $href ) )
         {
@@ -164,12 +176,12 @@ class OopsCookie
             }
         }
 
-        return $href;
+        return $href . $anchor;
     }
 
-    public static function get_privacy_policy_page_type_url()
+    public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
 	{
-		$page = self::get_privacy_policy_page();
+		$page = self::get_privacy_policy_page( $page_type );
 
 		if ( ! empty( $page ) )
 		{
@@ -185,18 +197,23 @@ class OopsCookie
 
 			if ( $page_url = get_permalink( $page ) )
 			{
-				return $page_url;
+				return $page_url . $anchor;
 			}
 		}
 
-		return '/privacy-policy/';
+        if ( empty( $href ) )
+        {
+            $href = '/privacy-policy/';
+        }
+
+		return $href . $anchor;
 
         // return self::get_privacy_policy_wpml_url();
 
         // return '';
 	}
 
-    public static function get_privacy_policy_url()
+    public static function get_privacy_policy_url( $page_type = [], $href = '', $anchor = '' )
     {
         // LegalDebug::debug( [
         //     'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
@@ -208,11 +225,11 @@ class OopsCookie
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {
-                return self::get_privacy_policy_page_type_url();
+                return self::get_privacy_policy_page_type_url( $page_type, $href, $anchor );
             }
         }
 
-        return self::get_privacy_policy_wpml_url();
+        return self::get_privacy_policy_wpml_url( $href, $anchor );
 
         // return '/privacy-policy/';
     }
