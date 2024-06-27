@@ -193,6 +193,12 @@ class ToolSitemapXML
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+
+            'args' => $args,
+        ] );
+
         $args[ 'suppress_filters' ] = true;
 
         return $args;
