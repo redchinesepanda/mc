@@ -39,7 +39,7 @@ class ToolSitemapXML
 
         add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
 
-        add_filter( 'posts_where', 'wp_kama_posts_where_filter' );
+        add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
 
     
