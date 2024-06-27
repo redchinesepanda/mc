@@ -41,7 +41,24 @@ class ToolSitemapXML
 
         add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
+
+    const MOVED_FOLDERS = [
+        'kz',
+
+        'kz-kz',
+    ];
+
+    const PATTERNS = [
+        'language-code-equals' => '/\(( wpml_translations.language_code )(= \'[a-z]{2,3}\') OR 0 \)/',
+
+        'language-code-not-in' => '$1 NOT IN ( \'%s\' )',
+    ];
     
+    public static function get_moved_folders()
+    {
+        return implode( '\', \'', self::MOVED_FOLDERS );
+    }
+
     public static function wp_kama_posts_where_filter( $where )
     {
         LegalDebug::debug( [
@@ -50,7 +67,15 @@ class ToolSitemapXML
             'where' => $where,
         ] );
 
-        $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
+        // $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
+
+        $moved_folders = self::get_moved_folders();
+
+        $language_code_not_in = sprintf( self::PATTERNS[ 'language-code-not-in' ], $moved_folders );
+
+        // $where = preg_replace( '/\(( wpml_translations.language_code )(= \'[a-z]{2,3}\') OR 0 \)/', '$1 NOT IN ( \'%s\' )', $where );
+        
+        $where = preg_replace( self::PATTERNS[ 'language-code-equals' ], $language_code_not_in, $where );
 
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_posts_where_filter',
