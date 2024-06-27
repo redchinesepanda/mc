@@ -179,7 +179,7 @@ class OopsCookie
         return $href;
     }
 
-    public static function get_privacy_policy_page_type_url( $page_type, $href = '' )
+    public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
 	{
 		$page = self::get_privacy_policy_page( $page_type );
 
@@ -197,7 +197,7 @@ class OopsCookie
 
 			if ( $page_url = get_permalink( $page ) )
 			{
-				return $page_url;
+				return $page_url . $anchor;
 			}
 		}
 
@@ -206,14 +206,14 @@ class OopsCookie
             $href = '/about-us/';
         }
 
-		return $href;
+		return $href . $anchor;
 
         // return self::get_privacy_policy_wpml_url();
 
         // return '';
 	}
 
-    public static function get_privacy_policy_url( $page_type = [], $href = '' )
+    public static function get_privacy_policy_url( $page_type = [], $href = '', $anchor = '' )
     {
         // LegalDebug::debug( [
         //     'get_privacy_policy_page_type_url' => self::get_privacy_policy_page_type_url(),
@@ -225,7 +225,7 @@ class OopsCookie
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {
-                return self::get_privacy_policy_page_type_url( $page_type, $href );
+                return self::get_privacy_policy_page_type_url( $page_type, $href, $anchor );
             }
         }
 
