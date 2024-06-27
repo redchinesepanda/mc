@@ -108,7 +108,7 @@ class ToolRobots
 				
 				// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
 
-				implode( '\n', $sitemaps ),
+				implode( "\n", $sitemaps ),
 
 				// Yoast SEO Sitemap XML
 				
