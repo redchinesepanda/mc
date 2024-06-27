@@ -97,23 +97,23 @@ class ToolRobots
 
 			$sitemaps = self::get_sitemaps();
 
-			$sitemap = [
-				// '',
+			// $sitemap = [
+			// 	// '',
 	
-				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
+			// 	// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 				
-				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+			// 	// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
 
-				// WP Sitemap XML
+			// 	// WP Sitemap XML
 				
-				// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+			// 	// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
 
-				implode( "\n", $sitemaps ),
+			// 	implode( "\n", $sitemaps ),
 
-				// Yoast SEO Sitemap XML
+			// 	// Yoast SEO Sitemap XML
 				
-				// 'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
-			];
+			// 	// 'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
+			// ];
 		}
 
 		// LegalDebug::debug( [
@@ -128,7 +128,9 @@ class ToolRobots
 		// 	'sitemap' => $sitemap,
 		// ] );
 
-		echo implode( "\n", array_merge( $robots, $sitemap ) );
+		// echo implode( "\n", array_merge( $robots, $sitemap ) );
+		
+		echo implode( "\n", array_merge( $robots, $sitemaps ) );
 
 		die();
 	}
