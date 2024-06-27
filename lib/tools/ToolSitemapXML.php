@@ -36,6 +36,19 @@ class ToolSitemapXML
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'optimize_sitemap_posts_query' ], 10, 1 );
 
         add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
+
+        add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
+    }
+
+    public static function wp_kama_posts_clauses_filter( $clauses )
+    {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_posts_clauses_filter',
+
+            'clauses' => $clauses,
+        ] );
+
+        return $clauses;
     }
 
     public static function wp_kama_posts_join_filter( $join )
