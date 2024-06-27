@@ -39,6 +39,10 @@ class ToolRobots
 		return LegalHosts::check_host_production();
 	}
 
+	const PATTERNS = [
+		'sitemap' => 'Sitemap: %s',
+	];
+
 	public static function get_sitemaps()
 	{
 		if ( MiltisiteMain::check_multisite() )
@@ -55,7 +59,7 @@ class ToolRobots
 				{
 					MultisiteBlog::set_blog( $site->blog_id );
 
-					$sitemaps[] = get_sitemap_url( 'index' );
+					$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
 				}
 
 				MultisiteBlog::restore_blog();
@@ -69,6 +73,8 @@ class ToolRobots
 
 					'sitemaps' => $sitemaps,
 				] );
+
+				return
 			}
 		}
 	}
