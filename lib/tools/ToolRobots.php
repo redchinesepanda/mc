@@ -49,6 +49,17 @@ class ToolRobots
 
 				$sites = MultisiteBlog::get_all_sites( $current_domain );
 
+				$sitemaps = [];
+
+				foreach ( $sites as $site )
+				{
+					MultisiteBlog::set_blog( $site->blog_id );
+
+					$sitemaps[] = get_sitemap_url( 'index' );
+				}
+
+				MultisiteBlog::restore_blog();
+
 				LegalDebug::debug( [
 					'ToolRobots' => 'get_sitemaps',
 
@@ -56,7 +67,7 @@ class ToolRobots
 
 					'sites' => $sites,
 
-					'get_sitemap_url' => get_sitemap_url( 'index' ),
+					'sitemaps' => $sitemaps,
 				] );
 			}
 		}
