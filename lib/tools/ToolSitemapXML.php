@@ -71,13 +71,13 @@ class ToolSitemapXML
 
     public static function wp_kama_posts_where_filter( $where )
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
 
-            // 'where' => $where,
+        //     // 'where' => $where,
 
-            'check_sitemap_page' => self::check_sitemap_page(),
-        ] );
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
 
         // $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
 
@@ -120,20 +120,20 @@ class ToolSitemapXML
     //     return $join;
     // }
 
-    public static function check_sitemap_enabled()
-    {
-        // $is_sitemaps_enabled = wp_sitemaps_get_server()->sitemaps_enabled();
+    // public static function check_sitemap_enabled()
+    // {
+    //     // $is_sitemaps_enabled = wp_sitemaps_get_server()->sitemaps_enabled();
 
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'check_sitemap_enabled',
+    //     // LegalDebug::debug( [
+    //     //     'ToolSitemapXML' => 'check_sitemap_enabled',
 
-        //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
-        // ] ); 
+    //     //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
+    //     // ] ); 
 
-        // return $is_sitemaps_enabled;
+    //     // return $is_sitemaps_enabled;
         
-        return wp_sitemaps_get_server()->sitemaps_enabled();
-    }
+    //     return wp_sitemaps_get_server()->sitemaps_enabled();
+    // }
 
     public static function register()
     {
@@ -152,13 +152,13 @@ class ToolSitemapXML
         //     add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
         // }
 
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'register',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'register',
 
-            // 'where' => $where,
+        //     // 'where' => $where,
 
-            'check_sitemap_page' => self::check_sitemap_page(),
-        ] );
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
 
         if ( self::check_sitemap_page() )
         {
@@ -193,14 +193,14 @@ class ToolSitemapXML
         return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
     }
 
-    public static function check_filter()
-    {
-        // return self::is_sitemap_page()
+    // public static function check_filter()
+    // {
+    //     // return self::is_sitemap_page()
 
-        //     && ToolNotFound::check_restricted();
+    //     //     && ToolNotFound::check_restricted();
 
-        return self::is_sitemap_page();
-    }
+    //     return self::is_sitemap_page();
+    // }
 
     // public static function prepare_filter_where( $where )
 	// {
@@ -243,10 +243,10 @@ class ToolSitemapXML
     //     return $where;
 	// }
     
-    public static function kama_sitemap_max_urls( $num, $object_type )
-    {
-        return 100;
-    }
+    // public static function kama_sitemap_max_urls( $num, $object_type )
+    // {
+    //     return 100;
+    // }
 
     const PROVIDERS = [
         'users',
