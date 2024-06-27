@@ -45,6 +45,8 @@ class ToolRobots
 
 	public static function get_sitemaps()
 	{
+		$sitemaps = [];
+
 		if ( MiltisiteMain::check_multisite() )
 		{
 			if ( MultisiteBlog::check_not_main_domain() )
@@ -52,8 +54,6 @@ class ToolRobots
 				$current_domain = MultisiteBlog::get_domain();
 
 				$sites = MultisiteBlog::get_all_sites( $current_domain );
-
-				$sitemaps = [];
 
 				foreach ( $sites as $site )
 				{
@@ -64,19 +64,23 @@ class ToolRobots
 
 				MultisiteBlog::restore_blog();
 
-				LegalDebug::debug( [
-					'ToolRobots' => 'get_sitemaps',
+				// LegalDebug::debug( [
+				// 	'ToolRobots' => 'get_sitemaps',
 
-					'current_domain' => $current_domain,
+				// 	'current_domain' => $current_domain,
 
-					'sites' => $sites,
+				// 	'sites' => $sites,
 
-					'sitemaps' => $sitemaps,
-				] );
+				// 	'sitemaps' => $sitemaps,
+				// ] );
 
 				return $sitemaps;
 			}
 		}
+
+		$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
+
+		return $sitemaps;
 	}
 
 	public static function mc_robots_txt()
@@ -91,7 +95,7 @@ class ToolRobots
 		{
 			$robots = self::ROBOTS;
 
-			self::get_sitemaps();
+			$sitemaps = self::get_sitemaps();
 
 			$sitemap = [
 				'',
@@ -102,7 +106,9 @@ class ToolRobots
 
 				// WP Sitemap XML
 				
-				'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+				// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+
+				implode( '/n', $sitemaps ),
 
 				// Yoast SEO Sitemap XML
 				
