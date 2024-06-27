@@ -161,7 +161,7 @@ class OopsCookie
 		return null;
 	}
 
-    public static function get_privacy_policy_wpml_url( $href )
+    public static function get_privacy_policy_wpml_url( $href, $anchor = '' )
     {
         if ( empty( $href ) )
         {
@@ -176,7 +176,7 @@ class OopsCookie
             }
         }
 
-        return $href;
+        return $href . $anchor;
     }
 
     public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
@@ -203,7 +203,7 @@ class OopsCookie
 
         if ( empty( $href ) )
         {
-            $href = '/about-us/';
+            $href = '/privacy-policy/';
         }
 
 		return $href . $anchor;
@@ -229,7 +229,7 @@ class OopsCookie
             }
         }
 
-        return self::get_privacy_policy_wpml_url( $href );
+        return self::get_privacy_policy_wpml_url( $href, $anchor );
 
         // return '/privacy-policy/';
     }
