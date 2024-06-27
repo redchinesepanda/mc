@@ -98,7 +98,7 @@ class ToolRobots
 			$sitemaps = self::get_sitemaps();
 
 			$sitemap = [
-				'',
+				// '',
 	
 				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 				
