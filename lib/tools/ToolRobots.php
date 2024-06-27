@@ -56,7 +56,7 @@ class ToolRobots
 
 					'sites' => $sites,
 
-					'get_sitemap_url' => get_sitemap_url( 'wp-sitemap' ),
+					'get_sitemap_url' => get_sitemap_url( 'index' ),
 				] );
 			}
 		}
