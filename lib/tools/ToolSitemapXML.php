@@ -34,6 +34,19 @@ class ToolSitemapXML
         # WP_Query отдавет массив только с ID, что улучшит скорость генерации страницы и снизит нагрузку
         
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'optimize_sitemap_posts_query' ], 10, 1 );
+
+        add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
+    }
+
+    public static function wp_kama_posts_join_filter( $join )
+    {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_posts_join_filter',
+
+            'join' => $join,
+        ] );
+        
+        return $join;
     }
 
     public static function check_sitemap_enabled()
