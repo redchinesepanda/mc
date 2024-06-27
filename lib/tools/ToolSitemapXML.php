@@ -258,7 +258,7 @@ class ToolSitemapXML
         //     'args' => $args,
         // ] );
 
-        $args[ 'suppress_filters' ] = true;
+        // $args[ 'suppress_filters' ] = true;
 
         return $args;
     }
