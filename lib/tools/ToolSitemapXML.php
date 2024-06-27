@@ -49,7 +49,7 @@ class ToolSitemapXML
     ];
 
     const PATTERNS = [
-        'language-code-equals' => '/\(( wpml_translations.language_code )(= \'[a-z]{2,3}\') OR 0 \)/',
+        'language-code-equals' => '/\( (wpml_translations.language_code )(= \'[a-z]{2,3}\') OR 0 \)/',
 
         'language-code-not-in' => '( $1 NOT IN ( \'%s\' ) OR 0 )',
     ];
