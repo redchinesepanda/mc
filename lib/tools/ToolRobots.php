@@ -55,6 +55,8 @@ class ToolRobots
 					'current_domain' => $current_domain,
 
 					'sites' => $sites,
+
+					'get_sitemap_url' => get_sitemap_url(),
 				] );
 			}
 		}
