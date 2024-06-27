@@ -179,7 +179,7 @@ class OopsCookie
         return $href;
     }
 
-    public static function get_privacy_policy_page_type_url( $page_type )
+    public static function get_privacy_policy_page_type_url( $page_type, $href = '' )
 	{
 		$page = self::get_privacy_policy_page( $page_type );
 
@@ -201,7 +201,12 @@ class OopsCookie
 			}
 		}
 
-		return '/privacy-policy/';
+        if ( empty( $href ) )
+        {
+            $href = '/privacy-policy/';
+        }
+
+		return $href;
 
         // return self::get_privacy_policy_wpml_url();
 
