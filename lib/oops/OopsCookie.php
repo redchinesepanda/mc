@@ -225,7 +225,7 @@ class OopsCookie
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {
-                return self::get_privacy_policy_page_type_url( $page_type );
+                return self::get_privacy_policy_page_type_url( $page_type, $href );
             }
         }
 
