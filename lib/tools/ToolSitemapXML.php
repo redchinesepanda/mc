@@ -33,7 +33,7 @@ class ToolSitemapXML
 
         # WP_Query отдавет массив только с ID, что улучшит скорость генерации страницы и снизит нагрузку
         
-        add_filter( 'wp_sitemaps_posts_query_args', [ $handler'optimize_sitemap_posts_query' ], 10, 1 );
+        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'optimize_sitemap_posts_query' ], 10, 1 );
     }
 
     public static function check_sitemap_enabled()
