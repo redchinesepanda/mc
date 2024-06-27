@@ -160,7 +160,9 @@ class ToolSitemapXML
         //     'check_sitemap_page' => self::check_sitemap_page(),
         // ] );
 
-        if ( self::check_sitemap_page() )
+        // if ( self::check_sitemap_page() )
+        
+        if ( self::check_exclude_folders() )
         {
             $handler = new self();
     
@@ -170,9 +172,14 @@ class ToolSitemapXML
         }
     }
 
-    /*
-     * Устанавливается на хуке wp после parse_request
-     */
+    public static function check_exclude_folders()
+    {
+        return self::check_sitemap_page()
+
+            && MiltisiteMain::check_multisite()
+
+            && MultisiteBlog::check_main_domain();
+    }
 
     public static function check_sitemap_page()
     {
@@ -284,18 +291,18 @@ class ToolSitemapXML
         return $post_types;
     }
     
-    // public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
-    // {
-    //     // LegalDebug::debug( [
-    //     //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+    public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
+    {
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
 
-    //     //     'args' => $args,
-    //     // ] );
+        //     'args' => $args,
+        // ] );
 
-    //     $args[ 'suppress_filters' ] = true;
+        $args[ 'suppress_filters' ] = true;
 
-    //     return $args;
-    // }
+        return $args;
+    }
 
     // public static function optimize_sitemap_posts_query( $args )
     // {
