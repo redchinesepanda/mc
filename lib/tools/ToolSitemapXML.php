@@ -39,17 +39,17 @@ class ToolSitemapXML
 
         // add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
 
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'register_functions',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'register_functions',
 
-            // 'where' => $where,
+        //     // 'where' => $where,
 
-            'check_sitemap_page' => self::check_sitemap_page(),
-        ] );
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
 
         # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
 
-        add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
+        // add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
 
     const MOVED_FOLDERS = [
@@ -159,6 +159,12 @@ class ToolSitemapXML
 
             'check_sitemap_page' => self::check_sitemap_page(),
         ] );
+
+        $handler = new self();
+
+        # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
+
+        add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
 
     /*
