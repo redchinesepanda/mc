@@ -29,7 +29,7 @@ class ToolSitemapXML
 
         # Изменение параметров запроса WP_Query для карты сайта posts
 
-        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
+        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
 
         # WP_Query отдавет массив только с ID, что улучшит скорость генерации страницы и снизит нагрузку
         
@@ -38,6 +38,8 @@ class ToolSitemapXML
         // add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
 
         // add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
+
+        # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
 
         add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
@@ -61,11 +63,13 @@ class ToolSitemapXML
 
     public static function wp_kama_posts_where_filter( $where )
     {
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_posts_where_filter',
 
-        //     'where' => $where,
-        // ] );
+            // 'where' => $where,
+
+            'check_sitemap_page' => self::check_sitemap_page(),
+        ] );
 
         // $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
 
@@ -145,28 +149,33 @@ class ToolSitemapXML
      * Устанавливается на хуке wp после parse_request
      */
 
-    // public static function is_sitemap_page()
-    // {
-    //     global $wp_version;
-    
-    //     if( ! did_action( 'parse_request' ) )
-    //     {
-    //         _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
-    
-    //         return false;
-    //     }
-    
-    //     return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
-    // }
+    public static function check_sitemap_page()
+    {
+        return self::is_sitemap_page();
+    }
 
-    // public static function check_filter()
-    // {
-    //     // return self::is_sitemap_page()
+    public static function is_sitemap_page()
+    {
+        global $wp_version;
+    
+        if( ! did_action( 'parse_request' ) )
+        {
+            _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
+    
+            return false;
+        }
+    
+        return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
+    }
 
-    //     //     && ToolNotFound::check_restricted();
+    public static function check_filter()
+    {
+        // return self::is_sitemap_page()
 
-    //     return self::is_sitemap_page();
-    // }
+        //     && ToolNotFound::check_restricted();
+
+        return self::is_sitemap_page();
+    }
 
     // public static function prepare_filter_where( $where )
 	// {
@@ -250,18 +259,18 @@ class ToolSitemapXML
         return $post_types;
     }
     
-    public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
-    {
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+    // public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
 
-        //     'args' => $args,
-        // ] );
+    //     //     'args' => $args,
+    //     // ] );
 
-        // $args[ 'suppress_filters' ] = true;
+    //     $args[ 'suppress_filters' ] = true;
 
-        return $args;
-    }
+    //     return $args;
+    // }
 
     // public static function optimize_sitemap_posts_query( $args )
     // {
