@@ -50,7 +50,7 @@ class ToolSitemapXML
             'where' => $where,
         ] );
 
-        $where = str_replace( '( wpml_translations.language_code = 'en' OR 0 )', "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
+        $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
 
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_posts_where_filter',
