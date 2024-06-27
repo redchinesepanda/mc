@@ -39,6 +39,27 @@ class ToolRobots
 		return LegalHosts::check_host_production();
 	}
 
+	public static function get_sitemaps()
+	{
+		if ( MiltisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_not_main_domain() )
+			{
+				$current_domain = MultisiteBlog::get_domain();
+
+				$sites = MultisiteBlog::get_all_sites( $current_domain );
+
+				LegalDebug::debug( [
+					'ToolRobots' => 'get_sitemaps',
+
+					'current_domain' => $current_domain,
+
+					'sites' => $sites,
+				] );
+			}
+		}
+	}
+
 	public static function mc_robots_txt()
 	{
 		$robots = self::ROBOTS_DISALLOW_ALL;
@@ -50,6 +71,8 @@ class ToolRobots
 		if ( self::check_robots_full() )
 		{
 			$robots = self::ROBOTS;
+
+			self::get_sitemaps();
 
 			$sitemap = [
 				'',
