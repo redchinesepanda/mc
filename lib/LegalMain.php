@@ -36,6 +36,8 @@ require_once( 'notion/NotionMain.php' );
 
 require_once( 'multisite/MiltisiteMain.php' );
 
+require_once( 'wp-optimize/WPOptimizeMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -85,6 +87,8 @@ class LegalMain
 		WPMLMain::register_functions();
 
 		MiltisiteMain::register_functions();
+
+		WPOptimizeMain::register_functions();
 
 		if ( self::check_admin() )
 		{
