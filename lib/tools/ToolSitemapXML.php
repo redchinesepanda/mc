@@ -61,11 +61,11 @@ class ToolSitemapXML
 
     public static function wp_kama_posts_where_filter( $where )
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
 
-            'where' => $where,
-        ] );
+        //     'where' => $where,
+        // ] );
 
         // $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
 
@@ -77,36 +77,36 @@ class ToolSitemapXML
         
         $where = preg_replace( self::PATTERNS[ 'language-code-equals' ], $language_code_not_in, $where );
 
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
 
-            'where' => $where,
-        ] );
+        //     'where' => $where,
+        // ] );
 
         return $where;
     }
 
-    public static function wp_kama_posts_clauses_filter( $clauses )
-    {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_posts_clauses_filter',
+    // public static function wp_kama_posts_clauses_filter( $clauses )
+    // {
+    //     LegalDebug::debug( [
+    //         'ToolSitemapXML' => 'wp_kama_posts_clauses_filter',
 
-            'clauses' => $clauses,
-        ] );
+    //         'clauses' => $clauses,
+    //     ] );
 
-        return $clauses;
-    }
+    //     return $clauses;
+    // }
 
-    public static function wp_kama_posts_join_filter( $join )
-    {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_posts_join_filter',
+    // public static function wp_kama_posts_join_filter( $join )
+    // {
+    //     LegalDebug::debug( [
+    //         'ToolSitemapXML' => 'wp_kama_posts_join_filter',
 
-            'join' => $join,
-        ] );
+    //         'join' => $join,
+    //     ] );
         
-        return $join;
-    }
+    //     return $join;
+    // }
 
     public static function check_sitemap_enabled()
     {
@@ -252,11 +252,11 @@ class ToolSitemapXML
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
 
-            'args' => $args,
-        ] );
+        //     'args' => $args,
+        // ] );
 
         $args[ 'suppress_filters' ] = true;
 
