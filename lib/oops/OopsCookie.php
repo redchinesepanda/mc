@@ -203,7 +203,7 @@ class OopsCookie
 
         if ( empty( $href ) )
         {
-            $href = '/privacy-policy/';
+            $href = '/about-us/';
         }
 
 		return $href;
