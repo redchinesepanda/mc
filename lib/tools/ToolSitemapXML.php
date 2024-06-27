@@ -35,16 +35,23 @@ class ToolSitemapXML
         
         // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'optimize_sitemap_posts_query' ], 10, 1 );
 
-        add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
+        // add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
 
-        add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
+        // add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
 
         add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
-
     
     public static function wp_kama_posts_where_filter( $where )
     {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+
+            'where' => $where,
+        ] );
+
+        $where = str_replace( '( wpml_translations.language_code = 'en' OR 0 )', "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
+
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_posts_where_filter',
 
