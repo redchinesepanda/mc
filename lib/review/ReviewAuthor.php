@@ -137,7 +137,7 @@ class ReviewAuthor
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {
-                return OopsCookie::get_privacy_policy_page_type_url( self::PAGE_TYPE );
+                return OopsCookie::get_privacy_policy_page_type_url( self::PAGE_TYPE, $href . $anchor );
             }
         }
 
