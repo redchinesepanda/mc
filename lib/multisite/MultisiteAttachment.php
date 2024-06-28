@@ -54,7 +54,7 @@ class MultisiteAttachment
 				// 	'post' => $post,
 				// ] );
 
-				$post_terms = MultisiteTerms::get_post_terms( $post_id );
+				$post_terms = MultisiteTerms::get_post_terms( $attachment_id );
 
 				$post_meta = MultisiteMeta::get_post_meta( $attachment_id );
 
@@ -362,7 +362,7 @@ class MultisiteAttachment
 			// 	'inserted_attachment_id' => $inserted_attachment_id,
 			// ] );
 
-			MultisiteTerms::add_post_terms( $inserted_post_id, $post_terms );
+			MultisiteTerms::add_post_terms( $inserted_attachment_id, $post_terms );
 
 			MultisiteMeta::add_post_meta( $inserted_attachment_id, $post_meta );
 
