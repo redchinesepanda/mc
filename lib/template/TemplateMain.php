@@ -84,7 +84,7 @@ class TemplateMain
 
     public static function check_code()
     {
-        $current_language = self::CURRENT_LANGUAGE_DEBUG;
+        // $current_language = self::CURRENT_LANGUAGE_DEBUG;
 
         // if ( LegalMain::check_host_production() )
         
@@ -122,7 +122,9 @@ class TemplateMain
 
         // return self::check_code() || self::check_new_get();
         
-        return self::check_code();
+        // return self::check_code();
+
+        return true;
     }
 
     const DEQUEUE_WP = [
