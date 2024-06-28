@@ -758,6 +758,10 @@ body {
     color: var( --Base-base-05 ); 
 }
 
+.billet .billet-title-warning::after {
+    content: attr( data-warning );
+}
+
 .billet-title .billet-title-achivement {
     font-size: 12px;
     line-height: 18px;
