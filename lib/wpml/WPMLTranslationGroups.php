@@ -109,7 +109,7 @@ class WPMLTranslationGroups
                             if ( empty( $term->name ) )
                             {
                                 $args = [
-                                    'name' => $post->post_title,
+                                    'name' => $post->post_title . ' [' . $trid . ']',
                                 ];
                 
                                 wp_update_term( $term_id, self::TAXONOMY[ 'translation_group' ], $args );
