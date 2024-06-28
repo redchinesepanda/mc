@@ -126,10 +126,10 @@ class TemplatePage
 
     public static function render_compilation()
     {
-		if ( !CompilationMain::check() )
-        {
-            return '';
-        }
+		// if ( !CompilationMain::check() )
+        // {
+        //     return '';
+        // }
 
         return self::render_main( self::TEMPLATE[ 'legal-template-page-compilation' ] );
     }
