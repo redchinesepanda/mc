@@ -93,14 +93,14 @@ class TemplatePage
             return self::render_review();
         }
 
-        // if ( self::check_compilation() )
-        // {
-        //     return self::render_compilation();
-        // }
+        if ( self::check_compilation() )
+        {
+            return self::render_compilation();
+        }
 
-        // return self::render_thrive();
+        return self::render_thrive();
 
-        return self::render_compilation();
+        // return self::render_compilation();
     }
 
     public static function render_main( $template, $args = [] )
