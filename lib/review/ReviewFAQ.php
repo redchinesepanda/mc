@@ -105,7 +105,7 @@ class ReviewFAQ
 	{
 		$xpath = new DOMXPath( $dom );
 
-		return $xpath->query( './/*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
+		return $xpath->query( '//*[contains(@class, \'' . self::CSS_CLASS[ 'base' ] . '\')]' );
 	}
 
     public static function get_schema_data()
