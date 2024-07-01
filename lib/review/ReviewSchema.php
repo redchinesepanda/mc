@@ -89,7 +89,7 @@ class ReviewSchema
 
 			"name" => YoastMain::get_seo_title(),
 
-            "headline" => YoastMain::get_seo_title(),
+            // "headline" => YoastMain::get_seo_title(),
 
             "description" => YoastMain::get_seo_description(),
 
