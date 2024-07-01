@@ -87,13 +87,19 @@ class ReviewSchema
 
             "@type" => "WebPage",
 
+			"name": YoastMain::get_seo_title(),
+
             "headline" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+			"url": get_post_permalink(),
 
             "author" => self::schema_author(),
 
-            "publisher" => self::schema_publisher(),
+			"datePublished" => get_the_date(),
 
-            "description" => YoastMain::get_seo_description(),
+            "publisher" => self::schema_publisher(),
         ];
     }
 
