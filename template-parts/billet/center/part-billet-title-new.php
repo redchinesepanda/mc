@@ -26,7 +26,6 @@
             <a class="legal-review <?php echo $args['logo']['review']['class']; ?> <?php echo $args['logo']['review']['font']; ?>" href="<?php echo $args['logo']['review']['href']; ?>"><?php echo $args['logo']['review']['label']; ?></a>
         <?php endif; ?>
         <?php if ( !empty( $args[ 'warning' ] ) ): ?>
-            <!-- <div class="billet-title-warning"><?php echo $args[ 'warning' ]; ?></div> -->
             <div class="billet-title-warning" data-warning="<?php echo $args[ 'warning' ]; ?>"></div>
         <?php endif; ?>
     </div>
