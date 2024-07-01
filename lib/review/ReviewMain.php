@@ -42,6 +42,8 @@ require_once( 'ReviewVideo.php' );
 
 require_once( 'ReviewRestricted.php' );
 
+require_once( 'ReviewSchema.php' );
+
 class ReviewMain
 {
 	const TEXT = [
@@ -192,16 +194,16 @@ class ReviewMain
         }
     }
 
-    const JS = [
-        'schema' => 'legal-schema',
-    ];
+    // const JS = [
+    //     'schema' => 'legal-schema',
+    // ];
 
-    public static function print()
-    {
-        if ( self::check() ) {
-            echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
-        }
-    }
+    // public static function review_ld_json()
+    // {
+    //     if ( self::check() ) {
+    //         echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
+    //     }
+    // }
 
     public static function register_inline_style( $name = '', $data = '' )
     {
@@ -241,7 +243,7 @@ class ReviewMain
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-        add_action( 'wp_head', [ $handler, 'print' ] );
+        // add_action( 'wp_head', [ $handler, 'review_ld_json' ] );
 
         // add_filter( 'style_loader_tag', [ $handler, 'style_attributes' ], 10, 2 );
 
@@ -286,6 +288,8 @@ class ReviewMain
         ReviewVideo::register();
 
         ReviewRestricted::register();
+
+        ReviewSchema::register();
     }
 
     public static function encoding( $content )
@@ -370,128 +374,128 @@ class ReviewMain
         || self::check_post_type_post();
     }
 
-    public static function schema()
-    {
-        if ( !self::check() )
-        {
-            return json_encode( [] );
-        }
+    // public static function schema()
+    // {
+    //     if ( !self::check() )
+    //     {
+    //         return json_encode( [] );
+    //     }
 
-        $post = get_post();
+    //     $post = get_post();
 
-        if ( empty( $post ) ) {
-            return json_encode( [] );
-        }
+    //     if ( empty( $post ) ) {
+    //         return json_encode( [] );
+    //     }
 
-        $graph = [
-            self::schema_organization(),
+    //     $graph = [
+    //         self::schema_organization(),
 
-            self::schema_publisher(),
-        ];
+    //         self::schema_publisher(),
+    //     ];
 
-        $breadcrumbs = LegalBreadcrumbsMain::schema();
+    //     $breadcrumbs = LegalBreadcrumbsMain::schema();
 
-        if ( !empty( $breadcrumbs ) )
-        {
-            $graph[] = $breadcrumbs;
-        }
+    //     if ( !empty( $breadcrumbs ) )
+    //     {
+    //         $graph[] = $breadcrumbs;
+    //     }
 
-        $faq = ReviewFAQ::schema();
+    //     $faq = ReviewFAQ::schema();
 
-        if ( !empty( $faq ) )
-        {
-            $graph[] = $faq;
-        }
+    //     if ( !empty( $faq ) )
+    //     {
+    //         $graph[] = $faq;
+    //     }
 
-        $hwto = ReviewHowTo::schema();
+    //     $hwto = ReviewHowTo::schema();
 
-        if ( !empty( $hwto ) )
-        {
-            $graph[] = $hwto;
-        }
+    //     if ( !empty( $hwto ) )
+    //     {
+    //         $graph[] = $hwto;
+    //     }
 
-        // return json_encode(
-        //     [
-        //         "@context" => "https://schema.org",
+    //     // return json_encode(
+    //     //     [
+    //     //         "@context" => "https://schema.org",
 
-        //         "@graph" => $graph,
-        //     ],
+    //     //         "@graph" => $graph,
+    //     //     ],
 
-        //     JSON_UNESCAPED_UNICODE
-        // );
+    //     //     JSON_UNESCAPED_UNICODE
+    //     // );
         
-        return json_encode(
-            [
-                "@context" => "https://schema.org",
+    //     return json_encode(
+    //         [
+    //             "@context" => "https://schema.org",
 
-                "@graph" => $graph,
-            ]
-        );
-    }
+    //             "@graph" => $graph,
+    //         ]
+    //     );
+    // }
 
-    public static function schema_organization()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_organization()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
             
-            "@type" => "Organization",
+    //         "@type" => "Organization",
             
-            "name" => "Match.Center",
+    //         "name" => "Match.Center",
             
-            "url" => "https://match.center/",
+    //         "url" => "https://match.center/",
 
-            "logo" => "https://match.center/wp-content/uploads/match-center.png",
-        ];
-    }
+    //         "logo" => "https://match.center/wp-content/uploads/match-center.png",
+    //     ];
+    // }
 
-    public static function schema_webpage()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_webpage()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
 
-            "@type" => "WebPage",
+    //         "@type" => "WebPage",
 
-            "headline" => YoastMain::get_seo_title(),
+    //         "headline" => YoastMain::get_seo_title(),
 
-            "author" => self::schema_author(),
+    //         "author" => self::schema_author(),
 
-            "publisher" => self::schema_publisher(),
+    //         "publisher" => self::schema_publisher(),
 
-            "description" => YoastMain::get_seo_description(),
-        ];
-    }
+    //         "description" => YoastMain::get_seo_description(),
+    //     ];
+    // }
 
-    public static function schema_author()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_author()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
 
-            "@type" => "Person",
+    //         "@type" => "Person",
 
-            "name" => "Andrew Heaford",
+    //         "name" => "Andrew Heaford",
 
-            "url" => "https://match.center/ng/about-us/#our-team",
+    //         "url" => "https://match.center/ng/about-us/#our-team",
 
-            "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
+    //         "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
 
-            "jobTitle" => "Site manager",
+    //         "jobTitle" => "Site manager",
 
-            "worksFor" => self::schema_publisher(),
-        ];
-    }
+    //         "worksFor" => self::schema_publisher(),
+    //     ];
+    // }
 
-    public static function schema_publisher()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_publisher()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
 
-            "@type" => "Organization",
+    //         "@type" => "Organization",
 
-            "name" => "Match.Center",
+    //         "name" => "Match.Center",
 
-            "legalName" => "Match.Center",
-        ];
-    }
+    //         "legalName" => "Match.Center",
+    //     ];
+    // }
 }
 
 ?>
