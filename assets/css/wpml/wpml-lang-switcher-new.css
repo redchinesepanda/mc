@@ -43,6 +43,9 @@
 @media screen and ( min-width: 960px ) {
 
      /* Position */
+    .lang-switcher .lang-current {
+        padding-left: 40px;
+    }
 
     .lang-switcher .menu-avaible
     {
