@@ -49,40 +49,45 @@ class ReviewSchema
     }
 
     public static function schema_author()
-    {
-        return [
-            "@context" => "https://schema.org",
+	{
+		return ReviewAuthor::schema();
+	}
 
-            "@type" => "Person",
-
-            "name" => "Andrew Heaford",
-
-            "url" => "https://match.center/ng/about-us/#our-team",
-
-            "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
-
-            "jobTitle" => "Site manager",
-
-            "worksFor" => self::schema_publisher(),
-        ];
-    }
-
-    // public static function schema_webpage()
+    // public static function schema_author()
     // {
     //     return [
     //         "@context" => "https://schema.org",
 
-    //         "@type" => "WebPage",
+    //         "@type" => "Person",
 
-    //         "headline" => YoastMain::get_seo_title(),
+    //         "name" => "Andrew Heaford",
 
-    //         "author" => self::schema_author(),
+    //         "url" => "https://match.center/ng/about-us/#our-team",
 
-    //         "publisher" => self::schema_publisher(),
+    //         "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
 
-    //         "description" => YoastMain::get_seo_description(),
+    //         "jobTitle" => "Site manager",
+
+    //         "worksFor" => self::schema_publisher(),
     //     ];
     // }
+
+    public static function schema_webpage()
+    {
+        return [
+            "@context" => "https://schema.org",
+
+            "@type" => "WebPage",
+
+            "headline" => YoastMain::get_seo_title(),
+
+            "author" => self::schema_author(),
+
+            "publisher" => self::schema_publisher(),
+
+            "description" => YoastMain::get_seo_description(),
+        ];
+    }
 
 	public static function schema()
     {
@@ -101,6 +106,8 @@ class ReviewSchema
             self::schema_organization(),
 
             self::schema_publisher(),
+
+            self::schema_webpage(),
         ];
 
         $breadcrumbs = LegalBreadcrumbsMain::schema();
