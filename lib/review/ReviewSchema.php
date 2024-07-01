@@ -15,7 +15,7 @@ class ReviewSchema
 
     public static function review_ld_json()
     {
-        if ( self::check() ) {
+        if ( ReviewMain::check() ) {
             echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
         }
     }
@@ -86,7 +86,7 @@ class ReviewSchema
 
 	public static function schema()
     {
-        if ( !self::check() )
+        if ( ! ReviewMain::check() )
         {
             return json_encode( [] );
         }
