@@ -110,12 +110,6 @@ class ReviewFAQ
 
     public static function get_schema_data()
 	{
-        LegalDebug::debug( [
-            'ReviewFAQ' => 'get_schema_data',
-
-            'check' => ReviewMain::check(),
-        ] );
-
         if ( ! ReviewMain::check() )
         {
 			return [];
