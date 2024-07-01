@@ -49,9 +49,9 @@ class ReviewSchema
 			"url" => get_site_url(),
 
 			"logo" => [
-				"@type": "ImageObject",
+				"@type" => "ImageObject",
 
-				"url": LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+				"url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
 			],
         ];
     }
