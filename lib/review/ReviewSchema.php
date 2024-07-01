@@ -87,13 +87,13 @@ class ReviewSchema
 
             "@type" => "WebPage",
 
-			"name": YoastMain::get_seo_title(),
+			"name" => YoastMain::get_seo_title(),
 
             "headline" => YoastMain::get_seo_title(),
 
             "description" => YoastMain::get_seo_description(),
 
-			"url": get_post_permalink(),
+			"url" => get_post_permalink(),
 
             "author" => self::schema_author(),
 
