@@ -45,6 +45,14 @@ class ReviewSchema
             "name" => "Match.Center",
 
             "legalName" => "Match.Center",
+
+			"url" => get_site_url(),
+
+			"logo" => [
+				"@type": "ImageObject",
+
+				"url": LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+			],
         ];
     }
 
@@ -103,9 +111,9 @@ class ReviewSchema
         }
 
         $graph = [
-            self::schema_organization(),
+            // self::schema_organization(),
 
-            self::schema_publisher(),
+            // self::schema_publisher(),
 
             self::schema_webpage(),
         ];
