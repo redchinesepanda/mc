@@ -99,6 +99,8 @@ class TemplatePage
         }
 
         return self::render_thrive();
+
+        // return self::render_compilation();
     }
 
     public static function render_main( $template, $args = [] )

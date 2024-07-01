@@ -29,23 +29,111 @@ class ToolSitemapXML
 
         # Изменение параметров запроса WP_Query для карты сайта posts
 
-        add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
-    }
+        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'wp_kama_sitemaps_posts_query_args_filter' ], 10, 2 );
 
-    public static function check_sitemap_enabled()
-    {
-        // $is_sitemaps_enabled = wp_sitemaps_get_server()->sitemaps_enabled();
+        # WP_Query отдавет массив только с ID, что улучшит скорость генерации страницы и снизит нагрузку
+        
+        // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'optimize_sitemap_posts_query' ], 10, 1 );
+
+        // add_filter( 'posts_join', [ $handler, 'wp_kama_posts_join_filter' ] );
+
+        // add_filter( 'posts_clauses', [ $handler, 'wp_kama_posts_clauses_filter' ] );
 
         // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'check_sitemap_enabled',
+        //     'ToolSitemapXML' => 'register_functions',
 
-        //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
-        // ] ); 
+        //     // 'where' => $where,
 
-        // return $is_sitemaps_enabled;
-        
-        return wp_sitemaps_get_server()->sitemaps_enabled();
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
+
+        # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
+
+        // add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
     }
+
+    const MOVED_FOLDERS = [
+        'kz',
+
+        'kz-kz',
+    ];
+
+    const PATTERNS = [
+        'language-code-equals' => '/\( (wpml_translations.language_code)( = \'[a-z]{2,3}\') OR 0 \)/',
+
+        'language-code-not-in' => '( $1 NOT IN ( \'%s\' ) OR 0 )',
+    ];
+    
+    public static function get_moved_folders()
+    {
+        return implode( '\', \'', self::MOVED_FOLDERS );
+    }
+
+    public static function wp_kama_posts_where_filter( $where )
+    {
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+
+        //     // 'where' => $where,
+
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
+
+        // $where = str_replace( "( wpml_translations.language_code = 'en' OR 0 )", "( wpml_translations.language_code NOT IN [ 'kz' ] OR 0 )", $where );
+
+        $moved_folders = self::get_moved_folders();
+
+        $language_code_not_in = sprintf( self::PATTERNS[ 'language-code-not-in' ], $moved_folders );
+
+        // $where = preg_replace( '/\(( wpml_translations.language_code )(= \'[a-z]{2,3}\') OR 0 \)/', '$1 NOT IN ( \'%s\' )', $where );
+        
+        $where = preg_replace( self::PATTERNS[ 'language-code-equals' ], $language_code_not_in, $where );
+
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_posts_where_filter',
+
+        //     'where' => $where,
+        // ] );
+
+        return $where;
+    }
+
+    // public static function wp_kama_posts_clauses_filter( $clauses )
+    // {
+    //     LegalDebug::debug( [
+    //         'ToolSitemapXML' => 'wp_kama_posts_clauses_filter',
+
+    //         'clauses' => $clauses,
+    //     ] );
+
+    //     return $clauses;
+    // }
+
+    // public static function wp_kama_posts_join_filter( $join )
+    // {
+    //     LegalDebug::debug( [
+    //         'ToolSitemapXML' => 'wp_kama_posts_join_filter',
+
+    //         'join' => $join,
+    //     ] );
+        
+    //     return $join;
+    // }
+
+    // public static function check_sitemap_enabled()
+    // {
+    //     // $is_sitemaps_enabled = wp_sitemaps_get_server()->sitemaps_enabled();
+
+    //     // LegalDebug::debug( [
+    //     //     'ToolSitemapXML' => 'check_sitemap_enabled',
+
+    //     //     'is_sitemaps_enabled' => $is_sitemaps_enabled,
+    //     // ] ); 
+
+    //     // return $is_sitemaps_enabled;
+        
+    //     return wp_sitemaps_get_server()->sitemaps_enabled();
+    // }
 
     public static function register()
     {
@@ -63,25 +151,54 @@ class ToolSitemapXML
 
         //     add_filter( 'posts_where', [ $handler, 'prepare_filter_where' ] );
         // }
+
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'register',
+
+        //     // 'where' => $where,
+
+        //     'check_sitemap_page' => self::check_sitemap_page(),
+        // ] );
+
+        // if ( self::check_sitemap_page() )
+        
+        if ( self::check_exclude_folders() )
+        {
+            $handler = new self();
+    
+            # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
+    
+            add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
+        }
     }
 
-    /*
-     * Устанавливается на хуке wp после parse_request
-     */
+    public static function check_exclude_folders()
+    {
+        return self::check_sitemap_page()
 
-    // public static function is_sitemap_page()
-    // {
-    //     global $wp_version;
+            && MiltisiteMain::check_multisite()
+
+            && MultisiteBlog::check_main_domain();
+    }
+
+    public static function check_sitemap_page()
+    {
+        return self::is_sitemap_page();
+    }
+
+    public static function is_sitemap_page()
+    {
+        global $wp_version;
     
-    //     if( ! did_action( 'parse_request' ) )
-    //     {
-    //         _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
+        if( ! did_action( 'parse_request' ) )
+        {
+            _doing_it_wrong( __FUNCTION__, 'Can`t be called before `parse_request` hook.', $wp_version );
     
-    //         return false;
-    //     }
+            return false;
+        }
     
-    //     return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
-    // }
+        return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
+    }
 
     // public static function check_filter()
     // {
@@ -133,10 +250,10 @@ class ToolSitemapXML
     //     return $where;
 	// }
     
-    public static function kama_sitemap_max_urls( $num, $object_type )
-    {
-        return 100;
-    }
+    // public static function kama_sitemap_max_urls( $num, $object_type )
+    // {
+    //     return 100;
+    // }
 
     const PROVIDERS = [
         'users',
@@ -176,10 +293,23 @@ class ToolSitemapXML
     
     public static function wp_kama_sitemaps_posts_query_args_filter( $args, $post_type )
     {
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_query_args_filter',
+
+        //     'args' => $args,
+        // ] );
+
         $args[ 'suppress_filters' ] = true;
 
         return $args;
     }
+
+    // public static function optimize_sitemap_posts_query( $args )
+    // {
+    //     $args[ 'fields' ] = 'ids';
+
+    //     return $args;
+    // }
 
     const PRIORITY = [
         'high' => 0.9,

@@ -39,6 +39,50 @@ class ToolRobots
 		return LegalHosts::check_host_production();
 	}
 
+	const PATTERNS = [
+		'sitemap' => 'Sitemap: %s',
+	];
+
+	public static function get_sitemaps()
+	{
+		$sitemaps = [];
+
+		if ( MiltisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_not_main_domain() )
+			{
+				$current_domain = MultisiteBlog::get_domain();
+
+				$sites = MultisiteBlog::get_all_sites( $current_domain );
+
+				foreach ( $sites as $site )
+				{
+					MultisiteBlog::set_blog( $site->blog_id );
+
+					$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
+				}
+
+				MultisiteBlog::restore_blog();
+
+				// LegalDebug::debug( [
+				// 	'ToolRobots' => 'get_sitemaps',
+
+				// 	'current_domain' => $current_domain,
+
+				// 	'sites' => $sites,
+
+				// 	'sitemaps' => $sitemaps,
+				// ] );
+
+				return $sitemaps;
+			}
+		}
+
+		$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
+
+		return $sitemaps;
+	}
+
 	public static function mc_robots_txt()
 	{
 		$robots = self::ROBOTS_DISALLOW_ALL;
@@ -51,21 +95,25 @@ class ToolRobots
 		{
 			$robots = self::ROBOTS;
 
-			$sitemap = [
-				'',
+			$sitemaps = self::get_sitemaps();
+
+			// $sitemap = [
+			// 	// '',
 	
-				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
+			// 	// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/sitemap_index.xml',
 				
-				// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
+			// 	// 'Sitemap: ' . $_SERVER[ 'REQUEST_SCHEME' ] . '://' . $_SERVER[ 'HTTP_HOST' ] . '/wp-sitemap.xml',
 
-				// WP Sitemap XML
+			// 	// WP Sitemap XML
 				
-				'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
+			// 	// 'Sitemap: ' . self::get_url() . '/wp-sitemap.xml',
 
-				// Yoast SEO Sitemap XML
+			// 	implode( "\n", $sitemaps ),
+
+			// 	// Yoast SEO Sitemap XML
 				
-				// 'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
-			];
+			// 	// 'Sitemap: ' . self::get_url() . '/sitemap_index.xml',
+			// ];
 		}
 
 		// LegalDebug::debug( [
@@ -80,7 +128,9 @@ class ToolRobots
 		// 	'sitemap' => $sitemap,
 		// ] );
 
-		echo implode( "\n", array_merge( $robots, $sitemap ) );
+		// echo implode( "\n", array_merge( $robots, $sitemap ) );
+		
+		echo implode( "\n", array_merge( $robots, $sitemaps ) );
 
 		die();
 	}
