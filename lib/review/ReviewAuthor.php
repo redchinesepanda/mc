@@ -357,7 +357,7 @@ class ReviewAuthor
             
             "jobTitle" => $author[ 'duty' ],
 
-            "worksFor" => ReviewSchema::schema_publisher(),
+            // "worksFor" => ReviewSchema::schema_publisher(),
         ];
     }
 }
