@@ -110,7 +110,7 @@ class ReviewAuthor
         'ar',
     ];
 
-    public static function get()
+    public static function get_author()
     {
         $language = WPMLMain::current_language();
 
@@ -284,7 +284,7 @@ class ReviewAuthor
     {
         if ( !TemplateMain::check_new() )
         {
-            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get_author() );
         }
     }
 
@@ -292,7 +292,7 @@ class ReviewAuthor
     {
         if ( TemplateMain::check_new() )
         {
-            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get() );
+            return LegalComponents::render_main( self::TEMPLATE[ 'main' ], self::get_author() );
         }
     }
 
@@ -305,7 +305,7 @@ class ReviewAuthor
         
     //     ob_start();
 
-    //     load_template( self::TEMPLATE[ 'main' ], false, self::get() );
+    //     load_template( self::TEMPLATE[ 'main' ], false, self::get_author() );
 
     //     $output = ob_get_clean();
 
@@ -318,14 +318,47 @@ class ReviewAuthor
         {
             return '';
         }
+
+        return LegalComponents::render_main( self::TEMPLATE[ 'style' ], self::get_author() );
+    }
+
+    public static function schema()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return [];
+        }
         
-        ob_start();
+        $author = self::get_author();
 
-        load_template( self::TEMPLATE[ 'style' ], false, self::get() );
+        if ( empty( $author ) )
+        {
+            return [];
+        }
 
-        $output = ob_get_clean();
+        return [
+            "@context" => "https://schema.org",
 
-        return $output;
+            "@type" => "Person",
+
+            // "name" => "Andrew Heaford",
+            
+            "name" => $author[ 'name' ],
+
+            // "url" => "https://match.center/ng/about-us/#our-team",
+            
+            "url" => $author[ 'href' ],
+
+            // "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
+            
+            "image" => $author[ 'file' ],
+
+            // "jobTitle" => "Site manager",
+            
+            "jobTitle" => $author[ 'duty' ],
+
+            "worksFor" => self::schema_publisher(),
+        ];
     }
 }
 
