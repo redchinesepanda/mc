@@ -215,11 +215,11 @@ class ReviewSchema
         //     JSON_UNESCAPED_UNICODE
         // );
 
-        LegalDebug::debug( [
-            'ReviewSchema' => 'schema',
+        // LegalDebug::debug( [
+        //     'ReviewSchema' => 'schema',
             
-            'graph' => $graph,
-        ] );
+        //     'graph' => $graph,
+        // ] );
         
         return json_encode(
             [
