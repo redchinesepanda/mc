@@ -238,7 +238,7 @@ class ReviewSchema
     }
 
     const TEMPLATE = [
-        'ld-json' => 'review-schema-main.php',
+        'ld-json' => LegalMain::LEGAL_PATH . '/template-parts/review/review-schema-main.php',
     ];
 
     public static function review_ld_json()
