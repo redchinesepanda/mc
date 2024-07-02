@@ -1,0 +1,1 @@
+<script id="legal-schema" type="application/ld+json"><?php echo $args[ 'schema' ]; ?></script>

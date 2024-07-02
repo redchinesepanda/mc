@@ -2,9 +2,9 @@
 
 class ReviewSchema
 {
-    const JS = [
-        'schema' => 'legal-schema',
-    ];
+    // const JS = [
+    //     'schema' => 'legal-schema',
+    // ];
 
 	public static function register()
     {
@@ -12,13 +12,6 @@ class ReviewSchema
 
         add_action( 'wp_head', [ $handler, 'review_ld_json' ] );
 	}
-
-    public static function review_ld_json()
-    {
-        if ( ReviewMain::check() ) {
-            echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
-        }
-    }
 
     public static function schema_organization()
     {
@@ -176,7 +169,8 @@ class ReviewSchema
 
         $post = get_post();
 
-        if ( empty( $post ) ) {
+        if ( empty( $post ) )
+        {
             return json_encode( [] );
         }
 
@@ -221,13 +215,26 @@ class ReviewSchema
         //     JSON_UNESCAPED_UNICODE
         // );
         
-        return json_encode(
-            [
+        return [
+            'schema' => json_encode( [
                 "@context" => "https://schema.org",
 
                 "@graph" => $graph,
-            ]
-        );
+            ] ),
+        ];
+    }
+
+    const TEMPLATE = [
+        'ld-json' => 'review-schema-main.php',
+    ];
+
+    public static function review_ld_json()
+    {
+        // if ( ReviewMain::check() ) {
+        //     echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
+        // }
+
+        echo LegalComponents::render_main( self::TEMPLATE[ 'ld-json' ], self::schema() );
     }
 }
 
