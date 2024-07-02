@@ -337,7 +337,7 @@ class ReviewAuthor
         }
 
         return [
-            "@context" => "https://schema.org",
+            // "@context" => "https://schema.org",
 
             "@type" => "Person",
 
