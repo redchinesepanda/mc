@@ -61,6 +61,11 @@ class ReviewSchema
 		return ReviewAuthor::schema();
 	}
 
+    public static function schema_author_short()
+	{
+		return ReviewAuthor::schema_short();
+	}
+
     // public static function schema_author()
     // {
     //     return [
@@ -80,22 +85,55 @@ class ReviewSchema
     //     ];
     // }
 
-    public static function schema_webpage()
+    const SHEMA_TYPES = [
+        'web-page' => 'WebPage',
+
+        'item-page' => 'ItemPage',
+
+        'article' => 'Article',
+    ];
+
+    public static function get_shema_type()
     {
+        if ( TemplateMain::check() )
+        {
+            if ( TemplatePage::check_review() )
+            {
+                return self::SHEMA_TYPES[ 'item-page' ];
+            }
+
+            if ( TemplatePage::check_compilation() )
+            {
+                return self::SHEMA_TYPES[ 'article' ];
+            }
+        }
+
+        return self::SHEMA_TYPES[ 'web-page' ];
+    }
+
+    public static function schema_webpage( $type = '' )
+    {
+        if ( empty( $type ) )
+        {
+            $type = self::SHEMA_TYPES[ 'web-page' ];
+        }
+
         return [
             "@context" => "https://schema.org",
 
-            "@type" => "WebPage",
+            // "@type" => "WebPage",
+            
+            "@type" => $type,
 
-			"name" => YoastMain::get_seo_title(),
+			// "name" => YoastMain::get_seo_title(),
 
-            // "headline" => YoastMain::get_seo_title(),
+            "headline" => YoastMain::get_seo_title(),
 
             "description" => YoastMain::get_seo_description(),
 
 			"url" => get_post_permalink(),
 
-            "author" => self::schema_author(),
+            "author" => self::schema_author_short(),
 
 			"datePublished" => get_the_date(),
 
@@ -120,6 +158,8 @@ class ReviewSchema
             // self::schema_organization(),
 
             // self::schema_publisher(),
+
+            self::schema_author()
 
             self::schema_webpage(),
         ];

@@ -12,75 +12,75 @@ require_once( 'TemplateSingle.php' );
 
 class TemplateMain
 {
-   const CURRENT_LANGUAGE_PRODUCTION = [
-        'br',
+    // const CURRENT_LANGUAGE_PRODUCTION = [
+    //     'br',
 
-        'by',
+    //     'by',
 
-        'ca',
+    //     'ca',
 
-        'co',
+    //     'co',
 
-        'cz',
+    //     'cz',
 
-        'dk',
+    //     'dk',
 
-        'es',
+    //     'es',
 
-        'kz',
+    //     'kz',
 
-        'mx',
+    //     'mx',
 
-        'ng',
+    //     'ng',
 
-        'ph',
+    //     'ph',
 
-        'pl',
+    //     'pl',
 
-        'pt',
+    //     'pt',
 
-        'ro',
+    //     'ro',
 
-        'rs',
+    //     'rs',
 
-        'se',
-    ];
+    //     'se',
+    // ];
 
-    const CURRENT_LANGUAGE_DEBUG = [
-        'br',
+    // const CURRENT_LANGUAGE_DEBUG = [
+    //     'br',
 
-        'by',
+    //     'by',
 
-        'ca',
+    //     'ca',
 
-        'co',
+    //     'co',
 
-        'cz',
+    //     'cz',
 
-        'dk',
+    //     'dk',
 
-        'es',
+    //     'es',
 
-        'kz',
+    //     'kz',
 
-        'mx',
+    //     'mx',
 
-        'ng',
+    //     'ng',
 
-        'ph',
+    //     'ph',
 
-        'pl',
+    //     'pl',
         
-        'pt',
+    //     'pt',
 
-        'ro',
+    //     'ro',
 
-        'rs',
+    //     'rs',
 
-        'ru',
+    //     'ru',
 
-        'se',
-    ];
+    //     'se',
+    // ];
 
     public static function check_code()
     {

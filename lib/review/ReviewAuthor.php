@@ -360,6 +360,27 @@ class ReviewAuthor
             // "worksFor" => ReviewSchema::schema_publisher(),
         ];
     }
+
+    public static function schema_short()
+    {
+        if ( !ReviewMain::check() )
+        {
+            return [];
+        }
+        
+        $author = self::get_author();
+
+        if ( empty( $author ) )
+        {
+            return [];
+        }
+
+        return [
+            "@type" => "Person",
+            
+            "name" => $author[ 'name' ],
+        ];
+    }
 }
 
 ?>
