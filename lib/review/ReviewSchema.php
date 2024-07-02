@@ -145,7 +145,7 @@ class ReviewSchema
 
             "author" => self::schema_author(),
 
-			"datePublished" => self::get_date_published,
+			"datePublished" => self::get_date_published(),
 
             "publisher" => self::schema_publisher(),
         ];
