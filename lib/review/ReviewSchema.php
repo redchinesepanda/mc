@@ -54,10 +54,10 @@ class ReviewSchema
 		return ReviewAuthor::schema();
 	}
 
-    public static function schema_author_short()
-	{
-		return ReviewAuthor::schema_short();
-	}
+    // public static function schema_author_short()
+	// {
+	// 	return ReviewAuthor::schema_short();
+	// }
 
     // public static function schema_author()
     // {
@@ -214,6 +214,12 @@ class ReviewSchema
 
         //     JSON_UNESCAPED_UNICODE
         // );
+
+        LegalDebug::debug( [
+            'ReviewSchema' => 'schema',
+            
+            'graph' => $graph,
+        ] );
         
         return json_encode(
             [
