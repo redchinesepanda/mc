@@ -111,6 +111,16 @@ class ReviewSchema
         return self::SHEMA_TYPES[ 'web-page' ];
     }
 
+    public static function get_url( $type = '' )
+    {
+        return get_permalink();
+    }
+
+    public static function get_date_published( $type = '' )
+    {
+        return get_the_date();
+    }
+
     public static function schema_webpage( $type = '' )
     {
         if ( empty( $type ) )
@@ -131,11 +141,11 @@ class ReviewSchema
 
             "description" => YoastMain::get_seo_description(),
 
-			"url" => get_post_permalink(),
+			"url" => self::get_url(),
 
             "author" => self::schema_author(),
 
-			"datePublished" => get_the_date(),
+			"datePublished" => self::get_date_published,
 
             "publisher" => self::schema_publisher(),
         ];
