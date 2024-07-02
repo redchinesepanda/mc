@@ -169,10 +169,10 @@ class ReviewSchema
 
 	public static function schema()
     {
-        if ( ! ReviewMain::check() )
-        {
-            return json_encode( [] );
-        }
+        // if ( ! ReviewMain::check() )
+        // {
+        //     return json_encode( [] );
+        // }
 
         $post = get_post();
 
