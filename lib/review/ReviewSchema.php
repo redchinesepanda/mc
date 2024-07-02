@@ -90,19 +90,40 @@ class ReviewSchema
 
         'item-page' => 'ItemPage',
 
+        'review' => 'Review',
+
         'article' => 'Article',
     ];
 
+    public static function check_type()
+    {
+        return TemplateMain::check();
+    }
+
+    public static function check_review()
+    {
+        return TemplatePage::check_review();
+    }
+
+    public static function check_article()
+    {
+        return TemplatePage::check_compilation()
+
+            || TemplateSingle::check_bonus()
+
+            || TemplateSingle::check_wiki();
+    }
+
     public static function get_shema_type()
     {
-        if ( TemplateMain::check() )
+        if ( self::check_type() )
         {
-            if ( TemplatePage::check_review() )
+            if ( self::check_review() )
             {
-                return self::SHEMA_TYPES[ 'item-page' ];
+                return self::SHEMA_TYPES[ 'review' ];
             }
 
-            if ( TemplatePage::check_compilation() )
+            if ( self::check_article() )
             {
                 return self::SHEMA_TYPES[ 'article' ];
             }
@@ -121,19 +142,14 @@ class ReviewSchema
         return get_the_date();
     }
 
-    public static function schema_webpage( $type = '' )
+    public static function schema_webpage()
     {
-        if ( empty( $type ) )
-        {
-            $type = self::SHEMA_TYPES[ 'web-page' ];
-        }
-
         return [
             "@context" => "https://schema.org",
 
             // "@type" => "WebPage",
             
-            "@type" => $type,
+            "@type" => self::get_shema_type(),
 
 			// "name" => YoastMain::get_seo_title(),
 
