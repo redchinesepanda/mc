@@ -133,7 +133,7 @@ class ReviewSchema
 
 			"url" => get_post_permalink(),
 
-            "author" => self::schema_author_short(),
+            "author" => self::schema_author(),
 
 			"datePublished" => get_the_date(),
 
@@ -159,7 +159,7 @@ class ReviewSchema
 
             // self::schema_publisher(),
 
-            self::schema_author(),
+            // self::schema_author(),
 
             self::schema_webpage(),
         ];
