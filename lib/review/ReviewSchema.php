@@ -159,7 +159,7 @@ class ReviewSchema
 
             // self::schema_publisher(),
 
-            self::schema_author()
+            self::schema_author(),
 
             self::schema_webpage(),
         ];
