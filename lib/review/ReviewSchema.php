@@ -23,7 +23,7 @@ class ReviewSchema
     public static function schema_organization()
     {
         return [
-            "@context" => "https://schema.org",
+            // "@context" => "https://schema.org",
             
             "@type" => "Organization",
             
@@ -38,7 +38,7 @@ class ReviewSchema
     public static function schema_publisher()
     {
         return [
-            "@context" => "https://schema.org",
+            // "@context" => "https://schema.org",
 
             "@type" => "Organization",
 
