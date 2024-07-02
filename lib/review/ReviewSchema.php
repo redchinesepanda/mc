@@ -125,12 +125,12 @@ class ReviewSchema
         return self::SHEMA_TYPES[ 'web-page' ];
     }
 
-    public static function get_url( $type = '' )
+    public static function get_url()
     {
         return get_permalink();
     }
 
-    public static function get_date_published( $type = '' )
+    public static function get_date_published()
     {
         return get_the_date();
     }
@@ -215,12 +215,19 @@ class ReviewSchema
         //     JSON_UNESCAPED_UNICODE
         // );
         
-        return [
-            'schema' => json_encode( [
+        return json_encode(
+            [
                 "@context" => "https://schema.org",
 
                 "@graph" => $graph,
-            ] ),
+            ]
+        );
+    }
+
+    public static function get()
+    {
+        return [
+            'schema' => self::schema(),
         ];
     }
 
@@ -234,7 +241,7 @@ class ReviewSchema
         //     echo '<script id="' . self::JS[ 'schema' ] . '" type="application/ld+json">' . self::schema() . '</script>';
         // }
 
-        echo LegalComponents::render_main( self::TEMPLATE[ 'ld-json' ], self::schema() );
+        echo LegalComponents::render_main( self::TEMPLATE[ 'ld-json' ], self::get() );
     }
 }
 
