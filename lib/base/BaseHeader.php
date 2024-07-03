@@ -249,7 +249,7 @@ class BaseHeader
 
 				'count-languages' => count( $languages ),
 
-				'languages' => $languages,
+				// 'languages' => $languages,
 			] );
 
 			$languages = WPMLMain::exclude( $languages );
@@ -266,13 +266,13 @@ class BaseHeader
 	
 					'count-languages' => count( $languages ),
 	
-					'languages' => $languages,
+					// 'languages' => $languages,
 	
 					'lang' => $lang,
 	
 					'count-languages_avaible' => count( $languages_avaible ),
 	
-					'languages_avaible' => $languages_avaible,
+					// 'languages_avaible' => $languages_avaible,
 				] );
 		
 				return $languages_avaible;
