@@ -363,11 +363,11 @@ class WPMLLangSwitcher
         //     // 'multisite_sites_list' => $multisite_sites_list,
         // ] );
 
-        LegalDebug::debug( [
-            'WPMLLangSwitcher' => 'get',
+        // LegalDebug::debug( [
+        //     'WPMLLangSwitcher' => 'get',
 
-            'languages' => $languages,
-        ] );
+        //     'languages' => $languages,
+        // ] );
 
         $active = self::get_active( $languages );
 
@@ -388,6 +388,12 @@ class WPMLLangSwitcher
         {
             $args[ 'languages' ][] = self::map( $lang );
         }
+
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'args' => $args,
+        ] );
 
         return $args;
     }
