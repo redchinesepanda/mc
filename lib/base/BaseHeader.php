@@ -254,27 +254,31 @@ class BaseHeader
 
 			$languages = WPMLMain::exclude( $languages );
 
-			if ( MultisiteMain::check_multisite() )
+			if ( self::check_group_language() )
+			{
 		
-			$lang = WPMLMain::get_group_language();
-
-			$languages_avaible = WPMLMain::filter_language( $languages, $lang );
-
-			LegalDebug::debug( [
-				'BaseHeader' => 'get_languages_avaible',
-
-				'count-languages' => count( $languages ),
-
-				'languages' => $languages,
-
-				'lang' => $lang,
-
-				'count-languages_avaible' => count( $languages_avaible ),
-
-				'languages_avaible' => $languages_avaible,
-			] );
+				$lang = WPMLMain::get_group_language();
 	
-			return $languages_avaible;
+				$languages_avaible = WPMLMain::filter_language( $languages, $lang );
+	
+				LegalDebug::debug( [
+					'BaseHeader' => 'get_languages_avaible',
+	
+					'count-languages' => count( $languages ),
+	
+					'languages' => $languages,
+	
+					'lang' => $lang,
+	
+					'count-languages_avaible' => count( $languages_avaible ),
+	
+					'languages_avaible' => $languages_avaible,
+				] );
+		
+				return $languages_avaible;
+			}
+
+			return $languages;
 		// }
 
 		// return [];
