@@ -94,7 +94,7 @@ class MultisiteAdmin
 
 	public static function check_multisite_admin()
 	{
-		return MiltisiteMain::check_multisite()
+		return MultisiteMain::check_multisite()
 		
 			&& MultisiteBlog::check_main_blog();
 	}
@@ -192,7 +192,7 @@ class MultisiteAdmin
 		
 		if ( $sites )
 		{
-			$pattern = ToolLoco::translate( MiltisiteMain::TEXT[ 'copy-to' ] );
+			$pattern = ToolLoco::translate( MultisiteMain::TEXT[ 'copy-to' ] );
 
 			foreach ( $sites as $site )
 			{
@@ -206,15 +206,15 @@ class MultisiteAdmin
 	public static function mc_bulk_subsite_actions( $bulk_array )
 	{
 		$bulk_array = array_merge( $bulk_array, [
-			self::DOACTION[ 'sync-galleries' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-galleries' ] ),
+			self::DOACTION[ 'sync-galleries' ] => ToolLoco::translate( MultisiteMain::TEXT[ 'sync-galleries' ] ),
 
-			self::DOACTION[ 'sync-shortcodes' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-shortcodes' ] ),
+			self::DOACTION[ 'sync-shortcodes' ] => ToolLoco::translate( MultisiteMain::TEXT[ 'sync-shortcodes' ] ),
 
-			self::DOACTION[ 'sync-terms' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-terms' ] ),
+			self::DOACTION[ 'sync-terms' ] => ToolLoco::translate( MultisiteMain::TEXT[ 'sync-terms' ] ),
 
-			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-attachments' ] ),
+			self::DOACTION[ 'sync-attachments' ] => ToolLoco::translate( MultisiteMain::TEXT[ 'sync-attachments' ] ),
 
-			self::DOACTION[ 'sync-posts' ] => ToolLoco::translate( MiltisiteMain::TEXT[ 'sync-posts' ] ),
+			self::DOACTION[ 'sync-posts' ] => ToolLoco::translate( MultisiteMain::TEXT[ 'sync-posts' ] ),
 		] );
 
 		return $bulk_array;
@@ -236,7 +236,7 @@ class MultisiteAdmin
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
 			$message = self::get_message(
-				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-copied-to' ],
+				MultisiteMain::TEXT_PLURAL[ 'post-has-been-copied-to' ],
 
 				[
 					$_REQUEST[ self::QUERY_ARG[ 'posts-moved' ] ],
@@ -311,7 +311,7 @@ class MultisiteAdmin
 			// ] );
 
 			$message = self::get_message(
-				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
+				MultisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
 
 				[
 					// $_REQUEST[ self::QUERY_ARG[ 'galleries-synced' ] ], 
@@ -337,7 +337,7 @@ class MultisiteAdmin
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
 			$message = self::get_message(
-				MiltisiteMain::TEXT_PLURAL[ 'image-has-been-copied-to' ],
+				MultisiteMain::TEXT_PLURAL[ 'image-has-been-copied-to' ],
 
 				[
 					$_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],

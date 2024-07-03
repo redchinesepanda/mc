@@ -176,7 +176,7 @@ class ToolSitemapXML
     {
         return self::check_sitemap_page()
 
-            && MiltisiteMain::check_multisite()
+            && MultisiteMain::check_multisite()
 
             && MultisiteBlog::check_main_domain();
     }

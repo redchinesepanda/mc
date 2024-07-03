@@ -25,7 +25,7 @@ class WPMLMain
 
     public static function check_wpml_off()
     {
-        return MiltisiteMain::check_multisite()
+        return MultisiteMain::check_multisite()
 
             && MultisiteBlog::check_not_main_blog();
     }
@@ -43,10 +43,10 @@ class WPMLMain
         // LegalDebug::debug( [
         //     'WPMLMain' => 'register_functions',
 
-        //     'check_multisite' => MiltisiteMain::check_multisite(),
+        //     'check_multisite' => MultisiteMain::check_multisite(),
         // ] );
 
-        // if ( MiltisiteMain::check_multisite() )
+        // if ( MultisiteMain::check_multisite() )
         
         if ( self::check_wpml_off() )
         {
@@ -81,10 +81,10 @@ class WPMLMain
         // LegalDebug::debug( [
         //     'WPMLMain' => 'register',
 
-        //     'check_multisite' => MiltisiteMain::check_multisite(),
+        //     'check_multisite' => MultisiteMain::check_multisite(),
         // ] );
 
-        // if ( MiltisiteMain::check_multisite() )
+        // if ( MultisiteMain::check_multisite() )
         // {
         //     add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ] );
         // }
@@ -272,7 +272,7 @@ class WPMLMain
         // LegalDebug::debug( [
         //     'WPMLMain' => 'get_locale',
 
-        //     'check_multisite' => MiltisiteMain::check_multisite(),
+        //     'check_multisite' => MultisiteMain::check_multisite(),
 
         //     'get_locale' => get_locale(),
         // ] );
@@ -283,7 +283,7 @@ class WPMLMain
 
         // if ( !empty( $blog_locale ) )
 
-        // if ( MiltisiteMain::check_multisite() )
+        // if ( MultisiteMain::check_multisite() )
         if ( WPMLMain::check_wpml_off() )
         {
             if ( $blog_locale = MultisiteSiteOptions::get_blog_locale() )
@@ -325,7 +325,7 @@ class WPMLMain
         //     'wpml_current_language' => $wpml_current_language,
         // ] );
 
-        if ( MiltisiteMain::check_multisite() )
+        if ( MultisiteMain::check_multisite() )
         {
             if ( empty( $wpml_current_language ) )
             {

@@ -133,7 +133,7 @@ class ReviewAuthor
 
     public static function get_about_us_url( $id, $href, $anchor = '' )
     {
-        if ( MiltisiteMain::check_multisite() )
+        if ( MultisiteMain::check_multisite() )
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {

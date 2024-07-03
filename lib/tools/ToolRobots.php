@@ -47,7 +47,7 @@ class ToolRobots
 	{
 		$sitemaps = [];
 
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
 		{
 			if ( MultisiteBlog::check_not_main_domain() )
 			{

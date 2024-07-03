@@ -56,7 +56,7 @@ class ReviewRestricted
 
 	public static function check_modify()
 	{
-		return MiltisiteMain::check_multisite()
+		return MultisiteMain::check_multisite()
 		
 			&& MultisiteBlog::check_not_main_domain()
 			

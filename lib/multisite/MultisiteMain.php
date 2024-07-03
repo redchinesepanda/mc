@@ -32,7 +32,7 @@ require_once( 'MultisiteFront.php' );
 
 require_once( 'MultisiteHreflang.php' );
 
-class MiltisiteMain
+class MultisiteMain
 {
 	const TEXT = [
 		'copy-to' => 'Copy to [%s]',

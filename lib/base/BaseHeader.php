@@ -302,7 +302,7 @@ class BaseHeader
 		// 	'empty' => empty( $all_languages ),
 		// ] );
 
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
         {
 			if ( empty( $all_languages ) )
 			{
@@ -333,7 +333,7 @@ class BaseHeader
 		// 	'MultisiteSiteSwitcher::get_languages' => $all_languages,
 		// ] );
 
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
@@ -654,9 +654,9 @@ class BaseHeader
 
 	public static function check_all_countries()
 	{
-		return MiltisiteMain::check_not_multisite()
+		return MultisiteMain::check_not_multisite()
 			
-			|| MiltisiteMain::check_multisite()
+			|| MultisiteMain::check_multisite()
 			
 				&& MultisiteBlog::check_main_domain();
 	}
@@ -695,7 +695,7 @@ class BaseHeader
 
 		// if ( $item_all_countries = self::get_item_all_countries() )
 		
-		// if ( MiltisiteMain::check_multisite() )
+		// if ( MultisiteMain::check_multisite() )
 		// {
 		// 	if ( MultisiteBlog::check_main_domain() )
 		// 	{
@@ -836,7 +836,7 @@ class BaseHeader
 
 		$group_items_all = [];
 
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
         {
 			$group_items_all = MultisiteHreflang::get_group_items_all( $post->ID );
 		}
