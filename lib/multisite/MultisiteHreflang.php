@@ -144,7 +144,7 @@ class MultisiteHreflang
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'get_post_uri',
 	
-				'sprintf' => sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path ),
+				'not-empty-sprintf' => sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path ),
 	
 				// '$language_code' => $language_code,
 			] );
@@ -157,7 +157,7 @@ class MultisiteHreflang
 		LegalDebug::debug( [
 			'MultisiteHreflang' => 'get_post_uri',
 
-			'sprintf' => sprintf( self::PATTERN[ 'post-uri-root' ], $url ),
+			'empty-sprintf' => sprintf( self::PATTERN[ 'post-uri-root' ], $url ),
 
 			// '$language_code' => $language_code,
 		] );
