@@ -201,6 +201,11 @@
 
     /* Width and Height */
 
+    .tcb-post-content .legal-imageset.columns-1 .imageset-item,
+    .tcb-post-content .legal-imageset.columns-2 .imageset-item {
+        width: 1px;
+    }
+
     .tcb-post-content .legal-imageset-oops .imageset-item
     {
         min-width: var( --base-width-desktop );
@@ -374,11 +379,6 @@
 {
     width: 12px;
     height: 12px;
-}
-
-.tcb-post-content .legal-imageset.columns-1 .imageset-item,
-.tcb-post-content .legal-imageset.columns-2 .imageset-item {
-    width: 1px;
 }
 
 .tcb-post-content .legal-imageset.columns-1 .imageset-item
