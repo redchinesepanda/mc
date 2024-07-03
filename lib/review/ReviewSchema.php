@@ -68,13 +68,24 @@ class ReviewSchema
             
             "url" => "https://match.center/",
 
-            "logo" => "https://match.center/wp-content/uploads/match-center.png",
+            // "logo" => "https://match.center/wp-content/uploads/match-center.png",
+
+            "logo" => self::shema_logo(),
         ];
     }
 
     public static function get_site_url()
     {
         return get_site_url();
+    }
+
+    public static function shema_logo()
+    {
+        return [
+            "@type" => "ImageObject",
+
+            "url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+        ];
     }
 
     public static function schema_publisher()
@@ -90,11 +101,15 @@ class ReviewSchema
 
 			"url" => self::get_site_url(),
 
-			"logo" => [
-				"@type" => "ImageObject",
+			// "logo" => [
+			// 	"@type" => "ImageObject",
 
-				"url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
-			],
+			// 	// "url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+				
+            //     "url" => self::get_logo_url(),
+			// ],
+
+			"logo" => self::shema_logo(),
         ];
     }
 
