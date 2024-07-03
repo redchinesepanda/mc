@@ -26,18 +26,6 @@ class ReviewSchema
     }
     public static function schema_web_site()
     {
-        // {
-        //     "@context": "https://schema.org",
-        //     "@type": "WebSite",
-        //     "name": "Match Center",
-        //     "url": "https://match.center/",
-        //     "potentialAction": {
-        //       "@type": "SearchAction",
-        //       "target": "https://match.center/search?q={search_term_string}",
-        //       "query-input": "required name=search_term_string"
-        //     }
-        //   }
-          
         return [
             "@context" => "https://schema.org",
             
@@ -46,14 +34,6 @@ class ReviewSchema
             "name" => "Match.Center",
             
             "url" => self::get_site_url(),
-
-            // "potentialAction" => [
-            //     "@type": "SearchAction",
-                
-            //     "target": "https://match.center/search?q={search_term_string}",
-                
-            //     "query-input": "required name=search_term_string"
-            // ],
         ];
     }
 
@@ -66,25 +46,9 @@ class ReviewSchema
             
             "name" => "Match.Center",
             
-            "url" => "https://match.center/",
-
-            // "logo" => "https://match.center/wp-content/uploads/match-center.png",
+            "url" => self::get_site_url(),
 
             "logo" => self::shema_logo(),
-        ];
-    }
-
-    public static function get_site_url()
-    {
-        return get_site_url();
-    }
-
-    public static function shema_logo()
-    {
-        return [
-            "@type" => "ImageObject",
-
-            "url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
         ];
     }
 
@@ -95,9 +59,9 @@ class ReviewSchema
 
             "@type" => "Organization",
 
-            "name" => "Match.Center",
+            "name" => self::get_name(),
 
-            "legalName" => "Match.Center",
+            "legalName" => self::get_name(),
 
 			"url" => self::get_site_url(),
 
@@ -178,6 +142,128 @@ class ReviewSchema
     public static function get_date_published()
     {
         return get_the_date();
+    }
+
+    public static function get_site_url()
+    {
+        return get_site_url();
+    }
+
+    public static function shema_logo()
+    {
+        return [
+            "@type" => "ImageObject",
+
+            "url" => LegalMain::LEGAL_URL . '/assets/img/base/header/header-logo-mc-desktop.svg',
+        ];
+    }
+
+    public static function get_name()
+    {
+        return "Match.Center";
+    }
+
+    public static function get_item_rewived()
+    {
+        $review_about = ReviewAbout::get( [] );
+
+        if ( ! empty( $review_about ) )
+        {
+            return $review_about;
+        }
+
+        return [];
+    }
+
+    public static function get_item_rewived_name( $review_about )
+    {
+        if ( ! empty( $review_about[ 'title' ] ) )
+        {
+            return $review_about[ 'title' ];
+        }
+
+        return self::get_name();
+    }
+
+    public static function get_item_rewived_logo( $review_about )
+    {
+        if ( ! empty( $review_about[ 'logo' ] ) )
+        {
+            return $review_about[ 'logo' ];
+        }
+
+        return self::get_name();
+    }
+
+    public static function schema_item_rewived( $review_about )
+    {
+        return [
+            "@type" => "Organization",
+
+            "name" => self::get_item_rewived_name( $review_about ),
+
+            "url" => self::get_url(),
+        ];
+    }
+
+    public static function schema_review()
+    {
+        $review_about = self::get_item_rewived();
+
+        return array_merge( self::schema_base(), [
+            "@type" => "Review",
+
+            "itemReviewed" => self::schema_item_rewived( $review_about ),
+
+            "reviewBody" => YoastMain::get_seo_description(),
+        ] );
+    }
+
+    public static function schema_webpage_correct()
+    {
+        return array_merge( self::schema_base(), [
+            "@type" => "WebPage",
+
+            "name" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+            "url" => self::get_url(),
+
+            "publisher" => self::schema_publisher(),
+        ] );
+    }
+
+    public static function schema_article()
+    {
+        $review_about = self::get_item_rewived();
+        
+        return array_merge( self::schema_base(), [
+            "@type" => "Article",
+
+            "headline" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+            "url" => self::get_url(),
+
+            "publisher" => self::schema_publisher(),
+
+            "image": self::get_item_rewived_logo( $review_about ),
+	        
+            "articleBody": YoastMain::get_seo_description(),
+        ] );
+    }
+
+    public static function schema_base()
+    {
+        return [
+            "@context" => "https://schema.org",
+
+            "author" => self::schema_author_short(),
+
+            "datePublished" => self::get_date_published(),
+        ];
     }
 
     public static function schema_webpage()
