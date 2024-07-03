@@ -125,6 +125,8 @@ class MultisiteHreflang
 
 			'$post_path' => $post_path,
 
+			'not-empty-post_path' => !empty( $post_path ),
+
 			// '$language_code' => $language_code,
 		] );
 
