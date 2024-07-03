@@ -138,6 +138,14 @@ class MultisiteHreflang
 		if ( !empty( $post_path ) )
 		{
 			// return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
+
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'get_post_uri',
+	
+				'sprintf' => sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path ),
+	
+				// '$language_code' => $language_code,
+			] );
 			
 			return sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path );
 		}
