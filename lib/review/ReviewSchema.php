@@ -13,17 +13,6 @@ class ReviewSchema
         add_action( 'wp_head', [ $handler, 'review_ld_json' ] );
 	}
 
-    public static function schema_main_entity_of_page()
-    {
-        // "mainEntityOfPage": {
-        //     "@type": "WebPage",
-        //     "@id": "https://match.center/br/betberry-io/"
-        // }
-
-        // "mainEntityOfPage": "http://cathscafe.example.com/",
-          
-        return self::get_url();
-    }
     public static function schema_web_site()
     {
         return [
@@ -141,7 +130,11 @@ class ReviewSchema
 
     public static function get_date_published()
     {
-        return get_the_date();
+        // return get_the_date();
+
+        // ISO 8601
+        
+        return the_time( 'c' );
     }
 
     public static function get_site_url()
@@ -210,18 +203,70 @@ class ReviewSchema
     {
         $review_about = self::get_item_rewived();
 
-        return array_merge( self::schema_base(), [
+        return [
+            "@context" => "https://schema.org",
+
             "@type" => "Review",
 
             "itemReviewed" => self::schema_item_rewived( $review_about ),
 
+            "author" => self::schema_author_short(),
+
+            "datePublished" => self::get_date_published(),
+
+            // "reviewRating" => [],
+
             "reviewBody" => YoastMain::get_seo_description(),
-        ] );
+        ];
     }
 
-    public static function schema_webpage_correct()
+    public static function shema_main_entity()
     {
-        return array_merge( self::schema_base(), [
+        return [
+            "@type" => "Product",
+
+            "name" => "Betberry.io",
+
+            "description" => "Букмекерская контора Betberry.io предлагает широкий выбор ставок и привлекательные бонусы.",
+
+            "aggregateRating" => [
+                "@type" => "AggregateRating",
+
+                "ratingValue" => "4.5",
+
+                "reviewCount" => "150",
+            ],
+        ];
+    }
+
+    public static function schema_item_page()
+    {
+        return [
+            "@context" => "https://schema.org",
+
+            "@type" => "ItemPage",
+
+            "name" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+            "url" => self::get_url(),
+
+            "author" => self::schema_author_short(),
+
+            "datePublished" => self::get_date_published(),
+
+            "publisher" => self::schema_publisher(),
+
+            "mainEntity" => self::shema_main_entity(),
+        ];
+    }
+
+    public static function schema_product()
+    {
+        return [
+            "@context" => "https://schema.org",
+
             "@type" => "WebPage",
 
             "name" => YoastMain::get_seo_title(),
@@ -230,15 +275,44 @@ class ReviewSchema
 
             "url" => self::get_url(),
 
+            "brand" => [],
+
+            "aggregateRating" => [],
+
+            "review" => [],
+
+            "offers" => [],
+        ];
+    }
+
+    public static function schema_webpage_correct()
+    {
+        return [
+            "@context" => "https://schema.org",
+
+            "@type" => "WebPage",
+
+            "name" => YoastMain::get_seo_title(),
+
+            "description" => YoastMain::get_seo_description(),
+
+            "url" => self::get_url(),
+
+            "author" => self::schema_author_short(),
+
+            "datePublished" => self::get_date_published(),
+
             "publisher" => self::schema_publisher(),
-        ] );
+        ];
     }
 
     public static function schema_article()
     {
         $review_about = self::get_item_rewived();
         
-        return array_merge( self::schema_base(), [
+        return [
+            "@context" => "https://schema.org",
+
             "@type" => "Article",
 
             "headline" => YoastMain::get_seo_title(),
@@ -247,12 +321,16 @@ class ReviewSchema
 
             "url" => self::get_url(),
 
+            "author" => self::schema_author_short(),
+
+            "datePublished" => self::get_date_published(),
+
             "publisher" => self::schema_publisher(),
 
             "image"=> self::get_item_rewived_logo( $review_about ),
 	        
             "articleBody" => YoastMain::get_seo_description(),
-        ] );
+        ];
     }
 
     public static function schema_base()
@@ -264,6 +342,18 @@ class ReviewSchema
 
             "datePublished" => self::get_date_published(),
         ];
+    }
+
+    public static function schema_main_entity_of_page()
+    {
+        // "mainEntityOfPage": {
+        //     "@type": "WebPage",
+        //     "@id": "https://match.center/br/betberry-io/"
+        // }
+
+        // "mainEntityOfPage": "http://cathscafe.example.com/",
+          
+        return self::get_url();
     }
 
     public static function schema_webpage()
