@@ -249,9 +249,9 @@ class ReviewSchema
 
             "publisher" => self::schema_publisher(),
 
-            "image": self::get_item_rewived_logo( $review_about ),
+            "image"=> self::get_item_rewived_logo( $review_about ),
 	        
-            "articleBody": YoastMain::get_seo_description(),
+            "articleBody" => YoastMain::get_seo_description(),
         ] );
     }
 
