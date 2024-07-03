@@ -334,6 +334,7 @@
 .tcb-post-content .legal-imageset.columns-2 .item-image {
     margin-right: auto;
     margin-left: auto;
+    padding-bottom: 8px;
 }
 
 .tcb-post-content .legal-imageset-oops .imageset-pagination
