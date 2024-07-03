@@ -13,6 +13,50 @@ class ReviewSchema
         add_action( 'wp_head', [ $handler, 'review_ld_json' ] );
 	}
 
+    public static function schema_main_entity_of_page()
+    {
+        // "mainEntityOfPage": {
+        //     "@type": "WebPage",
+        //     "@id": "https://match.center/br/betberry-io/"
+        // }
+
+        // "mainEntityOfPage": "http://cathscafe.example.com/",
+          
+        return self::get_url();
+    }
+    public static function schema_web_site()
+    {
+        // {
+        //     "@context": "https://schema.org",
+        //     "@type": "WebSite",
+        //     "name": "Match Center",
+        //     "url": "https://match.center/",
+        //     "potentialAction": {
+        //       "@type": "SearchAction",
+        //       "target": "https://match.center/search?q={search_term_string}",
+        //       "query-input": "required name=search_term_string"
+        //     }
+        //   }
+          
+        return [
+            "@context" => "https://schema.org",
+            
+            "@type" => "WebSite",
+            
+            "name" => "Match.Center",
+            
+            "url" => self::get_site_url(),
+
+            // "potentialAction" => [
+            //     "@type": "SearchAction",
+                
+            //     "target": "https://match.center/search?q={search_term_string}",
+                
+            //     "query-input": "required name=search_term_string"
+            // ],
+        ];
+    }
+
     public static function schema_organization()
     {
         return [
@@ -28,6 +72,11 @@ class ReviewSchema
         ];
     }
 
+    public static function get_site_url()
+    {
+        return get_site_url();
+    }
+
     public static function schema_publisher()
     {
         return [
@@ -39,7 +88,7 @@ class ReviewSchema
 
             "legalName" => "Match.Center",
 
-			"url" => get_site_url(),
+			"url" => self::get_site_url(),
 
 			"logo" => [
 				"@type" => "ImageObject",
@@ -54,29 +103,10 @@ class ReviewSchema
 		return ReviewAuthor::schema();
 	}
 
-    // public static function schema_author_short()
-	// {
-	// 	return ReviewAuthor::schema_short();
-	// }
-
-    // public static function schema_author()
-    // {
-    //     return [
-    //         "@context" => "https://schema.org",
-
-    //         "@type" => "Person",
-
-    //         "name" => "Andrew Heaford",
-
-    //         "url" => "https://match.center/ng/about-us/#our-team",
-
-    //         "image" => "https://match.center/wp-content/uploads/andy-scaled-e1657268424214.jpg",
-
-    //         "jobTitle" => "Site manager",
-
-    //         "worksFor" => self::schema_publisher(),
-    //     ];
-    // }
+    public static function schema_author_short()
+	{
+		return ReviewAuthor::schema_short();
+	}
 
     const SHEMA_TYPES = [
         'web-page' => 'WebPage',
@@ -152,11 +182,15 @@ class ReviewSchema
 
 			"url" => self::get_url(),
 
-            "author" => self::schema_author(),
+            // "author" => self::schema_author(),
+
+            "author" => self::schema_author_short(),
 
 			"datePublished" => self::get_date_published(),
 
             "publisher" => self::schema_publisher(),
+
+            "mainEntityOfPage" => schema_main_entity_of_page(),
         ];
     }
 
@@ -175,13 +209,13 @@ class ReviewSchema
         }
 
         $graph = [
-            // self::schema_organization(),
+            self::schema_organization(),
 
-            // self::schema_publisher(),
-
-            // self::schema_author(),
+            self::schema_web_site(),
 
             self::schema_webpage(),
+
+            self::schema_author(),
         ];
 
         $breadcrumbs = LegalBreadcrumbsMain::schema();
