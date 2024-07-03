@@ -229,6 +229,15 @@ class BaseHeader
 		return [];
 	}
 
+	public static function check_group_language()
+	{
+		return MultisiteMain::check_not_multisite()
+
+			|| MultisiteMain::check_multisite()
+
+			&& MultisiteBlog::check_not_main_domain();
+	}
+
 	public static function get_languages_avaible( $languages )
 	{
 		// if ( !ToolNotFound::check_domain_restricted() )
@@ -244,6 +253,8 @@ class BaseHeader
 			] );
 
 			$languages = WPMLMain::exclude( $languages );
+
+			if ( MultisiteMain::check_multisite() )
 		
 			$lang = WPMLMain::get_group_language();
 
