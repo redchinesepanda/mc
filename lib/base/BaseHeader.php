@@ -235,7 +235,7 @@ class BaseHeader
 
 			|| MultisiteMain::check_multisite()
 
-			&& MultisiteBlog::check_not_main_domain();
+			&& MultisiteBlog::check_main_domain();
 	}
 
 	public static function get_languages_avaible( $languages )
