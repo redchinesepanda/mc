@@ -221,7 +221,7 @@ class OopsCookie
         //     'get_privacy_policy_wpml_url' => self::get_privacy_policy_wpml_url(),
         // ] );
 
-        if ( MiltisiteMain::check_multisite() )
+        if ( MultisiteMain::check_multisite() )
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {

@@ -199,7 +199,7 @@ class WPMLLangSwitcher
     {
         return TemplateMain::check_new()
 
-            && MiltisiteMain::check_multisite()
+            && MultisiteMain::check_multisite()
 
             && MultisiteBlog::check_main_domain();
     }
@@ -240,7 +240,7 @@ class WPMLLangSwitcher
 
         // if ( WPMLMain::check_wpml_off() )
         
-        if ( MiltisiteMain::check_multisite() && MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
+        if ( MultisiteMain::check_multisite() && MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
         {
             if ( empty( $languages ) )
             {
@@ -260,7 +260,7 @@ class WPMLLangSwitcher
             }
         }
 
-        if ( MiltisiteMain::check_multisite() )
+        if ( MultisiteMain::check_multisite() )
         {
             // $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
@@ -326,7 +326,7 @@ class WPMLLangSwitcher
         // LegalDebug::debug( [
         //     'WPMLLangSwitcher' => 'get',
 
-        //     // 'check_multisite' => MiltisiteMain::check_multisite(),
+        //     // 'check_multisite' => MultisiteMain::check_multisite(),
 
         //     // 'subsite_languages' => $subsite_languages,
 

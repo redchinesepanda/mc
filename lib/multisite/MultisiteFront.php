@@ -4,7 +4,7 @@ class MultisiteFront
 {
 	public static function register_functions_subsite()
 	{
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
 		{
 			if ( MultisiteBlog::check_not_main_blog() )
 			{

@@ -9,7 +9,7 @@ class WPMLHreflang
 		// 	return false;
 		// }
 
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
         {
 			$handler = new self();
 
@@ -27,7 +27,7 @@ class WPMLHreflang
     {
 		$hreflang = [];
 
-		// if ( MiltisiteMain::check_multisite() )
+		// if ( MultisiteMain::check_multisite() )
 		// {
 		// 	return $hreflang;
 		// }

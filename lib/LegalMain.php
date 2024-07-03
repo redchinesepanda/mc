@@ -34,7 +34,7 @@ require_once( 'metrika/MetrikaMain.php' );
 
 require_once( 'notion/NotionMain.php' );
 
-require_once( 'multisite/MiltisiteMain.php' );
+require_once( 'multisite/MultisiteMain.php' );
 
 // require_once( 'wp-optimize/WPOptimizeMain.php' );
 
@@ -86,7 +86,7 @@ class LegalMain
 
 		WPMLMain::register_functions();
 
-		MiltisiteMain::register_functions();
+		MultisiteMain::register_functions();
 
 		// WPOptimizeMain::register_functions();
 
@@ -98,7 +98,7 @@ class LegalMain
 
 			NotionMain::register_functions();
 
-			MiltisiteMain::register_functions_admin();
+			MultisiteMain::register_functions_admin();
 		}
 	}
 

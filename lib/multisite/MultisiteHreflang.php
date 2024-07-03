@@ -320,7 +320,7 @@ class MultisiteHreflang
 
 	public static function prepare_hreflang()
 	{
-		if ( MiltisiteMain::check_multisite() )
+		if ( MultisiteMain::check_multisite() )
         {
 			$args = [];
 
@@ -370,7 +370,7 @@ class MultisiteHreflang
 	{
 		// $languages = [];
 
-		// if ( MiltisiteMain::check_multisite() )
+		// if ( MultisiteMain::check_multisite() )
         // {
 			// $args = [];
 

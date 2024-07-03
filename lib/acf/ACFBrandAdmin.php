@@ -41,7 +41,7 @@ class ACFBrandAdmin
 		if ( $request_updated = self::check_request_updated( $_REQUEST ) )
 		{
 			$message = self::get_message(
-				MiltisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
+				MultisiteMain::TEXT_PLURAL[ 'post-has-been-updated' ],
 
 				[
 					$request_updated,
