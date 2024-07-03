@@ -190,7 +190,7 @@ class ReviewSchema
 
             "publisher" => self::schema_publisher(),
 
-            "mainEntityOfPage" => schema_main_entity_of_page(),
+            "mainEntityOfPage" => self::schema_main_entity_of_page(),
         ];
     }
 
