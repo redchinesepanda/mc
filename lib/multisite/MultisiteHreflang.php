@@ -141,26 +141,26 @@ class MultisiteHreflang
 		{
 			// return sprintf( self::PATTERN[ 'post-uri' ], $url, $language_code, $post_path );
 
-			LegalDebug::debug( [
-				'MultisiteHreflang' => 'get_post_uri',
+			// LegalDebug::debug( [
+			// 	'MultisiteHreflang' => 'get_post_uri',
 	
-				'not-empty-sprintf' => sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path ),
+			// 	'not-empty-sprintf' => sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path ),
 	
-				// '$language_code' => $language_code,
-			] );
+			// 	// '$language_code' => $language_code,
+			// ] );
 			
 			return sprintf( self::PATTERN[ 'post-uri' ], $url, $post_path );
 		}
 
 		// return sprintf( self::PATTERN[ 'post-uri-root' ], $url, $post_path );
 
-		LegalDebug::debug( [
-			'MultisiteHreflang' => 'get_post_uri',
+		// LegalDebug::debug( [
+		// 	'MultisiteHreflang' => 'get_post_uri',
 
-			'empty-sprintf' => sprintf( self::PATTERN[ 'post-uri-root' ], $url ),
+		// 	'empty-sprintf' => sprintf( self::PATTERN[ 'post-uri-root' ], $url ),
 
-			// '$language_code' => $language_code,
-		] );
+		// 	// '$language_code' => $language_code,
+		// ] );
 		
 		return sprintf( self::PATTERN[ 'post-uri-root' ], $url );
 	}
