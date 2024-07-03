@@ -116,6 +116,8 @@ class WPMLTranslationGroups
                             }
                         }
                     }
+
+                    set_field( self::FIELDS[ 'trid' ], $post_id, $trid );
                 }
             }
         }
