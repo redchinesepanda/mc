@@ -87,7 +87,7 @@ class ToolRobots
 	{
 		$robots = self::ROBOTS_DISALLOW_ALL;
 
-		$sitemap = [];
+		$sitemaps = [];
 
 		// if ( self::check_not_restricted() )
 		
