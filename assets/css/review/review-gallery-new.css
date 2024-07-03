@@ -325,7 +325,8 @@
     padding-top: 8px;
 }
 
-.tcb-post-content .legal-imageset.columns-1 .item-image {
+.tcb-post-content .legal-imageset.columns-1 .item-image,
+.tcb-post-content .legal-imageset.columns-2 .item-image {
     margin-right: auto;
     margin-left: auto;
 }
