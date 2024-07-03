@@ -133,6 +133,12 @@ class ReviewSchema
         // return get_the_date();
 
         // ISO 8601
+
+        LegalDebug::debug( [
+            'get_the_date' => get_the_date(),
+
+            'the_time' => the_time( 'c' ),
+        ] );
         
         return the_time( 'c' );
     }
