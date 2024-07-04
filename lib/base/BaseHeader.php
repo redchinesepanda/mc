@@ -379,6 +379,12 @@ class BaseHeader
 			// 	'avaible' => count( $search[ 'avaible' ] ),
 			// ] );
 		}
+
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
+
+			'search' => $search,
+		] );
 		
 		return $search;
 	}
