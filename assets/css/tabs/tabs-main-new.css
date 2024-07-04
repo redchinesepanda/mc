@@ -130,8 +130,11 @@
     padding-left: 44px;
 }
 .legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ) {
-    padding-left: 24px;
     padding-right: 24px;
+}
+
+.legal-tabs .legal-tab-title:not( .legal-tabs-info .legal-tab-title ):not( .legal-tab-title[class*="tab-image-"] ) {
+    padding-left: 24px;
 }
 
 .legal-tabs .legal-tabs-description {
