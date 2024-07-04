@@ -171,12 +171,18 @@ class BaseHeader
 		{
 			if ( str_contains( $style_item[ 'class' ], 'legal-country' ) )
 			{
-				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+				// $style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+
+				// url('https://match-center-ua.com/ru/wp-content/themes/mc-theme/assets/img/multisite/flag/ua-ru.svg')
+				
+				$style[] = '.legal-menu .' . $style_item[ 'class' ] . ' > a::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/themes/mc-theme/assets/img/multisite/flag/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
 
 			if ( $new && $style_item[ 'url-part' ] == $code )
 			{
-				$style[] = '.legal-header .legal-header-control:not( .legal-active )::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+				// $style[] = '.legal-header .legal-header-control:not( .legal-active )::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/uploads/flags/' . $style_item[ 'url-part' ] .'.svg\'); }';
+				
+				$style[] = '.legal-header .legal-header-control:not( .legal-active )::before { background-image: url(\'' . LegalMain::LEGAL_ROOT . '/wp-content/themes/mc-theme/assets/img/multisite/flag/' . $style_item[ 'url-part' ] .'.svg\'); }';
 			}
 		}
 
