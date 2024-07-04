@@ -240,13 +240,15 @@ class BaseHeader
 
 	public static function get_languages_avaible( $languages )
 	{
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_languages_avaible',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_languages_avaible',
 
-		// 	'count-languages' => count( $languages ),
+			'check_group_language' => self::check_group_language(),
 
-		// 	// 'languages' => $languages,
-		// ] );
+			'count-languages' => count( $languages ),
+
+			// 'languages' => $languages,
+		] );
 
 		$languages = WPMLMain::exclude( $languages );
 
