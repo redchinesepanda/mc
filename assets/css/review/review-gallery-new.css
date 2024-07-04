@@ -238,12 +238,17 @@
     display: flex;
 }
 
-.tcb-post-content .legal-imageset:not( .columns-1 ):not( .columns-2 ) .imageset-item,
+.tcb-post-content .legal-imageset:not( .columns-1 ):not( .columns-2 ) .imageset-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 8px;
+}
+
 .tcb-post-content .legal-imageset-oops .legal-imageset.columns-1 .imageset-item,
 .tcb-post-content .legal-imageset-oops .legal-imageset.columns-2 .imageset-item {
     display: flex;
     flex-direction: column;
-    align-items: start;
     row-gap: 8px;
 }
 
