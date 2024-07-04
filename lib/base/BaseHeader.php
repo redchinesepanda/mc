@@ -951,17 +951,19 @@ class BaseHeader
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'urls' => $urls,
-		// ] );
+			'urls' => $urls,
+		] );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'home_urls_replaced' => $home_urls_replaced,
-		// ] );
+			'home_urls_all' => $home_urls_all,
+
+			'home_urls_replaced' => $home_urls_replaced,
+		] );
 
 		$cross = self::get_cross_page();
 
