@@ -358,7 +358,7 @@ class WPMLLangSwitcher
 
             // 'items' => $items,
 
-            'multisite_languages' => $multisite_languages,
+            // 'multisite_languages' => $multisite_languages,
 
             // 'multisite_sites_list' => $multisite_sites_list,
         ] );
