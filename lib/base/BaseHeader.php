@@ -1013,10 +1013,10 @@ class BaseHeader
 			'search' => $search,
 		] );
 
-		if ( MultisiteMain::check_multisite() )
-		{
-			if ( MultisiteBlog::check_main_domain() )
-			{
+		// if ( MultisiteMain::check_multisite() )
+		// {
+		// 	if ( MultisiteBlog::check_main_domain() )
+		// 	{
 				$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 		
 				LegalDebug::debug( [
@@ -1024,8 +1024,8 @@ class BaseHeader
 		
 					'search' => $search,
 				] );
-			}
-		}
+		// 	}
+		// }
 
 		$parse = self::parse_languages( $search );
 
