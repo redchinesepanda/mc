@@ -11,7 +11,7 @@ class LegalHosts
 
 		'old' => 'old.match.center',
 
-		'oldpl' => 'oldpl.match.center',
+		// 'oldpl' => 'oldpl.match.center',
 	];
 
 	const HOST_DEBUG = [
