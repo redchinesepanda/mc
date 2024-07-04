@@ -258,19 +258,19 @@ class BaseHeader
 
 			$languages_avaible = WPMLMain::filter_language( $languages, $lang );
 
-			// LegalDebug::debug( [
-			// 	'BaseHeader' => 'get_languages_avaible',
+			LegalDebug::debug( [
+				'BaseHeader' => 'get_languages_avaible',
 
-			// 	'count-languages' => count( $languages ),
+				'count-languages' => count( $languages ),
 
-			// 	// 'languages' => $languages,
+				// 'languages' => $languages,
 
-			// 	'lang' => $lang,
+				'lang' => $lang,
 
-			// 	'count-languages_avaible' => count( $languages_avaible ),
+				'count-languages_avaible' => count( $languages_avaible ),
 
-			// 	// 'languages_avaible' => $languages_avaible,
-			// ] );
+				// 'languages_avaible' => $languages_avaible,
+			] );
 	
 			return $languages_avaible;
 		}
