@@ -1012,14 +1012,20 @@ class BaseHeader
 
 			'search' => $search,
 		] );
+
+		if ( MultisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_main_domain() )
+			{
+				$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 		
-		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
-
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
-
-			'search' => $search,
-		] );
+				LegalDebug::debug( [
+					'BaseHeader' => 'get_menu_languages',
+		
+					'search' => $search,
+				] );
+			}
+		}
 
 		$parse = self::parse_languages( $search );
 
