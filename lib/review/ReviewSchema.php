@@ -337,16 +337,16 @@ class ReviewSchema
         ];
     }
 
-    public static function schema_base()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_base()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
 
-            "author" => self::schema_author_short(),
+    //         "author" => self::schema_author_short(),
 
-            "datePublished" => self::get_date_published(),
-        ];
-    }
+    //         "datePublished" => self::get_date_published(),
+    //     ];
+    // }
 
     public static function schema_main_entity_of_page()
     {
