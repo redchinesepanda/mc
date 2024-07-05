@@ -78,6 +78,12 @@ class ReviewGallery
 
             'ver' => '1.0.0',
         ],
+
+        'review-gallery-caption' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-gallery-caption.js',
+
+            'ver' => '1.0.0',
+        ],
     ];
 
     public static function register_script()
