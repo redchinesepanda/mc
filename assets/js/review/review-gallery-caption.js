@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		console.log('есть картинки');
 
-		let img = imagesetquerySelector( selectors.image );
+		let img = imageset.querySelector( selectors.image );
 
 		console.log( img.getAttribute('width'));
 
