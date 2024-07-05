@@ -235,6 +235,8 @@ class ReviewMain
         ReviewAnchors::register_functions();
 
         ReviewCut::register_functions();
+
+        ReviewPage::register_functions();
 	}
 
     public static function register()
