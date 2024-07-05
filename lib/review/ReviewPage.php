@@ -34,6 +34,15 @@ class ReviewPage
         $handler = new self();
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
+
+        add_action( 'init', [ $handler, 'enable_post_tags_for_pages' ] );
+    }
+
+    function enable_post_tags_for_pages()
+    {  
+        register_taxonomy_for_object_type( 'post_tag', 'page' );
+
+        // register_taxonomy_for_object_type( 'category', 'page' );  
     }
 
 	const TEMPLATE = [
