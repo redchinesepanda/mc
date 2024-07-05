@@ -53,7 +53,7 @@
 
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image:not( .columns-1 .item-image.legal-portrait )
     {
-        /* width: 100%; */
+        width: 100%;
         height: auto;
     }
 
@@ -364,7 +364,7 @@
 
 .tcb-post-content .legal-imageset.columns-1:not( .legal-imageset-oops .legal-imageset ) .item-image,
 .tcb-post-content .legal-imageset.columns-2:not( .legal-imageset-oops .legal-imageset ) .item-image {
-    padding-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .tcb-post-content .legal-imageset-oops .imageset-pagination
