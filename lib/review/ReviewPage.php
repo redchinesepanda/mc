@@ -35,6 +35,13 @@ class ReviewPage
 
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
+        // add_action( 'init', [ $handler, 'enable_post_tags_for_pages' ] );
+    }
+
+	public static function register_functions()
+    {
+        $handler = new self();
+
         add_action( 'init', [ $handler, 'enable_post_tags_for_pages' ] );
     }
 
