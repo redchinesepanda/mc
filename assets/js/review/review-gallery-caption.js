@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         };
 
-		/* console.log('есть картинки');
+		console.log('есть картинки');
 
-		if ( !paragr ) {
+		/* if ( !paragr ) {
             return;
         };
 
