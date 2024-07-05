@@ -4,37 +4,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const selectors = {
 
-		imagesetWrapper: '.tcb-post-content .legal-imageset-wrapper',
-
 		imageset: '.tcb-post-content .legal-imageset:not( .columns-3 )',
 
-		image: ' .item-image',
+		image: '.item-image',
+
+		caption: '.item-caption',
 
 	};
 
 	function initCaption( imageset ) {
-		/* if ( !imageset ) {
-			console.log('нет картинок');
-            return;
-        }; */
-
+		
 		console.log('есть картинки');
 
 		let img = imageset.querySelector( selectors.image );
 
-		console.log( img.getAttribute('width'));
+		let caption = imageset.querySelector( selectors.caption );
 
-		/* if ( !paragr ) {
-            return;
-        };
+		let imgWidth = img.getAttribute( 'width' ) + 'px';
 
-		paragr.forEach( clampParagr );
+		caption.style.setProperty('--element-wigth', imgWidth);
 
-		cut.addEventListener( 'click', openParagr, false ); */
-
-		/* if ( cut.classList.contains( classes.active ) ) {
-			paragr.forEach( openParagr );
-		} */
+		console.log( imgWidth );
 
 	};
 
