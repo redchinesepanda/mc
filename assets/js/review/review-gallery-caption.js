@@ -12,23 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	};
 
-	function initCaption( imageset ) {
+	function setWidthCaption( elem ) {
 		
-		console.log('есть картинки');
+		// console.log('есть картинки');
 
-		let img = imageset.querySelector( selectors.image );
+		let img = elem.querySelector( selectors.image );
 
-		let caption = imageset.querySelector( selectors.caption );
+		let caption = elem.querySelector( selectors.caption );
 
 		let imgWidth = img.getAttribute( 'width' ) + 'px';
 
 		caption.style.setProperty('--element-wigth', imgWidth);
 
-		console.log( imgWidth );
+		// console.log( imgWidth );
 
 	};
 
-	document.querySelectorAll( selectors.imageset ).forEach( initCaption );
+	document.querySelectorAll( selectors.imageset ).forEach( setWidthCaption );
 
 });
 
