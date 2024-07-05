@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	};
 
-	initCaption( document.querySelectorAll( selectors.imageset ) );
+	document.querySelectorAll( selectors.imageset ).forEach( initCaption );
 
 });
 
