@@ -181,6 +181,17 @@
     margin-left: auto;
 }
 
+.tcb-post-content table ol,
+.tcb-post-content table ul {
+    padding-left: 0px;
+}
+
+.tcb-post-content table ol li,
+.tcb-post-content table ul li {
+    padding-left: calc( 24px + 12px );
+    padding-bottom: 16px;
+}
+
 /* Width and Height */
 
 .tcb-post-content table.legal-check {
