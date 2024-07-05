@@ -8,17 +8,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		imageset: '.tcb-post-content .legal-imageset:not( .columns-3 )',
 
-		imageActive: ' .imageset-item.legal-active',
+		image: ' .item-image',
 
 	};
 
 	function initCaption( imageset ) {
-		if ( !imageset ) {
+		/* if ( !imageset ) {
 			console.log('нет картинок');
             return;
-        };
+        }; */
 
 		console.log('есть картинки');
+
+		let img = imagesetquerySelector( selectors.image );
+
+		console.log( img.getAttribute('width'));
 
 		/* if ( !paragr ) {
             return;
