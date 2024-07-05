@@ -503,3 +503,7 @@
     font-weight: 400;
     line-height: 32px;
 }
+
+.tcb-post-content .legal-imageset:not( .columns-3 ) .item-caption {
+    width: var( --element-wigth );
+}
