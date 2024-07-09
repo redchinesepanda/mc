@@ -8,7 +8,7 @@ class ToolForbidden
 
 	public static function render_forbidden()
     {
-        return LegalComponents::render_main( self::TEMPLATE[ 'forbidden' ], [] );
+        return LegalComponents::render_main( self::TEMPLATE[ 'forbidden' ], self::get_forbidden_page() );
     }
 
 	public static function register()
@@ -21,7 +21,9 @@ class ToolForbidden
 	public static function get_forbidden_page()
 	{
 		return [
-			"Forbidden " . $sep . " " . get_bloginfo( 'name' ),
+			'title' => '403 Forbidden',
+
+			'description' => 'Access to this area is forbidden. Please go to the home page.',
 		];
 	}
 
