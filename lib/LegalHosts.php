@@ -23,7 +23,7 @@ class LegalHosts
 
 		'cloudways-at' => 'match-center.at',
 
-		'cloudways-de' => 'match-center-de.com',
+		// 'cloudways-de' => 'match-center-de.com',
 
 		'cloudways-cz' => 'match-center.cz',
 	];
