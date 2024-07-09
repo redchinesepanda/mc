@@ -21,7 +21,7 @@ class ToolForbidden
 	public static function get_forbidden_page()
 	{
 		return [
-			
+			"Forbidden " . $sep . " " . get_bloginfo( 'name' ),
 		];
 	}
 
@@ -45,9 +45,9 @@ class ToolForbidden
 
 			$wp_query->is_category = FALSE;
 
-			add_filter( 'wp_title', 'custom_error_title', 65000, 2 );
+			// add_filter( 'wp_title', 'custom_error_title', 65000, 2 );
 
-			add_filter( 'body_class', 'custom_error_class' );
+			// add_filter( 'body_class', 'custom_error_class' );
 
 			status_header( 403 );
 
