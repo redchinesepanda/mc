@@ -77,29 +77,29 @@ class ToolForbidden
 		// }
 	}
 	
-	public static function custom_error_title($title='',$sep='')
-	{
-		if(isset($_REQUEST['status']) && $_REQUEST['status'] == 403)
-			return "Forbidden ".$sep." ".get_bloginfo('name');
+	// public static function custom_error_title($title='',$sep='')
+	// {
+	// 	if(isset($_REQUEST['status']) && $_REQUEST['status'] == 403)
+	// 		return "Forbidden ".$sep." ".get_bloginfo('name');
 	
-		if(isset($_REQUEST['status']) && $_REQUEST['status'] == 401)
-			return "Unauthorized ".$sep." ".get_bloginfo('name');
-	}
+	// 	if(isset($_REQUEST['status']) && $_REQUEST['status'] == 401)
+	// 		return "Unauthorized ".$sep." ".get_bloginfo('name');
+	// }
 	
-	public static function custom_error_class($classes)
-	{
-		if(isset($_REQUEST['status']) && $_REQUEST['status'] == 403)
-		{
-			$classes[]="error403";
-			return $classes;
-		}
+	// public static function custom_error_class($classes)
+	// {
+	// 	if(isset($_REQUEST['status']) && $_REQUEST['status'] == 403)
+	// 	{
+	// 		$classes[]="error403";
+	// 		return $classes;
+	// 	}
 	
-		if(isset($_REQUEST['status']) && $_REQUEST['status'] == 401)
-		{
-			$classes[]="error401";
-			return $classes;
-		}
-	}
+	// 	if(isset($_REQUEST['status']) && $_REQUEST['status'] == 401)
+	// 	{
+	// 		$classes[]="error401";
+	// 		return $classes;
+	// 	}
+	// }
 }
 
 ?>
