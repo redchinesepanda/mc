@@ -50,6 +50,8 @@ require_once( 'ToolPermalink.php' );
 
 // require_once( 'ToolTaxonomy.php' );
 
+require_once( 'ToolForbidden.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -68,6 +70,8 @@ class ToolsMain
         // ToolRobots::register();
 
         // ToolTaxonomy::register();
+
+        ToolForbidden::register();
     }
 
     public static function register_functions()
