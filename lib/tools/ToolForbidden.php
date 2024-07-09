@@ -25,7 +25,7 @@ class ToolForbidden
 		];
 	}
 
-	public static function custom_error_pages()
+	public static function custom_forbidden_page()
 	{
 		global $wp_query;
 	
