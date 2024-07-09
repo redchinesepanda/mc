@@ -64,14 +64,11 @@ class ToolsMain
 
     public static function register()
     {
-
         ToolSitemapXML::register();
 
         // ToolRobots::register();
 
         // ToolTaxonomy::register();
-
-        ToolForbidden::register();
     }
 
     public static function register_functions()
@@ -107,6 +104,8 @@ class ToolsMain
         ToolRewrite::register_functions();
 
         // ToolPermalink::register_functions();
+
+        ToolForbidden::register();
     }
 }
 
