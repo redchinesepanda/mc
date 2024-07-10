@@ -121,29 +121,11 @@ class WPMLMain
     }
 
     const EXCLUDE = [
-        'pt_GB',
+        'pt_GB', 'pt_ES', 'sr_SR', 'se_SE', 'cs_CS', 'en',
 
-        'pt_ES',
+        'es', 'ru', 'dk_DA', 'da', 'pt', 'sv',
 
-        'sr_SR',
-
-        'se_SE',
-
-        'cs_CS',
-
-        'en',
-
-        'es',
-        
-        'ru',
-        
-        'dk_DA',
-
-        'da',
-
-        'pt',
-
-        'sv',
+        'ro', 'mt', 'au', 'nz', 'at', 'nl',
     ];
 
     public static function exclude( $args , $exclude = [] )
