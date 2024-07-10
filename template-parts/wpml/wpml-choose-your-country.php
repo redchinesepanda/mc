@@ -72,10 +72,10 @@
 			<div class="lang-image locale-22"></div>
 			<div class="lang-title">Hrvatska</div>
 		</a>
-		<a class="lang-item" href="/cz/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/cz/" target="_blank" draggable="false">
 			<div class="lang-image locale-89"></div>
 			<div class="lang-title">Česká Republika</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/pl/" target="_blank" draggable="false">
 			<div class="lang-image locale-40"></div>
 			<div class="lang-title">Polska</div>
