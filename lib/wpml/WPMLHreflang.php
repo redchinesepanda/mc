@@ -34,7 +34,7 @@ class WPMLHreflang
 
 		if ( ! empty( $exclude_items ) )
 		{
-			$hreflang_items = array_diff_key( $hreflang_items, $exclude_items )
+			$hreflang_items = array_diff_key( $hreflang_items, $exclude_items );
 		}
 
 		LegalDebug::debug( [
