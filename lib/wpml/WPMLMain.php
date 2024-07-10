@@ -125,7 +125,7 @@ class WPMLMain
 
         'es', 'ru', 'dk_DA', 'da', 'pt', 'sv',
 
-        'ro', 'en_MT', 'au', 'nz', 'at', 'nl',
+        'ro_RO', 'en_MT', 'au', 'nz', 'at', 'nl',
     ];
 
     public static function exclude( $args , $exclude = [] )
