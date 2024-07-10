@@ -25,7 +25,7 @@ class LegalHosts
 
 		// 'cloudways-de' => 'match-center-de.com',
 
-		// 'cloudways-cz' => 'match-center.cz',
+		'cloudways-cz' => 'match-center.cz',
 	];
 
 	const HOST_DEBUG = [
