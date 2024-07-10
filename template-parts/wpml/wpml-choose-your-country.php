@@ -52,14 +52,14 @@
 			<div class="lang-image locale-1"></div>
 			<div class="lang-title">United Kingdom</div>
 		</a>
-		<a class="lang-item" href="/ua/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/ua/" target="_blank" draggable="false">
 			<div class="lang-image locale-72"></div>
 			<div class="lang-title">Україна</div>
 		</a>
 		<a class="lang-item" href="/ua-ru/" target="_blank" draggable="false">
 			<div class="lang-image locale-72"></div>
 			<div class="lang-title">Украина</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/pt/" target="_blank" draggable="false">
 			<div class="lang-image locale-86"></div>
 			<div class="lang-title">Portugal</div>
@@ -76,18 +76,18 @@
 			<div class="lang-image locale-89"></div>
 			<div class="lang-title">Česká Republika</div>
 		</a> -->
-		<a class="lang-item" href="/pl/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/pl/" target="_blank" draggable="false">
 			<div class="lang-image locale-40"></div>
 			<div class="lang-title">Polska</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/se/" target="_blank" draggable="false">
 			<div class="lang-image locale-88"></div>
 			<div class="lang-title">Sverige</div>
 		</a>
-		<a class="lang-item" href="/de/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/de/" target="_blank" draggable="false">
 			<div class="lang-image locale-3"></div>
 			<div class="lang-title">Deutschland</div>
-		</a>
+		</a> -->
 		<!-- <a class="lang-item" href="/ro/" target="_blank" draggable="false">
 			<div class="lang-image locale-44"></div>
 			<div class="lang-title">Română</div>
