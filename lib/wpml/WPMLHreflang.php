@@ -22,6 +22,31 @@ class WPMLHreflang
 
 		// return true;
     }
+
+	public static function exclude( $hreflang_items , $exclude = [] )
+	{
+		$exclude_items = [];
+
+		foreach ( WPMLMain::EXCLUDE as $exclude_item )
+		{
+			$exclude_items[ WPMLMain::get_hreflang( $exclude_item ) ] = '';
+		}
+
+		if ( ! empty( $exclude_items ) )
+		{
+			$hreflang_items = array_diff_key( $hreflang_items, $exclude_items )
+		}
+
+		LegalDebug::debug( [
+			'WPMLHreflang' => 'exclude',
+
+			'exclude_items' => $exclude_items,
+
+			'hreflang_items' => $hreflang_items,
+		] );
+
+		return $hreflang_items;
+	}
   
     public static function change_page_hreflang( $hreflang_items )
     {
@@ -37,6 +62,8 @@ class WPMLHreflang
 
 			'hreflang_items' => $hreflang_items,
 		] );
+
+		self::exclude( $hreflang_items );
 
         if ( !empty( $hreflang_items ) )
         {
