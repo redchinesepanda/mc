@@ -134,6 +134,8 @@ class WPMLMain
 
     const EXCLUDE_DOMAINS = [
         'ro_RO', 'en_MT', 'en_AU', 'en_NZ', 'de_AT', 'nl_NL',
+
+        'cs_CZ',
     ];
 
     public static function exclude( $args , $exclude = [] )
