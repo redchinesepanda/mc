@@ -32,6 +32,12 @@ class WPMLHreflang
 		// 	return $hreflang;
 		// }
 
+		LegalDebug::debug( [
+			'WPMLHreflang' => 'change_page_hreflang',
+
+			'hreflang_items' => $hreflang_items,
+		] );
+
         if ( !empty( $hreflang_items ) )
         {
 			if ( $post = get_post() )
