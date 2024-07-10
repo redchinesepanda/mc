@@ -63,7 +63,13 @@ class WPMLHreflang
 		// 	'hreflang_items' => $hreflang_items,
 		// ] );
 
-		$hreflang_items = self::exclude( $hreflang_items );
+		if ( MultisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_main_domain() )
+			{
+				$hreflang_items = self::exclude( $hreflang_items );
+			}
+		}
 
         if ( !empty( $hreflang_items ) )
         {
