@@ -64,10 +64,10 @@
 			<div class="lang-image locale-86"></div>
 			<div class="lang-title">Portugal</div>
 		</a>
-		<a class="lang-item" href="/at/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/at/" target="_blank" draggable="false">
 			<div class="lang-image locale-87"></div>
 			<div class="lang-title">Österreich</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/hr/" target="_blank" draggable="false">
 			<div class="lang-image locale-22"></div>
 			<div class="lang-title">Hrvatska</div>
@@ -88,14 +88,14 @@
 			<div class="lang-image locale-3"></div>
 			<div class="lang-title">Deutschland</div>
 		</a>
-		<a class="lang-item" href="/ro/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/ro/" target="_blank" draggable="false">
 			<div class="lang-image locale-44"></div>
 			<div class="lang-title">Română</div>
-		</a>
-		<a class="lang-item" href="/mt/" target="_blank" draggable="false">
+		</a> -->
+		<!-- <a class="lang-item" href="/mt/" target="_blank" draggable="false">
 			<div class="lang-image locale-34"></div>
 			<div class="lang-title">Malta</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/rs/" target="_blank" draggable="false">
 			<div class="lang-image locale-90"></div>
 			<div class="lang-title">Republika Srbija</div>
@@ -120,10 +120,10 @@
 			<div class="lang-image locale-95"></div>
 			<div class="lang-title">Denmark</div>
 		</a>
-		<a class="lang-item" href="/nl/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/nl/" target="_blank" draggable="false">
 			<div class="lang-image locale-37"></div>
 			<div class="lang-title">Nederland</div>
-		</a>
+		</a> -->
 	</div>
 	<div class="choose-you-country-title">Latin America and the Caribbean</div>
 	<div class="choose-you-country-block">
@@ -156,7 +156,7 @@
 			<div class="lang-title">Chile</div>
 		</a>
 	</div>
-	<div class="choose-you-country-title">Oceania</div>
+	<!-- <div class="choose-you-country-title">Oceania</div>
 	<div class="choose-you-country-block">
 		<a class="lang-item" href="/au/" target="_blank" draggable="false">
 			<div class="lang-image locale-74"></div>
@@ -166,7 +166,7 @@
 			<div class="lang-image locale-78"></div>
 			<div class="lang-title">New Zealand</div>
 		</a>
-	</div>
+	</div> -->
 	<div class="choose-you-country-title">The United States, Canada, and Puerto Rico</div>
 	<div class="choose-you-country-block">
 		<a class="lang-item" href="/ca/" target="_blank" draggable="false">
