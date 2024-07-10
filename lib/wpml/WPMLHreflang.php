@@ -27,7 +27,7 @@ class WPMLHreflang
 	{
 		$exclude_items = [];
 
-		foreach ( WPMLMain::EXCLUDE as $exclude_item )
+		foreach ( WPMLMain::EXCLUDE_DOMAINS as $exclude_item )
 		{
 			$exclude_items[ WPMLMain::get_hreflang( $exclude_item ) ] = '';
 		}

@@ -121,10 +121,18 @@ class WPMLMain
     }
 
     const EXCLUDE = [
+        ...self::EXCLUDE_SERVICE,
+
+        ...self::EXCLUDE_DOMAINS,
+    ];
+
+    const EXCLUDE_SERVICE = [
         'pt_GB', 'pt_ES', 'sr_SR', 'se_SE', 'cs_CS', 'en',
 
         'es', 'ru', 'dk_DA', 'da', 'pt', 'sv',
+    ];
 
+    const EXCLUDE_DOMAINS = [
         'ro_RO', 'en_MT', 'en_AU', 'en_NZ', 'de_AT', 'nl_NL',
     ];
 
