@@ -147,10 +147,10 @@
 			<div class="lang-image locale-85"></div>
 			<div class="lang-title">Brasil</div>
 		</a>
-		<a class="lang-item" href="/ar/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/ar/" target="_blank" draggable="false">
 			<div class="lang-image locale-5"></div>
 			<div class="lang-title">Argentina</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/cl/" target="_blank" draggable="false">
 			<div class="lang-image locale-92"></div>
 			<div class="lang-title">Chile</div>
