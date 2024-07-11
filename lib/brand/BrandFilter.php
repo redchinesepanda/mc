@@ -126,7 +126,10 @@ class BrandFilter
 
 			if ( ! empty( $term ) )
 			{
-				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
+				if ( ! has_term( $term, self::TAXONOMY[ 'type' ], $brand_id ) )
+				{
+					$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
+				}
 			}
 
 			// LegalDebug::die( [
