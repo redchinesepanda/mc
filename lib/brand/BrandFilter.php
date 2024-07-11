@@ -51,7 +51,7 @@ class BrandFilter
 
 		if ( ! empty( $term_exists ) )
 		{
-			return [ $term_exists[ 'term_id' ] ];
+			return [ $term_slug ];
 		}
 
 		$term_name = 'Brand-' . strtoupper( $current_language );
@@ -60,7 +60,7 @@ class BrandFilter
 
 		if ( ! is_wp_error( $inserted_term ) )
 		{
-			return [ $inserted_term [ 'term_id' ] ];
+			return [ $term_slug ];
 		}
 		
 		return [];
