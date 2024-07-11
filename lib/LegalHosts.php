@@ -21,6 +21,8 @@ class LegalHosts
 
 		'templ-mt' => 'match-center.mt',
 
+		'templ-ar' => 'match-center.ar',
+
 		'cloudways-at' => 'match-center.at',
 
 		'cloudways-de' => 'match-center-de.com',
