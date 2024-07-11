@@ -73,6 +73,12 @@ class BrandFilter
 			$type = $_GET['post_type'];
 		}
 
+		LegalDebug::debug( [
+			'BrandFilter' => 'get_brand_filter',
+
+			'type' => $type,
+		] );
+
 		//only add filter to post type you want
 		if ( 'POST_TYPE' == $type )
 		{
