@@ -1,5 +1,7 @@
 <?php
 
+require_once( 'BrandFilter.php' );
+
 class BrandMain
 {
 	const FIELD = [
@@ -19,6 +21,11 @@ class BrandMain
 
         'square' => 'about-logo-square',
     ];
+
+	public static function register_functions_admin()
+	{
+		BrandFilter::register_functions_admin();
+	}
 
 	public static function get_logo_tabs_mini( $billet_id )
 	{

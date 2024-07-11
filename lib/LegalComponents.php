@@ -18,6 +18,11 @@ require_once( 'forecast/ForecastMain.php' );
 
 class LegalComponents
 {
+	public static function register_functions_admin()
+	{
+		BrandMain::register_functions_admin();
+	}
+
 	public static function register_functions()
     {
 		BonusMain::register_functions();
