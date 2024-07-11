@@ -124,9 +124,13 @@ class BrandFilter
 		return [];
 	}
 
+	const TEMPLATE = [
+		'brand-filter' => LegalMain::LEGAL_PATH . '/template-parts/brand/part-brand-filter.php',
+	];
+
 	public static function render_brand_fileter()
 	{
-		echo LegalComponents::render_main( self::TEMPLATES[ 'brand-filter' ], self::get_brand_filter() );
+		echo LegalComponents::render_main( self::TEMPLATE[ 'brand-filter' ], self::get_brand_filter() );
 	}
 
 	public static function wpse45436_posts_filter( $query )
