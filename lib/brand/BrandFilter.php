@@ -39,6 +39,16 @@ class BrandFilter
 
 		$term_exists = term_exists( $term_slug, self::TAXONOMY[ 'type' ] );
 
+		LegalDebug::die( [
+			'BrandFilter' => 'get_brand_term',
+
+			'current_language' => $current_language,
+
+			'term_slug' => $term_slug,
+
+			'term_exists' => $term_exists,
+		] );
+
 		if ( ! empty( $term_exists ) )
 		{
 			return $term_exists[ 'term_id' ];
@@ -53,7 +63,7 @@ class BrandFilter
 			return $inserted_term [ 'term_id' ];
 		}
 		
-		return 0;
+		return null;
 	}
 
 	public static function set_brand_type( $post_id, $post )
@@ -64,7 +74,7 @@ class BrandFilter
 		{
 			$term = self::get_brand_term();
 
-			if ( !empty( $term ) )
+			if ( ! empty( $term ) )
 			{
 				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], false );
 			}
