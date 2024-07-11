@@ -58,7 +58,7 @@ class BrandFilter
 
 	public static function set_brand_type( $post_id, $post )
     {
-        $brand_id = get_field( self::FIELDS_SIMPLE[ 'brand' ], $post_id );
+        $brand_id = get_field( self::FIELD[ 'brand' ], $post_id );
 
 		if ( $brand_id )
 		{
