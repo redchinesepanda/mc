@@ -29,7 +29,41 @@ class BrandFilter
 		// add_filter( 'parse_query', [ $handler, 'wpse45436_posts_filter' ] );
 		
 		add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
+
+		add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
     }
+
+	public static function brand_type_filter()
+	{
+		$screen = get_current_screen();
+
+		if ( 'edit' == $screen->id )
+		{
+			$selected = isset( $_GET[ self::TAXONOMY[ 'type' ] ] ) ? $_GET[ self::TAXONOMY[ 'type' ] ] : '';
+
+			$dropdown_options = [ 
+				'taxonomy' => self::TAXONOMY[ 'type' ],
+
+				'show_option_all' => ToolLoco::translate( 'View all brand types' ), 
+
+				'hide_empty' => false, 
+
+				'hierarchical' => false,
+
+				 // default is cat which wouldn't filter custom taxonomies
+
+				'value_field' => 'slug',
+
+				'name' => self::TAXONOMY[ 'type' ], 
+
+				'orderby' => 'name',
+
+				'selected' =>  $selected,
+			];
+
+			wp_dropdown_categories( $dropdown_options );
+		}
+	}
 
 	public static function get_brand_term()
 	{
