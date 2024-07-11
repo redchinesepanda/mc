@@ -74,7 +74,7 @@ class BrandFilter
 		{
 			$term = self::get_brand_term();
 
-			LegalDebug::die( [
+			LegalDebug::debug( [
 				'BrandFilter' => 'set_brand_type',
 
 				'brand_id' => $brand_id,
@@ -82,10 +82,18 @@ class BrandFilter
 				'term' => $term,
 			] );
 
+			$term_ids = [];
+
 			if ( ! empty( $term ) )
 			{
 				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
 			}
+
+			LegalDebug::die( [
+				'BrandFilter' => 'set_brand_type',
+
+				'term_ids' => $term_ids,
+			] );
 		}
     }
 
