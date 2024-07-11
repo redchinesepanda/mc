@@ -43,7 +43,7 @@ class BrandFilter
 		// 	'screen' => $screen,
 		// ] );
 
-		if ( 'edit' . self::POST_TYPE[ 'brand' ] == $screen->id )
+		if ( 'edit-' . self::POST_TYPE[ 'brand' ] == $screen->id )
 		{
 			$selected = isset( $_GET[ self::TAXONOMY[ 'type' ] ] ) ? $_GET[ self::TAXONOMY[ 'type' ] ] : '';
 
