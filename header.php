@@ -30,6 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="google-site-verification" content="CrvtIqKDtaSvdPanDaB0sgmPewuoJIqFrZ5QDPhostw" />
 		<meta name="google-site-verification" content="fcqNvu0qA7WE-eyxfNul5kC9y_c1lWQvGzDc5b06uQg" />
 		<meta name="google-site-verification" content="ENyrRmbmfl3ahc_MEpiV_hGL1RaiTnppypL6xaxk2_c" />
+		<meta name="google-site-verification" content="mEkrJzr2kWNt0bwY4KBe-esDddNfY6LHIHoQwqgXUAA" />
+		<meta name="google-site-verification" content="cHXNqzAYzXW9xQcJ_3XkMxaOlOY2RjHWtYOzqq7-mX0" />
+		<meta name="google-site-verification" content="uL_MOpGHjVJdTC0wYE5IpCP_DVbLdMZNH9QnAjaOdes" />
+		<meta name="google-site-verification" content="xsV_rhcHpVkCE0BOHIGgCEeHPDJ2yBVtlNkOBjaSpxU" />
 		<!-- manual end -->
 		<!-- Yoast SEO manual start -->
 		<title><?php echo YoastMain::get_seo_title() ?></title>
