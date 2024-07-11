@@ -99,6 +99,8 @@ class LegalMain
 			NotionMain::register_functions();
 
 			MultisiteMain::register_functions_admin();
+
+			LegalComponents::register_functions_admin();
 		}
 	}
 
