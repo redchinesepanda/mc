@@ -94,7 +94,9 @@ class BrandFilter
 				// 'label1' => 'value1',
 				// 'label2' => 'value2',
 				
-				'Brands of current language' => self::get_brand_ids(),
+				// 'Brands of current language' => self::get_brand_ids(),
+				
+				'Brands of current language' => 'brands-of-current-language',
 			];
 
 			$options = [
@@ -157,7 +159,9 @@ class BrandFilter
 			// $query->query_vars['meta_key'] = 'META_KEY';
 			// $query->query_vars['meta_value'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
 
-			$query->query_vars['post__in'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
+			// $query->query_vars['post__in'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
+			
+			$query->query_vars['post__in'] = self::get_brand_ids();
 		}
 	}
 }
