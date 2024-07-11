@@ -33,6 +33,8 @@ class BrandFilter
 			'posts_per_page' => -1,
 
 			'fields' => 'ids',
+
+			'supress_filters' => false,
         ];
 
         $posts = get_posts( $args );
