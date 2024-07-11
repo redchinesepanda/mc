@@ -39,15 +39,15 @@ class BrandFilter
 
 		$term_exists = term_exists( $term_slug, self::TAXONOMY[ 'type' ] );
 
-		LegalDebug::die( [
-			'BrandFilter' => 'get_brand_term',
+		// LegalDebug::die( [
+		// 	'BrandFilter' => 'get_brand_term',
 
-			'current_language' => $current_language,
+		// 	'current_language' => $current_language,
 
-			'term_slug' => $term_slug,
+		// 	'term_slug' => $term_slug,
 
-			'term_exists' => $term_exists,
-		] );
+		// 	'term_exists' => $term_exists,
+		// ] );
 
 		if ( ! empty( $term_exists ) )
 		{
