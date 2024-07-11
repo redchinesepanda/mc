@@ -145,12 +145,15 @@ class BrandFilter
 	{
 		global $pagenow;
 
-		$type = self::POST_TYPE[ 'brand' ];
+		// $type = self::POST_TYPE[ 'brand' ];
+		
+		$type = '';
 
 		if (isset($_GET['post_type'])) {
 			$type = $_GET['post_type'];
 		}
-		if ( 'POST_TYPE' == $type && is_admin() && $pagenow=='edit.php' && isset($_GET[ self::QUERY_VARS[ 'ids' ] ]) && $_GET[ self::QUERY_VARS[ 'ids' ] ] != '') {
+		if ( self::POST_TYPE[ 'brand' ] == $type && is_admin() && $pagenow=='edit.php' && isset($_GET[ self::QUERY_VARS[ 'ids' ] ]) && $_GET[ self::QUERY_VARS[ 'ids' ] ] != '')
+		{
 			// $query->query_vars['meta_key'] = 'META_KEY';
 			// $query->query_vars['meta_value'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
 
