@@ -16,156 +16,202 @@ class BrandFilter
         'brand' => 'billet-brand',
     ];
 
+	const TAXONOMY = [
+        'type' => 'brand_type',
+    ];
+
 	public static function register_functions_admin()
 	{
         $handler = new self();
 
-        add_action( 'restrict_manage_posts', [ $handler, 'render_brand_fileter' ] );
+        // add_action( 'restrict_manage_posts', [ $handler, 'render_brand_fileter' ] );
 
-		add_filter( 'parse_query', [ $handler, 'wpse45436_posts_filter' ] );
+		// add_filter( 'parse_query', [ $handler, 'wpse45436_posts_filter' ] );
+		
+		add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
     }
 
-	public static function get_posts_ids()
+	public static function get_brand_term()
 	{
-		$args = [
-            'post_type' => self::POST_TYPE[ 'billet' ],
+		$current_language = WPMLMain::current_language();
 
-			'posts_per_page' => -1,
+		$term_slug = 'legal-brand-' . $current_language;
 
-			'fields' => 'ids',
+		$term_exists = term_exists( $term_slug, self::TAXONOMY[ 'type' ] );
 
-			'supress_filters' => false,
-        ];
+		if ( ! empty( $term_exists ) )
+		{
+			return $term_exists[ 'term_id' ];
+		}
 
-        $posts = get_posts( $args );
+		$term_name = 'Brand-' . strtoupper( $current_language );
 
-		return $posts;
+		$inserted_term = wp_insert_term( $term_name, self::TAXONOMY[ 'type' ], [ 'slug' => $term_slug ] );
+
+		if ( ! is_wp_error( $inserted_term ) )
+		{
+			return $inserted_term [ 'term_id' ];
+		}
+		
+		return 0;
 	}
 
-	public static function get_brand_ids()
-	{
-		$posts_ids = self::get_posts_ids();
+	public static function set_brand_type( $post_id, $post )
+    {
+        $brand_id = get_field( self::FIELDS_SIMPLE[ 'brand' ], $post_id );
 
-		if ( !empty( $posts_ids ) )
+		if ( $brand_id )
 		{
-			$brand_ids = [];
+			$term = self::get_brand_term();
 
-			foreach ( $posts_ids as $post_id )
+			if ( !empty( $term ) )
 			{
-				$brand_id = get_field( self::FIELD[ 'brand' ], $post_id );
-
-				if ( $brand_id )
-				{
-					$brand_ids[] = $brand_id;
-				}
+				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], false );
 			}
-
-			return $brand_ids;
 		}
+    }
 
-		return [];
-	}
+	// public static function get_posts_ids()
+	// {
+	// 	$args = [
+    //         'post_type' => self::POST_TYPE[ 'billet' ],
 
-	public static function get_brand_filter()
-	{
-		// $type = self::POST_TYPE[ 'brand' ];
+	// 		'posts_per_page' => -1,
+
+	// 		'fields' => 'ids',
+
+	// 		'supress_filters' => false,
+    //     ];
+
+    //     $posts = get_posts( $args );
+
+	// 	return $posts;
+	// }
+
+	// public static function get_brand_ids()
+	// {
+	// 	$posts_ids = self::get_posts_ids();
+
+	// 	if ( !empty( $posts_ids ) )
+	// 	{
+	// 		$brand_ids = [];
+
+	// 		foreach ( $posts_ids as $post_id )
+	// 		{
+	// 			$brand_id = get_field( self::FIELD[ 'brand' ], $post_id );
+
+	// 			if ( $brand_id )
+	// 			{
+	// 				$brand_ids[] = $brand_id;
+	// 			}
+	// 		}
+
+	// 		return $brand_ids;
+	// 	}
+
+	// 	return [];
+	// }
+
+	// public static function get_brand_filter()
+	// {
+	// 	// $type = self::POST_TYPE[ 'brand' ];
 		
-		$type = '';
+	// 	$type = '';
 
-		if ( isset( $_GET[ 'post_type' ] ) )
-		{
-			$type = $_GET['post_type'];
-		}
+	// 	if ( isset( $_GET[ 'post_type' ] ) )
+	// 	{
+	// 		$type = $_GET['post_type'];
+	// 	}
 
-		// LegalDebug::debug( [
-		// 	'BrandFilter' => 'get_brand_filter',
+	// 	// LegalDebug::debug( [
+	// 	// 	'BrandFilter' => 'get_brand_filter',
 
-		// 	'type' => $type,
-		// ] );
+	// 	// 	'type' => $type,
+	// 	// ] );
 
-		//only add filter to post type you want
-		if ( self::POST_TYPE[ 'brand' ] == $type )
-		{
-			//change this to the list of values you want to show
-			//in 'label' => 'value' format
+	// 	//only add filter to post type you want
+	// 	if ( self::POST_TYPE[ 'brand' ] == $type )
+	// 	{
+	// 		//change this to the list of values you want to show
+	// 		//in 'label' => 'value' format
 
-			$current_v = isset($_GET[ self::QUERY_VARS[ 'ids' ] ])? $_GET[ self::QUERY_VARS[ 'ids' ] ]:'';
+	// 		$current_v = isset($_GET[ self::QUERY_VARS[ 'ids' ] ])? $_GET[ self::QUERY_VARS[ 'ids' ] ]:'';
 
-			$values = [
-				// 'label' => 'value', 
-				// 'label1' => 'value1',
-				// 'label2' => 'value2',
+	// 		$values = [
+	// 			// 'label' => 'value', 
+	// 			// 'label1' => 'value1',
+	// 			// 'label2' => 'value2',
 				
-				// 'Brands of current language' => self::get_brand_ids(),
+	// 			// 'Brands of current language' => self::get_brand_ids(),
 				
-				'Brands of current language' => 'brands-of-current-language',
-			];
+	// 			'Brands of current language' => 'brands-of-current-language',
+	// 		];
 
-			$options = [
-				[
-					'label' => ToolLoco::translate( 'Filter By ' ),
+	// 		$options = [
+	// 			[
+	// 				'label' => ToolLoco::translate( 'Filter By ' ),
 
-					'value' => '',
+	// 				'value' => '',
 
-					'selected' => '',
-				]
-			];
+	// 				'selected' => '',
+	// 			]
+	// 		];
 
-			foreach ( $values as $label => $value )
-			{
-                $options[ ] = [
-					'label' => $label,
+	// 		foreach ( $values as $label => $value )
+	// 		{
+    //             $options[ ] = [
+	// 				'label' => $label,
 
-					'value' => $value,
+	// 				'value' => $value,
 
-					'selected' => $value == $current_v ? ' selected="selected"' : '',
-				];
-            }
+	// 				'selected' => $value == $current_v ? ' selected="selected"' : '',
+	// 			];
+    //         }
 
-			$args = [
-				'select' => [
-					'name' => self::QUERY_VARS[ 'ids' ],
+	// 		$args = [
+	// 			'select' => [
+	// 				'name' => self::QUERY_VARS[ 'ids' ],
 
-					'options' => $options,
-				],
-			];
+	// 				'options' => $options,
+	// 			],
+	// 		];
 
-			return $args;
-		}
+	// 		return $args;
+	// 	}
 
-		return [];
-	}
+	// 	return [];
+	// }
 
-	const TEMPLATE = [
-		'brand-filter' => LegalMain::LEGAL_PATH . '/template-parts/brand/part-brand-filter.php',
-	];
+	// const TEMPLATE = [
+	// 	'brand-filter' => LegalMain::LEGAL_PATH . '/template-parts/brand/part-brand-filter.php',
+	// ];
 
-	public static function render_brand_fileter()
-	{
-		echo LegalComponents::render_main( self::TEMPLATE[ 'brand-filter' ], self::get_brand_filter() );
-	}
+	// public static function render_brand_fileter()
+	// {
+	// 	echo LegalComponents::render_main( self::TEMPLATE[ 'brand-filter' ], self::get_brand_filter() );
+	// }
 
-	public static function wpse45436_posts_filter( $query )
-	{
-		global $pagenow;
+	// public static function wpse45436_posts_filter( $query )
+	// {
+	// 	global $pagenow;
 
-		// $type = self::POST_TYPE[ 'brand' ];
+	// 	// $type = self::POST_TYPE[ 'brand' ];
 		
-		$type = '';
+	// 	$type = '';
 
-		if (isset($_GET['post_type'])) {
-			$type = $_GET['post_type'];
-		}
-		if ( self::POST_TYPE[ 'brand' ] == $type && is_admin() && $pagenow=='edit.php' && isset($_GET[ self::QUERY_VARS[ 'ids' ] ]) && $_GET[ self::QUERY_VARS[ 'ids' ] ] != '')
-		{
-			// $query->query_vars['meta_key'] = 'META_KEY';
-			// $query->query_vars['meta_value'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
+	// 	if (isset($_GET['post_type'])) {
+	// 		$type = $_GET['post_type'];
+	// 	}
+	// 	if ( self::POST_TYPE[ 'brand' ] == $type && is_admin() && $pagenow=='edit.php' && isset($_GET[ self::QUERY_VARS[ 'ids' ] ]) && $_GET[ self::QUERY_VARS[ 'ids' ] ] != '')
+	// 	{
+	// 		// $query->query_vars['meta_key'] = 'META_KEY';
+	// 		// $query->query_vars['meta_value'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
 
-			// $query->query_vars['post__in'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
+	// 		// $query->query_vars['post__in'] = $_GET[ self::QUERY_VARS[ 'ids' ] ];
 			
-			$query->query_vars['post__in'] = self::get_brand_ids();
-		}
-	}
+	// 		$query->query_vars['post__in'] = self::get_brand_ids();
+	// 	}
+	// }
 }
 
 ?>
