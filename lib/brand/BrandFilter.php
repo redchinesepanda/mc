@@ -51,7 +51,7 @@ class BrandFilter
 
 		if ( ! empty( $term_exists ) )
 		{
-			return $term_exists[ 'term_id' ];
+			return [ $term_exists[ 'term_id' ] ];
 		}
 
 		$term_name = 'Brand-' . strtoupper( $current_language );
@@ -60,10 +60,10 @@ class BrandFilter
 
 		if ( ! is_wp_error( $inserted_term ) )
 		{
-			return $inserted_term [ 'term_id' ];
+			return [ $inserted_term [ 'term_id' ] ];
 		}
 		
-		return null;
+		return [];
 	}
 
 	public static function set_brand_type( $post_id, $post )
@@ -76,7 +76,7 @@ class BrandFilter
 
 			if ( ! empty( $term ) )
 			{
-				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], false );
+				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
 			}
 		}
     }
