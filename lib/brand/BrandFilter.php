@@ -66,9 +66,11 @@ class BrandFilter
 
 	public static function get_brand_filter()
 	{
-		$type = self::POST_TYPE[ 'brand' ];
+		// $type = self::POST_TYPE[ 'brand' ];
+		
+		$type = '';
 
-		if ( isset( $_GET['post_type'] ) )
+		if ( isset( $_GET[ 'post_type' ] ) )
 		{
 			$type = $_GET['post_type'];
 		}
@@ -80,7 +82,7 @@ class BrandFilter
 		] );
 
 		//only add filter to post type you want
-		if ( 'POST_TYPE' == $type )
+		if ( self::POST_TYPE[ 'brand' ] == $type )
 		{
 			//change this to the list of values you want to show
 			//in 'label' => 'value' format
