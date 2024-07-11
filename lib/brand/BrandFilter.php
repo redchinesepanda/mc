@@ -74,13 +74,13 @@ class BrandFilter
 		{
 			$term = self::get_brand_term();
 
-			LegalDebug::debug( [
-				'BrandFilter' => 'set_brand_type',
+			// LegalDebug::debug( [
+			// 	'BrandFilter' => 'set_brand_type',
 
-				'brand_id' => $brand_id,
+			// 	'brand_id' => $brand_id,
 
-				'term' => $term,
-			] );
+			// 	'term' => $term,
+			// ] );
 
 			$term_ids = [];
 
@@ -89,11 +89,11 @@ class BrandFilter
 				$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
 			}
 
-			LegalDebug::die( [
-				'BrandFilter' => 'set_brand_type',
+			// LegalDebug::die( [
+			// 	'BrandFilter' => 'set_brand_type',
 
-				'term_ids' => $term_ids,
-			] );
+			// 	'term_ids' => $term_ids,
+			// ] );
 		}
     }
 
