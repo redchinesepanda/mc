@@ -37,6 +37,12 @@ class BrandFilter
 	{
 		$screen = get_current_screen();
 
+		LegalDebug::debug( [
+			'BrandFilter' => 'brand_type_filter',
+
+			'screen' => $screen,
+		] );
+
 		if ( 'edit' == $screen->id )
 		{
 			$selected = isset( $_GET[ self::TAXONOMY[ 'type' ] ] ) ? $_GET[ self::TAXONOMY[ 'type' ] ] : '';
