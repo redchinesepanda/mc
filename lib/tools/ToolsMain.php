@@ -103,9 +103,12 @@ class ToolsMain
         
         ToolRewrite::register_functions();
 
-        ToolPermalink::register_functions();
-
         ToolForbidden::register();
+    }
+
+    public static function register_functions_admin()
+    {
+        ToolPermalink::register_functions_admin();
     }
 }
 
