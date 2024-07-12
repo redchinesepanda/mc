@@ -101,6 +101,8 @@ class LegalMain
 			MultisiteMain::register_functions_admin();
 
 			LegalComponents::register_functions_admin();
+
+			ToolsMain::register_functions_admin();
 		}
 	}
 
