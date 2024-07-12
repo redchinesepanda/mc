@@ -26,7 +26,7 @@ class AffiliateFilter
 
 				add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
 		
-				add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
+				// add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
 			}
 		}
 	}
