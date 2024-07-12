@@ -247,9 +247,9 @@ class MultisiteMeta
 		// 	'post_parent' => $post->post_parent,
 		// ] );
 
-		$moved_to = get_post_meta( $post->ID, self::POST_META[ 'moved-to' ], false );
+		$moved_to = get_post_meta( $post->ID, self::POST_META[ 'moved-to' ], true );
 
-		$moved_from = get_post_meta( $post->ID, self::POST_META[ 'moved-from' ], false );
+		$moved_from = get_post_meta( $post->ID, self::POST_META[ 'moved-from' ], true );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
