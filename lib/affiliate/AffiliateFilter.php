@@ -31,55 +31,49 @@ class AffiliateFilter
 		}
 	}
 
+	public static function get_affiliate_id( $post_id )
+	{
+		return get_field( self::GROUP[ 'about' ] . '_' . self::ABOUT[ 'afillate' ], $post_id, false );
+	}
+
 	public static function set_brand_type( $post_id, $post )
     {
-		$about = get_field( self::GROUP[ 'about' ] . '_' . self::ABOUT[ 'afillate' ], $post_id, false );
+		$affiliate_id = self::get_affiliate_id( $post_id );
 
-		LegalDebug::debug( [
-			'AffiliateFilter' =>'set_brand_type',
+		// LegalDebug::debug( [
+		// 	'AffiliateFilter' =>'set_brand_type',
 
-			'about' => $about,
-		] );
+		// 	'affiliate_id' => $affiliate_id,
+		// ] );
 
-		// if ( $about )
-		// {
-		// 	if ( $about[ self::ABOUT[ 'afillate' ] ] )
-		// 	{
+		if ( $affiliate_id )
+		{
+			$term = BrandFilter::get_brand_term();
 
-		// 	}
-		// }
+			// LegalDebug::debug( [
+			// 	'BrandFilter' => 'set_brand_type',
 
+			// 	'brand_id' => $brand_id,
 
-        // $brand_id = get_field( self::FIELD[ 'brand' ], $post_id );
+			// 	'term' => $term,
+			// ] );
 
-		// if ( $brand_id )
-		// {
-		// 	$term = self::get_brand_term();
+			$term_ids = [];
 
-		// 	// LegalDebug::debug( [
-		// 	// 	'BrandFilter' => 'set_brand_type',
+			if ( ! empty( $term ) )
+			{
+				if ( ! has_term( $term, BrandFilter::TAXONOMY[ 'type' ], $affiliate_id ) )
+				{
+					$term_ids = wp_set_object_terms( $affiliate_id, $term, BrandFilter::TAXONOMY[ 'type' ], true );
+				}
+			}
 
-		// 	// 	'brand_id' => $brand_id,
+			// LegalDebug::die( [
+			// 	'BrandFilter' => 'set_brand_type',
 
-		// 	// 	'term' => $term,
-		// 	// ] );
-
-		// 	$term_ids = [];
-
-		// 	if ( ! empty( $term ) )
-		// 	{
-		// 		if ( ! has_term( $term, self::TAXONOMY[ 'type' ], $brand_id ) )
-		// 		{
-		// 			$term_ids = wp_set_object_terms( $brand_id, $term, self::TAXONOMY[ 'type' ], true );
-		// 		}
-		// 	}
-
-		// 	// LegalDebug::die( [
-		// 	// 	'BrandFilter' => 'set_brand_type',
-
-		// 	// 	'term_ids' => $term_ids,
-		// 	// ] );
-		// }
+			// 	'term_ids' => $term_ids,
+			// ] );
+		}
     }
 
 	public static function brand_type_filter()
