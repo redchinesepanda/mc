@@ -56,7 +56,7 @@ class ToolPermalink
 
                 update_option( 'permalink-manager-uris', $permalink_manager_uris );
 
-                return true
+                return true;
             // }
         }
 
