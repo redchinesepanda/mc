@@ -106,6 +106,8 @@ class MultisiteMain
 
 		MultisiteHreflang::register_functions_debug();
 
+		MultisiteMeta::register_functions_debug();
+
 		if ( MultisiteBlog::check_main_blog() )
 		{
 			MultisiteAdmin::register_functions_mainsite();

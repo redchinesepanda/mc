@@ -232,44 +232,48 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		// $handler = new self();
+		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
 		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	// function mc_edit_form_after_title_debug( $post )
-	// {
-	// 	// LegalDebug::debug( [
-	// 	// 	'MultisiteMeta' => 'register_functions_admin',
+	function mc_edit_form_after_title_debug( $post )
+	{
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'register_functions_admin',
 
-	// 	// 	'post_parent' => $post->post_parent,
-	// 	// ] );
+		// 	'post_parent' => $post->post_parent,
+		// ] );
 
-	// 	$post_meta = self::get_post_meta( $post->ID );
+		$moved_to = self::get_post_meta( $post->ID, self::POST_META[ 'moved-to' ] );
 
-	// 	LegalDebug::debug( [
-	// 		'MultisiteMeta' => 'register_functions_admin',
+		$moved_from = self::get_post_meta( $post->ID, self::POST_META[ 'moved-from' ] );
 
-	// 		'post' => $post,
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'register_functions_admin',
 
-	// 		'post_meta' => $post_meta,
-	// 	] );
+			'ID' => $post->ID,
 
-	// 	// foreach ( $post_meta as $key => $value )
-    //     // {
-    //     //     LegalDebug::debug( [
-    //     //         'MultisiteMeta' => 'register_functions_admin',
+			'moved_to' => $moved_to,
 
-	// 	// 		'key' => $key,
+			'moved_from' => $moved_from,
+		] );
 
-	// 	// 		'value' => $value,
-    //     //     ] );
+		// foreach ( $post_meta as $key => $value )
+        // {
+        //     LegalDebug::debug( [
+        //         'MultisiteMeta' => 'register_functions_admin',
 
-	// 	// 	// delete_post_meta( $post->ID, $key );
-	// 	// }
-	// }
+		// 		'key' => $key,
+
+		// 		'value' => $value,
+        //     ] );
+
+		// 	// delete_post_meta( $post->ID, $key );
+		// }
+	}
 
 	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	// {
@@ -405,11 +409,11 @@ class MultisiteMeta
 		// 	'meta_key' => $meta_key,
 		// ] );
 
-		$moved_to = get_post_meta( $post_id, $meta_key, true );
+		// $moved_to = get_post_meta( $post_id, $meta_key, true );
 
 		// if ( !empty( $moved_to[ $blog_id ] ) )
 		// {
-		// 	return $blog_id;
+		// 	return $moved_to[ $blog_id ];
 		// }
 
 		// return null;
