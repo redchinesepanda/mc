@@ -76,6 +76,8 @@ class ToolPermalink
     {
         // if ( self::check_post_uri_empty( $post_id ) )
         // {
+            $current_custom_permalink = self::get_post_uri( $post_id );
+
             $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
     
             $main_blog_id = MultisiteBlog::get_main_blog_id();
@@ -86,7 +88,7 @@ class ToolPermalink
     
             MultisiteBlog::restore_blog();
     
-            if ( !empty( $custom_permalink ) )
+            if ( $current_custom_permalink != $custom_permalink )
             {
                 self::set_post_uri( $post_id, $custom_permalink );
             }
