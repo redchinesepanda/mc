@@ -27,6 +27,13 @@ class ToolPermalink
         }
     }
 
+    public static function check_post_uri_empty( $post_id )
+    {
+        $permalink_manager_uris = get_option( 'permalink-manager-uris' );
+
+        return empty( $permalink_manager_uris[ $post_id ] );
+    }
+
     public static function set_post_uri( $post_id, $custom_permalink )
     {
         if ( self::check_front_page( $post_id ) )
@@ -36,33 +43,30 @@ class ToolPermalink
 
         $permalink_manager_uris = get_option( 'permalink-manager-uris' );
 
-        if ( empty( $permalink_manager_uris[ $post_id ] ) )
+        // LegalDebug::debug( [
+        //     'ToolPermalink' => 'get_post_uri',
+
+        //     'post_id' => $post_id,
+
+        //     'permalink_manager_uris' => $permalink_manager_uris,
+        // ] );
+
+        if ( $permalink_manager_uris )
         {
-            // LegalDebug::debug( [
-            //     'ToolPermalink' => 'get_post_uri',
-    
-            //     'post_id' => $post_id,
-    
-            //     'permalink_manager_uris' => $permalink_manager_uris,
-            // ] );
-    
-            if ( $permalink_manager_uris )
-            {
-                // if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
-                // {
-                    // LegalDebug::debug( [
-                    //     'ToolPermalink' => 'get_post_uri',
-    
-                    //     'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
-                    // ] );
-    
-                    $permalink_manager_uris[ $post_id ] = $custom_permalink;
-    
-                    update_option( 'permalink-manager-uris', $permalink_manager_uris );
-    
-                    return true;
-                // }
-            }
+            // if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
+            // {
+                // LegalDebug::debug( [
+                //     'ToolPermalink' => 'get_post_uri',
+
+                //     'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
+                // ] );
+
+                $permalink_manager_uris[ $post_id ] = $custom_permalink;
+
+                update_option( 'permalink-manager-uris', $permalink_manager_uris );
+
+                return true;
+            // }
         }
 
         return false;
@@ -70,30 +74,33 @@ class ToolPermalink
 
     public static function set_custom_permalink( $post_id, $post )
     {
-        $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
-
-        $main_blog_id = MultisiteBlog::get_main_blog_id();
-
-        MultisiteBlog::set_blog( $main_blog_id );
-
-        $custom_permalink = self::get_post_uri( $post_moved_id );
-
-        MultisiteBlog::restore_blog();
-
-        if ( !empty( $custom_permalink ) )
+        if ( self::check_post_uri_empty( $post_id ) )
         {
-            self::set_post_uri( $post_id, $custom_permalink );
+            $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
+    
+            $main_blog_id = MultisiteBlog::get_main_blog_id();
+    
+            MultisiteBlog::set_blog( $main_blog_id );
+    
+            $custom_permalink = self::get_post_uri( $post_moved_id );
+    
+            MultisiteBlog::restore_blog();
+    
+            if ( !empty( $custom_permalink ) )
+            {
+                self::set_post_uri( $post_id, $custom_permalink );
+            }
+    
+            LegalDebug::die( [
+                'ToolPermalink' => 'set_custom_permalink',
+    
+                'post_id' => $post_id,
+    
+                'post_moved_id' => $post_moved_id,
+    
+                'custom_permalink' => $custom_permalink,
+            ] );
         }
-
-        LegalDebug::die( [
-            'ToolPermalink' => 'set_custom_permalink',
-
-            'post_id' => $post_id,
-
-            'post_moved_id' => $post_moved_id,
-
-            'custom_permalink' => $custom_permalink,
-        ] );
     }
 
     public static function check_front_page( $post_id )
