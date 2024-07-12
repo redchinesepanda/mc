@@ -36,10 +36,10 @@ class ToolPermalink
 
     public static function set_post_uri( $post_id, $custom_permalink )
     {
-        if ( self::check_front_page( $post_id ) )
-        {
-            return false;
-        }
+        // if ( self::check_front_page( $post_id ) )
+        // {
+        //     return false;
+        // }
 
         $permalink_manager_uris = get_option( 'permalink-manager-uris' );
 
