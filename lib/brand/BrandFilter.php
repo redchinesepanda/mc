@@ -27,10 +27,16 @@ class BrandFilter
         // add_action( 'restrict_manage_posts', [ $handler, 'render_brand_fileter' ] );
 
 		// add_filter( 'parse_query', [ $handler, 'wpse45436_posts_filter' ] );
-		
-		add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
 
-		add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
+		if ( MultisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_main_domain() )
+			{
+				add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
+		
+				add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
+			}
+		}
     }
 
 	public static function brand_type_filter()
