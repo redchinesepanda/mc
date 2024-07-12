@@ -76,10 +76,10 @@ class AffiliateFilter
 		}
     }
 
-	public static function brand_type_filter()
-	{
-		BrandFilter::brand_type_filter( self::POST_TYPE[ 'affiliate' ] );
-	}
+	// public static function brand_type_filter()
+	// {
+	// 	BrandFilter::brand_type_filter( self::POST_TYPE[ 'affiliate' ] );
+	// }
 }
 
 ?>
