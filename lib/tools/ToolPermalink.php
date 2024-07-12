@@ -18,7 +18,7 @@ class ToolPermalink
 
         if ( MultisiteMain::check_multisite() )
         {
-            if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
+            if ( MultisiteBlog::check_not_main_blog() )
             {
                 add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
             }
