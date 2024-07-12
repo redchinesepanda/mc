@@ -103,7 +103,7 @@ class ToolsMain
         
         ToolRewrite::register_functions();
 
-        // ToolPermalink::register_functions();
+        ToolPermalink::register_functions();
 
         ToolForbidden::register();
     }
