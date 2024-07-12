@@ -33,7 +33,7 @@ class AffiliateFilter
 
 	public static function set_brand_type( $post_id, $post )
     {
-		$about = get_field( self::GROUP[ 'about' ] . '_' . self::ABOUT[ 'afillate' ], $brand_id );
+		$about = get_field( self::GROUP[ 'about' ] . '_' . self::ABOUT[ 'afillate' ], $post_id );
 
 		LegalDebug::die( [
 			'AffiliateFilter' =>'set_brand_type',
