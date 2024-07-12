@@ -91,15 +91,15 @@ class ToolPermalink
                 self::set_post_uri( $post_id, $custom_permalink );
             }
     
-            LegalDebug::die( [
-                'ToolPermalink' => 'set_custom_permalink',
+            // LegalDebug::die( [
+            //     'ToolPermalink' => 'set_custom_permalink',
     
-                'post_id' => $post_id,
+            //     'post_id' => $post_id,
     
-                'post_moved_id' => $post_moved_id,
+            //     'post_moved_id' => $post_moved_id,
     
-                'custom_permalink' => $custom_permalink,
-            ] );
+            //     'custom_permalink' => $custom_permalink,
+            // ] );
         // }
     }
 
