@@ -18,17 +18,17 @@ class AffiliateFilter
 
 	public static function register_functions_admin()
 	{
-		if ( MultisiteMain::check_multisite() )
-		{
-			if ( MultisiteBlog::check_main_domain() )
-			{
-				$handler = new self();
+		// if ( MultisiteMain::check_multisite() )
+		// {
+		// 	if ( MultisiteBlog::check_main_domain() )
+		// 	{
+		// 		$handler = new self();
 
-				add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
+		// 		add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
 		
-				// add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
-			}
-		}
+		// 		// add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
+		// 	}
+		// }
 	}
 
 	public static function get_affiliate_id( $post_id )
