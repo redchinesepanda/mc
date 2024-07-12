@@ -12,6 +12,8 @@ class AffiliateFilter
 
 	const POST_TYPE = [
 		'affiliate' => 'affiliate-links',
+
+		'billet' => 'legal_billet',
 	];
 
 	public static function register_functions_admin()
@@ -22,7 +24,7 @@ class AffiliateFilter
 			{
 				$handler = new self();
 
-				add_filter( 'edit_post_' . self::POST_TYPE[ 'affiliate' ], [ $handler, 'set_brand_type' ], 10, 2 );
+				add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
 		
 				add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
 			}
