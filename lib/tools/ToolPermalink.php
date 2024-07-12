@@ -20,6 +20,8 @@ class ToolPermalink
         {
             if ( MultisiteBlog::check_not_main_blog() )
             {
+                $handler = new self();
+                
                 add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
             }
         }
