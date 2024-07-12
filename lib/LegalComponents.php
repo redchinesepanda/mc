@@ -16,11 +16,15 @@ require_once( 'wiki/WikiMain.php' );
 
 require_once( 'forecast/ForecastMain.php' );
 
+require_once( 'affiliate/AffiliateMain.php' );
+
 class LegalComponents
 {
 	public static function register_functions_admin()
 	{
 		BrandMain::register_functions_admin();
+
+		AffiliateMain::register_functions_admin();
 	}
 
 	public static function register_functions()
