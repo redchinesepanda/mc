@@ -74,8 +74,8 @@ class ToolPermalink
 
     public static function set_custom_permalink( $post_id, $post )
     {
-        if ( self::check_post_uri_empty( $post_id ) )
-        {
+        // if ( self::check_post_uri_empty( $post_id ) )
+        // {
             $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
     
             $main_blog_id = MultisiteBlog::get_main_blog_id();
@@ -100,7 +100,7 @@ class ToolPermalink
     
                 'custom_permalink' => $custom_permalink,
             ] );
-        }
+        // }
     }
 
     public static function check_front_page( $post_id )
