@@ -418,9 +418,9 @@ class MultisiteMeta
 
 		// return null;
 
-		// return get_post_meta( $post_id, $meta_key, true );
+		return get_post_meta( $post_id, $meta_key, true );
 		
-		return get_post_meta( $post_id, $meta_key, false );
+		// return get_post_meta( $post_id, $meta_key, false );
 	}
 
 	public static function set_post_moved_from( $post_id, $origin_post_id )
