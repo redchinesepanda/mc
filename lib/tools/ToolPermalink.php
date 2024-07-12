@@ -2,6 +2,12 @@
 
 class ToolPermalink
 {
+    const POST_TYPE = [
+		'page' => 'page',
+
+		'post' => 'post',
+	];
+
     public static function register_functions()
     {
         // $handler = new self();
@@ -9,6 +15,80 @@ class ToolPermalink
         // add_filter( 'post_type_link', [ $handler, 'wpse_101072_flatten_hierarchies' ], 10, 2 );
         
         // add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
+
+        if ( MultisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_main_domain && MultisiteBlog::check_not_main_blog() )
+            {
+                add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
+            }
+        }
+    }
+
+    public static function set_post_uri( $post_id, $custom_permalink )
+    {
+        if ( self::check_front_page( $post_id ) )
+        {
+            return false;
+        }
+
+        $permalink_manager_uris = get_option( 'permalink-manager-uris' );
+
+        // LegalDebug::debug( [
+        //     'ToolPermalink' => 'get_post_uri',
+
+        //     'post_id' => $post_id,
+
+        //     'permalink_manager_uris' => $permalink_manager_uris,
+        // ] );
+
+        if ( $permalink_manager_uris )
+        {
+            // if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
+            // {
+                // LegalDebug::debug( [
+                //     'ToolPermalink' => 'get_post_uri',
+
+                //     'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
+                // ] );
+
+                $permalink_manager_uris[ $post_id ] = $custom_permalink;
+
+                update_option( 'permalink-manager-uris', $permalink_manager_uris );
+
+                return true
+            // }
+        }
+
+        return false;
+    }
+
+    public static function set_custom_permalink( $post_id, $post )
+    {
+        $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
+
+        $main_blog_id = MultisiteBlog::get_main_blog_id();
+
+        MultisiteBlog::set_blog( $main_blog_id );
+
+        $custom_permalink = self::get_post_uri( $post_moved_id );
+
+        MultisiteBlog::restore_blog();
+
+        if ( !empty( $custom_permalink ) )
+        {
+            self::set_post_uri( $post_id, $custom_permalink );
+        }
+
+        LegalDebug::die( [
+            'ToolPermalink' => 'set_custom_permalink',
+
+            'post_id' => $post_id,
+
+            'post_moved_id' => $post_moved_id,
+
+            'custom_permalink' => $custom_permalink,
+        ] );
     }
 
     public static function check_front_page( $post_id )
