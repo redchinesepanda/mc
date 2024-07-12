@@ -446,21 +446,21 @@ class MultisiteMeta
 
 		$updated_meta_value[ $blog_id ] = $moved_post_id;
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' =>'set_post_moved',
-
-		// 	'post_id' => $post_id,
-
-		// 	'blog_id' => $blog_id,
-
-		// 	'moved_post_id' => $moved_post_id,
-
-		// 	'meta_value' => $meta_value,
-
-		// 	'updated_meta_value' => $updated_meta_value,
-		// ] );
-
 		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_meta_value );
+
+		LegalDebug::die( [
+			'MultisiteMeta' =>'set_post_moved',
+
+			'post_id' => $post_id,
+
+			'blog_id' => $blog_id,
+
+			'moved_post_id' => $moved_post_id,
+
+			'meta_value' => $meta_value,
+
+			'updated_meta_value' => $updated_meta_value,
+		] );
 	}
 
 	// public static function check_post( $id )
