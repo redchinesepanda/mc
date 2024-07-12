@@ -387,6 +387,8 @@ class MultisiteMeta
 	{
 		return wp_update_attachment_metadata( $attachment_id, self::get_attachment_metadata( $attachment_id ) );
 	}
+	
+	// public static function get_post_moved( $post_id, $blog_id, $meta_key = '' )
 
 	public static function get_post_moved( $post_id, $meta_key = '' )
 	{
@@ -402,6 +404,15 @@ class MultisiteMeta
 
 		// 	'meta_key' => $meta_key,
 		// ] );
+
+		$moved_to = get_post_meta( $post_id, $meta_key, true );
+
+		// if ( !empty( $moved_to[ $blog_id ] ) )
+		// {
+		// 	return $blog_id;
+		// }
+
+		// return null;
 
 		return get_post_meta( $post_id, $meta_key, true );
 	}
@@ -425,7 +436,11 @@ class MultisiteMeta
 
 		// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
 		
-		$updated_meta_value = [ $blog_id => $moved_post_id ];
+		// $updated_meta_value = [ $blog_id => $moved_post_id ];
+		
+		$updated_meta_value = $meta_value;
+
+		$updated_meta_value[ $blog_id ] = $moved_post_id;
 
 		// LegalDebug::debug( [
 		// 	'MultisiteMeta' =>'set_post_moved',
