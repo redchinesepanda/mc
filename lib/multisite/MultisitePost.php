@@ -333,7 +333,7 @@ class MultisitePost
 
 		$posts = get_posts( $args );
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'MultisitePost' => 'get_post_moved_id',
 
 			'origin_post_id' => $origin_post_id,
