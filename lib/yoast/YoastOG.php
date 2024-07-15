@@ -177,7 +177,9 @@ class YoastOG
 
 	public static function get_default_image()
 	{
-		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-default.webp';
+		// return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-default.webp';
+		
+		return LegalMain::LEGAL_URL . '/assets/img/yoast/preview-default.svg';
 	}
 
 	public static function get_og_attachment_query()
