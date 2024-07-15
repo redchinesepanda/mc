@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="google-site-verification" content="mEkrJzr2kWNt0bwY4KBe-esDddNfY6LHIHoQwqgXUAA" />
 		<meta name="google-site-verification" content="cHXNqzAYzXW9xQcJ_3XkMxaOlOY2RjHWtYOzqq7-mX0" />
 		<meta name="google-site-verification" content="uL_MOpGHjVJdTC0wYE5IpCP_DVbLdMZNH9QnAjaOdes" />
-		<meta name="google-site-verification" content="xsV_rhcHpVkCE0BOHIGgCEeHPDJ2yBVtlNkOBjaSpxU" /
+		<meta name="google-site-verification" content="xsV_rhcHpVkCE0BOHIGgCEeHPDJ2yBVtlNkOBjaSpxU" />
 		<meta name="google-site-verification" content="Y2Opq8gGQS9XXahYuxOsrMaQ3UoJTQFjarZttw-zaTs" />
 		<!-- manual end -->
 		<!-- Yoast SEO manual start -->
