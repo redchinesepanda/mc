@@ -54,13 +54,34 @@ class ReviewRestricted
         // return $result;
     }
 
+	// const DEBUG_DOMAINS = [
+	// 	'templ-content' => 'content.match.center'
+	// ];
+
+	public static function check_not_debug_domain()
+	{
+		return ! self::check_debug_domain();
+	}
+
+	public static function check_debug_domain()
+	{
+		if ( MultisiteMain::check_multisite() )
+		{
+			return in_array( MultisiteBlog::get_domain(), LegalHosts::HOST_DEBUG );
+		}
+
+		return false;
+	}
+
 	public static function check_modify()
 	{
 		return MultisiteMain::check_multisite()
 		
 			&& MultisiteBlog::check_not_main_domain()
 			
-			&& self::check_contains_anchors();
+			&& self::check_contains_anchors()
+
+			&& self::check_not_debug_domain();
 
 		// return self::check_contains_restricted_anchors();
 	}
