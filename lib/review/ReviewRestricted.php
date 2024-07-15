@@ -54,24 +54,24 @@ class ReviewRestricted
         // return $result;
     }
 
-	// const DEBUG_DOMAINS = [
-	// 	'templ-content' => 'content.match.center'
-	// ];
+	const DEBUG_DOMAINS = [
+		'templ-content' => 'content.match.center'
+	];
 
-	public static function check_not_debug_domain()
-	{
-		return ! self::check_debug_domain();
-	}
+	// public static function check_not_debug_domain()
+	// {
+	// 	return ! self::check_debug_domain();
+	// }
 
-	public static function check_debug_domain()
-	{
-		if ( MultisiteMain::check_multisite() )
-		{
-			return in_array( MultisiteBlog::get_domain(), LegalHosts::HOST_DEBUG );
-		}
+	// public static function check_debug_domain()
+	// {
+	// 	if ( MultisiteMain::check_multisite() )
+	// 	{
+	// 		return in_array( MultisiteBlog::get_domain(), self::DEBUG_DOMAINS );
+	// 	}
 
-		return false;
-	}
+	// 	return false;
+	// }
 
 	public static function check_modify()
 	{
@@ -79,9 +79,9 @@ class ReviewRestricted
 		
 			&& MultisiteBlog::check_not_main_domain()
 			
-			&& self::check_contains_anchors()
+			&& self::check_contains_anchors();
 
-			&& self::check_not_debug_domain();
+			// && self::check_not_debug_domain();
 
 		// return self::check_contains_restricted_anchors();
 	}

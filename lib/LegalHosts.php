@@ -35,13 +35,11 @@ class LegalHosts
 	];
 
 	const HOST_DEBUG = [
-		'templ-debug' => 'content.match.center'
+		'oldpl' => 'oldpl.match.center',
 
-		// 'oldpl' => 'oldpl.match.center',
+		'test' => 'test.match.center',
 
-		// 'test' => 'test.match.center',
-
-		// 'testkz' => 'testkz.match.center',
+		'testkz' => 'testkz.match.center',
 	];
 
 	public static function check_external( $host )
