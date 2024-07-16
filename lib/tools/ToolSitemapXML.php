@@ -53,9 +53,13 @@ class ToolSitemapXML
     }
 
     const MOVED_FOLDERS = [
-        'kz',
+        // 'kz',
 
-        'kz-kz',
+        // 'kz-kz',
+
+        'cl',
+
+        'pe',
     ];
 
     const PATTERNS = [
