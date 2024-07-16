@@ -49,8 +49,8 @@ class ToolRobots
 
 		if ( MultisiteMain::check_multisite() )
 		{
-			if ( MultisiteBlog::check_not_main_domain() )
-			{
+			// if ( MultisiteBlog::check_not_main_domain() )
+			// {
 				$current_domain = MultisiteBlog::get_domain();
 
 				$sites = MultisiteBlog::get_all_sites( $current_domain );
@@ -75,7 +75,7 @@ class ToolRobots
 				// ] );
 
 				return $sitemaps;
-			}
+			// }
 		}
 
 		$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
