@@ -59,7 +59,14 @@ class ToolRobots
 				{
 					MultisiteBlog::set_blog( $site->blog_id );
 
-					$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], get_sitemap_url( 'index' ) );
+					$sitemap_url = get_sitemap_url( 'index' );
+
+					if ( $sitemap_url )
+					{
+						$sitemap_url = strtok( $sitemap_url, '?' );
+
+						$sitemaps[] = sprintf( self::PATTERNS[ 'sitemap' ], $sitemap_url );
+					}
 				}
 
 				MultisiteBlog::restore_blog();
