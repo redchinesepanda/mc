@@ -192,6 +192,17 @@ class ReviewSchema
         return self::get_name();
     }
 
+    // public static function get_main_entity_of_page()
+    // {
+    //     return [
+    //         "@type" => "WebPage",
+
+    //         // "@id" => "https://match.center/br/betberry-io/",
+            
+    //         "@id" => self::get_url(),
+    //     ];
+    // }
+
     public static function schema_item_rewived( $review_about )
     {
         return [
@@ -221,6 +232,10 @@ class ReviewSchema
             // "reviewRating" => [],
 
             "reviewBody" => YoastMain::get_seo_description(),
+
+            // "mainEntityOfPage" => self::get_main_entity_of_page(),
+            
+            "mainEntityOfPage" => self::schema_main_entity_of_page(),
         ];
     }
 
@@ -360,33 +375,51 @@ class ReviewSchema
         return self::get_url();
     }
 
-    public static function schema_webpage()
-    {
-        return [
-            "@context" => "https://schema.org",
+    // public static function schema_webpage()
+    // {
+    //     return [
+    //         "@context" => "https://schema.org",
 
-            // "@type" => "WebPage",
+    //         // "@type" => "WebPage",
             
-            "@type" => self::get_shema_type(),
+    //         "@type" => self::get_shema_type(),
 
-			// "name" => YoastMain::get_seo_title(),
+	// 		// "name" => YoastMain::get_seo_title(),
 
-            "headline" => YoastMain::get_seo_title(),
+    //         "headline" => YoastMain::get_seo_title(),
 
-            "description" => YoastMain::get_seo_description(),
+    //         "description" => YoastMain::get_seo_description(),
 
-			"url" => self::get_url(),
+	// 		"url" => self::get_url(),
 
-            // "author" => self::schema_author(),
+    //         // "author" => self::schema_author(),
 
-            "author" => self::schema_author_short(),
+    //         "author" => self::schema_author_short(),
 
-			"datePublished" => self::get_date_published(),
+	// 		"datePublished" => self::get_date_published(),
 
-            "publisher" => self::schema_publisher(),
+    //         "publisher" => self::schema_publisher(),
 
-            "mainEntityOfPage" => self::schema_main_entity_of_page(),
-        ];
+    //         "mainEntityOfPage" => self::schema_main_entity_of_page(),
+    //     ];
+    // }
+
+	public static function schema_type_main()
+    {
+        if ( self::check_type() )
+        {
+            if ( self::check_review() )
+            {
+                return self::schema_review();
+            }
+
+            if ( self::check_article() )
+            {
+                return self::schema_article();
+            }
+        }
+
+        return self::schema_webpage_correct();
     }
 
 	public static function schema()
@@ -408,7 +441,9 @@ class ReviewSchema
 
             self::schema_web_site(),
 
-            self::schema_webpage(),
+            // self::schema_webpage(),
+            
+            self::schema_type_main(),
 
             self::schema_author(),
         ];
