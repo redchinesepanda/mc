@@ -449,7 +449,9 @@ class BaseHeader
 
 			'step' => 'search_languages-6',
 
-			// 'search' => $search,
+			'current-count' => count( $search[ 'current' ] ),
+
+			'avaible-count' => count( $search[ 'avaible' ] ),
 		] );
 		
 		return $search;
