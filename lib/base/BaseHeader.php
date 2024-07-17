@@ -1004,17 +1004,17 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-1',
+		// 	'step' => 'replace_urls-1',
 
-			'home' => $home->ID,
+		// 	'home' => $home->ID,
 
-			'urls-count' => count( $urls ),
+		// 	'urls-count' => count( $urls ),
 
-			// 'urls' => $urls,
-		] );
+		// 	// 'urls' => $urls,
+		// ] );
 
 		if ( !empty( $home ) )
 		{
@@ -1023,29 +1023,29 @@ class BaseHeader
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-2',
+		// 	'step' => 'replace_urls-2',
 
-			'urls-count' => count( $urls ),
+		// 	'urls-count' => count( $urls ),
 
-			// 'urls' => $urls,
-		] );
+		// 	// 'urls' => $urls,
+		// ] );
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-3',
+		// 	'step' => 'replace_urls-3',
 
-			'home_urls_all-count' => count( $home_urls_all ),
+		// 	'home_urls_all-count' => count( $home_urls_all ),
 
-			// 'home_urls_all' => $home_urls_all,
+		// 	// 'home_urls_all' => $home_urls_all,
 
-			'home_urls_replaced-count' => count( $home_urls_replaced ),
+		// 	'home_urls_replaced-count' => count( $home_urls_replaced ),
 
-			// 'home_urls_replaced' => $home_urls_replaced,
-		] );
+		// 	// 'home_urls_replaced' => $home_urls_replaced,
+		// ] );
 
 		$cross = self::get_cross_page();
 
@@ -1057,52 +1057,52 @@ class BaseHeader
 
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
 
-			LegalDebug::debug( [
-				'BaseHeader' =>'replace_urls',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' =>'replace_urls',
 	
-				'step' => 'replace_urls-4',
+			// 	'step' => 'replace_urls-4',
 	
-				'cross_urls_all-count' => count( $cross_urls_all ),
+			// 	'cross_urls_all-count' => count( $cross_urls_all ),
 	
-				// 'cross_urls_all' => $cross_urls_all,
+			// 	// 'cross_urls_all' => $cross_urls_all,
 	
-				'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+			// 	'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 	
-				// 'cross_urls_replaced' => $cross_urls_replaced,
-			] );
+			// 	// 'cross_urls_replaced' => $cross_urls_replaced,
+			// ] );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-5',
+		// 	'step' => 'replace_urls-5',
 
-			'urls-count' => count( $urls ),
+		// 	'urls-count' => count( $urls ),
 
-			// 'urls' => $urls,
-		] );
+		// 	// 'urls' => $urls,
+		// ] );
 		
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-6',
+		// 	'step' => 'replace_urls-6',
 
-			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+		// 	'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 
-			// 'cross_urls_replaced' => $cross_urls_replaced,
-		] );
+		// 	// 'cross_urls_replaced' => $cross_urls_replaced,
+		// ] );
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-7',
+		// 	'step' => 'replace_urls-7',
 
-			'urls-count' => count( $urls ),
+		// 	'urls-count' => count( $urls ),
 
-			// 'urls' => $urls,
-		] );
+		// 	// 'urls' => $urls,
+		// ] );
 
 		return $urls;
 	}
@@ -1117,41 +1117,41 @@ class BaseHeader
 	{
 		$search = self::search_languages();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages',
 
-			'step' => 'get_menu_languages-1',
+		// 	'step' => 'get_menu_languages-1',
 
-			'current-count' => count( $search[ 'current' ] ),
+		// 	'current-count' => count( $search[ 'current' ] ),
 
-			'avaible-count' => count( $search[ 'avaible' ] ),
-		] );
+		// 	'avaible-count' => count( $search[ 'avaible' ] ),
+		// ] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages',
 
-			'step' => 'get_menu_languages-2',
+		// 	'step' => 'get_menu_languages-2',
 
-			'current-count' => count( $search[ 'current' ] ),
+		// 	'current-count' => count( $search[ 'current' ] ),
 
-			'avaible-count' => count( $search[ 'avaible' ] ),
-		] );
+		// 	'avaible-count' => count( $search[ 'avaible' ] ),
+		// ] );
 
 		$parse = self::parse_languages( $search );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages',
 
-			'step' => 'get_menu_languages-3',
+		// 	'step' => 'get_menu_languages-3',
 
-			// 'search' => $search,
+		// 	// 'search' => $search,
 
-			// 'avaible' => $search[ 'avaible' ],
+		// 	// 'avaible' => $search[ 'avaible' ],
 
-			'parse' => $parse,
-		] );
+		// 	'parse' => $parse,
+		// ] );
 
 		return $parse;
 	}
