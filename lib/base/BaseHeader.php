@@ -127,7 +127,7 @@ class BaseHeader
 
 			$domain_main_site = MultisiteBlog::get_domain_main_site( $domain );
 
-			$site_url = MultisiteBlog::get_siteurl( $domain_main_site );
+			$site_url = MultisiteBlog::get_siteurl( $domain_main_site->blog_id );
 
 			return $site_url . "/favicon.ico";
 		}
