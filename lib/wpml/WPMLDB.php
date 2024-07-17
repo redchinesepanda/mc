@@ -140,10 +140,10 @@ class WPMLDB
 
     public static function multisite_all_languages()
     {
-		// if ( MultisiteBlog::check_not_main_domain() )
-		// {
-		// 	return [];
-		// }
+		if ( MultisiteBlog::check_not_main_domain() )
+		{
+			return [];
+		}
 
         global $wpdb;
 
