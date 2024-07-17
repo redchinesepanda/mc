@@ -1004,13 +1004,15 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	// 'home' => $home->ID,
+			'step' => 'replace_urls-1',
 
-		// 	'urls' => $urls,
-		// ] );
+			'home' => $home->ID,
+
+			'urls' => $urls,
+		] );
 
 		if ( !empty( $home ) )
 		{
@@ -1019,19 +1021,23 @@ class BaseHeader
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'urls' => $urls,
-		// ] );
+			'step' => 'replace_urls-2',
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+			'urls' => $urls,
+		] );
 
-		// 	'home_urls_all' => $home_urls_all,
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'home_urls_replaced' => $home_urls_replaced,
-		// ] );
+			'step' => 'replace_urls-3',
+
+			'home_urls_all' => $home_urls_all,
+
+			'home_urls_replaced' => $home_urls_replaced,
+		] );
 
 		$cross = self::get_cross_page();
 
@@ -1044,27 +1050,33 @@ class BaseHeader
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'urls' => $urls,
-		// ] );
+			'step' => 'replace_urls-4',
+
+			'urls' => $urls,
+		] );
 		
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'cross_urls_all' => $cross_urls_all,
+			'step' => 'replace_urls-5',
 
-		// 	'cross_urls_replaced' => $cross_urls_replaced,
-		// ] );
+			'cross_urls_all' => $cross_urls_all,
+
+			'cross_urls_replaced' => $cross_urls_replaced,
+		] );
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls',
 
-		// 	'urls' => $urls,
-		// ] );
+			'step' => 'replace_urls-6',
+
+			'urls' => $urls,
+		] );
 
 		return $urls;
 	}
