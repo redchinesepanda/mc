@@ -244,15 +244,17 @@ class WPMLLangSwitcher
 
         $languages = self::get_all();
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'step' => 'get-1',
             
-        //     'languages' => count( $languages ),
+            'languages' => count( $languages ),
 
-        //     // 'languages' => $languages,
+            // 'languages' => $languages,
 
-        //     // 'check_wpml_off' => WPMLMain::check_wpml_off(),
-        // ] );
+            // 'check_wpml_off' => WPMLMain::check_wpml_off(),
+        ] );
 
         // if ( WPMLMain::check_wpml_off() )
         
@@ -265,7 +267,7 @@ class WPMLLangSwitcher
                 LegalDebug::debug( [
                     'WPMLLangSwitcher' => 'get',
 
-                    'step' => 'get-1',
+                    'step' => 'get-2',
                     
                     'languages' => count( $languages ),
 
