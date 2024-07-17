@@ -309,6 +309,16 @@ class BaseHeader
 			return $languages_avaible;
 		}
 
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_languages_avaible',
+
+			'step' => 'get_languages_avaible-3',
+
+			'languages-count' => count( $languages ),
+
+			// 'languages' => $languages,
+		] );
+
 		return $languages;
 	}
 
