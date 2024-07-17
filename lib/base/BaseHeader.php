@@ -294,6 +294,8 @@ class BaseHeader
 
 			LegalDebug::debug( [
 				'BaseHeader' => 'get_languages_avaible',
+				
+				'step' => 'get_languages_avaible-3',
 
 				'count-languages' => count( $languages ),
 
@@ -312,7 +314,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_languages_avaible',
 
-			'step' => 'get_languages_avaible-3',
+			'step' => 'get_languages_avaible-4',
 
 			'languages-count' => count( $languages ),
 
