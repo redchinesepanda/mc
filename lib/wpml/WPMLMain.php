@@ -120,6 +120,19 @@ class WPMLMain
         return [];
     }
 
+    public static function get_exclude()
+    {
+        if ( MultisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_not_main_domain )
+            {
+                return self::EXCLUDE_SERVICE;
+            }
+        }
+
+        return self::EXCLUDE;
+    }
+
     const EXCLUDE = [
         ...self::EXCLUDE_SERVICE,
 
