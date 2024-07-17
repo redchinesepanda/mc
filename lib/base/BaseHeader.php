@@ -129,7 +129,9 @@ class BaseHeader
 		// 	bloginfo( 'stylesheet_directory' ) . "/favicon.ico"
 		// ] );
 
-		return bloginfo( 'stylesheet_directory' ) . "/favicon.ico"; 
+		// return bloginfo( 'stylesheet_directory' ) . "/favicon.ico"; 
+		
+		return LegalMain::LEGAL_ROOT . "/favicon.ico"; 
 	}
 
 	public static function get_localize()
