@@ -249,7 +249,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'get_languages_avaible',
 
-			'step' => 'get_languages_avaible-5',
+			'step' => 'get_languages_avaible-1',
 
 			'check_group_language' => self::check_group_language(),
 
