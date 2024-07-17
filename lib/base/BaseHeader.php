@@ -310,11 +310,13 @@ class BaseHeader
 			}
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'all_languages' => count( $all_languages ),
-		// ] );
+			'all_languages' => $all_languages,
+
+			'all_languages-count' => count( $all_languages ),
+		] );
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' => 'search_languages',
