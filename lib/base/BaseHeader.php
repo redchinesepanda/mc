@@ -1079,31 +1079,41 @@ class BaseHeader
 	{
 		$search = self::search_languages();
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	'search' => $search,
-		// ] );
+			'step' => 'get_menu_languages-1',
+
+			'current-count' => count( $search[ 'current' ] ),
+
+			'avaible-count' => count( $search[ 'avaible' ] ),
+		] );
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	'search' => $search,
-		// ] );
+			'step' => 'get_menu_languages-2',
+
+			'current-count' => count( $search[ 'current' ] ),
+
+			'avaible-count' => count( $search[ 'avaible' ] ),
+		] );
 
 		$parse = self::parse_languages( $search );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	// 'search' => $search,
+			'step' => 'get_menu_languages-3',
 
-		// 	// 'avaible' => $search[ 'avaible' ],
+			// 'search' => $search,
 
-		// 	'parse' => $parse,
-		// ] );
+			// 'avaible' => $search[ 'avaible' ],
+
+			'parse' => $parse,
+		] );
 
 		return $parse;
 	}
