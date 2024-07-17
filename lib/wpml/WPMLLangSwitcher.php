@@ -204,6 +204,20 @@ class WPMLLangSwitcher
             && MultisiteBlog::check_main_domain();
     }
 
+    public static function get_choose_your_country_href()
+    {
+        if ( MultisiteMain::check_multisite() )
+        {
+            $main_blog_id = MultisiteBlog::get_main_blog_id();
+
+            $siteurl = MultisiteBlog::get_siteurl( $main_blog_id );
+
+            return $siteurl . '/choose-your-country/';
+        }
+
+        return LegalMain::LEGAL_ROOT . '/choose-your-country/';
+    }
+
     public static function get_choose_your_country()
     {
         // if ( TemplateMain::check_new() )
