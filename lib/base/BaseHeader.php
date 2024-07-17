@@ -121,6 +121,14 @@ class BaseHeader
 
 	public static function get_favicon()
 	{
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_favicon',
+
+			bloginfo( 'stylesheet_directory' ),
+
+			bloginfo( 'stylesheet_directory' ) . "/favicon.ico"
+		] );
+
 		return bloginfo( 'stylesheet_directory' ) . "/favicon.ico"; 
 	}
 
