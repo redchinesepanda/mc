@@ -160,7 +160,9 @@ class WPMLMain
         
         $default_locale = array_column( $args, 'default_locale', 'code' );
 
-        $default_locale_exclude = self::EXCLUDE;
+        // $default_locale_exclude = self::EXCLUDE;
+        
+        $default_locale_exclude = self::get_exclude();
 
         if ( !empty( $exclude ) )
         {
