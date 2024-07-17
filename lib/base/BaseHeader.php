@@ -259,6 +259,16 @@ class BaseHeader
 		] );
 
 		$languages = WPMLMain::exclude( $languages );
+		
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_languages_avaible',
+
+			'step' => 'get_languages_avaible-2',
+
+			'languages-count' => count( $languages ),
+
+			'languages' => $languages,
+		] );
 
 		if ( self::check_group_language() )
 		{
