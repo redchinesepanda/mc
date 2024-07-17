@@ -1060,7 +1060,7 @@ class BaseHeader
 			LegalDebug::debug( [
 				'BaseHeader' =>'replace_urls',
 	
-				'step' => 'replace_urls-5',
+				'step' => 'replace_urls-4',
 	
 				'cross_urls_all-count' => count( $cross_urls_all ),
 	
@@ -1075,7 +1075,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-4',
+			'step' => 'replace_urls-5',
 
 			'urls-count' => count( $urls ),
 
@@ -1085,7 +1085,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-5',
+			'step' => 'replace_urls-6',
 
 			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 
@@ -1097,7 +1097,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls',
 
-			'step' => 'replace_urls-6',
+			'step' => 'replace_urls-7',
 
 			'urls-count' => count( $urls ),
 
