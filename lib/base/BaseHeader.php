@@ -1011,7 +1011,9 @@ class BaseHeader
 
 			'home' => $home->ID,
 
-			'urls' => $urls,
+			'urls-count' => count( $urls ),
+
+			// 'urls' => $urls,
 		] );
 
 		if ( !empty( $home ) )
@@ -1026,7 +1028,9 @@ class BaseHeader
 
 			'step' => 'replace_urls-2',
 
-			'urls' => $urls,
+			'urls-count' => count( $urls ),
+
+			// 'urls' => $urls,
 		] );
 
 		LegalDebug::debug( [
@@ -1034,9 +1038,13 @@ class BaseHeader
 
 			'step' => 'replace_urls-3',
 
-			'home_urls_all' => $home_urls_all,
+			'home_urls_all-count' => count( $home_urls_all ),
 
-			'home_urls_replaced' => $home_urls_replaced,
+			// 'home_urls_all' => $home_urls_all,
+
+			'home_urls_replaced-count' => count( $home_urls_replaced ),
+
+			// 'home_urls_replaced' => $home_urls_replaced,
 		] );
 
 		$cross = self::get_cross_page();
@@ -1055,7 +1063,9 @@ class BaseHeader
 
 			'step' => 'replace_urls-4',
 
-			'urls' => $urls,
+			'urls-count' => count( $urls ),
+
+			// 'urls' => $urls,
 		] );
 		
 		LegalDebug::debug( [
@@ -1063,9 +1073,13 @@ class BaseHeader
 
 			'step' => 'replace_urls-5',
 
-			'cross_urls_all' => $cross_urls_all,
+			'cross_urls_all-count' => count( $cross_urls_all ),
 
-			'cross_urls_replaced' => $cross_urls_replaced,
+			// 'cross_urls_all' => $cross_urls_all,
+
+			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+
+			// 'cross_urls_replaced' => $cross_urls_replaced,
 		] );
 
 		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
@@ -1075,7 +1089,9 @@ class BaseHeader
 
 			'step' => 'replace_urls-6',
 
-			'urls' => $urls,
+			'urls-count' => count( $urls ),
+
+			// 'urls' => $urls,
 		] );
 
 		return $urls;
