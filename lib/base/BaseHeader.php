@@ -294,13 +294,13 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'WPMLMain::get_all_languages' => $all_languages,
+			'all_languages' => $all_languages,
 
-		// 	'empty' => empty( $all_languages ),
-		// ] );
+			'all_languages-empty' => empty( $all_languages ),
+		] );
 
 		if ( MultisiteMain::check_multisite() )
         {
