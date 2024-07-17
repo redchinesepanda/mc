@@ -269,7 +269,7 @@ class WPMLLangSwitcher
                     
                     'languages' => count( $languages ),
 
-                    // 'languages' => $languages,
+                    'languages' => $languages,
     
                     // 'native_name' => array_column( $languages, 'native_name' ),
                     
