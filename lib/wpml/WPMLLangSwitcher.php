@@ -262,17 +262,19 @@ class WPMLLangSwitcher
             {
                 $languages = WPMLDB::multisite_all_languages();
     
-                // LegalDebug::debug( [
-                //     'WPMLLangSwitcher' => 'get',
-                    
-                //     'languages' => count( $languages ),
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get',
 
-                //     // 'languages' => $languages,
-    
-                //     // 'native_name' => array_column( $languages, 'native_name' ),
+                    'step' => 'get-1',
                     
-                //     // 'translated_name' => array_column( $languages, 'translated_name' ),
-                // ] );
+                    'languages' => count( $languages ),
+
+                    // 'languages' => $languages,
+    
+                    // 'native_name' => array_column( $languages, 'native_name' ),
+                    
+                    // 'translated_name' => array_column( $languages, 'translated_name' ),
+                ] );
             }
         }
 
