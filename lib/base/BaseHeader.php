@@ -400,11 +400,13 @@ class BaseHeader
 			// ] );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'search' => $search,
-		// ] );
+			'step' => '5',
+
+			'search' => $search,
+		] );
 		
 		return $search;
 	}
