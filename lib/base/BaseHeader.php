@@ -246,29 +246,29 @@ class BaseHeader
 
 	public static function get_languages_avaible( $languages )
 	{
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_languages_avaible',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_languages_avaible',
 
-			'step' => 'get_languages_avaible-1',
+		// 	'step' => 'get_languages_avaible-1',
 
-			'check_group_language' => self::check_group_language(),
+		// 	'check_group_language' => self::check_group_language(),
 
-			'languages-count' => count( $languages ),
+		// 	'languages-count' => count( $languages ),
 
-			'languages' => $languages,
-		] );
+		// 	'languages' => $languages,
+		// ] );
 
 		$languages = WPMLMain::exclude( $languages );
 		
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_languages_avaible',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_languages_avaible',
 
-			'step' => 'get_languages_avaible-2',
+		// 	'step' => 'get_languages_avaible-2',
 
-			'languages-count' => count( $languages ),
+		// 	'languages-count' => count( $languages ),
 
-			'languages' => $languages,
-		] );
+		// 	'languages' => $languages,
+		// ] );
 
 		if ( self::check_group_language() )
 		{
@@ -306,15 +306,15 @@ class BaseHeader
 
 		$all_languages = WPMLMain::get_all_languages();
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'step' => 'search_languages-1',
+		// 	'step' => 'search_languages-1',
 
-			'all_languages' => $all_languages,
+		// 	'all_languages' => $all_languages,
 
-			'all_languages-empty' => empty( $all_languages ),
-		] );
+		// 	'all_languages-empty' => empty( $all_languages ),
+		// ] );
 
 		if ( MultisiteMain::check_multisite() )
         {
@@ -324,15 +324,15 @@ class BaseHeader
 			}
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'step' => 'search_languages-2',
+		// 	'step' => 'search_languages-2',
 
-			'all_languages' => $all_languages,
+		// 	'all_languages' => $all_languages,
 
-			'all_languages-count' => count( $all_languages ),
-		] );
+		// 	'all_languages-count' => count( $all_languages ),
+		// ] );
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' => 'search_languages',
@@ -355,15 +355,15 @@ class BaseHeader
         {
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
-			LegalDebug::debug( [
-				'BaseHeader' => 'search_languages',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' => 'search_languages',
 
-				'step' => 'search_languages-3',
+			// 	'step' => 'search_languages-3',
 	
-				'multisite_languages' => $multisite_languages,
+			// 	'multisite_languages' => $multisite_languages,
 
-				'multisite_languages-count' => count( $multisite_languages ),
-			] );
+			// 	'multisite_languages-count' => count( $multisite_languages ),
+			// ] );
 
             if ( empty( $all_languages ) )
             {
@@ -375,15 +375,15 @@ class BaseHeader
             }
         }
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'step' => 'search_languages-4',
+		// 	'step' => 'search_languages-4',
 
-			'all_languages' => $all_languages,
+		// 	'all_languages' => $all_languages,
 
-			'all_languages-count' => count( $all_languages ),
-		] );
+		// 	'all_languages-count' => count( $all_languages ),
+		// ] );
 
 		if ( !empty( $all_languages ) )
 		{
@@ -412,13 +412,13 @@ class BaseHeader
 			// ] );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages',
 
-			'step' => 'search_languages-5',
+		// 	'step' => 'search_languages-5',
 
-			'search' => $search,
-		] );
+		// 	'search' => $search,
+		// ] );
 		
 		return $search;
 	}
