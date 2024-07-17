@@ -1056,6 +1056,20 @@ class BaseHeader
 			$cross_urls_all = self::get_page_urls( $cross );
 
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
+
+			LegalDebug::debug( [
+				'BaseHeader' =>'replace_urls',
+	
+				'step' => 'replace_urls-5',
+	
+				'cross_urls_all-count' => count( $cross_urls_all ),
+	
+				// 'cross_urls_all' => $cross_urls_all,
+	
+				'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+	
+				// 'cross_urls_replaced' => $cross_urls_replaced,
+			] );
 		}
 
 		LegalDebug::debug( [
@@ -1072,10 +1086,6 @@ class BaseHeader
 			'BaseHeader' =>'replace_urls',
 
 			'step' => 'replace_urls-5',
-
-			'cross_urls_all-count' => count( $cross_urls_all ),
-
-			// 'cross_urls_all' => $cross_urls_all,
 
 			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 
