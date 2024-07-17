@@ -433,21 +433,23 @@ class BaseHeader
 	
 			// $search[ 'avaible' ] = WPMLMain::filter_language( $all_languages, $lang );
 
-			// LegalDebug::debug( [
-			// 	'BaseHeader' => 'search_languages',
-	
-			// 	'current' => count( $search[ 'current' ] ),
+			LegalDebug::debug( [
+				'BaseHeader' => 'search_languages',
 
-			// 	'avaible' => count( $search[ 'avaible' ] ),
-			// ] );
+				'step' => 'search_languages-5',
+	
+				'current-count' => count( $search[ 'current' ] ),
+
+				'avaible-count' => count( $search[ 'avaible' ] ),
+			] );
 		}
 
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'step' => 'search_languages-5',
+			'step' => 'search_languages-6',
 
-			'search' => $search,
+			// 'search' => $search,
 		] );
 		
 		return $search;
