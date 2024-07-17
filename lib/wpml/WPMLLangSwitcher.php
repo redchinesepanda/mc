@@ -229,7 +229,9 @@ class WPMLLangSwitcher
     
                 'class' => 'legal-new',
 
-                'href' => LegalMain::LEGAL_ROOT . '/choose-your-country/',
+                // 'href' => LegalMain::LEGAL_ROOT . '/choose-your-country/',
+                
+                'href' => self::get_choose_your_country_href(),
             ];
         }
 
