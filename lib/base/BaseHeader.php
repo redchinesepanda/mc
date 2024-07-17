@@ -246,15 +246,17 @@ class BaseHeader
 
 	public static function get_languages_avaible( $languages )
 	{
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_languages_avaible',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_languages_avaible',
 
-		// 	'check_group_language' => self::check_group_language(),
+			'step' => 'get_languages_avaible-5',
 
-		// 	'count-languages' => count( $languages ),
+			'check_group_language' => self::check_group_language(),
 
-		// 	// 'languages' => $languages,
-		// ] );
+			'languages-count' => count( $languages ),
+
+			'languages' => $languages,
+		] );
 
 		$languages = WPMLMain::exclude( $languages );
 
@@ -297,7 +299,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'step' => '1',
+			'step' => 'search_languages-1',
 
 			'all_languages' => $all_languages,
 
@@ -315,7 +317,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'step' => '2',
+			'step' => 'search_languages-2',
 
 			'all_languages' => $all_languages,
 
@@ -346,7 +348,7 @@ class BaseHeader
 			LegalDebug::debug( [
 				'BaseHeader' => 'search_languages',
 
-				'step' => '3',
+				'step' => 'search_languages-3',
 	
 				'multisite_languages' => $multisite_languages,
 
@@ -366,7 +368,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'step' => '4',
+			'step' => 'search_languages-4',
 
 			'all_languages' => $all_languages,
 
@@ -403,7 +405,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
-			'step' => '5',
+			'step' => 'search_languages-5',
 
 			'search' => $search,
 		] );
