@@ -124,7 +124,7 @@ class WPMLMain
     {
         if ( MultisiteMain::check_multisite() )
         {
-            if ( MultisiteBlog::check_not_main_domain )
+            if ( MultisiteBlog::check_not_main_domain() )
             {
                 return self::EXCLUDE_SERVICE;
             }
