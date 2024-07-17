@@ -297,6 +297,8 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
 
+			'step' => '1',
+
 			'all_languages' => $all_languages,
 
 			'all_languages-empty' => empty( $all_languages ),
@@ -312,6 +314,8 @@ class BaseHeader
 
 		LegalDebug::debug( [
 			'BaseHeader' => 'search_languages',
+
+			'step' => '2',
 
 			'all_languages' => $all_languages,
 
@@ -341,6 +345,8 @@ class BaseHeader
 
 			LegalDebug::debug( [
 				'BaseHeader' => 'search_languages',
+
+				'step' => '3',
 	
 				'multisite_languages' => $multisite_languages,
 
@@ -357,11 +363,15 @@ class BaseHeader
             }
         }
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'all_languages' => count( $all_languages ),
-		// ] );
+			'step' => '4',
+
+			'all_languages' => $all_languages,
+
+			'all_languages-count' => count( $all_languages ),
+		] );
 
 		if ( !empty( $all_languages ) )
 		{
