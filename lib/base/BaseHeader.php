@@ -121,15 +121,16 @@ class BaseHeader
 
 	public static function get_favicon()
 	{
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_favicon',
+		if ( MultisiteMain::check_multisite() )
+		{
+			$domain = MultisiteBlog::get_domain();
 
-		// 	bloginfo( 'stylesheet_directory' ),
+			$domain_main_site = MultisiteBlog::get_domain_main_site( $domain );
 
-		// 	bloginfo( 'stylesheet_directory' ) . "/favicon.ico"
-		// ] );
+			$site_url = MultisiteBlog::get_siteurl( $domain_main_site );
 
-		// return bloginfo( 'stylesheet_directory' ) . "/favicon.ico"; 
+			return $site_url . "/favicon.ico";
+		}
 		
 		return LegalMain::LEGAL_ROOT . "/favicon.ico"; 
 	}
