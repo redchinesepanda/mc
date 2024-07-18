@@ -423,7 +423,7 @@ class WPMLLangSwitcher
 
             'languages-count' => count( $languages ),
             
-            'active-count' => count( $active ),
+            // 'active-count' => count( $active ),
         ] );
 
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
@@ -446,7 +446,7 @@ class WPMLLangSwitcher
             
             'avaible-count' => count( $avaible ),
 
-            'args-active' => count( $args[ 'active' ] ),
+            // 'args-active' => count( $args[ 'active' ] ),
 
             'args-languages' => count( $args[ 'languages' ] ),
         ] );
