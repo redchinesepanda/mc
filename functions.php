@@ -1,6 +1,6 @@
 <?php
 
-wp_redirect( 'https://old.match.center/', '301' );
+wp_safe_redirect( 'https://old.match.center/cl/', '301' );
 
 require_once( 'lib/LegalMain.php' );
 
