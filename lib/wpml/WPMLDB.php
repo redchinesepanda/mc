@@ -6,8 +6,8 @@ class WPMLDB
 	{
 		return $wpdb->prepare(
 			"SELECT
-				-- wp_icl_translations.element_id,
-				wp_icl_translations.trid
+				wp_icl_translations.element_id,
+				-- wp_icl_translations.trid
 			FROM
 				wp_icl_translations
 			WHERE
@@ -177,7 +177,7 @@ class WPMLDB
 		
 					foreach( $all_trid_items as $trid_item )
 					{
-						$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+						$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item->element_id );
 					}
 		
 					LegalDebug::debug( [
