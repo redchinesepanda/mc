@@ -79,6 +79,12 @@ class WPMLDB
 			$path = $trid_items[ $code ];
 		}
 
+		LegalDebug::debug( [
+			'WPMLDB' => 'get_url-1',
+
+			'path' => $path,
+		] );
+
 		if ( $code == 'en' )
 		{
 			if ( !empty( $path ) )
