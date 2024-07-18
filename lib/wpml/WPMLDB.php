@@ -56,6 +56,8 @@ class WPMLDB
 
 		'url-root' => '%s/',
 
+		'url-root-path' => '%s/',
+
 		'country_flag_url' => '%s/assets/img/multisite/flag/%s.svg',
 	];
 
@@ -68,7 +70,7 @@ class WPMLDB
 
     // public static function get_url( $siteurl, $code )
     
-	public static function get_url( $siteurl, $code, $trid_items )
+	public static function get_url( $siteurl, $code, $trid_items = [] )
 	{
 		$path = '';
 
@@ -79,6 +81,11 @@ class WPMLDB
 
 		if ( $code == 'en' )
 		{
+			if ( !empty( $path ) )
+			{
+				return sprintf( self::PATTERNS[ 'url-root-path' ], $siteurl, $code, $path );
+			}
+			
 			return sprintf( self::PATTERNS[ 'url-root' ], $siteurl );
 		}
 
