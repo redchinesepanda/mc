@@ -425,11 +425,15 @@ class WPMLLangSwitcher
             $args[ 'languages' ][] = self::map( $lang );
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'args' => $args,
-        // ] );
+            'step' => 'get-6',
+
+            'active' => count( $args[ 'active' ] ),
+
+            'languages' => count( $args[ 'languages' ] ),
+        ] );
 
         return $args;
     }
