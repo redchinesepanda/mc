@@ -91,6 +91,10 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             self::TAXONOMY[ 'category' ],
 
+            [
+                'orderby' => 'parent',
+            ]
+
             // [ 'ids', 'names' ]
         );  
 
