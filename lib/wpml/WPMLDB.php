@@ -79,11 +79,11 @@ class WPMLDB
 			$path = $trid_items[ $code ];
 		}
 
-		LegalDebug::debug( [
-			'WPMLDB' => 'get_url-1',
+		// LegalDebug::debug( [
+		// 	'WPMLDB' => 'get_url-1',
 
-			'path' => $path,
-		] );
+		// 	'path' => $path,
+		// ] );
 
 		if ( $code == 'en' )
 		{
