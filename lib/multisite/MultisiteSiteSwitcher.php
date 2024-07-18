@@ -132,7 +132,7 @@ class MultisiteSiteSwitcher
 
 	public static function get_siteurl( $siteurl )
 	{
-		return sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl );
+		return sprintf( self::PATTERNS[ 'siteurl' ], $siteurl );
 	}
 
 	public static function site_to_language( $site )
