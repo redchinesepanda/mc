@@ -420,6 +420,8 @@ class WPMLLangSwitcher
 
         $avaible = self::exclude( $languages );
 
+        $args[ 'languages' ] = [];
+
         foreach ( $avaible as $lang )
         {
             $args[ 'languages' ][] = self::map( $lang );
