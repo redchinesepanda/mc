@@ -2,22 +2,22 @@
 
 class WPMLDB
 {
-	// public static function multisite_all_trid_items_query( $wpdb, $trid )
-	// {
-	// 	return $wpdb->prepare(
-	// 		"SELECT
-	// 			-- wp_icl_translations.element_id,
-	// 			wp_icl_translations.trid
-	// 		FROM
-	// 			wp_icl_translations
-	// 		WHERE
-	// 			trid = %d
-	// 		",
-	// 		[
-	// 			$trid,
-	// 		]
-	// 	); 
-	// }
+	public static function multisite_all_trid_items_query( $wpdb, $trid )
+	{
+		return $wpdb->prepare(
+			"SELECT
+				-- wp_icl_translations.element_id,
+				wp_icl_translations.trid
+			FROM
+				wp_icl_translations
+			WHERE
+				trid = %d
+			",
+			[
+				$trid,
+			]
+		); 
+	}
 
 	public static function multisite_all_languages_query( $wpdb, $display_language_code )
     {
@@ -155,22 +155,32 @@ class WPMLDB
 		return [];
 	}
 
-    // public static function get_trid_items( $wpdb )
-	// {
-	// 	if ( MultisiteMain::check_multisite)
-	// 	$trid = WPMLTrid::get_trid();
+    public static function get_trid_items( $wpdb )
+	{
+		if ( MultisiteMain::check_multisite)
+		$trid = WPMLTrid::get_trid();
 
-    //     $all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+        $all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
 
-	// 	$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+		$all_trid_items = $wpdb->get_results( $all_trid_items_query );
 
+		$parsed_trid_items = [];
 
+		foreach( $all_trid_items as $trid_item )
+		{
+			$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+		}
 
-	// 	foreach( $all_trid_items as $trid_item )
-	// 	{
-	// 		ToolPermalink::get_post_uri( $trid_item );
-	// 	}
-	// }
+		LegalDebug::debug( [
+			'WPMLDB' => 'get_trid_items-1',
+
+            'all_trid_items' => $all_trid_items,
+
+			'parsed_trid_items' => $parsed_trid_items,
+		] );
+
+		return $parsed_trid_items;
+	}
 
     public static function multisite_all_languages()
     {
@@ -197,7 +207,7 @@ class WPMLDB
         
         $items = $wpdb->get_results( $all_languages_query );
 
-		// $trid_items = get_trid_items( $wpdb );
+		$trid_items = self::get_trid_items( $wpdb );
 
 		$languages = self::parse_languages( $items, $language_code );
 
