@@ -179,11 +179,7 @@ class WPMLDB
 
 			LegalDebug::debug( [
 				'WPMLDB' => 'get_trid_items-1',
-
-				'trid' => $trid,
-
-				'all_trid_items_query' => $all_trid_items_query,
-
+				
 				'all_trid_items-count' => count( $all_trid_items ),
 				
 				// 'all_trid_items' => $all_trid_items,
@@ -213,6 +209,18 @@ class WPMLDB
 					$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
 		
 					$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+
+					LegalDebug::debug( [
+						'WPMLDB' => 'get_trid_items-1',
+		
+						'trid' => $trid,
+		
+						'all_trid_items_query' => $all_trid_items_query,
+		
+						'all_trid_items-count' => count( $all_trid_items ),
+						
+						// 'all_trid_items' => $all_trid_items,
+					] );
 
 					return self::parse_trid_items( $all_trid_items );
 
