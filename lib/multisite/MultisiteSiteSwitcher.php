@@ -150,7 +150,7 @@ class MultisiteSiteSwitcher
 
 			'path' => $site->path,
 
-			'pattern' => sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl )
+			'pattern' => sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl ),
 
 			'site' => $site,
 		] );
