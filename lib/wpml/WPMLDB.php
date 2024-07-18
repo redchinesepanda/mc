@@ -169,7 +169,7 @@ class WPMLDB
 
 				if ( ! empty( $translation_groups ) )
 				{
-					$trid = array_shift( $translation_groups );
+					$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
 
 					$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
 		
