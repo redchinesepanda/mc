@@ -183,7 +183,12 @@ class WPMLDB
 
 						foreach( $all_trid_items as $trid_item )
 						{
-							$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item->element_id );
+							$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+							if ( !empty( $uri ) )
+							{
+								$parsed_trid_items[] = $uri;
+							}
 						}
 
 						MultisiteBlog::restore_blog();
