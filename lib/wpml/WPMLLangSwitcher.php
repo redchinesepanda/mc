@@ -309,21 +309,31 @@ class WPMLLangSwitcher
             //     $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $multisite_languages );
             // }
 
+            LegalDebug::debug( [
+                'WPMLLangSwitcher' => 'get',
+
+                'step' => 'get-3',
+                
+                'languages' => count( $languages ),
+            ] );
+
             if ( MultisiteBlog::check_main_domain() )
             {
                 $page_languages = MultisiteHreflang::prepare_languages();
 
                 $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $page_languages );
 
-                // LegalDebug::debug( [
-                //     'WPMLLangSwitcher' => 'get',
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get',
+
+                    'step' => 'get-4a',
         
-                //     'page_languages-count' => count( $page_languages ),
+                    'page_languages-count' => count( $page_languages ),
 
-                //     'languages-count' => count( $languages ),
+                    'languages-count' => count( $languages ),
 
-                //     // 'languages' => $languages,
-                // ] );
+                    // 'languages' => $languages,
+                ] );
             }
             else
             {
@@ -331,15 +341,17 @@ class WPMLLangSwitcher
 
                 $languages = $multisite_languages;
     
-                // LegalDebug::debug( [
-                //     'WPMLLangSwitcher' => 'get',
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get',
+
+                    'step' => 'get-4b',
                     
-                //     'multisite_languages-count' => count( $multisite_languages ),
+                    'multisite_languages-count' => count( $multisite_languages ),
         
-                //     // 'multisite_languages' => $multisite_languages,
+                    // 'multisite_languages' => $multisite_languages,
         
-                //     'languages' => count( $languages ),
-                // ] );
+                    'languages' => count( $languages ),
+                ] );
             }
         }
 
@@ -357,13 +369,17 @@ class WPMLLangSwitcher
         //     'translated_name' => array_column( $languages, 'translated_name' ),
         // ] );
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     // 'languages' => $languages,
+            'step' => 'get-5',
+
+            'languages-count' => count( $languages ),
+
+            // 'languages' => $languages,
             
-        //     'languages' => $languages[ 'en' ],
-        // ] );
+            // 'languages' => $languages[ 'en' ],
+        ] );
 
         // $multisite_sites_list = MultisiteSiteswitcher::get_sites_list();
 
