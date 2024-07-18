@@ -227,38 +227,33 @@ class WPMLDB
 
     public static function get_trid_items( $wpdb )
 	{
-		// $parsed_trid_items = [];
+		$post = get_post();
 
-		if ( MultisiteMain::check_multisite() )
+		if ( $post )
 		{
-			$post = get_post();
+			$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
 
-			if ( $post )
+			if ( ! empty( $translation_groups ) )
 			{
-				$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
+				$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
 
-				if ( ! empty( $translation_groups ) )
-				{
-					$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
+				$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+	
+				$all_trid_items = $wpdb->get_results( $all_trid_items_query );
 
-					$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
-		
-					$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+				// LegalDebug::debug( [
+				// 	'WPMLDB' => 'get_trid_items-1',
+	
+				// 	'trid' => $trid,
+	
+				// 	'all_trid_items_query' => $all_trid_items_query,
+	
+				// 	'all_trid_items-count' => count( $all_trid_items ),
+					
+				// 	// 'all_trid_items' => $all_trid_items,
+				// ] );
 
-					// LegalDebug::debug( [
-					// 	'WPMLDB' => 'get_trid_items-1',
-		
-					// 	'trid' => $trid,
-		
-					// 	'all_trid_items_query' => $all_trid_items_query,
-		
-					// 	'all_trid_items-count' => count( $all_trid_items ),
-						
-					// 	// 'all_trid_items' => $all_trid_items,
-					// ] );
-
-					return self::parse_trid_items( $all_trid_items );
-				}
+				return self::parse_trid_items( $all_trid_items );
 			}
 		}
 
@@ -290,7 +285,15 @@ class WPMLDB
         
         $items = $wpdb->get_results( $all_languages_query );
 
-		$trid_items = self::get_trid_items( $wpdb );
+		$trid_items = [];
+
+		if ( MultisiteMain::check_multisite() )
+		{
+			if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
+			{
+				$trid_items = self::get_trid_items( $wpdb );
+			}
+		}
 
 		// $languages = self::parse_languages( $items, $language_code );
 		
