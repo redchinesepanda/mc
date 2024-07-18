@@ -416,6 +416,14 @@ class WPMLLangSwitcher
             $args[ 'choose-your-country' ] = self::get_choose_your_country();
         }
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
+
+            'step' => 'get-6',
+            
+            'active' => count( $active ),
+        ] );
+
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
         $avaible = self::exclude( $languages );
@@ -430,11 +438,11 @@ class WPMLLangSwitcher
         LegalDebug::debug( [
             'WPMLLangSwitcher' => 'get',
 
-            'step' => 'get-6',
+            'step' => 'get-7',
 
-            'active' => count( $args[ 'active' ] ),
+            'args-active' => count( $args[ 'active' ] ),
 
-            'languages' => count( $args[ 'languages' ] ),
+            'args-languages' => count( $args[ 'languages' ] ),
             
             'avaible' => count( $avaible ),
         ] );
