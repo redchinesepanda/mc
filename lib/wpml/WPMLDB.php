@@ -177,10 +177,16 @@ class WPMLDB
 
 					if ( ! empty( $all_trid_items ) )
 					{
+						$main_blog_id = MultisiteBlog::get_main_blog_id();
+
+						MultisiteBlog::set_blog( $main_blog_id );
+
 						foreach( $all_trid_items as $trid_item )
 						{
 							$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item->element_id );
 						}
+
+						MultisiteBlog::restore_blog();
 			
 						LegalDebug::debug( [
 							'WPMLDB' => 'get_trid_items-1',
