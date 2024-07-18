@@ -123,6 +123,18 @@ class WPMLTranslationGroups
         }
     }
 
+    public static function get_translation_group_trid( $translation_groups )
+    {
+        if ( ! empty( $translation_groups ) )
+        {
+            $trid = array_shift( $translation_groups );
+
+            return str_replace( 'trid-', '', $trid );
+        }
+
+        return null;
+    }
+
     public static function get_translation_group( $post_id )
     {
         $terms_args = [
