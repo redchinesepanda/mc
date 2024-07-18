@@ -161,7 +161,7 @@ class WPMLDB
 
 		if ( MultisiteMain::check_multisite() )
 		{
-			$trid = WPMLTrid::get_trid();
+			$trid = WPMLTranslationGroups::get_translation_group();
 
 			$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
 
