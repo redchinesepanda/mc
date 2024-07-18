@@ -157,27 +157,29 @@ class WPMLDB
 
     public static function get_trid_items( $wpdb )
 	{
-		if ( MultisiteMain::check_multisite)
-		$trid = WPMLTrid::get_trid();
-
-        $all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
-
-		$all_trid_items = $wpdb->get_results( $all_trid_items_query );
-
 		$parsed_trid_items = [];
 
-		foreach( $all_trid_items as $trid_item )
+		if ( MultisiteMain::check_multisite )
 		{
-			$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+			$trid = WPMLTrid::get_trid();
+
+			$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+
+			$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+
+			foreach( $all_trid_items as $trid_item )
+			{
+				$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+			}
+
+			LegalDebug::debug( [
+				'WPMLDB' => 'get_trid_items-1',
+
+				'all_trid_items' => $all_trid_items,
+
+				'parsed_trid_items' => $parsed_trid_items,
+			] );
 		}
-
-		LegalDebug::debug( [
-			'WPMLDB' => 'get_trid_items-1',
-
-            'all_trid_items' => $all_trid_items,
-
-			'parsed_trid_items' => $parsed_trid_items,
-		] );
 
 		return $parsed_trid_items;
 	}
