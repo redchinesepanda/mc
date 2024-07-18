@@ -159,7 +159,7 @@ class WPMLDB
 	{
 		$parsed_trid_items = [];
 
-		if ( MultisiteMain::check_multisite )
+		if ( MultisiteMain::check_multisite() )
 		{
 			$trid = WPMLTrid::get_trid();
 
