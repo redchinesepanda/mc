@@ -292,7 +292,9 @@ class WPMLDB
 
 		$trid_items = self::get_trid_items( $wpdb );
 
-		$languages = self::parse_languages( $items, $language_code );
+		// $languages = self::parse_languages( $items, $language_code );
+		
+		$languages = self::parse_languages( $items, $language_code, $trid_items );
 
         // LegalDebug::debug( [
         //     'WPMLDB' => 'multisite_all_languages',
