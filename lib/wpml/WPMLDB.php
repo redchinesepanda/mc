@@ -7,8 +7,7 @@ class WPMLDB
 		return $wpdb->prepare(
 			"SELECT
 				wp_icl_translations.element_id,
-				wp_icl_translations.language_code,
-				wp_icl_translations.source_language_code
+				wp_icl_translations.language_code
 			FROM
 				wp_icl_translations
 			WHERE
@@ -188,7 +187,7 @@ class WPMLDB
 
 							if ( !empty( $uri ) )
 							{
-								$parsed_trid_items[] = $uri;
+								$parsed_trid_items[ $trid_item->language_code ] = $uri;
 							}
 						}
 
