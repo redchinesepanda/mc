@@ -176,7 +176,9 @@ class WPMLLangSwitcher
 
     public static function exclude( $languages )
     {
-        return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
+        // return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE );
+        
+        return WPMLMain::exclude( $languages, WPMLMain::EXCLUDE_SERVICE );
     }
 
     public static function get_not_found()
