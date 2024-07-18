@@ -155,9 +155,48 @@ class WPMLDB
 		return [];
 	}
 
-    public static function get_trid_items( $wpdb )
+    public static function parse_trid_items( $all_trid_items )
 	{
 		$parsed_trid_items = [];
+
+		if ( ! empty( $all_trid_items ) )
+		{
+			$main_blog_id = MultisiteBlog::get_main_blog_id();
+
+			MultisiteBlog::set_blog( $main_blog_id );
+
+			foreach( $all_trid_items as $trid_item )
+			{
+				$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+				if ( !empty( $uri ) )
+				{
+					$parsed_trid_items[ $trid_item->language_code ] = $uri;
+				}
+			}
+
+			MultisiteBlog::restore_blog();
+
+			LegalDebug::debug( [
+				'WPMLDB' => 'get_trid_items-1',
+
+				'trid' => $trid,
+
+				'all_trid_items_query' => $all_trid_items_query,
+
+				'all_trid_items-count' => count( $all_trid_items ),
+				
+				// 'all_trid_items' => $all_trid_items,
+
+				'parsed_trid_items' => $parsed_trid_items,
+			] );
+		}
+		return $parsed_trid_items;
+	}
+
+    public static function get_trid_items( $wpdb )
+	{
+		// $parsed_trid_items = [];
 
 		if ( MultisiteMain::check_multisite() )
 		{
@@ -175,42 +214,45 @@ class WPMLDB
 		
 					$all_trid_items = $wpdb->get_results( $all_trid_items_query );
 
-					if ( ! empty( $all_trid_items ) )
-					{
-						$main_blog_id = MultisiteBlog::get_main_blog_id();
+					return self::parse_trid_items( $all_trid_items );
 
-						MultisiteBlog::set_blog( $main_blog_id );
+					// if ( ! empty( $all_trid_items ) )
+					// {
+					// 	$main_blog_id = MultisiteBlog::get_main_blog_id();
 
-						foreach( $all_trid_items as $trid_item )
-						{
-							$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+					// 	MultisiteBlog::set_blog( $main_blog_id );
 
-							if ( !empty( $uri ) )
-							{
-								$parsed_trid_items[ $trid_item->language_code ] = $uri;
-							}
-						}
+					// 	foreach( $all_trid_items as $trid_item )
+					// 	{
+					// 		$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
 
-						MultisiteBlog::restore_blog();
+					// 		if ( !empty( $uri ) )
+					// 		{
+					// 			$parsed_trid_items[ $trid_item->language_code ] = $uri;
+					// 		}
+					// 	}
+
+					// 	MultisiteBlog::restore_blog();
 			
-						LegalDebug::debug( [
-							'WPMLDB' => 'get_trid_items-1',
+					// 	LegalDebug::debug( [
+					// 		'WPMLDB' => 'get_trid_items-1',
 			
-							'trid' => $trid,
+					// 		'trid' => $trid,
 			
-							'all_trid_items_query' => $all_trid_items_query,
+					// 		'all_trid_items_query' => $all_trid_items_query,
 			
-							'all_trid_items-count' => count( $all_trid_items ),
+					// 		'all_trid_items-count' => count( $all_trid_items ),
 							
-							'all_trid_items' => $all_trid_items,
+					// 		// 'all_trid_items' => $all_trid_items,
 			
-							'parsed_trid_items' => $parsed_trid_items,
-						] );}
+					// 		'parsed_trid_items' => $parsed_trid_items,
+					// 	] );
+					// }
 				}
 			}
 		}
 
-		return $parsed_trid_items;
+		return [];
 	}
 
     public static function multisite_all_languages()
