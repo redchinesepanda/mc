@@ -2,6 +2,10 @@
 
 class MultisiteSiteSwitcher 
 {
+	const PATTERNS = [
+		'siteurl' => '%s/',
+	];
+
 	public static function register_functions_debug()
 	{
 		// LegalDebug::debug( [
@@ -145,6 +149,8 @@ class MultisiteSiteSwitcher
 			'siteurl' => $site->siteurl,
 
 			'path' => $site->path,
+
+			'pattern' => sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl )
 
 			'site' => $site,
 		] );
