@@ -16,15 +16,15 @@ class ToolPermalink
         
         // add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
 
-        if ( MultisiteMain::check_multisite() )
-        {
-            if ( MultisiteBlog::check_not_main_blog() )
-            {
-                $handler = new self();
+        // if ( MultisiteMain::check_multisite() )
+        // {
+        //     if ( MultisiteBlog::check_not_main_blog() )
+        //     {
+        //         $handler = new self();
 
-                add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
-            }
-        }
+        //         add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
+        //     }
+        // }
     }
 
     public static function check_post_uri_empty( $post_id )
