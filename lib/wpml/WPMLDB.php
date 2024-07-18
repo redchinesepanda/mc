@@ -6,7 +6,7 @@ class WPMLDB
 	{
 		return $wpdb->prepare(
 			"SELECT
-				wp_icl_translations.element_id,
+				wp_icl_translations.element_id
 				-- wp_icl_translations.trid
 			FROM
 				wp_icl_translations
