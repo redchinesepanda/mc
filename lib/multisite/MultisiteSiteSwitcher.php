@@ -144,6 +144,8 @@ class MultisiteSiteSwitcher
 
 			'siteurl' => $site->siteurl,
 
+			'path' => $site->path,
+
 			'site' => $site,
 		] );
 
