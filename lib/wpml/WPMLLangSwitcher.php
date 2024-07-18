@@ -435,6 +435,8 @@ class WPMLLangSwitcher
             'active' => count( $args[ 'active' ] ),
 
             'languages' => count( $args[ 'languages' ] ),
+            
+            'avaible' => count( $avaible ),
         ] );
 
         return $args;
