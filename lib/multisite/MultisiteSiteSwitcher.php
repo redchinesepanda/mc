@@ -130,6 +130,11 @@ class MultisiteSiteSwitcher
 		return $site->blogname;
 	}
 
+	public static function get_siteurl( $siteurl )
+	{
+		return sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl );
+	}
+
 	public static function site_to_language( $site )
 	{
 		$blog_language = MultisiteBlog::get_blog_option( $site->blog_id, MultisiteSiteOptions::OPTIONS[ 'blog-language' ] );
@@ -143,17 +148,17 @@ class MultisiteSiteSwitcher
 			$active = 1;
 		}
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'site_to_language-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'site_to_language-1',
 
-			'siteurl' => $site->siteurl,
+		// 	'siteurl' => $site->siteurl,
 
-			'path' => $site->path,
+		// 	'path' => $site->path,
 
-			'pattern' => sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl ),
+		// 	'pattern' => sprintf( self::PATTERNS[ 'siteurl' ], $site->siteurl ),
 
-			'site' => $site,
-		] );
+		// 	'site' => $site,
+		// ] );
 
 		return [
 			'id' => $site->blog_id,
@@ -164,7 +169,9 @@ class MultisiteSiteSwitcher
 
 			'translated_name' => $site->blogname,
 
-			'url' => $site->siteurl,
+			// 'url' => $site->siteurl,
+			
+			'url' => self::get_siteurl( $site->siteurl ),
 
 			'code' => $blog_language,
 
