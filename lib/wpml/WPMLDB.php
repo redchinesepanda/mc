@@ -6,8 +6,9 @@ class WPMLDB
 	{
 		return $wpdb->prepare(
 			"SELECT
-				wp_icl_translations.element_id
-				-- wp_icl_translations.trid
+				wp_icl_translations.element_id,
+				wp_icl_translations.language_code,
+				wp_icl_translations.source_language_code
 			FROM
 				wp_icl_translations
 			WHERE
@@ -201,6 +202,8 @@ class WPMLDB
 							'all_trid_items_query' => $all_trid_items_query,
 			
 							'all_trid_items-count' => count( $all_trid_items ),
+							
+							'all_trid_items' => $all_trid_items,
 			
 							'parsed_trid_items' => $parsed_trid_items,
 						] );}
