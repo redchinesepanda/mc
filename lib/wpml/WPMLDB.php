@@ -175,6 +175,10 @@ class WPMLDB
 			LegalDebug::debug( [
 				'WPMLDB' => 'get_trid_items-1',
 
+				'trid' => $trid,
+
+				'all_trid_items_query' => $all_trid_items_query,
+
 				'all_trid_items' => $all_trid_items,
 
 				'parsed_trid_items' => $parsed_trid_items,
