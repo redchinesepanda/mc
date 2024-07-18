@@ -184,6 +184,8 @@ class WPMLDB
 				
 				// 'all_trid_items' => $all_trid_items,
 
+				'parsed_trid_items-count' => count( $parsed_trid_items ),
+
 				'parsed_trid_items' => $parsed_trid_items,
 			] );
 		}
