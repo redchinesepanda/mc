@@ -163,28 +163,36 @@ class WPMLDB
 		{
 			$post = get_post();
 
-			$trid = WPMLTranslationGroups::get_translation_group( $post->ID );
-
-			$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
-
-			$all_trid_items = $wpdb->get_results( $all_trid_items_query );
-
-			foreach( $all_trid_items as $trid_item )
+			if ( $post )
 			{
-				$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+				$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
+
+				if ( ! empty( $translation_groups ) )
+				{
+					$trid = array_shift( $translation_groups );
+
+					$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+		
+					$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+		
+					foreach( $all_trid_items as $trid_item )
+					{
+						$parsed_trid_items[] = ToolPermalink::get_post_uri( $trid_item );
+					}
+		
+					LegalDebug::debug( [
+						'WPMLDB' => 'get_trid_items-1',
+		
+						'trid' => $trid,
+		
+						'all_trid_items_query' => $all_trid_items_query,
+		
+						'all_trid_items' => $all_trid_items,
+		
+						'parsed_trid_items' => $parsed_trid_items,
+					] );
+				}
 			}
-
-			LegalDebug::debug( [
-				'WPMLDB' => 'get_trid_items-1',
-
-				'trid' => $trid,
-
-				'all_trid_items_query' => $all_trid_items_query,
-
-				'all_trid_items' => $all_trid_items,
-
-				'parsed_trid_items' => $parsed_trid_items,
-			] );
 		}
 
 		return $parsed_trid_items;
