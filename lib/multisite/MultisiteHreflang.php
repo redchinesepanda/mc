@@ -185,11 +185,11 @@ class MultisiteHreflang
 
 			$post_uri = self::get_post_uri( $post );
 
-			LegalDebug::debug( [
-				'MultisiteHreflang' => 'get_group_items-1',
+			// LegalDebug::debug( [
+			// 	'MultisiteHreflang' => 'get_group_items-1',
 
-				'post_uri' => $post_uri,
-			] );
+			// 	'post_uri' => $post_uri,
+			// ] );
 
 			$language_code = WPMLMain::get_language_code( $post->ID );
 
