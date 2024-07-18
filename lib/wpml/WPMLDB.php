@@ -159,11 +159,11 @@ class WPMLDB
 				// 	$active = 1;
 				// }
 
-				LegalDebug::debug( [
-					'WPMLDB' => 'parse_languages-1',
+				// LegalDebug::debug( [
+				// 	'WPMLDB' => 'parse_languages-1',
 
-					'url' => self::get_url( $siteurl, $item->code, $trid_items ),
-				] );
+				// 	'url' => self::get_url( $siteurl, $item->code, $trid_items ),
+				// ] );
 
 				$languages[ $item->code ] = [
 					'code' => $item->code,
