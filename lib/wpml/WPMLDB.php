@@ -335,10 +335,22 @@ class WPMLDB
     public static function parse_trid_items( $all_trid_items )
 	{
 		$parsed_trid_items = [];
+		
+		LegalDebug::debug( [
+			'WPMLDB' => 'pasre_trid_items-1',
+
+			'all_trid_items' => $all_trid_items,
+		] );
 
 		if ( ! empty( $all_trid_items ) )
 		{
 			self::set_post_uri( $all_trid_items );
+
+			LegalDebug::debug( [
+				'WPMLDB' => 'pasre_trid_items-2',
+	
+				'all_trid_items' => $all_trid_items,
+			] );
 
 			foreach( $all_trid_items as $trid_item )
 			{
@@ -395,13 +407,13 @@ class WPMLDB
 		
 					$trid_items_db = $wpdb->get_results( $trid_items_db_query );
 
-					LegalDebug::debug( [
-						'WPMLDB' => 'get_trid_items_db-1',
+					// LegalDebug::debug( [
+					// 	'WPMLDB' => 'get_trid_items_db-1',
 
-						'trid_items_db_query' => $trid_items_db_query,
+					// 	'trid_items_db_query' => $trid_items_db_query,
 
-						'trid_items_db' => $trid_items_db,
-					] );
+					// 	'trid_items_db' => $trid_items_db,
+					// ] );
 
 					if ( ! empty( $trid_items_db ) )
 					{
