@@ -241,6 +241,12 @@ class WPMLDB
 
 			$not_page_on_front = self::check_not_page_on_front();
 
+			LegalDebug::debug( [
+				'WPMLDB' => 'set_post_uri-1',
+
+				'not_page_on_front' => $not_page_on_front,				
+			] );
+
 			foreach( $all_trid_items as $key => $trid_item )
 			{
 				// $uri = ToolPermalink::get_post_uri( $trid_item->element_id );
