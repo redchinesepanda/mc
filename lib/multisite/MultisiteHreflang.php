@@ -396,6 +396,10 @@ class MultisiteHreflang
 		{
 			$group_items_all = self::get_group_items_all( $post->ID );
 
+			global $wpdb;
+
+			$trid_items_db = WPMLDB::get_trid_items_db( $wpdb );
+
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'prepare_languages-1',
 
