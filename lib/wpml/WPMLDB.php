@@ -220,6 +220,14 @@ class WPMLDB
 
 		if ( $post )
 		{
+			LegalDebuhg::debug( [
+				'post' => $post,
+
+				'ID' => $post->ID,
+
+				'page_on_front' => get_option( 'page_on_front' ),
+			] );
+
 			if ( $post->ID == get_option( 'page_on_front' ) )
 			{
 				return true;
