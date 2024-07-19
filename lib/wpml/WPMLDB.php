@@ -17,7 +17,7 @@ class WPMLDB
 			"SELECT
 				wp_icl_translations.element_id,
 				wp_icl_translations.language_code,
-				wp_icl_languages.default_locale AS locale
+				wp_icl_languages.default_locale
 			FROM
 				wp_icl_translations
 			LEFT JOIN
