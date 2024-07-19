@@ -350,24 +350,35 @@ class MultisiteHreflang
 
 			if ( $post = get_post() )
 			{
-				$items = self::get_group_items_all( $post->ID );
+				$group_items_all = self::get_group_items_all( $post->ID );
+
+				if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
+				{
+					$wpml_hreflang = WPMLDB::get_hreflang();
+
+					$group_items_all = array_merge( $wpml_hreflang, $group_items_all );
+		
+					LegalDebug::debug( [
+						'MultisiteHreflang' => 'prepare_hreflang',
+		
+						'items' => $items,
+		
+						'wpml_hreflang-count' => count( $wpml_hreflang ),
+
+						// 'wpml_hreflang' => $wpml_hreflang,
+
+						'group_items_all-count' => count( $group_items_all ),
+
+						// 'group_items_all' => $group_items_all,
+					] );
+				}
 
 				$args = [
-					'items' => self::parse_hreflang( $items ),
+					'items' => self::parse_hreflang( $group_items_all ),
 				];
 			}
 
-			$wpml_hreflang = WPMLDB::get_hreflang();
-
-			LegalDebug::debug( [
-				'MultisiteHreflang' => 'prepare_hreflang',
-
-				'items' => $items,
-
-				'args' => $args,
-
-				'wpml_hreflang' => $wpml_hreflang,
-			] );
+			
 
 			return self::render_hreflang( $args );
 		}
