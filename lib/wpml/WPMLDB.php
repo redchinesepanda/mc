@@ -92,7 +92,7 @@ class WPMLDB
 			return $trid_items[ $code ];
 		}
 
-		return implode( '/', [ $siteurl, $code ] );
+		return implode( '/', [ $siteurl, $code, '' ] );
 
 		// $path = '';
 
