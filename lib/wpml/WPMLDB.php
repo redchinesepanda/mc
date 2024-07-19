@@ -13,7 +13,7 @@ class WPMLDB
 			// WHERE
 			// 	trid = %d
 			// ",
-			
+
 			"SELECT
 				wp_icl_translations.element_id,
 				wp_icl_translations.language_code,
@@ -263,6 +263,14 @@ class WPMLDB
 					$trid_items_db_query = self::multisite_trid_items_db_query( $wpdb, $trid );
 		
 					$trid_items_db = $wpdb->get_results( $trid_items_db_query );
+
+					LegalDebug::debug( [
+						'WPMLDB' => 'get_trid_items_db-1',
+
+						'trid_items_db_query' => $trid_items_db_query,
+
+						'trid_items_db' => $trid_items_db,
+					] );
 
 					if ( ! empty( $trid_items_db ) )
 					{
