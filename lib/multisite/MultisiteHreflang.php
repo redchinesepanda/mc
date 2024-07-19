@@ -352,6 +352,14 @@ class MultisiteHreflang
 			{
 				$group_items_all = self::get_group_items_all( $post->ID );
 
+				LegalDebug::debug( [
+					'MultisiteHreflang' => 'prepare_hreflang-1',
+
+					'group_items_all-count' => count( $group_items_all ),
+
+					// 'group_items_all' => $group_items_all,
+				] );
+
 				if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
 				{
 					$wpml_hreflang = WPMLDB::get_hreflang();
@@ -359,7 +367,7 @@ class MultisiteHreflang
 					$group_items_all = array_merge( $wpml_hreflang, $group_items_all );
 		
 					LegalDebug::debug( [
-						'MultisiteHreflang' => 'prepare_hreflang',
+						'MultisiteHreflang' => 'prepare_hreflang-2',
 		
 						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
