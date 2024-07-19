@@ -209,6 +209,75 @@ class WPMLDB
 		return [];
 	}
 
+    public static function set_post_uri( &$all_trid_items )
+	{
+		if ( ! empty( $all_trid_items ) )
+		{
+			$main_blog_id = MultisiteBlog::get_main_blog_id();
+
+			MultisiteBlog::set_blog( $main_blog_id );
+
+			foreach( $all_trid_items as $key => $trid_item )
+			{
+				$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+				if ( !empty( $uri ) )
+				{
+					$all_trid_items[ $key ]->post_uri = $uri;
+				}
+			}
+
+			MultisiteBlog::restore_blog();
+
+			// LegalDebug::debug( [
+			// 	'WPMLDB' => 'get_trid_items-1',
+				
+			// 	'all_trid_items-count' => count( $all_trid_items ),
+				
+			// 	// 'all_trid_items' => $all_trid_items,
+
+			// 	'parsed_trid_items-count' => count( $parsed_trid_items ),
+
+			// 	'parsed_trid_items' => $parsed_trid_items,
+			// ] );
+		}
+		
+		return [];
+	}
+
+    public static function parse_hreflang_items( $all_trid_items )
+	{
+		$parsed_trid_items = [];
+
+		if ( ! empty( $all_trid_items ) )
+		{
+			self::set_post_uri( &$all_trid_items );
+		
+			foreach( $all_trid_items as $trid_item )
+			{
+				$parsed_trid_items[] = [
+					'hreflang' => $trid_item->default_locale,
+
+					'href' => $trid_item->post_uri,
+				];
+			}
+
+			// LegalDebug::debug( [
+			// 	'WPMLDB' => 'get_trid_items-1',
+				
+			// 	'all_trid_items-count' => count( $all_trid_items ),
+				
+			// 	// 'all_trid_items' => $all_trid_items,
+
+			// 	'parsed_trid_items-count' => count( $parsed_trid_items ),
+
+			// 	'parsed_trid_items' => $parsed_trid_items,
+			// ] );
+		}
+		
+		return $parsed_trid_items;
+	}
+
     public static function parse_trid_items( $all_trid_items )
 	{
 		$parsed_trid_items = [];
@@ -243,6 +312,7 @@ class WPMLDB
 			// 	'parsed_trid_items' => $parsed_trid_items,
 			// ] );
 		}
+
 		return $parsed_trid_items;
 	}
 
@@ -283,6 +353,18 @@ class WPMLDB
 		return [];
 	}
 
+	public static function get_hreflang( $wpdb )
+	{
+		$trid_items_db = self::get_trid_items_db( $wpdb );
+
+		if ( ! empty( $trid_items_db ) )
+		{
+			return self::parse_hreflang_items( $trid_items_db );
+		}
+
+		return [];
+	}
+
     public static function get_trid_items( $wpdb )
 	{
 		$trid_items_db = self::get_trid_items_db( $wpdb );
@@ -293,41 +375,6 @@ class WPMLDB
 		}
 
 		return [];
-
-		// $post = get_post();
-
-		// if ( $post )
-		// {
-		// 	if ( $post->ID != get_option( 'page_on_front' ) )
-		// 	{
-		// 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
-	
-		// 		if ( ! empty( $translation_groups ) )
-		// 		{
-		// 			$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
-	
-		// 			$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
-		
-		// 			$all_trid_items = $wpdb->get_results( $all_trid_items_query );
-	
-		// 			// LegalDebug::debug( [
-		// 			// 	'WPMLDB' => 'get_trid_items-1',
-		
-		// 			// 	'trid' => $trid,
-		
-		// 			// 	'all_trid_items_query' => $all_trid_items_query,
-		
-		// 			// 	'all_trid_items-count' => count( $all_trid_items ),
-						
-		// 			// 	// 'all_trid_items' => $all_trid_items,
-		// 			// ] );
-	
-		// 			return self::parse_trid_items( $all_trid_items );
-		// 		}
-		// 	}
-		// }
-
-		// return [];
 	}
 
     public static function multisite_all_languages()
