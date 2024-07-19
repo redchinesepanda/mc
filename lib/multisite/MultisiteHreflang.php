@@ -361,8 +361,6 @@ class MultisiteHreflang
 					LegalDebug::debug( [
 						'MultisiteHreflang' => 'prepare_hreflang',
 		
-						'items' => $items,
-		
 						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
 						// 'wpml_hreflang' => $wpml_hreflang,
