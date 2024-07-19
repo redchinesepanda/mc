@@ -442,8 +442,10 @@ class WPMLDB
 		return [];
 	}
 
-    public static function get_trid_items( $wpdb )
+    public static function get_trid_items()
 	{
+		global $wpdb;
+
 		$trid_items_db = self::get_trid_items_db( $wpdb );
 
 		if ( ! empty( $trid_items_db ) )
@@ -454,6 +456,17 @@ class WPMLDB
 		return [];
 	}
 
+    public static function get_all_languages_db( $language_code )
+	{
+		global $wpdb;
+
+		// $language_code = WPMLMain::current_language();
+
+		$all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
+
+		return $wpdb->get_results( $all_languages_query );
+	}
+
     public static function multisite_all_languages()
     {
 		if ( MultisiteBlog::check_not_main_domain() )
@@ -461,13 +474,13 @@ class WPMLDB
 			return [];
 		}
 
-        global $wpdb;
+        // global $wpdb;
 
         // $language_code = MultisiteSiteOptions::get_blog_language();
         
 		$language_code = WPMLMain::current_language();
 
-        $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
+        // $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
 		// LegalDebug::debug( [
         //     'WPMLDB' => 'multisite_all_languages',
@@ -477,7 +490,9 @@ class WPMLDB
         //     'all_languages_query' => $all_languages_query,
         // ] );
         
-        $items = $wpdb->get_results( $all_languages_query );
+        // $items = $wpdb->get_results( $all_languages_query );
+        
+		$items = self::get_all_languages_db( $language_code );
 
 		$trid_items = [];
 
@@ -485,7 +500,7 @@ class WPMLDB
 		{
 			if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
 			{
-				$trid_items = self::get_trid_items( $wpdb );
+				$trid_items = self::get_trid_items();
 			}
 		}
 
@@ -493,11 +508,17 @@ class WPMLDB
 		
 		$languages = self::parse_languages( $items, $language_code, $trid_items );
 
-        // LegalDebug::debug( [
-        //     'WPMLDB' => 'multisite_all_languages',
+        LegalDebug::debug( [
+            'WPMLDB' => 'multisite_all_languages-99',
 
-        //     'languages' => $languages,
-        // ] );
+			'items'=> $items,
+
+			'language_code' => $language_code,
+
+			'trid_items' => $trid_items,
+
+            'languages' => $languages,
+        ] );
 
 		return $languages;
     }
