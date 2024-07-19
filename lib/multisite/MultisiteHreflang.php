@@ -352,6 +352,8 @@ class MultisiteHreflang
 			{
 				$group_items_all = self::get_group_items_all( $post->ID );
 
+				$hreflang_items = self::parse_hreflang( $group_items_all );
+
 				LegalDebug::debug( [
 					'MultisiteHreflang' => 'prepare_hreflang-1',
 
@@ -374,7 +376,7 @@ class MultisiteHreflang
 
 					// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
 					
-					$group_items_all = array_replace_recursive( $wpml_hreflang, $group_items_all );
+					$hreflang_items = array_replace_recursive( $wpml_hreflang, $hreflang_items );
 		
 					LegalDebug::debug( [
 						'MultisiteHreflang' => 'prepare_hreflang-3',
@@ -383,14 +385,14 @@ class MultisiteHreflang
 
 						// 'wpml_hreflang' => $wpml_hreflang,
 
-						'group_items_all-count' => count( $group_items_all ),
+						'hreflang_items-count' => count( $hreflang_items ),
 
-						// 'group_items_all' => $group_items_all,
+						// 'hreflang_items' => $hreflang_items,
 					] );
 				}
 
 				$args = [
-					'items' => self::parse_hreflang( $group_items_all ),
+					'items' => $hreflang_items,
 				];
 			}
 
