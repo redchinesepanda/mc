@@ -2,7 +2,7 @@
 
 class WPMLDB
 {
-	public static function multisite_all_trid_items_query( $wpdb, $trid )
+	public static function multisite_trid_items_db_query( $wpdb, $trid )
 	{
 		return $wpdb->prepare(
 			"SELECT
@@ -231,7 +231,7 @@ class WPMLDB
 		return $parsed_trid_items;
 	}
 
-    public static function get_trid_items( $wpdb )
+    public static function get_trid_items_db( $wpdb )
 	{
 		$post = get_post();
 
@@ -245,28 +245,66 @@ class WPMLDB
 				{
 					$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
 	
-					$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+					$trid_items_db_query = self::multisite_trid_items_db_query( $wpdb, $trid );
 		
-					$all_trid_items = $wpdb->get_results( $all_trid_items_query );
-	
-					// LegalDebug::debug( [
-					// 	'WPMLDB' => 'get_trid_items-1',
-		
-					// 	'trid' => $trid,
-		
-					// 	'all_trid_items_query' => $all_trid_items_query,
-		
-					// 	'all_trid_items-count' => count( $all_trid_items ),
-						
-					// 	// 'all_trid_items' => $all_trid_items,
-					// ] );
-	
-					return self::parse_trid_items( $all_trid_items );
+					$trid_items_db = $wpdb->get_results( $trid_items_db_query );
+
+					if ( ! empty( $trid_items_db ) )
+					{
+						return $trid_items_db;
+					}
 				}
 			}
 		}
 
 		return [];
+	}
+
+    public static function get_trid_items( $wpdb )
+	{
+		$trid_items_db = self::get_trid_items_db( $wpdb );
+
+		if ( ! empty( $trid_items_db ) )
+		{
+			return self::parse_trid_items( $trid_items_db );
+		}
+
+		return [];
+
+		// $post = get_post();
+
+		// if ( $post )
+		// {
+		// 	if ( $post->ID != get_option( 'page_on_front' ) )
+		// 	{
+		// 		$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
+	
+		// 		if ( ! empty( $translation_groups ) )
+		// 		{
+		// 			$trid = WPMLTranslationGroups::get_translation_group_trid( $translation_groups );
+	
+		// 			$all_trid_items_query = self::multisite_all_trid_items_query( $wpdb, $trid );
+		
+		// 			$all_trid_items = $wpdb->get_results( $all_trid_items_query );
+	
+		// 			// LegalDebug::debug( [
+		// 			// 	'WPMLDB' => 'get_trid_items-1',
+		
+		// 			// 	'trid' => $trid,
+		
+		// 			// 	'all_trid_items_query' => $all_trid_items_query,
+		
+		// 			// 	'all_trid_items-count' => count( $all_trid_items ),
+						
+		// 			// 	// 'all_trid_items' => $all_trid_items,
+		// 			// ] );
+	
+		// 			return self::parse_trid_items( $all_trid_items );
+		// 		}
+		// 	}
+		// }
+
+		// return [];
 	}
 
     public static function multisite_all_languages()
