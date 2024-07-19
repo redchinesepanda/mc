@@ -379,10 +379,10 @@ class WPMLDB
 
     public static function get_trid_items_db( $wpdb )
 	{
-		// $post = get_post();
+		$post = get_post();
 
-		// if ( $post )
-		// {
+		if ( $post )
+		{
 		// 	if ( $post->ID != get_option( 'page_on_front' ) )
 		// 	{
 				$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
@@ -409,7 +409,7 @@ class WPMLDB
 					}
 				}
 		// 	}
-		// }
+		}
 
 		return [];
 	}
