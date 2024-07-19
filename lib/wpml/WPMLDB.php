@@ -221,7 +221,7 @@ class WPMLDB
 			{
 				// $uri = ToolPermalink::get_post_uri( $trid_item->element_id );
 
-				$uri = get_permalink( $trid_item->element_id );
+				$uri = get_post_permalink( $trid_item->element_id );
 
 				if ( !empty( $uri ) )
 				{
