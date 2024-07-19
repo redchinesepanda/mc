@@ -515,17 +515,17 @@ class WPMLDB
 		
 		$languages = self::parse_languages( $items, $language_code, $trid_items );
 
-        LegalDebug::debug( [
-            'WPMLDB' => 'multisite_all_languages-99',
+        // LegalDebug::debug( [
+        //     'WPMLDB' => 'multisite_all_languages-99',
 
-			'items'=> $items,
+		// 	'items'=> $items,
 
-			'language_code' => $language_code,
+		// 	'language_code' => $language_code,
 
-			'trid_items' => $trid_items,
+		// 	'trid_items' => $trid_items,
 
-            'languages' => $languages,
-        ] );
+        //     'languages' => $languages,
+        // ] );
 
 		return $languages;
     }
