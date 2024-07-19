@@ -357,10 +357,18 @@ class MultisiteHreflang
 				];
 			}
 
+			global $wpdb;
+
+			$trid_items_db = WPMLDB::get_trid_items_db( $wpdb );
+
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'prepare_hreflang',
 
+				'items' => $items,
+
 				'args' => $args,
+
+				'trid_items_db' => $trid_items_db,
 			] );
 
 			return self::render_hreflang( $args );
@@ -372,8 +380,6 @@ class MultisiteHreflang
 	public static function parse_languages( $items )
 	{
 		$languages = [];
-
-		// foreach ( $items as $locale => $item )
 		
 		foreach ( $items as $item )
 		{
@@ -402,25 +408,21 @@ class MultisiteHreflang
 		{
 			$group_items_all = self::get_group_items_all( $post->ID );
 
-			global $wpdb;
+			// LegalDebug::debug( [
+			// 	'MultisiteHreflang' => 'prepare_languages-1',
 
-			$trid_items_db = WPMLDB::get_trid_items_db( $wpdb );
+			// 	'group_items_all' => $group_items_all,
 
-			LegalDebug::debug( [
-				'MultisiteHreflang' => 'prepare_languages-1',
-
-				'group_items_all' => $group_items_all,
-
-				'trid_items_db' => $trid_items_db,
-			] );
+			// 	'trid_items_db' => $trid_items_db,
+			// ] );
 
 			$languages = self::parse_languages( $group_items_all );
 
-			LegalDebug::debug( [
-				'MultisiteHreflang' => 'prepare_languages',
+			// LegalDebug::debug( [
+			// 	'MultisiteHreflang' => 'prepare_languages',
 
-				'languages' => $languages,
-			] );
+			// 	'languages' => $languages,
+			// ] );
 
 			return $languages;
 		}
