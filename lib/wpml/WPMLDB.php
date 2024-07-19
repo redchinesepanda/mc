@@ -87,35 +87,42 @@ class WPMLDB
     
 	public static function get_url( $siteurl, $code, $trid_items = [] )
 	{
-		$path = '';
-
 		if ( ! empty( $trid_items[ $code ] ) )
 		{
-			$path = $trid_items[ $code ];
+			return $trid_items[ $code ];
 		}
 
-		// LegalDebug::debug( [
-		// 	'WPMLDB' => 'get_url-1',
+		return '';
 
-		// 	'path' => $path,
-		// ] );
+		// $path = '';
 
-		if ( $code == 'en' )
-		{
-			if ( !empty( $path ) )
-			{
-				return sprintf( self::PATTERNS[ 'url-root-path' ], $siteurl, $code, $path );
-			}
+		// if ( ! empty( $trid_items[ $code ] ) )
+		// {
+		// 	$path = $trid_items[ $code ];
+		// }
+
+		// // LegalDebug::debug( [
+		// // 	'WPMLDB' => 'get_url-1',
+
+		// // 	'path' => $path,
+		// // ] );
+
+		// if ( $code == 'en' )
+		// {
+		// 	if ( !empty( $path ) )
+		// 	{
+		// 		return sprintf( self::PATTERNS[ 'url-root-path' ], $siteurl, $code, $path );
+		// 	}
 			
-			return sprintf( self::PATTERNS[ 'url-root' ], $siteurl );
-		}
+		// 	return sprintf( self::PATTERNS[ 'url-root' ], $siteurl );
+		// }
 
-		if ( !empty( $path ) )
-		{
-			return sprintf( self::PATTERNS[ 'url-path' ], $siteurl, $code, $path );
-		}
+		// if ( !empty( $path ) )
+		// {
+		// 	return sprintf( self::PATTERNS[ 'url-path' ], $siteurl, $code, $path );
+		// }
 
-		return sprintf( self::PATTERNS[ 'url' ], $siteurl, $code );
+		// return sprintf( self::PATTERNS[ 'url' ], $siteurl, $code );
 	}
 
     public static function get_active( $language_code, $item_code )
