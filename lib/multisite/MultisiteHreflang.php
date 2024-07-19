@@ -357,6 +357,12 @@ class MultisiteHreflang
 				];
 			}
 
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'prepare_hreflang',
+
+				'args' => $args,
+			] );
+
 			return self::render_hreflang( $args );
 		}
 
