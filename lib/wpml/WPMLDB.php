@@ -220,7 +220,7 @@ class WPMLDB
 
 		if ( $post )
 		{
-			LegalDebuhg::debug( [
+			LegalDebug::debug( [
 				'post' => $post,
 
 				'ID' => $post->ID,
