@@ -392,37 +392,20 @@ class MultisiteHreflang
 
 	public static function prepare_languages()
 	{
-		// $languages = [];
+		if ( $post = get_post() )
+		{
+			$group_items_all = self::get_group_items_all( $post->ID );
 
-		// if ( MultisiteMain::check_multisite() )
-        // {
-			// $args = [];
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'prepare_languages-1',
 
-			if ( $post = get_post() )
-			{
-				$group_items_all = self::get_group_items_all( $post->ID );
+				'group_items_all' => $group_items_all,
+			] );
 
-				// $args = [
-				// 	'items' => self::parse_languages( $group_items_all ),
-				// ];
+			$languages = self::parse_languages( $group_items_all );
 
-				// LegalDebug::debug( [
-				// 	'MultisiteHreflang' => 'prepare_languages',
-
-				// 	'group_items_all' => $group_items_all,
-				// ] );
-
-				$languages = self::parse_languages( $group_items_all );
-
-				return $languages;
-			}
-
-			// return self::render_hreflang( $args );
-		// }
-
-		// return '';
-
-		// return $languages;
+			return $languages;
+		}
 
 		return [];
     }
