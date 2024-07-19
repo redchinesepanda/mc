@@ -220,13 +220,13 @@ class WPMLDB
 
 		if ( $post )
 		{
-			LegalDebug::debug( [
-				// 'post' => $post,
+			// LegalDebug::debug( [
+			// 	// 'post' => $post,
 
-				'ID' => $post->ID,
+			// 	'ID' => $post->ID,
 
-				'page_on_front' => get_option( 'page_on_front' ),
-			] );
+			// 	'page_on_front' => get_option( 'page_on_front' ),
+			// ] );
 
 			if ( $post->ID == get_option( 'page_on_front' ) )
 			{
@@ -249,11 +249,11 @@ class WPMLDB
 
 			MultisiteBlog::set_blog( $main_blog_id );
 
-			LegalDebug::debug( [
-				'WPMLDB' => 'set_post_uri-1',
+			// LegalDebug::debug( [
+			// 	'WPMLDB' => 'set_post_uri-1',
 
-				'not_page_on_front' => $not_page_on_front,				
-			] );
+			// 	'not_page_on_front' => $not_page_on_front,				
+			// ] );
 
 			foreach( $all_trid_items as $key => $trid_item )
 			{
