@@ -245,9 +245,9 @@ class WPMLDB
 
 			$siteurl = MultisiteBlog::get_siteurl( $main_blog_id );
 
-			MultisiteBlog::set_blog( $main_blog_id );
-
 			$not_page_on_front = self::check_not_page_on_front();
+
+			MultisiteBlog::set_blog( $main_blog_id );
 
 			LegalDebug::debug( [
 				'WPMLDB' => 'set_post_uri-1',
