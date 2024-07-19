@@ -215,13 +215,24 @@ class WPMLDB
 		{
 			$main_blog_id = MultisiteBlog::get_main_blog_id();
 
+			$siteurl = MultisiteBlog::get_siteurl( $main_blog_id );
+
 			MultisiteBlog::set_blog( $main_blog_id );
 
 			foreach( $all_trid_items as $key => $trid_item )
 			{
 				// $uri = ToolPermalink::get_post_uri( $trid_item->element_id );
 
-				$uri = get_post_permalink( $trid_item->element_id );
+				$uri_parts[] = $siteurl;
+
+				if ( $trid_item->language_code != 'en' )
+				{
+					$uri_parts[] = $trid_item->language_code;
+				}
+
+				$uri_parts[] = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+				$uri = implode( '/', $uri_parts );
 
 				if ( !empty( $uri ) )
 				{
