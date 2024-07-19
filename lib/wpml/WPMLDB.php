@@ -354,21 +354,21 @@ class WPMLDB
 	{
 		$parsed_trid_items = [];
 		
-		LegalDebug::debug( [
-			'WPMLDB' => 'pasre_trid_items-1',
+		// LegalDebug::debug( [
+		// 	'WPMLDB' => 'pasre_trid_items-1',
 
-			'all_trid_items' => $all_trid_items,
-		] );
+		// 	'all_trid_items' => $all_trid_items,
+		// ] );
 
 		if ( ! empty( $all_trid_items ) )
 		{
 			self::set_post_uri( $all_trid_items );
 
-			LegalDebug::debug( [
-				'WPMLDB' => 'pasre_trid_items-2',
+			// LegalDebug::debug( [
+			// 	'WPMLDB' => 'pasre_trid_items-2',
 	
-				'all_trid_items' => $all_trid_items,
-			] );
+			// 	'all_trid_items' => $all_trid_items,
+			// ] );
 
 			foreach( $all_trid_items as $trid_item )
 			{
