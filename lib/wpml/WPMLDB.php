@@ -223,6 +223,8 @@ class WPMLDB
 			{
 				// $uri = ToolPermalink::get_post_uri( $trid_item->element_id );
 
+				$uri_parts = [];
+
 				$uri_parts[] = $siteurl;
 
 				if ( $trid_item->language_code != 'en' )
