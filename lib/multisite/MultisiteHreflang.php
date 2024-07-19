@@ -404,6 +404,8 @@ class MultisiteHreflang
 				'MultisiteHreflang' => 'prepare_languages-1',
 
 				'group_items_all' => $group_items_all,
+
+				'trid_items_db' => $trid_items_db,
 			] );
 
 			$languages = self::parse_languages( $group_items_all );
