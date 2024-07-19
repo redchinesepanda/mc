@@ -13,7 +13,17 @@ class WPMLHreflang
         {
 			$handler = new self();
 
-			add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
+			if ( MultisiteMain::check_multisite() )
+			{
+				if ( MultisiteBlog::check_main_domain() )
+				{
+					add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
+				}
+				else
+				{
+					add_action( 'wp_head', [ $handler, 'change_page_hreflang' ] );
+				}
+			}
 		}
 
 		// add_filter( 'wpml_hreflangs', [ $handler, 'legal_hreflang_domain' ] );
@@ -48,7 +58,7 @@ class WPMLHreflang
 		return $hreflang_items;
 	}
   
-    public static function change_page_hreflang( $hreflang_items )
+    public static function change_page_hreflang( $hreflang_items = [] )
     {
 		$hreflang = [];
 
