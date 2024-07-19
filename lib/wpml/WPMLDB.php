@@ -209,6 +209,26 @@ class WPMLDB
 		return [];
 	}
 
+    public static function check_not_page_on_front()
+	{
+		return ! self::check_page_on_front();
+	}
+
+    public static function check_page_on_front()
+	{
+		$post = get_post();
+
+		if ( $post )
+		{
+			if ( $post->ID == get_option( 'page_on_front' ) )
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
     public static function set_post_uri( &$all_trid_items )
 	{
 		if ( ! empty( $all_trid_items ) )
@@ -218,6 +238,8 @@ class WPMLDB
 			$siteurl = MultisiteBlog::get_siteurl( $main_blog_id );
 
 			MultisiteBlog::set_blog( $main_blog_id );
+
+			$not_page_on_front = self::check_not_page_on_front();
 
 			foreach( $all_trid_items as $key => $trid_item )
 			{
@@ -232,7 +254,10 @@ class WPMLDB
 					$uri_parts[] = $trid_item->language_code;
 				}
 
-				$uri_parts[] = ToolPermalink::get_post_uri( $trid_item->element_id );
+				if ( $not_page_on_front )
+				{
+					$uri_parts[] = ToolPermalink::get_post_uri( $trid_item->element_id );
+				}
 
 				$uri = implode( '/', $uri_parts );
 
@@ -313,21 +338,28 @@ class WPMLDB
 
 		if ( ! empty( $all_trid_items ) )
 		{
-			$main_blog_id = MultisiteBlog::get_main_blog_id();
-
-			MultisiteBlog::set_blog( $main_blog_id );
+			self::set_post_uri( $all_trid_items );
 
 			foreach( $all_trid_items as $trid_item )
 			{
-				$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
-
-				if ( !empty( $uri ) )
-				{
-					$parsed_trid_items[ $trid_item->language_code ] = $uri;
-				}
+				$parsed_trid_items[ $trid_item->language_code ] = $trid_item->post_uri;
 			}
 
-			MultisiteBlog::restore_blog();
+			// $main_blog_id = MultisiteBlog::get_main_blog_id();
+
+			// MultisiteBlog::set_blog( $main_blog_id );
+
+			// foreach( $all_trid_items as $trid_item )
+			// {
+			// 	$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+			// 	if ( !empty( $uri ) )
+			// 	{
+			// 		$parsed_trid_items[ $trid_item->language_code ] = $uri;
+			// 	}
+			// }
+
+			// MultisiteBlog::restore_blog();
 
 			// LegalDebug::debug( [
 			// 	'WPMLDB' => 'get_trid_items-1',
@@ -347,12 +379,12 @@ class WPMLDB
 
     public static function get_trid_items_db( $wpdb )
 	{
-		$post = get_post();
+		// $post = get_post();
 
-		if ( $post )
-		{
-			if ( $post->ID != get_option( 'page_on_front' ) )
-			{
+		// if ( $post )
+		// {
+		// 	if ( $post->ID != get_option( 'page_on_front' ) )
+		// 	{
 				$translation_groups = WPMLTranslationGroups::get_translation_group( $post->ID );
 	
 				if ( ! empty( $translation_groups ) )
@@ -375,9 +407,9 @@ class WPMLDB
 					{
 						return $trid_items_db;
 					}
-				}
-			}
-		}
+		// 		}
+		// 	}
+		// }
 
 		return [];
 	}
