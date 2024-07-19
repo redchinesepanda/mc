@@ -407,7 +407,7 @@ class WPMLDB
 					{
 						return $trid_items_db;
 					}
-		// 		}
+				}
 		// 	}
 		// }
 
