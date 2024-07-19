@@ -278,6 +278,18 @@ class WPMLDB
 		return $parsed_trid_items;
 	}
 
+	public static function get_hreflang( $wpdb )
+	{
+		$trid_items_db = self::get_trid_items_db( $wpdb );
+
+		if ( ! empty( $trid_items_db ) )
+		{
+			return self::parse_hreflang_items( $trid_items_db );
+		}
+
+		return [];
+	}
+
     public static function parse_trid_items( $all_trid_items )
 	{
 		$parsed_trid_items = [];
@@ -348,18 +360,6 @@ class WPMLDB
 					}
 				}
 			}
-		}
-
-		return [];
-	}
-
-	public static function get_hreflang( $wpdb )
-	{
-		$trid_items_db = self::get_trid_items_db( $wpdb );
-
-		if ( ! empty( $trid_items_db ) )
-		{
-			return self::parse_hreflang_items( $trid_items_db );
 		}
 
 		return [];

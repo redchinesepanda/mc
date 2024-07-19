@@ -359,7 +359,7 @@ class MultisiteHreflang
 
 			global $wpdb;
 
-			$trid_items_db = WPMLDB::get_trid_items_db( $wpdb );
+			$trid_items_db = WPMLDB::get_hreflang( $wpdb );
 
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'prepare_hreflang',
