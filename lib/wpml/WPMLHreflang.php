@@ -11,18 +11,11 @@ class WPMLHreflang
 
 		if ( MultisiteMain::check_multisite() )
         {
-			$handler = new self();
-
-			if ( MultisiteMain::check_multisite() )
+			if ( MultisiteBlog::check_main_domain() )
 			{
-				if ( MultisiteBlog::check_main_domain() )
-				{
-					add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
-				}
-				else
-				{
-					add_action( 'wp_head', [ $handler, 'change_page_hreflang' ] );
-				}
+				$handler = new self();
+
+				add_filter( 'wpml_hreflangs', [ $handler, 'change_page_hreflang' ] );
 			}
 		}
 
