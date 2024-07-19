@@ -251,7 +251,7 @@ class WPMLDB
 
 		if ( ! empty( $all_trid_items ) )
 		{
-			self::set_post_uri( &$all_trid_items );
+			self::set_post_uri( $all_trid_items );
 		
 			foreach( $all_trid_items as $trid_item )
 			{
