@@ -219,7 +219,9 @@ class WPMLDB
 
 			foreach( $all_trid_items as $key => $trid_item )
 			{
-				$uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+				// $uri = ToolPermalink::get_post_uri( $trid_item->element_id );
+
+				$uri = get_permalink( $trid_item->element_id );
 
 				if ( !empty( $uri ) )
 				{
@@ -281,7 +283,7 @@ class WPMLDB
 	public static function get_hreflang()
 	{
 		global $wpdb;
-		
+
 		$trid_items_db = self::get_trid_items_db( $wpdb );
 
 		if ( ! empty( $trid_items_db ) )
