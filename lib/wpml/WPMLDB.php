@@ -65,13 +65,13 @@ class WPMLDB
     }
 
 	const PATTERNS = [
-		'url' => '%s/%s/',
+		// 'url' => '%s/%s/',
 
-		'url-path' => '%s/%s/%s/',
+		// 'url-path' => '%s/%s/%s/',
 
-		'url-root' => '%s/',
+		// 'url-root' => '%s/',
 
-		'url-root-path' => '%s/',
+		// 'url-root-path' => '%s/',
 
 		'country_flag_url' => '%s/assets/img/multisite/flag/%s.svg',
 	];
