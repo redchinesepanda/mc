@@ -280,7 +280,7 @@ class WPMLDB
 					$uri_parts[] = ToolPermalink::get_post_uri( $trid_item->element_id );
 				}
 				
-				$uri_parts[] = '?test=replace';
+				$uri_parts[] = '';
 
 				$uri = implode( '/', $uri_parts );
 
