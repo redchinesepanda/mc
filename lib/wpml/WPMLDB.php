@@ -318,6 +318,15 @@ class WPMLDB
 		
 			foreach( $all_trid_items as $trid_item )
 			{
+				if ( $trid_item->default_locale == 'en_GB' )
+				{
+					$parsed_trid_items[] = [
+						'hreflang' => 'x-default',
+	
+						'href' => $trid_item->post_uri,
+					];
+				}
+				
 				$parsed_trid_items[] = [
 					'hreflang' => WPMLMain::get_hreflang( $trid_item->default_locale ),
 
