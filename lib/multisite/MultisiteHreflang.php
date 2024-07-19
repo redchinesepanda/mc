@@ -410,6 +410,12 @@ class MultisiteHreflang
 
 			$languages = self::parse_languages( $group_items_all );
 
+			LegalDebug::debug( [
+				'MultisiteHreflang' => 'prepare_languages',
+
+				'languages' => $languages,
+			] );
+
 			return $languages;
 		}
 
