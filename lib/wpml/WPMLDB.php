@@ -271,7 +271,7 @@ class WPMLDB
 			foreach( $all_trid_items as $trid_item )
 			{
 				$parsed_trid_items[] = [
-					'hreflang' => $trid_item->default_locale,
+					'hreflang' => WPMLMain::get_hreflang( $trid_item->default_locale ),
 
 					'href' => $trid_item->post_uri,
 				];
