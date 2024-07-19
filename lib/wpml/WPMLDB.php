@@ -5,14 +5,29 @@ class WPMLDB
 	public static function multisite_trid_items_db_query( $wpdb, $trid )
 	{
 		return $wpdb->prepare(
+			// "SELECT
+			// 	wp_icl_translations.element_id,
+			// 	wp_icl_translations.language_code
+			// FROM
+			// 	wp_icl_translations
+			// WHERE
+			// 	trid = %d
+			// ",
+			
 			"SELECT
 				wp_icl_translations.element_id,
-				wp_icl_translations.language_code
+				wp_icl_translations.language_code,
+				wp_icl_languages.default_locale
 			FROM
 				wp_icl_translations
+			LEFT JOIN
+				wp_icl_languages
+			ON
+				wp_icl_languages.code = wp_icl_translations.language_code
 			WHERE
 				trid = %d
 			",
+
 			[
 				$trid,
 			]
