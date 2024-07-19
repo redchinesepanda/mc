@@ -372,9 +372,7 @@ class MultisiteHreflang
 						// 'wpml_hreflang' => $wpml_hreflang,
 					] );
 
-					$wpml_hreflang = WPMLHreflang::change_page_hreflang( $wpml_hreflang );
-
-					$group_items_all = array_merge( $wpml_hreflang, $group_items_all );
+					// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
 		
 					LegalDebug::debug( [
 						'MultisiteHreflang' => 'prepare_hreflang-3',
@@ -383,7 +381,7 @@ class MultisiteHreflang
 
 						// 'wpml_hreflang' => $wpml_hreflang,
 
-						'group_items_all-count' => count( $group_items_all ),
+						// 'group_items_all-count' => count( $group_items_all ),
 
 						// 'group_items_all' => $group_items_all,
 					] );
