@@ -357,9 +357,7 @@ class MultisiteHreflang
 				];
 			}
 
-			global $wpdb;
-
-			$trid_items_db = WPMLDB::get_hreflang( $wpdb );
+			$wpml_hreflang = WPMLDB::get_hreflang();
 
 			LegalDebug::debug( [
 				'MultisiteHreflang' => 'prepare_hreflang',
@@ -368,7 +366,7 @@ class MultisiteHreflang
 
 				'args' => $args,
 
-				'trid_items_db' => $trid_items_db,
+				'wpml_hreflang' => $wpml_hreflang,
 			] );
 
 			return self::render_hreflang( $args );

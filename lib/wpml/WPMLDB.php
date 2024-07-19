@@ -278,8 +278,10 @@ class WPMLDB
 		return $parsed_trid_items;
 	}
 
-	public static function get_hreflang( $wpdb )
+	public static function get_hreflang()
 	{
+		global $wpdb;
+		
 		$trid_items_db = self::get_trid_items_db( $wpdb );
 
 		if ( ! empty( $trid_items_db ) )
