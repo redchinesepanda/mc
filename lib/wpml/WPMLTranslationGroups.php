@@ -86,7 +86,7 @@ class WPMLTranslationGroups
         'set-translation-group'=> 'set-translation-group',
     ];
 
-    public static notify_translation_group_item function()
+    public static function notify_translation_group_item()
     {
     	if ( !empty( $_REQUEST[ self::ACTION[ 'set-translation-group' ] ] ) )
         {
