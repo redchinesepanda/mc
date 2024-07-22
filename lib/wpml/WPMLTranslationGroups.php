@@ -53,7 +53,7 @@ class WPMLTranslationGroups
 	// 	] );
     // }
 
-    public static function check_translation_groups()
+    public static function check_add_bulk_actions()
 	{
 		return MultisiteMain::check_multisite()
 		
@@ -70,16 +70,16 @@ class WPMLTranslationGroups
 
         // add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-        if ( self::check_translation_groups() )
+        if ( self::check_add_bulk_actions() )
         {
             add_filter( 'bulk_actions-edit-post', [ $handler, 'bulk_actions_add_translation_group' ] );
         }
-
     }
 
     public static function bulk_actions_add_translation_group( $bulk_actions )
     {
     	$bulk_actions[ 'add-translation-group' ] = ToolLoco::translate( 'Add translation group' );
+        
     	return $bulk_actions;
     }
 
