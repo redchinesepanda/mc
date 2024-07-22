@@ -38,8 +38,6 @@ class BrandFilter
 				// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_brand_type' ], 10, 2 );
 		
 				add_action( 'restrict_manage_posts', [ $handler, 'brand_type_filter' ] );
-
-				add_filter( 'manage_affiliate-links_custom_column', [ $handler, 'add_brand_type_column' ] );
 			}
 		}
 
@@ -56,11 +54,6 @@ class BrandFilter
             add_action( 'admin_notices', [ $handler, 'notify_brand_type_item' ] );
         }
     }
-
-	public static function add_brand_type_column( $columns )
-	{
-		return array_merge( $columns, [ 'brand-type' => ToolLoco::translate( 'Brand Type', ) ] );
-	}
 
 	const ACTION = [
         'set-brand-type'=> 'set-brand-type',
