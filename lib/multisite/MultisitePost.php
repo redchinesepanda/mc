@@ -56,15 +56,15 @@ class MultisitePost
 		
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::die( [
-			'MultisitePost' => 'mc_bulk_action_multisite_handler-1',
+		// LegalDebug::die( [
+		// 	'MultisitePost' => 'mc_bulk_action_multisite_handler-1',
 
-			'doaction' => $doaction,
+		// 	'doaction' => $doaction,
 
-			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+		// 	'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
 
-			'check_doaction-parameter' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] )
-		] );
+		// 	'check_doaction-parameter' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] )
+		// ] );
 		
 		// if ( MultisiteAdmin::check_doaction( $doaction ) )
 		
