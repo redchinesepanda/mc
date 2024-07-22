@@ -129,10 +129,12 @@ class BaseHeader
 
 			$site_url = MultisiteBlog::get_siteurl( $domain_main_site->blog_id );
 
-			return $site_url . "/favicon.ico";
+			// return $site_url . "/favicon.ico";
+			return $site_url . "/assets/img/base/header/mc-favicon.svg";
 		}
 		
-		return LegalMain::LEGAL_ROOT . "/favicon.ico"; 
+		// return LegalMain::LEGAL_ROOT . "/favicon.ico";
+		return LegalMain::LEGAL_ROOT . "/assets/img/base/header/mc-favicon.svg";
 	}
 
 	public static function get_localize()
