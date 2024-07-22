@@ -76,7 +76,7 @@ class WPMLTranslationGroups
 
             add_filter( 'bulk_actions-edit-page', [ $handler, 'add_translation_group_item' ] );
 
-            add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'set_translation_group' ], 10, 3);
+            add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_translation_group_item' ], 10, 3);
         }
     }
 
@@ -84,7 +84,7 @@ class WPMLTranslationGroups
         'set-translation-group'=> 'set-translation-group',
     ];
 
-    public static function set_translation_group( $redirect_url, $action, $post_ids )
+    public static function handle_translation_group_item( $redirect_url, $action, $post_ids )
     {
     	if ( $action == self::ACTION[ 'set-translation-group' ] )
         {
