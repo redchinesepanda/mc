@@ -332,7 +332,17 @@ class MultisiteAdmin
 	
 	function mc_bulk_multisite_attachment_notices()
 	{
-		if( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
+		LegalDebug::debug( [
+			'MultisiteAdmin' => 'mc_bulk_multisite_attachment_notices',
+
+			self::QUERY_ARG[ 'attachment-moved' ],
+
+			$_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],
+
+			! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ),
+		] );
+
+		if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
 		{
 			$blog = MultisiteBlog::get_blog_details( $_REQUEST[ self::QUERY_ARG[ 'blog-id' ] ] );
 
