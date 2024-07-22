@@ -88,7 +88,7 @@ class WPMLTranslationGroups
 
     public static function notify_translation_group_item()
     {
-    	if ( !empty( $_REQUEST[ self::ACTION[ 'set-translation-group' ] ] ) )
+    	if ( ! empty( $_REQUEST[ self::ACTION[ 'set-translation-group' ] ] ) )
         {
     		$num_changed = (int) $_REQUEST[ self::ACTION[ 'set-translation-group' ] ];
 

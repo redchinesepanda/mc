@@ -335,11 +335,11 @@ class MultisiteAdmin
 		LegalDebug::debug( [
 			'MultisiteAdmin' => 'mc_bulk_multisite_attachment_notices',
 
-			self::QUERY_ARG[ 'attachment-moved' ],
+			'QUERY_ARG' => self::QUERY_ARG[ 'attachment-moved' ],
 
-			$_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],
+			'_REQUEST' => $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],
 
-			! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ),
+			'empty' => ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ),
 		] );
 
 		if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
