@@ -53,15 +53,34 @@ class WPMLTranslationGroups
 	// 	] );
     // }
 
+    public static function check_translation_groups()
+	{
+		return MultisiteMain::check_multisite()
+		
+			&& MultisiteBlog::check_main_blog();
+	}
+
     public static function register_functions_admin()
     {
         $handler = new self();
 
-        add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_translation_group' ], 10, 2 );
+        // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_translation_group' ], 10, 2 );
 
         // add_filter( 'acf/load_field/name=' . self::FIELD_TRID, [ $handler, 'choices' ] );
 
         // add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
+
+        if ( self::check_translation_groups() )
+        {
+            add_filter( 'bulk_actions-edit-post', [ $handler, 'bulk_actions_add_translation_group' ] );
+        }
+
+    }
+
+    public static function bulk_actions_add_translation_group( $bulk_actions )
+    {
+    	$bulk_actions[ 'add-translation-group' ] = ToolLoco::translate( 'Add translation group' );
+    	return $bulk_actions;
     }
 
     public static function set_translation_group( $post_id, $post )
