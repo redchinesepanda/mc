@@ -62,7 +62,7 @@ class WPMLTranslationGroups
 
     public static function register_functions_admin()
     {
-        $handler = new self();
+        // $handler = new self();
 
         // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_translation_group' ], 10, 2 );
 
@@ -72,14 +72,22 @@ class WPMLTranslationGroups
 
         if ( self::check_add_bulk_actions() )
         {
+            $handler = new self();
+
             add_filter( 'bulk_actions-edit-post', [ $handler, 'bulk_actions_add_translation_group' ] );
         }
+
+        LegalDebug::debug( [
+            'WPMLTranslationGroups' =>'register_functions_admin-1',
+
+            'check_add_bulk_actions' => self::check_add_bulk_actions(),
+        ] );
     }
 
     public static function bulk_actions_add_translation_group( $bulk_actions )
     {
     	$bulk_actions[ 'add-translation-group' ] = ToolLoco::translate( 'Add translation group' );
-        
+
     	return $bulk_actions;
     }
 
