@@ -49,9 +49,9 @@ class BrandFilter
 
             add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'billet' ], [ $handler, 'add_brand_type_item' ] );
 
-            add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_brand_type_item' ], 10, 3);
+            add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'billet' ], [ $handler, 'handle_brand_type_item' ], 10, 3);
 
-            add_action('admin_notices', [ $handler, 'notify_brand_type_item' ] );
+            add_action( 'admin_notices', [ $handler, 'notify_brand_type_item' ] );
         }
     }
 
@@ -106,7 +106,7 @@ class BrandFilter
     	return $redirect_url;
     }
 
-    public static function add_translation_group_item( $bulk_actions )
+    public static function add_brand_type_item( $bulk_actions )
     {
     	$bulk_actions[ self::ACTION[ 'set-brand-type' ] ] = ToolLoco::translate( 'Set Brand Type' );
 
