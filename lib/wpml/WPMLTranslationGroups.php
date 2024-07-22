@@ -77,12 +77,32 @@ class WPMLTranslationGroups
             add_filter( 'bulk_actions-edit-page', [ $handler, 'add_translation_group_item' ] );
 
             add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_translation_group_item' ], 10, 3);
+
+            add_action('admin_notices', [ $handler, 'notify_translation_group_item' ] );
         }
     }
 
     const ACTION = [
         'set-translation-group'=> 'set-translation-group',
     ];
+
+    public static notify_translation_group_item function()
+    {
+    	if ( !empty( $_REQUEST[ self::ACTION[ 'set-translation-group' ] ] ) )
+        {
+    		$num_changed = (int) $_REQUEST[ self::ACTION[ 'set-translation-group' ] ];
+
+    		// printf( '<div id="message" class="updated notice is-dismissable"><p>' . __('Published %d posts.', 'txtdomain') . '</p></div>', $num_changed );
+
+    		sprintf( ToolLoco::translate( 'Translation group set for %d posts' ), $num_changed );
+
+            $args = [
+                'message' => $message,
+			];
+
+            self::print_notices( $args );
+    	}
+    }
 
     public static function handle_translation_group_item( $redirect_url, $action, $post_ids )
     {
@@ -105,7 +125,7 @@ class WPMLTranslationGroups
 
     		$redirect_url = add_query_arg( self::ACTION[ 'set-translation-group' ], count( $post_ids ), $redirect_url );
     	}
-        
+
     	return $redirect_url;
     }
 
@@ -207,6 +227,15 @@ class WPMLTranslationGroups
         }
 
         return $terms;
+    }
+
+    const TEMPLATE = [
+        'translation-groups-notices' => LegalMain::LEGAL_PATH . '/template-parts/wpml/wpml-translation-groups-notices.php',
+    ];
+
+    public static function print_notices( $args )
+    {
+        LegalComponents::print_main( self::TEMPLATE[ 'translation-groups-notices' ], $args );
     }
 
     // public static function choices( $field )
