@@ -9,7 +9,7 @@ class AdminPage
         add_action( 'wp_list_pages', [ $handler, 'list_pages_filter' ], 10, 3 );
     }
 
-	function list_pages_filter( $output, $parsed_args, $pages )
+	public static function list_pages_filter( $output, $parsed_args, $pages )
 	{
 		LegalDebug::debug( [
 			'AdminPage' => 'list_pages_filter',
