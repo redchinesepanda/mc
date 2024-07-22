@@ -12,7 +12,7 @@ class AdminPage
 	public static function list_pages_filter( $output, $parsed_args, $pages )
 	{
 		LegalDebug::debug( [
-			'AdminPage' => 'list_pages_filter',
+			'AdminPage' => 'list_pages_filter-1',
 
 			'pages' => $pages,
 		] );

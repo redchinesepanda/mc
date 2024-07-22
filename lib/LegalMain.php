@@ -94,7 +94,7 @@ class LegalMain
 		{
 			ACFMain::register();
 	
-			AdminMain::register();
+			// AdminMain::register();
 
 			NotionMain::register_functions();
 

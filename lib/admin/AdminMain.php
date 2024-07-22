@@ -14,7 +14,7 @@ require_once( 'AdminDequeue.php' );
 
 require_once( 'AdminMedia.php' );
 
-require_once( 'AdminPage.php' );
+// require_once( 'AdminPage.php' );
 
 class AdminMain
 {
@@ -76,7 +76,7 @@ class AdminMain
 
         AdminMedia::register();
         
-        AdminPage::register();
+        // AdminPage::register();
     }
 }
 
