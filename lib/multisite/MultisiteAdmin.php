@@ -339,7 +339,7 @@ class MultisiteAdmin
 
 			'_REQUEST' => $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ],
 
-			'empty' => ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ),
+			'not_empty' => ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) ),
 		] );
 
 		if ( ! empty( $_REQUEST[ self::QUERY_ARG[ 'attachment-moved' ] ] ) )
