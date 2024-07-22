@@ -97,6 +97,8 @@ class BrandFilter
                 if ( $post )
                 {
                     self::set_brand_type( $post_id, $post );
+
+					AffiliateFilter::set_brand_type( $post_id, $post );
                 }
     		}
 
