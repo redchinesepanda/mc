@@ -56,7 +56,7 @@ class MultisitePost
 		
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		LegalDebug::debug( [
+		LegalDebug::die( [
 			'MultisitePost' => 'mc_bulk_action_multisite_handler-1',
 
 			'doaction' => $doaction,
