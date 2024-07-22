@@ -115,7 +115,7 @@ class WPMLTranslationGroups
     {
         if ( $action == self::ACTION[ 'set-translation-group' ] )
         {
-            $redirect = self::redirect_clean( $redirect );
+            $redirect_url = self::redirect_clean( $redirect_url );
     	
     		foreach ( $post_ids as $post_id )
             {
