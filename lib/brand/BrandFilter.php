@@ -69,7 +69,7 @@ class BrandFilter
 
     		// printf( '<div id="message" class="updated notice is-dismissable"><p>' . __('Published %d posts.', 'txtdomain') . '</p></div>', $num_changed );
 
-    		$message = sprintf( ToolLoco::translate( 'Brand type set for bilets attached to %d posts' ), $num_changed );
+    		$message = sprintf( ToolLoco::translate( 'Brand type set for brands attached to %d posts' ), $num_changed );
 
             $args = [
                 'message' => $message,
