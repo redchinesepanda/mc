@@ -74,13 +74,43 @@ class WPMLTranslationGroups
         {
             $handler = new self();
 
-            add_filter( 'bulk_actions-edit-page', [ $handler, 'bulk_actions_add_translation_group' ] );
+            add_filter( 'bulk_actions-edit-page', [ $handler, 'add_translation_group_item' ] );
+
+            add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'set_translation_group' ], 10, 3);
         }
     }
 
-    public static function bulk_actions_add_translation_group( $bulk_actions )
+    const ACTION = [
+        'set-translation-group'=> 'set-translation-group',
+    ];
+
+    public static function set_translation_group( $redirect_url, $action, $post_ids )
     {
-    	$bulk_actions[ 'add-translation-group' ] = ToolLoco::translate( 'Add translation group' );
+    	if ( $action == self::ACTION[ 'set-translation-group' ] )
+        {
+    		foreach ( $post_ids as $post_id )
+            {
+    			// wp_update_post( [
+    			// 	'ID' => $post_id,
+    			// 	'post_status' => 'publish'
+    			// ] );
+
+                $post = get_post( $post_id );
+
+                if ( $post )
+                {
+                    self::set_translation_group( $post_id, $post );
+                }
+    		}
+
+    		$redirect_url = add_query_arg( self::ACTION[ 'set-translation-group' ], count( $post_ids ), $redirect_url );
+    	}
+    	return $redirect_url;
+    }
+
+    public static function add_translation_group_item( $bulk_actions )
+    {
+    	$bulk_actions[ self::ACTION[ 'set-translation-group' ] ] = ToolLoco::translate( 'Set Translation Group' );
 
     	return $bulk_actions;
     }
