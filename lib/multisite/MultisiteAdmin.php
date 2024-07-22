@@ -391,6 +391,16 @@ class MultisiteAdmin
 		);
 	}
 
+	// public static function check_doaction( $doaction, $doaction_target = '' )
+	// {
+	// 	if ( empty( $doaction ) )
+	// 	{
+	// 		$doaction_target = self::DOACTION[ 'move-to' ];
+	// 	}
+
+	// 	return str_contains( $doaction, $doaction_target );
+	// }
+	
 	public static function check_doaction( $doaction, $doaction_target = '' )
 	{
 		if ( empty( $doaction ) )

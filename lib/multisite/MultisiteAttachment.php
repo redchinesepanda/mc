@@ -145,7 +145,9 @@ class MultisiteAttachment
 	{
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
-		if ( MultisiteAdmin::check_doaction( $doaction ) )
+		// if ( MultisiteAdmin::check_doaction( $doaction ) )
+		
+		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] ) )
 		{
 			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
 

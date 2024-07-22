@@ -62,9 +62,13 @@ class MultisitePost
 			'doaction' => $doaction,
 
 			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+
+			'check_doaction-parameter' => MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] )
 		] );
 		
-		if ( MultisiteAdmin::check_doaction( $doaction ) )
+		// if ( MultisiteAdmin::check_doaction( $doaction ) )
+		
+		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] ) )
 		{
 			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
 
