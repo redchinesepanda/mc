@@ -47,7 +47,7 @@ class BrandFilter
 
 			// 'edit_post_' . self::POST_TYPE[ 'billet' ]
 
-            add_filter( 'bulk_actions-edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'add_brand_type_item' ] );
+            add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'billet' ], [ $handler, 'add_brand_type_item' ] );
 
             add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_brand_type_item' ], 10, 3);
 
