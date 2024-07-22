@@ -90,9 +90,9 @@ class WPMLTranslationGroups
 
     public static function notify_translation_group_item()
     {
-    	if ( ! empty( $_REQUEST[ self::ACTION[ 'set-translation-group' ] ] ) )
+    	if ( ! empty( $_REQUEST[ self::ACTION[ 'done-translation-group' ] ] ) )
         {
-    		$num_changed = (int) $_REQUEST[ self::ACTION[ 'set-translation-group' ] ];
+    		$num_changed = (int) $_REQUEST[ self::ACTION[ 'done-translation-group' ] ];
 
     		// printf( '<div id="message" class="updated notice is-dismissable"><p>' . __('Published %d posts.', 'txtdomain') . '</p></div>', $num_changed );
 
