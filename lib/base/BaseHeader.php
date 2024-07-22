@@ -129,12 +129,12 @@ class BaseHeader
 
 			$site_url = MultisiteBlog::get_siteurl( $domain_main_site->blog_id );
 
-			return $site_url . "/favicon.ico";
-			// return $site_url . "/wp-content/themes/mc-theme/assets/img/base/header/mc-favicon.ico";
+			// return $site_url . "/favicon.ico";
+			return $site_url . "/favicon.svg";
 		}
 		
-		return LegalMain::LEGAL_ROOT . "/favicon.ico";
-		// return LegalMain::LEGAL_ROOT . "/wp-content/themes/mc-theme/assets/img/base/header/mc-favicon.ico";
+		// return LegalMain::LEGAL_ROOT . "/favicon.ico";
+		return LegalMain::LEGAL_ROOT . "/favicon.svg";
 	}
 
 	public static function get_localize()
