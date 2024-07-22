@@ -74,14 +74,8 @@ class WPMLTranslationGroups
         {
             $handler = new self();
 
-            add_filter( 'bulk_actions-edit-post', [ $handler, 'bulk_actions_add_translation_group' ] );
+            add_filter( 'bulk_actions-edit-page', [ $handler, 'bulk_actions_add_translation_group' ] );
         }
-
-        LegalDebug::debug( [
-            'WPMLTranslationGroups' =>'register_functions_admin-1',
-
-            'check_add_bulk_actions' => self::check_add_bulk_actions(),
-        ] );
     }
 
     public static function bulk_actions_add_translation_group( $bulk_actions )
