@@ -105,6 +105,7 @@ class WPMLTranslationGroups
 
     		$redirect_url = add_query_arg( self::ACTION[ 'set-translation-group' ], count( $post_ids ), $redirect_url );
     	}
+        
     	return $redirect_url;
     }
 
