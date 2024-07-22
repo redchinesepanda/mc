@@ -94,7 +94,7 @@ class WPMLTranslationGroups
 
     		// printf( '<div id="message" class="updated notice is-dismissable"><p>' . __('Published %d posts.', 'txtdomain') . '</p></div>', $num_changed );
 
-    		sprintf( ToolLoco::translate( 'Translation group set for %d posts' ), $num_changed );
+    		$message = sprintf( ToolLoco::translate( 'Translation group set for %d posts' ), $num_changed );
 
             $args = [
                 'message' => $message,
