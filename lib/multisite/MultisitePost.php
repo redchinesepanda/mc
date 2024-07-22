@@ -55,6 +55,14 @@ class MultisitePost
 		// $redirect = self::retirect_clean( $redirect );
 		
 		$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
+		LegalDebug::debug( [
+			'MultisitePost' => 'mc_bulk_action_multisite_handler-1',
+
+			'doaction' => $doaction,
+
+			'check_doaction' => MultisiteAdmin::check_doaction( $doaction ),
+		] );
 		
 		if ( MultisiteAdmin::check_doaction( $doaction ) )
 		{
