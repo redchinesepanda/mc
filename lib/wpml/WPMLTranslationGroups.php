@@ -84,6 +84,8 @@ class WPMLTranslationGroups
 
     const ACTION = [
         'set-translation-group'=> 'set-translation-group',
+
+        'done-translation-group'=> 'done-translation-group',
     ];
 
     public static function notify_translation_group_item()
@@ -104,10 +106,17 @@ class WPMLTranslationGroups
     	}
     }
 
+    public static function redirect_clean( $redirect )
+	{
+		return remove_query_arg( self::ACTION, $redirect );
+	}
+
     public static function handle_translation_group_item( $redirect_url, $action, $post_ids )
     {
-    	if ( $action == self::ACTION[ 'set-translation-group' ] )
+        if ( $action == self::ACTION[ 'set-translation-group' ] )
         {
+            $redirect = self::redirect_clean( $redirect );
+    	
     		foreach ( $post_ids as $post_id )
             {
     			// wp_update_post( [
@@ -123,7 +132,7 @@ class WPMLTranslationGroups
                 }
     		}
 
-    		$redirect_url = add_query_arg( self::ACTION[ 'set-translation-group' ], count( $post_ids ), $redirect_url );
+    		$redirect_url = add_query_arg( self::ACTION[ 'done-translation-group' ], count( $post_ids ), $redirect_url );
     	}
 
     	return $redirect_url;
