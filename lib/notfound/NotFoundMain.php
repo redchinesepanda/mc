@@ -48,9 +48,11 @@ class NotFoundMain
 	public static function check()
     {
 		LegalDebug::debug( [
-			'NotFoundMain' => 'check',
+			'NotFoundMain' => 'check-1',
 
 			'is_page_template' => is_page_template( '404.php' ),
+
+			'is_404' => is_404(),
 		] );
 
         return is_404();
