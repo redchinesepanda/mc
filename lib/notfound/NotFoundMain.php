@@ -61,13 +61,20 @@ class NotFoundMain
 
 	public static function check()
     {
-		LegalDebug::debug( [
-			'NotFoundMain' => 'check-1',
+		$post = get_post();
 
-			'get_post_permalink' => get_post_permalink(),
-
-			'get_page_uri' => get_page_uri(),
-		] );
+		if ( $post )
+		{
+			LegalDebug::debug( [
+				'NotFoundMain' => 'check-1',
+	
+				'get_post_permalink' => get_post_permalink(),
+	
+				'get_page_uri' => get_page_uri(),
+	
+				'get_post_uri' => ToolPermalink::get_post_uri( $post->ID ),
+			] );
+		}
 
 		return is_404();
     }
