@@ -232,11 +232,11 @@ class ToolPermalink
         //     return $post->post_name;
         // }
 
-        LegalDebug::die( [
-            'ToolPermalink' => 'get_post_uri-2',
+        // LegalDebug::die( [
+        //     'ToolPermalink' => 'get_post_uri-2',
 
-            'permalink_manager_uris' => '',
-        ] );
+        //     'permalink_manager_uris' => '',
+        // ] );
 
         return '';
     }
