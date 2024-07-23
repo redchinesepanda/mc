@@ -65,7 +65,7 @@ class NotFoundMain
 
 		if ( $post )
 		{
-			$header = apply_filter( 'status_header', $header );
+			$header = apply_filters( 'status_header', $header );
 
 			LegalDebug::debug( [
 				'NotFoundMain' => 'check-1',
