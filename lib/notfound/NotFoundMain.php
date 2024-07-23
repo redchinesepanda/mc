@@ -109,7 +109,7 @@ class NotFoundMain
 
 	public static function check_redirection_items_db()
 	{
-		if ( !empty( get_redirection_items_db() ) )
+		if ( ! empty( self::get_redirection_items_db() ) )
 		{
 			return true;
 		}
