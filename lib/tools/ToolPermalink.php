@@ -24,7 +24,7 @@ class ToolPermalink
 
     public static function check_custom_permalink()
     {
-        $domain MultisiteBlog::get_domain();
+        $domain = MultisiteBlog::get_domain();
 
         return in_array( $domain, self::DOMAINS );
     }
