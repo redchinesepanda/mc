@@ -15,11 +15,11 @@ class ToolPermalink
     ];
 
     const DOMAINS = [
-        'match.centrer',
+        'match.center',
 
-        'content.match.centrer',
+        'content.match.center',
 
-        'old.match.centrer',
+        'old.match.center',
     ];
 
     public static function check_custom_permalink()
