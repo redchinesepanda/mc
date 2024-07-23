@@ -20,17 +20,17 @@ class NotFoundMain
 
     public static function register_style()
     {
-		global $wp_query;
+		// global $wp_query;
 
-		LegalDebug::debug( [
-			'NotFoundMain' => 'register_style-1',
+		// LegalDebug::debug( [
+		// 	'NotFoundMain' => 'register_style-1',
 
-			'is_page_template' => is_page_template( '404.php' ),
+		// 	'is_page_template' => is_page_template( '404.php' ),
 
-			'is_404' => is_404(),
+		// 	'is_404' => is_404(),
 
-			'query_vars' => $wp_query->query_vars,
-		] );
+		// 	'query_vars' => $wp_query->query_vars,
+		// ] );
 
 		if ( self::check() )
 		{
