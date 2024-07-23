@@ -49,6 +49,12 @@ class ToolTinyMCE
 
 	public static function init_link_attribute_rel( $init )
 	{
+		LegalDebug::debug( [
+			'ToolTinyMCE' => 'init_link_attribute_rel-1',
+
+			'init' => $init,
+		] );
+
 		$init[ 'allow_unsafe_link_target' ] = true;
 
 		$init[ 'default_link_target' ] = '';
