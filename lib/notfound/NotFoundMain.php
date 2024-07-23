@@ -65,14 +65,18 @@ class NotFoundMain
 
 		if ( $post )
 		{
+			$header = apply_filter( 'status_header', $header );
+
 			LegalDebug::debug( [
 				'NotFoundMain' => 'check-1',
 	
-				'get_post_permalink' => get_post_permalink(),
+				// 'get_post_permalink' => get_post_permalink(),
 	
-				'get_page_uri' => get_page_uri(),
+				// 'get_page_uri' => get_page_uri(),
 	
 				'get_post_uri' => ToolPermalink::get_post_uri( $post->ID ),
+
+				'header' => $header,
 			] );
 		}
 
