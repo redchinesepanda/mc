@@ -59,28 +59,7 @@ class NotFoundMain
 
 	public static function check()
     {
-		global $wp_query;
-
-		$gclid = 'empty';
-
-		if ( isset( $_GET[ 'gclid' ] ) )
-		{
-			$gclid = $_GET[ 'gclid' ];
-		}
-		
-		LegalDebug::debug( [
-			'NotFoundMain' => 'check-1',
-
-			'is_page_template' => is_page_template( '404.php' ),
-
-			'is_404' => is_404(),
-
-			'gclid' => $gclid,
-
-			'query_vars' => $wp_query->query_vars,
-		] );
-
-        return is_404();
+		return is_404();
     }
 
 	public static function register()
