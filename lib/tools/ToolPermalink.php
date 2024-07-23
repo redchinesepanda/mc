@@ -219,18 +219,18 @@ class ToolPermalink
             }
         }
 
-        $post = get_post( $post_id );
+        // $post = get_post( $post_id );
 
-        if ( $post )
-        {
-            // LegalDebug::debug( [
-            //     'ToolPermalink' => 'get_post_uri',
+        // if ( $post )
+        // {
+        //     // LegalDebug::debug( [
+        //     //     'ToolPermalink' => 'get_post_uri',
 
-            //     'post_name' => $post->post_name,
-            // ] );
+        //     //     'post_name' => $post->post_name,
+        //     // ] );
 
-            return $post->post_name;
-        }
+        //     return $post->post_name;
+        // }
 
         return '';
     }
