@@ -20,6 +20,14 @@ class NotFoundMain
 
     public static function register_style()
     {
+		LegalDebug::debug( [
+			'NotFoundMain' => 'register_style-1',
+
+			'is_page_template' => is_page_template( '404.php' ),
+
+			'is_404' => is_404(),
+		] );
+
 		if ( self::check() )
 		{
 			if ( TemplateMain::check_new() )
