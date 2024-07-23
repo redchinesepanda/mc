@@ -16,13 +16,9 @@ class ToolPermalink
 
     public static function check_custom_permalink()
     {
-        return MultisiteMain::check_multisite()
+        return MultisiteBlog::check_main_domain()
 
-            && (
-                MultisiteBlog::check_main_domain()
-
-                || MultisiteBlog::check_main_domain_not_restricted()
-            );
+            || MultisiteBlog::check_main_domain_not_restricted()
     }
 
     public static function register_functions_admin()
@@ -35,7 +31,7 @@ class ToolPermalink
 
         if ( MultisiteMain::check_multisite() )
         {
-            if ( MultisiteBlog::check_main_domain() )
+            if ( self::check_custom_permalink() )
             {
                 $handler = new self();
 
