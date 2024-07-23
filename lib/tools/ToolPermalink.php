@@ -39,7 +39,7 @@ class ToolPermalink
 
         if ( MultisiteMain::check_multisite() )
         {
-            if ( self::check_custom_permalink() )
+            if ( MultisiteBlog::not_main_blog() && self::check_custom_permalink() )
             {
                 $handler = new self();
 
