@@ -61,6 +61,12 @@ class NotFoundMain
 
 	public static function check()
     {
+		LegalDebug::debug( [
+			'NotFoundMain' => 'check-1',
+
+			'get_post_permalink' => get_post_permalink(),
+		] );
+
 		return is_404();
     }
 
