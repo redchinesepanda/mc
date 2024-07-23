@@ -54,6 +54,69 @@ class NotFoundMain
 		}
     }
 
+	public static function redirection_db_query( $wpdb, $url )
+	{
+		return $wpdb->prepare(
+			"SELECT
+				wp_redirection_items.id,
+				wp_redirection_items.url,
+				wp_redirection_items.match_url
+			FROM
+				wp_redirection_items
+			WHERE
+				wp_redirection_items.url = %s
+				AND wp_redirection_items.status = 'enabled'
+				AND wp_redirection_items.action_type = 'error'
+				AND wp_redirection_items.action_code = '410'
+			",
+
+			[
+				$url,
+			]
+		); 
+	}
+
+	public static function get_redirection_items_db()
+	{
+		$post = get_post();
+
+		if ( $post )
+		{
+			global $wpdb;
+
+			$url = ToolPermalink::get_post_uri( $post->ID );
+
+			$redirection_items_db_query = self::redirection_db_query( $wpdb, $url );
+	
+			$redirection_items_db = $wpdb->get_results( $redirection_items_db_query );
+
+			// LegalDebug::debug( [
+			// 	'WPMLDB' => 'get_trid_items_db-1',
+
+			// 	'trid_items_db_query' => $trid_items_db_query,
+
+			// 	'trid_items_db' => $trid_items_db,
+			// ] );
+
+			if ( ! empty( $redirection_items_db ) )
+			{
+				return $redirection_items_db;
+			}
+		}
+
+		return [];
+	}
+
+	public static function check_redirection_items_db()
+	{
+		if ( !empty( get_redirection_items_db() ) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	// public static function check_not_notfound()
     // {
     //     return !is_404(); 
@@ -65,26 +128,12 @@ class NotFoundMain
 
 		if ( $post )
 		{
-			$options = red_get_options();
-			
-			$headers = new Red_Http_Headers( $options['headers'] );
-
-			$header = '';
-
-			$header = apply_filters( 'status_header', $header );
-
 			LegalDebug::debug( [
 				'NotFoundMain' => 'check-1',
 	
-				// 'get_post_permalink' => get_post_permalink(),
-	
-				// 'get_page_uri' => get_page_uri(),
-	
-				'get_post_uri' => ToolPermalink::get_post_uri( $post->ID ),
+				'get_post_uri' => addslashes( ToolPermalink::get_post_uri( $post->ID ) ),
 
-				'header' => $header,
-
-				'headers' => $headers,
+				'check_redirection_items_db' => self::check_redirection_items_db(),
 			] );
 		}
 
