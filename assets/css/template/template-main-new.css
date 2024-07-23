@@ -2,7 +2,7 @@
 {
 	/* Position */
 
-	:not( .error404 ) > .legal-section-content {
+	:not( .error404 ):not( .error410 ) > .legal-section-content {
 		/* padding: 16px; */
 		padding-right: 16px;
 		padding-bottom: 32px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-	:not( .error404 ) > .legal-section-content {
+	:not( .error404 ):not( .error410 ) > .legal-section-content {
 		padding-left: 32px;
     	padding-right: 32px;
 	}
@@ -34,7 +34,7 @@
 		
 	}
 
-	:not( .error404 ) > .legal-section-content
+	:not( .error404 ):not( .error410 ) > .legal-section-content
 	{
 		padding-bottom: 64px;
 		
@@ -42,7 +42,7 @@
 
 	/* Width and Height */
 
-	:not( .error404 ) > .legal-section-content
+	:not( .error404 ):not( .error410 ) > .legal-section-content
 	{
 		max-width: var( --base-width-desktop );
 	} 
