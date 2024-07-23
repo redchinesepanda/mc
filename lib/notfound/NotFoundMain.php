@@ -93,11 +93,18 @@ class NotFoundMain
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
-		// add_action( 'set_404', [ $handler, 'register_style' ] );
-		
-		// add_action( 'parse_query', [ $handler, 'wp_query_error_code' ] );
-
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+		add_filter( 'redirection_request_headers', function( $headers )
+		{
+			LegalDebug::debug( [
+				'NotFoundMain' => 'redirection_request_headers-1',
+	
+				'headers' => $headers,
+			] );
+
+			return $headers;
+		} );
     }
 
 	// public static function wp_query_error_code( $query )
