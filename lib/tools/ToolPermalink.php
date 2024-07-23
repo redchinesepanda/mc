@@ -14,12 +14,20 @@ class ToolPermalink
         'done-custom-permalink'=> 'done-custom-permalink',
     ];
 
-    // public static function check_custom_permalink()
-    // {
-    //     return MultisiteBlog::check_main_domain()
+    const DOMAINS = [
+        'match.centrer',
 
-    //         || MultisiteBlog::check_main_domain_not_restricted();
-    // }
+        'content.match.centrer',
+
+        'old.match.centrer',
+    ];
+
+    public static function check_custom_permalink()
+    {
+        $domain MultisiteBlog::get_domain();
+
+        return in_array( $domain, self::DOMAINS );
+    }
 
     public static function register_functions_admin()
     {
@@ -31,7 +39,7 @@ class ToolPermalink
 
         if ( MultisiteMain::check_multisite() )
         {
-            if ( MultisiteBlog::check_not_main_domain() )
+            if ( self::check_custom_permalink() )
             {
                 $handler = new self();
 
