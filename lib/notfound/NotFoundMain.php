@@ -20,20 +20,6 @@ class NotFoundMain
 
     public static function register_style()
     {
-		// global $wp_query;
-
-		// LegalDebug::debug( [
-		// 	'NotFoundMain' => 'register_style-1',
-
-		// 	'check_shortcode' => LegalComponents::check_shortcode( 'legal-notfound' ),
-
-		// 	// 'is_page_template' => is_page_template( '404.php' ),
-
-		// 	// 'is_404' => is_404(),
-
-		// 	// 'query_vars' => $wp_query->query_vars,
-		// ] );
-
 		if ( self::check() )
 		{
 			if ( TemplateMain::check_new() )
@@ -158,7 +144,23 @@ class NotFoundMain
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+		
+		add_filter( 'body_class', [ $handler, 'wp_kama_body_class_filter' ], 10, 2 );
     }
+
+
+	function body_class_add_error410( $classes, $css_class )
+	{
+		LegalDebug::debug( [
+			'NotFoundMain' => 'body_class_add_error410-1',
+
+			'classes' => $classes,
+
+			'css_class' => $css_class,
+		] );
+		
+		return $classes;
+	}
 
 	public static function inline_style() {
 		$style = [];
