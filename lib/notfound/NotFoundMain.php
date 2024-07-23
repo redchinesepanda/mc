@@ -90,13 +90,13 @@ class NotFoundMain
 	
 			$redirection_items_db = $wpdb->get_results( $redirection_items_db_query );
 
-			LegalDebug::debug( [
-				'NotFoundMain' => 'get_redirection_items_db-1',
+			// LegalDebug::debug( [
+			// 	'NotFoundMain' => 'get_redirection_items_db-1',
 
-				'redirection_items_db_query' => $redirection_items_db_query,
+			// 	'redirection_items_db_query' => $redirection_items_db_query,
 
-				'redirection_items_db' => $redirection_items_db,
-			] );
+			// 	'redirection_items_db' => $redirection_items_db,
+			// ] );
 
 			if ( ! empty( $redirection_items_db ) )
 			{
@@ -122,22 +122,29 @@ class NotFoundMain
     //     return !is_404(); 
     // }
 
+	public static function check_404()
+	{
+		return is_404();
+	}
+
 	public static function check()
     {
-		$post = get_post();
+		// $post = get_post();
 
-		if ( $post )
-		{
-			LegalDebug::debug( [
-				'NotFoundMain' => 'check-1',
+		// if ( $post )
+		// {
+		// 	LegalDebug::debug( [
+		// 		'NotFoundMain' => 'check-1',
 	
-				'get_post_uri' => addslashes( ToolPermalink::get_post_uri( $post->ID ) ),
+		// 		'get_post_uri' => addslashes( ToolPermalink::get_post_uri( $post->ID ) ),
 
-				'check_redirection_items_db' => self::check_redirection_items_db(),
-			] );
-		}
+		// 		'check_redirection_items_db' => self::check_redirection_items_db(),
+		// 	] );
+		// }
 
-		return is_404();
+		return self::check_404()
+		
+			|| self::check_redirection_items_db();
     }
 
 	public static function register()
