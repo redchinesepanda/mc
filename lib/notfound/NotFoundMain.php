@@ -65,8 +65,12 @@ class NotFoundMain
 
 		if ( $post )
 		{
-			$header = '';
+			$options = red_get_options();
 			
+			$headers = new Red_Http_Headers( $options['headers'] );
+
+			$header = '';
+
 			$header = apply_filters( 'status_header', $header );
 
 			LegalDebug::debug( [
@@ -79,6 +83,8 @@ class NotFoundMain
 				'get_post_uri' => ToolPermalink::get_post_uri( $post->ID ),
 
 				'header' => $header,
+
+				'headers' => $headers,
 			] );
 		}
 
