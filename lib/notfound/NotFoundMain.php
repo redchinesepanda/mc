@@ -61,6 +61,12 @@ class NotFoundMain
 
 	public static function check()
     {
+		$terms = get_terms();
+
+		LegalDebug::debug( [
+			is_wp_error( $terms ),
+		] )
+
 		return is_404();
     }
 
