@@ -22,7 +22,7 @@ class ToolPermalink
                 MultisiteBlog::check_main_domain()
 
                 || MultisiteBlog::check_main_domain_not_restricted()
-            )
+            );
     }
 
     public static function register_functions_admin()
