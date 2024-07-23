@@ -189,6 +189,18 @@ class MultisiteBlog
 	{
 		return ! self::check_main_domain();
 	}
+	
+	public static function check_main_domain_restricted()
+	{
+		$domain = self::get_main_domain();
+
+		return in_array( $domain, ReviewRestricted::DOMAINS );
+	}
+
+	public static function check_main_domain_not_restricted()
+	{
+		return ! self::check_main_domain_restricted();
+	}
 }
 
 ?>
