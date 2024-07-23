@@ -8,6 +8,12 @@ class ToolPermalink
 		'post' => 'post',
 	];
 
+    const ACTION = [
+        'set-custom-permalink'=> 'set-custom-permalink',
+
+        'done-custom-permalink'=> 'done-custom-permalink',
+    ];
+
     public static function register_functions_admin()
     {
         // $handler = new self();
@@ -16,15 +22,77 @@ class ToolPermalink
         
         // add_filter( 'permalink_manager_filter_query', [ $handler, 'mc_permalink_manager_filter_query' ], 10, 6 );
 
-        // if ( MultisiteMain::check_multisite() )
-        // {
-        //     if ( MultisiteBlog::check_not_main_blog() )
-        //     {
-        //         $handler = new self();
+        if ( MultisiteMain::check_multisite() )
+        {
+            if ( MultisiteBlog::check_main_domain() )
+            {
+                $handler = new self();
 
-        //         add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
-        //     }
-        // }
+                // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
+
+                add_filter( 'bulk_actions-edit-page', [ $handler, 'add_custom_spermalink_item' ] );
+
+                add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_custom_spermalink_item' ], 10, 3);
+
+                add_action( 'admin_notices', [ $handler, 'notify_custom_spermalink_item' ] );
+            }
+        }
+    }
+
+    public static function notify_custom_spermalink_item()
+    {
+    	if ( ! empty( $_REQUEST[ self::ACTION[ 'done-custom-permalink' ] ] ) )
+        {
+    		$num_changed = (int) $_REQUEST[ self::ACTION[ 'done-custom-permalink' ] ];
+
+    		// printf( '<div id="message" class="updated notice is-dismissable"><p>' . __('Published %d posts.', 'txtdomain') . '</p></div>', $num_changed );
+
+    		$message = sprintf( ToolLoco::translate( 'Custom permalink set for %d posts' ), $num_changed );
+
+            $args = [
+                'message' => $message,
+			];
+
+            self::print_notices( $args );
+    	}
+    }
+    
+    public static function redirect_clean( $redirect )
+	{
+		return remove_query_arg( self::ACTION, $redirect );
+	}
+
+    public static function handle_custom_spermalink_item( $redirect_url, $action, $post_ids )
+    {
+        if ( $action == self::ACTION[ 'set-custom-permalink' ] )
+        {
+            $redirect_url = self::redirect_clean( $redirect_url );
+    	
+    		foreach ( $post_ids as $post_id )
+            {
+    			$post = get_post( $post_id );
+
+                if ( $post )
+                {
+                    // self::set_brand_type( $post_id, $post );
+
+					// AffiliateFilter::set_brand_type( $post_id, $post );
+
+                    self::set_custom_permalink( $post_id, $post );
+                }
+    		}
+
+    		$redirect_url = add_query_arg( self::ACTION[ 'done-custom-permalink' ], count( $post_ids ), $redirect_url );
+    	}
+
+    	return $redirect_url;
+    }
+
+    public static function add_custom_spermalink_item( $bulk_actions )
+    {
+    	$bulk_actions[ self::ACTION[ 'set-custom-permalink' ] ] = ToolLoco::translate( 'Set Custom Permalink' );
+
+    	return $bulk_actions;
     }
 
     public static function check_post_uri_empty( $post_id )
@@ -165,6 +233,15 @@ class ToolPermalink
         }
 
         return '';
+    }
+    
+    const TEMPLATE = [
+        'custom-permalink-notices' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-permalink-notices.php',
+    ];
+
+    public static function print_notices( $args )
+    {
+        LegalComponents::print_main( self::TEMPLATE[ 'custom-permalink-notices' ], $args );
     }
 
     // public static function mc_permalink_manager_filter_query( $query, $old_query, $uri_parts, $pm_query, $content_type, $element_object )
