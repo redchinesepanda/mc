@@ -156,10 +156,10 @@ class ToolPermalink
     
             MultisiteBlog::restore_blog();
     
-            if ( $current_custom_permalink != $custom_permalink )
-            {
+            // if ( $current_custom_permalink != $custom_permalink )
+            // {
                 self::set_post_uri( $post_id, $custom_permalink );
-            }
+            // }
     
             // LegalDebug::die( [
             //     'ToolPermalink' => 'set_custom_permalink',
