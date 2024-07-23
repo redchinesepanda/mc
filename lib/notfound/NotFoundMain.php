@@ -84,7 +84,7 @@ class NotFoundMain
 		{
 			global $wpdb;
 
-			$url = sprintf( '/$s/', ToolPermalink::get_post_uri( $post->ID ) );
+			$url = sprintf( '/%s/', ToolPermalink::get_post_uri( $post->ID ) );
 
 			$redirection_items_db_query = self::redirection_db_query( $wpdb, $url );
 	
