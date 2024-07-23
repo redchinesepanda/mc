@@ -63,7 +63,7 @@ class NotFoundMain
 
 		$gclid = 'empty';
 
-		if ( ! isset( $_GET[ 'gclid' ] ) )
+		if ( isset( $_GET[ 'gclid' ] ) )
 		{
 			$gclid = $_GET[ 'gclid' ];
 		}
