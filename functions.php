@@ -1,6 +1,17 @@
 <?php
 
-// wp_safe_redirect( 'https://old.match.center/cl/', '301' );
+
+
+add_filter( 'redirection_request_headers', function( $headers )
+{
+	LegalDebug::debug( [
+		'NotFoundMain' => 'redirection_request_headers-1',
+
+		'headers' => $headers,
+	] );
+
+	return $headers;
+} );
 
 require_once( 'lib/LegalMain.php' );
 
