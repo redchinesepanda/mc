@@ -40,12 +40,14 @@ class ToolTinyMCE
 
 		add_action( 'admin_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter('tiny_mce_before_init', [ $handler, 'init_anchors' ] );
+		// add_filter('tiny_mce_before_init', [ $handler, 'init_link_rel' ] );
+
+		add_filter('tiny_mce_before_init', [ $handler, 'init_link_attribute_rel' ] );
 		
 		add_filter('wp_targeted_link_rel', [ $handler, 'disable_rel_noopener' ], 999 );
     }
 
-	public static function init_anchors( $init )
+	public static function init_link_attribute_rel( $init )
 	{
 		$init[ 'allow_unsafe_link_target' ] = true;
 
@@ -53,26 +55,55 @@ class ToolTinyMCE
 
 		$init[ 'rel_list' ] = json_encode( [
 			[
-				'title' => 'none',
+				'title' => 'No rel attribbute',
 
 				'value' => '',
 			],
 
 			[
-				'title' => 'nofollow',
+				'title' => 'rel="noreferrer"',
 
-				'value' => 'nofollow',
+				'value' => 'noreferrer',
 			],
 
 			[
-				'title' => 'nofollow noopener',
+				'title' => 'rel="noreferrer nofollow"',
 
-				'value' => 'nofollow noopener',
+				'value' => 'noreferrer nofollow',
 			],
 		] );
 	
 		return $init;
 	}
+
+	// public static function init_anchors( $init )
+	// {
+	// 	$init[ 'allow_unsafe_link_target' ] = true;
+
+	// 	$init[ 'default_link_target' ] = '';
+
+	// 	$init[ 'rel_list' ] = json_encode( [
+	// 		[
+	// 			'title' => 'none',
+
+	// 			'value' => '',
+	// 		],
+
+	// 		[
+	// 			'title' => 'nofollow',
+
+	// 			'value' => 'nofollow',
+	// 		],
+
+	// 		[
+	// 			'title' => 'nofollow noopener',
+
+	// 			'value' => 'nofollow noopener',
+	// 		],
+	// 	] );
+	
+	// 	return $init;
+	// }
 	
 	public static function disable_rel_noopener( $rel )
 	{	
