@@ -22,15 +22,17 @@ class NotFoundMain
     {
 		// global $wp_query;
 
-		// LegalDebug::debug( [
-		// 	'NotFoundMain' => 'register_style-1',
+		LegalDebug::debug( [
+			'NotFoundMain' => 'register_style-1',
 
-		// 	'is_page_template' => is_page_template( '404.php' ),
+			'check_shortcode' => LegalComponents::check_shortcode( 'legal-notfound' ),
 
-		// 	'is_404' => is_404(),
+			// 'is_page_template' => is_page_template( '404.php' ),
 
-		// 	'query_vars' => $wp_query->query_vars,
-		// ] );
+			// 'is_404' => is_404(),
+
+			// 'query_vars' => $wp_query->query_vars,
+		] );
 
 		if ( self::check() )
 		{
@@ -74,19 +76,6 @@ class NotFoundMain
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
-
-	// public static function wp_query_error_code( $query )
-	// {
-	// 	LegalDebug::debug( [
-	// 		'NotFoundMain' => 'wp_query_error_code-1',
-
-	// 		'is_page_template' => is_page_template( '404.php' ),
-
-	// 		'is_404' => is_404(),
-
-	// 		'query' => $query,
-	// 	] );
-	// }
 
 	public static function inline_style() {
 		$style = [];
