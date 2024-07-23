@@ -219,7 +219,7 @@ class TemplateMain
         'legal-template-main-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/template/template-main-new.css',
 
-			'ver' => '1.0.3',
+			'ver' => '1.0.4',
 		],
 
         'legal-template-font-main' => [
