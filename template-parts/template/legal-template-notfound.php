@@ -6,6 +6,8 @@ LegalDebug::debug( [
 	'template' => 'legal-template-notfound.php-1',
 
 	'is_page_template' => is_page_template( '404.php' ),
+
+	'is_404' => is_404(),
 ] );
 
 ?>
