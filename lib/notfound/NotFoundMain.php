@@ -158,6 +158,11 @@ class NotFoundMain
 
 			'css_class' => $css_class,
 		] );
+
+		if ( self::check_redirection_items_db() )
+		{
+			$classes[] = 'error410';
+		}
 		
 		return $classes;
 	}
