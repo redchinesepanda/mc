@@ -151,13 +151,13 @@ class NotFoundMain
 
 	function body_class_add_error410( $classes, $css_class )
 	{
-		LegalDebug::debug( [
-			'NotFoundMain' => 'body_class_add_error410-1',
+		// LegalDebug::debug( [
+		// 	'NotFoundMain' => 'body_class_add_error410-1',
 
-			'classes' => $classes,
+		// 	'classes' => $classes,
 
-			'css_class' => $css_class,
-		] );
+		// 	'css_class' => $css_class,
+		// ] );
 
 		if ( self::check_redirection_items_db() )
 		{
