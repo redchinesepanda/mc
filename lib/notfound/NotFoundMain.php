@@ -65,6 +65,8 @@ class NotFoundMain
 			'NotFoundMain' => 'check-1',
 
 			'get_post_permalink' => get_post_permalink(),
+
+			'get_page_uri' => get_page_uri(),
 		] );
 
 		return is_404();
