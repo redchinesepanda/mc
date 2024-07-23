@@ -20,12 +20,16 @@ class NotFoundMain
 
     public static function register_style()
     {
+		global $wp_query;
+
 		LegalDebug::debug( [
 			'NotFoundMain' => 'register_style-1',
 
 			'is_page_template' => is_page_template( '404.php' ),
 
 			'is_404' => is_404(),
+
+			'query_vars' => $wp_query->query_vars,
 		] );
 
 		if ( self::check() )
@@ -82,23 +86,23 @@ class NotFoundMain
 
 		// add_action( 'set_404', [ $handler, 'register_style' ] );
 		
-		add_action( 'parse_query', [ $handler, 'wp_query_error_code' ] );
+		// add_action( 'parse_query', [ $handler, 'wp_query_error_code' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
     }
 
-	public static function wp_query_error_code( $query )
-	{
-		LegalDebug::debug( [
-			'NotFoundMain' => 'wp_query_error_code-1',
+	// public static function wp_query_error_code( $query )
+	// {
+	// 	LegalDebug::debug( [
+	// 		'NotFoundMain' => 'wp_query_error_code-1',
 
-			'is_page_template' => is_page_template( '404.php' ),
+	// 		'is_page_template' => is_page_template( '404.php' ),
 
-			'is_404' => is_404(),
+	// 		'is_404' => is_404(),
 
-			'query' => $query,
-		] );
-	}
+	// 		'query' => $query,
+	// 	] );
+	// }
 
 	public static function inline_style() {
 		$style = [];
