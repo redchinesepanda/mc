@@ -145,7 +145,7 @@ class NotFoundMain
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 		
-		add_filter( 'body_class', [ $handler, 'wp_kama_body_class_filter' ], 10, 2 );
+		add_filter( 'body_class', [ $handler, 'body_class_add_error410' ], 10, 2 );
     }
 
 
