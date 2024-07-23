@@ -64,6 +64,8 @@ class NotFoundMain
 		$terms = get_terms();
 
 		LegalDebug::debug( [
+			$terms,
+			
 			is_wp_error( $terms ),
 		] );
 
