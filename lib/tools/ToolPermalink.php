@@ -14,6 +14,17 @@ class ToolPermalink
         'done-custom-permalink'=> 'done-custom-permalink',
     ];
 
+    public static function check_custom_permalink()
+    {
+        return MultisiteMain::check_multisite()
+
+            && (
+                MultisiteBlog::check_main_domain()
+
+                || MultisiteBlog::check_main_domain_not_restricted()
+            )
+    }
+
     public static function register_functions_admin()
     {
         // $handler = new self();
@@ -30,16 +41,16 @@ class ToolPermalink
 
                 // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
 
-                add_filter( 'bulk_actions-edit-page', [ $handler, 'add_custom_spermalink_item' ] );
+                add_filter( 'bulk_actions-edit-page', [ $handler, 'add_custom_permalink_item' ] );
 
-                add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_custom_spermalink_item' ], 10, 3);
+                add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_custom_permalink_item' ], 10, 3);
 
-                add_action( 'admin_notices', [ $handler, 'notify_custom_spermalink_item' ] );
+                add_action( 'admin_notices', [ $handler, 'notify_custom_permalink_item' ] );
             }
         }
     }
 
-    public static function notify_custom_spermalink_item()
+    public static function notify_custom_permalink_item()
     {
     	if ( ! empty( $_REQUEST[ self::ACTION[ 'done-custom-permalink' ] ] ) )
         {
@@ -62,7 +73,7 @@ class ToolPermalink
 		return remove_query_arg( self::ACTION, $redirect );
 	}
 
-    public static function handle_custom_spermalink_item( $redirect_url, $action, $post_ids )
+    public static function handle_custom_permalink_item( $redirect_url, $action, $post_ids )
     {
         if ( $action == self::ACTION[ 'set-custom-permalink' ] )
         {
@@ -88,7 +99,7 @@ class ToolPermalink
     	return $redirect_url;
     }
 
-    public static function add_custom_spermalink_item( $bulk_actions )
+    public static function add_custom_permalink_item( $bulk_actions )
     {
     	$bulk_actions[ self::ACTION[ 'set-custom-permalink' ] ] = ToolLoco::translate( 'Set Custom Permalink' );
 
