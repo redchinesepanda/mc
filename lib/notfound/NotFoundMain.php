@@ -65,7 +65,7 @@ class NotFoundMain
 
 		LegalDebug::debug( [
 			is_wp_error( $terms ),
-		] )
+		] );
 
 		return is_404();
     }
