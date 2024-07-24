@@ -52,6 +52,8 @@ require_once( 'ToolPermalink.php' );
 
 require_once( 'ToolForbidden.php' );
 
+require_once( 'ToolAnchorAttributes.php' );
+
 class ToolsMain
 {
     const TEXT = [
@@ -109,6 +111,8 @@ class ToolsMain
     public static function register_functions_admin()
     {
         ToolPermalink::register_functions_admin();
+
+        ToolAnchorAttributes::register_functions_admin();
     }
 }
 
