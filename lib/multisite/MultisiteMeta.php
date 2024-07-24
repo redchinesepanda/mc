@@ -500,22 +500,24 @@ class MultisiteMeta
 
 	public static function set_post_moved( $post_id, $blog_id, $moved_post_id )
 	{
-		$meta_value = self::get_post_moved( $post_id );
+		$post_moved = self::get_post_moved( $post_id );
 
 		// $meta_value = array_merge( $meta_value, [ $blog_id => $moved_post_id ] );
 		
 		// $updated_meta_value = [ $blog_id => $moved_post_id ];
 		
-		$updated_meta_value = [];
+		$updated_post_moved = [];
 
-		if ( ! empty( $meta_value ) && is_array( $meta_value ) )
+		// if ( ! empty( $meta_value ) && is_array( $meta_value ) )
+
+		if ( self::check_post_moved_type( $post_moved ) )
 		{
-			$updated_meta_value = $meta_value;
+			$updated_post_moved = $post_moved;
 		}
 
-		$updated_meta_value[ $blog_id ] = $moved_post_id;
+		$updated_post_moved[ $blog_id ] = $moved_post_id;
 
-		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_meta_value );
+		update_post_meta( $post_id, self::POST_META[ 'moved-to' ], $updated_post_moved );
 
 		// LegalDebug::die( [
 		// 	'MultisiteMeta' =>'set_post_moved',
