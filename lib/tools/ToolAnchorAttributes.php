@@ -8,10 +8,12 @@ class ToolAnchorAttributes
 		'a-href-tel' => "//a[contains(@href,'tel:')]",
 
 		'a-href-mailto' => "//a[contains(@href,'mailto:')]",
+
+		'a-href-go' => "//a[contains(@href,'/go/')]",
 		
-		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])]",
+		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]",
 		
-		'a-href-internal' => "//a[contains(@href, '%s')][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])]",
+		'a-href-internal' => "//a[contains(@href, '%s')][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]",
 	];
 
 	const ATTRIBUTE = [
@@ -208,6 +210,26 @@ class ToolAnchorAttributes
 		$nodes_anchors_mailto = self::get_nodes_anchors_mailto( $dom );
 
 		self::add_rel_nofollow( $nodes_anchors_mailto );
+
+		// LegalDebug::debug( [
+		// 	'ToolAnchorAttributes' => 'get_all-1',
+
+		// 	'nodes_anchors_all' => $nodes_anchors_all,
+		// ] );
+	}
+
+	public static function get_nodes_anchors_go( $dom )
+	{
+		$query = self::PATTERNS[ 'a-href-go' ];
+
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
+	public static function modify_anchors_go( $dom )
+	{
+		$nodes_anchors_go = self::get_nodes_anchors_go( $dom );
+
+		self::add_rel_nofollow( $nodes_anchors_go );
 
 		// LegalDebug::debug( [
 		// 	'ToolAnchorAttributes' => 'get_all-1',
