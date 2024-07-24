@@ -139,6 +139,12 @@ class ToolAnchorAttributes
 	{
 		$nodes_anchors_internal = self::get_nodes_anchors_internal( $dom );
 
+		LegalDebug::debug( [
+			'ToolAnchorAttributes' => 'modify_internal',
+
+			'nodes_anchors_internal' => $nodes_anchors_internal,
+		] );
+
 		self::remove_attributes( $nodes_anchors_internal );
 	}
 
@@ -147,8 +153,6 @@ class ToolAnchorAttributes
 		self::modify_internal( $dom );
 
 		self::modify_external( $dom );
-
-		return true;
 	}
 
 	public static function modify_content( $post_id, $post )
