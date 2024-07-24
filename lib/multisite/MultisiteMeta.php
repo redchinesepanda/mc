@@ -260,9 +260,9 @@ class MultisiteMeta
 
 			'ID' => $post->ID,
 
-			// 'moved_to' => $moved_to,
+			'moved_to' => $moved_to,
 
-			// 'moved_to-gettype' => gettype( $moved_to ),
+			'moved_to-gettype' => gettype( $moved_to ),
 
 			'moved_to_function' => $moved_to_function,
 
