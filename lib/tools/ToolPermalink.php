@@ -165,29 +165,29 @@ class ToolPermalink
     
             $main_blog_id = MultisiteBlog::get_main_blog_id();
 
-            LegalDebug::debug( [
-                'ToolPermalink' => 'set_custom_permalink-1',
+            // LegalDebug::debug( [
+            //     'ToolPermalink' => 'set_custom_permalink-1',
     
-                'post_id' => $post_id,
+            //     'post_id' => $post_id,
 
-                'current_custom_permalink' => $current_custom_permalink,
+            //     'current_custom_permalink' => $current_custom_permalink,
     
-                'post_moved_id' => $post_moved_id,
+            //     'post_moved_id' => $post_moved_id,
     
-                'main_blog_id' => $main_blog_id,
-            ] );
+            //     'main_blog_id' => $main_blog_id,
+            // ] );
     
             MultisiteBlog::set_blog( $main_blog_id );
     
             $custom_permalink = self::get_post_uri( $post_moved_id );
             
-            LegalDebug::debug( [
-                'ToolPermalink' => 'set_custom_permalink-1',
+            // LegalDebug::debug( [
+            //     'ToolPermalink' => 'set_custom_permalink-1',
     
-                'post_moved_id' => $post_moved_id,
+            //     'post_moved_id' => $post_moved_id,
 
-                'custom_permalink' => $custom_permalink,
-            ] );
+            //     'custom_permalink' => $custom_permalink,
+            // ] );
     
             MultisiteBlog::restore_blog();
     
@@ -196,15 +196,15 @@ class ToolPermalink
                 self::set_post_uri( $post_id, $custom_permalink );
             // }
     
-            LegalDebug::die( [
-                'ToolPermalink' => 'set_custom_permalink-3',
+            // LegalDebug::die( [
+            //     'ToolPermalink' => 'set_custom_permalink-3',
     
-                // 'post_id' => $post_id,
+            //     // 'post_id' => $post_id,
     
-                // 'post_moved_id' => $post_moved_id,
+            //     // 'post_moved_id' => $post_moved_id,
     
-                // 'custom_permalink' => $custom_permalink,
-            ] );
+            //     // 'custom_permalink' => $custom_permalink,
+            // ] );
         // }
     }
 
@@ -232,17 +232,17 @@ class ToolPermalink
 
         $permalink_manager_uris = get_option( 'permalink-manager-uris' );
 
-        LegalDebug::debug( [
-            'ToolPermalink' => 'get_post_uri-1',
+        // LegalDebug::debug( [
+        //     'ToolPermalink' => 'get_post_uri-1',
 
-            'post_id' => $post_id,
+        //     'post_id' => $post_id,
 
-            'gettype' => gettype( $post_id ),
+        //     'gettype' => gettype( $post_id ),
 
-            'permalink_manager_uris' => $permalink_manager_uris,
+        //     'permalink_manager_uris' => $permalink_manager_uris,
 
-            'not_empty' => ( ! empty( $permalink_manager_uris[ $post_id ] ) ),
-        ] );
+        //     'not_empty' => ( ! empty( $permalink_manager_uris[ $post_id ] ) ),
+        // ] );
 
         if ( $permalink_manager_uris )
         {
