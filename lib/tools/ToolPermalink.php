@@ -232,7 +232,7 @@ class ToolPermalink
 
         $permalink_manager_uris = get_option( 'permalink-manager-uris' );
 
-        LegalDebug::die( [
+        LegalDebug::debug( [
             'ToolPermalink' => 'get_post_uri-1',
 
             'post_id' => $post_id,
