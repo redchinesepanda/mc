@@ -69,11 +69,11 @@ class ToolAnchorAttributes
 
                 if ( $post )
                 {
-					LegalDebug::debug( [
-						'ToolAnchorAttributes' => 'handle_anchor_attributes_item',
+					// LegalDebug::debug( [
+					// 	'ToolAnchorAttributes' => 'handle_anchor_attributes_item',
 
-						'post_id' => $post_id,
-					] );
+					// 	'post_id' => $post_id,
+					// ] );
 
                     self::modify_content( $post_id, $post );
                 }
@@ -115,11 +115,11 @@ class ToolAnchorAttributes
 	{
 		$nodes_anchors_external = self::get_nodes_anchors_external( $dom );
 		
-		LegalDebug::debug( [
-			'ToolAnchorAttributes' => 'modify_external-1',
+		// LegalDebug::debug( [
+		// 	'ToolAnchorAttributes' => 'modify_external-1',
 
-			'nodes_anchors_external' => $nodes_anchors_external,
-		] );
+		// 	'nodes_anchors_external' => $nodes_anchors_external,
+		// ] );
 
 		self::add_attributes( $nodes_anchors_external );
 	}
@@ -155,11 +155,11 @@ class ToolAnchorAttributes
 	{
 		$nodes_anchors_internal = self::get_nodes_anchors_internal( $dom );
 
-		LegalDebug::debug( [
-			'ToolAnchorAttributes' => 'modify_internal-1',
+		// LegalDebug::debug( [
+		// 	'ToolAnchorAttributes' => 'modify_internal-1',
 
-			'nodes_anchors_internal' => $nodes_anchors_internal,
-		] );
+		// 	'nodes_anchors_internal' => $nodes_anchors_internal,
+		// ] );
 
 		self::remove_attributes( $nodes_anchors_internal );
 	}
@@ -177,11 +177,11 @@ class ToolAnchorAttributes
 		
 		$query = self::PATTERNS[ 'a-all' ];
 
-		LegalDebug::debug( [
-			'ToolAnchorAttributes' => 'get_nodes_anchors_all-1',
+		// LegalDebug::debug( [
+		// 	'ToolAnchorAttributes' => 'get_nodes_anchors_all-1',
 
-			'query' => $query,
-		] );
+		// 	'query' => $query,
+		// ] );
 
 		return LegalDOM::get_nodes( $dom, $query );
 	}
@@ -190,11 +190,11 @@ class ToolAnchorAttributes
 	{
 		$nodes_anchors_all = self::get_nodes_anchors_all( $dom );
 
-		LegalDebug::debug( [
-			'ToolAnchorAttributes' => 'get_all-1',
+		// LegalDebug::debug( [
+		// 	'ToolAnchorAttributes' => 'get_all-1',
 
-			'nodes_anchors_all' => $nodes_anchors_all,
-		] );
+		// 	'nodes_anchors_all' => $nodes_anchors_all,
+		// ] );
 	}
 
 	public static function modify_content( $post_id, $post )
@@ -217,11 +217,11 @@ class ToolAnchorAttributes
 
 			wp_update_post( $post_modified );
 
-			LegalDebug::die( [
-				'ToolAnchorAttributes' => 'modify_content-1',
+			// LegalDebug::die( [
+			// 	'ToolAnchorAttributes' => 'modify_content-1',
 
-				'content' => $content,
-			] );
+			// 	'content' => $content,
+			// ] );
 		}
     }
 
