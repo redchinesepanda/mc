@@ -428,7 +428,9 @@ class MultisiteMeta
 
 		$post_moved = get_post_meta( $post_id, $meta_key, true );
 
-		if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
+		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
+		
+		if ( ! empty( $post_moved ) && ( is_array( $post_moved ) ) )
 		{
 			return $post_moved;
 		}
