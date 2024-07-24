@@ -13,27 +13,28 @@ class ACFBilletCards
 
     function choices( $field )
     {
-        $post = get_post();
-
-        $post_id = $post->ID;
-
-        $args = [
-            'post_type' => 'page',
-
-            'page_type' => 'bookmaker-card'
-        ];
-
-        $posts = get_posts( $args );
-
-        $choices = [];
-
-        if ( !empty( $posts ) ) {
-            foreach( $posts as $post ) {
-                $choices[$post->ID] = $post->post_title; 
+        if ( $post = get_post() )
+        {
+            $post_id = $post->ID;
+    
+            $args = [
+                'post_type' => 'page',
+    
+                'page_type' => 'bookmaker-card',
+            ];
+    
+            $posts = get_posts( $args );
+    
+            $choices = [];
+    
+            if ( !empty( $posts ) ) {
+                foreach( $posts as $post ) {
+                    $choices[$post->ID] = $post->post_title; 
+                }
             }
+    
+            $field['choices'] = $choices;
         }
-
-        $field['choices'] = $choices;
 
         return $field;
     }
