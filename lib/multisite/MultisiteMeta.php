@@ -433,7 +433,7 @@ class MultisiteMeta
 			return $post_moved;
 		}
 
-		return [];
+		return null;
 		
 		// return get_post_meta( $post_id, $meta_key, false );
 	}
