@@ -444,7 +444,12 @@ class MultisiteMeta
 		
 		// $updated_meta_value = [ $blog_id => $moved_post_id ];
 		
-		$updated_meta_value = $meta_value;
+		$updated_meta_value = [];
+
+		if ( ! empty( $meta_value ) )
+		{
+			$updated_meta_value = $meta_value;
+		}
 
 		$updated_meta_value[ $blog_id ] = $moved_post_id;
 
