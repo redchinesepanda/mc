@@ -114,6 +114,12 @@ class ToolAnchorAttributes
 	public static function modify_external( $dom )
 	{
 		$nodes_anchors_external = self::get_nodes_anchors_external( $dom );
+		
+		LegalDebug::debug( [
+			'ToolAnchorAttributes' => 'modify_external-1',
+
+			'nodes_anchors_external' => $nodes_anchors_external,
+		] );
 
 		self::add_attributes( $nodes_anchors_external );
 	}
