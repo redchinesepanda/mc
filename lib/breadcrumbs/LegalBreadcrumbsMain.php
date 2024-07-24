@@ -391,7 +391,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                     if ( !empty( $legal_ancestors ) ) {
                         foreach ( $legal_ancestors as $id ) {
-                            if ( ! mepty( $id ) )
+                            if ( ! empty( $id ) )
                             {
                                 $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                             }
