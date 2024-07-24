@@ -268,7 +268,7 @@ class MultisiteMeta
 
 			'moved_to_function-gettype' => gettype( $moved_to_function ),
 
-			// 'moved_from' => $moved_from,
+			'moved_from' => $moved_from,
 
 			'moved_from_function' => $moved_from_function,
 
