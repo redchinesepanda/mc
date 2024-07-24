@@ -245,6 +245,8 @@ class ToolAnchorAttributes
 			$dom = LegalDOM::get_dom( $post->post_content );
 
 			self::modify_anchors_service( $dom );
+
+			self::modify_anchors_go( $dom );
 	
 			self::modify_anchors( $dom );
 	
