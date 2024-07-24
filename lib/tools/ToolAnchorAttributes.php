@@ -7,7 +7,9 @@ class ToolAnchorAttributes
 
 		'a-href-external' => "//a[not(contains(@href, '%s'))][not(contains(@href, ':'))]",
 
-		'a-href-internal' => "//a[contains(@href, '%s')][not(contains(@href, ':'))]",
+		// 'a-href-internal' => "//a[contains(@href, '%s')][not(contains(@href, ':'))]",
+		'
+		a-href-internal' => "//a[contains(@href, '%s')]",
 	];
 
 	const ATTRIBUTE = [
