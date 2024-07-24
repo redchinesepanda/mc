@@ -406,6 +406,29 @@ class MultisiteMeta
 	
 	// public static function get_post_moved( $post_id, $blog_id, $meta_key = '' )
 
+	public static function check_post_moved_type( $post_moved )
+	{
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'check_post_moved_type-1',
+
+			'post_moved' => $post_moved,
+
+			'gettype' => gettype( $post_moved ),
+
+			'not_empty' => ( ! empty( $post_moved ) ),
+
+			'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
+
+			'is_array' => is_array( $post_moved ),
+
+			'is_numeric' => is_numeric( $post_moved ),
+		] );
+
+		return ! empty( $post_moved )
+		
+			&& in_array( gettype( $post_moved ), [ 'integer', 'array' ] );
+	}
+
 	public static function get_post_moved( $post_id, $meta_key = '' )
 	{
 		if ( empty( $meta_key ) )
@@ -436,21 +459,23 @@ class MultisiteMeta
 		
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) ) )
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'get_post_moved-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved-1',
 
-			'post_moved' => $post_moved,
+		// 	'post_moved' => $post_moved,
 
-			'gettype' => gettype( $post_moved ),
+		// 	'gettype' => gettype( $post_moved ),
 
-			'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
+		// 	'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
 
-			'is_array' => is_array( $post_moved ),
+		// 	'is_array' => is_array( $post_moved ),
 
-			'is_numeric' => is_numeric( $post_moved ),
-		] );
+		// 	'is_numeric' => is_numeric( $post_moved ),
+		// ] );
 		
-		if ( ! empty( $post_moved ) && ( in_array( gettype( $post_moved ), [ 'integer', 'array' ] ) ) )
+		// if ( ! empty( $post_moved ) && ( in_array( gettype( $post_moved ), [ 'integer', 'array' ] ) ) )
+
+		if ( self::check_post_moved_type( $post_moved ) )
 		{
 			return $post_moved;
 		}
