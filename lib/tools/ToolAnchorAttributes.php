@@ -205,7 +205,7 @@ class ToolAnchorAttributes
 
 		self::add_rel_nofollow( $nodes_anchors_tel );
 
-		$nodes_anchors_mailto = self::get_nodes_anchors_mailtos( $dom );
+		$nodes_anchors_mailto = self::get_nodes_anchors_mailto( $dom );
 
 		self::add_rel_nofollow( $nodes_anchors_mailto );
 
