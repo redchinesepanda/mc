@@ -226,7 +226,7 @@ class ToolPermalink
         {
             // if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
             
-            if ( ! isset( $permalink_manager_uris[ $post_id ] ) )
+            if ( array_key_exists( $post_id, $permalink_manager_uris ) )
             {
                 // LegalDebug::die( [
                 //     'ToolPermalink' => 'get_post_uri-2',
