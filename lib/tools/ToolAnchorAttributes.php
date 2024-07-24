@@ -179,6 +179,20 @@ class ToolAnchorAttributes
 		self::modify_external( $dom );
 	}
 
+	public static function get_nodes_anchors_hash( $dom )
+	{
+		$query = self::PATTERNS[ 'a-href-hash' ];
+
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
+	public static function modify_anchors_hash( $dom )
+	{
+		$nodes_anchors_hash = self::get_nodes_anchors_hash( $dom );
+
+		self::remove_attributes( $nodes_anchors_hash );
+	}
+
 	public static function get_nodes_anchors_mailto( $dom )
 	{
 		$query = self::PATTERNS[ 'a-href-mailto' ];
@@ -234,20 +248,6 @@ class ToolAnchorAttributes
 		self::add_rel_nofollow( $nodes_anchors_go );
 	}
 
-	public static function get_nodes_anchors_hash( $dom )
-	{
-		$query = self::PATTERNS[ 'a-href-hash' ];
-
-		return LegalDOM::get_nodes( $dom, $query );
-	}
-
-	public static function modify_anchors_hash( $dom )
-	{
-		$nodes_anchors_hash = self::get_nodes_anchors_hash( $dom );
-
-		self::remove_attributes( $nodes_anchors_hash );
-	}
-
 	public static function modify_content( $post_id, $post )
     {
 		if ( $post )
@@ -257,6 +257,8 @@ class ToolAnchorAttributes
 			self::modify_anchors_service( $dom );
 
 			self::modify_anchors_go( $dom );
+
+			self::modify_anchors_hash( $dom );
 	
 			self::modify_anchors( $dom );
 	
