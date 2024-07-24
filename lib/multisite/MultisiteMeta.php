@@ -430,7 +430,7 @@ class MultisiteMeta
 
 		if ( ! empty( $post_moved ) && is_array( $post_moved ) )
 		{
-			return post_moved;
+			return $post_moved;
 		}
 
 		return [];
