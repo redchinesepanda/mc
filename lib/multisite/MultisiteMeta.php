@@ -446,7 +446,7 @@ class MultisiteMeta
 		
 		$updated_meta_value = [];
 
-		if ( ! empty( $meta_value ) )
+		if ( ! empty( $meta_value ) && is_array( $meta_value ) )
 		{
 			$updated_meta_value = $meta_value;
 		}
