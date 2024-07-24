@@ -199,9 +199,13 @@ class ToolAnchorAttributes
 		return LegalDOM::get_nodes( $dom, $query );
 	}
 
-	public static function modify_service( $dom )
+	public static function modify_anchors_service( $dom )
 	{
 		$nodes_anchors_tel = self::get_nodes_anchors_tel( $dom );
+
+		self::add_rel_nofollow( $nodes );
+
+		$nodes_anchors_mailto = self::get_nodes_anchors_mailtos( $dom );
 
 		self::add_rel_nofollow( $nodes );
 
@@ -218,7 +222,7 @@ class ToolAnchorAttributes
 		{
 			$dom = LegalDOM::get_dom( $post->post_content );
 
-			self::get_all( $dom );
+			self::modify_anchors_service( $dom );
 	
 			self::modify_anchors( $dom );
 	
