@@ -3,7 +3,11 @@
 class ToolAnchorAttributes
 {
 	const PATTERNS = [
-		'a-all' => "//a",
+		// 'a-all' => "//a",
+
+		'a-href-tel' => "//a[contains(@href,'tel:')]",
+
+		'a-href-mailto' => "//a[contains(@href,'mailto:')]",
 		
 		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])]",
 		
@@ -171,24 +175,35 @@ class ToolAnchorAttributes
 		self::modify_external( $dom );
 	}
 
-	public static function get_nodes_anchors_all( $dom )
+	public static function get_nodes_anchors_mailto( $dom )
 	{
-		$domain = MultisiteBlog::get_domain();
-		
-		$query = self::PATTERNS[ 'a-all' ];
-
-		// LegalDebug::debug( [
-		// 	'ToolAnchorAttributes' => 'get_nodes_anchors_all-1',
-
-		// 	'query' => $query,
-		// ] );
+		$query = self::PATTERNS[ 'a-href-mailto' ];
 
 		return LegalDOM::get_nodes( $dom, $query );
 	}
 
-	public static function get_all( $dom )
+	public static function add_rel_nofollow( $nodes )
 	{
-		$nodes_anchors_all = self::get_nodes_anchors_all( $dom );
+		foreach ( $nodes as $node )
+		{
+			$node->renoveAttribute( self::ATTRIBUTE[ 'target' ] );
+
+			$node->setAttribute( self::ATTRIBUTE[ 'rel' ], 'nofollow' );
+		}
+	}
+
+	public static function get_nodes_anchors_tel( $dom )
+	{
+		$query = self::PATTERNS[ 'a-href-tel' ];
+
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
+	public static function modify_service( $dom )
+	{
+		$nodes_anchors_tel = self::get_nodes_anchors_tel( $dom );
+
+		self::add_rel_nofollow( $nodes );
 
 		// LegalDebug::debug( [
 		// 	'ToolAnchorAttributes' => 'get_all-1',
