@@ -434,7 +434,9 @@ class MultisiteMeta
 
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
 		
-		if ( ! empty( $post_moved ) && ( is_array( $post_moved ) ) )
+		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) ) )
+		
+		if ( ! empty( $post_moved ) && ( in_array( gettype( $post_moved ), [ 'integer', 'array' ] ) ) )
 		{
 			return $post_moved;
 		}
