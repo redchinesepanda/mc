@@ -434,7 +434,13 @@ class MultisiteMeta
 
 		return ! empty( $post_moved )
 		
-			&& in_array( gettype( $post_moved ), [ 'integer', 'array' ] );
+			// && in_array( gettype( $post_moved ), [ 'integer', 'array' ] )
+
+			&& (
+				is_array( $post_moved )
+
+				|| is_numeric( $post_moved ) && ! str_contains( $post_moved, ' ' )
+			);
 	}
 
 	public static function get_post_moved( $post_id, $meta_key = '' )
