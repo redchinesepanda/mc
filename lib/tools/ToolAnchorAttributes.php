@@ -113,9 +113,9 @@ class ToolAnchorAttributes
 
 	public static function modify_external( $dom )
 	{
-		$nodes_anchors_internal = self::get_nodes_anchors_internal( $dom );
+		$nodes_anchors_external = self::get_nodes_anchors_external( $dom );
 
-		self::remove_attributes( $nodes_anchors_internal );
+		self::add_attributes( $nodes_anchors_external );
 	}
 
 	public static function remove_attributes( $nodes )
