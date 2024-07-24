@@ -186,7 +186,7 @@ class ToolAnchorAttributes
 	{
 		foreach ( $nodes as $node )
 		{
-			$node->renoveAttribute( self::ATTRIBUTE[ 'target' ] );
+			$node->removeAttribute( self::ATTRIBUTE[ 'target' ] );
 
 			$node->setAttribute( self::ATTRIBUTE[ 'rel' ], 'nofollow' );
 		}
