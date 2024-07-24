@@ -389,9 +389,11 @@ class LegalBreadcrumbsMain extends LegalDebug
                         'LegalBreadcrumbsMain' => 'get-1',
                     ] );
 
-                    if ( !empty( $legal_ancestors ) ) {
-                        foreach ( $legal_ancestors as $id ) {
-                            if ( ! empty( $id ) )
+                    if ( !empty( $legal_ancestors ) )
+                    {
+                        foreach ( $legal_ancestors as $id )
+                        {
+                            if ( $ancestor_post = get_post( $id ) )
                             {
                                 $items[] = self::get_item( get_the_title( $id ), get_page_link( $id ), $index );
                             }
