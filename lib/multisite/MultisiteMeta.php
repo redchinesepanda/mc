@@ -433,18 +433,24 @@ class MultisiteMeta
 
 	public static function get_post_moved( $post_id, $meta_key = '' )
 	{
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved-1',
+
+			'post_id' => $post_id,
+
+			'meta_key' => $meta_key,
+		] );
+
 		if ( empty( $meta_key ) )
 		{
 			$meta_key = self::POST_META[ 'moved-to' ];
 		}
 
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'get_post_moved',
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved-2',
 
-		// 	'post_id' => $post_id,
-
-		// 	'meta_key' => $meta_key,
-		// ] );
+			'meta_key' => $meta_key,
+		] );
 
 		// $moved_to = get_post_meta( $post_id, $meta_key, true );
 
@@ -456,24 +462,16 @@ class MultisiteMeta
 		// return null;
 
 		$post_moved = get_post_meta( $post_id, $meta_key, true );
+		
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'get_post_moved-3',
+
+			'post_moved' => $post_moved,
+		] );
 
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
 		
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) ) )
-
-		// LegalDebug::debug( [
-		// 	'MultisiteMeta' => 'get_post_moved-1',
-
-		// 	'post_moved' => $post_moved,
-
-		// 	'gettype' => gettype( $post_moved ),
-
-		// 	'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
-
-		// 	'is_array' => is_array( $post_moved ),
-
-		// 	'is_numeric' => is_numeric( $post_moved ),
-		// ] );
 		
 		// if ( ! empty( $post_moved ) && ( in_array( gettype( $post_moved ), [ 'integer', 'array' ] ) ) )
 
