@@ -165,6 +165,10 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     public static function get_home_url()
     {
+        LegalDebug::debug( [
+            'LegalBreadcrumbsMain' => 'get_home_url-1',
+        ] );
+
         if ( get_option( 'show_on_front' ) === 'page' ) {
 			$homepage_id = get_option( 'page_on_front' );
 
@@ -176,6 +180,10 @@ class LegalBreadcrumbsMain extends LegalDebug
 		} else {
 			$homepage_url = get_option( 'home' );
 		}
+
+        LegalDebug::debug( [
+            'LegalBreadcrumbsMain' => 'get_home_url-1',
+        ] );
 
         $lang = WPMLMain::current_language();
 
