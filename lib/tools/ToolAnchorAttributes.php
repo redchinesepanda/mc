@@ -184,7 +184,7 @@ class ToolAnchorAttributes
 			LegalDebug::die( [
 				'ToolAnchorAttributes' => 'modify_content-1',
 
-				// 'content' => $content,
+				'content' => $content,
 			] );
 		}
     }
