@@ -10,8 +10,10 @@ class ToolAnchorAttributes
 		'a-href-mailto' => "//a[contains(@href,'mailto:')]",
 
 		'a-href-go' => "//a[contains(@href,'/go/')]",
+
+		'a-href-hash' => "//a[@href='#']",
 		
-		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]",
+		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])][not(self::node()[@href='#'])]",
 		
 		'a-href-internal' => "//a[contains(@href, '%s')][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]",
 	];
@@ -230,12 +232,20 @@ class ToolAnchorAttributes
 		$nodes_anchors_go = self::get_nodes_anchors_go( $dom );
 
 		self::add_rel_nofollow( $nodes_anchors_go );
+	}
 
-		// LegalDebug::debug( [
-		// 	'ToolAnchorAttributes' => 'get_all-1',
+	public static function get_nodes_anchors_hash( $dom )
+	{
+		$query = self::PATTERNS[ 'a-href-hash' ];
 
-		// 	'nodes_anchors_all' => $nodes_anchors_all,
-		// ] );
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
+	public static function modify_anchors_hash( $dom )
+	{
+		$nodes_anchors_hash = self::get_nodes_anchors_hash( $dom );
+
+		self::remove_attributes( $nodes_anchors_hash );
 	}
 
 	public static function modify_content( $post_id, $post )
