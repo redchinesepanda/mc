@@ -418,7 +418,14 @@ class MultisiteMeta
 
 		// return null;
 
-		return get_post_meta( $post_id, $meta_key, true );
+		$post_moved = get_post_meta( $post_id, $meta_key, true );
+
+		if ( ! empty( $post_moved ) && is_array( $post_moved ) )
+		{
+			return post_moved;
+		}
+
+		return [];
 		
 		// return get_post_meta( $post_id, $meta_key, false );
 	}
