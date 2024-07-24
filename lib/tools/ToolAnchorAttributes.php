@@ -5,11 +5,11 @@ class ToolAnchorAttributes
 	const PATTERNS = [
 		'a-all' => "//a",
 
-		'a-href-external' => "//a[not(contains(@href, '%s'))][not(contains(@href, ':'))]",
+		'a-href-external' => "//a[not(contains(@href, '%s'))][not(contains(@href, ':')]",
 
 		// 'a-href-internal' => "//a[contains(@href, '%s')][not(contains(@href, ':'))]",
 		
-		'a-href-internal' => "//a[contains(@href, '%s')]",
+		'a-href-internal' => "//a[contains(@href, '%s')][not([contains(@href, ':')])",
 	];
 
 	const ATTRIBUTE = [
