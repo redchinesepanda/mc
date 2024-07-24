@@ -253,7 +253,7 @@ class MultisiteMeta
 
 		$moved_from = get_post_meta( $post->ID, self::POST_META[ 'moved-from' ], true );
 
-		$moved_from_function = MultisiteMeta::get_post_moved( $post->ID, self::POST_META[ 'moved-from' ] );
+		$moved_from_function = MultisiteMeta::get_post_moved( $post->ID, MultisiteMeta::POST_META[ 'moved-from' ] );
 
 		LegalDebug::debug( [
 			'MultisiteMeta' => 'register_functions_admin',
