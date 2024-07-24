@@ -164,10 +164,30 @@ class ToolPermalink
             $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
     
             $main_blog_id = MultisiteBlog::get_main_blog_id();
+
+            LegalDebug::debug( [
+                'ToolPermalink' => 'set_custom_permalink-1',
+    
+                'post_id' => $post_id,
+
+                'current_custom_permalink' => $current_custom_permalink,
+    
+                'post_moved_id' => $post_moved_id,
+    
+                'main_blog_id' => $main_blog_id,
+            ] );
     
             MultisiteBlog::set_blog( $main_blog_id );
     
             $custom_permalink = self::get_post_uri( $post_moved_id );
+            
+            LegalDebug::debug( [
+                'ToolPermalink' => 'set_custom_permalink-1',
+    
+                'post_moved_id' => $post_moved_id,
+
+                'custom_permalink' => $custom_permalink,
+            ] );
     
             MultisiteBlog::restore_blog();
     
@@ -176,15 +196,15 @@ class ToolPermalink
                 self::set_post_uri( $post_id, $custom_permalink );
             // }
     
-            // LegalDebug::die( [
-            //     'ToolPermalink' => 'set_custom_permalink',
+            LegalDebug::die( [
+                'ToolPermalink' => 'set_custom_permalink-3',
     
-            //     'post_id' => $post_id,
+                // 'post_id' => $post_id,
     
-            //     'post_moved_id' => $post_moved_id,
+                // 'post_moved_id' => $post_moved_id,
     
-            //     'custom_permalink' => $custom_permalink,
-            // ] );
+                // 'custom_permalink' => $custom_permalink,
+            ] );
         // }
     }
 
