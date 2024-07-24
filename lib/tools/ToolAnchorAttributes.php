@@ -132,6 +132,14 @@ class ToolAnchorAttributes
 		
 		$query = sprintf( self::PATTERNS[ 'a-href-internal' ], $domain );
 
+		LegalDebug::debug( [
+			'ToolAnchorAttributes' => 'get_nodes_anchors_internal-1',
+
+			'domain' => $domain,
+
+			'query' => $query,
+		] );
+
 		return LegalDOM::get_nodes( $dom, $query );
 	}
 
@@ -140,7 +148,7 @@ class ToolAnchorAttributes
 		$nodes_anchors_internal = self::get_nodes_anchors_internal( $dom );
 
 		LegalDebug::debug( [
-			'ToolAnchorAttributes' => 'modify_internal',
+			'ToolAnchorAttributes' => 'modify_internal-1',
 
 			'nodes_anchors_internal' => $nodes_anchors_internal,
 		] );
