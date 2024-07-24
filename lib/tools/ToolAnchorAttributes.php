@@ -171,11 +171,39 @@ class ToolAnchorAttributes
 		self::modify_external( $dom );
 	}
 
+	public static function get_nodes_anchors_all( $dom )
+	{
+		$domain = MultisiteBlog::get_domain();
+		
+		$query = self::PATTERNS[ 'a-all' ];
+
+		LegalDebug::debug( [
+			'ToolAnchorAttributes' => 'get_nodes_anchors_all-1',
+
+			'query' => $query,
+		] );
+
+		return LegalDOM::get_nodes( $dom, $query );
+	}
+
+	public static function get_all( $dom )
+	{
+		$nodes_anchors_all = self::get_nodes_anchors_all( $dom );
+
+		LegalDebug::debug( [
+			'ToolAnchorAttributes' => 'get_all-1',
+
+			'nodes_anchors_all' => $nodes_anchors_all,
+		] );
+	}
+
 	public static function modify_content( $post_id, $post )
     {
 		if ( $post )
 		{
 			$dom = LegalDOM::get_dom( $post->post_content );
+
+			self::get_all( $dom );
 	
 			self::modify_anchors( $dom );
 	
