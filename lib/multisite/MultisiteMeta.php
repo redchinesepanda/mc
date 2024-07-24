@@ -408,21 +408,21 @@ class MultisiteMeta
 
 	public static function check_post_moved_type( $post_moved )
 	{
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'check_post_moved_type-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'check_post_moved_type-1',
 
-			'post_moved' => $post_moved,
+		// 	'post_moved' => $post_moved,
 
-			'gettype' => gettype( $post_moved ),
+		// 	'gettype' => gettype( $post_moved ),
 
-			'not_empty' => ( ! empty( $post_moved ) ),
+		// 	'not_empty' => ( ! empty( $post_moved ) ),
 
-			'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
+		// 	'in_array' => in_array( gettype( $post_moved ), [ 'integer', 'array' ] ),
 
-			'is_array' => is_array( $post_moved ),
+		// 	'is_array' => is_array( $post_moved ),
 
-			'is_numeric' => is_numeric( $post_moved ),
-		] );
+		// 	'is_numeric' => is_numeric( $post_moved ),
+		// ] );
 
 		return ! empty( $post_moved )
 		
