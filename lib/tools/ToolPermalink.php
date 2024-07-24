@@ -212,7 +212,7 @@ class ToolPermalink
 
         $permalink_manager_uris = get_option( 'permalink-manager-uris' );
 
-        LegalDebug::die( [
+        LegalDebug::debug( [
             'ToolPermalink' => 'get_post_uri',
 
             'post_id' => $post_id,
@@ -226,11 +226,11 @@ class ToolPermalink
         {
             if ( ! empty( $permalink_manager_uris[ $post_id ] ) )
             {
-                // LegalDebug::debug( [
-                //     'ToolPermalink' => 'get_post_uri-1',
+                LegalDebug::die( [
+                    'ToolPermalink' => 'get_post_uri-1',
 
-                //     'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
-                // ] );
+                    'permalink_manager_uris' => $permalink_manager_uris[ $post_id ],
+                ] );
 
                 return $permalink_manager_uris[ $post_id ];
             }
