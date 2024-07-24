@@ -260,17 +260,19 @@ class MultisiteMeta
 
 			'ID' => $post->ID,
 
-			'moved_to' => $moved_to,
+			// 'moved_to' => $moved_to,
 
-			'moved_to-gettype' => gettype( $moved_to ),
+			// 'moved_to-gettype' => gettype( $moved_to ),
 
 			'moved_to_function' => $moved_to_function,
 
 			'moved_to_function-gettype' => gettype( $moved_to_function ),
 
-			'moved_from' => $moved_from,
+			// 'moved_from' => $moved_from,
 
 			'moved_from_function' => $moved_from_function,
+
+			'moved_from_function-gettype' => gettype( $moved_from_function ),
 		] );
 
 		// foreach ( $post_meta as $key => $value )
