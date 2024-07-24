@@ -69,7 +69,11 @@ class ToolAnchorAttributes
                 {
                     self::modify_content( $post_id, $post );
 
-					// AffiliateFilter::set_brand_type( $post_id, $post );
+					LegalDebug::debug( [
+						'ToolAnchorAttributes' => 'handle_anchor_attributes_item',
+
+						'post_id' => $post_id,
+					] );
                 }
     		}
 
