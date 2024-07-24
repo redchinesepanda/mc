@@ -3,6 +3,8 @@
 class ToolAnchorAttributes
 {
 	const PATTERNS = [
+		'a-all' => "//a",
+
 		'a-href-external' => "//a[not(contains(@href, '%s'))][not(contains(@href, ':'))]",
 
 		'a-href-internal' => "//a[contains(@href, '%s')][not(contains(@href, ':'))]",
@@ -167,7 +169,7 @@ class ToolAnchorAttributes
     {
 		if ( $post )
 		{
-			$dom = LegalDOM::get_dom( $post->content );
+			$dom = LegalDOM::get_dom( $post->post_content );
 	
 			self::modify_anchors( $dom );
 	
