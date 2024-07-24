@@ -467,6 +467,8 @@ class MultisiteMeta
 			'MultisiteMeta' => 'get_post_moved-3',
 
 			'post_moved' => $post_moved,
+
+			'check_post_moved_type' => self::check_post_moved_type( $post_moved ),
 		] );
 
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
