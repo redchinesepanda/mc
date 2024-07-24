@@ -443,24 +443,24 @@ class MultisiteMeta
 
 	public static function get_post_moved( $post_id, $meta_key = '' )
 	{
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'get_post_moved-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved-1',
 
-			'post_id' => $post_id,
+		// 	'post_id' => $post_id,
 
-			'meta_key' => $meta_key,
-		] );
+		// 	'meta_key' => $meta_key,
+		// ] );
 
 		if ( empty( $meta_key ) )
 		{
 			$meta_key = self::POST_META[ 'moved-to' ];
 		}
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'get_post_moved-2',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved-2',
 
-			'meta_key' => $meta_key,
-		] );
+		// 	'meta_key' => $meta_key,
+		// ] );
 
 		// $moved_to = get_post_meta( $post_id, $meta_key, true );
 
@@ -473,13 +473,13 @@ class MultisiteMeta
 
 		$post_moved = get_post_meta( $post_id, $meta_key, true );
 		
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'get_post_moved-3',
+		// LegalDebug::debug( [
+		// 	'MultisiteMeta' => 'get_post_moved-3',
 
-			'post_moved' => $post_moved,
+		// 	'post_moved' => $post_moved,
 
-			'check_post_moved_type' => self::check_post_moved_type( $post_moved ),
-		] );
+		// 	'check_post_moved_type' => self::check_post_moved_type( $post_moved ),
+		// ] );
 
 		// if ( ! empty( $post_moved ) && ( is_array( $post_moved ) || is_numeric( $post_moved ) ) )
 		
