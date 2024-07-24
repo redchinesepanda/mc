@@ -425,7 +425,7 @@ class MultisiteMeta
 
 			'is_numeric' => is_numeric( $post_moved ),
 
-			'str_contains' => str_contains( ' ', $post_moved ),
+			'str_contains' => str_contains( $post_moved, ' ' ),
 		] );
 
 		return ! empty( $post_moved )
