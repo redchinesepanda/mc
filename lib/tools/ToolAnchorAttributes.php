@@ -203,11 +203,11 @@ class ToolAnchorAttributes
 	{
 		$nodes_anchors_tel = self::get_nodes_anchors_tel( $dom );
 
-		self::add_rel_nofollow( $nodes );
+		self::add_rel_nofollow( $nodes_anchors_tel );
 
 		$nodes_anchors_mailto = self::get_nodes_anchors_mailtos( $dom );
 
-		self::add_rel_nofollow( $nodes );
+		self::add_rel_nofollow( $nodes_anchors_mailto );
 
 		// LegalDebug::debug( [
 		// 	'ToolAnchorAttributes' => 'get_all-1',
