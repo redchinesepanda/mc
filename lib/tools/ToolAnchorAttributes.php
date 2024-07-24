@@ -209,6 +209,14 @@ class ToolAnchorAttributes
 	
 			$content = $dom->saveHTML( $dom );
 
+			$post_modified = [
+				'ID' => $post_id,
+
+                'post_content' => $content,
+			];
+
+			wp_update_post( $post_modified );
+
 			LegalDebug::die( [
 				'ToolAnchorAttributes' => 'modify_content-1',
 
