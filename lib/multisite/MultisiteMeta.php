@@ -477,11 +477,19 @@ class MultisiteMeta
 		
 		// if ( ! empty( $post_moved ) && ( in_array( gettype( $post_moved ), [ 'integer', 'array' ] ) ) )
 
-		if ( self::check_post_moved_type( $post_moved ) )
+		if ( $meta_key == self::POST_META[ 'moved-to' ] )
+		{
+			if ( self::check_post_moved_type( $post_moved ) )
+			{
+				return $post_moved;
+			}
+		}
+
+		if ( ! empty( $post_moved ) )
 		{
 			return $post_moved;
 		}
-
+		
 		return null;
 		
 		// return get_post_meta( $post_id, $meta_key, false );
