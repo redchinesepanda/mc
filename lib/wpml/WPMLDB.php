@@ -499,16 +499,20 @@ class WPMLDB
         // $all_languages_query = self::multisite_all_languages_query( $wpdb, $language_code );
 
 		// LegalDebug::debug( [
-        //     'WPMLDB' => 'multisite_all_languages',
+        //     'WPMLDB' => 'multisite_all_languages-1',
 
         //     'language_code' => $language_code,
-
-        //     'all_languages_query' => $all_languages_query,
         // ] );
         
         // $items = $wpdb->get_results( $all_languages_query );
         
 		$items = self::get_all_languages_db( $language_code );
+
+		LegalDebug::debug( [
+            'WPMLDB' => 'multisite_all_languages-2',
+
+            'items' => $items,
+        ] );
 
 		$trid_items = [];
 
