@@ -40,10 +40,12 @@ class WPOptimizeMain
 			'WPOptimizeMain' => 'mc_edit_form_after_title_debug-1',
 
 			'WPO_CACHE_FILES_DIR' => WPO_CACHE_FILES_DIR,
-			
-			'ABSPATH' => ABSPATH,
 
-			'new_cashe_dir' => ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ],
+			'$_SERVER' => $_SERVER,
+			
+			// 'ABSPATH' => ABSPATH,
+
+			// 'new_cashe_dir' => ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ],
 		] );
 	}
 }
