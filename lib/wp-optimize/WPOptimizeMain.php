@@ -15,7 +15,7 @@ class WPOptimizeMain
 
         add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		add_action( 'plugins_loaded', [ $handler, 'set_wpo_cache_files_dir' ], 0 );
+		add_action( 'plugins_loaded', [ $handler, 'set_wpo_cache_files_dir' ], 1 );
     }
 
 	public static  function set_wpo_cache_files_dir()
