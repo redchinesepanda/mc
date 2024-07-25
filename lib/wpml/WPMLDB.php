@@ -92,7 +92,20 @@ class WPMLDB
 			return $trid_items[ $code ];
 		}
 
-		return implode( '/', [ $siteurl, $code, '' ] );
+		$result_url = [
+			$siteurl,
+		];
+
+		if ( $code != 'en' )
+		{
+			$result_url[] = $code;
+		}
+
+		$result_url[] = '';
+
+		return implode( '/', $result_url );
+
+		// return implode( '/', [ $siteurl, $code, '' ] );
 
 		// $path = '';
 
@@ -508,11 +521,11 @@ class WPMLDB
         
 		$items = self::get_all_languages_db( $language_code );
 
-		LegalDebug::debug( [
-            'WPMLDB' => 'multisite_all_languages-2',
+		// LegalDebug::debug( [
+        //     'WPMLDB' => 'multisite_all_languages-2',
 
-            'items' => $items,
-        ] );
+        //     'items' => $items,
+        // ] );
 
 		$trid_items = [];
 
