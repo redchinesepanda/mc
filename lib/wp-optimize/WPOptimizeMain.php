@@ -11,9 +11,9 @@ class WPOptimizeMain
 
 	public static function register_functions()
     {
-        // $handler = new self();
+        $handler = new self();
 
-        // add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+        add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
 		// add_action( 'plugins_loaded', [ $handler, 'set_wpo_cache_files_dir' ], 1 );
     }
@@ -41,7 +41,7 @@ class WPOptimizeMain
 
 			'WPO_CACHE_FILES_DIR' => WPO_CACHE_FILES_DIR,
 
-			'$_SERVER' => $_SERVER,
+			// '$_SERVER' => $_SERVER,
 			
 			// 'ABSPATH' => ABSPATH,
 
