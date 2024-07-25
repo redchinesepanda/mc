@@ -22,9 +22,9 @@ class WPOptimizeMain
 	{
 		if ( !defined( 'WPO_CACHE_FILES_DIR' ) )
 		{
-			// define( 'WPO_CACHE_FILES_DIR', ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ] );
+			define( 'WPO_CACHE_FILES_DIR', ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ] );
 			
-			define( 'WPO_CACHE_FILES_DIR', ABSPATH . 'wp-content/cache/wpo-cache/' );
+			// define( 'WPO_CACHE_FILES_DIR', ABSPATH . 'wp-content/cache/wpo-cache/' );
 		}
 	}
 
