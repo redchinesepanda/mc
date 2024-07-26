@@ -187,7 +187,8 @@ class MultisiteAdmin
 		$sites = get_sites( [
 			'site__not_in' => MultisiteBlog::get_current_blog_id(),
 
-			'number' => 32,
+			// 'number' => 32,
+			'number' => 35,
 		] );
 		
 		if ( $sites )
