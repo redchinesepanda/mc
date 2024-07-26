@@ -392,7 +392,7 @@
     height: auto;
 }
 
-.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .item-image:not( .columns-1 .item-image.legal-portrait ) {
+.tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset:not( .columns-3 ) .item-image:not( .columns-1 .item-image.legal-portrait ) {
     width: 100%;
     height: auto;
 }
