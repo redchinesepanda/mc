@@ -2,7 +2,7 @@
 
 /*
 
-Template Name: Single Legal Blog & Attachment
+Template Name: Single MC Post & Attachment
 Template Post Type: post
 
 */
