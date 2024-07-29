@@ -11,11 +11,11 @@ class WPOptimizeMain
 
 	public static function register_functions()
     {
-        $handler = new self();
+        // $handler = new self();
 
-        add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+        // add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		// add_action( 'plugins_loaded', [ $handler, 'set_wpo_cache_files_dir' ], 1 );
+		// // add_action( 'plugins_loaded', [ $handler, 'set_wpo_cache_files_dir' ], 1 );
     }
 
 	public static  function set_wpo_cache_files_dir()
@@ -34,20 +34,20 @@ class WPOptimizeMain
 		] );
 	}
 
-	function mc_edit_form_after_title_debug( $post )
-	{
-		LegalDebug::debug( [
-			'WPOptimizeMain' => 'mc_edit_form_after_title_debug-1',
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	LegalDebug::debug( [
+	// 		'WPOptimizeMain' => 'mc_edit_form_after_title_debug-1',
 
-			'WPO_CACHE_FILES_DIR' => WPO_CACHE_FILES_DIR,
+	// 		'WPO_CACHE_FILES_DIR' => WPO_CACHE_FILES_DIR,
 
-			// '$_SERVER' => $_SERVER,
+	// 		// '$_SERVER' => $_SERVER,
 			
-			// 'ABSPATH' => ABSPATH,
+	// 		// 'ABSPATH' => ABSPATH,
 
-			// 'new_cashe_dir' => ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ],
-		] );
-	}
+	// 		// 'new_cashe_dir' => ABSPATH . 'wp-content/cache/wpo-cache/' . $_SERVER[ 'HTTP_HOST' ],
+	// 	] );
+	// }
 }
 
 ?>
