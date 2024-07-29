@@ -24,7 +24,7 @@ class AffiliateCategory
 
 			'permalink' => $permalink,
 
-			'post_id' => $post_id,
+			'post->ID' => $post->ID,
 
 			'leavename' => $leavename,
 
