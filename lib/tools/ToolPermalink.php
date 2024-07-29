@@ -159,7 +159,7 @@ class ToolPermalink
     {
         // if ( self::check_post_uri_empty( $post_id ) )
         // {
-            $current_custom_permalink = self::get_post_uri( $post_id );
+            // $current_custom_permalink = self::get_post_uri( $post_id );
 
             $post_moved_id = MultisiteMeta::get_post_moved_id( $post_id );
     
