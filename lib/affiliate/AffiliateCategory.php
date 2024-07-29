@@ -17,6 +17,8 @@ class AffiliateCategory
 
 	public static function post_type_link( $permalink, $post_id, $leavename )
 	{
+		$terms = wp_get_object_terms( $post->ID, self::$taxonomy );
+
 		LegalDebug::debug( [
 			'AffiliateCategory' => 'post_type_link-1',
 
@@ -25,6 +27,8 @@ class AffiliateCategory
 			'post_id' => $post_id,
 
 			'leavename' => $leavename,
+
+			'terms' => $terms,
 		] );
 
         // $post = get_post( $post_id );
