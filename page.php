@@ -3,7 +3,7 @@
 /*
 
 Template Name: Single Legal Blog & Attachment
-Template Post Type: post
+Template Post Type: page
 
 */
 
