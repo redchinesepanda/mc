@@ -232,25 +232,25 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		$handler = new self();
+		// $handler = new self();
 
-		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+		// // add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	function mc_edit_form_after_title_debug( $post )
-	{
-		$wp_page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+	// function mc_edit_form_after_title_debug( $post )
+	// {
+	// 	$wp_page_template = get_post_meta( $post->ID, '_wp_page_template', true );
 
-		LegalDebug::debug( [
-			'MultisiteMeta' => 'register_functions_admin',
+	// 	LegalDebug::debug( [
+	// 		'MultisiteMeta' => 'register_functions_admin',
 
-			'ID' => $post->ID,
+	// 		'ID' => $post->ID,
 
-			'wp_page_template' => $wp_page_template,
-		] );
-	}
+	// 		'wp_page_template' => $wp_page_template,
+	// 	] );
+	// }
 
 	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	// {
