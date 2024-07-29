@@ -15,7 +15,7 @@ class AffiliateCategory
 		}
 	}
 
-	public static function post_type_link( $permalink, $post_id, $leavename )
+	public static function post_type_link( $permalink, $post, $leavename )
 	{
 		$terms = wp_get_object_terms( $post->ID, self::$taxonomy );
 
