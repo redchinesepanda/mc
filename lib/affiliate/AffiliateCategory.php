@@ -10,7 +10,7 @@ class AffiliateCategory
 			// {
 				$handler = new self();
 
-				add_filter( 'post_type_link', [ $handler, [ $handler, 'post_type_link' ] ], 10, 3 );
+				add_filter( 'post_type_link', [ $handler, 'post_type_link' ], 10, 3 );
 			// }
 		}
 	}
