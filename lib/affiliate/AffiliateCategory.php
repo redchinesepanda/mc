@@ -27,7 +27,7 @@ class AffiliateCategory
 
 			if( ! empty( $term->slug ) )
 			{
-				$slug = $this->get_slug();
+				$slug = 'go';
 
 				$permalink = str_replace( $slug, $slug . '/' . $term->slug , $permalink );
 			}
