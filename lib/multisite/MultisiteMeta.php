@@ -232,62 +232,25 @@ class MultisiteMeta
 
 	public static function register_functions_debug()
 	{
-		// $handler = new self();
+		$handler = new self();
 
-		// add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
+		add_action( 'edit_form_after_title', [ $handler, 'mc_edit_form_after_title_debug' ] );
 
-		// // add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
+		// add_action( 'category_pre_edit_form', [ $handler, 'mc_category_pre_edit_form_debug' ], 10, 2 );
 	}
 
-	// function mc_edit_form_after_title_debug( $post )
-	// {
-	// 	// LegalDebug::debug( [
-	// 	// 	'MultisiteMeta' => 'register_functions_admin',
+	function mc_edit_form_after_title_debug( $post )
+	{
+		$wp_page_template = get_post_meta( $post->ID, '_wp_page_template', true );
 
-	// 	// 	'post_parent' => $post->post_parent,
-	// 	// ] );
+		LegalDebug::debug( [
+			'MultisiteMeta' => 'register_functions_admin',
 
-	// 	$moved_to = get_post_meta( $post->ID, self::POST_META[ 'moved-to' ], true );
+			'ID' => $post->ID,
 
-	// 	$moved_to_function = MultisiteMeta::get_post_moved( $post->ID );
-
-	// 	$moved_from = get_post_meta( $post->ID, self::POST_META[ 'moved-from' ], true );
-
-	// 	$moved_from_function = MultisiteMeta::get_post_moved( $post->ID, MultisiteMeta::POST_META[ 'moved-from' ] );
-
-	// 	LegalDebug::debug( [
-	// 		'MultisiteMeta' => 'register_functions_admin',
-
-	// 		'ID' => $post->ID,
-
-	// 		'moved_to' => $moved_to,
-
-	// 		'moved_to-gettype' => gettype( $moved_to ),
-
-	// 		'moved_to_function' => $moved_to_function,
-
-	// 		'moved_to_function-gettype' => gettype( $moved_to_function ),
-
-	// 		'moved_from' => $moved_from,
-
-	// 		'moved_from_function' => $moved_from_function,
-
-	// 		'moved_from_function-gettype' => gettype( $moved_from_function ),
-	// 	] );
-
-	// 	// foreach ( $post_meta as $key => $value )
-    //     // {
-    //     //     LegalDebug::debug( [
-    //     //         'MultisiteMeta' => 'register_functions_admin',
-
-	// 	// 		'key' => $key,
-
-	// 	// 		'value' => $value,
-    //     //     ] );
-
-	// 	// 	// delete_post_meta( $post->ID, $key );
-	// 	// }
-	// }
+			'wp_page_template' => $wp_page_template,
+		] );
+	}
 
 	// function mc_category_pre_edit_form_debug( $term, $taxonomy )
 	// {
