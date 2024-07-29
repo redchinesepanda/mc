@@ -19,6 +19,20 @@ class AffiliateCategory
 	{
 		$terms = wp_get_object_terms( $post->ID, 'affiliate-links-cat' );
 
+		if( ! empty( $terms ) )
+		{
+			// $term = $terms[0]->slug;
+			
+			$term = array_shift( $terms );
+
+			if( ! empty( $term->slug ) )
+			{
+				$slug = $this->get_slug();
+
+				$permalink = str_replace( $slug, $slug . '/' . $term->slug , $permalink );
+			}
+		}
+
 		LegalDebug::debug( [
 			'AffiliateCategory' => 'post_type_link-1',
 
