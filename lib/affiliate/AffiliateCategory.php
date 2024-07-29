@@ -4,15 +4,15 @@ class AffiliateCategory
 {
 	public static function register_functions_admin()
 	{
-		if ( MultisiteMain::check_multisite() )
-		{
-			// if ( MultisiteBlog::check_main_domain() )
-			// {
-				$handler = new self();
+		// if ( MultisiteMain::check_multisite() )
+		// {
+		// 	// if ( MultisiteBlog::check_main_domain() )
+		// 	// {
+		// 		$handler = new self();
 
-				add_filter( 'post_type_link', [ $handler, 'post_type_link' ], 11, 3 );
-			// }
-		}
+		// 		add_filter( 'post_type_link', [ $handler, 'post_type_link' ], 11, 3 );
+		// 	// }
+		// }
 	}
 
 	public static function post_type_link( $permalink, $post, $leavename )
