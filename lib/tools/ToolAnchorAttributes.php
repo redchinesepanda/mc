@@ -15,7 +15,7 @@ class ToolAnchorAttributes
 		
 		// 'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])][not(self::node()[@href='#'])]",
 		
-		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])][not(self::node()[@href='#'])][not(self::node()[starts-with(@href,"/")])]",
+		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])][not(self::node()[@href='#'])][not(self::node()[starts-with(@href,'/')])]",
 		
 		'a-href-internal' => "//a[contains(@href, '%s')][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]|//a[starts-with(@href,'/')]",
 	];
