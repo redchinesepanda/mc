@@ -54,7 +54,7 @@ class ReviewRestricted
         // return $result;
     }
 
-	const DEBUG_DOMAINS = [
+	const EXCEPTION_DOMAINS = [
 		'templ-content' => 'content.match.center'
 	];
 
@@ -67,17 +67,29 @@ class ReviewRestricted
 	// {
 	// 	if ( MultisiteMain::check_multisite() )
 	// 	{
-	// 		return in_array( MultisiteBlog::get_domain(), self::DEBUG_DOMAINS );
+	// 		return in_array( MultisiteBlog::get_domain(), self::EXCEPTION_DOMAINS );
 	// 	}
 
 	// 	return false;
 	// }
+
+	public static function check_exception_domain()
+	{
+		return in_array( MultisiteBlog::get_domain(), self::EXCEPTION_DOMAINS );
+	}
+
+	public static function check_not_exception_domain()
+	{
+		return ! self::check_exception_domain();
+	}
 
 	public static function check_modify()
 	{
 		return MultisiteMain::check_multisite()
 		
 			&& MultisiteBlog::check_not_main_domain()
+
+			&& self::check_not_exception_domain()
 			
 			&& self::check_contains_anchors();
 
