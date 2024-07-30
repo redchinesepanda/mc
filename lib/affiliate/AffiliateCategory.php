@@ -10,10 +10,42 @@ class AffiliateCategory
 		// 	// {
 		// 		$handler = new self();
 
-		// 		add_filter( 'post_type_link', [ $handler, 'post_type_link' ], 11, 3 );
+		// 		// add_filter( 'post_type_link', [ $handler, 'post_type_link' ], 11, 3 );
 		// 	// }
 		// }
 	}
+
+	public static function register_functions_admin()
+	{
+		if ( MultisiteMain::check_multisite() )
+		{
+			$handler = new self();
+
+			add_action( 'init', [ $handler, 'register_rewrite_rules' ] );
+		}
+	}
+
+	const POST_TYPE = [
+		'affiliate' => 'affiliate-links',
+	];
+
+	const TAXONOMY = [
+		'affiliate' => 'affiliate-links-cat'
+	];
+
+	public static function register_rewrite_rules()
+	{
+
+        // $slug = $this->get_slug();
+
+        // add_rewrite_rule( "$slug/([^/]+)?/?$", 'index.php?' . self::$post_type . '=$matches[1]', 'top' );
+        
+		// add_rewrite_rule( "$slug/([^/]+)?/?([^/]+)?/?", 'index.php?' . self::$post_type . '=$matches[2]&' . self::$taxonomy . '=$matches[1]', 'top' );
+
+		add_rewrite_rule( "go/([^/]+)?/?$", 'index.php?' . self::POST_TYPE[ 'affiliate' ] . '=$matches[1]', 'bottom' );
+
+		add_rewrite_rule( "go/([^/]+)?/?([^/]+)?/?", 'index.php?' . self::POST_TYPE[ 'affiliate' ] . '=$matches[2]&' . self::TAXONOMY[ 'affiliate' ] . '=$matches[1]', 'bottom' );
+    }
 
 	public static function post_type_link( $permalink, $post, $leavename )
 	{
