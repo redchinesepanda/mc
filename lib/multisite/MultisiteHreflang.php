@@ -387,7 +387,7 @@ class MultisiteHreflang
 					$hreflang_items = array_replace_recursive( $wpml_hreflang, $hreflang_items );
 		
 					LegalDebug::debug( [
-						'MultisiteHreflang' => 'prepare_hreflang-3',
+						'MultisiteHreflang' => 'prepare_hreflang-4',
 		
 						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
