@@ -155,6 +155,8 @@ class ToolAnchorAttributes
 
 	const EXCEPTION_DOMAINS_ALIASES = [
 		'content.match.center' => 'match.center',
+
+		'old.match.center' => 'match.center',
 	];
 
 	public static function get_domain()
