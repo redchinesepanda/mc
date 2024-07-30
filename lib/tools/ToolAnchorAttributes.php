@@ -17,6 +17,13 @@ class ToolAnchorAttributes
 		
 		'a-href-external' => "//a[not(contains(@href, '%s'))][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])][not(self::node()[@href='#'])][not(self::node()[starts-with(@href,'/')])]",
 		
+		// Содержит домен
+		// и не содержит mailto:
+		// и не содержит tel:
+		// и не содержит /go/
+		// или начинается с /
+		// a[href*='%s']:not([href*='mailto:']):not([href*='tel:']):not([href*='/go/']),a[href^='/']
+
 		'a-href-internal' => "//a[contains(@href, '%s')][not(self::node()[contains(@href,'mailto:')])][not(self::node()[contains(@href,'tel:')])][not(self::node()[contains(@href,'/go/')])]|//a[starts-with(@href,'/')]",
 	];
 
