@@ -359,7 +359,7 @@ class MultisiteHreflang
 
 					'group_items_all-count' => count( $group_items_all ),
 
-					// 'group_items_all' => $group_items_all,
+					'group_items_all' => $group_items_all,
 				] );
 
 				if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
@@ -371,7 +371,7 @@ class MultisiteHreflang
 		
 						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
-						// 'wpml_hreflang' => $wpml_hreflang,
+						'wpml_hreflang' => $wpml_hreflang,
 					] );
 
 					// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
