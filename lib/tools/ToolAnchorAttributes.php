@@ -121,7 +121,9 @@ class ToolAnchorAttributes
 
 	public static function get_nodes_anchors_external( $dom )
 	{
-		$domain = MultisiteBlog::get_domain();
+		// $domain = MultisiteBlog::get_domain();
+
+		$domain = self::get_domain();
 		
 		$query = sprintf( self::PATTERNS[ 'a-href-external' ], $domain );
 
@@ -151,9 +153,27 @@ class ToolAnchorAttributes
 		}
 	}
 
-	public static function get_nodes_anchors_internal( $dom )
+	const EXCEPTION_DOMAINS_ALIASES = [
+		'content.match.center' => 'match.center',
+	];
+
+	public static function get_domain()
 	{
 		$domain = MultisiteBlog::get_domain();
+
+		if ( array_key_exists( $domain, self::EXCEPTION_DOMAINS_ALIASES ) )
+		{
+			return self::EXCEPTION_DOMAINS_ALIASES[ $domain ];
+		}
+
+		return $domain;
+	}
+
+	public static function get_nodes_anchors_internal( $dom )
+	{
+		// $domain = MultisiteBlog::get_domain();
+		
+		$domain = self::get_domain();
 		
 		$query = sprintf( self::PATTERNS[ 'a-href-internal' ], $domain );
 
