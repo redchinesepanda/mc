@@ -342,6 +342,25 @@ class MultisiteHreflang
 		return $hreflangs;
 	}
 
+	function replace_wpml_hreflang( &$wpml_hreflang_item, $wpml_hreflang_key, $hreflang_items )
+	{
+		$hreflang_items_key = array_search( $wpml_hreflang_item[ 'hreflang' ], array_column( $hreflang_items, 'hreflang' ) );
+
+		if ( $hreflang_items_key !== false )
+		{
+			$wpml_hreflang_item = $hreflang_items[ $hreflang_items_key ];
+		}
+	}
+
+	public static function replace_wpml_hreflangs( $wpml_hreflang, $hreflang_items )
+	{
+		$handler = new self();
+
+		array_walk( $wpml_hreflang, [ $handler, 'replace_wpml_hreflang' ], $hreflang_items );
+
+		return $wpml_hreflang;
+	}
+
 	public static function prepare_hreflang()
 	{
 		if ( MultisiteMain::check_multisite() )
@@ -374,29 +393,34 @@ class MultisiteHreflang
 						'wpml_hreflang' => $wpml_hreflang,
 					] );
 
-					// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
-
-					// LegalDebug::debug( [
-					// 	'MultisiteHreflang' => 'prepare_hreflang-3',
-
-					// 	'hreflang_items-count' => count( $hreflang_items ),
-
-					// 	'hreflang_items' => $hreflang_items,
-					// ] );
-					
-					$hreflang_items = array_replace_recursive( $wpml_hreflang, $hreflang_items );
-		
-					LegalDebug::debug( [
-						'MultisiteHreflang' => 'prepare_hreflang-4',
-		
-						// 'wpml_hreflang-count' => count( $wpml_hreflang ),
-
-						// 'wpml_hreflang' => $wpml_hreflang,
-
-						'hreflang_items-count' => count( $hreflang_items ),
-
-						'hreflang_items' => $hreflang_items,
-					] );
+					if ( !empty( $wpml_hreflang ) )
+					{
+						// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
+	
+						// LegalDebug::debug( [
+						// 	'MultisiteHreflang' => 'prepare_hreflang-3',
+	
+						// 	'hreflang_items-count' => count( $hreflang_items ),
+	
+						// 	'hreflang_items' => $hreflang_items,
+						// ] );
+						
+						// $hreflang_items = array_replace_recursive( $wpml_hreflang, $hreflang_items );
+						
+						$hreflang_items = self::replace_wpml_hreflangs( $wpml_hreflang, $hreflang_items );
+			
+						LegalDebug::debug( [
+							'MultisiteHreflang' => 'prepare_hreflang-4',
+			
+							// 'wpml_hreflang-count' => count( $wpml_hreflang ),
+	
+							// 'wpml_hreflang' => $wpml_hreflang,
+	
+							'hreflang_items-count' => count( $hreflang_items ),
+	
+							'hreflang_items' => $hreflang_items,
+						] );
+					}
 				}
 
 				$args = [
