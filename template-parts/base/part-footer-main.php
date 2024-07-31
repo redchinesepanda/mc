@@ -17,7 +17,7 @@
 				<div class="footer-logo">
 					<?php foreach( $args[ 'logo' ] as $logo ) : ?>
 						<?php if ( $logo[ 'href' ] == '#' ) : ?>
-							<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
+							<img class="<?php echo $logo[ 'class' ]; ?> no-link" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
 						<?php else : ?>
 							<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow noreferrer" target="_blank">
 								<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
