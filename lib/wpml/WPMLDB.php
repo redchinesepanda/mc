@@ -379,7 +379,7 @@ class WPMLDB
 			// 	'trid_items_db' => $trid_items_db,
 			// ] );
 
-			// $trid_items_db = WPMLMain::exclude( $trid_items_db );
+			$trid_items_db = WPMLMain::exclude( $trid_items_db );
 
 			// LegalDebug::debug( [
 			// 	'WPMLBD' => 'get_hreflang-2',
