@@ -385,18 +385,25 @@ class MultisiteHreflang
 				{
 					$wpml_hreflang = WPMLDB::get_hreflang();
 
-					// LegalDebug::debug( [
-					// 	'MultisiteHreflang' => 'prepare_hreflang-2',
+					LegalDebug::debug( [
+						'MultisiteHreflang' => 'prepare_hreflang-2',
 		
-					// 	'wpml_hreflang-count' => count( $wpml_hreflang ),
+						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
-					// 	'wpml_hreflang' => $wpml_hreflang,
-					// ] );
+						'wpml_hreflang' => $wpml_hreflang,
+					] );
 
 					if ( !empty( $wpml_hreflang ) )
 					{
-
 						$wpml_hreflang = WPMLMain::exclude( $wpml_hreflang );
+
+						LegalDebug::debug( [
+							'MultisiteHreflang' => 'prepare_hreflang-3',
+			
+							'wpml_hreflang-count' => count( $wpml_hreflang ),
+	
+							'wpml_hreflang' => $wpml_hreflang,
+						] );
 
 						// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
 	
