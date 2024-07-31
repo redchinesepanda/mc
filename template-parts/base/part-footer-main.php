@@ -19,7 +19,7 @@
 						<?php if ( $logo[ 'href' ] == '#' ) : ?>
 							<img class="<?php echo $logo[ 'class' ]; ?> no-link" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
 						<?php else : ?>
-							<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow noreferrer" target="_blank">
+							<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" target="_blank" rel="nofollow noreferrer">
 								<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
 							</a>
 						<?php endif; ?>
