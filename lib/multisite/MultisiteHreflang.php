@@ -395,6 +395,9 @@ class MultisiteHreflang
 
 					if ( !empty( $wpml_hreflang ) )
 					{
+
+						$wpml_hreflang = WPMLMain::exclude( $wpml_hreflang );
+
 						// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
 	
 						// LegalDebug::debug( [

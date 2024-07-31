@@ -371,23 +371,23 @@ class WPMLDB
 
 		if ( ! empty( $trid_items_db ) )
 		{
-			LegalDebug::debug( [
-				'WPMLBD' => 'get_hreflang-1',
+			// LegalDebug::debug( [
+			// 	'WPMLBD' => 'get_hreflang-1',
 
-				'trid_items_db-count' => count( $trid_items_db ),
+			// 	'trid_items_db-count' => count( $trid_items_db ),
 
-				'trid_items_db' => $trid_items_db,
-			] );
+			// 	'trid_items_db' => $trid_items_db,
+			// ] );
 
-			$trid_items_db = WPMLMain::exclude( $trid_items_db );
+			// $trid_items_db = WPMLMain::exclude( $trid_items_db );
 
-			LegalDebug::debug( [
-				'WPMLBD' => 'get_hreflang-2',
+			// LegalDebug::debug( [
+			// 	'WPMLBD' => 'get_hreflang-2',
 
-				'trid_items_db-count' => count( $trid_items_db ),
+			// 	'trid_items_db-count' => count( $trid_items_db ),
 
-				'trid_items_db' => $trid_items_db,
-			] );
+			// 	'trid_items_db' => $trid_items_db,
+			// ] );
 
 			return self::parse_hreflang_items( $trid_items_db );
 		}
