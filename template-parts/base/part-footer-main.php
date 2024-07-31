@@ -16,9 +16,13 @@
 			<?php if ( !empty( $args[ 'logo' ] ) ) : ?>
 				<div class="footer-logo">
 					<?php foreach( $args[ 'logo' ] as $logo ) : ?>
-						<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow noreferrer" target="_blank">
+						<?php if ( $args[ 'href' ] == '#' ) : ?>
 							<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
-						</a>
+						<?php else : ?>
+							<a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow noreferrer" target="_blank">
+								<img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy">
+							</a>
+						<?php endif; ?>
 					<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
