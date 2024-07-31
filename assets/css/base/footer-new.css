@@ -229,7 +229,8 @@
 		width: 100%;
 	}
 
-	.legal-footer .footer-logo .logo-item > img
+	.legal-footer .footer-logo .logo-item > img,
+	.legal-footer .footer-logo .no-link
 	{
 		height: 24px;
 	}
@@ -340,7 +341,8 @@
 		width: 100%;
 	}
 
-	.legal-footer .footer-logo .logo-item > img
+	.legal-footer .footer-logo .logo-item > img,
+	.legal-footer .footer-logo .no-link
 	{
 		height: 32px;
 	}
@@ -437,7 +439,8 @@
 	flex-basis: 33.333%;
 }
 
-.legal-footer .footer-logo .logo-item > img {
+.legal-footer .footer-logo .logo-item > img,
+.legal-footer .footer-logo .no-link {
 	width: auto;
 }
 
