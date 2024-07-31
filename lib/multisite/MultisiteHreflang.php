@@ -390,7 +390,7 @@ class MultisiteHreflang
 		
 						'wpml_hreflang-count' => count( $wpml_hreflang ),
 
-						'wpml_hreflang' => $wpml_hreflang,
+						// 'wpml_hreflang' => $wpml_hreflang,
 					] );
 
 					if ( !empty( $wpml_hreflang ) )
@@ -402,7 +402,7 @@ class MultisiteHreflang
 			
 							'wpml_hreflang-count' => count( $wpml_hreflang ),
 	
-							'wpml_hreflang' => $wpml_hreflang,
+							// 'wpml_hreflang' => $wpml_hreflang,
 						] );
 
 						// $group_items_all = array_merge( $wpml_hreflang, $group_items_all );
