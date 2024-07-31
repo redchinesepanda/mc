@@ -451,7 +451,8 @@
 	border-bottom: 1px solid var(--white-20, rgba(255, 255, 255, 0.20)); 
 }
 
-.legal-footer .footer-logo .logo-item > img {
+.legal-footer .footer-logo .logo-item > img,
+.legal-footer .footer-logo .no-link {
 	filter: grayscale(1);
 }
 
