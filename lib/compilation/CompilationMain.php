@@ -583,20 +583,28 @@ class CompilationMain
     {
         $new_lang = get_field( self::COMPILATION[ 'lang' ], $id );
 
-        $switch_lang = ( !empty( $new_lang ) );
+        $switch_lang = ( ! empty( $new_lang ) );
 
-        if ( $switch_lang ) {
+        if ( $switch_lang )
+        {
             global $sitepress;
 
-            $current_lang = $sitepress->get_current_language();
-
-            $sitepress->switch_lang( $new_lang );
+            if ( ! empty( $sitepress ) )
+            {
+                $current_lang = $sitepress->get_current_language();
+    
+                $sitepress->switch_lang( $new_lang );
+            }
         }
 
         $posts = get_posts( self::get_args( $id ) );
 
-        if ( $switch_lang ) {
-            $sitepress->switch_lang( $current_lang );
+        if ( $switch_lang )
+        {
+            if ( ! empty( $sitepress ) )
+            {
+                $sitepress->switch_lang( $current_lang );
+            }
         }
 
         return $posts;
