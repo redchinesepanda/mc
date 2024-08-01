@@ -33,15 +33,25 @@ class ToolAnchorAttributes
 		'rel' => 'rel',
 	];
 
+	const POST_TYPE = [
+		'page' => 'page',
+
+		// 'post' => 'post',
+	];
+
 	public static function register_functions_admin()
 	{
 		if ( MultisiteMain::check_multisite() )
 		{
 			$handler = new self();
 	
-			add_filter( 'bulk_actions-edit-page', [ $handler, 'add_anchor_attributes_item' ] );
+			add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'page' ], [ $handler, 'add_anchor_attributes_item' ] );
 	
-			add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
+			add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'page' ], [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
+
+			// add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'add_anchor_attributes_item' ] );
+	
+			// add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
 	
 			add_action( 'admin_notices', [ $handler, 'notify_anchor_attributes_item' ] );
 		}
@@ -278,6 +288,46 @@ class ToolAnchorAttributes
 
 		self::add_rel_nofollow( $nodes_anchors_go );
 	}
+
+	// const FIELD = [
+	// 	'bonus-content' => 'text-bonus',
+	// ];
+
+	// public static function set_content( $post_id, $post, $content )
+	// {
+	// 	if ( ! empty( $post->post_content ) )
+    //     {
+	// 		$post_modified = [
+	// 			'ID' => $post_id,
+
+    //             'post_content' => $content,
+	// 		];
+
+    //         wp_update_post( $post_modified );
+    //     }
+
+	// 	if ( ! empty( get_field( self::FIELD[ 'bonus-content' ], $post->ID ) ) )
+    //     {
+    //         update_field( self::FIELD[ 'bonus-content' ], $content, $post->ID );
+    //     }
+	// }
+
+	// public static function get_content( $post_id, $post )
+	// {
+	// 	if ( ! empty( $post->post_content ) )
+    //     {
+    //         return $post->post_content;
+    //     }
+
+	// 	$content = get_field( self::FIELD[ 'bonus-content' ], $post->ID );
+
+    //     if ( ! empty( $content ) )
+    //     {
+    //         return $content;
+    //     }
+
+	// 	return '';
+	// }
 
 	public static function modify_content( $post_id, $post )
     {
