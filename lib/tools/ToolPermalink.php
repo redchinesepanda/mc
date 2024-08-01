@@ -45,9 +45,13 @@ class ToolPermalink
 
                 // add_filter( 'edit_post_' . self::POST_TYPE[ 'page' ], [ $handler, 'set_custom_permalink' ], 10, 2 );
 
-                add_filter( 'bulk_actions-edit-page', [ $handler, 'add_custom_permalink_item' ] );
+                add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'page' ], [ $handler, 'add_custom_permalink_item' ] );
 
-                add_filter( 'handle_bulk_actions-edit-page', [ $handler, 'handle_custom_permalink_item' ], 10, 3);
+                add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'page' ], [ $handler, 'handle_custom_permalink_item' ], 10, 3);
+
+                add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'add_custom_permalink_item' ] );
+
+                add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'handle_custom_permalink_item' ], 10, 3);
 
                 add_action( 'admin_notices', [ $handler, 'notify_custom_permalink_item' ] );
             }
