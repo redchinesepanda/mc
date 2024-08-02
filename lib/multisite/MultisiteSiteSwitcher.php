@@ -80,7 +80,7 @@ class MultisiteSiteSwitcher
 		$languages = self::sites_to_languages( $blogs );
 
 		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-2',
+			'MultisiteSiteswitcher' =>'get_languages-1',
 
 			'languages-count' => count( $languages ),
 		] );
@@ -94,7 +94,7 @@ class MultisiteSiteSwitcher
 		$combined_languages = self::get_combined_languages( $languages, $page_languages );
 
 		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-1',
+			'MultisiteSiteswitcher' =>'get_languages-2',
 
 			'blogs-count' => count( $blogs ),
 
@@ -114,7 +114,7 @@ class MultisiteSiteSwitcher
 		// $combined_languages = WPMLMain::filter_language( $combined_languages, $lang );
 
 		// LegalDebug::debug( [
-		// 	'MultisiteSiteswitcher' =>'get_languages-2',
+		// 	'MultisiteSiteswitcher' =>'get_languages-3',
 
 		// 	'combined_languages-count' => count( $combined_languages ),
 		// ] );
