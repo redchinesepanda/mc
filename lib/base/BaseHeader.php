@@ -398,44 +398,32 @@ class BaseHeader
 			// 'all_languages' => $all_languages,
 		] );
 
-		if ( !empty( $all_languages ) )
+		if ( ! empty( $all_languages ) )
 		{
 			$search[ 'current' ] = self::get_language_current( $all_languages );
 
 			$search[ 'avaible' ] = self::get_languages_avaible( $all_languages );
 
-			// $code = WPMLMain::current_language();
-	
-			// $search[ 'current' ] = $all_languages[ $code ];
-	
-			// unset( $all_languages[ $code ] );
-	
-			// $all_languages = WPMLMain::exclude( $all_languages );
-	
-			// $lang = WPMLMain::get_group_language();
-	
-			// $search[ 'avaible' ] = WPMLMain::filter_language( $all_languages, $lang );
+			LegalDebug::debug( [
+				'BaseHeader' => 'search_languages',
 
-			// LegalDebug::debug( [
-			// 	'BaseHeader' => 'search_languages',
-
-			// 	'step' => 'search_languages-5',
+				'step' => 'search_languages-5',
 	
-			// 	'current-count' => count( $search[ 'current' ] ),
+				'current-count' => count( $search[ 'current' ] ),
 
-			// 	'avaible-count' => count( $search[ 'avaible' ] ),
-			// ] );
+				'avaible-count' => count( $search[ 'avaible' ] ),
+			] );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'step' => 'search_languages-6',
+			'step' => 'search_languages-6',
 
-		// 	'current-count' => count( $search[ 'current' ] ),
+			'current-count' => count( $search[ 'current' ] ),
 
-		// 	'avaible-count' => count( $search[ 'avaible' ] ),
-		// ] );
+			'avaible-count' => count( $search[ 'avaible' ] ),
+		] );
 		
 		return $search;
 	}
