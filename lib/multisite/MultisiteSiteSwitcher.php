@@ -79,11 +79,11 @@ class MultisiteSiteSwitcher
 
 		$sites_languages = self::sites_to_languages( $blogs );
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_languages-1',
 
-			'sites_languages-count' => count( $sites_languages ),
-		] );
+		// 	'sites_languages-count' => count( $sites_languages ),
+		// ] );
 
 		$current_language = WPMLMain::get_group_language();
 
