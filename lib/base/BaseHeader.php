@@ -337,9 +337,7 @@ class BaseHeader
 		$all_languages = WPMLMain::get_all_languages();
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
-
-		// 	'step' => 'search_languages-1',
+		// 	'BaseHeader' => 'search_languages-1',
 
 		// 	'all_languages-count' => count ( $all_languages ),
 
@@ -355,9 +353,7 @@ class BaseHeader
 		}
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
-
-		// 	'step' => 'search_languages-2',
+		// 	'BaseHeader' => 'search_languages-2',
 
 		// 	'all_languages-count' => count( $all_languages ),
 
@@ -369,9 +365,7 @@ class BaseHeader
             $multisite_languages = MultisiteSiteSwitcher::get_languages();
 
 			// LegalDebug::debug( [
-			// 	'BaseHeader' => 'search_languages',
-
-			// 	'step' => 'search_languages-3',
+			// 	'BaseHeader' => 'search_languages-3',
 
 			// 	'multisite_languages-count' => count( $multisite_languages ),
 	
@@ -389,9 +383,7 @@ class BaseHeader
         }
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
-
-		// 	'step' => 'search_languages-4',
+		// 	'BaseHeader' => 'search_languages-4',
 
 		// 	'all_languages-count' => count( $all_languages ),
 
@@ -405,9 +397,7 @@ class BaseHeader
 			$search[ 'avaible' ] = self::get_languages_avaible( $all_languages );
 
 			// LegalDebug::debug( [
-			// 	'BaseHeader' => 'search_languages',
-
-			// 	'step' => 'search_languages-5',
+			// 	'BaseHeader' => 'search_languages-5',
 	
 			// 	'current-count' => count( $search[ 'current' ] ),
 
@@ -415,15 +405,13 @@ class BaseHeader
 			// ] );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'search_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'search_languages-6',
 
-			'step' => 'search_languages-6',
+		// 	'current-count' => count( $search[ 'current' ] ),
 
-			'current-count' => count( $search[ 'current' ] ),
-
-			'avaible-count' => count( $search[ 'avaible' ] ),
-		] );
+		// 	'avaible-count' => count( $search[ 'avaible' ] ),
+		// ] );
 		
 		return $search;
 	}
@@ -977,9 +965,7 @@ class BaseHeader
 		$home_urls_replaced = [];
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
-
-		// 	'step' => 'replace_urls-1',
+		// 	'BaseHeader' =>'replace_urls-1',
 
 		// 	'home' => $home->ID,
 
@@ -1090,9 +1076,7 @@ class BaseHeader
 		$search = self::search_languages();
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
-
-		// 	'step' => 'get_menu_languages-1',
+		// 	'BaseHeader' => 'get_menu_languages-1',
 
 		// 	'current-count' => count( $search[ 'current' ] ),
 
@@ -1101,15 +1085,13 @@ class BaseHeader
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		LegalDebug::debug( [
-			'BaseHeader' => 'get_menu_languages',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'get_menu_languages-2',
 
-			'step' => 'get_menu_languages-2',
+		// 	'current-count' => count( $search[ 'current' ] ),
 
-			'current-count' => count( $search[ 'current' ] ),
-
-			'avaible-count' => count( $search[ 'avaible' ] ),
-		] );
+		// 	'avaible-count' => count( $search[ 'avaible' ] ),
+		// ] );
 
 		$parse = self::parse_languages( $search );
 

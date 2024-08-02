@@ -83,21 +83,21 @@ class MultisiteSiteSwitcher
 
 		$combined_languages = self::get_combined_languages( $languages, $page_languages );
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_languages-1',
 
-			'blogs-count' => count( $blogs ),
+		// 	'blogs-count' => count( $blogs ),
 
-			'languages-count' => count( $languages ),
+		// 	'languages-count' => count( $languages ),
 			
-			// 'languages' => $languages,
+		// 	// 'languages' => $languages,
 
-			'page_languages-count' => count( $page_languages ),
+		// 	'page_languages-count' => count( $page_languages ),
 			
-			// 'page_languages' => $page_languages,
+		// 	// 'page_languages' => $page_languages,
 
-			'combined_languages-count' => count( $combined_languages ),
-		] );
+		// 	'combined_languages-count' => count( $combined_languages ),
+		// ] );
 
 		return $combined_languages;
 
