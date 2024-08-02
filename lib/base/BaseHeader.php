@@ -415,15 +415,15 @@ class BaseHeader
 			// ] );
 		}
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'search_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'search_languages',
 
-		// 	'step' => 'search_languages-6',
+			'step' => 'search_languages-6',
 
-		// 	'current-count' => count( $search[ 'current' ] ),
+			'current-count' => count( $search[ 'current' ] ),
 
-		// 	'avaible-count' => count( $search[ 'avaible' ] ),
-		// ] );
+			'avaible-count' => count( $search[ 'avaible' ] ),
+		] );
 		
 		return $search;
 	}
