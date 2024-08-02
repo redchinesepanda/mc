@@ -77,37 +77,37 @@ class MultisiteSiteSwitcher
 		
 		// $blogs = MultisiteBlog::get_other_sites( $current_domain );
 
-		$languages = self::sites_to_languages( $blogs );
+		$sites_languages = self::sites_to_languages( $blogs );
 
 		LegalDebug::debug( [
 			'MultisiteSiteswitcher' =>'get_languages-1',
 
-			'languages-count' => count( $languages ),
+			'sites_languages-count' => count( $sites_languages ),
 		] );
 
-		$language = WPMLMain::get_group_language();
+		$current_language = WPMLMain::get_group_language();
 
-		$languages = WPMLMain::filter_language( $languages, $language );
+		$sites_languages = WPMLMain::filter_language( $sites_languages, $current_language );
 
 		$page_languages = MultisiteHreflang::prepare_languages();
 
-		$combined_languages = self::get_combined_languages( $languages, $page_languages );
+		$combined_languages = self::get_combined_languages( $sites_languages, $page_languages );
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-2',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_languages-2',
 
-			'blogs-count' => count( $blogs ),
+		// 	'blogs-count' => count( $blogs ),
 
-			'languages-count' => count( $languages ),
+		// 	'languages-count' => count( $languages ),
 			
-			// 'languages' => $languages,
+		// 	// 'languages' => $languages,
 
-			'page_languages-count' => count( $page_languages ),
+		// 	'page_languages-count' => count( $page_languages ),
 			
-			// 'page_languages' => $page_languages,
+		// 	// 'page_languages' => $page_languages,
 
-			'combined_languages-count' => count( $combined_languages ),
-		] );
+		// 	'combined_languages-count' => count( $combined_languages ),
+		// ] );
 
 		// $lang = WPMLMain::get_group_language();
 
