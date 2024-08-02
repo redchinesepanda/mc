@@ -446,7 +446,8 @@ class BaseHeader
 			$items[] = self::get_inline_item( $languages[ 'current' ] );
 		}
 
-		foreach ( $languages[ 'avaible' ] as $language ) {
+		foreach ( $languages[ 'avaible' ] as $language )
+		{
 			$items[] = self::get_inline_item( $language );
 		} 
 
@@ -1100,15 +1101,15 @@ class BaseHeader
 		
 		$search[ 'avaible' ] = self::replace_urls( $search[ 'avaible' ] );
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' => 'get_menu_languages',
+		LegalDebug::debug( [
+			'BaseHeader' => 'get_menu_languages',
 
-		// 	'step' => 'get_menu_languages-2',
+			'step' => 'get_menu_languages-2',
 
-		// 	'current-count' => count( $search[ 'current' ] ),
+			'current-count' => count( $search[ 'current' ] ),
 
-		// 	'avaible-count' => count( $search[ 'avaible' ] ),
-		// ] );
+			'avaible-count' => count( $search[ 'avaible' ] ),
+		] );
 
 		$parse = self::parse_languages( $search );
 
