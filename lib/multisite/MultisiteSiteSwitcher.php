@@ -79,6 +79,16 @@ class MultisiteSiteSwitcher
 
 		$languages = self::sites_to_languages( $blogs );
 
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'get_languages-2',
+
+			'languages-count' => count( $languages ),
+		] );
+
+		$language = WPMLMain::get_group_language();
+
+		$languages = WPMLMain::filter_language( $languages, $language );
+
 		$page_languages = MultisiteHreflang::prepare_languages();
 
 		$combined_languages = self::get_combined_languages( $languages, $page_languages );
@@ -99,15 +109,15 @@ class MultisiteSiteSwitcher
 			'combined_languages-count' => count( $combined_languages ),
 		] );
 
-		$lang = WPMLMain::get_group_language();
+		// $lang = WPMLMain::get_group_language();
 
-		$combined_languages = WPMLMain::filter_language( $combined_languages, $lang );
+		// $combined_languages = WPMLMain::filter_language( $combined_languages, $lang );
 
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_languages-2',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_languages-2',
 
-			'combined_languages-count' => count( $combined_languages ),
-		] );
+		// 	'combined_languages-count' => count( $combined_languages ),
+		// ] );
 
 		return $combined_languages;
 
