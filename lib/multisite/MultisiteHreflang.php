@@ -375,13 +375,13 @@ class MultisiteHreflang
 
 				$hreflang_items = self::parse_hreflang( $group_items_all );
 
-				LegalDebug::debug( [
-					'MultisiteHreflang' => 'prepare_hreflang-1',
+				// LegalDebug::debug( [
+				// 	'MultisiteHreflang' => 'prepare_hreflang-1',
 
-					'group_items_all-count' => count( $group_items_all ),
+				// 	'group_items_all-count' => count( $group_items_all ),
 
-					'group_items_all' => $group_items_all,
-				] );
+				// 	'group_items_all' => $group_items_all,
+				// ] );
 
 				if ( MultisiteBlog::check_main_domain() && MultisiteBlog::check_not_main_blog() )
 				{
