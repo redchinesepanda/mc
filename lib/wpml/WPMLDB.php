@@ -339,6 +339,12 @@ class WPMLDB
 
 				if ( $trid_item->default_locale == 'en_GB' )
 				{
+					LegalDebug::debug( [
+						'WPMLDB' => 'parse_hreflang_items',
+	
+						'parse_url-path' => parse_url( $trid_item->post_uri, PHP_URL_PATH ),
+					] );
+
 					if ( empty( parse_url( $trid_item->post_uri, PHP_URL_PATH ) ) )
 					{
 						$trid_item->post_uri = rtrim( $trid_item->post_uri, '/' );
