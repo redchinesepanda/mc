@@ -221,6 +221,9 @@
 
     .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset:not( .columns-3 ) .item-image:not( .columns-1 .item-image.legal-portrait ) {
         width: 100%;
+    }
+
+    .tcb-post-content .legal-imageset-wrapper:not( .legal-imageset-oops ) .legal-imageset:not( .columns-2 ):not( .columns-3 ) .item-image:not( .columns-1 .item-image.legal-portrait ) {
         height: auto;
     }
 
