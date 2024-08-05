@@ -208,17 +208,17 @@ class MultisiteHreflang
 
 			$locale = MultisiteSiteOptions::get_blog_locale();
 
-			LegalDebug::debug( [
-                'MultisiteHreflang' => 'get_group_items-4',
+			// LegalDebug::debug( [
+            //     'MultisiteHreflang' => 'get_group_items-4',
 
-				'post_title' => $post_title,
+			// 	'post_title' => $post_title,
 
-				'post_uri' => $post_uri,
+			// 	'post_uri' => $post_uri,
 
-				'language_code' => $language_code,
+			// 	'language_code' => $language_code,
 
-				'locale' => $locale,
-            ] );
+			// 	'locale' => $locale,
+            // ] );
 
 			// $items[ $locale ] = [
 			
