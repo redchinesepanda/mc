@@ -331,7 +331,13 @@ class MultisiteHreflang
 
 			if ( $locale == 'en_GB' )
 			{
-				$hreflang = 'x-default';
+				// $hreflang = 'x-default';
+
+				$hreflangs[] = [
+					'hreflang' => 'x-default',
+	
+					'href' => $item[ 'post_uri' ],
+				];
 			}
 
 			$hreflangs[] = [
