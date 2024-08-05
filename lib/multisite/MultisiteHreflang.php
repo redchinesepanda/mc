@@ -333,6 +333,11 @@ class MultisiteHreflang
 			{
 				// $hreflang = 'x-default';
 
+				if ( parse_url( $item[ 'post_uri' ], PHP_URL_PATH ) == '/' )
+				{
+					$item[ 'post_uri' ] = rtrim( $item[ 'post_uri' ], '/' );
+				}
+
 				$hreflangs[] = [
 					'hreflang' => 'x-default',
 	
