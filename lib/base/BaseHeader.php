@@ -1002,13 +1002,13 @@ class BaseHeader
 
 		$home_urls_replaced = [];
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls-1',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls-1',
 
-			'home' => $home->ID,
+		// 	'home' => $home->ID,
 
-			'urls-count' => count( $urls ),
-		] );
+		// 	'urls-count' => count( $urls ),
+		// ] );
 
 		if ( !empty( $home ) )
 		{
@@ -1016,28 +1016,28 @@ class BaseHeader
 			
 			$home_urls_replaced = self::replace_urls_iteration( $urls, $home_urls_all );
 
-			LegalDebug::debug( [
-				'BaseHeader' =>'replace_urls-2',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' =>'replace_urls-2',
 
-				'home_urls_all-count' => count( $home_urls_all ),
+			// 	'home_urls_all-count' => count( $home_urls_all ),
 
-				'home_urls_replaced-count' => count( $home_urls_replaced ),
+			// 	'home_urls_replaced-count' => count( $home_urls_replaced ),
 	
-				'urls-count' => count( $urls ),
-			] );
+			// 	'urls-count' => count( $urls ),
+			// ] );
 		}
 
 		$cross = self::get_cross_page();
 
 		$cross_urls_replaced = [];
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls-3',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls-3',
 
-			'cross-gettype' => gettype( $cross ),
+		// 	'cross-gettype' => gettype( $cross ),
 
-			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
-		] );
+		// 	'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+		// ] );
 
 		if ( ! empty( $cross ) )
 		{
@@ -1045,30 +1045,30 @@ class BaseHeader
 
 			$cross_urls_replaced = self::replace_urls_iteration( $urls, $cross_urls_all );
 
-			LegalDebug::debug( [
-				'BaseHeader' =>'replace_urls-4',
+			// LegalDebug::debug( [
+			// 	'BaseHeader' =>'replace_urls-4',
 	
-				'cross_urls_all-count' => count( $cross_urls_all ),
+			// 	'cross_urls_all-count' => count( $cross_urls_all ),
 	
-				'cross_urls_replaced-count' => count( $cross_urls_replaced ),
-			] );
+			// 	'cross_urls_replaced-count' => count( $cross_urls_replaced ),
+			// ] );
 		}
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls-5',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls-5',
 
-			'urls-count' => count( $urls ),
-		] );
+		// 	'urls-count' => count( $urls ),
+		// ] );
 
 		$urls = self::replace_urls_group( $urls, $home_urls_replaced, $cross_urls_replaced );
 
-		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls-6',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' =>'replace_urls-6',
 
-			'urls-count' => count( $urls ),
+		// 	'urls-count' => count( $urls ),
 
-			'urls' => $urls,
-		] );
+		// 	'urls' => $urls,
+		// ] );
 
 		return $urls;
 	}
