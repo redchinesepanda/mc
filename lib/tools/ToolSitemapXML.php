@@ -65,7 +65,29 @@ class ToolSitemapXML
 
         // other domains
 
+        'cz',
+
+        'ro',
+
+        'pl',
+
         'de',
+
+        'ar',
+
+        'mt',
+
+        'au',
+
+        'nz',
+
+        'at',
+
+        'ua',
+
+        'ua-ru',
+
+        'nl',
     ];
 
     const PATTERNS = [
