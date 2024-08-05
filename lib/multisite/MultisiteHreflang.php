@@ -172,7 +172,7 @@ class MultisiteHreflang
 		$group_items_query = self::group_items_query( $terms );
 
 		// LegalDebug::debug( [
-		//     'MultisiteHreflang' => 'get_group_items',
+		//     'MultisiteHreflang' => 'get_group_items-1',
 
 		// 	'group_items_query' => $group_items_query,
 		// ] );
@@ -186,7 +186,7 @@ class MultisiteHreflang
 			$post_uri = self::get_post_uri( $post );
 
 			// LegalDebug::debug( [
-			// 	'MultisiteHreflang' => 'get_group_items-1',
+			// 	'MultisiteHreflang' => 'get_group_items-2',
 
 			// 	'post_uri' => $post_uri,
 			// ] );
@@ -194,7 +194,7 @@ class MultisiteHreflang
 			$language_code = WPMLMain::get_language_code( $post->ID );
 
 			// LegalDebug::debug( [
-            //     'MultisiteHreflang' => 'get_group_items',
+            //     'MultisiteHreflang' => 'get_group_items-3',
 
 			// 	'language_code' => $language_code,
             // ] );
@@ -206,17 +206,17 @@ class MultisiteHreflang
 
 			$locale = WPMLMain::multisite_locale( $language_code );
 
-			// LegalDebug::debug( [
-            //     'MultisiteHreflang' => 'get_group_items',
+			LegalDebug::debug( [
+                'MultisiteHreflang' => 'get_group_items-4',
 
-			// 	'post_title' => $post_title,
+				'post_title' => $post_title,
 
-			// 	'post_uri' => $post_uri,
+				'post_uri' => $post_uri,
 
-			// 	'language_code' => $language_code,
+				'language_code' => $language_code,
 
-			// 	'locale' => $locale,
-            // ] );
+				'locale' => $locale,
+            ] );
 
 			// $items[ $locale ] = [
 			
