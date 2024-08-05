@@ -9,7 +9,9 @@
     <div class="lang-switcher">
         <div class="lang-current lang-item legal-new">
             <div class="lang-title">
-                <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
+                <?php if ( !empty( $args[ 'active' ] ) ) : ?>
+                    <span><?php echo $args[ 'active' ][ 'title' ]; ?></span>
+                <?php endif; ?>
             </div>
             <!-- <img class="lang-image" src="<?php echo $args[ 'active' ][ 'src' ]; ?>" width="17" height="17" alt="<?php echo $args[ 'active' ][ 'title' ]; ?>" loading="lazy"> -->
             <?php if ( !empty( $args[ 'choose-your-country' ] ) ) : ?>
