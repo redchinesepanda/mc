@@ -1077,7 +1077,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls-3',
 
-			'cross' => $cross,
+			'cross-gettype' => gettype( $cross ),
 
 			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 		] );
