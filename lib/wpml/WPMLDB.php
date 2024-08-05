@@ -331,6 +331,12 @@ class WPMLDB
 		
 			foreach( $all_trid_items as $trid_item )
 			{
+				LegalDebug::debug( [
+					'WPMLDB' => 'parse_hreflang_items',
+
+					'trid_item' => $trid_item,
+				] );
+
 				if ( $trid_item->default_locale == 'en_GB' )
 				{
 					$trid_item->post_uri = rtrim( $trid_item->post_uri, '/' );
