@@ -204,7 +204,9 @@ class MultisiteHreflang
 				$language_code = MultisiteSiteOptions::get_blog_language();
 			}
 
-			$locale = WPMLMain::multisite_locale( $language_code );
+			// $locale = WPMLMain::multisite_locale( $language_code );
+
+			$locale = WPMLMain::get_blog_locale();
 
 			LegalDebug::debug( [
                 'MultisiteHreflang' => 'get_group_items-4',
