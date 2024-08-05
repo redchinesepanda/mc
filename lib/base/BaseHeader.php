@@ -928,7 +928,7 @@ class BaseHeader
 	public static function replace_urls_group( $urls, $urls_home, $urls_cross )
 	{
 		LegalDebug::debug( [
-			'BaseHeader' =>'replace_urls-1',
+			'BaseHeader' =>'replace_urls_group-1',
 
 			'urls-count' => count( $urls ),
 
@@ -950,7 +950,7 @@ class BaseHeader
 			$urls = array_merge( $urls_uintersect, $urls_udiff );
 	
 			LegalDebug::debug( [
-				'BaseHeader' =>'replace_urls-2',
+				'BaseHeader' =>'replace_urls_group-2',
 
 				'urls_uintersect-count' => count( $urls_uintersect ),
 
@@ -961,7 +961,7 @@ class BaseHeader
 		}
 
 		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+		// 	'BaseHeader' =>'replace_urls_group-3',
 
 		// 	'urls_uintersect' => $urls_uintersect,
 
