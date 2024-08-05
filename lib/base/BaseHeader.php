@@ -1000,7 +1000,7 @@ class BaseHeader
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls-3',
 
-			'cross-count' => count( $cross ),
+			'cross' => $cross,
 
 			'cross_urls_replaced-count' => count( $cross_urls_replaced ),
 		] );
