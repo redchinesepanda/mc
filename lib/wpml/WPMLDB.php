@@ -332,7 +332,7 @@ class WPMLDB
 			foreach( $all_trid_items as $trid_item )
 			{
 				LegalDebug::debug( [
-					'WPMLDB' => 'parse_hreflang_items',
+					'WPMLDB' => 'parse_hreflang_items-1',
 
 					'trid_item' => $trid_item,
 				] );
@@ -340,7 +340,7 @@ class WPMLDB
 				if ( $trid_item->default_locale == 'en_GB' )
 				{
 					LegalDebug::debug( [
-						'WPMLDB' => 'parse_hreflang_items',
+						'WPMLDB' => 'parse_hreflang_items-2',
 	
 						'parse_url-path' => parse_url( $trid_item->post_uri, PHP_URL_PATH ),
 					] );
