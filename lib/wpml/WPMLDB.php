@@ -339,7 +339,10 @@ class WPMLDB
 
 				if ( $trid_item->default_locale == 'en_GB' )
 				{
-					$trid_item->post_uri = rtrim( $trid_item->post_uri, '/' );
+					if ( empty( parse_url( $trid_item->post_uri, PHP_URL_PATH ) ) )
+					{
+						$trid_item->post_uri = rtrim( $trid_item->post_uri, '/' );
+					}
 
 					$parsed_trid_items[] = [
 						'hreflang' => 'x-default',
