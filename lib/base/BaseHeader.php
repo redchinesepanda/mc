@@ -1009,7 +1009,7 @@ class BaseHeader
 
 		$cross_urls_replaced = [];
 
-		if ( !empty( $cross ) )
+		if ( ! empty( $cross ) )
 		{
 			$cross_urls_all = self::get_page_urls( $cross );
 
