@@ -53,6 +53,8 @@ class ToolSitemapXML
     }
 
     const MOVED_FOLDERS = [
+        // subsites same domain
+
         // 'kz',
 
         // 'kz-kz',
@@ -60,6 +62,10 @@ class ToolSitemapXML
         'cl',
 
         'pe',
+
+        // other domains
+
+        'de',
     ];
 
     const PATTERNS = [
