@@ -345,7 +345,7 @@ class WPMLDB
 						'parse_url-path' => parse_url( $trid_item->post_uri, PHP_URL_PATH ),
 					] );
 
-					if ( empty( parse_url( $trid_item->post_uri, PHP_URL_PATH ) ) )
+					if ( parse_url( $trid_item->post_uri, PHP_URL_PATH ) = '/' )
 					{
 						$trid_item->post_uri = rtrim( $trid_item->post_uri, '/' );
 					}
