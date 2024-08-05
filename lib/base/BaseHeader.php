@@ -925,25 +925,40 @@ class BaseHeader
 		return strcmp( $language_a[ 'url' ], $language_b[ 'url' ] );
 	}
 
-	public static function replace_urls_group( $urls_home, $urls_cross )
+	public static function replace_urls_group( $urls, $urls_home, $urls_cross )
 	{
-		$handler = new self();
+		LegalDebug::debug( [
+			'BaseHeader' =>'replace_urls-1',
 
-		// LegalDebug::debug( [
-		// 	'BaseHeader' =>'replace_urls',
+			'urls-count' => count( $urls ),
 
-		// 	'urls_home' => $urls_home,
+			'urls_home-count' => count( $urls_home ),
 
-		// 	'urls_cross' => $urls_cross,
-		// ] );
+			'urls_cross-count' => count( $urls_cross ),
+		] );
 
-		$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
+		if ( ! empty( $urls_cross ) )
+		{
+			$handler = new self();
+	
+			$urls_uintersect = array_uintersect( $urls_home, $urls_cross, [ $handler, 'replace_urls_compare' ] );
+	
+			$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
+	
+			// $urls = array_merge( $urls_udiff, $urls_uintersect );
+			
+			$urls = array_merge( $urls_uintersect, $urls_udiff );
+	
+			LegalDebug::debug( [
+				'BaseHeader' =>'replace_urls-2',
 
-		$urls_udiff = array_udiff( $urls_cross, $urls_home, [ $handler, 'replace_urls_compare' ] );
+				'urls_uintersect-count' => count( $urls_uintersect ),
 
-		// $urls = array_merge( $urls_udiff, $urls_uintersect );
-		
-		$urls = array_merge( $urls_uintersect, $urls_udiff );
+				'urls_udiff-count' => count( $urls_udiff ),
+	
+				'urls-count' => count( $urls ),
+			] );
+		}
 
 		// LegalDebug::debug( [
 		// 	'BaseHeader' =>'replace_urls',
@@ -1022,7 +1037,7 @@ class BaseHeader
 			'urls-count' => count( $urls ),
 		] );
 
-		$urls = self::replace_urls_group( $home_urls_replaced, $cross_urls_replaced );
+		$urls = self::replace_urls_group( $urls, $home_urls_replaced, $cross_urls_replaced );
 
 		LegalDebug::debug( [
 			'BaseHeader' =>'replace_urls-6',
