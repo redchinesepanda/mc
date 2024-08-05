@@ -331,11 +331,11 @@ class WPMLDB
 		
 			foreach( $all_trid_items as $trid_item )
 			{
-				LegalDebug::debug( [
-					'WPMLDB' => 'parse_hreflang_items-1',
+				// LegalDebug::debug( [
+				// 	'WPMLDB' => 'parse_hreflang_items-1',
 
-					'trid_item' => $trid_item,
-				] );
+				// 	'trid_item' => $trid_item,
+				// ] );
 
 				if ( $trid_item->default_locale == 'en_GB' )
 				{
@@ -364,17 +364,17 @@ class WPMLDB
 				];
 			}
 
-			// LegalDebug::debug( [
-			// 	'WPMLDB' => 'get_trid_items-1',
+			LegalDebug::debug( [
+				'WPMLDB' => 'parse_hreflang_items-3',
 				
-			// 	'all_trid_items-count' => count( $all_trid_items ),
+				'all_trid_items-count' => count( $all_trid_items ),
 				
-			// 	// 'all_trid_items' => $all_trid_items,
+				// 'all_trid_items' => $all_trid_items,
 
-			// 	'parsed_trid_items-count' => count( $parsed_trid_items ),
+				'parsed_trid_items-count' => count( $parsed_trid_items ),
 
-			// 	'parsed_trid_items' => $parsed_trid_items,
-			// ] );
+				'parsed_trid_items' => $parsed_trid_items,
+			] );
 		}
 		
 		return $parsed_trid_items;
