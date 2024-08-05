@@ -191,7 +191,7 @@ class MultisiteHreflang
 			// 	'post_uri' => $post_uri,
 			// ] );
 
-			$language_code = WPMLMain::get_language_code( $post->ID );
+			// $language_code = WPMLMain::get_language_code( $post->ID );
 
 			// LegalDebug::debug( [
             //     'MultisiteHreflang' => 'get_group_items-3',
@@ -199,10 +199,10 @@ class MultisiteHreflang
 			// 	'language_code' => $language_code,
             // ] );
 
-			if ( empty( $language_code ) )
-			{
+			// if ( empty( $language_code ) )
+			// {
 				$language_code = MultisiteSiteOptions::get_blog_language();
-			}
+			// }
 
 			// $locale = WPMLMain::multisite_locale( $language_code );
 
