@@ -1109,6 +1109,8 @@ class BaseHeader
 			'BaseHeader' =>'replace_urls-6',
 
 			'urls-count' => count( $urls ),
+
+			'urls' => $urls,
 		] );
 
 		return $urls;
