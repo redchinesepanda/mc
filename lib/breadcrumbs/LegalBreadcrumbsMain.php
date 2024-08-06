@@ -221,12 +221,18 @@ class LegalBreadcrumbsMain extends LegalDebug
         
         if ( array_key_exists( $lang, self::HOME ) )
         {
+            $parse_url = parse_url( LegalMain::LEGAL_ROOT );
+
             LegalDebug::debug( [
                 'LegalBreadcrumbsMain' => 'get_home_url-6',
 
                 'homepage_url' => $homepage_url,
     
                 'lang-home' => self::HOME[ $lang ],
+
+                'parse_url' => $parse_url,
+
+                'http_build_url' => http_build_url( $parse_url ),
             ] );
 
             $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ];
