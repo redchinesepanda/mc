@@ -232,7 +232,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
                 'parse_url' => $parse_url,
 
-                'http_build_url' => http_build_url( $parse_url ),
+                'http_build_query' => http_build_query( $parse_url ),
             ] );
 
             $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ];
