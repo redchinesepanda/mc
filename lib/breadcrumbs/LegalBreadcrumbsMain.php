@@ -223,6 +223,8 @@ class LegalBreadcrumbsMain extends LegalDebug
         {
             $parse_url = parse_url( LegalMain::LEGAL_ROOT );
 
+            $parse_url[ PHP_URL_PATH ] = self::HOME[ $lang ];
+
             LegalDebug::debug( [
                 'LegalBreadcrumbsMain' => 'get_home_url-6',
 
