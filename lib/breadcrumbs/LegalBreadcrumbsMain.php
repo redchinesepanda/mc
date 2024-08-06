@@ -237,7 +237,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
             // $homepage_url = LegalMain::LEGAL_ROOT . '/' . self::HOME[ $lang ];
 
-            $homepage_url = sprintf( '%s://%s%s/', $parse_url[ 'scheme' ], $parse_url[ 'host' ], $parse_url[ 'path' ] );
+            $homepage_url = sprintf( '%s://%s%s', $parse_url[ 'scheme' ], $parse_url[ 'host' ], $parse_url[ 'path' ] );
 
             LegalDebug::debug( [
                 'LegalBreadcrumbsMain' => 'get_home_url-7',
