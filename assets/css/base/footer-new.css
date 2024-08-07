@@ -459,9 +459,9 @@
 	filter: grayscale(1);
 }
 
-.legal-footer .lang-switcher {
+/* .legal-footer .lang-switcher {
 	cursor: pointer;
-}
+} */
 
 .footer-menu > .menu-item > .item-title:not( a ),
 .footer-menu > .menu-item-end > .menu-item > .item-title:not( a ) {

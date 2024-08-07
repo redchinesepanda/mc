@@ -204,7 +204,11 @@
     font-weight: 400;
     color: var(--Base-base-01);
     text-decoration: none;
-} 
+}
+
+.lang-switcher .lang-current .lang-title {
+    cursor: pointer;
+}
 
 .lang-switcher .lang-current .lang-title::after {
     content: '';
