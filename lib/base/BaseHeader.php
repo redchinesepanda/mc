@@ -253,14 +253,41 @@ class BaseHeader
 		return [];
 	}
 
+	const EXCEPTION_DOMAINS = [
+		'cloudways-multisite' => 'multisite.match.center'
+	];
+
+	public static function check_exception_domain()
+	{
+		return in_array( MultisiteBlog::get_domain(), self::EXCEPTION_DOMAINS );
+	}
+
+	// public static function check_not_exception_domain()
+	// {
+	// 	return ! self::check_exception_domain();
+	// }
+
 	public static function check_group_language()
 	{
 		return MultisiteMain::check_not_multisite()
 
 			|| MultisiteMain::check_multisite()
 
-			&& MultisiteBlog::check_main_domain();
+			&& (
+				MultisiteBlog::check_main_domain()
+
+				|| self::check_exception_domain()
+			);
 	}
+
+	// public static function check_group_language()
+	// {
+	// 	return MultisiteMain::check_not_multisite()
+
+	// 		|| MultisiteMain::check_multisite()
+
+	// 		&& MultisiteBlog::check_main_domain();
+	// }
 
 	public static function get_languages_avaible( $languages )
 	{
