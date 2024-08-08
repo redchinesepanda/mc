@@ -254,7 +254,9 @@ class BaseHeader
 	}
 
 	const EXCEPTION_DOMAINS = [
-		'cloudways-multisite' => 'multisite.match.center'
+		'cloudways-multisite' => 'multisite.match.center',
+
+		'old-content' => 'old.match.center',
 	];
 
 	public static function check_exception_domain()
