@@ -151,7 +151,7 @@ class LegalBreadcrumbsMain extends LegalDebug
 
     const HOME = [
         // 'ru' => 'kz',
-        
+
         'ru' => 'by',
 
         'esp' => 'es',
