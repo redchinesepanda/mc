@@ -85,9 +85,9 @@ class MultisiteSiteSwitcher
 		// 	'sites_languages-count' => count( $sites_languages ),
 		// ] );
 
-		$current_language = WPMLMain::get_group_language();
+		// $current_language = WPMLMain::get_group_language();
 
-		$sites_languages = WPMLMain::filter_language( $sites_languages, $current_language );
+		// $sites_languages = WPMLMain::filter_language( $sites_languages, $current_language );
 
 		$page_languages = MultisiteHreflang::prepare_languages();
 
