@@ -162,7 +162,7 @@ background-image: url(/wp-content/uploads/flags/default.svg);
 
 .locale-2 {
 /* background-image: url(/wp-content/uploads/flags/es.svg); */
-background-image: url( /assets/img/multisite/flag/es.svg );
+background-image: url( ../assets/img/multisite/flag/es.svg );
 }
 
 .locale-3 {
