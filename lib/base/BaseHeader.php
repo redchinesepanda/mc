@@ -254,6 +254,8 @@ class BaseHeader
 	}
 
 	const EXCEPTION_DOMAINS = [
+		'cloudways-main' => 'match.center',
+
 		'cloudways-multisite' => 'multisite.match.center',
 
 		'templ-content' => 'content.match.center',
