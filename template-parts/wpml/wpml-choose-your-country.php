@@ -21,14 +21,14 @@
 	</div>
 	<div class="choose-you-country-title">Asia</div>
 	<div class="choose-you-country-block">
-		<a class="lang-item" href="/kz/" target="_blank" draggable="false">
+		<!-- <a class="lang-item" href="/kz/" target="_blank" draggable="false">
 			<div class="lang-image locale-66"></div>
 			<div class="lang-title">Казахстан</div>
-		</a>
-		<a class="lang-item" href="/kz-kz/" target="_blank" draggable="false">
+		</a> -->
+		<!-- <a class="lang-item" href="/kz-kz/" target="_blank" draggable="false">
 			<div class="lang-image locale-91"></div>
 			<div class="lang-title">Қазақстан</div>
-		</a>
+		</a> -->
 		<a class="lang-item" href="/ph/" target="_blank" draggable="false">
 			<div class="lang-image locale-84"></div>
 			<div class="lang-title">Philippines</div>
