@@ -163,6 +163,26 @@ class MultisiteBlog
 		return !self::check_main_blog();
 	}
 
+	const EXCEPTION_DOMAINS = [
+		'cloudways-main' => 'match.center',
+
+		'cloudways-multisite' => 'multisite.match.center',
+
+		'templ-content' => 'content.match.center',
+
+		'old-content' => 'old.match.center',
+	];
+
+	public static function check_exception_domain()
+	{
+		return in_array( self::get_domain(), self::EXCEPTION_DOMAINS );
+	}
+
+	public static function check_not_exception_domain()
+	{
+		return ! self::check_exception_domain();
+	}
+
 	public static function check_main_domain()
 	{
 		$domain = self::get_domain();
@@ -178,6 +198,11 @@ class MultisiteBlog
 		// ] );
 
 		if ( $domain == $domain_main_site->domain )
+		{
+			return true;
+		}
+
+		if ( self::check_exception_domain() )
 		{
 			return true;
 		}
