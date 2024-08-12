@@ -32,11 +32,11 @@ class MultisiteSiteSwitcher
 
 			'languages-count' => count( $languages ),
 			
-			// 'languages' => $languages,
+			'languages' => $languages,
 
 			'page_languages-count' => count( $page_languages ),
 			
-			// 'page_languages' => $page_languages,
+			'page_languages' => $page_languages,
 		] );
 
 		if ( !empty( $languages ) )
