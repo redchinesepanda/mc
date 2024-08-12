@@ -112,7 +112,7 @@ class WPMLMain
         //     'languages' => $languages,
         // ] );
 
-        if ( !empty( $languages ) )
+        if ( ! empty( $languages ) )
         {
             return $languages;
         }

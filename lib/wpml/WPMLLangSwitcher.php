@@ -323,17 +323,15 @@ class WPMLLangSwitcher
 
                 $languages = MultisiteSiteSwitcher::get_combined_languages( $languages, $page_languages );
 
-                // LegalDebug::debug( [
-                //     'WPMLLangSwitcher' => 'get',
-
-                //     'step' => 'get-4a',
+                LegalDebug::debug( [
+                    'WPMLLangSwitcher' => 'get-4a',
         
-                //     'page_languages-count' => count( $page_languages ),
+                    'page_languages-count' => count( $page_languages ),
 
-                //     'languages-count' => count( $languages ),
+                    'languages-count' => count( $languages ),
 
-                //     // 'languages' => $languages,
-                // ] );
+                    // 'languages' => $languages,
+                ] );
             }
             else
             {
