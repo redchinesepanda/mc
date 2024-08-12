@@ -27,51 +27,46 @@ class MultisiteSiteSwitcher
 
 	public static function get_combined_languages( $languages, $page_languages )
 	{
-		LegalDebug::debug( [
-			'MultisiteSiteswitcher' =>'get_combined_languages-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_combined_languages-1',
 
-			'languages-count' => count( $languages ),
+		// 	'languages-count' => count( $languages ),
 			
-			'languages' => $languages,
+		// 	// 'languages' => $languages,
 
-			'page_languages-count' => count( $page_languages ),
+		// 	'page_languages-count' => count( $page_languages ),
 			
-			'page_languages' => $page_languages,
-		] );
+		// 	// 'page_languages' => $page_languages,
+		// ] );
 
-		if ( !empty( $languages ) )
+		$page_languages = array_intersect_key( $page_languages, $languages );
+
+		// LegalDebug::debug( [
+		// 	'MultisiteSiteswitcher' =>'get_combined_languages',
+
+		// 	'page_languages' => count( $page_languages ),
+		// ] );
+
+		foreach ( $page_languages as $language_code => $page_language )
 		{
-			$page_languages = array_intersect_key( $page_languages, $languages );
-	
 			// LegalDebug::debug( [
 			// 	'MultisiteSiteswitcher' =>'get_combined_languages',
-	
-			// 	'page_languages' => count( $page_languages ),
+
+			// 	'language' => $languages[ $language_code ],
+
+			// 	'page_language' => $page_language,
 			// ] );
-	
-			foreach ( $page_languages as $language_code => $page_language )
-			{
-				// LegalDebug::debug( [
-				// 	'MultisiteSiteswitcher' =>'get_combined_languages',
-	
-				// 	'language' => $languages[ $language_code ],
-	
-				// 	'page_language' => $page_language,
-				// ] );
-	
-				$languages[ $language_code ] = array_merge( $languages[ $language_code ], $page_language );
-	
-				// LegalDebug::debug( [
-				// 	'MultisiteSiteswitcher' =>'get_combined_languages',
-	
-				// 	'language' => $languages[ $language_code ],
-				// ] );
-			}
-	
-			return $languages;
+
+			$languages[ $language_code ] = array_merge( $languages[ $language_code ], $page_language );
+
+			// LegalDebug::debug( [
+			// 	'MultisiteSiteswitcher' =>'get_combined_languages',
+
+			// 	'language' => $languages[ $language_code ],
+			// ] );
 		}
 
-		return $page_languages;
+		return $languages;
 	}
 
 	public static function get_languages()
