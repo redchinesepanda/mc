@@ -11,17 +11,17 @@ class LegalHosts
 
 		'old' => 'old.match.center',
 
-		'templ-au' => 'match-center-au.com',
+		'cloudways-au' => 'match-center-au.com',
 
-		'templ-nz' => 'match-center.nz',
+		'cloudways-nz' => 'match-center.nz',
 
-		'templ-nl' => 'match-center.nl',
+		'cloudways-nl' => 'match-center.nl',
 
-		'templ-ro' => 'match-center.ro',
+		'cloudways-ro' => 'match-center.ro',
 
-		'templ-mt' => 'match-center.mt',
+		'cloudways-mt' => 'match-center.mt',
 
-		'templ-ar' => 'match-center.ar',
+		'cloudways-ar' => 'match-center.ar',
 
 		'cloudways-at' => 'match-center.at',
 
@@ -32,6 +32,8 @@ class LegalHosts
 		'cloudways-pl' => 'match-center.pl',
 
 		'cloudways-ua' => 'match-center-ua.com',
+
+		'cloudways-kz' => 'match-center-kz.com',
 	];
 
 	const HOST_DEBUG = [
