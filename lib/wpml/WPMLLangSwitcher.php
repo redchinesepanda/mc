@@ -398,7 +398,7 @@ class WPMLLangSwitcher
         // ] );
 
         LegalDebug::debug( [
-            'WPMLLangSwitcher' => 'get',
+            'WPMLLangSwitcher' => 'get-5',
 
             'languages-count' => count( $languages ),
             
@@ -416,15 +416,15 @@ class WPMLLangSwitcher
             $args[ 'choose-your-country' ] = self::get_choose_your_country();
         }
 
-        // LegalDebug::debug( [
-        //     'WPMLLangSwitcher' => 'get',
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get',
 
-        //     'step' => 'get-6',
+            'step' => 'get-6',
 
-        //     'languages-count' => count( $languages ),
+            'languages-count' => count( $languages ),
             
-        //     // 'active-count' => count( $active ),
-        // ] );
+            // 'active-count' => count( $active ),
+        ] );
 
         // $args['active'] = array_merge( self::get_active( $languages ), self::get_data() );
 
