@@ -27,17 +27,17 @@ class MultisiteSiteSwitcher
 
 	public static function get_combined_languages( $languages, $page_languages )
 	{
-		// LegalDebug::debug( [
-		// 	'MultisiteSiteswitcher' =>'get_combined_languages',
+		LegalDebug::debug( [
+			'MultisiteSiteswitcher' =>'get_combined_languages-1',
 
-		// 	'languages-count' => count( $languages ),
+			'languages-count' => count( $languages ),
 			
-		// 	// 'languages' => $languages,
+			// 'languages' => $languages,
 
-		// 	'page_languages-count' => count( $page_languages ),
+			'page_languages-count' => count( $page_languages ),
 			
-		// 	// 'page_languages' => $page_languages,
-		// ] );
+			// 'page_languages' => $page_languages,
+		] );
 
 		if ( !empty( $languages ) )
 		{
