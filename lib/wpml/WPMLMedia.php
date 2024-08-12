@@ -2,7 +2,8 @@
 
 class WPMLMedia
 {
-	public static function register() {
+	public static function register()
+	{
         $handler = new self();
 
         // add_action( 'wp_loaded', [ $handler, 'delete_translated_media' ] );
