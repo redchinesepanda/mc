@@ -157,124 +157,123 @@
 }
 
 .locale-1 {
-background-image: url(/wp-content/uploads/flags/default.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/default.svg );
 }
 
 .locale-2 {
-/* background-image: url(/wp-content/uploads/flags/es.svg); */
-background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/es.svg );
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/es.svg );
 }
 
 .locale-3 {
-    background-image: url(/wp-content/uploads/flags/de.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/de.svg );
 }
 
 .locale-5 {
-    background-image: url(/wp-content/uploads/flags/ar.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ar.svg );
 }
 
 .locale-8 {
-    background-image: url(/wp-content/uploads/flags/ca.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ca.svg );
 }
 
 .locale-22 {
-    background-image: url(/wp-content/uploads/flags/hr.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/hr.svg );
 }
 
 .locale-34 {
-    background-image: url(/wp-content/uploads/flags/mt.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/mt.svg );
 }
 
 .locale-37 {
-    background-image: url(/wp-content/uploads/flags/nl.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/nl.svg );
 }
 
 .locale-40 {
-    background-image: url(/wp-content/uploads/flags/pl.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/pl.svg );
 }
 
 .locale-44 {
-    background-image: url(/wp-content/uploads/flags/ro.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ro.svg );
 }
 
 .locale-66 {
-    background-image: url(/wp-content/uploads/flags/kz.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/kz.svg );
 }
 
 .locale-67 {
-    background-image: url(/wp-content/uploads/flags/by.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/by.svg );
 }
 
 .locale-69 {
-    background-image: url(/wp-content/uploads/flags/mx.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/mx.svg );
 }
 
 .locale-70 {
-    background-image: url(/wp-content/uploads/flags/ng.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ng.svg );
 }
 
 .locale-71 {
-    background-image: url(/wp-content/uploads/flags/ie.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ie.svg );
 }
 
 .locale-72 {
-    background-image: url(/wp-content/uploads/flags/ua.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ua.svg );
 }
 
 .locale-74 {
-    background-image: url(/wp-content/uploads/flags/au.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/au.svg );
 }
 
 .locale-75 {
-    background-image: url(/wp-content/uploads/flags/za.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/za.svg );
 }
 
 .locale-77 {
-    background-image: url(/wp-content/uploads/flags/ke.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ke.svg );
 }
 
 .locale-78 {
-    background-image: url(/wp-content/uploads/flags/nz.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/nz.svg );
 }
 
 .locale-79 {
-    background-image: url(/wp-content/uploads/flags/pe.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/pe.svg );
 }
 
 .locale-80 {
-    background-image: url(/wp-content/uploads/flags/co.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/co.svg );
 }
 
 .locale-83 {
-    background-image: url(/wp-content/uploads/flags/py.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/py.svg );
 }
 
 .locale-84 {
-    background-image: url(/wp-content/uploads/flags/ph.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ph.svg );
 }
 
 .locale-85 {
-    background-image: url(/wp-content/uploads/flags/br.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/br.svg );
 }
 
 .locale-86 {
-    background-image: url(/wp-content/uploads/flags/pt.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/pt.svg );
 }
 
 .locale-87 {
-    background-image: url(/wp-content/uploads/flags/at.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/at.svg );
 }
 
 .locale-88 {
-    background-image: url(/wp-content/uploads/flags/se.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/se.svg );
 }
 
 .locale-89 {
-    background-image: url(/wp-content/uploads/flags/cz.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/cz.svg );
 }
 
 .locale-90 {
-    background-image: url(/wp-content/uploads/flags/rs.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/rs.svg );
 }
 
 .locale-91 {
@@ -282,19 +281,19 @@ background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/es.
 }
 
 .locale-92 {
-    background-image: url(/wp-content/uploads/flags/chile-flag-button-round.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/chile-flag-button-round.svg );
 }
 
 .locale-93 {
-    background-image: url(/wp-content/uploads/flags/ch.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/ch.svg );
 }
 
 .locale-94 {
-    background-image: url(/wp-content/uploads/flags/in.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/in.svg );
 }
 
 .locale-95 {
-    background-image: url(/wp-content/uploads/flags/dk.svg);
+    background-image: url( /wp-content/themes/mc-theme/assets/img/multisite/flag/dk.svg );
 }
 
 /* Typography */
