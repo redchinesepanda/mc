@@ -155,7 +155,9 @@ class MultisiteAdmin
 		
 		if( 'blog_locale' === $column_name )
 		{
-			echo 'MC: ' . MultisiteSiteOptions::get_blog_locale( $blog_id ) . '<br />';
+			// echo 'MC: ' . MultisiteSiteOptions::get_blog_locale( $blog_id ) . '<br />';
+			
+			echo MultisiteSiteOptions::get_blog_locale( $blog_id );
 
 			// MultisiteBlog::set_blog( $blog_id );
 
