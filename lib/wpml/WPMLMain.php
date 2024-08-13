@@ -54,7 +54,26 @@ class WPMLMain
 
             add_filter( 'wpml_element_language_code', [ $handler, 'multisite_element_language_code' ], 10, 2 );
         }
-    } 
+
+        if ( MultisiteMain::check_multisite() )
+        {
+            add_filter( 'locale', [ $handler, 'filter_function_name_11' ] );
+        }
+
+    }
+
+    public static function filter_function_name_11( $locale )
+    {
+        LegalDebug::debug( [
+            'WPMLMain' => 'filter_function_name_11-1',
+
+            'locale' => $locale,
+
+            'get_blog_locale' => MultisiteSiteOptions::get_blog_locale(),
+        ] );
+    
+        return $locale;
+    }
 
     public static function register()
     {
