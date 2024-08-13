@@ -62,6 +62,8 @@ class YoastVerification
 		{
 			$verification[ 'google' ] = $google;
 		}
+
+		return $verification;
 	}
 
 	const TEMPLATE = [
