@@ -133,7 +133,7 @@ class AffiliateHref
 		}
 	}
 
-	public static function get_nodes_anchors_go( $dom )
+	public static function get_nodes_anchors_go_href( $dom )
 	{
 		$query = self::PATTERNS[ 'a-href-go' ];
 
