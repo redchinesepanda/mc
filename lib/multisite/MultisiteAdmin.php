@@ -377,7 +377,7 @@ class MultisiteAdmin
 	public static function redirect_clean( $redirect )
 	{
 		LegalDebug::die( [
-			'MultisiteAdmin' =>'redirect_clean',
+			'MultisiteAdmin' =>'redirect_clean-1',
 
 			'redirect' => $redirect,
 		] );
