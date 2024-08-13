@@ -106,43 +106,49 @@ class AffiliateHref
 	{
 		if ( ! empty( $nodes ) )
 		{
-			$domain = MultisiteBlog::get_domain();
+			// $domain = MultisiteBlog::get_domain();
 
-			$site_url = MultisiteBlog::get_siteurl();
+			// $site_url = MultisiteBlog::get_siteurl();
 
 			$site = MultisiteBlog::get_site();
 
-			$path = rtrim( $site->path, '/' );
-
-			LegalDebug::debug( [
-				'AffiliateHref' => 'get_nodes_anchors_go-1',
-
-				'domain' => $domain,
-
-				'site_url' => $site_url,
-
-				'site' => $site,
-
-				'path' => $path,
-			] );
-
-
-
-			foreach ( $nodes as $node )
+			if ( $site->path != '/' )
 			{
-				$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
-
-				$href_parsed = parse_url( $href );
-
+				$path = rtrim( $site->path, '/' );
+	
 				LegalDebug::debug( [
-					'AffiliateHref' => 'get_nodes_anchors_go-2',
-
-					'href' => $href,
-
-					'href_parsed' => $href_parsed,
+					'AffiliateHref' => 'get_nodes_anchors_go-1',
+	
+					// 'domain' => $domain,
+	
+					// 'site_url' => $site_url,
+	
+					// 'site' => $site,
+	
+					'path' => $path,
 				] );
 	
-				$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+				foreach ( $nodes as $node )
+				{
+					$href = $node->getAttribute( self::ATTRIBUTE[ 'href' ] );
+	
+					$href_parsed = parse_url( $href );
+
+					$href_parsed[ 'path' ] = $path . $href_parsed[ 'path' ];
+
+					$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
+	
+					LegalDebug::debug( [
+						'AffiliateHref' => 'get_nodes_anchors_go-2',
+	
+						'href' => $href,
+	
+						'href_parsed' => $href_parsed,
+					] );
+		
+					// $node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+				}
+
 			}
 			
 			LegalDebug::die( [
