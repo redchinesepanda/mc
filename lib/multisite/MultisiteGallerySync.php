@@ -38,8 +38,6 @@ class MultisiteGallerySync
 
 	public static function mc_bulk_action_sync_galleries( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// LegalDebug::die( [
 		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_galleries',
 
@@ -50,6 +48,8 @@ class MultisiteGallerySync
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-galleries' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			foreach ( $object_ids as $post_id )
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )

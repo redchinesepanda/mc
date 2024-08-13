@@ -143,12 +143,12 @@ class MultisiteAttachment
 
 	public static function mc_bulk_action_multisite_handler_attachment( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// if ( MultisiteAdmin::check_doaction( $doaction ) )
 		
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
 
 			self::handle_attachments( $blog_id, $object_ids );

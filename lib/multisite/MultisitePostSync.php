@@ -282,8 +282,6 @@ class MultisitePostSync
 
 	public static function mc_bulk_action_sync_posts( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// LegalDebug::debug( [
 		// 	'MultisitePostSync' => 'mc_bulk_action_sync_posts',
 
@@ -294,6 +292,8 @@ class MultisitePostSync
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-posts' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			foreach ( $object_ids as $post_id )
 			{
 				self::set_posts( $post_id );

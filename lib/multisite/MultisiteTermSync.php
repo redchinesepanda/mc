@@ -166,8 +166,6 @@ class MultisiteTermSync
 
 	public static function mc_bulk_action_sync_terms( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// LegalDebug::die( [
 		// 	'MultisiteTermSync' =>'mc_bulk_action_sync_terms',
 
@@ -178,6 +176,8 @@ class MultisiteTermSync
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-terms' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+			
 			foreach ( $object_ids as $post_id )
 			{
 				self::set_terms( $post_id );
