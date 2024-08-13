@@ -68,7 +68,7 @@ class ToolSitemapXML
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
 
-            'page_on_front' => ,
+            'page_on_front' => get_option( 'page_on_front' ),
 
             'show_on_front' => get_option( 'show_on_front' ),
 
