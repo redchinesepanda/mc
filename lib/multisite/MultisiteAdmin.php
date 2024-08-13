@@ -139,8 +139,7 @@ class MultisiteAdmin
 
 			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_blogs_column_item' ] );
 
-			// add_action( 'manage_blogs_custom_column', [ $handler, 'handle_blogs_column_item' ], 10, 
-			2 );
+			// add_action( 'manage_blogs_custom_column', [ $handler, 'handle_blogs_column_item' ], 10, 2 );
 
 			add_action( 'manage_sites_custom_column', [ $handler, 'add_columns' ], 10, 2 );
 		}
