@@ -34,6 +34,12 @@ class YoastVerification
 	{
 		$domain = MultisiteBlog::get_domain();
 
+		LegalDebug::debug( [
+			'YoastVerification' => 'get_google_verification',
+
+			'domain' => $domain,
+		] );
+
 		if ( array_key_exists( $domain, self::GOOGLE_VERIFICATION ) )
 		{
 			return [
