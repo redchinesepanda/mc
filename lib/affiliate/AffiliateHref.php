@@ -134,6 +134,14 @@ class AffiliateHref
 	
 					$href_parsed = parse_url( $href );
 
+					LegalDebug::debug( [
+						'AffiliateHref' => 'get_nodes_anchors_go-2',
+	
+						'href' => $href,
+	
+						'href_parsed' => $href_parsed,
+					] );
+
 					$href_parsed[ 'path' ] = $path . $href_parsed[ 'path' ];
 
 					$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
