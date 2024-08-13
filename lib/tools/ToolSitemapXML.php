@@ -58,7 +58,20 @@ class ToolSitemapXML
             // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
 
             // add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wp_kama_sitemaps_posts_entry_filter' ], 10, 3 );
+
+            add_filter( 'wp_sitemaps_posts_show_on_front_entry', [ $handler, 'wp_kama_sitemaps_posts_show_on_front_entry_filter' ] );
         }
+    }
+
+    function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
+    {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
+
+            'sitemap_entry' => $sitemap_entry,
+        ] );
+
+        return $sitemap_entry;
     }
 
     // public static function wp_kama_sitemaps_posts_entry_filter( $sitemap_entry, $post, $post_type )
@@ -432,19 +445,6 @@ class ToolSitemapXML
 
     public static function wpkama_sitemaps_posts_entry( $entry, $post )
     {
-        $post_id = 0;
-
-        if ( $post )
-        {
-            $post_id = $post->ID;
-        }
-
-        LegalDebug::debug( [
-            'entry' => $entry,
-
-            'post_id' => $post_id,
-        ] );
-
         if ( $post )
         {
             $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
@@ -452,11 +452,9 @@ class ToolSitemapXML
             $entry[ 'priority' ] = self::get_priority( $post );
     
             $entry[ 'changefreq' ] = 'weekly';
-    
-            return $entry;
         }
-
-        return null;
+    
+        return $entry;
     }
 }
 
