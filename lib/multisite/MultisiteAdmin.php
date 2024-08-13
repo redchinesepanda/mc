@@ -103,40 +103,40 @@ class MultisiteAdmin
 	{
 		// if ( MultisiteBlog::check_main_blog() )
 		
-		if ( self::check_multisite_admin() )
-		{
-			$handler = new self();
+		// if ( self::check_multisite_admin() )
+		// {
+		// 	$handler = new self();
 	
-			// add bulk actions
+		// 	// add bulk actions
 	
-			// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
+		// 	// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
 			
-			self::add_filter_all(
-				self::PATTERNS[ 'bulk-actions' ],
+		// 	self::add_filter_all(
+		// 		self::PATTERNS[ 'bulk-actions' ],
 				
-				self::get_post_types(),
+		// 		self::get_post_types(),
 				
-				$handler,
+		// 		$handler,
 				
-				'mc_bulk_multisite_actions'
-			);
+		// 		'mc_bulk_multisite_actions'
+		// 	);
 	
-			// show an post notice
+		// 	// show an post notice
 	
-			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
+		// 	add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
 	
-			// show an attacment notice
+		// 	// show an attacment notice
 	
-			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
+		// 	add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
 
-			/* Add site_name as a column */
+		// 	/* Add site_name as a column */
 		
-			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_useful_columns' ] );
+		// 	add_filter( 'wpmu_blogs_columns', [ $handler, 'add_useful_columns' ] );
 
-			/* Populate site_name with blogs site_name */
+		// 	/* Populate site_name with blogs site_name */
 		
-			add_action( 'manage_sites_custom_column', [ $handler, 'column_site_name' ] , 10, 2 );
-		}
+		// 	add_action( 'manage_sites_custom_column', [ $handler, 'column_site_name' ] , 10, 2 );
+		// }
 	}
 
 	public static function add_useful_columns( $site_columns )
