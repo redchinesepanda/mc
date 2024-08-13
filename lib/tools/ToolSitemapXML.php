@@ -60,10 +60,27 @@ class ToolSitemapXML
             // add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wp_kama_sitemaps_posts_entry_filter' ], 10, 3 );
 
             add_filter( 'wp_sitemaps_posts_show_on_front_entry', [ $handler, 'wp_kama_sitemaps_posts_show_on_front_entry_filter' ] );
+
+            add_filter( 'option_show_on_front', [ $handler, 'wp_kama_option_filter' ], 10, 2 );
         }
     }
 
-    function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
+    public static function wp_kama_option_filter( $value, $option )
+    {
+        LegalDebug::debug( [
+            'ToolSitemapXML' => 'wp_kama_option_filter-1',
+
+            'is_sitemap_page' => self::is_sitemap_page(),
+
+            'value' => $value,
+
+            'option' => $option,
+        ] );
+
+        return $value;
+    }
+
+    public static function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
     {
         // LegalDebug::debug( [
         //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
