@@ -4,6 +4,8 @@ require_once( 'YoastOG.php' );
 
 require_once( 'YoastSitemapXML.php' );
 
+require_once( 'YoastVerification.php' );
+
 class YoastMain
 {
     public static function check_plugin()
