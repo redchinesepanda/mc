@@ -116,17 +116,17 @@ class AffiliateHref
 			{
 				$path = rtrim( $site->path, '/' );
 	
-				LegalDebug::debug( [
-					'AffiliateHref' => 'get_nodes_anchors_go-1',
+				// LegalDebug::debug( [
+				// 	'AffiliateHref' => 'get_nodes_anchors_go-1',
 	
-					// 'domain' => $domain,
+				// 	// 'domain' => $domain,
 	
-					// 'site_url' => $site_url,
+				// 	// 'site_url' => $site_url,
 	
-					// 'site' => $site,
+				// 	// 'site' => $site,
 	
-					'path' => $path,
-				] );
+				// 	'path' => $path,
+				// ] );
 	
 				foreach ( $nodes as $node )
 				{
@@ -134,13 +134,13 @@ class AffiliateHref
 	
 					$href_parsed = parse_url( $href );
 
-					LegalDebug::debug( [
-						'AffiliateHref' => 'get_nodes_anchors_go-2',
+					// LegalDebug::debug( [
+					// 	'AffiliateHref' => 'get_nodes_anchors_go-2',
 	
-						'href' => $href,
+					// 	'href' => $href,
 	
-						'href_parsed' => $href_parsed,
-					] );
+					// 	'href_parsed' => $href_parsed,
+					// ] );
 
 					if ( ! str_contains( $href_parsed[ 'path' ], $path ) )
 					{
@@ -148,13 +148,13 @@ class AffiliateHref
 	
 						$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
 		
-						LegalDebug::debug( [
-							'AffiliateHref' => 'get_nodes_anchors_go-3',
+						// LegalDebug::debug( [
+						// 	'AffiliateHref' => 'get_nodes_anchors_go-3',
 		
-							'href' => $href,
+						// 	'href' => $href,
 		
-							'href_parsed' => $href_parsed,
-						] );
+						// 	'href_parsed' => $href_parsed,
+						// ] );
 			
 						$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 					}
@@ -162,11 +162,11 @@ class AffiliateHref
 
 			}
 			
-			LegalDebug::die( [
-				'AffiliateHref' => 'get_nodes_anchors_go-3',
+			// LegalDebug::die( [
+			// 	'AffiliateHref' => 'get_nodes_anchors_go-3',
 
-				'nodes-length' => $nodes->length,
-			] );
+			// 	'nodes-length' => $nodes->length,
+			// ] );
 		}
 	}
 
