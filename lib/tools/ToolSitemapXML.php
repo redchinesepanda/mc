@@ -67,15 +67,15 @@ class ToolSitemapXML
 
     public static function wp_kama_option_filter( $value, $option )
     {
-        LegalDebug::debug( [
-            'ToolSitemapXML' => 'wp_kama_option_filter-1',
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_option_filter-1',
 
-            // 'is_sitemap_page' => self::is_sitemap_page(),
+        //     // 'is_sitemap_page' => self::is_sitemap_page(),
 
-            'value' => $value,
+        //     'value' => $value,
 
-            'option' => $option,
-        ] );
+        //     'option' => $option,
+        // ] );
 
         // if ( self::is_sitemap_page() )
         // {
