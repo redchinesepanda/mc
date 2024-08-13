@@ -60,8 +60,6 @@ class MultisiteShortcodeSync
 
 	public static function mc_bulk_action_sync_shortcodes( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// LegalDebug::debug( [
 		// 	'MultisiteGallerySync' =>'mc_bulk_action_sync_shortcodes',
 
@@ -72,6 +70,8 @@ class MultisiteShortcodeSync
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-shortcodes' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			foreach ( $object_ids as $post_id )
 			{
 				if ( $post = MultisitePost::get_post( $post_id ) )
