@@ -432,6 +432,19 @@ class ToolSitemapXML
 
     public static function wpkama_sitemaps_posts_entry( $entry, $post )
     {
+        $post_id = 0;
+
+        if ( $post )
+        {
+            $post_id = $post->ID;
+        }
+
+        LegalDebug::debug( [
+            'entry' => $entry,
+
+            'post_id' => $post_id,
+        ] );
+
         if ( $post )
         {
             $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
