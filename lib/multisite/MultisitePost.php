@@ -28,25 +28,25 @@ class MultisitePost
 	{
 		if ( MultisiteBlog::check_main_blog() )
 		{
-			// $handler = new self();
+			$handler = new self();
 
-			// // move or copy posts to blog
+			// move or copy posts to blog
 
-			// // MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
+			// MultisiteAdmin::add_filter_all( 'handle_bulk_actions-edit-', $handler, 'mc_bulk_action_multisite_handler', 10, 3 );
 			
-			// MultisiteAdmin::add_filter_all(
-			// 	MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-			// 	MultisiteAdmin::get_post_types_post(),
+				MultisiteAdmin::get_post_types_post(),
 				
-			// 	$handler,
+				$handler,
 				
-			// 	'mc_bulk_action_multisite_handler',
+				'mc_bulk_action_multisite_handler',
 				
-			// 	10,
+				10,
 				
-			// 	3
-			// );
+				3
+			);
 		}
 	}
 

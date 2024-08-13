@@ -153,39 +153,39 @@ class MultisiteBlog
 		update_blog_option( $blog_id, $option, sanitize_text_field( $value ) );
 	}
 
-	const EXCEPTION_BLOG_ID = [
-		'cloudways-main' => 21,
-	];
+	// const EXCEPTION_BLOG_ID = [
+	// 	'cloudways-main' => 21,
+	// ];
 
-	public static function check_exception_blog_id()
-	{
-		return in_array( self::get_current_blog_id(), self::EXCEPTION_BLOG_ID );
-	}
+	// public static function check_exception_blog_id()
+	// {
+	// 	return in_array( self::get_current_blog_id(), self::EXCEPTION_BLOG_ID );
+	// }
 
-	public static function check_not_exception_blog_id()
-	{
-		return ! self::check_exception_blog_id();
-	}
-
-	public static function check_main_blog()
-	{
-		if ( self::get_current_blog_id() == self::get_main_blog_id() )
-		{
-			return true;
-		}
-
-		if ( self::check_exception_blog_id() )
-		{
-			return true;
-		}
-
-		return false;
-	}
+	// public static function check_not_exception_blog_id()
+	// {
+	// 	return ! self::check_exception_blog_id();
+	// }
 
 	// public static function check_main_blog()
 	// {
-	// 	return self::get_current_blog_id() == self::get_main_blog_id();
+	// 	if ( self::get_current_blog_id() == self::get_main_blog_id() )
+	// 	{
+	// 		return true;
+	// 	}
+
+	// 	if ( self::check_exception_blog_id() )
+	// 	{
+	// 		return true;
+	// 	}
+
+	// 	return false;
 	// }
+
+	public static function check_main_blog()
+	{
+		return self::get_current_blog_id() == self::get_main_blog_id();
+	}
 
 	public static function check_not_main_blog()
 	{
