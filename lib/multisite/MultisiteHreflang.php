@@ -42,7 +42,7 @@ class MultisiteHreflang
 		return [
 			'posts_per_page' => -1,
 			
-			'post_type' => 'page',
+			'post_type' => [ 'page', 'post' ],
 
 			'tax_query' => [
 				[
