@@ -158,6 +158,11 @@ class MultisiteAdmin
 			echo MultisiteSiteOptions::get_blog_locale( $blog_id );
 		}
 
+		if( 'blog_id' === $column_name )
+		{
+			echo $blog_id;
+		}
+
 		return $column_name;
 	}
 
@@ -166,6 +171,8 @@ class MultisiteAdmin
 		$columns[ 'blog_language' ] = ToolLoco::translate( 'Language ( en )' );
 		
 		$columns[ 'blog_locale' ] = ToolLoco::translate( 'Locale ( en_GB )' );
+
+		$columns[ 'blog_id' ] = ToolLoco::translate( 'ID ( 21 )' );
 
 		return $columns;
 	}
