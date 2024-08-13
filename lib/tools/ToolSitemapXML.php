@@ -377,7 +377,9 @@ class ToolSitemapXML
     
     public static function get_priority( $post )
     {
-        if ( WPMLTrid::get_trid( $post->ID ) == WPMLTrid::get_trid( get_option('page_on_front') ) )
+        // if ( WPMLTrid::get_trid( $post->ID ) == WPMLTrid::get_trid( get_option('page_on_front') ) )
+        
+        if ( $post->ID == get_option( 'page_on_front' ) )
         {
             return self::PRIORITY[ 'high' ];
         }
