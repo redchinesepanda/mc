@@ -110,6 +110,8 @@ class AffiliateHref
 
 			$site_url = MultisiteBlog::get_siteurl();
 
+			$site = MultisiteBlog::get_site();
+
 			LegalDebug::debug( [
 				'AffiliateHref' => 'get_nodes_anchors_go-1',
 
