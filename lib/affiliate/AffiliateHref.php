@@ -97,7 +97,7 @@ class AffiliateHref
 
 	public static function add_affiliate_href_item( $bulk_actions )
     {
-    	$bulk_actions[ self::ACTION[ 'set-affiliate-href' ] ] = ToolLoco::translate( 'Set Anchor Attributes' );
+    	$bulk_actions[ self::ACTION[ 'set-affiliate-href' ] ] = ToolLoco::translate( 'Set Affiliate href' );
 
     	return $bulk_actions;
     }
