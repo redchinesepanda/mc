@@ -79,7 +79,7 @@ class ToolSitemapXML
 
         if ( self::is_sitemap_page() )
         {
-            return 'homepage';
+            return 'page';
         }
 
         return $value;
