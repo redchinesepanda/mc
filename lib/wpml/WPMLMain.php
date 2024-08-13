@@ -57,6 +57,8 @@ class WPMLMain
 
         if ( MultisiteMain::check_multisite() )
         {
+            $handler = new self();
+            
             add_filter( 'locale', [ $handler, 'filter_function_name_11' ] );
         }
 
