@@ -159,9 +159,9 @@ class MultisiteAdmin
 
 			MultisiteBlog::set_blog( $blog_id );
 
-			echo 'WP: ' . get_locale() . '<br />';
+			// echo 'WP: ' . get_locale() . '<br />';
 
-			echo 'WP: ' . get_option( 'WPLANG' ) . '<br />';
+			// echo 'WP: ' . get_option( 'WPLANG' ) . '<br />';
 
 			echo 'WP: ' . get_site_option( 'WPLANG' ) . '<br />';
 
