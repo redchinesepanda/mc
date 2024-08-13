@@ -158,7 +158,7 @@ class MultisiteAdmin
 		return $column_name;
 	}
 
-	public function get_id( $add_blogs_column_item )
+	public static function add_blogs_column_item( $columns )
 	{
 		$columns[ 'blog_language' ] = ToolLoco::translate( 'Blog language' );
 		
