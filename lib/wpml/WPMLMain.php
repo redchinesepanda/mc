@@ -58,7 +58,7 @@ class WPMLMain
         if ( MultisiteMain::check_multisite() )
         {
             $handler = new self();
-            
+
             add_filter( 'locale', [ $handler, 'filter_function_name_11' ] );
         }
 
@@ -66,13 +66,20 @@ class WPMLMain
 
     public static function filter_function_name_11( $locale )
     {
-        LegalDebug::debug( [
-            'WPMLMain' => 'filter_function_name_11-1',
+        // LegalDebug::debug( [
+        //     'WPMLMain' => 'filter_function_name_11-1',
 
-            'locale' => $locale,
+        //     'locale' => $locale,
 
-            'get_blog_locale' => MultisiteSiteOptions::get_blog_locale(),
-        ] );
+        //     'get_blog_locale' => MultisiteSiteOptions::get_blog_locale(),
+        // ] );
+
+        $blog_locale = MultisiteSiteOptions::get_blog_locale();
+
+        if ( ! empty( $blog_locale ) )
+        {
+            return $blog_locale;
+        }
     
         return $locale;
     }
