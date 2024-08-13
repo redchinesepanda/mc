@@ -211,7 +211,7 @@ class AffiliateHref
     }
 
 	const TEMPLATE = [
-        'affiliate-href-notices' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-affiliate-href-notices.php',
+        'affiliate-href-notices' => LegalMain::LEGAL_PATH . '/template-parts/affiliate/part-affiliate-href-notices.php',
     ];
 
     public static function print_notices( $args )
