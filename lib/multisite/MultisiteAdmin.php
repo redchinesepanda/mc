@@ -156,30 +156,30 @@ class MultisiteAdmin
 	public static function register_functions_subsite()
 	{
 
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
-			// LegalDebug::debug( [
-			// 	'MultisiteAdmin' =>'register_functions_subsite',
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
+		// 	// LegalDebug::debug( [
+		// 	// 	'MultisiteAdmin' =>'register_functions_subsite',
 
-			// 	'PATTERNS' => self::PATTERNS[ 'bulk-actions' ],
+		// 	// 	'PATTERNS' => self::PATTERNS[ 'bulk-actions' ],
 	
-			// 	'get_post_types' => self::get_post_types(),
-			// ] );
+		// 	// 	'get_post_types' => self::get_post_types(),
+		// 	// ] );
 
-			$handler = new self();
+		// 	$handler = new self();
 
-			self::add_filter_all(
-				self::PATTERNS[ 'bulk-actions' ],
+		// 	self::add_filter_all(
+		// 		self::PATTERNS[ 'bulk-actions' ],
 				
-				self::get_post_types(),
+		// 		self::get_post_types(),
 				
-				$handler,
+		// 		$handler,
 				
-				'mc_bulk_subsite_actions'
-			);
+		// 		'mc_bulk_subsite_actions'
+		// 	);
 
-			add_action( 'admin_notices', [ $handler, 'mc_bulk_updated_notices' ] );
-		}
+		// 	add_action( 'admin_notices', [ $handler, 'mc_bulk_updated_notices' ] );
+		// }
 	}
 	
 	public static function mc_bulk_multisite_actions( $bulk_array )
