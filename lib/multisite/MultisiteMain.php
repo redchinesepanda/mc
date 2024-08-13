@@ -85,53 +85,53 @@ class MultisiteMain
 
 	public static function register_functions()
 	{
-		if ( MultisiteBlog::check_main_blog() )
-		{
-		}
-		else
-		{
-			MultisiteFront::register_functions_subsite();
-		}
+		// if ( MultisiteBlog::check_main_blog() )
+		// {
+		// }
+		// else
+		// {
+		// 	MultisiteFront::register_functions_subsite();
+		// }
 	}
 
 	public static function register_functions_admin()
 	{
-		MultisiteGallerySync::register_functions_debug();
+		// MultisiteGallerySync::register_functions_debug();
 
-		MultisiteMeta::register_functions_debug();
+		// MultisiteMeta::register_functions_debug();
 
-		MultisiteShortcodeSync::register_functions_debug();
+		// MultisiteShortcodeSync::register_functions_debug();
 
-		MultisiteSiteSwitcher::register_functions_debug();
+		// MultisiteSiteSwitcher::register_functions_debug();
 
-		MultisiteHreflang::register_functions_debug();
+		// MultisiteHreflang::register_functions_debug();
 
-		MultisiteMeta::register_functions_debug();
+		// MultisiteMeta::register_functions_debug();
 
-		if ( MultisiteBlog::check_main_blog() )
-		{
-			MultisiteAdmin::register_functions_mainsite();
+		// if ( MultisiteBlog::check_main_blog() )
+		// {
+		// 	MultisiteAdmin::register_functions_mainsite();
 
-			MultisitePost::register_functions_mainsite();
+		// 	MultisitePost::register_functions_mainsite();
 
-			MultisiteAttachment::register_functions_mainsite();
+		// 	MultisiteAttachment::register_functions_mainsite();
 
-			MultisiteSiteOptions::register_functions_mainsite();
-		}
-		else
-		{
-			MultisiteAdmin::register_functions_subsite();
+		// 	MultisiteSiteOptions::register_functions_mainsite();
+		// }
+		// else
+		// {
+		// 	MultisiteAdmin::register_functions_subsite();
 
-			MultisiteAttachmentSync::register_functions_subsite();
+		// 	MultisiteAttachmentSync::register_functions_subsite();
 
-			MultisiteGallerySync::register_functions_subsite();
+		// 	MultisiteGallerySync::register_functions_subsite();
 
-			MultisiteTermSync::register_functions_subsite();
+		// 	MultisiteTermSync::register_functions_subsite();
 
-			MultisitePostSync::register_functions_subsite();
+		// 	MultisitePostSync::register_functions_subsite();
 
-			MultisiteShortcodeSync::register_functions_subsite();
-		}
+		// 	MultisiteShortcodeSync::register_functions_subsite();
+		// }
 	}
 }
 
