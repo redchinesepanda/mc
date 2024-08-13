@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="yandex-verification" content="079ad3c653c7c146">
 		<?php echo YoastVerification::render(); ?>
-		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
+		<!-- <meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
 		<meta name="google-site-verification" content="2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40" />
 		<meta name="google-site-verification" content="5DLHAOxxRfrKYK3wIUaq0xciDnh6pb9Lv9MJQLhAV2E" />
 		<meta name="google-site-verification" content="KmZVf5Emmz8s9HLvmrqcExlPZwHfYZrdAF0KMD1D2RY" />
@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="google-site-verification" content="uL_MOpGHjVJdTC0wYE5IpCP_DVbLdMZNH9QnAjaOdes" />
 		<meta name="google-site-verification" content="xsV_rhcHpVkCE0BOHIGgCEeHPDJ2yBVtlNkOBjaSpxU" />
 		<meta name="google-site-verification" content="Y2Opq8gGQS9XXahYuxOsrMaQ3UoJTQFjarZttw-zaTs" />
-		<meta name="google-site-verification" content="HMUEHcjh7O4qA20TiXyX9X3zrktuScU96hOjIXbVfmE" />
+		<meta name="google-site-verification" content="HMUEHcjh7O4qA20TiXyX9X3zrktuScU96hOjIXbVfmE" /> -->
 		<link rel="shortcut icon" href="<?php echo BaseHeader::get_favicon(); ?>" type="image/x-icon">
 		<!-- manual end -->
 		<!-- Yoast SEO manual start -->
