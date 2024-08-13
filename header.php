@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="yandex-verification" content="079ad3c653c7c146">
+		<?php echo YoastVerification::render(); ?>
 		<meta name="google-site-verification" content="qru4JAh1lV7MfZ-yILC_Eh-rQX_3hzYxbE2fAWYsmyc">
 		<meta name="google-site-verification" content="2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40" />
 		<meta name="google-site-verification" content="5DLHAOxxRfrKYK3wIUaq0xciDnh6pb9Lv9MJQLhAV2E" />
