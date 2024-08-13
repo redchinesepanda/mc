@@ -142,19 +142,22 @@ class AffiliateHref
 						'href_parsed' => $href_parsed,
 					] );
 
-					$href_parsed[ 'path' ] = $path . $href_parsed[ 'path' ];
-
-					$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
+					if ( ! str_contains( $href_parsed[ 'path' ], $path ) )
+					{
+						$href_parsed[ 'path' ] = $path . $href_parsed[ 'path' ];
 	
-					LegalDebug::debug( [
-						'AffiliateHref' => 'get_nodes_anchors_go-3',
-	
-						'href' => $href,
-	
-						'href_parsed' => $href_parsed,
-					] );
+						$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
 		
-					// $node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+						LegalDebug::debug( [
+							'AffiliateHref' => 'get_nodes_anchors_go-3',
+		
+							'href' => $href,
+		
+							'href_parsed' => $href_parsed,
+						] );
+			
+						$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
+					}
 				}
 
 			}
