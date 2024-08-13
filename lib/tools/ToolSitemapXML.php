@@ -432,13 +432,18 @@ class ToolSitemapXML
 
     public static function wpkama_sitemaps_posts_entry( $entry, $post )
     {
-        $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
+        if ( $post )
+        {
+            $entry[ 'lastmod' ] = get_the_modified_date( 'c', $post );
+    
+            $entry[ 'priority' ] = self::get_priority( $post );
+    
+            $entry[ 'changefreq' ] = 'weekly';
+    
+            return $entry;
+        }
 
-        $entry[ 'priority' ] = self::get_priority( $post );
-
-        $entry[ 'changefreq' ] = 'weekly';
-
-        return $entry;
+        return null;
     }
 }
 
