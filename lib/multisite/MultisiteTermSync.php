@@ -124,44 +124,44 @@ class MultisiteTermSync
 
 	public static function register_functions_subsite()
     {
-		if ( MultisiteBlog::check_not_main_blog() )
-		{
-			$handler = new self();
+		// if ( MultisiteBlog::check_not_main_blog() )
+		// {
+		// 	$handler = new self();
 
-			MultisiteAdmin::add_filter_all(
-				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+		// 	MultisiteAdmin::add_filter_all(
+		// 		MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-				// MultisiteAdmin::POST_TYPES_CUSTOM,
+		// 		// MultisiteAdmin::POST_TYPES_CUSTOM,
 				
-				MultisiteAdmin::get_post_types_post(),
+		// 		MultisiteAdmin::get_post_types_post(),
 				
-				$handler,
+		// 		$handler,
 				
-				'mc_bulk_action_sync_terms',
+		// 		'mc_bulk_action_sync_terms',
 				
-				10,
+		// 		10,
 				
-				3
-			);
+		// 		3
+		// 	);
 
-			// MultisiteAdmin::add_filter_all(
-			// 	self::PATTERNS[ 'edit-post' ],
+		// 	// MultisiteAdmin::add_filter_all(
+		// 	// 	self::PATTERNS[ 'edit-post' ],
 				
-			// 	MultisitePost::POST_TYPES,
+		// 	// 	MultisitePost::POST_TYPES,
 				
-			// 	$handler,
+		// 	// 	$handler,
 				
-			// 	'set_terms',
+		// 	// 	'set_terms',
 				
-			// 	10,
+		// 	// 	10,
 				
-			// 	2
-			// );
+		// 	// 	2
+		// 	// );
 			
-			// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
+		// 	// add_filter( 'edit_post_' . self::POST_TYPE[ 'billet' ], [ $handler, 'set_terms' ], 10, 2 );
 
-			// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
-		}
+		// 	// add_action( 'edit_form_after_title', [ $handler, 'mc_debug_edit_form_after_title_action' ] );
+		// }
 	}
 
 	public static function mc_bulk_action_sync_terms( $redirect, $doaction, $object_ids )
