@@ -77,6 +77,11 @@ class ToolSitemapXML
             'option' => $option,
         ] );
 
+        if ( self::is_sitemap_page() )
+        {
+            return 'homepage';
+        }
+
         return $value;
     }
 
