@@ -368,7 +368,7 @@ class ToolAnchorAttributes
     }
 
 	const TEMPLATE = [
-        'anchor-attributes-notices' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-anchor-attributes-notices.php',
+        'anchor-attributes-notices' => LegalMain::LEGAL_PATH . '/template-parts/tools/part-tool-anchor-attributes-notices.php',
     ];
 
     public static function print_notices( $args )
