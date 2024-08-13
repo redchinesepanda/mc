@@ -112,6 +112,8 @@ class AffiliateHref
 
 			$site = MultisiteBlog::get_site();
 
+			$path = rtrim( $site->path, '/' );
+
 			LegalDebug::debug( [
 				'AffiliateHref' => 'get_nodes_anchors_go-1',
 
@@ -120,7 +122,11 @@ class AffiliateHref
 				'site_url' => $site_url,
 
 				'site' => $site,
+
+				'path' => $path,
 			] );
+
+
 
 			foreach ( $nodes as $node )
 			{
