@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta name="google-site-verification" content="uL_MOpGHjVJdTC0wYE5IpCP_DVbLdMZNH9QnAjaOdes" />
 		<meta name="google-site-verification" content="xsV_rhcHpVkCE0BOHIGgCEeHPDJ2yBVtlNkOBjaSpxU" />
 		<meta name="google-site-verification" content="Y2Opq8gGQS9XXahYuxOsrMaQ3UoJTQFjarZttw-zaTs" />
+		<meta name="google-site-verification" content="HMUEHcjh7O4qA20TiXyX9X3zrktuScU96hOjIXbVfmE" />
 		<link rel="shortcut icon" href="<?php echo BaseHeader::get_favicon(); ?>" type="image/x-icon">
 		<!-- manual end -->
 		<!-- Yoast SEO manual start -->
