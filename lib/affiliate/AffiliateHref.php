@@ -147,7 +147,7 @@ class AffiliateHref
 					$href = sprintf( '%s://%s%s', $href_parsed[ 'scheme' ], $href_parsed[ 'host' ], $href_parsed[ 'path' ] );
 	
 					LegalDebug::debug( [
-						'AffiliateHref' => 'get_nodes_anchors_go-2',
+						'AffiliateHref' => 'get_nodes_anchors_go-3',
 	
 						'href' => $href,
 	
