@@ -111,33 +111,96 @@ class MultisiteAdmin
 	
 			// self::add_filter_all( 'bulk_actions-edit-', $handler, 'mc_bulk_multisite_actions' );
 			
-			self::add_filter_all(
-				self::PATTERNS[ 'bulk-actions' ],
+			// self::add_filter_all(
+			// 	self::PATTERNS[ 'bulk-actions' ],
 				
-				self::get_post_types(),
+			// 	self::get_post_types(),
 				
-				$handler,
+			// 	$handler,
 				
-				'mc_bulk_multisite_actions'
-			);
+			// 	'mc_bulk_multisite_actions'
+			// );
 	
-			// show an post notice
+			// // show an post notice
 	
-			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
+			// add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_notices' ] );
 	
-			// show an attacment notice
+			// // show an attacment notice
 	
-			add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
+			// add_action( 'admin_notices', [ $handler, 'mc_bulk_multisite_attachment_notices' ] );
 
-			/* Add site_name as a column */
+			// /* Add site_name as a column */
 		
-			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_useful_columns' ] );
+			// add_filter( 'wpmu_blogs_columns', [ $handler, 'add_useful_columns' ] );
 
-			/* Populate site_name with blogs site_name */
+			// /* Populate site_name with blogs site_name */
 		
-			add_action( 'manage_sites_custom_column', [ $handler, 'column_site_name' ] , 10, 2 );
+			// add_action( 'manage_sites_custom_column', [ $handler, 'column_site_name' ] , 10, 2 );
+
+			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_blogs_column_item' ] );
+
+			add_action( 'manage_blogs_custom_column', [ $handler, 'handle_blogs_column_item' ], 10, 2 );
 		}
 	}
+
+	public static function handle_blogs_column_item( $column_name, $blog_id )
+	{
+		if ( 'blog_language' === $column_name )
+		{
+			echo MultisiteSiteOptions::get_blog_language( $blog_id );
+		}
+		
+		if( 'blog_locale' === $column_name )
+		{
+			echo MultisiteSiteOptions::get_blog_locale( $blog_id )
+		}
+
+		return $column_name;
+	}
+
+	public function get_id( $add_blogs_column_item )
+	{
+		$columns[ 'blog_language' ] = ToolLoco::translate( 'Blog language' );
+		
+		$columns[ 'blog_locale' ] = ToolLoco::translate( 'Blog locale' );
+
+		return $columns;
+	}
+
+	// class Add_Blog_ID {
+	// 	public static function init() {
+	// 		$class = __CLASS__ ;
+	// 		if ( empty( $GLOBALS[ $class ] ) )
+	// 			$GLOBALS[ $class ] = new $class;
+	// 	}
+	// 	public function __construct() {
+	// 		add_filter( 'wpmu_blogs_columns', array( $this, 'get_id' ) );
+	// 		add_action( 'manage_sites_custom_column', array( $this, 'add_columns' ), 10, 2 );
+	// 		add_action( 'manage_blogs_custom_column', array( $this, 'add_columns' ), 10, 2 );
+	// 		add_action( 'admin_footer', array( $this, 'add_style' ) );
+	// 	}
+	// 	public function add_columns( $column_name, $blog_id ) {
+	// 		if ( 'blog_id' === $column_name ){
+	// 			echo $blog_id;
+	// 			//render column value
+	// 		}elseif( 'blog_expire' === $column_name ){
+	// 			echo get_blog_option($blog_id,'blog_expire',"Default Value To Show if none");
+	// 		}
+	// 		return $column_name;
+	// 	}
+	// 	// Add in a column header
+	// 	public function get_id( $columns ) {
+	// 		$columns['blog_id'] = __('ID');
+	// 		//add extra header to table
+	// 		$columns['blog_expire'] = __('Blog Expires');
+	
+	// 		return $columns;
+	// 	}
+	// 	public function add_style() {
+	// 		echo '<style>#blog_id { width:7%; }</style>';
+	// 	}
+	// }
+	// add_action( 'init', array( 'Add_Blog_ID', 'init' ) );
 
 	public static function add_useful_columns( $site_columns )
 	{

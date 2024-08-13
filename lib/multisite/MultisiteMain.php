@@ -108,16 +108,16 @@ class MultisiteMain
 
 		// MultisiteMeta::register_functions_debug();
 
-		// if ( MultisiteBlog::check_main_blog() )
-		// {
-		// 	MultisiteAdmin::register_functions_mainsite();
+		if ( MultisiteBlog::check_main_blog() )
+		{
+			MultisiteAdmin::register_functions_mainsite();
 
-		// 	MultisitePost::register_functions_mainsite();
+			// MultisitePost::register_functions_mainsite();
 
-		// 	MultisiteAttachment::register_functions_mainsite();
+			// MultisiteAttachment::register_functions_mainsite();
 
-		// 	MultisiteSiteOptions::register_functions_mainsite();
-		// }
+			// MultisiteSiteOptions::register_functions_mainsite();
+		}
 		// else
 		// {
 		// 	MultisiteAdmin::register_functions_subsite();
