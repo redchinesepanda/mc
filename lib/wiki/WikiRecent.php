@@ -58,6 +58,12 @@ class WikiRecent
 		'wiki-tag-au',
 
 		'wiki-tag-bp',
+
+		'wiki-tag-sv',
+
+		'wiki-tag-ru',
+
+		'wiki-tag-da',
 	];
 
 	public static function query_recent( $id = 0 )
