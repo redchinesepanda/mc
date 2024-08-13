@@ -124,6 +124,12 @@ class AffiliateHref
 	
 				$node->setAttribute( self::ATTRIBUTE[ 'href' ], $href );
 			}
+			
+			LegalDebug::die( [
+				'ToolAnchorAttributes' => 'get_nodes_anchors_go-1',
+
+				'nodes-length' => $nodes->length,
+			] );
 		}
 	}
 
