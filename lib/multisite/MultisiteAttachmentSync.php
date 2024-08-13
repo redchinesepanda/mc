@@ -132,8 +132,6 @@ class MultisiteAttachmentSync
 
 	public static function mc_bulk_action_sync_attachments( $redirect, $doaction, $object_ids )
 	{
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
-
 		// LegalDebug::debug( [
 		// 	'MultisiteAttachmentSync' =>'mc_bulk_action_sync_attachments',
 
@@ -144,6 +142,8 @@ class MultisiteAttachmentSync
 
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'sync-attachments' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			foreach ( $object_ids as $post_id )
 			{
 				// if ( $post = MultisitePost::get_post( $post_id ) )

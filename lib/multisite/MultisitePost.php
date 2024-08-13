@@ -53,8 +53,6 @@ class MultisitePost
 	public static function mc_bulk_action_multisite_handler( $redirect, $doaction, $object_ids )
 	{
 		// $redirect = self::retirect_clean( $redirect );
-		
-		$redirect = MultisiteAdmin::redirect_clean( $redirect );
 
 		// LegalDebug::die( [
 		// 	'MultisitePost' => 'mc_bulk_action_multisite_handler-1',
@@ -70,6 +68,8 @@ class MultisitePost
 		
 		if ( MultisiteAdmin::check_doaction( $doaction, MultisiteAdmin::DOACTION[ 'move-to' ] ) )
 		{
+			$redirect = MultisiteAdmin::redirect_clean( $redirect );
+
 			$blog_id = MultisiteAdmin::get_blog_id( $doaction );
 
 			foreach ( $object_ids as $post_id )
