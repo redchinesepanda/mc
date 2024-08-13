@@ -68,14 +68,19 @@ class ToolSitemapXML
         LegalDebug::debug( [
             'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
 
-            'page_on_front' => get_option( 'page_on_front' ),
+            'page_on_front' => ,
 
             'show_on_front' => get_option( 'show_on_front' ),
 
             'sitemap_entry' => $sitemap_entry,
         ] );
 
-        return $sitemap_entry;
+        if ( ! empty( get_option( 'page_on_front' ) ) )
+        {
+            return $sitemap_entry;
+        }
+
+        return null;
     }
 
     // public static function wp_kama_sitemaps_posts_entry_filter( $sitemap_entry, $post, $post_type )
