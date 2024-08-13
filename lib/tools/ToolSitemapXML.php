@@ -50,113 +50,7 @@ class ToolSitemapXML
         # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
 
         // add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
-
-        if ( MultisiteMain::check_multisite() )
-        {
-            # Exclude single Posts from the Sutemap
-            
-            // add_filter( 'wp_sitemaps_posts_query_args', [ $handler, 'kama_sitemaps_posts_query_args' ], 10, 2 );
-
-            // add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wp_kama_sitemaps_posts_entry_filter' ], 10, 3 );
-
-            // add_filter( 'wp_sitemaps_posts_show_on_front_entry', [ $handler, 'wp_kama_sitemaps_posts_show_on_front_entry_filter' ] );
-
-            // add_filter( 'option_show_on_front', [ $handler, 'wp_kama_option_filter' ], 10, 2 );
-        }
     }
-
-    public static function wp_kama_option_filter( $value, $option )
-    {
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'wp_kama_option_filter-1',
-
-        //     // 'is_sitemap_page' => self::is_sitemap_page(),
-
-        //     'value' => $value,
-
-        //     'option' => $option,
-        // ] );
-
-        // if ( self::is_sitemap_page() )
-        // {
-            return 'page';
-        // }
-
-        // return $value;
-    }
-
-    // public static function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
-    // {
-    //     // LegalDebug::debug( [
-    //     //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
-
-    //     //     'page_on_front' => get_option( 'page_on_front' ),
-
-    //     //     'show_on_front' => get_option( 'show_on_front' ),
-
-    //     //     'sitemap_entry' => $sitemap_entry,
-    //     // ] );
-
-    //     if ( ! empty( get_option( 'page_on_front' ) ) )
-    //     {
-    //         return $sitemap_entry;
-    //     }
-
-    //     return [];
-    // }
-
-    // public static function wp_kama_sitemaps_posts_entry_filter( $sitemap_entry, $post, $post_type )
-    // {
-    //     $post_id = 0;
-
-    //     if ( $post )
-    //     {
-    //         $post_id = $post->ID;
-    //     }
-
-    //     LegalDebug::debug( [
-    //         'ToolSitemapXML' => 'wp_kama_sitemaps_posts_entry_filter-1',
-
-    //         'sitemap_entry' => $sitemap_entry,
-
-    //         'post_id' => $post_id,
-
-    //         'post_type' => $post_type,
-    //     ] );
-        
-    //     return $sitemap_entry;
-    // }
-
-    // public static function kama_sitemaps_posts_query_args( $args, $post_type )
-    // {
-    //     if ( 'page' !== $post_type )
-    //     {
-    //         return $args;
-    //     }
-
-    //     $blog_locale = MultisiteSiteOptions::get_blog_locale();
-
-    //     if ( in_array( $blog_locale, WPMLMain::EXCLUDE_SERVICE ) )
-    //     {
-
-    //     }
-
-    //     // take into account that this parameter may already be set
-
-    //     if ( ! isset( $args[ 'post__not_in' ] ) )
-    //     {
-    //         $args[ 'post__not_in' ] = [];
-    //     }
-
-    //     // exclude posts
-
-    //     foreach( [ 12, 24 ] as $post_id )
-    //     {
-    //         $args[ 'post__not_in' ][] = $post_id;
-    //     }
-
-    //     return $args;
-    // }
 
     const MOVED_FOLDERS = [
         // subsites same domain
@@ -338,6 +232,26 @@ class ToolSitemapXML
         }
     
         return (bool) sanitize_text_field( get_query_var( 'sitemap' ) );
+    }
+
+    public static function wp_kama_option_filter( $value, $option )
+    {
+        // LegalDebug::debug( [
+        //     'ToolSitemapXML' => 'wp_kama_option_filter-1',
+
+        //     // 'is_sitemap_page' => self::is_sitemap_page(),
+
+        //     'value' => $value,
+
+        //     'option' => $option,
+        // ] );
+
+        // if ( self::is_sitemap_page() )
+        // {
+            return 'page';
+        // }
+
+        // return $value;
     }
 
     // public static function check_filter()
