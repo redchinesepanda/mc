@@ -118,6 +118,8 @@ class AffiliateHref
 				'domain' => $domain,
 
 				'site_url' => $site_url,
+
+				'site' => $site,
 			] );
 
 			foreach ( $nodes as $node )
