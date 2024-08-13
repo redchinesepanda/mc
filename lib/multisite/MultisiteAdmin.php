@@ -157,15 +157,15 @@ class MultisiteAdmin
 		{
 			echo 'MC: ' . MultisiteSiteOptions::get_blog_locale( $blog_id ) . '<br />';
 
-			MultisiteBlog::set_blog( $blog_id );
+			// MultisiteBlog::set_blog( $blog_id );
 
 			// echo 'WP: ' . get_locale() . '<br />';
 
-			echo 'WP: ' . get_option( 'WPLANG' ) . '<br />';
+			// echo 'WP: ' . get_option( 'WPLANG' ) . '<br />';
 
-			echo 'WP: ' . get_site_option( 'WPLANG' ) . '<br />';
+			// echo 'WP: ' . get_site_option( 'WPLANG' ) . '<br />';
 
-			MultisiteBlog::restore_blog();
+			// MultisiteBlog::restore_blog();
 		}
 
 		if( 'blog_id' === $column_name )
