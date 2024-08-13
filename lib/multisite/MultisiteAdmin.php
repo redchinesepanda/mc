@@ -139,12 +139,16 @@ class MultisiteAdmin
 
 			add_filter( 'wpmu_blogs_columns', [ $handler, 'add_blogs_column_item' ] );
 
-			add_action( 'manage_blogs_custom_column', [ $handler, 'handle_blogs_column_item' ], 10, 2 );
+			add_action( 'manage_blogs_custom_column', [ $handler, 'handle_blogs_column_item' ], 10, 
+			2 );
+
+			add_action( 'manage_sites_custom_column', [ $handler, 'add_columns' ], 10, 2 );
 		}
 	}
 
 	public static function handle_blogs_column_item( $column_name, $blog_id )
 	{
+		
 		if ( 'blog_language' === $column_name )
 		{
 			echo MultisiteSiteOptions::get_blog_language( $blog_id );
@@ -160,9 +164,9 @@ class MultisiteAdmin
 
 	public static function add_blogs_column_item( $columns )
 	{
-		$columns[ 'blog_language' ] = ToolLoco::translate( 'Blog language' );
+		$columns[ 'blog_language' ] = ToolLoco::translate( 'Language ( en )' );
 		
-		$columns[ 'blog_locale' ] = ToolLoco::translate( 'Blog locale' );
+		$columns[ 'blog_locale' ] = ToolLoco::translate( 'Locale ( en_GB )' );
 
 		return $columns;
 	}
