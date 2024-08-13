@@ -161,6 +161,8 @@ class MultisiteAdmin
 
 			echo 'WP: ' . get_locale();
 
+			echo 'WP: ' . get_option( 'WPLANG' );
+
 			MultisiteBlog::restore_blog();
 		}
 
