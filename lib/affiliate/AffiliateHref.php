@@ -111,7 +111,7 @@ class AffiliateHref
 			$site_url = MultisiteBlog::get_siteurl();
 
 			LegalDebug::debug( [
-				'ToolAnchorAttributes' => 'get_nodes_anchors_go-1',
+				'AffiliateHref' => 'get_nodes_anchors_go-1',
 
 				'domain' => $domain,
 
@@ -125,7 +125,7 @@ class AffiliateHref
 				$href_parsed = parse_url( $href );
 
 				LegalDebug::debug( [
-					'ToolAnchorAttributes' => 'get_nodes_anchors_go-2',
+					'AffiliateHref' => 'get_nodes_anchors_go-2',
 
 					'href' => $href,
 
@@ -136,7 +136,7 @@ class AffiliateHref
 			}
 			
 			LegalDebug::die( [
-				'ToolAnchorAttributes' => 'get_nodes_anchors_go-3',
+				'AffiliateHref' => 'get_nodes_anchors_go-3',
 
 				'nodes-length' => $nodes->length,
 			] );
