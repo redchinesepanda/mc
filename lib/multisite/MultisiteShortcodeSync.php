@@ -38,24 +38,24 @@ class MultisiteShortcodeSync
 
 	public static function register_functions_subsite()
 	{
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
-		// 	$handler = new self();
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
 
-		// 	MultisiteAdmin::add_filter_all(
-		// 		MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-		// 		MultisiteAdmin::get_post_types_post(),
+				MultisiteAdmin::get_post_types_post(),
 				
-		// 		$handler,
+				$handler,
 				
-		// 		'mc_bulk_action_sync_shortcodes',
+				'mc_bulk_action_sync_shortcodes',
 				
-		// 		10,
+				10,
 				
-		// 		3
-		// 	);
-		// }
+				3
+			);
+		}
 	}
 
 	public static function mc_bulk_action_sync_shortcodes( $redirect, $doaction, $object_ids )

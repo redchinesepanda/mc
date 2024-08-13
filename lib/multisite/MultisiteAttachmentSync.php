@@ -106,28 +106,28 @@ class MultisiteAttachmentSync
 
 	public static function register_functions_subsite()
 	{
-		// if ( MultisiteBlog::check_not_main_blog() )
-		// {
-		// 	$handler = new self();
+		if ( MultisiteBlog::check_not_main_blog() )
+		{
+			$handler = new self();
 
-		// 	MultisiteAdmin::add_filter_all(
-		// 		MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
+			MultisiteAdmin::add_filter_all(
+				MultisiteAdmin::PATTERNS[ 'handle-bulk-actions' ],
 				
-		// 		MultisiteAdmin::get_post_types_post(),
+				MultisiteAdmin::get_post_types_post(),
 				
-		// 		$handler,
+				$handler,
 				
-		// 		'mc_bulk_action_sync_attachments',
+				'mc_bulk_action_sync_attachments',
 				
-		// 		10,
+				10,
 				
-		// 		3
-		// 	);
+				3
+			);
 
-		// 	// LegalDebug::debug( [
-		// 	// 	'MultisiteAttachmentSync' =>'register_functions_subsite',
-		// 	// ] );
-		// }
+			// LegalDebug::debug( [
+			// 	'MultisiteAttachmentSync' =>'register_functions_subsite',
+			// ] );
+		}
 	}
 
 	public static function mc_bulk_action_sync_attachments( $redirect, $doaction, $object_ids )
