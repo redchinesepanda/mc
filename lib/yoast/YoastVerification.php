@@ -3,7 +3,7 @@
 class YoastVerification
 {
 	const GOOGLE_VERIFICATION = [
-		'old-au.match.center' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
+		'old-at.match.center' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
 
 		'match-center-au.com' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
 
