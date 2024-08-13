@@ -59,9 +59,9 @@ class ToolSitemapXML
 
             // add_filter( 'wp_sitemaps_posts_entry', [ $handler, 'wp_kama_sitemaps_posts_entry_filter' ], 10, 3 );
 
-            add_filter( 'wp_sitemaps_posts_show_on_front_entry', [ $handler, 'wp_kama_sitemaps_posts_show_on_front_entry_filter' ] );
+            // add_filter( 'wp_sitemaps_posts_show_on_front_entry', [ $handler, 'wp_kama_sitemaps_posts_show_on_front_entry_filter' ] );
 
-            add_filter( 'option_show_on_front', [ $handler, 'wp_kama_option_filter' ], 10, 2 );
+            // add_filter( 'option_show_on_front', [ $handler, 'wp_kama_option_filter' ], 10, 2 );
         }
     }
 
@@ -85,25 +85,25 @@ class ToolSitemapXML
         // return $value;
     }
 
-    public static function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
-    {
-        // LegalDebug::debug( [
-        //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
+    // public static function wp_kama_sitemaps_posts_show_on_front_entry_filter( $sitemap_entry )
+    // {
+    //     // LegalDebug::debug( [
+    //     //     'ToolSitemapXML' => 'wp_kama_sitemaps_posts_show_on_front_entry_filter-1',
 
-        //     'page_on_front' => get_option( 'page_on_front' ),
+    //     //     'page_on_front' => get_option( 'page_on_front' ),
 
-        //     'show_on_front' => get_option( 'show_on_front' ),
+    //     //     'show_on_front' => get_option( 'show_on_front' ),
 
-        //     'sitemap_entry' => $sitemap_entry,
-        // ] );
+    //     //     'sitemap_entry' => $sitemap_entry,
+    //     // ] );
 
-        if ( ! empty( get_option( 'page_on_front' ) ) )
-        {
-            return $sitemap_entry;
-        }
+    //     if ( ! empty( get_option( 'page_on_front' ) ) )
+    //     {
+    //         return $sitemap_entry;
+    //     }
 
-        return [];
-    }
+    //     return [];
+    // }
 
     // public static function wp_kama_sitemaps_posts_entry_filter( $sitemap_entry, $post, $post_type )
     // {
@@ -307,6 +307,8 @@ class ToolSitemapXML
             # Позволяет изменять WHERE часть SQL запроса связанного с получением записей (WP_Query)
     
             add_filter( 'posts_where', [ $handler, 'wp_kama_posts_where_filter' ] );
+
+            add_filter( 'option_show_on_front', [ $handler, 'wp_kama_option_filter' ], 10, 2 );
         }
     }
 
