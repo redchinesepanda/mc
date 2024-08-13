@@ -3,7 +3,7 @@
 class YoastVerification
 {
 	const GOOGLE_VERIFICATION = [
-		'old-at.match.center' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
+		// 'old-at.match.center' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
 
 		'match-center-au.com' => '2dAywc7Sx2HoaFUblkGSpagh3bqZc4-BBhS6tQ2WB40',
 
@@ -34,11 +34,11 @@ class YoastVerification
 	{
 		$domain = MultisiteBlog::get_domain();
 
-		LegalDebug::debug( [
-			'YoastVerification' => 'get_google_verification',
+		// LegalDebug::debug( [
+		// 	'YoastVerification' => 'get_google_verification',
 
-			'domain' => $domain,
-		] );
+		// 	'domain' => $domain,
+		// ] );
 
 		if ( array_key_exists( $domain, self::GOOGLE_VERIFICATION ) )
 		{
