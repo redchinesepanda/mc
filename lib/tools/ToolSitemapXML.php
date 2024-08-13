@@ -80,7 +80,7 @@ class ToolSitemapXML
             return $sitemap_entry;
         }
 
-        return null;
+        return [];
     }
 
     // public static function wp_kama_sitemaps_posts_entry_filter( $sitemap_entry, $post, $post_type )
