@@ -51,8 +51,13 @@ class MultisiteBlog
 		restore_current_blog();
 	}
 
-	public static function get_site( $id )
+	public static function get_site( $id = '' )
 	{
+		if ( empty ( $id ) )
+		{
+			$id = MultisiteBlog::get_current_blog_id();
+		}
+
 		return get_site( $id );
 	}
 
