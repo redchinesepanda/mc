@@ -81,6 +81,12 @@ class ToolAnchorAttributes
 
 	public static function redirect_clean( $redirect )
 	{
+		LegalDebug::die( [
+			'ToolAnchorAttributes' =>'redirect_clean-1',
+
+			'redirect' => $redirect,
+		] );
+
 		return remove_query_arg( self::ACTION, $redirect );
 	}
 
