@@ -206,6 +206,66 @@ class WPMLLangSwitcher
             && MultisiteBlog::check_main_domain();
     }
 
+    const TAXONOMY = [
+        'page-type' => 'page_type',
+    ];
+
+    const PAGE_TYPE = [
+        'choose-your-country' => 'legal-choose-your-country',
+    ];
+
+    public static function query_choose_your_country_page()
+	{
+		return [
+			'posts_per_page' => -1,
+			
+			'post_type' => 'page',
+
+			'tax_query' => [
+				[
+					'taxonomy' => self::TAXONOMY[ 'page-type' ],
+					
+					'terms' => self::PAGE_TYPE,
+
+					'field' => 'slug',
+
+					'operator' => 'IN',
+				],
+			],
+		];
+	}
+
+    public static function get_choose_your_country_page()
+    {
+        $posts = get_posts( self::query_choose_your_country_page() );
+
+        if ( ! empty( $posts ) )
+        {
+            return array_shift( $posts );
+        }
+
+        return null;
+    }
+
+    public static function get_choose_your_country_page_url( $blog_id )
+    {
+        if ( ! empty( $blog_id ) )
+        {
+            MultisiteBlog::set_blog( $blog_id );
+
+            $page = self::get_choose_your_country_page();
+
+            MultisiteBlog::restore_blog();
+
+            if ( ! empty( $page ) )
+            {
+                return get_post_permalink( $page->ID );
+            }
+        }
+
+        return '';
+    }
+
     public static function get_choose_your_country_href()
     {
         if ( MultisiteMain::check_multisite() )
@@ -220,7 +280,10 @@ class WPMLLangSwitcher
 
             $siteurl = MultisiteBlog::get_siteurl( $blog_id );
 
-            return $siteurl . '/choose-your-country/';
+            if ( ! empty( $siteurl ) )
+            {
+                return $siteurl;
+            }
         }
 
         return LegalMain::LEGAL_ROOT . '/choose-your-country/';
