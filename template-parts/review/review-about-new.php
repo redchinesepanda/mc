@@ -39,7 +39,7 @@
                             <?php if ( !empty( $args[ 'logo-items' ] ) ) : ?>
                                 <div class="footer-logo">
                                     <?php foreach( $args[ 'logo-items' ] as $logo ) : ?>
-                                        <a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" rel="nofollow" target="_blank">
+                                        <a class="logo-item" href="<?php echo $logo[ 'href' ]; ?>" target="_blank" rel="nofollow noreferrer">
                                             <!-- <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="<?php echo $logo[ 'width' ]; ?>" height="<?php echo $logo[ 'height' ]; ?>" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"> -->
                                             <img class="<?php echo $logo[ 'class' ]; ?>" src="<?php echo $logo[ 'src' ]; ?>" width="auto" height="24" alt="<?php echo $logo[ 'alt' ]; ?>"  loading="lazy"></a>
                                     <?php endforeach; ?>
