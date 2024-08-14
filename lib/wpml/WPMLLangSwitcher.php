@@ -239,6 +239,12 @@ class WPMLLangSwitcher
     {
         $posts = get_posts( self::query_choose_your_country_page() );
 
+        LegalDebug::debug( [
+            'WPMLLangSwitcher' => 'get_choose_your_country_page-1',
+
+            'posts' => $posts,
+        ] );
+
         if ( ! empty( $posts ) )
         {
             return array_shift( $posts );
