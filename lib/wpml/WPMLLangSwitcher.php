@@ -239,11 +239,11 @@ class WPMLLangSwitcher
     {
         $posts = get_posts( self::query_choose_your_country_page() );
 
-        LegalDebug::debug( [
-            'WPMLLangSwitcher' => 'get_choose_your_country_page-1',
+        // LegalDebug::debug( [
+        //     'WPMLLangSwitcher' => 'get_choose_your_country_page-1',
 
-            'posts' => $posts,
-        ] );
+        //     'posts' => $posts,
+        // ] );
 
         if ( ! empty( $posts ) )
         {
@@ -276,23 +276,17 @@ class WPMLLangSwitcher
     {
         if ( MultisiteMain::check_multisite() )
         {
-            // $main_blog_id = MultisiteBlog::get_main_blog_id();
-
-            // $domain = MultisiteBlog::get_domain();
-
-            // $main_site = MultisiteBlog::get_domain_main_site( $domain );
-
             $blog_id = MultisiteBlog::get_domain_main_blog_id();
 
             $siteurl = self::get_choose_your_country_page_url( $blog_id );
 
-            LegalDebug::debug( [
-                'WPMLLangSwitcher' => 'get_choose_your_country_href-1',
+            // LegalDebug::debug( [
+            //     'WPMLLangSwitcher' => 'get_choose_your_country_href-1',
 
-                'blog_id' => $blog_id,
+            //     'blog_id' => $blog_id,
 
-                'siteurl' => $siteurl,
-            ] );
+            //     'siteurl' => $siteurl,
+            // ] );
 
             if ( ! empty( $siteurl ) )
             {
