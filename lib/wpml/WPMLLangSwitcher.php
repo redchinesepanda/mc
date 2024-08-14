@@ -255,21 +255,23 @@ class WPMLLangSwitcher
 
     public static function get_choose_your_country_page_url( $blog_id )
     {
+        $page_url = '';
+
         if ( ! empty( $blog_id ) )
         {
             MultisiteBlog::set_blog( $blog_id );
 
             $page = self::get_choose_your_country_page();
 
-            MultisiteBlog::restore_blog();
-
             if ( ! empty( $page ) )
             {
-                return get_post_permalink( $page->ID );
+                $page_url = get_post_permalink( $page->ID );
             }
+
+            MultisiteBlog::restore_blog();
         }
 
-        return '';
+        return $page_url;
     }
 
     public static function get_choose_your_country_href()
