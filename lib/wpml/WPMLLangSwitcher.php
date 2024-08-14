@@ -296,7 +296,9 @@ class WPMLLangSwitcher
             }
         }
 
-        return LegalMain::LEGAL_ROOT . '/choose-your-country/';
+        // return LegalMain::LEGAL_ROOT . '/choose-your-country/';
+        
+        return '/choose-your-country/';
     }
 
     public static function get_choose_your_country()
