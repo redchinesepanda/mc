@@ -284,7 +284,7 @@ class WPMLLangSwitcher
 
             $blog_id = MultisiteBlog::get_domain_main_blog_id();
 
-            $siteurl = MultisiteBlog::get_siteurl( $blog_id );
+            $siteurl = MultisiteBlog::get_choose_your_country_page_url( $blog_id );
 
             LegalDebug::debug( [
                 'WPMLLangSwitcher' => 'get_choose_your_country_href-1',
