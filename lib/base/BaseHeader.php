@@ -637,16 +637,18 @@ class BaseHeader
 	// 	return ToolRobots::get_scheme(). '://'. LegalMain::get_main_host();
 	// }
 
-	public static function get_href()
+	public static function get_choose_your_country_href()
 	{
-		$href = '/choose-your-country/';
+		// $href = '/choose-your-country/';
 
-		// if ( ToolRestricted::check_domain_restricted() )
-		// {
-			// $href = self::get_url() . $href;
-		// }
+		// // if ( ToolRestricted::check_domain_restricted() )
+		// // {
+		// 	// $href = self::get_url() . $href;
+		// // }
 
-		return $href;
+		// return $href;
+
+		return WPMLLangSwitcher::get_choose_your_country_href();
 	}
 
 	public static function get_item_all_countries()
@@ -664,7 +666,7 @@ class BaseHeader
 	
 				'title' => $title,
 				
-				'href' => self::get_href(),
+				'href' => self::get_choose_your_country_href(),
 	
 				'class' => 'legal-country legal-country-all',
 	
