@@ -33,7 +33,7 @@ class MultisiteBlog
 	{
 		if ( empty ( $blog_id ) )
 		{
-			$blog_id = MultisiteBlog::get_current_blog_id();
+			$blog_id = self::get_current_blog_id();
 		}
 
 		$current_blog = self::get_blog_details( $blog_id );
@@ -55,7 +55,7 @@ class MultisiteBlog
 	{
 		if ( empty ( $id ) )
 		{
-			$id = MultisiteBlog::get_current_blog_id();
+			$id = self::get_current_blog_id();
 		}
 
 		return get_site( $id );
@@ -94,12 +94,12 @@ class MultisiteBlog
 			$sites_args[ 'ID' ] = self::get_current_blog_id();
 		}
 
-		if ( !empty( $domain ) )
+		if ( ! empty( $domain ) )
 		{
 			$sites_args[ 'domain' ] = $domain;
 		}
 
-		if ( !empty( $path ) )
+		if ( ! empty( $path ) )
 		{
 			$sites_args[ 'path' ] = $path;
 		}
