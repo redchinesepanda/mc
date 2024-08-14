@@ -36,7 +36,7 @@ class ToolAnchorAttributes
 	const POST_TYPE = [
 		'page' => 'page',
 
-		// 'post' => 'post',
+		'post' => 'post',
 	];
 
 	public static function register_functions_admin()
@@ -49,9 +49,9 @@ class ToolAnchorAttributes
 	
 			add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'page' ], [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
 
-			// add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'add_anchor_attributes_item' ] );
+			add_filter( 'bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'add_anchor_attributes_item' ] );
 	
-			// add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
+			add_filter( 'handle_bulk_actions-edit-' . self::POST_TYPE[ 'post' ], [ $handler, 'handle_anchor_attributes_item' ], 10, 3);
 	
 			add_action( 'admin_notices', [ $handler, 'notify_anchor_attributes_item' ] );
 		}
