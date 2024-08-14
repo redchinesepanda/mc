@@ -212,11 +212,13 @@ class WPMLLangSwitcher
         {
             // $main_blog_id = MultisiteBlog::get_main_blog_id();
 
-            $domain = MultisiteBlog::get_domain();
+            // $domain = MultisiteBlog::get_domain();
 
-            $main_site = MultisiteBlog::get_domain_main_site( $domain );
+            // $main_site = MultisiteBlog::get_domain_main_site( $domain );
 
-            $siteurl = MultisiteBlog::get_siteurl( $main_site->blog_id );
+            $blog_id = MultisiteBlog::get_domain_main_blog_id();
+
+            $siteurl = MultisiteBlog::get_siteurl( $blog_id );
 
             return $siteurl . '/choose-your-country/';
         }

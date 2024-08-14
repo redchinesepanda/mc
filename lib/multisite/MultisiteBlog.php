@@ -71,6 +71,23 @@ class MultisiteBlog
 		return get_main_site_id();
 	}
 
+	public static function get_domain_main_blog_id( $domain = '' )
+	{
+		if ( empty ( $domain ) )
+		{
+			$domain = MultisiteBlog::get_domain();
+		}
+
+		$main_site = MultisiteBlog::get_domain_main_site( $domain );
+
+		if ( ! empty( $main_site ) )
+		{
+			return $main_site->blog_id;
+		}
+
+		return get_main_site_id();
+	}
+
 	public static function get_blog_details( $blog_id )
 	{
 		return get_blog_details( $blog_id );
