@@ -45,15 +45,15 @@ class NotFoundMain
 		return $wpdb->prepare(
 			"SELECT
 				{$wpdb->prefix}redirection_items.id,
-				wp_redirection_items.url,
-				wp_redirection_items.match_url
+				{$wpdb->prefix}redirection_items.url,
+				{$wpdb->prefix}redirection_items.match_url
 			FROM
-				wp_redirection_items
+				{$wpdb->prefix}redirection_items
 			WHERE
-				wp_redirection_items.url = %s
-				AND wp_redirection_items.status = 'enabled'
-				AND wp_redirection_items.action_type = 'error'
-				AND wp_redirection_items.action_code = '410'
+				{$wpdb->prefix}redirection_items.url = %s
+				AND {$wpdb->prefix}redirection_items.status = 'enabled'
+				AND {$wpdb->prefix}redirection_items.action_type = 'error'
+				AND {$wpdb->prefix}redirection_items.action_code = '410'
 			",
 
 			[
