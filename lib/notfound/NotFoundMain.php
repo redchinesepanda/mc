@@ -44,7 +44,7 @@ class NotFoundMain
 	{
 		return $wpdb->prepare(
 			"SELECT
-				$wpdb->prefixredirection_items.id,
+				{$wpdb->prefix}redirection_items.id,
 				wp_redirection_items.url,
 				wp_redirection_items.match_url
 			FROM
