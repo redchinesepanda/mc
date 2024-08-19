@@ -18,8 +18,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		hrefDisable: 'a.check-oops[href=""]',
 
-		// hrefHash: 'a.check-oops',
-
 		thrive: 'a.tcb-button-link[href="#"]'
 	}; 
 
