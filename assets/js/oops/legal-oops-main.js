@@ -29,7 +29,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			oops.classList.toggle( 'legal-active' );
 
-		} else if ( oops.contains( event.currentTarget ) && checkClose == event.target ) {
+		} else if ( checkClose == event.target ) {
 			event.preventDefault();
 
 			oops.classList.remove( 'legal-active' );
