@@ -23,6 +23,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// let oops = document.querySelector( selectors.background );
 
 		// let checkClose = document.querySelector( selectors.iconClose );
+		console.log( checkClose );
 
 		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
 			event.preventDefault();
