@@ -28,10 +28,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
+
 		} else if ( oops.contains( event.currentTarget ) && checkClose == event.target ) {
 			event.preventDefault();
 
-			oops.classList.toggle( 'legal-active' );
+			oops.classList.remove( 'legal-active' );
 		};
 	}
 
