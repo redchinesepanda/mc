@@ -12,13 +12,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		background: '.legal-oops-background',
 
 		iconClose: 'oops-tooltip-close',
-	}; 
+	};
+
+	let oops = document.querySelector( selectors.background );
+
+	let checkClose = document.querySelector( selectors.iconClose );
 
     function toggleOops( event )
 	{
-		let oops = document.querySelector( selectors.background );
+		// let oops = document.querySelector( selectors.background );
 
-		let checkClose = document.querySelector( selectors.iconClose );
+		// let checkClose = document.querySelector( selectors.iconClose );
 
 		if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
 			event.preventDefault();
@@ -35,9 +39,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
-	let oops = document.querySelector( selectors.background );
+	// let oops = document.querySelector( selectors.background );
 
 	if ( oops !== null ) {
+		oops.addEventListener( 'click', toggleOops, false );
+	}
+
+	if ( checkClose !== null ) {
 		oops.addEventListener( 'click', toggleOops, false );
 	}
 } );
