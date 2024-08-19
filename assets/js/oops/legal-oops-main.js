@@ -24,7 +24,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let checkClose = document.querySelector( selectors.iconClose );
 
-		console.log(event.currentTarget);
+		console.log(cj,snbt);
 		console.log(event.target);
 
 		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
