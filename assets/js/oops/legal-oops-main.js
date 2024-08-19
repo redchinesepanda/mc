@@ -14,9 +14,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	const selectors = {
-		// hrefHash: 'a.check-oops[href="#"]',
+		hrefHash: 'a.check-oops[href="#"]',
 
-		hrefHash: 'a.check-oops',
+		// hrefHash: 'a.check-oops',
 
 		thrive: 'a.tcb-button-link[href="#"]'
 	}; 
