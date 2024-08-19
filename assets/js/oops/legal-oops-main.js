@@ -18,10 +18,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		hrefDisable: 'a.check-oops[href=""]',
 
-		thrive: 'a.tcb-button-link[href="#"]'
+		// thrive: 'a.tcb-button-link[href="#"]'
 	}; 
 
-	document.querySelectorAll( [ selectors.hrefHash, selectors.thrive, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
+	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
+		element.addEventListener( 'click', toggleOops, false );
+	} ); */
+
+	document.querySelectorAll( [ selectors.hrefHash, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
