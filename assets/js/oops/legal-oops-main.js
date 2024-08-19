@@ -28,13 +28,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
-		}
-
-		if ( checkClose == event.currentTarget ) {
+		} else if ( oops.contains( event.currentTarget ) || checkClose == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
-		}
+		};
 	}
 
 	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
