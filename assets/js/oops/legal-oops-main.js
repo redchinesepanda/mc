@@ -29,11 +29,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			oops.classList.toggle( 'legal-active' );
 
-		} /* else if ( checkClose == event.target ) {
-			event.preventDefault();
-
-			oops.classList.remove( 'legal-active' );
-		}; */
+		}
 	}
 
 	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
@@ -43,8 +39,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	document.querySelectorAll( [ selectors.hrefHash, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
-
-	// let oops = document.querySelector( selectors.background );
 
 	if ( oops !== null ) {
 		oops.addEventListener( 'click', toggleOops, false );
