@@ -51,9 +51,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		oops.addEventListener( 'click', toggleOops, false );
 	}
 
-	if ( checkClose !== null ) {
+	/* if ( checkClose !== null ) {
 		oops.addEventListener( 'click', toggleOops, false );
-	}
+	} */
 } );
 
 // oops-js end
