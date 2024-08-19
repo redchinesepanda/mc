@@ -24,7 +24,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let checkClose = document.querySelector( selectors.iconClose );
 
-		if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
+		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
+			event.preventDefault();
+
+			oops.classList.toggle( 'legal-active' );
+		}
+
+		if ( checkClose == event.currentTarget ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
