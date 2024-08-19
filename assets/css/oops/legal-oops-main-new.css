@@ -59,7 +59,6 @@
 
 .legal-oops .oops-tooltip-close {
 	display: flex;
-  	justify-content: flex-end;
 }
 
 .legal-oops .oops-item {
@@ -102,6 +101,10 @@
 	padding: 24px 16px;
 }
 
+.legal-oops .oops-tooltip-close {
+	margin-left: auto;
+}
+
 .legal-oops .oops-title {
 	padding-bottom: 16px;
 }
@@ -126,10 +129,6 @@
 
 .legal-oops-background {
 	height: 100vh;
-}
-
-.legal-oops .oops-tooltip-close {
-	width: 100%;
 }
 
 .legal-oops .oops-item {
