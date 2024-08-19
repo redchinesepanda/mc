@@ -24,15 +24,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let checkClose = document.querySelector( selectors.iconClose );
 
+		console.log(event.currentTarget);
+		console.log(event.target);
+
 		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
-		} else if ( oops.contains( event.currentTarget ) || checkClose == event.target ) {
+		} else if ( checkClose == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
 		};
+		 /* else if ( oops.contains( event.currentTarget ) || checkClose == event.target ) {
+			event.preventDefault();
+
+			oops.classList.toggle( 'legal-active' );
+		}; */
 	}
 
 	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
