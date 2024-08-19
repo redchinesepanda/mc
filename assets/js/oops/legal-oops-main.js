@@ -23,18 +23,17 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// let oops = document.querySelector( selectors.background );
 
 		// let checkClose = document.querySelector( selectors.iconClose );
-		console.log( checkClose );
 
-		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
+		if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
 
-		} else if ( checkClose == event.target ) {
+		} /* else if ( checkClose == event.target ) {
 			event.preventDefault();
 
 			oops.classList.remove( 'legal-active' );
-		};
+		}; */
 	}
 
 	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
@@ -51,9 +50,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		oops.addEventListener( 'click', toggleOops, false );
 	}
 
-	/* if ( checkClose !== null ) {
-		oops.addEventListener( 'click', toggleOops, false );
-	} */
 } );
 
 // oops-js end
