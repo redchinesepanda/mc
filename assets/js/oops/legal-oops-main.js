@@ -11,7 +11,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		background: '.legal-oops-background',
 
-		iconClose: 'oops-tooltip-close',
+		iconClose: '.oops-tooltip-close',
 	};
 
 	let oops = document.querySelector( selectors.background );
