@@ -769,19 +769,19 @@
     text-align: center;
 }
 
-.about-right .legal-cut-control:not( .legal-active ):not( .exclusion-rule ):before {
+.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control:not( .legal-active ):before {
     content: attr( data-review-default );
 }
 
-.about-right .legal-cut-control.legal-active:not( .exclusion-rule )::before {
+.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control.legal-active::before {
     content: attr( data-review-active );
 }
 
-.about-right .legal-cut-control.exclusion-rule:not( .legal-active ):before {
+.about-right .review-bonus-description.exclusion-rule + .legal-cut-control:not( .legal-active ):before {
     content: attr( data-review-active );
 }
 
-.about-right .legal-cut-control.exclusion-rule.legal-active::before {
+.about-right .review-bonus-description.exclusion-rule + .legal-cut-control.legal-active::before {
     content: attr( data-review-default );
 }
 
