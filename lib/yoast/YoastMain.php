@@ -55,6 +55,8 @@ class YoastMain
         YoastSitemapXML::register_functions();
 
         YoastOG::register_functions();
+
+        add_filter( 'wpseo_meta_author', '__return_false' );
     }
 
     /**
