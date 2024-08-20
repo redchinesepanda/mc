@@ -522,7 +522,7 @@
     margin: 0 auto;
 }
 
-.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control.legal-active::after {
+.about-right .review-bonus-description:not( .exclusion-rule ) + .legal-cut-control.legal-active::after {
     transform: rotate(180deg);
 }
 
@@ -769,11 +769,11 @@
     text-align: center;
 }
 
-.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control:not( .legal-active ):before {
+.about-right .review-bonus-description:not( .exclusion-rule ) + .legal-cut-control:not( .legal-active ):before {
     content: attr( data-review-default );
 }
 
-.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control.legal-active::before {
+.about-right .review-bonus-description:not( .exclusion-rule ) + .legal-cut-control.legal-active::before {
     content: attr( data-review-active );
 }
 
