@@ -518,6 +518,11 @@
     padding-top: 14px;
 }
 
+.about-right .review-bonus-description .bonus-description-text {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .about-right .legal-cut-control {
     margin: 0 auto;
 }
