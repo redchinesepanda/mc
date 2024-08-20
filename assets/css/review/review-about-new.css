@@ -522,7 +522,7 @@
     margin: 0 auto;
 }
 
-.about-right .legal-cut-control.legal-active::after {
+.about-right .review-bonus-description:not( .exclusion-rule ) .legal-cut-control.legal-active::after {
     transform: rotate(180deg);
 }
 
@@ -790,6 +790,10 @@
     font-family: var(--legal-font-icons);
     font-size: 16px;
     line-height: 16px;
+}
+
+.about-right .review-bonus-description.exclusion-rule + .legal-cut-control:not( .legal-active ):after {
+    transform: rotate(180deg);
 }
 
 .review-about .legal-afillate-description {
