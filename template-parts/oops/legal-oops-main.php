@@ -1,6 +1,5 @@
 <div class="legal-oops-background">
 	<div class="legal-oops">
-		<span class="oops-tooltip-close"></span>
 		<div class="oops-title"><?php echo $args[ 'title' ]; ?></div>
 		<div class="oops-description"><?php echo $args[ 'description' ]; ?></div>
 		<?php foreach( $args[ 'items' ] as $item ) : ?>

@@ -11,12 +11,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		background: '.legal-oops-background',
 
-		iconClose: '.oops-tooltip-close',
+		// iconClose: '.oops-tooltip-close',
 	};
 
 	let oops = document.querySelector( selectors.background );
 
-	let checkClose = document.querySelector( selectors.iconClose );
+	// let checkClose = document.querySelector( selectors.iconClose );
 
     function toggleOops( event )
 	{
@@ -24,7 +24,13 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		// let checkClose = document.querySelector( selectors.iconClose );
 
-		if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
+		/* if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
+			event.preventDefault();
+
+			oops.classList.toggle( 'legal-active' );
+
+		} */
+		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
