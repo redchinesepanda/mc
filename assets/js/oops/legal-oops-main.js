@@ -5,7 +5,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	const selectors = {
 		hrefHash: 'a.check-oops[href="#"]',
 
-		hrefDisable: 'a.check-oops[href=""]',
+		// hrefDisable: 'a.check-oops[href=""]',
 
 		// thrive: 'a.tcb-button-link[href="#"]'
 
@@ -42,7 +42,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( 'click', toggleOops, false );
 	} ); */
 
-	document.querySelectorAll( [ selectors.hrefHash, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
+	/* document.querySelectorAll( [ selectors.hrefHash, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
+		element.addEventListener( 'click', toggleOops, false );
+	} ); */
+
+	document.querySelectorAll( selectors.hrefHash ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
 
