@@ -344,9 +344,9 @@ body {
     display: none;
 }
 
-/* .billet .legal-disabled {
+.billet .legal-disabled {
     pointer-events: none;
-} */
+}
 
 .billet .bonus-mobile {
     display: flex;
