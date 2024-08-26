@@ -50,14 +50,17 @@ class NotFoundMain
 			FROM
 				{$wpdb->prefix}redirection_items
 			WHERE
-				{$wpdb->prefix}redirection_items.url = %s
+				-- {$wpdb->prefix}redirection_items.url = %s
+				{$wpdb->prefix}redirection_items.url LIKE %s
 				AND {$wpdb->prefix}redirection_items.status = 'enabled'
 				AND {$wpdb->prefix}redirection_items.action_type = 'error'
 				AND {$wpdb->prefix}redirection_items.action_code = '410'
 			",
 
 			[
-				$url,
+				// $url,
+
+				'%' . $wpdb->esc_like( $url ) . '%'
 			]
 		); 
 	}
