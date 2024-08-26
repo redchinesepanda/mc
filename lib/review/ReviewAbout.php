@@ -497,6 +497,8 @@ class ReviewAbout
                 'achievement' => $achievement,
 
                 'logo-items' => $logo_items,
+
+                'tnc-class' => BilletBonus::get_tnc_class(),
             ];
         }
 

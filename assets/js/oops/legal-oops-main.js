@@ -2,32 +2,58 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	const selectors = {
+		hrefHash: 'a.check-oops[href="#"]',
+
+		// hrefDisable: 'a.check-oops[href=""]',
+
+		// thrive: 'a.tcb-button-link[href="#"]'
+
+		background: '.legal-oops-background',
+
+		// iconClose: '.oops-tooltip-close',
+	};
+
+	let oops = document.querySelector( selectors.background );
+
+	// let checkClose = document.querySelector( selectors.iconClose );
+
     function toggleOops( event )
 	{
-		let oops = document.querySelector( '.legal-oops-background');
+		// let oops = document.querySelector( selectors.background );
 
+		// let checkClose = document.querySelector( selectors.iconClose );
+
+		/* if ( !oops.contains( event.currentTarget ) || oops == event.target || checkClose == event.target ) {
+			event.preventDefault();
+
+			oops.classList.toggle( 'legal-active' );
+
+		} */
 		if ( !oops.contains( event.currentTarget ) || oops == event.target ) {
 			event.preventDefault();
 
 			oops.classList.toggle( 'legal-active' );
+
 		}
 	}
 
-	const selectors = {
-		hrefHash: 'a.check-oops[href="#"]',
+	/* document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
+		element.addEventListener( 'click', toggleOops, false );
+	} ); */
 
-		thrive: 'a.tcb-button-link[href="#"]'
-	}; 
+	/* document.querySelectorAll( [ selectors.hrefHash, selectors.hrefDisable ].join( ', ' ) ).forEach( function ( element ) {
+		element.addEventListener( 'click', toggleOops, false );
+	} ); */
 
-	document.querySelectorAll( [ selectors.hrefHash, selectors.thrive ].join( ', ' ) ).forEach( function ( element ) {
+	document.querySelectorAll( selectors.hrefHash ).forEach( function ( element ) {
 		element.addEventListener( 'click', toggleOops, false );
 	} );
-
-	let oops = document.querySelector( '.legal-oops-background');
 
 	if ( oops !== null ) {
 		oops.addEventListener( 'click', toggleOops, false );
 	}
+
 } );
 
 // oops-js end
