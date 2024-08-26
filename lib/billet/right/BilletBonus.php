@@ -105,7 +105,9 @@ class BilletBonus
 
         if ( in_array( $current_language, self::TNC_OPENED ) )
         {
-            return 'legal-active';
+            // return 'legal-active';
+
+            return 'legal-active exclusion-rule';
         }
 
         return '';
