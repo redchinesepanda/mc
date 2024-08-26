@@ -273,7 +273,7 @@ class MultisiteAdmin
 
 			// 'number' => 32,
 			
-			// 'number' => 64,
+			'number' => 64,
 		] );
 		
 		if ( $sites )
