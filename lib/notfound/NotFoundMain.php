@@ -76,15 +76,15 @@ class NotFoundMain
 	
 			$redirection_items_db = $wpdb->get_results( $redirection_items_db_query );
 
-			// LegalDebug::debug( [
-			// 	'NotFoundMain' => 'get_redirection_items_db-1',
+			LegalDebug::debug( [
+				'NotFoundMain' => 'get_redirection_items_db-1',
 
-			// 	'prefix' => $wpdb->prefix,
+				'prefix' => $wpdb->prefix,
 
-			// 	'redirection_items_db_query' => $redirection_items_db_query,
+				'redirection_items_db_query' => $redirection_items_db_query,
 
-			// 	'redirection_items_db' => $redirection_items_db,
-			// ] );
+				'redirection_items_db' => $redirection_items_db,
+			] );
 
 			if ( ! empty( $redirection_items_db ) )
 			{
