@@ -40,6 +40,28 @@ class NotFoundMain
 		}
     }
 
+	// public static function redirection_db_query( $wpdb, $url )
+	// {
+	// 	return $wpdb->prepare(
+	// 		"SELECT
+	// 			{$wpdb->prefix}redirection_items.id,
+	// 			{$wpdb->prefix}redirection_items.url,
+	// 			{$wpdb->prefix}redirection_items.match_url
+	// 		FROM
+	// 			{$wpdb->prefix}redirection_items
+	// 		WHERE
+	// 			{$wpdb->prefix}redirection_items.url = %s
+	// 			AND {$wpdb->prefix}redirection_items.status = 'enabled'
+	// 			AND {$wpdb->prefix}redirection_items.action_type = 'error'
+	// 			AND {$wpdb->prefix}redirection_items.action_code = '410'
+	// 		",
+
+	// 		[
+	// 			$url,
+	// 		]
+	// 	); 
+	// }
+	
 	public static function redirection_db_query( $wpdb, $url )
 	{
 		return $wpdb->prepare(
@@ -58,9 +80,7 @@ class NotFoundMain
 			",
 
 			[
-				// $url,
-
-				'%' . $wpdb->esc_like( $url ) . '%'
+				'%' . $wpdb->esc_like( $url ) . '%',
 			]
 		); 
 	}
