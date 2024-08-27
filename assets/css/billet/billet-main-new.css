@@ -27,6 +27,7 @@
 
     .billet-list-part.legal-column:not( .billet-list-part.legal-column:not( .legal-default ) + .billet-list-part.legal-default.legal-column ) {
         order: 1;
+        flex-basis: 100%;
     }
 
     /* Billet Position */
