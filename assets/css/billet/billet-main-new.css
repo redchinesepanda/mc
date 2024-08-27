@@ -18,6 +18,7 @@
 
     .billet-list-part.legal-column:not( .billet-list-part.legal-column:not( .legal-default ) + .billet-list-part.legal-default.legal-column ) {
         flex-direction: column;
+        flex-basis: 100%;
     }
 
     .billet-list-part.legal-column:not( .legal-default ) + .billet-list-part.legal-default.legal-column {
