@@ -91,7 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		sendMetric( ref.href, MetrikaLib.yandexMetrikaId );
 
-		// console.log( ref.href );
+		console.log( ref.href );
 	}
 
 	function prepareRef( element )
