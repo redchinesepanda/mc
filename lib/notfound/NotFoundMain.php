@@ -90,40 +90,45 @@ class NotFoundMain
 
 		if ( $post )
 		{
-			global $wpdb;
+			$post_uri = ToolPermalink::get_post_uri( $post->ID );
 
-			$path = MultisiteBlog::get_path();
-
-			$url = sprintf(
-				'%s%s/',
-
-				$path,
-				
-				ToolPermalink::get_post_uri( $post->ID )
-			
-			);
-
-			$redirection_items_db_query = self::redirection_db_query( $wpdb, $url );
-	
-			$redirection_items_db = $wpdb->get_results( $redirection_items_db_query );
-
-			LegalDebug::debug( [
-				'NotFoundMain' => 'get_redirection_items_db-1',
-
-				'path' => $path,
-
-				'url' => $url,
-
-				'prefix' => $wpdb->prefix,
-
-				'redirection_items_db_query' => $redirection_items_db_query,
-
-				'redirection_items_db' => $redirection_items_db,
-			] );
-
-			if ( ! empty( $redirection_items_db ) )
+			if ( ! empty( $post_uri ) )
 			{
-				return $redirection_items_db;
+				global $wpdb;
+	
+				$path = MultisiteBlog::get_path();
+	
+				$url = sprintf(
+					'%s%s/',
+	
+					$path,
+					
+					ToolPermalink::get_post_uri( $post->ID )
+				
+				);
+	
+				$redirection_items_db_query = self::redirection_db_query( $wpdb, $url );
+		
+				$redirection_items_db = $wpdb->get_results( $redirection_items_db_query );
+	
+				LegalDebug::debug( [
+					'NotFoundMain' => 'get_redirection_items_db-1',
+	
+					'path' => $path,
+	
+					'url' => $url,
+	
+					'prefix' => $wpdb->prefix,
+	
+					'redirection_items_db_query' => $redirection_items_db_query,
+	
+					'redirection_items_db' => $redirection_items_db,
+				] );
+	
+				if ( ! empty( $redirection_items_db ) )
+				{
+					return $redirection_items_db;
+				}
 			}
 		}
 
