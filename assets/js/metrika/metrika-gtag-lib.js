@@ -18,7 +18,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	if ( MetrikaLib.checkCookie() )
 	{
-		gtagLibInit();
+		// gtagLibInit();
+
+		MetrikaLib.userInit( gtagLibInit );
 	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagLibInit, { once: true } );
