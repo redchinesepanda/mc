@@ -103,7 +103,7 @@ class NotFoundMain
 	
 					$path,
 					
-					ToolPermalink::get_post_uri( $post->ID )
+					$post_uri
 				
 				);
 	
@@ -115,6 +115,8 @@ class NotFoundMain
 					'NotFoundMain' => 'get_redirection_items_db-1',
 	
 					'path' => $path,
+
+					'post_uri' => $post_uri,
 	
 					'url' => $url,
 	
