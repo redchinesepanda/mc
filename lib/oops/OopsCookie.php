@@ -140,7 +140,7 @@ class OopsCookie
 
 			'fields' => 'ids',
 
-            'supress_filter' => false,
+            // 'supress_filter' => false,
 		];
 	}
 
