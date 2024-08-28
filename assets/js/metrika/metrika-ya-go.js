@@ -141,6 +141,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		document.querySelectorAll( selectors.go ).forEach( prepareRef );
 
 		console.log( 'metricInit' );
+
+		MetrikaLib.userInit( userSuspend );
+
+		console.log( 'metricInit-userSuspend' );
 	}
 
 	function checkCookie()
@@ -158,12 +162,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return checkCookie() && checkLoggedIn();
 	}
 
-	MetrikaLib.userInit( metricInit );
+	if ( check() )
+	{
+		// metricInit();
 
-	// if ( check() )
-	// {
-	// 	metricInit();
-	// }
+		MetrikaLib.userInit( metricInit );
+	}
 
 	// document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
 });
