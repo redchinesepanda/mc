@@ -83,15 +83,15 @@ class ReviewAuthor
     const CIS = [
         'ru',
 
-        'kz',
+        // 'kz',
 
-        'kz-kz',
+        // 'kz-kz',
 
         'by',
 
-        'ua',
+        // 'ua',
 
-        'ua-ru',
+        // 'ua-ru',
     ];
 
     const ES = [
