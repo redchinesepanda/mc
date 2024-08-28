@@ -127,7 +127,11 @@ class ReviewAuthor
         return self::get_default();
     }
 
-	const PAGE_TYPE = [
+	// const PAGE_TYPE = [
+	// 	'about-us' => 'legal-about-us',
+	// ];
+	
+    const PAGE_TYPE = [
 		'about-us' => 'legal-about-us',
 	];
 
