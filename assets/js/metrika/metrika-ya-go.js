@@ -142,7 +142,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( 'metricInit' );
 
-		MetrikaLib.userInit( userSuspend );
+		MetrikaLib.userSuspend( metricInit );
 
 		console.log( 'metricInit-userSuspend' );
 	}
