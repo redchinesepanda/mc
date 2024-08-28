@@ -139,6 +139,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// }
 
 		document.querySelectorAll( selectors.go ).forEach( prepareRef );
+
+		console.log( 'metricInit' );
 	}
 
 	function checkCookie()
@@ -148,7 +150,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function checkLoggedIn()
 	{
-		return !document.body.classList.contains( classes.loggedIn );
+		return ! document.body.classList.contains( classes.loggedIn );
 	}
 
 	function check()
@@ -156,12 +158,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		return checkCookie() && checkLoggedIn();
 	}
 
-	if ( check() )
-	{
-		metricInit();
-	}
+	MetrikaLib.userInit( metricInit );
 
-	document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
+	// if ( check() )
+	// {
+	// 	metricInit();
+	// }
+
+	// document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
 });
 
 // ym 86785715, gtag, ga end
