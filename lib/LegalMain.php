@@ -143,12 +143,12 @@ class LegalMain
 	{
 		// return !is_admin();
 
-		return !self::check_admin();
+		return ! self::check_admin();
 	}
 
 	public static function check_not_ajax()
 	{
-		return !wp_doing_ajax();
+		return ! wp_doing_ajax();
 	}
 
 	public static function check_permissions()
