@@ -219,9 +219,7 @@ class ReviewAuthor
         
         // $href = self::get_about_us_url( 10764, '/kz/o-nas/', '#nasha-komanda' );
 
-        // $href = self::get_about_us_url( 10764, '/by/o-nas/', '#nasha-komanda' );
-
-        $href = self::get_about_us_url( 10764, '/o-nas/', '#nasha-komanda' );
+        $href = self::get_about_us_url( 10764, '/by/o-nas/', '#nasha-komanda' );
         
         // $href = self::get_href( 'o-nas-kz', $anchor = '#nasha-komanda' );
 
