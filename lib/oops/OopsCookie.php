@@ -146,7 +146,15 @@ class OopsCookie
 
 	public static function get_privacy_policy_pages( $page_type )
     {
-        return get_posts( self::get_privacy_policy_query( $page_type ) );
+        $privacy_policy_query = self::get_privacy_policy_query( $page_type );
+
+        LegalDebug::debug( [
+            'OopsCookie' => 'get_privacy_policy_pages-1',
+
+            'privacy_policy_query' => $privacy_policy_query,
+        ] );
+
+        return get_posts( $privacy_policy_query );
     }
 
     public static function get_privacy_policy_page( $page_type )
