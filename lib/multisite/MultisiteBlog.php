@@ -44,7 +44,7 @@ class MultisiteBlog
 			}
 		}
 
-		return '/en/';
+		return '/';
 	}
 
 	public static function get_siteurl( $blog_id = '' )
