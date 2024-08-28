@@ -18,15 +18,17 @@
     }
 
     .compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
-        justify-content: center;
+        /* justify-content: center; */
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     /* Position */
 
     /* .compilation-about-wrapper .swiper.legal-short-str .section-content-button:first-child */
-    .compilation-about-wrapper .section-content-button:first-child {
+   /*  .compilation-about-wrapper .section-content-button:first-child {
         margin-left: 12px;
-    }
+    } */
 
 }
 
@@ -208,6 +210,10 @@
 .compilation-about-wrapper .swiper:not( .legal-active-end )::after {
     width: 83px;
     height: 46px;
+}
+
+.compilation-about-wrapper .swiper.swiper-wrapper {
+    width: fit-content;
 }
 
 /* .compilation-about .section-content-button {

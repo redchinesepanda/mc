@@ -23,8 +23,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// заполнение ширины контейнера свайпером старт
 
 	function overflow(e) {
-		// console.log( e.scrollWidth );
-		// console.log( e.offsetWidth );
 		console.log( e.scrollWidth );
 		console.log( e.offsetWidth );
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
