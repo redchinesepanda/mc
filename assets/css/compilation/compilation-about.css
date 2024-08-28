@@ -19,8 +19,8 @@
 
     .compilation-about-wrapper .swiper.legal-short-str .swiper-wrapper {
         /* justify-content: center; */
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     /* Position */
@@ -212,7 +212,7 @@
     height: 46px;
 }
 
-.compilation-about-wrapper .swiper.swiper-wrapper {
+.compilation-about-wrapper .swiper .swiper-wrapper {
     width: fit-content;
 }
 
