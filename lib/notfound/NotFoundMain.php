@@ -97,7 +97,7 @@ class NotFoundMain
 			$url = sprintf(
 				'%s%s/',
 
-				$path
+				$path,
 				
 				ToolPermalink::get_post_uri( $post->ID )
 			
