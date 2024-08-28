@@ -91,7 +91,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		sendMetric( ref.href, MetrikaLib.yandexMetrikaId );
 
-		console.log( ref.href );
+		// console.log( ref.href );
 	}
 
 	function prepareRef( element )
@@ -140,11 +140,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		document.querySelectorAll( selectors.go ).forEach( prepareRef );
 
-		console.log( 'metricInit' );
+		// console.log( 'metricInit' );
 
 		MetrikaLib.userSuspend( metricInit );
 
-		console.log( 'metricInit-userSuspend' );
+		// console.log( 'metricInit-userSuspend' );
 	}
 
 	function checkCookie()
@@ -169,7 +169,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		MetrikaLib.userInit( metricInit );
 	}
 
-	// document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
+	document.addEventListener( LegalCookieOops.oopsCookieHandler, metricInit, { once: true } );
 });
 
 // ym 86785715, gtag, ga end
