@@ -23,7 +23,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
     if ( MetrikaLib.checkCookie() )
 	{
-		checkOoopsInit();
+		// checkOoopsInit();
+
+        MetrikaLib.userInit( checkOoopsInit );
 	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, checkOoopsInit, { once: true } );
