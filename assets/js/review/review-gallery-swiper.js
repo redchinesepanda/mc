@@ -96,8 +96,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		initDataset( element );
 
 		element.addEventListener( types.touchstart, handleTouchStart, false );
+		element.addEventListener( types.touchend, handleTouchEnd, false );
 
-		element.addEventListener( types.touchend, handleTouchEnd, { passive: true }, false );
+		// element.addEventListener( types.touchend, handleTouchEnd, { passive: true }, false );
 
 		// element.addEventListener( types.touchend, handleTouchMove, false );
 	}
