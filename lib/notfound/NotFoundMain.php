@@ -94,7 +94,14 @@ class NotFoundMain
 
 			$path = MultisiteBlog::get_path();
 
-			$url = sprintf( '/%s/', ToolPermalink::get_post_uri( $post->ID ) );
+			$url = sprintf(
+				'%s%s/',
+
+				$path
+				
+				ToolPermalink::get_post_uri( $post->ID )
+			
+			);
 
 			$redirection_items_db_query = self::redirection_db_query( $wpdb, $url );
 	
