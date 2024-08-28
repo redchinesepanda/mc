@@ -10,7 +10,7 @@
 <div class="billet-title">
     <?php echo BilletAchievement::render( $args[ 'achievement' ] ); ?>
     <a class="legal-logo <?php echo $args['logo']['logo']['class']; ?> check-oops" href="<?php echo $args['logo']['logo']['href']; ?>" <?php echo BilletMain::render_nofollow( $args['logo'][ 'logo' ][ 'nofollow' ] ); ?>>
-        <img src="<?php echo $args['logo']['logo']['src'] ?>" alt="<?php echo $args['logo']['logo']['alt'] ?>" loading="lazy">
+        <img src="<?php echo $args['logo']['logo']['src'] ?>" width="70" height="70" alt="<?php echo $args['logo']['logo']['alt'] ?>" loading="lazy">
     </a>
     <div class="title-data">
         <div class="title-data-group">
