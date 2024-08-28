@@ -105,6 +105,8 @@ class NotFoundMain
 
 				'path' => $path,
 
+				'url' => $url,
+
 				'prefix' => $wpdb->prefix,
 
 				'redirection_items_db_query' => $redirection_items_db_query,
