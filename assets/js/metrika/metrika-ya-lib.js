@@ -33,7 +33,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	if ( MetrikaLib.checkCookie() )
 	{
-		ymInit();
+		// ymInit();
+
+		MetrikaLib.userInit( ymInit );
 	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, ymInit, { once: true } );
