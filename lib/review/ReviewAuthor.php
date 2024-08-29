@@ -92,11 +92,11 @@ class ReviewAuthor
     {
         $language = WPMLMain::current_language();
 
-        LegalDebug::debug( [
-            'ReviewAuthor' => 'get_author-1',
+        // LegalDebug::debug( [
+        //     'ReviewAuthor' => 'get_author-1',
 
-            'language' => $language,
-        ] );
+        //     'language' => $language,
+        // ] );
 
         if ( in_array( $language, self::CIS ) )
         {
