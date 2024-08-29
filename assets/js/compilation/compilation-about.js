@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
 
+		swiperSlide : '.home .compilation-about-wrapper .swiper-slide',
+
 		cutControl : '.compilation-about .legal-cut-control',
 
 		paragraph : '.compilation-about .section-content-text:first-of-type',
@@ -22,18 +24,18 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	// заполнение ширины контейнера свайпером старт
 
-	function overflow(e) {
+	/* function overflow(e) {
 		console.log( e.scrollWidth );
 		console.log( e.offsetWidth );
 		return e.scrollWidth > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-	}
+	} */
 
-	function defineOverflow( str ) {
-		if ( !str ) {
-            return;
-        };
+	// function defineOverflow( str ) {
+		// if ( !str ) {
+            // return;
+        // };
 
-		return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
+		// return overflow(str) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 		// return setTimeout(overflow(str), 500) === false ? str.parentNode.classList.add( classes.shortStr ) : false;
 	/* 	if (overflow(str)) {
 			console.log('Текст не умещается');
@@ -41,11 +43,51 @@ document.addEventListener( 'DOMContentLoaded', function () {
 			console.log('Текст умещается');
 			str.parentNode.classList.add( classes.shortStr );
 		}; */
+	// };
+
+	// defineOverflow( document.querySelector( selectors.stringSwiper ) );
+
+	// заполнение ширины контейнера свайпером конец
+
+
+	// заполнение ширины контейнера свайпером старт new
+	let summ = 0;
+
+	function calcWidth (elem) {
+		if ( !elem ) {
+            return;
+        };
+
+		width = elem.offsetWidth + 8;
+		console.log(width);
+		let result = summ += width
+		return result;
+	};
+
+	// console.log(summ);
+
+	document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+
+	function overflow(e) {
+		console.log( 'summ:', summ );
+		console.log( 'e.offsetWidth:', e.offsetWidth );
+		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	} 
+	
+	function defineOverflow( elem ) {
+		if ( !elem ) {
+            return;
+        };
+
+		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
+	
 	};
 
 	defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
-	// заполнение ширины контейнера свайпером конец
+	// заполнение ширины контейнера свайпером конец new
+
+
 
 	// сокращение текста до многоточия старт
 
