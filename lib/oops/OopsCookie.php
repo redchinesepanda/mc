@@ -157,6 +157,24 @@ class OopsCookie
         return get_posts( $privacy_policy_query );
     }
 
+    public static function get_domain_main_site_privacy_policy_page( $page_type )
+    {
+        $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
+
+        MultisiteBlog::get_site( $main_blog_id );
+
+        $pages = self::get_privacy_policy_pages( $page_type );
+
+        MultisiteBlog::restore_blog();
+
+        if ( ! empty( $pages ) )
+		{
+			return array_shift( $pages );
+		}
+
+		return null;
+    }
+
     public static function get_privacy_policy_page( $page_type )
 	{
 		$pages = self::get_privacy_policy_pages( $page_type );
@@ -170,6 +188,13 @@ class OopsCookie
 		if ( ! empty( $pages ) )
 		{
 			return array_shift( $pages );
+		}
+
+        $domain_main_site_pages = self::get_domain_main_site_privacy_policy_page( $page_type );
+
+        if ( ! empty( $domain_main_site_pages ) )
+		{
+			return array_shift( $domain_main_site_pages );
 		}
 
 		return null;
