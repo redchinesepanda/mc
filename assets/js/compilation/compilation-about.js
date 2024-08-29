@@ -51,59 +51,56 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 
 	// заполнение ширины контейнера свайпером старт new
-	document.addEventListener( "load", function () { 
-		let summ = 0;
+	let summ = 0;
 
-		function calcWidth (elem) {
-			if ( !elem ) {
-				return;
-			};
+	function calcWidth (elem) {
+		if ( !elem ) {
+            return;
+        };
 
-			let withMarginElem = 8;
+		let withMarginElem = 8;
 
-			let withBorderElem = 2;
+		let withBorderElem = 2;
 
-			// let width = elem.offsetWidth + withMarginElem + withBorderElem;
-			// let width = elem.clientWidth + withMarginElem;
-			let width = elem.clientWidth + withMarginElem + withBorderElem;
+		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
+		// let width = elem.clientWidth + withMarginElem;
+		let width = elem.clientWidth + withMarginElem + withBorderElem;
 
-			console.log(width);
+		console.log(width);
 
-			summ += width;
+		summ += width;
 
-			// return result;
-		};
+		// return result;
+	};
 
-		// console.log(summ);
+	// console.log(summ);
 
-		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+	document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
-		function overflow(e) {
-			console.log( 'summ:', summ );
-			console.log( 'e.offsetWidth:', e.offsetWidth );
-			return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-		} 
-		
-		function defineOverflow( elem ) {
-			if ( !elem ) {
-				return;
-			};
+	function overflow(e) {
+		console.log( 'summ:', summ );
+		console.log( 'e.offsetWidth:', e.offsetWidth );
+		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	} 
+	
+	function defineOverflow( elem ) {
+		if ( !elem ) {
+            return;
+        };
 
-			return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
-		
-		};
+		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
+	
+	};
 
-	/* 	function prepare() {
-			defineOverflow( document.querySelector( selectors.stringSwiper ) );
-		};
-
-		setTimeout( calcWidth, 1000 );
-
-		setTimeout( prepare, 1000 ); */
-
+/* 	function prepare() {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
+	};
 
-	} );
+	setTimeout( calcWidth, 1000 );
+
+	setTimeout( prepare, 1000 ); */
+
+	defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
 	// заполнение ширины контейнера свайпером конец new
 
