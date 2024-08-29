@@ -63,7 +63,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		let withBorderElem = 2;
 
 		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
-		let width = elem.offsetWidth;
+		let width = elem.offsetWidth + withMarginElem;
 
 		console.log(width);
 
