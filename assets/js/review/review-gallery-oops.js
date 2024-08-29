@@ -35,8 +35,8 @@ let reviewGalleyOops = ( function()
 			)
 		},
 
-		// click : 'click',
-		click : 'pointerup',
+		click : 'click',
+		// click : 'pointerup',
 	};
 } )();
 
