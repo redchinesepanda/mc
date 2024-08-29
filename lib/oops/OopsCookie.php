@@ -196,13 +196,6 @@ class OopsCookie
 			return array_shift( $pages );
 		}
 
-        $domain_main_site_pages = self::get_domain_main_site_privacy_policy_page( $page_type );
-
-        if ( ! empty( $domain_main_site_pages ) )
-		{
-			return array_shift( $domain_main_site_pages );
-		}
-
 		return null;
 	}
 
@@ -227,6 +220,11 @@ class OopsCookie
     public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
 	{
 		$page = self::get_privacy_policy_page( $page_type );
+
+        if ( empty( $page ) )
+        {
+            $page = self::get_domain_main_site_privacy_policy_page( $page_type );
+        }
 
 		if ( ! empty( $page ) )
 		{
