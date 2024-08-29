@@ -185,11 +185,11 @@ class OopsCookie
 	{
 		$pages = self::get_privacy_policy_pages( $page_type );
 
-        LegalDebug::debug( [
-            'OopsCookie' => 'get_privacy_policy_page-1',
+        // LegalDebug::debug( [
+        //     'OopsCookie' => 'get_privacy_policy_page-1',
 
-            'pages' => $pages,
-        ] );
+        //     'pages' => $pages,
+        // ] );
 
 		if ( ! empty( $pages ) )
 		{
