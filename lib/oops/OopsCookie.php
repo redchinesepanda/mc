@@ -275,7 +275,14 @@ class OopsCookie
 
         $breadcrumbs_language = LegalBreadcrumbsMain::get_breadcrumbs_language( $blog_language );
 
-        $blog_language_site = MultisiteBlog::get_blog_language_site( $breadcrumbs_language );
+        $path = '/';
+
+        if ( ! empty( $breadcrumbs_language ) )
+        {
+            $path = sprintf( '/%s/', $breadcrumbs_language );
+        }
+
+        $blog_language_site = MultisiteBlog::get_blog_language_site( $path );
 
         LegalDebug::debug( [
             'OopsCookie' => 'get_privacy_policy_page_type_url-1',
@@ -283,6 +290,8 @@ class OopsCookie
             'blog_language' => $blog_language,
 
             'breadcrumbs_language' => $breadcrumbs_language,
+
+            'path' => $path,
 
             'blog_language_site' => $blog_language_site,
         ] );
