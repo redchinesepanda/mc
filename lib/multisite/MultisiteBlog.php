@@ -161,11 +161,11 @@ class MultisiteBlog
 		// 	$sites_args[ 'meta_query' ] = self::get_meta_query_blog_language( $blog_language );
 		// }
 
-		// LegalDebug::debug( [
-		// 	'MultisiteBlog' => 'get_sites-1',
+		LegalDebug::debug( [
+			'MultisiteBlog' => 'get_sites-1',
 
-		// 	'sites_args' => $sites_args,
-		// ] );
+			'sites_args' => $sites_args,
+		] );
 
 		$sites = get_sites( $sites_args );
 
