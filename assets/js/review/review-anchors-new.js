@@ -1,6 +1,7 @@
 // review-anchors-js start
 
-document.addEventListener( 'DOMContentLoaded', function ()
+// document.addEventListener( 'DOMContentLoaded', function ()
+window.addEventListener( 'load', function () {
 {
 
 	document.querySelectorAll('.swiper').forEach(el => {
