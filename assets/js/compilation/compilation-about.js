@@ -69,8 +69,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		summ += width;
 
-		defineOverflow( document.querySelector( selectors.stringSwiper ) );
-
 		// return result;
 	};
 
