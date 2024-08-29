@@ -62,9 +62,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		let withBorderElem = 2;
 
+		// let withElem = elem.clientWidth;
+
+		setTimeout(() => {
+			let withElem = elem.clientWidth;
+			return withElem
+		}, 1000);
+
 		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
 		// let width = elem.clientWidth + withMarginElem;
-		let width = elem.clientWidth + withMarginElem + withBorderElem;
+		// let width = elem.clientWidth + withMarginElem + withBorderElem;
+		let width = withElem + withMarginElem + withBorderElem;
 
 		console.log(width);
 
@@ -91,14 +99,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
 	
 	};
-
-/* 	function prepare() {
-		defineOverflow( document.querySelector( selectors.stringSwiper ) );
-	};
-
-	setTimeout( calcWidth, 1000 );
-
-	setTimeout( prepare, 1000 ); */
 
 	defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
