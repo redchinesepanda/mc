@@ -288,19 +288,19 @@ class OopsCookie
 
         $domain_path_blog_id = MultisiteBlog::get_domain_path_blog_id( $domain, $path );
 
-        LegalDebug::debug( [
-            'OopsCookie' => 'get_privacy_policy_page_type_url-1',
+        // LegalDebug::debug( [
+        //     'OopsCookie' => 'get_privacy_policy_page_type_url-1',
 
-            'blog_language' => $blog_language,
+        //     'blog_language' => $blog_language,
 
-            'breadcrumbs_language' => $breadcrumbs_language,
+        //     'breadcrumbs_language' => $breadcrumbs_language,
 
-            'path' => $path,
+        //     'path' => $path,
 
-            // 'blog_language_site' => $blog_language_site,
+        //     // 'blog_language_site' => $blog_language_site,
 
-            'domain_path_blog_id' => $domain_path_blog_id,
-        ] );
+        //     'domain_path_blog_id' => $domain_path_blog_id,
+        // ] );
 
         // $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
 
