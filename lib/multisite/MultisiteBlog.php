@@ -199,9 +199,16 @@ class MultisiteBlog
 		return null;
 	}
 
-	public static function get_blog_language_site( $blog_language = '' )
+	public static function get_domain_path_site( $domain = '' , $path = '' )
 	{
-		return self::get_sites( self::MODE[ 'all' ], '', $blog_language );
+		$domain_path_sites = self::get_sites( self::MODE[ 'all' ], $domain, $path );
+
+		if ( ! empty( $domain_path_sites ) )
+		{
+			return array_shift( $domain_path_sites );
+		}
+
+		return null;
 	}
 
 	public static function get_current_site()
