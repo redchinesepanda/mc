@@ -161,7 +161,7 @@ class OopsCookie
     {
         $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
 
-        MultisiteBlog::get_site( $main_blog_id );
+        MultisiteBlog::set_blog( $main_blog_id );
 
         $pages = self::get_privacy_policy_pages( $page_type );
 
