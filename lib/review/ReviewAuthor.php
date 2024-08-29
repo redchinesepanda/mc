@@ -81,38 +81,22 @@ class ReviewAuthor
     // }
 
     const CIS = [
-        'ru',
-
-        'kz',
-
-        'kz-kz',
-
-        'by',
-
-        'ua',
-
-        'ua-ru',
+        'ru', 'kz', 'kz-kz', 'by', 'ua', 'ua-ru',
     ];
 
     const ES = [
-        'es',
-
-        'mx',
-
-        'pe',
-
-        'cl',
-
-        'py',
-
-        'co',
-
-        'ar',
+        'es', 'mx', 'pe', 'cl', 'py', 'co', 'ar',
     ];
 
     public static function get_author()
     {
         $language = WPMLMain::current_language();
+
+        LegalDebug::debug( [
+            'ReviewAuthor' => 'get_author-1',
+
+            'language' => $language,
+        ] );
 
         if ( in_array( $language, self::CIS ) )
         {
