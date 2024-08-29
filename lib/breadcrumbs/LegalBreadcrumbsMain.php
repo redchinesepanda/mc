@@ -165,6 +165,19 @@ class LegalBreadcrumbsMain extends LegalDebug
         'da' => 'dk',
     ];
 
+    public static function get_breadcrumbs_language( $language = '' )
+    {
+        if ( ! empty( $language ) )
+        {
+            if ( array_key_exists( $language, self::HOME ) )
+            {
+                return self::HOME[ $language ];
+            }
+        }
+
+        return '';
+    }
+
     public static function get_home_url()
     {
         // LegalDebug::debug( [
