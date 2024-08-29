@@ -126,9 +126,9 @@ class MultisiteBlog
 		];
 	}
 
-	// public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '' )
+	// public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '', $blog_language = '' )
 
-	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '', $blog_language = '' )
+	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '' )
 	{
 		// $sites_args = [
 		// 	'number' => 32,
@@ -156,16 +156,16 @@ class MultisiteBlog
 			$sites_args[ 'path' ] = $path;
 		}
 
-		if ( ! empty( $blog_language ) )
-		{
-			$sites_args[ 'meta_query' ] = self::get_meta_query_blog_language( $blog_language );
-		}
+		// if ( ! empty( $blog_language ) )
+		// {
+		// 	$sites_args[ 'meta_query' ] = self::get_meta_query_blog_language( $blog_language );
+		// }
 
-		LegalDebug::debug( [
-			'MultisiteBlog' => 'get_sites-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteBlog' => 'get_sites-1',
 
-			'sites_args' => $sites_args,
-		] );
+		// 	'sites_args' => $sites_args,
+		// ] );
 
 		$sites = get_sites( $sites_args );
 
@@ -201,7 +201,7 @@ class MultisiteBlog
 
 	public static function get_blog_language_site( $blog_language = '' )
 	{
-		return self::get_sites( self::MODE[ 'all' ], '', '', $blog_language );
+		return self::get_sites( self::MODE[ 'all' ], '', $blog_language );
 	}
 
 	public static function get_current_site()
