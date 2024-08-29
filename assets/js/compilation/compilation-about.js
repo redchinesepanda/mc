@@ -91,7 +91,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	
 	};
 
-	setTimeout( defineOverflow( document.querySelector( selectors.stringSwiper ) ), 1000 );
+	function prepare() {
+		defineOverflow( document.querySelector( selectors.stringSwiper ) );
+	};
+
+	setTimeout( prepare, 1000 );
 
 	// defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
