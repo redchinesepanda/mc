@@ -105,9 +105,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			item.dataset.id = index;
 
-			// item.addEventListener( 'click', popup, false );
-			item.addEventListener( 'pointerdown', popup, false );
-
+			item.addEventListener( 'click', popup, false );
 
 			item.addEventListener( 'click', popupUpdate, false );
 		} );

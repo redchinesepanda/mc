@@ -95,11 +95,11 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		initDataset( element );
 
-		// element.addEventListener( types.touchstart, handleTouchStart, false );
-		// element.addEventListener( types.touchend, handleTouchEnd, false );
+		element.addEventListener( types.touchstart, handleTouchStart, false );
+		element.addEventListener( types.touchend, handleTouchEnd, false );
 
-		element.addEventListener( types.touchstart, handleTouchStart, { passive: true } );
-		element.addEventListener( types.touchend, handleTouchEnd, { passive: true } );
+		// element.addEventListener( types.touchstart, handleTouchStart, { passive: true } );
+		// element.addEventListener( types.touchend, handleTouchEnd, { passive: true } );
 
 		// element.addEventListener( types.touchend, handleTouchMove, false );
 	}
