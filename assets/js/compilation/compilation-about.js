@@ -1,7 +1,7 @@
 // compilation-about-js start
 
-document.addEventListener( 'DOMContentLoaded', function () {
-
+// document.addEventListener( 'DOMContentLoaded', function () {
+document.addEventListener( 'load', function () {
 	const selectors = {
 
 		stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
@@ -62,19 +62,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		let withBorderElem = 2;
 
-		// let withElem = elem.clientWidth;
-
-		let withElem = 0;
-
-		setTimeout(() => {
-			withElem = elem.clientWidth;
-			return withElem
-		}, 1000);
-
 		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
 		// let width = elem.clientWidth + withMarginElem;
-		// let width = elem.clientWidth + withMarginElem + withBorderElem;
-		let width = withElem + withMarginElem + withBorderElem;
+		let width = elem.clientWidth + withMarginElem + withBorderElem;
 
 		console.log(width);
 
