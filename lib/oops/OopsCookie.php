@@ -284,7 +284,7 @@ class OopsCookie
             $path = sprintf( '/%s/', $breadcrumbs_language );
         }
 
-        $blog_language_site = MultisiteBlog::get_domain_path_site( $domain, $path );
+        // $blog_language_site = MultisiteBlog::get_domain_path_site( $domain, $path );
 
         $domain_path_blog_id = MultisiteBlog::get_domain_path_blog_id( $domain, $path );
 
@@ -297,14 +297,16 @@ class OopsCookie
 
             'path' => $path,
 
-            'blog_language_site' => $blog_language_site,
+            // 'blog_language_site' => $blog_language_site,
 
             'domain_path_blog_id' => $domain_path_blog_id,
         ] );
 
-        $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
+        // $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
 
-        MultisiteBlog::set_blog( $main_blog_id );
+        // MultisiteBlog::set_blog( $main_blog_id );
+        
+        MultisiteBlog::set_blog( $domain_path_blog_id );
 
         $domain_main_blog_page_permalink = self::get_privacy_policy_page_permalink( $page_type, $anchor );
 
