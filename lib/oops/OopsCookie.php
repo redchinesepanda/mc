@@ -148,11 +148,11 @@ class OopsCookie
     {
         $privacy_policy_query = self::get_privacy_policy_query( $page_type );
 
-        LegalDebug::debug( [
-            'OopsCookie' => 'get_privacy_policy_pages-1',
+        // LegalDebug::debug( [
+        //     'OopsCookie' => 'get_privacy_policy_pages-1',
 
-            'privacy_policy_query' => $privacy_policy_query,
-        ] );
+        //     'privacy_policy_query' => $privacy_policy_query,
+        // ] );
 
         return get_posts( $privacy_policy_query );
     }
