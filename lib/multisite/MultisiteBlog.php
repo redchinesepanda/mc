@@ -93,10 +93,10 @@ class MultisiteBlog
 	{
 		if ( empty ( $domain ) )
 		{
-			$domain = MultisiteBlog::get_domain();
+			$domain = self::get_domain();
 		}
 
-		$main_site = MultisiteBlog::get_domain_main_site( $domain );
+		$main_site = self::get_domain_main_site( $domain );
 
 		if ( ! empty( $main_site ) )
 		{
@@ -111,7 +111,24 @@ class MultisiteBlog
 		return get_blog_details( $blog_id );
 	}
 
-	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '' )
+	public static function get_meta_query_blog_language( $blog_language )
+	{
+		return [
+			'relation' => 'AND',
+
+			'blog-language' => [
+				'key' => MultisiteSiteOptions::OPTIONS[ 'blog-language' ],
+
+				'value' => $blog_language,
+
+				'compare' => '=',
+			],
+		];
+	}
+
+	// public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '' )
+
+	public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '', $blog_language = '' )
 	{
 		// $sites_args = [
 		// 	'number' => 32,
@@ -138,6 +155,17 @@ class MultisiteBlog
 		{
 			$sites_args[ 'path' ] = $path;
 		}
+
+		if ( ! empty( $blog_language ) )
+		{
+			$sites_args[ 'meta_query' ] = self::get_meta_query_blog_language( $blog_language );
+		}
+
+		LegalDebug::debug( [
+			'MultisiteBlog' => 'get_sites-1',
+
+			'sites_args' => $sites_args,
+		] );
 
 		$sites = get_sites( $sites_args );
 
@@ -169,6 +197,11 @@ class MultisiteBlog
 		}
 
 		return null;
+	}
+
+	public static function get_blog_language_site( $blog_language = '' )
+	{
+		return self::get_sites( self::MODE[ 'all' ], '', '', $blog_language );
 	}
 
 	public static function get_current_site()

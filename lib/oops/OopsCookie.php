@@ -275,12 +275,16 @@ class OopsCookie
 
         $breadcrumbs_language = LegalBreadcrumbsMain::get_breadcrumbs_language( $blog_language );
 
+        $blog_language_site = MultisiteBlog::get_blog_language_site( $breadcrumbs_language )
+
         LegalDebug::debug( [
             'OopsCookie' => 'get_privacy_policy_page_type_url-1',
 
             'blog_language' => $blog_language,
 
             'breadcrumbs_language' => $breadcrumbs_language,
+
+            'blog_language_site' => $blog_language_site,
         ] );
 
         $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
