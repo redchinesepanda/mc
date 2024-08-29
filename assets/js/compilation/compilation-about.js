@@ -58,7 +58,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		width = elem.offsetWidth + 8 + 2;
+		let withMarginElem = 8;
+
+		let withBorderElem = 2;
+
+		width = elem.offsetWidth + withMarginElem + withBorderElem;
 		console.log(width);
 		let result = summ += width
 		return result;
