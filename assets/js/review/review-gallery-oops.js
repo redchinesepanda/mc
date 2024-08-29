@@ -104,8 +104,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oops( element )
 	{
-		// element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, false );
-		element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, { passive: true } );
+		element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, false );
+		// element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, { passive: true } );
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
