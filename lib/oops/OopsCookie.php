@@ -157,29 +157,29 @@ class OopsCookie
         return get_posts( $privacy_policy_query );
     }
 
-    public static function get_domain_main_site_privacy_policy_page( $page_type )
-    {
-        $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
+    // public static function get_domain_main_site_privacy_policy_page( $page_type )
+    // {
+    //     $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
 
-        MultisiteBlog::set_blog( $main_blog_id );
+    //     MultisiteBlog::set_blog( $main_blog_id );
 
-        $pages = self::get_privacy_policy_pages( $page_type );
+    //     $pages = self::get_privacy_policy_pages( $page_type );
 
-        MultisiteBlog::restore_blog();
+    //     MultisiteBlog::restore_blog();
 
-        LegalDebug::debug( [
-            'OopsCookie' => 'get_domain_main_site_privacy_policy_page-1',
+    //     LegalDebug::debug( [
+    //         'OopsCookie' => 'get_domain_main_site_privacy_policy_page-1',
 
-            'pages' => $pages,
-        ] );
+    //         'pages' => $pages,
+    //     ] );
 
-        if ( ! empty( $pages ) )
-		{
-			return array_shift( $pages );
-		}
+    //     if ( ! empty( $pages ) )
+	// 	{
+	// 		return array_shift( $pages );
+	// 	}
 
-		return null;
-    }
+	// 	return null;
+    // }
 
     public static function get_privacy_policy_page( $page_type )
 	{
@@ -217,14 +217,9 @@ class OopsCookie
         return $href . $anchor;
     }
 
-    public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
-	{
-		$page = self::get_privacy_policy_page( $page_type );
-
-        if ( empty( $page ) )
-        {
-            $page = self::get_domain_main_site_privacy_policy_page( $page_type );
-        }
+    public static function get_privacy_policy_page_permalink( $page_type, $anchor = '' )
+    {
+        $page = self::get_privacy_policy_page( $page_type );
 
 		if ( ! empty( $page ) )
 		{
@@ -243,6 +238,51 @@ class OopsCookie
 				return $page_url . $anchor;
 			}
 		}
+
+        return '';
+    }
+
+    public static function get_privacy_policy_page_type_url( $page_type, $href = '', $anchor = '' )
+	{
+		// $page = self::get_privacy_policy_page( $page_type );
+
+		// if ( ! empty( $page ) )
+		// {
+        //     // LegalDebug::debug( [
+        //     //     'OopsCookie' => 'get_privacy_policy_page_type_url',
+
+        //     //     'get_permalink' => get_permalink( $page ),
+
+        //     //     'get_post_permalink' => get_post_permalink( $page ),
+
+        //     //     'get_page_link' => get_page_link( $page ),
+        //     // ] );
+
+		// 	if ( $page_url = get_permalink( $page ) )
+		// 	{
+		// 		return $page_url . $anchor;
+		// 	}
+		// }
+
+        $page_permalink = self::get_privacy_policy_page_permalink( $page_type, $anchor );
+
+        if ( ! empty( $page_permalink ) )
+        {
+            return $page_permalink;
+        }
+
+        $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
+
+        MultisiteBlog::set_blog( $main_blog_id );
+
+        $domain_main_blog_page_permalink = self::get_privacy_policy_page_permalink( $page_type, $anchor );
+
+        MultisiteBlog::restore_blog();
+
+        if ( ! empty( $domain_main_blog_page_permalink ) )
+        {
+            return $domain_main_blog_page_permalink;
+        }
 
         if ( empty( $href ) )
         {
