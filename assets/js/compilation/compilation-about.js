@@ -69,7 +69,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		let result = summ += width;
 
-		return result;
+		// return result;
 	};
 
 	// console.log(summ);
