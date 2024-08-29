@@ -64,8 +64,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		// let withElem = elem.clientWidth;
 
+		let withElem = 0;
+
 		setTimeout(() => {
-			let withElem = elem.clientWidth;
+			withElem = elem.clientWidth;
 			return withElem
 		}, 1000);
 
