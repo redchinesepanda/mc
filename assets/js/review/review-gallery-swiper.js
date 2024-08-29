@@ -98,8 +98,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// element.addEventListener( types.touchstart, handleTouchStart, false );
 		// element.addEventListener( types.touchend, handleTouchEnd, false );
 
-		element.addEventListener( types.touchstart, handleTouchStart, false );
-		element.addEventListener( types.touchend, handleTouchEnd, false );
+		element.addEventListener( types.touchstart, handleTouchStart, true );
+		element.addEventListener( types.touchend, handleTouchEnd, true );
 
 		// element.addEventListener( types.touchend, handleTouchEnd, { passive: true }, false );
 
