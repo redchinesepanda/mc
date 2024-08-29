@@ -271,6 +271,18 @@ class OopsCookie
             return $page_permalink;
         }
 
+        $blog_language = MultisiteSiteOptions::get_blog_language();
+
+        $breadcrumbs_language = LegalBreadcrumbsMain::get_breadcrumbs_language( $blog_language );
+
+        LegalDebug::debug( [
+            'OopsCookie' => 'get_privacy_policy_page_type_url-1',
+
+            'blog_language' => $blog_language,
+
+            'breadcrumbs_language' => $breadcrumbs_language,
+        ] );
+
         $main_blog_id = MultisiteBlog::get_domain_main_blog_id();
 
         MultisiteBlog::set_blog( $main_blog_id );
