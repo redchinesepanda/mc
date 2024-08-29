@@ -286,6 +286,8 @@ class OopsCookie
 
         $blog_language_site = MultisiteBlog::get_domain_path_site( $domain, $path );
 
+        $domain_path_blog_id = MultisiteBlog::get_domain_path_blog_id( $domain, $path );
+
         LegalDebug::debug( [
             'OopsCookie' => 'get_privacy_policy_page_type_url-1',
 
@@ -296,6 +298,8 @@ class OopsCookie
             'path' => $path,
 
             'blog_language_site' => $blog_language_site,
+
+            'domain_path_blog_id' => $domain_path_blog_id,
         ] );
 
         $main_blog_id = MultisiteBlog::get_domain_main_blog_id();

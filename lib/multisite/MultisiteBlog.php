@@ -106,6 +106,23 @@ class MultisiteBlog
 		return get_main_site_id();
 	}
 
+	public static function get_domain_path_blog_id( $domain = '', $path = '' )
+	{
+		if ( empty( $domain ) )
+		{
+			$domain = self::get_domain();
+		}
+
+		$domain_path_site = self::get_domain_path_site( $domain, $path );
+
+		if ( ! empty( $domain_path_site ) )
+		{
+			return $domain_path_site->blog_id;
+		}
+
+		return 0;
+	}
+
 	public static function get_blog_details( $blog_id )
 	{
 		return get_blog_details( $blog_id );
