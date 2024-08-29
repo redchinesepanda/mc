@@ -167,6 +167,12 @@ class OopsCookie
 
         MultisiteBlog::restore_blog();
 
+        LegalDebug::debug( [
+            'OopsCookie' => 'get_domain_main_site_privacy_policy_page-1',
+
+            'pages' => $pages,
+        ] );
+
         if ( ! empty( $pages ) )
 		{
 			return array_shift( $pages );
