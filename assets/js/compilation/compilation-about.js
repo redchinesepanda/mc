@@ -62,9 +62,12 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		let withBorderElem = 2;
 
-		width = elem.offsetWidth + withMarginElem + withBorderElem;
+		let width = elem.offsetWidth + withMarginElem + withBorderElem;
+
 		console.log(width);
-		let result = summ += width
+
+		let result = summ += width;
+
 		return result;
 	};
 
