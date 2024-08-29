@@ -35,8 +35,7 @@ let reviewGalleyOops = ( function()
 			)
 		},
 
-		// click : 'click',
-		click : 'pointerup',
+		click : 'click',
 	};
 } )();
 
@@ -104,8 +103,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function oops( element )
 	{
-		// element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, false );
-		element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, { passive: true } );
+		element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, false );
 	}
 
 	document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
