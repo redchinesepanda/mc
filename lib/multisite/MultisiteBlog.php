@@ -116,7 +116,7 @@ class MultisiteBlog
 		return [
 			'relation' => 'AND',
 
-			'blog-language' => [
+			[
 				'key' => MultisiteSiteOptions::OPTIONS[ 'blog-language' ],
 
 				'value' => $blog_language,
