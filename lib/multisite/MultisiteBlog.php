@@ -128,20 +128,20 @@ class MultisiteBlog
 		return get_blog_details( $blog_id );
 	}
 
-	public static function get_meta_query_blog_language( $blog_language )
-	{
-		return [
-			'relation' => 'AND',
+	// public static function get_meta_query_blog_language( $blog_language )
+	// {
+	// 	return [
+	// 		'relation' => 'AND',
 
-			[
-				'key' => MultisiteSiteOptions::OPTIONS[ 'blog-language' ],
+	// 		[
+	// 			'key' => MultisiteSiteOptions::OPTIONS[ 'blog-language' ],
 
-				'value' => $blog_language,
+	// 			'value' => $blog_language,
 
-				'compare' => '=',
-			],
-		];
-	}
+	// 			'compare' => '=',
+	// 		],
+	// 	];
+	// }
 
 	// public static function get_sites( $mode = self::MODE[ 'all' ], $domain = '', $path = '', $blog_language = '' )
 
@@ -178,11 +178,11 @@ class MultisiteBlog
 		// 	$sites_args[ 'meta_query' ] = self::get_meta_query_blog_language( $blog_language );
 		// }
 
-		LegalDebug::debug( [
-			'MultisiteBlog' => 'get_sites-1',
+		// LegalDebug::debug( [
+		// 	'MultisiteBlog' => 'get_sites-1',
 
-			'sites_args' => $sites_args,
-		] );
+		// 	'sites_args' => $sites_args,
+		// ] );
 
 		$sites = get_sites( $sites_args );
 
