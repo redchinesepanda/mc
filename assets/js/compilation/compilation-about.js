@@ -65,7 +65,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// let width = elem.clientWidth + withMarginElem;
 		let width = elem.clientWidth + withMarginElem + withBorderElem;
 
-		console.log(width);
+		console.log('e.offsetWidthElem:', width);
 
 		summ += width;
 
@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function overflow(e) {
 		console.log( 'summ:', summ );
-		console.log( 'e.offsetWidth:', e.offsetWidth );
+		console.log( 'e.offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
