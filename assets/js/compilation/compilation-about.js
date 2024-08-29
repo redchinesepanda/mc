@@ -53,6 +53,21 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// заполнение ширины контейнера свайпером старт new
 	let summ = 0;
 
+	function overflow(e) {
+		console.log( 'summ:', summ );
+		console.log( 'e.offsetWidth:', e.offsetWidth );
+		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
+	} 
+	
+	function defineOverflow( elem ) {
+		if ( !elem ) {
+            return;
+        };
+
+		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
+	
+	};
+
 	function calcWidth (elem) {
 		if ( !elem ) {
             return;
@@ -69,6 +84,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		summ += width;
 
+		defineOverflow( document.querySelector( selectors.stringSwiper ) );
+
 		// return result;
 	};
 
@@ -76,22 +93,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
-	function overflow(e) {
-		console.log( 'summ:', summ );
-		console.log( 'e.offsetWidth:', e.offsetWidth );
-		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-	} 
-	
-	function defineOverflow( elem ) {
-		if ( !elem ) {
-            return;
-        };
-
-		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
-	
-	};
-
-	defineOverflow( document.querySelector( selectors.stringSwiper ) );
+	// defineOverflow( document.querySelector( selectors.stringSwiper ) );
 
 	// заполнение ширины контейнера свайпером конец new
 
