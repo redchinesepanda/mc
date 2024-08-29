@@ -63,11 +63,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
 		// let width = elem.clientWidth + withMarginElem;
-		let width = elem.clientWidth + withMarginElem + withBorderElem;
+		let fullWidthElem = elem.clientWidth + withMarginElem + withBorderElem;
 
-		console.log('e.offsetWidthElem:', width);
+		console.log('offsetWidthElem:', width);
 
-		summ += width;
+		summ += fullWidthElem;
 
 		// return result;
 	};
@@ -78,7 +78,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function overflow(e) {
 		console.log( 'summ:', summ );
-		console.log( 'e.offsetWidthContainer:', e.offsetWidth );
+		console.log( 'offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
