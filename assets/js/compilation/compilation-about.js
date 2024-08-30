@@ -73,12 +73,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// return result;
 	};
 
-	// console.log(summ);
-
-	/* function prepareCalc() {
-		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
-	} */
-
 	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 	function overflow(e) {
@@ -92,8 +86,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		// setTimeout( prepareCalc, 1000 );
-
 		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
@@ -106,7 +98,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
 	}
 
-	setTimeout( prepareCalc, 1000 );
+	setTimeout( prepareCalc, 500 );
 
 	// заполнение ширины контейнера свайпером конец new
 
