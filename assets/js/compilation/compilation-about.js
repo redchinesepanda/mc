@@ -75,7 +75,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	// console.log(summ);
 
-	document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 	function overflow(e) {
 		// console.log( 'summ:', summ );
@@ -87,6 +87,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		if ( !elem ) {
             return;
         };
+
+		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
 	
