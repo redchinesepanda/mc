@@ -30,6 +30,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 
 		swiper.on('init', function() {
+			console.log('slide init');
 			const selectors = {
 
 				stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
@@ -49,7 +50,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		
 				clamp : 'legal-clamp',
 			};
-			
+
 			let summ = 0;
 
 			function calcWidth (elem) {
