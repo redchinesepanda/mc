@@ -98,7 +98,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
 	}
 
-	setTimeout( prepareCalc, 2000 );
+	setTimeout( prepareCalc, 500 );
 
 	// заполнение ширины контейнера свайпером конец new
 
