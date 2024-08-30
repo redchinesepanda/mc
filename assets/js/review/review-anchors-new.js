@@ -9,7 +9,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			loop: false,
 			slidesPerView: 'auto',
 			spaceBetween: 8,
-			init: false,
 		});
 
 		swiper.on('slideChange', function () {
@@ -28,68 +27,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 			el.classList.add('legal-active-end');
 			el.classList.remove('legal-active-start');
-		});
-
-		swiper.on('init', function() {
-			console.log('slide init');
-			const selectors = {
-
-				stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
-		
-				swiperSlide : '.home .compilation-about-wrapper .swiper-slide',
-		
-				cutControl : '.compilation-about .legal-cut-control',
-		
-				paragraph : '.compilation-about .section-content-text:first-of-type',
-		
-			};
-		
-			const classes = {
-				active : 'legal-active',
-		
-				shortStr: 'legal-short-str',
-		
-				clamp : 'legal-clamp',
-			};
-
-			let summ = 0;
-
-			function calcWidth (elem) {
-				if ( !elem ) {
-					return;
-				};
-
-				let withMarginElem = 8;
-
-				let withBorderElem = 2;
-
-				let fullWidthElem = elem.clientWidth + withMarginElem + withBorderElem;
-
-				console.log('offsetWidthElem:', fullWidthElem);
-
-				summ += fullWidthElem;
-
-			};
-
-			function overflow(e) {
-				console.log( 'summ:', summ );
-				console.log( 'offsetWidthContainer:', e.offsetWidth );
-				return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
-			} 
-			
-			function defineOverflow( elem ) {
-				if ( !elem ) {
-					return;
-				};
-
-				document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
-
-				return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
-			
-			};
-
-			defineOverflow( document.querySelector( selectors.stringSwiper ) );
-
 		});
 	});
 

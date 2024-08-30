@@ -61,19 +61,13 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		let withBorderElem = 2;
 
-		// let width = elem.offsetWidth + withMarginElem + withBorderElem;
-		// let width = elem.clientWidth + withMarginElem;
+		// let width = elem.offsetWidth + withMarginElem;
 		let fullWidthElem = elem.clientWidth + withMarginElem + withBorderElem;
-		// let fullWidthElem = elem.scrollWidth + withMarginElem + withBorderElem;
 
 		console.log('offsetWidthElem:', fullWidthElem);
 
 		summ += fullWidthElem;
-
-		// return result;
 	};
-
-	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 	function overflow(e) {
 		console.log( 'summ:', summ );
@@ -98,7 +92,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
 	}
 
-	// setTimeout( prepareCalc, 500 );
+	setTimeout( prepareCalc, 500 );
 
 	// заполнение ширины контейнера свайпером конец new
 
