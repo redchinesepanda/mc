@@ -66,7 +66,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		let fullWidthElem = elem.clientWidth + withMarginElem + withBorderElem;
 		// let fullWidthElem = elem.scrollWidth + withMarginElem + withBorderElem;
 
-		// console.log('offsetWidthElem:', fullWidthElem);
+		console.log('offsetWidthElem:', fullWidthElem);
 
 		summ += fullWidthElem;
 
@@ -78,8 +78,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 	function overflow(e) {
-		// console.log( 'summ:', summ );
-		// console.log( 'offsetWidthContainer:', e.offsetWidth );
+		console.log( 'summ:', summ );
+		console.log( 'offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
