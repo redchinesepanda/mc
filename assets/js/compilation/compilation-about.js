@@ -64,14 +64,14 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		// let width = elem.offsetWidth + withMarginElem;
 		let fullWidthElem = elem.clientWidth + withMarginElem + withBorderElem;
 
-		// console.log('offsetWidthElem:', fullWidthElem);
+		console.log('offsetWidthElem:', fullWidthElem);
 
 		summ += fullWidthElem;
 	};
 
 	function overflow(e) {
-		// console.log( 'summ:', summ );
-		// console.log( 'offsetWidthContainer:', e.offsetWidth );
+		console.log( 'summ:', summ );
+		console.log( 'offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
