@@ -75,6 +75,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	// console.log(summ);
 
+	function prepareCalc() {
+		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+	}
+
 	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 	function overflow(e) {
@@ -88,7 +92,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
             return;
         };
 
-		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+		setTimeout( prepareCalc, 1000 );
+
+		// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
 		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
 	
