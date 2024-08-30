@@ -30,6 +30,26 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		});
 
 		swiper.on('init', function() {
+			const selectors = {
+
+				stringSwiper : '.home .compilation-about-wrapper .swiper-wrapper',
+		
+				swiperSlide : '.home .compilation-about-wrapper .swiper-slide',
+		
+				cutControl : '.compilation-about .legal-cut-control',
+		
+				paragraph : '.compilation-about .section-content-text:first-of-type',
+		
+			};
+		
+			const classes = {
+				active : 'legal-active',
+		
+				shortStr: 'legal-short-str',
+		
+				clamp : 'legal-clamp',
+			};
+			
 			let summ = 0;
 
 			function calcWidth (elem) {
