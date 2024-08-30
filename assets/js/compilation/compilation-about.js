@@ -77,6 +77,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	function prepareCalc() {
 		document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
+
+		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
 	}
 
 	// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
@@ -96,7 +98,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 		// document.querySelectorAll( selectors.swiperSlide ).forEach( calcWidth );
 
-		return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
+		// return overflow(elem) === false ? elem.parentNode.classList.add( classes.shortStr ) : false;
 	
 	};
 
