@@ -95,6 +95,8 @@ class NotFoundMain
 			if ( ! empty( $post_uri ) )
 			{
 				global $wpdb;
+
+				$blog_path = MultisiteBlog::get_path();
 	
 				$path = MultisiteBlog::get_path();
 	
@@ -113,6 +115,8 @@ class NotFoundMain
 	
 				LegalDebug::debug( [
 					'NotFoundMain' => 'get_redirection_items_db-1',
+
+					'blog_path' => $blog_path,
 	
 					'path' => $path,
 
