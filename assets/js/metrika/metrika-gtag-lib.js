@@ -16,14 +16,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
 	}
 
-	// if ( MetrikaLib.checkCookie() )
-	// {
-	// 	// gtagLibInit();
+	if ( MetrikaLib.checkCookie() )
+	{
+		// gtagLibInit();
 
-	// 	MetrikaLib.userInit( gtagLibInit );
-	// }
-
-	MetrikaLib.userInit( gtagLibInit );
+		MetrikaLib.userInit( gtagLibInit );
+	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagLibInit, { once: true } );
 	
