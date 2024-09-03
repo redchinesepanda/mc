@@ -15,11 +15,52 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		gtag('config', 'UA-224707123-1');
 	}
 
+	function gtagRunInitNoCookieUserId()
+	{
+		let userId = 'legal_user_id' + Date.now();
+
+		console.log( 'userId:');
+		
+		console.log( userId );
+
+		gtag(
+			'config',
+			
+			'{{ gaData.id }}',
+			
+			{
+				'user_id': userId
+			}
+		);
+
+		gtag(
+			'consent',
+			
+			'default',
+			
+			{
+				'ad_storage': 'denied',
+
+				'ad_user_data': 'granted',
+
+				'ad_personalization': 'granted',
+
+				'analytics_storage': 'denied'
+			}
+		);
+	}
+
 	if ( MetrikaLib.checkCookie() )
 	{
 		// gtagRunInit();
 
 		MetrikaLib.userInit( gtagRunInit );
+	}
+	else
+	{
+		MetrikaLib.userInit( gtagRunInit );
+		
+		MetrikaLib.userInit( gtagRunInitNoCookieUserId );
 	}
 
 	document.addEventListener( LegalCookieOops.oopsCookieHandler, gtagRunInit, { once: true } );
