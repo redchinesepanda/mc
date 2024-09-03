@@ -116,7 +116,7 @@ class MultisiteMain
 
 			// MultisiteAttachment::register_functions_mainsite();
 
-			// MultisiteSiteOptions::register_functions_mainsite();
+			MultisiteSiteOptions::register_functions_mainsite();
 		}
 		// else
 		// {
