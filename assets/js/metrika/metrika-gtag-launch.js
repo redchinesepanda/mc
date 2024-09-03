@@ -17,10 +17,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function gtagRunInitNoCookieUserId()
 	{
+		gtagRunInit();
+
 		let userId = 'legal_user_id' + Date.now();
 
 		console.log( 'userId:');
-		
+
 		console.log( userId );
 
 		gtag(
@@ -58,8 +60,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 	else
 	{
-		MetrikaLib.userInit( gtagRunInit );
-		
 		MetrikaLib.userInit( gtagRunInitNoCookieUserId );
 	}
 
