@@ -17,7 +17,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function gtagRunInitNoCookieUserId()
 	{
-		gtagRunInit();
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-224707123-1');
 
 		let userId = 'legal_user_id' + Date.now();
 
