@@ -72,10 +72,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		{
 			// if ( LegalCookie.getCookie( cookies.oopsCookie ) === cookieValue.accepted )
 			
-			if ( MetrikaLib.checkCookie() )
-			{
-				LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
-			}
+			// if ( MetrikaLib.checkCookie() )
+			// {
+			// 	LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
+			// }
+
+			LegalCookie.setCookie( event.currentTarget.dataset.cookie, cookieValue.accepted, LegalCookie.options );
 		}
 		else
 		{
