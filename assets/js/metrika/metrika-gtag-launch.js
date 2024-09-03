@@ -25,31 +25,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		console.log( userId );
 
-		gtag(
-			'config',
-			
-			'{{ gaData.id }}',
-			
-			{
-				'user_id': userId
-			}
-		);
-
-		gtag(
-			'consent',
-			
-			'default',
-			
-			{
-				'ad_storage': 'denied',
-
-				'ad_user_data': 'granted',
-
-				'ad_personalization': 'granted',
-
-				'analytics_storage': 'denied'
-			}
-		);
+		gtag('config', '{{ gaData.id }}', { 'user_id': userId });
 	}
 
 	if ( MetrikaLib.checkCookie() )
