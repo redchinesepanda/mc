@@ -14,8 +14,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	function gtagLibInit()
 	{
 		appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
-
-		console.log( 'gtagLibInit' );
 	}
 
 	// if ( MetrikaLib.checkCookie() )
