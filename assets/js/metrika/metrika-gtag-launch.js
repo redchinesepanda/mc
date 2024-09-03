@@ -21,8 +21,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-224707123-1');
 		gtag('config', '{{ gaData.id }}', { 'user_id': userId });
 		gtag('consent', 'default', {
             'ad_storage': 'denied',
@@ -30,6 +28,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
             'ad_personalization': 'granted',
             'analytics_storage': 'denied'
         });
+		gtag('js', new Date());
+		gtag('config', 'UA-224707123-1');
 	}
 
 	if ( MetrikaLib.checkCookie() )
