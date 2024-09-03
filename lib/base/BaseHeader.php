@@ -134,9 +134,9 @@ class BaseHeader
 			// return $site_url . "/favicon.svg";
 		}
 		
-		// return LegalMain::LEGAL_ROOT . "/favicon.ico";
+		return LegalMain::LEGAL_ROOT . "/favicon.ico";
 		
-		return get_site_url() . "/favicon.ico";
+		// return get_site_url() . "/favicon.ico";
 		
 		// return LegalMain::LEGAL_ROOT . "/favicon.svg";
 	}
