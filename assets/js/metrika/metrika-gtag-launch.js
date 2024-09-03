@@ -15,9 +15,23 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		gtag('config', 'UA-224707123-1');
 	}
 
+	function getUserId()
+	{
+		let userId = localStorage.getItem( 'userId' ) ?? '';
+
+		if ( ! userId )
+		{
+			userId = 'legal_user_id' + Date.now();
+	
+			localStorage.setItem( 'userId', userId );
+		}
+	}
+
 	function gtagRunInitNoCookieUserId()
 	{
-		let userId = 'legal_user_id' + Date.now();
+		// let userId = 'legal_user_id' + Date.now();
+		
+		let userId = getUserId();
 
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
