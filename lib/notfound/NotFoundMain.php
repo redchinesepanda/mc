@@ -113,8 +113,6 @@ class NotFoundMain
 	
 				LegalDebug::debug( [
 					'NotFoundMain' => 'get_redirection_items_db-1',
-
-					'blog_path' => $blog_path,
 	
 					'path' => $path,
 
