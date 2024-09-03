@@ -72,14 +72,14 @@ class NotFoundMain
 			FROM
 				{$wpdb->prefix}redirection_items
 			WHERE
-				{$wpdb->prefix}redirection_items.url LIKE %s
+				{$wpdb->prefix}redirection_items.url = %s
 				AND {$wpdb->prefix}redirection_items.status = 'enabled'
 				AND {$wpdb->prefix}redirection_items.action_type = 'error'
 				AND {$wpdb->prefix}redirection_items.action_code = '410'
 			",
 
 			[
-				'%' . $wpdb->esc_like( $url ) . '%',
+				$wpdb->esc_like( $url ),
 			]
 		); 
 	}
@@ -95,8 +95,6 @@ class NotFoundMain
 			if ( ! empty( $post_uri ) )
 			{
 				global $wpdb;
-
-				$blog_path = MultisiteBlog::get_path();
 	
 				$path = MultisiteBlog::get_path();
 	
