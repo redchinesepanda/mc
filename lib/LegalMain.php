@@ -38,6 +38,8 @@ require_once( 'multisite/MultisiteMain.php' );
 
 // require_once( 'wp-optimize/WPOptimizeMain.php' );
 
+require_once( 'wp-optimize/WPRocketMain.php' );
+
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
 define( 'LEGAL_URL', get_stylesheet_directory_uri() );
@@ -89,6 +91,8 @@ class LegalMain
 		MultisiteMain::register_functions();
 
 		// WPOptimizeMain::register_functions();
+
+		WPRocketMain::register_functions();
 
 		if ( self::check_admin() )
 		{
