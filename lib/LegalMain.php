@@ -38,7 +38,7 @@ require_once( 'multisite/MultisiteMain.php' );
 
 // require_once( 'wp-optimize/WPOptimizeMain.php' );
 
-require_once( 'wp-optimize/WPRocketMain.php' );
+require_once( 'wp-rocket/WPRocketMain.php' );
 
 define( 'LEGAL_PATH', get_stylesheet_directory() );
 
