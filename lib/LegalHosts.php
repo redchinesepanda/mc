@@ -34,6 +34,8 @@ class LegalHosts
 		'cloudways-ua' => 'match-center-ua.com',
 
 		'cloudways-kz' => 'match-center-kz.com',
+
+		'cloudways-in' => 'match-center-in.com',
 	];
 
 	const HOST_DEBUG = [

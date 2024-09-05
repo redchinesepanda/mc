@@ -178,7 +178,7 @@ class WPMLMain
 
         'cs_CZ', 'pl_PL', 'uk_UA', 'ru_UA', 'de_DE', 'es_AR',
 
-        'ru_KZ', 'kk_KZ',
+        'ru_KZ', 'kk_KZ', 'en_IN',
     ];
 
     public static function exclude( $args , $exclude = [] )
