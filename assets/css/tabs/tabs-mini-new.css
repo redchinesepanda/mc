@@ -237,6 +237,10 @@
     color: var( --Base-base-01 );
 }
 
+.legal-tabs-mini .mini-item-button-afillate[ href='' ] {
+    pointer-events: none;
+}
+
 .legal-tabs-mini .tabs-mini-title {
     font-size: 20px;
     font-weight: 600;
