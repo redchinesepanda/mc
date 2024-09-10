@@ -61,19 +61,19 @@ class ReviewAnchors
     ];
 
     const JS_NEW = [
-        // 'legal-swiper-lib' => [
-        //     // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
-            
-        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
-
-        //     'ver' => '1.0.0',
-        // ],
-        
         'legal-swiper-lib' => [
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
+            // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+            
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
             'ver' => '1.0.0',
         ],
+        
+        // 'legal-swiper-lib' => [
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
+
+        //     'ver' => '1.0.0',
+        // ],
 
         'review-anchors-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
@@ -84,18 +84,18 @@ class ReviewAnchors
         ],
     ];
 
-    public static function get_localize()
-	{
-		return [
-			'legal-swiper-lib' => [
-				'object_name' => 'mcSwiperLib',
+    // public static function get_localize()
+	// {
+	// 	return [
+	// 		'legal-swiper-lib' => [
+	// 			'object_name' => 'mcSwiperLib',
 	
-				'data' => [
-					'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
-				],
-			],
-		];
-	}
+	// 			'data' => [
+	// 				'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+	// 			],
+	// 		],
+	// 	];
+	// }
 
 
   /*   public static function register_script()
@@ -109,7 +109,7 @@ class ReviewAnchors
 		{
 			ReviewMain::register_script( self::JS_NEW );
 
-            ToolEnqueue::localize_script( self::get_localize() );
+            // ToolEnqueue::localize_script( self::get_localize() );
 		}
 		else
 		{
