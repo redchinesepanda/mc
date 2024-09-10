@@ -2,14 +2,14 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	// function appendScript( src )
-	// {
-	// 	let script = document.createElement( 'script' );
+	function appendScript( src )
+	{
+		let script = document.createElement( 'script' );
 
-	// 	script.src = src;
+		script.src = src;
 	
-	// 	document.head.appendChild( script );
-	// }
+		document.head.appendChild( script );
+	}
 
 	function swiperLibInit()
 	{
