@@ -84,18 +84,18 @@ class ReviewAnchors
         ],
     ];
 
-    // public static function get_localize()
-	// {
-	// 	return [
-	// 		'legal-swiper-lib' => [
-	// 			'object_name' => 'mcSwiperLib',
+    public static function get_localize()
+	{
+		return [
+			'legal-swiper-lib' => [
+				'object_name' => 'mcSwiperLib',
 	
-	// 			'data' => [
-	// 				'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
-	// 			],
-	// 		],
-	// 	];
-	// }
+				'data' => [
+					'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+				],
+			],
+		];
+	}
 
 
   /*   public static function register_script()
@@ -109,7 +109,7 @@ class ReviewAnchors
 		{
 			ReviewMain::register_script( self::JS_NEW );
 
-            // ToolEnqueue::localize_script( self::get_localize() );
+            ToolEnqueue::localize_script( self::get_localize() );
 		}
 		else
 		{
