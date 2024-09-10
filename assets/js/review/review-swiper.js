@@ -6,6 +6,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		let script = document.createElement( 'script' );
 
+		script.type = 'text/javascript';
+
 		script.src = src;
 	
 		document.head.appendChild( script );
