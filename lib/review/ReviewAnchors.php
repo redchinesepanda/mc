@@ -61,19 +61,19 @@ class ReviewAnchors
     ];
 
     const JS_NEW = [
-        'legal-swiper-lib' => [
-            // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
-            
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
-
-            'ver' => '1.0.0',
-        ],
-        
         // 'legal-swiper-lib' => [
-        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
+        //     // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+            
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
 
         //     'ver' => '1.0.0',
         // ],
+        
+        'legal-swiper-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
+
+            'ver' => '1.0.0',
+        ],
 
         'review-anchors-new' => [
             'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-anchors-new.js',
