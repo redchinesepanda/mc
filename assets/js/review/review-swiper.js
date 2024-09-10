@@ -16,6 +16,10 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
 
 		appendScript( mcSwiperLib.src );
+
+		console.log( 'swiperLibInit' );
+
+		console.log( mcSwiperLib.src );
 	}
 
 	// if ( MetrikaLib.checkCookie() )
