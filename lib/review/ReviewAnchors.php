@@ -17,13 +17,15 @@ class ReviewAnchors
 			'ver' => '1.0.0',
 		],
 
-        /* подключение свайпера начало*/
+        // подключение свайпера начало
+        
         'review-swiper-new' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-swiper-new.css',
 
 			'ver' => '1.0.0',
 		],
-        /* подключение свайпера конец*/
+
+        // подключение свайпера конец
 
         'review-anchors-to-top' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-anchors-to-top.css',
@@ -59,10 +61,16 @@ class ReviewAnchors
     ];
 
     const JS_NEW = [
-        'legal-swiper-lib' => [
-            // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        // 'legal-swiper-lib' => [
+        //     // 'path' => 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
             
-            'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+        //     'path' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
+
+        //     'ver' => '1.0.0',
+        // ],
+        
+        'legal-swiper-lib' => [
+            'path' => LegalMain::LEGAL_URL . '/assets/js/review/review-swiper.js',
 
             'ver' => '1.0.0',
         ],
