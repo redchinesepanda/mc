@@ -2,44 +2,12 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
-	function swiperInit( el )
-	{
-		const swiper = new Swiper(el, {
-			loop: false,
-			slidesPerView: 'auto',
-			spaceBetween: 8,
-		});
+	// function swiperLibUserInit()
+	// {
+	// 	console.log( 'swiperLibUserInit' );
 
-		swiper.on('slideChange', function () {
-			// console.log('slide changed');
-		});
-
-		swiper.on('reachBeginning', function () {
-			// console.log('slide reachBeginning');
-
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
-		}); 
-
-		swiper.on('reachEnd', function () {
-			// console.log('slide reachEnd');
-
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
-		});
-	}
-
-	function swiperInitAll()
-	{
-		document.querySelectorAll( '.swiper' ).forEach( swiperInit );
-	}
-
-	function swiperLibUserInit()
-	{
-		console.log( 'swiperLibUserInit' );
-
-		MetrikaLib.userInit( swiperInitAll );
-	}
+	// 	MetrikaLib.userInit( swiperInitAll );
+	// }
 
 	function appendScript( src )
 	{
@@ -49,7 +17,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 		script.src = src;
 
-		script.onload = swiperLibUserInit;
+		// script.onload = swiperLibUserInit;s
 	
 		document.head.appendChild( script );
 	}
@@ -59,10 +27,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		// appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
 
 		appendScript( mcSwiperLib.src );
-
-		console.log( 'swiperLibInit' );
-
-		console.log( mcSwiperLib.src );
 	}
 
 	// if ( MetrikaLib.checkCookie() )
