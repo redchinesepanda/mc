@@ -31,39 +31,39 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	// 	});
 	// });
 
-	function swiperInit( el )
-	{
-		const swiper = new Swiper(el, {
-			loop: false,
-			slidesPerView: 'auto',
-			spaceBetween: 8,
-		});
+	// function swiperInit( el )
+	// {
+	// 	const swiper = new Swiper(el, {
+	// 		loop: false,
+	// 		slidesPerView: 'auto',
+	// 		spaceBetween: 8,
+	// 	});
 
-		swiper.on('slideChange', function () {
-			// console.log('slide changed');
-		});
+	// 	swiper.on('slideChange', function () {
+	// 		// console.log('slide changed');
+	// 	});
 
-		swiper.on('reachBeginning', function () {
-			// console.log('slide reachBeginning');
+	// 	swiper.on('reachBeginning', function () {
+	// 		// console.log('slide reachBeginning');
 
-			el.classList.add('legal-active-start');
-			el.classList.remove('legal-active-end');
-		}); 
+	// 		el.classList.add('legal-active-start');
+	// 		el.classList.remove('legal-active-end');
+	// 	}); 
 
-		swiper.on('reachEnd', function () {
-			// console.log('slide reachEnd');
+	// 	swiper.on('reachEnd', function () {
+	// 		// console.log('slide reachEnd');
 
-			el.classList.add('legal-active-end');
-			el.classList.remove('legal-active-start');
-		});
-	}
+	// 		el.classList.add('legal-active-end');
+	// 		el.classList.remove('legal-active-start');
+	// 	});
+	// }
 
-	function swiperInitAll()
-	{
-		document.querySelectorAll( '.swiper' ).forEach( swiperInit );
-	}
+	// function swiperInitAll()
+	// {
+	// 	document.querySelectorAll( '.swiper' ).forEach( swiperInit );
+	// }
 
-	MetrikaLib.userInit( swiperInitAll );
+	// MetrikaLib.userInit( swiperInitAll );
 
 	// swiper init end
 
