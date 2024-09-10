@@ -271,6 +271,10 @@
 	color: var(--Base-base-01);
 }
 
+.legal-bonus-list .about-get-button[ href="" ] {
+	pointer-events: none;
+}
+
 .legal-bonus-list .item-about-expired {
 	font-size: 12px;
 	line-height: 18px;
