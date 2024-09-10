@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	{
 		// appendScript( 'https://www.googletagmanager.com/gtag/js?id=UA-224707123-1' );
 
-		appendScript( '/assets/js/review/swiper-bundle.min.js' );
+		appendScript( '../assets/js/review/swiper-bundle.min.js' );
 	}
 
 	// if ( MetrikaLib.checkCookie() )
