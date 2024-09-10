@@ -88,7 +88,7 @@ class ReviewAnchors
 	{
 		return [
 			'legal-swiper-lib' => [
-				'object_name' => 'mc-swiper-lib',
+				'object_name' => 'mcSwiperLib',
 	
 				'data' => [
 					'src' => LegalMain::LEGAL_URL . '/assets/js/review/swiper-bundle.min.js',
