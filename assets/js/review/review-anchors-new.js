@@ -4,35 +4,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 {
 	// swiper init start
 
-	// document.querySelectorAll('.swiper').forEach(el => {
-	// 	/* --------------------Swiper-------------- */
-	// 	const swiper = new Swiper(el, {
-	// 		loop: false,
-	// 		slidesPerView: 'auto',
-	// 		spaceBetween: 8,
-	// 	});
-
-	// 	swiper.on('slideChange', function () {
-	// 		// console.log('slide changed');
-	// 	});
-
-	// 	swiper.on('reachBeginning', function () {
-	// 		// console.log('slide reachBeginning');
-
-	// 		el.classList.add('legal-active-start');
-	// 		el.classList.remove('legal-active-end');
-	// 	}); 
-
-	// 	swiper.on('reachEnd', function () {
-	// 		// console.log('slide reachEnd');
-
-	// 		el.classList.add('legal-active-end');
-	// 		el.classList.remove('legal-active-start');
-	// 	});
-	// });
-
-	function swiperInit( el )
-	{
+	document.querySelectorAll('.swiper').forEach(el => {
+		/* --------------------Swiper-------------- */
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
@@ -56,14 +29,41 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			el.classList.add('legal-active-end');
 			el.classList.remove('legal-active-start');
 		});
-	}
+	});
 
-	function swiperInitAll()
-	{
-		document.querySelectorAll( '.swiper' ).forEach( swiperInit );
-	}
+	// function swiperInit( el )
+	// {
+	// 	const swiper = new Swiper(el, {
+	// 		loop: false,
+	// 		slidesPerView: 'auto',
+	// 		spaceBetween: 8,
+	// 	});
 
-	MetrikaLib.userInit( swiperInitAll );
+	// 	swiper.on('slideChange', function () {
+	// 		// console.log('slide changed');
+	// 	});
+
+	// 	swiper.on('reachBeginning', function () {
+	// 		// console.log('slide reachBeginning');
+
+	// 		el.classList.add('legal-active-start');
+	// 		el.classList.remove('legal-active-end');
+	// 	}); 
+
+	// 	swiper.on('reachEnd', function () {
+	// 		// console.log('slide reachEnd');
+
+	// 		el.classList.add('legal-active-end');
+	// 		el.classList.remove('legal-active-start');
+	// 	});
+	// }
+
+	// function swiperInitAll()
+	// {
+	// 	document.querySelectorAll( '.swiper' ).forEach( swiperInit );
+	// }
+
+	// MetrikaLib.userInit( swiperInitAll );
 
 	// swiper init end
 
