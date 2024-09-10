@@ -106,8 +106,14 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		element.addEventListener( reviewGalleyOops.oopsOpen, oopsOpen, false );
 	}
 
-	document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
-	  
+	// document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
+
+	function oopsInit()
+	{
+		document.querySelectorAll( selectors.imagesetWrapper ).forEach( oops );
+	}
+
+	MetrikaLib.userInit( oopsInit );
 } );
 
 // review-gallery-swiper-js end

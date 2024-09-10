@@ -2,6 +2,7 @@
 
 document.addEventListener( 'DOMContentLoaded', function ()
 {
+	// swiper init start
 
 	// document.querySelectorAll('.swiper').forEach(el => {
 	// 	/* --------------------Swiper-------------- */
@@ -32,8 +33,6 @@ document.addEventListener( 'DOMContentLoaded', function ()
 
 	function swiperInit( el )
 	{
-		/* --------------------Swiper-------------- */
-		
 		const swiper = new Swiper(el, {
 			loop: false,
 			slidesPerView: 'auto',
@@ -65,6 +64,8 @@ document.addEventListener( 'DOMContentLoaded', function ()
 	}
 
 	MetrikaLib.userInit( swiperInitAll );
+
+	// swiper init end
 
 	const settings = {
 		behavior : {
