@@ -117,7 +117,34 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_private' ], 10, 3 );
     }
+
+	public static function filter_private( $items, $menu, $args )
+	{
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'filter_private-1',
+
+		// 	'items' => $items,
+
+        //     'menu' => $menu,
+
+        //     'args' => $args,
+		// ] );
+
+		foreach ( $items as $index => $menu_item )
+		{
+			// if ( ! is_user_logged_in () && 'private' == get_post_status ( $menu_item->object_id ) )
+			
+			if ( 'private' == get_post_status ( $menu_item->object_id ) )
+			{
+				unset ( $items[ $index ] );
+			}
+		}
+
+		return $items;
+	}
 
 	public static function get_favicon()
 	{
