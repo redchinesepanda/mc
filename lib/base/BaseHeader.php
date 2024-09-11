@@ -117,7 +117,24 @@ class BaseHeader
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
+
+		add_filter( 'wp_get_nav_menu_items', [ $handler, 'wp_kama_get_nav_menu_items_filter' ], 10, 3 );
     }
+
+	public static function wp_kama_get_nav_menu_items_filter( $items, $menu, $args )
+	{
+		LegalDebug::debug( [
+			'BaseHeader' => 'wp_kama_get_nav_menu_items_filter-1',
+
+			'items' => $items,
+
+            'menu' => $menu,
+
+            'args' => $args,
+		] );
+
+		return $items;
+	}
 
 	public static function get_favicon()
 	{
@@ -1227,7 +1244,7 @@ class BaseHeader
 	{
 		$menu_id_translated = BaseMain::get_menu_id( self::LOCATION );
 
-		$menu_items = wp_get_nav_menu_items( $menu_id_translated, [ 'post_status' => 'publish' ] );
+		$menu_items = wp_get_nav_menu_items( $menu_id_translated );
 
 		$items = [];
 
