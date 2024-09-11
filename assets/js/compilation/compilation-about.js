@@ -93,17 +93,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	}
 
 	//промис начало
-	let promise = new Promise( resolve => {
-		setTimeout(() => {
-			console.log('Промис подключен');
-			resolve();
-		}, 500 );
-	});
+	// let promise = new Promise( resolve => {
+	// 	setTimeout(() => {
+	// 		console.log('Промис подключен');
+	// 		resolve();
+	// 	}, 500 );
+	// });
 
-	promise.then( prepareCalc );
+	// promise.then( prepareCalc );
 	//промис конец
 
-	// setTimeout( prepareCalc, 500 );
+	setTimeout( prepareCalc, 500 );
 
 	// заполнение ширины контейнера свайпером конец new
 
