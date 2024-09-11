@@ -92,22 +92,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
 	}
 
-	//промис начало
-	// let promise = new Promise( resolve => {
-	// 	setTimeout(() => {
-	// 		console.log('Промис подключен');
-	// 		resolve();
-	// 	}, 500 );
-	// });
+	// setTimeout( prepareCalc, 500 );
 
-	// promise.then( prepareCalc );
-	//промис конец
+	let promise = new Promise( resolve => {
+		setTimeout(() => {
+			console.log('Промис подключен');
+			resolve();
+		}, 500 );
+	});
 
-	setTimeout( prepareCalc, 1000 );
-
+	promise.then( prepareCalc );
 	// заполнение ширины контейнера свайпером конец new
-
-
 
 	// сокращение текста до многоточия старт
 
