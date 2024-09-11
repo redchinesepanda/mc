@@ -103,7 +103,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	// promise.then( prepareCalc );
 	//промис конец
 
-	setTimeout( prepareCalc, 500 );
+	setTimeout( prepareCalc, 1000 );
 
 	// заполнение ширины контейнера свайпером конец new
 
