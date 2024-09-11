@@ -70,8 +70,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	};
 
 	function overflow(e) {
-		// console.log( 'summ:', summ );
-		// console.log( 'offsetWidthContainer:', e.offsetWidth );
+		console.log( 'summ:', summ );
+		console.log( 'offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
@@ -92,7 +92,18 @@ document.addEventListener( 'DOMContentLoaded', function () {
 		defineOverflow( document.querySelector( selectors.stringSwiper ) );
 	}
 
-	setTimeout( prepareCalc, 500 );
+	//промис начало
+	let promise = new Promise( resolve => {
+		setTimeout(() => {
+			console.log('Промис подключен');
+			resolve();
+		}, 500 );
+	});
+
+	promise.then( prepareCalc );
+	//промис конец
+
+	// setTimeout( prepareCalc, 500 );
 
 	// заполнение ширины контейнера свайпером конец new
 
