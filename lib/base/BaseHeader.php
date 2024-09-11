@@ -118,20 +118,20 @@ class BaseHeader
 
 		add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 
-		add_filter( 'wp_get_nav_menu_items', [ $handler, 'wp_kama_get_nav_menu_items_filter' ], 10, 3 );
+		add_filter( 'wp_get_nav_menu_items', [ $handler, 'filter_private' ], 10, 3 );
     }
 
-	public static function wp_kama_get_nav_menu_items_filter( $items, $menu, $args )
+	public static function filter_private( $items, $menu, $args )
 	{
-		LegalDebug::debug( [
-			'BaseHeader' => 'wp_kama_get_nav_menu_items_filter-1',
+		// LegalDebug::debug( [
+		// 	'BaseHeader' => 'filter_private-1',
 
-			'items' => $items,
+		// 	'items' => $items,
 
-            'menu' => $menu,
+        //     'menu' => $menu,
 
-            'args' => $args,
-		] );
+        //     'args' => $args,
+		// ] );
 
 		foreach ( $items as $index => $menu_item )
 		{
