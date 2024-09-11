@@ -133,6 +133,16 @@ class BaseHeader
             'args' => $args,
 		] );
 
+		foreach ( $items as $index => $menu_item )
+		{
+			// if ( ! is_user_logged_in () && 'private' == get_post_status ( $menu_item->object_id ) )
+			
+			if ( 'private' == get_post_status ( $menu_item->object_id ) )
+			{
+				unset ( $items[ $index ] );
+			}
+		}
+
 		return $items;
 	}
 
