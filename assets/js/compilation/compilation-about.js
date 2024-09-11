@@ -70,8 +70,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	};
 
 	function overflow(e) {
-		console.log( 'summ:', summ );
-		console.log( 'offsetWidthContainer:', e.offsetWidth );
+		// console.log( 'summ:', summ );
+		// console.log( 'offsetWidthContainer:', e.offsetWidth );
 		return summ > e.offsetWidth || e.scrollHeight > e.offsetHeight;
 	} 
 	
@@ -96,7 +96,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	let promise = new Promise( resolve => {
 		setTimeout(() => {
-			console.log('Промис подключен');
+			// console.log('Промис подключен');
 			resolve();
 		}, 500 );
 	});
