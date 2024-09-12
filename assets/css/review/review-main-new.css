@@ -67,9 +67,10 @@
     /* Review Position */
 
     .tcb-post-content h1,
-    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ) {
+    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
         /* padding-bottom: 24px; */
-        margin-bottom: var( --Spacing-07 );
+        margin-bottom: var( --Spacing-06 );
     }
 
     .tcb-post-content h1 {
@@ -84,11 +85,11 @@
         margin-top: var( --Spacing-12 );
     }
 
-    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-        /* padding-top: 14px; */
-        /* margin-top: 24px; */
+    /* .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        padding-top: 14px;
+        margin-top: 24px;
         margin-bottom: var( --Spacing-06 );
-    }
+    } */
 
     /* Width and Height */
 
