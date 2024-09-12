@@ -44,7 +44,7 @@
         line-height: 26px;
     }
     
-    .tcb-post-content h3:not( .legal-bonus .bonus-name) {
+    .tcb-post-content h3:not( .legal-bonus .bonus-name):not( .pros-cons-title ) {
         font-size: 20px;
         line-height: 24px;
     }
@@ -110,7 +110,7 @@
         line-height: 28px;
     }
     
-    .tcb-post-content h3:not( .legal-bonus .bonus-name) {
+    .tcb-post-content h3:not( .legal-bonus .bonus-name):not( .pros-cons-title ) {
         font-size: 22px;
         line-height: 26px;
     }
@@ -292,7 +292,7 @@
 
 .tcb-post-content h1,
 .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ),
-.tcb-post-content h3:not( .legal-bonus .bonus-name ),
+.tcb-post-content h3:not( .legal-bonus .bonus-name ):not( .pros-cons-title ),
 .tcb-post-content h4,
 .tcb-post-content h5 {
     font-family: var( --legal-font-primary );
