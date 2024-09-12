@@ -76,20 +76,24 @@
 /* Pros Cons Background */
 
 .legal-pros-cons .pros-cons-item {
-	border: 1px solid var(--Base-base-09);
-	border-radius: 21px;
+	/* border: 1px solid var(--Base-base-09); */
+	/* border-radius: 21px; */
+	border-radius: var( --Spacing-06 );
 }
 
 .legal-pros-cons .legal-pros {
-	background-color: var(--Primitives-green-40);
+	/* background-color: var(--Primitives-green-40); */
+	background-color: var( --Primitives-green-20 );
+	border: 1px solid var( --Status-Success );
 }
 
 .legal-pros-cons .legal-cons {
-	background-color: var(--Base-base-01);
+	/* background-color: var(--Base-base-01); */
+	background-color: var( --Base-base-02 );
 }
 
 .legal-pros-cons .pros-cons-title {
-	border-bottom: 1px solid var(--Base-base-09);
+	border-bottom: 1px solid var( --Base-base-09 );
 }
 
 /*.legal-pros-cons .legal-pros .pros-cons-title {

@@ -14,6 +14,7 @@
 	--small-width-desktop: 960px;
 	--base-width-tablet: 768px;
 	--base-width-mobile: 375px;
+	--Spacing-06: 1.125rem;
 
 	/* Gap, margin, padding */
 	--Spacing-12: 3rem;
@@ -36,6 +37,7 @@
 	--primary-blue-Primary-Blue: #06F;
 	--Primitives-blue-40: #D9F2FF;
 	--primary-blue-Blue-80: #4D80FF;
+	--Primitives-green-20: #F5FCF6;
 	--Primitives-green-40: #ECF9E2;
 	--Primitives-purple-40: #EBE8FC;
 	--Primitives-purple-50: #E3DEFF;
@@ -48,5 +50,6 @@
 	--white-60: rgba(255, 255, 255, 0.60);
 	--Gray-200: #EAECF0;
 	--Logo-background: #E3E3E3;
+	--Status-Success: #34C759;
 	--Status-Error: #FF3B30;
 }
