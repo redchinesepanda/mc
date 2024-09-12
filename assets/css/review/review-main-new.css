@@ -67,14 +67,14 @@
     /* Review Position */
 
     .tcb-post-content h1,
-    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
-    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+    .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ) {
         /* padding-bottom: 24px; */
         margin-bottom: var( --Spacing-07 );
     }
 
     .tcb-post-content h1 {
-        padding-top: 24px;
+        /* padding-top: 24px; */
+        margin-top: var( --Spacing-07 );
     }
 
     .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
@@ -84,10 +84,11 @@
         margin-top: var( --Spacing-12 );
     }
 
-    /* .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
-        padding-top: 14px;
-        margin-top: 24px;
-    } */
+    .tcb-post-content > h3:not( .legal-faq-title ):not( .bonus-name ) {
+        /* padding-top: 14px; */
+        /* margin-top: 24px; */
+        margin-bottom: var( --Spacing-06 );
+    }
 
     /* Width and Height */
 
@@ -159,9 +160,9 @@
     margin-top: 0px;
 }
 
-.tcb-post-content h1,
+/* .tcb-post-content h1,
 .tcb-post-content h2:not( .legal-tabs-info h2 ):not( .legal-compilation .compilation-title h2 ),
-.tcb-post-content h3,
+.tcb-post-content h3, */
 .tcb-post-content h4 {
     margin-bottom: 0px;
 }
@@ -170,8 +171,8 @@
     /* padding-top: 0px; */
     /* padding-bottom: 18px; */
     /* margin: 0px; */
-    margin-top: var( --Spacing-07 );
-    margin-bottom: var( --Spacing-07 );
+    margin-top: var( --Spacing-06 );
+    margin-bottom: var( --Spacing-06 );
 }
 
 .bonus-content > p:not( :last-child ):not( .legal-override ),
