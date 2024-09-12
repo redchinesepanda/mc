@@ -167,9 +167,11 @@
 }
 
 .tcb-post-content > p:not( .legal-override ):not( .legal-contextbox ):not( .legal-overview ):not( .legal-attention ):not( .legal-faq-title ):not( .legal-faq-description ):not( :first-child ) {
-    padding-top: 0px;
-    padding-bottom: 18px;
-    margin: 0px;
+    /* padding-top: 0px; */
+    /* padding-bottom: 18px; */
+    /* margin: 0px; */
+    margin-top: var( --Spacing-07 );
+    margin-bottom: var( --Spacing-07 );
 }
 
 .bonus-content > p:not( :last-child ):not( .legal-override ),
