@@ -15,6 +15,12 @@
 	--base-width-tablet: 768px;
 	--base-width-mobile: 375px;
 
+	/* Gap, margin, padding */
+	--Spacing-12: 48px;
+	--Spacing-09: 32px;
+	--Spacing-07: 24px;
+	--Spacing-06: 18px;
+
 	/* Background */
 	--Base-base-01: #FFF;
 	--Base-base-02: #F6F6F6;
