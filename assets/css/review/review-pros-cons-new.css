@@ -52,12 +52,13 @@
 	padding: 28px var( --Spacing-07 );
 }
 
-/* .legal-pros-cons .pros-cons-title {
-	padding-top: 24px;
-	padding-bottom: 24px;
-	margin-bottom: 24px;
-	margin-top: 0px; Правило для H3
-} */
+.legal-pros-cons .pros-cons-title {
+	/* padding-top: 24px; */
+	/* padding-bottom: 24px; */
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+}
 
 .legal-pros-cons ul {
 	padding-left: 0px; /*Временное правило*/
