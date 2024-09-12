@@ -29,8 +29,15 @@
 
 .legal-pros-cons {
 	display: flex;
-	column-gap: 18px;
+	/* column-gap: 18px; */
+	column-gap: var( --Spacing-06 );;
 	row-gap: 30px;
+}
+
+.legal-pros-cons .pros-cons-item {
+	display: flex;
+  	flex-direction: column;
+  	row-gap: var( --Spacing-07 );
 }
 
 /* Pros Cons Position */
@@ -41,15 +48,16 @@
 }
 
 .legal-pros-cons .pros-cons-item {
-	padding: 0px 18px 32px 18px;
+	/* padding: 0px 18px 32px 18px; */
+	padding: 28px var( --Spacing-07 );
 }
 
-.legal-pros-cons .pros-cons-title {
+/* .legal-pros-cons .pros-cons-title {
 	padding-top: 24px;
 	padding-bottom: 24px;
 	margin-bottom: 24px;
-	margin-top: 0px; /*Правило для H3*/
-}
+	margin-top: 0px; Правило для H3
+} */
 
 .legal-pros-cons ul {
 	padding-left: 0px; /*Временное правило*/
@@ -92,9 +100,9 @@
 	background-color: var( --Base-base-02 );
 }
 
-.legal-pros-cons .pros-cons-title {
+/* .legal-pros-cons .pros-cons-title {
 	border-bottom: 1px solid var( --Base-base-09 );
-}
+} */
 
 /*.legal-pros-cons .legal-pros .pros-cons-title {
 	background-image: url( '../../img/review/review-pros.svg' );

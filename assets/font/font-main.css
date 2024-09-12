@@ -14,9 +14,8 @@
 	--small-width-desktop: 960px;
 	--base-width-tablet: 768px;
 	--base-width-mobile: 375px;
-	--Spacing-06: 1.125rem;
 
-	/* Gap, margin, padding */
+	/* Gap, margin, padding, border-radius */
 	--Spacing-12: 3rem;
 	--Spacing-09: 2rem;
 	--Spacing-07: 1.5rem;
