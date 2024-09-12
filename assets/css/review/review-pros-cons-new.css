@@ -44,7 +44,8 @@
 
 .tcb-post-content > .legal-pros-cons {
 	/* padding-bottom: 30px; */
-	padding-bottom: 24px;
+	/* padding-bottom: 24px; */
+	margin-bottom: var( --Spacing-07 );
 }
 
 .legal-pros-cons .pros-cons-item {
