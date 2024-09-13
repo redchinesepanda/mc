@@ -2,6 +2,10 @@
 
 class ReviewBonus
 {
+	const TEXT = [
+		'read-more' => 'Read more',
+	];
+
 	const CSS = [
         'review-bonus' => [
 			'path' => LegalMain::LEGAL_URL . '/assets/css/review/review-bonus.css',
@@ -471,7 +475,7 @@ class ReviewBonus
 
 			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
 
-			'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+			'footer-tnc' => __( ReviewBonus::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		return [];
