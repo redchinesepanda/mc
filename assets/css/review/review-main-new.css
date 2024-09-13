@@ -35,29 +35,39 @@
     /* Review Typography */
 
     .tcb-post-content h1 {
-        font-size: 24px;
-        line-height: 28px;
+        /* font-size: 24px;
+        line-height: 28px; */
+        font-size: 1,5rem;
+        line-height: 1.75rem;
     }
     
     .tcb-post-content h2:not( .legal-tabs-info h2 ) {
-        font-size: 22px;
-        line-height: 26px;
+        /* font-size: 22px;
+        line-height: 26px; */
+        font-size: 1.375rem;
+        line-height: 1.625rem;
     }
     
     .tcb-post-content h3:not( .legal-bonus .bonus-name):not( .pros-cons-title ) {
-        font-size: 20px;
-        line-height: 24px;
+        /* font-size: 20px;
+        line-height: 24px; */
+        font-size: 1,25rem;
+        line-height: 1,5rem;
     }
 
     .tcb-post-content h4 {
-        font-size: 18px;
-        line-height: 22px;
+        /* font-size: 18px;
+        line-height: 22px; */
+        font-size: 1,125rem;
+        line-height: 1.375rem;
     }
 
     .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p)
     {
-        font-size: 14px;
-        line-height: 22px;
+       /*  font-size: 14px;
+        line-height: 22px; */
+        font-size: 0,875rem;
+        line-height: 1.375rem;
     }
     
 }
@@ -101,28 +111,38 @@
     /* Review Typography */
 
     .tcb-post-content h1 {
-        font-size: 32px;
-        line-height: 38px;
+        /* font-size: 32px;
+        line-height: 38px; */
+        font-size: 2rem;
+        line-height: 2.375rem;
     }
     
     .tcb-post-content h2:not( .legal-compilation .legal-tooltip h2 ):not( .legal-tabs-info h2 ) {
-        font-size: 26px;
-        line-height: 28px;
+        /* font-size: 26px;
+        line-height: 28px; */
+        font-size: 1.625rem;
+        line-height: 1.75rem;
     }
     
     .tcb-post-content h3:not( .legal-bonus .bonus-name):not( .pros-cons-title ) {
-        font-size: 22px;
-        line-height: 26px;
+        /* font-size: 22px;
+        line-height: 26px; */
+        font-size: 1.375rem;
+        line-height: 1.625rem;
     }
 
     .tcb-post-content h4 {
-        font-size: 20px;
-        line-height: 24px;
+        /* font-size: 20px;
+        line-height: 24px; */
+        font-size: 1,25rem;
+        line-height: 1,5rem;
     }
 
     .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p) {
-        font-size: 16px;
-        line-height: 26px;
+        /* font-size: 16px;
+        line-height: 26px; */
+        font-size: 1rem;
+        line-height: 1.625rem;
     }
     
 }
