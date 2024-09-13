@@ -112,7 +112,7 @@
 }
 
 .legal-billet .billet-body {
-	padding-top: 0,5rem;
+	padding-top: 0.5rem;
 	padding-right: var( --Spacing-07 );
 	padding-bottom: var( --Spacing-04 );
 	padding-left: var( --Spacing-07 );
