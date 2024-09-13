@@ -2,9 +2,6 @@
 
 class ReviewBonus
 {
-	const TEXT = [
-		'read-more' => 'Read more',
-	];
 
 	const CSS = [
         'review-bonus' => [
@@ -475,7 +472,7 @@ class ReviewBonus
 
 			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
 
-			'footer-tnc' => __( ReviewBonus::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+			'footer-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		return [];
