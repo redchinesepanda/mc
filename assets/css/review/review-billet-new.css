@@ -39,9 +39,9 @@
 {
 	/* Billet Position */
 
-	.legal-billet:not( .no-height ) {
+/* 	.legal-billet:not( .no-height ) {
 		min-height: 210px;
-	}
+	} */
 
 	.legal-billet .billet-get-link {
 		margin-left: auto;
@@ -112,7 +112,7 @@
 /* .legal-billet .billet-body, */
 .legal-billet .billet-review {
 	/* padding: 20px; */
-	padding: var(--Spacing-07, 24px);
+	padding: var( --Spacing-07 );
 }
 
 .legal-billet .billet-body {
