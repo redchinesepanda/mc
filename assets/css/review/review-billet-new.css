@@ -149,8 +149,10 @@
 }
 
 .legal-billet .review-image {
-	width: 70px;
-	height: 70px;
+	/* width: 70px;
+	height: 70px; */
+	width: var( --Spacing-12 );
+	height: var( --Spacing-12 );
 }
 
 .legal-billet .review-image img {
@@ -195,7 +197,8 @@
 }
 
 .legal-billet .billet-get-link {
-	background-color: var( --Base-base-09 );
+	/* background-color: var( --Base-base-09 ); */
+	background-color: var( --Base-purple_button );
 	border-radius: 60px;
 }
 
@@ -235,9 +238,11 @@
 }
 
 .legal-billet .review-title-link {
-	font-size: 14px;
+	/* font-size: 14px; */
+	font-size: 1.25rem;
 	font-weight: 400;
-	line-height: 20px;
+	line-height: 1.625rem;
+	/* line-height: 20px; */
 }
 
 .legal-billet .billet-title {
