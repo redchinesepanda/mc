@@ -275,7 +275,6 @@ class ReviewBonus
 
 					'id' => $id,
 
-					'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 				];
 			}
 
@@ -471,6 +470,8 @@ class ReviewBonus
 			],
 
 			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
+
+			'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		return [];
