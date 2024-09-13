@@ -238,17 +238,17 @@
 }
 
 .legal-billet .review-title-link {
-	/* font-size: 14px; */
-	font-size: 1.25rem;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 1.625rem;
-	/* line-height: 20px; */
+	line-height: 20px;
 }
 
 .legal-billet .billet-title {
-	font-size: 16px;
+	/* font-size: 16px; */
+	font-size: 1.25rem;
 	font-weight: 600;
-	line-height: 22px;
+	line-height: 1.625rem;
+	/* line-height: 22px; */
 }
 
 /* .legal-billet .billet-description {
