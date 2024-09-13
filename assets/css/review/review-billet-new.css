@@ -277,3 +277,20 @@
   	text-overflow: ellipsis;
   	white-space: nowrap;
 }
+
+.legal-billet .billet-description:not( .legal-active ) .billet-footer-control {
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+	white-space: nowrap;
+  	cursor: pointer;
+  	color: var( --Base-base-08 );
+}
+
+.legal-billet .billet-description:not( .legal-active ) .billet-footer-control:hover {
+	text-shadow: 0 0 0.35px var(--Base-base-09);
+}
+
+.legal-billet .billet-description:not( .legal-short-tnc ):not( .legal-active ) .billet-footer-control:before {
+    content: attr( data-default );
+}
