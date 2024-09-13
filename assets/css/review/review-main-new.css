@@ -196,8 +196,8 @@
     margin-bottom: var( --Spacing-06 );
 }
 
+/* .billet-description > p:not( :last-child ):not( .legal-override ), */
 .bonus-content > p:not( :last-child ):not( .legal-override ),
-.billet-description > p:not( :last-child ):not( .legal-override ),
 .billet .billet-description-full > p:not( :last-child ):not( .legal-override ),
 .legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     padding-bottom: 18px;
