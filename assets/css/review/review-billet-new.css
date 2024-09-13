@@ -261,11 +261,15 @@
 }
 
 .legal-billet .billet-description p {
-	color: var( --Base-base-05 );
 	font-style: normal;
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.125rem;
+}
+
+.legal-billet .billet-description p,
+.legal-billet .billet-description a {
+	color: var( --Base-base-05 );
 }
 
 .legal-billet .billet-description:not( .legal-active ) p {
