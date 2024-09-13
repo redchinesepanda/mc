@@ -471,8 +471,6 @@ class ReviewBonus
 			],
 
 			'content' => ( !empty( $args[ 'content' ] ) ? $args[ 'content' ] : '' ),
-
-			'footer-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
 		];
 
 		return [];
@@ -630,6 +628,8 @@ class ReviewBonus
 
 				'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
 			],
+
+			'footer-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
