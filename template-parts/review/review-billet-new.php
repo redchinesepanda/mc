@@ -23,6 +23,6 @@
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
-		<span class="billet-footer-control" data-default="footer-tnc"></span>
+		<span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ]; ?>"></span>
 	</div>
 <?php endif; ?>

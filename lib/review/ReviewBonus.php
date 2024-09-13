@@ -274,6 +274,8 @@ class ReviewBonus
 					'index' => $index,
 
 					'id' => $id,
+
+					'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 				];
 			}
 
