@@ -97,6 +97,10 @@
     pointer-events: none;
 }
 
+.legal-billet .billet-description {
+	display: flex;
+}
+
 /* Billet Position */
 
 .legal-billet {
@@ -212,7 +216,8 @@
 .legal-billet .billet-name,
 .legal-billet .review-title-link,
 .legal-billet .billet-get-link,
-.legal-billet .billet-title {
+.legal-billet .billet-title,
+.legal-billet .billet-description {
 	font-family: var( --legal-font-primary );
   	font-style: normal;
 }
@@ -241,10 +246,10 @@
 	line-height: 22px;
 }
 
-.legal-billet .billet-description {
+/* .legal-billet .billet-description {
 	color: rgba(10, 10, 10, 0.85);
 	text-align: justify;
-}
+} */
 
 .legal-billet .billet-get-link {
 	font-size: 14px;
@@ -253,4 +258,18 @@
 	color: var( --Base-base-01 );
 	text-decoration: none;
 	text-align: center;
-} 
+}
+
+.legal-billet .billet-description p {
+	color: var( --Base-base-05 );
+	font-style: normal;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1.125rem;
+}
+
+.legal-billet .billet-description:not( .legal-active ) p {
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
