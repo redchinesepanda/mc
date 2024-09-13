@@ -8,14 +8,14 @@
 				<span class="billet-name"><?php echo $args[ 'name' ]; ?></span>
 			<?php endif; ?>
 		</div>
+		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="billet-title">
+			<?php echo $args[ 'title' ][ 'text' ]; ?>
+		</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 		<a class="billet-get-link check-oops" href="<?php echo $args['get'][ 'href' ]; ?>" target="_blank" rel="nofollow">
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
 	<div class="billet-body">
-		<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="billet-title">
-			<?php echo $args[ 'title' ][ 'text' ]; ?>
-		</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 		<?php if( !empty( $args[ 'description' ] ) ) : ?>
 			<div class="billet-description">
 				<?php foreach ( $args[ 'description' ] as $item ) : ?>
@@ -23,5 +23,6 @@
 				<?php endforeach; ?>
 			</div>
 		<?php endif; ?>
+		<span class="billet-footer-control" data-default="footer-tnc"></span>
 	</div>
 <?php endif; ?>
