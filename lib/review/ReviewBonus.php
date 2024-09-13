@@ -629,7 +629,7 @@ class ReviewBonus
 				'text' => __( ReviewMain::TEXT[ 'get-bonus' ], ToolLoco::TEXTDOMAIN ),
 			],
 
-			'footer-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
+			'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 		];
 	}
 
