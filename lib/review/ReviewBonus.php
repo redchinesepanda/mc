@@ -43,6 +43,20 @@ class ReviewBonus
 		}
     }
 
+	const JS = [
+        'billet-bonus-tnc' => [
+
+			'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
     public static function register_inline_style()
     {
 		if ( !TemplateMain::check_new() )
@@ -69,6 +83,8 @@ class ReviewBonus
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_style' ] );
 	
 			add_action( 'wp_enqueue_scripts', [ $handler, 'register_inline_style' ] );
+
+			add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
 		}
 	}
 

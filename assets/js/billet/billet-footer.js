@@ -51,6 +51,12 @@ document.addEventListener( 'DOMContentLoaded', function ()
 			'string' : '.legal-billet-mega .billet-mega-tnc p:first-of-type',
 		},
 
+		{
+			'selector' : '.legal-billet .billet-description .billet-footer-control',
+
+			'string' : '.legal-billet .billet-description p:first-of-type',
+		},
+
 	];
 
 	// document.querySelectorAll( selectors.billetMegaControl ).forEach( setFooter );
