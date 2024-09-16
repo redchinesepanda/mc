@@ -18,6 +18,7 @@
 		min-height: 150px;
 	}
 
+	.legal-billet .billet-title,
 	.legal-billet .billet-get-link {
 		flex-basis: 100%;
 	}
