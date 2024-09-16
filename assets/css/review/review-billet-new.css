@@ -6,6 +6,15 @@
 		flex-direction: column;
 	}
 
+	.legal-billet .billet-review {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		/* column-gap: 16px; */
+		column-gap: 0.875rem;
+		row-gap: 18px;
+	}
+
 	/* Billet Position */
 
 	.legal-billet .billet-body {
@@ -62,8 +71,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	column-gap: 16px;
-	row-gap: 18px;
+	/* column-gap: 16px; */
+	column-gap: 0.875rem;
+	/* row-gap: 18px; */
 }
 
 .legal-billet .review-image {
