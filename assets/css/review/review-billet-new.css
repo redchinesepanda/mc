@@ -12,13 +12,23 @@
 		align-items: center;
 		/* column-gap: 16px; */
 		column-gap: 0.875rem;
-		row-gap: var( --Spacing-07 );
+		/* row-gap: var( --Spacing-07 ); */
 	}
 
 	/* Billet Position */
 
-	.legal-billet .billet-body {
+	/* .legal-billet .billet-body {
 		padding: 10px 15px;
+	} */
+
+	.legal-billet .billet-title {
+		margin-top: var( --Spacing-05 );
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+	}
+
+	.legal-billet .billet-get-link {
+		margin-top: 1.75rem;
 	}
 
 	/* Billet Width and Height */
@@ -214,7 +224,7 @@
 }
 
 .legal-billet .billet-get-link:hover {
-	background-color: var( --Base-base-07 );
+	background-color: var( --Base-purple_button_hover );
 }
 
 /* Billet Typography */
