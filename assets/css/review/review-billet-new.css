@@ -17,7 +17,7 @@
 
 	/* Billet Position */
 
-	/* .legal-billet .billet-body {
+	/* .legal-billet .billet-footer {
 		padding: 10px 15px;
 	} */
 
@@ -101,7 +101,7 @@
 	flex-wrap: wrap;
 }
 
-.legal-billet .billet-body {
+.legal-billet .billet-footer {
 	display: flex;
 	flex-direction: column;
 }
@@ -134,13 +134,13 @@
 	margin-bottom: var( --Spacing-07 );
 }
 
-/* .legal-billet .billet-body, */
+/* .legal-billet .billet-footer, */
 .legal-billet .billet-review {
 	/* padding: 20px; */
 	padding: var( --Spacing-07 );
 }
 
-.legal-billet .billet-body {
+.legal-billet .billet-footer {
 	padding-top: 0.5rem;
 	padding-right: var( --Spacing-07 );
 	padding-bottom: var( --Spacing-04 );
@@ -185,7 +185,7 @@
 	height: auto;
 }
 
-.legal-billet .billet-body {
+.legal-billet .billet-footer {
 	width: 100%;
 	box-sizing: border-box;
 }

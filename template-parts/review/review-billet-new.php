@@ -16,7 +16,7 @@
 		</a>
 	</div>
 	<?php if( !empty( $args[ 'description' ] ) ) : ?>
-		<div class="billet-body">
+		<div class="billet-footer">
 			<div class="billet-description <?php echo $args[ 'tnc-class' ] ?>">
 				<?php foreach ( $args[ 'description' ] as $item ) : ?>
 					<?php echo $item; ?>
