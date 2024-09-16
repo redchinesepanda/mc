@@ -12,7 +12,7 @@
 		align-items: center;
 		/* column-gap: 16px; */
 		column-gap: 0.875rem;
-		row-gap: 18px;
+		row-gap: var( --Spacing-07 );
 	}
 
 	/* Billet Position */
