@@ -63,6 +63,10 @@
 		min-height: 210px;
 	} */
 
+	.legal-billet .billet-title {
+		margin-top: 0px;
+	}
+
 	.legal-billet .billet-get-link {
 		margin-left: auto;
 	}
@@ -148,7 +152,7 @@
 }
 
 .legal-billet .billet-title {
-	margin-top: 0px;
+	/* margin-top: 0px; */
 	margin-bottom: 0px;
 	/* padding-bottom: 8px; */
 }
