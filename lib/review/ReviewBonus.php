@@ -698,7 +698,7 @@ class ReviewBonus
 					],
 
 					[
-						'title' => 'Billet Description',
+						'title' => 'Billet Tnc Description',
 						
 						'selector' => 'p,ul,ol',
 
