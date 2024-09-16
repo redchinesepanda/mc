@@ -15,10 +15,10 @@
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
-	<?php if( !empty( $args[ 'description' ] ) ) : ?>
+	<?php if( !empty( $args[ 'tnc-description' ] ) ) : ?>
 		<div class="billet-footer">
-			<div class="billet-description <?php echo $args[ 'tnc-class' ] ?>">
-				<?php foreach ( $args[ 'description' ] as $item ) : ?>
+			<div class="billet-tnc-description <?php echo $args[ 'tnc-class' ] ?>">
+				<?php foreach ( $args[ 'tnc-description' ] as $item ) : ?>
 					<?php echo $item; ?>
 				<?php endforeach; ?>
 				<span class="billet-footer-control" data-default="<?php echo $args[ 'footer-tnc' ]; ?>"></span>

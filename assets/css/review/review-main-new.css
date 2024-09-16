@@ -62,7 +62,7 @@
         line-height: 1.375rem;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-description p)
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p)
     {
        /*  font-size: 14px;
         line-height: 22px; */
@@ -138,7 +138,7 @@
         line-height: 1,5rem;
     }
 
-    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-description p) {
+    .tcb-post-content p:not( .legal-override ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-license ):not( .legal-compilation .legal-tooltip p ):not( .legal-compilation .compilation-attention.legal-default p ):not( .tcb-post-content table p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p) {
         /* font-size: 16px;
         line-height: 26px; */
         font-size: 1rem;
@@ -196,16 +196,16 @@
     margin-bottom: var( --Spacing-06 );
 }
 
-/* .billet-description > p:not( :last-child ):not( .legal-override ), */
+/* .billet-tnc-description > p:not( :last-child ):not( .legal-override ), */
 .bonus-content > p:not( :last-child ):not( .legal-override ),
-.billet .billet-description-full > p:not( :last-child ):not( .legal-override ),
+.billet .billet-tnc-description-full > p:not( :last-child ):not( .legal-override ),
 .legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     padding-bottom: 18px;
 }
 
 .bonus-content > p,
-.billet-description > p,
-.billet .billet-description-full > p,
+.billet-tnc-description > p,
+.billet .billet-tnc-description-full > p,
 .legal-review-page .tcb-post-content > p:not( .legal-overview ):first-child {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -320,7 +320,7 @@
     font-weight: 700;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-description p),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p),
 .tcb-post-content .legal-attention,
 .tcb-post-content .legal-attention a
 {
@@ -329,16 +329,16 @@
     font-weight: 400;
 }
 
-.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-description p),
+.tcb-post-content p:not( .legal-override ):not( .legal-attention ):not( .billet-title ):not( .legal-faq-title ):not( .legal-faq-description ):not( .legal-compilation .compilation-attention.legal-default p ):not( .wp-polls p ):not( .billet-item .billet-footer p ):not( .legal-billet-mega .billet-mega-tnc p):not( .legal-billet .billet-tnc-description p),
 .tcb-post-content .legal-attention {
     color: var( --Base-base-09 );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):not( .legal-billet .billet-description a) {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):not( .legal-billet .billet-tnc-description a) {
     color: var( --Base-link );
 }
 
-.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):not( .legal-billet .billet-description a):hover {
+.tcb-post-content a:not( [class] ):not( .compilation-link a ):not( .legal-billet-mega.legal-horizontal .billet-mega-content a ):not( .legal-sitemap a ):not( .compilation-attention.legal-default a ):not( .wp-polls a ):not( .legal-billet .billet-tnc-description a):hover {
     color: var( --Base-link-hover );
 }
 

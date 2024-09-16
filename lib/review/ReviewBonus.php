@@ -101,7 +101,7 @@ class ReviewBonus
 
 		'title' => 'legal-bonus-title',
 
-		'description' => 'legal-bonus-description',
+		'tnc-description' => 'legal-bonus-description',
 
 		'content' => 'legal-bonus-content',
 
@@ -198,7 +198,7 @@ class ReviewBonus
 		return [
 			'title' => in_array( self::BONUS_CLASS[ 'title' ], $class ),
 
-			'description' => in_array( self::BONUS_CLASS[ 'description' ], $class ),
+			'tnc-description' => in_array( self::BONUS_CLASS[ 'tnc-description' ], $class ),
 
 			'content' => in_array( self::BONUS_CLASS[ 'content' ], $class ),
 
@@ -210,11 +210,11 @@ class ReviewBonus
 	{
 		$title_title = $current[ 'title' ] && $next[ 'title' ];
 
-		$description_title = $current[ 'description' ] && $next[ 'title' ];
+		$description_title = $current[ 'tnc-description' ] && $next[ 'title' ];
 
 		$content_title = $current[ 'content' ] && $next[ 'title' ];
 
-		$last = !$next[ 'title' ] && !$next[ 'description' ] && !$next[ 'content' ];
+		$last = !$next[ 'title' ] && !$next[ 'tnc-description' ] && !$next[ 'content' ];
 		
 		return $title_title || $description_title || $content_title || $last; 
 	}
@@ -295,11 +295,11 @@ class ReviewBonus
 				];
 			}
 
-			if ( $permission_node[ 'description' ] )
+			if ( $permission_node[ 'tnc-description' ] )
 			{
 				$node->removeAttribute( 'class' );
 				
-				$args[ 'description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
+				$args[ 'tnc-description' ][] = ToolEncode::encode( $dom->saveHTML( $node ) );
 			}
 
 			if ( $permission_node[ 'content' ] )
@@ -515,7 +515,7 @@ class ReviewBonus
 
 		'bonus' => 'about-bonus',
 
-		'description' => 'about-description',
+		'tnc-description' => 'about-description',
 
 		'logo' => 'about-logo',
 
@@ -637,7 +637,7 @@ class ReviewBonus
 				'tag' => $args[ 'title' ][ 'tag' ],
 			],
 
-			'description' => ( !empty( $args[ 'description' ] ) ? $args[ 'description' ] : '' ),
+			'tnc-description' => ( !empty( $args[ 'tnc-description' ] ) ? $args[ 'tnc-description' ] : '' ),
 
 			'get' => [
 				'href' => self::check_url_afillate( $id ),
@@ -702,7 +702,7 @@ class ReviewBonus
 						
 						'selector' => 'p,ul,ol',
 
-						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'description' ],
+						'classes' => self::BONUS_CLASS[ 'billet' ] . ' ' . self::BONUS_CLASS[ 'tnc-description' ],
 					],
 
 					[

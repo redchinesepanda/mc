@@ -122,7 +122,7 @@
     pointer-events: none;
 }
 
-.legal-billet .billet-description {
+.legal-billet .billet-tnc-description {
 	display: flex;
 }
 
@@ -245,7 +245,7 @@
 .legal-billet .review-title-link,
 .legal-billet .billet-get-link,
 .legal-billet .billet-title,
-.legal-billet .billet-description {
+.legal-billet .billet-tnc-description {
 	font-family: var( --legal-font-primary );
   	font-style: normal;
 }
@@ -276,7 +276,7 @@
 	/* line-height: 22px; */
 }
 
-/* .legal-billet .billet-description {
+/* .legal-billet .billet-tnc-description {
 	color: rgba(10, 10, 10, 0.85);
 	text-align: justify;
 } */
@@ -290,25 +290,25 @@
 	text-align: center;
 }
 
-.legal-billet .billet-description p {
+.legal-billet .billet-tnc-description p {
 	font-style: normal;
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.125rem;
 }
 
-.legal-billet .billet-description p,
-.legal-billet .billet-description a {
+.legal-billet .billet-tnc-description p,
+.legal-billet .billet-tnc-description a {
 	color: var( --Base-base-05 );
 }
 
-.legal-billet .billet-description:not( .legal-active ) p {
+.legal-billet .billet-tnc-description:not( .legal-active ) p {
 	overflow: hidden;
   	text-overflow: ellipsis;
   	white-space: nowrap;
 }
 
-.legal-billet .billet-description:not( .legal-active ) .billet-footer-control {
+.legal-billet .billet-tnc-description:not( .legal-active ) .billet-footer-control {
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.125rem;
@@ -317,10 +317,10 @@
   	color: var( --Base-base-08 );
 }
 
-.legal-billet .billet-description:not( .legal-active ) .billet-footer-control:hover {
+.legal-billet .billet-tnc-description:not( .legal-active ) .billet-footer-control:hover {
 	text-shadow: 0 0 0.35px var(--Base-base-09);
 }
 
-.legal-billet .billet-description:not( .legal-short-tnc ):not( .legal-active ) .billet-footer-control:before {
+.legal-billet .billet-tnc-description:not( .legal-short-tnc ):not( .legal-active ) .billet-footer-control:before {
     content: attr( data-default );
 }

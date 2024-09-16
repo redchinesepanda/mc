@@ -52,9 +52,9 @@ document.addEventListener( 'DOMContentLoaded', function ()
 		},
 
 		{
-			'selector' : '.legal-billet .billet-description .billet-footer-control',
+			'selector' : '.legal-billet .billet-tnc-description .billet-footer-control',
 
-			'string' : '.legal-billet .billet-description p:first-of-type',
+			'string' : '.legal-billet .billet-tnc-description p:first-of-type',
 		},
 
 	];
