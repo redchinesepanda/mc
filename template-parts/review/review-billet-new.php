@@ -15,7 +15,7 @@
 			<?php echo $args['get'][ 'text' ]; ?>
 		</a>
 	</div>
-	<div class="billet-body">
+	<div class="billet-body <?php echo $args[ 'tnc-class' ] ?>">
 		<?php if( !empty( $args[ 'description' ] ) ) : ?>
 			<div class="billet-description">
 				<?php foreach ( $args[ 'description' ] as $item ) : ?>

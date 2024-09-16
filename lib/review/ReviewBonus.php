@@ -646,6 +646,8 @@ class ReviewBonus
 			],
 
 			'footer-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
+
+			'tnc-class' => BilletBonus::get_tnc_class(),
 		];
 	}
 
