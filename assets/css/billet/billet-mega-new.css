@@ -203,6 +203,7 @@
 .legal-billet-mega h3,
 .legal-billet-mega h4 {
     margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .legal-billet-mega:not( .legal-horizontal ) .billet-mega-content .legal-list-pros,
