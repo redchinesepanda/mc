@@ -242,9 +242,9 @@ class ReviewListHowTo
 						'classes' => implode( ' ', [
                             self::CLASSES[ 'default' ],
 							
-                            self::CLASSES[ 'unordered' ]
+                            self::CLASSES[ 'unordered' ],
                             
-                            self::CLASSES[ 'title' ]
+                            self::CLASSES[ 'title' ],
                         ] ),
 					],
 
@@ -256,7 +256,7 @@ class ReviewListHowTo
 						'classes' => implode( ' ', [
                             self::CLASSES[ 'default' ],
                             
-                            self::CLASSES[ 'content' ]
+                            self::CLASSES[ 'content' ],
                         ] ),
 					],
 				],
