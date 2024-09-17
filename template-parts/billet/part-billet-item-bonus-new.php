@@ -12,11 +12,11 @@
 			<div class="legal-compilation-peculiarity-text"><?php echo $args[ 'description' ]; ?></div>
 		<?php endif; ?>
 	</div>
-	<?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
+	<!-- <?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
 		<div class="legal-compilation-review">
 			<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
 		</div>
-	<?php endif; ?>
+	<?php endif; ?> -->
 	<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'button' ][ 'nofollow' ] ); ?> class="legal-compilation-button check-oops"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 </div>
 <?php if ( !empty( $args[ 'description-full' ] ) ) : ?>
