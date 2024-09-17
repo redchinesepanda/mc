@@ -221,7 +221,9 @@
 .compilation-bonus-main .legal-compilation-peculiarity-bonus,
 .compilation-bonus-main .peculiarity-bonus-link,
 .compilation-bonus-main .legal-compilation-peculiarity-text,
-.compilation-bonus-main .legal-compilation-button {
+.compilation-bonus-main .legal-compilation-button,
+.legal-compilation-bonus .footer-tnc-info,
+.legal-compilation-bonus .footer-tnc-link {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
