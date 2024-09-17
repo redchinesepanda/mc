@@ -86,7 +86,7 @@
 	flex-wrap: wrap;
 	align-items: center;
 	/* column-gap: 16px; */
-	column-gap: 0.875rem;
+	column-gap: var( --Spacing-05 );
 	/* row-gap: 18px; */
 }
 

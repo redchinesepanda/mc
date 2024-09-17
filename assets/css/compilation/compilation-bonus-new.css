@@ -32,8 +32,8 @@
 	}
 
 	.compilation-bonus-main .legal-compilation-peculiarity {
-		padding-top: 4px;
-		padding-bottom: 4px;
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
 		margin-bottom: 28px;
 	}
 }
@@ -56,13 +56,14 @@
 	/* Position */
 
 	.compilation-bonus-main .legal-compilation-logo {
-		padding-right: 14px;
+		/* padding-right: 14px; */
+		padding-right: var( --Spacing-05 );
 	}
 
 	.compilation-bonus-main .legal-compilation-peculiarity {
-		padding-top: 8px;
-		padding-right: 20px;
-		padding-bottom: 8px;
+		padding-top: 0.5rem;
+		padding-right: var( --Spacing-06 );
+		padding-bottom: 0.5rem;
 		margin-right: auto;
 	}
 }
@@ -94,6 +95,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 8px;
+	align-items: center;
 }
 
 /* .compilation-bonus-main .compilation-review-link {
