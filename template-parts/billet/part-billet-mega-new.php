@@ -38,7 +38,7 @@
 		<div class="billet-mega-content">
 			<?php if( !$args[ 'no-controls' ] ) : ?>
 				<<?php echo $args[ 'title' ][ 'tag' ]; ?> class="mega-content-title">
-					<a href="<?php echo $args[ 'title' ][ 'href' ]; ?>" class="content-title-link" <?php echo BilletMain::render_nofollow( $args[ 'title' ][ 'nofollow' ] ); ?>><?php echo $args[ 'title' ][ 'text' ] ?></a>
+					<?php echo $args[ 'title' ][ 'text' ] ?>
 				</<?php echo $args[ 'title' ][ 'tag' ]; ?>>
 			<?php endif; ?>
 			<?php echo $args[ 'content' ]; ?>
