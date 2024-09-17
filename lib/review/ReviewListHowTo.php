@@ -116,7 +116,7 @@ class ReviewListHowTo
 		LegalDebug::debug( [
 			'ReviewListHowTo' => 'insertBeforeHTML-1',
 			
-			'saveHTML' => $dom->saveHTML( $template ),
+			'saveHTML' => $template->saveHTML(),
 		] );
 
 		
