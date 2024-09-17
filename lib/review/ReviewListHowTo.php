@@ -60,7 +60,9 @@ class ReviewListHowTo
 	{
 		$howto_items = [];
 
-		$howto_item = null;
+		$howto_item = [];
+
+		$howto_item_question = [];
 
 		$index = 1;
 
