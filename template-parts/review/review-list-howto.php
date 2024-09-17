@@ -8,7 +8,7 @@
 
 ?>
 <?php if ( ! empty( $args[ 'questions' ] ) ) : ?>
-	<<?php echo $args[ 'tag' ]; ?>>
+	<<?php echo $args[ 'tag' ]; ?> class="<?php echo $args[ 'class' ]; ?>">
 		<?php foreach ( $args[ 'questions' ] as $question ) : ?>
 			<li>
 				<span class="question-title"><?php echo $question[ 'title' ]; ?></span>
