@@ -62,11 +62,19 @@ class ReviewListHowTo
 		LegalDebug::debug( [
             'ReviewListHowTo' => 'get_permission_last-1',
 
-			'nextSibling' => $nextSibling,
+			// 'nextSibling' => $nextSibling,
+
+			'textContent' => substr( $nextSibling->textContent, 0, 30 ),
 		] );
 
 		if ( ! empty( $nextSibling ) )
 		{
+			LegalDebug::debug( [
+				'ReviewListHowTo' => 'get_permission_last-1',
+	
+				'in_array' => in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) ),
+			] );
+
 			return in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) );
 		}
 
