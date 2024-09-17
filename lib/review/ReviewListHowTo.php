@@ -121,12 +121,10 @@ class ReviewListHowTo
 			{
 				// $howto_item[ 'title' ] = ToolEncode::encode( $node->textContent );
 
-				if ( ! empty( $howto_item_question ) )
-				{
-					$howto_item[ 'questions' ][] = $howto_item_question;
-				}
-
-				$howto_item_question = [];
+				// if ( ! empty( $howto_item_question ) )
+				// {
+				// 	$howto_item[ 'questions' ][] = $howto_item_question;
+				// }
 				
 				$howto_item_question[ 'title' ] = ToolEncode::encode( $node->textContent );
 			}
@@ -140,6 +138,10 @@ class ReviewListHowTo
 
 			if ( self::get_permission_last( $dom, $node ) )
 			{
+				$howto_item[ 'questions' ][] = $howto_item_question;
+
+				$howto_item_question = [];
+
 				$howto_items[] = $howto_item;
 
 				$howto_item = [];
