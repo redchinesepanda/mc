@@ -119,7 +119,7 @@ class ReviewListHowTo
 		// 	'saveHTML' => $template->saveHTML(),
 		// ] );
 		
-		$node->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
+		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
 	}
 
 	public static function get_howto_items( $dom, $nodes )
