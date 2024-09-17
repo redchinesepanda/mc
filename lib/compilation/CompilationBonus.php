@@ -23,7 +23,7 @@ class CompilationBonus
 		// [legal-compilation-bonus id="1027225"]
 
         add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
-        
+
         add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
@@ -104,6 +104,8 @@ class CompilationBonus
                 'button-tnc' => __( BilletMain::TEXT[ 'read-more' ], ToolLoco::TEXTDOMAIN ),
 
                 'link-tnc' => __( BilletMain::TEXT[ 'full-tnc' ], ToolLoco::TEXTDOMAIN ),
+
+                'tnc-class' => BilletBonus::get_tnc_class(),
 
                 'review' => [
                     'href' => $logo[ 'review' ][ 'href' ],

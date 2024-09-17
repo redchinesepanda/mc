@@ -16,7 +16,7 @@
 		<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'button' ][ 'nofollow' ] ); ?> class="legal-compilation-button check-oops"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 	</div>
 	<?php if ( !empty( $args[ 'description-full' ] ) ) : ?>
-		<div class="compilation-bonus-footer">
+		<div class="compilation-bonus-footer <?php echo $args[ 'tnc-class' ] ?>">
 			<p class="footer-tnc-info" data-text="<?php echo $args[ 'description-full' ]; ?>">
 				<?php if ( ! in_array( $args[ 'bonus-href' ], [ '#', '' ] ) ) : ?>
 					<a href="<?php echo $args[ 'bonus-href' ]; ?>" class="footer-tnc-link" rel="nofollow"><?php echo $args[ 'link-tnc' ]; ?></a>
