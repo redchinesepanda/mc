@@ -97,10 +97,6 @@ class ReviewListHowTo
 
 		$howto_item_question = [];
 
-		$index = 1;
-
-		$last = $nodes->length - 1;
-
 		foreach ( $nodes as $id => $node )
 		{
 			LegalDebug::debug( [
@@ -123,7 +119,7 @@ class ReviewListHowTo
 
 				// if ( ! empty( $howto_item_question ) )
 				// {
-				// 	$howto_item[ 'questions' ][] = $howto_item_question;
+					$howto_item[ 'questions' ][] = $howto_item_question;
 				// }
 				
 				$howto_item_question[ 'title' ] = ToolEncode::encode( $node->textContent );
@@ -138,9 +134,9 @@ class ReviewListHowTo
 
 			if ( self::get_permission_last( $dom, $node ) )
 			{
-				$howto_item[ 'questions' ][] = $howto_item_question;
+				// $howto_item[ 'questions' ][] = $howto_item_question;
 
-				$howto_item_question = [];
+				// $howto_item_question = [];
 
 				$howto_items[] = $howto_item;
 
