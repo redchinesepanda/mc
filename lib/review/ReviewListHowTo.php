@@ -103,11 +103,17 @@ class ReviewListHowTo
 
 	public static function insertBeforeHTML( $dom, $html, $node )
 	{
-		$fragment = $dom->createDocumentFragment();
+		// $fragment = $dom->createDocumentFragment();
 		
-		$fragment->appendXML( $html );
+		// $fragment->appendXML( $html );
 		
-		$node->insertBefore( $fragment );
+		// $node->insertBefore( $fragment );
+
+		$template = new DOMDocument;
+		
+		$template->loadHtml( $html );
+		
+		$node->insertBefore( $dom->importNode( $template->documentElement, true ) );
 	}
 
 	public static function get_howto_items( $dom, $nodes )
@@ -221,15 +227,13 @@ class ReviewListHowTo
 			}
 		}
 
-		LegalDebug::debug( [
-			'ReviewListHowTo' => 'get_howto_items-2',
+		// LegalDebug::debug( [
+		// 	'ReviewListHowTo' => 'get_howto_items-2',
 
-			// 'howto_items-count' => count( $howto_items ),
+		// 	'howto_items-count' => count( $howto_items ),
 
-			// 'howto_items' => $howto_items,
-
-			'saveHTML' => $dom->saveHTML( $dom ),
-		] );
+		// 	'howto_items' => $howto_items,
+		// ] );
 
 		// return $howto_items;
 	}
