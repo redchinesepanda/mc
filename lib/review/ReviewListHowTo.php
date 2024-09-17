@@ -101,30 +101,18 @@ class ReviewListHowTo
 		return false;
 	}
 
-	public static function insertBeforeHTML( $dom, $html, $node )
+	// public static function insertBeforeHTML( $dom, $html, $node )
+	// {
+	// 	$template = new DOMDocument;
+		
+	// 	$template->loadHtml( $html );
+		
+	// 	$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
+	// }
+
+	public static function set_howto_items( $dom, $nodes )
 	{
-		// $fragment = $dom->createDocumentFragment();
-		
-		// $fragment->appendXML( $html );
-		
-		// $node->insertBefore( $fragment );
-
-		$template = new DOMDocument;
-		
-		$template->loadHtml( $html );
-
-		// LegalDebug::debug( [
-		// 	'ReviewListHowTo' => 'insertBeforeHTML-1',
-			
-		// 	'saveHTML' => $template->saveHTML(),
-		// ] );
-		
-		$node->parentNode->insertBefore( $dom->importNode( $template->documentElement, true ), $node );
-	}
-
-	public static function get_howto_items( $dom, $nodes )
-	{
-		$howto_items = [];
+		// $howto_items = [];
 
 		$howto_item = [];
 
@@ -194,7 +182,7 @@ class ReviewListHowTo
 
 				// $howto_item_question = [];
 
-				$howto_items[] = $howto_item;
+				// $howto_items[] = $howto_item;
 
 				$html = self::render_list_howto( $howto_item );
 
@@ -204,7 +192,7 @@ class ReviewListHowTo
 				// 	'html' => $html,
 				// ] );
 
-				self::insertBeforeHTML( $dom, $html, $node ); 
+				LegalDom::insertBeforeHTML( $dom, $html, $node ); 
 
 				$howto_item = [];
 
@@ -271,7 +259,7 @@ class ReviewListHowTo
 			return [];
 		}
 
-		self::get_howto_items( $dom, $nodes );
+		self::set_howto_items( $dom, $nodes );
 	}
 
 	public static function modify_content( $content )
