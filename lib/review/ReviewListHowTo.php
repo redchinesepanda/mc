@@ -59,25 +59,25 @@ class ReviewListHowTo
 	{
 		$nextSibling = $node->nextSibling;
 
-		LegalDebug::debug( [
-            'ReviewListHowTo' => 'get_permission_last-1',
+		// LegalDebug::debug( [
+        //     'ReviewListHowTo' => 'get_permission_last-1',
 
-			// 'nextSibling' => $nextSibling,
+		// 	// 'nextSibling' => $nextSibling,
 
-			'textContent' => substr( $nextSibling->textContent, 0, 30 ),
-		] );
+		// 	'textContent' => substr( $nextSibling->textContent, 0, 30 ),
+		// ] );
 
 		if ( ! empty( $nextSibling ) )
 		{
-			LegalDebug::debug( [
-				'ReviewListHowTo' => 'get_permission_last-2',
+			// LegalDebug::debug( [
+			// 	'ReviewListHowTo' => 'get_permission_last-2',
 
-				'CLASSES' => self::CLASSES[ 'default' ],
+			// 	'CLASSES' => self::CLASSES[ 'default' ],
 
-				'get_node_classess' => self::get_node_classess( $nextSibling ),
+			// 	'get_node_classess' => self::get_node_classess( $nextSibling ),
 	
-				'in_array' => ( ! in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) ) ),
-			] );
+			// 	'in_array' => ( ! in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) ) ),
+			// ] );
 
 			return ! in_array( self::CLASSES[ 'default' ], self::get_node_classess( $nextSibling ) );
 		}
@@ -102,7 +102,7 @@ class ReviewListHowTo
 			LegalDebug::debug( [
 				'ReviewListHowTo' => 'get_howto_items-1',
 
-				// 'node' => $node,
+				'node' => $node,
 
 				'textContent' => substr( $node->textContent, 0, 30 ),
 
