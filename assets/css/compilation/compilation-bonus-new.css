@@ -284,7 +284,7 @@
 	color: var( --Base-base-05 );
 }
 
-.legal-compilation-bonus .footer-tnc-info {
+.legal-compilation-bonus .compilation-bonus-footer:not(.legal-active) .footer-tnc-info {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
