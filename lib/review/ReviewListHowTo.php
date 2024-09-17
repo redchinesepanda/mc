@@ -55,7 +55,7 @@ class ReviewListHowTo
 		return in_array( self::CLASSES[ 'content' ], self::get_node_classess( $node ) );
 	}
 
-	public static function get_permission_last( $node )
+	public static function get_permission_last( $dom, $node )
 	{
 		$nextSibling = $node->nextSibling;
 
@@ -87,7 +87,7 @@ class ReviewListHowTo
 		return true;
 	}
 
-	public static function get_howto_items( $nodes )
+	public static function get_howto_items( $dom, $nodes )
 	{
 		$howto_items = [];
 
@@ -112,7 +112,7 @@ class ReviewListHowTo
 
 				'get_permission_content' => self::get_permission_content( $node ),
 
-				'get_permission_last' => self::get_permission_last( $node ),
+				'get_permission_last' => self::get_permission_last( $dom, $node ),
 			] );
 
 			if ( self::get_permission_title( $node ) )
@@ -199,7 +199,7 @@ class ReviewListHowTo
 			return [];
 		}
 
-		self::get_howto_items( $nodes );
+		self::get_howto_items( $dom, $nodes );
 	}
 
 	public static function modify_content( $content )
