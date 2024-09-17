@@ -31,8 +31,8 @@ class ReviewListHowTo
 
 	public static function get_node_classess( $node )
 	{
-		if ( property_exists( $node, 'class' ) )
-		{
+		// if ( property_exists( $node, 'class' ) )
+		// {
 			LegalDebug::debug( [
 				'ReviewHowTo' => 'get_node_classess',
 
@@ -40,9 +40,9 @@ class ReviewListHowTo
 			] );
 
 			return explode( ' ', $node->getAttribute( 'class' ) );
-		}
+		// }
 
-		return [];
+		// return [];
 	}
 
 	public static function get_permission_title( $node )
