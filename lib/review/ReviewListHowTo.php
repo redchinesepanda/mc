@@ -122,9 +122,9 @@ class ReviewListHowTo
 
 				'check_content' => self::check_content( $node ),
 
-				'check_item_complete' => self::check_item_complete( $dom, $node ),
-
 				'check_question_complete' => self::check_question_complete( $dom, $node ),
+
+				'check_item_complete' => self::check_item_complete( $dom, $node ),
 			] );
 
 			if ( self::check_title( $node ) )
