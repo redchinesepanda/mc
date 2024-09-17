@@ -283,9 +283,9 @@
 } */
 
 .legal-billet .billet-get-link {
-	font-size: 14px;
+	font-size: 0,875rem;
 	font-weight: 500;
-	line-height: 20px;
+	line-height: 1,25rem;
 	color: var( --Base-base-01 );
 	text-decoration: none;
 	text-align: center;

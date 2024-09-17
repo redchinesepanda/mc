@@ -49,7 +49,8 @@
 	/* Width and Height */
 
 	.compilation-bonus-main .legal-compilation-button {
-		min-width: calc(148px - (18px * 2));
+		/* min-width: calc(148px - (18px * 2)); */
+		min-width: 126px;
 	}
 
 	/* Position */
@@ -146,7 +147,8 @@
 
 /* .compilation-bonus-main .compilation-review-link, */
 .compilation-bonus-main .legal-compilation-button {
-	padding: 9px 17px;
+	/* padding: 9px 17px; */
+	padding: 0.625rem 1.125rem;
 }
 
 /* Background */
@@ -229,9 +231,9 @@
 
 .compilation-bonus-main .legal-compilation-button {
 	color: var(--Base-base-01);
-	font-size: 14px;
+	font-size: 0,875rem;
 	font-weight: 500;
-	line-height: 20px;
+	line-height: 1,25rem;
 	text-align: center;
 }
 
