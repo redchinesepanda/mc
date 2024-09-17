@@ -238,7 +238,6 @@
 	content: attr( data-text );
 }
 
-
 .legal-compilation-bonus .legal-compilation-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
 	content: attr( data-default );
 }
