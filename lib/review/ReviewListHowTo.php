@@ -101,6 +101,15 @@ class ReviewListHowTo
 		return false;
 	}
 
+	public static function insertBeforeHTML( $dom, $html, $node )
+	{
+		$fragment = $dom->createDocumentFragment();
+		
+		$fragment->appendXML( $html );
+		
+		$node->insertBefore( $fragment );
+	}
+
 	public static function get_howto_items( $dom, $nodes )
 	{
 		$howto_items = [];
@@ -174,6 +183,10 @@ class ReviewListHowTo
 				// $howto_item_question = [];
 
 				$howto_items[] = $howto_item;
+
+				$html = self::render_list_howto( $howto_item );
+
+				self::insertBeforeHTML( $dom, $html, $node );
 
 				$howto_item = [];
 
@@ -256,6 +269,15 @@ class ReviewListHowTo
 
 		return $dom->saveHTML( $dom );
 	}
+
+	const TEMPLATE = [
+        'default' => LegalMain::LEGAL_PATH . '/template-parts/review/review-list-howto.php',
+    ];
+
+	public static function render_list_howto( $args )
+    {
+        return LegalComponents::render_main( self::TEMPLATE[ 'default' ], $args );
+    }
 
 	public static function register_functions()
 	{
