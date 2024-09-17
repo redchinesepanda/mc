@@ -2,36 +2,36 @@
 
 	/* Display */
 
-	.legal-compilation-bonus {
+	.compilation-bonus-main {
 		flex-wrap: wrap;
 	}
 
 	/* Width and Height */
 
-	.legal-compilation-bonus .legal-compilation-logo,
-	.legal-compilation-bonus .legal-compilation-peculiarity {
+	.compilation-bonus-main .legal-compilation-logo,
+	.compilation-bonus-main .legal-compilation-peculiarity {
 		width: 100%;
    }
 
-	.legal-compilation-bonus .legal-compilation-review {
+	.compilation-bonus-main .legal-compilation-review {
 		width: calc( 50% - 4px - 2px );
 	}
 
-	.legal-compilation-bonus .legal-compilation-review + .legal-compilation-button {
+	.compilation-bonus-main .legal-compilation-review + .legal-compilation-button {
 		width: calc( 50% - 4px - 2px - (17px * 2) );
 	}
 
-	.legal-compilation-bonus .legal-compilation-button:not( .legal-compilation-bonus .legal-compilation-review + .legal-compilation-button ) {
+	.compilation-bonus-main .legal-compilation-button:not( .compilation-bonus-main .legal-compilation-review + .legal-compilation-button ) {
 		width: 100%;
 	}
 
    /* Position */
 
-   .legal-compilation-bonus .legal-compilation-logo {
+   .compilation-bonus-main .legal-compilation-logo {
 		padding-bottom: 14px;
 	}
 
-	.legal-compilation-bonus .legal-compilation-peculiarity {
+	.compilation-bonus-main .legal-compilation-peculiarity {
 		padding-top: 4px;
 		padding-bottom: 4px;
 		margin-bottom: 28px;
@@ -42,23 +42,23 @@
 
 	/* Display */
 
-	/* .legal-compilation-bonus {
+	/* .compilation-bonus-main {
 		justify-content: space-between;
 	} */
 
 	/* Width and Height */
 
-	.legal-compilation-bonus .legal-compilation-button {
+	.compilation-bonus-main .legal-compilation-button {
 		min-width: calc(148px - (18px * 2));
 	}
 
 	/* Position */
 
-	.legal-compilation-bonus .legal-compilation-logo {
+	.compilation-bonus-main .legal-compilation-logo {
 		padding-right: 14px;
 	}
 
-	.legal-compilation-bonus .legal-compilation-peculiarity {
+	.compilation-bonus-main .legal-compilation-peculiarity {
 		padding-top: 8px;
 		padding-right: 20px;
 		padding-bottom: 8px;
@@ -68,165 +68,165 @@
 
 /* Display */
 
-.legal-compilation-bonus {
+.compilation-bonus-main {
 	display: flex;
 }
 
-/* .legal-compilation-bonus .legal-compilation-logo {
+/* .compilation-bonus-main .legal-compilation-logo {
 	display: flex;
 	justify-content: center;
 	column-gap: 1rem;
 } */
 
-.legal-compilation-bonus .legal-logo-link,
-.legal-compilation-bonus .legal-logo-linklegal-disabled {
+.compilation-bonus-main .legal-logo-link,
+.compilation-bonus-main .legal-logo-linklegal-disabled {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.legal-compilation-bonus .legal-logo-linklegal-disabled {
+.compilation-bonus-main .legal-logo-linklegal-disabled {
 	pointer-events: none;
 }
 
-.legal-compilation-bonus .legal-compilation-peculiarity {
+.compilation-bonus-main .legal-compilation-peculiarity {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 8px;
 }
 
-.legal-compilation-bonus .compilation-review-link {
+.compilation-bonus-main .compilation-review-link {
 	display: block;
 }
 
-.legal-compilation-bonus .peculiarity-bonys-link[ href='' ],
-.legal-compilation-bonus .legal-compilation-button[ href='' ] {
+.compilation-bonus-main .peculiarity-bonys-link[ href='' ],
+.compilation-bonus-main .legal-compilation-button[ href='' ] {
 	pointer-events: none;
 }
 
 /* Width and Height */
 
-.legal-compilation-bonus .legal-compilation-logo {
+.compilation-bonus-main .legal-compilation-logo {
 	flex-basis: fit-content;
 }
 
-.legal-compilation-bonus .legal-logo-link,
-.legal-compilation-bonus .legal-logo-linklegal-disabled {
+.compilation-bonus-main .legal-logo-link,
+.compilation-bonus-main .legal-logo-linklegal-disabled {
 	width: 46px;
     height: 46px;
 }
 
-.legal-compilation-bonus .legal-compilation-logo .legal-logo-picture {
+.compilation-bonus-main .legal-compilation-logo .legal-logo-picture {
 	width: 100%;
   	height: auto;
 }
 
-.legal-compilation-bonus .legal-compilation-peculiarity-bonys,
-.legal-compilation-bonus .legal-compilation-peculiarity-text {
+.compilation-bonus-main .legal-compilation-peculiarity-bonys,
+.compilation-bonus-main .legal-compilation-peculiarity-text {
 	width: 100%;
 }
 
-.legal-compilation-bonus .compilation-review-link,
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .compilation-review-link,
+.compilation-bonus-main .legal-compilation-button {
 	height: fit-content;
 }
 
 /* Position */
 
-.legal-compilation-bonus {
+.compilation-bonus-main {
 	padding: 24px;
 	margin-bottom: 18px;
 }
 
-.legal-compilation-bonus .legal-compilation-review {
+.compilation-bonus-main .legal-compilation-review {
 	margin-right: 8px;
 }
 
-.legal-compilation-bonus .compilation-review-link,
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .compilation-review-link,
+.compilation-bonus-main .legal-compilation-button {
 	padding: 9px 17px;
 }
 
 /* Background */
 
-.legal-compilation-bonus {
+.compilation-bonus-main {
 	background-color: var(--Base-base-01);
 	border: 1px solid var(--Base-base-09);
 	border-radius: 18px;
 }
 
-.legal-compilation-bonus .legal-logo-link,
-.legal-compilation-bonus .legal-logo-linklegal-disabled {
+.compilation-bonus-main .legal-logo-link,
+.compilation-bonus-main .legal-logo-linklegal-disabled {
 	border: 1px solid var(--Base-base-09);
 	border-radius: 12.8px;
 	overflow: hidden;
 	background-color: var(--Logo-background);
 }
 
-.legal-compilation-bonus .compilation-review-link {
+.compilation-bonus-main .compilation-review-link {
 	border-radius: 60px;
 	border: 1px solid var(--Base-base-09);
 	background: var(--Base-base-01);
 }
 
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .legal-compilation-button {
 	background-color: var(--Base-base-09);
 	border-radius: 20px;
 	border: 1px solid var(--Base-base-09);
 }
 
-.legal-compilation-bonus .legal-compilation-button:hover {
+.compilation-bonus-main .legal-compilation-button:hover {
 	background-color: var(--Base-base-07);
 }
 
 /* Typography */
 
-.legal-compilation-bonus .legal-compilation-peculiarity-bonys,
-.legal-compilation-bonus .peculiarity-bonys-link,
-.legal-compilation-bonus .legal-compilation-peculiarity-text,
-.legal-compilation-bonus .compilation-review-link,
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .legal-compilation-peculiarity-bonys,
+.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .legal-compilation-peculiarity-text,
+.compilation-bonus-main .compilation-review-link,
+.compilation-bonus-main .legal-compilation-button {
 	font-family: var( --legal-font-primary );
     font-style: normal;
 }
 
-.legal-compilation-bonus .peculiarity-bonys-link,
-.legal-compilation-bonus .compilation-review-link,
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .compilation-review-link,
+.compilation-bonus-main .legal-compilation-button {
 	text-decoration: none;
 }
 
-.legal-compilation-bonus .legal-compilation-peculiarity-bonys,
-.legal-compilation-bonus .peculiarity-bonys-link,
-.legal-compilation-bonus .legal-compilation-peculiarity-text,
-.legal-compilation-bonus .compilation-review-link {
+.compilation-bonus-main .legal-compilation-peculiarity-bonys,
+.compilation-bonus-main .peculiarity-bonys-link,
+.compilation-bonus-main .legal-compilation-peculiarity-text,
+.compilation-bonus-main .compilation-review-link {
 	color: var(--Base-base-09);
 }
 
-.legal-compilation-bonus .compilation-review-link {
+.compilation-bonus-main .compilation-review-link {
 	font-size: 14px;
 	line-height: 20px;
 	text-align: center;
 	white-space: nowrap;
 }
 
-.legal-compilation-bonus .compilation-review-link:hover {
+.compilation-bonus-main .compilation-review-link:hover {
 	text-shadow: 0 0 0.6px #000;
 }
 
-.legal-compilation-bonus .legal-compilation-peculiarity-bonys,
-.legal-compilation-bonus .peculiarity-bonys-link {
+.compilation-bonus-main .legal-compilation-peculiarity-bonys,
+.compilation-bonus-main .peculiarity-bonys-link {
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 26px;
 }
 
-.legal-compilation-bonus .legal-compilation-peculiarity-text {
+.compilation-bonus-main .legal-compilation-peculiarity-text {
 	font-size: 14px;
 	line-height: 22px;
 }
 
-.legal-compilation-bonus .legal-compilation-button {
+.compilation-bonus-main .legal-compilation-button {
 	color: var(--Base-base-01);
 	font-size: 14px;
 	font-weight: 500;
@@ -234,10 +234,10 @@
 	text-align: center;
 }
 
-.legal-compilation-bonus-set .footer-tnc-info::after {
+.legal-compilation-bonus .footer-tnc-info::after {
 	content: attr( data-text );
 }
 
-.legal-compilation-bonus-set .legal-compilation-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
+.legal-compilation-bonus .compilation-bonus-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
 	content: attr( data-default );
 }
