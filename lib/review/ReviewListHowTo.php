@@ -191,6 +191,8 @@ class ReviewListHowTo
 
 				// $howto_items[] = $howto_item;
 
+				$howto_item[ 'class' ] = self::CLASSESS[ 'default' ];
+
 				$html = self::render_list_howto( $howto_item );
 
 				// LegalDebug::debug( [
