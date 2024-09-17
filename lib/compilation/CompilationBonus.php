@@ -2,6 +2,20 @@
 
 class CompilationBonus
 {
+    const JS = [
+        'billet-bonus-tnc' => [
+
+			'path' => LegalMain::LEGAL_URL . '/assets/js/billet/billet-footer.js',
+
+            'ver' => '1.0.0',
+        ],
+    ];
+
+	public static function register_script()
+    {
+        ReviewMain::register_script( self::JS );
+    }
+
 	public static function register()
     {
         $handler = new self();
@@ -9,6 +23,8 @@ class CompilationBonus
 		// [legal-compilation-bonus id="1027225"]
 
         add_shortcode( self::SHORTCODES[ 'bonus' ], [ $handler, 'prepare_bonus' ] );
+        
+        add_action( 'wp_enqueue_scripts', [ $handler, 'register_script' ] );
     }
 
     public static function get_billets_bonus( $posts, $filter )
