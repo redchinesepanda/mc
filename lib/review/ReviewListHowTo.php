@@ -79,6 +79,12 @@ class ReviewListHowTo
 				'ReviewListHowTo' => 'get_howto_items-1',
 
 				'node' => substr( $node->textContent, 0, 30 ),
+
+				'get_permission_title' => self::get_permission_title( $node ),
+
+				'get_permission_content' => self::get_permission_content( $node ),
+
+				'get_permission_last' => self::get_permission_last( $node ),
 			] );
 
 			if ( self::get_permission_title( $node ) )
