@@ -2,7 +2,7 @@
 	<div class="compilation-bonus-main <?php echo $args[ 'selector' ]; ?> font-<?php echo $args[ 'font' ]; ?>">
 		<div class="legal-compilation-logo">
 			<a class="legal-logo-link<?php echo $args[ 'logo' ][ 'class' ]; ?> check-oops" href="<?php echo $args[ 'logo' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'logo' ][ 'nofollow' ] ); ?>>
-				<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="138" height="45" loading="lazy">
+				<img src="<?php echo $args[ 'logo' ][ 'src' ]; ?>" class="legal-logo-picture" alt="<?php echo $args[ 'logo' ][ 'alt' ]; ?>" width="48" height="48" loading="lazy">
 			</a>
 		</div>
 		<div class="legal-compilation-peculiarity">
@@ -13,11 +13,6 @@
 				<div class="legal-compilation-peculiarity-text"><?php echo $args[ 'description' ]; ?></div>
 			<?php endif; ?>
 		</div>
-		<!-- <?php if ( !empty( $args[ 'review' ][ 'href' ] ) ) : ?>
-			<div class="legal-compilation-review">
-				<a href="<?php echo $args[ 'review' ][ 'href' ]; ?>" class="compilation-review-link"><?php echo $args[ 'review' ][ 'label' ]; ?></a>
-			</div>
-		<?php endif; ?> -->
 		<a href="<?php echo $args[ 'button' ][ 'href' ]; ?>" <?php echo BilletMain::render_nofollow( $args[ 'button' ][ 'nofollow' ] ); ?> class="legal-compilation-button check-oops"><?php echo $args[ 'button' ][ 'label' ]; ?></a>
 	</div>
 	<?php if ( !empty( $args[ 'description-full' ] ) ) : ?>
