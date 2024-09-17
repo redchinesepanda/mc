@@ -102,7 +102,10 @@ class ReviewListHowTo
 			{
 				// $howto_item[ 'title' ] = ToolEncode::encode( $node->textContent );
 
-				$howto_item[ 'questions' ][] = $howto_item_question;
+				if ( ! empty( $howto_item_question ) )
+				{
+					$howto_item[ 'questions' ][] = $howto_item_question;
+				}
 
 				$howto_item_question = [];
 				
