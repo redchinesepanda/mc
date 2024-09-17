@@ -234,10 +234,10 @@
 	text-align: center;
 }
 
-.legal-compilation-bonus .footer-tnc-info::after {
+.legal-compilation-bonus-set .footer-tnc-info::after {
 	content: attr( data-text );
 }
 
-.legal-compilation-bonus .legal-compilation-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
+.legal-compilation-bonus-set .legal-compilation-footer:not(.legal-short-tnc):not(.legal-active) .compilation-footer-control::before {
 	content: attr( data-default );
 }
