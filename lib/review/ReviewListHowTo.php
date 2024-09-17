@@ -20,9 +20,9 @@ class ReviewListHowTo
         ],
     ];
 
-	public static function register_style( $styles = [] )
+	public static function register_style()
     {
-        ToolEnqueue::register_style( $styles );
+        ToolEnqueue::register_style( self::CSS );
     }
 
 	public static function check_contains_list_howto()
