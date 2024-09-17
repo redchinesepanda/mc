@@ -1,10 +1,10 @@
 <?php
 
-LegalDebug::debug( [
-	'template' => 'review-list-howto.php',
+// LegalDebug::debug( [
+// 	'template' => 'review-list-howto.php',
 
-	'args' => $args,
-] );
+// 	'args' => $args,
+// ] );
 
 ?>
 <span>test</span>
